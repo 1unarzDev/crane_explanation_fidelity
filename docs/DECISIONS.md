@@ -13,6 +13,12 @@
 - Revisit: add ArUco only for a concrete perception question and validate upstream wind through
   measured CRANE behavior rather than configuration presence.
 
+### Follow-up validation
+
+ArUco was added as a render-only invariant suitable for a future perception question; camera
+detection remains unrun. Wind was accepted only after two byte-identical measured response runs.
+Its component magnitudes are not treated as calibrated physical fidelity.
+
 ## 2026-09-19 — reference environments separate canonical collision from visuals
 
 - Decision: add recognizable platforms incrementally, beginning with a CRANE-native TurtleBot3

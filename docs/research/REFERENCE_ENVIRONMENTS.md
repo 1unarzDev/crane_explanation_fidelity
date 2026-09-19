@@ -109,9 +109,9 @@ Both inspected repositories contain MIT license files. Nevertheless, the Unity r
 ## Implemented first increment and next choice
 
 The first increment implements a CRANE-native warehouse/office scene, a deterministic F1TENTH
-PNG/YAML boundary-to-collider generator, and the four pinned primitive boxes from PX4 `walls`.
-Add a render-only ArUco landmark only for a concrete perception question; CRANE wind response is
-measured, while the upstream `windy.sdf` scenario remains unvalidated. Run Clearpath `2.9.4`
+PNG/YAML boundary-to-collider generator, the four pinned primitive boxes from PX4 `walls`, a
+render-only ArUco landmark, and measured deterministic response to the pinned windy vector.
+Camera tag detection and physical wind calibration remain unvalidated. Run Clearpath `2.9.4`
 office or pipeline only if the local Jazzy/Harmonic stack can launch it without modifying CRANE
 physics or delaying primary episode collection.
 

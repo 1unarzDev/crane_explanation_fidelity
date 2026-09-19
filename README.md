@@ -38,6 +38,8 @@ their own location. Exact repository commits and destinations are recorded in
   generator. No third-party track data has been imported or run.
 - **IMPLEMENTED, TESTED:** PX4 `walls.sdf` primitive reconstruction with pinned provenance,
   semantic wall IDs, separate collision/visual layers, and headless aerial/contact/ray checks.
+- **IMPLEMENTED, TESTED:** PX4 ArUco render-only landmark invariant and pinned windy scenario with
+  repeatable measured CRANE response; camera detection and physical wind calibration remain unrun.
 - **TESTED (PIPELINE SMOKE):** A/B/C/D/E over real success and cancellation episodes with a
   rule-based generator; identical outputs validate parity and routing but are not an LLM comparison
   or evidence for RQ1/RQ2.

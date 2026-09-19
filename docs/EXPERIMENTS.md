@@ -1,5 +1,20 @@
 # Experiment Log
 
+## 2026-09-19 — PX4 ArUco and windy reference environments
+
+- CRANE commit `a0acabec5005da6ae9dbc286d740e3ea20982014`; Unity 6000.5.10f1; upstream
+  `PX4/PX4-gazebo-models` commit `bb0b9cf974acf4f1bcb5f5fcf80b88841562dea9`.
+- **TESTED/PASS:** ArUco scene retained one 0.5 m semantic/render landmark with no collider. A
+  downward query passed through the tag and hit canonical `ground-plane` at 2.0 m. Normal aerial
+  dynamics and landing checks passed. Camera-based tag recognition is **NOT_RUN**.
+- **TESTED/PASS:** windy scene applied source ENU `(5,2,0)` m/s as Unity `(5,0,2)` m/s through
+  CRANE air-relative drag. Two headless runs were byte-identical and measured positive x/z
+  displacement `(3.267,4.732)` m. The non-proportional component response is a retained model-
+  calibration limitation; this is directional/determinism evidence, not Gazebo equivalence.
+- **TESTED/PASS:** post-change regressions for base aerial, PX4 walls, and PX4 ArUco scenes.
+- ROS-TCP was unavailable in these isolated runs; sensor transport/navigation remain **NOT_RUN**.
+  Explanation-evaluation sample remains 0.
+
 ## 2026-09-19 — PX4 walls reference environment
 
 - CRANE commit `97229e8b0300ce31e429c9ad9ac4599a8e79e488`; Unity 6000.5.10f1.
