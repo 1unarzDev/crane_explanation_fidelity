@@ -1,0 +1,83 @@
+{
+  "schema": "crane-development-batch-predeclaration-v1",
+  "batch_id": "land-nav-persistent-hold-batch-20260919-v1",
+  "created_before_any_batch_execution": true,
+  "purpose": "Test the paired recovery-success versus recovery-exhaustion outcome using the same deterministic evaluator-only mobility-loss mechanism, avoiding post-outcome static-blocker tuning.",
+  "split": "development",
+  "shared_configuration": {
+    "scene": "TurtleBot3 Warehouse Validation",
+    "platform": "turtlebot3-waffle-differential",
+    "corridor_length_m": 22.0,
+    "blocker": "none",
+    "fixture_delay_s": 15,
+    "action_duration_s": 45,
+    "worker_duration_s": 60,
+    "time_scale": 1.0,
+    "bt_xml": "packages/crane_ml/Tools/Performance/nav2_land_progress_recovery.xml",
+    "harness_qos": "reliable-transient-local-depth-20",
+    "occupied_costmap_required": true
+  },
+  "instances": [
+    {
+      "run_id": "land-nav-20260919-e032",
+      "family": "turtlebot3-persistent-mobility-hold-terminal-recovery-exhaustion",
+      "seed_base": 1032,
+      "corridor_width_m": 4.0,
+      "goal_distance_m": 3.5,
+      "mobility_hold_after_fixed_simulation_s": 15.0,
+      "mobility_release_after_fixed_simulation_s": null,
+      "ros_domain_id": 72,
+      "ros_tcp_port": 10072,
+      "expected": {"navigate_to_pose_status": "aborted", "minimum_recovery_attempts": 1, "maximum_recovery_attempts": 2, "mobility_held": true, "mobility_released": false}
+    },
+    {
+      "run_id": "land-nav-20260919-e033",
+      "family": "turtlebot3-persistent-mobility-hold-terminal-recovery-exhaustion",
+      "seed_base": 1033,
+      "corridor_width_m": 4.5,
+      "goal_distance_m": 3.0,
+      "mobility_hold_after_fixed_simulation_s": 16.0,
+      "mobility_release_after_fixed_simulation_s": null,
+      "ros_domain_id": 73,
+      "ros_tcp_port": 10073,
+      "expected": {"navigate_to_pose_status": "aborted", "minimum_recovery_attempts": 1, "maximum_recovery_attempts": 2, "mobility_held": true, "mobility_released": false}
+    },
+    {
+      "run_id": "land-nav-20260919-e034",
+      "family": "turtlebot3-persistent-mobility-hold-terminal-recovery-exhaustion",
+      "seed_base": 1034,
+      "corridor_width_m": 5.0,
+      "goal_distance_m": 4.0,
+      "mobility_hold_after_fixed_simulation_s": 17.0,
+      "mobility_release_after_fixed_simulation_s": null,
+      "ros_domain_id": 74,
+      "ros_tcp_port": 10074,
+      "expected": {"navigate_to_pose_status": "aborted", "minimum_recovery_attempts": 1, "maximum_recovery_attempts": 2, "mobility_held": true, "mobility_released": false}
+    },
+    {
+      "run_id": "land-nav-20260919-e035",
+      "family": "turtlebot3-matched-unblocked-success-zero-recovery",
+      "seed_base": 1035,
+      "corridor_width_m": 5.0,
+      "goal_distance_m": 4.0,
+      "mobility_hold_after_fixed_simulation_s": null,
+      "mobility_release_after_fixed_simulation_s": null,
+      "ros_domain_id": 75,
+      "ros_tcp_port": 10075,
+      "expected": {"navigate_to_pose_status": "succeeded", "recovery_attempts": 0, "mobility_held": false, "mobility_released": false}
+    }
+  ],
+  "software": {"crane_checkout_commit": "ff8a6a095b158c5b3af1f3c93d989ca0a0877907", "crane_explain_ros_commit": "9ab4f320bdccee468de77ce4b17762853d3ccf93"},
+  "player_artifact": {
+    "executable_sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+    "build_manifest_sha256": "17a654ead83a69f330dcaf360f175b63b46681604e101c813b9365d1e289cecc",
+    "scripts_assembly_sha256": "5f1431fc26158cfdf87ecaa490d094be5d2e5ec7dedb5a2ad010cee1be24b1e2",
+    "physics_assembly_sha256": "64158c6d305e5fbc501790c922dddbb0ca737637fc9c0c4e45bc1cac7e6f5e67",
+    "source_commit_embedded_in_build_manifest": false
+  },
+  "inclusion_rule": "Include only if simulator/capture gates pass, one accepted goal and matching terminal result/status are captured, recovery history is complete, observed terminal/recovery status matches the predeclared family, and evaluator truth matches the predeclared hold/release state.",
+  "mismatch_rule": "Retain every attempted instance. Do not rerun, replace, tune, or relabel an instance after observing its outcome.",
+  "independence_basis": "Each instance has a distinct seed and fixed corridor/goal/intervention configuration. The three terminal instances share one mechanism and are within-family replications; questions remain clustered by episode.",
+  "evidence_boundary": "Mobility hold identity and timing remain evaluator-only. Robot-visible explanations may describe captured FollowPath/recovery/terminal mechanisms but must withhold the physical cause.",
+  "paired_interpretation": "E034 and e035 share corridor width and goal distance but are distinct seeded scenario instances; they are a controlled configuration pair, not a recorded-state counterfactual re-execution."
+}
