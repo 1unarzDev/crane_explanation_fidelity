@@ -413,6 +413,12 @@
 - Core revision `8314e0964dbaf21b9e52bed7d2f09c592b959868` adds a checked planning-failure
   answer and regression; 24 core tests pass. A/B parity includes the 208 mapping and active node in
   both formats. Model evaluation is pending at this checkpoint.
+- The first e010 parity derivation is **SUPERSEDED/EXCLUDED**: it marked the whole BT transition
+  history complete by checking only `FollowPath`. The corrected derivation separately compares
+  starts and terminal transitions for both `ComputePathToPose` and `FollowPath`. Fresh `parity2-*`
+  artifacts correctly record whole-BT history incomplete while retaining complete recovery-count
+  history, zero recorded recoveries, and the supported `NO_VALID_PATH (208)` planning proposition.
+  All seven information-parity audits pass; retained `parity-*` inputs were not rewritten.
 
 ## 2026-09-19 — F1TENTH Spielberg reference-environment qualification
 

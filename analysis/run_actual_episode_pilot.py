@@ -77,6 +77,12 @@ def derive_episode(capture: Path) -> tuple[dict, dict, str, frozenset[str]]:
         and item["previous_status"] == "IDLE"
         and item["current_status"] == "RUNNING"
     ]
+    compute_path_terminals = [
+        item for item in bt
+        if item["node_name"] == "ComputePathToPose"
+        and item["previous_status"] == "RUNNING"
+        and item["current_status"] in {"FAILURE", "SUCCESS"}
+    ]
     follow_failures = [
         item for item in bt
         if item["node_name"] == "FollowPath"
@@ -118,7 +124,10 @@ def derive_episode(capture: Path) -> tuple[dict, dict, str, frozenset[str]]:
             "BT Wait entries disagree with maximum feedback recovery count: "
             f"{len(wait_starts)} versus {maximum_recovery_count}"
         )
-    bt_history_complete = len(follow_starts) == len(follow_terminals)
+    bt_history_complete = (
+        len(compute_path_starts) == len(compute_path_terminals)
+        and len(follow_starts) == len(follow_terminals)
+    )
     recovery_history_complete = (
         complete
         and terminal_source in {"harness_result", "action_status"}
@@ -294,6 +303,10 @@ def derive_episode(capture: Path) -> tuple[dict, dict, str, frozenset[str]]:
          "value": len(wait_starts), "completed_success": len(wait_successes)},
         {"id": "follow-path-failures", "kind": "recorded_follow_path_failure_transitions",
          "value": len(follow_failures)},
+        {"id": "compute-path-starts", "kind": "recorded_compute_path_start_transitions",
+         "value": len(compute_path_starts)},
+        {"id": "compute-path-terminals", "kind": "recorded_compute_path_terminal_transitions",
+         "value": len(compute_path_terminals)},
         {"id": "recovery-guard-successes", "kind": "recorded_guard_success_transitions",
          "value": len(guard_successes)},
         {"id": "follow-path-starts", "kind": "recorded_follow_path_start_transitions",
@@ -370,15 +383,17 @@ def derive_episode(capture: Path) -> tuple[dict, dict, str, frozenset[str]]:
         )
     if not bt_history_complete:
         prose_parts.append(
-            f"The log records {len(follow_starts)} FollowPath starts but only "
-            f"{len(follow_failures)} terminal FollowPath FAILURE transitions, so the Behavior "
-            "Tree transition history is not complete."
+            f"The log records {len(compute_path_starts)} ComputePathToPose starts with "
+            f"{len(compute_path_terminals)} terminal ComputePathToPose transitions, and "
+            f"{len(follow_starts)} FollowPath starts with {len(follow_terminals)} terminal "
+            "FollowPath transitions, so the Behavior Tree transition history is not complete."
         )
     else:
         prose_parts.append(
-            f"The log records {len(follow_starts)} FollowPath starts and "
-            f"{len(follow_terminals)} terminal FollowPath transitions, so the Behavior Tree "
-            "transition history is complete."
+            f"The log records {len(compute_path_starts)} ComputePathToPose starts with "
+            f"{len(compute_path_terminals)} terminal ComputePathToPose transitions, and "
+            f"{len(follow_starts)} FollowPath starts with {len(follow_terminals)} terminal "
+            "FollowPath transitions, so the Behavior Tree transition history is complete."
         )
     if deadline_events:
         prose_parts.append("The experiment harness recorded a client deadline.")
