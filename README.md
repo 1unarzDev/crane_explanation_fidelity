@@ -46,10 +46,10 @@ their own location. Exact repository commits and destinations are recorded in
 - **TESTED (PIPELINE SMOKE):** A/B/C/D/E over real success and cancellation episodes with a
   rule-based generator; identical outputs validate parity and routing but are not an LLM comparison
   or evidence for RQ1/RQ2.
-- **TESTED (DEVELOPMENT ONLY):** three real land episodes, six question families each, 90
+- **TESTED (DEVELOPMENT ONLY):** four real land episodes, six question families each, 120
   A/B/C/D/E responses, cached single-sample model calls, parity audits, and provisional material
-  error/coverage annotation. A had 1/18 errors and D had 0/18 but lower coverage; three episode
-  clusters do not support an inferential claim or power estimate.
+  error/coverage annotation. A had 2/24 errors and D had 0/24 but lower retained-output coverage;
+  four episode clusters do not support an inferential claim or power estimate.
 - **NOT_RUN:** multi-episode recovery/failure collection and the main powered benchmark.
 - **DEFERRED:** arbitrary-LLM proposition extraction until independently evaluated.
 

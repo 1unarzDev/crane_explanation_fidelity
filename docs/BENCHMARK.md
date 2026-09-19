@@ -90,3 +90,10 @@ both success and abort. The provisional result remains mixed: A made one unsuppo
 classification, while checked methods made no material errors but falsely abstained when complete
 e007 evidence established that recovery never occurred. Risk must therefore remain paired with
 coverage; zero observed checked errors is not yet evidence that D dominates B or E.
+
+The fourth evaluated episode reuses e001's deliberate client cancellation. Its parity inventory
+keeps deadline and cancellation request as separate facts. Direct prose A introduced an unsupported
+“because” relationship; B and checked methods did not. This supplies a concrete explanatory-
+relationship error without exposing evaluator truth. It also leaves RQ1 unresolved/negative in
+development: strong prose B-equivalent content was sufficient for the direct structured condition
+to avoid all observed errors.

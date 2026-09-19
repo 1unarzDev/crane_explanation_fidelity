@@ -1,0 +1,47 @@
+{
+  "schema": "crane-explain-development-annotation/v3",
+  "status": "DEVELOPMENT_ONLY_SINGLE_INTERNAL_ANNOTATOR_NOT_ADJUDICATED",
+  "supersedes": "land-nav-three-episode-v2.json",
+  "independent_episode_count": 4,
+  "question_families_per_episode": 6,
+  "response_count_per_condition": 24,
+  "episodes": [
+    {"episode_id": "land-nav-20260919-e001-worker-0", "family": "client-deadline-cancellation-zero-recovery", "model_output_root": "model_outputs/dev/land-nav-20260919-e001/parity-pass-v2", "gold_information_units": 14, "coverage_by_condition": {"A": 13, "B": 13, "C": 13, "D": 13, "E": 13}},
+    {"episode_id": "land-nav-20260919-e004-worker-0", "family": "full-blocker-terminal-recovery-exhaustion", "model_output_root": "model_outputs/dev/land-nav-20260919-e004/revision2-parity-pass", "gold_information_units": 15, "coverage_by_condition": {"A": 14, "B": 14, "C": 14, "D": 14, "E": 14}},
+    {"episode_id": "land-nav-20260919-e007-worker-0", "family": "unblocked-success-zero-recovery", "model_output_root": "model_outputs/dev/land-nav-20260919-e007/parity-pass", "gold_information_units": 10, "coverage_by_condition": {"A": 9, "B": 9, "C": 8, "D": 8, "E": 8}},
+    {"episode_id": "land-nav-20260919-e009-worker-0", "family": "partial-blocker-terminal-recovery-exhaustion", "model_output_root": "model_outputs/dev/land-nav-20260919-e009/parity-pass", "gold_information_units": 15, "coverage_by_condition": {"A": 14, "B": 14, "C": 14, "D": 14, "E": 14}}
+  ],
+  "default_material_error": false,
+  "material_errors": [
+    {
+      "episode_id": "land-nav-20260919-e007-worker-0",
+      "question": "unsupported-counterfactual",
+      "condition": "A",
+      "error_types": ["unsupported-false-premise-classification"],
+      "rationale": "Recorded action success does not establish that the question's implied obstacle premise is false; obstacle presence is unestablished."
+    },
+    {
+      "episode_id": "land-nav-20260919-e001-worker-0",
+      "question": "terminal-status",
+      "condition": "A",
+      "error_types": ["unsupported-causal-relationship"],
+      "rationale": "The parity evidence records a client deadline and cancellation request as separate events but does not encode that the deadline caused cancellation."
+    }
+  ],
+  "false_abstentions": [
+    {"episode_id": "land-nav-20260919-e007-worker-0", "question": "recovery-mechanism", "conditions": ["C", "D", "E"], "rationale": "Complete recovery-count evidence established exactly zero attempts, so the false premise should have been rejected. The post-pilot planner fixes this; retained outputs are not regenerated."}
+  ],
+  "condition_summary": {
+    "A": {"material_errors": 2, "substantive_answers": 20, "information_units_covered": 50, "information_units_total": 54, "correct_counterfactual_abstentions": 4, "false_abstentions": 0},
+    "B": {"material_errors": 0, "substantive_answers": 20, "information_units_covered": 50, "information_units_total": 54, "correct_counterfactual_abstentions": 4, "false_abstentions": 0},
+    "C": {"material_errors": 0, "substantive_answers": 19, "information_units_covered": 49, "information_units_total": 54, "correct_counterfactual_abstentions": 4, "false_abstentions": 1},
+    "D": {"material_errors": 0, "substantive_answers": 19, "information_units_covered": 49, "information_units_total": 54, "correct_counterfactual_abstentions": 4, "false_abstentions": 1},
+    "E": {"material_errors": 0, "substantive_answers": 19, "information_units_covered": 49, "information_units_total": 54, "correct_counterfactual_abstentions": 4, "false_abstentions": 1}
+  },
+  "limitations": [
+    "Four episode clusters do not support inferential statistics or a stable power estimate.",
+    "Two terminal episodes share the same abstract explanation pattern despite different geometry.",
+    "The single annotator knew condition identity and authored checked plans.",
+    "Recovery-followed-by-success and planning-failure mechanisms remain absent."
+  ]
+}

@@ -374,3 +374,26 @@
   exactly zero attempts occurred and reject the premise that the BT entered recovery. Twenty-three
   core tests pass. The 90-response pilot was not regenerated, so the observed false abstention
   remains auditable evidence of the pre-fix behavior.
+
+## 2026-09-19 — fourth evaluated mechanism: client cancellation
+
+- Reused `land-nav-20260919-e001` rather than running another geometry-only terminal instance.
+  Recovery-count completeness is established through its accepted goal, terminal canceled action
+  status, explicit client events, capture boundaries, final monotonic zero count, goal identity,
+  and zero unique `Wait` entries. A/B parity now includes the deadline and cancellation as separate
+  facts; it does not add a causal edge between them.
+- Six A/B/C/D/E questions produced 30 additional responses without resampling. The post-pilot
+  zero-recovery plan correctly rejects recovery premises in C/D/E. Artifact hashes and cumulative
+  66 unique-call usage are in
+  `manifests/model_outputs/land-nav-development-four-episode-gpt-5.6-sol.json`.
+- New provisional error: A explained termination “because” the client deadline was reached. The
+  parity evidence records deadline and cancellation request but not their causal relation. B and
+  checked conditions kept them separate. Four-episode development totals are A 2/24 material
+  errors (8.3%) and B/C/D/E 0/24.
+- Coverage remains mixed: A/B substantive coverage 20/24 and provisional information coverage
+  50/54; C/D/E 19/24 and 49/54 because the retained e007 outputs predate the zero-recovery premise
+  fix. The corrected planner was not used to rewrite those outputs. D-vs-A has two favorable error
+  discordances and zero unfavorable error discordances, but only four independent episode clusters.
+- RQ1 negative finding: B has zero observed errors at the same response coverage as A, so this
+  development sample does not show structured B outperforming strong prose A. RQ2 is suggestive
+  only; the risk reduction remains confounded with the checked method's lower observed coverage.
