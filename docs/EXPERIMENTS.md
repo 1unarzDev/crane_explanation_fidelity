@@ -14,6 +14,10 @@
 - **TESTED/PASS:** physics ray query hit semantic object `clearpath-pipeline`; an actual collision
   callback was observed for the rigid-body drop. The standard nine-scene worker rebuilt afterward
   with zero generated-asset dependencies, preserving the optimized normal build path.
+- Negative iteration: the first drop verdict was **TESTED/INVALID** because it required final
+  speed below 1 m/s and therefore mislabeled a real contact that continued rolling on sloped
+  terrain. The final predeclared check uses an actual collision callback plus a fall-through bound;
+  geometry/layer/raycast criteria were not weakened.
 - **NOT_RUN:** Blender/FBX conversion (Blender unavailable), native Gazebo comparison, ROS sensor
   transport, Nav2 traversal, spawn/goal calibration, corridor-width checks, and high-fidelity
   material parity. Two expected ROS-TCP connection failures are not sensor verdicts.
