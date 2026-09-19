@@ -683,3 +683,19 @@
 - Validity threat: the intended hold did not schedule or activate in three of three terminal
   instances. Diagnose that configuration path before predeclaring another terminal batch; the
   observed aborts cannot be described as intervention-caused.
+
+## 2026-09-19 — e036 persistent-hold regression calibration
+
+- Root cause: **DIAGNOSED/FIXED**. E032–e034 player logs each contained
+  `ArgumentException: Mobility hold and release boundaries must be configured together.` The
+  terminal design deliberately omitted release, but the runtime required a finite release after it
+  had already written initial evaluator truth. This was a contract mismatch, not timing noise.
+- CRANE `c559932a5ebef00bfa7752511799fd904e5c9dbe` makes a negative release boundary mean
+  persistent hold until process exit; release without a hold remains invalid. Thirteen static land
+  contract tests pass, and Unity 6000.5.10f1 rebuilt the Linux player successfully.
+- E036: **TESTED/PASS CALIBRATION ONLY, NOT A COUNTABLE STUDY EPISODE**. The hold was scheduled at
+  simulation time 15.020 s and applied at 15.040 s; `mobilityHeld=true`,
+  `mobilityReleased=false`, and the former exception is absent. The action aborted after 0.123 m.
+- The generic worker summary is `valid=false` only because its default expected action status was
+  success; action outcome was explicitly outside the predeclared calibration pass rule. Raw
+  robot-visible and evaluator-only artifacts are retained and checkpointed under e036.

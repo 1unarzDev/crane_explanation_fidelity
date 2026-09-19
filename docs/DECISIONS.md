@@ -382,3 +382,18 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   sample. E035 remains a valid success-family replication.
 - Validity risk: terminal recovery/exhaustion collection remains unreliable until the intervention
   configuration path is diagnosed on fresh development runs.
+
+## 2026-09-19 — encode an omitted mobility release as a persistent hold
+
+- Decision: `--crane-land-mobility-hold-after N` with no release now holds planar mobility from
+  the fixed-time boundary until process exit. A release without a configured hold remains invalid.
+- Evidence: e032–e034 parsed the hold value but threw before scheduling because the implementation
+  required paired boundaries. The predeclared e036 full-stack calibration scheduled and applied
+  the corrected hold within one fixed tick and retained it through shutdown.
+- Alternatives: provide an arbitrary release after the worker deadline; encode infinity as a large
+  float; abandon persistent hold. Optional release states the intended semantics directly and
+  avoids deadline-dependent configuration.
+- RQ impact: enables repeatable terminal recovery/exhaustion instances without leaking the
+  evaluator-owned intervention into robot-visible evidence.
+- Validity risk: this is synthetic fault injection. Explanations may describe recorded BT
+  mechanism but must not claim a physical cause or identify the hidden intervention.
