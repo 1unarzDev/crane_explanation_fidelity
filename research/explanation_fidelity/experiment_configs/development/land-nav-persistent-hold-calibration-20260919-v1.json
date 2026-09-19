@@ -1,0 +1,40 @@
+{
+  "schema": "crane-development-calibration-predeclaration-v1",
+  "calibration_id": "land-nav-persistent-hold-calibration-20260919-v1",
+  "created_before_execution": true,
+  "purpose": "Verify the corrected optional-release contract at the full Unity/Nav2/capture seam before predeclaring another terminal-family batch.",
+  "split": "development-calibration-not-countable-study-episode",
+  "run_id": "land-nav-20260919-e036",
+  "configuration": {
+    "scene": "TurtleBot3 Warehouse Validation",
+    "platform": "turtlebot3-waffle-differential",
+    "seed_base": 1036,
+    "corridor_width_m": 4.0,
+    "corridor_length_m": 22.0,
+    "goal_distance_m": 3.5,
+    "blocker": "none",
+    "mobility_hold_after_fixed_simulation_s": 15.0,
+    "mobility_release_after_fixed_simulation_s": null,
+    "fixture_delay_s": 15,
+    "action_duration_s": 45,
+    "worker_duration_s": 60,
+    "time_scale": 1.0,
+    "ros_domain_id": 76,
+    "ros_tcp_port": 10076
+  },
+  "software": {
+    "crane_checkout_commit": "c559932a5ebef00bfa7752511799fd904e5c9dbe",
+    "crane_explain_ros_commit": "9ab4f320bdccee468de77ce4b17762853d3ccf93"
+  },
+  "player_artifact": {
+    "unity_version": "6000.5.10f1",
+    "build_guid": "9fe01e68b8764d0f87d9823200f59aa4",
+    "executable_sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+    "build_manifest_sha256": "e0d9db5815da621c3eb6880bcb80019919eb87d8f353826c223967b70d77e1a7",
+    "scripts_assembly_sha256": "5f1431fc26158cfdf87ecaa490d094be5d2e5ec7dedb5a2ad010cee1be24b1e2",
+    "physics_assembly_sha256": "de9618a257ec5d856e3759772afabd9309235ea8a13d8b315ebcccc15e5897ac"
+  },
+  "pass_rule": "Pass only if evaluator truth records a positive scheduled hold time, mobilityHeld=true, a nonnegative actual hold time at or after the scheduled boundary, mobilityReleased=false, and the player log contains CRANE_LAND_MOBILITY_HELD without the former paired-boundary ArgumentException.",
+  "navigation_outcome_rule": "Retain and report the action/BT outcome, but do not use it for study inclusion or tune this calibration after observation.",
+  "next_step_rule": "Predeclare a fresh independent batch only after this calibration passes. If it fails, diagnose without rerunning e036."
+}
