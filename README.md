@@ -28,11 +28,11 @@ their own location. Exact repository commits and destinations are recorded in
   deterministic fallback, Dock/Slalom regressions, terminal-status distinctions, and the A/B/C/D/E
   harness (17 tests).
 - **TESTED:** ROS package tests, Jazzy build, live BT/action/harness capture, and exact BT retention.
-- **TESTED:** CRANE build and one valid, terminal-success NavigateToPose capture pilot after adequate
-  lifecycle startup margin.
+- **TESTED:** CRANE build, one valid aquatic terminal-success capture pilot, and one graphics-free
+  land/Ackermann NavigateToPose smoke at real-time factor 1.00003.
 - **TESTED (PIPELINE SMOKE):** A/B/C/D/E over that real episode with a rule-based generator; all
   five answers were identical, so this is not an LLM comparison or evidence for RQ1/RQ2.
-- **NOT_RUN:** failure/recovery scenario collection and the main powered land benchmark.
+- **NOT_RUN:** land failure/recovery collection and the main powered benchmark.
 - **DEFERRED:** arbitrary-LLM proposition extraction until independently evaluated.
 
 ## CPU-only demo
@@ -72,6 +72,17 @@ Run the existing full Nav2 fixture from the umbrella root:
 ```bash
 packages/crane_ml/Tools/Performance/run_nav2_controller_fixture.sh
 ```
+
+For graphics-free land development, use the dedicated Ackermann/LaserScan corridor fixture. It
+selects `Land Vehicle Validation`, `train-cpu`, `-batchmode`, and `-nographics`; it does not open
+the aquatic Unity window:
+
+```bash
+packages/crane_ml/Tools/Performance/run_land_nav2_fixture.sh
+```
+
+The default 3 m goal is a vertical-slice check, not a powered-study scenario. Raw fixture output is
+ignored and evaluator-only unless explicitly transformed into a governed benchmark artifact.
 
 After each validated run, generate a content-free data manifest and commit the exact component
 pointers:

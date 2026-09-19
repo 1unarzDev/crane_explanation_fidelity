@@ -56,3 +56,9 @@ The first real capture (`nav2-capture-20260919-p03`) is a terminal-success pipel
 single recovery-count question is not a benchmark sample for RQ1/RQ2 because the direct generator
 was rule-based and every condition returned the same correct sentence. It demonstrates artifact
 flow and information parity while showing that recovery-free factual questions alone are too easy.
+
+The graphics-free land vertical slice now executes a physically constrained Ackermann rover with
+odometry, TF, LaserScan, and Nav2. Its successful no-blocker run is infrastructure validation only:
+it has no explanation capture or condition outputs, and two preceding client-deadline runs remain
+recorded as invalid calibration attempts. Obstacle/recovery episodes must wait until costmap
+observation and evaluator-only collision/intervention truth pass the full contract above.

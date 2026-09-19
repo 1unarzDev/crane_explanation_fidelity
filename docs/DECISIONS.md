@@ -111,3 +111,17 @@
 - RQ impact: directly expands terminal-failure and misleading-premise coverage for RQ2–RQ4.
 - Validity risk: richer software-mechanism explanations still require parsing exact BT transitions;
   terminal status alone remains level-1 evidence.
+
+## 2026-09-19 — preserve Ackermann constraints in the headless land fixture
+
+- Decision: use the existing PhysX Ackermann rover with a stamped, fixed-step ROS adapter; do not
+  emulate Nav2 spin commands by rotating the transform or by inventing lateral actuation.
+- Evidence: the first land smoke moved under wheel physics but later stopped when the controller
+  requested near-zero linear velocity; an Ackermann rover cannot physically turn in place.
+- Alternatives: reuse the aquatic holonomic controller; force a minimum crawl; directly manipulate
+  pose; replace the rover with differential drive.
+- RQ impact: execution explanations remain grounded in the actual embodiment, and recovery
+  failures caused by incompatible behaviors can be represented honestly.
+- Validity risk: stock recovery trees containing Spin may be structurally incompatible. Before
+  powered collection, either configure an Ackermann-valid recovery tree and record its exact XML,
+  or treat incompatibility as a deliberately scoped mechanism—not a generic navigation failure.

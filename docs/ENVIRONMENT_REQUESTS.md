@@ -15,11 +15,12 @@ detail, new perception stacks, or competition semantics unless the contract requ
   CRANE land/Ackermann implementation if it can accept `cmd_vel` and publish odometry, TF, and
   LiDAR without more than one day of adaptation; otherwise use the smallest differential-drive
   body.
-- **Current CRANE substrate:** `Land Vehicle Validation` already contains a repeat-validated 60 kg
-  four-wheel `AckermannRoverDynamics` body and supports graphics-free `train-cpu`, but its current
-  runner is an analytic acceleration/coast/brake/turn fixture. The scene does not yet provide the
-  complete Nav2 odometry/TF/LiDAR/command contract or randomized corridor generator. Reuse the
-  dynamics only if adding those interfaces is cheaper than importing a standard rover world.
+- **Current CRANE substrate:** **IMPLEMENTED/DEVELOPMENT-TESTED.** `Land Vehicle Validation`
+  contains a repeat-validated 60 kg four-wheel `AckermannRoverDynamics` body; the new runtime
+  bootstrap adds authoritative odometry/TF, stamped fixed-step commands, 360-degree LaserScan, and
+  a seeded primitive corridor under graphics-free `train-cpu`. A 3 m no-blocker NavigateToPose
+  smoke succeeds. Costmap observation, obstacle intervention/reset, collision truth, and recovery
+  variants remain incomplete, so this does not yet satisfy the final-collection contract.
 - **Runtime:** non-aquatic `train-cpu`, graphics-free when supported. Do not use the aquatic
   `Roboboat Course` as the high-throughput primary environment: its HDRP water requires a real
   windowed Vulkan loop.

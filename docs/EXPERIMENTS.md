@@ -110,3 +110,32 @@
   distinct from BT timeout and physical failure; abort status alone cannot license a physical cause;
   success does not imply every intermediate branch succeeded.
 - Tests: **TESTED/PASS**, 17 CPU-only tests. No new robot episode or model response was generated.
+
+## 2026-09-19 — graphics-free land/Nav2 vertical slice
+
+- Motivation: the aquatic fixture necessarily opened a Vulkan window to keep HDRP water queries
+  valid, and its 0.5 m goal looked stationary. It is unsuitable for high-throughput headless data
+  collection; this is not evidence that the aquatic simulation was frozen.
+- Implementation: added a dedicated `train-cpu`/`-batchmode`/`-nographics` launcher, runtime
+  deterministic corridor and 360-degree LaserScan bootstrap, fixed-step stamped Ackermann command
+  adapter, land body support in authoritative odometry/TF, and a LaserScan Nav2 configuration.
+- Unity build: **TESTED/PASS** with 6000.5.10f1; Linux worker 551,487,081 bytes; build manifest
+  asset-set SHA-256 `81E9250CF6728C0DABC26F81CD56A6BCB47CDAF9A80CD2CC91E7DF3EECD86421`.
+- Fixed smoke inputs: seed 1000; no blocker; 4 m corridor width; ROS domain 42; 30 s benchmark;
+  3 s warmup; 8 s fixture delay; NavigateToPose; no visual rendering. These are development
+  calibration runs, not independent study episodes.
+- p01: **TESTED/INVALID**. The 8 m goal hit the explicit 20 s client deadline after moving 4.12 m;
+  the harness canceled the action. RTF 1.00003; 301 LiDAR scans; no stale/failed observations.
+  This is a client deadline, not a BT timeout or demonstrated navigation failure.
+- p02: **TESTED/INVALID**. A 3 m goal ended 0.47 m from the target under the original 0.35 m
+  position tolerance and hit the same client deadline. Final heading error was 17.6 degrees,
+  within the configured yaw tolerance. No result was relabeled.
+- p03: **TESTED/PASS DEVELOPMENT SMOKE** after predeclaring a single 0.55 m position tolerance,
+  proportionate to the 1.35 m-wide rover and below its 0.75 m costmap radius. The action succeeded
+  in 4.91 s; displacement 2.63 m; 38 accepted and zero rejected/stale actions; 301 LiDAR scans;
+  zero failed/stale observations; RTF 1.00003; no Unity window opened.
+- Known gaps: the fixture subscriber observed zero costmap messages even though Nav2 configured
+  both obstacle layers on `/scan`; resolve the costmap QoS/topic before obstacle/recovery pilots.
+  Ackermann cannot execute zero-linear-velocity spin commands, so longer/curved scenarios require
+  controller/recovery design rather than unphysical in-place rotation. No explanation capture or
+  A/B/C/D/E response was produced, so the material-error sample remains 0 and no effect exists.

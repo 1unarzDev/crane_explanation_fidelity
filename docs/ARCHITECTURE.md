@@ -30,6 +30,13 @@ spectator cameras but retains a task sensor camera, so the window is not a prese
 short 0.5 m goal may appear nearly stationary. Primary high-throughput land collection should use
 the non-aquatic `train-cpu` path rather than weakening aquatic physics or sensors.
 
+The land vertical slice uses the existing PhysX `AckermannRoverDynamics`, a fixed-step stamped ROS
+command adapter, authoritative odometry/TF, and a runtime-mounted 2D laser in a deterministic
+corridor. `run_land_nav2_fixture.sh` explicitly selects `Land Vehicle Validation`, `train-cpu`,
+`-batchmode`, and `-nographics`. It does not grant Ackermann vehicles an unphysical turn-in-place;
+recovery behavior must respect that embodiment. Corridor parameters written by the runtime
+bootstrap are evaluator-only and must never enter explanation prompts.
+
 ## Evidence levels
 
 1. recorded sequence;
