@@ -82,3 +82,11 @@ The single-episode development result falsified the assumption that checked outp
 more informative: C/D/E omitted the supported `Wait`-success fact on the misleading-premise
 question, while B covered all 16 provisional gold information units. This is a design signal to
 improve plan content before freeze, not permission to tune against final-test answers.
+
+The corrected three-episode pilot adds e007 unblocked success and e009 independently configured
+partial-blocker terminal exhaustion. It also separates exact recovery-count completeness from
+whole-BT transition completeness because the Nav2 topic stream omitted final node transitions on
+both success and abort. The provisional result remains mixed: A made one unsupported false-premise
+classification, while checked methods made no material errors but falsely abstained when complete
+e007 evidence established that recovery never occurred. Risk must therefore remain paired with
+coverage; zero observed checked errors is not yet evidence that D dominates B or E.

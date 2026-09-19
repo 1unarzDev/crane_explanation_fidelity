@@ -1,0 +1,28 @@
+{
+  "schema": "crane-explain-model-artifact-manifest/v1",
+  "status": "DEVELOPMENT_ONLY",
+  "episode_ids": [
+    "land-nav-20260919-e004-worker-0",
+    "land-nav-20260919-e007-worker-0",
+    "land-nav-20260919-e009-worker-0"
+  ],
+  "provider": "codex-lb-via-chatgpt-login",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "low",
+  "single_sample_no_retry": true,
+  "logical_condition_outputs": 90,
+  "model_mediated_condition_outputs": 72,
+  "unique_model_calls_referenced": 47,
+  "cache_root": "research/explanation_fidelity/model_cache/dev-e004-gpt56sol-low",
+  "cache_inventory": {"file_count": 68, "bytes": 250962, "sha256": "b5a8cbcca4d74ad2b884c1f6b7c006a413e9d8b982c5bc057c2e00b59bf4ea87", "algorithm": "sha256 over sorted relative-path, NUL, file-sha256, newline tuples", "includes_superseded_calls": true},
+  "accepted_output_inventories": [
+    {"root": "model_outputs/dev/land-nav-20260919-e004/revision2-parity-pass", "file_count": 12, "bytes": 58238, "sha256": "a667c97549a0747877c793d656232722692ebd54f0bffdb084226397677e3431"},
+    {"root": "model_outputs/dev/land-nav-20260919-e007/parity-pass", "file_count": 12, "bytes": 56096, "sha256": "6342a968aab774ec2236b06d44edd7fd5e936a70e55b33c696e3058e37e7f838"},
+    {"root": "model_outputs/dev/land-nav-20260919-e009/parity-pass", "file_count": 12, "bytes": 58668, "sha256": "f9a785f9d06f8c10968aba45fbacb1908c2ef69bba14b54fb53f8cd06ae015c8"}
+  ],
+  "usage_unique_calls": {"input_tokens": 648498, "cached_input_tokens": 409728, "output_tokens": 2218, "reasoning_output_tokens": 81, "aggregate_latency_ms": 284621.129692},
+  "cost_usd": null,
+  "cost_status": "not_reported_by_codex_cli_chatgpt_login",
+  "temperature": null,
+  "sampling_seed": null
+}

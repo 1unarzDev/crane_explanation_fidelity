@@ -1,0 +1,22 @@
+{
+  "schema": "crane-explain-development-summary/v2",
+  "status": "DEVELOPMENT_ONLY_NO_INFERENTIAL_STATISTICS",
+  "independent_episode_count": 3,
+  "responses_per_condition": 18,
+  "conditions": {
+    "A": {"material_error_rate": 0.05555555555555555, "substantive_answer_coverage": 0.8333333333333334, "answerable_information_coverage": 0.925, "false_abstention_rate": 0.0},
+    "B": {"material_error_rate": 0.0, "substantive_answer_coverage": 0.8333333333333334, "answerable_information_coverage": 0.925, "false_abstention_rate": 0.0},
+    "C": {"material_error_rate": 0.0, "substantive_answer_coverage": 0.7777777777777778, "answerable_information_coverage": 0.9, "false_abstention_rate": 0.05555555555555555, "template_fallback_rate": 0.5},
+    "D": {"material_error_rate": 0.0, "substantive_answer_coverage": 0.7777777777777778, "answerable_information_coverage": 0.9, "false_abstention_rate": 0.05555555555555555, "template_fallback_rate": 0.6111111111111112},
+    "E": {"material_error_rate": 0.0, "substantive_answer_coverage": 0.7777777777777778, "answerable_information_coverage": 0.9, "false_abstention_rate": 0.05555555555555555}
+  },
+  "paired_primary_development_observation": {
+    "comparison": "D versus A",
+    "A_error_D_correct": 1,
+    "A_correct_D_error": 0,
+    "response_level_risk_difference_D_minus_A": -0.05555555555555555,
+    "coverage_difference_D_minus_A": -0.05555555555555558,
+    "interpretation": "One favorable error discordance is offset by one false abstention and lower coverage. Three episode clusters are insufficient for inference or power estimation."
+  },
+  "next_design_action": "Add a checked no-recovery false-premise plan, collect more independent scenario mechanisms, then blind/adjudicate development annotations before simulation-based power planning."
+}

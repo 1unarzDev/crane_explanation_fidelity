@@ -1,0 +1,64 @@
+{
+  "schema": "crane-explain-development-annotation/v2",
+  "status": "DEVELOPMENT_ONLY_SINGLE_INTERNAL_ANNOTATOR_NOT_ADJUDICATED",
+  "supersedes": "land-nav-20260919-e004.json",
+  "supersession_reason": "The earlier rubric used whole-BT completeness for recovery counts. The corrected rule independently establishes complete recovery-count history from capture bounds, terminal result, monotonic feedback, goal identity, exact tree, and matching unique Wait entries.",
+  "episodes": [
+    {
+      "episode_id": "land-nav-20260919-e004-worker-0",
+      "family": "full-blocker-terminal-recovery-exhaustion",
+      "model_output_root": "model_outputs/dev/land-nav-20260919-e004/revision2-parity-pass",
+      "gold_information_units": 15,
+      "coverage_by_condition": {"A": 14, "B": 14, "C": 14, "D": 14, "E": 14}
+    },
+    {
+      "episode_id": "land-nav-20260919-e007-worker-0",
+      "family": "unblocked-success-zero-recovery",
+      "model_output_root": "model_outputs/dev/land-nav-20260919-e007/parity-pass",
+      "gold_information_units": 10,
+      "coverage_by_condition": {"A": 9, "B": 9, "C": 8, "D": 8, "E": 8}
+    },
+    {
+      "episode_id": "land-nav-20260919-e009-worker-0",
+      "family": "partial-blocker-terminal-recovery-exhaustion",
+      "model_output_root": "model_outputs/dev/land-nav-20260919-e009/parity-pass",
+      "gold_information_units": 15,
+      "coverage_by_condition": {"A": 14, "B": 14, "C": 14, "D": 14, "E": 14}
+    }
+  ],
+  "question_families_per_episode": 6,
+  "response_count_per_condition": 18,
+  "default_material_error": false,
+  "material_errors": [
+    {
+      "episode_id": "land-nav-20260919-e007-worker-0",
+      "question": "unsupported-counterfactual",
+      "condition": "A",
+      "error_types": ["unsupported-false-premise-classification"],
+      "text": "The premise is false: the recorded NavigateToPose action succeeded. The records do not establish what would have happened if an obstacle were absent.",
+      "rationale": "The action success is recorded, but robot-visible evidence does not establish that the question's implied obstacle was absent or that its premise was false. The hypothetical outcome is correctly withheld in the second sentence."
+    }
+  ],
+  "false_abstentions": [
+    {
+      "episode_id": "land-nav-20260919-e007-worker-0",
+      "question": "recovery-mechanism",
+      "conditions": ["C", "D", "E"],
+      "rationale": "Complete recovery-count evidence establishes exactly zero attempts, so the response should reject the premise that recovery occurred rather than abstain because transition evidence is absent."
+    }
+  ],
+  "condition_summary": {
+    "A": {"material_errors": 1, "substantive_answers": 15, "full": 10, "partial": 5, "abstain": 3, "information_units_covered": 37, "information_units_total": 40, "correct_counterfactual_abstentions": 3, "false_abstentions": 0},
+    "B": {"material_errors": 0, "substantive_answers": 15, "full": 10, "partial": 5, "abstain": 3, "information_units_covered": 37, "information_units_total": 40, "correct_counterfactual_abstentions": 3, "false_abstentions": 0},
+    "C": {"material_errors": 0, "substantive_answers": 14, "full": 9, "partial": 5, "abstain": 4, "information_units_covered": 36, "information_units_total": 40, "correct_counterfactual_abstentions": 3, "false_abstentions": 1, "verified_candidates": 9, "template_fallbacks": 9},
+    "D": {"material_errors": 0, "substantive_answers": 14, "full": 9, "partial": 5, "abstain": 4, "information_units_covered": 36, "information_units_total": 40, "correct_counterfactual_abstentions": 3, "false_abstentions": 1, "verified_candidates": 7, "template_fallbacks": 11},
+    "E": {"material_errors": 0, "substantive_answers": 14, "full": 9, "partial": 5, "abstain": 4, "information_units_covered": 36, "information_units_total": 40, "correct_counterfactual_abstentions": 3, "false_abstentions": 1}
+  },
+  "limitations": [
+    "Only three independent episodes and two broad outcome families are represented.",
+    "The annotator knew condition identity and authored the checked plans.",
+    "Question-level responses within an episode are correlated and are not independent samples.",
+    "The same abstract recovery trace appears in two terminal episodes, so lexical/model-output diversity is limited.",
+    "No confidence interval, significance test, equivalence claim, or final power target is justified."
+  ]
+}

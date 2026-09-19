@@ -340,3 +340,37 @@
   unblocked success, e009 partial-blocker terminal recovery/exhaustion. Only e004 has model outputs
   and annotation so far. Recovery-followed-by-success remains **NOT_RUN/BLOCKED ON SCENARIO
   CAPABILITY**, not a reason to delay terminal/success data collection.
+
+## 2026-09-19 — corrected three-episode A/B/C/D/E development pilot
+
+- Completeness correction: **TESTED**. Whole-BT transition completeness and recovery-count
+  completeness are now separate. E004/e009 have incomplete final node transitions but complete
+  recovery-count evidence through capture bounds, one accepted goal/result, matching goal IDs,
+  monotonic final feedback, exact XML, and matching unique `Wait` entries. E007 analogously
+  establishes exactly zero recoveries. The earlier e004 annotation and summary are retained with
+  explicit `SUPERSEDED` status rather than rewritten.
+- Model data: **TESTED/DEVELOPMENT ONLY**. E004, e007, and e009 each have six A/B/C/D/E outputs:
+  90 final responses total, 72 model-mediated. Forty-seven unique model calls are referenced after
+  cache reuse. No call was resampled. The combined cache/output hashes and usage are in
+  `manifests/model_outputs/land-nav-development-three-episode-gpt-5.6-sol.json`.
+- Provisional single-annotator result: A had 1/18 material errors (5.6%); B/C/D/E had 0/18. The A
+  error called the success counterfactual's premise false even though implied obstacle presence was
+  only unestablished. D-vs-A therefore has one favorable and zero unfavorable error discordances,
+  far too little for inference.
+- Coverage result: **NEGATIVE/MIXED**. A/B substantive coverage was 15/18 (83.3%) and provisional
+  information coverage 37/40 (92.5%). C/D/E substantive coverage was 14/18 (77.8%) and information
+  coverage 36/40 (90%). On the e007 false-premise recovery question, C/D/E abstained because no
+  recovery transitions existed even though complete recovery evidence established exactly zero;
+  A/B correctly rejected the premise. C fallback was 9/18 and D fallback 11/18 under the strict
+  exact-sentence verifier. The checked method has not yet demonstrated a favorable risk/coverage
+  tradeoff over B.
+- Statistical status: independent evaluated episodes = 3; outcome families = success and terminal
+  recovery/exhaustion; recovery-success remains absent. No confidence interval, significance test,
+  equivalence statement, ICC estimate, or defensible power target is reported. The next plan fix
+  is predeclared from this development error: reject a recovery premise when complete evidence says
+  zero, then collect additional mechanisms before blind/adjudicated pilot annotation.
+- Follow-up plan fix: **IMPLEMENTED/TESTED AFTER RETAINING PILOT OUTPUTS**. Core revision
+  `d5a7c019f7efe078f9080f356014f028abb1a045` uses complete zero-recovery evidence to state that
+  exactly zero attempts occurred and reject the premise that the BT entered recovery. Twenty-three
+  core tests pass. The 90-response pilot was not regenerated, so the observed false abstention
+  remains auditable evidence of the pre-fix behavior.
