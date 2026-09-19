@@ -85,6 +85,12 @@ all 18 A/B parity audits pass. e020 succeeded with zero recoveries and is retain
 expected-outcome mismatch rather than relabeled as another success-family episode. These three
 additional clusters improve sample size but must not be described as three new failure mechanisms.
 
+The predeclared e024–e027 balanced batch adds e024 as a second TurtleBot3 unblocked-success instance
+and e027 as an Ackermann client-deadline/cancellation instance. E025 is retained/excluded because it
+reached the client deadline instead of the predeclared terminal abort; e026 is retained/excluded
+because its immediate planning abort had no costmap observation and failed the capture-quality gate.
+Neither excluded run is rerun, tuned, or relabeled. All 12 A/B parity audits for e024/e027 pass.
+
 `land-nav-20260919-e004` is the first included recovery-bearing model pilot. It terminated with a
 real NavigateToPose `aborted` result before the client deadline and recorded two completed `Wait`
 recoveries. Because the BT topic lacks the terminal transition for a third `FollowPath` start, its

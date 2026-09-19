@@ -1,0 +1,75 @@
+{
+  "schema": "crane-explain-model-artifact-manifest/v2",
+  "status": "DEVELOPMENT_ONLY",
+  "episode_ids": [
+    "land-nav-20260919-e001-worker-0", "land-nav-20260919-e004-worker-0",
+    "land-nav-20260919-e007-worker-0", "land-nav-20260919-e009-worker-0",
+    "land-nav-20260919-e010-worker-0", "land-nav-20260919-e019-worker-0",
+    "land-nav-20260919-e021-worker-0", "land-nav-20260919-e022-worker-0",
+    "land-nav-20260919-e023-worker-0", "land-nav-20260919-e024-worker-0",
+    "land-nav-20260919-e027-worker-0"
+  ],
+  "provider": "codex-lb-via-chatgpt-login",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "low",
+  "single_sample_no_retry": true,
+  "logical_condition_outputs": 335,
+  "model_mediated_condition_outputs": 268,
+  "model_call_references": 335,
+  "unique_request_cache_keys_referenced": 159,
+  "new_unique_request_cache_keys": 32,
+  "physical_model_call_artifacts_referenced": 169,
+  "accepted_output_roots": [
+    "model_outputs/dev/land-nav-20260919-e004/revision2-parity-pass",
+    "model_outputs/dev/land-nav-20260919-e007/parity-pass",
+    "model_outputs/dev/land-nav-20260919-e009/parity-pass",
+    "model_outputs/dev/land-nav-20260919-e001/parity-pass-v2",
+    "model_outputs/dev/land-nav-20260919-e010/parity2-pass",
+    "model_outputs/dev/land-nav-20260919-e019/parity2-pass",
+    "model_outputs/dev/land-nav-20260919-e021/parity2-pass",
+    "model_outputs/dev/land-nav-20260919-e022/parity2-pass",
+    "model_outputs/dev/land-nav-20260919-e023/parity2-pass",
+    "model_outputs/dev/land-nav-20260919-e024/parity2-pass",
+    "model_outputs/dev/land-nav-20260919-e027/parity2-pass"
+  ],
+  "cache_roots": [
+    "research/explanation_fidelity/model_cache/dev-e004-gpt56sol-low",
+    "research/explanation_fidelity/model_cache"
+  ],
+  "physical_cache_inventory": {
+    "file_count": 169,
+    "bytes": 643661,
+    "sha256": "748e5de5a45a26e84e82cb2e397a7349e692a4bb77ad898e8d2d9a25ebaf8f25",
+    "algorithm": "sha256 over sorted cache-key@latency-ms.json, NUL, physical-file-sha256, newline tuples; exact latency matches each accepted output call reference"
+  },
+  "cache_key_collision_summary": {
+    "request_keys_with_multiple_referenced_physical_artifacts": 10,
+    "identical_raw_final_keys": 4,
+    "differing_raw_final_keys": 6,
+    "interpretation": "Concurrent single-sample requests independently materialized before the shared cache was populated. Every referenced physical artifact is retained; none was selected by quality or treated as a retry."
+  },
+  "new_output_inventory": {
+    "roots": [
+      "model_outputs/dev/land-nav-20260919-e024/parity2-pass",
+      "model_outputs/dev/land-nav-20260919-e027/parity2-pass"
+    ],
+    "file_count": 12,
+    "bytes": 58761,
+    "sha256": "ce186cf6bce94bea0e69ec5d39c1ef444f08a20f7840bc877a77d4e519a84b6b",
+    "algorithm": "sha256 over sorted episode-directory/parity-directory/file-name, NUL, file-sha256, newline tuples"
+  },
+  "prior_accepted_manifest": "manifests/model_outputs/land-nav-development-nine-episode-gpt-5.6-sol.json",
+  "usage_physical_call_artifacts": {
+    "input_tokens": 2336067,
+    "cached_input_tokens": 1738240,
+    "output_tokens": 8182,
+    "reasoning_output_tokens": 114,
+    "aggregate_latency_ms": 1102958.732102
+  },
+  "cost_usd": null,
+  "cost_status": "not_reported_by_codex_cli_chatgpt_login",
+  "temperature": null,
+  "sampling_seed": null,
+  "retained_negative_result": "E024-A repeats the unsupported false-premise classification and e027-A repeats unsupported deadline causality. No output was resampled or repaired after review.",
+  "reproducibility_note": "Unique request keys and physical artifacts are counted separately so concurrent duplicate materializations remain auditable."
+}

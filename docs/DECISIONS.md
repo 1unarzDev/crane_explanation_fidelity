@@ -1,5 +1,21 @@
 # Decision Log
 
+## 2026-09-19 — stop reference-environment expansion and resume balanced collection
+
+- Decision: treat the TurtleBot3, F1TENTH, PX4, and Clearpath reference-environment suite as
+  sufficient for the paper's current claims. Use the root-relative graphics-free validator for
+  regressions, but spend subsequent engineering time on independent episodes and annotation.
+- Evidence: PX4 Walls and Clearpath Pipeline both passed current headless geometry/physics/semantic
+  checks. In the predeclared e024–e027 batch, e024/e027 added valid success/cancellation clusters,
+  while e025 missed its terminal-outcome family and e026 failed the costmap quality gate.
+- Alternatives: add another Gazebo conversion, import AWSIM/Flightmare art, or tune/rerun the two
+  excluded instances.
+- RQ impact: the valid runs increase the development sample to 11 clusters; retaining both invalid
+  runs protects the stopping rule and makes scenario-generation failure visible.
+- Validity risk: the sample is still unblinded and underpowered, and added instances repeat existing
+  mechanisms. The next collection must continue balancing families rather than counting variants as
+  new mechanisms.
+
 ## 2026-09-19 — stop expanding the mobility-hold family and distinguish physical model calls
 
 - Decision: after e021–e023, collect the next batch across existing terminal-exhaustion,

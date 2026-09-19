@@ -1,5 +1,34 @@
 # Experiment Log
 
+## 2026-09-19 — predeclared balanced batch e024–e027 and eleven-episode audit
+
+- The four scenario instances were committed before execution in
+  `research/explanation_fidelity/experiment_configs/development/land-nav-balanced-batch-20260919-v1.json`.
+  E024/e027 are included; e025/e026 are retained and excluded without rerun, tuning, or relabeling.
+- **TESTED/PASS INCLUDED:** e024 was a TurtleBot3 unblocked success in 7.883 s with 1.729 m
+  displacement, zero recoveries, 25 costmap observations, and RTF 1.000023. E027 was an Ackermann
+  client-deadline/cancellation instance: fixture timeout 8.033 s, captured terminal action status
+  canceled, explicit deadline and cancel events, 0.450 m displacement, zero recoveries, 23 costmap
+  observations, and RTF 1.000037.
+- **TESTED/RETAINED EXCLUDED:** e025 reached its 35.029 s client deadline instead of the predeclared
+  terminal recovery-exhaustion abort. E026 aborted after 0.412 s with the expected planning family,
+  but zero costmap observations made its navigation-reset quality report invalid.
+- All 12 parity audits pass. The 12 question instances produced 60 A/B/C/D/E responses with one
+  sample per model-mediated request and no quality-based retries. E024-A repeats the unsupported
+  obstacle-premise classification; e027-A repeats an unsupported deadline→cancellation causal
+  relationship. B/C/D/E add no new error in this batch.
+- Eleven-episode development totals are 67 responses per condition (335 total): A 4/67 material
+  errors, B 0/67, C/D/E 1/67 each. A/B substantive coverage is 56/67 and information coverage
+  141/151; C/D/E are 55/67 and 133/151. These remain unblinded descriptive results.
+- The cumulative artifact audit passes with 159 unique request keys, 169 referenced physical cache
+  artifacts, and exact usage retained in
+  `manifests/model_outputs/land-nav-development-eleven-episode-gpt-5.6-sol.json`. Ten request keys
+  have multiple referenced physical artifacts due to concurrent cache materialization; all are
+  retained, including six keys whose sampled final text differs. No artifact was selected by quality.
+- Robot-visible/evaluator-only manifests and run checkpoints were created for all four runs. Raw
+  captures and model outputs remain outside Git. Current sample size is 11 included independent
+  episodes versus the provisional 60 target and 50 minimum.
+
 ## 2026-09-19 — predeclared recovery-success batch e020–e023
 
 - Configuration was recorded locally before execution in

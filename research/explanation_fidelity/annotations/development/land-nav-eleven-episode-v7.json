@@ -1,0 +1,32 @@
+{
+  "schema": "crane-explain-development-annotation/v7",
+  "status": "DEVELOPMENT_ONLY_SINGLE_INTERNAL_ANNOTATOR_NOT_ADJUDICATED",
+  "supersedes": "land-nav-nine-episode-v6.json",
+  "independent_episode_count": 11,
+  "response_count_per_condition": 67,
+  "new_batch_annotation": "land-nav-balanced-batch-v2.json",
+  "episodes_added": [
+    {"episode_id": "land-nav-20260919-e024-worker-0", "family": "turtlebot3-unblocked-success-zero-recovery", "question_count": 6},
+    {"episode_id": "land-nav-20260919-e027-worker-0", "family": "ackermann-client-deadline-cancellation-zero-recovery", "question_count": 6}
+  ],
+  "excluded_related_runs_added": [
+    {"episode_id": "land-nav-20260919-e025-worker-0", "reason": "Expected-outcome mismatch: client deadline, not predeclared terminal abort."},
+    {"episode_id": "land-nav-20260919-e026-worker-0", "reason": "Capture-quality failure: no costmap observations despite expected planning abort."}
+  ],
+  "condition_summary": {
+    "A": {"material_errors": 4, "responses": 67, "substantive_answers": 56, "information_units_covered": 141, "information_units_total": 151, "correct_counterfactual_abstentions": 11, "false_abstentions": 0},
+    "B": {"material_errors": 0, "responses": 67, "substantive_answers": 56, "information_units_covered": 141, "information_units_total": 151, "correct_counterfactual_abstentions": 11, "false_abstentions": 0},
+    "C": {"material_errors": 1, "responses": 67, "substantive_answers": 55, "information_units_covered": 133, "information_units_total": 151, "correct_counterfactual_abstentions": 11, "false_abstentions": 1},
+    "D": {"material_errors": 1, "responses": 67, "substantive_answers": 55, "information_units_covered": 133, "information_units_total": 151, "correct_counterfactual_abstentions": 11, "false_abstentions": 1},
+    "E": {"material_errors": 1, "responses": 67, "substantive_answers": 55, "information_units_covered": 133, "information_units_total": 151, "correct_counterfactual_abstentions": 11, "false_abstentions": 1}
+  },
+  "development_only_rates": {
+    "A": {"material_error_rate": 0.0597014925, "substantive_answer_coverage": 0.8358208955, "answerable_information_coverage": 0.9337748344},
+    "B": {"material_error_rate": 0.0, "substantive_answer_coverage": 0.8358208955, "answerable_information_coverage": 0.9337748344},
+    "C": {"material_error_rate": 0.0149253731, "substantive_answer_coverage": 0.8208955224, "answerable_information_coverage": 0.8807947020},
+    "D": {"material_error_rate": 0.0149253731, "substantive_answer_coverage": 0.8208955224, "answerable_information_coverage": 0.8807947020},
+    "E": {"material_error_rate": 0.0149253731, "substantive_answer_coverage": 0.8208955224, "answerable_information_coverage": 0.8807947020}
+  },
+  "interpretation": "The strong structured direct baseline B still has zero observed errors at the same coverage as A. Checked C/D/E retain one earlier planner-scope error and lower coverage. This unblinded development sample is not evidence for statistical significance or equivalence.",
+  "limitations": ["Only 11 independent episode clusters are included versus the current 50 minimum/60 target.", "Annotations are unblinded and not adjudicated.", "Question responses within episodes are not independent.", "Prompts, verifier threshold, provider, and final split are not frozen."]
+}

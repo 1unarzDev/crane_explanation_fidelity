@@ -1,0 +1,59 @@
+{
+  "schema": "crane-explain-development-batch-annotation/v2",
+  "status": "DEVELOPMENT_ONLY_SINGLE_INTERNAL_ANNOTATOR_NOT_ADJUDICATED",
+  "predeclaration": "research/explanation_fidelity/experiment_configs/development/land-nav-balanced-batch-20260919-v1.json",
+  "included_episodes": [
+    {
+      "episode_id": "land-nav-20260919-e024-worker-0",
+      "family": "turtlebot3-unblocked-success-zero-recovery",
+      "model_output_root": "model_outputs/dev/land-nav-20260919-e024/parity2-pass",
+      "output_inventory": {"file_count": 6, "bytes": 28984, "sha256": "189291f4d3b9890b8c72a9b34fadc96f64e3fe9efca97bc2eb77b64867a62877"},
+      "gold_information_units": 10,
+      "coverage_by_condition": {"A": 9, "B": 9, "C": 9, "D": 9, "E": 9}
+    },
+    {
+      "episode_id": "land-nav-20260919-e027-worker-0",
+      "family": "ackermann-client-deadline-cancellation-zero-recovery",
+      "model_output_root": "model_outputs/dev/land-nav-20260919-e027/parity2-pass",
+      "output_inventory": {"file_count": 6, "bytes": 29777, "sha256": "cc43f41bac66a59d28a583e103e94feaef56ea6034b7f3f8943586d0142a5a68"},
+      "gold_information_units": 14,
+      "coverage_by_condition": {"A": 13, "B": 13, "C": 13, "D": 13, "E": 13}
+    }
+  ],
+  "excluded_predeclared_instances": [
+    {
+      "episode_id": "land-nav-20260919-e025-worker-0",
+      "reason": "Predeclared terminal recovery exhaustion reached the 35 s client deadline instead of a terminal abort. Retained as an expected-outcome mismatch; not rerun or relabeled."
+    },
+    {
+      "episode_id": "land-nav-20260919-e026-worker-0",
+      "reason": "The action aborted with the expected planning code, but zero costmap observations made the capture-quality gate invalid. Retained; not rerun or tuned."
+    }
+  ],
+  "model": {"provider": "codex-lb-via-chatgpt-login", "name": "gpt-5.6-sol", "reasoning_effort": "low", "single_sample_no_retry": true},
+  "evidence_checks": {"information_parity_audits": 12, "information_parity_passes": 12, "recovery_history_complete_each": true, "exact_recovery_count_each": 0, "physical_cause_established_each": false},
+  "material_errors": [
+    {
+      "episode_id": "land-nav-20260919-e024-worker-0",
+      "question": "unsupported-counterfactual",
+      "condition": "A",
+      "error_types": ["unsupported-false-premise-classification"],
+      "rationale": "Recorded success does not establish that the question's implied obstacle premise is false. The hypothetical outcome was correctly withheld in the second sentence."
+    },
+    {
+      "episode_id": "land-nav-20260919-e027-worker-0",
+      "question": "terminal-status",
+      "condition": "A",
+      "error_types": ["unsupported-causal-relationship"],
+      "rationale": "The evidence records deadline, cancellation request, and canceled result in sequence but does not encode the deadline as the cause of cancellation."
+    }
+  ],
+  "condition_summary": {
+    "A": {"material_errors": 2, "responses": 12, "substantive_answers": 10, "information_units_covered": 22, "information_units_total": 24, "correct_counterfactual_abstentions": 2, "false_abstentions": 0},
+    "B": {"material_errors": 0, "responses": 12, "substantive_answers": 10, "information_units_covered": 22, "information_units_total": 24, "correct_counterfactual_abstentions": 2, "false_abstentions": 0},
+    "C": {"material_errors": 0, "responses": 12, "substantive_answers": 10, "information_units_covered": 22, "information_units_total": 24, "correct_counterfactual_abstentions": 2, "false_abstentions": 0},
+    "D": {"material_errors": 0, "responses": 12, "substantive_answers": 10, "information_units_covered": 22, "information_units_total": 24, "correct_counterfactual_abstentions": 2, "false_abstentions": 0},
+    "E": {"material_errors": 0, "responses": 12, "substantive_answers": 10, "information_units_covered": 22, "information_units_total": 24, "correct_counterfactual_abstentions": 2, "false_abstentions": 0}
+  },
+  "limitations": ["The annotator knew condition identity and authored the checked planner.", "Two included episode clusters are descriptive development evidence, not an inferential sample.", "The repeated baseline errors occurred in question families already represented in development data."]
+}
