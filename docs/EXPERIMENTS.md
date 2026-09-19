@@ -1,5 +1,32 @@
 # Experiment Log
 
+## 2026-09-19 — differential corridor qualification and Ackermann calibration stop
+
+- CRANE revision `6a2d22c2bc55b582f60c362ec2d4310626152051`; Unity 6000.5.10f1; ROS 2
+  Jazzy image `lunarzdev/astro:cuda`. Unity licensing recovered after removing more than 9 GB of
+  explicitly identified, reproducible `/tmp` build products; governed workspace data was not
+  removed. The nine-scene Linux worker then built successfully in batch mode.
+- **TESTED/PASS:** predeclared calibration-only e015 ran the existing TurtleBot3 Waffle-class
+  differential base in the controlled 4 m corridor, entirely with `-nographics`. It reached the
+  2 m goal in 6.126 s with terminal `succeeded`, zero feedback recoveries, 59 controller commands,
+  297 odometry messages, 176 LiDAR scans, and 22 costmap observations (maximum 11,467 occupied
+  cells). Displacement was 1.469 m, consistent with the configured 0.55 m goal tolerance. RTF was
+  1.00003; no stale, rejected, cross-episode, or failed observations were reported.
+- **TESTED/PASS:** passive capture brackets one accepted goal and its successful result with the
+  exact BT XML and a final monotonic recovery count of zero. Evaluator-only truth separately
+  records platform `turtlebot3-waffle-differential`, no blocker, seed 1015, and canonical corridor
+  geometry. e015 remains calibration-only and does not increase the five-episode primary sample.
+- **TESTED/NEGATIVE:** e011–e014 showed that the longer-goal Ackermann corridor repeatedly drifts
+  or stalls: e011's timed blocker was removed but the run timed out after two successful Wait
+  recoveries; e012/e013 timed out after 3.41/3.97 m displacement; e014 still timed out after raising
+  minimum approach velocity and exhibited 1.08 m lateral drift. These retained runs do not support
+  a simple low-speed actuation-floor explanation.
+- Decision: stop tuning deadlines or approach speed to force Ackermann success. Use the validated
+  differential platform for controlled recovery collection while retaining Ackermann/F1TENTH as
+  an embodiment-specific deterministic benchmark. Current included analysis remains five episode
+  clusters and 31 responses per condition; development-only material errors remain A 2/31 and
+  B/C/D/E 0/31, with no inferential claim.
+
 ## 2026-09-19 — timed land-blocker intervention implementation
 
 - CRANE base commit `5b5073c615c2e10a85e99d81d41365b61b1d6cd5`; Unity target 6000.5.10f1.
@@ -10,16 +37,16 @@
 - **TESTED/PASS:** 10 land-launch/bootstrap static contracts, five F1TENTH converter tests, the SDF
   converter suite, 24 core explanation tests, `git diff --check`, and a single-process C# build of
   `PhysicsAssembly.csproj` after including the new source in Unity's generated project file.
-- **BLOCKED:** the authoritative Unity player build repeatedly lost the Unity Licensing Client,
+- **SUPERSEDED BLOCKER:** the authoritative Unity player build repeatedly lost the Unity Licensing Client,
   reported `com.unity.editor.headless` unavailable, and was stopped cleanly with exit 130 after no
   valid build verdict. No runtime/Nav2 recovery-success claim is made and no e011 episode was
   collected.
 - The Clearpath offline-import documentation now uses `unity run ... -- -nographics`; `unity run`
   already owns batch/quit flags. This avoids the unnecessary visible window that had looked like
   an unmoving simulation. Offline scene construction is explicitly not a robot-motion test.
-- Explanation-evaluation sample remains five independent episode clusters. Next executable task:
-  restore Unity licensing, build, then predeclare and run e011 as recovery-success without
-  relabeling the outcome if the intervention timing fails.
+- At that checkpoint the next task was to restore licensing and run e011. Licensing later recovered,
+  e011 was retained as a failed calibration, and e015 subsequently qualified the differential path
+  as documented above.
 
 ## 2026-09-19 — Clearpath pipeline offline Unity import
 

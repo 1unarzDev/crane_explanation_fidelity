@@ -156,9 +156,13 @@ by the existing land corridor bootstrap. The boundary is measured from the scene
 fixed simulation clock, not goal acceptance. The configured offset, scheduled simulation time,
 actual removal time, geometry, and semantic ID are written only to the evaluator-owned truth file;
 the collider and renderer are deactivated as one authoritative object. Corridor walls and the
-blocker now carry stable semantic IDs. This is **IMPLEMENTED / C#-COMPILE-TESTED** but runtime
-Nav2 recovery-success validation is **BLOCKED** by the local Unity licensing client as of
-2026-09-19. It is a narrow launch-config seam, not yet the requested reset/service API.
+blocker now carry stable semantic IDs. This is **IMPLEMENTED / RUNTIME-TESTED**. The first timed
+removal pilot (e011) removed the blocker at the recorded simulation time and captured two Wait
+recoveries, but the Ackermann rover still timed out; it is retained as negative calibration rather
+than recovery-success evidence. A later headless TurtleBot3 differential smoke (e015) passed the
+action, sensor, costmap, transport, and capture gates. Recovery-followed-by-success remains
+**NOT_RUN** on that platform. This is a narrow launch-config seam, not yet the requested
+reset/service API.
 
 ### Collection target and acceptance
 

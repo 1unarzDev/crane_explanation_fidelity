@@ -1,5 +1,25 @@
 # Decision Log
 
+## 2026-09-19 — use the differential base for controlled corridor collection
+
+- Decision: run the controlled corridor's powered success/recovery study on CRANE's validated
+  TurtleBot3 Waffle-class differential base. Retain the Ackermann rover and F1TENTH environment as
+  explicit embodiment-specific benchmarks rather than continuing to tune the corridor around them.
+- Evidence: three longer unblocked Ackermann goals and one timed-removal run stalled or timed out;
+  increasing minimum approach velocity did not restore success and one run accumulated 1.08 m of
+  lateral drift. Under the same capture/Nav2 architecture, predeclared e015 reached a 2 m goal with
+  a successful terminal result, populated costmaps, complete capture boundaries, and zero recovery.
+- Alternatives: keep extending deadlines; force minimum throttle; directly manipulate pose; modify
+  the planner/controller until this one corridor succeeds; abandon recognizable platforms.
+- RQ impact: provides a working path to independent recovery-success episodes while keeping actual
+  execution evidence grounded in platform semantics. The representation and verification methods
+  remain unchanged.
+- Validity risk: switching embodiments after development calibration can confound comparisons if
+  mixed indiscriminately. Freeze and split scenario families by platform, and never count e015 as
+  final or retroactively relabel the failed Ackermann runs.
+- Revisit: only if an Ackermann-valid controller/path pairing is itself a predeclared research
+  condition and the work displaces no required differential data collection.
+
 ## 2026-09-19 — record binary provenance separately from checkout provenance
 
 - Decision: every new land capture records SHA-256 and byte size for the exact player executable,

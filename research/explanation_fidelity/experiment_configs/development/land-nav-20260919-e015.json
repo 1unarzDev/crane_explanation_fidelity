@@ -1,0 +1,37 @@
+{
+  "schema": "crane-development-run-predeclaration-v1",
+  "run_id": "land-nav-20260919-e015",
+  "purpose": "Headless smoke test of the controlled corridor using CRANE's TurtleBot3 Waffle differential platform",
+  "family": "turtlebot3-unblocked-corridor-calibration",
+  "split": "development",
+  "hypothesis": "The existing differential platform will reach a 2 m unblocked corridor goal within 20 s without entering recovery.",
+  "expected": {
+    "navigate_to_pose_status": "succeeded",
+    "recovery_attempts": 0,
+    "blocker": "none"
+  },
+  "configuration": {
+    "platform": "turtlebot3-waffle-differential",
+    "scene": "TurtleBot3 Warehouse Validation",
+    "seed_base": 1015,
+    "corridor_width_m": 4.0,
+    "corridor_length_m": 20.0,
+    "goal_distance_m": 2.0,
+    "fixture_delay_s": 10,
+    "action_duration_s": 20,
+    "worker_duration_s": 35,
+    "ros_domain_id": 55,
+    "ros_tcp_port": 10055,
+    "bt_xml": "packages/crane_ml/Tools/Performance/nav2_land_progress_recovery.xml"
+  },
+  "player_artifact": {
+    "sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+    "build_manifest_sha256": "a13e09530e1049abf53c75854f87577620c01bca2dd12efb102e19177cf30ee2",
+    "managed_assemblies_sha256": "20b3950ecacc0b9052d2da352530b7988352021e6bc66c2313a459aa9a10a82e",
+    "physics_assembly_sha256": "ad4805c875d58fa555373abfa04ef7503efb62f964ab84377c511fc677614c43",
+    "source_commit_proven": false
+  },
+  "inclusion_rule": "Calibration only; do not add this smoke test to the primary explanation sample regardless of outcome.",
+  "mismatch_rule": "Retain a valid failure or timeout as evidence about the differential corridor integration; do not tune or relabel this run.",
+  "causal_limit": "Success establishes fixture operability for this configuration, not general TurtleBot3 fidelity or a causal explanation of navigation success."
+}
