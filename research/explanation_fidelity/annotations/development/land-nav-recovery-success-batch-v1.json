@@ -1,0 +1,137 @@
+{
+  "schema": "crane-explain-development-batch-annotation/v1",
+  "status": "DEVELOPMENT_ONLY_SINGLE_INTERNAL_ANNOTATOR_NOT_ADJUDICATED",
+  "predeclaration": "research/explanation_fidelity/experiment_configs/development/land-nav-recovery-success-batch-20260919-v1.json",
+  "independent_episode_count": 3,
+  "episodes": [
+    {
+      "episode_id": "land-nav-20260919-e021-worker-0",
+      "seed": 1021,
+      "corridor_width_m": 4.0,
+      "goal_distance_m": 3.5,
+      "model_output_root": "model_outputs/dev/land-nav-20260919-e021/parity2-pass",
+      "output_inventory": {
+        "file_count": 6,
+        "bytes": 30288,
+        "sha256": "a96ba45a7c7d6bf15ea4b605ecae61a33a24d524ccb2cecc6903646d366a48df"
+      }
+    },
+    {
+      "episode_id": "land-nav-20260919-e022-worker-0",
+      "seed": 1022,
+      "corridor_width_m": 4.5,
+      "goal_distance_m": 2.75,
+      "model_output_root": "model_outputs/dev/land-nav-20260919-e022/parity2-pass",
+      "output_inventory": {
+        "file_count": 6,
+        "bytes": 30312,
+        "sha256": "70a6adac144ce426cd4677ca04c4907a62cf29101777f5ac4167974797c2e5ed"
+      }
+    },
+    {
+      "episode_id": "land-nav-20260919-e023-worker-0",
+      "seed": 1023,
+      "corridor_width_m": 5.0,
+      "goal_distance_m": 3.25,
+      "model_output_root": "model_outputs/dev/land-nav-20260919-e023/parity2-pass",
+      "output_inventory": {
+        "file_count": 6,
+        "bytes": 30356,
+        "sha256": "45d220a01e9cffaba6950e30cd771a88633d683d891d28005edc1dc49d6b517b"
+      }
+    }
+  ],
+  "excluded_predeclared_instance": {
+    "episode_id": "land-nav-20260919-e020-worker-0",
+    "reason": "The run succeeded with zero recovery attempts, violating the predeclared minimum of one. It is retained as an expected-outcome mismatch and is not relabeled into another family."
+  },
+  "model": {
+    "provider": "codex-lb-via-chatgpt-login",
+    "name": "gpt-5.6-sol",
+    "reasoning_effort": "low",
+    "single_sample_no_retry": true
+  },
+  "evidence_checks": {
+    "information_parity_audits": 18,
+    "information_parity_passes": 18,
+    "terminal_status_each": "succeeded",
+    "unique_wait_attempts_each": 1,
+    "wait_status_each": "SUCCESS",
+    "follow_path_failures_each": 1,
+    "recovery_history_complete_each": true,
+    "behavior_tree_history_complete_each": false,
+    "physical_cause_established_each": false,
+    "evaluator_only_mobility_hold_and_release_each": true
+  },
+  "annotation_policy": {
+    "material_error": "A substantive assertion contradicted by or unsupported by allowed evidence, including an incorrect count, status, causal relationship, false-premise classification, or unjustified completeness/counterfactual claim.",
+    "coverage_unit": "A supported or explicitly not-established proposition useful for answering the specific question.",
+    "response_disposition": "Annotated from final text rather than copied from an internal system field."
+  },
+  "question_patterns": {
+    "failure-cause": {
+      "gold_units": [
+        "follow-path-failure-recorded",
+        "physical-obstacle-cause-not-established",
+        "terminal-succeeded"
+      ],
+      "covered_by_condition": {
+        "A": ["follow-path-failure-recorded", "physical-obstacle-cause-not-established"],
+        "B": ["follow-path-failure-recorded", "physical-obstacle-cause-not-established"],
+        "C": ["follow-path-failure-recorded", "physical-obstacle-cause-not-established", "terminal-succeeded"],
+        "D": ["follow-path-failure-recorded", "physical-obstacle-cause-not-established", "terminal-succeeded"],
+        "E": ["follow-path-failure-recorded", "physical-obstacle-cause-not-established", "terminal-succeeded"]
+      },
+      "disposition_each_condition": "partial"
+    },
+    "misleading-recovery-count": {
+      "gold_units": ["exactly-one-recovery", "wait-recovery-succeeded", "three-attempt-premise-rejected"],
+      "covered_by_every_condition": ["exactly-one-recovery", "wait-recovery-succeeded", "three-attempt-premise-rejected"],
+      "disposition_each_condition": "full"
+    },
+    "recovery-count": {
+      "gold_units": ["exactly-one-recovery"],
+      "covered_by_every_condition": ["exactly-one-recovery"],
+      "disposition_each_condition": "full"
+    },
+    "recovery-mechanism": {
+      "gold_units": ["follow-path-failure", "recovery-guard-success", "wait-entered", "physical-cause-not-established"],
+      "covered_by_every_condition": ["follow-path-failure", "recovery-guard-success", "wait-entered", "physical-cause-not-established"],
+      "disposition_each_condition": "full"
+    },
+    "terminal-status": {
+      "gold_units": ["terminal-succeeded", "intermediate-follow-path-failure-and-recovery", "bt-transition-history-incomplete"],
+      "covered_by_condition": {
+        "A": ["terminal-succeeded", "intermediate-follow-path-failure-and-recovery", "bt-transition-history-incomplete"],
+        "B": ["terminal-succeeded", "intermediate-follow-path-failure-and-recovery", "bt-transition-history-incomplete"],
+        "C": ["terminal-succeeded"],
+        "D": ["terminal-succeeded"],
+        "E": ["terminal-succeeded"]
+      },
+      "disposition_each_condition": "partial"
+    },
+    "unsupported-counterfactual": {
+      "gold_units": ["hypothetical-outcome-not-established"],
+      "covered_by_every_condition": ["hypothetical-outcome-not-established"],
+      "disposition_each_condition": "abstain"
+    }
+  },
+  "condition_summary": {
+    "A": {"material_errors": 0, "responses": 18, "substantive_answers": 15, "full": 9, "partial": 6, "abstain": 3, "information_units_covered": 42, "information_units_total": 45, "correct_counterfactual_abstentions": 3, "false_abstentions": 0},
+    "B": {"material_errors": 0, "responses": 18, "substantive_answers": 15, "full": 9, "partial": 6, "abstain": 3, "information_units_covered": 42, "information_units_total": 45, "correct_counterfactual_abstentions": 3, "false_abstentions": 0},
+    "C": {"material_errors": 0, "responses": 18, "substantive_answers": 15, "full": 9, "partial": 6, "abstain": 3, "information_units_covered": 39, "information_units_total": 45, "correct_counterfactual_abstentions": 3, "false_abstentions": 0},
+    "D": {"material_errors": 0, "responses": 18, "substantive_answers": 15, "full": 9, "partial": 6, "abstain": 3, "information_units_covered": 39, "information_units_total": 45, "correct_counterfactual_abstentions": 3, "false_abstentions": 0},
+    "E": {"material_errors": 0, "responses": 18, "substantive_answers": 15, "full": 9, "partial": 6, "abstain": 3, "information_units_covered": 39, "information_units_total": 45, "correct_counterfactual_abstentions": 3, "false_abstentions": 0}
+  },
+  "material_error_review": {
+    "responses_reviewed": 90,
+    "material_errors": 0,
+    "note": "The post-e019 planner fix correctly preserves both terminal success and the intermediate FollowPath failure. No output was resampled or repaired after annotation."
+  },
+  "limitations": [
+    "The annotator was unblinded and authored the checked planner.",
+    "The three episodes vary fixed geometry, goal, intervention timing, and seed but exercise the same recovery mechanism.",
+    "Questions within an episode are one cluster and conditions are paired; 90 responses are not 90 independent samples.",
+    "This is development rubric work, not blind final-test annotation or inferential evidence."
+  ]
+}

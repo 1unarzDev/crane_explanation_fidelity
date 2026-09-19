@@ -1,0 +1,89 @@
+{
+  "schema": "crane-explain-model-artifact-manifest/v2",
+  "status": "DEVELOPMENT_ONLY",
+  "episode_ids": [
+    "land-nav-20260919-e001-worker-0",
+    "land-nav-20260919-e004-worker-0",
+    "land-nav-20260919-e007-worker-0",
+    "land-nav-20260919-e009-worker-0",
+    "land-nav-20260919-e010-worker-0",
+    "land-nav-20260919-e019-worker-0",
+    "land-nav-20260919-e021-worker-0",
+    "land-nav-20260919-e022-worker-0",
+    "land-nav-20260919-e023-worker-0"
+  ],
+  "provider": "codex-lb-via-chatgpt-login",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "low",
+  "single_sample_no_retry": true,
+  "logical_condition_outputs": 275,
+  "model_mediated_condition_outputs": 220,
+  "model_call_references": 275,
+  "unique_request_cache_keys_referenced": 127,
+  "new_unique_request_cache_keys": 20,
+  "physical_model_call_artifacts_referenced": 129,
+  "accepted_output_roots": [
+    "model_outputs/dev/land-nav-20260919-e004/revision2-parity-pass",
+    "model_outputs/dev/land-nav-20260919-e007/parity-pass",
+    "model_outputs/dev/land-nav-20260919-e009/parity-pass",
+    "model_outputs/dev/land-nav-20260919-e001/parity-pass-v2",
+    "model_outputs/dev/land-nav-20260919-e010/parity2-pass",
+    "model_outputs/dev/land-nav-20260919-e019/parity2-pass",
+    "model_outputs/dev/land-nav-20260919-e021/parity2-pass",
+    "model_outputs/dev/land-nav-20260919-e022/parity2-pass",
+    "model_outputs/dev/land-nav-20260919-e023/parity2-pass"
+  ],
+  "cache_roots": [
+    "research/explanation_fidelity/model_cache/dev-e004-gpt56sol-low",
+    "research/explanation_fidelity/model_cache"
+  ],
+  "physical_cache_inventory": {
+    "file_count": 129,
+    "bytes": 493799,
+    "sha256": "1d2acb8c16f80773298454f7fb6964ec4653bec33ced61be087f21a7feda9dbc",
+    "algorithm": "sha256 over sorted cache-key@latency-ms.json, NUL, physical-file-sha256, newline tuples; exact latency matches each accepted output call reference"
+  },
+  "cache_key_collisions": [
+    {
+      "cache_key": "0819a8992a94232ccd0fd345eeca24f6b95098bbe756a55997a73adb1cd298a8",
+      "physical_artifacts": [
+        {"latency_ms": 5426.767322, "sha256": "52bfb6eb7a80b8e9bb0dc63d0cd8c7326e8ded86e25dc57c4584080ba4c8b964"},
+        {"latency_ms": 5546.389827, "sha256": "c4f65ba86de45f32165a16042d82f87d8b8bfb7e47fdbefc2b5b25bb9a32f25c"}
+      ],
+      "raw_final_identical": true
+    },
+    {
+      "cache_key": "2a05cc775d93a1e9e3438b971922ea9a5083d9281bbc0d2b8239b72e71bf86b6",
+      "physical_artifacts": [
+        {"latency_ms": 5805.353787, "sha256": "60eb5c8ccd85d9e2bc34ce28198793d171c24eab6697b818c4478dda67feb57a"},
+        {"latency_ms": 7427.794819, "sha256": "251167b147d7a9cff41d90ff6241c55213ecea82182193a2595578659b67560b"}
+      ],
+      "raw_final_identical": true
+    }
+  ],
+  "new_output_inventory": {
+    "roots": [
+      "model_outputs/dev/land-nav-20260919-e021/parity2-pass",
+      "model_outputs/dev/land-nav-20260919-e022/parity2-pass",
+      "model_outputs/dev/land-nav-20260919-e023/parity2-pass"
+    ],
+    "file_count": 18,
+    "bytes": 90956,
+    "sha256": "442cf7f0c0e74cfa22641d8baf43f2c85272440b5b8c3976a40ac8efdb32e066",
+    "algorithm": "sha256 over sorted episode-directory/parity-directory/file-name, NUL, file-sha256, newline tuples"
+  },
+  "prior_accepted_manifest": "manifests/model_outputs/land-nav-development-six-episode-gpt-5.6-sol.json",
+  "usage_physical_call_artifacts": {
+    "input_tokens": 1783654,
+    "cached_input_tokens": 1316096,
+    "output_tokens": 6349,
+    "reasoning_output_tokens": 114,
+    "aggregate_latency_ms": 849506.285483
+  },
+  "cost_usd": null,
+  "cost_status": "not_reported_by_codex_cli_chatgpt_login",
+  "temperature": null,
+  "sampling_seed": null,
+  "retained_negative_result": "The e019 C/D/E execution-scope errors remain in the cumulative outputs. The corrected e021-e023 outputs were each generated once after the planner repair and were not resampled.",
+  "reproducibility_note": "Two request keys correspond to two separately retained physical calls in different cache roots. V2 distinguishes unique request keys from physical call artifacts instead of silently discarding one artifact."
+}

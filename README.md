@@ -47,14 +47,15 @@ their own location. Exact repository commits and destinations are recorded in
 - **TESTED (PIPELINE SMOKE):** A/B/C/D/E over real success and cancellation episodes with a
   rule-based generator; identical outputs validate parity and routing but are not an LLM comparison
   or evidence for RQ1/RQ2.
-- **TESTED (DEVELOPMENT ONLY):** six real land episodes, 37 questions per condition and 185 total
+- **TESTED (DEVELOPMENT ONLY):** nine real land episodes, 55 questions per condition and 275 total
   A/B/C/D/E responses, cached single-sample model calls, parity audits, and provisional material
-  error/coverage annotation. A has 2/37 errors, B 0/37, and C/D/E 1/37 each. Checked methods retain
-  lower answerable-information coverage; six episode clusters do not support inference or power.
+  error/coverage annotation. A has 2/55 errors, B 0/55, and C/D/E 1/55 each. Checked methods retain
+  lower answerable-information coverage; nine episode clusters do not support inference.
 - **TESTED:** a bounded evaluator-only TurtleBot3 mobility interruption produced the first captured
   recovery-followed-by-success episode with one exact Wait attempt. The first run was excluded
   when a volatile DDS startup race lost its goal boundary; reliable transient-local harness QoS
-  was then validated on the retained replication.
+  was then validated on the retained replication. Three further predeclared independent
+  configurations passed; a fourth is retained but excluded because it produced zero recoveries.
 - **NOT_RUN:** powered multi-seed final collection and sealed-test evaluation.
 - **DEFERRED:** arbitrary-LLM proposition extraction until independently evaluated.
 

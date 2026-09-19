@@ -78,6 +78,13 @@ but must withhold the physical reason for lost progress. e018 used the same seed
 is excluded because volatile harness QoS lost its accepted-goal record; e019 is the sole countable
 instance after the reliable transient-local capture repair.
 
+The predeclared e020–e023 batch varies seed, corridor width, goal distance, and mobility-hold
+timing without changing that mechanism. e021–e023 each captured one FollowPath failure, one
+successful recovery guard, exactly one successful Wait attempt, and a successful terminal action;
+all 18 A/B parity audits pass. e020 succeeded with zero recoveries and is retained as an excluded
+expected-outcome mismatch rather than relabeled as another success-family episode. These three
+additional clusters improve sample size but must not be described as three new failure mechanisms.
+
 `land-nav-20260919-e004` is the first included recovery-bearing model pilot. It terminated with a
 real NavigateToPose `aborted` result before the client deadline and recorded two completed `Wait`
 recoveries. Because the BT topic lacks the terminal transition for a third `FollowPath` start, its

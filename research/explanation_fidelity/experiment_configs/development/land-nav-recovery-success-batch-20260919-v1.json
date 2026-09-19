@@ -1,0 +1,49 @@
+{
+  "schema": "crane-development-batch-predeclaration-v1",
+  "batch_id": "land-nav-recovery-success-batch-20260919-v1",
+  "created_before_any_batch_execution": true,
+  "version_control_status_at_execution": "local uncommitted predeclaration; first Git commit occurs after the completed batch",
+  "purpose": "Collect four independently configured TurtleBot3 recovery-followed-by-success development instances after e019 validated the mechanism and capture boundary.",
+  "family": "turtlebot3-mobility-hold-recovery-success",
+  "split": "development",
+  "shared_configuration": {
+    "scene": "TurtleBot3 Warehouse Validation",
+    "platform": "turtlebot3-waffle-differential",
+    "corridor_length_m": 20.0,
+    "blocker": "none",
+    "fixture_delay_s": 15,
+    "action_duration_s": 45,
+    "worker_duration_s": 60,
+    "bt_xml": "packages/crane_ml/Tools/Performance/nav2_land_progress_recovery.xml",
+    "harness_qos": "reliable-transient-local-depth-20"
+  },
+  "instances": [
+    {"run_id":"land-nav-20260919-e020","seed_base":1020,"corridor_width_m":3.5,"goal_distance_m":2.5,"mobility_hold_after_fixed_simulation_s":14.0,"mobility_release_after_fixed_simulation_s":26.0,"ros_domain_id":60,"ros_tcp_port":10060},
+    {"run_id":"land-nav-20260919-e021","seed_base":1021,"corridor_width_m":4.0,"goal_distance_m":3.5,"mobility_hold_after_fixed_simulation_s":15.0,"mobility_release_after_fixed_simulation_s":27.0,"ros_domain_id":61,"ros_tcp_port":10061},
+    {"run_id":"land-nav-20260919-e022","seed_base":1022,"corridor_width_m":4.5,"goal_distance_m":2.75,"mobility_hold_after_fixed_simulation_s":15.5,"mobility_release_after_fixed_simulation_s":27.5,"ros_domain_id":62,"ros_tcp_port":10062},
+    {"run_id":"land-nav-20260919-e023","seed_base":1023,"corridor_width_m":5.0,"goal_distance_m":3.25,"mobility_hold_after_fixed_simulation_s":16.0,"mobility_release_after_fixed_simulation_s":28.0,"ros_domain_id":63,"ros_tcp_port":10063}
+  ],
+  "expected_per_instance": {
+    "navigate_to_pose_status": "succeeded",
+    "minimum_recovery_attempts": 1,
+    "maximum_recovery_attempts": 2,
+    "mobility_held": true,
+    "mobility_released": true,
+    "accepted_goal_event_captured": true
+  },
+  "software": {
+    "crane_commit": "2581497eb25968b5624ad95b940dacd988b03e44",
+    "crane_explain_ros_commit": "9ab4f320bdccee468de77ce4b17762853d3ccf93"
+  },
+  "player_artifact": {
+    "sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+    "build_manifest_sha256": "42cff562166dce80029c8ead4cc60d60991ddd60a9d4d59c852b7f25e4d116dc",
+    "managed_assemblies_sha256": "8778bc97fcc9a005572e28ee900e8302b59b6c221403b82eddfa6a68f7c8a5c3",
+    "physics_assembly_sha256": "cb6c81945f0ea1bbd4dea45d4deaeea8d58950aa6c1a8e678089fc275893d6ce",
+    "source_commit_proven": false
+  },
+  "inclusion_rule": "Include each instance only if simulator/capture gates pass, one accepted goal and matching successful result are captured, recovery-count history is complete, one or two unique Wait attempts are recorded, and evaluator truth confirms hold and release.",
+  "mismatch_rule": "Retain every attempted instance. Do not rerun, replace, change its configuration, or relabel its family after observing its outcome.",
+  "independence_basis": "Instances have distinct fixed geometry/goal/intervention configurations and seeds. Questions within an instance remain one cluster; the four instances are not four different mechanisms.",
+  "evidence_boundary": "Mobility intervention identity/timing remain evaluator-only. Robot-visible explanations may state only captured action/BT mechanisms and must withhold physical cause."
+}

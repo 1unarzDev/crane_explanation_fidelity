@@ -1,0 +1,55 @@
+{
+  "schema": "crane-explain-development-annotation/v6",
+  "status": "DEVELOPMENT_ONLY_SINGLE_INTERNAL_ANNOTATOR_NOT_ADJUDICATED",
+  "supersedes": "land-nav-six-episode-v5.json",
+  "independent_episode_count": 9,
+  "response_count_per_condition": 55,
+  "episodes": [
+    {"episode_id": "land-nav-20260919-e001-worker-0", "family": "client-deadline-cancellation-zero-recovery", "question_count": 6},
+    {"episode_id": "land-nav-20260919-e004-worker-0", "family": "full-blocker-terminal-recovery-exhaustion", "question_count": 6},
+    {"episode_id": "land-nav-20260919-e007-worker-0", "family": "unblocked-success-zero-recovery", "question_count": 6},
+    {"episode_id": "land-nav-20260919-e009-worker-0", "family": "partial-blocker-terminal-recovery-exhaustion", "question_count": 6},
+    {"episode_id": "land-nav-20260919-e010-worker-0", "family": "planning-no-valid-path-zero-recovery", "question_count": 7},
+    {"episode_id": "land-nav-20260919-e019-worker-0", "family": "mobility-hold-recovery-success", "question_count": 6},
+    {"episode_id": "land-nav-20260919-e021-worker-0", "family": "mobility-hold-recovery-success", "question_count": 6},
+    {"episode_id": "land-nav-20260919-e022-worker-0", "family": "mobility-hold-recovery-success", "question_count": 6},
+    {"episode_id": "land-nav-20260919-e023-worker-0", "family": "mobility-hold-recovery-success", "question_count": 6}
+  ],
+  "new_batch_annotation": "land-nav-recovery-success-batch-v1.json",
+  "excluded_related_runs": [
+    {
+      "episode_id": "land-nav-20260919-e018-worker-0",
+      "reason": "The volatile harness-event channel lost the accepted-goal boundary. e019 repeats the same seed/configuration after the predeclared QoS repair; e018 and e019 must never both count as independent episodes."
+    },
+    {
+      "episode_id": "land-nav-20260919-e020-worker-0",
+      "reason": "The predeclared recovery-success instance succeeded with zero recovery attempts. It is retained as an expected-outcome mismatch, excluded, and not relabeled."
+    }
+  ],
+  "condition_summary": {
+    "A": {"material_errors": 2, "responses": 55, "substantive_answers": 46, "information_units_covered": 119, "information_units_total": 127, "correct_counterfactual_abstentions": 9, "false_abstentions": 0},
+    "B": {"material_errors": 0, "responses": 55, "substantive_answers": 46, "information_units_covered": 119, "information_units_total": 127, "correct_counterfactual_abstentions": 9, "false_abstentions": 0},
+    "C": {"material_errors": 1, "responses": 55, "substantive_answers": 45, "information_units_covered": 111, "information_units_total": 127, "correct_counterfactual_abstentions": 9, "false_abstentions": 1},
+    "D": {"material_errors": 1, "responses": 55, "substantive_answers": 45, "information_units_covered": 111, "information_units_total": 127, "correct_counterfactual_abstentions": 9, "false_abstentions": 1},
+    "E": {"material_errors": 1, "responses": 55, "substantive_answers": 45, "information_units_covered": 111, "information_units_total": 127, "correct_counterfactual_abstentions": 9, "false_abstentions": 1}
+  },
+  "development_only_rates": {
+    "A": {"material_error_rate": 0.0363636364, "substantive_answer_coverage": 0.8363636364, "answerable_information_coverage": 0.9370078740},
+    "B": {"material_error_rate": 0.0, "substantive_answer_coverage": 0.8363636364, "answerable_information_coverage": 0.9370078740},
+    "C": {"material_error_rate": 0.0181818182, "substantive_answer_coverage": 0.8181818182, "answerable_information_coverage": 0.8740157480},
+    "D": {"material_error_rate": 0.0181818182, "substantive_answer_coverage": 0.8181818182, "answerable_information_coverage": 0.8740157480},
+    "E": {"material_error_rate": 0.0181818182, "substantive_answer_coverage": 0.8181818182, "answerable_information_coverage": 0.8740157480}
+  },
+  "interpretation": [
+    "B remains error-free at the same substantive and answerable-information coverage as A, but nine clusters remain insufficient for inference.",
+    "D has one material error versus two for A while answering one fewer response and covering eight fewer information units; development evidence does not establish superiority.",
+    "C, D, and E remain identical on aggregate errors and coverage, so current data do not isolate an LLM-realization benefit.",
+    "The three new included instances add independent configured episodes but not new mechanism diversity."
+  ],
+  "limitations": [
+    "Nine episode clusters do not support a final inferential claim.",
+    "The annotator was unblinded and authored the checked planner.",
+    "Four of nine included episodes exercise the same evaluator-only mobility-hold recovery-success mechanism.",
+    "Provider, prompts, annotation guide, verifier policy, and final split remain mutable development elements."
+  ]
+}

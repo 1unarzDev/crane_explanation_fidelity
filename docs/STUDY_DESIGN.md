@@ -63,16 +63,16 @@ design, and target ≥80% power (prefer 90%). The current development planning t
 absolute risk reduction (A 8% to D 3%), ICC 0.10, six questions per episode, and 60 independent
 episodes; details and sensitivity limits follow below.
 
-Current explanation-evaluation sample: six valid land episodes and 185 A/B/C/D/E responses (148
+Current explanation-evaluation sample: nine valid land episodes and 275 A/B/C/D/E responses (220
 model-mediated). Families are client cancellation, unblocked success, two independently configured
-terminal recovery/exhaustion instances, planning `NO_VALID_PATH`, and one bounded-mobility
-recovery-followed-by-success instance. A single unblinded development annotation observed A 2/37,
-B 0/37, and C/D/E 1/37 material errors. The new checked error conflated eventual task success with
+terminal recovery/exhaustion instances, planning `NO_VALID_PATH`, and four independently configured
+bounded-mobility recovery-followed-by-success instances. A single unblinded development annotation
+observed A 2/55, B 0/55, and C/D/E 1/55 material errors. The retained checked error conflated eventual task success with
 absence of an explicitly recorded intermediate FollowPath failure; retained outputs were not
-regenerated after correcting the planner. A/B substantive coverage is 31/37 versus C/D/E 30/37.
-A/B cover 77/82 answerable information units and C/D/E 72/82. This remains insufficient to estimate
-episode-cluster variance empirically: there are two favorable and one unfavorable D-versus-A
-question-level error discordances spread over only six clusters.
+regenerated after correcting the planner. A/B substantive coverage is 46/55 versus C/D/E 45/55.
+A/B cover 119/127 answerable information units and C/D/E 111/127. The three new configurations
+exercise the same recovery mechanism and do not add mechanism diversity. Nine clusters remain
+insufficient for a final inferential claim or a stable empirical cluster-variance estimate.
 
 Development sensitivity is retained in `analysis/results/clustered-power-sensitivity-20260919.json`.
 Before seeing sealed data, the current smallest practically meaningful target is a five-percentage-

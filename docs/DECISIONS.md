@@ -1,5 +1,20 @@
 # Decision Log
 
+## 2026-09-19 — stop expanding the mobility-hold family and distinguish physical model calls
+
+- Decision: after e021–e023, collect the next batch across existing terminal-exhaustion,
+  unblocked-success, planning-failure, and client-cancellation families instead of adding more
+  mobility-hold timing variants. Model manifests distinguish unique request keys from separately
+  retained physical call artifacts.
+- Evidence: e021–e023 all passed but reproduce the same FollowPath-failure → guard-success → Wait
+  mechanism already present in e019. The cumulative audit also found two request keys independently
+  materialized in both cache roots with identical final text but different latency metadata.
+- Alternatives: treat every seed as mechanism diversity; continue recovery-success collection only;
+  count one file per cache key and silently discard duplicate physical records.
+- RQ impact: improves scenario-family balance for RQ1–RQ4 and makes model-call provenance auditable.
+- Validity risk: nine development clusters remain unblinded and underpowered; the next batch must
+  remain development data until prompts, rubric, verifier policy, and final split are frozen.
+
 ## 2026-09-19 — retain recovery-success through bounded mobility loss, not obstacle timing
 
 - Decision: use a predeclared evaluator-only planar mobility hold as the controlled progress-failure

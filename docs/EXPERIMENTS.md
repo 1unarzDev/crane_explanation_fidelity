@@ -1,5 +1,39 @@
 # Experiment Log
 
+## 2026-09-19 — predeclared recovery-success batch e020–e023
+
+- Configuration was recorded locally before execution in
+  `research/explanation_fidelity/experiment_configs/development/land-nav-recovery-success-batch-20260919-v1.json`;
+  it was not yet committed to Git, which is an audit limitation. CRANE revision `2581497`,
+  explanation ROS revision `9ab4f32`, Unity 6000.5.10f1, ROS 2 Jazzy.
+- **TESTED/RETAINED EXCLUDED:** e020 succeeded in 19.495 s with zero recovery attempts despite its
+  evaluator-only hold from 14.040–26.040 s. It violates the predeclared minimum-recovery outcome,
+  is not relabeled, and does not increase the explanation-evaluation sample.
+- **TESTED/PASS INCLUDED:** e021, e022, and e023 used distinct seeds, corridor widths, goal
+  distances, and hold/release times. Each captured exactly one accepted goal and matching successful
+  result, one FollowPath failure, one successful recovery guard, one unique successful Wait, complete
+  recovery-count history, and incomplete whole-BT transition history. Their action durations were
+  25.342/22.694/25.502 s and measured RTFs were 1.000019/1.000018/1.000017. Evaluator-only hold and
+  release events occurred as configured; their identity/timing never entered model-visible evidence.
+- All 18 information-parity audits pass. The 18 question instances produced 90 A/B/C/D/E responses
+  with one cached sample per model-mediated call and no retries. Internal annotation found no new
+  material error: all conditions preserve terminal success, the intermediate FollowPath failure,
+  exact one-attempt recovery count, and unknown physical/counterfactual cause.
+- Development totals are nine independent configured episodes, 55 responses per condition and 275
+  total responses. Material errors remain A 2/55, B 0/55, and C/D/E 1/55 each. Substantive coverage
+  is A/B 46/55 and C/D/E 45/55; answerable-information coverage is A/B 119/127 and C/D/E 111/127.
+  These are unblinded development descriptors, not inferential results.
+- The cumulative artifact audit resolves 275 logical outputs to 127 unique request keys and 129
+  physical cache artifacts. Two request keys were independently materialized in both cache roots;
+  their final texts match but latency metadata differs. Manifest v2 retains both instead of silently
+  selecting one. `analysis/audit_model_artifact_manifest.py` recomputes the inventory and passes.
+- Raw capture/model artifacts remain outside Git. Separate robot-visible/evaluator-only manifests
+  and run checkpoints were committed for e020–e023; the batch annotation and nine-episode aggregate
+  are under `research/explanation_fidelity/annotations/development/`.
+- **VALIDITY THREAT:** four of nine included episodes now exercise the same mobility-hold recovery
+  mechanism. The next collection batch should prioritize mechanism/family balance—terminal recovery
+  exhaustion, unblocked success, planning failure, and client cancellation—over more timing variants.
+
 ## 2026-09-19 — first capture-complete recovery followed by success
 
 - CRANE revisions `9a24503` (mobility hold) and `2581497` (harness QoS); explanation ROS revision
