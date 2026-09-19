@@ -1,0 +1,41 @@
+{
+  "schema": "crane-development-run-predeclaration-v1",
+  "run_id": "land-nav-20260919-e011",
+  "purpose": "First deterministic blocker-removal pilot targeting recovery followed by success",
+  "family": "timed-blocker-recovery-success",
+  "split": "development",
+  "timing_basis": "Prior partial-blocker pilots entered their first Wait recovery about 5.8 to 8.0 s after accepted goal; the accepted goal occurs near simulation time 4 s. Removal at fixed simulation time 12 s targets that first recovery boundary without observing e011.",
+  "expected": {
+    "navigate_to_pose_status": "succeeded",
+    "minimum_recovery_attempts": 1,
+    "blocker": "partial",
+    "blocker_removed": true
+  },
+  "configuration": {
+    "seed_base": 1011,
+    "corridor_width_m": 5.0,
+    "corridor_length_m": 20.0,
+    "blocker_distance_m": 1.5,
+    "blocker_width_m": 2.5,
+    "blocker_remove_after_fixed_simulation_s": 12.0,
+    "goal_distance_m": 3.0,
+    "fixture_delay_s": 15,
+    "action_duration_s": 35,
+    "worker_duration_s": 50,
+    "ros_domain_id": 51,
+    "ros_tcp_port": 10051,
+    "bt_xml": "packages/crane_ml/Tools/Performance/nav2_land_progress_recovery.xml"
+  },
+  "player_artifact": {
+    "sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+    "build_manifest_sha256": "d2ea9ff941d366eb5c551be31066eab926592815883d8e952a95e8a11dcb478b",
+    "managed_assemblies_sha256": "020b7625cc6dd444bc309a88107f48ecd687065f03c88a89f0ab63ba43b7650b",
+    "physics_assembly_sha256": "c12b60e2265c85bf7aa3acc5b686784a210f7fcb47a459319a880d58c07d250a",
+    "checkout_commit_at_build": "57b39fd5782eb05c77bd6c3c1149ce6ef5cbd0f7",
+    "checkout_was_clean": true,
+    "source_commit_embedded_in_build_manifest": false
+  },
+  "inclusion_rule": "Include only if simulator/capture quality gates pass, terminal status is succeeded, recovery history is complete, at least one unique recovery attempt is recorded, and evaluator truth confirms actual blocker removal.",
+  "mismatch_rule": "Retain any artifact but classify as development calibration and do not relabel it into the intended family.",
+  "evidence_boundary": "Blocker geometry and detailed removal timing are evaluator-only. Robot-visible LiDAR may reflect changed geometry, but delivery does not prove Nav2 consumed it and the explanation may only claim the recorded BT mechanism unless an intervention-level analysis is explicitly performed."
+}
