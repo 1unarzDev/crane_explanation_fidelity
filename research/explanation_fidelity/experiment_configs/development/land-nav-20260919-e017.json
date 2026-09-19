@@ -1,0 +1,43 @@
+{
+  "schema": "crane-development-run-predeclaration-v1",
+  "run_id": "land-nav-20260919-e017",
+  "purpose": "First delayed-activation obstacle-window pilot targeting deterministic recovery followed by success",
+  "family": "turtlebot3-obstacle-window-recovery-success",
+  "split": "development",
+  "timing_basis": "With a 15 s fixture delay, e016 accepted its goal near simulation time 11.26 s. Activation at 15 s therefore occurs after initial planning and about 3.7 s into execution, before the robot reaches a blocker at 1.5 m. Removal at 17 s brackets one or two 1 s Wait recoveries without using e017 observations.",
+  "expected": {
+    "navigate_to_pose_status": "succeeded",
+    "minimum_recovery_attempts": 1,
+    "blocker": "full",
+    "blocker_activated": true,
+    "blocker_removed": true
+  },
+  "configuration": {
+    "platform": "turtlebot3-waffle-differential",
+    "scene": "TurtleBot3 Warehouse Validation",
+    "seed_base": 1017,
+    "corridor_width_m": 5.0,
+    "corridor_length_m": 20.0,
+    "blocker_distance_m": 1.5,
+    "blocker_width_m": 5.0,
+    "blocker_enable_after_fixed_simulation_s": 15.0,
+    "blocker_remove_after_fixed_simulation_s": 17.0,
+    "goal_distance_m": 3.0,
+    "fixture_delay_s": 15,
+    "action_duration_s": 45,
+    "worker_duration_s": 60,
+    "ros_domain_id": 57,
+    "ros_tcp_port": 10057,
+    "bt_xml": "packages/crane_ml/Tools/Performance/nav2_land_progress_recovery.xml"
+  },
+  "player_artifact": {
+    "sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+    "build_manifest_sha256": "e359980284c369d48d67cf94a475596f580230437c95e7ad9fde4368c8f07772",
+    "managed_assemblies_sha256": "3037a37eb6f9941a0d546765278d193b74da4feaa9a2298c45b6a28ff1d374c8",
+    "physics_assembly_sha256": "6b6aa562376494dfdde128b72b3c1b39f7db4b79980367b7fd1f7d839abdb62b",
+    "source_commit_proven": false
+  },
+  "inclusion_rule": "Include in later development evaluation only if simulator/capture gates pass, terminal status is succeeded, recovery history is complete, at least one unique recovery attempt is recorded, and evaluator truth confirms both activation and removal.",
+  "mismatch_rule": "Retain any valid artifact as calibration and do not alter timings, tune the same run, or relabel its family after observing the result.",
+  "evidence_boundary": "Obstacle activation/removal and geometry are evaluator-only. Robot-visible explanation inputs may describe only captured BT/action mechanisms unless a separately defined intervention analysis licenses a stronger statement."
+}

@@ -23,6 +23,14 @@
   recovery guard, or Wait entry was recorded. The worker's `valid=false` is solely the frozen
   expected-success mismatch; transport, costmap, sensor, and action-lag gates passed. This run does
   not support recovery-success and will not be relabeled.
+- **IMPLEMENTED/TESTED, NEGATIVE:** CRANE revision
+  `1811b3ca5622eb9e6a642c8a3493077fef94ee69` adds a deterministic blocker window with separate
+  scheduled/actual activation and removal times in evaluator-only truth. Predeclared e017 activated
+  a full-width blocker at simulation time 15.040 s and removed it at 17.040 s. Both interventions
+  occurred, but FollowPath remained active with zero recovery entries until the 45.025 s client
+  deadline; net displacement was 1.258 m. The result is excluded expected-outcome mismatch, not
+  recovery-success evidence. No further obstacle-timing tuning is justified without first changing
+  or independently diagnosing the controller/plant behavior.
 - **TESTED/NEGATIVE:** e011–e014 showed that the longer-goal Ackermann corridor repeatedly drifts
   or stalls: e011's timed blocker was removed but the run timed out after two successful Wait
   recoveries; e012/e013 timed out after 3.41/3.97 m displacement; e014 still timed out after raising

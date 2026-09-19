@@ -20,6 +20,16 @@
 - Revisit: only if an Ackermann-valid controller/path pairing is itself a predeclared research
   condition and the work displaces no required differential data collection.
 
+### Recovery-scenario follow-up
+
+The differential base passed an unblocked short-goal smoke, but e016/e017 showed that removing a
+partial blocker or presenting a two-second full blocker window did not cause the retained RPP path
+to enter the progress-recovery branch. Both captures stayed in FollowPath until the client deadline
+with zero recovery entries. Freeze these negative calibrations and stop timing searches. The next
+recovery-success mechanism must have an independently testable software/physics contract (for
+example, a bounded mobility interruption), and its evaluator-only intervention must not be exposed
+as robot-visible cause evidence.
+
 ## 2026-09-19 — record binary provenance separately from checkout provenance
 
 - Decision: every new land capture records SHA-256 and byte size for the exact player executable,

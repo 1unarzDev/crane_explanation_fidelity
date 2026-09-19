@@ -163,7 +163,10 @@ than recovery-success evidence. A later headless TurtleBot3 differential smoke (
 action, sensor, costmap, transport, and capture gates. Recovery-followed-by-success remains
 **NOT_OBSERVED** on that platform: e016 removed a partial blocker at its predeclared simulation
 time but timed out with zero recovery entries because FollowPath remained active until the client
-deadline. This is a narrow launch-config seam, not yet the requested reset/service API.
+deadline. A stronger e017 window then activated and removed a full-width blocker at both recorded
+boundaries, but produced the same zero-recovery timeout. Do not keep tuning intervention timing to
+force the desired branch; diagnose or replace the controller/plant failure mechanism first. This is
+a narrow launch-config seam, not yet the requested reset/service API.
 
 ### Collection target and acceptance
 
