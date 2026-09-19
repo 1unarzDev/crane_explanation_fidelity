@@ -1,0 +1,101 @@
+{
+  "schema": "crane-development-batch-predeclaration-v1",
+  "batch_id": "land-nav-balanced-batch-20260919-v1",
+  "created_before_any_batch_execution": true,
+  "purpose": "Add independent development instances across four already validated land mechanism families instead of further expanding mobility-hold recovery-success.",
+  "split": "development",
+  "shared_configuration": {
+    "corridor_length_m": 22.0,
+    "time_scale": 1.0,
+    "bt_xml": "packages/crane_ml/Tools/Performance/nav2_land_progress_recovery.xml",
+    "harness_qos": "reliable-transient-local-depth-20",
+    "capture_started_before_fixture": true
+  },
+  "instances": [
+    {
+      "run_id": "land-nav-20260919-e024",
+      "family": "turtlebot3-unblocked-success-zero-recovery",
+      "platform": "turtlebot3-waffle-differential",
+      "scene": "TurtleBot3 Warehouse Validation",
+      "seed_base": 1024,
+      "corridor_width_m": 4.25,
+      "goal_distance_m": 2.25,
+      "blocker": "none",
+      "fixture_delay_s": 10,
+      "action_duration_s": 20,
+      "worker_duration_s": 35,
+      "ros_domain_id": 64,
+      "ros_tcp_port": 10064,
+      "expected": {"navigate_to_pose_status": "succeeded", "recovery_attempts": 0}
+    },
+    {
+      "run_id": "land-nav-20260919-e025",
+      "family": "ackermann-full-blocker-terminal-recovery-exhaustion",
+      "platform": "crane-ackermann-rover",
+      "scene": "Land Vehicle Validation",
+      "seed_base": 1025,
+      "corridor_width_m": 4.5,
+      "goal_distance_m": 8.5,
+      "blocker": "full",
+      "blocker_distance_m": 4.5,
+      "blocker_width_m": 4.5,
+      "fixture_delay_s": 15,
+      "action_duration_s": 35,
+      "worker_duration_s": 50,
+      "ros_domain_id": 65,
+      "ros_tcp_port": 10065,
+      "expected": {"navigate_to_pose_status": "aborted", "minimum_recovery_attempts": 1}
+    },
+    {
+      "run_id": "land-nav-20260919-e026",
+      "family": "ackermann-planning-no-valid-path-zero-recovery",
+      "platform": "crane-ackermann-rover",
+      "scene": "Land Vehicle Validation",
+      "seed_base": 1026,
+      "corridor_width_m": 5.5,
+      "goal_distance_m": 4.25,
+      "blocker": "full",
+      "blocker_distance_m": 4.25,
+      "blocker_width_m": 5.5,
+      "fixture_delay_s": 12,
+      "action_duration_s": 20,
+      "worker_duration_s": 35,
+      "ros_domain_id": 66,
+      "ros_tcp_port": 10066,
+      "expected": {"navigate_to_pose_status": "aborted", "planning_error_code": "NO_VALID_PATH", "recovery_attempts": 0}
+    },
+    {
+      "run_id": "land-nav-20260919-e027",
+      "family": "ackermann-client-deadline-cancellation-zero-recovery",
+      "platform": "crane-ackermann-rover",
+      "scene": "Land Vehicle Validation",
+      "seed_base": 1027,
+      "corridor_width_m": 4.75,
+      "goal_distance_m": 9.0,
+      "blocker": "full",
+      "blocker_distance_m": 4.75,
+      "blocker_width_m": 4.75,
+      "fixture_delay_s": 12,
+      "action_duration_s": 8,
+      "worker_duration_s": 25,
+      "ros_domain_id": 67,
+      "ros_tcp_port": 10067,
+      "expected": {"navigate_to_pose_status": "timeout", "client_cancellation": true, "recovery_attempts": 0}
+    }
+  ],
+  "software": {
+    "crane_checkout_commit": "d2551367781e14193c413de88cc30028c20fdbab",
+    "crane_explain_ros_commit": "9ab4f320bdccee468de77ce4b17762853d3ccf93"
+  },
+  "player_artifact": {
+    "executable_sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+    "build_manifest_sha256": "17a654ead83a69f330dcaf360f175b63b46681604e101c813b9365d1e289cecc",
+    "scripts_assembly_sha256": "5f1431fc26158cfdf87ecaa490d094be5d2e5ec7dedb5a2ad010cee1be24b1e2",
+    "physics_assembly_sha256": "64158c6d305e5fbc501790c922dddbb0ca737637fc9c0c4e45bc1cac7e6f5e67",
+    "source_commit_embedded_in_build_manifest": false
+  },
+  "inclusion_rule": "Include an instance only if simulator/capture gates pass, exactly one accepted goal and matching terminal result/status are captured, the observed terminal/recovery/planning mechanism matches its predeclared family, and required completeness fields support the relevant exact-count claims.",
+  "mismatch_rule": "Retain every attempted instance. Do not rerun, replace, tune, or relabel an instance after observing its outcome.",
+  "independence_basis": "Every instance has a distinct seed and fixed geometry/goal configuration. They supplement existing family members but questions within an episode remain one cluster.",
+  "evidence_boundary": "Blocker geometry and family labels remain evaluator-only. Robot-visible explanations may claim captured action/BT mechanisms, not physical obstacle causality or internal sensor consumption."
+}
