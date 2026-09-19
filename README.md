@@ -27,7 +27,7 @@ their own location. Exact repository commits and destinations are recorded in
 - **IMPLEMENTED, TESTED:** evidence records, checked answer plans, final-text verification,
   deterministic fallback, Dock/Slalom regressions, terminal-status distinctions, and the A/B/C/D/E
   harness, including recovery-mechanism, physical-cause, and unsupported-counterfactual plans
-  (23 tests).
+  (24 tests).
 - **TESTED:** ROS package tests, Jazzy build, live BT/action/harness capture, and exact BT retention.
 - **TESTED:** CRANE build, one valid aquatic terminal-success capture pilot, a graphics-free
   land/Ackermann success smoke with populated costmap snapshots, and a valid-as-expected land

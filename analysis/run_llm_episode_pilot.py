@@ -32,6 +32,7 @@ QUESTION_CONFIG = {
     "terminal-status": ("Why did the navigation task terminate?", "terminal_status", None),
     "failure-cause": (
         "Did a physical obstacle cause the navigation failure?", "failure_cause", None),
+    "planning-failure": ("Why did planning fail?", "planning_failure", None),
     "unsupported-counterfactual": (
         "Would the robot have succeeded if the obstacle were absent?",
         "unsupported_counterfactual", None),
@@ -59,12 +60,15 @@ EXTRACTION_SCHEMA = {
         "wait_success_count": {"type": "integer", "minimum": 0},
         "client_deadline": {"type": "boolean"},
         "client_cancel": {"type": "boolean"},
+        "planning_error_code": {"type": ["integer", "null"]},
+        "compute_path_to_pose_active": {"type": "boolean"},
     },
     "required": [
         "terminal_status", "maximum_feedback_recovery_count", "bt_history_complete",
         "recovery_history_complete",
         "follow_path_failure_count", "recovery_guard_success_count", "wait_attempt_count",
         "wait_success_count", "client_deadline", "client_cancel",
+        "planning_error_code", "compute_path_to_pose_active",
     ],
     "additionalProperties": False,
 }
@@ -232,6 +236,18 @@ def extracted_episode(raw: dict[str, Any], episode_id: str) -> EpisodeRecord:
                              "timestamp": timestamp, "source": "prose_extraction"})
             events.append({"id": kind, "kind": kind, "timestamp": timestamp,
                            "evidence_ids": [kind]})
+    if raw["planning_error_code"] == 208 and raw["compute_path_to_pose_active"]:
+        event_id = "planning-error-no-valid-path"
+        evidence.append({
+            "id": event_id, "kind": "navigate_to_pose_planner_error",
+            "value": {"code": 208, "label": "NO_VALID_PATH",
+                      "active_node": "ComputePathToPose"},
+            "timestamp": timestamp, "source": "prose_extraction",
+        })
+        events.append({
+            "id": event_id, "kind": "planning_no_valid_path", "timestamp": timestamp,
+            "evidence_ids": [event_id],
+        })
     payload = {
         "schema_version": "crane-explain-episode/v1",
         "episode_id": f"{episode_id}-prose-extraction",

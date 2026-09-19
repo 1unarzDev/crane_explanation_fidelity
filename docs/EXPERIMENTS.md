@@ -397,3 +397,19 @@
 - RQ1 negative finding: B has zero observed errors at the same response coverage as A, so this
   development sample does not show structured B outperforming strong prose A. RQ2 is suggestive
   only; the risk reduction remains confounded with the checked method's lower observed coverage.
+
+## 2026-09-19 — e010 planning failure
+
+- `land-nav-20260919-e010`: **TESTED/PASS INCLUDED PLANNING-FAILURE FAMILY**. The 4 m goal was
+  placed at a full-width blocker at 4 m, seed 1009, with predeclared `aborted`. The action returned
+  `aborted`/error 208 in 1.26 s before any controller command or displacement. The simulator gate
+  passed: one populated costmap snapshot (12,995 occupied cells), 501 LiDAR scans, no rejected,
+  stale, cross-episode, or failed observations, and RTF 1.00003.
+- Robot-visible evidence records `ComputePathToPose` active and terminal error 208. The installed
+  Jazzy `nav2_msgs` 1.3.12 defines ComputePathToPose error 208 as `NO_VALID_PATH`. The controller
+  log independently reports NavFn failed to create a plan, but model-visible derivation uses the
+  action error mapping and BT activity. The BT topic omits the node's terminal transition, so the
+  plan does not invent one. Evaluator geometry does not license physical blocker causality.
+- Core revision `8314e0964dbaf21b9e52bed7d2f09c592b959868` adds a checked planning-failure
+  answer and regression; 24 core tests pass. A/B parity includes the 208 mapping and active node in
+  both formats. Model evaluation is pending at this checkpoint.

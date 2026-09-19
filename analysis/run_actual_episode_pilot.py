@@ -50,9 +50,11 @@ def derive_episode(capture: Path) -> tuple[dict, dict, str, frozenset[str]]:
         raise ValueError("capture boundaries are incomplete")
     if len(results) == 1:
         terminal_status = results[0]["status"]
+        terminal_error_code = results[0].get("error_code")
         timestamp = results[0]["wall_time_ns"] / 1_000_000_000
         terminal_source = "harness_result"
     elif not results:
+        terminal_error_code = None
         statuses = [
             (record["received_wall_time_ns"], item["status"])
             for record in records if record["type"] == "action_status"
@@ -69,6 +71,12 @@ def derive_episode(capture: Path) -> tuple[dict, dict, str, frozenset[str]]:
     else:
         raise ValueError(f"expected at most one action result, found {len(results)}")
     bt = [item for item in records if item["type"] == "bt_transition"]
+    compute_path_starts = [
+        item for item in bt
+        if item["node_name"] == "ComputePathToPose"
+        and item["previous_status"] == "IDLE"
+        and item["current_status"] == "RUNNING"
+    ]
     follow_failures = [
         item for item in bt
         if item["node_name"] == "FollowPath"
@@ -171,6 +179,23 @@ def derive_episode(capture: Path) -> tuple[dict, dict, str, frozenset[str]]:
         },
     ]
     outcome_events = []
+    if terminal_error_code == 208 and compute_path_starts:
+        event_id = "planning-error-no-valid-path"
+        evidence.append({
+            "id": event_id,
+            "kind": "navigate_to_pose_planner_error",
+            "value": {"code": 208, "label": "NO_VALID_PATH",
+                      "active_node": "ComputePathToPose"},
+            "timestamp": timestamp,
+            "source": "harness_result+nav2_msgs_1.3.12+behavior_tree_log",
+            "consumed": None,
+        })
+        outcome_events.append({
+            "id": event_id,
+            "kind": "planning_no_valid_path",
+            "timestamp": timestamp,
+            "evidence_ids": [event_id],
+        })
     for index, item in enumerate(follow_failures, 1):
         event_id = f"follow-path-failure-{index}"
         evidence.append({
@@ -300,6 +325,13 @@ def derive_episode(capture: Path) -> tuple[dict, dict, str, frozenset[str]]:
         parity_facts.append({
             "id": "client-cancel", "kind": "client_cancellation_requested", "value": True,
         })
+    if terminal_error_code == 208 and compute_path_starts:
+        parity_facts.append({
+            "id": "planning-error-no-valid-path",
+            "kind": "planner_error_while_node_active",
+            "value": {"code": 208, "label": "NO_VALID_PATH",
+                      "active_node": "ComputePathToPose"},
+        })
     structured_presentation = {
         "schema": "crane-explain-parity-presentation/v1",
         "episode_id": manifest["episode_id"],
@@ -352,6 +384,11 @@ def derive_episode(capture: Path) -> tuple[dict, dict, str, frozenset[str]]:
         prose_parts.append("The experiment harness recorded a client deadline.")
     if cancel_events:
         prose_parts.append("The experiment harness requested cancellation.")
+    if terminal_error_code == 208 and compute_path_starts:
+        prose_parts.append(
+            "The NavigateToPose result recorded planner error NO_VALID_PATH (208) while "
+            "ComputePathToPose was active."
+        )
     prose_parts.append(
         "These records do not establish the physical cause of the navigation failure or what "
         "would have happened under a hypothetical environment change."
@@ -371,6 +408,11 @@ def direct_generator(evidence: str, question: str) -> str:
             "FollowPath returned FAILURE, the controller-recovery guard returned SUCCESS, and "
             "the Behavior Tree then entered Wait. This does not establish why FollowPath "
             "failed physically."
+        )
+    if "planning fail" in lowered_question:
+        return (
+            "The NavigateToPose result recorded NO_VALID_PATH (208) while ComputePathToPose was "
+            "active. The records do not establish the physical reason no valid path was found."
         )
     if "terminate" in lowered_question:
         if evidence.lstrip().startswith("{"):
@@ -409,7 +451,7 @@ def direct_generator(evidence: str, question: str) -> str:
         if "facts" in raw:
             facts = {item["id"]: item for item in raw["facts"]}
             count = facts["wait-recoveries"]["value"]
-            complete = facts["history-completeness"]["value"]
+            complete = facts["recovery-history-completeness"]["value"]
         else:
             count = sum(
                 1 for event in raw["outcome"]["events"]
@@ -420,7 +462,7 @@ def direct_generator(evidence: str, question: str) -> str:
         match = re.search(r"recovery count of (\d+)", evidence.lower())
         count = int(match.group(1)) if match else (
             0 if "zero recovery attempts" in evidence.lower() else None)
-        complete = "complete captured action history" in evidence.lower()
+        complete = "recovery-count history is complete" in evidence.lower()
     if count is None:
         return "The available record does not establish the recovery count."
     qualifier = "Exactly" if complete else "At least"
@@ -435,6 +477,7 @@ def main() -> int:
         "--question-kind", choices=(
             "recovery-count", "misleading-recovery-count", "recovery-mechanism",
             "terminal-status", "failure-cause", "unsupported-counterfactual",
+            "planning-failure",
         ),
         default="recovery-count",
     )
@@ -450,6 +493,8 @@ def main() -> int:
         "terminal-status": ("Why did the navigation task terminate?", "terminal_status", None),
         "failure-cause": (
             "Did a physical obstacle cause the navigation failure?", "failure_cause", None),
+        "planning-failure": (
+            "Why did planning fail?", "planning_failure", None),
         "unsupported-counterfactual": (
             "Would the robot have succeeded if the obstacle were absent?",
             "unsupported_counterfactual", None),
