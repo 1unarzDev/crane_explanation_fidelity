@@ -1,5 +1,40 @@
 # Experiment Log
 
+## 2026-09-19 — first capture-complete recovery followed by success
+
+- CRANE revisions `9a24503` (mobility hold) and `2581497` (harness QoS); explanation ROS revision
+  `9ab4f32`; core revision `576fb64`; Unity 6000.5.10f1; ROS 2 Jazzy.
+- **IMPLEMENTED/TESTED:** a fixed-simulation-time mobility hold temporarily freezes only planar
+  rigid-body translation and yaw, then restores the original constraints. Scheduled/actual hold and
+  release times remain evaluator-only. The nine-scene Linux worker built successfully headlessly;
+  13 land contracts and four ROS tests pass in their proper runtimes.
+- **TESTED/EXCLUDED:** e018 succeeded after one Wait recovery, but the volatile harness channel
+  lost its accepted-goal record during DDS discovery. It is an instrumentation failure and is not
+  an independent episode.
+- **TESTED/PASS INCLUDED:** predeclared e019 repeated e018's seed/configuration after reliable
+  transient-local QoS was frozen. It captured exactly one accepted goal and matching successful
+  result, complete bounds, final recovery count one, one unique successful Wait, two planning
+  starts/successes, and the ordered FollowPath FAILURE → recovery guard SUCCESS → Wait sequence.
+  Evaluator truth records hold at 15.040 s and release at 27.040 s. NavigateToPose succeeded in
+  22.286 s with 2.472 m displacement, RTF 1.00001, 301 LiDAR scans, populated costmaps, and no
+  rejected, stale, cross-episode, or failed observations.
+- Six parity-controlled question families produced 30 A/B/C/D/E outputs (24 model-mediated), with
+  19 new unique cached calls and no retries. All six A/B information-parity audits pass.
+- **NEGATIVE DEVELOPMENT RESULT:** on physical-failure attribution, A/B preserved the intermediate
+  FollowPath failure and withheld physical cause. C/D/E incorrectly claimed the failure premise was
+  contradicted by later task success. Each receives one material scope/false-premise error; outputs
+  are retained unchanged. The corrected core now preserves intermediate failures; 25 tests pass.
+- Development totals are now six episode clusters and 37 responses per condition: A 2/37 material
+  errors, B 0/37, C/D/E 1/37 each. Substantive coverage is A/B 31/37 and C/D/E 30/37; answerable-
+  information coverage is A/B 77/82 and C/D/E 72/82. These unblinded descriptive results remain
+  inadequate for empirical cluster-variance estimation or inference.
+- **DEVELOPMENT POWER SENSITIVITY:** a reproducible paired episode-cluster simulation pre-specifies
+  a practically meaningful A 8% → D 3% material-error reduction. Under six questions/episode,
+  ICC 0.10, paired latent correlation 0.50, and 1,000 simulations, estimated planning power is
+  0.771/0.863/0.922 at 40/50/60 independent episodes. The provisional target is 60, minimum 50;
+  this normal-interval planning model does not replace the frozen clustered-bootstrap analysis.
+  Sensitivity at the sparse unblinded 2/37 versus 1/37 rates remains only 0.772 at 100 episodes.
+
 ## 2026-09-19 — differential corridor qualification and Ackermann calibration stop
 
 - CRANE revision `6a2d22c2bc55b582f60c362ec2d4310626152051`; Unity 6000.5.10f1; ROS 2
@@ -38,9 +73,8 @@
   a simple low-speed actuation-floor explanation.
 - Decision: stop tuning deadlines or approach speed to force Ackermann success. Use the validated
   differential platform for controlled recovery collection while retaining Ackermann/F1TENTH as
-  an embodiment-specific deterministic benchmark. Current included analysis remains five episode
-  clusters and 31 responses per condition; development-only material errors remain A 2/31 and
-  B/C/D/E 0/31, with no inferential claim.
+  an embodiment-specific deterministic benchmark. The five-episode figures at this checkpoint are
+  superseded by the six-episode recovery-success results above.
 
 ## 2026-09-19 — timed land-blocker intervention implementation
 

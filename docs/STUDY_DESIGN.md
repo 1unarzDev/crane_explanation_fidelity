@@ -59,18 +59,33 @@ secondary confirmatory comparisons with Holm; exploratory analyses are labeled.
 
 Power planning uses development episodes only: estimate paired discordance/effect, define the
 smallest practically meaningful reduction before seeing sealed test, simulate the clustered paired
-design, and target ≥80% power (prefer 90%). **TBD-PILOT:** effect, ICC, threshold, episode count.
+design, and target ≥80% power (prefer 90%). The current development planning target is a five-point
+absolute risk reduction (A 8% to D 3%), ICC 0.10, six questions per episode, and 60 independent
+episodes; details and sensitivity limits follow below.
 
-Current explanation-evaluation sample: five valid land episodes and 155 A/B/C/D/E responses (124
+Current explanation-evaluation sample: six valid land episodes and 185 A/B/C/D/E responses (148
 model-mediated). Families are client cancellation, unblocked success, two independently configured
-terminal recovery/exhaustion instances, and planning `NO_VALID_PATH`; the two recovery terminals
-share the same abstract explanation pattern. A single unblinded development annotation observed A
-2/31 errors and B/C/D/E 0/31. D substantive coverage is 25/31 versus A/B 26/31 because retained
-e007 outputs predate a false-premise fix. D also covers 61/67 answerable information units versus
-A/B 63/67: the generic terminal-status plan omits the available planning mechanism in e010. This
-remains insufficient to estimate episode-cluster variance or power. Power parameters are
-**TBD-PILOT**; provider/model/prompts, verifier policy, annotation rubric, and coverage units remain
-mutable pending more independent mechanisms and blind/adjudicated development labels.
+terminal recovery/exhaustion instances, planning `NO_VALID_PATH`, and one bounded-mobility
+recovery-followed-by-success instance. A single unblinded development annotation observed A 2/37,
+B 0/37, and C/D/E 1/37 material errors. The new checked error conflated eventual task success with
+absence of an explicitly recorded intermediate FollowPath failure; retained outputs were not
+regenerated after correcting the planner. A/B substantive coverage is 31/37 versus C/D/E 30/37.
+A/B cover 77/82 answerable information units and C/D/E 72/82. This remains insufficient to estimate
+episode-cluster variance empirically: there are two favorable and one unfavorable D-versus-A
+question-level error discordances spread over only six clusters.
+
+Development sensitivity is retained in `analysis/results/clustered-power-sensitivity-20260919.json`.
+Before seeing sealed data, the current smallest practically meaningful target is a five-percentage-
+point absolute response-risk reduction (A 8% to D 3%) at useful coverage. With six questions per
+episode, ICC 0.10, paired latent correlation 0.50, and a conservative episode-equal-weight two-sided
+95% cluster-normal planning test, 1,000 simulations estimate power of 0.771 at 40 episodes, 0.863
+at 50, and 0.922 at 60. Therefore the provisional main collection target is **60 included
+independent episodes**, with 50 the minimum target if validity or deadline constraints intervene.
+A sensitivity scenario using the unblinded 2/37 versus 1/37 descriptive rates reaches only 0.772
+at 100 episodes; it is not treated as a stable effect estimate. Final analysis still uses clustered
+bootstrap intervals, not this planning approximation. Provider/model/prompts, verifier policy,
+annotation rubric, and coverage units remain mutable pending blind/adjudicated development labels;
+the study is not frozen.
 
 The initial powered analysis is land/navigation. Surface CRANE scenarios are ecological validation;
 underwater/aerial scenarios are descriptive stress tests unless their independent episode counts

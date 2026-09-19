@@ -1,5 +1,45 @@
 # Decision Log
 
+## 2026-09-19 — retain recovery-success through bounded mobility loss, not obstacle timing
+
+- Decision: use a predeclared evaluator-only planar mobility hold as the controlled progress-failure
+  mechanism for the recovery-success family. Do not expose the intervention identity or timing to
+  explanation conditions.
+- Evidence: obstacle removal/window runs e016/e017 stayed in FollowPath with zero recoveries. In
+  e019, the 12 s hold produced a recorded FollowPath FAILURE, recovery-guard SUCCESS, one successful
+  Wait, a second FollowPath start, and terminal task success after release.
+- Alternatives: keep tuning blocker timing; weaken the progress checker; inject BT transitions;
+  call the intervention the physical cause in model-visible evidence.
+- RQ impact: adds the missing recovery-success software mechanism for RQ1–RQ4 while preserving the
+  required distinction between captured execution and evaluator-only fault truth.
+- Validity risk: this is synthetic fault injection, not evidence of a real hardware fault. Vary
+  independent seeds/start-goal instances and report the mechanism narrowly.
+
+## 2026-09-19 — make harness boundaries transient-local and reject incomplete e018
+
+- Decision: publish and subscribe to explicit harness events with reliable transient-local QoS and
+  depth 20. Exclude e018 because its accepted-goal event was lost; use only the predeclared e019
+  replication with matching goal/result IDs.
+- Evidence: the volatile fixture publisher emitted identity/goal immediately after startup, before
+  DDS discovery completed, while the later result arrived. e019 retained two identities, one goal,
+  and one matching result after the QoS repair.
+- RQ impact: prevents capture startup races from masquerading as incomplete robot evidence or from
+  changing recovery-count completeness across benchmark conditions.
+- Validity risk: transient-local replay can retain prior publisher samples while that publisher is
+  alive; opaque run/episode/goal IDs and one-publisher-per-fixture checks remain mandatory.
+
+## 2026-09-19 — distinguish intermediate failure from terminal task failure
+
+- Decision: a successful task outcome rejects a failure premise only when no relevant execution
+  failure is recorded. If FollowPath failed before later success, report both scopes and continue
+  withholding physical cause.
+- Evidence: retained e019 C/D/E answers incorrectly treated eventual success as contradicting an
+  explicit intermediate FollowPath FAILURE. The error is present in deterministic E, identifying a
+  checked-planner defect rather than an LLM-only failure.
+- RQ impact: preserves negative development evidence while correcting future selective answers.
+- Validity risk: failure-event kinds must remain explicitly enumerated and tested; do not infer a
+  failure merely from generic temporal anomalies.
+
 ## 2026-09-19 — use the differential base for controlled corridor collection
 
 - Decision: run the controlled corridor's powered success/recovery study on CRANE's validated

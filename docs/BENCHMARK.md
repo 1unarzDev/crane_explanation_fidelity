@@ -67,7 +67,16 @@ explicit harness deadline and client cancellation under a full-width blocker. It
 223 BT transitions and 2,341 feedback records but zero recoveries before cancellation. It is not a
 Nav2 terminal-failure or obstacle-causality example. Its terminal-status A/B/C/D/E parity smoke is
 useful for selective explanation because the supported answer must withhold both BT-timeout and
-physical-cause claims. Recovery-producing land variants remain required before design freeze.
+physical-cause claims. Independent multi-seed recovery variants remain required before design freeze.
+
+`land-nav-20260919-e019` supplies the first included recovery-followed-by-success mechanism. A
+predeclared evaluator-only planar mobility hold caused FollowPath to return FAILURE; the recorded
+controller-recovery guard returned SUCCESS, one unique Wait attempt completed, and the later
+NavigateToPose result succeeded after mobility was released. The robot-visible record contains no
+fault identity or intervention timing, so explanations may describe the software recovery sequence
+but must withhold the physical reason for lost progress. e018 used the same seed/configuration but
+is excluded because volatile harness QoS lost its accepted-goal record; e019 is the sole countable
+instance after the reliable transient-local capture repair.
 
 `land-nav-20260919-e004` is the first included recovery-bearing model pilot. It terminated with a
 real NavigateToPose `aborted` result before the client deadline and recorded two completed `Wait`

@@ -1,0 +1,47 @@
+{
+  "schema": "crane-explain-development-annotation/v5",
+  "status": "DEVELOPMENT_ONLY_SINGLE_INTERNAL_ANNOTATOR_NOT_ADJUDICATED",
+  "supersedes": "land-nav-five-episode-v4.json",
+  "independent_episode_count": 6,
+  "response_count_per_condition": 37,
+  "episodes": [
+    {"episode_id":"land-nav-20260919-e001-worker-0","family":"client-deadline-cancellation-zero-recovery","question_count":6},
+    {"episode_id":"land-nav-20260919-e004-worker-0","family":"full-blocker-terminal-recovery-exhaustion","question_count":6},
+    {"episode_id":"land-nav-20260919-e007-worker-0","family":"unblocked-success-zero-recovery","question_count":6},
+    {"episode_id":"land-nav-20260919-e009-worker-0","family":"partial-blocker-terminal-recovery-exhaustion","question_count":6},
+    {"episode_id":"land-nav-20260919-e010-worker-0","family":"planning-no-valid-path-zero-recovery","question_count":7},
+    {"episode_id":"land-nav-20260919-e019-worker-0","family":"mobility-hold-recovery-success","question_count":6,"gold_information_units":15,"coverage_by_condition":{"A":14,"B":14,"C":11,"D":11,"E":11}}
+  ],
+  "excluded_related_run": {
+    "episode_id": "land-nav-20260919-e018-worker-0",
+    "reason": "The volatile harness-event channel lost the accepted-goal boundary. e019 repeats the same seed/configuration after the predeclared QoS repair; e018 and e019 must never both count as independent episodes."
+  },
+  "new_material_errors": [
+    {
+      "episode_id":"land-nav-20260919-e019-worker-0",
+      "question":"failure-cause",
+      "conditions":["C","D","E"],
+      "error_types":["incorrect-false-premise-classification","execution-scope-conflation"],
+      "rationale":"The answers treat eventual task success as contradicting a navigation failure, but the trace explicitly records an intermediate FollowPath FAILURE. Physical cause remains unestablished."
+    }
+  ],
+  "condition_summary": {
+    "A":{"material_errors":2,"responses":37,"substantive_answers":31,"information_units_covered":77,"information_units_total":82,"correct_counterfactual_abstentions":6,"false_abstentions":0},
+    "B":{"material_errors":0,"responses":37,"substantive_answers":31,"information_units_covered":77,"information_units_total":82,"correct_counterfactual_abstentions":6,"false_abstentions":0},
+    "C":{"material_errors":1,"responses":37,"substantive_answers":30,"information_units_covered":72,"information_units_total":82,"correct_counterfactual_abstentions":6,"false_abstentions":1},
+    "D":{"material_errors":1,"responses":37,"substantive_answers":30,"information_units_covered":72,"information_units_total":82,"correct_counterfactual_abstentions":6,"false_abstentions":1},
+    "E":{"material_errors":1,"responses":37,"substantive_answers":30,"information_units_covered":72,"information_units_total":82,"correct_counterfactual_abstentions":6,"false_abstentions":1}
+  },
+  "interpretation": [
+    "B remains error-free at the same substantive coverage as A, but six clusters are insufficient for inference.",
+    "D now has one favorable and one unfavorable episode-question error pattern relative to A; development evidence does not establish superiority.",
+    "The e019 C/D/E error originates in checked planning and is reproduced by deterministic E, not introduced by LLM realization.",
+    "Checked conditions retain lower observed answerable-information coverage than A/B; this negative risk-coverage result must not be hidden."
+  ],
+  "limitations": [
+    "Six episode clusters do not support stable cluster-variance or power estimation.",
+    "The annotator was unblinded and authored the checked planner.",
+    "Only one recovery-success scenario is represented, and its mobility intervention is evaluator-only synthetic fault injection.",
+    "Provider, prompts, annotation guide, verifier policy, and final split remain mutable development elements."
+  ]
+}

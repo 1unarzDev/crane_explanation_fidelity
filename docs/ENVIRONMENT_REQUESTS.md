@@ -5,10 +5,10 @@ explanation system. Build the smallest geometry that satisfies each contract. Do
 detail, new perception stacks, or competition semantics unless the contract requires them.
 
 Implementation checkpoint (2026-09-19): the smallest headless corridor, deterministic walls,
-optional partial/full blocker, Ackermann rover, evaluator-only geometry export, LiDAR, odometry,
-TF, and populated Nav2 costmap validation are implemented. A full blocker did not trigger recovery
-before a 25 s client deadline, so recovery-success and recovery-exhaustion behavior remain open
-requirements rather than assumed properties of the scene.
+optional blocker windows, TurtleBot3 differential and Ackermann bodies, evaluator-only geometry,
+LiDAR, odometry, TF, populated Nav2 costmaps, and deterministic mobility hold/release are
+implemented. e019 validates one recovery-success path; existing e004/e009 validate terminal
+recovery exhaustion. Multi-seed reset/determinism and paired final-collection variants remain open.
 
 ## REQUIRED — generated land corridor navigation
 
@@ -17,16 +17,16 @@ requirements rather than assumed properties of the scene.
   not a claim about a new navigation policy.
 - **RQs:** RQ1–RQ4. It primarily exercises execution recovery (motif C), terminal failure (D), and
   evidence insufficiency (F).
-- **Robot embodiment:** a simple ground rover compatible with ROS 2 Jazzy Nav2. Prefer the existing
-  CRANE land/Ackermann implementation if it can accept `cmd_vel` and publish odometry, TF, and
-  LiDAR without more than one day of adaptation; otherwise use the smallest differential-drive
-  body.
-- **Current CRANE substrate:** **IMPLEMENTED/DEVELOPMENT-TESTED.** `Land Vehicle Validation`
-  contains a repeat-validated 60 kg four-wheel `AckermannRoverDynamics` body; the new runtime
-  bootstrap adds authoritative odometry/TF, stamped fixed-step commands, 360-degree LaserScan, and
-  a seeded primitive corridor under graphics-free `train-cpu`. A 3 m no-blocker NavigateToPose
-  smoke succeeds. Costmap observation, obstacle intervention/reset, collision truth, and recovery
-  variants remain incomplete, so this does not yet satisfy the final-collection contract.
+- **Robot embodiment:** the validated CRANE TurtleBot3 Waffle-class differential body for the
+  powered corridor study. Retain Ackermann/F1TENTH as embodiment-specific stress tests rather than
+  mixing their controller/plant behavior into the primary family.
+- **Current CRANE substrate:** **IMPLEMENTED/DEVELOPMENT-TESTED.** The existing TurtleBot3 scene
+  retains its differential dynamics, ROS bridge, LiDAR, semantic identity, and reference geometry;
+  corridor runs replace only the environment root. The graphics-free fixture records odometry/TF,
+  stamped commands, LaserScan, populated costmaps, evaluator-only interventions, and exact BT/action
+  evidence. e015 validates unblocked success and e019 validates one recovery followed by success.
+  Reset reproducibility, collision-contact truth, and powered independent-seed collection remain
+  incomplete, so this is not yet the final-collection contract.
 - **Runtime:** non-aquatic `train-cpu`, graphics-free when supported. Do not use the aquatic
   `Roboboat Course` as the high-throughput primary environment: its HDRP water requires a real
   windowed Vulkan loop.

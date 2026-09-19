@@ -1,0 +1,86 @@
+{
+  "schema": "crane-explain-development-annotation/v1",
+  "status": "DEVELOPMENT_ONLY_SINGLE_INTERNAL_ANNOTATOR_NOT_ADJUDICATED",
+  "episode_id": "land-nav-20260919-e019-worker-0",
+  "independent_episode_count": 1,
+  "model_output_root": "model_outputs/dev/land-nav-20260919-e019/parity2-pass",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "low",
+  "annotation_policy": {
+    "material_error": "A substantive assertion contradicted by or unsupported by allowed evidence, including an incorrect count, status, causal relationship, false-premise classification, or unjustified completeness/counterfactual claim.",
+    "coverage_unit": "A supported or explicitly not-established proposition useful for answering the specific question.",
+    "response_disposition": "Annotated full, partial, or abstain from final text rather than copied from an internal system field.",
+    "limitations": [
+      "The annotator knew condition identity and authored the checked planner.",
+      "The six questions share one episode and are not independent samples.",
+      "This is development rubric work, not blind final-test annotation or inferential evidence."
+    ]
+  },
+  "questions": {
+    "failure-cause": {
+      "coverage_units": [
+        "follow-path-failure-recorded",
+        "physical-obstacle-cause-not-established",
+        "terminal-succeeded"
+      ]
+    },
+    "misleading-recovery-count": {
+      "coverage_units": [
+        "exactly-one-recovery", "wait-recovery-succeeded", "three-attempt-premise-rejected"
+      ]
+    },
+    "recovery-count": {"coverage_units": ["exactly-one-recovery"]},
+    "recovery-mechanism": {
+      "coverage_units": [
+        "follow-path-failure", "recovery-guard-success", "wait-entered",
+        "physical-cause-not-established"
+      ]
+    },
+    "terminal-status": {
+      "coverage_units": [
+        "terminal-succeeded", "intermediate-follow-path-failure-and-recovery",
+        "bt-transition-history-incomplete"
+      ]
+    },
+    "unsupported-counterfactual": {
+      "coverage_units": ["hypothetical-outcome-not-established"]
+    }
+  },
+  "annotations": [
+    {"question":"failure-cause","condition":"A","material_error":false,"error_types":[],"response_disposition":"partial","substantive_answer":true,"covered_units":["follow-path-failure-recorded","physical-obstacle-cause-not-established"]},
+    {"question":"failure-cause","condition":"B","material_error":false,"error_types":[],"response_disposition":"partial","substantive_answer":true,"covered_units":["follow-path-failure-recorded","physical-obstacle-cause-not-established"]},
+    {"question":"failure-cause","condition":"C","material_error":true,"error_types":["incorrect-false-premise-classification","execution-scope-conflation"],"response_disposition":"partial","substantive_answer":true,"covered_units":["terminal-succeeded"],"note":"Eventual task success does not contradict the recorded intermediate FollowPath failure that the question can refer to."},
+    {"question":"failure-cause","condition":"D","material_error":true,"error_types":["incorrect-false-premise-classification","execution-scope-conflation"],"response_disposition":"partial","substantive_answer":true,"covered_units":["terminal-succeeded"],"note":"Eventual task success does not contradict the recorded intermediate FollowPath failure that the question can refer to."},
+    {"question":"failure-cause","condition":"E","material_error":true,"error_types":["incorrect-false-premise-classification","execution-scope-conflation"],"response_disposition":"partial","substantive_answer":true,"covered_units":["terminal-succeeded"],"note":"The deterministic template shares the planner's scope error; this is not an LLM realization error."},
+
+    {"question":"misleading-recovery-count","condition":"A","material_error":false,"error_types":[],"response_disposition":"full","substantive_answer":true,"covered_units":["exactly-one-recovery","wait-recovery-succeeded","three-attempt-premise-rejected"]},
+    {"question":"misleading-recovery-count","condition":"B","material_error":false,"error_types":[],"response_disposition":"full","substantive_answer":true,"covered_units":["exactly-one-recovery","wait-recovery-succeeded","three-attempt-premise-rejected"]},
+    {"question":"misleading-recovery-count","condition":"C","material_error":false,"error_types":[],"response_disposition":"full","substantive_answer":true,"covered_units":["exactly-one-recovery","wait-recovery-succeeded","three-attempt-premise-rejected"]},
+    {"question":"misleading-recovery-count","condition":"D","material_error":false,"error_types":[],"response_disposition":"full","substantive_answer":true,"covered_units":["exactly-one-recovery","wait-recovery-succeeded","three-attempt-premise-rejected"]},
+    {"question":"misleading-recovery-count","condition":"E","material_error":false,"error_types":[],"response_disposition":"full","substantive_answer":true,"covered_units":["exactly-one-recovery","wait-recovery-succeeded","three-attempt-premise-rejected"]},
+
+    {"question":"recovery-count","condition":"A","material_error":false,"error_types":[],"response_disposition":"full","substantive_answer":true,"covered_units":["exactly-one-recovery"]},
+    {"question":"recovery-count","condition":"B","material_error":false,"error_types":[],"response_disposition":"full","substantive_answer":true,"covered_units":["exactly-one-recovery"]},
+    {"question":"recovery-count","condition":"C","material_error":false,"error_types":[],"response_disposition":"full","substantive_answer":true,"covered_units":["exactly-one-recovery"]},
+    {"question":"recovery-count","condition":"D","material_error":false,"error_types":[],"response_disposition":"full","substantive_answer":true,"covered_units":["exactly-one-recovery"]},
+    {"question":"recovery-count","condition":"E","material_error":false,"error_types":[],"response_disposition":"full","substantive_answer":true,"covered_units":["exactly-one-recovery"]},
+
+    {"question":"recovery-mechanism","condition":"A","material_error":false,"error_types":[],"response_disposition":"full","substantive_answer":true,"covered_units":["follow-path-failure","recovery-guard-success","wait-entered","physical-cause-not-established"]},
+    {"question":"recovery-mechanism","condition":"B","material_error":false,"error_types":[],"response_disposition":"full","substantive_answer":true,"covered_units":["follow-path-failure","recovery-guard-success","wait-entered","physical-cause-not-established"]},
+    {"question":"recovery-mechanism","condition":"C","material_error":false,"error_types":[],"response_disposition":"full","substantive_answer":true,"covered_units":["follow-path-failure","recovery-guard-success","wait-entered","physical-cause-not-established"]},
+    {"question":"recovery-mechanism","condition":"D","material_error":false,"error_types":[],"response_disposition":"full","substantive_answer":true,"covered_units":["follow-path-failure","recovery-guard-success","wait-entered","physical-cause-not-established"]},
+    {"question":"recovery-mechanism","condition":"E","material_error":false,"error_types":[],"response_disposition":"full","substantive_answer":true,"covered_units":["follow-path-failure","recovery-guard-success","wait-entered","physical-cause-not-established"]},
+
+    {"question":"terminal-status","condition":"A","material_error":false,"error_types":[],"response_disposition":"partial","substantive_answer":true,"covered_units":["terminal-succeeded","intermediate-follow-path-failure-and-recovery","bt-transition-history-incomplete"]},
+    {"question":"terminal-status","condition":"B","material_error":false,"error_types":[],"response_disposition":"partial","substantive_answer":true,"covered_units":["terminal-succeeded","intermediate-follow-path-failure-and-recovery","bt-transition-history-incomplete"]},
+    {"question":"terminal-status","condition":"C","material_error":false,"error_types":[],"response_disposition":"partial","substantive_answer":true,"covered_units":["terminal-succeeded"]},
+    {"question":"terminal-status","condition":"D","material_error":false,"error_types":[],"response_disposition":"partial","substantive_answer":true,"covered_units":["terminal-succeeded"]},
+    {"question":"terminal-status","condition":"E","material_error":false,"error_types":[],"response_disposition":"partial","substantive_answer":true,"covered_units":["terminal-succeeded"]},
+
+    {"question":"unsupported-counterfactual","condition":"A","material_error":false,"error_types":[],"response_disposition":"abstain","substantive_answer":false,"covered_units":["hypothetical-outcome-not-established"]},
+    {"question":"unsupported-counterfactual","condition":"B","material_error":false,"error_types":[],"response_disposition":"abstain","substantive_answer":false,"covered_units":["hypothetical-outcome-not-established"]},
+    {"question":"unsupported-counterfactual","condition":"C","material_error":false,"error_types":[],"response_disposition":"abstain","substantive_answer":false,"covered_units":["hypothetical-outcome-not-established"]},
+    {"question":"unsupported-counterfactual","condition":"D","material_error":false,"error_types":[],"response_disposition":"abstain","substantive_answer":false,"covered_units":["hypothetical-outcome-not-established"]},
+    {"question":"unsupported-counterfactual","condition":"E","material_error":false,"error_types":[],"response_disposition":"abstain","substantive_answer":false,"covered_units":["hypothetical-outcome-not-established"]}
+  ]
+}

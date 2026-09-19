@@ -27,7 +27,7 @@ their own location. Exact repository commits and destinations are recorded in
 - **IMPLEMENTED, TESTED:** evidence records, checked answer plans, final-text verification,
   deterministic fallback, Dock/Slalom regressions, terminal-status distinctions, and the A/B/C/D/E
   harness, including recovery-mechanism, physical-cause, and unsupported-counterfactual plans
-  (24 tests).
+  (25 tests).
 - **TESTED:** ROS package tests, Jazzy build, live BT/action/harness capture, and exact BT retention.
 - **TESTED:** CRANE build, one valid aquatic terminal-success capture pilot, a graphics-free
   land/Ackermann success smoke with populated costmap snapshots, and a valid-as-expected land
@@ -47,11 +47,15 @@ their own location. Exact repository commits and destinations are recorded in
 - **TESTED (PIPELINE SMOKE):** A/B/C/D/E over real success and cancellation episodes with a
   rule-based generator; identical outputs validate parity and routing but are not an LLM comparison
   or evidence for RQ1/RQ2.
-- **TESTED (DEVELOPMENT ONLY):** five real land episodes, 31 questions per condition and 155 total
+- **TESTED (DEVELOPMENT ONLY):** six real land episodes, 37 questions per condition and 185 total
   A/B/C/D/E responses, cached single-sample model calls, parity audits, and provisional material
-  error/coverage annotation. A had 2/31 errors and D had 0/31 but lower retained-output and
-  answerable-information coverage; five episode clusters do not support inference or power.
-- **NOT_RUN:** multi-episode recovery/failure collection and the main powered benchmark.
+  error/coverage annotation. A has 2/37 errors, B 0/37, and C/D/E 1/37 each. Checked methods retain
+  lower answerable-information coverage; six episode clusters do not support inference or power.
+- **TESTED:** a bounded evaluator-only TurtleBot3 mobility interruption produced the first captured
+  recovery-followed-by-success episode with one exact Wait attempt. The first run was excluded
+  when a volatile DDS startup race lost its goal boundary; reliable transient-local harness QoS
+  was then validated on the retained replication.
+- **NOT_RUN:** powered multi-seed final collection and sealed-test evaluation.
 - **DEFERRED:** arbitrary-LLM proposition extraction until independently evaluated.
 
 ## CPU-only demo
@@ -92,12 +96,12 @@ Run the existing full Nav2 fixture from the umbrella root:
 packages/crane_ml/Tools/Performance/run_nav2_controller_fixture.sh
 ```
 
-For graphics-free land development, use the dedicated Ackermann/LaserScan corridor fixture. It
-selects `Land Vehicle Validation`, `train-cpu`, `-batchmode`, and `-nographics`; it does not open
-the aquatic Unity window:
+For graphics-free land development, use the land fixture or its TurtleBot3 wrapper. Both select
+`train-cpu`, `-batchmode`, and `-nographics`; neither opens the aquatic Unity window:
 
 ```bash
 packages/crane_ml/Tools/Performance/run_land_nav2_fixture.sh
+packages/crane_ml/Tools/Performance/run_turtlebot3_nav2_fixture.sh
 ```
 
 The default 3 m goal is a vertical-slice check, not a powered-study scenario. Raw fixture output is

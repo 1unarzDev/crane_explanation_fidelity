@@ -1,0 +1,156 @@
+{
+  "assumptions": {
+    "cluster_icc": 0.1,
+    "final_analysis_difference": "Final inference uses episode/scenario clustered bootstrap confidence intervals; this normal approximation is only a transparent sample-size sensitivity tool.",
+    "paired_latent_correlation": 0.5,
+    "questions_per_episode": 6,
+    "test": "episode-equal-weight mean D-A response risk; two-sided 95% normal interval entirely below zero"
+  },
+  "scenarios": [
+    {
+      "interpretation": "Pre-specified five-percentage-point absolute risk reduction.",
+      "name": "minimum_practical_5pp",
+      "results": [
+        {
+          "episodes": 20,
+          "mean_simulated_difference_d_minus_a": -0.048833333333333076,
+          "mean_simulated_risk_a": 0.07933333333333356,
+          "mean_simulated_risk_d": 0.030500000000000055,
+          "power_two_sided_95_cluster_normal": 0.465,
+          "questions_per_episode": 6,
+          "simulations": 1000
+        },
+        {
+          "episodes": 30,
+          "mean_simulated_difference_d_minus_a": -0.04997777777777798,
+          "mean_simulated_risk_a": 0.08052777777777795,
+          "mean_simulated_risk_d": 0.030550000000000233,
+          "power_two_sided_95_cluster_normal": 0.671,
+          "questions_per_episode": 6,
+          "simulations": 1000
+        },
+        {
+          "episodes": 40,
+          "mean_simulated_difference_d_minus_a": -0.05077916666666665,
+          "mean_simulated_risk_a": 0.08102500000000015,
+          "mean_simulated_risk_d": 0.030245833333333295,
+          "power_two_sided_95_cluster_normal": 0.771,
+          "questions_per_episode": 6,
+          "simulations": 1000
+        },
+        {
+          "episodes": 50,
+          "mean_simulated_difference_d_minus_a": -0.05050000000000012,
+          "mean_simulated_risk_a": 0.08041666666666676,
+          "mean_simulated_risk_d": 0.029916666666666765,
+          "power_two_sided_95_cluster_normal": 0.863,
+          "questions_per_episode": 6,
+          "simulations": 1000
+        },
+        {
+          "episodes": 60,
+          "mean_simulated_difference_d_minus_a": -0.050244444444444446,
+          "mean_simulated_risk_a": 0.08078333333333317,
+          "mean_simulated_risk_d": 0.030538888888888963,
+          "power_two_sided_95_cluster_normal": 0.922,
+          "questions_per_episode": 6,
+          "simulations": 1000
+        },
+        {
+          "episodes": 80,
+          "mean_simulated_difference_d_minus_a": -0.05017500000000002,
+          "mean_simulated_risk_a": 0.08032708333333326,
+          "mean_simulated_risk_d": 0.030152083333333336,
+          "power_two_sided_95_cluster_normal": 0.967,
+          "questions_per_episode": 6,
+          "simulations": 1000
+        },
+        {
+          "episodes": 100,
+          "mean_simulated_difference_d_minus_a": -0.05029999999999999,
+          "mean_simulated_risk_a": 0.08001999999999997,
+          "mean_simulated_risk_d": 0.029720000000000076,
+          "power_two_sided_95_cluster_normal": 0.994,
+          "questions_per_episode": 6,
+          "simulations": 1000
+        }
+      ],
+      "risk_a": 0.08,
+      "risk_d": 0.03
+    },
+    {
+      "interpretation": "Sensitivity only; unblinded six-episode rates are too sparse to be estimates.",
+      "name": "six_episode_descriptive_rates",
+      "results": [
+        {
+          "episodes": 20,
+          "mean_simulated_difference_d_minus_a": -0.026325000000000022,
+          "mean_simulated_risk_a": 0.05436666666666644,
+          "mean_simulated_risk_d": 0.028041666666666715,
+          "power_two_sided_95_cluster_normal": 0.235,
+          "questions_per_episode": 6,
+          "simulations": 1000
+        },
+        {
+          "episodes": 30,
+          "mean_simulated_difference_d_minus_a": -0.02717777777777798,
+          "mean_simulated_risk_a": 0.05390000000000016,
+          "mean_simulated_risk_d": 0.026722222222222407,
+          "power_two_sided_95_cluster_normal": 0.328,
+          "questions_per_episode": 6,
+          "simulations": 1000
+        },
+        {
+          "episodes": 40,
+          "mean_simulated_difference_d_minus_a": -0.026637499999999925,
+          "mean_simulated_risk_a": 0.054904166666666525,
+          "mean_simulated_risk_d": 0.028266666666666565,
+          "power_two_sided_95_cluster_normal": 0.395,
+          "questions_per_episode": 6,
+          "simulations": 1000
+        },
+        {
+          "episodes": 50,
+          "mean_simulated_difference_d_minus_a": -0.027333333333333387,
+          "mean_simulated_risk_a": 0.05411333333333356,
+          "mean_simulated_risk_d": 0.026779999999999984,
+          "power_two_sided_95_cluster_normal": 0.469,
+          "questions_per_episode": 6,
+          "simulations": 1000
+        },
+        {
+          "episodes": 60,
+          "mean_simulated_difference_d_minus_a": -0.026666666666666734,
+          "mean_simulated_risk_a": 0.05363055555555552,
+          "mean_simulated_risk_d": 0.02696388888888898,
+          "power_two_sided_95_cluster_normal": 0.54,
+          "questions_per_episode": 6,
+          "simulations": 1000
+        },
+        {
+          "episodes": 80,
+          "mean_simulated_difference_d_minus_a": -0.026858333333333304,
+          "mean_simulated_risk_a": 0.053947916666666616,
+          "mean_simulated_risk_d": 0.027089583333333323,
+          "power_two_sided_95_cluster_normal": 0.666,
+          "questions_per_episode": 6,
+          "simulations": 1000
+        },
+        {
+          "episodes": 100,
+          "mean_simulated_difference_d_minus_a": -0.02692333333333339,
+          "mean_simulated_risk_a": 0.053649999999999975,
+          "mean_simulated_risk_d": 0.026726666666666742,
+          "power_two_sided_95_cluster_normal": 0.772,
+          "questions_per_episode": 6,
+          "simulations": 1000
+        }
+      ],
+      "risk_a": 0.05405405405405406,
+      "risk_d": 0.02702702702702703
+    }
+  ],
+  "schema": "crane-explain-clustered-power-sensitivity/v1",
+  "seed": 2026091901,
+  "status": "DEVELOPMENT_PLANNING_ONLY_NOT_STUDY_FREEZE"
+}

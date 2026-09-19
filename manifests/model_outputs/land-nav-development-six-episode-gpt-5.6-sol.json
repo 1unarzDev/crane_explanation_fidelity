@@ -1,0 +1,50 @@
+{
+  "schema": "crane-explain-model-artifact-manifest/v1",
+  "status": "DEVELOPMENT_ONLY",
+  "episode_ids": [
+    "land-nav-20260919-e001-worker-0",
+    "land-nav-20260919-e004-worker-0",
+    "land-nav-20260919-e007-worker-0",
+    "land-nav-20260919-e009-worker-0",
+    "land-nav-20260919-e010-worker-0",
+    "land-nav-20260919-e019-worker-0"
+  ],
+  "provider": "codex-lb-via-chatgpt-login",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "low",
+  "single_sample_no_retry": true,
+  "logical_condition_outputs": 185,
+  "model_mediated_condition_outputs": 148,
+  "unique_model_calls_referenced": 107,
+  "new_unique_model_calls": 19,
+  "cache_roots": [
+    "research/explanation_fidelity/model_cache/dev-e004-gpt56sol-low",
+    "research/explanation_fidelity/model_cache"
+  ],
+  "referenced_cache_inventory": {
+    "file_count": 107,
+    "bytes": 402656,
+    "sha256": "e35a9375e5ac9a170b850232c59d770d4d8fe8a37c38c958955989e303915d98",
+    "algorithm": "sha256 over sorted cache-key.json, NUL, file-sha256, newline tuples; referenced calls only"
+  },
+  "new_output_inventory": {
+    "root": "model_outputs/dev/land-nav-20260919-e019/parity2-pass",
+    "file_count": 6,
+    "bytes": 30198,
+    "sha256": "40eae01e820d3afaa60adad7cacface917cd8fe4321538a4c7ba7529f22486e6",
+    "algorithm": "sha256 over sorted relative-path, NUL, file-sha256, newline tuples"
+  },
+  "prior_accepted_manifest": "manifests/model_outputs/land-nav-development-five-episode-gpt-5.6-sol.json",
+  "usage_unique_calls": {
+    "input_tokens": 1477861,
+    "cached_input_tokens": 1042944,
+    "output_tokens": 5271,
+    "reasoning_output_tokens": 114,
+    "aggregate_latency_ms": 690037.454389
+  },
+  "cost_usd": null,
+  "cost_status": "not_reported_by_codex_cli_chatgpt_login",
+  "temperature": null,
+  "sampling_seed": null,
+  "retained_negative_result": "C/D/E each made one material execution-scope error on e019 failure-cause; outputs were not regenerated after the planner fix."
+}
