@@ -24,6 +24,12 @@ infeasible, known-not-considered, and unknown. `not_considered` is used only whe
    to templates.
 6. Evaluation compares responses with evaluator-only truth stored outside all model-visible paths.
 
+The validated CRANE aquatic fixture must retain a real windowed Vulkan render loop: HDRP water
+queries are not valid under `-batchmode` or `-nographics`. The `train-gpu` profile disables
+spectator cameras but retains a task sensor camera, so the window is not a presentation view and a
+short 0.5 m goal may appear nearly stationary. Primary high-throughput land collection should use
+the non-aquatic `train-cpu` path rather than weakening aquatic physics or sensors.
+
 ## Evidence levels
 
 1. recorded sequence;

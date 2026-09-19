@@ -26,9 +26,12 @@ their own location. Exact repository commits and destinations are recorded in
 
 - **IMPLEMENTED, TESTED:** evidence records, checked answer plans, final-text verification,
   deterministic fallback, Dock/Slalom regressions, and the A/B/C/D/E harness (14 tests).
-- **TESTED:** ROS package unit test and isolated Jazzy `colcon build`; local Nav2 interfaces.
-- **TESTED:** CRANE build and full NavigateToPose baseline after adequate lifecycle startup margin.
-- **NOT_RUN:** live explanation capture and main CRANE benchmark collection.
+- **TESTED:** ROS package tests, Jazzy build, live BT/action/harness capture, and exact BT retention.
+- **TESTED:** CRANE build and one valid, terminal-success NavigateToPose capture pilot after adequate
+  lifecycle startup margin.
+- **TESTED (PIPELINE SMOKE):** A/B/C/D/E over that real episode with a rule-based generator; all
+  five answers were identical, so this is not an LLM comparison or evidence for RQ1/RQ2.
+- **NOT_RUN:** failure/recovery scenario collection and the main powered land benchmark.
 - **DEFERRED:** arbitrary-LLM proposition extraction until independently evaluated.
 
 ## CPU-only demo
@@ -73,7 +76,8 @@ After each validated run, generate a content-free data manifest and commit the e
 pointers:
 
 ```bash
-scripts/checkpoint_validated_run.sh RUN_ID data/robot_visible/RUN_ID
+scripts/checkpoint_validated_run.sh RUN_ID \
+  data/robot_visible/RUN_ID data/evaluator_only/RUN_ID
 ```
 
 Review that commit, then push it. The checkpoint command refuses dirty component repositories or
@@ -88,6 +92,7 @@ delivered odometry proven controller consumption.
 - [Experiment ledger](docs/EXPERIMENTS.md)
 - [Research audit](docs/RESEARCH.md)
 - [Decision log](docs/DECISIONS.md)
+- [Environment requests](docs/ENVIRONMENT_REQUESTS.md)
 
 ## Troubleshooting
 

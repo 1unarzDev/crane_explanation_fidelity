@@ -9,6 +9,8 @@ marked **TBD-PILOT** are not yet frozen.
 - RQ2: checked plans/final verification versus direct generation and self-checking.
 - RQ3: useful partial answers and correct withholding under insufficient/contradictory evidence.
 - RQ4: trustworthiness at useful coverage, including matched-coverage comparisons.
+- RQ5 (exploratory): robustness across land, surface, underwater, and aerial embodiments when
+  enough data can be collected without weakening the powered primary land study.
 
 Primary H1: method D reduces response-level material errors versus strong prose baseline A while
 maintaining useful substantive coverage. Secondary: B>A representation effect; D>B checking
@@ -59,6 +61,15 @@ Power planning uses development episodes only: estimate paired discordance/effec
 smallest practically meaningful reduction before seeing sealed test, simulate the clustered paired
 design, and target ≥80% power (prefer 90%). **TBD-PILOT:** effect, ICC, threshold, episode count.
 
+Current development sample: one valid terminal-success CRANE/Nav2 capture and zero evaluated LLM
+responses. Its zero-recovery question produced identical A/B/C/D/E rule-based smoke answers and is
+too trivial for effect estimation. Power parameters remain **TBD-PILOT**; no sample-size claim may
+be derived from this run.
+
+The initial powered analysis is land/navigation. Surface CRANE scenarios are ecological validation;
+underwater/aerial scenarios are descriptive stress tests unless their independent episode counts
+become adequate. Domain interactions are exploratory unless frozen after pilot power analysis.
+
 ## Freeze and stopping rules
 
 Before final collection freeze: metric/annotation guide, H1/A-vs-D comparison, prompts, model,
@@ -72,4 +83,3 @@ comes first; report shortfall honestly. Essential experiments do not run October
 Robot-visible and evaluator-only artifacts live in physically separate roots with opaque IDs.
 Fault names and gold outcomes never appear in model-visible filenames, metadata, prompts, or
 retrieval indexes. A release builder performs an allowlist copy and scans for forbidden fields.
-

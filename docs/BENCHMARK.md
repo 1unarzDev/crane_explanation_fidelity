@@ -45,3 +45,14 @@ Current executable coverage is in
 `configs/fixtures/dock_policy.json`. Near ties preserve exact recorded
 scores and are not described as ties; the practical-equivalence threshold remains a pilot design
 choice and must be frozen rather than selected from final outcomes.
+
+## Scenario development
+
+The required high-throughput land corridor contract is specified in `ENVIRONMENT_REQUESTS.md`.
+The scenario/motif priority is land C/D/F, surface A/B/C/D/E, and optional underwater/aerial B/C/D.
+Competition names do not define benchmark units; controlled decision/explanation motifs do.
+
+The first real capture (`nav2-capture-20260919-p03`) is a terminal-success pipeline smoke. Its
+single recovery-count question is not a benchmark sample for RQ1/RQ2 because the direct generator
+was rule-based and every condition returned the same correct sentence. It demonstrates artifact
+flow and information parity while showing that recovery-free factual questions alone are too easy.

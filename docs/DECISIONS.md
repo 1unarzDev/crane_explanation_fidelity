@@ -62,3 +62,40 @@
 - RQ impact: removes ambiguous code provenance from every benchmark and experimental run.
 - Validity risk: core changes must be committed to the component repository first, then deliberately
   advanced in `manifests/workspace.lock.json`.
+
+## 2026-09-19 — batch recorder fsync without dropping evidence
+
+- Decision: flush each JSONL record, call `fsync` every 100 records, and always `fsync` on close.
+- Evidence: per-record `fsync` captured 871 records but reduced the CRANE pilot to RTF 0.848 and
+  invalidated it; the bounded-sync rerun captured 881 records at RTF 1.00055 and passed all quality
+  gates with zero stale/failed observations.
+- Alternatives: drop/downsample feedback; accept invalid runs; keep per-record barriers.
+- RQ impact: retains full action evidence without perturbing the robot run enough to fail its
+  collection validity gate.
+- Validity risk: a process/host crash can lose up to the current buffered interval even though each
+  line is flushed to the OS; completeness checks remain mandatory.
+
+## 2026-09-19 — land is the powered primary benchmark
+
+- Decision: request a minimal deterministic non-aquatic land corridor generator for the powered
+  study; keep aquatic CRANE as ecological validation.
+- Evidence: Nav2 capture is working, while aquatic HDRP requires a real windowed Vulkan loop and is
+  less suitable for high-throughput collection. The first success question was too trivial to
+  distinguish methods.
+- Alternatives: scale only the Roboboat scene; implement multiple competition domains immediately;
+  force aquatic simulation into unsupported headless modes.
+- RQ impact: prioritizes independent C/D/F navigation motifs and statistical power for RQ1–RQ4.
+- Validity risk: primary claims may be land-specific; surface/other-domain results must be labeled
+  ecological or exploratory unless independently powered.
+
+## 2026-09-19 — do not make direct BARN integration the primary path
+
+- Decision: reuse BARN's generated-world and held-out sampling methodology now; defer its separate
+  Gazebo/Jackal runtime to an optional, isolated one-day smoke after local land capture is healthy.
+- Evidence: the audited ROS 2 harness has action/proximity outcome ambiguity and batch/report
+  inconsistencies; the BARN 2026 organizer report says only one of five ROS 2 submissions was
+  evaluable by the standard pipeline. See `docs/research/BARN_FEASIBILITY.md`.
+- Alternatives: rebuild and repair BARN immediately; import BARN worlds into Unity; ignore BARN.
+- RQ impact: preserves collection time while retaining scenario diversity/split principles.
+- Validity risk: the primary study lacks a standardized external land embodiment unless the later
+  smoke passes its frozen stop gates; report this limitation rather than implying BARN validation.

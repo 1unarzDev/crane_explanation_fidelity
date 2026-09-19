@@ -2,6 +2,40 @@
 
 Last primary-source check: 2026-09-19. This note records only claims checked against a paper, an official proceedings/venue page, or an authors' repository. Recommendations for this project are labelled as such; they are not claims made by the cited authors.
 
+## Local CRANE land substrate (2026-09-19)
+
+- Primary sources inspected: `Docs/SimulationPhysicsAndRuntimeModes.md`,
+  `Docs/PerformanceEngineering.md`, `Assets/Scripts/Physics/Land/AckermannRoverDynamics.cs`,
+  `Assets/Scripts/Physics/Land/CraneLandValidationRunner.cs`, and the generated
+  `Land Vehicle Validation` scene at CRANE commit
+  `aced6cd75f317873770e79477de136c82c4eafa1`.
+- Finding: CRANE has a repeat-validated four-wheel Ackermann dynamics fixture and a strict
+  graphics-free `train-cpu` profile. The existing land runner tests acceleration, coasting,
+  braking, and turning on flat ground, then exits; it is not yet a Nav2 obstacle benchmark.
+- Design impact: land remains the right powered-study target, but the missing odom/TF/LiDAR/cmd_vel
+  interfaces, deterministic obstacle generator, and reset/fault API are real environment work. The
+  complete minimum contract is in `ENVIRONMENT_REQUESTS.md`.
+- Unresolved: whether direct BARN ROS 2 integration is cheaper than extending this CRANE scene; a
+  primary-source feasibility audit is recorded in `docs/research/BARN_FEASIBILITY.md`.
+
+## BARN Challenge 2026 feasibility decision (2026-09-19)
+
+- Primary sources: official BARN 2026 challenge page and organizer report, plus the officially
+  linked ROS 2 evaluator at commit `d6c575b51e477bd524d634e12cffeb34036fcd1e`. Full citations and
+  source links are retained in `docs/research/BARN_FEASIBILITY.md`.
+- Finding: the Jazzy/Gazebo/Jackal stack is conceptually compatible with passive Nav2 capture but
+  is not a drop-in CRANE scenario. The public harness uses proximity rather than the action result
+  for success, can wait indefinitely before timeout accounting starts, and its batch/report scripts
+  disagree about world indices and score clipping. The organizer report states that only one of
+  five ROS 2 submissions was evaluable through the standard pipeline.
+- Decision: **NO-GO** for direct primary-study integration under the one-day bound; **GO** for
+  immediate reuse of its independent generated worlds, difficulty stratification, held-out split,
+  repeated-trial, and separate-outcome methodology. A later isolated external smoke retains hard
+  two/four/six/eight-hour stop gates.
+- RQ impact: avoids delaying the powered RQ1–RQ4 study while adopting stronger scenario-level
+  sampling and split discipline. BARN remains an external navigation stress test, not explanation
+  ground truth.
+
 ## Immediate synthesis for RQ1--RQ4
 
 - The strongest methodological precedent for the proposed pipeline is the separation of symbolic content planning from language realization. Moryossef et al. show that an explicit plan can improve semantic faithfulness without sacrificing judged fluency; their planner is not a verifier, however, and their WebNLG result should not be presented as evidence for robot explanations [Moryossef et al. 2019](https://doi.org/10.18653/v1/N19-1236).

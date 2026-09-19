@@ -65,3 +65,38 @@
   Separate evaluator-only tree created empty. Two committed robot-visible manifests each inventory
   12 files (917,647 and 908,544 bytes respectively) using SHA-256, paths, sizes, and provenance.
 - Data collected: no new episode. Explanation-benchmark sample size remains 0. No effect size.
+
+## 2026-09-19 — live capture pilots p01–p03
+
+- Component revisions after fixes: CRANE `aced6cd75f317873770e79477de136c82c4eafa1`;
+  `crane_explain_ros` `3eebaef1ffdbcc1985abe15d90cc2eaa0fd6ed2f`; core
+  `e83fd3280f85539f2717ae5bcf9daf7939c770c8`; astro_dock
+  `36202373ae186a8fd247a20b7b477312a744de99`.
+- Fixed inputs: seed 1000; ROS 2 Jazzy/Nav2 1.3.12 image `lunarzdev/astro:cuda`; ROS domain/port
+  isolated per run; fixture delay 15 s; 0.5 m NavigateToPose goal; train-gpu profile; Unity
+  6000.5.10f1; config SHA-256 `20562df69b9c07e0b82c3d1479435b79e66f9c105472aa29abcabaf346fe80c2`.
+- Exact BT: `navigate_to_pose_w_replanning_and_recovery.xml`, SHA-256
+  `5895b63840d54c6d7eee3d3b3f3ee177680af9e58a14cbf61c4df39fe5db2a90`.
+- p01: **TESTED/EXCLUDED**. Recorder emitted only start/stop because Jazzy `GoalStatusArray` has no
+  `header`; callback crashed. Simulator also failed quality (`valid=false`, RTF 0.778) and the
+  client deadline canceled navigation. This found the ROS schema defect; it is not a robot failure.
+- p02: **TESTED/EXCLUDED**. Schema fix captured 871 records and complete goal/result evidence, and
+  navigation succeeded, but per-record `fsync` perturbed throughput (`valid=false`, RTF 0.848).
+- p03: **TESTED/INCLUDED DEVELOPMENT PILOT**. Batched durability captured 881 records: 79 BT
+  transitions, 794 feedback records, two action-status records, exact BT XML, and four harness
+  events (CRANE identity, observation identity, accepted goal, result). Navigation succeeded;
+  RTF 1.00055; 79 accepted/0 rejected actions; zero stale or failed observations; zero recoveries.
+- A/B/C/D/E smoke: one recovery-count question over p03, using identical fact IDs and a transparent
+  rule-based direct generator. All conditions answered `Exactly 0 recovery attempts occurred.`;
+  C/D/E final text verified. Status: **PIPELINE_SMOKE_NOT_LLM_EVALUATION**. This yields no effect
+  estimate and shows that recovery-free factual questions are too easy for the main comparison.
+- Data governance: raw payloads remain ignored. Robot-visible p03 contains capture/action/BT and
+  parity-smoke artifacts (9 files, 275,057 bytes); evaluator-only p03 contains simulator validity,
+  internal worker logs/results, and performance artifacts (9 files, 893,822 bytes). Both have
+  committed SHA-256 manifests. Earlier retained runs were physically separated and remanifested.
+- Independent sample size: 1 valid actual episode (surface/CRANE success family); 0 material-error
+  evaluation episodes; 0 model-generated responses; 2 excluded live pilots.
+- Development effect/power: **NOT_AVAILABLE**. No final-test elements are frozen; H1/metrics remain
+  draft pending diverse failure/recovery pilots and actual model outputs.
+- Highest-value next step: implement or integrate the required land corridor scenario, then collect
+  recovery-success and terminal-failure pilots before power planning.
