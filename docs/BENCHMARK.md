@@ -40,7 +40,8 @@ and answerability. Counts distinguish `at least N recorded` from `exactly N occu
 - D: later outcome changes do not alter decision-time rationale.
 - E: infeasible, unevaluated, missing-score, tied, near-tied, contradictory-selection cases.
 
-Current executable coverage is in `tests/test_dock_slalom.py`, with its committed fixture at
+Current executable coverage is in
+`packages/astro_dock/src/crane_explain/tests/test_dock_slalom.py`, with its committed fixture at
 `configs/fixtures/dock_policy.json`. Near ties preserve exact recorded
 scores and are not described as ties; the practical-equivalence threshold remains a pilot design
 choice and must be frozen rather than selected from final outcomes.

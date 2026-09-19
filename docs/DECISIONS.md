@@ -49,3 +49,16 @@
 - Validity risk: the nested core pin intentionally targets the last pre-umbrella core commit; later
   core updates require an explicit lock change and must not recursively initialize umbrella
   submodules inside astro_dock.
+
+## 2026-09-19 — component source exists only in the pinned nested checkout
+
+- Decision: the umbrella does not track a second copy of `crane_explain` source, tests, or Python
+  packaging metadata. Setup installs the locked component revision only at
+  `packages/astro_dock/src/crane_explain`.
+- Evidence: retaining the pre-refactor root `src/`, `tests/`, and `pyproject.toml` duplicated the
+  component and allowed umbrella code to diverge from the recorded nested pin.
+- Alternatives: keep an umbrella-local editable copy; add `crane_explain` as another top-level
+  submodule; copy files during setup.
+- RQ impact: removes ambiguous code provenance from every benchmark and experimental run.
+- Validity risk: core changes must be committed to the component repository first, then deliberately
+  advanced in `manifests/workspace.lock.json`.

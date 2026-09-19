@@ -14,7 +14,7 @@ separately pinned explanation packages:
 
 ```bash
 git clone --recurse-submodules https://github.com/1unarzDev/crane_explanation_fidelity.git
-cd crane_explain
+cd crane_explanation_fidelity
 scripts/setup_workspace.sh
 ```
 
@@ -36,8 +36,8 @@ their own location. Exact repository commits and destinations are recorded in
 ```bash
 python -m venv .venv
 . .venv/bin/activate
-python -m pip install -e '.[dev]'
-pytest -q
+python -m pip install -e 'packages/astro_dock/src/crane_explain[dev]'
+python -m pytest -q packages/astro_dock/src/crane_explain/tests
 crane-explain validate configs/fixtures/dock_policy.json
 crane-explain explain configs/fixtures/dock_policy.json --alternative Slalom
 ```
@@ -47,7 +47,8 @@ The fixture policy is synthetic and exists only to test arithmetic; it is not CR
 ## Layout
 
 - `packages/astro_dock/`, `packages/crane_ml/`: pinned Git submodules
-- `src/crane_explain/`, `tests/`: CPU-only evidence-checking core and regressions
+- `packages/astro_dock/src/crane_explain/`: pinned nested CPU-only evidence-checking package
+- `packages/astro_dock/src/crane_explain_ros/`: pinned nested ROS capture package
 - `configs/`: committed fixtures and experiment configuration
 - `analysis/`: statistics and figure-generation code
 - `paper/`: anonymous paper and supplement sources
@@ -92,6 +93,6 @@ delivered odometry proven controller consumption.
 
 - Missing submodules: rerun `git submodule update --init --recursive`, then setup.
 - Nested checkout mismatch: do not manually advance it; update `workspace.lock.json` deliberately.
-- `ModuleNotFoundError`: install editable (`pip install -e .`) or run tests from this root.
+- `ModuleNotFoundError`: rerun setup, then install the nested core package with the command above.
 - LLM wording rejected: use the checked template fallback. Unparsed clauses do not pass.
 - ROS topic absent: verify navigator lifecycle, namespace/remapping, ROS domain, and DDS IPC.
