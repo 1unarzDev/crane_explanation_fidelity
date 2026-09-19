@@ -31,10 +31,15 @@ their own location. Exact repository commits and destinations are recorded in
 - **TESTED:** CRANE build, one valid aquatic terminal-success capture pilot, a graphics-free
   land/Ackermann success smoke with populated costmap snapshots, and a valid-as-expected land
   client-cancellation capture under a full blocker.
+- **TESTED:** genuine land controller-progress recovery/exhaustion after fixing the missing
+  simulated clock, plus a headless TurtleBot3 Waffle-class warehouse/Nav2 success smoke using
+  canonical semantic geometry separated from visuals.
+- **IMPLEMENTED, TESTED (SYNTHETIC INPUT):** deterministic F1TENTH PNG/YAML boundary-to-collider
+  generator. No third-party track data has been imported or run.
 - **TESTED (PIPELINE SMOKE):** A/B/C/D/E over real success and cancellation episodes with a
   rule-based generator; identical outputs validate parity and routing but are not an LLM comparison
   or evidence for RQ1/RQ2.
-- **NOT_RUN:** land failure/recovery collection and the main powered benchmark.
+- **NOT_RUN:** independent recovery/failure collection and the main powered benchmark.
 - **DEFERRED:** arbitrary-LLM proposition extraction until independently evaluated.
 
 ## CPU-only demo
@@ -107,6 +112,7 @@ delivered odometry proven controller consumption.
 - [Research audit](docs/RESEARCH.md)
 - [Decision log](docs/DECISIONS.md)
 - [Environment requests](docs/ENVIRONMENT_REQUESTS.md)
+- [Reference-environment source audit](docs/research/REFERENCE_ENVIRONMENTS.md)
 
 ## Troubleshooting
 

@@ -1,5 +1,18 @@
 # Decision Log
 
+## 2026-09-19 — reference environments separate canonical collision from visuals
+
+- Decision: add recognizable platforms incrementally, beginning with a CRANE-native TurtleBot3
+  warehouse, while separating canonical collision, simulation semantics, and presentation.
+- Evidence: Unity's Nav2/SLAM example is Apache-2.0, but its pinned Robotics Warehouse dependency
+  has no inspected license file. CRANE primitives retain the reproducible layout pattern without
+  importing unclear assets.
+- RQ impact: stable semantic IDs make obstacle/corridor references auditable without treating
+  evaluator truth as robot-visible evidence.
+- Risk: the differential base matches Waffle dimensions and remains PhysX-driven, but does not
+  establish hardware-dynamics equivalence.
+- Revisit: import higher-fidelity assets only with explicit terms and invariant collision geometry.
+
 ## 2026-09-19 — strict template verification as initial trust boundary
 
 - Decision: accept only final sentences exactly licensed by a checked plan; reject arbitrary extra

@@ -1,5 +1,12 @@
 # Architecture
 
+## Reference-environment layers
+
+Reference scenes separate authoritative `CanonicalGeometry` colliders and semantic IDs from robot
+physics/ROS/sensors and from `VisualPresentation`. Renderer upgrades cannot silently change task
+feasibility. Semantic IDs are provenance handles, not proof of sensing or controller consumption;
+generated explanations still require robot-visible support.
+
 ## Trust boundary
 
 The core transforms immutable episode evidence into explicitly supported propositions. A language

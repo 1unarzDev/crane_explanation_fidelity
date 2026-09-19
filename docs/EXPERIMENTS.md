@@ -1,5 +1,25 @@
 # Experiment Log
 
+## 2026-09-19 — recovery clock diagnosis and TurtleBot3 reference environment
+
+- CRANE base `cc0818e606a5640c788afe84112a15049878718c` plus this checkpoint; Unity
+  6000.5.10f1; ROS 2 Jazzy image `lunarzdev/astro:cuda`.
+- **TESTED:** `Land Vehicle Validation` lacked `/clock` while Nav2 used simulated time. Adding a
+  clock and selecting the retained `nav2_land_progress_recovery.xml` produced controller-progress
+  exhaustion and a `NavigateToPose` `aborted` result in 9.50 s. This is software recovery evidence,
+  not proof that the physical blocker caused failure.
+- **TESTED:** generated a TurtleBot3 Waffle-class warehouse with CRANE primitive canonical
+  colliders, separate non-colliding visuals, and stable semantic IDs. A graphics-free smoke ran at
+  RTF 1.0003 without logged errors/exceptions.
+- **TESTED:** the TurtleBot3 2 m Nav2 smoke succeeded in 6.08 s, displaced 1.469 m, captured 136
+  LiDAR scans and 22 costmap observations with up to 7,198 occupied cells, at RTF 1.00007.
+- Negative iterations were preserved: an underpowered chassis could not overcome static friction;
+  an over-gained force controller was unstable. The validated bounded-impulse model has a
+  zero-friction chassis contact and non-holonomic lateral correction. It is not a detailed wheel
+  contact reproduction.
+- **IMPLEMENTED/TESTED:** F1TENTH PNG/YAML converter and synthetic regression; no GPL map imported.
+- Independent explanation-evaluation sample remains 0; no material-error effect estimate exists.
+
 ## 2026-09-19 — initial implementation checkpoint
 
 - Git state: two new, initially empty target repositories; CRANE
