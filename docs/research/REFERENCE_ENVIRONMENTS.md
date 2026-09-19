@@ -108,10 +108,11 @@ Both inspected repositories contain MIT license files. Nevertheless, the Unity r
 
 ## Implemented first increment and next choice
 
-The first increment implements a CRANE-native warehouse/office scene and a deterministic
-F1TENTH PNG/YAML boundary-to-collider generator. The next smallest aerial increment is PX4
-`walls`, followed only after validation by a render-only ArUco landmark and a measured CRANE wind
-condition. Run Clearpath `2.9.4` office or pipeline only if the local Jazzy/Harmonic stack can
-launch it without modifying CRANE physics or delaying primary episode collection.
+The first increment implements a CRANE-native warehouse/office scene, a deterministic F1TENTH
+PNG/YAML boundary-to-collider generator, and the four pinned primitive boxes from PX4 `walls`.
+Add a render-only ArUco landmark only for a concrete perception question; CRANE wind response is
+measured, while the upstream `windy.sdf` scenario remains unvalidated. Run Clearpath `2.9.4`
+office or pipeline only if the local Jazzy/Harmonic stack can launch it without modifying CRANE
+physics or delaying primary episode collection.
 
 This choice strengthens explanation fidelity: the study can prove which geometry and hidden interventions existed while still restricting generated explanations to the evidence the robot actually received.

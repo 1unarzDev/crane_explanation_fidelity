@@ -1,5 +1,24 @@
 # Experiment Log
 
+## 2026-09-19 — PX4 walls reference environment
+
+- CRANE commit `97229e8b0300ce31e429c9ad9ac4599a8e79e488`; Unity 6000.5.10f1.
+- Source: `PX4/PX4-gazebo-models` commit
+  `bb0b9cf974acf4f1bcb5f5fcf80b88841562dea9`, `worlds/walls.sdf`, SHA-256
+  `aad581c1a9c78ef81354401d89285f2dbd27462f1054137f3e0572cecd9d38a9`.
+- **TESTED/PASS:** Linux worker build completed headlessly. `PX4 Walls Validation` loaded with four
+  exact source-derived box transforms and semantic IDs; a physics ray resolved `wall-box-01` at
+  4.5 m; the x500-class CRANE rigid body was stopped/rebounded by its authoritative collider.
+- **TESTED/PASS:** hover, vertical acceleration, roll/pitch/yaw response, CRANE wind response,
+  landing, and command saturation all retained valid verdicts. The final worker used
+  `-batchmode -nographics`; no graphical window was launched.
+- **NOT_RUN:** PX4 SITL, Gazebo-equivalent dynamics, ROS sensor transport, navigation, ArUco
+  perception, and the pinned upstream `windy.sdf` scenario. A failed ROS-TCP connection in this
+  isolated run is expected and is not counted as sensor validation.
+- Raw result/build logs remain ephemeral under `/tmp`; no raw runtime output was committed.
+  Explanation-evaluation sample remains 0, so this adds environment coverage but no RQ1–RQ4
+  effect estimate.
+
 ## 2026-09-19 — recovery clock diagnosis and TurtleBot3 reference environment
 
 - CRANE base `cc0818e606a5640c788afe84112a15049878718c` plus this checkpoint; Unity

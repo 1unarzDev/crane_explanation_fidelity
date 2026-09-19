@@ -36,6 +36,8 @@ their own location. Exact repository commits and destinations are recorded in
   canonical semantic geometry separated from visuals.
 - **IMPLEMENTED, TESTED (SYNTHETIC INPUT):** deterministic F1TENTH PNG/YAML boundary-to-collider
   generator. No third-party track data has been imported or run.
+- **IMPLEMENTED, TESTED:** PX4 `walls.sdf` primitive reconstruction with pinned provenance,
+  semantic wall IDs, separate collision/visual layers, and headless aerial/contact/ray checks.
 - **TESTED (PIPELINE SMOKE):** A/B/C/D/E over real success and cancellation episodes with a
   rule-based generator; identical outputs validate parity and routing but are not an LLM comparison
   or evidence for RQ1/RQ2.

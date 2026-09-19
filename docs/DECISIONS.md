@@ -1,5 +1,18 @@
 # Decision Log
 
+## 2026-09-19 — reconstruct PX4 primitives without importing simulator dynamics
+
+- Decision: reproduce pinned `walls.sdf` box geometry and semantics in CRANE while retaining
+  CRANE's validated multirotor physics and explicit ENU-to-Unity coordinate conversion.
+- Evidence: the source world uses four matching primitive visual/collision boxes; no mesh or
+  runtime SDF support is needed. The source ground collision is an infinite plane, represented by
+  a documented 100 m benchmark envelope matching its visual extent.
+- RQ impact: semantic walls can support auditable evidence references without implying that the
+  robot observed them.
+- Risk: x500-class shape/identity does not establish PX4 SITL or Gazebo dynamics equivalence.
+- Revisit: add ArUco only for a concrete perception question and validate upstream wind through
+  measured CRANE behavior rather than configuration presence.
+
 ## 2026-09-19 — reference environments separate canonical collision from visuals
 
 - Decision: add recognizable platforms incrementally, beginning with a CRANE-native TurtleBot3
