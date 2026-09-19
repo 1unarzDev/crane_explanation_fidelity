@@ -1,0 +1,42 @@
+{
+  "schema": "crane-explain-development-batch-annotation/v3",
+  "status": "DEVELOPMENT_ONLY_SINGLE_INTERNAL_ANNOTATOR_NOT_ADJUDICATED",
+  "predeclaration": "research/explanation_fidelity/experiment_configs/development/land-nav-balanced-batch-20260919-v2.json",
+  "included_episodes": [
+    {
+      "episode_id": "land-nav-20260919-e028-worker-0",
+      "family": "turtlebot3-unblocked-success-zero-recovery",
+      "model_output_root": "model_outputs/dev/land-nav-20260919-e028/parity2-pass",
+      "output_inventory": {"file_count": 6, "bytes": 29072, "sha256": "1df9ab3c6fd93688077df2895eb062ce995b8ee16cdfcbf15d93721e11832bfe"},
+      "gold_information_units": 10,
+      "coverage_by_condition": {"A": 9, "B": 9, "C": 9, "D": 9, "E": 9}
+    },
+    {
+      "episode_id": "land-nav-20260919-e031-worker-0",
+      "family": "ackermann-client-deadline-cancellation-zero-recovery",
+      "model_output_root": "model_outputs/dev/land-nav-20260919-e031/parity2-pass",
+      "output_inventory": {"file_count": 6, "bytes": 29726, "sha256": "5fb780ab33f67b71707347b293408b0c58538b9fcdbd0ee85cd14087052c0ce6"},
+      "gold_information_units": 14,
+      "coverage_by_condition": {"A": 13, "B": 13, "C": 13, "D": 13, "E": 13}
+    }
+  ],
+  "excluded_predeclared_instances": [
+    {"episode_id": "land-nav-20260919-e029-worker-0", "reason": "The partial-blocker instance reached its 35 s client deadline rather than the predeclared terminal abort. Retained and not rerun or relabeled."},
+    {"episode_id": "land-nav-20260919-e030-worker-0", "reason": "The partial-blocker instance reached its 35 s client deadline rather than the predeclared terminal abort. Retained and not rerun or relabeled."}
+  ],
+  "model": {"provider": "codex-lb-via-chatgpt-login", "name": "gpt-5.6-sol", "reasoning_effort": "low", "single_sample_no_retry": true},
+  "evidence_checks": {"information_parity_audits": 12, "information_parity_passes": 12, "recovery_history_complete_each": true, "exact_recovery_count_each": 0, "physical_cause_established_each": false},
+  "material_errors": [
+    {"episode_id": "land-nav-20260919-e028-worker-0", "question": "unsupported-counterfactual", "condition": "A", "error_types": ["unsupported-false-premise-classification"], "rationale": "Recorded success does not establish that the question's implied obstacle premise is false; the hypothetical outcome is nevertheless withheld."},
+    {"episode_id": "land-nav-20260919-e031-worker-0", "question": "terminal-status", "condition": "A", "error_types": ["unsupported-causal-relationship"], "rationale": "Deadline, cancellation request, and canceled result are recorded in sequence, but the evidence does not encode the deadline as the cause of cancellation."}
+  ],
+  "condition_summary": {
+    "A": {"material_errors": 2, "responses": 12, "substantive_answers": 10, "information_units_covered": 22, "information_units_total": 24, "correct_counterfactual_abstentions": 2, "false_abstentions": 0},
+    "B": {"material_errors": 0, "responses": 12, "substantive_answers": 10, "information_units_covered": 22, "information_units_total": 24, "correct_counterfactual_abstentions": 2, "false_abstentions": 0},
+    "C": {"material_errors": 0, "responses": 12, "substantive_answers": 10, "information_units_covered": 22, "information_units_total": 24, "correct_counterfactual_abstentions": 2, "false_abstentions": 0},
+    "D": {"material_errors": 0, "responses": 12, "substantive_answers": 10, "information_units_covered": 22, "information_units_total": 24, "correct_counterfactual_abstentions": 2, "false_abstentions": 0},
+    "E": {"material_errors": 0, "responses": 12, "substantive_answers": 10, "information_units_covered": 22, "information_units_total": 24, "correct_counterfactual_abstentions": 2, "false_abstentions": 0}
+  },
+  "negative_result": "Neither of the two predeclared partial-blocker instances produced terminal recovery exhaustion. Static partial blockage is not currently a reliable generator for that family.",
+  "limitations": ["The annotator knew condition identity and authored the checked planner.", "Two included clusters are descriptive development evidence.", "The two included instances repeat existing mechanisms and primarily improve within-family replication."]
+}

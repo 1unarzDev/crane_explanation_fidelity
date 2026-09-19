@@ -91,6 +91,13 @@ reached the client deadline instead of the predeclared terminal abort; e026 is r
 because its immediate planning abort had no costmap observation and failed the capture-quality gate.
 Neither excluded run is rerun, tuned, or relabeled. All 12 A/B parity audits for e024/e027 pass.
 
+The e028–e031 batch independently repeats success and cancellation and attempts two partial-blocker
+terminal instances. E028/e031 pass all gates and all 12 parity audits. E029/e030 both reach the
+client deadline instead of terminal abort and are retained/excluded. Together with e008 and e025,
+this shows that static blocker geometry is not a sufficiently reliable terminal-family generator;
+future terminal collection should use a separately predeclared deterministic software-level
+mechanism rather than post-outcome geometry tuning.
+
 `land-nav-20260919-e004` is the first included recovery-bearing model pilot. It terminated with a
 real NavigateToPose `aborted` result before the client deadline and recorded two completed `Wait`
 recoveries. Because the BT topic lacks the terminal transition for a third `FollowPath` start, its

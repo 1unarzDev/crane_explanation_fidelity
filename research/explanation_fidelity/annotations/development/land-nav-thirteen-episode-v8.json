@@ -1,0 +1,32 @@
+{
+  "schema": "crane-explain-development-annotation/v8",
+  "status": "DEVELOPMENT_ONLY_SINGLE_INTERNAL_ANNOTATOR_NOT_ADJUDICATED",
+  "supersedes": "land-nav-eleven-episode-v7.json",
+  "independent_episode_count": 13,
+  "response_count_per_condition": 79,
+  "new_batch_annotation": "land-nav-balanced-batch-v3.json",
+  "episodes_added": [
+    {"episode_id": "land-nav-20260919-e028-worker-0", "family": "turtlebot3-unblocked-success-zero-recovery", "question_count": 6},
+    {"episode_id": "land-nav-20260919-e031-worker-0", "family": "ackermann-client-deadline-cancellation-zero-recovery", "question_count": 6}
+  ],
+  "excluded_related_runs_added": [
+    {"episode_id": "land-nav-20260919-e029-worker-0", "reason": "Expected-outcome mismatch: client deadline, not terminal abort."},
+    {"episode_id": "land-nav-20260919-e030-worker-0", "reason": "Expected-outcome mismatch: client deadline, not terminal abort."}
+  ],
+  "condition_summary": {
+    "A": {"material_errors": 6, "responses": 79, "substantive_answers": 66, "information_units_covered": 163, "information_units_total": 175, "correct_counterfactual_abstentions": 13, "false_abstentions": 0},
+    "B": {"material_errors": 0, "responses": 79, "substantive_answers": 66, "information_units_covered": 163, "information_units_total": 175, "correct_counterfactual_abstentions": 13, "false_abstentions": 0},
+    "C": {"material_errors": 1, "responses": 79, "substantive_answers": 65, "information_units_covered": 155, "information_units_total": 175, "correct_counterfactual_abstentions": 13, "false_abstentions": 1},
+    "D": {"material_errors": 1, "responses": 79, "substantive_answers": 65, "information_units_covered": 155, "information_units_total": 175, "correct_counterfactual_abstentions": 13, "false_abstentions": 1},
+    "E": {"material_errors": 1, "responses": 79, "substantive_answers": 65, "information_units_covered": 155, "information_units_total": 175, "correct_counterfactual_abstentions": 13, "false_abstentions": 1}
+  },
+  "development_only_rates": {
+    "A": {"material_error_rate": 0.0759493671, "substantive_answer_coverage": 0.8354430380, "answerable_information_coverage": 0.9314285714},
+    "B": {"material_error_rate": 0.0, "substantive_answer_coverage": 0.8354430380, "answerable_information_coverage": 0.9314285714},
+    "C": {"material_error_rate": 0.0126582278, "substantive_answer_coverage": 0.8227848101, "answerable_information_coverage": 0.8857142857},
+    "D": {"material_error_rate": 0.0126582278, "substantive_answer_coverage": 0.8227848101, "answerable_information_coverage": 0.8857142857},
+    "E": {"material_error_rate": 0.0126582278, "substantive_answer_coverage": 0.8227848101, "answerable_information_coverage": 0.8857142857}
+  },
+  "interpretation": "A now approximates the predeclared 8% planning risk, but B still has zero observed errors at identical coverage and D remains lower coverage than both direct conditions. This cannot support a checked-method superiority claim.",
+  "limitations": ["Only 13 independent episode clusters are included versus the current 50 minimum/60 target.", "Annotations are unblinded and not adjudicated.", "Questions within episodes are not independent.", "Prompts, verifier threshold, provider, and final split remain mutable."]
+}

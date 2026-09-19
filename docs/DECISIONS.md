@@ -1,5 +1,19 @@
 # Decision Log
 
+## 2026-09-19 — stop tuning static blockers for terminal recovery exhaustion
+
+- Decision: do not spend further instances tuning full/partial static blocker width or distance to
+  obtain a terminal abort. Retain e029/e030 as deadline mismatches and specify a deterministic
+  software-level terminal mechanism before collecting that family again.
+- Evidence: both predeclared partial-blocker instances produced healthy 35 s navigation runs with
+  84/85 costmap observations but reached the client deadline. E025 behaved the same with a full
+  blocker, while earlier e004/e009 aborts have not reproduced reliably across geometry variants.
+- Alternatives: keep searching geometry/timing after every outcome; relabel deadlines as terminal
+  recovery exhaustion; omit invalid instances.
+- RQ impact: improves internal validity and prevents outcome-driven scenario selection for RQ2–RQ4.
+- Validity risk: deterministic injection can reduce ecological realism, so evaluator-only fault
+  identity must remain hidden and the paper must distinguish software mechanism from physical cause.
+
 ## 2026-09-19 — stop reference-environment expansion and resume balanced collection
 
 - Decision: treat the TurtleBot3, F1TENTH, PX4, and Clearpath reference-environment suite as

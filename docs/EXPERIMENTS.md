@@ -1,5 +1,28 @@
 # Experiment Log
 
+## 2026-09-19 — predeclared balanced batch e028–e031
+
+- Configuration was committed and pushed before execution as
+  `research/explanation_fidelity/experiment_configs/development/land-nav-balanced-batch-20260919-v2.json`.
+  Four isolated ROS domains/ports ran concurrently against the same pinned player artifact.
+- **TESTED/PASS INCLUDED:** e028 TurtleBot3 succeeded in 10.130 s, displaced 2.222 m, recorded zero
+  recoveries and 33 costmap observations, and ran at RTF 1.000027. E031 reached its 9.028 s client
+  deadline, captured cancellation and terminal canceled status, recorded zero recoveries and 24
+  costmap observations, and ran at RTF 1.000007.
+- **TESTED/RETAINED EXCLUDED:** e029/e030 each had healthy transport, LiDAR, costmap, and timing
+  metrics, but both reached the 35.03 s client deadline instead of the predeclared terminal abort.
+  They are not rerun, relabeled, or replaced. This is negative evidence against static partial
+  blockers as a reliable terminal-exhaustion generator.
+- All 12 e028/e031 parity audits pass. Sixty new A/B/C/D/E outputs were generated with sequential
+  within-episode cache use and no retries. E028-A repeats the unsupported obstacle-premise claim;
+  e031-A repeats unsupported deadline causality. B/C/D/E add no new error.
+- Thirteen-episode totals are 79 responses per condition (395 total): A 6/79 material errors, B
+  0/79, C/D/E 1/79 each. A/B substantive coverage is 66/79 and information coverage 163/175;
+  C/D/E are 65/79 and 155/175. These are unblinded development descriptors only.
+- The cumulative artifact audit covers 171 unique request keys and 181 referenced physical cache
+  artifacts. All four runs have separate robot-visible/evaluator-only checkpoints; raw data and
+  model artifacts remain excluded from Git.
+
 ## 2026-09-19 — predeclared balanced batch e024–e027 and eleven-episode audit
 
 - The four scenario instances were committed before execution in
