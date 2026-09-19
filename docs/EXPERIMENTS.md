@@ -301,3 +301,42 @@
 - Current highest-value action: collect several genuinely independent success/recovery/failure
   episodes using `CRANE_SEED_BASE`, then estimate paired discordance and episode clustering. More
   environment engineering currently has lower expected paper value.
+
+## 2026-09-19 — land collection e005–e009 and identity hardening
+
+- `e005`: **TESTED/EXCLUDED EXPECTED-OUTCOME MISMATCH**. In a 5 m × 24 m unblocked corridor,
+  seed 1004, a 4 m goal hit the 35 s client deadline after 3.37 m displacement and one feedback
+  recovery. This is cancellation, not success or Nav2 terminal failure. The run demonstrated that
+  “no configured blocker” does not imply “no recovery.”
+- `e006`: **TESTED/EXCLUDED MISSING REQUIRED PROVENANCE**. The narrowed 3 m goal succeeded in
+  5.78 s with healthy simulator metrics, but volatile harness delivery missed both one-shot
+  identity events. Goal/result and capture boundaries were present; exclusion avoids silently
+  accepting incomplete episode/observation identity.
+- Instrumentation fix: CRANE revision `a17087ef01126c9f7c1360f5e9182d2ff0fd4b7f` republishes
+  `crane_identity` and `observation_identity` at accepted-goal time with an explicit publication
+  reason. It preserves the qualifier that initial odometry was delivered to the fixture and is not
+  proven consumed by Nav2. Eight static land-fixture tests passed.
+- `e007`: **TESTED/PASS INCLUDED SUCCESS FAMILY**. Seed 1006, 5 m × 24 m unblocked corridor, 3 m
+  goal: `succeeded`/error 0 in 4.08 s, 2.58 m displacement, zero recoveries, exact BT XML, both
+  initial and accepted-goal identity pairs, 13 populated costmap observations, 451 LiDAR scans,
+  38 accepted commands, no rejected/stale/cross-episode actions, RTF 1.00002.
+- `e008`: **TESTED/EXCLUDED EXPECTED-OUTCOME MISMATCH**. A 2.5 m partial blocker at 4 m was
+  predeclared recovery-success but returned `aborted`/105 after two successful `Wait` recoveries.
+  Simulator and capture quality passed; the outcome class did not. Static partial blockage plus a
+  2 s progress threshold is not currently a recovery-success generator.
+- `e009`: **TESTED/PASS INCLUDED TERMINAL FAMILY**. A distinct 2 m partial blocker at 5 m, seed
+  1008, was predeclared `aborted` and returned `aborted`/105 in 21.70 s before the client deadline.
+  The capture records the accepted-goal identity pair, exact BT XML, two successful `Wait`
+  recoveries, three `FollowPath` starts/two captured failures, terminal result, and both boundaries.
+  Simulator validity passed with 65 populated costmap observations, 701 LiDAR scans, 185 accepted
+  commands, no rejected/stale/cross-episode actions, and RTF 1.00002. Physical blocker causality is
+  still evaluator-only and not licensed in explanations.
+- Pilot-driven checked-plan revision: **IMPLEMENTED/TESTED, 21 tests**. Successful FollowPath now
+  closes capture completeness; successful episodes reject a question's false failure premise;
+  checked recovery-count plans retain recorded recovery SUCCESS status; and a complete software
+  recovery-mechanism answer is classified full even while physical cause remains explicitly
+  unestablished. These changes use development evidence and precede study freeze.
+- Current included captured families: e004 full-blocker terminal recovery/exhaustion, e007
+  unblocked success, e009 partial-blocker terminal recovery/exhaustion. Only e004 has model outputs
+  and annotation so far. Recovery-followed-by-success remains **NOT_RUN/BLOCKED ON SCENARIO
+  CAPABILITY**, not a reason to delay terminal/success data collection.

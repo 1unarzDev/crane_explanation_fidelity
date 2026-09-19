@@ -81,6 +81,12 @@ def derive_episode(capture: Path) -> tuple[dict, dict, str, frozenset[str]]:
         and item["previous_status"] == "IDLE"
         and item["current_status"] == "RUNNING"
     ]
+    follow_terminals = [
+        item for item in bt
+        if item["node_name"] == "FollowPath"
+        and item["previous_status"] == "RUNNING"
+        and item["current_status"] in {"FAILURE", "SUCCESS"}
+    ]
     guard_successes = [
         item for item in bt
         if item["node_name"] == "WouldAControllerRecoveryHelp"
@@ -104,7 +110,7 @@ def derive_episode(capture: Path) -> tuple[dict, dict, str, frozenset[str]]:
             "BT Wait entries disagree with maximum feedback recovery count: "
             f"{len(wait_starts)} versus {maximum_recovery_count}"
         )
-    bt_history_complete = len(follow_starts) == len(follow_failures)
+    bt_history_complete = len(follow_starts) == len(follow_terminals)
     deadline_events = [item for item in harness if item["type"] == "client_deadline"]
     cancel_events = [item for item in harness if item["type"] == "client_cancel"]
     evidence = [
@@ -249,11 +255,10 @@ def derive_episode(capture: Path) -> tuple[dict, dict, str, frozenset[str]]:
          "value": len(follow_failures)},
         {"id": "recovery-guard-successes", "kind": "recorded_guard_success_transitions",
          "value": len(guard_successes)},
-        {"id": "first-recovery-sequence", "kind": "recorded_ordered_transition_sequence",
-         "value": ["FollowPath:FAILURE", "WouldAControllerRecoveryHelp:SUCCESS",
-                   "Wait:RUNNING"]},
         {"id": "follow-path-starts", "kind": "recorded_follow_path_start_transitions",
          "value": len(follow_starts)},
+        {"id": "follow-path-terminals", "kind": "recorded_follow_path_terminal_transitions",
+         "value": len(follow_terminals)},
         {"id": "history-completeness", "kind": "bt_transition_history_complete",
          "value": bt_history_complete},
         {"id": "physical-cause-status", "kind": "physical_cause_established",
@@ -261,6 +266,13 @@ def derive_episode(capture: Path) -> tuple[dict, dict, str, frozenset[str]]:
         {"id": "counterfactual-status", "kind": "hypothetical_outcome_established",
          "value": False},
     ]
+    if follow_failures and guard_successes and wait_starts:
+        parity_facts.append({
+            "id": "first-recovery-sequence",
+            "kind": "recorded_ordered_transition_sequence",
+            "value": ["FollowPath:FAILURE", "WouldAControllerRecoveryHelp:SUCCESS",
+                      "Wait:RUNNING"],
+        })
     structured_presentation = {
         "schema": "crane-explain-parity-presentation/v1",
         "episode_id": manifest["episode_id"],
@@ -274,6 +286,11 @@ def derive_episode(capture: Path) -> tuple[dict, dict, str, frozenset[str]]:
         prose_parts.append(
             f"The Behavior Tree log records {len(wait_starts)} distinct entries into the Wait "
             f"recovery action; {len(wait_successes)} returned SUCCESS."
+        )
+    else:
+        prose_parts.append(
+            "The Behavior Tree log records no entries into the Wait recovery action and no "
+            "successful Wait completions."
         )
     prose_parts.append(
         f"The Behavior Tree log records {len(follow_failures)} FollowPath transitions from "
@@ -290,6 +307,12 @@ def derive_episode(capture: Path) -> tuple[dict, dict, str, frozenset[str]]:
             f"The log records {len(follow_starts)} FollowPath starts but only "
             f"{len(follow_failures)} terminal FollowPath FAILURE transitions, so the Behavior "
             "Tree transition history is not complete."
+        )
+    else:
+        prose_parts.append(
+            f"The log records {len(follow_starts)} FollowPath starts and "
+            f"{len(follow_terminals)} terminal FollowPath transitions, so the Behavior Tree "
+            "transition history is complete."
         )
     if deadline_events:
         prose_parts.append("The experiment harness recorded a client deadline.")
