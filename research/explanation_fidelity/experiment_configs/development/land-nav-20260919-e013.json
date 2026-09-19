@@ -1,0 +1,38 @@
+{
+  "schema": "crane-development-run-predeclaration-v1",
+  "run_id": "land-nav-20260919-e013",
+  "purpose": "Independent moderate-width, medium-goal success instance calibrated from e012",
+  "family": "unblocked-moderate-corridor-success",
+  "split": "development",
+  "calibration_basis": "e012 showed that a 3.0 m corridor and 6.0 m goal exceeded a 30 s client window after one recovery; e013 changes the scenario instance and allocates a longer window rather than relabeling or rerunning e012.",
+  "independence_basis": [
+    "distinct corridor width",
+    "distinct goal distance",
+    "distinct configured seed"
+  ],
+  "expected": {
+    "navigate_to_pose_status": "succeeded",
+    "recovery_attempts": 0,
+    "blocker": "none"
+  },
+  "configuration": {
+    "seed_base": 1013,
+    "corridor_width_m": 3.5,
+    "corridor_length_m": 20.0,
+    "goal_distance_m": 5.0,
+    "fixture_delay_s": 15,
+    "action_duration_s": 45,
+    "worker_duration_s": 65,
+    "ros_domain_id": 53,
+    "ros_tcp_port": 10053,
+    "bt_xml": "packages/crane_ml/Tools/Performance/nav2_land_progress_recovery.xml"
+  },
+  "player_artifact": {
+    "sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+    "build_manifest_sha256": "b1a003c8779dbb1a19bfcbd00538379d1aefd650144a95ba0eca9edc9f888908",
+    "source_commit_proven": false
+  },
+  "inclusion_rule": "Include only if simulator/capture quality gates pass, terminal status is succeeded, recovery history is complete, and zero unique recovery attempts are recorded.",
+  "mismatch_rule": "Retain any valid artifact but classify as development calibration and do not relabel it into the intended family.",
+  "causal_limit": "No blocker configuration is evaluator-only context and does not prove why Nav2 succeeds or which observations Nav2 consumed."
+}
