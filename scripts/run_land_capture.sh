@@ -22,6 +22,7 @@ fi
 
 astro_dir="${workspace_root}/packages/astro_dock"
 crane_dir="${workspace_root}/packages/crane_ml"
+player="${CRANE_PLAYER:-${crane_dir}/Builds/CRANE-Worker/CRANE.x86_64}"
 bt_xml="${CRANE_NAV2_BT_XML:-${crane_dir}/Tools/Performance/nav2_land_progress_recovery.xml}"
 image="${CRANE_ROS_IMAGE:-lunarzdev/astro:cuda}"
 robot_parent="${workspace_root}/data/robot_visible/dev/${run_id}"
@@ -36,7 +37,10 @@ if [[ "${bt_xml}" != "${crane_dir}"/* || ! -f "${bt_xml}" ]]; then
     echo "BT XML must be an existing file below packages/crane_ml: ${bt_xml}" >&2
     exit 2
 fi
-mkdir -p "${robot_parent}"
+mkdir -p "${robot_parent}" "${evaluator_root}"
+python3 "${script_dir}/record_build_provenance.py" \
+    --player "${player}" --checkout "${crane_dir}" \
+    --output "${evaluator_root}/build-provenance.json"
 
 cleanup() {
     if docker inspect "${capture_name}" >/dev/null 2>&1; then
@@ -66,6 +70,7 @@ CRANE_RUN_ID="${run_id}" \
 CRANE_RESULT_ROOT="${evaluator_root}" \
 CRANE_ROS_DOMAIN_ID="${ros_domain_id}" \
 CRANE_ROS_PORT="${ros_port}" \
+CRANE_PLAYER="${player}" \
 CRANE_NAV2_BT_XML="${bt_xml}" \
 bash "${crane_dir}/Tools/Performance/run_land_nav2_fixture.sh"
 

@@ -1,5 +1,20 @@
 # Decision Log
 
+## 2026-09-19 — record binary provenance separately from checkout provenance
+
+- Decision: every new land capture records SHA-256 and byte size for the exact player executable,
+  embeds and hashes its build manifest, and records the checkout commit/dirty state separately.
+- Evidence: the existing `crane-build-manifest-v1` contains Unity, package, scene, and asset hashes
+  but no source commit. The current checkout may advance without rebuilding the local player.
+- Alternatives: treat the current gitlink as the binary source; stop all collection until Unity
+  licensing recovers; rely on file modification time.
+- RQ impact: prevents configuration/source provenance from being misstated and lets valid static
+  scenarios continue while the binary remains content-addressed.
+- Validity risk: the old binary's source commit remains unproven. Its artifact identity is exact,
+  but it cannot support source-level reconstruction beyond the embedded manifest.
+- Revisit: add a source commit and dirty-diff hash to the build manifest at build time; require that
+  stronger provenance for final collection after Unity licensing is restored.
+
 ## 2026-09-19 — Clearpath pipeline uses an offline, generated import boundary
 
 - Decision: resolve and hash Clearpath SDF resources offline; keep the 34 MB generated asset tree
