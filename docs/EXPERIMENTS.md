@@ -590,3 +590,24 @@
   comparison, and F1TENTH Gym/hardware dynamics equivalence. A Clearpath regression rebuild was
   attempted after generalizing its validator to primitive colliders, but first exhausted `/tmp`
   quota and then stalled with an empty Unity log; its five offline converter tests still pass.
+
+## 2026-09-19 — graphics-free reference-environment launcher regression
+
+- **IMPLEMENTED/TESTED** in CRANE revision `ff8a6a095b158c5b3af1f3c93d989ca0a0877907`.
+  `Tools/ReferenceEnvironments/run_reference_validation.sh` resolves the CRANE root dynamically,
+  checks the requested scene against the exact player build manifest, selects it through the
+  `train-cpu` profile, and always supplies `-batchmode -nographics`. This prevents an accidental
+  interactive launch of the build's default RoboSub scene.
+- The first launcher attempt exposed a real lifecycle issue: `--crane-disable-ros` alone did not
+  install the shared runtime gate for a standalone validation invocation, so the otherwise valid
+  fixture started an irrelevant ROS reconnect loop. The accepted invocation selects
+  `--crane-profile train-cpu` and `--crane-scene` before validation; reruns contained no failed ROS
+  connection attempt.
+- **TESTED**: eight reference-tool tests passed. PX4 Walls returned `valid=true`, including exact
+  geometry, semantic ray, collision, multirotor dynamics, wind, landing, and saturation checks.
+  Clearpath Pipeline returned `valid=true`, including 11 canonical colliders, 13 visual renderers,
+  semantic LiDAR/raycast resolution, rigid contact, and evidence highlighting without collider
+  mutation. Both runs used Unity 6000.5.10f1 and exited without a window.
+- These are regression validations, not new independent navigation episodes and not additions to
+  the explanation-study sample size. F1TENTH still requires a player built with its generated
+  scene via `--crane-extra-scene`; TurtleBot3 continues to use the ROS/Nav2 closed-loop fixture.
