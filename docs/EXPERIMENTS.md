@@ -699,3 +699,21 @@
 - The generic worker summary is `valid=false` only because its default expected action status was
   success; action outcome was explicitly outside the predeclared calibration pass rule. Raw
   robot-visible and evaluator-only artifacts are retained and checkpointed under e036.
+
+## 2026-09-19 — e037–e040 corrected persistent-terminal batch
+
+- **TESTED/INCLUDED:** all four independent configurations recorded scheduled and actual
+  persistent holds, `mobilityHeld=true`, `mobilityReleased=false`, one accepted goal, one aborted
+  result, exactly two distinct successful `Wait` attempts matching final feedback, complete
+  recovery history, populated costmaps, and clean transport/observation gates.
+- Execution-note defect: the launcher invocation used `CRANE_EXPECT_NAVIGATION_STATUS` instead of
+  the actual post-processing variable `CRANE_EXPECTED_NAV_STATUS`. Consequently each generic
+  summary compared the observed abort with default `succeeded` and set `valid=false`. This did not
+  enter Unity/Nav2/capture configuration. Inclusion uses the predeclared abort plus separately
+  audited underlying gates; no instance was rerun.
+- Twenty-four A/B information-parity audits passed. The unchanged sequential, single-sample model
+  procedure produced 120 outputs with no retry or resampling. Single-annotator development review
+  found no new material error. C used template fallback 16/24 times and D 20/24 times.
+- Cumulative development-only totals: 18 episodes, 109 responses per condition, and 545 outputs.
+  Errors are A 6/109, B 0/109, and C/D/E 1/109. A/B cover 228/245 answerable information units;
+  C/D/E cover 220/245. These replications improve sample size but still do not support D over B.

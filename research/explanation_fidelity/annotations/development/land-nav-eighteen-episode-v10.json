@@ -1,0 +1,31 @@
+{
+  "schema": "crane-explain-development-annotation/v10",
+  "status": "DEVELOPMENT_ONLY_SINGLE_INTERNAL_ANNOTATOR_NOT_ADJUDICATED",
+  "supersedes": "land-nav-fourteen-episode-v9.json",
+  "independent_episode_count": 18,
+  "response_count_per_condition": 109,
+  "new_batch_annotation": "land-nav-persistent-terminal-batch-v1.json",
+  "episodes_added": [
+    {"episode_id": "land-nav-20260919-e037-worker-0", "family": "turtlebot3-persistent-mobility-hold-terminal-recovery-exhaustion", "question_count": 6},
+    {"episode_id": "land-nav-20260919-e038-worker-0", "family": "turtlebot3-persistent-mobility-hold-terminal-recovery-exhaustion", "question_count": 6},
+    {"episode_id": "land-nav-20260919-e039-worker-0", "family": "turtlebot3-persistent-mobility-hold-terminal-recovery-exhaustion", "question_count": 6},
+    {"episode_id": "land-nav-20260919-e040-worker-0", "family": "turtlebot3-persistent-mobility-hold-terminal-recovery-exhaustion", "question_count": 6}
+  ],
+  "noncountable_related_calibration": {"episode_id": "land-nav-20260919-e036-worker-0", "reason": "Predeclared mechanism regression calibration, not a study episode."},
+  "condition_summary": {
+    "A": {"material_errors": 6, "responses": 109, "substantive_answers": 91, "information_units_covered": 228, "information_units_total": 245, "correct_counterfactual_abstentions": 18, "false_abstentions": 0},
+    "B": {"material_errors": 0, "responses": 109, "substantive_answers": 91, "information_units_covered": 228, "information_units_total": 245, "correct_counterfactual_abstentions": 18, "false_abstentions": 0},
+    "C": {"material_errors": 1, "responses": 109, "substantive_answers": 90, "information_units_covered": 220, "information_units_total": 245, "correct_counterfactual_abstentions": 18, "false_abstentions": 1},
+    "D": {"material_errors": 1, "responses": 109, "substantive_answers": 90, "information_units_covered": 220, "information_units_total": 245, "correct_counterfactual_abstentions": 18, "false_abstentions": 1},
+    "E": {"material_errors": 1, "responses": 109, "substantive_answers": 90, "information_units_covered": 220, "information_units_total": 245, "correct_counterfactual_abstentions": 18, "false_abstentions": 1}
+  },
+  "development_only_rates": {
+    "A": {"material_error_rate": 0.0550458716, "substantive_answer_coverage": 0.8348623853, "answerable_information_coverage": 0.9306122449},
+    "B": {"material_error_rate": 0.0, "substantive_answer_coverage": 0.8348623853, "answerable_information_coverage": 0.9306122449},
+    "C": {"material_error_rate": 0.0091743119, "substantive_answer_coverage": 0.8256880734, "answerable_information_coverage": 0.8979591837},
+    "D": {"material_error_rate": 0.0091743119, "substantive_answer_coverage": 0.8256880734, "answerable_information_coverage": 0.8979591837},
+    "E": {"material_error_rate": 0.0091743119, "substantive_answer_coverage": 0.8256880734, "answerable_information_coverage": 0.8979591837}
+  },
+  "interpretation": "The four corrected terminal replications add no errors in any condition. B retains zero observed error at the same coverage as A, while D retains one earlier error and lower cumulative coverage. Current development evidence does not support D superiority.",
+  "limitations": ["Only 18 independent episode clusters are included versus the current 50 minimum/60 target.", "Annotations are unblinded and not adjudicated.", "Questions within episodes are not independent.", "Prompts, verifier threshold, provider, and final split remain mutable."]
+}

@@ -104,6 +104,13 @@ truth shows that the requested hold never activated. E035 is included as a fourt
 cluster with zero recoveries. The outcome match alone is deliberately insufficient for mechanism
 inclusion.
 
+After e036 separately calibrated the corrected optional-release runtime contract, e037–e040 each
+passed the terminal-family criteria: scheduled/applied unreleased hold, aborted action, exactly two
+unique successful `Wait` attempts matching final feedback, and complete goal/result/capture
+boundaries. A misspelled post-processing expectation variable made each generic summary compare
+against success; all underlying gates and the predeclared aborted expectation were audited
+directly, disclosed, and the runs were not repeated.
+
 `land-nav-20260919-e004` is the first included recovery-bearing model pilot. It terminated with a
 real NavigateToPose `aborted` result before the client deadline and recorded two completed `Wait`
 recoveries. Because the BT topic lacks the terminal transition for a third `FollowPath` start, its

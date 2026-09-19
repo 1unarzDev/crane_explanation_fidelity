@@ -1,0 +1,26 @@
+{
+  "schema": "crane-explain-development-batch-annotation/v3",
+  "status": "DEVELOPMENT_ONLY_SINGLE_INTERNAL_ANNOTATOR_NOT_ADJUDICATED",
+  "predeclaration": "research/explanation_fidelity/experiment_configs/development/land-nav-persistent-terminal-batch-20260919-v1.json",
+  "included_episodes": [
+    {"episode_id": "land-nav-20260919-e037-worker-0", "family": "turtlebot3-persistent-mobility-hold-terminal-recovery-exhaustion", "model_output_root": "model_outputs/dev/land-nav-20260919-e037/parity2-pass", "output_inventory": {"file_count": 6, "bytes": 30416, "sha256": "0745c40a762ef89170bcd04f3ad200de7474d20825e9237821583cd063407e61"}, "gold_information_units": 15, "coverage_by_condition": {"A": 14, "B": 14, "C": 14, "D": 14, "E": 14}},
+    {"episode_id": "land-nav-20260919-e038-worker-0", "family": "turtlebot3-persistent-mobility-hold-terminal-recovery-exhaustion", "model_output_root": "model_outputs/dev/land-nav-20260919-e038/parity2-pass", "output_inventory": {"file_count": 6, "bytes": 30221, "sha256": "574c15e6f091f3529e0d344837712d9db0fe18522a4bbb4f1f2a0d0cac344df4"}, "gold_information_units": 15, "coverage_by_condition": {"A": 14, "B": 14, "C": 14, "D": 14, "E": 14}},
+    {"episode_id": "land-nav-20260919-e039-worker-0", "family": "turtlebot3-persistent-mobility-hold-terminal-recovery-exhaustion", "model_output_root": "model_outputs/dev/land-nav-20260919-e039/parity2-pass", "output_inventory": {"file_count": 6, "bytes": 30103, "sha256": "1adfc70c46fcaebc233888cc2df66f4594ccca132309d2a1ba1c82d764fde6c4"}, "gold_information_units": 15, "coverage_by_condition": {"A": 14, "B": 14, "C": 14, "D": 14, "E": 14}},
+    {"episode_id": "land-nav-20260919-e040-worker-0", "family": "turtlebot3-persistent-mobility-hold-terminal-recovery-exhaustion", "model_output_root": "model_outputs/dev/land-nav-20260919-e040/parity2-pass", "output_inventory": {"file_count": 6, "bytes": 30305, "sha256": "1818172c3da9999551d7305c73a8bc1de6f369f31c2c665bc2368910e7d7d1be"}, "gold_information_units": 15, "coverage_by_condition": {"A": 14, "B": 14, "C": 14, "D": 14, "E": 14}}
+  ],
+  "excluded_predeclared_instances": [],
+  "model": {"provider": "codex-lb-via-chatgpt-login", "name": "gpt-5.6-sol", "reasoning_effort": "low", "single_sample_no_retry": true},
+  "evidence_checks": {"information_parity_audits": 24, "information_parity_passes": 24, "recovery_history_complete_each": true, "exact_recovery_count_each": 2, "persistent_hold_scheduled_and_applied_each": true, "mobility_released_each": false, "physical_cause_established_each": false},
+  "postprocessing_mismatch": "The execution command used CRANE_EXPECT_NAVIGATION_STATUS instead of the fixture's CRANE_EXPECTED_NAV_STATUS, so navigation-reset-summary.json compared each observed abort with its default success expectation and set valid=false. Inclusion was evaluated from the predeclared aborted expectation and every underlying transport, observation, costmap, goal/result, recovery, capture-boundary, and intervention gate. The typo did not enter Unity, Nav2, or capture configuration; runs were not repeated.",
+  "material_errors": [],
+  "condition_summary": {
+    "A": {"material_errors": 0, "responses": 24, "substantive_answers": 20, "information_units_covered": 56, "information_units_total": 60, "correct_counterfactual_abstentions": 4, "false_abstentions": 0},
+    "B": {"material_errors": 0, "responses": 24, "substantive_answers": 20, "information_units_covered": 56, "information_units_total": 60, "correct_counterfactual_abstentions": 4, "false_abstentions": 0},
+    "C": {"material_errors": 0, "responses": 24, "substantive_answers": 20, "information_units_covered": 56, "information_units_total": 60, "correct_counterfactual_abstentions": 4, "false_abstentions": 0},
+    "D": {"material_errors": 0, "responses": 24, "substantive_answers": 20, "information_units_covered": 56, "information_units_total": 60, "correct_counterfactual_abstentions": 4, "false_abstentions": 0},
+    "E": {"material_errors": 0, "responses": 24, "substantive_answers": 20, "information_units_covered": 56, "information_units_total": 60, "correct_counterfactual_abstentions": 4, "false_abstentions": 0}
+  },
+  "verification_behavior": {"C_template_fallbacks": 16, "D_template_fallbacks": 20, "bounded_repairs": 0},
+  "negative_result": "All conditions were correct on this repeated mechanism, and B matched D's information coverage. These replications improve sample size but do not show a checked-method advantage.",
+  "limitations": ["The annotator knew condition identity and authored the checked planner.", "All four episodes repeat one synthetic mechanism.", "The summary expectation-variable typo requires explicit disclosure even though underlying gates passed."]
+}
