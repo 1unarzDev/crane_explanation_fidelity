@@ -1,0 +1,32 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+dist/
+build/
+*.egg-info/
+research/explanation_fidelity/results/
+research/explanation_fidelity/model_cache/
+
+# Governed data never enters Git. Keep only sentinels and documentation.
+data/robot_visible/**
+!data/robot_visible/.gitkeep
+data/evaluator_only/**
+!data/evaluator_only/.gitkeep
+data/staging/
+artifacts/
+model_outputs/
+*.bag
+*.bag.active
+*.db3
+*.mcap
+*.onnx
+*.pt
+*.pth
+*.ckpt
+
+# Component workspace build products.
+packages/astro_dock/build/
+packages/astro_dock/install/
+packages/astro_dock/log/
