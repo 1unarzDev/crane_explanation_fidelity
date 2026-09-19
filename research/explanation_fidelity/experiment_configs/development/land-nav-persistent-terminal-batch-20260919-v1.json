@@ -1,0 +1,34 @@
+{
+  "schema": "crane-development-batch-predeclaration-v1",
+  "batch_id": "land-nav-persistent-terminal-batch-20260919-v1",
+  "created_before_any_batch_execution": true,
+  "purpose": "Collect independent terminal recovery/exhaustion instances after the separately retained e036 calibration verified persistent-hold scheduling and activation.",
+  "split": "development",
+  "shared_configuration": {
+    "scene": "TurtleBot3 Warehouse Validation",
+    "platform": "turtlebot3-waffle-differential",
+    "corridor_length_m": 22.0,
+    "blocker": "none",
+    "mobility_release_after_fixed_simulation_s": null,
+    "fixture_delay_s": 15,
+    "action_duration_s": 45,
+    "worker_duration_s": 60,
+    "time_scale": 1.0,
+    "bt_xml": "packages/crane_ml/Tools/Performance/nav2_land_progress_recovery.xml",
+    "harness_qos": "reliable-transient-local-depth-20",
+    "occupied_costmap_required": true
+  },
+  "instances": [
+    {"run_id": "land-nav-20260919-e037", "seed_base": 1037, "corridor_width_m": 3.75, "goal_distance_m": 3.25, "mobility_hold_after_fixed_simulation_s": 14.5, "ros_domain_id": 77, "ros_tcp_port": 10077},
+    {"run_id": "land-nav-20260919-e038", "seed_base": 1038, "corridor_width_m": 4.25, "goal_distance_m": 3.75, "mobility_hold_after_fixed_simulation_s": 15.5, "ros_domain_id": 78, "ros_tcp_port": 10078},
+    {"run_id": "land-nav-20260919-e039", "seed_base": 1039, "corridor_width_m": 4.75, "goal_distance_m": 4.25, "mobility_hold_after_fixed_simulation_s": 16.5, "ros_domain_id": 79, "ros_tcp_port": 10079},
+    {"run_id": "land-nav-20260919-e040", "seed_base": 1040, "corridor_width_m": 5.25, "goal_distance_m": 4.5, "mobility_hold_after_fixed_simulation_s": 17.5, "ros_domain_id": 80, "ros_tcp_port": 10080}
+  ],
+  "expected_each": {"navigate_to_pose_status": "aborted", "recovery_attempts": 2, "mobility_held": true, "mobility_released": false},
+  "software": {"crane_checkout_commit": "c559932a5ebef00bfa7752511799fd904e5c9dbe", "crane_explain_ros_commit": "9ab4f320bdccee468de77ce4b17762853d3ccf93"},
+  "player_artifact": {"unity_version": "6000.5.10f1", "build_guid": "9fe01e68b8764d0f87d9823200f59aa4", "executable_sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292", "build_manifest_sha256": "e0d9db5815da621c3eb6880bcb80019919eb87d8f353826c223967b70d77e1a7", "scripts_assembly_sha256": "5f1431fc26158cfdf87ecaa490d094be5d2e5ec7dedb5a2ad010cee1be24b1e2", "physics_assembly_sha256": "de9618a257ec5d856e3759772afabd9309235ea8a13d8b315ebcccc15e5897ac"},
+  "inclusion_rule": "Include only if simulator/capture gates pass, one accepted goal and matching aborted result/status are captured, recovery-count history is complete with exactly two unique Wait entries matching final feedback, evaluator truth records a scheduled and actual persistent hold with mobilityHeld=true and mobilityReleased=false, and the former paired-boundary exception is absent.",
+  "mismatch_rule": "Retain every attempted instance. Do not rerun, replace, tune, or relabel an instance after observing its outcome.",
+  "independence_basis": "Each instance has a distinct seed, corridor width, goal distance, and hold boundary. They are within-family replications of one synthetic mechanism; questions remain clustered by episode.",
+  "evidence_boundary": "Hold identity and timing remain evaluator-only. Robot-visible explanations may describe FollowPath/recovery/terminal mechanisms but must withhold the physical cause."
+}
