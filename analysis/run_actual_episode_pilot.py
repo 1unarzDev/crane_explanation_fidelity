@@ -113,7 +113,7 @@ def derive_episode(capture: Path) -> tuple[dict, dict, str, frozenset[str]]:
     bt_history_complete = len(follow_starts) == len(follow_terminals)
     recovery_history_complete = (
         complete
-        and len(results) == 1
+        and terminal_source in {"harness_result", "action_status"}
         and all(item["goal_id"] == goal_id for item in feedback)
         and feedback[-1]["number_of_recoveries"] == maximum_recovery_count
         and len(wait_starts) == maximum_recovery_count
@@ -163,7 +163,7 @@ def derive_episode(capture: Path) -> tuple[dict, dict, str, frozenset[str]]:
         },
         {
             "id": "recovery-history-completeness",
-            "kind": "capture_boundary_result_feedback_bt_cross_check",
+            "kind": "capture_boundary_terminal_feedback_bt_cross_check",
             "value": recovery_history_complete,
             "timestamp": timestamp,
             "source": "evidence_scope_audit",
@@ -292,6 +292,14 @@ def derive_episode(capture: Path) -> tuple[dict, dict, str, frozenset[str]]:
             "value": ["FollowPath:FAILURE", "WouldAControllerRecoveryHelp:SUCCESS",
                       "Wait:RUNNING"],
         })
+    if deadline_events:
+        parity_facts.append({
+            "id": "client-deadline", "kind": "client_deadline_recorded", "value": True,
+        })
+    if cancel_events:
+        parity_facts.append({
+            "id": "client-cancel", "kind": "client_cancellation_requested", "value": True,
+        })
     structured_presentation = {
         "schema": "crane-explain-parity-presentation/v1",
         "episode_id": manifest["episode_id"],
@@ -303,8 +311,8 @@ def derive_episode(capture: Path) -> tuple[dict, dict, str, frozenset[str]]:
     ]
     prose_parts.append(
         "The recovery-count history is complete for this action: capture brackets the accepted "
-        "goal and terminal result, the final monotonic feedback count matches the distinct Wait "
-        "entries, and all records use the same goal ID."
+        "goal and terminal result or status, the final monotonic feedback count matches the "
+        "distinct Wait entries, and all records use the same goal ID."
         if recovery_history_complete else
         "The available records do not establish a complete recovery-count history for this action."
     )
