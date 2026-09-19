@@ -7,6 +7,11 @@ physics/ROS/sensors and from `VisualPresentation`. Renderer upgrades cannot sile
 feasibility. Semantic IDs are provenance handles, not proof of sensing or controller consumption;
 generated explanations still require robot-visible support.
 
+Gazebo reference environments are converted offline. Hash-tracked generated assets and scenes are
+excluded from Git; editor tooling constructs separate canonical collision and presentation trees
+from a manifest. Runtime SDF loading is intentionally absent. Generated world semantics remain
+evaluator-side unless a captured sensor/decision record makes them robot-visible.
+
 ## Trust boundary
 
 The core transforms immutable episode evidence into explicitly supported propositions. A language

@@ -1,5 +1,25 @@
 # Experiment Log
 
+## 2026-09-19 — Clearpath pipeline offline Unity import
+
+- CRANE commit `2501359964716cecfc378428d6cc77da829ef373`; Unity 6000.5.10f1; Clearpath
+  simulator 2.9.4 commit `ee098ad6f67b4e35d77841ed6f004b8f86cd77e4`.
+- **TESTED/PASS:** converter resolved three SDF models and nine local `model://` assets/dependencies,
+  hashed each source, retained collision/visual roles, preserved DAE hierarchy, and converted the
+  unsupported base-station STL deterministically to OBJ. Generated assets (34 MB) remained ignored.
+- **TESTED/PASS:** editor tooling generated and loaded `Clearpath Pipeline Validation` with a
+  Jackal-dimension/class differential body and 2-D LiDAR configuration. Runtime validation found
+  11 collision meshes, 13 visual renderers, no canonical renderers or visual colliders, and bounds
+  `[-63.294,-3.719,-46.560]` to `[135.956,7.616,82.309]` m.
+- **TESTED/PASS:** physics ray query hit semantic object `clearpath-pipeline`; an actual collision
+  callback was observed for the rigid-body drop. The standard nine-scene worker rebuilt afterward
+  with zero generated-asset dependencies, preserving the optimized normal build path.
+- **NOT_RUN:** Blender/FBX conversion (Blender unavailable), native Gazebo comparison, ROS sensor
+  transport, Nav2 traversal, spawn/goal calibration, corridor-width checks, and high-fidelity
+  material parity. Two expected ROS-TCP connection failures are not sensor verdicts.
+- Explanation-evaluation sample remains 0; this is infrastructure evidence, not RQ1–RQ4 outcome
+  evidence. Raw builds/results remain ephemeral under `/tmp`.
+
 ## 2026-09-19 — PX4 ArUco and windy reference environments
 
 - CRANE commit `a0acabec5005da6ae9dbc286d740e3ea20982014`; Unity 6000.5.10f1; upstream

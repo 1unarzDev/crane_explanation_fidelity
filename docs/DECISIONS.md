@@ -1,5 +1,20 @@
 # Decision Log
 
+## 2026-09-19 — Clearpath pipeline uses an offline, generated import boundary
+
+- Decision: resolve and hash Clearpath SDF resources offline; keep the 34 MB generated asset tree
+  out of Git; construct canonical collision and visual presentation separately in Unity.
+- Evidence: pipeline has 10 terrain geometry nodes, render-only water, and a separate base station.
+  Unity imports DAE but not STL locally, so the collider STL is deterministically converted to OBJ.
+- Alternatives: runtime SDF support; committing upstream binaries; approximating terrain with
+  arbitrary primitives; treating the entire scene as one collider.
+- RQ impact: adds recognizable outdoor failure geometry and semantic IDs without changing what is
+  robot-visible to explanations.
+- Risk: no native Gazebo cross-check, Nav2 traversal, spawn/goal calibration, or corridor-width
+  acceptance yet; source asset provenance beyond the repository license still merits confirmation.
+- Revisit: run ROS/Nav2 only if a calibrated spawn/route can be established without delaying the
+  explanation study; use Blender/FBX only when installed and validated.
+
 ## 2026-09-19 — reconstruct PX4 primitives without importing simulator dynamics
 
 - Decision: reproduce pinned `walls.sdf` box geometry and semantics in CRANE while retaining

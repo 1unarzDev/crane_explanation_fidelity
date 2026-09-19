@@ -46,7 +46,12 @@ This is a native ROS 2 Jazzy/Gazebo Harmonic option. It provides `office`, `pipe
 
 The root [BSD-3-Clause license](https://github.com/clearpathrobotics/clearpath_simulator/blob/ee098ad6f67b4e35d77841ed6f004b8f86cd77e4/LICENSE) permits redistribution with notice/disclaimer and no endorsement; `package.xml` also declares BSD. The world-import commit credits Dave Niewinski with creating the meshes and records renamed earlier Clearpath worlds ([commit `adb42a6`](https://github.com/clearpathrobotics/clearpath_simulator/commit/adb42a66d18156ca525e267ce28b6ece27a942d9)). No asset-level provenance/third-party inventory was found, so the inspected source does not support stronger claims about every texture. Some source files also carry Apache-2.0 headers; preserve file-level notices.
 
-**Decision:** run the tagged package natively with a pinned `robot.yaml`, then attach Nav2 and the explanation capture stack. This is the smallest useful external-simulator validation. Direct SDF/DAE-to-Unity conversion would introduce geometry, material, coordinate, and collider uncertainty; defer it. If CRANE later bundles converted assets, first inventory them and obtain provenance confirmation.
+**Decision/update:** native tagged Gazebo plus capture remains the cleanest cross-simulator check.
+A narrow offline Unity proof was nevertheless completed for `pipeline`: local resources are hashed,
+collision and visual roles are instantiated separately, DAE hierarchy is retained, STL is converted
+deterministically to OBJ, and generated assets remain outside Git. This does not resolve native
+Gazebo equivalence or asset-level provenance beyond the repository license; do not bundle the
+generated assets without further confirmation.
 
 ## F1TENTH occupancy maps
 
@@ -111,8 +116,8 @@ Both inspected repositories contain MIT license files. Nevertheless, the Unity r
 The first increment implements a CRANE-native warehouse/office scene, a deterministic F1TENTH
 PNG/YAML boundary-to-collider generator, the four pinned primitive boxes from PX4 `walls`, a
 render-only ArUco landmark, and measured deterministic response to the pinned windy vector.
-Camera tag detection and physical wind calibration remain unvalidated. Run Clearpath `2.9.4`
-office or pipeline only if the local Jazzy/Harmonic stack can launch it without modifying CRANE
-physics or delaying primary episode collection.
+Camera tag detection and physical wind calibration remain unvalidated. The Clearpath pipeline
+offline import has passed structural/contact validation; native Jazzy/Harmonic, ROS sensor, and
+Nav2 route checks remain gated on value to the primary explanation study.
 
 This choice strengthens explanation fidelity: the study can prove which geometry and hidden interventions existed while still restricting generated explanations to the evidence the robot actually received.
