@@ -151,6 +151,15 @@ must carry episode ID and simulation tick. The robot-visible stream records only
 environment intervention occurred when such visibility is part of the scenario; detailed geometry
 and intended fault class remain evaluator-only.
 
+Current increment: CRANE accepts `--crane-land-blocker-remove-after SECONDS` for a blocker created
+by the existing land corridor bootstrap. The boundary is measured from the scene's deterministic
+fixed simulation clock, not goal acceptance. The configured offset, scheduled simulation time,
+actual removal time, geometry, and semantic ID are written only to the evaluator-owned truth file;
+the collider and renderer are deactivated as one authoritative object. Corridor walls and the
+blocker now carry stable semantic IDs. This is **IMPLEMENTED / C#-COMPILE-TESTED** but runtime
+Nav2 recovery-success validation is **BLOCKED** by the local Unity licensing client as of
+2026-09-19. It is a narrow launch-config seam, not yet the requested reset/service API.
+
 ### Collection target and acceptance
 
 - **Importance:** REQUIRED.

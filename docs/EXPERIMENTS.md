@@ -1,5 +1,26 @@
 # Experiment Log
 
+## 2026-09-19 — timed land-blocker intervention implementation
+
+- CRANE base commit `5b5073c615c2e10a85e99d81d41365b61b1d6cd5`; Unity target 6000.5.10f1.
+- **IMPLEMENTED:** `--crane-land-blocker-remove-after SECONDS` deactivates the existing canonical
+  blocker at a fixed-simulation-time boundary. Stable semantic IDs were added to both corridor
+  walls and the blocker. Configured/scheduled/actual timing, geometry, removal state, and semantic
+  ID remain in evaluator-only truth; no fault label was added to robot-visible capture.
+- **TESTED/PASS:** 10 land-launch/bootstrap static contracts, five F1TENTH converter tests, the SDF
+  converter suite, 24 core explanation tests, `git diff --check`, and a single-process C# build of
+  `PhysicsAssembly.csproj` after including the new source in Unity's generated project file.
+- **BLOCKED:** the authoritative Unity player build repeatedly lost the Unity Licensing Client,
+  reported `com.unity.editor.headless` unavailable, and was stopped cleanly with exit 130 after no
+  valid build verdict. No runtime/Nav2 recovery-success claim is made and no e011 episode was
+  collected.
+- The Clearpath offline-import documentation now uses `unity run ... -- -nographics`; `unity run`
+  already owns batch/quit flags. This avoids the unnecessary visible window that had looked like
+  an unmoving simulation. Offline scene construction is explicitly not a robot-motion test.
+- Explanation-evaluation sample remains five independent episode clusters. Next executable task:
+  restore Unity licensing, build, then predeclare and run e011 as recovery-success without
+  relabeling the outcome if the intervention timing fails.
+
 ## 2026-09-19 — Clearpath pipeline offline Unity import
 
 - CRANE commit `2501359964716cecfc378428d6cc77da829ef373`; Unity 6000.5.10f1; Clearpath
