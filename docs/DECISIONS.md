@@ -220,3 +220,21 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Validity risk: agent system framing and large fixed input-token overhead may differ from a normal
   text-generation API. Final-study claims must name the exact interface and rerun development
   comparisons if the frozen provider changes.
+
+## 2026-09-19 — completeness is scoped to the claim family
+
+- Decision: retain whole-BT transition completeness separately from recovery-count completeness.
+  A recovery count is exact only when capture brackets one accepted goal and terminal result, all
+  feedback belongs to that goal, the final monotonic feedback count equals its maximum, and unique
+  `Wait` entries match that count. Missing final BT node transitions still make detailed transition
+  history incomplete.
+- Evidence: Nav2's topic logger omitted the final `FollowPath` transition on both e007 success and
+  e004/e009 aborts. Treating one global flag as authoritative changed a supported zero-recovery
+  success into “at least zero,” while declaring the whole trace complete would hide the missing
+  terminal transition.
+- Alternatives: use one global completeness flag; always qualify every count; infer terminal node
+  status from the action result and rewrite the BT trace.
+- RQ impact: makes selective answers useful without weakening the evidence boundary for chronology
+  or causal mechanism.
+- Validity risk: the recovery-completeness cross-check depends on the exact retained BT XML and
+  Nav2 feedback semantics. Freeze and test it per tree/version rather than generalizing globally.

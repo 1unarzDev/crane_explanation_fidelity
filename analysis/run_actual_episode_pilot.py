@@ -111,6 +111,13 @@ def derive_episode(capture: Path) -> tuple[dict, dict, str, frozenset[str]]:
             f"{len(wait_starts)} versus {maximum_recovery_count}"
         )
     bt_history_complete = len(follow_starts) == len(follow_terminals)
+    recovery_history_complete = (
+        complete
+        and len(results) == 1
+        and all(item["goal_id"] == goal_id for item in feedback)
+        and feedback[-1]["number_of_recoveries"] == maximum_recovery_count
+        and len(wait_starts) == maximum_recovery_count
+    )
     deadline_events = [item for item in harness if item["type"] == "client_deadline"]
     cancel_events = [item for item in harness if item["type"] == "client_cancel"]
     evidence = [
@@ -152,6 +159,14 @@ def derive_episode(capture: Path) -> tuple[dict, dict, str, frozenset[str]]:
             "value": complete and bt_history_complete,
             "timestamp": timestamp,
             "source": "capture_started_and_stopped",
+            "consumed": None,
+        },
+        {
+            "id": "recovery-history-completeness",
+            "kind": "capture_boundary_result_feedback_bt_cross_check",
+            "value": recovery_history_complete,
+            "timestamp": timestamp,
+            "source": "evidence_scope_audit",
             "consumed": None,
         },
     ]
@@ -241,6 +256,7 @@ def derive_episode(capture: Path) -> tuple[dict, dict, str, frozenset[str]]:
             "timestamp": timestamp,
             "events": outcome_events,
             "history_complete": complete and bt_history_complete,
+            "recovery_history_complete": recovery_history_complete,
             "evidence_ids": evidence_ids,
         },
     }
@@ -261,6 +277,9 @@ def derive_episode(capture: Path) -> tuple[dict, dict, str, frozenset[str]]:
          "value": len(follow_terminals)},
         {"id": "history-completeness", "kind": "bt_transition_history_complete",
          "value": bt_history_complete},
+        {"id": "recovery-history-completeness",
+         "kind": "recovery_count_history_complete",
+         "value": recovery_history_complete},
         {"id": "physical-cause-status", "kind": "physical_cause_established",
          "value": False},
         {"id": "counterfactual-status", "kind": "hypothetical_outcome_established",
@@ -282,6 +301,13 @@ def derive_episode(capture: Path) -> tuple[dict, dict, str, frozenset[str]]:
         f"The NavigateToPose action's recorded terminal status was {terminal_status}.",
         f"NavigateToPose feedback reached a recovery count of {maximum_recovery_count}.",
     ]
+    prose_parts.append(
+        "The recovery-count history is complete for this action: capture brackets the accepted "
+        "goal and terminal result, the final monotonic feedback count matches the distinct Wait "
+        "entries, and all records use the same goal ID."
+        if recovery_history_complete else
+        "The available records do not establish a complete recovery-count history for this action."
+    )
     if wait_starts:
         prose_parts.append(
             f"The Behavior Tree log records {len(wait_starts)} distinct entries into the Wait "

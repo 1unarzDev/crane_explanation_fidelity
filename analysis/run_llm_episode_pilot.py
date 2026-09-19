@@ -52,6 +52,7 @@ EXTRACTION_SCHEMA = {
         "terminal_status": {"type": ["string", "null"]},
         "maximum_feedback_recovery_count": {"type": ["integer", "null"]},
         "bt_history_complete": {"type": "boolean"},
+        "recovery_history_complete": {"type": "boolean"},
         "follow_path_failure_count": {"type": "integer", "minimum": 0},
         "recovery_guard_success_count": {"type": "integer", "minimum": 0},
         "wait_attempt_count": {"type": "integer", "minimum": 0},
@@ -61,6 +62,7 @@ EXTRACTION_SCHEMA = {
     },
     "required": [
         "terminal_status", "maximum_feedback_recovery_count", "bt_history_complete",
+        "recovery_history_complete",
         "follow_path_failure_count", "recovery_guard_success_count", "wait_attempt_count",
         "wait_success_count", "client_deadline", "client_cancel",
     ],
@@ -187,8 +189,8 @@ CHECKED ANSWER PLAN
 def extraction_prompt(prose: str) -> str:
     return f"""Extract only explicitly stated robot execution facts from the prose below.
 Do not infer missing transitions, physical causes, or hypothetical outcomes. A history is complete
-only if the prose explicitly says the Behavior Tree transition history is complete. Return JSON
-matching the supplied schema.
+only if the prose explicitly says the corresponding Behavior Tree or recovery-count history is
+complete. Keep those two completeness fields separate. Return JSON matching the supplied schema.
 
 PROSE EVIDENCE
 {prose}
@@ -240,6 +242,7 @@ def extracted_episode(raw: dict[str, Any], episode_id: str) -> EpisodeRecord:
             "timestamp": timestamp,
             "events": events,
             "history_complete": raw["bt_history_complete"],
+            "recovery_history_complete": raw["recovery_history_complete"],
             "evidence_ids": [item["id"] for item in evidence],
         },
     }
