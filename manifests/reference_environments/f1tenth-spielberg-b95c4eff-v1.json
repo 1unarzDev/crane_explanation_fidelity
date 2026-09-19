@@ -1,0 +1,44 @@
+{
+  "schema": "crane-reference-environment-validation-manifest/v1",
+  "environment_id": "f1tenth-spielberg-b95c4eff-v1",
+  "validated_at": "2026-09-19T15:52:50-05:00",
+  "upstream": {
+    "project": "f1tenth/f1tenth_racetracks",
+    "commit": "b95c4eff766f6367d66b310ea20cd2c9563712c0",
+    "license": "GPL-3.0",
+    "inputs_retained_externally": true,
+    "map_yaml_sha256": "86c0eb7546bb035ee6e0173eddc8a2953f8c079944acd28374856f8cc245f6f1",
+    "map_png_sha256": "3378ea1da231e00b4c41015311f7f3a63fb62420d8c54aaa23b6d1ca7c947e56",
+    "centerline_csv_sha256": "3c690173dda7772bffc36190e6d6f0e11e61be86a65e3910cd78cdd0c098c602"
+  },
+  "implementation": {
+    "crane_ml_commit": "5b5073c615c2e10a85e99d81d41365b61b1d6cd5",
+    "unity_version": "6000.5.10f1",
+    "profile": "train-cpu",
+    "graphics_device": "Null",
+    "simplification_tolerance_meters": 0.1,
+    "canonical_manifest_sha256": "c58a93d47d9dc8b16c3cdea6d18407989c3ee494bce79a8efe5f46233080962e"
+  },
+  "validation": {
+    "status": "TESTED",
+    "result_sha256": "87ec2c0092488f1d1c4be41c0a8bbc8ef78c1e06161d4eebe745dd45f6247ef0",
+    "byte_identical_repetitions": 2,
+    "canonical_colliders": 291,
+    "visual_renderers": 291,
+    "source_boundary_edges": 29200,
+    "simplified_wall_segments": 290,
+    "contours": 4,
+    "semantic_sensor_hit": "track-wall-c0003-s0012",
+    "grounded_wheels": 4,
+    "planar_drive_displacement_meters": 0.29519635,
+    "steering_response_degrees": 5.38798,
+    "valid": true
+  },
+  "not_run": [
+    "full-lap controller",
+    "ROS command and sensor transport",
+    "centerline adherence",
+    "source-simulator geometric comparison",
+    "F1TENTH Gym dynamics equivalence"
+  ]
+}

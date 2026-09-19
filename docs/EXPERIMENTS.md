@@ -413,3 +413,28 @@
 - Core revision `8314e0964dbaf21b9e52bed7d2f09c592b959868` adds a checked planning-failure
   answer and regression; 24 core tests pass. A/B parity includes the 208 mapping and active node in
   both formats. Model evaluation is pending at this checkpoint.
+
+## 2026-09-19 — F1TENTH Spielberg reference-environment qualification
+
+- **IMPLEMENTED/TESTED** in CRANE revision `5b5073c615c2e10a85e99d81d41365b61b1d6cd5`.
+  The offline PNG/YAML converter now traces closed contours, simplifies them at an explicit metric
+  tolerance, retains input hashes and optional centerline provenance, and generates stable semantic
+  wall IDs. Unity editor tooling constructs separate primitive collision/presentation layers plus a
+  planar F1TENTH-class Ackermann body and LiDAR; no runtime SDF/world loader was added.
+- External input: `f1tenth/f1tenth_racetracks` Spielberg at
+  `b95c4eff766f6367d66b310ea20cd2c9563712c0`. GPL-3.0 map data remains outside Git. The input,
+  canonical-output, implementation, and result hashes are retained in
+  `manifests/reference_environments/f1tenth-spielberg-b95c4eff-v1.json`.
+- Offline tests: **5 passed**. A 0.10 m simplification tolerance reduced 29,200 raster boundary
+  edges to 290 wall boxes across four contours. The headless Unity 6000.5.10f1 `train-cpu` run
+  validated 291 canonical colliders, 291 collider-free renderers, a semantic wall ray hit, rigid
+  contact, four grounded wheels, 0.295 m planar motion, 5.388 degrees of steering response, and no
+  enabled camera/graphics path. Two result JSON files were byte-identical.
+- Negative calibration evidence retained in the session record: the initial small-car suspension
+  had zero grounded wheels and the first motion metric included vertical settling. The accepted
+  fixture uses mass-scaled suspension and planar displacement; roll/pitch are frozen because the
+  source benchmark is a 2-D occupancy-map simulator, not a rollover-dynamics benchmark.
+- **NOT_RUN**: full-lap controller, ROS transport, centerline adherence, source-simulator geometric
+  comparison, and F1TENTH Gym/hardware dynamics equivalence. A Clearpath regression rebuild was
+  attempted after generalizing its validator to primitive colliders, but first exhausted `/tmp`
+  quota and then stalled with an empty Unity log; its five offline converter tests still pass.
