@@ -24,6 +24,39 @@ def git_output(checkout: Path, *arguments: str) -> str:
     ).strip()
 
 
+def managed_assembly_record(player: Path) -> dict:
+    managed = player.parent / f"{player.stem}_Data" / "Managed"
+    if not managed.is_dir():
+        # Unity players conventionally use <product>_Data, while this project names the
+        # executable CRANE.x86_64 and the data directory CRANE_Data.
+        managed = player.parent / "CRANE_Data" / "Managed"
+    assemblies = sorted(managed.glob("*.dll"))
+    if not assemblies:
+        raise FileNotFoundError(f"No managed assemblies found below {managed}")
+    digest = hashlib.sha256()
+    total_bytes = 0
+    physics_hash = None
+    for assembly in assemblies:
+        relative = assembly.relative_to(player.parent).as_posix()
+        file_hash = sha256_file(assembly)
+        size = assembly.stat().st_size
+        digest.update(relative.encode("utf-8") + b"\0")
+        digest.update(str(size).encode("ascii") + b"\0")
+        digest.update(file_hash.encode("ascii") + b"\n")
+        total_bytes += size
+        if assembly.name == "PhysicsAssembly.dll":
+            physics_hash = file_hash
+    if physics_hash is None:
+        raise FileNotFoundError(f"PhysicsAssembly.dll not found below {managed}")
+    return {
+        "algorithm": "sha256(relative_path NUL bytes NUL file_sha256 LF), sorted by path",
+        "sha256": digest.hexdigest(),
+        "assembly_count": len(assemblies),
+        "total_bytes": total_bytes,
+        "physics_assembly_sha256": physics_hash,
+    }
+
+
 def build_record(player: Path, checkout: Path) -> dict:
     player = player.resolve(strict=True)
     checkout = checkout.resolve(strict=True)
@@ -41,6 +74,7 @@ def build_record(player: Path, checkout: Path) -> dict:
             "sha256": sha256_file(player),
             "bytes": player.stat().st_size,
         },
+        "managed_assemblies": managed_assembly_record(player),
         "build_manifest": {
             "basename": manifest_path.name,
             "sha256": sha256_file(manifest_path),
