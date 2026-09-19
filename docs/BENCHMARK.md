@@ -60,5 +60,11 @@ flow and information parity while showing that recovery-free factual questions a
 The graphics-free land vertical slice now executes a physically constrained Ackermann rover with
 odometry, TF, LaserScan, and Nav2. Its successful no-blocker run is infrastructure validation only:
 it has no explanation capture or condition outputs, and two preceding client-deadline runs remain
-recorded as invalid calibration attempts. Obstacle/recovery episodes must wait until costmap
-observation and evaluator-only collision/intervention truth pass the full contract above.
+recorded as invalid calibration attempts.
+
+The subsequent opaque `land-nav-20260919-e001` development pilot validates a different motif: an
+explicit harness deadline and client cancellation under a full-width blocker. Its capture contains
+223 BT transitions and 2,341 feedback records but zero recoveries before cancellation. It is not a
+Nav2 terminal-failure or obstacle-causality example. Its terminal-status A/B/C/D/E parity smoke is
+useful for selective explanation because the supported answer must withhold both BT-timeout and
+physical-cause claims. Recovery-producing land variants remain required before design freeze.

@@ -37,6 +37,12 @@ corridor. `run_land_nav2_fixture.sh` explicitly selects `Land Vehicle Validation
 recovery behavior must respect that embodiment. Corridor parameters written by the runtime
 bootstrap are evaluator-only and must never enter explanation prompts.
 
+The land harness requires populated Nav2 costmap evidence. Jazzy's per-source LaserScan height
+limits are explicit, and bounded snapshots use the stock `GetCostmap` service because advertised
+full-map topics did not deliver in the isolated fixture. Topic-message and service-snapshot counts
+remain separate. A service snapshot is observable Nav2 state, not a specific controller-consumed
+input.
+
 ## Evidence levels
 
 1. recorded sequence;

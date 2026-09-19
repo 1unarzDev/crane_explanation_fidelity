@@ -134,8 +134,40 @@
   proportionate to the 1.35 m-wide rover and below its 0.75 m costmap radius. The action succeeded
   in 4.91 s; displacement 2.63 m; 38 accepted and zero rejected/stale actions; 301 LiDAR scans;
   zero failed/stale observations; RTF 1.00003; no Unity window opened.
-- Known gaps: the fixture subscriber observed zero costmap messages even though Nav2 configured
-  both obstacle layers on `/scan`; resolve the costmap QoS/topic before obstacle/recovery pilots.
-  Ackermann cannot execute zero-linear-velocity spin commands, so longer/curved scenarios require
-  controller/recovery design rather than unphysical in-place rotation. No explanation capture or
-  A/B/C/D/E response was produced, so the material-error sample remains 0 and no effect exists.
+- Gap observed at that checkpoint: the fixture subscriber saw zero costmap messages despite both
+  obstacle layers subscribing to `/scan`; the following diagnosis resolved internal-map validation
+  through stock introspection. Ackermann still cannot execute zero-linear-velocity spin commands,
+  so recovery design must preserve the embodiment. That smoke itself produced no explanation
+  capture or A/B/C/D/E response.
+
+## 2026-09-19 — land costmap diagnosis and first blocker capture
+
+- Validated component revisions: CRANE `cc0818e606a5640c788afe84112a15049878718c`;
+  ROS capture `b44dd4c70e442ddcd98fd6ec1dfce9459afde2d9`.
+- Diagnosis: **TESTED**. The retained red-capable land gate requires at least one costmap
+  observation with occupied cells. Initial probes confirmed 221 LiDAR scans with 66,531 ray hits
+  and a live `odom -> lidar_link` transform, while the Nav2 master map remained all zero.
+- Root cause 1: Jazzy height filtering is per observation source; omitted
+  `scan.max_obstacle_height` defaulted to `0.0` and discarded elevated scan points. Explicit 0--2 m
+  limits populated the internal layers. A service probe observed 548 lethal local-obstacle cells
+  and 389 lethal global-obstacle cells.
+- Publication finding: **NEGATIVE**. Full-map topics delivered zero samples under transient-local
+  and volatile fixture subscribers, including with periodic full-map publication enabled. The
+  stock `GetCostmap` service remained populated. The fixture records topic and bounded service
+  observations separately and states that snapshots do not prove controller consumption.
+- Regression: **TESTED/PASS**. The standard 3 m headless run succeeded in 4.83 s, moved 2.62 m,
+  captured eight service snapshots with up to 16,656 nonzero cells, produced 301 LiDAR scans, and
+  had zero stale/failed observations at RTF 1.00003. The strengthened validity gate passed.
+- Opaque pilot `land-nav-20260919-e001`: **TESTED/PASS AS EXPECTED CLIENT CANCELLATION**, not
+  navigation failure. Evaluator-only truth records a fixed
+  full-width blocker at 4 m, 8 m goal, seed 1000, 25 s harness deadline. The client deadline fired,
+  cancellation was requested, and action status reached canceled. Simulator/transport/costmap
+  quality passed; the rover displaced 1.30 m. Passive capture retained 223 BT transitions, 2,341
+  feedback records, exact BT XML, five harness events, and zero recoveries. No physical obstacle
+  cause or BT timeout is licensed by robot-visible evidence.
+- A/B/C/D/E terminal-status smoke: **TESTED/PASS, NOT LLM EVALUATION**. All conditions reported the
+  recorded cancellation and client events and explicitly withheld BT-timeout and physical-failure
+  claims. This supplies no material-error effect estimate.
+- Independent explanation-evaluation sample remains 0; development robot captures are two (one
+  aquatic success and one land cancellation). Highest-value next step is a controlled land variant
+  that reliably causes a software recovery or Nav2 terminal result before the harness deadline.

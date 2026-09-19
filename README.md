@@ -28,10 +28,12 @@ their own location. Exact repository commits and destinations are recorded in
   deterministic fallback, Dock/Slalom regressions, terminal-status distinctions, and the A/B/C/D/E
   harness (17 tests).
 - **TESTED:** ROS package tests, Jazzy build, live BT/action/harness capture, and exact BT retention.
-- **TESTED:** CRANE build, one valid aquatic terminal-success capture pilot, and one graphics-free
-  land/Ackermann NavigateToPose smoke at real-time factor 1.00003.
-- **TESTED (PIPELINE SMOKE):** A/B/C/D/E over that real episode with a rule-based generator; all
-  five answers were identical, so this is not an LLM comparison or evidence for RQ1/RQ2.
+- **TESTED:** CRANE build, one valid aquatic terminal-success capture pilot, a graphics-free
+  land/Ackermann success smoke with populated costmap snapshots, and a valid-as-expected land
+  client-cancellation capture under a full blocker.
+- **TESTED (PIPELINE SMOKE):** A/B/C/D/E over real success and cancellation episodes with a
+  rule-based generator; identical outputs validate parity and routing but are not an LLM comparison
+  or evidence for RQ1/RQ2.
 - **NOT_RUN:** land failure/recovery collection and the main powered benchmark.
 - **DEFERRED:** arbitrary-LLM proposition extraction until independently evaluated.
 

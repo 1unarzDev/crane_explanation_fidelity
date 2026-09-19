@@ -125,3 +125,18 @@
 - Validity risk: stock recovery trees containing Spin may be structurally incompatible. Before
   powered collection, either configure an Ackermann-valid recovery tree and record its exact XML,
   or treat incompatibility as a deliberately scoped mechanism—not a generic navigation failure.
+
+## 2026-09-19 — require populated costmap evidence through stock introspection
+
+- Decision: land runs must observe at least one populated costmap. Record full-map topic deliveries
+  and bounded `/local_costmap/get_costmap` snapshots separately; use the service snapshots for the
+  validity gate while the topic path remains silent.
+- Evidence: the initial configuration omitted the LaserScan source height limit and returned an
+  all-zero map. Adding the Jazzy per-source `max_obstacle_height` populated the internal local and
+  global obstacle layers (548 and 389 lethal cells in the discriminating probe). Neither
+  transient-local nor volatile subscribers received the advertised full-map topic, including with
+  `always_send_full_costmap=true`; the stock service returned populated snapshots reliably.
+- RQ impact: obstacle/recovery pilots can require observable navigation-state evidence without a
+  C++ hook. Recorded provenance explicitly does not claim controller consumption.
+- Validity risk: service polling observes current Nav2 state, not the controller's exact sampled
+  map. Claims must remain at that scope.

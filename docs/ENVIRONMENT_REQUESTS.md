@@ -4,6 +4,12 @@ These contracts let environment work proceed in parallel without exposing evalua
 explanation system. Build the smallest geometry that satisfies each contract. Do not add visual
 detail, new perception stacks, or competition semantics unless the contract requires them.
 
+Implementation checkpoint (2026-09-19): the smallest headless corridor, deterministic walls,
+optional partial/full blocker, Ackermann rover, evaluator-only geometry export, LiDAR, odometry,
+TF, and populated Nav2 costmap validation are implemented. A full blocker did not trigger recovery
+before a 25 s client deadline, so recovery-success and recovery-exhaustion behavior remain open
+requirements rather than assumed properties of the scene.
+
 ## REQUIRED — generated land corridor navigation
 
 - **Scientific purpose:** high-throughput primary benchmark for software-level recovery,
