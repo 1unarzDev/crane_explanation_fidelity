@@ -61,15 +61,16 @@ Power planning uses development episodes only: estimate paired discordance/effec
 smallest practically meaningful reduction before seeing sealed test, simulate the clustered paired
 design, and target ≥80% power (prefer 90%). **TBD-PILOT:** effect, ICC, threshold, episode count.
 
-Current explanation-evaluation sample: four valid land episodes, six correlated question families
-per episode, and 120 A/B/C/D/E responses (96 model-mediated). Families are client cancellation,
-unblocked success, and two independently configured terminal recovery/exhaustion instances; the
-latter share the same abstract explanation pattern. A single unblinded development annotation
-observed A 2/24 errors and B/C/D/E 0/24. D substantive coverage is lower (19/24 versus A/B 20/24)
-because retained e007 outputs predate a development-driven false-premise fix. This remains
-insufficient to estimate episode-cluster variance or power. Power parameters are **TBD-PILOT**;
-provider/model/prompts, verifier policy, annotation rubric, and coverage units remain mutable
-pending more diverse mechanisms and blind/adjudicated development labels.
+Current explanation-evaluation sample: five valid land episodes and 155 A/B/C/D/E responses (124
+model-mediated). Families are client cancellation, unblocked success, two independently configured
+terminal recovery/exhaustion instances, and planning `NO_VALID_PATH`; the two recovery terminals
+share the same abstract explanation pattern. A single unblinded development annotation observed A
+2/31 errors and B/C/D/E 0/31. D substantive coverage is 25/31 versus A/B 26/31 because retained
+e007 outputs predate a false-premise fix. D also covers 61/67 answerable information units versus
+A/B 63/67: the generic terminal-status plan omits the available planning mechanism in e010. This
+remains insufficient to estimate episode-cluster variance or power. Power parameters are
+**TBD-PILOT**; provider/model/prompts, verifier policy, annotation rubric, and coverage units remain
+mutable pending more independent mechanisms and blind/adjudicated development labels.
 
 The initial powered analysis is land/navigation. Surface CRANE scenarios are ecological validation;
 underwater/aerial scenarios are descriptive stress tests unless their independent episode counts

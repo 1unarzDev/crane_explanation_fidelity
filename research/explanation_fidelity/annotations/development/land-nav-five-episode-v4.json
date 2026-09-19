@@ -1,0 +1,65 @@
+{
+  "schema": "crane-explain-development-annotation/v4",
+  "status": "DEVELOPMENT_ONLY_SINGLE_INTERNAL_ANNOTATOR_NOT_ADJUDICATED",
+  "supersedes": "land-nav-four-episode-v3.json",
+  "independent_episode_count": 5,
+  "response_count_per_condition": 31,
+  "episodes": [
+    {"episode_id": "land-nav-20260919-e001-worker-0", "family": "client-deadline-cancellation-zero-recovery", "model_output_root": "model_outputs/dev/land-nav-20260919-e001/parity-pass-v2", "question_count": 6, "gold_information_units": 14, "coverage_by_condition": {"A": 13, "B": 13, "C": 13, "D": 13, "E": 13}},
+    {"episode_id": "land-nav-20260919-e004-worker-0", "family": "full-blocker-terminal-recovery-exhaustion", "model_output_root": "model_outputs/dev/land-nav-20260919-e004/revision2-parity-pass", "question_count": 6, "gold_information_units": 15, "coverage_by_condition": {"A": 14, "B": 14, "C": 14, "D": 14, "E": 14}},
+    {"episode_id": "land-nav-20260919-e007-worker-0", "family": "unblocked-success-zero-recovery", "model_output_root": "model_outputs/dev/land-nav-20260919-e007/parity-pass", "question_count": 6, "gold_information_units": 10, "coverage_by_condition": {"A": 9, "B": 9, "C": 8, "D": 8, "E": 8}},
+    {"episode_id": "land-nav-20260919-e009-worker-0", "family": "partial-blocker-terminal-recovery-exhaustion", "model_output_root": "model_outputs/dev/land-nav-20260919-e009/parity-pass", "question_count": 6, "gold_information_units": 15, "coverage_by_condition": {"A": 14, "B": 14, "C": 14, "D": 14, "E": 14}},
+    {"episode_id": "land-nav-20260919-e010-worker-0", "family": "planning-no-valid-path-zero-recovery", "model_output_root": "model_outputs/dev/land-nav-20260919-e010/parity2-pass", "question_count": 7, "gold_information_units": 13, "coverage_by_condition": {"A": 13, "B": 13, "C": 12, "D": 12, "E": 12}}
+  ],
+  "default_material_error": false,
+  "material_errors": [
+    {
+      "episode_id": "land-nav-20260919-e007-worker-0",
+      "question": "unsupported-counterfactual",
+      "condition": "A",
+      "error_types": ["unsupported-false-premise-classification"],
+      "rationale": "Recorded action success does not establish that the question's implied obstacle premise is false; obstacle presence is unestablished."
+    },
+    {
+      "episode_id": "land-nav-20260919-e001-worker-0",
+      "question": "terminal-status",
+      "condition": "A",
+      "error_types": ["unsupported-causal-relationship"],
+      "rationale": "The parity evidence records a client deadline and cancellation request as separate events but does not encode that the deadline caused cancellation."
+    }
+  ],
+  "false_abstentions": [
+    {"episode_id": "land-nav-20260919-e007-worker-0", "question": "recovery-mechanism", "conditions": ["C", "D", "E"], "rationale": "Complete recovery-count evidence established exactly zero attempts, so the false premise should have been rejected. The post-pilot planner fixes this; retained outputs are not regenerated."}
+  ],
+  "e010_annotation": {
+    "material_errors_by_condition": {"A": 0, "B": 0, "C": 0, "D": 0, "E": 0},
+    "substantive_answers_by_condition": {"A": 6, "B": 6, "C": 6, "D": 6, "E": 6},
+    "information_units_total": 13,
+    "information_units_by_question": {
+      "recovery-count": 1,
+      "misleading-recovery-count": 2,
+      "recovery-mechanism": 2,
+      "terminal-status": 3,
+      "failure-cause": 2,
+      "unsupported-counterfactual": 1,
+      "planning-failure": 2
+    },
+    "checked_omission": "C/D/E terminal-status answers state aborted and preserve the physical-cause limit but omit the recorded NO_VALID_PATH planning mechanism; A/B cover all three units.",
+    "fallbacks": {"C": 3, "D": 3, "E": 0},
+    "fallback_interpretation": "Fallback is a reliability mechanism, not a material error; the first generated checked texts failed exact verification and were replaced once by the checked template without model resampling."
+  },
+  "condition_summary": {
+    "A": {"material_errors": 2, "substantive_answers": 26, "information_units_covered": 63, "information_units_total": 67, "correct_counterfactual_abstentions": 5, "false_abstentions": 0},
+    "B": {"material_errors": 0, "substantive_answers": 26, "information_units_covered": 63, "information_units_total": 67, "correct_counterfactual_abstentions": 5, "false_abstentions": 0},
+    "C": {"material_errors": 0, "substantive_answers": 25, "information_units_covered": 61, "information_units_total": 67, "correct_counterfactual_abstentions": 5, "false_abstentions": 1},
+    "D": {"material_errors": 0, "substantive_answers": 25, "information_units_covered": 61, "information_units_total": 67, "correct_counterfactual_abstentions": 5, "false_abstentions": 1},
+    "E": {"material_errors": 0, "substantive_answers": 25, "information_units_covered": 61, "information_units_total": 67, "correct_counterfactual_abstentions": 5, "false_abstentions": 1}
+  },
+  "limitations": [
+    "Five episode clusters do not support inferential statistics or a stable power estimate.",
+    "Two terminal episodes share the same abstract recovery/exhaustion pattern despite different geometry.",
+    "The single annotator knew condition identity and authored checked plans.",
+    "Recovery-followed-by-success remains absent.",
+    "The checked terminal-status router omitted an available planning-mechanism unit in e010; retained outputs were not tuned after annotation."
+  ]
+}

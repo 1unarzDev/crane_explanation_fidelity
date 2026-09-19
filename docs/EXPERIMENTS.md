@@ -419,6 +419,21 @@
   artifacts correctly record whole-BT history incomplete while retaining complete recovery-count
   history, zero recorded recoveries, and the supported `NO_VALID_PATH (208)` planning proposition.
   All seven information-parity audits pass; retained `parity-*` inputs were not rewritten.
+- Seven A/B/C/D/E model cases completed with the unchanged `gpt-5.6-sol` low-reasoning adapter,
+  content-addressed caching, and no retries: 35 new logical outputs, 28 model-mediated. Across all
+  five included episodes there are now 155 outputs, 124 model-mediated, and 88 unique referenced
+  calls. Artifact hashes and usage are retained in
+  `manifests/model_outputs/land-nav-development-five-episode-gpt-5.6-sol.json`.
+- Provisional unblinded annotation found no e010 material error. All methods answer six of seven
+  questions substantively; the unsupported counterfactual is correctly withheld. A/B cover all 13
+  answerable information units. C/D/E cover 12 because the generic terminal-status plan says the
+  action aborted and withholds physical cause but omits the available `NO_VALID_PATH` mechanism.
+  This negative coverage result is retained rather than prompt-tuned away. C and D used verified
+  template fallback on three cases after one generated realization failed exact verification.
+- Five-episode development totals: A 2/31 material errors; B/C/D/E 0/31. A/B substantive coverage
+  is 26/31 and information coverage 63/67; C/D/E are 25/31 and 61/67. These are descriptive only;
+  five clusters, one unblinded annotator, and absent recovery-success data do not support inference
+  or power planning.
 
 ## 2026-09-19 — F1TENTH Spielberg reference-environment qualification
 

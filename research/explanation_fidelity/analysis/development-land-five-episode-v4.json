@@ -1,0 +1,25 @@
+{
+  "schema": "crane-explain-development-summary/v4",
+  "status": "DEVELOPMENT_ONLY_NO_INFERENTIAL_STATISTICS",
+  "independent_episode_count": 5,
+  "responses_per_condition": 31,
+  "conditions": {
+    "A": {"material_error_rate": 0.06451612903225806, "substantive_answer_coverage": 0.8387096774193549, "answerable_information_coverage": 0.9402985074626866, "false_abstention_rate": 0.0},
+    "B": {"material_error_rate": 0.0, "substantive_answer_coverage": 0.8387096774193549, "answerable_information_coverage": 0.9402985074626866, "false_abstention_rate": 0.0},
+    "C": {"material_error_rate": 0.0, "substantive_answer_coverage": 0.8064516129032258, "answerable_information_coverage": 0.9104477611940298, "false_abstention_rate": 0.03225806451612903},
+    "D": {"material_error_rate": 0.0, "substantive_answer_coverage": 0.8064516129032258, "answerable_information_coverage": 0.9104477611940298, "false_abstention_rate": 0.03225806451612903},
+    "E": {"material_error_rate": 0.0, "substantive_answer_coverage": 0.8064516129032258, "answerable_information_coverage": 0.9104477611940298, "false_abstention_rate": 0.03225806451612903}
+  },
+  "paired_primary_development_observation": {
+    "comparison": "D versus A",
+    "A_error_D_correct": 2,
+    "A_correct_D_error": 0,
+    "response_level_risk_difference_D_minus_A": -0.06451612903225806,
+    "coverage_difference_D_minus_A": -0.03225806451612906,
+    "information_coverage_difference_D_minus_A": -0.029850746268656803,
+    "interpretation": "Both favorable error discordances are explanatory-relation errors, but D retains one earlier false abstention and omits one available planning-mechanism unit on e010 terminal status. Five episode clusters remain far too few for inference."
+  },
+  "representation_observation": "B has no observed material errors at the same substantive and information coverage as A, so this pilot still does not support an RQ1 advantage for structure over strong prose.",
+  "planning_family_observation": "All conditions correctly report NO_VALID_PATH and withhold physical cause on the dedicated planning question. A/B also use this mechanism on terminal status; C/D/E use the generic terminal plan and lose one information unit.",
+  "next_design_action": "Collect additional independent instances and a recovery-success mechanism, then obtain blind dual annotation before using development discordance and clustering for power simulation."
+}

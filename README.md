@@ -35,8 +35,9 @@ their own location. Exact repository commits and destinations are recorded in
 - **TESTED:** genuine land controller-progress recovery/exhaustion after fixing the missing
   simulated clock, plus a headless TurtleBot3 Waffle-class warehouse/Nav2 success smoke using
   canonical semantic geometry separated from visuals.
-- **IMPLEMENTED, TESTED (SYNTHETIC INPUT):** deterministic F1TENTH PNG/YAML boundary-to-collider
-  generator. No third-party track data has been imported or run.
+- **IMPLEMENTED, TESTED:** deterministic F1TENTH PNG/YAML contour-to-collider generator and Unity
+  importer, qualified headlessly on the externally retained pinned Spielberg map. Full-lap ROS
+  control and source-simulator comparison remain unrun.
 - **IMPLEMENTED, TESTED:** PX4 `walls.sdf` primitive reconstruction with pinned provenance,
   semantic wall IDs, separate collision/visual layers, and headless aerial/contact/ray checks.
 - **IMPLEMENTED, TESTED:** PX4 ArUco render-only landmark invariant and pinned windy scenario with
@@ -46,10 +47,10 @@ their own location. Exact repository commits and destinations are recorded in
 - **TESTED (PIPELINE SMOKE):** A/B/C/D/E over real success and cancellation episodes with a
   rule-based generator; identical outputs validate parity and routing but are not an LLM comparison
   or evidence for RQ1/RQ2.
-- **TESTED (DEVELOPMENT ONLY):** four real land episodes, six question families each, 120
+- **TESTED (DEVELOPMENT ONLY):** five real land episodes, 31 questions per condition and 155 total
   A/B/C/D/E responses, cached single-sample model calls, parity audits, and provisional material
-  error/coverage annotation. A had 2/24 errors and D had 0/24 but lower retained-output coverage;
-  four episode clusters do not support an inferential claim or power estimate.
+  error/coverage annotation. A had 2/31 errors and D had 0/31 but lower retained-output and
+  answerable-information coverage; five episode clusters do not support inference or power.
 - **NOT_RUN:** multi-episode recovery/failure collection and the main powered benchmark.
 - **DEFERRED:** arbitrary-LLM proposition extraction until independently evaluated.
 
