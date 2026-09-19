@@ -1,0 +1,49 @@
+{
+  "schema": "crane-reference-environment-validation-manifest/v1",
+  "environment_id": "clearpath-pipeline-2.9.4-v1",
+  "validated_at": "2026-09-19T17:27:24-05:00",
+  "upstream": {
+    "project": "clearpathrobotics/clearpath_simulator",
+    "version": "2.9.4",
+    "commit": "ee098ad6f67b4e35d77841ed6f004b8f86cd77e4",
+    "license": "BSD-3-Clause",
+    "inputs_retained_externally": true,
+    "world_sha256": "76cb7925fb47d116bb74f3403328d4cfbdcbb060d9eb2eb08ce5aeaad8eb03b9",
+    "generated_import_manifest_sha256": "79ea193f2f22195507a2c4276c697ccadc7602100bea0b7246d2d7efc7c4f783"
+  },
+  "implementation": {
+    "crane_ml_commit": "d2551367781e14193c413de88cc30028c20fdbab",
+    "unity_version": "6000.5.10f1",
+    "profile": "train-cpu",
+    "graphics_device": "Null",
+    "mode": "offline SDF conversion followed by Unity editor scene construction",
+    "build_manifest_sha256": "17a654ead83a69f330dcaf360f175b63b46681604e101c813b9365d1e289cecc"
+  },
+  "validation": {
+    "status": "TESTED",
+    "result_sha256": "00fa2d8d6d9febb0005cbbbe1a87fdc761e31d88dfbf429788ce488538e90686",
+    "source_objects": 3,
+    "canonical_colliders": 11,
+    "mesh_colliders": 11,
+    "visual_renderers": 13,
+    "lidars": 1,
+    "semantic_sensor_hit": "clearpath-pipeline",
+    "collision_contact_observed": true,
+    "semantic_highlight": {
+      "evidence_id": "clearpath-pipeline",
+      "highlighted_renderers": 10,
+      "colliders_before_and_after": 11
+    },
+    "raw_result_retained_in_git": false,
+    "valid": true
+  },
+  "not_run": [
+    "Nav2 traversal",
+    "ROS sensor transport",
+    "spawn and goal calibration",
+    "corridor-width comparison against Gazebo",
+    "native Gazebo trajectory comparison",
+    "high-fidelity material matching",
+    "Blender FBX conversion"
+  ]
+}
