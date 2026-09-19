@@ -63,15 +63,15 @@ design, and target ≥80% power (prefer 90%). The current development planning t
 absolute risk reduction (A 8% to D 3%), ICC 0.10, six questions per episode, and 60 independent
 episodes; details and sensitivity limits follow below.
 
-Current explanation-evaluation sample: thirteen valid land episodes and 395 A/B/C/D/E responses (316
-model-mediated). Families are three client-cancellation instances, three unblocked-success instances, two independently configured
+Current explanation-evaluation sample: fourteen valid land episodes and 425 A/B/C/D/E responses (340
+model-mediated). Families are three client-cancellation instances, four unblocked-success instances, two independently configured
 terminal recovery/exhaustion instances, planning `NO_VALID_PATH`, and four independently configured
 bounded-mobility recovery-followed-by-success instances. A single unblinded development annotation
-observed A 6/79, B 0/79, and C/D/E 1/79 material errors. The retained checked error conflated eventual task success with
+observed A 6/85, B 0/85, and C/D/E 1/85 material errors. The retained checked error conflated eventual task success with
 absence of an explicitly recorded intermediate FollowPath failure; retained outputs were not
-regenerated after correcting the planner. A/B substantive coverage is 66/79 versus C/D/E 65/79.
-A/B cover 163/175 answerable information units and C/D/E 155/175. The mobility-hold configurations
-exercise the same recovery mechanism and do not add mechanism diversity. Thirteen clusters remain
+regenerated after correcting the planner. A/B substantive coverage is 71/85 versus C/D/E 70/85.
+A/B cover 172/185 answerable information units and C/D/E 164/185. The mobility-hold configurations
+exercise the same recovery mechanism and do not add mechanism diversity. Fourteen clusters remain
 insufficient for a final inferential claim or a stable empirical cluster-variance estimate.
 
 Development sensitivity is retained in `analysis/results/clustered-power-sensitivity-20260919.json`.

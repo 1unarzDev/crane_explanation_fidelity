@@ -663,3 +663,23 @@
 - These are regression validations, not new independent navigation episodes and not additions to
   the explanation-study sample size. F1TENTH still requires a player built with its generated
   scene via `--crane-extra-scene`; TurtleBot3 continues to use the ROS/Nav2 closed-loop fixture.
+
+## 2026-09-19 — e032–e035 persistent-hold development batch
+
+- E032/e033/e034: **TESTED/EXCLUDED EXPECTED-INTERVENTION MISMATCH**. Each action aborted and the
+  robot-visible BT stream recorded two completed `Wait` recoveries, but evaluator truth recorded
+  `mobilityHeld=false` and `mobilityReleased=false`. The runs therefore do not validate the
+  predeclared persistent-hold mechanism. All attempts are retained, checkpointed separately, and
+  were not rerun, tuned, or relabeled.
+- E035: **TESTED/INCLUDED**. The matched no-hold TurtleBot3 instance succeeded, displaced 3.469 m,
+  recorded exactly zero recoveries, and passed transport, costmap, observation, and action gates.
+  Six fact-parity audits passed.
+- The unchanged single-sample `gpt-5.6-sol` procedure produced 30 e035 outputs. No material error
+  was annotated. C and D each used checked-template fallback on four questions after final-text
+  verification rejected the free realization; no retry or resampling occurred.
+- Cumulative development-only totals are 14 independent episodes, 85 responses per condition, and
+  425 outputs. Material errors are A 6/85, B 0/85, and C/D/E 1/85. A/B information coverage is
+  172/185 versus 164/185 for C/D/E. This remains a negative/mixed result for D superiority.
+- Validity threat: the intended hold did not schedule or activate in three of three terminal
+  instances. Diagnose that configuration path before predeclaring another terminal batch; the
+  observed aborts cannot be described as intervention-caused.

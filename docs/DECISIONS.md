@@ -368,3 +368,17 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   or causal mechanism.
 - Validity risk: the recovery-completeness cross-check depends on the exact retained BT XML and
   Nav2 feedback semantics. Freeze and test it per tree/version rather than generalizing globally.
+
+## 2026-09-19 — exclude terminal runs when the predeclared intervention did not activate
+
+- Decision: retain but exclude e032–e034 even though their terminal status and recovery counts
+  match the expected family, because evaluator truth records `mobilityHeld=false`.
+- Evidence: all three actions aborted after two recorded `Wait` attempts, while every hold timing
+  and activation field remained unset/false. Matching the desired outcome is not evidence that the
+  intended mechanism occurred.
+- Alternatives: relabel them as generic terminal failures; infer the hold from zero displacement;
+  rerun with adjusted timing. All would violate the predeclared mechanism or mismatch rule.
+- RQ impact: prevents mechanism leakage and post-outcome selection from inflating the terminal
+  sample. E035 remains a valid success-family replication.
+- Validity risk: terminal recovery/exhaustion collection remains unreliable until the intervention
+  configuration path is diagnosed on fresh development runs.

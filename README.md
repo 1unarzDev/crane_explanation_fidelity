@@ -47,10 +47,10 @@ their own location. Exact repository commits and destinations are recorded in
 - **TESTED (PIPELINE SMOKE):** A/B/C/D/E over real success and cancellation episodes with a
   rule-based generator; identical outputs validate parity and routing but are not an LLM comparison
   or evidence for RQ1/RQ2.
-- **TESTED (DEVELOPMENT ONLY):** thirteen real land episodes, 79 questions per condition and 395 total
+- **TESTED (DEVELOPMENT ONLY):** fourteen real land episodes, 85 questions per condition and 425 total
   A/B/C/D/E responses, cached single-sample model calls, parity audits, and provisional material
-  error/coverage annotation. A has 6/79 errors, B 0/79, and C/D/E 1/79 each. Checked methods retain
-  lower answerable-information coverage; thirteen episode clusters do not support inference.
+  error/coverage annotation. A has 6/85 errors, B 0/85, and C/D/E 1/85 each. Checked methods retain
+  lower answerable-information coverage; fourteen episode clusters do not support inference.
 - **TESTED:** a bounded evaluator-only TurtleBot3 mobility interruption produced the first captured
   recovery-followed-by-success episode with one exact Wait attempt. The first run was excluded
   when a volatile DDS startup race lost its goal boundary; reliable transient-local harness QoS

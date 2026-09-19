@@ -98,6 +98,12 @@ this shows that static blocker geometry is not a sufficiently reliable terminal-
 future terminal collection should use a separately predeclared deterministic software-level
 mechanism rather than post-outcome geometry tuning.
 
+The e032–e035 batch tested three persistent mobility holds and a matched no-hold success. The three
+terminal traces are retained but excluded: all aborted after two `Wait` recoveries, yet evaluator
+truth shows that the requested hold never activated. E035 is included as a fourth unblocked-success
+cluster with zero recoveries. The outcome match alone is deliberately insufficient for mechanism
+inclusion.
+
 `land-nav-20260919-e004` is the first included recovery-bearing model pilot. It terminated with a
 real NavigateToPose `aborted` result before the client deadline and recorded two completed `Wait`
 recoveries. Because the BT topic lacks the terminal transition for a third `FollowPath` start, its
