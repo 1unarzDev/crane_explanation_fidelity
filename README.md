@@ -25,7 +25,8 @@ their own location. Exact repository commits and destinations are recorded in
 ## Current status
 
 - **IMPLEMENTED, TESTED:** evidence records, checked answer plans, final-text verification,
-  deterministic fallback, Dock/Slalom regressions, and the A/B/C/D/E harness (14 tests).
+  deterministic fallback, Dock/Slalom regressions, terminal-status distinctions, and the A/B/C/D/E
+  harness (17 tests).
 - **TESTED:** ROS package tests, Jazzy build, live BT/action/harness capture, and exact BT retention.
 - **TESTED:** CRANE build and one valid, terminal-success NavigateToPose capture pilot after adequate
   lifecycle startup margin.

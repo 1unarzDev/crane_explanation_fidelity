@@ -99,3 +99,15 @@
 - RQ impact: preserves collection time while retaining scenario diversity/split principles.
 - Validity risk: the primary study lacks a standardized external land embodiment unless the later
   smoke passes its frozen stop gates; report this limitation rather than implying BARN validation.
+
+## 2026-09-19 — terminal explanations preserve client/BT/physical distinctions
+
+- Decision: checked terminal plans report recorded action status and explicit harness deadline or
+  cancellation as separate propositions, followed by an explicit causal limitation.
+- Evidence: p01 involved a client deadline while p03 succeeded; neither record licenses a physical
+  failure cause, and a successful terminal result does not prove every intermediate BT branch
+  succeeded.
+- Alternatives: collapse all non-success into navigation failure; answer only recovery counts.
+- RQ impact: directly expands terminal-failure and misleading-premise coverage for RQ2–RQ4.
+- Validity risk: richer software-mechanism explanations still require parsing exact BT transitions;
+  terminal status alone remains level-1 evidence.

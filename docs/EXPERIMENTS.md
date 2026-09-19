@@ -100,3 +100,13 @@
   draft pending diverse failure/recovery pilots and actual model outputs.
 - Highest-value next step: implement or integrate the required land corridor scenario, then collect
   recovery-success and terminal-failure pilots before power planning.
+
+## 2026-09-19 — pilot-driven terminal explanation support
+
+- Motivation: the first actual-episode smoke exposed that the core supported contrast and recovery
+  count only, leaving captured action termination and client events unusable for checked answers.
+- Change: core revision `6ad002c4dde67dedb4bd08e8794d0db9dda9259e` adds checked terminal
+  status planning and A/B/C/D/E routing. Explicit client deadline and cancellation events remain
+  distinct from BT timeout and physical failure; abort status alone cannot license a physical cause;
+  success does not imply every intermediate branch succeeded.
+- Tests: **TESTED/PASS**, 17 CPU-only tests. No new robot episode or model response was generated.
