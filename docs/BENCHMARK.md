@@ -68,3 +68,17 @@ explicit harness deadline and client cancellation under a full-width blocker. It
 Nav2 terminal-failure or obstacle-causality example. Its terminal-status A/B/C/D/E parity smoke is
 useful for selective explanation because the supported answer must withhold both BT-timeout and
 physical-cause claims. Recovery-producing land variants remain required before design freeze.
+
+`land-nav-20260919-e004` is the first included recovery-bearing model pilot. It terminated with a
+real NavigateToPose `aborted` result before the client deadline and recorded two completed `Wait`
+recoveries. Because the BT topic lacks the terminal transition for a third `FollowPath` start, its
+history is deliberately marked incomplete. Six questions cover count, misleading count premise,
+software recovery mechanism, terminal status, physical-cause insufficiency, and unsupported
+counterfactual. The A/B inputs use a dedicated parity-controlled structured presentation rather
+than exposing native timestamps only to B; D alone consumes the native record to exercise checked
+planning. The first unequal-information attempt is retained but excluded.
+
+The single-episode development result falsified the assumption that checked output is automatically
+more informative: C/D/E omitted the supported `Wait`-success fact on the misleading-premise
+question, while B covered all 16 provisional gold information units. This is a design signal to
+improve plan content before freeze, not permission to tune against final-test answers.

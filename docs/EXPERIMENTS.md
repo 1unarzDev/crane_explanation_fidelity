@@ -249,3 +249,55 @@
 - Independent explanation-evaluation sample remains 0; development robot captures are two (one
   aquatic success and one land cancellation). Highest-value next step is a controlled land variant
   that reliably causes a software recovery or Nav2 terminal result before the harness deadline.
+
+## 2026-09-19 — recovery-bearing land capture and first model pilot
+
+- `land-nav-20260919-e003`: **TESTED/EXCLUDED CALIBRATION**. The predeclared outcome was
+  `aborted`, but a 25 s client deadline canceled the goal while the BT was in `Wait`; this is not a
+  Nav2 terminal failure. The independently launched capture container also failed before recording
+  because this image lacks the `ros2 run` CLI extension. The installed executable exists and must
+  be launched directly. Evaluator artifacts remain retained; no robot-visible capture was created.
+- `land-nav-20260919-e004`: **TESTED/PASS DEVELOPMENT PILOT**. The passive capture executable was
+  started before Nav2 on ROS domain 48. A full-width 4 m blocker, 8 m goal, exact bounded recovery
+  XML, and 2 s progress allowance produced an action result `aborted`/error 105 in 21.30 s, before
+  the 55 s client deadline. The capture contains 2,053 records: 39 BT transitions, 2,006 feedback
+  records, four harness records, terminal action status/result, and both capture boundaries.
+  The retained XML SHA-256 is
+  `14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520`.
+- Simulator/evaluator validity: **TESTED/PASS**. RTF 1.00001; 651 LiDAR scans; 59 costmap
+  observations with up to 12,637 occupied cells; 181 accepted commands; zero rejected, stale, or
+  cross-episode actions; zero failed/stale observations. The full evaluator window was allowed to
+  complete after the action result.
+- Recovery evidence: feedback progressed 0→1→2; the BT log records two distinct `Wait` entries and
+  two `Wait` successes, plus two `FollowPath` FAILURE and two recovery-guard SUCCESS transitions.
+  A third `FollowPath` start has no terminal transition in the BT topic stream even though the
+  action result and controller log terminate. Checked answers therefore say “at least two are
+  recorded,” not “exactly two occurred.” The robot-visible trace does not license the evaluator's
+  physical blocker as failure causality.
+- Seed finding: **NEGATIVE/OPEN**. The requested `--crane-seed 1003` was appended after the worker's
+  own seed flag, but Unity's first-match parser retained seed 1000. Future independent runs must set
+  `CRANE_SEED_BASE`, not append a duplicate seed flag. This pilot is not a new seeded layout family.
+- Parity audit iteration: the first model attempt was **EXCLUDED** because prose summarized one
+  generic guard transition while native structure exposed two and exact timestamps. The corrected
+  B presentation omits exact timestamps and maps ten explicit fact IDs one-for-one to strong prose;
+  both formats explicitly mark physical cause and hypothetical outcome as not established.
+- Actual model pilot: **TESTED/DEVELOPMENT ONLY**. Six question families × five conditions yielded
+  30 final responses (24 model-mediated, six deterministic); 21 unique `gpt-5.6-sol` low-reasoning
+  calls were cached without retry through documented noninteractive `codex exec --json`. Raw events,
+  prompts/hashes, requested model/effort, CLI version, latency, tokens, and final outputs are
+  retained. The CLI did not report monetary cost, temperature, or a sampling seed, so those fields
+  are explicitly null. Provider/prompts remain mutable and are not frozen.
+- Single unblinded development annotation: A had 1/6 response-level material errors (an exact
+  recovery-count implication despite incomplete history); B/C/D/E had 0/6. All conditions gave
+  substantive answers on 5/6 questions and correctly abstained on the unsupported counterfactual.
+  Answerable-information coverage was A 13/16, B 16/16, and C/D/E 14/16. C and D used verified
+  template fallback on 2/6 questions; their false-premise response omitted the useful supported
+  fact that both recorded `Wait` actions succeeded. These correlated rates have no confidence
+  interval or inferential meaning because the independent episode count is one.
+- Retained tracked analysis:
+  `research/explanation_fidelity/annotations/development/land-nav-20260919-e004.json` and
+  `research/explanation_fidelity/analysis/development-land-nav-20260919-e004.json`. Raw capture,
+  evaluator truth, cache, and model output remain outside Git and will be referenced by manifests.
+- Current highest-value action: collect several genuinely independent success/recovery/failure
+  episodes using `CRANE_SEED_BASE`, then estimate paired discordance and episode clustering. More
+  environment engineering currently has lower expected paper value.

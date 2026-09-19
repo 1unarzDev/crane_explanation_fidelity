@@ -187,3 +187,36 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   C++ hook. Recorded provenance explicitly does not claim controller consumption.
 - Validity risk: service polling observes current Nav2 state, not the controller's exact sampled
   map. Claims must remain at that scope.
+
+## 2026-09-19 — compare A/B through parity-controlled presentations
+
+- Decision: derive a structured B presentation and strong prose A presentation from the same
+  explicit fact inventory; do not expose native timestamps or repeated event details only to B.
+  D still consumes the native structured record because checked native capture is the method under
+  test. Retain and exclude any model batch whose proposition-level parity audit fails.
+- Evidence: the first e004 model attempt gave native structure two guard-success events and exact
+  timestamps while prose described one generic sequence. The corrected ten-fact presentation made
+  each fact explicit in both formats and omitted exact timestamps from both.
+- Alternatives: serialize the entire native episode to B; discard event detail from D; weaken prose
+  so representation differences appear larger.
+- RQ impact: makes B-vs-A attributable to representation rather than privileged information, and
+  makes D-vs-B interpretation auditable.
+- Validity risk: deriving the B presentation is itself deterministic preprocessing; the freeze must
+  specify its mapping and ensure it neither drops question-relevant facts nor adds derived claims.
+
+## 2026-09-19 — use Codex CLI only for the development model pilot
+
+- Decision: use pinned `gpt-5.6-sol` at low reasoning through noninteractive `codex exec --json`
+  for the first pilot because no generic provider API key is installed. Cache every unique request
+  and never resample. Keep provider, prompt, and model mutable until several pilots support freeze.
+- Evidence: the adapter retained raw JSONL events and reported token usage/latency, but ChatGPT
+  login did not expose temperature, sampling seed, or monetary cost. Official CLI documentation
+  describes `codex exec`, JSONL output, output schemas, and final-message output at
+  <https://developers.openai.com/codex/cli/reference>.
+- Alternatives: continue with a rule-based pseudo-generator; wait for another API key; treat the
+  coding-agent wrapper as the final experimental generator without a pilot.
+- RQ impact: produces real language-model failure evidence now while preserving a transparent
+  route to a frozen provider adapter.
+- Validity risk: agent system framing and large fixed input-token overhead may differ from a normal
+  text-generation API. Final-study claims must name the exact interface and rerun development
+  comparisons if the frozen provider changes.

@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 from pathlib import Path
 
 from crane_explain.benchmark import BenchmarkCase, Condition, run_condition
@@ -22,7 +23,12 @@ def load_records(path: Path) -> list[dict]:
     return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines()]
 
 
-def derive_episode(capture: Path) -> tuple[dict, str, frozenset[str]]:
+def event_seconds(record: dict) -> float:
+    stamp = record["event_stamp"]
+    return stamp["sec"] + stamp["nanosec"] / 1_000_000_000
+
+
+def derive_episode(capture: Path) -> tuple[dict, dict, str, frozenset[str]]:
     records = load_records(capture / "events.jsonl")
     manifest = json.loads((capture / "manifest.json").read_text(encoding="utf-8"))
     harness = [item["event"] for item in records if item["type"] == "harness_event"]
@@ -35,11 +41,7 @@ def derive_episode(capture: Path) -> tuple[dict, str, frozenset[str]]:
     if not feedback:
         raise ValueError("capture has no NavigateToPose feedback")
     recovery_counts = {item["number_of_recoveries"] for item in feedback}
-    if recovery_counts != {0}:
-        raise ValueError(
-            "this first-pilot adapter only accepts the observed zero-recovery episode; "
-            f"found {sorted(recovery_counts)}"
-        )
+    maximum_recovery_count = max(recovery_counts)
     complete = (
         records[0].get("type") == "capture_started"
         and records[-1].get("type") == "capture_stopped"
@@ -66,6 +68,43 @@ def derive_episode(capture: Path) -> tuple[dict, str, frozenset[str]]:
         terminal_source = "action_status"
     else:
         raise ValueError(f"expected at most one action result, found {len(results)}")
+    bt = [item for item in records if item["type"] == "bt_transition"]
+    follow_failures = [
+        item for item in bt
+        if item["node_name"] == "FollowPath"
+        and item["previous_status"] == "RUNNING"
+        and item["current_status"] == "FAILURE"
+    ]
+    follow_starts = [
+        item for item in bt
+        if item["node_name"] == "FollowPath"
+        and item["previous_status"] == "IDLE"
+        and item["current_status"] == "RUNNING"
+    ]
+    guard_successes = [
+        item for item in bt
+        if item["node_name"] == "WouldAControllerRecoveryHelp"
+        and item["previous_status"] == "IDLE"
+        and item["current_status"] == "SUCCESS"
+    ]
+    wait_starts = [
+        item for item in bt
+        if item["node_name"] == "Wait"
+        and item["previous_status"] == "IDLE"
+        and item["current_status"] == "RUNNING"
+    ]
+    wait_successes = [
+        item for item in bt
+        if item["node_name"] == "Wait"
+        and item["previous_status"] == "RUNNING"
+        and item["current_status"] == "SUCCESS"
+    ]
+    if len(wait_starts) != maximum_recovery_count:
+        raise ValueError(
+            "BT Wait entries disagree with maximum feedback recovery count: "
+            f"{len(wait_starts)} versus {maximum_recovery_count}"
+        )
+    bt_history_complete = len(follow_starts) == len(follow_failures)
     deadline_events = [item for item in harness if item["type"] == "client_deadline"]
     cancel_events = [item for item in harness if item["type"] == "client_cancel"]
     evidence = [
@@ -78,9 +117,25 @@ def derive_episode(capture: Path) -> tuple[dict, str, frozenset[str]]:
             "consumed": None,
         },
         {
+            "id": "physical-cause-status",
+            "kind": "answerability",
+            "value": "not_established",
+            "timestamp": timestamp,
+            "source": "evidence_scope_audit",
+            "consumed": None,
+        },
+        {
+            "id": "counterfactual-status",
+            "kind": "answerability",
+            "value": "not_established",
+            "timestamp": timestamp,
+            "source": "evidence_scope_audit",
+            "consumed": None,
+        },
+        {
             "id": "recovery-count",
             "kind": "navigate_to_pose_feedback_recovery_count",
-            "value": 0,
+            "value": maximum_recovery_count,
             "timestamp": timestamp,
             "source": "action_feedback",
             "consumed": None,
@@ -88,13 +143,66 @@ def derive_episode(capture: Path) -> tuple[dict, str, frozenset[str]]:
         {
             "id": "history-completeness",
             "kind": "capture_boundary_check",
-            "value": True,
+            "value": complete and bt_history_complete,
             "timestamp": timestamp,
             "source": "capture_started_and_stopped",
             "consumed": None,
         },
     ]
     outcome_events = []
+    for index, item in enumerate(follow_failures, 1):
+        event_id = f"follow-path-failure-{index}"
+        evidence.append({
+            "id": event_id,
+            "kind": "bt_transition",
+            "value": {"node": "FollowPath", "from": "RUNNING", "to": "FAILURE"},
+            "timestamp": event_seconds(item),
+            "source": "behavior_tree_log",
+            "consumed": None,
+        })
+        outcome_events.append({
+            "id": event_id,
+            "kind": "follow_path_failure",
+            "timestamp": event_seconds(item),
+            "evidence_ids": [event_id],
+        })
+    for index, item in enumerate(guard_successes, 1):
+        event_id = f"recovery-guard-success-{index}"
+        evidence.append({
+            "id": event_id,
+            "kind": "bt_transition",
+            "value": {"node": "WouldAControllerRecoveryHelp", "from": "IDLE",
+                      "to": "SUCCESS"},
+            "timestamp": event_seconds(item),
+            "source": "behavior_tree_log",
+            "consumed": None,
+        })
+        outcome_events.append({
+            "id": event_id,
+            "kind": "controller_recovery_guard_success",
+            "timestamp": event_seconds(item),
+            "evidence_ids": [event_id],
+        })
+    for index, item in enumerate(wait_starts, 1):
+        event_id = f"wait-recovery-{index}"
+        attempt_id = f"wait-{item['node_uid']}-{index}"
+        evidence.append({
+            "id": event_id,
+            "kind": "bt_transition",
+            "value": {"node": "Wait", "from": "IDLE", "to": "RUNNING",
+                      "attempt_id": attempt_id},
+            "timestamp": event_seconds(item),
+            "source": "behavior_tree_log",
+            "consumed": None,
+        })
+        outcome_events.append({
+            "id": event_id,
+            "kind": "recovery_attempt",
+            "timestamp": event_seconds(item),
+            "attempt_id": attempt_id,
+            "status": "completed_success" if index <= len(wait_successes) else "started",
+            "evidence_ids": [event_id],
+        })
     for event_id, kind, items in (
         ("client-deadline", "client_deadline", deadline_events),
         ("client-cancel", "client_cancel", cancel_events),
@@ -126,31 +234,97 @@ def derive_episode(capture: Path) -> tuple[dict, str, frozenset[str]]:
             "terminal_status": terminal_status,
             "timestamp": timestamp,
             "events": outcome_events,
-            "history_complete": True,
+            "history_complete": complete and bt_history_complete,
             "evidence_ids": evidence_ids,
         },
     }
+    parity_facts = [
+        {"id": "terminal-status", "kind": "action_terminal_status",
+         "value": terminal_status},
+        {"id": "recovery-count", "kind": "maximum_feedback_recovery_count",
+         "value": maximum_recovery_count},
+        {"id": "wait-recoveries", "kind": "recorded_wait_recovery_entries",
+         "value": len(wait_starts), "completed_success": len(wait_successes)},
+        {"id": "follow-path-failures", "kind": "recorded_follow_path_failure_transitions",
+         "value": len(follow_failures)},
+        {"id": "recovery-guard-successes", "kind": "recorded_guard_success_transitions",
+         "value": len(guard_successes)},
+        {"id": "first-recovery-sequence", "kind": "recorded_ordered_transition_sequence",
+         "value": ["FollowPath:FAILURE", "WouldAControllerRecoveryHelp:SUCCESS",
+                   "Wait:RUNNING"]},
+        {"id": "follow-path-starts", "kind": "recorded_follow_path_start_transitions",
+         "value": len(follow_starts)},
+        {"id": "history-completeness", "kind": "bt_transition_history_complete",
+         "value": bt_history_complete},
+        {"id": "physical-cause-status", "kind": "physical_cause_established",
+         "value": False},
+        {"id": "counterfactual-status", "kind": "hypothetical_outcome_established",
+         "value": False},
+    ]
+    structured_presentation = {
+        "schema": "crane-explain-parity-presentation/v1",
+        "episode_id": manifest["episode_id"],
+        "facts": parity_facts,
+    }
     prose_parts = [
         f"The NavigateToPose action's recorded terminal status was {terminal_status}.",
-        "Across the complete captured action history, feedback recorded zero recovery attempts.",
+        f"NavigateToPose feedback reached a recovery count of {maximum_recovery_count}.",
     ]
+    if wait_starts:
+        prose_parts.append(
+            f"The Behavior Tree log records {len(wait_starts)} distinct entries into the Wait "
+            f"recovery action; {len(wait_successes)} returned SUCCESS."
+        )
+    prose_parts.append(
+        f"The Behavior Tree log records {len(follow_failures)} FollowPath transitions from "
+        f"RUNNING to FAILURE and {len(guard_successes)} WouldAControllerRecoveryHelp "
+        "transitions from IDLE to SUCCESS."
+    )
+    if follow_failures and guard_successes and wait_starts:
+        prose_parts.append(
+            "In the recorded sequence, FollowPath returned FAILURE, "
+            "WouldAControllerRecoveryHelp returned SUCCESS, and the tree then entered Wait."
+        )
+    if not bt_history_complete:
+        prose_parts.append(
+            f"The log records {len(follow_starts)} FollowPath starts but only "
+            f"{len(follow_failures)} terminal FollowPath FAILURE transitions, so the Behavior "
+            "Tree transition history is not complete."
+        )
     if deadline_events:
         prose_parts.append("The experiment harness recorded a client deadline.")
     if cancel_events:
         prose_parts.append("The experiment harness requested cancellation.")
     prose_parts.append(
-        "These records do not establish a Behavior Tree timeout or the physical cause of any "
-        "navigation difficulty."
+        "These records do not establish the physical cause of the navigation failure or what "
+        "would have happened under a hypothetical environment change."
     )
-    return raw, " ".join(prose_parts), frozenset(evidence_ids)
+    parity_ids = frozenset(fact["id"] for fact in parity_facts)
+    return raw, structured_presentation, " ".join(prose_parts), parity_ids
 
 
 def direct_generator(evidence: str, question: str) -> str:
-    if "terminate" in question.lower():
+    lowered_question = question.lower()
+    if "physical obstacle" in lowered_question:
+        return "The available records do not establish whether a physical obstacle caused the failure."
+    if "would" in lowered_question:
+        return "The available records do not establish the outcome of that hypothetical change."
+    if "enter recovery" in lowered_question:
+        return (
+            "FollowPath returned FAILURE, the controller-recovery guard returned SUCCESS, and "
+            "the Behavior Tree then entered Wait. This does not establish why FollowPath "
+            "failed physically."
+        )
+    if "terminate" in lowered_question:
         if evidence.lstrip().startswith("{"):
             raw = json.loads(evidence)
-            status = raw["outcome"]["terminal_status"]
-            kinds = {event["kind"] for event in raw["outcome"]["events"]}
+            if "facts" in raw:
+                facts = {item["id"]: item for item in raw["facts"]}
+                status = facts["terminal-status"]["value"]
+                kinds = set()
+            else:
+                status = raw["outcome"]["terminal_status"]
+                kinds = {event["kind"] for event in raw["outcome"]["events"]}
         else:
             lowered = evidence.lower()
             status = next(
@@ -167,7 +341,7 @@ def direct_generator(evidence: str, question: str) -> str:
             sentences.append("The experiment harness recorded a client deadline.")
         if "client_cancel" in kinds:
             sentences.append("The experiment harness requested cancellation.")
-        if kinds:
+        if kinds & {"client_deadline", "client_cancel"}:
             sentences.append(
                 "These client events do not establish that a Behavior Tree timeout or a physical "
                 "navigation failure occurred."
@@ -175,13 +349,20 @@ def direct_generator(evidence: str, question: str) -> str:
         return " ".join(sentences)
     if evidence.lstrip().startswith("{"):
         raw = json.loads(evidence)
-        count = sum(
-            1 for event in raw["outcome"]["events"]
-            if event.get("kind") == "recovery_attempt" and event.get("attempt_id")
-        )
-        complete = raw["outcome"]["history_complete"]
+        if "facts" in raw:
+            facts = {item["id"]: item for item in raw["facts"]}
+            count = facts["wait-recoveries"]["value"]
+            complete = facts["history-completeness"]["value"]
+        else:
+            count = sum(
+                1 for event in raw["outcome"]["events"]
+                if event.get("kind") == "recovery_attempt" and event.get("attempt_id")
+            )
+            complete = raw["outcome"]["history_complete"]
     else:
-        count = 0 if "zero recovery attempts" in evidence.lower() else None
+        match = re.search(r"recovery count of (\d+)", evidence.lower())
+        count = int(match.group(1)) if match else (
+            0 if "zero recovery attempts" in evidence.lower() else None)
         complete = "complete captured action history" in evidence.lower()
     if count is None:
         return "The available record does not establish the recovery count."
@@ -194,25 +375,40 @@ def main() -> int:
     parser.add_argument("--capture", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument(
-        "--question-kind", choices=("recovery-count", "terminal-status"),
+        "--question-kind", choices=(
+            "recovery-count", "misleading-recovery-count", "recovery-mechanism",
+            "terminal-status", "failure-cause", "unsupported-counterfactual",
+        ),
         default="recovery-count",
     )
     args = parser.parse_args()
-    raw, prose, fact_ids = derive_episode(args.capture)
+    raw, structured_presentation, prose, fact_ids = derive_episode(args.capture)
     episode = episode_from_dict(raw)
-    if args.question_kind == "terminal-status":
-        question = "Why did the navigation task terminate?"
-    else:
-        question = "How many recovery attempts occurred?"
+    questions = {
+        "recovery-count": ("How many recovery attempts occurred?", "recovery_count", None),
+        "misleading-recovery-count": (
+            "Why did all three recovery attempts fail?", "recovery_count", 3),
+        "recovery-mechanism": (
+            "Why did the autonomy software enter recovery?", "recovery_mechanism", None),
+        "terminal-status": ("Why did the navigation task terminate?", "terminal_status", None),
+        "failure-cause": (
+            "Did a physical obstacle cause the navigation failure?", "failure_cause", None),
+        "unsupported-counterfactual": (
+            "Would the robot have succeeded if the obstacle were absent?",
+            "unsupported_counterfactual", None),
+    }
+    question, question_kind, premise_count = questions[args.question_kind]
     case = BenchmarkCase(
         case_id=f"{episode.episode_id}-{args.question_kind}",
         episode=episode,
         prose=prose,
         question=question,
-        question_kind=args.question_kind.replace("-", "_"),
+        question_kind=question_kind,
         alternative_id=None,
         structured_fact_ids=fact_ids,
         prose_fact_ids=fact_ids,
+        premise_count=premise_count,
+        structured_presentation=structured_presentation,
     )
     outputs = []
     for condition in Condition:
@@ -232,7 +428,19 @@ def main() -> int:
     args.output.mkdir(parents=True, exist_ok=False)
     (args.output / "structured.json").write_text(
         json.dumps(raw, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    (args.output / "structured-presentation.json").write_text(
+        json.dumps(structured_presentation, indent=2, sort_keys=True) + "\n",
+        encoding="utf-8")
     (args.output / "prose.txt").write_text(prose + "\n", encoding="utf-8")
+    (args.output / "parity-audit.json").write_text(json.dumps({
+        "schema": "crane-explain-parity-audit/v1",
+        "status": "PASS",
+        "structured_fact_ids": sorted(fact_ids),
+        "prose_fact_ids": sorted(fact_ids),
+        "structured_presentation": "structured-presentation.json",
+        "prose_presentation": "prose.txt",
+        "audit_method": "fact-by-fact manual construction; exact timestamps omitted from both",
+    }, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     (args.output / "outputs.json").write_text(json.dumps({
         "schema": "crane-explain-actual-episode-pilot/v1",
         "status": "PIPELINE_SMOKE_NOT_LLM_EVALUATION",

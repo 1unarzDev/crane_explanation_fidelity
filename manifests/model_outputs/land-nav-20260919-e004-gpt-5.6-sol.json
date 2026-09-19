@@ -1,0 +1,44 @@
+{
+  "schema": "crane-explain-model-artifact-manifest/v1",
+  "status": "DEVELOPMENT_ONLY",
+  "episode_id": "land-nav-20260919-e004-worker-0",
+  "provider": "codex-lb-via-chatgpt-login",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "low",
+  "single_sample_no_retry": true,
+  "logical_condition_outputs": 30,
+  "model_mediated_condition_outputs": 24,
+  "unique_model_calls_referenced_by_parity_pass": 21,
+  "cache_root": "research/explanation_fidelity/model_cache/dev-e004-gpt56sol-low",
+  "cache_inventory": {
+    "algorithm": "sha256 over sorted relative-path, NUL, file-sha256, newline tuples",
+    "file_count": 24,
+    "bytes": 88142,
+    "sha256": "9377de814999f1d7c83f03429cdfffc7bba5f360199bdf5913a2079a6434a44c",
+    "includes_excluded_pre-parity_calls": true
+  },
+  "accepted_output_root": "model_outputs/dev/land-nav-20260919-e004/parity-pass",
+  "accepted_output_inventory": {
+    "algorithm": "sha256 over sorted relative-path, NUL, file-sha256, newline tuples",
+    "file_count": 12,
+    "bytes": 57376,
+    "sha256": "aadc2a4b1b2815c3c92870eae6168b8e01bbed0c733920e9091f19bff626b973",
+    "note": "Six result JSON files and six byte-identical captured stdout files."
+  },
+  "usage_unique_calls": {
+    "input_tokens": 289137,
+    "cached_input_tokens": 124160,
+    "output_tokens": 1059,
+    "reasoning_output_tokens": 0,
+    "aggregate_latency_ms": 120282.58098
+  },
+  "cost_usd": null,
+  "cost_status": "not_reported_by_codex_cli_chatgpt_login",
+  "temperature": null,
+  "sampling_seed": null,
+  "limitations": [
+    "One episode supplies all six correlated questions.",
+    "The first unequal-information A/B attempt is retained in the cache but excluded.",
+    "Provider, model, prompts, coverage units, and verifier policy are not frozen."
+  ]
+}

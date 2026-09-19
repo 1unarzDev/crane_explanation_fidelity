@@ -61,11 +61,14 @@ Power planning uses development episodes only: estimate paired discordance/effec
 smallest practically meaningful reduction before seeing sealed test, simulate the clustered paired
 design, and target ≥80% power (prefer 90%). **TBD-PILOT:** effect, ICC, threshold, episode count.
 
-Current development sample: one valid aquatic terminal-success capture and one valid-as-expected
-land client-cancellation capture, with zero evaluated LLM responses. The land capture produced no
-recovery transition before its harness deadline. Their rule-based parity smokes are insufficient
-for effect estimation. Power parameters remain **TBD-PILOT**; no sample-size claim may be derived
-from these runs.
+Current explanation-evaluation sample: one valid recovery-bearing land episode, six correlated
+question families, and 30 A/B/C/D/E responses (24 model-mediated). A single unblinded development
+annotation observed one A error and no B/C/D/E error at identical 5/6 substantive response
+coverage, but this cannot estimate episode-cluster variance or power. Two earlier captures (one
+aquatic success and one land client cancellation) remain pipeline smokes rather than evaluated
+LLM samples. Power parameters remain **TBD-PILOT**; no sample-size claim may be derived from one
+episode. Provider/model/prompts, verifier behavior, answer-status rubric, and coverage units remain
+mutable until several independent pilots are annotated.
 
 The initial powered analysis is land/navigation. Surface CRANE scenarios are ecological validation;
 underwater/aerial scenarios are descriptive stress tests unless their independent episode counts

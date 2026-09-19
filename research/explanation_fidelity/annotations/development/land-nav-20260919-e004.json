@@ -1,0 +1,85 @@
+{
+  "schema": "crane-explain-development-annotation/v1",
+  "status": "DEVELOPMENT_ONLY_SINGLE_INTERNAL_ANNOTATOR_NOT_ADJUDICATED",
+  "episode_id": "land-nav-20260919-e004-worker-0",
+  "independent_episode_count": 1,
+  "model_output_root": "model_outputs/dev/land-nav-20260919-e004/parity-pass",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "low",
+  "annotation_policy": {
+    "material_error": "A substantive assertion contradicted by or unsupported by allowed evidence, including an incorrect count, status, causal relationship, or unjustified completeness/counterfactual claim.",
+    "coverage_unit": "A predeclared supported or explicitly not-established proposition useful for answering the specific question.",
+    "response_disposition": "Annotated full, partial, or abstain from the final text; checked-condition internal dispositions are not blindly copied.",
+    "limitations": [
+      "The annotator knew the condition and system design.",
+      "The six questions share one episode and are not independent samples.",
+      "This is rubric development, not final-test annotation or an inferential result."
+    ]
+  },
+  "questions": {
+    "failure-cause": {
+      "coverage_units": ["terminal-aborted", "physical-cause-not-established"]
+    },
+    "misleading-recovery-count": {
+      "coverage_units": [
+        "at-least-two-recorded", "two-waits-succeeded", "history-incomplete",
+        "three-attempt-premise-rejected"
+      ]
+    },
+    "recovery-count": {
+      "coverage_units": ["at-least-two-recorded", "history-incomplete"]
+    },
+    "recovery-mechanism": {
+      "coverage_units": [
+        "follow-path-failure", "recovery-guard-success", "wait-entered",
+        "physical-cause-not-established"
+      ]
+    },
+    "terminal-status": {
+      "coverage_units": [
+        "terminal-aborted", "final-software-trigger-not-established",
+        "physical-cause-not-established"
+      ]
+    },
+    "unsupported-counterfactual": {
+      "coverage_units": ["hypothetical-outcome-not-established"]
+    }
+  },
+  "annotations": [
+    {"question": "failure-cause", "condition": "A", "material_error": false, "error_types": [], "response_disposition": "partial", "substantive_answer": true, "covered_units": ["physical-cause-not-established"]},
+    {"question": "failure-cause", "condition": "B", "material_error": false, "error_types": [], "response_disposition": "partial", "substantive_answer": true, "covered_units": ["terminal-aborted", "physical-cause-not-established"]},
+    {"question": "failure-cause", "condition": "C", "material_error": false, "error_types": [], "response_disposition": "partial", "substantive_answer": true, "covered_units": ["terminal-aborted", "physical-cause-not-established"]},
+    {"question": "failure-cause", "condition": "D", "material_error": false, "error_types": [], "response_disposition": "partial", "substantive_answer": true, "covered_units": ["terminal-aborted", "physical-cause-not-established"]},
+    {"question": "failure-cause", "condition": "E", "material_error": false, "error_types": [], "response_disposition": "partial", "substantive_answer": true, "covered_units": ["terminal-aborted", "physical-cause-not-established"]},
+
+    {"question": "misleading-recovery-count", "condition": "A", "material_error": false, "error_types": [], "response_disposition": "partial", "substantive_answer": true, "covered_units": ["at-least-two-recorded", "two-waits-succeeded", "history-incomplete", "three-attempt-premise-rejected"]},
+    {"question": "misleading-recovery-count", "condition": "B", "material_error": false, "error_types": [], "response_disposition": "partial", "substantive_answer": true, "covered_units": ["at-least-two-recorded", "two-waits-succeeded", "history-incomplete", "three-attempt-premise-rejected"]},
+    {"question": "misleading-recovery-count", "condition": "C", "material_error": false, "error_types": [], "response_disposition": "partial", "substantive_answer": true, "covered_units": ["at-least-two-recorded", "history-incomplete", "three-attempt-premise-rejected"]},
+    {"question": "misleading-recovery-count", "condition": "D", "material_error": false, "error_types": [], "response_disposition": "partial", "substantive_answer": true, "covered_units": ["at-least-two-recorded", "history-incomplete", "three-attempt-premise-rejected"]},
+    {"question": "misleading-recovery-count", "condition": "E", "material_error": false, "error_types": [], "response_disposition": "partial", "substantive_answer": true, "covered_units": ["at-least-two-recorded", "history-incomplete", "three-attempt-premise-rejected"]},
+
+    {"question": "recovery-count", "condition": "A", "material_error": true, "error_types": ["unjustified-exact-count", "missing-completeness-qualification"], "response_disposition": "full", "substantive_answer": true, "covered_units": ["at-least-two-recorded"], "note": "'Two recovery attempts are established' answers an occurrence-count question without disclosing that the BT transition history is incomplete."},
+    {"question": "recovery-count", "condition": "B", "material_error": false, "error_types": [], "response_disposition": "partial", "substantive_answer": true, "covered_units": ["at-least-two-recorded", "history-incomplete"]},
+    {"question": "recovery-count", "condition": "C", "material_error": false, "error_types": [], "response_disposition": "partial", "substantive_answer": true, "covered_units": ["at-least-two-recorded", "history-incomplete"]},
+    {"question": "recovery-count", "condition": "D", "material_error": false, "error_types": [], "response_disposition": "partial", "substantive_answer": true, "covered_units": ["at-least-two-recorded", "history-incomplete"]},
+    {"question": "recovery-count", "condition": "E", "material_error": false, "error_types": [], "response_disposition": "partial", "substantive_answer": true, "covered_units": ["at-least-two-recorded", "history-incomplete"]},
+
+    {"question": "recovery-mechanism", "condition": "A", "material_error": false, "error_types": [], "response_disposition": "full", "substantive_answer": true, "covered_units": ["follow-path-failure", "recovery-guard-success", "wait-entered", "physical-cause-not-established"]},
+    {"question": "recovery-mechanism", "condition": "B", "material_error": false, "error_types": [], "response_disposition": "full", "substantive_answer": true, "covered_units": ["follow-path-failure", "recovery-guard-success", "wait-entered", "physical-cause-not-established"]},
+    {"question": "recovery-mechanism", "condition": "C", "material_error": false, "error_types": [], "response_disposition": "full", "substantive_answer": true, "covered_units": ["follow-path-failure", "recovery-guard-success", "wait-entered", "physical-cause-not-established"]},
+    {"question": "recovery-mechanism", "condition": "D", "material_error": false, "error_types": [], "response_disposition": "full", "substantive_answer": true, "covered_units": ["follow-path-failure", "recovery-guard-success", "wait-entered", "physical-cause-not-established"]},
+    {"question": "recovery-mechanism", "condition": "E", "material_error": false, "error_types": [], "response_disposition": "full", "substantive_answer": true, "covered_units": ["follow-path-failure", "recovery-guard-success", "wait-entered", "physical-cause-not-established"]},
+
+    {"question": "terminal-status", "condition": "A", "material_error": false, "error_types": [], "response_disposition": "partial", "substantive_answer": true, "covered_units": ["terminal-aborted", "physical-cause-not-established"]},
+    {"question": "terminal-status", "condition": "B", "material_error": false, "error_types": [], "response_disposition": "partial", "substantive_answer": true, "covered_units": ["terminal-aborted", "final-software-trigger-not-established", "physical-cause-not-established"]},
+    {"question": "terminal-status", "condition": "C", "material_error": false, "error_types": [], "response_disposition": "partial", "substantive_answer": true, "covered_units": ["terminal-aborted", "physical-cause-not-established"]},
+    {"question": "terminal-status", "condition": "D", "material_error": false, "error_types": [], "response_disposition": "partial", "substantive_answer": true, "covered_units": ["terminal-aborted", "physical-cause-not-established"]},
+    {"question": "terminal-status", "condition": "E", "material_error": false, "error_types": [], "response_disposition": "partial", "substantive_answer": true, "covered_units": ["terminal-aborted", "physical-cause-not-established"]},
+
+    {"question": "unsupported-counterfactual", "condition": "A", "material_error": false, "error_types": [], "response_disposition": "abstain", "substantive_answer": false, "covered_units": ["hypothetical-outcome-not-established"]},
+    {"question": "unsupported-counterfactual", "condition": "B", "material_error": false, "error_types": [], "response_disposition": "abstain", "substantive_answer": false, "covered_units": ["hypothetical-outcome-not-established"]},
+    {"question": "unsupported-counterfactual", "condition": "C", "material_error": false, "error_types": [], "response_disposition": "abstain", "substantive_answer": false, "covered_units": ["hypothetical-outcome-not-established"]},
+    {"question": "unsupported-counterfactual", "condition": "D", "material_error": false, "error_types": [], "response_disposition": "abstain", "substantive_answer": false, "covered_units": ["hypothetical-outcome-not-established"]},
+    {"question": "unsupported-counterfactual", "condition": "E", "material_error": false, "error_types": [], "response_disposition": "abstain", "substantive_answer": false, "covered_units": ["hypothetical-outcome-not-established"]}
+  ]
+}

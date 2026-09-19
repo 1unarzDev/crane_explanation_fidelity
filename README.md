@@ -26,7 +26,8 @@ their own location. Exact repository commits and destinations are recorded in
 
 - **IMPLEMENTED, TESTED:** evidence records, checked answer plans, final-text verification,
   deterministic fallback, Dock/Slalom regressions, terminal-status distinctions, and the A/B/C/D/E
-  harness (17 tests).
+  harness, including recovery-mechanism, physical-cause, and unsupported-counterfactual plans
+  (20 tests).
 - **TESTED:** ROS package tests, Jazzy build, live BT/action/harness capture, and exact BT retention.
 - **TESTED:** CRANE build, one valid aquatic terminal-success capture pilot, a graphics-free
   land/Ackermann success smoke with populated costmap snapshots, and a valid-as-expected land
@@ -45,7 +46,11 @@ their own location. Exact repository commits and destinations are recorded in
 - **TESTED (PIPELINE SMOKE):** A/B/C/D/E over real success and cancellation episodes with a
   rule-based generator; identical outputs validate parity and routing but are not an LLM comparison
   or evidence for RQ1/RQ2.
-- **NOT_RUN:** independent recovery/failure collection and the main powered benchmark.
+- **TESTED (DEVELOPMENT ONLY):** one real recovery-bearing land episode, six question families,
+  30 A/B/C/D/E responses, cached single-sample model calls, parity audit, and provisional material
+  error/coverage annotation. Independent evaluated episode count is one; no inferential claim or
+  power estimate is available.
+- **NOT_RUN:** multi-episode recovery/failure collection and the main powered benchmark.
 - **DEFERRED:** arbitrary-LLM proposition extraction until independently evaluated.
 
 ## CPU-only demo
