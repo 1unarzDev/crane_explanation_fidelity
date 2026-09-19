@@ -1,0 +1,41 @@
+{
+  "schema": "crane-development-run-predeclaration-v1",
+  "run_id": "land-nav-20260919-e016",
+  "purpose": "First TurtleBot3 timed-blocker pilot targeting recovery followed by success",
+  "family": "turtlebot3-timed-blocker-recovery-success",
+  "split": "development",
+  "timing_basis": "e015 accepted its goal near episode simulation time 6 s and reached 2 m in 6.126 wall s. The 3 m goal requires about 9.4 s of forward motion at the platform's 0.26 m/s cap. A partial blocker at 1.5 m should stop forward progress before the goal; removal at fixed simulation time 29 s targets the first progress-recovery boundary without using e016 observations.",
+  "expected": {
+    "navigate_to_pose_status": "succeeded",
+    "minimum_recovery_attempts": 1,
+    "blocker": "partial",
+    "blocker_removed": true
+  },
+  "configuration": {
+    "platform": "turtlebot3-waffle-differential",
+    "scene": "TurtleBot3 Warehouse Validation",
+    "seed_base": 1016,
+    "corridor_width_m": 5.0,
+    "corridor_length_m": 20.0,
+    "blocker_distance_m": 1.5,
+    "blocker_width_m": 2.5,
+    "blocker_remove_after_fixed_simulation_s": 29.0,
+    "goal_distance_m": 3.0,
+    "fixture_delay_s": 15,
+    "action_duration_s": 45,
+    "worker_duration_s": 60,
+    "ros_domain_id": 56,
+    "ros_tcp_port": 10056,
+    "bt_xml": "packages/crane_ml/Tools/Performance/nav2_land_progress_recovery.xml"
+  },
+  "player_artifact": {
+    "sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+    "build_manifest_sha256": "a13e09530e1049abf53c75854f87577620c01bca2dd12efb102e19177cf30ee2",
+    "managed_assemblies_sha256": "20b3950ecacc0b9052d2da352530b7988352021e6bc66c2313a459aa9a10a82e",
+    "physics_assembly_sha256": "ad4805c875d58fa555373abfa04ef7503efb62f964ab84377c511fc677614c43",
+    "source_commit_proven": false
+  },
+  "inclusion_rule": "Include in later development evaluation only if simulator/capture gates pass, terminal status is succeeded, recovery history is complete, at least one unique recovery attempt is recorded, and evaluator truth confirms actual blocker removal.",
+  "mismatch_rule": "Retain any valid artifact as calibration and do not alter timing, tune the same run, or relabel its family after observing the result.",
+  "evidence_boundary": "Blocker geometry and removal timing are evaluator-only. Robot-visible explanation inputs may describe only captured BT/action mechanisms unless a separately defined intervention analysis licenses a stronger statement."
+}

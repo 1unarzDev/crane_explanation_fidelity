@@ -161,8 +161,9 @@ removal pilot (e011) removed the blocker at the recorded simulation time and cap
 recoveries, but the Ackermann rover still timed out; it is retained as negative calibration rather
 than recovery-success evidence. A later headless TurtleBot3 differential smoke (e015) passed the
 action, sensor, costmap, transport, and capture gates. Recovery-followed-by-success remains
-**NOT_RUN** on that platform. This is a narrow launch-config seam, not yet the requested
-reset/service API.
+**NOT_OBSERVED** on that platform: e016 removed a partial blocker at its predeclared simulation
+time but timed out with zero recovery entries because FollowPath remained active until the client
+deadline. This is a narrow launch-config seam, not yet the requested reset/service API.
 
 ### Collection target and acceptance
 

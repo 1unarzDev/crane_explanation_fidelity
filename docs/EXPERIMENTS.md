@@ -16,6 +16,13 @@
   exact BT XML and a final monotonic recovery count of zero. Evaluator-only truth separately
   records platform `turtlebot3-waffle-differential`, no blocker, seed 1015, and canonical corridor
   geometry. e015 remains calibration-only and does not increase the five-episode primary sample.
+- **TESTED/NEGATIVE, EXCLUDED:** predeclared e016 placed a partial blocker at 1.5 m and removed it
+  at simulation time 29.040 s (29.020 s scheduled). The action timed out at 45.026 s with 1.053 m
+  net displacement, 0 recoveries, and explicit client deadline/cancellation. Capture was bounded;
+  ComputePathToPose returned SUCCESS and FollowPath started, but no terminal FollowPath transition,
+  recovery guard, or Wait entry was recorded. The worker's `valid=false` is solely the frozen
+  expected-success mismatch; transport, costmap, sensor, and action-lag gates passed. This run does
+  not support recovery-success and will not be relabeled.
 - **TESTED/NEGATIVE:** e011–e014 showed that the longer-goal Ackermann corridor repeatedly drifts
   or stalls: e011's timed blocker was removed but the run timed out after two successful Wait
   recoveries; e012/e013 timed out after 3.41/3.97 m displacement; e014 still timed out after raising
