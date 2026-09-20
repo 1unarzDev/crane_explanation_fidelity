@@ -17,6 +17,12 @@
   invocations matching final feedback, complete recovery history, the predeclared abort family,
   populated costmap evidence, 10-unit recovery parity, 7-unit cause parity, and robot-visible
   leakage scanning. No answer output was inspected before inclusion.
+- **SEALED MODEL CALLS RETAINED / NOT ANNOTATED:** after inclusion, both frozen questions ran once
+  for F/G/H with `gpt-5.6-luna` at low reasoning: six physical calls, no retries, 441,057 input
+  tokens, 304,640 cached input tokens, 4,538 output tokens, 741 reasoning tokens, and 154.163 s
+  aggregate latency. A–E entries in the result envelopes remain deterministic smoke outputs and
+  are explicitly `NOT_RUN` as frozen model conditions. The hash-checked model manifest is
+  `manifests/model_outputs/pn-0002-provenance-v1.json`.
 
 ## 2026-09-19 — fair-configuration provenance re-pilot predeclaration
 
