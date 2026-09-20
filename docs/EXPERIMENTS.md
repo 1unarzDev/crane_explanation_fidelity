@@ -1,5 +1,16 @@
 # Experiment Log
 
+## 2026-09-19 — predeclared provenance model-strength control
+
+- Config committed before calls:
+  `research/explanation_fidelity/experiment_configs/development/provenance-model-strength-20260919-v1.json`.
+- Fixed inputs: e019/e021/e037/e038, recovery-mechanism and physical-cause questions, F/G/H,
+  current prompts, one sample, no retry, low reasoning, and the same parity audits.
+- Comparison: retained `gpt-5.6-sol` outputs versus new `gpt-5.6-luna` outputs. Eligibility allows at
+  most one additional error per condition, at most a 10-point aggregate specificity loss, at most
+  one additional source/causal overclaim, and at least 0.875 substantive coverage per condition.
+- Status: **NOT_RUN** at this checkpoint.
+
 ## 2026-09-19 — four-episode parity-controlled F/G/H development pilot
 
 - Episodes: e019/e021 recovery followed by success (one recorded Wait invocation each), and

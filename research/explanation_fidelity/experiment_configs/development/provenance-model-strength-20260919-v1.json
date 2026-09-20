@@ -1,0 +1,44 @@
+{
+  "schema": "crane-explain-provenance-model-strength-config/v1",
+  "status": "PREDECLARED_DEVELOPMENT_ONLY",
+  "created_local_date": "2026-09-19",
+  "objective": "Select the least expensive matched model setting that remains within a predeclared practical margin of the strongest tested setting for the F/G/H provenance study.",
+  "episodes": [
+    "land-nav-20260919-e019-worker-0",
+    "land-nav-20260919-e021-worker-0",
+    "land-nav-20260919-e037-worker-0",
+    "land-nav-20260919-e038-worker-0"
+  ],
+  "question_kinds": ["recovery-mechanism", "failure-cause"],
+  "conditions": ["F", "G", "H"],
+  "settings": [
+    {"model": "gpt-5.6-sol", "reasoning_effort": "low", "source": "retained four-episode pilot"},
+    {"model": "gpt-5.6-luna", "reasoning_effort": "low", "source": "new single-sample calls"}
+  ],
+  "fixed": {
+    "prompts": "current committed F/G/H prompts without model-specific changes",
+    "evidence": "retained parity-audited runtime presentations and exact repository checkout",
+    "samples_per_condition_question": 1,
+    "retries": 0,
+    "temperature": null,
+    "seed": null,
+    "annotation": "same material-error and specificity rubric; unblinded development labels",
+    "evaluator_truth_available_to_methods": false
+  },
+  "selection_rule": {
+    "eligible_setting": [
+      "no more than one additional material-error response out of eight for any condition relative to that condition's best tested setting",
+      "aggregate specificity across F/G/H no more than 10 percentage points below the best tested setting",
+      "no more than one additional unsupported source attribution or causal overclaim across all 24 responses",
+      "substantive answer coverage at least 0.875 for every condition"
+    ],
+    "choice": "Among eligible settings, select the least expensive model according to retained provider token/cost evidence; if monetary cost is unavailable, use model tier then measured token use and latency as descriptive resource evidence.",
+    "tie_or_ineligible": "Retain gpt-5.6-sol low for the main study if Luna is ineligible or resource superiority cannot be established.",
+    "no_posthoc_prompt_tuning": true
+  },
+  "limitations": [
+    "Four episodes and eight questions per condition provide only a coarse one-response error margin.",
+    "This development control selects a model configuration; it is not confirmatory evidence for RQ4.",
+    "A selected setting must still be frozen before sealed evaluation."
+  ]
+}
