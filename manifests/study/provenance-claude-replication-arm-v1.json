@@ -1,0 +1,73 @@
+{
+  "schema": "crane-explain-secondary-arm-declaration/v1",
+  "status": "PREDECLARED_BEFORE_ANY_CLAUDE_ARM_MODEL_CALL",
+  "created_local_date": "2026-09-20",
+  "name": "provenance-claude-replication-arm-v1",
+  "amends": null,
+  "frozen_study_unchanged": true,
+  "relationship_to_frozen_study": {
+    "primary_record": "manifests/study/provenance-study-freeze-v1.json and its five amendments",
+    "primary_model": "gpt-5.6-luna at low reasoning via the Codex CLI adapter",
+    "this_arm_is_an_amendment": false,
+    "statement": "This is a separately reported secondary arm, not a change to the frozen study. No frozen question, condition, prompt, inclusion rule, split, episode, or retained Luna call is altered, reinterpreted, replaced, or removed. The frozen study's primary F-versus-G comparison remains the Luna arm."
+  },
+  "reason": [
+    "The frozen study's sealed model calls were made from a sandboxed Codex CLI session against gpt-5.6-sol and gpt-5.6-luna. That session and those models are not available on the current host.",
+    "The nine retained sealed captures, their provenance bundles, parity audits, and the pinned crane_ml checkout are all present, so the model arm is re-runnable against a different model family without recapturing anything.",
+    "Whether the F/G/H contrast survives a change of model family and agent harness is a real and reportable robustness question for RQ4."
+  ],
+  "design": {
+    "episodes": "the nine already-included sealed rows pn-0001 through pn-0009, reused exactly as captured",
+    "new_capture": false,
+    "conditions": ["F", "G", "H"],
+    "question_kinds": ["recovery-mechanism", "failure-cause"],
+    "samples_per_condition_question": 1,
+    "retries": 0,
+    "resampling": false,
+    "temperature": null,
+    "seed": null,
+    "prompts": "the frozen committed prompt files, byte-unchanged",
+    "evidence": "the retained parity-audited runtime presentations and the exact pinned repository checkout",
+    "evaluator_truth_available_to_methods": false,
+    "model": "selected by the predeclared control at research/explanation_fidelity/experiment_configs/development/provenance-model-strength-claude-20260920-v1.json, on development episodes only"
+  },
+  "data_separation": {
+    "statement": "Claude-arm artifacts never share a path, filename, cache, manifest, annotation file, or analysis result with the frozen Luna arm.",
+    "model_cache_root": "research/explanation_fidelity/model_cache/claude-replication-v1",
+    "development_control_cache_root": "research/explanation_fidelity/model_cache/provenance-model-strength-claude-v1",
+    "sealed_output_root": "model_outputs/replication-claude/",
+    "development_control_output_root": "model_outputs/dev/provenance-model-strength-claude-v1/",
+    "manifest_suffix": "-provenance-claude-v1.json under manifests/model_outputs/",
+    "annotation_prefix": "claude-arm- under research/explanation_fidelity/annotations/",
+    "analysis_results_prefix": "claude-arm- under analysis/results/",
+    "frozen_luna_paths_are_read_only_here": true
+  },
+  "adapter_differences_from_the_codex_arm": [
+    "The Codex CLI enforces a read-only filesystem sandbox. The Claude Code CLI exposes no equivalent flag, so the adapter denies every mutating, network, and delegation tool, runs only inside a throwaway extraction of the pinned checkout, and hashes the entire workspace before and after each call. A call whose workspace hashes changed is retained and raised, never scored.",
+    "The Codex CLI accepts an out-of-band --output-schema. The Claude Code CLI does not, so the answer schema is delivered in-band through a fixed, model-agnostic suffix appended by the adapter. The frozen prompt files are unchanged; the suffix is recorded in every retained request.",
+    "The F and H agent harness differs: codex exec versus the Claude Code CLI agent, which carries its own system prompt and a Read/Glob/Grep/Bash tool surface. F and H are therefore 'a generic coding agent of that family', not the identical agent program.",
+    "The Claude Code CLI reports provider monetary cost; the Codex ChatGPT-login path did not. Cost is reported for this arm and remains unavailable for the Luna arm."
+  ],
+  "claims_this_arm_may_support": [
+    "Whether the direction and rough magnitude of the F/G/H contrast on these nine retained episodes reproduce under a different model family and agent harness.",
+    "Descriptive sensitivity of the primary comparison to model family, reported separately and labeled as such.",
+    "Resource evidence (tokens, latency, and monetary cost) for the Claude family on identical inputs."
+  ],
+  "claims_this_arm_may_not_support": [
+    "Any increase in independent sample size. The episodes are the same nine episodes; the two arms are not 50 additional clusters and must never be pooled as independent observations.",
+    "Any equivalence, superiority, or inferiority claim between the Claude and GPT model families. The arm is a single-sample replication, not a matched model comparison with its own power analysis.",
+    "Any replacement of the frozen primary result. If the arms disagree, both are reported.",
+    "Any relief from the frozen 40-episode minimum, which remains unmet at nine included episodes in both arms."
+  ],
+  "sealed_answer_discipline": {
+    "statement": "Claude-arm sealed answers are subject to the same rule as the Luna arm: they are retained and hashed but are not inspected or scored until the blinded dual-annotation workflow is ready.",
+    "development_control_annotation_is_permitted": true,
+    "development_control_annotation_is_unblinded_single_annotator": true
+  },
+  "known_validity_threats": [
+    "Nine included episodes against a frozen minimum of forty.",
+    "Single unblinded automated annotator for the development model-strength control.",
+    "Agent-harness difference between F/H in the two arms is a confound with model family; the arms differ in more than the model weights.",
+    "The Claude Code CLI read-only contract is enforced by tool denial plus workspace hashing rather than by a kernel-level sandbox."
+  ]
+}

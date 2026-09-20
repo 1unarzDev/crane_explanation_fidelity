@@ -1,0 +1,60 @@
+{
+  "schema": "crane-explain-provenance-model-strength-config/v1",
+  "status": "PREDECLARED_DEVELOPMENT_ONLY",
+  "created_local_date": "2026-09-20",
+  "arm": "provenance-claude-replication-arm-v1",
+  "objective": "Select the least expensive matched Claude setting that remains within a predeclared practical margin of the strongest tested Claude setting, for the secondary F/G/H Claude replication arm.",
+  "mirrors": "research/explanation_fidelity/experiment_configs/development/provenance-model-strength-20260919-v1.json",
+  "episodes": [
+    "land-nav-20260919-e019-worker-0",
+    "land-nav-20260919-e021-worker-0",
+    "land-nav-20260919-e037-worker-0",
+    "land-nav-20260919-e038-worker-0"
+  ],
+  "episodes_rationale": "The same four development episodes as the frozen Sol/Luna control, so that the two controls differ only in the settings compared. No sealed episode is used for selection.",
+  "question_kinds": ["recovery-mechanism", "failure-cause"],
+  "conditions": ["F", "G", "H"],
+  "settings": [
+    {
+      "model": "claude-sonnet-5",
+      "reasoning_effort": "low",
+      "tier": "higher",
+      "source": "new single-sample calls"
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "reasoning_effort": "low",
+      "tier": "lower",
+      "source": "new single-sample calls"
+    }
+  ],
+  "adapter": "claude-cli-json/v1",
+  "fixed": {
+    "prompts": "current committed F/G/H prompts without model-specific changes",
+    "evidence": "retained parity-audited runtime presentations and exact repository checkout",
+    "samples_per_condition_question": 1,
+    "retries": 0,
+    "temperature": null,
+    "seed": null,
+    "annotation": "same material-error and specificity rubric as the frozen guide; unblinded development labels",
+    "evaluator_truth_available_to_methods": false
+  },
+  "selection_rule": {
+    "comparison_scope": "within the Claude arm only; the frozen Luna arm is never the reference setting, because no cross-family equivalence claim is being made",
+    "eligible_setting": [
+      "no more than one additional material-error response out of eight for any condition relative to that condition's best tested Claude setting",
+      "aggregate specificity across F/G/H no more than 10 percentage points below the best tested Claude setting",
+      "no more than one additional unsupported source attribution or causal overclaim across all 24 responses",
+      "substantive answer coverage at least 0.875 for every condition"
+    ],
+    "choice": "Among eligible settings, select the least expensive model according to retained provider monetary cost, which the Claude Code CLI reports; use model tier, token use, and latency as supporting descriptive resource evidence.",
+    "tie_or_ineligible": "Retain claude-sonnet-5 at low effort for the arm if the lower tier is ineligible or resource superiority cannot be established.",
+    "no_posthoc_prompt_tuning": true
+  },
+  "limitations": [
+    "Four episodes and eight questions per condition provide only a coarse one-response error margin.",
+    "This development control selects a model configuration; it is not confirmatory evidence for RQ4.",
+    "The single development annotator is an unblinded automated assistant session, which is weaker evidence than the blinded dual annotation the sealed analysis requires.",
+    "A selected setting is fixed for the arm before any sealed Claude call and is not revisited after seeing sealed answers."
+  ]
+}

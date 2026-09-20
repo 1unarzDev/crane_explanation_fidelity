@@ -83,6 +83,11 @@ their own location. Exact repository commits and destinations are recorded in
   recovery-success, four terminal-abort), with 54 one-shot Luna-low calls retained and no
   exclusions. This remains far below the frozen 40-episode minimum; answers have not been scored,
   and no sealed effect estimate has been calculated.
+- **SECONDARY ARM:** a separately reported Claude replication re-runs F/G/H over the same nine
+  retained episodes with a Claude model, in physically separate namespaces. It adds no independent
+  episodes and does not amend the freeze. See [Claude replication arm](docs/CLAUDE_REPLICATION_ARM.md).
+- **IMPLEMENTED, TESTED:** blinded response packaging and dual-annotator adjudication tooling
+  implementing `docs/ANNOTATION_GUIDE.md`. Scoring itself remains `NOT_RUN`.
 - **NOT_RUN:** blinded dual annotation, final statistics/figures, and final A–E model evaluation.
 - **NOT_RUN:** source-to-binary rebuild verification.
 - **DEFERRED:** arbitrary-LLM proposition extraction until independently evaluated.
@@ -115,7 +120,8 @@ The fixture policy is synthetic and exists only to test arithmetic; it is not CR
 - `docs/`: architecture, benchmark, study, experiments, research, and decisions
 
 Raw data and model outputs never enter Git. The two data domains are physically separate and are
-joined only through opaque episode IDs during evaluation.
+joined only through opaque episode IDs during evaluation. The frozen Luna arm and the secondary
+Claude arm never share an output root, cache root, manifest name, or annotation file.
 
 ## Runtimes and checkpointing
 
@@ -155,6 +161,8 @@ delivered odometry proven controller consumption.
 - [Benchmark](docs/BENCHMARK.md)
 - [Experiment ledger](docs/EXPERIMENTS.md)
 - [Context-free agent handoff](docs/HANDOFF.md)
+- [Claude replication arm](docs/CLAUDE_REPLICATION_ARM.md)
+- [Blinded annotation workflow](docs/ANNOTATION_WORKFLOW.md)
 - [Research audit](docs/RESEARCH.md)
 - [Decision log](docs/DECISIONS.md)
 - [Environment requests](docs/ENVIRONMENT_REQUESTS.md)

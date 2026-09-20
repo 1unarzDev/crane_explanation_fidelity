@@ -1,0 +1,40 @@
+{
+  "schema": "crane-explain-secondary-arm-amendment/v1",
+  "status": "MODEL_SELECTED_BEFORE_ANY_SEALED_CLAUDE_CALL",
+  "amends": "manifests/study/provenance-claude-replication-arm-v1-amendment-1.json",
+  "created_local_date": "2026-09-20",
+  "sealed_claude_calls_before_amendment": 0,
+  "development_control_calls_before_amendment": 48,
+  "reason": "The predeclared development model-strength control is complete, so the arm's model is now fixed.",
+  "selection": {
+    "model": "claude-sonnet-5",
+    "reasoning_effort": "low",
+    "basis": "reported provider monetary cost among eligible settings",
+    "eligible_settings": ["claude-sonnet-5"],
+    "ineligible_settings": ["claude-haiku-4-5-20251001"],
+    "summary": "analysis/results/claude-arm-model-strength-20260920.json"
+  },
+  "outcome": {
+    "material_errors_out_of_8": {
+      "claude-haiku-4-5-20251001": {"F": 7, "G": 0, "H": 1},
+      "claude-sonnet-5": {"F": 1, "G": 0, "H": 0}
+    },
+    "aggregate_specificity": {
+      "claude-haiku-4-5-20251001": "117/156",
+      "claude-sonnet-5": "135/156"
+    },
+    "substantive_coverage": "1.0 for every condition in both settings",
+    "resources": {
+      "claude-haiku-4-5-20251001": {"cost_usd": 2.42, "input_tokens": 8753010, "aggregate_latency_s": 1070},
+      "claude-sonnet-5": {"cost_usd": 1.771, "input_tokens": 2084625, "aggregate_latency_s": 456}
+    }
+  },
+  "why_the_lower_tier_was_rejected": "claude-haiku-4-5 failed the predeclared per-condition margin outright: 7 material errors out of 8 in condition F against 1 for the best tested setting, where the margin allows one. Its errors were concentrated almost entirely in F, the strong repository-agent baseline, which would have inflated the F-versus-G contrast this arm exists to examine. That is exactly the model-strength confound the control is designed to prevent, and it is why the arm does not simply adopt the cheaper tier.",
+  "resource_note": "The lower tier was also the more expensive one here. Its F agent consumed 8.75M input tokens against 2.08M, so it was slower and costlier as well as less accurate. No cost comparison is made against the frozen Luna arm, whose provider cost was never reported.",
+  "limitations": [
+    "Four development episodes and eight responses per condition give only a coarse one-response margin.",
+    "The single annotator is an unblinded automated assistant session, not an independent human, and is weaker evidence than the blinded dual annotation the sealed analysis requires.",
+    "All sixteen G responses in the control are byte-identical to the frozen Luna arm's G responses, so the control discriminates between settings only through F and H.",
+    "This selects a configuration for a secondary arm. It is not evidence for RQ4 and establishes no equivalence between model families."
+  ]
+}

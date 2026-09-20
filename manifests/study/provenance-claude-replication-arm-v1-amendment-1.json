@@ -1,0 +1,31 @@
+{
+  "schema": "crane-explain-secondary-arm-amendment/v1",
+  "status": "DEVELOPMENT_CONTROL_ADAPTER_CORRECTION_BEFORE_ANY_SEALED_CLAUDE_CALL",
+  "amends": "manifests/study/provenance-claude-replication-arm-v1.json",
+  "created_local_date": "2026-09-20",
+  "sealed_claude_calls_before_amendment": 0,
+  "development_control_calls_before_amendment": 16,
+  "development_control_settings_completed_before_amendment": 0,
+  "claude_arm_annotations_before_amendment": 0,
+  "frozen_luna_arm_affected": false,
+  "reason": "The first adapter revision delivered the answer schema in-band, as a fixed suffix appended to the frozen prompt, because the Claude Code CLI's --json-schema flag had been missed. That revision failed on its own terms: condition F of e021 failure-cause answered in prose rather than JSON and the call could not be parsed, and it also appended text to a prompt the frozen study pinned by hash.",
+  "discovery": "Observed during the development model-strength control, before any sealed Claude call and before any Claude-arm annotation or model selection.",
+  "scientific_design_changed": false,
+  "frozen_prompts_changed": false,
+  "decision": [
+    "Use the Claude Code CLI's --json-schema flag, the direct analogue of the Codex CLI's --output-schema, so the frozen prompt text reaches the model byte-unchanged in both arms.",
+    "Record schema_delivery in every retained request, so the delivery mechanism is part of the content-addressed cache key and a change can never silently reuse a stale answer.",
+    "Retire rather than delete the results produced under the first revision. They are retained at model_outputs/dev/_retained_claude_adapter_in_band_suffix/ and their 16 cache records remain in place.",
+    "Exclude every call carrying schema_delivery = in_band_prompt_suffix from all summaries and from model selection.",
+    "Re-run the whole development model-strength control under the corrected adapter, so that both settings are compared under one adapter revision."
+  ],
+  "why_this_is_not_prompt_tuning": "The frozen no-post-hoc-tuning rule governs the prompts and the method. The correction removes adapter-added text from the prompt rather than adding any, no prompt file changed, no sealed call existed, and no answer had been inspected for selection or scoring when the defect was found.",
+  "removed_adapter_difference": "Schema delivery is no longer a difference between the two arms. The remaining differences are read-only enforcement, agent harness, and cost reporting.",
+  "retained_evidence": {
+    "retired_results_root": "model_outputs/dev/_retained_claude_adapter_in_band_suffix/",
+    "retired_cache_records": 16,
+    "cache_root": "research/explanation_fidelity/model_cache/provenance-model-strength-claude-v1",
+    "failed_call_cache_key": "e465ea9d8600ac5989e026d543debc03b4a953e07b699f99e30f783d95ba04f6",
+    "failed_call_role": "condition-f-failure-cause"
+  }
+}

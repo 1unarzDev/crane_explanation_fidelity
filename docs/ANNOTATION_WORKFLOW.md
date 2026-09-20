@@ -1,0 +1,96 @@
+# Blinded dual-annotation workflow
+
+Operational companion to `docs/ANNOTATION_GUIDE.md`. The guide is hash-frozen and states *what* to
+label; this file states *how* to run the process with the committed tooling, and is not frozen.
+
+Nothing here changes a rubric. If the two disagree, the guide governs.
+
+## Order of operations
+
+1. **Package.** Build one blinded packet per arm, plus its evaluator-only key.
+2. **Annotate.** Two annotators label every response in the packet, independently, without
+   discussing labels until both passes are complete.
+3. **Check agreement.** Run the adjudicator without `--adjudication` to get raw agreement, Cohen's
+   kappa, and the list of disagreements. This step joins no condition key.
+4. **Adjudicate.** A third annotator labels only the disagreements, using the guide and the same
+   allowed evidence.
+5. **Finalize.** Re-run with `--adjudication`. A final label set is emitted only when every
+   disagreement is resolved.
+6. **Only then** join the evaluator-only key and score by condition.
+
+## 1. Package
+
+```bash
+PYTHONPATH=packages/astro_dock/src/crane_explain/src:analysis \
+python analysis/build_blinded_annotation_packet.py \
+  --arm luna=model_outputs/final \
+  --packet model_outputs/annotation_packets/sealed-luna-v1/packet.jsonl \
+  --key data/evaluator_only/annotation_keys/sealed-luna-v1.json
+```
+
+Each packet row carries only `response_id`, `question`, `question_kind`, `gold_unit_inventory`,
+`answerable_units_total`, `allowed_evidence`, and `response_text`. Condition-revealing fields are
+dropped, not reordered: a G output's `checked_plan`, `verification_accepted`,
+`unsupported_sentences` and `used_template_fallback`, and an F/H output's `disposition:
+uncontrolled`, never reach the annotator. The builder re-checks this after writing and deletes the
+packet if anything leaked.
+
+Response IDs are HMACs under a per-packet secret, and rows are shuffled with a seed derived from
+that secret, so neither the ID nor the packet order encodes arm, condition, episode, or question.
+
+**Build one packet per arm.** Pooling is supported and the key keeps pooled arms separable, but the
+two arms' answers differ in format — the Claude models often serialize JSON into the answer string
+where the Luna arm wrote prose — so a pooled packet would identify the arm at a glance and defeat
+the blinding.
+
+The key is evaluator-only. It holds the secret, the arm, episode, condition, and model for every
+response, and it never goes to an annotator.
+
+## 2. Annotate
+
+Each annotator writes one JSONL file, one row per packet response, with the 25 fields
+`docs/ANNOTATION_GUIDE.md` requires. Every row in a pass carries the same `annotator_id`, and the
+two passes must use different ones.
+
+Flag `evidence_problem` rather than guessing when the gold inventory, allowed packet, or question
+looks inconsistent. Such responses are quarantined at the whole-episode level; condition-specific
+exclusion is forbidden.
+
+## 3–5. Agreement, adjudication, finalization
+
+```bash
+# agreement only; no final labels are emitted
+PYTHONPATH=packages/astro_dock/src/crane_explain/src:analysis \
+python analysis/adjudicate_annotations.py \
+  --packet model_outputs/annotation_packets/sealed-luna-v1/packet.jsonl \
+  --annotator-a <a>.jsonl --annotator-b <b>.jsonl \
+  --output analysis/results/sealed-luna-agreement.json
+
+# after a third annotator labels the disagreements
+... --adjudication <c>.jsonl --output analysis/results/sealed-luna-adjudicated.json
+```
+
+The tool refuses a pass that is incomplete, annotates a response outside the packet, uses two
+`annotator_id`s, repeats a `response_id`, records `material_error` without a category or a category
+without `material_error`, contradicts its own `disposition` with `substantive_answer`, claims more
+correct units than the inventory holds, or leaves an empty rationale. It also refuses an
+adjudication file that covers responses the annotators agreed on, or one whose annotator is not a
+distinct third person.
+
+Reported: raw agreement and Cohen's kappa for `material_error`, `substantive_answer` and
+`correct_abstention`, plus agreement on `disposition` and `answerable_units_correct`. Kappa is
+reported as `null`, not as a number, when a rater used a single category throughout and it is
+undefined.
+
+`status` stays `AWAITING_ADJUDICATION` and `labels` stays `null` until every disagreement is
+resolved. `condition_key_joined` is always `false` in this tool's output; joining the key is a
+separate, deliberate step.
+
+## Current state
+
+- Sealed Luna packet built: 54 responses, 18 per condition, 27 per question.
+- **Annotation itself is `NOT_RUN`.** No sealed response in either arm has been scored, and no
+  sealed effect estimate exists.
+- The development model-strength controls are separate: unblinded, single-annotator, and
+  development-only by design. They are not part of this workflow and must not be reported as if
+  they were.

@@ -1,0 +1,123 @@
+{
+  "arm": "provenance-claude-replication-arm-v1",
+  "config": "research/explanation_fidelity/experiment_configs/development/provenance-model-strength-claude-20260920-v1.json",
+  "limitations": [
+    "unblinded single-annotator development labels",
+    "the single annotator is an automated assistant session, not an independent human",
+    "four episodes and eight responses per condition",
+    "selection does not establish model equivalence, within or across families",
+    "this selects a configuration for a secondary arm and is not evidence for RQ4"
+  ],
+  "predeclared_selection_rule": {
+    "choice": "Among eligible settings, select the least expensive model according to retained provider monetary cost, which the Claude Code CLI reports; use model tier, token use, and latency as supporting descriptive resource evidence.",
+    "comparison_scope": "within the Claude arm only; the frozen Luna arm is never the reference setting, because no cross-family equivalence claim is being made",
+    "eligible_setting": [
+      "no more than one additional material-error response out of eight for any condition relative to that condition's best tested Claude setting",
+      "aggregate specificity across F/G/H no more than 10 percentage points below the best tested Claude setting",
+      "no more than one additional unsupported source attribution or causal overclaim across all 24 responses",
+      "substantive answer coverage at least 0.875 for every condition"
+    ],
+    "no_posthoc_prompt_tuning": true,
+    "tie_or_ineligible": "Retain claude-sonnet-5 at low effort for the arm if the lower tier is ineligible or resource superiority cannot be established."
+  },
+  "resources": {
+    "claude-haiku-4-5-20251001": {
+      "aggregate_cost_usd": 2.4203452000000003,
+      "aggregate_latency_ms": 1069626.585,
+      "cached_input_tokens": 8183852,
+      "input_tokens": 8753010,
+      "logical_calls": 24,
+      "output_tokens": 93144,
+      "read_only_workspace_verified": true,
+      "reasoning_output_tokens": 38988
+    },
+    "claude-sonnet-5": {
+      "aggregate_cost_usd": 1.770586,
+      "aggregate_latency_ms": 455984.97,
+      "cached_input_tokens": 1824940,
+      "input_tokens": 2084625,
+      "logical_calls": 24,
+      "output_tokens": 36725,
+      "read_only_workspace_verified": true,
+      "reasoning_output_tokens": 755
+    }
+  },
+  "schema": "crane-explain-claude-arm-model-strength-summary/v1",
+  "selection": {
+    "eligible_settings": [
+      "claude-sonnet-5"
+    ],
+    "model": "claude-sonnet-5",
+    "reasoning_effort": "low",
+    "selection_basis": "reported provider monetary cost"
+  },
+  "settings": {
+    "claude-haiku-4-5-20251001": {
+      "aggregate_specificity": 0.75,
+      "conditions": {
+        "F": {
+          "material_errors": 7,
+          "responses": 8,
+          "specificity_correct": 33,
+          "specificity_total": 52,
+          "substantive_coverage": 1.0
+        },
+        "G": {
+          "material_errors": 0,
+          "responses": 8,
+          "specificity_correct": 40,
+          "specificity_total": 52,
+          "substantive_coverage": 1.0
+        },
+        "H": {
+          "material_errors": 1,
+          "responses": 8,
+          "specificity_correct": 44,
+          "specificity_total": 52,
+          "substantive_coverage": 1.0
+        }
+      },
+      "eligibility": {
+        "additional_source_or_causal_overclaims_at_most_one": false,
+        "aggregate_specificity_within_10_points": false,
+        "eligible": false,
+        "per_condition_one_response_error_margin": false,
+        "per_condition_substantive_coverage_at_least_0.875": true
+      }
+    },
+    "claude-sonnet-5": {
+      "aggregate_specificity": 0.8653846153846154,
+      "conditions": {
+        "F": {
+          "material_errors": 1,
+          "responses": 8,
+          "specificity_correct": 46,
+          "specificity_total": 52,
+          "substantive_coverage": 1.0
+        },
+        "G": {
+          "material_errors": 0,
+          "responses": 8,
+          "specificity_correct": 40,
+          "specificity_total": 52,
+          "substantive_coverage": 1.0
+        },
+        "H": {
+          "material_errors": 0,
+          "responses": 8,
+          "specificity_correct": 49,
+          "specificity_total": 52,
+          "substantive_coverage": 1.0
+        }
+      },
+      "eligibility": {
+        "additional_source_or_causal_overclaims_at_most_one": true,
+        "aggregate_specificity_within_10_points": true,
+        "eligible": true,
+        "per_condition_one_response_error_margin": true,
+        "per_condition_substantive_coverage_at_least_0.875": true
+      }
+    }
+  },
+  "status": "DEVELOPMENT_SELECTION_NOT_CONFIRMATORY_RESULT"
+}

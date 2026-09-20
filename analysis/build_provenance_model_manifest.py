@@ -27,15 +27,25 @@ def artifact(path: Path, workspace: Path) -> dict[str, Any]:
     }
 
 
-def usage(events: list[dict[str, Any]]) -> dict[str, int]:
+def usage(call: dict[str, Any] | None = None) -> dict[str, int]:
+    """Total one retained call's usage from either adapter.
+
+    The Claude adapter maps provider usage onto these key names once, at call time, and stores the
+    result on the record. The Codex adapter retains raw CLI events that already use these names.
+    """
     totals = {
         "input_tokens": 0,
         "cached_input_tokens": 0,
         "output_tokens": 0,
         "reasoning_output_tokens": 0,
     }
-    for event in events:
-        raw = event.get("usage")
+    if call is None:
+        return totals
+    mapped = call.get("usage")
+    sources = [mapped] if isinstance(mapped, dict) else [
+        event.get("usage") for event in call.get("events", [])
+    ]
+    for raw in sources:
         if not isinstance(raw, dict):
             continue
         for key in totals:
@@ -121,11 +131,13 @@ def main() -> int:
         raise SystemExit(f"missing cache artifacts: {missing}")
     calls = [json.loads(path.read_text(encoding="utf-8")) for path in cache_paths]
     accounting = condition_accounting(outputs, calls)
-    usage_totals = {key: 0 for key in usage([])}
+    usage_totals = {key: 0 for key in usage()}
     aggregate_latency_ms = 0.0
+    costs = [call.get("cost_usd") for call in calls]
+    aggregate_cost_usd = sum(costs) if all(cost is not None for cost in costs) else None
     for call in calls:
         aggregate_latency_ms += float(call["latency_ms"])
-        for key, value in usage(call["events"]).items():
+        for key, value in usage(call).items():
             usage_totals[key] += value
     payload = {
         "schema": "crane-explain-model-artifact-manifest/v1",
@@ -134,6 +146,7 @@ def main() -> int:
         "episode_ids": sorted({output["episode_id"] for output in outputs}),
         "question_kinds": sorted({output["question_kind"] for output in outputs}),
         **accounting,
+        "adapter": calls[0]["request"]["adapter"],
         "provider": calls[0]["request"]["provider"],
         "model": calls[0]["request"]["model"],
         "reasoning_effort": calls[0]["request"]["reasoning_effort"],
@@ -142,13 +155,16 @@ def main() -> int:
             output["information_parity"]["accepted"] for output in outputs
         ),
         "evaluator_truth_available_to_methods": False,
+        "read_only_workspace_verified": all(
+            call.get("workspace_unmodified", True) for call in calls
+        ),
         "new_model_calls": len(calls),
         "a_to_e_frozen_model_evaluation_status": "NOT_RUN",
         "usage": {
             **usage_totals,
             "aggregate_latency_ms": aggregate_latency_ms,
-            "cost_usd": None,
-            "cost_status": "not_reported_by_codex_cli_chatgpt_login",
+            "cost_usd": aggregate_cost_usd,
+            "cost_status": calls[0]["cost_status"],
         },
         "output_root": output_root.relative_to(workspace).as_posix(),
         "cache_root": cache_root.relative_to(workspace).as_posix(),

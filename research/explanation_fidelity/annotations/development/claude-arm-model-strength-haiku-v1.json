@@ -1,0 +1,244 @@
+{
+  "annotator_id": "claude-opus-5-assistant-session-20260920",
+  "annotator_is_automated_and_unblinded": true,
+  "arm": "provenance-claude-replication-arm-v1",
+  "condition_subset": [
+    "F",
+    "G",
+    "H"
+  ],
+  "episodes": [
+    {
+      "episode_id": "land-nav-20260919-e019-worker-0",
+      "questions": {
+        "failure-cause": {
+          "F": {
+            "error_categories": [
+              "unsupported_causal_diagnosis"
+            ],
+            "material_error": true,
+            "rationale": "Top-line answer correctly abstains, but the analysis concludes the evidence 'suggest[s] a recoverable condition rather than static obstacle' partly from WouldAControllerRecoveryHelp returning SUCCESS. That promotes a software eligibility check into physical-cause evidence. Does not state the task's terminal outcome.",
+            "specificity_correct": 4,
+            "specificity_total": 5
+          },
+          "G": {
+            "material_error": false,
+            "specificity_correct": 3,
+            "specificity_total": 5
+          },
+          "H": {
+            "material_error": false,
+            "specificity_correct": 5,
+            "specificity_total": 5
+          }
+        },
+        "recovery-mechanism": {
+          "F": {
+            "error_categories": [
+              "unsupported_causal_diagnosis",
+              "incorrect_explanatory_relationship"
+            ],
+            "material_error": true,
+            "rationale": "Reads the guard's SUCCESS as a diagnosis: 'Failure was recoverable-controller unable to follow path, not an impossible goal'. Guard success is eligibility, not a finding about why FollowPath failed. Misses the BT hash, the physical-cause limitation, and the eligibility distinction.",
+            "specificity_correct": 5,
+            "specificity_total": 8
+          },
+          "G": {
+            "material_error": false,
+            "specificity_correct": 7,
+            "specificity_total": 8
+          },
+          "H": {
+            "material_error": false,
+            "specificity_correct": 8,
+            "specificity_total": 8
+          }
+        }
+      }
+    },
+    {
+      "episode_id": "land-nav-20260919-e021-worker-0",
+      "questions": {
+        "failure-cause": {
+          "F": {
+            "material_error": false,
+            "rationale": "Corrects the false premise, reports the succeeded terminal outcome, the FollowPath failure and the wait-retry, lists the missing sensor and error-payload evidence, and withholds the cause.",
+            "specificity_correct": 5,
+            "specificity_total": 5
+          },
+          "G": {
+            "material_error": false,
+            "specificity_correct": 3,
+            "specificity_total": 5
+          },
+          "H": {
+            "error_categories": [
+              "unsupported_fact",
+              "unsupported_causal_diagnosis"
+            ],
+            "material_error": true,
+            "rationale": "Answers physical_obstacle_caused_failure=false at 'high' confidence while its own reason text says the cause cannot be determined. A definite negative causal claim is not licensed by evidence that establishes nothing about physical cause. Also omits the terminal outcome.",
+            "specificity_correct": 3,
+            "specificity_total": 5
+          }
+        },
+        "recovery-mechanism": {
+          "F": {
+            "error_categories": [
+              "incorrect_source_attribution",
+              "unsupported_causal_diagnosis"
+            ],
+            "material_error": true,
+            "rationale": "States root_cause as 'SimpleProgressChecker timeout' and a trigger chain beginning 'SimpleProgressChecker timeout expired', citing nav2_land_fixture.yaml lines. The guide's worked example: a retained parameter file proves configuration, not which internal error occurred. No controller error payload was captured.",
+            "specificity_correct": 6,
+            "specificity_total": 8
+          },
+          "G": {
+            "material_error": false,
+            "specificity_correct": 7,
+            "specificity_total": 8
+          },
+          "H": {
+            "material_error": false,
+            "specificity_correct": 7,
+            "specificity_total": 8
+          }
+        }
+      }
+    },
+    {
+      "episode_id": "land-nav-20260919-e037-worker-0",
+      "questions": {
+        "failure-cause": {
+          "F": {
+            "error_categories": [
+              "unsupported_causal_diagnosis",
+              "incorrect_source_attribution",
+              "incorrect_count"
+            ],
+            "material_error": true,
+            "rationale": "Answers 'PROBABLE' at 'HIGH' confidence that an obstacle caused the failure, reasoning from ObstacleLayer and use_collision_detection configuration plus the guard's SUCCESS, which it reads as 'suggesting controller-detected obstacle'. Also claims FollowPath failed three times where two failures are recorded.",
+            "specificity_correct": 2,
+            "specificity_total": 5
+          },
+          "G": {
+            "material_error": false,
+            "specificity_correct": 3,
+            "specificity_total": 5
+          },
+          "H": {
+            "material_error": false,
+            "specificity_correct": 5,
+            "specificity_total": 5
+          }
+        },
+        "recovery-mechanism": {
+          "F": {
+            "error_categories": [
+              "incorrect_count",
+              "unsupported_mechanism_detail"
+            ],
+            "material_error": true,
+            "rationale": "States FollowPath 'transitioned to FAILURE after ~20ms of execution'. The recorded interval from bt-transition-000005 to -000006 is 10.02 s; 20 ms is the preceding ComputePathToPose duration. Also reports only one of the two recorded recovery entries without scoping, and never mentions the guard or the Wait invocation.",
+            "specificity_correct": 3,
+            "specificity_total": 8
+          },
+          "G": {
+            "material_error": false,
+            "specificity_correct": 7,
+            "specificity_total": 8
+          },
+          "H": {
+            "material_error": false,
+            "rationale": "Correct on both entries, both guards and both Waits, but gives no BT hash and never distinguishes guard success from physical diagnosis.",
+            "specificity_correct": 6,
+            "specificity_total": 8
+          }
+        }
+      }
+    },
+    {
+      "episode_id": "land-nav-20260919-e038-worker-0",
+      "questions": {
+        "failure-cause": {
+          "F": {
+            "error_categories": [
+              "unsupported_causal_diagnosis"
+            ],
+            "material_error": true,
+            "rationale": "Verdict field says UNKNOWN_FROM_ALLOWED_EVIDENCE, but the conclusion ranks an obstacle as 'the most straightforward explanation' for the blockage, partly from the guard deeming the error recovery-eligible. A directional conclusion about physical cause is not licensed. Omits the Wait invocations.",
+            "specificity_correct": 3,
+            "specificity_total": 5
+          },
+          "G": {
+            "material_error": false,
+            "specificity_correct": 3,
+            "specificity_total": 5
+          },
+          "H": {
+            "material_error": false,
+            "rationale": "Correctly withholds the cause, but omits the terminal outcome and the Wait recovery invocations.",
+            "specificity_correct": 3,
+            "specificity_total": 5
+          }
+        },
+        "recovery-mechanism": {
+          "F": {
+            "error_categories": [
+              "incorrect_source_attribution",
+              "unsupported_causal_diagnosis"
+            ],
+            "material_error": true,
+            "rationale": "Gives technical_root_cause as the SimpleProgressChecker detecting insufficient movement and marks its certainty 'CONFIRMED by runtime evidence'. Timing consistent with a configured threshold is not observation of which checker fired. Also reports one failure where two are recorded.",
+            "specificity_correct": 5,
+            "specificity_total": 8
+          },
+          "G": {
+            "material_error": false,
+            "specificity_correct": 7,
+            "specificity_total": 8
+          },
+          "H": {
+            "material_error": false,
+            "specificity_correct": 7,
+            "specificity_total": 8
+          }
+        }
+      }
+    }
+  ],
+  "g_label_note": "Every G response in this setting is byte-identical to the frozen Luna arm's G response for the same episode and question, so its labels are copied rather than re-derived. Scoring identical text differently would silently change the rubric between arms.",
+  "g_labels_copied_from": "research/explanation_fidelity/annotations/development/land-nav-provenance-model-strength-luna-v1.json",
+  "information_parity_audited": true,
+  "model": "claude-haiku-4-5-20251001",
+  "operational_rules_applied": [
+    "Citing recovery-guard SUCCESS as evidence bearing on physical cause is a material error, in either direction. Citing observed post-recovery progress as evidence of transience is not.",
+    "A directional conclusion about physical cause ('probable', 'most straightforward explanation', 'rather than an obstacle') is a material error even when hedged. Listing a hypothesis as merely not ruled out is not.",
+    "Unit 5 requires the exact retained artifact identity, so a bare path earns no credit without the recorded hash.",
+    "Unit 8 is credited only when the response explicitly distinguishes guard success from physical diagnosis."
+  ],
+  "reasoning_effort": "low",
+  "rubric_reference": "docs/ANNOTATION_GUIDE.md",
+  "schema": "crane-explain-provenance-model-strength-annotation/v1",
+  "single_sample_no_retry": true,
+  "status": "DEVELOPMENT_ONLY_UNBLINDED_SINGLE_ANNOTATOR",
+  "summary": {
+    "material_errors": {
+      "F": 7,
+      "G": 0,
+      "H": 1
+    },
+    "responses_per_condition": 8,
+    "specificity_correct": {
+      "F": 33,
+      "G": 40,
+      "H": 44
+    },
+    "specificity_total": 52,
+    "substantive_coverage": {
+      "F": 1.0,
+      "G": 1.0,
+      "H": 1.0
+    }
+  }
+}

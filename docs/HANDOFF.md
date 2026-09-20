@@ -6,9 +6,10 @@ repository documents.
 
 ---
 
-You are taking over the TRUSTMORE 2026 CRANE explanation-fidelity project. Work from
-`/home/lunarz/crane_explain`, the umbrella Git repository whose `origin` is
-`https://github.com/1unarzDev/crane_explanation_fidelity.git`. The hard paper deadline is
+You are taking over the TRUSTMORE 2026 CRANE explanation-fidelity project. Work from your local
+checkout of the umbrella Git repository whose `origin` is
+`https://github.com/1unarzDev/crane_explanation_fidelity.git`. Resolve paths from the repository
+root rather than assuming any developer's absolute path. The hard paper deadline is
 October 4, 2026 AoE. The scientific objective is trustworthy natural-language explanation of robot
 navigation decisions and failures: captured evidence → supported propositions → language →
 final-text verification. The primary failure mode is fluent but unsupported language.
@@ -22,6 +23,9 @@ Before acting, read these files in order:
 5. `docs/DECISIONS.md`
 6. `docs/ARCHITECTURE.md`
 7. `docs/BENCHMARK.md`
+7a. `docs/CLAUDE_REPLICATION_ARM.md` and
+    `manifests/study/provenance-claude-replication-arm-v1.json` plus its amendments
+7b. `docs/ANNOTATION_WORKFLOW.md`, the operational companion to the frozen annotation guide
 8. `manifests/study/provenance-study-freeze-v1.json` and every adjacent amendment
 9. `research/explanation_fidelity/experiment_configs/frozen/provenance-study-v1.json` and every
    adjacent amendment
@@ -43,7 +47,12 @@ Current frozen study:
 - Frozen questions: “Why did the autonomy software enter recovery?” and “Did a physical obstacle
   cause the navigation failure?”
 - Frozen model: `gpt-5.6-luna`, low reasoning, one call per condition/question, no retries or
-  resampling.
+  resampling. This is the primary arm and is unchanged.
+- A **secondary Claude replication arm** re-runs F/G/H over the same nine retained episodes with a
+  Claude model, because the sandboxed Codex CLI session that made the sealed calls is unavailable on
+  later hosts. It is separately reported, physically separated in every namespace, adds no
+  independent episodes, and never amends the freeze. Read `docs/CLAUDE_REPLICATION_ARM.md` before
+  touching it.
 - Collection target: 40 included independent episodes minimum, 50 target, 60 preferred, balanced
   between recovery-success and terminal-abort families.
 - Do not inspect or annotate sealed answers for scoring until blinded dual-annotator packaging is
@@ -78,6 +87,24 @@ export PYTHONPATH=packages/astro_dock/src/crane_explain/src:packages/astro_dock/
 python -m pytest -q tests packages/astro_dock/src/crane_explain/tests
 scripts/check_data_governance.sh
 ```
+
+Also run the analysis-side suite, which now includes the freeze-integrity check:
+
+```bash
+PYTHONPATH=packages/astro_dock/src/crane_explain/src:analysis python -m pytest -q analysis
+```
+
+`analysis/test_freeze_integrity.py` verifies all 32 hash-frozen files against the base freeze plus
+its five amendments, applied in amendment order. Never edit a frozen file — including
+`docs/STUDY_DESIGN.md`, `docs/ANNOTATION_GUIDE.md`, the prompts, and
+`analysis/run_provenance_agent_pilot.py` — without writing an amendment that records the new hash.
+Extend by addition instead; the Claude arm is the worked example.
+
+**Capture requires Linux.** New episodes need a Linux x86_64 Unity player at
+`packages/crane_ml/Builds/CRANE-Worker/CRANE.x86_64` and the pinned CUDA ROS image under a running
+Docker daemon. On a host without those — an arm64 macOS machine, for instance — collection is
+BLOCKED and no amount of retrying will change that. The model arms, the annotation workflow, and
+the analysis code all run fine on such a host, because every sealed capture is retained locally.
 
 Do not treat a blanket host-shell `python -m pytest -q` as the project test command: it traverses
 ROS packages whose ament dependencies require the Jazzy environment. Use the documented ROS/colcon

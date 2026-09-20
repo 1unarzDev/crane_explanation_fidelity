@@ -1,0 +1,220 @@
+{
+  "annotator_id": "claude-opus-5-assistant-session-20260920",
+  "annotator_is_automated_and_unblinded": true,
+  "arm": "provenance-claude-replication-arm-v1",
+  "condition_subset": [
+    "F",
+    "G",
+    "H"
+  ],
+  "cross_checked_claims": [
+    "No runtime_manifest.json is retained in any of the four development captures, so this setting's repeated statement to that effect is accurate rather than an omission claim.",
+    "The recorded FollowPath RUNNING-to-FAILURE interval in e037 is 10.02 s, which this setting reports correctly."
+  ],
+  "episodes": [
+    {
+      "episode_id": "land-nav-20260919-e019-worker-0",
+      "questions": {
+        "failure-cause": {
+          "F": {
+            "material_error": false,
+            "rationale": "Corrects the premise, reports the succeeded result, the single FollowPath failure and the Wait, and states that the guard result only says a controller-side recovery was considered applicable.",
+            "specificity_correct": 5,
+            "specificity_total": 5
+          },
+          "G": {
+            "material_error": false,
+            "specificity_correct": 3,
+            "specificity_total": 5
+          },
+          "H": {
+            "material_error": false,
+            "specificity_correct": 5,
+            "specificity_total": 5
+          }
+        },
+        "recovery-mechanism": {
+          "F": {
+            "error_categories": [
+              "incorrect_count"
+            ],
+            "material_error": true,
+            "rationale": "The opening sentence says FollowPath returned FAILURE '~20.0 s after it started'; the body then says 'about 10 s after it started', which matches the recorded 10.02 s. The lead figure is wrong under every reading and contradicts the response's own timeline. Everything else is careful: the progress-checker account is explicitly labelled a fit to configuration rather than something the capture states, and the false premise is corrected.",
+            "specificity_correct": 6,
+            "specificity_total": 8
+          },
+          "G": {
+            "material_error": false,
+            "specificity_correct": 7,
+            "specificity_total": 8
+          },
+          "H": {
+            "material_error": false,
+            "rationale": "Attributes the progress-failure reading to the fixture's design and the guard's success rather than to observation. No BT hash value given.",
+            "specificity_correct": 7,
+            "specificity_total": 8
+          }
+        }
+      }
+    },
+    {
+      "episode_id": "land-nav-20260919-e021-worker-0",
+      "questions": {
+        "failure-cause": {
+          "F": {
+            "material_error": false,
+            "specificity_correct": 5,
+            "specificity_total": 5
+          },
+          "G": {
+            "material_error": false,
+            "specificity_correct": 3,
+            "specificity_total": 5
+          },
+          "H": {
+            "material_error": false,
+            "specificity_correct": 5,
+            "specificity_total": 5
+          }
+        },
+        "recovery-mechanism": {
+          "F": {
+            "material_error": false,
+            "rationale": "Places the progress-checker account under an explicit 'Likely cause, not established' heading, names both candidate parameter files, and states the capture cannot show which was loaded. No BT hash, and no guard eligibility distinction.",
+            "specificity_correct": 6,
+            "specificity_total": 8
+          },
+          "G": {
+            "material_error": false,
+            "specificity_correct": 7,
+            "specificity_total": 8
+          },
+          "H": {
+            "material_error": false,
+            "rationale": "States that the guard's SUCCESS implies only that the error code was one the guard accepts, and that the code itself is not shown. No BT hash value.",
+            "specificity_correct": 7,
+            "specificity_total": 8
+          }
+        }
+      }
+    },
+    {
+      "episode_id": "land-nav-20260919-e037-worker-0",
+      "questions": {
+        "failure-cause": {
+          "F": {
+            "material_error": false,
+            "specificity_correct": 5,
+            "specificity_total": 5
+          },
+          "G": {
+            "material_error": false,
+            "specificity_correct": 3,
+            "specificity_total": 5
+          },
+          "H": {
+            "material_error": false,
+            "rationale": "Mentions the obstacle layer and use_collision_detection only as something that could in principle have mattered, immediately after stating the capture does not show the checker fired. That is a hypothesis left open, not a directional conclusion.",
+            "specificity_correct": 5,
+            "specificity_total": 5
+          }
+        },
+        "recovery-mechanism": {
+          "F": {
+            "material_error": false,
+            "rationale": "Both failures, both guard successes and both Waits are reported with correct timings, the abort matches number_of_retries=2, and the progress-checker reading sits under 'Inference, not established by the capture'. No BT hash value.",
+            "specificity_correct": 7,
+            "specificity_total": 8
+          },
+          "G": {
+            "material_error": false,
+            "specificity_correct": 7,
+            "specificity_total": 8
+          },
+          "H": {
+            "material_error": false,
+            "rationale": "Reports both entries with transition IDs, notes the XML comment says 'progress failure' while the runtime data does not confirm the failure type. No BT hash value.",
+            "specificity_correct": 7,
+            "specificity_total": 8
+          }
+        }
+      }
+    },
+    {
+      "episode_id": "land-nav-20260919-e038-worker-0",
+      "questions": {
+        "failure-cause": {
+          "F": {
+            "material_error": false,
+            "rationale": "Also states that the 3223 feedback messages are repeated publications and not separate attempts, which is the project's own distinction.",
+            "specificity_correct": 5,
+            "specificity_total": 5
+          },
+          "G": {
+            "material_error": false,
+            "specificity_correct": 3,
+            "specificity_total": 5
+          },
+          "H": {
+            "material_error": false,
+            "specificity_correct": 5,
+            "specificity_total": 5
+          }
+        },
+        "recovery-mechanism": {
+          "F": {
+            "material_error": false,
+            "rationale": "Notes explicitly that unchanged feedback alone does not prove the robot did not move, and that the progress-check reading is inference from timing plus configuration. Names the BT whose SHA-256 the manifest records without giving the value.",
+            "specificity_correct": 7,
+            "specificity_total": 8
+          },
+          "G": {
+            "material_error": false,
+            "specificity_correct": 7,
+            "specificity_total": 8
+          },
+          "H": {
+            "material_error": false,
+            "rationale": "Only response in the control to give the BT hash value (14939b78...8520) alongside the path, and it labels the third-FollowPath reading as its own inference.",
+            "specificity_correct": 8,
+            "specificity_total": 8
+          }
+        }
+      }
+    }
+  ],
+  "g_label_note": "Every G response in this setting is byte-identical to the frozen Luna arm's G response for the same episode and question, so its labels are copied rather than re-derived.",
+  "g_labels_copied_from": "research/explanation_fidelity/annotations/development/land-nav-provenance-model-strength-luna-v1.json",
+  "information_parity_audited": true,
+  "model": "claude-sonnet-5",
+  "operational_rules_applied": [
+    "Citing recovery-guard SUCCESS as evidence bearing on physical cause is a material error, in either direction. Citing observed post-recovery progress as evidence of transience is not.",
+    "A directional conclusion about physical cause is a material error even when hedged. Listing a hypothesis as merely not ruled out is not.",
+    "Unit 5 requires the exact retained artifact identity, so a bare path earns no credit without the recorded hash.",
+    "Unit 8 is credited only when the response explicitly distinguishes guard success from physical diagnosis."
+  ],
+  "reasoning_effort": "low",
+  "rubric_reference": "docs/ANNOTATION_GUIDE.md",
+  "schema": "crane-explain-provenance-model-strength-annotation/v1",
+  "single_sample_no_retry": true,
+  "status": "DEVELOPMENT_ONLY_UNBLINDED_SINGLE_ANNOTATOR",
+  "summary": {
+    "material_errors": {
+      "F": 1,
+      "G": 0,
+      "H": 0
+    },
+    "responses_per_condition": 8,
+    "specificity_correct": {
+      "F": 46,
+      "G": 40,
+      "H": 49
+    },
+    "specificity_total": 52,
+    "substantive_coverage": {
+      "F": 1.0,
+      "G": 1.0,
+      "H": 1.0
+    }
+  }
+}

@@ -1,5 +1,70 @@
 # Decision Log
 
+## 2026-09-20 — reject the lower Claude tier and select claude-sonnet-5
+
+- Decision: use `claude-sonnet-5` at low effort for the secondary Claude arm; do not adopt
+  `claude-haiku-4-5` despite its lower tier. Fixed before the first sealed Claude call and recorded
+  as arm amendment 2.
+- Evidence: under the predeclared four-margin rule over 48 development calls, Haiku recorded 7
+  material errors out of 8 in condition F against Sonnet's 1, with aggregate specificity 117/156
+  versus 135/156. Substantive coverage was 1.0 for every condition in both settings. Haiku failed
+  the per-condition margin outright and is ineligible; Sonnet met every margin.
+- Validity: Haiku's errors were concentrated almost entirely in F, the strong repository-agent
+  baseline, so adopting it would have inflated the F-versus-G contrast the arm exists to examine.
+  That is the model-strength confound the control exists to prevent. Haiku was also the more
+  expensive setting, at 8.75M input tokens against 2.08M, so no cost argument favours it either.
+- Limitation: the control's sixteen G responses are byte-identical to the frozen arm's, so it
+  discriminated only through F and H, and its single annotator was an unblinded automated session.
+
+## 2026-09-20 — correct Claude-arm schema delivery to the out-of-band flag
+
+- Decision: deliver the answer schema through the Claude Code CLI's `--json-schema` flag rather
+  than through an adapter-appended prompt suffix; retire the 16 calls made under the suffix
+  revision and re-run the whole development control under the corrected adapter.
+- Evidence: the suffix revision failed on its own terms. Condition F of `e021 failure-cause`
+  answered in prose and could not be parsed, and appending text altered a prompt the freeze pins by
+  hash. `--json-schema` is the direct analogue of the Codex CLI's `--output-schema`, so the frozen
+  prompt now reaches the model byte-unchanged in both arms.
+- Validity: no sealed Claude call, annotation, or model selection existed when the defect was found,
+  so no result could have influenced the correction. `schema_delivery` is part of the
+  content-addressed request, so the change invalidates the old cache keys instead of silently
+  reusing stale answers. Retired results and their cache records are retained, never deleted.
+  Recorded as `manifests/study/provenance-claude-replication-arm-v1-amendment-1.json`.
+
+## 2026-09-20 — add a secondary Claude replication arm rather than amend the frozen study
+
+- Decision: re-run F/G/H over the nine retained sealed episodes with a Claude model as a separately
+  reported secondary arm, in physically separate output, cache, manifest, and annotation
+  namespaces. The frozen Luna study remains the primary record and is not amended.
+- Evidence: the sealed calls were made from a sandboxed Codex CLI session that is unavailable on the
+  current host, and new capture is impossible here (arm64 macOS, no Linux Unity player, no running
+  Docker daemon). Every input the model arm needs is retained, so the arm re-runs over
+  byte-identical evidence; the batch driver refuses to run unless each episode's
+  runtime-presentation and parity-audit hashes match the frozen result exactly.
+- Alternatives: amend the freeze to change its model, which would rewrite a study whose calls are
+  already sealed; or skip the arm, which would leave the host unable to contribute anything.
+- Validity: the arm adds no independent episodes. The same nine episodes under two model families
+  are not eighteen clusters and must never be pooled. Model family and agent harness are
+  confounded, so an arm difference cannot be attributed to model weights. No frozen file changed;
+  `analysis/test_freeze_integrity.py` verifies all 32 frozen hashes in amendment order.
+- RQ impact: provides descriptive sensitivity evidence for RQ4 — whether the F/G/H contrast
+  survives a change of model family — and nothing more. It does not relieve the unmet 40-episode
+  minimum.
+
+## 2026-09-20 — run the arm's own model-strength control instead of inheriting the frozen one
+
+- Decision: repeat the predeclared model-strength procedure within the Claude arm, comparing
+  `claude-sonnet-5` against `claude-haiku-4-5` at low effort over the same four development
+  episodes the frozen control used, and fix the selected setting before the first sealed Claude
+  call.
+- Evidence: the frozen design forbids giving G a stronger model than its baselines, and satisfied
+  that by a predeclared four-episode rule rather than by assertion. Inheriting Luna's selection
+  would carry no information about the Claude tiers.
+- Validity: eligibility is evaluated strictly within the Claude arm, so no cross-family equivalence
+  is claimed. Selection uses development episodes only. The single annotator is an unblinded
+  automated assistant session, which is weaker than the blinded dual annotation the sealed analysis
+  requires and is recorded as a limitation.
+
 ## 2026-09-19 — correct the exact pinned expected-status contract
 
 - Decision: supersede amendment 4's incomplete variable-name correction with the exact pinned
