@@ -1,0 +1,45 @@
+{
+  "schema": "crane-runtime-provenance-repilot/v1",
+  "status": "PREDECLARED_DEVELOPMENT_DIAGNOSTIC",
+  "created_before_execution": true,
+  "run_id": "land-nav-20260919-e043",
+  "split": "development-diagnostic-not-countable-sealed-test",
+  "purpose": "Measure whether the earlier F/G/H error pattern survives fair robot-visible exposure of the exact running Nav2 parameter file and launch identity.",
+  "configuration": {
+    "scene": "TurtleBot3 Warehouse Validation",
+    "platform": "turtlebot3-waffle-differential",
+    "command_flag": "--crane-ros-differential-cmd-vel",
+    "lidar_frame": "base_scan",
+    "seed_base": 1043,
+    "corridor_width_m": 4.5,
+    "corridor_length_m": 22.0,
+    "goal_distance_m": 4.0,
+    "blocker": "none",
+    "mobility_hold_after_fixed_simulation_s": 15.0,
+    "mobility_release_after_fixed_simulation_s": 27.0,
+    "fixture_delay_s": 15,
+    "action_duration_s": 45,
+    "worker_duration_s": 60,
+    "time_scale": 1.0,
+    "ros_domain_id": 83,
+    "ros_tcp_port": 10083
+  },
+  "robot_visible_treatment": "The runtime manifest exposes the exact parameter file and its content hash equally to F/G/H. The mobility intervention identity and timing remain evaluator-only.",
+  "questions": [
+    {
+      "kind": "recovery-mechanism",
+      "text": "Why did the robot enter recovery, and what happened next?"
+    },
+    {
+      "kind": "failure-cause",
+      "text": "What physical problem caused the controller failure?"
+    }
+  ],
+  "methods": ["F", "G", "H"],
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "low",
+  "sampling": "one call per condition/question, no retry or resampling",
+  "analysis_rule": "Annotate material error, source/causal overclaim, substantive coverage, and the existing 13 specificity units before study freeze. Report whether F or H promotes configured progress-checker semantics into the actual observed or physical cause.",
+  "outcome_rule": "Retain the episode and all calls regardless of navigation outcome. If no controller recovery occurs, report a failed scenario activation and do not rerun e043.",
+  "freeze_rule": "Do not lower the 15-point smallest practical F-to-G improvement or reduce the 40/50/60 episode targets in response to this single diagnostic. Use it only to revise whether the old pilot effect is plausible and to finalize the rubric/prompts."
+}

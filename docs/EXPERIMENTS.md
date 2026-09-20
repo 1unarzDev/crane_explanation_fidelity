@@ -1,5 +1,17 @@
 # Experiment Log
 
+## 2026-09-19 — fair-configuration provenance re-pilot predeclaration
+
+- **PREDECLARED/NOT_RUN:** e043 is one development-only recovery diagnostic using the calibrated
+  runtime manifest. It exposes the exact Nav2 parameter identity equally to F/G/H while keeping the
+  mobility intervention evaluator-only.
+- Fixed before execution: seed/configuration, two questions, F/G/H, `gpt-5.6-luna` low, one call,
+  no retry, existing material-error and 13-unit specificity rubric, and retention regardless of
+  outcome. If recovery does not activate, e043 is retained and not rerun.
+- Purpose: determine whether F/H still turn configured progress-checker semantics into an observed
+  or physical cause once the parameter file is fairly available. This diagnostic cannot lower the
+  15-point smallest practical effect or the 40/50/60 episode collection targets.
+
 ## 2026-09-19 — runtime-configuration provenance integration
 
 - **IMPLEMENTED:** `build_runtime_manifest.py` resolves the ROS image digest, installed Nav2 package
