@@ -1,5 +1,18 @@
 # Experiment Log
 
+## 2026-09-20 — sealed pn-0017 inclusion and model calls
+
+- **CAPTURED ONCE / INCLUDED:** frozen recovery-success row `pn-0017`, seed 3017, passed every
+  inclusion gate and the exact expected-success contract. The action succeeded after one unique
+  Wait invocation with 3.457 m displacement, 246 returned controller commands, 78 costmap
+  observations, maximum 13,514 occupied cells, and accepted 10/7-unit parity audits. No answer was
+  inspected for scoring before inclusion.
+- **SEALED MODEL CALLS RETAINED / NOT ANNOTATED:** both questions ran once for F/G/H with Luna-low:
+  six calls, no retries, 466,210 input tokens, 348,928 cached input tokens, 4,476 output tokens,
+  661 reasoning tokens, and 138.003 s aggregate latency. A–E remain non-model smoke outputs and
+  frozen model evaluation is `NOT_RUN`. Hashes and usage are retained in
+  `manifests/model_outputs/pn-0017-provenance-v1.json`.
+
 ## 2026-09-20 — sealed pn-0016 inclusion and model calls
 
 - **CAPTURED ONCE / INCLUDED:** frozen terminal-abort row `pn-0016`, seed 3016, passed every
