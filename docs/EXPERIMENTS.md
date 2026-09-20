@@ -3,9 +3,9 @@
 ## 2026-09-19 — runtime-configuration provenance integration
 
 - **IMPLEMENTED:** `build_runtime_manifest.py` resolves the ROS image digest, installed Nav2 package
-  versions, exact BT/parameter/harness hashes and Git objects, astro/CRANE checkout identities,
-  player/build/assembly hashes, and effective scene/command/LiDAR launch settings. It excludes
-  intervention identity/timing, expected outcome, and evaluator truth.
+  versions, exact BT/parameter/harness hashes and Git objects, umbrella/astro/CRANE checkout
+  identities, player/build/assembly hashes, and effective scene/command/LiDAR launch settings. It
+  excludes intervention identity/timing, expected outcome, and evaluator truth.
 - `run_land_capture.sh` builds the manifest before launch, mounts it read-only into the passive ROS
   capture, and requests byte-for-byte retention through the existing `--runtime-manifest` seam.
 - The shared F/G/H presentation verifies the retained manifest hash/run identity, exposes it to G/H,
@@ -15,8 +15,12 @@
   versions 1.3.12, parameter SHA `3851544a...cf0c3`, and BT SHA `14939b78...f48520`; all four source
   artifacts are byte-identical to the pinned `crane_ml` Git object. The player source commit remains
   unproven, as recorded.
-- Status: **IMPLEMENTED/UNIT-TESTED; LIVE CALIBRATION NOT_RUN**. The predeclared e041 calibration
-  must verify byte retention and no evaluator leakage before study freeze.
+- **INVALID/PRE-EXECUTION:** predeclared e041 stopped before Docker capture or Unity launch because
+  `argparse` rejected the dash-prefixed command-interface value when passed as a separate token.
+  Only evaluator-only `build-provenance.json` was created; no navigation outcome exists. The run is
+  retained and must not be rerun or counted.
+- Status: **IMPLEMENTED/UNIT-TESTED; LIVE CALIBRATION NOT_RUN**. The distinct predeclared e042
+  calibration must verify byte retention and no evaluator leakage before study freeze.
 
 ## 2026-09-19 — predeclared provenance model-strength control
 

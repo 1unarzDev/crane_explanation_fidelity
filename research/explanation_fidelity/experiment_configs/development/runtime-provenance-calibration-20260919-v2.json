@@ -1,0 +1,40 @@
+{
+  "schema": "crane-runtime-provenance-calibration/v1",
+  "status": "PREDECLARED_DEVELOPMENT_CALIBRATION",
+  "created_before_execution": true,
+  "run_id": "land-nav-20260919-e042",
+  "supersedes_invalid_pre_execution_run": "land-nav-20260919-e041",
+  "split": "development-calibration-not-countable-study-episode",
+  "purpose": "Verify that the known Nav2/runtime configuration is retained robot-visibly without leaking evaluator-only intervention or outcome truth before final-study freeze.",
+  "configuration": {
+    "scene": "TurtleBot3 Warehouse Validation",
+    "platform": "turtlebot3-waffle-differential",
+    "command_flag": "--crane-ros-differential-cmd-vel",
+    "lidar_frame": "base_scan",
+    "seed_base": 1042,
+    "corridor_width_m": 4.25,
+    "corridor_length_m": 22.0,
+    "goal_distance_m": 2.0,
+    "blocker": "none",
+    "mobility_hold_after_fixed_simulation_s": null,
+    "mobility_release_after_fixed_simulation_s": null,
+    "fixture_delay_s": 15,
+    "action_duration_s": 20,
+    "worker_duration_s": 40,
+    "time_scale": 1.0,
+    "ros_domain_id": 82,
+    "ros_tcp_port": 10082
+  },
+  "required_runtime_manifest": [
+    "container image reference, ID, and repo digest",
+    "installed Nav2 package versions",
+    "BT XML and Nav2 parameter file hashes plus exact Git commit/path relationship",
+    "umbrella capture/runtime-manifest builder and land/Nav2 harness hashes",
+    "umbrella, astro_dock, and crane_ml checkout identities",
+    "player/build/managed-assembly hashes and explicit source-commit limit",
+    "effective scene, command interface, and LiDAR frame without evaluator-only intervention values"
+  ],
+  "pass_rule": "Pass only if capture/manifest.json hashes capture/runtime_manifest.json exactly; all required fields are populated; all source artifacts are byte-identical to their declared Git objects; run IDs agree; the F/G/H presentation rebuild accepts; and forbidden evaluator keys or actual intervention/expected-outcome values are absent.",
+  "navigation_outcome_rule": "Retain and report navigation outcome, but do not tune or repeat e042 based on it; outcome is irrelevant to the provenance calibration pass.",
+  "next_step_rule": "Freeze the final provenance design only after this calibration passes. Diagnose a failure without rerunning e042."
+}

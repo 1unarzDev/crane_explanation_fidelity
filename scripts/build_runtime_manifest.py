@@ -89,6 +89,7 @@ def main() -> int:
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--run-id", required=True)
     parser.add_argument("--image", required=True)
+    parser.add_argument("--umbrella-checkout", required=True, type=Path)
     parser.add_argument("--crane-checkout", required=True, type=Path)
     parser.add_argument("--astro-checkout", required=True, type=Path)
     parser.add_argument("--nav2-params", required=True, type=Path)
@@ -107,6 +108,16 @@ def main() -> int:
 
     player_provenance = json.loads(args.player_provenance.read_text(encoding="utf-8"))
     artifacts = [
+        versioned_file(
+            args.umbrella_checkout / "scripts/run_land_capture.sh",
+            args.umbrella_checkout,
+            "capture_orchestrator",
+        ),
+        versioned_file(
+            args.umbrella_checkout / "scripts/build_runtime_manifest.py",
+            args.umbrella_checkout,
+            "runtime_manifest_builder",
+        ),
         versioned_file(args.bt_xml, args.crane_checkout, "behavior_tree_xml"),
         versioned_file(args.nav2_params, args.crane_checkout, "nav2_parameter_file"),
         versioned_file(
@@ -126,6 +137,7 @@ def main() -> int:
         "container_image": image_record(args.image),
         "ros_packages": ros_package_versions(args.image),
         "checkouts": {
+            "explanation_fidelity": checkout_record(args.umbrella_checkout),
             "crane_ml": checkout_record(args.crane_checkout),
             "astro_dock": checkout_record(args.astro_checkout),
         },

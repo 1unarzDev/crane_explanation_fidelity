@@ -63,6 +63,7 @@ python3 "${script_dir}/build_runtime_manifest.py" \
     --output "${runtime_manifest}" \
     --run-id "${run_id}" \
     --image "${image}" \
+    --umbrella-checkout "${workspace_root}" \
     --crane-checkout "${crane_dir}" \
     --astro-checkout "${astro_dir}" \
     --nav2-params "${nav2_params}" \
@@ -73,7 +74,7 @@ python3 "${script_dir}/build_runtime_manifest.py" \
     --nav2-profile "train-cpu" \
     --goal-distance-m "${CRANE_NAV2_GOAL_DISTANCE:-3.0}" \
     --action-duration-s "${CRANE_NAV2_ACTION_DURATION:-20}" \
-    --command-flag "${command_flag}" \
+    --command-flag="${command_flag}" \
     --lidar-frame "${lidar_frame}"
 
 bt_container="/workspace/crane_sim/${bt_xml#"${crane_dir}/"}"
