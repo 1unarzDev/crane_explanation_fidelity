@@ -14,6 +14,11 @@
   runtime/source hashes, two unique Wait invocations and complete recovery history, the predeclared
   abort family, populated costmaps, 10-unit recovery parity, 7-unit cause parity, and leakage scan.
   No answer output was inspected before inclusion.
+- **SEALED MODEL CALLS RETAINED / NOT ANNOTATED:** both questions ran once for F/G/H with Luna-low:
+  six calls, no retries, 594,977 input tokens, 429,312 cached input tokens, 4,821 output tokens,
+  846 reasoning tokens, and 177.068 s aggregate latency. A–E remain non-model smoke outputs and
+  frozen model evaluation is `NOT_RUN`. Hashes and usage are retained in
+  `manifests/model_outputs/pn-0004-provenance-v1.json`.
 
 ## 2026-09-19 — sealed pn-0003 inclusion and model calls
 
