@@ -1,16 +1,19 @@
 # Experiment Log
 
-## 2026-09-19 — sealed pn-0004 capture and exact contract correction
+## 2026-09-19 — sealed pn-0004 inclusion and exact contract correction
 
-- **CAPTURED ONCE / POSTPROCESSING PENDING:** frozen terminal-abort row `pn-0004`, seed 3004, ended
+- **CAPTURED ONCE / INCLUDED:** frozen terminal-abort row `pn-0004`, seed 3004, ended
   `aborted` after 33.648 s with 0.222 m displacement, 313 returned controller commands, 65 costmap
   observations, and maximum 9,228 occupied cells.
 - **REPEATED OUTER-SUMMARY DEFECT:** amendment 4 used `CRANE_EXPECT_NAV_STATUS`, but the pinned
   fixture reads `CRANE_EXPECTED_NAV_STATUS`. The capture therefore retained `valid=false` against a
   default success expectation even though its terminal result matches the frozen abort family.
 - **VALIDITY ACTION:** amendment 5 uses the exact source-read contract and cross-checks it in a
-  regression test. `pn-0004` is retained without rerun; zero episode-specific model calls or
-  annotations existed. Inclusion remains pending all frozen derivation and validation gates.
+  regression test. `pn-0004` was retained without rerun; zero episode-specific model calls or
+  annotations existed. The frozen validator then accepted matching goal/result identity, exact
+  runtime/source hashes, two unique Wait invocations and complete recovery history, the predeclared
+  abort family, populated costmaps, 10-unit recovery parity, 7-unit cause parity, and leakage scan.
+  No answer output was inspected before inclusion.
 
 ## 2026-09-19 — sealed pn-0003 inclusion and model calls
 
