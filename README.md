@@ -5,7 +5,12 @@ failures. This umbrella repository is the single reproducibility root for the TR
 submission (deadline: **October 4, 2026 AoE**). The central failure mode is fluent but unsupported
 language—not awkward wording.
 
-`robot decision/execution → retained evidence → checked propositions → language → final-text check`
+The intended contribution is an evidence- and source-provenance explanation method, not a generic
+robot adapter, graph store, logging format, or LLM wrapper. It links what the robot observed and
+did to the exact versioned program/configuration elements governing that behavior, distinguishes
+observation from inference, and checks what the final language actually claims.
+
+`runtime/physical evidence + exact source provenance → checked propositions → language → final-text check`
 
 ## Clone and initialize
 
@@ -25,9 +30,12 @@ their own location. Exact repository commits and destinations are recorded in
 ## Current status
 
 - **IMPLEMENTED, TESTED:** evidence records, checked answer plans, final-text verification,
-  deterministic fallback, Dock/Slalom regressions, terminal-status distinctions, and the A/B/C/D/E
-  harness, including recovery-mechanism, physical-cause, and unsupported-counterfactual plans
-  (25 tests).
+  deterministic fallback, Dock/Slalom regressions, terminal-status distinctions, bounded
+  runtime-to-source provenance, claim classes, and A–H benchmark routing (34 core tests).
+- **TESTED (DEVELOPMENT ONLY):** first provenance-linked A–H pilot on retained e037, with one
+  evidence-rich recovery-mechanism question and one evidence-limited physical-cause question.
+  Single-annotator review found one material provenance/mechanism error each for F and H and none
+  for G; two questions from one episode are diagnostic, not an effect estimate.
 - **TESTED:** ROS package tests, Jazzy build, live BT/action/harness capture, and exact BT retention.
 - **TESTED:** CRANE build, one valid aquatic terminal-success capture pilot, a graphics-free
   land/Ackermann success smoke with populated costmap snapshots, and a valid-as-expected land
@@ -57,6 +65,7 @@ their own location. Exact repository commits and destinations are recorded in
   was then validated on the retained replication. Three further predeclared independent
   configurations passed; a fourth is retained but excluded because it produced zero recoveries.
 - **NOT_RUN:** powered multi-seed final collection and sealed-test evaluation.
+- **NOT_RUN:** source-to-binary rebuild verification and a parity-frozen multi-episode F/G/H pilot.
 - **DEFERRED:** arbitrary-LLM proposition extraction until independently evaluated.
 
 ## CPU-only demo
@@ -130,6 +139,7 @@ delivered odometry proven controller consumption.
 - [Decision log](docs/DECISIONS.md)
 - [Environment requests](docs/ENVIRONMENT_REQUESTS.md)
 - [Reference-environment source audit](docs/research/REFERENCE_ENVIRONMENTS.md)
+- [Nav2 Jazzy recovery provenance audit](docs/research/NAV2_JAZZY_RECOVERY_PROVENANCE.md)
 
 ## Troubleshooting
 

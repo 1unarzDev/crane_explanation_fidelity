@@ -1,5 +1,26 @@
 # Decision Log
 
+## 2026-09-19 — make runtime-to-source provenance the central novelty
+
+- Decision: treat runtime/physical evidence and exact source/configuration evidence as separate
+  linked planes. Add strong generic repository-agent baselines F/H and make provenance-linked
+  checked method G the central novelty comparison. Integrate the temporary follow-up direction
+  into canonical architecture, study, benchmark, research, environment, and decision documents.
+- Evidence: the 18-episode development result has B at 0/109 material errors and D at 1/109, so the
+  current evidence does not support D superiority. Structured logs plus checking alone are also too
+  close to prior provenance/planning work. Exact runtime-to-source correspondence is both a sharper
+  contribution and an auditable distinction from “let a coding agent inspect the repository.”
+- Alternatives: continue collecting for A–E; deny source access to baselines; dump whole repositories
+  into all prompts; build a universal provenance graph. These either fail to test the novelty,
+  weaken the baseline, or consume deadline-critical collection time.
+- RQ impact: introduces RQ4 and shifts practical robustness to RQ5 while retaining RQ1–RQ3. The
+  first checkpoint is one complete A–H provenance-linked pilot, not hundreds of new episodes.
+- Validity risk: provenance could merely add privileged information or extra model calls. F/G/H
+  must use the same robot-visible episode, exact checkout, matched model/effort, no evaluator truth,
+  no resampling, and explicit cost/latency accounting.
+- Revisit: after the first pilot, inspect actual F/G/H disagreements before expanding schema or
+  resuming broad collection.
+
 ## 2026-09-19 — stop tuning static blockers for terminal recovery exhaustion
 
 - Decision: do not spend further instances tuning full/partial static blocker width or distance to

@@ -1,5 +1,25 @@
 # Environment Requests
 
+Validation is layered by scientific value:
+
+1. deterministic CPU-only microbenchmarks for exact reasoning and verifier regressions;
+2. a powered, high-throughput land/Nav2 study (BARN-like generation only if it is cheaper and more
+   reproducible than the existing corridor substrate);
+3. a small number of evidence-rich CRANE surface scenarios for ecological validation;
+4. underwater/aerial stress tests only where they add a distinct evidence/decision motif without
+   weakening the primary study.
+
+Scenes are requested for explanation motifs—contrastive selection, perception-conditioned
+branching, recovery, terminal failure, mission override, and evidence insufficiency—rather than to
+reproduce competitions. Before building geometry, test whether synthetic evidence, a generated
+scene, an existing benchmark, or an implemented CRANE environment can answer the same RQ.
+
+Every contract below must identify its RQ/motif, embodiment, exact explained decision/failure,
+robot-visible evidence, evaluator-only truth, manipulated and controlled variables, rule/guard,
+predicates, fault injection, deterministic reset/seed, telemetry/provenance, supported and
+deliberately unanswerable questions, independent-variant target, priority, and smallest adequate
+implementation.
+
 These contracts let environment work proceed in parallel without exposing evaluator truth to the
 explanation system. Build the smallest geometry that satisfies each contract. Do not add visual
 detail, new perception stacks, or competition semantics unless the contract requires them.
@@ -15,7 +35,7 @@ recovery exhaustion. Multi-seed reset/determinism and paired final-collection va
 - **Scientific purpose:** high-throughput primary benchmark for software-level recovery,
   termination, evidence sufficiency, and selective explanation. This is the powered study; it is
   not a claim about a new navigation policy.
-- **RQs:** RQ1–RQ4. It primarily exercises execution recovery (motif C), terminal failure (D), and
+- **RQs:** RQ1–RQ5. It primarily exercises execution recovery (motif C), terminal failure (D), and
   evidence insufficiency (F).
 - **Robot embodiment:** the validated CRANE TurtleBot3 Waffle-class differential body for the
   powered corridor study. Retain Ackermann/F1TENTH as embodiment-specific stress tests rather than

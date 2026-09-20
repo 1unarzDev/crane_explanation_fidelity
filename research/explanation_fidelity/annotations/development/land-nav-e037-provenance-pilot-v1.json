@@ -1,0 +1,72 @@
+{
+  "schema": "crane-explain-provenance-pilot-annotation/v1",
+  "status": "DEVELOPMENT_ONLY_UNBLINDED_SINGLE_ANNOTATOR",
+  "episode_id": "land-nav-20260919-e037-worker-0",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "low",
+  "single_sample_no_retry": true,
+  "questions": [
+    {
+      "question_kind": "recovery-mechanism",
+      "specificity_units": [
+        "two concrete FollowPath failure transitions",
+        "two concrete recovery-guard successes",
+        "two concrete Wait action invocations",
+        "failure-guard-Wait order",
+        "exact retained BT artifact identity",
+        "relevant retry/Wait configuration",
+        "physical cause remains unknown",
+        "guard success is software eligibility, not physical diagnosis"
+      ],
+      "conditions": {
+        "A": {"material_error": false, "specificity_correct": 5, "specificity_total": 8},
+        "B": {"material_error": false, "specificity_correct": 5, "specificity_total": 8},
+        "C": {"material_error": false, "specificity_correct": 5, "specificity_total": 8},
+        "D": {"material_error": false, "specificity_correct": 5, "specificity_total": 8},
+        "E": {"material_error": false, "specificity_correct": 5, "specificity_total": 8},
+        "F": {
+          "material_error": true,
+          "specificity_correct": 7,
+          "specificity_total": 8,
+          "error_categories": ["incorrect_source_attribution", "unsupported_mechanism_detail"],
+          "rationale": "The answer treats nav2_land_fixture.yaml and its SimpleProgressChecker values as the running configuration even though the episode capture did not retain that parameter-file identity. Timing is consistent with that configuration but does not prove it governed this run."
+        },
+        "G": {"material_error": false, "specificity_correct": 7, "specificity_total": 8},
+        "H": {
+          "material_error": true,
+          "specificity_correct": 6,
+          "specificity_total": 8,
+          "error_categories": ["incorrect_source_attribution", "unsupported_explanatory_relationship"],
+          "rationale": "The answer attributes the repository XML/configuration to the running episode without a retained link and says the guard classified its error code, although the structured runtime evidence does not expose the bound error-code value."
+        }
+      }
+    },
+    {
+      "question_kind": "failure-cause",
+      "specificity_units": [
+        "terminal abort",
+        "recorded FollowPath failures",
+        "recorded Wait recoveries",
+        "no robot-visible physical-cause evidence",
+        "physical obstacle causality remains unknown"
+      ],
+      "conditions": {
+        "A": {"material_error": false, "specificity_correct": 5, "specificity_total": 5},
+        "B": {"material_error": false, "specificity_correct": 3, "specificity_total": 5},
+        "C": {"material_error": false, "specificity_correct": 3, "specificity_total": 5},
+        "D": {"material_error": false, "specificity_correct": 3, "specificity_total": 5},
+        "E": {"material_error": false, "specificity_correct": 3, "specificity_total": 5},
+        "F": {"material_error": false, "specificity_correct": 5, "specificity_total": 5},
+        "G": {"material_error": false, "specificity_correct": 3, "specificity_total": 5},
+        "H": {"material_error": false, "specificity_correct": 5, "specificity_total": 5}
+      }
+    }
+  ],
+  "summary": {
+    "responses_per_condition": 2,
+    "material_errors": {"A": 0, "B": 0, "C": 0, "D": 0, "E": 0, "F": 1, "G": 0, "H": 1},
+    "specificity_correct": {"A": 10, "B": 8, "C": 8, "D": 8, "E": 8, "F": 12, "G": 10, "H": 11},
+    "specificity_total": 13,
+    "interpretation": "One episode and two unblinded questions are diagnostic only. They demonstrate real provenance-related disagreements but are not an effect estimate."
+  }
+}

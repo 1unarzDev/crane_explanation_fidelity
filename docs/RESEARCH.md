@@ -1,5 +1,14 @@
 # Research and benchmark source audit
 
+The versioned Nav2/Jazzy source-to-runtime audit is maintained separately at
+[`docs/research/NAV2_JAZZY_RECOVERY_PROVENANCE.md`](research/NAV2_JAZZY_RECOVERY_PROVENANCE.md).
+It records the exact upstream sources, package mapping, BT/config anchors, runtime semantics, and
+remaining source-to-binary gaps used by the provenance pilot. Its key methodological implication is
+that source access alone is not provenance: a mechanism claim needs a retained relationship from a
+runtime event to the exact governing artifact. It also establishes that Nav2
+`number_of_recoveries` counts recovery leaf invocations and that Jazzy `BehaviorTreeLog` may omit
+terminal-tick transitions; benchmark labels must name the count unit and scope completeness.
+
 Last primary-source check: 2026-09-19. This note records only claims checked against a paper, an official proceedings/venue page, or an authors' repository. Recommendations for this project are labelled as such; they are not claims made by the cited authors.
 
 ## Local CRANE land substrate (2026-09-19)

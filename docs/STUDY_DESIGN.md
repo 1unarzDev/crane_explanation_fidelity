@@ -5,18 +5,28 @@ marked **TBD-PILOT** are not yet frozen.
 
 ## Research questions and hypotheses
 
-- RQ1: structured versus information-matched prose evidence.
-- RQ2: checked plans/final verification versus direct generation and self-checking.
-- RQ3: useful partial answers and correct withholding under insufficient/contradictory evidence.
-- RQ4: trustworthiness at useful coverage, including matched-coverage comparisons.
-- RQ5 (exploratory): robustness across land, surface, underwater, and aerial embodiments when
-  enough data can be collected without weakening the powered primary land study.
+- RQ1 — **Representation:** with identical underlying evidence and the same generator, does
+  structured runtime/decision evidence improve trustworthiness over well-written prose logs?
+- RQ2 — **Verification:** do checked plans and final-text verification reduce unsupported claims,
+  incorrect details, false explanatory relationships, and causal overclaims versus direct
+  generation, retrieval-only generation, or LLM self-checking?
+- RQ3 — **Selective explanation:** under missing, contradictory, incomplete, or causally
+  insufficient evidence, can the system answer supported portions while correctly withholding the
+  rest?
+- RQ4 — **Evidence + source provenance:** does linking runtime/physical evidence to the exact
+  source/configuration governing observed behavior produce explanations that are more specific,
+  auditable, repeatable, and trustworthy than unrestricted repository-agent debugging?
+- RQ5 — **Practical robustness:** do improvements persist across realistic navigation/failure
+  scenarios and feasible robot embodiments without sacrificing useful coverage?
 
-Primary H1: method D reduces response-level material errors versus strong prose baseline A while
-maintaining useful substantive coverage. Secondary: B>A representation effect; D>B checking
-effect; D versus C native capture effect; D improves insufficient-evidence, contrastive, and
-causal-claim handling. E versus D tests whether LLM realization adds enough usefulness to justify
-its risk.
+Cross-domain evidence is a robustness/stress test, not architecture-independence evidence.
+
+The primary hypothesis and comparison remain **TBD-PILOT** until the provenance pilot exposes the
+actual F/G disagreement rate. Candidate primary H1 is that G reduces response-level material errors
+relative to strong repository-agent baseline F at non-inferior substantive coverage. The original
+A-versus-D hypothesis remains a representation/checking comparison rather than the novelty claim.
+Mechanistic secondary comparisons are B versus A, D versus B, D versus C, H versus G, D versus G,
+and E versus D.
 
 ## Conditions
 
@@ -25,21 +35,49 @@ its risk.
 - C: free text → extraction → checked generation.
 - D: native structure → checked plan → generation → output verification/fallback.
 - E: structure → deterministic checked template.
+- F: raw robot-visible episode evidence + exact repository checkout → generic read-only coding
+  agent, with no evaluator-only truth.
+- G: structured runtime/physical evidence + runtime-to-source anchors + bounded source retrieval →
+  checked plan → generation → final verification/fallback.
+- H: structured runtime evidence + exact repository checkout → unrestricted read-only repository
+  agent.
 
 Every episode is captured once. A/B information parity is audited proposition-by-proposition;
 neither format receives privileged facts. Model, decoding, system prompt, and answer prompt are
-identical for A/B. Calls are single-sample and cached with raw/final output, model/version,
+identical for A/B. F/G/H use matched model family and effort where their roles permit. G receives
+no evaluator truth, additional retry, or source fact unavailable to F/H through the exact checkout;
+its advantage is the retained runtime-to-source relationship and checking procedure. Calls are
+single-sample and cached with raw/final output, model/version,
 parameters, prompt hash, latency, tokens, cost, and verification result.
 
 ## Primary outcome
 
 A response has a material error if any substantive assertion is contradicted/unsupported, has an
-incorrect comparison/count/status, or makes an unjustified causal, counterfactual, or explanatory
-relationship. Primary unit: response. Annotation is blind to condition where formatting permits.
+incorrect comparison/count/status/source attribution, or makes an unjustified causal,
+counterfactual, or explanatory relationship. Primary unit: response. Annotation is blind to
+condition where formatting permits.
 
 Jointly report substantive answer coverage, full/partial/abstained proportions,
 answerable-information coverage, correct abstention, risk–coverage curves, and matched-coverage
-comparisons. Claim-level error categories are secondary. Fluency/preference is not correctness.
+comparisons. Also report unsupported/contradicted claims, evidence-citation precision/recall,
+numeric/detail and transition correctness, source-reference correctness, runtime/source
+correspondence, physical-evidence correctness, causal overclaim, qualification correctness, false
+acceptance/abstention, latency, cost, and repeatability. Claim-level error categories are
+secondary. Fluency/preference is not correctness.
+
+**Evidence specificity** is the proportion of relevant concrete answerable evidence units correctly
+exposed in a response. It prevents generic but safe answers from scoring like detailed supported
+answers. Its unit inventory and partial-credit rule are **TBD-PILOT** and must be frozen before the
+sealed test.
+
+## Model-strength control
+
+Development compares a small fixed grid of balanced/strong models at low/moderate reasoning on the
+same evidence and prompts. Select the least expensive configuration within a predeclared practical
+margin of the best on material errors, evidence specificity, coverage, causal overclaim, and
+source-reference correctness. Method comparisons must not give G a stronger model than baselines.
+A tiered stronger model for difficult source interpretation is adopted only if development evidence
+justifies it, and its calls/cost are counted.
 
 ## Units, split, and inclusion
 

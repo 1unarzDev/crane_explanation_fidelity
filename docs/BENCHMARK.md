@@ -7,9 +7,10 @@ Each opaque episode ID has two separately rooted artifacts:
 - robot-visible: evidence records and parity-matched prose;
 - evaluator-only: injection, ground truth, expected propositions, answerability, annotations.
 
-The visible schema contains provenance, completeness, decision-time candidates/policy/consumed
-inputs when known, BT/action execution events, unique recovery-attempt IDs, and later outcome. It
-never labels simulator truth as robot knowledge.
+The visible schema contains runtime and physical evidence, source provenance, completeness,
+decision-time candidates/policy/consumed inputs when known, BT/action execution events, unique
+action invocation IDs, and later outcome. It never labels simulator truth as robot knowledge.
+Large sensor artifacts are retained by hash/reference while compact auditable facts remain visible.
 
 ## Scenario taxonomy
 
@@ -21,14 +22,39 @@ failure; equivalent outcomes through different software mechanisms.
 ## Question taxonomy
 
 Factual execution, contrastive, failure attribution, temporal, alternative status, misleading
-premise, insufficient evidence, and unsupported counterfactual. Human-motivated families may be
-mapped from Wachowiak et al.; their question corpus is not treated as a fidelity ground truth.
+premise, insufficient evidence, unsupported counterfactual, evidence-rich, and evidence-composition
+questions. Evidence-rich questions require concrete identifiers, counts, timestamps, error codes,
+comparisons, and source/configuration references when supported. Evidence-composition questions
+require multiple planes, such as observation + controller result + BT transition + source
+semantics. Human-motivated families may be mapped from Wachowiak et al.; their question corpus is
+not treated as a fidelity ground truth.
+
+Evidence-limited and false-premise questions are equally important. Examples ask for an unknown
+physical cause, why a measurement was wrong without ground truth, whether an alternate path would
+definitely succeed, two failed retries when only one invocation is recorded, or a rejection reason
+for a candidate never evaluated. The correct response separates observed, derived, source-defined,
+and unknown content; adding “probably” does not license an unsupported cause.
 
 ## Gold proposition format
 
-Each proposition records text-independent predicate/arguments, support status, required/forbidden
-evidence IDs, derivation, temporal scope, evidence level, assumptions, material-error category,
-and answerability. Counts distinguish `at least N recorded` from `exactly N occurred`.
+Each proposition records text-independent predicate/arguments, claim class, support status,
+required/forbidden runtime evidence IDs, source-anchor IDs, derivation, temporal scope, evidence
+level, assumptions, material-error category, answerability, and concrete specificity units. Counts
+name their unit and distinguish `at least N recorded` from `exactly N occurred`.
+
+## Conditions and scoring
+
+Conditions A–H are specified in `STUDY_DESIGN.md`. In particular, F is a strong generic read-only
+coding-agent baseline, G is the provenance-linked checked method, and H isolates bounded provenance
+from unrestricted repository access. Central novelty comparisons are F versus G, H versus G, and D
+versus G; A–E remain necessary mechanistic controls.
+
+Score response-level material error jointly with substantive and answerable-information coverage.
+Secondary scoring includes evidence-citation precision/recall, evidence specificity, source
+reference correctness, runtime/source correspondence, physical-evidence correctness, count/order
+correctness, causal overclaim, qualification, false acceptance/abstention, risk–coverage, latency,
+cost, and repeatability. Generic safe language earns only the concrete evidence units it actually
+and correctly communicates.
 
 ## Mandatory regression suite
 

@@ -1,5 +1,42 @@
 # Experiment Log
 
+## 2026-09-19 — first provenance-linked A–H development pilot
+
+- Episode: retained `land-nav-20260919-e037-worker-0`; no simulator rerun. Robot-visible input is
+  the original passive capture. Evaluator-only truth remained outside both agent workspaces.
+- Provenance audit: captured `behavior_tree.xml`, capture-manifest hash, current file, and exact
+  `crane_ml` Git object at `c559932a5ebef00bfa7752511799fd904e5c9dbe` are byte-identical
+  (`14939b78...`). The bounded anchor is the smallest `NavigateRecovery` subtree containing the
+  observed `FollowPath`, `WouldAControllerRecoveryHelp`, and `Wait` nodes.
+- Implementation: added typed source artifacts/anchors/runtime links, bounded validation/resolution,
+  claim classes, A–H routing, BT provenance construction, runtime-manifest retention for future ROS
+  captures, and checked mechanism promotion only under full strong link coverage.
+- Questions: one evidence-rich recovery-mechanism question and one evidence-limited physical-cause
+  question. A–E reuse the retained single-sample e037 outputs; F/G/H use `gpt-5.6-sol`, low effort,
+  one call per condition/question, no repair/resampling. F/H had isolated exact-repository
+  workspaces with only allowed robot-visible evidence. G had the bounded source context and plan.
+- New model calls: 6; input/cached/output/reasoning tokens 477,964 / 361,216 / 5,237 / 918;
+  aggregate latency 160.147 s; provider did not report monetary cost.
+- Development-only annotation: F and H each made one material error on the evidence-rich question;
+  G made none and fell back after strict verification rejected both free paraphrases. F treated an
+  unsealed parameter YAML as the running configuration. H additionally described the unobserved
+  bound error-code semantics as established. All conditions correctly withheld physical-obstacle
+  causality on the evidence-limited question.
+- Evidence specificity across 13 question-specific units: A 10, B/C/D/E 8 each, F 12, G 10, H 11.
+  This shows the intended risk–specificity tension but is not an effect estimate.
+- Retained manifests:
+  `manifests/data/land-nav-20260919-e037.provenance-pilot-v1.robot-visible.json` and
+  `manifests/model_outputs/land-nav-e037-provenance-pilot-v1.json`.
+- Provenance gaps: e037 did not seal the Nav2 image digest, installed package inventory, parameter
+  file identity, launch argv/environment, or a rebuild-verified source-to-binary mapping. The
+  whole-BT log remains incomplete under audited Jazzy/Nav2 logger semantics. Physical cause and
+  precise consumed sensor inputs remain unproven.
+- Validity threat: F raw logs contain more low-level observations than the current G/H structured
+  record. Before a multi-episode pilot, freeze an information-unit audit for F/G/H and ensure G's
+  structured view retains every answer-relevant robot-visible fact available to F.
+- Next action: strengthen the structured pilot record and runtime manifest, then run a small
+  parity-audited multi-episode F/G/H development set before resuming large episode collection.
+
 ## 2026-09-19 — predeclared balanced batch e028–e031
 
 - Configuration was committed and pushed before execution as

@@ -23,18 +23,39 @@ Decision-time evidence and later outcomes are physically separate fields. Changi
 cannot change a decision rationale. Candidate state distinguishes selected, evaluated/rejected,
 infeasible, known-not-considered, and unknown. `not_considered` is used only when recorded.
 
+The method has two separate evidence planes:
+
+- **runtime/physical evidence:** decisions, candidate states/scores, BT transitions, action
+  results, unique action/recovery invocations, timestamps, poses, paths, observations, commands,
+  and explicit completeness gaps;
+- **source evidence:** the exact code, BT XML, policy, and configuration governing a runtime event,
+  identified by repository/commit or package version, artifact content hash, file, symbol or XML
+  locator, bounded source span, and relevant configuration keys.
+
+A nearby topic sample is not automatically a consumed decision input. A plausible function found
+in a repository is not automatically the function that governed an observed event. Both
+relationships require retained provenance, and unresolved provenance remains explicit.
+
 ## Evidence flow
 
 1. CRANE/run harness supplies episode, run, tick, sensor/observation identity, and explicit client
    cancellation/deadline events.
 2. The ROS observer records Nav2 action goal/feedback/result and BT status transitions, plus the
    exact BT XML/version. It does not infer internal consumption from nearby topic values.
-3. The core validates identity, chronology, completeness, candidate, and policy invariants.
-4. Reasoning constructs claims with evidence IDs, derivation, temporal scope, assumptions, support
-   status, and evidence level.
-5. A realizer emits language; the verifier checks final sentences. Unverified language falls back
-   to templates.
-6. Evaluation compares responses with evaluator-only truth stored outside all model-visible paths.
+3. A provenance resolver follows runtime anchors to exact retained artifacts. It retrieves the
+   defining node/symbol/configuration first, then directly relevant parents/callers only as needed;
+   unrestricted repository search is a separately evaluated baseline.
+4. The core validates identity, chronology, completeness, candidate, policy, artifact hash, source
+   anchor, and runtime-to-source link invariants.
+5. Reasoning constructs claims with evidence IDs, source-anchor IDs, derivation, temporal scope,
+   assumptions, support status, and claim class.
+6. A realizer emits language; the verifier checks final sentences against both evidence planes.
+   Unverified language falls back to templates.
+7. Evaluation compares responses with evaluator-only truth stored outside all model-visible paths.
+
+The source retrieval order is runtime event → exact source/configuration anchor → minimal
+relevant span → directly relevant parent/caller/configuration → broader search only when the
+bounded context is demonstrably insufficient. Every retrieved span is retained for audit.
 
 The validated CRANE aquatic fixture must retain a real windowed Vulkan render loop: HDRP water
 queries are not valid under `-batchmode` or `-nographics`. The `train-gpu` profile disables
@@ -64,12 +85,25 @@ input.
 
 The initial submission targets levels 1–2. Temporal succession is not physical causation.
 
+Claims also carry an orthogonal semantic class:
+
+- `OBSERVED`: direct runtime or physical evidence;
+- `DERIVED`: deterministic calculation or ordering over evidence;
+- `SOURCE_DEFINED`: exact running code/configuration establishes the stated behavior;
+- `MECHANISM_SUPPORTED`: runtime evidence and source semantics jointly establish the mechanism;
+- `HYPOTHESIS`: plausible but unestablished diagnosis;
+- `INTERVENTION_SUPPORTED`: a controlled intervention demonstrates the stated effect.
+
+The initial study targets the first four classes. A hypothesis must never be silently promoted to
+a factual or causal explanation.
+
 ## Boundaries
 
 - **CRANE:** simulation truth, episode identity, observations, action application, later outcomes.
 - **Nav2:** planner/controller/behavior/BT execution. BT transitions show software mechanism.
 - **ROS capture:** passive serialization only; it must not rewrite history or invent consumption.
-- **Core:** schema, validation, checked reasoning, answerability, generation policy, verification.
+- **Core:** schema, bounded provenance resolution, validation, checked reasoning, answerability,
+  generation policy, and verification.
 - **LLM:** optional realization/extraction component, never the trust boundary.
 - **Evaluator truth:** fault injection and gold propositions, inaccessible to explanation methods.
 
