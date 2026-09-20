@@ -92,7 +92,7 @@ separate, deliberate step.
 - A historical primary-arm packet is present at
   `model_outputs/annotation_packets/sealed-luna-v1/packet.jsonl` with 54 responses, but its
   evaluator-only key is not present on this checkout. It is not usable for condition joins or
-  adjudicated analysis and predates the 30 responses from `pn-0010` through `pn-0014`. Generate a
+  adjudicated analysis and predates the 36 responses from `pn-0010` through `pn-0015`. Generate a
   new complete packet/key pair together with the provider-neutral command above before annotation;
   do not invent or reconstruct the missing HMAC key.
 - The selected Claude-family sealed replication is `NOT_RUN`, so no secondary-arm sealed packet
