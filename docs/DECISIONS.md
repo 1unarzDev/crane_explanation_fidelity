@@ -1,5 +1,30 @@
 # Decision Log
 
+## 2026-09-20 — retain failed model calls outside the answer cache
+
+- Decision: a model call that produces no parsed answer is never written to the content-addressed
+  answer cache. It is retained under `_retained_failed_calls/` in the same cache root, and the
+  adapter raises. A cache hit is validated before it is returned, so a stored failure or a violated
+  read-only workspace contract is stated rather than replayed. Recorded as arm amendment 3.
+- Evidence: the sealed Claude batch stopped at `pn-0004 failure-cause`. Its condition-H call
+  returned a Claude Code CLI envelope with `is_error`, `terminal_reason = api_error`,
+  `api_error_status = 429`, and an account spend-limit notice in place of a response. The adapter
+  cached that envelope and the resumed batch then failed while reading the absent answer, so the
+  arm could never have reached 18 envelopes no matter how often it was resumed.
+- Alternatives: delete the record, which destroys evidence that a paid provider call occurred;
+  leave it cached, which reports a quota notice as a condition-H response and strands the arm at 17
+  of 18 envelopes; or hand-write the missing envelope, which fabricates a result.
+- Why this is not resampling: the frozen single-sample/no-retry rule protects against resampling an
+  answer or repairing language. The 429 call produced no answer at all. No answer text was
+  inspected, compared, or selected against, and a re-call cannot be conditioned on content that does
+  not exist. Re-calling after a transport failure is the same act as making the call the first time.
+  A successful call remains cached and is still never re-called.
+- Validity: no prompt, model, effort, episode, condition, evidence hash, or schema delivery changed,
+  and no frozen file was touched; `analysis/test_freeze_integrity.py` still verifies every frozen
+  hash. The failed call's real provider cost and tokens are reported separately and are excluded
+  from response counts, specificity, and every scored summary. Unlike amendments 1 and 2, this
+  correction was made during sealed collection rather than before it.
+
 ## 2026-09-20 — define replication around a provider-neutral call contract
 
 - Decision: treat model configuration, provider adapter, agent harness, and explanation condition
