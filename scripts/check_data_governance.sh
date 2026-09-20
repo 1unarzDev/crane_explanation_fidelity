@@ -6,7 +6,7 @@ workspace_root="$(cd "${script_dir}/.." && pwd)"
 
 violations="$(git -C "${workspace_root}" ls-files \
     'data/robot_visible/**' 'data/evaluator_only/**' \
-    | grep -Ev '(^data/(robot_visible|evaluator_only)/\.gitkeep$)' || true)"
+    | grep -Ev '(^data/(robot_visible|evaluator_only)/(\.gitkeep|[^/]+\.dvc)$)' || true)"
 if [[ -n "${violations}" ]]; then
     echo "Raw governed data is tracked by Git:" >&2
     echo "${violations}" >&2

@@ -3,6 +3,7 @@ __pycache__/
 .pytest_cache/
 .ruff_cache/
 .venv/
+.env
 dist/
 build/
 *.egg-info/
@@ -12,8 +13,10 @@ research/explanation_fidelity/model_cache/
 # Governed data never enters Git. Keep only sentinels and documentation.
 data/robot_visible/**
 !data/robot_visible/.gitkeep
+!data/robot_visible/*.dvc
 data/evaluator_only/**
 !data/evaluator_only/.gitkeep
+!data/evaluator_only/*.dvc
 data/staging/
 artifacts/
 /model_outputs/

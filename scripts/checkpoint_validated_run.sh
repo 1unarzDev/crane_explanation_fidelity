@@ -30,6 +30,12 @@ fi
 "${script_dir}/build_data_manifest.py" --root "${evaluator_directory}" \
     --output "${evaluator_manifest}" --provenance "validated evaluator-only run ${run_id}"
 
+if ! command -v dvc >/dev/null 2>&1; then
+    echo "DVC is required to checkpoint governed payloads; see docs/DATA_STORAGE.md" >&2
+    exit 1
+fi
+"${script_dir}/update_dvc_tracking.sh"
+
 python3 - "${workspace_root}" <<'PY'
 import json, subprocess, sys
 from pathlib import Path
@@ -78,10 +84,14 @@ PY
 
 git -C "${workspace_root}" add .gitmodules packages/astro_dock packages/crane_ml \
     manifests/workspace.lock.json "${robot_manifest}" "${evaluator_manifest}" \
-    "manifests/checkpoints/${run_id}.json"
+    "manifests/checkpoints/${run_id}.json" \
+    data/robot_visible/dev.dvc data/robot_visible/final.dvc \
+    data/evaluator_only/dev.dvc data/evaluator_only/final.dvc \
+    model_outputs.dvc research/explanation_fidelity/model_cache.dvc
 
 staged_data="$(git -C "${workspace_root}" diff --cached --name-only -- \
-    data/robot_visible data/evaluator_only)"
+    data/robot_visible data/evaluator_only \
+    | grep -Ev '(^data/(robot_visible|evaluator_only)/(\.gitkeep|[^/]+\.dvc)$)' || true)"
 if [[ -n "${staged_data}" ]]; then
     echo "Refusing checkpoint because governed data is staged: ${staged_data}" >&2
     exit 1
