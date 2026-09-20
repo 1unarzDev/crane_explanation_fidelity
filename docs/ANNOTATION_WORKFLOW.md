@@ -95,8 +95,12 @@ separate, deliberate step.
   adjudicated analysis and predates the 72 responses from `pn-0010` through `pn-0021`. Generate a
   new complete packet/key pair together with the provider-neutral command above before annotation;
   do not invent or reconstruct the missing HMAC key.
-- The selected Claude-family sealed replication is `NOT_RUN`, so no secondary-arm sealed packet
-  exists yet.
+- The selected Claude-family sealed replication is **collected**: 18 envelopes and 54 model-condition
+  responses over `pn-0001`–`pn-0009`. Build its blinded packet with `--arm
+  claude=model_outputs/replication-claude` into `sealed-claude-v1`, one arm per packet, because the
+  Claude response format can reveal the provider and harness. Note that 16 of its 18 G responses are
+  the deterministic checked template; byte-identical G text across arms must receive identical
+  labels.
 - **Annotation itself is `NOT_RUN`.** No primary-arm sealed response has been scored, and no sealed
   effect estimate exists.
 - The development model-strength controls are separate: unblinded, single-annotator, and

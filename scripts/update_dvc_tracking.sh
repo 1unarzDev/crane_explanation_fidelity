@@ -10,8 +10,9 @@ dvc add \
     data/robot_visible/final \
     data/evaluator_only/dev \
     data/evaluator_only/final \
+    data/evaluator_only/annotation_keys \
     model_outputs \
     research/explanation_fidelity/model_cache
 
 python3 scripts/check_dvc_r2_budget.py --operation push
-echo "DVC pointers refreshed. Review and commit the six .dvc files before or with the run checkpoint."
+echo "DVC pointers refreshed. Review and commit the seven .dvc files before or with the run checkpoint."

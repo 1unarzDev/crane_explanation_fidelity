@@ -1,5 +1,38 @@
 # Experiment Log
 
+## 2026-09-20 — sealed Claude-family replication arm completed
+
+- **SEALED SECONDARY-ARM CALLS RETAINED / NOT ANNOTATED:** the declared nine-episode Claude
+  replication over `pn-0001`–`pn-0009` is complete. Eighteen result envelopes exist, two questions
+  per episode, each containing exactly one physical call for F, G, and H: **54 physical calls, 54
+  unique cache keys, no retry and no resampling**. Every envelope reports
+  `status = CLAUDE_ARM_SECONDARY_REPLICATION`, `single_sample_no_retry = true`,
+  `evaluator_truth_available_to_methods = false`, `read_only_workspace_verified = true`, accepted
+  information parity, `claude-sonnet-5` at low effort, and pinned commit
+  `c559932a5ebef00bfa7752511799fd904e5c9dbe`. No sealed answer text was opened or summarized.
+- Resource totals across the 54 calls: 4,176,634 input tokens, 3,511,517 cached input tokens,
+  74,953 output tokens, 1,783 reasoning output tokens, 944.116 s aggregate latency, and $4.1116
+  provider-reported cost. Cost is reported for this arm only; the primary ChatGPT-login arm never
+  reported it, so no cross-arm cost comparison is valid.
+- Condition G used its deterministic checked-template fallback on 16 of 18 responses — 9/9
+  recovery-mechanism and 7/9 failure-cause — after the single generated realization failed final-text
+  verification. Two failure-cause realizations were accepted. No repair call was made and no
+  verification failure was prompt-tuned away.
+- Artifact hashes and usage are retained in
+  `manifests/model_outputs/provenance-claude-replication-arm-v1.json`. All 72 manifest artifacts —
+  18 envelopes plus 54 cache records — were independently re-hashed and matched on byte length and
+  SHA-256.
+- **Infrastructure failure retained, not scored:** one earlier condition-H call for `pn-0004
+  failure-cause` returned a Claude Code CLI `is_error` envelope with `api_error_status = 429` and an
+  account spend-limit notice in place of a response. It produced no parsed answer, cost $0.0472168,
+  and is retained under
+  `research/explanation_fidelity/model_cache/claude-replication-v1/_retained_failed_calls/`. It is
+  excluded from the 54-call shape, the manifest, and every summary. The adapter previously wrote such
+  a record into the answer cache, which made the call permanently unrepeatable; see arm amendment 3.
+- The arm reuses retained episodes and therefore contributes **zero** new independent clusters. It
+  does not relieve the unmet 40-episode primary minimum, which stands at 21 included episodes.
+  Annotation is `NOT_RUN` and no cross-family effect estimate exists.
+
 ## 2026-09-20 — sealed pn-0021 inclusion and model calls
 
 - **CAPTURED ONCE / INCLUDED:** frozen recovery-success row `pn-0021`, seed 3021, passed every

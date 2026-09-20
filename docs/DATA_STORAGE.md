@@ -8,6 +8,7 @@ bucket through its S3-compatible endpoint.
 
 - `data/robot_visible/{dev,final}`
 - `data/evaluator_only/{dev,final}`
+- `data/evaluator_only/annotation_keys`
 - `model_outputs`
 - `research/explanation_fidelity/model_cache`
 
@@ -81,7 +82,7 @@ refreshing and pushing a snapshot.
 # Refresh pointers after the validated run/model batch is complete.
 scripts/update_dvc_tracking.sh
 
-# Review the six changed pointer files, then upload exactly that snapshot.
+# Review the seven changed pointer files, then upload exactly that snapshot.
 git diff -- data/robot_visible/*.dvc data/evaluator_only/*.dvc \
   model_outputs.dvc research/explanation_fidelity/model_cache.dvc
 scripts/dvc_r2_sync.sh push
@@ -116,7 +117,7 @@ scripts/dvc_r2_sync.sh status
 scripts/dvc_r2_sync.sh pull
 ```
 
-The pull restores only the six governed roots listed above. It intentionally does not restore
+The pull restores only the seven governed roots listed above. It intentionally does not restore
 `data/staging/`, `artifacts/`, ROS bags outside those roots, model weights, build products, or every
 other file ignored by Git.
 

@@ -6,7 +6,8 @@ Claude-family arm is the first worked instance. Its authoritative declaration an
 
 - `manifests/study/provenance-claude-replication-arm-v1.json`;
 - `manifests/study/provenance-claude-replication-arm-v1-amendment-1.json`;
-- `manifests/study/provenance-claude-replication-arm-v1-amendment-2.json`.
+- `manifests/study/provenance-claude-replication-arm-v1-amendment-2.json`;
+- `manifests/study/provenance-claude-replication-arm-v1-amendment-3.json`.
 
 Those immutable records govern where they differ from this living operational document.
 
@@ -148,8 +149,27 @@ byte-identical to the primary arm, so selection discriminated only through F and
 were unblinded and produced by one automated development annotator; they are configuration-selection
 evidence, not an RQ4 result.
 
-The selected sealed Claude replication remains **NOT_RUN**. No Claude sealed answer has been
-scored, and no cross-family effect estimate exists.
+The selected sealed Claude replication is **COLLECTED / NOT_ANNOTATED**. Eighteen result
+envelopes over `pn-0001`–`pn-0009` hold 54 physical calls with 54 unique cache keys, one per
+condition and question, with no retry or resampling. Every envelope reports the required arm status,
+single-sample rule, absent evaluator truth, verified read-only workspace, accepted parity, the
+selected model and effort, and the pinned commit. Totals are 4,176,634 input tokens, 3,511,517
+cached input tokens, 74,953 output tokens, 1,783 reasoning output tokens, 944.116 s aggregate
+latency, and $4.1116 provider-reported cost, retained in
+`manifests/model_outputs/provenance-claude-replication-arm-v1.json`.
+
+Condition G fell back to its deterministic checked template on 16 of 18 responses, so most G text in
+this arm is a pure function of the plan rather than a model realization. Byte-identical G responses
+across arms must receive identical labels, which further concentrates the arm's model-family
+sensitivity in F and H.
+
+One condition-H call for `pn-0004 failure-cause` first returned a CLI `is_error` envelope carrying
+`api_error_status = 429` and an account spend-limit notice. It produced no answer, is retained under
+the cache root's `_retained_failed_calls/`, and is excluded from the 54-call shape and every
+summary; its $0.0472168 cost is real and reported separately. Amendment 3 records the adapter
+correction that keeps such a failure out of the content-addressed answer cache.
+
+No Claude sealed answer has been scored, and no cross-family effect estimate exists.
 
 ## Commands
 

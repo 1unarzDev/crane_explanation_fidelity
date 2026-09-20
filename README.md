@@ -86,9 +86,13 @@ their own location. Exact repository commits and destinations are recorded in
   and no sealed effect estimate has been calculated.
 - **TESTED (SECONDARY-ARM DEVELOPMENT):** the provider-neutral model-call contract now has a
   Claude Code adapter as its first non-GPT instance. A predeclared control rejected Haiku and fixed
-  `claude-sonnet-5` at low effort. The sealed nine-episode replication is `NOT_RUN`; it adds no
-  independent episodes and does not amend the primary freeze. See
-  [model-family replication](docs/MODEL_FAMILY_REPLICATION.md).
+  `claude-sonnet-5` at low effort. See [model-family replication](docs/MODEL_FAMILY_REPLICATION.md).
+- **COLLECTED, NOT_ANNOTATED (SECONDARY ARM):** the sealed nine-episode Claude replication over
+  `pn-0001`–`pn-0009` retained 18 result envelopes and 54 one-shot calls with accepted parity, a
+  verified read-only workspace, and no retry or resampling. G used its deterministic checked template
+  on 16 of 18 responses. It reuses retained episodes, so it adds **zero** independent clusters, does
+  not amend the primary freeze, and does not relieve the 40-episode minimum. No sealed Claude answer
+  has been scored and no cross-family effect estimate exists.
 - **IMPLEMENTED, TESTED:** blinded response packaging and dual-annotator adjudication tooling
   implementing `docs/ANNOTATION_GUIDE.md`. Scoring itself remains `NOT_RUN`.
 - **NOT_RUN:** blinded dual annotation, final statistics/figures, and final A–E model evaluation.
