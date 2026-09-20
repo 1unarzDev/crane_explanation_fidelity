@@ -36,7 +36,12 @@ def key_findings(value: Any, source: Path, prefix: str = "") -> list[str]:
         for key, child in value.items():
             location = f"{prefix}.{key}" if prefix else key
             normalized = key.lower().replace("-", "_")
-            if any(part in normalized for part in FORBIDDEN_KEY_PARTS):
+            safe_negative_attestation = (
+                normalized == "evaluator_truth_available_to_methods" and child is False
+            )
+            if not safe_negative_attestation and any(
+                part in normalized for part in FORBIDDEN_KEY_PARTS
+            ):
                 findings.append(f"{source}:{location}")
             findings.extend(key_findings(child, source, location))
     elif isinstance(value, list):

@@ -1,5 +1,15 @@
 # Decision Log
 
+## 2026-09-19 — correct leakage-gate false positive before model calls
+
+- Decision: allow the exact audit field `evaluator_truth_available_to_methods=false`; continue to
+  reject it when true and reject all evaluator payload keys/paths. Revalidate retained `pn-0001`
+  without rerunning it.
+- Evidence: the frozen gate rejected only two parity-audit negative attestations after every other
+  inclusion check passed. They disclose absence, not evaluator truth.
+- Validity: one sealed capture existed, but zero sealed model calls or annotations existed. Record a
+  second amendment and do not inspect model output before resealing the gate.
+
 ## 2026-09-19 — pre-collection freeze amendment for sealed execution
 
 - Decision: before collecting `pn-0001`, amend the operational freeze to select physically separate

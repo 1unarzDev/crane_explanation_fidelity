@@ -1,0 +1,12 @@
+{
+  "schema": "crane-provenance-study-freeze-amendment/v1",
+  "status": "POST_CAPTURE_PRE_MODEL_CALL_GATE_CORRECTION",
+  "amends": "manifests/study/provenance-study-freeze-v1-amendment-1.json",
+  "sealed_episodes_captured_before_amendment": 1,
+  "sealed_model_calls_before_amendment": 0,
+  "sealed_annotations_before_amendment": 0,
+  "reason": "The frozen leakage scanner treated the explicit false attestation evaluator_truth_available_to_methods=false as evaluator leakage.",
+  "scientific_design_changed": false,
+  "decision": "Permit only that exact key when and only when its JSON value is false. Continue to reject the key when true and all evaluator-truth payload keys or paths.",
+  "episode_handling": "Do not rerun pn-0001. Reapply the corrected gate to the retained packet before inclusion and before any model call."
+}

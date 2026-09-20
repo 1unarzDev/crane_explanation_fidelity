@@ -70,3 +70,16 @@ def test_leakage_scanner_rejects_forbidden_json_key(tmp_path: Path) -> None:
     )
     assert completed.returncode != 0
     assert "fault_injection" in completed.stderr
+
+
+def test_leakage_scanner_accepts_negative_evaluator_truth_attestation(tmp_path: Path) -> None:
+    (tmp_path / "audit.json").write_text(
+        json.dumps({"evaluator_truth_available_to_methods": False})
+    )
+    completed = subprocess.run(
+        (str(ROOT / "analysis/scan_robot_visible_leakage.py"), str(tmp_path)),
+        check=False,
+        capture_output=True,
+        text=True,
+    )
+    assert completed.returncode == 0, completed.stderr
