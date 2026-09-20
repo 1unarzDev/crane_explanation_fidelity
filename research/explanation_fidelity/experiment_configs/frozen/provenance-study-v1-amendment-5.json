@@ -1,0 +1,18 @@
+{
+  "schema": "crane-provenance-study-freeze-amendment/v1",
+  "status": "POST_FOURTH_CAPTURE_BEFORE_PN0004_MODEL_CALLS",
+  "amends": "manifests/study/provenance-study-freeze-v1-amendment-4.json",
+  "sealed_episodes_captured_before_amendment": 4,
+  "sealed_episodes_included_before_amendment": 3,
+  "sealed_model_calls_before_amendment": 18,
+  "sealed_annotations_before_amendment": 0,
+  "reason": "Amendment 4 changed the wrapper to CRANE_EXPECT_NAV_STATUS, but direct inspection of the pinned fixture shows it consumes CRANE_EXPECTED_NAV_STATUS. pn-0004 therefore reproduced the terminal-family outer-summary mismatch.",
+  "scientific_design_changed": false,
+  "capture_dynamics_changed": false,
+  "prompts_or_model_behavior_changed": false,
+  "changes": [
+    "Use the exact CRANE_EXPECTED_NAV_STATUS name read by the pinned fixture.",
+    "Test the wrapper contract against the pinned fixture source rather than an independently repeated string.",
+    "Retain pn-0002 and pn-0004 without rerun; preserve their incorrect outer valid flags and apply the frozen inclusion validator to retained evidence."
+  ]
+}

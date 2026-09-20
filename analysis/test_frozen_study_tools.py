@@ -87,5 +87,10 @@ def test_leakage_scanner_accepts_negative_evaluator_truth_attestation(tmp_path: 
 
 def test_frozen_runner_uses_fixture_expected_status_contract() -> None:
     runner = (ROOT / "scripts/run_frozen_provenance_episode.py").read_text(encoding="utf-8")
-    assert '"CRANE_EXPECT_NAV_STATUS"' in runner
+    fixture = (
+        ROOT / "packages/crane_ml/Tools/Performance/run_nav2_controller_fixture.sh"
+    ).read_text(encoding="utf-8")
+    assert '"CRANE_EXPECTED_NAV_STATUS"' in runner
+    assert "${CRANE_EXPECTED_NAV_STATUS:-succeeded}" in fixture
+    assert '"CRANE_EXPECT_NAV_STATUS"' not in runner
     assert '"CRANE_EXPECT_NAVIGATION_STATUS"' not in runner

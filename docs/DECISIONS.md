@@ -1,5 +1,18 @@
 # Decision Log
 
+## 2026-09-19 — correct the exact pinned expected-status contract
+
+- Decision: supersede amendment 4's incomplete variable-name correction with the exact pinned
+  fixture contract `CRANE_EXPECTED_NAV_STATUS`; retain `pn-0002` and `pn-0004` without rerun.
+- Evidence: direct source inspection shows `run_nav2_controller_fixture.sh` reads
+  `${CRANE_EXPECTED_NAV_STATUS:-succeeded}`. Amendment 4 used `CRANE_EXPECT_NAV_STATUS`, so the
+  terminal `pn-0004` capture again defaulted to expected success. `pn-0003` did not expose this
+  because its predeclared outcome was success.
+- Validity: only the evaluator-side outer summary expectation is affected. Capture dynamics,
+  intervention, Nav2 result, prompts, and model behavior are unchanged. The regression test now
+  cross-checks the wrapper string against the pinned fixture source. No `pn-0004` model calls or
+  annotations existed when discovered.
+
 ## 2026-09-19 — retain pn-0002 after expected-status wrapper mismatch
 
 - Decision: retain the single `pn-0002` capture without rerunning it, correct the frozen wrapper's

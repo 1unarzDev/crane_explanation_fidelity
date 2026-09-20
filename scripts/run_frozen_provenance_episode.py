@@ -39,7 +39,7 @@ def main() -> int:
             "CRANE_FIXTURE_DELAY": str(constants["fixture_delay_s"]),
             "CRANE_DURATION": str(constants["worker_duration_s"]),
             "CRANE_TIME_SCALE": str(constants["time_scale"]),
-            "CRANE_EXPECT_NAV_STATUS": (
+            "CRANE_EXPECTED_NAV_STATUS": (
                 "succeeded"
                 if instance["scenario_family"] == "recovery_followed_by_success"
                 else "aborted"
