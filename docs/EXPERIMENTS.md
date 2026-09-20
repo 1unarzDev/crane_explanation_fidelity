@@ -11,6 +11,14 @@
 - Purpose: determine whether F/H still turn configured progress-checker semantics into an observed
   or physical cause once the parameter file is fairly available. This diagnostic cannot lower the
   15-point smallest practical effect or the 40/50/60 episode collection targets.
+- **TESTED/DEVELOPMENT ONLY:** e043 activated one FollowPath failure → recovery guard success → Wait
+  invocation, then the goal succeeded. Both ten-unit recovery and seven-unit physical-cause parity
+  audits passed. Six Luna calls were made once with no retries.
+- Unblinded annotation: F/G/H material errors were 1/0/0 over two questions; specificity was
+  11/10/12 of 13 and coverage was full for all. F validly identified the now-sealed YAML but still
+  promoted timing plus configured progress checking into a controller-progress diagnosis without a
+  controller error payload. H matched G's error rate and remained more specific. This preserves a
+  plausible F–G distinction but does not establish an effect size or G superiority over H.
 
 ## 2026-09-19 — runtime-configuration provenance integration
 

@@ -1,0 +1,77 @@
+{
+  "schema": "crane-explain-provenance-pilot-annotation/v1",
+  "status": "DEVELOPMENT_ONLY_UNBLINDED_SINGLE_ANNOTATOR",
+  "predeclaration": "research/explanation_fidelity/experiment_configs/development/runtime-provenance-repilot-20260919-v1.json",
+  "episode_id": "land-nav-20260919-e043-worker-0",
+  "scenario_family": "recovery_followed_by_success",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "low",
+  "single_sample_no_retry": true,
+  "information_parity_audited": true,
+  "runtime_configuration_identity_exposed_equally": true,
+  "specificity_rubric_reference": "research/explanation_fidelity/annotations/development/land-nav-provenance-multiepisode-v1.json",
+  "questions": {
+    "recovery-mechanism": {
+      "F": {
+        "material_error": true,
+        "specificity_correct": 6,
+        "specificity_total": 8,
+        "error_categories": [
+          "unsupported_causal_diagnosis",
+          "incorrect_explanatory_relationship"
+        ],
+        "rationale": "The exact parameter file is now fairly retained, so citing its progress-checker settings is valid. The answer nevertheless says the evidence supports controller-progress failure as the recovery trigger without a FollowPath/controller error payload, then concedes that the progress checker is not proven to be the internal trigger. Timing plus configured semantics does not establish the observed error value or trigger relationship."
+      },
+      "G": {
+        "material_error": false,
+        "specificity_correct": 7,
+        "specificity_total": 8,
+        "annotation_note": "The free realization failed exact sentence verification and the deterministic checked fallback was retained."
+      },
+      "H": {
+        "material_error": false,
+        "specificity_correct": 7,
+        "specificity_total": 8,
+        "annotation_note": "The answer reports the recorded transition chain and exact XML semantics while withholding the physical cause."
+      }
+    },
+    "failure-cause": {
+      "F": {
+        "material_error": false,
+        "specificity_correct": 5,
+        "specificity_total": 5
+      },
+      "G": {
+        "material_error": false,
+        "specificity_correct": 3,
+        "specificity_total": 5,
+        "annotation_note": "The realization combined two licensed claims into one sentence, failed strict verification, and used the checked fallback."
+      },
+      "H": {
+        "material_error": false,
+        "specificity_correct": 5,
+        "specificity_total": 5
+      }
+    }
+  },
+  "summary": {
+    "responses_per_condition": 2,
+    "material_errors": {
+      "F": 1,
+      "G": 0,
+      "H": 0
+    },
+    "specificity_correct": {
+      "F": 11,
+      "G": 10,
+      "H": 12
+    },
+    "specificity_total": 13,
+    "substantive_coverage": {
+      "F": 1.0,
+      "G": 1.0,
+      "H": 1.0
+    },
+    "interpretation": "Fairly exposing the exact running parameter file removes the earlier incorrect-source-attribution rationale but does not eliminate the discriminative failure: F still promotes configuration plus timing into an unobserved controller-progress diagnosis. G and H are both error-free, while H remains more specific than G. This one development episode supports freezing the causal-support rubric, not an effect-size claim."
+  }
+}
