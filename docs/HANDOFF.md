@@ -85,9 +85,12 @@ provider, model alias, effort, or interactive agent response for the declared CL
   reconstruct that key; generate a fresh packet/key pair together when annotation begins.
 - The selected Claude configuration is `claude-sonnet-5` at low effort. The predeclared
   development control and model selection are complete.
-- The selected sealed Claude replication over `pn-0001` through `pn-0009` is **NOT_RUN** at this
-  handoff. It reuses episodes and therefore contributes **zero** new independent clusters.
-- DVC snapshot commit: `a3df9c8` or a descendant containing the same six governed pointers.
+- The selected sealed Claude replication over `pn-0001` through `pn-0009` is **COLLECTED and
+  NOT_ANNOTATED** as of 2026-09-20: 18 envelopes, 54 physical calls, manifest built and hashes
+  verified, published through DVC. It reuses episodes and therefore contributes **zero** new
+  independent clusters.
+- DVC snapshot commit: `fe7cc9b` or a descendant. There are now **seven** governed pointers;
+  `data/evaluator_only/annotation_keys` was added so a blinded packet cannot outlive its key.
 - Pinned `crane_ml` commit: `c559932a5ebef00bfa7752511799fd904e5c9dbe`.
 
 ## Immediate execution: sealed Claude replication
@@ -153,7 +156,7 @@ scripts/dvc_r2_sync.sh push
 scripts/dvc_r2_sync.sh status   # must report cache and remote in sync
 ```
 
-Then stage only the intended documentation, Claude arm manifest, and six DVC pointer files. Never
+Then stage only the intended documentation, Claude arm manifest, and seven DVC pointer files. Never
 stage raw governed payloads or credentials. Commit and push the umbrella repository. Check
 `git diff --cached --name-status` immediately before every commit.
 
@@ -178,6 +181,31 @@ as an annotator. Arrange two independent blinded annotation passes and a distinc
 `docs/ANNOTATION_WORKFLOW.md`. Analyze by arm after adjudication; never pool primary and Claude
 responses as independent episodes. If independent annotators are unavailable, record annotation as
 `BLOCKED` or `NOT_RUN` and hand off the packet rather than substituting self-scoring.
+
+## Completed on 2026-09-20
+
+The assigned workstream is done. The sealed Claude arm holds 18 envelopes and 54 one-shot calls,
+its manifest is built and independently re-hashed, and outputs, cache, packet, and key are pushed
+to R2 with cache and remote reported in sync. The blinded packet
+`model_outputs/annotation_packets/sealed-claude-v1/packet.jsonl` holds 54 model-condition responses
+and matches its evaluator-only key by hash. **Annotation is `NOT_RUN` and is handed off**: the agent
+that generated this packet must not annotate it.
+
+Three operational facts corrected during execution, each recorded in `docs/DECISIONS.md` or an
+amendment:
+
+1. A condition-H call had cached a provider 429 spend-limit error as if it were an answer, which
+   made that call permanently unrepeatable. The adapter now keeps answerless calls out of the answer
+   cache and retains them under `_retained_failed_calls/`. See arm amendment 3.
+2. A `dvc pull` can complete while leaving governed roots partly materialized. Refreshing pointers
+   against that workspace silently *removed* the primary arm's `pn-0010`--`pn-0021` outputs and 72
+   cache records from the snapshot. **Before running `update_dvc_tracking.sh`, confirm every
+   governed root is fully checked out, and read the pointer diff for falling `nfiles`.** A pointer
+   refresh after a collection run should only ever add files.
+3. `data/evaluator_only/annotation_keys` was covered by no pointer and is now a governed root. The
+   `sealed-luna-v1` key is present and matches its packet by hash, so the earlier "key not present"
+   note is outdated; that packet still covers only 54 responses over nine episodes, so a fresh
+   full-arm primary packet is still required.
 
 ## Scientific boundaries that must survive the handoff
 
