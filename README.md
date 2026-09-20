@@ -79,8 +79,12 @@ their own location. Exact repository commits and destinations are recorded in
   when a volatile DDS startup race lost its goal boundary; reliable transient-local harness QoS
   was then validated on the retained replication. Three further predeclared independent
   configurations passed; a fourth is retained but excluded because it produced zero recoveries.
-- **NOT_RUN:** powered multi-seed final collection and sealed-test evaluation.
-- **NOT_RUN:** source-to-binary rebuild verification and a parity-frozen multi-episode F/G/H pilot.
+- **IN_PROGRESS / SEALED:** nine independent final F/G/H episodes are included (five
+  recovery-success, four terminal-abort), with 54 one-shot Luna-low calls retained and no
+  exclusions. This remains far below the frozen 40-episode minimum; answers have not been scored,
+  and no sealed effect estimate has been calculated.
+- **NOT_RUN:** blinded dual annotation, final statistics/figures, and final A–E model evaluation.
+- **NOT_RUN:** source-to-binary rebuild verification.
 - **DEFERRED:** arbitrary-LLM proposition extraction until independently evaluated.
 
 ## CPU-only demo
@@ -150,6 +154,7 @@ delivered odometry proven controller consumption.
 - [Study design](docs/STUDY_DESIGN.md)
 - [Benchmark](docs/BENCHMARK.md)
 - [Experiment ledger](docs/EXPERIMENTS.md)
+- [Context-free agent handoff](docs/HANDOFF.md)
 - [Research audit](docs/RESEARCH.md)
 - [Decision log](docs/DECISIONS.md)
 - [Environment requests](docs/ENVIRONMENT_REQUESTS.md)
