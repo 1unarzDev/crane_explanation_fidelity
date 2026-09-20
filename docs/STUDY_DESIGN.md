@@ -21,9 +21,10 @@ marked **TBD-PILOT** are not yet frozen.
 
 Cross-domain evidence is a robustness/stress test, not architecture-independence evidence.
 
-The primary hypothesis and comparison remain **TBD-PILOT** until the provenance pilot exposes the
-actual F/G disagreement rate. Candidate primary H1 is that G reduces response-level material errors
-relative to strong repository-agent baseline F at non-inferior substantive coverage. The original
+The provisional primary H1 is that G reduces response-level material errors relative to strong
+repository-agent baseline F at non-inferior substantive coverage. It remains mutable only through
+the predeclared model-strength and annotation-reliability pilot, after which it will be frozen before
+sealed evaluation. The original
 A-versus-D hypothesis remains a representation/checking comparison rather than the novelty claim.
 Mechanistic secondary comparisons are B versus A, D versus B, D versus C, H versus G, D versus G,
 and E versus D.
@@ -131,13 +132,31 @@ bootstrap intervals, not this planning approximation. Provider/model/prompts, ve
 annotation rubric, and coverage units remain mutable pending blind/adjudicated development labels;
 the study is not frozen.
 
+The parity-controlled provenance subset currently contains four independent episodes and two
+questions per episode: two recovery-followed-by-success instances and two repeated-recovery terminal
+aborts. Development-only, unblinded material-error rates are F 4/8, G 0/8, and H 0/8; all eight
+responses per condition are substantive. Specificity is F 48/52, G 40/52, and H 52/52. The
+episode-clustered planning summary is retained in
+`analysis/results/provenance-pilot-four-episode-summary-20260919.json`. Its bootstrap interval is
+highly discrete with four clusters and does not replace blind annotation or a sealed test.
+
+For RQ4 planning, a 15-point absolute F-to-G error reduction is the provisional smallest practical
+effect: smaller gains are unlikely to justify runtime-source instrumentation over a generic coding
+agent. With two questions per episode, ICC 0.15, paired latent correlation 0.50, and 5,000 simulated
+clustered datasets, power is 0.802 at 40 episodes, 0.884 at 50, and 0.936 at 60. The provisional
+target is **50 provenance-audited episodes**, with 40 the minimum 80%-power target and 60 preferred
+if collection/model cost permits. This remains mutable until the model-strength pilot and annotation
+guide are frozen; the observed four-episode 50-point reduction is sensitivity-only and is not used
+to reduce the target.
+
 The initial powered analysis is land/navigation. Surface CRANE scenarios are ecological validation;
 underwater/aerial scenarios are descriptive stress tests unless their independent episode counts
 become adequate. Domain interactions are exploratory unless frozen after pilot power analysis.
 
 ## Freeze and stopping rules
 
-Before final collection freeze: metric/annotation guide, H1/A-vs-D comparison, prompts, model,
+Before final collection freeze: metric/annotation guide, H1/F-vs-G primary comparison, A–E
+mechanistic comparisons, prompts, model,
 verifier threshold, templates, instrumentation, inclusion rules, split manifest, seeds, and
 analysis code. Hash frozen files. Do not inspect sealed labels to tune. Collection stops at the
 power-planned independent episode target or the September 28 deadline/compute ceiling, whichever

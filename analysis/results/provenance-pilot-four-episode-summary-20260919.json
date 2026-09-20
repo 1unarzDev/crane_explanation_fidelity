@@ -1,0 +1,86 @@
+{
+  "comparisons": [
+    {
+      "baseline": "F",
+      "bootstrap_seed": 2026091902,
+      "bootstrap_simulations": 20000,
+      "episode_cluster_bootstrap_95_percentile_interval": [
+        -0.875,
+        -0.125
+      ],
+      "method": "G",
+      "response_pair_discordance": {
+        "baseline_error_method_correct": 4,
+        "mcnemar_exact_two_sided_p_secondary_only": 0.125,
+        "method_error_baseline_correct": 0
+      },
+      "risk_difference_method_minus_baseline": -0.5
+    },
+    {
+      "baseline": "H",
+      "bootstrap_seed": 2026091903,
+      "bootstrap_simulations": 20000,
+      "episode_cluster_bootstrap_95_percentile_interval": [
+        0.0,
+        0.0
+      ],
+      "method": "G",
+      "response_pair_discordance": {
+        "baseline_error_method_correct": 0,
+        "mcnemar_exact_two_sided_p_secondary_only": 1.0,
+        "method_error_baseline_correct": 0
+      },
+      "risk_difference_method_minus_baseline": 0.0
+    }
+  ],
+  "conditions": {
+    "F": {
+      "material_error_rate": 0.5,
+      "material_errors": 4,
+      "responses": 8,
+      "specificity_correct": 48,
+      "specificity_rate": 0.9230769230769231,
+      "specificity_total": 52,
+      "substantive_answer_coverage": 1.0
+    },
+    "G": {
+      "material_error_rate": 0.0,
+      "material_errors": 0,
+      "responses": 8,
+      "specificity_correct": 40,
+      "specificity_rate": 0.7692307692307693,
+      "specificity_total": 52,
+      "substantive_answer_coverage": 1.0
+    },
+    "H": {
+      "material_error_rate": 0.0,
+      "material_errors": 0,
+      "responses": 8,
+      "specificity_correct": 52,
+      "specificity_rate": 1.0,
+      "specificity_total": 52,
+      "substantive_answer_coverage": 1.0
+    }
+  },
+  "episode_ids": [
+    "land-nav-20260919-e019-worker-0",
+    "land-nav-20260919-e021-worker-0",
+    "land-nav-20260919-e037-worker-0",
+    "land-nav-20260919-e038-worker-0"
+  ],
+  "episodes": 4,
+  "limitations": [
+    "single unblinded annotator",
+    "four episodes across two closely related recovery families",
+    "bootstrap support is highly discrete at four episode clusters",
+    "McNemar treats response pairs as independent and is secondary only",
+    "development data are not the sealed confirmatory split"
+  ],
+  "questions_per_episode": 2,
+  "scenario_families": [
+    "recovery_followed_by_success",
+    "repeated_recovery_terminal_abort"
+  ],
+  "schema": "crane-explain-provenance-development-summary/v1",
+  "status": "DEVELOPMENT_ONLY_UNBLINDED_NOT_CONFIRMATORY"
+}

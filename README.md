@@ -38,6 +38,11 @@ their own location. Exact repository commits and destinations are recorded in
   new H/G calls were made; the two unchanged F calls were reused exactly from cache. Unblinded
   single-annotator review found one material error for F and none for G/H; two questions from one
   episode remain diagnostic, not an effect estimate.
+- **TESTED (DEVELOPMENT ONLY):** expanded parity-controlled F/G/H pilot to four independent land
+  episodes across recovery-success and repeated-recovery-abort families. Unblinded rates are F 4/8,
+  G 0/8, and H 0/8 at full substantive coverage; H is more specific than G (52/52 versus 40/52
+  units). The F–G clustered difference is −0.50 with a highly discrete four-cluster bootstrap
+  interval [−0.875, −0.125]; response-level McNemar is 0.125. These are planning evidence only.
 - **TESTED:** ROS package tests, Jazzy build, live BT/action/harness capture, and exact BT retention.
 - **TESTED:** CRANE build, one valid aquatic terminal-success capture pilot, a graphics-free
   land/Ackermann success smoke with populated costmap snapshots, and a valid-as-expected land

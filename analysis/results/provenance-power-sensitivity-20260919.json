@@ -1,0 +1,138 @@
+{
+  "assumptions": {
+    "cluster_icc": 0.15,
+    "paired_latent_correlation": 0.5,
+    "questions_per_episode": 2,
+    "test": "episode-equal-weight F/G paired risk-difference cluster-normal approximation",
+    "warning": "Final inference uses an episode/scenario-clustered bootstrap; this simulation does not estimate ICC or generalization from four pilot episodes."
+  },
+  "scenarios": [
+    {
+      "interpretation": "Planning assumption: a 15-point absolute reduction is the smallest practical RQ4 effect worth the cost of provenance instrumentation.",
+      "name": "minimum_practical_15pp",
+      "results": [
+        {
+          "episodes": 20,
+          "mean_simulated_difference_d_minus_a": -0.14923999999999968,
+          "mean_simulated_risk_a": 0.29968000000000045,
+          "mean_simulated_risk_d": 0.15044000000000077,
+          "power_two_sided_95_cluster_normal": 0.531,
+          "questions_per_episode": 2,
+          "simulations": 5000
+        },
+        {
+          "episodes": 30,
+          "mean_simulated_difference_d_minus_a": -0.14946666666666622,
+          "mean_simulated_risk_a": 0.30033999999999494,
+          "mean_simulated_risk_d": 0.15087333333333178,
+          "power_two_sided_95_cluster_normal": 0.7048,
+          "questions_per_episode": 2,
+          "simulations": 5000
+        },
+        {
+          "episodes": 40,
+          "mean_simulated_difference_d_minus_a": -0.1501874999999992,
+          "mean_simulated_risk_a": 0.3005725000000002,
+          "mean_simulated_risk_d": 0.15038500000000002,
+          "power_two_sided_95_cluster_normal": 0.8016,
+          "questions_per_episode": 2,
+          "simulations": 5000
+        },
+        {
+          "episodes": 50,
+          "mean_simulated_difference_d_minus_a": -0.1508159999999997,
+          "mean_simulated_risk_a": 0.3018799999999892,
+          "mean_simulated_risk_d": 0.15106399999999856,
+          "power_two_sided_95_cluster_normal": 0.8836,
+          "questions_per_episode": 2,
+          "simulations": 5000
+        },
+        {
+          "episodes": 60,
+          "mean_simulated_difference_d_minus_a": -0.15010499999999916,
+          "mean_simulated_risk_a": 0.2991016666666665,
+          "mean_simulated_risk_d": 0.14899666666666414,
+          "power_two_sided_95_cluster_normal": 0.936,
+          "questions_per_episode": 2,
+          "simulations": 5000
+        },
+        {
+          "episodes": 80,
+          "mean_simulated_difference_d_minus_a": -0.15041000000000015,
+          "mean_simulated_risk_a": 0.3010299999999999,
+          "mean_simulated_risk_d": 0.1506200000000004,
+          "power_two_sided_95_cluster_normal": 0.9804,
+          "questions_per_episode": 2,
+          "simulations": 5000
+        }
+      ],
+      "risk_f": 0.3,
+      "risk_g": 0.15
+    },
+    {
+      "interpretation": "The observed G rate was zero; 0.01 avoids treating a four-episode zero as a true zero risk. This scenario is sensitivity only, not the collection target.",
+      "name": "four_episode_observed_sensitivity_only",
+      "results": [
+        {
+          "episodes": 20,
+          "mean_simulated_difference_d_minus_a": -0.48939999999999917,
+          "mean_simulated_risk_a": 0.4997699999999993,
+          "mean_simulated_risk_d": 0.010369999999999708,
+          "power_two_sided_95_cluster_normal": 1.0,
+          "questions_per_episode": 2,
+          "simulations": 5000
+        },
+        {
+          "episodes": 30,
+          "mean_simulated_difference_d_minus_a": -0.49146000000000123,
+          "mean_simulated_risk_a": 0.5014066666666688,
+          "mean_simulated_risk_d": 0.009946666666666477,
+          "power_two_sided_95_cluster_normal": 1.0,
+          "questions_per_episode": 2,
+          "simulations": 5000
+        },
+        {
+          "episodes": 40,
+          "mean_simulated_difference_d_minus_a": -0.4908225000000005,
+          "mean_simulated_risk_a": 0.5009650000000002,
+          "mean_simulated_risk_d": 0.010142500000000158,
+          "power_two_sided_95_cluster_normal": 1.0,
+          "questions_per_episode": 2,
+          "simulations": 5000
+        },
+        {
+          "episodes": 50,
+          "mean_simulated_difference_d_minus_a": -0.4907100000000006,
+          "mean_simulated_risk_a": 0.5008559999999996,
+          "mean_simulated_risk_d": 0.010146000000000089,
+          "power_two_sided_95_cluster_normal": 1.0,
+          "questions_per_episode": 2,
+          "simulations": 5000
+        },
+        {
+          "episodes": 60,
+          "mean_simulated_difference_d_minus_a": -0.4912283333333331,
+          "mean_simulated_risk_a": 0.5011500000000004,
+          "mean_simulated_risk_d": 0.009921666666666336,
+          "power_two_sided_95_cluster_normal": 1.0,
+          "questions_per_episode": 2,
+          "simulations": 5000
+        },
+        {
+          "episodes": 80,
+          "mean_simulated_difference_d_minus_a": -0.4906225,
+          "mean_simulated_risk_a": 0.5006312500000003,
+          "mean_simulated_risk_d": 0.010008750000000335,
+          "power_two_sided_95_cluster_normal": 1.0,
+          "questions_per_episode": 2,
+          "simulations": 5000
+        }
+      ],
+      "risk_f": 0.5,
+      "risk_g": 0.01
+    }
+  ],
+  "schema": "crane-explain-provenance-power-sensitivity/v1",
+  "seed": 2026091903,
+  "status": "DEVELOPMENT_PLANNING_ONLY_NOT_STUDY_FREEZE"
+}

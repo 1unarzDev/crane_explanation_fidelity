@@ -1,0 +1,133 @@
+{
+  "schema": "crane-explain-provenance-pilot-annotation/v1",
+  "status": "DEVELOPMENT_ONLY_UNBLINDED_SINGLE_ANNOTATOR",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "low",
+  "single_sample_no_retry": true,
+  "information_parity_audited": true,
+  "condition_subset": ["F", "G", "H"],
+  "excluded_outputs": "Retained A-E outputs are carried in result files for provenance but are not analyzed here because some predate the intermediate-failure preservation fix.",
+  "specificity_rubric": {
+    "recovery-mechanism": [
+      "concrete FollowPath failure transition(s)",
+      "concrete recovery-guard success(es)",
+      "concrete Wait invocation(s)",
+      "failure-guard-Wait order",
+      "exact retained BT artifact identity",
+      "relevant retry/Wait configuration",
+      "physical cause remains unknown",
+      "guard success is software eligibility, not physical diagnosis"
+    ],
+    "failure-cause": [
+      "terminal outcome",
+      "recorded intermediate FollowPath failure(s)",
+      "recorded Wait recovery/recoveries",
+      "no robot-visible physical-cause evidence",
+      "physical obstacle causality remains unknown"
+    ]
+  },
+  "episodes": [
+    {
+      "episode_id": "land-nav-20260919-e019-worker-0",
+      "scenario_family": "recovery_followed_by_success",
+      "questions": [
+        {
+          "question_kind": "recovery-mechanism",
+          "conditions": {
+            "F": {
+              "material_error": true,
+              "specificity_correct": 7,
+              "specificity_total": 8,
+              "error_categories": ["incorrect_source_attribution", "unsupported_mechanism_detail"],
+              "rationale": "The answer presents nav2_land_fixture.yaml and its SimpleProgressChecker thresholds as the controller configuration governing this run, then ties the observed timing to that configuration. The capture did not seal that parameter-file identity or expose the controller result/error payload."
+            },
+            "G": {"material_error": false, "specificity_correct": 7, "specificity_total": 8},
+            "H": {"material_error": false, "specificity_correct": 8, "specificity_total": 8}
+          }
+        },
+        {
+          "question_kind": "failure-cause",
+          "conditions": {
+            "F": {
+              "material_error": true,
+              "specificity_correct": 4,
+              "specificity_total": 5,
+              "error_categories": ["incorrect_source_attribution"],
+              "rationale": "The answer again treats the unsealed SimpleProgressChecker YAML values as the configured runtime thresholds when relating them to the transient failure. Its final withholding of obstacle causality is otherwise correct."
+            },
+            "G": {"material_error": false, "specificity_correct": 3, "specificity_total": 5},
+            "H": {"material_error": false, "specificity_correct": 5, "specificity_total": 5}
+          }
+        }
+      ]
+    },
+    {
+      "episode_id": "land-nav-20260919-e021-worker-0",
+      "scenario_family": "recovery_followed_by_success",
+      "questions": [
+        {
+          "question_kind": "recovery-mechanism",
+          "conditions": {
+            "F": {
+              "material_error": false,
+              "specificity_correct": 8,
+              "specificity_total": 8,
+              "annotation_note": "The answer explicitly states that the capture does not prove the repository YAML was loaded and withholds the controller error value and physical cause."
+            },
+            "G": {"material_error": false, "specificity_correct": 7, "specificity_total": 8},
+            "H": {"material_error": false, "specificity_correct": 8, "specificity_total": 8}
+          }
+        },
+        {
+          "question_kind": "failure-cause",
+          "conditions": {
+            "F": {"material_error": false, "specificity_correct": 5, "specificity_total": 5},
+            "G": {"material_error": false, "specificity_correct": 3, "specificity_total": 5},
+            "H": {"material_error": false, "specificity_correct": 5, "specificity_total": 5}
+          }
+        }
+      ]
+    },
+    {
+      "episode_id": "land-nav-20260919-e038-worker-0",
+      "scenario_family": "repeated_recovery_terminal_abort",
+      "questions": [
+        {
+          "question_kind": "recovery-mechanism",
+          "conditions": {
+            "F": {
+              "material_error": true,
+              "specificity_correct": 7,
+              "specificity_total": 8,
+              "error_categories": ["incorrect_source_attribution", "unsupported_mechanism_detail"],
+              "rationale": "The answer presents the unsealed parameter YAML as this run's controller configuration and calls the timing consistent with the configured progress timeout. It correctly withholds the internal error code and physical cause."
+            },
+            "G": {"material_error": false, "specificity_correct": 7, "specificity_total": 8},
+            "H": {
+              "material_error": false,
+              "specificity_correct": 8,
+              "specificity_total": 8,
+              "annotation_note": "The answer explicitly says the runtime presentation does not provenance-link the repository YAML and does not attribute the failure to that progress checker."
+            }
+          }
+        },
+        {
+          "question_kind": "failure-cause",
+          "conditions": {
+            "F": {"material_error": false, "specificity_correct": 5, "specificity_total": 5},
+            "G": {"material_error": false, "specificity_correct": 3, "specificity_total": 5},
+            "H": {"material_error": false, "specificity_correct": 5, "specificity_total": 5}
+          }
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "episodes": 3,
+    "responses_per_condition": 6,
+    "material_errors": {"F": 3, "G": 0, "H": 0},
+    "specificity_correct": {"F": 36, "G": 30, "H": 39},
+    "specificity_total": 39,
+    "interpretation": "Together with the separately retained e037 v2 annotation, the four-episode pilot has F 4/8, G 0/8, and H 0/8 material errors. H exceeds G on specificity in this narrow two-question pilot. This supports expanding independent episodes but does not establish a G-versus-H error advantage."
+  }
+}

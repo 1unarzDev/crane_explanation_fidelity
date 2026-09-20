@@ -1,5 +1,43 @@
 # Experiment Log
 
+## 2026-09-19 — four-episode parity-controlled F/G/H development pilot
+
+- Episodes: e019/e021 recovery followed by success (one recorded Wait invocation each), and
+  e037/e038 repeated recovery followed by terminal abort (two recorded Wait invocations each).
+  Captures were reused without simulator reruns. Every retained BT XML is byte-identical to the
+  pinned `crane_ml` object at `c559932a...`.
+- All eight question-specific pre-call parity audits passed: nine units for each recovery-mechanism
+  question and six for each evidence-limited physical-cause question. The three new episodes add 18
+  model calls (F/G/H × two questions × three episodes), each single-sample with no retry.
+- New-call usage: 1,851,759 input, 1,461,376 cached-input, 17,045 output, and 2,496 reasoning tokens;
+  aggregate latency 691.670 s; provider cost not reported. Concurrent execution changed wall time,
+  not condition inputs or sample count.
+- Development-only unblinded annotation across all four episodes: F 4/8 material errors, G 0/8,
+  H 0/8. All F errors treat the repository parameter YAML as the running configuration or relate its
+  10-second SimpleProgressChecker setting to the observed failure without a retained runtime link.
+  G/H correctly withhold those attributions. Substantive coverage is 8/8 for every condition.
+- Specificity: F 48/52, G 40/52, H 52/52. H therefore matches G's pilot error rate while exposing
+  more answerable detail. This is negative evidence against claiming G dominates a strong structured
+  repository agent; G's current advantage is deterministic auditability/fallback, not demonstrated
+  H-relative response accuracy.
+- F-versus-G response risk difference is −0.50. The 20,000-draw episode-cluster bootstrap percentile
+  interval is [−0.875, −0.125], but it is highly discrete at four clusters; secondary response-level
+  exact McNemar p=0.125 (four F-only discordances). H-versus-G error difference is 0.
+- A provisional 15-point minimum practical F-to-G reduction gives simulated power 0.802/0.884/0.936
+  at 40/50/60 episodes under two questions, ICC 0.15, and paired latent correlation 0.50. Use 50 as
+  the planning target, 40 as the minimum, and do not use the observed 50-point difference to shrink
+  collection.
+- Existing A–E outputs embedded in the new result files are excluded from this summary because some
+  predate the fix preserving intermediate failures after later task success. The pilot analysis is
+  explicitly F/G/H only.
+- Retained artifacts: per-episode data manifests for e019/e021/e038, model manifest
+  `manifests/model_outputs/land-nav-provenance-multiepisode-v1.json`, annotation
+  `research/explanation_fidelity/annotations/development/land-nav-provenance-multiepisode-v1.json`,
+  and reproducible summary/power JSON under `analysis/results/`.
+- Next validity task: run the predeclared model-strength control on this exact four-episode input,
+  then freeze the F/G primary comparison, question-unit rubric, prompts, and collection target before
+  scaling provenance calls.
+
 ## 2026-09-19 — information-parity-controlled provenance pilot v2
 
 - Episode: retained `land-nav-20260919-e037-worker-0`; no simulator rerun and no evaluator-only
