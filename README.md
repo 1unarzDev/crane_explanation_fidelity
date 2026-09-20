@@ -31,8 +31,11 @@ their own location. Exact repository commits and destinations are recorded in
 
 - **IMPLEMENTED, TESTED:** evidence records, checked answer plans, final-text verification,
   deterministic fallback, Dock/Slalom regressions, terminal-status distinctions, bounded
-  runtime-to-source provenance, claim classes, deterministic runtime presentations, and pre-call
-  F/G/H information-unit auditing, and hash-checked runtime configuration identity (42 core tests).
+  runtime-to-source provenance, claim classes, deterministic runtime presentations, pre-call F/G/H
+  information-unit auditing, and hash-checked runtime configuration identity (42 core tests).
+- **TESTED (CALIBRATION):** e042 retained the effective TurtleBot3/Nav2 launch configuration,
+  image/package identities, player hashes, and six exact Git artifacts without evaluator leakage;
+  the reusable calibration validator and seven-unit F/G/H parity audit passed.
 - **TESTED (DEVELOPMENT ONLY):** parity-controlled provenance pilot v2 on retained e037, with one
   evidence-rich recovery-mechanism question and one evidence-limited physical-cause question. Four
   new H/G calls were made; the two unchanged F calls were reused exactly from cache. Unblinded

@@ -19,8 +19,14 @@
   `argparse` rejected the dash-prefixed command-interface value when passed as a separate token.
   Only evaluator-only `build-provenance.json` was created; no navigation outcome exists. The run is
   retained and must not be rerun or counted.
-- Status: **IMPLEMENTED/UNIT-TESTED; LIVE CALIBRATION NOT_RUN**. The distinct predeclared e042
-  calibration must verify byte retention and no evaluator leakage before study freeze.
+- **TESTED/PASS:** the distinct predeclared e042 calibration ran once. Navigation succeeded (one
+  goal, 1.469 m displacement, 59 controller commands, 343 odometry messages, 21 costmap
+  observations, and 10,972 maximum occupied cells), but outcome was not a pass criterion. The
+  deterministic calibration validator accepted the exact retained manifest SHA-256
+  `375eddca...85bc`, matching run/episode identities, six byte-identical Git artifacts, populated
+  image/ROS/player identities, absence of evaluator-only keys, and a seven-unit F/G/H parity audit.
+- Status: **IMPLEMENTED/TESTED.** Runtime-configuration capture is eligible for study freeze; the
+  player binary's source commit remains explicitly unproven.
 
 ## 2026-09-19 — predeclared provenance model-strength control
 

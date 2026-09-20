@@ -18,6 +18,9 @@
 - Risk/revisit: the current player build still lacks a proven embedded source commit, and package
   versions do not prove source-to-binary rebuilding. Keep those limits explicit rather than adding a
   native hook or claiming more provenance than retained.
+- Validation: e041 was retained as an invalid pre-execution CLI-boundary failure. The separately
+  predeclared e042 passed exact-hash, Git-object, launch-contract, leakage, and F/G/H parity checks.
+  Freeze this manifest design for the main provenance study; changes require a documented amendment.
 
 ## 2026-09-19 — select gpt-5.6-luna low for matched F/G/H collection
 
