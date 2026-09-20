@@ -94,8 +94,8 @@
 
 - Decision: treat runtime/physical evidence and exact source/configuration evidence as separate
   linked planes. Add strong generic repository-agent baselines F/H and make provenance-linked
-  checked method G the central novelty comparison. Integrate the temporary follow-up direction
-  into canonical architecture, study, benchmark, research, environment, and decision documents.
+  checked method G the central novelty comparison. Maintain this direction in the canonical
+  architecture, study, benchmark, research, environment, and decision documents.
 - Evidence: the 18-episode development result has B at 0/109 material errors and D at 1/109, so the
   current evidence does not support D superiority. Structured logs plus checking alone are also too
   close to prior provenance/planning work. Exact runtime-to-source correspondence is both a sharper
