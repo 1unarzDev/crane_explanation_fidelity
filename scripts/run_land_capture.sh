@@ -29,8 +29,13 @@ image="${CRANE_ROS_IMAGE:-lunarzdev/astro:cuda}"
 scene="${CRANE_SCENE:-Land Vehicle Validation}"
 command_flag="${CRANE_NAV2_COMMAND_FLAG:---crane-ros-ackermann-cmd-vel}"
 lidar_frame="${CRANE_NAV2_LIDAR_FRAME:-lidar_link}"
-robot_parent="${workspace_root}/data/robot_visible/dev/${run_id}"
-evaluator_root="${workspace_root}/data/evaluator_only/dev/${run_id}"
+data_split="${CRANE_DATA_SPLIT:-dev}"
+if [[ "${data_split}" != "dev" && "${data_split}" != "final" ]]; then
+    echo "CRANE_DATA_SPLIT must be dev or final: ${data_split}" >&2
+    exit 2
+fi
+robot_parent="${workspace_root}/data/robot_visible/${data_split}/${run_id}"
+evaluator_root="${workspace_root}/data/evaluator_only/${data_split}/${run_id}"
 capture_name="crane-capture-${run_id}"
 
 if [[ -e "${robot_parent}" || -e "${evaluator_root}" ]]; then

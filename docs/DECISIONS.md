@@ -1,5 +1,17 @@
 # Decision Log
 
+## 2026-09-19 — pre-collection freeze amendment for sealed execution
+
+- Decision: before collecting `pn-0001`, amend the operational freeze to select physically separate
+  `data/*/final/` roots and state constant fixture/action timing. Execute split rows through one
+  deterministic wrapper; do not alter the scientific hypothesis, questions, balance, or stopping
+  rule.
+- Evidence: the first dry execution audit after freeze found `run_land_capture.sh` still hardcoded
+  `dev`, while the split specified varying scenario values but omitted common duration settings.
+- Validity: zero sealed episodes or answers existed when found. Preserve the original freeze
+  manifest, record changed-file hashes in an amendment, and require the amended commit in every
+  runtime manifest.
+
 ## 2026-09-19 — seal known runtime configuration before final collection
 
 - Decision: final captures must retain a hash-checked robot-visible runtime manifest with the actual

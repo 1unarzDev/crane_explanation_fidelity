@@ -1,0 +1,24 @@
+{
+  "schema": "crane-provenance-study-freeze-amendment/v1",
+  "status": "PRE_COLLECTION_AMENDMENT",
+  "amends": "manifests/study/provenance-study-freeze-v1.json",
+  "sealed_episodes_collected_before_amendment": 0,
+  "reason": "The capture wrapper still selected the development data root and the split omitted constant fixture/action timing needed to execute its instances reproducibly.",
+  "scientific_design_changed": false,
+  "changes": [
+    "Require CRANE_DATA_SPLIT=final for sealed runs.",
+    "Freeze the constant launch settings below.",
+    "Use scripts/run_frozen_provenance_episode.py to translate each frozen split row into the unchanged intervention contract."
+  ],
+  "launch_constants": {
+    "scene": "TurtleBot3 Warehouse Validation",
+    "platform": "turtlebot3-waffle-differential",
+    "command_flag": "--crane-ros-differential-cmd-vel",
+    "lidar_frame": "base_scan",
+    "fixture_delay_s": 15,
+    "action_duration_s": 45,
+    "worker_duration_s": 60,
+    "time_scale": 1.0,
+    "blocker": "none"
+  }
+}
