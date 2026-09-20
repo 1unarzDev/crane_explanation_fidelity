@@ -1,0 +1,106 @@
+{
+  "config": "research/explanation_fidelity/experiment_configs/development/provenance-model-strength-20260919-v1.json",
+  "limitations": [
+    "unblinded single-annotator development labels",
+    "four episodes and eight responses per condition",
+    "provider monetary cost unavailable",
+    "selection does not establish model equivalence"
+  ],
+  "luna_eligibility": {
+    "additional_source_or_causal_overclaims_at_most_one": true,
+    "aggregate_specificity_within_10_points": true,
+    "eligible": true,
+    "per_condition_one_response_error_margin": true,
+    "per_condition_substantive_coverage_at_least_0.875": true
+  },
+  "predeclared_selection_rule": {
+    "choice": "Among eligible settings, select the least expensive model according to retained provider token/cost evidence; if monetary cost is unavailable, use model tier then measured token use and latency as descriptive resource evidence.",
+    "eligible_setting": [
+      "no more than one additional material-error response out of eight for any condition relative to that condition's best tested setting",
+      "aggregate specificity across F/G/H no more than 10 percentage points below the best tested setting",
+      "no more than one additional unsupported source attribution or causal overclaim across all 24 responses",
+      "substantive answer coverage at least 0.875 for every condition"
+    ],
+    "no_posthoc_prompt_tuning": true,
+    "tie_or_ineligible": "Retain gpt-5.6-sol low for the main study if Luna is ineligible or resource superiority cannot be established."
+  },
+  "resources": {
+    "gpt-5.6-luna": {
+      "aggregate_latency_ms": 625923.001219,
+      "cached_input_tokens": 1534976,
+      "input_tokens": 2253937,
+      "logical_calls": 24,
+      "output_tokens": 18484,
+      "reasoning_output_tokens": 3372
+    },
+    "gpt-5.6-sol": {
+      "aggregate_latency_ms": 891518.46845,
+      "cached_input_tokens": 1938304,
+      "input_tokens": 2467391,
+      "logical_calls": 24,
+      "output_tokens": 23252,
+      "reasoning_output_tokens": 3530
+    }
+  },
+  "schema": "crane-explain-provenance-model-strength-summary/v1",
+  "selection": {
+    "model": "gpt-5.6-luna",
+    "rationale": "Luna satisfies every predeclared quality margin and is the lower model tier; it also used fewer input/output tokens and lower aggregate latency. Monetary cost was not reported, so no dollar-cost claim is made.",
+    "reasoning_effort": "low"
+  },
+  "settings": {
+    "gpt-5.6-luna": {
+      "aggregate_specificity": 0.8974358974358975,
+      "conditions": {
+        "F": {
+          "material_errors": 3,
+          "responses": 8,
+          "specificity_correct": 49,
+          "specificity_total": 52,
+          "substantive_coverage": 1.0
+        },
+        "G": {
+          "material_errors": 0,
+          "responses": 8,
+          "specificity_correct": 40,
+          "specificity_total": 52,
+          "substantive_coverage": 1.0
+        },
+        "H": {
+          "material_errors": 1,
+          "responses": 8,
+          "specificity_correct": 51,
+          "specificity_total": 52,
+          "substantive_coverage": 1.0
+        }
+      }
+    },
+    "gpt-5.6-sol": {
+      "aggregate_specificity": 0.8974358974358975,
+      "conditions": {
+        "F": {
+          "material_errors": 4,
+          "responses": 8,
+          "specificity_correct": 48,
+          "specificity_total": 52,
+          "substantive_coverage": 1.0
+        },
+        "G": {
+          "material_errors": 0,
+          "responses": 8,
+          "specificity_correct": 40,
+          "specificity_total": 52,
+          "substantive_coverage": 1.0
+        },
+        "H": {
+          "material_errors": 0,
+          "responses": 8,
+          "specificity_correct": 52,
+          "specificity_total": 52,
+          "substantive_coverage": 1.0
+        }
+      }
+    }
+  },
+  "status": "DEVELOPMENT_SELECTION_NOT_CONFIRMATORY_RESULT"
+}

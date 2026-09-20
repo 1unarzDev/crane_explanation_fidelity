@@ -86,6 +86,14 @@ source-reference correctness. Method comparisons must not give G a stronger mode
 A tiered stronger model for difficult source interpretation is adopted only if development evidence
 justifies it, and its calls/cost are counted.
 
+The predeclared four-episode control compared `gpt-5.6-sol` and `gpt-5.6-luna` at low reasoning on
+the same 24 F/G/H requests. Luna's errors were F 3/8, G 0/8, H 1/8 versus Sol's F 4/8, G 0/8, H
+0/8; aggregate specificity was 140/156 for both, and coverage was 1.0 for every condition. Luna met
+all predeclared margins and used 8.7% fewer input tokens, 20.5% fewer output tokens, and 29.8% less
+aggregate latency. Therefore **`gpt-5.6-luna`, low reasoning** is selected for the main matched
+F/G/H study. Monetary cost was not reported and no equivalence claim is made. The retained decision
+is reproducible from `analysis/results/provenance-model-strength-20260919.json`.
+
 ## Units, split, and inclusion
 
 Independent unit is scenario instance/episode, never a paraphrase. Split by scenario family before

@@ -9,7 +9,20 @@
 - Comparison: retained `gpt-5.6-sol` outputs versus new `gpt-5.6-luna` outputs. Eligibility allows at
   most one additional error per condition, at most a 10-point aggregate specificity loss, at most
   one additional source/causal overclaim, and at least 0.875 substantive coverage per condition.
-- Status: **NOT_RUN** at this checkpoint.
+- Executed 24 Luna calls across the fixed four episodes, two questions, and F/G/H. All calls passed
+  parity gates, used one sample with no retries, and have unique retained cache keys.
+- Unblinded annotation: Luna F/G/H material errors 3/0/1 versus Sol 4/0/0; specificity Luna
+  49/40/51 and Sol 48/40/52 out of 52 per condition; every condition has 8/8 substantive coverage.
+  Luna's H error calls an unproven progress-checker diagnosis; its F baseline makes one fewer such
+  error than Sol. Total source/causal overclaims are equal across settings.
+- Resource evidence over 24 matched logical calls: Luna versus Sol input tokens 2,253,937 versus
+  2,467,391; output tokens 18,484 versus 23,252; aggregate latency 625.923 versus 891.518 seconds.
+  Monetary cost was not reported.
+- Selection: **`gpt-5.6-luna`, low reasoning**. It meets every committed margin and is the lower
+  model tier. This selects a configuration; it does not establish equivalence.
+- Retained artifacts: `manifests/model_outputs/land-nav-provenance-model-strength-luna-v1.json`,
+  annotation `land-nav-provenance-model-strength-luna-v1.json`, and reproducible result
+  `analysis/results/provenance-model-strength-20260919.json`.
 
 ## 2026-09-19 — four-episode parity-controlled F/G/H development pilot
 

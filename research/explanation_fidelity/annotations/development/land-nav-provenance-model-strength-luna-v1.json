@@ -1,0 +1,79 @@
+{
+  "schema": "crane-explain-provenance-model-strength-annotation/v1",
+  "status": "DEVELOPMENT_ONLY_UNBLINDED_SINGLE_ANNOTATOR",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "low",
+  "single_sample_no_retry": true,
+  "information_parity_audited": true,
+  "condition_subset": ["F", "G", "H"],
+  "specificity_rubric_reference": "research/explanation_fidelity/annotations/development/land-nav-provenance-multiepisode-v1.json",
+  "episodes": [
+    {
+      "episode_id": "land-nav-20260919-e019-worker-0",
+      "questions": {
+        "recovery-mechanism": {
+          "F": {"material_error": true, "specificity_correct": 7, "specificity_total": 8, "error_categories": ["incorrect_source_attribution", "unsupported_mechanism_detail"], "rationale": "The answer juxtaposes runtime timing with the unsealed SimpleProgressChecker YAML as relevant configuration without establishing that it governed this run."},
+          "G": {"material_error": false, "specificity_correct": 7, "specificity_total": 8},
+          "H": {"material_error": false, "specificity_correct": 8, "specificity_total": 8}
+        },
+        "failure-cause": {
+          "F": {"material_error": false, "specificity_correct": 5, "specificity_total": 5},
+          "G": {"material_error": false, "specificity_correct": 3, "specificity_total": 5},
+          "H": {"material_error": false, "specificity_correct": 5, "specificity_total": 5}
+        }
+      }
+    },
+    {
+      "episode_id": "land-nav-20260919-e021-worker-0",
+      "questions": {
+        "recovery-mechanism": {
+          "F": {"material_error": true, "specificity_correct": 7, "specificity_total": 8, "error_categories": ["incorrect_source_attribution", "unsupported_causal_diagnosis"], "rationale": "The answer calls the runtime a controller-progress failure based on timing plus an unsealed parameter YAML even though the capture lacks the FollowPath error payload."},
+          "G": {"material_error": false, "specificity_correct": 7, "specificity_total": 8},
+          "H": {"material_error": true, "specificity_correct": 7, "specificity_total": 8, "error_categories": ["incorrect_source_attribution", "unsupported_causal_diagnosis"], "rationale": "The answer states that the supported explanation is a controller/progress failure after citing an unlinked progress-checker YAML; the runtime establishes FollowPath failure and guard eligibility, not that diagnosis."}
+        },
+        "failure-cause": {
+          "F": {"material_error": false, "specificity_correct": 5, "specificity_total": 5},
+          "G": {"material_error": false, "specificity_correct": 3, "specificity_total": 5},
+          "H": {"material_error": false, "specificity_correct": 5, "specificity_total": 5}
+        }
+      }
+    },
+    {
+      "episode_id": "land-nav-20260919-e037-worker-0",
+      "questions": {
+        "recovery-mechanism": {
+          "F": {"material_error": false, "specificity_correct": 8, "specificity_total": 8},
+          "G": {"material_error": false, "specificity_correct": 7, "specificity_total": 8},
+          "H": {"material_error": false, "specificity_correct": 8, "specificity_total": 8}
+        },
+        "failure-cause": {
+          "F": {"material_error": false, "specificity_correct": 5, "specificity_total": 5},
+          "G": {"material_error": false, "specificity_correct": 3, "specificity_total": 5},
+          "H": {"material_error": false, "specificity_correct": 5, "specificity_total": 5}
+        }
+      }
+    },
+    {
+      "episode_id": "land-nav-20260919-e038-worker-0",
+      "questions": {
+        "recovery-mechanism": {
+          "F": {"material_error": true, "specificity_correct": 7, "specificity_total": 8, "error_categories": ["incorrect_source_attribution", "unsupported_causal_diagnosis"], "rationale": "The answer calls the evidence a controller-progress failure after treating the unsealed YAML as the exact configuration."},
+          "G": {"material_error": false, "specificity_correct": 7, "specificity_total": 8},
+          "H": {"material_error": false, "specificity_correct": 8, "specificity_total": 8}
+        },
+        "failure-cause": {
+          "F": {"material_error": false, "specificity_correct": 5, "specificity_total": 5},
+          "G": {"material_error": false, "specificity_correct": 3, "specificity_total": 5},
+          "H": {"material_error": false, "specificity_correct": 5, "specificity_total": 5}
+        }
+      }
+    }
+  ],
+  "summary": {
+    "responses_per_condition": 8,
+    "material_errors": {"F": 3, "G": 0, "H": 1},
+    "specificity_correct": {"F": 49, "G": 40, "H": 51},
+    "specificity_total": 52,
+    "substantive_coverage": {"F": 1.0, "G": 1.0, "H": 1.0}
+  }
+}

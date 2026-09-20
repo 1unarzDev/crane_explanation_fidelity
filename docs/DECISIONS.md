@@ -1,5 +1,23 @@
 # Decision Log
 
+## 2026-09-19 — select gpt-5.6-luna low for matched F/G/H collection
+
+- Decision: use `gpt-5.6-luna` at low reasoning for every F/G/H condition in the main provenance
+  study; retain `gpt-5.6-sol` only as the stronger-model development control.
+- Evidence: under the precommitted four-episode rule, Luna has F/G/H errors 3/0/1 versus Sol 4/0/0,
+  equal aggregate specificity (140/156), and full coverage. It passes the one-response condition
+  margin, 10-point specificity margin, overclaim margin, and coverage floor. Across 24 calls Luna
+  used 2,253,937 versus 2,467,391 input tokens, 18,484 versus 23,252 output tokens, and 625.923 versus
+  891.518 seconds aggregate latency.
+- Alternatives: retain Sol by default; choose Luna solely because it is a lower tier; route source
+  questions to Sol. The first ignores a passed predeclared control, the second would lack a quality
+  gate, and the third adds condition/model confounding unsupported by this pilot.
+- RQ impact: controls model strength for RQ4 and reduces the cost of scaling independent episodes
+  without giving G a stronger model than F/H.
+- Risk/revisit: only four episodes and one unblinded annotator were used; monetary cost was not
+  reported, and the result does not establish equivalence. Revisit only for a documented provider
+  availability failure before freeze, not in response to unfavorable sealed outputs.
+
 ## 2026-09-19 — gate F/G/H calls on a shared runtime information audit
 
 - Decision: derive one evaluator-truth-free runtime presentation from the raw passive capture,

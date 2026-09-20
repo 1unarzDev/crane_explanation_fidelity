@@ -43,6 +43,11 @@ their own location. Exact repository commits and destinations are recorded in
   G 0/8, and H 0/8 at full substantive coverage; H is more specific than G (52/52 versus 40/52
   units). The F–G clustered difference is −0.50 with a highly discrete four-cluster bootstrap
   interval [−0.875, −0.125]; response-level McNemar is 0.125. These are planning evidence only.
+- **TESTED (DEVELOPMENT ONLY):** predeclared model-strength control selected `gpt-5.6-luna` at low
+  reasoning over `gpt-5.6-sol` for future matched F/G/H runs. Luna stayed within every quality
+  margin, matched aggregate specificity (140/156), and used fewer tokens and 29.8% less aggregate
+  latency across 24 calls. Monetary cost was unavailable; this is configuration selection, not an
+  equivalence claim.
 - **TESTED:** ROS package tests, Jazzy build, live BT/action/harness capture, and exact BT retention.
 - **TESTED:** CRANE build, one valid aquatic terminal-success capture pilot, a graphics-free
   land/Ackermann success smoke with populated costmap snapshots, and a valid-as-expected land
