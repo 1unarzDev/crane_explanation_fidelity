@@ -1,0 +1,41 @@
+{
+  "schema": "crane-explain-secondary-arm-amendment/v1",
+  "status": "ADAPTER_FAILURE_RETENTION_CORRECTION_DURING_SEALED_COLLECTION",
+  "amends": "manifests/study/provenance-claude-replication-arm-v1-amendment-2.json",
+  "created_local_date": "2026-09-20",
+  "sealed_claude_envelopes_before_amendment": 7,
+  "sealed_claude_physical_calls_before_amendment": 21,
+  "claude_arm_annotations_before_amendment": 0,
+  "frozen_luna_arm_affected": false,
+  "scientific_design_changed": false,
+  "frozen_prompts_changed": false,
+  "model_selection_changed": false,
+  "episode_set_changed": false,
+  "reason": "The sealed batch stopped at pn-0004 failure-cause. The condition-H call returned Claude Code CLI envelope is_error=true, terminal_reason=api_error, api_error_status=429, with the provider result text 'You've hit your monthly spend limit'. The adapter wrote that envelope into the content-addressed answer cache and then raised. On resume the cache-hit path returned the stored record unchecked, so the runner failed while reading parsed_final['answer'].",
+  "defect": {
+    "summary": "An infrastructure failure was persisted into the answer cache, which permanently prevented the call from ever being made and misrepresented a transport error as a retained sample.",
+    "retained_failed_cache_key": "e1db7a72ff3e370e6a500b1ffcc0833255c208dbcfb86f8aa0968957495b9482",
+    "retained_failed_call_role": "condition-h-failure-cause",
+    "retained_failed_call_episode": "pn-0004",
+    "retained_failed_call_question_kind": "failure-cause",
+    "provider_reported_cost_usd": 0.0472168,
+    "provider_output_tokens": 598,
+    "parsed_answer_produced": false,
+    "workspace_unmodified": true,
+    "second_defect": "The cache-hit path did not validate the cached record, so a stored failure surfaced as an opaque TypeError in the runner rather than a stated error in the adapter."
+  },
+  "decision": [
+    "A call that produces no parsed answer -- non-zero exit, provider quota or transport error, or a result that does not satisfy the schema -- is not an answer and is never written to the answer cache.",
+    "Retain every such record, without deletion, under research/explanation_fidelity/model_cache/<root>/_retained_failed_calls/<cache-key>-<started_wall_time_ns>.json.",
+    "Validate a cache hit before returning it: a record with no parsed answer, or with a violated read-only workspace contract, is raised rather than replayed.",
+    "Move the one already-poisoned record out of the answer cache into the retained-failures directory, preserving its bytes.",
+    "Make the blocked condition-H call once, under the unchanged model, effort, prompt, schema delivery, and evidence."
+  ],
+  "why_this_is_not_resampling": "The frozen single-sample/no-retry rule protects against resampling an answer or repairing language. The 429 call produced no answer at all: parsed_final is null and the provider returned a spend-limit notice in place of a response. No answer text was inspected, compared, or selected against, and the re-call cannot be conditioned on content that does not exist. Re-calling after a transport failure is the same act as making the call for the first time. A successful call remains cached and is still never re-called.",
+  "what_would_have_been_wrong": "Deleting the failed record would have destroyed evidence that a paid provider call occurred. Leaving it in the answer cache would have made the arm permanently incompletable at 17 of 18 envelopes while reporting a quota notice as a condition-H response.",
+  "resource_accounting": "The failed call's provider cost and tokens are real and are reported separately from answered calls. It is excluded from response counts, specificity, and every scored summary, and is not a physical call for the arm's declared 54-call shape.",
+  "limitations": [
+    "The monthly spend limit is an account-level constraint outside the study design. A future arm can be interrupted the same way at any point.",
+    "This correction was made during sealed collection rather than before it, unlike amendments 1 and 2. It changes no prompt, model, episode, condition, or evidence, and no sealed answer text was inspected when the defect was found or fixed."
+  ]
+}

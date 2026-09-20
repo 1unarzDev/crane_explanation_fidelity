@@ -7,9 +7,12 @@ digest that substitutes for the Codex read-only sandbox. No model call is made.
 
 from __future__ import annotations
 
+import hashlib
 import json
+import types
 
 import pytest
+import claude_cli_caller
 from claude_cli_caller import (
     DENIED_TOOLS,
     SCHEMA_DELIVERY,
@@ -80,3 +83,101 @@ def test_schema_is_delivered_out_of_band_so_the_frozen_prompt_is_unmodified():
 def test_every_mutating_network_and_delegation_tool_is_denied():
     for tool in ("Edit", "Write", "NotebookEdit", "WebFetch", "WebSearch", "Task"):
         assert tool in DENIED_TOOLS
+
+
+def _caller(tmp_path, monkeypatch):
+    """Construct a caller without invoking the real CLI for its version probe."""
+
+    monkeypatch.setattr(
+        claude_cli_caller.subprocess,
+        "run",
+        lambda *a, **k: types.SimpleNamespace(stdout="test-cli", stderr="", returncode=0),
+    )
+    return claude_cli_caller.ClaudeCliCaller(tmp_path / "cache", "test-model", "low")
+
+
+def _record(caller, *, parsed_final, workspace_unmodified=True, parse_error=None):
+    """Write one record straight into the answer cache for the cache-hit path to read."""
+
+    request = {
+        "adapter": caller.adapter,
+        "provider": "claude-code-cli",
+        "model": caller.model,
+        "reasoning_effort": caller.reasoning_effort,
+        "temperature": None,
+        "seed": None,
+        "role": "condition-h-failure-cause",
+        "prompt": "prompt",
+        "schema": {"type": "object"},
+        "cli_version": caller.cli_version,
+        "workspace_identity": None,
+        "schema_delivery": claude_cli_caller.SCHEMA_DELIVERY,
+        "denied_tools": list(claude_cli_caller.DENIED_TOOLS),
+    }
+    key = hashlib.sha256(claude_cli_caller.canonical_json(request).encode()).hexdigest()
+    (caller.cache / f"{key}.json").write_text(
+        json.dumps(
+            {
+                "request": request,
+                "parsed_final": parsed_final,
+                "parse_error": parse_error,
+                "workspace_unmodified": workspace_unmodified,
+            }
+        ),
+        encoding="utf-8",
+    )
+    return request
+
+
+def _call(caller, request):
+    return caller.call(
+        request["role"], request["prompt"], request["schema"], workspace_identity=None
+    )
+
+
+def test_a_successful_cached_answer_is_returned_without_a_new_call(tmp_path, monkeypatch):
+    caller = _caller(tmp_path, monkeypatch)
+    request = _record(caller, parsed_final={"answer": "retained"})
+    assert _call(caller, request)["parsed_final"] == {"answer": "retained"}
+
+
+def test_a_cached_record_without_an_answer_is_raised_not_returned(tmp_path, monkeypatch):
+    """A quota or transport failure must never be replayed as if it were a retained answer."""
+
+    caller = _caller(tmp_path, monkeypatch)
+    request = _record(caller, parsed_final=None, parse_error="cli reported error: success")
+    with pytest.raises(RuntimeError, match="no parsed answer"):
+        _call(caller, request)
+
+
+def test_a_cached_record_with_a_modified_workspace_is_raised_not_returned(tmp_path, monkeypatch):
+    caller = _caller(tmp_path, monkeypatch)
+    request = _record(caller, parsed_final={"answer": "x"}, workspace_unmodified=False)
+    with pytest.raises(RuntimeError, match="read-only contract violated"):
+        _call(caller, request)
+
+
+def test_a_failed_call_is_retained_outside_the_answer_cache(tmp_path, monkeypatch):
+    """The answer cache protects successful calls from resampling; a failure is not a sample."""
+
+    caller = _caller(tmp_path, monkeypatch)
+    quota_error = {
+        "is_error": True,
+        "subtype": "success",
+        "result": "You've hit your monthly spend limit",
+        "total_cost_usd": 0.047,
+    }
+    monkeypatch.setattr(
+        claude_cli_caller.subprocess,
+        "run",
+        lambda *a, **k: types.SimpleNamespace(
+            stdout=json.dumps(quota_error), stderr="", returncode=1
+        ),
+    )
+    with pytest.raises(RuntimeError, match="produced no answer"):
+        caller.call("condition-h-failure-cause", "prompt", {"type": "object"})
+
+    assert not list(caller.cache.glob("*.json")), "a failed call must not enter the answer cache"
+    retained = list((caller.cache / claude_cli_caller.FAILED_CALL_DIRECTORY).glob("*.json"))
+    assert len(retained) == 1, "the failed call must still be retained as evidence"
+    assert json.loads(retained[0].read_text())["cost_usd"] == 0.047

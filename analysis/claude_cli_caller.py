@@ -21,6 +21,12 @@ abandoned during the development control because the model answered in prose oft
 calls outright, and because an in-band suffix alters the prompt the frozen study pinned. Calls made
 under that revision carry ``schema_delivery: "in_band_prompt_suffix"`` in their retained request and
 are excluded from every summary.
+
+A call that never produced a parsed answer -- a non-zero exit, a provider quota or transport error,
+or a result that does not satisfy the schema -- is *not* an answer and is never written to the
+answer cache. It is retained under ``_retained_failed_calls/`` and raised. The answer cache
+guarantees that a successful call is never resampled; a failure that produced no sample carries no
+such guarantee to protect, and caching one would permanently prevent the call from being made.
 """
 
 from __future__ import annotations
@@ -51,6 +57,12 @@ DENIED_TOOLS = (
 # Recorded in every request so a cached record always states how its schema was delivered, and so
 # a change of delivery mechanism changes the cache key instead of silently reusing a stale answer.
 SCHEMA_DELIVERY = "out_of_band_json_schema_flag"
+
+# Calls that never produced a parsed answer are retained here instead of in the answer cache. The
+# answer cache exists to guarantee that a *successful* call is never resampled; a transport or
+# quota failure produced no sample, so caching it would both misrepresent it as an answer and
+# permanently prevent the call from ever being made. Records here are retained, never deleted.
+FAILED_CALL_DIRECTORY = "_retained_failed_calls"
 
 
 def canonical_json(value: Any) -> str:
@@ -159,6 +171,17 @@ class ClaudeCliCaller:
             cached = json.loads(cache_path.read_text(encoding="utf-8"))
             if cached["request"] != request:
                 raise RuntimeError(f"cache collision at {cache_path}")
+            # A cached record must be a usable answer. Returning an unparsed or integrity-violating
+            # record would surface later as an opaque error in the caller's own field access.
+            if cached.get("parsed_final") is None:
+                raise RuntimeError(
+                    f"cached record has no parsed answer; retained at {cache_path}: "
+                    f"{cached.get('parse_error')}"
+                )
+            if not cached.get("workspace_unmodified", False):
+                raise RuntimeError(
+                    f"read-only contract violated; workspace changed during {cache_path}"
+                )
             return cached
         with tempfile.TemporaryDirectory(prefix="crane-explain-claude-") as temporary:
             root = Path(temporary)
@@ -253,11 +276,20 @@ class ClaudeCliCaller:
                     else None
                 ),
             }
-            cache_path.write_text(
-                json.dumps(record, indent=2, sort_keys=True) + "\n", encoding="utf-8"
-            )
-        if completed.returncode != 0 or parsed_final is None:
-            raise RuntimeError(f"model call failed; retained at {cache_path}")
+            serialized = json.dumps(record, indent=2, sort_keys=True) + "\n"
+            if completed.returncode != 0 or parsed_final is None:
+                # The call produced no answer. Retain the whole record as evidence, but keep it out
+                # of the content-addressed answer cache so the call is neither misreported as a
+                # sample nor permanently blocked from being attempted again.
+                failures = self.cache / FAILED_CALL_DIRECTORY
+                failures.mkdir(parents=True, exist_ok=True)
+                failure_path = failures / f"{cache_key}-{started_ns}.json"
+                failure_path.write_text(serialized, encoding="utf-8")
+                raise RuntimeError(
+                    f"model call produced no answer; retained at {failure_path}: "
+                    f"{parse_error}"
+                )
+            cache_path.write_text(serialized, encoding="utf-8")
         if not record["workspace_unmodified"]:
             raise RuntimeError(
                 f"read-only contract violated; workspace changed during {cache_path}"
