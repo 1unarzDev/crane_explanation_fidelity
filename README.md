@@ -80,8 +80,8 @@ their own location. Exact repository commits and destinations are recorded in
   when a volatile DDS startup race lost its goal boundary; reliable transient-local harness QoS
   was then validated on the retained replication. Three further predeclared independent
   configurations passed; a fourth is retained but excluded because it produced zero recoveries.
-- **IN_PROGRESS / SEALED:** fifteen independent final F/G/H episodes are included (eight
-  recovery-success, seven terminal-abort), with 90 one-shot Luna-low calls retained and no
+- **IN_PROGRESS / SEALED:** sixteen independent final F/G/H episodes are included (eight
+  recovery-success, eight terminal-abort), with 96 one-shot Luna-low calls retained and no
   exclusions. This remains far below the frozen 40-episode minimum; answers have not been scored,
   and no sealed effect estimate has been calculated.
 - **TESTED (SECONDARY-ARM DEVELOPMENT):** the provider-neutral model-call contract now has a
