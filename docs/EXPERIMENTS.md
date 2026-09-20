@@ -1,5 +1,18 @@
 # Experiment Log
 
+## 2026-09-19 — sealed pn-0003 inclusion and model calls
+
+- **CAPTURED ONCE / INCLUDED:** frozen recovery-success row `pn-0003`, seed 2003, passed the corrected
+  expected-status contract. The action succeeded after exactly one recorded Wait invocation with
+  2.965 m displacement, 225 returned controller commands, 67 costmap observations, and maximum
+  13,192 occupied cells. Both frozen parity audits passed with 10 recovery and 7 cause units; the
+  inclusion validator inspected no answers.
+- **SEALED MODEL CALLS RETAINED / NOT ANNOTATED:** both questions ran once for F/G/H with Luna-low:
+  six calls, no retries, 564,864 input tokens, 416,512 cached input tokens, 4,910 output tokens,
+  798 reasoning tokens, and 165.896 s aggregate latency. A–E remain non-model smoke outputs and
+  frozen model evaluation is `NOT_RUN`. Hashes and usage are retained in
+  `manifests/model_outputs/pn-0003-provenance-v1.json`.
+
 ## 2026-09-19 — sealed pn-0002 capture, inclusion, and wrapper-contract amendment
 
 - **CAPTURED ONCE / INCLUDED:** frozen row `pn-0002`, seed 3002, ROS domain 101,
