@@ -1,5 +1,18 @@
 # Experiment Log
 
+## 2026-09-20 — sealed pn-0010 inclusion and model calls
+
+- **CAPTURED ONCE / INCLUDED:** frozen terminal-abort row `pn-0010`, seed 3010, passed every
+  inclusion gate and the exact expected-abort contract. The action aborted after two unique Wait
+  invocations with 0.087 m displacement, 303 returned controller commands, 63 costmap
+  observations, maximum 8,955 occupied cells, and accepted 10/7-unit parity audits. No answer was
+  inspected for scoring before inclusion.
+- **SEALED MODEL CALLS RETAINED / NOT ANNOTATED:** both questions ran once for F/G/H with Luna-low:
+  six calls, no retries, 556,288 input tokens, 344,064 cached input tokens, 4,768 output tokens,
+  831 reasoning tokens, and 141.456 s aggregate latency. A–E remain non-model smoke outputs and
+  frozen model evaluation is `NOT_RUN`. Hashes and usage are retained in
+  `manifests/model_outputs/pn-0010-provenance-v1.json`.
+
 ## 2026-09-20 — provider-neutral model-family replication path
 
 - **IMPLEMENTED / TESTED:** added a normalized `crane-explain-model-call/v1` adapter for the Claude
