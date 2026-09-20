@@ -97,6 +97,11 @@ def main() -> int:
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--model", default="gpt-5.6-sol")
     parser.add_argument("--reasoning-effort", default="low")
+    parser.add_argument(
+        "--study-status",
+        choices=("DEVELOPMENT_ONLY_NOT_FROZEN", "SEALED_TEST"),
+        default="DEVELOPMENT_ONLY_NOT_FROZEN",
+    )
     args = parser.parse_args()
     if args.output.exists():
         raise SystemExit(f"refusing existing output: {args.output}")
@@ -258,7 +263,7 @@ def main() -> int:
     outputs.sort(key=lambda item: item["condition"])
     result = {
         "schema": "crane-explain-provenance-agent-pilot/v1",
-        "status": "DEVELOPMENT_ONLY_NOT_FROZEN",
+        "status": args.study_status,
         "episode_id": episode.episode_id,
         "question_kind": args.question_kind,
         "question": question,

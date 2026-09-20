@@ -1,5 +1,14 @@
 # Decision Log
 
+## 2026-09-19 — label sealed result envelopes without rerunning calls
+
+- Decision: add a `SEALED_TEST` result-envelope status option after pn-0001's first three calls;
+  preserve the original mislabeled result and do not rerun it.
+- Evidence: the runner's hardcoded development label affects metadata only. Cache keys, prompts,
+  evidence, answer text, model, verifier, and call count are unchanged.
+- Validity: three sealed calls and no annotations existed. Record the amendment before the remaining
+  calls and treat the pn-0001 recovery result's legacy status as a documented metadata limitation.
+
 ## 2026-09-19 — correct leakage-gate false positive before model calls
 
 - Decision: allow the exact audit field `evaluator_truth_available_to_methods=false`; continue to
