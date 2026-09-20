@@ -44,6 +44,9 @@ def main() -> int:
         manifest,
         (capture / "behavior_tree.xml").read_bytes(),
         episode,
+        (capture / "runtime_manifest.json").read_bytes()
+        if (capture / "runtime_manifest.json").is_file()
+        else None,
     )
     validate_episode_projection(presentation, episode)
     audit = audit_fgh_information_parity(presentation, args.question_kind)

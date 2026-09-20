@@ -124,6 +124,9 @@ def main() -> int:
         capture_manifest,
         (args.capture_dir / "behavior_tree.xml").read_bytes(),
         episode,
+        (args.capture_dir / "runtime_manifest.json").read_bytes()
+        if (args.capture_dir / "runtime_manifest.json").is_file()
+        else None,
     )
     if runtime_presentation != rebuilt_presentation:
         raise SystemExit("retained runtime presentation does not match the raw capture")
@@ -173,12 +176,15 @@ def main() -> int:
                 shutil.rmtree(evidence)
             evidence.mkdir()
             if condition == "F":
-                for name in ("events.jsonl", "manifest.json", "behavior_tree.xml"):
+                raw_names = ["events.jsonl", "manifest.json", "behavior_tree.xml"]
+                if (args.capture_dir / "runtime_manifest.json").is_file():
+                    raw_names.append("runtime_manifest.json")
+                for name in raw_names:
                     shutil.copy2(args.capture_dir / name, evidence / name)
                 description = (
                     "Raw passive capture files are in _robot_visible/: events.jsonl, "
-                    "manifest.json, and behavior_tree.xml. Treat repeated publications as repeated "
-                    "messages, not new attempts."
+                    "manifest.json, behavior_tree.xml, and runtime_manifest.json when retained. "
+                    "Treat repeated publications as repeated messages, not new attempts."
                 )
             else:
                 shutil.copy2(args.runtime_presentation, evidence / "runtime-presentation.json")

@@ -32,7 +32,7 @@ their own location. Exact repository commits and destinations are recorded in
 - **IMPLEMENTED, TESTED:** evidence records, checked answer plans, final-text verification,
   deterministic fallback, Dock/Slalom regressions, terminal-status distinctions, bounded
   runtime-to-source provenance, claim classes, deterministic runtime presentations, and pre-call
-  F/G/H information-unit auditing (41 core tests).
+  F/G/H information-unit auditing, and hash-checked runtime configuration identity (42 core tests).
 - **TESTED (DEVELOPMENT ONLY):** parity-controlled provenance pilot v2 on retained e037, with one
   evidence-rich recovery-mechanism question and one evidence-limited physical-cause question. Four
   new H/G calls were made; the two unchanged F calls were reused exactly from cache. Unblinded

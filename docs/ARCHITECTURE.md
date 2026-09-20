@@ -41,7 +41,12 @@ relationships require retained provenance, and unresolved provenance remains exp
 1. CRANE/run harness supplies episode, run, tick, sensor/observation identity, and explicit client
    cancellation/deadline events.
 2. The ROS observer records Nav2 action goal/feedback/result and BT status transitions, plus the
-   exact BT XML/version. It does not infer internal consumption from nearby topic values.
+   exact BT XML/version. Final-study captures also retain an immutable runtime manifest containing
+   the actual Nav2 parameter-file hash/Git object, harness hashes, container digest, installed Nav2
+   package versions, checkout identities, player hashes, and effective scene/command/LiDAR launch
+   settings. Intervention identity/timing and evaluator truth are explicitly excluded. A configured
+   parameter still does not prove it caused a particular failure or that a controller consumed a
+   nearby observation.
 3. A deterministic runtime-presentation builder preserves accepted goal/result identity, exact BT
    transition IDs/UIDs/statuses/timestamps, feedback summaries, BT XML identity, limitations, and
    separately scoped completeness. Each field retains compact raw-record derivation provenance.

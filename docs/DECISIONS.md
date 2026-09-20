@@ -1,5 +1,24 @@
 # Decision Log
 
+## 2026-09-19 — seal known runtime configuration before final collection
+
+- Decision: final captures must retain a hash-checked robot-visible runtime manifest with the actual
+  Nav2 parameter file, BT XML, harness scripts, container image digest, installed package versions,
+  checkout commits, player hashes, and effective scene/command/LiDAR launch settings. The parity
+  presentation exposes this same identity to F/G/H.
+- Evidence: every material F error in the four-episode pilot inferred that
+  `nav2_land_fixture.yaml` governed the run. The harness actually knows and fixes that path; omitting
+  it in final collection would manufacture an avoidable evidence gap.
+- Alternatives: preserve the omission to keep a discriminative benchmark; add the YAML only to G;
+  or treat repository proximity as sufficient. Those respectively bias the study, create privileged
+  information, or violate the central provenance claim.
+- RQ impact: strengthens RQ4 and may reduce the favorable F–G pilot effect. That is scientifically
+  necessary. The remaining discriminative question is whether methods avoid promoting configured
+  progress checking into the actual failure cause without a controller error payload.
+- Risk/revisit: the current player build still lacks a proven embedded source commit, and package
+  versions do not prove source-to-binary rebuilding. Keep those limits explicit rather than adding a
+  native hook or claiming more provenance than retained.
+
 ## 2026-09-19 — select gpt-5.6-luna low for matched F/G/H collection
 
 - Decision: use `gpt-5.6-luna` at low reasoning for every F/G/H condition in the main provenance
