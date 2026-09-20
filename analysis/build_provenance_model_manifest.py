@@ -43,6 +43,49 @@ def usage(events: list[dict[str, Any]]) -> dict[str, int]:
     return totals
 
 
+def condition_accounting(
+    outputs: list[dict[str, Any]], calls: list[dict[str, Any]]
+) -> dict[str, Any]:
+    """Separate actual model conditions from inherited smoke outputs.
+
+    Provenance result envelopes retain A--E deterministic smoke outputs alongside the
+    newly executed F/G/H calls.  A model-artifact manifest must not describe all envelope
+    outputs as model evaluations.
+    """
+    result_conditions = sorted(
+        {item["condition"] for output in outputs for item in output["outputs"]}
+    )
+    call_conditions = [
+        call["request"]["workspace_identity"]["condition"] for call in calls
+    ]
+    model_conditions = sorted(set(call_conditions))
+    if any(condition not in result_conditions for condition in model_conditions):
+        raise SystemExit("model call condition is absent from retained result outputs")
+    non_model_conditions = sorted(set(result_conditions) - set(model_conditions))
+    model_output_count = sum(
+        item["condition"] in model_conditions
+        for output in outputs
+        for item in output["outputs"]
+    )
+    if model_output_count != len(calls):
+        raise SystemExit(
+            "model call/output mismatch: "
+            f"{len(calls)} calls for {model_output_count} model-condition outputs"
+        )
+    return {
+        "conditions": model_conditions,
+        "model_condition_outputs": model_output_count,
+        "embedded_non_model_smoke_conditions": non_model_conditions,
+        "embedded_non_model_smoke_outputs": sum(
+            item["condition"] in non_model_conditions
+            for output in outputs
+            for item in output["outputs"]
+        ),
+        "result_envelope_conditions": result_conditions,
+        "result_envelope_outputs": sum(len(output["outputs"]) for output in outputs),
+    }
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output-root", required=True, type=Path)
@@ -77,6 +120,7 @@ def main() -> int:
     if missing:
         raise SystemExit(f"missing cache artifacts: {missing}")
     calls = [json.loads(path.read_text(encoding="utf-8")) for path in cache_paths]
+    accounting = condition_accounting(outputs, calls)
     usage_totals = {key: 0 for key in usage([])}
     aggregate_latency_ms = 0.0
     for call in calls:
@@ -89,7 +133,7 @@ def main() -> int:
         "status": args.status,
         "episode_ids": sorted({output["episode_id"] for output in outputs}),
         "question_kinds": sorted({output["question_kind"] for output in outputs}),
-        "conditions": sorted({condition for output in outputs for condition in output["conditions"]}),
+        **accounting,
         "provider": calls[0]["request"]["provider"],
         "model": calls[0]["request"]["model"],
         "reasoning_effort": calls[0]["request"]["reasoning_effort"],
@@ -99,7 +143,7 @@ def main() -> int:
         ),
         "evaluator_truth_available_to_methods": False,
         "new_model_calls": len(calls),
-        "logical_condition_outputs": sum(len(output["outputs"]) for output in outputs),
+        "a_to_e_frozen_model_evaluation_status": "NOT_RUN",
         "usage": {
             **usage_totals,
             "aggregate_latency_ms": aggregate_latency_ms,

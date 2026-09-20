@@ -1,5 +1,19 @@
 # Decision Log
 
+## 2026-09-19 — distinguish sealed model calls from embedded smoke outputs
+
+- Decision: model-artifact manifests report F/G/H as the model-evaluated conditions and label the
+  inherited A–E envelope entries as deterministic smoke outputs. A–E remain `NOT_RUN` as frozen
+  model conditions until their dedicated runner is executed.
+- Evidence: each `pn-0001` question envelope contains eight condition entries but references only
+  three physical model calls, one each for F/G/H. The initial manifest builder incorrectly promoted
+  all envelope entries to evaluated conditions; its hash audit was valid but its semantic accounting
+  was not.
+- Validity: the correction changes only manifest construction and adds no calls, retries,
+  annotations, evidence, prompt, output text, or verifier behavior. The invalid uncommitted manifest
+  was replaced, and a regression test now requires six model outputs and ten smoke outputs for a
+  two-question F/G/H batch.
+
 ## 2026-09-19 — label sealed result envelopes without rerunning calls
 
 - Decision: add a `SEALED_TEST` result-envelope status option after pn-0001's first three calls;
