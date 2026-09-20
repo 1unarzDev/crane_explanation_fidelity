@@ -1,8 +1,8 @@
 # Experiment Log
 
-## 2026-09-19 — sealed pn-0002 capture and wrapper-contract amendment
+## 2026-09-19 — sealed pn-0002 capture, inclusion, and wrapper-contract amendment
 
-- **CAPTURED ONCE / POSTPROCESSING PENDING:** frozen row `pn-0002`, seed 3002, ROS domain 101,
+- **CAPTURED ONCE / INCLUDED:** frozen row `pn-0002`, seed 3002, ROS domain 101,
   TurtleBot3 warehouse corridor, 3.25 m goal, and an unreleased mobility hold scheduled after
   14.5 fixed simulation seconds. Nav2 returned `aborted` after 32.597 s with two reported
   recoveries; the fixture retained 303 controller commands, 62 costmap observations, maximum 9,378
@@ -12,8 +12,11 @@
   therefore defaulted to expected `succeeded` and set `valid=false`, even though the captured result
   matches the predeclared terminal-abort family.
 - **VALIDITY ACTION:** retained the episode without rerun; zero `pn-0002` model calls or annotations
-  existed. Amendment 4 corrects only the future wrapper contract. Inclusion remains pending the
-  frozen derivation, parity, provenance, leakage, and episode-validation gates.
+  existed. Amendment 4 corrects only the future wrapper contract. The frozen validator subsequently
+  accepted matching goal/result identity, exact retained runtime/source hashes, two unique Wait
+  invocations matching final feedback, complete recovery history, the predeclared abort family,
+  populated costmap evidence, 10-unit recovery parity, 7-unit cause parity, and robot-visible
+  leakage scanning. No answer output was inspected before inclusion.
 
 ## 2026-09-19 — fair-configuration provenance re-pilot predeclaration
 
