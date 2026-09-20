@@ -80,8 +80,8 @@ their own location. Exact repository commits and destinations are recorded in
   when a volatile DDS startup race lost its goal boundary; reliable transient-local harness QoS
   was then validated on the retained replication. Three further predeclared independent
   configurations passed; a fourth is retained but excluded because it produced zero recoveries.
-- **IN_PROGRESS / SEALED:** twelve independent final F/G/H episodes are included (six
-  recovery-success, six terminal-abort), with 72 one-shot Luna-low calls retained and no
+- **IN_PROGRESS / SEALED:** thirteen independent final F/G/H episodes are included (seven
+  recovery-success, six terminal-abort), with 78 one-shot Luna-low calls retained and no
   exclusions. This remains far below the frozen 40-episode minimum; answers have not been scored,
   and no sealed effect estimate has been calculated.
 - **TESTED (SECONDARY-ARM DEVELOPMENT):** the provider-neutral model-call contract now has a
@@ -130,12 +130,18 @@ ROS package tests additionally require the Jazzy/ament environment; a blanket ho
 - `manifests/`: dependency locks, data inventories, and run checkpoints
 - `data/robot_visible/`: untracked evidence supplied to explanation systems
 - `data/evaluator_only/`: untracked fault truth, gold propositions, and labels
+- `.dvc/` and `*.dvc`: credential-free pointers for ignored artifacts synchronized through private
+  Cloudflare R2
 - `scripts/`: root-relative setup, governance, manifest, and checkpoint commands
 - `docs/`: architecture, benchmark, study, experiments, research, and decisions
 
 Raw data and model outputs never enter Git. The two data domains are physically separate and are
 joined only through opaque episode IDs during evaluation. Primary and secondary model-family arms
 never share an output root, cache root, manifest name, or annotation file.
+
+After setup, DVC/R2 synchronization is documented in [governed artifact storage](docs/DATA_STORAGE.md).
+R2 does not provide a hard free-tier spending cap; the project wrapper requires account-wide
+metrics and stops at conservative 90% guard thresholds, but it cannot guarantee zero fees.
 
 ## Runtimes and checkpointing
 
@@ -176,6 +182,7 @@ delivered odometry proven controller consumption.
 - [Benchmark](docs/BENCHMARK.md)
 - [Experiment ledger](docs/EXPERIMENTS.md)
 - [Model-family replication protocol](docs/MODEL_FAMILY_REPLICATION.md)
+- [Governed artifact storage and DVC/R2 setup](docs/DATA_STORAGE.md)
 - [Blinded annotation workflow](docs/ANNOTATION_WORKFLOW.md)
 - [Research audit](docs/RESEARCH.md)
 - [Decision log](docs/DECISIONS.md)
