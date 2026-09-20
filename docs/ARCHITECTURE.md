@@ -42,16 +42,22 @@ relationships require retained provenance, and unresolved provenance remains exp
    cancellation/deadline events.
 2. The ROS observer records Nav2 action goal/feedback/result and BT status transitions, plus the
    exact BT XML/version. It does not infer internal consumption from nearby topic values.
-3. A provenance resolver follows runtime anchors to exact retained artifacts. It retrieves the
+3. A deterministic runtime-presentation builder preserves accepted goal/result identity, exact BT
+   transition IDs/UIDs/statuses/timestamps, feedback summaries, BT XML identity, limitations, and
+   separately scoped completeness. Each field retains compact raw-record derivation provenance.
+   Before F/G/H calls, a question-specific audit proves that F can derive every required unit from
+   its raw capture and that G/H receive the same structured runtime value. Source links and checked
+   plans are explicitly excluded as G's treatment, not mislabeled as shared runtime facts.
+4. A provenance resolver follows runtime anchors to exact retained artifacts. It retrieves the
    defining node/symbol/configuration first, then directly relevant parents/callers only as needed;
    unrestricted repository search is a separately evaluated baseline.
-4. The core validates identity, chronology, completeness, candidate, policy, artifact hash, source
+5. The core validates identity, chronology, completeness, candidate, policy, artifact hash, source
    anchor, and runtime-to-source link invariants.
-5. Reasoning constructs claims with evidence IDs, source-anchor IDs, derivation, temporal scope,
+6. Reasoning constructs claims with evidence IDs, source-anchor IDs, derivation, temporal scope,
    assumptions, support status, and claim class.
-6. A realizer emits language; the verifier checks final sentences against both evidence planes.
+7. A realizer emits language; the verifier checks final sentences against both evidence planes.
    Unverified language falls back to templates.
-7. Evaluation compares responses with evaluator-only truth stored outside all model-visible paths.
+8. Evaluation compares responses with evaluator-only truth stored outside all model-visible paths.
 
 The source retrieval order is runtime event → exact source/configuration anchor → minimal
 relevant span → directly relevant parent/caller/configuration → broader search only when the

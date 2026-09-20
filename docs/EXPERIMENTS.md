@@ -1,5 +1,38 @@
 # Experiment Log
 
+## 2026-09-19 — information-parity-controlled provenance pilot v2
+
+- Episode: retained `land-nav-20260919-e037-worker-0`; no simulator rerun and no evaluator-only
+  artifact entered a method workspace.
+- Implementation: added a deterministic runtime presentation with exact accepted goal/result,
+  3,236-message feedback summary, all 39 BT transitions with stable/raw identities, two ordered
+  recovery entries, exact BT XML hash, limitations, and separate whole-execution versus recovery
+  count completeness. The checked-plan episode must validate as a projection of this presentation.
+- Pre-call audits: recovery-mechanism accepted 9/9 required information units; physical-cause
+  accepted 6/6. F receives raw capture files; G/H receive the same structured presentation. G-only
+  provenance links, bounded spans, checked planning, and final verification are explicitly excluded
+  from shared-runtime parity.
+- Calls: `gpt-5.6-sol`, low reasoning, one sample, no repair/resampling. The unchanged F requests
+  reused their exact v1 cache records. Four genuinely changed H/G requests produced new retained
+  records: 349,042 input, 283,648 cached-input, 3,062 output, and 453 reasoning tokens; aggregate
+  latency 113.832 s; provider cost not reported.
+- Development-only unblinded annotation: recovery F retains one material error by treating an
+  unsealed parameter YAML and its 10-second progress window as governing this run. G has no material
+  error and now exposes both exact recovery sequences, attempt IDs/timestamps, BT path, commit, and
+  artifact hash. H no longer claims an unobserved error code and is scored without a material error;
+  its repository-YAML details are not credited as runtime-governing facts. All methods correctly
+  withhold physical-obstacle causality on the evidence-limited question.
+- Across the two questions: response-level material errors are F 1/2, G 0/2, H 0/2; specificity is
+  F 12/13, G 10/13, H 13/13. A–E are unchanged controls. One episode is diagnostic only, not an
+  effect estimate.
+- Retained manifests:
+  `manifests/data/land-nav-20260919-e037.provenance-parity-v2.robot-visible.json` and
+  `manifests/model_outputs/land-nav-e037-provenance-pilot-v2.json`.
+- Remaining validity threat: a single episode cannot estimate F/G/H discordance; the next step is a
+  small, family-balanced multi-episode development pilot. Runtime manifests still do not seal the
+  running parameter-file/image/package identity, so parameter-level mechanism claims remain
+  intentionally unsupported.
+
 ## 2026-09-19 — first provenance-linked A–H development pilot
 
 - Episode: retained `land-nav-20260919-e037-worker-0`; no simulator rerun. Robot-visible input is

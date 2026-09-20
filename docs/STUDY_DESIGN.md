@@ -50,6 +50,12 @@ its advantage is the retained runtime-to-source relationship and checking proced
 single-sample and cached with raw/final output, model/version,
 parameters, prompt hash, latency, tokens, cost, and verification result.
 
+Before each F/G/H call, a deterministic audit hashes question-relevant information units and their
+raw derivation selectors. F receives the raw capture; G and H receive one byte-identical structured
+runtime presentation. G's narrow internal episode must validate as a projection of that
+presentation before checked planning. Exact source links, bounded retrieval, checked planning, and
+final verification remain G's declared treatment. A failed or stale audit blocks model execution.
+
 ## Primary outcome
 
 A response has a material error if any substantive assertion is contradicted/unsupported, has an

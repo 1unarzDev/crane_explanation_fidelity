@@ -31,11 +31,13 @@ their own location. Exact repository commits and destinations are recorded in
 
 - **IMPLEMENTED, TESTED:** evidence records, checked answer plans, final-text verification,
   deterministic fallback, Dock/Slalom regressions, terminal-status distinctions, bounded
-  runtime-to-source provenance, claim classes, and A–H benchmark routing (34 core tests).
-- **TESTED (DEVELOPMENT ONLY):** first provenance-linked A–H pilot on retained e037, with one
-  evidence-rich recovery-mechanism question and one evidence-limited physical-cause question.
-  Single-annotator review found one material provenance/mechanism error each for F and H and none
-  for G; two questions from one episode are diagnostic, not an effect estimate.
+  runtime-to-source provenance, claim classes, deterministic runtime presentations, and pre-call
+  F/G/H information-unit auditing (41 core tests).
+- **TESTED (DEVELOPMENT ONLY):** parity-controlled provenance pilot v2 on retained e037, with one
+  evidence-rich recovery-mechanism question and one evidence-limited physical-cause question. Four
+  new H/G calls were made; the two unchanged F calls were reused exactly from cache. Unblinded
+  single-annotator review found one material error for F and none for G/H; two questions from one
+  episode remain diagnostic, not an effect estimate.
 - **TESTED:** ROS package tests, Jazzy build, live BT/action/harness capture, and exact BT retention.
 - **TESTED:** CRANE build, one valid aquatic terminal-success capture pilot, a graphics-free
   land/Ackermann success smoke with populated costmap snapshots, and a valid-as-expected land

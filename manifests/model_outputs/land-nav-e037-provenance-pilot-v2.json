@@ -1,0 +1,35 @@
+{
+  "schema": "crane-explain-model-artifact-manifest/v1",
+  "status": "DEVELOPMENT_ONLY",
+  "episode_id": "land-nav-20260919-e037-worker-0",
+  "provider": "codex-lb-via-chatgpt-login",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "low",
+  "single_sample_no_retry": true,
+  "evaluator_truth_available_to_methods": false,
+  "information_parity_audited": true,
+  "conditions": ["A", "B", "C", "D", "E", "F", "G", "H"],
+  "question_kinds": ["recovery-mechanism", "failure-cause"],
+  "new_model_calls": 4,
+  "reused_exact_cached_calls": 2,
+  "logical_condition_outputs": 16,
+  "usage_new_calls": {
+    "input_tokens": 349042,
+    "cached_input_tokens": 283648,
+    "output_tokens": 3062,
+    "reasoning_output_tokens": 453,
+    "aggregate_latency_ms": 113831.944668,
+    "cost_usd": null,
+    "cost_status": "not_reported_by_codex_cli_chatgpt_login"
+  },
+  "artifacts": [
+    {"path": "model_outputs/dev/land-nav-20260919-e037/provenance-pilot-v2/failure-cause.json", "bytes": 8890, "sha256": "507b0706ad5a1babcc9e478d5f3d5eb3dada1a9a542d8c6fa4c5c0df06783957"},
+    {"path": "model_outputs/dev/land-nav-20260919-e037/provenance-pilot-v2/recovery-mechanism.json", "bytes": 13676, "sha256": "22f396dee75287b60694a3588a38245ea0f71e31dbc427f330de1daf0e44a158"},
+    {"path": "research/explanation_fidelity/model_cache/provenance-pilot-v1/08a65f981aad6e9c9e55e98cf3ce6adf90fe065b341a6c3eb821aeeb2bf7fbda.json", "bytes": 900330, "sha256": "b69bc4eaafd47b1c784657ff4bdfa1f651e018660af0bebd43bd470599972a3c", "reuse": "exact unchanged F recovery-mechanism request"},
+    {"path": "research/explanation_fidelity/model_cache/provenance-pilot-v1/4d2d05b0ced088df25f0db42296a953e8fbb193d1c0521d58fc478b587f7e94b.json", "bytes": 155644, "sha256": "bda2d8a1c448d05430c363e46365838ba29455580690c091b6b110b5fbbd2531", "reuse": "exact unchanged F failure-cause request"},
+    {"path": "research/explanation_fidelity/model_cache/provenance-pilot-v1/0b252f2e69f59ad55b969a2e10666d55a10cf7acba1945b829245273fc9ffea1.json", "bytes": 91988, "sha256": "967b282555b439f5491679e9afce94d55ed3a1b7e2f18e67d32594080048fc13"},
+    {"path": "research/explanation_fidelity/model_cache/provenance-pilot-v1/2e6bde956c3c149d263d3d3b0ec4317b36f44f5abf88741c442a5d6b873df08f.json", "bytes": 31771, "sha256": "53eefb4838dd28e7add1a5d944fc8a2910a1e65b826980e2b9600d0fdfe67d3a"},
+    {"path": "research/explanation_fidelity/model_cache/provenance-pilot-v1/dda5adebae5796c85e73ee10ac830d17e4beb2e7663774b98cb2cf384de1d701.json", "bytes": 43600, "sha256": "dea6df4c493a1827f7746996e80e35a07c11af18015cce808f3f61ff73871189"},
+    {"path": "research/explanation_fidelity/model_cache/provenance-pilot-v1/6446e0d683c62c56d660dbff6cc7f3e0a306acc345c1c925985a52f2361bbc04.json", "bytes": 28219, "sha256": "28efbb5aea52b7b630f40976404950ec856e54e3ccd980d0c43cb679f299cd84"}
+  ]
+}

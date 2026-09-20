@@ -49,6 +49,14 @@ coding-agent baseline, G is the provenance-linked checked method, and H isolates
 from unrestricted repository access. Central novelty comparisons are F versus G, H versus G, and D
 versus G; A–E remain necessary mechanistic controls.
 
+F/G/H runs must pass a pre-call, question-specific information-unit audit. The shared runtime
+presentation contains the exact accepted goal/result identity, every recorded BT transition with a
+stable presentation ID and raw-record ID, feedback summaries, terminal error information, retained
+BT XML hash, capture limitations, and separate BT-history versus recovery-count completeness. F
+receives the raw records from which each unit is deterministically derived; G and H receive the
+same structured values. Runtime-to-source links, bounded spans, the checked plan, and verification
+are declared treatment-specific to G and are never counted as shared facts.
+
 Score response-level material error jointly with substantive and answerable-information coverage.
 Secondary scoring includes evidence-citation precision/recall, evidence specificity, source
 reference correctness, runtime/source correspondence, physical-evidence correctness, count/order

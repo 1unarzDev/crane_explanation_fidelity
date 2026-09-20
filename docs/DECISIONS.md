@@ -1,5 +1,24 @@
 # Decision Log
 
+## 2026-09-19 — gate F/G/H calls on a shared runtime information audit
+
+- Decision: derive one evaluator-truth-free runtime presentation from the raw passive capture,
+  retain raw-record traceability for each field, give H and G the same structured runtime facts,
+  and refuse calls unless every question-relevant unit is also derivable by F from raw evidence.
+  Runtime-to-source links, bounded spans, checked plans, and verification remain G's treatment.
+- Evidence: the first e037 pilot gave F full goal/result/feedback/capture files, H a reduced episode,
+  and G a narrower checked plan. Its F/G/H differences therefore could not be interpreted solely as
+  provenance/checking effects.
+- Alternatives: downsample F's raw capture; give every condition a checked plan; or accept coarse
+  episode-level parity. Those choices would weaken the repository-agent baseline, erase the tested
+  treatment, or leave privileged-information ambiguity unresolved.
+- RQ impact: directly strengthens RQ4 and makes later F/G/H comparisons auditable. It also exposes
+  representation burden rather than hiding it: F remains a realistic raw-log agent, while H
+  controls for structured runtime access.
+- Risk/revisit: explicit structured limitations may help H more than an unaudited raw agent; that is
+  intentional for the H control but must be reported. Freeze the question-unit registry only after
+  a multi-episode development pilot shows it covers all planned families.
+
 ## 2026-09-19 — make runtime-to-source provenance the central novelty
 
 - Decision: treat runtime/physical evidence and exact source/configuration evidence as separate

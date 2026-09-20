@@ -20,6 +20,12 @@ from crane_explain.io import episode_from_dict, provenance_from_dict
 from crane_explain.provenance import resolve_provenance
 from crane_explain.realize import render_template
 from crane_explain.reasoning import plan_failure_cause, plan_recovery_mechanism
+from crane_explain.runtime_presentation import (
+    audit_fgh_information_parity,
+    build_nav2_runtime_presentation,
+    load_jsonl_records,
+    validate_episode_projection,
+)
 from crane_explain.verification import verify_final_text
 from run_llm_episode_pilot import (
     ANSWER_SCHEMA,
@@ -71,11 +77,25 @@ QUESTION
 """
 
 
+def checked_realization_prompt(plan: Any, runtime_presentation: dict[str, Any]) -> str:
+    """Expose the parity-controlled runtime input while keeping the plan as claim authority."""
+
+    return (
+        realization_prompt(plan)
+        + "\nSHARED RUNTIME PRESENTATION\n"
+        + json.dumps(runtime_presentation, indent=2, sort_keys=True)
+        + "\nThe presentation is supplied to make condition-level information access auditable. "
+        "The checked answer plan remains the only authority for clauses in the final answer.\n"
+    )
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--case-dir", required=True, type=Path)
     parser.add_argument("--capture-dir", required=True, type=Path)
     parser.add_argument("--provenance-dir", required=True, type=Path)
+    parser.add_argument("--runtime-presentation", required=True, type=Path)
+    parser.add_argument("--parity-audit", required=True, type=Path)
     parser.add_argument("--prior-a-e", required=True, type=Path)
     parser.add_argument("--repository", required=True, type=Path)
     parser.add_argument("--repository-url", required=True)
@@ -92,6 +112,32 @@ def main() -> int:
     question = QUESTIONS[args.question_kind]
     episode_path = args.case_dir / "structured.json"
     episode = episode_from_dict(json.loads(episode_path.read_text(encoding="utf-8")))
+    runtime_presentation = json.loads(args.runtime_presentation.read_text(encoding="utf-8"))
+    capture_records = load_jsonl_records(
+        (args.capture_dir / "events.jsonl").read_text(encoding="utf-8").splitlines()
+    )
+    capture_manifest = json.loads(
+        (args.capture_dir / "manifest.json").read_text(encoding="utf-8")
+    )
+    rebuilt_presentation = build_nav2_runtime_presentation(
+        capture_records,
+        capture_manifest,
+        (args.capture_dir / "behavior_tree.xml").read_bytes(),
+        episode,
+    )
+    if runtime_presentation != rebuilt_presentation:
+        raise SystemExit("retained runtime presentation does not match the raw capture")
+    retained_parity_audit = json.loads(args.parity_audit.read_text(encoding="utf-8"))
+    computed_parity_audit = audit_fgh_information_parity(
+        runtime_presentation, args.question_kind
+    )
+    if retained_parity_audit != computed_parity_audit:
+        raise SystemExit("retained information-parity audit does not match the presentation")
+    if not retained_parity_audit["accepted"]:
+        raise SystemExit("F/G/H information-parity audit was not accepted")
+    if runtime_presentation["episode_id"] != episode.episode_id:
+        raise SystemExit("runtime presentation and structured episode IDs disagree")
+    validate_episode_projection(runtime_presentation, episode)
     bundle = provenance_from_dict(
         json.loads(
             (args.provenance_dir / "provenance.json").read_text(encoding="utf-8")
@@ -135,9 +181,11 @@ def main() -> int:
                     "messages, not new attempts."
                 )
             else:
-                shutil.copy2(episode_path, evidence / "structured.json")
+                shutil.copy2(args.runtime_presentation, evidence / "runtime-presentation.json")
                 description = (
-                    "Structured runtime evidence is in _robot_visible/structured.json."
+                    "The deterministic structured runtime presentation is in "
+                    "_robot_visible/runtime-presentation.json. It is derived only from the same "
+                    "raw capture available to condition F and contains no source-provenance links."
                 )
             record = caller.call(
                 f"condition-{condition.lower()}-{args.question_kind}",
@@ -173,10 +221,12 @@ def main() -> int:
 
     g_record = caller.call(
         f"condition-g-{args.question_kind}",
-        realization_prompt(plan),
+        checked_realization_prompt(plan, runtime_presentation),
         ANSWER_SCHEMA,
         workspace_identity={
             "condition": "G",
+            "shared_runtime_presentation_sha256": sha256_file(args.runtime_presentation),
+            "information_parity_audit_sha256": sha256_file(args.parity_audit),
             "bounded_provenance_sha256": sha256_file(
                 args.provenance_dir / "bounded-source-context.json"
             ),
@@ -221,6 +271,13 @@ def main() -> int:
         "repository": args.repository_url,
         "repository_commit": args.commit,
         "evaluator_truth_available_to_methods": False,
+        "information_parity": {
+            "accepted": retained_parity_audit["accepted"],
+            "runtime_presentation_sha256": sha256_file(args.runtime_presentation),
+            "audit_sha256": sha256_file(args.parity_audit),
+            "unit_count": len(retained_parity_audit["units"]),
+            "provenance_is_treatment_not_shared_runtime_fact": True,
+        },
         "calls": call_refs,
         "outputs": outputs,
     }
