@@ -36,6 +36,41 @@ A nearby topic sample is not automatically a consumed decision input. A plausibl
 in a repository is not automatically the function that governed an observed event. Both
 relationships require retained provenance, and unresolved provenance remains explicit.
 
+## Model boundary and replication arms
+
+The evidence, reasoning, verification, and evaluation layers are provider-neutral. They exchange a
+logical model-call request and a retained `crane-explain-model-call/v1` record; they do not depend
+on a GPT- or Claude-specific SDK. A provider adapter owns only invocation concerns: model/settings,
+schema delivery, raw response parsing, content-addressed caching, CLI/API identity, normalized
+usage, cost availability, latency, and workspace-integrity attestations.
+
+A model-backed condition composes four identities that must not be collapsed into the word
+“model”:
+
+1. model configuration (family/version, reasoning and sampling settings);
+2. provider adapter (CLI/API translation and retained record);
+3. agent harness (system framing, tools, repository access, permissions);
+4. method condition (F, G, H, or another declared explanation procedure).
+
+This decomposition permits another model family to reproduce the comparison without changing the
+evidence schema or trust boundary. It does not imply that provider interfaces are equivalent. Each
+arm records schema-delivery, sandbox/tool, network/delegation, workspace-isolation, parsing,
+telemetry, and cost capabilities. A provider-specific adapter may strengthen operational isolation,
+but it may not alter frozen prompts, evidence, condition semantics, or verification policy.
+
+The current primary arm uses the Codex CLI adapter. The Claude-family adapter is a worked secondary
+arm and emits the same normalized call schema. Because its F/H agent program differs, that arm
+tests sensitivity to model family plus harness, not model weights alone. Future local/open-weight,
+API, or CLI models fit through the same adapter contract and require a separately declared arm,
+matched within-family model-strength control, disjoint artifact namespace, and explicit capability
+profile. See `MODEL_FAMILY_REPLICATION.md`.
+
+The hash-frozen primary runner still constructs its Codex caller directly. It is preserved as an
+experimental artifact, not presented as the ideal reusable interface. The additive Claude runner
+imports its frozen condition logic and substitutes a normalized caller. A future non-frozen runner
+should inject the caller protocol; changing the frozen runner solely for code elegance would damage
+reproducibility without changing the study.
+
 ## Evidence flow
 
 1. CRANE/run harness supplies episode, run, tick, sensor/observation identity, and explicit client
@@ -60,8 +95,9 @@ relationships require retained provenance, and unresolved provenance remains exp
    anchor, and runtime-to-source link invariants.
 6. Reasoning constructs claims with evidence IDs, source-anchor IDs, derivation, temporal scope,
    assumptions, support status, and claim class.
-7. A realizer emits language; the verifier checks final sentences against both evidence planes.
-   Unverified language falls back to templates.
+7. A provider adapter invokes an optional realizer. The verifier checks final sentences against
+   both evidence planes independently of the model provider. Unverified language falls back to
+   templates.
 8. Evaluation compares responses with evaluator-only truth stored outside all model-visible paths.
 
 The source retrieval order is runtime event → exact source/configuration anchor → minimal
@@ -115,7 +151,8 @@ a factual or causal explanation.
 - **ROS capture:** passive serialization only; it must not rewrite history or invent consumption.
 - **Core:** schema, bounded provenance resolution, validation, checked reasoning, answerability,
   generation policy, and verification.
-- **LLM:** optional realization/extraction component, never the trust boundary.
+- **Model provider/adapter:** optional realization or extraction mechanism, never the trust
+  boundary; provider capabilities and agent harness are retained experimental factors.
 - **Evaluator truth:** fault injection and gold propositions, inaccessible to explanation methods.
 
 ## Reproducibility workspace

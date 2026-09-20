@@ -4,7 +4,7 @@
 This resolves each episode's already-retained inputs and invokes
 ``analysis/run_provenance_claude_arm.py`` once per question. It captures nothing, derives nothing,
 and never writes into a robot-visible or evaluator-only data root. An episode whose retained input
-hashes do not match the corresponding frozen Luna result is refused, so the two arms are guaranteed
+hashes do not match the corresponding primary-arm result is refused, so the two arms are guaranteed
 to have been given byte-identical evidence.
 
 Existing outputs are skipped rather than overwritten, and every model call is content-addressed by
@@ -79,7 +79,7 @@ def reference_result(batch: str, episode: str, question_kind: str) -> Path:
 
 
 def assert_identical_evidence(reference: Path, paths: dict[str, Path]) -> None:
-    """Refuse to run unless this arm receives exactly the evidence the Luna arm received."""
+    """Refuse to run unless this arm receives exactly the primary arm's evidence."""
 
     if not reference.is_file():
         raise SystemExit(f"no frozen reference result to compare evidence against: {reference}")

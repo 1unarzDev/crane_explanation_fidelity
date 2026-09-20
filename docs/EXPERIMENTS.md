@@ -1,5 +1,37 @@
 # Experiment Log
 
+## 2026-09-20 — provider-neutral model-family replication path
+
+- **IMPLEMENTED / TESTED:** added a normalized `crane-explain-model-call/v1` adapter for the Claude
+  Code CLI, a sibling F/G/H runner that imports the frozen method logic, an evidence-hash-gated
+  batch driver, arm-aware model manifests, and deterministic adapter/freeze-integrity tests. The
+  design preserves the frozen primary runner and makes model configuration, provider adapter,
+  agent harness, and method condition explicit experimental identities.
+- **RETAINED / EXCLUDED:** the first Claude adapter revision appended schema instructions to the
+  frozen prompt. It produced 16 development calls, including one unparsable prose response. No
+  sealed Claude call or selection existed. Amendment 1 moved schema delivery to the CLI's
+  out-of-band `--json-schema` flag; the original calls remain retained but are excluded from every
+  summary.
+- **TESTED (DEVELOPMENT ONLY):** the predeclared control made 48 corrected calls over four retained
+  development episodes (F/G/H × two questions × two settings). Haiku recorded F/G/H errors
+  7/0/1 out of eight per condition and specificity 117/156; Sonnet recorded 1/0/0 and 135/156.
+  Coverage was 1.0 throughout. Haiku failed the per-condition error margin and was also slower and
+  costlier ($2.42, 8.75M input tokens, 1,070 s versus $1.77, 2.08M, 456 s). Amendment 2 fixed
+  `claude-sonnet-5` at low effort before any sealed Claude call. Labels are unblinded,
+  single-annotator, automated, and configuration-selection evidence only.
+- All 16 G control answers were byte-identical to the primary arm because final verification chose
+  the deterministic template. The control therefore discriminated settings through F and H, not
+  G. Model family and the F/H agent harness are confounded across arms.
+- **NOT_RUN:** the selected Claude-family sealed replication over `pn-0001`–`pn-0009`. It has zero
+  sealed calls, zero sealed annotations, and contributes zero independent episodes. No
+  cross-family effect or cost comparison has been calculated.
+- **ANNOTATION ARTIFACT NOTE:** a 54-row historical primary packet is retained, but its separate
+  evaluator-only HMAC/condition key is absent from this checkout. It cannot be joined or analyzed;
+  regenerate a fresh packet and key as one pair before annotation. No labels exist.
+- Retained declarations/results: `manifests/study/provenance-claude-replication-arm-v1*.json`,
+  `manifests/model_outputs/claude-arm-model-strength-*-v1.json`, and
+  `analysis/results/claude-arm-model-strength-20260920.json`.
+
 ## 2026-09-19 — sealed pn-0009 inclusion and model calls
 
 - **CAPTURED ONCE / INCLUDED:** frozen recovery-success row `pn-0009`, seed 3009, passed every

@@ -32,7 +32,8 @@ their own location. Exact repository commits and destinations are recorded in
 - **IMPLEMENTED, TESTED:** evidence records, checked answer plans, final-text verification,
   deterministic fallback, Dock/Slalom regressions, terminal-status distinctions, bounded
   runtime-to-source provenance, claim classes, deterministic runtime presentations, pre-call F/G/H
-  information-unit auditing, and hash-checked runtime configuration identity (42 core tests).
+  information-unit auditing, and hash-checked runtime configuration identity, covered by the
+  CPU-only regression suites.
 - **TESTED (CALIBRATION):** e042 retained the effective TurtleBot3/Nav2 launch configuration,
   image/package identities, player hashes, and six exact Git artifacts without evaluator leakage;
   the reusable calibration validator and seven-unit F/G/H parity audit passed.
@@ -83,9 +84,11 @@ their own location. Exact repository commits and destinations are recorded in
   recovery-success, four terminal-abort), with 54 one-shot Luna-low calls retained and no
   exclusions. This remains far below the frozen 40-episode minimum; answers have not been scored,
   and no sealed effect estimate has been calculated.
-- **SECONDARY ARM:** a separately reported Claude replication re-runs F/G/H over the same nine
-  retained episodes with a Claude model, in physically separate namespaces. It adds no independent
-  episodes and does not amend the freeze. See [Claude replication arm](docs/CLAUDE_REPLICATION_ARM.md).
+- **TESTED (SECONDARY-ARM DEVELOPMENT):** the provider-neutral model-call contract now has a
+  Claude Code adapter as its first non-GPT instance. A predeclared control rejected Haiku and fixed
+  `claude-sonnet-5` at low effort. The sealed nine-episode replication is `NOT_RUN`; it adds no
+  independent episodes and does not amend the primary freeze. See
+  [model-family replication](docs/MODEL_FAMILY_REPLICATION.md).
 - **IMPLEMENTED, TESTED:** blinded response packaging and dual-annotator adjudication tooling
   implementing `docs/ANNOTATION_GUIDE.md`. Scoring itself remains `NOT_RUN`.
 - **NOT_RUN:** blinded dual annotation, final statistics/figures, and final A–E model evaluation.
@@ -105,6 +108,17 @@ crane-explain explain configs/fixtures/dock_policy.json --alternative Slalom
 
 The fixture policy is synthetic and exists only to test arithmetic; it is not CRANE's policy.
 
+Run the provider-neutral analysis, freeze-integrity, umbrella, and core suites without invoking a
+model or ROS runtime:
+
+```bash
+PYTHONPATH=packages/astro_dock/src/crane_explain/src:packages/astro_dock/src/crane_explain_ros:analysis \
+python -m pytest -q analysis tests packages/astro_dock/src/crane_explain/tests
+```
+
+ROS package tests additionally require the Jazzy/ament environment; a blanket host-shell
+`pytest` is not the supported ROS test command.
+
 ## Layout
 
 - `packages/astro_dock/`, `packages/crane_ml/`: pinned Git submodules
@@ -120,8 +134,8 @@ The fixture policy is synthetic and exists only to test arithmetic; it is not CR
 - `docs/`: architecture, benchmark, study, experiments, research, and decisions
 
 Raw data and model outputs never enter Git. The two data domains are physically separate and are
-joined only through opaque episode IDs during evaluation. The frozen Luna arm and the secondary
-Claude arm never share an output root, cache root, manifest name, or annotation file.
+joined only through opaque episode IDs during evaluation. Primary and secondary model-family arms
+never share an output root, cache root, manifest name, or annotation file.
 
 ## Runtimes and checkpointing
 
@@ -156,12 +170,12 @@ delivered odometry proven controller consumption.
 
 ## Documentation
 
+- [Project language](CONTEXT.md)
 - [Architecture](docs/ARCHITECTURE.md)
 - [Study design](docs/STUDY_DESIGN.md)
 - [Benchmark](docs/BENCHMARK.md)
 - [Experiment ledger](docs/EXPERIMENTS.md)
-- [Context-free agent handoff](docs/HANDOFF.md)
-- [Claude replication arm](docs/CLAUDE_REPLICATION_ARM.md)
+- [Model-family replication protocol](docs/MODEL_FAMILY_REPLICATION.md)
 - [Blinded annotation workflow](docs/ANNOTATION_WORKFLOW.md)
 - [Research audit](docs/RESEARCH.md)
 - [Decision log](docs/DECISIONS.md)

@@ -23,9 +23,9 @@ Nothing here changes a rubric. If the two disagree, the guide governs.
 ```bash
 PYTHONPATH=packages/astro_dock/src/crane_explain/src:analysis \
 python analysis/build_blinded_annotation_packet.py \
-  --arm luna=model_outputs/final \
-  --packet model_outputs/annotation_packets/sealed-luna-v1/packet.jsonl \
-  --key data/evaluator_only/annotation_keys/sealed-luna-v1.json
+  --arm primary=model_outputs/final \
+  --packet model_outputs/annotation_packets/sealed-primary-v1/packet.jsonl \
+  --key data/evaluator_only/annotation_keys/sealed-primary-v1.json
 ```
 
 Each packet row carries only `response_id`, `question`, `question_kind`, `gold_unit_inventory`,
@@ -38,10 +38,11 @@ packet if anything leaked.
 Response IDs are HMACs under a per-packet secret, and rows are shuffled with a seed derived from
 that secret, so neither the ID nor the packet order encodes arm, condition, episode, or question.
 
-**Build one packet per arm.** Pooling is supported and the key keeps pooled arms separable, but the
-two arms' answers differ in format — the Claude models often serialize JSON into the answer string
-where the Luna arm wrote prose — so a pooled packet would identify the arm at a glance and defeat
-the blinding.
+**Build one packet per arm whenever response format can reveal the provider or harness.** Pooling is
+supported and the key keeps arms separable, but it does not create independent observations. In the
+current Claude-family development outputs, models often serialize JSON into the answer string where
+the primary arm wrote prose. A pooled packet would therefore identify the arm at a glance and
+defeat the blinding.
 
 The key is evaluator-only. It holds the secret, the arm, episode, condition, and model for every
 response, and it never goes to an annotator.
@@ -62,12 +63,12 @@ exclusion is forbidden.
 # agreement only; no final labels are emitted
 PYTHONPATH=packages/astro_dock/src/crane_explain/src:analysis \
 python analysis/adjudicate_annotations.py \
-  --packet model_outputs/annotation_packets/sealed-luna-v1/packet.jsonl \
+  --packet model_outputs/annotation_packets/sealed-primary-v1/packet.jsonl \
   --annotator-a <a>.jsonl --annotator-b <b>.jsonl \
-  --output analysis/results/sealed-luna-agreement.json
+  --output analysis/results/sealed-primary-agreement.json
 
 # after a third annotator labels the disagreements
-... --adjudication <c>.jsonl --output analysis/results/sealed-luna-adjudicated.json
+... --adjudication <c>.jsonl --output analysis/results/sealed-primary-adjudicated.json
 ```
 
 The tool refuses a pass that is incomplete, annotates a response outside the packet, uses two
@@ -88,9 +89,15 @@ separate, deliberate step.
 
 ## Current state
 
-- Sealed Luna packet built: 54 responses, 18 per condition, 27 per question.
-- **Annotation itself is `NOT_RUN`.** No sealed response in either arm has been scored, and no
-  sealed effect estimate exists.
+- A historical primary-arm packet is present at
+  `model_outputs/annotation_packets/sealed-luna-v1/packet.jsonl` with 54 responses, but its
+  evaluator-only key is not present on this checkout. It is not usable for condition joins or
+  adjudicated analysis. Generate a new packet/key pair together with the provider-neutral command
+  above before annotation; do not invent or reconstruct the missing HMAC key.
+- The selected Claude-family sealed replication is `NOT_RUN`, so no secondary-arm sealed packet
+  exists yet.
+- **Annotation itself is `NOT_RUN`.** No primary-arm sealed response has been scored, and no sealed
+  effect estimate exists.
 - The development model-strength controls are separate: unblinded, single-annotator, and
   development-only by design. They are not part of this workflow and must not be reported as if
   they were.

@@ -1,5 +1,27 @@
 # Decision Log
 
+## 2026-09-20 — define replication around a provider-neutral call contract
+
+- Decision: treat model configuration, provider adapter, agent harness, and explanation condition
+  as separate identities. New model families implement the normalized model-call contract and run
+  in separately declared arms; evidence, reasoning, verification, and scoring remain provider
+  neutral. Rename the living arm documentation from a Claude-specific page to
+  `MODEL_FAMILY_REPLICATION.md`, with Claude retained as the first worked instance.
+- Evidence: the Claude work already emits the same `crane-explain-model-call/v1` schema and reuses
+  frozen F/G/H logic, while its different tool surface and read-only enforcement show why “same
+  model task” does not mean “same harness.” A Claude-only architecture would obscure both reuse and
+  the harness confound.
+- Alternatives: embed Claude throughout the core study docs; generalize every frozen runner now;
+  or keep a monolithic Claude narrative. The first makes the method vendor-specific, the second
+  breaks hash-frozen artifacts for no scientific gain, and the third duplicates architecture,
+  protocol, results, and operations in one file.
+- RQ impact: supports honest RQ4 sensitivity analysis without claiming cross-family equivalence or
+  inflating episode count. A future local, API, or CLI model can replicate the arm by adding an
+  adapter and declaration rather than changing the trust boundary.
+- Validity: provider adapters may have different system prompts, tools, sandboxes, telemetry, and
+  schema facilities. Every arm must publish a capability profile and report combined
+  model-family-plus-harness sensitivity unless those factors are experimentally controlled.
+
 ## 2026-09-20 — reject the lower Claude tier and select claude-sonnet-5
 
 - Decision: use `claude-sonnet-5` at low effort for the secondary Claude arm; do not adopt
