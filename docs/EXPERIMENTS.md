@@ -1,5 +1,18 @@
 # Experiment Log
 
+## 2026-09-19 — sealed pn-0006 inclusion and model calls
+
+- **CAPTURED ONCE / INCLUDED:** frozen terminal-abort row `pn-0006`, seed 3006, is the first terminal
+  row to pass the exact `CRANE_EXPECTED_NAV_STATUS=aborted` contract directly. The action aborted
+  after two unique Wait invocations with 303 returned controller commands, 60 costmap observations,
+  maximum 8,515 occupied cells, and accepted 10/7-unit parity audits. Every frozen gate passed and
+  no answer was inspected before inclusion.
+- **SEALED MODEL CALLS RETAINED / NOT ANNOTATED:** both questions ran once for F/G/H with Luna-low:
+  six calls, no retries, 503,436 input tokens, 350,976 cached input tokens, 5,181 output tokens,
+  930 reasoning tokens, and 229.919 s aggregate latency. A–E remain non-model smoke outputs and
+  frozen model evaluation is `NOT_RUN`. Hashes and usage are retained in
+  `manifests/model_outputs/pn-0006-provenance-v1.json`.
+
 ## 2026-09-19 — sealed pn-0005 inclusion and model calls
 
 - **CAPTURED ONCE / INCLUDED:** frozen recovery-success row `pn-0005`, seed 3005, passed the exact
