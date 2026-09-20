@@ -29,7 +29,9 @@ from crane_explain.runtime_presentation import (
 from crane_explain.verification import verify_final_text
 from run_llm_episode_pilot import (
     ANSWER_SCHEMA,
+    PROMPT_ROOT,
     CodexCliCaller,
+    load_prompt,
     realization_prompt,
     usage_from_events,
 )
@@ -60,32 +62,22 @@ def extract_repository(repository: Path, commit: str, destination: Path) -> None
 
 
 def agent_prompt(question: str, evidence_description: str, commit: str) -> str:
-    return f"""You are a strong read-only coding agent explaining one robot navigation episode.
-Inspect the allowed robot-visible evidence and the exact repository checkout in this workspace.
-The repository is pinned to commit {commit}. Do not use outside knowledge or infer evaluator truth.
-Distinguish what runtime evidence observed, what exact source/configuration defines, and what remains
-unknown. Cite concrete runtime IDs/timestamps and exact repository paths/symbols when they support
-the answer. Do not infer physical cause, consumed sensor input, complete history, or a
-counterfactual unless the allowed evidence establishes it. Correct false premises. Give a concise,
-substantive answer as JSON matching the supplied schema.
-
-ALLOWED EVIDENCE
-{evidence_description}
-
-QUESTION
-{question}
-"""
+    return (
+        load_prompt("repository_agent_v1.txt")
+        .replace("{{COMMIT}}", commit)
+        .replace("{{EVIDENCE_DESCRIPTION}}", evidence_description)
+        .replace("{{QUESTION}}", question)
+    )
 
 
 def checked_realization_prompt(plan: Any, runtime_presentation: dict[str, Any]) -> str:
     """Expose the parity-controlled runtime input while keeping the plan as claim authority."""
 
-    return (
-        realization_prompt(plan)
-        + "\nSHARED RUNTIME PRESENTATION\n"
-        + json.dumps(runtime_presentation, indent=2, sort_keys=True)
-        + "\nThe presentation is supplied to make condition-level information access auditable. "
-        "The checked answer plan remains the only authority for clauses in the final answer.\n"
+    return realization_prompt(plan) + (PROMPT_ROOT / "checked_runtime_suffix_v1.txt").read_text(
+        encoding="utf-8"
+    ).replace(
+        "{{RUNTIME_PRESENTATION}}",
+        json.dumps(runtime_presentation, indent=2, sort_keys=True),
     )
 
 

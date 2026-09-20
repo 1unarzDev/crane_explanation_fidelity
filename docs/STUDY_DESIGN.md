@@ -1,7 +1,8 @@
-# Study Design (pre-final-collection draft)
+# Study Design (freeze candidate v1)
 
-This document must be frozen after pilot/power analysis and before sealed-test evaluation. Items
-marked **TBD-PILOT** are not yet frozen.
+This design is frozen by the content-addressed study manifest before collection of `pn-0001`.
+Changes after freeze require a dated amendment that preserves the original files and states whether
+sealed evidence had been inspected.
 
 ## Research questions and hypotheses
 
@@ -21,11 +22,12 @@ marked **TBD-PILOT** are not yet frozen.
 
 Cross-domain evidence is a robustness/stress test, not architecture-independence evidence.
 
-The provisional primary H1 is that G reduces response-level material errors relative to strong
-repository-agent baseline F at non-inferior substantive coverage. It remains mutable only through
-the predeclared model-strength and annotation-reliability pilot, after which it will be frozen before
-sealed evaluation. The original
-A-versus-D hypothesis remains a representation/checking comparison rather than the novelty claim.
+The primary H1 is that G reduces response-level material errors relative to strong repository-agent
+baseline F while its substantive coverage is no more than five percentage points lower. The
+smallest practically meaningful risk reduction is 15 percentage points. Primary success requires
+the episode-cluster bootstrap 95% interval for G-minus-F error risk to exclude zero in the favorable
+direction and the coverage-difference interval not to cross below -0.05. The original A-versus-D
+hypothesis remains a representation/checking comparison rather than the novelty claim.
 Mechanistic secondary comparisons are B versus A, D versus B, D versus C, H versus G, D versus G,
 and E versus D.
 
@@ -57,6 +59,10 @@ runtime presentation. G's narrow internal episode must validate as a projection 
 presentation before checked planning. Exact source links, bounded retrieval, checked planning, and
 final verification remain G's declared treatment. A failed or stale audit blocks model execution.
 
+The two frozen questions are exactly “Why did the autonomy software enter recovery?” and “Did a
+physical obstacle cause the navigation failure?” They intentionally pair an evidence-rich software
+mechanism request with an evidence-limited physical-cause request.
+
 ## Primary outcome
 
 A response has a material error if any substantive assertion is contradicted/unsupported, has an
@@ -74,17 +80,13 @@ secondary. Fluency/preference is not correctness.
 
 **Evidence specificity** is the proportion of relevant concrete answerable evidence units correctly
 exposed in a response. It prevents generic but safe answers from scoring like detailed supported
-answers. Its unit inventory and partial-credit rule are **TBD-PILOT** and must be frozen before the
-sealed test.
+answers. The binary unit inventories and no-within-unit-partial-credit rule are frozen in
+`docs/ANNOTATION_GUIDE.md`: eight units for recovery mechanism and five for physical cause.
 
 ## Model-strength control
 
-Development compares a small fixed grid of balanced/strong models at low/moderate reasoning on the
-same evidence and prompts. Select the least expensive configuration within a predeclared practical
-margin of the best on material errors, evidence specificity, coverage, causal overclaim, and
-source-reference correctness. Method comparisons must not give G a stronger model than baselines.
-A tiered stronger model for difficult source interpretation is adopted only if development evidence
-justifies it, and its calls/cost are counted.
+Method comparisons must not give G a stronger model than baselines. No tiered routing is used in the
+sealed study.
 
 The predeclared four-episode control compared `gpt-5.6-sol` and `gpt-5.6-luna` at low reasoning on
 the same 24 F/G/H requests. Luna's errors were F 3/8, G 0/8, H 1/8 versus Sol's F 4/8, G 0/8, H
@@ -96,11 +98,20 @@ is reproducible from `analysis/results/provenance-model-strength-20260919.json`.
 
 ## Units, split, and inclusion
 
-Independent unit is scenario instance/episode, never a paraphrase. Split by scenario family before
-question realization; all paraphrases stay together. Include episodes passing frozen capture
-quality checks and questions mapped to frozen families. Exclude corrupt/missing required artifacts
-using reasons set before inspecting answers. Deliberate incomplete-evidence episodes remain in
-scope. **TBD-PILOT:** minimum evidence per family and target family balance.
+Independent unit is scenario instance/episode, never a paraphrase. The sealed split contains 60
+opaque, ordered configurations balanced 30/30 between recovery-followed-by-success and terminal
+recovery-abort. Minimum/target/preferred included counts are 40/50/60. Run in frozen order, stopping
+at 50 included episodes; entries 51–60 replace capture-quality exclusions or extend to 60 only if
+compute and the September 28 deadline permit. Outcomes or model answers never control stopping.
+
+An episode is included only if, before model calls: capture start/stop boundaries exist; exactly one
+accepted goal and one matching terminal result exist; BT XML and runtime-manifest hashes validate;
+the runtime provenance calibration checks pass; costmap evidence is populated; both F/G/H parity
+audits accept; and the predeclared family activates (one distinct Wait invocation followed by task
+success, or two distinct Wait invocations followed by action abort). Exclude the whole episode for a
+failed gate and retain it with one predeclared reason. Never exclude one condition or inspect answers
+first. Both frozen questions are included for every included episode. Deliberate causal
+insufficiency is required, not an exclusion.
 
 ## Analysis
 
@@ -136,11 +147,10 @@ at 50, and 0.922 at 60. Therefore the provisional main collection target is **60
 independent episodes**, with 50 the minimum target if validity or deadline constraints intervene.
 A sensitivity scenario using the unblinded 2/37 versus 1/37 descriptive rates reaches only 0.772
 at 100 episodes; it is not treated as a stable effect estimate. Final analysis still uses clustered
-bootstrap intervals, not this planning approximation. Provider/model/prompts, verifier policy,
-annotation rubric, and coverage units remain mutable pending blind/adjudicated development labels;
-the study is not frozen.
+bootstrap intervals, not this planning approximation. These older A–E planning assumptions do not
+determine the provenance-study sample size.
 
-The parity-controlled provenance subset currently contains four independent episodes and two
+The parity-controlled provenance subset contains four legacy episodes and two
 questions per episode: two recovery-followed-by-success instances and two repeated-recovery terminal
 aborts. Development-only, unblinded material-error rates are F 4/8, G 0/8, and H 0/8; all eight
 responses per condition are substantive. Specificity is F 48/52, G 40/52, and H 52/52. The
@@ -153,9 +163,10 @@ effect: smaller gains are unlikely to justify runtime-source instrumentation ove
 agent. With two questions per episode, ICC 0.15, paired latent correlation 0.50, and 5,000 simulated
 clustered datasets, power is 0.802 at 40 episodes, 0.884 at 50, and 0.936 at 60. The provisional
 target is **50 provenance-audited episodes**, with 40 the minimum 80%-power target and 60 preferred
-if collection/model cost permits. This remains mutable until the model-strength pilot and annotation
-guide are frozen; the observed four-episode 50-point reduction is sensitivity-only and is not used
-to reduce the target.
+if collection/model cost permits. The observed four-episode 50-point reduction is sensitivity-only
+and is not used to reduce the target. A separate fair-configuration e043 diagnostic retained the
+exact running parameter identity and observed F/G/H errors 1/0/0 over two questions; it supports the
+rubric's configured-versus-observed causal boundary but is not an effect estimate.
 
 The initial powered analysis is land/navigation. Surface CRANE scenarios are ecological validation;
 underwater/aerial scenarios are descriptive stress tests unless their independent episode counts
@@ -163,15 +174,24 @@ become adequate. Domain interactions are exploratory unless frozen after pilot p
 
 ## Freeze and stopping rules
 
-Before final collection freeze: metric/annotation guide, H1/F-vs-G primary comparison, A–E
-mechanistic comparisons, prompts, model,
-verifier threshold, templates, instrumentation, inclusion rules, split manifest, seeds, and
-analysis code. Hash frozen files. Do not inspect sealed labels to tune. Collection stops at the
-power-planned independent episode target or the September 28 deadline/compute ceiling, whichever
-comes first; report shortfall honestly. Essential experiments do not run October 4.
+F/G/H run on every included episode. A–E run on the first 20 included episodes (ten per family) as
+sealed mechanistic secondary evidence; this subset is not independently powered. All methods use
+`gpt-5.6-luna` at low reasoning where a model is required, one call per declared stage, no retries or
+resampling. Prompts, question text, model, strict verifier/fallback policy, instrumentation,
+inclusion rules, split, seeds, annotation guide, and analysis code are hash-frozen. G makes one
+realization call; if any final sentence is not exactly licensed by the checked plan, no repair call
+is made and the deterministic checked template replaces the candidate. The verifier threshold is
+therefore binary exact acceptance, not a tuned probability.
+
+Do not inspect sealed labels to tune. Collection stops under the split rule or the September 28
+deadline/compute ceiling, whichever comes first; report shortfall honestly. Essential experiments
+do not run October 4.
 
 ## Leakage prevention
 
 Robot-visible and evaluator-only artifacts live in physically separate roots with opaque IDs.
 Fault names and gold outcomes never appear in model-visible filenames, metadata, prompts, or
-retrieval indexes. A release builder performs an allowlist copy and scans for forbidden fields.
+retrieval indexes. Model workspaces contain only an exact `crane_ml` archive plus an allowlisted
+robot-visible packet. `scan_robot_visible_leakage.py` rejects evaluator-only path fragments and JSON
+keys before calls. The mapping from opaque ID to intervention/family remains evaluator-only during
+generation and annotation.

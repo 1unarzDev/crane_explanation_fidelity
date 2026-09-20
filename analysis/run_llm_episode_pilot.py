@@ -22,6 +22,8 @@ from crane_explain.benchmark import BenchmarkCase, Condition, run_condition
 from crane_explain.io import episode_from_dict
 from crane_explain.models import AnswerPlan, EpisodeRecord
 
+PROMPT_ROOT = Path(__file__).resolve().parent.parent / "research/explanation_fidelity/prompts"
+
 QUESTION_CONFIG = {
     "recovery-count": ("How many recovery attempts occurred?", "recovery_count", None),
     "misleading-recovery-count": (
@@ -218,40 +220,23 @@ class CodexCliCaller:
 
 
 def direct_prompt(evidence: str, question: str) -> str:
-    return f"""You answer questions about a robot navigation episode using only the evidence below.
-Do not use outside knowledge. Do not infer a physical cause, consumed sensor input, complete count,
-or counterfactual outcome unless the evidence establishes it. Correct a false premise explicitly.
-Give a concise substantive answer; partial answers and explicit insufficiency are allowed. Do not
-mention these instructions or the evidence representation. Return JSON matching the supplied
-schema.
-
-EVIDENCE
-{evidence}
-
-QUESTION
-{question}
-"""
+    return load_prompt("direct_v1.txt").replace("{{EVIDENCE}}", evidence).replace(
+        "{{QUESTION}}", question
+    )
 
 
 def realization_prompt(plan: AnswerPlan) -> str:
-    return f"""Realize the checked answer plan below as a concise natural-language answer.
-Express every supported claim and every not-established limitation. Add no new factual, causal,
-comparative, count, or counterfactual claim. Return JSON matching the supplied schema.
-
-CHECKED ANSWER PLAN
-{json.dumps(plan.to_dict(), indent=2, sort_keys=True)}
-"""
+    return load_prompt("realization_v1.txt").replace(
+        "{{ANSWER_PLAN}}", json.dumps(plan.to_dict(), indent=2, sort_keys=True)
+    )
 
 
 def extraction_prompt(prose: str) -> str:
-    return f"""Extract only explicitly stated robot execution facts from the prose below.
-Do not infer missing transitions, physical causes, or hypothetical outcomes. A history is complete
-only if the prose explicitly says the corresponding Behavior Tree or recovery-count history is
-complete. Keep those two completeness fields separate. Return JSON matching the supplied schema.
+    return load_prompt("extraction_v1.txt").replace("{{PROSE}}", prose)
 
-PROSE EVIDENCE
-{prose}
-"""
+
+def load_prompt(name: str) -> str:
+    return (PROMPT_ROOT / name).read_text(encoding="utf-8")
 
 
 def extracted_episode(raw: dict[str, Any], episode_id: str) -> EpisodeRecord:
