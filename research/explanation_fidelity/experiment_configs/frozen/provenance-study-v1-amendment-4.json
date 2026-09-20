@@ -1,0 +1,18 @@
+{
+  "schema": "crane-provenance-study-freeze-amendment/v1",
+  "status": "POST_SECOND_CAPTURE_BEFORE_PN0002_MODEL_CALLS",
+  "amends": "manifests/study/provenance-study-freeze-v1-amendment-3.json",
+  "sealed_episodes_captured_before_amendment": 2,
+  "sealed_episodes_included_before_amendment": 1,
+  "sealed_model_calls_before_amendment": 6,
+  "sealed_annotations_before_amendment": 0,
+  "reason": "The frozen wrapper used CRANE_EXPECT_NAVIGATION_STATUS, while the pinned fixture consumes CRANE_EXPECT_NAV_STATUS. pn-0002 therefore captured the predeclared aborted outcome but the outer worker summary compared it with the default succeeded expectation.",
+  "scientific_design_changed": false,
+  "capture_dynamics_changed": false,
+  "prompts_or_model_behavior_changed": false,
+  "changes": [
+    "Use the fixture's existing CRANE_EXPECT_NAV_STATUS environment contract for subsequent sealed captures.",
+    "Retain pn-0002 exactly once without rerunning it.",
+    "Apply the already frozen episode-inclusion validator to pn-0002's retained goal, result, recovery, costmap, parity, provenance, and leakage evidence; do not use the incorrect outer valid flag as an exclusion criterion."
+  ]
+}

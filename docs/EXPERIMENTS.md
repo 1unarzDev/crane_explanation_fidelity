@@ -1,5 +1,20 @@
 # Experiment Log
 
+## 2026-09-19 — sealed pn-0002 capture and wrapper-contract amendment
+
+- **CAPTURED ONCE / POSTPROCESSING PENDING:** frozen row `pn-0002`, seed 3002, ROS domain 101,
+  TurtleBot3 warehouse corridor, 3.25 m goal, and an unreleased mobility hold scheduled after
+  14.5 fixed simulation seconds. Nav2 returned `aborted` after 32.597 s with two reported
+  recoveries; the fixture retained 303 controller commands, 62 costmap observations, maximum 9,378
+  occupied cells, and 0.082 m displacement.
+- **ORCHESTRATION DEFECT:** the sealed wrapper exported `CRANE_EXPECT_NAVIGATION_STATUS=aborted`,
+  but `run_nav2_controller_fixture.sh` consumes `CRANE_EXPECT_NAV_STATUS`. The outer worker summary
+  therefore defaulted to expected `succeeded` and set `valid=false`, even though the captured result
+  matches the predeclared terminal-abort family.
+- **VALIDITY ACTION:** retained the episode without rerun; zero `pn-0002` model calls or annotations
+  existed. Amendment 4 corrects only the future wrapper contract. Inclusion remains pending the
+  frozen derivation, parity, provenance, leakage, and episode-validation gates.
+
 ## 2026-09-19 — fair-configuration provenance re-pilot predeclaration
 
 - **PREDECLARED/NOT_RUN:** e043 is one development-only recovery diagnostic using the calibrated

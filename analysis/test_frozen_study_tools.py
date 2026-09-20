@@ -83,3 +83,9 @@ def test_leakage_scanner_accepts_negative_evaluator_truth_attestation(tmp_path: 
         text=True,
     )
     assert completed.returncode == 0, completed.stderr
+
+
+def test_frozen_runner_uses_fixture_expected_status_contract() -> None:
+    runner = (ROOT / "scripts/run_frozen_provenance_episode.py").read_text(encoding="utf-8")
+    assert '"CRANE_EXPECT_NAV_STATUS"' in runner
+    assert '"CRANE_EXPECT_NAVIGATION_STATUS"' not in runner

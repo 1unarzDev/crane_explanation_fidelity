@@ -1,5 +1,19 @@
 # Decision Log
 
+## 2026-09-19 — retain pn-0002 after expected-status wrapper mismatch
+
+- Decision: retain the single `pn-0002` capture without rerunning it, correct the frozen wrapper's
+  environment-variable name for subsequent episodes, and apply the pre-existing inclusion validator
+  to its retained artifacts.
+- Evidence: the split predeclared `pn-0002` as `terminal_recovery_abort`, and the capture contains an
+  `aborted` NavigateToPose result, two recoveries, populated costmaps, and the scheduled unreleased
+  mobility hold. The outer summary alone expected `succeeded` because the wrapper exported
+  `CRANE_EXPECT_NAVIGATION_STATUS`; the pinned fixture reads `CRANE_EXPECT_NAV_STATUS`.
+- Validity: the mismatch did not change scene dynamics, intervention, ROS capture, Nav2 behavior, or
+  terminal result. No `pn-0002` model calls or annotations existed when found. Preserve the
+  incorrect outer flag as retained evaluator metadata and disclose amendment 4; never rerun the
+  episode to obtain a cleaner flag.
+
 ## 2026-09-19 — distinguish sealed model calls from embedded smoke outputs
 
 - Decision: model-artifact manifests report F/G/H as the model-evaluated conditions and label the
