@@ -106,3 +106,22 @@ A paired development evidence mask omits measured speed at action return. The sa
 then returns `insufficient` and names that missing measurement instead of asserting the mechanism.
 The mask is a selective-specificity regression, not a naturally missing held-out episode; evaluated
 methods must not be able to retrieve its paired unmasked artifact.
+
+## First measured land diagnosis
+
+The governed `land-blockage-global-002` development run exercises the geometric path without using
+evaluator geometry. Its retained global costmap marks the requested centerline non-traversable
+beginning near x=8.45 m and gives zero minimum lethal-cell clearance under the configured 0.22 m
+robot radius and 0.55 m inflation. Delivered odometry records a 2.705 m lateral detour. The action
+aborted in 70.860 s under the exact 70 s BT deadline.
+
+The same retained grid still has a below-cost-253 connection from the action-result pose to the
+goal. The supported diagnosis is therefore **direct-route model restriction plus a deadline-aligned
+abort**, not global no-path or physical impossibility. Sixty-nine planning updates succeeded, no
+recovery invocation is exact-count eligible, and the terminal BT transition was not observed. The
+answer explicitly retains these conflicts and observation limits.
+
+Robot-visible fixture/QA/diagnostic/build-provenance artifacts are governed through
+`manifests/data/land-blockage-global-002.robot-visible.json`; scenario identity and Unity runtime
+truth remain separate under the corresponding evaluator-only manifest. This is a development
+response-quality milestone, not evidence that the proposed method beats R, N, or T.

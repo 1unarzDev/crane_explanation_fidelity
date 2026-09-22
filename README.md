@@ -165,6 +165,21 @@ The retained compact export is restorable without the large source summary; byte
 regeneration additionally requires that hash-identified development summary. The exporter refuses
 summaries without the declared independent-odometry provenance.
 
+After pulling governed development data, reproduce the checked land geometric diagnosis with:
+
+```bash
+python analysis/export_geometric_route_diagnostic.py \
+  data/robot_visible/dev/diagnostic-pilot-v1/land-blockage-global-002/fixture-summary.json \
+  --episode-id land-blockage-global-002 \
+  --nav2-config packages/crane_ml/Tools/Performance/nav2_land_proving_ground_fixture.yaml \
+  --bt-xml packages/crane_ml/Tools/Performance/nav2_warehouse_replanning_deadline.xml \
+  --robot-radius 0.22 --inflation-radius 0.55 --deadline-seconds 70 \
+  --output /tmp/land-blockage-global-002-diagnostic.json
+```
+
+This development answer establishes a direct-route restriction and deadline-aligned abort. The
+retained planner grid is still connected, so it deliberately withholds a global no-path claim.
+
 Run the provider-neutral analysis, freeze-integrity, umbrella, and core suites without invoking a
 model or ROS runtime:
 

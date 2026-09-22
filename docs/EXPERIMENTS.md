@@ -2323,3 +2323,34 @@
 - **NEXT:** make one current-source player build and verify its manifest contains the exact
   proving-ground source/catalog hashes before scheduling a new geometric pilot. Do not rerun the
   stale build, modify geometry, or count this nominal as a fault-induction success.
+
+## 2026-09-22 — current-source global-costmap geometric diagnostic pilot
+
+- **BUILD/INPUT:** Unity `6000.5.10f1` built CRANE `c46de4d` from current source with build GUID
+  `2e501629ce3544a783506153da3c0268` and build-manifest SHA-256 `1805281a...fcae`.
+  The proving-ground generator and catalog hashes are `a6eb6bd2...c8b` and `bea85429...720`.
+  No build directory was retained in DVC; the compact build manifest, source identities, and
+  reproduction command are retained instead.
+- **VALID RECORDING / PARTIAL INDUCTION:** one development repeat requested
+  `complete-blockage-v1`, the 70 s ecological BT, an expected `aborted` result, and the global
+  costmap service/topic on isolated ROS domain 220/TCP port 11620. Evaluator truth confirms the
+  intended layout and active wall. The action aborted in 70.860 s with zero stale/rejected/cross-
+  episode commands, zero clock rewinds, 451 LiDAR scans, and a valid runtime record.
+- **ROBOT-VISIBLE RESULT:** the retained 0.10 m global grid has 1,070 cells at cost >=253. The
+  requested centerline first meets such a cell near x=8.45 m and has zero minimum lethal-cell
+  clearance. However, an independent 8-connected audit finds the action-result pose and goal are
+  still connected below cost 253. Delivered odometry records 2.705 m maximum lateral deviation,
+  6.949 m maximum forward progress, and return away from the goal; 69 planning updates completed.
+- **SUPPORTED DIAGNOSIS:** the direct route was restricted in the retained navigation model and
+  the robot made a substantial detour before a deadline-aligned abort. This does **not** support
+  global no-path, unique obstacle identity, or recovery-exhaustion claims. The final BT terminal
+  transition was not delivered, so exact source plus 0.860 s deadline timing reconstructs—but
+  does not directly observe—the terminal decorator tick.
+- **ANSWER/VERIFICATION:** `geometric-route-restriction-v1` produces the four-section checked
+  deterministic answer from robot-visible evidence only. Its decisive evidence is limited to
+  direct-route clearance, lateral deviation, action time, and configured deadline; final-text
+  exact verification passes. A missing connectivity value fails closed to `insufficient` in the
+  regression suite.
+- **GOVERNANCE:** fixture, QA summary, diagnostic export, compact build manifest, runtime result,
+  and evaluator truth are physically separated under `diagnostic-pilot-v1`, with committed SHA-256
+  manifests and DVC pointers. This is development evidence, not a frozen R/P/T/N result.

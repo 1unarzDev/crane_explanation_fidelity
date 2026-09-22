@@ -1,0 +1,25 @@
+{
+  "schema": "crane-data-manifest-v1",
+  "artifact_id": "land-blockage-global-002-evaluator-only",
+  "status": "DEVELOPMENT_VALID_PARTIAL_INDUCTION",
+  "visibility": "evaluator_only",
+  "dvc_pointer": "data/evaluator_only/dev.dvc",
+  "artifacts": [
+    {
+      "path": "data/evaluator_only/dev/diagnostic-pilot-v1/land-blockage-global-002/runtime-result.json",
+      "sha256": "7cff5aac1e51f592f5e8dd81863fdbefb939363e36a5e883807dcc97bd634c9c"
+    },
+    {
+      "path": "data/evaluator_only/dev/diagnostic-pilot-v1/land-blockage-global-002/truth.json",
+      "sha256": "3d56ba3b9fa5b0b5eebaebad2c71bb9053492056c92f8afb25ab85e66526c849"
+    }
+  ],
+  "requested_scenario": "complete-blockage-v1",
+  "actual_scenario": "crane-land-proving-ground-v1 / complete-blockage-v1",
+  "fault_induction_status": "PARTIAL",
+  "recording_valid": true,
+  "observed_outcome": "deadline-aligned terminal abort after obstacle-driven detour",
+  "partial_induction_reason": "The intended wall was active and the direct route was restricted, but the retained robot-visible planner grid still contained a traversable connection; global no-path was not established.",
+  "allowed_use": "development diagnostic pilot, response-quality review, and prospective-study design only",
+  "prohibited_use": "confirmatory effectiveness result or ordinary-method input"
+}

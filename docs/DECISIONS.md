@@ -808,3 +808,22 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Validity risk: this is a retrospectively selected development case from another workstream. The
   prospective study must freeze cases, evidence masks, methods, and stopping rules before held-out
   collection and must independently score both diagnosis and final language.
+
+## 2026-09-22 — diagnose the land pilot as direct-route restriction, not complete no-path
+
+- Decision: retain `land-blockage-global-002` as a valid development diagnostic pilot, but classify
+  fault induction as partial. The ordinary answer may state that the retained navigation model
+  restricted the direct route and that the abort aligned with the configured deadline. It may not
+  state that no route existed, name the evaluator-only wall, or claim recovery exhaustion.
+- Evidence: evaluator truth confirms the requested wall was active, but the robot-visible global
+  costmap independently remains connected below cost 253. The centerline crosses lethal cells,
+  delivered odometry deviates 2.705 m laterally, 69 planner updates succeed, recovery feedback
+  remains zero, and action failure occurs 0.860 s from the exact 70 s BT deadline.
+- Alternatives: use the scenario label as proof of complete blockage; discard the conflicting run;
+  or tune geometry until disconnection appears. The first leaks evaluator truth, the second hides a
+  valid unfavorable result, and the third risks outcome-directed scenario manipulation.
+- RQ impact: provides an honest Q2/Q3 development case with a useful physical/model diagnosis and
+  explicit alternative evidence. It is not a Q1 method-comparison result.
+- Validity risk: the final BT transition is missing and the retained snapshot is not the exact grid
+  consumed by every planner tick. A future prospective case should retain time-aligned global grids
+  and full paths, but that instrumentation is lower priority than protocol freeze and annotation.

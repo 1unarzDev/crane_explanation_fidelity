@@ -1,0 +1,81 @@
+{
+  "schema": "crane-data-manifest-v1",
+  "artifact_id": "land-blockage-global-002",
+  "status": "DEVELOPMENT_VALID_DIAGNOSTIC_PILOT",
+  "visibility": "robot_visible",
+  "dvc_pointer": "data/robot_visible/dev.dvc",
+  "artifacts": [
+    {
+      "path": "data/robot_visible/dev/diagnostic-pilot-v1/land-blockage-global-002/fixture-summary.json",
+      "sha256": "4ce8b1e2dab7c5ab8fcbc531a5a367e5ba8b2b26b9d579f8da136988ac9e2105"
+    },
+    {
+      "path": "data/robot_visible/dev/diagnostic-pilot-v1/land-blockage-global-002/qa-summary.json",
+      "sha256": "c497bf4b95523886fa24d7090298cfb96c5b818e38fd64435f9e51e418798743"
+    },
+    {
+      "path": "data/robot_visible/dev/diagnostic-pilot-v1/land-blockage-global-002/geometric-diagnostic.json",
+      "sha256": "99075200d2de5579106d931035e9369b2c0e2a804ecd085b5f06980a89f26444"
+    },
+    {
+      "path": "data/robot_visible/dev/diagnostic-pilot-v1/land-blockage-global-002/unity-build-manifest.json",
+      "sha256": "1805281a0910eae84b775a2f5e43efa2b99735c4c4f662cb3c751f6b85f0fcae"
+    }
+  ],
+  "evaluator_truth_reference": "land-blockage-global-002.evaluator-only.json",
+  "capture": {
+    "action_status": "aborted",
+    "action_wall_seconds": 70.86018458599574,
+    "controller_commands": 701,
+    "global_costmap_observations": 200,
+    "maximum_occupied_costmap_cells": 2457,
+    "successful_plan_updates": 69,
+    "trajectory_samples": 3529,
+    "maximum_forward_progress_m": 6.9489426612854,
+    "maximum_absolute_lateral_m": 2.704580307006836,
+    "bt_unique_transitions": 629,
+    "bt_dropped_transitions": 0,
+    "bt_terminal_transition_observed": false,
+    "latest_costmap_data_sha256": "006e8cb8646e921d805230e5034080f5bee3d0e54c53355cf3f80cce9d9a7cac"
+  },
+  "diagnostic": {
+    "method": "geometric-route-restriction-v1",
+    "disposition": "supported",
+    "direct_route_has_lethal_cell": true,
+    "retained_grid_connected": true,
+    "deterministic_final_text_verified": true,
+    "interpretation": "The retained model restricts the direct route but does not establish global infeasibility; the abort is deadline-aligned."
+  },
+  "runtime": {
+    "crane_ml_commit": "c46de4d7e83a18ebef3abc4c97eff1b706a79282",
+    "crane_explain_core_commit": "910a097fb0e2cb3d69b2c9f58b77bbe178c1cc0f",
+    "unity_version": "6000.5.10f1",
+    "build_guid": "2e501629ce3544a783506153da3c0268",
+    "build_manifest_sha256": "1805281a0910eae84b775a2f5e43efa2b99735c4c4f662cb3c751f6b85f0fcae",
+    "player_launcher_sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+    "proving_ground_generator_sha256": "a6eb6bd219fe3170036330902ff27cb1758099a4aa2a77a492d599ddbefd5c8b",
+    "proving_ground_catalog_sha256": "bea854292d7298e04f37ed9f6cc50f49d59d51fdec0e1b78a9d5f9247beee720",
+    "nav2_config_sha256": "e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+    "bt_xml_sha256": "423c61f90a57c79a1bae0580eb24a3866eee5169f888ac58cdca40e7db7656f3",
+    "ros_domain_id": 220,
+    "ros_tcp_port": 11620
+  },
+  "reproduction": {
+    "build_method": "CranePerformanceBuild.BuildLinuxWorker",
+    "fixture": "packages/crane_ml/Tools/Performance/run_land_proving_ground_nav2_fixture.sh",
+    "layout_request": "complete-blockage-v1",
+    "costmap_topic": "/global_costmap/costmap",
+    "costmap_service": "/global_costmap/get_costmap",
+    "expected_navigation_status": "aborted",
+    "diagnostic_export": "analysis/export_geometric_route_diagnostic.py",
+    "diagnostic_export_sha256": "f5a0efe8705198fe417aab71b47b7ed860bd16e312701b2f26be2c329668e060",
+    "costmap_audit_sha256": "4c5a5aec32b78de02d2260a0783f604869eca55237cd11595e242b3e0ec419fd"
+  },
+  "limitations": [
+    "This is development evidence and was not part of a frozen held-out diagnostic study.",
+    "The retained grid contains a traversable connection, so the episode does not support a no-path or global physical-infeasibility claim.",
+    "The final BT terminal transition was not observed; the deadline mechanism is reconstructed from exact source plus action timing.",
+    "The delivered costmap snapshot is not proven to be the exact state consumed by every planner invocation.",
+    "Evaluator-only scenario identity and obstacle semantic IDs are excluded from the diagnostic input and answer."
+  ]
+}
