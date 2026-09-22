@@ -640,6 +640,24 @@
 - **VERIFIED:** robot-visible leakage scan passed across all 24 files. Payloads are governed by
   retained content-addressed manifests and DVC pointers; frozen study artifacts remain unchanged.
 
+## 2026-09-22 — sealed pn-0033 inclusion and model calls
+
+- **CAPTURED ONCE / INCLUDED:** frozen recovery-followed-by-success row `pn-0033`, seed 3033,
+  passed every answer-blind inclusion gate and expected-success contract. The action succeeded
+  after one unique Wait invocation with 2.981 m displacement, 222 returned controller commands,
+  66 costmap observations, maximum 13,266 occupied cells, and accepted 10/7-unit parity audits.
+  Capture used exact frozen CRANE commit `c559932a5ebef00bfa7752511799fd904e5c9dbe`; the current
+  gitlink was restored afterward.
+- **SEALED MODEL CALLS RETAINED / NOT ANNOTATED:** both questions ran once for F/G/H with
+  Luna-low: six unique calls, no retries, 484,925 input tokens, 370,176 cached input tokens, 4,655
+  output tokens, 954 reasoning tokens, and 135.548 s aggregate latency. Both G realizations used
+  the frozen deterministic checked-template fallback after exact verification rejected their
+  candidates. No repair call, resampling, scoring, or protocol change occurred. A--E remain
+  non-model smoke outputs and frozen model evaluation is `NOT_RUN`. Hashes and usage are retained
+  in `manifests/model_outputs/pn-0033-provenance-v1.json`.
+- **VERIFIED:** robot-visible leakage scan passed across all 24 files. Payloads are governed by
+  retained content-addressed manifests and DVC pointers; frozen study artifacts remain unchanged.
+
 ## 2026-09-21 — sealed pn-0027 inclusion and model calls
 
 - **CAPTURED ONCE / INCLUDED:** frozen recovery-success row `pn-0027`, seed 3027, passed every
