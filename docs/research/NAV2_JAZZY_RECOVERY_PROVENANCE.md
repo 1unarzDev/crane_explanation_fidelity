@@ -61,6 +61,10 @@ Inspection of that immutable image reports:
 
 Nav2 release `1.3.12` is source tag
 [`6be3614013ec586051b86c97b919b293281490fe`](https://github.com/ros-navigation/navigation2/tree/6be3614013ec586051b86c97b919b293281490fe).
+BehaviorTree.CPP release `4.9.0` is source tag
+[`3ff6a32ba0497a08519c77a1436e3b81eff1bcd6`](https://github.com/BehaviorTree/BehaviorTree.CPP/tree/3ff6a32ba0497a08519c77a1436e3b81eff1bcd6).
+The installed `bt_service_node.hpp`, `clear_costmap_service.hpp`, `tree_node.h`, and
+`abstract_logger.h` headers byte-match those two pinned source trees.
 The ROS release repository tag `release/jazzy/nav2_bt_navigator/1.3.12-1` resolves to
 `1340f75b723f3040dd69f30571a7394cf7417f0b`. The historical Bloom track records upstream
 `navigation2`, `release_tag: :{version}`, and no source patches
@@ -165,6 +169,67 @@ Thus this custom tree's 0→1 feedback change and one unique `Wait IDLE→RUNNIN
 exactly one recorded Wait recovery action for the bracketed goal. They are distinct from the
 fixture's `goalAttempts: 1` and from `RecoveryNode`'s private retry counter. Reports should name the
 unit rather than silently generalizing Nav2's field to platform-independent “recovery attempts.”
+
+### 3a. A direct `ClearEntireCostmap IDLE→SUCCESS` is a completed action invocation
+
+In this pinned release, `ClearEntireCostmap` is registered as an `Action` and its implementation
+inherits `BtServiceNode`, which in turn inherits BehaviorTree.CPP `ActionNodeBase`; it is not a
+condition guard
+([Nav2 node model](https://github.com/ros-navigation/navigation2/blob/6be3614013ec586051b86c97b919b293281490fe/nav2_behavior_tree/nav2_tree_nodes.xml),
+[plugin declaration](https://github.com/ros-navigation/navigation2/blob/6be3614013ec586051b86c97b919b293281490fe/nav2_behavior_tree/include/nav2_behavior_tree/plugins/action/clear_costmap_service.hpp)).
+On the first tick of an activation, `BtServiceNode::tick()` calls `on_tick()`, sends one asynchronous
+service request, and checks its future. `ClearEntireCostmapService::on_tick()` increments
+`number_recoveries` once. If the response arrives within that same call, `check_future()` returns
+`SUCCESS`; otherwise it returns `RUNNING` until a later tick completes or times out
+([service-node implementation](https://github.com/ros-navigation/navigation2/blob/6be3614013ec586051b86c97b919b293281490fe/nav2_behavior_tree/include/nav2_behavior_tree/bt_service_node.hpp),
+[clear plugin](https://github.com/ros-navigation/navigation2/blob/6be3614013ec586051b86c97b919b293281490fe/nav2_behavior_tree/plugins/action/clear_costmap_service.cpp)).
+BehaviorTree.CPP applies the tick's returned state only after `tick()` returns and emits a status
+callback only when the state changes. Therefore a fast completion is correctly logged as the
+single transition `IDLE→SUCCESS`, without an invented `RUNNING` edge
+([tick/status implementation](https://github.com/BehaviorTree/BehaviorTree.CPP/blob/3ff6a32ba0497a08519c77a1436e3b81eff1bcd6/src/tree_node.cpp)).
+Nav2's own pinned unit test confirms that one tree tick can return `SUCCESS` while changing the
+recovery count from zero to one
+([test](https://github.com/ros-navigation/navigation2/blob/6be3614013ec586051b86c97b919b293281490fe/nav2_behavior_tree/test/plugins/action/test_clear_costmap_service.cpp)).
+
+For the exact loaded XML, which contains no completion-overriding precondition on this leaf, one
+unique `IDLE→SUCCESS` event for its UID establishes **one recorded, successfully completed
+ClearEntireCostmap service invocation** and one recovery-counter increment. It does not by itself
+establish that exactly one invocation occurred in the whole episode: the ROS log may be incomplete,
+and replayed/duplicated captured records must first be deduplicated. Nor does service success prove
+that map content changed, that an obstacle was removed, or that the clear caused later navigation
+success. A later genuine invocation of the same tree node requires an intervening reset to `IDLE`;
+control nodes reset completed children,
+whereas a running child's halt invokes its halt method before resetting it
+([control-node reset semantics](https://github.com/BehaviorTree/BehaviorTree.CPP/blob/3ff6a32ba0497a08519c77a1436e3b81eff1bcd6/src/control_node.cpp)).
+For `BtServiceNode`, halt clears its local `request_sent_` state and resets the BT status, but does
+not prove cancellation or reversal of the already-dispatched ROS service side effect. Thus
+`SUCCESS→IDLE` is an activation boundary, not another invocation and not evidence that the costmap
+clear was undone.
+
+The same `IDLE→SUCCESS` shape is also normal for synchronous condition guards. BehaviorTree.CPP
+defines conditions as side-effect-free synchronous checks that must not return `RUNNING`
+([condition contract](https://github.com/BehaviorTree/BehaviorTree.CPP/blob/3ff6a32ba0497a08519c77a1436e3b81eff1bcd6/include/behaviortree_cpp/condition_node.h)).
+`BehaviorTreeLog` carries only node name, UID, and old/new status, not node type or registration ID
+([Nav2 logger](https://github.com/ros-navigation/navigation2/blob/6be3614013ec586051b86c97b919b293281490fe/nav2_behavior_tree/include/nav2_behavior_tree/ros_topic_logger.hpp)).
+Capture must therefore classify leaves from the exact retained XML plus the pinned plugin
+registry/model, never from transition shape or a suggestive node name. A condition success records
+that its guard evaluated true; a known `ClearEntireCostmap` action success records a completed
+service invocation. This is an allowlisted, exact-plugin inference rather than a generic rule for
+all `IDLE→SUCCESS` transitions: BehaviorTree.CPP preconditions or injected callbacks can substitute
+a terminal result without running the leaf, and nonstandard direct calls can escape the usual
+reset-delimited control flow
+([execution path](https://github.com/BehaviorTree/BehaviorTree.CPP/blob/3ff6a32ba0497a08519c77a1436e3b81eff1bcd6/src/tree_node.cpp)).
+
+**Capture recommendation.** Open an invocation for a source-verified recovery `Action` on either
+`IDLE→RUNNING` or direct `IDLE→SUCCESS`; close the latter immediately and close the former on its
+terminal edge. Admit direct completion only for an allowlisted concrete plugin in the exact loaded
+tree, after checking that no completion-overriding precondition/callback applies. Key identity by
+accepted goal, loaded-tree identity, node UID, and activation ordinal. Treat `*→IDLE` only as
+reset/halt evidence. Deduplicate exact repeated captured events,
+require an intervening reset before accepting another activation for the same UID, and retain the
+NavigateToPose recovery-count sequence as an independent cross-check. Say “one invocation is
+recorded” unless terminal bracketing and transport/capture completeness justify “exactly one
+occurred.”
 
 ### 4. Meaning and completeness of `BehaviorTreeLog`
 
