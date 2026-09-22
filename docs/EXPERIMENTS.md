@@ -1537,3 +1537,40 @@
   paired unobstructed case before claiming recovery or terminal failure. Frozen controlled-study
   parameters and artifacts were unchanged. Raw calibration/build outputs remain ephemeral under
   `/tmp/crane-warehouse-*`.
+
+## 2026-09-22 — bounded ecological warehouse policy and BT QA
+
+- CRANE revisions `ea2f86c` (warehouse policy) and `37809b9` (generic passive QA metrics); exact
+  warehouse tree SHA-256
+  `423c61f90a57c79a1bae0580eb24a3866eee5169f888ac58cdca40e7db7656f3`.
+- **IMPLEMENTED:** `nav2_warehouse_replanning_deadline.xml` retains the installed stock tree's 1 Hz
+  replanning, contextual clearing, and six-retry recovery structure, but wraps it in an explicit
+  70 s BehaviorTree.CPP steady-clock `Timeout`. Its 80 s client deadline is a later failsafe. This
+  ecological policy is separate from the hash-frozen controlled-study BT and parameters.
+- **TESTED/NEGATIVE CALIBRATION:** the first root guard used Nav2 Jazzy `TimeExpired`. The paired
+  nominal route succeeded, but the blocked route remained active until the 80.03 s client deadline.
+  Source inspection showed why: `TimeExpired` returns `FAILURE` while waiting and reinitializes the
+  next time it is ticked from inactive status, so this root-guard placement never accumulated the
+  configured interval. The run remains retained and was not called an abort.
+- **TESTED/PAIRED PASS:** under the exact final tree, the unobstructed route succeeded in 53.38 s,
+  displaced 12.597 m, returned 524 commands, and retained 199 costmap observations. The complete
+  barrier case aborted in 71.10 s—before client cancellation—after 4.568 m displacement, 699
+  commands, and 268 costmap observations. Both had zero clock rewinds and zero stale/rejected
+  commands. This establishes a task-policy terminal outcome, not obstacle physical causation.
+- **GENERIC SHARED CHANGE / TESTED:** the action-owning fixture now passively summarizes delivered
+  `BehaviorTreeLog` transitions and NavigateToPose recovery-count feedback. A controlled 3 m
+  TurtleBot3 corridor non-regression succeeded with 97 delivered transitions, 974 feedback
+  messages, and recovery sequence `[0]`. No RoboBoat source, environment, vehicle, or configuration
+  changed; no RoboBoat runtime was started.
+- **TESTED/INSTRUMENTED REPLICATION:** the complete-barrier run again aborted at 71.18 s. It
+  retained 629 delivered BT transitions, including `Timeout: IDLE→RUNNING`, 7,001 feedback
+  messages, and recovery sequence `[0]`. The terminal `Timeout` transition is absent, consistent
+  with the audited Jazzy terminal-tick flush limitation; the action result remains authoritative.
+  Therefore this is terminal failure without a recorded recovery attempt.
+- **QA:** 39 land/reference static tests pass; XML and shell syntax pass. The generic summary labels
+  BT topic delivery as potentially incomplete and does not claim topic delivery proves internal
+  consumption. Raw outputs are ephemeral under `/tmp/crane-warehouse-*` and
+  `/tmp/bt-metrics-turtlebot-nonreg-001`; frozen/sealed artifacts remain unchanged.
+- **NEXT / NOT_RUN:** produce a physical warehouse or proving-ground case with a uniquely recorded
+  recovery leaf followed by success or bounded exhaustion. Do not describe the deadline-only case
+  as recovery and do not use its paired outcome alone as a physical-causation result.
