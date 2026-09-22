@@ -1374,3 +1374,34 @@
 - Cumulative development-only totals: 18 episodes, 109 responses per condition, and 545 outputs.
   Errors are A 6/109, B 0/109, and C/D/E 1/109. A/B cover 228/245 answerable information units;
   C/D/E cover 220/245. These replications improve sample size but still do not support D over B.
+
+## 2026-09-21 — Clearpath pipeline ROS/Nav2 motion and sensor smoke
+
+- CRANE revision `7ddd1aa` (the validated source diff was committed after the run); Unity
+  6000.5.10f1; generated Clearpath asset-set SHA-256
+  `A85855FDA80AA08BD7773602E9133862EA9824A03CE73F002D33999482A0722F`.
+- **IMPLEMENTED/TESTED:** `run_clearpath_pipeline_nav2_fixture.sh` selects the generated Clearpath
+  scene, differential command adapter, `base_scan`, and a default 1.0 m goal. The generic land
+  bootstrap preserves imported geometry and the scene-authored spawn, rejects synthetic corridor
+  blockers, and records the environment/platform identity in evaluator-only truth.
+- **TESTED/PASS:** the graphics-free 1 m action succeeded in 2.978 s after 10 returned controller
+  commands. Planar odometry displacement was 0.497 m, within the configured 0.55 m goal tolerance.
+  Capture retained 451 LiDAR scans, four costmap observations with at most 11,668 occupied cells,
+  zero stale/rejected commands, valid transport, and RTF 1.00002. Evaluator truth recorded
+  `environmentId=clearpath-pipeline-2.9.4-v1`,
+  `platform=clearpath-jackal-class-differential`, `referenceEnvironmentPreserved=true`, and the
+  authored start `(0,5,0)`.
+- **TESTED/PASS:** the reference-environment regression remained valid with 11 canonical colliders,
+  13 visual renderers, one LiDAR, and passing layer, bounds, raycast, contact, semantic-sensor, and
+  evidence-highlight checks. The TurtleBot3 closed-loop non-regression also succeeded: 0.456 m
+  displacement, 20 commands, 226 scans, seven costmap observations, at most 9,869 occupied cells,
+  zero stale/rejected commands, valid transport, and RTF 1.00002.
+- **TESTED/PASS:** 22 static land/reference-environment tests and launcher shell syntax. Unity's
+  player build is the authoritative C# compilation verdict. A direct
+  `dotnet build --no-restore` attempt produced no valid verdict because Unity had not generated the
+  required `project.assets.json`; it is not counted as a passing or failing source test.
+- Limits: this is a local smoke, not representative pipeline-route validation. Topic/service
+  delivery does not prove controller consumption. Native Gazebo comparison, calibrated route and
+  spawn catalog, high-fidelity material parity, and Jackal hardware dynamics are **NOT_RUN**. It
+  adds no independent explanation-study episode and no RQ1–RQ4 effect estimate. Raw outputs remain
+  ephemeral under `/tmp/crane-clearpath-platform-build.xDO9d5`; no sealed data was changed.

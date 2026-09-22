@@ -697,3 +697,21 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   evaluator-owned intervention into robot-visible evidence.
 - Validity risk: this is synthetic fault injection. Explanations may describe recorded BT
   mechanism but must not claim a physical cause or identify the hidden intervention.
+
+## 2026-09-21 — preserve imported Clearpath geometry during Nav2 validation
+
+- Decision: recognize the generated Clearpath pipeline scene in the existing land Nav2 bootstrap,
+  but retain its scene-authored spawn and imported canonical geometry. Reject synthetic corridor
+  blockers in this mode rather than silently changing the reference task.
+- Evidence: a graphics-free 1 m smoke succeeded while evaluator truth recorded
+  `referenceEnvironmentPreserved=true`; the separate reference validator still found all 11
+  canonical colliders, 13 visual renderers, semantic sensor/raycast resolution, rigid contact, and
+  unchanged highlight behavior.
+- Alternatives: replace the imported world with the synthetic corridor; add Clearpath-specific
+  motion/ROS infrastructure; or defer all navigation checks after completing only structural
+  validation.
+- RQ impact: provides a narrow recognizable-platform transport and motion check without granting
+  the explanation system privileged world truth or changing canonical task feasibility.
+- Validity risk: the 1 m local goal is not a representative pipeline route, and delivered scans or
+  costmap observations do not prove controller consumption. Native Gazebo comparison, route/spawn
+  calibration, material parity, and Jackal hardware dynamics remain **NOT_RUN**.

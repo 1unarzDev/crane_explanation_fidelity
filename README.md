@@ -67,7 +67,9 @@ their own location. Exact repository commits and destinations are recorded in
 - **IMPLEMENTED, TESTED:** PX4 ArUco render-only landmark invariant and pinned windy scenario with
   repeatable measured CRANE response; camera detection and physical wind calibration remain unrun.
 - **IMPLEMENTED, TESTED:** offline Clearpath 2.9.4 pipeline SDF/resource manifest and Unity import;
-  generated upstream assets stay out of Git. Geometry/layers/contact passed; ROS/Nav2 remains unrun.
+  generated upstream assets stay out of Git. Geometry/layers/contact passed, as did a local 1 m
+  ROS/Nav2 motion and sensor-transport smoke. Representative route and native-Gazebo comparison
+  remain unrun.
 - **TESTED (PIPELINE SMOKE):** A/B/C/D/E over real success and cancellation episodes with a
   rule-based generator; identical outputs validate parity and routing but are not an LLM comparison
   or evidence for RQ1/RQ2.
