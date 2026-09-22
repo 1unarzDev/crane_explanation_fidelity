@@ -70,8 +70,9 @@ their own location. Exact repository commits and destinations are recorded in
   and eight behaviorally qualified scenario motifs spanning weave, corrected S-turn, offset gates,
   alternate route, narrow doorway, U-trap, dynamic-gate recovery-success, and bounded blockage
   abort. The original straight-through slalom remains a negative geometry calibration; direct
-  keyboard view switching passes on the additive v2 revision. Repetition, explanation generation,
-  and blinded annotation remain unrun.
+  keyboard view switching passes on the additive v2 revision. Corrected S-turn, dynamic recovery,
+  and bounded blockage each pass a three-run exact-condition repeatability gate; these repetitions
+  are not independent study episodes. Explanation generation and blinded annotation remain unrun.
 - **IMPLEMENTED, TESTED:** deterministic F1TENTH PNG/YAML contour-to-collider generator and Unity
   importer, qualified headlessly on the externally retained pinned Spielberg map. Full-lap ROS
   control and source-simulator comparison remain unrun.

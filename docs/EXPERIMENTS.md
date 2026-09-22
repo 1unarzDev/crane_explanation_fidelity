@@ -1,5 +1,39 @@
 # Experiment Log
 
+## 2026-09-22 — proving-ground mechanism repeatability qualification
+
+- **PROSPECTIVE DEVELOPMENT CONTRACT:** before the new repeats, a versioned contract fixed three
+  required distinct runtime/navigation artifacts, exact configuration identity, expected terminal
+  status, route acceptance, required QA gates, and minimum recovery count per scenario. Contract
+  SHA-256 is `bfdb6d521c5e5476304169ab5b5bc55a2f00e21c3745f5e93b7df219821d1d17`.
+  Exact-condition repetitions measure operational reproducibility, not independent scenario
+  diversity or statistical sample size.
+- **CORRECTED S-TURN / REPETITION_PASS:** three runs succeeded and passed every v2 route-shape
+  check. Sampled paths ranged 21.121–22.207 m, action time 82.961–89.875 s, endpoint displacement
+  17.577–17.597 m, lateral direction changes were exactly four, and recovery feedback remained
+  zero. Aggregate SHA-256 is
+  `e5a10178e8104a3009e792af35b3e0f2bbb876617dd45c6b15266117e62bbc65`.
+- **DYNAMIC GATE / REPETITION_PASS:** three runs recorded recovery followed by success. Sampled
+  paths ranged 22.382–23.330 m and action time 91.383–98.323 s. Maximum recovery feedback varied
+  materially from 1 to 8; this variability is retained and prevents treating a single recovery
+  count as a scenario invariant. Aggregate SHA-256 is
+  `21010265d272b2c4b6d738f2312ba31f40c8d824c0307c337a0259325033c112`.
+- **COMPLETE BLOCKAGE / REPETITION_PASS:** three runs aborted under the explicit 70-second BT
+  task-policy deadline before the 80-second client horizon. Action time ranged 70.331–71.131 s,
+  sampled exploratory paths ranged 17.519–18.151 m, and recovery feedback remained zero. This is
+  repeatable task-policy termination, not proof that the blocker physically caused the abort.
+  Aggregate SHA-256 is
+  `f7c6a43286c06a5fe3c11873e355d0b70dc084515c56cf09d8175c8ce6b081fe`.
+- **DERIVATION BOUNDARY:** the historical first-run summaries for dynamic gate and blockage
+  predated current artifact-hash and route-acceptance fields. They were not overwritten. New
+  summaries were derived from their unchanged inputs solely for schema-compatible aggregation.
+  All new runs used isolated ROS domains 180–185 and TCP ports 10620–10625; the parallel RoboBoat
+  runtime was not stopped or modified.
+- **LIMITS:** delivered BT, costmap, command, and odometry records do not prove controller
+  consumption or physical causation. These development repeats are not frozen-study episodes.
+  Scenario-to-question contracts, explanation generation, and blinded annotation remain
+  `NOT_RUN`; raw outputs remain outside Git under `/tmp`.
+
 ## 2026-09-22 — corrected proving-ground slalom qualification
 
 - **VERSIONED CORRECTION / HISTORY PRESERVED:** the v1 slalom manifest and its SHA-256 remain
