@@ -581,6 +581,26 @@
   DVC pointers. Frozen design, prompts, split, annotation guide, runtime, inclusion rules, and
   stopping rules were unchanged.
 
+## 2026-09-22 — sealed pn-0030 inclusion and model calls
+
+- **CAPTURED ONCE / INCLUDED:** frozen terminal-abort row `pn-0030`, seed 3030, passed every
+  answer-blind inclusion gate and the exact expected-abort contract. The action aborted after two
+  unique Wait invocations with 0.233 m displacement, 315 returned controller commands, 65 costmap
+  observations, maximum 8,907 occupied cells, and accepted 10/7-unit parity audits. Capture used
+  exact frozen CRANE commit `c559932a5ebef00bfa7752511799fd904e5c9dbe`; the current gitlink was
+  restored afterward.
+- **SEALED MODEL CALLS RETAINED / NOT ANNOTATED:** both frozen questions ran once for F/G/H with
+  Luna-low: six unique calls, no retries, 514,828 input tokens, 351,488 cached input tokens, 4,796
+  output tokens, 822 reasoning tokens, and 149.181 s aggregate latency. G's failure-cause
+  realization passed final-text verification; its recovery-mechanism realization used the frozen
+  deterministic fallback after exact verification rejected the candidate. No repair call,
+  resampling, scoring, or protocol change occurred. A--E remain non-model smoke outputs and frozen
+  model evaluation is `NOT_RUN`. Retained hashes and usage are in
+  `manifests/model_outputs/pn-0030-provenance-v1.json`.
+- **VERIFIED:** all robot-visible, evaluator-only, output, and cache artifacts are governed by
+  content-addressed manifests and DVC pointers; leakage, frozen integrity, scoped regression, and
+  data-governance checks are required before checkpoint publication.
+
 ## 2026-09-21 — sealed pn-0027 inclusion and model calls
 
 - **CAPTURED ONCE / INCLUDED:** frozen recovery-success row `pn-0027`, seed 3027, passed every
