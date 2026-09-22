@@ -59,12 +59,19 @@ not reproduce its historically qualified recovery-success mechanism: the warehou
 90-second policy aborted near the goal, while one stock-policy rerun reached the client deadline;
 both recorded zero recovery-leaf invocations. Both are retained negative calibrations and neither
 was exported. Historical proving-ground passes remain scoped to their recorded revisions, but a
-current-build mechanism-matching export is still `NOT_RUN`.
+current-build recovery-success export is still `NOT_RUN`.
 
 The export boundary now mechanically rejects this class of mismatch. Both negative artifacts fail
 their declared `succeeded` terminal-status gate, while the current-build warehouse artifact passes
 the new terminal/mechanism/inventory/zero-drop gates. This closes false admission; it does not
 close the proving-ground runtime gap or create an explanation-evaluation result.
+
+The proving-ground terminal-policy path now has a current-build mechanism-matching handoff.
+`complete-blockage-v1` returned `aborted` at 71.809 seconds under the retained 70-second policy,
+retained 629 unique transitions including `Timeout IDLE -> RUNNING` with zero drops, and passed
+deterministic physically separated export plus an independent robot-visible leakage scan. Because
+the terminal root transition is absent and topic loss is undetectable, this supports a recorded
+task-policy abort—not physical obstacle causation, planner `no path`, or complete BT history.
 
 ## Retained infrastructure validation
 

@@ -1,5 +1,31 @@
 # Experiment Log
 
+## 2026-09-22 — current-build proving-ground blockage export
+
+- **NAVIGATION / TERMINAL-POLICY PASS, DEVELOPMENT ONLY:** current player build-manifest SHA-256
+  `5ef48bba5c30570d1f85afbff0c71e6347c52918328338452ac0f847b67c6624` ran
+  `complete-blockage-v1` on isolated ROS domain 94 and TCP port 11294 with the repository-retained
+  70-second task-policy tree. The action returned the predeclared `aborted` result at 71.809 wall
+  seconds, before the 90-second client deadline; the aggregate fixture verdict was valid.
+- **ORDERED EVIDENCE PASS:** 629 unique transitions were retained against the 16,384-record
+  ecological capacity with zero drops. `Timeout IDLE -> RUNNING` was record
+  `bt-transition-000001`; zero recovery-leaf invocations and feedback sequence `[0]` were observed.
+  Seventy trajectory samples covered 17.978 m with 3.016 m maximum lateral excursion and 3.465 m
+  endpoint displacement. Fixture SHA-256 is
+  `bccf5d469bb9db605756a45843bd5e8ce065f60738ffe0642166cd0ec0f5226b`.
+- **FAIL-CLOSED EXPORT PASS:** the run satisfied its declared `aborted`, `Timeout`, trajectory,
+  and zero-drop admission gates. Two export roots were byte-identical. Robot-visible SHA-256 is
+  `5c30b7f4dbc03b60479c695cc933fb10a51cbbfa8a3341a569789a9ee6cdbf96`, evaluator-only SHA-256
+  is `d9f7898a6a5a634b4ed8d5f2a0ad4eb29495050c604bc04ec99e227d017ce168`, and export-manifest
+  SHA-256 is `4832fd3b58402965265819c574c300cce3fe642bcd0a2861be5f6197b621dad6`.
+  The independent robot-visible leakage scan passed.
+- **BOUNDARY:** the terminal root transition remained absent and subscriber loss remains
+  undetectable, so BT history is `not_proven`. The evidence supports a recorded task-policy abort;
+  it does not establish that the physical blocker caused termination or that the planner found no
+  path. This is an interface/mechanism qualification, not an independent study sample or
+  explanation-performance result. Frozen/DVC artifacts and RoboBoat-specific content were
+  untouched.
+
 ## 2026-09-22 — fail-closed ecological mechanism admission
 
 - **IMPLEMENTED:** CRANE revision `86e7658` adds explicit runtime-admission criteria to every
