@@ -64,3 +64,17 @@ def test_export_uses_goal_and_odometry_without_evaluator_label(tmp_path):
     assert "dockingSuccessObserved" not in serialized
     assert "hidden simulator state" in serialized
     assert payload["observation"]["settled_error_m"] == 0.56
+
+    masked = MODULE.build_export(
+        summary,
+        repository,
+        commit,
+        "fixture.yaml",
+        0.40,
+        "PerformanceResults/run-1/fixture-summary.json",
+        frozenset({"measured_speed_at_return"}),
+    )
+    assert masked["diagnostic_result"]["disposition"] == "insufficient"
+    assert masked["observation"]["measured_speed_at_return_mps"] is None
+    assert masked["evidence_boundary"]["masked_fields"] == ["measured_speed_at_return"]
+    assert "independently measured speed" in masked["diagnostic_result"]["limits"]

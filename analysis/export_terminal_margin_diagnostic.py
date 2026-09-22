@@ -53,6 +53,7 @@ def build_export(
     config_path: str,
     task_tolerance_m: float,
     source_reference: str,
+    masks: frozenset[str] = frozenset(),
 ) -> dict[str, Any]:
     raw = summary_path.read_bytes()
     summary = json.loads(raw)
@@ -81,9 +82,15 @@ def build_export(
     final_pose = summary["finalPose"]
     summary_hash = sha256_bytes(raw)
     config_hash = sha256_bytes(config_bytes)
+    allowed_masks = {"measured_speed_at_return", "post_result_coast", "settled_error"}
+    unknown_masks = masks - allowed_masks
+    if unknown_masks:
+        raise ValueError(f"unknown evidence masks: {sorted(unknown_masks)}")
     evidence_ids = (
         f"fixture-summary:sha256:{summary_hash}",
-        "odom:action-result-pose-and-speed",
+        "odom:action-result-pose-and-speed"
+        if "measured_speed_at_return" not in masks
+        else "odom:action-result-pose",
         "odom:post-result-trajectory",
         "task-contract:xy-acceptance-tolerance",
         f"nav2-config:sha256:{config_hash}",
@@ -97,9 +104,17 @@ def build_export(
         configured_stopped_speed_mps=config_value(config_text, "trans_stopped_velocity"),
         task_acceptance_tolerance_m=task_tolerance_m,
         action_return_error_m=pose_error(return_pose, goal),
-        measured_speed_at_return_mps=summary["motionAtActionResult"]["bodySpeedMetersPerSecond"],
-        post_result_coast_m=summary["postResultCoastDistanceMeters"],
-        settled_error_m=pose_error(final_pose, goal),
+        measured_speed_at_return_mps=(
+            None
+            if "measured_speed_at_return" in masks
+            else summary["motionAtActionResult"]["bodySpeedMetersPerSecond"]
+        ),
+        post_result_coast_m=(
+            None if "post_result_coast" in masks else summary["postResultCoastDistanceMeters"]
+        ),
+        settled_error_m=(
+            None if "settled_error" in masks else pose_error(final_pose, goal)
+        ),
         action_return_timestamp_s=post_result[0]["simSeconds"],
         settled_timestamp_s=post_result[-1]["simSeconds"],
         source_anchor_ids=("nav2-stopped-goal-checker-config",),
@@ -113,6 +128,7 @@ def build_export(
         "episode_id": observation.episode_id,
         "evidence_boundary": {
             "classification": "robot_visible_declared_diagnostic_interface",
+            "masked_fields": sorted(masks),
             "included": [
                 "NavigateToPose/FollowPath result status",
                 "goal pose from the supplied path",
@@ -177,6 +193,13 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--task-tolerance-m", type=float, required=True)
     parser.add_argument("--source-reference", required=True)
+    parser.add_argument(
+        "--mask",
+        action="append",
+        choices=("measured_speed_at_return", "post_result_coast", "settled_error"),
+        default=[],
+        help="Omit decisive evidence to create a declared development evidence-mask case.",
+    )
     parser.add_argument("--output", type=Path, required=True)
     return parser.parse_args()
 
@@ -190,6 +213,7 @@ def main() -> None:
         args.config_path,
         args.task_tolerance_m,
         args.source_reference,
+        frozenset(args.mask),
     )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")

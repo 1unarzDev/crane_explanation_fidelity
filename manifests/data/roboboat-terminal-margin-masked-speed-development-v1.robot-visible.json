@@ -1,0 +1,32 @@
+{
+  "schema": "crane-data-manifest-v1",
+  "artifact_id": "roboboat-terminal-margin-masked-speed-development-v1",
+  "status": "DEVELOPMENT_ONLY_NOT_CONFIRMATORY",
+  "visibility": "robot_visible",
+  "path": "data/robot_visible/dev/diagnostic-pilot-v1/roboboat-terminal-margin-masked-speed/evidence.json",
+  "sha256": "81ce2fb2340912be1d072d7b1038702a0e5d9da79878b355851eb1b05d1389fa",
+  "dvc_pointer": "data/robot_visible/dev.dvc",
+  "paired_with": "roboboat-terminal-margin-development-v1",
+  "evidence_mask": [
+    "measured_speed_at_return"
+  ],
+  "source_artifacts": [
+    {
+      "logical_path": "PerformanceResults/roboboat-gate5-known-dock-1/fixture-summary.json",
+      "repository": "https://github.com/1unarzDev/crane_ml.git",
+      "sha256": "6bcc1c1f7d926a45b6d3ec2f9b0f06cfe8770d067d57ed2a92a45ebbd8c2223a"
+    },
+    {
+      "logical_path": "Tools/Performance/nav2_controller_fixture.yaml",
+      "repository": "https://github.com/1unarzDev/crane_ml.git",
+      "commit": "4ae5124c12c39af93ee5b256e33778aec490ecd3",
+      "sha256": "7ad4490b570c54526528db2118aaa5625879c478a67331e6e7155e533323593f"
+    }
+  ],
+  "expected_diagnostic_disposition": "insufficient",
+  "evidence_boundary": "The independently measured speed at action return is deliberately omitted. The task is ambiguous for the bounded terminal-margin diagnostic even though the unmasked development case contains that measurement.",
+  "limitations": [
+    "This mask is a development test of selective specificity, not a naturally missing held-out recording.",
+    "The paired unmasked artifact and source summary must be inaccessible to evaluated methods when this mask is presented."
+  ]
+}

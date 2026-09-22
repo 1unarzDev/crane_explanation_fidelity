@@ -101,3 +101,8 @@ hidden simulator state, and force decomposition. It is governed at
 `data/robot_visible/dev/diagnostic-pilot-v1/roboboat-terminal-margin/evidence.json` via
 `data/robot_visible/dev.dvc`; its source hashes and reproduction entry point are recorded in
 `manifests/data/roboboat-terminal-margin-development-v1.robot-visible.json`.
+
+A paired development evidence mask omits measured speed at action return. The same computation
+then returns `insufficient` and names that missing measurement instead of asserting the mechanism.
+The mask is a selective-specificity regression, not a naturally missing held-out episode; evaluated
+methods must not be able to retrieve its paired unmasked artifact.

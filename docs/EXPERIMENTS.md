@@ -2281,5 +2281,9 @@
   matched 0.20 m intervention outcomes, hidden simulator state, and force decomposition. It does
   not identify residual motion as wave/current/wind, plant failure, collision, or any unique
   physical source. Delivered odometry is not presented as proof of every value Nav2 consumed.
+- **SELECTIVE-SPECIFICITY CHECK:** a paired declared evidence mask removes measured speed at action
+  return. The diagnostic fails closed to `insufficient`, names the missing measurement, and retains
+  the other observations. This is a synthetic development mask, not an independent episode; the
+  unmasked pair must be inaccessible during any evaluated presentation.
 - **NOT_RUN:** independent blinded scoring, R/P/T/N comparison, prospective rerun, land analogue,
   power planning, and held-out collection. This result validates the development path only.
