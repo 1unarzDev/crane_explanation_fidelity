@@ -1,5 +1,39 @@
 # Experiment Log
 
+## 2026-09-22 — additive proving-ground bounded-recovery calibration
+
+- **IMPLEMENTED / TESTED:** additive catalog `crane-land-proving-ground-v3` preserves v1/v2 and
+  adds only `temporary-enclosure-recovery-v3`, a four-wall enclosure centered on the observed
+  nominal trajectory. Its walls are scheduled to activate at 18 s and be removed at 34 s.
+- **BUILD / STRUCTURAL PASS:** Unity 6000.5.10f1 built
+  `/tmp/crane-v3-recovery-build/CRANE.x86_64`; its build-manifest SHA-256 is
+  `6eb7cdde539fa57fac6c2ee461e71d0537c745418953cc91c483bd19aa773d3e`. Headless reference
+  validation reported seven canonical colliders, seven separate visual renderers, nine unique
+  semantic identities, zero duplicate IDs, and `STRUCTURAL_PASS`, `PHYSICS_PASS`, `SENSOR_PASS`,
+  `HEADLESS_PASS`, and `EXPLANATION_READY`.
+- **NAVIGATION / FAILURE-RECOVERY PASS:** the first predeclared development calibration used ROS
+  domain 96, TCP port 11296, the retained 90-second recovery policy, a 100-second action deadline,
+  and result root `/tmp/proving-v3-recovery-btcap-dev-20260922-01`. Evaluator truth records all four
+  walls activating at 18.040 simulated seconds and being removed at 34.040 seconds. NavigateToPose
+  succeeded at 85.219 wall seconds, traversed 17.478 m, and feedback changed from recovery count 0
+  to 1. The independent QA summary passed its predeclared minimum-recovery gate. CRANE revision is
+  `d5a25e6`; manifest, navigation-gate, BT-policy, and QA-summary SHA-256 values are respectively
+  `c7c6b7ad713b6a74e9542ec767ebc826f1034e0163993c8d2e3e02f23603e3ae`,
+  `ab360a15efec17e0c3795ea9d798b344ca28faf6ff7718e228595f59e7be84ba`,
+  `9fb490be79d16c482d9c1b1a8f2f946d142e0d21ed3d4f5901aa3065304329d1`, and
+  `019f43174e553047b627da3a9dc9f2fc636f594b31b29584e95663d1d2b72584`.
+- **CAPTURE LIMITATION / EXPORT NOT_RUN:** passive capture retained 756 unique BT transitions with
+  zero dropped transitions or invocations against the 16,384-transition capacity. The delivered
+  chain includes FollowPath failure, the successful controller-recovery guard, and
+  `ClearLocalCostmap-Context IDLE -> SUCCESS`, but no configured recovery leaf exposed the strict
+  `IDLE -> RUNNING` edge used to assign a stable recovery-invocation ID. The ecological export's
+  minimum-invocation gate was therefore not weakened and no separated export was produced. This
+  run supports the recorded software sequence and feedback count, not an exact attempt count or
+  physical causation. It is calibration, not an independent statistical episode.
+- **REGRESSION:** 90 component land/reference tests plus two unittest subtests passed. Frozen/DVC
+  artifacts and RoboBoat-specific source, environment, vehicle, sensor, physics, Nav2, and
+  documentation files were untouched.
+
 ## 2026-09-22 — current-build proving-ground S-turn evidence
 
 - **STRUCTURAL / PHYSICS / SENSOR / HEADLESS PASS:** the current player re-ran the v2 reference
