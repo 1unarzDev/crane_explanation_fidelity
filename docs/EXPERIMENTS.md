@@ -2396,3 +2396,30 @@
   than attributed solely to explanation quality.
 - **NEXT:** obtain a nominal-control episode and an evidence-masked ambiguous case, then dry-run
   blinded diagnostic annotation. Do not freeze or power the study from this single selected case.
+
+## 2026-09-22 — retained S-turn nominal-control attempt with unexpected abort
+
+- **INTENT/OUTCOME:** one current-source development run requested catalog `v2`, layout
+  `slalom-s-turn-v2`, and a nominal `succeeded` result. The action instead aborted at 70.918 s.
+  The simulator was not rerun to obtain the intended outcome. The QA summarizer alone was rerun
+  with `aborted` as the observed status, and the runtime recording then passed its transport,
+  sensor, command-integrity, and occupied-costmap gates.
+- **VALID RECORDING:** all 701 returned commands were accepted; zero commands were stale,
+  rejected, or cross-episode; there were zero clock rewinds, 202 global-costmap observations,
+  3,530 delivered-odometry samples, and 69 successful planning updates. The final BT transition
+  was not delivered, so exact recovery counting remains ineligible.
+- **BEHAVIOR/DIAGNOSIS:** the robot progressed 13.543 m toward the 18 m goal while following the
+  alternating S route, with 1.699 m maximum lateral deviation. The retained costmap marks the
+  requested direct line non-traversable near x=3.55 m but remains connected below cost 253. The
+  action abort is 0.918 s from the exact 70 s source deadline. This supports a direct-route
+  restriction, substantial detour, and deadline-aligned abort; it does not establish global
+  infeasibility, a unique obstacle identity, recovery exhaustion, or the cause of failing to
+  finish the remaining route within the deadline.
+- **DISPOSITION/GOVERNANCE:** retain as `DEVELOPMENT_VALID_UNEXPECTED_OUTCOME`, not as a nominal
+  control. Robot-visible fixture, QA, checked diagnostic, and build manifest are separated from
+  evaluator-only runtime truth under `diagnostic-pilot-v1`; committed manifests contain exact
+  hashes and DVC pointers. This run may inform benchmark design and induction-rate accounting but
+  is not a confirmatory result.
+- **NEXT:** use an already-qualified retained success with decisive physical evidence if one
+  exists; otherwise collect a prospectively declared nominal control without tuning this S-turn
+  layout to manufacture success.

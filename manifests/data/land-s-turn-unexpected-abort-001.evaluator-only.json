@@ -1,0 +1,25 @@
+{
+  "schema": "crane-data-manifest-v1",
+  "artifact_id": "land-s-turn-unexpected-abort-001-evaluator-only",
+  "status": "DEVELOPMENT_VALID_UNEXPECTED_OUTCOME",
+  "visibility": "evaluator_only",
+  "dvc_pointer": "data/evaluator_only/dev.dvc",
+  "artifacts": [
+    {
+      "path": "data/evaluator_only/dev/diagnostic-pilot-v1/land-s-turn-unexpected-abort-001/runtime-result.json",
+      "sha256": "e5bf7eb8c7c9c74c68eedf49e9d02d6cb1b67b59bfd82cbc4ac1a2a937daff4d"
+    },
+    {
+      "path": "data/evaluator_only/dev/diagnostic-pilot-v1/land-s-turn-unexpected-abort-001/truth.json",
+      "sha256": "ebf83c7839c8401ed74d107bd0de107ebd3cf5946b47415bd62ee0e5cb3e6968"
+    }
+  ],
+  "requested_scenario": "crane-land-proving-ground-v2 / slalom-s-turn-v2",
+  "requested_role": "nominal-success control",
+  "recording_valid": true,
+  "expected_outcome_observed": false,
+  "observed_outcome": "deadline-aligned abort after substantial S-route progress",
+  "disposition": "Retain as an unexpected development outcome; do not relabel it as a nominal success or exclude it for failing the intended outcome.",
+  "allowed_use": "development diagnosis, response-quality review, benchmark design, and fault-induction-rate accounting only",
+  "prohibited_use": "nominal-control evidence, confirmatory effectiveness result, or ordinary-method input"
+}
