@@ -1,5 +1,40 @@
 # Experiment Log
 
+## 2026-09-22 — current-build warehouse BT capture and separated ecological export
+
+- **BUILD PASS:** Unity CLI 1.0.0-beta.5 used installed Unity 6000.5.10f1 and the repository's
+  `CranePerformanceBuild.BuildLinuxWorker` entry point to produce an isolated player under `/tmp`.
+  CRANE build-manifest SHA-256 is
+  `5ef48bba5c30570d1f85afbff0c71e6347c52918328338452ac0f847b67c6624`; it includes
+  `TurtleBot3 Warehouse Validation` and warehouse manifest SHA-256
+  `c6db13e9c7190482f1eca723cb515cc7a38ce01a9caa60d6fbf9720810e68d69`. Unity's incidental
+  settings serialization changes were removed, leaving the component clean before execution.
+- **NAVIGATION / RECOVERY PASS, DEVELOPMENT ONLY:** isolated ROS domain 90 and TCP port 11290 ran
+  `warehouse-temporary-enclosure-recovery-v1` with the current player. Evaluator truth confirms
+  environment `crane-industrial-warehouse-v2`, seed 4105, the exact four-wall activation at
+  18.040 simulated seconds, and removal at 34.040 seconds. Nav2 succeeded after 75.516 wall
+  seconds, displaced 12.605 m, sampled a 15.748 m path with 2.112 m lateral excursion, and reported
+  a maximum feedback recovery count of 15.
+- **ROBOT-VISIBLE BT EVIDENCE PASS:** the passive fixture retained 3,994 unique transitions with no
+  duplicate or dropped records and four completed recovery-leaf invocations: `Spin`, `Wait`,
+  `BackUp`, and `Spin`. The root terminal transition remained unobserved and the topic has no
+  publisher sequence number, so history is still `not_proven` and exact-count eligibility is
+  false. This is evidence for four recorded leaf invocations, not proof that exactly four recovery
+  attempts occurred or that the physical enclosure caused them. Fixture-summary SHA-256 is
+  `07e402570b4563e257dea8074d6ea5570ba5bf46c698a399113f49401bcfbd50`.
+- **SEPARATED EXPORT PASS:** `export_ecological_evidence.py` bound the exact environment,
+  configuration, BT-policy, and ecological-contract hashes and produced physically separate
+  `robot_visible/` and `evaluator_only/` files plus a content-free hash manifest. Two independent
+  output roots were byte-identical. Robot-visible SHA-256 is
+  `326631676944546678951dc2a1ca068d43b120157189aabc1b49783ed5c43b22`, evaluator-only SHA-256
+  is `a1f2ec8c7886879a62aa189338187db7eba2e7d1ee1d13f077153f016107c845`, and export-manifest
+  SHA-256 is `64f1d1076cb754b1a07644a6fd238e44d8ed04e817ebd5960424bbdeda4e4f84`.
+  The independent robot-visible leakage scan passed.
+- **REGRESSION / BOUNDARY:** 68 land/reference tests and four frozen-study integrity tests pass.
+  Raw build/run/export artifacts remain ephemeral under `/tmp`; this is not an independent study
+  episode or explanation-performance result. Frozen/DVC artifacts and RoboBoat-specific content
+  were untouched.
+
 ## 2026-09-22 — bounded ordered BT evidence capture for ecological land
 
 - **IMPLEMENTED / TESTED:** `crane_ml` commit `8cc1cbb` adds a ROS-independent bounded transition

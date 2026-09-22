@@ -60,6 +60,13 @@ status transition. Nav2 feedback recovery counts, BT leaf invocations, and whole
 completeness remain separate. Because `BehaviorTreeLog` has no publisher sequence number, even an
 observed start/end pair does not by itself prove an exact whole-episode count.
 
+The ecological export boundary accepts the existing QA/capture artifacts and one opaque episode
+ID, verifies their exact manifest/configuration/BT-policy/question-contract hashes, and creates a
+new root containing physically separate `robot_visible/` and `evaluator_only/` directories. The
+robot-visible plane contains runtime records and hashes but no scenario name, semantic obstacle
+identity, expected outcome, evaluator truth, or input source path. A content-free top-level
+manifest binds both files by SHA-256 without merging their contents.
+
 The frozen F/G/H study remains isolated from new ecological scenarios. Warehouse/proving-ground
 work may reuse generic runtime capture and validation infrastructure, but it must not alter frozen
 questions, prompts, split, inclusion rules, model configuration, annotation guide, or stopping

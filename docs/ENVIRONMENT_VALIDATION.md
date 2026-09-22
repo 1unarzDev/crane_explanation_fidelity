@@ -40,6 +40,13 @@ completeness: current Jazzy `BehaviorTreeLog` delivery has no detectable publish
 and final root transitions were absent in three live checks. Ecological answers must therefore use
 qualified observed-count language unless a later evidence source establishes completeness.
 
+A current-source warehouse run now also passes the ordered-capture and evidence-separation gate:
+3,994 transitions and four completed recovery-leaf invocations were retained without truncation,
+the exact scenario/configuration identity was verified evaluator-side, and deterministic export
+produced byte-identical physically separate evidence planes whose robot-visible leakage scan
+passed. This establishes an ecological pipeline input, not explanation correctness; generation,
+information-parity audit, blinded annotation, and statistical evaluation remain `NOT_RUN`.
+
 ## Retained infrastructure validation
 
 | Environment | Retained result | Missing full validation | Submission status |
