@@ -75,11 +75,11 @@ provider, model alias, effort, or interactive agent response for the declared CL
 
 ## Authoritative current state
 
-- Primary sealed collection: **22 included independent episodes**, comprising 11
+- Primary sealed collection: **23 included independent episodes**, comprising 12
   recovery-followed-by-success and 11 terminal-recovery-abort instances; zero exclusions.
-- Primary model execution: **132 one-shot Luna-low calls** across F/G/H; no retry or resampling.
-- Completed episode range: `pn-0001` through `pn-0022`. The next unstarted primary row is
-  `pn-0023`; do not rerun or replace any earlier row.
+- Primary model execution: **138 one-shot Luna-low calls** across F/G/H; no retry or resampling.
+- Completed episode range: `pn-0001` through `pn-0023`. The next unstarted primary row is
+  `pn-0024`; do not rerun or replace any earlier row.
 - No sealed primary or Claude answer has been annotated. No sealed effect estimate exists.
 - Hash-matched packet/key snapshots are prepared as `sealed-primary-v2` (126 responses through
   `pn-0021`) and `sealed-claude-v2` (54 responses across nine episodes). Their keys live only under
@@ -229,10 +229,10 @@ amendment:
 
 ## After the Claude arm
 
-The largest primary-study threat remains sample size: 22 episodes versus the frozen minimum of 40,
+The largest primary-study threat remains sample size: 23 episodes versus the frozen minimum of 40,
 target 50, preferred 60. Once the requested Claude evidence is safely retained and packaged,
 another batch of frozen independent episodes has higher expected paper value than architecture
-work. Resume at `pn-0023` only if directed to continue primary collection, using the established
+work. Resume at `pn-0024` only if directed to continue primary collection, using the established
 capture -> answer-blind inclusion -> evidence checkpoint/push -> one-shot calls -> manifest/push
 order.
 
