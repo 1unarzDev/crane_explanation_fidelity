@@ -24,8 +24,8 @@ Nothing here changes a rubric. If the two disagree, the guide governs.
 PYTHONPATH=packages/astro_dock/src/crane_explain/src:analysis \
 python analysis/build_blinded_annotation_packet.py \
   --arm primary=model_outputs/final \
-  --packet model_outputs/annotation_packets/sealed-primary-v1/packet.jsonl \
-  --key data/evaluator_only/annotation_keys/sealed-primary-v1.json
+  --packet model_outputs/annotation_packets/sealed-primary-v2/packet.jsonl \
+  --key data/evaluator_only/annotation_keys/sealed-primary-v2.json
 ```
 
 Each packet row carries only `response_id`, `question`, `question_kind`, `gold_unit_inventory`,
@@ -63,7 +63,7 @@ exclusion is forbidden.
 # agreement only; no final labels are emitted
 PYTHONPATH=packages/astro_dock/src/crane_explain/src:analysis \
 python analysis/adjudicate_annotations.py \
-  --packet model_outputs/annotation_packets/sealed-primary-v1/packet.jsonl \
+  --packet model_outputs/annotation_packets/sealed-primary-v2/packet.jsonl \
   --annotator-a <a>.jsonl --annotator-b <b>.jsonl \
   --output analysis/results/sealed-primary-agreement.json
 
@@ -89,18 +89,16 @@ separate, deliberate step.
 
 ## Current state
 
-- A historical primary-arm packet is present at
-  `model_outputs/annotation_packets/sealed-luna-v1/packet.jsonl` with 54 responses, but its
-  evaluator-only key is not present on this checkout. It is not usable for condition joins or
-  adjudicated analysis and predates the 72 responses from `pn-0010` through `pn-0021`. Generate a
-  new complete packet/key pair together with the provider-neutral command above before annotation;
-  do not invent or reconstruct the missing HMAC key.
+- A fresh primary pair is retained at `sealed-primary-v2`: 126 model-condition responses covering
+  all 21 included primary episodes, with its matching key physically under
+  `data/evaluator_only/annotation_keys/`. The historical `sealed-luna-v1` pair is retained only for
+  audit and covers nine episodes; do not use it for the full-arm analysis.
 - The selected Claude-family sealed replication is **collected**: 18 envelopes and 54 model-condition
-  responses over `pn-0001`–`pn-0009`. Build its blinded packet with `--arm
-  claude=model_outputs/replication-claude` into `sealed-claude-v1`, one arm per packet, because the
-  Claude response format can reveal the provider and harness. Note that 16 of its 18 G responses are
-  the deterministic checked template; byte-identical G text across arms must receive identical
-  labels.
+  responses over `pn-0001`–`pn-0009`. Its fresh `sealed-claude-v2` packet/key pair is retained
+  separately because the Claude response format can reveal the provider and harness. The original
+  `sealed-claude-v1` packet is unusable because its key was never uploaded and cannot be restored;
+  never reconstruct that key. Note that 16 of 18 G responses use the deterministic checked
+  template; byte-identical G text across arms must receive identical labels.
 - **Annotation itself is `NOT_RUN`.** No primary-arm sealed response has been scored, and no sealed
   effect estimate exists.
 - The development model-strength controls are separate: unblinded, single-annotator, and

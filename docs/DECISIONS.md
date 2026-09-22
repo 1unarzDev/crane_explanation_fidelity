@@ -1,5 +1,21 @@
 # Decision Log
 
+## 2026-09-21 — regenerate annotation pairs after an incomplete DVC publication
+
+- Decision: retain the keyless `sealed-claude-v1` packet as unusable audit evidence and generate
+  fresh v2 packet/key pairs from the unchanged result envelopes: 126 primary responses over 21
+  episodes and 54 Claude responses over nine episodes. Move the surviving historical Luna key from
+  `model_outputs` into evaluator-only storage. Never reconstruct a missing HMAC secret.
+- Evidence: `annotation_keys.dvc` referenced a two-file directory object absent both locally and on
+  R2. `scripts/dvc_r2_sync.sh` named only the original six pointers, so the new seventh pointer was
+  refreshed and committed but never uploaded. A guarded pull failed with DVC's missing-files error.
+- Correction: add the evaluator-only annotation-key pointer to every sync operation and test that
+  refresh and network scripts name the same seven governed roots. Each new packet/key pair was
+  created together and its packet hash and entry count were independently verified.
+- Validity: packet regeneration changes only opaque HMAC response IDs and shuffle order. It does
+  not change or inspect any response, condition, evidence, label, model call, or study hypothesis.
+  Annotation and sealed effect estimation remain `NOT_RUN`.
+
 ## 2026-09-20 — retain failed model calls outside the answer cache
 
 - Decision: a model call that produces no parsed answer is never written to the content-addressed

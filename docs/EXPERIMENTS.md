@@ -1,5 +1,21 @@
 # Experiment Log
 
+## 2026-09-21 — annotation-pair recovery and DVC sync correction
+
+- **DIAGNOSED:** the committed `annotation_keys.dvc` object was absent locally and on R2. The DVC
+  sync wrapper still listed six targets after pointer refresh had expanded to seven, so Claude's
+  claimed key publication could not be restored. The original 54-row Claude packet is retained but
+  unusable. A historical Luna key survived under the wrong `model_outputs` boundary.
+- **IMPLEMENTED / VERIFIED LOCALLY:** the sync wrapper now includes evaluator-only annotation keys,
+  a regression test requires both DVC scripts to name all seven roots, and the legacy Luna key was
+  relocated to evaluator-only storage. Fresh pairs were generated without inspecting responses:
+  `sealed-primary-v2` has 126 rows/entries over 21 episodes and `sealed-claude-v2` has 54 over nine.
+  Both packet hashes match their newly generated evaluator-only keys. Annotation remains `NOT_RUN`.
+- **TESTED / PUBLISHED:** all seven pointers were refreshed from a fully materialized workspace;
+  the guarded upload pushed six new DVC objects and post-upload status reported `Cache and remote
+  'r2' are in sync.` The v2 pairs are remotely reproducible. Git pointer checkpoint follows this
+  ledger entry.
+
 ## 2026-09-20 — sealed Claude-family replication arm completed
 
 - **SEALED SECONDARY-ARM CALLS RETAINED / NOT ANNOTATED:** the declared nine-episode Claude

@@ -78,6 +78,11 @@ A DVC push uploads the objects named by the current `.dvc` pointer files. It doe
 files created after those pointers were generated. Do not collect or modify governed data while
 refreshing and pushing a snapshot.
 
+A successful pull of some pointers does not prove every governed root is materialized. The sync
+wrapper must name all seven pointers, and its regression test enforces that contract. Before
+refreshing pointers, run `dvc status` and compare file counts against the prior pointer; an
+unexpected decrease can publish a silently truncated snapshot.
+
 ```bash
 # Refresh pointers after the validated run/model batch is complete.
 scripts/update_dvc_tracking.sh

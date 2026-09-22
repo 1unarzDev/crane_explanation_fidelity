@@ -171,6 +171,11 @@ correction that keeps such a failure out of the content-addressed answer cache.
 
 No Claude sealed answer has been scored, and no cross-family effect estimate exists.
 
+The annotation artifact for this arm is the `sealed-claude-v2` packet/key pair. The earlier v1
+packet is retained but unusable because its evaluator-only key was omitted from the DVC network
+target list and was never uploaded. The v2 pair was regenerated together from the unchanged 18
+envelopes; this changes response IDs and shuffle order, not response content.
+
 ## Commands
 
 ```bash

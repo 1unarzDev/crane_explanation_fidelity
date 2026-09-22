@@ -94,7 +94,8 @@ their own location. Exact repository commits and destinations are recorded in
   not amend the primary freeze, and does not relieve the 40-episode minimum. No sealed Claude answer
   has been scored and no cross-family effect estimate exists.
 - **IMPLEMENTED, TESTED:** blinded response packaging and dual-annotator adjudication tooling
-  implementing `docs/ANNOTATION_GUIDE.md`. Scoring itself remains `NOT_RUN`.
+  implementing `docs/ANNOTATION_GUIDE.md`. Fresh hash-matched packets contain 126 primary-arm and
+  54 Claude-arm responses with keys confined to evaluator-only storage. Scoring remains `NOT_RUN`.
 - **NOT_RUN:** blinded dual annotation, final statistics/figures, and final A–E model evaluation.
 - **NOT_RUN:** source-to-binary rebuild verification.
 - **DEFERRED:** arbitrary-LLM proposition extraction until independently evaluated.

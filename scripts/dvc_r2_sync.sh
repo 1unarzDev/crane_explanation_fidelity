@@ -34,6 +34,7 @@ targets=(
     data/robot_visible/final.dvc
     data/evaluator_only/dev.dvc
     data/evaluator_only/final.dvc
+    data/evaluator_only/annotation_keys.dvc
     model_outputs.dvc
     research/explanation_fidelity/model_cache.dvc
 )

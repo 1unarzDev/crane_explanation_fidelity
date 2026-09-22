@@ -26,7 +26,7 @@ Read these files completely, in order:
 6. `docs/ANNOTATION_WORKFLOW.md`
 7. `docs/DATA_STORAGE.md`
 8. the newest entries in `docs/EXPERIMENTS.md` and `docs/DECISIONS.md`
-9. `manifests/study/provenance-claude-replication-arm-v1.json` and both amendments
+9. `manifests/study/provenance-claude-replication-arm-v1.json` and all three amendments
 
 The model-family replication document is provider-neutral; Claude is its first worked arm. Keep
 model configuration, provider adapter, agent harness, and study condition separate in code and
@@ -81,23 +81,25 @@ provider, model alias, effort, or interactive agent response for the declared CL
 - Completed episode range: `pn-0001` through `pn-0021`. The next unstarted primary row is
   `pn-0022`; do not rerun or replace any earlier row.
 - No sealed primary or Claude answer has been annotated. No sealed effect estimate exists.
-- The historical 54-row primary packet lacks its evaluator-only key and is unusable. Never
-  reconstruct that key; generate a fresh packet/key pair together when annotation begins.
+- Fresh packet/key pairs are prepared as `sealed-primary-v2` (126 responses across 21 episodes)
+  and `sealed-claude-v2` (54 responses across nine episodes). Their keys live only under
+  `data/evaluator_only/annotation_keys/`. The historical Claude v1 packet lost its key and remains
+  unusable; never reconstruct it.
 - The selected Claude configuration is `claude-sonnet-5` at low effort. The predeclared
   development control and model selection are complete.
 - The selected sealed Claude replication over `pn-0001` through `pn-0009` is **COLLECTED and
   NOT_ANNOTATED** as of 2026-09-20: 18 envelopes, 54 physical calls, manifest built and hashes
   verified, published through DVC. It reuses episodes and therefore contributes **zero** new
   independent clusters.
-- DVC snapshot commit: `fe7cc9b` or a descendant. There are now **seven** governed pointers;
-  `data/evaluator_only/annotation_keys` was added so a blinded packet cannot outlive its key.
+- The current main branch pins **seven** governed DVC roots. The sync wrapper includes all seven,
+  including `data/evaluator_only/annotation_keys`, and post-recovery cloud status was clean.
 - Pinned `crane_ml` commit: `c559932a5ebef00bfa7752511799fd904e5c9dbe`.
 
-## Immediate execution: sealed Claude replication
+## Completed execution: sealed Claude replication
 
-The declared arm is fixed to nine episodes. Do not extend it to `pn-0010+` without a prospective,
-scientifically justified amendment written before any additional call. Run the existing resumable
-batch exactly once:
+The declared arm is fixed to nine episodes and is complete. Do not rerun it or extend it to
+`pn-0010+` without a prospective, scientifically justified amendment written before any additional
+call. The command below is retained only as the exact execution record:
 
 ```bash
 scripts/run_claude_arm_batch.py \
@@ -168,8 +170,8 @@ Build a Claude-only blinded packet because response formatting can reveal the pr
 PYTHONPATH=packages/astro_dock/src/crane_explain/src:analysis \
 python analysis/build_blinded_annotation_packet.py \
   --arm claude=model_outputs/replication-claude \
-  --packet model_outputs/annotation_packets/sealed-claude-v1/packet.jsonl \
-  --key data/evaluator_only/annotation_keys/sealed-claude-v1.json
+  --packet model_outputs/annotation_packets/sealed-claude-v2/packet.jsonl \
+  --key data/evaluator_only/annotation_keys/sealed-claude-v2.json
 ```
 
 The packet should contain 54 model-condition responses; A--E smoke outputs are excluded by
@@ -184,12 +186,11 @@ responses as independent episodes. If independent annotators are unavailable, re
 
 ## Completed on 2026-09-20
 
-The assigned workstream is done. The sealed Claude arm holds 18 envelopes and 54 one-shot calls,
-its manifest is built and independently re-hashed, and outputs, cache, packet, and key are pushed
-to R2 with cache and remote reported in sync. The blinded packet
-`model_outputs/annotation_packets/sealed-claude-v1/packet.jsonl` holds 54 model-condition responses
-and matches its evaluator-only key by hash. **Annotation is `NOT_RUN` and is handed off**: the agent
-that generated this packet must not annotate it.
+The sealed Claude arm holds 18 envelopes and 54 one-shot calls, and its manifest was independently
+re-hashed. The original `sealed-claude-v1` packet's key was not uploaded because the sync wrapper
+omitted the new annotation-key pointer. It is retained but unusable. Fresh `sealed-claude-v2` and
+`sealed-primary-v2` packet/key pairs were therefore generated together and verified by hash.
+**Annotation is `NOT_RUN` and is handed off**: an agent that generated a packet must not annotate it.
 
 Three operational facts corrected during execution, each recorded in `docs/DECISIONS.md` or an
 amendment:
@@ -202,10 +203,11 @@ amendment:
    cache records from the snapshot. **Before running `update_dvc_tracking.sh`, confirm every
    governed root is fully checked out, and read the pointer diff for falling `nfiles`.** A pointer
    refresh after a collection run should only ever add files.
-3. `data/evaluator_only/annotation_keys` was covered by no pointer and is now a governed root. The
-   `sealed-luna-v1` key is present and matches its packet by hash, so the earlier "key not present"
-   note is outdated; that packet still covers only 54 responses over nine episodes, so a fresh
-   full-arm primary packet is still required.
+3. `data/evaluator_only/annotation_keys` was added to pointer refresh but initially omitted from the
+   network sync target list. Consequently its committed directory object never reached R2. The
+   wrapper now includes all seven roots and a regression test enforces target parity. The surviving
+   Luna legacy key was moved out of `model_outputs`; fresh full-primary and Claude pairs supersede
+   both historical packets.
 
 ## Scientific boundaries that must survive the handoff
 
