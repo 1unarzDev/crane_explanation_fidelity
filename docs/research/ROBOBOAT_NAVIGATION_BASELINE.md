@@ -1,6 +1,7 @@
 # RoboBoat navigation baseline
 
-Date: 2026-09-21. This is the verified reconnaissance baseline for the dedicated
+Date: 2026-09-21; actuator isolation updated 2026-09-22. This is the verified reconnaissance
+baseline for the dedicated
 `/home/lunarz/worktrees/roboboat-docking` worktree. It is not a tuning proposal. No Nav2
 parameter, manual controller, mixer, thruster, mass, inertia, buoyancy, drag, water, scene, or
 environment value was changed.
@@ -202,6 +203,29 @@ This reproduces aggressive circling. RPP has no critic framework, so no MPPI/DWB
 The immediate behavior is persistent rotate-to-heading plus yaw-induced translation drift and
 changing replans before forward path following begins.
 
+### Fixed-heading and shaft-speed isolation
+
+The planner and berth geometry are not required to reproduce the circling. A supplied 5 m
+`FollowPath` whose initial heading was offset by +pi/2 produced no translation command, accumulated
+24.410 rad (3.89 revolutions) of rotate-only yaw and drifted 2.160 m before timeout. Artifact
+`PerformanceResults/roboboat-rpp-rotate-90-baseline-1/fixture-summary.json`, SHA-256
+`a45d90d11d60718e8803f95819773c9ecbdafd59cb563fb3b421a7de8d8f556d`.
+
+An unchanged-plant yaw sweep then requested 0.025, 0.05, 0.1, 0.2 and 0.4 for two seconds each.
+Every nonzero request produced essentially the same steady body yaw rate, 0.782-0.790 rad/s. An
+opt-in observer confirmed that the mixer preserved each requested magnitude, but every nonzero
+value drove the four propeller shafts to approximately +/-100 rad/s. For example, command 0.025
+produced mean absolute shaft speed 100.011 rad/s; command 0.4 produced 100.012 rad/s. Artifact
+`PerformanceResults/roboboat-yaw-shaft-diagnostic-1/body-response.json`, SHA-256
+`d2aa446cf0c9132ced3f3f774a2af3a910f3c0fd2b1f8b55818474d748175cdc`; shaft log SHA-256
+`a34249a2f5b1002af4d22cedf7e9b0f45a09c6c3fe19759011d1420209fecfc5`.
+
+This behavior follows from the current torque contract: the propeller driven-axis inertia is
+`1e-6 kg m2`, so even 0.025 Nm implies 500 rad/s of ideal one-step velocity change at the 0.02 s
+physics step, well beyond the observed approximately 100 rad/s saturation. The mixer is not
+quantizing commands; torque-driven shaft saturation is. No controller, mixer, manual input,
+thruster configuration or physics value was changed in obtaining this evidence.
+
 ## Baseline assessment
 
 ### Existing capabilities
@@ -217,12 +241,15 @@ changing replans before forward path following begins.
 - Nav2 numerical velocity is normalized effort downstream, not desired body velocity.
 - The goal checker reports success while moving; there is no stopped-state goal checker.
 - Far-goal rotate-to-heading remains rotate-only while yaw creates translation drift.
+- Any tested nonzero yaw magnitude saturates shaft speed, so reducing RPP's requested angular
+  velocity alone cannot reduce actual turn rate.
 - Navfn repeatedly failed during the far run; footprint plus inflation may pinch the berth.
 - No independent collision/clearance/dock/stopped-settle evaluator exists.
 
 ### Evidence gaps
 
-- +/- response and stopping distance/time at several magnitudes, latency, and saturation.
+- Proportional shaft/body response under a non-saturating command contract, including stopping
+  distance/time and manual-input regression.
 - Repeated 10 m runs on the final build, then 30-50 m straight and turns.
 - NavigateToPose planned-path capture and exact berth costmap clearance.
 - Collision/contact, clearance, dock membership, stopped-settle, and repeated docking.
@@ -231,9 +258,10 @@ changing replans before forward path following begins.
 
 ## Ranked hypotheses and falsifiers
 
-1. **Rotate-to-heading/control contract.** Effort-like yaw drives excessive rate and XY coupling.
-   Confirm with fixed initial-heading response; falsify if heading converges once with bounded drift
-   and translation begins.
+1. **Torque-mode command interface.** Confirmed: all tested nonzero yaw requests preserve their
+   mixer magnitude but saturate every shaft near 100 rad/s, producing the same body yaw rate. A
+   non-saturating shaft-speed request should restore monotonic command response; falsify if measured
+   shaft speeds or body yaw remain quantized after that isolated contract change.
 2. **Footprint/costmap clearance.** Radius 0.8 m plus 1.0 m inflation blocks the 2 m berth. Confirm
    from exact target costmap/path clearance; falsify with a non-lethal corridor wider than footprint.
 3. **Goal/checker and command semantics.** Effort interpretation plus loose tolerance causes moving
@@ -245,8 +273,10 @@ changing replans before forward path following begins.
 
 ## Smallest next experiment
 
-Run one fixed initial-heading/rotate-to-path characterization with current RPP and record heading
-error, requested yaw, measured yaw rate, and XY drift until translation begins or a full revolution
-repeats. This separates yaw scaling/plant coupling from replanning and berth clearance. Read-only
-costmap corridor inspection can accompany it. Do not tune RPP, switch controller, add velocity
-control, shrink footprint, or alter hydrodynamics before this measurement.
+Run one controlled A/B of the existing torque contract against the already-supported velocity-mode
+thruster contract, using the unchanged yaw sweep and shaft observer. The acceptance signal is
+monotonic shaft speed and body yaw rate across 0.025-0.4, with full-scale/manual top-end behavior
+retained. This is smaller and more discriminating than Nav2 tuning: it tests the confirmed
+command/actuator bottleneck without changing hydrodynamics, mixer signs, scene geometry or manual
+bindings. Per the reconnaissance guardrail, report and review this behavior-changing configuration
+experiment before applying it.
