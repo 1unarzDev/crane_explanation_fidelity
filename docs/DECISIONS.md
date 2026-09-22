@@ -715,3 +715,34 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Validity risk: the 1 m local goal is not a representative pipeline route, and delivered scans or
   costmap observations do not prove controller consumption. Native Gazebo comparison, route/spawn
   calibration, material parity, and Jackal hardware dynamics remain **NOT_RUN**.
+
+## 2026-09-21 — defer underwater and aerial explanation validation until after TRUSTMORE 2026
+
+- Decision: keep CRANE's multi-domain architecture and all existing aerial/underwater code,
+  environments, assets, and scoped validation results, but mark their remaining navigation and
+  explanation validation `DEFERRED_POST_SUBMISSION`. Submission-critical environment work is the
+  frozen controlled land/Nav2 study, obstacle-rich warehouse/industrial validation, and a
+  configurable land proving ground. RoboBoat remains a parallel, separately owned surface-domain
+  demonstration if it qualifies.
+- Evidence: land/Nav2 already supplies the highest-throughput path for runtime/source provenance,
+  recovery, termination, evidence insufficiency, and blinded paired evaluation. Existing aerial
+  results qualify geometry/physics motifs but do not provide an explanation-study navigation
+  sample; underwater would require substantial autonomy and evidence integration. Before the
+  October 4 deadline, independent episodes, ecological land behavior, annotation, analysis,
+  figures, and paper work have higher validity value than shallow domain breadth.
+- Alternatives: continue aerial and underwater integration in parallel; require one example from
+  every CRANE domain; or remove those environments entirely. The first two dilute the powered and
+  ecological evidence path, while removal would discard useful post-submission infrastructure and
+  misrepresent completed work.
+- RQ impact: the frozen confirmatory hypothesis remains unchanged and land/navigation remains its
+  declared primary domain. Cross-domain robustness is exploratory; RoboBoat may add a distinct
+  surface demonstration, while aerial/underwater claims move to future work. This decision does
+  not imply that missing aerial/underwater experiments invalidate the primary result.
+- Governance: `docs/STUDY_DESIGN.md`, `docs/BENCHMARK.md`, and
+  `docs/ANNOTATION_GUIDE.md` are hash-governed by the existing study freeze and were deliberately
+  left unchanged. This planning decision adds no freeze amendment because it changes neither the
+  frozen protocol nor its already-land-primary estimand.
+- Revisit only after (1) frozen provenance collection and annotation are complete, (2) ecological
+  land scenarios are validated, (3) primary statistics and figures regenerate reproducibly,
+  (4) manuscript-critical work is on schedule, and (5) another domain is demonstrably more
+  valuable than additional land evidence or paper work.

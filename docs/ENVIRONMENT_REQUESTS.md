@@ -1,13 +1,27 @@
 # Environment Requests
 
-Validation is layered by scientific value:
+Submission work is ordered by scientific value and deadline risk:
 
-1. deterministic CPU-only microbenchmarks for exact reasoning and verifier regressions;
-2. a powered, high-throughput land/Nav2 study (BARN-like generation only if it is cheaper and more
-   reproducible than the existing corridor substrate);
-3. a small number of evidence-rich CRANE surface scenarios for ecological validation;
-4. underwater/aerial stress tests only where they add a distinct evidence/decision motif without
-   weakening the primary study.
+1. **REQUIRED:** complete the frozen, powered land/Nav2 F/G/H provenance study without changing
+   its split, questions, prompts, annotation rules, model configuration, inclusion criteria, or
+   stopping rules;
+2. **REQUIRED:** make the warehouse/industrial land environment obstacle-rich, multi-route, and
+   capable of evidence-rich Nav2 behavior;
+3. **REQUIRED:** provide a deterministic configurable land proving ground for avoidance, detour,
+   replanning, narrow passage, recovery, and blockage/no-path validation;
+4. **HIGH:** collect ecological land scenarios with physical/runtime evidence and stable semantic
+   identities;
+5. **PARALLEL / OWNED ELSEWHERE:** RoboBoat navigation and docking, as the intended physically
+   distinct surface-domain demonstration if that workstream becomes reliable;
+6. **DEFERRED_POST_SUBMISSION:** outdoor/campus expansion unless it directly enables an experiment
+   the warehouse or proving ground cannot support;
+7. **DEFERRED_POST_SUBMISSION:** underwater explanation validation;
+8. **DEFERRED_POST_SUBMISSION:** aerial explanation validation.
+
+The platform remains multi-domain. Deferral preserves existing aerial and underwater code,
+reference assets, scenes, and validation results; it removes those domains only from the
+TRUSTMORE 2026 submission-critical implementation and evaluation path. Broad domain count is not
+evidence of explanation trustworthiness.
 
 Scenes are requested for explanation motifs—contrastive selection, perception-conditioned
 branching, recovery, terminal failure, mission override, and evidence insufficiency—rather than to
@@ -30,7 +44,7 @@ LiDAR, odometry, TF, populated Nav2 costmaps, and deterministic mobility hold/re
 implemented. e019 validates one recovery-success path; existing e004/e009 validate terminal
 recovery exhaustion. Multi-seed reset/determinism and paired final-collection variants remain open.
 
-## REQUIRED — generated land corridor navigation
+## REQUIRED — frozen controlled land/Nav2 provenance study
 
 - **Scientific purpose:** high-throughput primary benchmark for software-level recovery,
   termination, evidence sufficiency, and selective explanation. This is the powered study; it is
@@ -200,17 +214,68 @@ a narrow launch-config seam, not yet the requested reset/service API.
 - **Acceptance gate:** ten sequential reset/runs with correct opaque IDs, no truth leakage, no stale
   cross-episode actions, complete BT/action capture, and reproducible seed/config hashes.
 
-## HIGH — surface docking choice and execution
+This contract is now governed by the frozen F/G/H protocol in `STUDY_DESIGN.md` and its
+content-addressed manifests. Environment work must not revise that protocol. The richer ecological
+contracts below are additive validation and must not be mixed into the frozen split.
 
-Deferred until land collection is healthy. Implement only a small set of marina-slip choices with
-an explicit recorded scoring/guard rule, followed by Nav2 execution. This scenario supports
-contrastive selection and ecological validation; it must not reuse the synthetic Dock/Slalom
-policy or call those artificial options RoboBoat tasks. A full contract will be frozen after the
-land pilot identifies which contrastive evidence fields are actually needed.
+## REQUIRED — obstacle-rich warehouse / industrial land environment
 
-## OPTIONAL — underwater or aerial stress test
+- **Scientific purpose:** ecological validation of explanations over navigation behavior that is
+  materially richer than the controlled corridor family.
+- **Required topology:** multiple aisles and cross-aisles, blind corners, open work zones,
+  narrow/wide alternatives, chokepoints, at least one dead end, and useful multi-turn routes of
+  roughly 8–20+ m where the scene scale permits.
+- **Required objects:** canonical shelving/racks, pallets/crates/equipment, columns, landmarks, and
+  configurable obstructions, each with stable semantic identity and collision/presentation roles.
+- **Required observed behaviors:** nominal success, obstacle avoidance, forced detour or substantive
+  path change, narrow-passage traversal, blocked/no-path outcome, and path-following recovery or
+  failure where reproducible. A visually complex scene that Nav2 experiences as an empty corridor
+  does not pass.
+- **Evidence boundary:** authoritative geometry, obstacle state, route alternatives, and contacts
+  remain evaluator-only unless captured robot-visible evidence establishes them. Delivered scans,
+  costmaps, and odometry are not described as controller-consumed inputs without stronger
+  provenance.
+- **Acceptance:** structural, traversability, robot/sensor, navigation, failure/recovery, visual,
+  headless-parity, and explanation-readiness gates must each have an explicit result. Important
+  routes record start/goal, approximate length, alternatives, relevant obstacles, expected
+  challenge, and broad expected outcome.
 
-Do not begin until the required land acceptance gate passes and the primary power target is on
-schedule. Prefer one controlled branch motif (role indicator or confidence threshold) over a
-complete competition task. These runs are descriptive robustness stress tests unless their
-independent sample size becomes adequate.
+## REQUIRED — configurable land navigation proving ground
+
+- **Scientific purpose:** fast deterministic QA and controlled ecological mechanism tests without
+  rebuilding a Unity scene for each condition.
+- **Required layouts:** staggered obstacles, slalom/S-turns, offset gates, narrow doorways,
+  U-shaped traps, alternate corridors, complete blockage, and deterministic dynamic
+  insertion/removal.
+- **Scenario identity:** every run records world, robot, generator version, seed, start/goal,
+  obstacle state, dynamic schedule, route/scenario identity, and configuration hash.
+- **Required validation:** prove intended openings are traversable and intended closures are truly
+  blocked; then observe nontrivial Nav2 path shape and the predeclared broad outcome. Never relabel
+  an unexpected run to make a scenario pass.
+- **Reuse:** canonical geometry and semantics must be identical between interactive and headless
+  modes. Debug cameras, overlays, and UI are optional presentation layers.
+
+## HIGH — ecological land-navigation evidence
+
+Prioritize scenario instances that expose path changes/replanning, physical obstacles and
+occlusions, path-following failures, recoveries, terminal blockage/no-path outcomes, and supported
+qualification or abstention. Prefer independent route/topology variants over cosmetic scene
+variants. Add outdoor/campus geometry only when it provides a decision motif that the warehouse
+and proving ground cannot supply in time.
+
+## PARALLEL / OWNED ELSEWHERE — surface navigation and docking
+
+The separate RoboBoat docking workstream owns this environment, vehicle, sensors, physics, and Nav2
+configuration. If its long-range navigation/docking becomes reliable, it is the intended
+cross-domain surface demonstration. This land workstream must not edit those assets or incorporate
+that branch without explicit direction. The synthetic Dock/Slalom regression remains a reasoning
+fixture and must not be presented as a RoboBoat task.
+
+## DEFERRED_POST_SUBMISSION — outdoor/campus, underwater, and aerial expansion
+
+Preserve all existing implementations and historical results. Do not spend pre-submission time on
+new outdoor/campus breadth, aerial scenes or autonomy/sensor integration, RoboSub task integration,
+underwater explanation experiments, or comprehensive robot-model upgrades for unevaluated
+platforms. Reconsider only after frozen collection and annotation, ecological land validation,
+reproducible primary statistics/figures, and manuscript-critical work are on schedule—and only if
+another domain is demonstrably more valuable than additional land evidence or paper work.

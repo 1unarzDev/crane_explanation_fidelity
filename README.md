@@ -12,6 +12,12 @@ observation from inference, and checks what the final language actually claims.
 
 `runtime/physical evidence + exact source provenance → checked propositions → language → final-text check`
 
+The TRUSTMORE evaluation is intentionally narrower than CRANE's platform scope. Land/Nav2 is the
+primary controlled and ecological navigation domain; RoboBoat is the intended physically distinct
+surface demonstration if its parallel workstream qualifies it. Existing aerial and underwater
+environments are retained as validated/developing infrastructure but are
+`DEFERRED_POST_SUBMISSION`, not advertised as explanation-study results.
+
 ## Clone and initialize
 
 Clone the pinned primary components, then initialize astro_dock's nested dependencies and the
@@ -62,10 +68,12 @@ their own location. Exact repository commits and destinations are recorded in
 - **IMPLEMENTED, TESTED:** deterministic F1TENTH PNG/YAML contour-to-collider generator and Unity
   importer, qualified headlessly on the externally retained pinned Spielberg map. Full-lap ROS
   control and source-simulator comparison remain unrun.
-- **IMPLEMENTED, TESTED:** PX4 `walls.sdf` primitive reconstruction with pinned provenance,
-  semantic wall IDs, separate collision/visual layers, and headless aerial/contact/ray checks.
-- **IMPLEMENTED, TESTED:** PX4 ArUco render-only landmark invariant and pinned windy scenario with
-  repeatable measured CRANE response; camera detection and physical wind calibration remain unrun.
+- **VALIDATED INFRASTRUCTURE / DEFERRED_POST_SUBMISSION:** PX4 `walls.sdf` primitive reconstruction
+  with pinned provenance, semantic wall IDs, separate collision/visual layers, and headless
+  aerial/contact/ray checks.
+- **VALIDATED INFRASTRUCTURE / DEFERRED_POST_SUBMISSION:** PX4 ArUco render-only landmark invariant
+  and pinned windy scenario with repeatable measured CRANE response; camera detection and physical
+  wind calibration remain unrun.
 - **IMPLEMENTED, TESTED:** offline Clearpath 2.9.4 pipeline SDF/resource manifest and Unity import;
   generated upstream assets stay out of Git. Geometry/layers/contact passed, as did a local 1 m
   ROS/Nav2 motion and sensor-transport smoke. Representative route and native-Gazebo comparison
@@ -195,6 +203,9 @@ delivered odometry proven controller consumption.
 - [Research audit](docs/RESEARCH.md)
 - [Decision log](docs/DECISIONS.md)
 - [Environment requests](docs/ENVIRONMENT_REQUESTS.md)
+- [Environment catalog and empirical scope](docs/ENVIRONMENTS.md)
+- [Environment architecture](docs/ENVIRONMENT_ARCHITECTURE.md)
+- [Environment validation gates](docs/ENVIRONMENT_VALIDATION.md)
 - [Reference-environment source audit](docs/research/REFERENCE_ENVIRONMENTS.md)
 - [Nav2 Jazzy recovery provenance audit](docs/research/NAV2_JAZZY_RECOVERY_PROVENANCE.md)
 

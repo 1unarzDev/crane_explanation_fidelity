@@ -11,6 +11,31 @@ terminal-tick transitions; benchmark labels must name the count unit and scope c
 
 Last primary-source check: 2026-09-19. This note records only claims checked against a paper, an official proceedings/venue page, or an authors' repository. Recommendations for this project are labelled as such; they are not claims made by the cited authors.
 
+## Submission-domain scope decision (2026-09-21)
+
+Broad domain count is not evidence that natural-language explanations are grounded, faithful, or
+useful. The current aerial environments have meaningful environment/physics qualification, but
+limited or no navigation-explanation evidence. A credible underwater explanation study would
+require substantial new autonomy, sensor/evidence integration, scenario qualification, and
+annotation work. Completing those integrations before October 4 would trade directly against
+independent episode count, ecological land validity, blinded annotation, statistical analysis,
+figures, and manuscript quality.
+
+Land/Nav2 is already the strongest high-throughput path for runtime-to-source provenance,
+obstacle-driven behavior, recovery, termination, evidence insufficiency, and selective
+qualification. The ecological environment effort therefore concentrates on an obstacle-rich
+warehouse/industrial world and a configurable proving ground. RoboBoat, if qualified by its
+parallel workstream, supplies a physically distinct surface case without requiring a third
+complete autonomy/evidence integration.
+
+Accordingly, aerial and underwater explanation validation are `DEFERRED_POST_SUBMISSION` while all
+existing code, scenes, assets, and historical validation results are preserved. Outdoor/campus
+expansion is also deferred unless it immediately enables an experiment unavailable in the
+warehouse or proving ground. This is a deadline- and validity-driven prioritization, not a claim
+that aerial or underwater robotics are unimportant. Cross-domain robustness remains exploratory;
+the submission's empirical scope is controlled and ecological land navigation plus RoboBoat only
+if that surface workstream is ready.
+
 ## Local CRANE land substrate (2026-09-19)
 
 - Primary sources inspected: `Docs/SimulationPhysicsAndRuntimeModes.md`,
