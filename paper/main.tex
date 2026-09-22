@@ -223,6 +223,24 @@ selective behavior in development; it is neither an independent episode nor a co
 Matched post-change runs exist as retrospective development context but are excluded from the
 ordinary robot-visible packet.
 
+\section{Development Case: Geometric Restriction}
+
+A current-source land run exercises the geometric path using only a delivered Nav2 global
+costmap, delivered odometry, action timing, and exact configuration/source hashes. The requested
+18~m centerline first intersects a cost-253 cell near $x=8.45$~m and has zero minimum clearance
+from a lethal cell. The retained configuration uses a 0.22~m robot radius and 0.55~m inflation.
+The robot moved as far as $x=6.949$~m, deviated 2.705~m laterally, and 69 planning updates returned
+success before the action aborted in 70.860~s under an exact 70~s behavior-tree deadline.
+
+Crucially, an independent connectivity audit finds that the retained grid still connects the
+action-result pose to the goal below cost 253. The checked answer therefore reports a direct-route
+restriction, substantial detour, and deadline-aligned abort; it does not claim global no-path,
+name the evaluator-only obstacle, or attribute the result to recovery exhaustion. The terminal
+behavior-tree transition was not delivered, so source semantics plus timing reconstruct the
+deadline mechanism but do not directly observe its final tick. This development case is retained
+as partial fault induction rather than tuned or discarded. It tests response usefulness and
+causal restraint, not comparative effectiveness.
+
 \section{Results}
 
 \begin{table}[t]
@@ -261,7 +279,7 @@ Experiments use simulation. They can test controlled mechanisms and simulation-b
 relevance, not hardware reliability or real-world transfer. The study measures factual and
 diagnostic outcomes, not human trust. The legacy cohort stopped below its frozen minimum and must
 be interpreted through effect sizes and uncertainty rather than significance alone. The
-development terminal-margin case was selected retrospectively; only the separately frozen
+two development cases were selected to exercise the pipeline; only the separately frozen
 prospective study can support comparative claims.
 
 Finally, deterministic rendering may outperform or dominate language-model realization. We treat
