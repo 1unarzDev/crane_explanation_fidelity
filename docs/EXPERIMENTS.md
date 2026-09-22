@@ -1503,3 +1503,37 @@
   tested. Dynamic blockage/no-path/recovery scenarios and ecological explanation evaluation remain
   `NOT_RUN`. Screenshots and build outputs are ephemeral under `/tmp`; frozen study data and sealed
   artifacts were not modified.
+
+## 2026-09-22 — manifest-driven warehouse blockage calibration
+
+- CRANE revision `db39095`; Unity `6000.5.10f1`; warehouse manifest version `2.1.0`, SHA-256
+  `7462c373be4cceecd88ecbe0f510ab36cddb33dd0d15b602beda22d0355d80cc`.
+- **IMPLEMENTED/TESTED:** the warehouse manifest now defines static full-width, delayed,
+  temporary, and occupied-goal scenario obstacles with stable semantic/scenario/route identities.
+  Canonical colliders remain authoritative, presentation objects mirror their state, and scheduled
+  and actual fixed-simulation-time boundaries are written only to evaluator truth. Reapplying a
+  scenario destroys its prior timer callbacks together with its scenario-owned geometry.
+- **TESTED/PASS:** 37 land/reference static tests and launcher shell syntax passed. A fresh Linux
+  player build succeeded. Nominal headless validation remained `valid=true` with 20 canonical
+  colliders, 20 collider-free renderers, 28 unique semantic identities, and unchanged
+  `STRUCTURAL_PASS`, `PHYSICS_PASS`, `SENSOR_PASS`, `HEADLESS_PASS`, and `EXPLANATION_READY` gates.
+- **TESTED/NEGATIVE CALIBRATION:** the full-width barrier run remained active until its 75.03 s
+  client deadline. It displaced 4.302 m, returned 729 commands, retained 279 costmap observations,
+  and reversed course substantially as the rolling costmap revealed geometry. This is real
+  obstacle-driven path change, but not a Nav2 abort or recovery result.
+- **TESTED/NEGATIVE CALIBRATION, REPLICATED:** the final occupied-goal run on isolated ROS domain
+  223 and TCP port 10570 ended at its 45.03 s client deadline with 1.742 m displacement, 439
+  commands, 165 costmap observations, and 6,850 maximum occupied cells. Evaluator truth identifies
+  `warehouse-occupied-goal-no-path-v1`, route `warehouse-blocked-goal-v1`, seed 4104, and active
+  obstacle `blocked-goal-pallet-stack`. The controller repeatedly logged replacement paths until
+  the client canceled the still-active goal; no progress failure or recovery was observed.
+- **DIAGNOSIS:** the warehouse launcher selected no repository BT, so the installed stock
+  `navigate_to_pose_w_replanning_and_recovery.xml` was used (installed SHA-256
+  `5895b63840d54c6d7eee3d3b3f3ee177680af9e58a14cbf61c4df39fe5db2a90`). Continuous replanning,
+  a rolling global costmap, and `track_unknown_space: false` permit ongoing exploratory motion.
+  The scenario launchers now explicitly expect `timeout` and state that client timeout is not a
+  Nav2 abort; the unexpected runs are retained rather than relabeled.
+- **NEXT / NOT_RUN:** qualify a repository-retained, bounded ecological BT/configuration against a
+  paired unobstructed case before claiming recovery or terminal failure. Frozen controlled-study
+  parameters and artifacts were unchanged. Raw calibration/build outputs remain ephemeral under
+  `/tmp/crane-warehouse-*`.
