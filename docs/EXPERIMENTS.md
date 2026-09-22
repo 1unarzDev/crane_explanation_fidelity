@@ -1,5 +1,40 @@
 # Experiment Log
 
+## 2026-09-22 — corrected proving-ground v3 recovery capture
+
+- **INFRASTRUCTURE-INVALID / NOT AN EPISODE:**
+  `/tmp/proving-v3-recovery-btcap-dev-20260922-02` failed before NavigateToPose goal submission
+  because the fixture's ROS `nav_msgs.msg.Path` import shadowed `pathlib.Path`. Revision `d701cf0`
+  fixes that namespace collision. The attempt contributes no navigation or explanation evidence.
+- **TESTED / RETAINED NEGATIVE CALIBRATION:** the corrected fresh capture used isolated ROS domain
+  99, TCP port 11299, build-manifest SHA-256
+  `6eb7cdde539fa57fac6c2ee461e71d0537c745418953cc91c483bd19aa773d3e`, and result root
+  `/tmp/proving-v3-recovery-btcap-dev-20260922-03`. The predeclared contract expected `succeeded`;
+  NavigateToPose instead returned `aborted` after 91.661 wall seconds. Delivered odometry records
+  17.404 m displacement and a 21.214 m sampled path. Evaluator truth retains the four wall
+  activations at 18.040 simulated seconds and removals at 34.040 seconds.
+- **RECOVERY CAPTURE PASS / OUTCOME GATE FAIL:** passive capture retained 2,672 unique transitions
+  and eight completed, reset-delimited, source-qualified recovery invocations against the 16,384
+  and 1,024 capacities, with zero dropped transitions/invocations, open invocations, overlaps, or
+  restart-without-reset anomalies. The invocations were three `ClearLocalCostmap-Context`
+  completions and one each of `ClearLocalCostmap-Subtree`, `ClearGlobalCostmap-Subtree`, `Spin`,
+  `Wait`, and `BackUp`; `Spin` terminated `FAILURE` and the others `SUCCESS`. Feedback's separate
+  maximum recovery count was 8.
+- **QA BLOCKED / EXPORT NOT_RUN:** exact scenario/configuration identity and the minimum-feedback
+  recovery gate passed, but the required terminal-success condition did not. The independent QA
+  summary at `/tmp/proving-v3-recovery-btcap-dev-20260922-03/environment-qa-summary.json` reports
+  `BLOCKED`, `routeReady=false`, `navigation=PARTIAL`, and `headless=PARTIAL`. No ecological export
+  was created. Whole-history completeness is `not_proven` because `BehaviorTreeLog` has no
+  publisher sequence number and the configured terminal root transition was absent. This supports
+  the eight recorded software invocations, not an exact episode count, changed costmap contents,
+  controller consumption, physical causation, or an explanation-performance result.
+- **DECISION:** preserve both the historical successful `-01` calibration and this current corrected
+  negative result. Do not rerun merely to obtain success or weaken admission criteria. Use the
+  already export-qualified warehouse recovery, proving-ground blockage, and S-turn artifacts for
+  the ecological explanation pilot before spending more time tuning v3. Frozen/DVC artifacts and
+  RoboBoat-specific source, environment, vehicle, sensor, physics, Nav2, and documentation files
+  were untouched.
+
 ## 2026-09-22 — additive proving-ground bounded-recovery calibration
 
 - **IMPLEMENTED / TESTED:** additive catalog `crane-land-proving-ground-v3` preserves v1/v2 and
