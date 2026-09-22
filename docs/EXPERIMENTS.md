@@ -1,5 +1,33 @@
 # Experiment Log
 
+## 2026-09-22 — warehouse temporary-enclosure recovery calibration
+
+- **IMPLEMENTED / RETAINED DEVELOPMENT INFRASTRUCTURE:** warehouse manifest v2.2.0 adds a
+  four-wall temporary enclosure with stable semantic IDs. All walls activated at simulation time
+  18.040 s and were removed at 34.040 s; scheduled and actual times remain evaluator-only. The
+  recovery BT preserves the existing navigation/recovery structure and uses a 90 s steady-clock
+  task-policy deadline (SHA-256
+  `9fb490be79d16c482d9c1b1a8f2f946d142e0d21ed3d4f5901aa3065304329d1`).
+- **NEGATIVE CALIBRATION RETAINED:** the first run under the earlier 70 s policy exercised 15
+  recovery leaf invocations and resumed substantial motion after enclosure removal, but aborted
+  about 1.4 m short of the goal. It is recovery followed by a task-policy deadline, not
+  recovery-success. A first Unity build attempt hung after import and was terminated with exit 130;
+  it is infrastructure-invalid and supports no validation claim. The clean retry built and passed.
+- **TESTED ONCE / NOT A STUDY EPISODE:** the predeclared 90 s follow-up succeeded in 82.93 s with
+  maximum recovery feedback 20, recovery sequence
+  `[0,1,3,4,5,6,7,8,10,11,12,13,14,15,17,18,19,20]`, 4,499 delivered BT transitions, planner and
+  controller failures, contextual and system-level costmap clears, spin/wait/backup transitions,
+  658 returned controller commands, and 276 costmap observations. Its unobstructed control
+  succeeded in 53.62 s with zero recoveries. Delivered odometry and costmap/BT messages are not
+  proof of internal controller consumption or physical causation.
+- **QA:** manifest v2.2.0 validation retained 20 canonical colliders, 20 presentation renderers,
+  and 28 nominal semantic IDs. The land/reference contract suite passed (`41 passed`); all BT XML
+  parsed, changed shell scripts passed syntax checks, and `git diff --check` passed. The headless
+  validator result SHA-256 is
+  `cd3dde90795bfb1c76a60eba9d2de8f1246bb8b39ab2ab6cbdc4fa65a199eda6`; the manifest SHA-256 is
+  `c6db13e9c7190482f1eca723cb515cc7a38ce01a9caa60d6fbf9720810e68d69`. These runs are environment
+  calibration only and do not contribute independent samples to the frozen F/G/H study.
+
 ## 2026-09-21 — sealed pn-0027 inclusion and model calls
 
 - **CAPTURED ONCE / INCLUDED:** frozen recovery-success row `pn-0027`, seed 3027, passed every
