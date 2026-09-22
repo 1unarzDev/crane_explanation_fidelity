@@ -1,5 +1,543 @@
 # Experiment Log
 
+## 2026-09-22 — corrected proving-ground v3 recovery capture
+
+- **INFRASTRUCTURE-INVALID / NOT AN EPISODE:**
+  `/tmp/proving-v3-recovery-btcap-dev-20260922-02` failed before NavigateToPose goal submission
+  because the fixture's ROS `nav_msgs.msg.Path` import shadowed `pathlib.Path`. Revision `d701cf0`
+  fixes that namespace collision. The attempt contributes no navigation or explanation evidence.
+- **TESTED / RETAINED NEGATIVE CALIBRATION:** the corrected fresh capture used isolated ROS domain
+  99, TCP port 11299, build-manifest SHA-256
+  `6eb7cdde539fa57fac6c2ee461e71d0537c745418953cc91c483bd19aa773d3e`, and result root
+  `/tmp/proving-v3-recovery-btcap-dev-20260922-03`. The predeclared contract expected `succeeded`;
+  NavigateToPose instead returned `aborted` after 91.661 wall seconds. Delivered odometry records
+  17.404 m displacement and a 21.214 m sampled path. Evaluator truth retains the four wall
+  activations at 18.040 simulated seconds and removals at 34.040 seconds.
+- **RECOVERY CAPTURE PASS / OUTCOME GATE FAIL:** passive capture retained 2,672 unique transitions
+  and eight completed, reset-delimited, source-qualified recovery invocations against the 16,384
+  and 1,024 capacities, with zero dropped transitions/invocations, open invocations, overlaps, or
+  restart-without-reset anomalies. The invocations were three `ClearLocalCostmap-Context`
+  completions and one each of `ClearLocalCostmap-Subtree`, `ClearGlobalCostmap-Subtree`, `Spin`,
+  `Wait`, and `BackUp`; `Spin` terminated `FAILURE` and the others `SUCCESS`. Feedback's separate
+  maximum recovery count was 8.
+- **QA BLOCKED / EXPORT NOT_RUN:** exact scenario/configuration identity and the minimum-feedback
+  recovery gate passed, but the required terminal-success condition did not. The independent QA
+  summary at `/tmp/proving-v3-recovery-btcap-dev-20260922-03/environment-qa-summary.json` reports
+  `BLOCKED`, `routeReady=false`, `navigation=PARTIAL`, and `headless=PARTIAL`. No ecological export
+  was created. Whole-history completeness is `not_proven` because `BehaviorTreeLog` has no
+  publisher sequence number and the configured terminal root transition was absent. This supports
+  the eight recorded software invocations, not an exact episode count, changed costmap contents,
+  controller consumption, physical causation, or an explanation-performance result.
+- **DECISION:** preserve both the historical successful `-01` calibration and this current corrected
+  negative result. Do not rerun merely to obtain success or weaken admission criteria. Use the
+  already export-qualified warehouse recovery, proving-ground blockage, and S-turn artifacts for
+  the ecological explanation pilot before spending more time tuning v3. Frozen/DVC artifacts and
+  RoboBoat-specific source, environment, vehicle, sensor, physics, Nav2, and documentation files
+  were untouched.
+
+## 2026-09-22 — additive proving-ground bounded-recovery calibration
+
+- **IMPLEMENTED / TESTED:** additive catalog `crane-land-proving-ground-v3` preserves v1/v2 and
+  adds only `temporary-enclosure-recovery-v3`, a four-wall enclosure centered on the observed
+  nominal trajectory. Its walls are scheduled to activate at 18 s and be removed at 34 s.
+- **BUILD / STRUCTURAL PASS:** Unity 6000.5.10f1 built
+  `/tmp/crane-v3-recovery-build/CRANE.x86_64`; its build-manifest SHA-256 is
+  `6eb7cdde539fa57fac6c2ee461e71d0537c745418953cc91c483bd19aa773d3e`. Headless reference
+  validation reported seven canonical colliders, seven separate visual renderers, nine unique
+  semantic identities, zero duplicate IDs, and `STRUCTURAL_PASS`, `PHYSICS_PASS`, `SENSOR_PASS`,
+  `HEADLESS_PASS`, and `EXPLANATION_READY`.
+- **NAVIGATION / FAILURE-RECOVERY PASS:** the first predeclared development calibration used ROS
+  domain 96, TCP port 11296, the retained 90-second recovery policy, a 100-second action deadline,
+  and result root `/tmp/proving-v3-recovery-btcap-dev-20260922-01`. Evaluator truth records all four
+  walls activating at 18.040 simulated seconds and being removed at 34.040 seconds. NavigateToPose
+  succeeded at 85.219 wall seconds, traversed 17.478 m, and feedback changed from recovery count 0
+  to 1. The independent QA summary passed its predeclared minimum-recovery gate. CRANE revision is
+  `d5a25e6`; manifest, navigation-gate, BT-policy, and QA-summary SHA-256 values are respectively
+  `c7c6b7ad713b6a74e9542ec767ebc826f1034e0163993c8d2e3e02f23603e3ae`,
+  `ab360a15efec17e0c3795ea9d798b344ca28faf6ff7718e228595f59e7be84ba`,
+  `9fb490be79d16c482d9c1b1a8f2f946d142e0d21ed3d4f5901aa3065304329d1`, and
+  `019f43174e553047b627da3a9dc9f2fc636f594b31b29584e95663d1d2b72584`.
+- **CAPTURE LIMITATION / EXPORT NOT_RUN:** passive capture retained 756 unique BT transitions with
+  zero dropped transitions or invocations against the 16,384-transition capacity. The delivered
+  chain includes FollowPath failure, the successful controller-recovery guard, and
+  `ClearLocalCostmap-Context IDLE -> SUCCESS`, but no configured recovery leaf exposed the strict
+  `IDLE -> RUNNING` edge used to assign a stable recovery-invocation ID. The ecological export's
+  minimum-invocation gate was therefore not weakened and no separated export was produced. This
+  run supports the recorded software sequence and feedback count, not an exact attempt count or
+  physical causation. It is calibration, not an independent statistical episode.
+- **REGRESSION:** 90 component land/reference tests plus two unittest subtests passed. Frozen/DVC
+  artifacts and RoboBoat-specific source, environment, vehicle, sensor, physics, Nav2, and
+  documentation files were untouched.
+
+## 2026-09-22 — current-build proving-ground S-turn evidence
+
+- **STRUCTURAL / PHYSICS / SENSOR / HEADLESS PASS:** the current player re-ran the v2 reference
+  validator for `slalom-s-turn-v2`; seven canonical colliders, seven collider-free renderers, nine
+  unique semantic IDs, floor/collision support, differential motion/turn response, and semantic
+  sensor resolution passed under the exact v2 manifest.
+- **NAVIGATION / ROUTE-SHAPE PASS, DEVELOPMENT ONLY:** on isolated ROS domain 95 and TCP port
+  11295, NavigateToPose succeeded at 87.410 wall seconds. The independent QA summary reports a
+  21.467 m sampled path, signed lateral extrema +1.343/−1.342 m, and four direction changes,
+  satisfying the predeclared +0.75/−0.75 m and three-change S-turn gate. Ordered capture retained
+  763 unique BT transitions with zero drops and no recovery invocations. QA-summary SHA-256 is
+  `a04c7f95d1b5c7dd44c51437cfc87fc1c6bc3ee60925b825991c54fcb4dd4e82`.
+- **ROUTE-ADMISSION PASS:** ecological admission now checks signed lateral extrema and direction
+  changes, rather than accepting any successful trajectory with enough samples. The revised
+  development contract SHA-256 is
+  `65b10d62259e741c296d3fe20de4653bd00cde7b6ccce46763c9a6be195124ac`.
+  The current S-turn passes; a unit regression proves a straight/no-reversal trace is rejected.
+- **SEPARATED EXPORT PASS:** two outputs were byte-identical and the independent robot-visible
+  leakage scan passed. The robot-visible trajectory summary reports 21.548 m from the fixture's
+  one-second samples, lateral extrema +1.248/−1.342 m, and four direction changes. This supports
+  an S-shaped recorded trajectory, not optimality, physical causation, or controller consumption.
+- **REGRESSION:** 88 land/reference tests (plus two subtests) pass. Raw artifacts remain ephemeral
+  under `/tmp`; this is not an independent study episode or explanation-performance result.
+  Frozen/DVC artifacts and RoboBoat-specific content were untouched.
+
+## 2026-09-22 — current-build proving-ground blockage export
+
+- **NAVIGATION / TERMINAL-POLICY PASS, DEVELOPMENT ONLY:** current player build-manifest SHA-256
+  `5ef48bba5c30570d1f85afbff0c71e6347c52918328338452ac0f847b67c6624` ran
+  `complete-blockage-v1` on isolated ROS domain 94 and TCP port 11294 with the repository-retained
+  70-second task-policy tree. The action returned the predeclared `aborted` result at 71.809 wall
+  seconds, before the 90-second client deadline; the aggregate fixture verdict was valid.
+- **ORDERED EVIDENCE PASS:** 629 unique transitions were retained against the 16,384-record
+  ecological capacity with zero drops. `Timeout IDLE -> RUNNING` was record
+  `bt-transition-000001`; zero recovery-leaf invocations and feedback sequence `[0]` were observed.
+  Seventy trajectory samples covered 17.978 m with 3.016 m maximum lateral excursion and 3.465 m
+  endpoint displacement. Fixture SHA-256 is
+  `bccf5d469bb9db605756a45843bd5e8ce065f60738ffe0642166cd0ec0f5226b`.
+- **FAIL-CLOSED EXPORT PASS:** the run satisfied its declared `aborted`, `Timeout`, trajectory,
+  and zero-drop admission gates. Two export roots were byte-identical. Robot-visible SHA-256 is
+  `5c30b7f4dbc03b60479c695cc933fb10a51cbbfa8a3341a569789a9ee6cdbf96`, evaluator-only SHA-256
+  is `d9f7898a6a5a634b4ed8d5f2a0ad4eb29495050c604bc04ec99e227d017ce168`, and export-manifest
+  SHA-256 is `4832fd3b58402965265819c574c300cce3fe642bcd0a2861be5f6197b621dad6`.
+  The independent robot-visible leakage scan passed.
+- **BOUNDARY:** the terminal root transition remained absent and subscriber loss remains
+  undetectable, so BT history is `not_proven`. The evidence supports a recorded task-policy abort;
+  it does not establish that the physical blocker caused termination or that the planner found no
+  path. This is an interface/mechanism qualification, not an independent study sample or
+  explanation-performance result. Frozen/DVC artifacts and RoboBoat-specific content were
+  untouched.
+
+## 2026-09-22 — fail-closed ecological mechanism admission
+
+- **IMPLEMENTED:** CRANE revision `86e7658` adds explicit runtime-admission criteria to every
+  development ecological scenario contract. Scenario/configuration identity alone is no longer
+  sufficient: terminal status, minimum recorded recovery invocations, minimum trajectory
+  inventory, required BT node observations, and zero-drop requirements are checked before export.
+  The revised contract SHA-256 is
+  `ff2b2c45606a8f918fd4a4d70194dcfa9ceeac1a031245a94cc3bbbfa529209d`.
+- **REAL NEGATIVE-ARTIFACT PASS:** the two retained current-build `dynamic-gate-v1` calibrations
+  were both rejected before output creation: the first because `aborted` did not satisfy the
+  declared `succeeded` terminal status, and the second because `timeout` did not satisfy it. Thus
+  neither a matching layout hash nor a plausible question can silently convert a mechanism miss
+  into an ecological benchmark input.
+- **REAL POSITIVE-ARTIFACT PASS:** the current-build warehouse recovery-success artifact passed
+  admission with terminal `succeeded`, four retained recovery-leaf invocations, 3,950 retained
+  transitions against a 16,384 capacity, and zero drops. Its regenerated separated export retained
+  physical truth only in the evaluator plane. This validates admission behavior, not explanation
+  correctness or an additional independent sample.
+- **REGRESSION:** 86 land/reference tests (plus two subtests) pass. Frozen study files, governed
+  DVC data, and RoboBoat-specific content were untouched.
+
+## 2026-09-22 — proving-ground ecological export calibration
+
+- **PURPOSE:** exercise the separated ecological evidence exporter on a proving-ground mechanism
+  using the same current Unity player and ordered BT capture already qualified for the warehouse.
+  These are development calibrations, not independent study episodes.
+- **NEGATIVE / RETAINED:** `dynamic-gate-v1` with the warehouse-specific 90 s recovery policy
+  activated its gate at 20.040 simulated seconds and removed it at 45.040, but the policy aborted
+  near the goal after 91.659 wall seconds. It recorded 800 unique BT transitions, zero dropped
+  records, and zero recovery-leaf invocations. This does not satisfy the contract's
+  recovery-followed-by-success mechanism and was not exported or relabeled.
+- **NEGATIVE / RETAINED:** one bounded rerun used the stock Jazzy replanning/recovery tree from the
+  exact pinned ROS image (tree SHA-256
+  `5895b63840d54c6d7eee3d3b3f3ee177680af9e58a14cbf61c4df39fe5db2a90`; image digest
+  `sha256:9c286b78dcc1ecf0a159f624f642cf831d463370ce264f00fdd6f6c30ce50053`).
+  The client deadline elapsed at 105.009 s after 925 retained transitions, with zero recovery-leaf
+  invocations and zero dropped records. It likewise was not exported. No further outcome-driven
+  reruns were made.
+- **INTERPRETATION:** the historical three-run proving-ground qualification remains valid for its
+  recorded component/policy state, but it is not sufficient to claim that the same mechanism is
+  export-ready on the current build. Fail-closed terminal/mechanism admission was added in the
+  subsequent checkpoint; qualifying one current-build proving-ground scenario that actually
+  satisfies its contract remains open. Frozen/DVC artifacts and RoboBoat-specific content were
+  untouched.
+
+## 2026-09-22 — ecological BT capture-capacity qualification
+
+- **IMPLEMENTED:** CRANE revision `ac10443` keeps the shared/frozen fixture defaults at 4,096
+  transitions and 1,024 recovery invocations, but gives warehouse and proving-ground ecological
+  launchers a bounded 16,384-transition default. The capture summary and separated exporter now
+  expose configured capacities and retained counts so truncation risk is auditable rather than
+  inferred from a near-limit record count.
+- **TESTED / DEVELOPMENT ONLY:** a second current-build
+  `warehouse-temporary-enclosure-recovery-v1` run on isolated ROS domain 91 and TCP port 11291
+  succeeded. It retained all 3,950 unique transitions and four completed recovery-leaf
+  invocations (`Spin`, `Wait`, `BackUp`, `Spin`) against capacities 16,384 and 1,024, with zero
+  dropped transitions or invocations. The maximum Nav2 feedback recovery count was 16; this remains
+  a different count stream and does not convert four recorded BT invocations into an exact
+  whole-history count.
+- **COMPLETENESS LIMIT RETAINED:** the configured root terminal transition was again absent and
+  `BehaviorTreeLog` still provides no publisher sequence number. History therefore remains
+  `not_proven`, exact-count eligibility remains false, and no physical-causation claim is licensed.
+- **REGRESSION:** 83 land/reference tests (plus two subtests), 105 umbrella/core tests, and four
+  frozen-study integrity tests pass. The runtime root remains ephemeral under
+  `/tmp/warehouse-btcap-dev-20260922-02`; it is neither a sealed study episode nor an independent
+  statistical sample. Frozen/DVC artifacts and RoboBoat-specific content were untouched.
+
+## 2026-09-22 — current-build warehouse BT capture and separated ecological export
+
+- **BUILD PASS:** Unity CLI 1.0.0-beta.5 used installed Unity 6000.5.10f1 and the repository's
+  `CranePerformanceBuild.BuildLinuxWorker` entry point to produce an isolated player under `/tmp`.
+  CRANE build-manifest SHA-256 is
+  `5ef48bba5c30570d1f85afbff0c71e6347c52918328338452ac0f847b67c6624`; it includes
+  `TurtleBot3 Warehouse Validation` and warehouse manifest SHA-256
+  `c6db13e9c7190482f1eca723cb515cc7a38ce01a9caa60d6fbf9720810e68d69`. Unity's incidental
+  settings serialization changes were removed, leaving the component clean before execution.
+- **NAVIGATION / RECOVERY PASS, DEVELOPMENT ONLY:** isolated ROS domain 90 and TCP port 11290 ran
+  `warehouse-temporary-enclosure-recovery-v1` with the current player. Evaluator truth confirms
+  environment `crane-industrial-warehouse-v2`, seed 4105, the exact four-wall activation at
+  18.040 simulated seconds, and removal at 34.040 seconds. Nav2 succeeded after 75.516 wall
+  seconds, displaced 12.605 m, sampled a 15.748 m path with 2.112 m lateral excursion, and reported
+  a maximum feedback recovery count of 15.
+- **ROBOT-VISIBLE BT EVIDENCE PASS:** the passive fixture retained 3,994 unique transitions with no
+  duplicate or dropped records and four completed recovery-leaf invocations: `Spin`, `Wait`,
+  `BackUp`, and `Spin`. The root terminal transition remained unobserved and the topic has no
+  publisher sequence number, so history is still `not_proven` and exact-count eligibility is
+  false. This is evidence for four recorded leaf invocations, not proof that exactly four recovery
+  attempts occurred or that the physical enclosure caused them. Fixture-summary SHA-256 is
+  `07e402570b4563e257dea8074d6ea5570ba5bf46c698a399113f49401bcfbd50`.
+- **SEPARATED EXPORT PASS:** `export_ecological_evidence.py` bound the exact environment,
+  configuration, BT-policy, and ecological-contract hashes and produced physically separate
+  `robot_visible/` and `evaluator_only/` files plus a content-free hash manifest. Two independent
+  output roots were byte-identical. Robot-visible SHA-256 is
+  `326631676944546678951dc2a1ca068d43b120157189aabc1b49783ed5c43b22`, evaluator-only SHA-256
+  is `a1f2ec8c7886879a62aa189338187db7eba2e7d1ee1d13f077153f016107c845`, and export-manifest
+  SHA-256 is `64f1d1076cb754b1a07644a6fd238e44d8ed04e817ebd5960424bbdeda4e4f84`.
+  The independent robot-visible leakage scan passed.
+- **REGRESSION / BOUNDARY:** 68 land/reference tests and four frozen-study integrity tests pass.
+  Raw build/run/export artifacts remain ephemeral under `/tmp`; this is not an independent study
+  episode or explanation-performance result. Frozen/DVC artifacts and RoboBoat-specific content
+  were untouched.
+
+## 2026-09-22 — bounded ordered BT evidence capture for ecological land
+
+- **IMPLEMENTED / TESTED:** `crane_ml` commit `8cc1cbb` adds a ROS-independent bounded transition
+  recorder to the existing passive Nav2 fixture. Each retained transition has a stable record ID,
+  node name/UID, prior/current status, event/message timestamps, accepted-goal relation, and goal
+  ID when available. Exact-name-classified recovery leaves receive a distinct invocation ID only
+  on `IDLE -> RUNNING`; repeated messages, completion, halting, overlap, open invocations, and
+  bounded-record loss are represented explicitly. Nav2 feedback `number_of_recoveries` remains a
+  separate evidence stream.
+- **TESTED / DEVELOPMENT ONLY:** isolated ROS domain 89 and port 11289 reproduced a mobility-hold
+  recovery followed by success. The fixture retained 22 unique transitions with no duplicate or
+  dropped records, including `FollowPath RUNNING -> FAILURE`, a successful recovery guard, and
+  `Wait IDLE -> RUNNING -> SUCCESS`. That Wait received
+  `bt-recovery-invocation-000001`; independent Nav2 feedback changed from 0 to 1. Fixture-summary
+  SHA-256 was `ec1fc96c5dbeb63cbb8c32b42a3620617b6320087dd98af269f7bc5dd0c9b591`;
+  raw output remains ephemeral under `/tmp` and is not a study episode.
+- **NEGATIVE / PRESERVED:** neither a 431-transition nominal run nor a short 34-transition run
+  delivered the configured final `NavigateRecovery` transition before capture shutdown, including
+  after a bounded 0.5 s post-result drain. `BehaviorTreeLog` has no publisher sequence number, so
+  subscriber-side message loss cannot be excluded. Whole-history completeness therefore remains
+  `not_proven` and exact recovery-count eligibility remains false. The supported wording is “one
+  Wait invocation is recorded,” not “exactly one recovery occurred.”
+- **INVALID WAREHOUSE CALIBRATION:** the locally retained player used for the first wrapper check
+  emitted `crane-land-corridor-truth-v1` rather than the requested warehouse scenario truth. That
+  run validates the mounted Python capture path only; it is not counted as warehouse ecological
+  validation and does not alter the previously retained warehouse qualification artifacts.
+- **REGRESSION:** 61 land/reference Python tests and four frozen-study integrity tests pass. Frozen
+  artifacts, governed DVC data, and RoboBoat-specific files were untouched.
+
+## 2026-09-22 — ecological land scenario-to-question contract
+
+- **IMPLEMENTED / DEVELOPMENT ONLY:** a non-frozen contract maps five qualified land mechanisms
+  to ten prospective evidence-rich questions: warehouse recovery-success, dynamic-gate
+  recovery-success, bounded blockage termination, corrected S-turn route shape, and U-trap route
+  change. Five questions require partial answers because physical cause, controller consumption,
+  no-path, optimality, exact counts without complete invocation identity, or counterfactual success
+  are not established by the allowed runtime evidence.
+- **VALIDATED:** every scenario resolves against its exact environment manifest, runtime seed,
+  catalog entry, manifest SHA-256, and derived configuration SHA-256. Robot-visible and
+  evaluator-only evidence vocabularies are disjoint; required evidence is restricted to the former;
+  question IDs are unique; withholding boundaries are mandatory; and `REPETITION_PASS` requires at
+  least three declared qualified runs. The contract validates as 5 scenarios, 10 questions,
+  and 5 explicitly partial questions. Contract SHA-256 is
+  `bfd344cb22ad307a7dd9be2fb885a555466aae3a5ca53e0e87f1fa2f62f7bd3c`.
+- **BOUNDARY:** qualification hashes select mechanisms but do not supply model-visible obstacle
+  identity, schedules, geometry, or expected outcomes. This is not a frozen-study amendment,
+  independent episode collection, answer generation, annotation, or performance evidence. Frozen
+  artifacts, DVC payloads, and RoboBoat-specific files were untouched.
+
+## 2026-09-22 — warehouse direct keyboard inspection and Follow-view correction
+
+- **INTERACTIVE_PASS:** a dedicated X11 display at `:96` and an explicitly focused player window
+  delivered real Input System events. `1` selected Overview, `2` selected Oblique, `H`/`C`/`T`
+  changed semantic/collider/trajectory state in the HUD and rendering, and `3` selected Follow.
+  Final screenshot SHA-256 values are respectively
+  `2c3faf7ff564b418529e4e5d527f320a4761f15949e4584440f38f7658bd4efe`,
+  `0048802b8a66088ba72377a8da2707547d7281c86affbf03ab5c5ddebf6822ef`,
+  `3ff56d9237fa891236ec7aa7bed0c0929055025a41746ae1969eb6d6db073420`, and
+  `a242bc03496842466c3010061e9cd0acc04b59510ce68823d30cace2a521b7f7`.
+- **NEGATIVE CALIBRATION AND FIX:** the first X11 Follow capture changed the HUD state but showed
+  only an empty horizon because the original chase position fell outside the south boundary. The
+  generic reference-inspection controller now checks the canonical sightline, prefers the ordinary
+  chase position when clear, uses an unobstructed lateral position at a boundary, and retains an
+  overhead last resort. The final Follow capture keeps the robot readable with nearby warehouse
+  geometry visible. This changes only a spectator camera and no collider, robot, sensor, or task
+  state. An earlier Wayland-inherited launch exited during surface setup and supports no gate.
+- **HEADLESS PARITY_PASS:** the final build manifest SHA-256 is
+  `e6d17e58b4ca431c9ca80f2deb023b7eac8339fbd3e5cc283fa59207512eac3c`. Its independent warehouse
+  validator reproduced result SHA-256
+  `cd3dde90795bfb1c76a60eba9d2de8f1246bb8b39ab2ab6cbdc4fa65a199eda6`, including the same 20
+  canonical colliders, 20 collider-free renderers, 28 semantic identities, physics, sensor,
+  highlighting, differential-motion, and headless gates.
+- **PARALLEL SAFETY:** display `:97` and the parallel RoboBoat runtime were not touched. The edited
+  controller is attached only to reference-environment spectator cameras; the full multi-scene
+  player compiled successfully, and no RoboBoat source, scene, model, physics, sensor, or Nav2
+  configuration changed. Screenshots, player builds, and logs remain ephemeral under `/tmp`.
+
+## 2026-09-22 — warehouse recovery mechanism repeatability qualification
+
+- **PROSPECTIVE DEVELOPMENT CONTRACT:** before the additional runs, a versioned contract fixed
+  three distinct runtime/navigation artifacts, exact warehouse environment, scenario, route,
+  obstacle, seed, and configuration identity, action success, route acceptance, at least one
+  recorded recovery, and all required QA gates. Contract SHA-256 is
+  `9cb872500cd19a638eb8f39446f125a93e3c63d2028d0dc22212c123ab0b295f` and configuration SHA-256
+  is `e18a16cbf9524e1dec4df9fae352ea9255b9ec2d6343dfe2cb6cc8a4150fe242`.
+- **TEMPORARY ENCLOSURE / REPETITION_PASS:** all three runs recorded recovery followed by action
+  success. Endpoint displacement ranged 12.590--12.597 m, sampled paths 14.295--15.918 m, and
+  wall time 70.522--82.931 s. Maximum recovery feedback varied from 16 to 20 and is retained rather
+  than treated as a fixed property. Aggregate SHA-256 is
+  `818fd1c4118c1579d76e50f9222f06ddf68868b17f11e8a8b89bfa977a062033`.
+- **IDENTITY RESOLUTION IMPLEMENTED:** the generic environment QA summarizer now resolves a
+  warehouse dynamic scenario through its manifest, verifies its route, robot, challenge, expected
+  broad outcome, seed, and complete ordered obstacle-ID inventory, and emits a deterministic
+  configuration hash. This closes the earlier gap in which only static warehouse routes and
+  proving-ground layouts had aggregate identity support.
+- **DERIVATION BOUNDARY:** the retained original run was not overwritten. A schema-compatible
+  summary was derived from its unchanged inputs and combined with two new runs on isolated ROS
+  domains 186--187 and ports 10626--10627. Raw artifacts remain outside Git under `/tmp`.
+- **LIMITS:** these are exact-condition development repetitions, not independent frozen-study
+  episodes. Delivered BT, costmap, command, and odometry evidence does not prove controller
+  consumption, and repeated temporal association does not establish physical causation.
+  Scenario-to-question contracts, explanation generation, and blinded annotation remain
+  `NOT_RUN`. Frozen/DVC artifacts and RoboBoat-specific files were untouched.
+
+## 2026-09-22 — proving-ground mechanism repeatability qualification
+
+- **PROSPECTIVE DEVELOPMENT CONTRACT:** before the new repeats, a versioned contract fixed three
+  required distinct runtime/navigation artifacts, exact configuration identity, expected terminal
+  status, route acceptance, required QA gates, and minimum recovery count per scenario. Contract
+  SHA-256 is `bfdb6d521c5e5476304169ab5b5bc55a2f00e21c3745f5e93b7df219821d1d17`.
+  Exact-condition repetitions measure operational reproducibility, not independent scenario
+  diversity or statistical sample size.
+- **CORRECTED S-TURN / REPETITION_PASS:** three runs succeeded and passed every v2 route-shape
+  check. Sampled paths ranged 21.121–22.207 m, action time 82.961–89.875 s, endpoint displacement
+  17.577–17.597 m, lateral direction changes were exactly four, and recovery feedback remained
+  zero. Aggregate SHA-256 is
+  `e5a10178e8104a3009e792af35b3e0f2bbb876617dd45c6b15266117e62bbc65`.
+- **DYNAMIC GATE / REPETITION_PASS:** three runs recorded recovery followed by success. Sampled
+  paths ranged 22.382–23.330 m and action time 91.383–98.323 s. Maximum recovery feedback varied
+  materially from 1 to 8; this variability is retained and prevents treating a single recovery
+  count as a scenario invariant. Aggregate SHA-256 is
+  `21010265d272b2c4b6d738f2312ba31f40c8d824c0307c337a0259325033c112`.
+- **COMPLETE BLOCKAGE / REPETITION_PASS:** three runs aborted under the explicit 70-second BT
+  task-policy deadline before the 80-second client horizon. Action time ranged 70.331–71.131 s,
+  sampled exploratory paths ranged 17.519–18.151 m, and recovery feedback remained zero. This is
+  repeatable task-policy termination, not proof that the blocker physically caused the abort.
+  Aggregate SHA-256 is
+  `f7c6a43286c06a5fe3c11873e355d0b70dc084515c56cf09d8175c8ce6b081fe`.
+- **DERIVATION BOUNDARY:** the historical first-run summaries for dynamic gate and blockage
+  predated current artifact-hash and route-acceptance fields. They were not overwritten. New
+  summaries were derived from their unchanged inputs solely for schema-compatible aggregation.
+  All new runs used isolated ROS domains 180–185 and TCP ports 10620–10625; the parallel RoboBoat
+  runtime was not stopped or modified.
+- **LIMITS:** delivered BT, costmap, command, and odometry records do not prove controller
+  consumption or physical causation. These development repeats are not frozen-study episodes.
+  Scenario-to-question contracts, explanation generation, and blinded annotation remain
+  `NOT_RUN`; raw outputs remain outside Git under `/tmp`.
+
+## 2026-09-22 — corrected proving-ground slalom qualification
+
+- **VERSIONED CORRECTION / HISTORY PRESERVED:** the v1 slalom manifest and its SHA-256 remain
+  unchanged. Additive catalog `crane-land-proving-ground-v2` contains only
+  `slalom-s-turn-v2`, using four alternating partial-width barrier banks. Catalog SHA-256 is
+  `3f249258362fb47ceb135b7423e77ba5716bd1ebf4b3db7cf3650a8f8f0640f2`; its separately versioned
+  navigation-gate SHA-256 is
+  `67b10e775b2b7794e1e639dd69061156e2233651ef5cfe73db51c6e0934315c6`. Launchers default to v1
+  and require explicit v2 selection, preventing historical artifact identity from changing.
+- **PREDECLARED DEVELOPMENT RUN / PASS:** on isolated ROS domain 223 and port 10615, v2 succeeded
+  in 82.96 s with 17.577 m endpoint displacement, a 21.122 m sampled path, lateral extrema of
+  +1.349/-1.248 m, and four lateral direction changes. It delivered 727 BT transitions, 818
+  returned commands, and 314 costmap observations with zero recoveries. The aggregate record
+  passed identity, `NAVIGATION_PASS`, `HEADLESS_PASS`, `EXPLANATION_READY`, and every declared v2
+  route-shape check; summary SHA-256 is
+  `e4601110c15fdada259c26ae3027fb6bf381144b1aa0db40d036de29fd28f4b9`.
+- **HEADLESS / COMPATIBILITY PASS:** the v2 validator reported seven canonical colliders, seven
+  collider-free renderers, nine unique semantic IDs, and a semantic hit on
+  `slalom-bank-west-near`; result SHA-256 is
+  `e86eb8e45b800f8e393fbfc512620457088d09780c0dd1ce940ac11ff7718532`. The same player reproduced
+  the exact historical v1 validator SHA-256
+  `3d70047b66eed769fc061a5af2753a72ef0a593e870e42e58e59dabb2764f527`.
+- **INTERACTIVE PASS FOR REPRESENTATIVE CONTROL:** isolated X11 overview and oblique captures
+  showed the corrected topology, TurtleBot3, v2 environment/route HUD, semantic highlight, and
+  collider overlays. A focused `2` keypress changed `View: Overview` to `View: Oblique`; before
+  and after screenshot SHA-256 values are respectively
+  `add950fbf078a38d11ae1c6f9c144a31de46740d966d70cd8a53b46c40776813` and
+  `4bc3c6352b2efe1835b53d01d75ad447669f8524a2fffd3de7ebb39447354392`. An earlier Wayland attempt
+  produced a black frame, and a later keyboard attempt omitted the named scene and opened the
+  default aquatic scene; both are invalid calibration and contribute no environment evidence.
+- **LIMITS:** this is one development calibration, not an independent explanation-study episode.
+  Repeated qualification, scenario-to-question contracts, explanation generation, and blinded
+  annotation remain `NOT_RUN`. Delivered transitions, commands, and observations do not prove
+  controller consumption or physical causation. Frozen/DVC artifacts and RoboBoat-specific files
+  were untouched.
+
+## 2026-09-22 — proving-ground route-shape qualification
+
+- **PREDECLARED DEVELOPMENT RUN / PASS:** `offset-gates-v1` ran on isolated ROS domain 222 and
+  port 10614 with expected status `succeeded`. It finished in 76.86 s with 17.592 m endpoint
+  displacement, a 19.571 m sampled path, lateral extrema of +1.597/-1.455 m, two sampled lateral
+  direction changes, 682 delivered BT transitions, 768 returned commands, 287 costmap
+  observations, and zero recoveries. This establishes traversal of the two offset route regions;
+  it does not prove which delivered observation Nav2 consumed.
+- **DEVELOPMENT RUN / PASS:** the valid `staggered-obstacles-v1` rerun on isolated ROS domain 220
+  succeeded in 73.06 s with 17.546 m endpoint displacement, an 18.331 m sampled path, lateral
+  extrema of +0.506/-0.347 m, three sampled lateral direction changes, 646 BT transitions, 721
+  commands, 270 costmap observations, and zero recoveries. Its first attempt on domain 233 was
+  infrastructure-invalid before the episode because the Fast DDS derived port exceeded the valid
+  range; that startup attempt is retained as invalid calibration and contributes no evidence.
+- **NEGATIVE CALIBRATION RETAINED:** `slalom-s-turn-v1` returned action success in 69.46 s, but its
+  17.478 m sampled trajectory stayed exactly on the centerline with maximum angular command 0.0
+  and zero lateral direction changes. The current bollards leave a straight route, so this run
+  fails the declared S-turn navigation gate and is not counted as qualified.
+- **AUTOMATED QA IMPLEMENTED:** the aggregate summarizer can apply a separately versioned
+  behavioral-gate catalog after validating canonical manifest/configuration identity. Catalog
+  SHA-256 is `86c98ca008778bd97401c165e00d2543bddeac1432c9b96d05077b484aec40e8`.
+  This preserves the canonical v1 manifest and every earlier run identity while preventing mere
+  action success from satisfying a route-shape claim. Staggered obstacles and offset gates return
+  `NAVIGATION_PASS`, `HEADLESS_PASS`, and `EXPLANATION_READY`; slalom returns navigation
+  `PARTIAL`, headless `PARTIAL`, and overall `BLOCKED`. Their summary hashes are respectively
+  `101381abef9faa7c57205694ac276db58a0d598d2011279e86673ef809342bee`,
+  `8af41c8f573dd8b1d7cc3b0f91a287f5ea9618a519f271a35931178c1a6b9006`, and
+  `55e756e282b0b1448e3043633441d9568e104d41cc8e515492280aea80cfaaca`.
+- **LIMITS:** these are single development calibrations, not independent explanation-study
+  episodes. The slalom geometry correction and rerun, repeated scenario qualification,
+  explanation generation, and blinded annotation remain `NOT_RUN`. Raw artifacts remain under
+  `/tmp`; frozen/DVC artifacts and RoboBoat-specific files were untouched.
+
+## 2026-09-22 — proving-ground narrow passage, U-trap, and aggregate QA
+
+- **PREDECLARED DEVELOPMENT RUN / PASS:** `narrow-doorway-v1` ran on isolated ROS domain 231 and
+  port 10610 with expected status `succeeded`. It passed the centered 1.0 m opening in 69.06 s,
+  displaced 17.467 m, followed a 17.542 m sampled path with 0.236 m lateral span, delivered 610 BT
+  transitions and 264 costmap observations, and reported zero recoveries. This is evidence of
+  narrow-passage traversal, not a replanning claim. Fixture SHA-256 is
+  `62d034616e09fd187a16645e12325add184cda354f7271a1351ce9854ef007c1`.
+- **PREDECLARED DEVELOPMENT RUN / PASS:** `u-trap-v1` ran on isolated ROS domain 232 and port 10611
+  with expected status `succeeded`. It advanced into the trap region, reversed across 14 sampled
+  intervals, moved 3.003 m laterally onto an exterior route, and returned to the goal. It succeeded
+  in 98.16 s with 17.604 m endpoint displacement, 25.207 m sampled path, 871 delivered BT
+  transitions, 375 costmap observations, and zero recoveries. This establishes a substantial route
+  change around the canonical trap; delivered observations do not prove which input caused it.
+  Fixture SHA-256 is
+  `53915007050868879651f411cef83135c75ad9f6e0e10ecefcc283b1af545e6c`.
+- **HEADLESS PARITY / PASS:** independent validators for the doorway and U-trap returned
+  `STRUCTURAL_PASS`, `PHYSICS_PASS`, `SENSOR_PASS`, `HEADLESS_PASS`, and `EXPLANATION_READY`, with
+  zero duplicate semantic IDs and semantic ray hits on `doorway-east-jamb` and `u-trap-back`.
+  Result SHA-256 values are
+  `82a22fc9b37e86fe95e039dcef7c023e59b1062e3755444c787f431d33ccad75` and
+  `011ec87998fdc3ad72ffaa72a03a933e7732c351230d0e492188bfc276318000`.
+- **AUTOMATED QA IMPLEMENTED:** `summarize_environment_qa.py` now resolves both warehouse-route
+  and proving-ground-layout schemas behind its existing command interface. It verifies exact
+  manifest/configuration identity, contract parity, expected terminal status, and independent
+  structural/navigation records; computes path, excursion, and sampled reversal metrics; and
+  hashes every referenced artifact. Actual summaries for all five qualified proving-ground layouts
+  report `identityValid=true`, `NAVIGATION_PASS`, `HEADLESS_PASS`, and `EXPLANATION_READY`.
+  Dynamic-gate recovery-success and expected complete-blockage abort additionally report
+  `FAILURE_RECOVERY_PASS`. Overall verdicts remain `PARTIAL` because interactive evidence is not
+  silently inferred. A retained warehouse nominal route was also re-summarized through the same
+  interface and preserved `identityValid=true`, `NAVIGATION_PASS`, `HEADLESS_PASS`, and
+  `EXPLANATION_READY`, confirming warehouse-output compatibility.
+- **QA / LIMITS:** 50 land/reference tests pass. These are single development calibrations, not
+  independent explanation-study episodes. `staggered-obstacles-v1`, `slalom-s-turn-v1`, and
+  `offset-gates-v1`, repeated-run qualification, explanation generation, and blinded annotation
+  remain `NOT_RUN`. Raw outputs remain ephemeral under `/tmp`; frozen study data, DVC artifacts,
+  and RoboBoat-specific files were untouched.
+
+## 2026-09-22 — configurable land proving-ground implementation and calibration
+
+- **IMPLEMENTED:** CRANE's existing TurtleBot3 warehouse scene can now replace its authored world
+  with manifest-driven `crane-land-proving-ground-v1`. The SHA-256
+  `bea854292d7298e04f37ed9f6cc50f49d59d51fdec0e1b78a9d5f9247beee720` catalog defines eight
+  deterministic layouts: staggered obstacles, S-turn slalom, offset gates, narrow doorway,
+  U-trap, alternate corridors, complete blockage, and dynamic gate. Canonical collision,
+  collider-free presentation, semantics, schedules, configuration hashes, and evaluator truth
+  remain separate. The frozen corridor truth schema and study artifacts were not changed.
+- **NEGATIVE CALIBRATION RETAINED:** the first 18 m alternate-corridor run used the warehouse's
+  30 m rolling global costmap and aborted in 1.14 s. The planner explicitly reported the goal at
+  `(18, 0)` outside its bounds. A dedicated proving-ground configuration widened only the
+  ecological global window to 44 m; this is not counted as an environment failure or hidden.
+- **TESTED ONCE / NAVIGATION CALIBRATIONS:** `alternate-corridors-v1` succeeded in 71.21 s with
+  17.573 m endpoint displacement, 17.930 m sampled path, 1.10 m lateral excursion, 628 delivered
+  BT transitions, 711 commands, 268 costmap observations, and zero recovery feedback.
+  `dynamic-gate-v1` activated at simulation time 20.040 s, was removed at 45.040 s, and succeeded
+  in 91.38 s with maximum recovery feedback 1, a delivered `FollowPath` failure and contextual
+  local clear, 22.328 m sampled path, and 1.723 m lateral span. `complete-blockage-v1` aborted at
+  70.33 s under the existing separate 70 s task-policy deadline, before its 80 s client deadline,
+  after 17.973 m sampled exploratory motion and 4.54 m lateral span. These are development runs,
+  not independent study episodes; no scan-consumption or obstacle-causation claim is made.
+- **TESTED / HEADLESS QA:** Unity 6000.5.10f1 built Linux player SHA-256
+  `a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292`. The alternate-corridor
+  validator returned `valid=true`, six canonical colliders, six collider-free renderers, eight
+  unique semantic IDs, semantic LiDAR hit `alternate-route-divider`, evidence highlighting,
+  collision/drop support, differential response, `STRUCTURAL_PASS`, `PHYSICS_PASS`,
+  `SENSOR_PASS`, `HEADLESS_PASS`, and `EXPLANATION_READY`; result SHA-256 is
+  `3d70047b66eed769fc061a5af2753a72ef0a593e870e42e58e59dabb2764f527`.
+- **TESTED / INTERACTIVE PARTIAL:** the proving-ground build reconfigures the existing
+  presentation-only inspection controller with the selected layout and relevant obstacle IDs.
+  Isolated 1280×720 overview and oblique captures showed the correct environment/layout HUD,
+  semantic highlight, collider wireframes, and trajectory state. The host Wayland attempt exited
+  during surface setup and yielded no usable audit; the accepted captures used a separately named
+  X display and did not touch the parallel RoboBoat display. Manual keyboard polling remains
+  `NOT_RUN`, so this is not a full interactive pass.
+- **QA / LIMITS:** all 49 land/reference static tests passed; the build compiled cleanly and the
+  headless validator passed after inspection wiring. Five layouts and repeated-run qualification
+  remain `NOT_RUN`; explanation generation and blinded annotation remain `NOT_RUN`. Build,
+  screenshots, and calibration outputs are ephemeral under `/tmp`; no DVC or sealed artifact was
+  modified.
+
+## 2026-09-22 — warehouse temporary-enclosure recovery calibration
+
+- **IMPLEMENTED / RETAINED DEVELOPMENT INFRASTRUCTURE:** warehouse manifest v2.2.0 adds a
+  four-wall temporary enclosure with stable semantic IDs. All walls activated at simulation time
+  18.040 s and were removed at 34.040 s; scheduled and actual times remain evaluator-only. The
+  recovery BT preserves the existing navigation/recovery structure and uses a 90 s steady-clock
+  task-policy deadline (SHA-256
+  `9fb490be79d16c482d9c1b1a8f2f946d142e0d21ed3d4f5901aa3065304329d1`).
+- **NEGATIVE CALIBRATION RETAINED:** the first run under the earlier 70 s policy exercised 15
+  recovery leaf invocations and resumed substantial motion after enclosure removal, but aborted
+  about 1.4 m short of the goal. It is recovery followed by a task-policy deadline, not
+  recovery-success. A first Unity build attempt hung after import and was terminated with exit 130;
+  it is infrastructure-invalid and supports no validation claim. The clean retry built and passed.
+- **TESTED ONCE / NOT A STUDY EPISODE:** the predeclared 90 s follow-up succeeded in 82.93 s with
+  maximum recovery feedback 20, recovery sequence
+  `[0,1,3,4,5,6,7,8,10,11,12,13,14,15,17,18,19,20]`, 4,499 delivered BT transitions, planner and
+  controller failures, contextual and system-level costmap clears, spin/wait/backup transitions,
+  658 returned controller commands, and 276 costmap observations. Its unobstructed control
+  succeeded in 53.62 s with zero recoveries. Delivered odometry and costmap/BT messages are not
+  proof of internal controller consumption or physical causation.
+- **QA:** manifest v2.2.0 validation retained 20 canonical colliders, 20 presentation renderers,
+  and 28 nominal semantic IDs. The land/reference contract suite passed (`41 passed`); all BT XML
+  parsed, changed shell scripts passed syntax checks, and `git diff --check` passed. The headless
+  validator result SHA-256 is
+  `cd3dde90795bfb1c76a60eba9d2de8f1246bb8b39ab2ab6cbdc4fa65a199eda6`; the manifest SHA-256 is
+  `c6db13e9c7190482f1eca723cb515cc7a38ce01a9caa60d6fbf9720810e68d69`. These runs are environment
+  calibration only and do not contribute independent samples to the frozen F/G/H study.
+
 ## 2026-09-21 — sealed pn-0027 inclusion and model calls
 
 - **CAPTURED ONCE / INCLUDED:** frozen recovery-success row `pn-0027`, seed 3027, passed every
@@ -1374,3 +1912,203 @@
 - Cumulative development-only totals: 18 episodes, 109 responses per condition, and 545 outputs.
   Errors are A 6/109, B 0/109, and C/D/E 1/109. A/B cover 228/245 answerable information units;
   C/D/E cover 220/245. These replications improve sample size but still do not support D over B.
+
+## 2026-09-21 — Clearpath pipeline ROS/Nav2 motion and sensor smoke
+
+- CRANE revision `7ddd1aa` (the validated source diff was committed after the run); Unity
+  6000.5.10f1; generated Clearpath asset-set SHA-256
+  `A85855FDA80AA08BD7773602E9133862EA9824A03CE73F002D33999482A0722F`.
+- **IMPLEMENTED/TESTED:** `run_clearpath_pipeline_nav2_fixture.sh` selects the generated Clearpath
+  scene, differential command adapter, `base_scan`, and a default 1.0 m goal. The generic land
+  bootstrap preserves imported geometry and the scene-authored spawn, rejects synthetic corridor
+  blockers, and records the environment/platform identity in evaluator-only truth.
+- **TESTED/PASS:** the graphics-free 1 m action succeeded in 2.978 s after 10 returned controller
+  commands. Planar odometry displacement was 0.497 m, within the configured 0.55 m goal tolerance.
+  Capture retained 451 LiDAR scans, four costmap observations with at most 11,668 occupied cells,
+  zero stale/rejected commands, valid transport, and RTF 1.00002. Evaluator truth recorded
+  `environmentId=clearpath-pipeline-2.9.4-v1`,
+  `platform=clearpath-jackal-class-differential`, `referenceEnvironmentPreserved=true`, and the
+  authored start `(0,5,0)`.
+- **TESTED/PASS:** the reference-environment regression remained valid with 11 canonical colliders,
+  13 visual renderers, one LiDAR, and passing layer, bounds, raycast, contact, semantic-sensor, and
+  evidence-highlight checks. The TurtleBot3 closed-loop non-regression also succeeded: 0.456 m
+  displacement, 20 commands, 226 scans, seven costmap observations, at most 9,869 occupied cells,
+  zero stale/rejected commands, valid transport, and RTF 1.00002.
+- **TESTED/PASS:** 22 static land/reference-environment tests and launcher shell syntax. Unity's
+  player build is the authoritative C# compilation verdict. A direct
+  `dotnet build --no-restore` attempt produced no valid verdict because Unity had not generated the
+  required `project.assets.json`; it is not counted as a passing or failing source test.
+- Limits: this is a local smoke, not representative pipeline-route validation. Topic/service
+  delivery does not prove controller consumption. Native Gazebo comparison, calibrated route and
+  spawn catalog, high-fidelity material parity, and Jackal hardware dynamics are **NOT_RUN**. It
+  adds no independent explanation-study episode and no RQ1–RQ4 effect estimate. Raw outputs remain
+  ephemeral under `/tmp/crane-clearpath-platform-build.xDO9d5`; no sealed data was changed.
+
+## 2026-09-21 — industrial warehouse v2 cross-aisle calibration
+
+- **IMPLEMENTED/TESTED STATIC:** CRANE revision `626d07e` adds the manifest-driven
+  `crane-industrial-warehouse-v2`, its preserved-reference launcher, and evaluator-only
+  environment/route identity. Twenty canonical boxes, eight regions, four route contracts, and
+  build-manifest inclusion are covered by the 27-test land/reference suite. Unity 6000.5.10f1
+  produced a fresh null-graphics player with asset-set SHA-256
+  `E75545A2DD4372CA6F224A71BD70604E2E1F1B1ADF07E30327FEC9812E8CD5C4`.
+- **TESTED/NEGATIVE CALIBRATION:** `warehouse-cross-aisle-detour-v1` used a 13 m relative goal,
+  60 s client deadline, seed 1000, and ROS domain 227. Transport, odometry, LiDAR, commands, and
+  populated costmaps were valid, but the action timed out after 2.770 m displacement. The robot
+  turned near the center route divider and then oscillated/crept without completing a side-aisle
+  detour. The deadline produced a client cancel; no recovery or mission-failure claim is made.
+- The first attempted ROS domain, 248, exceeded Fast DDS's valid port calculation range and has no
+  simulation/navigation verdict. It was rerun once on a valid domain for infrastructure validity,
+  not because of an outcome. A separate 22.8 m north-route attempt aborted because its goal lay
+  outside the frozen 30 m rolling global costmap; the frozen Nav2 file was not modified.
+- **TESTED/NEGATIVE DIAGNOSTIC:** the canonical side gaps are 3.5 m, the physical base's
+  circumscribed radius is 0.188 m, and the shared costmap radius was 0.75 m. A single rerun on ROS
+  domain 226 used a separate ecological parameter file with radius 0.22 m and inflation 0.55 m.
+  Maximum occupied cells fell from 8,750 to 4,996, but the action again timed out at essentially
+  the same endpoint after 2.775 m displacement. Oversized inflation is therefore not the sole
+  limiting cause.
+- Trajectory evidence shows the plant accepted linear/angular commands and alternated large turns
+  while moving near its 0.26 m/s physical limit. Nav2 requested up to 0.8 m/s linear and 1.25 rad/s
+  angular velocity; CRANE clamps the former to 0.26 m/s but does not proportionally scale the
+  latter. Realized-curvature mismatch is the next bounded diagnosis target. No second tuning change
+  was run in this session.
+- **NOT_RUN:** representative route success, v2-specific structural/physics validator,
+  interactive inspection, recovery/blockage contracts, explanation evaluation, and repeated
+  scenario qualification. Raw calibrations remain ephemeral under
+  `/tmp/crane-warehouse-v2d-build.IDNwQU`; sealed study data and frozen artifacts were untouched.
+
+## 2026-09-21 — industrial warehouse v2 nominal route qualification
+
+- **ROOT CAUSE/FIX:** ROS FLU positive yaw was applied directly as Unity positive-Y torque even
+  though the navigation pose maps Unity `(x,z)` to ROS `(-y,x)`. This reversed the physical turn
+  relative to the published pose. CRANE revision `0ebfcee` negates yaw only at the land
+  differential command boundary; no RoboBoat code or configuration changed. Unity 6000.5.10f1
+  compiled the change, and the unchanged controlled 1 m corridor subsequently succeeded with
+  0.456 m physical displacement, 20 returned commands, populated costmaps, and zero clock/stale
+  errors.
+- The ecological-only Nav2 file now matches the TurtleBot3-class 0.26 m/s physical maximum. Its
+  endpoint is a manifest-defined goal region without terminal orientation, so the checker does not
+  promote the harness's inherited start quaternion into an undeclared task requirement. The action
+  deadline is 75 s because the declared 16.5 m detour has a 63.5 s no-stop lower bound at the
+  physical speed limit. Frozen controlled-study parameters are unchanged.
+- **TESTED/PASS:** after one infrastructure-invalid attempt with 2,780 clock-rewind warnings, the
+  single allowed rerun on isolated ROS domain 220 succeeded in 54.627 s with zero rewinds and zero
+  stale/rejected commands. It retained 527 returned controller commands, 204 costmap observations,
+  8,531 maximum occupied cells, 12.581 m goal displacement, and RTF 1.00002. The 1 Hz retained
+  trajectory sampled 13.607 m of travel and a 1.998 m westward lateral excursion around the center
+  divider before returning toward the goal. The invalid attempt is retained and is not a failed
+  navigation verdict.
+- **TESTED/PASS:** the new native-warehouse reference target independently found 20 canonical
+  colliders, 20 collider-free visual renderers, 28 unique semantic identities, floor contact,
+  semantic LiDAR evidence on `rack-center-blocker`, evidence highlighting without collider
+  mutation, 0.150 m forward differential motion, and 19.075° turn response. It reports
+  `STRUCTURAL_PASS`, `PHYSICS_PASS`, `SENSOR_PASS`, `HEADLESS_PASS`, and `EXPLANATION_READY`.
+- **IMPLEMENTED/TESTED:** `summarize_environment_qa.py` hash-checks and merges the scenario
+  manifest, evaluator identity, structural output, navigation summary, and runtime trajectory. Its
+  warehouse record adds `NAVIGATION_PASS` while keeping `failureRecovery=NOT_RUN` and
+  `interactive=NOT_RUN`; overall verdict therefore remains `PARTIAL`. Thirty-one static land and
+  reference-tool tests pass.
+- **NOT_RUN / remaining:** interactive visual inspection, dynamic blocker/no-path/recovery route
+  qualification, repeated nominal-route determinism, and ecological explanation generation or
+  annotation. Raw outputs remain ephemeral under `/tmp/crane-warehouse-yawfix-build.y1Pmyr` and
+  `/tmp/crane-warehouse-qa-build.Bq8D4k`; no frozen or sealed artifact changed.
+
+## 2026-09-22 — warehouse interactive inspection increment
+
+- **TESTED/NEGATIVE BASELINE:** the existing fixed spectator camera was launched in an isolated X
+  display against `/tmp/crane-warehouse-qa-build.Bq8D4k`. The scene loaded, but the view was too
+  distant, perimeter walls obscured the layout, lighting was overexposed, the robot was not
+  legible, and no inspection controls or overlays existed. This is retained as the reason for the
+  bounded presentation-only change; it is not a navigation or explanation failure.
+- **IMPLEMENTED:** `CraneReferenceInspectionController` adds overview, oblique, and robot-follow
+  views; a route/environment HUD; trajectory rendering; semantic evidence highlighting; and
+  canonical-box-collider wireframes. It changes only the spectator camera and render-only overlay
+  objects. Deterministic launch flags mirror the `1`/`2`/`3`, `H`, `C`, and `T` keyboard controls.
+- **TESTED/PASS:** Unity 6000.5.10f1 regenerated the warehouse scene and produced a fresh Linux
+  development player. Isolated 1280×720 screenshots visually confirmed a readable full-layout
+  overview and oblique view, correct `crane-industrial-warehouse-v2` and
+  `warehouse-cross-aisle-detour-v1` HUD identity, semantic-overlay state, trajectory state, and
+  visible wireframes around canonical geometry. Wayland was explicitly removed from the player
+  environment so the audit remained on its own X display and did not open a host window.
+- **TESTED/NON-REGRESSION:** all 31 land/reference static tests passed. The new build's headless
+  warehouse validator returned `valid=true`, 20 canonical colliders, 20 collider-free renderers,
+  28 unique semantic IDs, zero duplicates, and unchanged `STRUCTURAL_PASS`, `PHYSICS_PASS`,
+  `SENSOR_PASS`, `HEADLESS_PASS`, and `EXPLANATION_READY` results. The build includes the existing
+  RoboBoat scene and compiled shared assemblies, but no parallel-workstream RoboBoat runtime was
+  touched or rerun.
+- **PARTIAL / remaining:** direct manual keyboard polling was not exercised; attempted synthetic X
+  key injection did not change the view, so only deterministic launch controls are counted as
+  tested. Dynamic blockage/no-path/recovery scenarios and ecological explanation evaluation remain
+  `NOT_RUN`. Screenshots and build outputs are ephemeral under `/tmp`; frozen study data and sealed
+  artifacts were not modified.
+
+## 2026-09-22 — manifest-driven warehouse blockage calibration
+
+- CRANE revision `db39095`; Unity `6000.5.10f1`; warehouse manifest version `2.1.0`, SHA-256
+  `7462c373be4cceecd88ecbe0f510ab36cddb33dd0d15b602beda22d0355d80cc`.
+- **IMPLEMENTED/TESTED:** the warehouse manifest now defines static full-width, delayed,
+  temporary, and occupied-goal scenario obstacles with stable semantic/scenario/route identities.
+  Canonical colliders remain authoritative, presentation objects mirror their state, and scheduled
+  and actual fixed-simulation-time boundaries are written only to evaluator truth. Reapplying a
+  scenario destroys its prior timer callbacks together with its scenario-owned geometry.
+- **TESTED/PASS:** 37 land/reference static tests and launcher shell syntax passed. A fresh Linux
+  player build succeeded. Nominal headless validation remained `valid=true` with 20 canonical
+  colliders, 20 collider-free renderers, 28 unique semantic identities, and unchanged
+  `STRUCTURAL_PASS`, `PHYSICS_PASS`, `SENSOR_PASS`, `HEADLESS_PASS`, and `EXPLANATION_READY` gates.
+- **TESTED/NEGATIVE CALIBRATION:** the full-width barrier run remained active until its 75.03 s
+  client deadline. It displaced 4.302 m, returned 729 commands, retained 279 costmap observations,
+  and reversed course substantially as the rolling costmap revealed geometry. This is real
+  obstacle-driven path change, but not a Nav2 abort or recovery result.
+- **TESTED/NEGATIVE CALIBRATION, REPLICATED:** the final occupied-goal run on isolated ROS domain
+  223 and TCP port 10570 ended at its 45.03 s client deadline with 1.742 m displacement, 439
+  commands, 165 costmap observations, and 6,850 maximum occupied cells. Evaluator truth identifies
+  `warehouse-occupied-goal-no-path-v1`, route `warehouse-blocked-goal-v1`, seed 4104, and active
+  obstacle `blocked-goal-pallet-stack`. The controller repeatedly logged replacement paths until
+  the client canceled the still-active goal; no progress failure or recovery was observed.
+- **DIAGNOSIS:** the warehouse launcher selected no repository BT, so the installed stock
+  `navigate_to_pose_w_replanning_and_recovery.xml` was used (installed SHA-256
+  `5895b63840d54c6d7eee3d3b3f3ee177680af9e58a14cbf61c4df39fe5db2a90`). Continuous replanning,
+  a rolling global costmap, and `track_unknown_space: false` permit ongoing exploratory motion.
+  The scenario launchers now explicitly expect `timeout` and state that client timeout is not a
+  Nav2 abort; the unexpected runs are retained rather than relabeled.
+- **NEXT / NOT_RUN:** qualify a repository-retained, bounded ecological BT/configuration against a
+  paired unobstructed case before claiming recovery or terminal failure. Frozen controlled-study
+  parameters and artifacts were unchanged. Raw calibration/build outputs remain ephemeral under
+  `/tmp/crane-warehouse-*`.
+
+## 2026-09-22 — bounded ecological warehouse policy and BT QA
+
+- CRANE revisions `ea2f86c` (warehouse policy) and `37809b9` (generic passive QA metrics); exact
+  warehouse tree SHA-256
+  `423c61f90a57c79a1bae0580eb24a3866eee5169f888ac58cdca40e7db7656f3`.
+- **IMPLEMENTED:** `nav2_warehouse_replanning_deadline.xml` retains the installed stock tree's 1 Hz
+  replanning, contextual clearing, and six-retry recovery structure, but wraps it in an explicit
+  70 s BehaviorTree.CPP steady-clock `Timeout`. Its 80 s client deadline is a later failsafe. This
+  ecological policy is separate from the hash-frozen controlled-study BT and parameters.
+- **TESTED/NEGATIVE CALIBRATION:** the first root guard used Nav2 Jazzy `TimeExpired`. The paired
+  nominal route succeeded, but the blocked route remained active until the 80.03 s client deadline.
+  Source inspection showed why: `TimeExpired` returns `FAILURE` while waiting and reinitializes the
+  next time it is ticked from inactive status, so this root-guard placement never accumulated the
+  configured interval. The run remains retained and was not called an abort.
+- **TESTED/PAIRED PASS:** under the exact final tree, the unobstructed route succeeded in 53.38 s,
+  displaced 12.597 m, returned 524 commands, and retained 199 costmap observations. The complete
+  barrier case aborted in 71.10 s—before client cancellation—after 4.568 m displacement, 699
+  commands, and 268 costmap observations. Both had zero clock rewinds and zero stale/rejected
+  commands. This establishes a task-policy terminal outcome, not obstacle physical causation.
+- **GENERIC SHARED CHANGE / TESTED:** the action-owning fixture now passively summarizes delivered
+  `BehaviorTreeLog` transitions and NavigateToPose recovery-count feedback. A controlled 3 m
+  TurtleBot3 corridor non-regression succeeded with 97 delivered transitions, 974 feedback
+  messages, and recovery sequence `[0]`. No RoboBoat source, environment, vehicle, or configuration
+  changed; no RoboBoat runtime was started.
+- **TESTED/INSTRUMENTED REPLICATION:** the complete-barrier run again aborted at 71.18 s. It
+  retained 629 delivered BT transitions, including `Timeout: IDLE→RUNNING`, 7,001 feedback
+  messages, and recovery sequence `[0]`. The terminal `Timeout` transition is absent, consistent
+  with the audited Jazzy terminal-tick flush limitation; the action result remains authoritative.
+  Therefore this is terminal failure without a recorded recovery attempt.
+- **QA:** 39 land/reference static tests pass; XML and shell syntax pass. The generic summary labels
+  BT topic delivery as potentially incomplete and does not claim topic delivery proves internal
+  consumption. Raw outputs are ephemeral under `/tmp/crane-warehouse-*` and
+  `/tmp/bt-metrics-turtlebot-nonreg-001`; frozen/sealed artifacts remain unchanged.
+- **NEXT / NOT_RUN:** produce a physical warehouse or proving-ground case with a uniquely recorded
+  recovery leaf followed by success or bounded exhaustion. Do not describe the deadline-only case
+  as recovery and do not use its paired outcome alone as a physical-causation result.

@@ -117,7 +117,9 @@ The first increment implements a CRANE-native warehouse/office scene, a determin
 PNG/YAML boundary-to-collider generator, the four pinned primitive boxes from PX4 `walls`, a
 render-only ArUco landmark, and measured deterministic response to the pinned windy vector.
 Camera tag detection and physical wind calibration remain unvalidated. The Clearpath pipeline
-offline import has passed structural/contact validation; native Jazzy/Harmonic, ROS sensor, and
-Nav2 route checks remain gated on value to the primary explanation study.
+offline import has passed structural/contact validation and a local 1 m CRANE ROS/Nav2
+motion/sensor-transport smoke. A representative route, calibrated spawn/goal catalog, native
+Jazzy/Harmonic comparison, high-fidelity material parity, and Jackal hardware dynamics remain
+unvalidated. Topic/service delivery does not establish controller consumption.
 
 This choice strengthens explanation fidelity: the study can prove which geometry and hidden interventions existed while still restricting generated explanations to the evidence the robot actually received.

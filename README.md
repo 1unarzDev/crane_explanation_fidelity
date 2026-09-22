@@ -12,6 +12,12 @@ observation from inference, and checks what the final language actually claims.
 
 `runtime/physical evidence + exact source provenance → checked propositions → language → final-text check`
 
+The TRUSTMORE evaluation is intentionally narrower than CRANE's platform scope. Land/Nav2 is the
+primary controlled and ecological navigation domain; RoboBoat is the intended physically distinct
+surface demonstration if its parallel workstream qualifies it. Existing aerial and underwater
+environments are retained as validated/developing infrastructure but are
+`DEFERRED_POST_SUBMISSION`, not advertised as explanation-study results.
+
 ## Clone and initialize
 
 Clone the pinned primary components, then initialize astro_dock's nested dependencies and the
@@ -59,15 +65,36 @@ their own location. Exact repository commits and destinations are recorded in
 - **TESTED:** genuine land controller-progress recovery/exhaustion after fixing the missing
   simulated clock, plus a headless TurtleBot3 Waffle-class warehouse/Nav2 success smoke using
   canonical semantic geometry separated from visuals.
+- **IMPLEMENTED, TESTED (ECOLOGICAL CALIBRATION):** an eight-layout manifest-driven land proving
+  ground with canonical/visual separation, semantic evidence IDs, headless QA, inspection views,
+  and eight behaviorally qualified scenario motifs spanning weave, corrected S-turn, offset gates,
+  alternate route, narrow doorway, U-trap, dynamic-gate recovery-success, and bounded blockage
+  abort. The original straight-through slalom remains a negative geometry calibration; direct
+  keyboard view switching passes on the additive v2 revision. Corrected S-turn, dynamic recovery,
+  and bounded blockage each pass a three-run exact-condition repeatability gate; these repetitions
+  are not independent study episodes. Explanation generation and blinded annotation remain unrun.
+- **IMPLEMENTED, TESTED (ECOLOGICAL CALIBRATION):** the warehouse temporary-enclosure scenario
+  passes a prospective three-run recovery-followed-by-success repetition gate with exact manifest,
+  route, obstacle, seed, and configuration identity. Recovery feedback varies across runs; these
+  operational repetitions are not independent study episodes or evidence of physical causation.
+- **ECOLOGICAL PILOT INPUT CLOSED (DEVELOPMENT ONLY):** the pilot-ready set is exactly warehouse
+  recovery, complete blockage, and corrected S-turn. Their separated evidence, truth, QA, and
+  provenance records are governed under `data/{robot_visible,evaluator_only}/dev/ecological-pilot-v1/`.
+  `dynamic-gate-v1` is historical calibration only; U-trap has no current qualified export and is
+  excluded. Environment/platform development now stops in favor of explanation evaluation.
 - **IMPLEMENTED, TESTED:** deterministic F1TENTH PNG/YAML contour-to-collider generator and Unity
   importer, qualified headlessly on the externally retained pinned Spielberg map. Full-lap ROS
   control and source-simulator comparison remain unrun.
-- **IMPLEMENTED, TESTED:** PX4 `walls.sdf` primitive reconstruction with pinned provenance,
-  semantic wall IDs, separate collision/visual layers, and headless aerial/contact/ray checks.
-- **IMPLEMENTED, TESTED:** PX4 ArUco render-only landmark invariant and pinned windy scenario with
-  repeatable measured CRANE response; camera detection and physical wind calibration remain unrun.
+- **VALIDATED INFRASTRUCTURE / DEFERRED_POST_SUBMISSION:** PX4 `walls.sdf` primitive reconstruction
+  with pinned provenance, semantic wall IDs, separate collision/visual layers, and headless
+  aerial/contact/ray checks.
+- **VALIDATED INFRASTRUCTURE / DEFERRED_POST_SUBMISSION:** PX4 ArUco render-only landmark invariant
+  and pinned windy scenario with repeatable measured CRANE response; camera detection and physical
+  wind calibration remain unrun.
 - **IMPLEMENTED, TESTED:** offline Clearpath 2.9.4 pipeline SDF/resource manifest and Unity import;
-  generated upstream assets stay out of Git. Geometry/layers/contact passed; ROS/Nav2 remains unrun.
+  generated upstream assets stay out of Git. Geometry/layers/contact passed, as did a local 1 m
+  ROS/Nav2 motion and sensor-transport smoke. Representative route and native-Gazebo comparison
+  remain unrun.
 - **TESTED (PIPELINE SMOKE):** A/B/C/D/E over real success and cancellation episodes with a
   rule-based generator; identical outputs validate parity and routing but are not an LLM comparison
   or evidence for RQ1/RQ2.
@@ -148,6 +175,9 @@ never share an output root, cache root, manifest name, or annotation file.
 After setup, DVC/R2 synchronization is documented in [governed artifact storage](docs/DATA_STORAGE.md).
 R2 does not provide a hard free-tier spending cap; the project wrapper requires account-wide
 metrics and stops at conservative 90% guard thresholds, but it cannot guarantee zero fees.
+To materialize the governed ecological pilot inputs from a fresh checkout, configure the private
+remote as documented there and run `scripts/dvc_r2_sync.sh pull`; do not substitute historical
+runtime directories or evaluator truth for robot-visible model input.
 
 ## Runtimes and checkpointing
 
@@ -193,6 +223,9 @@ delivered odometry proven controller consumption.
 - [Research audit](docs/RESEARCH.md)
 - [Decision log](docs/DECISIONS.md)
 - [Environment requests](docs/ENVIRONMENT_REQUESTS.md)
+- [Environment catalog and empirical scope](docs/ENVIRONMENTS.md)
+- [Environment architecture](docs/ENVIRONMENT_ARCHITECTURE.md)
+- [Environment validation gates](docs/ENVIRONMENT_VALIDATION.md)
 - [Reference-environment source audit](docs/research/REFERENCE_ENVIRONMENTS.md)
 - [Nav2 Jazzy recovery provenance audit](docs/research/NAV2_JAZZY_RECOVERY_PROVENANCE.md)
 

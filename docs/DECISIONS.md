@@ -1,5 +1,27 @@
 # Decision Log
 
+## 2026-09-22 — close environment/platform development at three ecological pilot inputs
+
+- Decision: close the submission environment workstream with exactly three development-only,
+  current-qualified inputs: warehouse temporary-enclosure recovery, complete blockage, and the
+  corrected S-turn. Preserve their separated exports, evaluator truth, QA summaries, and source
+  provenance in governed DVC storage. Begin information-parity explanation evaluation and blinded
+  annotation rather than adding or tuning environments.
+- Evidence: all three pass their declared route, headless, and explanation-readiness gates with
+  exact scenario/configuration hashes. Current source-qualified `dynamic-gate-v1` attempts did not
+  reproduce its historical recovery-success result, and no current qualified U-trap export exists.
+  The exporter now retains bounded recovery-classifier provenance and marks scan/costmap summaries
+  delivered but not proven consumed.
+- Boundaries: `dynamic-gate-v1` is `HISTORICAL_CALIBRATION_ONLY`; its successful historical result
+  and negative current calibrations remain intact. U-trap is excluded, not relabeled. No Unity
+  builds are retained, no new perception stack is added, and explanations must withhold physical
+  obstacle causation and internal controller consumption.
+- RQ impact: these artifacts support a small ecological information-parity pilot, not an effect
+  estimate or confirmatory expansion. Independent episode collection, blinded annotation,
+  statistics, figures, and manuscript work now dominate submission value.
+- Revisit: no environment expansion before submission unless a manuscript-critical validity gap
+  cannot be addressed from the retained land artifacts or the separately owned RoboBoat workstream.
+
 ## 2026-09-21 — retain and stratify an operator-reported load-balancer source change
 
 - Decision: retain all sealed calls, preserve the frozen paired F-versus-G primary analysis, and
@@ -697,3 +719,52 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   evaluator-owned intervention into robot-visible evidence.
 - Validity risk: this is synthetic fault injection. Explanations may describe recorded BT
   mechanism but must not claim a physical cause or identify the hidden intervention.
+
+## 2026-09-21 — preserve imported Clearpath geometry during Nav2 validation
+
+- Decision: recognize the generated Clearpath pipeline scene in the existing land Nav2 bootstrap,
+  but retain its scene-authored spawn and imported canonical geometry. Reject synthetic corridor
+  blockers in this mode rather than silently changing the reference task.
+- Evidence: a graphics-free 1 m smoke succeeded while evaluator truth recorded
+  `referenceEnvironmentPreserved=true`; the separate reference validator still found all 11
+  canonical colliders, 13 visual renderers, semantic sensor/raycast resolution, rigid contact, and
+  unchanged highlight behavior.
+- Alternatives: replace the imported world with the synthetic corridor; add Clearpath-specific
+  motion/ROS infrastructure; or defer all navigation checks after completing only structural
+  validation.
+- RQ impact: provides a narrow recognizable-platform transport and motion check without granting
+  the explanation system privileged world truth or changing canonical task feasibility.
+- Validity risk: the 1 m local goal is not a representative pipeline route, and delivered scans or
+  costmap observations do not prove controller consumption. Native Gazebo comparison, route/spawn
+  calibration, material parity, and Jackal hardware dynamics remain **NOT_RUN**.
+
+## 2026-09-21 — defer underwater and aerial explanation validation until after TRUSTMORE 2026
+
+- Decision: keep CRANE's multi-domain architecture and all existing aerial/underwater code,
+  environments, assets, and scoped validation results, but mark their remaining navigation and
+  explanation validation `DEFERRED_POST_SUBMISSION`. Submission-critical environment work is the
+  frozen controlled land/Nav2 study, obstacle-rich warehouse/industrial validation, and a
+  configurable land proving ground. RoboBoat remains a parallel, separately owned surface-domain
+  demonstration if it qualifies.
+- Evidence: land/Nav2 already supplies the highest-throughput path for runtime/source provenance,
+  recovery, termination, evidence insufficiency, and blinded paired evaluation. Existing aerial
+  results qualify geometry/physics motifs but do not provide an explanation-study navigation
+  sample; underwater would require substantial autonomy and evidence integration. Before the
+  October 4 deadline, independent episodes, ecological land behavior, annotation, analysis,
+  figures, and paper work have higher validity value than shallow domain breadth.
+- Alternatives: continue aerial and underwater integration in parallel; require one example from
+  every CRANE domain; or remove those environments entirely. The first two dilute the powered and
+  ecological evidence path, while removal would discard useful post-submission infrastructure and
+  misrepresent completed work.
+- RQ impact: the frozen confirmatory hypothesis remains unchanged and land/navigation remains its
+  declared primary domain. Cross-domain robustness is exploratory; RoboBoat may add a distinct
+  surface demonstration, while aerial/underwater claims move to future work. This decision does
+  not imply that missing aerial/underwater experiments invalidate the primary result.
+- Governance: `docs/STUDY_DESIGN.md`, `docs/BENCHMARK.md`, and
+  `docs/ANNOTATION_GUIDE.md` are hash-governed by the existing study freeze and were deliberately
+  left unchanged. This planning decision adds no freeze amendment because it changes neither the
+  frozen protocol nor its already-land-primary estimand.
+- Revisit only after (1) frozen provenance collection and annotation are complete, (2) ecological
+  land scenarios are validated, (3) primary statistics and figures regenerate reproducibly,
+  (4) manuscript-critical work is on schedule, and (5) another domain is demonstrably more
+  valuable than additional land evidence or paper work.
