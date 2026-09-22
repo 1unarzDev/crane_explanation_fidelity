@@ -7,6 +7,7 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+from typing import Any
 
 
 def inventory(paths: list[tuple[str, Path]]) -> dict[str, int | str]:
@@ -35,6 +36,45 @@ def load_outputs(workspace: Path, roots: list[str]) -> list[dict]:
     return outputs
 
 
+def audit_artifact_list_manifest(workspace: Path, manifest: dict[str, Any]) -> dict[str, Any]:
+    """Validate current per-episode manifests without interpreting sealed response content."""
+
+    artifacts = manifest.get("artifacts")
+    if not isinstance(artifacts, list):
+        raise SystemExit("manifest has neither aggregate roots nor an artifact list")
+    seen: set[str] = set()
+    total_bytes = 0
+    for entry in artifacts:
+        relative = entry.get("path")
+        if not isinstance(relative, str) or not relative:
+            raise SystemExit("artifact path must be a non-empty string")
+        if relative in seen:
+            raise SystemExit(f"duplicate artifact path: {relative}")
+        seen.add(relative)
+        path = (workspace / relative).resolve()
+        if not path.is_relative_to(workspace):
+            raise SystemExit(f"artifact escapes workspace: {relative}")
+        if not path.is_file():
+            raise SystemExit(f"missing artifact: {relative}")
+        content = path.read_bytes()
+        actual_bytes = len(content)
+        actual_sha256 = hashlib.sha256(content).hexdigest()
+        if actual_bytes != entry.get("bytes"):
+            raise SystemExit(
+                f"artifact bytes differ for {relative}: {actual_bytes} != {entry.get('bytes')}"
+            )
+        if actual_sha256 != entry.get("sha256"):
+            raise SystemExit(f"artifact sha256 differs for {relative}")
+        total_bytes += actual_bytes
+    return {
+        "status": "PASS",
+        "schema": manifest.get("schema"),
+        "manifest_kind": "per_episode_artifact_list",
+        "artifact_count": len(artifacts),
+        "artifact_bytes": total_bytes,
+    }
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("manifest", type=Path)
@@ -42,6 +82,9 @@ def main() -> int:
     args = parser.parse_args()
     workspace = args.workspace.resolve()
     manifest = json.loads(args.manifest.read_text(encoding="utf-8"))
+    if "accepted_output_roots" not in manifest:
+        print(json.dumps(audit_artifact_list_manifest(workspace, manifest), indent=2, sort_keys=True))
+        return 0
     outputs = load_outputs(workspace, manifest["accepted_output_roots"])
     call_references = [call for output in outputs for call in output.get("calls", [])]
     physical_references = {(call["cache_key"], call["latency_ms"]) for call in call_references}

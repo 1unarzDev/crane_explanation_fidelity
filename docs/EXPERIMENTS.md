@@ -2287,3 +2287,14 @@
   unmasked pair must be inaccessible during any evaluated presentation.
 - **NOT_RUN:** independent blinded scoring, R/P/T/N comparison, prospective rerun, land analogue,
   power planning, and held-out collection. This result validates the development path only.
+
+## 2026-09-22 — current model-manifest audit compatibility
+
+- **ROOT CAUSE/FIX:** `audit_model_artifact_manifest.py` assumed the older aggregate v2 schema and
+  indexed `accepted_output_roots` unconditionally. Current sealed per-episode v1 manifests instead
+  carry an explicit artifact list. The auditor now dispatches by schema shape, validates every
+  listed path, byte count, and SHA-256, rejects duplicate/escaping paths, and retains the aggregate
+  audit behavior.
+- **TESTED/PASS:** all 33 `pn-*` per-episode manifests validate; the 18-episode aggregate
+  development manifest still reproduces 545 logical outputs and 231 physical cache artifacts; the
+  combined CPU-only suite passes 114 tests. No frozen manifest or retained artifact changed.

@@ -50,10 +50,10 @@ Audited against umbrella commit `04b1fe7` and current governed storage on 2026-0
 | Manuscript | `paper/` contains only a README; no paper source exists | Manuscript completion is a critical risk; claims must start from the map below rather than retrospective narrative |
 | Archive restoration | **PASS:** a clean `origin/main` clone configured its local R2 remote, pulled all seven governed roots, and matched all 1,551 artifacts referenced by 99 episode/model manifests | Reproduction requires private credentials and the documented local remote-configuration step; builds and staging data are intentionally outside this snapshot |
 
-The existing `analysis/audit_model_artifact_manifest.py` expects an older aggregate-manifest schema
-and raises `KeyError: accepted_output_roots` on current per-episode manifests. Direct validation of
-all current manifest entries passes. This utility mismatch is a reproducibility defect to fix
-without changing frozen artifacts.
+The model-artifact auditor now dispatches between the older aggregate schema and current
+per-episode artifact-list schema. It hash/size-validates all 33 retained per-episode manifests and
+continues to reproduce the aggregate development audit. Frozen manifests and artifacts were not
+changed.
 
 ## Revised prospective questions
 
