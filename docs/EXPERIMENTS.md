@@ -560,6 +560,27 @@
   environment-build directories were removed, freeing roughly 12 GB, and the governed run then
   completed without changing any frozen file, runtime, prompt, or call policy.
 
+## 2026-09-22 — sealed pn-0029 inclusion and model calls
+
+- **CAPTURED ONCE / INCLUDED:** frozen recovery-followed-by-success row `pn-0029`, seed 3029,
+  passed every answer-blind inclusion gate and the exact expected-success contract. The action
+  succeeded after one unique Wait invocation with 3.717 m displacement, 255 returned controller
+  commands, 80 costmap observations, maximum 13,598 occupied cells, and accepted 10/7-unit parity
+  audits. The capture used the exact frozen CRANE commit `c559932a5ebef00bfa7752511799fd904e5c9dbe`;
+  the working gitlink was restored to `c46de4d7e83a18ebef3abc4c97eff1b706a79282` afterward.
+- **SEALED MODEL CALLS RETAINED / NOT ANNOTATED:** both frozen questions ran once for F/G/H with
+  Luna-low: six unique calls, no retries, 481,153 input tokens, 326,912 cached input tokens, 4,681
+  output tokens, 801 reasoning tokens, and 138.454 s aggregate latency. G's failure-cause
+  realization passed final-text verification; its recovery-mechanism realization failed exact
+  verification and used the frozen deterministic checked-template fallback. No repair call or
+  resampling was made. No output was scored or used to alter the protocol. A--E remain non-model
+  smoke outputs and frozen model evaluation is `NOT_RUN`. Hashes and usage are retained in
+  `manifests/model_outputs/pn-0029-provenance-v1.json`.
+- **VERIFIED:** the robot-visible leakage scan passed across all 24 retained files. Robot-visible,
+  evaluator-only, output, and cache payloads are content-addressed by their retained manifests and
+  DVC pointers. Frozen design, prompts, split, annotation guide, runtime, inclusion rules, and
+  stopping rules were unchanged.
+
 ## 2026-09-21 — sealed pn-0027 inclusion and model calls
 
 - **CAPTURED ONCE / INCLUDED:** frozen recovery-success row `pn-0027`, seed 3027, passed every
