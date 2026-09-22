@@ -47,6 +47,13 @@ produced byte-identical physically separate evidence planes whose robot-visible 
 passed. This establishes an ecological pipeline input, not explanation correctness; generation,
 information-parity audit, blinded annotation, and statistical evaluation remain `NOT_RUN`.
 
+Because 3,994 records approached the former shared 4,096 bound, ecological warehouse and
+proving-ground launchers now use an explicit 16,384-transition capacity while the shared/frozen
+default remains unchanged. A second current-build warehouse run retained all 3,950 unique
+transitions and all four completed recovery-leaf invocations with zero drops, and reported both
+configured capacities and retained counts. The repeated mechanism is a capacity qualification,
+not an additional independent episode; whole-history completeness remains `not_proven`.
+
 ## Retained infrastructure validation
 
 | Environment | Retained result | Missing full validation | Submission status |

@@ -1,5 +1,27 @@
 # Experiment Log
 
+## 2026-09-22 — ecological BT capture-capacity qualification
+
+- **IMPLEMENTED:** CRANE revision `ac10443` keeps the shared/frozen fixture defaults at 4,096
+  transitions and 1,024 recovery invocations, but gives warehouse and proving-ground ecological
+  launchers a bounded 16,384-transition default. The capture summary and separated exporter now
+  expose configured capacities and retained counts so truncation risk is auditable rather than
+  inferred from a near-limit record count.
+- **TESTED / DEVELOPMENT ONLY:** a second current-build
+  `warehouse-temporary-enclosure-recovery-v1` run on isolated ROS domain 91 and TCP port 11291
+  succeeded. It retained all 3,950 unique transitions and four completed recovery-leaf
+  invocations (`Spin`, `Wait`, `BackUp`, `Spin`) against capacities 16,384 and 1,024, with zero
+  dropped transitions or invocations. The maximum Nav2 feedback recovery count was 16; this remains
+  a different count stream and does not convert four recorded BT invocations into an exact
+  whole-history count.
+- **COMPLETENESS LIMIT RETAINED:** the configured root terminal transition was again absent and
+  `BehaviorTreeLog` still provides no publisher sequence number. History therefore remains
+  `not_proven`, exact-count eligibility remains false, and no physical-causation claim is licensed.
+- **REGRESSION:** 83 land/reference tests (plus two subtests), 105 umbrella/core tests, and four
+  frozen-study integrity tests pass. The runtime root remains ephemeral under
+  `/tmp/warehouse-btcap-dev-20260922-02`; it is neither a sealed study episode nor an independent
+  statistical sample. Frozen/DVC artifacts and RoboBoat-specific content were untouched.
+
 ## 2026-09-22 — current-build warehouse BT capture and separated ecological export
 
 - **BUILD PASS:** Unity CLI 1.0.0-beta.5 used installed Unity 6000.5.10f1 and the repository's
