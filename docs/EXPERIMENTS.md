@@ -1405,3 +1405,36 @@
   spawn catalog, high-fidelity material parity, and Jackal hardware dynamics are **NOT_RUN**. It
   adds no independent explanation-study episode and no RQ1–RQ4 effect estimate. Raw outputs remain
   ephemeral under `/tmp/crane-clearpath-platform-build.xDO9d5`; no sealed data was changed.
+
+## 2026-09-21 — industrial warehouse v2 cross-aisle calibration
+
+- **IMPLEMENTED/TESTED STATIC:** CRANE revision `626d07e` adds the manifest-driven
+  `crane-industrial-warehouse-v2`, its preserved-reference launcher, and evaluator-only
+  environment/route identity. Twenty canonical boxes, eight regions, four route contracts, and
+  build-manifest inclusion are covered by the 27-test land/reference suite. Unity 6000.5.10f1
+  produced a fresh null-graphics player with asset-set SHA-256
+  `E75545A2DD4372CA6F224A71BD70604E2E1F1B1ADF07E30327FEC9812E8CD5C4`.
+- **TESTED/NEGATIVE CALIBRATION:** `warehouse-cross-aisle-detour-v1` used a 13 m relative goal,
+  60 s client deadline, seed 1000, and ROS domain 227. Transport, odometry, LiDAR, commands, and
+  populated costmaps were valid, but the action timed out after 2.770 m displacement. The robot
+  turned near the center route divider and then oscillated/crept without completing a side-aisle
+  detour. The deadline produced a client cancel; no recovery or mission-failure claim is made.
+- The first attempted ROS domain, 248, exceeded Fast DDS's valid port calculation range and has no
+  simulation/navigation verdict. It was rerun once on a valid domain for infrastructure validity,
+  not because of an outcome. A separate 22.8 m north-route attempt aborted because its goal lay
+  outside the frozen 30 m rolling global costmap; the frozen Nav2 file was not modified.
+- **TESTED/NEGATIVE DIAGNOSTIC:** the canonical side gaps are 3.5 m, the physical base's
+  circumscribed radius is 0.188 m, and the shared costmap radius was 0.75 m. A single rerun on ROS
+  domain 226 used a separate ecological parameter file with radius 0.22 m and inflation 0.55 m.
+  Maximum occupied cells fell from 8,750 to 4,996, but the action again timed out at essentially
+  the same endpoint after 2.775 m displacement. Oversized inflation is therefore not the sole
+  limiting cause.
+- Trajectory evidence shows the plant accepted linear/angular commands and alternated large turns
+  while moving near its 0.26 m/s physical limit. Nav2 requested up to 0.8 m/s linear and 1.25 rad/s
+  angular velocity; CRANE clamps the former to 0.26 m/s but does not proportionally scale the
+  latter. Realized-curvature mismatch is the next bounded diagnosis target. No second tuning change
+  was run in this session.
+- **NOT_RUN:** representative route success, v2-specific structural/physics validator,
+  interactive inspection, recovery/blockage contracts, explanation evaluation, and repeated
+  scenario qualification. Raw calibrations remain ephemeral under
+  `/tmp/crane-warehouse-v2d-build.IDNwQU`; sealed study data and frozen artifacts were untouched.
