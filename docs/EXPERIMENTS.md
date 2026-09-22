@@ -2331,6 +2331,15 @@
   The proving-ground generator and catalog hashes are `a6eb6bd2...c8b` and `bea85429...720`.
   No build directory was retained in DVC; the compact build manifest, source identities, and
   reproduction command are retained instead.
+- **PRECURSOR / VALID BUT DIAGNOSTICALLY INSUFFICIENT:** the first current-source run used the
+  fixture's default rolling local costmap. After applying the scenario's already-declared
+  `aborted` expectation, runtime validity passed: action abort at 72.011 s, 3,528 trajectory
+  samples, 272 costmap observations, no stale/rejected/cross-episode commands, and evaluator
+  confirmation of the intended layout. The final 12 m local window followed the robot back past
+  the start and no longer covered the relevant route restriction or 18 m goal, so it could not
+  support a start-to-goal connectivity diagnosis. It remains an ephemeral development capture and
+  was not presented as physical evidence; the one bounded global-costmap repeat below was chosen
+  prospectively to retain the missing decisive observation, not in response to a favorable label.
 - **VALID RECORDING / PARTIAL INDUCTION:** one development repeat requested
   `complete-blockage-v1`, the 70 s ecological BT, an expected `aborted` result, and the global
   costmap service/topic on isolated ROS domain 220/TCP port 11620. Evaluator truth confirms the
