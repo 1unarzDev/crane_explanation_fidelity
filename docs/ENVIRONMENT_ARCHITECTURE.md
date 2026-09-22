@@ -58,6 +58,13 @@ work may reuse generic runtime capture and validation infrastructure, but it mus
 questions, prompts, split, inclusion rules, model configuration, annotation guide, or stopping
 rules.
 
+The separate ecological explanation contract binds qualified environment mechanisms to prospective
+questions, required robot-visible evidence planes, supported claim classes, and mandatory
+withholding boundaries. Its manifest/configuration hashes prevent scenario drift, while its
+evidence-plane validator prevents evaluator-only geometry, schedules, and expected outcomes from
+silently becoming explanation inputs. Environment qualification selects mechanisms; it is not an
+answer-fidelity result, independent sample count, or amendment to the frozen study.
+
 ## Interactive inspection
 
 Interactive cameras, semantic/collider overlays, LiDAR or camera-frustum displays, path and

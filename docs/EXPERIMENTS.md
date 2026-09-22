@@ -1,5 +1,25 @@
 # Experiment Log
 
+## 2026-09-22 — ecological land scenario-to-question contract
+
+- **IMPLEMENTED / DEVELOPMENT ONLY:** a non-frozen contract maps five qualified land mechanisms
+  to ten prospective evidence-rich questions: warehouse recovery-success, dynamic-gate
+  recovery-success, bounded blockage termination, corrected S-turn route shape, and U-trap route
+  change. Five questions require partial answers because physical cause, controller consumption,
+  no-path, optimality, exact counts without complete invocation identity, or counterfactual success
+  are not established by the allowed runtime evidence.
+- **VALIDATED:** every scenario resolves against its exact environment manifest, runtime seed,
+  catalog entry, manifest SHA-256, and derived configuration SHA-256. Robot-visible and
+  evaluator-only evidence vocabularies are disjoint; required evidence is restricted to the former;
+  question IDs are unique; withholding boundaries are mandatory; and `REPETITION_PASS` requires at
+  least three declared qualified runs. The contract validates as 5 scenarios, 10 questions,
+  and 5 explicitly partial questions. Contract SHA-256 is
+  `bfd344cb22ad307a7dd9be2fb885a555466aae3a5ca53e0e87f1fa2f62f7bd3c`.
+- **BOUNDARY:** qualification hashes select mechanisms but do not supply model-visible obstacle
+  identity, schedules, geometry, or expected outcomes. This is not a frozen-study amendment,
+  independent episode collection, answer generation, annotation, or performance evidence. Frozen
+  artifacts, DVC payloads, and RoboBoat-specific files were untouched.
+
 ## 2026-09-22 — warehouse direct keyboard inspection and Follow-view correction
 
 - **INTERACTIVE_PASS:** a dedicated X11 display at `:96` and an explicitly focused player window
