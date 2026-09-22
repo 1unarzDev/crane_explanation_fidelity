@@ -1,0 +1,284 @@
+\documentclass[conference]{IEEEtran}
+
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{url}
+
+\newcommand{\system}{\textsc{Crane-Explain}}
+\newcommand{\pending}[1]{\textcolor{red}{[PENDING: #1]}}
+
+\title{Beyond Terminal Events: Evidence-Checked Physical Diagnosis\\
+for Natural-Language Robot Navigation Explanations}
+
+\author{Anonymous submission}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Robot navigation systems expose action results, behavior-tree transitions, maps, commands, and
+motion estimates, yet a fluent explanation can still stop at ``recovery was exhausted'' or invent
+a physical cause that those signals do not establish. We present a diagnosis-to-language pipeline
+that first computes a bounded physical or execution mechanism, links it to exact runtime and source
+evidence, records conflicting evidence and unresolved alternatives, and only then realizes and
+checks natural language. We distinguish diagnostic correctness from language faithfulness and
+measure both against repository-aware agents with matched evidence and tool access. A separately
+preserved legacy study evaluates runtime-to-source provenance and factual restraint but is not
+reinterpreted as physical diagnosis. The prospective study tests geometric restriction and
+command-to-motion mechanisms in simulated land navigation and a focused surface-vessel setting,
+including cases with deliberately missing decisive evidence. \pending{Insert independently
+annotated supported-diagnostic-success effects, clustered confidence intervals, material-error
+risk, and fallback frequency after the protocol is frozen and held-out evaluation completes.}
+\end{abstract}
+
+\section{Introduction}
+
+The last message emitted by a navigation stack is rarely its most useful explanation. An action
+may abort after recovery exhaustion, but a user or maintainer needs to know what prevented a
+successful path or execution. Conversely, telemetry preceding an abort does not license an
+unobserved obstacle identity, a unique actuator defect, or a causal claim about wind or waves.
+Natural-language generation makes this tension acute: the most readable answer can be the least
+auditable one.
+
+We study explanations whose claims are constrained by retained robot evidence. Our central design
+separates five stages:
+\begin{equation*}
+\text{observations and execution evidence}
+\rightarrow \text{diagnosis}
+\rightarrow \text{checked plan}
+\rightarrow \text{language}
+\rightarrow \text{final check}.
+\end{equation*}
+The diagnosis is not free-form reasoning. It is a versioned computation over quantities with
+units, frames, time intervals, evidence identifiers, assumptions, and applicability limits. Its
+output identifies candidate mechanisms, supporting and contradictory observations, and
+alternatives that remain observationally equivalent. The language layer must preserve this
+content; if it cannot be verified after one bounded repair, the system falls back to a checked
+deterministic rendering.
+
+The paper asks three prospective questions. \emph{Q1:} do physical diagnostic computations plus
+runtime/source provenance improve correct and informative failure explanations over a strong
+repository-aware agent with equivalent evidence and tools? \emph{Q2:} does final language preserve
+the diagnosis, decisive measurements, mechanism, and limitations? \emph{Q3:} does the method give
+a mechanism when evidence supports one and narrow its answer when decisive evidence is absent?
+
+This work makes three bounded contributions:
+\begin{itemize}
+  \item a diagnosis record and checked language path that preserve measurement semantics,
+  provenance, conflicts, unresolved alternatives, and permitted causal language;
+  \item two navigation-focused diagnostics---geometric restriction and command-to-motion
+  discrepancy---with explicit conditions under which they must abstain or qualify; and
+  \item a paired evaluation design that separately scores diagnostic correctness, language
+  faithfulness, material error, useful coverage, and unnecessary abstention on diagnosable and
+  ambiguous cases.
+\end{itemize}
+We do not claim universal root-cause discovery, human trust, hardware reliability, or that
+structured records alone are novel. The empirical scope is simulation-based navigation.
+
+\section{Related Work}
+
+Liu and Brand\~ao generate environment changes that restore feasibility to otherwise unsolved
+motion-planning problems~\cite{liu2024environment}. Their work motivates geometric feasibility
+checks, but a feasible reconstructed model does not establish successful physical execution, and
+local free space does not prove global route absence. Diehl and Ramirez-Amaro learn an explicit
+causal model and search for contrastive assignments associated with success~\cite{diehl2022fail}.
+Their assumptions clarify why event order alone is not causal evidence.
+
+REFLECT organizes multisensory histories into sensory, event, and subgoal levels to explain robot
+failures~\cite{liu2023reflect}. Its reported limitations on low-level control motivate retaining
+commands, actuation evidence, and measured motion rather than only scene summaries. HEXAR routes
+questions to specialized component explainers and evaluates root-cause identification separately
+from incorrect facts~\cite{love2026hexar}. We similarly separate useful diagnosis from unsupported
+content, but additionally test whether diagnostic content survives language realization.
+
+Marine motion illustrates the need for semantic restraint: propulsion, current-relative
+hydrodynamics, wind, and wave loads are distinct terms in standard craft models~\cite{fossen2021handbook}.
+A lateral residual therefore does not uniquely establish ``wave drift.'' More generally, a
+navigation feedback field may not mean what its label suggests. In the audited Nav2 Jazzy source,
+\texttt{FollowPath.feedback.speed} is computed from the commanded velocity rather than independent
+motion~\cite{nav2controller}. Our diagnostic contracts retain command and measured motion as
+different evidence types.
+
+\section{Evidence and Diagnostic Method}
+
+\subsection{Evidence boundary}
+
+Robot-visible inputs and evaluator-only truth are physically separated. Robot-visible evidence may
+include goals, paths, action/behavior-tree traces, exact source and configuration artifacts,
+delivered scans or costmaps, commands, accepted actuation where available, and independently
+measured motion. Evaluator truth contains injected conditions, canonical simulator geometry,
+hidden force decomposition, expected propositions, and answerability labels. A diagnostic sensor
+need not have been consumed by Nav2 to establish a physical condition. Claiming that Nav2 chose an
+action \emph{because} it consumed that observation requires a recorded runtime dependency.
+
+We retain four evidence levels: recorded sequence; reconstructed software mechanism; inference
+under an explicit model; and controlled-intervention result. Temporal order alone supports only
+the first level. Every claim names its evidence IDs and level.
+
+\subsection{Diagnostic result}
+
+A diagnostic result stores the episode and interval; input hashes; measurements with units,
+frames, and timestamps; computation name and version; parameters and thresholds; assumptions and
+applicability; supporting and contradictory evidence; distinguishable and unresolved alternatives;
+the permitted causal-language level; and one fixed-menu next check. Evidence sufficiency is labeled
+independently of whether our implementation finds the desired mechanism.
+
+\subsection{Geometric restriction}
+
+The geometric diagnostic compares observed free space with the actual footprint at orientation,
+configured safety envelope, and requested path. It reports physical and configured-envelope
+clearance separately. A disconnected audited grid can establish no traversable connection only
+within that grid, resolution, threshold, and footprint model. Planner failure without such a check
+is not proof of infeasibility. When interventions are used, the system executes a new run from a
+controlled initial condition; recorded-state playback is not called a counterfactual execution.
+
+\subsection{Command-to-motion discrepancy}
+
+The execution diagnostic aligns desired commands, accepted/applied commands where available,
+actuator feedback, and independent pose or velocity. Healthy response bounds are calibrated on
+development trials and include delay and inertia. A discrepancy supports an execution-response
+mechanism but does not uniquely identify slip, collision, motor failure, or environmental loading.
+
+One concrete terminal-margin check computes
+\begin{align*}
+m_{\mathrm{return}} &= \tau_{\mathrm{task}} - e_{\mathrm{return}},\\
+\Delta e_{\mathrm{settle}} &= e_{\mathrm{settled}} - e_{\mathrm{return}},
+\end{align*}
+where $\tau_{\mathrm{task}}$ is the declared task tolerance and $e$ is independently measured goal
+error. If the action returns under its configured pose and stopped-speed thresholds, but
+$\Delta e_{\mathrm{settle}} > m_{\mathrm{return}}$ and the platform settles outside the task
+tolerance, the evidence supports an inadequate terminal stopping margin. It does not establish why
+the residual motion occurred.
+
+\subsection{Checked answer and final verification}
+
+Answers contain four short sections: \emph{Diagnosis}; \emph{Decisive evidence}; \emph{Failure
+chain}; and \emph{Limits and next check}. Measurements are included only when they support the
+mechanism. The diagnostic plan is checked before generation, but the final text is also checked.
+Unverified clauses are never silently accepted. We retain candidate text, verification outcome,
+repair/fallback decision, final text, latency, tokens, and cost where available.
+
+\section{Evaluation Design}
+
+\subsection{Separate legacy evidence set}
+
+Before the redirect, we froze a paired land/Nav2 provenance study over recovery-success and
+terminal-abort episodes. Its questions, prompts, models, verifier, rubric, split, and inclusion
+rules remain unchanged. Collection was prospectively closed at 33 included episode clusters (17
+recovery-success and 16 terminal-abort), below the frozen minimum of 40 and target of 50. The
+cohort contains 198 one-shot responses across three conditions. No sealed label or effect estimate
+was inspected when collection was closed. The study will be analyzed under its original rubric and
+reported as under-target; it is not pooled with or rescored as the diagnostic study.
+
+The legacy study evaluates software-mechanism provenance, factual restraint, and evidence
+insufficiency. Its checked condition used deterministic fallback for 46 of 66 responses (69.7\%),
+including every recovery-mechanism response. We therefore report candidate and final-output
+results separately and describe the final method as predominantly deterministic if this pattern
+remains after annotation.
+
+\subsection{Prospective diagnostic comparison}
+
+The new study compares four compact conditions. R is a strong repository-aware agent with the same
+robot-visible evidence, exact source/configuration, and the same diagnostic tools and descriptions
+available to the proposal. P receives validated diagnostic results plus provenance, checked
+planning, generation, and final verification. T deterministically renders the same diagnostic
+result. N is a new-arm provenance/checking ablation without physical diagnostic computations; it
+does not modify the archived legacy method.
+
+The primary endpoint is \emph{supported diagnostic success} on independently labeled diagnosable
+questions: the final answer identifies the required mechanism and contains no material unsupported
+or contradicted assertion. Secondary outcomes are diagnostic correctness, language faithfulness,
+material-error risk, causal overclaiming, unnecessary abstention, appropriate qualification,
+mechanism/location/time identification, evidence coverage and citation correctness, selected next
+check, latency/cost, and fallback frequency.
+
+Scenario families contain nominal success, successful compensation, similar terminal symptoms
+from different mechanisms, the same mechanism with different outcomes, irrelevant obstacles,
+sufficient versus missing evidence, false premises, and out-of-model causes. Shared layouts,
+interventions, evidence masks, and question variants stay in one split and one statistical cluster.
+Valid unexpected outcomes are retained; induction success and recording validity are reported
+separately. Development pilots determine thresholds and inform a new clustered paired power
+simulation before questions, labels, prompts, models, stopping rules, and held-out splits freeze.
+
+Two blinded annotators score randomized packets independently and disagreements are adjudicated
+before condition keys are joined. Independent reference computations, not the runtime verifier,
+provide diagnostic gold labels. Scenario-clustered paired confidence intervals are primary;
+response-level paired tests are secondary checks.
+
+\section{Development Case: Terminal Margin}
+
+We first exercised the complete path on a retained RoboBoat development run; it is not a held-out
+result. Nav2 returned success at 0.3738~m goal error while independent odometry measured
+0.04861~m/s. The exact configuration allowed 0.400~m XY error and 0.050~m/s stopped speed. Against
+the declared 0.400~m task tolerance, only 0.0262~m margin remained. The vessel then moved 0.1876~m
+and ended at 0.5614~m error. The checked answer therefore leads with an inadequate terminal margin,
+connects the configured success to post-result motion, and withholds a unique claim about motor,
+hydrodynamic, wind, current, wave, or collision causation.
+
+A paired evidence mask removes only measured speed at return. The diagnostic then reports that the
+mechanism is not established and requests synchronized return-speed evidence. This mask verifies
+selective behavior in development; it is neither an independent episode nor a confirmatory result.
+Matched post-change runs exist as retrospective development context but are excluded from the
+ordinary robot-visible packet.
+
+\section{Results}
+
+\begin{table}[t]
+\caption{Prospective diagnostic evaluation. Values remain blinded/unavailable until the protocol
+is frozen and held-out annotation is complete.}
+\label{tab:diagnostic-results}
+\centering
+\begin{tabular}{lccc}
+\toprule
+Method & Supported success & Material error & Coverage \\
+\midrule
+R & \pending{n/N} & \pending{n/N} & \pending{value} \\
+P & \pending{n/N} & \pending{n/N} & \pending{value} \\
+T & \pending{n/N} & \pending{n/N} & \pending{value} \\
+N & \pending{n/N} & \pending{n/N} & \pending{value} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\pending{Report legacy annotation/adjudication and its clustered paired estimates separately. Do
+not call the early-closed cohort powered, complete under the original stopping rule, or evidence of
+physical diagnosis.}
+
+\pending{Report diagnostic pilot-informed sample planning, final cluster counts, exclusions,
+induction success, diagnostic-output accuracy, final-language accuracy, risk--coverage curves,
+fallback frequency, paired effects with confidence intervals, and all null/negative findings.}
+
+\section{Limitations and Validity}
+
+The diagnostic families are deliberately narrow. A correct result applies only to its retained
+model, signals, interval, and assumptions. Delivered observations do not prove controller
+consumption; local geometry does not prove global infeasibility; a command--motion residual does
+not uniquely identify a physical source. Evaluator truth is unavailable to ordinary methods.
+
+Experiments use simulation. They can test controlled mechanisms and simulation-based ecological
+relevance, not hardware reliability or real-world transfer. The study measures factual and
+diagnostic outcomes, not human trust. The legacy cohort stopped below its frozen minimum and must
+be interpreted through effect sizes and uncertainty rather than significance alone. The
+development terminal-margin case was selected retrospectively; only the separately frozen
+prospective study can support comparative claims.
+
+Finally, deterministic rendering may outperform or dominate language-model realization. We treat
+that as an empirical result, report fallback frequency, and do not attribute templated final
+answers to language-model reasoning.
+
+\section{Conclusion}
+
+Useful robot explanations require more than narrating the event that ended an action. Our method
+places a validated, bounded diagnosis between robot evidence and language, then checks whether the
+final response preserved both the mechanism and its limits. The ongoing evaluation asks whether
+that added diagnostic computation improves supported diagnostic success under evidence- and
+tool-matched baselines. Regardless of the eventual effect, the artifact preserves the distinction
+between what the robot recorded, what software semantics reconstruct, what an explicit model
+supports, and what only a controlled intervention can establish.
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+\end{document}
