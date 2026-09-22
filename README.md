@@ -77,6 +77,11 @@ their own location. Exact repository commits and destinations are recorded in
   passes a prospective three-run recovery-followed-by-success repetition gate with exact manifest,
   route, obstacle, seed, and configuration identity. Recovery feedback varies across runs; these
   operational repetitions are not independent study episodes or evidence of physical causation.
+- **ECOLOGICAL PILOT INPUT CLOSED (DEVELOPMENT ONLY):** the pilot-ready set is exactly warehouse
+  recovery, complete blockage, and corrected S-turn. Their separated evidence, truth, QA, and
+  provenance records are governed under `data/{robot_visible,evaluator_only}/dev/ecological-pilot-v1/`.
+  `dynamic-gate-v1` is historical calibration only; U-trap has no current qualified export and is
+  excluded. Environment/platform development now stops in favor of explanation evaluation.
 - **IMPLEMENTED, TESTED:** deterministic F1TENTH PNG/YAML contour-to-collider generator and Unity
   importer, qualified headlessly on the externally retained pinned Spielberg map. Full-lap ROS
   control and source-simulator comparison remain unrun.
@@ -170,6 +175,9 @@ never share an output root, cache root, manifest name, or annotation file.
 After setup, DVC/R2 synchronization is documented in [governed artifact storage](docs/DATA_STORAGE.md).
 R2 does not provide a hard free-tier spending cap; the project wrapper requires account-wide
 metrics and stops at conservative 90% guard thresholds, but it cannot guarantee zero fees.
+To materialize the governed ecological pilot inputs from a fresh checkout, configure the private
+remote as documented there and run `scripts/dvc_r2_sync.sh pull`; do not substitute historical
+runtime directories or evaluator truth for robot-visible model input.
 
 ## Runtimes and checkpointing
 

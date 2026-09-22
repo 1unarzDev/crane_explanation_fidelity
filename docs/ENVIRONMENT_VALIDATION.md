@@ -30,8 +30,20 @@ relabeled to satisfy a gate.
 | Configurable proving ground | **PASS:** preserved eight-layout v1 manifest plus additive one-layout v2 slalom and one-layout v3 bounded-recovery revisions; separate canonical/presentation roots; validators report 5–7 canonical colliders, matching collider-free renderers, 7–9 unique semantic IDs, zero duplicates | **PASS for qualified revisions:** collision/drop support, 0.150 m differential motion and 19.1° turn response; dynamic obstacles use recorded fixed-simulation-time activation/removal; narrow doorway preserves its declared 1.0 m opening | **PASS:** ROS/LiDAR/odometry path, populated costmaps, and semantic hits on layout-relevant obstacles | **PASS for qualified v1/v2 revisions:** all eight original motifs pass versioned trajectory/recovery gates. Corrected S-turn, historical dynamic recovery-success, and bounded blockage each pass 3/3 exact-condition repetitions. V3 has one historical success but its fresh source-qualified run aborted after eight observed invocations, so it is not a stable navigation handoff. The v1 straight-through run remains a failed negative calibration | **PASS for representative control:** isolated HUD, semantic, trajectory, and collider views passed; a focused `2` keypress changed Overview to Oblique. The omitted-scene aquatic launch is excluded as invalid calibration | **PASS:** matching manifest geometry and qualified action runs under null graphics; v1 compatibility validator hash reproduced exactly | **PASS for existing ecological handoffs:** exact layout/seed/configuration binding plus eight questions cover recovery, terminal policy, route shape/change, false premises, and causal/optimality withholding; exact-condition repeats remain non-independent. V3 now captures source-qualified invocations, but the corrected run fails its required terminal-success gate and remains unexported | **PARTIAL overall:** environment and question-contract gates pass; use qualified warehouse recovery, proving-ground blockage, and S-turn artifacts for the explanation pilot. V3 stability, explanation generation, parity audit, and annotation remain open |
 | RoboBoat ecological demonstration | Parallel workstream | Parallel workstream | Parallel workstream | Parallel workstream | Parallel workstream | Aquatic runtime requires graphics | Parallel workstream | **PARALLEL / OWNED ELSEWHERE** |
 
-Active land development should move warehouse/proving-ground rows toward `NAVIGATION_PASS` and
-`EXPLANATION_READY`, with explicit per-route results and artifact references.
+Environment/platform development is closed for the current submission pilot. The admitted set is
+exactly warehouse recovery (`eco-pilot-001`), complete blockage (`eco-pilot-002`), and corrected
+S-turn (`eco-pilot-003`). Each has a current `NAVIGATION_PASS`, `HEADLESS_PASS`,
+`EXPLANATION_READY`, separated export, and evaluator-side QA summary. U-trap is excluded because no
+current qualified export exists. `dynamic-gate-v1` is `HISTORICAL_CALIBRATION_ONLY`: its historical
+successful result remains valid in scope, but it is neither currently pilot-qualified nor a target
+for further tuning.
+
+The minimal artifacts are governed in development DVC storage under
+`data/robot_visible/dev/ecological-pilot-v1/` and
+`data/evaluator_only/dev/ecological-pilot-v1/`; the latter contains the hash/source provenance
+manifest. No Unity player build or full runtime directory is retained. These artifacts begin an
+information-parity explanation pilot and do not become independent confirmatory episodes merely
+because multiple questions are derived from them.
 
 The shared land fixture now captures bounded ordered BT transitions and recovery-leaf invocation
 IDs, and it passed a development-only recovery-success runtime check. This closes the prior
@@ -59,7 +71,8 @@ not reproduce its historically qualified recovery-success mechanism: the warehou
 90-second policy aborted near the goal, while one stock-policy rerun reached the client deadline;
 both recorded zero recovery-leaf invocations. Both are retained negative calibrations and neither
 was exported. Historical proving-ground passes remain scoped to their recorded revisions, but a
-current-build recovery-success export is still `NOT_RUN`.
+current-build recovery-success export is still `NOT_RUN`. The scenario is therefore historical
+calibration only for this pilot, and no additional dynamic-gate tuning is planned.
 
 The export boundary now mechanically rejects this class of mismatch. Both negative artifacts fail
 their declared `succeeded` terminal-status gate, while the current-build warehouse artifact passes
@@ -80,6 +93,12 @@ path, signed lateral extrema +1.343/−1.342 m, and four direction changes. Expo
 checks those predeclared route-shape criteria rather than only trajectory presence. The separated
 export is deterministic and leakage-free, but it establishes neither route optimality nor internal
 controller consumption.
+
+The retained robot-visible exports may report delivered scan/costmap summaries with an explicit
+`delivered-but-not-proven-consumed` interpretation. They do not establish which values Nav2 used.
+Accordingly, explanations may describe the recorded trajectory, terminal action state, BT
+mechanism, and source-qualified recovery invocation, but must withhold the physical cause of a
+recovery, replan, or failure unless a future consumed-input link establishes it.
 
 The additive v3 bounded-enclosure scenario supplies a useful but unstable recovery calibration.
 Its first run activated and removed all four walls at 18.040 and 34.040 simulated seconds,

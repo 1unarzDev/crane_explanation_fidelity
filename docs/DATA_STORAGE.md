@@ -17,6 +17,14 @@ their DVC object identities. DVC does not make evaluator-only data model-visible
 the experiment tooling must still preserve that boundary. `data/staging/`, build artifacts, and
 temporary files are not synchronized.
 
+The closed ecological pilot snapshot is under
+`data/robot_visible/dev/ecological-pilot-v1/` and
+`data/evaluator_only/dev/ecological-pilot-v1/`. It retains three qualified exports (warehouse
+recovery, complete blockage, corrected S-turn), evaluator truth, QA summaries, and one evaluator-only
+provenance manifest containing component/source hashes. Large Unity builds and full runtime
+directories are deliberately omitted. A fresh checkout must run `scripts/dvc_r2_sync.sh pull`
+before the pilot; model-facing tooling may read only the robot-visible root.
+
 After a validated run or retained model batch, refresh the DVC pointers:
 
 ```bash

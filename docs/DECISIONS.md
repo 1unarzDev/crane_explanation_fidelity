@@ -1,5 +1,27 @@
 # Decision Log
 
+## 2026-09-22 — close environment/platform development at three ecological pilot inputs
+
+- Decision: close the submission environment workstream with exactly three development-only,
+  current-qualified inputs: warehouse temporary-enclosure recovery, complete blockage, and the
+  corrected S-turn. Preserve their separated exports, evaluator truth, QA summaries, and source
+  provenance in governed DVC storage. Begin information-parity explanation evaluation and blinded
+  annotation rather than adding or tuning environments.
+- Evidence: all three pass their declared route, headless, and explanation-readiness gates with
+  exact scenario/configuration hashes. Current source-qualified `dynamic-gate-v1` attempts did not
+  reproduce its historical recovery-success result, and no current qualified U-trap export exists.
+  The exporter now retains bounded recovery-classifier provenance and marks scan/costmap summaries
+  delivered but not proven consumed.
+- Boundaries: `dynamic-gate-v1` is `HISTORICAL_CALIBRATION_ONLY`; its successful historical result
+  and negative current calibrations remain intact. U-trap is excluded, not relabeled. No Unity
+  builds are retained, no new perception stack is added, and explanations must withhold physical
+  obstacle causation and internal controller consumption.
+- RQ impact: these artifacts support a small ecological information-parity pilot, not an effect
+  estimate or confirmatory expansion. Independent episode collection, blinded annotation,
+  statistics, figures, and manuscript work now dominate submission value.
+- Revisit: no environment expansion before submission unless a manuscript-critical validity gap
+  cannot be addressed from the retained land artifacts or the separately owned RoboBoat workstream.
+
 ## 2026-09-21 — retain and stratify an operator-reported load-balancer source change
 
 - Decision: retain all sealed calls, preserve the frozen paired F-versus-G primary analysis, and
