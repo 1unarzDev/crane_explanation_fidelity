@@ -2315,6 +2315,11 @@
 - **GOVERNANCE:** the robot-visible fixture and physically separate runtime/truth artifacts are in
   DVC development storage with committed manifests. Fault-induction success is explicitly false;
   recording validity is true. Frozen study runtime and artifacts were untouched.
-- **NEXT:** diagnose the scenario-selection/build mismatch before scheduling a new geometric pilot.
-  Do not rerun merely to obtain the desired outcome, and do not modify the validated environment
-  geometry to manufacture a diagnosis.
+- **ROOT CAUSE:** the executed player has build GUID `9fe01e68b8764d0f87d9823200f59aa4`.
+  Its retained build manifest (SHA-256 `e0d9db58...e1a7`) lists the warehouse generator but not the
+  later proving-ground generator asset. The source checkout was current, but the player binary/data
+  was stale; therefore its command-line parser could not instantiate the requested layout. The
+  executable-file hash alone was insufficient build provenance.
+- **NEXT:** make one current-source player build and verify its manifest contains the exact
+  proving-ground source/catalog hashes before scheduling a new geometric pilot. Do not rerun the
+  stale build, modify geometry, or count this nominal as a fault-induction success.

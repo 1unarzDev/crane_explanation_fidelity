@@ -10,7 +10,7 @@ paper must point to a retained manifest/result; this file is not itself experime
 | Legacy method diagnoses physical causes | Legacy questions deliberately lack decisive physical evidence | **CONTRADICTED / DO NOT CLAIM** |
 | Proposed diagnostic pipeline improves supported diagnostic success | One checked retrospective RoboBoat development output; no R/P/T/N comparison or independent labels | **UNRESOLVED / PROSPECTIVE STUDY NOT_RUN** |
 | Diagnostic pipeline can express a bounded terminal-margin mechanism | Governed RoboBoat development export links exact Nav2 thresholds, measured return motion, post-result displacement, and settled error | **IMPLEMENTED/TESTED ON ONE DEVELOPMENT RUN**, not an effectiveness claim |
-| Ecological land behavior includes real path change/recovery/blockage | Three governed development exports and QA/truth separation | **SUPPORTED FOR SIMULATION DEVELOPMENT**, explanation evaluation `NOT_RUN` |
+| Ecological land behavior includes real path change/recovery/blockage | Three governed development exports and QA/truth separation; a later current-capture attempt exposed a stale player and is retained only as an unexpected nominal | **SUPPORTED FOR PRIOR SIMULATION DEVELOPMENT**, current diagnostic-build qualification and explanation evaluation `NOT_RUN` |
 | RoboBoat has credible baseline navigation/docking | command-response tests, long path tracking, independent docking predicates, 8/8 post-correction docks | **SUPPORTED FOR DEVELOPMENT BASELINE**, prospective diagnosis `NOT_RUN` |
 | Wave drift is diagnosed | no validated wave-force attribution or robot-visible discriminator | **DO NOT CLAIM** |
 | Human trust or real-world reliability improved | no user study or hardware validation | **DO NOT CLAIM** |
