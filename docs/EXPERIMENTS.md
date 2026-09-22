@@ -1,5 +1,47 @@
 # Experiment Log
 
+## 2026-09-22 — configurable land proving-ground implementation and calibration
+
+- **IMPLEMENTED:** CRANE's existing TurtleBot3 warehouse scene can now replace its authored world
+  with manifest-driven `crane-land-proving-ground-v1`. The SHA-256
+  `bea854292d7298e04f37ed9f6cc50f49d59d51fdec0e1b78a9d5f9247beee720` catalog defines eight
+  deterministic layouts: staggered obstacles, S-turn slalom, offset gates, narrow doorway,
+  U-trap, alternate corridors, complete blockage, and dynamic gate. Canonical collision,
+  collider-free presentation, semantics, schedules, configuration hashes, and evaluator truth
+  remain separate. The frozen corridor truth schema and study artifacts were not changed.
+- **NEGATIVE CALIBRATION RETAINED:** the first 18 m alternate-corridor run used the warehouse's
+  30 m rolling global costmap and aborted in 1.14 s. The planner explicitly reported the goal at
+  `(18, 0)` outside its bounds. A dedicated proving-ground configuration widened only the
+  ecological global window to 44 m; this is not counted as an environment failure or hidden.
+- **TESTED ONCE / NAVIGATION CALIBRATIONS:** `alternate-corridors-v1` succeeded in 71.21 s with
+  17.573 m endpoint displacement, 17.930 m sampled path, 1.10 m lateral excursion, 628 delivered
+  BT transitions, 711 commands, 268 costmap observations, and zero recovery feedback.
+  `dynamic-gate-v1` activated at simulation time 20.040 s, was removed at 45.040 s, and succeeded
+  in 91.38 s with maximum recovery feedback 1, a delivered `FollowPath` failure and contextual
+  local clear, 22.328 m sampled path, and 1.723 m lateral span. `complete-blockage-v1` aborted at
+  70.33 s under the existing separate 70 s task-policy deadline, before its 80 s client deadline,
+  after 17.973 m sampled exploratory motion and 4.54 m lateral span. These are development runs,
+  not independent study episodes; no scan-consumption or obstacle-causation claim is made.
+- **TESTED / HEADLESS QA:** Unity 6000.5.10f1 built Linux player SHA-256
+  `a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292`. The alternate-corridor
+  validator returned `valid=true`, six canonical colliders, six collider-free renderers, eight
+  unique semantic IDs, semantic LiDAR hit `alternate-route-divider`, evidence highlighting,
+  collision/drop support, differential response, `STRUCTURAL_PASS`, `PHYSICS_PASS`,
+  `SENSOR_PASS`, `HEADLESS_PASS`, and `EXPLANATION_READY`; result SHA-256 is
+  `3d70047b66eed769fc061a5af2753a72ef0a593e870e42e58e59dabb2764f527`.
+- **TESTED / INTERACTIVE PARTIAL:** the proving-ground build reconfigures the existing
+  presentation-only inspection controller with the selected layout and relevant obstacle IDs.
+  Isolated 1280×720 overview and oblique captures showed the correct environment/layout HUD,
+  semantic highlight, collider wireframes, and trajectory state. The host Wayland attempt exited
+  during surface setup and yielded no usable audit; the accepted captures used a separately named
+  X display and did not touch the parallel RoboBoat display. Manual keyboard polling remains
+  `NOT_RUN`, so this is not a full interactive pass.
+- **QA / LIMITS:** all 49 land/reference static tests passed; the build compiled cleanly and the
+  headless validator passed after inspection wiring. Five layouts and repeated-run qualification
+  remain `NOT_RUN`; explanation generation and blinded annotation remain `NOT_RUN`. Build,
+  screenshots, and calibration outputs are ephemeral under `/tmp`; no DVC or sealed artifact was
+  modified.
+
 ## 2026-09-22 — warehouse temporary-enclosure recovery calibration
 
 - **IMPLEMENTED / RETAINED DEVELOPMENT INFRASTRUCTURE:** warehouse manifest v2.2.0 adds a
