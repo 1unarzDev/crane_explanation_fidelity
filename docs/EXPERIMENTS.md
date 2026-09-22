@@ -1,5 +1,30 @@
 # Experiment Log
 
+## 2026-09-22 — current-build proving-ground S-turn evidence
+
+- **STRUCTURAL / PHYSICS / SENSOR / HEADLESS PASS:** the current player re-ran the v2 reference
+  validator for `slalom-s-turn-v2`; seven canonical colliders, seven collider-free renderers, nine
+  unique semantic IDs, floor/collision support, differential motion/turn response, and semantic
+  sensor resolution passed under the exact v2 manifest.
+- **NAVIGATION / ROUTE-SHAPE PASS, DEVELOPMENT ONLY:** on isolated ROS domain 95 and TCP port
+  11295, NavigateToPose succeeded at 87.410 wall seconds. The independent QA summary reports a
+  21.467 m sampled path, signed lateral extrema +1.343/−1.342 m, and four direction changes,
+  satisfying the predeclared +0.75/−0.75 m and three-change S-turn gate. Ordered capture retained
+  763 unique BT transitions with zero drops and no recovery invocations. QA-summary SHA-256 is
+  `a04c7f95d1b5c7dd44c51437cfc87fc1c6bc3ee60925b825991c54fcb4dd4e82`.
+- **ROUTE-ADMISSION PASS:** ecological admission now checks signed lateral extrema and direction
+  changes, rather than accepting any successful trajectory with enough samples. The revised
+  development contract SHA-256 is
+  `65b10d62259e741c296d3fe20de4653bd00cde7b6ccce46763c9a6be195124ac`.
+  The current S-turn passes; a unit regression proves a straight/no-reversal trace is rejected.
+- **SEPARATED EXPORT PASS:** two outputs were byte-identical and the independent robot-visible
+  leakage scan passed. The robot-visible trajectory summary reports 21.548 m from the fixture's
+  one-second samples, lateral extrema +1.248/−1.342 m, and four direction changes. This supports
+  an S-shaped recorded trajectory, not optimality, physical causation, or controller consumption.
+- **REGRESSION:** 88 land/reference tests (plus two subtests) pass. Raw artifacts remain ephemeral
+  under `/tmp`; this is not an independent study episode or explanation-performance result.
+  Frozen/DVC artifacts and RoboBoat-specific content were untouched.
+
 ## 2026-09-22 — current-build proving-ground blockage export
 
 - **NAVIGATION / TERMINAL-POLICY PASS, DEVELOPMENT ONLY:** current player build-manifest SHA-256

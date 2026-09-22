@@ -70,8 +70,11 @@ manifest binds both files by SHA-256 without merging their contents.
 Scenario identity is necessary but not sufficient for ecological admission. Each development
 contract also declares observable runtime prerequisites: accepted terminal status, minimum
 recorded recovery-invocation and trajectory inventories, required BT node observations where
-applicable, and zero-drop bounds. Export fails before creating an output root when the intended
-mechanism did not occur, even if the environment/configuration hashes match.
+applicable, predeclared signed-lateral/direction-change route thresholds where applicable, and
+zero-drop bounds. Export fails before creating an output root when the intended mechanism did not
+occur, even if the environment/configuration hashes match. The checked trajectory metrics are
+also carried into robot-visible evidence so the explanation layer can describe the recorded shape
+without access to evaluator-only obstacle identities.
 
 The frozen F/G/H study remains isolated from new ecological scenarios. Warehouse/proving-ground
 work may reuse generic runtime capture and validation infrastructure, but it must not alter frozen

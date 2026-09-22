@@ -73,6 +73,14 @@ deterministic physically separated export plus an independent robot-visible leak
 the terminal root transition is absent and topic loss is undetectable, this supports a recorded
 task-policy abort—not physical obstacle causation, planner `no path`, or complete BT history.
 
+The corrected S-turn now has a current-build path-shape handoff as well. Its current structural
+run passes `STRUCTURAL_PASS`, `PHYSICS_PASS`, `SENSOR_PASS`, `HEADLESS_PASS`, and
+`EXPLANATION_READY`; NavigateToPose succeeds; and the independent route gate reports a 21.467 m
+path, signed lateral extrema +1.343/−1.342 m, and four direction changes. Export admission now
+checks those predeclared route-shape criteria rather than only trajectory presence. The separated
+export is deterministic and leakage-free, but it establishes neither route optimality nor internal
+controller consumption.
+
 ## Retained infrastructure validation
 
 | Environment | Retained result | Missing full validation | Submission status |
