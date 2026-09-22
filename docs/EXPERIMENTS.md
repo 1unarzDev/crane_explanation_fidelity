@@ -1,5 +1,34 @@
 # Experiment Log
 
+## 2026-09-22 — bounded ordered BT evidence capture for ecological land
+
+- **IMPLEMENTED / TESTED:** `crane_ml` commit `8cc1cbb` adds a ROS-independent bounded transition
+  recorder to the existing passive Nav2 fixture. Each retained transition has a stable record ID,
+  node name/UID, prior/current status, event/message timestamps, accepted-goal relation, and goal
+  ID when available. Exact-name-classified recovery leaves receive a distinct invocation ID only
+  on `IDLE -> RUNNING`; repeated messages, completion, halting, overlap, open invocations, and
+  bounded-record loss are represented explicitly. Nav2 feedback `number_of_recoveries` remains a
+  separate evidence stream.
+- **TESTED / DEVELOPMENT ONLY:** isolated ROS domain 89 and port 11289 reproduced a mobility-hold
+  recovery followed by success. The fixture retained 22 unique transitions with no duplicate or
+  dropped records, including `FollowPath RUNNING -> FAILURE`, a successful recovery guard, and
+  `Wait IDLE -> RUNNING -> SUCCESS`. That Wait received
+  `bt-recovery-invocation-000001`; independent Nav2 feedback changed from 0 to 1. Fixture-summary
+  SHA-256 was `ec1fc96c5dbeb63cbb8c32b42a3620617b6320087dd98af269f7bc5dd0c9b591`;
+  raw output remains ephemeral under `/tmp` and is not a study episode.
+- **NEGATIVE / PRESERVED:** neither a 431-transition nominal run nor a short 34-transition run
+  delivered the configured final `NavigateRecovery` transition before capture shutdown, including
+  after a bounded 0.5 s post-result drain. `BehaviorTreeLog` has no publisher sequence number, so
+  subscriber-side message loss cannot be excluded. Whole-history completeness therefore remains
+  `not_proven` and exact recovery-count eligibility remains false. The supported wording is “one
+  Wait invocation is recorded,” not “exactly one recovery occurred.”
+- **INVALID WAREHOUSE CALIBRATION:** the locally retained player used for the first wrapper check
+  emitted `crane-land-corridor-truth-v1` rather than the requested warehouse scenario truth. That
+  run validates the mounted Python capture path only; it is not counted as warehouse ecological
+  validation and does not alter the previously retained warehouse qualification artifacts.
+- **REGRESSION:** 61 land/reference Python tests and four frozen-study integrity tests pass. Frozen
+  artifacts, governed DVC data, and RoboBoat-specific files were untouched.
+
 ## 2026-09-22 — ecological land scenario-to-question contract
 
 - **IMPLEMENTED / DEVELOPMENT ONLY:** a non-frozen contract maps five qualified land mechanisms

@@ -53,6 +53,13 @@ transitions. The evidence pipeline records their identities and completeness sep
 evaluator truth. Delivered topic data is not described as internally consumed unless explicit
 provenance establishes consumption. Temporal succession is not promoted to physical cause.
 
+Ecological Nav2 capture retains an ordered, bounded BT transition stream with stable record IDs.
+A BT node UID identifies a node instance, not an attempt. A recovery invocation ID is derived only
+from a configured recovery leaf's observed `IDLE -> RUNNING` edge and is closed by its subsequent
+status transition. Nav2 feedback recovery counts, BT leaf invocations, and whole-history
+completeness remain separate. Because `BehaviorTreeLog` has no publisher sequence number, even an
+observed start/end pair does not by itself prove an exact whole-episode count.
+
 The frozen F/G/H study remains isolated from new ecological scenarios. Warehouse/proving-ground
 work may reuse generic runtime capture and validation infrastructure, but it must not alter frozen
 questions, prompts, split, inclusion rules, model configuration, annotation guide, or stopping

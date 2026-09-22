@@ -33,6 +33,13 @@ relabeled to satisfy a gate.
 Active land development should move warehouse/proving-ground rows toward `NAVIGATION_PASS` and
 `EXPLANATION_READY`, with explicit per-route results and artifact references.
 
+The shared land fixture now captures bounded ordered BT transitions and recovery-leaf invocation
+IDs, and it passed a development-only recovery-success runtime check. This closes the prior
+sequence/identity capture gap for recorded invocations. It does **not** close whole-history
+completeness: current Jazzy `BehaviorTreeLog` delivery has no detectable publisher sequence gap,
+and final root transitions were absent in three live checks. Ecological answers must therefore use
+qualified observed-count language unless a later evidence source establishes completeness.
+
 ## Retained infrastructure validation
 
 | Environment | Retained result | Missing full validation | Submission status |
