@@ -790,3 +790,21 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Revisit: do not reopen legacy collection based on observed answers or labels. A later amendment
   may authorize only a resource-based bounded completion before labels are inspected, but the
   default is closed so diagnostic pilots, annotation, analysis, and manuscript receive time.
+
+## 2026-09-22 — use terminal stopping margin as the first RoboBoat diagnostic mechanism
+
+- Decision: exercise the new diagnosis-to-language path first on the retained goal-checker margin
+  mismatch, using only the goal, exact Nav2 thresholds, declared task tolerance, and independently
+  measured odometry-derived motion. Keep matched 0.20 m rerun outcomes outside the ordinary
+  robot-visible export and reserve them as retrospective development context.
+- Evidence: the pre-change action returned at 0.3738 m error and 0.04861 m/s under 0.400 m and
+  0.050 m/s thresholds, leaving 0.0262 m of task margin; it subsequently moved 0.1876 m and ended
+  at 0.5614 m error. This directly supports an inadequate terminal-margin mechanism.
+- Alternatives: begin with wave/current attribution, rebuild boat control, or use only a terminal
+  status narrative. No retained evidence distinguishes wave/current/wind uniquely, controller
+  rebuilding risks the validated baseline, and status narration omits the measured mechanism.
+- RQ impact: establishes a concrete development example for Q2/Q3 and a candidate mechanism family
+  for prospective Q1 comparison. It is not evidence that P outperforms R/N/T.
+- Validity risk: this is a retrospectively selected development case from another workstream. The
+  prospective study must freeze cases, evidence masks, methods, and stopping rules before held-out
+  collection and must independently score both diagnosis and final language.

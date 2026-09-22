@@ -1,6 +1,9 @@
 # Physical-diagnosis contract
 
-Status: **PROSPECTIVE / NOT YET VALIDATED END TO END**.
+Status: **DEVELOPMENT PATH TESTED / PROSPECTIVE STUDY NOT YET RUN**. A retrospective RoboBoat
+development run now exercises measurement extraction, a bounded terminal-margin computation,
+checked deterministic rendering, and fail-closed final-text verification. This is an engineering
+milestone, not confirmatory evidence or an independently annotated explanation result.
 
 The new method reuses capture, provenance, checked planning, generation, and final verification.
 It adds a narrow diagnostic layer before language:
@@ -82,3 +85,19 @@ described as predominantly deterministic rather than as successful LLM reasoning
   imbalance, or model error. Say “uncompensated lateral disturbance” unless a validated
   robot-visible diagnostic distinguishes more.
 - A directly applied force is a synthetic disturbance experiment, not validated wave physics.
+
+## First measured development diagnosis
+
+The retained `roboboat-gate5-known-dock-1` run supports a narrow configuration/execution
+diagnosis. The action returned success at 0.374 m error and independently measured 0.0486 m/s,
+inside its exact 0.400 m XY and 0.050 m/s stopped thresholds. The declared task required at most
+0.400 m error, leaving 0.026 m of margin. Delivered odometry then recorded 0.188 m of post-result
+motion and a final 0.561 m error. Thus the terminal criterion did not reserve enough margin for
+the observed post-result motion.
+
+This does **not** identify the physical origin of the residual motion. The robot-visible
+development export deliberately excludes the docking-success label, matched-intervention result,
+hidden simulator state, and force decomposition. It is governed at
+`data/robot_visible/dev/diagnostic-pilot-v1/roboboat-terminal-margin/evidence.json` via
+`data/robot_visible/dev.dvc`; its source hashes and reproduction entry point are recorded in
+`manifests/data/roboboat-terminal-margin-development-v1.robot-visible.json`.

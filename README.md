@@ -112,9 +112,11 @@ their own location. Exact repository commits and destinations are recorded in
   recovery-success, 16 terminal-abort), with 198 one-shot Luna-low calls retained. This is below
   the frozen 40-episode minimum and 50-episode target. No sealed answer is annotated/adjudicated,
   and no sealed effect estimate exists. See [research redirect](docs/RESEARCH_REDIRECT.md).
-- **PROSPECTIVE / NOT_YET_VALIDATED:** physical-diagnosis contracts and a separate diagnostic
-  study draft now cover geometric restriction and command-to-motion discrepancy. No prospective
-  diagnostic explanation result exists yet.
+- **TESTED (DIAGNOSTIC DEVELOPMENT ONLY):** physical-diagnosis contracts and a separate study
+  draft cover geometric restriction and command-to-motion discrepancy. One governed retrospective
+  RoboBoat run now exercises a bounded terminal stopping-margin computation, four-section checked
+  answer, and exact final-text verification. It is not a prospective comparison or independently
+  annotated result; no R/P/T/N effect estimate exists.
 - **TESTED (SECONDARY-ARM DEVELOPMENT):** the provider-neutral model-call contract now has a
   Claude Code adapter as its first non-GPT instance. A predeclared control rejected Haiku and fixed
   `claude-sonnet-5` at low effort. See [model-family replication](docs/MODEL_FAMILY_REPLICATION.md).
@@ -145,6 +147,23 @@ crane-explain explain configs/fixtures/dock_policy.json --alternative Slalom
 ```
 
 The fixture policy is synthetic and exists only to test arithmetic; it is not CRANE's policy.
+
+After `dvc pull data/robot_visible/dev.dvc`, reproduce the compact development diagnosis from its
+retained source summary and exact historical Nav2 configuration with:
+
+```bash
+python analysis/export_terminal_margin_diagnostic.py \
+  --summary /path/to/PerformanceResults/roboboat-gate5-known-dock-1/fixture-summary.json \
+  --config-repository packages/crane_ml \
+  --config-commit 4ae5124c12c39af93ee5b256e33778aec490ecd3 \
+  --task-tolerance-m 0.40 \
+  --source-reference PerformanceResults/roboboat-gate5-known-dock-1/fixture-summary.json \
+  --output /tmp/roboboat-terminal-margin-evidence.json
+```
+
+The retained compact export is restorable without the large source summary; byte-for-byte
+regeneration additionally requires that hash-identified development summary. The exporter refuses
+summaries without the declared independent-odometry provenance.
 
 Run the provider-neutral analysis, freeze-integrity, umbrella, and core suites without invoking a
 model or ROS runtime:

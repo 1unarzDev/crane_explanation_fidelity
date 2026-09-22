@@ -2260,3 +2260,26 @@
 - **NEXT / NOT_RUN:** produce a physical warehouse or proving-ground case with a uniquely recorded
   recovery leaf followed by success or bounded exhaustion. Do not describe the deadline-only case
   as recovery and do not use its paired outcome alone as a physical-causation result.
+
+## 2026-09-22 — retrospective RoboBoat terminal-margin diagnostic pilot
+
+- **INPUT / DEVELOPMENT ONLY:** read-only audit of retained sibling-worktree artifact
+  `roboboat-gate5-known-dock-1/fixture-summary.json` (SHA-256 `6bcc1c1f...2223a`) and the exact
+  pre-change Nav2 configuration at CRANE commit `4ae5124c...ecd3` (SHA-256 `7ad4490b...93f`). No
+  RoboBoat scene, controller, physics, configuration, or historical artifact was modified.
+- **IMPLEMENTED/TESTED:** the prospective core now represents measurements with units, frame,
+  timestamps/intervals and evidence IDs; records assumptions, support/conflict, unresolved
+  alternatives, source anchors, causal-language level, and a next check; computes terminal return
+  margin; renders the four required answer sections; and rejects any final text unequal to the
+  deterministic checked rendering. Core package: 47 tests pass. Exporter regression: 1 test passes.
+- **MEASURED RESULT:** action success occurred at 0.3738 m goal error and independently measured
+  0.04861 m/s, inside exact 0.400 m and 0.050 m/s Nav2 thresholds. The declared 0.400 m task
+  tolerance left 0.0262 m margin. Delivered odometry recorded 0.1876 m post-result displacement
+  and final 0.5614 m error. The supported conclusion is that the return criterion did not reserve
+  enough margin for observed post-result motion.
+- **EVIDENCE BOUNDARY:** the governed robot-visible export excludes the docking-success label,
+  matched 0.20 m intervention outcomes, hidden simulator state, and force decomposition. It does
+  not identify residual motion as wave/current/wind, plant failure, collision, or any unique
+  physical source. Delivered odometry is not presented as proof of every value Nav2 consumed.
+- **NOT_RUN:** independent blinded scoring, R/P/T/N comparison, prospective rerun, land analogue,
+  power planning, and held-out collection. This result validates the development path only.
