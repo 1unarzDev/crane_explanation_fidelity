@@ -1,282 +1,275 @@
 # RoboBoat navigation baseline
 
-Date: 2026-09-21; actuator isolation updated 2026-09-22. This is the verified reconnaissance
-baseline for the dedicated
-`/home/lunarz/worktrees/roboboat-docking` worktree. It is not a tuning proposal. No Nav2
-parameter, manual controller, mixer, thruster, mass, inertia, buoyancy, drag, water, scene, or
-environment value was changed.
+Date: 2026-09-22. This document describes the implementation actually running in the dedicated
+`/home/lunarz/worktrees/roboboat-docking` worktree after the validated command-interface and
+long-path checkpoints. It supersedes the earlier torque-mode reconnaissance snapshot. The
+RoboBoat scene, hydrodynamics, mixer, manual controller, and input bindings were not changed in
+this pass.
 
 ## Provenance
 
-- Superproject `roboboat-docking` at `3bd20a847e776690b6be6acbdbcb5c36e7d6f215`.
-- Gitlinks: `astro_dock` `36202373ae186a8fd247a20b7b477312a744de99`; nested
-  `src/ros_tcp_endpoint` `3c3d405db665a8c52c28e45f23b8c9782a9564ba`; current `crane_ml`
-  diagnostic commit `e8b35ca` based on `c9d905f474a0e2d872644e35787fb2b013ad0f2a`.
-- Active YAML SHA-256: `20562df69b9c07e0b82c3d1479435b79e66f9c105472aa29abcabaf346fe80c2`.
-- Current ROS adapter SHA-256: `366e8fa8a1d68a0bdc472317f151a8b2845f203283a58b959b0ddfbfbc969865`;
-  navigation-state publisher: `db1bff46ecfca449405e0fe8f99e459cda70de9d2dff53382b2787164875518a`.
-- Manual controller and input action are unchanged: SHA-256
-  `b846a21a1ea163555c5489b5b0fc3dd29f46f4f93c1fd7e16c48b1c0333e4f83` and
-  `54026e4af2d0b74b8ac23633887f10150a133c5ef298d1f685be3cb7d8f47cc0`.
-- Thruster source is byte-identical to the pinned commit, SHA-256
-  `1853f88946ae51f5e35423bdb467a287b01dde4dc60cefca1d301ad9b721ffde`.
-- Unity `6000.5.10f1`; asset-set hash
-  `FD3BAED2268824DB37BAD943C4D4004ABC71D4FFE6652817A1200FAC97D4BF47`; build-manifest
-  SHA-256 `09dcda0b28a8b33130fb3a28ec8fe5d77398456a652275495d11be9dc79e0fb7`.
-- Runtime image `lunarzdev/astro:cuda`, Nav2 `1.3.12`, digest
+- Superproject branch/commit: `roboboat-docking` / `6cba6a8b072cfe02ae9af34fdbbe3b740ed0b2de`.
+- Gitlinks: `crane_ml` `7195d917f8b838cb5f5606f09f2c1a24be0014a3`, `astro_dock`
+  `36202373ae186a8fd247a20b7b477312a744de99`, nested ROS-TCP endpoint
+  `3c3d405db665a8c52c28e45f23b8c9782a9564ba`.
+- Active Nav2 YAML SHA-256: `d11517f175805cef29555e9c64ac4a5285d27600ca417d755719b13dc6314b4d`.
+- ROS adapter SHA-256: `886c1b11c9ec106bc6ec1a19d89281ee7ee5cf61df3bc42f6adc4acbe519265b`.
+- Thruster config SHA-256: `ee66af800d106dad50bbdef22e3da97c7102446f91b9b84753958351024bef59`.
+- Manual/shared mixer source remains `b846a21a1ea163555c5489b5b0fc3dd29f46f4f93c1fd7e16c48b1c0333e4f83`.
+- Unity `6000.5.10f1`; final diagnostic build GUID
+  `d698a8a2076c41a2a2f57b0907a4e760`; asset-set SHA-256
+  `DEDCDC3B0E7057DBD1C4F5A4CAEB3367DA2213918CC2A505591076FF7D154834`.
+- Runtime image `lunarzdev/astro:cuda`, Nav2 `1.3.12`, image digest
   `sha256:9c286b78dcc1ecf0a159f624f642cf831d463370ce264f00fdd6f6c30ce50053`.
+
+The measurement extension adds only `straight`, `gentle-turn`, and `s-turn` path generation and
+records `pathShape`; it does not alter runtime behavior.
 
 ## Current architecture
 
 ```text
-/navigate_to_pose -> BT navigator -> Navfn A* -> /follow_path
-                                          |
-direct /follow_path -----------------------+
-  -> controller_server / Regulated Pure Pursuit @ 10 Hz
-  -> Twist /nav2/cmd_vel
-  -> fixture stamps latest /crane/odom time -> TwistStamped /crane/cmd_vel_stamped
-  -> ROS-TCP endpoint -> Unity ROSOmniXCommand queue @ FixedUpdate
-  -> FLU-to-controller adapter + independent [-1,1] normalization
+/navigate_to_pose action
+  -> bt_navigator (installed default NavigateToPose replanning/recovery tree)
+  -> planner_server / Navfn A*
+  -> /follow_path action
+direct /follow_path -----------------------------------------------+
+                                                                    |
+  controller_server / Regulated Pure Pursuit, 10 Hz                 |
+  -> Twist /nav2/cmd_vel                                            |
+  -> fixture stamps latest odometry time                            |
+  -> TwistStamped /crane/cmd_vel_stamped                            |
+  -> ROS-TCP endpoint (127.0.0.1, per-run port)                      |
+  -> ROSOmniXCommand queue, applied at Unity FixedUpdate (50 Hz) <---+
+  -> ROS FLU desired body velocity PI/feedforward adapter
+  -> normalized surge/sway/yaw effort
   -> OmniXController four-thruster X mixer
-  -> torque-controlled Thrusters -> quadratic submerged AddForceAtPosition
-  -> articulated catamaran + buoyancy + GeneralDynamics + Fossen dynamics
-  -> CraneROSNavigationState @ 50 Hz: /crane/odom and /tf
-  -> controller, costmaps, planner, and BT
+  -> shaft-velocity-controlled propellers
+  -> quadratic submerged thrust via AddForceAtPosition
+  -> articulated catamaran, buoyancy, drag, and Fossen dynamics
+  -> CraneROSNavigationState at 50 Hz: /crane/odom plus /tf
+  -> controller/costmaps/planner/BT
 ```
 
 The live launcher is
 [`run_nav2_controller_fixture.sh`](../../packages/crane_ml/Tools/Performance/run_nav2_controller_fixture.sh).
-It directly starts controller, planner, behavior, BT-navigator, and lifecycle-manager processes.
-There is no velocity smoother. The default scene is `Roboboat Course`. Aquatic runtime requires a
-graphics-backed X display; `-batchmode`/`-nographics` is invalid because HDRP water queries do not
-advance correctly.
+It starts the Nav2 servers directly and remaps Nav2 output to `/nav2/cmd_vel`; the fixture relays
+that Twist as stamped `/crane/cmd_vel_stamped`. There is no velocity smoother. Aquatic players use
+the dedicated `crane-xvfb-roboboat-goal` Xvfb at `DISPLAY=127.0.0.1:97` with
+`CRANE_NOGRAPHICS=0`; the aquatic player is never run with `-batchmode` or `-nographics`.
 
 ## Active Nav2 stack
 
-The active default is
+The only default loaded by the launcher is
 [`nav2_controller_fixture.yaml`](../../packages/crane_ml/Tools/Performance/nav2_controller_fixture.yaml).
-`CRANE_NAV2_PARAMS` can override it, but no override was used. Land/warehouse YAML files are unused
-alternatives for RoboBoat.
+`CRANE_NAV2_PARAMS` can explicitly replace it. Land/warehouse and experimental MPPI YAMLs are not
+active and are not blended into these values.
 
-| Area | Verified active value |
+| Area | Active value |
 |---|---|
-| Clock/frames | `use_sim_time: true`; global/local `odom`; robot `base_link`; odometry `/crane/odom` |
-| Planner | `nav2_navfn_planner::NavfnPlanner`, A*, expected 5 Hz, unknown allowed, 0.5 m tolerance |
-| Controller | `nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController`, 10 Hz, 0.15 m/s desired linear velocity, 0.4 m lookahead, velocity-scaled 0.2-0.6 m / 1.5 s |
-| Heading | rotate-to-heading enabled at 0.4 rad/s; reversing disabled; collision detection enabled |
-| Goal checker | stateful `SimpleGoalChecker`, 0.40 m XY and 0.35 rad yaw |
-| Progress checker | `SimpleProgressChecker`, 0.05 m in 20 s |
-| Local costmap | rolling 20 x 20 m, 0.10 m cells, update 10 Hz/publish 2 Hz, voxel `/points`, 0.80 m radius, 1.0 m inflation, scale 3.0 |
-| Global costmap | rolling 40 x 40 m, 0.20 m cells, update 5 Hz/publish 1 Hz, same footprint/layers/inflation, no unknown tracking |
-| Behaviors | Spin, BackUp, DriveOnHeading, Wait at 10 Hz; rotational 0.1-0.5 rad/s and 0.5 rad/s2 limit |
-| BT | installed default `navigate_to_pose_w_replanning_and_recovery.xml`, SHA-256 `5895b63840d54c6d7eee3d3b3f3ee177680af9e58a14cbf61c4df39fe5db2a90`; replans at 1 Hz |
-| Limits | no velocity smoother/general controller acceleration limiter; deadbands 0.001; failure tolerance zero |
+| Time/frames | `use_sim_time: true`; global and local frame `odom`; robot frame `base_link`; odometry `/crane/odom` |
+| Planner | `nav2_navfn_planner::NavfnPlanner`; A*; unknown allowed; 0.5 m tolerance; expected 5 Hz |
+| Controller | `nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController`; 10 Hz; desired linear 0.15 m/s |
+| Lookahead | fixed 0.8 m; velocity scaling disabled; collision detection enabled; pose search 10 m |
+| Heading/motion | rotate-to-heading disabled; reversing disabled; RPP outputs no `linear.y` in observed runs |
+| Approach | scaling distance 2.0 m; minimum approach speed 0.02 m/s |
+| Goal checker | stateful `StoppedGoalChecker`; XY 0.40 m; yaw 0.35 rad; stopped translation/yaw 0.05 m/s and 0.05 rad/s |
+| Progress checker | `SimpleProgressChecker`; 0.05 m required in 20 s |
+| Local costmap | rolling 20 x 20 m; 0.10 m; update 10 Hz/publish 2 Hz; Voxel `/points`; radius 0.80 m; inflation 1.0 m, scale 3.0 |
+| Global costmap | rolling 40 x 40 m; 0.20 m; update 5 Hz/publish 1 Hz; no unknown tracking; same radius/layers/inflation |
+| Behaviors | Spin, BackUp, DriveOnHeading, Wait at 10 Hz; 0.1-0.5 rad/s rotation, 0.5 rad/s2 acceleration |
+| BT | installed default `navigate_to_pose_w_replanning_and_recovery.xml`; replanning at 1 Hz |
+| Command limits | no velocity smoother; RPP 0.15 m/s linear; behavior max yaw 0.5 rad/s; adapter input scales 1 m/s and 1 rad/s |
 
-Installed controller libraries include RPP, DWB, MPPI, Graceful, and Rotation Shim. Installed
-planners include Navfn, Smac, and Theta Star. This records availability, not a recommendation.
+Installed Jazzy controller libraries include RPP, DWB, MPPI, Graceful, and Rotation Shim. RPP is
+the active controller and has no critic framework. MPPI tests were alternatives only: its default
+PathAngle behavior spun, and removing PathAngle did not recover a matched route. Therefore a
+critic is not the cause of the current RPP failure, although it was relevant to the rejected MPPI
+candidate.
 
-RPP assumes forward-curvature motion with optional rotate-first/reverse behavior. It does not
-generate `linear.y` here. It has no model of a torque-command boundary or measured vessel coast.
-Those assumptions do not fully match an omnidirectional inertial surface vessel, but reconnaissance
-alone does not justify replacing it.
+RPP assumes forward curvature-constrained motion. It consumes path orientation, generates
+`linear.x` and `angular.z`, and does not use the vessel's available holonomic sway. Near the goal it
+slows through approach scaling and requires both pose tolerance and stopped velocity. Acceleration
+is not limited by a velocity smoother. These assumptions only partially match an omnidirectional,
+inertial surface vessel; existing straight-path evidence does not by itself justify replacing it.
 
 ## Boat command contract
 
-`cmd_vel` is **not closed-loop desired body velocity** at Unity. The adapter divides ROS FLU
-`linear.x`, `linear.y`, and `angular.z` by 1 m/s, 1 m/s, and 1 rad/s, clamps each independently to
-`[-1,1]`, and applies the latest queued sample at the 50 Hz physics boundary. The stale timeout is
-25 ticks (0.5 simulated seconds); reset and timeout zero all axes.
+At the Unity boundary, Nav2 values are desired ROS FLU body velocities, not direct force or
+normalized thrust:
 
-| ROS field | Actual downstream contract |
+| ROS field | Current meaning |
 |---|---|
-| `linear.x` | normalized surge/mixer request -> controller X |
-| `linear.y` | normalized sway/mixer request -> controller Y |
-| `angular.z` | normalized positive FLU yaw request -> negative controller yaw |
+| `linear.x` | desired body-forward surge, m/s |
+| `linear.y` | desired body-left sway, m/s |
+| `angular.z` | desired counter-clockwise yaw rate, rad/s |
 
-This adaptation is isolated in `ROSOmniXCommand`; W/S, A/D, Q/E and the manual controller are
-untouched. ROS angular feedback is `(-unity.z, unity.x, -unity.y)` because angular velocity is an
-axial vector under the handedness-changing Unity-to-FLU reflection. Linear position/velocity are
-`(unity.z,-unity.x,unity.y)`.
+`ROSOmniXCommand` clamps translation to +/-1 m/s and yaw to +/-1 rad/s, samples measured local body
+velocity from the physics body, and applies a ROS-only controller at 50 Hz. Translation uses linear
+feedforward 0.21, Kp 0.1, Ki 0.1, and integral-effort limit 0.2. Yaw uses square-root feedforward
+0.24 and Kp 0.05. Resulting normalized effort is clipped to `[-1,1]`. Latest commands time out
+after 25 physics ticks (0.5 simulated seconds), then all axes are zeroed. Queue/reset/timeout
+application occurs only on `FixedUpdate`.
 
-## Thruster allocation and actuation
+ROS FLU to Unity/controller signs were verified against odometry: controller X realizes positive
+ROS surge, controller Y realizes positive ROS sway, and controller yaw is negated so positive ROS
+yaw feedback remains counter-clockwise. Linear position/velocity convert Unity to ROS as
+`(z,-x,y)`; angular velocity, an axial vector under the reflection, converts as `(-z,x,-y)`.
 
-Four horizontal thrusters are front-left, front-right, rear-left, rear-right. For controller
-`(x,y,r)` the unchanged rank-three symmetric mixer is:
+Manual W/S, A/D, Q/E control does not pass through this velocity adapter. Manual input and the
+shared mixer were not modified.
+
+## Thruster model
+
+Four horizontal thrusters are front-left, front-right, rear-left, and rear-right. For normalized
+controller request `(x,y,r)` the unchanged rank-three mixer is:
 
 ```text
 FL = -x - y - r       FR = +x - y + r
 RL = -x + y + r       RR = +x + y - r
 ```
 
-Channels are divided by `max(1,max(abs(channel)))`, preserving ratios during saturation. URDF
-origins `(x,y,z)` in metres are FR `(0.01287,0.26636,-0.28432)`, RR
-`(0.01282,-0.26630,-0.28432)`, FL `(-0.01287,0.26637,-0.28232)`, RL
-`(-0.01277,-0.26625,-0.28232)`. The shared configuration is torque mode, +/-1 Nm, local Y axis,
-500 rad/s cap, responsiveness 0.98, `thrustK=-0.014`, equal reverse coefficient, and 0.03 m
-submersion height. Force is quadratic in shaft speed, scaled by submersion, and applied at each
-thruster articulation position.
+All four channels are divided by `max(1,max(abs(channel)))`, preserving ratios at saturation. The
+matrix has independent surge, sway, and yaw columns; symmetric pure-axis requests cancel the other
+two net axes in the algebra. No sign inconsistency was observed in isolated body-response tests.
 
-An isolated transform test initially suggested a double-rotation defect. That correction would
-alter the human-validated manual actuation path, so it was removed. Production thruster source is
-identical to baseline; ROS corrections remain only at ROS command/feedback boundaries.
+URDF origins `(x,y,z)` in metres are FR `(0.01287,0.26636,-0.28432)`, RR
+`(0.01282,-0.26630,-0.28432)`, FL `(-0.01287,0.26637,-0.28232)`, and RL
+`(-0.01277,-0.26625,-0.28232)`. The active config is shaft-velocity mode with command range
+`[-1,1]` mapped to +/-500 rad/s; reverse uses the same coefficient. The unchanged propeller model
+uses local Y as its force axis, `thrustK=-0.014`, 0.03 m full-submersion height, quadratic shaft
+speed, and `AddForceAtPosition` at each thruster articulation. Shaft-velocity mode restored
+monotonic partial-command response while retaining the configured full-stick top end.
 
 ## Physical model
 
-The Blastoise prefab uses an `ArticulationBody`. Scene overrides include base-link mass 3 kg, COM Y
--0.23 m, linear damping 4, angular damping 15, and inertia `(10,15,10)`; child links add mass (the
-hull link is 8 kg). Gravity is enabled. Buoyancy integrates submerged mesh triangles.
+The boat remains an articulated catamaran. Scene overrides include base-link mass 3 kg, COM
+Y=-0.23 m, linear damping 4, angular damping 15, and inertia `(10,15,10)`; child links add mass and
+the hull link is 8 kg. Gravity is enabled. Buoyancy integrates submerged mesh triangles.
 GeneralDynamics pressure/suction/viscous drag uses linear coefficient 100 and quadratic 30.
 Scene-enabled Fossen dynamics use added mass `(6,8,2)` kg and rotational
 `(0.15,0.25,0.35)` kg m2; linear damping `(30,40,150)`, rotational `(8,12,20)`, and quadratic
-terms `(25,35,40)` / `(3,6,30)`. Provenance is not documented as measured/calibrated. The 0.02 s
-physics step is retained. No physical coefficient changed.
+terms `(25,35,40)` / `(3,6,30)`. The physics step is 0.02 s.
+
+The repository does not identify these coefficients as measured or calibrated; treat them as
+estimated/arbitrary unless provenance is added. The human reports that motion looks and feels
+realistic, and no hydrodynamic, mass, inertia, buoyancy, drag, water, or force-law value changed.
 
 ## Geometry and frames
 
-Odometry publishes `odom -> base_link` and `lidar_link`, `front_camera_link`, `imu_link`, and
-`gps_link` at 50 Hz. `/points` is in `lidar_link` at 10 Hz. Unity X-right/Y-up/Z-forward converts
-to ROS FLU X=Unity Z, Y=-Unity X, Z=Unity Y.
+Odometry publishes `odom -> base_link`; sensor transforms include `lidar_link`,
+`front_camera_link`, `imu_link`, and `gps_link` at 50 Hz. `/points` is `lidar_link` data at 10 Hz.
+Unity X-right/Y-up/Z-forward maps to ROS FLU X=Unity Z, Y=-Unity X, Z=Unity Y.
 
-The platform is a catamaran. The Blastoise head is aft, not the bow. In the URDF, the head collider
-is at longitudinal Y=-0.369 m, while the sensor mount is at Y=+0.277 m; the LiDAR is therefore at
-the physical front. Physical bow/heading is defined by the sensor/catamaran geometry and measured
-positive-surge motion, not by the character's face.
+The LiDAR/sensor mount and catamaran noses are the physical bow. The Blastoise head is aft. The
+physical envelope is approximately 0.895 x 1.063 m. Nav2's 0.80 m circular radius is conservative:
+its 1.60 m diameter exceeds the physical beam by about 0.54 m. Berth dividers are about 2 m apart,
+leaving about 0.40 m logical diametral clearance before inflation. The additional 1.0 m inflation
+can make an otherwise physically traversable berth very costly or infeasible.
 
-The physical envelope is roughly 0.895 x 1.063 m. Nav2's 0.80 m circle is conservative. Dock
-dividers are 2 m apart, leaving about 0.40 m diametral margin before inflation; 1.0 m inflation may
-logically pinch a berth even though the catamaran fits physically.
+The tested far target is ROS odom `(0.8641434,-24.586906)`, yaw `-pi/2`, corresponding to the far
+assembly's near berth. That yaw uses the LiDAR/catamaran bow as forward, not the character head.
 
-The marina assemblies are centered near Unity X 16.086906 and 26.086906 at Z 2.8641434. The far
-target was the far assembly's near berth at Unity `(24.586906,0.8641434)`, ROS odom
-`(0.8641434,-24.586906)`, yaw `-pi/2`. This yaw was cross-checked against LiDAR-at-bow geometry:
-positive surge moves the bow toward increasing Unity X, into that 180-degree dock's open side.
+## Existing capabilities and evidence
 
-## Existing tests and evidence
+The current harness measures full odometry trajectory, cross-track and heading error for supplied
+paths, body velocity, action/final pose, command extrema, transport timing, costmap occupancy,
+recovery logs, navigation status, water validity, and real-time factor. It does not yet provide an
+independent hull-contact, minimum-clearance, berth-region-membership, or stopped-settle predicate.
+No RoboBoat rosbag was found.
 
-The harness now records full trajectory, active/post-result path metrics, body/command history,
-final pose, costmap occupancy, transport lag/rejections, water/runtime validity, and RTF. It does
-not measure hull/dock contact, minimum clearance, dock-region membership, or an independent
-stopped-settle predicate. No RoboBoat rosbag was found.
+- Body-command characterization at +/-0.2 produced tail surge +0.170/-0.139 m/s, sway
+  +0.165/-0.164 m/s, and yaw approximately +/-0.208 rad/s. High Kp 0.5 was unstable and rejected.
+- Three 10 m straight FollowPath runs succeeded: RMS cross-track 0.0025-0.0026 m, max
+  0.0083-0.0093 m, settled speed 0.0196-0.0214 m/s, settled XY error 0.236-0.253 m.
+- Two 30 m straight runs with fixed 0.8 m lookahead succeeded: RMS 0.0022-0.0023 m, max
+  0.0086-0.0119 m, max yaw 0.029-0.032 rad/s, settled error 0.245-0.248 m. The matched
+  velocity-scaled-lookahead run looped near the goal and timed out.
+- A 15 m / +45 degree supplied path tracked at RMS/max 0.036/0.054 m until RPP predicted collision
+  with course geometry; this was an invalid route rather than free-water instability.
+- The mirrored 15 m / -45 degree path reached 0.224 m but timed out in terminal yaw oscillation.
+  A ROS-only 0.1 rad/s yaw cap was tested as a single-variable diagnostic and rejected: it enlarged
+  final error to 0.856 m and heading error to 1.985 rad. The cap was removed before the final build.
 
-### Body response: original manual plant, ROS-only frame corrections
+### Far-dock NavigateToPose baseline
 
-Artifact `PerformanceResults/roboboat-ros-adapter-manual-plant-green/body-response.json`, SHA-256
-`2fa74fed29e991d14cdcf3ee3c347a7efebfd0760e2cd88a7b82d865b1def8ec`:
+Artifact
+`packages/crane_ml/PerformanceResults/roboboat-far-dock-nav2-baseline-1/fixture-summary.json`,
+SHA-256 `e52fc9d3333cc9578d332f6176b0bf45405dd3831ab91eeb9f6f474f7694a015`:
 
-- surge +0.2 -> +1.107 m/s surge, negligible sway;
-- sway +0.2 -> +0.959 m/s sway, residual surge +0.084 m/s;
-- yaw +0.2 -> +0.788 rad/s yaw;
-- no rejected/stale/cross-episode commands or water errors.
+- requested pose `(0.8641434,-24.586906,-pi/2)`; occupied costmap evidence required;
+- action accepted once and traveled 16.17 m from `(-2.271,-5.027)`;
+- action aborted after 133.08 s at `(-0.788,-20.938)`, about 4.0 m from the requested pose;
+- result yaw was `+1.283 rad`, nearly opposite the requested dock yaw;
+- maximum Nav2 angular command was 0.5 rad/s; body yaw rate at result was 0.111 rad/s;
+- after 8.05 s, coast was 0.191 m and final body speed was 0.0191 m/s;
+- costmap was populated (maximum 8,643 occupied cells), transport had no rejected/stale/cross-
+  episode commands, and water observations had no failures.
 
-Axes/signs pass, but 0.2 normalized effort produces about 1 m/s, proving the semantic mismatch.
-
-### Supplied 10 m straight path
-
-Artifact `PerformanceResults/roboboat-followpath-10m-manual-plant-1/fixture-summary.json`, SHA-256
-`8e01f6ecec5e7840c13380af18dc35f6a52ca076caf5e21367d692f07f7c1f0e`:
-
-- FollowPath succeeded; active RMS/max cross-track 0.048/0.072 m;
-- active RMS/max heading error 0.0097/0.0184 rad;
-- success at 0.285 m endpoint error and 1.183 m/s body speed;
-- 3.05 s coast: 0.202 m, final speed 0.0078 m/s, final XY error 0.096 m;
-- post-result yaw transient 0.716 rad/s, final yaw error 0.215 rad;
-- clean transport/water, RTF 1.0001.
-
-Straight active tracking works; action success does not mean stopped arrival.
-
-### Far-dock NavigateToPose negative baseline
-
-Artifact `PerformanceResults/roboboat-far-dock-baseline-1/fixture-summary.json`, SHA-256
-`6b34cf1e3de6a5bf60b5b3e9b03fe3abb1ff839c8e3317e84d1fa93d24564a41`:
-
-- action timed out at 90 s;
-- 898 controller commands had maximum linear X/Y exactly zero and max angular 0.481 rad/s;
-- rotate-only actuation drifted 6.166 m; terminal yaw rate 0.784 rad/s;
-- logs show 1 Hz replanning, repeated Navfn failures, an RPP predicted-collision abort/recovery,
-  and cancellation;
-- command transport: 893 accepted, zero rejected/stale/cross-episode, max source lag five ticks,
-  zero water errors;
-- strict worker `valid:false` is due to four unrelated stale perception observations. Retain as
-  negative navigation evidence, not a clean benchmark pass.
-
-This reproduces aggressive circling. RPP has no critic framework, so no MPPI/DWB critic is active.
-The immediate behavior is persistent rotate-to-heading plus yaw-induced translation drift and
-changing replans before forward path following begins.
-
-### Fixed-heading and shaft-speed isolation
-
-The planner and berth geometry are not required to reproduce the circling. A supplied 5 m
-`FollowPath` whose initial heading was offset by +pi/2 produced no translation command, accumulated
-24.410 rad (3.89 revolutions) of rotate-only yaw and drifted 2.160 m before timeout. Artifact
-`PerformanceResults/roboboat-rpp-rotate-90-baseline-1/fixture-summary.json`, SHA-256
-`a45d90d11d60718e8803f95819773c9ecbdafd59cb563fb3b421a7de8d8f556d`.
-
-An unchanged-plant yaw sweep then requested 0.025, 0.05, 0.1, 0.2 and 0.4 for two seconds each.
-Every nonzero request produced essentially the same steady body yaw rate, 0.782-0.790 rad/s. An
-opt-in observer confirmed that the mixer preserved each requested magnitude, but every nonzero
-value drove the four propeller shafts to approximately +/-100 rad/s. For example, command 0.025
-produced mean absolute shaft speed 100.011 rad/s; command 0.4 produced 100.012 rad/s. Artifact
-`PerformanceResults/roboboat-yaw-shaft-diagnostic-1/body-response.json`, SHA-256
-`d2aa446cf0c9132ced3f3f774a2af3a910f3c0fd2b1f8b55818474d748175cdc`; shaft log SHA-256
-`a34249a2f5b1002af4d22cedf7e9b0f45a09c6c3fe19759011d1420209fecfc5`.
-
-This behavior follows from the current torque contract: the propeller driven-axis inertia is
-`1e-6 kg m2`, so even 0.025 Nm implies 500 rad/s of ideal one-step velocity change at the 0.02 s
-physics step, well beyond the observed approximately 100 rad/s saturation. The mixer is not
-quantizing commands; torque-driven shaft saturation is. No controller, mixer, manual input,
-thruster configuration or physics value was changed in obtaining this evidence.
+Controller logs identify the terminal cause. Beginning near `(-1.84,-18.83)`, Navfn repeatedly
+reported `Failed to create plan with tolerance of: 0.500000`. The default BT cleared global and
+local costmaps and ran Spin, Wait, and BackUp recoveries; no replan became feasible, so
+`navigate_to_pose` aborted and canceled FollowPath. This test definitively shows that current
+far-dock navigation is not fixed. It does not prove whether the infeasibility is caused by the
+0.80 m logical radius, 1.0 m inflation, exact goal placement, sensed dock geometry, or a
+combination.
 
 ## Baseline assessment
 
-### Existing capabilities
+### What works
 
-- End-to-end ROS/Unity transport, simulated time, odometry/TF, costmaps, and both Nav2 actions run.
-- ROS surge/sway/yaw axes and signs agree with authoritative odometry.
-- Manual controller/bindings, mixer, thruster, and physical parameters remain at baseline.
-- RPP accurately follows a supplied 10 m straight path while active.
-- The hull physically fits a nominal berth; logical geometry is conservative.
+- The full ROS/Unity command and odometry/TF loop is stable and time-consistent.
+- Surge, sway, and yaw signs are verified; the ROS boundary now represents desired body velocity.
+- Manual control remains on its previous direct path and full-stick capability is preserved.
+- RPP repeatedly tracks 10 m and 30 m straight supplied paths with centimetre-scale error and
+  stopped arrivals.
+- The physical catamaran fits a nominal 2 m berth by mesh dimensions.
 
 ### Observed limitations
 
-- Nav2 numerical velocity is normalized effort downstream, not desired body velocity.
-- The goal checker reports success while moving; there is no stopped-state goal checker.
-- Far-goal rotate-to-heading remains rotate-only while yaw creates translation drift.
-- Any tested nonzero yaw magnitude saturates shaft speed, so reducing RPP's requested angular
-  velocity alone cannot reduce actual turn rate.
-- Navfn repeatedly failed during the far run; footprint plus inflation may pinch the berth.
-- No independent collision/clearance/dock/stopped-settle evaluator exists.
+- RPP does not exploit holonomic sway and can enter terminal yaw/path-pruning oscillation on a
+  curved supplied path.
+- The far-dock global plan becomes infeasible roughly 4 m before the goal. Recovery behaviors do
+  not make it feasible.
+- The logical 0.80 m circle plus 1.0 m inflation is much more conservative than the physical hull
+  and is a leading explanation for the dock-entry failure.
+- No independent docking-success predicate checks contact, clearance, berth membership, and
+  stopped settling.
 
 ### Evidence gaps
 
-- Proportional shaft/body response under a non-saturating command contract, including stopping
-  distance/time and manual-input regression.
-- Repeated 10 m runs on the final build, then 30-50 m straight and turns.
-- NavigateToPose planned-path capture and exact berth costmap clearance.
-- Collision/contact, clearance, dock membership, stopped-settle, and repeated docking.
-- An automated manual-input regression remains desirable, although every manual/shared-actuation
-  source is currently identical to the pinned baseline.
+- Distance-transform clearance at the exact target and along the last 5 m of the captured global
+  costmap.
+- A recorded sequence of global plans/costmaps showing the first infeasible replan.
+- Independent dock-region/contact/clearance/stopped-settle measurement.
+- Repeated feasible turns/S-turns and repeated dock approaches after, not before, geometry is
+  shown feasible.
 
 ## Ranked hypotheses and falsifiers
 
-1. **Torque-mode command interface.** Confirmed: all tested nonzero yaw requests preserve their
-   mixer magnitude but saturate every shaft near 100 rad/s, producing the same body yaw rate. A
-   non-saturating shaft-speed request should restore monotonic command response; falsify if measured
-   shaft speeds or body yaw remain quantized after that isolated contract change.
-2. **Footprint/costmap clearance.** Radius 0.8 m plus 1.0 m inflation blocks the 2 m berth. Confirm
-   from exact target costmap/path clearance; falsify with a non-lethal corridor wider than footprint.
-3. **Goal/checker and command semantics.** Effort interpretation plus loose tolerance causes moving
-   success. Confirm via speed/coast at result; falsify if endpoints repeatedly stop in tolerance.
-4. **Planner/final geometry.** Rolling Navfn replans do not supply a stable dock-aligned approach.
-   Confirm by capturing every plan/final 5 m geometry; falsify with repeated feasible approaches.
-5. **Boat physics.** Elevate only if isolated tests remain implausible after interface/controller
-   behavior is accounted for. The human reports realistic feel; no hydrodynamic tuning is justified.
+1. **Footprint/costmap/goal clearance.** The radius/inflation or target cell makes the final berth
+   unreachable. Confirm if a distance transform shows less than 0.80 m obstacle clearance at the
+   goal or no connected collision-free corridor; falsify if the current captured grid contains a
+   valid corridor and goal neighborhood for the active radius.
+2. **Planner/final path geometry.** Rolling Navfn replanning loses a dock-aligned route as the boat
+   approaches. Confirm by retaining successive plans and locating the first geometric
+   discontinuity/failure; falsify if a stable collision-free final plan exists throughout.
+3. **Controller/path orientation.** RPP's forward-only curvature and terminal orientation handling
+   causes the mirrored-turn limit cycle. Confirm with a supplied feasible final curve that repeats
+   the oscillation while planner feasibility remains true; falsify with repeated stopped success.
+4. **Goal/progress checking.** Current stopped thresholds could delay success, but they cannot
+   explain Navfn's explicit no-plan abort. Confirm only if feasible paths reach tolerance while the
+   checker remains false; falsify when pose and speed predicates agree with action success.
+5. **Command interface.** Current PI mapping could limit aggressive curvature. The rejected yaw
+   cap shows simply reducing yaw authority is harmful. Confirm with requested-vs-measured tracking
+   error on a feasible curve; falsify if body response follows command while path error grows.
+6. **Boat physics.** Least likely given realistic human assessment and excellent straight-path
+   evidence. Elevate only if feasible-path tests show implausible measured response after the
+   above causes are falsified.
 
 ## Smallest next experiment
 
-Run one controlled A/B of the existing torque contract against the already-supported velocity-mode
-thruster contract, using the unchanged yaw sweep and shaft observer. The acceptance signal is
-monotonic shaft speed and body yaw rate across 0.025-0.4, with full-scale/manual top-end behavior
-retained. This is smaller and more discriminating than Nav2 tuning: it tests the confirmed
-command/actuator bottleneck without changing hydrodynamics, mixer signs, scene geometry or manual
-bindings. Per the reconnaissance guardrail, report and review this behavior-changing configuration
-experiment before applying it.
+Perform a read-only footprint/dock-clearance audit on the retained far-run global costmap: map the
+exact goal and final 5 m approach into grid cells, compute obstacle distance/connected free space,
+and evaluate separately against the physical hull envelope, active 0.80 m radius, and 1.0 m
+inflation. This single measurement distinguishes an invalid goal/corridor from planner or
+controller failure without tuning Nav2, changing the environment, or touching boat physics.
