@@ -1,5 +1,38 @@
 # Experiment Log
 
+## 2026-09-22 — proving-ground route-shape qualification
+
+- **PREDECLARED DEVELOPMENT RUN / PASS:** `offset-gates-v1` ran on isolated ROS domain 222 and
+  port 10614 with expected status `succeeded`. It finished in 76.86 s with 17.592 m endpoint
+  displacement, a 19.571 m sampled path, lateral extrema of +1.597/-1.455 m, two sampled lateral
+  direction changes, 682 delivered BT transitions, 768 returned commands, 287 costmap
+  observations, and zero recoveries. This establishes traversal of the two offset route regions;
+  it does not prove which delivered observation Nav2 consumed.
+- **DEVELOPMENT RUN / PASS:** the valid `staggered-obstacles-v1` rerun on isolated ROS domain 220
+  succeeded in 73.06 s with 17.546 m endpoint displacement, an 18.331 m sampled path, lateral
+  extrema of +0.506/-0.347 m, three sampled lateral direction changes, 646 BT transitions, 721
+  commands, 270 costmap observations, and zero recoveries. Its first attempt on domain 233 was
+  infrastructure-invalid before the episode because the Fast DDS derived port exceeded the valid
+  range; that startup attempt is retained as invalid calibration and contributes no evidence.
+- **NEGATIVE CALIBRATION RETAINED:** `slalom-s-turn-v1` returned action success in 69.46 s, but its
+  17.478 m sampled trajectory stayed exactly on the centerline with maximum angular command 0.0
+  and zero lateral direction changes. The current bollards leave a straight route, so this run
+  fails the declared S-turn navigation gate and is not counted as qualified.
+- **AUTOMATED QA IMPLEMENTED:** the aggregate summarizer can apply a separately versioned
+  behavioral-gate catalog after validating canonical manifest/configuration identity. Catalog
+  SHA-256 is `86c98ca008778bd97401c165e00d2543bddeac1432c9b96d05077b484aec40e8`.
+  This preserves the canonical v1 manifest and every earlier run identity while preventing mere
+  action success from satisfying a route-shape claim. Staggered obstacles and offset gates return
+  `NAVIGATION_PASS`, `HEADLESS_PASS`, and `EXPLANATION_READY`; slalom returns navigation
+  `PARTIAL`, headless `PARTIAL`, and overall `BLOCKED`. Their summary hashes are respectively
+  `101381abef9faa7c57205694ac276db58a0d598d2011279e86673ef809342bee`,
+  `8af41c8f573dd8b1d7cc3b0f91a287f5ea9618a519f271a35931178c1a6b9006`, and
+  `55e756e282b0b1448e3043633441d9568e104d41cc8e515492280aea80cfaaca`.
+- **LIMITS:** these are single development calibrations, not independent explanation-study
+  episodes. The slalom geometry correction and rerun, repeated scenario qualification,
+  explanation generation, and blinded annotation remain `NOT_RUN`. Raw artifacts remain under
+  `/tmp`; frozen/DVC artifacts and RoboBoat-specific files were untouched.
+
 ## 2026-09-22 — proving-ground narrow passage, U-trap, and aggregate QA
 
 - **PREDECLARED DEVELOPMENT RUN / PASS:** `narrow-doorway-v1` ran on isolated ROS domain 231 and
