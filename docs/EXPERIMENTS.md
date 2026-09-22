@@ -1,5 +1,41 @@
 # Experiment Log
 
+## 2026-09-22 — corrected proving-ground slalom qualification
+
+- **VERSIONED CORRECTION / HISTORY PRESERVED:** the v1 slalom manifest and its SHA-256 remain
+  unchanged. Additive catalog `crane-land-proving-ground-v2` contains only
+  `slalom-s-turn-v2`, using four alternating partial-width barrier banks. Catalog SHA-256 is
+  `3f249258362fb47ceb135b7423e77ba5716bd1ebf4b3db7cf3650a8f8f0640f2`; its separately versioned
+  navigation-gate SHA-256 is
+  `67b10e775b2b7794e1e639dd69061156e2233651ef5cfe73db51c6e0934315c6`. Launchers default to v1
+  and require explicit v2 selection, preventing historical artifact identity from changing.
+- **PREDECLARED DEVELOPMENT RUN / PASS:** on isolated ROS domain 223 and port 10615, v2 succeeded
+  in 82.96 s with 17.577 m endpoint displacement, a 21.122 m sampled path, lateral extrema of
+  +1.349/-1.248 m, and four lateral direction changes. It delivered 727 BT transitions, 818
+  returned commands, and 314 costmap observations with zero recoveries. The aggregate record
+  passed identity, `NAVIGATION_PASS`, `HEADLESS_PASS`, `EXPLANATION_READY`, and every declared v2
+  route-shape check; summary SHA-256 is
+  `e4601110c15fdada259c26ae3027fb6bf381144b1aa0db40d036de29fd28f4b9`.
+- **HEADLESS / COMPATIBILITY PASS:** the v2 validator reported seven canonical colliders, seven
+  collider-free renderers, nine unique semantic IDs, and a semantic hit on
+  `slalom-bank-west-near`; result SHA-256 is
+  `e86eb8e45b800f8e393fbfc512620457088d09780c0dd1ce940ac11ff7718532`. The same player reproduced
+  the exact historical v1 validator SHA-256
+  `3d70047b66eed769fc061a5af2753a72ef0a593e870e42e58e59dabb2764f527`.
+- **INTERACTIVE PASS FOR REPRESENTATIVE CONTROL:** isolated X11 overview and oblique captures
+  showed the corrected topology, TurtleBot3, v2 environment/route HUD, semantic highlight, and
+  collider overlays. A focused `2` keypress changed `View: Overview` to `View: Oblique`; before
+  and after screenshot SHA-256 values are respectively
+  `add950fbf078a38d11ae1c6f9c144a31de46740d966d70cd8a53b46c40776813` and
+  `4bc3c6352b2efe1835b53d01d75ad447669f8524a2fffd3de7ebb39447354392`. An earlier Wayland attempt
+  produced a black frame, and a later keyboard attempt omitted the named scene and opened the
+  default aquatic scene; both are invalid calibration and contribute no environment evidence.
+- **LIMITS:** this is one development calibration, not an independent explanation-study episode.
+  Repeated qualification, scenario-to-question contracts, explanation generation, and blinded
+  annotation remain `NOT_RUN`. Delivered transitions, commands, and observations do not prove
+  controller consumption or physical causation. Frozen/DVC artifacts and RoboBoat-specific files
+  were untouched.
+
 ## 2026-09-22 — proving-ground route-shape qualification
 
 - **PREDECLARED DEVELOPMENT RUN / PASS:** `offset-gates-v1` ran on isolated ROS domain 222 and
