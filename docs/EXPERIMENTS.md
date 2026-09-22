@@ -538,6 +538,28 @@
   `c6db13e9c7190482f1eca723cb515cc7a38ce01a9caa60d6fbf9720810e68d69`. These runs are environment
   calibration only and do not contribute independent samples to the frozen F/G/H study.
 
+## 2026-09-22 — sealed pn-0028 inclusion and model calls
+
+- **CAPTURED ONCE / INCLUDED:** frozen terminal-abort row `pn-0028`, seed 3028, passed every
+  inclusion gate and the exact expected-abort contract. The action aborted after two unique Wait
+  invocations with 0.123 m displacement, 308 returned controller commands, 65 costmap
+  observations, maximum 9,055 occupied cells, and accepted 10/7-unit parity audits. No answer was
+  inspected for scoring or used to change the protocol.
+- **SEALED MODEL CALLS RETAINED / NOT ANNOTATED:** both frozen questions ran once for F/G/H with
+  Luna-low: six unique calls, no retries, 623,562 input tokens, 415,744 cached input tokens, 4,814
+  output tokens, 892 reasoning tokens, and 237.627 s aggregate latency. G's failure-cause
+  realization passed final-text verification and remained partial; its recovery-mechanism
+  realization failed verification and used the full checked-template fallback. No repair call or
+  resampling was made. A--E remain non-model smoke outputs and frozen model evaluation is
+  `NOT_RUN`. Hashes and usage are retained in
+  `manifests/model_outputs/pn-0028-provenance-v1.json`.
+- **VERIFIED:** all 24 robot-visible, 15 evaluator-only, and eight model/cache manifest artifacts
+  match their retained byte counts and SHA-256 hashes; the robot-visible leakage scan passed. The
+  first model-run attempt failed before caller construction because stale temporary Unity builds
+  exhausted `/tmp`; it produced no output or cache artifact. Twenty-two stopped, rebuildable
+  environment-build directories were removed, freeing roughly 12 GB, and the governed run then
+  completed without changing any frozen file, runtime, prompt, or call policy.
+
 ## 2026-09-21 — sealed pn-0027 inclusion and model calls
 
 - **CAPTURED ONCE / INCLUDED:** frozen recovery-success row `pn-0027`, seed 3027, passed every
