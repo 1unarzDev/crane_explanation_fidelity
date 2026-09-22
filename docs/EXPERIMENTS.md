@@ -1,5 +1,26 @@
 # Experiment Log
 
+## 2026-09-22 — fail-closed ecological mechanism admission
+
+- **IMPLEMENTED:** CRANE revision `86e7658` adds explicit runtime-admission criteria to every
+  development ecological scenario contract. Scenario/configuration identity alone is no longer
+  sufficient: terminal status, minimum recorded recovery invocations, minimum trajectory
+  inventory, required BT node observations, and zero-drop requirements are checked before export.
+  The revised contract SHA-256 is
+  `ff2b2c45606a8f918fd4a4d70194dcfa9ceeac1a031245a94cc3bbbfa529209d`.
+- **REAL NEGATIVE-ARTIFACT PASS:** the two retained current-build `dynamic-gate-v1` calibrations
+  were both rejected before output creation: the first because `aborted` did not satisfy the
+  declared `succeeded` terminal status, and the second because `timeout` did not satisfy it. Thus
+  neither a matching layout hash nor a plausible question can silently convert a mechanism miss
+  into an ecological benchmark input.
+- **REAL POSITIVE-ARTIFACT PASS:** the current-build warehouse recovery-success artifact passed
+  admission with terminal `succeeded`, four retained recovery-leaf invocations, 3,950 retained
+  transitions against a 16,384 capacity, and zero drops. Its regenerated separated export retained
+  physical truth only in the evaluator plane. This validates admission behavior, not explanation
+  correctness or an additional independent sample.
+- **REGRESSION:** 86 land/reference tests (plus two subtests) pass. Frozen study files, governed
+  DVC data, and RoboBoat-specific content were untouched.
+
 ## 2026-09-22 — proving-ground ecological export calibration
 
 - **PURPOSE:** exercise the separated ecological evidence exporter on a proving-ground mechanism
@@ -19,10 +40,10 @@
   reruns were made.
 - **INTERPRETATION:** the historical three-run proving-ground qualification remains valid for its
   recorded component/policy state, but it is not sufficient to claim that the same mechanism is
-  export-ready on the current build. The next implementation task is to make ecological export
-  admission verify the declared terminal/mechanism prerequisites, then qualify one current-build
-  proving-ground scenario whose runtime actually satisfies them. Frozen/DVC artifacts and
-  RoboBoat-specific content were untouched.
+  export-ready on the current build. Fail-closed terminal/mechanism admission was added in the
+  subsequent checkpoint; qualifying one current-build proving-ground scenario that actually
+  satisfies its contract remains open. Frozen/DVC artifacts and RoboBoat-specific content were
+  untouched.
 
 ## 2026-09-22 — ecological BT capture-capacity qualification
 

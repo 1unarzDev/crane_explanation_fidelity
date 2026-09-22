@@ -61,6 +61,11 @@ both recorded zero recovery-leaf invocations. Both are retained negative calibra
 was exported. Historical proving-ground passes remain scoped to their recorded revisions, but a
 current-build mechanism-matching export is still `NOT_RUN`.
 
+The export boundary now mechanically rejects this class of mismatch. Both negative artifacts fail
+their declared `succeeded` terminal-status gate, while the current-build warehouse artifact passes
+the new terminal/mechanism/inventory/zero-drop gates. This closes false admission; it does not
+close the proving-ground runtime gap or create an explanation-evaluation result.
+
 ## Retained infrastructure validation
 
 | Environment | Retained result | Missing full validation | Submission status |

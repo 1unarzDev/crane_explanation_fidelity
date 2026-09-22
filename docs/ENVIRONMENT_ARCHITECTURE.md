@@ -67,6 +67,12 @@ robot-visible plane contains runtime records and hashes but no scenario name, se
 identity, expected outcome, evaluator truth, or input source path. A content-free top-level
 manifest binds both files by SHA-256 without merging their contents.
 
+Scenario identity is necessary but not sufficient for ecological admission. Each development
+contract also declares observable runtime prerequisites: accepted terminal status, minimum
+recorded recovery-invocation and trajectory inventories, required BT node observations where
+applicable, and zero-drop bounds. Export fails before creating an output root when the intended
+mechanism did not occur, even if the environment/configuration hashes match.
+
 The frozen F/G/H study remains isolated from new ecological scenarios. Warehouse/proving-ground
 work may reuse generic runtime capture and validation infrastructure, but it must not alter frozen
 questions, prompts, split, inclusion rules, model configuration, annotation guide, or stopping
