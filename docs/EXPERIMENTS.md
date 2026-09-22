@@ -1474,3 +1474,32 @@
   qualification, repeated nominal-route determinism, and ecological explanation generation or
   annotation. Raw outputs remain ephemeral under `/tmp/crane-warehouse-yawfix-build.y1Pmyr` and
   `/tmp/crane-warehouse-qa-build.Bq8D4k`; no frozen or sealed artifact changed.
+
+## 2026-09-22 — warehouse interactive inspection increment
+
+- **TESTED/NEGATIVE BASELINE:** the existing fixed spectator camera was launched in an isolated X
+  display against `/tmp/crane-warehouse-qa-build.Bq8D4k`. The scene loaded, but the view was too
+  distant, perimeter walls obscured the layout, lighting was overexposed, the robot was not
+  legible, and no inspection controls or overlays existed. This is retained as the reason for the
+  bounded presentation-only change; it is not a navigation or explanation failure.
+- **IMPLEMENTED:** `CraneReferenceInspectionController` adds overview, oblique, and robot-follow
+  views; a route/environment HUD; trajectory rendering; semantic evidence highlighting; and
+  canonical-box-collider wireframes. It changes only the spectator camera and render-only overlay
+  objects. Deterministic launch flags mirror the `1`/`2`/`3`, `H`, `C`, and `T` keyboard controls.
+- **TESTED/PASS:** Unity 6000.5.10f1 regenerated the warehouse scene and produced a fresh Linux
+  development player. Isolated 1280×720 screenshots visually confirmed a readable full-layout
+  overview and oblique view, correct `crane-industrial-warehouse-v2` and
+  `warehouse-cross-aisle-detour-v1` HUD identity, semantic-overlay state, trajectory state, and
+  visible wireframes around canonical geometry. Wayland was explicitly removed from the player
+  environment so the audit remained on its own X display and did not open a host window.
+- **TESTED/NON-REGRESSION:** all 31 land/reference static tests passed. The new build's headless
+  warehouse validator returned `valid=true`, 20 canonical colliders, 20 collider-free renderers,
+  28 unique semantic IDs, zero duplicates, and unchanged `STRUCTURAL_PASS`, `PHYSICS_PASS`,
+  `SENSOR_PASS`, `HEADLESS_PASS`, and `EXPLANATION_READY` results. The build includes the existing
+  RoboBoat scene and compiled shared assemblies, but no parallel-workstream RoboBoat runtime was
+  touched or rerun.
+- **PARTIAL / remaining:** direct manual keyboard polling was not exercised; attempted synthetic X
+  key injection did not change the view, so only deterministic launch controls are counted as
+  tested. Dynamic blockage/no-path/recovery scenarios and ecological explanation evaluation remain
+  `NOT_RUN`. Screenshots and build outputs are ephemeral under `/tmp`; frozen study data and sealed
+  artifacts were not modified.
