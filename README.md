@@ -67,8 +67,9 @@ their own location. Exact repository commits and destinations are recorded in
   canonical semantic geometry separated from visuals.
 - **IMPLEMENTED, TESTED (ECOLOGICAL CALIBRATION):** an eight-layout manifest-driven land proving
   ground with canonical/visual separation, semantic evidence IDs, headless QA, inspection views,
-  and one alternate-route success, dynamic-gate recovery-success, and bounded blockage abort.
-  Five layouts, repetition, explanation generation, and blinded annotation remain unrun.
+  and one alternate-route, narrow-doorway, and U-trap success, dynamic-gate recovery-success, and
+  bounded blockage abort. Three layouts, repetition, explanation generation, and blinded
+  annotation remain unrun.
 - **IMPLEMENTED, TESTED:** deterministic F1TENTH PNG/YAML contour-to-collider generator and Unity
   importer, qualified headlessly on the externally retained pinned Spielberg map. Full-lap ROS
   control and source-simulator comparison remain unrun.

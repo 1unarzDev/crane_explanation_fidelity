@@ -1,5 +1,44 @@
 # Experiment Log
 
+## 2026-09-22 — proving-ground narrow passage, U-trap, and aggregate QA
+
+- **PREDECLARED DEVELOPMENT RUN / PASS:** `narrow-doorway-v1` ran on isolated ROS domain 231 and
+  port 10610 with expected status `succeeded`. It passed the centered 1.0 m opening in 69.06 s,
+  displaced 17.467 m, followed a 17.542 m sampled path with 0.236 m lateral span, delivered 610 BT
+  transitions and 264 costmap observations, and reported zero recoveries. This is evidence of
+  narrow-passage traversal, not a replanning claim. Fixture SHA-256 is
+  `62d034616e09fd187a16645e12325add184cda354f7271a1351ce9854ef007c1`.
+- **PREDECLARED DEVELOPMENT RUN / PASS:** `u-trap-v1` ran on isolated ROS domain 232 and port 10611
+  with expected status `succeeded`. It advanced into the trap region, reversed across 14 sampled
+  intervals, moved 3.003 m laterally onto an exterior route, and returned to the goal. It succeeded
+  in 98.16 s with 17.604 m endpoint displacement, 25.207 m sampled path, 871 delivered BT
+  transitions, 375 costmap observations, and zero recoveries. This establishes a substantial route
+  change around the canonical trap; delivered observations do not prove which input caused it.
+  Fixture SHA-256 is
+  `53915007050868879651f411cef83135c75ad9f6e0e10ecefcc283b1af545e6c`.
+- **HEADLESS PARITY / PASS:** independent validators for the doorway and U-trap returned
+  `STRUCTURAL_PASS`, `PHYSICS_PASS`, `SENSOR_PASS`, `HEADLESS_PASS`, and `EXPLANATION_READY`, with
+  zero duplicate semantic IDs and semantic ray hits on `doorway-east-jamb` and `u-trap-back`.
+  Result SHA-256 values are
+  `82a22fc9b37e86fe95e039dcef7c023e59b1062e3755444c787f431d33ccad75` and
+  `011ec87998fdc3ad72ffaa72a03a933e7732c351230d0e492188bfc276318000`.
+- **AUTOMATED QA IMPLEMENTED:** `summarize_environment_qa.py` now resolves both warehouse-route
+  and proving-ground-layout schemas behind its existing command interface. It verifies exact
+  manifest/configuration identity, contract parity, expected terminal status, and independent
+  structural/navigation records; computes path, excursion, and sampled reversal metrics; and
+  hashes every referenced artifact. Actual summaries for all five qualified proving-ground layouts
+  report `identityValid=true`, `NAVIGATION_PASS`, `HEADLESS_PASS`, and `EXPLANATION_READY`.
+  Dynamic-gate recovery-success and expected complete-blockage abort additionally report
+  `FAILURE_RECOVERY_PASS`. Overall verdicts remain `PARTIAL` because interactive evidence is not
+  silently inferred. A retained warehouse nominal route was also re-summarized through the same
+  interface and preserved `identityValid=true`, `NAVIGATION_PASS`, `HEADLESS_PASS`, and
+  `EXPLANATION_READY`, confirming warehouse-output compatibility.
+- **QA / LIMITS:** 50 land/reference tests pass. These are single development calibrations, not
+  independent explanation-study episodes. `staggered-obstacles-v1`, `slalom-s-turn-v1`, and
+  `offset-gates-v1`, repeated-run qualification, explanation generation, and blinded annotation
+  remain `NOT_RUN`. Raw outputs remain ephemeral under `/tmp`; frozen study data, DVC artifacts,
+  and RoboBoat-specific files were untouched.
+
 ## 2026-09-22 — configurable land proving-ground implementation and calibration
 
 - **IMPLEMENTED:** CRANE's existing TurtleBot3 warehouse scene can now replace its authored world
