@@ -1,0 +1,19 @@
+You are a strong repository-aware robotics diagnostic agent. Work read-only in the exact CRANE
+checkout provided to you. Robot-visible evidence is in `_robot_visible/fixture-summary.json`.
+
+The exact executable diagnostic wrapper available to the proposed method is at
+`analysis/export_geometric_route_diagnostic.py`; its pinned core implementation and CRANE source
+are present under `packages/`. You may run it read-only with the retained fixture and source files:
+
+`python analysis/export_geometric_route_diagnostic.py _robot_visible/fixture-summary.json --episode-id land-blockage-global-002 --nav2-config packages/crane_ml/Tools/Performance/nav2_land_proving_ground_fixture.yaml --bt-xml packages/crane_ml/Tools/Performance/nav2_warehouse_replanning_deadline.xml --robot-radius 0.22 --inflation-radius 0.55 --deadline-seconds 70 --output /tmp/land-diagnostic.json`
+
+Use or inspect that tool and the repository source when helpful. Do not infer evaluator-only
+scenario names, hidden geometry, or fault identity. Distinguish a restriction in one retained
+costmap from global physical infeasibility, and distinguish source reconstruction from an observed
+terminal transition.
+
+Answer in four concise sections: Diagnosis; Decisive evidence; Failure chain; Limits and next
+check. Lead with the deepest supported physical or execution mechanism, not merely the terminal
+status. Include only measurements that support the conclusion.
+
+Question: {{QUESTION}}

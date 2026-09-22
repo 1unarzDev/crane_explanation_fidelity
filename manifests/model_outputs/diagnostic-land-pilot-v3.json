@@ -1,0 +1,73 @@
+{
+  "a_to_e_frozen_model_evaluation_status": "NOT_RUN",
+  "adapter": "codex-cli-json/v1",
+  "artifacts": [
+    {
+      "bytes": 12371,
+      "path": "model_outputs/dev/diagnostic-land-pilot-v3/land-blockage-global-002/mechanism-and-outcome.json",
+      "sha256": "d832409c6ccb3b774fa5eb2861f37ea8acf583916502123892470fb489dfe42e"
+    },
+    {
+      "bytes": 20075,
+      "path": "research/explanation_fidelity/model_cache/diagnostic-land-pilot-v1/4d9daa419e3022581b9055067fde228b4a4db1aa58be1bfddecd3c572fd75767.json",
+      "sha256": "1ce4b4a147baab4cfd98419dd9fb47fa979be4d1e91a1a663e5d33eb534c2414"
+    },
+    {
+      "bytes": 18640,
+      "path": "research/explanation_fidelity/model_cache/diagnostic-land-pilot-v1/939bf5fe7f2d9f8f6249bdc350ccc1b540e0221878c3b00b8ae7486168f57a8a.json",
+      "sha256": "1d0c9564a48b43e43f438aecd2449df7fbdd3c2a51b53117e6fd97e82e847435"
+    },
+    {
+      "bytes": 77273,
+      "path": "research/explanation_fidelity/model_cache/diagnostic-land-pilot-v1/fd354f9391d662f83bc5f7224c447e39aca73f1d40b8d8fb1262884e29a684f9.json",
+      "sha256": "1b2fb919d81973984ded000485167e5d881a3e844034190f7769e7cad765ece8"
+    }
+  ],
+  "cache_root": "research/explanation_fidelity/model_cache/diagnostic-land-pilot-v1",
+  "conditions": [
+    "N",
+    "P",
+    "R"
+  ],
+  "created_utc": "2026-09-22T23:39:13.333780+00:00",
+  "embedded_non_model_smoke_conditions": [
+    "T"
+  ],
+  "embedded_non_model_smoke_outputs": 1,
+  "episode_ids": [
+    "land-blockage-global-002"
+  ],
+  "evaluator_truth_available_to_methods": false,
+  "information_parity_audited": true,
+  "model": "gpt-5.6-sol",
+  "model_condition_outputs": 3,
+  "model_calls_referenced": 3,
+  "content_addressed_calls_reused_from_v1": 2,
+  "new_model_calls": 1,
+  "output_root": "model_outputs/dev/diagnostic-land-pilot-v3",
+  "provider": "codex-lb-via-chatgpt-login",
+  "question_kinds": [
+    "diagnostic-mechanism-and-outcome-v1"
+  ],
+  "read_only_workspace_verified": true,
+  "reasoning_effort": "low",
+  "result_envelope_conditions": [
+    "N",
+    "P",
+    "R",
+    "T"
+  ],
+  "result_envelope_outputs": 4,
+  "schema": "crane-explain-model-artifact-manifest/v1",
+  "single_sample_no_retry": true,
+  "status": "DEVELOPMENT_ONLY_NOT_FROZEN",
+  "usage": {
+    "aggregate_latency_ms": 107453.543183,
+    "cached_input_tokens": 125952,
+    "cost_status": "not_reported_by_codex_cli_chatgpt_login",
+    "cost_usd": null,
+    "input_tokens": 193700,
+    "output_tokens": 2378,
+    "reasoning_output_tokens": 389
+  }
+}

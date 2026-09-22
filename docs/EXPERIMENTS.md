@@ -2363,3 +2363,36 @@
 - **GOVERNANCE:** fixture, QA summary, diagnostic export, compact build manifest, runtime result,
   and evaluator truth are physically separated under `diagnostic-pilot-v1`, with committed SHA-256
   manifests and DVC pointers. This is development evidence, not a frozen R/P/T/N result.
+
+## 2026-09-22 — first information-parity diagnostic explanation pilot
+
+- **DEVELOPMENT ONLY / SINGLE QUESTION:** one governed land episode and one mechanism/outcome
+  question were run once with `gpt-5.6-sol`, low reasoning, through Codex CLI `0.155.1`. Conditions
+  were R (repository-aware agent), P (checked diagnosis plus model realization and verification), T
+  (deterministic rendering), and N (runtime/source ablation without the physical computation).
+  No human label, effect estimate, or confirmatory conclusion exists.
+- **RETAINED FAIRNESS FAILURE:** pilot v1 gave R the lower-level costmap audit but not P's exact
+  diagnostic wrapper. R audited only the default final 5 m, missed the earlier route restriction,
+  and incorrectly said `allow_reversing: false` although the exact configuration records `true`.
+  The output is retained as a development failure and is excluded from any fair method comparison.
+- **CORRECTED TOOL PARITY:** v3 gave R the governed raw fixture, exact CRANE `c46de4d`, exact core
+  `910a097`, and the same `export_geometric_route_diagnostic.py` computation available to P. P and
+  N reused their content-addressed v1 calls; only the corrected R request was newly sampled. All
+  workspaces were read-only and no evaluator truth was available.
+- **QUALITATIVE RESULT / NO INDEPENDENT LABEL:** parity-corrected R, P's raw candidate, and T all
+  communicated the direct-route cost restriction, retained-grid connectivity, lateral detour,
+  deadline alignment, and major causal limits. N explained the deadline accurately but explicitly
+  lacked a route computation and did not identify the supported geometric restriction. R did not
+  show an obvious material factual error in this corrected output and is at least as readable as
+  T. This development case therefore provides no evidence that P beats tool-enabled R.
+- **VERIFICATION/FALLBACK:** P's candidate preserved the supported mechanism and limits in more
+  natural prose, but the exact-text verifier rejected it; final P equals T. Development fallback is
+  therefore 1/1. This is evidence that current final verification is conservative and potentially
+  usefulness-reducing, not permission to weaken it without an independently tested semantic check.
+- **RESOURCE OBSERVATION:** retained model-call latency was 70.636 s for R, 19.837 s for P
+  realization, and 16.980 s for N. The deterministic diagnostic recomputed byte-identically in
+  0.111 s locally. Model monetary cost was unavailable. R used 159,005 input tokens (125,952
+  cached) versus 17,806 for P and 16,889 for N; this resource difference must be reported rather
+  than attributed solely to explanation quality.
+- **NEXT:** obtain a nominal-control episode and an evidence-masked ambiguous case, then dry-run
+  blinded diagnostic annotation. Do not freeze or power the study from this single selected case.
