@@ -1,19 +1,18 @@
 # RoboBoat navigation baseline
 
 Date: 2026-09-22. This document describes the implementation actually running in the dedicated
-`/home/lunarz/worktrees/roboboat-docking` worktree after the validated command-interface and
-long-path checkpoints. It supersedes the earlier torque-mode reconnaissance snapshot. The
-RoboBoat scene, hydrodynamics, mixer, manual controller, and input bindings were not changed in
-this pass.
+`/home/lunarz/worktrees/roboboat-docking` worktree after all eight validation gates. It supersedes
+the earlier torque-mode reconnaissance snapshot. The RoboBoat scene, hydrodynamics, mixer,
+manual controller, and input bindings were not changed in this pass.
 
 ## Provenance
 
-- Starting superproject checkpoint for this update: branch `roboboat-docking`, commit
-  `57b76ab3c5f00397e60e716306a3c5e34833021c`.
-- Gitlinks: `crane_ml` `0f89879d40c0783e1aa078234746828a2b2700ad`, `astro_dock`
+- Starting superproject checkpoint for the final validation: branch `roboboat-docking`, commit
+  `ffa3bf39131d8f7fc17da4597a27d2ffa9f5549a`.
+- Gitlinks after validation: `crane_ml` `60439faa5df320e54082ad0dfedad635442adf07`, `astro_dock`
   `36202373ae186a8fd247a20b7b477312a744de99`, nested ROS-TCP endpoint
   `3c3d405db665a8c52c28e45f23b8c9782a9564ba`.
-- Active Nav2 YAML SHA-256: `7ad4490b570c54526528db2118aaa5625879c478a67331e6e7155e533323593f`.
+- Active Nav2 YAML SHA-256: `047e0981aee88fb1e8833aabefe718a35ab2be49925dd95640139ac7b401385c`.
 - ROS adapter SHA-256: `886c1b11c9ec106bc6ec1a19d89281ee7ee5cf61df3bc42f6adc4acbe519265b`.
 - Thruster config SHA-256: `ee66af800d106dad50bbdef22e3da97c7102446f91b9b84753958351024bef59`.
 - Manual/shared mixer source remains `b846a21a1ea163555c5489b5b0fc3dd29f46f4f93c1fd7e16c48b1c0333e4f83`.
@@ -23,8 +22,10 @@ this pass.
 - Runtime image `lunarzdev/astro:cuda`, Nav2 `1.3.12`, image digest
   `sha256:9c286b78dcc1ecf0a159f624f642cf831d463370ce264f00fdd6f6c30ce50053`.
 
-The measurement extension adds only `straight`, `gentle-turn`, and `s-turn` path generation and
-records `pathShape`; it does not alter runtime behavior.
+Measurement tooling now also accepts a hash-retained supplied path and exports dependency-free SVG
+diagnostics. These additions do not alter runtime behavior. The only final Nav2 change after the
+baseline was `goal_checker.xy_goal_tolerance: 0.40 -> 0.20`, submodule commit `1bb71bc`, justified
+by the matched stopped-settle experiment below.
 
 ## Current architecture
 
@@ -73,7 +74,7 @@ active and are not blended into these values.
 | Lookahead | fixed 0.8 m; velocity scaling disabled; collision detection enabled; pose search 10 m |
 | Heading/motion | rotate-to-heading disabled; reversing disabled; RPP outputs no `linear.y` in observed runs |
 | Approach | scaling distance 2.0 m; minimum approach speed 0.02 m/s |
-| Goal checker | stateful `StoppedGoalChecker`; XY 0.40 m; yaw 0.35 rad; stopped translation/yaw 0.05 m/s and 0.05 rad/s |
+| Goal checker | stateful `StoppedGoalChecker`; XY 0.20 m; yaw 0.35 rad; stopped translation/yaw 0.05 m/s and 0.05 rad/s |
 | Progress checker | `SimpleProgressChecker`; 0.05 m required in 20 s |
 | Local costmap | rolling 20 x 20 m; 0.10 m; update 10 Hz/publish 2 Hz; Voxel `/points`; radius 0.80 m; inflation 1.0 m, scale 3.0 |
 | Global costmap | rolling 60 x 60 m; 0.20 m; update 5 Hz/publish 1 Hz; no unknown tracking; same radius/layers/inflation |
@@ -190,11 +191,12 @@ tests pass. No RoboBoat rosbag was found.
 - Two 30 m straight runs with fixed 0.8 m lookahead succeeded: RMS 0.0022-0.0023 m, max
   0.0086-0.0119 m, max yaw 0.029-0.032 rad/s, settled error 0.245-0.248 m. The matched
   velocity-scaled-lookahead run looped near the goal and timed out.
-- A 15 m / +45 degree supplied path tracked at RMS/max 0.036/0.054 m until RPP predicted collision
-  with course geometry; this was an invalid route rather than free-water instability.
-- The mirrored 15 m / -45 degree path reached 0.224 m but timed out in terminal yaw oscillation.
-  A ROS-only 0.1 rad/s yaw cap was tested as a single-variable diagnostic and rejected: it enlarged
-  final error to 0.856 m and heading error to 1.985 rad. The cap was removed before the final build.
+- Two feasible 15 m gentle turns succeeded at 0.0247-0.0248 m RMS and 0.0423 m maximum
+  cross-track error. Two 15.63 m S-turns succeeded at 0.0340-0.0345 m RMS and 0.0639-0.0642 m
+  maximum error. The earlier positive-turn abort crossed course geometry and was not a general
+  turn-control failure.
+- The rejected ROS-only 0.1 rad/s yaw cap enlarged final error to 0.856 m and heading error to
+  1.985 rad. It was removed before the final build.
 
 ### Obsolete far-goal failure and corrected far-dock observation
 
@@ -244,6 +246,50 @@ The corrected far-goal evaluator artifact is
   a clean repeatability sample until the shared validity rule can distinguish a post-result safe
   timeout from an in-action stale command.
 
+### Known-path goal-checker experiment
+
+The retained supplied path `roboboat_far_dock_known_path.json` contains 36 poses, has SHA-256
+`314487f84caec06aee653fd9616670f1cbcd0158599854921ba9eb10d1c8c5f9`, and is approximately
+34.62 m long. It runs south in free water, turns 180 degrees below the docks, and makes a
+north-facing approach to the corrected target. A 5 cm retained-grid audit found 739/739 samples
+at cost zero and 1.146 m minimum lethal-cell clearance.
+
+With the former 0.40 m Nav2 XY tolerance, artifact `roboboat-gate5-known-dock-1` tracked the path
+at 0.0316 m RMS cross-track error and returned success at 0.374 m XY while moving 0.0486 m/s. It
+then coasted 0.188 m to 0.559 m. Full-hull containment and zero contact passed, but the frozen
+independent 0.40 m pose predicate correctly failed.
+
+Changing only `goal_checker.xy_goal_tolerance` to 0.20 m produced three consecutive successes:
+
+| Artifact | Action XY | RMS CTE | Coast | Settled XY | Independent dock |
+|---|---:|---:|---:|---:|---|
+| `roboboat-gate5-known-dock-xy020-1` | 0.194 m | 0.0319 m | 0.182 m | 0.375 m | yes |
+| `roboboat-gate5-known-dock-xy020-2` | 0.195 m | 0.0318 m | 0.182 m | 0.375 m | yes |
+| `roboboat-gate5-known-dock-config-xy020-1` | 0.198 m | 0.0316 m | 0.185 m | 0.382 m | yes |
+
+All three worker summaries are strict-valid, with no stale/rejected/cross-episode commands and no
+contacts. Physics, RPP, speed, lookahead, adapter, mixer, evaluator threshold, and environment
+were unchanged. This confirms a Class A goal-checker margin mismatch rather than a plant defect.
+
+### Repeated full NavigateToPose docking
+
+Five subsequent attempts used `NavigateToPose` directly at the corrected far target; there was no
+supplied path. Navfn planned inside the populated 60 x 60 m global map, RPP controlled the boat,
+and all five Nav2 actions and frozen independent docking predicates succeeded.
+
+- displacement was 23.10-23.12 m;
+- settled XY error was 0.205-0.224 m;
+- settled yaw error was 0.264-0.345 rad;
+- settled speed was 0.016-0.042 m/s;
+- post-result coast was 0.185-0.190 m;
+- all five retained full-hull containment and zero contacts.
+
+Runs `roboboat-far-dock-nav2-xy020-{2,3,5}` are strict-valid. Runs 1 and 4 are physically valid
+navigation/docking samples but conservatively fail generic worker validity because the depth-camera
+callback logged one transient `Failed to read back texture once`; both have clean command
+transport, costmaps, water observations, and docking results. The shared validity rule was not
+weakened.
+
 ## Baseline assessment
 
 ### What works
@@ -251,63 +297,60 @@ The corrected far-goal evaluator artifact is
 - The full ROS/Unity command and odometry/TF loop is stable and time-consistent.
 - Surge, sway, and yaw signs are verified; the ROS boundary now represents desired body velocity.
 - Manual control remains on its previous direct path and full-stick capability is preserved.
-- RPP repeatedly tracks 10 m and 30 m straight supplied paths with centimetre-scale error and
-  stopped arrivals.
+- RPP repeatedly tracks 10 m and 30 m straights, gentle turns, an S-turn, and the complete known
+  dock path with bounded error.
 - The physical catamaran fits a nominal 2 m berth by mesh dimensions.
+- Three known-path docks and five full-planning far docks independently satisfied the frozen
+  stopped-settle predicate after the 0.20 m goal tolerance was adopted.
+- The retained docking-development set contains ten independently evaluated attempts: nine
+  physical successes overall and 8/8 successes after the goal-checker correction. The sole
+  physical failure is the predicted pre-change 0.40 m goal-margin sample.
 
 ### Observed limitations
 
-- RPP does not exploit holonomic sway and can enter terminal yaw/path-pruning oscillation on a
-  curved supplied path.
-- The 60 m planning window and corrected open-side pose remove the observed long-range planning
-  failure, but only one independently evaluated far-dock success exists.
-- RPP makes a large terminal heading correction because it is forward-only and emits no sway. The
-  observed run did not circle, but repeated curved and dock-approach evidence is still missing.
+- RPP does not exploit holonomic sway. It makes a strong terminal turn because it is forward-only,
+  and far-dock yaw ends in two clusters; the worst retained result, 0.345 rad, is close to the
+  frozen 0.35 rad boundary.
+- The active RPP controller has no critics. The reported aggressive circling does not occur in the
+  retained current-config runs; it belongs to rejected MPPI or velocity-scaled-lookahead tests.
 - The logical 0.80 m circle plus 1.0 m inflation remains conservative. Retained costmaps show the
   corrected three far berth centers are connected free cells with 1.16-1.59 m lethal-obstacle
-  clearance, so footprint/inflation did not prevent this corrected run.
-- The shared worker validity rule treats the adapter's intentional post-command safety timeout as
-  a stale-command failure, even after physical docking success; this is a measurement-integration
-  issue, not evidence of a propulsion failure.
+  clearance, so footprint/inflation did not prevent the corrected runs.
+- The depth-camera async readback logged a transient error in two of five far trials, reducing
+  strict generic validity to 3/5 despite 5/5 navigation and physical docking success.
 
 ### Evidence gaps
 
-- Repeated feasible gentle turns, S-turns, dock-aligned supplied paths, and corrected full
-  NavigateToPose docks.
-- A clean way to classify adapter timeout/stale counters by action phase without weakening the
-  in-action transport assertions in shared CRANE infrastructure.
+- A dedicated stopping-distance table across several commanded speeds; the current evidence is a
+  tight 0.182-0.190 m coast band at these docking arrivals.
+- More far-dock repetitions if a statistical reliability bound, rather than development evidence,
+  is required.
 - Runtime proof that the opt-in contact probes observe an intentional marina/dock collision; zero
   contacts in a successful no-contact run cannot alone prove callback coverage.
-- Repeated independent docking results sufficient to estimate reliability.
+- Root cause and reproducibility rate of the unrelated async depth-camera readback error.
 
 ## Ranked hypotheses and falsifiers
 
-1. **Controller/final path geometry.** RPP's forward-only curvature and terminal orientation
-   handling may produce unreliable large final turns even though this run converged. Confirm with
-   repeated supplied dock-aligned curves or repeated far goals showing loops/oscillation while the
-   plan stays feasible; falsify with repeatable stopped successes and bounded terminal path/net
-   ratio.
-2. **Goal/progress checking.** The current stopped checker passed once near its yaw boundary.
-   Confirm a mismatch if the independent predicate and Nav2 result repeatedly disagree; falsify
-   when their pose/speed decisions agree across repeated arrivals.
-3. **Footprint/costmap.** The corrected far berth is feasible with the current conservative radius,
-   but other approaches may still be rejected. Confirm with retained-grid clearance below the
-   active radius on a failing valid target; falsify when all intended target corridors remain
-   connected with measured margin.
-4. **Command interface.** The PI adapter may lag combined curvature commands. Confirm with
-   requested-vs-measured surge/yaw error that precedes path error on a feasible curve; falsify if
-   body response follows the command while tracking degrades.
-5. **Planner.** Navfn now reaches the corrected target with the 60 m window. Re-elevate only if
-   repeated runs lose a previously connected approach while costmap geometry stays equivalent.
-6. **Boat physics.** Least likely given realistic human assessment, axis characterization, and
-   excellent straight tracking. Elevate only if valid-path tests show implausible response after
-   the higher-ranked causes are falsified.
+1. **Controller/final orientation margin.** RPP's forward-only terminal turn is the leading
+   residual navigation risk because yaw reaches 0.345 rad against a 0.35 rad predicate. Confirm
+   with additional runs exceeding the yaw bound while XY and stopped state remain good; falsify
+   with a larger repeated sample maintaining margin.
+2. **Goal/progress checking.** The XY checker mismatch was confirmed and corrected from 0.40 m to
+   0.20 m. Re-elevate only if Nav2 success again precedes a frozen independent pose/stopped failure.
+3. **Footprint/costmap.** Conservative but not limiting the tested route. Confirm as a bottleneck
+   only if a physically valid target loses retained-grid connectivity or clearance below radius.
+4. **Planner/final path geometry.** Navfn repeatedly produces a successful far approach. Confirm a
+   planner issue only if a populated equivalent grid yields infeasible or wrong-side paths.
+5. **Command interface.** Axis signs and combined response are validated. Confirm a residual issue
+   only if command/body error systematically precedes a tracking or docking failure.
+6. **Boat physics.** Least likely: measured response, tracking, human assessment, and 8/8
+   post-change physical docks do not indicate a model defect. Elevate only with a repeatable,
+   quantitatively implausible response after higher-ranked causes are falsified.
 
 ## Smallest next experiment
 
-Repeat the identical corrected far `NavigateToPose` with the same 60 m configuration and
-independent evaluator, while classifying the one stale/timeout event by whether it occurs before or
-after Nav2's final explicit zero command. This is the smallest experiment that separates a lucky
-terminal convergence/controller issue from a repeatable navigation result and a measurement-only
-post-result timeout issue. Do not tune the controller, footprint, command adapter, or physics for
-this repeat.
+Run a short, dedicated multi-speed stopping-distance characterization using the existing body-
+command fixture (for example 0.05, 0.10, and 0.15 m/s surge followed by zero). This is the smallest
+experiment that turns the observed 0.19 m docking coast into a reusable plant bound and tests
+whether the 0.20 m internal goal margin remains sufficient outside this exact approach. Do not
+change hydrodynamics, the mixer, manual control, or additional Nav2 parameters for this test.
