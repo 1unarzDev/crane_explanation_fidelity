@@ -73,6 +73,10 @@ their own location. Exact repository commits and destinations are recorded in
   keyboard view switching passes on the additive v2 revision. Corrected S-turn, dynamic recovery,
   and bounded blockage each pass a three-run exact-condition repeatability gate; these repetitions
   are not independent study episodes. Explanation generation and blinded annotation remain unrun.
+- **IMPLEMENTED, TESTED (ECOLOGICAL CALIBRATION):** the warehouse temporary-enclosure scenario
+  passes a prospective three-run recovery-followed-by-success repetition gate with exact manifest,
+  route, obstacle, seed, and configuration identity. Recovery feedback varies across runs; these
+  operational repetitions are not independent study episodes or evidence of physical causation.
 - **IMPLEMENTED, TESTED:** deterministic F1TENTH PNG/YAML contour-to-collider generator and Unity
   importer, qualified headlessly on the externally retained pinned Spielberg map. Full-lap ROS
   control and source-simulator comparison remain unrun.

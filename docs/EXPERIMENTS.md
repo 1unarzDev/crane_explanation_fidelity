@@ -1,5 +1,32 @@
 # Experiment Log
 
+## 2026-09-22 — warehouse recovery mechanism repeatability qualification
+
+- **PROSPECTIVE DEVELOPMENT CONTRACT:** before the additional runs, a versioned contract fixed
+  three distinct runtime/navigation artifacts, exact warehouse environment, scenario, route,
+  obstacle, seed, and configuration identity, action success, route acceptance, at least one
+  recorded recovery, and all required QA gates. Contract SHA-256 is
+  `9cb872500cd19a638eb8f39446f125a93e3c63d2028d0dc22212c123ab0b295f` and configuration SHA-256
+  is `e18a16cbf9524e1dec4df9fae352ea9255b9ec2d6343dfe2cb6cc8a4150fe242`.
+- **TEMPORARY ENCLOSURE / REPETITION_PASS:** all three runs recorded recovery followed by action
+  success. Endpoint displacement ranged 12.590--12.597 m, sampled paths 14.295--15.918 m, and
+  wall time 70.522--82.931 s. Maximum recovery feedback varied from 16 to 20 and is retained rather
+  than treated as a fixed property. Aggregate SHA-256 is
+  `818fd1c4118c1579d76e50f9222f06ddf68868b17f11e8a8b89bfa977a062033`.
+- **IDENTITY RESOLUTION IMPLEMENTED:** the generic environment QA summarizer now resolves a
+  warehouse dynamic scenario through its manifest, verifies its route, robot, challenge, expected
+  broad outcome, seed, and complete ordered obstacle-ID inventory, and emits a deterministic
+  configuration hash. This closes the earlier gap in which only static warehouse routes and
+  proving-ground layouts had aggregate identity support.
+- **DERIVATION BOUNDARY:** the retained original run was not overwritten. A schema-compatible
+  summary was derived from its unchanged inputs and combined with two new runs on isolated ROS
+  domains 186--187 and ports 10626--10627. Raw artifacts remain outside Git under `/tmp`.
+- **LIMITS:** these are exact-condition development repetitions, not independent frozen-study
+  episodes. Delivered BT, costmap, command, and odometry evidence does not prove controller
+  consumption, and repeated temporal association does not establish physical causation.
+  Scenario-to-question contracts, explanation generation, and blinded annotation remain
+  `NOT_RUN`. Frozen/DVC artifacts and RoboBoat-specific files were untouched.
+
 ## 2026-09-22 — proving-ground mechanism repeatability qualification
 
 - **PROSPECTIVE DEVELOPMENT CONTRACT:** before the new repeats, a versioned contract fixed three
