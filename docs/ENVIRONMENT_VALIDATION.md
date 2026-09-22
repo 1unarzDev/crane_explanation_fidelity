@@ -54,6 +54,13 @@ transitions and all four completed recovery-leaf invocations with zero drops, an
 configured capacities and retained counts. The repeated mechanism is a capacity qualification,
 not an additional independent episode; whole-history completeness remains `not_proven`.
 
+A current-build attempt to carry this export boundary into proving-ground `dynamic-gate-v1` did
+not reproduce its historically qualified recovery-success mechanism: the warehouse-specific
+90-second policy aborted near the goal, while one stock-policy rerun reached the client deadline;
+both recorded zero recovery-leaf invocations. Both are retained negative calibrations and neither
+was exported. Historical proving-ground passes remain scoped to their recorded revisions, but a
+current-build mechanism-matching export is still `NOT_RUN`.
+
 ## Retained infrastructure validation
 
 | Environment | Retained result | Missing full validation | Submission status |

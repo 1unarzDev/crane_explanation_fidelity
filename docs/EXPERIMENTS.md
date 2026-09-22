@@ -1,5 +1,29 @@
 # Experiment Log
 
+## 2026-09-22 — proving-ground ecological export calibration
+
+- **PURPOSE:** exercise the separated ecological evidence exporter on a proving-ground mechanism
+  using the same current Unity player and ordered BT capture already qualified for the warehouse.
+  These are development calibrations, not independent study episodes.
+- **NEGATIVE / RETAINED:** `dynamic-gate-v1` with the warehouse-specific 90 s recovery policy
+  activated its gate at 20.040 simulated seconds and removed it at 45.040, but the policy aborted
+  near the goal after 91.659 wall seconds. It recorded 800 unique BT transitions, zero dropped
+  records, and zero recovery-leaf invocations. This does not satisfy the contract's
+  recovery-followed-by-success mechanism and was not exported or relabeled.
+- **NEGATIVE / RETAINED:** one bounded rerun used the stock Jazzy replanning/recovery tree from the
+  exact pinned ROS image (tree SHA-256
+  `5895b63840d54c6d7eee3d3b3f3ee177680af9e58a14cbf61c4df39fe5db2a90`; image digest
+  `sha256:9c286b78dcc1ecf0a159f624f642cf831d463370ce264f00fdd6f6c30ce50053`).
+  The client deadline elapsed at 105.009 s after 925 retained transitions, with zero recovery-leaf
+  invocations and zero dropped records. It likewise was not exported. No further outcome-driven
+  reruns were made.
+- **INTERPRETATION:** the historical three-run proving-ground qualification remains valid for its
+  recorded component/policy state, but it is not sufficient to claim that the same mechanism is
+  export-ready on the current build. The next implementation task is to make ecological export
+  admission verify the declared terminal/mechanism prerequisites, then qualify one current-build
+  proving-ground scenario whose runtime actually satisfies them. Frozen/DVC artifacts and
+  RoboBoat-specific content were untouched.
+
 ## 2026-09-22 — ecological BT capture-capacity qualification
 
 - **IMPLEMENTED:** CRANE revision `ac10443` keeps the shared/frozen fixture defaults at 4,096
