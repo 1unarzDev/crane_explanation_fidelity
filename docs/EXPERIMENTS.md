@@ -1438,3 +1438,39 @@
   interactive inspection, recovery/blockage contracts, explanation evaluation, and repeated
   scenario qualification. Raw calibrations remain ephemeral under
   `/tmp/crane-warehouse-v2d-build.IDNwQU`; sealed study data and frozen artifacts were untouched.
+
+## 2026-09-21 — industrial warehouse v2 nominal route qualification
+
+- **ROOT CAUSE/FIX:** ROS FLU positive yaw was applied directly as Unity positive-Y torque even
+  though the navigation pose maps Unity `(x,z)` to ROS `(-y,x)`. This reversed the physical turn
+  relative to the published pose. CRANE revision `0ebfcee` negates yaw only at the land
+  differential command boundary; no RoboBoat code or configuration changed. Unity 6000.5.10f1
+  compiled the change, and the unchanged controlled 1 m corridor subsequently succeeded with
+  0.456 m physical displacement, 20 returned commands, populated costmaps, and zero clock/stale
+  errors.
+- The ecological-only Nav2 file now matches the TurtleBot3-class 0.26 m/s physical maximum. Its
+  endpoint is a manifest-defined goal region without terminal orientation, so the checker does not
+  promote the harness's inherited start quaternion into an undeclared task requirement. The action
+  deadline is 75 s because the declared 16.5 m detour has a 63.5 s no-stop lower bound at the
+  physical speed limit. Frozen controlled-study parameters are unchanged.
+- **TESTED/PASS:** after one infrastructure-invalid attempt with 2,780 clock-rewind warnings, the
+  single allowed rerun on isolated ROS domain 220 succeeded in 54.627 s with zero rewinds and zero
+  stale/rejected commands. It retained 527 returned controller commands, 204 costmap observations,
+  8,531 maximum occupied cells, 12.581 m goal displacement, and RTF 1.00002. The 1 Hz retained
+  trajectory sampled 13.607 m of travel and a 1.998 m westward lateral excursion around the center
+  divider before returning toward the goal. The invalid attempt is retained and is not a failed
+  navigation verdict.
+- **TESTED/PASS:** the new native-warehouse reference target independently found 20 canonical
+  colliders, 20 collider-free visual renderers, 28 unique semantic identities, floor contact,
+  semantic LiDAR evidence on `rack-center-blocker`, evidence highlighting without collider
+  mutation, 0.150 m forward differential motion, and 19.075° turn response. It reports
+  `STRUCTURAL_PASS`, `PHYSICS_PASS`, `SENSOR_PASS`, `HEADLESS_PASS`, and `EXPLANATION_READY`.
+- **IMPLEMENTED/TESTED:** `summarize_environment_qa.py` hash-checks and merges the scenario
+  manifest, evaluator identity, structural output, navigation summary, and runtime trajectory. Its
+  warehouse record adds `NAVIGATION_PASS` while keeping `failureRecovery=NOT_RUN` and
+  `interactive=NOT_RUN`; overall verdict therefore remains `PARTIAL`. Thirty-one static land and
+  reference-tool tests pass.
+- **NOT_RUN / remaining:** interactive visual inspection, dynamic blocker/no-path/recovery route
+  qualification, repeated nominal-route determinism, and ecological explanation generation or
+  annotation. Raw outputs remain ephemeral under `/tmp/crane-warehouse-yawfix-build.y1Pmyr` and
+  `/tmp/crane-warehouse-qa-build.Bq8D4k`; no frozen or sealed artifact changed.
