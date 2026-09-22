@@ -20,5 +20,6 @@ removes mixed-axis static error. The accepted full fixture at `linear Ki=0.10` p
 No physics coefficient, mass, inertia, drag, buoyancy, water, force law, scene, environment,
 manual-controller source, input binding, or mixer changed. Full manual stick retains the configured
 shaft-speed top end; partial stick now requests proportional shaft speed instead of immediately
-saturating torque. The focused editor contract suite passes 4/4. Gate 1 is complete; longer path
-tests remain responsible for exposing sustained mixed-axis behavior.
+saturating torque. The focused editor contract suite passes 5/5, including the independent docking
+predicate contract. Gate 1 is complete; longer path tests remain responsible for exposing
+sustained mixed-axis behavior.

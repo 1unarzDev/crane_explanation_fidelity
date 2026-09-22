@@ -1,9 +1,9 @@
 # RoboBoat navigation development
 
-Status: reconnaissance complete; interface correction and Gates 1-2 validated. The active
+Status: reconnaissance complete; interface correction and Gates 1-3 validated. The active
 controller remains Regulated Pure Pursuit under
 `packages/crane_ml/Tools/Performance/nav2_controller_fixture.yaml` (working-tree SHA-256
-`497309b14d4c0c32e50cd49542adfcc76950b8b9abb723310e64999def9ed6a2`).
+`7ad4490b570c54526528db2118aaa5625879c478a67331e6e7155e533323593f`).
 
 The measured torque-mode saturation was corrected by selecting proportional shaft-velocity mode;
 the mixer, manual controller and bindings, force law, and hydrodynamics are unchanged. A ROS-only
@@ -29,6 +29,19 @@ of translating; removing that critic did not recover the route. RPP rotate-first
 even after measured yaw-rate and acceleration limits. RPP without rotate-first plus approach
 scaling remains the evidence-supported active controller. Gates 1-3 pass; turns and S-turns are
 next.
+
+The first far-dock goal was invalid: it targeted the closed side of the 180-degree-rotated dock.
+The corrected open-side target is `(0.8641434,-27.586906,+pi/2)`, where `+pi/2` points the
+LiDAR/catamaran bow toward ROS `+Y`. It also lay outside the original 40 x 40 m rolling global
+costmap. Expanding only that global map to 60 x 60 m produced one 23.11 m `NavigateToPose`
+success and an independent stopped, full-hull-contained, contact-free five-second dock. This is
+promising but not repeatability evidence; the same run's generic worker validity remained false
+because it classified the expected post-result command safety timeout as stale.
+
+The active RPP controller has no critics. In the successful far run, goal distance stayed
+monotonic after entering 3 m. Within the final metre the hull traveled 1.117 m while turning
+1.726 rad, a strong terminal turn but not a positional circle. The earlier visible looping belongs
+to rejected velocity-scaled-lookahead/yaw-cap or MPPI experiments, not to a critic in active RPP.
 
 Full configuration, architecture, runtime identities, and evidence are maintained in
 [`research/ROBOBOAT_NAVIGATION_BASELINE.md`](research/ROBOBOAT_NAVIGATION_BASELINE.md).
