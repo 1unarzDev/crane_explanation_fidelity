@@ -1,5 +1,33 @@
 # Experiment Log
 
+## 2026-09-22 — warehouse direct keyboard inspection and Follow-view correction
+
+- **INTERACTIVE_PASS:** a dedicated X11 display at `:96` and an explicitly focused player window
+  delivered real Input System events. `1` selected Overview, `2` selected Oblique, `H`/`C`/`T`
+  changed semantic/collider/trajectory state in the HUD and rendering, and `3` selected Follow.
+  Final screenshot SHA-256 values are respectively
+  `2c3faf7ff564b418529e4e5d527f320a4761f15949e4584440f38f7658bd4efe`,
+  `0048802b8a66088ba72377a8da2707547d7281c86affbf03ab5c5ddebf6822ef`,
+  `3ff56d9237fa891236ec7aa7bed0c0929055025a41746ae1969eb6d6db073420`, and
+  `a242bc03496842466c3010061e9cd0acc04b59510ce68823d30cace2a521b7f7`.
+- **NEGATIVE CALIBRATION AND FIX:** the first X11 Follow capture changed the HUD state but showed
+  only an empty horizon because the original chase position fell outside the south boundary. The
+  generic reference-inspection controller now checks the canonical sightline, prefers the ordinary
+  chase position when clear, uses an unobstructed lateral position at a boundary, and retains an
+  overhead last resort. The final Follow capture keeps the robot readable with nearby warehouse
+  geometry visible. This changes only a spectator camera and no collider, robot, sensor, or task
+  state. An earlier Wayland-inherited launch exited during surface setup and supports no gate.
+- **HEADLESS PARITY_PASS:** the final build manifest SHA-256 is
+  `e6d17e58b4ca431c9ca80f2deb023b7eac8339fbd3e5cc283fa59207512eac3c`. Its independent warehouse
+  validator reproduced result SHA-256
+  `cd3dde90795bfb1c76a60eba9d2de8f1246bb8b39ab2ab6cbdc4fa65a199eda6`, including the same 20
+  canonical colliders, 20 collider-free renderers, 28 semantic identities, physics, sensor,
+  highlighting, differential-motion, and headless gates.
+- **PARALLEL SAFETY:** display `:97` and the parallel RoboBoat runtime were not touched. The edited
+  controller is attached only to reference-environment spectator cameras; the full multi-scene
+  player compiled successfully, and no RoboBoat source, scene, model, physics, sensor, or Nav2
+  configuration changed. Screenshots, player builds, and logs remain ephemeral under `/tmp`.
+
 ## 2026-09-22 — warehouse recovery mechanism repeatability qualification
 
 - **PROSPECTIVE DEVELOPMENT CONTRACT:** before the additional runs, a versioned contract fixed
