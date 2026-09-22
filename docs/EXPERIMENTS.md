@@ -1,5 +1,32 @@
 # Experiment Log
 
+## 2026-09-21 — sealed pn-0024 inclusion and model calls
+
+- **CAPTURED ONCE / INCLUDED:** frozen terminal-abort row `pn-0024`, seed 3024, passed every
+  inclusion gate and the exact expected-abort contract. The action aborted after two unique Wait
+  invocations with 0.092 m displacement, 305 returned controller commands, 63 costmap observations,
+  maximum 8,741 occupied cells, and accepted 10/7-unit parity audits. No answer was inspected for
+  scoring.
+- **SEALED MODEL CALLS RETAINED / NOT ANNOTATED:** both questions ran once for F/G/H with Luna-low:
+  six unique calls, no retries, 476,899 input tokens, 360,960 cached input tokens, 4,577 output
+  tokens, 742 reasoning tokens, and 139.303 s aggregate latency. Both G realizations failed
+  final-text verification and used checked-template fallback; the failure-cause answer is partial
+  and the recovery-mechanism answer is full. No repair call or resampling was made. A–E remain
+  non-model smoke outputs and frozen model evaluation is `NOT_RUN`. Hashes and usage are retained
+  in `manifests/model_outputs/pn-0024-provenance-v1.json`.
+- **VERIFIED:** all 24 robot-visible, 15 evaluator-only, and eight model/cache manifest artifacts
+  match their retained byte counts and SHA-256 hashes; the robot-visible leakage scan passed; the
+  full suite passed with 105 tests.
+
+## 2026-09-21 — load-balancer source-change boundary recorded
+
+- **OPERATIONAL CHANGE / EFFECT UNKNOWN:** the operator reported changing the source used by the
+  model load balancer. The observable client-configuration modification falls between the retained
+  calls for `pn-0021` and `pn-0022`; the exact server deployment revision and resolved backend are
+  not exposed by the client. Amendment 6 freezes retention of all episodes and a descriptive or
+  sufficiently powered stratified sensitivity check without changing the paired F-versus-G primary
+  analysis. No response was inspected, rerun, excluded, or reclassified.
+
 ## 2026-09-21 — sealed pn-0023 inclusion and model calls
 
 - **CAPTURED ONCE / INCLUDED:** frozen recovery-success row `pn-0023`, seed 3023, passed every

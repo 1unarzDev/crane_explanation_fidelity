@@ -43,7 +43,7 @@ def authoritative_hashes() -> dict[str, tuple[str, str]]:
 def test_the_amendment_chain_is_contiguous_and_nonempty():
     chain = amendment_chain()
     assert chain[0] == BASE
-    assert len(chain) == 6, "expected the base freeze plus five recorded amendments"
+    assert len(chain) == 7, "expected the base freeze plus six recorded amendments"
 
 
 def test_every_frozen_file_matches_its_authoritative_hash():

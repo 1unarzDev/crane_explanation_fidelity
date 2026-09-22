@@ -1,5 +1,25 @@
 # Decision Log
 
+## 2026-09-21 — retain and stratify an operator-reported load-balancer source change
+
+- Decision: retain all sealed calls, preserve the frozen paired F-versus-G primary analysis, and
+  record the load-balancer source change as an operational batch boundary rather than silently
+  treating the route as immutable. Do not rerun or exclude any response. If both temporal strata
+  are sufficiently populated, report a pre/post-boundary sensitivity analysis; otherwise report
+  the boundary descriptively. Amendment 6 fixes this treatment before `pn-0025`.
+- Evidence: the operator reported changing the source used by the load balancer. The local Codex
+  configuration modification time falls after every `pn-0021` call and before every `pn-0022`
+  call; `pn-0022` through `pn-0024` therefore postdate the observable client boundary. The retained
+  requests still report `gpt-5.6-luna`, low reasoning, `codex-cli 0.155.1`, and the same adapter.
+- Limits: a client timestamp does not prove when server source was deployed or that the effective
+  backend/model changed. The client does not expose a deployed source revision or resolved backend,
+  so amendment 6 records the operator report, an SHA-256 fingerprint of non-secret route settings,
+  and the uncertainty. It does not claim a causal load-balancer effect.
+- Validity: F and G remain paired within every episode and use the same route, model alias, effort,
+  and retry budget. A temporal implementation change could nevertheless interact with condition,
+  so it is a reportable heterogeneity threat. The frozen primary estimand, inclusion rules, prompts,
+  verifier, and minimum sample size are unchanged.
+
 ## 2026-09-21 — regenerate annotation pairs after an incomplete DVC publication
 
 - Decision: retain the keyless `sealed-claude-v1` packet as unusable audit evidence and generate

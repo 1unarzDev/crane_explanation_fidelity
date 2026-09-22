@@ -75,16 +75,16 @@ provider, model alias, effort, or interactive agent response for the declared CL
 
 ## Authoritative current state
 
-- Primary sealed collection: **23 included independent episodes**, comprising 12
-  recovery-followed-by-success and 11 terminal-recovery-abort instances; zero exclusions.
-- Primary model execution: **138 one-shot Luna-low calls** across F/G/H; no retry or resampling.
-- Completed episode range: `pn-0001` through `pn-0023`. The next unstarted primary row is
-  `pn-0024`; do not rerun or replace any earlier row.
+- Primary sealed collection: **24 included independent episodes**, comprising 12
+  recovery-followed-by-success and 12 terminal-recovery-abort instances; zero exclusions.
+- Primary model execution: **144 one-shot Luna-low calls** across F/G/H; no retry or resampling.
+- Completed episode range: `pn-0001` through `pn-0024`. The next unstarted primary row is
+  `pn-0025`; do not rerun or replace any earlier row.
 - No sealed primary or Claude answer has been annotated. No sealed effect estimate exists.
 - Hash-matched packet/key snapshots are prepared as `sealed-primary-v2` (126 responses through
   `pn-0021`) and `sealed-claude-v2` (54 responses across nine episodes). Their keys live only under
   `data/evaluator_only/annotation_keys/`. The historical Claude v1 packet lost its key and remains
-  unusable; never reconstruct it. Since primary collection has continued through `pn-0022`, build
+  unusable; never reconstruct it. Since primary collection has continued through `pn-0024`, build
   the final primary pair only once after collection freeze.
 - The selected Claude configuration is `claude-sonnet-5` at low effort. The predeclared
   development control and model selection are complete.
@@ -229,10 +229,10 @@ amendment:
 
 ## After the Claude arm
 
-The largest primary-study threat remains sample size: 23 episodes versus the frozen minimum of 40,
+The largest primary-study threat remains sample size: 24 episodes versus the frozen minimum of 40,
 target 50, preferred 60. Once the requested Claude evidence is safely retained and packaged,
 another batch of frozen independent episodes has higher expected paper value than architecture
-work. Resume at `pn-0024` only if directed to continue primary collection, using the established
+work. Resume at `pn-0025` only if directed to continue primary collection, using the established
 capture -> answer-blind inclusion -> evidence checkpoint/push -> one-shot calls -> manifest/push
 order.
 

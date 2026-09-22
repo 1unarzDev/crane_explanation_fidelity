@@ -91,7 +91,7 @@ separate, deliberate step.
 
 - A fresh primary pair is retained at `sealed-primary-v2`: 126 model-condition responses covering
   the first 21 included primary episodes, with its matching key physically under
-  `data/evaluator_only/annotation_keys/`. It predates the 12 responses from `pn-0022`–`pn-0023` and is a
+  `data/evaluator_only/annotation_keys/`. It predates the 18 responses from `pn-0022`–`pn-0024` and is a
   packaging/recovery snapshot, not the final analysis packet. Regenerate one final pair only after
   collection freeze. The historical `sealed-luna-v1` pair is retained only for audit and covers
   nine episodes; do not use either historical snapshot for the full-arm analysis.

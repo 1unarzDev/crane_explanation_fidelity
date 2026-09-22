@@ -1,0 +1,31 @@
+{
+  "schema": "crane-provenance-study-freeze-amendment-manifest/v1",
+  "status": "FROZEN_AFTER_144_CALLS_BEFORE_PN0025",
+  "amends": "manifests/study/provenance-study-freeze-v1-amendment-5.json",
+  "sealed_episodes_included_before_amendment": 24,
+  "sealed_model_calls_before_amendment": 144,
+  "sealed_annotations_before_amendment": 0,
+  "scientific_design_changed": false,
+  "capture_dynamics_changed": false,
+  "prompts_changed": false,
+  "model_alias_changed": false,
+  "operator_reported_load_balancer_source_changed": true,
+  "effective_model_or_behavior_change_established": false,
+  "client_observations": {
+    "codex_cli_version": "codex-cli 0.155.1",
+    "effective_route_configuration_sha256": "ec281ca54a5031b2665a9ffec9c48abc8b20a57643c628240ab4bbc5a62432af",
+    "route_fingerprint_fields": [
+      "model_provider",
+      "provider_name",
+      "base_url",
+      "wire_api",
+      "requires_openai_auth"
+    ],
+    "configuration_mtime_utc": "2026-09-22T01:35:41.733161186Z",
+    "last_episode_whose_calls_predate_observed_configuration_mtime": "pn-0021",
+    "first_episode_whose_calls_postdate_observed_configuration_mtime": "pn-0022"
+  },
+  "retention_rule": "Retain every call and episode. Do not rerun, replace, or exclude an episode because of this operational change.",
+  "analysis_rule": "Keep the frozen paired F-versus-G comparison primary. Report a pre/post-boundary sensitivity analysis if each stratum has enough paired episodes; otherwise report the boundary descriptively. Do not interpret the sensitivity analysis as identifying a causal load-balancer effect.",
+  "limitation": "The client records the requested model alias, effort, CLI version, and route configuration but not the load balancer's deployed source revision or resolved backend. The operator report therefore establishes an operational change, not a verified model-family or model-version change."
+}
