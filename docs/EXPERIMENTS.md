@@ -1,5 +1,23 @@
 # Experiment Log
 
+## 2026-09-21 — sealed pn-0026 inclusion and model calls
+
+- **CAPTURED ONCE / INCLUDED:** frozen terminal-abort row `pn-0026`, seed 3026, passed every
+  inclusion gate and the exact expected-abort contract. The action aborted after two unique Wait
+  invocations with 0.000 m displacement, 305 returned controller commands, 63 costmap observations,
+  maximum 9,217 occupied cells, and accepted 10/7-unit parity audits. The zero displacement is
+  retained, not rerun or filtered. No answer was inspected for scoring.
+- **SEALED MODEL CALLS RETAINED / NOT ANNOTATED:** both questions ran once for F/G/H with Luna-low:
+  six unique calls, no retries, 615,887 input tokens, 444,160 cached input tokens, 4,610 output
+  tokens, 772 reasoning tokens, and 142.399 s aggregate latency. G used checked-template fallback
+  for recovery mechanism after its realization failed final-text verification; its partial
+  failure-cause realization passed. No repair call or resampling was made. A–E remain non-model
+  smoke outputs and frozen model evaluation is `NOT_RUN`. Hashes and usage are retained in
+  `manifests/model_outputs/pn-0026-provenance-v1.json`.
+- **VERIFIED:** all 24 robot-visible, 15 evaluator-only, and eight model/cache manifest artifacts
+  match their retained byte counts and SHA-256 hashes; the robot-visible leakage scan passed; the
+  full suite passed with 105 tests.
+
 ## 2026-09-21 — sealed pn-0025 inclusion and model calls
 
 - **CAPTURED ONCE / INCLUDED:** frozen recovery-success row `pn-0025`, seed 3025, passed every
