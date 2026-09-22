@@ -75,16 +75,17 @@ provider, model alias, effort, or interactive agent response for the declared CL
 
 ## Authoritative current state
 
-- Primary sealed collection: **21 included independent episodes**, comprising 11
-  recovery-followed-by-success and 10 terminal-recovery-abort instances; zero exclusions.
-- Primary model execution: **126 one-shot Luna-low calls** across F/G/H; no retry or resampling.
-- Completed episode range: `pn-0001` through `pn-0021`. The next unstarted primary row is
-  `pn-0022`; do not rerun or replace any earlier row.
+- Primary sealed collection: **22 included independent episodes**, comprising 11
+  recovery-followed-by-success and 11 terminal-recovery-abort instances; zero exclusions.
+- Primary model execution: **132 one-shot Luna-low calls** across F/G/H; no retry or resampling.
+- Completed episode range: `pn-0001` through `pn-0022`. The next unstarted primary row is
+  `pn-0023`; do not rerun or replace any earlier row.
 - No sealed primary or Claude answer has been annotated. No sealed effect estimate exists.
-- Fresh packet/key pairs are prepared as `sealed-primary-v2` (126 responses across 21 episodes)
-  and `sealed-claude-v2` (54 responses across nine episodes). Their keys live only under
+- Hash-matched packet/key snapshots are prepared as `sealed-primary-v2` (126 responses through
+  `pn-0021`) and `sealed-claude-v2` (54 responses across nine episodes). Their keys live only under
   `data/evaluator_only/annotation_keys/`. The historical Claude v1 packet lost its key and remains
-  unusable; never reconstruct it.
+  unusable; never reconstruct it. Since primary collection has continued through `pn-0022`, build
+  the final primary pair only once after collection freeze.
 - The selected Claude configuration is `claude-sonnet-5` at low effort. The predeclared
   development control and model selection are complete.
 - The selected sealed Claude replication over `pn-0001` through `pn-0009` is **COLLECTED and
@@ -228,10 +229,10 @@ amendment:
 
 ## After the Claude arm
 
-The largest primary-study threat remains sample size: 21 episodes versus the frozen minimum of 40,
+The largest primary-study threat remains sample size: 22 episodes versus the frozen minimum of 40,
 target 50, preferred 60. Once the requested Claude evidence is safely retained and packaged,
 another batch of frozen independent episodes has higher expected paper value than architecture
-work. Resume at `pn-0022` only if directed to continue primary collection, using the established
+work. Resume at `pn-0023` only if directed to continue primary collection, using the established
 capture -> answer-blind inclusion -> evidence checkpoint/push -> one-shot calls -> manifest/push
 order.
 

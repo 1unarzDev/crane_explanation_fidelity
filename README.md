@@ -80,8 +80,8 @@ their own location. Exact repository commits and destinations are recorded in
   when a volatile DDS startup race lost its goal boundary; reliable transient-local harness QoS
   was then validated on the retained replication. Three further predeclared independent
   configurations passed; a fourth is retained but excluded because it produced zero recoveries.
-- **IN_PROGRESS / SEALED:** twenty-one independent final F/G/H episodes are included (eleven
-  recovery-success, ten terminal-abort), with 126 one-shot Luna-low calls retained and no
+- **IN_PROGRESS / SEALED:** twenty-two independent final F/G/H episodes are included (eleven
+  recovery-success, eleven terminal-abort), with 132 one-shot Luna-low calls retained and no
   exclusions. This remains far below the frozen 40-episode minimum; answers have not been scored,
   and no sealed effect estimate has been calculated.
 - **TESTED (SECONDARY-ARM DEVELOPMENT):** the provider-neutral model-call contract now has a
@@ -94,8 +94,9 @@ their own location. Exact repository commits and destinations are recorded in
   not amend the primary freeze, and does not relieve the 40-episode minimum. No sealed Claude answer
   has been scored and no cross-family effect estimate exists.
 - **IMPLEMENTED, TESTED:** blinded response packaging and dual-annotator adjudication tooling
-  implementing `docs/ANNOTATION_GUIDE.md`. Fresh hash-matched packets contain 126 primary-arm and
-  54 Claude-arm responses with keys confined to evaluator-only storage. Scoring remains `NOT_RUN`.
+  implementing `docs/ANNOTATION_GUIDE.md`. Hash-matched snapshots contain 126 primary-arm responses
+  through `pn-0021` and 54 Claude-arm responses, with keys confined to evaluator-only storage. The
+  primary packet must be regenerated once after final collection freeze. Scoring remains `NOT_RUN`.
 - **NOT_RUN:** blinded dual annotation, final statistics/figures, and final A–E model evaluation.
 - **NOT_RUN:** source-to-binary rebuild verification.
 - **DEFERRED:** arbitrary-LLM proposition extraction until independently evaluated.

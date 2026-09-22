@@ -90,9 +90,11 @@ separate, deliberate step.
 ## Current state
 
 - A fresh primary pair is retained at `sealed-primary-v2`: 126 model-condition responses covering
-  all 21 included primary episodes, with its matching key physically under
-  `data/evaluator_only/annotation_keys/`. The historical `sealed-luna-v1` pair is retained only for
-  audit and covers nine episodes; do not use it for the full-arm analysis.
+  the first 21 included primary episodes, with its matching key physically under
+  `data/evaluator_only/annotation_keys/`. It predates the six responses from `pn-0022` and is a
+  packaging/recovery snapshot, not the final analysis packet. Regenerate one final pair only after
+  collection freeze. The historical `sealed-luna-v1` pair is retained only for audit and covers
+  nine episodes; do not use either historical snapshot for the full-arm analysis.
 - The selected Claude-family sealed replication is **collected**: 18 envelopes and 54 model-condition
   responses over `pn-0001`–`pn-0009`. Its fresh `sealed-claude-v2` packet/key pair is retained
   separately because the Claude response format can reveal the provider and harness. The original

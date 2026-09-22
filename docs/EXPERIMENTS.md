@@ -1,5 +1,20 @@
 # Experiment Log
 
+## 2026-09-21 — sealed pn-0022 inclusion and model calls
+
+- **CAPTURED ONCE / INCLUDED:** frozen terminal-abort row `pn-0022`, seed 3022, passed every
+  inclusion gate and the exact expected-abort contract. The action aborted after two unique Wait
+  invocations with 0.000 m displacement, 295 returned controller commands, 60 costmap
+  observations, maximum 8,732 occupied cells, and accepted 10/7-unit parity audits. The zero
+  displacement is retained, not rerun or filtered. No answer was inspected for scoring.
+- **SEALED MODEL CALLS RETAINED / NOT ANNOTATED:** both questions ran once for F/G/H with Luna-low:
+  six calls, no retries, 705,643 input tokens, 491,520 cached input tokens, 4,867 output tokens,
+  754 reasoning tokens, and 171.134 s aggregate latency. G used checked-template fallback for the
+  recovery-mechanism question after its single generated realization failed final-text
+  verification; the failure-cause realization passed. A–E remain non-model smoke outputs and
+  frozen model evaluation is `NOT_RUN`. Hashes and usage are retained in
+  `manifests/model_outputs/pn-0022-provenance-v1.json`.
+
 ## 2026-09-21 — annotation-pair recovery and DVC sync correction
 
 - **DIAGNOSED:** the committed `annotation_keys.dvc` object was absent locally and on R2. The DVC
