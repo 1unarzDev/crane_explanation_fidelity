@@ -1,0 +1,37 @@
+{
+  "schema": "crane-data-manifest-v1",
+  "artifact_id": "land-unexpected-nominal-001",
+  "status": "DEVELOPMENT_VALID_UNEXPECTED_OUTCOME",
+  "visibility": "robot_visible",
+  "path": "data/robot_visible/dev/diagnostic-pilot-v1/land-unexpected-nominal-001/fixture-summary.json",
+  "sha256": "fe98f9624b5786227c1c469b6fd7bbda00108be824f60d399b2dd964c5efa3db",
+  "dvc_pointer": "data/robot_visible/dev.dvc",
+  "requested_scenario": "complete-blockage-v1",
+  "observed_action_status": "succeeded",
+  "evaluator_truth_reference": "land-unexpected-nominal-001.evaluator-only.json",
+  "capture": {
+    "action_wall_seconds": 69.96404527898994,
+    "displacement_m": 17.47818946838379,
+    "controller_commands": 675,
+    "costmap_observations": 257,
+    "maximum_occupied_costmap_cells": 8674,
+    "successive_plan_summaries": 66,
+    "trajectory_samples": 3402,
+    "bt_unique_transitions": 602,
+    "bt_dropped_transitions": 0,
+    "latest_costmap_data_sha256": "3fa225def424cdc210ecb3dbb81cde9e597aed77b93d553c5ab27fac63849bee"
+  },
+  "runtime": {
+    "crane_ml_commit": "c46de4d7e83a18ebef3abc4c97eff1b706a79282",
+    "player_sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+    "nav2_config_sha256": "e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+    "bt_xml_sha256": "423c61f90a57c79a1bae0580eb24a3866eee5169f888ac58cdca40e7db7656f3",
+    "ros_domain_id": 218,
+    "ros_tcp_port": 11618
+  },
+  "limitations": [
+    "Evaluator truth shows that the requested proving-ground layout did not instantiate; this is not a blockage episode.",
+    "The run is retained as an unexpected nominal/control calibration and must not be selected as a favorable induced failure.",
+    "Delivered costmap and plan evidence does not prove every value consumed by Nav2."
+  ]
+}

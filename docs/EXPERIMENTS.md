@@ -2298,3 +2298,23 @@
 - **TESTED/PASS:** all 33 `pn-*` per-episode manifests validate; the 18-episode aggregate
   development manifest still reproduces 545 logical outputs and 231 physical cache artifacts; the
   combined CPU-only suite passes 114 tests. No frozen manifest or retained artifact changed.
+
+## 2026-09-22 — land diagnostic-capture development run, unexpected nominal outcome
+
+- **PREDECLARED INTENT:** one current-build, headless `complete-blockage-v1` run using the retained
+  70 s ecological policy, isolated ROS domain 218/TCP port 11618, CRANE `c46de4d`, and player
+  SHA-256 `a7ad5b15...e292`. This was a development evidence check, not held-out evaluation.
+- **VALID RECORDING / FAILED INDUCTION:** transport and runtime validity passed, but evaluator truth
+  records the default clear corridor (`blocker=none`), not the requested proving-ground layout. The
+  robot therefore succeeded after 69.964 s and 17.478 m displacement. This run is not a blockage,
+  failure, or geometric-diagnosis example and no tuning rerun was made.
+- **CAPTURE RESULT:** the robot-visible fixture retained 675 controller commands, 257 costmap
+  observations, 66 successive plan summaries, 3,402 motion samples, 602 unique BT transitions with
+  zero drops, and a compressed 240x240 latest costmap with content SHA-256 `3fa225de...bee`.
+  Leakage scan passed. This validates the current capture path on an unexpected nominal control.
+- **GOVERNANCE:** the robot-visible fixture and physically separate runtime/truth artifacts are in
+  DVC development storage with committed manifests. Fault-induction success is explicitly false;
+  recording validity is true. Frozen study runtime and artifacts were untouched.
+- **NEXT:** diagnose the scenario-selection/build mismatch before scheduling a new geometric pilot.
+  Do not rerun merely to obtain the desired outcome, and do not modify the validated environment
+  geometry to manufacture a diagnosis.
