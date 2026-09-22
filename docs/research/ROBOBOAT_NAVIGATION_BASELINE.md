@@ -8,7 +8,8 @@ this pass.
 
 ## Provenance
 
-- Superproject branch/commit: `roboboat-docking` / `6cba6a8b072cfe02ae9af34fdbbe3b740ed0b2de`.
+- Behavior/config checkpoint before this documentation commit: branch `roboboat-docking`, commit
+  `6cba6a8b072cfe02ae9af34fdbbe3b740ed0b2de`.
 - Gitlinks: `crane_ml` `7195d917f8b838cb5f5606f09f2c1a24be0014a3`, `astro_dock`
   `36202373ae186a8fd247a20b7b477312a744de99`, nested ROS-TCP endpoint
   `3c3d405db665a8c52c28e45f23b8c9782a9564ba`.
