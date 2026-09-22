@@ -1,5 +1,23 @@
 # Experiment Log
 
+## 2026-09-21 — sealed pn-0027 inclusion and model calls
+
+- **CAPTURED ONCE / INCLUDED:** frozen recovery-success row `pn-0027`, seed 3027, passed every
+  inclusion gate and the exact expected-success contract. The action succeeded after one unique
+  Wait invocation with 3.457 m displacement, 245 returned controller commands, 75 costmap
+  observations, maximum 13,814 occupied cells, and accepted 10/7-unit parity audits. No answer was
+  inspected for scoring.
+- **SEALED MODEL CALLS RETAINED / NOT ANNOTATED:** both questions ran once for F/G/H with Luna-low:
+  six unique calls, no retries, 490,737 input tokens, 332,288 cached input tokens, 4,286 output
+  tokens, 843 reasoning tokens, and 139.919 s aggregate latency. Both G realizations failed
+  final-text verification and used checked-template fallback; the failure-cause answer is partial
+  and the recovery-mechanism answer is full. No repair call or resampling was made. A–E remain
+  non-model smoke outputs and frozen model evaluation is `NOT_RUN`. Hashes and usage are retained
+  in `manifests/model_outputs/pn-0027-provenance-v1.json`.
+- **VERIFIED:** all 24 robot-visible, 15 evaluator-only, and eight model/cache manifest artifacts
+  match their retained byte counts and SHA-256 hashes; the robot-visible leakage scan passed; the
+  full suite passed with 105 tests.
+
 ## 2026-09-21 — sealed pn-0026 inclusion and model calls
 
 - **CAPTURED ONCE / INCLUDED:** frozen terminal-abort row `pn-0026`, seed 3026, passed every
