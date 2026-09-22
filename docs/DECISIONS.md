@@ -768,3 +768,25 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   land scenarios are validated, (3) primary statistics and figures regenerate reproducibly,
   (4) manuscript-critical work is on schedule, and (5) another domain is demonstrably more
   valuable than additional land evidence or paper work.
+
+## 2026-09-22 — close legacy collection early and redirect to supported physical diagnosis
+
+- Decision: preserve the frozen provenance study unchanged, close its collection prospectively at
+  33 included episodes, finish its original blind annotation/analysis as an explicitly under-target
+  cohort, and make a separate diagnosis-to-language study the forward-looking contribution.
+- Evidence: collection has 33 complete paired F/G/H episodes but zero sealed annotations; its G
+  output falls back deterministically on 46/66 responses and its physical-cause question is
+  deliberately evidence-insufficient. Three ecological land exports and a qualified RoboBoat
+  baseline contain richer motion/physical evidence, while no paper draft exists.
+- Alternatives: collect seven or seventeen more legacy episodes; retroactively change the frozen
+  rubric; abandon the legacy study; or broaden environments. Additional legacy rows would improve
+  old-study power but not add physical diagnosis, while the other alternatives damage validity or
+  deadline focus.
+- Expected effect: legacy results remain auditable evidence about provenance, software mechanism,
+  and restraint. New Q1--Q3 separately test supported diagnosis, language faithfulness, and
+  appropriate specificity using matched R/P/T/N methods.
+- Validity risk: stopping below the frozen minimum reduces inferential power and must be disclosed.
+  The new study has no pilot-informed sample target yet and cannot borrow the old power analysis.
+- Revisit: do not reopen legacy collection based on observed answers or labels. A later amendment
+  may authorize only a resource-based bounded completion before labels are inspected, but the
+  default is closed so diagnostic pilots, annotation, analysis, and manuscript receive time.

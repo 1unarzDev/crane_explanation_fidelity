@@ -2,15 +2,16 @@
 
 Evidence-checked natural-language explanations of autonomous robot navigation decisions and
 failures. This umbrella repository is the single reproducibility root for the TRUSTMORE 2026
-submission (deadline: **October 4, 2026 AoE**). The central failure mode is fluent but unsupported
-language—not awkward wording.
+submission. The workshop advertises **October 4, 2026 AoE**, but the live portal currently closes
+earlier than literal end-of-day AoE; the project keeps October 3 as its completion/review buffer.
+The central failure mode is fluent but unsupported language—not awkward wording.
 
-The intended contribution is an evidence- and source-provenance explanation method, not a generic
-robot adapter, graph store, logging format, or LLM wrapper. It links what the robot observed and
-did to the exact versioned program/configuration elements governing that behavior, distinguishes
-observation from inference, and checks what the final language actually claims.
+The forward-looking contribution is a diagnosis-to-language method: validated physical/execution
+diagnostics plus runtime/source provenance, checked planning, language, and final verification. It
+is not a generic robot adapter, graph store, logging format, universal root-cause system, or LLM
+wrapper. The frozen provenance study remains a separate legacy evidence set.
 
-`runtime/physical evidence + exact source provenance → checked propositions → language → final-text check`
+`physical observations + execution/source evidence → validated diagnosis → checked plan → language → final-text check`
 
 The TRUSTMORE evaluation is intentionally narrower than CRANE's platform scope. Land/Nav2 is the
 primary controlled and ecological navigation domain; RoboBoat is the intended physically distinct
@@ -107,10 +108,13 @@ their own location. Exact repository commits and destinations are recorded in
   when a volatile DDS startup race lost its goal boundary; reliable transient-local harness QoS
   was then validated on the retained replication. Three further predeclared independent
   configurations passed; a fourth is retained but excluded because it produced zero recoveries.
-- **IN_PROGRESS / SEALED:** twenty-seven independent final F/G/H episodes are included (fourteen
-  recovery-success, thirteen terminal-abort), with 162 one-shot Luna-low calls retained and no
-  exclusions. This remains far below the frozen 40-episode minimum; answers have not been scored,
-  and no sealed effect estimate has been calculated.
+- **COLLECTION_CLOSED_EARLY / SEALED:** 33 independent final F/G/H episodes are included (17
+  recovery-success, 16 terminal-abort), with 198 one-shot Luna-low calls retained. This is below
+  the frozen 40-episode minimum and 50-episode target. No sealed answer is annotated/adjudicated,
+  and no sealed effect estimate exists. See [research redirect](docs/RESEARCH_REDIRECT.md).
+- **PROSPECTIVE / NOT_YET_VALIDATED:** physical-diagnosis contracts and a separate diagnostic
+  study draft now cover geometric restriction and command-to-motion discrepancy. No prospective
+  diagnostic explanation result exists yet.
 - **TESTED (SECONDARY-ARM DEVELOPMENT):** the provider-neutral model-call contract now has a
   Claude Code adapter as its first non-GPT instance. A predeclared control rejected Haiku and fixed
   `claude-sonnet-5` at low effort. See [model-family replication](docs/MODEL_FAMILY_REPLICATION.md).
@@ -121,9 +125,10 @@ their own location. Exact repository commits and destinations are recorded in
   not amend the primary freeze, and does not relieve the 40-episode minimum. No sealed Claude answer
   has been scored and no cross-family effect estimate exists.
 - **IMPLEMENTED, TESTED:** blinded response packaging and dual-annotator adjudication tooling
-  implementing `docs/ANNOTATION_GUIDE.md`. Hash-matched snapshots contain 126 primary-arm responses
-  through `pn-0021` and 54 Claude-arm responses, with keys confined to evaluator-only storage. The
-  primary packet must be regenerated once after final collection freeze. Scoring remains `NOT_RUN`.
+  implementing `docs/ANNOTATION_GUIDE.md`. Final legacy packet `sealed-primary-v3` contains 198
+  primary F/G/H responses over all 33 retained episodes; its key is confined to evaluator-only
+  storage and its manifest is tracked. The separate Claude packet contains 54 responses. Scoring,
+  adjudication, and key joining remain `NOT_RUN`.
 - **NOT_RUN:** blinded dual annotation, final statistics/figures, and final A–E model evaluation.
 - **NOT_RUN:** source-to-binary rebuild verification.
 - **DEFERRED:** arbitrary-LLM proposition extraction until independently evaluated.
@@ -215,6 +220,9 @@ delivered odometry proven controller consumption.
 - [Project language](CONTEXT.md)
 - [Architecture](docs/ARCHITECTURE.md)
 - [Study design](docs/STUDY_DESIGN.md)
+- [Research redirect and legacy disposition](docs/RESEARCH_REDIRECT.md)
+- [Physical-diagnosis contract](docs/PHYSICAL_DIAGNOSIS.md)
+- [Prospective diagnostic study draft](docs/DIAGNOSTIC_STUDY_DESIGN.md)
 - [Benchmark](docs/BENCHMARK.md)
 - [Experiment ledger](docs/EXPERIMENTS.md)
 - [Model-family replication protocol](docs/MODEL_FAMILY_REPLICATION.md)

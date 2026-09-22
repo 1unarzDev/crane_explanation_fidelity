@@ -1,5 +1,15 @@
 # Research and benchmark source audit
 
+## 2026-09-22 — physical-diagnosis redirect source audit
+
+Primary-source findings for Liu and Brandão (ICRA 2024), Diehl and Ramirez-Amaro (RA-L 2022),
+REFLECT (CoRL 2023), HEXAR, Fossen's marine-craft decomposition, Nav2 Jazzy controller feedback,
+and the live TRUSTMORE/OpenReview deadline are retained in
+`docs/research/PHYSICAL_DIAGNOSIS_FOUNDATIONS.md`. The audit motivates bounded geometric and
+command-to-motion diagnostics, separate diagnostic/language scoring, explicit unresolved
+alternatives, and a prohibition on treating command-derived `FollowPath` speed as measured motion.
+It provides design guidance, not empirical evidence for CRANE.
+
 The versioned Nav2/Jazzy source-to-runtime audit is maintained separately at
 [`docs/research/NAV2_JAZZY_RECOVERY_PROVENANCE.md`](research/NAV2_JAZZY_RECOVERY_PROVENANCE.md).
 It records the exact upstream sources, package mapping, BT/config anchors, runtime semantics, and

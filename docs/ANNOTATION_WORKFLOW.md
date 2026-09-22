@@ -89,20 +89,27 @@ separate, deliberate step.
 
 ## Current state
 
+- Legacy collection was prospectively closed early at 33 included episodes by
+  `manifests/study/research-redirect-20260922.json`; this is below the frozen 40-episode minimum.
+  The final primary packet/key pair is `sealed-primary-v3`: 198 F/G/H responses over all 33
+  retained episodes. Its content hashes are tracked in
+  `manifests/annotation/sealed-primary-v3.json`. This pair supersedes prior primary packet
+  snapshots for annotation, without deleting them or altering any frozen response.
 - A fresh primary pair is retained at `sealed-primary-v2`: 126 model-condition responses covering
   the first 21 included primary episodes, with its matching key physically under
   `data/evaluator_only/annotation_keys/`. It predates the 36 responses from `pn-0022`–`pn-0027` and is a
-  packaging/recovery snapshot, not the final analysis packet. Regenerate one final pair only after
-  collection freeze. The historical `sealed-luna-v1` pair is retained only for audit and covers
-  nine episodes; do not use either historical snapshot for the full-arm analysis.
+  packaging/recovery snapshot, not the final analysis packet. The historical `sealed-luna-v1`
+  pair is retained only for audit and covers nine episodes; do not use either historical snapshot
+  for the full-arm analysis.
 - The selected Claude-family sealed replication is **collected**: 18 envelopes and 54 model-condition
   responses over `pn-0001`–`pn-0009`. Its fresh `sealed-claude-v2` packet/key pair is retained
   separately because the Claude response format can reveal the provider and harness. The original
   `sealed-claude-v1` packet is unusable because its key was never uploaded and cannot be restored;
   never reconstruct that key. Note that 16 of 18 G responses use the deterministic checked
   template; byte-identical G text across arms must receive identical labels.
-- **Annotation itself is `NOT_RUN`.** No primary-arm sealed response has been scored, and no sealed
-  effect estimate exists.
+- **Annotation itself is `NOT_RUN`.** No primary-arm sealed response has been scored, no
+  adjudication exists, and no sealed effect estimate exists. Two independent annotators must use
+  only the `sealed-primary-v3` packet; neither receives its evaluator-only key.
 - The development model-strength controls are separate: unblinded, single-annotator, and
   development-only by design. They are not part of this workflow and must not be reported as if
   they were.

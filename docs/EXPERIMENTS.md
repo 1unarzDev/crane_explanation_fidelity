@@ -658,6 +658,34 @@
 - **VERIFIED:** robot-visible leakage scan passed across all 24 files. Payloads are governed by
   retained content-addressed manifests and DVC pointers; frozen study artifacts remain unchanged.
 
+## 2026-09-22 — research redirect, archive audit, and final legacy annotation packet
+
+- **DECISION / COLLECTION CLOSED EARLY:** the legacy provenance cohort is frozen at 33 included
+  episodes (17 recovery-success, 16 terminal-abort), below its prespecified minimum 40 and target
+  50. The redirect was based on deadline/scientific scope before any sealed annotation; no sealed
+  labels or adjudicated results exist. Frozen files, raw evidence, answers, and analysis remain
+  unchanged. See `manifests/study/research-redirect-20260922.json`.
+- **AUDIT PASS:** direct size/SHA-256 checks passed for 792 robot-visible files, 495 evaluator-only
+  files, and 264 output/cache artifacts. All 33 checkpoints pin frozen CRANE commit `c559932...`,
+  freeze integrity passed, and R2 reported cache/remote synchronization.
+- **FRESH-CHECKOUT RESTORE PASS:** a clean `origin/main` clone initially had no R2 remote, as
+  designed. After running the documented local `scripts/configure_dvc_r2.sh` step with private
+  credentials, `dvc pull` restored all seven governed roots (3,967 files added), and all 1,551
+  artifacts referenced by 99 episode/model manifests matched byte counts and SHA-256 hashes.
+  Builds, staging data, and non-governed ignored files were not expected to restore.
+- **TOOLING LIMITATION:** `analysis/audit_model_artifact_manifest.py` targets an older aggregate
+  schema and fails before validation on current per-episode manifests because
+  `accepted_output_roots` is absent. The direct current-schema audit passed; the utility should be
+  adapted prospectively without modifying frozen study artifacts.
+- **PACKAGED / NOT_ANNOTATED:** `sealed-primary-v3` contains 198 blind F/G/H responses covering all
+  33 episodes. The evaluator-only key remains physically separate. Packet/key sizes and hashes are
+  retained in `manifests/annotation/sealed-primary-v3.json`. Dual annotation, adjudication, key
+  join, and sealed statistical analysis remain `NOT_RUN`.
+- **FALLBACK AUDIT:** G used deterministic fallback on 46/66 responses (69.7%): all 33 recovery-
+  mechanism answers and 13/33 physical-cause answers. This is an operational outcome, not a
+  correctness label; final reporting must distinguish raw realization acceptance from final-answer
+  performance and describe G as predominantly template-rendered if this pattern remains.
+
 ## 2026-09-21 — sealed pn-0027 inclusion and model calls
 
 - **CAPTURED ONCE / INCLUDED:** frozen recovery-success row `pn-0027`, seed 3027, passed every
