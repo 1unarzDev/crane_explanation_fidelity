@@ -1,0 +1,65 @@
+{
+  "schema": "crane-land-plan-geometry-qualification-development-v1",
+  "status": "PREDECLARED_DEVELOPMENT_ONLY_NOT_CONFIRMATORY",
+  "declared_at": "2026-09-23T04:41:24-05:00",
+  "purpose": "Qualify bounded delivered-plan geometry as robot-visible evidence for a path-decision explanation on one previously unrun development layout.",
+  "source": {
+    "umbrella_commit_before_declaration": "82f378c0fb18fa7f6d5ca83923f071f6b2b40312",
+    "crane_ml_commit": "ca259ba0b82f40950ff4de39e669168fb904ab1b",
+    "player_build_source_commit": "6bf057b5acf1763eeca1b81be6530cd218a5405b",
+    "player_sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+    "fixture_observer_sha256": "bfc580ea89c9a8888eeea47fffbe45c834e5f8458bd26d81c68d7747c151df64",
+    "environment_catalog_sha256": "c2603491c16b99ba007085237097fc0cd66ee2453d1b9e4e1fc7f490bd1a0f8a",
+    "nav2_params_sha256": "e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+    "bt_xml_sha256": "e47dadf5bb1228f031e1a7a15d60f0a784c5101ffff9fd11fc36ea7458ce3dce"
+  },
+  "run": {
+    "run_id": "diagnostic-land-dev-003",
+    "ros_domain_id": 122,
+    "ros_tcp_port": 12322,
+    "catalog": "v4",
+    "layout": "diagnostic-development-connected-detour-003",
+    "layout_seed": 62002,
+    "goal_distance_m": 18.0,
+    "action_deadline_s": 100.0,
+    "attempts": 1,
+    "retries": 0
+  },
+  "robot_visible_evidence": [
+    "delivered Nav2 plan hashes, lengths, timestamps, and signed/absolute deviation from the requested start-goal line",
+    "delivered odometry trajectory",
+    "delivered costmap snapshots",
+    "NavigateToPose result and timing",
+    "BehaviorTreeLog transitions",
+    "exact runtime source and configuration hashes"
+  ],
+  "evaluator_only": [
+    "selected layout and mechanism label",
+    "semantic obstacle identities and canonical geometry",
+    "seed and expected broad outcome"
+  ],
+  "admission": {
+    "recording_valid": "fixture validity and runtime/source hash gates pass; plan summaries contain valid sha256 IDs and finite nonnegative geometry; evaluator truth remains separate",
+    "retain_unexpected_outcome": true,
+    "retain_zero_or_missing_path_change": true,
+    "do_not_retry_failed_induction": true
+  },
+  "allowed_conclusions": [
+    "the fixture received one or more global plans whose measured geometry departed from the requested direct start-goal line",
+    "delivered odometry followed a measured non-direct trajectory when that observation is present",
+    "the navigation action's recorded terminal outcome"
+  ],
+  "prohibited_conclusions": [
+    "a particular evaluator-only obstacle caused a plan or trajectory change",
+    "the controller consumed a delivered global plan",
+    "Nav2 consumed the retained costmap snapshot",
+    "temporal association proves a physical causal relationship",
+    "global route infeasibility",
+    "confirmatory effectiveness or P-over-R improvement"
+  ],
+  "analysis": {
+    "independent_plan_summary_recomputation_required": true,
+    "model_generation_status": "NOT_AUTHORIZED_BY_THIS_DECLARATION",
+    "statistical_status": "one development instrumentation-qualification run; not pooled with the frozen legacy study and not held-out"
+  }
+}
