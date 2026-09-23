@@ -1003,3 +1003,21 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Validity protection: the one-shot outputs and P fallback remain immutable. The post-hoc verifier
   acceptance is regression evidence only; blind human annotation and held-out evaluation remain
   required.
+
+## 2026-09-23 — treat the merged RoboBoat baseline as integrated but protected
+
+- Decision: remove living-document references to a still-active parallel RoboBoat owner. The
+  completed docking/navigation work is merged into `main`; its validated scene, vehicle, physics,
+  sensors, Nav2 configuration, and docking baseline remain protected inputs to the diagnostic
+  study rather than targets for redesign.
+- Evidence: the integrated reports retain calibrated command response, known-path docking, and
+  five repeated far-dock Nav2/action and independent physical-predicate successes. Governed
+  terminal-margin outputs and a retained-grid diagnosis already exist, while prospective surface
+  explanation evaluation and human annotation remain `NOT_RUN`.
+- Alternatives: continue waiting on a nonexistent parallel workstream; reopen platform tuning; or
+  omit RoboBoat despite retained measured evidence. The first misstates ownership, the second risks
+  manufacturing favorable behavior, and the third discards a qualified cross-domain substrate.
+- RQ impact: RoboBoat is a focused surface diagnostic source, not a claim of cross-domain
+  validation. Only prospectively governed cases may enter the new study.
+- Validity protection: no RoboBoat source, scene, physics, vehicle, sensor, or Nav2 file changed.
+  Any later narrow shared/capture change requires a measured non-regression and separate commit.

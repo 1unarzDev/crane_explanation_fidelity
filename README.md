@@ -14,8 +14,8 @@ wrapper. The frozen provenance study remains a separate legacy evidence set.
 `physical observations + execution/source evidence → validated diagnosis → checked plan → language → final-text check`
 
 The TRUSTMORE evaluation is intentionally narrower than CRANE's platform scope. Land/Nav2 is the
-primary controlled and ecological navigation domain; RoboBoat is the intended physically distinct
-surface demonstration if its parallel workstream qualifies it. Existing aerial and underwater
+primary controlled and ecological navigation domain; the integrated, protected RoboBoat baseline
+is the focused physically distinct surface diagnostic domain. Existing aerial and underwater
 environments are retained as validated/developing infrastructure but are
 `DEFERRED_POST_SUBMISSION`, not advertised as explanation-study results.
 

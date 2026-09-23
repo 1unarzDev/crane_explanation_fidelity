@@ -34,17 +34,18 @@ figures, and manuscript quality.
 Land/Nav2 is already the strongest high-throughput path for runtime-to-source provenance,
 obstacle-driven behavior, recovery, termination, evidence insufficiency, and selective
 qualification. The ecological environment effort therefore concentrates on an obstacle-rich
-warehouse/industrial world and a configurable proving ground. RoboBoat, if qualified by its
-parallel workstream, supplies a physically distinct surface case without requiring a third
-complete autonomy/evidence integration.
+warehouse/industrial world and a configurable proving ground. The integrated RoboBoat
+navigation/docking baseline supplies a physically distinct surface case without requiring a third
+complete autonomy/evidence integration. Its measured platform qualification is
+separate from the still-unrun prospective explanation evaluation.
 
 Accordingly, aerial and underwater explanation validation are `DEFERRED_POST_SUBMISSION` while all
 existing code, scenes, assets, and historical validation results are preserved. Outdoor/campus
 expansion is also deferred unless it immediately enables an experiment unavailable in the
 warehouse or proving ground. This is a deadline- and validity-driven prioritization, not a claim
 that aerial or underwater robotics are unimportant. Cross-domain robustness remains exploratory;
-the submission's empirical scope is controlled and ecological land navigation plus RoboBoat only
-if that surface workstream is ready.
+the submission's empirical scope is controlled and ecological land navigation plus a focused
+RoboBoat diagnostic study only where prospectively governed evidence supports it.
 
 ## Local CRANE land substrate (2026-09-19)
 

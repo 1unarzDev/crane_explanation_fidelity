@@ -2,17 +2,17 @@
 
 Submission work is ordered by scientific value and deadline risk:
 
-1. **REQUIRED:** complete the frozen, powered land/Nav2 F/G/H provenance study without changing
-   its split, questions, prompts, annotation rules, model configuration, inclusion criteria, or
-   stopping rules;
+1. **REQUIRED:** preserve the closed, under-target land/Nav2 F/G/H cohort unchanged and complete
+   its blinded annotation, adjudication, and analysis under the original rubric and additive
+   collection-disposition amendment;
 2. **REQUIRED:** make the warehouse/industrial land environment obstacle-rich, multi-route, and
    capable of evidence-rich Nav2 behavior;
 3. **REQUIRED:** provide a deterministic configurable land proving ground for avoidance, detour,
    replanning, narrow passage, recovery, and blockage/no-path validation;
 4. **HIGH:** collect ecological land scenarios with physical/runtime evidence and stable semantic
    identities;
-5. **PARALLEL / OWNED ELSEWHERE:** RoboBoat navigation and docking, as the intended physically
-   distinct surface-domain demonstration if that workstream becomes reliable;
+5. **INTEGRATED / PROTECTED:** use the validated RoboBoat navigation/docking baseline as the focused
+   surface diagnostic domain without redesigning its scene, physics, vehicle, or Nav2 baseline;
 6. **DEFERRED_POST_SUBMISSION:** outdoor/campus expansion unless it directly enables an experiment
    the warehouse or proving ground cannot support;
 7. **DEFERRED_POST_SUBMISSION:** underwater explanation validation;
@@ -263,13 +263,14 @@ qualification or abstention. Prefer independent route/topology variants over cos
 variants. Add outdoor/campus geometry only when it provides a decision motif that the warehouse
 and proving ground cannot supply in time.
 
-## PARALLEL / OWNED ELSEWHERE — surface navigation and docking
+## INTEGRATED / PROTECTED — surface navigation and docking
 
-The separate RoboBoat docking workstream owns this environment, vehicle, sensors, physics, and Nav2
-configuration. If its long-range navigation/docking becomes reliable, it is the intended
-cross-domain surface demonstration. This land workstream must not edit those assets or incorporate
-that branch without explicit direction. The synthetic Dock/Slalom regression remains a reasoning
-fixture and must not be presented as a RoboBoat task.
+The completed RoboBoat docking workstream is integrated. Its environment, vehicle, sensors,
+physics, Nav2 configuration, and measured baseline remain protected: reuse the versioned fixtures
+and retained outputs rather than redesigning or retuning them to manufacture a diagnosis. The
+surface study may add only narrowly justified capture/diagnostic adapters with a corresponding
+non-regression. The synthetic Dock/Slalom regression remains a reasoning fixture and must not be
+presented as a RoboBoat task.
 
 ## DEFERRED_POST_SUBMISSION — outdoor/campus, underwater, and aerial expansion
 

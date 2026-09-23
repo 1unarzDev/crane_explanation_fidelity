@@ -189,7 +189,10 @@ The development annotation inventory therefore contains 44 responses over seven 
 human annotation and adjudication still `NOT_RUN`. Independent scenario collection, protocol
 freeze, and held-out evaluation remain `NOT_RUN`. The development thresholds are not frozen, and
 the three variants cannot be counted as separate scenario instances.
-  A retained unexpected land success now passes a false-premise-aware `not_triggered` check and has
+
+## Other retained development cases at 2026-09-23
+
+- A retained unexpected land success now passes a false-premise-aware `not_triggered` check and has
   a blinded R/P/T/N packet, but it was not prospectively collected and has no human labels.
 - One separately governed, prospectively declared nominal land episode now supplies complete-route
   costmap coverage, successful action status, and low-deviation delivered odometry. Its independent
@@ -207,3 +210,19 @@ the three variants cannot be counted as separate scenario instances.
   below 253, 23 matching Navfn failure messages, then action abort. Its exact dirty source snapshot
   was not retained, so it is development-only, adds no confirmatory cluster, and has no R/P/T/N
   comparison or human label.
+
+## Prospective collection decision at 2026-09-23
+
+Protocol freeze remains `NOT_READY`. The immediate dependency is two independent blinded
+development annotators followed by a distinct adjudicator for disagreements. Until those labels
+exist, no defensible pilot discordance estimate, verifier error estimate, or response-quality
+assessment exists. Project-author review cannot fill that role.
+
+The retained land catalog and command--motion family establish two runnable mechanisms, but the
+catalog alone cannot supply the 92 independent clusters in the design sensitivity and current
+project review does not suggest a P-over-tool-enabled-R advantage. The post-annotation decision
+must therefore be prospective and explicit: either (a) demonstrate a feasible route to the
+predeclared powered target using genuinely distinct scenario configurations, or (b) freeze a
+deadline/resource-limited, explicitly underpowered study and report effects and clustered
+uncertainty without equivalence claims. No held-out episode or model output may be inspected before
+that choice, the split, stopping rule, prompts, thresholds, and analysis are frozen.

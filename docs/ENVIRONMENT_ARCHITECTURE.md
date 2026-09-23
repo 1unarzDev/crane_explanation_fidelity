@@ -5,7 +5,7 @@
 CRANE's environment architecture remains domain-general: it can host land, surface, underwater,
 and aerial robots. The TRUSTMORE 2026 empirical scope is deliberately narrower. The confirmatory
 study uses land/Nav2, ecological development prioritizes warehouse/proving-ground land navigation,
-and RoboBoat is the intended surface-domain demonstration if its parallel workstream qualifies it.
+and the integrated RoboBoat baseline supplies a focused surface diagnostic domain.
 Aerial and underwater validation are `DEFERRED_POST_SUBMISSION`.
 
 Architecture generality is an implementation capability, not a paper claim that all supported
@@ -95,9 +95,10 @@ trajectory views, costmap/TF views, and Nav2/action/recovery status are presenta
 They are optional in headless execution and may read canonical/runtime state without becoming
 simulation authority. Their absence cannot change physics or navigation behavior.
 
-## Ownership boundary
+## Protected RoboBoat boundary
 
-The parallel RoboBoat workstream owns the RoboBoat environment, vehicle, sensors, physics, Nav2
-configuration, and docking behavior. Environment-platform changes must not modify those assets.
-Any unavoidable generic shared change requires an isolated commit and a RoboBoat non-regression
-when practical.
+The completed RoboBoat workstream is integrated, but its validated environment, vehicle, sensors,
+physics, Nav2 configuration, and docking behavior remain a protected baseline. Diagnostic work
+reuses versioned runs and narrow capture/analysis adapters; it must not retune the platform to
+manufacture favorable failures. Any necessary shared change requires an isolated commit and a
+RoboBoat non-regression when practical.
