@@ -10,6 +10,10 @@
 
 \newcommand{\system}{\textsc{Crane-Explain}}
 \newcommand{\pending}[1]{\textcolor{red}{[PENDING: #1]}}
+\newcommand{\stagebox}[2]{%
+  \fbox{\begin{minipage}[c][1.02in][c]{0.185\textwidth}
+  \centering\footnotesize\textbf{#1}\\[2pt]#2
+  \end{minipage}}}
 
 \title{Beyond Terminal Events: Evidence-Checked Physical Diagnosis\\
 for Natural-Language Robot Navigation Explanations}
@@ -44,19 +48,41 @@ unobserved obstacle identity, a unique actuator defect, or a causal claim about 
 Natural-language generation makes this tension acute: the most readable answer can be the least
 auditable one.
 
-We study explanations whose claims are constrained by retained robot evidence. Our central design
-separates five stages:
-\begin{align*}
-&\text{observations and execution evidence} \\
-&\quad\rightarrow \text{diagnosis} \rightarrow \text{checked plan} \\
-&\quad\rightarrow \text{language} \rightarrow \text{final check}.
-\end{align*}
+We study explanations whose claims are constrained by retained robot evidence. As
+Fig.~\ref{fig:pipeline} shows, the method separates robot-visible evidence, bounded diagnosis,
+checked planning, realization, and final verification from evaluator-only truth and scoring.
 The diagnosis is not free-form reasoning. It is a versioned computation over quantities with
 units, frames, time intervals, evidence identifiers, assumptions, and applicability limits. Its
 output identifies candidate mechanisms, supporting and contradictory observations, and
 alternatives that remain observationally equivalent. The language layer must preserve this
 content; if it cannot be verified after one bounded repair, the system falls back to a checked
 deterministic rendering.
+
+\begin{figure*}[t]
+\centering
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}c c c c c c c@{}}
+\stagebox{Robot-visible evidence}{observations, commands, motion, runtime events, source/config hashes}
+& $\boldsymbol{\rightarrow}$ &
+\stagebox{Bounded diagnosis}{measurements, mechanism, conflicts, assumptions, unresolved alternatives}
+& $\boldsymbol{\rightarrow}$ &
+\stagebox{Checked answer plan}{supported claims, evidence IDs, causal level, required limits}
+& $\boldsymbol{\rightarrow}$ &
+\stagebox{Language and final check}{one bounded repair; otherwise deterministic fallback}
+\\[12pt]
+\multicolumn{3}{c}{\fbox{\parbox{0.355\textwidth}{\centering\footnotesize
+\textbf{Evaluator-only truth}\\injected condition, canonical geometry, expected mechanism,
+answerability}}}
+& $\boldsymbol{\longrightarrow}$ &
+\multicolumn{3}{c}{\fbox{\parbox{0.355\textwidth}{\centering\footnotesize
+\textbf{Independent evaluation}\\diagnostic correctness, language faithfulness,
+material error, useful coverage}}}
+\end{tabular}
+\caption{Method and evaluation boundary. Evaluator-only truth is unavailable to R, P, T, and N;
+it enters only independent reference computation and blinded scoring. A final answer is accepted
+only if it preserves the checked mechanism and its limits.}
+\label{fig:pipeline}
+\end{figure*}
 
 The paper asks three prospective questions. \emph{Q1:} do physical diagnostic computations plus
 runtime/source provenance improve correct and informative failure explanations over a strong
