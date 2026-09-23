@@ -3085,3 +3085,24 @@
 - **LIMITATION:** red pending markers remain by design because legacy and diagnostic human
   annotation, prospective protocol freeze, held-out collection, and inferential statistics are
   `NOT_RUN`. This PDF is not submission-ready and was not submitted or published.
+
+## 2026-09-23 — predeclare missing-odometry command-motion specificity case
+
+- **STATUS:** `PREDECLARED / DEVELOPMENT_ONLY / NOT_YET_RUN`.
+- **PURPOSE:** test whether R/P/T/N withhold a sustained command-motion diagnosis when the decisive
+  independently measured motion samples are absent, while retaining action outcome, commands,
+  execution sequence, source hashes, and the declared evidence boundary.
+- **MASK:** deterministically remove only the blind export's odometry sample array and assign a new
+  masked episode ID. Do not expose the source diagnostic, checked answer, paired outputs, evaluator
+  intervention, or simulator truth.
+- **EXPECTED CHECKED RESULT:** `insufficient`; preserve the recorded abort/recovery sequence as
+  useful information, state that command-to-motion comparison is unavailable, and request
+  synchronized independent motion evidence. Any claimed sustained discrepancy or unique physical
+  cause is prohibited.
+- **FAIRNESS:** R receives the same masked samples and executable diagnostic as P. N remains the
+  declared no-computation ablation. One `gpt-5.6-luna` low-effort sample per model arm, no retries.
+- **INDEPENDENCE:** this is an evidence mask of `diagnostic-motion-dev-cm-001`; it belongs to
+  `command-motion-held-nominal-pair-001` and adds zero independent scenarios.
+- **DECLARATION:** exact inputs, hashes, model settings, retention, and planned paths are fixed in
+  `research/explanation_fidelity/experiment_configs/development/diagnostic-command-motion-missing-odometry-pilot-v1.json`
+  before mask generation or any model call.

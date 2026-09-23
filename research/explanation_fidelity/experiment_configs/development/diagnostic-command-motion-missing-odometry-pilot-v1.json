@@ -1,0 +1,79 @@
+{
+  "schema": "crane-diagnostic-development-run-declaration/v1",
+  "status": "PREDECLARED_DEVELOPMENT_ONLY_NOT_FROZEN",
+  "declared_utc": "2026-09-23T07:24:37Z",
+  "umbrella_commit_before_declaration": "88e0d620043492809a162010014aa44d907a8888",
+  "case_id": "diagnostic-command-motion-missing-odometry-pilot-v1",
+  "source_episode_id": "diagnostic-motion-dev-cm-001",
+  "masked_episode_id": "diagnostic-motion-dev-cm-001-mask-no-odometry",
+  "statistical_cluster_id": "command-motion-held-nominal-pair-001",
+  "independent_scenario_increment": 0,
+  "purpose": "Test appropriate diagnostic specificity when the decisive independently measured motion samples are unavailable while action, command, execution-sequence, source, and provenance evidence remain visible.",
+  "question_id": "diagnostic-command-motion-mechanism-v1",
+  "question": "Did a command-to-motion discrepancy prevent the robot from continuing toward the goal? Identify the deepest supported mechanism or reject the premise, connect it to the outcome, and state what remains unresolved.",
+  "mask": {
+    "operation": "deterministically remove only method_input.odometry_samples from the blind robot-visible command-motion export and assign the masked episode ID",
+    "preserve": [
+      "delivered command samples and provenance",
+      "odometry topic/frame provenance and explicit absence of retained samples",
+      "NavigateToPose outcome and timing",
+      "BehaviorTree execution sequence and bounded recovery-classifier provenance",
+      "exact source and configuration hashes",
+      "evidence-boundary limitations"
+    ],
+    "remove": [
+      "all independently delivered odometry samples",
+      "precomputed diagnostic result",
+      "checked answer",
+      "prior model outputs"
+    ],
+    "expected_diagnostic_disposition": "insufficient",
+    "required_withholding": [
+      "a sustained command-to-motion discrepancy occurred",
+      "the delivered commands failed to produce measured motion",
+      "motor failure, slip, collision, obstruction, or evaluator intervention caused the outcome"
+    ],
+    "required_useful_content": [
+      "the action aborted and the retained execution sequence may be described",
+      "the missing independently measured motion stream prevents the command-to-motion comparison",
+      "the next discriminating check is synchronized independent motion evidence"
+    ]
+  },
+  "conditions": ["R", "P", "T", "N"],
+  "model_configuration": {
+    "provider": "codex",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "low",
+    "samples_per_model_arm": 1,
+    "retry_or_resample": false
+  },
+  "information_parity": {
+    "primary_comparison": "P versus tool-enabled R",
+    "shared_masked_robot_visible_evidence": true,
+    "shared_command_motion_diagnostic_tool": true,
+    "shared_crane_source": true,
+    "shared_core_source": true,
+    "N_is_no_computation_ablation": true,
+    "paired_source_artifacts_unavailable_to_methods": true
+  },
+  "inputs": {
+    "source_export": "data/robot_visible/dev/diagnostic-pilot-v1/land-command-motion-001/evidence-and-diagnostic.json",
+    "source_export_sha256": "0a57a02e6a0442fc0e7e95286e8c71d83a126182b7cbf0ff2c24a767221054e3",
+    "adapter_sha256": "725b0510dc68835913e2f1bfb670c69c4f01444bece11c95c62e6000a35434e2",
+    "runner_sha256": "f1cba0a6231c9bec421c582e3d109f4954db1d2062f68f068fb90d1fe598d77f",
+    "repository_prompt_sha256": "6fa02e37d1b8b9a0136215f9c3f710be0a8522e0c4cecb8ab679edfc84f1fd46",
+    "realization_prompt_sha256": "ee136af7285acbb238b9388ea8c2b34d463690c5dd6a359a8358c7ce6e6095c4",
+    "no_computation_prompt_sha256": "adbbc64be0f324b77431b2f375481b692ef15dc00f71501216a565923c8d99c9",
+    "crane_ml_commit": "6bf057b5acf1763eeca1b81be6530cd218a5405b",
+    "crane_explain_core_commit": "2cd9b0ada16a27615046c4a4bc3940424e2c4c2c"
+  },
+  "retention": {
+    "retain_all_outputs_regardless_of_result": true,
+    "blinded_packet_required": true,
+    "evaluator_key_physically_separate": true,
+    "human_annotation_required_for_scored_claims": true,
+    "never_count_as_an_independent_cluster": true
+  },
+  "planned_output": "model_outputs/dev/diagnostic-command-motion-missing-odometry-pilot-v1/diagnostic-motion-dev-cm-001-mask-no-odometry/mechanism-or-false-premise.json",
+  "planned_cache": "research/explanation_fidelity/model_cache/diagnostic-command-motion-missing-odometry-pilot-v1"
+}
