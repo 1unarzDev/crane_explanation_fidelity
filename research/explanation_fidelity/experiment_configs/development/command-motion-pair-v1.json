@@ -1,0 +1,83 @@
+{
+  "schema": "crane-command-motion-development-pair-v1",
+  "status": "PREDECLARED_DEVELOPMENT_ONLY_NOT_CONFIRMATORY",
+  "declared_at": "2026-09-23T01:00:15-05:00",
+  "purpose": "Qualify one bounded command-to-motion diagnostic and matched healthy control before deciding whether this mechanism is eligible for the prospective study.",
+  "run_order": [
+    "diagnostic-motion-development-nominal-001",
+    "diagnostic-motion-development-held-001"
+  ],
+  "shared": {
+    "crane_commit": "6bf057b5acf1763eeca1b81be6530cd218a5405b",
+    "umbrella_commit_before_declaration": "ca5d5ef",
+    "unity_version": "6000.5.10f1",
+    "player_sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+    "physics_assembly_sha256": "2f469fcf6bf7cac78fbbacb7cc9d4d155d395f60ccdd2e86e8a19b7be48557cf",
+    "scene": "TurtleBot3 Warehouse Validation",
+    "platform": "turtlebot3-waffle-differential",
+    "environment": "generated controlled corridor",
+    "corridor_width_m": 4.0,
+    "corridor_length_m": 14.0,
+    "goal_distance_m": 10.0,
+    "action_deadline_s": 70.0,
+    "worker_duration_s": 80.0,
+    "fixture_delay_wall_s": 7.0,
+    "time_scale": 1.0,
+    "bt_xml": "packages/crane_ml/Tools/Performance/nav2_land_progress_recovery.xml",
+    "nav2_params": "packages/crane_ml/Tools/Performance/nav2_land_fixture.yaml",
+    "question": "What prevented the robot from continuing toward the goal, and what does the retained evidence not establish?"
+  },
+  "runs": [
+    {
+      "run_id": "diagnostic-motion-development-nominal-001",
+      "ros_domain_id": 110,
+      "ros_tcp_port": 11310,
+      "seed_base": 84101,
+      "intervention": "none",
+      "expected_broad_outcome": "success"
+    },
+    {
+      "run_id": "diagnostic-motion-development-held-001",
+      "ros_domain_id": 111,
+      "ros_tcp_port": 11311,
+      "seed_base": 84102,
+      "intervention": "evaluator-owned persistent planar mobility hold",
+      "mobility_hold_after_fixed_simulation_s": 15.0,
+      "expected_broad_outcome": "non-success after a sustained command-to-motion discrepancy"
+    }
+  ],
+  "robot_visible_evidence": [
+    "time-stamped controller commands",
+    "independently delivered odometry trajectory",
+    "NavigateToPose feedback and terminal result",
+    "BehaviorTreeLog transitions",
+    "exact Nav2 parameters and BT XML",
+    "hash-verified player/source provenance"
+  ],
+  "evaluator_only": [
+    "whether a mobility hold was configured",
+    "scheduled and actual hold boundary",
+    "expected broad outcome",
+    "fault-induction success label"
+  ],
+  "admission": {
+    "recording_valid": "goal accepted; command and odometry streams retained; runtime/source hashes match; evaluator truth remains physically separate",
+    "nominal_healthy": "unheld action succeeds and retained odometry shows forward motion in response to nonzero commands",
+    "held_induction_success": "the evaluator-owned hold occurs; nonzero accepted commands continue after its boundary; independently measured planar motion becomes materially smaller than the healthy response; action does not succeed",
+    "retain_unexpected_outcomes": true
+  },
+  "allowed_diagnosis": "Accepted nonzero motion commands failed to produce the calibrated measured motion response during the identified interval, preventing continued progress.",
+  "withhold": [
+    "motor failure",
+    "wheel slip",
+    "physical obstruction",
+    "the evaluator-owned intervention identity",
+    "a unique physical cause for the discrepancy"
+  ],
+  "analysis": {
+    "status": "thresholds_not_frozen_for_confirmatory_use",
+    "development_rule": "Use the nominal run and pre-discrepancy interval to select a bounded lag/window and minimum command threshold; retain that rule before any additional development cases.",
+    "independent_reference_required": true,
+    "model_generation_retries": 0
+  }
+}
