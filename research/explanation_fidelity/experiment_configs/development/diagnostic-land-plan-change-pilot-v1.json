@@ -1,0 +1,78 @@
+{
+  "schema": "crane-diagnostic-land-plan-change-pilot-declaration-v1",
+  "status": "PREDECLARED_DEVELOPMENT_ONLY_NOT_CONFIRMATORY",
+  "declared_at": "2026-09-23T05:14:16-05:00",
+  "purpose": "Test whether independently checked delivered-plan geometry produces a useful, causally bounded route-change explanation under information parity with a tool-enabled repository agent.",
+  "episode_id": "diagnostic-land-dev-004",
+  "statistical_cluster_id": "land-connected-detour-plan-change-004",
+  "question_id": "diagnostic-land-plan-change-v1",
+  "question_kind": "diagnostic-route-change-and-unresolved-trigger-v1",
+  "question": "What route change is supported by the robot-visible evidence, what outcome followed, and what physical trigger remains unresolved?",
+  "source": {
+    "umbrella_commit_before_declaration": "3917d624b7094715a24e2edc1d2159f8cc54dbba",
+    "crane_ml_commit": "f669e748c657a5e93324e8bcdf1732785e88ce47",
+    "core_commit": "cf5852c744aef7ca26b055ae8026685fc3b7eeb7",
+    "fixture_path": "data/robot_visible/dev/diagnostic-land-dev-004/fixture-summary.json",
+    "fixture_sha256": "db084dea8b2b8619be0f6bd59c11f2cd5a7d5b5ba9fc408afa1d9ef9f40f355b",
+    "diagnostic_path": "data/robot_visible/dev/diagnostic-land-dev-004/geometric-route-diagnostic-v2.json",
+    "diagnostic_sha256": "2fa58736840d5f3e8493ee629f555cd73d83443e4ed7ae610c8bfffe3c8e4512",
+    "method_input_sha256": "d52e6673f767730331fd2c6885d157ad11e0f6ccdbda190288a3e56c3b1618ed",
+    "data_manifest": "manifests/data/diagnostic-land-dev-004.robot-visible.json"
+  },
+  "implementation": {
+    "runner_path": "analysis/run_diagnostic_land_pilot.py",
+    "runner_sha256": "6aaec0002b65d43f4046ea2e2ad74de79d14fa8028668e5c533a21481401c180",
+    "diagnostic_wrapper_path": "analysis/export_geometric_route_diagnostic.py",
+    "diagnostic_wrapper_sha256": "11be6b2a3c11b570eb01c17783454cb1aef16a9a2a0b65a257eea87d8b1d5959",
+    "repository_prompt_path": "research/explanation_fidelity/prompts/diagnostic_repository_agent_plan_geometry_dev_v1.txt",
+    "repository_prompt_sha256": "7688778ed7bd18f9220fdaafdfd224c65137bea48ca1d421b230397d8ab6e2fe",
+    "realization_prompt_path": "research/explanation_fidelity/prompts/diagnostic_realization_dev_v1.txt",
+    "realization_prompt_sha256": "ee136af7285acbb238b9388ea8c2b34d463690c5dd6a359a8358c7ce6e6095c4",
+    "ablation_prompt_path": "research/explanation_fidelity/prompts/diagnostic_no_computation_dev_v1.txt",
+    "ablation_prompt_sha256": "adbbc64be0f324b77431b2f375481b692ef15dc00f71501216a565923c8d99c9",
+    "verification_policy": "bounded-diagnostic-language-v2"
+  },
+  "conditions": {
+    "R": "repository-aware agent with the complete blind fixture, exact source/configuration, and the same executable v2 plan-geometry computation available to P",
+    "P": "checked v2 plan-change result followed by one model realization and bounded verification/fallback",
+    "T": "deterministic rendering of the same checked diagnosis",
+    "N": "same runtime/source presentation with captured per-plan summaries but without retained poses, independent summary recomputation, or cross-plan diagnostic classification"
+  },
+  "information_parity": {
+    "primary_comparison": "P versus tool-enabled R",
+    "same_robot_visible_fixture_for_R_and_P": true,
+    "same_diagnostic_tool_available_to_R_and_P": true,
+    "evaluator_truth_available_to_methods": false,
+    "N_is_computation_ablation_not_primary_parity_baseline": true,
+    "extra_computation_and_model_calls_will_be_reported": true
+  },
+  "model": {
+    "provider": "codex",
+    "name": "gpt-5.6-luna",
+    "reasoning_effort": "low",
+    "temperature": null,
+    "samples_per_model_condition": 1,
+    "retries": 0,
+    "maximum_new_calls": 3,
+    "conditions_requiring_calls": ["R", "P", "N"]
+  },
+  "retention": {
+    "retain_all_valid_outputs": true,
+    "do_not_resample_on_error_or_unfavorable_answer": true,
+    "preserve_raw_P_candidate_and_original_fallback_decision": true,
+    "retain_unexpected_language_failures": true
+  },
+  "allowed_conclusion": "The development record may support an initially direct delivered plan followed by changed delivered plan geometry and eventual action success, while leaving controller consumption and the physical trigger unresolved.",
+  "prohibited_conclusions": [
+    "a specific obstacle or costmap snapshot caused the plan changes",
+    "the controller consumed every delivered plan",
+    "the evaluator-only layout or obstacle identity",
+    "global route infeasibility",
+    "P outperforms R before independent blinded annotation",
+    "confirmatory or held-out effectiveness"
+  ],
+  "planned_output": "model_outputs/dev/diagnostic-land-plan-change-pilot-v1/diagnostic-land-dev-004/plan-change.json",
+  "planned_cache": "research/explanation_fidelity/model_cache/diagnostic-land-plan-change-pilot-v1",
+  "planned_annotation_packet": "model_outputs/annotation_packets/diagnostic-land-plan-change-pilot-v1/packet.jsonl",
+  "analysis_status": "project review is descriptive only; blinded human annotation and adjudication are required for scored conclusions"
+}
