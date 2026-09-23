@@ -178,3 +178,25 @@ all four diagnostic packets, but count only two episode clusters: `land-blockage
 post-hoc v2 deterministic answer is not substituted. A separate evaluator-side reference
 calculation reproduces the boat arithmetic without importing the proposed method, but it is still
 development code and does not replace the required human review.
+
+### Generate blank diagnostic annotation forms
+
+Give each annotator the diagnostic guide, the four packet files above, and a separately generated
+blank form. The form generator reads only a blinded packet—never its evaluator-only key—and emits
+only opaque response IDs, a prefilled `required_units_total`, and explicitly unset rubric fields.
+For example:
+
+```bash
+python analysis/build_diagnostic_annotation_form.py \
+  --packet model_outputs/annotation_packets/diagnostic-land-pilot-v3/packet.jsonl \
+  --output /tmp/diagnostic-land-pilot-v3-annotator-a.jsonl \
+  --annotator-id annotator-a
+```
+
+Repeat for each of the four packets and each annotator, using a distinct non-identifying
+`annotator_id`. Annotators review packet rows in order and replace every `null` judgment in their
+matching form; `required_units_total` is already derived from the packet and must not be changed.
+Do not provide files under `data/evaluator_only/`, model/condition mappings, fallback status, or
+verification outcomes. The generator refuses non-opaque or duplicate response IDs, malformed unit
+inventories, overwrites, and evaluator-only output paths. Completed forms are inputs to
+`analysis/adjudicate_diagnostic_annotations.py` as shown above.
