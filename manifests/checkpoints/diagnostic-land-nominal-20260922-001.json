@@ -1,0 +1,59 @@
+{
+  "schema": "crane-diagnostic-development-run-declaration/v1",
+  "created_utc": "2026-09-23T03:08:02Z",
+  "run_id": "diagnostic-land-nominal-20260922-001",
+  "study": "prospective-physical-diagnosis-development",
+  "status": "PREDECLARED_DEVELOPMENT_NOT_HELD_OUT",
+  "purpose": "Collect one prospectively declared nominal land control with physical route evidence before diagnostic-study freeze.",
+  "independence": {
+    "statistical_cluster_id": "diagnostic-land-nominal-20260922-001",
+    "same_layout_repeats_count_as_new_clusters": false,
+    "model_outputs_before_inclusion_decision": false
+  },
+  "expected_contract": {
+    "environment": "crane-land-proving-ground-v1",
+    "catalog": "v1",
+    "layout": "narrow-doorway-v1",
+    "seed": 5201,
+    "expected_navigation_status": "succeeded",
+    "goal_distance_m": 18.0,
+    "action_duration_s": 100,
+    "overall_duration_s": 110,
+    "required_observations": [
+      "accepted command stream",
+      "delivered odometry trajectory",
+      "populated global costmap",
+      "successive planning summaries",
+      "NavigateToPose terminal result",
+      "bounded BehaviorTreeLog transitions"
+    ]
+  },
+  "runtime": {
+    "ros_domain_id": 224,
+    "ros_tcp_port": 11624,
+    "player_path": "/tmp/crane-current-source-build-20260922/CRANE.x86_64",
+    "player_sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+    "build_manifest_sha256": "1805281a0910eae84b775a2f5e43efa2b99735c4c4f662cb3c751f6b85f0fcae",
+    "build_guid": "2e501629ce3544a783506153da3c0268",
+    "crane_ml_commit": "c46de4d7e83a18ebef3abc4c97eff1b706a79282",
+    "astro_dock_commit": "36202373ae186a8fd247a20b7b477312a744de99",
+    "crane_explain_core_commit": "25b8b64bf2fc6066dd3ecc317f4bcc505a66e460",
+    "nav2_params_sha256": "e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+    "bt_xml_sha256": "9fb490be79d16c482d9c1b1a8f2f946d142e0d21ed3d4f5901aa3065304329d1",
+    "environment_catalog_sha256": "bea854292d7298e04f37ed9f6cc50f49d59d51fdec0e1b78a9d5f9247beee720",
+    "environment_generator_sha256": "a6eb6bd219fe3170036330902ff27cb1758099a4aa2a77a492d599ddbefd5c8b"
+  },
+  "fixture_artifact_sha256": {
+    "proving_ground_entrypoint": "ce322b5bee88e747fd4115a5834458d1edaea1523806c2c7653af25292309f04",
+    "land_entrypoint": "1cafa45374b8a84a206a72235388f46fc9f3acff1ff75ea42457acf9ac304afd",
+    "shared_entrypoint": "349a39753bf4d918f350e242894136e8616ea0c2a37234e045c047c11112051d",
+    "fixture": "654cc04f4d2be8d8998c3600c71b77888cb90f61f39de54a1149bd99ab0fbc62"
+  },
+  "outcome_handling": [
+    "Retain every recording-valid outcome, including abort, cancellation, or unexpected success/failure.",
+    "Do not rerun or tune the scenario to obtain the expected status.",
+    "Report recording validity separately from fault-induction or nominal-control success.",
+    "Do not inspect or generate R/P/T/N responses until the episode evidence and independent reference are retained.",
+    "Do not treat this development run as held-out or confirmatory evidence."
+  ]
+}
