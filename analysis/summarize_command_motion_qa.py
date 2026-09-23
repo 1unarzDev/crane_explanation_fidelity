@@ -32,23 +32,41 @@ def summarize(export_path: Path, reference_path: Path) -> dict[str, Any]:
             - float(ref["healthy_measured_planar_speed_mps"])
         )
         < 1e-12,
-        "discrepancy_commanded_planar_speed_mps": abs(
-            float(measurements["discrepancy_commanded_planar_speed"])
-            - float(ref["discrepancy_commanded_planar_speed_mps"])
-        )
-        < 1e-12,
-        "discrepancy_measured_planar_speed_mps": abs(
-            float(measurements["discrepancy_measured_planar_speed"])
-            - float(ref["discrepancy_measured_planar_speed_mps"])
-        )
-        < 1e-12,
         "follow_path_failure_count": int(measurements["follow_path_failures"])
-        == int(ref["follow_path_failure_count"]),
+        == int(ref["follow_path_failure_count"])
+        if "follow_path_failures" in measurements
+        else int(ref["follow_path_failure_count"]) == 0,
         "source_qualified_wait_recovery_count": int(
             measurements["source_qualified_wait_recoveries"]
         )
-        == int(ref["source_qualified_wait_recovery_count"]),
+        == int(ref["source_qualified_wait_recovery_count"])
+        if "source_qualified_wait_recoveries" in measurements
+        else int(ref["source_qualified_wait_recovery_count"]) == 0,
     }
+    if ref["disposition"] == "supported":
+        parity.update(
+            {
+                "discrepancy_commanded_planar_speed_mps": abs(
+                    float(measurements["discrepancy_commanded_planar_speed"])
+                    - float(ref["discrepancy_commanded_planar_speed_mps"])
+                )
+                < 1e-12,
+                "discrepancy_measured_planar_speed_mps": abs(
+                    float(measurements["discrepancy_measured_planar_speed"])
+                    - float(ref["discrepancy_measured_planar_speed_mps"])
+                )
+                < 1e-12,
+            }
+        )
+    else:
+        parity["discrepancy_commanded_planar_speed_mps"] = (
+            ref["discrepancy_commanded_planar_speed_mps"] is None
+            and "discrepancy_commanded_planar_speed" not in measurements
+        )
+        parity["discrepancy_measured_planar_speed_mps"] = (
+            ref["discrepancy_measured_planar_speed_mps"] is None
+            and "discrepancy_measured_planar_speed" not in measurements
+        )
     serialized = json.dumps(export, sort_keys=True).lower()
     leakage_tokens = {
         token: token in serialized
@@ -100,8 +118,12 @@ def summarize(export_path: Path, reference_path: Path) -> dict[str, Any]:
         "limitations": [
             "This rerun qualifies instrumentation and is not an independent scenario cluster.",
             "The independent computation is a separate implementation, not a human label.",
-            "The supported discrepancy does not identify its unique physical cause.",
-            "The acquisition source is evaluator-sensitive; only the blind robot-visible export may be supplied to explanation methods.",
+            (
+                "The supported discrepancy does not identify its unique physical cause."
+                if ref["disposition"] == "supported"
+                else "The negative result applies only to the retained interval and declared development thresholds."
+            ),
+            "Only the blind robot-visible export may be supplied to explanation methods; acquisition metadata and evaluator truth remain outside the method input.",
         ],
     }
 

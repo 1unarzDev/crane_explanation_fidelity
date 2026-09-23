@@ -15,8 +15,9 @@
   assign a unique physical cause, or treat the instrumentation rerun as a new episode. Each would
   confound signal semantics, leak truth, overclaim causality, or inflate effective sample size.
 - Study effect: this qualifies the second planned mechanism and improves the final answer beyond
-  abort/recovery narration. It does not establish P superiority; nominal time-resolved evidence,
-  ambiguous evidence, fair R/P/T/N calls, blinded labels, and independent collection remain.
+  abort/recovery narration. A matched time-resolved nominal rerun now passes `not_triggered` and
+  false-premise handling. This does not establish P superiority; ambiguous evidence, fair R/P/T/N
+  calls, blinded labels, and independent collection remain.
 
 ## 2026-09-22 — close environment/platform development at three ecological pilot inputs
 

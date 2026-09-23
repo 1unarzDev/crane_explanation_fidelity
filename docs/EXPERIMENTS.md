@@ -13,11 +13,18 @@
 - **INDEPENDENT RECOMPUTATION / QA PASS:** `analysis/reference_command_motion.py` imports neither
   the proposed core nor exporter and reproduces the interval, measurements, and counts. QA passes
   source hashes, exact final-text verification, reference parity, and intervention-token leakage.
-  Core plus exporter/reference regressions pass 28/28; the complete core suite passes 71/71.
+  Core plus exporter/reference regressions pass 29/29; the complete core suite passes 71/71.
+- **MATCHED NOMINAL / NOT_TRIGGERED PASS:** a new time-resolved rerun under the same player,
+  corridor, Nav2 parameters, BT, and thresholds succeeded after 9.480 m displacement with 366
+  accepted fixture commands, zero FollowPath failures, and zero source-qualified Wait invocations.
+  Both implementations return `not_triggered`. Project review exposed that the first checked answer
+  omitted the successful outcome; the plan was corrected to lead with the false failure premise,
+  and the original generated artifact was replaced before any model comparison or protocol freeze.
 - **BOUNDARY:** this supports a sustained command-to-motion discrepancy, not actuator acceptance,
   Nav2 consumption of delivered odometry, or a unique motor, mobility, obstruction, collision, or
   slip cause. The rerun qualifies instrumentation and adds zero independent scenario clusters.
-  Model comparison, blind annotation, and confirmatory use are `NOT_RUN`.
+  Both reruns are repeated development calibration and add zero independent clusters. Model
+  comparison, blind annotation, and confirmatory use are `NOT_RUN`.
 
 ## 2026-09-22 — corrected proving-ground v3 recovery capture
 

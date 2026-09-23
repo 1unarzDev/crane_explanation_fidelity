@@ -1,14 +1,14 @@
 {
   "schema": "crane-data-manifest-v1",
-  "artifact_id": "diagnostic-motion-dev-cm-001",
-  "status": "DEVELOPMENT_INSTRUMENTATION_QUALIFICATION_NOT_INDEPENDENT_SCENARIO",
+  "artifact_id": "diagnostic-motion-dev-cm-nominal-001",
+  "status": "DEVELOPMENT_NOMINAL_INSTRUMENTATION_QUALIFICATION_NOT_INDEPENDENT_SCENARIO",
   "visibility": "robot_visible",
   "dvc_pointer": "data/robot_visible/dev.dvc",
   "artifacts": [
     {
-      "path": "data/robot_visible/dev/diagnostic-pilot-v1/land-command-motion-001/evidence-and-diagnostic.json",
-      "sha256": "0a57a02e6a0442fc0e7e95286e8c71d83a126182b7cbf0ff2c24a767221054e3",
-      "bytes": 274116,
+      "path": "data/robot_visible/dev/diagnostic-pilot-v1/land-command-motion-nominal-001/evidence-and-diagnostic.json",
+      "sha256": "7fe8c8f17152a45acd2cd731f1d95e4e6469ef6739570a82b47e86691859db48",
+      "bytes": 283433,
       "status": "CURRENT_CHECKED_DETERMINISTIC_RENDERING"
     }
   ],
@@ -19,26 +19,32 @@
     "diagnostic_core_sha256": "39b163624df03bad80b38c157de55e07b26b02b9e1f20b21758fae5647286b0a"
   },
   "source_references": {
-    "events_sha256": "ce52488d7de2a5bcbe33674990957cd7903a8a2668562e78ef95fd256477c250",
-    "runtime_manifest_sha256": "877efcfe8515968383ed9be309d232e6815bf5af9ff90318c788e8a264dd6351",
+    "events_sha256": "66035725978db7bfe5e98511dd5646c1394027aeadbf166adfb66ab0d6febc04",
+    "runtime_manifest_sha256": "028413a334dee6313cb8239c70f34ce94d502aa048273bfd4f06dbf8909d40ba",
     "bt_policy_sha256": "14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
     "nav2_config_sha256": "3851544a099b4d3ed48e54ffd6140c51971d8e9f902a6ff78048a4a71bccf0c3",
     "crane_ml_commit": "6bf057b5acf1763eeca1b81be6530cd218a5405b",
     "astro_dock_commit": "36202373ae186a8fd247a20b7b477312a744de99",
-    "capture_umbrella_commit": "42a33d9f6bb3599252fc6630a469b579c0c15e47",
+    "capture_umbrella_commit": "d54dc372e8dff85e86888d0c915c0641e389c415",
     "crane_explain_ros_commit": "fc957a172967a849d677e467bcf09b344de581a1"
+  },
+  "observed_outcome": {
+    "action_status": "succeeded",
+    "displacement_m": 9.480303764343262,
+    "accepted_commands": 366,
+    "follow_path_failure_count": 0,
+    "source_qualified_wait_recovery_count": 0,
+    "diagnostic_disposition": "not_triggered"
   },
   "method_boundary": {
     "permitted_input": "only the blind evidence-and-diagnostic export, or its declared method_input projection, may be supplied to explanation methods",
-    "acquisition_identifier_stripped": true,
-    "evaluator_intervention_identity_stripped": true,
     "command_delivery_proves_actuator_acceptance": false,
     "odometry_delivery_proves_nav2_consumption": false
   },
-  "allowed_use": "development instrumentation qualification, response-quality review, threshold design, and prospective-study preparation only; not an independent scenario cluster or held-out result",
+  "allowed_use": "development nominal-control and false-premise response qualification only; not an independent scenario cluster or held-out result",
   "limitations": [
-    "The acquisition rerun repeats a predeclared development condition and must not be counted as another independent episode.",
-    "The supported mechanism is a command-to-motion discrepancy, not a unique motor, slip, collision, obstruction, or intervention attribution.",
+    "This rerun repeats the already predeclared nominal configuration and must not be counted as another independent episode.",
+    "The negative diagnostic applies only to the retained synchronized interval and declared development thresholds.",
     "The deterministic final answer passed exact verification; no model-generated answer or human annotation is included."
   ]
 }

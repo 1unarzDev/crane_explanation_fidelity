@@ -74,6 +74,14 @@ it repeats a development condition and adds zero independent scenario clusters. 
 robot-visible export may be supplied to explanation methods. Governed artifacts and source hashes
 are inventoried by `manifests/data/diagnostic-motion-dev-cm-001.*.json`.
 
+A matched time-resolved nominal rerun provides the real negative control under the unchanged
+thresholds. It succeeded after 9.480 m displacement with 366 accepted fixture commands, no
+FollowPath failure, and no source-qualified Wait invocation. Its initial measured response was the
+same 0.2597 m/s median, and no required consecutive low-response sequence occurred. The checked
+answer therefore leads with the false failure premise and returns `not_triggered`; its independent
+reference and QA also pass. This is still repeated development calibration, not another independent
+cluster. Its manifests are `diagnostic-motion-dev-cm-nominal-001.*.json`.
+
 ### Perception/model inconsistency
 
 Add only after the first two mechanisms work end to end. Compare sensor timestamps/transforms and

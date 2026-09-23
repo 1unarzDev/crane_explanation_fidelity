@@ -1,0 +1,45 @@
+{
+  "schema": "crane-data-manifest-v1",
+  "artifact_id": "diagnostic-motion-dev-cm-nominal-001-evaluator-only",
+  "status": "DEVELOPMENT_NOMINAL_INSTRUMENTATION_QUALIFICATION_NOT_INDEPENDENT_SCENARIO",
+  "visibility": "evaluator_only",
+  "dvc_pointer": "data/evaluator_only/dev.dvc",
+  "artifacts": [
+    {
+      "path": "data/evaluator_only/dev/diagnostic-reference-v1/land-command-motion-nominal-001/reference.json",
+      "sha256": "b5b439dbeaf3e1394b756085974ac2c1d3456de06513e5193799b99b368c18d1",
+      "bytes": 1249,
+      "status": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_CONFIRMATORY"
+    },
+    {
+      "path": "data/evaluator_only/dev/diagnostic-reference-v1/land-command-motion-nominal-001/qa-summary.json",
+      "sha256": "d8746ce8070a82ce535b420ed88dffba2a82d81d0a3610abaf3ba6a225c58059",
+      "bytes": 1732,
+      "status": "PASSED"
+    },
+    {
+      "path": "data/evaluator_only/dev/diagnostic-motion-instrumentation-nominal-001/worker-0/land-evaluator-truth.json",
+      "sha256": "d96789002195256ff0e81c84b7771f0831e4d7ee4b034e76a05256e34c311ef1",
+      "bytes": 1740,
+      "status": "EVALUATOR_TRUTH_NEVER_METHOD_VISIBLE"
+    }
+  ],
+  "implementation": {
+    "reference_path": "analysis/reference_command_motion.py",
+    "reference_sha256": "1c628f85a71e0ba81dc6961ebc54bbf32a35f6f7ef195a8da645792c0e54ad0c",
+    "qa_path": "analysis/summarize_command_motion_qa.py",
+    "qa_sha256": "1952d79226860cb3bfcd96a186dfa32ae703f9296c31f9ecc679d20208665df1",
+    "imports_proposed_diagnostic_core": false,
+    "imports_proposed_exporter": false
+  },
+  "findings": {
+    "diagnostic_disposition": "not_triggered",
+    "median_commanded_planar_speed_mps": 0.8,
+    "median_healthy_measured_planar_speed_mps": 0.2597399950027466,
+    "follow_path_failure_count": 0,
+    "source_qualified_wait_recovery_count": 0,
+    "action_status": "succeeded"
+  },
+  "separation_rule": "Evaluator nominal-condition truth and independent reference findings must never be supplied to R, P, T, or N as robot-visible evidence.",
+  "allowed_use": "development false-premise/reference review and prospective protocol design only; never method-visible input and never an independent scenario cluster"
+}

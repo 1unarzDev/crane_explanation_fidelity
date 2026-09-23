@@ -5,6 +5,7 @@ import pytest
 
 from export_command_motion_diagnostic import export
 from reference_command_motion import calculate
+from summarize_command_motion_qa import summarize
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -21,6 +22,24 @@ CAPTURE_MANIFEST = CAPTURE / "manifest.json"
 RUNTIME_MANIFEST = CAPTURE / "runtime_manifest.json"
 BT_XML = CAPTURE / "behavior_tree.xml"
 NAV2_CONFIG = ROOT / "packages" / "crane_ml" / "Tools" / "Performance" / "nav2_land_fixture.yaml"
+NOMINAL_EXPORT = (
+    ROOT
+    / "data"
+    / "robot_visible"
+    / "dev"
+    / "diagnostic-pilot-v1"
+    / "land-command-motion-nominal-001"
+    / "evidence-and-diagnostic.json"
+)
+NOMINAL_REFERENCE = (
+    ROOT
+    / "data"
+    / "evaluator_only"
+    / "dev"
+    / "diagnostic-reference-v1"
+    / "land-command-motion-nominal-001"
+    / "reference.json"
+)
 
 
 def _export() -> dict:
@@ -113,3 +132,15 @@ def test_evaluator_only_input_path_is_rejected():
             NAV2_CONFIG,
             episode_id="diagnostic-motion-dev-cm-001",
         )
+
+
+def test_retained_nominal_stream_is_not_triggered_and_passes_qa():
+    payload = json.loads(NOMINAL_EXPORT.read_text(encoding="utf-8"))
+    reference = json.loads(NOMINAL_REFERENCE.read_text(encoding="utf-8"))
+    qa = summarize(NOMINAL_EXPORT, NOMINAL_REFERENCE)
+
+    assert payload["diagnostic_result"]["disposition"] == "not_triggered"
+    assert reference["result"]["disposition"] == "not_triggered"
+    assert qa["status"] == "VALID_DEVELOPMENT_INSTRUMENTATION_QUALIFICATION_NOT_INDEPENDENT_SCENARIO"
+    assert qa["supported_interval_s"] is None
+    assert "negative result" in qa["limitations"][2]

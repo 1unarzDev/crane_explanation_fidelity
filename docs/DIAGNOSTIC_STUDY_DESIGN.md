@@ -160,10 +160,13 @@ evaluator reference both identify the earliest qualifying 7–17 s interval: med
 Two FollowPath failures and two source-qualified Wait recoveries were recorded before a third
 FollowPath attempt and action abort.
 
-This passes the engineering gate for a second mechanism, but not the prospective study gates.
-Nominal time-resolved capture, a naturally ambiguous or masked case, information/tool-parity
-R/P/T/N outputs, blind annotation, and independent scenario collection remain `NOT_RUN`. The
-development thresholds are not frozen, and the run cannot contribute to the planned cluster count.
+The matched time-resolved nominal rerun succeeded after 9.480 m displacement with zero FollowPath
+failures and zero source-qualified Wait invocations. Both implementations return `not_triggered`,
+and the checked answer explicitly rejects the false failure premise. This passes the engineering
+gate for a second mechanism, but not the prospective study gates. A naturally ambiguous or masked
+case, information/tool-parity R/P/T/N outputs, blind annotation, and independent scenario
+collection remain `NOT_RUN`. The development thresholds are not frozen, and neither rerun can
+contribute to the planned cluster count.
   A retained unexpected land success now passes a false-premise-aware `not_triggered` check and has
   a blinded R/P/T/N packet, but it was not prospectively collected and has no human labels.
 - One separately governed, prospectively declared nominal land episode now supplies complete-route
