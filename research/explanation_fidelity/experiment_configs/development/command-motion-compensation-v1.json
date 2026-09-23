@@ -1,0 +1,79 @@
+{
+  "schema": "crane-command-motion-compensation-development-v1",
+  "status": "PREDECLARED_DEVELOPMENT_ONLY_NOT_CONFIRMATORY",
+  "declared_at": "2026-09-23T03:03:39-05:00",
+  "purpose": "Test the same bounded command-to-motion discrepancy with a different outcome: measured response recovers and navigation succeeds after a transient evaluator-owned mobility interruption.",
+  "run_order": [
+    "diagnostic-motion-development-cm-002"
+  ],
+  "source": {
+    "umbrella_commit_before_declaration": "7e834082f287ef3e588b24d1d143d5951c3c662b",
+    "crane_commit": "6bf057b5acf1763eeca1b81be6530cd218a5405b",
+    "core_commit": "c5ca94c158e28ab5af3539ecfb73ba690313f87f",
+    "unity_version": "6000.5.10f1",
+    "player_path": "packages/crane_ml/Builds/CRANE-Worker/CRANE.x86_64",
+    "player_sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+    "bt_xml": "packages/crane_ml/Tools/Performance/nav2_land_progress_recovery.xml",
+    "bt_xml_sha256": "14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+    "nav2_params": "packages/crane_ml/Tools/Performance/nav2_land_fixture.yaml",
+    "nav2_params_sha256": "3851544a099b4d3ed48e54ffd6140c51971d8e9f902a6ff78048a4a71bccf0c3"
+  },
+  "run": {
+    "run_id": "diagnostic-motion-development-cm-002",
+    "ros_domain_id": 112,
+    "ros_tcp_port": 11312,
+    "seed_base": 84103,
+    "scene": "TurtleBot3 Warehouse Validation",
+    "platform": "turtlebot3-waffle-differential",
+    "environment": "generated controlled corridor",
+    "corridor_width_m": 4.0,
+    "corridor_length_m": 14.0,
+    "goal_distance_m": 10.0,
+    "action_deadline_s": 70.0,
+    "worker_duration_s": 80.0,
+    "fixture_delay_wall_s": 7.0,
+    "time_scale": 1.0,
+    "intervention": "evaluator-owned transient planar mobility hold",
+    "mobility_hold_after_fixed_simulation_s": 15.0,
+    "mobility_release_after_fixed_simulation_s": 27.0,
+    "expected_broad_outcome": "successful navigation after a transient supported command-to-motion discrepancy and subsequent measured-response recovery"
+  },
+  "question": "What temporarily prevented continued progress, what changed before the successful outcome, and what physical cause remains unresolved?",
+  "robot_visible_evidence": [
+    "time-stamped delivered controller commands",
+    "independently delivered odometry trajectory",
+    "NavigateToPose feedback and terminal result",
+    "BehaviorTreeLog transitions",
+    "exact Nav2 parameters and BT XML",
+    "hash-verified player/source provenance"
+  ],
+  "evaluator_only": [
+    "whether a mobility hold/release was configured",
+    "scheduled and actual intervention boundaries",
+    "expected broad outcome",
+    "fault-induction and compensation-success labels"
+  ],
+  "admission": {
+    "recording_valid": "goal accepted; command and odometry streams retained; runtime/source hashes match; evaluator truth remains physically separate",
+    "transient_discrepancy": "the frozen development computation identifies at least one qualifying command-to-motion discrepancy interval before measured motion recovers",
+    "measured_response_recovery": "a later aligned window retains nonzero commands and independently measured planar response above the frozen development response threshold",
+    "successful_outcome": "NavigateToPose returns succeeded before the client deadline",
+    "retain_unexpected_outcome": true
+  },
+  "allowed_diagnosis": "A recorded interval had sustained commanded motion without the calibrated measured response; later measured response recovered and navigation succeeded.",
+  "withhold": [
+    "the evaluator-owned intervention identity",
+    "motor failure",
+    "wheel slip",
+    "physical obstruction",
+    "collision",
+    "a unique physical cause for either the discrepancy or recovery",
+    "claims that Nav2 consumed the retained odometry samples"
+  ],
+  "analysis": {
+    "threshold_policy": "reuse the already selected development command-motion thresholds without tuning from this run",
+    "independent_reference_required": true,
+    "model_generation_status": "NOT_AUTHORIZED_BY_THIS_DECLARATION",
+    "statistical_status": "one new development scenario cluster if recording and induction gates pass; never pooled with the frozen legacy study"
+  }
+}

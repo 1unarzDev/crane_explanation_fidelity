@@ -1,5 +1,26 @@
 # Experiment Log
 
+## 2026-09-23 — predeclare command-motion successful-compensation development case
+
+- **STATUS:** `PREDECLARED / DEVELOPMENT_ONLY / NOT_YET_RUN`; no model call or held-out use is
+  authorized by this declaration.
+- **PURPOSE:** fill the declared benchmark cell “same mechanism with different outcomes” using the
+  already qualified command--motion computation. The single run applies a transient evaluator-owned
+  mobility interruption, restores mobility after 12 simulated seconds, and asks whether the retained
+  robot-visible evidence supports a transient discrepancy, later measured-response recovery, and
+  successful navigation without exposing or naming the intervention.
+- **FIXED BEFORE EXECUTION:** run ID, order, source/player/config hashes, ROS domain 112, TCP port
+  11312, seed 84103, 10 m goal, 70 s action horizon, 15 s interruption boundary, 27 s restoration
+  boundary, admission gates, question, evidence boundary, and prohibited causal claims are recorded
+  in
+  `research/explanation_fidelity/experiment_configs/development/command-motion-compensation-v1.json`.
+  Existing development thresholds are reused without tuning from this run.
+- **VALIDITY:** the episode is retained even if navigation does not succeed or the transient
+  discrepancy/recovery gates fail. Evaluator intervention identity and timings never enter the
+  method-visible export. An independent reference computation is required before any explanation
+  comparison. This can add at most one development scenario cluster and is never pooled with the
+  frozen legacy cohort.
+
 ## 2026-09-23 — time-resolved command-motion instrumentation qualification
 
 - **IMPLEMENTED / TESTED:** the passive observer capture at umbrella revision `42a33d9` retained
