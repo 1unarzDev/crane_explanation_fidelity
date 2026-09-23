@@ -1,0 +1,42 @@
+{
+  "schema": "crane-data-manifest-v1",
+  "artifact_id": "land-geometric-independent-reference-development-v1",
+  "status": "DEVELOPMENT_REFERENCE_NOT_CONFIRMATORY",
+  "visibility": "evaluator_only",
+  "dvc_pointer": "data/evaluator_only/dev.dvc",
+  "implementation": {
+    "path": "analysis/reference_land_geometric.py",
+    "sha256": "af2d524cdce46e7d17b6e2fcfc6da47395d47ec4d2b415107ccd0ee09d204e09",
+    "imports_crane_costmap_audit": false,
+    "imports_proposed_diagnostic_core": false,
+    "route_algorithm": "integer_bresenham_cells",
+    "connectivity_algorithm": "eight_neighbor_astar"
+  },
+  "artifacts": [
+    {
+      "path": "data/evaluator_only/dev/diagnostic-reference-v1/land-blockage-global-002/reference.json",
+      "bytes": 2229,
+      "sha256": "797149301536fca1c471c61745588d789ed57fa28007837f900a772fa4f4dc58"
+    },
+    {
+      "path": "data/evaluator_only/dev/diagnostic-reference-v1/land-blockage-global-002-mask-no-costmap-cells/reference.json",
+      "bytes": 1919,
+      "sha256": "2a9f6f716448106b053a979c77834f880dc5e2e53b7faf6e5e71eadffa2fe9e4"
+    }
+  ],
+  "source": {
+    "robot_visible_unmasked_sha256": "4ce8b1e2dab7c5ab8fcbc531a5a367e5ba8b2b26b9d579f8da136988ac9e2105",
+    "robot_visible_masked_sha256": "f7a2c15be532c9c2fda85b63b7c04b873a2f4898e4b0a9a7312bb18d7c2b32ef",
+    "bt_xml_sha256": "423c61f90a57c79a1bae0580eb24a3866eee5169f888ac58cdca40e7db7656f3"
+  },
+  "findings": {
+    "unmasked": "The independent raster/A* path reproduces the direct-route blocked cell near x=8.45 m, retained-grid connectivity, substantial detour, and 0.860 s deadline alignment.",
+    "masked_cells": "Geometry remains unresolved, while substantial route deviation and deadline alignment remain supported."
+  },
+  "limitations": [
+    "This is a separate implementation, not an independent human label or controlled intervention.",
+    "It was written after inspecting the development responses and cannot be confirmatory evidence.",
+    "The retained grid is one delivered snapshot and cannot prove global physical no-path or exact planner consumption.",
+    "A reviewer must validate the computation and sufficiency rules before protocol freeze."
+  ]
+}

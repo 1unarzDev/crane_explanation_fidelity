@@ -2547,3 +2547,19 @@
   inspection. It is not a human label, controlled intervention, or confirmatory gold result.
   Independent reviewer validation remains required before study freeze. Artifacts are confined to
   evaluator-only development DVC storage and are never supplied to R/P/T/N.
+
+## 2026-09-23 — separate land geometric reference calculation
+
+- **IMPLEMENTED / DEVELOPMENT ONLY:** `reference_land_geometric.py` imports neither CRANE's
+  costmap-audit helper nor the proposed diagnostic core. It independently verifies/decompresses the
+  retained grid, rasterizes the requested route with integer Bresenham cells, checks retained-grid
+  connectivity with an eight-neighbor A* implementation, computes route-relative trajectory
+  deviation, and parses the literal BT deadline.
+- **RESULT:** the independent path finds the first cost-253 route cell centered at x=8.4500005 m,
+  a retained-grid connection from action-result pose to goal, 2.7046 m maximum lateral deviation,
+  69 successful planning updates, and 0.8602 s deadline alignment. With cell payload masked it
+  withholds route restriction/connectivity while preserving deviation and deadline alignment.
+- **LIMIT:** this reproduces the development inventory but was authored after output inspection.
+  It is not a human label or confirmatory gold, cannot prove global physical no-path or exact
+  planner consumption, and needs independent reviewer validation before freeze. Both reference
+  artifacts remain evaluator-only.
