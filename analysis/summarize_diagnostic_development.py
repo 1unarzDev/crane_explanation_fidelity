@@ -25,20 +25,27 @@ def condition_summary(rows: list[dict[str, Any]], condition: str) -> dict[str, A
     selected = [row for row in rows if row["condition"] == condition]
     if not selected:
         raise ValueError(f"condition {condition} has no rows")
+    diagnosable = [row for row in selected if row["diagnosable"]]
+    ambiguous = [row for row in selected if not row["diagnosable"]]
     totals = sum(row["required_units_total"] for row in selected)
     return {
         "responses": len(selected),
+        "diagnosable_responses": len(diagnosable),
+        "ambiguous_responses": len(ambiguous),
         "statistical_clusters": len({row["statistical_cluster_id"] for row in selected}),
         "supported_diagnostic_success_rate": mean(
-            [float(row["supported_diagnostic_success"]) for row in selected]
+            [float(row["supported_diagnostic_success"]) for row in diagnosable]
         ),
         "material_error_rate": mean([float(row["material_error"]) for row in selected]),
         "causal_overclaim_rate": mean([float(row["causal_overclaim"]) for row in selected]),
         "unnecessary_abstention_rate": mean(
-            [float(row["unnecessary_abstention"]) for row in selected]
+            [float(row["unnecessary_abstention"]) for row in diagnosable]
         ),
         "qualification_correct_rate": mean(
             [float(row["qualification_correct"]) for row in selected]
+        ),
+        "ambiguous_qualification_correct_rate": mean(
+            [float(row["qualification_correct"]) for row in ambiguous]
         ),
         "required_unit_coverage": (
             sum(row["required_units_correct"] for row in selected) / totals if totals else None
@@ -50,10 +57,17 @@ def condition_summary(rows: list[dict[str, Any]], condition: str) -> dict[str, A
 
 
 def paired_cluster_difference(
-    rows: list[dict[str, Any]], baseline: str, method: str, field: str
+    rows: list[dict[str, Any]],
+    baseline: str,
+    method: str,
+    field: str,
+    *,
+    diagnosable: bool | None = None,
 ) -> dict[str, Any]:
     by_item: dict[tuple[str, str, str], dict[str, float]] = defaultdict(dict)
     for row in rows:
+        if diagnosable is not None and row["diagnosable"] is not diagnosable:
+            continue
         item = (
             row["statistical_cluster_id"],
             row["evidence_variant"],
@@ -75,6 +89,7 @@ def paired_cluster_difference(
         "baseline": baseline,
         "method": method,
         "field": field,
+        "diagnosable_filter": diagnosable,
         "statistical_clusters": len(cluster_differences),
         "difference_method_minus_baseline": mean(list(cluster_differences.values())),
         "cluster_differences": cluster_differences,
@@ -89,8 +104,8 @@ def summarize(rows: list[dict[str, Any]]) -> dict[str, Any]:
     present = {row.get("condition") for row in rows}
     if present != set(CONDITIONS):
         raise ValueError(f"expected R/P/T/N, found {sorted(present)}")
-    if not all(row.get("diagnosable") is True for row in rows):
-        raise ValueError("development primary summary expects diagnosable packet rows")
+    if not all(isinstance(row.get("diagnosable"), bool) for row in rows):
+        raise ValueError("every development row must declare boolean diagnosable status")
     response_ids = [row["response_id"] for row in rows]
     if len(response_ids) != len(set(response_ids)):
         raise ValueError("duplicate response IDs")
@@ -101,20 +116,25 @@ def summarize(rows: list[dict[str, Any]]) -> dict[str, Any]:
         "responses": len(rows),
         "statistical_clusters": len(clusters),
         "evidence_variants": sorted({row["evidence_variant"] for row in rows}),
+        "diagnosable_responses": sum(bool(row["diagnosable"]) for row in rows),
+        "ambiguous_responses": sum(not row["diagnosable"] for row in rows),
         "conditions": {
             condition: condition_summary(rows, condition) for condition in CONDITIONS
         },
         "primary_candidate_p_vs_r": paired_cluster_difference(
-            rows, "R", "P", "supported_diagnostic_success"
+            rows, "R", "P", "supported_diagnostic_success", diagnosable=True
         ),
         "material_error_p_vs_r": paired_cluster_difference(rows, "R", "P", "material_error"),
         "deterministic_t_vs_p": paired_cluster_difference(
-            rows, "P", "T", "supported_diagnostic_success"
+            rows, "P", "T", "supported_diagnostic_success", diagnosable=True
         ),
         "ablation_n_vs_r": paired_cluster_difference(
-            rows, "R", "N", "supported_diagnostic_success"
+            rows, "R", "N", "supported_diagnostic_success", diagnosable=True
         ),
-        "power_planning_status": "NOT_AUTHORIZED_FROM_TWO_CLUSTERS_ALONE",
+        "ambiguous_qualification_p_vs_r": paired_cluster_difference(
+            rows, "R", "P", "qualification_correct", diagnosable=False
+        ),
+        "power_planning_status": "NOT_AUTHORIZED_FROM_DEVELOPMENT_LABELS",
         "freeze_status": "NOT_FROZEN",
     }
 

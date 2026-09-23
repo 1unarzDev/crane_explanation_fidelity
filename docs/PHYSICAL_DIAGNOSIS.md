@@ -245,3 +245,17 @@ review. The governed output, packet, key, reference, and verifier-audit hashes a
 `manifests/model_outputs/diagnostic-command-motion-pilot-v1.json`, the two
 `manifests/annotation/diagnostic-command-motion-*-pilot-v1.json` files, and
 `manifests/data/diagnostic-command-motion-language-verifier-development-v1.evaluator-only.json`.
+
+A predeclared third variant removes only the independently measured odometry samples. It retains
+376 delivered command samples, action abort, two FollowPath failures, two source-qualified Wait
+invocations, and all source hashes. The checked plan correctly returns `insufficient`: those
+sequence facts remain useful, but without measured motion they cannot establish that commands
+failed to produce motion. A pre-model independent evaluator reproduces this answerability boundary
+without importing the proposed diagnostic result.
+
+Tool-enabled R, raw P, and N all preserve the central withholding on project review, so this is
+another negative differentiation result pending blind scoring. N additionally says “exhausted
+recovery behavior”; whether that is a material completeness/causal overclaim is deliberately left
+to annotators. The original P candidate was useful but rejected by a section-local verifier rule,
+making overall development fallback 11/11. A post-hoc correction accepts it after citation-only
+repair and rejects three authored mutations; the original fallback and packet remain immutable.

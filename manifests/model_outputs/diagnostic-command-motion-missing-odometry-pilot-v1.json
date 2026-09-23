@@ -1,0 +1,70 @@
+{
+  "schema": "crane-explain-model-artifact-manifest/v1",
+  "status": "DEVELOPMENT_ONLY_NOT_FROZEN",
+  "created_utc": "2026-09-23T07:40:32Z",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "low",
+  "adapter": "codex-cli-json/v1",
+  "single_sample_no_retry": true,
+  "new_model_calls": 3,
+  "model_condition_outputs": 3,
+  "embedded_non_model_smoke_conditions": ["T"],
+  "embedded_non_model_smoke_outputs": 1,
+  "result_envelope_conditions": ["N", "P", "R", "T"],
+  "result_envelope_outputs": 4,
+  "conditions": ["N", "P", "R"],
+  "question_kinds": ["diagnostic-mechanism-or-false-premise-v1"],
+  "episode_ids": ["diagnostic-motion-dev-cm-001-mask-no-odometry"],
+  "evaluator_truth_available_to_methods": false,
+  "information_parity_audited": true,
+  "primary_comparison": "P versus tool-enabled R",
+  "output_root": "model_outputs/dev/diagnostic-command-motion-missing-odometry-pilot-v1",
+  "cache_root": "research/explanation_fidelity/model_cache/diagnostic-command-motion-missing-odometry-pilot-v1",
+  "artifacts": [
+    {
+      "path": "model_outputs/dev/diagnostic-command-motion-missing-odometry-pilot-v1/diagnostic-motion-dev-cm-001-mask-no-odometry/mechanism-or-false-premise.json",
+      "sha256": "1b8ba1c853e14e23e508be6d30e3588982b4d17e759c023a2114b8a8dd5dbb60",
+      "bytes": 9513
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-command-motion-missing-odometry-pilot-v1/7bb75de1d141e71812d322e27b3a28fff640b603f4babc8058c9f35ff71fa305.json",
+      "sha256": "3997355010e6d5af83a24f8842529574f84f92274a6a4aa6b443e7f0206f73d6",
+      "bytes": 11177
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-command-motion-missing-odometry-pilot-v1/92ddf9dda14224cd165805d5f2e3a51d7389e97625474a287705ae0db6d4c6bd.json",
+      "sha256": "e6da2b483f89f2914bd1cd2e574a7910aa12743ae21131103363e557e24a394a",
+      "bytes": 7927
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-command-motion-missing-odometry-pilot-v1/930921536a1a84e3e3482c8bc60867887d7811b8caf099473591852b1ff57131.json",
+      "sha256": "c90a3053dc71987791dbd0d7b95f402017f00e69078e52617a633ffc9371d7c2",
+      "bytes": 79016
+    }
+  ],
+  "implementation": {
+    "runner_path": "analysis/run_diagnostic_command_motion_pilot.py",
+    "runner_sha256": "f1cba0a6231c9bec421c582e3d109f4954db1d2062f68f068fb90d1fe598d77f",
+    "adapter_path": "analysis/recompute_command_motion_diagnostic.py",
+    "adapter_sha256": "725b0510dc68835913e2f1bfb670c69c4f01444bece11c95c62e6000a35434e2",
+    "model_output_core_commit": "ef70dad6c84fd7f3d29a7e1b6fe1c3ddcb2d3ccf",
+    "post_hoc_verifier_core_commit": "c5ca94c158e28ab5af3539ecfb73ba690313f87f"
+  },
+  "usage": {
+    "aggregate_latency_ms": 56471.941576,
+    "input_tokens": 218118,
+    "cached_input_tokens": 155904,
+    "output_tokens": 2033,
+    "reasoning_output_tokens": 273,
+    "cost_usd": null,
+    "cost_status": "not_reported_by_codex_cli_chatgpt_login"
+  },
+  "interpretation": "R, raw P, and N all withhold the command-motion discrepancy when odometry samples are missing while retaining the abort/recovery sequence. Original P used deterministic fallback after a verifier false negative. Project review is not a human label; N's recovery-exhaustion wording is left for blinded annotation.",
+  "limitations": [
+    "This mask belongs to an existing development cluster and is neither held out nor independent.",
+    "No result establishes P superiority over tool-enabled R.",
+    "No human annotation or adjudication has been completed.",
+    "Post-hoc verifier acceptance does not alter the original fallback decision."
+  ]
+}

@@ -173,7 +173,10 @@ these observations are not human labels and do not establish P-over-R improvemen
 outputs fell back under lexical false positives, raising immutable development fallback to 10/10.
 A post-hoc corrected-verifier audit is retained separately and does not rewrite those outcomes.
 
-The two new blinded packets share one paired scenario cluster. The current inventory is therefore
-40 responses in ten packets over seven clusters. Human annotation/adjudication, a naturally
-ambiguous command-motion case, protocol freeze, independent held-out collection, and inferential
-analysis remain `NOT_RUN`.
+The supported and nominal packets share one paired scenario cluster. A subsequently predeclared
+missing-odometry mask adds an ambiguous specificity case to that same cluster. R, raw P, and N all
+withhold the command-motion mechanism on project review, while retaining the recorded abort and
+recovery sequence; these remain unscored observations. P again used immutable deterministic
+fallback, bringing development fallback to 11/11. The current inventory is therefore 44 responses
+in eleven packets over seven clusters. Human annotation/adjudication, protocol freeze, independent
+held-out collection, and inferential analysis remain `NOT_RUN`.

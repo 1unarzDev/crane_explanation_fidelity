@@ -1,10 +1,10 @@
 {
   "schema": "crane-diagnostic-development-annotation-inventory/v1",
   "created_utc": "2026-09-23T01:47:07Z",
-  "updated_utc": "2026-09-23T07:06:10Z",
+  "updated_utc": "2026-09-23T07:40:32Z",
   "status": "DEVELOPMENT_PACKETS_AWAITING_TWO_HUMAN_ANNOTATORS",
   "inferential_status": "DEVELOPMENT_ONLY_NOT_A_FROZEN_OR_CONFIRMATORY_STUDY",
-  "responses": 40,
+  "responses": 44,
   "statistical_clusters": 7,
   "packets": [
     {
@@ -96,6 +96,15 @@
       "key_sha256": "7f9ae558920f72f343116f5c0517fbf90655242985167db1c950ca62e9562442",
       "statistical_cluster_id": "command-motion-held-nominal-pair-001",
       "evidence_variant": "matched-nominal-control"
+    },
+    {
+      "name": "command-motion-missing-odometry",
+      "packet": "model_outputs/annotation_packets/diagnostic-command-motion-missing-odometry-pilot-v1/packet.jsonl",
+      "packet_sha256": "54dc8ebd93d4785ca3d18fc4d7176b6711040cec2ccc35d96f6bcca4325c4e2b",
+      "key": "data/evaluator_only/annotation_keys/diagnostic-command-motion-missing-odometry-pilot-v1.json",
+      "key_sha256": "d4d8508222753cd3690f085b68d40d00ad9984f04f986a49c5dbc11bcbea8df3",
+      "statistical_cluster_id": "command-motion-held-nominal-pair-001",
+      "evidence_variant": "missing-independent-odometry-samples"
     }
   ],
   "cluster_rule": "Evidence masks and question variants share the source episode's statistical cluster.",

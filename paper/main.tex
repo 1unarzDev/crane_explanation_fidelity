@@ -346,14 +346,26 @@ executable window computation as P. On project review, R and raw P identify the 
 discrepancy; N can only call it suggested without time alignment. R, raw P, and N all reject the
 nominal premise. These observations are not human labels and show no P-over-R advantage. Both raw
 P candidates were rejected by lexical false positives in the then-current final-text gate, so the
-immutable final P outputs fell back to T (10/10 development questions overall). A subsequent
+immutable final P outputs fell back to T (10/10 development questions at that checkpoint). A subsequent
 post-hoc bounded-verifier audit accepts both candidates after citation-only repair and rejects six
 authored mutations, but cannot estimate verifier error or rewrite the original outcomes.
 
-The supported and nominal packets contain eight blinded responses but form one paired cluster.
-The complete diagnostic development inventory therefore contains 40 responses over seven
-clusters, all awaiting independent annotation and adjudication. Neither member of this pair is a
-held-out result or an additional independent scenario instance.
+We then applied a prospectively declared evidence mask to the supported run, removing all
+independent odometry while retaining 376 delivered command samples, abort, two
+\texttt{FollowPath} failures, and two source-qualified \texttt{Wait} invocations. The checked
+diagnostic returns \texttt{insufficient}: it preserves the execution sequence but states that a
+command--motion comparison requires synchronized independent motion evidence. On project review,
+R, raw P, and N all withhold the discrepancy mechanism; R and raw P retain the useful sequence.
+Whether N's ``exhausted recovery behavior'' wording is supported remains for blinded annotation.
+P again fell back to T under the historical verifier, while a post-hoc correction accepts its raw
+candidate after citation-only repair and rejects three authored mutations. The original output is
+unchanged. This ambiguity case is not scored as a failed supported diagnosis.
+
+The supported, nominal, and missing-odometry packets contain 12 blinded responses but form one
+paired/masked cluster. The complete diagnostic development inventory therefore contains 44
+responses in 11 packets over seven clusters, all awaiting independent annotation and adjudication.
+None is a held-out result or an additional independent scenario instance. Immutable final P
+fallback is 11/11 development questions overall.
 
 \section{Results}
 

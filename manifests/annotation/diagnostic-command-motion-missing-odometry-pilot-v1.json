@@ -1,0 +1,39 @@
+{
+  "schema": "crane-explain-annotation-packet-manifest/v1",
+  "status": "DEVELOPMENT_DRY_RUN_AWAITING_TWO_HUMAN_ANNOTATORS",
+  "study": "prospective-physical-diagnosis-development",
+  "packet": {
+    "path": "model_outputs/annotation_packets/diagnostic-command-motion-missing-odometry-pilot-v1/packet.jsonl",
+    "sha256": "54dc8ebd93d4785ca3d18fc4d7176b6711040cec2ccc35d96f6bcca4325c4e2b",
+    "dvc_pointer": "model_outputs.dvc",
+    "responses": 4,
+    "conditions_blinded": true
+  },
+  "key": {
+    "path": "data/evaluator_only/annotation_keys/diagnostic-command-motion-missing-odometry-pilot-v1.json",
+    "sha256": "d4d8508222753cd3690f085b68d40d00ad9984f04f986a49c5dbc11bcbea8df3",
+    "dvc_pointer": "data/evaluator_only/annotation_keys.dvc",
+    "visibility": "evaluator_only"
+  },
+  "reference": {
+    "path": "research/explanation_fidelity/annotations/development/diagnostic-command-motion-missing-odometry-pilot-v1-reference.json",
+    "sha256": "911ff4ddf06c8242dc1754cddefbdae9a0234225520ac0d6a64a795b13ae1560",
+    "status": "PRE_MODEL_INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_HUMAN_GOLD"
+  },
+  "rubric": {
+    "path": "docs/DIAGNOSTIC_ANNOTATION_GUIDE.md",
+    "status": "DEVELOPMENT_DRAFT_NOT_FROZEN"
+  },
+  "requirements": {
+    "independent_annotators": 2,
+    "distinct_adjudicator_on_disagreement": true,
+    "condition_key_withheld_until_after_adjudication": true
+  },
+  "limitations": [
+    "This deterministic evidence mask is paired with the supported and nominal command-motion development family and adds no independent scenario.",
+    "The packet is explicitly non-diagnosable for the command-motion mechanism but retains answerable execution-sequence information.",
+    "The original P candidate failed the then-current bounded verifier; final P used deterministic fallback and remains byte-identical to T.",
+    "A later post-hoc verifier revision accepts the raw candidate after evidence-ID-only repair but does not alter the packet.",
+    "No human annotations or adjudication exist at packet creation time."
+  ]
+}

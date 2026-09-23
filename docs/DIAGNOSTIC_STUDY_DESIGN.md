@@ -175,13 +175,20 @@ fallback (2/2). A later post-hoc audit under corrected bounded matching accepts 
 after evidence-ID-only repair and rejects all six authored mutations; it does not alter the original
 outputs or estimate verifier error rates.
 
-Two blinded four-response packets now cover the supported and nominal members. They share one
+Three blinded four-response packets now cover the supported member, nominal member, and a
+predeclared missing-odometry evidence mask. They share one
 `command-motion-held-nominal-pair-001` statistical cluster because they are a paired
-intervention/control family. The development annotation inventory therefore contains 40 responses
-over seven clusters, with human annotation and adjudication still `NOT_RUN`. A naturally ambiguous
-or evidence-masked command-motion case, independently varied scenarios, protocol freeze, and
-held-out collection remain `NOT_RUN`. The development thresholds are not frozen, and this pair
-cannot be counted as two independent scenario instances.
+intervention/control/evidence-mask family. In the mask, 376 command samples remain but all
+independent odometry samples are absent. The independently computed reference labels the
+command-motion mechanism insufficient while retaining the abort, two FollowPath failures, and two
+source-qualified Wait invocations as answerable sequence evidence. R, raw P, and N all withhold the
+missing mechanism on project review; no P-over-R advantage is apparent. The original P output again
+fell back, and a later post-hoc verifier fix does not alter that result.
+
+The development annotation inventory therefore contains 44 responses over seven clusters, with
+human annotation and adjudication still `NOT_RUN`. Independent scenario collection, protocol
+freeze, and held-out evaluation remain `NOT_RUN`. The development thresholds are not frozen, and
+the three variants cannot be counted as separate scenario instances.
   A retained unexpected land success now passes a false-premise-aware `not_triggered` check and has
   a blinded R/P/T/N packet, but it was not prospectively collected and has no human labels.
 - One separately governed, prospectively declared nominal land episode now supplies complete-route

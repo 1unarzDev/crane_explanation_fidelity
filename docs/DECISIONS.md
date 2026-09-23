@@ -984,3 +984,22 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Validity protection: references state that physical computations predated model calls while
   annotation units were formalized afterward. Packet keys remain evaluator-only; the post-hoc
   bounded-verifier audit is manifested separately and cannot relabel the immutable outputs.
+
+## 2026-09-23 — treat missing measured motion as partial answerability, not generic abstention
+
+- Decision: when independent odometry samples are absent, withhold the command-motion mechanism but
+  retain the recorded action and source-qualified execution sequence. Group the deterministic mask
+  with its source episode and add zero independent scenarios.
+- Evidence: the predeclared mask retains 376 command samples, zero odometry samples, action abort,
+  two FollowPath failures, and two source-qualified Wait invocations. An independent evaluator
+  labels the command-motion comparison insufficient while the sequence remains answerable. The
+  first checked plan exposed an empty evidence section, which was corrected before any model call.
+- Alternatives: call the whole question unanswerable; infer stopped motion from the abort; reuse
+  the paired unmasked diagnosis; or count the mask as independent. These respectively discard
+  useful facts, invent physical evidence, leak paired information, or inflate sample size.
+- RQ impact: this gives Q3 a declared ambiguous development case and forces analysis to separate
+  diagnosable supported success from ambiguous-case qualification. It does not establish a method
+  effect: R, raw P, and N all withheld the missing mechanism on project review.
+- Validity protection: the one-shot outputs and P fallback remain immutable. The post-hoc verifier
+  acceptance is regression evidence only; blind human annotation and held-out evaluation remain
+  required.

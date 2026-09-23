@@ -3116,3 +3116,49 @@
   `diagnostic-command-motion-missing-odometry-pilot-v1-amendment-1.json`. A separate evaluator
   implementation that imports neither the proposed core nor its result reproduces the insufficiency
   boundary. Model generation remains `NOT_RUN` at this checkpoint.
+
+## 2026-09-23 — missing-odometry command-motion specificity pilot and language audit
+
+- **STATUS:** `RUN / RETAINED / GOVERNED / BLINDED_PACKET_BUILT / DEVELOPMENT_ONLY`; human
+  annotation and adjudication remain `NOT_RUN`; confirmatory use is prohibited.
+- **EXECUTION:** exactly one no-retry model call was made for each of R, P, and N under the
+  predeclared configuration; T was rendered deterministically. The blind mask retains 376 delivered
+  command samples, zero independent odometry samples, action abort, two `FollowPath` failures, two
+  source-qualified `Wait` invocations, and the pinned source/configuration hashes. Evaluator truth,
+  the unmasked diagnosis, intervention identity, and paired outputs were unavailable to all methods.
+- **PROJECT REVIEW, NOT LABELS:** R, raw P, and N withhold the sustained command--motion mechanism.
+  R and raw P retain the useful abort/recovery sequence. N says recovery behavior was exhausted;
+  whether that wording is materially supported is deliberately left to blinded human annotation.
+  This evidence-mask result does not establish P over tool-enabled R.
+- **LANGUAGE GATE:** original P used deterministic fallback because the then-current verifier missed
+  its explicit missing-odometry qualification. The archived output and packet remain unchanged. A
+  post-hoc bounded-verifier correction accepts the raw P candidate after evidence-ID-only repair and
+  rejects all three authored adversarial mutations. This is regression evidence, not an independent
+  estimate of verifier accuracy.
+- **USAGE:** three model calls; aggregate latency 56.472 s; 218,118 input, 155,904 cached-input,
+  2,033 output, and 273 reasoning-output tokens; cost was not reported by the CLI login path.
+- **ANNOTATION:** one shuffled four-response packet and evaluator-only key were built. Packet
+  SHA-256 is `54dc8ebd93d4785ca3d18fc4d7176b6711040cec2ccc35d96f6bcca4325c4e2b`; key
+  SHA-256 is `d4d8508222753cd3690f085b68d40d00ad9984f04f986a49c5dbc11bcbea8df3`.
+  The inventory is now 44 responses in 11 diagnostic packets over seven statistical clusters; this
+  mask remains in `command-motion-held-nominal-pair-001` and adds no independent cluster. The local
+  blinded handoff bundles contain 13 total packets (two legacy plus 11 diagnostic) and 248 blank
+  rows per annotator. Archive SHA-256 values are
+  `0771c35bae2bb744edb450116557515280a100e1c69bba0d6ce6620a2e89f52a` (A) and
+  `5d75d7181706146eeecf8c131ba171b3a08c3cfe57fe1082a6223d0da4b1cba6` (B).
+- **GOVERNANCE:** exact output/cache hashes are in
+  `manifests/model_outputs/diagnostic-command-motion-missing-odometry-pilot-v1.json`; packet/key
+  hashes are in
+  `manifests/annotation/diagnostic-command-motion-missing-odometry-pilot-v1.json`; the post-hoc
+  verifier audit is evaluator-only development DVC data with a separate manifest. No frozen F/G/H
+  artifact was modified.
+- **MANUSCRIPT QA:** the anonymous manuscript now includes the ambiguity mask, the 11/11 immutable
+  fallback count, and the 44-response/11-packet/seven-cluster inventory without presenting project
+  review as labels. `scripts/build_paper.sh` produced a six-page letter-size PDF. All pages were
+  rendered with Poppler at 130 dpi and visually inspected; text, pending-result gate, table, and
+  references are readable with no clipping or overlap. The ignored PDF is 69,283 bytes with SHA-256
+  `c673ca5ad79d61dc5e8862d6ed4cab7ce8e9ad3dd86df28472b093b004f6fd95`.
+- **INFERENCE LIMIT:** this is a deterministic mask of an existing development episode, not a new
+  scenario or held-out observation. It demonstrates the intended specificity boundary and an
+  answer-plan/language regression only; independent labels and prospective evaluation remain
+  required.
