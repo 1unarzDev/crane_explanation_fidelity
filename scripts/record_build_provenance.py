@@ -65,8 +65,30 @@ def build_record(player: Path, checkout: Path) -> dict:
         raise FileNotFoundError(f"CRANE build manifest not found: {manifest_path}")
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     source_commit = manifest.get("sourceCommit")
+    source_dirty = manifest.get("sourceDirty")
     checkout_commit = git_output(checkout, "rev-parse", "HEAD")
     dirty = bool(git_output(checkout, "status", "--porcelain"))
+    source_proven = bool(
+        source_commit
+        and source_commit == checkout_commit
+        and source_dirty is False
+        and not dirty
+    )
+    if not source_commit:
+        provenance_limit = (
+            "The embedded build manifest does not record a source commit. The checkout commit "
+            "is recorded separately and must not be represented as the proven binary source."
+        )
+    elif source_commit != checkout_commit:
+        provenance_limit = (
+            "The embedded build source commit does not match the checkout used for this run."
+        )
+    elif source_dirty is not False:
+        provenance_limit = "The embedded build manifest declares a dirty or unknown source tree."
+    elif dirty:
+        provenance_limit = "The checkout used for this run is dirty."
+    else:
+        provenance_limit = None
     return {
         "schema": "crane-build-run-provenance-v1",
         "player": {
@@ -85,11 +107,9 @@ def build_record(player: Path, checkout: Path) -> dict:
             "dirty": dirty,
         },
         "build_source_commit": source_commit,
-        "build_source_commit_proven": bool(source_commit),
-        "provenance_limit": None if source_commit else (
-            "The embedded build manifest does not record a source commit. The checkout commit "
-            "is recorded separately and must not be represented as the proven binary source."
-        ),
+        "build_source_dirty": source_dirty,
+        "build_source_commit_proven": source_proven,
+        "provenance_limit": provenance_limit,
     }
 
 
