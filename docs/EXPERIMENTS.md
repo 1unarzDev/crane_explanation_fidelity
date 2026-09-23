@@ -3602,3 +3602,29 @@
 - **BOUNDARY:** this improves human data-entry integrity only. Independent annotation,
   calibration discussion, agreement, third-person adjudication, key join, and all comparative
   effect estimates remain `NOT_RUN`.
+
+## 2026-09-23 — transactional annotation-return coordinator rehearsal
+
+- **STATUS:** `IMPLEMENTED / TESTED / SYNTHETIC_ONLY / NO_HUMAN_LABELS`; no real judgment, packet,
+  key, frozen artifact, model output, or study result changed.
+- **PURPOSE:** remove a manual 15-packet coordination step after the two independent passes return.
+  The coordinator checks filenames and exact response inventories, invokes the existing legacy or
+  diagnostic validator unchanged, hashes packet and form inputs, and publishes agreement reports
+  and disagreement-only handoffs as one transaction.
+- **PROCESS GATES:** `sealed-primary-v3` is rejected unless the coordinator explicitly attests that
+  independent calibration and discussion are complete. Calibration disagreements are reported for
+  that discussion and never routed to a third adjudicator. Study disagreements produce only fresh
+  condition-blind handoffs; the batch root retains the private agreement reports and must not be
+  sent to the adjudicator.
+- **FULL-INVENTORY REHEARSAL:** temporary forms marked
+  `SYNTHETIC FULL-INVENTORY COORDINATOR REHEARSAL ONLY - NOT A HUMAN LABEL` exercised all 15 current
+  packets and 256 responses. Every authoritative validator returned complete agreement, no key was
+  read or joined, and the entire temporary directory was deleted.
+- **REGRESSION:** six coordinator tests cover disagreement handoff construction, no-disagreement
+  completion, calibration attestation, calibration-discussion routing, exact form inventories, and
+  transactional cleanup; 36 focused annotation/handoff tests and all 182 umbrella-owned
+  `tests/`/`analysis/` tests pass. Data governance and the 67-assertion manuscript traceability
+  audit also pass.
+- **BOUNDARY:** IDs cannot prove that annotators are distinct humans. Human independence,
+  calibration discussion, real annotation, adjudication, key joining, analysis, and every effect
+  estimate remain `NOT_RUN`.

@@ -113,6 +113,42 @@ exclusion is forbidden.
 
 ## 3–5. Agreement, adjudication, finalization
 
+For the prepared 15-packet handoff, validate the returned calibration forms first. This command
+invokes the unchanged legacy validator transactionally and records disagreements for the required
+two-annotator calibration discussion; it does not create a third-person handoff for calibration:
+
+```bash
+python analysis/process_annotation_returns.py \
+  --packet-dir artifacts/annotation-handoff-20260922/annotator-a/packets \
+  --annotator-a-dir <returned-a-directory> \
+  --annotator-b-dir <returned-b-directory> \
+  --output-dir /tmp/annotation-calibration-check \
+  --adjudicator-id adjudicator-c \
+  --only legacy-calibration-e043-v1.jsonl
+```
+
+Only after both independent calibration passes and their discussion are complete, validate the
+complete returned inventory and prepare disagreement handoffs:
+
+```bash
+python analysis/process_annotation_returns.py \
+  --packet-dir artifacts/annotation-handoff-20260922/annotator-a/packets \
+  --annotator-a-dir <returned-a-directory> \
+  --annotator-b-dir <returned-b-directory> \
+  --output-dir analysis/results/annotation-return-batch-<date> \
+  --adjudicator-id adjudicator-c \
+  --calibration-complete
+```
+
+The coordinator requires all 15 matching filenames and exact response inventories, invokes the
+ordinary rubric-specific validators, hashes every input, and publishes the batch only if every
+packet validates. It generates a fresh disagreement-only handoff for each study packet that needs
+third-person review. Send the adjudicator only those handoff subdirectories—never the batch root,
+agreement reports, or either returned pass. The coordinator reads no evaluator key, joins no
+condition, and cannot establish that different IDs correspond to different people; the research
+coordinator must verify human independence. If annotators used direct form editing, point each
+returned directory at its `forms/`; if they used the workbench, point it at `completed/`.
+
 ```bash
 # agreement; final labels are emitted only if the two passes fully agree
 PYTHONPATH=packages/astro_dock/src/crane_explain/src:analysis \
