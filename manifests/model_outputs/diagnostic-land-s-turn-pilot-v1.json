@@ -1,0 +1,73 @@
+{
+  "schema": "crane-explain-model-artifact-manifest/v1",
+  "status": "DEVELOPMENT_ONLY_NOT_FROZEN",
+  "created_utc": "2026-09-23T02:21:41Z",
+  "provider": "codex-lb-via-chatgpt-login",
+  "adapter": "codex-cli-json/v1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "low",
+  "single_sample_no_retry": true,
+  "evaluator_truth_available_to_methods": false,
+  "information_parity_audited": true,
+  "episode_ids": [
+    "land-s-turn-unexpected-abort-001"
+  ],
+  "question_kinds": [
+    "diagnostic-mechanism-and-outcome-v1"
+  ],
+  "conditions": [
+    "N",
+    "P",
+    "R"
+  ],
+  "result_envelope_conditions": [
+    "N",
+    "P",
+    "R",
+    "T"
+  ],
+  "model_condition_outputs": 3,
+  "embedded_non_model_smoke_conditions": [
+    "T"
+  ],
+  "embedded_non_model_smoke_outputs": 1,
+  "model_calls_referenced": 3,
+  "new_model_calls": 3,
+  "content_addressed_calls_reused": 0,
+  "read_only_workspace_verified": true,
+  "output_root": "model_outputs/dev/diagnostic-land-s-turn-pilot-v1",
+  "cache_root": "research/explanation_fidelity/model_cache/diagnostic-land-s-turn-pilot-v1",
+  "artifacts": [
+    {
+      "path": "model_outputs/dev/diagnostic-land-s-turn-pilot-v1/land-s-turn-unexpected-abort-001/mechanism-and-outcome.json",
+      "bytes": 12661,
+      "sha256": "1bf01681c28b40848a3ad8c35c6e125dcd4d4e9e193f0200ef364b8e836a9c25"
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-land-s-turn-pilot-v1/4fd0d5b94fefb2e77b70deabee61830e2b5eaed92dab56d8d63ff0682500035f.json",
+      "bytes": 20262,
+      "sha256": "b8ca9a9dd462c46b785f7fe390495d928bd4d1412095cd9dbda9586409a69fe4"
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-land-s-turn-pilot-v1/a64969f0d9b6245cd1e66f39c4527e885230767b950d94a22fa2e5f33c7bd70a.json",
+      "bytes": 409658,
+      "sha256": "1264f9fe932dfcc4ec24432022f0f424fb3a37a73d3cfde44b0334864b020271"
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-land-s-turn-pilot-v1/af106c72e1f03471311f83f1d8fd035f120d253db1e0c37a8d7beed96a4961a2.json",
+      "bytes": 18396,
+      "sha256": "c3c4eacf5b1586e01bb79f1d6baab98a28845f6b962c7397eb7ba1da2546c57b"
+    }
+  ],
+  "usage": {
+    "aggregate_latency_ms": 95688.239699,
+    "input_tokens": 180464,
+    "cached_input_tokens": 100352,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 2351,
+    "reasoning_output_tokens": 308,
+    "cost_usd": null,
+    "cost_status": "not_reported_by_codex_cli_chatgpt_login"
+  },
+  "interpretation": "A second independent land development cluster. Tool-enabled R and P/T all identify the bounded route-restriction and deadline-aligned mechanism; P again falls back to T. Independent human labels are not yet available."
+}

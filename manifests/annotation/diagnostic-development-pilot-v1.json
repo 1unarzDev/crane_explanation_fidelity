@@ -1,10 +1,11 @@
 {
   "schema": "crane-diagnostic-development-annotation-inventory/v1",
   "created_utc": "2026-09-23T01:47:07Z",
+  "updated_utc": "2026-09-23T02:21:41Z",
   "status": "DEVELOPMENT_PACKETS_AWAITING_TWO_HUMAN_ANNOTATORS",
   "inferential_status": "DEVELOPMENT_ONLY_NOT_A_FROZEN_OR_CONFIRMATORY_STUDY",
-  "responses": 16,
-  "statistical_clusters": 2,
+  "responses": 20,
+  "statistical_clusters": 3,
   "packets": [
     {
       "name": "land-unmasked",
@@ -41,6 +42,15 @@
       "key_sha256": "1ca2e818762756c61289ca9fee39cb21ae952f250bd82af44b6b6afda7ffc1a1",
       "statistical_cluster_id": "roboboat-gate5-known-dock-1",
       "evidence_variant": "missing-return-speed"
+    },
+    {
+      "name": "land-s-turn-unmasked",
+      "packet": "model_outputs/annotation_packets/diagnostic-land-s-turn-pilot-v1/packet.jsonl",
+      "packet_sha256": "b7ad383b8cb31bb28f35175b285f1fdc786da81a7d92f5a1b9c893abe2fa0ed9",
+      "key": "data/evaluator_only/annotation_keys/diagnostic-land-s-turn-pilot-v1.json",
+      "key_sha256": "8a7cada840e0981e02c50c68989aed3a27440b10eca9088ea096b8c328424287",
+      "statistical_cluster_id": "land-s-turn-unexpected-abort-001",
+      "evidence_variant": "unmasked"
     }
   ],
   "cluster_rule": "Evidence masks and question variants share the source episode's statistical cluster.",

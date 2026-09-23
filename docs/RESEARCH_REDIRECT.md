@@ -112,3 +112,19 @@ task tolerance. The original output is immutable; a post-hoc v2 checked plan pre
 diagnosis. Blinded packets exist, but independent human annotation, independent reference
 computations, nominal controls, power planning, protocol freeze, and held-out collection remain
 `NOT_RUN`.
+
+### Additional development checkpoint — 2026-09-22
+
+The retained corrected S-turn now supplies a third statistical cluster. A separately implemented
+Bresenham/A* reference, run before model comparison, reproduced the bounded findings: the direct
+route crossed a cost-253 cell near x=3.55 m; the retained grid remained connected; delivered
+odometry deviated 1.699 m; and the abort was 0.918 s from the exact 70 s deadline. It independently
+rejects global no-path, unique obstacle identity, proven planner consumption, and direct observation
+of the terminal timeout tick.
+
+The parity-audited R/P/T/N comparison remains a negative development result for differentiation:
+tool-enabled R communicated the same central mechanism and limits as P/T. P's candidate was
+substantively aligned but failed the exact-text gate, so final P again equaled T. Across five
+development questions in three episode clusters, P fallback is 5/5. The new blinded packet brings
+the inventory to 20 responses, but human labels, a true prospective nominal control, stable power
+planning, protocol freeze, and held-out evaluation remain `NOT_RUN`.

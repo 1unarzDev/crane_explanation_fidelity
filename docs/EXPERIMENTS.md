@@ -2652,3 +2652,38 @@
 - **REMAINING GATE:** the red result markers remain visible. Human annotation, prospective
   protocol freeze, independent held-out episodes, statistics, and final empirical claims are still
   `NOT_RUN`; the extra page contains related-work positioning and references, not new evidence.
+
+## 2026-09-22 — second independent land diagnostic development cluster
+
+- **STATUS:** `IMPLEMENTED / TESTED / DEVELOPMENT_ONLY / HUMAN_LABELS_NOT_RUN`.
+- **EPISODE:** retained unexpected S-turn abort `land-s-turn-unexpected-abort-001`; it remains one
+  statistical cluster and is not relabeled as the nominal success originally requested.
+- **REFERENCE FIRST:** before model comparison,
+  `analysis/reference_land_geometric.py` independently decoded and hash-checked the retained grid,
+  used integer Bresenham cells and a separate eight-neighbor A* implementation, and reproduced a
+  direct-route cost-253 intersection near x=3.55 m, a retained-grid connection, 1.6995 m maximum
+  lateral deviation, 69 successful planning updates, and a 0.9179 s deadline alignment. It rejects
+  global physical no-path, unique obstacle identity, proven planner consumption, and direct
+  observation of the missing terminal timeout tick. This is an independent implementation, not a
+  human gold label or confirmatory reference.
+- **METHOD RUN:** one single-sample, no-retry R/P/T/N comparison used `gpt-5.6-sol`, low effort,
+  exact CRANE commit `c46de4d`, core commit `4d9ecb4`, current diagnostic wrapper SHA-256
+  `656363a9...b532`, and prompt `diagnostic_repository_agent_dev_v2.txt`. R and P shared the raw
+  fixture and exact executable diagnostic; evaluator truth was unavailable. Three new model calls
+  consumed 180,464 input, 100,352 cached-input, 2,351 output, and 308 reasoning-output tokens over
+  95,688 ms aggregate latency. The client reported no monetary cost. The configured load balancer
+  does not expose a resolved backend/source revision, so none is inferred.
+- **QUALITATIVE RESULT:** tool-enabled R, P's candidate, and T all communicate the central route
+  restriction, retained-grid connectivity, detour, deadline alignment, and major limits. N reports
+  the deadline mechanism but correctly lacks the geometric computation. R is again at least as
+  diagnostically complete as P/T on project review; this remains a negative development result for
+  P-over-R differentiation pending blind human labels.
+- **VERIFICATION:** P's fluent candidate is substantively aligned but fails the conservative exact
+  final-text gate; final P is byte-identical to T. Development fallback is now 5/5 questions across
+  three clusters. This is further evidence that the current final method is deterministic at its
+  native operating point.
+- **GOVERNANCE:** the four-response blinded packet and evaluator-only key are retained separately.
+  The development annotation inventory now contains 20 responses in five packets over exactly
+  three clusters. Raw result, cache records, packet, key, current diagnostic export, and independent
+  reference are hash-manifested; DVC artifacts were pushed to R2. Annotation, adjudication, power
+  planning, protocol freeze, and held-out evaluation remain `NOT_RUN`.

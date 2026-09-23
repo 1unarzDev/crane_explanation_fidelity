@@ -1,0 +1,38 @@
+{
+  "schema": "crane-explain-annotation-packet-manifest/v1",
+  "status": "DEVELOPMENT_DRY_RUN_AWAITING_TWO_HUMAN_ANNOTATORS",
+  "study": "prospective-physical-diagnosis-development",
+  "packet": {
+    "path": "model_outputs/annotation_packets/diagnostic-land-s-turn-pilot-v1/packet.jsonl",
+    "sha256": "b7ad383b8cb31bb28f35175b285f1fdc786da81a7d92f5a1b9c893abe2fa0ed9",
+    "dvc_pointer": "model_outputs.dvc",
+    "responses": 4,
+    "conditions_blinded": true
+  },
+  "key": {
+    "path": "data/evaluator_only/annotation_keys/diagnostic-land-s-turn-pilot-v1.json",
+    "sha256": "8a7cada840e0981e02c50c68989aed3a27440b10eca9088ea096b8c328424287",
+    "dvc_pointer": "data/evaluator_only/annotation_keys.dvc",
+    "visibility": "evaluator_only"
+  },
+  "reference": {
+    "path": "research/explanation_fidelity/annotations/development/diagnostic-land-s-turn-pilot-v1-reference.json",
+    "sha256": "dcf03f10f313acf02edb0170b122e03f63412c859c1bf93d33eaff8fc0b3e8c2",
+    "status": "DEVELOPMENT_REFERENCE_INDEPENDENT_IMPLEMENTATION_NOT_HUMAN_GOLD"
+  },
+  "rubric": {
+    "path": "docs/DIAGNOSTIC_ANNOTATION_GUIDE.md",
+    "status": "DEVELOPMENT_DRAFT_NOT_FROZEN"
+  },
+  "requirements": {
+    "independent_annotators": 2,
+    "distinct_adjudicator_on_disagreement": true,
+    "condition_key_withheld_until_after_adjudication": true
+  },
+  "limitations": [
+    "This is one development episode and cannot estimate an effectiveness difference.",
+    "The reference computation is independently implemented but was authored by the project after inspecting the episode; it is not a human gold label or confirmatory evidence.",
+    "No human annotations or adjudication exist at packet creation time.",
+    "The P final response used deterministic fallback and is text-identical to T; identical text must receive identical labels."
+  ]
+}
