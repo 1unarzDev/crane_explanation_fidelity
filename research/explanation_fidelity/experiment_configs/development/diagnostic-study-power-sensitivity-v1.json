@@ -1,0 +1,105 @@
+{
+  "limitations": [
+    "This exact calculation assumes one independent primary binary endpoint per scenario instance.",
+    "Secondary questions and paraphrases do not increase the primary sample size.",
+    "The calculation does not account for annotator error; adjudicated labels define the endpoint.",
+    "If collection stops below target for deadline/resource reasons, report achieved precision and do not claim planned power.",
+    "Observed labels or effect estimates must not be used to change the stopping target."
+  ],
+  "schema": "crane-diagnostic-study-power-sensitivity-v1",
+  "sensitivity": [
+    {
+      "baseline_only_success_probability": 0.05,
+      "minimum_clusters_for_80_percent_power": 45,
+      "minimum_clusters_for_90_percent_power": 57,
+      "net_supported_diagnostic_success_difference": 0.25,
+      "power_by_independent_primary_cluster_count": {
+        "40": 0.7405659524621793,
+        "48": 0.8358440679142396,
+        "64": 0.9355781019766769,
+        "80": 0.9758787839724427,
+        "92": 0.9891174381932969,
+        "96": 0.9917404806022019
+      },
+      "proposed_only_success_probability": 0.3,
+      "scenario": "large_effect"
+    },
+    {
+      "baseline_only_success_probability": 0.05,
+      "minimum_clusters_for_80_percent_power": 61,
+      "minimum_clusters_for_90_percent_power": 78,
+      "net_supported_diagnostic_success_difference": 0.2,
+      "power_by_independent_primary_cluster_count": {
+        "40": 0.5673794537450305,
+        "48": 0.6754150632972742,
+        "64": 0.8268945432491969,
+        "80": 0.9082850283078578,
+        "92": 0.9448502878169647,
+        "96": 0.9537907835613149
+      },
+      "proposed_only_success_probability": 0.25,
+      "scenario": "moderate_effect"
+    },
+    {
+      "baseline_only_success_probability": 0.05,
+      "minimum_clusters_for_80_percent_power": 92,
+      "minimum_clusters_for_90_percent_power": 119,
+      "net_supported_diagnostic_success_difference": 0.15000000000000002,
+      "power_by_independent_primary_cluster_count": {
+        "40": 0.363705542126689,
+        "48": 0.45555802256876565,
+        "64": 0.618006360458576,
+        "80": 0.7368069778512294,
+        "92": 0.8013838318746631,
+        "96": 0.8197389793082888
+      },
+      "proposed_only_success_probability": 0.2,
+      "scenario": "smallest_practically_meaningful"
+    },
+    {
+      "baseline_only_success_probability": 0.05,
+      "minimum_clusters_for_80_percent_power": 168,
+      "minimum_clusters_for_90_percent_power": 215,
+      "net_supported_diagnostic_success_difference": 0.09999999999999999,
+      "power_by_independent_primary_cluster_count": {
+        "40": 0.17242718864372442,
+        "48": 0.22775773220517198,
+        "64": 0.3340424398894233,
+        "80": 0.43679367155234533,
+        "92": 0.504412692524942,
+        "96": 0.5248605410402459
+      },
+      "proposed_only_success_probability": 0.15,
+      "scenario": "smaller_effect"
+    },
+    {
+      "baseline_only_success_probability": 0.1,
+      "minimum_clusters_for_80_percent_power": 249,
+      "minimum_clusters_for_90_percent_power": 325,
+      "net_supported_diagnostic_success_difference": 0.1,
+      "power_by_independent_primary_cluster_count": {
+        "40": 0.1336072995298978,
+        "48": 0.16961647300533175,
+        "64": 0.2359348473677316,
+        "80": 0.2948930351608354,
+        "92": 0.34126170329455613,
+        "96": 0.3570740651197048
+      },
+      "proposed_only_success_probability": 0.2,
+      "scenario": "symmetric_discordance"
+    }
+  ],
+  "smallest_practically_meaningful_assumption": {
+    "baseline_only_success_probability": 0.05,
+    "basis": "Prospective design threshold, not an estimate from unblinded development review. A smaller gain would not justify the specialized computation and verification cost.",
+    "net_difference": 0.15,
+    "proposed_only_success_probability": 0.2
+  },
+  "status": "DESIGN_SENSITIVITY_NOT_OBSERVED_EFFECT_ESTIMATE",
+  "target_power": [
+    0.8,
+    0.9
+  ],
+  "test": "two-sided exact paired sign/McNemar test at alpha 0.05",
+  "unit": "one predeclared primary binary endpoint per independent scenario instance"
+}

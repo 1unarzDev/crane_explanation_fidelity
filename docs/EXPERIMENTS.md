@@ -2949,3 +2949,20 @@
 - **GOVERNANCE:** configuration, candidate/result hashes, decisions, rejection reasons, and
   mutation outcomes are retained in evaluator-only DVC storage and manifested by
   `manifests/data/diagnostic-language-verifier-development-v1.evaluator-only.json`.
+
+## 2026-09-23 — diagnostic-study power sensitivity and independence audit
+
+- **STATUS:** `IMPLEMENTED / TESTED / DESIGN_ONLY`; prospective protocol and held-out collection
+  remain `NOT_FROZEN` / `NOT_RUN`.
+- **METHOD:** `analysis/plan_diagnostic_power.py` exactly enumerates the unconditional power of a
+  two-sided paired sign/McNemar test at alpha 0.05, with one primary binary endpoint per independent
+  scenario instance. Four regression tests cover exact-tail symmetry, monotonicity at the design
+  points, reproducible minimum counts, and the non-observed-effect status.
+- **SENSITIVITY:** under the declared smallest practically meaningful planning pattern—20% P-only
+  success, 5% R-only success, net +15 points—92 independent clusters reach 80% power and 119 reach
+  90%. A 96-cluster target gives 81.97%; 40 gives only 36.37%. These are assumptions, not estimates
+  from unblinded pilot review. Large, smaller, and symmetric-discordance scenarios are also retained.
+- **INDEPENDENCE FINDING:** source inspection confirms the current proving-ground requested seed is
+  recorded in the configuration hash but does not alter fixed manifest geometry. Seed-only reruns
+  cannot count as independent scenarios. Protocol freeze therefore requires a genuinely varied
+  geometry source and a throughput check; no collection target is represented as currently met.

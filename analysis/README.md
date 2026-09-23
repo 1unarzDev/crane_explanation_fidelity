@@ -70,3 +70,16 @@ python analysis/audit_diagnostic_language_candidates.py \
 
 The audit is explicitly post-hoc development work. It cannot be used as an independent verifier
 accuracy estimate or to reclassify archived outputs.
+
+## Prospective diagnostic power sensitivity
+
+Regenerate the exact paired-binary design sensitivity with:
+
+```bash
+PYTHONPATH=analysis python analysis/plan_diagnostic_power.py \
+  --output /tmp/diagnostic-study-power-sensitivity-v1.json
+```
+
+The inputs are planning assumptions, not pilot effect estimates. Only genuinely distinct scenario
+instances count toward the primary sample size; repeated questions, paraphrases, or seed-only
+identity changes do not.

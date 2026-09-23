@@ -59,6 +59,31 @@ before any disturbance case is eligible.
 - Estimate paired discordance/cluster variance from development pilots and run a new power
   simulation. Do not reuse the legacy 40-episode calculation.
 
+## Power sensitivity and effective sample size
+
+No independent development labels exist, and project-author review found several R/P ties.
+Therefore the design does **not** use the unblinded pilot impressions as an effect estimate. The
+reproducible exact sensitivity analysis is
+`research/explanation_fidelity/experiment_configs/development/diagnostic-study-power-sensitivity-v1.json`.
+It assumes one predeclared primary binary endpoint per independent scenario instance and a
+two-sided exact paired sign/McNemar test at alpha 0.05.
+
+The prospectively declared smallest practically meaningful improvement is a +15 percentage-point
+net supported-diagnostic-success difference, represented for planning as 20% P-success/R-failure
+discordance versus 5% R-success/P-failure discordance. This threshold is a design judgment—not an
+observed effect—and reflects the extra diagnostic-computation and verification cost. Exact power
+reaches 80% at 92 independent primary clusters and 90% at 119. A target of 96 would provide 82.0%
+power under that particular pattern; 40 clusters would provide only 36.4%. If R and P are more
+often symmetrically discordant or the effect is smaller, substantially more clusters are required.
+
+The current proving-ground seed changes the configuration identity but not obstacle geometry.
+Repeated seeds of one layout are therefore **not independent scenario instances** and cannot be
+used to reach the target. Before protocol freeze, the collection path must demonstrate genuinely
+distinct, versioned geometry/configuration instances and validate their throughput. If 92 valid
+independent primary instances are infeasible by the collection cutoff, collection stops for the
+predeclared deadline/resource reason, and the paper reports achieved effects/intervals as
+underpowered rather than claiming planned power or equivalence.
+
 ## Questions
 
 Use a small inventory: diagnosis/mechanism, decisive evidence, failure chain, path/clearance or

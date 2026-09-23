@@ -903,3 +903,20 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Validity risk and revisit: the policy was tuned after candidate inspection. Freeze its module,
   prompt, one-repair rule, adversarial/held-out evaluation, and threshold before new evaluation;
   report pre- and post-verification text and fall back deterministically on any rejection.
+
+## 2026-09-23 — do not count seed-only proving-ground reruns as independent scenarios
+
+- Decision: define the diagnostic study's primary sample unit as one genuinely distinct scenario
+  instance with one predeclared binary endpoint. Different run seeds of the current proving-ground
+  layout do not qualify because the seed enters identity hashes but does not alter its geometry.
+- Evidence: source inspection shows the proving-ground builder selects fixed manifest boxes and
+  uses the requested seed only in the recorded configuration hash/truth record. Exact paired power
+  sensitivity requires 92 independent primary clusters for 80% power under the declared +15-point
+  planning pattern (20% P-only versus 5% R-only success); 40 clusters provide only 36.4%.
+- Alternatives: treat seeds or question paraphrases as independent; reuse the legacy 40-episode
+  calculation; lower the effect threshold after seeing outcomes; or claim a powered study from a
+  convenience cohort. Each would overstate effective sample size or introduce outcome-dependent
+  design.
+- Expected effect: protocol freeze is blocked on a genuinely varied, versioned geometry source and
+  demonstrated collection throughput. If the target is infeasible by the predeclared cutoff, the
+  paper becomes an honestly underpowered short/WIP result rather than an invalid full-paper claim.
