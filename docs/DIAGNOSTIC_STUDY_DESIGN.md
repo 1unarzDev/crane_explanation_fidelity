@@ -216,6 +216,12 @@ The blinded four-response packet raises the development inventory to 48 response
 and eight clusters; human annotation and adjudication remain `NOT_RUN`. Its paired governed data
 manifests are `diagnostic-motion-development-cm-002.*.json`.
 
+After output retention, future policy `bounded-diagnostic-language-v2` corrected that section-scope
+false negative: the exact raw candidate passes when its explicit `FollowPath` failure is read from
+decisive evidence, while mutations that omit `FollowPath` or claim Wait caused response recovery
+fail closed. This is post-hoc development tuning, not verifier-accuracy evidence. The archived v1
+rejection, deterministic final P, packet, and 12/12 observed fallback frequency remain unchanged.
+
 ## Other retained development cases at 2026-09-23
 
 - A retained unexpected land success now passes a false-premise-aware `not_triggered` check and has
