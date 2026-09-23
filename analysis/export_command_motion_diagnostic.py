@@ -321,6 +321,7 @@ def export(
             "nav2_repository_path": nav2_artifact["repository_path"],
         },
         "method_input": {
+            "diagnostic_computation_version": observation.computation_version,
             "accepted_goal_record_id": f"events.jsonl#line:{goal_line}",
             "action_result_record_id": f"events.jsonl#line:{result_line}",
             "goal_id": str(goal["goal_id"]),

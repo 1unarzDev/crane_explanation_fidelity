@@ -190,6 +190,22 @@ human annotation and adjudication still `NOT_RUN`. Independent scenario collecti
 freeze, and held-out evaluation remain `NOT_RUN`. The development thresholds are not frozen, and
 the three variants cannot be counted as separate scenario instances.
 
+A separately predeclared compensation scenario then applied the unchanged development thresholds
+to a transient command--motion discrepancy with a different terminal outcome. Its blind export
+contains 485 goal-bounded command samples and 2,232 independent odometry samples. An independent
+implementation reproduces the supported 8--18 s interval (0.800 m/s delivered command versus
+0.000 m/s measured response), the later 20--21 s recovery window (0.2597 m/s measured response,
+ratio 1.0), one FollowPath failure, one source-qualified Wait invocation, and eventual action
+success after 9.469 m displacement. The evaluator intervention identity remains excluded.
+
+This is one new independently configured **development** scenario, not a held-out or confirmatory
+result. Inspection of the first checked response exposed that the v1 plan reported only the
+terminal success and did not measure recovered response. The v2 recovery computation and improved
+answer were therefore developed post-observation and are regression evidence, not a prospective
+effectiveness estimate. No R/P/T/N calls or annotation packet have been created for this scenario,
+so the 44-response/seven-cluster annotation inventory above is unchanged. Its paired governed
+manifests are `diagnostic-motion-development-cm-002.*.json`.
+
 ## Other retained development cases at 2026-09-23
 
 - A retained unexpected land success now passes a false-premise-aware `not_triggered` check and has

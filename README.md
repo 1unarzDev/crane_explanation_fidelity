@@ -124,6 +124,12 @@ their own location. Exact repository commits and destinations are recorded in
   four-response packets. Tool-enabled R matched the unmasked P/T mechanism; on the mask, R/N
   preserved a supported positional failure chain that P/T omitted. P fell back to T in both cases.
   These are one episode cluster, unannotated, and not an effect estimate.
+- **TESTED (DIAGNOSTIC DEVELOPMENT ONLY):** a prospectively declared independent land scenario
+  records a sustained command--motion discrepancy, later measured-response recovery, and eventual
+  navigation success under unchanged development thresholds. The blind export and separate
+  reference agree; evaluator intervention identity remains excluded. The recovery-plan refinement
+  followed inspection of the first deficient answer, so this is post-observation regression
+  evidence with no model comparison or human label—not a confirmatory effect estimate.
 - **TESTED (SECONDARY-ARM DEVELOPMENT):** the provider-neutral model-call contract now has a
   Claude Code adapter as its first non-GPT instance. A predeclared control rejected Haiku and fixed
   `claude-sonnet-5` at low effort. See [model-family replication](docs/MODEL_FAMILY_REPLICATION.md).
@@ -254,7 +260,7 @@ Build the anonymous IEEE-format paper with the pinned toolchain:
 scripts/build_paper.sh
 ```
 
-This writes `output/pdf/main.pdf`. The current five-page manuscript remains a development draft
+This writes `output/pdf/main.pdf`. The current six-page manuscript remains a development draft
 with explicit red result gates; it is not a submission artifact until annotation, final analysis,
 and every pending marker are complete.
 

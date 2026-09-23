@@ -1021,3 +1021,24 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   validation. Only prospectively governed cases may enter the new study.
 - Validity protection: no RoboBoat source, scene, physics, vehicle, sensor, or Nav2 file changed.
   Any later narrow shared/capture change requires a measured non-regression and separate commit.
+
+## 2026-09-23 — retain successful compensation as post-observation development evidence
+
+- Decision: retain the prospectively declared compensated command--motion run as one new
+  development scenario, govern its blind export and separate evaluator truth, and do not treat its
+  revised recovery explanation as a prospective effectiveness result.
+- Evidence: unchanged development thresholds independently reproduce an 8--18 s sustained
+  delivered-command/measured-motion discrepancy, a later 20--21 s recovered-response window, one
+  FollowPath failure, one source-qualified Wait invocation, and eventual action success. The first
+  checked answer omitted a measured recovery comparison; v2 was implemented only after that
+  deficiency was observed.
+- Alternatives: retain only terminal success; silently present the v2 answer as prospective;
+  expose the evaluator hold/release identity; infer a unique execution cause; or immediately spend
+  model calls before governing the physical evidence. These would respectively under-explain the
+  outcome, misstate chronology, leak truth, overclaim causality, or weaken reproducibility.
+- RQ impact: the case shows that the diagnostic representation can distinguish the same supported
+  discrepancy from its later recovery and different outcome. It does not show P over tool-enabled
+  R, estimate verifier accuracy, or add an annotated cluster.
+- Next gate: obtain independent human annotation on the already prepared blinded inventory before
+  deciding whether another development packet has higher paper value than annotation, analysis,
+  figures, or manuscript completion.

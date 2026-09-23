@@ -1,0 +1,79 @@
+{
+  "schema": "crane-data-manifest-v1",
+  "artifact_id": "diagnostic-motion-development-cm-002-evaluator-only",
+  "status": "VALID_DEVELOPMENT_DIAGNOSTIC_SCENARIO_NOT_CONFIRMATORY",
+  "visibility": "evaluator_only",
+  "dvc_pointer": "data/evaluator_only/dev.dvc",
+  "artifacts": [
+    {
+      "path": "data/evaluator_only/dev/diagnostic-motion-development-cm-002/fixture-summary.json",
+      "sha256": "3f9881fed91e97ddecf389138eb68427f9112838cbbb92f3ad8cc2cf98fc1a2c",
+      "bytes": 884322,
+      "status": "RAW_FIXTURE_SUMMARY_EVALUATOR_ONLY"
+    },
+    {
+      "path": "data/evaluator_only/dev/diagnostic-motion-development-cm-002/worker-0/land-evaluator-truth.json",
+      "sha256": "486607245042e68bfdcaf51c0bccaf716206b60019301a7c2ded30475c4f4399",
+      "bytes": 1793,
+      "status": "INTERVENTION_TRUTH_NEVER_METHOD_VISIBLE"
+    },
+    {
+      "path": "data/evaluator_only/dev/diagnostic-reference-v1/land-command-motion-compensated-001/reference.json",
+      "sha256": "14139f08f47f9b757afe78c530960f710de699c6d037ae330567602916a9cb75",
+      "bytes": 1549,
+      "status": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_CONFIRMATORY"
+    },
+    {
+      "path": "data/evaluator_only/dev/diagnostic-reference-v1/land-command-motion-compensated-001/qa-summary.json",
+      "sha256": "91b65366a4a9da4ef4ce99d1a36fc310c22a46983270cab4f07e69357ccc4259",
+      "bytes": 1874,
+      "status": "PASSED"
+    }
+  ],
+  "declaration": {
+    "path": "research/explanation_fidelity/experiment_configs/development/command-motion-compensation-v1.json",
+    "sha256": "2e9b46b978c89399848689f01cfcd99366e5c515fb89775d719656b005ca28cc",
+    "declaration_commit": "b2d2470c1b01dea7c5a31a7235d2f5dcdb1eb370"
+  },
+  "implementation": {
+    "reference_path": "analysis/reference_command_motion.py",
+    "reference_sha256": "57336ba6dde8cc3a18cf2a770b100eba2a03bf7659af1ace00884690626defc1",
+    "qa_path": "analysis/summarize_command_motion_qa.py",
+    "qa_sha256": "00674ab2082302707df6a03ff43c22a970e5c4b7d591b886578f5102f1cef1b0",
+    "imports_proposed_diagnostic_core": false,
+    "imports_proposed_exporter": false
+  },
+  "admission": {
+    "recording_valid": true,
+    "fault_induction_succeeded": true,
+    "measured_response_recovery_succeeded": true,
+    "terminal_outcome_matched_declared_broad_outcome": true,
+    "all_independent_reference_values_match": true,
+    "leakage_token_audit_passed": true
+  },
+  "evaluator_truth": {
+    "mobility_hold_actual_simulation_time_s": 15.039994671201815,
+    "mobility_release_actual_simulation_time_s": 27.039990419501135,
+    "mobility_hold_observed": true,
+    "mobility_release_observed": true
+  },
+  "independent_findings": {
+    "supported_interval_s": [8.0, 18.0],
+    "median_commanded_planar_speed_mps": 0.8,
+    "median_healthy_measured_planar_speed_mps": 0.2597399950027466,
+    "median_discrepancy_measured_planar_speed_mps": 0.0,
+    "response_recovery_interval_s": [20.0, 21.0],
+    "recovered_measured_planar_speed_mps": 0.2597399950027466,
+    "recovered_response_ratio": 1.0,
+    "follow_path_failure_count": 1,
+    "source_qualified_wait_recovery_count": 1,
+    "unique_physical_cause_supported": false
+  },
+  "separation_rule": "Evaluator truth, intervention identity and timing, acquisition metadata, and independent reference findings must never be supplied to R, P, T, or N as robot-visible evidence.",
+  "allowed_use": "development admission/reference review and prospective protocol design only; never method-visible input and never confirmatory evidence",
+  "limitations": [
+    "This is one independently configured development scenario, not a held-out or confirmatory observation.",
+    "The independent computation is a separate implementation, not a human label.",
+    "The recovery-detection refinement followed inspection of the initial checked response and cannot be used as a prospective effectiveness estimate."
+  ]
+}

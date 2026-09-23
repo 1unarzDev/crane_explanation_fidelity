@@ -341,6 +341,14 @@ matched nominal run uses the same thresholds, succeeds after 9.480~m, records ne
 \texttt{not\_triggered}. Thus the checked answer rejects rather than merely qualifies the false
 failure premise.
 
+A separately predeclared development scenario exercises the same computation with successful
+compensation. Under unchanged thresholds, independent implementations identify an 8--18~s
+discrepancy (0.800~m/s delivered command and 0.000~m/s measured response), followed by a
+20--21~s command-active window with recovered 0.2597~m/s response and eventual action success.
+The evaluator intervention remains hidden. Because the recovery-window computation was added only
+after the first checked answer failed to quantify recovery, this result is post-observation method
+development, not a prospective effect estimate; it has no model comparison or human label.
+
 The no-retry R/P/T/N comparison gives R the blind samples, pinned repositories, and the same
 executable window computation as P. On project review, R and raw P identify the supported
 discrepancy; N can only call it suggested without time alignment. R, raw P, and N all reject the

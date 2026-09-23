@@ -1,0 +1,105 @@
+{
+  "schema": "crane-data-manifest-v1",
+  "artifact_id": "diagnostic-motion-development-cm-002",
+  "status": "VALID_DEVELOPMENT_DIAGNOSTIC_SCENARIO_NOT_CONFIRMATORY",
+  "visibility": "robot_visible",
+  "dvc_pointer": "data/robot_visible/dev.dvc",
+  "artifacts": [
+    {
+      "path": "data/robot_visible/dev/diagnostic-motion-development-cm-002/capture/events.jsonl",
+      "sha256": "4cb26025c2403349ecc0a907daa3169822576c420c303c6ae03986a9cc65763c",
+      "bytes": 3167443,
+      "status": "RAW_ROBOT_VISIBLE_CAPTURE"
+    },
+    {
+      "path": "data/robot_visible/dev/diagnostic-motion-development-cm-002/capture/manifest.json",
+      "sha256": "cd07d56c308af812ab08ec1c691518e315860beb9e29d296a2635436d3597e56",
+      "bytes": 845,
+      "status": "CAPTURE_MANIFEST"
+    },
+    {
+      "path": "data/robot_visible/dev/diagnostic-motion-development-cm-002/capture/runtime_manifest.json",
+      "sha256": "bffa8d0829de423fbde391125609d0798c622c6656fb51dcf576bdb0d5b04072",
+      "bytes": 5005,
+      "status": "RUNTIME_SOURCE_PROVENANCE"
+    },
+    {
+      "path": "data/robot_visible/dev/diagnostic-motion-development-cm-002/capture/behavior_tree.xml",
+      "sha256": "14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+      "bytes": 1113,
+      "status": "EXACT_RUNTIME_BT_POLICY"
+    },
+    {
+      "path": "data/robot_visible/dev/diagnostic-pilot-v1/land-command-motion-compensated-001/evidence-and-diagnostic.json",
+      "sha256": "e09b3a48c8f122f0b8421999406252eea64e4c33a01608c9ed4b6d327aae9436",
+      "bytes": 392824,
+      "status": "CURRENT_CHECKED_DETERMINISTIC_RENDERING"
+    }
+  ],
+  "declaration": {
+    "path": "research/explanation_fidelity/experiment_configs/development/command-motion-compensation-v1.json",
+    "sha256": "2e9b46b978c89399848689f01cfcd99366e5c515fb89775d719656b005ca28cc",
+    "declared_at": "2026-09-23T03:03:39-05:00",
+    "declaration_commit": "b2d2470c1b01dea7c5a31a7235d2f5dcdb1eb370"
+  },
+  "implementation": {
+    "exporter_path": "analysis/export_command_motion_diagnostic.py",
+    "exporter_sha256": "84b75fff2b474e93c705463742ec3340a570b45a8cfe9bc1a8ba7be18a08b826",
+    "diagnostic_core_path": "packages/astro_dock/src/crane_explain/src/crane_explain/diagnostics.py",
+    "diagnostic_core_sha256": "7dd28ace773cbd7c335ffc1a7b7dec8c58d5ebbbe6c3b6828c4f0caaff4d6ecd",
+    "diagnostic_core_commit": "f131b9b042c42e269dcc7c646e93fc6eb5433d49"
+  },
+  "source_references": {
+    "events_sha256": "4cb26025c2403349ecc0a907daa3169822576c420c303c6ae03986a9cc65763c",
+    "capture_manifest_sha256": "cd07d56c308af812ab08ec1c691518e315860beb9e29d296a2635436d3597e56",
+    "runtime_manifest_sha256": "bffa8d0829de423fbde391125609d0798c622c6656fb51dcf576bdb0d5b04072",
+    "bt_policy_sha256": "14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+    "nav2_config_sha256": "3851544a099b4d3ed48e54ffd6140c51971d8e9f902a6ff78048a4a71bccf0c3",
+    "crane_ml_commit": "6bf057b5acf1763eeca1b81be6530cd218a5405b",
+    "astro_dock_commit": "36202373ae186a8fd247a20b7b477312a744de99",
+    "capture_umbrella_commit": "b2d2470c1b01dea7c5a31a7235d2f5dcdb1eb370",
+    "crane_explain_ros_commit": "fc957a172967a849d677e467bcf09b344de581a1"
+  },
+  "admission": {
+    "recording_valid": true,
+    "transient_discrepancy_supported": true,
+    "measured_response_recovery_supported": true,
+    "successful_outcome": true,
+    "independent_reference_parity_passed": true,
+    "final_text_verification_accepted": true,
+    "statistical_status": "ONE_NEW_DEVELOPMENT_SCENARIO_CLUSTER_NOT_CONFIRMATORY"
+  },
+  "observed_result": {
+    "action_status": "succeeded",
+    "action_wall_time_s": 50.260009174002334,
+    "displacement_m": 9.46871566772461,
+    "goal_bounded_command_samples": 485,
+    "goal_bounded_odometry_samples": 2232,
+    "discrepancy_interval_s": [8.0, 18.0],
+    "median_commanded_speed_mps": 0.8,
+    "median_measured_speed_mps": 0.0,
+    "response_recovery_interval_s": [20.0, 21.0],
+    "recovered_measured_speed_mps": 0.2597399950027466,
+    "follow_path_failure_count": 1,
+    "source_qualified_wait_recovery_count": 1
+  },
+  "recovery_classifier_basis": {
+    "classifier_basis": "retained_bt_recovery_child_exact_node_name",
+    "classifier_rule": "Wait:IDLE->RUNNING",
+    "tree_path": "RecoveryNode/recovery_child/Sequence/Wait",
+    "policy_sha256": "14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520"
+  },
+  "method_boundary": {
+    "permitted_input": "only the blind evidence-and-diagnostic export, or its declared method_input projection, may be supplied to explanation methods",
+    "acquisition_identifier_stripped": true,
+    "evaluator_intervention_identity_stripped": true,
+    "command_delivery_proves_actuator_acceptance": false,
+    "odometry_delivery_proves_nav2_consumption": false
+  },
+  "allowed_use": "development diagnostic and response-quality review, annotation-pilot preparation, and prospective-study design only; not held-out or confirmatory evidence",
+  "limitations": [
+    "The recovery measurement was added after inspecting the first checked response, so it is post-observation development evidence rather than a prospective effectiveness result.",
+    "The supported mechanism is a command-to-motion discrepancy followed by recovered measured response, not a unique motor, slip, collision, obstruction, or intervention attribution.",
+    "The deterministic final answer passed exact verification; no model-generated answer or independent human annotation is included."
+  ]
+}

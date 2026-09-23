@@ -94,6 +94,14 @@ def build_result(payload: dict[str, Any]) -> dict[str, Any]:
     method = payload["method_input"]
     config = method["windowing"]
     sequence = method["execution_sequence"]
+    computation_version = str(
+        method.get("diagnostic_computation_version", "command-motion-discrepancy-v1")
+    )
+    if computation_version not in {
+        "command-motion-discrepancy-v1",
+        "command-motion-discrepancy-v2",
+    }:
+        raise ValueError("unsupported command-motion computation version")
     hashes = {
         "events": str(source["events_sha256"]),
         "runtime-manifest": str(source["runtime_manifest_sha256"]),
@@ -143,6 +151,7 @@ def build_result(payload: dict[str, Any]) -> dict[str, Any]:
             f"bt-policy-sha256:{hashes['bt-policy']}",
             f"nav2-config-sha256:{hashes['nav2-config']}",
         ),
+        computation_version=computation_version,
     )
     result = diagnose_command_motion_discrepancy(observation)
     answer = render_diagnostic(result)

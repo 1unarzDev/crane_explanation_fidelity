@@ -82,6 +82,22 @@ answer therefore leads with the false failure premise and returns `not_triggered
 reference and QA also pass. This is still repeated development calibration, not another independent
 cluster. Its manifests are `diagnostic-motion-dev-cm-nominal-001.*.json`.
 
+A predeclared, independently configured development scenario tests the same mechanism with
+successful compensation. The unchanged thresholds identify an 8--18 s discrepancy with median
+0.800 m/s delivered command and 0.000 m/s measured response. A later command-active 20--21 s
+window records 0.2597 m/s measured response (ratio 1.0), after which the action succeeds at
+9.469 m displacement. The retained execution includes one FollowPath failure and one
+source-qualified Wait invocation. This supports **transient command--motion discrepancy followed
+by recovered measured response**, while continuing to withhold actuator acceptance, Nav2 odometry
+consumption, intervention identity, and any unique motor/slip/collision/obstruction cause.
+
+The initial checked response merely appended the successful terminal status and did not quantify
+recovery. The v2 recovery-window computation and revised deterministic response were added only
+after that deficiency was observed. They are therefore post-observation development and regression
+evidence, not a prospective method-effect result. The scenario has no model calls or human labels.
+Robot-visible and evaluator-only artifacts are governed separately by
+`manifests/data/diagnostic-motion-development-cm-002.*.json`.
+
 ### Perception/model inconsistency
 
 Add only after the first two mechanisms work end to end. Compare sensor timestamps/transforms and

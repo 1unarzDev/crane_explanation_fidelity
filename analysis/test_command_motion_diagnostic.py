@@ -5,7 +5,7 @@ import pytest
 
 from export_command_motion_diagnostic import export
 from reference_command_motion import calculate
-from summarize_command_motion_qa import summarize
+from summarize_command_motion_qa import INDEPENDENT_DEVELOPMENT_STATUS, summarize
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -39,6 +39,14 @@ NOMINAL_REFERENCE = (
     / "diagnostic-reference-v1"
     / "land-command-motion-nominal-001"
     / "reference.json"
+)
+COMPENSATED_CAPTURE = (
+    ROOT
+    / "data"
+    / "robot_visible"
+    / "dev"
+    / "diagnostic-motion-development-cm-002"
+    / "capture"
 )
 
 
@@ -97,6 +105,47 @@ def test_independent_reference_recomputes_supported_interval():
     assert reference["result"]["discrepancy_measured_planar_speed_mps"] == pytest.approx(
         measurements["discrepancy_measured_planar_speed"]
     )
+
+
+def test_independent_reference_recomputes_post_discrepancy_response_recovery(tmp_path: Path):
+    payload = export(
+        COMPENSATED_CAPTURE / "events.jsonl",
+        COMPENSATED_CAPTURE / "manifest.json",
+        COMPENSATED_CAPTURE / "runtime_manifest.json",
+        COMPENSATED_CAPTURE / "behavior_tree.xml",
+        NAV2_CONFIG,
+        episode_id="diagnostic-motion-dev-cm-compensated-001",
+    )
+    reference = calculate(payload)
+    measurements = {
+        item["id"]: item["value"] for item in payload["diagnostic_result"]["measurements"]
+    }
+
+    assert payload["method_input"]["action_status"] == "succeeded"
+    assert payload["diagnostic_result"]["disposition"] == "supported"
+    assert reference["result"]["disposition"] == "supported"
+    assert reference["result"]["interval_s"] == [8.0, 18.0]
+    assert reference["result"]["response_recovery_interval_s"] == [20.0, 21.0]
+    assert reference["result"]["recovered_measured_planar_speed_mps"] == pytest.approx(
+        measurements["recovered_measured_planar_speed"]
+    )
+    assert reference["result"]["recovered_response_ratio"] == pytest.approx(
+        measurements["recovered_response_ratio"]
+    )
+    assert "response recovered" in reference["allowed_conclusion"]
+    serialized = json.dumps(payload).lower()
+    assert "mobility hold" not in serialized
+    assert "mobility release" not in serialized
+
+    export_path = tmp_path / "export.json"
+    reference_path = tmp_path / "reference.json"
+    export_path.write_text(json.dumps(payload), encoding="utf-8")
+    reference_path.write_text(json.dumps(reference), encoding="utf-8")
+    qa = summarize(export_path, reference_path, INDEPENDENT_DEVELOPMENT_STATUS)
+    assert qa["status"] == INDEPENDENT_DEVELOPMENT_STATUS
+    assert qa["checks"]["all_reference_values_match"]
+    assert qa["response_recovery_interval_s"] == [20.0, 21.0]
+    assert "independently configured development scenario" in qa["limitations"][0]
 
 
 def test_runtime_source_hash_mismatch_is_rejected(tmp_path: Path):

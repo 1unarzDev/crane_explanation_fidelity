@@ -10,11 +10,28 @@ from pathlib import Path
 from typing import Any
 
 
+INSTRUMENTATION_STATUS = (
+    "VALID_DEVELOPMENT_INSTRUMENTATION_QUALIFICATION_NOT_INDEPENDENT_SCENARIO"
+)
+INDEPENDENT_DEVELOPMENT_STATUS = (
+    "VALID_DEVELOPMENT_DIAGNOSTIC_SCENARIO_NOT_CONFIRMATORY"
+)
+
+
 def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def summarize(export_path: Path, reference_path: Path) -> dict[str, Any]:
+def summarize(
+    export_path: Path,
+    reference_path: Path,
+    qualification_status: str = INSTRUMENTATION_STATUS,
+) -> dict[str, Any]:
+    if qualification_status not in {
+        INSTRUMENTATION_STATUS,
+        INDEPENDENT_DEVELOPMENT_STATUS,
+    }:
+        raise ValueError("unsupported command-motion QA qualification status")
     export = json.loads(export_path.read_text(encoding="utf-8"))
     reference = json.loads(reference_path.read_text(encoding="utf-8"))
     if export.get("schema") != "crane-command-motion-diagnostic-export-v1":
@@ -58,6 +75,22 @@ def summarize(export_path: Path, reference_path: Path) -> dict[str, Any]:
                 < 1e-12,
             }
         )
+        reference_recovery = ref.get("recovered_measured_planar_speed_mps")
+        if reference_recovery is not None:
+            parity.update(
+                {
+                    "recovered_measured_planar_speed_mps": abs(
+                        float(measurements["recovered_measured_planar_speed"])
+                        - float(reference_recovery)
+                    )
+                    < 1e-12,
+                    "recovered_response_ratio": abs(
+                        float(measurements["recovered_response_ratio"])
+                        - float(ref["recovered_response_ratio"])
+                    )
+                    < 1e-12,
+                }
+            )
     else:
         parity["discrepancy_commanded_planar_speed_mps"] = (
             ref["discrepancy_commanded_planar_speed_mps"] is None
@@ -103,7 +136,7 @@ def summarize(export_path: Path, reference_path: Path) -> dict[str, Any]:
     return {
         "schema": "crane-command-motion-development-qa/v1",
         "status": (
-            "VALID_DEVELOPMENT_INSTRUMENTATION_QUALIFICATION_NOT_INDEPENDENT_SCENARIO"
+            qualification_status
             if all(checks.values())
             else "FAILED_QA"
         ),
@@ -115,8 +148,13 @@ def summarize(export_path: Path, reference_path: Path) -> dict[str, Any]:
         "leakage_token_audit": leakage_tokens,
         "sample_counts": reference["sample_counts"],
         "supported_interval_s": ref["interval_s"],
+        "response_recovery_interval_s": ref.get("response_recovery_interval_s"),
         "limitations": [
-            "This rerun qualifies instrumentation and is not an independent scenario cluster.",
+            (
+                "This is one independently configured development scenario; it is not confirmatory or held out."
+                if qualification_status == INDEPENDENT_DEVELOPMENT_STATUS
+                else "This rerun qualifies instrumentation and is not an independent scenario cluster."
+            ),
             "The independent computation is a separate implementation, not a human label.",
             (
                 "The supported discrepancy does not identify its unique physical cause."
@@ -133,8 +171,13 @@ def main() -> None:
     parser.add_argument("--export", required=True, type=Path)
     parser.add_argument("--reference", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
+    parser.add_argument(
+        "--qualification-status",
+        choices=(INSTRUMENTATION_STATUS, INDEPENDENT_DEVELOPMENT_STATUS),
+        default=INSTRUMENTATION_STATUS,
+    )
     args = parser.parse_args()
-    payload = summarize(args.export, args.reference)
+    payload = summarize(args.export, args.reference, args.qualification_status)
     if payload["status"] == "FAILED_QA":
         raise RuntimeError("command-motion development artifact failed QA")
     args.output.parent.mkdir(parents=True, exist_ok=True)

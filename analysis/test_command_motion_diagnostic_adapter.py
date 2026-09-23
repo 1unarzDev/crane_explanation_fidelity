@@ -10,6 +10,7 @@ from recompute_command_motion_diagnostic import build_result, method_input_from_
 ROOT = Path(__file__).resolve().parents[1]
 HELD = ROOT / "data/robot_visible/dev/diagnostic-pilot-v1/land-command-motion-001/evidence-and-diagnostic.json"
 NOMINAL = ROOT / "data/robot_visible/dev/diagnostic-pilot-v1/land-command-motion-nominal-001/evidence-and-diagnostic.json"
+COMPENSATED = ROOT / "data/robot_visible/dev/diagnostic-pilot-v1/land-command-motion-compensated-001/evidence-and-diagnostic.json"
 
 
 @pytest.mark.parametrize(
@@ -48,3 +49,25 @@ def test_recompute_rejects_recovery_policy_hash_mismatch():
 
     with pytest.raises(ValueError, match="policy hash"):
         build_result(changed)
+
+
+def test_recomputed_v2_input_preserves_recovered_response_result():
+    export = json.loads(COMPENSATED.read_text(encoding="utf-8"))
+    method_input = method_input_from_export(export)
+
+    assert (
+        method_input["method_input"]["diagnostic_computation_version"]
+        == "command-motion-discrepancy-v2"
+    )
+    recomputed = build_result(method_input)
+    assert recomputed["diagnostic_result"] == export["diagnostic_result"]
+    assert recomputed["final_answer"] == export["final_answer"]
+
+
+def test_recompute_rejects_unknown_computation_version():
+    export = json.loads(COMPENSATED.read_text(encoding="utf-8"))
+    method_input = method_input_from_export(export)
+    method_input["method_input"]["diagnostic_computation_version"] = "v999"
+
+    with pytest.raises(ValueError, match="unsupported command-motion computation version"):
+        build_result(method_input)

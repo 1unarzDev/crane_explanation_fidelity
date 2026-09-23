@@ -76,6 +76,7 @@ def calculate(export: dict[str, Any]) -> dict[str, Any]:
     healthy_speed = None
     healthy_command = None
     selected_run = []
+    recovery_window = None
     if len(calibration) == calibration_count:
         healthy_speed = statistics.median(
             window["median_measured_planar_speed_mps"] for window in calibration
@@ -110,6 +111,18 @@ def calculate(export: dict[str, Any]) -> dict[str, Any]:
                 # post-recovery segment must not move the diagnosed onset after the failures.
                 selected_run = sorted(runs, key=lambda run: run[0]["index"])[0]
                 disposition = "supported"
+                recovery_window = next(
+                    (
+                        window
+                        for window in eligible
+                        if window["index"] > selected_run[-1]["index"]
+                        and window["median_measured_planar_speed_mps"]
+                        >= float(config["minimum_healthy_measured_speed_mps"])
+                        and window["median_measured_planar_speed_mps"] / healthy_speed
+                        > float(config["maximum_discrepancy_response_ratio"])
+                    ),
+                    None,
+                )
             else:
                 disposition = "not_triggered"
 
@@ -125,6 +138,11 @@ def calculate(export: dict[str, Any]) -> dict[str, Any]:
             window["median_measured_planar_speed_mps"] for window in selected_run
         )
         if selected_run
+        else None
+    )
+    recovered_motion = (
+        recovery_window["median_measured_planar_speed_mps"]
+        if recovery_window is not None
         else None
     )
     sequence = method["execution_sequence"]
@@ -158,6 +176,17 @@ def calculate(export: dict[str, Any]) -> dict[str, Any]:
                 if selected_run
                 else None
             ),
+            "recovered_measured_planar_speed_mps": recovered_motion,
+            "recovered_response_ratio": (
+                recovered_motion / healthy_speed
+                if recovered_motion is not None and healthy_speed
+                else None
+            ),
+            "response_recovery_interval_s": (
+                [recovery_window["start_offset_s"], recovery_window["end_offset_s"]]
+                if recovery_window is not None
+                else None
+            ),
             "follow_path_failure_count": int(sequence["follow_path_failure_count"]),
             "follow_path_attempt_count": int(sequence["follow_path_attempt_count"]),
             "source_qualified_wait_recovery_count": int(
@@ -165,7 +194,11 @@ def calculate(export: dict[str, Any]) -> dict[str, Any]:
             ),
         },
         "allowed_conclusion": (
-            "A sustained delivered-command/measured-motion discrepancy is supported; its unique physical cause is unresolved."
+            (
+                "A sustained delivered-command/measured-motion discrepancy is supported, and a later command-active window shows that measured response recovered; its unique physical cause is unresolved."
+                if recovery_window is not None
+                else "A sustained delivered-command/measured-motion discrepancy is supported; its unique physical cause is unresolved."
+            )
             if disposition == "supported"
             else "No supported command-to-motion diagnosis is established by this computation."
         ),

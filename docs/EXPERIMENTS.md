@@ -3183,3 +3183,46 @@
   scenario or held-out observation. It demonstrates the intended specificity boundary and an
   answer-plan/language regression only; independent labels and prospective evaluation remain
   required.
+
+## 2026-09-23 — command-motion successful-compensation development scenario
+
+- **STATUS:** `RUN / RETAINED / GOVERNED / DEVELOPMENT_ONLY_NOT_CONFIRMATORY`; R/P/T/N model calls,
+  blinded packet construction, human annotation, and adjudication remain `NOT_RUN`.
+- **PREDECLARATION:** `command-motion-compensation-v1.json` was committed as `b2d2470` before the
+  physical run. It fixed one run, seed 84103, a 10 m goal, the already selected development
+  thresholds, a transient evaluator-owned mobility interruption/release, admission gates, and
+  prohibited causal claims. Declaration SHA-256 is
+  `2e9b46b978c89399848689f01cfcd99366e5c515fb89775d719656b005ca28cc`.
+- **RUN:** acquisition `diagnostic-motion-development-cm-002`, ROS domain 112, TCP port 11312,
+  CRANE `6bf057b`, astro_dock `3620237`, hash-proven worker build. NavigateToPose succeeded in
+  50.260 s after 9.469 m displacement. The fixture retained 477 commands and 2,511 odometry
+  messages; the goal-bounded blind export retains 485 command and 2,232 odometry samples.
+- **EVALUATOR TRUTH:** the declared mobility hold and release occurred at simulation times
+  15.0399946712 s and 27.0399904195 s. These identities/times remain evaluator-only and are not
+  method input.
+- **INDEPENDENT RESULT:** both implementations identify the earliest sustained discrepancy at
+  8--18 s: median command 0.800 m/s, calibrated healthy measured response 0.259739995 m/s, and
+  discrepancy response 0.000 m/s. The first later qualifying command-active window is 20--21 s,
+  with recovered measured response 0.259739995 m/s and ratio 1.0. One FollowPath failure and one
+  source-qualified Wait invocation precede eventual action success.
+- **POST-OBSERVATION DEVELOPMENT:** the first checked response detected the discrepancy but only
+  appended the terminal success. After inspecting that deficiency, core commit `6e3f2c9` added a
+  bounded recovery-window computation and revised deterministic rendering/verification. A broad
+  regression then exposed that the new default changed archived v1 computation metadata;
+  `f131b9b` restored explicit v1/v2 behavior and fail-closed version selection without rewriting
+  old outputs. These are regression changes, not prospective evidence of method effectiveness; the
+  physical run itself and unchanged discrepancy thresholds remain as predeclared.
+- **BOUNDARY:** no result identifies actuator acceptance, Nav2 consumption of delivered odometry,
+  the evaluator intervention, or a unique motor, slip, collision, obstruction, or other physical
+  cause. No model call was made or authorized by the declaration.
+- **GOVERNANCE:** paired manifests
+  `manifests/data/diagnostic-motion-development-cm-002.{robot-visible,evaluator-only}.json` record
+  exact file, implementation, source, and declaration hashes. Raw capture and checked export are
+  under robot-visible development DVC; truth, independent reference, and QA remain physically
+  separate under evaluator-only development DVC. No frozen F/G/H artifact changed.
+- **REGRESSION / PAPER QA:** the combined umbrella/analysis/core suite passes 233 tests; the frozen
+  integrity subset separately passes 8 tests; both DVC roots are synchronized with remote `r2`.
+  The anonymous paper builds as six letter-size pages. All pages were rendered at 130 dpi and
+  visually inspected with no clipping, overlap, broken glyph, or table overflow. The intentionally
+  pending results remain visible. The ignored PDF is 69,929 bytes with SHA-256
+  `0ccc2a85a8e2e09f17e13f46334f71b7b64f40f19ce3e90ec58508ff84c0b53f`.
