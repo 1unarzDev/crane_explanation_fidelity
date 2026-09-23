@@ -1109,3 +1109,35 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   development tuning, not an independent verifier-accuracy result. The archived v1 rejection,
   deterministic fallback, annotation packet, and aggregate 12/12 development fallback frequency
   remain immutable.
+
+## 2026-09-23 — retain delivered-plan comparison as a negative differentiation case
+
+- Decision: retain the predeclared no-retry R/P/T/N plan-change comparison as one distinct
+  development cluster, build its blinded packet, and do not rerun or replace any condition after
+  project review.
+- Evidence: independent pre-model recomputation verifies 70 unique delivered plans and their
+  geometry. Tool-enabled R closely matches the checked mechanism and limits; N adds stronger
+  plan-following and distance-trigger language; raw P is substantively aligned but the operating
+  lexical gate rejects it and final P falls back to T. None of these observations is a human label.
+- Alternatives: omit the case because R performs well; rerun P after relaxing the verifier; deny R
+  the executable tool; or score the outputs by author judgment. Those choices would selectively
+  discard a negative result, resample, create an unfair baseline, or bypass blinded evaluation.
+- RQ impact: the case validates useful recorded route-change communication and causal restraint,
+  but supplies no evidence that P exceeds a fair tool-enabled R. It raises the development inventory
+  to 52 responses over nine clusters; annotation, adjudication, and inferential analysis remain
+  required before any comparative claim.
+
+## 2026-09-23 — correct future route-change matching without rewriting the pilot
+
+- Decision: version the bounded language policy as v3 and accept `route change` as a valid
+  delivered-route-change proposition. Preserve the pilot's v2 rejection, deterministic final P,
+  packet, and aggregate 13/13 fallback frequency.
+- Evidence: the archived raw P diagnosis says `route change from an initially direct plan to later
+  non-direct plans` and preserves all required measurements and limits. V2 rejects only because it
+  matches `successful route change` or `plan change`. An exact-candidate regression now passes,
+  while a mutation deleting the controller-consumption qualification fails.
+- Alternatives: keep the known false negative; accept any mention of a route anywhere; edit the
+  archived candidate; or rerun P. The chosen diagnosis-section phrase expansion is the narrowest
+  change that removes the false negative without weakening the other mechanism gates.
+- Validity protection: this is post-hoc development tuning, not independent verifier-accuracy or
+  method-effect evidence. No archived answer, packet, key, annotation unit, or model call changed.

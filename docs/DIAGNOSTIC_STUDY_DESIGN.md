@@ -222,6 +222,25 @@ decisive evidence, while mutations that omit `FollowPath` or claim Wait caused r
 fail closed. This is post-hoc development tuning, not verifier-accuracy evidence. The archived v1
 rejection, deterministic final P, packet, and 12/12 observed fallback frequency remain unchanged.
 
+### Delivered-plan development extension
+
+One separately predeclared no-retry land run qualified independently auditable delivered-plan
+geometry. The first instrumentation attempt remains a partial result because it discarded the
+poses needed to reproduce its summaries. The corrected run retained 12,975 poses across 70 unique
+plans; an independent implementation reproduced every hash, length, and deviation without
+mismatch. It supports an initially direct delivered plan, later non-direct plans spanning
+-1.175 m to +1.035 m, delivered-odometry deviation, and action success. It does not support
+controller consumption, a physical trigger, or costmap-to-plan causation.
+
+A prospectively declared one-shot R/P/T/N comparison asked only for the supported route change,
+outcome, and unresolved trigger. Tool-enabled R received the same complete fixture, source, and
+executable v2 computation as P. Project review finds R matches the checked answer closely; N uses
+stronger plan-following and approximately-per-metre update language; raw P is aligned but the fixed
+verifier rejects `route change from` under a narrower lexical matcher and final P falls back to T.
+These are not labels. The packet raises the development inventory to 52 responses, thirteen
+packets, and nine clusters, with human annotation/adjudication, protocol freeze, held-out
+collection, and inference still `NOT_RUN`. Aggregate immutable fallback is 13/13.
+
 ## Other retained development cases at 2026-09-23
 
 - A retained unexpected land success now passes a false-premise-aware `not_triggered` check and has

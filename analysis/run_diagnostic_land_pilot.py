@@ -229,7 +229,7 @@ def run(args: argparse.Namespace, caller=None) -> dict:
         workspace_identity={
             "condition": "P",
             "diagnostic_sha256": sha256(diagnostic_path),
-            "bounded_verifier": "bounded-diagnostic-language-v2",
+            "bounded_verifier": "bounded-diagnostic-language-v3",
             **repository_identity,
         },
     )

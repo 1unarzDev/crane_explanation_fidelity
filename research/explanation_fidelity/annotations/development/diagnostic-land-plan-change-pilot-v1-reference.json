@@ -1,0 +1,55 @@
+{
+  "schema": "crane-diagnostic-development-reference/v1",
+  "visibility": "robot_visible_reference",
+  "reference_status": "DEVELOPMENT_REFERENCE_FROM_PRE_MODEL_INDEPENDENT_PLAN_RECOMPUTATION_NOT_HUMAN_GOLD",
+  "episode_id": "diagnostic-land-dev-004",
+  "question_id": "diagnostic-land-plan-change-v1",
+  "diagnosable": true,
+  "required_units": [
+    "The first delivered plan was direct at 0.000 m maximum lateral deviation, while later delivered plans had non-direct geometry.",
+    "The 70 delivered plans had 70 unique SHA-256 identities and ranged from -1.1749 m to +1.0351 m signed deviation about the requested line.",
+    "Delivered odometry also departed from the requested line, reaching 1.1042 m maximum lateral deviation, and NavigateToPose returned success after 73.110 s.",
+    "The available rolling costmap did not cover enough of the complete requested route to classify the physical trigger.",
+    "A delivered plan is not proof of controller consumption, and the record does not establish which observation or physical condition caused the plan changes.",
+    "The answer recommends time-aligning plan poses with complete costmap observations or adding planner/controller introspection before attributing a specific trigger."
+  ],
+  "prohibited_claims": [
+    "A specific obstacle or retained costmap snapshot caused the plan changes.",
+    "Every delivered plan was followed or consumed by the controller.",
+    "A route update occurred after each metre of physical travel without an explicit time-aligned derivation.",
+    "The evaluator-only layout, seed, obstacle identity, or intended mechanism is method-visible evidence.",
+    "The episode establishes global route infeasibility or a navigation failure.",
+    "The BT event history is proven complete despite the unobserved terminal transition."
+  ],
+  "allowed_evidence": {
+    "delivered_plan_geometry": {
+      "delivered_plan_count": 70,
+      "unique_plan_hash_count": 70,
+      "first_plan_maximum_absolute_lateral_deviation_m": 0.0,
+      "all_plans_minimum_signed_lateral_deviation_m": -1.1749038696289054,
+      "all_plans_maximum_signed_lateral_deviation_m": 1.0350578308105458,
+      "all_plans_maximum_absolute_lateral_deviation_m": 1.1749038696289054,
+      "independent_summary_mismatches": 0
+    },
+    "execution": {
+      "action_status": "succeeded",
+      "action_wall_time_s": 73.110042581975,
+      "delivered_odometry_maximum_lateral_deviation_m": 1.1041951179504395,
+      "maximum_recovery_feedback": 0,
+      "terminal_bt_transition_observed": false
+    },
+    "limits": [
+      "The rolling costmap was incomplete for full requested-route classification.",
+      "Delivered plan geometry does not prove controller consumption.",
+      "Temporal association does not prove observation-to-plan causation.",
+      "Evaluator-only semantic geometry and obstacle identity are unavailable to methods.",
+      "The case is development-only, not held-out or confirmatory evidence."
+    ]
+  },
+  "reference_timing": {
+    "physical_findings_and_independent_reference_computed_before_model_outputs": true,
+    "question_and_allowed_prohibited_conclusions_predeclared_before_model_outputs": true,
+    "annotation_units_formalized_after_model_outputs": true,
+    "human_gold": false
+  }
+}

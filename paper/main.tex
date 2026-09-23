@@ -322,6 +322,20 @@ planner failures remain unresolved. Tool-enabled R matched this account on proje
 N lacked the validated planner-failure/eligibility linkage. P again fell back to T, bringing the
 development fallback rate to 8/8. No response in this development inventory has a human label.
 
+We also closed a path-evidence blind spot with one predeclared, no-retry instrumentation
+qualification. The first attempt retained only path hashes and extrema and therefore failed its
+independent-recomputation gate; it was preserved rather than rerun. The corrected run retained
+12,975 poses across 70 unique delivered plans. A separate implementation reproduced every path
+hash, length, and deviation without mismatch: the first plan was direct, later plans ranged from
+$-1.175$ to $+1.035$~m about the requested line, delivered odometry deviated by 1.104~m, and the
+action succeeded. Because the rolling costmap did not cover the complete route, the checked
+answer reports recorded plan change but withholds its physical trigger and controller consumption.
+In the predeclared R/P/T/N comparison, tool-enabled R again matched that diagnosis on project
+review. Raw P was substantively aligned but a lexical false negative in the fixed verifier caused
+fallback to T; N additionally asserted that delivered paths were followed and that updates occurred
+after approximately each metre without a retained time-aligned derivation. These observations await
+blinded scoring and provide no P-over-R effect claim.
+
 \section{Development Case: Command--Motion Discrepancy}
 
 We next qualified synchronized command and independently delivered odometry evidence on a
@@ -377,9 +391,10 @@ unchanged. This ambiguity case is not scored as a failed supported diagnosis.
 
 The supported, nominal, and missing-odometry packets contain 12 blinded responses but form one
 paired/masked cluster. The compensated run adds one distinct four-response development cluster.
-The complete diagnostic development inventory therefore contains 48 responses in 12 packets over
-eight clusters, all awaiting independent annotation and adjudication. None is a held-out result.
-Immutable final P fallback is 12/12 development questions overall.
+The delivered-plan run adds one distinct four-response cluster. The complete diagnostic development
+inventory therefore contains 52 responses in 13 packets over nine clusters, all awaiting
+independent annotation and adjudication. None is a held-out result. Immutable final P fallback is
+13/13 development questions overall.
 
 \section{Results}
 

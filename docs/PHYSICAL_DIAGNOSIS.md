@@ -159,9 +159,13 @@ missing-measurement limitation. Because the verifier and mutations were authored
 these candidates, this is a development regression result—not an independent estimate of verifier
 accuracy and not a retroactive change to any archived final response or fallback decision.
 
-The current future-execution policy is `bounded-diagnostic-language-v2`. The version change records
-a post-hoc section-scope correction exposed by the compensated-motion output; historical v1
-outputs remain identified by their retained core commit and verification policy.
+The current future-execution policy is `bounded-diagnostic-language-v3`. Version v2 records the
+post-hoc section-scope correction exposed by the compensated-motion output. V3 adds `route change`
+to the delivered-plan proposition matcher after the plan-change pilot exposed a narrower lexical
+false negative; the exact archived candidate passes after citation-only repair while a mutation
+that removes the controller-consumption limit still fails. Historical v1/v2 outputs remain
+identified by their retained core commit and verification policy, and their fallback decisions are
+unchanged.
 
 ## Signal semantics
 

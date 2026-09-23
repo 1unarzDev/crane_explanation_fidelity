@@ -1,0 +1,38 @@
+{
+  "schema": "crane-explain-annotation-packet-manifest/v1",
+  "status": "DEVELOPMENT_DRY_RUN_AWAITING_TWO_HUMAN_ANNOTATORS",
+  "study": "prospective-physical-diagnosis-development",
+  "packet": {
+    "path": "model_outputs/annotation_packets/diagnostic-land-plan-change-pilot-v1/packet.jsonl",
+    "sha256": "be50943b26ab50045efd035383f93102f1090c8006eb2243f1f6e4781f0e28a0",
+    "dvc_pointer": "model_outputs.dvc",
+    "responses": 4,
+    "conditions_blinded": true
+  },
+  "key": {
+    "path": "data/evaluator_only/annotation_keys/diagnostic-land-plan-change-pilot-v1.json",
+    "sha256": "13e6e7ad354e42e51060eda867d83a5097cd199b25e3ab68fec9f52671027b19",
+    "dvc_pointer": "data/evaluator_only/annotation_keys.dvc",
+    "visibility": "evaluator_only"
+  },
+  "reference": {
+    "path": "research/explanation_fidelity/annotations/development/diagnostic-land-plan-change-pilot-v1-reference.json",
+    "sha256": "d9c335033152faff7f1a01c47a0a0900705bd55de9f75718bd6270c4f7a83c8e",
+    "status": "DEVELOPMENT_REFERENCE_FROM_PRE_MODEL_INDEPENDENT_PLAN_RECOMPUTATION_NOT_HUMAN_GOLD"
+  },
+  "rubric": {
+    "path": "docs/DIAGNOSTIC_ANNOTATION_GUIDE.md",
+    "status": "DEVELOPMENT_DRAFT_NOT_FROZEN"
+  },
+  "requirements": {
+    "independent_annotators": 2,
+    "distinct_adjudicator_on_disagreement": true,
+    "condition_key_withheld_until_after_adjudication": true
+  },
+  "limitations": [
+    "This is one development scenario, not held-out or confirmatory evidence.",
+    "Physical findings, the question, and allowed/prohibited conclusions preceded model generation, but detailed annotation units were formalized after output inspection.",
+    "The reference is not a human gold label and no human annotations or adjudication exist at packet creation time.",
+    "The original P candidate failed the operating verifier; final P used deterministic fallback and remains byte-identical to T."
+  ]
+}

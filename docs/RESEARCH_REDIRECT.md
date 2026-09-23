@@ -202,6 +202,9 @@ This closes the specific plan-observability gap but does not establish a physica
 rolling costmap cannot classify the complete requested route, and delivered plans do not prove
 controller consumption. The checked v2 answer therefore reports the useful route change and
 successful outcome at the recorded-sequence level while withholding costmap causation and obstacle
-identity. No R/P/T/N call or new annotation packet has been made for this episode. The diagnostic
-inventory remains 48 responses in twelve packets over eight clusters, with human annotation,
-protocol freeze, held-out collection, and inferential analysis still `NOT_RUN`.
+identity. A subsequently predeclared, one-shot R/P/T/N comparison gives R the same complete fixture,
+source, and executable v2 computation as P. Project review finds R closely matches P/T; N adds
+unsupported plan-following and approximately-per-metre update language; raw P is aligned but hits a
+lexical false negative and final P falls back to T. These are not labels. The diagnostic inventory
+is now 52 responses in thirteen packets over nine clusters, with immutable fallback 13/13 and human
+annotation, protocol freeze, held-out collection, and inferential analysis still `NOT_RUN`.

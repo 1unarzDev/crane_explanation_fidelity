@@ -1,0 +1,80 @@
+{
+  "schema": "crane-explain-model-artifact-manifest/v1",
+  "status": "DEVELOPMENT_ONLY_NOT_FROZEN",
+  "created_utc": "2026-09-23T10:18:41Z",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "low",
+  "adapter": "codex-cli-json/v1",
+  "single_sample_no_retry": true,
+  "new_model_calls": 3,
+  "model_condition_outputs": 3,
+  "embedded_non_model_smoke_conditions": ["T"],
+  "embedded_non_model_smoke_outputs": 1,
+  "result_envelope_conditions": ["N", "P", "R", "T"],
+  "result_envelope_outputs": 4,
+  "conditions": ["N", "P", "R"],
+  "question_kinds": ["diagnostic-route-change-and-unresolved-trigger-v1"],
+  "episode_ids": ["diagnostic-land-dev-004"],
+  "statistical_cluster_id": "land-connected-detour-plan-change-004",
+  "evaluator_truth_available_to_methods": false,
+  "information_parity_audited": true,
+  "primary_comparison": "P versus tool-enabled R",
+  "output_root": "model_outputs/dev/diagnostic-land-plan-change-pilot-v1",
+  "cache_root": "research/explanation_fidelity/model_cache/diagnostic-land-plan-change-pilot-v1",
+  "artifacts": [
+    {
+      "path": "model_outputs/dev/diagnostic-land-plan-change-pilot-v1/diagnostic-land-dev-004/plan-change.json",
+      "sha256": "c258bc7e46167d05cd5cd652f966a550d46356d1833ae66d0e65cfc8458f0e86",
+      "bytes": 11784
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-land-plan-change-pilot-v1/5e853f436f2c23689ea2b684baf1515f5189fa42fba11edbe31fc19de173f2e0.json",
+      "sha256": "1a37c351a53aac5513eaefc9250a8e8f81ec91be4c267032fb91f0464283f929",
+      "bytes": 1204394
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-land-plan-change-pilot-v1/7bed72d883bf1ce5a7375168fe9f1d06ec28b2c7f55d497edf792646af6ca620.json",
+      "sha256": "dc04c352d466d90dac2d6280c4f679afb5f8d902d9f5544a0bf939672a87941a",
+      "bytes": 52855
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-land-plan-change-pilot-v1/f2d3260bf4310ddccf9fdb752ee700c9c581e94b2bf7ea88c77b194460f57594.json",
+      "sha256": "4048680dd2b4386362bb8a1ecae63142381e3326d9a5a562aa1162a94996456c",
+      "bytes": 20000
+    }
+  ],
+  "implementation": {
+    "declaration_path": "research/explanation_fidelity/experiment_configs/development/diagnostic-land-plan-change-pilot-v1.json",
+    "declaration_sha256": "cffd3205c1de2b33bd6915bc08f7aa18ba467508388de883588f5c361e0ab664",
+    "declaration_commit": "ec6233b",
+    "runner_path": "analysis/run_diagnostic_land_pilot.py",
+    "runner_sha256": "6aaec0002b65d43f4046ea2e2ad74de79d14fa8028668e5c533a21481401c180",
+    "diagnostic_wrapper_path": "analysis/export_geometric_route_diagnostic.py",
+    "diagnostic_wrapper_sha256": "11be6b2a3c11b570eb01c17783454cb1aef16a9a2a0b65a257eea87d8b1d5959",
+    "core_repository_commit": "cf5852c744aef7ca26b055ae8026685fc3b7eeb7",
+    "crane_ml_commit": "f669e748c657a5e93324e8bcdf1732785e88ce47"
+  },
+  "usage": {
+    "aggregate_latency_ms": 51721.095699,
+    "input_tokens": 173506,
+    "cached_input_tokens": 73984,
+    "output_tokens": 1873,
+    "reasoning_output_tokens": 247,
+    "cost_usd": null,
+    "cost_status": "not_reported_by_codex_cli_chatgpt_login"
+  },
+  "project_review_not_labels": {
+    "R": "Closely matches the checked plan-change mechanism, measurements, action success, and causal limits.",
+    "raw_P": "Communicates the checked plan change, values, success, and unresolved trigger, but the bounded verifier rejects the phrase 'route change from' because its required-proposition matcher accepts only 'successful route change' or 'plan change'.",
+    "final_P": "Uses deterministic fallback under the prospectively fixed operating verifier; no retry or output substitution occurred.",
+    "N": "Finds the route change and success from captured summaries but says paths were followed and attributes approximately per-metre updates to the DistanceController without an explicit time-aligned derivation.",
+    "inference": "These observations require blinded scoring, do not establish P over R, and expose another verifier false-negative candidate."
+  },
+  "limitations": [
+    "This is one development scenario, not held-out or confirmatory evidence.",
+    "The annotation units were formalized after output inspection and are disclosed as such.",
+    "No human annotation or adjudication has been completed.",
+    "The original P candidate, verifier rejection, and deterministic fallback are immutable; no retry or post-hoc substitution occurred."
+  ]
+}

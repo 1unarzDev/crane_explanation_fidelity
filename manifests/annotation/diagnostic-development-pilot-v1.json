@@ -1,11 +1,11 @@
 {
   "schema": "crane-diagnostic-development-annotation-inventory/v1",
   "created_utc": "2026-09-23T01:47:07Z",
-  "updated_utc": "2026-09-23T08:40:57Z",
+  "updated_utc": "2026-09-23T10:18:41Z",
   "status": "DEVELOPMENT_PACKETS_AWAITING_TWO_HUMAN_ANNOTATORS",
   "inferential_status": "DEVELOPMENT_ONLY_NOT_A_FROZEN_OR_CONFIRMATORY_STUDY",
-  "responses": 48,
-  "statistical_clusters": 8,
+  "responses": 52,
+  "statistical_clusters": 9,
   "packets": [
     {
       "name": "land-unmasked",
@@ -114,6 +114,15 @@
       "key_sha256": "d2c49eaf36f858941d7bc094be4b9a9ead0498a98b22f30592d9a2d55c8d18ae",
       "statistical_cluster_id": "command-motion-compensation-001",
       "evidence_variant": "supported-discrepancy-measured-response-recovery-success"
+    },
+    {
+      "name": "land-delivered-plan-change",
+      "packet": "model_outputs/annotation_packets/diagnostic-land-plan-change-pilot-v1/packet.jsonl",
+      "packet_sha256": "be50943b26ab50045efd035383f93102f1090c8006eb2243f1f6e4781f0e28a0",
+      "key": "data/evaluator_only/annotation_keys/diagnostic-land-plan-change-pilot-v1.json",
+      "key_sha256": "13e6e7ad354e42e51060eda867d83a5097cd199b25e3ab68fec9f52671027b19",
+      "statistical_cluster_id": "land-connected-detour-plan-change-004",
+      "evidence_variant": "independently-recomputed-delivered-plan-geometry"
     }
   ],
   "cluster_rule": "Evidence masks and question variants share the source episode's statistical cluster.",

@@ -3401,3 +3401,66 @@
   remains unresolved; it must not reuse the failure-oriented question. Tool-enabled R must receive
   the same fixture, source, and executable plan computation. No comparative claim is supported
   without the predeclared one-shot calls and blinded annotation.
+
+## 2026-09-23 — delivered-plan R/P/T/N development comparison
+
+- **STATUS:** `RUN / RETAINED / GOVERNED / BLINDED_PACKET_BUILT / DEVELOPMENT_ONLY`;
+  human annotation and adjudication remain `NOT_RUN`; confirmatory use is prohibited.
+- **DECLARATION:** commit `ec6233b` fixed the route-change question, episode/cluster identities,
+  exact source/evidence/tool/prompt hashes, `gpt-5.6-luna` low-effort model, one R/P/N call,
+  deterministic T, zero retries, bounded verifier, retention rules, and prohibited causal claims.
+- **FAIRNESS:** tool-enabled R received the complete blind fixture, pinned CRANE/core repositories,
+  and the same executable v2 diagnostic as P. N received captured per-plan summaries but not the
+  12,975 poses, independent recomputation, or cross-plan classification. Evaluator truth was
+  unavailable to every method; N is an ablation, not the primary parity baseline.
+- **PROJECT REVIEW, NOT LABELS:** R closely matches the checked route change, measurements,
+  success, and causal limits. N identifies the change but says the paths were followed and that
+  route updates occurred after approximately each metre, neither of which has an explicit retained
+  time-aligned derivation. Raw P communicates the checked mechanism and limits.
+- **LANGUAGE GATE:** the prospectively fixed bounded verifier rejects raw P for missing `delivered
+  route change`: the candidate says `route change from`, while the matcher accepts only
+  `successful route change` or `plan change`. Final P therefore uses immutable deterministic
+  fallback. No retry, verifier edit, or output substitution occurred; aggregate development
+  fallback is now 13/13.
+- **USAGE:** three calls; aggregate latency 51.721 s; 173,506 input, 73,984 cached-input, 1,873
+  output, and 247 reasoning-output tokens; cost was not reported by the CLI login path.
+- **ANNOTATION:** one shuffled four-response packet and physically separate evaluator-only key were
+  built. This distinct development cluster raises the inventory to 52 responses in 13 diagnostic
+  packets over nine clusters. Reference units were formalized after output inspection and disclose
+  that timing. Human labels and adjudication do not exist.
+- **GOVERNANCE:** model-output manifest
+  `manifests/model_outputs/diagnostic-land-plan-change-pilot-v1.json` validates all four retained
+  result/cache artifacts; annotation manifest
+  `manifests/annotation/diagnostic-land-plan-change-pilot-v1.json` pins packet, key, and reference
+  hashes. Model output, cache, and key DVC roots are synchronized with `r2`; no frozen F/G/H
+  artifact changed.
+- **HANDOFF:** ignored annotator archives now contain two legacy plus 13 diagnostic packets and 256
+  blank rows each. SHA-256 values are
+  `7a0dc897dde121df979acf86658f226debdc2c994bafbb48d5ff3665a0833adf` (A) and
+  `54cbf3c59b35a3727775543997adf4eb990ae4d99c0cac67bfd498377d945921` (B).
+- **INFERENCE:** this adds another negative differentiation case: project review does not suggest P
+  exceeds a fair tool-enabled R. Blinded scoring may establish whether N's stronger wording is a
+  material error, but no method effect or significance claim is currently supported.
+- **MANUSCRIPT QA:** the anonymous draft now records the delivered-plan qualification, negative
+  differentiation result, 52-response/nine-cluster inventory, and 13/13 fallback without treating
+  project review as labels. It builds as six letter-size pages. All pages were rendered with
+  Poppler at 130 dpi and visually inspected with no clipping, overlap, broken glyph, or table
+  overflow. The ignored PDF is 71,985 bytes with SHA-256
+  `cfe25163a10012d26b9e00ccd8f2e6790e92ac73c0a7257c565d65c2df739303`.
+
+## 2026-09-23 — post-hoc delivered-plan language-gate correction
+
+- **STATUS:** `IMPLEMENTED / TESTED / POST_HOC_DEVELOPMENT_TUNING`; no model call, output
+  replacement, packet rebuild, or label inspection occurred.
+- **DEFICIENCY:** operating policy v2 rejected the immutable raw P candidate for missing a
+  delivered-route-change proposition even though its diagnosis says `route change from an initially
+  direct plan to later non-direct plans` and preserves the checked values and limits.
+- **CORRECTION:** nested core commit `f41fb7c` versions future policy as
+  `bounded-diagnostic-language-v3` and accepts `route change` in the diagnosis-section proposition
+  gate. Every other plan mechanism requirement remains unchanged.
+- **REGRESSION:** the exact archived candidate now passes after evidence-ID-only repair. A mutation
+  deleting the controller-consumption qualification still fails. The full nested core suite passes
+  91 tests.
+- **VALIDITY BOUNDARY:** the v2 rejection, deterministic final P, packet/key, and 13/13 observed
+  fallback remain immutable. This targeted regression is not an independent estimate of verifier
+  sensitivity, specificity, or P effectiveness.

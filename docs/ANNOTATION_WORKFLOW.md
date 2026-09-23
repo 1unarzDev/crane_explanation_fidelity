@@ -235,9 +235,10 @@ retained:
 - `model_outputs/annotation_packets/diagnostic-command-motion-nominal-pilot-v1/packet.jsonl`
 - `model_outputs/annotation_packets/diagnostic-command-motion-missing-odometry-pilot-v1/packet.jsonl`
 - `model_outputs/annotation_packets/diagnostic-command-motion-compensation-pilot-v1/packet.jsonl`
+- `model_outputs/annotation_packets/diagnostic-land-plan-change-pilot-v1/packet.jsonl`
 
 Their keys remain under matching directories in `data/evaluator_only/annotation_keys/`. Annotate
-all twelve diagnostic packets, but count only eight episode clusters: `land-blockage-global-002`,
+all thirteen diagnostic packets, but count only nine episode clusters: `land-blockage-global-002`,
 `land-s-turn-unexpected-abort-001`, `land-unexpected-nominal-001`,
 `diagnostic-land-nominal-20260922-001`, `eco-pilot-001`, and
 `roboboat-gate5-known-dock-1`, plus `command-motion-held-nominal-pair-001`. The boat speed mask
@@ -250,11 +251,14 @@ The compensated command-motion packet is the distinct development cluster
 `command-motion-compensation-001` because it comes from an independently configured physical run.
 Its physical findings and question were fixed before model calls, but detailed annotation units
 were formalized afterward; the reference discloses this chronology.
+The delivered-plan packet is the distinct cluster `land-connected-detour-plan-change-004`; its
+plan geometry was independently recomputed before model calls, while its detailed annotation units
+were formalized afterward and disclose that timing.
 Separate evaluator-side reference calculations reproduce the bounded boat and land findings
 without importing the proposed method, but they are still development code and do not replace the
 required human review.
 
-After all twelve packets have complete adjudication outputs, join their condition keys with the
+After all thirteen packets have complete adjudication outputs, join their condition keys with the
 explicit development cluster inventory:
 
 ```bash
@@ -272,6 +276,7 @@ python analysis/join_diagnostic_annotation_keys.py \
   --adjudication command-motion-nominal=analysis/results/diagnostic-command-motion-nominal-pilot-v1-adjudicated.json \
   --adjudication command-motion-missing-odometry=analysis/results/diagnostic-command-motion-missing-odometry-pilot-v1-adjudicated.json \
   --adjudication command-motion-compensation=analysis/results/diagnostic-command-motion-compensation-pilot-v1-adjudicated.json \
+  --adjudication land-delivered-plan-change=analysis/results/diagnostic-land-plan-change-pilot-v1-adjudicated.json \
   --output analysis/results/diagnostic-development-pilot-v1-analysis-input.jsonl \
   --report analysis/results/diagnostic-development-pilot-v1-key-join.json
 ```
@@ -279,7 +284,7 @@ python analysis/join_diagnostic_annotation_keys.py \
 The join verifies every packet and key hash, restores method/fallback/verification metadata only
 after adjudication, and maps both evidence variants back to their source statistical cluster. Any
 `evidence_problem` flag quarantines the entire source cluster across masked and unmasked packets.
-The resulting 48 responses still represent only eight development clusters and cannot support a
+The resulting 52 responses still represent only nine development clusters and cannot support a
 confirmatory effect claim or a reliable new-study power estimate by themselves.
 
 Once the joined file exists, generate the deliberately descriptive development summary with:
@@ -293,12 +298,12 @@ python analysis/summarize_diagnostic_development.py \
 This reports R/P/T/N response metrics, fallback frequency, diagnosable supported-success
 comparisons, ambiguous-case qualification, and paired cluster-mean differences,
 but intentionally emits no confidence interval, significance test, or power estimate. Those would
-be unstable with eight clusters. The summary is an input to the prospective freeze decision, not a
+be unstable with nine clusters. The summary is an input to the prospective freeze decision, not a
 substitute for additional independent pilots or a frozen held-out analysis.
 
 ### Generate blank diagnostic annotation forms
 
-Give each annotator the diagnostic guide, the twelve packet files above, and a separately generated
+Give each annotator the diagnostic guide, the thirteen packet files above, and a separately generated
 blank form. The form generator reads only a blinded packet—never its evaluator-only key—and emits
 only opaque response IDs, a prefilled `required_units_total`, and explicitly unset rubric fields.
 For example:
@@ -310,7 +315,7 @@ python analysis/build_diagnostic_annotation_form.py \
   --annotator-id annotator-a
 ```
 
-Repeat for each of the twelve packets and each annotator, using a distinct non-identifying
+Repeat for each of the thirteen packets and each annotator, using a distinct non-identifying
 `annotator_id`. Annotators review packet rows in order and replace every `null` judgment in their
 matching form; `required_units_total` is already derived from the packet and must not be changed.
 Do not provide files under `data/evaluator_only/`, model/condition mappings, fallback status, or
@@ -318,7 +323,7 @@ verification outcomes. The generator refuses non-opaque or duplicate response ID
 inventories, overwrites, and evaluator-only output paths. Completed forms are inputs to
 `analysis/adjudicate_diagnostic_annotations.py` as shown above.
 
-Prepared local bundles containing the two legacy packets and all twelve diagnostic packets are at
-`artifacts/annotation-handoff-20260922/annotator-{a,b}.tar.gz`. Each has 14 packets and 252 blank
+Prepared local bundles containing the two legacy packets and all thirteen diagnostic packets are at
+`artifacts/annotation-handoff-20260922/annotator-{a,b}.tar.gz`. Each has 15 packets and 256 blank
 form rows. These ignored archives are convenience handoffs, not labels or governed results; verify
 their current hashes against `artifacts/annotation-handoff-20260922/SHA256SUMS` before transfer.
