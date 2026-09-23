@@ -118,6 +118,15 @@ def run(args: argparse.Namespace, caller=None) -> dict[str, Any]:
         raise ValueError("evidence must be a governed robot-visible artifact")
     export = json.loads(evidence_path.read_text(encoding="utf-8"))
     method_payload = method_input_from_export(export)
+    question = getattr(args, "question", QUESTION)
+    question_id = getattr(
+        args, "question_id", "diagnostic-command-motion-mechanism-v1"
+    )
+    question_kind = getattr(
+        args, "question_kind", "diagnostic-mechanism-or-false-premise-v1"
+    )
+    if not question.strip() or not question_id.strip() or not question_kind.strip():
+        raise ValueError("question, question ID, and question kind must be non-empty")
     if not export.get("final_text_verification", {}).get("accepted"):
         raise ValueError("checked command-motion answer did not pass final-text verification")
 
@@ -146,7 +155,7 @@ def run(args: argparse.Namespace, caller=None) -> dict[str, Any]:
         )
         r_record = caller.call(
             "diagnostic-command-motion-R",
-            load_prompt(args.repository_prompt, {"QUESTION": QUESTION}),
+            load_prompt(args.repository_prompt, {"QUESTION": question}),
             ANSWER_SCHEMA,
             working_directory=workspace,
             workspace_identity={
@@ -173,7 +182,7 @@ def run(args: argparse.Namespace, caller=None) -> dict[str, Any]:
         load_prompt(
             "diagnostic_realization_dev_v1.txt",
             {
-                "QUESTION": QUESTION,
+                "QUESTION": question,
                 "DIAGNOSTIC_RESULT": json.dumps(
                     diagnostic_result, indent=2, sort_keys=True
                 ),
@@ -220,7 +229,7 @@ def run(args: argparse.Namespace, caller=None) -> dict[str, Any]:
         load_prompt(
             "diagnostic_no_computation_dev_v1.txt",
             {
-                "QUESTION": QUESTION,
+                "QUESTION": question,
                 "PRESENTATION": json.dumps(presentation, indent=2, sort_keys=True),
             },
         ),
@@ -247,9 +256,9 @@ def run(args: argparse.Namespace, caller=None) -> dict[str, Any]:
         "schema": "crane-diagnostic-command-motion-development-pilot-v1",
         "status": "DEVELOPMENT_ONLY_NOT_FROZEN",
         "episode_id": export["episode_id"],
-        "question_id": "diagnostic-command-motion-mechanism-v1",
-        "question_kind": "diagnostic-mechanism-or-false-premise-v1",
-        "question": QUESTION,
+        "question_id": question_id,
+        "question_kind": question_kind,
+        "question": question,
         "conditions": ["R", "P", "T", "N"],
         "provider": args.provider,
         "model": args.model,
@@ -303,6 +312,13 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--repository-prompt",
         default="diagnostic_repository_agent_command_motion_dev_v1.txt",
+    )
+    parser.add_argument("--question", default=QUESTION)
+    parser.add_argument(
+        "--question-id", default="diagnostic-command-motion-mechanism-v1"
+    )
+    parser.add_argument(
+        "--question-kind", default="diagnostic-mechanism-or-false-premise-v1"
     )
     parser.add_argument("--provider", choices=("codex", "claude"), required=True)
     parser.add_argument("--model", required=True)

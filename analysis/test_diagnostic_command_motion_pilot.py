@@ -67,3 +67,36 @@ def test_runner_preserves_tool_parity_and_accepts_checked_p_candidate(tmp_path: 
         "diagnostic-command-motion-P-realization",
         "diagnostic-command-motion-N",
     ]
+
+
+def test_runner_uses_declared_compensation_question_without_changing_parity(tmp_path: Path):
+    export = json.loads(EVIDENCE.read_text(encoding="utf-8"))
+    caller = FakeCaller(export["final_answer"])
+    question = (
+        "What temporarily prevented continued progress, what changed before success, "
+        "and what remains unresolved?"
+    )
+    args = argparse.Namespace(
+        evidence=EVIDENCE,
+        repository=ROOT / "packages/crane_ml",
+        repository_url="https://github.com/1unarzDev/crane_ml.git",
+        repository_commit="6bf057b5acf1763eeca1b81be6530cd218a5405b",
+        core_repository=ROOT / "packages/astro_dock/src/crane_explain",
+        core_repository_commit="f131b9b042c42e269dcc7c646e93fc6eb5433d49",
+        repository_prompt="diagnostic_repository_agent_command_motion_dev_v1.txt",
+        provider="codex",
+        model="test-model",
+        reasoning_effort="low",
+        cache=tmp_path / "cache",
+        output=tmp_path / "pilot.json",
+        question=question,
+        question_id="diagnostic-command-motion-compensation-v1",
+        question_kind="diagnostic-same-mechanism-different-outcome-v1",
+    )
+
+    result = run(args, caller=caller)
+    assert result["question"] == question
+    assert result["question_id"] == "diagnostic-command-motion-compensation-v1"
+    assert result["question_kind"] == "diagnostic-same-mechanism-different-outcome-v1"
+    assert all(question in prompt for _, prompt, _ in caller.calls)
+    assert result["information_parity"]["accepted"]
