@@ -94,7 +94,16 @@ consumption, intervention identity, and any unique motor/slip/collision/obstruct
 The initial checked response merely appended the successful terminal status and did not quantify
 recovery. The v2 recovery-window computation and revised deterministic response were added only
 after that deficiency was observed. They are therefore post-observation development and regression
-evidence, not a prospective method-effect result. The scenario has no model calls or human labels.
+evidence, not a prospective method-effect result.
+
+A subsequently predeclared single-sample R/P/T/N comparison retains the same evidence, tool
+parity, model, and no-retry rules as the earlier pair while asking explicitly about temporary loss
+and later success. On project review, R changes the checked 8--18 s / 10 s discrepancy into
+8--20 s / 12 s; raw P preserves the checked mechanism, values, recovery, outcome, and limits; N has
+no aligned computation and calls Wait/retry the changed condition demonstrably associated with
+success. The operating verifier rejects raw P for a missing controller-failure-sequence
+proposition, so immutable final P again falls back to T. These are candidates for blinded scoring,
+not labels. The scenario now has a four-response packet, but still no human labels.
 Robot-visible and evaluator-only artifacts are governed separately by
 `manifests/data/diagnostic-motion-development-cm-002.*.json`.
 
@@ -273,5 +282,6 @@ Tool-enabled R, raw P, and N all preserve the central withholding on project rev
 another negative differentiation result pending blind scoring. N additionally says “exhausted
 recovery behavior”; whether that is a material completeness/causal overclaim is deliberately left
 to annotators. The original P candidate was useful but rejected by a section-local verifier rule,
-making overall development fallback 11/11. A post-hoc correction accepts it after citation-only
-repair and rejects three authored mutations; the original fallback and packet remain immutable.
+making overall development fallback 11/11 at that checkpoint. A post-hoc correction accepts it
+after citation-only repair and rejects three authored mutations; the original fallback and packet
+remain immutable.

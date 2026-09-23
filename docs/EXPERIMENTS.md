@@ -3246,3 +3246,38 @@
 - **FREEZE:** exact question/IDs, hashes, commits, prompts, model settings, paths, boundaries, and
   allowed/prohibited conclusions are fixed in
   `diagnostic-command-motion-compensation-pilot-v1.json` before any model call.
+
+## 2026-09-23 — compensated command-motion R/P/T/N comparison and blinded packet
+
+- **STATUS:** `RUN / RETAINED / GOVERNED / BLINDED_PACKET_BUILT / DEVELOPMENT_ONLY`; human
+  annotation and adjudication remain `NOT_RUN`; confirmatory use is prohibited.
+- **EXECUTION:** exactly one no-retry `gpt-5.6-luna` low-effort call was made for R, P, and N after
+  declaration commit `ba67649`; T is deterministic. All four final responses and all three raw
+  caches are retained. Evaluator truth and intervention identity were unavailable to every method.
+- **PROJECT REVIEW, NOT LABELS:** R identifies the mechanism and later recovery but changes the
+  independent 8--18 s / 10 s discrepancy into 8--20 s / 12 s. Raw P reports the checked mechanism,
+  values, recovery, outcome, and limits. N lacks an aligned computation and says the intervening
+  Wait/retry was the changed condition demonstrably associated with success. These observations
+  await blinded scoring and do not establish P over R.
+- **LANGUAGE GATE:** raw P is rejected for `missing required proposition: controller failure
+  sequence` despite mentioning one FollowPath failure and one source-qualified Wait invocation.
+  Immutable final P falls back to T. No retry, verifier change, or output substitution was made;
+  aggregate development fallback is now 12/12.
+- **USAGE:** three calls; aggregate latency 50.133 s; 145,309 input, 99,840 cached-input, 2,081
+  output, and 417 reasoning-output tokens; cost was not reported by the CLI login path.
+- **ANNOTATION:** one shuffled four-response packet and evaluator-only key were built. The case is
+  one distinct development cluster, `command-motion-compensation-001`, raising the inventory to 48
+  responses in 12 packets over eight clusters. Physical findings and the question preceded calls;
+  detailed annotation units were formalized afterward and this is disclosed. The refreshed local
+  handoffs contain 14 packets and 252 blank rows per annotator; archive SHA-256 values are
+  `6edd6f7f77481484d06a670cc1174845d4106f47c0449fb206f4169c2422229e` (A) and
+  `54a24b108799099eeac6c779a0d3d7aef7ccec1b74be3360f6bdef7715931b01` (B).
+- **GOVERNANCE:** exact declaration, output, cache, packet, key, and implementation hashes are in
+  `manifests/model_outputs/diagnostic-command-motion-compensation-pilot-v1.json` and
+  `manifests/annotation/diagnostic-command-motion-compensation-pilot-v1.json`. The DVC roots are
+  synchronized with `r2`; no frozen F/G/H artifact changed.
+- **MANUSCRIPT QA:** the six-page letter-size paper now records the differentiation candidate,
+  12/12 fallback, and 48-response/twelve-packet/eight-cluster inventory without converting project
+  review into labels. All pages were rendered at 130 dpi and visually inspected; no clipping,
+  overlap, broken glyph, or table overflow was observed. The ignored PDF is 70,435 bytes with
+  SHA-256 `657fba9be89478fae230c3cad3af69dc81ee1dd89dd74f1202a43e028c8f6549`.

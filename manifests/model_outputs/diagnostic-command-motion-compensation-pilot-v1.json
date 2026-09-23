@@ -1,0 +1,80 @@
+{
+  "schema": "crane-explain-model-artifact-manifest/v1",
+  "status": "DEVELOPMENT_ONLY_NOT_FROZEN",
+  "created_utc": "2026-09-23T08:40:57Z",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "low",
+  "adapter": "codex-cli-json/v1",
+  "single_sample_no_retry": true,
+  "new_model_calls": 3,
+  "model_condition_outputs": 3,
+  "embedded_non_model_smoke_conditions": ["T"],
+  "embedded_non_model_smoke_outputs": 1,
+  "result_envelope_conditions": ["N", "P", "R", "T"],
+  "result_envelope_outputs": 4,
+  "conditions": ["N", "P", "R"],
+  "question_kinds": ["diagnostic-same-mechanism-different-outcome-v1"],
+  "episode_ids": ["diagnostic-motion-dev-cm-compensated-001"],
+  "statistical_cluster_id": "command-motion-compensation-001",
+  "evaluator_truth_available_to_methods": false,
+  "information_parity_audited": true,
+  "primary_comparison": "P versus tool-enabled R",
+  "output_root": "model_outputs/dev/diagnostic-command-motion-compensation-pilot-v1",
+  "cache_root": "research/explanation_fidelity/model_cache/diagnostic-command-motion-compensation-pilot-v1",
+  "artifacts": [
+    {
+      "path": "model_outputs/dev/diagnostic-command-motion-compensation-pilot-v1/diagnostic-motion-dev-cm-compensated-001/mechanism-recovery-success.json",
+      "sha256": "f7fe009721ee9808e23b28954e5eca5a5da9e0223c1374fbacaffc499c4cc7aa",
+      "bytes": 11571
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-command-motion-compensation-pilot-v1/040ed53d179a27b34bc6de30b92fe33ea417f583ea4438dd785b59764fc9ad71.json",
+      "sha256": "f76db763555457b8e926eb1db1d674814e4c37213995e5ceaa93ec6ce724a398",
+      "bytes": 17100
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-command-motion-compensation-pilot-v1/7f88b825f30afe157c59c248926d395bcfff8d79faa9ab411973622fe8cce582.json",
+      "sha256": "1f6f7a94676db0e658296b1d0ae0c1b226275132748aed3de44247f959eb022e",
+      "bytes": 8296
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-command-motion-compensation-pilot-v1/c137398ceca2b504df9c32686a4d4bef8a94826f196f782cc70b05a82b46e47b.json",
+      "sha256": "7c7e81f95c8c03890b0ca451d19a8456ba138a9686f2ecff40757ee1a4dc1eaf",
+      "bytes": 55635
+    }
+  ],
+  "implementation": {
+    "declaration_path": "research/explanation_fidelity/experiment_configs/development/diagnostic-command-motion-compensation-pilot-v1.json",
+    "declaration_sha256": "25e94621d4a18ec99e45f1c279f5c47343414ab6f38df5bebfc93d3195149c07",
+    "declaration_commit": "ba67649",
+    "runner_path": "analysis/run_diagnostic_command_motion_pilot.py",
+    "runner_sha256": "9fd315ceb42e03b994e637abb78d953a787f24a21d43028d12eb1586ef1fc07b",
+    "adapter_path": "analysis/recompute_command_motion_diagnostic.py",
+    "adapter_sha256": "ea2a2d7c598dea9130f6b18d80b156fbc132ef6fd9c6cf5cde0c4f358690302b",
+    "core_repository_commit": "f131b9b042c42e269dcc7c646e93fc6eb5433d49",
+    "crane_ml_commit": "6bf057b5acf1763eeca1b81be6530cd218a5405b"
+  },
+  "usage": {
+    "aggregate_latency_ms": 50132.822918,
+    "input_tokens": 145309,
+    "cached_input_tokens": 99840,
+    "output_tokens": 2081,
+    "reasoning_output_tokens": 417,
+    "cost_usd": null,
+    "cost_status": "not_reported_by_codex_cli_chatgpt_login"
+  },
+  "project_review_not_labels": {
+    "R": "Identifies the mechanism and recovery but reports an 8-20 s, 12 s discrepancy instead of the independently checked 8-18 s, 10 s interval.",
+    "raw_P": "Identifies the checked discrepancy, later measured-response recovery, success, and unresolved alternatives with the independently checked values.",
+    "final_P": "Uses deterministic fallback because the frozen operating verifier reports a missing controller-failure-sequence proposition.",
+    "N": "Retains execution and success but lacks the aligned discrepancy computation and calls Wait/retry the changed condition demonstrably associated with success.",
+    "inference": "These observations motivate blinded scoring but are not human labels and do not establish a method effect."
+  },
+  "limitations": [
+    "This is one development scenario, not held-out or confirmatory evidence.",
+    "The annotation units were formalized after output inspection; this is disclosed in the reference and packet manifest.",
+    "No human annotation or adjudication has been completed.",
+    "The original P candidate, verifier rejection, and deterministic fallback remain immutable; no retry or post-hoc substitution occurred."
+  ]
+}

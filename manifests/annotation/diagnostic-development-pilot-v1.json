@@ -1,11 +1,11 @@
 {
   "schema": "crane-diagnostic-development-annotation-inventory/v1",
   "created_utc": "2026-09-23T01:47:07Z",
-  "updated_utc": "2026-09-23T07:40:32Z",
+  "updated_utc": "2026-09-23T08:40:57Z",
   "status": "DEVELOPMENT_PACKETS_AWAITING_TWO_HUMAN_ANNOTATORS",
   "inferential_status": "DEVELOPMENT_ONLY_NOT_A_FROZEN_OR_CONFIRMATORY_STUDY",
-  "responses": 44,
-  "statistical_clusters": 7,
+  "responses": 48,
+  "statistical_clusters": 8,
   "packets": [
     {
       "name": "land-unmasked",
@@ -105,6 +105,15 @@
       "key_sha256": "d4d8508222753cd3690f085b68d40d00ad9984f04f986a49c5dbc11bcbea8df3",
       "statistical_cluster_id": "command-motion-held-nominal-pair-001",
       "evidence_variant": "missing-independent-odometry-samples"
+    },
+    {
+      "name": "command-motion-compensation",
+      "packet": "model_outputs/annotation_packets/diagnostic-command-motion-compensation-pilot-v1/packet.jsonl",
+      "packet_sha256": "301e6df2e6744c358170da8261fdd6274d8b459f925185506581b643d2e11df6",
+      "key": "data/evaluator_only/annotation_keys/diagnostic-command-motion-compensation-pilot-v1.json",
+      "key_sha256": "d2c49eaf36f858941d7bc094be4b9a9ead0498a98b22f30592d9a2d55c8d18ae",
+      "statistical_cluster_id": "command-motion-compensation-001",
+      "evidence_variant": "supported-discrepancy-measured-response-recovery-success"
     }
   ],
   "cluster_rule": "Evidence masks and question variants share the source episode's statistical cluster.",

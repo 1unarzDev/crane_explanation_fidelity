@@ -129,7 +129,10 @@ their own location. Exact repository commits and destinations are recorded in
   navigation success under unchanged development thresholds. The blind export and separate
   reference agree; evaluator intervention identity remains excluded. The recovery-plan refinement
   followed inspection of the first deficient answer, so this is post-observation regression
-  evidence with no model comparison or human label—not a confirmatory effect estimate.
+  evidence, not a confirmatory effect estimate. A later predeclared R/P/T/N comparison produced a
+  blinded four-response packet: R reports an incorrect discrepancy interval/duration on project
+  review, raw P preserves the checked values, and final P again falls back to T. Human annotation
+  remains `NOT_RUN`, so this is a differentiation candidate rather than a scored method result.
 - **TESTED (SECONDARY-ARM DEVELOPMENT):** the provider-neutral model-call contract now has a
   Claude Code adapter as its first non-GPT instance. A predeclared control rejected Haiku and fixed
   `claude-sonnet-5` at low effort. See [model-family replication](docs/MODEL_FAMILY_REPLICATION.md).

@@ -179,4 +179,11 @@ withhold the command-motion mechanism on project review, while retaining the rec
 recovery sequence; these remain unscored observations. P again used immutable deterministic
 fallback, bringing development fallback to 11/11. The current inventory is therefore 44 responses
 in eleven packets over seven clusters. Human annotation/adjudication, protocol freeze, independent
-held-out collection, and inferential analysis remain `NOT_RUN`.
+held-out collection, and inferential analysis remain `NOT_RUN` at that checkpoint.
+
+A separately predeclared compensation run adds the same supported discrepancy with later measured
+response recovery and action success. Its no-retry R/P/T/N packet is a distinct eighth development
+cluster. Project review finds an incorrect interval/duration in R, checked values in raw P/T, and a
+stronger Wait/retry association in N; these are not labels. Final P again falls back to T, bringing
+the current inventory to 48 responses in twelve packets over eight clusters and immutable fallback
+to 12/12. Human annotation/adjudication and all inferential gates remain `NOT_RUN`.

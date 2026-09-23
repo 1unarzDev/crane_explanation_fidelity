@@ -1042,3 +1042,21 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Next gate: obtain independent human annotation on the already prepared blinded inventory before
   deciding whether another development packet has higher paper value than annotation, analysis,
   figures, or manuscript completion.
+
+## 2026-09-23 — retain compensated comparison as one distinct blinded development cluster
+
+- Decision: retain the no-retry R/P/T/N compensation comparison and add its blinded packet as one
+  independent development cluster; do not score it by project review or alter the historical P
+  fallback after observing outputs.
+- Evidence: the physical scenario, independent computation, question, allowed/prohibited claims,
+  model, prompts, and call cap were fixed before generation. R reports an incorrect interval and
+  duration; raw P preserves the checked values but the operating verifier rejects it; N lacks the
+  aligned computation and makes a stronger Wait/retry association. These are plausible
+  differentiation signals, not independent labels.
+- Alternatives: omit the unexpected R error; repair and rerun R; modify the verifier and replace
+  final P; count the case with the earlier held/nominal family; or announce P superiority. Those
+  choices would respectively discard a valid result, resample, rewrite an observed operating
+  point, undercount independent physical configuration, or substitute author judgment for scoring.
+- RQ impact: the packet directly tests the same diagnosed mechanism with a different outcome and
+  may inform the prospective freeze after annotation. It does not establish significance, verifier
+  accuracy, learned-language benefit, or a confirmatory effect.

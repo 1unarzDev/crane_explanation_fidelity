@@ -185,7 +185,8 @@ source-qualified Wait invocations as answerable sequence evidence. R, raw P, and
 missing mechanism on project review; no P-over-R advantage is apparent. The original P output again
 fell back, and a later post-hoc verifier fix does not alter that result.
 
-The development annotation inventory therefore contains 44 responses over seven clusters, with
+Before the compensation case below, the development annotation inventory contained 44 responses
+over seven clusters, with
 human annotation and adjudication still `NOT_RUN`. Independent scenario collection, protocol
 freeze, and held-out evaluation remain `NOT_RUN`. The development thresholds are not frozen, and
 the three variants cannot be counted as separate scenario instances.
@@ -202,8 +203,17 @@ This is one new independently configured **development** scenario, not a held-ou
 result. Inspection of the first checked response exposed that the v1 plan reported only the
 terminal success and did not measure recovered response. The v2 recovery computation and improved
 answer were therefore developed post-observation and are regression evidence, not a prospective
-effectiveness estimate. No R/P/T/N calls or annotation packet have been created for this scenario,
-so the 44-response/seven-cluster annotation inventory above is unchanged. Its paired governed
+effectiveness estimate.
+
+After the physical evidence was governed, a separate predeclared no-retry R/P/T/N comparison used
+the same blind input and executable v2 computation for P and tool-enabled R. Project review finds
+that R identifies the mechanism and recovery but reports an incorrect 8--20 s / 12 s discrepancy;
+the independent result is 8--18 s / 10 s. Raw P reports the checked values but the operating
+verifier rejects it for a missing controller-failure-sequence proposition, so final P falls back to
+T. N lacks the aligned computation and associates the Wait/retry with success more strongly than
+the retained evidence warrants. These observations are not labels or a method-effect estimate.
+The blinded four-response packet raises the development inventory to 48 responses, twelve packets,
+and eight clusters; human annotation and adjudication remain `NOT_RUN`. Its paired governed data
 manifests are `diagnostic-motion-development-cm-002.*.json`.
 
 ## Other retained development cases at 2026-09-23

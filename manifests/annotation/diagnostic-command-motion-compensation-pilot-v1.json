@@ -1,0 +1,38 @@
+{
+  "schema": "crane-explain-annotation-packet-manifest/v1",
+  "status": "DEVELOPMENT_DRY_RUN_AWAITING_TWO_HUMAN_ANNOTATORS",
+  "study": "prospective-physical-diagnosis-development",
+  "packet": {
+    "path": "model_outputs/annotation_packets/diagnostic-command-motion-compensation-pilot-v1/packet.jsonl",
+    "sha256": "301e6df2e6744c358170da8261fdd6274d8b459f925185506581b643d2e11df6",
+    "dvc_pointer": "model_outputs.dvc",
+    "responses": 4,
+    "conditions_blinded": true
+  },
+  "key": {
+    "path": "data/evaluator_only/annotation_keys/diagnostic-command-motion-compensation-pilot-v1.json",
+    "sha256": "d2c49eaf36f858941d7bc094be4b9a9ead0498a98b22f30592d9a2d55c8d18ae",
+    "dvc_pointer": "data/evaluator_only/annotation_keys.dvc",
+    "visibility": "evaluator_only"
+  },
+  "reference": {
+    "path": "research/explanation_fidelity/annotations/development/diagnostic-command-motion-compensation-pilot-v1-reference.json",
+    "sha256": "e17dc5ff46af5e7d35df8a7a633cd87bc79a533ac1d389d4d302df216fd23e82",
+    "status": "DEVELOPMENT_REFERENCE_FROM_PRE_MODEL_INDEPENDENT_WINDOW_COMPUTATION_NOT_HUMAN_GOLD"
+  },
+  "rubric": {
+    "path": "docs/DIAGNOSTIC_ANNOTATION_GUIDE.md",
+    "status": "DEVELOPMENT_DRAFT_NOT_FROZEN"
+  },
+  "requirements": {
+    "independent_annotators": 2,
+    "distinct_adjudicator_on_disagreement": true,
+    "condition_key_withheld_until_after_adjudication": true
+  },
+  "limitations": [
+    "This is one independently configured development scenario, not held-out or confirmatory evidence.",
+    "Physical findings, the question, and allowed/prohibited conclusions preceded model generation, but detailed annotation units were formalized after output inspection.",
+    "The reference is not a human gold label and no human annotations or adjudication exist at packet creation time.",
+    "The original P candidate failed the operating verifier; final P used deterministic fallback and remains byte-identical to T."
+  ]
+}
