@@ -149,3 +149,20 @@ Annotate both four-row packets under the same draft rubric, but do not count the
 another episode. Both belong to statistical cluster `land-blockage-global-002`. The masked packet
 contains the retained pre-correction outputs; the post-hoc deterministic correction is not mixed
 into this dry run.
+
+Validate each pair and compute agreement without joining the evaluator-only key:
+
+```bash
+python analysis/adjudicate_diagnostic_annotations.py \
+  --packet model_outputs/annotation_packets/diagnostic-land-pilot-v3/packet.jsonl \
+  --annotator-a <annotator-a.jsonl> \
+  --annotator-b <annotator-b.jsonl> \
+  --output analysis/results/diagnostic-land-pilot-v3-agreement.json
+```
+
+If disagreements exist, a distinct third annotator supplies rows only for those response IDs and
+the same command adds `--adjudication <third-pass.jsonl>`. The tool rejects incomplete passes,
+unknown responses/categories, wrong unit inventories, inconsistent material-error fields,
+supported-success labels paired with a material error or incorrect mechanism, and a reused
+annotator identity. `condition_key_joined` remains false even after adjudication; scoring by
+condition is a later deliberate step.
