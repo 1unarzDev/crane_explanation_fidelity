@@ -232,7 +232,7 @@ from a lethal cell. The retained configuration uses a 0.22~m robot radius and 0.
 The robot moved as far as $x=6.949$~m, deviated 2.705~m laterally, and 69 planning updates returned
 success before the action aborted in 70.860~s under an exact 70~s behavior-tree deadline.
 
-Crucially, an independent connectivity audit finds that the retained grid still connects the
+Crucially, a separately versioned deterministic costmap audit finds that the retained grid still connects the
 action-result pose to the goal below cost 253. The checked answer therefore reports a direct-route
 restriction, substantial detour, and deadline-aligned abort; it does not claim global no-path,
 name the evaluator-only obstacle, or attribute the result to recovery exhaustion. The terminal
@@ -240,6 +240,24 @@ behavior-tree transition was not delivered, so source semantics plus timing reco
 deadline mechanism but do not directly observe its final tick. This development case is retained
 as partial fault induction rather than tuned or discarded. It tests response usefulness and
 causal restraint, not comparative effectiveness.
+
+The first information-parity development comparison produced a useful negative result. Once R
+received the same executable geometric audit as P, R communicated the same route restriction,
+connected-grid qualification, detour, deadline alignment, and limits as P/T; this single case gives
+no evidence that P outperforms a tool-enabled repository agent. P's fluent candidate was
+substantively faithful but failed the conservative exact-text check, so its final answer fell back
+to T. The retained development fallback rate is therefore 1/1, not evidence that language
+realization improved the response.
+
+A matched evidence mask then removed only the costmap cell payload while retaining action,
+trajectory, source, and costmap metadata. All methods withheld a geometric cause. However, the
+checked P/T plan also omitted the still-supported deadline-aligned execution mechanism, whereas R
+preserved it with an explicit qualification that the terminal tick was not observed. We retained
+that failure and corrected the plan post hoc: its deterministic answer now reports the 0.860~s
+deadline alignment while withholding direct-route classification, grid connectivity, and the
+physical reason for incomplete navigation. This correction is not a prospective result and the
+model outputs were not resampled; it must generalize on a later independent case before supporting
+Q3.
 
 \section{Results}
 
