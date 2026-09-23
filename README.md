@@ -73,7 +73,8 @@ their own location. Exact repository commits and destinations are recorded in
   abort. The original straight-through slalom remains a negative geometry calibration; direct
   keyboard view switching passes on the additive v2 revision. Corrected S-turn, dynamic recovery,
   and bounded blockage each pass a three-run exact-condition repeatability gate; these repetitions
-  are not independent study episodes. Explanation generation and blinded annotation remain unrun.
+  are not independent study episodes. Later development comparisons use selected governed land
+  exports, but no explanation from this inventory has an independent human label.
 - **IMPLEMENTED, TESTED (ECOLOGICAL CALIBRATION):** the warehouse temporary-enclosure scenario
   passes a prospective three-run recovery-followed-by-success repetition gate with exact manifest,
   route, obstacle, seed, and configuration identity. Recovery feedback varies across runs; these
@@ -139,6 +140,10 @@ their own location. Exact repository commits and destinations are recorded in
   retained-grid connectivity, and successful outcome. This is one unannotated development case;
   it does not identify the physical obstacle, prove exact Nav2 snapshot consumption, or prove that
   the restriction caused the detour.
+- **COLLECTED, NOT_ANNOTATED (DIAGNOSTIC DEVELOPMENT):** the complete R/P/T/N inventory contains
+  52 blinded responses in 13 packets over nine statistical clusters. Final P used deterministic
+  fallback for 13/13 questions. This is a development inventory, not a held-out result; no P-over-R
+  effect is established and the prospective protocol remains unfrozen.
 - **TESTED (SECONDARY-ARM DEVELOPMENT):** the provider-neutral model-call contract now has a
   Claude Code adapter as its first non-GPT instance. A predeclared control rejected Haiku and fixed
   `claude-sonnet-5` at low effort. See [model-family replication](docs/MODEL_FAMILY_REPLICATION.md).
@@ -151,8 +156,10 @@ their own location. Exact repository commits and destinations are recorded in
 - **IMPLEMENTED, TESTED:** blinded response packaging and dual-annotator adjudication tooling
   implementing `docs/ANNOTATION_GUIDE.md`. Final legacy packet `sealed-primary-v3` contains 198
   primary F/G/H responses over all 33 retained episodes; its key is confined to evaluator-only
-  storage and its manifest is tracked. The separate Claude packet contains 54 responses. Scoring,
-  adjudication, and key joining remain `NOT_RUN`.
+  storage and its manifest is tracked. The separate Claude packet contains 54 responses. Two
+  isolated handoff archives contain the legacy and 52-response diagnostic inventories, blank forms,
+  guides, and an optional fail-closed resumable workbench. Scoring, adjudication, and key joining
+  remain `NOT_RUN`.
 - **NOT_RUN:** blinded dual annotation, final statistics/figures, and final A–E model evaluation.
 - **NOT_RUN:** source-to-binary rebuild verification.
 - **DEFERRED:** arbitrary-LLM proposition extraction until independently evaluated.
