@@ -376,6 +376,24 @@ but intentionally emits no confidence interval, significance test, or power esti
 be unstable with nine clusters. The summary is an input to the prospective freeze decision, not a
 substitute for additional independent pilots or a frozen held-out analysis.
 
+The primary variant used for pilot-informed paired power feasibility was declared before human
+labels in `diagnostic-pilot-primary-endpoints-v1.json`. It selects six independently referenced,
+fully observed endpoints from six distinct clusters; masks, matched controls, retrospective cases,
+and non-independent references remain secondary. After the joined labels exist, run:
+
+```bash
+python analysis/plan_diagnostic_pilot_power.py \
+  --annotations analysis/results/diagnostic-development-pilot-v1-analysis-input.jsonl \
+  --selection research/explanation_fidelity/experiment_configs/development/diagnostic-pilot-primary-endpoints-v1.json \
+  --output analysis/results/diagnostic-pilot-power-feasibility-v1.json
+```
+
+This is planning evidence, not a development significance test. It reports raw paired discordance
+and a Jeffreys-smoothed four-cell sensitivity. Six clusters cannot lower the existing 92-cluster
+smallest-practical-effect target; they may increase it or show that a P-over-R superiority freeze
+is not credible. A quarantined primary cluster is reported as missing and is never replaced after
+labels.
+
 Before real forms arrive, the entire current inventory can be rehearsed without creating or
 retaining human labels:
 

@@ -3628,3 +3628,25 @@
 - **BOUNDARY:** IDs cannot prove that annotators are distinct humans. Human independence,
   calibration discussion, real annotation, adjudication, key joining, analysis, and every effect
   estimate remain `NOT_RUN`.
+
+## 2026-09-23 — pre-label diagnostic pilot power-endpoint declaration
+
+- **STATUS:** `IMPLEMENTED / TESTED / PRE_LABEL_DECLARATION / NO_HUMAN_LABELS`; no response,
+  annotation, model output, frozen legacy artifact, or observed effect was inspected or changed.
+- **SELECTION:** six primary planning endpoints cover S-turn geometry, prospective nominal
+  geometry, warehouse recovery execution, held command--motion discrepancy, compensated
+  command--motion discrepancy, and delivered plan change. Each belongs to a distinct statistical
+  cluster and has an independent implementation or pre-model audit.
+- **EXCLUSIONS FROM PRIMARY POWER INPUT:** two non-independent-reference families, one retrospective
+  nominal failed induction, two evidence masks, and one matched control. They remain in blinded
+  annotation and secondary reporting.
+- **PLANNING RULE:** the post-adjudication tool reports raw P-only/R-only paired outcomes plus a
+  Jeffreys-smoothed four-cell sensitivity. The six-cluster pilot can only increase the existing
+  92-cluster target or reject a credible superiority direction; it cannot reduce the target or
+  select a replacement endpoint after labels.
+- **SYNTHETIC REHEARSAL:** a temporary 24-row R/P/T/N input exercised all six declared endpoints,
+  recovered the authored 2 P-only, 0 R-only, 2 both-success, and 2 neither-success cells, and kept
+  the planning minimum at 92. The temporary input/report were deleted and are not labels.
+- **REGRESSION:** three focused tests cover one-endpoint-per-cluster selection, quarantine/missing
+  handling, fixed-target non-reduction, and rejection of post-label or nonpartitioned selections.
+  Real pilot-informed power planning remains `NOT_RUN` pending human adjudication.

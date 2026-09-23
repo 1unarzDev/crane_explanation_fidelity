@@ -84,6 +84,18 @@ independent primary instances are infeasible by the collection cutoff, collectio
 predeclared deadline/resource reason, and the paper reports achieved effects/intervals as
 underpowered rather than claiming planned power or equivalence.
 
+Before either independent annotator returned a label, we fixed one development planning endpoint
+for each of six eligible clusters in
+`research/explanation_fidelity/experiment_configs/development/diagnostic-pilot-primary-endpoints-v1.json`.
+The selection admits the independently implemented S-turn case, prospective nominal case,
+pre-model-audited warehouse recovery, supported command--motion case, compensation case, and
+delivered-plan case. It excludes the two non-independent-reference families, the retrospective
+nominal failed induction, evidence masks, and the matched command--motion control from the primary
+planning count. All remain annotated and reported. After adjudication, the fixed selection may
+estimate paired discordance and increase the 92-cluster planning target or reject the credibility
+of a superiority freeze; its six unstable clusters may never lower that target or motivate a
+post-label endpoint substitution.
+
 ## Questions
 
 Use a small inventory: diagnosis/mechanism, decisive evidence, failure chain, path/clearance or

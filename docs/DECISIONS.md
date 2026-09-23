@@ -1141,3 +1141,23 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   change that removes the false negative without weakening the other mechanism gates.
 - Validity protection: this is post-hoc development tuning, not independent verifier-accuracy or
   method-effect evidence. No archived answer, packet, key, annotation unit, or model call changed.
+
+## 2026-09-23 — predeclare six diagnostic pilot endpoints before human labels
+
+- Decision: use exactly one fully observed, diagnosable endpoint from each of six eligible
+  development clusters for pilot-informed P-versus-R power feasibility. Keep masks, matched
+  controls, retrospective cases, and non-independent-reference cases as secondary outcomes; never
+  count them as additional independent planning observations.
+- Evidence: the 13 packets represent nine clusters, but only six have an independently implemented
+  or pre-model-audited primary variant suitable for the intended prospective population. No
+  independent annotator form, adjudication, or joined condition label existed when this selection
+  was committed.
+- Alternatives: choose the most favorable variant after labels; count all 13 packets; use all nine
+  clusters despite reference chronology; or ignore pilot labels entirely. The first three inflate
+  or select the effect, while the last discards the requested pilot-informed feasibility check.
+- Statistical rule: report raw paired discordance and a Jeffreys-smoothed four-cell sensitivity.
+  The six clusters can increase the fixed 92-cluster smallest-practical-effect target or show that
+  superiority is not credible, but cannot lower the target. Missing/quarantined endpoints are
+  reported and never replaced post-label.
+- RQ impact: this protects Q1's fair P-versus-tool-enabled-R comparison and keeps Q2/Q3 masks and
+  controls available as secondary evidence without pretending they increase primary power.

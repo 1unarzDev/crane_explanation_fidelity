@@ -1,0 +1,80 @@
+{
+  "schema": "crane-diagnostic-pilot-primary-endpoints/v1",
+  "status": "PRE_ANNOTATION_DEVELOPMENT_SELECTION_NOT_CONFIRMATORY_FREEZE",
+  "declared_date": "2026-09-23",
+  "annotation_inventory": "manifests/annotation/diagnostic-development-pilot-v1.json",
+  "annotation_inventory_sha256": "3600a1f46272c7e72838708f29653a351987579faeaa91e6fb01bb4d31417ddc",
+  "design_sensitivity": "research/explanation_fidelity/experiment_configs/development/diagnostic-study-power-sensitivity-v1.json",
+  "design_sensitivity_sha256": "9bfb6f5ee500bd14d94912b7bfb456e35d2b7820c22e8baeb9aa14af9260eaf4",
+  "selection_rule": "Exactly one fully observed, diagnosable, independently computed or pre-model-audited endpoint is selected per eligible statistical cluster before independent human labels exist. Evidence masks, matched controls, retrospective cases, and non-independent references remain secondary and cannot add primary sample size.",
+  "selected": [
+    {
+      "packet_name": "land-s-turn-unmasked",
+      "statistical_cluster_id": "land-s-turn-unexpected-abort-001",
+      "evidence_variant": "unmasked"
+    },
+    {
+      "packet_name": "land-prospective-nominal-false-premise",
+      "statistical_cluster_id": "diagnostic-land-nominal-20260922-001",
+      "evidence_variant": "unmasked"
+    },
+    {
+      "packet_name": "warehouse-recovery-sequence",
+      "statistical_cluster_id": "eco-pilot-001",
+      "evidence_variant": "unmasked"
+    },
+    {
+      "packet_name": "command-motion-supported",
+      "statistical_cluster_id": "command-motion-held-nominal-pair-001",
+      "evidence_variant": "supported-held-condition"
+    },
+    {
+      "packet_name": "command-motion-compensation",
+      "statistical_cluster_id": "command-motion-compensation-001",
+      "evidence_variant": "supported-discrepancy-measured-response-recovery-success"
+    },
+    {
+      "packet_name": "land-delivered-plan-change",
+      "statistical_cluster_id": "land-connected-detour-plan-change-004",
+      "evidence_variant": "independently-recomputed-delivered-plan-geometry"
+    }
+  ],
+  "excluded": [
+    {
+      "packet_name": "land-unmasked",
+      "reason": "development reference was not independent"
+    },
+    {
+      "packet_name": "land-missing-costmap-cells",
+      "reason": "evidence mask of a cluster whose development reference was not independent"
+    },
+    {
+      "packet_name": "boat-unmasked",
+      "reason": "development reference was not independent"
+    },
+    {
+      "packet_name": "boat-missing-return-speed",
+      "reason": "paired evidence mask; development reference was not independent"
+    },
+    {
+      "packet_name": "land-nominal-false-premise",
+      "reason": "retrospective failed-induction control rather than a prospectively declared case"
+    },
+    {
+      "packet_name": "command-motion-nominal",
+      "reason": "matched control in the selected command-motion statistical cluster"
+    },
+    {
+      "packet_name": "command-motion-missing-odometry",
+      "reason": "evidence mask in the selected command-motion statistical cluster"
+    }
+  ],
+  "planning_rule": {
+    "smallest_practically_meaningful_net_improvement": 0.15,
+    "fixed_design_p_only": 0.2,
+    "fixed_design_r_only": 0.05,
+    "fixed_design_minimum_clusters_for_80_percent_power": 92,
+    "pilot_estimate_use": "Report raw paired discordance and a Jeffreys-smoothed four-cell sensitivity. Never reduce the fixed 92-cluster design target from these six unstable clusters. Increase the target if the pilot-informed sensitivity requires more; if direction does not favor P, do not freeze a superiority study merely by changing endpoints or effect assumptions."
+  },
+  "labels_inspected_when_declared": false
+}
