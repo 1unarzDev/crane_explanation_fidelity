@@ -2816,3 +2816,31 @@
   `883f86c39d8ef1d511d82772fd4a61e7b651d25a8ed4bad48587b7f107cbe1b3`.
   The archives remain convenience handoffs rather than governed labels; completed human forms have
   not been received.
+
+## 2026-09-22 — ecological warehouse recovery-mechanism derivation
+
+- **STATUS:** `IMPLEMENTED / TESTED / GOVERNED / DEVELOPMENT_ONLY`; model comparison and human
+  annotation are `NOT_RUN`.
+- **SOURCE EPISODE:** retained ecological warehouse episode `eco-pilot-001`; no simulator rerun,
+  scene change, or outcome-driven resampling occurred. The NavigateToPose action succeeded after
+  14.261 m sampled path length, 2.002 m maximum lateral excursion, and four retained complete
+  recovery-leaf invocations.
+- **CHECKED MECHANISM:** core commit `af25ee5` validates unique invocation IDs, exact bounded
+  classifier provenance and policy hash, matching leaf start/end transitions, and the ordered
+  `ComputePathToPose` failure → `NavigateWithReplanning` failure →
+  `WouldAPlannerRecoveryHelp` success → system-recovery entry preceding each retained invocation.
+  The checked sequence is `Spin→SUCCESS`, `Wait→SUCCESS`, `BackUp→SUCCESS`, and `Spin→SUCCESS`;
+  the action eventually succeeded.
+- **RESTRAINT:** the result says **at least four retained invocations** because whole-history
+  completeness is not proven. It does not convert the maximum Nav2 feedback count of 16 into an
+  invocation count. It withholds the physical cause of the planner failures and explicitly notes
+  that delivered costmap observations do not prove the exact planner-consumed state.
+- **REGRESSION:** 59 core tests pass. Focused adapter tests reproduce the four-invocation result
+  from the actual governed export, reject duplicate invocation IDs, fail to `insufficient` when a
+  required recovery-eligibility transition is removed, and verify feedback-count separation.
+- **GOVERNANCE:** the 10,102-byte checked export hashes to
+  `482c4ce2c930b52bf6b6db02b5add9c01344d414baab95cfbcae42b927888501`; source/core/adapter hashes
+  are recorded in `manifests/data/ecological-warehouse-recovery-development-v1.robot-visible.json`,
+  and the updated development DVC object was pushed to R2. This is an execution-mechanism and
+  ambiguity case for prospective Q2/Q3 development, not physical-cause diagnosis or an
+  effectiveness result.

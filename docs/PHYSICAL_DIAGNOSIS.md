@@ -125,3 +125,32 @@ Robot-visible fixture/QA/diagnostic/build-provenance artifacts are governed thro
 `manifests/data/land-blockage-global-002.robot-visible.json`; scenario identity and Unity runtime
 truth remain separate under the corresponding evaluator-only manifest. This is a development
 response-quality milestone, not evidence that the proposed method beats R, N, or T.
+
+## Bounded warehouse recovery mechanism
+
+The retained ecological warehouse episode `eco-pilot-001` supplies a deliberately ambiguous
+execution-mechanism case. A checked computation matches four unique capture-side invocation IDs
+to the hash-pinned exact-name recovery classifier, their `IDLE→RUNNING` and terminal transitions,
+and the ordered `ComputePathToPose` failure, `NavigateWithReplanning` failure,
+`WouldAPlannerRecoveryHelp` success, and system-recovery entry preceding each leaf. The retained
+sequence is `Spin→SUCCESS`, `Wait→SUCCESS`, `BackUp→SUCCESS`, and `Spin→SUCCESS`; the navigation
+action eventually succeeded.
+
+This establishes **at least four retained source-qualified recovery invocations**, not exactly
+four over the goal lifetime. Whole-history completeness is not proven, and the maximum Nav2
+feedback recovery count of 16 is not an invocation identity. The computation also does not infer
+why planning failed: delivered costmaps are not proof of the exact planner-consumed state, and no
+physical obstacle cause is established. The checked result is therefore useful for recovery
+mechanism and causal-restraint evaluation, not a physical-cause diagnosis.
+
+The source export and derived checked answer are governed through
+`manifests/data/ecological-warehouse-recovery-development-v1.robot-visible.json`. Reproduce the
+derivation with:
+
+```bash
+PYTHONPATH=packages/astro_dock/src/crane_explain/src \
+python analysis/export_recovery_execution_diagnostic.py \
+  data/robot_visible/dev/ecological-pilot-v1/eco-pilot-001/evidence.json \
+  --source-reference data/robot_visible/dev/ecological-pilot-v1/eco-pilot-001/evidence.json \
+  --output data/robot_visible/dev/ecological-pilot-v1/eco-pilot-001/recovery-execution-diagnostic.json
+```

@@ -1,0 +1,54 @@
+{
+  "schema": "crane-data-manifest-v1",
+  "artifact_id": "ecological-warehouse-recovery-development-v1",
+  "status": "DEVELOPMENT_EXECUTION_MECHANISM_DIAGNOSIS",
+  "visibility": "robot_visible",
+  "dvc_pointer": "data/robot_visible/dev.dvc",
+  "artifacts": [
+    {
+      "path": "data/robot_visible/dev/ecological-pilot-v1/eco-pilot-001/evidence.json",
+      "sha256": "8f15afa5a4b7cdab1e1e70f164ace3900715ad1b62bd4a9c83a9900177fb9d35",
+      "bytes": 1879777,
+      "role": "source_robot_visible_ecological_export"
+    },
+    {
+      "path": "data/robot_visible/dev/ecological-pilot-v1/eco-pilot-001/recovery-execution-diagnostic.json",
+      "sha256": "482c4ce2c930b52bf6b6db02b5add9c01344d414baab95cfbcae42b927888501",
+      "bytes": 10102,
+      "role": "checked_recovery_execution_diagnosis"
+    }
+  ],
+  "source_references": {
+    "crane_ml_commit": "c46de4d7e83a18ebef3abc4c97eff1b706a79282",
+    "astro_dock_commit": "36202373ae186a8fd247a20b7b477312a744de99",
+    "crane_explain_core_commit": "af25ee59fae69dfb5aec3093f9f88e95050480f0",
+    "export_adapter": "analysis/export_recovery_execution_diagnostic.py",
+    "export_adapter_sha256": "7c3b4a0f3a122bae9c4523ffd242c473cd599cfe7268d7edd56cdaefce361120",
+    "bt_policy_sha256": "9fb490be79d16c482d9c1b1a8f2f946d142e0d21ed3d4f5901aa3065304329d1",
+    "configuration_sha256": "e18a16cbf9524e1dec4df9fae352ea9255b9ec2d6343dfe2cb6cc8a4150fe242",
+    "environment_manifest_sha256": "c6db13e9c7190482f1eca723cb515cc7a38ce01a9caa60d6fbf9720810e68d69"
+  },
+  "observed_result": {
+    "action_status": "succeeded",
+    "retained_source_qualified_recovery_invocations": 4,
+    "ordered_leaf_results": [
+      "Spin:SUCCESS",
+      "Wait:SUCCESS",
+      "BackUp:SUCCESS",
+      "Spin:SUCCESS"
+    ],
+    "whole_history_completeness": "not_proven",
+    "maximum_nav2_feedback_recovery_count": 16,
+    "diagnostic_disposition": "supported",
+    "causal_language_level": "execution_mechanism",
+    "final_text_verification": "accepted_exact_deterministic_rendering"
+  },
+  "allowed_use": "development-only recovery-mechanism and ambiguity case; not held-out, confirmatory, independently annotated, or evidence of a physical obstacle cause",
+  "limitations": [
+    "The four retained invocation records are a lower bound because whole-history completeness is not proven.",
+    "The Nav2 feedback recovery count is not a unique behavior-tree invocation count.",
+    "The retained transition sequence establishes the software recovery mechanism but not the physical cause of planner failure.",
+    "Delivered costmap observations do not prove the exact state consumed by the planner.",
+    "No evaluator-only geometry, semantic obstacle identity, human annotation, or model comparison is included."
+  ]
+}
