@@ -1,0 +1,52 @@
+{
+  "schema": "crane-data-manifest-v1",
+  "artifact_id": "land-blockage-global-002-mask-no-costmap-cells",
+  "status": "DEVELOPMENT_EVIDENCE_MASK_AMBIGUOUS",
+  "visibility": "robot_visible",
+  "dvc_pointer": "data/robot_visible/dev.dvc",
+  "source_episode": "land-blockage-global-002",
+  "statistical_cluster": "land-blockage-global-002",
+  "artifacts": [
+    {
+      "path": "data/robot_visible/dev/diagnostic-pilot-v1/land-blockage-global-002-mask-no-costmap-cells/fixture-summary.json",
+      "sha256": "f7a2c15be532c9c2fda85b63b7c04b873a2f4898e4b0a9a7312bb18d7c2b32ef"
+    },
+    {
+      "path": "data/robot_visible/dev/diagnostic-pilot-v1/land-blockage-global-002-mask-no-costmap-cells/mask-manifest.json",
+      "sha256": "bc7fa7f167d94f4b9d86c65713396b77d67a905a1d21db012d972cd0d2038aea"
+    },
+    {
+      "path": "data/robot_visible/dev/diagnostic-pilot-v1/land-blockage-global-002-mask-no-costmap-cells/geometric-diagnostic.json",
+      "sha256": "538984917bc83881a860d85a9e0959ca9b5bb893afcfc7090c6f68c79f8a2a9f"
+    }
+  ],
+  "mask": {
+    "id": "withhold-costmap-cell-payload-v1",
+    "removed_json_pointers": [
+      "/latestCostmapSnapshot/data"
+    ],
+    "evaluator_truth_available_to_methods": false,
+    "source_fixture_sha256": "4ce8b1e2dab7c5ab8fcbc531a5a367e5ba8b2b26b9d579f8da136988ac9e2105"
+  },
+  "diagnostic": {
+    "method": "geometric-route-restriction-v1",
+    "disposition": "insufficient",
+    "missing_decisive_evidence": [
+      "direct-route cost classification",
+      "retained-grid connectivity"
+    ],
+    "deterministic_final_text_verified": true
+  },
+  "reproduction": {
+    "mask_tool": "analysis/mask_geometric_costmap_evidence.py",
+    "mask_tool_sha256": "b38fb028d05f6dcaab8ee608f075da71b0ef905f535df048e36e80e353b19271",
+    "diagnostic_export": "analysis/export_geometric_route_diagnostic.py",
+    "diagnostic_export_sha256": "656363a93a4559d4994d124de7ea4a51b83a2d505306eeb582a60c44be0ab532"
+  },
+  "limitations": [
+    "This is a deterministic evidence mask of one development episode, not an independent episode.",
+    "The masked and unmasked presentations must remain in the same statistical cluster and split.",
+    "The declared source payload hash is retained as metadata but cannot be verified after its cell payload is withheld.",
+    "This artifact tests qualification under missing decisive evidence and cannot establish a physical mechanism."
+  ]
+}

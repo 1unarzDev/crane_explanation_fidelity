@@ -53,23 +53,33 @@ def export(
     initial = fixture["initialPose"]
     goal_distance = math.hypot(float(goal["x"]) - float(initial["x"]),
                                float(goal["y"]) - float(initial["y"]))
-    clearance = audit(
-        fixture,
-        float(goal["x"]),
-        float(goal["y"]),
-        float(fixture["goal"]["yaw"]),
-        goal_distance,
-        robot_radius_m,
-        robot_radius_m,
-        inflation_radius_m,
-    )
-    lethal_samples = [
-        sample for sample in clearance["approach"]["samples"]
-        if sample["cost"] is not None and int(sample["cost"]) >= 253
-    ]
-    # approach samples are indexed from goal backwards; the largest distance-before-goal is the
-    # first lethal sample encountered when traveling from the retained start toward the goal.
-    first_lethal = max(lethal_samples, key=lambda sample: sample["distanceBeforeGoal"], default=None)
+    snapshot = fixture["latestCostmapSnapshot"]
+    costmap_payload_available = bool(snapshot.get("data"))
+    clearance = None
+    lethal_samples = None
+    first_lethal = None
+    if costmap_payload_available:
+        clearance = audit(
+            fixture,
+            float(goal["x"]),
+            float(goal["y"]),
+            float(fixture["goal"]["yaw"]),
+            goal_distance,
+            robot_radius_m,
+            robot_radius_m,
+            inflation_radius_m,
+        )
+        lethal_samples = [
+            sample for sample in clearance["approach"]["samples"]
+            if sample["cost"] is not None and int(sample["cost"]) >= 253
+        ]
+        # approach samples are indexed from goal backwards; the largest distance-before-goal is
+        # the first lethal sample encountered from the retained start toward the goal.
+        first_lethal = max(
+            lethal_samples,
+            key=lambda sample: sample["distanceBeforeGoal"],
+            default=None,
+        )
     trajectory = fixture.get("trajectory") or []
     max_lateral = max((abs(float(sample["y"]) - float(initial["y"]))
                        for sample in trajectory), default=None)
@@ -77,13 +87,16 @@ def export(
                        for sample in trajectory), default=None)
     plan_successes = int(fixture.get("behaviorTreeTransitionCounts", {}).get(
         "ComputePathToPose:RUNNING->SUCCESS", 0))
-    snapshot = fixture["latestCostmapSnapshot"]
     fixture_sha = sha256(fixture_path)
     nav2_sha = sha256(nav2_config)
     bt_sha = sha256(bt_xml)
     evidence_ids = (
         f"fixture-summary-sha256:{fixture_sha}",
-        f"costmap-data-sha256:{snapshot['dataSha256']}",
+        (
+            f"costmap-data-sha256:{snapshot['dataSha256']}"
+            if costmap_payload_available
+            else f"costmap-metadata-declared-data-sha256:{snapshot['dataSha256']}"
+        ),
         f"nav2-config-sha256:{nav2_sha}",
         f"bt-xml-sha256:{bt_sha}",
     )
@@ -93,11 +106,13 @@ def export(
         evidence_ids=evidence_ids,
         frame=str(snapshot["frameId"]),
         action_status=str(fixture["status"]),
-        direct_route_has_lethal_cell=bool(lethal_samples),
-        direct_route_minimum_clearance_m=clearance["approach"]["minimumLethalClearanceMeters"],
+        direct_route_has_lethal_cell=(bool(lethal_samples) if lethal_samples is not None else None),
+        direct_route_minimum_clearance_m=(
+            clearance["approach"]["minimumLethalClearanceMeters"] if clearance else None
+        ),
         direct_route_first_lethal_x_m=(float(first_lethal["x"]) if first_lethal else None),
         direct_route_first_lethal_y_m=(float(first_lethal["y"]) if first_lethal else None),
-        grid_connected=clearance["connectedBelowCost253"],
+        grid_connected=(clearance["connectedBelowCost253"] if clearance else None),
         connectivity_origin="action-result-pose",
         maximum_lateral_deviation_m=max_lateral,
         maximum_forward_progress_m=max_forward,
@@ -129,6 +144,8 @@ def export(
         "method_input": {
             "fixture_summary_sha256": fixture_sha,
             "costmap_data_sha256": snapshot["dataSha256"],
+            "costmap_data_sha256_verified": costmap_payload_available,
+            "costmap_payload_available": costmap_payload_available,
             "costmap_frame": snapshot["frameId"],
             "costmap_stamp": snapshot["stamp"],
             "nav2_config_sha256": nav2_sha,
@@ -137,17 +154,27 @@ def export(
             "inflation_radius_m": inflation_radius_m,
             "deadline_seconds": deadline_seconds,
         },
-        "reference_computation": {
-            "schema": clearance["schema"],
-            "snapshot": clearance["snapshot"],
-            "direct_route": {
-                "has_lethal_cell": bool(lethal_samples),
-                "first_lethal_sample_from_start": first_lethal,
-                "minimum_lethal_clearance_m": clearance["approach"]["minimumLethalClearanceMeters"],
-            },
-            "connected_below_cost_253": clearance["connectedBelowCost253"],
-            "connectivity_origin": "action-result-pose",
-        },
+        "reference_computation": (
+            {
+                "schema": clearance["schema"],
+                "status": "completed",
+                "snapshot": clearance["snapshot"],
+                "direct_route": {
+                    "has_lethal_cell": bool(lethal_samples),
+                    "first_lethal_sample_from_start": first_lethal,
+                    "minimum_lethal_clearance_m": clearance["approach"]["minimumLethalClearanceMeters"],
+                },
+                "connected_below_cost_253": clearance["connectedBelowCost253"],
+                "connectivity_origin": "action-result-pose",
+            }
+            if clearance
+            else {
+                "schema": "crane-nav2-costmap-clearance-audit-v1",
+                "status": "not_run_missing_costmap_cell_payload",
+                "missing": ["latestCostmapSnapshot.data"],
+                "declared_data_sha256": snapshot["dataSha256"],
+            }
+        ),
         "diagnostic_result": result.to_dict(),
         "final_answer": answer,
         "final_text_verification": {
@@ -156,7 +183,11 @@ def export(
         },
         "evidence_boundary": {
             "included": [
-                "delivered global Nav2 costmap snapshot",
+                (
+                    "delivered global Nav2 costmap snapshot"
+                    if costmap_payload_available
+                    else "delivered global Nav2 costmap metadata without cell payload"
+                ),
                 "delivered odometry trajectory",
                 "NavigateToPose result status and timing",
                 "exact Nav2 configuration and BT source hashes",

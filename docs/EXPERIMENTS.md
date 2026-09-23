@@ -2438,3 +2438,20 @@
 - **STATUS:** packet generated with four responses; human annotation and adjudication are
   `NOT_RUN`. Two independent annotators plus a distinct adjudicator for disagreements are required.
   No project-author inspection or model judgment will be reported as human annotation.
+
+## 2026-09-22 — deterministic missing-cell evidence mask
+
+- **PURPOSE:** create one matched ambiguity case from `land-blockage-global-002` without another
+  simulation or evaluator-truth leakage. The transform removes only
+  `/latestCostmapSnapshot/data`; it retains the declared hash as unverified metadata plus action,
+  trajectory, source, and costmap metadata. The mask is grouped with its source episode for every
+  split and statistical analysis.
+- **FAIL-CLOSED RESULT:** the geometric computation is not run without cell values. The checked
+  result is `insufficient` because direct-route classification and retained-grid connectivity are
+  missing; deterministic final text verification passes. The result still reports the recorded
+  terminal sequence and specifies a hash-checked costmap as the next required observation, but it
+  may not claim geometric restriction or global infeasibility.
+- **GOVERNANCE:** the masked fixture, transformation manifest, and checked diagnostic are retained
+  in robot-visible development DVC storage with committed hashes. No evaluator-only field was
+  added. This is one evidence variant of an existing development episode, not another independent
+  sample or a confirmatory result.
