@@ -301,6 +301,21 @@ but intentionally emits no confidence interval, significance test, or power esti
 be unstable with nine clusters. The summary is an input to the prospective freeze decision, not a
 substitute for additional independent pilots or a frozen held-out analysis.
 
+Before real forms arrive, the entire current inventory can be rehearsed without creating or
+retaining human labels:
+
+```bash
+scripts/rehearse_diagnostic_annotation_pipeline.sh
+```
+
+The script writes only to a fresh temporary directory and marks every generated rationale
+`SYNTHETIC PIPELINE REHEARSAL ONLY - NOT A HUMAN LABEL`. It validates all thirteen packets through
+form construction, agreement, adjudication completion, key joining, and the 52-response/nine-
+cluster descriptive summary. It also injects one temporary evidence-problem flag and requires the
+join to quarantine that response's entire statistical cluster across paired evidence variants.
+Its output is pipeline regression evidence only and must never be reported as annotation,
+agreement, a method result, or a power estimate.
+
 ### Generate blank diagnostic annotation forms
 
 Give each annotator the diagnostic guide, the thirteen packet files above, and a separately generated

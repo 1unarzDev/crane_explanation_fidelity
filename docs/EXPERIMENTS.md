@@ -3505,3 +3505,22 @@
   still requires blinded labels, clustered results, replacement of every red pending marker, and
   final 8--9-page review; otherwise the manuscript must be cut deliberately to a valid short/WIP
   length rather than submitted at seven pages.
+
+## 2026-09-23 — diagnostic annotation pipeline inventory rehearsal
+
+- **STATUS:** `TESTED / SYNTHETIC_ONLY / NO_HUMAN_LABELS`; no governed packet, key, annotation,
+  study result, or frozen artifact changed.
+- **FULL PATH:** all thirteen current diagnostic packets passed blank-form construction with two
+  distinct synthetic annotator IDs, complete agreement validation, completion output, evaluator-
+  key joining, and descriptive summarization. The joined inventory contains the expected 52
+  responses, nine statistical clusters, 48 diagnosable response rows, four ambiguous response
+  rows, and 13/13 P template fallbacks.
+- **FAIL-CLOSED PATH:** one temporary `evidence_problem` flag in `land-blockage-global-002`
+  quarantined all eight responses across its unmasked and missing-costmap variants, leaving 44
+  responses and eight clusters. No condition-specific exclusion occurred.
+- **REPRODUCTION:** `scripts/rehearse_diagnostic_annotation_pipeline.sh` repeats both checks in a
+  fresh temporary directory. Every generated rationale is explicitly marked synthetic, outputs
+  are not written under governed roots, and the script makes no empirical or agreement claim.
+- **CONSEQUENCE:** tooling is ready to process returned forms, but human annotation, actual
+  agreement, distinct-person adjudication, key joining, and development effect estimates remain
+  `NOT_RUN`.
