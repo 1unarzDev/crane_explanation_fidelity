@@ -158,7 +158,22 @@ One single-sample R/P/T/N comparison is retained. Project review found that R us
 although the executed hash-pinned XML configures 90 s, while N introduced a hypothetical external
 failure criterion not present in the evidence. These are not human labels. P again failed exact
 verification and fell back to T. A subsequent predeclared warehouse recovery-sequence case also
-fell back and tool-enabled R matched its bounded mechanism, making development fallback 8/8. The
-blinded inventory is now 32 responses in eight packets over six clusters. Human
+fell back and tool-enabled R matched its bounded mechanism, making fallback 8/8 at that checkpoint.
+The blinded inventory at that checkpoint was 32 responses in eight packets over six clusters. Human
 annotation/adjudication, stable pilot-informed
 power planning, protocol freeze, and held-out evaluation remain `NOT_RUN`.
+
+### Command-motion development checkpoint — 2026-09-23
+
+A separately governed held-condition/nominal pair now qualifies synchronized delivered command
+and odometry evidence. One no-retry R/P/T/N comparison per run gives tool-enabled R the same blind
+samples, pinned source, and executable diagnostic as P. Project review finds that R and raw P
+identify the supported discrepancy, while every model condition rejects the nominal false premise;
+these observations are not human labels and do not establish P-over-R improvement. Both original P
+outputs fell back under lexical false positives, raising immutable development fallback to 10/10.
+A post-hoc corrected-verifier audit is retained separately and does not rewrite those outcomes.
+
+The two new blinded packets share one paired scenario cluster. The current inventory is therefore
+40 responses in ten packets over seven clusters. Human annotation/adjudication, a naturally
+ambiguous command-motion case, protocol freeze, independent held-out collection, and inferential
+analysis remain `NOT_RUN`.

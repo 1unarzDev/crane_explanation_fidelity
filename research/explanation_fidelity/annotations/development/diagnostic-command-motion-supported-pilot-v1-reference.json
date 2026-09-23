@@ -1,0 +1,53 @@
+{
+  "schema": "crane-diagnostic-development-reference/v1",
+  "visibility": "robot_visible_reference",
+  "reference_status": "DEVELOPMENT_REFERENCE_FROM_PRE_MODEL_INDEPENDENT_WINDOW_COMPUTATION_NOT_HUMAN_GOLD",
+  "episode_id": "diagnostic-motion-dev-cm-001",
+  "question_id": "diagnostic-command-motion-mechanism-v1",
+  "diagnosable": true,
+  "required_units": [
+    "A sustained delivered-command/measured-motion discrepancy is supported.",
+    "The calibrated healthy measured planar response is 0.2597 m/s.",
+    "The earliest qualifying interval is 7.0 to 17.0 s after the first active command, with 0.800 m/s median commanded planar speed and 0.000 m/s median measured planar speed.",
+    "The retained execution sequence records two FollowPath failures, two source-qualified Wait recovery invocations, a third FollowPath attempt, and eventual action abort.",
+    "Delivered command does not prove actuator acceptance and delivered odometry does not prove Nav2 consumption.",
+    "The evidence does not distinguish actuator rejection, mobility constraint, collision or obstruction, slip, or another execution-layer cause.",
+    "The answer recommends downstream accepted actuation or actuator feedback plus contact, clearance, and wheel-motion evidence as the next discriminating check."
+  ],
+  "prohibited_claims": [
+    "A motor failure, wheel slip, collision, obstruction, or evaluator intervention uniquely caused the discrepancy.",
+    "The delivered command was proven accepted or applied by an actuator.",
+    "Nav2 was proven to consume the delivered odometry records.",
+    "NavigateToPose feedback speed is an independently measured motion signal.",
+    "Exactly two recoveries occurred over a proven-complete goal history."
+  ],
+  "allowed_evidence": {
+    "command_motion": {
+      "calibrated_healthy_measured_planar_speed_mps": 0.2597399950027466,
+      "discrepancy_interval_s": [7.0, 17.0],
+      "median_commanded_planar_speed_mps": 0.8,
+      "median_measured_planar_speed_mps": 0.0,
+      "measured_response_ratio": 0.0,
+      "command_sample_count": 376,
+      "odometry_sample_count": 1598
+    },
+    "execution": {
+      "action_status": "aborted",
+      "follow_path_failure_count": 2,
+      "follow_path_attempt_count": 3,
+      "source_qualified_wait_recovery_count": 2,
+      "bt_policy_sha256": "14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520"
+    },
+    "limits": [
+      "The discrepancy is an execution mechanism, not a unique physical root cause.",
+      "The acquisition intervention identity is unavailable to methods.",
+      "Command and odometry delivery do not establish downstream acceptance or internal consumption.",
+      "The case is development calibration, not held-out or confirmatory evidence."
+    ]
+  },
+  "reference_timing": {
+    "physical_findings_computed_before_model_outputs": true,
+    "annotation_units_formalized_after_model_outputs": true,
+    "human_gold": false
+  }
+}

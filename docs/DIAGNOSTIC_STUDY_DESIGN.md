@@ -163,10 +163,25 @@ FollowPath attempt and action abort.
 The matched time-resolved nominal rerun succeeded after 9.480 m displacement with zero FollowPath
 failures and zero source-qualified Wait invocations. Both implementations return `not_triggered`,
 and the checked answer explicitly rejects the false failure premise. This passes the engineering
-gate for a second mechanism, but not the prospective study gates. A naturally ambiguous or masked
-case, information/tool-parity R/P/T/N outputs, blind annotation, and independent scenario
-collection remain `NOT_RUN`. The development thresholds are not frozen, and neither rerun can
-contribute to the planned cluster count.
+gate for a second mechanism, but not the prospective study gates.
+
+One no-retry R/P/T/N comparison was then retained for each member of the pair. R received the blind
+samples, exact CRANE/core source, and the same executable window computation as P. On project
+review, R and raw P identified the supported discrepancy; N described it only as suggested without
+the aligned computation. R, raw P, and N all rejected the nominal failure premise. These are not
+human labels and do not establish a P-over-R effect. The then-current final-text gate rejected both
+P candidates for lexical false positives, so the immutable final P outputs used deterministic
+fallback (2/2). A later post-hoc audit under corrected bounded matching accepts both raw candidates
+after evidence-ID-only repair and rejects all six authored mutations; it does not alter the original
+outputs or estimate verifier error rates.
+
+Two blinded four-response packets now cover the supported and nominal members. They share one
+`command-motion-held-nominal-pair-001` statistical cluster because they are a paired
+intervention/control family. The development annotation inventory therefore contains 40 responses
+over seven clusters, with human annotation and adjudication still `NOT_RUN`. A naturally ambiguous
+or evidence-masked command-motion case, independently varied scenarios, protocol freeze, and
+held-out collection remain `NOT_RUN`. The development thresholds are not frozen, and this pair
+cannot be counted as two independent scenario instances.
   A retained unexpected land success now passes a false-premise-aware `not_triggered` check and has
   a blinded R/P/T/N packet, but it was not prospectively collected and has no human labels.
 - One separately governed, prospectively declared nominal land episode now supplies complete-route

@@ -1,0 +1,39 @@
+{
+  "schema": "crane-explain-annotation-packet-manifest/v1",
+  "status": "DEVELOPMENT_DRY_RUN_AWAITING_TWO_HUMAN_ANNOTATORS",
+  "study": "prospective-physical-diagnosis-development",
+  "packet": {
+    "path": "model_outputs/annotation_packets/diagnostic-command-motion-supported-pilot-v1/packet.jsonl",
+    "sha256": "131cc89ebed1020e0c3e025e2679cc32db676407e60726c96b980862e1e468ec",
+    "dvc_pointer": "model_outputs.dvc",
+    "responses": 4,
+    "conditions_blinded": true
+  },
+  "key": {
+    "path": "data/evaluator_only/annotation_keys/diagnostic-command-motion-supported-pilot-v1.json",
+    "sha256": "a9a1bff5c5cda146550c04d442e382631b3713ac63f5d13c1d9506e0a94338d7",
+    "dvc_pointer": "data/evaluator_only/annotation_keys.dvc",
+    "visibility": "evaluator_only"
+  },
+  "reference": {
+    "path": "research/explanation_fidelity/annotations/development/diagnostic-command-motion-supported-pilot-v1-reference.json",
+    "sha256": "994af0bec0ccd865fc9a532bacc9c4c4b3ea1aff7f6541a02415572242cdca71",
+    "status": "DEVELOPMENT_REFERENCE_FROM_PRE_MODEL_INDEPENDENT_WINDOW_COMPUTATION_NOT_HUMAN_GOLD"
+  },
+  "rubric": {
+    "path": "docs/DIAGNOSTIC_ANNOTATION_GUIDE.md",
+    "status": "DEVELOPMENT_DRAFT_NOT_FROZEN"
+  },
+  "requirements": {
+    "independent_annotators": 2,
+    "distinct_adjudicator_on_disagreement": true,
+    "condition_key_withheld_until_after_adjudication": true
+  },
+  "limitations": [
+    "This is development instrumentation qualification, not held-out or confirmatory evidence.",
+    "Physical findings were computed before model generation, but annotation units were formalized after output inspection.",
+    "The reference is not a human gold label and no human annotations or adjudication exist at packet creation time.",
+    "The original P candidate failed the then-current exact verifier; final P used deterministic fallback and remains byte-identical to T.",
+    "This held-condition run and its matched nominal control form one paired statistical cluster, not two independent episodes."
+  ]
+}

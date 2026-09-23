@@ -963,3 +963,24 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   command-to-motion family using already supported instrumentation, but admit it only after a
   matched healthy control, independent diagnostic computation, useful final answer, parity audit,
   and annotation dry run pass.
+
+## 2026-09-23 — retain the command-motion pair as one blinded development cluster
+
+- Decision: retain the held-condition and matched nominal command-motion comparisons as two
+  blinded annotation packets but one statistical cluster. Preserve both original no-retry model
+  outputs and their 2/2 deterministic fallback decisions unchanged.
+- Evidence: the same predeclared intervention/control family and thresholds produced one supported
+  7–17 s command-to-motion discrepancy and one successful `not_triggered` control. Tool-enabled R
+  received the same blind samples, exact source, and executable computation as P. Project review
+  finds R and raw P identify the supported mechanism and all model conditions reject the nominal
+  false premise; independent human labels remain `NOT_RUN`.
+- Alternatives: count the two runs as independent scenarios; rerun P after correcting verifier
+  false positives; replace final P with the newly accepted raw candidates; or omit the pair. The
+  first inflates sample size, the middle choices rewrite an observed operating point, and omission
+  discards a useful instrumentation and response-quality calibration.
+- RQ impact: the pair completes a fair development dry run for the second mechanism and exposes
+  language-gate failure separately from diagnostic failure. It supplies no confirmatory effect
+  estimate and does not show P outperforming tool-enabled R.
+- Validity protection: references state that physical computations predated model calls while
+  annotation units were formalized afterward. Packet keys remain evaluator-only; the post-hoc
+  bounded-verifier audit is manifested separately and cannot relabel the immutable outputs.

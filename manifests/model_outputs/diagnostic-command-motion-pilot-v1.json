@@ -1,0 +1,96 @@
+{
+  "schema": "crane-explain-model-artifact-manifest/v1",
+  "status": "DEVELOPMENT_ONLY_NOT_FROZEN",
+  "created_utc": "2026-09-23T07:06:10Z",
+  "provider": "codex",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "low",
+  "adapter": "codex-cli-json/v1",
+  "single_sample_no_retry": true,
+  "new_model_calls": 6,
+  "model_condition_outputs": 6,
+  "embedded_non_model_smoke_conditions": ["T"],
+  "embedded_non_model_smoke_outputs": 2,
+  "result_envelope_conditions": ["N", "P", "R", "T"],
+  "result_envelope_outputs": 8,
+  "conditions": ["N", "P", "R"],
+  "question_kinds": ["diagnostic-mechanism-or-false-premise-v1"],
+  "episode_ids": [
+    "diagnostic-motion-dev-cm-001",
+    "diagnostic-motion-dev-cm-nominal-001"
+  ],
+  "evaluator_truth_available_to_methods": false,
+  "information_parity_audited": true,
+  "primary_comparison": "P versus tool-enabled R",
+  "output_root": "model_outputs/dev/diagnostic-command-motion-pilot-v1",
+  "cache_root": "research/explanation_fidelity/model_cache/diagnostic-command-motion-pilot-v1",
+  "artifacts": [
+    {
+      "path": "model_outputs/dev/diagnostic-command-motion-pilot-v1/diagnostic-motion-dev-cm-001/mechanism-or-false-premise.json",
+      "sha256": "80dbfaa4a4bbb708310e425f842583ea55bf37fc7044d7f1f44b0fcacdae4068",
+      "bytes": 11251
+    },
+    {
+      "path": "model_outputs/dev/diagnostic-command-motion-pilot-v1/diagnostic-motion-dev-cm-nominal-001/mechanism-or-false-premise.json",
+      "sha256": "884eaa2e8e784116460b79c1b0becad79daeb38b8a7543f7e5517d9602502768",
+      "bytes": 10154
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-command-motion-pilot-v1/08e5f12b8078b5d42b3ab64397413f40c224620c62940abb027ff68923a325a6.json",
+      "sha256": "5b4a913c522513d2fd420242a5cdf63ec6822100c842deed29b3f6c26aee2baa",
+      "bytes": 15413
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-command-motion-pilot-v1/9a43cc64a828cc901c9a195b6a7b0575995f69dcfb1a2bc2f5ae5940c770681c.json",
+      "sha256": "ce9c7766cb300421fe096c5fbd79fab0d756699e513401fa044290a4e0415b8c",
+      "bytes": 8912
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-command-motion-pilot-v1/9ccb980749e2c536fb158b7a03671ddd369863fd91ba5a4f676c693d2f905483.json",
+      "sha256": "0f0fd9798da046ed638d22c36da7a77546ab62213f39874a9132094a456b0ef1",
+      "bytes": 11671
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-command-motion-pilot-v1/b84449a0db0bbe20d5a550fdddc5ad5c04ef1a6f4d263b320f32bab80d54ebb1.json",
+      "sha256": "e0a95784ec07b4a501d4ca6d0ce75e0db93e87d50d809c02c4ba503025c88ca8",
+      "bytes": 49943
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-command-motion-pilot-v1/db3002cf737b87a9a889336d0849a3b9bede02f1f44f18c943eede1607cf8278.json",
+      "sha256": "070b04f806f7c4af2d38011acd31c9cdd49bac52d0b2d19a57ed3ba081a9b78d",
+      "bytes": 8374
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-command-motion-pilot-v1/e211fcf7655e95ffdf14fdb664d4417b28593f3b8b052dc111a14037b8177913.json",
+      "sha256": "5ddfb7ce396f735d883aeb81bd1d4d98ce4af12a28110fad2657d667706e2388",
+      "bytes": 53535
+    }
+  ],
+  "implementation": {
+    "runner_path": "analysis/run_diagnostic_command_motion_pilot.py",
+    "runner_sha256": "f1cba0a6231c9bec421c582e3d109f4954db1d2062f68f068fb90d1fe598d77f",
+    "adapter_path": "analysis/recompute_command_motion_diagnostic.py",
+    "adapter_sha256": "725b0510dc68835913e2f1bfb670c69c4f01444bece11c95c62e6000a35434e2",
+    "repository_prompt_path": "research/explanation_fidelity/prompts/diagnostic_repository_agent_command_motion_dev_v1.txt",
+    "repository_prompt_sha256": "6fa02e37d1b8b9a0136215f9c3f710be0a8522e0c4cecb8ab679edfc84f1fd46",
+    "core_repository_current_commit": "2cd9b0ada16a27615046c4a4bc3940424e2c4c2c",
+    "supported_output_core_commit": "c1aad36f4b50654b3c1aa6d5155ac01474368cfb",
+    "nominal_output_core_commit": "96dca9c4ebd97892ece6847e1483b3038b8d812a"
+  },
+  "usage": {
+    "aggregate_latency_ms": 87307.013175,
+    "input_tokens": 196958,
+    "cached_input_tokens": 102656,
+    "output_tokens": 3075,
+    "reasoning_output_tokens": 528,
+    "cost_usd": null,
+    "cost_status": "not_reported_by_codex_cli_chatgpt_login"
+  },
+  "interpretation": "The tool-enabled R and raw P candidates identify the supported discrepancy; N only suggests it without the aligned computation. R, P, and N reject the nominal failure premise. Original P final outputs used deterministic fallback in both cases due verifier false positives and remain immutable. These are project-review observations, not human labels or an effectiveness estimate.",
+  "limitations": [
+    "The two runs are a paired intervention/control development family and contribute one statistical cluster.",
+    "The cases qualify instrumentation and response structure; they are neither held-out nor confirmatory evidence.",
+    "No human annotation or adjudication has been completed.",
+    "A later post-hoc verifier revision accepts both raw P candidates after evidence-ID-only repair, but does not alter these original outputs or fallback decisions."
+  ]
+}

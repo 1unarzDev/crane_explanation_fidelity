@@ -1,0 +1,52 @@
+{
+  "schema": "crane-diagnostic-development-reference/v1",
+  "visibility": "robot_visible_reference",
+  "reference_status": "DEVELOPMENT_REFERENCE_FROM_PRE_MODEL_INDEPENDENT_WINDOW_COMPUTATION_NOT_HUMAN_GOLD",
+  "episode_id": "diagnostic-motion-dev-cm-nominal-001",
+  "question_id": "diagnostic-command-motion-mechanism-v1",
+  "diagnosable": true,
+  "required_units": [
+    "The navigation action succeeded, so the premise that a command-to-motion failure prevented continuation is false.",
+    "The calibrated healthy measured planar response is 0.2597 m/s to a 0.800 m/s median command.",
+    "The retained interval does not contain the required consecutive low-response windows under the declared development thresholds.",
+    "The retained execution sequence records zero FollowPath failures and zero source-qualified Wait recovery invocations.",
+    "No command-to-motion failure chain is supported for this successful action.",
+    "The negative result is bounded to the retained synchronized interval and does not prove every transient execution difficulty was absent.",
+    "No failure diagnosis is warranted unless a later run retains evidence that triggers a mechanism."
+  ],
+  "prohibited_claims": [
+    "The navigation action failed or aborted.",
+    "A command-to-motion discrepancy prevented continuation in this episode.",
+    "A motor, actuator, slip, collision, or obstruction failure occurred.",
+    "The delivered command was proven accepted by an actuator.",
+    "Nav2 was proven to consume the delivered odometry records."
+  ],
+  "allowed_evidence": {
+    "command_motion": {
+      "calibrated_healthy_commanded_planar_speed_mps": 0.8,
+      "calibrated_healthy_measured_planar_speed_mps": 0.2597399950027466,
+      "qualifying_discrepancy_interval": null,
+      "command_sample_count": 367,
+      "odometry_sample_count": 1560
+    },
+    "execution": {
+      "action_status": "succeeded",
+      "displacement_m": 9.480303764343262,
+      "follow_path_failure_count": 0,
+      "follow_path_attempt_count": 1,
+      "source_qualified_wait_recovery_count": 0,
+      "bt_policy_sha256": "14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520"
+    },
+    "limits": [
+      "The negative check applies only to the retained interval and declared thresholds.",
+      "Success does not prove every transient execution difficulty was absent.",
+      "Command and odometry delivery do not establish downstream acceptance or internal consumption.",
+      "The case is development calibration, not held-out or confirmatory evidence."
+    ]
+  },
+  "reference_timing": {
+    "physical_findings_computed_before_model_outputs": true,
+    "annotation_units_formalized_after_model_outputs": true,
+    "human_gold": false
+  }
+}

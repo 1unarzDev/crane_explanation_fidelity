@@ -1,0 +1,33 @@
+{
+  "schema": "crane-data-manifest-v1",
+  "artifact_id": "diagnostic-command-motion-language-verifier-development-v1",
+  "status": "POST_HOC_DEVELOPMENT_ONLY_NOT_INDEPENDENT_EVALUATION",
+  "visibility": "evaluator_only",
+  "path": "data/evaluator_only/dev/diagnostic-reference-v1/command-motion-language-audit-v1.json",
+  "bytes": 4173,
+  "sha256": "3a23c2e135bf13d63eb4689548dc124b26f4ba7b37e1cb7ab2c820dfc38c1157",
+  "dvc_pointer": "data/evaluator_only/dev.dvc",
+  "implementation": {
+    "core_repository": "https://github.com/1unarzDev/crane_explain.git",
+    "core_commit": "2cd9b0ada16a27615046c4a4bc3940424e2c4c2c",
+    "module_path": "packages/astro_dock/src/crane_explain/src/crane_explain/diagnostic_language.py",
+    "module_sha256": "2486f90a770398d8ec5b14a2d20c7f1545c33ef286cc0a051f5ce500807a4fe9",
+    "audit_path": "analysis/audit_diagnostic_language_candidates.py",
+    "config_path": "configs/diagnostic_command_motion_language_audit_v1.json",
+    "config_sha256": "ecab2637a1e2f1548bbea798291177748fa01111ad91b722327e92e85495642f"
+  },
+  "findings": {
+    "historical_candidate_count": 2,
+    "bounded_candidate_acceptance_count": 2,
+    "evidence_id_only_repair_count": 2,
+    "adversarial_mutation_count": 6,
+    "adversarial_mutation_rejection_count": 6,
+    "original_exact_verifier_fallback_count": 2
+  },
+  "limitations": [
+    "The verifier changes and mutation suite were authored after inspecting these development candidates.",
+    "This audit is a regression check, not an estimate of verifier false-positive or false-negative rates.",
+    "No archived output or original fallback decision was changed.",
+    "Independent held-out verifier evaluation and human annotation remain NOT_RUN."
+  ]
+}

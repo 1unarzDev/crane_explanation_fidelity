@@ -221,3 +221,27 @@ python analysis/export_recovery_execution_diagnostic.py \
   --source-reference data/robot_visible/dev/ecological-pilot-v1/eco-pilot-001/evidence.json \
   --output data/robot_visible/dev/ecological-pilot-v1/eco-pilot-001/recovery-execution-diagnostic.json
 ```
+
+## Command-motion language and parity dry run
+
+The command-motion pair now has a no-retry R/P/T/N development comparison. For the primary fair
+comparison, R received the same blind method input and executable window computation as P, plus the
+exact pinned CRANE and diagnostic-core repositories. N received the same compact runtime/source
+facts without the aligned computation and is therefore an explicit computation ablation, not an
+information-parity baseline.
+
+On project review, tool-enabled R and raw P both identify the supported sustained discrepancy; N
+only calls it suggested. R, raw P, and N reject the matched nominal failure premise. The original P
+candidate in each case was rejected by the then-current bounded gate—once because a requested next
+measurement contained “actuation,” and once because `wind` matched inside `fixed-window`. Final P
+therefore fell back to T in both immutable outputs. Whole-word and next-check-aware matching was
+subsequently regression-tested; a post-hoc audit accepts both archived raw candidates after only
+the allowed evidence-ID repair and rejects six authored unsupported-number, unsupported-wave, and
+missing-limits mutations. This audit is tuning evidence, not an independent verifier evaluation.
+
+The two four-response annotation packets are blinded and share one statistical cluster. Human
+annotation and adjudication remain `NOT_RUN`; no effectiveness conclusion follows from project
+review. The governed output, packet, key, reference, and verifier-audit hashes are recorded in
+`manifests/model_outputs/diagnostic-command-motion-pilot-v1.json`, the two
+`manifests/annotation/diagnostic-command-motion-*-pilot-v1.json` files, and
+`manifests/data/diagnostic-command-motion-language-verifier-development-v1.evaluator-only.json`.

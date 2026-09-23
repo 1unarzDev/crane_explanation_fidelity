@@ -3030,3 +3030,39 @@
   Its current SHA-256 is
   `c2603491c16b99ba007085237097fc0cd66ee2453d1b9e4e1fc7f490bd1a0f8a`. Because the runtime
   summaries remain under `/tmp`, governance and fresh-checkout reproduction are still `NOT_RUN`.
+
+## 2026-09-23 — command-motion R/P/T/N development comparison and blinded packets
+
+- **STATUS:** `RUN / RETAINED / GOVERNED / BLINDED_PACKETS_BUILT / DEVELOPMENT_ONLY`; human
+  annotation and adjudication remain `NOT_RUN`; confirmatory use is prohibited.
+- **INPUTS:** blind robot-visible exports
+  `diagnostic-motion-dev-cm-001` and `diagnostic-motion-dev-cm-nominal-001`; CRANE commit
+  `6bf057b5acf1763eeca1b81be6530cd218a5405b`; supported-case core commit `c1aad36`; nominal-case
+  core commit `96dca9c`; one-shot `gpt-5.6-luna`, low reasoning, no retries.
+- **FAIRNESS:** R received the same blind samples and executable command-motion computation as P,
+  together with the exact pinned CRANE/core source. N omitted the aligned computation by design
+  and is an ablation, not the primary parity baseline. Evaluator intervention identity and truth
+  were unavailable to all methods.
+- **PROJECT REVIEW, NOT LABELS:** on the supported case, R and raw P identified the sustained
+  7–17 s, 0.800 m/s commanded versus 0.000 m/s measured discrepancy; N described the discrepancy
+  only as suggested. On the nominal success, R, raw P, and N rejected the false failure premise.
+  No observed result supports P over tool-enabled R.
+- **LANGUAGE GATE:** original P fell back in both cases. The supported candidate's next-check
+  request for downstream accepted actuation was misread as a causal claim; the nominal candidate's
+  `fixed-window` phrase triggered the substring `wind`. Outputs and fallback decisions were not
+  rerun or replaced. Subsequent whole-word and next-check-aware fixes accept both raw candidates
+  after evidence-ID-only repair and reject all six authored adversarial mutations. This is a
+  post-hoc regression audit, not independent verifier evidence.
+- **ANNOTATION:** two shuffled four-response packets and evaluator-only keys were built. Both use
+  cluster `command-motion-held-nominal-pair-001`, so the inventory rises from 32 to 40 responses
+  and from six to seven statistical clusters—not eight. References disclose that physical results
+  preceded model calls but annotation units were formalized after output inspection. The ignored
+  annotator bundles were refreshed to 12 packets and 244 blank rows each; archive SHA-256 values
+  are `9cf7f50e13a03936e09a8f840cb36838eb2923e03880d84b0c13432a2b164567` (A) and
+  `659a886eb8c94d0111f9b11389aaa11fbb6bb8eebaf8d4024e8949b963cc7109` (B).
+- **USAGE:** six model calls; aggregate latency 87.307 s; 196,958 input, 102,656 cached-input,
+  3,075 output, and 528 reasoning-output tokens; cost not reported by the CLI login path.
+- **GOVERNANCE:** exact output/cache hashes are in
+  `manifests/model_outputs/diagnostic-command-motion-pilot-v1.json`; packet/key hashes are in the
+  two command-motion annotation manifests; the post-hoc audit is in evaluator-only development
+  DVC and separately manifested. No frozen F/G/H artifact was modified.

@@ -1,11 +1,11 @@
 {
   "schema": "crane-diagnostic-development-annotation-inventory/v1",
   "created_utc": "2026-09-23T01:47:07Z",
-  "updated_utc": "2026-09-23T04:12:37Z",
+  "updated_utc": "2026-09-23T07:06:10Z",
   "status": "DEVELOPMENT_PACKETS_AWAITING_TWO_HUMAN_ANNOTATORS",
   "inferential_status": "DEVELOPMENT_ONLY_NOT_A_FROZEN_OR_CONFIRMATORY_STUDY",
-  "responses": 32,
-  "statistical_clusters": 6,
+  "responses": 40,
+  "statistical_clusters": 7,
   "packets": [
     {
       "name": "land-unmasked",
@@ -78,6 +78,24 @@
       "key_sha256": "6279d57466f85c95c7eee5873c765d11eb13b45dc696d739f8a30dd97ee90b20",
       "statistical_cluster_id": "eco-pilot-001",
       "evidence_variant": "unmasked"
+    },
+    {
+      "name": "command-motion-supported",
+      "packet": "model_outputs/annotation_packets/diagnostic-command-motion-supported-pilot-v1/packet.jsonl",
+      "packet_sha256": "131cc89ebed1020e0c3e025e2679cc32db676407e60726c96b980862e1e468ec",
+      "key": "data/evaluator_only/annotation_keys/diagnostic-command-motion-supported-pilot-v1.json",
+      "key_sha256": "a9a1bff5c5cda146550c04d442e382631b3713ac63f5d13c1d9506e0a94338d7",
+      "statistical_cluster_id": "command-motion-held-nominal-pair-001",
+      "evidence_variant": "supported-held-condition"
+    },
+    {
+      "name": "command-motion-nominal",
+      "packet": "model_outputs/annotation_packets/diagnostic-command-motion-nominal-pilot-v1/packet.jsonl",
+      "packet_sha256": "5f9be0225e3155d9a8a653c40692acdf0d29f16267f453f5a4cf167d3970e58f",
+      "key": "data/evaluator_only/annotation_keys/diagnostic-command-motion-nominal-pilot-v1.json",
+      "key_sha256": "7f9ae558920f72f343116f5c0517fbf90655242985167db1c950ca62e9562442",
+      "statistical_cluster_id": "command-motion-held-nominal-pair-001",
+      "evidence_variant": "matched-nominal-control"
     }
   ],
   "cluster_rule": "Evidence masks and question variants share the source episode's statistical cluster.",
