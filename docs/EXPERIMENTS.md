@@ -2635,3 +2635,20 @@
 - **REMAINING GATE:** red `PENDING` text correctly exposes missing human annotation, prospective
   diagnostic results, clustered uncertainty, and final sample accounting. The paper is currently
   a short-paper-length draft, not an 8--9 page full paper and not ready for submission.
+
+## 2026-09-22 — diagnosis-to-language positioning and second rendered manuscript QA
+
+- **STATUS:** `COMPILED / VISUALLY_INSPECTED / NOT_SUBMISSION_READY`.
+- **CHANGE:** primary-source positioning now credits explicit plan-before-realization, atomic
+  factual-precision evaluation, bidirectional NLI checking, selective prediction, and
+  provenance-to-plan-to-language as prior art. The paper claims only a scoped robot-navigation
+  synthesis/evaluation centered on a validated bounded diagnostic record; it does not claim
+  novelty for those component ideas.
+- **BUILD:** `scripts/build_paper.sh /tmp/crane-paper-positioning` produced a five-page letter-size
+  PDF with 11 references. All five pages were rendered as a contact sheet and visually inspected;
+  no clipping, column overlap, or identifying author/affiliation/private-repository text was found.
+  The corrected `Brand{\~a}o` BibTeX encoding renders as “Brandão.” Fontconfig and underfull-box
+  warnings remain non-fatal layout diagnostics.
+- **REMAINING GATE:** the red result markers remain visible. Human annotation, prospective
+  protocol freeze, independent held-out episodes, statistics, and final empirical claims are still
+  `NOT_RUN`; the extra page contains related-work positioning and references, not new evidence.

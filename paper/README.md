@@ -9,7 +9,7 @@ committed manifest.
 checked against the research notes. Red `PENDING` markers are intentional acceptance gates: they
 must be replaced by manifest-traceable results after blinded annotation and prospective evaluation,
 never by estimated or development-only values. The current draft compiles with the IEEE conference
-class required by the workshop's IEEE BigData 2026 instructions. It remains a four-page draft and
+class required by the workshop's IEEE BigData 2026 instructions. It remains a five-page draft and
 is not submission-ready while those gates remain.
 
 The living claim audit is `CLAIM_EVIDENCE_MAP.md`. The manuscript story is a bounded legacy

@@ -92,6 +92,19 @@ questions to specialized component explainers and evaluates root-cause identific
 from incorrect facts~\cite{love2026hexar}. We similarly separate useful diagnosis from unsupported
 content, but additionally test whether diagnostic content survives language realization.
 
+Our language path combines established, rather than individually novel, ideas. Explicit
+plan-before-realization methods make content selection and ordering inspectable
+~\cite{moryossef2019step}; atomic factual-precision evaluation motivates claim-level support but
+does not measure whether a decisive mechanism was omitted~\cite{min2023factscore}; and
+bidirectional semantic checks test both omissions and unsupported additions after realization
+~\cite{dusek2020semantic}. Selective prediction motivates reporting error jointly with useful
+coverage~\cite{geifman2019selectivenet}. Explainability-by-Design already connects provenance,
+queries, explanation plans, and realization~\cite{huynh2023explainability}. Our narrower
+contribution is a robot-navigation evaluation in which the intermediate object is a validated,
+bounded physical or execution diagnosis, and diagnostic correctness is scored separately from
+language faithfulness. We do not claim priority for structured plans, factual checking,
+abstention, or provenance-backed generation.
+
 Marine motion illustrates the need for semantic restraint: propulsion, current-relative
 hydrodynamics, wind, and wave loads are distinct terms in standard craft models~\cite{fossen2021handbook}.
 A lateral residual therefore does not uniquely establish ``wave drift.'' More generally, a

@@ -211,7 +211,7 @@ Build the anonymous IEEE-format paper with the pinned toolchain:
 scripts/build_paper.sh
 ```
 
-This writes `output/pdf/main.pdf`. The current four-page manuscript remains a development draft
+This writes `output/pdf/main.pdf`. The current five-page manuscript remains a development draft
 with explicit red result gates; it is not a submission artifact until annotation, final analysis,
 and every pending marker are complete.
 
