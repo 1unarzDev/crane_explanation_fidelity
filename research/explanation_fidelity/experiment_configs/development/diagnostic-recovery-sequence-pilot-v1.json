@@ -1,0 +1,51 @@
+{
+  "schema": "crane-diagnostic-development-run-declaration/v1",
+  "status": "PREDECLARED_DEVELOPMENT_ONLY_NOT_FROZEN",
+  "declared_date": "2026-09-22",
+  "episode_id": "eco-pilot-001",
+  "question_id": "diagnostic-recovery-sequence-v1",
+  "question": "Why did the autonomy software enter recovery, how many recovery invocations does the retained evidence support, and did recovery prevent task success? Identify the deepest supported mechanism and what physical cause remains unresolved.",
+  "conditions": [
+    "R",
+    "P",
+    "T",
+    "N"
+  ],
+  "model_configuration": {
+    "provider": "codex-lb-via-chatgpt-login",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "low",
+    "temperature": null,
+    "seed": null,
+    "samples_per_model_arm": 1,
+    "retry_or_resample": false
+  },
+  "information_parity": {
+    "primary_comparison": "P versus tool-enabled R",
+    "shared_robot_visible_evidence": true,
+    "shared_recovery_diagnostic_tool": true,
+    "shared_crane_source": true,
+    "shared_core_source": true,
+    "N_is_no_computation_ablation": true
+  },
+  "inputs": {
+    "robot_visible_evidence": "data/robot_visible/dev/ecological-pilot-v1/eco-pilot-001/evidence.json",
+    "robot_visible_evidence_sha256": "8f15afa5a4b7cdab1e1e70f164ace3900715ad1b62bd4a9c83a9900177fb9d35",
+    "diagnostic_export": "data/robot_visible/dev/ecological-pilot-v1/eco-pilot-001/recovery-execution-diagnostic.json",
+    "diagnostic_export_sha256": "482c4ce2c930b52bf6b6db02b5add9c01344d414baab95cfbcae42b927888501",
+    "repository_prompt_sha256": "1ee4355e3b8324db5ac3ace09a1fffdd2a7878d7623ba1ad77483706c821c5bd",
+    "realization_prompt_sha256": "ee136af7285acbb238b9388ea8c2b34d463690c5dd6a359a8358c7ce6e6095c4",
+    "no_computation_prompt_sha256": "adbbc64be0f324b77431b2f375481b692ef15dc00f71501216a565923c8d99c9",
+    "recovery_adapter_sha256": "7c3b4a0f3a122bae9c4523ffd242c473cd599cfe7268d7edd56cdaefce361120",
+    "crane_ml_commit": "c46de4d7e83a18ebef3abc4c97eff1b706a79282",
+    "crane_explain_core_commit": "af25ee59fae69dfb5aec3093f9f88e95050480f0"
+  },
+  "retention": {
+    "retain_all_outputs_regardless_of_result": true,
+    "blinded_packet_required": true,
+    "evaluator_key_physically_separate": true,
+    "human_annotation_required_for_scored_claims": true
+  },
+  "output": "model_outputs/diagnostic-recovery-sequence-pilot-v1/result.json",
+  "cache": "research/explanation_fidelity/model_cache/diagnostic-recovery-sequence-pilot-v1"
+}

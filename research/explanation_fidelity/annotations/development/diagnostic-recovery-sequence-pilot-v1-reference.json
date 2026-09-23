@@ -1,0 +1,79 @@
+{
+  "schema": "crane-diagnostic-development-reference/v1",
+  "visibility": "robot_visible_reference",
+  "reference_status": "DEVELOPMENT_REFERENCE_FROM_PRE_MODEL_TRANSITION_AUDIT_NOT_HUMAN_GOLD",
+  "episode_id": "eco-pilot-001",
+  "question_id": "diagnostic-recovery-sequence-v1",
+  "diagnosable": true,
+  "required_units": [
+    "The retained behavior-tree evidence supports at least four unique source-qualified recovery invocations, not exactly four over the goal lifetime.",
+    "The ordered retained recovery leaves and terminal states are Spin success, Wait success, BackUp success, and Spin success.",
+    "Each retained invocation follows a ComputePathToPose failure, NavigateWithReplanning failure, successful WouldAPlannerRecoveryHelp check, and system-recovery entry.",
+    "The NavigateToPose action eventually succeeded, so recovery did not prevent recorded task success.",
+    "The maximum Nav2 feedback recovery count of 16 is not treated as 16 unique recovery invocations.",
+    "The answer withholds a physical cause, unique obstacle identity, and exact costmap consumption.",
+    "The answer recommends time-aligned plans and hash-checked costmaps around a planner failure as a discriminating next check."
+  ],
+  "prohibited_claims": [
+    "Exactly four recovery attempts occurred over the complete goal lifetime.",
+    "Sixteen unique behavior-tree recovery invocations occurred.",
+    "The recovery leaves failed.",
+    "Recovery caused the navigation action to fail.",
+    "A named obstacle or physical enclosure caused planning to fail.",
+    "The delivered costmap was proven to be the exact planner-consumed state."
+  ],
+  "allowed_evidence": {
+    "action": {
+      "status": "succeeded",
+      "goal_id": "0e3ece980f384d25a9c3d40353dcbbde"
+    },
+    "behavior_tree": {
+      "retained_transition_count": 3950,
+      "unique_invocation_ids": [
+        "bt-recovery-invocation-000001",
+        "bt-recovery-invocation-000002",
+        "bt-recovery-invocation-000003",
+        "bt-recovery-invocation-000004"
+      ],
+      "ordered_leaf_results": [
+        "Spin:SUCCESS",
+        "Wait:SUCCESS",
+        "BackUp:SUCCESS",
+        "Spin:SUCCESS"
+      ],
+      "whole_history_completeness": "not_proven",
+      "exact_recovery_count_eligible": false,
+      "policy_sha256": "9fb490be79d16c482d9c1b1a8f2f946d142e0d21ed3d4f5901aa3065304329d1",
+      "validated_context_per_invocation": [
+        "ComputePathToPose:FAILURE",
+        "NavigateWithReplanning:FAILURE",
+        "WouldAPlannerRecoveryHelp:SUCCESS",
+        "RecoveryFallback:RUNNING"
+      ]
+    },
+    "feedback": {
+      "maximum_observed_recovery_count": 16,
+      "provenance": "nav2_feedback_count_not_bt_invocation_identity"
+    },
+    "trajectory": {
+      "sampled_path_length_m": 14.261269927881687,
+      "maximum_lateral_excursion_m": 2.0023105144500732
+    },
+    "costmap_delivery": {
+      "observations": 239,
+      "delivered_messages": 106,
+      "provenance": "nav2-get-costmap-snapshot-not-proven-controller-consumption"
+    },
+    "limits": [
+      "The retained count is a lower bound because whole-history completeness is not proven.",
+      "Software execution ordering does not identify the physical cause of planner failure.",
+      "Delivered costmaps do not prove exact planner consumption.",
+      "This episode is development evidence, not held-out or confirmatory evidence."
+    ]
+  },
+  "reference_timing": {
+    "execution_findings_computed_before_model_outputs": true,
+    "annotation_units_formalized_before_model_outputs": true,
+    "human_gold": false
+  }
+}
