@@ -8,6 +8,9 @@ refused, and that a final label set cannot be produced while disagreements remai
 from __future__ import annotations
 
 import json
+from pathlib import Path
+import subprocess
+import sys
 
 import pytest
 from adjudicate_annotations import (
@@ -15,6 +18,7 @@ from adjudicate_annotations import (
     ERROR_CATEGORIES,
     REQUIRED_FIELDS,
     cohen_kappa,
+    packet_inventory,
     validate_pass,
 )
 from build_blinded_annotation_packet import (
@@ -177,6 +181,22 @@ def test_complete_consistent_pass_is_accepted():
     assert validate_pass(rows, {"r1", "r2"}, "a") == "ann-1"
 
 
+def test_packet_inventory_enforces_blinded_prefilled_metadata():
+    inventory = packet_inventory(
+        [{"response_id": "r1", "question_kind": "recovery-mechanism", "answerable_units_total": 8}]
+    )
+    valid = annotation_row(
+        "r1",
+        "ann-1",
+        episode_id="BLINDED_PENDING_KEY_JOIN",
+        scenario_family="BLINDED_PENDING_KEY_JOIN",
+        condition_blinded_id="r1",
+    )
+    assert validate_pass([valid], inventory, "a") == "ann-1"
+    with pytest.raises(SystemExit, match="unit total differs"):
+        validate_pass([valid | {"answerable_units_total": 7}], inventory, "a")
+
+
 def test_incomplete_pass_is_rejected():
     with pytest.raises(SystemExit, match="incomplete"):
         validate_pass([annotation_row("r1", "ann-1")], {"r1", "r2"}, "a")
@@ -235,3 +255,50 @@ def test_packet_and_key_round_trip_through_json():
     )
     assert json.loads(json.dumps(rows)) == rows
     assert {entry["response_id"] for entry in key} == {row["response_id"] for row in rows}
+
+
+def test_cli_finalizes_when_two_complete_passes_agree(tmp_path: Path):
+    packet = tmp_path / "packet.jsonl"
+    packet.write_text(
+        json.dumps(
+            {
+                "response_id": "r1",
+                "question_kind": "recovery-mechanism",
+                "answerable_units_total": 8,
+            }
+        )
+        + "\n"
+    )
+    rows = []
+    for annotator in ("ann-1", "ann-2"):
+        row = annotation_row(
+            "r1",
+            annotator,
+            episode_id="BLINDED_PENDING_KEY_JOIN",
+            scenario_family="BLINDED_PENDING_KEY_JOIN",
+            condition_blinded_id="r1",
+        )
+        path = tmp_path / f"{annotator}.jsonl"
+        path.write_text(json.dumps(row) + "\n")
+        rows.append(path)
+    output = tmp_path / "agreement.json"
+    subprocess.run(
+        (
+            sys.executable,
+            str(WORKSPACE / "analysis/adjudicate_annotations.py"),
+            "--packet",
+            str(packet),
+            "--annotator-a",
+            str(rows[0]),
+            "--annotator-b",
+            str(rows[1]),
+            "--output",
+            str(output),
+        ),
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    result = json.loads(output.read_text())
+    assert result["status"] == "COMPLETE"
+    assert result["labels"]["r1"]["episode_id"] == "BLINDED_PENDING_KEY_JOIN"

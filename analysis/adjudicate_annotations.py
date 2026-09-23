@@ -73,6 +73,7 @@ ERROR_CATEGORIES = frozenset(
         "incorrect_completeness",
     }
 )
+BLINDED_METADATA_SENTINEL = "BLINDED_PENDING_KEY_JOIN"
 
 
 def read_jsonl(path: Path) -> list[dict[str, Any]]:
@@ -83,14 +84,46 @@ def read_jsonl(path: Path) -> list[dict[str, Any]]:
     ]
 
 
-def validate_pass(rows: list[dict[str, Any]], packet_ids: set[str], label: str) -> str:
+def display_path(path: Path) -> str:
+    try:
+        return path.relative_to(WORKSPACE).as_posix()
+    except ValueError:
+        return str(path)
+
+
+def packet_inventory(packet_rows: list[dict[str, Any]]) -> dict[str, tuple[str, int]]:
+    inventory: dict[str, tuple[str, int]] = {}
+    for index, row in enumerate(packet_rows):
+        identifier = row.get("response_id")
+        if not isinstance(identifier, str):
+            raise ValueError(f"packet row {index} has no response_id")
+        if identifier in inventory:
+            raise ValueError(f"duplicate packet response_id: {identifier}")
+        question_kind = row.get("question_kind")
+        total = row.get("answerable_units_total")
+        if not isinstance(question_kind, str) or not isinstance(total, int) or isinstance(total, bool):
+            raise ValueError(f"packet row {index} has invalid annotation metadata")
+        inventory[identifier] = (question_kind, total)
+    return inventory
+
+
+def validate_pass(
+    rows: list[dict[str, Any]],
+    packet: set[str] | dict[str, tuple[str, int]],
+    label: str,
+    *,
+    expected_ids: set[str] | None = None,
+) -> str:
     """Check one annotator's rows against the guide's required schema."""
 
     problems = []
     seen: set[str] = set()
+    packet_ids = set(packet)
+    expected = packet_ids if expected_ids is None else expected_ids
     annotators = {row.get("annotator_id") for row in rows}
-    if len(annotators) != 1:
-        problems.append(f"{label}: expected exactly one annotator_id, found {sorted(annotators)}")
+    if len(annotators) != 1 or None in annotators:
+        shown = sorted(repr(value) for value in annotators)
+        problems.append(f"{label}: expected exactly one annotator_id, found {shown}")
     for index, row in enumerate(rows):
         missing = [field for field in REQUIRED_FIELDS if field not in row]
         if missing:
@@ -102,6 +135,22 @@ def validate_pass(rows: list[dict[str, Any]], packet_ids: set[str], label: str) 
         seen.add(identifier)
         if identifier not in packet_ids:
             problems.append(f"{label}: response_id {identifier} is not in the packet")
+            continue
+        if identifier not in expected:
+            problems.append(f"{label}: unexpected response_id {identifier}")
+            continue
+        if isinstance(packet, dict):
+            question_kind, expected_total = packet[identifier]
+            if row["episode_id"] != BLINDED_METADATA_SENTINEL:
+                problems.append(f"{label} {identifier}: episode_id must remain blinded")
+            if row["scenario_family"] != BLINDED_METADATA_SENTINEL:
+                problems.append(f"{label} {identifier}: scenario_family must remain blinded")
+            if row["condition_blinded_id"] != identifier:
+                problems.append(f"{label} {identifier}: bad condition_blinded_id")
+            if row["question_kind"] != question_kind:
+                problems.append(f"{label} {identifier}: question_kind differs from packet")
+            if row["answerable_units_total"] != expected_total:
+                problems.append(f"{label} {identifier}: unit total differs from packet")
         if row["disposition"] not in DISPOSITIONS:
             problems.append(f"{label} {identifier}: bad disposition {row['disposition']!r}")
         unknown = set(row["error_categories"]) - ERROR_CATEGORIES
@@ -120,7 +169,7 @@ def validate_pass(rows: list[dict[str, Any]], packet_ids: set[str], label: str) 
             problems.append(f"{label} {identifier}: unit coverage exceeds the inventory")
         if not str(row["rationale"]).strip():
             problems.append(f"{label} {identifier}: empty rationale")
-    absent = packet_ids - seen
+    absent = expected - seen
     if absent:
         problems.append(f"{label}: pass is incomplete; {len(absent)} responses unannotated")
     if problems:
@@ -176,11 +225,12 @@ def main() -> int:
     args = parser.parse_args()
 
     packet_path = (WORKSPACE / args.packet).resolve()
-    packet_ids = {row["response_id"] for row in read_jsonl(packet_path)}
+    inventory = packet_inventory(read_jsonl(packet_path))
+    packet_ids = set(inventory)
     rows_a = read_jsonl((WORKSPACE / args.annotator_a).resolve())
     rows_b = read_jsonl((WORKSPACE / args.annotator_b).resolve())
-    annotator_a = validate_pass(rows_a, packet_ids, "annotator-a")
-    annotator_b = validate_pass(rows_b, packet_ids, "annotator-b")
+    annotator_a = validate_pass(rows_a, inventory, "annotator-a")
+    annotator_b = validate_pass(rows_b, inventory, "annotator-b")
     if annotator_a == annotator_b:
         raise SystemExit("both passes carry the same annotator_id; they are not independent")
 
@@ -204,19 +254,25 @@ def main() -> int:
         if first[identifier]["evidence_problem"] or second[identifier]["evidence_problem"]
     )
 
-    final: dict[str, dict[str, Any]] | None = None
+    final: dict[str, dict[str, Any]] | None = (
+        {identifier: first[identifier] for identifier in sorted(packet_ids)}
+        if not disagreements
+        else None
+    )
     unresolved = list(disagreements)
     if args.adjudication is not None:
+        if not disagreements:
+            raise SystemExit("adjudication was supplied but the annotators had no disagreements")
         rows_c = read_jsonl((WORKSPACE / args.adjudication).resolve())
-        adjudicator = {row["annotator_id"] for row in rows_c}
-        if len(adjudicator) != 1 or adjudicator & {annotator_a, annotator_b}:
-            raise SystemExit("adjudicator must be a single third annotator")
+        adjudicator = validate_pass(
+            rows_c,
+            inventory,
+            "adjudicator",
+            expected_ids=set(disagreements),
+        )
+        if adjudicator in {annotator_a, annotator_b}:
+            raise SystemExit("adjudicator must be a distinct third annotator")
         adjudicated = {row["response_id"]: row for row in rows_c}
-        unexpected = sorted(set(adjudicated) - set(disagreements))
-        if unexpected:
-            raise SystemExit(
-                f"adjudication covers responses the annotators agreed on: {unexpected}"
-            )
         unresolved = sorted(set(disagreements) - set(adjudicated))
         if not unresolved:
             final = {
@@ -228,7 +284,7 @@ def main() -> int:
         "schema": "crane-explain-annotation-adjudication/v1",
         "created_utc": datetime.now(timezone.utc).isoformat(),
         "status": "COMPLETE" if final is not None else "AWAITING_ADJUDICATION",
-        "packet": packet_path.relative_to(WORKSPACE).as_posix(),
+        "packet": display_path(packet_path),
         "packet_responses": len(packet_ids),
         "annotators": sorted((annotator_a, annotator_b)),
         "agreement": report,

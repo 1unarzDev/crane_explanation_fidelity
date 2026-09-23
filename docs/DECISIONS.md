@@ -845,3 +845,21 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   immutable and are annotated as generated.
 - Validity risk: this correction is post-hoc on the exposing episode and its reference inventory is
   not independent gold. A separate prospective case must validate the rule before any Q3 claim.
+
+## 2026-09-23 — keep legacy grouping metadata blinded until adjudication
+
+- Decision: human annotation forms use an explicit `BLINDED_PENDING_KEY_JOIN` sentinel for
+  `episode_id` and `scenario_family`, and the opaque response ID for `condition_blinded_id`. The
+  evaluator-only key and frozen split restore true grouping only after complete adjudication.
+- Evidence: the frozen guide requires these fields, but the sealed packet intentionally exposes no
+  episode, scenario, or condition mapping. Requiring annotators to populate real values would be
+  impossible without defeating the declared blinding boundary.
+- Alternatives: give annotators the key; let them guess metadata; silently drop required fields;
+  or rebuild the sealed packet. Those options respectively unblind conditions, create false data,
+  violate the row schema, or mutate a governed artifact after collection.
+- Scope: this is a pre-annotation operational clarification, not a rubric or analysis change. It
+  leaves all questions, units, labels, packet bytes, key bytes, hypotheses, and comparisons
+  unchanged. The dated hashes are in
+  `manifests/annotation/sealed-primary-v3-operational-clarification.json`.
+- Validity protection: the join verifies the packet/key hash and full response inventory and
+  applies the predeclared whole-episode quarantine before producing analysis input.

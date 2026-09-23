@@ -2574,3 +2574,20 @@
   It is not a human label or confirmatory gold, cannot prove global physical no-path or exact
   planner consumption, and needs independent reviewer validation before freeze. Both reference
   artifacts remain evaluator-only.
+
+## 2026-09-23 — sealed legacy annotation-form and key-join wiring check
+
+- **STATUS:** `IMPLEMENTED / TESTED`; human annotation remains `NOT_RUN`.
+- **DISCOVERED GAP:** the frozen guide's 25-field output schema names episode/scenario/condition
+  metadata that the sealed packet correctly withholds. An annotator could not construct a truthful
+  validator-shaped row without evaluator-only access.
+- **RESOLUTION:** `build_legacy_annotation_form.py` emits all 198 rows with opaque IDs, exact unit
+  totals, unset judgments, and explicit pre-join sentinels. `join_legacy_annotation_key.py` is the
+  only stage that reads the key; it runs only after complete adjudication, verifies hashes and ID
+  inventories, restores frozen grouping, and enforces whole-episode quarantine.
+- **TEST:** 29 focused tests passed. A synthetic-label wiring check over the actual sealed packet,
+  key, and split restored 198 responses, 33 episode clusters, and F/G/H mappings. The synthetic
+  values existed only in process memory, were not retained, and are not annotations or results.
+- **FROZEN INTEGRITY:** guide, packet, key, split, raw evidence, responses, questions, and rubric
+  were unchanged. Their pre-annotation hashes are recorded in the operational clarification
+  manifest. No label or condition effect was inspected.

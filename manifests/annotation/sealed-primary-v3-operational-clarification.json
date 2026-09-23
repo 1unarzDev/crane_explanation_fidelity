@@ -1,0 +1,45 @@
+{
+  "schema": "crane-explain-annotation-operational-clarification/v1",
+  "created_utc": "2026-09-23T01:36:30Z",
+  "status": "RECORDED_BEFORE_ANY_SEALED_ANNOTATION",
+  "annotation_status_at_recording": "NOT_RUN",
+  "sealed_labels_inspected": 0,
+  "problem": "The frozen guide requires episode_id, scenario_family, and condition_blinded_id fields, while the deliberately blinded packet exposes only an opaque response_id and question_kind. Human annotators cannot truthfully supply the first two without receiving evaluator-only mappings.",
+  "resolution": {
+    "human_form_episode_id": "BLINDED_PENDING_KEY_JOIN",
+    "human_form_scenario_family": "BLINDED_PENDING_KEY_JOIN",
+    "human_form_condition_blinded_id": "opaque response_id",
+    "join_timing": "only after two complete independent passes and any required third-person adjudication",
+    "authoritative_episode_and_condition_source": "evaluator-only annotation key",
+    "authoritative_scenario_family_source": "frozen dataset split",
+    "evidence_problem_rule": "quarantine the complete episode across all conditions"
+  },
+  "unchanged": [
+    "questions",
+    "unit inventories",
+    "annotation rubric and material-error definition",
+    "packet rows and order",
+    "evaluator-only key",
+    "study hypotheses and comparisons",
+    "analysis rules",
+    "all raw evidence and generated answers"
+  ],
+  "frozen_inputs": {
+    "annotation_guide": {
+      "path": "docs/ANNOTATION_GUIDE.md",
+      "sha256": "3677b34a6507a77471abeef974e6085c6874950bb8f94aee4e6aa5af364f2908"
+    },
+    "packet": {
+      "path": "model_outputs/annotation_packets/sealed-primary-v3/packet.jsonl",
+      "sha256": "2718eec7ca1d0ade8326ee65f7c48ca82e04bfa69c0ce2191b590eac5394e548"
+    },
+    "evaluator_only_key": {
+      "path": "data/evaluator_only/annotation_keys/sealed-primary-v3.json",
+      "sha256": "910c66a3c815bd85d6ff2d6fbba316de01c70a797e29fef0ed7045857a605b31"
+    },
+    "dataset_split": {
+      "path": "research/explanation_fidelity/dataset_splits/provenance-final-v1.json",
+      "sha256": "43003dae7281675c0dcb119e10af01e544e92026b5eb2469e56db7d974fe3d43"
+    }
+  }
+}

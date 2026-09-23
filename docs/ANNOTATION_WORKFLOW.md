@@ -53,6 +53,24 @@ Each annotator writes one JSONL file, one row per packet response, with the 25 f
 `docs/ANNOTATION_GUIDE.md` requires. Every row in a pass carries the same `annotator_id`, and the
 two passes must use different ones.
 
+Generate a blank form directly from the final packet so no annotator has to invent or copy hidden
+metadata:
+
+```bash
+python analysis/build_legacy_annotation_form.py \
+  --packet model_outputs/annotation_packets/sealed-primary-v3/packet.jsonl \
+  --output /tmp/sealed-primary-v3-annotator-a.jsonl \
+  --annotator-id annotator-a
+```
+
+The frozen guide lists `episode_id`, `scenario_family`, and `condition_blinded_id` in the row
+schema, but the sealed packet intentionally withholds the first two and exposes no condition. They
+are not human judgments. The form therefore writes the explicit
+`BLINDED_PENDING_KEY_JOIN` sentinel for the first two and uses the opaque `response_id` as the
+condition-blinded identifier. True grouping and condition metadata are joined only after complete
+adjudication. This operational clarification changes no question, unit inventory, rubric, label,
+packet, key, or analysis rule.
+
 Flag `evidence_problem` rather than guessing when the gold inventory, allowed packet, or question
 looks inconsistent. Such responses are quarantined at the whole-episode level; condition-specific
 exclusion is forbidden.
@@ -60,15 +78,15 @@ exclusion is forbidden.
 ## 3–5. Agreement, adjudication, finalization
 
 ```bash
-# agreement only; no final labels are emitted
+# agreement; final labels are emitted only if the two passes fully agree
 PYTHONPATH=packages/astro_dock/src/crane_explain/src:analysis \
 python analysis/adjudicate_annotations.py \
-  --packet model_outputs/annotation_packets/sealed-primary-v2/packet.jsonl \
+  --packet model_outputs/annotation_packets/sealed-primary-v3/packet.jsonl \
   --annotator-a <a>.jsonl --annotator-b <b>.jsonl \
-  --output analysis/results/sealed-primary-agreement.json
+  --output analysis/results/sealed-primary-v3-agreement.json
 
 # after a third annotator labels the disagreements
-... --adjudication <c>.jsonl --output analysis/results/sealed-primary-adjudicated.json
+... --adjudication <c>.jsonl --output analysis/results/sealed-primary-v3-adjudicated.json
 ```
 
 The tool refuses a pass that is incomplete, annotates a response outside the packet, uses two
@@ -83,9 +101,27 @@ Reported: raw agreement and Cohen's kappa for `material_error`, `substantive_ans
 reported as `null`, not as a number, when a rater used a single category throughout and it is
 undefined.
 
-`status` stays `AWAITING_ADJUDICATION` and `labels` stays `null` until every disagreement is
-resolved. `condition_key_joined` is always `false` in this tool's output; joining the key is a
+When disagreements exist, `status` stays `AWAITING_ADJUDICATION` and `labels` stays `null` until
+every disagreement is resolved. If the two complete passes agree, no unnecessary third pass is
+required. `condition_key_joined` is always `false` in this tool's output; joining the key is a
 separate, deliberate step.
+
+After `status` is `COMPLETE`, join the sealed key and frozen scenario-family mapping exactly once:
+
+```bash
+python analysis/join_legacy_annotation_key.py \
+  --adjudication analysis/results/sealed-primary-v3-adjudicated.json \
+  --key data/evaluator_only/annotation_keys/sealed-primary-v3.json \
+  --split research/explanation_fidelity/dataset_splits/provenance-final-v1.json \
+  --output analysis/results/sealed-primary-v3-analysis-input.jsonl \
+  --report analysis/results/sealed-primary-v3-key-join.json
+```
+
+The join verifies the packet hash and complete response inventory, restores episode, scenario,
+condition, arm, and model metadata from governed sources, and applies the predeclared
+whole-episode quarantine when either annotator flagged an evidence problem. Its JSONL output is
+the input to `analysis/analyze_provenance_study.py`. It refuses incomplete adjudication,
+pre-exposed grouping metadata, mismatched IDs, and packet/key hash mismatch.
 
 ## Current state
 
