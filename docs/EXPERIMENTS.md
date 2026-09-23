@@ -3338,3 +3338,29 @@
   The active distance-replanning tree has none, so it now accepts an explicit finite positive
   harness deadline and otherwise fails closed. Six focused reference tests pass. This changes no
   retained outcome or diagnostic threshold.
+
+## 2026-09-23 — delivered-plan instrumentation qualification, first run
+
+- **STATUS:** `RUN / RETAINED / PARTIAL_INSTRUMENTATION_QUALIFICATION / DEVELOPMENT_ONLY`; no
+  model calls, labels, retries, or confirmatory use.
+- **PREDECLARATION:** `land-plan-geometry-qualification-v1.json` fixed one previously unrun v4
+  development layout, opaque run `diagnostic-land-dev-003`, ROS domain 122, port 12322, seed 62002,
+  one attempt, and retention of unexpected or missing path change before execution.
+- **RESULT:** the fixture was valid and NavigateToPose succeeded after 17.593 m in 80.160 s. It
+  retained 78 plan summaries (77 unique hashes), 709 BT transitions, 306 costmap observations,
+  794 delivered commands, 4,000 odometry messages, and no recovery. Delivered odometry ranged
+  from -1.344 m to +1.299 m about the requested route. Plan summaries ranged from -1.530 m to
+  +1.340 m signed deviation; the first plan was direct at 0.000 m deviation and later plans were
+  non-direct. These are method-visible observations, not proof of controller consumption or cause.
+- **ADMISSION FAILURE:** the summaries retained hashes, lengths, and extrema but discarded their
+  input poses. An evaluator therefore cannot independently recompute the per-run geometry. The
+  run remains valid physical/capture evidence but does not pass the predeclared independent
+  plan-summary recomputation gate and cannot qualify the new diagnostic by itself.
+- **SOURCE BOUNDARY:** the Unity player remains hash-identified to build source `6bf057b`; the
+  live mounted Python fixture observer is separately Git/hash-identified to CRANE `ca259ba`.
+  Because those commits differ, the provenance record correctly does not call the current CRANE
+  checkout the binary's source. All exact runtime scripts/configuration files match Git objects.
+- **CORRECTION:** future development captures retain the delivered plan poses in robot-visible DVC
+  data so the separately implemented reference can recompute hashes, lengths, and deviations.
+  `dev-003` is not rerun or replaced. This is evidence-driven instrumentation correction, not
+  scenario tuning.

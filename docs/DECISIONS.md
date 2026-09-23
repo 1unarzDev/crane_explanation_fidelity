@@ -22,6 +22,12 @@
   that is an admissible result.
 - Revisit condition: replace the summaries with fuller time-aligned path retention only if a
   concrete diagnostic question cannot be independently evaluated from the bounded measurements.
+- Outcome/amendment after the first qualification run: `diagnostic-land-dev-003` produced useful
+  summaries, but an independent evaluator could not recompute them because the underlying
+  delivered poses were absent. That run is retained as partial instrumentation evidence. The
+  revisit condition was therefore met immediately: future development captures also retain the
+  delivered plan poses in DVC-only robot-visible data, while the compact summaries remain the
+  method-facing default. This does not authorize rerunning or replacing `dev-003`.
 
 ## 2026-09-23 — qualify command-to-motion diagnosis without naming the hidden intervention
 

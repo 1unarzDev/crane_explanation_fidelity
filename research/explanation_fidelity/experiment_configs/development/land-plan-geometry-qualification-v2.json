@@ -1,0 +1,59 @@
+{
+  "schema": "crane-land-plan-geometry-qualification-development-v2",
+  "status": "PREDECLARED_DEVELOPMENT_ONLY_NOT_CONFIRMATORY",
+  "declared_at": "2026-09-23T04:48:48-05:00",
+  "purpose": "Qualify independently recomputable delivered-plan geometry after the v1 run exposed that bounded summaries alone were not independently auditable.",
+  "chronology": {
+    "v1_run": "diagnostic-land-dev-003",
+    "v1_disposition": "retained partial instrumentation qualification; no rerun or replacement",
+    "correction": "retain exact delivered plan poses in robot-visible DVC data and recompute every summary with a separately implemented evaluator"
+  },
+  "source": {
+    "umbrella_commit_before_declaration": "73f8e0571539a0e1963e85100830b96a37f149c6",
+    "crane_ml_commit": "f669e748c657a5e93324e8bcdf1732785e88ce47",
+    "player_build_source_commit": "6bf057b5acf1763eeca1b81be6530cd218a5405b",
+    "player_sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+    "fixture_observer_sha256": "2065bd51fcc07bade16882f460788ccebab730441342bb4bd57c6fa7452ebc38",
+    "independent_reference_path": "analysis/reference_land_plan_geometry.py",
+    "independent_reference_sha256": "7e4d7a9ecb2f1112fa07b28c133c87c7af719e6ec5ff6aa3e52aae7224e275c8",
+    "environment_catalog_sha256": "c2603491c16b99ba007085237097fc0cd66ee2453d1b9e4e1fc7f490bd1a0f8a",
+    "nav2_params_sha256": "e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+    "bt_xml_sha256": "e47dadf5bb1228f031e1a7a15d60f0a784c5101ffff9fd11fc36ea7458ce3dce"
+  },
+  "run": {
+    "run_id": "diagnostic-land-dev-004",
+    "ros_domain_id": 123,
+    "ros_tcp_port": 12323,
+    "catalog": "v4",
+    "layout": "diagnostic-development-connected-detour-004",
+    "layout_seed": 62003,
+    "goal_distance_m": 18.0,
+    "action_deadline_s": 100.0,
+    "attempts": 1,
+    "retries": 0
+  },
+  "admission": {
+    "recording_valid": "fixture validity and exact runtime/source records pass; evaluator truth remains physically separate",
+    "plan_geometry_present": "at least one delivered plan retains all poses and a sha256 path identity",
+    "independent_parity": "the separate reference recomputes every retained plan hash, pose count, length, and signed/absolute deviation without a mismatch",
+    "retain_unexpected_outcome": true,
+    "retain_zero_or_missing_path_change": true,
+    "do_not_retry_failed_induction": true
+  },
+  "allowed_conclusions": [
+    "which global path geometries were delivered to the fixture and how they differed from the requested direct line",
+    "whether delivered plan geometry changed over the recorded action",
+    "delivered odometry trajectory and terminal action outcome"
+  ],
+  "prohibited_conclusions": [
+    "controller consumption of a delivered plan",
+    "a specific costmap or evaluator-only obstacle caused a plan change",
+    "temporal association proves physical causation",
+    "global route infeasibility",
+    "confirmatory effectiveness or P-over-R improvement"
+  ],
+  "analysis": {
+    "model_generation_status": "NOT_AUTHORIZED_BY_THIS_DECLARATION",
+    "statistical_status": "one development instrumentation-qualification run; not pooled with the frozen legacy study and not held-out"
+  }
+}
