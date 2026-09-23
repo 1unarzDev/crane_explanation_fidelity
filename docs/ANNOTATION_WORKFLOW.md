@@ -234,6 +234,39 @@ post-hoc v2 deterministic answer is not substituted. A separate evaluator-side r
 calculation reproduces the boat arithmetic without importing the proposed method, but it is still
 development code and does not replace the required human review.
 
+After all four packets have complete adjudication outputs, join their condition keys with the
+explicit development cluster inventory:
+
+```bash
+python analysis/join_diagnostic_annotation_keys.py \
+  --inventory manifests/annotation/diagnostic-development-pilot-v1.json \
+  --adjudication land-unmasked=analysis/results/diagnostic-land-pilot-v3-adjudicated.json \
+  --adjudication land-missing-costmap-cells=analysis/results/diagnostic-land-mask-pilot-v1-adjudicated.json \
+  --adjudication boat-unmasked=analysis/results/diagnostic-boat-terminal-margin-pilot-v1-adjudicated.json \
+  --adjudication boat-missing-return-speed=analysis/results/diagnostic-boat-terminal-margin-masked-speed-pilot-v1-adjudicated.json \
+  --output analysis/results/diagnostic-development-pilot-v1-analysis-input.jsonl \
+  --report analysis/results/diagnostic-development-pilot-v1-key-join.json
+```
+
+The join verifies every packet and key hash, restores method/fallback/verification metadata only
+after adjudication, and maps both evidence variants back to their source statistical cluster. Any
+`evidence_problem` flag quarantines the entire source cluster across masked and unmasked packets.
+The resulting 16 responses still represent only two development clusters and cannot support a
+confirmatory effect claim or a reliable new-study power estimate by themselves.
+
+Once the joined file exists, generate the deliberately descriptive development summary with:
+
+```bash
+python analysis/summarize_diagnostic_development.py \
+  analysis/results/diagnostic-development-pilot-v1-analysis-input.jsonl \
+  --output analysis/results/diagnostic-development-pilot-v1-summary.json
+```
+
+This reports R/P/T/N response metrics, fallback frequency, and paired cluster-mean differences,
+but intentionally emits no confidence interval, significance test, or power estimate. Those would
+be unstable with two clusters. The summary is an input to the prospective freeze decision, not a
+substitute for additional independent pilots or a frozen held-out analysis.
+
 ### Generate blank diagnostic annotation forms
 
 Give each annotator the diagnostic guide, the four packet files above, and a separately generated

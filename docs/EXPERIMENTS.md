@@ -2604,3 +2604,19 @@
 - **PURPOSE:** satisfy the frozen guide's pre-sealed calibration requirement and expose rubric
   disagreements before annotators touch `sealed-primary-v3`. The six responses are never pooled
   into final estimates and add zero independent study episodes.
+
+## 2026-09-23 — diagnostic development annotation join inventory
+
+- **STATUS:** `IMPLEMENTED / HUMAN LABELS NOT_RUN`.
+- **INVENTORY:** four blinded R/P/T/N packets, 16 responses, and exactly two statistical clusters.
+  The land costmap mask remains in `land-blockage-global-002`; the RoboBoat return-speed mask
+  remains in `roboboat-gate5-known-dock-1`.
+- **JOIN BOUNDARY:** method identity, model/provider, verifier outcome, and fallback status remain
+  evaluator-only until every packet is completely adjudicated. The join checks packet/key hashes
+  and exact response inventories before exposing them.
+- **EXCLUSION:** an evidence problem in any packet quarantines the complete source cluster across
+  all conditions and evidence variants. A mask or question variant is never counted as another
+  episode.
+- **INFERENCE LIMIT:** this only makes the retained development workflow executable. Two clusters
+  cannot establish an effect or supply a stable clustered variance estimate; power planning and
+  protocol freeze still wait for real human development labels and additional independent pilots.

@@ -1,0 +1,51 @@
+{
+  "schema": "crane-diagnostic-development-annotation-inventory/v1",
+  "created_utc": "2026-09-23T01:47:07Z",
+  "status": "DEVELOPMENT_PACKETS_AWAITING_TWO_HUMAN_ANNOTATORS",
+  "inferential_status": "DEVELOPMENT_ONLY_NOT_A_FROZEN_OR_CONFIRMATORY_STUDY",
+  "responses": 16,
+  "statistical_clusters": 2,
+  "packets": [
+    {
+      "name": "land-unmasked",
+      "packet": "model_outputs/annotation_packets/diagnostic-land-pilot-v3/packet.jsonl",
+      "packet_sha256": "2ba0a64d64aff814c3663c2f0b3d5111f5f7d492604acafdd494d3c06c4a9330",
+      "key": "data/evaluator_only/annotation_keys/diagnostic-land-pilot-v3.json",
+      "key_sha256": "3b58b702a0b32ddc67a3eb6d8ea0c2c4d7490652f2a7cb9d4c86da4a0c41ac2d",
+      "statistical_cluster_id": "land-blockage-global-002",
+      "evidence_variant": "unmasked"
+    },
+    {
+      "name": "land-missing-costmap-cells",
+      "packet": "model_outputs/annotation_packets/diagnostic-land-mask-pilot-v1/packet.jsonl",
+      "packet_sha256": "39583738a9c75fef2c70d7244fadcf611fa5ec496053cd4867b44e00805a44da",
+      "key": "data/evaluator_only/annotation_keys/diagnostic-land-mask-pilot-v1.json",
+      "key_sha256": "6aaa77e1c750b38fd8246772bfc4e39a4943c49400da6588f23b9e39f6cfc5c1",
+      "statistical_cluster_id": "land-blockage-global-002",
+      "evidence_variant": "missing-costmap-cells"
+    },
+    {
+      "name": "boat-unmasked",
+      "packet": "model_outputs/annotation_packets/diagnostic-boat-terminal-margin-pilot-v1/packet.jsonl",
+      "packet_sha256": "8eb2372979a4d2e32d13847c1550cd6996ada95d045d80f08889a6a1dc5ece70",
+      "key": "data/evaluator_only/annotation_keys/diagnostic-boat-terminal-margin-pilot-v1/key.json",
+      "key_sha256": "afc29c5ded292445520a3ec9adc864c3abb9597172aa2f671ffe198b6e8c6c11",
+      "statistical_cluster_id": "roboboat-gate5-known-dock-1",
+      "evidence_variant": "unmasked"
+    },
+    {
+      "name": "boat-missing-return-speed",
+      "packet": "model_outputs/annotation_packets/diagnostic-boat-terminal-margin-masked-speed-pilot-v1/packet.jsonl",
+      "packet_sha256": "5f05f0ed8e1c885e064561a557a8c4e18ca6ee86265d08c47e91bd8fb3948f5e",
+      "key": "data/evaluator_only/annotation_keys/diagnostic-boat-terminal-margin-masked-speed-pilot-v1/key.json",
+      "key_sha256": "1ca2e818762756c61289ca9fee39cb21ae952f250bd82af44b6b6afda7ffc1a1",
+      "statistical_cluster_id": "roboboat-gate5-known-dock-1",
+      "evidence_variant": "missing-return-speed"
+    }
+  ],
+  "cluster_rule": "Evidence masks and question variants share the source episode's statistical cluster.",
+  "quarantine_rule": "Any evidence_problem flag quarantines every response in the statistical cluster.",
+  "human_annotation_status": "NOT_RUN",
+  "adjudication_status": "NOT_RUN",
+  "condition_key_join_status": "NOT_RUN"
+}
