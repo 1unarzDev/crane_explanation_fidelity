@@ -2559,6 +2559,17 @@
   a retained-grid connection from action-result pose to goal, 2.7046 m maximum lateral deviation,
   69 successful planning updates, and 0.8602 s deadline alignment. With cell payload masked it
   withholds route restriction/connectivity while preserving deviation and deadline alignment.
+- **NOMINAL QA / CORRECTION:** applying the reference to retained successful run
+  `land-unexpected-nominal-001` exposed an implementation error: the first version conflated a
+  route cell outside the final rolling-grid bounds with a blocked cell. The corrected reference
+  tracks full-route coverage separately and never treats out-of-bounds as occupied. On the nominal
+  run, the rolling grid does not cover the route start, contains no observed blocked cell on the
+  covered route segment, connects action-result pose to goal, and the action succeeded; success
+  0.036 s from the deadline is not called a deadline-aligned abort.
+- **NOMINAL CHECKED PLAN:** the proposed geometric computation independently returns
+  `not_triggered` with exact deterministic verification on this run. This is a valid unexpected
+  nominal development control, not prospectively collected confirmatory evidence; R/P/T/N and
+  human annotation remain `NOT_RUN` for it.
 - **LIMIT:** this reproduces the development inventory but was authored after output inspection.
   It is not a human label or confirmatory gold, cannot prove global physical no-path or exact
   planner consumption, and needs independent reviewer validation before freeze. Both reference

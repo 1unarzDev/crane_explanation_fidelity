@@ -92,5 +92,7 @@ Every question must discriminate a declared capability; paraphrases do not add i
   implemented evaluator-side boat arithmetic and land raster/A* references reproduce the bounded
   development findings without importing P's diagnostic code. Independent reviewer validation
   remains `NOT_RUN`; these post-output development implementations are not confirmatory gold.
-  Human annotation, a nominal diagnostic control, power planning, protocol freeze, and held-out
-  evaluation also remain `NOT_RUN`.
+  A retained unexpected land success now passes a deterministic `not_triggered` nominal check, but
+  it was not prospectively collected and has no R/P/T/N or human labels. Human annotation, a
+  prospectively declared nominal control, power planning, protocol freeze, and held-out evaluation
+  remain `NOT_RUN`.

@@ -6,7 +6,7 @@
   "dvc_pointer": "data/evaluator_only/dev.dvc",
   "implementation": {
     "path": "analysis/reference_land_geometric.py",
-    "sha256": "af2d524cdce46e7d17b6e2fcfc6da47395d47ec4d2b415107ccd0ee09d204e09",
+    "sha256": "f9fffea4c047529fcd6c46c823ad9dcdc7a9d0c281fc1e37842e2df905c91e93",
     "imports_crane_costmap_audit": false,
     "imports_proposed_diagnostic_core": false,
     "route_algorithm": "integer_bresenham_cells",
@@ -15,23 +15,30 @@
   "artifacts": [
     {
       "path": "data/evaluator_only/dev/diagnostic-reference-v1/land-blockage-global-002/reference.json",
-      "bytes": 2229,
-      "sha256": "797149301536fca1c471c61745588d789ed57fa28007837f900a772fa4f4dc58"
+      "bytes": 2305,
+      "sha256": "43bbcb065d7ffc7d3428ce465908ea5f87de39e1e73746e97f52692a138dcf8e"
     },
     {
       "path": "data/evaluator_only/dev/diagnostic-reference-v1/land-blockage-global-002-mask-no-costmap-cells/reference.json",
-      "bytes": 1919,
-      "sha256": "2a9f6f716448106b053a979c77834f880dc5e2e53b7faf6e5e71eadffa2fe9e4"
+      "bytes": 1995,
+      "sha256": "8148129b504ea54e336551df5722410aec41af1fa974d60104e61e4c26bdcf29"
+    },
+    {
+      "path": "data/evaluator_only/dev/diagnostic-reference-v1/land-unexpected-nominal-001/reference.json",
+      "bytes": 1998,
+      "sha256": "14a45c2b200b950dc5bd45477d85a7ace87ef49f94426ef436507a4892daa090"
     }
   ],
   "source": {
     "robot_visible_unmasked_sha256": "4ce8b1e2dab7c5ab8fcbc531a5a367e5ba8b2b26b9d579f8da136988ac9e2105",
     "robot_visible_masked_sha256": "f7a2c15be532c9c2fda85b63b7c04b873a2f4898e4b0a9a7312bb18d7c2b32ef",
+    "robot_visible_nominal_sha256": "fe98f9624b5786227c1c469b6fd7bbda00108be824f60d399b2dd964c5efa3db",
     "bt_xml_sha256": "423c61f90a57c79a1bae0580eb24a3866eee5169f888ac58cdca40e7db7656f3"
   },
   "findings": {
     "unmasked": "The independent raster/A* path reproduces the direct-route blocked cell near x=8.45 m, retained-grid connectivity, substantial detour, and 0.860 s deadline alignment.",
-    "masked_cells": "Geometry remains unresolved, while substantial route deviation and deadline alignment remain supported."
+    "masked_cells": "Geometry remains unresolved, while substantial route deviation and deadline alignment remain supported.",
+    "nominal_success": "The local rolling grid does not cover the complete requested route, contains no observed blocked cell on its covered route segment, and connects the action-result pose to the goal; success near 70 seconds is not an abort."
   },
   "limitations": [
     "This is a separate implementation, not an independent human label or controlled intervention.",

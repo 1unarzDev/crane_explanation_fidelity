@@ -1,0 +1,31 @@
+{
+  "schema": "crane-data-manifest-v1",
+  "artifact_id": "land-unexpected-nominal-001-geometric-diagnostic",
+  "status": "DEVELOPMENT_NOMINAL_CONTROL_NOT_CONFIRMATORY",
+  "visibility": "robot_visible",
+  "path": "data/robot_visible/dev/diagnostic-pilot-v1/land-unexpected-nominal-001/geometric-diagnostic.json",
+  "sha256": "b056b763d47136d56bf9ddd8a400ca9359ab704e51d682cc7a529d581bd2efb7",
+  "dvc_pointer": "data/robot_visible/dev.dvc",
+  "derived_from": {
+    "path": "data/robot_visible/dev/diagnostic-pilot-v1/land-unexpected-nominal-001/fixture-summary.json",
+    "sha256": "fe98f9624b5786227c1c469b6fd7bbda00108be824f60d399b2dd964c5efa3db"
+  },
+  "reproduction": {
+    "exporter": "analysis/export_geometric_route_diagnostic.py",
+    "exporter_sha256": "656363a93a4559d4994d124de7ea4a51b83a2d505306eeb582a60c44be0ab532",
+    "core_repository": "https://github.com/1unarzDev/crane_explain.git",
+    "core_commit": "4d9ecb43f12c799e92b0b650abe4750a80a8a5ef",
+    "crane_repository": "https://github.com/1unarzDev/crane_ml.git",
+    "crane_commit": "c46de4d7e83a18ebef3abc4c97eff1b706a79282"
+  },
+  "result": {
+    "disposition": "not_triggered",
+    "mechanism": "geometric_route_restriction",
+    "final_text_verification_accepted": true
+  },
+  "limitations": [
+    "The retained rolling grid covers only the final route region and cannot establish that the complete route was clear.",
+    "This valid unexpected nominal run is development-only and was not prospectively collected as a diagnostic control.",
+    "No R/P/T/N output or human annotation exists for this control."
+  ]
+}

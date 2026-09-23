@@ -147,16 +147,21 @@ def calculate(
     action_result = (float(result_pose["x"]), float(result_pose["y"]))
     deadline = timeout_seconds(bt_xml)
     action_seconds = float(fixture["wallSeconds"])
+    action_status = str(fixture["status"]).lower()
     start_cell = world_to_cell(snapshot, initial)
     goal_cell = world_to_cell(snapshot, goal)
     result_cell = world_to_cell(snapshot, action_result)
 
     first_blocked = None
+    direct_route_fully_covered = True
     grid_connected = None
     if grid is not None:
         for cell in bresenham(start_cell, goal_cell):
             cost = cell_cost(snapshot, grid, cell)
-            if cost is None or cost >= BLOCKED_COST:
+            if cost is None:
+                direct_route_fully_covered = False
+                continue
+            if cost >= BLOCKED_COST:
                 center = cell_center(snapshot, cell)
                 first_blocked = {
                     "cell": list(cell),
@@ -185,6 +190,7 @@ def calculate(
     )
     direct_restriction = first_blocked is not None if grid is not None else None
     deadline_delta = abs(action_seconds - deadline)
+    deadline_aligned_abort = action_status == "aborted" and deadline_delta <= 1.5
     return {
         "schema": "crane-land-geometric-independent-reference/v1",
         "status": "DEVELOPMENT_REFERENCE_NOT_CONFIRMATORY",
@@ -201,10 +207,14 @@ def calculate(
             "costmap_data_sha256": snapshot["dataSha256"],
             "cost_threshold": BLOCKED_COST,
             "direct_route_first_blocked": first_blocked,
+            "direct_route_fully_covered": (
+                direct_route_fully_covered if grid is not None else None
+            ),
             "connected_from_action_result_to_goal_below_threshold": grid_connected,
             "maximum_lateral_deviation_m": max(lateral) if lateral else None,
             "maximum_forward_progress_m": max(forward) if forward else None,
             "successful_planning_updates": successful_plans,
+            "action_status": action_status,
             "action_wall_seconds": action_seconds,
             "configured_deadline_seconds": deadline,
             "deadline_alignment_delta_seconds": deadline_delta,
@@ -216,7 +226,7 @@ def calculate(
             "direct_route_restriction_supported": direct_restriction,
             "retained_grid_has_connection": grid_connected,
             "substantial_route_deviation_observed": max(lateral, default=0.0) > 0.5,
-            "deadline_alignment_supported": deadline_delta <= 1.5,
+            "deadline_aligned_abort_supported": deadline_aligned_abort,
             "global_physical_no_path_supported": False,
             "unique_physical_obstacle_supported": False,
             "terminal_timeout_tick_directly_observed": bool(
@@ -240,7 +250,7 @@ def calculate(
                 ),
                 (
                     "The abort time is aligned with the configured BT deadline.",
-                    deadline_delta <= 1.5,
+                    deadline_aligned_abort,
                 ),
             )
             if include
@@ -249,6 +259,11 @@ def calculate(
             "The retained snapshot does not prove global physical no-path.",
             "Evaluator-only obstacle identity is not available to explanation methods.",
             "Delivered grid and odometry do not prove exact planner consumption.",
+            *(
+                ["The retained grid does not cover the complete requested route."]
+                if grid is not None and not direct_route_fully_covered
+                else []
+            ),
             (
                 "The terminal timeout tick was not directly observed."
                 if not completeness.get("terminalTransitionObserved", False)
