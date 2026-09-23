@@ -88,6 +88,8 @@ Every question must discriminate a declared capability; paraphrases do not add i
   the retained positional margin. Missing speed prevents only the stronger stopped-speed claim.
   The original over-withholding output is retained, and a post-hoc v2 checked-plan correction is
   not counted as prospective evidence.
-- Four blinded packets (16 responses) exist but cover only two episode clusters. Human annotation,
-  independent reference computations, a nominal diagnostic control, power planning, protocol
-  freeze, and held-out evaluation remain `NOT_RUN`.
+- Four blinded packets (16 responses) exist but cover only two episode clusters. A separately
+  implemented evaluator-side boat reference arithmetic check now exists, but independent reviewer
+  validation and an equivalent land reference remain `NOT_RUN`. Human annotation, a nominal
+  diagnostic control, power planning, protocol freeze, and held-out evaluation also remain
+  `NOT_RUN`.

@@ -1,0 +1,40 @@
+{
+  "schema": "crane-data-manifest-v1",
+  "artifact_id": "roboboat-terminal-margin-independent-reference-development-v1",
+  "status": "DEVELOPMENT_REFERENCE_NOT_CONFIRMATORY",
+  "visibility": "evaluator_only",
+  "dvc_pointer": "data/evaluator_only/dev.dvc",
+  "implementation": {
+    "path": "analysis/reference_terminal_margin.py",
+    "sha256": "f7cbbb3d73196133212459b1355114b7ea5b96e6b31bdb90a4bf58cd87cfd03e",
+    "imports_proposed_diagnostic_core": false,
+    "imports_proposed_adapter": false
+  },
+  "artifacts": [
+    {
+      "path": "data/evaluator_only/dev/diagnostic-reference-v1/roboboat-terminal-margin/reference.json",
+      "bytes": 1969,
+      "sha256": "9b5ed4e0da4452dec105a189a1de57e17ad6e5e82bdfb58c7d2c92726245baee"
+    },
+    {
+      "path": "data/evaluator_only/dev/diagnostic-reference-v1/roboboat-terminal-margin-masked-speed/reference.json",
+      "bytes": 1886,
+      "sha256": "45f11d0911bc533a4760fde68a1600af7f40aded29d383ee263e90763e742047"
+    }
+  ],
+  "source": {
+    "robot_visible_unmasked_sha256": "4a032e064a266cad50aaf39e120e03808b8a79466d6e83f3060b2310056a35c6",
+    "robot_visible_masked_sha256": "81ce2fb2340912be1d072d7b1038702a0e5d9da79878b355851eb1b05d1389fa",
+    "config_commit": "4ae5124c12c39af93ee5b256e33778aec490ecd3",
+    "config_sha256": "7ad4490b570c54526528db2118aaa5625879c478a67331e6e7155e533323593f"
+  },
+  "findings": {
+    "unmasked": "The positional chain and independently measured stopped-speed state are supported; the physical source of residual motion is unresolved.",
+    "masked_speed": "The positional chain remains supported, while stopped-speed satisfaction and the physical source of residual motion are unresolved."
+  },
+  "limitations": [
+    "This is a separate implementation, not an independent human label or controlled intervention.",
+    "It was written after inspecting the development responses and cannot be confirmatory evidence.",
+    "A reviewer must validate the computation and sufficiency rules before protocol freeze."
+  ]
+}

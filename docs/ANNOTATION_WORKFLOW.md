@@ -166,3 +166,15 @@ unknown responses/categories, wrong unit inventories, inconsistent material-erro
 supported-success labels paired with a material error or incorrect mechanism, and a reused
 annotator identity. `condition_key_joined` remains false even after adjudication; scoring by
 condition is a later deliberate step.
+
+Two equivalent boat packets are also retained:
+
+- `model_outputs/annotation_packets/diagnostic-boat-terminal-margin-pilot-v1/packet.jsonl`
+- `model_outputs/annotation_packets/diagnostic-boat-terminal-margin-masked-speed-pilot-v1/packet.jsonl`
+
+Their keys remain under matching directories in `data/evaluator_only/annotation_keys/`. Annotate
+all four diagnostic packets, but count only two episode clusters: `land-blockage-global-002` and
+`roboboat-gate5-known-dock-1`. The boat speed mask retains the pre-correction P/T omission; the
+post-hoc v2 deterministic answer is not substituted. A separate evaluator-side reference
+calculation reproduces the boat arithmetic without importing the proposed method, but it is still
+development code and does not replace the required human review.

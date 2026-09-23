@@ -2531,3 +2531,19 @@
   retained. Together with land, diagnostic dry runs now contain 16 responses but only two episode
   clusters. Two independent annotators and a distinct disagreement adjudicator remain `NOT_RUN`.
   Development references are not independent gold computations.
+
+## 2026-09-23 — separate RoboBoat terminal-margin reference calculation
+
+- **IMPLEMENTED / DEVELOPMENT ONLY:** `reference_terminal_margin.py` is an evaluator-side code
+  path that imports neither the proposed diagnostic core nor its adapter. It independently checks
+  the exact configuration hash and computes positional margin, radial error growth, settled task
+  failure, and measured stopped-speed status from the permitted observation fields.
+- **RESULT:** the unmasked case supports both the positional chain and an independently measured
+  speed within the configured threshold. The speed mask still supports the positional chain but
+  leaves stopped-speed satisfaction unresolved. Both variants require withholding the physical
+  source of residual motion. This independently reproduces the reason the original masked P/T
+  answer over-withheld.
+- **LIMIT:** the implementation was authored within the project after development output
+  inspection. It is not a human label, controlled intervention, or confirmatory gold result.
+  Independent reviewer validation remains required before study freeze. Artifacts are confined to
+  evaluator-only development DVC storage and are never supplied to R/P/T/N.
