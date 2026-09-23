@@ -2,6 +2,7 @@
 
 \usepackage{amsmath}
 \usepackage{booktabs}
+\usepackage{graphicx}
 \usepackage{microtype}
 \usepackage{xcolor}
 \usepackage{url}
@@ -44,13 +45,11 @@ auditable one.
 
 We study explanations whose claims are constrained by retained robot evidence. Our central design
 separates five stages:
-\begin{equation*}
-\text{observations and execution evidence}
-\rightarrow \text{diagnosis}
-\rightarrow \text{checked plan}
-\rightarrow \text{language}
-\rightarrow \text{final check}.
-\end{equation*}
+\begin{align*}
+&\text{observations and execution evidence} \\
+&\quad\rightarrow \text{diagnosis} \rightarrow \text{checked plan} \\
+&\quad\rightarrow \text{language} \rightarrow \text{final check}.
+\end{align*}
 The diagnosis is not free-form reasoning. It is a versioned computation over quantities with
 units, frames, time intervals, evidence identifiers, assumptions, and applicability limits. Its
 output identifies candidate mechanisms, supporting and contradictory observations, and
@@ -276,6 +275,7 @@ Q3.
 is frozen and held-out annotation is complete.}
 \label{tab:diagnostic-results}
 \centering
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{lccc}
 \toprule
 Method & Supported success & Material error & Coverage \\
@@ -286,6 +286,7 @@ T & \pending{n/N} & \pending{n/N} & \pending{value} \\
 N & \pending{n/N} & \pending{n/N} & \pending{value} \\
 \bottomrule
 \end{tabular}
+}
 \end{table}
 
 \pending{Report legacy annotation/adjudication and its clustered paired estimates separately. Do

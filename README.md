@@ -205,6 +205,16 @@ python -m pytest -q analysis tests packages/astro_dock/src/crane_explain/tests
 ROS package tests additionally require the Jazzy/ament environment; a blanket host-shell
 `pytest` is not the supported ROS test command.
 
+Build the anonymous IEEE-format paper with the pinned toolchain:
+
+```bash
+scripts/build_paper.sh
+```
+
+This writes `output/pdf/main.pdf`. The current four-page manuscript remains a development draft
+with explicit red result gates; it is not a submission artifact until annotation, final analysis,
+and every pending marker are complete.
+
 ## Layout
 
 - `packages/astro_dock/`, `packages/crane_ml/`: pinned Git submodules

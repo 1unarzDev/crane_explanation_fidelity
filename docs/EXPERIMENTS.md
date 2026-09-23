@@ -2620,3 +2620,18 @@
 - **INFERENCE LIMIT:** this only makes the retained development workflow executable. Two clusters
   cannot establish an effect or supply a stable clustered variance estimate; power planning and
   protocol freeze still wait for real human development labels and additional independent pilots.
+
+## 2026-09-23 — first rendered manuscript QA
+
+- **STATUS:** `COMPILED / VISUALLY_INSPECTED / NOT_SUBMISSION_READY`.
+- **TOOLCHAIN:** pinned Tectonic 0.17.0 Linux archive, SHA-256
+  `1a715688baf591e650c8aeb160ae934e181685eecbb38b317de30b269ac5d606`; IEEEtran conference
+  class; BibTeX; Poppler page rendering. `scripts/build_paper.sh` reproduces the build from the
+  umbrella root and refuses an archive whose hash differs.
+- **RESULT:** four letter-size pages compiled, including six readable references. All four pages
+  were rendered at 130 DPI and visually inspected. The first render exposed a pipeline equation
+  crossing the column gutter and a results table overlapping the second column; both were fixed.
+  The final checked render has no overfull boxes, clipping, or column overlap.
+- **REMAINING GATE:** red `PENDING` text correctly exposes missing human annotation, prospective
+  diagnostic results, clustered uncertainty, and final sample accounting. The paper is currently
+  a short-paper-length draft, not an 8--9 page full paper and not ready for submission.
