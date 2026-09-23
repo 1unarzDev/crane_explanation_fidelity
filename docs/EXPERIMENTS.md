@@ -3281,3 +3281,25 @@
   review into labels. All pages were rendered at 130 dpi and visually inspected; no clipping,
   overlap, broken glyph, or table overflow was observed. The ignored PDF is 70,435 bytes with
   SHA-256 `657fba9be89478fae230c3cad3af69dc81ee1dd89dd74f1202a43e028c8f6549`.
+
+## 2026-09-23 — post-hoc compensated-motion language-gate correction
+
+- **STATUS:** `IMPLEMENTED / TESTED / POST_HOC_DEVELOPMENT_TUNING`; no model call, output
+  replacement, packet rebuild, or label inspection occurred.
+- **DEFICIENCY:** operating policy v1 rejected the immutable raw P response solely because its
+  explicit `FollowPath` failure proposition appeared under decisive evidence rather than failure
+  chain. Its temporal Wait/recovery and measured-response-restoration statements were already in
+  failure chain.
+- **CORRECTION:** nested core commit `ebde930` introduces policy
+  `bounded-diagnostic-language-v2`. It checks for `FollowPath` across the complete four-section
+  response while retaining section-local requirements for recovery sequence, terminal outcome,
+  and measured-response recovery. It also rejects an explicit claim that Wait/retry caused the
+  measured response to recover.
+- **REGRESSION:** the exact archived candidate now passes after the existing evidence-ID-only
+  repair. A mutation omitting `FollowPath` and a mutation asserting unsupported Wait causation both
+  fail closed. The nested core suite passes 84 tests; the combined umbrella/analysis/core suite
+  passes 237 tests; the frozen-integrity subset passes 8 tests; data governance and workspace-lock
+  initialization pass; DVC cache and remote `r2` are synchronized.
+- **VALIDITY BOUNDARY:** the v1 decision and deterministic final P remain immutable, and the
+  observed development fallback rate remains 12/12. This targeted regression is not an independent
+  estimate of verifier sensitivity, specificity, or P effectiveness.

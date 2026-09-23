@@ -107,6 +107,13 @@ not labels. The scenario now has a four-response packet, but still no human labe
 Robot-visible and evaluator-only artifacts are governed separately by
 `manifests/data/diagnostic-motion-development-cm-002.*.json`.
 
+After retaining that output, a post-hoc v2 language-gate correction was regression-tested against
+the exact archived raw P candidate. It accepts a `FollowPath` failure proposition in decisive
+evidence while continuing to require the Wait/recovery temporal connection in the failure-chain
+section. It rejects a candidate that omits `FollowPath` entirely and a candidate that says the
+Wait invocation caused measured response to recover. This is disclosed tuning evidence only: the
+archived v1 rejection, final fallback, packet, and 12/12 observed fallback frequency are unchanged.
+
 ### Perception/model inconsistency
 
 Add only after the first two mechanisms work end to end. Compare sensor timestamps/transforms and
@@ -141,6 +148,10 @@ candidate, which introduced two derived values absent from its checked plan and 
 missing-measurement limitation. Because the verifier and mutations were authored after inspecting
 these candidates, this is a development regression result—not an independent estimate of verifier
 accuracy and not a retroactive change to any archived final response or fallback decision.
+
+The current future-execution policy is `bounded-diagnostic-language-v2`. The version change records
+a post-hoc section-scope correction exposed by the compensated-motion output; historical v1
+outputs remain identified by their retained core commit and verification policy.
 
 ## Signal semantics
 

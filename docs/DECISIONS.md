@@ -1060,3 +1060,23 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - RQ impact: the packet directly tests the same diagnosed mechanism with a different outcome and
   may inform the prospective freeze after annotation. It does not establish significance, verifier
   accuracy, learned-language benefit, or a confirmatory effect.
+
+## 2026-09-23 — correct the future verifier without rewriting compensated-motion output
+
+- Decision: version the bounded diagnostic-language policy as v2 and allow a required
+  `FollowPath` failure proposition anywhere in the complete checked response. Continue requiring
+  the source-qualified Wait/recovery sequence, terminal outcome, and recovered-response relation
+  in the failure-chain section, and reject language claiming that Wait/retry caused measured
+  response recovery.
+- Evidence: the exact archived raw P candidate states `FollowPath recorded 1 failure` under
+  decisive evidence and gives the Wait/recovery ordering under failure chain. The operating v1
+  gate rejected only because it looked for `FollowPath` in the latter section. A public-interface
+  regression reproduces that candidate; adversarial regressions remove `FollowPath` entirely and
+  substitute an unsupported recovery-causation claim.
+- Alternatives: retain the known false negative for future runs; accept any controller statement;
+  move or edit the archived candidate; or rerun P. These would respectively force avoidable
+  fallback, weaken the proposition gate, rewrite observed output, or violate the no-retry design.
+- Validity protection: this correction was designed after output inspection and is post-hoc
+  development tuning, not an independent verifier-accuracy result. The archived v1 rejection,
+  deterministic fallback, annotation packet, and aggregate 12/12 development fallback frequency
+  remain immutable.

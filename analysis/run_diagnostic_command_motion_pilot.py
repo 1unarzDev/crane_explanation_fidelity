@@ -193,7 +193,7 @@ def run(args: argparse.Namespace, caller=None) -> dict[str, Any]:
             **repository_identity,
             "condition": "P",
             "diagnostic_sha256": sha256(evidence_path),
-            "bounded_verifier": "bounded-diagnostic-language-v1",
+            "bounded_verifier": "bounded-diagnostic-language-v2",
         },
     )
     calls.append(call_summary("P", p_record))
