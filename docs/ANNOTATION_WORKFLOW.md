@@ -49,6 +49,23 @@ response, and it never goes to an annotator.
 
 ## 2. Annotate
 
+Annotators may edit JSONL directly, or use the local terminal workbench to enter one blinded
+response at a time with validation and atomic resume checkpoints:
+
+```bash
+python analysis/annotation_workbench.py \
+  --packet <packet.jsonl> \
+  --form <blank-form.jsonl> \
+  --output <completed-or-in-progress-form.jsonl>
+```
+
+The output path must differ from the immutable packet and blank form. Re-running the same command
+skips completed opaque response IDs and resumes at the next row. The workbench shows only content
+already present in the blinded packet, never reads condition keys or other annotators' files, does
+not suggest labels, and saves a row only after every required judgment is entered and confirmed.
+Annotators still return only the completed output form. The ordinary adjudication validator—not
+the workbench—remains the authority for accepting a complete pass.
+
 Before either annotator opens `sealed-primary-v3`, both independently label the same six-response
 development calibration packet, then discuss disagreements using the frozen guide and permitted
 evidence:
@@ -362,5 +379,8 @@ inventories, overwrites, and evaluator-only output paths. Completed forms are in
 
 Prepared local bundles containing the two legacy packets and all thirteen diagnostic packets are at
 `artifacts/annotation-handoff-20260922/annotator-{a,b}.tar.gz`. Each has 15 packets and 256 blank
-form rows. These ignored archives are convenience handoffs, not labels or governed results; verify
-their current hashes against `artifacts/annotation-handoff-20260922/SHA256SUMS` before transfer.
+form rows, a standalone copy of the workbench, and bundle-local instructions for direct editing or
+resumable workbench entry. These ignored archives are convenience handoffs, not labels or governed
+results; verify their current hashes against
+`artifacts/annotation-handoff-20260922/SHA256SUMS` before transfer. Workbench output belongs in a
+separate `completed/` path; the immutable blank form is never its output target.

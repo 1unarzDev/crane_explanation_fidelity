@@ -3570,3 +3570,35 @@
 - **CONSEQUENCE:** when independent forms arrive, the project can create a blinded adjudicator
   handoff without manual row copying. Actual annotation, agreement, adjudication, and key joining
   remain `NOT_RUN`.
+
+## 2026-09-23 — resumable annotation-entry workbench rehearsal
+
+- **STATUS:** `IMPLEMENTED / TESTED / SYNTHETIC_ONLY / NO_HUMAN_LABELS`; no packet, key, model
+  output, governed study artifact, frozen rubric, or human judgment changed.
+- **PURPOSE:** reduce the risk that two annotators manually corrupt or incompletely save the 256
+  JSONL judgments in each prepared handoff. The optional terminal workbench displays only the
+  supplied blinded packet, requires every rubric field, atomically checkpoints complete rows, and
+  resumes by opaque response ID. It never opens evaluator-only keys or another annotator's files.
+- **FAIL-CLOSED CHECKS:** output cannot alias the packet or blank form or live under an
+  `evaluator_only` path. Resume rejects changed prefilled metadata, unknown/duplicate IDs, mixed
+  rubrics or annotator identities, missing/extra fields, nulls, wrong boolean/count types,
+  inconsistent material-error categories, invalid coverage bounds, and contradictory derived
+  labels. The ordinary adjudication validators remain authoritative.
+- **ACTUAL-PACKET REHEARSAL:** one temporary row from the current diagnostic land packet and one
+  from the current legacy calibration packet were entered with explicitly synthetic judgments;
+  both outputs passed their corresponding existing validator and were deleted with the temporary
+  directory. Six focused workbench tests pass.
+- **REGRESSION:** all 176 umbrella-owned `tests/` and `analysis/` tests pass, as do data-governance,
+  frozen-integrity, numeric-traceability (67 assertions), archive-hash, byte-compilation, and diff
+  checks. Unscoped repository-root collection is `BLOCKED_AT_COLLECTION` in this host shell: seven
+  nested ROS/CRANE tests require their package/ament import environments and fail during collection
+  when those environments are not sourced; no failing test body was observed.
+- **HANDOFF:** both ignored annotator archives were rebuilt deterministically with the standalone
+  workbench and updated instructions. Each archive contains 15 blinded packets, 15 blank forms,
+  256 form rows, and no evaluator key. Current SHA-256 values are
+  `326e6b084f9081ecb87dc7521dfd29ed6cfca56424a17dabca6e06ac1413e558` (A) and
+  `f18dc0486a7143ee86d4c3ff3527d9d079c329690f3485b875cf930dbdc03652` (B), also recorded in the
+  bundle-local `SHA256SUMS` file.
+- **BOUNDARY:** this improves human data-entry integrity only. Independent annotation,
+  calibration discussion, agreement, third-person adjudication, key join, and all comparative
+  effect estimates remain `NOT_RUN`.
