@@ -2494,3 +2494,7 @@
 - **INFERENCE LIMIT:** this is a post-hoc development correction on the episode that exposed the
   defect. It is not a prospective effectiveness result and the same model outputs were not
   resampled. The next independent/masked case must test whether the correction generalizes.
+- **ANNOTATION HANDOFF:** a second four-response blinded development packet now covers the retained
+  pre-correction missing-cell R/P/T/N outputs. Together with the unmasked packet, the dry run has
+  eight responses but only one episode cluster. Annotation remains `NOT_RUN`; packet generation
+  does not create a human label or an independent sample.

@@ -1,0 +1,38 @@
+{
+  "schema": "crane-explain-annotation-packet-manifest/v1",
+  "status": "DEVELOPMENT_DRY_RUN_AWAITING_TWO_HUMAN_ANNOTATORS",
+  "study": "prospective-physical-diagnosis-development",
+  "packet": {
+    "path": "model_outputs/annotation_packets/diagnostic-land-mask-pilot-v1/packet.jsonl",
+    "sha256": "39583738a9c75fef2c70d7244fadcf611fa5ec496053cd4867b44e00805a44da",
+    "dvc_pointer": "model_outputs.dvc",
+    "responses": 4,
+    "conditions_blinded": true
+  },
+  "key": {
+    "path": "data/evaluator_only/annotation_keys/diagnostic-land-mask-pilot-v1.json",
+    "sha256": "6aaa77e1c750b38fd8246772bfc4e39a4943c49400da6588f23b9e39f6cfc5c1",
+    "dvc_pointer": "data/evaluator_only/annotation_keys.dvc",
+    "visibility": "evaluator_only"
+  },
+  "reference": {
+    "path": "research/explanation_fidelity/annotations/development/diagnostic-land-mask-pilot-v1-reference.json",
+    "sha256": "1827beeab5d9caf649e00e29036b26aa45a5c8b1f28ddbcb9b13212f56446a76",
+    "status": "DEVELOPMENT_REFERENCE_NOT_INDEPENDENT"
+  },
+  "rubric": {
+    "path": "docs/DIAGNOSTIC_ANNOTATION_GUIDE.md",
+    "status": "DEVELOPMENT_DRAFT_NOT_FROZEN"
+  },
+  "requirements": {
+    "independent_annotators": 2,
+    "distinct_adjudicator_on_disagreement": true,
+    "condition_key_withheld_until_after_adjudication": true
+  },
+  "limitations": [
+    "This packet is a matched evidence mask of the same development episode and is not an independent sample.",
+    "Its reference inventory is a development specification rather than an independently implemented reference computation.",
+    "No human annotations or adjudication exist at packet creation time.",
+    "The packet evaluates the retained pre-correction v1 final outputs; it was not regenerated after inspecting them."
+  ]
+}

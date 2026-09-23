@@ -1,0 +1,57 @@
+{
+  "schema": "crane-diagnostic-development-reference/v1",
+  "visibility": "robot_visible_reference",
+  "reference_status": "DEVELOPMENT_REFERENCE_NOT_INDEPENDENT",
+  "episode_id": "land-blockage-global-002-mask-no-costmap-cells",
+  "question_id": "diagnostic-mechanism-and-outcome-v1",
+  "diagnosable": true,
+  "required_units": [
+    "The physical/geometric reason navigation remained incomplete is unresolved because the costmap cell payload is absent.",
+    "The action aborted at 70.860 s, aligned within 0.860 s of the exact configured 70.0 s BT deadline.",
+    "Deadline alignment supports a bounded execution-mechanism reconstruction but the missing terminal BT transition prevents claiming the final timeout tick was directly observed.",
+    "Delivered odometry records 6.949 m maximum forward progress and 2.705 m maximum lateral deviation toward an 18.0 m goal.",
+    "The answer must not classify direct-route obstruction, retained-grid connectivity, global feasibility, or a unique physical obstacle.",
+    "A hash-checked costmap cell payload synchronized with planned paths is the decisive next physical diagnostic check."
+  ],
+  "prohibited_claims": [
+    "The direct route was obstructed or clear.",
+    "The retained grid was connected or disconnected.",
+    "A named physical obstacle caused the failure.",
+    "Recovery attempts were exhausted.",
+    "The terminal timeout transition was directly observed.",
+    "The declared costmap hash verifies cell values that were not retained."
+  ],
+  "allowed_evidence": {
+    "action": {
+      "status": "aborted",
+      "wall_seconds": 70.86018458599574,
+      "goal_distance_m": 18.0
+    },
+    "execution": {
+      "successful_planning_updates": 69,
+      "controller_commands": 701,
+      "maximum_forward_progress_m": 6.9489426612854,
+      "maximum_lateral_deviation_m": 2.704580307006836,
+      "terminal_bt_transition_observed": false
+    },
+    "costmap": {
+      "frame": "odom",
+      "resolution_m_per_cell": 0.10000000149011612,
+      "cell_payload_available": false,
+      "declared_unverified_data_sha256": "006e8cb8646e921d805230e5034080f5bee3d0e54c53355cf3f80cce9d9a7cac",
+      "direct_route_classification": null,
+      "grid_connectivity": null
+    },
+    "source": {
+      "configured_bt_deadline_s": 70.0,
+      "bt_xml_sha256": "423c61f90a57c79a1bae0580eb24a3866eee5169f888ac58cdca40e7db7656f3",
+      "nav2_config_sha256": "e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b"
+    },
+    "limits": [
+      "The terminal BT transition was not retained.",
+      "The costmap hash is declared metadata and cannot verify absent cells.",
+      "Delivered observations are not proof of every value consumed internally by Nav2.",
+      "Evaluator-only scenario and obstacle identities are unavailable."
+    ]
+  }
+}

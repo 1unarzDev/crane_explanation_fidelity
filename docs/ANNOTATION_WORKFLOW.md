@@ -133,3 +133,19 @@ reference explicitly records that its geometric computation is not independent. 
 annotators and a third adjudicator for disagreements are still required. Do not join the key,
 inspect condition identities during scoring, or describe project-author qualitative review as
 blinded annotation.
+
+The matched missing-cell packet is built separately so its evidence-sufficiency inventory remains
+explicit:
+
+```bash
+python analysis/build_diagnostic_annotation_packet.py \
+  --result model_outputs/dev/diagnostic-land-mask-pilot-v1/land-blockage-global-002-mask-no-costmap-cells/mechanism-and-outcome.json \
+  --reference research/explanation_fidelity/annotations/development/diagnostic-land-mask-pilot-v1-reference.json \
+  --packet model_outputs/annotation_packets/diagnostic-land-mask-pilot-v1/packet.jsonl \
+  --key data/evaluator_only/annotation_keys/diagnostic-land-mask-pilot-v1.json
+```
+
+Annotate both four-row packets under the same draft rubric, but do not count the evidence mask as
+another episode. Both belong to statistical cluster `land-blockage-global-002`. The masked packet
+contains the retained pre-correction outputs; the post-hoc deterministic correction is not mixed
+into this dry run.
