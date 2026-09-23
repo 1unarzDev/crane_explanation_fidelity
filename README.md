@@ -86,8 +86,9 @@ their own location. Exact repository commits and destinations are recorded in
 - **PROSPECTIVE NOMINAL DIAGNOSTIC CONTROL (DEVELOPMENT ONLY):** one predeclared current-source
   narrow-doorway run succeeded and is governed with robot-visible route/costmap/odometry evidence,
   separate evaluator truth, and an independent reference. Its checked answer rejects the false
-  failure premise while reporting bounded clearance/deviation evidence. R/P/T/N generation and
-  human annotation for this episode remain `NOT_RUN`; it is not confirmatory evidence.
+  failure premise while reporting bounded clearance/deviation evidence. One no-retry R/P/T/N
+  comparison and blinded packet are retained; human annotation remains `NOT_RUN`, so it is not
+  confirmatory evidence.
 - **IMPLEMENTED, TESTED:** deterministic F1TENTH PNG/YAML contour-to-collider generator and Unity
   importer, qualified headlessly on the externally retained pinned Spielberg map. Full-lap ROS
   control and source-simulator comparison remain unrun.

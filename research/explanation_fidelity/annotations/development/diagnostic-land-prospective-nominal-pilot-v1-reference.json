@@ -1,0 +1,72 @@
+{
+  "schema": "crane-diagnostic-development-reference/v1",
+  "visibility": "robot_visible_reference",
+  "reference_status": "DEVELOPMENT_REFERENCE_FROM_PRE_MODEL_INDEPENDENT_COMPUTATION_NOT_HUMAN_GOLD",
+  "episode_id": "diagnostic-land-nominal-20260922-001",
+  "question_id": "diagnostic-mechanism-and-outcome-v1",
+  "diagnosable": true,
+  "required_units": [
+    "The navigation action succeeded, so the question's failure premise is false for this episode.",
+    "No terminal failure chain is established; the response must not invent a failure mechanism or external failure criterion.",
+    "The fully covered requested-route audit found no costmap cell at or above 253 and measured 0.379 m minimum clearance from a lethal cell.",
+    "Delivered odometry records 17.477 m maximum forward progress and only 0.084 m maximum lateral deviation.",
+    "The action completed 20.381 s before the exact configured 90.0 s behavior-tree deadline; a 70 s deadline does not apply to this executed tree.",
+    "The answer withholds universal obstacle freedom, a unique physical obstacle, transient-history completeness, and proven Nav2 consumption.",
+    "The answer treats the run as a nominal comparator and recommends synchronized plans and costmaps only if transient restrictions are the question of interest."
+  ],
+  "prohibited_claims": [
+    "The action failed or aborted.",
+    "An external evaluator rejected the outcome or imposed a stricter completion criterion.",
+    "A 70 s behavior-tree deadline applied to this episode.",
+    "The retained snapshot proves universal obstacle freedom or every transient route state.",
+    "The retained snapshot was proven to be consumed by every planning invocation.",
+    "A particular physical obstacle or control fault caused the outcome."
+  ],
+  "allowed_evidence": {
+    "action": {
+      "status": "succeeded",
+      "wall_seconds": 69.61854387100902,
+      "goal_xy_m": [
+        18.0,
+        0.0
+      ],
+      "maximum_forward_progress_m": 17.47705078125
+    },
+    "execution": {
+      "successful_planning_updates_independent_reference": 67,
+      "accepted_commands": 679,
+      "maximum_lateral_deviation_m": 0.08441401273012161,
+      "observed_recovery_invocation_starts": 0,
+      "exact_recovery_count_eligible": false,
+      "terminal_bt_transition_observed": false
+    },
+    "independent_audit_status": "COMPUTED_BEFORE_MODEL_OUTPUTS_WITH_SEPARATE_BRESENHAM_AND_ASTAR_IMPLEMENTATION",
+    "retained_costmap_audit": {
+      "frame": "odom",
+      "resolution_m_per_cell": 0.10000000149011612,
+      "cost_threshold": 253,
+      "direct_route_fully_covered": true,
+      "direct_route_first_blocked": null,
+      "direct_route_minimum_clearance_m": 0.3792892381262727,
+      "connected_below_threshold": true,
+      "costmap_data_sha256": "8dfa827fcd4908a150ae867676eddb1f87f6dfdbd32620d2627572d87d22c0ab"
+    },
+    "source": {
+      "configured_bt_deadline_s": 90.0,
+      "bt_xml_sha256": "9fb490be79d16c482d9c1b1a8f2f946d142e0d21ed3d4f5901aa3065304329d1",
+      "nav2_config_sha256": "e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b"
+    },
+    "limits": [
+      "The action status is sufficient to reject the failure premise.",
+      "The retained costmap is one bounded snapshot and cannot establish all transient route states.",
+      "Delivered grid and odometry do not prove exact planner consumption.",
+      "The terminal behavior-tree transition was not retained.",
+      "The episode is development evidence, not a held-out or confirmatory control."
+    ]
+  },
+  "reference_timing": {
+    "physical_findings_computed_before_model_outputs": true,
+    "annotation_units_formalized_after_model_outputs": true,
+    "human_gold": false
+  }
+}

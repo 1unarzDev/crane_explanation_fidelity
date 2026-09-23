@@ -1,0 +1,38 @@
+{
+  "schema": "crane-explain-annotation-packet-manifest/v1",
+  "status": "DEVELOPMENT_DRY_RUN_AWAITING_TWO_HUMAN_ANNOTATORS",
+  "study": "prospective-physical-diagnosis-development",
+  "packet": {
+    "path": "model_outputs/annotation_packets/diagnostic-land-prospective-nominal-pilot-v1/packet.jsonl",
+    "sha256": "4df2ec9e72e7433d8a5a8a371d30928df12211996c3fd5ba6c7bad462ccd9766",
+    "dvc_pointer": "model_outputs.dvc",
+    "responses": 4,
+    "conditions_blinded": true
+  },
+  "key": {
+    "path": "data/evaluator_only/annotation_keys/diagnostic-land-prospective-nominal-pilot-v1.json",
+    "sha256": "b7dff1e26666bab878324b009c587ea12ab2e673bee02bde9b67483e0bfa3e6d",
+    "dvc_pointer": "data/evaluator_only/annotation_keys.dvc",
+    "visibility": "evaluator_only"
+  },
+  "reference": {
+    "path": "research/explanation_fidelity/annotations/development/diagnostic-land-prospective-nominal-pilot-v1-reference.json",
+    "sha256": "c7010db5567bad744bc4721230e61646207ec5339872f8f64a1d772f63b635d7",
+    "status": "DEVELOPMENT_REFERENCE_FROM_PRE_MODEL_INDEPENDENT_COMPUTATION_NOT_HUMAN_GOLD"
+  },
+  "rubric": {
+    "path": "docs/DIAGNOSTIC_ANNOTATION_GUIDE.md",
+    "status": "DEVELOPMENT_DRAFT_NOT_FROZEN"
+  },
+  "requirements": {
+    "independent_annotators": 2,
+    "distinct_adjudicator_on_disagreement": true,
+    "condition_key_withheld_until_after_adjudication": true
+  },
+  "limitations": [
+    "This is a prospectively declared development nominal control, not held-out or confirmatory evidence.",
+    "The independent physical findings existed before model generation, but annotation units were formalized after output inspection.",
+    "The reference is not a human gold label and no human annotations or adjudication exist at packet creation time.",
+    "The P final response used deterministic fallback and is text-identical to T; identical text must receive identical labels."
+  ]
+}

@@ -2756,8 +2756,8 @@
 
 ## 2026-09-22 — prospectively declared nominal land diagnostic control
 
-- **STATUS:** `COLLECTED / VALIDATED / GOVERNED / DEVELOPMENT_ONLY`; R/P/T/N generation and human
-  annotation are `NOT_RUN`.
+- **STATUS:** `COLLECTED / VALIDATED / GOVERNED / DEVELOPMENT_ONLY`; one no-retry R/P/T/N
+  comparison is retained and human annotation is `NOT_RUN`.
 - **DECLARATION:** `diagnostic-land-nominal-20260922-001` was declared before execution with layout
   `narrow-doorway-v1`, seed 5201, expected action success, exact player/build/source/configuration
   identities, and a one-run no-retry rule. The single declared run was retained; no outcome-driven
@@ -2782,6 +2782,22 @@
 - **GOVERNANCE:** robot-visible capture, QA summary, checked diagnostic, and compact Unity build
   manifest are physically separate from runtime truth and the independent reference. Both trees
   are hash-manifested under `manifests/data/diagnostic-land-nominal-20260922-001.*.json`; their DVC
-  objects were pushed to R2. The Unity player/build payload was not retained. This episode adds one
-  prospective development cluster, but adds no model comparison, annotation, effect estimate, or
-  confirmatory evidence yet.
+  objects were pushed to R2. The Unity player/build payload was not retained.
+- **MODEL COMPARISON:** one fixed `gpt-5.6-sol`, low-effort, single-sample comparison used exact
+  CRANE commit `c46de4d`, core commit `293fdd0`, prompt
+  `diagnostic_repository_agent_dev_v2.txt`, and equal diagnostic-tool access for R/P. Three model
+  calls consumed 141,607 input, 57,600 cached-input, 2,120 output, and 156 reasoning-output tokens
+  over 89.195 s aggregate latency; the client reported no monetary cost or resolved backend source
+  revision. P's candidate failed the conservative exact-text check, so final P equals T and
+  development fallback is 7/7 questions over five clusters.
+- **QUALITATIVE REVIEW, NOT A LABEL:** all methods reject the false failure premise. R reports the
+  useful route evidence but incorrectly discusses a 70 s deadline; the executed XML is hash-pinned
+  to 90 s. N introduces a hypothetical stricter external evaluator absent from the evidence. P/T
+  retain the supported nominal measurements and correct source deadline, although P does so through
+  fallback. The immutable outputs are retained for blinded review; this project-author observation
+  is not a material-error judgment, effect estimate, or confirmatory result.
+- **ANNOTATION BOUNDARY:** the four responses are in a blinded packet with a physically separate
+  condition key. The pre-model physical reference is preserved, while the explicit annotation units
+  are honestly marked as formalized after output inspection. The development inventory is now 28
+  responses in seven packets over five clusters. Two-human annotation and adjudication remain
+  `NOT_RUN`.

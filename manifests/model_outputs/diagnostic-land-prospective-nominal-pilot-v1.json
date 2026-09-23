@@ -1,0 +1,73 @@
+{
+  "a_to_e_frozen_model_evaluation_status": "NOT_RUN",
+  "adapter": "codex-cli-json/v1",
+  "artifacts": [
+    {
+      "bytes": 11848,
+      "path": "model_outputs/dev/diagnostic-land-prospective-nominal-pilot-v1/diagnostic-land-nominal-20260922-001/mechanism-and-outcome.json",
+      "sha256": "25d7783170a50484804cd69cb65d4aeaa7134df947571ae9575630215fca5e7f"
+    },
+    {
+      "bytes": 17118,
+      "path": "research/explanation_fidelity/model_cache/diagnostic-land-prospective-nominal-pilot-v1/92c159f99048d43232596e67df550c85df75ed4448ee0e91dd0dbb31c74d9ba3.json",
+      "sha256": "7ffc0551eb609c522742615a0090f5cd9f6a47d136cea934b287e1d86cd2292b"
+    },
+    {
+      "bytes": 20285,
+      "path": "research/explanation_fidelity/model_cache/diagnostic-land-prospective-nominal-pilot-v1/accbafc4611e52d194237bc0c156dbcf3dbf0d946ca364a91c9ef64f4a732cb2.json",
+      "sha256": "d6be69b898a0abb175d3d07f8d741c711f5acfba0223bc1945c529a584ad8793"
+    },
+    {
+      "bytes": 411471,
+      "path": "research/explanation_fidelity/model_cache/diagnostic-land-prospective-nominal-pilot-v1/fbefdb1b790d6e36f2d34df7f67a943aad072a861be9810f8104fb2607da05d0.json",
+      "sha256": "7e7c2428f2e622ab93717715259b81fb1e266483aae9f94a3e21764bd247b2c1"
+    }
+  ],
+  "cache_root": "research/explanation_fidelity/model_cache/diagnostic-land-prospective-nominal-pilot-v1",
+  "conditions": [
+    "N",
+    "P",
+    "R"
+  ],
+  "created_utc": "2026-09-23T03:32:19.141244+00:00",
+  "embedded_non_model_smoke_conditions": [
+    "T"
+  ],
+  "embedded_non_model_smoke_outputs": 1,
+  "episode_ids": [
+    "diagnostic-land-nominal-20260922-001"
+  ],
+  "evaluator_truth_available_to_methods": false,
+  "information_parity_audited": true,
+  "model": "gpt-5.6-sol",
+  "model_condition_outputs": 3,
+  "new_model_calls": 3,
+  "output_root": "model_outputs/dev/diagnostic-land-prospective-nominal-pilot-v1",
+  "provider": "codex-lb-via-chatgpt-login",
+  "resolved_backend_source_revision": null,
+  "question_kinds": [
+    "diagnostic-mechanism-and-outcome-v1"
+  ],
+  "read_only_workspace_verified": true,
+  "reasoning_effort": "low",
+  "result_envelope_conditions": [
+    "N",
+    "P",
+    "R",
+    "T"
+  ],
+  "result_envelope_outputs": 4,
+  "schema": "crane-explain-model-artifact-manifest/v1",
+  "single_sample_no_retry": true,
+  "status": "DEVELOPMENT_ONLY_NOT_FROZEN",
+  "interpretation": "Prospectively declared nominal development control. All methods reject the false failure premise. P's candidate failed exact verification and final P is byte-identical to T. Tool-enabled R retained the central measurements but incorrectly referred to a 70 s deadline even though the executed XML configures 90 s; N introduced an unsupported hypothetical external failure criterion. These project-review observations are not human labels or an effectiveness estimate.",
+  "usage": {
+    "aggregate_latency_ms": 89194.815494,
+    "cached_input_tokens": 57600,
+    "cost_status": "not_reported_by_codex_cli_chatgpt_login",
+    "cost_usd": null,
+    "input_tokens": 141607,
+    "output_tokens": 2120,
+    "reasoning_output_tokens": 156
+  }
+}

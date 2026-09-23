@@ -86,13 +86,13 @@ Every question must discriminate a declared capability; paraphrases do not add i
   premise, but R additionally overclaimed complete route clearance from a partial rolling grid.
   This exposed and fixed a shared tool defect; the immutable R output was not resampled. Current
   development evidence still does not establish a P-over-R effect.
-- P used deterministic fallback in all four land and both boat comparisons (6/6 development
+- P used deterministic fallback in all five land and both boat comparisons (7/7 development
   questions). The final method is therefore template-rendered at the current operating point.
 - The speed-masked boat case remains positionally diagnosable: observed post-return motion exceeded
   the retained positional margin. Missing speed prevents only the stronger stopped-speed claim.
   The original over-withholding output is retained, and a post-hoc v2 checked-plan correction is
   not counted as prospective evidence.
-- Six blinded packets (24 responses) exist but cover only four episode clusters. Separately
+- Seven blinded packets (28 responses) exist and cover five episode clusters. Separately
   implemented evaluator-side boat arithmetic and land raster/A* references reproduce the bounded
   development findings without importing P's diagnostic code. The S-turn reference was computed
   before its model comparison; the earlier references were authored after output inspection.
@@ -102,7 +102,8 @@ Every question must discriminate a declared capability; paraphrases do not add i
   a blinded R/P/T/N packet, but it was not prospectively collected and has no human labels.
 - One separately governed, prospectively declared nominal land episode now supplies complete-route
   costmap coverage, successful action status, and low-deviation delivered odometry. Its independent
-  reference and corrected checked rendering are retained. It raises the development episode
-  inventory to five clusters, while the comparison inventory remains 24 responses over four
-  clusters because R/P/T/N generation and human annotation have not run for the new episode.
-  Human annotation, power planning, protocol freeze, and held-out evaluation remain `NOT_RUN`.
+  reference, corrected checked rendering, and single-sample R/P/T/N comparison are retained.
+  Project review found that R used an incorrect 70 s deadline despite the exact 90 s XML, while N
+  introduced an unsupported hypothetical external evaluator; those observations await blind human
+  scoring and are not labels. Human annotation, power planning, protocol freeze, and held-out
+  evaluation remain `NOT_RUN`.
