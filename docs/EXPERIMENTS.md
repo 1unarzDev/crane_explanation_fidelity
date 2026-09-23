@@ -3226,3 +3226,23 @@
   visually inspected with no clipping, overlap, broken glyph, or table overflow. The intentionally
   pending results remain visible. The ignored PDF is 69,929 bytes with SHA-256
   `0ccc2a85a8e2e09f17e13f46334f71b7b64f40f19ce3e90ec58508ff84c0b53f`.
+
+## 2026-09-23 — predeclare compensated command-motion R/P/T/N comparison
+
+- **STATUS:** `PREDECLARED / DEVELOPMENT_ONLY / MODEL_CALLS_NOT_RUN`.
+- **PURPOSE:** add the governed successful-compensation episode as one distinct development cluster
+  testing the same supported mechanism with a different outcome. This is a targeted benchmark
+  capability, not an attempt to increase apparent sample size through another mask or paraphrase.
+- **QUESTION:** ask whether a discrepancy temporarily prevented progress, what changed before
+  successful navigation, and which physical cause remains unresolved. The failure-oriented default
+  question is not reused because it would embed a misleading terminal-failure premise.
+- **FAIRNESS:** P and tool-enabled R receive the same blind method input, exact repositories, and
+  executable v2 computation. T is the retained deterministic rendering. N omits only the aligned
+  computation and remains an ablation, not the primary parity baseline. Evaluator truth and the
+  hold/release identity are unavailable to every method.
+- **CALL RULE:** exactly one `gpt-5.6-luna` low-effort call for R, P, and N; deterministic T; no
+  retries or resampling; retain the original P fallback decision and every valid unfavorable
+  output. Maximum three new calls.
+- **FREEZE:** exact question/IDs, hashes, commits, prompts, model settings, paths, boundaries, and
+  allowed/prohibited conclusions are fixed in
+  `diagnostic-command-motion-compensation-pilot-v1.json` before any model call.

@@ -1,0 +1,74 @@
+{
+  "schema": "crane-diagnostic-command-motion-compensation-pilot-declaration-v1",
+  "status": "PREDECLARED_DEVELOPMENT_ONLY_NOT_CONFIRMATORY",
+  "declared_at": "2026-09-23T03:35:48-05:00",
+  "purpose": "Test whether R/P/T/N communicate the same supported command-to-motion discrepancy with a different outcome: later measured-response recovery and successful navigation.",
+  "episode_id": "diagnostic-motion-dev-cm-compensated-001",
+  "statistical_cluster_id": "command-motion-compensation-001",
+  "question_id": "diagnostic-command-motion-compensation-v1",
+  "question_kind": "diagnostic-same-mechanism-different-outcome-v1",
+  "question": "Did a command-to-motion discrepancy temporarily prevent continued progress? If so, what changed before the successful outcome, and what physical cause remains unresolved?",
+  "source": {
+    "umbrella_commit_before_declaration": "d1729b3ea235b8c4811d548b9bc0b43c5180350c",
+    "crane_ml_commit": "6bf057b5acf1763eeca1b81be6530cd218a5405b",
+    "core_commit": "f131b9b042c42e269dcc7c646e93fc6eb5433d49",
+    "evidence_path": "data/robot_visible/dev/diagnostic-pilot-v1/land-command-motion-compensated-001/evidence-and-diagnostic.json",
+    "evidence_sha256": "e09b3a48c8f122f0b8421999406252eea64e4c33a01608c9ed4b6d327aae9436",
+    "method_input_sha256": "bf5355858afb737517fcc52c563b905aa9f569faee60ba32438cc0756d71e921",
+    "data_manifest": "manifests/data/diagnostic-motion-development-cm-002.robot-visible.json"
+  },
+  "implementation": {
+    "runner_path": "analysis/run_diagnostic_command_motion_pilot.py",
+    "runner_sha256": "9fd315ceb42e03b994e637abb78d953a787f24a21d43028d12eb1586ef1fc07b",
+    "adapter_path": "analysis/recompute_command_motion_diagnostic.py",
+    "adapter_sha256": "ea2a2d7c598dea9130f6b18d80b156fbc132ef6fd9c6cf5cde0c4f358690302b",
+    "repository_prompt_path": "research/explanation_fidelity/prompts/diagnostic_repository_agent_command_motion_dev_v1.txt",
+    "repository_prompt_sha256": "6fa02e37d1b8b9a0136215f9c3f710be0a8522e0c4cecb8ab679edfc84f1fd46",
+    "realization_prompt_path": "research/explanation_fidelity/prompts/diagnostic_realization_dev_v1.txt",
+    "realization_prompt_sha256": "ee136af7285acbb238b9388ea8c2b34d463690c5dd6a359a8358c7ce6e6095c4",
+    "ablation_prompt_path": "research/explanation_fidelity/prompts/diagnostic_no_computation_dev_v1.txt",
+    "ablation_prompt_sha256": "adbbc64be0f324b77431b2f375481b692ef15dc00f71501216a565923c8d99c9"
+  },
+  "conditions": {
+    "R": "repository-aware agent with the blind method input, exact source/configuration, and the same executable command-motion computation available to P",
+    "P": "checked v2 diagnostic result followed by one model realization and the existing bounded verifier/fallback policy",
+    "T": "deterministic rendering already retained in the blind export",
+    "N": "same compact runtime/source evidence without the time-aligned command-motion computation"
+  },
+  "information_parity": {
+    "primary_comparison": "P versus tool-enabled R",
+    "same_robot_visible_evidence": true,
+    "same_diagnostic_tool_available_to_R_and_P": true,
+    "evaluator_truth_available_to_methods": false,
+    "N_is_computation_ablation_not_primary_parity_baseline": true
+  },
+  "model": {
+    "provider": "codex",
+    "name": "gpt-5.6-luna",
+    "reasoning_effort": "low",
+    "temperature": null,
+    "samples_per_model_condition": 1,
+    "retries": 0,
+    "maximum_new_calls": 3,
+    "conditions_requiring_calls": ["R", "P", "N"]
+  },
+  "retention": {
+    "retain_all_valid_outputs": true,
+    "do_not_resample_on_error_or_unfavorable_answer": true,
+    "preserve_raw_P_candidate_and_original_fallback_decision": true,
+    "retain_unexpected_language_failures": true
+  },
+  "allowed_conclusion": "The retained evidence supports a temporary command-to-motion discrepancy, later measured-response recovery, and eventual action success while leaving the unique physical cause unresolved.",
+  "prohibited_conclusions": [
+    "the evaluator intervention identity",
+    "actuator acceptance of delivered commands",
+    "Nav2 consumption of delivered odometry",
+    "motor failure, wheel slip, collision, or obstruction as the unique cause",
+    "P outperforms R before independent blinded annotation",
+    "confirmatory or held-out effectiveness"
+  ],
+  "planned_output": "model_outputs/dev/diagnostic-command-motion-compensation-pilot-v1/diagnostic-motion-dev-cm-compensated-001/mechanism-recovery-success.json",
+  "planned_cache": "research/explanation_fidelity/model_cache/diagnostic-command-motion-compensation-pilot-v1",
+  "planned_annotation_packet": "model_outputs/annotation_packets/diagnostic-command-motion-compensation-pilot-v1/packet.jsonl",
+  "analysis_status": "project review is descriptive only; blinded human annotation and adjudication are required for scored conclusions"
+}
