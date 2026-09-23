@@ -3650,3 +3650,20 @@
 - **REGRESSION:** three focused tests cover one-endpoint-per-cluster selection, quarantine/missing
   handling, fixed-target non-reduction, and rejection of post-label or nonpartitioned selections.
   Real pilot-informed power planning remains `NOT_RUN` pending human adjudication.
+
+## 2026-09-23 — fail-closed submission-readiness audit
+
+- **STATUS:** `IMPLEMENTED / TESTED / CURRENT_DRAFT_FAILS_AS_EXPECTED`; no submission, publication,
+  experiment, model call, label, or governed data changed.
+- **GATES:** the audit checks the explicitly selected full/short/demo page range including
+  references, unresolved manuscript result markers, exact anonymous author line, author footnotes,
+  developer-specific path/repository fragments, PDF author metadata, letter page geometry, font
+  embedding, PDF freshness, and the independent numeric-traceability audit.
+- **CURRENT FULL-PAPER RESULT:** `FAIL` with exactly two blockers: seven pages rather than the
+  required 8--9 and 15 unresolved `\pending{}` markers. The current PDF passes the other gates:
+  anonymous source and metadata, no forbidden identity fragments, 612x792-point letter size, all
+  11 detected fonts embedded, PDF no older than its sources, and all 67 numeric assertions traced.
+- **REGRESSION:** three focused tests cover an accepted anonymous full paper, simultaneous page/
+  pending/identity/font/metadata/traceability failures, and the 4--6-page short/demo categories.
+- **BOUNDARY:** this is a mechanical acceptance gate, not peer review, IEEE PDF eXpress validation,
+  visual layout inspection, portal submission, or evidence that pending scientific results exist.

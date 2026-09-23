@@ -33,3 +33,16 @@ argument when building a scratch copy. Tectonic downloads its TeX bundle on firs
 machine requires network access for that initial build. Before delivery, render every page with
 Poppler and inspect it for column overflow, clipped tables, illegible references, and unresolved
 red `PENDING` markers.
+
+After building and visual inspection, run the fail-closed category/anonymity audit with the intended
+submission category:
+
+```bash
+python scripts/audit_submission_readiness.py --category full
+```
+
+Use `short` or `demo` only after a deliberate category decision. The audit checks the corresponding
+8--9 or 4--6 page range including references, unresolved `\pending{}` gates, anonymous author and
+PDF metadata, developer-specific path/repository fragments, letter page geometry, font embedding,
+PDF freshness, and numeric traceability. It does not submit or publish anything and does not replace
+visual inspection. The current seven-page, results-pending draft is expected to fail.

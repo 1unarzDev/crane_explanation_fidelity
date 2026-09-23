@@ -320,12 +320,15 @@ Build the anonymous IEEE-format paper with the pinned toolchain:
 
 ```bash
 scripts/build_paper.sh
+python scripts/audit_submission_readiness.py --category full
 ```
 
 This writes `output/pdf/main.pdf`. The current seven-page manuscript is a full-paper scaffold with
 an explicit method/evaluation-boundary figure and a bounded diagnostic-answer example. It is not
 submission-ready or yet page-category compliant: blinded annotation, final analysis, the results
 section, and every red pending marker remain incomplete.
+The readiness audit intentionally exits nonzero until the chosen category, anonymity, PDF, and
+traceability gates all pass.
 
 ## Layout
 
