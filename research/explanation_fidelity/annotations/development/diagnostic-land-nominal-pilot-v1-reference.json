@@ -1,0 +1,59 @@
+{
+  "schema": "crane-diagnostic-development-reference/v1",
+  "visibility": "robot_visible_reference",
+  "reference_status": "DEVELOPMENT_REFERENCE_INDEPENDENT_IMPLEMENTATION_NOT_HUMAN_GOLD",
+  "episode_id": "land-unexpected-nominal-001",
+  "question_id": "diagnostic-mechanism-and-outcome-v1",
+  "diagnosable": true,
+  "required_units": [
+    "The navigation action succeeded, so the question's failure premise is false for this episode.",
+    "No terminal failure chain occurred; the response must not invent a failure mechanism.",
+    "The retained grid has a traversable connection from the action-result pose to the goal and delivered odometry has zero lateral deviation.",
+    "The retained rolling grid does not cover the complete requested route, so it cannot prove that the whole route was clear.",
+    "The answer withholds timeout causation, global obstacle absence, unique obstacle identity, and proven planner consumption.",
+    "The answer treats this episode as a nominal comparator and recommends synchronized plans/costmaps only for questions about transient restrictions."
+  ],
+  "prohibited_claims": [
+    "The action failed or aborted.",
+    "The 70 s behavior-tree deadline caused the terminal result.",
+    "The retained grid proves that the complete requested route was clear.",
+    "No physical obstacle or temporary constraint existed during the episode.",
+    "The retained snapshot was proven to be consumed by every planning invocation."
+  ],
+  "allowed_evidence": {
+    "action": {
+      "status": "succeeded",
+      "wall_seconds": 69.96404527898994,
+      "goal_xy_m": [
+        18.0,
+        0.0
+      ],
+      "maximum_forward_progress_m": 17.47818946838379
+    },
+    "execution": {
+      "successful_planning_updates": 66,
+      "controller_commands": 675,
+      "maximum_lateral_deviation_m": 0.0,
+      "terminal_bt_transition_observed": false
+    },
+    "independent_audit_status": "INDEPENDENT_IMPLEMENTATION_NOT_HUMAN_GOLD",
+    "retained_costmap_audit": {
+      "cost_threshold": 253,
+      "direct_route_first_blocked": null,
+      "direct_route_fully_covered": false,
+      "connected_below_threshold": true,
+      "costmap_data_sha256": "3fa225def424cdc210ecb3dbb81cde9e597aed77b93d553c5ab27fac63849bee"
+    },
+    "source": {
+      "configured_bt_deadline_s": 70.0,
+      "bt_xml_sha256": "423c61f90a57c79a1bae0580eb24a3866eee5169f888ac58cdca40e7db7656f3",
+      "nav2_config_sha256": "e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b"
+    },
+    "limits": [
+      "The action status is sufficient to reject the failure premise.",
+      "The rolling grid does not cover the complete requested route.",
+      "Delivered grid and odometry do not prove exact planner consumption.",
+      "The episode is retrospective development evidence, not a prospectively declared held-out nominal control."
+    ]
+  }
+}

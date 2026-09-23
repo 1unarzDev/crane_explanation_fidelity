@@ -1,11 +1,11 @@
 {
   "schema": "crane-diagnostic-development-annotation-inventory/v1",
   "created_utc": "2026-09-23T01:47:07Z",
-  "updated_utc": "2026-09-23T02:21:41Z",
+  "updated_utc": "2026-09-23T02:36:00Z",
   "status": "DEVELOPMENT_PACKETS_AWAITING_TWO_HUMAN_ANNOTATORS",
   "inferential_status": "DEVELOPMENT_ONLY_NOT_A_FROZEN_OR_CONFIRMATORY_STUDY",
-  "responses": 20,
-  "statistical_clusters": 3,
+  "responses": 24,
+  "statistical_clusters": 4,
   "packets": [
     {
       "name": "land-unmasked",
@@ -50,6 +50,15 @@
       "key": "data/evaluator_only/annotation_keys/diagnostic-land-s-turn-pilot-v1.json",
       "key_sha256": "8a7cada840e0981e02c50c68989aed3a27440b10eca9088ea096b8c328424287",
       "statistical_cluster_id": "land-s-turn-unexpected-abort-001",
+      "evidence_variant": "unmasked"
+    },
+    {
+      "name": "land-nominal-false-premise",
+      "packet": "model_outputs/annotation_packets/diagnostic-land-nominal-pilot-v1/packet.jsonl",
+      "packet_sha256": "d0c8c79b3d1003e96d6e9c77f915b40dfa00a58b7682c662bffbe4af2e42c0f6",
+      "key": "data/evaluator_only/annotation_keys/diagnostic-land-nominal-pilot-v1.json",
+      "key_sha256": "cbd490cdaffe9d9392b39e7a3d9bcc8f9a1ceba4992c6e0b409946610f4a84ee",
+      "statistical_cluster_id": "land-unexpected-nominal-001",
       "evidence_variant": "unmasked"
     }
   ],

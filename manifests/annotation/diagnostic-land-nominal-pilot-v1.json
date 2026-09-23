@@ -1,0 +1,39 @@
+{
+  "schema": "crane-explain-annotation-packet-manifest/v1",
+  "status": "DEVELOPMENT_DRY_RUN_AWAITING_TWO_HUMAN_ANNOTATORS",
+  "study": "prospective-physical-diagnosis-development",
+  "packet": {
+    "path": "model_outputs/annotation_packets/diagnostic-land-nominal-pilot-v1/packet.jsonl",
+    "sha256": "d0c8c79b3d1003e96d6e9c77f915b40dfa00a58b7682c662bffbe4af2e42c0f6",
+    "dvc_pointer": "model_outputs.dvc",
+    "responses": 4,
+    "conditions_blinded": true
+  },
+  "key": {
+    "path": "data/evaluator_only/annotation_keys/diagnostic-land-nominal-pilot-v1.json",
+    "sha256": "cbd490cdaffe9d9392b39e7a3d9bcc8f9a1ceba4992c6e0b409946610f4a84ee",
+    "dvc_pointer": "data/evaluator_only/annotation_keys.dvc",
+    "visibility": "evaluator_only"
+  },
+  "reference": {
+    "path": "research/explanation_fidelity/annotations/development/diagnostic-land-nominal-pilot-v1-reference.json",
+    "sha256": "d81840e0da206bc89660b27a3b1740905e579ae3d778b6128c10abb2f6f97538",
+    "status": "DEVELOPMENT_REFERENCE_INDEPENDENT_IMPLEMENTATION_NOT_HUMAN_GOLD"
+  },
+  "rubric": {
+    "path": "docs/DIAGNOSTIC_ANNOTATION_GUIDE.md",
+    "status": "DEVELOPMENT_DRAFT_NOT_FROZEN"
+  },
+  "requirements": {
+    "independent_annotators": 2,
+    "distinct_adjudicator_on_disagreement": true,
+    "condition_key_withheld_until_after_adjudication": true
+  },
+  "limitations": [
+    "This is a retrospective development control from a stale-player induction failure, not a prospectively declared nominal held-out episode.",
+    "The reference is independently implemented but not a human gold label or confirmatory evidence.",
+    "R's immutable response overstates complete direct-route coverage; the tool was fixed after the call and the response was not resampled.",
+    "No human annotations or adjudication exist at packet creation time.",
+    "The P final response used deterministic fallback and is text-identical to T; identical text must receive identical labels."
+  ]
+}

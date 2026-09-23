@@ -128,3 +128,19 @@ substantively aligned but failed the exact-text gate, so final P again equaled T
 development questions in three episode clusters, P fallback is 5/5. The new blinded packet brings
 the inventory to 20 responses, but human labels, a true prospective nominal control, stable power
 planning, protocol freeze, and held-out evaluation remain `NOT_RUN`.
+
+### False-premise development checkpoint — 2026-09-22
+
+The retained nominal success exposed a plan-level defect: the checked answer originally said only
+that a failure mechanism was not established, rather than rejecting the false premise. The
+diagnostic now records `no_failure_observed`, leads with the successful action status, states that
+no terminal failure chain occurred, and limits its claim to this episode. A second defect appeared
+in the immutable R output: the rolling costmap covered only part of the requested route, but the
+tool interpreted “no blocked sampled cell” as complete direct-route clearance. The wrapper now
+reports incomplete coverage and returns an unknown route classification; the R output was retained
+and not resampled.
+
+All four methods rejected the failure premise, and P again fell back to T. The blinded development
+inventory is now 24 responses in six packets over four clusters, with fallback 6/6. This nominal
+episode is retrospective development evidence from a failed fault induction, not the prospectively
+declared nominal control still required before freeze.

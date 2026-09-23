@@ -58,6 +58,9 @@ def export(
     clearance = None
     lethal_samples = None
     first_lethal = None
+    direct_route_fully_covered = None
+    direct_route_has_lethal_cell = None
+    direct_route_minimum_clearance_m = None
     if costmap_payload_available:
         clearance = audit(
             fixture,
@@ -69,10 +72,24 @@ def export(
             robot_radius_m,
             inflation_radius_m,
         )
+        route_samples = clearance["approach"]["samples"]
         lethal_samples = [
-            sample for sample in clearance["approach"]["samples"]
+            sample for sample in route_samples
             if sample["cost"] is not None and int(sample["cost"]) >= 253
         ]
+        direct_route_fully_covered = all(
+            sample["cost"] is not None for sample in route_samples
+        )
+        # One observed lethal cell is sufficient to establish a restriction on the sampled route.
+        # Conversely, no lethal sampled cell establishes a clear direct route only when the
+        # retained grid covers every sample.  Fail closed for rolling/partial grids.
+        direct_route_has_lethal_cell = (
+            True if lethal_samples else (False if direct_route_fully_covered else None)
+        )
+        if lethal_samples or direct_route_fully_covered:
+            direct_route_minimum_clearance_m = clearance["approach"][
+                "minimumLethalClearanceMeters"
+            ]
         # approach samples are indexed from goal backwards; the largest distance-before-goal is
         # the first lethal sample encountered from the retained start toward the goal.
         first_lethal = max(
@@ -106,10 +123,8 @@ def export(
         evidence_ids=evidence_ids,
         frame=str(snapshot["frameId"]),
         action_status=str(fixture["status"]),
-        direct_route_has_lethal_cell=(bool(lethal_samples) if lethal_samples is not None else None),
-        direct_route_minimum_clearance_m=(
-            clearance["approach"]["minimumLethalClearanceMeters"] if clearance else None
-        ),
+        direct_route_has_lethal_cell=direct_route_has_lethal_cell,
+        direct_route_minimum_clearance_m=direct_route_minimum_clearance_m,
         direct_route_first_lethal_x_m=(float(first_lethal["x"]) if first_lethal else None),
         direct_route_first_lethal_y_m=(float(first_lethal["y"]) if first_lethal else None),
         grid_connected=(clearance["connectedBelowCost253"] if clearance else None),
@@ -160,9 +175,10 @@ def export(
                 "status": "completed",
                 "snapshot": clearance["snapshot"],
                 "direct_route": {
-                    "has_lethal_cell": bool(lethal_samples),
+                    "has_lethal_cell": direct_route_has_lethal_cell,
+                    "fully_covered": direct_route_fully_covered,
                     "first_lethal_sample_from_start": first_lethal,
-                    "minimum_lethal_clearance_m": clearance["approach"]["minimumLethalClearanceMeters"],
+                    "minimum_lethal_clearance_m": direct_route_minimum_clearance_m,
                 },
                 "connected_below_cost_253": clearance["connectedBelowCost253"],
                 "connectivity_origin": "action-result-pose",

@@ -2687,3 +2687,33 @@
   three clusters. Raw result, cache records, packet, key, current diagnostic export, and independent
   reference are hash-manifested; DVC artifacts were pushed to R2. Annotation, adjudication, power
   planning, protocol freeze, and held-out evaluation remain `NOT_RUN`.
+
+## 2026-09-22 — false-premise nominal development control and route-coverage defect
+
+- **STATUS:** `IMPLEMENTED / TESTED / DEVELOPMENT_ONLY / HUMAN_LABELS_NOT_RUN`.
+- **SOURCE EPISODE:** `land-unexpected-nominal-001` is a retained stale-player fault-induction
+  failure whose NavigateToPose action succeeded. Evaluator truth shows no requested blocker was
+  instantiated. It remains a valid retrospective nominal/capture control, not a prospectively
+  declared held-out nominal episode.
+- **DEFICIENT PLAN:** the previous `not_triggered` result merely said that the failure mechanism was
+  not established. It did not explicitly reject the question's false premise. Core commit
+  `25b8b64` adds the recorded `action_status`, mechanism `no_failure_observed`, recorded-sequence
+  causal level, an explicit “action succeeded” diagnosis, and a no-failure chain. The checked text
+  uses only terminal status as decisive evidence and withholds universal obstacle-freedom claims.
+- **MODEL RUN:** one no-retry R/P/T/N comparison used the same model/settings and information/tool
+  parity as the other land pilots. All methods rejected the failure premise. P's candidate again
+  failed the exact-text check, so final P equals T and development fallback becomes 6/6.
+- **RETAINED TOOL FAILURE:** R additionally claimed that the complete direct route was clear. The
+  independent evaluator-side reference shows that the rolling grid did not cover the whole route.
+  The shared wrapper had conflated “no lethal sampled cell” with “fully covered and clear.” The
+  immutable R response and pre-fix diagnostic remain retained. The wrapper now records route
+  coverage and fails closed to an unknown route classification when any samples lie outside the
+  grid; the episode was not resampled.
+- **TESTS:** focused core/export tests cover successful false-premise handling with and without
+  costmap cells and incomplete rolling-grid coverage. The current deterministic export reports
+  `action_status=succeeded`, `direct_route.fully_covered=false`, and
+  `direct_route.has_lethal_cell=null` while still rejecting the failure premise.
+- **GOVERNANCE:** the four-response blinded packet, evaluator-only key, pre-model independent
+  reference, raw output/cache, and pre-/post-fix diagnostic artifacts are retained. The inventory
+  is 24 responses in six packets over exactly four clusters. Human annotation and adjudication
+  remain `NOT_RUN`; no apparent P-over-R difference is claimed from project-author inspection.

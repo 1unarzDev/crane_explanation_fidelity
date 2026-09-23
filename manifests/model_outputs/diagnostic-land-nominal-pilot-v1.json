@@ -1,0 +1,73 @@
+{
+  "schema": "crane-explain-model-artifact-manifest/v1",
+  "status": "DEVELOPMENT_ONLY_NOT_FROZEN",
+  "created_utc": "2026-09-23T02:36:00Z",
+  "provider": "codex-lb-via-chatgpt-login",
+  "adapter": "codex-cli-json/v1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "low",
+  "single_sample_no_retry": true,
+  "evaluator_truth_available_to_methods": false,
+  "information_parity_audited": true,
+  "episode_ids": [
+    "land-unexpected-nominal-001"
+  ],
+  "question_kinds": [
+    "diagnostic-mechanism-and-outcome-v1"
+  ],
+  "conditions": [
+    "N",
+    "P",
+    "R"
+  ],
+  "result_envelope_conditions": [
+    "N",
+    "P",
+    "R",
+    "T"
+  ],
+  "model_condition_outputs": 3,
+  "embedded_non_model_smoke_conditions": [
+    "T"
+  ],
+  "embedded_non_model_smoke_outputs": 1,
+  "model_calls_referenced": 3,
+  "new_model_calls": 3,
+  "content_addressed_calls_reused": 0,
+  "read_only_workspace_verified": true,
+  "output_root": "model_outputs/dev/diagnostic-land-nominal-pilot-v1",
+  "cache_root": "research/explanation_fidelity/model_cache/diagnostic-land-nominal-pilot-v1",
+  "artifacts": [
+    {
+      "path": "model_outputs/dev/diagnostic-land-nominal-pilot-v1/land-unexpected-nominal-001/mechanism-and-outcome.json",
+      "bytes": 11268,
+      "sha256": "cb2301d3dd7aad10fa5c29f0c9fcc443991e729223eec6a23e58854244d677ed"
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-land-nominal-pilot-v1/07bef5c84ae0874e085d28c667c0acd041ad2e3db063891e8705e92097607bde.json",
+      "bytes": 54407,
+      "sha256": "fe23ce3e1b355e2bfc2edcfe6d4f3ccba0d62d71a88ec947003b1a174b9c5c79"
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-land-nominal-pilot-v1/0b7dbcdca697372415ab71445e9e8ccb70a76bbfb16347467f471eb472c5b293.json",
+      "bytes": 17443,
+      "sha256": "5380822187ac570856aa4653921e8360ac4a2fef0f1663bb6d03a86e1d12504e"
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-land-nominal-pilot-v1/4ba8ab785d7d9cc65db3c4970d1e2e744e4c25f8aa7cea6a17dc47506641d242.json",
+      "bytes": 20207,
+      "sha256": "01fb21f330f5fefca4c735c95493634e5f9066de014823d4dbf8100c47566be2"
+    }
+  ],
+  "usage": {
+    "aggregate_latency_ms": 118343.651997,
+    "input_tokens": 199929,
+    "cached_input_tokens": 163328,
+    "cache_write_input_tokens": 0,
+    "output_tokens": 2696,
+    "reasoning_output_tokens": 554,
+    "cost_usd": null,
+    "cost_status": "not_reported_by_codex_cli_chatgpt_login"
+  },
+  "interpretation": "Retrospective nominal development control. All methods reject the false failure premise. R additionally overstates direct-route coverage because the tool version used for this immutable call did not fail closed on a partial rolling grid; the defect was fixed after the call without resampling."
+}
