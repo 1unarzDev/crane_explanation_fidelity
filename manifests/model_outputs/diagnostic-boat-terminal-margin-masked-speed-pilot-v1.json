@@ -1,0 +1,63 @@
+{
+  "schema": "crane-explain-model-artifact-manifest/v1",
+  "status": "DEVELOPMENT_ONLY_NOT_FROZEN",
+  "created_utc": "2026-09-23T00:48:01.694288+00:00",
+  "provider": "codex-lb-via-chatgpt-login",
+  "adapter": "codex-cli-json/v1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "low",
+  "single_sample_no_retry": true,
+  "episode_ids": ["roboboat-gate5-known-dock-1"],
+  "question_kinds": ["diagnostic-mechanism-and-outcome-v1"],
+  "conditions": ["N", "P", "R"],
+  "embedded_non_model_smoke_conditions": ["T"],
+  "model_calls_referenced": 3,
+  "model_condition_outputs": 3,
+  "embedded_non_model_smoke_outputs": 1,
+  "result_envelope_conditions": ["N", "P", "R", "T"],
+  "result_envelope_outputs": 4,
+  "output_root": "model_outputs/dev/diagnostic-boat-pilot-v1/roboboat-terminal-margin-masked-speed",
+  "cache_root": "research/explanation_fidelity/model_cache/diagnostic-boat-pilot-v1",
+  "evaluator_truth_available_to_methods": false,
+  "information_parity_audited": true,
+  "read_only_workspace_verified": true,
+  "same_statistical_cluster_as": "diagnostic-boat-terminal-margin-pilot-v1",
+  "load_balancer_note": "The operator reported that the load-balancer source changed before this development run. The client records the requested alias and CLI version but not the resolved backend/source revision; no equivalence to earlier model calls is claimed.",
+  "artifacts": [
+    {
+      "path": "model_outputs/dev/diagnostic-boat-pilot-v1/roboboat-terminal-margin-masked-speed/mechanism-and-outcome.json",
+      "bytes": 10699,
+      "sha256": "e5707a7936e0fd0cb702f78cb0d174932540198641512d6ffa2c037d18d153ac"
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-boat-pilot-v1/68a8886efef971003a910dcba2e83c3cb70960a278fa9fc18726c57e3a194309.json",
+      "bytes": 103619,
+      "sha256": "a7e1a49152e51469ab036ca1bb803b0beb8305a2e6c02c1e7253ee3afcc52cc6"
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-boat-pilot-v1/db57fbe2ae1df143bc83070a2fb0b3f8fe594c2b551a32359b8d37c8a581d1f9.json",
+      "bytes": 11550,
+      "sha256": "3ee33e66cc67d70068fd0c5b4d7fb4140d6d7a9ad794268825b7507600379f96"
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-boat-pilot-v1/e47abceb5663caf8743cf11f53ce78ebdbef4b779fe69b44950addc8d2cb93d2.json",
+      "bytes": 16546,
+      "sha256": "84a6b7db430dc18c7afe8644d43f052638c562c3b228525954689b6510f8c8c1"
+    },
+    {
+      "path": "research/explanation_fidelity/tool_snapshots/recompute_terminal_margin_diagnostic-ef4645c1.py",
+      "bytes": 4915,
+      "sha256": "ef4645c1c933ca46a5ccf34bf7a628e76a5bcd3f1a1465ba62e3d431eabf78a9"
+    }
+  ],
+  "usage": {
+    "aggregate_latency_ms": 99135.27354,
+    "input_tokens": 159728,
+    "cached_input_tokens": 116096,
+    "output_tokens": 2432,
+    "reasoning_output_tokens": 502,
+    "cost_usd": null,
+    "cost_status": "not_reported_by_codex_cli_chatgpt_login"
+  },
+  "development_observation": "R and N preserved the observed post-return positional failure chain while withholding return-speed and physical-cause claims. P/T unnecessarily withheld the supported positional-margin mechanism. A post-hoc v2 deterministic correction is retained separately and is not a prospective result."
+}

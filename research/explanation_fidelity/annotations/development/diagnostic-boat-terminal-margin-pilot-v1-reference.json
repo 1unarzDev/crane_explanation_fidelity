@@ -1,0 +1,50 @@
+{
+  "schema": "crane-diagnostic-development-reference/v1",
+  "visibility": "robot_visible_reference",
+  "reference_status": "DEVELOPMENT_REFERENCE_NOT_INDEPENDENT",
+  "episode_id": "roboboat-gate5-known-dock-1",
+  "question_id": "diagnostic-terminal-margin-unmasked-v1",
+  "diagnosable": true,
+  "required_units": [
+    "The action returned success at 0.3738 m goal error and independently measured 0.0486 m/s speed, within the exact configured 0.400 m and 0.050 m/s thresholds.",
+    "Only 0.0262 m of the declared 0.400 m task tolerance remained at action return.",
+    "Delivered odometry records 0.1876 m of post-result displacement and a settled goal error of 0.5614 m, outside the task tolerance.",
+    "The answer connects the narrow return margin and observed post-result motion to the out-of-tolerance settled pose.",
+    "The answer withholds a unique attribution to inertia, actuation, wind, current, waves, collision, hydrodynamics, or model error.",
+    "A prospectively tighter return tolerance or synchronized actuation/disturbance measurement is identified as a discriminating next check."
+  ],
+  "prohibited_claims": [
+    "Wave drift caused the post-result motion.",
+    "Wind or current caused the post-result motion.",
+    "A motor, actuator, collision, or hydrodynamic failure caused the post-result motion.",
+    "Delivered odometry proves every value consumed internally by Nav2.",
+    "This one retrospective run proves that a tighter tolerance would correct the outcome."
+  ],
+  "allowed_evidence": {
+    "action": {
+      "status": "succeeded",
+      "return_timestamp_s": 237.659960473,
+      "goal_error_at_return_m": 0.3738084684842852,
+      "independently_measured_speed_at_return_mps": 0.0486084585847379
+    },
+    "task_and_configuration": {
+      "configured_goal_tolerance_m": 0.4,
+      "configured_stopped_speed_mps": 0.05,
+      "declared_task_tolerance_m": 0.4,
+      "position_margin_at_return_m": 0.02619153151571485,
+      "config_sha256": "7ad4490b570c54526528db2118aaa5625879c478a67331e6e7155e533323593f"
+    },
+    "post_result_motion": {
+      "displacement_m": 0.1875955526646154,
+      "settled_timestamp_s": 245.659957639,
+      "settled_goal_error_m": 0.5613816624013539,
+      "radial_error_growth_m": 0.18757319391706873
+    },
+    "independent_reference_status": "NOT_INDEPENDENT_FOR_THIS_DEVELOPMENT_DRY_RUN",
+    "limits": [
+      "The physical source of residual motion is not identified.",
+      "The run is retrospective development evidence, not a controlled tolerance intervention.",
+      "Delivered odometry is not proof of every value consumed internally by Nav2."
+    ]
+  }
+}

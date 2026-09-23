@@ -1,0 +1,28 @@
+{
+  "schema": "crane-data-manifest-v1",
+  "artifact_id": "roboboat-terminal-margin-masked-speed-partial-v2-development",
+  "status": "DEVELOPMENT_POST_HOC_NOT_CONFIRMATORY",
+  "visibility": "robot_visible",
+  "path": "data/robot_visible/dev/diagnostic-pilot-v1/roboboat-terminal-margin-masked-speed/terminal-margin-diagnostic-partial-v2.json",
+  "sha256": "58fee13330ba03446365fd60ab5847262750b1ff5a79de39dc6cfe62c6343715",
+  "dvc_pointer": "data/robot_visible/dev.dvc",
+  "derived_from": {
+    "path": "data/robot_visible/dev/diagnostic-pilot-v1/roboboat-terminal-margin-masked-speed/evidence.json",
+    "sha256": "81ce2fb2340912be1d072d7b1038702a0e5d9da79878b355851eb1b05d1389fa"
+  },
+  "reproduction": {
+    "adapter": "analysis/recompute_terminal_margin_diagnostic.py",
+    "adapter_sha256": "0c12631c99e99a6f296bc61b91ccec4d487dfbe3e0dc79185ce95815144e02b4",
+    "core_repository": "https://github.com/1unarzDev/crane_explain.git",
+    "core_commit": "4d9ecb43f12c799e92b0b650abe4750a80a8a5ef",
+    "config_repository": "https://github.com/1unarzDev/crane_ml.git",
+    "config_commit": "4ae5124c12c39af93ee5b256e33778aec490ecd3",
+    "config_path": "Tools/Performance/nav2_controller_fixture.yaml",
+    "config_sha256": "7ad4490b570c54526528db2118aaa5625879c478a67331e6e7155e533323593f"
+  },
+  "limitations": [
+    "This correction was designed after inspecting the pre-correction development response.",
+    "It preserves the positional failure chain but does not establish stopped-speed satisfaction or the physical source of residual motion.",
+    "It does not replace the original model outputs and is not prospective evidence for Q3."
+  ]
+}

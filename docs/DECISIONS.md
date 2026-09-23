@@ -827,3 +827,21 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Validity risk: the final BT transition is missing and the retained snapshot is not the exact grid
   consumed by every planner tick. A future prospective case should retain time-aligned global grids
   and full paths, but that instrumentation is lower priority than protocol freeze and annotation.
+
+## 2026-09-23 — preserve positional diagnosis when RoboBoat return speed is missing
+
+- Decision: treat the speed-masked case as partially diagnosable, not wholly unanswerable. State
+  that observed post-return motion exceeded the remaining positional margin and led outside the
+  task tolerance, while withholding whether the physical platform met Nav2's stopped-speed
+  threshold and what caused the motion.
+- Evidence: the mask retains action success at 0.3738 m error, a 0.400 m task limit, 0.1876 m of
+  post-return displacement, and 0.5614 m settled error. R/N expressed this chain; the original P/T
+  plan discarded it solely because measured return speed was absent.
+- Alternatives: call the whole case unanswerable; infer the missing speed from action success; or
+  attribute residual motion to waves/current. The first is unnecessary abstention, while the other
+  two exceed the robot-visible evidence.
+- Expected effect: Q3 can distinguish useful partial diagnosis from both speculation and blanket
+  abstention. `terminal-stopping-margin-v2` implements the distinction; the v1 model outputs remain
+  immutable and are annotated as generated.
+- Validity risk: this correction is post-hoc on the exposing episode and its reference inventory is
+  not independent gold. A separate prospective case must validate the rule before any Q3 claim.

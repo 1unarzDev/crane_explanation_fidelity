@@ -96,3 +96,19 @@ prespecified physical-diagnosis evaluation.
    power planning.
 5. Write the manuscript while pilots run. Do not resume platform breadth, aerial, underwater, or
    broad environment work.
+
+## Progress checkpoint — 2026-09-23
+
+The first parity-audited land and RoboBoat comparisons are now retained. Each has one unmasked
+question and one paired evidence mask, yielding four final responses per question but only two
+independent episode clusters. Tool-enabled R matched the central diagnosis on both unmasked cases;
+there is no development evidence that P outperforms R. P's realization failed exact verification
+on all four development questions and final P fell back to T each time.
+
+The boat speed mask exposed over-withholding: missing return speed prevents claiming that the
+physical platform satisfied Nav2's stopped-speed threshold, but retained pose evidence still shows
+that 0.1876 m of post-return motion exceeded 0.0262 m of positional margin and ended outside the
+task tolerance. The original output is immutable; a post-hoc v2 checked plan preserves this partial
+diagnosis. Blinded packets exist, but independent human annotation, independent reference
+computations, nominal controls, power planning, protocol freeze, and held-out collection remain
+`NOT_RUN`.

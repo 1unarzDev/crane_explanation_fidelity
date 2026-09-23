@@ -114,9 +114,10 @@ their own location. Exact repository commits and destinations are recorded in
   and no sealed effect estimate exists. See [research redirect](docs/RESEARCH_REDIRECT.md).
 - **TESTED (DIAGNOSTIC DEVELOPMENT ONLY):** physical-diagnosis contracts and a separate study
   draft cover geometric restriction and command-to-motion discrepancy. One governed retrospective
-  RoboBoat run now exercises a bounded terminal stopping-margin computation, four-section checked
-  answer, and exact final-text verification. It is not a prospective comparison or independently
-  annotated result; no R/P/T/N effect estimate exists.
+  RoboBoat run and its speed-masked variant now have parity-audited R/P/T/N outputs and blinded
+  four-response packets. Tool-enabled R matched the unmasked P/T mechanism; on the mask, R/N
+  preserved a supported positional failure chain that P/T omitted. P fell back to T in both cases.
+  These are one episode cluster, unannotated, and not an effect estimate.
 - **TESTED (SECONDARY-ARM DEVELOPMENT):** the provider-neutral model-call contract now has a
   Claude Code adapter as its first non-GPT instance. A predeclared control rejected Haiku and fixed
   `claude-sonnet-5` at low effort. See [model-family replication](docs/MODEL_FAMILY_REPLICATION.md).
@@ -164,6 +165,19 @@ python analysis/export_terminal_margin_diagnostic.py \
 The retained compact export is restorable without the large source summary; byte-for-byte
 regeneration additionally requires that hash-identified development summary. The exporter refuses
 summaries without the declared independent-odometry provenance.
+
+Recompute the post-hoc v2 partial diagnosis for the retained speed mask without the large summary:
+
+```bash
+python analysis/recompute_terminal_margin_diagnostic.py \
+  data/robot_visible/dev/diagnostic-pilot-v1/roboboat-terminal-margin-masked-speed/evidence.json \
+  --config-repository packages/crane_ml \
+  --output /tmp/roboboat-terminal-margin-partial-v2.json
+```
+
+This correction preserves the supported positional-margin chain while withholding return-speed
+criterion satisfaction and the physical source of residual motion. It is development-only and
+does not replace the retained pre-correction model outputs.
 
 After pulling governed development data, reproduce the checked land geometric diagnosis with:
 

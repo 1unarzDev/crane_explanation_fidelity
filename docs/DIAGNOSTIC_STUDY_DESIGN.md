@@ -75,3 +75,19 @@ Every question must discriminate a declared capability; paraphrases do not add i
 - Blind annotation packet, dual annotation, and adjudication workflow are dry-run on development
   outputs.
 - Response-quality review confirms P/T lead with diagnosis and preserve limitations.
+
+## Development status at 2026-09-23
+
+- Land and RoboBoat each have one parity-audited R/P/T/N development comparison plus a paired
+  evidence mask. This is two episode clusters, not eight independent responses.
+- In both unmasked comparisons, tool-enabled R expressed the central mechanism at least as well as
+  P/T; current development evidence does not support a P-over-R claim.
+- P used deterministic fallback in both land and both boat comparisons (4/4 development
+  questions). The final method is therefore template-rendered at the current operating point.
+- The speed-masked boat case remains positionally diagnosable: observed post-return motion exceeded
+  the retained positional margin. Missing speed prevents only the stronger stopped-speed claim.
+  The original over-withholding output is retained, and a post-hoc v2 checked-plan correction is
+  not counted as prospective evidence.
+- Four blinded packets (16 responses) exist but cover only two episode clusters. Human annotation,
+  independent reference computations, a nominal diagnostic control, power planning, protocol
+  freeze, and held-out evaluation remain `NOT_RUN`.

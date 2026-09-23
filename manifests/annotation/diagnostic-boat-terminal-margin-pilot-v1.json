@@ -1,0 +1,38 @@
+{
+  "schema": "crane-explain-annotation-packet-manifest/v1",
+  "status": "DEVELOPMENT_DRY_RUN_AWAITING_TWO_HUMAN_ANNOTATORS",
+  "study": "prospective-physical-diagnosis-development",
+  "packet": {
+    "path": "model_outputs/annotation_packets/diagnostic-boat-terminal-margin-pilot-v1/packet.jsonl",
+    "sha256": "8eb2372979a4d2e32d13847c1550cd6996ada95d045d80f08889a6a1dc5ece70",
+    "dvc_pointer": "model_outputs.dvc",
+    "responses": 4,
+    "conditions_blinded": true
+  },
+  "key": {
+    "path": "data/evaluator_only/annotation_keys/diagnostic-boat-terminal-margin-pilot-v1/key.json",
+    "sha256": "afc29c5ded292445520a3ec9adc864c3abb9597172aa2f671ffe198b6e8c6c11",
+    "dvc_pointer": "data/evaluator_only/annotation_keys.dvc",
+    "visibility": "evaluator_only"
+  },
+  "reference": {
+    "path": "research/explanation_fidelity/annotations/development/diagnostic-boat-terminal-margin-pilot-v1-reference.json",
+    "sha256": "d7be17131d48cfe623c310da2b170c114d6cb5f7972178d7e0481b0f7c9163ce",
+    "status": "DEVELOPMENT_REFERENCE_NOT_INDEPENDENT"
+  },
+  "rubric": {
+    "path": "docs/DIAGNOSTIC_ANNOTATION_GUIDE.md",
+    "status": "DEVELOPMENT_DRAFT_NOT_FROZEN"
+  },
+  "requirements": {
+    "independent_annotators": 2,
+    "distinct_adjudicator_on_disagreement": true,
+    "condition_key_withheld_until_after_adjudication": true
+  },
+  "limitations": [
+    "This packet contains one retrospective development episode and cannot estimate an effectiveness difference.",
+    "The reference inventory is not an independent gold computation.",
+    "No human annotations or adjudication exist at packet creation time.",
+    "P used deterministic fallback and is text-identical to T; identical text must receive identical labels."
+  ]
+}

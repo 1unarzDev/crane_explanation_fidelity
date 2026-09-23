@@ -1,0 +1,62 @@
+{
+  "schema": "crane-explain-model-artifact-manifest/v1",
+  "status": "DEVELOPMENT_ONLY_NOT_FROZEN",
+  "created_utc": "2026-09-23T00:48:01.694288+00:00",
+  "provider": "codex-lb-via-chatgpt-login",
+  "adapter": "codex-cli-json/v1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "low",
+  "single_sample_no_retry": true,
+  "episode_ids": ["roboboat-gate5-known-dock-1"],
+  "question_kinds": ["diagnostic-mechanism-and-outcome-v1"],
+  "conditions": ["N", "P", "R"],
+  "embedded_non_model_smoke_conditions": ["T"],
+  "model_calls_referenced": 3,
+  "model_condition_outputs": 3,
+  "embedded_non_model_smoke_outputs": 1,
+  "result_envelope_conditions": ["N", "P", "R", "T"],
+  "result_envelope_outputs": 4,
+  "output_root": "model_outputs/dev/diagnostic-boat-pilot-v1/roboboat-terminal-margin",
+  "cache_root": "research/explanation_fidelity/model_cache/diagnostic-boat-pilot-v1",
+  "evaluator_truth_available_to_methods": false,
+  "information_parity_audited": true,
+  "read_only_workspace_verified": true,
+  "load_balancer_note": "The operator reported that the load-balancer source changed before this development run. The client records the requested alias and CLI version but not the resolved backend/source revision; no equivalence to earlier model calls is claimed.",
+  "artifacts": [
+    {
+      "path": "model_outputs/dev/diagnostic-boat-pilot-v1/roboboat-terminal-margin/mechanism-and-outcome.json",
+      "bytes": 11732,
+      "sha256": "4cd6389d38829702b5baf1f85ab97fdbe4155ef15d2f5acf93f378b8d8630918"
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-boat-pilot-v1/6814cbc6117e91a782671c82d376322d6407747a40f82d678721fd4017ce5bbd.json",
+      "bytes": 60261,
+      "sha256": "ab20d15203d99ab93ef06eb07fe2ce512ab508443061107a69e71c310825c4c6"
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-boat-pilot-v1/d6e2448b6b83ca0903b60c998899da0c31577ee500ab09119e4f745c0b4736f7.json",
+      "bytes": 14554,
+      "sha256": "73dc72d4b9064a52513d1116e8949bed31c359e5afec7dba6ba98e01fd94010f"
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-boat-pilot-v1/2ee9766a80a9226e2384da1a38463b65ddd6019c0fc80802a5da2757df24cb29.json",
+      "bytes": 16030,
+      "sha256": "4b93d67b32daf1f5b0825880a833c188229a2cd94a1796dd48dfef90192615e8"
+    },
+    {
+      "path": "research/explanation_fidelity/tool_snapshots/recompute_terminal_margin_diagnostic-ef4645c1.py",
+      "bytes": 4915,
+      "sha256": "ef4645c1c933ca46a5ccf34bf7a628e76a5bcd3f1a1465ba62e3d431eabf78a9"
+    }
+  ],
+  "usage": {
+    "aggregate_latency_ms": 86944.054016,
+    "input_tokens": 125663,
+    "cached_input_tokens": 66304,
+    "output_tokens": 2102,
+    "reasoning_output_tokens": 307,
+    "cost_usd": null,
+    "cost_status": "not_reported_by_codex_cli_chatgpt_login"
+  },
+  "development_observation": "Tool-enabled R and the no-computation N arm both expressed the central terminal-margin chain. P's candidate was useful but failed exact final-text verification, so final P fell back to T. No superiority claim is supported."
+}

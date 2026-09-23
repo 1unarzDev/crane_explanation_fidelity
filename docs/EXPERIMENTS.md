@@ -2498,3 +2498,36 @@
   pre-correction missing-cell R/P/T/N outputs. Together with the unmasked packet, the dry run has
   eight responses but only one episode cluster. Annotation remains `NOT_RUN`; packet generation
   does not create a human label or an independent sample.
+
+## 2026-09-23 — RoboBoat terminal-margin R/P/T/N development pilots
+
+- **BOUNDARY / NO PLATFORM CHANGE:** no RoboBoat scene, physics, vehicle, controller, or Nav2
+  configuration was changed or launched. Both comparisons consume the governed compact
+  robot-visible export from the retained `roboboat-gate5-known-dock-1` run. R received exact CRANE
+  commit `4ae5124`, diagnostic core `38ae31c`, exact configuration, raw observations, and the same
+  hash-checking executable terminal-margin computation as P. Evaluator labels, matched
+  intervention outcomes, hidden forces, and simulator truth were unavailable.
+- **UNMASKED / ONE SHOT:** R, P, and N were each called once with `gpt-5.6-sol`, low reasoning,
+  Codex CLI `0.155.1`; T is deterministic. R and N both expressed the central result: success was
+  returned with only 0.0262 m positional margin before 0.1876 m of post-result motion led to
+  0.5614 m settled error. R retained the physical-cause limits. P's candidate was useful but failed
+  exact verification, so final P equals T. This is another null/negative development result for a
+  P-over-tool-enabled-R claim.
+- **SPEED MASK / ONE SHOT:** the paired mask removes independently measured speed at return and is
+  the same episode/statistical cluster. R and N preserved the supported positional chain while
+  withholding whether the physical platform met the 0.050 m/s stopped-speed threshold and why it
+  moved. P/T instead said the entire stopping margin could not be assessed, an informative-content
+  omission. P again fell back to T. No model output was retried or replaced.
+- **POST-HOC CORRECTION:** `terminal-stopping-margin-v2` retains `insufficient` disposition for the
+  complete stopped-criterion claim but reports the observed positional-margin mechanism. The
+  deterministic corrected answer verifies exactly. It is post-hoc development evidence and does
+  not replace the original output or establish Q3 prospectively.
+- **RESOURCES:** unmasked aggregate model latency was 86.944 s with 125,663 input tokens (66,304
+  cached), 2,102 output tokens, and 307 reasoning tokens. The mask used 99.135 s, 159,728 input
+  tokens (116,096 cached), 2,432 output tokens, and 502 reasoning tokens. Monetary cost was not
+  reported. The operator reported a changed load-balancer source; the resolved backend revision is
+  unavailable, so equivalence to earlier calls is not claimed.
+- **ANNOTATION/GOVERNANCE:** two new blinded four-response packets and physically separate keys are
+  retained. Together with land, diagnostic dry runs now contain 16 responses but only two episode
+  clusters. Two independent annotators and a distinct disagreement adjudicator remain `NOT_RUN`.
+  Development references are not independent gold computations.

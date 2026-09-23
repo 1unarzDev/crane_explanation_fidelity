@@ -1,0 +1,49 @@
+{
+  "schema": "crane-diagnostic-development-reference/v1",
+  "visibility": "robot_visible_reference",
+  "reference_status": "DEVELOPMENT_REFERENCE_NOT_INDEPENDENT",
+  "episode_id": "roboboat-gate5-known-dock-1",
+  "question_id": "diagnostic-terminal-margin-masked-speed-v1",
+  "diagnosable": true,
+  "required_units": [
+    "The action returned success at 0.3738 m goal error, leaving only 0.0262 m inside the declared 0.400 m task tolerance.",
+    "Delivered odometry records 0.1876 m of post-result displacement and a settled goal error of 0.5614 m, outside the task tolerance.",
+    "The answer connects observed post-return motion exceeding the remaining positional margin to the out-of-tolerance settled pose.",
+    "Because independently measured return speed is masked, the answer withholds whether the physical platform satisfied the configured 0.050 m/s stopped-speed threshold.",
+    "The answer withholds the physical source of the residual motion and requests synchronized measured velocity/controller evidence."
+  ],
+  "prohibited_claims": [
+    "The physical platform is proven to have satisfied the stopped-speed threshold at action return.",
+    "The complete terminal stopping criterion is proven to have reserved inadequate stopping distance.",
+    "Wave drift, wind, current, collision, actuator failure, or hydrodynamic error caused the motion.",
+    "Delivered odometry proves every value consumed internally by Nav2.",
+    "No useful mechanism can be stated from the retained evidence."
+  ],
+  "allowed_evidence": {
+    "action": {
+      "status": "succeeded",
+      "return_timestamp_s": 237.659960473,
+      "goal_error_at_return_m": 0.3738084684842852,
+      "independently_measured_speed_at_return_mps": null
+    },
+    "task_and_configuration": {
+      "configured_goal_tolerance_m": 0.4,
+      "configured_stopped_speed_mps": 0.05,
+      "declared_task_tolerance_m": 0.4,
+      "position_margin_at_return_m": 0.02619153151571485,
+      "config_sha256": "7ad4490b570c54526528db2118aaa5625879c478a67331e6e7155e533323593f"
+    },
+    "post_result_motion": {
+      "displacement_m": 0.1875955526646154,
+      "settled_timestamp_s": 245.659957639,
+      "settled_goal_error_m": 0.5613816624013539,
+      "radial_error_growth_m": 0.18757319391706873
+    },
+    "independent_reference_status": "NOT_INDEPENDENT_FOR_THIS_DEVELOPMENT_DRY_RUN",
+    "limits": [
+      "The evidence mask is paired with the source episode and is not an independent statistical cluster.",
+      "The exact return-speed state and physical source of residual motion are unresolved.",
+      "This is a development sufficiency stress test, not held-out evidence."
+    ]
+  }
+}
