@@ -863,3 +863,24 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   `manifests/annotation/sealed-primary-v3-operational-clarification.json`.
 - Validity protection: the join verifies the packet/key hash and full response inventory and
   applies the predeclared whole-episode quarantine before producing analysis input.
+
+## 2026-09-22 — retain the historical RoboBoat grid-disconnection case as development-only
+
+- Decision: preserve the wrong-side-goal failure as a compact, robot-visible development case for
+  retained navigation-model disconnection, but exclude it from confirmatory sampling and do not
+  treat the later corrected docking run as a matched counterfactual.
+- Evidence: independent decoding verifies the embedded costmap hash, result-cell cost 0, goal-cell
+  cost 253, and no eight-connected route below 253. The controller log contains 23 exact Navfn
+  planning-failure messages for that goal before action abort. Local reflog timing bounds the run
+  between committed revisions, but the costmap-payload capture code was uncommitted and its exact
+  dirty diff was not retained.
+- Alternatives: discard the evidence; call the case physical berth infeasibility; treat corrected-
+  goal success as a one-factor intervention; or rerun/tune RoboBoat before protocol freeze. The
+  first loses a useful bounded mechanism, the middle choices overclaim, and the last has lower
+  immediate paper value than annotation, prospective land collection, and study freeze.
+- Expected effect: the development benchmark gains a surface-vehicle geometric/planning mechanism
+  that answers more than “the action aborted,” while demonstrating explicit source-provenance and
+  causal limits. It adds no R/P/T/N comparison, confirmatory cluster, or effectiveness evidence.
+- Revisit: a prospective boat case is eligible only if exact source/build/configuration identity,
+  synchronized planner inputs, a predeclared question, and a matched run protocol are retained
+  before outcome inspection.

@@ -221,6 +221,16 @@ showed that this goal cell had cost 253, its nominal approach crossed lethal cos
 connected path below cost 253 existed. This was a wrong-side goal, not evidence that the physical
 berth was too narrow.
 
+The later diagnosis redirect retains a compact robot-visible version of this evidence at
+`data/robot_visible/dev/diagnostic-pilot-v1/roboboat-grid-disconnection/`. A fresh-checkout
+recomputation confirms result-cell cost 0, goal-cell cost 253, no eight-connected path below 253,
+and 23 matching Navfn failure messages before abort. The checked explanation calls this a retained
+navigation-model disconnection and explicitly withholds physical obstacle identity, exact planner
+consumption, and global physical infeasibility. This remains retrospective development evidence:
+the run's committed parent is recoverable from the local reflog, but the exact dirty source diff
+for the then-uncommitted costmap-payload capture was not retained. It is therefore not eligible for
+confirmatory evaluation.
+
 The corrected goal is about 22.8 m from the start and was outside the original rolling global
 costmap's approximately 20 m half-width. With the original 40 x 40 m map, Navfn aborted in about
 9 s with zero controller commands. Changing only global width and height to 60 m retained the

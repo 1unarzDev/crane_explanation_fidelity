@@ -41,3 +41,19 @@ The computation validates unique invocation IDs, bounded classifier provenance, 
 planner-failure/recovery-eligibility sequence. It treats incomplete history as a lower bound,
 never equates Nav2 feedback counts with invocation identity, and withholds the unresolved physical
 cause.
+
+## RoboBoat retained-grid disconnection development case
+
+After pulling governed development data, recompute the bounded navigation-model diagnosis without
+the historical raw fixture:
+
+```bash
+PYTHONPATH=analysis:packages/astro_dock/src/crane_explain/src \
+python analysis/recompute_roboboat_grid_disconnection.py \
+  data/robot_visible/dev/diagnostic-pilot-v1/roboboat-grid-disconnection/evidence-and-diagnostic.json \
+  --output /tmp/roboboat-grid-disconnection-recomputed.json
+```
+
+The compact export contains the delivered hash-checked grid and exact parsed Navfn messages. The
+diagnosis is retrospective development evidence only because the exact dirty source snapshot was
+not retained; it must not enter the confirmatory cohort.

@@ -185,6 +185,20 @@ This correction preserves the supported positional-margin chain while withholdin
 criterion satisfaction and the physical source of residual motion. It is development-only and
 does not replace the retained pre-correction model outputs.
 
+Recompute the second retained RoboBoat development mechanism directly from its compact governed
+costmap and planner-log export (the historical raw fixture is not required):
+
+```bash
+python analysis/recompute_roboboat_grid_disconnection.py \
+  data/robot_visible/dev/diagnostic-pilot-v1/roboboat-grid-disconnection/evidence-and-diagnostic.json \
+  --output /tmp/roboboat-grid-disconnection-recomputed.json
+```
+
+This establishes a disconnection in one retained navigation-model snapshot plus matching Navfn
+failure messages. It does not establish physical berth infeasibility, a unique obstacle, or exact
+planner consumption. The retrospectively selected run has incomplete source-snapshot provenance
+and is therefore development-only and ineligible for confirmatory evaluation.
+
 After pulling governed development data, reproduce the checked land geometric diagnosis with:
 
 ```bash

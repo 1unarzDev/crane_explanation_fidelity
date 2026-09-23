@@ -1,0 +1,26 @@
+{
+  "schema": "crane-data-manifest-v1",
+  "artifact_id": "roboboat-grid-disconnection-development-reference-v1",
+  "status": "DEVELOPMENT_REFERENCE_NOT_CONFIRMATORY",
+  "visibility": "evaluator_only",
+  "path": "data/evaluator_only/dev/diagnostic-pilot-v1/roboboat-grid-disconnection/evaluator-truth.json",
+  "bytes": 2197,
+  "sha256": "a494cce2d1db0ede4da65ac696f09dbf09d684920cafcab2c67c19d17eaf0189",
+  "dvc_pointer": "data/evaluator_only/dev.dvc",
+  "reference_source": {
+    "historical_costmap_clearance_audit_sha256": "5c47d0ab5610190356dc94b8e4ac28e6193451a5949e7bfff582d27a7b2bdbfd",
+    "independent_recomputation": "The decoded grid was separately checked at thresholds 253, 254, and 255 without importing the proposed diagnostic core."
+  },
+  "findings": {
+    "expected_mechanism": "retained_navigation_model_disconnection",
+    "wrong_side_goal": true,
+    "physical_berth_too_narrow_established": false,
+    "wave_or_current_causation_established": false,
+    "later_corrected_run_is_matched_intervention": false
+  },
+  "limitations": [
+    "This is a development reference, not an independent human annotation.",
+    "The historical clearance audit and this evaluator record were inspected after the episode outcome.",
+    "The later corrected-goal success changed both the requested goal and global planning window, so it is not a one-factor counterfactual."
+  ]
+}

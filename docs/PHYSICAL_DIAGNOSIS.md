@@ -107,6 +107,31 @@ then returns `insufficient` and names that missing measurement instead of assert
 The mask is a selective-specificity regression, not a naturally missing held-out episode; evaluated
 methods must not be able to retrieve its paired unmasked artifact.
 
+### Retained RoboBoat navigation-model disconnection
+
+A second retrospective RoboBoat artifact exercises a distinct geometric/planning mechanism. The
+embedded global-costmap payload hashes to
+`c3d7ef6bcc1c9d40c610efc8e1c95c4e3355c80fca4551df0c84f446d175d636`.
+Independent decoding places the action-result pose in cost 0 and the requested goal in cost 253;
+an eight-connected search finds no connection through cells below 253. The retained controller log
+contains 23 exact Navfn `Failed to create plan with tolerance of: 0.500000` messages for that goal
+before the action aborted. The deepest supported explanation is therefore a **retained navigation-
+model disconnection corresponding with recorded planner failures**, not generic recovery
+exhaustion.
+
+The evidence does not prove that a particular physical dock object caused the grid restriction,
+that every planner invocation consumed this exact snapshot, or that no physical route existed
+outside the retained grid or under another configuration. Evaluator-only history identifies the
+goal as the obsolete wrong-side target, but that label is unavailable to the ordinary explanation
+method. A later corrected-goal success also changed the planning-window configuration and is not a
+matched one-factor intervention.
+
+The compact robot-visible artifact and evaluator-only interpretation are physically separated and
+governed by `manifests/data/roboboat-grid-disconnection-development-v1.*.json`. The historical run
+occurred with uncommitted costmap-capture code whose exact dirty diff was not retained, so this case
+is explicitly ineligible for confirmatory evaluation. It remains useful development evidence and
+can be recomputed from a fresh checkout without the original multi-megabyte fixture.
+
 ## First measured land diagnosis
 
 The governed `land-blockage-global-002` development run exercises the geometric path without using

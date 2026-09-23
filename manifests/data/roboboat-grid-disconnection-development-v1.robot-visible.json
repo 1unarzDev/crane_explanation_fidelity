@@ -1,0 +1,50 @@
+{
+  "schema": "crane-data-manifest-v1",
+  "artifact_id": "roboboat-grid-disconnection-development-v1",
+  "status": "DEVELOPMENT_ONLY_NOT_CONFIRMATORY",
+  "visibility": "robot_visible",
+  "path": "data/robot_visible/dev/diagnostic-pilot-v1/roboboat-grid-disconnection/evidence-and-diagnostic.json",
+  "bytes": 22534,
+  "sha256": "e784394b42f45e2b8db39cebd536c1a25cbdee0ef6f39cdcaef5d20acdaeb07f",
+  "dvc_pointer": "data/robot_visible/dev.dvc",
+  "source_artifacts": [
+    {
+      "logical_path": "PerformanceResults/roboboat-far-dock-global-costmap-1/fixture-summary.json",
+      "repository": "https://github.com/1unarzDev/crane_ml.git",
+      "sha256": "774c3c15111a0cdc3c05130d19755459b78d2906aabe4135b215ed652f8e9a85"
+    },
+    {
+      "logical_path": "PerformanceResults/roboboat-far-dock-global-costmap-1/controller.log",
+      "repository": "https://github.com/1unarzDev/crane_ml.git",
+      "sha256": "02ba9df100357ab7327841c723f6201db25ae0a9c2065f2c7a92f5709896c40d"
+    },
+    {
+      "logical_path": "decoded-global-costmap-cells",
+      "sha256": "c3d7ef6bcc1c9d40c610efc8e1c95c4e3355c80fca4551df0c84f446d175d636"
+    }
+  ],
+  "source_identity": {
+    "committed_parent_at_run_from_local_reflog": "7195d917f8b838cb5f5606f09f2c1a24be0014a3",
+    "exact_dirty_worktree_diff_retained": false,
+    "qualification": "The historical run occurred after this parent and before commit 7d8b77e. Costmap-payload capture code was uncommitted, so the exact source tree is not recoverable."
+  },
+  "reproduction": {
+    "exporter": "analysis/export_roboboat_grid_disconnection.py",
+    "exporter_sha256": "2eb475822713f6d9eed423000881d6420d346eb38431b5111d75e4be02f01b54",
+    "compact_recomputer": "analysis/recompute_roboboat_grid_disconnection.py",
+    "compact_recomputer_sha256": "c42ac93d8de16430b0f7c80fd0db8e43a0c83e33e2d9a71d837322be1a76a2ff",
+    "core_computation": "packages/astro_dock/src/crane_explain/src/crane_explain/diagnostics.py",
+    "blocked_cost_threshold": 253,
+    "goal_odom": {
+      "x": 0.8641434,
+      "y": -24.586906
+    }
+  },
+  "evidence_boundary": "The compact export contains the hash-checked delivered costmap, recorded action result, requested goal, and exact matching Navfn log messages. It excludes simulator geometry, obstacle semantic identity, corrected-goal outcome, and evaluator interpretation.",
+  "limitations": [
+    "This retrospectively selected development run is ineligible for confirmatory evaluation.",
+    "The exact dirty source snapshot used for costmap payload capture was not retained.",
+    "The retained grid was delivered through the Nav2 costmap service but is not proven to be the exact state consumed by every planner invocation.",
+    "No retained-grid connection does not establish global physical infeasibility, a physical berth-width restriction, or a unique obstacle identity."
+  ]
+}

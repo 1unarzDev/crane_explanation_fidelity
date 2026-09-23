@@ -111,3 +111,8 @@ Every question must discriminate a declared capability; paraphrases do not add i
   P/T all reconstruct at least four source-qualified invocations and eventual task success while
   withholding physical causation; N lacks the validated planner-failure/eligibility linkage. This
   is a negative differentiation result on project review, pending blinded scoring.
+- A retrospective RoboBoat wrong-side-goal run now has a compact, independently recomputable
+  retained-grid disconnection diagnosis: result cell cost 0, goal cell cost 253, no connection
+  below 253, 23 matching Navfn failure messages, then action abort. Its exact dirty source snapshot
+  was not retained, so it is development-only, adds no confirmatory cluster, and has no R/P/T/N
+  comparison or human label.

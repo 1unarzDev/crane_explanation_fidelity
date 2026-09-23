@@ -2893,3 +2893,34 @@
   `c4fe1fd2f1bbf9e92700c5785ea5d19850aae66e4c5f548ab605dc88e81fd14a`.
   These convenience archives are not labels or governed result data; completed independent human
   forms have not been received.
+
+## 2026-09-22 — retrospective RoboBoat retained-grid disconnection diagnosis
+
+- **STATUS:** `IMPLEMENTED / TESTED / GOVERNED / DEVELOPMENT_ONLY / CONFIRMATORY_INELIGIBLE`;
+  model comparison and human annotation are `NOT_RUN`.
+- **SOURCE AUDIT:** the historical `roboboat-far-dock-global-costmap-1` fixture hashes to
+  `774c3c15111a0cdc3c05130d19755459b78d2906aabe4135b215ed652f8e9a85`; its controller log
+  hashes to `02ba9df100357ab7327841c723f6201db25ae0a9c2065f2c7a92f5709896c40d`.
+  Reflog timestamps place the run after committed parent `7195d917` and before `7d8b77e`, but the
+  then-uncommitted costmap-payload capture diff was not retained. This source gap is explicit and
+  disqualifies the case from held-out/confirmatory use.
+- **INDEPENDENT CHECK:** decoding the 200 by 200 grid reproduces SHA-256
+  `c3d7ef6bcc1c9d40c610efc8e1c95c4e3355c80fca4551df0c84f446d175d636`. The action-result
+  cell is cost 0, the requested goal cell is cost 253, and an eight-connected search reaches 37,691
+  cells without finding the goal below threshold 253. Threshold checks at 254 and 255 do connect,
+  confirming the boundary rather than a decoding failure. The retained log contains 23 exact
+  matching Navfn failure messages before action abort.
+- **CHECKED ANSWER:** the new computation reports a retained navigation-model disconnection linked
+  to recorded planning failures. It withholds physical berth infeasibility, obstacle identity,
+  exact planner consumption of the snapshot, wave/current causation, and global no-route claims.
+  The later corrected docking success changed both goal and planning-window configuration and is
+  not treated as a matched intervention.
+- **REPRODUCIBILITY:** a 22,534-byte compact robot-visible export contains the hash-checked grid and
+  exact parsed planner messages; a fresh-checkout recomputation reproduces the supported diagnostic
+  and byte-identical checked answer without the original 2.8 MB fixture. Evaluator interpretation
+  remains physically separate. Manifests are
+  `manifests/data/roboboat-grid-disconnection-development-v1.*.json`.
+- **VALIDATION:** 22 focused core/adapter tests pass, including corrupt-grid rejection, fail-closed
+  missing-connectivity behavior, and compact round-trip equality. Both changed DVC roots were
+  pushed to R2 and `dvc status --remote r2` reports synchronization. No RoboBoat scene, physics,
+  controller, Nav2 configuration, or historical raw result was modified.
