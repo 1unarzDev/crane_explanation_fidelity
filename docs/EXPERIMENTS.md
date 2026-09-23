@@ -3066,3 +3066,22 @@
   `manifests/model_outputs/diagnostic-command-motion-pilot-v1.json`; packet/key hashes are in the
   two command-motion annotation manifests; the post-hoc audit is in evaluator-only development
   DVC and separately manifested. No frozen F/G/H artifact was modified.
+
+## 2026-09-23 — command-motion manuscript integration and render QA
+
+- **STATUS:** `IMPLEMENTED / BUILT / VISUALLY_INSPECTED / RESULTS_STILL_PENDING`.
+- **CHANGE:** the anonymous manuscript now records the supported and nominal command-motion
+  development pair, fair tool parity, bounded causal claims, original 2/2 fallback, post-hoc audit
+  limitation, and the correct 40-response/seven-cluster inventory. It does not convert project
+  review into human labels or prospective results.
+- **BUILD:** `scripts/build_paper.sh` completed with pinned Tectonic 0.17.0 and produced a six-page
+  letter-size PDF including references. The final Results table remains explicitly pending.
+- **LAYOUT:** all six pages were rendered with Poppler at 130 dpi and visually inspected. No
+  clipping, overlap, broken glyph, unreadable reference, or misplaced table was observed. The
+  Results table was constrained below the Results text and the final bibliography page was
+  balanced across columns.
+- **ARTIFACT:** local ignored `output/pdf/main.pdf`, 68,589 bytes, SHA-256
+  `877e32327974b93114084cf14300ed7de8f2a1f6bdd0b2a576170a2fea44130d`.
+- **LIMITATION:** red pending markers remain by design because legacy and diagnostic human
+  annotation, prospective protocol freeze, held-out collection, and inferential statistics are
+  `NOT_RUN`. This PDF is not submission-ready and was not submitted or published.

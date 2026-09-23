@@ -1,6 +1,7 @@
 \documentclass[conference]{IEEEtran}
 
 \usepackage{amsmath}
+\usepackage{balance}
 \usepackage{booktabs}
 \usepackage{graphicx}
 \usepackage{microtype}
@@ -321,9 +322,42 @@ planner failures remain unresolved. Tool-enabled R matched this account on proje
 N lacked the validated planner-failure/eligibility linkage. P again fell back to T, bringing the
 development fallback rate to 8/8. No response in this development inventory has a human label.
 
+\section{Development Case: Command--Motion Discrepancy}
+
+We next qualified synchronized command and independently delivered odometry evidence on a
+predeclared held-condition/nominal development pair. The blind held-condition export contains 376
+command samples and 1,598 goal-interval odometry samples. A fixed-window computation, reproduced
+by a separate evaluator implementation, calibrates a healthy median measured response of
+0.2597~m/s and identifies the earliest sustained discrepancy from 7--17~s: median delivered
+command remains 0.800~m/s while measured planar motion is 0.000~m/s. The retained execution then
+records two \texttt{FollowPath} failures, two source-qualified \texttt{Wait} invocations, a third
+\texttt{FollowPath} attempt, and action abort.
+
+This evidence supports an execution-level command--motion discrepancy connected to failure of
+continued progress. It does not prove downstream actuator acceptance, Nav2 consumption of the
+odometry samples, or a unique motor, slip, collision, obstruction, or intervention cause. The
+matched nominal run uses the same thresholds, succeeds after 9.480~m, records neither
+\texttt{FollowPath} failure nor source-qualified \texttt{Wait}, and correctly returns
+\texttt{not\_triggered}. Thus the checked answer rejects rather than merely qualifies the false
+failure premise.
+
+The no-retry R/P/T/N comparison gives R the blind samples, pinned repositories, and the same
+executable window computation as P. On project review, R and raw P identify the supported
+discrepancy; N can only call it suggested without time alignment. R, raw P, and N all reject the
+nominal premise. These observations are not human labels and show no P-over-R advantage. Both raw
+P candidates were rejected by lexical false positives in the then-current final-text gate, so the
+immutable final P outputs fell back to T (10/10 development questions overall). A subsequent
+post-hoc bounded-verifier audit accepts both candidates after citation-only repair and rejects six
+authored mutations, but cannot estimate verifier error or rewrite the original outcomes.
+
+The supported and nominal packets contain eight blinded responses but form one paired cluster.
+The complete diagnostic development inventory therefore contains 40 responses over seven
+clusters, all awaiting independent annotation and adjudication. Neither member of this pair is a
+held-out result or an additional independent scenario instance.
+
 \section{Results}
 
-\begin{table}[t]
+\begin{table}[b]
 \caption{Prospective diagnostic evaluation. Values remain blinded/unavailable until the protocol
 is frozen and held-out annotation is complete.}
 \label{tab:diagnostic-results}
@@ -378,6 +412,7 @@ tool-matched baselines. Regardless of the eventual effect, the artifact preserve
 between what the robot recorded, what software semantics reconstruct, what an explicit model
 supports, and what only a controlled intervention can establish.
 
+\balance
 \bibliographystyle{IEEEtran}
 \bibliography{references}
 
