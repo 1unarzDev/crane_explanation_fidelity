@@ -9,8 +9,10 @@ committed manifest.
 checked against the research notes. Red `PENDING` markers are intentional acceptance gates: they
 must be replaced by manifest-traceable results after blinded annotation and prospective evaluation,
 never by estimated or development-only values. The current draft compiles with the IEEE conference
-class required by the workshop's IEEE BigData 2026 instructions. It is currently a six-page
-short/WIP draft, including references, and is not submission-ready while those gates remain.
+class required by the workshop's IEEE BigData 2026 instructions. It is currently a seven-page
+full-paper scaffold, including references, with room reserved for final governed results. Seven
+pages is not an accepted final category; the manuscript is not submission-ready while those gates
+remain.
 
 The living claim audit is `CLAIM_EVIDENCE_MAP.md`. The manuscript story is a bounded legacy
 provenance result followed by a separately prospective diagnosis-to-language method and

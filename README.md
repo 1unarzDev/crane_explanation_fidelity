@@ -315,9 +315,10 @@ Build the anonymous IEEE-format paper with the pinned toolchain:
 scripts/build_paper.sh
 ```
 
-This writes `output/pdf/main.pdf`. The current six-page manuscript remains a development draft
-with explicit red result gates; it is not a submission artifact until annotation, final analysis,
-and every pending marker are complete.
+This writes `output/pdf/main.pdf`. The current seven-page manuscript is a full-paper scaffold with
+an explicit method/evaluation-boundary figure and a bounded diagnostic-answer example. It is not
+submission-ready or yet page-category compliant: blinded annotation, final analysis, the results
+section, and every red pending marker remain incomplete.
 
 ## Layout
 

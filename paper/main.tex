@@ -362,6 +362,41 @@ fallback to T; N additionally asserted that delivered paths were followed and th
 after approximately each metre without a retained time-aligned derivation. These observations await
 blinded scoring and provide no P-over-R effect claim.
 
+\begin{table*}[t]
+\caption{What physical diagnosis adds to terminal-event narration in the retained command--motion
+development case. The checked rendering is abridged only by omitting evidence hashes; this is an
+illustration of answer content, not an independently scored method comparison.}
+\label{tab:answer-example}
+\centering
+\small
+\begin{tabular}{@{}p{0.17\textwidth}p{0.77\textwidth}@{}}
+\toprule
+Answer component & Natural-language content \\
+\midrule
+Terminal events only &
+The action aborted after two \texttt{FollowPath} failures, two source-qualified \texttt{Wait}
+recovery invocations, and a third \texttt{FollowPath} attempt. \\
+\addlinespace
+Deepest supported diagnosis &
+The retained command and odometry streams establish a sustained command-to-motion discrepancy:
+Nav2 continued publishing a median 0.800~m/s planar command while independently delivered odometry
+recorded a median 0.000~m/s planar response for 10.0~s. The calibrated healthy measured response
+was 0.2597~m/s. \\
+\addlinespace
+Connection to outcome &
+After the response loss, the two failures and two qualified recoveries were recorded; a third
+\texttt{FollowPath} attempt was active before the navigation action aborted. \\
+\addlinespace
+Limits and next check &
+Delivered commands do not prove actuator acceptance, and delivered odometry does not prove Nav2
+consumption. The evidence does not distinguish actuator rejection, mobility constraint, collision
+or obstruction, slip, or another execution-layer cause. The next check is downstream accepted
+actuation or actuator feedback together with contact, clearance, and wheel-motion evidence over
+the discrepancy interval. \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
 \section{Development Case: Command--Motion Discrepancy}
 
 We next qualified synchronized command and independently delivered odometry evidence on a

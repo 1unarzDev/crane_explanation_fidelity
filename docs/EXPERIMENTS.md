@@ -3483,3 +3483,25 @@
   remains temporarily at `/tmp/crane-restore-xgcLFc/repo` for inspection.
 - **LIMIT:** this proves artifact restoration and content identity for the latest checkpoint. It
   does not substitute for human annotation, rerun Unity/ROS, or establish a comparative effect.
+
+## 2026-09-23 — manuscript evidence-boundary and diagnostic-answer presentation
+
+- **STATUS:** `IMPLEMENTED / BUILT / VISUALLY_INSPECTED / RESULTS_PENDING`; no experiment, model
+  call, annotation, or governed artifact changed.
+- **METHOD FIGURE:** added a result-neutral pipeline figure that physically separates
+  robot-visible evidence and the diagnosis-to-language path from evaluator-only truth and
+  independent scoring.
+- **ANSWER EXAMPLE:** added a development-only table contrasting terminal-event narration with the
+  immutable checked command--motion content: 0.800 m/s delivered command versus 0.000 m/s measured
+  response for 10.0 s, the recorded failure/recovery chain, and explicit acceptance, consumption,
+  and unique-cause limits. The caption states that this is not an independently scored comparison.
+- **BUILD/QA:** pinned Tectonic produced a seven-page letter-size PDF. All seven pages were rendered
+  with Poppler at 130 dpi and visually inspected. The first placement failed QA because the
+  double-column table floated past the references; it was rejected and moved earlier. The final
+  layout has no clipping, overlap, broken glyph, misplaced float, or table overflow. The ignored
+  PDF is 77,371 bytes with SHA-256
+  `16f55ccf1940323f5c2be65eeffa38c338a537006e2c98809b11a525fceba50f`.
+- **SUBMISSION GATE:** seven pages is not an accepted final category. The intended full-paper path
+  still requires blinded labels, clustered results, replacement of every red pending marker, and
+  final 8--9-page review; otherwise the manuscript must be cut deliberately to a valid short/WIP
+  length rather than submitted at seven pages.
