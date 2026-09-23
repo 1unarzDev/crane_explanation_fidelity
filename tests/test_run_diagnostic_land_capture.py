@@ -7,6 +7,7 @@ import pytest
 
 ROOT = Path(__file__).parents[1]
 SCRIPT = ROOT / "scripts" / "run_diagnostic_land_capture.sh"
+MANIFEST_BUILDER = ROOT / "scripts" / "build_diagnostic_runtime_manifest.py"
 
 
 def test_print_config_resolves_proving_ground_capture_contract():
@@ -94,3 +95,10 @@ def test_capture_contract_fails_closed_before_prospective_freeze(
 
     assert completed.returncode == 2 or completed.returncode == 1
     assert expected_error in completed.stderr
+
+
+def test_runtime_manifest_hashes_the_executed_nav2_fixture_observer():
+    text = MANIFEST_BUILDER.read_text(encoding="utf-8")
+
+    assert '"Tools/Performance/nav2_follow_path_fixture.py"' in text
+    assert '"nav2_fixture_observer"' in text

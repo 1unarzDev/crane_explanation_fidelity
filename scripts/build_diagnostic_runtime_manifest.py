@@ -78,6 +78,11 @@ def main() -> int:
             args.crane_checkout,
             "nav2_fixture_entrypoint",
         ),
+        versioned_file(
+            args.crane_checkout / "Tools/Performance/nav2_follow_path_fixture.py",
+            args.crane_checkout,
+            "nav2_fixture_observer",
+        ),
     ]
     payload = {
         "schema": "crane-runtime-provenance/v1",

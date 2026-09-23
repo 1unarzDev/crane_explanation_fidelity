@@ -1,5 +1,28 @@
 # Decision Log
 
+## 2026-09-23 — retain bounded delivered-plan geometry for path-decision explanations
+
+- Decision: extend the shared Nav2 fixture's existing `planHistory` records with a content hash,
+  planned length, and absolute/signed lateral deviation from the requested start--goal line. Retain
+  only these bounded summaries, not every path pose. Hash the executed fixture observer itself in
+  the additive diagnostic runtime manifest.
+- Evidence: current-source development episode `diagnostic-land-dev-002` retained 70 delivered
+  global plans but only their endpoints and pose counts. The costmap and odometry supported a
+  restricted direct route plus 1.036 m trajectory deviation, yet the discarded path geometry
+  prevented an evidence-backed statement that Nav2 actually published a changed route.
+- Alternatives: infer a route decision from odometry alone; retain every pose from every plan; add
+  a new perception stack; or leave the answer failure-oriented. Odometry cannot establish a
+  planner output, full paths add avoidable volume, perception does not repair this provenance gap,
+  and the existing answer under-expresses a supported navigation decision.
+- Validity boundary: a delivered `/plan` summary establishes what reached the fixture, not that the
+  controller consumed it or that a particular costmap snapshot or physical object caused its
+  shape. Evaluator layout identity remains separate. Any explanation must preserve those limits.
+- Expected RQ impact: enables a compact, parity-compatible physical path-comparison input for new
+  Q1/Q2 without giving P privileged evaluator geometry. It may still yield no P-over-R advantage;
+  that is an admissible result.
+- Revisit condition: replace the summaries with fuller time-aligned path retention only if a
+  concrete diagnostic question cannot be independently evaluated from the bounded measurements.
+
 ## 2026-09-23 — qualify command-to-motion diagnosis without naming the hidden intervention
 
 - Decision: retain a blind robot-visible export from the time-resolved instrumentation rerun and
