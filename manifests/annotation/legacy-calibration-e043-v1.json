@@ -1,0 +1,47 @@
+{
+  "schema": "crane-explain-annotation-calibration-manifest/v1",
+  "created_utc": "2026-09-23T01:47:07Z",
+  "status": "PACKAGED_AWAITING_TWO_HUMAN_CALIBRATION_PASSES",
+  "study_use": "DEVELOPMENT_TRAINING_ONLY_NEVER_INCLUDE_IN_FINAL_ESTIMATES",
+  "episode_clusters": 1,
+  "responses": 6,
+  "question_kinds": [
+    "failure-cause",
+    "recovery-mechanism"
+  ],
+  "conditions": [
+    "F",
+    "G",
+    "H"
+  ],
+  "packet": {
+    "path": "model_outputs/annotation_packets/legacy-calibration-e043-v1/packet.jsonl",
+    "sha256": "52bc6201ada5881f0c0286e20ec102cbb5a8eaf940af4b35e1e187abd8cf8db0"
+  },
+  "evaluator_only_key": {
+    "path": "data/evaluator_only/annotation_keys/legacy-calibration-e043-v1.json",
+    "sha256": "bf81fa97017d17f2e692c2271499f7b3c44b052ae64f2386523812f4acc43894",
+    "release_rule": "reveal only after both independent calibration passes are complete"
+  },
+  "sources": [
+    {
+      "path": "model_outputs/dev/runtime-provenance-repilot-e043/failure-cause.json",
+      "sha256": "ed4870bffe41c10569e69202b0d89cfa15f9dc2b45501dc58ee0fd25fedc5e93"
+    },
+    {
+      "path": "model_outputs/dev/runtime-provenance-repilot-e043/recovery-mechanism.json",
+      "sha256": "32be75db4c8ed517cf6ea259f9d6b5e818aec6d4180bd34d1932aaac3559abbd"
+    },
+    {
+      "path": "data/robot_visible/dev/land-nav-20260919-e043/runtime-provenance-repilot/failure-cause/runtime-presentation.json",
+      "sha256": "5e64ef62556deeee111c604434f605f2c32c1b41549baa8e32bf1aef39b34acd"
+    },
+    {
+      "path": "data/robot_visible/dev/land-nav-20260919-e043/runtime-provenance-repilot/recovery-mechanism/runtime-presentation.json",
+      "sha256": "5e64ef62556deeee111c604434f605f2c32c1b41549baa8e32bf1aef39b34acd"
+    }
+  ],
+  "human_calibration_status": "NOT_RUN",
+  "sealed_responses_included": 0,
+  "inferential_sample_contribution": 0
+}

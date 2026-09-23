@@ -2591,3 +2591,16 @@
 - **FROZEN INTEGRITY:** guide, packet, key, split, raw evidence, responses, questions, and rubric
   were unchanged. Their pre-annotation hashes are recorded in the operational clarification
   manifest. No label or condition effect was inspected.
+
+## 2026-09-23 — legacy annotator calibration packet
+
+- **STATUS:** `IMPLEMENTED / NOT_RUN_BY_HUMAN_ANNOTATORS`.
+- **SOURCE:** six retained F/G/H responses from development-only episode
+  `land-nav-20260919-e043-worker-0`, spanning the frozen recovery-mechanism and failure-cause
+  questions. No sealed response, final-split episode, or evaluator intervention was included.
+- **BOUNDARY:** the packet uses opaque shuffled IDs and omits condition/model/fallback fields. Its
+  key is physically evaluator-only and is revealed only after both independent calibration passes.
+  Existing single-project-author development judgments are discussion context, not gold labels.
+- **PURPOSE:** satisfy the frozen guide's pre-sealed calibration requirement and expose rubric
+  disagreements before annotators touch `sealed-primary-v3`. The six responses are never pooled
+  into final estimates and add zero independent study episodes.

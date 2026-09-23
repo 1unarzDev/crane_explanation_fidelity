@@ -49,6 +49,25 @@ response, and it never goes to an annotator.
 
 ## 2. Annotate
 
+Before either annotator opens `sealed-primary-v3`, both independently label the same six-response
+development calibration packet, then discuss disagreements using the frozen guide and permitted
+evidence:
+
+```bash
+python analysis/build_legacy_annotation_form.py \
+  --packet model_outputs/annotation_packets/legacy-calibration-e043-v1/packet.jsonl \
+  --output /tmp/legacy-calibration-e043-v1-annotator-a.jsonl \
+  --annotator-id annotator-a
+```
+
+Repeat for annotator B. Use `analysis/adjudicate_annotations.py` to identify disagreements, but do
+not describe this exercise as independent study evidence. The six responses are retained F/G/H
+outputs for the development-only `land-nav-20260919-e043` episode (two question kinds, one episode
+cluster), not a sample from any sealed split. Its evaluator-only key may be revealed only after
+both independent calibration passes, for discussion; the older project-author development notes
+are training context, not an adjudicated gold standard. Record completion and substantive rubric
+clarifications before either annotator begins the sealed packet.
+
 Each annotator writes one JSONL file, one row per packet response, with the 25 fields
 `docs/ANNOTATION_GUIDE.md` requires. Every row in a pass carries the same `annotator_id`, and the
 two passes must use different ones.
