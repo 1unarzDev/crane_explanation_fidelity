@@ -144,3 +144,19 @@ All four methods rejected the failure premise, and P again fell back to T. The b
 inventory is now 24 responses in six packets over four clusters, with fallback 6/6. This nominal
 episode is retrospective development evidence from a failed fault induction, not the prospectively
 declared nominal control still required before freeze.
+
+### Prospective nominal development checkpoint — 2026-09-22
+
+Exactly one predeclared current-source `narrow-doorway-v1` run was executed and retained without
+retry. NavigateToPose succeeded after 17.477 m of delivered motion. A pre-model independent audit
+found complete requested-route coverage, no cost-253 intersection, retained-grid connectivity,
+0.379 m minimum lethal-cell clearance, and only 0.084 m maximum lateral deviation. The checked
+answer rejects the false failure premise while retaining those bounded physical measurements and
+withholding universal obstacle freedom and exact Nav2 consumption.
+
+One single-sample R/P/T/N comparison is retained. Project review found that R used a 70 s deadline
+although the executed hash-pinned XML configures 90 s, while N introduced a hypothetical external
+failure criterion not present in the evidence. These are not human labels. P again failed exact
+verification and fell back to T, making development fallback 7/7. The blinded inventory is now 28
+responses in seven packets over five clusters. Human annotation/adjudication, stable pilot-informed
+power planning, protocol freeze, and held-out evaluation remain `NOT_RUN`.
