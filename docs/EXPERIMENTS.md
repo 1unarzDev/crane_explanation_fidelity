@@ -2801,3 +2801,18 @@
   are honestly marked as formalized after output inspection. The development inventory is now 28
   responses in seven packets over five clusters. Two-human annotation and adjudication remain
   `NOT_RUN`.
+
+## 2026-09-22 — annotation handoff refreshed for prospective nominal packet
+
+- **STATUS:** `PREPARED / STRUCTURALLY_VALIDATED / HUMAN_ANNOTATION_NOT_RUN`.
+- **CHANGE:** both local ignored handoff bundles now include the new prospective nominal diagnostic
+  packet and a separately generated blank form. Each bundle contains nine packets and 232 rows:
+  six legacy calibration rows, 198 sealed legacy rows, and 28 diagnostic rows across seven packets.
+- **BOUNDARY:** archive scans found no evaluator-only key, condition/model identity, raw candidate,
+  verifier outcome, or fallback metadata. Forms contain only opaque response IDs, prefilled unit
+  totals, blank judgments, and the recipient's non-identifying annotator ID.
+- **LOCAL ARCHIVE HASHES:** annotator A
+  `7ae13fed15f9c1edc289d6850d80eff647aa29ed89c84be51d86aa120399648a`; annotator B
+  `883f86c39d8ef1d511d82772fd4a61e7b651d25a8ed4bad48587b7f107cbe1b3`.
+  The archives remain convenience handoffs rather than governed labels; completed human forms have
+  not been received.
