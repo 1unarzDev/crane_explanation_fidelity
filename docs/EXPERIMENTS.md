@@ -3524,3 +3524,26 @@
 - **CONSEQUENCE:** tooling is ready to process returned forms, but human annotation, actual
   agreement, distinct-person adjudication, key joining, and development effect estimates remain
   `NOT_RUN`.
+
+## 2026-09-23 — manuscript numeric traceability audit
+
+- **STATUS:** `IMPLEMENTED / TESTED / DEVELOPMENT_VALUES_PASS / FINAL_RESULTS_PENDING`; no
+  experiment, model output, annotation, governed data, or frozen artifact changed.
+- **CLEANUP:** removed six intermediate fallback checkpoint ratios from the paper because they add
+  no scientific result beyond the retained aggregate and would require reconstructing transient
+  inventories. The governed final 13/13 development fallback and 46/66 legacy fallback remain.
+- **TRACEABILITY:** `paper/NUMBER_TRACEABILITY.md` maps every current empirical claim family to
+  retained robot-visible evidence, independent development references where applicable, and the
+  governing manifest. `scripts/audit_paper_numeric_traceability.py` validates source SHA-256
+  bindings, measurement values, derived plan/pose counts, P fallback identities, paired-cluster
+  membership, immutable R output timing, and the displayed manuscript values.
+- **RESULT:** 67 empirical assertions pass. Derived checks independently recover 69 delivered
+  plans in each terminal land case, 12,975 poses across 70 delivered plans, 12 responses in one
+  command-motion paired cluster, and 13/13 P template fallbacks across the current inventory.
+- **PAPER QA:** pinned Tectonic produced a seven-page, 77,134-byte letter-size PDF with SHA-256
+  `817cdf29ca24f971e510eb61dc05deccac335b72fad532f1d3c5b87ee010d558`.
+  All pages were rendered at 130 dpi and visually inspected with no clipping, overlap, misplaced
+  float, broken glyph, or table overflow.
+- **BOUNDARY:** red pending-result cells, bibliography years, equation notation, and LaTeX layout
+  dimensions are intentionally outside the current empirical-number audit. Final adjudicated and
+  held-out results must be added to the traceability map and validator before removing their gates.

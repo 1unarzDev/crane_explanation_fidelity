@@ -14,7 +14,8 @@ full-paper scaffold, including references, with room reserved for final governed
 pages is not an accepted final category; the manuscript is not submission-ready while those gates
 remain.
 
-The living claim audit is `CLAIM_EVIDENCE_MAP.md`. The manuscript story is a bounded legacy
+The living claim audit is `CLAIM_EVIDENCE_MAP.md`; exact development-number provenance and its
+fail-closed validator are documented in `NUMBER_TRACEABILITY.md`. The manuscript story is a bounded legacy
 provenance result followed by a separately prospective diagnosis-to-language method and
 land/RoboBoat evidence only where the new study supports it. Simulation evidence must not be
 presented as hardware validation, factual correctness as human trust, or lateral disturbance as

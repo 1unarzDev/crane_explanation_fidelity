@@ -1,0 +1,32 @@
+# Manuscript numeric traceability
+
+Status: **LIVING AUDIT — DEVELOPMENT VALUES CHECKED; FINAL RESULTS PENDING**.
+
+Run from the umbrella root:
+
+```bash
+python scripts/audit_paper_numeric_traceability.py
+```
+
+The validator fails if a mapped source file is no longer pinned by its governing manifest, if an
+underlying value or derived count changes, if a diagnostic condition key no longer matches its
+recorded hash, or if the corresponding display value disappears from `paper/main.tex`.
+
+| Manuscript claim family | Authoritative retained source | Governing manifest / derivation |
+| --- | --- | --- |
+| Legacy 33-cluster disposition; 17 recovery-success, 16 abort; frozen 40/50 bounds; 198 calls; 46/66 (69.7%) G fallback | `manifests/study/research-redirect-20260922.json` | Direct disposition fields; percentage recomputed as `100 * 46 / 66` |
+| RoboBoat terminal margin and post-result motion | `data/robot_visible/dev/diagnostic-pilot-v1/roboboat-terminal-margin/evidence.json` | `manifests/data/roboboat-terminal-margin-development-v1.robot-visible.json`; measurements selected by ID |
+| Land blockage direct-route restriction, detour, and deadline alignment | `data/robot_visible/dev/diagnostic-pilot-v1/land-blockage-global-002/geometric-diagnostic.json` and adjacent `fixture-summary.json` | `manifests/data/land-blockage-global-002.robot-visible.json`; planning updates are `len(planHistory)` |
+| S-turn restriction, deviation, and deadline alignment | `data/robot_visible/dev/diagnostic-pilot-v1/land-s-turn-unexpected-abort-001/geometric-diagnostic-v2.json` and adjacent `fixture-summary.json` | `manifests/data/land-s-turn-unexpected-abort-001.robot-visible.json`; planning updates are `len(planHistory)` |
+| Prospective nominal land displacement, deviation, and 90-second XML deadline | `data/robot_visible/dev/diagnostic-pilot-v1/diagnostic-land-nominal-20260922-001/geometric-diagnostic.json` | `manifests/data/diagnostic-land-nominal-20260922-001.robot-visible.json` |
+| Warehouse lower-bound recovery sequence | `data/robot_visible/dev/ecological-pilot-v1/eco-pilot-001/recovery-execution-diagnostic.json` | `manifests/data/ecological-warehouse-recovery-development-v1.robot-visible.json`; exact lifetime count remains deliberately unclaimed |
+| Delivered-plan count, geometry, odometry deviation, and 12,975 retained poses | `data/robot_visible/dev/diagnostic-land-dev-004/geometric-route-diagnostic-v2.json` and adjacent `fixture-summary.json` | `manifests/data/diagnostic-land-dev-004.robot-visible.json`; pose total recomputed as the sum of every retained plan's pose list |
+| Held command-motion samples, interval, speeds, failures, and recoveries | `data/robot_visible/dev/diagnostic-pilot-v1/land-command-motion-001/evidence-and-diagnostic.json` plus `research/explanation_fidelity/annotations/development/diagnostic-command-motion-supported-pilot-v1-reference.json` | `manifests/data/diagnostic-motion-dev-cm-001.robot-visible.json` and `manifests/annotation/diagnostic-command-motion-supported-pilot-v1.json` |
+| Nominal command-motion displacement | `research/explanation_fidelity/annotations/development/diagnostic-command-motion-nominal-pilot-v1-reference.json` | `manifests/annotation/diagnostic-command-motion-nominal-pilot-v1.json` |
+| Compensated discrepancy and measured-response recovery windows | `data/robot_visible/dev/diagnostic-pilot-v1/land-command-motion-compensated-001/evidence-and-diagnostic.json` | `manifests/data/diagnostic-motion-development-cm-002.robot-visible.json` |
+| Diagnostic 52-response, 13-packet, nine-cluster inventory and 13/13 P fallback | `manifests/annotation/diagnostic-development-pilot-v1.json` plus its thirteen hash-pinned evaluator-only keys | Inventory counts are direct; fallback is recomputed from the single P entry in every packet key |
+
+The audit intentionally excludes bibliography years, equation notation, section/question labels,
+LaTeX layout dimensions, and red pending-result placeholders. Those are not empirical results.
+Final adjudicated and held-out numbers must be added here and to the validator before their red
+manuscript gates are removed.
