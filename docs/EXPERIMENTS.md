@@ -3547,3 +3547,26 @@
 - **BOUNDARY:** red pending-result cells, bibliography years, equation notation, and LaTeX layout
   dimensions are intentionally outside the current empirical-number audit. Final adjudicated and
   held-out results must be added to the traceability map and validator before removing their gates.
+
+## 2026-09-23 — disagreement-only adjudicator handoff rehearsal
+
+- **STATUS:** `IMPLEMENTED / TESTED / SYNTHETIC_ONLY / NO_HUMAN_LABELS`; no real annotation,
+  evaluator key, governed data, study result, or frozen artifact changed.
+- **GAP CLOSED:** `analysis/build_adjudication_handoff.py` now constructs a fresh, condition-blind
+  third-person handoff directly from an `AWAITING_ADJUDICATION` report and its original packet. It
+  emits only disputed packet rows, the appropriate blank form and guide, instructions, and hashes.
+- **FAIL-CLOSED RULES:** the builder rejects a complete/no-disagreement report, mismatched or
+  unknown response IDs, differing unresolved/disagreement inventories, a report containing final
+  labels or claiming key join, evaluator-only destinations, and existing output directories. It
+  copies neither prior pass nor prior annotator identity. The agreement report is retained by hash
+  only because its filename could itself encode an identity.
+- **ACTUAL-INVENTORY REHEARSAL:** one temporary disagreement was injected independently into the
+  current four-row delivered-plan diagnostic packet and the current 198-row sealed legacy packet.
+  Each generated handoff contained exactly one row. A synthetic distinct third pass resolved it;
+  the ordinary validators emitted `COMPLETE` outputs with four and 198 labels, zero unresolved
+  disagreements, and `condition_key_joined=false`.
+- **REGRESSION:** 30 focused handoff, diagnostic-adjudication, and legacy-blinding tests pass. All
+  rehearsal files remained under a fresh `/tmp` directory and are not annotations or results.
+- **CONSEQUENCE:** when independent forms arrive, the project can create a blinded adjudicator
+  handoff without manual row copying. Actual annotation, agreement, adjudication, and key joining
+  remain `NOT_RUN`.

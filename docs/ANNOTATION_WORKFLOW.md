@@ -125,6 +125,28 @@ every disagreement is resolved. If the two complete passes agree, no unnecessary
 required. `condition_key_joined` is always `false` in this tool's output; joining the key is a
 separate, deliberate step.
 
+Do not manually copy disputed rows or send either annotator's form to the third person. Build a
+fresh disagreement-only handoff from the original blinded packet and agreement report:
+
+```bash
+python analysis/build_adjudication_handoff.py \
+  --rubric legacy \
+  --packet model_outputs/annotation_packets/sealed-primary-v3/packet.jsonl \
+  --agreement analysis/results/sealed-primary-v3-agreement.json \
+  --output-dir /tmp/sealed-primary-v3-adjudicator \
+  --adjudicator-id adjudicator-c
+```
+
+For diagnostic packets, use `--rubric diagnostic`. The tool accepts only a report whose status is
+`AWAITING_ADJUDICATION`, whose unresolved IDs match its disagreement list, and whose named packet
+is the supplied packet. It emits only those packet rows, a matching blank form, instructions, and
+a copy of the applicable guide plus a content-hash manifest. It never copies either prior pass,
+annotator identities, condition keys, or evaluator-only metadata, and it refuses evaluator-only
+output paths and existing directories. The distinct adjudicator returns only the completed
+`form.jsonl`; use that file with the original packet and both original passes in the corresponding
+adjudication command. The handoff manifest pins the agreement report by hash but omits its path so
+a user-chosen filename cannot reveal annotator identities.
+
 After `status` is `COMPLETE`, join the sealed key and frozen scenario-family mapping exactly once:
 
 ```bash
