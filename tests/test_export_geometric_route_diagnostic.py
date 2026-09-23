@@ -106,4 +106,8 @@ def test_export_fails_closed_when_costmap_cell_payload_is_withheld(tmp_path):
     assert payload["diagnostic_result"]["disposition"] == "insufficient"
     assert "direct-route cost classification" in payload["diagnostic_result"]["limits"]
     assert "retained-grid connectivity" in payload["diagnostic_result"]["limits"]
+    assert payload["diagnostic_result"]["mechanism"] == (
+        "deadline_aligned_abort_with_unresolved_geometry"
+    )
+    assert "action abort was aligned" in payload["diagnostic_result"]["diagnosis"]
     assert payload["final_text_verification"]["accepted"]

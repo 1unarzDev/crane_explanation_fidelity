@@ -2478,3 +2478,19 @@
 - **NEXT:** preserve this v1 failure, then change the checked plan so missing physical evidence
   produces a useful partial deadline-aligned diagnosis plus explicit geometric abstention. Do not
   resample this episode to replace the retained result.
+
+## 2026-09-22 — checked partial-diagnosis correction after retained mask failure
+
+- **TARGETED CHANGE:** core commit `38ae31c` changes only the insufficient-geometry branch. When
+  exact source and action timing support deadline alignment, the plan now reports that bounded
+  execution mechanism while explicitly withholding the missing physical/geometric reason. It
+  still cannot classify the direct route, connectivity, obstacle identity, or the unobserved
+  terminal BT tick.
+- **REGRESSION/ACTUAL ARTIFACT:** 50 core tests pass. Re-exporting the retained masked fixture
+  yields `deadline_aligned_abort_with_unresolved_geometry`, retains `insufficient` disposition,
+  states the 0.86 s deadline alignment, names both missing geometric computations, and passes
+  exact deterministic final-text verification. The original v1 output and model pilot remain
+  immutable alongside the post-fix deterministic artifact.
+- **INFERENCE LIMIT:** this is a post-hoc development correction on the episode that exposed the
+  defect. It is not a prospective effectiveness result and the same model outputs were not
+  resampled. The next independent/masked case must test whether the correction generalizes.

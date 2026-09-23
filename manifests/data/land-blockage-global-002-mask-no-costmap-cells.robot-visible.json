@@ -18,6 +18,10 @@
     {
       "path": "data/robot_visible/dev/diagnostic-pilot-v1/land-blockage-global-002-mask-no-costmap-cells/geometric-diagnostic.json",
       "sha256": "538984917bc83881a860d85a9e0959ca9b5bb893afcfc7090c6f68c79f8a2a9f"
+    },
+    {
+      "path": "data/robot_visible/dev/diagnostic-pilot-v1/land-blockage-global-002-mask-no-costmap-cells/geometric-diagnostic-partial-v2.json",
+      "sha256": "ac3c92b4b7acfbdf3a4dc2335a15bfd9e663d8e03d0e1dde8c48e978fc8d10b0"
     }
   ],
   "mask": {
@@ -30,12 +34,23 @@
   },
   "diagnostic": {
     "method": "geometric-route-restriction-v1",
-    "disposition": "insufficient",
-    "missing_decisive_evidence": [
-      "direct-route cost classification",
-      "retained-grid connectivity"
-    ],
-    "deterministic_final_text_verified": true
+    "original_v1": {
+      "disposition": "insufficient",
+      "mechanism": "geometric_route_restriction",
+      "limitation": "Correctly withheld geometry but also omitted the supported deadline-aligned partial mechanism."
+    },
+    "partial_v2": {
+      "disposition": "insufficient",
+      "mechanism": "deadline_aligned_abort_with_unresolved_geometry",
+      "supported_partial_answer": "deadline-aligned abort reconstructed from source and timing",
+      "withheld": [
+        "direct-route cost classification",
+        "retained-grid connectivity",
+        "physical reason navigation remained incomplete"
+      ],
+      "deterministic_final_text_verified": true,
+      "core_commit": "38ae31ca4b6143a23e1b5fe3ff0f7d443ac4a70f"
+    }
   },
   "reproduction": {
     "mask_tool": "analysis/mask_geometric_costmap_evidence.py",
