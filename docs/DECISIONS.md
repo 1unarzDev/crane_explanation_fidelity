@@ -884,3 +884,22 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Revisit: a prospective boat case is eligible only if exact source/build/configuration identity,
   synchronized planner inputs, a predeclared question, and a matched run protocol are retained
   before outcome inspection.
+
+## 2026-09-22 — develop a bounded semantic gate without rewriting exact-verifier history
+
+- Decision: retain all 8/8 exact-verifier fallbacks as generated, while implementing a separate
+  development verifier for future prospective outputs. Its only repair appends the complete checked
+  evidence-ID list; substantive wording is never rewritten.
+- Evidence: project review found that most rejected candidates preserved the checked mechanism and
+  limits but differed stylistically from the deterministic template. A post-hoc audit accepts 7/8
+  after citation repair and rejects all 24 simple numeric, section-removal, and physical-cause
+  mutations. The masked-speed candidate remains rejected for claims absent from its checked plan.
+- Alternatives: keep exact equality permanently; allow all fluent candidates; use LLM self-check as
+  the trust boundary; or retroactively replace archived final outputs. Exact equality collapses P
+  into T, unconditional acceptance is unsafe, self-check is not independent, and retroactive edits
+  would invalidate the retained experiment.
+- RQ impact: the verifier creates a testable seam between diagnostic correctness and language
+  faithfulness for prospective Q2. It does not establish P-over-R benefit or LLM usefulness.
+- Validity risk and revisit: the policy was tuned after candidate inspection. Freeze its module,
+  prompt, one-repair rule, adversarial/held-out evaluation, and threshold before new evaluation;
+  report pre- and post-verification text and fall back deterministically on any rejection.

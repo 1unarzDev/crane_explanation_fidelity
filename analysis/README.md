@@ -57,3 +57,16 @@ python analysis/recompute_roboboat_grid_disconnection.py \
 The compact export contains the delivered hash-checked grid and exact parsed Navfn messages. The
 diagnosis is retrospective development evidence only because the exact dirty source snapshot was
 not retained; it must not enter the confirmatory cohort.
+
+## Bounded diagnostic-language verifier audit
+
+Audit the immutable raw P candidates without changing their archived exact-verifier decisions:
+
+```bash
+PYTHONPATH=analysis:packages/astro_dock/src/crane_explain/src \
+python analysis/audit_diagnostic_language_candidates.py \
+  --output /tmp/diagnostic-language-verifier-audit.json
+```
+
+The audit is explicitly post-hoc development work. It cannot be used as an independent verifier
+accuracy estimate or to reclassify archived outputs.

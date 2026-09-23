@@ -1,0 +1,35 @@
+{
+  "schema": "crane-data-manifest-v1",
+  "artifact_id": "diagnostic-language-verifier-development-v1",
+  "status": "POST_HOC_DEVELOPMENT_ONLY_NOT_INDEPENDENT_EVALUATION",
+  "visibility": "evaluator_only",
+  "path": "data/evaluator_only/dev/diagnostic-language-verifier-v1/audit.json",
+  "bytes": 14010,
+  "sha256": "27dfb23e29a79b7bae3f9a4389618a29d0624f22d6db5332bf4e657af33ae03a",
+  "dvc_pointer": "data/evaluator_only/dev.dvc",
+  "implementation": {
+    "core_repository": "https://github.com/1unarzDev/crane_explain.git",
+    "core_commit": "2645294c2dd87e3a6292ad1d13319ca679f9ccd4",
+    "module_path": "packages/astro_dock/src/crane_explain/src/crane_explain/diagnostic_language.py",
+    "module_sha256": "1ab22263c24bc7b62c7c594dd8087e9eb0cec9c22a844be8a7e89464a5a9aefc",
+    "audit_path": "analysis/audit_diagnostic_language_candidates.py",
+    "audit_sha256": "1dcbd114490aaf4f1bd13f18b3d678d45a5ae1b0f03e5e6951bc520b07d1ad85",
+    "config_path": "configs/diagnostic_language_verifier_dev_v1.json",
+    "config_sha256": "e6b2c3ea7f87238c22829503d8c622cd3d6556232b07d4a9abe629d0dfc66e3b"
+  },
+  "findings": {
+    "historical_candidate_count": 8,
+    "bounded_candidate_acceptance_count": 7,
+    "evidence_id_only_repair_count": 8,
+    "adversarial_mutation_count": 24,
+    "adversarial_mutation_rejection_count": 24,
+    "retained_rejection": "The masked-speed candidate used two numeric derivations absent from its checked plan and did not preserve the missing-measurement limit in the required section."
+  },
+  "limitations": [
+    "The verifier and mutation suite were authored after inspecting these development candidates.",
+    "This audit does not estimate verifier false-positive or false-negative rates.",
+    "No archived output or original fallback decision was changed.",
+    "Independent held-out verifier evaluation and human annotation remain NOT_RUN.",
+    "The verifier is not frozen for prospective use until its policy, prompt, repair rule, and evaluation set are declared."
+  ]
+}

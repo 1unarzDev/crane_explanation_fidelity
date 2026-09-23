@@ -2924,3 +2924,28 @@
   missing-connectivity behavior, and compact round-trip equality. Both changed DVC roots were
   pushed to R2 and `dvc status --remote r2` reports synchronization. No RoboBoat scene, physics,
   controller, Nav2 configuration, or historical raw result was modified.
+
+## 2026-09-22 — post-hoc bounded diagnostic-language verifier audit
+
+- **STATUS:** `IMPLEMENTED / TESTED / POST_HOC_DEVELOPMENT_ONLY`; independent verifier evaluation,
+  prospective use, and human scoring are `NOT_RUN`.
+- **MOTIVATION:** the original exact-text gate rejected all eight P realizations, making final P
+  byte-identical to T even when project review found the fluent candidate substantively aligned.
+  Archived candidates, final outputs, and fallback decisions remain immutable.
+- **METHOD:** core commit `2645294` adds one deep verifier module with a single interface. It parses
+  exactly four sections, checks numerical claims against the typed result, applies narrow mechanism-
+  specific proposition gates, rejects unsupported physical-cause wording, and permits at most one
+  deterministic repair: append the complete checked evidence-ID list when citations are wholly
+  absent. Partial citations and substantive repairs fail closed; no model self-check is used.
+- **RESULT:** 7/8 historical fluent candidates pass after citation-only repair. The speed-masked
+  candidate remains rejected because it states derived 0.026192 m and 0.187573 m quantities absent
+  from its then-current checked plan and does not preserve the missing-measurement limit in the
+  required section. All 24 authored adversarial mutations—unlicensed wave cause, unlicensed
+  999.999 m value, and missing limits section for each case—are rejected.
+- **LIMITATION:** both the verifier and mutation suite were authored after inspecting these
+  development candidates. The 7/8 and 24/24 rates are regression findings, not false-positive or
+  false-negative estimates and not evidence of user-facing improvement. A held-out evaluator set
+  and independent human review must be declared before prospective use.
+- **GOVERNANCE:** configuration, candidate/result hashes, decisions, rejection reasons, and
+  mutation outcomes are retained in evaluator-only DVC storage and manifested by
+  `manifests/data/diagnostic-language-verifier-development-v1.evaluator-only.json`.

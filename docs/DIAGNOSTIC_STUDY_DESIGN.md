@@ -88,6 +88,11 @@ Every question must discriminate a declared capability; paraphrases do not add i
   development evidence still does not establish a P-over-R effect.
 - P used deterministic fallback in all six land and both boat comparisons (8/8 development
   questions). The final method is therefore template-rendered at the current operating point.
+- A post-hoc bounded-language verifier accepts 7/8 raw P candidates after evidence-ID-only repair
+  and rejects 24/24 simple adversarial mutations. The masked-speed candidate remains rejected for
+  unplanned derivations and a missing limitation. This is development tuning, not independent
+  accuracy evidence; archived outputs remain unchanged, and the new policy must be frozen before
+  any prospective use.
 - The speed-masked boat case remains positionally diagnosable: observed post-return motion exceeded
   the retained positional margin. Missing speed prevents only the stronger stopped-speed claim.
   The original over-withholding output is retained, and a post-hoc v2 checked-plan correction is

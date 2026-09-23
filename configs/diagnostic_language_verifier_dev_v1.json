@@ -1,0 +1,51 @@
+{
+  "schema": "crane-diagnostic-language-verifier-audit-config-v1",
+  "status": "POST_HOC_DEVELOPMENT_ONLY",
+  "cases": [
+    {
+      "case_id": "boat-terminal-margin",
+      "diagnostic": "data/robot_visible/dev/diagnostic-pilot-v1/roboboat-terminal-margin/evidence.json",
+      "model_output": "model_outputs/dev/diagnostic-boat-pilot-v1/roboboat-terminal-margin/mechanism-and-outcome.json"
+    },
+    {
+      "case_id": "boat-terminal-margin-masked-speed",
+      "diagnostic": "data/robot_visible/dev/diagnostic-pilot-v1/roboboat-terminal-margin-masked-speed/evidence.json",
+      "model_output": "model_outputs/dev/diagnostic-boat-pilot-v1/roboboat-terminal-margin-masked-speed/mechanism-and-outcome.json"
+    },
+    {
+      "case_id": "land-blockage-masked-costmap",
+      "diagnostic": "data/robot_visible/dev/diagnostic-pilot-v1/land-blockage-global-002-mask-no-costmap-cells/geometric-diagnostic.json",
+      "model_output": "model_outputs/dev/diagnostic-land-mask-pilot-v1/land-blockage-global-002-mask-no-costmap-cells/mechanism-and-outcome.json"
+    },
+    {
+      "case_id": "land-retrospective-nominal",
+      "diagnostic": "data/robot_visible/dev/diagnostic-pilot-v1/land-unexpected-nominal-001/geometric-diagnostic-v2.json",
+      "model_output": "model_outputs/dev/diagnostic-land-nominal-pilot-v1/land-unexpected-nominal-001/mechanism-and-outcome.json"
+    },
+    {
+      "case_id": "land-blockage",
+      "diagnostic": "data/robot_visible/dev/diagnostic-pilot-v1/land-blockage-global-002/geometric-diagnostic.json",
+      "model_output": "model_outputs/dev/diagnostic-land-pilot-v3/land-blockage-global-002/mechanism-and-outcome.json"
+    },
+    {
+      "case_id": "land-prospective-nominal",
+      "diagnostic": "data/robot_visible/dev/diagnostic-pilot-v1/diagnostic-land-nominal-20260922-001/geometric-diagnostic.json",
+      "model_output": "model_outputs/dev/diagnostic-land-prospective-nominal-pilot-v1/diagnostic-land-nominal-20260922-001/mechanism-and-outcome.json"
+    },
+    {
+      "case_id": "land-s-turn-abort",
+      "diagnostic": "data/robot_visible/dev/diagnostic-pilot-v1/land-s-turn-unexpected-abort-001/geometric-diagnostic.json",
+      "model_output": "model_outputs/dev/diagnostic-land-s-turn-pilot-v1/land-s-turn-unexpected-abort-001/mechanism-and-outcome.json"
+    },
+    {
+      "case_id": "warehouse-recovery-sequence",
+      "diagnostic": "data/robot_visible/dev/ecological-pilot-v1/eco-pilot-001/recovery-execution-diagnostic.json",
+      "model_output": "model_outputs/diagnostic-recovery-sequence-pilot-v1/result.json"
+    }
+  ],
+  "adversarial_mutations": [
+    "append_unlicensed_wave_cause",
+    "append_unlicensed_numeric_claim",
+    "remove_limits_section"
+  ]
+}

@@ -75,6 +75,20 @@ cause is a material error. Candidate language, verification outcome, final rende
 frequency are all retained and reported. If deterministic rendering dominates, the method is
 described as predominantly deterministic rather than as successful LLM reasoning.
 
+The original development gate accepted only byte-identical deterministic renderings and therefore
+fell back on 8/8 diagnostic questions. A separate bounded verifier is now implemented for future
+prospective use. Its single interface parses the four required sections, applies at most one
+evidence-ID-only repair, licenses numerical claims against the checked result, enforces
+mechanism-specific required propositions, and rejects unsupported physical-cause wording. It does
+not alter substantive language or call another model.
+
+A post-hoc audit accepted 7/8 previously rejected fluent candidates after citation repair and
+rejected all 24 simple adversarial mutations. It correctly retained rejection of the masked-speed
+candidate, which introduced two derived values absent from its checked plan and misplaced the
+missing-measurement limitation. Because the verifier and mutations were authored after inspecting
+these candidates, this is a development regression result—not an independent estimate of verifier
+accuracy and not a retroactive change to any archived final response or fallback decision.
+
 ## Signal semantics
 
 - Nav2 Jazzy `FollowPath.feedback.speed` is command-derived in the audited source revision, not an
