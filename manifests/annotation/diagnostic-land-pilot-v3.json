@@ -1,0 +1,38 @@
+{
+  "schema": "crane-explain-annotation-packet-manifest/v1",
+  "status": "DEVELOPMENT_DRY_RUN_AWAITING_TWO_HUMAN_ANNOTATORS",
+  "study": "prospective-physical-diagnosis-development",
+  "packet": {
+    "path": "model_outputs/annotation_packets/diagnostic-land-pilot-v3/packet.jsonl",
+    "sha256": "2ba0a64d64aff814c3663c2f0b3d5111f5f7d492604acafdd494d3c06c4a9330",
+    "dvc_pointer": "model_outputs.dvc",
+    "responses": 4,
+    "conditions_blinded": true
+  },
+  "key": {
+    "path": "data/evaluator_only/annotation_keys/diagnostic-land-pilot-v3.json",
+    "sha256": "3b58b702a0b32ddc67a3eb6d8ea0c2c4d7490652f2a7cb9d4c86da4a0c41ac2d",
+    "dvc_pointer": "data/evaluator_only/annotation_keys.dvc",
+    "visibility": "evaluator_only"
+  },
+  "reference": {
+    "path": "research/explanation_fidelity/annotations/development/diagnostic-land-pilot-v3-reference.json",
+    "sha256": "646c6cab92669d3db496c8912c11876b4939ee39bfd44d74bd49d38c70f728f3",
+    "status": "DEVELOPMENT_REFERENCE_NOT_INDEPENDENT"
+  },
+  "rubric": {
+    "path": "docs/DIAGNOSTIC_ANNOTATION_GUIDE.md",
+    "status": "DEVELOPMENT_DRAFT_NOT_FROZEN"
+  },
+  "requirements": {
+    "independent_annotators": 2,
+    "distinct_adjudicator_on_disagreement": true,
+    "condition_key_withheld_until_after_adjudication": true
+  },
+  "limitations": [
+    "This packet contains one selected development episode and cannot estimate an effectiveness difference.",
+    "The retained audit used to form the development unit inventory is not an independent reference computation.",
+    "No human annotations or adjudication exist at packet creation time.",
+    "The P final response used deterministic fallback and is text-identical to T; identical text must receive identical labels."
+  ]
+}

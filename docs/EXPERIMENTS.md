@@ -2423,3 +2423,18 @@
 - **NEXT:** use an already-qualified retained success with decisive physical evidence if one
   exists; otherwise collect a prospectively declared nominal control without tuning this S-turn
   layout to manufacture success.
+
+## 2026-09-22 — diagnostic annotation workflow dry-run packet
+
+- **IMPLEMENTED/TESTED:** a separate diagnostic-study packet builder packages the four final R/P/T/N
+  responses from the parity-corrected land pilot under opaque HMAC response IDs. The packet omits
+  condition, model, provider, fallback, raw-candidate, and verifier fields; its evaluator-only key
+  retains those mappings. P and T's byte-identical final answers remain separate opaque rows and
+  must receive identical labels.
+- **REFERENCE LIMIT:** the seven-unit inventory is based on robot-visible measurements and the
+  retained geometric audit, but that audit is the development implementation rather than an
+  independent reference computation. The packet and rubric therefore identify themselves as a
+  development workflow dry run, not a sealed effectiveness evaluation.
+- **STATUS:** packet generated with four responses; human annotation and adjudication are
+  `NOT_RUN`. Two independent annotators plus a distinct adjudicator for disagreements are required.
+  No project-author inspection or model judgment will be reported as human annotation.

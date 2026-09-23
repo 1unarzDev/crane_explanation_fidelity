@@ -1,0 +1,61 @@
+{
+  "schema": "crane-diagnostic-development-reference/v1",
+  "visibility": "robot_visible_reference",
+  "reference_status": "DEVELOPMENT_REFERENCE_NOT_INDEPENDENT",
+  "episode_id": "land-blockage-global-002",
+  "question_id": "diagnostic-mechanism-and-outcome-v1",
+  "diagnosable": true,
+  "required_units": [
+    "The retained global costmap marks the requested direct route non-traversable at cost 253 near x=8.45 m.",
+    "The retained grid still has an 8-connected traversable connection below cost 253, so global infeasibility is not established.",
+    "Delivered odometry records a substantial detour, with maximum lateral deviation about 2.705 m.",
+    "The action aborted at 70.860 s, aligned within 0.860 s of the exact configured 70.0 s BT deadline.",
+    "The failure chain connects the retained direct-route restriction, repeated successful planning, observed detour, insufficient progress, and deadline-aligned abort.",
+    "The answer withholds unique obstacle identity, recovery exhaustion, global physical impossibility, exact consumption of the retained snapshot, and direct observation of the missing terminal BT tick.",
+    "The answer identifies time-aligned costmaps and planned paths around the first deviation as a discriminating next check."
+  ],
+  "prohibited_claims": [
+    "The retained grid proves there was no path.",
+    "A named physical obstacle uniquely caused the failure.",
+    "The retained snapshot was proven to be consumed by every planning invocation.",
+    "Recovery attempts were exhausted.",
+    "The terminal deadline transition was directly observed."
+  ],
+  "allowed_evidence": {
+    "action": {
+      "status": "aborted",
+      "wall_seconds": 70.86018458599574,
+      "goal_xy_m": [18.0, 0.0],
+      "maximum_forward_progress_m": 6.9489426612854
+    },
+    "execution": {
+      "successful_planning_updates": 69,
+      "controller_commands": 701,
+      "maximum_lateral_deviation_m": 2.704580307006836,
+      "observed_recovery_invocation_starts": 0,
+      "exact_recovery_count_eligible": false,
+      "terminal_bt_transition_observed": false
+    },
+    "independent_audit_status": "NOT_INDEPENDENT_FOR_THIS_DEVELOPMENT_DRY_RUN",
+    "retained_costmap_audit": {
+      "frame": "odom",
+      "resolution_m_per_cell": 0.10000000149011612,
+      "cost_threshold": 253,
+      "direct_route_minimum_clearance_m": 0.0,
+      "first_direct_route_lethal_x_m": 8.45,
+      "connected_below_threshold": true,
+      "costmap_data_sha256": "006e8cb8646e921d805230e5034080f5bee3d0e54c53355cf3f80cce9d9a7cac"
+    },
+    "source": {
+      "configured_bt_deadline_s": 70.0,
+      "bt_xml_sha256": "423c61f90a57c79a1bae0580eb24a3866eee5169f888ac58cdca40e7db7656f3",
+      "nav2_config_sha256": "e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b"
+    },
+    "limits": [
+      "The costmap and odometry were delivered observations, not proof of every value consumed internally by Nav2.",
+      "The retained costmap is one snapshot and cannot establish global physical infeasibility.",
+      "Evaluator-only layout and obstacle identities are unavailable.",
+      "The terminal BT transition was not retained."
+    ]
+  }
+}

@@ -113,3 +113,23 @@ separate, deliberate step.
 - The development model-strength controls are separate: unblinded, single-annotator, and
   development-only by design. They are not part of this workflow and must not be reported as if
   they were.
+
+## Prospective diagnostic-study dry run
+
+The physical-diagnosis study uses the separate draft rubric in
+`docs/DIAGNOSTIC_ANNOTATION_GUIDE.md`. It does not alter or reuse the frozen legacy rubric. Build
+the current four-response development packet and its evaluator-only key with:
+
+```bash
+python analysis/build_diagnostic_annotation_packet.py \
+  --result model_outputs/dev/diagnostic-land-pilot-v3/land-blockage-global-002/mechanism-and-outcome.json \
+  --reference research/explanation_fidelity/annotations/development/diagnostic-land-pilot-v3-reference.json \
+  --packet model_outputs/annotation_packets/diagnostic-land-pilot-v3/packet.jsonl \
+  --key data/evaluator_only/annotation_keys/diagnostic-land-pilot-v3.json
+```
+
+This is a development workflow check, not a sealed packet or effectiveness evaluation. The
+reference explicitly records that its geometric computation is not independent. Two real human
+annotators and a third adjudicator for disagreements are still required. Do not join the key,
+inspect condition identities during scoring, or describe project-author qualitative review as
+blinded annotation.
