@@ -3106,3 +3106,13 @@
 - **DECLARATION:** exact inputs, hashes, model settings, retention, and planned paths are fixed in
   `research/explanation_fidelity/experiment_configs/development/diagnostic-command-motion-missing-odometry-pilot-v1.json`
   before mask generation or any model call.
+- **PRE-MODEL PLAN QA:** the first deterministic mask correctly returned `insufficient` but exposed
+  an empty `Decisive evidence` section because the plan discarded still-observed counts. Before any
+  model call, core commit `ef70dad` retained command/odometry sample counts, action status,
+  FollowPath failures, and source-qualified Wait invocations while continuing to withhold the
+  command-motion mechanism and unique cause. The regenerated checked answer has no empty section.
+- **AMENDMENT:** the scope-preserving pre-model correction, exact new core/export/reference hashes,
+  and unchanged study choices are recorded in
+  `diagnostic-command-motion-missing-odometry-pilot-v1-amendment-1.json`. A separate evaluator
+  implementation that imports neither the proposed core nor its result reproduces the insufficiency
+  boundary. Model generation remains `NOT_RUN` at this checkpoint.

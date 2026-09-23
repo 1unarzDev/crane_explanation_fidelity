@@ -1,0 +1,30 @@
+{
+  "schema": "crane-data-manifest-v1",
+  "artifact_id": "diagnostic-motion-dev-cm-001-mask-no-odometry-reference",
+  "status": "PRE_MODEL_INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_HUMAN_GOLD",
+  "visibility": "evaluator_only",
+  "dvc_pointer": "data/evaluator_only/dev.dvc",
+  "artifacts": [
+    {
+      "path": "data/evaluator_only/dev/diagnostic-reference-v1/land-command-motion-001-mask-no-odometry/reference.json",
+      "sha256": "397608d34bba935333b78c2cb3be9bb4510547eb0877675ae4e578d5ba14b48d",
+      "bytes": 1844
+    }
+  ],
+  "implementation": {
+    "path": "analysis/evaluate_command_motion_missing_odometry.py",
+    "sha256": "98228cfd557e1fc41a37dd7838aa43e4a05997dbd3e26d9d89f67f1da908bf4e",
+    "imports_proposed_diagnostic_core": false,
+    "reads_proposed_diagnostic_result": false
+  },
+  "annotation_reference": {
+    "path": "research/explanation_fidelity/annotations/development/diagnostic-command-motion-missing-odometry-pilot-v1-reference.json",
+    "sha256": "911ff4ddf06c8242dc1754cddefbdae9a0234225520ac0d6a64a795b13ae1560"
+  },
+  "finding": "The missing independent motion samples make the command-to-motion mechanism unanswerable while leaving the bounded recorded abort/recovery sequence answerable.",
+  "limitations": [
+    "This is a deterministic reference implementation, not a human label.",
+    "The evidence mask is paired development data and not an independent scenario.",
+    "Human annotation and adjudication remain NOT_RUN."
+  ]
+}

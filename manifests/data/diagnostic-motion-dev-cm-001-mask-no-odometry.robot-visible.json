@@ -1,0 +1,45 @@
+{
+  "schema": "crane-data-manifest-v1",
+  "artifact_id": "diagnostic-motion-dev-cm-001-mask-no-odometry",
+  "status": "PREDECLARED_DEVELOPMENT_EVIDENCE_MASK_NOT_INDEPENDENT_SCENARIO",
+  "visibility": "robot_visible",
+  "dvc_pointer": "data/robot_visible/dev.dvc",
+  "artifacts": [
+    {
+      "path": "data/robot_visible/dev/diagnostic-pilot-v1/land-command-motion-001-mask-no-odometry/evidence-and-diagnostic.json",
+      "sha256": "21de5515a310a8a217fa98dcf1ef74924a9943a6f40465e01777f5fe2ebafca6",
+      "bytes": 59477,
+      "status": "CHECKED_INSUFFICIENT_RENDERING"
+    }
+  ],
+  "derivation": {
+    "source_artifact": "data/robot_visible/dev/diagnostic-pilot-v1/land-command-motion-001/evidence-and-diagnostic.json",
+    "source_sha256": "0a57a02e6a0442fc0e7e95286e8c71d83a126182b7cbf0ff2c24a767221054e3",
+    "mask_generator_path": "analysis/mask_command_motion_evidence.py",
+    "mask_generator_sha256": "01015dc7fa3fd7ed0609014c2ff912d9bc3141a6d991762956a46d94a542eac2",
+    "operation": "remove only independently delivered odometry samples and recompute the checked diagnostic",
+    "paired_source_available_to_methods": false
+  },
+  "implementation": {
+    "core_repository": "https://github.com/1unarzDev/crane_explain.git",
+    "core_commit": "ef70dad6c84fd7f3d29a7e1b6fe1c3ddcb2d3ccf",
+    "diagnostic_core_sha256": "95a374b8ea1688a0225d00fde2f54f9f470f34b740ac09c50f2cc4f87dc496e0"
+  },
+  "observed": {
+    "delivered_command_sample_count": 376,
+    "independent_odometry_sample_count": 0,
+    "action_status": "aborted",
+    "follow_path_failure_count": 2,
+    "source_qualified_wait_recovery_count": 2,
+    "diagnostic_disposition": "insufficient"
+  },
+  "statistical_cluster_id": "command-motion-held-nominal-pair-001",
+  "independent_scenario_increment": 0,
+  "allowed_use": "development selective-specificity, response-quality, and annotation-workflow dry run only",
+  "limitations": [
+    "The evidence mask is derived from an already inspected development episode and is not held out.",
+    "The absent measured-motion samples prevent a command-to-motion discrepancy claim.",
+    "Execution sequence evidence remains useful but does not identify a unique physical cause.",
+    "No model output or human annotation is included in this manifest."
+  ]
+}

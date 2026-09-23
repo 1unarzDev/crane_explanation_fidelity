@@ -1,0 +1,50 @@
+{
+  "schema": "crane-diagnostic-development-reference/v1",
+  "visibility": "robot_visible_reference",
+  "reference_status": "PRE_MODEL_INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_HUMAN_GOLD",
+  "episode_id": "diagnostic-motion-dev-cm-001-mask-no-odometry",
+  "question_id": "diagnostic-command-motion-mechanism-v1",
+  "diagnosable": false,
+  "required_units": [
+    "The independently measured odometry samples needed for a time-aligned command-to-motion comparison are missing.",
+    "The retained evidence contains 376 delivered command samples but zero independent odometry samples.",
+    "The action aborted after two recorded FollowPath failures and two source-qualified Wait recovery invocations.",
+    "The execution sequence alone does not establish that a command-to-motion discrepancy occurred or identify a unique physical cause.",
+    "Synchronized independently measured motion is the next discriminating check."
+  ],
+  "prohibited_claims": [
+    "A sustained command-to-motion discrepancy occurred in the masked evidence.",
+    "The delivered commands failed to produce measured motion.",
+    "The delivered commands were proven accepted or applied by an actuator.",
+    "Motor failure, slip, collision, obstruction, or an evaluator intervention caused the outcome.",
+    "The paired unmasked diagnosis or evaluator intervention is available to the explanation method."
+  ],
+  "allowed_evidence": {
+    "streams": {
+      "delivered_command_sample_count": 376,
+      "independent_odometry_sample_count": 0,
+      "command_frame": "base_link-command-convention",
+      "measured_frame": "odom"
+    },
+    "execution": {
+      "action_status": "aborted",
+      "follow_path_failure_count": 2,
+      "source_qualified_wait_recovery_count": 2
+    },
+    "answerability": {
+      "command_motion_discrepancy": "insufficient",
+      "recorded_execution_sequence": "answerable",
+      "unique_physical_cause": "insufficient"
+    },
+    "independent_reference": {
+      "path": "data/evaluator_only/dev/diagnostic-reference-v1/land-command-motion-001-mask-no-odometry/reference.json",
+      "sha256": "397608d34bba935333b78c2cb3be9bb4510547eb0877675ae4e578d5ba14b48d"
+    },
+    "limits": [
+      "This deterministic evidence mask shares its source episode and statistical cluster with the unmasked development case.",
+      "Delivered command does not prove actuator acceptance.",
+      "The evidence mask is a selective-specificity dry run, not a naturally missing held-out case.",
+      "No human annotation or adjudication exists."
+    ]
+  }
+}

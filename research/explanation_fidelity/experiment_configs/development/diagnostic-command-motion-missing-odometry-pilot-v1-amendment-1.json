@@ -1,0 +1,50 @@
+{
+  "schema": "crane-diagnostic-development-run-amendment/v1",
+  "status": "PRE_MODEL_CALL_SCOPE_PRESERVING_AMENDMENT",
+  "amended_utc": "2026-09-23T07:34:13Z",
+  "original_declaration": "research/explanation_fidelity/experiment_configs/development/diagnostic-command-motion-missing-odometry-pilot-v1.json",
+  "original_declaration_sha256": "769f416cece48c0940a7e790ba1a0261dc1a37ef0464ef98eaddb28405970c44",
+  "reason": "The first deterministic masked rendering exposed an empty Decisive evidence section because the insufficient diagnostic plan discarded still-observed stream and execution counts. Before any model call, the plan was corrected to retain those bounded observations; no mechanism threshold, mask, question, model setting, comparison, or expected sufficiency label changed.",
+  "observed_before_amendment": [
+    "the deterministic masked diagnostic disposition was insufficient",
+    "the deterministic rendering contained an empty decisive-evidence list"
+  ],
+  "not_observed_before_amendment": [
+    "any R, P, or N model output for this case",
+    "any human annotation",
+    "any comparative outcome"
+  ],
+  "changes": {
+    "crane_explain_core_commit": "ef70dad6c84fd7f3d29a7e1b6fe1c3ddcb2d3ccf",
+    "diagnostic_core_sha256": "95a374b8ea1688a0225d00fde2f54f9f470f34b740ac09c50f2cc4f87dc496e0",
+    "mask_generator": {
+      "path": "analysis/mask_command_motion_evidence.py",
+      "sha256": "01015dc7fa3fd7ed0609014c2ff912d9bc3141a6d991762956a46d94a542eac2"
+    },
+    "independent_reference": {
+      "path": "analysis/evaluate_command_motion_missing_odometry.py",
+      "sha256": "98228cfd557e1fc41a37dd7838aa43e4a05997dbd3e26d9d89f67f1da908bf4e"
+    },
+    "masked_robot_visible_export": {
+      "path": "data/robot_visible/dev/diagnostic-pilot-v1/land-command-motion-001-mask-no-odometry/evidence-and-diagnostic.json",
+      "sha256": "21de5515a310a8a217fa98dcf1ef74924a9943a6f40465e01777f5fe2ebafca6"
+    },
+    "evaluator_reference": {
+      "path": "data/evaluator_only/dev/diagnostic-reference-v1/land-command-motion-001-mask-no-odometry/reference.json",
+      "sha256": "397608d34bba935333b78c2cb3be9bb4510547eb0877675ae4e578d5ba14b48d"
+    },
+    "annotation_reference": {
+      "path": "research/explanation_fidelity/annotations/development/diagnostic-command-motion-missing-odometry-pilot-v1-reference.json",
+      "sha256": "911ff4ddf06c8242dc1754cddefbdae9a0234225520ac0d6a64a795b13ae1560"
+    }
+  },
+  "unchanged": [
+    "question and required selective-specificity behavior",
+    "missing-odometry mask operation",
+    "paired statistical cluster and zero independent-scenario increment",
+    "R/P information and diagnostic-tool parity",
+    "model/provider/reasoning effort and one-shot no-retry rule",
+    "retention and blinded-human-annotation requirements"
+  ],
+  "authorization": "development-only correction before any model output; original declaration remains immutable"
+}
