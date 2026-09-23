@@ -2753,3 +2753,35 @@
 - **DECISION:** do not retry the stationary build blindly and do not substitute the stale default
   player. Human annotation and manuscript/analysis work have higher immediate paper value; a new
   land capture should resume only with a predeclared, versioned diagnostic capture contract.
+
+## 2026-09-22 — prospectively declared nominal land diagnostic control
+
+- **STATUS:** `COLLECTED / VALIDATED / GOVERNED / DEVELOPMENT_ONLY`; R/P/T/N generation and human
+  annotation are `NOT_RUN`.
+- **DECLARATION:** `diagnostic-land-nominal-20260922-001` was declared before execution with layout
+  `narrow-doorway-v1`, seed 5201, expected action success, exact player/build/source/configuration
+  identities, and a one-run no-retry rule. The single declared run was retained; no outcome-driven
+  rerun or scenario tuning occurred.
+- **RUNTIME RESULT:** fixture QA passed and NavigateToPose succeeded in 69.619 s with 17.477 m
+  displacement, 679 accepted commands, zero rejected/stale/cross-episode commands, 193 retained
+  costmap observations, 66 retained plan-history records, 611 retained BT transitions, and zero
+  observed recovery invocations. Real-time factor was 1.000014. The terminal BT transition was not
+  observed, so whole-history completeness and an exact lifetime recovery count are not claimed.
+- **INDEPENDENT REFERENCE:** the separate evaluator-side implementation reports complete requested-
+  route grid coverage, no cost-253 route intersection, retained-grid connectivity from the action-
+  result pose to the goal, 0.084 m maximum lateral deviation, and 17.477 m maximum forward
+  progress. It does not support global no-path, a unique physical obstacle, exact planner
+  consumption, or a deadline-aligned abort.
+- **RESPONSE-QUALITY ITERATION:** the first post-capture checked plan rejected the false failure
+  premise but omitted useful route measurements. Core commit `509544a` added bounded nominal-route
+  evidence. Inspection then found duplicated uncertainty wording in the deterministic final text;
+  core commit `293fdd0` removes exact duplicate alternatives. The current verified answer leads
+  with action success, reports the fully covered clear route audit, 0.379 m minimum lethal-cell
+  clearance, 0.084 m lateral deviation, and 17.477 m progress, while withholding universal
+  obstacle-freedom and planner-consumption claims.
+- **GOVERNANCE:** robot-visible capture, QA summary, checked diagnostic, and compact Unity build
+  manifest are physically separate from runtime truth and the independent reference. Both trees
+  are hash-manifested under `manifests/data/diagnostic-land-nominal-20260922-001.*.json`; their DVC
+  objects were pushed to R2. The Unity player/build payload was not retained. This episode adds one
+  prospective development cluster, but adds no model comparison, annotation, effect estimate, or
+  confirmatory evidence yet.

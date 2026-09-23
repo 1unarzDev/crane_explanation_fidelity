@@ -83,6 +83,11 @@ their own location. Exact repository commits and destinations are recorded in
   provenance records are governed under `data/{robot_visible,evaluator_only}/dev/ecological-pilot-v1/`.
   `dynamic-gate-v1` is historical calibration only; U-trap has no current qualified export and is
   excluded. Environment/platform development now stops in favor of explanation evaluation.
+- **PROSPECTIVE NOMINAL DIAGNOSTIC CONTROL (DEVELOPMENT ONLY):** one predeclared current-source
+  narrow-doorway run succeeded and is governed with robot-visible route/costmap/odometry evidence,
+  separate evaluator truth, and an independent reference. Its checked answer rejects the false
+  failure premise while reporting bounded clearance/deviation evidence. R/P/T/N generation and
+  human annotation for this episode remain `NOT_RUN`; it is not confirmatory evidence.
 - **IMPLEMENTED, TESTED:** deterministic F1TENTH PNG/YAML contour-to-collider generator and Unity
   importer, qualified headlessly on the externally retained pinned Spielberg map. Full-lap ROS
   control and source-simulator comparison remain unrun.

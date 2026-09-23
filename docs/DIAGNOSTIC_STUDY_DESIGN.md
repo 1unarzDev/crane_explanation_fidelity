@@ -99,6 +99,10 @@ Every question must discriminate a declared capability; paraphrases do not add i
   Independent reviewer validation
   remains `NOT_RUN`; these post-output development implementations are not confirmatory gold.
   A retained unexpected land success now passes a false-premise-aware `not_triggered` check and has
-  a blinded R/P/T/N packet, but it was not prospectively collected and has no human labels. Human annotation, a
-  prospectively declared nominal control, power planning, protocol freeze, and held-out evaluation
-  remain `NOT_RUN`.
+  a blinded R/P/T/N packet, but it was not prospectively collected and has no human labels.
+- One separately governed, prospectively declared nominal land episode now supplies complete-route
+  costmap coverage, successful action status, and low-deviation delivered odometry. Its independent
+  reference and corrected checked rendering are retained. It raises the development episode
+  inventory to five clusters, while the comparison inventory remains 24 responses over four
+  clusters because R/P/T/N generation and human annotation have not run for the new episode.
+  Human annotation, power planning, protocol freeze, and held-out evaluation remain `NOT_RUN`.

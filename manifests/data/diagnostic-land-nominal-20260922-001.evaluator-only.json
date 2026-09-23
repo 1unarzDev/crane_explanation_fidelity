@@ -1,0 +1,48 @@
+{
+  "schema": "crane-data-manifest-v1",
+  "artifact_id": "diagnostic-land-nominal-20260922-001-evaluator-only",
+  "status": "DEVELOPMENT_VALID_NOMINAL_CONTROL",
+  "visibility": "evaluator_only",
+  "dvc_pointer": "data/evaluator_only/dev.dvc",
+  "declaration": "manifests/checkpoints/diagnostic-land-nominal-20260922-001.json",
+  "artifacts": [
+    {
+      "path": "data/evaluator_only/dev/diagnostic-pilot-v1/diagnostic-land-nominal-20260922-001/runtime-result.json",
+      "sha256": "88f3807858f2e25f1536b50908e8e9cc7b3a4bf8e56dc9e4dcdc7d4380d795e0",
+      "bytes": 145151
+    },
+    {
+      "path": "data/evaluator_only/dev/diagnostic-pilot-v1/diagnostic-land-nominal-20260922-001/truth.json",
+      "sha256": "f93d7afbdb6e4ead20c240627c2945e4fcc727e43658ed411d45f1ed89a86ea7",
+      "bytes": 1461
+    },
+    {
+      "path": "data/evaluator_only/dev/diagnostic-reference-v1/diagnostic-land-nominal-20260922-001/reference.json",
+      "sha256": "70dbe7c12260d8753405618002e0bcf2c82d53d2adc50fbab3cebb5173e59f3b",
+      "bytes": 1947,
+      "status": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_CONFIRMATORY"
+    }
+  ],
+  "scenario_truth": {
+    "environment": "crane-land-proving-ground-v1",
+    "layout": "narrow-doorway-v1",
+    "seed": 5201,
+    "configuration_sha256": "0ac14aca8d7ef11cc1f389809b46e45307c6925e71e5f4070398aefb5c64b7f1",
+    "scenario_instantiation_success": true,
+    "fault_induction_success": null,
+    "recording_valid": true,
+    "observed_action_status": "succeeded"
+  },
+  "independent_reference": {
+    "imports_proposed_diagnostic_core": false,
+    "direct_route_fully_covered": true,
+    "direct_route_restriction_supported": false,
+    "retained_grid_has_connection": true,
+    "maximum_lateral_deviation_m": 0.08441401273012161,
+    "maximum_forward_progress_m": 17.47705078125,
+    "global_physical_no_path_supported": false,
+    "unique_physical_obstacle_supported": false
+  },
+  "allowed_use": "development reference, scenario validation, response-quality review, and prospective diagnostic-study design only; never method-visible input",
+  "separation_rule": "Evaluator geometry, semantic obstacle identity, expected challenge, and independent reference findings must not be supplied to explanation methods."
+}
