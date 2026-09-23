@@ -47,7 +47,7 @@ Audited against umbrella commit `04b1fe7` and current governed storage on 2026-0
 | Current planner | Expresses FollowPath failure, recovery eligibility, Wait invocation/order, source/configuration identity, terminal status, and causal withholding | It cannot express geometric restriction, command-to-motion discrepancy, perception/model inconsistency, or a physical failure chain |
 | Ecological land | Three governed development exports: warehouse recovery, complete blockage, corrected S-turn. They retain trajectory samples/summaries, BT/action/recovery data, costmap summaries, and runtime hashes with evaluator truth separate | Useful diagnostic inputs exist, but no explanation comparison or annotation exists; exports do not retain successive global paths or command-to-measured-motion chains |
 | RoboBoat | Command signs/response, long paths, turns, docking and independent settle/containment predicates are measured. Eight post-correction docks succeeded; a goal-checker-margin failure and wrong-side/infeasible goal are retained | Ready as a calibration/diagnostic source, not yet a prospective explanation study; wave/current attribution is unsupported |
-| Manuscript | `paper/` contains only a README; no paper source exists | Manuscript completion is a critical risk; claims must start from the map below rather than retrospective narrative |
+| Manuscript | `paper/main.tex` is a reproducibly compiled, visually inspected four-page short/WIP draft with six checked references and explicit red result gates | The draft is not submission-ready; blinded labels, prospective results, clustered uncertainty, and final sample accounting remain missing |
 | Archive restoration | **PASS:** a clean `origin/main` clone configured its local R2 remote, pulled all seven governed roots, and matched all 1,551 artifacts referenced by 99 episode/model manifests | Reproduction requires private credentials and the documented local remote-configuration step; builds and staging data are intentionally outside this snapshot |
 
 The model-artifact auditor now dispatches between the older aggregate schema and current
@@ -97,7 +97,7 @@ prespecified physical-diagnosis evaluation.
 5. Write the manuscript while pilots run. Do not resume platform breadth, aerial, underwater, or
    broad environment work.
 
-## Progress checkpoint — 2026-09-23
+## Progress checkpoint — 2026-09-22
 
 The first parity-audited land and RoboBoat comparisons are now retained. Each has one unmasked
 question and one paired evidence mask, yielding four final responses per question but only two

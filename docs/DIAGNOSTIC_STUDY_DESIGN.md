@@ -76,7 +76,7 @@ Every question must discriminate a declared capability; paraphrases do not add i
   outputs.
 - Response-quality review confirms P/T lead with diagnosis and preserve limitations.
 
-## Development status at 2026-09-23
+## Development status at 2026-09-22
 
 - Land and RoboBoat each have one parity-audited R/P/T/N development comparison plus a paired
   evidence mask. This is two episode clusters, not eight independent responses.

@@ -828,7 +828,7 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   consumed by every planner tick. A future prospective case should retain time-aligned global grids
   and full paths, but that instrumentation is lower priority than protocol freeze and annotation.
 
-## 2026-09-23 — preserve positional diagnosis when RoboBoat return speed is missing
+## 2026-09-22 — preserve positional diagnosis when RoboBoat return speed is missing
 
 - Decision: treat the speed-masked case as partially diagnosable, not wholly unanswerable. State
   that observed post-return motion exceeded the remaining positional margin and led outside the
@@ -846,7 +846,7 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Validity risk: this correction is post-hoc on the exposing episode and its reference inventory is
   not independent gold. A separate prospective case must validate the rule before any Q3 claim.
 
-## 2026-09-23 — keep legacy grouping metadata blinded until adjudication
+## 2026-09-22 — keep legacy grouping metadata blinded until adjudication
 
 - Decision: human annotation forms use an explicit `BLINDED_PENDING_KEY_JOIN` sentinel for
   `episode_id` and `scenario_family`, and the opaque response ID for `condition_blinded_id`. The

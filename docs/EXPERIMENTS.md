@@ -2499,7 +2499,7 @@
   eight responses but only one episode cluster. Annotation remains `NOT_RUN`; packet generation
   does not create a human label or an independent sample.
 
-## 2026-09-23 — RoboBoat terminal-margin R/P/T/N development pilots
+## 2026-09-22 — RoboBoat terminal-margin R/P/T/N development pilots
 
 - **BOUNDARY / NO PLATFORM CHANGE:** no RoboBoat scene, physics, vehicle, controller, or Nav2
   configuration was changed or launched. Both comparisons consume the governed compact
@@ -2532,7 +2532,7 @@
   clusters. Two independent annotators and a distinct disagreement adjudicator remain `NOT_RUN`.
   Development references are not independent gold computations.
 
-## 2026-09-23 — separate RoboBoat terminal-margin reference calculation
+## 2026-09-22 — separate RoboBoat terminal-margin reference calculation
 
 - **IMPLEMENTED / DEVELOPMENT ONLY:** `reference_terminal_margin.py` is an evaluator-side code
   path that imports neither the proposed diagnostic core nor its adapter. It independently checks
@@ -2548,7 +2548,7 @@
   Independent reviewer validation remains required before study freeze. Artifacts are confined to
   evaluator-only development DVC storage and are never supplied to R/P/T/N.
 
-## 2026-09-23 — separate land geometric reference calculation
+## 2026-09-22 — separate land geometric reference calculation
 
 - **IMPLEMENTED / DEVELOPMENT ONLY:** `reference_land_geometric.py` imports neither CRANE's
   costmap-audit helper nor the proposed diagnostic core. It independently verifies/decompresses the
@@ -2575,7 +2575,7 @@
   planner consumption, and needs independent reviewer validation before freeze. Both reference
   artifacts remain evaluator-only.
 
-## 2026-09-23 — sealed legacy annotation-form and key-join wiring check
+## 2026-09-22 — sealed legacy annotation-form and key-join wiring check
 
 - **STATUS:** `IMPLEMENTED / TESTED`; human annotation remains `NOT_RUN`.
 - **DISCOVERED GAP:** the frozen guide's 25-field output schema names episode/scenario/condition
@@ -2592,7 +2592,7 @@
   were unchanged. Their pre-annotation hashes are recorded in the operational clarification
   manifest. No label or condition effect was inspected.
 
-## 2026-09-23 — legacy annotator calibration packet
+## 2026-09-22 — legacy annotator calibration packet
 
 - **STATUS:** `IMPLEMENTED / NOT_RUN_BY_HUMAN_ANNOTATORS`.
 - **SOURCE:** six retained F/G/H responses from development-only episode
@@ -2605,7 +2605,7 @@
   disagreements before annotators touch `sealed-primary-v3`. The six responses are never pooled
   into final estimates and add zero independent study episodes.
 
-## 2026-09-23 — diagnostic development annotation join inventory
+## 2026-09-22 — diagnostic development annotation join inventory
 
 - **STATUS:** `IMPLEMENTED / HUMAN LABELS NOT_RUN`.
 - **INVENTORY:** four blinded R/P/T/N packets, 16 responses, and exactly two statistical clusters.
@@ -2621,7 +2621,7 @@
   cannot establish an effect or supply a stable clustered variance estimate; power planning and
   protocol freeze still wait for real human development labels and additional independent pilots.
 
-## 2026-09-23 — first rendered manuscript QA
+## 2026-09-22 — first rendered manuscript QA
 
 - **STATUS:** `COMPILED / VISUALLY_INSPECTED / NOT_SUBMISSION_READY`.
 - **TOOLCHAIN:** pinned Tectonic 0.17.0 Linux archive, SHA-256
