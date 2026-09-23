@@ -1,0 +1,39 @@
+{
+  "schema": "crane-explain-annotation-packet-manifest/v1",
+  "status": "DEVELOPMENT_DRY_RUN_AWAITING_TWO_HUMAN_ANNOTATORS",
+  "study": "prospective-physical-diagnosis-development",
+  "packet": {
+    "path": "model_outputs/annotation_packets/diagnostic-recovery-sequence-pilot-v1/packet.jsonl",
+    "sha256": "32829f985d9d75c8b4cccc11fb0ff8e3dba6ae67f3bbca6c79dad8d5aeebfa28",
+    "dvc_pointer": "model_outputs.dvc",
+    "responses": 4,
+    "conditions_blinded": true
+  },
+  "key": {
+    "path": "data/evaluator_only/annotation_keys/diagnostic-recovery-sequence-pilot-v1.json",
+    "sha256": "6279d57466f85c95c7eee5873c765d11eb13b45dc696d739f8a30dd97ee90b20",
+    "dvc_pointer": "data/evaluator_only/annotation_keys.dvc",
+    "visibility": "evaluator_only"
+  },
+  "reference": {
+    "path": "research/explanation_fidelity/annotations/development/diagnostic-recovery-sequence-pilot-v1-reference.json",
+    "sha256": "0c1a5f9c03a9b724d4e4bc8bf778cbacdd4adfd2259aff3f3aada0801b255982",
+    "status": "DEVELOPMENT_REFERENCE_FROM_PRE_MODEL_TRANSITION_AUDIT_NOT_HUMAN_GOLD"
+  },
+  "rubric": {
+    "path": "docs/DIAGNOSTIC_ANNOTATION_GUIDE.md",
+    "status": "DEVELOPMENT_DRAFT_NOT_FROZEN"
+  },
+  "requirements": {
+    "independent_annotators": 2,
+    "distinct_adjudicator_on_disagreement": true,
+    "condition_key_withheld_until_after_adjudication": true
+  },
+  "limitations": [
+    "This is one development execution-mechanism case and cannot estimate an effectiveness difference.",
+    "The transition audit and annotation units were fixed before model generation but are not human gold labels.",
+    "No human annotations or adjudication exist at packet creation time.",
+    "The P final response used deterministic fallback and is text-identical to T; identical text must receive identical labels.",
+    "The episode does not establish the physical cause of planner failure."
+  ]
+}

@@ -78,21 +78,21 @@ Every question must discriminate a declared capability; paraphrases do not add i
 
 ## Development status at 2026-09-22
 
-- Land has three parity-audited R/P/T/N development comparisons, one with a paired evidence mask;
-  RoboBoat has one comparison plus a paired evidence mask. This is four episode clusters, not six
-  independent questions.
+- Land has six parity-audited R/P/T/N development comparisons over five episode clusters,
+  including one paired evidence mask; RoboBoat has one comparison plus a paired evidence mask.
+  This is six episode clusters, not eight independent questions.
 - In all three diagnosable unmasked comparisons, tool-enabled R expressed the central mechanism at
   least as well as P/T. In the retrospective nominal control, every method rejected the false
   premise, but R additionally overclaimed complete route clearance from a partial rolling grid.
   This exposed and fixed a shared tool defect; the immutable R output was not resampled. Current
   development evidence still does not establish a P-over-R effect.
-- P used deterministic fallback in all five land and both boat comparisons (7/7 development
+- P used deterministic fallback in all six land and both boat comparisons (8/8 development
   questions). The final method is therefore template-rendered at the current operating point.
 - The speed-masked boat case remains positionally diagnosable: observed post-return motion exceeded
   the retained positional margin. Missing speed prevents only the stronger stopped-speed claim.
   The original over-withholding output is retained, and a post-hoc v2 checked-plan correction is
   not counted as prospective evidence.
-- Seven blinded packets (28 responses) exist and cover five episode clusters. Separately
+- Eight blinded packets (32 responses) exist and cover six episode clusters. Separately
   implemented evaluator-side boat arithmetic and land raster/A* references reproduce the bounded
   development findings without importing P's diagnostic code. The S-turn reference was computed
   before its model comparison; the earlier references were authored after output inspection.
@@ -107,3 +107,7 @@ Every question must discriminate a declared capability; paraphrases do not add i
   introduced an unsupported hypothetical external evaluator; those observations await blind human
   scoring and are not labels. Human annotation, power planning, protocol freeze, and held-out
   evaluation remain `NOT_RUN`.
+- The retained warehouse recovery sequence adds a predeclared development ambiguity case. R and
+  P/T all reconstruct at least four source-qualified invocations and eventual task success while
+  withholding physical causation; N lacks the validated planner-failure/eligibility linkage. This
+  is a negative differentiation result on project review, pending blinded scoring.

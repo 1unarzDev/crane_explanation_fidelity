@@ -2844,3 +2844,52 @@
   and the updated development DVC object was pushed to R2. This is an execution-mechanism and
   ambiguity case for prospective Q2/Q3 development, not physical-cause diagnosis or an
   effectiveness result.
+
+## 2026-09-22 — predeclared warehouse recovery R/P/T/N development comparison
+
+- **STATUS:** `RUN / RETAINED / BLINDED_PACKET_BUILT / DEVELOPMENT_ONLY`; human annotation and
+  adjudication are `NOT_RUN`.
+- **PREDECLARATION:** commit `357b1d8` fixed the question, one-sample/no-retry rule,
+  `gpt-5.6-sol` low-effort model setting, evidence/tool parity, prompt hashes, and pre-model
+  annotation units before any model output was created.
+- **FAIRNESS:** R received the same robot-visible ecological export, executable recovery diagnostic,
+  exact CRANE commit `c46de4d`, and core commit `af25ee5` used by P. N received captured action,
+  invocation, completeness, feedback, trajectory, costmap-delivery, and source-hash facts without
+  the computed transition linkage. Evaluator truth was unavailable to all methods.
+- **MODEL USE:** three new calls consumed 108,119 input, 51,584 cached-input, 1,713 output, and 264
+  reasoning-output tokens over 70.621 s aggregate latency. The client reported no monetary cost or
+  resolved backend/source revision. No call was retried or resampled.
+- **PROJECT REVIEW, NOT LABELS:** tool-enabled R independently reproduced the same lower-bound
+  four-invocation sequence, planner-failure/eligibility mechanism, eventual action success, and
+  physical-cause limits as P/T. N correctly retained the lower-bound count and action success but
+  stated that the upstream planner/eligibility mechanism was unproven because that computation was
+  ablated. This is a negative development differentiation result for P versus R, pending blinded
+  human review.
+- **LANGUAGE GATE:** P's fluent candidate contained the central supported mechanism and limits but
+  was not byte-identical to the checked rendering. The fixed exact verifier rejected it, so final P
+  equals T and development fallback is now 8/8 questions over six clusters. No repair or second
+  generation was attempted.
+- **GOVERNANCE:** raw result, all three call caches, a four-response blinded packet, evaluator-only
+  key, reference, and predeclaration are hash-manifested. DVC objects were pushed to R2. The
+  diagnostic inventory is 32 responses in eight packets over six clusters and remains too small
+  and entirely unannotated for an effectiveness estimate, power estimate, or significance claim.
+- **MANUSCRIPT QA:** the recovery case and current 8/8 fallback rate were added to the five-page
+  short-paper draft. The rebuilt letter-size PDF was rendered page by page; no clipping, overlap,
+  broken table, or unreadable reference was observed. Pending-result markers remain intentionally
+  visible because human labels, protocol freeze, held-out evaluation, and statistics are `NOT_RUN`.
+
+## 2026-09-22 — annotation handoff refreshed for recovery-sequence packet
+
+- **STATUS:** `PREPARED / STRUCTURALLY_VALIDATED / HUMAN_ANNOTATION_NOT_RUN`.
+- **CHANGE:** both local ignored annotator bundles now include the blinded warehouse
+  recovery-sequence packet and separately generated blank form. Each bundle contains ten packets
+  and 236 form rows: six legacy calibration rows, 198 sealed legacy rows, and 32 diagnostic rows
+  across eight packets.
+- **BOUNDARY:** no evaluator-only key, condition/model identity, raw candidate, verifier outcome,
+  or fallback field is present. The warehouse packet was built from the pre-model reference and
+  contains only opaque response IDs and allowed annotation content.
+- **LOCAL ARCHIVE HASHES:** annotator A
+  `d2c63b00326f8891af827da167ed6a325213946a5021717db4ceab4e57c04c79`; annotator B
+  `c4fe1fd2f1bbf9e92700c5785ea5d19850aae66e4c5f548ab605dc88e81fd14a`.
+  These convenience archives are not labels or governed result data; completed independent human
+  forms have not been received.

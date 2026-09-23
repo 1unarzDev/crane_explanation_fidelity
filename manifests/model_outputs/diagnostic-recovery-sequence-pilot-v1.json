@@ -1,0 +1,71 @@
+{
+  "schema": "crane-explain-model-artifact-manifest/v1",
+  "status": "DEVELOPMENT_ONLY_NOT_FROZEN",
+  "created_utc": "2026-09-23T04:12:37+00:00",
+  "provider": "codex-lb-via-chatgpt-login",
+  "resolved_backend_source_revision": null,
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "low",
+  "single_sample_no_retry": true,
+  "new_model_calls": 3,
+  "model_condition_outputs": 3,
+  "embedded_non_model_smoke_outputs": 1,
+  "conditions": [
+    "N",
+    "P",
+    "R"
+  ],
+  "embedded_non_model_smoke_conditions": [
+    "T"
+  ],
+  "result_envelope_conditions": [
+    "N",
+    "P",
+    "R",
+    "T"
+  ],
+  "episode_ids": [
+    "eco-pilot-001"
+  ],
+  "question_kinds": [
+    "recovery-mechanism-count-and-outcome-v1"
+  ],
+  "evaluator_truth_available_to_methods": false,
+  "information_parity_audited": true,
+  "read_only_workspace_verified": true,
+  "output_root": "model_outputs/diagnostic-recovery-sequence-pilot-v1",
+  "cache_root": "research/explanation_fidelity/model_cache/diagnostic-recovery-sequence-pilot-v1",
+  "artifacts": [
+    {
+      "path": "model_outputs/diagnostic-recovery-sequence-pilot-v1/result.json",
+      "sha256": "c4278d77cc98cdf2578dbb95bfa8642449862df2e651130f89678c1383a6c740",
+      "bytes": 12339
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-recovery-sequence-pilot-v1/1cc021a1ea6157756a625623aa716557210eae36081eb7ac8ac256299b453f41.json",
+      "sha256": "3c5153754b78b880a8c1827b4d2a0c2d7da7fb62f72bd8b13b8a3d1f1772850d",
+      "bytes": 14393
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-recovery-sequence-pilot-v1/d0e3eeb7a74aa38d9ddec5d6b3bad3eecf9e237fc1a04f8f7ef537dc6b8bbc0b.json",
+      "sha256": "774deb0948f7af6bc8fadaa94ab2eca53161ab5bdb9021e6f8edf9d83501a9c0",
+      "bytes": 45221
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-recovery-sequence-pilot-v1/e444d669b8b7a15a8558f07ea3a351509f05d6cbbeb486a0ed88c8b828a3a8e1.json",
+      "sha256": "7cec89d87fbfed2152647cdd3955b0503bf48ef105e0afaa9dc103ef259c867f",
+      "bytes": 14672
+    }
+  ],
+  "usage": {
+    "aggregate_latency_ms": 70620.669664,
+    "input_tokens": 108119,
+    "cached_input_tokens": 51584,
+    "output_tokens": 1713,
+    "reasoning_output_tokens": 264,
+    "cost_usd": null,
+    "cost_status": "not_reported_by_codex_cli_chatgpt_login"
+  },
+  "interpretation": "Predeclared development recovery-mechanism case. Tool-enabled R reconstructed the same four-invocation lower-bound sequence, eventual action success, and physical-cause limits as P/T. N correctly retained the lower-bound count and outcome but lacked the validated planner-failure/eligibility linkage. P's fluent candidate was substantively aligned but failed exact verification, so final P is byte-identical to T. These are project-review observations, not human labels, an effect estimate, or confirmatory evidence.",
+  "a_to_e_frozen_model_evaluation_status": "NOT_RUN"
+}

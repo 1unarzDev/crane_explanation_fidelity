@@ -157,6 +157,8 @@ withholding universal obstacle freedom and exact Nav2 consumption.
 One single-sample R/P/T/N comparison is retained. Project review found that R used a 70 s deadline
 although the executed hash-pinned XML configures 90 s, while N introduced a hypothetical external
 failure criterion not present in the evidence. These are not human labels. P again failed exact
-verification and fell back to T, making development fallback 7/7. The blinded inventory is now 28
-responses in seven packets over five clusters. Human annotation/adjudication, stable pilot-informed
+verification and fell back to T. A subsequent predeclared warehouse recovery-sequence case also
+fell back and tool-enabled R matched its bounded mechanism, making development fallback 8/8. The
+blinded inventory is now 32 responses in eight packets over six clusters. Human
+annotation/adjudication, stable pilot-informed
 power planning, protocol freeze, and held-out evaluation remain `NOT_RUN`.
