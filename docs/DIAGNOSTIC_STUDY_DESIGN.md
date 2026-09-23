@@ -128,6 +128,22 @@ Every question must discriminate a declared capability; paraphrases do not add i
   before its model comparison; the earlier references were authored after output inspection.
   Independent reviewer validation
   remains `NOT_RUN`; these post-output development implementations are not confirmatory gold.
+
+## Catalog qualification update at 2026-09-23
+
+The generated v4 catalog now contains 48 prospective connected-detour candidates and 24 nominal
+controls. Eight stable blockage layout IDs remain only as `development-calibration /
+failed-induction-calibration`; the 48 unrun confirmatory blockage identities were removed. Three
+live blockage calibrations—open 8 m, closed 8 m, and closed 5 m—continued to produce planner paths
+and reached the client deadline. They do not establish planner-grid disconnection despite the
+offline canonical raster being disconnected.
+
+One connected-detour run and one nominal run succeeded with materially different retained path
+shapes, so the catalog remains useful for obstacle/path evidence. It cannot by itself supply the 92
+independent primary clusters in the design sensitivity. Protocol freeze therefore remains
+`NOT_READY`: a second mechanism must pass end-to-end development qualification, or the study must
+prospectively adopt an explicitly underpowered deadline/resource stopping plan. No held-out
+collection has begun and no observed effect was used to make this decision.
   A retained unexpected land success now passes a false-premise-aware `not_triggered` check and has
   a blinded R/P/T/N packet, but it was not prospectively collected and has no human labels.
 - One separately governed, prospectively declared nominal land episode now supplies complete-route

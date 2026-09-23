@@ -920,3 +920,27 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Expected effect: protocol freeze is blocked on a genuinely varied, versioned geometry source and
   demonstrated collection throughput. If the target is infeasible by the predeclared cutoff, the
   paper becomes an honestly underpowered short/WIP result rather than an invalid full-paper claim.
+
+## 2026-09-23 — retire the v4 planner-grid-disconnection induction after three failed calibrations
+
+- Decision: preserve the eight generated blockage identities as development-calibration history,
+  remove the 48 unrun confirmatory blockage identities, and prohibit counting either set as
+  planner-grid-disconnection cases. Stop geometry tuning for this mechanism.
+- Evidence: open 8 m, closed 8 m, and closed 5 m variants all reached the 100 s client deadline
+  while retaining 96–97 successful planning records. The narrowest run remained laterally bounded
+  but oscillated/reversed and reached feedback recovery count 2. In contrast, a connected-detour
+  run and nominal control both succeeded and retained their expected path behavior. The offline
+  canonical raster's disconnected label therefore does not establish the actual Nav2-grid state or
+  runtime mechanism.
+- Alternatives: tune more geometry until an abort occurs; label the deadline as disconnection;
+  discard the unfavorable runs; or retain all 96 planned cases based on offline geometry alone.
+  These choices would respectively consume collection time, confuse an outcome with a mechanism,
+  hide failed induction, or make the prospective population scientifically false.
+- RQ impact: the candidate primary inventory falls from 96 to 48 connected-detour instances. This
+  does not alter the exact power sensitivity; it shows that the current catalog alone cannot meet
+  it. A second independently testable mechanism is required before protocol freeze if the powered
+  target remains feasible.
+- Revisit: do not reopen this geometric induction before submission. Prefer one bounded
+  command-to-motion family using already supported instrumentation, but admit it only after a
+  matched healthy control, independent diagnostic computation, useful final answer, parity audit,
+  and annotation dry run pass.

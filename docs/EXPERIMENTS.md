@@ -2966,3 +2966,41 @@
   recorded in the configuration hash but does not alter fixed manifest geometry. Seed-only reruns
   cannot count as independent scenarios. Protocol freeze therefore requires a genuinely varied
   geometry source and a throughput check; no collection target is represented as currently met.
+
+## 2026-09-23 — v4 land-catalog runtime qualification and failed disconnection induction
+
+- **STATUS:** `DEVELOPMENT_ONLY / TWO VALID CONTROLS / FAILED_MECHANISM_INDUCTION / NOT_GOVERNED`.
+  These five runs are not confirmatory episodes and are not part of the frozen F/G/H cohort.
+- **RUNTIME:** Unity `6000.5.10f1`, CRANE parent `c46de4d` plus the then-uncommitted v4 catalog
+  implementation, and catalog SHA-256
+  `4916851c02448a12b1279b74a376f94a07635b64851144a5fcd123a165afff92`. The isolated player is
+  retained only under `/tmp/crane-land-v4-player`; it is deliberately not added to Git or DVC.
+- **STRUCTURAL QUALIFICATION:** representative grid, detour, and nominal layouts passed
+  `STRUCTURAL_PASS`, `PHYSICS_PASS`, `SENSOR_PASS`, `HEADLESS_PASS`, and `EXPLANATION_READY`.
+  Seven Unity EditMode tests and the contemporaneous Python manifest/contract suite passed.
+- **FAILED INDUCTION 1 — OPEN 8 M ARENA:** the expected-abort run instead reached the client
+  deadline at 100.028 s after 24.990 m sampled path length. Its lateral range was
+  -0.815–+5.004 m and 97 planning records were retained; the robot routed outside the open rear
+  boundary. This motivated closing both longitudinal ends, not an episode exclusion.
+- **FAILED INDUCTION 2 — CLOSED 8 M ARENA:** the action again reached the client deadline at
+  100.011 s after 25.413 m sampled path length, lateral range -0.791–+3.014 m, 97 planning records,
+  and maximum feedback recovery count 1. Successful replanning continued.
+- **FAILED INDUCTION 3 — CLOSED 5 M ARENA:** jointly observing the side boundaries and cross-wall
+  still did not establish planner-grid disconnection. The action reached the client deadline at
+  100.017 s after 23.749 m sampled path length, lateral range -0.614–+0.676 m, 96 planning records,
+  and maximum feedback recovery count 2. The run oscillated/reversed while planners continued to
+  return paths. Offline canonical-raster disconnection is therefore not a valid label for the
+  actual Nav2 mechanism.
+- **POSITIVE BEHAVIORAL CHECKS:** `diagnostic-development-connected-detour-001` succeeded in
+  76.110 s with 17.569 m endpoint displacement, 19.045 m sampled path length, lateral range
+  -1.401–+1.288 m, 72 planning records, 655 BT transitions, 285 delivered costmap observations,
+  and zero feedback recoveries. `diagnostic-development-nominal-clear-route-001` succeeded in
+  69.111 s with 17.477 m endpoint displacement and sampled path length, zero lateral deviation,
+  67 planning records, 610 BT transitions, 255 costmap observations, and zero recoveries.
+- **DISPOSITION:** stop geometry tuning. The eight stable development blockage identities are
+  retained as `development-calibration / failed-induction-calibration`; the 48 unrun confirmatory
+  blockage identities were removed. The regenerated candidate catalog contains 48 prospective
+  connected-detour instances and 24 nominal controls, not 96 qualified diagnosable instances.
+  Its current SHA-256 is
+  `c2603491c16b99ba007085237097fc0cd66ee2453d1b9e4e1fc7f490bd1a0f8a`. Because the runtime
+  summaries remain under `/tmp`, governance and fresh-checkout reproduction are still `NOT_RUN`.

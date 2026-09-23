@@ -127,6 +127,21 @@ Existing aerial/underwater accomplishments remain valid within their recorded sc
 their missing navigation/explanation gates will not consume pre-submission time; it does not convert
 past passes into failures.
 
+## Prospective diagnostic catalog v4 (2026-09-23)
+
+The additive v4 land catalog is development infrastructure for the redirected diagnostic study;
+it does not supersede or modify frozen players, configs, or F/G/H artifacts. Representative
+layouts pass structural, physics, sensor, headless, and explanation-readiness checks, and live
+Nav2 runs qualify one connected detour plus one nominal control.
+
+The attempted blockage family is explicitly **FAILED_INDUCTION / CALIBRATION_ONLY**. Closing the
+arena and narrowing it to make the canonical boundaries jointly LiDAR-visible did not induce a
+planner-grid disconnection: all three variants retained repeated successful planning records and
+reached the client deadline. The catalog preserves eight stable development identities under a
+failed-induction label and contains no confirmatory blockage instances. The 48 prospective detour
+layouts remain candidates—not qualified study episodes—until governed reproduction, diagnostic
+contracts, parity, blinding, and the prospective protocol are frozen.
+
 ## Batch result target
 
 The environment validator should eventually emit one record per world/route containing environment
