@@ -3303,3 +3303,38 @@
 - **VALIDITY BOUNDARY:** the v1 decision and deterministic final P remain immutable, and the
   observed development fallback rate remains 12/12. This targeted regression is not an independent
   estimate of verifier sensitivity, specificity, or P effectiveness.
+
+## 2026-09-23 — current-source connected-detour land development run
+
+- **STATUS:** `RUN / RETAINED / GOVERNED / DEVELOPMENT_ONLY_NOT_CONFIRMATORY`; model comparison,
+  annotation, and adjudication remain `NOT_RUN`.
+- **RUN:** opaque episode `diagnostic-land-dev-002`, ROS domain 121, TCP port 12321, catalog v4,
+  umbrella `e76104b`, CRANE/player source `6bf057b`, and astro_dock `3620237`. The hash-proven
+  headless fixture was valid and NavigateToPose succeeded in 72.910 s after 17.571 m displacement.
+  It retained 70 successful planning updates, 637 BT transitions, 279 costmap observations, 714
+  delivered controller commands, and 3,599 odometry messages. No recovery was recorded. The BT
+  terminal transition was not observed, so exact whole-history event counts are not established.
+- **BOUNDED GEOMETRIC RESULT:** the hash-checked retained grid contains a cost-253 cell on the
+  requested direct route near x=12.625 m and remains connected from the action-result pose to the
+  goal. Delivered odometry deviated laterally by at most 1.036 m before success. The proposed
+  export and an independently implemented Bresenham/A* reference agree on those findings.
+- **CAUSAL LIMIT:** this episode supports a restricted direct route and a materially changed
+  trajectory with successful completion. It does not establish the physical obstacle identity,
+  prove that Nav2 consumed the exact retained snapshot, prove that the restriction caused the
+  deviation, or establish global no-path. The current failure-oriented checked diagnosis rejects
+  the false failure premise and reports the restriction, but path-comparison usefulness has not
+  yet been independently evaluated. Any question/plan refinement after this inspection is
+  post-observation development and must be tested on another episode.
+- **EVIDENCE BOUNDARY:** the selected layout, diagnostic mechanism, semantic obstacle IDs, seed,
+  and canonical geometry remain evaluator-only. The fixture summary was copied byte-identically
+  into robot-visible storage only after structured-key and exact-token leakage checks. The
+  robot-visible scanner passes over all eight retained method-visible files.
+- **GOVERNANCE:** paired hash inventories are
+  `manifests/data/diagnostic-land-dev-002.{robot-visible,evaluator-only}.json`. Robot-visible data
+  contain the raw observer capture, exact runtime manifest/BT, fixture projection, and checked
+  diagnostic. Evaluator-only data contain harness logs, layout truth, build provenance, and the
+  independent reference. No frozen F/G/H artifact was modified.
+- **REFERENCE FIX:** the independent reference previously assumed a literal BT `Timeout` node.
+  The active distance-replanning tree has none, so it now accepts an explicit finite positive
+  harness deadline and otherwise fails closed. Six focused reference tests pass. This changes no
+  retained outcome or diagnostic threshold.

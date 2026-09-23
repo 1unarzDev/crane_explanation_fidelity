@@ -126,15 +126,25 @@ def connected_astar(
     return False
 
 
-def timeout_seconds(bt_xml: bytes) -> float:
+def timeout_seconds(bt_xml: bytes, explicit_deadline_seconds: float | None = None) -> float:
+    if explicit_deadline_seconds is not None:
+        if not math.isfinite(explicit_deadline_seconds) or explicit_deadline_seconds <= 0:
+            raise ValueError("explicit deadline must be a finite positive number")
+        return explicit_deadline_seconds
     match = re.search(rb"<Timeout\s+msec=\"([0-9]+)\"", bt_xml)
     if not match:
-        raise ValueError("literal BT Timeout msec value not found")
+        raise ValueError(
+            "literal BT Timeout msec value not found; provide explicit_deadline_seconds"
+        )
     return int(match.group(1)) / 1000.0
 
 
 def calculate(
-    fixture: dict[str, Any], bt_xml: bytes, *, episode_id: str | None = None
+    fixture: dict[str, Any],
+    bt_xml: bytes,
+    *,
+    episode_id: str | None = None,
+    explicit_deadline_seconds: float | None = None,
 ) -> dict[str, Any]:
     snapshot = fixture["latestCostmapSnapshot"]
     grid = decode_grid(snapshot)
@@ -145,7 +155,7 @@ def calculate(
     )
     result_pose = fixture.get("actionResultPose") or fixture["finalPose"]
     action_result = (float(result_pose["x"]), float(result_pose["y"]))
-    deadline = timeout_seconds(bt_xml)
+    deadline = timeout_seconds(bt_xml, explicit_deadline_seconds)
     action_seconds = float(fixture["wallSeconds"])
     action_status = str(fixture["status"]).lower()
     start_cell = world_to_cell(snapshot, initial)
@@ -278,12 +288,14 @@ def main() -> int:
     parser.add_argument("fixture", type=Path)
     parser.add_argument("--episode-id", required=True)
     parser.add_argument("--bt-xml", required=True, type=Path)
+    parser.add_argument("--deadline-seconds", type=float)
     parser.add_argument("--output", required=True, type=Path)
     args = parser.parse_args()
     result = calculate(
         json.loads(args.fixture.read_text(encoding="utf-8")),
         args.bt_xml.read_bytes(),
         episode_id=args.episode_id,
+        explicit_deadline_seconds=args.deadline_seconds,
     )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")

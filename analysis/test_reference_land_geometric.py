@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
 
+import pytest
+
 from reference_land_geometric import calculate
 
 
@@ -64,3 +66,23 @@ def test_out_of_bounds_route_cells_are_missing_coverage_not_obstacles():
     assert result["reference_findings"]["direct_route_restriction_supported"] is False
     assert result["measurements"]["direct_route_fully_covered"] is False
     assert "does not cover" in " ".join(result["required_withholding"])
+
+
+def test_explicit_harness_deadline_supports_tree_without_timeout_node():
+    fixture = json.loads(FIXTURE.read_text(encoding="utf-8"))
+
+    result = calculate(
+        fixture,
+        b'<root BTCPP_format="4"/>',
+        episode_id="external-deadline",
+        explicit_deadline_seconds=100.0,
+    )
+
+    assert result["measurements"]["configured_deadline_seconds"] == 100.0
+
+
+def test_tree_without_timeout_or_explicit_deadline_fails_closed():
+    fixture = json.loads(FIXTURE.read_text(encoding="utf-8"))
+
+    with pytest.raises(ValueError, match="provide explicit_deadline_seconds"):
+        calculate(fixture, b'<root BTCPP_format="4"/>', episode_id="missing-deadline")

@@ -133,6 +133,12 @@ their own location. Exact repository commits and destinations are recorded in
   blinded four-response packet: R reports an incorrect discrepancy interval/duration on project
   review, raw P preserves the checked values, and final P again falls back to T. Human annotation
   remains `NOT_RUN`, so this is a differentiation candidate rather than a scored method result.
+- **TESTED (DIAGNOSTIC DEVELOPMENT ONLY):** a current-source v4 connected-detour run succeeded
+  with a retained cost-253 restriction on the requested direct route and 1.036 m of delivered
+  odometry deviation. An independent raster/A* implementation reproduces the bounded restriction,
+  retained-grid connectivity, and successful outcome. This is one unannotated development case;
+  it does not identify the physical obstacle, prove exact Nav2 snapshot consumption, or prove that
+  the restriction caused the detour.
 - **TESTED (SECONDARY-ARM DEVELOPMENT):** the provider-neutral model-call contract now has a
   Claude Code adapter as its first non-GPT instance. A predeclared control rejected Haiku and fixed
   `claude-sonnet-5` at low effort. See [model-family replication](docs/MODEL_FAMILY_REPLICATION.md).
@@ -222,6 +228,27 @@ python analysis/export_geometric_route_diagnostic.py \
 
 This development answer establishes a direct-route restriction and deadline-aligned abort. The
 retained planner grid is still connected, so it deliberately withholds a global no-path claim.
+
+Reproduce the current-source successful connected-detour diagnosis and independent reference:
+
+```bash
+python analysis/export_geometric_route_diagnostic.py \
+  data/robot_visible/dev/diagnostic-land-dev-002/fixture-summary.json \
+  --episode-id diagnostic-land-dev-002 \
+  --nav2-config packages/crane_ml/Tools/Performance/nav2_land_proving_ground_fixture.yaml \
+  --bt-xml packages/crane_ml/Tools/Performance/nav2_roboboat_distance_replanning.xml \
+  --robot-radius 0.22 --inflation-radius 0.55 --deadline-seconds 100 \
+  --output /tmp/diagnostic-land-dev-002-geometric.json
+python analysis/reference_land_geometric.py \
+  data/robot_visible/dev/diagnostic-land-dev-002/fixture-summary.json \
+  --episode-id diagnostic-land-dev-002 \
+  --bt-xml packages/crane_ml/Tools/Performance/nav2_roboboat_distance_replanning.xml \
+  --deadline-seconds 100 \
+  --output /tmp/diagnostic-land-dev-002-reference.json
+```
+
+This is a development success control with a restricted direct route and measured detour, not a
+failure episode or proof that the observed costmap restriction caused the path deviation.
 
 Reproduce the blind development command-to-motion diagnosis and its independent evaluator-side
 check after pulling both development DVC roots:
