@@ -149,7 +149,13 @@ def run(args: argparse.Namespace, caller=None) -> dict:
         shutil.copy2(fixture_path, evidence / "fixture-summary.json")
         r_record = caller.call(
             "diagnostic-land-R",
-            load_prompt("diagnostic_repository_agent_dev_v1.txt", {"QUESTION": QUESTION}),
+            load_prompt(
+                args.repository_prompt,
+                {
+                    "QUESTION": QUESTION,
+                    "EPISODE_ID": diagnostic_export["episode_id"],
+                },
+            ),
             ANSWER_SCHEMA,
             working_directory=workspace,
             workspace_identity={
@@ -275,6 +281,8 @@ def run(args: argparse.Namespace, caller=None) -> dict:
             "diagnostic_wrapper_sha256": sha256(
                 ROOT / "analysis" / "export_geometric_route_diagnostic.py"
             ),
+            "repository_prompt": args.repository_prompt,
+            "repository_prompt_sha256": sha256(PROMPTS / args.repository_prompt),
             "core_repository_commit": args.core_repository_commit,
         },
         "comparison_scope": {
@@ -315,6 +323,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--repository-commit", required=True)
     parser.add_argument("--core-repository", required=True, type=Path)
     parser.add_argument("--core-repository-commit", required=True)
+    parser.add_argument(
+        "--repository-prompt",
+        default="diagnostic_repository_agent_dev_v1.txt",
+        help="prompt filename below research/explanation_fidelity/prompts",
+    )
     parser.add_argument("--provider", choices=("codex", "claude"), required=True)
     parser.add_argument("--model", required=True)
     parser.add_argument("--reasoning-effort", default="low")

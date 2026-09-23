@@ -50,3 +50,14 @@ def test_caller_factory_rejects_unknown_provider(tmp_path):
         assert "unsupported provider" in str(error)
     else:
         raise AssertionError("unknown provider was accepted")
+
+
+def test_repository_prompt_v2_resolves_episode_without_unresolved_placeholders():
+    result = MODULE.load_prompt(
+        "diagnostic_repository_agent_dev_v2.txt",
+        {"QUESTION": "Why?", "EPISODE_ID": "masked-episode"},
+    )
+
+    assert "--episode-id masked-episode" in result
+    assert "Question: Why?" in result
+    assert "{{" not in result

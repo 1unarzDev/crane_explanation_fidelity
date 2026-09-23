@@ -2455,3 +2455,26 @@
   in robot-visible development DVC storage with committed hashes. No evaluator-only field was
   added. This is one evidence variant of an existing development episode, not another independent
   sample or a confirmatory result.
+
+## 2026-09-22 — missing-cell R/P/T/N development pilot
+
+- **ONE SHOT / NO RETRY:** the matched evidence mask was run once through R/P/T/N with
+  `gpt-5.6-sol`, low reasoning, Codex CLI `0.155.1`. R received the exact v2 wrapper and source;
+  all methods lacked costmap cell values and evaluator truth. Three model calls were issued and
+  retained; T was deterministic.
+- **QUALITATIVE RESULT / NO INDEPENDENT LABEL:** every condition withheld a specific physical
+  restriction. R gave the most useful partial answer: it identified a deadline-aligned abort while
+  explicitly saying the missing cells prevent route obstruction/connectivity diagnosis and the
+  missing terminal tick prevents conclusive timeout proof. P's raw candidate and final P/T safely
+  withheld geometry, but they also called the whole terminal mechanism unresolved despite the
+  retained source/timing evidence. This is an informative-content omission in the checked plan,
+  not evidence that a more fluent model should speculate.
+- **OVERCLAIM RISK:** N states timeout propagation as fact before later acknowledging the missing
+  terminal transition. R uses qualified language. Whether either is a material error requires the
+  independent draft-rubric annotation; no project-author observation is a label.
+- **VERIFICATION/RESOURCES:** P again failed exact final-text verification and fell back to T
+  (development fallback 1/1). Aggregate model latency was 93.032 s; input tokens 182,797
+  (118,912 cached), output tokens 2,158, reasoning tokens 284; monetary cost was unavailable.
+- **NEXT:** preserve this v1 failure, then change the checked plan so missing physical evidence
+  produces a useful partial deadline-aligned diagnosis plus explicit geometric abstention. Do not
+  resample this episode to replace the retained result.

@@ -1,0 +1,62 @@
+{
+  "schema": "crane-explain-model-artifact-manifest/v1",
+  "status": "DEVELOPMENT_ONLY_NOT_FROZEN",
+  "provider": "codex-lb-via-chatgpt-login",
+  "adapter": "codex-cli-json/v1",
+  "model": "gpt-5.6-sol",
+  "reasoning_effort": "low",
+  "single_sample_no_retry": true,
+  "evaluator_truth_available_to_methods": false,
+  "information_parity_audited": true,
+  "episode_ids": [
+    "land-blockage-global-002-mask-no-costmap-cells"
+  ],
+  "statistical_cluster": "land-blockage-global-002",
+  "question_kinds": [
+    "diagnostic-mechanism-and-outcome-v1"
+  ],
+  "conditions": [
+    "N",
+    "P",
+    "R"
+  ],
+  "embedded_non_model_smoke_conditions": [
+    "T"
+  ],
+  "model_calls_referenced": 3,
+  "new_model_calls": 3,
+  "output_root": "model_outputs/dev/diagnostic-land-mask-pilot-v1",
+  "cache_root": "research/explanation_fidelity/model_cache/diagnostic-land-mask-pilot-v1",
+  "artifacts": [
+    {
+      "path": "model_outputs/dev/diagnostic-land-mask-pilot-v1/land-blockage-global-002-mask-no-costmap-cells/mechanism-and-outcome.json",
+      "sha256": "98e0b04f33718a948513d8eed11e52b48746c29d468bb5b33ea335d09d1fb96f",
+      "bytes": 10740
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-land-mask-pilot-v1/02ace11adcdf1f860c30eb79d2b2ac6fd8aa072a0f0c967f5ef994161e3b5fbf.json",
+      "sha256": "6930c7cf9bbb3a33cebc327a76042ba48a738370d9d781275a14650dad1eb52f",
+      "bytes": 14538
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-land-mask-pilot-v1/2735a897b2a650e614ae969c80e64b111f90ab8009bf75a3c57cb02e0a78a511.json",
+      "sha256": "62b303584aaf3ebc1bbc845d5936d1d915cd078883d390fb30fbd77daec256a8",
+      "bytes": 67271
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-land-mask-pilot-v1/ecf84ff8464dadccecc867eb13627b96bc44b83717510ccf9cd99bdf6ac4fb90.json",
+      "sha256": "4c94834b30e26448c9c7a743546078b20d285211d055fbb6ab2a952387739d23",
+      "bytes": 19927
+    }
+  ],
+  "usage": {
+    "aggregate_latency_ms": 93031.517804,
+    "input_tokens": 182797,
+    "cached_input_tokens": 118912,
+    "output_tokens": 2158,
+    "reasoning_output_tokens": 284,
+    "cost_usd": null,
+    "cost_status": "not_reported_by_codex_cli_chatgpt_login"
+  },
+  "development_observation": "R preserved the deadline-aligned partial execution diagnosis while withholding geometry. P/T withheld geometry correctly but also omitted that supported partial mechanism; P used deterministic fallback. N may overstate unobserved timeout propagation. No independent labels exist."
+}
