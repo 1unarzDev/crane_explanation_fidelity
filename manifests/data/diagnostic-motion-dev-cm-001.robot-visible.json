@@ -1,0 +1,44 @@
+{
+  "schema": "crane-data-manifest-v1",
+  "artifact_id": "diagnostic-motion-dev-cm-001",
+  "status": "DEVELOPMENT_INSTRUMENTATION_QUALIFICATION_NOT_INDEPENDENT_SCENARIO",
+  "visibility": "robot_visible",
+  "dvc_pointer": "data/robot_visible/dev.dvc",
+  "artifacts": [
+    {
+      "path": "data/robot_visible/dev/diagnostic-pilot-v1/land-command-motion-001/evidence-and-diagnostic.json",
+      "sha256": "c6ec30a1d449b2f9f7a9e48533e1887e1398bdac7d71492781b0f744a38a5d0e",
+      "bytes": 273513,
+      "status": "CURRENT_CHECKED_DETERMINISTIC_RENDERING"
+    }
+  ],
+  "implementation": {
+    "exporter_path": "analysis/export_command_motion_diagnostic.py",
+    "exporter_sha256": "f9e1a718ec35c94acc32196a879129645291257a9214e080fc3f1233f4146c70",
+    "diagnostic_core_path": "packages/astro_dock/src/crane_explain/src/crane_explain/diagnostics.py",
+    "diagnostic_core_sha256": "b3055e68a4acbccd740e6ad57454ccb7828b9d2db111fc41b60d47ccb6bf2fc1"
+  },
+  "source_references": {
+    "events_sha256": "ce52488d7de2a5bcbe33674990957cd7903a8a2668562e78ef95fd256477c250",
+    "runtime_manifest_sha256": "877efcfe8515968383ed9be309d232e6815bf5af9ff90318c788e8a264dd6351",
+    "bt_policy_sha256": "14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+    "nav2_config_sha256": "3851544a099b4d3ed48e54ffd6140c51971d8e9f902a6ff78048a4a71bccf0c3",
+    "crane_ml_commit": "6bf057b5acf1763eeca1b81be6530cd218a5405b",
+    "astro_dock_commit": "36202373ae186a8fd247a20b7b477312a744de99",
+    "capture_umbrella_commit": "42a33d9f6bb3599252fc6630a469b579c0c15e47",
+    "crane_explain_ros_commit": "fc957a172967a849d677e467bcf09b344de581a1"
+  },
+  "method_boundary": {
+    "permitted_input": "only the blind evidence-and-diagnostic export, or its declared method_input projection, may be supplied to explanation methods",
+    "acquisition_identifier_stripped": true,
+    "evaluator_intervention_identity_stripped": true,
+    "command_delivery_proves_actuator_acceptance": false,
+    "odometry_delivery_proves_nav2_consumption": false
+  },
+  "allowed_use": "development instrumentation qualification, response-quality review, threshold design, and prospective-study preparation only; not an independent scenario cluster or held-out result",
+  "limitations": [
+    "The acquisition rerun repeats a predeclared development condition and must not be counted as another independent episode.",
+    "The supported mechanism is a command-to-motion discrepancy, not a unique motor, slip, collision, obstruction, or intervention attribution.",
+    "The deterministic final answer passed exact verification; no model-generated answer or human annotation is included."
+  ]
+}

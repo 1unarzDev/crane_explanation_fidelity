@@ -144,6 +144,26 @@ independent primary clusters in the design sensitivity. Protocol freeze therefor
 `NOT_READY`: a second mechanism must pass end-to-end development qualification, or the study must
 prospectively adopt an explicitly underpowered deadline/resource stopping plan. No held-out
 collection has begun and no observed effect was used to make this decision.
+
+## Command-motion qualification update at 2026-09-23
+
+The passive ROS observer now retains delivered `/nav2/cmd_vel` commands and independently delivered
+`/crane/odom` motion with explicit non-consumption/non-acceptance semantics. A predeclared held-arm
+development pair showed nominal success and held-condition abort; a separate instrumentation rerun
+was used only to qualify the new time-resolved streams. It is not another scenario cluster.
+
+The blind method-visible export strips the intervention-coded acquisition identifier and contains
+376 command samples, 1,598 goal-interval odometry samples, exact runtime/source hashes, and the
+bounded recovery-classifier derivation. The proposed computation and a separately implemented
+evaluator reference both identify the earliest qualifying 7–17 s interval: median command
+0.800 m/s, calibrated healthy measured response 0.2597 m/s, and discrepancy response 0.000 m/s.
+Two FollowPath failures and two source-qualified Wait recoveries were recorded before a third
+FollowPath attempt and action abort.
+
+This passes the engineering gate for a second mechanism, but not the prospective study gates.
+Nominal time-resolved capture, a naturally ambiguous or masked case, information/tool-parity
+R/P/T/N outputs, blind annotation, and independent scenario collection remain `NOT_RUN`. The
+development thresholds are not frozen, and the run cannot contribute to the planned cluster count.
   A retained unexpected land success now passes a false-premise-aware `not_triggered` check and has
   a blinded R/P/T/N packet, but it was not prospectively collected and has no human labels.
 - One separately governed, prospectively declared nominal land episode now supplies complete-route

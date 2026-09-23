@@ -1,5 +1,23 @@
 # Decision Log
 
+## 2026-09-23 — qualify command-to-motion diagnosis without naming the hidden intervention
+
+- Decision: retain a blind robot-visible export from the time-resolved instrumentation rerun and
+  diagnose only a sustained delivered-command/measured-motion discrepancy. Do not expose the
+  intervention-coded acquisition identifier or evaluator truth, and do not label the mechanism as
+  motor failure, slip, collision, obstruction, or another unique cause.
+- Evidence: five initial command-active windows calibrate a 0.2597 m/s median measured response.
+  The earliest sustained low-response interval spans 7–17 s with a 0.800 m/s median command and
+  0.000 m/s measured planar response. Two FollowPath failures, two hash/source-qualified Wait
+  invocations, a third attempt, and the abort are retained. An independent implementation
+  reproduces the diagnostic values and the leakage/source-hash QA passes.
+- Alternatives: use command-derived NavigateToPose feedback as motion, reveal the evaluator hold,
+  assign a unique physical cause, or treat the instrumentation rerun as a new episode. Each would
+  confound signal semantics, leak truth, overclaim causality, or inflate effective sample size.
+- Study effect: this qualifies the second planned mechanism and improves the final answer beyond
+  abort/recovery narration. It does not establish P superiority; nominal time-resolved evidence,
+  ambiguous evidence, fair R/P/T/N calls, blinded labels, and independent collection remain.
+
 ## 2026-09-22 — close environment/platform development at three ecological pilot inputs
 
 - Decision: close the submission environment workstream with exactly three development-only,

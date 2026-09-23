@@ -214,6 +214,29 @@ python analysis/export_geometric_route_diagnostic.py \
 This development answer establishes a direct-route restriction and deadline-aligned abort. The
 retained planner grid is still connected, so it deliberately withholds a global no-path claim.
 
+Reproduce the blind development command-to-motion diagnosis and its independent evaluator-side
+check after pulling both development DVC roots:
+
+```bash
+PYTHONPATH=packages/astro_dock/src/crane_explain/src \
+python analysis/export_command_motion_diagnostic.py \
+  --events data/robot_visible/dev/diagnostic-motion-instrumentation-held-001/capture/events.jsonl \
+  --capture-manifest data/robot_visible/dev/diagnostic-motion-instrumentation-held-001/capture/manifest.json \
+  --runtime-manifest data/robot_visible/dev/diagnostic-motion-instrumentation-held-001/capture/runtime_manifest.json \
+  --bt-xml data/robot_visible/dev/diagnostic-motion-instrumentation-held-001/capture/behavior_tree.xml \
+  --nav2-config packages/crane_ml/Tools/Performance/nav2_land_fixture.yaml \
+  --episode-id diagnostic-motion-dev-cm-001 \
+  --output /tmp/command-motion-evidence.json
+python analysis/reference_command_motion.py /tmp/command-motion-evidence.json \
+  --output /tmp/command-motion-reference.json
+```
+
+The source acquisition name is evaluator-sensitive and must not be supplied to an explanation
+method. Only the blind export (or its `method_input` projection) is permitted. The result supports
+a delivered-command/measured-motion discrepancy, not a unique motor, slip, collision, obstruction,
+or hidden-intervention attribution. It is development instrumentation qualification, not an
+independent episode or an effectiveness result.
+
 Run the provider-neutral analysis, freeze-integrity, umbrella, and core suites without invoking a
 model or ROS runtime:
 

@@ -54,6 +54,26 @@ pose/velocity over a calibrated response window. Thresholds must come from devel
 trials and include delay/inertia. A discrepancy supports an execution-response mechanism, not a
 unique claim of slip, motor failure, collision, wind, current, or waves.
 
+The first passive-capture qualification now exercises this mechanism end to end. It uses fixed
+one-second receipt-time windows, five initial command-active windows for within-run calibration,
+at least five command and 20 odometry samples per window, a 0.4 m/s minimum command, a response
+ratio at or below 0.2, and at least three consecutive low-response windows. These thresholds are
+development choices, not frozen confirmatory settings.
+
+For blind episode `diagnostic-motion-dev-cm-001`, the calibrated median planar response was
+0.2597 m/s. The earliest qualifying interval was 7–17 s after the first active command: median
+delivered Nav2 command remained 0.800 m/s while delivered planar odometry was 0.000 m/s. Two
+recorded FollowPath failures were followed by two source-qualified Wait invocations, and a third
+FollowPath attempt was active before the action aborted. A separately implemented evaluator-side
+window computation reproduces the values without importing the proposed core or exporter.
+
+This establishes a sustained **command-to-motion discrepancy** and its execution sequence. It does
+not prove actuator acceptance, Nav2 consumption of the odometry stream, or a unique actuator,
+mobility, collision, obstruction, or slip cause. The acquisition rerun qualifies instrumentation;
+it repeats a development condition and adds zero independent scenario clusters. Only its blind
+robot-visible export may be supplied to explanation methods. Governed artifacts and source hashes
+are inventoried by `manifests/data/diagnostic-motion-dev-cm-001.*.json`.
+
 ### Perception/model inconsistency
 
 Add only after the first two mechanisms work end to end. Compare sensor timestamps/transforms and

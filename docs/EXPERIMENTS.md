@@ -1,5 +1,24 @@
 # Experiment Log
 
+## 2026-09-23 — time-resolved command-motion instrumentation qualification
+
+- **IMPLEMENTED / TESTED:** the passive observer capture at umbrella revision `42a33d9` retained
+  376 `/nav2/cmd_vel` records and 3,141 odometry records. The goal-bounded blind export retains
+  376 commands and 1,598 odometry samples, exact event/runtime/BT/Nav2 hashes, and strips the
+  intervention-coded acquisition identifier. No Nav2 or Unity physics path was changed.
+- **DIAGNOSTIC SUPPORTED, DEVELOPMENT ONLY:** five initial one-second windows calibrate a median
+  0.2597 m/s measured response to a 0.800 m/s command. The earliest qualifying 7–17 s interval
+  retains a 0.800 m/s median command and 0.000 m/s median planar odometry. Two FollowPath failures
+  and two source-qualified Wait invocations precede a third attempt and action abort.
+- **INDEPENDENT RECOMPUTATION / QA PASS:** `analysis/reference_command_motion.py` imports neither
+  the proposed core nor exporter and reproduces the interval, measurements, and counts. QA passes
+  source hashes, exact final-text verification, reference parity, and intervention-token leakage.
+  Core plus exporter/reference regressions pass 28/28; the complete core suite passes 71/71.
+- **BOUNDARY:** this supports a sustained command-to-motion discrepancy, not actuator acceptance,
+  Nav2 consumption of delivered odometry, or a unique motor, mobility, obstruction, collision, or
+  slip cause. The rerun qualifies instrumentation and adds zero independent scenario clusters.
+  Model comparison, blind annotation, and confirmatory use are `NOT_RUN`.
+
 ## 2026-09-22 — corrected proving-ground v3 recovery capture
 
 - **INFRASTRUCTURE-INVALID / NOT AN EPISODE:**

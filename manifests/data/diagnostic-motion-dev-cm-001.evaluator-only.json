@@ -1,0 +1,46 @@
+{
+  "schema": "crane-data-manifest-v1",
+  "artifact_id": "diagnostic-motion-dev-cm-001-evaluator-only",
+  "status": "DEVELOPMENT_INSTRUMENTATION_QUALIFICATION_NOT_INDEPENDENT_SCENARIO",
+  "visibility": "evaluator_only",
+  "dvc_pointer": "data/evaluator_only/dev.dvc",
+  "artifacts": [
+    {
+      "path": "data/evaluator_only/dev/diagnostic-reference-v1/land-command-motion-001/reference.json",
+      "sha256": "fcfd9bd861a94a4032c2932f960049d1a114ae5771a56d0dd8bf397dbfda002f",
+      "bytes": 1295,
+      "status": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_CONFIRMATORY"
+    },
+    {
+      "path": "data/evaluator_only/dev/diagnostic-reference-v1/land-command-motion-001/qa-summary.json",
+      "sha256": "a4249e7a8679ecbe3ae5e2f55d4de3a1b742a3d4e6761f1408ab9222deb3145f",
+      "bytes": 1692,
+      "status": "PASSED"
+    },
+    {
+      "path": "data/evaluator_only/dev/diagnostic-motion-instrumentation-held-001/worker-0/land-evaluator-truth.json",
+      "sha256": "34f2baffdc92ea1e94501d1237480c07819556d347504d767079189330f0609f",
+      "bytes": 1767,
+      "status": "EVALUATOR_TRUTH_NEVER_METHOD_VISIBLE"
+    }
+  ],
+  "implementation": {
+    "reference_path": "analysis/reference_command_motion.py",
+    "reference_sha256": "1c628f85a71e0ba81dc6961ebc54bbf32a35f6f7ef195a8da645792c0e54ad0c",
+    "qa_path": "analysis/summarize_command_motion_qa.py",
+    "qa_sha256": "e5e765d0c3244ef9f073ebb4c44d735c02f0ba2d6f476361b065bdcf3bbae5bc",
+    "imports_proposed_diagnostic_core": false,
+    "imports_proposed_exporter": false
+  },
+  "findings": {
+    "supported_interval_s": [7.0, 17.0],
+    "median_commanded_planar_speed_mps": 0.8,
+    "median_healthy_measured_planar_speed_mps": 0.2597399950027466,
+    "median_discrepancy_measured_planar_speed_mps": 0.0,
+    "follow_path_failure_count": 2,
+    "source_qualified_wait_recovery_count": 2,
+    "unique_physical_cause_supported": false
+  },
+  "separation_rule": "Evaluator truth, acquisition intervention identity, and independent reference findings must never be supplied to R, P, T, or N as robot-visible evidence.",
+  "allowed_use": "development sufficiency/reference review and prospective protocol design only; never method-visible input and never an independent scenario cluster"
+}
