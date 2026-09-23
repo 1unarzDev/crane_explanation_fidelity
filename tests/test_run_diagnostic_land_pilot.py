@@ -29,6 +29,19 @@ def test_no_diagnostic_presentation_drops_costmap_payload_and_derived_claims():
         "costmapProvenance": "delivered-not-proven-consumed",
         "behaviorTreeTransitionCounts": {"ComputePathToPose:RUNNING->SUCCESS": 2},
         "behaviorTreeCapture": {"completeness": {"terminalTransitionObserved": False}},
+        "planHistoryProvenance": "delivered-plan-not-proven-controller-consumed",
+        "planHistory": [
+            {
+                "wallSeconds": 1.0,
+                "pathId": "sha256:" + "b" * 64,
+                "poseCount": 2,
+                "plannedLengthMeters": 8.0,
+                "minimumSignedLateralDeviationFromRequestedRouteMeters": 0.0,
+                "maximumSignedLateralDeviationFromRequestedRouteMeters": 0.0,
+                "maximumAbsLateralDeviationFromRequestedRouteMeters": 0.0,
+                "poses": [{"x": 0.0, "y": 0.0}, {"x": 8.0, "y": 0.0}],
+            }
+        ],
     }
     root = Path(__file__).parents[1]
     result = MODULE.no_diagnostic_presentation(
@@ -41,6 +54,13 @@ def test_no_diagnostic_presentation_drops_costmap_payload_and_derived_claims():
     assert result["costmap_delivery"]["decoded_route_or_connectivity_computation"] is None
     assert "connected" not in str(result["costmap_delivery"]).lower()
     assert result["execution"]["trajectory_bounds"]["max_y"] == 0.0
+    assert result["delivered_plan_summaries"]["records"][0]["poseCount"] == 2
+    assert "poses" not in result["delivered_plan_summaries"]["records"][0]
+    assert result["delivered_plan_summaries"]["retained_poses_supplied"] is False
+    assert (
+        result["delivered_plan_summaries"]["independent_summary_recomputation_supplied"]
+        is False
+    )
 
 
 def test_caller_factory_rejects_unknown_provider(tmp_path):
@@ -60,4 +80,18 @@ def test_repository_prompt_v2_resolves_episode_without_unresolved_placeholders()
 
     assert "--episode-id masked-episode" in result
     assert "Question: Why?" in result
+    assert "{{" not in result
+
+
+def test_plan_geometry_repository_prompt_uses_exact_v2_runtime_contract():
+    result = MODULE.load_prompt(
+        "diagnostic_repository_agent_plan_geometry_dev_v1.txt",
+        {"QUESTION": "What changed?", "EPISODE_ID": "diagnostic-land-dev-004"},
+    )
+
+    assert "--episode-id diagnostic-land-dev-004" in result
+    assert "--computation-version geometric-route-restriction-v2" in result
+    assert "nav2_roboboat_distance_replanning.xml" in result
+    assert "--deadline-seconds 100" in result
+    assert "Question: What changed?" in result
     assert "{{" not in result

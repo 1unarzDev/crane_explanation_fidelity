@@ -21,7 +21,9 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(ROOT / "packages" / "astro_dock" / "src" / "crane_explain" / "src"))
 
+from audit_diagnostic_language_candidates import result_from_dict
 from claude_cli_caller import ClaudeCliCaller, usage_from_record
+from crane_explain.diagnostic_language import verify_bounded_diagnostic_text
 from run_llm_episode_pilot import ANSWER_SCHEMA, CodexCliCaller
 from run_provenance_agent_pilot import extract_repository
 
@@ -54,6 +56,22 @@ def no_diagnostic_presentation(fixture: dict[str, Any], nav2_config: Path, bt_xm
     y_values = [float(item["y"]) for item in trajectory]
     snapshot = dict(fixture.get("latestCostmapSnapshot") or {})
     snapshot.pop("data", None)
+    plan_summaries = []
+    for plan in fixture.get("planHistory") or []:
+        plan_summaries.append(
+            {
+                key: plan.get(key)
+                for key in (
+                    "wallSeconds",
+                    "pathId",
+                    "poseCount",
+                    "plannedLengthMeters",
+                    "minimumSignedLateralDeviationFromRequestedRouteMeters",
+                    "maximumSignedLateralDeviationFromRequestedRouteMeters",
+                    "maximumAbsLateralDeviationFromRequestedRouteMeters",
+                )
+            }
+        )
     return {
         "schema": "crane-diagnostic-no-computation-presentation-v1",
         "action": {
@@ -83,6 +101,12 @@ def no_diagnostic_presentation(fixture: dict[str, Any], nav2_config: Path, bt_xm
             "maximum_occupied_cells": fixture.get("maximumOccupiedCostmapCells"),
             "latest_snapshot_metadata": snapshot,
             "decoded_route_or_connectivity_computation": None,
+        },
+        "delivered_plan_summaries": {
+            "provenance": fixture.get("planHistoryProvenance"),
+            "records": plan_summaries,
+            "retained_poses_supplied": False,
+            "independent_summary_recomputation_supplied": False,
         },
         "behavior_tree_capture": fixture.get("behaviorTreeCapture", {}).get("completeness"),
         "source": {
@@ -121,6 +145,13 @@ def run(args: argparse.Namespace, caller=None) -> dict:
         raise ValueError("diagnostic export is not robot-visible")
     if diagnostic_export["method_input"]["fixture_summary_sha256"] != sha256(fixture_path):
         raise ValueError("diagnostic export does not match the fixture")
+    question = getattr(args, "question", QUESTION)
+    question_id = getattr(args, "question_id", "diagnostic-mechanism-and-outcome-v1")
+    question_kind = getattr(args, "question_kind", "diagnostic-mechanism-and-outcome-v1")
+    if not question.strip() or not question_id.strip() or not question_kind.strip():
+        raise ValueError("question, question ID, and question kind must be non-empty")
+    if not diagnostic_export.get("final_text_verification", {}).get("accepted"):
+        raise ValueError("checked geometric answer did not pass final-text verification")
 
     caller = caller or caller_for(
         args.provider, args.cache, args.model, args.reasoning_effort
@@ -152,7 +183,7 @@ def run(args: argparse.Namespace, caller=None) -> dict:
             load_prompt(
                 args.repository_prompt,
                 {
-                    "QUESTION": QUESTION,
+                    "QUESTION": question,
                     "EPISODE_ID": diagnostic_export["episode_id"],
                 },
             ),
@@ -190,7 +221,7 @@ def run(args: argparse.Namespace, caller=None) -> dict:
         load_prompt(
             "diagnostic_realization_dev_v1.txt",
             {
-                "QUESTION": QUESTION,
+                "QUESTION": question,
                 "DIAGNOSTIC_RESULT": json.dumps(diagnostic_result, indent=2, sort_keys=True),
             },
         ),
@@ -198,6 +229,7 @@ def run(args: argparse.Namespace, caller=None) -> dict:
         workspace_identity={
             "condition": "P",
             "diagnostic_sha256": sha256(diagnostic_path),
+            "bounded_verifier": "bounded-diagnostic-language-v2",
             **repository_identity,
         },
     )
@@ -209,15 +241,19 @@ def run(args: argparse.Namespace, caller=None) -> dict:
         "usage": usage_from_record(p_record),
     })
     candidate = p_record["parsed_final"]["answer"]
+    verification = verify_bounded_diagnostic_text(
+        result_from_dict(diagnostic_result), candidate
+    )
     template = diagnostic_export["final_answer"]
-    accepted = candidate == template
     outputs.append({
         "condition": "P",
         "raw_candidate": candidate,
-        "text": candidate if accepted else template,
-        "verification_accepted": accepted,
-        "used_template_fallback": not accepted,
-        "verification_policy": "exact-checked-deterministic-rendering",
+        "text": verification.checked_text if verification.accepted else template,
+        "verification_accepted": verification.accepted,
+        "verification_repair_applied": verification.repair_applied,
+        "verification_reasons": list(verification.reasons),
+        "used_template_fallback": not verification.accepted,
+        "verification_policy": verification.policy,
     })
     outputs.append({
         "condition": "T",
@@ -232,7 +268,7 @@ def run(args: argparse.Namespace, caller=None) -> dict:
         load_prompt(
             "diagnostic_no_computation_dev_v1.txt",
             {
-                "QUESTION": QUESTION,
+                "QUESTION": question,
                 "PRESENTATION": json.dumps(presentation, indent=2, sort_keys=True),
             },
         ),
@@ -263,9 +299,9 @@ def run(args: argparse.Namespace, caller=None) -> dict:
         "schema": "crane-diagnostic-land-development-pilot-v1",
         "status": "DEVELOPMENT_ONLY_NOT_FROZEN",
         "episode_id": diagnostic_export["episode_id"],
-        "question_id": "diagnostic-mechanism-and-outcome-v1",
-        "question_kind": "diagnostic-mechanism-and-outcome-v1",
-        "question": QUESTION,
+        "question_id": question_id,
+        "question_kind": question_kind,
+        "question": question,
         "conditions": ["R", "P", "T", "N"],
         "provider": args.provider,
         "model": args.model,
@@ -287,7 +323,7 @@ def run(args: argparse.Namespace, caller=None) -> dict:
         },
         "comparison_scope": {
             "R": "repository-aware agent with raw fixture, exact source, and the same executable diagnostic wrapper as P",
-            "P": "checked diagnostic result, model realization, exact final-text verification/fallback",
+            "P": "checked diagnostic result, model realization, bounded final-text verification/fallback",
             "T": "deterministic rendering of the same checked diagnostic result",
             "N": "runtime/source presentation without decoded geometric diagnostic computation",
             "primary_fair_comparison": "P versus tool-enabled R",
@@ -328,6 +364,9 @@ def parse_args() -> argparse.Namespace:
         default="diagnostic_repository_agent_dev_v1.txt",
         help="prompt filename below research/explanation_fidelity/prompts",
     )
+    parser.add_argument("--question", default=QUESTION)
+    parser.add_argument("--question-id", default="diagnostic-mechanism-and-outcome-v1")
+    parser.add_argument("--question-kind", default="diagnostic-mechanism-and-outcome-v1")
     parser.add_argument("--provider", choices=("codex", "claude"), required=True)
     parser.add_argument("--model", required=True)
     parser.add_argument("--reasoning-effort", default="low")
