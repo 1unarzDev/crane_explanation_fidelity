@@ -3464,3 +3464,22 @@
 - **VALIDITY BOUNDARY:** the v2 rejection, deterministic final P, packet/key, and 13/13 observed
   fallback remain immutable. This targeted regression is not an independent estimate of verifier
   sensitivity, specificity, or P effectiveness.
+
+## 2026-09-23 — clean-clone restoration of latest governed checkpoint
+
+- **STATUS:** `TESTED / PASS`; no study artifact was modified or regenerated.
+- **SOURCE:** fresh recursive clone of umbrella `9e46bf68b1297fe3d4acd0d303a6cb208a193aa7`
+  from the public remote. `scripts/setup_workspace.sh` restored nested core
+  `f41fb7cb3f744233faa9d04b0cc6468ca3c96357` and CRANE
+  `f669e748c657a5e93324e8bcdf1732785e88ce47` exactly.
+- **GOVERNED DATA:** the guarded single-worker R2 pull materialized all seven declared roots: 3,078
+  objects fetched and 4,274 files linked into the clean checkout. The latest plan-pilot model
+  manifest passed its independent size/SHA-256 audit.
+- **TARGETED HASH AUDIT:** every file in all four `diagnostic-land-dev-003/004` robot-visible and
+  evaluator-only manifests matched its retained size and SHA-256. The new four-row blinded packet
+  matched its evaluator-only key's packet hash.
+- **SECURITY:** credentials existed only in ignored temporary `.env` and `.dvc/config.local` files;
+  both were securely removed immediately after verification. The restored content-only checkout
+  remains temporarily at `/tmp/crane-restore-xgcLFc/repo` for inspection.
+- **LIMIT:** this proves artifact restoration and content identity for the latest checkpoint. It
+  does not substitute for human annotation, rerun Unity/ROS, or establish a comparative effect.

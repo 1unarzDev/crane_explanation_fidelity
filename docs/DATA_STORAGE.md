@@ -163,8 +163,10 @@ against both operation classes:
 | Class A operations | 1,000,000/month | 900,000 projected month-to-date |
 | Class B operations | 10,000,000/month | 9,000,000 projected month-to-date |
 
-The initial local snapshot is under 100 MB and approximately 2,900 files, so it is comfortably
-inside those guardrails.
+The current 2026-09-23 governed local inventory is approximately 214 MB and 4,256 files (the clean
+restore linked 4,274 files including root metadata). It remains comfortably inside those
+guardrails; the repository records current metrics before every network operation rather than
+assuming the earlier, smaller snapshot size.
 
 ## No-fee limitation
 
