@@ -250,6 +250,31 @@ python analysis/reference_land_geometric.py \
 This is a development success control with a restricted direct route and measured detour, not a
 failure episode or proof that the observed costmap restriction caused the path deviation.
 
+Reproduce the independently auditable delivered-plan diagnosis from the one-run v2
+instrumentation qualification:
+
+```bash
+PYTHONPATH=packages/astro_dock/src/crane_explain/src \
+python analysis/export_geometric_route_diagnostic.py \
+  data/robot_visible/dev/diagnostic-land-dev-004/fixture-summary.json \
+  --episode-id diagnostic-land-dev-004 \
+  --nav2-config packages/crane_ml/Tools/Performance/nav2_land_proving_ground_fixture.yaml \
+  --bt-xml packages/crane_ml/Tools/Performance/nav2_roboboat_distance_replanning.xml \
+  --robot-radius 0.22 --inflation-radius 0.55 --deadline-seconds 100 \
+  --computation-version geometric-route-restriction-v2 \
+  --output /tmp/diagnostic-land-dev-004-geometric-v2.json
+python analysis/reference_land_plan_geometry.py \
+  data/robot_visible/dev/diagnostic-land-dev-004/fixture-summary.json \
+  --episode-id diagnostic-land-dev-004 \
+  --output /tmp/diagnostic-land-dev-004-plan-reference.json
+```
+
+Both implementations recompute every retained plan hash and geometry summary. The checked answer
+supports a change from an initially direct delivered plan to later non-direct delivered plans and
+the successful action outcome. It does not prove controller consumption, identify the physical
+trigger, or establish costmap-to-plan causation. This is development instrumentation qualification,
+not confirmatory effectiveness evidence.
+
 Reproduce the blind development command-to-motion diagnosis and its independent evaluator-side
 check after pulling both development DVC roots:
 

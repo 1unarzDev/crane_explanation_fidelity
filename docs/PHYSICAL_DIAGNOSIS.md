@@ -47,6 +47,16 @@ disconnection establishes only the audited local/model region; an unsuccessful s
 of infeasibility. A controlled rerun may establish that changing geometry/configuration restores
 modeled feasibility, but not that physical execution would succeed unless it is executed.
 
+The v2 delivered-plan path records retain every pose plus a SHA-256 identity, length, and signed
+deviation from the requested start--goal line. The method recomputes those summaries and fails
+closed on missing poses or disagreement; a separately implemented evaluator repeats the same
+calculation without importing the method. In the one-run development qualification
+`diagnostic-land-dev-004`, both implementations agree that the first delivered plan was direct,
+later delivered plans were non-direct on both sides of the requested line, delivered odometry also
+deviated, and the action succeeded. This licenses a recorded plan-change explanation. It does not
+establish controller consumption or which observation or physical condition triggered the change;
+the retained rolling costmap did not cover enough of the complete route to close that causal gap.
+
 ### Command-to-motion discrepancy
 
 Align desired command, accepted/applied command where available, actuator feedback, and independent

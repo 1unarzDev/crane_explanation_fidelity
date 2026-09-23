@@ -38,6 +38,82 @@ def stamp_seconds(stamp: dict) -> float:
     return float(stamp["sec"]) + float(stamp["nanosec"]) / 1_000_000_000.0
 
 
+def summarize_delivered_plans(fixture: dict) -> dict | None:
+    plans = fixture.get("planHistory") or []
+    if not plans:
+        return None
+    initial = fixture["initialPose"]
+    goal = fixture["goal"]["position"]
+    start_x, start_y = float(initial["x"]), float(initial["y"])
+    route_dx = float(goal["x"]) - start_x
+    route_dy = float(goal["y"]) - start_y
+    route_length = math.hypot(route_dx, route_dy)
+    if route_length <= 1e-9:
+        raise ValueError("requested start and goal must be distinct")
+    summaries = []
+    for index, plan in enumerate(plans):
+        points = plan.get("poses")
+        if not points:
+            return None
+        canonical = json.dumps(points, sort_keys=True, separators=(",", ":")).encode("utf-8")
+        path_id = f"sha256:{hashlib.sha256(canonical).hexdigest()}"
+        length = sum(
+            math.hypot(float(end["x"]) - float(start["x"]),
+                       float(end["y"]) - float(start["y"]))
+            for start, end in zip(points, points[1:])
+        )
+        signed = [
+            (
+                route_dx * (float(point["y"]) - start_y)
+                - route_dy * (float(point["x"]) - start_x)
+            ) / route_length
+            for point in points
+        ]
+        computed = {
+            "path_id": path_id,
+            "planned_length_m": length,
+            "minimum_signed_lateral_deviation_m": min(signed),
+            "maximum_signed_lateral_deviation_m": max(signed),
+            "maximum_absolute_lateral_deviation_m": max(map(abs, signed)),
+        }
+        expected = {
+            "pathId": path_id,
+            "poseCount": len(points),
+            "plannedLengthMeters": length,
+            "minimumSignedLateralDeviationFromRequestedRouteMeters": min(signed),
+            "maximumSignedLateralDeviationFromRequestedRouteMeters": max(signed),
+            "maximumAbsLateralDeviationFromRequestedRouteMeters": max(map(abs, signed)),
+        }
+        for key, value in expected.items():
+            retained = plan.get(key)
+            matches = (
+                math.isclose(float(retained), float(value), rel_tol=1e-12, abs_tol=1e-12)
+                if isinstance(value, float) and isinstance(retained, (int, float))
+                else retained == value
+            )
+            if not matches:
+                raise ValueError(f"plan {index} retained summary mismatch for {key}")
+        summaries.append(computed)
+    return {
+        "delivered_plan_count": len(summaries),
+        "unique_delivered_plan_count": len({item["path_id"] for item in summaries}),
+        "first_plan_maximum_lateral_deviation_m": summaries[0][
+            "maximum_absolute_lateral_deviation_m"
+        ],
+        "all_plans_minimum_signed_lateral_deviation_m": min(
+            item["minimum_signed_lateral_deviation_m"] for item in summaries
+        ),
+        "all_plans_maximum_signed_lateral_deviation_m": max(
+            item["maximum_signed_lateral_deviation_m"] for item in summaries
+        ),
+        "all_plans_maximum_lateral_deviation_m": max(
+            item["maximum_absolute_lateral_deviation_m"] for item in summaries
+        ),
+        "summary_parity_passed": True,
+        "provenance": fixture.get("planHistoryProvenance"),
+    }
+
+
 def export(
     fixture_path: Path,
     episode_id: str,
@@ -47,6 +123,7 @@ def export(
     robot_radius_m: float,
     inflation_radius_m: float,
     deadline_seconds: float,
+    computation_version: str = "geometric-route-restriction-v1",
 ) -> dict:
     fixture = json.loads(fixture_path.read_text(encoding="utf-8"))
     goal = fixture["goal"]["position"]
@@ -118,6 +195,9 @@ def export(
         f"bt-xml-sha256:{bt_sha}",
     )
     completeness = fixture.get("behaviorTreeCapture", {}).get("completeness", {})
+    plan_geometry = summarize_delivered_plans(fixture)
+    if computation_version == "geometric-route-restriction-v2" and plan_geometry is None:
+        raise ValueError("v2 geometric diagnosis requires retained delivered plan poses")
     observation = GeometricRouteObservation(
         episode_id=episode_id,
         evidence_ids=evidence_ids,
@@ -141,6 +221,29 @@ def export(
         costmap_snapshot_sha256=str(snapshot["dataSha256"]),
         costmap_snapshot_timestamp_s=stamp_seconds(snapshot["stamp"]),
         terminal_transition_observed=bool(completeness.get("terminalTransitionObserved", False)),
+        delivered_plan_count=(
+            plan_geometry["delivered_plan_count"] if plan_geometry else None
+        ),
+        unique_delivered_plan_count=(
+            plan_geometry["unique_delivered_plan_count"] if plan_geometry else None
+        ),
+        first_plan_maximum_lateral_deviation_m=(
+            plan_geometry["first_plan_maximum_lateral_deviation_m"]
+            if plan_geometry else None
+        ),
+        all_plans_minimum_signed_lateral_deviation_m=(
+            plan_geometry["all_plans_minimum_signed_lateral_deviation_m"]
+            if plan_geometry else None
+        ),
+        all_plans_maximum_signed_lateral_deviation_m=(
+            plan_geometry["all_plans_maximum_signed_lateral_deviation_m"]
+            if plan_geometry else None
+        ),
+        all_plans_maximum_lateral_deviation_m=(
+            plan_geometry["all_plans_maximum_lateral_deviation_m"]
+            if plan_geometry else None
+        ),
+        computation_version=computation_version,
         source_anchor_ids=(
             f"nav2-config-sha256:{nav2_sha}",
             f"bt-xml-sha256:{bt_sha}",
@@ -168,6 +271,8 @@ def export(
             "robot_radius_m": robot_radius_m,
             "inflation_radius_m": inflation_radius_m,
             "deadline_seconds": deadline_seconds,
+            "computation_version": computation_version,
+            "delivered_plan_geometry": plan_geometry,
         },
         "reference_computation": (
             {
@@ -205,6 +310,7 @@ def export(
                     else "delivered global Nav2 costmap metadata without cell payload"
                 ),
                 "delivered odometry trajectory",
+                "delivered Nav2 global-plan geometry",
                 "NavigateToPose result status and timing",
                 "exact Nav2 configuration and BT source hashes",
             ],
@@ -227,6 +333,11 @@ def main() -> None:
     parser.add_argument("--robot-radius", type=float, required=True)
     parser.add_argument("--inflation-radius", type=float, required=True)
     parser.add_argument("--deadline-seconds", type=float, required=True)
+    parser.add_argument(
+        "--computation-version",
+        choices=("geometric-route-restriction-v1", "geometric-route-restriction-v2"),
+        default="geometric-route-restriction-v1",
+    )
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     payload = export(
@@ -237,6 +348,7 @@ def main() -> None:
         robot_radius_m=args.robot_radius,
         inflation_radius_m=args.inflation_radius,
         deadline_seconds=args.deadline_seconds,
+        computation_version=args.computation_version,
     )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")

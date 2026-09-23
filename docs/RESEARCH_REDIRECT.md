@@ -77,7 +77,7 @@ prespecified physical-diagnosis evaluation.
 | Provenance/checking reduces material error versus repository agents | 33 paired F/G/H episodes and complete outputs | Blind labels, adjudication, frozen analysis; sample is below minimum | Finish original annotation/adjudication and analysis only | A governed under-target cohort exists; no sealed effect claim yet |
 | G communicates software recovery mechanisms conservatively | Checked plans, exact BT/source hashes, final verification; 46/66 fallbacks | Blind correctness/specificity labels | Legacy annotation | Mechanism/source linkage is implemented; trustworthiness effect unmeasured |
 | Physical diagnostics improve useful explanations | None in the legacy study; current planner explicitly withholds cause | Validated diagnostic results, matched R/P/T/N outputs, independent labels | New held-out diagnostic study | Not yet supported |
-| Land geometry meaningfully affects behavior | Governed warehouse/proving-ground runs retain detour, blockage, recovery, trajectories and costmap summaries. Current-source `diagnostic-land-dev-002` independently reproduces a direct-route cost-253 restriction, retained-grid connectivity, 1.036 m lateral deviation, and successful completion | Successive-plan differences, independent labels, and a prospective test that distinguishes observed association from causal influence | Geometric-restriction, path-comparison, and ambiguous-evidence pilots | One development run supports a bounded route restriction plus detour and success; obstacle identity, exact planner consumption, and restriction-caused-deviation remain unestablished |
+| Land geometry meaningfully affects behavior | Governed warehouse/proving-ground runs retain detour, blockage, recovery, trajectories and costmap summaries. Current-source `diagnostic-land-dev-002` independently reproduces a direct-route cost-253 restriction and successful detour. The predeclared `diagnostic-land-dev-004` qualification independently reproduces 70 delivered plan geometries: an initially direct plan followed by plans spanning -1.175 m to +1.035 m before action success | Blinded labels and a prospective test that distinguishes delivered plan change from its unresolved physical trigger | Path-comparison and ambiguous-evidence pilots using the v2 auditable plan record | Development evidence supports delivered route changes and success; controller consumption, obstacle identity, exact triggering observation, and costmap-to-plan causation remain unestablished |
 | Command-to-motion analysis finds execution failures | Land and boat runs retain commands/motion in runtime artifacts and boat plots; healthy boat response is calibrated | Versioned response diagnostic, tolerances, uncertainty, held-out failures | Calibrated command-to-motion pilot with nominal controls | Signals exist; no prospective diagnostic accuracy result |
 | RoboBoat supports a focused surface diagnostic domain | Stable command mapping, path tracking, independent docking, goal-margin and planning failures | Prospective robot-visible diagnostic packets and matched comparisons; no validated wave attribution | One geometric and one execution/disturbance family, bounded pilot | RoboBoat is ready for bounded pilots, not a wave-drift claim |
 | Final language is faithful to an internal diagnosis | Exact legacy sentence verifier and fallback | Diagnostic-plan schema, diagnostic-language verifier, diagnosis-to-language annotation | Score internal diagnostic output separately from final answer | Legacy verification exists but does not verify physical diagnoses |
@@ -187,3 +187,21 @@ cluster. Project review finds an incorrect interval/duration in R, checked value
 stronger Wait/retry association in N; these are not labels. Final P again falls back to T, bringing
 the current inventory to 48 responses in twelve packets over eight clusters and immutable fallback
 to 12/12. Human annotation/adjudication and all inferential gates remain `NOT_RUN`.
+
+### Delivered-plan qualification checkpoint — 2026-09-23
+
+The first predeclared plan-geometry run (`diagnostic-land-dev-003`) retained only hashes and
+summaries, so it failed the independent-recomputation admission gate and remains a preserved
+partial instrumentation result. The single corrected no-retry run (`diagnostic-land-dev-004`)
+retained 12,975 poses across 70 distinct delivered plans. An independently implemented reference
+recomputed every hash, length, and deviation without mismatch. The first plan was direct; later
+plans ranged from -1.175 m to +1.035 m about the requested line; delivered odometry also deviated;
+and NavigateToPose succeeded.
+
+This closes the specific plan-observability gap but does not establish a physical trigger. The
+rolling costmap cannot classify the complete requested route, and delivered plans do not prove
+controller consumption. The checked v2 answer therefore reports the useful route change and
+successful outcome at the recorded-sequence level while withholding costmap causation and obstacle
+identity. No R/P/T/N call or new annotation packet has been made for this episode. The diagnostic
+inventory remains 48 responses in twelve packets over eight clusters, with human annotation,
+protocol freeze, held-out collection, and inferential analysis still `NOT_RUN`.

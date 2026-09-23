@@ -3364,3 +3364,40 @@
   data so the separately implemented reference can recompute hashes, lengths, and deviations.
   `dev-003` is not rerun or replaced. This is evidence-driven instrumentation correction, not
   scenario tuning.
+
+## 2026-09-23 — delivered-plan instrumentation qualification, corrected one-run test
+
+- **STATUS:** `RUN / RETAINED / GOVERNED / INSTRUMENTATION_QUALIFIED / DEVELOPMENT_ONLY`; model
+  comparison, blinded annotation, adjudication, and confirmatory use remain `NOT_RUN`.
+- **PREDECLARATION:** `land-plan-geometry-qualification-v2.json` fixed one no-retry run,
+  `diagnostic-land-dev-004`, ROS domain 123, port 12323, seed 62003, and required retention of the
+  exact delivered plan poses plus independent recomputation. It explicitly retained unexpected,
+  absent, or zero path change.
+- **RUN:** the hash-proven fixture was valid and NavigateToPose succeeded after 17.567 m in
+  73.110 s. It retained 70 delivered plans with 70 unique hashes and 12,975 poses, 715 commands,
+  3,604 odometry messages, 271 costmap observations, 637 BT transitions, and no recovery.
+- **INDEPENDENT RESULT:** a separately implemented evaluator recomputed every retained path hash,
+  pose count, length, and signed/absolute deviation with zero mismatches. The first plan was direct
+  at 0.000 m maximum deviation; the full history ranged from -1.175 m to +1.035 m, while delivered
+  odometry ranged from -1.104 m to +0.998 m. The action succeeded.
+- **USEFUL CHECKED RESPONSE:** `geometric-route-restriction-v2` now leads with the supported
+  direct-to-non-direct delivered-plan change instead of only rejecting a false failure premise.
+  Its causal level is `recorded_sequence`; final deterministic text passes the exact verifier.
+- **BOUNDARY:** the latest rolling costmap did not cover enough of the full 18 m requested route
+  to classify the physical trigger. The evidence does not prove controller consumption,
+  costmap-to-plan causation, evaluator-only obstacle identity, or a unique physical cause.
+- **FAIL-CLOSED REGRESSION:** missing plan poses, a tampered retained summary, a non-direct first
+  plan mislabeled as direct, and an impossible unique-plan count are rejected or withheld. The
+  focused exporter/core suite passes 39 tests; the full core suite passes 89 tests; the combined
+  provider-neutral umbrella/analysis/core suite passes 254 tests; and the frozen-integrity subset
+  separately passes all 8 tests.
+- **GOVERNANCE:** paired manifests are
+  `manifests/data/diagnostic-land-dev-004.{robot-visible,evaluator-only}.json`; the v1 partial run
+  is separately preserved by `diagnostic-land-dev-003.*.json`. Robot-visible leakage scans pass,
+  and the fixture copies are byte-identical at SHA-256
+  `db084dea8b2b8619be0f6bd59c11f2cd5a7d5b5ba9fc408afa1d9ef9f40f355b`. No frozen F/G/H
+  artifact was modified.
+- **NEXT DECISION:** any R/P/T/N question must ask what route change is supported and what trigger
+  remains unresolved; it must not reuse the failure-oriented question. Tool-enabled R must receive
+  the same fixture, source, and executable plan computation. No comparative claim is supported
+  without the predeclared one-shot calls and blinded annotation.
