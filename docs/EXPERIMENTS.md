@@ -2717,3 +2717,39 @@
   reference, raw output/cache, and pre-/post-fix diagnostic artifacts are retained. The inventory
   is 24 responses in six packets over exactly four clusters. Human annotation and adjudication
   remain `NOT_RUN`; no apparent P-over-R difference is claimed from project-author inspection.
+
+## 2026-09-22 — blinded human-annotation handoff readiness
+
+- **STATUS:** `PREPARED / STRUCTURALLY_VALIDATED / HUMAN_ANNOTATION_NOT_RUN`.
+- **HANDOFF:** two separate local, ignored archives were generated under
+  `artifacts/annotation-handoff-20260922/`. Each contains the appropriate legacy and diagnostic
+  guides, the six-response legacy calibration packet, the 198-response sealed legacy packet, all
+  six four-response diagnostic packets, and separately identified blank forms for one annotator.
+  No evaluator-only key, condition/model identity, verifier result, or fallback field is present.
+- **VALIDATION:** each archive contains eight packets and 228 form rows. Every form row retains its
+  opaque response ID, prefilled unit total, and one non-identifying annotator ID. The packet-key
+  hashes remain governed by their committed manifests; the archives themselves are convenience
+  copies and are not study data or labels.
+- **BOUNDARY:** no label was synthesized or inferred. Two independent humans must finish the
+  calibration before opening the sealed legacy packet, label the sealed and diagnostic packets
+  independently, and return forms for a distinct disagreement adjudicator. Until then, all legacy
+  and diagnostic outcome cells remain `PENDING`.
+
+## 2026-09-22 — isolated current-source Unity rebuild attempt
+
+- **STATUS:** `NOT_RUN_TO_COMPLETION / INFRASTRUCTURE_FAILURE / NO_EPISODE_COLLECTED`.
+- **PURPOSE:** prepare a fresh, prospectively declared nominal land control without modifying the
+  stale default player or any frozen runtime. Unity CLI 1.0.0-beta.5 invoked editor 6000.5.10f1
+  against pinned CRANE `c46de4d` with an isolated output below `/tmp`.
+- **RESULT:** the editor completed initial asset refresh but then made no log or output-directory
+  progress for eight minutes. The process was stopped once; no player, manifest, capture, model
+  call, or episode resulted. Unity changed two editor-preference files during startup; both known
+  side effects were restored byte-for-byte, leaving the CRANE checkout clean.
+- **EXISTING BUILD CHECK:** the already documented isolated player at
+  `/tmp/crane-current-source-build-20260922` remains available. Its manifest hashes exactly to
+  `1805281a0910eae84b775a2f5e43efa2b99735c4c4f662cb3c751f6b85f0fcae`, build GUID is
+  `2e501629ce3544a783506153da3c0268`, and warehouse source/manifest assets match the retained
+  development record. This identity check does not itself create a prospective nominal episode.
+- **DECISION:** do not retry the stationary build blindly and do not substitute the stale default
+  player. Human annotation and manuscript/analysis work have higher immediate paper value; a new
+  land capture should resume only with a predeclared, versioned diagnostic capture contract.
