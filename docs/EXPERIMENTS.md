@@ -4722,3 +4722,22 @@
   establishes bounded deterministic composition on one inspected case, not P-over-R superiority.
   Any language comparison requires another prospective declaration and a tool-enabled R with
   identical evidence, diagnostics, source/configuration, model strength, and budget.
+
+## 2026-09-24 — bounded composition language-gate predeclaration
+
+- **STATUS:** `PREDECLARED_DEVELOPMENT_ONLY_NOT_RUN`; exactly one `gpt-6-sol` high call for each of
+  R, P, and N plus deterministic T, with no retry. No Luna call is authorized.
+- **QUESTION:** ask for the deepest supported explanation during the retained observation window,
+  its connection to recorded navigation behavior, and unresolved limits including the eventual
+  outcome. The wording does not presuppose a terminal failure.
+- **FAIRNESS:** tool-enabled R receives the same robot-visible fixture/command record, both exact
+  executable diagnostic adapters, pinned CRANE/core source and configuration, model, reasoning
+  effort, and one-call budget. Its isolated workspace excludes P's precomputed diagnostics and
+  composition. P's intended difference is the checked composition plan and final-text gate.
+- **REQUIRED CONTENT:** preserve the 10--51 s discrepancy and speeds, recorded pre-cutoff
+  FollowPath/Wait context, nonterminal boundary, geometric insufficiency, provenance limits, and
+  unresolved unique physical cause. Terminal, exhaustion, global-route, obstacle-cause, and
+  evaluator-intervention claims are prohibited.
+- **STOP/INFERENCE:** retain all outputs regardless of direction and stop after three calls. This
+  adds no physical or confirmatory cluster and consumes 0.000/0.050 alpha. A Luna audit requires a
+  separately committed blinded packet/reference declaration; parity or fallback cannot freeze P.
