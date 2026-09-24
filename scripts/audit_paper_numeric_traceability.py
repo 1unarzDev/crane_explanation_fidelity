@@ -385,6 +385,17 @@ def main() -> int:
     require_equal(pointer(luna_v2, "/efforts/medium/qualified"), False, "Luna v2 qualified")
     checked_assertions += 4
 
+    luna_v4_dev = load("manifests/annotation/luna-model-judge-v1-development-v4-high.json")
+    require_equal(luna_v4_dev["all_gates_passed"], True, "Luna v4 high development gates")
+    require_equal(luna_v4_dev["required_unit_correct"], 32, "Luna v4 development units")
+    luna_v4_heldout = load("manifests/annotation/luna-model-judge-v1-heldout-v4-high.json")
+    require_equal(pointer(luna_v4_heldout, "/passes/pass-1/false_rejections"), 1, "Luna v4 pass-1 false rejections")
+    require_equal(pointer(luna_v4_heldout, "/passes/pass-2/false_rejections"), 2, "Luna v4 pass-2 false rejections")
+    require_equal(pointer(luna_v4_heldout, "/passes/pass-1/required_unit_correct"), 15, "Luna v4 pass-1 units")
+    require_equal(pointer(luna_v4_heldout, "/passes/pass-2/required_unit_correct"), 15, "Luna v4 pass-2 units")
+    require_equal(luna_v4_heldout["study_evaluation_allowed"], False, "Luna v4 study scoring")
+    checked_assertions += 7
+
     require_paper_fragments(
         [
             "33 included episode clusters",
@@ -392,6 +403,8 @@ def main() -> int:
             "minimum of 40 and target of 50",
             "198 one-shot responses",
             "46 of 66 responses (69.7%)",
+            "93.9% core; 97.0% units",
+            "P1: 1 FR; P2: 2 FR; 15/16 units each",
             "0.3738 m goal error",
             "0.04861 m/s",
             "0.0262 m margin",
@@ -421,7 +434,6 @@ def main() -> int:
             "52 responses in 13 packets over nine clusters",
             "13/13 development questions overall",
             "Primary planning subset & 6 clusters",
-            "94.4% core; 93.75% units",
         ]
     )
 
