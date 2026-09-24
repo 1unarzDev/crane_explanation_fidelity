@@ -416,6 +416,42 @@ def main() -> int:
     require_equal(luna_v7["study_responses_scored"], 0, "Luna v7 study responses")
     checked_assertions += 5
 
+    route_result_manifest = load(
+        "manifests/annotation/luna-diagnostic-land-binding-route-change-v1-result.json"
+    )
+    route_result_path = pointer(route_result_manifest, "/result/path")
+    require_equal(
+        digest(route_result_path),
+        pointer(route_result_manifest, "/result/sha256"),
+        "route-change Luna result hash",
+    )
+    require_equal(route_result_manifest["judge_measurements"], 8, "route-change judgments")
+    require_equal(route_result_manifest["call_failures"], 0, "route-change call failures")
+    require_equal(route_result_manifest["transport_retries"], 0, "route-change retries")
+    for pass_name in ("pass-1", "pass-2"):
+        prefix = f"/passes/{pass_name}"
+        for condition, expected in (("P", True), ("R", True), ("T", True), ("N", False)):
+            require_equal(
+                pointer(route_result_manifest, f"{prefix}/{condition}"),
+                expected,
+                f"route-change {pass_name} {condition}",
+            )
+        require_close(
+            pointer(route_result_manifest, f"{prefix}/p_minus_r"),
+            0.0,
+            0.0,
+            f"route-change {pass_name} P-minus-R",
+        )
+        checked_assertions += 5
+    require_equal(
+        route_result_manifest["candidate_selection"],
+        "DO_NOT_FREEZE_CURRENT_P",
+        "route-change candidate disposition",
+    )
+    require_equal(route_result_manifest["independent_cluster_increment"], 0, "route-change cluster increment")
+    require_close(route_result_manifest["confirmatory_alpha_consumed"], 0.0, 0.0, "route-change alpha")
+    checked_assertions += 7
+
     require_paper_fragments(
         [
             "33 included episode clusters",
@@ -455,6 +491,7 @@ def main() -> int:
             "52 responses in 13 packets over nine clusters",
             "13/13 development questions overall",
             "Primary planning subset & 6 clusters",
+            "P--R: 0.0 in both passes",
         ]
     )
 
