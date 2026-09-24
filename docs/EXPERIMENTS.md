@@ -39,6 +39,29 @@
   condition set from the sealed key, never synthesizes absent arms, and retains the same two fresh
   isolated passes and no-rejudge rule. This is workflow support; no Luna call or label changed.
 
+## 2026-09-24 — candidate-v2 run 001 retained result
+
+- **STATUS:** `VALID_DEVELOPMENT_DIAGNOSTIC_AND_COMPLETE_PAIRED_LUNA_MEASUREMENT`; the single
+  authorized `cmv2-dev-001` attempt is retained without retry or replacement. Build admission and
+  all 14 exact v5 scenario-binding checks passed. Unity itself was valid with no logged error or
+  exception; the shared fixture's false `valid` flag only reflects its generic success expectation
+  versus the observed abort and is recorded separately.
+- **DIAGNOSIS:** the checked v3 export and separate computation agree on a sustained 11--21 s
+  command--motion discrepancy: 0.260 m/s median delivered command versus 0.000 m/s delivered
+  odometry, against a 0.25974 m/s calibrated healthy response. The action aborted after two
+  FollowPath failures, two source-qualified Wait invocations, and three FollowPath attempts. This
+  does not identify actuator rejection, mobility constraint, collision/obstruction, slip, or
+  another unique physical cause.
+- **LANGUAGE/JUDGE:** P made zero model calls; tool-enabled R made its single `gpt-6-sol` high call.
+  Four frozen Luna-v7 high calls completed without retry or failure. Both conditions failed pass 1
+  and passed pass 2, for P-minus-R = 0 in each pass. Pass 1 treated the third-attempt temporal
+  statement as unsupported; pass 2 did not. Retain this repeated-judge disagreement without repair
+  or a third vote.
+- **INFERENCE:** one independent development cluster, zero confirmatory clusters, and
+  `0.000/0.050` alpha. Candidate readiness is not established; the fixed six-run pilot continues
+  regardless of favorability. The tracked disposition is
+  `manifests/data/cmv2-dev-001-disposition.json`.
+
 ## 2026-09-24 — deterministic command--motion candidate-v2 runner
 
 - **IMPLEMENTED / TESTED / NOT FROZEN:** `analysis/run_command_motion_candidate_v2.py` compares

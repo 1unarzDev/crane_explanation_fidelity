@@ -1,0 +1,113 @@
+{
+  "schema": "crane-command-motion-candidate-v2-run-disposition/v1",
+  "recorded_date": "2026-09-24",
+  "run_id": "cmv2-dev-001",
+  "cluster_id": "cmv2-land-001",
+  "status": "VALID_DEVELOPMENT_DIAGNOSTIC_AND_COMPLETE_PAIRED_LUNA_MEASUREMENT",
+  "predeclaration": "research/explanation_fidelity/experiment_configs/development/command-motion-candidate-v2-multiconfiguration-pilot-v1.json",
+  "amendments": [
+    "research/explanation_fidelity/experiment_configs/development/command-motion-candidate-v2-multiconfiguration-pilot-v1-amendment-1.json",
+    "research/explanation_fidelity/experiment_configs/development/command-motion-candidate-v2-multiconfiguration-pilot-v1-amendment-2.json",
+    "research/explanation_fidelity/experiment_configs/development/command-motion-candidate-v2-multiconfiguration-pilot-v1-amendment-3.json"
+  ],
+  "admission": {
+    "attempt_count": 1,
+    "retry_performed": false,
+    "replacement_layout_used": false,
+    "player_build_audit_accepted": true,
+    "scenario_binding_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "unity_result_valid": true,
+    "unity_logged_errors": 0,
+    "unity_logged_exceptions": 0,
+    "accepted_goal_count": 1,
+    "terminal_result_count": 1,
+    "recording_valid": true,
+    "generic_fixture_valid": false,
+    "generic_fixture_limit": "The shared fixture expected success; its false valid flag records expected-outcome mismatch, not an invalid recording."
+  },
+  "observed": {
+    "navigation_status": "aborted",
+    "action_error_code": 105,
+    "displacement_meters": 2.933695061652337,
+    "controller_commands": 414,
+    "odometry_messages": 2208,
+    "trajectory_samples": 2194,
+    "costmap_observations": 106,
+    "behavior_tree_transitions": 39,
+    "source_qualified_wait_invocations": 2,
+    "follow_path_attempts": 3,
+    "follow_path_failures": 2
+  },
+  "fault_induction": {
+    "successful": true,
+    "evaluator_only": true,
+    "configured_hold_after_simulation_s": 18.0,
+    "actual_hold_simulation_s": 18.039993608276644,
+    "release_configured": false,
+    "held_at_shutdown": true
+  },
+  "diagnostic": {
+    "disposition": "supported",
+    "computation_version": "command-motion-discrepancy-v3",
+    "healthy_interval_s": [0.0, 6.0],
+    "healthy_measured_planar_speed_mps": 0.2597399950027466,
+    "discrepancy_interval_s": [11.0, 21.0],
+    "median_commanded_planar_speed_mps": 0.26,
+    "median_measured_planar_speed_mps": 0.0,
+    "complete_reference_audit_accepted": true,
+    "qa_status": "VALID_DEVELOPMENT_DIAGNOSTIC_SCENARIO_NOT_CONFIRMATORY"
+  },
+  "language_evaluation": {
+    "conditions": ["P", "R"],
+    "p_model_calls": 0,
+    "r_model_calls": 1,
+    "r_model": "gpt-6-sol",
+    "r_reasoning_effort": "high",
+    "luna_model": "gpt-6-luna",
+    "luna_reasoning_effort": "high",
+    "luna_passes": 2,
+    "luna_calls": 4,
+    "call_failures": 0,
+    "pass_1": {
+      "P_supported_diagnostic_success": false,
+      "R_supported_diagnostic_success": false,
+      "P_material_error": true,
+      "R_material_error": true,
+      "paired_difference": 0
+    },
+    "pass_2": {
+      "P_supported_diagnostic_success": true,
+      "R_supported_diagnostic_success": true,
+      "P_material_error": false,
+      "R_material_error": false,
+      "paired_difference": 0
+    },
+    "unresolved_judge_difference": "Pass 1 treated the third-FollowPath-attempt temporal statement as unsupported; pass 2 did not. The case is retained without rejudging or repair."
+  },
+  "hashes": {
+    "player_build_audit_sha256": "e60f6e5efd5a58b0b724deb1eb931a2219c25daea53853b39a602ae634864a77",
+    "scenario_binding_audit_sha256": "697f5d9cbbe9d0c3a421ee09dd44c14b4dc6fb5ad71d2da811451b31b0b266a2",
+    "robot_visible_events_sha256": "14d53421d68a4508d27a48d241bc99970370fff63ebd1dbd8941eb89a1b760a9",
+    "diagnostic_export_sha256": "fd178bba7a62cc476c704f1baf6793c970078d1cefca443c6d021161be8ef6fe",
+    "independent_reference_sha256": "421a7e538aa77a827d65ffd2ba75e1b9bb38472c40c47adf9c41dfa5f95d6151",
+    "complete_annotation_reference_sha256": "21dbb6905fd76f930b729e48b7397cab68880df19810d3a06b55589d0c6c95e6",
+    "candidate_result_sha256": "ffbe2004017e1987e7a876d18619d90963a513f1b5ee48fbd21b1218e2c6ef2c",
+    "blinded_packet_sha256": "aebbf33b254d3422c51f8a0cdd9a5d597cb3d14aa72308d55b98b244c82a12aa",
+    "condition_key_sha256": "11306163a546ba2a41e794f977b8ea87973570219df472667cbd63ce422d4d16",
+    "luna_summary_sha256": "e7f9240af85468449c458a63d48e99eef6a5e8cc7970ddabf323f7f22e05d211"
+  },
+  "inference": {
+    "independent_cluster_increment": 1,
+    "confirmatory_cluster_increment": 0,
+    "confirmatory_alpha_consumed": 0.0,
+    "candidate_readiness": "NOT_ESTABLISHED",
+    "paired_result": "TIE_IN_BOTH_PASSES",
+    "limitations": [
+      "Development-only candidate screening; no confidence interval or significance claim.",
+      "The supported execution discrepancy does not uniquely identify its physical cause.",
+      "Repeated Luna passes are model measurements, not independent human annotators.",
+      "The pass-level material-error disagreement is retained and not adjudicated by another Luna call."
+    ]
+  }
+}
