@@ -14,6 +14,19 @@
 - **NEXT GATE:** build a complete-by-construction independent reference packet and predeclare a
   bounded set of fresh v5 configurations before any physical episode or model call.
 
+### Candidate-v2 delivery-semantics correction
+
+- **IMPLEMENTED / TESTED:** nested diagnostic core commit `bea1256` removes the phrase
+  “independently delivered odometry” from the insufficient-evidence path. Future candidate-v2
+  inputs must use `command-motion-discrepancy-v3`, whose supported path already says only
+  “delivered odometry.” The desired next measurement may still be independently measured motion;
+  that describes signal semantics, not an unsupported delivery relationship.
+- **FAIL-CLOSED:** the candidate runner rejects pre-v3 diagnostics and final answers containing
+  “independently delivered.” Fifty-three core tests and seven candidate/current-runner tests pass.
+  Existing immutable outputs are unchanged and are not re-scored or repaired.
+- **REPRODUCTION:** `manifests/workspace.lock.json` now pins the new nested core and the already
+  committed CRANE v5 source. This change produces no new episode, response, label, or alpha use.
+
 ## 2026-09-24 — v5 clean-source build and scenario-binding smoke
 
 - **QUALIFIED INFRASTRUCTURE / CALIBRATION ONLY:** Unity 6000.5.10f1 built CRANE commit

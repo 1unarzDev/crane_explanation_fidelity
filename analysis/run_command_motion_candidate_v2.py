@@ -55,6 +55,11 @@ def run(args: argparse.Namespace, caller=None) -> dict[str, Any]:
         raise ValueError("candidate v2 requires exact checked deterministic rendering")
     if export.get("visibility") != "robot_visible":
         raise ValueError("candidate v2 evidence must be robot-visible")
+    diagnostic = export.get("diagnostic_result", {})
+    if diagnostic.get("computation_version") != "command-motion-discrepancy-v3":
+        raise ValueError("candidate v2 requires command-motion-discrepancy-v3")
+    if "independently delivered" in export.get("final_answer", "").lower():
+        raise ValueError("candidate v2 forbids an unsupported stream-delivery relationship")
 
     method_payload = method_input_from_export(export)
     question = getattr(args, "question", QUESTION)

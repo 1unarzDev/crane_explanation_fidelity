@@ -43,10 +43,29 @@ def args(tmp_path: Path, evidence: Path = EVIDENCE) -> argparse.Namespace:
     )
 
 
+def candidate_fixture() -> dict:
+    payload = json.loads(EVIDENCE.read_text(encoding="utf-8"))
+    payload["diagnostic_result"]["computation_version"] = "command-motion-discrepancy-v3"
+    payload["final_answer"] = payload["final_answer"].replace(
+        "independently delivered odometry", "delivered odometry"
+    )
+    return payload
+
+
+def write_candidate_fixture(payload: dict) -> Path:
+    path = ROOT / "data/robot_visible/dev" / "candidate-v2-test-fixture.json"
+    path.write_text(json.dumps(payload), encoding="utf-8")
+    return path
+
+
 def test_candidate_uses_deterministic_p_and_calls_only_stronger_r(tmp_path: Path):
     caller = FakeCaller()
-    result = run(args(tmp_path), caller=caller)
-    evidence = json.loads(EVIDENCE.read_text(encoding="utf-8"))
+    evidence = candidate_fixture()
+    fixture = write_candidate_fixture(evidence)
+    try:
+        result = run(args(tmp_path, fixture), caller=caller)
+    finally:
+        fixture.unlink()
 
     assert [item["condition"] for item in result["outputs"]] == ["P", "R"]
     assert result["outputs"][0]["text"] == evidence["final_answer"]
@@ -60,12 +79,32 @@ def test_candidate_uses_deterministic_p_and_calls_only_stronger_r(tmp_path: Path
 
 
 def test_candidate_rejects_nonexact_or_nonrobot_visible_export(tmp_path: Path):
-    payload = json.loads(EVIDENCE.read_text(encoding="utf-8"))
+    payload = candidate_fixture()
     payload["final_text_verification"]["policy"] = "post-hoc-policy"
     bad = ROOT / "data/robot_visible/dev" / "candidate-v2-invalid-test.json"
     bad.write_text(json.dumps(payload), encoding="utf-8")
     try:
         with pytest.raises(ValueError, match="exact checked deterministic"):
+            run(args(tmp_path, bad), caller=FakeCaller())
+    finally:
+        bad.unlink()
+
+
+def test_candidate_rejects_old_computation_or_delivery_overclaim(tmp_path: Path):
+    payload = candidate_fixture()
+    payload["diagnostic_result"]["computation_version"] = "command-motion-discrepancy-v2"
+    bad = write_candidate_fixture(payload)
+    try:
+        with pytest.raises(ValueError, match="requires command-motion-discrepancy-v3"):
+            run(args(tmp_path, bad), caller=FakeCaller())
+    finally:
+        bad.unlink()
+
+    payload = candidate_fixture()
+    payload["final_answer"] += " Independently delivered odometry confirmed it."
+    bad = write_candidate_fixture(payload)
+    try:
+        with pytest.raises(ValueError, match="stream-delivery relationship"):
             run(args(tmp_path, bad), caller=FakeCaller())
     finally:
         bad.unlink()
