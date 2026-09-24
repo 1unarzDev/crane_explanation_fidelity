@@ -4475,3 +4475,18 @@
 - **INTERPRETATION:** this is post-observation threshold development and a negative mechanism check,
   not a new independent episode, method effect, or confirmatory result. The configuration must be
   fixed before a fresh composition run; evaluator intervention identity remains excluded.
+
+## 2026-09-24 — land diagnostic-composition run predeclaration
+
+- **STATUS:** `PREDECLARED_NOT_RUN`; one physical attempt, no model or Luna call.
+- **RUN:** `diagnostic-land-composition-dev-008`, the last unused v4 development connected-detour
+  layout, seed 62007, domain 130, port 12328. The validated player, scene, physics, catalog, Nav2
+  configuration, and BT are unchanged.
+- **INTERVENTION:** one already-supported evaluator-only planar mobility hold at fixed simulation
+  time 18.0 s, with no release. Its identity and timing cannot enter robot-visible evidence.
+- **PURPOSE:** obtain one case that requires composition of route geometry, command response, and
+  execution provenance. Existing single-mechanism answers frequently tie tool-enabled R and P.
+- **ADMISSION:** build and exact scenario binding remain fail-closed; recording validity is separate
+  from fault-induction success. Retain any valid unexpected outcome and do not rerun or replace the
+  layout. Both proposed diagnostics require independent references before language generation.
+- **INFERENCE:** development-only; zero confirmatory clusters and 0.000/0.050 alpha consumed.

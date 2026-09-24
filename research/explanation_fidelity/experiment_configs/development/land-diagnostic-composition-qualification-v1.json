@@ -1,0 +1,100 @@
+{
+  "schema": "crane-land-diagnostic-composition-development/v1",
+  "status": "PREDECLARED_NOT_RUN",
+  "declared_at": "2026-09-24T10:48:53-05:00",
+  "purpose": "Create one fresh development episode in which geometric route evidence and command-to-motion evidence must be composed without exposing the evaluator intervention or overstating which condition caused the terminal outcome.",
+  "paper_value": {
+    "why_this_run": "Existing single-mechanism development answers show frequent P/R ties. A composition case directly tests the proposed checked-plan advantage while reusing the validated player, one remaining fresh development layout, existing capture path, and an already-supported per-run mobility condition.",
+    "relative_to_more_easy_episodes": "Higher expected differentiation value because the answer must select and relate multiple supported mechanisms and preserve competing explanations.",
+    "relative_to_annotation_or_manuscript": "This is one bounded physical run needed before candidate selection; it authorizes no scoring and does not delay independent annotation once a candidate exists."
+  },
+  "source": {
+    "umbrella_commit_before_declaration": "09f7a45a5ae83cda496839a212a54f3897c0cc07",
+    "crane_ml_commit": "f669e748c657a5e93324e8bcdf1732785e88ce47",
+    "astro_dock_commit": "36202373ae186a8fd247a20b7b477312a744de99",
+    "crane_explain_core_commit": "64f9e185c5feacfd9eb2a14e39ccae0a0a265528",
+    "crane_explain_ros_commit": "fc957a172967a849d677e467bcf09b344de581a1",
+    "player": "/tmp/crane-diagnostic-motion-player/CRANE.x86_64",
+    "player_sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+    "build_manifest_sha256": "c210a098bcf0a0a9d1dc47d0629b51e315f302e8d692f6343728c0326a6ea227",
+    "managed_assemblies_sha256": "387c76961a3fd4179176310c0423cffe6409e24bafa5023db1e65dddfa382aaa",
+    "runtime_resources_sha256": "9f3c2312749860c047866f8d8dffa01665eac2939bd17d09ecd2aaa31202baff",
+    "catalog_sha256": "c2603491c16b99ba007085237097fc0cd66ee2453d1b9e4e1fc7f490bd1a0f8a",
+    "capture_runner_sha256": "603581d7fd01b4e50cdd5ed8607a967670cee03f21e44b56058e4d18b2e7e26d",
+    "geometric_exporter_sha256": "11be6b2a3c11b570eb01c17783454cb1aef16a9a2a0b65a257eea87d8b1d5959",
+    "command_motion_exporter_sha256": "dcbcf3fbe1f6713ad7f021a4180136ef4028391662c19f4a5b29b20b664ed0e9",
+    "command_motion_config_sha256": "9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85",
+    "nav2_config_sha256": "e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+    "behavior_tree_sha256": "e47dadf5bb1228f031e1a7a15d60f0a784c5101ffff9fd11fc36ea7458ce3dce"
+  },
+  "run": {
+    "run_id": "diagnostic-land-composition-dev-008",
+    "statistical_cluster_id": "land-diagnostic-composition-008",
+    "catalog": "v4",
+    "layout": "diagnostic-development-connected-detour-008",
+    "layout_seed": 62007,
+    "ros_domain_id": 130,
+    "ros_tcp_port": 12328,
+    "scene": "TurtleBot3 Warehouse Validation",
+    "goal_distance_m": 18.0,
+    "action_deadline_s": 100.0,
+    "mobility_hold_after_fixed_simulation_s": 18.0,
+    "mobility_release_after_fixed_simulation_s": null,
+    "unity_extra_args": "--crane-land-mobility-hold-after 18.0",
+    "maximum_attempts": 1,
+    "replacement_layout_allowed": false,
+    "expected_broad_outcome": "route-change evidence followed by sustained command-to-motion discrepancy and nonsuccess",
+    "unexpected_outcomes_retained": true
+  },
+  "admission": {
+    "prelaunch": [
+      "full Unity build manifest and managed-assembly identities match the declaration",
+      "checkout warehouse source/scene and exact v4 catalog bytes match the player bundle"
+    ],
+    "postrun_recording": [
+      "exact v4 environment, layout, seed, mechanism, obstacle identities, and active state pass scenario binding",
+      "one accepted goal and one terminal result are retained",
+      "robot-visible command, independently delivered odometry, plan history, costmap, and BT streams are retained",
+      "runtime/source artifact hashes match"
+    ],
+    "fault_induction_reported_separately": [
+      "evaluator-only player log records exactly one CRANE_LAND_MOBILITY_HELD event near fixed simulation time 18.0 s",
+      "post-boundary commands continue and independently measured planar response becomes materially lower than the fixed healthy comparator"
+    ],
+    "qualification_rule": "Recording validity and fault-induction success are separate. Retain a valid unexpected outcome; do not rerun to obtain the expected diagnosis."
+  },
+  "planned_diagnostics": {
+    "geometric": "geometric-route-restriction-v2",
+    "command_motion": "command-motion-discrepancy-v3 with diagnostic-command-motion-low-speed-v1",
+    "composition": "bounded deterministic selection among supported, not-triggered, and insufficient mechanism results; to be implemented and tested only after the retained physical outcome exists",
+    "independent_references_required": true
+  },
+  "evidence_boundary": {
+    "robot_visible": [
+      "commands, odometry, plans, costmap observations, action outcome, BT transitions",
+      "exact Nav2/BT source identities",
+      "checked diagnostic config identity"
+    ],
+    "evaluator_only": [
+      "catalog layout identity and semantic obstacle truth",
+      "mobility-hold configuration, boundary, and player log",
+      "expected outcome and induction-success assessment"
+    ],
+    "required_withholding": [
+      "the evaluator intervention identity",
+      "a unique motor, slip, collision, or obstacle cause not established robot-visibly",
+      "controller consumption of every delivered plan or odometry sample",
+      "costmap-to-plan or recovery-to-motion causation without runtime dependency evidence",
+      "global physical infeasibility from a local or retained navigation grid"
+    ]
+  },
+  "retention": {
+    "retain_success_failure_invalid_and_unexpected": true,
+    "no_quality_driven_retry": true,
+    "model_calls_authorized": 0,
+    "luna_calls_authorized": 0,
+    "confirmatory_cluster_increment": 0,
+    "confirmatory_alpha_consumed": 0.0
+  },
+  "next_gate": "After one run, admit build/scenario/recording validity, report induction separately, compute both robot-visible diagnostics and independent references, then decide whether a deterministic composition contract is supported."
+}
