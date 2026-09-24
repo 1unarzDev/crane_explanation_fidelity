@@ -4093,3 +4093,13 @@
   Existing packets, responses, and Luna labels are unchanged.
 - **NEXT GATE:** predeclare and generate fresh information-complete command--motion development
   responses before deciding whether candidate P is credible enough to freeze.
+
+## 2026-09-24 — citation-complete command--motion v2 predeclaration
+
+- **STATUS:** `PREDECLARED / NOT_RUN`; zero v2 model calls.
+- **SCOPE:** reuse the compensated command--motion episode as the same development cluster; it adds
+  no independent N. Generate fresh R/P/N responses with `gpt-6-sol` high reasoning and retain T.
+- **PARITY:** R and P receive the same blind evidence and executable diagnostic. R/P/T and Luna
+  receive the same four permitted citation identities; evaluator intervention remains hidden.
+- **STOPPING:** one sample per model condition, no retries or favorable resampling. Preserve all
+  outputs and treat any result as development-only candidate-repair evidence.

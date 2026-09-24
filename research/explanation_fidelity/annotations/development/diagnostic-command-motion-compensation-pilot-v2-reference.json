@@ -1,0 +1,38 @@
+{
+  "schema":"crane-diagnostic-development-reference/v2",
+  "visibility":"robot_visible_reference",
+  "reference_status":"DEVELOPMENT_REFERENCE_FROM_PRE_MODEL_INDEPENDENT_WINDOW_COMPUTATION_WITH_EXPLICIT_CITATION_CONTRACT_NOT_HUMAN_GOLD",
+  "episode_id":"diagnostic-motion-dev-cm-compensated-001",
+  "question_id":"diagnostic-command-motion-compensation-citation-complete-v2",
+  "diagnosable":true,
+  "allowed_evidence_identifiers":[
+    "events-sha256:4cb26025c2403349ecc0a907daa3169822576c420c303c6ae03986a9cc65763c",
+    "runtime-manifest-sha256:bffa8d0829de423fbde391125609d0798c622c6656fb51dcf576bdb0d5b04072",
+    "bt-policy-sha256:14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+    "nav2-config-sha256:3851544a099b4d3ed48e54ffd6140c51971d8e9f902a6ff78048a4a71bccf0c3"
+  ],
+  "required_units":[
+    "A sustained delivered-command/measured-motion discrepancy temporarily prevented continued progress.",
+    "The calibrated healthy measured planar response is 0.2597 m/s.",
+    "The earliest qualifying discrepancy interval is 8.0 to 18.0 s after the first active command, lasting 10.0 s with 0.800 m/s median commanded planar speed and 0.000 m/s median measured planar speed.",
+    "A later command-active window at 20.0 to 21.0 s records recovered measured planar speed of 0.2597 m/s and response ratio 1.0.",
+    "The retained execution sequence records one FollowPath failure, one source-qualified Wait recovery invocation, a second FollowPath attempt, and eventual action success.",
+    "Delivered command does not prove actuator acceptance and delivered odometry does not prove Nav2 consumption.",
+    "The evidence does not distinguish actuator rejection, mobility constraint, collision or obstruction, slip, or another execution-layer cause.",
+    "The answer recommends downstream accepted actuation or actuator feedback plus contact, clearance, and wheel-motion evidence as the next discriminating check."
+  ],
+  "prohibited_claims":[
+    "The discrepancy lasted 12 seconds or continued through the 20.0 s boundary.",
+    "The Wait invocation or retry physically caused measured response to recover.",
+    "A motor failure, wheel slip, collision, obstruction, or evaluator intervention uniquely caused the discrepancy.",
+    "The delivered command was proven accepted or applied by an actuator.",
+    "Nav2 was proven to consume the delivered odometry records.",
+    "Exactly one recovery occurred over a proven-complete goal history."
+  ],
+  "allowed_evidence":{
+    "command_motion":{"calibrated_healthy_measured_planar_speed_mps":0.2597399950027466,"discrepancy_interval_s":[8.0,18.0],"discrepancy_duration_s":10.0,"median_commanded_planar_speed_mps":0.8,"median_measured_planar_speed_mps":0.0,"measured_response_ratio":0.0,"response_recovery_interval_s":[20.0,21.0],"recovered_measured_planar_speed_mps":0.2597399950027466,"recovered_response_ratio":1.0,"command_sample_count":485,"odometry_sample_count":2232},
+    "execution":{"action_status":"succeeded","displacement_m":9.46871566772461,"follow_path_failure_count":1,"follow_path_attempt_count":2,"source_qualified_wait_recovery_count":1,"bt_policy_sha256":"14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520"},
+    "limits":["The discrepancy and recovery are execution observations, not a unique physical root cause.","Temporal ordering does not establish that Wait or retry caused measured response recovery.","The acquisition intervention identity is unavailable to methods.","Command and odometry delivery do not establish downstream acceptance or internal consumption.","The case is development-only, not held-out or confirmatory evidence."]
+  },
+  "reference_timing":{"physical_findings_and_independent_reference_computed_before_v2_model_outputs":true,"citation_identifiers_copied_from_governed_robot_visible_diagnostic_before_v2_model_outputs":true,"human_gold":false}
+}

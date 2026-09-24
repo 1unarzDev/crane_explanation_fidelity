@@ -1,0 +1,23 @@
+{
+  "schema":"crane-diagnostic-command-motion-compensation-pilot-declaration/v2",
+  "status":"PREDECLARED_DEVELOPMENT_ONLY_NOT_CONFIRMATORY",
+  "declared_at":"2026-09-24T00:00:00-05:00",
+  "purpose":"Test fresh R/P/T/N language under an information-complete citation contract after retaining the v1 packet defect and negative Luna result.",
+  "episode_id":"diagnostic-motion-dev-cm-compensated-001",
+  "statistical_cluster_id":"command-motion-compensation-001",
+  "independent_cluster_increment":0,
+  "question_id":"diagnostic-command-motion-compensation-citation-complete-v2",
+  "question_kind":"diagnostic-same-mechanism-different-outcome-v1",
+  "question":"Using only retained robot-visible evidence, did a command-to-motion discrepancy temporarily prevent continued progress? State what changed before success and what physical cause remains unresolved.",
+  "source":{"umbrella_commit_before_declaration":"ec24a0ed0828bdc0abbcd4f513ef63f01e936472","crane_ml_commit":"f669e748c657a5e93324e8bcdf1732785e88ce47","core_commit":"f41fb7cb3f744233faa9d04b0cc6468ca3c96357","evidence_path":"data/robot_visible/dev/diagnostic-pilot-v1/land-command-motion-compensated-001/evidence-and-diagnostic.json","evidence_sha256":"e09b3a48c8f122f0b8421999406252eea64e4c33a01608c9ed4b6d327aae9436"},
+  "implementation":{"runner_path":"analysis/run_diagnostic_command_motion_pilot.py","runner_sha256":"fef236054be69d12871f75c05b49c050f0e3d2b9a879475f75abfb4f69156ba3","adapter_path":"analysis/recompute_command_motion_diagnostic.py","adapter_sha256":"187e3c96cb8660906ef931f86e5e5d0a7faa038f256438591c693db06547acb8","repository_prompt_sha256":"6fa02e37d1b8b9a0136215f9c3f710be0a8522e0c4cecb8ab679edfc84f1fd46","realization_prompt_sha256":"ee136af7285acbb238b9388ea8c2b34d463690c5dd6a359a8358c7ce6e6095c4","ablation_prompt_sha256":"adbbc64be0f324b77431b2f375481b692ef15dc00f71501216a565923c8d99c9"},
+  "reference":"research/explanation_fidelity/annotations/development/diagnostic-command-motion-compensation-pilot-v2-reference.json",
+  "conditions":{"R":"strong repository-aware agent with blind method input and executable diagnostic","P":"checked diagnostic plus one realization and bounded verification/fallback","T":"deterministic rendering of the checked result","N":"same compact evidence without aligned diagnostic computation"},
+  "information_parity":{"primary_comparison":"P versus tool-enabled R","same_robot_visible_evidence":true,"same_diagnostic_tool_available_to_R_and_P":true,"same_permitted_citation_identifiers_for_R_P_T_and_judge":true,"evaluator_truth_available_to_methods":false},
+  "model":{"provider":"codex","name":"gpt-6-sol","reasoning_effort":"high","temperature":null,"samples_per_model_condition":1,"retries":0,"maximum_new_calls":3,"conditions_requiring_calls":["R","P","N"]},
+  "retention":{"retain_all_valid_outputs":true,"do_not_resample_on_error_or_unfavorable_answer":true,"historical_v1_outputs_and_labels_immutable":true},
+  "allowed_use":"Development candidate repair only; no new independent cluster, confirmatory effect, alpha consumption, or replication claim.",
+  "planned_output":"model_outputs/dev/diagnostic-command-motion-compensation-pilot-v2/diagnostic-motion-dev-cm-compensated-001/citation-complete.json",
+  "planned_cache":"research/explanation_fidelity/model_cache/diagnostic-command-motion-compensation-pilot-v2",
+  "planned_packet":"model_outputs/annotation_packets/diagnostic-command-motion-compensation-pilot-v2/packet.jsonl"
+}
