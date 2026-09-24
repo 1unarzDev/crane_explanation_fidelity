@@ -1,0 +1,100 @@
+{
+  "schema": "crane-command-motion-candidate-v3-development-pilot/v1",
+  "declared_date": "2026-09-24",
+  "status": "PREDECLARED_DEVELOPMENT_ONLY_NOT_RUN",
+  "purpose": "Prospectively screen causally bounded candidate v3 against the unchanged strongest tool-enabled repository-agent baseline on fresh configurations after candidate v2 failed readiness.",
+  "scientific_boundary": {
+    "confirmatory": false,
+    "alpha_consumed": 0.0,
+    "candidate_v2_results_reused_as_evidence": false,
+    "candidate_v2_results_used_for_method_development": true,
+    "unexpected_outcomes_retained": true,
+    "replacement_runs": false,
+    "effect_estimate_role": "candidate-readiness filter only; not confirmatory evidence"
+  },
+  "pinned_software": {
+    "umbrella_commit_before_declaration": "cccad02804e2a4249e680a4a7aab20ef34a5d701",
+    "crane_commit": "8d1d308579fb4ea9f15186eb3d38a040edf52da0",
+    "diagnostic_core_commit": "bea12562324fa2caf9290698cfadddcb22bd8a8b",
+    "candidate_runner_sha256": "bfc0b010dafe5c8b0d86f71702e0a428cd6740752e1bd713982a266483a81126",
+    "candidate_renderer_sha256": "49dbd7beecc35a803dbe408f73fba06d14bb55613f2e9fbfcf9bb445573ab9d2",
+    "independent_reference_sha256": "ae8650aa72678b1ff939be94315390b9287c3f7f2cd6b0a761da76c727ba2469",
+    "complete_reference_builder_sha256": "eb2e60497eb75c557cbb202ef122e6a9956b2a01e943f063df41a6af0b71e77e",
+    "masked_complete_reference_builder_sha256": "86c7e527ea8641fdaac79fca2f2ef9d8c331ec13cfdd90bf95bac06d7d05374c",
+    "masked_independent_reference_sha256": "bec762c8a924ba70b18da149b71ba3592e78688995823035fc7bdd0ced747f36",
+    "mask_generator_sha256": "01015dc7fa3fd7ed0609014c2ff912d9bc3141a6d991762956a46d94a542eac2",
+    "shared_diagnostic_adapter_sha256": "8477955d95e9d1946062b3c1e0e85a861a57862e17c34a2f8ce83670fadbeaaa",
+    "repository_agent_prompt_sha256": "fecc91be8178762e58371fcceee783e493475f6f3c48687ce7dd1c120a027f6b",
+    "diagnostic_config_sha256": "9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85",
+    "catalog_sha256": "dd693444df842a97570bbf65e1cd07737bead48314acbf54d5a1c4c0b8f093d6",
+    "nav2_config_sha256": "e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+    "bt_policy_sha256": "14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+    "unity_build_manifest_sha256": "b49d121ce35b9adbf279f17a08687ea6a84a8397351973ff3132a54ab0c1d0fd",
+    "managed_assemblies_sha256": "432bfd07ac9febad1bd52726a811ed5c47ed29f11c74ba138a1ca2eaf35d4b6d",
+    "luna_v7_freeze_sha256": "63c2f25374c685a321dbe0d75ba803e9803718bb9eec289a2e4dcfecfd98ddc3",
+    "luna_v7_qualification_result_sha256": "f06e33c87dbe3ec9c973f71762f8bd312249ceee3e4db1cbf661c6c5f623d226"
+  },
+  "question": {
+    "question_id": "command-motion-candidate-v3-mechanism",
+    "question_kind": "diagnostic-mechanism-or-false-premise-v3",
+    "text": "Did a command-to-motion discrepancy prevent the robot from continuing toward the goal? Identify the deepest supported mechanism or reject the premise, connect it to the recorded navigation behavior, and state what remains unresolved."
+  },
+  "methods": {
+    "P": "bounded-command-motion-candidate-v3: exact deterministic rendering of complete intervals and causally unordered execution facts; zero model calls",
+    "R": "unchanged gpt-6-sol high repository-aware agent; same blind input, exact CRANE/core source, and identical executable diagnostic; one call; no retry",
+    "comparison": "P versus R",
+    "model": "gpt-6-sol",
+    "reasoning_effort": "high",
+    "maximum_calls_per_valid_primary_case": 1,
+    "retry_policy": "No retry for usable or inconvenient answers. A transport failure with no usable answer is retained and receives no replacement under this pilot."
+  },
+  "physical_runs_in_fixed_order": [
+    {"order":1,"run_id":"cmv3-dev-001","cluster_id":"cmv3-land-001","layout_id":"diagnostic-candidate-v2-development-connected-detour-004","seed":81003,"family":"persistent-discrepancy","mobility_hold_after_s":18.0,"mobility_release_after_s":-1.0,"ros_domain_id":138,"ros_port":12338},
+    {"order":2,"run_id":"cmv3-dev-002","cluster_id":"cmv3-land-002","layout_id":"diagnostic-candidate-v2-development-nominal-clear-route-005","seed":82004,"family":"transient-compensation","mobility_hold_after_s":18.0,"mobility_release_after_s":30.0,"ros_domain_id":139,"ros_port":12339},
+    {"order":3,"run_id":"cmv3-dev-003","cluster_id":"cmv3-land-003","layout_id":"diagnostic-candidate-v2-development-connected-detour-005","seed":81004,"family":"nominal-false-premise","mobility_hold_after_s":-1.0,"mobility_release_after_s":-1.0,"ros_domain_id":140,"ros_port":12340},
+    {"order":4,"run_id":"cmv3-dev-004","cluster_id":"cmv3-land-004","layout_id":"diagnostic-candidate-v2-development-nominal-clear-route-006","seed":82005,"family":"persistent-discrepancy","mobility_hold_after_s":25.0,"mobility_release_after_s":-1.0,"ros_domain_id":141,"ros_port":12341},
+    {"order":5,"run_id":"cmv3-dev-005","cluster_id":"cmv3-land-005","layout_id":"diagnostic-candidate-v2-development-connected-detour-006","seed":81005,"family":"transient-compensation","mobility_hold_after_s":25.0,"mobility_release_after_s":37.0,"ros_domain_id":142,"ros_port":12342},
+    {"order":6,"run_id":"cmv3-dev-006","cluster_id":"cmv3-land-006","layout_id":"diagnostic-candidate-v2-development-nominal-clear-route-007","seed":82006,"family":"nominal-false-premise","mobility_hold_after_s":-1.0,"mobility_release_after_s":-1.0,"ros_domain_id":143,"ros_port":12343}
+  ],
+  "paired_ambiguous_variant": {
+    "source_run_id": "cmv3-dev-001",
+    "variant_id": "cmv3-dev-001-mask-no-odometry",
+    "operation": "deterministically remove odometry samples after governing the unmasked export",
+    "independent_cluster_increment": 0
+  },
+  "run_contract": {
+    "catalog": "v5",
+    "catalog_split_name_is_legacy": "candidate-v2-development",
+    "freshness_basis": "Every selected layout ID was unused by candidate v2 and all earlier runs at declaration.",
+    "scene": "TurtleBot3 Warehouse Validation",
+    "goal_distance_m": 18.0,
+    "action_duration_s": 100,
+    "capture_duration_s": 110,
+    "diagnostic_computation_version": "command-motion-discrepancy-v3",
+    "allow_active_at_declared_cutoff": true,
+    "prelaunch_player_audit_required": true,
+    "postrun_scenario_binding_required": true,
+    "recording_validity_independent_of_expected_outcome": true,
+    "no_layout_or_run_replacement": true
+  },
+  "reference_and_annotation": {
+    "independent_reference_before_candidate_calls": true,
+    "complete_reference_audit_before_packet": true,
+    "all_robot_visible_execution_fields_asserted_by_either_answer_must_be_in_reference": true,
+    "judge": "luna-model-judge-v7-reference-audited exact frozen hashes/settings",
+    "passes": 2,
+    "passes_isolated": true,
+    "no_rejudge_for_disagreement": true,
+    "invalid_or_incomplete_packet": "evidence_problem; retain calls and do not repair, replace, or score"
+  },
+  "development_readiness_gate": {
+    "minimum_valid_independent_clusters": 4,
+    "minimum_valid_ambiguous_variants": 1,
+    "required_each_luna_pass_net_p_minus_r_successes": 2,
+    "p_material_errors_allowed": 0,
+    "p_ambiguous_case_must_qualify": true,
+    "coverage_degradation_allowed": 0.0,
+    "interpretation": "Development screen only. Passing authorizes confirmation planning but is not significance, confirmation, or alpha use."
+  },
+  "stopping": "Run each declared physical configuration at most once in order. Process every valid unexpected result. After six runs and the paired mask, stop regardless of favorability."
+}

@@ -16,6 +16,10 @@
 - Validity boundary: the renderer is an implementation candidate only. Retained v2 clusters may be
   used for tests and error analysis but not as independent evidence of v3 performance. A new runner
   and prospectively declared fresh configurations are required before any readiness claim.
+- Follow-through: a six-configuration development screen is now prospectively fixed using unused
+  v5 layouts, the unchanged strong R baseline, and qualified Luna v7. It retains the v2 readiness
+  thresholds and adds mandatory explicit question identity plus reference coverage of every
+  robot-visible execution field asserted by either answer. No confirmation allocation is bound.
 
 ## 2026-09-24 — do not freeze deterministic command-motion candidate v2
 

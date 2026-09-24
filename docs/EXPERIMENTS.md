@@ -1,5 +1,21 @@
 # Experiment Log
 
+## 2026-09-24 — predeclare candidate-v3 fresh-configuration readiness pilot
+
+- **PREDECLARED / DEVELOPMENT ONLY / NOT RUN:** six unused v5 configurations are fixed in order,
+  covering two persistent discrepancies, two transient compensation cases, and two nominal false-
+  premise controls. A no-odometry mask paired with run 001 contributes zero independent clusters.
+- **FIXED:** exact runner/renderer/reference/mask/prompt/config/catalog/player/judge hashes; explicit
+  question text, ID, and kind; one-call high-reasoning R; no retry/replacement; run order; layout
+  IDs, seeds, interventions, domains, and ports; two isolated qualified Luna-v7 passes; and the
+  fail-closed complete-reference rule.
+- **READINESS:** at least four valid clusters and one valid mask; P-minus-R at least +2 in each
+  Luna pass; zero P material errors; no coverage degradation. Passing permits confirmation
+  planning only. It is not statistical significance and consumes no alpha.
+- **FRESHNESS:** the catalog's `candidate-v2-development` split name is retained in the qualified
+  player for compatibility, but none of the six selected layout identities appeared in the v2
+  campaign. See `command-motion-candidate-v3-multiconfiguration-pilot-v1.json`.
+
 ## 2026-09-24 — implement causally bounded command-motion candidate v3 renderer
 
 - **IMPLEMENTED / TESTED / NOT EVALUATED:** a separately named deterministic renderer reports the
