@@ -1,0 +1,129 @@
+{
+  "schema": "crane-land-command-motion-physical-run-disposition/v1",
+  "recorded_date": "2026-09-24",
+  "run_id": "cm-land-conf-003",
+  "cluster_id": "cm-land-conf-cluster-003",
+  "status": "VALID_INDEPENDENT_AMBIGUITY_CLUSTER_NO_SEMANTIC_RESPONSE",
+  "attempt_count": 1,
+  "retry_or_replacement_performed": false,
+  "contract": {
+    "path": "research/explanation_fidelity/experiment_configs/prospective/land-command-motion-physical-cohort-v1.json",
+    "amendment": "research/explanation_fidelity/experiment_configs/prospective/land-command-motion-physical-cohort-v1-amendment-1.json",
+    "schedule_sha256": "1f844ad45fa2e5cefb9edcfc5f3420a5a18aff32abda81ec72b7876ce376f215",
+    "cohort": "confirmation-physical",
+    "fixed_order": 3
+  },
+  "scheduled_configuration": {
+    "family": "ambiguous-missing-odometry",
+    "geometry_mechanism": "connected-detour",
+    "layout_id": "diagnostic-command-motion-confirmation-reserve-connected-detour-026",
+    "layout_seed": 91025,
+    "mobility_hold_after_s": 25.0,
+    "mobility_release_after_s": -1.0,
+    "evidence_mask": "remove-delivered-odometry-v1",
+    "ros_domain_id": 147,
+    "ros_tcp_port": 12347
+  },
+  "admission": {
+    "player_build_audit_accepted": true,
+    "scenario_binding_audit_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "unity_worker_result_valid": true,
+    "unity_logged_errors": 0,
+    "unity_logged_exceptions": 0,
+    "recording_valid_under_frozen_worker_result_gate": true,
+    "unexpected_navigation_outcome_retained": true,
+    "masked_independent_reference_completeness_audit_accepted": true
+  },
+  "generic_fixture_expectation": {
+    "expected_navigation_status": "succeeded",
+    "observed_navigation_status": "aborted",
+    "fixture_exit_status": 1,
+    "disposition": "Valid unexpected physical outcome; navigation success is not an admission gate and the attempt is not replaced."
+  },
+  "observed": {
+    "navigation_status": "aborted",
+    "action_wall_seconds": 51.21001866698498,
+    "displacement_meters": 4.712672568274469,
+    "controller_commands": 484,
+    "odometry_messages": 2559,
+    "costmap_observations": 131,
+    "behavior_tree_transitions": 39,
+    "follow_path_attempts": 3,
+    "follow_path_failures": 2,
+    "observed_recovery_invocation_starts": 2,
+    "maximum_recovery_feedback": 2,
+    "behavior_tree_history_status": "not_proven",
+    "exact_recovery_count_eligible": false
+  },
+  "evaluator_physical_audit": {
+    "unmasked_independent_disposition": "supported",
+    "healthy_interval_s": [0.0, 5.0],
+    "healthy_measured_planar_speed_mps": 0.2597399950027466,
+    "discrepancy_interval_s": [18.0, 28.0],
+    "discrepancy_commanded_planar_speed_mps": 0.25,
+    "discrepancy_measured_planar_speed_mps": 0.0,
+    "response_ratio": 0.0,
+    "command_samples": 484,
+    "odometry_samples": 2354,
+    "interpretation": "The governed raw capture contains a supported persistent discrepancy, but this unmasked audit is unavailable to future methods for the ambiguity cluster."
+  },
+  "method_visible_ambiguity_reference": {
+    "mask_id": "remove-delivered-odometry-v1",
+    "sole_method_visible_export": "data/robot_visible/dev/cm-land-conf-003/command-motion-diagnostic-v1.json",
+    "paired_unmasked_export_available_to_methods": false,
+    "independent_scenario_increment": 1,
+    "delivered_command_samples": 484,
+    "delivered_odometry_samples": 0,
+    "diagnostic_disposition": "insufficient",
+    "execution_sequence_answerable": true,
+    "action_status": "aborted",
+    "follow_path_attempts": 3,
+    "follow_path_failures": 2,
+    "source_qualified_wait_invocations": 2,
+    "bounded_conclusion": "The masked evidence cannot establish a command-to-motion discrepancy or unique physical cause because delivered odometry is absent. It can report the retained abort and bounded execution sequence and request synchronized measured-motion evidence."
+  },
+  "hashes": {
+    "player_build_audit_sha256": "30ffa7c084924284d6b0c6f0da12672db319d82e122e5b8a3892d6530b5e9964",
+    "scenario_binding_audit_sha256": "bae7922c74b066a4033be15999e97cd9e80f4088b395baac3a5797bfea299d94",
+    "fixture_summary_sha256": "5503e2185ad9630cbcd0e941f60b9d4a84ad56c1239ae0ded5e2c74bb48ae8ba",
+    "unity_worker_result_sha256": "b97c1535372be98fc2937ee056313287a8d2cd2d6c68381cb57aa857550d331e",
+    "robot_visible_events_sha256": "646f218676a1dd4cdd8af5e4fb293ba0564249ff3ff48a99209a30452cc465a5",
+    "unmasked_diagnostic_export_sha256": "640b61c51628ebb4000406f3af319d3d9d5ee9973749f466d4229d74fcaf7382",
+    "unmasked_independent_reference_sha256": "b75bf1ed120430cefa66eb6e9a9ea49ecb7d6a59ce1ca075fe85f50a3d917a6c",
+    "masked_diagnostic_export_sha256": "ef42e581b57281f7c0f53db21828831ba6f91d730d87f7ab1bcae5518b75af86",
+    "masked_independent_reference_sha256": "d194a6939fc9dc5754a744ba654665bb9b1461e1ce623ab9ee2d6840f26a8d61",
+    "complete_masked_reference_sha256": "97fd2ab2493ab3d7f3dd5f363d5f87e6377b69347f8d466c40dbc23e9963562f",
+    "robot_visible_manifest_sha256": "2f44b8115b23b47ef075cafb8b8d4b1d684c10dff73068746b6984a77a5a680f",
+    "evaluator_only_manifest_sha256": "d99cd33eb2034fdee6d9d6dcfe1ddaa33b125520c5e7e6f2dab7d740b1af9b11"
+  },
+  "governance": {
+    "robot_visible_manifest": "manifests/data/cm-land-conf-003.robot-visible.json",
+    "evaluator_only_manifest": "manifests/data/cm-land-conf-003.evaluator-only.json",
+    "checkpoint": "manifests/checkpoints/cm-land-conf-003.json",
+    "dvc_remote_status": "IN_SYNC_AFTER_CHECKPOINT"
+  },
+  "semantic_boundary": {
+    "P_responses": 0,
+    "R_responses": 0,
+    "Luna_calls": 0,
+    "semantic_labels": 0,
+    "effect_estimate": null,
+    "confidence_sequence": null,
+    "confirmatory_alpha_consumed": 0.0
+  },
+  "progress": {
+    "fixed_confirmation_physical_clusters": 100,
+    "attempted": 3,
+    "valid": 3,
+    "invalid": 0,
+    "persistent_discrepancy": 0,
+    "transient_compensation": 1,
+    "ambiguous_missing_odometry": 1,
+    "nominal_false_premise": 1,
+    "method_visible_diagnostic_supported": 1,
+    "method_visible_diagnostic_not_triggered": 1,
+    "method_visible_diagnostic_insufficient": 1,
+    "next_fixed_run_id": "cm-land-conf-004"
+  }
+}
