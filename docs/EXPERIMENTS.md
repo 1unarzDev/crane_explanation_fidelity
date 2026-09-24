@@ -3704,3 +3704,26 @@
   bulk legacy/diagnostic annotation remain `NOT_RUN`; the manuscript cannot report Luna-assessed
   method effects from this arm. Artifacts are governed by `model_outputs.dvc` and summarized in
   `manifests/annotation/luna-model-judge-v1-development-v2.json`.
+
+## 2026-09-23 — short/WIP manuscript closeout after Luna qualification failure
+
+- **STATUS:** `IMPLEMENTED / BUILT / VISUALLY_INSPECTED / MECHANICAL_READINESS_PASS`;
+  no experiment, model call, label, frozen artifact, or governed data changed.
+- **CHANGE:** converted the seven-page full-paper scaffold into an anonymous six-page short/WIP
+  manuscript. Removed 15 pending-result markers and the empty confirmatory results table. The paper
+  now reports the nine-cluster/52-response development inventory, six-cluster planning subset,
+  13/13 final-P fallback, under-target unscored 33-cluster legacy inventory, and failed Luna v2
+  development qualification. It explicitly reports no semantic method effect or superiority.
+- **TRACEABILITY:** `scripts/audit_paper_numeric_traceability.py` now checks 73 assertions,
+  including the six unique primary planning clusters and Luna medium's 94.4% core-field and 93.75%
+  required-unit values against retained manifests. Claims removed from the paper remain checked as
+  governed development artifacts but are no longer required as manuscript fragments.
+- **VALIDATION:** `scripts/build_paper.sh` produced `output/pdf/main.pdf`; the short-category
+  readiness audit passed with six letter-size pages, zero pending markers, anonymous author/source
+  metadata, 11 embedded fonts, a current PDF, and numeric traceability. All six pages were rendered
+  at 130 dpi and visually inspected; figures, tables, references, margins, and page transitions are
+  legible with no clipping or overlap. Tectonic reports only non-fatal underfull-box warnings and a
+  2.06 pt overfull vertical box.
+- **BOUNDARY:** this is a review-ready mechanical artifact, not peer acceptance, IEEE PDF eXpress
+  validation, portal submission, human-validated trustworthiness, or a statistically supported
+  P-over-R effect. Submission remains unauthorized.

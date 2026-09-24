@@ -1,7 +1,8 @@
 # Manuscript claim-to-evidence map
 
-Status: living pre-manuscript audit, 2026-09-23. Every numerical claim in the eventual anonymous
-paper must point to a retained manifest/result; this file is not itself experimental evidence.
+Status: living manuscript audit, 2026-09-23. The current anonymous artifact is a short/WIP paper;
+every numerical claim must point to a retained manifest/result. This file is not itself
+experimental evidence.
 
 | Claim candidate | Retained support | Current verdict |
 | --- | --- | --- |
@@ -31,7 +32,8 @@ paper must point to a retained manifest/result; this file is not itself experime
 | Wave drift is diagnosed | no validated wave-force attribution or robot-visible discriminator | **DO NOT CLAIM** |
 | Human trust or real-world reliability improved | no user study or hardware validation | **DO NOT CLAIM** |
 
-The paper structure should be: (1) honestly bounded legacy provenance result, (2) diagnosis-to-
-language method, (3) prospective land and focused surface-vehicle results if completed, and
-(4) limitations distinguishing simulation relevance, factual correctness, diagnostic usefulness,
-and human trust.
+The short/WIP paper structure is: (1) honestly bounded legacy provenance inventory, (2) the
+diagnosis-to-language method, (3) reproducible land and focused surface-vehicle development cases,
+(4) the failed judge qualification and negative baseline/verifier findings, and (5) limitations
+distinguishing simulation relevance, factual correctness, diagnostic usefulness, and human trust.
+It reports no confirmatory method effect.

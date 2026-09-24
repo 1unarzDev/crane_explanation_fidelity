@@ -1184,3 +1184,21 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   qualification. V2 medium/high eliminated false material-error decisions but missed the 95%
   required-unit gate. No effort was frozen; held-out and study scoring remain `NOT_RUN`. Thresholds
   were not relaxed and prompt iteration stops.
+
+## 2026-09-23 — prepare an honest short/WIP submission after judge qualification failure
+
+- Decision: make the current paper a 4--6-page short/WIP submission rather than leave an incomplete
+  seven-page full-paper scaffold. Remove empty confirmatory tables and result placeholders; report
+  the deterministic development measurements, fair-baseline parity, 13/13 fallback, and failed
+  Luna qualification without a semantic method-effect estimate.
+- Evidence: the legacy cohort has 33 clusters and no completed semantic labels; the diagnostic
+  inventory has nine development clusters and no qualified judge; both bounded Luna development
+  qualifications failed; and tool-enabled R frequently matched P/T on project review. These facts
+  cannot support the requested statistically significant superiority claim or an 8--9-page full
+  paper, but they do support a reproducible WIP with explicit negative results.
+- Alternatives: retain red placeholders until unavailable results appear; relax the judge gate;
+  report author review as annotation; or add unscored prose to reach eight pages. Each would weaken
+  auditability or overstate the evidence.
+- Revisit condition: restore a full-paper claim only after a prospectively frozen, qualified
+  semantic evaluation over enough independent clusters supports it. Git history preserves the
+  earlier scaffold; frozen studies and original annotation workflows remain unchanged.

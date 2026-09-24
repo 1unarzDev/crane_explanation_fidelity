@@ -320,17 +320,16 @@ Build the anonymous IEEE-format paper with the pinned toolchain:
 
 ```bash
 scripts/build_paper.sh
-python scripts/audit_submission_readiness.py --category full
+python scripts/audit_submission_readiness.py --category short
 ```
 
-This writes `output/pdf/main.pdf`. The current manuscript is a full-paper scaffold with an explicit
-method/evaluation-boundary figure and a bounded diagnostic-answer example. It is not submission-ready
-or yet page-category compliant: the bounded Luna judge failed both development qualifications, so
-held-out/study semantic scoring, final analysis, the results section, and every red pending marker
-remain incomplete. The original human workflow remains available but incomplete; automated labels
-are never represented as human annotations.
-The readiness audit intentionally exits nonzero until the chosen category, anonymity, PDF, and
-traceability gates all pass.
+This writes `output/pdf/main.pdf`. The current manuscript is an anonymous six-page short/WIP paper
+with no unresolved result placeholders. It reports deterministic development measurements,
+information-parity negative findings, 13/13 proposed-method fallback, and the failed bounded Luna
+judge qualification; it makes no semantic superiority claim. The original human workflow remains
+available but incomplete, and automated labels are never represented as human annotations.
+The readiness audit passes only when the selected page category, anonymity, PDF, and numeric
+traceability gates all pass. It is a mechanical gate, not peer review or submission authorization.
 
 ## Layout
 

@@ -356,6 +356,35 @@ def main() -> int:
     require_equal(paired_responses, 12, "command-motion paired response count")
     checked_assertions += 3
 
+    primary_endpoints = load(
+        "research/explanation_fidelity/experiment_configs/development/"
+        "diagnostic-pilot-primary-endpoints-v1.json"
+    )
+    require_equal(len(primary_endpoints["selected"]), 6, "primary planning subset")
+    require_equal(
+        len({item["statistical_cluster_id"] for item in primary_endpoints["selected"]}),
+        6,
+        "primary planning subset clusters",
+    )
+    checked_assertions += 2
+
+    luna_v2 = load("manifests/annotation/luna-model-judge-v1-development-v2.json")
+    require_equal(luna_v2["status"], "NO_CONFIGURATION_QUALIFIED", "Luna v2 disposition")
+    require_close(
+        100 * pointer(luna_v2, "/efforts/medium/core_semantic_field_accuracy"),
+        94.4,
+        0.05,
+        "Luna v2 medium core-field accuracy",
+    )
+    require_close(
+        100 * pointer(luna_v2, "/efforts/medium/required_unit_accuracy"),
+        93.75,
+        0.001,
+        "Luna v2 medium required-unit accuracy",
+    )
+    require_equal(pointer(luna_v2, "/efforts/medium/qualified"), False, "Luna v2 qualified")
+    checked_assertions += 4
+
     require_paper_fragments(
         [
             "33 included episode clusters",
@@ -375,16 +404,11 @@ def main() -> int:
             "2.705 m laterally",
             "69 planning updates",
             "70.860 s under an exact 70 s",
-            "x=3.55 m",
             "1.699 m lateral deviation",
-            "0.918 s from the 70 s deadline",
-            "17.477 m of delivered motion",
             "0.084 m maximum lateral deviation",
-            "exact executed XML configures 90 s",
             "at least four source-qualified recovery invocations",
             "12,975 poses across 70 unique delivered plans",
             "-1.175 to +1.035 m",
-            "1.104 m",
             "376 command samples and 1,598 goal-interval odometry samples",
             "0.2597 m/s",
             "7--17 s",
@@ -393,10 +417,11 @@ def main() -> int:
             "9.480 m",
             "8--18 s",
             "20--21 s",
-            "R reports an 8--20 s, 12 s discrepancy",
             "contain 12 blinded responses but form one paired/masked cluster",
             "52 responses in 13 packets over nine clusters",
             "13/13 development questions overall",
+            "Primary planning subset & 6 clusters",
+            "94.4% core; 93.75% units",
         ]
     )
 

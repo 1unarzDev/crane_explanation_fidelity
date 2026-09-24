@@ -9,7 +9,6 @@
 \usepackage{url}
 
 \newcommand{\system}{\textsc{Crane-Explain}}
-\newcommand{\pending}[1]{\textcolor{red}{[PENDING: #1]}}
 \newcommand{\stagebox}[2]{%
   \fbox{\begin{minipage}[c][1.02in][c]{0.185\textwidth}
   \centering\footnotesize\textbf{#1}\\[2pt]#2
@@ -32,11 +31,14 @@ evidence, records conflicting evidence and unresolved alternatives, and only the
 checks natural language. We distinguish diagnostic correctness from language faithfulness and
 measure both against repository-aware agents with matched evidence and tool access. A separately
 preserved legacy study evaluates runtime-to-source provenance and factual restraint but is not
-reinterpreted as physical diagnosis. The prospective study tests geometric restriction and
+reinterpreted as physical diagnosis. Development evidence exercises geometric restriction and
 command-to-motion mechanisms in simulated land navigation and a focused surface-vessel setting,
-including cases with deliberately missing decisive evidence. \pending{Insert qualified
-Luna-assessed or genuinely human-audited supported-diagnostic-success effects, clustered confidence intervals, material-error
-risk, and fallback frequency after the protocol is frozen and held-out evaluation completes.}
+including cases with deliberately missing decisive evidence. Across nine development clusters
+(52 responses), the repository-aware baseline often matched the proposed diagnosis when given the
+same tool, and every proposed final answer used deterministic fallback (13/13). A separately
+predeclared Luna judge failed its development qualification, so we report no semantic method
+effect. This WIP establishes reproducible diagnostic measurements and exposes concrete evaluation
+failures, but not superiority.
 \end{abstract}
 
 \section{Introduction}
@@ -96,9 +98,8 @@ This work makes three bounded contributions:
   provenance, conflicts, unresolved alternatives, and permitted causal language;
   \item two navigation-focused diagnostics---geometric restriction and command-to-motion
   discrepancy---with explicit conditions under which they must abstain or qualify; and
-  \item a paired evaluation design that separately scores diagnostic correctness, language
-  faithfulness, material error, useful coverage, and unnecessary abstention on diagnosable and
-  ambiguous cases.
+  \item an audited WIP evaluation that separates deterministic diagnostic measurements from
+  unqualified semantic judgments and preserves negative baseline, verifier, and judge results.
 \end{itemize}
 We do not claim universal root-cause discovery, human trust, hardware reliability, or that
 structured records alone are novel. The empirical scope is simulation-based navigation.
@@ -208,18 +209,18 @@ terminal-abort episodes. Its questions, prompts, models, verifier, rubric, split
 rules remain unchanged. Collection was prospectively closed at 33 included episode clusters (17
 recovery-success and 16 terminal-abort), below the frozen minimum of 40 and target of 50. The
 cohort contains 198 one-shot responses across three conditions. No sealed label or effect estimate
-was inspected when collection was closed. The study will be analyzed under its original rubric and
-reported as under-target; it is not pooled with or rescored as the diagnostic study.
+was inspected when collection was closed. The cohort remains available for analysis under its
+original rubric, but is reported here only as under-target and unscored; it is not pooled with or
+rescored as the diagnostic study.
 
 The legacy study evaluates software-mechanism provenance, factual restraint, and evidence
 insufficiency. Its checked condition used deterministic fallback for 46 of 66 responses (69.7\%),
 including every recovery-mechanism response. We therefore report candidate and final-output
-results separately and describe the final method as predominantly deterministic if this pattern
-remains after annotation.
+results separately and describe this retained operating point as predominantly deterministic.
 
 \subsection{Prospective diagnostic comparison}
 
-The new study compares four compact conditions. R is a strong repository-aware agent with the same
+The planned prospective study compares four compact conditions. R is a strong repository-aware agent with the same
 robot-visible evidence, exact source/configuration, and the same diagnostic tools and descriptions
 available to the proposal. P receives validated diagnostic results plus provenance, checked
 planning, generation, and final verification. T deterministically renders the same diagnostic
@@ -270,15 +271,10 @@ and exact source/configuration as P. R, P/T, and even N expressed the central un
 this one case provides no evidence that P improves on a strong tool-enabled agent. P's fluent
 candidate failed the exact final-text check, so final P fell back to T.
 
-A paired evidence mask removes only measured speed at return. The original P/T plan then withheld
-the whole mechanism. R and N instead preserved a narrower supported chain: only 0.0262~m of
-positional margin remained, observed post-return motion was 0.1876~m, and settled error was outside
-tolerance. They withheld whether the physical platform satisfied the configured stopped-speed
-criterion and why it kept moving. We retained the P/T failure and corrected the checked plan post
-hoc; the v2 deterministic result now makes the same distinction. This correction is not a
-prospective result, and the mask is neither an independent episode nor an ambiguity gold label.
-Matched post-change runs remain retrospective development context outside the ordinary
-robot-visible packet.
+A paired mask removed only measured speed at return. The original P/T plan then withheld the whole
+mechanism, while R and N retained the still-supported positional-margin and post-return-motion
+chain and withheld stopped-speed compliance. We retained this omission and corrected the plan only
+for future use. The mask adds neither an independent episode nor a prospective result.
 
 \section{Development Case: Geometric Restriction}
 
@@ -306,67 +302,22 @@ substantively faithful but failed the conservative exact-text check, so its fina
 to T. In these initial cases, final P was therefore a deterministic method, not evidence that
 language realization improved the response.
 
-A matched evidence mask then removed only the costmap cell payload while retaining action,
-trajectory, source, and costmap metadata. All methods withheld a geometric cause. However, the
-checked P/T plan also omitted the still-supported deadline-aligned execution mechanism, whereas R
-preserved it with an explicit qualification that the terminal tick was not observed. We retained
-that failure and corrected the plan post hoc: its deterministic answer now reports the 0.860~s
-deadline alignment while withholding direct-route classification, grid connectivity, and the
-physical reason for incomplete navigation. This correction is not a prospective result and the
-model outputs were not resampled; it must generalize on a later independent case before supporting
-Q3.
+Three further geometric checks delimit this result. Removing costmap cells made every method
+withhold the physical restriction, but P/T initially also omitted the still-supported deadline
+alignment. An independently recomputed S-turn case reproduced a direct-route intersection,
+retained-grid connectivity, 1.699~m lateral deviation, and abort 0.918~s from the same deadline; R
+again matched P/T on project review. A predeclared nominal control succeeded with complete route
+coverage, no cost-253 intersection, and only 0.084~m maximum lateral deviation. These masks and
+controls exposed false-premise and evidence-coverage bugs, which were retained and corrected only
+for future use.
 
-A second land cluster tests the same bounded computation on a different S-shaped route. An
-independently implemented reference run before model comparison reproduced a direct-route
-cost-253 intersection near $x=3.55$~m, retained-grid connectivity, 1.699~m lateral deviation, 69
-successful planning updates, and an abort 0.918~s from the 70~s deadline. Tool-enabled R again
-reported the central mechanism and qualifications at least as clearly as P/T. P's candidate again
-failed the exact-text gate and fell back to T. These unannotated pilots therefore strengthen the
-case for a useful physical diagnosis over terminal narration, but not for P over a fair
-repository-aware agent or for learned realization over deterministic text.
-
-A retrospective nominal success then exposed two useful failures. The original checked plan did
-not explicitly reject the question's false failure premise; we corrected it to lead with the
-successful action status and state that no terminal failure chain occurred. R also claimed the
-direct route was clear although the rolling grid covered only part of it. We retained that output
-and changed the shared tool to return an unknown route classification when coverage is incomplete,
-without resampling. All methods rejected the premise, and P again fell back to T. This case is not
-the prospectively declared nominal control and cannot support an effectiveness estimate, but it
-demonstrates why diagnostic outputs and final language require separate checks.
-
-We subsequently executed exactly one predeclared development nominal control on the current-source
-player. NavigateToPose succeeded after 17.477~m of delivered motion. A separate reference found
-complete requested-route coverage, no cost-253 intersection, and only 0.084~m maximum lateral
-deviation. The corrected checked answer rejects the false failure premise while retaining those
-bounded route measurements and withholding universal obstacle-freedom or exact-consumption claims.
-This fifth development cluster has R/P/T/N outputs but no qualified semantic labels and therefore
-contributes no independently scored comparative result. In its retained no-retry comparison, R
-reported the central nominal route evidence but referred to a 70~s deadline even though the exact
-executed XML configures 90~s; N introduced an unsupported hypothetical external acceptance rule.
-P again failed exact verification and fell back to T. These are project-review observations
-awaiting qualified automated scoring or a genuine human audit, not scored outcomes.
-
-A sixth development cluster uses the retained warehouse recovery-success episode. The checked
-mechanism establishes at least four source-qualified recovery invocations---Spin, Wait, BackUp,
-and Spin, all successful---after planner-branch failures and recovery-eligibility checks; the
-navigation action eventually succeeded. Whole-history completeness and the physical cause of the
-planner failures remain unresolved. Tool-enabled R matched this account on project review, while
-N lacked the validated planner-failure/eligibility linkage. P again fell back to T. No response in
-this development inventory has a qualified semantic label.
-
-We also closed a path-evidence blind spot with one predeclared, no-retry instrumentation
-qualification. The first attempt retained only path hashes and extrema and therefore failed its
-independent-recomputation gate; it was preserved rather than rerun. The corrected run retained
-12,975 poses across 70 unique delivered plans. A separate implementation reproduced every path
-hash, length, and deviation without mismatch: the first plan was direct, later plans ranged from
-$-1.175$ to $+1.035$~m about the requested line, delivered odometry deviated by 1.104~m, and the
-action succeeded. Because the rolling costmap did not cover the complete route, the checked
-answer reports recorded plan change but withholds its physical trigger and controller consumption.
-In the predeclared R/P/T/N comparison, tool-enabled R again matched that diagnosis on project
-review. Raw P was substantively aligned but a lexical false negative in the fixed verifier caused
-fallback to T; N additionally asserted that delivered paths were followed and that updates occurred
-after approximately each metre without a retained time-aligned derivation. These observations await
-qualified scoring and provide no P-over-R effect claim.
+Two additional records exercise execution provenance without claiming physical causation. A
+warehouse success establishes at least four source-qualified recovery invocations after recorded
+planner-branch failures, but not their physical cause or whole-history completeness. A no-retry
+instrumentation run retained 12,975 poses across 70 unique delivered plans; an independent
+implementation reproduced all hashes and deviations, including a direct first plan and later
+$-1.175$ to $+1.035$~m deviations. In both, tool-enabled R matched the central diagnosis on project
+review, and P fell back to T. These are unscored development observations.
 
 \begin{table*}[t]
 \caption{What physical diagnosis adds to terminal-event narration in the retained command--motion
@@ -422,40 +373,13 @@ matched nominal run uses the same thresholds, succeeds after 9.480~m, records ne
 \texttt{not\_triggered}. Thus the checked answer rejects rather than merely qualifies the false
 failure premise.
 
-A separately predeclared development scenario exercises the same computation with successful
-compensation. Under unchanged thresholds, independent implementations identify an 8--18~s
-discrepancy (0.800~m/s delivered command and 0.000~m/s measured response), followed by a
-20--21~s command-active window with recovered 0.2597~m/s response and eventual action success.
-The evaluator intervention remains hidden. Because the recovery-window computation was added only
-after the first checked answer failed to quantify recovery, this result is post-observation method
-development, not a prospective effect estimate. A later predeclared no-retry comparison gives R
-the same blind input and executable v2 computation as P. On project review, R reports an 8--20~s,
-12~s discrepancy instead of the independently reproduced 8--18~s, 10~s interval. Raw P preserves
-the checked timing and recovery, but the operating verifier rejects it for a missing controller-
-failure-sequence proposition, so final P falls back to T. N lacks the aligned computation and
-associates Wait/retry with success more strongly than the evidence warrants. These are candidates
-for qualified automated scoring or a genuine human audit, not scored results.
-
-The no-retry R/P/T/N comparison gives R the blind samples, pinned repositories, and the same
-executable window computation as P. On project review, R and raw P identify the supported
-discrepancy; N can only call it suggested without time alignment. R, raw P, and N all reject the
-nominal premise. These observations are project review, not qualified Luna or human labels, and
-show no P-over-R advantage. Both raw
-P candidates were rejected by lexical false positives in the then-current final-text gate, so the
-immutable final P outputs fell back to T. A subsequent post-hoc bounded-verifier audit accepts both
-candidates after citation-only repair and rejects the authored mutations, but cannot estimate
-verifier error or rewrite the original outcomes.
-
-We then applied a prospectively declared evidence mask to the supported run, removing all
-independent odometry while retaining 376 delivered command samples, abort, two
-\texttt{FollowPath} failures, and two source-qualified \texttt{Wait} invocations. The checked
-diagnostic returns \texttt{insufficient}: it preserves the execution sequence but states that a
-command--motion comparison requires synchronized independent motion evidence. On project review,
-R, raw P, and N all withhold the discrepancy mechanism; R and raw P retain the useful sequence.
-Whether N's ``exhausted recovery behavior'' wording is supported remains for qualified scoring.
-P again fell back to T under the historical verifier, while a post-hoc correction accepts its raw
-candidate after citation-only repair and rejects the authored mutations. The original output is
-unchanged. This ambiguity case is not scored as a failed supported diagnosis.
+A separately declared compensation case produced the same independently reproduced 8--18~s
+discrepancy, then recovered 0.2597~m/s response at 20--21~s and eventually succeeded. Tool-enabled R
+reported a wrong 8--20~s interval on project review, while raw P preserved the checked timing but
+again fell back under the operating verifier. This is a plausible differentiation case, not a
+qualified label. Conversely, removing all independent odometry caused every method to withhold the
+discrepancy; the execution sequence remained answerable. These cases test outcome independence and
+appropriate abstention without adding independent evidence through masks.
 
 The supported, nominal, and missing-odometry packets contain 12 blinded responses but form one
 paired/masked cluster. The compensated run adds one distinct four-response development cluster.
@@ -464,34 +388,33 @@ inventory therefore contains 52 responses in 13 packets over nine clusters, all 
 independent annotation and adjudication. None is a held-out result. Immutable final P fallback is
 13/13 development questions overall.
 
-\section{Results}
+\section{Development Findings and Disposition}
 
-\begin{table}[b]
-\caption{Prospective diagnostic evaluation. Values remain blinded/unavailable until the protocol
-is frozen and held-out annotation is complete.}
-\label{tab:diagnostic-results}
+\begin{table}[t]
+\caption{Audited development evidence. Semantic method effects are deliberately not reported.}
+\label{tab:development-results}
 \centering
 \resizebox{\columnwidth}{!}{%
-\begin{tabular}{lccc}
+\begin{tabular}{@{}lll@{}}
 \toprule
-Method & Supported success & Material error & Coverage \\
+Item & Observed result & Interpretation \\
 \midrule
-R & \pending{n/N} & \pending{n/N} & \pending{value} \\
-P & \pending{n/N} & \pending{n/N} & \pending{value} \\
-T & \pending{n/N} & \pending{n/N} & \pending{value} \\
-N & \pending{n/N} & \pending{n/N} & \pending{value} \\
+Diagnostic inventory & 9 clusters; 52 responses & Development only \\
+Primary planning subset & 6 clusters & No qualified labels \\
+Final P fallback & 13/13 questions & P final equals T \\
+Luna v2, medium & 94.4\% core; 93.75\% units & Qualification failed \\
+Legacy inventory & 33 clusters; 198 responses & Under-target; unscored \\
 \bottomrule
 \end{tabular}
 }
 \end{table}
 
-\pending{Report legacy annotation/adjudication and its clustered paired estimates separately. Do
-not call the early-closed cohort powered, complete under the original stopping rule, or evidence of
-physical diagnosis.}
-
-\pending{Report diagnostic pilot-informed sample planning, final cluster counts, exclusions,
-induction success, diagnostic-output accuracy, final-language accuracy, risk--coverage curves,
-fallback frequency, paired effects with confidence intervals, and all null/negative findings.}
+The artifact proves that the retained measurements can be recomputed and rendered into bounded
+diagnoses. It does not prove that P improves supported diagnostic success over R. Project review
+found frequent parity once R received the same executable tool, one promising compensation error
+by R, and repeated conservative-verifier failures by P. Because the automated judge missed its
+fixed development gate and human annotation is incomplete, turning those observations into counts,
+risk--coverage curves, confidence intervals, or significance tests would overstate the evidence.
 
 \section{Limitations and Validity}
 
@@ -504,10 +427,10 @@ Experiments use simulation. They can test controlled mechanisms and simulation-b
 relevance, not hardware reliability or real-world transfer. The study measures factual and
 diagnostic outcomes, not human trust. The declared Luna arm failed its development qualification,
 so no Luna-assessed study effect is currently available; repeated-model agreement would not have
-constituted human agreement even if qualification had passed. The legacy cohort stopped below its frozen minimum and must
-be interpreted through effect sizes and uncertainty rather than significance alone. The
-development cases were selected to exercise the pipeline; only the separately frozen
-prospective study can support comparative claims.
+constituted human agreement even if qualification had passed. The legacy cohort stopped below its
+frozen minimum and has no completed semantic scoring, so it supports neither an effect estimate nor
+a significance claim. The development cases were selected to exercise the pipeline; only a
+separately frozen prospective study can support comparative claims.
 
 Finally, deterministic rendering may outperform or dominate language-model realization. We treat
 that as an empirical result, report fallback frequency, and do not attribute templated final
@@ -517,11 +440,12 @@ answers to language-model reasoning.
 
 Useful robot explanations require more than narrating the event that ended an action. Our method
 places a validated, bounded diagnosis between robot evidence and language, then checks whether the
-final response preserved both the mechanism and its limits. The ongoing evaluation asks whether
-that added diagnostic computation improves supported diagnostic success under evidence- and
-tool-matched baselines. Regardless of the eventual effect, the artifact preserves the distinction
-between what the robot recorded, what software semantics reconstruct, what an explicit model
-supports, and what only a controlled intervention can establish.
+final response preserves both the mechanism and its limits. Development evidence shows that the
+measurements and qualifications are reproducible, but also that a fair tool-enabled agent often
+matches the diagnosis, conservative verification can erase faithful language, and an automated
+judge may fail its own gate. We therefore make no superiority claim. The WIP artifact instead
+establishes an auditable basis for a later clustered comparison while preserving the distinction
+between observation, reconstructed software semantics, modeled inference, and intervention.
 
 \balance
 \bibliographystyle{IEEEtran}
