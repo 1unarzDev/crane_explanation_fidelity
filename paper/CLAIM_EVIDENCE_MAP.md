@@ -1,6 +1,6 @@
 # Manuscript claim-to-evidence map
 
-Status: living manuscript audit, 2026-09-23. The current anonymous artifact is a short/WIP paper;
+Status: living manuscript audit, 2026-09-24. The current anonymous artifact is a short/WIP paper;
 every numerical claim must point to a retained manifest/result. This file is not itself
 experimental evidence.
 
@@ -9,7 +9,9 @@ experimental evidence.
 | Legacy provenance/checking improves response trustworthiness | 33 paired F/G/H episodes and 198 calls | **UNRESOLVED:** no sealed labels/adjudication; under frozen minimum |
 | Legacy method provides exact runtime-to-source software-mechanism links | BT/source hashes, parity audits, checked plans across 33 episodes | **SUPPORTED AS IMPLEMENTATION/CAPTURE**, not as an error-rate improvement |
 | Legacy method diagnoses physical causes | Legacy questions deliberately lack decisive physical evidence | **CONTRADICTED / DO NOT CLAIM** |
-| Proposed diagnostic pipeline improves supported diagnostic success | Parity-audited land and RoboBoat R/P/T/N development outputs over nine episode clusters and 52 blinded responses; no qualified semantic labels | **NOT ESTABLISHED / CONFIRMATORY STUDY NOT_RUN**; Luna v4-high passed development but failed both fresh held-out judge passes, activating the predeclared evaluator hard stop before study scoring. The compensation case supplies one plausible P/T-over-R differentiation candidate, but the delivered-plan case again shows R matching P/T on project review; these are not qualified labels |
+| Proposed diagnostic pipeline improves supported diagnostic success | Parity-audited land and RoboBoat R/P/T/N development outputs; the original governed inventory contains nine episode clusters and 52 blinded responses, with later development artifacts retained separately; no prospective v7 study labels | **NOT ESTABLISHED / CONFIRMATORY STUDY NOT_RUN**; reference-audited Luna v7 is prospectively qualified, but candidate P remains `NOT_READY` and no campaign is active. The compensation case supplies one plausible P/T-over-R differentiation candidate, while qualified route-change evidence again shows R matching P/T on project review; these are inspected development results, not held-out labels |
+| Luna can operationally assess the prospective composite endpoint under the frozen v7 arm | Two isolated passes over 24 fresh reference-audited cases each; both score 20/20 composite and 32/32 required units, 176/187 and 179/187 core fields, zero observed false rejection/acceptance, and zero protected failures | **QUALIFIED FOR PROSPECTIVE AUTOMATED SCORING ONLY**; it is not human annotation. Required adverse sensitivity uses upward-rounded Wilson bounds 0.1844 false rejection, 0.3904 false acceptance, 0.1072 unit error, and 0.1612 composite error; no study response has been scored |
+| The attempted land composition episode supplies a valid multi-mechanism case | One prospectively declared physical attempt | **CONTRADICTED / INELIGIBLE**; Unity rejected the proving-ground plus legacy mobility-hold combination before scenario construction. No truth/binding/hold marker exists, the action timed out, and no diagnostic or language output was created. The attempt is retained without retry |
 | Diagnostic pipeline can express a bounded terminal-margin mechanism | Governed RoboBoat development export links exact Nav2 thresholds, measured return motion, post-result displacement, and settled error; a separate evaluator-side implementation reproduces the arithmetic | **IMPLEMENTED/TESTED ON ONE DEVELOPMENT RUN**, not an effectiveness claim or independently reviewed gold |
 | Diagnostic pipeline can express a retained navigation-model disconnection | Compact governed RoboBoat development export independently decodes a hash-checked costmap, finds result cell cost 0, goal cell cost 253, no connection below 253, and 23 matching Navfn failure messages before abort | **IMPLEMENTED/TESTED ON ONE RETROSPECTIVE DEVELOPMENT RUN**; exact dirty source snapshot was not retained, so it is ineligible for confirmatory evaluation and supports neither physical berth infeasibility nor a unique obstacle cause |
 | Selective boat diagnosis preserves useful information without measured return speed | Retained pre-correction masked R/P/T/N output plus post-hoc `terminal-stopping-margin-v2` deterministic result | **ORIGINAL P/T FAILED IN DEVELOPMENT; POST-HOC FIX IMPLEMENTED/TESTED**, not prospective support for Q3 |
@@ -34,6 +36,6 @@ experimental evidence.
 
 The short/WIP paper structure is: (1) honestly bounded legacy provenance inventory, (2) the
 diagnosis-to-language method, (3) reproducible land and focused surface-vehicle development cases,
-(4) the failed judge qualification and negative baseline/verifier findings, and (5) limitations
+(4) the qualified-but-uncertain model-judge protocol and negative baseline/verifier findings, and (5) limitations
 distinguishing simulation relevance, factual correctness, diagnostic usefulness, and human trust.
 It reports no confirmatory method effect.

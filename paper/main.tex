@@ -36,9 +36,10 @@ command-to-motion mechanisms in simulated land navigation and a focused surface-
 including cases with deliberately missing decisive evidence. Across nine development clusters
 (52 responses), the repository-aware baseline often matched the proposed diagnosis when given the
 same tool, and every proposed final answer used deterministic fallback (13/13). A separately
-predeclared Luna judge ultimately failed fresh held-out qualification after a high-reasoning
-configuration passed development, so we report no semantic method effect. This WIP establishes
-reproducible diagnostic measurements and exposes concrete evaluation failures, but not superiority.
+predeclared, reference-audited Luna judge subsequently qualified on two fresh held-out passes, but
+no candidate or confirmatory campaign is frozen and no study response has been scored under that
+arm. We therefore report no semantic method effect. This WIP establishes reproducible diagnostic
+measurements and a bounded evaluation path, but not superiority.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -103,7 +104,8 @@ This work makes three bounded contributions:
   \item two navigation-focused diagnostics---geometric restriction and command-to-motion
   discrepancy---with explicit conditions under which they must abstain or qualify; and
   \item an audited WIP evaluation that separates deterministic diagnostic measurements from
-  unqualified semantic judgments and preserves negative baseline, verifier, and judge results.
+  Luna-assessed semantic judgments, carries finite judge-error sensitivity into the planned
+  comparison, and preserves negative baseline, verifier, and judge-development results.
 \end{itemize}
 We do not claim universal root-cause discovery, human trust, hardware reliability, or that
 structured records alone are novel. The empirical scope is simulation-based navigation.
@@ -254,13 +256,16 @@ qualification precedes study scoring; category errors, unresolved fields, pass d
 sensitivity bounds must accompany scenario-clustered paired estimates. Human packets remain
 available for a later audit but are not a prerequisite for the automated arm.
 
-At the current artifact checkpoint, the final v4 high-reasoning configuration passed all
-development gates on 28 exposed cases, then failed both passes over 14 fresh held-out cases.
-Pass~1 made one material-error false rejection and achieved 15/16 required-unit statuses; pass~2
-made two false rejections and also achieved 15/16. Both therefore missed the zero-error small-
-category and 95\% unit gates. All calls were valid, and both passes had zero false acceptances and
-zero unresolved judgments. The prospectively declared hard stop prohibited study scoring and
-further evaluator tuning. This is a judge-qualification failure, not a method comparison.
+Earlier v4--v6 judge configurations failed their prospectively fixed gates and remain ineligible.
+The final reference-audited v7 cycle retained the same Luna alias, high reasoning setting, prompt,
+schema, isolation, two-pass rule, and thresholds over 24 fresh cases per pass. Both passes classified
+20/20 composite endpoints and 32/32 required units correctly, with 176/187 and 179/187 core fields,
+zero observed false rejections among 17 factual answers, zero observed false acceptances among six
+unsupported answers, and no protected-test failures. V7 is therefore qualified only for prospective
+scoring under its exact frozen arm. Zero observed errors do not establish zero population error:
+the upward-rounded Wilson 95\% upper bounds are 0.1844 for false rejection and 0.3904 for false
+acceptance. A future campaign must clear its nominal sequential gates and method-specific adverse
+label-error sensitivity simultaneously. No study response has yet been scored under v7.
 
 \section{Development Case: Terminal Margin}
 
@@ -408,8 +413,9 @@ Item & Observed result & Interpretation \\
 Diagnostic inventory & 9 clusters; 52 responses & Development only \\
 Primary planning subset & 6 clusters & No qualified labels \\
 Final P fallback & 13/13 questions & P final equals T \\
-Luna v4-high development & 93.9\% core; 97.0\% units & All gates passed \\
-Luna v4-high held-out & P1: 1 FR; P2: 2 FR; 15/16 units each & Qualification failed \\
+Luna v7 held-out composite & 20/20 in each pass & Qualified prospectively \\
+Luna v7 core fields & P1: 176/187; P2: 179/187 & 94.1\%; 95.7\% \\
+Luna v7 error sensitivity & FR 0.1844; FA 0.3904 & Required for success \\
 Legacy inventory & 33 clusters; 198 responses & Under-target; unscored \\
 \bottomrule
 \end{tabular}
@@ -419,9 +425,10 @@ Legacy inventory & 33 clusters; 198 responses & Under-target; unscored \\
 The artifact proves that the retained measurements can be recomputed and rendered into bounded
 diagnoses. It does not prove that P improves supported diagnostic success over R. Project review
 found frequent parity once R received the same executable tool, one promising compensation error
-by R, and repeated conservative-verifier failures by P. Because the automated judge missed its
-fresh held-out gates and human annotation is incomplete, turning those observations into counts,
-risk--coverage curves, confidence intervals, or significance tests would overstate the evidence.
+by R, and repeated conservative-verifier failures by P. Although the final reference-audited Luna
+arm is now prospectively qualified, these inspected development outputs cannot become a held-out
+method comparison. No candidate, campaign, or study labels exist, so turning the observations into
+confirmatory counts, risk--coverage curves, or significance tests would overstate the evidence.
 
 \section{Limitations and Validity}
 
@@ -432,10 +439,10 @@ not uniquely identify a physical source. Evaluator truth is unavailable to ordin
 
 Experiments use simulation. They can test controlled mechanisms and simulation-based ecological
 relevance, not hardware reliability or real-world transfer. The study measures factual and
-diagnostic outcomes, not human trust. The declared Luna arm passed its final development gate but
-failed both fresh held-out passes, so no Luna-assessed study effect is currently available;
-repeated-model agreement would not have
-constituted human agreement even if qualification had passed. The legacy cohort stopped below its
+diagnostic outcomes, not human trust. The final Luna arm passed both fresh held-out qualification
+passes, but no study response has been scored; its repeated-model measurements would not constitute
+human agreement. Its small error-category denominators also yield large finite-sample sensitivity
+bounds that a future nominal advantage may fail. The legacy cohort stopped below its
 frozen minimum and has no completed semantic scoring, so it supports neither an effect estimate nor
 a significance claim. The development cases were selected to exercise the pipeline; only a
 separately frozen prospective study can support comparative claims.
@@ -451,8 +458,8 @@ Useful robot explanations require more than narrating the event that ended an ac
 places a validated, bounded diagnosis between robot evidence and language, then checks whether the
 final response preserves both the mechanism and its limits. Development evidence shows that the
 measurements and qualifications are reproducible, but also that a fair tool-enabled agent often
-matches the diagnosis, conservative verification can erase faithful language, and an automated
-judge may fail its own gate. We therefore make no superiority claim. The WIP artifact instead
+matches the diagnosis, conservative verification can erase faithful language, and automated-judge
+qualification requires independent references and explicit error sensitivity. We therefore make no superiority claim. The WIP artifact instead
 establishes an auditable basis for a later clustered comparison while preserving the distinction
 between observation, reconstructed software semantics, modeled inference, and intervention.
 
