@@ -1,5 +1,17 @@
 # Experiment Log
 
+## 2026-09-24 — reserve disjoint land command-motion physical cohorts
+
+- **STATUS:** `SOURCE_GENERATED / TESTED / NOT PLAYER-VALIDATED / NO CAMPAIGN ACTIVE`. CRANE v6
+  materializes 120 physical-cohort layouts and 120 disjoint replication layouts. Each split has 60
+  connected-detour and 60 nominal-clear-route geometries; IDs, seeds, and obstacle signatures are
+  disjoint from v4/v5 and each other.
+- **TESTED:** deterministic byte regeneration and 45 catalog/generator/fixture contract tests pass.
+  Unity import/build/runtime binding remain `NOT_RUN`; no physical episode was collected.
+- **BOUNDARY:** this prevents judge failure from stalling physical-evidence infrastructure, but it
+  does not activate semantic confirmation, consume alpha, or authorize outcome-dependent sampling.
+  See `manifests/study/command-motion-physical-cohort-reserve-v1.json`.
+
 ## 2026-09-24 — freeze Luna-v7 endpoint-threat extension 1
 
 - **STATUS:** `FROZEN / NOT_RUN`. Twenty-four fresh command--motion cases are fixed: 20 balanced
