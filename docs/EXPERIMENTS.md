@@ -4052,3 +4052,14 @@
 - **BOUNDARY:** this qualifies only the exact automated arm. It is not human annotation, does not
   consume alpha, does not score a study response, and does not start confirmation. Result SHA-256
   `b5fea22d1ba7db7de2f3f5e63cd1f14b4b3350f6d1a2706fc24687eaae21e81f`.
+
+## 2026-09-24 — selected diagnostic-development Luna scoring predeclaration
+
+- **STATUS:** `PREDECLARED / NOT_RUN`; 24 immutable blinded responses, two passes, 48 planned calls.
+- **SELECTION:** reuse the six clusters fixed before annotation in
+  `diagnostic-pilot-primary-endpoints-v1.json`; no post-label packet selection.
+- **ENDPOINTS:** five physical/execution-mechanism clusters use mechanism-correct plus no material
+  error. The nominal false-premise cluster is a separate secondary endpoint because the Luna rubric
+  correctly uses `mechanism_identification=not_applicable` when no failure mechanism exists.
+- **USE:** development candidate selection and planning only. No confidence interval, significance
+  test, confirmatory alpha, or replication claim is permitted.

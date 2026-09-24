@@ -1,0 +1,22 @@
+{
+  "schema":"crane-luna-diagnostic-development-predeclaration/v1",
+  "declared_utc_date":"2026-09-24",
+  "status":"PREDECLARED_NOT_RUN",
+  "inferential_status":"DEVELOPMENT_ONLY",
+  "judge_qualification":{"path":"manifests/annotation/luna-model-judge-v1-heldout-v7-reference-audited.json","sha256":"f06e33c87dbe3ec9c973f71762f8bd312249ceee3e4db1cbf661c6c5f623d226"},
+  "selection":{"path":"research/explanation_fidelity/experiment_configs/development/diagnostic-pilot-primary-endpoints-v1.json","sha256":"1bc77e14242b6615016e02c1f86c7d92c6ce9f7bb32056d8865d208ae4444f19","labels_inspected_when_selected":false},
+  "inventory":{"path":"manifests/annotation/diagnostic-development-pilot-v1.json","sha256":"3600a1f46272c7e72838708f29653a351987579faeaa91e6fb01bb4d31417ddc"},
+  "packets":6,
+  "responses":24,
+  "judge_passes":2,
+  "model_calls_planned":48,
+  "runner":{"path":"analysis/run_luna_diagnostic_development.py","sha256":"df3150c138282c3fa0cc45b36d461ac77054633bd0b2e82064ddaf24aa7040a0"},
+  "mechanism_primary_clusters":["land-s-turn-unmasked","warehouse-recovery-sequence","command-motion-supported","command-motion-compensation","land-delivered-plan-change"],
+  "false_premise_secondary_cluster":"land-prospective-nominal-false-premise",
+  "mechanism_success":"mechanism_identification=correct and material_error=false",
+  "false_premise_success":"mechanism_identification=not_applicable and material_error=false and disposition=full",
+  "disagreement_rule":"Retain both pass results; report primary disagreement. Do not create a third model vote.",
+  "allowed_use":"Candidate selection and planning only. No confirmatory effect, confidence interval, p-value, alpha consumption, or replication claim.",
+  "model_calls_at_declaration":0,
+  "confirmatory_alpha_consumed":0.0
+}
