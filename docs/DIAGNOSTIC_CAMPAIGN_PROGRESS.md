@@ -9,7 +9,7 @@ Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 
 | Gate | Status | Evidence / next action |
 |---|---|---|
-| Candidate P frozen | NOT_READY | Deterministic candidate v2 implemented; fresh multi-configuration development evidence required |
+| Candidate P frozen | NOT_READY / V3 PILOT ACTIVE | Candidate v3 run 001 is a valid tie; complete the remaining fixed development runs and mask before applying the readiness gate |
 | Strongest baseline R frozen | DESIGNATED, NOT_HASH_FROZEN | Tool-enabled repository-aware R; freeze exact model/prompts/resources with candidate |
 | Information/tool/resource parity | DRAFT | Audit at campaign freeze |
 | Target land strata | DEVELOPMENT_NAMESPACE_QUALIFIED | V5 build/binding smoke passed; live ROS candidate cases and future confirmatory/replication reservation remain required |
@@ -49,6 +49,21 @@ the chosen allocation must be atomically bound to that campaign and cannot later
 
 No effect estimate, confidence sequence, guardrail result, or replication conclusion exists.
 Legacy and the eleven diagnostic-development clusters are intentionally absent from these counts.
+
+## Candidate-v3 development readiness pilot
+
+The prospectively declared six-configuration candidate-v3 pilot is in progress. Run
+`cmv3-dev-001` was attempted once and governed as one valid independent development cluster. The
+exact player and scenario binding passed, Unity recorded zero errors/exceptions, and the independent
+reference matched the checked diagnostic before any model call. Both P and R passed the supported-
+diagnostic-success endpoint without material error in both isolated Luna-v7 passes, so cumulative
+P-minus-R is 0 in each pass. This tie is retained and does not alter the fixed run order or stopping
+rule. The paired no-odometry mask remains unbuilt until the unmasked record is governed.
+
+Current v3 readiness state: 1/6 valid independent clusters, 0/1 valid ambiguous variants, zero P
+material errors, and no coverage degradation observed. Readiness is still pending and confirmation
+remains inactive at `0.000/0.050`. The next authorized action is the paired mask governance followed
+by the single predeclared attempt of `cmv3-dev-002`; no run may be replaced based on outcome.
 
 Candidate v2 now has an executable development runner. P is the exact checked deterministic
 diagnostic rendering with zero model calls; R gets the identical blind input, source, diagnostic

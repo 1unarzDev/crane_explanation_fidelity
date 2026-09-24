@@ -1,5 +1,23 @@
 # Experiment Log
 
+## 2026-09-24 — candidate-v3 run 001 retained tie
+
+- **STATUS:** the sole predeclared attempt passed the exact player-build and 14-field scenario-
+  binding gates. Unity retained a valid recording with zero logged errors/exceptions; navigation
+  aborted after 2.480 m. The shared fixture's nonzero exit reflects only its generic expectation of
+  navigation success and is not a recording or binding failure.
+- **DIAGNOSTIC:** the independent calculation matched the checked export. A sustained discrepancy
+  spans 10--20 s: median delivered command 0.260 m/s versus delivered odometry 0.000 m/s, compared
+  with a 0.25974 m/s healthy response over 0--5 s. The record contains three FollowPath attempts,
+  two failures, and two source-qualified Wait invocations; the unique physical cause is unresolved.
+- **LUNA:** P and R both satisfied supported diagnostic success with no material error in both
+  isolated Luna-v7 passes. P-minus-R is therefore 0 in each pass. Pass 2 called P partially
+  answerable while pass 1 called it answerable, but both retained judgments cover all required
+  units and agree on the primary endpoint.
+- **INFERENCE:** one of six independent development clusters is complete. This is a readiness
+  measurement, not confirmation; alpha remains `0.000/0.050`, and all remaining declared runs must
+  proceed regardless of this tie. See `manifests/data/cmv3-dev-001-disposition.json`.
+
 ## 2026-09-24 — predeclare candidate-v3 fresh-configuration readiness pilot
 
 - **PREDECLARED / DEVELOPMENT ONLY / NOT RUN:** six unused v5 configurations are fixed in order,
