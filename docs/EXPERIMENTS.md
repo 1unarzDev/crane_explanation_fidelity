@@ -4063,3 +4063,21 @@
   correctly uses `mechanism_identification=not_applicable` when no failure mechanism exists.
 - **USE:** development candidate selection and planning only. No confidence interval, significance
   test, confirmatory alpha, or replication claim is permitted.
+
+## 2026-09-24 — selected diagnostic-development Luna scoring result
+
+- **STATUS:** `DEVELOPMENT_ONLY / CURRENT_P_NOT_READY`; 48/48 valid calls, no retries or failures.
+- **PASS 1:** P 1/5 versus R 0/5 mechanism success, descriptive difference +0.20.
+- **PASS 2:** P 0/5 versus R 0/5, descriptive difference 0.00. Two response-level primary labels
+  disagreed across passes. The nominal false-premise endpoint also did not meet the strict frozen
+  secondary derivation in either pass.
+- **AUDIT:** P normally communicated the supported mechanism, but its deterministic fallback cited
+  governed evidence hashes absent from the blinded packet; Luna correctly treated those source
+  links as unsupported within its allowed evidence. R made additional wrong deadline/interval,
+  unsupported source, and causal claims. Immutable packets and labels are retained unchanged.
+- **RESOURCE USE:** 701,364 input tokens (583,680 cached), 120,859 output tokens including 45,672
+  reasoning tokens, and 2,623,323 ms aggregate latency; cost unavailable.
+- **DISPOSITION:** do not freeze current P or start confirmation. Fresh development must make
+  permitted citation identities information-complete for P/R/judge or omit them from final text.
+  No alpha consumed. Report SHA-256
+  `a8f27ee32fce70f2a5de490bfeb8f9d69c85fe37ffa57f47298eaa14ab72debc`.

@@ -9,7 +9,7 @@ Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 
 | Gate | Status | Evidence / next action |
 |---|---|---|
-| Candidate P frozen | NOT_READY | Select only after a separate development cycle |
+| Candidate P frozen | NOT_READY | Qualified Luna found current fallback citations absent from judge packets; fresh development cycle required |
 | Strongest baseline R frozen | DESIGNATED, NOT_HASH_FROZEN | Tool-enabled repository-aware R; freeze exact model/prompts/resources with candidate |
 | Information/tool/resource parity | DRAFT | Audit at campaign freeze |
 | Target land strata | PARTIAL | Existing cases are development only; fresh generators/configurations required |
@@ -49,6 +49,20 @@ the chosen allocation must be atomically bound to that campaign and cannot later
 No effect estimate, confidence sequence, guardrail result, or replication conclusion exists.
 Legacy and the nine diagnostic-development clusters are intentionally absent from these counts.
 
+## Qualified-judge development result (2026-09-24)
+
+The six clusters selected before annotation supplied 24 immutable R/P/T/N responses. Two isolated
+qualified-Luna passes produced P-versus-R mechanism-success differences of +0.20 (1/5 versus 0/5)
+and 0.00 (0/5 versus 0/5), with two primary endpoint disagreements. This is development-only and
+provides no interval or significance claim.
+
+Audit showed an information-completeness defect: P's deterministic fallback usually communicated
+the supported mechanism and required units but cited governed hashes absent from the blinded judge
+packet. Luna treated those source links as unsupported. R also made wrong deadlines, intervals,
+source details, and causal links. Do not freeze current P. Preserve these outputs and create fresh
+development responses only after citation identities are either exposed equally to P, R, and judge
+or omitted from final language.
+
 The v1 framework was retired unused after pre-outcome feasibility checks. No v1 or v2 allocation
 was consumed. The v2 fixed-fraction e-process and intersection--union decision rule are documented
 in `docs/SEQUENTIAL_STUDY_PROTOCOL.md`; retained simulation is planning evidence only.
@@ -69,11 +83,11 @@ Record, without deleting earlier rows:
 
 ## Next action
 
-Freeze exact candidate P, tool-enabled baseline R, evidence/tool/resource parity, target generators,
-and fresh replication reservations before any confirmatory response is opened. Luna v7 may then be
-used exactly as qualified, retaining both passes and applying 0.1844 false-rejection and 0.3904
-false-acceptance upper bounds in the registered label-error sensitivity. No confirmatory campaign
-is active and no alpha has been consumed.
+Repair the annotation/evidence citation boundary in a new development version and generate fresh
+P/R responses under information parity. Re-score only those new responses with frozen Luna v7.
+Freeze P/R, target generators, and replication reservations only if both passes show a credible
+advantage without a packet defect. No confirmatory campaign is active and no alpha has been
+consumed.
 
 ## Held-out judge result (2026-09-24)
 

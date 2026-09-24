@@ -1421,3 +1421,18 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Campaign effect: qualification removes one blocker but does not freeze P or R, prove parity,
   reserve replication configurations, or activate alpha. Confirmation remains closed until those
   contracts are committed.
+
+## 2026-09-24 — reject current P freeze after qualified-Luna development scoring
+
+- Decision: do not freeze or confirm the current P implementation. Preserve the two-pass
+  development labels and repair the evidence/citation boundary only in a fresh development version.
+- Evidence: P versus R was +0.20 in pass 1 and 0.00 in pass 2 across five clusters, with two primary
+  disagreements and near-universal material-error labels. P's dominant error was citation of real
+  governed hashes absent from the blinded judge packet; R also added wrong measurements, source
+  details, and causal links.
+- Validity: this is an information-completeness defect, not license to delete unfavorable labels or
+  edit immutable packets. A fair new packet must expose permitted citation identities equally to P,
+  R, and Luna, or final answers must omit identities outside the packet.
+- Paper value: fixing this narrow boundary is higher value than more episodes because the current
+  responses cannot support candidate selection. Confirmation remains closed and alpha remains
+  0.000/0.050.
