@@ -50,13 +50,12 @@ the chosen allocation must be atomically bound to that campaign and cannot later
 No effect estimate, confidence sequence, guardrail result, or replication conclusion exists.
 Legacy and the eleven diagnostic-development clusters are intentionally absent from these counts.
 
-The separate physical/reference cohort has attempted 3/100 fixed confirmation-side configurations:
-3 valid, 0 invalid. Run 001 is a nominal `not_triggered` control. Run 002 is a transient-
-compensation case with independently reproduced response loss and recovery. Run 003 is an
-independently configured ambiguity cluster: the raw evaluator audit supports a persistent
-discrepancy and abort, but the sole future method packet has zero odometry and correctly yields
-`insufficient` while preserving the answerable execution sequence. No language response or semantic
-label exists. The next immutable schedule item is `cm-land-conf-004`.
+The separate physical/reference cohort has attempted 4/100 fixed confirmation-side configurations:
+4 valid, 0 invalid. The method-visible diagnostic dispositions are two supported, one
+`not_triggered`, and one `insufficient`. Run 004 is a valid unexpected transient case: measured
+response recovered after the discrepancy, but the action later aborted, preventing the study from
+equating compensation with task success. No language response or semantic label exists. The next
+immutable schedule item is `cm-land-conf-005`.
 
 ## Frozen land command--motion physical cohort
 

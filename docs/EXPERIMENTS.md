@@ -1,5 +1,17 @@
 # Experiment Log
 
+## 2026-09-24 — land command--motion physical cohort run 004
+
+- **STATUS:** `VALID UNEXPECTED ABORT AFTER RESPONSE RECOVERY / 4 OF 100 ATTEMPTED`. Exact
+  build/binding, valid zero-error Unity worker, and independently complete reference passed. The
+  scheduled transient connected-detour case aborted after 61.360 s and 10.868 m, rather than the
+  generic fixture's expected success; it is retained without replacement.
+- **REFERENCE:** both implementations support response loss from 18--29 s at 0.250 versus 0.000
+  m/s and recovered measured motion of 0.24975 m/s at 30--31 s. The action nevertheless aborted
+  after three FollowPath attempts, two failures, and two source-qualified Wait invocations.
+- **INTERPRETATION:** measured response recovery is not task success and does not establish what
+  caused the later abort. Zero semantic calls/labels and zero alpha. Fixed nominal run 005 is next.
+
 ## 2026-09-24 — land command--motion physical cohort run 003
 
 - **STATUS:** `VALID INDEPENDENT AMBIGUITY CLUSTER / 3 OF 100 ATTEMPTED`. Exact build/binding,
