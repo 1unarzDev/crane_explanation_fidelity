@@ -1,0 +1,17 @@
+{
+  "schema":"crane-luna-diagnostic-development-predeclaration/v1",
+  "declared_utc_date":"2026-09-24",
+  "status":"PREDECLARED_NOT_RUN",
+  "inferential_status":"DEVELOPMENT_ONLY_SAME_CLUSTER",
+  "judge_qualification":"manifests/annotation/luna-model-judge-v1-heldout-v7-reference-audited.json",
+  "packet":{"path":"model_outputs/annotation_packets/diagnostic-command-motion-compensation-pilot-v2/packet.jsonl","sha256":"f7c39cbc62b0cc82754fdb54772e5c2b8dcbcb3b37ce13506514c6cb9698941f","responses":4},
+  "condition_key":{"path":"data/evaluator_only/annotation_keys/diagnostic-command-motion-compensation-pilot-v2.json","sha256":"6af2982c36e69a8d5b89868eb30d4b4f75cd87073ce18f59e4d32c649287e23d","judge_access":false},
+  "result":{"path":"model_outputs/dev/diagnostic-command-motion-compensation-pilot-v2/diagnostic-motion-dev-cm-compensated-001/citation-complete.json","sha256":"4d092f6fdd3906afeb288f8f6bac4635618977e527e923f6539f1372a62a02eb"},
+  "passes":2,
+  "planned_calls":8,
+  "model_calls_at_declaration":0,
+  "primary_development_comparison":"P versus R supported diagnostic success in each pass",
+  "success":"mechanism_identification=correct and material_error=false",
+  "decision_rule":"This single same-cluster result cannot freeze P. Any citation error blocks the repair; a P/R tie motivates further method development rather than favorable resampling.",
+  "confirmatory_alpha_consumed":0.0
+}

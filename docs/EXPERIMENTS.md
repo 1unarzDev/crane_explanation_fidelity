@@ -4103,3 +4103,17 @@
   receive the same four permitted citation identities; evaluator intervention remains hidden.
 - **STOPPING:** one sample per model condition, no retries or favorable resampling. Preserve all
   outputs and treat any result as development-only candidate-repair evidence.
+
+## 2026-09-24 — citation-complete command--motion v2 generation
+
+- **STATUS:** `GENERATED / BLINDED_PACKET_BUILT / LUNA_SCORING_PREDECLARED_NOT_RUN`.
+- **CALLS:** three valid `gpt-6-sol` high-reasoning calls, no retries: R 54,943 ms, P 10,859 ms,
+  N 14,127 ms. T is deterministic.
+- **OBSERVATION BEFORE LABELS:** R produced a bounded diagnostic answer. P's raw answer was rejected
+  because its prospective next-check sentence named `actuation` without the verifier's exact next-
+  check marker, so final P fell back to T. This immutable outcome is retained.
+- **CITATION GATE:** packet construction accepted all final citations against the four declared
+  robot-visible identities and exposed those identities in allowed evidence. Packet SHA-256
+  `f7c39cbc62b0cc82754fdb54772e5c2b8dcbcb3b37ce13506514c6cb9698941f`.
+- **SCORING:** exactly two isolated Luna v7 passes over four responses are predeclared. This is the
+  existing compensation cluster and cannot add independent N or consume confirmatory alpha.
