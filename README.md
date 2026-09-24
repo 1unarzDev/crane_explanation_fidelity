@@ -299,6 +299,20 @@ python analysis/reference_command_motion.py /tmp/command-motion-evidence.json \
   --output /tmp/command-motion-reference.json
 ```
 
+The exporter command above reconstructs a fresh blind export from the raw capture using the
+current default computation version. To reproduce the exact versioned diagnosis retained for the
+paper without exposing its precomputed result to the computation, run:
+
+```bash
+PYTHONPATH=packages/astro_dock/src/crane_explain/src \
+python analysis/recompute_command_motion_diagnostic.py \
+  data/robot_visible/dev/diagnostic-pilot-v1/land-command-motion-001/evidence-and-diagnostic.json \
+  --output /tmp/command-motion-recomputed.json
+```
+
+The CLI projects only the robot-visible `method_input`, recomputes the version named there, and
+fails if the version or source-qualified recovery-policy hash is unsupported.
+
 The source acquisition name is evaluator-sensitive and must not be supplied to an explanation
 method. Only the blind export (or its `method_input` projection) is permitted. The result supports
 a delivered-command/measured-motion discrepancy, not a unique motor, slip, collision, obstruction,
@@ -330,6 +344,17 @@ judge qualification; it makes no semantic superiority claim. The original human 
 available but incomplete, and automated labels are never represented as human annotations.
 The readiness audit passes only when the selected page category, anonymity, PDF, and numeric
 traceability gates all pass. It is a mechanical gate, not peer review or submission authorization.
+
+After the governed DVC roots are materialized, reproduce the submission-critical paper and two
+independently checked diagnostic results together:
+
+```bash
+scripts/verify_submission_reproduction.sh
+```
+
+This fails unless the short-paper readiness audit passes, the delivered-plan diagnostic and its
+independent reference regenerate byte-for-byte, and the blind command-motion recomputation matches
+the retained versioned diagnosis and checked answer.
 
 ## Layout
 

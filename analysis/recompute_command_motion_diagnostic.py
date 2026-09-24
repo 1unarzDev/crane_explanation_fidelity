@@ -177,6 +177,8 @@ def main() -> None:
     parser.add_argument("--output", required=True, type=Path)
     args = parser.parse_args()
     payload = json.loads(args.input.read_text(encoding="utf-8"))
+    if payload.get("schema") == "crane-command-motion-diagnostic-export-v1":
+        payload = method_input_from_export(payload)
     result = build_result(payload)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(

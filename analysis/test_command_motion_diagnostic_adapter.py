@@ -1,5 +1,7 @@
 import copy
 import json
+import subprocess
+import sys
 from pathlib import Path
 
 import pytest
@@ -60,6 +62,25 @@ def test_recomputed_v2_input_preserves_recovered_response_result():
         == "command-motion-discrepancy-v2"
     )
     recomputed = build_result(method_input)
+    assert recomputed["diagnostic_result"] == export["diagnostic_result"]
+    assert recomputed["final_answer"] == export["final_answer"]
+
+
+def test_cli_accepts_governed_export_without_precomputed_result_leakage(tmp_path: Path):
+    output = tmp_path / "recomputed.json"
+    subprocess.run(
+        [
+            sys.executable,
+            str(ROOT / "analysis/recompute_command_motion_diagnostic.py"),
+            str(HELD),
+            "--output",
+            str(output),
+        ],
+        check=True,
+    )
+    export = json.loads(HELD.read_text(encoding="utf-8"))
+    recomputed = json.loads(output.read_text(encoding="utf-8"))
+
     assert recomputed["diagnostic_result"] == export["diagnostic_result"]
     assert recomputed["final_answer"] == export["final_answer"]
 

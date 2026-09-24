@@ -3727,3 +3727,30 @@
 - **BOUNDARY:** this is a review-ready mechanical artifact, not peer acceptance, IEEE PDF eXpress
   validation, portal submission, human-validated trustworthiness, or a statistically supported
   P-over-R effect. Submission remains unauthorized.
+
+## 2026-09-23 — public fresh-checkout and governed-artifact reproduction
+
+- **STATUS:** `TESTED / FRESH_CLONE / GOVERNED_DATA_RESTORED / SUBMISSION_REPRODUCTION_PASS`;
+  no frozen artifact, governed payload, model output, or experiment result changed.
+- **CHECKOUT:** cloned public `main` recursively into a new `/tmp` directory at commit `214a334`.
+  `scripts/setup_workspace.sh` checked out umbrella-pinned astro_dock `3620237`, crane_ml
+  `f669e74`, ROS-TCP-Endpoint `3c3d405`, and the two lock-pinned nested explanation repositories.
+  A second setup invocation passed, confirming idempotence.
+- **DVC RESTORE:** configured a fresh checkout-local R2 remote using inherited credentials and the
+  budget guard. The guard accepted projected usage; `scripts/dvc_r2_sync.sh pull` fetched 3,172
+  files and materialized 4,368 files across all seven governed roots. Credentials remained only in
+  the ignored fresh-clone `.dvc/config.local`.
+- **PAPER:** the fresh clone built the anonymous manuscript and passed the short-category readiness
+  audit with six pages, zero pending markers, embedded fonts, anonymity, and numeric traceability.
+- **DIAGNOSTICS:** the v2 delivered-plan exporter and independent evaluator implementation each
+  regenerated their governed results byte-for-byte. The initial README command for command-motion
+  recreated a current default v1 export rather than the retained versioned v2 packet; this was
+  preserved as a documentation/CLI reproducibility defect, not called a match. The CLI now accepts
+  the governed export, projects only its robot-visible method input, and reproduces its named
+  version's diagnostic and checked answer. `scripts/verify_submission_reproduction.sh` packages
+  these fail-closed checks into one command.
+- **REGRESSION:** 292 umbrella/analysis/core tests and eight frozen-integrity tests pass; data
+  governance passes and DVC reports the cache and R2 synchronized. The new CLI regression proves
+  that accepting the governed export does not use its precomputed diagnostic fields.
+- **BOUNDARY:** this validates restoration and deterministic recomputation, not ROS/Unity runtime
+  execution, semantic annotation, human trust, a method effect, or portal submission.
