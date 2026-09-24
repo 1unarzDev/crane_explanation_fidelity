@@ -44,7 +44,7 @@ def aggregate(base: dict[str, Any], extension: dict[str, Any]) -> dict[str, Any]
     extension_qualified = extension["status"] == "QUALIFIED"
     combined_qualified = extension_qualified
     for output_pass, extension_pass in PASS_MAP.items():
-        old = base["passes"][output_pass]
+        old = base["passes"][extension_pass]
         new = extension["passes"][extension_pass]
         composite_correct = old["composite_correct"] + new["composite"]["successes"]
         composite_total = old["composite_total"] + new["composite"]["total"]

@@ -1,0 +1,16 @@
+{
+  "schema": "crane-prospective-analysis-implementation-correction/v1",
+  "recorded_utc": "2026-09-24T21:55:00Z",
+  "status": "POST_OUTCOME_DETERMINISTIC_KEY_CORRECTION",
+  "affected_freeze": "research/explanation_fidelity/experiment_configs/prospective/luna-model-judge-v7-endpoint-threat-extension-1-freeze.json",
+  "outcome_known_at_correction": "The extension status was FAILED; pass-level point results had been inspected.",
+  "failed_execution": "The aggregate command raised KeyError before writing an aggregate artifact.",
+  "cause": "The frozen aggregator mapped output labels pass_1/pass_2 to extension labels pass-1/pass-2 but used the output label to index the prior-v7 manifest, whose keys are also pass-1/pass-2.",
+  "correction": "Index both retained input manifests with the already declared pass-1/pass-2 key and continue to emit pass_1/pass_2 in the new aggregate artifact.",
+  "original_source_sha256": "c38bc7aa5b7500b279dda1abe5fe1ab65f8725184f40076d775a428301e4d7e6",
+  "corrected_source_sha256": "d1dad30e3b7cf3473ccb3fdf99fcc7de955786819db73b16ec087563836cd6e4",
+  "scientific_rules_changed": false,
+  "labels_or_denominators_changed": false,
+  "decision_impact": "None. The frozen hard-stop rule already requires retaining the prior v7 bounds because the extension failed. The corrected aggregate makes that mandatory disposition machine-readable.",
+  "confirmatory_alpha_consumed": 0.0
+}

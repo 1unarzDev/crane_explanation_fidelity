@@ -17,7 +17,7 @@ def _base():
         "false_acceptances": 0, "unsupported_total": 6,
         "protected_failures": 0,
     }
-    return {"status": "HELDOUT_QUALIFIED", "passes": {"pass_1": row, "pass_2": row}}
+    return {"status": "HELDOUT_QUALIFIED", "passes": {"pass-1": row, "pass-2": row}}
 
 
 def _extension(*, false_acceptances=0):
