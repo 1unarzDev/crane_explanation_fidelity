@@ -2,7 +2,7 @@
   "schema": "crane-automated-annotation-arm-manifest/v1",
   "arm_id": "luna-model-judge-v1",
   "declared_utc": "2026-09-23T00:00:00Z",
-  "status": "V2_MEDIUM_SELECTED_HELDOUT_NOT_RUN",
+  "status": "HELDOUT_QUALIFICATION_FAILED",
   "annotation_origin": "automated",
   "human_annotation_requirement": {
     "original_requirement": "two independent human annotators plus distinct human adjudication of disagreements",
@@ -114,7 +114,7 @@
     "inconvenient_label_retry_allowed": false
   },
   "qualification": {
-    "status": "DEVELOPMENT_SELECTED_HELDOUT_NOT_RUN",
+    "status": "HELDOUT_QUALIFICATION_FAILED",
     "suite": "research/explanation_fidelity/qualification/luna-model-judge-v3-reference-amendment.json",
     "suite_sha256": "02a092a2e87caab74be0b1935cc8413189d9bed0ac77005474cf0a0fb93f08e4",
     "development_cases": 14,
@@ -132,6 +132,7 @@
     "required_disposition_invariance": 1.0,
     "required_answerability_boundary_accuracy": 1.0,
     "study_evaluation_allowed": false,
+    "heldout_result_manifest": "manifests/annotation/luna-model-judge-v1-heldout-v1.json",
     "freeze": "research/explanation_fidelity/experiment_configs/prospective/luna-model-judge-v2-medium-freeze.json",
     "development_rescore": "analysis/results/luna-model-judge-v2-medium-rescore-v3-reference.json"
   },
@@ -161,6 +162,13 @@
       "result_manifest": "analysis/results/luna-model-judge-v2-medium-rescore-v3-reference.json",
       "status": "DEVELOPMENT_SELECTED_OFFLINE_ZERO_NEW_CALLS",
       "scope": "medium reasoning; coherent QD003/QD011 limitation taxonomy; heldout unrun at selection"
+    },
+    {
+      "prompt": "research/explanation_fidelity/prompts/luna-model-judge-v2.md",
+      "suite": "research/explanation_fidelity/qualification/luna-model-judge-v3-reference-amendment.json",
+      "result_manifest": "manifests/annotation/luna-model-judge-v1-heldout-v1.json",
+      "status": "HELDOUT_QUALIFICATION_FAILED",
+      "scope": "medium reasoning; two isolated passes over 14 untouched heldout cases; study scoring prohibited"
     }
   ],
   "output_roots": {

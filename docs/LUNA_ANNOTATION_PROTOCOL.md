@@ -1,7 +1,7 @@
 # Luna automated annotation protocol
 
 Protocol ID: `luna-model-judge-v1`  
-Status: **DEVELOPMENT QUALIFICATION FAILED — NO STUDY LABELS GENERATED**
+Status: **HELD-OUT QUALIFICATION FAILED — NO STUDY LABELS GENERATED**
 Declared: 2026-09-23
 
 This document defines a separately named automated evaluation arm. It does not amend or replace
@@ -111,6 +111,23 @@ calls then passes every unchanged gate with 16/16 required-unit statuses, zero n
 94.4% core-field accuracy. V2 medium and the audited suite are frozen in
 `luna-model-judge-v2-medium-freeze.json` before any held-out execution. This development selection
 does not itself qualify the judge or authorize study scoring.
+
+The frozen two-pass held-out qualification was executed once on 2026-09-24 and failed. All 28
+calls were valid, with no retry, tool event, false acceptance, or unexpected unresolved judgment.
+Pass 1 achieved 15/17 exact required-unit statuses (88.2%) and 97/107 core fields (90.7%), but
+made three false rejections and changed the material-error label across the verified presentation
+pair. Pass 2 achieved 17/17 required units and 98/107 core fields (91.6%), but made two false
+rejections. In both passes the diagnostic-omission category failed closed because Luna treated
+supported-but-incomplete answers as material errors; pass 1 additionally rejected a correct
+paraphrase. Both passes passed the answerability-boundary and prompt-injection checks. The retained
+report is governed under `model_outputs.dvc` and indexed by
+`manifests/annotation/luna-model-judge-v1-heldout-v1.json`.
+
+This is a judge-validity failure, not a comparison of explanation methods. The usable unfavorable
+judgments will not be retried, thresholds will not be relaxed, and this configuration must not
+score study responses. Any later automated judge requires a separately versioned prospective
+development cycle and fresh held-out qualification; confirmatory collection remains blocked until
+such a judge and the candidate/baseline/resource contract are frozen.
 
 ## Input boundary and isolation
 

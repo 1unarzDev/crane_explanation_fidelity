@@ -1286,3 +1286,22 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Validity boundary: development selection is not judge qualification. V2 prompt, medium effort,
   suite, schema, rubrics, caller, retry rule, and two-pass policy are hash-frozen before held-out.
   Study scoring remains prohibited unless both untouched held-out passes independently qualify.
+
+## 2026-09-24 — retain failed Luna held-out qualification and prohibit study scoring
+
+- Decision: retain both frozen held-out passes as executed, do not retry any usable judgment, and
+  do not use this Luna configuration to score legacy or diagnostic-study responses.
+- Evidence: pass 1 failed required-unit accuracy, category false-rejection, and material-error
+  presentation-invariance gates; pass 2 passed unit/core/invariance checks but still made two false
+  rejections and failed the diagnostic-omission category. Both passes were operationally valid,
+  with no call failure, tool event, false acceptance, or unexpected unresolved label.
+- Interpretation: Luna was conservative about incomplete supported answers in a way that conflated
+  diagnostic coverage failure with material factual error. This threatens the primary endpoint's
+  no-material-error conjunct and cannot be repaired by collecting more study responses.
+- Alternatives rejected: rerun until agreement, lower the category gate, silently use pass 2,
+  remove the failed categories after inspection, or score study responses provisionally. Each
+  would violate the frozen qualification protocol or create outcome-dependent evaluator selection.
+- Effect: no confirmatory campaign is active, no study labels or method effect exist, and program
+  alpha consumption remains 0.000/0.050. A successor judge requires a separately versioned,
+  prospective development decision and fresh held-out cases; an independently checkable or
+  explicitly narrower endpoint should be considered against its deadline cost.

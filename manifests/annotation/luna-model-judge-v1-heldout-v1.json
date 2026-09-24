@@ -1,0 +1,83 @@
+{
+  "schema": "crane-luna-judge-heldout-result/v1",
+  "arm_id": "luna-model-judge-v1",
+  "freeze_id": "luna-model-judge-v2-medium-reference-v3",
+  "executed_utc_date": "2026-09-24",
+  "status": "HELDOUT_QUALIFICATION_FAILED",
+  "study_evaluation_allowed": false,
+  "result": {
+    "path": "model_outputs/automated_annotations/luna-model-judge-v1/heldout-v1/heldout-qualification.json",
+    "sha256": "b85c56ec00483273bbc45ba56eb89d9dcf160e296b4b2fa36686a975b0f80122",
+    "governance": "model_outputs.dvc"
+  },
+  "freeze": {
+    "path": "research/explanation_fidelity/experiment_configs/prospective/luna-model-judge-v2-medium-freeze.json",
+    "sha256": "f2f3cacf8d12250ede3b05734929173f3cbf9a40bd98bfb81a80134410dd1cdc"
+  },
+  "suite": {
+    "path": "research/explanation_fidelity/qualification/luna-model-judge-v3-reference-amendment.json",
+    "sha256": "02a092a2e87caab74be0b1935cc8413189d9bed0ac77005474cf0a0fb93f08e4",
+    "heldout_cases": 14
+  },
+  "model": "gpt-6-luna",
+  "reasoning_effort": "medium",
+  "passes": {
+    "pass-1": {
+      "qualified": false,
+      "valid_calls": 14,
+      "call_failures": 0,
+      "false_acceptances": 0,
+      "false_rejections": 3,
+      "unexpected_unresolved": 0,
+      "required_unit_correct": 15,
+      "required_unit_total": 17,
+      "core_field_correct": 97,
+      "core_field_total": 107,
+      "answerability_boundary_correct": 2,
+      "answerability_boundary_total": 2,
+      "prompt_injection_correct": 1,
+      "prompt_injection_total": 1,
+      "material_error_presentation_invariance": false,
+      "disposition_presentation_invariance": true,
+      "failed_gates": [
+        "category_material_error_rates",
+        "required_unit_accuracy",
+        "presentation_material_error_invariance"
+      ]
+    },
+    "pass-2": {
+      "qualified": false,
+      "valid_calls": 14,
+      "call_failures": 0,
+      "false_acceptances": 0,
+      "false_rejections": 2,
+      "unexpected_unresolved": 0,
+      "required_unit_correct": 17,
+      "required_unit_total": 17,
+      "core_field_correct": 98,
+      "core_field_total": 107,
+      "answerability_boundary_correct": 2,
+      "answerability_boundary_total": 2,
+      "prompt_injection_correct": 1,
+      "prompt_injection_total": 1,
+      "material_error_presentation_invariance": true,
+      "disposition_presentation_invariance": true,
+      "failed_gates": ["category_material_error_rates"]
+    }
+  },
+  "resource_use": {
+    "valid_calls": 28,
+    "attempts": 28,
+    "transport_retries": 0,
+    "input_tokens": 377138,
+    "cached_input_tokens": 281600,
+    "output_tokens": 16620,
+    "reasoning_output_tokens": 5086,
+    "aggregate_latency_ms": 425258.150177,
+    "cost_usd": null,
+    "cost_status": "not_reported_by_codex_cli_provider_path"
+  },
+  "interpretation": "Both frozen passes failed predeclared held-out gates. No usable judgment is retried, no threshold is relaxed, and no study response may be scored with this configuration. The result concerns judge validity, not comparative explanation performance.",
+  "confirmatory_alpha_consumed": 0.0,
+  "study_responses_scored": 0
+}

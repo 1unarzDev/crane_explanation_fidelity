@@ -1,6 +1,6 @@
 # Diagnostic sequential-campaign progress
 
-Updated: 2026-09-23
+Updated: 2026-09-24
 
 Protocol: `diagnostic-sequential-protocol-v2`
 Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
@@ -15,7 +15,7 @@ Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 | Target land strata | PARTIAL | Existing cases are development only; fresh generators/configurations required |
 | Target surface strata | NOT_READY | Both geometric and command--motion admission required; do not reallocate weight |
 | Luna development qualification | SELECTED | Audited v2-medium offline rescore passes every gate; zero new calls |
-| Luna held-out qualification | NOT_RUN | Frozen two-pass execution is the next judge gate |
+| Luna held-out qualification | FAILED | Both frozen passes failed category gates; no study scoring allowed |
 | Replication configurations reserved | NOT_RUN | Reserve before discovery collection |
 | Sequential null simulation | PASS_QA | 20,000 replicates per endpoint; all boundary estimates below component alpha 0.02 |
 | Alternative budget sensitivity | COMPLETE | +0.30 scenarios reach 0.9946/0.9366 joint success by 1,600; this is not observed power |
@@ -67,7 +67,19 @@ Record, without deleting earlier rows:
 
 ## Next action
 
-Do not collect confirmatory responses. Run the frozen two-pass held-out Luna qualification once;
-only if both passes qualify may judge readiness advance. Then validate the missing fresh surface
-strata or prospectively register a land-only target, freeze the candidate/baseline/resource
-contract, and reserve replication configurations.
+Do not collect confirmatory responses. The frozen two-pass Luna held-out qualification failed and
+cannot be retried. Decide prospectively whether a bounded new judge-development cycle has higher
+paper value than an independently checkable or limited-category endpoint. Any successor must use a
+new version and fresh held-out cases. Candidate/baseline/resource freezing, target-stratum readiness,
+and replication reservation remain independently incomplete.
+
+## Held-out judge result (2026-09-24)
+
+The selected v2-medium configuration was run exactly once over 14 untouched cases in each of two
+isolated passes. Pass 1: 15/17 required-unit statuses, 97/107 core fields, zero false acceptances,
+three false rejections, zero unresolved, correct 2/2 answerability boundaries and 1/1 injection
+case, but failed material-error presentation invariance. Pass 2: 17/17 units, 98/107 core fields,
+zero false acceptances, two false rejections, zero unresolved, and passed boundary, injection, and
+presentation-invariance gates. Both failed the small-category zero-false-rejection rule, especially
+for diagnostic omission. There were 28 valid calls, no retries, no call failures, and no exposed
+tools. This consumes no confirmatory alpha and creates no study labels or effect estimate.

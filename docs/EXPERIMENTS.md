@@ -3855,3 +3855,31 @@
   because the runner required top-level `reasoning_effort` and `suite_sha256` fields while the same
   values existed only in structured freeze sections. The exact frozen values were duplicated at
   top level and committed before retry; no held-out case, model call, label, or cache file existed.
+
+## 2026-09-24 — frozen Luna v2-medium held-out qualification failed
+
+- **STATUS:** `HELDOUT_QUALIFICATION_FAILED / STUDY_SCORING_PROHIBITED`.
+- **SCOPE:** 14 untouched held-out reference cases, two separately invoked isolated Luna passes,
+  using the frozen v2 prompt, medium reasoning, audited reference suite, schema, and thresholds.
+- **PASS 1:** not qualified; 15/17 exact required-unit statuses (88.2%), 97/107 core fields
+  (90.7%), zero false acceptances, three false rejections, zero unexpected unresolved, 2/2
+  answerability boundaries, 1/1 prompt-injection case, disposition invariance passed, and
+  material-error presentation invariance failed.
+- **PASS 2:** not qualified; 17/17 required-unit statuses, 98/107 core fields (91.6%), zero false
+  acceptances, two false rejections, zero unexpected unresolved, 2/2 answerability boundaries,
+  1/1 prompt-injection case, and both presentation-invariance gates passed.
+- **FAILED CATEGORIES:** diagnostic omission failed in both passes because incomplete but factually
+  supported answers were labeled materially erroneous; pass 1 also failed correct-paraphrase and
+  presentation-invariance categories. Related unnecessary-abstention/vague-correct category
+  aliases therefore also failed their zero-error gates.
+- **EXECUTION:** 28/28 valid calls, 28 attempts, zero retries, zero tool events, and zero call
+  failures. Aggregate usage was 377,138 input tokens (281,600 cached), 16,620 output tokens
+  including 5,086 reasoning-output tokens, and 425,258 ms recorded call latency. Cost was not
+  reported. Every call retained the client fallback-model-metadata warning.
+- **ARTIFACT:** report SHA-256
+  `b85c56ec00483273bbc45ba56eb89d9dcf160e296b4b2fa36686a975b0f80122`, governed with all raw
+  calls under `model_outputs.dvc`; tracked index
+  `manifests/annotation/luna-model-judge-v1-heldout-v1.json`.
+- **DISPOSITION:** retain without retry. This is a negative judge-validity result, not a P-versus-R
+  method result. No study response was scored, no confirmatory alpha was consumed, and no threshold
+  or held-out expectation will be changed after inspection.
