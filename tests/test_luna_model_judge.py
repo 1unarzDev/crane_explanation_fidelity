@@ -16,6 +16,7 @@ SPEC.loader.exec_module(MODULE)
 ARM_ID = MODULE.ARM_ID
 LunaResponsesCaller = MODULE.LunaResponsesCaller
 packet_envelope = MODULE.packet_envelope
+parse_sse_response = MODULE.parse_sse_response
 qualification_envelope = MODULE.qualification_envelope
 request_body = MODULE.request_body
 validate_judgment = MODULE.validate_judgment
@@ -166,3 +167,32 @@ def test_invalid_usable_response_is_retained_without_retry(tmp_path: Path):
     assert len(calls) == 1
     retained = json.loads(next(tmp_path.glob("*.json")).read_text())
     assert retained["status"] == "INVALID_JUDGMENT_NO_RETRY"
+
+
+def test_sse_parser_returns_completed_response_without_metadata_headers():
+    completed = {
+        "id": "resp_test",
+        "output": [{"content": [{"type": "output_text", "text": "{}"}]}],
+    }
+    payload = (
+        'event: codex.response.metadata\ndata: {"type":"codex.response.metadata",'
+        '"headers":{"x-codex-turn-state":"secret-state"}}\n\n'
+        f'event: response.completed\ndata: {json.dumps({"type": "response.completed", "response": completed})}\n\n'
+        "data: [DONE]\n\n"
+    ).encode()
+    response, terminal = parse_sse_response(payload)
+    assert response == completed
+    assert terminal == {"event": "response.completed", "response_id": "resp_test", "error": None}
+    assert "secret-state" not in json.dumps(terminal)
+
+
+def test_sse_parser_sanitizes_stream_failure():
+    payload = (
+        'event: response.failed\ndata: {"type":"response.failed","response":'
+        '{"id":"ws_1","error":{"type":"server_error","code":"stream_incomplete",'
+        '"message":"upstream closed"}}}\n\ndata: [DONE]\n\n'
+    ).encode()
+    response, terminal = parse_sse_response(payload)
+    assert response is None
+    assert terminal["response_id"] == "ws_1"
+    assert terminal["error"]["code"] == "stream_incomplete"

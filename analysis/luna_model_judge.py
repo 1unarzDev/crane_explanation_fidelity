@@ -230,6 +230,49 @@ def extract_output_text(response: dict[str, Any]) -> str:
     return "".join(texts)
 
 
+def parse_sse_response(payload: bytes) -> tuple[dict[str, Any] | None, dict[str, Any]]:
+    """Extract a completed Responses object or a sanitized terminal failure from SSE."""
+    completed: dict[str, Any] | None = None
+    terminal = {"event": None, "response_id": None, "error": None}
+    for block in payload.decode("utf-8", errors="replace").split("\n\n"):
+        event_name: str | None = None
+        data_lines: list[str] = []
+        for line in block.splitlines():
+            if line.startswith("event:"):
+                event_name = line.removeprefix("event:").strip()
+            elif line.startswith("data:"):
+                data_lines.append(line.removeprefix("data:").lstrip())
+        if not data_lines or data_lines == ["[DONE]"]:
+            continue
+        try:
+            data = json.loads("\n".join(data_lines))
+        except json.JSONDecodeError:
+            continue
+        if not isinstance(data, dict):
+            continue
+        event_type = data.get("type", event_name)
+        if event_type == "response.completed" and isinstance(data.get("response"), dict):
+            completed = data["response"]
+            terminal = {
+                "event": "response.completed",
+                "response_id": completed.get("id"),
+                "error": None,
+            }
+        elif event_type == "response.failed":
+            failed = data.get("response") if isinstance(data.get("response"), dict) else {}
+            error = failed.get("error") if isinstance(failed.get("error"), dict) else {}
+            terminal = {
+                "event": "response.failed",
+                "response_id": failed.get("id"),
+                "error": {
+                    "type": error.get("type"),
+                    "code": error.get("code"),
+                    "message": error.get("message"),
+                },
+            }
+    return completed, terminal
+
+
 def validate_judgment(value: dict[str, Any], envelope: dict[str, Any]) -> None:
     required = {
         "schema",
@@ -325,6 +368,7 @@ class LunaResponsesCaller:
         )
         identity = {
             "arm_manifest_sha256": digest_path(MANIFEST_PATH),
+            "caller_source_sha256": digest_path(Path(__file__)),
             "request_body": body,
             "endpoint": f"{self.base_url}/responses",
         }
@@ -345,15 +389,16 @@ class LunaResponsesCaller:
         encoded = canonical_json(body).encode("utf-8")
         attempts: list[dict[str, Any]] = []
         response: dict[str, Any] | None = None
-        last_payload: bytes | None = None
-        for attempt in range(1, self.manifest["retry_policy"]["maximum_transport_retries"] + 2):
+        last_terminal: dict[str, Any] | None = None
+        max_attempts = self.manifest["retry_policy"]["maximum_transport_retries"] + 1
+        for attempt in range(1, max_attempts + 1):
             started_ns = time.time_ns()
             request = urllib.request.Request(
                 f"{self.base_url}/responses",
                 data=encoded,
                 headers={
                     "Authorization": f"Bearer {api_key}",
-                    "Accept": "application/json",
+                    "Accept": "text/event-stream, application/json",
                     "Content-Type": "application/json",
                     "User-Agent": "crane-explain-luna-judge/1",
                 },
@@ -362,12 +407,19 @@ class LunaResponsesCaller:
             try:
                 with self.opener(request, timeout=self.timeout_s) as result:
                     payload = result.read()
-                    last_payload = payload
                     http_status = getattr(result, "status", 200)
             except urllib.error.HTTPError as error:
                 payload = error.read()
-                last_payload = payload
                 http_status = error.code
+                try:
+                    error_value = json.loads(payload)
+                except json.JSONDecodeError:
+                    error_value = None
+                last_terminal = {
+                    "event": "http_error",
+                    "http_status": http_status,
+                    "error": error_value.get("error") if isinstance(error_value, dict) else None,
+                }
                 attempts.append(
                     {
                         "attempt": attempt,
@@ -377,7 +429,10 @@ class LunaResponsesCaller:
                         "response_body_sha256": digest_bytes(payload),
                     }
                 )
-                if http_status not in {408, 409, 429, 500, 502, 503, 504} or attempt >= 3:
+                if (
+                    http_status not in {408, 409, 429, 500, 502, 503, 504}
+                    or attempt >= max_attempts
+                ):
                     break
                 time.sleep(2 ** (attempt - 1))
                 continue
@@ -390,7 +445,7 @@ class LunaResponsesCaller:
                         "transport_status": type(error).__name__,
                     }
                 )
-                if attempt >= 3:
+                if attempt >= max_attempts:
                     break
                 time.sleep(2 ** (attempt - 1))
                 continue
@@ -406,11 +461,25 @@ class LunaResponsesCaller:
             try:
                 decoded = json.loads(payload)
             except json.JSONDecodeError:
-                break  # A returned but malformed payload is retained and is not retried.
-            if not isinstance(decoded, dict):
+                decoded = None
+            if isinstance(decoded, dict):
+                response = decoded
                 break
-            response = decoded
-            break
+            response, terminal = parse_sse_response(payload)
+            last_terminal = terminal
+            attempts[-1]["response_event"] = terminal.get("event")
+            attempts[-1]["provider_response_id"] = terminal.get("response_id")
+            if response is not None:
+                break
+            retryable_stream_failure = (
+                terminal.get("event") == "response.failed"
+                and isinstance(terminal.get("error"), dict)
+                and terminal["error"].get("type") == "server_error"
+            )
+            if retryable_stream_failure and attempt < max_attempts:
+                time.sleep(2 ** (attempt - 1))
+                continue
+            break  # Returned unusable content is retained and not retried.
 
         base_record = {
             "schema": "crane-luna-model-judge-call/v1",
@@ -428,11 +497,7 @@ class LunaResponsesCaller:
             failure = {
                 **base_record,
                 "status": "TRANSPORT_OR_RESPONSE_FAILURE",
-                "response_body_text": (
-                    last_payload.decode("utf-8", errors="replace")
-                    if last_payload is not None
-                    else None
-                ),
+                "terminal_failure": last_terminal,
             }
             atomic_write_json(cache_path, failure)
             raise RuntimeError(f"Luna call failed; retained at {cache_path}")
