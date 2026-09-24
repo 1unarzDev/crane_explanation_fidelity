@@ -1,0 +1,100 @@
+{
+  "schema": "crane-command-motion-candidate-v2-run-disposition/v1",
+  "recorded_date": "2026-09-24",
+  "run_id": "cmv2-dev-002",
+  "cluster_id": "cmv2-land-002",
+  "status": "VALID_DEVELOPMENT_DIAGNOSTIC_AND_COMPLETE_PAIRED_LUNA_MEASUREMENT",
+  "attempt_count": 1,
+  "retry_performed": false,
+  "replacement_layout_used": false,
+  "admission": {
+    "player_build_audit_accepted": true,
+    "scenario_binding_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "unity_result_valid": true,
+    "unity_logged_errors": 0,
+    "unity_logged_exceptions": 0,
+    "recording_valid": true,
+    "navigation_status": "succeeded"
+  },
+  "observed": {
+    "displacement_meters": 17.466901779174805,
+    "controller_commands": 784,
+    "odometry_messages": 4015,
+    "trajectory_samples": 3994,
+    "costmap_observations": 284,
+    "behavior_tree_transitions": 22,
+    "follow_path_attempts": 2,
+    "follow_path_failures": 1,
+    "source_qualified_wait_invocations": 1
+  },
+  "fault_induction": {
+    "successful": true,
+    "compensation_successful": true,
+    "evaluator_only": true,
+    "configured_hold_after_simulation_s": 18.0,
+    "actual_hold_simulation_s": 18.039993608276644,
+    "configured_release_after_simulation_s": 30.0,
+    "actual_release_simulation_s": 30.039989356575963
+  },
+  "diagnostic": {
+    "disposition": "supported",
+    "computation_version": "command-motion-discrepancy-v3",
+    "healthy_interval_s": [0.0, 5.0],
+    "healthy_measured_planar_speed_mps": 0.2597399950027466,
+    "discrepancy_interval_s": [11.0, 21.0],
+    "median_commanded_planar_speed_mps": 0.26,
+    "median_measured_planar_speed_mps": 0.0,
+    "response_recovery_interval_s": [23.0, 24.0],
+    "recovered_measured_planar_speed_mps": 0.2597399950027466,
+    "complete_reference_audit_accepted": true,
+    "qa_status": "VALID_DEVELOPMENT_DIAGNOSTIC_SCENARIO_NOT_CONFIRMATORY"
+  },
+  "language_evaluation": {
+    "conditions": ["P", "R"],
+    "p_model_calls": 0,
+    "r_model_calls": 1,
+    "luna_passes": 2,
+    "luna_calls": 4,
+    "call_failures": 0,
+    "residual_blinding_cue": "R's unmodified answer contains temporary tool-workspace paths; retained without rewriting.",
+    "pass_1": {
+      "P_supported_diagnostic_success": false,
+      "R_supported_diagnostic_success": true,
+      "P_material_error": true,
+      "R_material_error": false,
+      "paired_difference": -1
+    },
+    "pass_2": {
+      "P_supported_diagnostic_success": true,
+      "R_supported_diagnostic_success": false,
+      "P_material_error": false,
+      "R_material_error": true,
+      "paired_difference": 1
+    },
+    "unresolved_judge_difference": "The passes disagreed about sequence chronology and whether R's temporary script identity was supported. No rejudge or repair was performed."
+  },
+  "hashes": {
+    "player_build_audit_sha256": "e60f6e5efd5a58b0b724deb1eb931a2219c25daea53853b39a602ae634864a77",
+    "scenario_binding_audit_sha256": "2ed018c65341f5f7a5a7555ac651e86d56649e2458d65030b87ca123933dc40a",
+    "robot_visible_events_sha256": "a0f984c0fa69aad7fee470998c5927a9d76505cde3be064ebd06d6c5df27665b",
+    "diagnostic_export_sha256": "2b7663f1bba767a7a619fc8db7a5900d5d1e36b9f1f8e79ffa8f12beace4e0b5",
+    "independent_reference_sha256": "5ba5fdeaae452958fb2d99325ed9402ec8f7fb567aaf8f907ae33b123b9b6941",
+    "complete_annotation_reference_sha256": "5b9ced08967633cad1a2cc3a563cecc8e00046bdabec9cc89b30865b94a81d9c",
+    "candidate_result_sha256": "485b2b3156eb1e39c4b105c3ea04d078b94a30e979ad93d52ef5c20d45d4419e",
+    "blinded_packet_sha256": "90b6cfd44dad71dbd1d0fafc17b23f8652f942c58df1b2c62c3e2ce3f11abedb",
+    "condition_key_sha256": "3aa8051fdd3938ef9cc19b4df74474582cb638b10ec615990de5dfbf77cca25c",
+    "luna_summary_sha256": "7ecfa6a96516519f79524b0ec870109834117e00d3b6be18dd4203ca26011179"
+  },
+  "inference": {
+    "independent_cluster_increment": 1,
+    "confirmatory_cluster_increment": 0,
+    "confirmatory_alpha_consumed": 0.0,
+    "candidate_readiness": "NOT_ESTABLISHED",
+    "limitations": [
+      "Development-only screening; no confidence interval or significance claim.",
+      "The supported temporary discrepancy does not uniquely identify its physical cause.",
+      "Repeated Luna passes are model measurements and disagree on both responses."
+    ]
+  }
+}

@@ -62,6 +62,25 @@
   regardless of favorability. The tracked disposition is
   `manifests/data/cmv2-dev-001-disposition.json`.
 
+## 2026-09-24 — candidate-v2 run 002 retained result
+
+- **STATUS:** `VALID_DEVELOPMENT_DIAGNOSTIC_AND_COMPLETE_PAIRED_LUNA_MEASUREMENT`; the single
+  `cmv2-dev-002` attempt passed build admission, all 14 binding checks, Unity validity, and stream
+  admission. Navigation succeeded after 17.467 m; the authenticated transient restriction was
+  applied at 18.040 s and released at 30.040 s in evaluator-only truth.
+- **DIAGNOSIS:** the checked and independent computations agree on a 0.260-to-0.000 m/s discrepancy
+  from 11--21 s, followed by measured-response recovery to 0.25974 m/s at 23--24 s, one FollowPath
+  failure, one source-qualified Wait invocation, two FollowPath attempts, and eventual success.
+  The intervention identity and unique physical cause remain withheld.
+- **LANGUAGE/JUDGE:** all four Luna-v7 calls completed. Pass 1 scored R success/P failure; pass 2
+  scored P success/R failure, yielding paired differences -1 and +1. The passes disagreed about
+  chronology and whether R's preserved temporary-workspace link named a supported script identity.
+  That residual blinding cue and both judgments are retained without rewriting or rejudging.
+- **INFERENCE:** after two independent clusters, neither pass has a net P advantage and P has a
+  material-error label, so readiness is not established. The fixed pilot continues through all
+  six configurations. Zero confirmatory clusters and `0.000/0.050` alpha. See
+  `manifests/data/cmv2-dev-002-disposition.json`.
+
 ## 2026-09-24 — deterministic command--motion candidate-v2 runner
 
 - **IMPLEMENTED / TESTED / NOT FROZEN:** `analysis/run_command_motion_candidate_v2.py` compares
