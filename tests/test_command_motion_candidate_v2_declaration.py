@@ -6,6 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DECLARATION = ROOT / "research/explanation_fidelity/experiment_configs/development/command-motion-candidate-v2-multiconfiguration-pilot-v1.json"
 AMENDMENT = ROOT / "research/explanation_fidelity/experiment_configs/development/command-motion-candidate-v2-multiconfiguration-pilot-v1-amendment-1.json"
+AMENDMENT_2 = ROOT / "research/explanation_fidelity/experiment_configs/development/command-motion-candidate-v2-multiconfiguration-pilot-v1-amendment-2.json"
 
 
 def sha256(relative: str) -> str:
@@ -68,8 +69,27 @@ def test_pre_run_amendment_binds_actual_launcher_and_parent():
     assert amendment["parent_declaration_sha256"] == sha256(
         DECLARATION.relative_to(ROOT).as_posix()
     )
-    assert amendment["correction"]["launcher_sha256"] == sha256(
-        "scripts/run_diagnostic_land_capture.sh"
+    assert amendment["correction"]["launcher_sha256"] == (
+        "0629f7bff592fc286954c9cbe92409aaca196289c89ce449c742097752382bb0"
     )
     assert amendment["outcomes_inspected_before_amendment"] is False
     assert amendment["timing"].startswith("before any declared physical run")
+
+
+def test_post_run_amendment_preserves_run_one_and_pins_future_launcher():
+    amendment = json.loads(AMENDMENT_2.read_text(encoding="utf-8"))
+    assert amendment["parent_amendment_sha256"] == sha256(
+        AMENDMENT.relative_to(ROOT).as_posix()
+    )
+    assert amendment["correction"]["launcher_sha256"] == sha256(
+        "scripts/run_diagnostic_land_capture.sh"
+    )
+    assert amendment["applies_to_run_ids"] == [
+        "cmv2-dev-002",
+        "cmv2-dev-003",
+        "cmv2-dev-004",
+        "cmv2-dev-005",
+        "cmv2-dev-006",
+    ]
+    assert amendment["run_001_disposition"]["rerun_authorized"] is False
+    assert amendment["run_001_disposition"]["scenario_binding_postprocessed"] is True

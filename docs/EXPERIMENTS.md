@@ -23,6 +23,12 @@
   explicitly executes the already declared `nav2_land_progress_recovery.xml`. The amendment pins
   the corrected launcher hash; all run/method/analysis contracts remain unchanged. Eleven launcher
   tests pass.
+- **POST-RUN AMENDMENT 2:** run 001 produced the intended abort, but the shared fixture's generic
+  success expectation returned nonzero and Bash stopped before the already required scenario-
+  binding call. The retained evaluator truth subsequently passed all 14 predeclared binding
+  checks without changing any run byte. Runs 002--006 now retain that fixture exit separately and
+  always execute the binding gate; missing truth/summary or failed binding still fails closed.
+  Run 001 will not be rerun, and no candidate, baseline, or Luna call preceded this correction.
 
 ## 2026-09-24 — deterministic command--motion candidate-v2 runner
 

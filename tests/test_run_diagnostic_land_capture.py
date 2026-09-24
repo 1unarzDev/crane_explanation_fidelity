@@ -218,6 +218,16 @@ def test_capture_requires_exact_post_run_scenario_binding():
     assert 'CRANE_NAV2_BT_XML="${bt_xml}"' in text
 
 
+def test_capture_audits_binding_after_unexpected_fixture_outcome():
+    text = SCRIPT.read_text(encoding="utf-8")
+    fixture_call = 'bash "${crane_dir}/Tools/Performance/run_land_proving_ground_nav2_fixture.sh" || fixture_status=$?'
+    binding_call = 'python3 "${workspace_root}/analysis/validate_land_scenario_binding.py"'
+    assert fixture_call in text
+    assert text.index(fixture_call) < text.index(binding_call)
+    assert "fixture-exit-status.json" in text
+    assert "Recording validity, exact scenario binding, and fault-induction success are" in text
+
+
 def test_capture_requires_declared_full_player_bundle_before_launch():
     text = SCRIPT.read_text(encoding="utf-8")
 

@@ -1,0 +1,37 @@
+{
+  "schema": "crane-command-motion-candidate-v2-development-pilot-amendment/v1",
+  "amendment_id": "command-motion-candidate-v2-multiconfiguration-pilot-v1-amendment-2",
+  "declared_date": "2026-09-24",
+  "timing": "after the single cmv2-dev-001 physical outcome and generic fixture exit were inspected, before any run 002-006 physical attempt or any candidate, baseline, or Luna call",
+  "parent_amendment_sha256": "8b1c2f06a7a35d41d507dc22460860b3aeda893701be92400a28578cc6492e4e",
+  "status": "PROSPECTIVE_ORCHESTRATION_CORRECTION_AFTER_RUN_001",
+  "applies_to_run_ids": [
+    "cmv2-dev-002",
+    "cmv2-dev-003",
+    "cmv2-dev-004",
+    "cmv2-dev-005",
+    "cmv2-dev-006"
+  ],
+  "correction": {
+    "launcher": "scripts/run_diagnostic_land_capture.sh",
+    "launcher_sha256": "090884f3f90ba38ba23cd3d53b687d02b0116d9a9b313d4ed57e1847b109c43a",
+    "behavior": "Retain the shared fixture exit status, continue to the already required exact scenario-binding audit, and record the fixture's generic expected-outcome fields separately. Missing truth, failed binding, or missing fixture summary still fails closed.",
+    "reason": "The shared fixture expected navigation success and returned nonzero for run 001's intended abort. Bash errexit stopped the launcher before its exact post-run binding audit even though the declared pilot separates recording validity, binding, and fault-induction success."
+  },
+  "run_001_disposition": {
+    "attempt_count": 1,
+    "rerun_authorized": false,
+    "actual_navigation_status": "aborted",
+    "fixture_expected_navigation_status": "succeeded",
+    "fixture_expected_outcome_observed": false,
+    "scenario_binding_postprocessed": true,
+    "scenario_binding_checks_passed": 14,
+    "interpretation": "The postprocessing applies the predeclared binding computation to already retained bytes; it does not change, replace, or rerun the outcome. Recording admission and diagnostic/reference checks remain required before language calls."
+  },
+  "unchanged": [
+    "fixed run order, identities, layouts, seeds, families, intervention boundaries, domains, and ports",
+    "recording-validity and fault-induction separation",
+    "candidate P, strong baseline R, model/settings, one-call/no-retry policy, references, Luna passes, readiness gate, and stopping rule",
+    "zero confirmatory alpha and permanent development-only status of all v5 layouts"
+  ]
+}

@@ -221,6 +221,7 @@ if ! docker inspect "${capture_name}" >/dev/null 2>&1; then
     exit 1
 fi
 
+fixture_status=0
 CRANE_ASTRO_DOCK="${astro_dir}" \
 CRANE_RUN_ID="${run_id}" \
 CRANE_RESULT_ROOT="${evaluator_root}" \
@@ -232,7 +233,7 @@ CRANE_PROVING_GROUND_CATALOG="${catalog}" \
 CRANE_PROVING_GROUND_LAYOUT="${layout}" \
 CRANE_NAV2_BT_XML="${bt_xml}" \
 CRANE_NAV2_UNITY_EXTRA_ARGS="--crane-land-proving-ground-mobility-hold-after ${proving_ground_mobility_hold_after} --crane-land-proving-ground-mobility-release-after ${proving_ground_mobility_release_after} ${unity_extra_args}" \
-bash "${crane_dir}/Tools/Performance/run_land_proving_ground_nav2_fixture.sh"
+bash "${crane_dir}/Tools/Performance/run_land_proving_ground_nav2_fixture.sh" || fixture_status=$?
 
 truth_path="${evaluator_root}/worker-0/land-evaluator-truth.json"
 binding_audit="${evaluator_root}/scenario-binding-audit.json"
@@ -248,6 +249,33 @@ python3 "${workspace_root}/analysis/validate_land_scenario_binding.py" \
     --expected-mobility-hold-after "${proving_ground_mobility_hold_after}" \
     --expected-mobility-release-after "${proving_ground_mobility_release_after}" \
     --output "${binding_audit}"
+
+python3 - "${evaluator_root}/navigation-reset-summary.json" "${fixture_status}" \
+    "${evaluator_root}/fixture-exit-status.json" <<'PY'
+import json
+import sys
+from pathlib import Path
+
+summary_path = Path(sys.argv[1])
+status_text = sys.argv[2]
+output_path = Path(sys.argv[3])
+if not summary_path.is_file():
+    raise SystemExit(f"fixture summary is absent after fixture exit: {summary_path}")
+summary = json.loads(summary_path.read_text(encoding="utf-8"))
+payload = {
+    "schema": "crane-diagnostic-fixture-exit-status/v1",
+    "fixture_exit_status": int(str(status_text)),
+    "fixture_valid_flag": summary.get("valid"),
+    "expected_navigation_status": summary.get("expectedNavigationStatus"),
+    "expected_outcome_observed": summary.get("expectedOutcomeObserved"),
+    "interpretation": (
+        "The shared fixture exit includes its generic expected-navigation-status check. "
+        "Recording validity, exact scenario binding, and fault-induction success are "
+        "evaluated separately for the diagnostic pilot."
+    ),
+}
+output_path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+PY
 
 cleanup
 trap - EXIT INT TERM
