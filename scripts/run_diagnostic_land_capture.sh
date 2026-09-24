@@ -71,6 +71,20 @@ PY
 mapfile -t layout_metadata <<<"${layout_metadata_text}"
 layout_seed="${layout_metadata[0]}"
 
+unity_extra_args="${CRANE_NAV2_UNITY_EXTRA_ARGS:-}"
+for incompatible_flag in \
+    --crane-land-blocker \
+    --crane-land-blocker-enable-after \
+    --crane-land-blocker-remove-after \
+    --crane-land-mobility-hold-after \
+    --crane-land-mobility-release-after; do
+    if [[ " ${unity_extra_args} " == *" ${incompatible_flag} "* || \
+          " ${unity_extra_args} " == *" ${incompatible_flag}="* ]]; then
+        echo "Proving-ground layouts cannot be combined with legacy corridor interventions: ${incompatible_flag}" >&2
+        exit 2
+    fi
+done
+
 if [[ ${print_config} -eq 1 ]]; then
     python3 - "${run_id}" "${ros_domain_id}" "${ros_port}" "${catalog}" "${layout}" \
         "${layout_seed}" "${layout_metadata[1]}" <<'PY'

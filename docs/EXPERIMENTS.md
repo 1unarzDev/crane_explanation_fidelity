@@ -4514,3 +4514,15 @@
   hash-manifested. The tracked fail-closed disposition is
   `manifests/data/diagnostic-land-composition-dev-008-disposition.json`. It contributes zero
   qualified or confirmatory clusters and consumes 0.000/0.050 alpha.
+
+## 2026-09-24 — proving-ground legacy-intervention prelaunch rejection
+
+- **STATUS:** `IMPLEMENTED / TESTED`; no physical or model run was created.
+- **FIX:** the diagnostic land launcher now rejects legacy blocker and mobility intervention flags
+  whenever a proving-ground layout is requested. The check runs before `--print-config`, build
+  auditing, container creation, ROS startup, or Unity launch.
+- **REGRESSION:** the exact failed-run argument
+  `--crane-land-mobility-hold-after 18.0` first reproduced the defect at the launcher seam (exit 0),
+  then failed closed with exit 2 and the same bounded incompatibility message after the change.
+- **SCOPE:** this prevents another resource-consuming invalid construction; it does not make run
+  008 valid, authorize a retry, add a new intervention mechanism, or alter the CRANE player.

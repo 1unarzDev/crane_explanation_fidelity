@@ -97,6 +97,31 @@ def test_capture_contract_fails_closed_before_prospective_freeze(
     assert expected_error in completed.stderr
 
 
+def test_capture_rejects_legacy_corridor_intervention_with_proving_ground(monkeypatch):
+    monkeypatch.setenv(
+        "CRANE_NAV2_UNITY_EXTRA_ARGS", "--crane-land-mobility-hold-after 18.0"
+    )
+
+    completed = subprocess.run(
+        [
+            "bash",
+            str(SCRIPT),
+            "--print-config",
+            "diagnostic-land-composition-rejected",
+            "130",
+            "12328",
+            "v4",
+            "diagnostic-development-connected-detour-008",
+        ],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+    )
+
+    assert completed.returncode == 2
+    assert "cannot be combined with legacy corridor interventions" in completed.stderr
+
+
 def test_runtime_manifest_hashes_the_executed_nav2_fixture_observer():
     text = MANIFEST_BUILDER.read_text(encoding="utf-8")
 
