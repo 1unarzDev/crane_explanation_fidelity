@@ -1,5 +1,17 @@
 # Experiment Log
 
+## 2026-09-24 — land command--motion physical cohort run 010
+
+- **STATUS:** `VALID PERSISTENT DISCREPANCY / UNEXPECTED ABORT / 10 OF 100 ATTEMPTED`. The sole
+  fixed attempt passed exact build/binding, the zero-error Unity-worker gate, robot-visible export,
+  independent computation, and complete-reference audit. No retry or replacement occurred.
+- **OBSERVED/REFERENCE:** the action aborted after 51.310 s and 4.549 m. Both independent
+  implementations support an 18--39 s discrepancy at 0.260 versus 0.000 m/s, with three
+  FollowPath attempts, two failures, and two source-qualified Wait invocations.
+- **BOUNDARY:** the unique physical cause remains unresolved. No response, Luna call, semantic
+  label, effect estimate, confidence sequence, or alpha use. Governed data are synchronized to R2;
+  52 focused tests and data governance pass. Fixed transient run 011 is next.
+
 ## 2026-09-24 — land command--motion physical cohort run 009
 
 - **STATUS:** `VALID PERSISTENT DISCREPANCY / UNEXPECTED ABORT / 9 OF 100 ATTEMPTED`. The sole
