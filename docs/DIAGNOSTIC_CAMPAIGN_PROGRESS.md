@@ -69,8 +69,17 @@ v3 readiness state: 2/6 valid independent clusters, 1/1 valid ambiguous variants
 P-minus-R +2 in each pass, zero P material errors, and no P coverage degradation. Although the
 numerical advantage threshold is currently met, the predeclared pilot must continue through every
 fixed run and requires at least four valid independent clusters before any readiness decision.
-Confirmation remains inactive at `0.000/0.050`; the next authorized action is the sole attempt of
-`cmv3-dev-003`, with no replacement based on outcome.
+At that checkpoint confirmation remained inactive at `0.000/0.050`, and the sole attempt of
+`cmv3-dev-003` proceeded without replacement based on outcome.
+
+Run `cmv3-dev-003` is now governed as a valid nominal false-premise cluster. The computation did
+not trigger, although the successful action retained three FollowPath attempts, two failures, and
+two qualified Wait invocations. P passed and R failed the primary endpoint in both Luna passes;
+both were partial under a generic next-check reference that does not match P's non-triggered
+diagnostic recommendation. The mismatch is retained and counts as a P coverage omission, but not a
+relative coverage degradation because R is also partial. Current state: 3/6 valid independent
+clusters, 1/1 valid ambiguous variants, cumulative P-minus-R +3 in each pass, and zero P material
+errors. The pilot remains pending; `cmv3-dev-004` is next and alpha remains `0.000/0.050`.
 
 Candidate v2 now has an executable development runner. P is the exact checked deterministic
 diagnostic rendering with zero model calls; R gets the identical blind input, source, diagnostic

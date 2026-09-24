@@ -1,0 +1,94 @@
+{
+  "schema": "crane-command-motion-candidate-v3-run-disposition/v1",
+  "recorded_date": "2026-09-24",
+  "run_id": "cmv3-dev-003",
+  "cluster_id": "cmv3-land-003",
+  "status": "VALID_DEVELOPMENT_DIAGNOSTIC_AND_COMPLETE_PAIRED_LUNA_MEASUREMENT",
+  "attempt_count": 1,
+  "retry_performed": false,
+  "admission": {
+    "player_build_audit_accepted": true,
+    "scenario_binding_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "unity_result_valid": true,
+    "unity_logged_errors": 0,
+    "unity_logged_exceptions": 0,
+    "recording_valid": true,
+    "navigation_status": "succeeded",
+    "generic_fixture_expected_outcome_observed": true
+  },
+  "observed": {
+    "displacement_meters": 17.57530391375175,
+    "controller_commands": 879,
+    "odometry_messages": 4574,
+    "costmap_observations": 343,
+    "behavior_tree_transitions": 39,
+    "follow_path_attempts": 3,
+    "follow_path_failures": 2,
+    "source_qualified_wait_invocations": 2
+  },
+  "diagnostic": {
+    "disposition": "not_triggered",
+    "healthy_interval_s": [
+      0.0,
+      5.0
+    ],
+    "healthy_measured_planar_speed_mps": 0.2597399950027466,
+    "discrepancy_interval_s": null,
+    "complete_reference_audit_accepted": true
+  },
+  "language_evaluation": {
+    "conditions": [
+      "P",
+      "R"
+    ],
+    "p_model_calls": 0,
+    "r_model_calls": 1,
+    "luna_passes": 2,
+    "luna_calls": 4,
+    "call_failures": 0,
+    "pass_1": {
+      "P_supported_diagnostic_success": true,
+      "R_supported_diagnostic_success": false,
+      "P_material_error": false,
+      "R_material_error": true,
+      "P_disposition": "partial",
+      "R_disposition": "partial",
+      "paired_difference": 1
+    },
+    "pass_2": {
+      "P_supported_diagnostic_success": true,
+      "R_supported_diagnostic_success": false,
+      "P_material_error": false,
+      "R_material_error": true,
+      "P_disposition": "partial",
+      "R_disposition": "partial",
+      "paired_difference": 1
+    },
+    "judge_inconsistency": "Both passes found R's unsupported claim of 84 later qualifying windows and attributed absent prose materially wrong. Both P and R were partial because the complete reference's generic actuator/contact next-check unit differs from the non-triggered diagnostic's synchronized-stream retention recommendation. P also omitted the explicit list of unresolved unique physical causes. The labels and reference are retained without repair or rejudging."
+  },
+  "hashes": {
+    "player_build_audit_sha256": "e60f6e5efd5a58b0b724deb1eb931a2219c25daea53853b39a602ae634864a77",
+    "scenario_binding_audit_sha256": "73aa18c7309c0df7c37b34034fc179b6e505a56e5ef07873a47e334800d1c0c5",
+    "robot_visible_events_sha256": "c2d9f55c7a83a2a05c2e55375e2a82c911c1356031e31cbe853762843016aa28",
+    "diagnostic_export_sha256": "dc8c9557fac102dee74977a477a043407b425f13bb3d113c673da23d50057443",
+    "independent_reference_sha256": "dea7fe53a4fccccfcf02376a7752b3e061a9290ca53bb3512f9179e4ce53978d",
+    "complete_annotation_reference_sha256": "f0308d8f82264541c7823c6de17a8a1632ab6f72134687505263b2e8ae4928ad",
+    "candidate_result_sha256": "5edb3d329cf9ff9efce788de81de1cf55d8481eaa640dcd8ca4cc9b1ba9e7a53",
+    "blinded_packet_sha256": "db595a00cd6df8d0792af2814d06edbed813dcd65d7d9c9f93896e2c7e11db96",
+    "condition_key_sha256": "cb3abeec4673a3e013e3167825b15a689d60b0823a6019ce7cf4f4df822e8aa6",
+    "luna_summary_sha256": "a56081f22b905db5ac44bf01c59f6d7f74020d20d18bc5b24258125bd63a3e72"
+  },
+  "inference": {
+    "independent_cluster_increment": 1,
+    "confirmatory_cluster_increment": 0,
+    "confirmatory_alpha_consumed": 0.0,
+    "candidate_readiness": "PENDING_REMAINING_PREDECLARED_RUNS",
+    "valid_independent_clusters": 3,
+    "planned_independent_clusters": 6,
+    "valid_ambiguous_variants": 1,
+    "cumulative_p_minus_r_successes_pass_1": 3,
+    "cumulative_p_minus_r_successes_pass_2": 3,
+    "coverage_degradation_observed": false
+  }
+}

@@ -1,5 +1,24 @@
 # Experiment Log
 
+## 2026-09-24 — candidate-v3 run 003 retained nominal false-premise result
+
+- **STATUS:** the sole fixed nominal attempt passed player, binding, recording, and Unity error
+  gates and succeeded after 17.575 m. No command--motion discrepancy met the declared sustained-
+  response threshold. The retained action nevertheless contains three FollowPath attempts, two
+  failures, and two source-qualified Wait invocations; candidate v3 correctly preserves those facts
+  rather than equating a non-triggered discrepancy with an event-free run.
+- **LUNA:** P passed the primary endpoint without material error in both passes; R failed both after
+  inventing 84 later qualifying windows and attributing contradictory prose to the diagnostic.
+  Both answers were partial. The generic complete reference asks for an actuator/contact next check
+  even in this non-triggered case, while P renders the diagnostic's synchronized-stream retention
+  recommendation; P also omitted the explicit unresolved-cause list. This observed reference/method
+  mismatch is retained without repair or rejudging.
+- **INFERENCE:** the cluster adds +1 P-minus-R in each pass. Cumulative P-minus-R is +3 in each pass
+  across three independent clusters plus the zero-cluster mask. P still has zero material errors and
+  no coverage degradation relative to R, but at least four valid clusters and all declared attempts
+  remain required. Alpha remains `0.000/0.050`. See
+  `manifests/data/cmv3-dev-003-disposition.json`.
+
 ## 2026-09-24 — candidate-v3 run 002 retained advantage
 
 - **STATUS:** the sole predeclared attempt passed exact player, scenario-binding, recording, and
