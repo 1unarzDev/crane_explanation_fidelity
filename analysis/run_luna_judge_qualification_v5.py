@@ -59,8 +59,11 @@ def wilson_interval(successes: int, total: int, z: float = 1.959963984540054) ->
 
 def load_suite(path: Path = SUITE_PATH) -> dict[str, Any]:
     suite = json.loads(path.read_text(encoding="utf-8"))
-    if suite.get("schema") != "crane-luna-judge-qualification-suite/v5":
-        raise ValueError("v5 qualification suite schema mismatch")
+    if suite.get("schema") not in {
+        "crane-luna-judge-qualification-suite/v5",
+        "crane-luna-judge-qualification-suite/v6",
+    }:
+        raise ValueError("endpoint-focused qualification suite schema mismatch")
     cases = suite.get("cases")
     if not isinstance(cases, list) or len(cases) != 24:
         raise ValueError("v5 suite must contain exactly 24 cases")
@@ -147,10 +150,12 @@ def score(suite: dict[str, Any], judgments: dict[str, dict[str, Any]]) -> dict[s
             unsupported_total += 1
             false_acceptances += actual.get("material_error") is False
         tags = set(case["category_tags"])
-        if "protected_causal" in tags and not (
-            actual.get("material_error") == expected["material_error"]
-            and actual.get("causal_overclaim") == expected["causal_overclaim"]
-            and actual.get("mechanism_identification") == expected["mechanism_identification"]
+        causal_fields = suite.get(
+            "protected_causal_fields",
+            ["material_error", "causal_overclaim", "mechanism_identification"],
+        )
+        if "protected_causal" in tags and not all(
+            actual.get(field) == expected[field] for field in causal_fields
         ):
             protected_failures["protected_causal"].append(case["case_id"])
         if "protected_boundary" in tags and not all(
@@ -295,7 +300,9 @@ def main() -> None:
         else:
             passes[pass_id]["gates"]["zero_call_failures"] = True
     report = {
-        "schema": "crane-luna-judge-heldout-qualification/v5",
+        "schema": "crane-luna-judge-heldout-qualification/v6"
+        if suite["schema"].endswith("/v6")
+        else "crane-luna-judge-heldout-qualification/v5",
         "suite": str(suite_path.relative_to(ROOT)),
         "suite_sha256": digest_path(suite_path),
         "reasoning_effort": effort,

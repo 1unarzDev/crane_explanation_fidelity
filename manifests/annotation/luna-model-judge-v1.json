@@ -2,7 +2,7 @@
   "schema": "crane-automated-annotation-arm-manifest/v1",
   "arm_id": "luna-model-judge-v1",
   "declared_utc": "2026-09-23T00:00:00Z",
-  "status": "V5_ENDPOINT_QUALIFICATION_FAILED",
+  "status": "V6_ENDPOINT_QUALIFICATION_PREDECLARED",
   "annotation_origin": "automated",
   "human_annotation_requirement": {
     "original_requirement": "two independent human annotators plus distinct human adjudication of disagreements",
@@ -153,6 +153,18 @@
     "model_executions_at_declaration": 0,
     "study_evaluation_allowed": false,
     "result_manifest": "manifests/annotation/luna-model-judge-v1-heldout-v5-endpoint.json"
+  },
+  "qualification_amendment_v6": {
+    "status": "PREDECLARED_NOT_RUN",
+    "historical_v4_and_v5_failures_preserved": true,
+    "predeclaration": "manifests/annotation/luna-model-judge-v1-v6-predeclaration.json",
+    "freeze": "research/explanation_fidelity/experiment_configs/prospective/luna-model-judge-v6-endpoint-freeze.json",
+    "suite": "research/explanation_fidelity/qualification/luna-model-judge-v6-cases.json",
+    "suite_sha256": "f7c3e5e4b9ca92b3f7fcbd3bbda01a24554ba784101803c37755c3e3efba9c95",
+    "fresh_cases": 24,
+    "composite_cases": 20,
+    "model_executions_at_declaration": 0,
+    "study_evaluation_allowed": false
   },
   "qualification_history": [
     {

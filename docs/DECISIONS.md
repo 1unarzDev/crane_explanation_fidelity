@@ -1366,3 +1366,15 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   former; a future protected causal test should target endpoint-flipping material/causal predicates
   directly, but only prospectively on new cases.
 - Effect: no study scoring, no alpha consumption, and no claim that v5 qualified.
+
+## 2026-09-24 — authorize one fresh v6 qualification with endpoint-aligned causal protection
+
+- Decision: run unchanged Luna on 24 entirely new cases with the same thresholds. Clarify only the
+  protected causal subgate so it tests material-error and causal-overclaim recognition directly.
+- Evidence: in v5 Q5H016 Luna correctly identified the supported saturation/drift mechanism,
+  correctly rejected the wave identity, and correctly marked material causal overclaim. The frozen
+  protected rule nevertheless failed because it also required mechanism `incorrect`, duplicating a
+  non-endpoint secondary reference.
+- Validity: v5 stays failed. V6 has new answers/evidence/numbers and is committed before calls. Core
+  accuracy remains >=90%; composite, error caps, and every other protected rule are unchanged.
+- Stop: both passes must qualify; otherwise preserve the result and do not score study answers.

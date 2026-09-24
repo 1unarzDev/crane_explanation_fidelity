@@ -3989,3 +3989,15 @@
   output tokens including 11,524 reasoning tokens, and 779,347 ms latency; cost unavailable.
 - **DISPOSITION:** preserve failure, score no study response, consume no confirmatory alpha, and
   require fresh cases for any prospectively refined qualification.
+
+## 2026-09-24 — v6 endpoint-focused qualification predeclaration
+
+- **STATUS:** `PREDECLARED / NOT_RUN`; 24 new cases and zero v6 model calls.
+- **UNCHANGED:** Luna alias, high effort, prompt, schema, rubrics, thresholds, isolation, two-pass
+  rule, endpoint, uncertainty reporting, and retry policy.
+- **CLARIFICATION:** protected causal tests require correct material-error and causal-overclaim
+  decisions. Mechanism identification stays in composite/core scoring but is not duplicated in the
+  protected subgate for mixed answers containing a supported mechanism plus unsupported identity.
+- **DENOMINATORS:** 20 balanced composite cases and four additional protected cases per pass.
+- **STOPPING:** both passes must satisfy every gate; no usable label retry or post-result reference
+  amendment is allowed.

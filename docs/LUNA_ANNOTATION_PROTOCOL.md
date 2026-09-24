@@ -202,6 +202,13 @@ materially unsupported and overclaimed; the disagreement was whether the indepen
 saturation mechanism remained correctly identified when an unsupported wave identity was added.
 V5 is retained as failed and never rescored into qualification.
 
+V6 is a prospective fresh-case revision, not a v5 rescore. It keeps every v5 threshold and the
+same Luna prompt/model/settings. Its only scoring clarification is that the protected causal
+subgate directly requires correct material-error and causal-overclaim decisions. Mechanism
+identification remains in composite and core scoring, but is not redundantly required by that
+subgate when an answer communicates a supported execution mechanism and then adds an unsupported
+physical identity. Twenty-four entirely new cases are frozen before any v6 call.
+
 ## Input boundary and isolation
 
 Every response is judged in a new API request with no conversation history and no model tools. The

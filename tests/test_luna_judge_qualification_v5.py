@@ -91,3 +91,14 @@ def test_protected_causal_and_presentation_fail_closed():
     presentation = copy.deepcopy(judgments)
     presentation["Q5H024"]["disposition"] = "partial"
     assert MODULE.score(suite, presentation)["gates"]["protected_tests"] is False
+
+
+def test_v6_causal_profile_separates_supported_mechanism_from_added_overclaim():
+    suite = MODULE.load_suite()
+    suite["protected_causal_fields"] = ["material_error", "causal_overclaim"]
+    judgments = perfect(suite)
+    judgments["Q5H016"]["mechanism_identification"] = "correct"
+    report = MODULE.score(suite, judgments)
+    assert report["gates"]["protected_tests"] is True
+    judgments["Q5H016"]["causal_overclaim"] = False
+    assert MODULE.score(suite, judgments)["gates"]["protected_tests"] is False
