@@ -2,7 +2,7 @@
   "schema": "crane-automated-annotation-arm-manifest/v1",
   "arm_id": "luna-model-judge-v1",
   "declared_utc": "2026-09-23T00:00:00Z",
-  "status": "V4_DEVELOPMENT_PREDECLARED",
+  "status": "V4_DEVELOPMENT_FAILED",
   "annotation_origin": "automated",
   "human_annotation_requirement": {
     "original_requirement": "two independent human annotators plus distinct human adjudication of disagreements",
@@ -114,7 +114,7 @@
     "inconvenient_label_retry_allowed": false
   },
   "qualification": {
-    "status": "V4_DEVELOPMENT_PREDECLARED",
+    "status": "V4_DEVELOPMENT_FAILED",
     "suite": "research/explanation_fidelity/qualification/luna-model-judge-v4-fresh-heldout.json",
     "suite_sha256": "a1e7fca7896e5685b41639522c701007b1726b4f3b6470aa51115d9d14763538",
     "development_cases": 28,
@@ -136,7 +136,8 @@
     "freeze": null,
     "development_rescore": null,
     "previous_failed_heldout_result_manifest": "manifests/annotation/luna-model-judge-v1-heldout-v1.json",
-    "predeclaration": "manifests/annotation/luna-model-judge-v1-v4-predeclaration.json"
+    "predeclaration": "manifests/annotation/luna-model-judge-v1-v4-predeclaration.json",
+    "development_result_manifest": "manifests/annotation/luna-model-judge-v1-development-v4.json"
   },
   "qualification_history": [
     {
@@ -178,6 +179,13 @@
       "result_manifest": "manifests/annotation/luna-model-judge-v1-v4-predeclaration.json",
       "status": "DEVELOPMENT_PREDECLARED",
       "scope": "medium reasoning only; all 28 exposed cases development-only; 14 fresh heldout cases remain unexecuted"
+    },
+    {
+      "prompt": "research/explanation_fidelity/prompts/luna-model-judge-v4.md",
+      "suite": "research/explanation_fidelity/qualification/luna-model-judge-v4-fresh-heldout.json",
+      "result_manifest": "manifests/annotation/luna-model-judge-v1-development-v4.json",
+      "status": "NO_CONFIGURATION_QUALIFIED",
+      "scope": "medium reasoning only; 28 development cases; fresh QN heldout remains unexecuted"
     }
   ],
   "output_roots": {

@@ -140,6 +140,13 @@ only in the v4 development view: an attempted unsupported cause is `incorrect`, 
 false evidence-insufficiency claim is a material error. Prior reports and labels remain immutable.
 The predeclaration is `manifests/annotation/luna-model-judge-v1-v4-predeclaration.json`.
 
+V4 was executed once on the 28 development cases and failed. It returned 28 valid judgments with
+zero false acceptances, call failures, or unexpected unresolved fields, and passed core-field,
+boundary, injection, and presentation-invariance gates. It nevertheless made one false material-
+error rejection on a truthful vague answer and achieved 31/33 exact required-unit statuses
+(93.9%), below the unchanged 95% gate. No configuration was frozen and none of the 14 fresh `QN`
+held-out cases was executed. Study scoring remains prohibited.
+
 ## Input boundary and isolation
 
 Every response is judged in a new API request with no conversation history and no model tools. The

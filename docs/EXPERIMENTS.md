@@ -3902,3 +3902,20 @@
 - **STOPPING:** run medium once on development. Pass every unchanged gate to freeze; otherwise
   retain failure. Only a committed freeze may authorize exactly two fresh held-out passes. No
   usable unfavorable judgment is retried and no threshold is lowered.
+
+## 2026-09-24 — Luna model-judge v4 development qualification failed
+
+- **STATUS:** `NO_CONFIGURATION_QUALIFIED / FRESH_HELDOUT_NOT_RUN`.
+- **RESULT:** 28/28 valid medium-effort judgments, zero false acceptances, one false rejection,
+  zero unexpected unresolved, 31/33 exact required-unit statuses (93.9%), and 203/214 core fields
+  (94.9%). Category material-error and required-unit gates failed; boundary (4/4), injection (2/2),
+  presentation invariance, unresolved, core-field, and zero-false-acceptance gates passed.
+- **FAILURE:** QH004's truthful but vague progress/termination statement was still labeled a
+  material error. Two exact required-unit statuses also disagreed with the frozen development
+  references. The usable outputs are retained and are not retried.
+- **RESOURCE USE:** 387,884 input tokens (309,248 cached), 15,081 output tokens including 4,315
+  reasoning-output tokens, and 370,925 ms aggregate call latency. There were 28 attempts, no
+  transport retries, no tool events, and no reported cost.
+- **DISPOSITION:** no freeze, no fresh `QN` held-out execution, no study labels, and no confirmatory
+  alpha consumption. Report SHA-256:
+  `4c80b810de2c4501acbb9e9f1530c82d9f4808a6bed42db3893f5b236f6707be`.
