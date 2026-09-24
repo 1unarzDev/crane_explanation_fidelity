@@ -2,7 +2,7 @@
   "schema": "crane-automated-annotation-arm-manifest/v1",
   "arm_id": "luna-model-judge-v1",
   "declared_utc": "2026-09-23T00:00:00Z",
-  "status": "V7_REFERENCE_AUDITED_QUALIFICATION_PREDECLARED",
+  "status": "V7_REFERENCE_AUDITED_QUALIFIED",
   "annotation_origin": "automated",
   "human_annotation_requirement": {
     "original_requirement": "two independent human annotators plus distinct human adjudication of disagreements",
@@ -169,7 +169,7 @@
     "failure_basis": "Pass 1 factual false rejection was 3/17 (17.6 percent), above the frozen 15 percent maximum; pass 2 qualified, but both passes were required."
   },
   "qualification_amendment_v7": {
-    "status": "PREDECLARED_NOT_RUN",
+    "status": "HELDOUT_QUALIFIED",
     "historical_v4_v5_v6_failures_preserved": true,
     "predeclaration": "manifests/annotation/luna-model-judge-v1-v7-predeclaration.json",
     "freeze": "research/explanation_fidelity/experiment_configs/prospective/luna-model-judge-v7-reference-audited-freeze.json",
@@ -178,7 +178,10 @@
     "fresh_cases": 24,
     "composite_cases": 20,
     "model_executions_at_declaration": 0,
-    "study_evaluation_allowed": false
+    "study_evaluation_allowed": true,
+    "result_manifest": "manifests/annotation/luna-model-judge-v1-heldout-v7-reference-audited.json",
+    "sensitivity_false_rejection_upper_rounded": 0.1844,
+    "sensitivity_false_acceptance_upper_rounded": 0.3904
   },
   "qualification_history": [
     {

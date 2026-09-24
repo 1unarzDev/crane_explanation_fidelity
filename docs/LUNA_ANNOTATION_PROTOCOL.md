@@ -237,6 +237,18 @@ denominators, thresholds, protected rules, and retry policy remain unchanged. Bo
 clear every gate. A failure ends Luna qualification iteration for this submission rather than
 causing another post-result reference or threshold change.
 
+V7 then qualified on both isolated passes. Each pass classified all 20 composite endpoints and all
+32 required units correctly, made zero observed factual false rejections among 17 factual cases and
+zero observed false acceptances among six unsupported cases, and passed every protected and
+presentation-invariance check without a call failure. Core fields were 176/187 (94.1%) and 179/187
+(95.7%). This activates Luna only for prospective scoring under the exact frozen arm. It does not
+turn Luna labels into human judgments or authorize an otherwise unready campaign.
+
+Qualification uncertainty remains material: the Wilson 95% upper bounds are 18.4% for false
+rejection and 39.0% for false acceptance. Future confirmatory analysis must use the conservatively
+rounded 0.1844 and 0.3904 bounds in the predeclared method-specific label-error sensitivity. A
+nominal method advantage that fails that sensitivity is label-sensitive, not confirmed.
+
 ## Input boundary and isolation
 
 Every response is judged in a new API request with no conversation history and no model tools. The

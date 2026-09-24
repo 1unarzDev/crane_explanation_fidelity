@@ -17,7 +17,7 @@ Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 | Luna historical qualification | V4 HIGH FAILED / PRESERVED | Both fresh passes failed; never retroactively qualified |
 | Luna v5 endpoint qualification | FAILED / PRESERVED | P1 passed; P2 missed core by one field and one protected subcheck |
 | Luna v6 endpoint qualification | FAILED / PRESERVED | P1 false rejection 3/17 exceeded 15%; P2 passed every gate |
-| Luna v7 reference-audited qualification | PREDECLARED / NOT_RUN | Fresh cases; unchanged judge/gates; final qualification cycle |
+| Luna v7 reference-audited qualification | QUALIFIED | Both passes: 20/20 composite, 32/32 units, zero observed FR/FA, all protected gates |
 | Replication configurations reserved | NOT_RUN | Reserve before discovery collection |
 | Sequential null simulation | PASS_QA | 20,000 replicates per endpoint; all boundary estimates below component alpha 0.02 |
 | Alternative budget sensitivity | COMPLETE | +0.30 scenarios reach 0.9946/0.9366 joint success by 1,600; this is not observed power |
@@ -69,10 +69,11 @@ Record, without deleting earlier rows:
 
 ## Next action
 
-Do not score study responses with v6. Run the frozen v7 reference-audited qualification exactly
-once. Only if both passes clear every unchanged gate may Luna be activated for study scoring. A v7
-failure ends qualification iteration for this submission. Candidate/baseline/resource and target-
-generator readiness also remain incomplete; no confirmatory campaign may start.
+Freeze exact candidate P, tool-enabled baseline R, evidence/tool/resource parity, target generators,
+and fresh replication reservations before any confirmatory response is opened. Luna v7 may then be
+used exactly as qualified, retaining both passes and applying 0.1844 false-rejection and 0.3904
+false-acceptance upper bounds in the registered label-error sensitivity. No confirmatory campaign
+is active and no alpha has been consumed.
 
 ## Held-out judge result (2026-09-24)
 

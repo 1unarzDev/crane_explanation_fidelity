@@ -1,0 +1,19 @@
+{
+  "schema":"crane-luna-judge-heldout-result/v2",
+  "arm_id":"luna-model-judge-v1",
+  "qualification_id":"luna-model-judge-v7-reference-audited",
+  "executed_utc_date":"2026-09-24",
+  "status":"HELDOUT_QUALIFIED",
+  "study_evaluation_allowed":true,
+  "result":{"path":"model_outputs/automated_annotations/luna-model-judge-v1/heldout-v7-reference-audited/heldout-qualification.json","sha256":"b5fea22d1ba7db7de2f3f5e63cd1f14b4b3350f6d1a2706fc24687eaae21e81f","governance":"model_outputs.dvc"},
+  "passes":{
+    "pass-1":{"qualified":true,"composite_correct":20,"composite_total":20,"composite_wilson_95":[0.8388748419471806,1.0],"required_unit_correct":32,"required_unit_total":32,"required_unit_wilson_95":[0.8928208017449293,1.0],"core_correct":176,"core_total":187,"core_wilson_95":[0.8977522023690745,0.9668398051518197],"false_rejections":0,"factual_total":17,"false_rejection_wilson_95":[0.0,0.1843181350088518],"false_acceptances":0,"unsupported_total":6,"false_acceptance_wilson_95":[2.7755575615628914e-17,0.3903342879021653],"protected_failures":0,"presentation_invariance":true,"call_failures":0},
+    "pass-2":{"qualified":true,"composite_correct":20,"composite_total":20,"composite_wilson_95":[0.8388748419471806,1.0],"required_unit_correct":32,"required_unit_total":32,"required_unit_wilson_95":[0.8928208017449293,1.0],"core_correct":179,"core_total":187,"core_wilson_95":[0.9178662553334359,0.9781654615518546],"false_rejections":0,"factual_total":17,"false_rejection_wilson_95":[0.0,0.1843181350088518],"false_acceptances":0,"unsupported_total":6,"false_acceptance_wilson_95":[2.7755575615628914e-17,0.3903342879021653],"protected_failures":0,"presentation_invariance":true,"call_failures":0}
+  },
+  "resource_use":{"valid_calls":48,"attempts":48,"transport_retries":0,"input_tokens":657744,"cached_input_tokens":602112,"output_tokens":28295,"reasoning_output_tokens":8992,"aggregate_latency_ms":696326.359362,"cost_usd":null},
+  "interpretation":"Both isolated passes cleared every frozen point-estimate gate. Luna is qualified for prospective diagnostic-study scoring under this exact arm, subject to retaining both passes, unresolved-disagreement handling, and method-specific worst-case sensitivity using the larger pass-specific Wilson error bounds.",
+  "uncertainty_limitation":"Zero observed errors is not zero population error. The false-rejection Wilson 95 percent upper bound is 0.1844 after rounding upward; the false-acceptance upper bound is 0.3904 after rounding upward. These conservative bounds may prevent a confirmatory conclusion even when nominal Luna labels favor a method.",
+  "sensitivity_bounds":{"false_rejection_upper_rounded":0.1844,"false_acceptance_upper_rounded":0.3904,"rule":"Use the larger pass-specific upper bound and method-specific best/worst transformations declared by the sequential annotation amendment."},
+  "confirmatory_alpha_consumed":0.0,
+  "study_responses_scored":0
+}

@@ -4034,3 +4034,21 @@
   thresholds, denominators, protected rules, uncertainty reporting, and retry policy.
 - **HARD STOP:** both passes must clear every gate. Any v7 failure ends Luna qualification
   iteration for the submission and prohibits automated study scoring.
+
+## 2026-09-24 — v7 reference-audited qualification passed
+
+- **STATUS:** `HELDOUT_QUALIFIED / PROSPECTIVE_SCORING_ALLOWED`.
+- **PASS 1:** 20/20 composite (Wilson 95% CI 83.9--100%), 32/32 units, 176/187 core fields
+  (94.1%), zero false rejections among 17 factual answers, zero false acceptances among six
+  unsupported answers, and zero protected, invariance, or call failures.
+- **PASS 2:** 20/20 composite, 32/32 units, 179/187 core fields (95.7%), zero false rejections,
+  zero false acceptances, and zero protected, invariance, or call failures.
+- **UNCERTAINTY:** per-pass zero-error Wilson 95% upper bounds are 18.4% for false rejection and
+  39.0% for false acceptance. Confirmatory sensitivity must use conservatively rounded 0.1844 and
+  0.3904 bounds; finite perfect counts are not zero population error.
+- **RESOURCE USE:** 48 valid calls, no retries; 657,744 input tokens (602,112 cached), 28,295
+  output tokens including 8,992 reasoning tokens, and 696,326 ms aggregate latency; cost
+  unavailable.
+- **BOUNDARY:** this qualifies only the exact automated arm. It is not human annotation, does not
+  consume alpha, does not score a study response, and does not start confirmation. Result SHA-256
+  `b5fea22d1ba7db7de2f3f5e63cd1f14b4b3350f6d1a2706fc24687eaae21e81f`.

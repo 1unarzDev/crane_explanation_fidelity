@@ -1408,3 +1408,16 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   unqualified judge are rejected. Another robot episode cannot resolve a reference-validity defect.
 - Stop: if either v7 pass fails, end Luna qualification iteration for this submission, retain the
   negative result, and prohibit automated semantic study scoring.
+
+## 2026-09-24 — activate qualified Luna v7 for prospective scoring only
+
+- Decision: activate the exact frozen v7 arm for future prospective diagnostic-study scoring after
+  both isolated passes cleared every gate. End judge configuration search.
+- Evidence: both passes achieved 20/20 composite and 32/32 unit classifications, zero observed
+  false rejections and false acceptances, all protected tests, and 94.1%/95.7% core accuracy.
+- Limits: Luna remains an automated semantic judge, not a human annotator. Wilson upper bounds are
+  18.4% false rejection and 39.0% false acceptance because denominators are small; method-specific
+  worst-case sensitivity uses rounded bounds 0.1844 and 0.3904.
+- Campaign effect: qualification removes one blocker but does not freeze P or R, prove parity,
+  reserve replication configurations, or activate alpha. Confirmation remains closed until those
+  contracts are committed.
