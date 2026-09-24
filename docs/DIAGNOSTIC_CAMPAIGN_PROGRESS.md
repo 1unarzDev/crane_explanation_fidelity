@@ -2,7 +2,7 @@
 
 Updated: 2026-09-23
 
-Protocol: `diagnostic-sequential-protocol-v1`
+Protocol: `diagnostic-sequential-protocol-v2`
 Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 
 ## Readiness
@@ -17,6 +17,8 @@ Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 | Luna development qualification | FAILED | `luna-model-judge-v1` is ineligible |
 | Luna held-out qualification | NOT_RUN | Requires a newly declared judge version that first passes development |
 | Replication configurations reserved | NOT_RUN | Reserve before discovery collection |
+| Sequential null simulation | PASS_QA | 20,000 replicates per endpoint; all boundary estimates below component alpha 0.02 |
+| Alternative budget sensitivity | COMPLETE | +0.30 scenarios reach 0.9946/0.9366 joint success by 1,600; this is not observed power |
 
 ## Program error-budget ledger
 
@@ -28,7 +30,7 @@ Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 
 Consumed alpha: **0.000 / 0.050**. An allocation becomes consumed when its first confirmatory
 response is inspected, not when a favorable result appears. Machine-readable state is retained in
-`manifests/study/diagnostic-sequential-error-ledger-v1.json`; before the first response is opened,
+`manifests/study/diagnostic-sequential-error-ledger-v2.json`; before the first response is opened,
 the chosen allocation must be atomically bound to that campaign and cannot later be refunded.
 
 ## Cumulative evidence
@@ -44,6 +46,10 @@ the chosen allocation must be atomically bound to that campaign and cannot later
 
 No effect estimate, confidence sequence, guardrail result, or replication conclusion exists.
 Legacy and the nine diagnostic-development clusters are intentionally absent from these counts.
+
+The v1 framework was retired unused after pre-outcome feasibility checks. No v1 or v2 allocation
+was consumed. The v2 fixed-fraction e-process and intersection--union decision rule are documented
+in `docs/SEQUENTIAL_STUDY_PROTOCOL.md`; retained simulation is planning evidence only.
 
 ## Required update for each collection batch
 

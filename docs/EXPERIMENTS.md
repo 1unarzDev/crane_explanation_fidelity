@@ -3786,3 +3786,24 @@
 - **BLOCKERS:** candidate and exact R resources are not hash-frozen; surface strata are not admitted;
   current Luna v1/v2 is ineligible; held-out judge qualification and replication reservation are
   `NOT_RUN`. Confirmatory collection remains prohibited.
+
+## 2026-09-23 — sequential v2 feasibility and boundary-null simulation
+
+- **STATUS:** `IMPLEMENTED / TESTED / PLANNING_ONLY`; no robot episode, candidate answer, semantic
+  study label, or confirmatory alpha was consumed.
+- **DESIGN CORRECTION:** v1 is retained but retired unused. V2 replaces its globally capped bets
+  with fixed fractions of the null-specific admissible bet and uses the valid intersection--union
+  rule for the four conjunctive gates. Scientific thresholds and the 0.05 program ledger did not
+  change.
+- **RUN:** NumPy 2.5.3, seed 20260923, 20,000 boundary-null replicates per endpoint, 10,000 joint
+  replicates per alternative scenario, maximum 1,600 target-mixture arrivals. Exact protocol and
+  script hashes are retained in `analysis/results/diagnostic-sequential-simulation-v2.json`.
+- **NULL QA:** primary/material/coverage/ambiguity crossing estimates were respectively
+  0.0116/0.00905/0.0094/0.00785 at component alpha 0.02; all Wilson 95% upper limits were below
+  0.02. This detects gross implementation inflation but does not prove coverage.
+- **BUDGET SENSITIVITY:** a true +0.30 primary effect produced 0.9946 joint success by 1,600 under
+  low and 0.9366 under moderate guardrail discordance. The exact +0.15 boundary produced 0.0027,
+  confirming that merely attaining the worthwhile point estimate is not enough.
+- **INTERPRETATION:** theorem-to-code correspondence supplies validity; simulation supplies only QA
+  and resource planning. Actual campaign planning remains blocked on qualified Luna development
+  labels and may set a lower prospective ceiling.

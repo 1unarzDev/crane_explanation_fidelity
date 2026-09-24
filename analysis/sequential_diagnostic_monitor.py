@@ -20,9 +20,9 @@ ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_PROTOCOL = (
     ROOT
     / "research/explanation_fidelity/experiment_configs/prospective/"
-    "diagnostic-sequential-protocol-v1.json"
+    "diagnostic-sequential-protocol-v2.json"
 )
-DEFAULT_LEDGER = ROOT / "manifests/study/diagnostic-sequential-error-ledger-v1.json"
+DEFAULT_LEDGER = ROOT / "manifests/study/diagnostic-sequential-error-ledger-v2.json"
 
 
 def _require_probability(value: Any, label: str) -> float:
@@ -51,26 +51,30 @@ def paired_difference(proposed: Any, baseline: Any, label: str) -> float:
 def log_mixture_e_value(
     observations: Iterable[float],
     null_mean: float,
-    lambdas: Iterable[float],
+    bet_fractions: Iterable[float],
 ) -> float:
     """Log e-value for H0: conditional mean <= null_mean.
 
-    For X in [-1, 1] and each fixed lambda in [0, 1/2],
-    product(1 + lambda * (X - null_mean)) is a nonnegative supermartingale under
-    E[X_t | F_{t-1}] <= null_mean.  A fixed mixture is also a supermartingale.
+    For X in [-1, 1], null mean m > -1, and fixed fraction c in (0, 1), use
+    lambda_c(m) = c / (1 + m).  Then every factor
+    1 + lambda_c(m) * (X - m) is positive and has conditional expectation at most one
+    under E[X_t | F_{t-1}] <= m.  A fixed mixture over c is also a supermartingale.
     """
 
     values = tuple(float(item) for item in observations)
     if not -1.0 <= null_mean <= 1.0:
         raise ValueError("null_mean must be in [-1, 1]")
-    bets = tuple(float(item) for item in lambdas)
-    if not bets or any(not 0.0 < item <= 0.5 for item in bets):
-        raise ValueError("lambdas must be a nonempty fixed set in (0, 0.5]")
+    fractions = tuple(float(item) for item in bet_fractions)
+    if not fractions or any(not 0.0 < item < 1.0 for item in fractions):
+        raise ValueError("bet fractions must be a nonempty fixed set in (0, 1)")
     if any(not -1.0 <= item <= 1.0 for item in values):
         raise ValueError("observations must be in [-1, 1]")
+    if null_mean == -1.0:
+        return 0.0 if all(item == -1.0 for item in values) else math.inf
 
     components = []
-    for bet in bets:
+    for fraction in fractions:
+        bet = fraction / (1.0 + null_mean)
         total = 0.0
         for value in values:
             factor = 1.0 + bet * (value - null_mean)
@@ -90,7 +94,7 @@ def log_mixture_e_value(
 
 
 def lower_confidence_bound(
-    observations: Iterable[float], alpha: float, lambdas: Iterable[float]
+    observations: Iterable[float], alpha: float, bet_fractions: Iterable[float]
 ) -> float:
     """Invert the monotone e-process to obtain an anytime-valid one-sided lower bound."""
 
@@ -98,14 +102,14 @@ def lower_confidence_bound(
     if not 0.0 < alpha < 1.0:
         raise ValueError("alpha must be in (0, 1)")
     threshold = math.log(1.0 / alpha)
-    if log_mixture_e_value(values, -1.0, lambdas) < threshold:
+    if log_mixture_e_value(values, -1.0, bet_fractions) < threshold:
         return -1.0
-    if log_mixture_e_value(values, 1.0, lambdas) >= threshold:
+    if log_mixture_e_value(values, 1.0, bet_fractions) >= threshold:
         return 1.0
     low, high = -1.0, 1.0
     for _ in range(80):
         middle = (low + high) / 2.0
-        if log_mixture_e_value(values, middle, lambdas) >= threshold:
+        if log_mixture_e_value(values, middle, bet_fractions) >= threshold:
             low = middle
         else:
             high = middle
@@ -113,13 +117,19 @@ def lower_confidence_bound(
 
 
 def upper_confidence_bound(
-    observations: Iterable[float], alpha: float, lambdas: Iterable[float]
+    observations: Iterable[float], alpha: float, bet_fractions: Iterable[float]
 ) -> float:
-    return -lower_confidence_bound((-float(item) for item in observations), alpha, lambdas)
+    return -lower_confidence_bound(
+        (-float(item) for item in observations), alpha, bet_fractions
+    )
 
 
 def _endpoint(
-    values: list[float], threshold: float, direction: str, alpha: float, lambdas: tuple[float, ...]
+    values: list[float],
+    threshold: float,
+    direction: str,
+    alpha: float,
+    bet_fractions: tuple[float, ...],
 ) -> dict[str, Any]:
     estimate = sum(values) / len(values) if values else None
     if not values:
@@ -133,12 +143,14 @@ def _endpoint(
             "passed": False,
         }
     if direction == "lower":
-        bound = lower_confidence_bound(values, alpha, lambdas)
-        log_e = log_mixture_e_value(values, threshold, lambdas)
+        bound = lower_confidence_bound(values, alpha, bet_fractions)
+        log_e = log_mixture_e_value(values, threshold, bet_fractions)
         passed = bound > threshold
     elif direction == "upper":
-        bound = upper_confidence_bound(values, alpha, lambdas)
-        log_e = log_mixture_e_value((-item for item in values), -threshold, lambdas)
+        bound = upper_confidence_bound(values, alpha, bet_fractions)
+        log_e = log_mixture_e_value(
+            (-item for item in values), -threshold, bet_fractions
+        )
         passed = bound < threshold
     else:
         raise ValueError(f"unsupported direction: {direction}")
@@ -155,7 +167,7 @@ def _endpoint(
 
 
 def validate_protocol(protocol: dict[str, Any]) -> None:
-    if protocol.get("schema") != "crane-diagnostic-sequential-protocol/v1":
+    if protocol.get("schema") != "crane-diagnostic-sequential-protocol/v2":
         raise ValueError("unsupported sequential protocol")
     ledger = protocol["error_budget_ledger"]
     program_alpha = float(ledger["program_alpha"])
@@ -185,9 +197,11 @@ def validate_protocol(protocol: dict[str, Any]) -> None:
         sum(float(item["probability"]) for item in probabilities), 1.0, abs_tol=1e-12
     ):
         raise ValueError("target scenario probabilities must sum to one")
-    bets = [float(item) for item in protocol["analysis"]["betting_lambdas"]]
-    if bets != sorted(set(bets)) or any(not 0.0 < item <= 0.5 for item in bets):
-        raise ValueError("betting lambdas must be unique, increasing, and in (0, 0.5]")
+    fractions = [float(item) for item in protocol["analysis"]["betting_fractions"]]
+    if fractions != sorted(set(fractions)) or any(
+        not 0.0 < item < 1.0 for item in fractions
+    ):
+        raise ValueError("bet fractions must be unique, increasing, and in (0, 1)")
 
 
 def protocol_sha256(protocol: dict[str, Any]) -> str:
@@ -360,33 +374,43 @@ def analyze(
     ]
 
     campaign_alpha = float(allocation["alpha"])
-    gate_alpha = campaign_alpha / 4.0
-    lambdas = tuple(float(item) for item in protocol["analysis"]["betting_lambdas"])
+    # This is an intersection-union claim: overall success requires rejecting every
+    # component null.  Testing each component at the campaign alpha controls the overall
+    # type-I error because a false overall success must reject at least one true component
+    # null.  Program-level alpha spending still applies across campaigns/candidates.
+    gate_alpha = campaign_alpha
+    bet_fractions = tuple(
+        float(item) for item in protocol["analysis"]["betting_fractions"]
+    )
     margins = protocol["decision_thresholds"]
     endpoints = {
         "supported_diagnostic_success": _endpoint(
-            primary, float(margins["minimum_worthwhile_improvement"]), "lower", gate_alpha, lambdas
+            primary,
+            float(margins["minimum_worthwhile_improvement"]),
+            "lower",
+            gate_alpha,
+            bet_fractions,
         ),
         "material_error_difference": _endpoint(
             material,
             float(margins["maximum_material_error_degradation"]),
             "upper",
             gate_alpha,
-            lambdas,
+            bet_fractions,
         ),
         "useful_coverage_difference": _endpoint(
             coverage,
             -float(margins["maximum_useful_coverage_degradation"]),
             "lower",
             gate_alpha,
-            lambdas,
+            bet_fractions,
         ),
         "ambiguity_handling_difference": _endpoint(
             ambiguity,
             -float(margins["maximum_ambiguity_handling_degradation"]),
             "lower",
             gate_alpha,
-            lambdas,
+            bet_fractions,
         ),
     }
 
@@ -425,7 +449,9 @@ def analyze(
     elif all_bounds_pass and enough and judge_ready and replication_ready:
         status = "SUCCESS"
     elif len(rows) in set(int(item) for item in minimums["futility_review_cluster_counts"]):
-        primary_upper = upper_confidence_bound(primary, 0.05, lambdas) if primary else 1.0
+        primary_upper = (
+            upper_confidence_bound(primary, 0.05, bet_fractions) if primary else 1.0
+        )
         if primary_upper <= float(margins["minimum_worthwhile_improvement"]):
             status = "STOP_FOR_FUTILITY_REVIEW"
 
@@ -438,7 +464,7 @@ def analyze(
         "campaign_id": campaign_id,
         "alpha_allocation_id": allocation_id,
         "campaign_alpha": campaign_alpha,
-        "per_gate_bonferroni_alpha": gate_alpha,
+        "per_gate_intersection_union_alpha": gate_alpha,
         "independent_clusters": len(rows),
         "diagnosable_clusters": len(primary),
         "ambiguous_clusters": len(ambiguity),

@@ -22,7 +22,7 @@ appropriate limits. Legacy F/G/H answers remain governed by their original subst
 are not retrospectively required to perform physical diagnosis.
 
 For any new sequential diagnostic campaign, this protocol is subordinate to the additional gate
-in `docs/SEQUENTIAL_EVALUATION_PROTOCOL.md`: a newly versioned Luna arm must pass development and
+in `docs/SEQUENTIAL_STUDY_PROTOCOL.md`: a newly versioned Luna arm must pass development and
 untouched held-out qualification before the first confirmatory label. Its complete rubric,
 references, model/settings, two-pass rule, and qualification-manifest hash are frozen with the
 campaign. The current v1/v2 failures cannot be repaired by accumulating more study responses, and

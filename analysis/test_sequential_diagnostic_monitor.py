@@ -21,15 +21,15 @@ PROTOCOL = json.loads(
     (
         ROOT
         / "research/explanation_fidelity/experiment_configs/prospective/"
-        "diagnostic-sequential-protocol-v1.json"
+        "diagnostic-sequential-protocol-v2.json"
     ).read_text(encoding="utf-8")
 )
 LEDGER = json.loads(
-    (ROOT / "manifests/study/diagnostic-sequential-error-ledger-v1.json").read_text(
+    (ROOT / "manifests/study/diagnostic-sequential-error-ledger-v2.json").read_text(
         encoding="utf-8"
     )
 )
-LAMBDAS = tuple(PROTOCOL["analysis"]["betting_lambdas"])
+BET_FRACTIONS = tuple(PROTOCOL["analysis"]["betting_fractions"])
 
 
 def _row(index: int, *, ambiguous: bool = False) -> dict:
@@ -139,7 +139,8 @@ def test_one_step_mixture_is_supermartingale_under_boundary_null():
     for plus, minus in ((0.15, 0.0), (0.3, 0.15), (0.05, 0.0)):
         zero = 1.0 - plus - minus
         expected = sum(
-            probability * math.exp(log_mixture_e_value([value], null_mean, LAMBDAS))
+            probability
+            * math.exp(log_mixture_e_value([value], null_mean, BET_FRACTIONS))
             for value, probability in ((1.0, plus), (-1.0, minus), (0.0, zero))
         )
         assert expected <= 1.0 + 1e-12
@@ -147,20 +148,31 @@ def test_one_step_mixture_is_supermartingale_under_boundary_null():
 
 def test_bounds_tighten_in_the_supported_direction():
     favorable = [1.0] * 200
-    assert lower_confidence_bound(favorable, 0.005, LAMBDAS) > 0.15
-    assert upper_confidence_bound([-item for item in favorable], 0.005, LAMBDAS) < -0.15
+    assert lower_confidence_bound(favorable, 0.005, BET_FRACTIONS) > 0.15
+    assert (
+        upper_confidence_bound(
+            [-item for item in favorable], 0.005, BET_FRACTIONS
+        )
+        < -0.15
+    )
+
+
+def test_zero_differences_can_establish_declared_guardrails_before_maximum():
+    values = [0.0] * 800
+    assert upper_confidence_bound(values, 0.005, BET_FRACTIONS) < 0.02
+    assert lower_confidence_bound(values[:160], 0.005, BET_FRACTIONS) > -0.05
 
 
 def test_out_of_range_observations_are_rejected_not_clipped():
     with pytest.raises(ValueError, match="observations must be"):
-        log_mixture_e_value([1.01], 0.15, LAMBDAS)
+        log_mixture_e_value([1.01], 0.15, BET_FRACTIONS)
 
 
 def test_all_corrected_gates_are_required_for_success():
     result = _analyze(_payload())
     assert result["status"] == "SUCCESS"
     assert all(item["passed"] for item in result["endpoints"].values())
-    assert result["per_gate_bonferroni_alpha"] == 0.005
+    assert result["per_gate_intersection_union_alpha"] == 0.02
 
     failed = _payload()
     for row in failed["clusters"]:

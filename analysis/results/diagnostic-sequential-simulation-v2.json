@@ -1,0 +1,222 @@
+{
+  "alternative_budgeting": [
+    {
+      "assumptions": {
+        "ambiguity": {
+          "minus_probability": 0.005,
+          "plus_probability": 0.005
+        },
+        "coverage": {
+          "minus_probability": 0.01,
+          "plus_probability": 0.01
+        },
+        "material": {
+          "minus_probability": 0.005,
+          "plus_probability": 0.005
+        },
+        "primary": {
+          "minus_probability": 0.05,
+          "plus_probability": 0.35
+        },
+        "scenario_id": "large-primary-low-guardrail-discordance"
+      },
+      "replicates": 10000,
+      "scenario_id": "large-primary-low-guardrail-discordance",
+      "success_probability_at_or_before_maximum": 0.9946,
+      "success_probability_by_look": {
+        "100": 0.0,
+        "1200": 0.9475,
+        "150": 0.0,
+        "1600": 0.9946,
+        "200": 0.0,
+        "300": 0.0,
+        "400": 0.0109,
+        "600": 0.4134,
+        "800": 0.6604
+      },
+      "success_probability_wilson_95": [
+        0.9929614662668304,
+        0.9958586825448964
+      ],
+      "successes_by_maximum": 9946
+    },
+    {
+      "assumptions": {
+        "ambiguity": {
+          "minus_probability": 0.01,
+          "plus_probability": 0.01
+        },
+        "coverage": {
+          "minus_probability": 0.025,
+          "plus_probability": 0.025
+        },
+        "material": {
+          "minus_probability": 0.01,
+          "plus_probability": 0.01
+        },
+        "primary": {
+          "minus_probability": 0.05,
+          "plus_probability": 0.35
+        },
+        "scenario_id": "large-primary-moderate-guardrail-discordance"
+      },
+      "replicates": 10000,
+      "scenario_id": "large-primary-moderate-guardrail-discordance",
+      "success_probability_at_or_before_maximum": 0.9366,
+      "success_probability_by_look": {
+        "100": 0.0,
+        "1200": 0.7608,
+        "150": 0.0,
+        "1600": 0.9366,
+        "200": 0.0,
+        "300": 0.0003,
+        "400": 0.0119,
+        "600": 0.1598,
+        "800": 0.3564
+      },
+      "success_probability_wilson_95": [
+        0.9316542609239533,
+        0.9412104316987717
+      ],
+      "successes_by_maximum": 9366
+    },
+    {
+      "assumptions": {
+        "ambiguity": {
+          "minus_probability": 0.005,
+          "plus_probability": 0.005
+        },
+        "coverage": {
+          "minus_probability": 0.01,
+          "plus_probability": 0.01
+        },
+        "material": {
+          "minus_probability": 0.005,
+          "plus_probability": 0.005
+        },
+        "primary": {
+          "minus_probability": 0.05,
+          "plus_probability": 0.2
+        },
+        "scenario_id": "worthwhile-boundary-low-guardrail-discordance"
+      },
+      "replicates": 10000,
+      "scenario_id": "worthwhile-boundary-low-guardrail-discordance",
+      "success_probability_at_or_before_maximum": 0.0027,
+      "success_probability_by_look": {
+        "100": 0.0,
+        "1200": 0.0023,
+        "150": 0.0,
+        "1600": 0.0027,
+        "200": 0.0,
+        "300": 0.0,
+        "400": 0.0,
+        "600": 0.0005,
+        "800": 0.0012
+      },
+      "success_probability_wilson_95": [
+        0.0018563306257756151,
+        0.003925594153699328
+      ],
+      "successes_by_maximum": 27
+    }
+  ],
+  "alternative_replicates_per_scenario": 10000,
+  "analysis_script_sha256": "ce742b4275fda1816be90f902555422783f36d0db0d0684d4cfdfae87330c67b",
+  "interpretation_rules": [
+    "The supermartingale argument, not simulation, establishes anytime validity.",
+    "Boundary-null crossing rates are Monte Carlo implementation checks and retain sampling uncertainty.",
+    "Alternative scenarios are design sensitivities, not observed effect estimates or promised power.",
+    "Campaign-specific planning must be rerun after qualified development labels estimate realistic discordance and invalid-run rates."
+  ],
+  "null_boundary_checks": {
+    "ambiguity_boundary": {
+      "alpha": 0.02,
+      "crossing_rate": 0.00785,
+      "crossing_rate_wilson_95": [
+        0.0067178966931120965,
+        0.009171124396911683
+      ],
+      "crossings": 157,
+      "first_crossing_quantiles": {
+        "q10": 54.0,
+        "q50": 87.0,
+        "q90": 252.40000000000006
+      },
+      "minus_probability": 0.075,
+      "null_mean": -0.05,
+      "observations": 320,
+      "plus_probability": 0.025,
+      "replicates": 20000,
+      "true_mean": -0.049999999999999996
+    },
+    "coverage_boundary": {
+      "alpha": 0.02,
+      "crossing_rate": 0.0094,
+      "crossing_rate_wilson_95": [
+        0.008153673188130088,
+        0.010834752590119772
+      ],
+      "crossings": 188,
+      "first_crossing_quantiles": {
+        "q10": 56.4,
+        "q50": 153.5,
+        "q90": 976.7000000000003
+      },
+      "minus_probability": 0.075,
+      "null_mean": -0.05,
+      "observations": 1600,
+      "plus_probability": 0.025,
+      "replicates": 20000,
+      "true_mean": -0.049999999999999996
+    },
+    "material_boundary": {
+      "alpha": 0.02,
+      "crossing_rate": 0.00905,
+      "crossing_rate_wilson_95": [
+        0.007828572378788317,
+        0.010459987824700817
+      ],
+      "crossings": 181,
+      "first_crossing_quantiles": {
+        "q10": 136.0,
+        "q50": 315.0,
+        "q90": 1073.0
+      },
+      "minus_probability": 0.03,
+      "null_mean": -0.02,
+      "observations": 1600,
+      "plus_probability": 0.01,
+      "replicates": 20000,
+      "true_mean": -0.019999999999999997
+    },
+    "primary_boundary": {
+      "alpha": 0.02,
+      "crossing_rate": 0.0116,
+      "crossing_rate_wilson_95": [
+        0.010206990315614336,
+        0.013180590503988659
+      ],
+      "crossings": 232,
+      "first_crossing_quantiles": {
+        "q10": 35.0,
+        "q50": 106.0,
+        "q90": 630.7
+      },
+      "minus_probability": 0.05,
+      "null_mean": 0.15,
+      "observations": 1600,
+      "plus_probability": 0.2,
+      "replicates": 20000,
+      "true_mean": 0.15000000000000002
+    }
+  },
+  "null_replicates_per_endpoint": 20000,
+  "numpy_version": "2.5.3",
+  "per_gate_alpha": 0.02,
+  "protocol_id": "diagnostic-sequential-protocol-v2",
+  "protocol_sha256": "ed7d533538e249b483501f805b10d2489f983ab672cb6b4115e2b79b2e9eec8e",
+  "schema": "crane-diagnostic-sequential-simulation/v1",
+  "seed": 20260923,
+  "status": "PLANNING_AND_IMPLEMENTATION_QA_NOT_VALIDITY_PROOF"
+}

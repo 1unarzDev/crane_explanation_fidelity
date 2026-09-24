@@ -149,7 +149,7 @@ their own location. Exact repository commits and destinations are recorded in
   simultaneous material-error/coverage/ambiguity guardrails, a closed 0.05 program error ledger,
   and separately reserved fresh-config replication. It cannot use legacy or inspected development
   outcomes. The failed Luna arm, unfrozen candidate/resource hashes, and unqualified surface strata
-  currently block activation; see [sequential protocol](docs/SEQUENTIAL_EVALUATION_PROTOCOL.md)
+  currently block activation; see [sequential protocol](docs/SEQUENTIAL_STUDY_PROTOCOL.md)
   and [campaign progress](docs/DIAGNOSTIC_CAMPAIGN_PROGRESS.md).
 - **TESTED (SECONDARY-ARM DEVELOPMENT):** the provider-neutral model-call contract now has a
   Claude Code adapter as its first non-GPT instance. A predeclared control rejected Haiku and fixed

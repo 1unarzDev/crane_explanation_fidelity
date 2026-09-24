@@ -136,6 +136,32 @@ post-outcome exclusions, or an outcome-adaptive shift in the estimand. A naive b
 recomputed at every look is not anytime-valid. Nor does optional stopping make a fixed-sample exact
 McNemar interval time-uniform.
 
+### Registered V2 fixed-fraction implementation
+
+Before any confirmatory response or alpha consumption, implementation feasibility checks found the
+initial globally capped fixed-lambda mixture unnecessarily conservative for the narrow guardrails.
+The registered v2 implementation keeps the same bounded-mean supermartingale but parameterizes its
+fixed alternatives by a fraction `c in (0,1)` of the largest admissible positive bet for each null
+mean `m > -1`:
+
+\[
+\lambda_c(m)=\frac{c}{1+m},\qquad
+M_t(m,c)=\prod_{i\le t}\left[1+\lambda_c(m)(D_i-m)\right].
+\]
+
+For `D_i in [-1,1]`, the smallest factor is `1-c>0`. Under the one-sided null,
+`E[D_i | F_(i-1)] <= m`, its conditional expectation is at most one. The fixed uniform mixture
+over predeclared fractions is therefore a nonnegative supermartingale. Moreover each factor is
+nonincreasing in `m` because its derivative is `-c(1+D_i)/(1+m)^2 <= 0`, so numerical inversion is
+monotone. The `m=-1` boundary is exact: the null forces every observation to equal `-1`; any larger
+observation refutes it.
+
+The four required conclusions form an intersection--union test. Each component can use the full
+campaign alpha: if the overall conjunction is false, at least one component null is true, and a
+false overall success requires rejection of that true null. Its probability is at most the
+component alpha. Online Bonferroni spending remains necessary across candidate campaigns and
+replication; intersection--union logic does not license multiple uncharged versions.
+
 ### The actual success boundary
 
 Let $\delta>0$ be the minimum worthwhile improvement fixed before confirmation. Evidence of a

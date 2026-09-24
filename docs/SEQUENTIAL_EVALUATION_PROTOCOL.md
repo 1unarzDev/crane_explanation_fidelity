@@ -1,5 +1,10 @@
 # Sequential evaluation protocol for new diagnostic campaigns
 
+> **SUPERSEDED UNUSED:** This v1 design was retired before any confirmatory response was inspected
+> and before any alpha was consumed. The canonical prospective protocol is
+> `docs/SEQUENTIAL_STUDY_PROTOCOL.md` (`diagnostic-sequential-protocol-v2`). This file is retained
+> as design history and must not activate a campaign.
+
 Protocol: `diagnostic-sequential-protocol-v1`
 
 Declared: 2026-09-23

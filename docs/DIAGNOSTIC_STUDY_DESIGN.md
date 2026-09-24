@@ -8,8 +8,8 @@ mobility-hold episodes.
 
 ## Prospective sequential framework
 
-Future confirmation is governed by `docs/SEQUENTIAL_EVALUATION_PROTOCOL.md` and its machine-
-readable `diagnostic-sequential-protocol-v1` declaration. That additive framework applies only to
+Future confirmation is governed by `docs/SEQUENTIAL_STUDY_PROTOCOL.md` and its machine-readable
+`diagnostic-sequential-protocol-v2` declaration. That additive framework applies only to
 fresh configurations and does not retrofit this development inventory or the frozen legacy study.
 It names tool-enabled R as the sole primary baseline, retains the +0.15 minimum worthwhile
 improvement, adds simultaneous material-error/coverage/ambiguity guardrails, and reserves separate
@@ -20,7 +20,7 @@ The historical 92-cluster calculation below tests improvement against zero under
 discordance pattern. It remains development-budget evidence but cannot justify a sequential lower
 bound above +0.15. New campaign planning must simulate plausible true effects strictly greater
 than +0.15 and follow the sequential framework's 100-cluster minimum, scheduled futility reviews,
-and 400-cluster resource maximum.
+and campaign-specific resource ceiling no greater than the 1,600-cluster framework maximum.
 
 ## Questions and primary endpoint
 

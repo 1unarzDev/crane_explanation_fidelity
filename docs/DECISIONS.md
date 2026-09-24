@@ -1224,3 +1224,25 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   samplers, newly qualified Luna arm, and replication reserve must be hash-frozen first.
 - Revisit condition: a future protocol version may use a prospectively declared land-only target
   if surface strata remain unavailable, but never by redistributing weight after outcomes.
+
+## 2026-09-23 — retire unused sequential v1 and register feasible v2 monitoring
+
+- Decision: preserve `diagnostic-sequential-protocol-v1` as unused design history and make v2 the
+  canonical framework before any confirmatory response or alpha consumption. V2 uses a fixed-
+  fraction admissible betting mixture, an intersection--union decision rule, and a 1,600-cluster
+  outer planning ceiling; the +0.15 improvement and all three guardrail margins are unchanged.
+- Evidence: analytic zero-difference bounds and an initial pre-outcome simulation showed v1's
+  global lambda cap, equal Bonferroni split, 20% ambiguity allocation, and 400-cluster maximum made
+  the ambiguity guardrail practically unattainable. This was a design defect, not a negative method
+  result. No v1 campaign existed and its cumulative ledger consumed 0.000 alpha.
+- Mathematical basis: for null mean `m`, `lambda=c/(1+m)` keeps every bounded-mean factor positive
+  and expectation at most one. Overall success is a conjunction, so testing each component at the
+  campaign alpha is a valid intersection--union test; program alpha spending still controls
+  candidate and replication multiplicity.
+- QA evidence: 20,000 seeded boundary-null replicates per endpoint produced crossing estimates
+  0.0079--0.0116 at component alpha 0.02. In 10,000-run budgeting sensitivities, a true +0.30
+  primary effect reached joint success by 1,600 with probability 0.9946 under low and 0.9366 under
+  moderate guardrail discordance. A true +0.15 boundary reached only 0.0027, as expected.
+- Limits: simulations are not validity proofs or observed power. The large ceiling is not a sample
+  target; a qualified-judge pilot must estimate discordance, invalid-run, and unresolved rates and
+  set a campaign-specific ceiling prospectively.
