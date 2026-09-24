@@ -63,10 +63,14 @@ run order or stopping rule.
 The paired no-odometry mask is now governed as the required valid ambiguous variant and adds zero
 independent clusters. P fully covered the supported partial answer and correctly withheld a
 discrepancy conclusion in both passes; R was partial and failed the composite endpoint in both.
-Current v3 readiness state: 1/6 valid independent clusters, 1/1 valid ambiguous variants, cumulative
-P-minus-R +1 in each pass, zero P material errors, and no P coverage degradation. Readiness is still
-pending and confirmation remains inactive at `0.000/0.050`. The next authorized action is the
-single predeclared attempt of `cmv3-dev-002`; no run may be replaced based on outcome.
+Run `cmv3-dev-002` is also governed as one valid transient-compensation cluster. P passed both Luna
+passes; R failed both after citing ephemeral local paths and omitting required information. Current
+v3 readiness state: 2/6 valid independent clusters, 1/1 valid ambiguous variants, cumulative
+P-minus-R +2 in each pass, zero P material errors, and no P coverage degradation. Although the
+numerical advantage threshold is currently met, the predeclared pilot must continue through every
+fixed run and requires at least four valid independent clusters before any readiness decision.
+Confirmation remains inactive at `0.000/0.050`; the next authorized action is the sole attempt of
+`cmv3-dev-003`, with no replacement based on outcome.
 
 Candidate v2 now has an executable development runner. P is the exact checked deterministic
 diagnostic rendering with zero model calls; R gets the identical blind input, source, diagnostic

@@ -1,5 +1,23 @@
 # Experiment Log
 
+## 2026-09-24 — candidate-v3 run 002 retained advantage
+
+- **STATUS:** the sole predeclared attempt passed exact player, scenario-binding, recording, and
+  Unity error gates. The transient case succeeded after 17.491 m. The independently matched
+  discrepancy spans 12--21 s at 0.260 m/s command and 0.000 m/s odometry; measured response
+  returned to 0.25974 m/s at 24--25 s. Two FollowPath attempts, one failure, and one source-
+  qualified Wait invocation were retained.
+- **LUNA:** P fully covered every required unit with no material error in both isolated passes. R
+  failed the primary endpoint in both: both passes found its ephemeral `/tmp` source links
+  materially unsupported and retained its omissions of the healthy interval and two-attempt count.
+  Pass 1 also rejected “reaching the goal” as stronger than the supplied succeeded-action status;
+  the pass-2 label did not.
+- **INFERENCE:** the physical cluster contributes +1 P-minus-R in each pass. Including run 001 and
+  its zero-cluster mask, cumulative P-minus-R is +2 in each pass, with two of six independent
+  clusters and the required ambiguous variant complete. The numerical advantage gate is currently
+  met but cannot be applied before the full declared pilot; alpha remains `0.000/0.050`. See
+  `manifests/data/cmv3-dev-002-disposition.json`.
+
 ## 2026-09-24 — candidate-v3 paired no-odometry variant retained
 
 - **STATUS:** the prospectively declared mask was derived deterministically after governing its
