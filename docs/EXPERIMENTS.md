@@ -1,5 +1,21 @@
 # Experiment Log
 
+## 2026-09-24 — land command--motion physical cohort run 008
+
+- **STATUS:** `VALID SUCCESSFUL TRANSIENT COMPENSATION / 8 OF 100 ATTEMPTED`. The sole fixed
+  attempt passed exact build/binding, the zero-error Unity-worker gate, robot-visible export,
+  independent computation, and complete-reference audit. No retry or replacement occurred.
+- **OBSERVED/REFERENCE:** the action succeeded after 96.110 s and 17.565 m, with three FollowPath
+  attempts, two failures, and two source-qualified Wait invocations. Both implementations support
+  a 22--28 s discrepancy at 0.260 versus 0.000 m/s and recovered measured response of 0.24975 m/s
+  from 30--31 s.
+- **INTERPRETATION:** this is a successful compensation case at the measured execution-response
+  level. It does not expose the evaluator intervention or establish a unique obstruction,
+  actuator, collision, or other physical cause.
+- **BOUNDARY:** no response, Luna call, semantic label, effect estimate, confidence sequence, or
+  alpha use. Governed data are synchronized to R2. Fixed persistent run 009 is next; see
+  `cm-land-conf-008-disposition.json`.
+
 ## 2026-09-24 — land command--motion physical cohort run 007
 
 - **STATUS:** `VALID NOMINAL NOT_TRIGGERED / 7 OF 100 ATTEMPTED`. The sole fixed attempt passed
