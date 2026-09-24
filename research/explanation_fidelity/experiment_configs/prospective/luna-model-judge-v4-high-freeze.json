@@ -1,0 +1,51 @@
+{
+  "schema": "crane-luna-judge-freeze/v1",
+  "freeze_id": "luna-model-judge-v4-high-fresh-heldout",
+  "declared_utc": "2026-09-24T00:00:00Z",
+  "status": "FROZEN_BEFORE_FRESH_HELDOUT_EXECUTION",
+  "arm_id": "luna-model-judge-v1",
+  "reasoning_effort": "high",
+  "suite_sha256": "a1e7fca7896e5685b41639522c701007b1726b4f3b6470aa51115d9d14763538",
+  "model": {
+    "requested_id": "gpt-6-luna",
+    "substitution_allowed": false,
+    "reasoning_effort": "high",
+    "temperature": null,
+    "seed": null,
+    "provider": "codex-lb",
+    "transport": "isolated-codex-cli"
+  },
+  "prompt": {
+    "path": "research/explanation_fidelity/prompts/luna-model-judge-v4.md",
+    "sha256": "a660135be8dd742f5e9547685b5aa09ff7de45bf7dd6240289f7ff7e41dfd15a"
+  },
+  "qualification_suite": {
+    "path": "research/explanation_fidelity/qualification/luna-model-judge-v4-fresh-heldout.json",
+    "sha256": "a1e7fca7896e5685b41639522c701007b1726b4f3b6470aa51115d9d14763538",
+    "development_cases": 28,
+    "heldout_cases": 14,
+    "heldout_model_executions_at_freeze": 0
+  },
+  "output_schema": {
+    "path": "research/explanation_fidelity/schemas/luna-model-judge-output-v1.schema.json",
+    "sha256": "93989e303fdb12e94ae5fe79adad16e46d9587006b7ba6de5c4624096f1b1c3f"
+  },
+  "rubrics": {
+    "legacy_sha256": "3677b34a6507a77471abeef974e6085c6874950bb8f94aee4e6aa5af364f2908",
+    "diagnostic_sha256": "fd836999fb3942eed741c43187aee3002ceddb4a567c4fcc0a9dbff44ce53c0e"
+  },
+  "caller_source_sha256": "0e83d22d7e3d284b2430d55240fb26483588e51f0d84df94515702964064b023",
+  "runner_source_sha256": "cbfec6ad0a923312cd1ef023e0c58a129588b3c69d9d6c17ea290a5abfce8da7",
+  "development_selection": {
+    "report": "model_outputs/automated_annotations/luna-model-judge-v1/qualification-v4-high/development-selection.json",
+    "report_sha256": "972985980f8811d12ac02e582cab635d206ca24f28296730860606bd624a42e2",
+    "result_manifest": "manifests/annotation/luna-model-judge-v1-development-v4-high.json",
+    "qualified": true
+  },
+  "threshold_source": "manifests/annotation/luna-model-judge-v1.json",
+  "two_pass_heldout_rule": ["pass-1", "pass-2"],
+  "disagreement_policy": "Only independently checkable facts or explicit frozen rules resolve disagreement; otherwise retain unresolved.",
+  "retry_policy": "Transport-only bounded retry; never retry a usable or inconvenient judgment.",
+  "study_scoring_allowed": false,
+  "activation_condition": "Both fresh heldout passes must independently satisfy every frozen qualification gate."
+}

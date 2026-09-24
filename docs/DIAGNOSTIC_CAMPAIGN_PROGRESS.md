@@ -14,8 +14,8 @@ Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 | Information/tool/resource parity | DRAFT | Audit at campaign freeze |
 | Target land strata | PARTIAL | Existing cases are development only; fresh generators/configurations required |
 | Target surface strata | NOT_READY | Both geometric and command--motion admission required; do not reallocate weight |
-| Luna development qualification | V4 HIGH PREDECLARED | Final high-only run; unchanged prompt/suite; not yet executed |
-| Luna held-out qualification | V2 FAILED / V4 NOT_RUN | 14 fresh v4 cases remain unopened; no study scoring allowed |
+| Luna development qualification | V4 HIGH SELECTED | Every gate passed; exact configuration hash-frozen |
+| Luna held-out qualification | V2 FAILED / V4 NOT_RUN | 14 fresh v4 cases remain unopened; frozen two-pass run next |
 | Replication configurations reserved | NOT_RUN | Reserve before discovery collection |
 | Sequential null simulation | PASS_QA | 20,000 replicates per endpoint; all boundary estimates below component alpha 0.02 |
 | Alternative budget sensitivity | COMPLETE | +0.30 scenarios reach 0.9946/0.9366 joint success by 1,600; this is not observed power |
@@ -67,11 +67,10 @@ Record, without deleting earlier rows:
 
 ## Next action
 
-Do not collect confirmatory responses or open the v4 fresh held-out split. Execute the final
-predeclared high-only development run once. If it fails, stop evaluator configuration search for
-this submission and prospectively narrow or replace the semantic endpoint. Candidate/baseline/
-resource freezing, target-stratum readiness, and replication reservation remain independently
-incomplete.
+Do not collect confirmatory responses. Execute exactly two isolated passes over the 14 fresh v4
+held-out cases using `luna-model-judge-v4-high-freeze.json`. Study scoring is allowed only if both
+passes satisfy every gate. Candidate/baseline/resource freezing, target-stratum readiness, and
+replication reservation remain independently incomplete.
 
 ## Held-out judge result (2026-09-24)
 

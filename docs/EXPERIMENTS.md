@@ -3931,3 +3931,18 @@
 - **STOPPING:** every gate must pass before a high-effort freeze. Do not rerun low/medium and do not
   retry usable judgments. Any high development or later held-out miss ends evaluator configuration
   search for this submission and requires a prospective endpoint narrowing or replacement.
+
+## 2026-09-24 — Luna v4 high development selected and frozen
+
+- **STATUS:** `DEVELOPMENT_SELECTED / FRESH_HELDOUT_NOT_RUN`.
+- **RESULT:** 28/28 valid calls; zero false acceptances, false rejections, call failures, retries,
+  tool events, or unexpected unresolved; 32/33 required units (97.0%) and 201/214 core fields
+  (93.9%). Every category, boundary, injection, invariance, and aggregate gate passed.
+- **RESOURCE USE:** 387,884 input tokens (250,880 cached), 17,385 output tokens including 6,627
+  reasoning-output tokens, and 437,285 ms aggregate latency; cost unavailable.
+- **FREEZE:** `luna-model-judge-v4-high-fresh-heldout` pins model/effort, prompt, fresh suite,
+  schema, rubrics, caller, runner, thresholds, retry/disagreement rules, and selected development
+  report before any `QN` execution. Development report SHA-256:
+  `972985980f8811d12ac02e582cab635d206ca24f28296730860606bd624a42e2`.
+- **LIMIT:** development selection does not qualify the judge or authorize study scoring. Both
+  fresh held-out passes must independently pass every frozen gate.

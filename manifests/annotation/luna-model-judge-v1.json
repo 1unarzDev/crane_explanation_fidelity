@@ -2,7 +2,7 @@
   "schema": "crane-automated-annotation-arm-manifest/v1",
   "arm_id": "luna-model-judge-v1",
   "declared_utc": "2026-09-23T00:00:00Z",
-  "status": "V4_HIGH_DEVELOPMENT_PREDECLARED",
+  "status": "V4_HIGH_DEVELOPMENT_SELECTED_HELDOUT_NOT_RUN",
   "annotation_origin": "automated",
   "human_annotation_requirement": {
     "original_requirement": "two independent human annotators plus distinct human adjudication of disagreements",
@@ -26,7 +26,7 @@
     "sampling": {"temperature": null, "seed": null},
     "development_reasoning_candidates": ["high"],
     "reasoning_candidate_basis": "One final high-only development test is prospectively authorized for the unchanged v4 prompt and suite. Earlier high evidence used an older prompt; medium v4 left one false rejection and two unit misses. No low/medium rerun and no fresh-heldout outcome is used for selection.",
-    "frozen_reasoning_effort": null
+    "frozen_reasoning_effort": "high"
   },
   "protocol": {
     "path": "docs/LUNA_ANNOTATION_PROTOCOL.md"
@@ -114,7 +114,7 @@
     "inconvenient_label_retry_allowed": false
   },
   "qualification": {
-    "status": "V4_HIGH_DEVELOPMENT_PREDECLARED",
+    "status": "V4_HIGH_DEVELOPMENT_SELECTED_HELDOUT_NOT_RUN",
     "suite": "research/explanation_fidelity/qualification/luna-model-judge-v4-fresh-heldout.json",
     "suite_sha256": "a1e7fca7896e5685b41639522c701007b1726b4f3b6470aa51115d9d14763538",
     "development_cases": 28,
@@ -133,12 +133,13 @@
     "required_answerability_boundary_accuracy": 1.0,
     "study_evaluation_allowed": false,
     "heldout_result_manifest": null,
-    "freeze": null,
+    "freeze": "research/explanation_fidelity/experiment_configs/prospective/luna-model-judge-v4-high-freeze.json",
     "development_rescore": null,
     "previous_failed_heldout_result_manifest": "manifests/annotation/luna-model-judge-v1-heldout-v1.json",
     "predeclaration": "manifests/annotation/luna-model-judge-v1-v4-predeclaration.json",
     "development_result_manifest": "manifests/annotation/luna-model-judge-v1-development-v4.json",
-    "high_predeclaration": "manifests/annotation/luna-model-judge-v1-v4-high-predeclaration.json"
+    "high_predeclaration": "manifests/annotation/luna-model-judge-v1-v4-high-predeclaration.json",
+    "high_development_result": "manifests/annotation/luna-model-judge-v1-development-v4-high.json"
   },
   "qualification_history": [
     {
@@ -194,6 +195,13 @@
       "result_manifest": "manifests/annotation/luna-model-judge-v1-v4-high-predeclaration.json",
       "status": "HIGH_DEVELOPMENT_PREDECLARED",
       "scope": "high reasoning only; unchanged 28 development cases; final bounded configuration test"
+    },
+    {
+      "prompt": "research/explanation_fidelity/prompts/luna-model-judge-v4.md",
+      "suite": "research/explanation_fidelity/qualification/luna-model-judge-v4-fresh-heldout.json",
+      "result_manifest": "manifests/annotation/luna-model-judge-v1-development-v4-high.json",
+      "status": "DEVELOPMENT_SELECTED",
+      "scope": "high reasoning; 28 development cases; every gate passed; fresh heldout not run"
     }
   ],
   "output_roots": {
