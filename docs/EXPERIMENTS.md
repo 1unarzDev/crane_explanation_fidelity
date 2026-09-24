@@ -1,5 +1,18 @@
 # Experiment Log
 
+## 2026-09-24 — land command--motion physical cohort run 011
+
+- **STATUS:** `VALID SUCCESSFUL TRANSIENT COMPENSATION / 11 OF 100 ATTEMPTED`. The sole fixed
+  attempt passed exact build/binding, the zero-error Unity-worker gate, robot-visible export,
+  independent computation, and complete-reference audit. No retry or replacement occurred.
+- **OBSERVED/REFERENCE:** the action succeeded after 93.261 s and 17.544 m. Both independent
+  implementations support a 10--20 s discrepancy at 0.260 versus 0.000 m/s, followed by recovered
+  response of 0.25974 m/s from 22--23 s; three FollowPath attempts, two failures, and two
+  source-qualified Wait invocations were retained.
+- **BOUNDARY:** no unique physical cause, response, Luna label, semantic effect, or alpha use.
+  Governed data are synchronized to R2; 52 focused tests and data governance pass. Fixed nominal
+  run 012 is next.
+
 ## 2026-09-24 — land command--motion physical cohort run 010
 
 - **STATUS:** `VALID PERSISTENT DISCREPANCY / UNEXPECTED ABORT / 10 OF 100 ATTEMPTED`. The sole
