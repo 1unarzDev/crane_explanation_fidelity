@@ -81,6 +81,76 @@ def _load_events(path: Path) -> list[tuple[int, dict[str, Any]]]:
     return records
 
 
+def _resolve_action_boundary(
+    records: list[tuple[int, dict[str, Any]]],
+    runtime: dict[str, Any],
+    result_events: list[tuple[int, dict[str, Any]]],
+    *,
+    goal_ns: int,
+    goal_id: str,
+    allow_active_at_declared_cutoff: bool,
+) -> dict[str, Any]:
+    """Return an observed terminal boundary or an explicit robot-visible cutoff.
+
+    The cutoff path is deliberately opt-in.  It never turns the absence of an action result into a
+    failure: it only establishes that the accepted goal remained active through the duration
+    declared in the retained robot-visible runtime manifest.
+    """
+
+    if len(result_events) == 1:
+        result_line, action_result = result_events[0]
+        if goal_id != action_result.get("goal_id"):
+            raise ValueError("goal and result IDs do not match")
+        result_ns = int(action_result["wall_time_ns"])
+        if result_ns <= goal_ns:
+            raise ValueError("action result does not follow accepted goal")
+        return {
+            "end_ns": result_ns,
+            "action_status": str(action_result["status"]),
+            "action_error_code": int(action_result["error_code"]),
+            "action_result_record_id": f"events.jsonl#line:{result_line}",
+            "terminal_result_observed": True,
+            "observation_cutoff": None,
+        }
+    if len(result_events) > 1 or not allow_active_at_declared_cutoff:
+        raise ValueError("expected exactly one accepted goal and one action result")
+
+    launch_contract = runtime.get("launch_contract")
+    if not isinstance(launch_contract, dict):
+        raise ValueError("runtime manifest lacks a launch contract for observation cutoff")
+    duration = launch_contract.get("action_duration_s")
+    if isinstance(duration, bool) or not isinstance(duration, (int, float)):
+        raise ValueError("runtime action_duration_s must be numeric for observation cutoff")
+    duration_s = float(duration)
+    if not math.isfinite(duration_s) or duration_s <= 0.0:
+        raise ValueError("runtime action_duration_s must be finite and positive")
+    cutoff_ns = goal_ns + round(duration_s * 1_000_000_000)
+    stopped = [
+        (line, int(item["wall_time_ns"]))
+        for line, item in records
+        if item.get("type") == "capture_stopped"
+    ]
+    if len(stopped) != 1:
+        raise ValueError("expected exactly one capture_stopped boundary")
+    stop_line, stop_ns = stopped[0]
+    if stop_ns < cutoff_ns:
+        raise ValueError("capture stopped before the declared action observation cutoff")
+    return {
+        "end_ns": cutoff_ns,
+        "action_status": "remained active at the observation cutoff",
+        "action_error_code": None,
+        "action_result_record_id": None,
+        "terminal_result_observed": False,
+        "observation_cutoff": {
+            "basis": "accepted_goal_wall_time_plus_runtime_manifest_action_duration",
+            "declared_action_duration_s": duration_s,
+            "cutoff_wall_time_ns": cutoff_ns,
+            "capture_stopped_record_id": f"events.jsonl#line:{stop_line}",
+            "capture_stopped_wall_time_ns": stop_ns,
+        },
+    }
+
+
 def _windows(
     command_samples: list[dict[str, Any]],
     odometry_samples: list[dict[str, Any]],
@@ -162,6 +232,7 @@ def export(
     *,
     episode_id: str,
     diagnostic_config_path: Path | None = None,
+    allow_active_at_declared_cutoff: bool = False,
 ) -> dict[str, Any]:
     for label, path in (
         ("events", events_path),
@@ -226,16 +297,19 @@ def export(
         if item.get("type") == "harness_event"
         and item.get("event", {}).get("type") == "navigate_to_pose_result"
     ]
-    if len(goal_events) != 1 or len(result_events) != 1:
-        raise ValueError("expected exactly one accepted goal and one action result")
+    if len(goal_events) != 1:
+        raise ValueError("expected exactly one accepted goal")
     goal_line, goal = goal_events[0]
-    result_line, action_result = result_events[0]
-    if goal.get("goal_id") != action_result.get("goal_id"):
-        raise ValueError("goal and result IDs do not match")
     goal_ns = int(goal["wall_time_ns"])
-    result_ns = int(action_result["wall_time_ns"])
-    if result_ns <= goal_ns:
-        raise ValueError("action result does not follow accepted goal")
+    boundary = _resolve_action_boundary(
+        records,
+        runtime,
+        result_events,
+        goal_ns=goal_ns,
+        goal_id=str(goal["goal_id"]),
+        allow_active_at_declared_cutoff=allow_active_at_declared_cutoff,
+    )
+    result_ns = int(boundary["end_ns"])
 
     raw_commands = []
     raw_odometry = []
@@ -327,7 +401,7 @@ def export(
         evidence_ids=tuple(evidence_ids),
         command_frame="base_link-command-convention",
         measured_frame=next(iter(measured_frames), "unknown"),
-        action_status=str(action_result["status"]),
+        action_status=str(boundary["action_status"]),
         windows=windows,
         raw_command_sample_count=len(command_samples),
         raw_odometry_sample_count=len(odometry_samples),
@@ -345,6 +419,20 @@ def export(
     verification = verify_diagnostic_text(result, answer)
     if not verification.accepted:
         raise RuntimeError("deterministic command-motion rendering failed verification")
+
+    nonterminal_method_fields = (
+        {
+            "terminal_result_observed": False,
+            "observation_cutoff": boundary["observation_cutoff"],
+        }
+        if boundary["terminal_result_observed"] is False
+        else {}
+    )
+    action_evidence_description = (
+        "NavigateToPose goal/result status"
+        if boundary["terminal_result_observed"] is True
+        else "NavigateToPose goal and declared observation boundary"
+    )
 
     return {
         "schema": "crane-command-motion-diagnostic-export-v1",
@@ -366,10 +454,11 @@ def export(
         "method_input": {
             "diagnostic_computation_version": observation.computation_version,
             "accepted_goal_record_id": f"events.jsonl#line:{goal_line}",
-            "action_result_record_id": f"events.jsonl#line:{result_line}",
+            "action_result_record_id": boundary["action_result_record_id"],
             "goal_id": str(goal["goal_id"]),
-            "action_status": str(action_result["status"]),
-            "action_error_code": int(action_result["error_code"]),
+            "action_status": str(boundary["action_status"]),
+            "action_error_code": boundary["action_error_code"],
+            **nonterminal_method_fields,
             "anchor": "first command at or above minimum_commanded_speed_mps after accepted goal",
             "analysis_duration_s": end_offset_s,
             "command_frame": observation.command_frame,
@@ -396,7 +485,7 @@ def export(
             "included": [
                 "delivered Nav2 command samples",
                 "independently delivered planar odometry samples",
-                "NavigateToPose goal/result status",
+                action_evidence_description,
                 "goal-scoped BehaviorTreeLog transitions",
                 "hash-checked BT policy and Nav2 configuration",
                 "bounded recovery-node classifier derivation",
@@ -422,6 +511,7 @@ def main() -> None:
     parser.add_argument("--nav2-config", required=True, type=Path)
     parser.add_argument("--episode-id", required=True)
     parser.add_argument("--diagnostic-config", type=Path)
+    parser.add_argument("--allow-active-at-declared-cutoff", action="store_true")
     parser.add_argument("--output", required=True, type=Path)
     args = parser.parse_args()
     payload = export(
@@ -432,6 +522,7 @@ def main() -> None:
         args.nav2_config,
         episode_id=args.episode_id,
         diagnostic_config_path=args.diagnostic_config,
+        allow_active_at_declared_cutoff=args.allow_active_at_declared_cutoff,
     )
     serialized = json.dumps(payload, indent=2, sort_keys=True) + "\n"
     lowered = serialized.lower()

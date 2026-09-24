@@ -3,7 +3,11 @@ from pathlib import Path
 
 import pytest
 
-from export_command_motion_diagnostic import _source_qualified_wait_policy, export
+from export_command_motion_diagnostic import (
+    _resolve_action_boundary,
+    _source_qualified_wait_policy,
+    export,
+)
 from reference_command_motion import calculate
 from summarize_command_motion_qa import INDEPENDENT_DEVELOPMENT_STATUS, summarize
 
@@ -48,6 +52,14 @@ COMPENSATED_CAPTURE = (
     / "diagnostic-motion-development-cm-002"
     / "capture"
 )
+NONTERMINAL_CAPTURE = (
+    ROOT
+    / "data"
+    / "robot_visible"
+    / "dev"
+    / "diagnostic-land-composition-dev-009"
+    / "capture"
+)
 
 
 def _export() -> dict:
@@ -84,6 +96,14 @@ def test_retained_stream_supports_bounded_command_motion_diagnosis():
     assert "persistent hold" not in serialized
     assert "mobility hold" not in serialized
     assert "motor failure" not in payload["final_answer"].lower()
+
+
+def test_terminal_result_export_does_not_add_nonterminal_boundary_fields():
+    payload = _export()
+
+    assert "terminal_result_observed" not in payload["method_input"]
+    assert "observation_cutoff" not in payload["method_input"]
+    assert "NavigateToPose goal/result status" in payload["evidence_boundary"]["included"]
 
 
 def test_nested_nav2_policy_source_qualifies_single_wait_recovery_leaf():
@@ -133,6 +153,79 @@ def test_low_speed_config_makes_proving_ground_stream_assessable(tmp_path: Path)
     assert payload["method_input"]["windowing"]["minimum_commanded_speed_mps"] == 0.1
     assert payload["diagnostic_result"]["disposition"] != "insufficient"
     assert payload["final_text_verification"]["accepted"]
+
+
+def test_nonterminal_stream_requires_explicit_observation_cutoff_opt_in():
+    with pytest.raises(ValueError, match="exactly one accepted goal and one action result"):
+        export(
+            NONTERMINAL_CAPTURE / "events.jsonl",
+            NONTERMINAL_CAPTURE / "manifest.json",
+            NONTERMINAL_CAPTURE / "runtime_manifest.json",
+            NONTERMINAL_CAPTURE / "behavior_tree.xml",
+            ROOT
+            / "packages"
+            / "crane_ml"
+            / "Tools"
+            / "Performance"
+            / "nav2_land_proving_ground_fixture.yaml",
+            episode_id="diagnostic-land-composition-observation-009",
+            diagnostic_config_path=(
+                ROOT / "configs" / "diagnostic_command_motion_low_speed_v1.json"
+            ),
+        )
+
+
+def test_nonterminal_stream_uses_declared_cutoff_without_terminal_claim():
+    payload = export(
+        NONTERMINAL_CAPTURE / "events.jsonl",
+        NONTERMINAL_CAPTURE / "manifest.json",
+        NONTERMINAL_CAPTURE / "runtime_manifest.json",
+        NONTERMINAL_CAPTURE / "behavior_tree.xml",
+        ROOT
+        / "packages"
+        / "crane_ml"
+        / "Tools"
+        / "Performance"
+        / "nav2_land_proving_ground_fixture.yaml",
+        episode_id="diagnostic-land-composition-observation-009",
+        diagnostic_config_path=(
+            ROOT / "configs" / "diagnostic_command_motion_low_speed_v1.json"
+        ),
+        allow_active_at_declared_cutoff=True,
+    )
+
+    method = payload["method_input"]
+    assert method["terminal_result_observed"] is False
+    assert method["action_result_record_id"] is None
+    assert method["action_error_code"] is None
+    assert method["action_status"] == "remained active at the observation cutoff"
+    assert method["observation_cutoff"]["declared_action_duration_s"] == 100.0
+    assert all(
+        sample["offset_s"] <= method["analysis_duration_s"]
+        for key in ("command_samples", "odometry_samples")
+        for sample in method[key]
+    )
+    assert payload["diagnostic_result"]["disposition"] == "supported"
+    assert "aborted" not in payload["final_answer"].lower()
+    assert "failed" not in payload["final_answer"].lower()
+    assert "remained active at the observation cutoff" in payload["final_answer"]
+    reference = calculate(payload)
+    assert reference["result"]["disposition"] == "supported"
+
+
+def test_observation_cutoff_rejects_capture_that_stopped_too_early():
+    records = [(9, {"type": "capture_stopped", "wall_time_ns": 100_000_000_999})]
+    runtime = {"launch_contract": {"action_duration_s": 100.0}}
+
+    with pytest.raises(ValueError, match="capture stopped before"):
+        _resolve_action_boundary(
+            records,
+            runtime,
+            [],
+            goal_ns=1_000_000_000,
+            goal_id="goal-1",
+            allow_active_at_declared_cutoff=True,
+        )
 
 
 def test_diagnostic_config_rejects_missing_parameter(tmp_path: Path):
