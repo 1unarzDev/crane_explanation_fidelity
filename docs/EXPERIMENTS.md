@@ -1,5 +1,15 @@
 # Experiment Log
 
+## 2026-09-24 — land command--motion physical cohort run 016
+
+- **STATUS:** `VALID SUCCESSFUL TRANSIENT COMPENSATION / 16 OF 100 ATTEMPTED`. The sole fixed
+  attempt passed all admission and independent-reference gates without retry or replacement.
+- **OBSERVED/REFERENCE:** the action succeeded after 81.110 s and 17.491 m. Both implementations
+  support an 11--20 s discrepancy at 0.260 versus 0.000 m/s and recovered response of 0.25974 m/s
+  from 23--24 s, with two FollowPath attempts, one failure, and one qualified Wait.
+- **BOUNDARY:** no unique physical cause, semantic response, Luna label, effect, or alpha use.
+  Governed data are synchronized to R2; 52 focused tests pass. Fixed persistent run 017 is next.
+
 ## 2026-09-24 — land command--motion physical cohort run 015
 
 - **STATUS:** `VALID SUCCESSFUL TRANSIENT COMPENSATION / 15 OF 100 ATTEMPTED`. The sole fixed
