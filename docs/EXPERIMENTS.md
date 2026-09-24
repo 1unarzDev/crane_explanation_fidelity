@@ -1,5 +1,20 @@
 # Experiment Log
 
+## 2026-09-24 — land command--motion physical cohort run 001
+
+- **STATUS:** `VALID PHYSICAL + INDEPENDENT REFERENCE / 1 OF 100 ATTEMPTED`. The sole fixed
+  `cm-land-conf-001` attempt passed exact build and 14-field scenario binding, valid zero-error
+  Unity recording, robot-visible capture, and complete-reference admission. The governed payload is
+  synchronized to R2; no retry or replacement occurred.
+- **OBSERVED:** the scheduled nominal clear-route control succeeded after 69.110 s and 17.478 m,
+  with 675 commands, 3,454 odometry messages, one delivered plan, one FollowPath start, no observed
+  FollowPath failure, and no observed recovery invocation start.
+- **REFERENCE:** the frozen diagnostic and independent implementation agree on `not_triggered`.
+  The 0--5 s healthy comparator is 0.260 m/s commanded versus 0.25974 m/s measured. This rejects
+  the question's failure premise for this run without proving every transient difficulty absent.
+- **SEMANTIC BOUNDARY:** zero P/R responses, zero Luna calls, no effect estimate, no confidence
+  sequence, and zero alpha. Fixed run 002 is next. See `cm-land-conf-001-disposition.json`.
+
 ## 2026-09-24 — freeze land command--motion physical/reference cohort
 
 - **STATUS:** `PHYSICAL CAPTURE FROZEN / SEMANTIC CAMPAIGN INACTIVE / NOT_RUN`. The exact schedule
