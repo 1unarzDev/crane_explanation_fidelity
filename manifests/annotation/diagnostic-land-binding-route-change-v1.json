@@ -1,0 +1,38 @@
+{
+  "schema": "crane-explain-annotation-packet-manifest/v1",
+  "status": "DEVELOPMENT_AUTOMATED_SCORING_PREDECLARED",
+  "study": "prospective-physical-diagnosis-development",
+  "packet": {
+    "path": "model_outputs/annotation_packets/diagnostic-land-binding-route-change-v1/packet.jsonl",
+    "sha256": "256df6a4ade390b29e1d33a18cdac1c87badad217c00102ca5b9d0e2db51c428",
+    "dvc_pointer": "model_outputs.dvc",
+    "responses": 4,
+    "conditions_blinded": true
+  },
+  "key": {
+    "path": "data/evaluator_only/annotation_keys/diagnostic-land-binding-route-change-v1.json",
+    "sha256": "c1c82552d5f8d0bd8a75863e0468a3d0b52c818c31fcc1570fa472717dc105d3",
+    "dvc_pointer": "data/evaluator_only/annotation_keys.dvc",
+    "visibility": "evaluator_only"
+  },
+  "reference": {
+    "path": "research/explanation_fidelity/annotations/development/diagnostic-land-binding-route-change-v1-reference.json",
+    "sha256": "861fecc61452acd1250a1d6d9ab49f79d8ec0ce216237859300da0923b43519d",
+    "status": "DEVELOPMENT_REFERENCE_WITH_POST_OUTPUT_PACKET_COMPLETENESS_AUDIT_NOT_HUMAN_GOLD"
+  },
+  "source_result": {
+    "path": "model_outputs/dev/diagnostic-language-route-change-development-v1/diagnostic-land-binding-dev-007.json",
+    "sha256": "40ebaafa5f2f2883f00a356e8ed4299b152157f3b43c18723565eea2b71bf6ef",
+    "governance": "model_outputs.dvc"
+  },
+  "rubric": {
+    "path": "docs/DIAGNOSTIC_ANNOTATION_GUIDE.md",
+    "automated_arm": "luna-model-judge-v7-reference-audited"
+  },
+  "limitations": [
+    "This is one already inspected development scenario, not held-out or confirmatory evidence.",
+    "Route geometry, costmap coverage, and citation identities preceded model generation, but the complete answer-claim inventory was assembled after output inspection.",
+    "The reference is not human gold; Luna labels are automated semantic measurements.",
+    "P used deterministic fallback and is byte-identical to T in this packet."
+  ]
+}

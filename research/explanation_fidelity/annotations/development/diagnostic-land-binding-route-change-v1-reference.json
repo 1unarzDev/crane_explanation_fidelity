@@ -1,0 +1,87 @@
+{
+  "schema": "crane-diagnostic-development-reference/v2",
+  "visibility": "robot_visible_reference",
+  "reference_status": "DEVELOPMENT_REFERENCE_FROM_PRE_MODEL_INDEPENDENT_ROUTE_AUDIT_PLUS_POST_OUTPUT_PACKET_COMPLETENESS_AUDIT_NOT_HUMAN_GOLD",
+  "episode_id": "diagnostic-land-binding-dev-007",
+  "question_id": "diagnostic-supported-route-change-and-limits-v1",
+  "diagnosable": true,
+  "allowed_evidence_identifiers": [
+    "fixture-summary-sha256:134445c6dd5fa6f771c91080acce7715b4f159ed428b381156b64fb4e451cf64",
+    "costmap-data-sha256:c9bc9fdbd1d42ca38e376b5374e851f2d39a3ecde7c45bc76247677b5f972f2b",
+    "nav2-config-sha256:e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+    "bt-xml-sha256:e47dadf5bb1228f031e1a7a15d60f0a784c5101ffff9fd11fc36ea7458ce3dce"
+  ],
+  "required_units": [
+    "The retained delivered-plan record changed from an initially direct route to later non-direct routes while the requested goal remained fixed.",
+    "All 74 delivered plans had unique hashes; the first plan had 0.000 m maximum lateral deviation and later plans spanned -1.407 m to +1.231 m signed lateral deviation.",
+    "Delivered odometry reached 1.301 m maximum lateral deviation and NavigateToPose succeeded after 77.760 s.",
+    "The retained rolling costmap covers only part of the requested route, so it cannot establish the physical trigger for the plan changes.",
+    "Delivered plans do not prove controller consumption, and the record does not establish observation-to-plan causation or a specific obstacle identity.",
+    "The answer recommends time-aligning planner inputs, emitted paths, controller path updates, and costmap observations before attributing a trigger."
+  ],
+  "prohibited_claims": [
+    "A particular obstacle or physical condition caused the delivered plan changes.",
+    "The controller consumed every delivered plan.",
+    "A delivered costmap observation caused a particular plan change.",
+    "The retained rolling grid proves global route infeasibility or complete route clearance.",
+    "Zero recovery feedback proves that exactly zero recoveries occurred over a complete goal history.",
+    "The successful action has a terminal failure chain."
+  ],
+  "allowed_evidence": {
+    "route_change": {
+      "requested_goal_m": [18.0, 0.0],
+      "delivered_plan_count": 74,
+      "unique_delivered_plan_count": 74,
+      "first_plan_maximum_lateral_deviation_m": 0.0,
+      "first_five_plans_maximum_lateral_deviation_m": 0.0,
+      "first_non_direct_plan_wall_s": 6.305440912023187,
+      "first_non_direct_plan_signed_lateral_range_m": [-0.005390548706055043, 1.1861351013183592],
+      "next_plan_wall_s": 7.335377359006088,
+      "next_plan_signed_lateral_range_m": [-1.3322154998779299, 0.0],
+      "all_plans_minimum_signed_lateral_deviation_m": -1.4065288543701167,
+      "all_plans_maximum_signed_lateral_deviation_m": 1.231144714355466,
+      "delivered_odometry_maximum_lateral_deviation_m": 1.3011409044265747
+    },
+    "outcome": {
+      "action_status": "succeeded",
+      "action_wall_s": 77.75993195699994,
+      "configured_deadline_s": 100.0,
+      "final_goal_distance_m": 0.5197791705832367,
+      "configured_xy_goal_tolerance_m": 0.55,
+      "final_yaw_difference_rad": 2.564410394861353,
+      "configured_yaw_goal_tolerance_rad": 3.14
+    },
+    "rolling_costmap": {
+      "frame": "odom",
+      "stamp_s": 81.012964682,
+      "origin_m": [11.600000000000017, -5.650000000000001],
+      "resolution_m_per_cell": 0.05000000074505806,
+      "size_cells": [240, 240],
+      "covered_x_range_m": [11.600000000000017, 23.60000017881395],
+      "complete_requested_route_covered": false,
+      "physical_trigger_classified": false
+    },
+    "execution_and_source": {
+      "maximum_recovery_feedback": 0,
+      "exact_recovery_count_eligible": false,
+      "terminal_bt_transition_observed": false,
+      "runtime_transition_node_names_include": ["RateController"],
+      "supplied_bt_xml_controller_node": "DistanceController",
+      "bt_name_mismatch_is_observation_not_cause": true
+    },
+    "limits": [
+      "Delivered plans are not proof of controller consumption.",
+      "Delivered odometry is not proof of Nav2 internal consumed state.",
+      "Temporal ordering does not establish observation-to-plan causation.",
+      "The final rolling costmap does not cover the complete requested route.",
+      "Evaluator layout and obstacle identity are unavailable to methods and the judge.",
+      "The case is development-only, not held-out or confirmatory evidence."
+    ]
+  },
+  "reference_timing": {
+    "route_geometry_and_costmap_audits_preceded_model_outputs": true,
+    "citation_identifiers_preceded_model_outputs": true,
+    "answer_claim_inventory_completed_after_output_inspection": true,
+    "human_gold": false
+  }
+}

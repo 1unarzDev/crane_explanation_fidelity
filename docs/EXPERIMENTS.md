@@ -4526,3 +4526,17 @@
   then failed closed with exit 2 and the same bounded incompatibility message after the change.
 - **SCOPE:** this prevents another resource-consuming invalid construction; it does not make run
   008 valid, authorize a retry, add a new intervention mechanism, or alter the CRANE player.
+
+## 2026-09-24 — qualified route-change Luna scoring predeclaration
+
+- **STATUS:** `PREDECLARED_DEVELOPMENT_ONLY_NOT_RUN`; exactly two isolated Luna v7 passes over the
+  four already retained R/P/T/N answers (eight planned calls), with no usable-label retry.
+- **INPUT:** the scenario-binding-qualified run 007 route-change packet. Its robot-visible
+  reference includes the pre-model geometric/costmap audit and all four permitted citation IDs.
+  A post-output completeness audit additionally supplies independently recomputed final tolerance,
+  early plan timing, rolling-grid extent, and the observed runtime/source BT-name mismatch so the
+  judge does not convert packet omission into method error.
+- **BOUNDARY:** the answer texts were already inspected and P is byte-identical to T after fallback.
+  This one development cluster can guide candidate readiness only; it cannot freeze P, establish a
+  confidence interval or significance result, add an independent physical cluster, or consume
+  confirmatory alpha.
