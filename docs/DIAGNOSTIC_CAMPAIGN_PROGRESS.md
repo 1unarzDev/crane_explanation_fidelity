@@ -9,7 +9,7 @@ Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 
 | Gate | Status | Evidence / next action |
 |---|---|---|
-| Candidate P frozen | NOT_READY | Physical v4 multi-family runs are retained; fresh parity-controlled R/P/T/N responses and qualified-Luna labels are still required |
+| Candidate P frozen | NOT_READY | V4 multi-family scoring is mixed and packet-sensitive; do not freeze or open confirmation |
 | Strongest baseline R frozen | DESIGNATED, NOT_HASH_FROZEN | Tool-enabled repository-aware R; freeze exact model/prompts/resources with candidate |
 | Information/tool/resource parity | DRAFT | Audit at campaign freeze |
 | Target land strata | PARTIAL | Existing cases are development only; fresh generators/configurations required |
@@ -97,6 +97,21 @@ be used as a route-change case or replaced after observation. It may be evaluate
 answerability/false-premise contract justified by its retained evidence. No R/P/N or Luna calls
 have yet been made for this batch, no candidate is frozen, and alpha remains unconsumed.
 
+## Language-v4 multi-family Luna result (2026-09-24)
+
+All 32 predeclared qualified-Luna measurements completed without retries or failures. Across the
+two diagnosable command--motion configurations, pass 1 tied P and R at 1/2; pass 2 scored P 2/2 and
+R 0/2. Those two configurations belong to one development cluster, so neither pass is an
+independent-cluster estimate. Persistent P/R labels reversed by pass. Compensated P was
+deterministic fallback and byte-identical to T, yet pass 1 accepted P and rejected T.
+
+The post-run packet audit found that compact allowed evidence omitted the retained command-source
+provenance and an explicit attempt-status relationship, producing packet-sensitive source and
+failure-chain judgments. The immutable labels remain useful evidence of automated-judge and packet
+instability, but they do not justify freezing P or opening confirmation. The no-computation N arm
+failed both diagnosable cases in both passes, indicating development value in the diagnostic
+computation without establishing a statistically independent method advantage.
+
 ## Required update for each collection batch
 
 Record, without deleting earlier rows:
@@ -113,11 +128,11 @@ Record, without deleting earlier rows:
 
 ## Next action
 
-Construct independent references and blinded, citation-complete packets for the retained v4 batch,
-then execute only the predeclared single R/P/N generation calls, deterministic T rendering, and two
-qualified-Luna passes. Keep the failed land detour as observed rather than assigning a route-change
-target. Use these two fresh development clusters to decide whether the candidate is credible enough
-to freeze; no confirmatory campaign is active and no alpha has been consumed.
+Do not start confirmation from the v4 language batch. Compare the expected paper value of a narrow,
+prospective information-complete packet repair against implementing/validating a deeper physical
+diagnostic mechanism and collecting genuinely independent clusters; prefer the latter unless the
+packet defect blocks all evaluation. No confirmatory campaign is active and no alpha has been
+consumed.
 
 ## Held-out judge result (2026-09-24)
 

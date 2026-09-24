@@ -1,0 +1,77 @@
+{
+  "schema": "crane-luna-diagnostic-development-result/v1",
+  "executed_utc_date": "2026-09-24",
+  "status": "DEVELOPMENT_ONLY_CANDIDATE_NOT_READY",
+  "predeclaration": "manifests/annotation/luna-diagnostic-language-v4-multifamily-development-v1-predeclaration.json",
+  "responses": 16,
+  "judge_measurements": 32,
+  "call_failures": 0,
+  "transport_retries": 0,
+  "confirmatory_alpha_consumed": 0.0,
+  "independent_confirmatory_cluster_increment": 0,
+  "development_clusters": 2,
+  "diagnosable_configurations_in_one_cluster": 2,
+  "primary_diagnosable_configuration_results": {
+    "pass-1": {
+      "P": "1/2",
+      "R": "1/2",
+      "T": "1/2",
+      "N": "0/2",
+      "p_minus_r": 0.0
+    },
+    "pass-2": {
+      "P": "2/2",
+      "R": "0/2",
+      "T": "2/2",
+      "N": "0/2",
+      "p_minus_r": 1.0
+    }
+  },
+  "primary_by_episode": {
+    "diagnostic-language-v4-motion-persistent-003": {
+      "pass-1": {"P": false, "R": true, "T": true, "N": false},
+      "pass-2": {"P": true, "R": false, "T": true, "N": false}
+    },
+    "diagnostic-language-v4-motion-compensated-004": {
+      "pass-1": {"P": true, "R": false, "T": false, "N": false},
+      "pass-2": {"P": true, "R": false, "T": true, "N": false}
+    }
+  },
+  "secondary_false_premise_material_error_free": {
+    "diagnostic-language-v4-land-detour-005": {
+      "pass-1": {"P": false, "R": true, "T": true, "N": false},
+      "pass-2": {"P": false, "R": false, "T": false, "N": false}
+    },
+    "diagnostic-language-v4-land-nominal-005": {
+      "pass-1": {"P": true, "R": true, "T": true, "N": false},
+      "pass-2": {"P": false, "R": false, "T": false, "N": false}
+    }
+  },
+  "result_artifacts": [
+    {"episode_id": "diagnostic-language-v4-land-detour-005", "path": "model_outputs/automated_annotations/luna-model-judge-v1/diagnostic-language-v4-multifamily-development-v1/diagnostic-language-v4-land-detour-005/development-summary.json", "sha256": "407be06a50f77b399964642a84448a3f9a3d042312bc597ef77aa8d2d88fdf78"},
+    {"episode_id": "diagnostic-language-v4-land-nominal-005", "path": "model_outputs/automated_annotations/luna-model-judge-v1/diagnostic-language-v4-multifamily-development-v1/diagnostic-language-v4-land-nominal-005/development-summary.json", "sha256": "625590e0d480d5e6fc0bddce05f03da1084767bcedd15d86da0aa92a41faaba1"},
+    {"episode_id": "diagnostic-language-v4-motion-compensated-004", "path": "model_outputs/automated_annotations/luna-model-judge-v1/diagnostic-language-v4-multifamily-development-v1/diagnostic-language-v4-motion-compensated-004/development-summary.json", "sha256": "96dc09df3de3173c0c81f759e16c2f405435bbce90ca0874700cd7e8ea9fc49a"},
+    {"episode_id": "diagnostic-language-v4-motion-persistent-003", "path": "model_outputs/automated_annotations/luna-model-judge-v1/diagnostic-language-v4-multifamily-development-v1/diagnostic-language-v4-motion-persistent-003/development-summary.json", "sha256": "1e4f36b6c2fe90382f8aa035fbd6cd9c72abab9087413fbb18ce561680eeec1f"}
+  ],
+  "audit": {
+    "candidate_result": "Do not freeze P or start confirmation. Pass 1 ties P and R over the two diagnosable configurations; pass 2 favors P, but both configurations form only one development cluster.",
+    "fallback": "P used deterministic fallback on the compensated configuration. Its final text is byte-identical to T, so it is not evidence that model realization outperformed deterministic rendering.",
+    "identical_text_instability": "For the compensated configuration, byte-identical P and T received different pass-1 material-error labels; both passed in pass 2.",
+    "reference_packet_gap": "The blinded command-motion allowed_evidence omitted the retained command_provenance string delivered-nav2-command-not-proof-of-actuator-acceptance. Luna therefore sometimes rejected Nav2 source attribution and sometimes accepted the same wording. Preserve these labels, mark source-link interpretation packet-sensitive, and do not rerun this cohort after repair.",
+    "execution_sequence_instability": "The retained checked result states that a later FollowPath attempt was active before abort, but the compact allowed_evidence supplied only attempt/failure/recovery counts. Luna inconsistently treated that detail across P/R/T. This is another packet-completeness limitation.",
+    "land_result": "The detour induction failed physically. Both land cases are secondary false-premise measurements and show severe pass-2 material-error instability; they cannot support a route-change or candidate-superiority claim.",
+    "ablation": "N failed every diagnosable primary measurement, consistent with the aligned diagnostic computation carrying necessary mechanism information. This is development evidence, not an independent-cluster effect."
+  },
+  "resource_use": {
+    "valid_calls": 32,
+    "input_tokens": 469280,
+    "cached_input_tokens": 402432,
+    "output_tokens": 81463,
+    "reasoning_output_tokens": 35117,
+    "aggregate_latency_ms": 1675727.678807,
+    "cost_usd": null
+  },
+  "qualified_caller_sha256": "0e83d22d7e3d284b2430d55240fb26483588e51f0d84df94515702964064b023",
+  "single_packet_runner_sha256": "3cca513c8de7b9d78e89bf13eeb7d3adb9ddeaa265c1701403c2c206cceb2cd8",
+  "next_action": "Do not start confirmation. Treat another development response/packet repair as lower value than implementing and validating a deeper physical mechanism or collecting independent clusters unless it directly removes the demonstrated packet-completeness defects."
+}

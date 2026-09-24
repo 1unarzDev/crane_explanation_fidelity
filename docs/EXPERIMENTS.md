@@ -4251,3 +4251,26 @@
 - **FREEZE:** packet, evaluator-only key, and reference hashes are pinned in
   `luna-diagnostic-language-v4-multifamily-development-v1-predeclaration.json`. The qualified Luna
   caller remains byte-identical. No calls, semantic labels, confirmatory alpha, or inference exist.
+
+## 2026-09-24 — language-v4 multi-family Luna result
+
+- **STATUS:** `DEVELOPMENT_ONLY / CANDIDATE_NOT_READY`; 32/32 valid calls, no retry or failure, and
+  no confirmatory alpha consumed.
+- **PRIMARY CONFIGURATIONS:** pass 1 scored P/R/T at 1/2, 1/2, and 1/2; pass 2 scored 2/2, 0/2,
+  and 2/2. N was 0/2 in both. The two persistent/compensated configurations are one statistical
+  cluster, not two independent episodes. This cannot freeze P or establish an effect.
+- **FALLBACK/INSTABILITY:** compensated P used deterministic fallback and is byte-identical to T.
+  Luna nevertheless accepted P but rejected T in pass 1, then accepted both in pass 2. Persistent
+  P versus R reversed between passes. Retain these as automated-judge uncertainty.
+- **PACKET AUDIT:** the command--motion packet omitted the robot-visible command-provenance string,
+  so Luna inconsistently treated “Nav2 command” attribution as supported. Its compact execution
+  evidence also omitted the explicit active-third-attempt relation present in the checked result.
+  These are packet-completeness defects; labels remain immutable and are not rerun or presented as
+  proof of response error.
+- **LAND SECONDARY:** both false-premise cases show pass instability, and the detour induction
+  remains failed. They support neither route-change effectiveness nor candidate superiority.
+- **RESOURCE USE:** 469,280 input tokens (402,432 cached), 81,463 output tokens including 35,117
+  reasoning tokens, and 1,675,728 ms aggregate latency; cost unavailable.
+- **DISPOSITION:** do not start confirmation. Preserve all negative and unstable results, retain
+  the qualified judge status only for information-complete packets, and prioritize deeper physical
+  evidence or genuinely independent development clusters over another wording-only iteration.

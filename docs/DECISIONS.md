@@ -1481,3 +1481,21 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Effect: this defines a prospective development candidate, not a frozen confirmatory method. It
   must be exercised on fresh configurations across more than one scenario family before candidate
   selection.
+
+## 2026-09-24 — do not freeze language-v4 candidate after multi-family development
+
+- Decision: preserve all v4 responses and Luna measurements, but do not freeze P/R or activate a
+  confirmatory campaign.
+- Evidence: pass 1 tied P and R across the two diagnosable configurations; pass 2 favored P, but
+  both configurations share one command--motion cluster. Persistent labels reversed across passes.
+  Compensated P used deterministic fallback and received a different pass-1 label from byte-identical
+  T. The land detour induction failed and both false-premise cases were judge-unstable.
+- Packet limitation: the compact blinded evidence omitted retained command-source provenance and an
+  explicit attempt-status relation, making some source/failure-chain labels packet-sensitive. Do
+  not repair and rerun the same cohort; any correction must be prospective on new responses.
+- Alternatives rejected: select P from favorable pass 2, count paired configurations as independent,
+  adjudicate with another Luna vote, relabel the failed detour, or begin confirmation despite the
+  information gap.
+- Next priority: favor a deeper supported physical diagnostic and independent configurations over
+  further wording-only iteration unless a narrow packet repair is required to evaluate them.
+- Effect: candidate remains `NOT_READY`; alpha remains 0.000/0.050.
