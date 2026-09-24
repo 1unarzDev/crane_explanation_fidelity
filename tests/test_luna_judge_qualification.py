@@ -46,6 +46,22 @@ def test_suite_is_valid_and_balanced_between_declared_splits():
     assert not ({case["case_id"] for case in development} & {case["case_id"] for case in heldout})
 
 
+def test_v4_suite_moves_exposed_cases_to_development_and_reserves_fresh_heldout():
+    path = (
+        Path(__file__).parents[1]
+        / "research/explanation_fidelity/qualification/luna-model-judge-v4-fresh-heldout.json"
+    )
+    suite = MODULE.load_suite(path)
+    development = [case for case in suite["cases"] if case["split"] == "development"]
+    heldout = [case for case in suite["cases"] if case["split"] == "heldout"]
+    assert len(development) == 28
+    assert len(heldout) == 14
+    assert {case["case_id"] for case in heldout} == {f"QN{index:03d}" for index in range(1, 15)}
+    exposed = {case["case_id"]: case for case in development}
+    assert exposed["QH003"]["expected"]["required_unit_statuses"]["u-limit"] == "incorrect"
+    assert exposed["QH006"]["expected"]["material_error"] is True
+
+
 def test_perfect_expected_judgments_pass_all_gates():
     suite = MODULE.load_suite()
     for split in ("development", "heldout"):

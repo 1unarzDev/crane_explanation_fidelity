@@ -129,6 +129,17 @@ score study responses. Any later automated judge requires a separately versioned
 development cycle and fresh held-out qualification; confirmatory collection remains blocked until
 such a judge and the candidate/baseline/resource contract are frozen.
 
+V4 is that bounded prospective cycle. Its only prompt change makes the existing rubric boundary
+literal: truthful but incomplete narration is a coverage/mechanism omission, whereas an explicit
+false statement about evidence sufficiency is a separately assessed material completeness error.
+All 28 cases exposed in earlier development or held-out runs are development-only for v4. The
+suite reserves 14 newly authored, independently checkable `QN` cases as a fresh held-out split;
+none may be executed until the one-shot medium-effort development run passes every unchanged gate
+and the exact configuration is hash-frozen. Two exposed reference inconsistencies are corrected
+only in the v4 development view: an attempted unsupported cause is `incorrect`, and an explicit
+false evidence-insufficiency claim is a material error. Prior reports and labels remain immutable.
+The predeclaration is `manifests/annotation/luna-model-judge-v1-v4-predeclaration.json`.
+
 ## Input boundary and isolation
 
 Every response is judged in a new API request with no conversation history and no model tools. The

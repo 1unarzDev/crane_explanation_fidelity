@@ -63,7 +63,11 @@ REQUIRED_CATEGORY_TAGS = {
 
 def load_suite(path: Path = SUITE_PATH) -> dict[str, Any]:
     suite = json.loads(path.read_text(encoding="utf-8"))
-    if suite.get("schema") == "crane-luna-judge-qualification-suite-amendment/v2":
+    if suite.get("schema") in {
+        "crane-luna-judge-qualification-suite-amendment/v2",
+        "crane-luna-judge-qualification-suite-amendment/v3",
+    }:
+        amendment_schema = suite["schema"]
         base_path = ROOT / suite["base_suite"]
         if digest_path(base_path) != suite["base_suite_sha256"]:
             raise ValueError("qualification amendment base-suite hash mismatch")
@@ -76,13 +80,30 @@ def load_suite(path: Path = SUITE_PATH) -> dict[str, Any]:
             if not isinstance(values, dict):
                 raise ValueError("qualification expectation amendment is not an object")
             cases_by_id[identifier]["expected"].update(values)
-        base["schema"] = suite["schema"]
+        split_amendments = suite.get("split_amendments", {})
+        if set(split_amendments) - set(cases_by_id):
+            raise ValueError("qualification split amendment references unknown cases")
+        for identifier, split in split_amendments.items():
+            if split not in {"development", "heldout"}:
+                raise ValueError("qualification split amendment has invalid split")
+            cases_by_id[identifier]["split"] = split
+        additions = suite.get("additional_cases", [])
+        if not isinstance(additions, list):
+            raise ValueError("qualification additional cases are not a list")
+        addition_ids = [case.get("case_id") for case in additions if isinstance(case, dict)]
+        if len(addition_ids) != len(additions) or len(addition_ids) != len(set(addition_ids)):
+            raise ValueError("qualification additional cases have invalid or repeated IDs")
+        if set(addition_ids) & set(cases_by_id):
+            raise ValueError("qualification additional cases repeat base IDs")
+        base["cases"].extend(additions)
+        base["schema"] = amendment_schema
         base["suite_id"] = suite["suite_id"]
         base["amendment_path"] = str(path)
         suite = base
     if suite.get("schema") not in {
         "crane-luna-judge-qualification-suite/v1",
         "crane-luna-judge-qualification-suite-amendment/v2",
+        "crane-luna-judge-qualification-suite-amendment/v3",
     }:
         raise ValueError("qualification suite schema mismatch")
     cases = suite.get("cases")

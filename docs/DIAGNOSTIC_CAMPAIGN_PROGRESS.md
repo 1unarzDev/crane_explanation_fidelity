@@ -14,8 +14,8 @@ Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 | Information/tool/resource parity | DRAFT | Audit at campaign freeze |
 | Target land strata | PARTIAL | Existing cases are development only; fresh generators/configurations required |
 | Target surface strata | NOT_READY | Both geometric and command--motion admission required; do not reallocate weight |
-| Luna development qualification | SELECTED | Audited v2-medium offline rescore passes every gate; zero new calls |
-| Luna held-out qualification | FAILED | Both frozen passes failed category gates; no study scoring allowed |
+| Luna development qualification | V4 PREDECLARED | One medium-only run over all 28 exposed cases; not yet executed |
+| Luna held-out qualification | V2 FAILED / V4 NOT_RUN | 14 fresh v4 cases reserved; no study scoring allowed |
 | Replication configurations reserved | NOT_RUN | Reserve before discovery collection |
 | Sequential null simulation | PASS_QA | 20,000 replicates per endpoint; all boundary estimates below component alpha 0.02 |
 | Alternative budget sensitivity | COMPLETE | +0.30 scenarios reach 0.9946/0.9366 joint success by 1,600; this is not observed power |
@@ -67,11 +67,10 @@ Record, without deleting earlier rows:
 
 ## Next action
 
-Do not collect confirmatory responses. The frozen two-pass Luna held-out qualification failed and
-cannot be retried. Decide prospectively whether a bounded new judge-development cycle has higher
-paper value than an independently checkable or limited-category endpoint. Any successor must use a
-new version and fresh held-out cases. Candidate/baseline/resource freezing, target-stratum readiness,
-and replication reservation remain independently incomplete.
+Do not collect confirmatory responses. Execute the predeclared v4 development run once at medium
+reasoning. Only if every unchanged gate passes may the exact configuration be frozen before opening
+the 14 fresh held-out cases. Candidate/baseline/resource freezing, target-stratum readiness, and
+replication reservation remain independently incomplete.
 
 ## Held-out judge result (2026-09-24)
 

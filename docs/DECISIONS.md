@@ -1305,3 +1305,22 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   alpha consumption remains 0.000/0.050. A successor judge requires a separately versioned,
   prospective development decision and fresh held-out cases; an independently checkable or
   explicitly narrower endpoint should be considered against its deadline cost.
+
+## 2026-09-24 — authorize one bounded Luna v4 evaluator cycle
+
+- Decision: prospectively run one medium-effort v4 development qualification over all 28 exposed
+  cases, with 14 newly authored independently checkable cases reserved for fresh held-out testing.
+- Evidence: the prior held-out failure was concentrated at the semantic boundary between truthful
+  diagnostic omission and material factual error. Without a qualified semantic judge, the primary
+  endpoint cannot be evaluated; more robot episodes would not remove this blocker.
+- Change boundary: clarify that omissions affect coverage/mechanism fields unless actual wording
+  asserts something false, and that an explicit false evidence-insufficiency statement is a
+  material completeness error. Reconcile QH003/QH006 only in the now-development view under rules
+  already motivated independently of any explanation-method comparison.
+- Alternatives: use pass 2, rescore the failed holdout, narrow categories after inspection, switch
+  judges, or abandon semantic evaluation. The first three violate the freeze; switching models
+  broadens scope; immediate abandonment would forfeit the registered endpoint before testing the
+  isolated repair.
+- Guardrails: same Luna alias, medium effort, schema, rubrics, thresholds, isolation, and retry
+  policy. V4 must pass every development gate, then be hash-frozen before exactly two fresh held-out
+  passes. Any miss is retained and study scoring remains prohibited.

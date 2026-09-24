@@ -1,0 +1,26 @@
+{
+  "schema": "crane-luna-judge-development-predeclaration/v1",
+  "arm_id": "luna-model-judge-v1",
+  "prompt_version": "luna-model-judge-v4",
+  "declared_utc_date": "2026-09-24",
+  "status": "PREDECLARED_NOT_RUN",
+  "prompt": {
+    "path": "research/explanation_fidelity/prompts/luna-model-judge-v4.md",
+    "sha256": "a660135be8dd742f5e9547685b5aa09ff7de45bf7dd6240289f7ff7e41dfd15a"
+  },
+  "suite": {
+    "path": "research/explanation_fidelity/qualification/luna-model-judge-v4-fresh-heldout.json",
+    "sha256": "a1e7fca7896e5685b41639522c701007b1726b4f3b6470aa51115d9d14763538",
+    "development_cases": 28,
+    "fresh_heldout_cases": 14,
+    "fresh_heldout_model_executions_at_declaration": 0
+  },
+  "model": "gpt-6-luna",
+  "reasoning_efforts": ["medium"],
+  "change_boundary": "Clarify the distinction between truthful diagnostic omission and a material factual error. Reconcile two now-development-only expected labels under already declared proposition-slot and completeness-assertion rules. Do not alter schema, rubrics, thresholds, isolation, retry policy, or study data.",
+  "development_rule": "Run each of the 28 exposed development cases once at medium reasoning. Every existing gate must pass. No low/high search and no retry of a usable unfavorable judgment.",
+  "heldout_rule": "Do not execute any QN case unless v4 development passes every unchanged gate and the exact prompt, suite, schema, rubrics, caller, effort, and thresholds are committed in a new freeze record first. Then run exactly two isolated passes.",
+  "failure_rule": "Retain failure and prohibit study scoring if development or either heldout pass misses any gate. Do not relax thresholds or alter fresh heldout expectations after execution.",
+  "study_evaluation_allowed": false,
+  "confirmatory_alpha_consumed": 0.0
+}

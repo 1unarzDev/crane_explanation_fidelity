@@ -3883,3 +3883,22 @@
 - **DISPOSITION:** retain without retry. This is a negative judge-validity result, not a P-versus-R
   method result. No study response was scored, no confirmatory alpha was consumed, and no threshold
   or held-out expectation will be changed after inspection.
+
+## 2026-09-24 — Luna model-judge v4 bounded development predeclaration
+
+- **STATUS:** `PREDECLARED / NOT_RUN`; no v4 model call or fresh held-out case was opened.
+- **VALUE DECISION:** semantic judge validity blocks the registered primary endpoint; collecting
+  another robot episode would not remove that blocker. A bounded evaluator repair has higher
+  immediate paper value than episode collection, figures, or manuscript polishing.
+- **CHANGE:** prompt v4 clarifies only that truthful incompleteness is a diagnostic-coverage failure,
+  while an explicit contradicted claim about evidence sufficiency is a material completeness error.
+  Schema, rubrics, thresholds, isolation, retry rules, and model remain unchanged.
+- **DEVELOPMENT:** all 28 previously exposed qualification cases are development-only. QH003 and
+  QH006 receive prospective development-view corrections under the already declared proposition-
+  slot and completeness-assertion rules; the original failed held-out report is untouched.
+- **FRESH HOLDOUT:** 14 new independently checkable `QN` cases are hash-declared before any v4 call.
+  They include omission versus false denial, causal overclaim, count/source errors, ambiguity,
+  false premise, evidence problems, composition, prompt injection, and presentation invariance.
+- **STOPPING:** run medium once on development. Pass every unchanged gate to freeze; otherwise
+  retain failure. Only a committed freeze may authorize exactly two fresh held-out passes. No
+  usable unfavorable judgment is retried and no threshold is lowered.
