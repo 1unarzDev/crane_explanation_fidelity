@@ -1,0 +1,104 @@
+{
+  "schema": "crane-diagnostic-sequential-protocol/v1",
+  "protocol_id": "diagnostic-sequential-protocol-v1",
+  "declared_date": "2026-09-23",
+  "status": "REGISTERED_FRAMEWORK_NO_CAMPAIGN_ACTIVE",
+  "scope": "new prospective diagnostic campaigns only",
+  "prohibited_inputs": [
+    "legacy F/G/H episodes or responses",
+    "diagnostic-development episodes or outputs already inspected",
+    "question paraphrases, evidence masks, or reruns counted as new independent clusters"
+  ],
+  "primary_comparison": {
+    "proposed": "P: frozen diagnosis + provenance + checked plan + realization + final verification/fallback",
+    "baseline": "R: strongest development-selected repository-aware agent",
+    "fairness": [
+      "same robot-visible evidence and source/configuration excerpts",
+      "same executable diagnostic tools and tool descriptions",
+      "same model family, version, reasoning configuration, and sampling settings where applicable",
+      "same maximum model calls, tool calls, input tokens, wall-clock budget, and permitted external resources",
+      "condition identity, evaluator truth, checked plan, verifier/fallback state, and other methods' answers hidden"
+    ],
+    "selection_basis": "Development evidence showed tool-enabled R was stronger than N and frequently matched P/T; no confirmatory outcome was used."
+  },
+  "primary_outcome": {
+    "name": "supported_diagnostic_success",
+    "definition": "On a diagnosable question, the final answer identifies the independently required supported physical/execution mechanism and contains no material unsupported or contradicted assertion.",
+    "semantic_origin": "Luna-assessed under a separately frozen and held-out-qualified judge configuration",
+    "reported_alongside": "independently checkable diagnostic measurements and references"
+  },
+  "decision_thresholds": {
+    "minimum_worthwhile_improvement": 0.15,
+    "maximum_material_error_degradation": 0.02,
+    "maximum_useful_coverage_degradation": 0.05,
+    "maximum_ambiguity_handling_degradation": 0.05,
+    "immutable_after_campaign_freeze": true
+  },
+  "target_distribution": {
+    "sampling": "Each independent configuration is sampled prospectively from this fixed categorical mixture. No outcome-dependent reweighting or family oversampling is allowed.",
+    "strata": [
+      {"stratum_id": "land-geometric-adverse", "probability": 0.24},
+      {"stratum_id": "land-geometric-nominal", "probability": 0.08},
+      {"stratum_id": "land-geometric-ambiguous", "probability": 0.08},
+      {"stratum_id": "land-motion-adverse", "probability": 0.16},
+      {"stratum_id": "land-motion-compensation", "probability": 0.08},
+      {"stratum_id": "land-motion-nominal", "probability": 0.08},
+      {"stratum_id": "land-motion-ambiguous", "probability": 0.08},
+      {"stratum_id": "surface-geometric-adverse", "probability": 0.06},
+      {"stratum_id": "surface-geometric-nominal", "probability": 0.02},
+      {"stratum_id": "surface-geometric-ambiguous", "probability": 0.02},
+      {"stratum_id": "surface-motion-adverse", "probability": 0.04},
+      {"stratum_id": "surface-motion-compensation", "probability": 0.02},
+      {"stratum_id": "surface-motion-nominal", "probability": 0.02},
+      {"stratum_id": "surface-motion-ambiguous", "probability": 0.02}
+    ],
+    "aggregate_weights": {
+      "land": 0.8,
+      "surface": 0.2,
+      "geometric": 0.5,
+      "command_motion": 0.5,
+      "ambiguous": 0.2
+    },
+    "surface_readiness_rule": "No campaign using this distribution may start until both surface mechanism strata pass development admission. If they do not, register a new land-only protocol before collecting outcomes; do not silently reallocate their weight."
+  },
+  "analysis": {
+    "unit": "one predeclared primary response per independent scenario cluster",
+    "paired_difference": "P minus R",
+    "betting_lambdas": [0.005, 0.01, 0.02, 0.04, 0.08, 0.12, 0.18, 0.25, 0.33, 0.42, 0.49],
+    "confidence_method": "fixed-mixture nonnegative betting e-process for bounded paired differences in [-1,1]",
+    "monitoring": "anytime-valid over cluster arrivals under the declared conditional-mean assumptions",
+    "gate_correction": "Bonferroni over the four required bounds within each campaign allocation",
+    "secondary_methods": "T and N are descriptive/exploratory unless separately allocated alpha before collection"
+  },
+  "error_budget_ledger": {
+    "program_alpha": 0.05,
+    "allocations": [
+      {"allocation_id": "candidate-v1-confirmation", "role": "candidate", "alpha": 0.02, "status": "AVAILABLE"},
+      {"allocation_id": "candidate-revision-reserve", "role": "candidate", "alpha": 0.01, "status": "AVAILABLE"},
+      {"allocation_id": "selected-method-replication", "role": "replication", "alpha": 0.02, "status": "AVAILABLE"}
+    ],
+    "rule": "An allocation is consumed when its first confirmatory response is inspected. Failed, futile, unresolved, or abandoned campaigns do not refund alpha. New candidates require an unused allocation or a prospectively versioned program ledger."
+  },
+  "stopping_rule": {
+    "minimum_total_clusters_before_success": 100,
+    "minimum_diagnosable_clusters_before_success": 70,
+    "minimum_ambiguous_clusters_before_success": 15,
+    "futility_review_cluster_counts": [100, 150, 200, 300],
+    "maximum_total_clusters": 400,
+    "success": "All four corrected bounds pass, the held-out Luna qualification remains valid, and all minimum sample and replication requirements apply.",
+    "futility": "At a scheduled review, stop for prospective method review when the nonbinding 95% anytime upper bound for primary improvement is at or below +0.15.",
+    "maximum": "At 400 clusters stop regardless of significance; report unresolved or negative results if success has not occurred."
+  },
+  "judge_gate": {
+    "required": "A new Luna configuration must pass the frozen development and held-out qualification protocol before campaign scoring.",
+    "current_luna_model_judge_v1_status": "FAILED_DEVELOPMENT_QUALIFICATION_INELIGIBLE",
+    "two_pass_rule": "Two isolated passes; deterministic disagreement resolution only; otherwise unresolved.",
+    "systematic_bias_rule": "Additional responses cannot repair a failed judge category. Restrict the endpoint or qualify a new judge prospectively."
+  },
+  "replication": {
+    "fresh_configuration_required": true,
+    "discovery_episode_reuse_prohibited": true,
+    "method_baseline_prompt_tool_and_judge_hashes_must_match": true,
+    "success_criterion": "The replication allocation independently passes the same +0.15 primary threshold and all three guardrails under fresh configurations."
+  }
+}

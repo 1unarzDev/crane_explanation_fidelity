@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://crane.local/schemas/diagnostic-sequential-results-v1.schema.json",
+  "title": "Prospective diagnostic sequential campaign results",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "campaign_id",
+    "protocol_id",
+    "protocol_sha256",
+    "alpha_allocation_id",
+    "development_or_legacy_data_included",
+    "outcomes_inspected_before_freeze",
+    "sampling_rule_changed_after_outcomes",
+    "campaign_registration",
+    "judge_quality",
+    "clusters"
+  ],
+  "properties": {
+    "schema": {"const": "crane-diagnostic-sequential-results/v1"},
+    "campaign_id": {"type": "string", "pattern": "^diagnostic-seq-(?!.*legacy).+$"},
+    "protocol_id": {"type": "string", "minLength": 1},
+    "protocol_sha256": {"$ref": "#/$defs/sha256"},
+    "alpha_allocation_id": {"type": "string", "minLength": 1},
+    "development_or_legacy_data_included": {"const": false},
+    "outcomes_inspected_before_freeze": {"const": false},
+    "sampling_rule_changed_after_outcomes": {"const": false},
+    "campaign_registration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "registered_before_outcomes",
+        "information_tool_resource_parity_audited",
+        "frozen_hashes"
+      ],
+      "properties": {
+        "registered_before_outcomes": {"const": true},
+        "information_tool_resource_parity_audited": {"const": true},
+        "frozen_hashes": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "proposed_method",
+            "baseline",
+            "evidence_contract",
+            "target_sampler",
+            "question_references",
+            "luna_judge",
+            "analysis_code"
+          ],
+          "properties": {
+            "proposed_method": {"$ref": "#/$defs/sha256"},
+            "baseline": {"$ref": "#/$defs/sha256"},
+            "evidence_contract": {"$ref": "#/$defs/sha256"},
+            "target_sampler": {"$ref": "#/$defs/sha256"},
+            "question_references": {"$ref": "#/$defs/sha256"},
+            "luna_judge": {"$ref": "#/$defs/sha256"},
+            "analysis_code": {"$ref": "#/$defs/sha256"}
+          }
+        }
+      }
+    },
+    "judge_quality": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "heldout_qualification_passed",
+        "frozen_configuration_used",
+        "qualification_manifest_sha256",
+        "two_isolated_passes_completed",
+        "unresolved_labels",
+        "maximum_allowed_unresolved_labels"
+      ],
+      "properties": {
+        "heldout_qualification_passed": {"type": "boolean"},
+        "frozen_configuration_used": {"type": "boolean"},
+        "qualification_manifest_sha256": {"$ref": "#/$defs/sha256"},
+        "two_isolated_passes_completed": {"type": "boolean"},
+        "unresolved_labels": {"type": "integer", "minimum": 0},
+        "maximum_allowed_unresolved_labels": {"type": "integer", "minimum": 0}
+      }
+    },
+    "replication": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "same_frozen_method_and_baseline",
+        "fresh_configuration_overlap_count",
+        "discovery_response_reuse_count"
+      ],
+      "properties": {
+        "same_frozen_method_and_baseline": {"type": "boolean"},
+        "fresh_configuration_overlap_count": {"type": "integer", "minimum": 0},
+        "discovery_response_reuse_count": {"type": "integer", "minimum": 0}
+      }
+    },
+    "clusters": {
+      "type": "array",
+      "maxItems": 400,
+      "items": {"$ref": "#/$defs/cluster"}
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "probability": {"type": "number", "minimum": 0.0, "maximum": 1.0},
+    "cluster": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "cluster_id",
+        "configuration_id",
+        "sequence_index",
+        "independent_cluster",
+        "stratum_id",
+        "declared_sampling_probability",
+        "answerability",
+        "supported_diagnostic_success_p",
+        "supported_diagnostic_success_r",
+        "material_error_p",
+        "material_error_r",
+        "useful_coverage_p",
+        "useful_coverage_r",
+        "correct_ambiguity_handling_p",
+        "correct_ambiguity_handling_r"
+      ],
+      "properties": {
+        "cluster_id": {"type": "string", "minLength": 1},
+        "configuration_id": {"type": "string", "minLength": 1},
+        "sequence_index": {"type": "integer", "minimum": 1},
+        "independent_cluster": {"const": true},
+        "stratum_id": {"type": "string", "minLength": 1},
+        "declared_sampling_probability": {"type": "number", "exclusiveMinimum": 0.0, "maximum": 1.0},
+        "answerability": {"enum": ["diagnosable", "ambiguous"]},
+        "supported_diagnostic_success_p": {"$ref": "#/$defs/probability"},
+        "supported_diagnostic_success_r": {"$ref": "#/$defs/probability"},
+        "material_error_p": {"$ref": "#/$defs/probability"},
+        "material_error_r": {"$ref": "#/$defs/probability"},
+        "useful_coverage_p": {"$ref": "#/$defs/probability"},
+        "useful_coverage_r": {"$ref": "#/$defs/probability"},
+        "correct_ambiguity_handling_p": {"$ref": "#/$defs/probability"},
+        "correct_ambiguity_handling_r": {"$ref": "#/$defs/probability"}
+      }
+    }
+  }
+}

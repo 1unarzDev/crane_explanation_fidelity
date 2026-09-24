@@ -21,6 +21,14 @@ supported physical or execution mechanism, its connection to the outcome, decisi
 appropriate limits. Legacy F/G/H answers remain governed by their original substantive rubric and
 are not retrospectively required to perform physical diagnosis.
 
+For any new sequential diagnostic campaign, this protocol is subordinate to the additional gate
+in `docs/SEQUENTIAL_EVALUATION_PROTOCOL.md`: a newly versioned Luna arm must pass development and
+untouched held-out qualification before the first confirmatory label. Its complete rubric,
+references, model/settings, two-pass rule, and qualification-manifest hash are frozen with the
+campaign. The current v1/v2 failures cannot be repaired by accumulating more study responses, and
+any unresolved primary or guardrail field prevents a success declaration while remaining in the
+reported sensitivity analysis.
+
 ## Declared artifact inventory and prior exposure
 
 Counts below were verified from tracked manifests and packets on 2026-09-23 rather than copied from

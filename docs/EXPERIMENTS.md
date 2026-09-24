@@ -3763,3 +3763,26 @@
   explicitly.
 - **BOUNDARY:** this validates restoration and deterministic recomputation, not ROS/Unity runtime
   execution, semantic annotation, human trust, a method effect, or portal submission.
+
+## 2026-09-23 — prospective sequential diagnostic framework regression
+
+- **STATUS:** `IMPLEMENTED / TESTED / NO CAMPAIGN ACTIVE`; no robot episode, model call, semantic
+  label, governed payload, frozen artifact, or comparative outcome was created or inspected.
+- **SCOPE:** future diagnostic campaigns only. The framework rejects legacy/development inputs,
+  duplicate clusters/configurations, nonchronological rows, outcome-adaptive sampling, target-
+  mixture mismatches, incomplete freeze hashes, and unaudited P/R resource parity.
+- **INFERENCE:** fixed-mixture bounded-mean e-processes provide one-sided anytime-valid bounds under
+  the declared conditional-mean assumptions. Bonferroni divides each campaign allocation across
+  the primary bound and three guardrails. The program ledger reserves 0.020/0.010/0.020 alpha for
+  candidate v1, one revision, and fresh replication; used allocations are never refunded.
+- **DECISION RULE:** success requires the corrected P-minus-R lower bound above +0.15, all three
+  corrected nondegradation bounds, diversity floors, a frozen held-out-qualified Luna judge with
+  zero unresolved required fields, and replication separation where applicable.
+- **REGRESSION:** focused synthetic tests cover the e-process identity and orientation, confidence-
+  bound tightening, simultaneous gates, judge blocking, legacy/adaptive/duplicate rejection,
+  configuration/order/answerability rejection, protocol-hash and parity gates, replication
+  separation, ledger over-allocation, and mandatory campaign binding before alpha consumption.
+  Synthetic rows are software tests, not study evidence.
+- **BLOCKERS:** candidate and exact R resources are not hash-frozen; surface strata are not admitted;
+  current Luna v1/v2 is ineligible; held-out judge qualification and replication reservation are
+  `NOT_RUN`. Confirmatory collection remains prohibited.

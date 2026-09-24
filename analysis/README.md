@@ -5,6 +5,11 @@ through committed manifests, preserve episode/scenario clustering, and never tre
 independent observations. Generated figures and tables should be reproducible from a frozen data
 manifest and configuration hash.
 
+`sequential_diagnostic_monitor.py` is the prospective, fail-closed anytime monitor for new
+diagnostic campaigns. It cannot ingest legacy or inspected development data. Its protocol, result
+schema, and synthetic zero-outcome dry run are linked from
+`docs/SEQUENTIAL_EVALUATION_PROTOCOL.md`.
+
 ## F/G/H runtime parity gate
 
 Build the shared runtime presentation and question-specific parity audit before any repository-agent

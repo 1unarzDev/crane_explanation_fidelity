@@ -1202,3 +1202,25 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Revisit condition: restore a full-paper claim only after a prospectively frozen, qualified
   semantic evaluation over enough independent clusters supports it. Git history preserves the
   earlier scaffold; frozen studies and original annotation workflows remain unchanged.
+
+## 2026-09-23 — require sequential meaningful-advantage confirmation and fresh replication
+
+- Decision: register an additive framework for future diagnostic campaigns with one primary
+  comparison, P versus tool-enabled R; a +0.15 minimum worthwhile supported-diagnostic-success
+  improvement; simultaneous nondegradation guardrails; anytime-valid paired-cluster monitoring;
+  a closed program error ledger; and separately reserved fresh-configuration replication.
+- Evidence: inspected development cases often show parity between P/T and a fair tool-enabled R,
+  the existing 92-cluster calculation tests against zero rather than a +0.15 lower-bound target,
+  and both Luna development qualifications failed. Repeated fixed-look testing or accumulating
+  easy variants would therefore not establish the intended scientific advantage.
+- Alternatives: treat the strongest observed ablation as optional; stop whenever an uncorrected
+  p-value crosses .05; reuse inspected clusters; lower the worthwhile threshold; or spend all alpha
+  on candidate revisions. These were rejected because they weaken fairness, independence,
+  practical relevance, or replication.
+- Validity protection: only fresh prospectively sampled configurations enter; related runs/masks/
+  paraphrases remain clustered; all four corrected bounds must pass; failed/futile candidates
+  consume their allocation; judge uncertainty blocks success; and legacy F/G/H remains untouched.
+- Current consequence: no campaign is active. A candidate, parity-audited R contract, target
+  samplers, newly qualified Luna arm, and replication reserve must be hash-frozen first.
+- Revisit condition: a future protocol version may use a prospectively declared land-only target
+  if surface strata remain unavailable, but never by redistributing weight after outcomes.

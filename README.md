@@ -143,7 +143,14 @@ their own location. Exact repository commits and destinations are recorded in
 - **COLLECTED, NOT_ANNOTATED (DIAGNOSTIC DEVELOPMENT):** the complete R/P/T/N inventory contains
   52 blinded responses in 13 packets over nine statistical clusters. Final P used deterministic
   fallback for 13/13 questions. This is a development inventory, not a held-out result; no P-over-R
-  effect is established and the prospective protocol remains unfrozen.
+  effect is established and no campaign-specific method/judge/resource freeze exists.
+- **REGISTERED FRAMEWORK / NO CAMPAIGN ACTIVE:** new diagnostic confirmation uses a prospective
+  P-versus-tool-enabled-R sequential protocol with a +0.15 minimum worthwhile improvement,
+  simultaneous material-error/coverage/ambiguity guardrails, a closed 0.05 program error ledger,
+  and separately reserved fresh-config replication. It cannot use legacy or inspected development
+  outcomes. The failed Luna arm, unfrozen candidate/resource hashes, and unqualified surface strata
+  currently block activation; see [sequential protocol](docs/SEQUENTIAL_EVALUATION_PROTOCOL.md)
+  and [campaign progress](docs/DIAGNOSTIC_CAMPAIGN_PROGRESS.md).
 - **TESTED (SECONDARY-ARM DEVELOPMENT):** the provider-neutral model-call contract now has a
   Claude Code adapter as its first non-GPT instance. A predeclared control rejected Haiku and fixed
   `claude-sonnet-5` at low effort. See [model-family replication](docs/MODEL_FAMILY_REPLICATION.md).
