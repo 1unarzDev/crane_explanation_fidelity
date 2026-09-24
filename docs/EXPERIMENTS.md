@@ -4162,3 +4162,21 @@
   passed after the umbrella integration. No frozen artifact or qualified Luna file changed.
 - **NEXT GATE:** predeclare fresh development configurations before any model call. This repair is
   based on exposed development errors and cannot itself support a method-effect estimate.
+
+## 2026-09-24 — language-v4 multi-family development predeclaration
+
+- **STATUS:** `PREDECLARED / NOT_RUN`; zero physical runs and zero model/judge calls under this
+  declaration at commit time.
+- **SCOPE:** four fixed land configurations in two statistical clusters: matched v4-catalog
+  connected-detour/nominal layouts 005, and matched persistent/released command--motion cases in a
+  shared 15 m corridor. Each configuration has one physical-run attempt; unexpected outcomes and
+  failed induction are retained.
+- **PURPOSE:** prospectively test whether language candidate v4 avoids the exposed measurement-
+  scope, source-link, and next-check failures across geometric and command--motion families. This
+  is candidate development, not confirmation, power evidence, or independent replication.
+- **FAIRNESS:** P and tool-enabled R receive the same blind evidence, exact source/configuration,
+  and executable diagnostic. Generation is fixed to one `gpt-6-sol` high call per R/P/N condition;
+  T is deterministic. Any later Luna evaluation uses exactly two isolated qualified-v7 passes.
+- **BOUNDARY:** catalog layout identity, intervention identity/timing, expected outcome, and
+  evaluator geometry/truth stay evaluator-only. No confirmatory allocation is activated and alpha
+  remains 0.000/0.050.

@@ -1,0 +1,122 @@
+{
+  "schema": "crane-diagnostic-language-multifamily-development/v1",
+  "status": "PREDECLARED_DEVELOPMENT_ONLY_NOT_RUN",
+  "declared_at": "2026-09-24T08:42:45-05:00",
+  "purpose": "Prospectively exercise command-motion language policy v4 and v2 prompts on fresh physical configurations from two land diagnostic families before any candidate freeze.",
+  "source": {
+    "umbrella_commit_before_declaration": "2a48023d6278c115178130dc9af1418acf996597",
+    "crane_ml_commit": "f669e748c657a5e93324e8bcdf1732785e88ce47",
+    "astro_dock_commit": "36202373ae186a8fd247a20b7b477312a744de99",
+    "crane_explain_core_commit": "64f9e185c5feacfd9eb2a14e39ccae0a0a265528",
+    "crane_explain_ros_commit": "fc957a172967a849d677e467bcf09b344de581a1",
+    "player_sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+    "player_build_source_commit": "6bf057b5acf1763eeca1b81be6530cd218a5405b",
+    "catalog_sha256": "c2603491c16b99ba007085237097fc0cd66ee2453d1b9e4e1fc7f490bd1a0f8a",
+    "land_capture_runner_sha256": "d1f1830981cf82e79d55897d8b8f5eed1c515e70e242f469bde6ae0a55aea76f",
+    "land_pilot_runner_sha256": "e068cce5d1cbe558d401eda52a571e15059130f5e66a699fa9e17674ceb6876d",
+    "command_motion_pilot_runner_sha256": "d383b322995ce88bf3dccdb6a16485facc809f6d12b3882dcf52109da519767d",
+    "command_motion_repository_prompt_sha256": "fecc91be8178762e58371fcceee783e493475f6f3c48687ce7dd1c120a027f6b",
+    "diagnostic_realization_prompt_sha256": "959a710146da0a6259fe06fc4ed183f3bcfca63565e36181604dbeb6dfa023fd"
+  },
+  "development_clusters": [
+    {
+      "statistical_cluster_id": "language-v4-land-route-pair-005",
+      "family": "land-geometric-route-change",
+      "runs": [
+        {
+          "run_id": "diagnostic-language-v4-land-detour-005",
+          "catalog_layout": "diagnostic-development-connected-detour-005",
+          "seed": 62004,
+          "ros_domain_id": 124,
+          "ros_tcp_port": 12324,
+          "expected_broad_outcome": "successful route change with non-direct delivered plans"
+        },
+        {
+          "run_id": "diagnostic-language-v4-land-nominal-005",
+          "catalog_layout": "diagnostic-development-nominal-clear-route-005",
+          "seed": 63004,
+          "ros_domain_id": 125,
+          "ros_tcp_port": 12325,
+          "expected_broad_outcome": "successful nominal direct route"
+        }
+      ],
+      "cluster_rule": "The matched detour and nominal configurations share one development cluster."
+    },
+    {
+      "statistical_cluster_id": "language-v4-command-motion-pair-003-004",
+      "family": "command-to-motion-discrepancy",
+      "shared": {
+        "scene": "TurtleBot3 Warehouse Validation",
+        "corridor_width_m": 4.0,
+        "corridor_length_m": 15.0,
+        "goal_distance_m": 11.0,
+        "action_deadline_s": 75.0,
+        "worker_duration_s": 85.0,
+        "fixture_delay_wall_s": 7.0,
+        "time_scale": 1.0,
+        "mobility_hold_after_fixed_simulation_s": 18.0,
+        "bt_xml": "packages/crane_ml/Tools/Performance/nav2_land_progress_recovery.xml",
+        "nav2_params": "packages/crane_ml/Tools/Performance/nav2_land_fixture.yaml"
+      },
+      "runs": [
+        {
+          "run_id": "diagnostic-language-v4-motion-persistent-003",
+          "seed": 84104,
+          "ros_domain_id": 126,
+          "ros_tcp_port": 11313,
+          "mobility_release_after_fixed_simulation_s": null,
+          "expected_broad_outcome": "sustained discrepancy and nonsuccess"
+        },
+        {
+          "run_id": "diagnostic-language-v4-motion-compensated-004",
+          "seed": 84105,
+          "ros_domain_id": 127,
+          "ros_tcp_port": 11314,
+          "mobility_release_after_fixed_simulation_s": 30.0,
+          "expected_broad_outcome": "transient discrepancy, measured response recovery, and success"
+        }
+      ],
+      "cluster_rule": "The persistent and released interventions share one development cluster because they use the same corridor and mechanism family."
+    }
+  ],
+  "retention": {
+    "retain_every_valid_run": true,
+    "retain_unexpected_outcomes": true,
+    "fault_induction_success_reported_separately": true,
+    "no_quality_driven_resampling": true,
+    "maximum_physical_run_attempts_per_configuration": 1
+  },
+  "evidence_boundary": {
+    "methods_receive": "governed robot-visible captures, checked physical diagnostic, exact permitted source identifiers, exact source/configuration, and the same declared executable diagnostic tool",
+    "methods_do_not_receive": [
+      "catalog layout identity or semantic obstacle truth",
+      "mobility intervention identity or timing",
+      "expected outcome",
+      "evaluator-only geometry or simulator truth",
+      "other methods' answers or judge labels"
+    ]
+  },
+  "method_comparison": {
+    "primary": "P versus tool-enabled R",
+    "P": "checked diagnostic plus v2 realization prompt plus bounded-diagnostic-language-v4 verification/fallback",
+    "R": "repository-aware gpt-6-sol high agent with the same blind evidence, exact repositories, and executable diagnostic tool",
+    "T": "deterministic rendering of the same checked diagnostic",
+    "N": "no-diagnostic-computation ablation",
+    "provider": "codex",
+    "model": "gpt-6-sol",
+    "reasoning_effort": "high",
+    "samples_per_model_condition": 1,
+    "valid_output_retries": 0
+  },
+  "annotation": {
+    "arm": "luna-model-judge-v1-v7-reference-audited",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "passes": 2,
+    "fresh_context_per_response": true,
+    "no_usable_label_retries": true,
+    "confirmation_alpha_consumed": 0.0
+  },
+  "decision_rule": "Use results only to assess candidate credibility and recurring error modes. Two development clusters cannot establish or refute a practically meaningful advantage and cannot activate confirmation.",
+  "stopping": "Run each fixed physical configuration once, retain all outcomes, then run at most the fixed R/P/N calls and two Luna passes. Do not add favorable configurations after inspecting differences."
+}
