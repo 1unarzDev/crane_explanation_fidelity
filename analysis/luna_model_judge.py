@@ -774,14 +774,19 @@ class LunaIsolatedCodexCaller:
                 try:
                     events = self._events(completed.stdout)
                     forbidden_items = []
+                    client_warnings = []
                     for event in events:
                         item = event.get("item")
                         if event.get("type") == "item.completed" and isinstance(item, dict):
-                            if item.get("type") not in {"agent_message", "reasoning"}:
+                            if item.get("type") == "error" and str(item.get("message", "")).startswith(
+                                f"Model metadata for `{MODEL_ID}` not found."
+                            ):
+                                client_warnings.append(item["message"])
+                            elif item.get("type") not in {"agent_message", "reasoning"}:
                                 forbidden_items.append(item.get("type"))
+                    raw_final = output_path.read_text(encoding="utf-8")
                     if forbidden_items:
                         raise ValueError(f"model used or emitted forbidden tool/items: {forbidden_items}")
-                    raw_final = output_path.read_text(encoding="utf-8")
                     judgment = json.loads(raw_final)
                     if not isinstance(judgment, dict):
                         raise ValueError("final judgment is not an object")
@@ -809,6 +814,7 @@ class LunaIsolatedCodexCaller:
                     "seed": None,
                     "tools_exposed": [],
                     "tool_events_observed": 0,
+                    "client_warnings": client_warnings,
                     "attempts": attempts,
                     "events": events,
                     "raw_final": raw_final,

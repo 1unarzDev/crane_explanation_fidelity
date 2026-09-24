@@ -56,6 +56,9 @@ disposition remains recorded in `manifests/study/research-redirect-20260922.json
   tool event invalidates the call without retry.
 - Provider inventory check on 2026-09-23: `gpt-6-luna` was listed and required Codex CLI version
   `0.155.0` or newer; installed CLI was `0.155.1`.
+- In the isolated custom-provider profile, CLI 0.155.1 emits a recorded fallback-model-metadata
+  warning even when its copied provider inventory contains `gpt-6-luna`. The requested model and
+  effort remain explicit, but this client-side limitation is reported and the warning is retained.
 - Snapshot limitation: the provider exposes the alias and capability metadata, not a resolved
   backend revision. Every call therefore records the requested alias, provider-facing response ID,
   returned model string if present, reasoning effort, request hash, prompt/schema/rubric hashes,
