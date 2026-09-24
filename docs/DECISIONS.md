@@ -1,5 +1,22 @@
 # Decision Log
 
+## 2026-09-24 — revise diagnostic language by removing inferred event ordering
+
+- Decision: develop a separately named candidate v3 that renders complete diagnostic intervals and
+  execution counts but treats those counts as unordered unless retained timestamps establish the
+  relationship. Preserve candidate v2 and its negative pilot unchanged.
+- Evidence: candidate-v2 judgments repeatedly penalized “after the response loss,” “before abort,”
+  and a nominal answer that denied recorded failures and Wait invocations. Both methods also often
+  omitted intervals and attempt counts. These are method-design defects exposed on development
+  data, so correcting them before a fresh screen is legitimate.
+- Alternatives: collect more candidate-v2 episodes, weaken the rubric, remove execution facts, or
+  ask a stronger model to repair the plan. More sampling cannot reverse a failed readiness gate;
+  changing the rubric would be outcome-driven; deleting facts reduces usefulness; generation
+  cannot safely repair an internally unsupported plan.
+- Validity boundary: the renderer is an implementation candidate only. Retained v2 clusters may be
+  used for tests and error analysis but not as independent evidence of v3 performance. A new runner
+  and prospectively declared fresh configurations are required before any readiness claim.
+
 ## 2026-09-24 — do not freeze deterministic command-motion candidate v2
 
 - Decision: stop the bounded candidate-v2 pilot as declared and classify the method `NOT_READY`.

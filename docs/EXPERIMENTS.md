@@ -1,5 +1,21 @@
 # Experiment Log
 
+## 2026-09-24 — implement causally bounded command-motion candidate v3 renderer
+
+- **IMPLEMENTED / TESTED / NOT EVALUATED:** a separately named deterministic renderer reports the
+  healthy and discrepancy intervals, optional later response measurement, action status, and exact
+  attempt/failure/recovery counts. It states execution counts without inventing their order or a
+  causal link to the diagnostic interval.
+- **DEVELOPMENT BASIS:** candidate-v2 Luna rationales exposed three recurring defects: unsupported
+  chronology, denial of observed failures/recoveries in a non-triggered case, and omitted intervals
+  or attempt counts. Candidate v3 is allowed to use those development findings, but none of the old
+  clusters can become fresh evidence for it.
+- **REGRESSION:** four renderer tests cover supported, not-triggered, insufficient, and evidence-
+  boundary cases. Rendering succeeds on all six retained physical development configurations and
+  the masked variant. No model/judge call, new episode, readiness result, or alpha use is created.
+- **NEXT GATE:** implement an exact P/R runner with mandatory declared question identity, then use
+  only fresh development configurations for any candidate-v3 readiness screen.
+
 ## 2026-09-24 — candidate-v2 pilot stopped: candidate not ready
 
 - **COMPLETED AS DECLARED:** all six fresh physical configurations were attempted exactly once in
