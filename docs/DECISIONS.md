@@ -1,5 +1,26 @@
 # Decision Log
 
+## 2026-09-24 — test deterministic checked language as diagnostic candidate v2
+
+- Decision: implement `deterministic-command-motion-candidate-v2` with the exact checked
+  diagnostic rendering as P's final natural-language response. P makes no language-model call;
+  tool-enabled R receives the identical blind method input, exact source/configuration, identical
+  executable diagnostic, and one high-reasoning model call.
+- Evidence: inspected development runs repeatedly ended with P falling back to deterministic T,
+  while tool-enabled R often matched the central diagnosis and occasionally introduced incorrect
+  temporal or provenance scope. Calling the fallback an LLM realization obscures the actual method
+  and adds no demonstrated value.
+- Alternatives: keep model realization plus fallback; weaken R; compare only with the no-tool N
+  ablation; or activate confirmation from one inspected compensation case. Those choices preserve
+  ambiguity, create an unfair baseline, or overfit one cluster.
+- Validity boundary: this implementation is `DEVELOPMENT_ONLY_NOT_FROZEN`. Its deterministic
+  precision is a specialized diagnostic-tooling treatment, not evidence that prompting alone beats
+  a repository agent. R receives strictly more model resource, but information/tool/source parity
+  must still be audited per run. No effect, judge label, or alpha is created by implementing it.
+- Revisit: abandon or revise this candidate before confirmation unless several fresh, independent
+  development configurations show a credible advantage exceeding +0.15 without guardrail harm
+  under complete references and qualified Luna scoring.
+
 ## 2026-09-24 — isolate candidate-v2 development geometry from sealed study identities
 
 - Decision: add `crane-land-proving-ground-v5` as a permanently development-only catalog rather

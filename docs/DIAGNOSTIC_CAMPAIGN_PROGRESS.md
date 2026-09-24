@@ -9,7 +9,7 @@ Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 
 | Gate | Status | Evidence / next action |
 |---|---|---|
-| Candidate P frozen | NOT_READY | V4 multi-family scoring is mixed and packet-sensitive; do not freeze or open confirmation |
+| Candidate P frozen | NOT_READY | Deterministic candidate v2 implemented; fresh multi-configuration development evidence required |
 | Strongest baseline R frozen | DESIGNATED, NOT_HASH_FROZEN | Tool-enabled repository-aware R; freeze exact model/prompts/resources with candidate |
 | Information/tool/resource parity | DRAFT | Audit at campaign freeze |
 | Target land strata | DEVELOPMENT_NAMESPACE_QUALIFIED | V5 build/binding smoke passed; live ROS candidate cases and future confirmatory/replication reservation remain required |
@@ -49,6 +49,12 @@ the chosen allocation must be atomically bound to that campaign and cannot later
 
 No effect estimate, confidence sequence, guardrail result, or replication conclusion exists.
 Legacy and the eleven diagnostic-development clusters are intentionally absent from these counts.
+
+Candidate v2 now has an executable development runner. P is the exact checked deterministic
+diagnostic rendering with zero model calls; R gets the identical blind input, source, diagnostic
+tool, and one high-reasoning model call. This accurately treats the proposed method as specialized
+diagnosis plus deterministic natural-language rendering instead of attributing repeated fallback
+text to successful LLM reasoning. It remains unfrozen and has produced no new response or label.
 
 ## Fresh candidate-development capacity (2026-09-24)
 

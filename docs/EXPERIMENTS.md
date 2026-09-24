@@ -1,5 +1,19 @@
 # Experiment Log
 
+## 2026-09-24 — deterministic command--motion candidate-v2 runner
+
+- **IMPLEMENTED / TESTED / NOT FROZEN:** `analysis/run_command_motion_candidate_v2.py` compares
+  exact checked deterministic P with one tool-enabled repository-agent R. P makes zero model calls;
+  R receives the same robot-visible method input, exact CRANE/core source, identical executable
+  diagnostic, and one model call. There is no fallback path disguised as model realization.
+- **REGRESSION:** six candidate/current-runner tests pass, including exact P bytes, one-call-only R,
+  high-reasoning prompt semantics, and fail-closed rejection of non-exact rendering policies.
+- **SCIENTIFIC BOUNDARY:** this is a method implementation, not an answer comparison. Existing
+  inspected episodes were used only as test fixtures and produce no new response or label. No
+  candidate is frozen, no prospective run is authorized, and alpha remains `0.000/0.050`.
+- **NEXT GATE:** build a complete-by-construction independent reference packet and predeclare a
+  bounded set of fresh v5 configurations before any physical episode or model call.
+
 ## 2026-09-24 — v5 clean-source build and scenario-binding smoke
 
 - **QUALIFIED INFRASTRUCTURE / CALIBRATION ONLY:** Unity 6000.5.10f1 built CRANE commit
