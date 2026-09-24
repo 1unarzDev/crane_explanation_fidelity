@@ -1,7 +1,7 @@
 # Luna automated annotation protocol
 
 Protocol ID: `luna-model-judge-v1`  
-Status: **V7 REFERENCE-AUDITED HELD-OUT QUALIFIED — NO STUDY LABELS GENERATED**
+Status: **V7 HISTORICALLY QUALIFIED; TARGETED ENDPOINT-THREAT EXTENSION FAILED — SEMANTIC CONFIRMATION BLOCKED**
 Declared: 2026-09-23
 
 This document defines a separately named automated evaluation arm. It does not amend or replace
@@ -255,6 +255,31 @@ hashes, all qualification denominators, the unchanged prompt/schema/model config
 finite-sample sensitivity bounds. Nonempty campaigns must use the v2 result contract and prove
 both nominal and sensitivity gates; a nominal Luna advantage alone cannot activate a success
 claim. No study response has been scored under v7 as of this amendment.
+
+### Prospective command--motion endpoint-threat extension
+
+Before activating candidate-v3 confirmation, the project prospectively froze one bounded extension
+of the unchanged v7 judge on 24 new command--motion endpoint-focused cases. This extension tested
+whether the original qualification transferred to the exact semantic threats expected in the
+planned campaign; it did not rewrite or rerun the original v7 suite. Exactly two isolated passes
+were run, producing 48/48 usable calls with zero transport failure, zero usable-judgment retry, and
+zero false-acceptance/false-rejection polarity errors.
+
+The extension nevertheless failed its frozen gates. Passes 1 and 2 respectively achieved 16/20
+and 17/20 composite accuracy, 36/38 and 35/38 required-unit accuracy, and 162/192 and 167/192 core
+accuracy. Both failed the protected prompt-injection case and the same protected evidence-boundary
+cases. The extension therefore hard-stopped as
+`FAILED_RETAINED_HARD_STOP`; its smaller empirical intervals are ineligible for campaign
+sensitivity analysis, and no further Luna qualification iteration is authorized for this campaign.
+The disposition is
+`manifests/annotation/luna-model-judge-v7-endpoint-threat-extension-1-disposition.json`.
+
+This targeted failure does not retroactively invalidate the original v7 qualification or its
+retained development labels. Amendment 2's original upward-rounded sensitivity bounds remain the
+authoritative historical bounds wherever those historical results are described. It does block
+Luna-scored candidate-v3 semantic confirmation because the extension exposed an endpoint/protected-
+boundary threat in the intended domain. No confirmatory response was judged, no alpha was consumed,
+and the separately frozen 100-configuration land cohort is physical/reference collection only.
 
 ## Input boundary and isolation
 

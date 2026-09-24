@@ -4,7 +4,7 @@ Protocol: `diagnostic-sequential-protocol-v2`
 
 Declared: 2026-09-23
 
-Status: **REGISTERED FRAMEWORK + V7 ANNOTATION AMENDMENT 2 / NO CAMPAIGN ACTIVE / ZERO ALPHA CONSUMED**
+Status: **REGISTERED FRAMEWORK / TARGETED LUNA EXTENSION FAILED / NO CAMPAIGN ACTIVE / ZERO ALPHA CONSUMED**
 
 This is the canonical forward-looking statistical contract for new physical-diagnosis campaigns.
 It does not apply to frozen F/G/H data, the nine inspected diagnostic-development clusters, or any
@@ -86,8 +86,10 @@ frozen judge passes held-out qualification. Deterministically recomputed geometr
 count, and provenance predicates are reported separately.
 
 Annotation amendments 1 and 2 leave this endpoint unchanged. Amendment 1 registered the endpoint-
-focused qualification design; amendment 2 prospectively binds the reference-audited v7 judge that
-actually passed it. The judge is qualified on the endpoint composite before secondary fields.
+focused qualification design; amendment 2 prospectively bound the reference-audited v7 judge that
+passed its original suite. That qualification is preserved historically, but a later prospective
+command--motion endpoint-threat extension failed and blocks semantic campaign activation. The
+original qualification evaluated the endpoint composite before secondary fields.
 Each of two fresh isolated passes must reach at least 95%
 composite accuracy, 90% unit accuracy, and 90% core-field accuracy; factual false rejection is
 capped at 15%, unsupported-claim false acceptance at 5%, and protected causal, boundary,
@@ -121,7 +123,7 @@ corrected sequential bounds and guardrails to pass under both agreed nominal lab
 worst-case transformation. This is deliberately conservative, and the qualification intervals are
 reported rather than treating a small perfect sample as proof of zero judge error.
 
-For v7, the upward-rounded primary/material bounds are `U_FA=0.3904` and `U_FR=0.1844`.
+For the original v7 result, the upward-rounded primary/material bounds are `U_FA=0.3904` and `U_FR=0.1844`.
 Required-unit coverage uses the upward-rounded `0.1072` unit-error bound, retaining integer unit
 counts per answer. Ambiguous-case handling uses the `0.1612` composite-error bound. Amendment 2
 defines the method-specific adverse transformations. These are robustness assumptions based on
@@ -192,9 +194,12 @@ versions through v4 retain their failed qualification dispositions. V4-high pass
 development gate but failed both fresh held-out passes, and is never retroactively qualified. The
 prospectively authorized v5 and v6 profiles failed and remain ineligible. V7 used 24 fresh,
 reference-audited cases with the same v4 prompt/model/settings and unchanged v5 thresholds. Both
-isolated v7 passes cleared every gate. Only the exact v7 freeze/result hashes in annotation
-amendment 2 are eligible for future scoring; more study responses cannot repair or reinterpret any
-earlier failure.
+isolated v7 passes cleared every original gate. A later prospectively frozen 24-case command--motion
+endpoint-threat extension completed both passes but missed composite/core thresholds and protected
+injection/boundary gates in each. Its hard stop blocks candidate-v3 semantic activation without
+changing the historical v7 result. The extension's smaller bounds are ineligible; amendment 2's
+original values remain the historical sensitivity bounds. More study responses cannot repair
+either judge-validity failure.
 
 Reserve fresh configuration identities before discovery. Replication uses byte-identical P/R,
 evidence contract, prompts, tools, thresholds, judge, and analysis hashes; it reuses no discovery
@@ -204,8 +209,10 @@ separate allocations.
 
 ## Activation and retention
 
-No campaign is active. Activation requires frozen P/R and resource-parity hashes, admitted target
-generators, a held-out-qualified Luna arm, one frozen question/reference/sufficiency label per
+No campaign is active. The separately frozen 100-configuration land schedule is physical/reference
+collection only; four configurations have been attempted and valid, with no P/R response or Luna
+label. Activation requires frozen P/R and resource-parity hashes, a semantically valid evaluation
+arm, admitted target generators, one frozen question/reference/sufficiency label per
 cluster, a fixed sampler/exclusion contract, reserved replication configurations, and successful
 schema/monitor dry runs. Every candidate—including failed and futile versions—retains its
 registration, runs, exclusions, raw/final answers, judge passes, deterministic measurements,

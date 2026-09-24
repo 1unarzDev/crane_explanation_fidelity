@@ -148,11 +148,18 @@ their own location. Exact repository commits and destinations are recorded in
   P-versus-tool-enabled-R sequential protocol with a +0.15 minimum worthwhile improvement,
   simultaneous material-error/coverage/ambiguity guardrails, a closed 0.05 program error ledger,
   and separately reserved fresh-config replication. It cannot use legacy or inspected development
-  outcomes. The exact reference-audited Luna v7 arm is qualified for prospective use, with
-  finite-qualification error sensitivity required in addition to nominal bounds. Unfrozen
-  candidate/resource hashes and unqualified surface strata still block activation; see
+  outcomes. The reference-audited Luna v7 arm remains historically qualified, but its later
+  prospective command--motion endpoint-threat extension failed composite/core and protected gates
+  in both passes. Candidate-v3 semantic confirmation is therefore blocked; no confirmatory response
+  was judged and alpha remains 0.000/0.050. The original finite-qualification bounds remain
+  historical and the extension's smaller bounds are ineligible; see
   [sequential protocol](docs/SEQUENTIAL_STUDY_PROTOCOL.md)
   and [campaign progress](docs/DIAGNOSTIC_CAMPAIGN_PROGRESS.md).
+- **PHYSICAL/REFERENCE COLLECTION ACTIVE; SEMANTIC CAMPAIGN INACTIVE:** four of the frozen 100
+  land command--motion confirmation configurations have been attempted once and are valid. Run 003
+  preserves useful execution facts while correctly withholding the masked motion mechanism; run
+  004 records recovered measured response followed by task abort. No P/R response, Luna label,
+  effect estimate, confidence sequence, or alpha use exists. Replication remains untouched.
 - **TESTED (SECONDARY-ARM DEVELOPMENT):** the provider-neutral model-call contract now has a
   Claude Code adapter as its first non-GPT instance. A predeclared control rejected Haiku and fixed
   `claude-sonnet-5` at low effort. See [model-family replication](docs/MODEL_FAMILY_REPLICATION.md).
