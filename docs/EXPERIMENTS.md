@@ -15,6 +15,10 @@
 - **PURPOSE:** reduce uncertainty through fresh validation, not by changing the judge or study
   endpoint. This uses no confirmatory data or alpha. See
   `luna-model-judge-v7-endpoint-threat-extension-1-freeze.json`.
+- **PREFLIGHT AMENDMENT:** the first invocation failed before any model call because the unchanged
+  runner requires `suite_sha256` and `reasoning_effort` at the freeze's top level. The already
+  frozen values were duplicated there; suite, model, prompt, rules, thresholds, and outputs remain
+  unchanged. No judgment or output directory existed at amendment time.
 
 ## 2026-09-24 — candidate-v3 confirmation activation audit
 

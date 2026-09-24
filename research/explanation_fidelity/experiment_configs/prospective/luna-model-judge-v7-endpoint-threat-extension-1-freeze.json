@@ -2,11 +2,20 @@
   "schema": "crane-luna-judge-qualification-extension-freeze/v1",
   "freeze_id": "luna-model-judge-v7-endpoint-threat-extension-1",
   "declared_utc": "2026-09-24T21:20:00Z",
-  "status": "FROZEN_BEFORE_ANY_EXTENSION_CALL",
+  "status": "FROZEN_BEFORE_ANY_EXTENSION_CALL_AMENDED_AFTER_ZERO_CALL_PREFLIGHT_FAILURE",
+  "suite_sha256": "a383a32f48422e5e5600d7f04a3c682dbc2d052bc7ef645267794fc8a5822034",
+  "reasoning_effort": "high",
   "reason": "The previously frozen finite-sample annotation sensitivity bounds reduce the candidate-v3 pilot-rate advantage below the immutable +0.15 threshold. This is an endpoint-validity threat, not authorization to inspect or tune against confirmatory responses.",
   "prior_results_unchanged": true,
   "confirmatory_responses_inspected": 0,
   "confirmatory_alpha_consumed": 0.0,
+  "preflight_history": [
+    {
+      "result": "FAILED_BEFORE_CALLS",
+      "calls_started": 0,
+      "cause": "The unchanged qualification runner requires suite_sha256 and reasoning_effort at the freeze top level; both values were already nested and are duplicated here without changing them."
+    }
+  ],
   "inputs": {
     "prior_v7_freeze_path": "research/explanation_fidelity/experiment_configs/prospective/luna-model-judge-v7-reference-audited-freeze.json",
     "prior_v7_freeze_sha256": "63c2f25374c685a321dbe0d75ba803e9803718bb9eec289a2e4dcfecfd98ddc3",
