@@ -1,5 +1,21 @@
 # Experiment Log
 
+## 2026-09-24 — freeze Luna-v7 endpoint-threat extension 1
+
+- **STATUS:** `FROZEN / NOT_RUN`. Twenty-four fresh command--motion cases are fixed: 20 balanced
+  composite cases, 10 factual answers, 14 unsupported answers, protected causal/boundary/injection
+  cases, and one meaning-preserving presentation pair. No extension call has occurred.
+- **UNCHANGED:** Luna `gpt-6-luna`, high reasoning, isolated transport, v4 prompt, output schema,
+  two passes, retry policy, semantic rubric, and qualification thresholds. Prior v7 results and
+  bounds remain immutable.
+- **AGGREGATION:** all old and new errors/denominators are added by pass; Wilson 95% upper endpoints
+  are rounded upward to four decimals, and the larger pass-specific bound is retained. Both the
+  extension alone and aggregate must pass. Failure hard-stops further Luna iteration before the
+  first campaign decision.
+- **PURPOSE:** reduce uncertainty through fresh validation, not by changing the judge or study
+  endpoint. This uses no confirmatory data or alpha. See
+  `luna-model-judge-v7-endpoint-threat-extension-1-freeze.json`.
+
 ## 2026-09-24 — candidate-v3 confirmation activation audit
 
 - **STATUS:** `NOT_ACTIVATED / ZERO ALPHA CONSUMED`. The candidate passed development readiness,

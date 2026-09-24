@@ -1,0 +1,67 @@
+{
+  "schema": "crane-luna-judge-qualification-extension-freeze/v1",
+  "freeze_id": "luna-model-judge-v7-endpoint-threat-extension-1",
+  "declared_utc": "2026-09-24T21:20:00Z",
+  "status": "FROZEN_BEFORE_ANY_EXTENSION_CALL",
+  "reason": "The previously frozen finite-sample annotation sensitivity bounds reduce the candidate-v3 pilot-rate advantage below the immutable +0.15 threshold. This is an endpoint-validity threat, not authorization to inspect or tune against confirmatory responses.",
+  "prior_results_unchanged": true,
+  "confirmatory_responses_inspected": 0,
+  "confirmatory_alpha_consumed": 0.0,
+  "inputs": {
+    "prior_v7_freeze_path": "research/explanation_fidelity/experiment_configs/prospective/luna-model-judge-v7-reference-audited-freeze.json",
+    "prior_v7_freeze_sha256": "63c2f25374c685a321dbe0d75ba803e9803718bb9eec289a2e4dcfecfd98ddc3",
+    "prior_v7_result_path": "manifests/annotation/luna-model-judge-v1-heldout-v7-reference-audited.json",
+    "prior_v7_result_sha256": "f06e33c87dbe3ec9c973f71762f8bd312249ceee3e4db1cbf661c6c5f623d226",
+    "extension_suite_path": "research/explanation_fidelity/qualification/luna-model-judge-v7-endpoint-threat-extension-1-cases.json",
+    "extension_suite_sha256": "a383a32f48422e5e5600d7f04a3c682dbc2d052bc7ef645267794fc8a5822034"
+  },
+  "configuration": {
+    "model": "gpt-6-luna",
+    "provider": "codex-lb",
+    "transport": "isolated-codex-cli",
+    "reasoning_effort": "high",
+    "passes": ["pass-1", "pass-2"],
+    "prompt_path": "research/explanation_fidelity/prompts/luna-model-judge-v4.md",
+    "prompt_sha256": "a660135be8dd742f5e9547685b5aa09ff7de45bf7dd6240289f7ff7e41dfd15a",
+    "output_schema_path": "research/explanation_fidelity/schemas/luna-model-judge-output-v1.schema.json",
+    "output_schema_sha256": "93989e303fdb12e94ae5fe79adad16e46d9587006b7ba6de5c4624096f1b1c3f",
+    "caller_source_sha256": "0e83d22d7e3d284b2430d55240fb26483588e51f0d84df94515702964064b023",
+    "runner_source_sha256": "7ded01b7b9dceb828748f38d4e5af7eedcc2d8c90bc09a6260d5b9314baeafe4",
+    "substitution_allowed": false,
+    "usable_judgment_retry_allowed": false,
+    "transport_failure_policy": "Retain all failures; only the runner's existing bounded transport retry is allowed."
+  },
+  "inventory": {
+    "fresh_cases": 24,
+    "composite_cases": 20,
+    "composite_reference_success": 10,
+    "composite_reference_failure": 10,
+    "factual_answers": 10,
+    "unsupported_answers": 14,
+    "presentation_pairs": 1,
+    "case_ids_disjoint_from_prior_v7": true
+  },
+  "extension_gates_per_pass": {
+    "composite_accuracy_minimum": 0.95,
+    "required_unit_accuracy_minimum": 0.90,
+    "core_semantic_field_accuracy_minimum": 0.90,
+    "factual_false_rejection_rate_maximum": 0.15,
+    "unsupported_false_acceptance_rate_maximum": 0.05,
+    "protected_failures_maximum": 0,
+    "call_failures_maximum": 0
+  },
+  "aggregate_rule": {
+    "source_path": "analysis/aggregate_luna_v7_endpoint_extension.py",
+    "source_sha256": "c38bc7aa5b7500b279dda1abe5fe1ab65f8725184f40076d775a428301e4d7e6",
+    "denominators": "Add every prior-v7 and extension error and denominator separately for each pass. Drop or relabel none.",
+    "qualification": "Each extension pass must independently pass every extension gate, and each combined pass must pass the unchanged v7 gates.",
+    "sensitivity": "For each pass compute Wilson 95 percent error-rate upper endpoints for false acceptance, false rejection, required-unit error, and composite error; round each upward to four decimal places; retain the larger pass-specific value.",
+    "amendment_allowed_only_if_qualified": true
+  },
+  "execution": {
+    "output_root": "model_outputs/automated_annotations/qualification/luna-model-judge-v7-endpoint-threat-extension-1",
+    "result_path": "model_outputs/automated_annotations/qualification/luna-model-judge-v7-endpoint-threat-extension-1/heldout-qualification.json",
+    "aggregate_output_path": "manifests/annotation/luna-model-judge-v7-endpoint-threat-extension-1-aggregate.json"
+  },
+  "hard_stop": "Run exactly these two passes once. If either extension or combined qualification fails, preserve the failure and retain annotation amendment 2's original bounds; do not construct another Luna qualification iteration before the first campaign decision."
+}
