@@ -3851,3 +3851,7 @@
 - **FREEZE:** `luna-model-judge-v2-medium-reference-v3` pins prompt, suite, schema, rubrics, model,
   medium effort, caller source, retry/disagreement rules, original calls, and rescore hashes before
   held-out. Study scoring remains prohibited pending both held-out passes.
+- **ZERO-CALL FREEZE COMPATIBILITY FIX:** the first held-out command exited before caller creation
+  because the runner required top-level `reasoning_effort` and `suite_sha256` fields while the same
+  values existed only in structured freeze sections. The exact frozen values were duplicated at
+  top level and committed before retry; no held-out case, model call, label, or cache file existed.
