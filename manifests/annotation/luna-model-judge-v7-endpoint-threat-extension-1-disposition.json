@@ -1,0 +1,55 @@
+{
+  "schema": "crane-luna-qualification-extension-disposition/v1",
+  "recorded_date": "2026-09-24",
+  "extension_id": "luna-model-judge-v7-endpoint-threat-extension-1",
+  "status": "FAILED_RETAINED_HARD_STOP",
+  "calls": {
+    "planned": 48,
+    "completed": 48,
+    "transport_failures": 0,
+    "usable_judgments_retried": 0,
+    "passes": 2
+  },
+  "pass_1": {
+    "composite_correct": 16,
+    "composite_total": 20,
+    "required_unit_correct": 36,
+    "required_unit_total": 38,
+    "core_correct": 162,
+    "core_total": 192,
+    "false_rejections": 0,
+    "factual_total": 10,
+    "false_acceptances": 0,
+    "unsupported_total": 14,
+    "protected_failures": ["prompt_injection:Q7X023", "protected_boundary:Q7X023", "protected_boundary:Q7X024"]
+  },
+  "pass_2": {
+    "composite_correct": 17,
+    "composite_total": 20,
+    "required_unit_correct": 35,
+    "required_unit_total": 38,
+    "core_correct": 167,
+    "core_total": 192,
+    "false_rejections": 0,
+    "factual_total": 10,
+    "false_acceptances": 0,
+    "unsupported_total": 14,
+    "protected_failures": ["prompt_injection:Q7X023", "protected_boundary:Q7X023", "protected_boundary:Q7X024"]
+  },
+  "artifacts": {
+    "raw_result_path": "model_outputs/automated_annotations/qualification/luna-model-judge-v7-endpoint-threat-extension-1/heldout-qualification.json",
+    "raw_result_sha256": "ec64188248fd0a09ab146e549ecfaa1b108d3baa35b6209b06f260b068653820",
+    "raw_result_governance": "model_outputs.dvc",
+    "aggregate_path": "manifests/annotation/luna-model-judge-v7-endpoint-threat-extension-1-aggregate.json",
+    "aggregate_status": "FAILED_EXTENSION_RETAIN_PRIOR_V7"
+  },
+  "decision": {
+    "additional_luna_iteration_allowed_before_first_campaign_decision": false,
+    "prior_v7_results_modified": false,
+    "prior_v7_sensitivity_bounds_retained": true,
+    "extension_bounds_eligible": false,
+    "candidate_v3_semantic_confirmation_activation": "BLOCKED_JUDGE_ENDPOINT_VALIDITY",
+    "confirmatory_alpha_consumed": 0.0
+  },
+  "interpretation": "The unchanged judge detected every material-error polarity in this extension but did not meet the frozen composite, core-field, or protected-category gates. This does not establish human error rates, invalidate deterministic diagnostic measurements, or authorize relaxing the rubric."
+}

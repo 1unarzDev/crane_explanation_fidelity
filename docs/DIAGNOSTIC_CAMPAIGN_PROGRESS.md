@@ -17,7 +17,7 @@ Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 | Luna historical qualification | V4 HIGH FAILED / PRESERVED | Both fresh passes failed; never retroactively qualified |
 | Luna v5 endpoint qualification | FAILED / PRESERVED | P1 passed; P2 missed core by one field and one protected subcheck |
 | Luna v6 endpoint qualification | FAILED / PRESERVED | P1 false rejection 3/17 exceeded 15%; P2 passed every gate |
-| Luna v7 reference-audited qualification | QUALIFIED | Both passes: 20/20 composite, 32/32 units, zero observed FR/FA, all protected gates |
+| Luna v7 reference-audited qualification | HISTORICALLY QUALIFIED; TARGETED EXTENSION FAILED | Original v7 passed, but the prospective command-motion endpoint-threat extension missed composite/core and protected gates in both passes; do not activate semantic confirmation |
 | V7 amendment/sensitivity enforcement | IMPLEMENTED, TESTED | Nonempty v2 results must bind exact v7 hashes and clear nominal plus adverse sensitivity gates |
 | Replication configurations reserved | NOT_RUN | Reserve before discovery collection |
 | Sequential null simulation | PASS_QA | 20,000 replicates per endpoint; all boundary estimates below component alpha 0.02 |
@@ -86,6 +86,16 @@ repair. The next bounded step is a prospectively frozen extension of the unchang
 on fresh endpoint-focused references, followed by a land command--motion campaign registration and
 disjoint configuration reservation. See
 `manifests/study/command-motion-candidate-v3-confirmation-activation-audit-v1.json`.
+
+The bounded Luna endpoint-threat extension has now failed and hard-stopped. Both passes completed
+all 24 fresh cases with zero transport failures and zero false acceptance/rejection polarity
+errors, but composite accuracy was 80%/85%, core accuracy was 84.4%/87.0%, and both passes failed
+the frozen prompt-injection/evidence-boundary protected gates. The numerically smaller aggregate
+uncertainty bounds are ineligible; annotation amendment 2's original v7 bounds remain authoritative.
+Consequently, no Luna-scored candidate-v3 semantic confirmation campaign may activate. Deterministic
+diagnostic measurement collection can continue under a separately frozen physical-evidence plan,
+but it cannot be reported as supported-diagnostic-success confirmation. See
+`manifests/annotation/luna-model-judge-v7-endpoint-threat-extension-1-disposition.json`.
 
 ### Retained run-by-run history
 

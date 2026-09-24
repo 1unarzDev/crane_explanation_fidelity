@@ -1,5 +1,23 @@
 # Decision Log
 
+## 2026-09-24 — Block Luna-scored candidate-v3 confirmation after targeted extension failure
+
+- **Decision:** do not activate candidate-v3 semantic confirmation with Luna. Preserve the original
+  v7 qualification and amendment-2 bounds, but treat the new targeted command--motion extension as
+  a prospective endpoint-validity failure. No additional Luna qualification iteration is allowed
+  before this campaign decision, which is now `DO_NOT_ACTIVATE`.
+- **Evidence:** both passes completed 24/24 cases with zero transport failures and zero
+  false-acceptance/false-rejection polarity errors, yet achieved only 16/20 and 17/20 composite
+  accuracy, 162/192 and 167/192 core accuracy, and failed the same injection/boundary protected
+  cases. The extension's smaller numerical intervals are ineligible under its frozen gate.
+- **Alternatives considered:** ignore secondary/protected failures because material-error polarity
+  was perfect; repair expected fields; drop protected cases; add another Luna iteration; or apply
+  aggregate bounds despite failed qualification. Every option violates the predeclared rule.
+- **Effect:** deterministic physical diagnostic/reference collection remains scientifically useful,
+  but Luna labels cannot establish the primary semantic confirmation claim. Independent human
+  audit or an explicitly authorized new evaluation strategy would be needed for that claim.
+- **Alpha:** no confirmatory response was inspected and alpha remains `0.000/0.050`.
+
 ## 2026-09-24 — Do not activate candidate-v3 confirmation under the unmatched framework
 
 - **Decision:** keep confirmatory alpha unspent while resolving three prospective activation
