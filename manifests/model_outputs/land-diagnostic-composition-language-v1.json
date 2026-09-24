@@ -1,0 +1,76 @@
+{
+  "schema": "crane-explain-model-artifact-manifest/v1",
+  "status": "DEVELOPMENT_ONLY_NOT_FROZEN",
+  "created_utc": "2026-09-24T17:17:56Z",
+  "provider": "codex",
+  "model": "gpt-6-sol",
+  "reasoning_effort": "high",
+  "adapter": "codex-cli-json/v1",
+  "single_sample_no_retry": true,
+  "new_model_calls": 3,
+  "model_condition_outputs": 3,
+  "embedded_non_model_conditions": ["T"],
+  "embedded_non_model_outputs": 1,
+  "result_envelope_conditions": ["N", "P", "R", "T"],
+  "result_envelope_outputs": 4,
+  "statistical_clusters": ["land-diagnostic-composition-009"],
+  "independent_confirmatory_cluster_increment": 0,
+  "episode_ids": ["diagnostic-land-composition-observation-009"],
+  "evaluator_truth_available_to_methods": false,
+  "information_parity_audited": true,
+  "primary_comparison": "P versus tool-enabled R",
+  "output_root": "model_outputs/dev/land-diagnostic-composition-language-v1",
+  "cache_root": "research/explanation_fidelity/model_cache/land-diagnostic-composition-language-v1",
+  "artifacts": [
+    {
+      "path": "model_outputs/dev/land-diagnostic-composition-language-v1/diagnostic-land-composition-observation-009.json",
+      "sha256": "31d9a0ed335880f0138655bd405ee8352f18e304481698babb5132b5c44f1484",
+      "bytes": 10654
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/land-diagnostic-composition-language-v1/9b2001ec03b2adca08a6442c2aeb801cccaf4f52d83dac2e7b8982510cd8dadb.json",
+      "sha256": "fcf5fb467763198acad4860d59ced49d4d96e3c68d94b952ee3b3ebe2c2131d8",
+      "bytes": 2071495
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/land-diagnostic-composition-language-v1/b6c05e843ae048cf48e31271a82189d8caba3aa8f137cb75ce84681e859a54cb.json",
+      "sha256": "3f3a5c7a10a60e4b05f6b30b0fbd8b2c8c51c0b6358dcb06bbaf784ad2f3b70c",
+      "bytes": 8174
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/land-diagnostic-composition-language-v1/ec98b21295d7d55c69913c58fd208a6b34a1301f325b590b15f32f0b49d5e350.json",
+      "sha256": "8534bc2ca10e1f51cf52270bf81433ed6983c84643e9a95c79f3f0ad07e95efc",
+      "bytes": 9434
+    }
+  ],
+  "implementation": {
+    "declaration_path": "research/explanation_fidelity/experiment_configs/development/land-diagnostic-composition-language-v1.json",
+    "declaration_sha256": "b12e1f1a4d055a6e5395d47caa529732d85831e12c449ceaa17559ed59c40bd1",
+    "declaration_commit": "9a20b8e",
+    "runner_sha256": "c305cc00293457885c69d2ec8c70729afe6df96bb5363fff7870cd77f812db53",
+    "command_adapter_sha256": "8477955d95e9d1946062b3c1e0e85a861a57862e17c34a2f8ce83670fadbeaaa",
+    "geometry_adapter_sha256": "626b070c08e2bd09c55eeceea5d4ae39da6c35d82325c7b2e40533219dd7fe12",
+    "core_repository_commit": "706985f6ed1ef4815c859b82fe486b2c1cfb7d08",
+    "crane_ml_commit": "3ebba7be193c29c5bec725af7bdcd39157738266"
+  },
+  "usage": {
+    "aggregate_latency_ms": 100132.39291400001,
+    "input_tokens": 263195,
+    "cached_input_tokens": 169472,
+    "output_tokens": 3985,
+    "reasoning_output_tokens": 1119,
+    "cost_usd": null,
+    "cost_status": "not_reported_by_codex_cli_chatgpt_login"
+  },
+  "pre_annotation_observations": {
+    "P_verified_without_fallback": 0,
+    "P_template_fallback": 1,
+    "fallback_episode": "diagnostic-land-composition-observation-009",
+    "raw_P_preserved_supported_mechanism_and_limits": true,
+    "fallback_reason": "The predeclared literal gate rejected Markdown headings and meaning-preserving variants for interval, geometric insufficiency, unresolved outcome, and Nav2-consumption wording.",
+    "R_reported_supported_command_motion_discrepancy_and_limits": true,
+    "semantic_labels_generated": false,
+    "inference": "Execution and literal-gate facts are not Luna semantic labels. The strong R response makes another P/R tie plausible, but no comparative conclusion is authorized before separately declared blinded scoring."
+  },
+  "allowed_use": "Development candidate, information-parity, and verifier-policy audit only; no confirmation, replication, significance, Luna-assessed performance, or alpha-consumption claim."
+}

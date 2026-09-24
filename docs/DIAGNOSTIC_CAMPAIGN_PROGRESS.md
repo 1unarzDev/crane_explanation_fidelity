@@ -270,3 +270,17 @@ This is a method-readiness increment, not comparative evidence: it adds no clust
 Luna label, or alpha, and current P remains `NOT_READY`. A one-shot P/R/N development comparison
 may be considered only under a new declaration that gives tool-enabled R the same robot-visible
 evidence, both diagnostic computations, source/configuration, model strength, and resource budget.
+
+## Bounded composition language result (2026-09-24)
+
+The declared three calls completed once. Raw P communicated the supported mechanism and limits but
+failed the literal language gate on formatting and meaning-preserving wording, so final P fell
+back to T. Tool-enabled R independently recovered the same command--motion mechanism, decisive
+speeds, nonterminal boundary, geometric insufficiency, and unique-cause restraint. N discussed the
+retry/recovery sequence but omitted the supported command--motion mechanism.
+
+These are execution observations, not Luna semantic labels. They make another P/R tie plausible
+and do not justify freezing P. The result adds one inspected development language cluster, three
+model calls, zero judge calls, and zero alpha. Further prompt/verifier tuning on this case is lower
+value than a bounded blinded audit followed by a stop/redirect decision, independent collection,
+analysis, figures, and manuscript work.

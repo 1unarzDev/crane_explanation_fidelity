@@ -1681,3 +1681,19 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Effect: the method now has a checked multi-result answer plan on one inspected development case,
   but there is still no measured P-over-R advantage. Any next comparison must be one-shot,
   prospectively declared, and resource/evidence/tool matched. Alpha remains 0.000/0.050.
+
+## 2026-09-24 — retain composition fallback and do not freeze P
+
+- Decision: retain the one-shot composition-language result unchanged, classify the P rejection as
+  a literal-gate development failure, and keep candidate P `NOT_READY`.
+- Evidence: raw P preserved the supported mechanism and material limits but used semantically
+  equivalent formatting/phrasing outside the predeclared gate. Final P therefore equals T. The
+  fair tool-enabled R independently reported the same central mechanism, quantities, nonterminal
+  boundary, and causal limits.
+- Alternatives rejected: rerun P for preferred wording; relax the verifier after observing the
+  answer and retroactively accept it; weaken R; score the responses informally as study labels; or
+  treat one inspected cluster as statistical evidence.
+- Effect: the result adds one development language cluster and three model calls, but no
+  independent episode, Luna label, confirmatory cluster, or alpha. A separate blinded Luna audit
+  may characterize the retained answers; even a P success cannot establish advantage if R also
+  succeeds.

@@ -4741,3 +4741,30 @@
 - **STOP/INFERENCE:** retain all outputs regardless of direction and stop after three calls. This
   adds no physical or confirmatory cluster and consumes 0.000/0.050 alpha. A Luna audit requires a
   separately committed blinded packet/reference declaration; parity or fallback cannot freeze P.
+
+## 2026-09-24 — bounded composition language-gate result
+
+- **STATUS:** `RUN / RETAINED / DEVELOPMENT_ONLY`; the three authorized calls completed once with
+  no retry. Deterministic T was embedded. No Luna call, confirmation, replication, or alpha use
+  occurred.
+- **R:** the fair tool-enabled baseline executed the supplied computations and identified the same
+  10--51 s command--motion discrepancy, key speeds, incomplete global geometry evidence,
+  nonterminal cutoff, unresolved unique cause, and required actuation/consumption limits. It also
+  described recorded BT context; whether every secondary assertion is supported remains for the
+  separately declared blinded audit.
+- **P:** the raw realization preserved the supported mechanism, measurements, pre-cutoff counts,
+  nonterminal boundary, geometric limit, unresolved outcome, and unique-cause restraint. The
+  predeclared literal gate nevertheless rejected Markdown headings and meaning-preserving variants
+  (`10.0 to 51.0`, `geometry cannot`, `outcome remains unresolved`, and `does not prove Nav2
+  consumed it`). Final P therefore fell back exactly once to deterministic T; no repair or retry
+  was attempted.
+- **N:** without aligned/decoded diagnostic computation, N described the retry/recovery sequence
+  and correctly withheld the physical trigger and terminal outcome, but did not identify the
+  supported command--motion mechanism.
+- **RESOURCE USE:** three `gpt-6-sol` high calls; 263,195 input tokens (169,472 cached), 3,985
+  output tokens including 1,119 reasoning tokens, and 100,132 ms aggregate latency. Provider cost
+  was not reported.
+- **INTERPRETATION:** the literal gate produced a development false rejection and fallback, while
+  R independently produced a strong mechanism answer. This is not yet a semantic label, but it
+  does not supply evidence of P-over-R advantage. Current P remains `NOT_READY`; alpha remains
+  0.000/0.050. Raw/final outputs and caches are retained under the tracked artifact manifest.
