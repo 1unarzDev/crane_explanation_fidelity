@@ -1569,3 +1569,19 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Effect: Luna no longer blocks prospective scoring under the exact v7 arm, but it does not make
   the P/R candidate ready. Nominal-only success is prohibited, no study label exists yet, and alpha
   remains 0.000/0.050.
+
+## 2026-09-24 — develop evidence composition instead of tuning single-mechanism prose
+
+- Decision: use the remaining development configuration capacity to test composition of geometric,
+  command--motion, and execution provenance, rather than iterating wording on the qualified
+  route-change answer. Tool-enabled R must receive the same computations and source access.
+- Evidence: on retained blockage, S-turn, persistent discrepancy, compensated discrepancy, and
+  route-change cases, R generally recovered the same bounded mechanism as P. More easy cases of one
+  mechanism are unlikely to establish the required +0.15 advantage. The route-change capture also
+  showed the prior 0.4 m/s command-active threshold cannot assess a Nav2 profile capped at 0.26 m/s.
+- Implementation boundary: generalize the existing Wait classifier to nested stock Nav2 recovery
+  trees and select a versioned 0.1 m/s development threshold using inspected run 007. Do not rescore
+  old outputs or call this confirmatory. Fix the configuration before any fresh composition run.
+- Effect: the next development case should require supported mechanism selection and competing-
+  explanation restraint. This is a narrow adapter over retained evidence, not a new perception
+  stack or general diagnosis framework.

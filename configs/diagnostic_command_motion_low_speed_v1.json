@@ -1,0 +1,19 @@
+{
+  "schema": "crane-command-motion-diagnostic-config/v1",
+  "config_id": "diagnostic-command-motion-low-speed-v1",
+  "status": "DEVELOPMENT_SELECTED_NOT_CONFIRMATORY",
+  "selected_date": "2026-09-24",
+  "selection_basis": "The existing v3 thresholds were selected for 0.8 m/s development commands. The proving-ground Nav2 profile is source-configured for 0.26 m/s maximum forward motion, so the old 0.4 m/s active-command threshold makes calibration impossible. This lower-speed profile is selected on inspected development run diagnostic-land-binding-dev-007 and must be fixed before a fresh composition run.",
+  "parameters": {
+    "window_seconds": 1.0,
+    "minimum_command_samples_per_window": 5,
+    "minimum_odometry_samples_per_window": 20,
+    "calibration_window_count": 5,
+    "minimum_commanded_speed_mps": 0.1,
+    "minimum_healthy_measured_speed_mps": 0.05,
+    "maximum_discrepancy_response_ratio": 0.2,
+    "minimum_consecutive_discrepancy_windows": 3
+  },
+  "interpretation": "The threshold only selects sufficiently commanded windows and defines a low-response ratio relative to the within-run healthy comparator. It does not establish actuator acceptance, Nav2 odometry consumption, collision, slip, obstruction, or an evaluator intervention.",
+  "allowed_use": "Development recomputation and prospectively declared fresh land-composition runs only. Existing results are not rescored into confirmatory evidence."
+}

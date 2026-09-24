@@ -4457,3 +4457,21 @@
   readiness, false sensitivity readiness, and `meaningful_advantage_not_established`. Focused
   exhaustive enumeration verifies the paired adverse binary construction against every permitted
   flip arrangement for all four-pair binary tables at representative null means.
+
+## 2026-09-24 — low-speed command--motion composition development
+
+- **STATUS:** `IMPLEMENTED / TESTED_ON_INSPECTED_DEVELOPMENT_DATA / NOT_FROZEN`.
+- **MOTIVATION:** `diagnostic-land-binding-dev-007` uses a source-configured 0.26 m/s maximum
+  forward velocity. The historical 0.4 m/s active-command threshold therefore returned
+  `insufficient` without testing response; it was selected for earlier 0.8 m/s command runs.
+- **CHANGE:** `diagnostic_command_motion_low_speed_v1.json` fixes a 0.1 m/s active-command
+  threshold, 0.05 m/s minimum healthy response, the existing one-second/five-window calibration,
+  0.2 response ratio, and three-window persistence rule. The exporter accepts a hashed versioned
+  config and can source-qualify the single Wait leaf inside a nested stock Nav2 recovery tree.
+- **DEVELOPMENT CHECK:** recomputation on already inspected run 007 calibrated commanded speed at
+  0.260 m/s and measured speed at 0.25974 m/s, found no qualifying sustained discrepancy, zero
+  FollowPath failures, zero source-qualified Wait invocations, and the successful action. The
+  checked deterministic rendering passed.
+- **INTERPRETATION:** this is post-observation threshold development and a negative mechanism check,
+  not a new independent episode, method effect, or confirmatory result. The configuration must be
+  fixed before a fresh composition run; evaluator intervention identity remains excluded.

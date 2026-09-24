@@ -3,7 +3,7 @@ from pathlib import Path
 
 import pytest
 
-from export_command_motion_diagnostic import export
+from export_command_motion_diagnostic import _source_qualified_wait_policy, export
 from reference_command_motion import calculate
 from summarize_command_motion_qa import INDEPENDENT_DEVELOPMENT_STATUS, summarize
 
@@ -84,6 +84,78 @@ def test_retained_stream_supports_bounded_command_motion_diagnosis():
     assert "persistent hold" not in serialized
     assert "mobility hold" not in serialized
     assert "motor failure" not in payload["final_answer"].lower()
+
+
+def test_nested_nav2_policy_source_qualifies_single_wait_recovery_leaf():
+    policy = _source_qualified_wait_policy(
+        ROOT
+        / "packages"
+        / "crane_ml"
+        / "Tools"
+        / "Performance"
+        / "nav2_roboboat_distance_replanning.xml"
+    )
+
+    assert policy["node_name"] == "Wait"
+    assert policy["number_of_retries"] == 6
+    assert policy["tree_path"].startswith("RecoveryNode/recovery_child/")
+    assert policy["tree_path"].endswith("/Wait")
+
+
+def test_low_speed_config_makes_proving_ground_stream_assessable(tmp_path: Path):
+    capture = (
+        ROOT
+        / "data"
+        / "robot_visible"
+        / "dev"
+        / "diagnostic-land-binding-dev-007"
+        / "capture"
+    )
+    payload = export(
+        capture / "events.jsonl",
+        capture / "manifest.json",
+        capture / "runtime_manifest.json",
+        capture / "behavior_tree.xml",
+        ROOT
+        / "packages"
+        / "crane_ml"
+        / "Tools"
+        / "Performance"
+        / "nav2_land_proving_ground_fixture.yaml",
+        episode_id="diagnostic-land-composition-development-007",
+        diagnostic_config_path=(
+            ROOT / "configs" / "diagnostic_command_motion_low_speed_v1.json"
+        ),
+    )
+
+    assert payload["source"]["diagnostic_config_sha256"]
+    assert payload["source"]["diagnostic_config_id"] == "diagnostic-command-motion-low-speed-v1"
+    assert payload["method_input"]["windowing"]["minimum_commanded_speed_mps"] == 0.1
+    assert payload["diagnostic_result"]["disposition"] != "insufficient"
+    assert payload["final_text_verification"]["accepted"]
+
+
+def test_diagnostic_config_rejects_missing_parameter(tmp_path: Path):
+    invalid = tmp_path / "invalid.json"
+    invalid.write_text(
+        json.dumps(
+            {
+                "schema": "crane-command-motion-diagnostic-config/v1",
+                "parameters": {"window_seconds": 1.0},
+            }
+        ),
+        encoding="utf-8",
+    )
+    with pytest.raises(ValueError, match="parameters differ"):
+        export(
+            EVENTS,
+            CAPTURE_MANIFEST,
+            RUNTIME_MANIFEST,
+            BT_XML,
+            NAV2_CONFIG,
+            episode_id="diagnostic-motion-dev-cm-001",
+            diagnostic_config_path=invalid,
+        )
 
 
 def test_independent_reference_recomputes_supported_interval():

@@ -27,7 +27,7 @@ from crane_explain.diagnostics import (  # noqa: E402
 )
 
 
-CONFIG = {
+DEFAULT_CONFIG = {
     "window_seconds": 1.0,
     "minimum_command_samples_per_window": 5,
     "minimum_odometry_samples_per_window": 20,
@@ -37,6 +37,7 @@ CONFIG = {
     "maximum_discrepancy_response_ratio": 0.2,
     "minimum_consecutive_discrepancy_windows": 3,
 }
+CONFIG_KEYS = frozenset(DEFAULT_CONFIG)
 
 
 def sha256(path: Path) -> str:
@@ -84,12 +85,13 @@ def _windows(
     command_samples: list[dict[str, Any]],
     odometry_samples: list[dict[str, Any]],
     end_offset_s: float,
+    config: dict[str, int | float],
 ) -> tuple[CommandMotionWindow, ...]:
-    count = max(0, math.ceil(end_offset_s / float(CONFIG["window_seconds"])))
+    count = max(0, math.ceil(end_offset_s / float(config["window_seconds"])))
     windows = []
     for index in range(count):
-        start = index * float(CONFIG["window_seconds"])
-        end = start + float(CONFIG["window_seconds"])
+        start = index * float(config["window_seconds"])
+        end = start + float(config["window_seconds"])
         commands = [
             float(item["planar_speed_mps"])
             for item in command_samples
@@ -121,20 +123,32 @@ def _windows(
 def _source_qualified_wait_policy(bt_xml: Path) -> dict[str, Any]:
     tree = ET.parse(bt_xml)
     recovery_nodes = list(tree.getroot().iter("RecoveryNode"))
-    if len(recovery_nodes) != 1:
-        raise ValueError("expected exactly one RecoveryNode in retained BT policy")
-    children = list(recovery_nodes[0])
-    if len(children) != 2:
-        raise ValueError("retained RecoveryNode must have exactly primary and recovery children")
-    waits = list(children[1].iter("Wait"))
-    if len(waits) != 1:
-        raise ValueError("expected exactly one Wait leaf in the RecoveryNode recovery child")
+    candidates: list[tuple[ET.Element, list[str]]] = []
+
+    def paths_to_wait(node: ET.Element, path: list[str]) -> None:
+        if node.tag == "Wait":
+            candidates.append((recovery_node, path))
+            return
+        for child in list(node):
+            paths_to_wait(child, path + [child.tag])
+
+    for recovery_node in recovery_nodes:
+        children = list(recovery_node)
+        if len(children) != 2:
+            raise ValueError("retained RecoveryNode must have exactly primary and recovery children")
+        recovery_child = children[1]
+        paths_to_wait(recovery_child, ["RecoveryNode", "recovery_child", recovery_child.tag])
+    if len(candidates) != 1:
+        raise ValueError(
+            "expected exactly one Wait leaf across retained RecoveryNode recovery children"
+        )
+    recovery_node, tree_path = candidates[0]
     return {
         "classifier_basis": "retained_bt_recovery_child_exact_node_name",
         "classifier_rule": "Wait:IDLE->RUNNING",
         "node_name": "Wait",
-        "tree_path": "RecoveryNode/recovery_child/Sequence/Wait",
-        "number_of_retries": int(recovery_nodes[0].attrib["number_of_retries"]),
+        "tree_path": "/".join(tree_path),
+        "number_of_retries": int(recovery_node.attrib["number_of_retries"]),
         "policy_sha256": sha256(bt_xml),
     }
 
@@ -147,6 +161,7 @@ def export(
     nav2_config_path: Path,
     *,
     episode_id: str,
+    diagnostic_config_path: Path | None = None,
 ) -> dict[str, Any]:
     for label, path in (
         ("events", events_path),
@@ -177,6 +192,25 @@ def export(
         raise ValueError("Nav2 configuration hash does not match runtime source provenance")
     if runtime.get("run_id") != capture.get("run_id"):
         raise ValueError("capture and runtime run IDs do not match")
+
+    diagnostic_config = dict(DEFAULT_CONFIG)
+    diagnostic_config_sha256 = None
+    diagnostic_config_id = "embedded-command-motion-default-v3"
+    if diagnostic_config_path is not None:
+        configured = json.loads(diagnostic_config_path.read_text(encoding="utf-8"))
+        if configured.get("schema") != "crane-command-motion-diagnostic-config/v1":
+            raise ValueError("unsupported command-motion diagnostic config schema")
+        values = configured.get("parameters")
+        if not isinstance(values, dict) or set(values) != CONFIG_KEYS:
+            raise ValueError("command-motion diagnostic config parameters differ")
+        diagnostic_config = dict(values)
+        diagnostic_config_sha256 = sha256(diagnostic_config_path)
+        diagnostic_config_id = str(configured.get("config_id") or "")
+        if not diagnostic_config_id:
+            raise ValueError("command-motion diagnostic config ID is required")
+    for key, value in diagnostic_config.items():
+        if isinstance(value, bool) or not isinstance(value, (int, float)) or value <= 0:
+            raise ValueError(f"command-motion diagnostic parameter must be positive: {key}")
 
     records = _load_events(events_path)
     goal_events = [
@@ -228,7 +262,11 @@ def export(
             if goal_ns <= stamp_ns <= result_ns:
                 transitions.append((line, item))
 
-    active = [item for item in raw_commands if item[2] >= CONFIG["minimum_commanded_speed_mps"]]
+    active = [
+        item
+        for item in raw_commands
+        if item[2] >= diagnostic_config["minimum_commanded_speed_mps"]
+    ]
     anchor_ns = active[0][1] if active else goal_ns
     command_samples = [
         {
@@ -249,7 +287,7 @@ def export(
         if stamp_ns >= anchor_ns
     ]
     end_offset_s = max(0.0, (result_ns - anchor_ns) / 1_000_000_000.0)
-    windows = _windows(command_samples, odometry_samples, end_offset_s)
+    windows = _windows(command_samples, odometry_samples, end_offset_s, diagnostic_config)
     policy = _source_qualified_wait_policy(bt_xml_path)
     follow_failures = sum(
         item.get("node_name") == "FollowPath"
@@ -276,14 +314,17 @@ def export(
     measured_frames = {item[3] for item in raw_odometry}
     if len(measured_frames) > 1:
         raise ValueError("measured odometry frame changed during the goal")
+    evidence_ids = [
+        f"events-sha256:{event_sha}",
+        f"runtime-manifest-sha256:{runtime_sha}",
+        f"bt-policy-sha256:{bt_sha}",
+        f"nav2-config-sha256:{nav2_sha}",
+    ]
+    if diagnostic_config_sha256 is not None:
+        evidence_ids.append(f"diagnostic-config-sha256:{diagnostic_config_sha256}")
     observation = CommandMotionObservation(
         episode_id=episode_id,
-        evidence_ids=(
-            f"events-sha256:{event_sha}",
-            f"runtime-manifest-sha256:{runtime_sha}",
-            f"bt-policy-sha256:{bt_sha}",
-            f"nav2-config-sha256:{nav2_sha}",
-        ),
+        evidence_ids=tuple(evidence_ids),
         command_frame="base_link-command-convention",
         measured_frame=next(iter(measured_frames), "unknown"),
         action_status=str(action_result["status"]),
@@ -297,7 +338,7 @@ def export(
             f"bt-policy-sha256:{bt_sha}",
             f"nav2-config-sha256:{nav2_sha}",
         ),
-        **CONFIG,
+        **diagnostic_config,
     )
     result = diagnose_command_motion_discrepancy(observation)
     answer = render_diagnostic(result)
@@ -319,6 +360,8 @@ def export(
             "bt_repository_path": bt_artifact["repository_path"],
             "nav2_repository_commit": nav2_artifact["repository_commit"],
             "nav2_repository_path": nav2_artifact["repository_path"],
+            "diagnostic_config_sha256": diagnostic_config_sha256,
+            "diagnostic_config_id": diagnostic_config_id,
         },
         "method_input": {
             "diagnostic_computation_version": observation.computation_version,
@@ -335,7 +378,7 @@ def export(
             "odometry_provenance": "delivered-odometry-not-proof-of-nav2-consumption",
             "command_samples": command_samples,
             "odometry_samples": odometry_samples,
-            "windowing": dict(CONFIG),
+            "windowing": diagnostic_config,
             "execution_sequence": {
                 "follow_path_failure_count": follow_failures,
                 "follow_path_attempt_count": follow_attempts,
@@ -378,6 +421,7 @@ def main() -> None:
     parser.add_argument("--bt-xml", required=True, type=Path)
     parser.add_argument("--nav2-config", required=True, type=Path)
     parser.add_argument("--episode-id", required=True)
+    parser.add_argument("--diagnostic-config", type=Path)
     parser.add_argument("--output", required=True, type=Path)
     args = parser.parse_args()
     payload = export(
@@ -387,6 +431,7 @@ def main() -> None:
         args.bt_xml,
         args.nav2_config,
         episode_id=args.episode_id,
+        diagnostic_config_path=args.diagnostic_config,
     )
     serialized = json.dumps(payload, indent=2, sort_keys=True) + "\n"
     lowered = serialized.lower()
