@@ -9,7 +9,7 @@ Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 
 | Gate | Status | Evidence / next action |
 |---|---|---|
-| Candidate P frozen | NOT_READY | Prospective language candidate v4 repairs exposed source/next-check wording; fresh multi-family development evidence is still required |
+| Candidate P frozen | NOT_READY | Physical v4 multi-family runs are retained; fresh parity-controlled R/P/T/N responses and qualified-Luna labels are still required |
 | Strongest baseline R frozen | DESIGNATED, NOT_HASH_FROZEN | Tool-enabled repository-aware R; freeze exact model/prompts/resources with candidate |
 | Information/tool/resource parity | DRAFT | Audit at campaign freeze |
 | Target land strata | PARTIAL | Existing cases are development only; fresh generators/configurations required |
@@ -47,7 +47,7 @@ the chosen allocation must be atomically bound to that campaign and cannot later
 | Unresolved confirmatory labels | 0 |
 
 No effect estimate, confidence sequence, guardrail result, or replication conclusion exists.
-Legacy and the nine diagnostic-development clusters are intentionally absent from these counts.
+Legacy and the eleven diagnostic-development clusters are intentionally absent from these counts.
 
 ## Qualified-judge development result (2026-09-24)
 
@@ -83,6 +83,20 @@ model realization outperformed T. The next bounded development step is fresh con
 multiple scenario families that prospectively avoid invented measurement scope and undeclared
 source relationships. Existing labels remain immutable and are not rerun.
 
+## Language-v4 multi-family physical result (2026-09-24)
+
+All four prospectively fixed physical configurations were run once and retained as two development
+clusters. The command--motion pair qualified as intended: the persistent case supports a sustained
+discrepancy followed by two recovery invocations and abort, while the compensated case supports the
+same discrepancy followed by measured recovery and success. Both use prospective diagnostic
+contract v3 and passed independent numeric/reference parity.
+
+The requested land detour did not occur: both the intervention and nominal runs succeeded with
+zero recorded lateral deviation. This failed induction is a preserved negative result and cannot
+be used as a route-change case or replaced after observation. It may be evaluated only under the
+answerability/false-premise contract justified by its retained evidence. No R/P/N or Luna calls
+have yet been made for this batch, no candidate is frozen, and alpha remains unconsumed.
+
 ## Required update for each collection batch
 
 Record, without deleting earlier rows:
@@ -99,11 +113,11 @@ Record, without deleting earlier rows:
 
 ## Next action
 
-Create multiple fresh development configurations across the selected land diagnostic families,
-with explicit measurement scope and source-link contracts shared by P, tool-enabled R, and Luna.
-Use them to assess whether a candidate advantage is credible across independent clusters before
-freezing P/R, target generators, or replication reservations. No confirmatory campaign is active
-and no alpha has been consumed.
+Construct independent references and blinded, citation-complete packets for the retained v4 batch,
+then execute only the predeclared single R/P/N generation calls, deterministic T rendering, and two
+qualified-Luna passes. Keep the failed land detour as observed rather than assigning a route-change
+target. Use these two fresh development clusters to decide whether the candidate is credible enough
+to freeze; no confirmatory campaign is active and no alpha has been consumed.
 
 ## Held-out judge result (2026-09-24)
 

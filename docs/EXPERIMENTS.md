@@ -4180,3 +4180,27 @@
 - **BOUNDARY:** catalog layout identity, intervention identity/timing, expected outcome, and
   evaluator geometry/truth stay evaluator-only. No confirmatory allocation is activated and alpha
   remains 0.000/0.050.
+
+## 2026-09-24 — language-v4 multi-family physical collection
+
+- **STATUS:** `FOUR_VALID_DEVELOPMENT_RUNS / TWO_CLUSTERS / MODEL_CALLS_NOT_STARTED`; every
+  predeclared physical configuration was attempted exactly once and retained.
+- **LAND PAIR:** both the requested connected-detour layout and its nominal comparator completed
+  successfully. The purported detour run recorded 0.000 m maximum lateral deviation, as did the
+  nominal run; the independent reference found a retained-grid connection in both. The detour
+  intervention therefore failed to induce a route change and is retained as a negative calibration
+  outcome, not relabeled or replaced.
+- **COMMAND--MOTION PAIR:** both independent references support a 10.0 s interval with median
+  delivered command 0.800 m/s and measured odometry speed 0.000 m/s. The persistent case recorded
+  two FollowPath failures, two source-qualified Wait recoveries, and abort. The compensated case
+  recorded one of each, then recovered to 0.2597 m/s (ratio 1.000 of its calibrated healthy
+  response) and succeeded.
+- **LANGUAGE CONTRACT:** fresh exports use `command-motion-discrepancy-v3`; checked deterministic
+  answers passed `bounded-diagnostic-language-v4`. Independent computations match every QA field,
+  and all four robot-visible directories pass leakage inspection.
+- **GOVERNANCE:** paired robot-visible/evaluator-only SHA-256 manifests are in `manifests/data/`;
+  the development DVC roots were updated and 81 objects were pushed. No Unity build was retained.
+- **INTERPRETATION:** this is candidate development only. It adds two configured statistical
+  clusters, no confirmatory clusters, no method effect, no judge labels, and no alpha consumption.
+  The failed detour induction is ineligible for a route-change diagnostic claim; the nominal land
+  outcome remains useful for false-premise handling.
