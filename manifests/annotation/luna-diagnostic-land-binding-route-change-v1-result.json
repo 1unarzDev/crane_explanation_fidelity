@@ -1,0 +1,55 @@
+{
+  "schema": "crane-luna-diagnostic-development-result/v1",
+  "executed_utc_date": "2026-09-24",
+  "status": "DEVELOPMENT_ONLY_CURRENT_CANDIDATE_NOT_READY",
+  "predeclaration": "manifests/annotation/luna-diagnostic-land-binding-route-change-v1-predeclaration.json",
+  "result": {
+    "path": "model_outputs/automated_annotations/luna-model-judge-v1/diagnostic-land-binding-route-change-v1/development-summary.json",
+    "sha256": "259aac11d85d20852e3c82eb9c726dffd8a8ade8620710b5bcd213778fffe2d1",
+    "governance": "model_outputs.dvc"
+  },
+  "independent_cluster_increment": 0,
+  "development_cluster": "language-route-change-binding-007",
+  "responses": 4,
+  "judge_measurements": 8,
+  "call_failures": 0,
+  "transport_retries": 0,
+  "passes": {
+    "pass-1": {
+      "P": true,
+      "R": true,
+      "T": true,
+      "N": false,
+      "p_minus_r": 0.0
+    },
+    "pass-2": {
+      "P": true,
+      "R": true,
+      "T": true,
+      "N": false,
+      "p_minus_r": 0.0
+    }
+  },
+  "primary_endpoint_disagreements": 0,
+  "audit": {
+    "citation_contract": "All four permitted governed evidence identifiers and the independently recomputed claim inventory were present in each blinded packet row; no P, R, or T citation was rejected as absent.",
+    "primary_result": "Both isolated passes marked P, tool-enabled R, and T as identifying the route-change mechanism without material error. This is a genuine development tie, not missing evidence for an advantage.",
+    "N_result": "Both passes rejected N for unsupported signed odometry scope; pass 1 additionally rejected source/configuration claims not decoded in the no-computation packet.",
+    "identical_text_repeatability": "P used deterministic fallback and is byte-identical to T. Both passes agreed on their primary endpoint, but pass 2 labeled P partial and T full, so secondary disposition is not perfectly repeatable even for identical text/question/evidence/rubric.",
+    "coverage_variation": "The two passes varied on whether action duration and next-check specificity made an otherwise correct response full or partial. These secondary differences do not alter supported diagnostic success but must remain visible."
+  },
+  "candidate_selection": "DO_NOT_FREEZE_CURRENT_P",
+  "next_action": "Do not collect more easy route-change variants. The fair R baseline already matches P on this scenario; a future candidate needs a validated multi-mechanism composition case or a separately developed methodological improvement before confirmation.",
+  "resource_use": {
+    "valid_calls": 8,
+    "attempts": 8,
+    "transport_retries": 0,
+    "input_tokens": 120036,
+    "cached_input_tokens": 96256,
+    "output_tokens": 21378,
+    "reasoning_output_tokens": 8719,
+    "aggregate_latency_ms": 537157.62179,
+    "cost_usd": null
+  },
+  "confirmatory_alpha_consumed": 0.0
+}

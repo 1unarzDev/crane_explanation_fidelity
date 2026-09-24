@@ -4540,3 +4540,21 @@
   This one development cluster can guide candidate readiness only; it cannot freeze P, establish a
   confidence interval or significance result, add an independent physical cluster, or consume
   confirmatory alpha.
+
+## 2026-09-24 — qualified route-change Luna scoring result
+
+- **STATUS:** `RUN / DEVELOPMENT_ONLY / CURRENT_P_NOT_READY`; all eight declared calls completed
+  once, with zero failures or retries. No confirmatory cluster or alpha was added.
+- **PRIMARY:** both isolated passes scored P, tool-enabled R, and T successful and N unsuccessful.
+  P minus R is therefore 0.0 in both passes. The information-complete packet closed the prior
+  absent-citation defect; this is a genuine tie on a scenario-binding-qualified route-change case.
+- **ABLATION:** N identified the broad plan change but asserted a signed two-sided odometry
+  trajectory not established by its compact evidence. One pass also rejected its unexposed Navfn/
+  distance-replanning source claim. This supports the value of decoded computation, not a P-over-R
+  advantage.
+- **JUDGE REPEATABILITY:** P is byte-identical to T. Their primary endpoint agreed in both passes,
+  but pass 2 labeled P `partial` and T `full`; duration and next-check coverage also varied across
+  passes. Retain these secondary inconsistencies and do not create a third vote.
+- **RESOURCE USE:** 8 valid calls; 120,036 input tokens (96,256 cached), 21,378 output tokens
+  including 8,719 reasoning tokens, and 537,157.622 ms aggregate latency. Provider cost was not
+  reported.

@@ -1600,3 +1600,17 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Effect: the composition hypothesis remains untested, candidate P remains `NOT_READY`, and alpha
   remains 0.000/0.050. Launch validation should reject this incompatible argument combination
   before future physical resources are spent.
+
+## 2026-09-24 — retain qualified route-change tie and stop easy-route expansion
+
+- Decision: keep the v7 route-change labels as development evidence, do not freeze current P, and
+  do not collect more easy route-change variants to seek a favorable difference.
+- Evidence: with complete robot-visible citation and claim references, both Luna passes marked P,
+  tool-enabled R, and T successful; P minus R was 0.0 in both. N failed both. The earlier apparent
+  packet-completeness blocker did not mask a P advantage on this qualified case.
+- Judge limitation: byte-identical P/T received consistent primary labels but different secondary
+  `partial`/`full` dispositions in pass 2. Repeated Luna measurements are not human agreement, and
+  secondary coverage differences remain sensitivity evidence rather than grounds for a new vote.
+- Effect: confirmation remains inactive at 0.000/0.050 alpha. A defensible candidate needs a
+  validated multi-mechanism composition case or a separately developed method improvement; more
+  single-mechanism route-change episodes have lower value than annotation, statistics, or paper work.

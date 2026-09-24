@@ -200,3 +200,17 @@ clusters and consumes no alpha. It will not be retried or replaced. Candidate P 
 `NOT_READY`; the next engineering change is only a fail-closed prelaunch rejection for this known
 incompatible argument combination, after which paper-value work should return to independent valid
 mechanisms, annotation, analysis, and manuscript preparation rather than another layout search.
+
+## Qualified route-change semantic result (2026-09-24)
+
+An information-complete blinded packet for scenario-binding-qualified run 007 was scored exactly
+twice under frozen Luna v7. Both passes marked P, tool-enabled R, and deterministic T successful;
+both marked N unsuccessful. P minus R is 0.0 in each pass. The systematic absent-citation problem
+from the earlier selected cohort did not recur, so this is a substantive single-mechanism tie.
+
+P and T are byte-identical. Their primary endpoint agreed, but pass 2 called P partial and T full,
+showing secondary disposition instability even under identical inputs. No third vote is permitted.
+The result adds zero confirmatory clusters and consumes no alpha. Together with the invalid
+composition attempt, it leaves current P `NOT_READY`: the project should not expand easy
+route-change collection and should require genuinely deeper composition or a separately developed
+method change before freezing a confirmation candidate.
