@@ -112,6 +112,11 @@ def build_reference(
         f"bt-policy-sha256:{source['bt_policy_sha256']}",
         f"nav2-config-sha256:{source['nav2_config_sha256']}",
     }
+    diagnostic_config_sha256 = source.get("diagnostic_config_sha256")
+    if diagnostic_config_sha256 is not None:
+        if not isinstance(diagnostic_config_sha256, str) or len(diagnostic_config_sha256) != 64:
+            raise ValueError("diagnostic configuration hash is malformed")
+        expected_ids.add(f"diagnostic-config-sha256:{diagnostic_config_sha256}")
     checks["evidence_identifier_set"] = set(diagnostic["supporting_evidence"]) == expected_ids
     failed = sorted(name for name, accepted in checks.items() if not accepted)
     if failed:

@@ -1,0 +1,21 @@
+{
+  "schema": "crane-command-motion-candidate-v2-development-pilot-amendment/v1",
+  "amendment_id": "command-motion-candidate-v2-multiconfiguration-pilot-v1-amendment-3",
+  "declared_date": "2026-09-24",
+  "timing": "after run 001 diagnostic export and independent computation, after the complete-reference gate failed closed, and before any candidate, baseline, or Luna call",
+  "parent_amendment_sha256": "504bda934da9ce01d9e2c097b38a14c7ee0b5cd70eea85d3827ec6c561bbf6d8",
+  "status": "PRE_MODEL_REFERENCE_PROVENANCE_CORRECTION",
+  "correction": {
+    "complete_reference_builder": "analysis/build_command_motion_reference_v2.py",
+    "complete_reference_builder_sha256": "eb2e60497eb75c557cbb202ef122e6a9956b2a01e943f063df41a6af0b71e77e",
+    "behavior": "When a robot-visible diagnostic declares a diagnostic-config SHA-256, require its exact evidence identifier in the diagnostic result and expose it to the annotation reference alongside the other permitted robot-visible source hashes.",
+    "reason": "The original builder expected only event, runtime, BT, and Nav2 identifiers. Run 001 correctly added the prospectively pinned low-speed diagnostic-config identifier, so the complete-reference gate rejected the otherwise matching independent computation."
+  },
+  "failed_reference_retained": true,
+  "model_or_luna_calls_before_amendment": 0,
+  "unchanged": [
+    "run 001 retained bytes, diagnostic measurements, independent computation, and outcome",
+    "diagnostic thresholds/configuration, candidate P, strong baseline R, question, model/settings, no-retry policy, Luna protocol, readiness gate, and stopping rule",
+    "physical run order and zero confirmatory alpha"
+  ]
+}

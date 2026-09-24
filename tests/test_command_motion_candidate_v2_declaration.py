@@ -7,6 +7,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DECLARATION = ROOT / "research/explanation_fidelity/experiment_configs/development/command-motion-candidate-v2-multiconfiguration-pilot-v1.json"
 AMENDMENT = ROOT / "research/explanation_fidelity/experiment_configs/development/command-motion-candidate-v2-multiconfiguration-pilot-v1-amendment-1.json"
 AMENDMENT_2 = ROOT / "research/explanation_fidelity/experiment_configs/development/command-motion-candidate-v2-multiconfiguration-pilot-v1-amendment-2.json"
+AMENDMENT_3 = ROOT / "research/explanation_fidelity/experiment_configs/development/command-motion-candidate-v2-multiconfiguration-pilot-v1-amendment-3.json"
 
 
 def sha256(relative: str) -> str:
@@ -45,7 +46,6 @@ def test_candidate_v2_pilot_hashes_live_inputs_and_keeps_strong_r():
     expected = {
         "candidate_runner_sha256": "analysis/run_command_motion_candidate_v2.py",
         "independent_reference_sha256": "analysis/reference_command_motion.py",
-        "complete_reference_builder_sha256": "analysis/build_command_motion_reference_v2.py",
         "shared_diagnostic_adapter_sha256": "analysis/recompute_command_motion_diagnostic.py",
         "repository_agent_prompt_sha256": "research/explanation_fidelity/prompts/diagnostic_repository_agent_command_motion_dev_v2.txt",
         "diagnostic_config_sha256": "configs/diagnostic_command_motion_low_speed_v1.json",
@@ -55,6 +55,9 @@ def test_candidate_v2_pilot_hashes_live_inputs_and_keeps_strong_r():
     }
     for key, relative in expected.items():
         assert pinned[key] == sha256(relative)
+    assert pinned["complete_reference_builder_sha256"] == (
+        "d7a08fcf03c313c1c15e171ab005a766c6f0987dbe60286a41ce5de7d8efaa98"
+    )
 
     assert value["methods"]["R"].startswith("gpt-6-sol high")
     assert value["methods"]["reasoning_effort"] == "high"
@@ -93,3 +96,15 @@ def test_post_run_amendment_preserves_run_one_and_pins_future_launcher():
     ]
     assert amendment["run_001_disposition"]["rerun_authorized"] is False
     assert amendment["run_001_disposition"]["scenario_binding_postprocessed"] is True
+
+
+def test_reference_builder_amendment_adds_only_declared_config_provenance():
+    amendment = json.loads(AMENDMENT_3.read_text(encoding="utf-8"))
+    assert amendment["parent_amendment_sha256"] == sha256(
+        AMENDMENT_2.relative_to(ROOT).as_posix()
+    )
+    assert amendment["correction"]["complete_reference_builder_sha256"] == sha256(
+        "analysis/build_command_motion_reference_v2.py"
+    )
+    assert amendment["model_or_luna_calls_before_amendment"] == 0
+    assert amendment["failed_reference_retained"] is True

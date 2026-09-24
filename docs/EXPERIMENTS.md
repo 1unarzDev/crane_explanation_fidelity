@@ -29,6 +29,11 @@
   checks without changing any run byte. Runs 002--006 now retain that fixture exit separately and
   always execute the binding gate; missing truth/summary or failed binding still fails closed.
   Run 001 will not be rerun, and no candidate, baseline, or Luna call preceded this correction.
+- **PRE-MODEL AMENDMENT 3:** run 001's independent computation matched the checked diagnostic, but
+  the complete-reference builder failed closed because its expected evidence-ID set omitted the
+  prospectively pinned diagnostic-config hash. The corrected builder requires and exposes that
+  robot-visible config identifier. The failed attempt is retained; no answer or Luna call had
+  occurred, and no measurement, threshold, method, model, run, or readiness rule changed.
 
 ## 2026-09-24 — deterministic command--motion candidate-v2 runner
 
