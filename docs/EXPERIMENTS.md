@@ -1,5 +1,18 @@
 # Experiment Log
 
+## 2026-09-24 — predeclare v6 player/runtime qualification
+
+- **STATUS:** `PREDECLARED / NOT_RUN`. One no-retry development attempt will select
+  `diagnostic-command-motion-confirmation-reserve-connected-detour-001` from v6 using the clean
+  source-pinned player at CRANE `05a1161`.
+- **PINNED:** Unity 6000.5.10f1, exact build/assembly/resources/catalog hashes, launcher/auditor/
+  fixture/Nav2/BT hashes, seed 91000, ROS domain 144, port 12344, and no mobility intervention.
+- **ADMISSION:** exact player and scenario binding, valid zero-error Unity record, and retained
+  capture manifests. Navigation success is not an inclusion requirement and the attempt will not
+  be replaced.
+- **INFERENCE:** infrastructure qualification only; no model, Luna, semantic comparison,
+  confirmatory cluster, replication, or alpha use.
+
 ## 2026-09-24 — reserve disjoint land command-motion physical cohorts
 
 - **STATUS:** `SOURCE_GENERATED / TESTED / NOT PLAYER-VALIDATED / NO CAMPAIGN ACTIVE`. CRANE v6

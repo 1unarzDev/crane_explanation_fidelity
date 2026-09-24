@@ -1,0 +1,47 @@
+{
+  "schema": "crane-command-motion-v6-player-runtime-qualification/v1",
+  "declared_utc": "2026-09-24T22:30:00Z",
+  "status": "PREDECLARED_DEVELOPMENT_INFRASTRUCTURE_NOT_RUN",
+  "purpose": "Prove that the clean source-pinned Unity player embeds and selects the new v6 reserve catalog and emits exact evaluator binding truth before any cohort collection.",
+  "run": {
+    "run_id": "cmv6-physical-qual-001",
+    "attempts": 1,
+    "replacement_or_retry_allowed": false,
+    "data_split": "dev",
+    "catalog": "v6",
+    "layout": "diagnostic-command-motion-confirmation-reserve-connected-detour-001",
+    "layout_seed": 91000,
+    "diagnostic_mechanism": "connected-detour",
+    "mobility_hold_after_s": -1.0,
+    "mobility_release_after_s": -1.0,
+    "ros_domain_id": 144,
+    "ros_tcp_port": 12344
+  },
+  "player": {
+    "path_at_execution": "/tmp/crane-cmv6-build-0sN6T85L/CRANE.x86_64",
+    "crane_commit": "05a1161e4b5a3ad6bbefe1c635507e7061ea8d58",
+    "unity_version": "6000.5.10f1",
+    "build_manifest_sha256": "39d034b545e8c1504771ebd29491260e2105931752cee708da08ae211c531e4d",
+    "managed_assemblies_sha256": "e044af4f9e1f2f5834116f3d745d8cc23ccfe91f96425fc225862ef35f77b261",
+    "runtime_resources_sha256": "4be81f6cdfe9dd03045c856c5d86667b967db25dc471e07d1ed0574974a44106",
+    "catalog_sha256": "c9cee3922fa1cc17f8237fde12d0a50ee6496649142f3cb14a4c6491fd72a0eb",
+    "predeclaration_build_audit_accepted": true
+  },
+  "code_hashes": {
+    "capture_launcher_sha256": "badf482866d3724686499109451f4506b1be09e3be6afeaf071ddc5ad98cb021",
+    "player_auditor_sha256": "f4e3c20e14c961be6eb96fb95daf990dafce1f787091cbcea0e346bc831d950f",
+    "binding_auditor_sha256": "6edcb26ce2cc6f4e5697869c1f3f2bec2c780ea578b8b124acad084c8bbad54b",
+    "fixture_launcher_sha256": "ce322b5bee88e747fd4115a5834458d1edaea1523806c2c7653af25292309f04",
+    "nav2_config_sha256": "e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+    "bt_policy_sha256": "14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520"
+  },
+  "admission": [
+    "clean checkout and exact build/assembly hashes",
+    "exact v6 catalog bytes embedded in runtime resources",
+    "Unity worker valid with zero logged errors and exceptions",
+    "exact catalog, layout, seed, mechanism, obstacle, and mobility binding truth",
+    "robot-visible capture manifest and runtime manifest present"
+  ],
+  "retention": "Retain the sole attempt regardless of navigation outcome. A valid unexpected outcome remains valid infrastructure evidence and is not replaced.",
+  "allowed_inference": "Player/catalog/runtime binding qualification only. No semantic method comparison, independent confirmatory cluster, judge label, effect estimate, replication claim, or alpha consumption."
+}
