@@ -41,6 +41,7 @@ def build_reference(export: dict[str, Any], source_path: Path) -> dict[str, Any]
             "delivered_command_sample_count": len(commands),
             "independent_odometry_sample_count": 0,
             "action_status": method["action_status"],
+            "follow_path_attempt_count": int(sequence["follow_path_attempt_count"]),
             "follow_path_failure_count": int(sequence["follow_path_failure_count"]),
             "source_qualified_wait_recovery_count": int(
                 sequence["source_qualified_wait_recovery_count"]
@@ -53,7 +54,7 @@ def build_reference(export: dict[str, Any], source_path: Path) -> dict[str, Any]
         },
         "required_propositions": [
             "The missing independently measured motion samples prevent a time-aligned command-to-motion comparison.",
-            "The retained action aborted after two FollowPath failures and two source-qualified Wait recovery invocations.",
+            "The retained action aborted after three FollowPath attempts, two failures, and two source-qualified Wait recovery invocations.",
             "The execution sequence alone does not establish a command-to-motion discrepancy or unique physical cause.",
             "The next discriminating check is synchronized independent motion evidence.",
         ],

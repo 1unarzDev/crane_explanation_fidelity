@@ -1,0 +1,64 @@
+{
+  "schema": "crane-command-motion-candidate-v2-run-disposition/v1",
+  "recorded_date": "2026-09-24",
+  "run_id": "cmv2-dev-001-mask-no-odometry",
+  "cluster_id": "cmv2-land-001",
+  "status": "INVALID_INCOMPLETE_ANNOTATION_REFERENCE_RETAINED",
+  "attempt_count": 0,
+  "retry_performed": false,
+  "derived_from": "cmv2-dev-001",
+  "independent_physical_cluster_increment": 0,
+  "mask": {
+    "mask_id": "missing-independent-odometry-samples-v1",
+    "withheld": ["independently delivered odometry samples"],
+    "source_episode_available_to_methods": false
+  },
+  "diagnostic": {
+    "disposition": "insufficient",
+    "delivered_command_sample_count": 407,
+    "independent_odometry_sample_count": 0,
+    "action_status": "aborted",
+    "follow_path_attempts": 3,
+    "follow_path_failures": 2,
+    "source_qualified_wait_invocations": 2
+  },
+  "language_evaluation": {
+    "conditions": ["P", "R"],
+    "p_model_calls": 0,
+    "r_model_calls": 1,
+    "luna_passes": 2,
+    "luna_calls": 4,
+    "call_failures": 0,
+    "raw_pass_1": {
+      "P_supported_diagnostic_success": true,
+      "R_supported_diagnostic_success": false,
+      "P_material_error": false,
+      "R_material_error": true
+    },
+    "raw_pass_2": {
+      "P_supported_diagnostic_success": true,
+      "R_supported_diagnostic_success": false,
+      "P_material_error": false,
+      "R_material_error": true
+    },
+    "valid_paired_measurement": false,
+    "evidence_problem": "The annotation reference omitted the robot-visible follow_path_attempt_count=3. Both Luna passes therefore labeled R's true three-attempt statement unsupported and material. The omission was discovered after the fixed calls and is retained without rejudging.",
+    "labels_retained_but_excluded_from_readiness_difference": true,
+    "rerun_or_rejudge_performed": false
+  },
+  "hashes": {
+    "masked_export_sha256": "e4b0c68113957ef41dc73b3d1ad4630b82c12aac76ab5168b33b5fceebb9f933",
+    "independent_reference_sha256": "a897e4095d1ddac709398a91dc6f55019b37724ab7abfe2060c14b93ffe083c9",
+    "incomplete_annotation_reference_sha256": "c43b90ec2ebdfae1b2f1727cfadeadec960ff350ef999430c38c85a82d2b85b4",
+    "candidate_result_sha256": "6e6a8e746c604b05cd64a76cbc47f529e3eace8e722ff6489f7deb791d455430",
+    "blinded_packet_sha256": "44563132de3949788a6403fc610565bc8da8e284d7c6ab8c14a9493c765daccb",
+    "condition_key_sha256": "11c055d51cc844eac1dbe95964bbd996448a24b02cf258457ae3082863b2a9d6",
+    "luna_summary_sha256": "4413b3f28dec8196400bde03415a4229eac40a4cb6f8242b9358defd46df6816"
+  },
+  "inference": {
+    "valid_ambiguous_variant_increment": 0,
+    "confirmatory_cluster_increment": 0,
+    "confirmatory_alpha_consumed": 0.0,
+    "candidate_readiness": "NOT_READY"
+  }
+}

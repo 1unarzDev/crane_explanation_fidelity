@@ -26,6 +26,7 @@ def test_reference_uses_only_masked_method_observations():
         "delivered_command_sample_count": 376,
         "independent_odometry_sample_count": 0,
         "action_status": "aborted",
+        "follow_path_attempt_count": 3,
         "follow_path_failure_count": 2,
         "source_qualified_wait_recovery_count": 2,
     }

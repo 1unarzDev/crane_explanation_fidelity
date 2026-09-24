@@ -1,5 +1,24 @@
 # Decision Log
 
+## 2026-09-24 — do not freeze deterministic command-motion candidate v2
+
+- Decision: stop the bounded candidate-v2 pilot as declared and classify the method `NOT_READY`.
+  Do not allocate confirmatory alpha or tune the candidate within this campaign.
+- Evidence: all six physical configurations were attempted exactly once, but only five yielded
+  valid paired language measurements. Across those five clusters, P-minus-R was 0 and +1 in the
+  two frozen Luna passes, below the required +2 in each; P also incurred material-error labels.
+  The paired ambiguity case is invalid because its judge reference omitted a supported attempt
+  count. Run 006 is invalid for language comparison because its call used the wrong question
+  identity. Both failures are retained transparently and neither was rerun.
+- Alternatives: count the mask's raw favorable labels, repair and rejudge it, rerun run 006, lower
+  the readiness thresholds, or select only favorable clusters. Each violates the prospectively
+  declared no-retry, complete-reference, or readiness rules.
+- Effect: the result is a negative development finding, not evidence of inferiority and not a
+  confirmatory test. The physical recordings and diagnostic artifacts remain useful development
+  evidence. Confirmation stays inactive at `0.000/0.050`.
+- Revisit: a materially revised method may enter a separately named development cycle with new
+  tests and fresh configurations; it must not reuse this campaign as confirmatory evidence.
+
 ## 2026-09-24 — test deterministic checked language as diagnostic candidate v2
 
 - Decision: implement `deterministic-command-motion-candidate-v2` with the exact checked

@@ -1,5 +1,23 @@
 # Experiment Log
 
+## 2026-09-24 — candidate-v2 pilot stopped: candidate not ready
+
+- **COMPLETED AS DECLARED:** all six fresh physical configurations were attempted exactly once in
+  order, with six valid recordings and no replacements. Runs 001--005 yielded valid paired Luna
+  measurements. Run 006 remains a valid physical/diagnostic record but its paired language output
+  is invalid because the fixed question identity was omitted from the invocation.
+- **AMBIGUOUS VARIANT INVALID:** the declared no-odometry mask was derived from run 001 and adds
+  zero independent clusters. P qualified in both raw Luna passes; R was labeled material-error in
+  both for saying that three FollowPath attempts occurred. Coordinator audit found that statement
+  in the robot-visible input but omitted from the newly built judge reference. All calls and labels
+  are retained, but this is an `evidence_problem`, not an R error, and the variant is excluded from
+  readiness scoring. No rejudge was performed.
+- **FINAL DEVELOPMENT RESULT:** five valid paired independent clusters; P-minus-R = 0 in pass 1
+  and +1 in pass 2. Candidate v2 fails the predeclared zero-P-material-error rule, both +2 net-
+  advantage rules, and the valid-ambiguous-variant rule. It is `NOT_READY`: do not freeze it or
+  activate confirmation. Alpha remains `0.000/0.050`. See
+  `manifests/data/command-motion-candidate-v2-pilot-v1-summary.json`.
+
 ## 2026-09-24 — candidate-v2 run 006 retained with invalid language measurement
 
 - **PHYSICAL/DIAGNOSTIC STATUS:** the sole nominal run passed build, binding, recording, and

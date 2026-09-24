@@ -1,0 +1,39 @@
+{
+  "schema": "crane-command-motion-candidate-v2-pilot-summary/v1",
+  "recorded_date": "2026-09-24",
+  "status": "COMPLETE_DEVELOPMENT_PILOT_CANDIDATE_NOT_READY",
+  "physical_configurations": {
+    "declared": 6,
+    "attempted_exactly_once": 6,
+    "valid_recordings": 6,
+    "replacement_runs": 0
+  },
+  "language_measurements": {
+    "valid_independent_paired_clusters": 5,
+    "invalid_question_identity_clusters": ["cmv2-dev-006"],
+    "valid_ambiguous_variants": 0,
+    "invalid_ambiguous_variants": ["cmv2-dev-001-mask-no-odometry"],
+    "cumulative_p_minus_r_successes_pass_1": 0,
+    "cumulative_p_minus_r_successes_pass_2": 1,
+    "P_material_error_free": false
+  },
+  "readiness_gate": {
+    "minimum_valid_independent_clusters_met": true,
+    "ambiguous_variant_required": true,
+    "ambiguous_variant_met": false,
+    "required_net_p_minus_r_each_pass": 2,
+    "pass_1_net_met": false,
+    "pass_2_net_met": false,
+    "zero_P_material_errors_required": true,
+    "zero_P_material_errors_met": false,
+    "overall": "NOT_READY"
+  },
+  "decision": "Do not freeze candidate v2, do not activate confirmation, and do not spend confirmatory alpha.",
+  "confirmatory_alpha_consumed": 0.0,
+  "limitations": [
+    "This bounded development screen is not a confirmatory effect estimate or significance test.",
+    "Run 006 has a valid physical record but no valid paired language measurement because its question identity differed from the declaration.",
+    "The no-odometry variant's Luna labels are retained but excluded because the judge reference omitted a supported attempt count.",
+    "Five valid paired clusters are insufficient to rescue a candidate that failed the predeclared material-error and net-advantage gates."
+  ]
+}
