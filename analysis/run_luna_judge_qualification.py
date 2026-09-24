@@ -8,6 +8,7 @@ from collections import defaultdict
 import hashlib
 import json
 from pathlib import Path
+import re
 import sys
 from typing import Any
 
@@ -317,8 +318,10 @@ def run_split(
         except RuntimeError as error:
             message = str(error)
             call_failures[case["case_id"]] = message
-            path_text = message.rsplit(" at ", 1)[-1]
-            failure_path = Path(path_text)
+            path_match = re.search(r"(/[^\n]+\.json)$", message)
+            if path_match is None:
+                raise
+            failure_path = Path(path_match.group(1))
             failure = json.loads(failure_path.read_text(encoding="utf-8"))
             cache_keys[case["case_id"]] = failure["cache_key"]
             judgments[case["case_id"]] = {
