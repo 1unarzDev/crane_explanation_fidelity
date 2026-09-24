@@ -103,9 +103,16 @@ fi
 
 player="${CRANE_PLAYER:-${crane_dir}/Builds/CRANE-Worker/CRANE.x86_64}"
 image="${CRANE_ROS_IMAGE:-lunarzdev/astro:cuda}"
+expected_build_manifest_sha256="${CRANE_EXPECTED_BUILD_MANIFEST_SHA256:-}"
+expected_managed_assemblies_sha256="${CRANE_EXPECTED_MANAGED_ASSEMBLIES_SHA256:-}"
 robot_parent="${workspace_root}/data/robot_visible/${data_split}/${run_id}"
 evaluator_root="${workspace_root}/data/evaluator_only/${data_split}/${run_id}"
 capture_name="crane-capture-${run_id}"
+
+if [[ -z "${expected_build_manifest_sha256}" || -z "${expected_managed_assemblies_sha256}" ]]; then
+    echo "Actual runs require prospectively pinned CRANE_EXPECTED_BUILD_MANIFEST_SHA256 and CRANE_EXPECTED_MANAGED_ASSEMBLIES_SHA256" >&2
+    exit 2
+fi
 
 if [[ -e "${robot_parent}" || -e "${evaluator_root}" ]]; then
     echo "Refusing existing run path for ${run_id}" >&2
@@ -136,6 +143,12 @@ mkdir -p "${robot_parent}" "${evaluator_root}"
 python3 "${script_dir}/record_build_provenance.py" \
     --player "${player}" --checkout "${crane_dir}" \
     --output "${evaluator_root}/build-provenance.json"
+python3 "${workspace_root}/analysis/validate_diagnostic_player_build.py" \
+    --provenance "${evaluator_root}/build-provenance.json" \
+    --checkout "${crane_dir}" \
+    --expected-build-manifest-sha256 "${expected_build_manifest_sha256}" \
+    --expected-managed-assemblies-sha256 "${expected_managed_assemblies_sha256}" \
+    --output "${evaluator_root}/player-build-audit.json"
 python3 "${script_dir}/build_diagnostic_runtime_manifest.py" \
     --output "${runtime_manifest}" \
     --run-id "${run_id}" \

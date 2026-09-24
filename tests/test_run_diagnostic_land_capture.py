@@ -111,3 +111,13 @@ def test_capture_requires_exact_post_run_scenario_binding():
     assert "--catalog-id \"${catalog}\"" in text
     assert "--layout \"${layout}\"" in text
     assert "scenario-binding-audit.json" in text
+
+
+def test_capture_requires_declared_full_player_bundle_before_launch():
+    text = SCRIPT.read_text(encoding="utf-8")
+
+    assert "CRANE_EXPECTED_BUILD_MANIFEST_SHA256" in text
+    assert "CRANE_EXPECTED_MANAGED_ASSEMBLIES_SHA256" in text
+    assert "validate_diagnostic_player_build.py" in text
+    assert "player-build-audit.json" in text
+    assert text.index("validate_diagnostic_player_build.py") < text.index("docker run -d")

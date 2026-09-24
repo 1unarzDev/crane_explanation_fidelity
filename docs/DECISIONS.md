@@ -1515,3 +1515,22 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Alternatives rejected: call this merely a failed induction, infer the requested layout from the
   source catalog, delete the run, or rerun under the same ID.
 - Effect: candidate readiness remains `NOT_READY`; alpha remains 0.000/0.050.
+
+## 2026-09-24 — require full Unity-bundle admission before diagnostic land launch
+
+- Decision: every actual diagnostic land capture must prospectively pin both the embedded build-
+  manifest SHA-256 and the aggregate managed-assembly SHA-256. Before ROS or Unity launch, a
+  retained evaluator-only audit must also verify that the build manifest's warehouse generator
+  source and warehouse scene match the selected CRANE checkout byte-for-byte.
+- Evidence: `diagnostic-land-binding-dev-006` failed closed after a 110-second run. Its small
+  `CRANE.x86_64` launcher hash matched earlier proving-ground runs, but its build manifest,
+  managed assemblies, warehouse source, and scene differed; runtime truth instantiated the legacy
+  clear corridor. The launcher hash alone therefore did not identify the executable bundle.
+- Alternatives rejected: trust the launcher hash, infer build compatibility from the adjacent
+  checkout, or rely only on post-run truth admission. Each can waste an independent run and can
+  silently misstate which physical scenario was executed.
+- Limit: matching embedded asset hashes establishes bundle/check-out compatibility for the audited
+  warehouse entry points, not a source commit when the historical build manifest omitted that
+  field. Post-run evaluator-truth admission remains mandatory.
+- Effect: stale builds now fail before any episode starts. This does not activate confirmation,
+  authorize a replacement for run/layout 006, or consume alpha.

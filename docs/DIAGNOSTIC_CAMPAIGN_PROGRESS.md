@@ -49,6 +49,12 @@ the chosen allocation must be atomically bound to that campaign and cannot later
 No effect estimate, confidence sequence, guardrail result, or replication conclusion exists.
 Legacy and the eleven diagnostic-development clusters are intentionally absent from these counts.
 
+The fresh land-binding qualification `diagnostic-land-binding-dev-006` was rejected and retained:
+the selected Unity bundle instantiated legacy clear-corridor truth rather than the declared v4
+layout. It adds zero qualified clusters. Actual land captures now require prospectively pinned
+build-manifest and managed-assembly hashes plus a pre-launch source/scene compatibility audit; the
+post-run exact scenario-binding audit remains required. No replacement run is currently declared.
+
 ## Qualified-judge development result (2026-09-24)
 
 The six clusters selected before annotation supplied 24 immutable R/P/T/N responses. Two isolated
