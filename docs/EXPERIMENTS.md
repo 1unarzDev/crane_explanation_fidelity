@@ -3752,5 +3752,9 @@
 - **REGRESSION:** 292 umbrella/analysis/core tests and eight frozen-integrity tests pass; data
   governance passes and DVC reports the cache and R2 synchronized. The new CLI regression proves
   that accepting the governed export does not use its precomputed diagnostic fields.
+- **POST-FIX ISOLATED CHECK:** after commit `61ccf6b` was pushed, the already isolated restored
+  clone fast-forwarded to that public commit and ran `scripts/verify_submission_reproduction.sh`.
+  The paper gate passed at six pages, both land outputs were byte-identical, and command-motion was
+  semantically identical after blind recomputation.
 - **BOUNDARY:** this validates restoration and deterministic recomputation, not ROS/Unity runtime
   execution, semantic annotation, human trust, a method effect, or portal submission.
