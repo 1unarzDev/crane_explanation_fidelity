@@ -50,8 +50,8 @@ the chosen allocation must be atomically bound to that campaign and cannot later
 No effect estimate, confidence sequence, guardrail result, or replication conclusion exists.
 Legacy and the eleven diagnostic-development clusters are intentionally absent from these counts.
 
-The separate physical/reference cohort has attempted 12/100 fixed confirmation-side configurations:
-12 valid, 0 invalid. The method-visible diagnostic dispositions are six supported, four
+The separate physical/reference cohort has attempted 13/100 fixed confirmation-side configurations:
+13 valid, 0 invalid. The method-visible diagnostic dispositions are six supported, five
 `not_triggered`, and two `insufficient`. Run 004 is a valid unexpected transient case: measured
 response recovered after the discrepancy, but the action later aborted, preventing the study from
 equating compensation with task success. Run 005 is a successful no-intervention nominal control
@@ -65,8 +65,9 @@ physical cause remains withheld. Run 010 adds a second persistent-discrepancy ca
 nominal-clear-route geometry: response loss from 18--39 s followed by action abort. Run 011 adds
 another successful transient-compensation case: response loss from 10--20 s, recovered
 response from 22--23 s, and eventual action success. Run 012 adds a successful nominal
-`not_triggered` control despite retained FollowPath failures and Wait invocations. The next
-immutable schedule item is `cm-land-conf-013`.
+`not_triggered` control despite retained FollowPath failures and Wait invocations. Run 013 adds a
+clean nominal `not_triggered` control with one FollowPath attempt and no recovery
+activity. The next immutable schedule item is `cm-land-conf-014`.
 
 ## Frozen land command--motion physical cohort
 

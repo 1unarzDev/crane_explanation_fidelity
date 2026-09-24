@@ -1,5 +1,16 @@
 # Experiment Log
 
+## 2026-09-24 — land command--motion physical cohort run 013
+
+- **STATUS:** `VALID CLEAN NOMINAL NOT_TRIGGERED / 13 OF 100 ATTEMPTED`. The sole fixed attempt
+  passed exact build/binding, the zero-error Unity-worker gate, robot-visible export, independent
+  computation, and complete-reference audit. No retry or replacement occurred.
+- **OBSERVED/REFERENCE:** the action succeeded after 69.160 s and 17.477 m with one FollowPath
+  attempt, zero failures, and zero source-qualified Wait invocations. Both implementations return
+  `not_triggered`.
+- **BOUNDARY:** no response, Luna label, semantic effect, or alpha use. Governed data are
+  synchronized to R2; 52 focused tests and data governance pass. Fixed persistent run 014 is next.
+
 ## 2026-09-24 — land command--motion physical cohort run 012
 
 - **STATUS:** `VALID NOMINAL NOT_TRIGGERED / 12 OF 100 ATTEMPTED`. The sole fixed attempt passed
