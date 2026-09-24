@@ -3667,3 +3667,23 @@
   pending/identity/font/metadata/traceability failures, and the 4--6-page short/demo categories.
 - **BOUNDARY:** this is a mechanical acceptance gate, not peer review, IEEE PDF eXpress validation,
   visual layout inspection, portal submission, or evidence that pending scientific results exist.
+## 2026-09-23 — Luna model-judge v1 development qualification failed closed
+
+- **SCOPE:** 14 synthetic/composition development cases only; `low`, `medium`, and `high`
+  reasoning; no held-out qualification and no legacy or diagnostic study response evaluation.
+- **MODEL/TRANSPORT:** requested `gpt-6-luna` through Codex CLI 0.155.1 and `codex-lb`, one fresh
+  bubblewrap namespace and ephemeral conversation per call. The CLI's isolated custom-provider
+  profile emitted a retained fallback-model-metadata warning. No model tool event was accepted.
+- **RESULT:** `NO_CONFIGURATION_QUALIFIED`. Low/medium/high core-field accuracy was
+  82.1%/86.6%/83.0%; required-unit accuracy was 87.5%/100%/93.8%. There were zero false
+  acceptances; medium and high each had one false rejection under the v1 expectations. Low emitted
+  one internally inconsistent resolved judgment, which was retained without retry and scored
+  unresolved.
+- **RESOURCE USE:** 42 selected calls, 530,628 input tokens, 23,177 output tokens, 594,685 ms
+  aggregate latency; monetary cost was not reported by the provider path.
+- **AUDIT FINDING:** v1 exposed real judge inconsistency but also ambiguous/incorrect expected
+  semantics for disposition, `correct_abstention`, evidence-problem fields, and a blanket false
+  claim of evidence insufficiency. Those fixtures are not silently relabeled. One bounded v2
+  development clarification may be declared before any held-out call; v1 remains a negative result.
+- **ARTIFACT:** governed by `model_outputs.dvc`; tracked summary is
+  `manifests/annotation/luna-model-judge-v1-development-v1.json`.

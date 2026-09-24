@@ -1,0 +1,54 @@
+{
+  "schema": "crane-luna-judge-development-result/v1",
+  "arm_id": "luna-model-judge-v1",
+  "prompt_version": "luna-model-judge-v1",
+  "suite_version": "luna-model-judge-v1-qualification",
+  "executed_utc_date": "2026-09-23",
+  "status": "NO_CONFIGURATION_QUALIFIED",
+  "result": {
+    "path": "model_outputs/automated_annotations/luna-model-judge-v1/qualification/development-selection.json",
+    "sha256": "745bc5370c7fe14ed158881603f4218e5f072301c23649ac3572da92e45f992f",
+    "governance": "model_outputs.dvc"
+  },
+  "cases_per_effort": 14,
+  "reasoning_efforts": ["low", "medium", "high"],
+  "selected_calls": 42,
+  "selected_call_statuses": {"VALID": 41, "INVALID_JUDGMENT_NO_RETRY": 1},
+  "selected_input_tokens": 530628,
+  "selected_output_tokens": 23177,
+  "selected_aggregate_latency_ms": 594685.4411539999,
+  "cost_usd": null,
+  "cost_status": "not_reported_by_codex_cli_provider_path",
+  "efforts": {
+    "low": {
+      "qualified": false,
+      "false_acceptances": 0,
+      "false_rejections": 0,
+      "unexpected_unresolved": 1,
+      "required_unit_accuracy": 0.875,
+      "core_semantic_field_accuracy": 0.8214285714285714,
+      "call_failures": 1
+    },
+    "medium": {
+      "qualified": false,
+      "false_acceptances": 0,
+      "false_rejections": 1,
+      "unexpected_unresolved": 0,
+      "required_unit_accuracy": 1.0,
+      "core_semantic_field_accuracy": 0.8660714285714286,
+      "call_failures": 0
+    },
+    "high": {
+      "qualified": false,
+      "false_acceptances": 0,
+      "false_rejections": 1,
+      "unexpected_unresolved": 0,
+      "required_unit_accuracy": 0.9375,
+      "core_semantic_field_accuracy": 0.8303571428571429,
+      "call_failures": 0
+    }
+  },
+  "interpretation": "Prompt/suite v1 failed prospectively declared development gates. No effort was frozen; no held-out or study responses were judged. Review found both genuine judge inconsistencies and ambiguous or incorrect fixture expectations for disposition, abstention, and blanket evidence-denial. A single versioned development-only clarification is permitted; this negative result remains immutable.",
+  "heldout_evaluation_run": false,
+  "study_evaluation_run": false
+}
