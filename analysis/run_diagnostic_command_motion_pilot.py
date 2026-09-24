@@ -265,6 +265,7 @@ def run(args: argparse.Namespace, caller=None) -> dict[str, Any]:
         "reasoning_effort": args.reasoning_effort,
         "single_sample_no_retry": True,
         "evaluator_truth_available_to_methods": False,
+        "permitted_evidence_identifiers": sorted(diagnostic_result["supporting_evidence"]),
         "repository": repository_identity,
         "inputs": {
             "evidence_sha256": sha256(evidence_path),

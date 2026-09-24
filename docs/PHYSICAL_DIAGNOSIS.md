@@ -310,3 +310,12 @@ to annotators. The original P candidate was useful but rejected by a section-loc
 making overall development fallback 11/11 at that checkpoint. A post-hoc correction accepts it
 after citation-only repair and rejects three authored mutations; the original fallback and packet
 remain immutable.
+
+## Citation identity contract
+
+For fresh diagnostic packets, citation identities are explicit robot-visible evidence. The
+generator result and independently authored reference must declare the same unique
+`*-sha256:<digest>` set. Packet construction fails closed when they differ or when a final answer
+cites an identifier outside that set. The identifiers are nested in the existing allowed-evidence
+payload, so the frozen Luna v7 caller and its isolation boundary remain byte-identical. Historical
+packets without this additive contract are retained unchanged and are not rescored.

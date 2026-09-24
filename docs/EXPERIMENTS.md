@@ -4081,3 +4081,15 @@
   permitted citation identities information-complete for P/R/judge or omit them from final text.
   No alpha consumed. Report SHA-256
   `a8f27ee32fce70f2a5de490bfeb8f9d69c85fe37ffa57f47298eaa14ab72debc`.
+
+## 2026-09-24 — citation-contract development repair
+
+- **STATUS:** `IMPLEMENTED / TESTED / FRESH_RESPONSE_RUN_NOT_YET_STARTED`.
+- **CHANGE:** fresh command--motion results expose the diagnostic result's exact supporting IDs;
+  packet construction requires an independently declared matching set, embeds it in allowed
+  evidence, and rejects any response citing an undeclared `*-sha256` identity.
+- **PRESERVATION:** the qualified Luna caller remains byte-identical at SHA-256
+  `0e83d22d7e3d284b2430d55240fb26483588e51f0d84df94515702964064b023`.
+  Existing packets, responses, and Luna labels are unchanged.
+- **NEXT GATE:** predeclare and generate fresh information-complete command--motion development
+  responses before deciding whether candidate P is credible enough to freeze.

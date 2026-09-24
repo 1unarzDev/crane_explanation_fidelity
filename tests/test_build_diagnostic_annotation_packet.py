@@ -1,6 +1,8 @@
 import importlib.util
 from pathlib import Path
 
+import pytest
+
 
 SCRIPT = Path(__file__).parents[1] / "analysis" / "build_diagnostic_annotation_packet.py"
 SPEC = importlib.util.spec_from_file_location("build_diagnostic_annotation_packet", SCRIPT)
@@ -65,3 +67,25 @@ def test_builder_rejects_evaluator_truth_or_mismatched_reference():
         assert "mismatch" in str(error)
     else:
         raise AssertionError("mismatched reference was accepted")
+
+
+def test_builder_preserves_and_enforces_declared_evidence_identifiers():
+    result, reference = fixtures()
+    evidence_id = "events-sha256:" + "a" * 64
+    result["permitted_evidence_identifiers"] = [evidence_id]
+    reference["allowed_evidence_identifiers"] = [evidence_id]
+    result["outputs"][0]["text"] += f" Evidence IDs: {evidence_id}."
+
+    rows, _ = MODULE.build_rows(result, reference, "secret")
+    assert all(row["allowed_evidence"]["evidence_identifiers"] == [evidence_id] for row in rows)
+
+    result["outputs"][0]["text"] += " other-sha256:" + "b" * 64
+    with pytest.raises(ValueError, match="outside the declared robot-visible set"):
+        MODULE.build_rows(result, reference, "secret")
+
+
+def test_builder_rejects_mismatched_identifier_contracts():
+    result, reference = fixtures()
+    result["permitted_evidence_identifiers"] = ["events-sha256:" + "a" * 64]
+    with pytest.raises(ValueError, match="citation-identifier contracts differ"):
+        MODULE.build_rows(result, reference, "secret")

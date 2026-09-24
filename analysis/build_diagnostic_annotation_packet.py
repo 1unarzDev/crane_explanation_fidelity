@@ -9,6 +9,7 @@ import hmac
 import json
 from pathlib import Path
 import random
+import re
 import secrets
 from typing import Any
 
@@ -23,6 +24,7 @@ FORBIDDEN_PACKET_KEYS = {
     "verification_accepted",
     "verification_policy",
 }
+EVIDENCE_IDENTIFIER = re.compile(r"\b[a-z0-9-]+-sha256:[a-f0-9]{64}\b", re.IGNORECASE)
 
 
 def load(path: Path) -> dict[str, Any]:
@@ -46,6 +48,24 @@ def build_rows(
     if result["question_id"] != reference["question_id"]:
         raise ValueError("result/reference question mismatch")
 
+    declared_identifiers = reference.get("allowed_evidence_identifiers")
+    result_identifiers = result.get("permitted_evidence_identifiers")
+    if (declared_identifiers is None) != (result_identifiers is None):
+        raise ValueError("result/reference citation-identifier contracts differ")
+    if declared_identifiers is not None:
+        if (
+            not isinstance(declared_identifiers, list)
+            or not declared_identifiers
+            or any(
+                not isinstance(item, str) or not EVIDENCE_IDENTIFIER.fullmatch(item)
+                for item in declared_identifiers
+            )
+            or len(declared_identifiers) != len(set(declared_identifiers))
+        ):
+            raise ValueError("reference has invalid allowed evidence identifiers")
+        if set(declared_identifiers) != set(result_identifiers):
+            raise ValueError("result/reference permitted evidence identifiers differ")
+
     rows: list[dict[str, Any]] = []
     key: list[dict[str, Any]] = []
     seen_conditions: set[str] = set()
@@ -57,6 +77,19 @@ def build_rows(
         response_id = identifier(
             secret, result["episode_id"], result["question_id"], condition
         )
+        cited_identifiers = set(EVIDENCE_IDENTIFIER.findall(output["text"]))
+        if declared_identifiers is not None and not cited_identifiers <= set(declared_identifiers):
+            raise ValueError(
+                f"{condition}: response cites identifiers outside the declared robot-visible set"
+            )
+        allowed_evidence = reference["allowed_evidence"]
+        if declared_identifiers is not None:
+            if not isinstance(allowed_evidence, dict) or "evidence_identifiers" in allowed_evidence:
+                raise ValueError("reference allowed evidence cannot carry citation identifiers twice")
+            allowed_evidence = {
+                **allowed_evidence,
+                "evidence_identifiers": declared_identifiers,
+            }
         rows.append(
             {
                 "schema": "crane-diagnostic-annotation-row/v1",
@@ -67,7 +100,7 @@ def build_rows(
                 "reference_status": reference["reference_status"],
                 "required_units": reference["required_units"],
                 "prohibited_claims": reference["prohibited_claims"],
-                "allowed_evidence": reference["allowed_evidence"],
+                "allowed_evidence": allowed_evidence,
                 "response_text": output["text"],
             }
         )

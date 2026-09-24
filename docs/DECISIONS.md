@@ -1436,3 +1436,16 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Paper value: fixing this narrow boundary is higher value than more episodes because the current
   responses cannot support candidate selection. Confirmation remains closed and alpha remains
   0.000/0.050.
+
+## 2026-09-24 — make diagnostic citation identity an explicit evidence contract
+
+- Decision: fresh diagnostic results and references must declare the same permitted evidence-ID
+  set; packet construction embeds that set in allowed robot-visible evidence and rejects undeclared
+  citations.
+- Evidence: qualified Luna correctly rejected P/T hashes that were real in retained artifacts but
+  absent from the blinded packet. This made the semantic audit information-incomplete.
+- Boundary: do not modify the frozen Luna v7 caller, prompt, rubric, or qualification. Identifiers
+  travel inside the existing allowed-evidence field. Historical packets and negative labels remain
+  immutable.
+- Expected effect: future P, R, T, and Luna receive the same citation basis, preventing both unfair
+  citation rejection and post-hoc laundering of an unsupported source identity.
