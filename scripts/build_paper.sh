@@ -8,6 +8,14 @@ tectonic_url="https://github.com/tectonic-typesetting/tectonic/releases/download
 output_dir="${1:-${workspace_root}/output/pdf}"
 tool_dir="$(mktemp -d)"
 
+if [[ -z "${SOURCE_DATE_EPOCH:-}" ]]; then
+  SOURCE_DATE_EPOCH="$(
+    git -C "${workspace_root}" log -1 --format=%ct -- paper/main.tex paper/references.bib \
+      2>/dev/null || printf '0'
+  )"
+fi
+export SOURCE_DATE_EPOCH
+
 cleanup() {
   rm -rf "${tool_dir}"
 }

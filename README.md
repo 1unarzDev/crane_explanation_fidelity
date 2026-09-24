@@ -342,6 +342,8 @@ with no unresolved result placeholders. It reports deterministic development mea
 information-parity negative findings, 13/13 proposed-method fallback, and the failed bounded Luna
 judge qualification; it makes no semantic superiority claim. The original human workflow remains
 available but incomplete, and automated labels are never represented as human annotations.
+The build pins `SOURCE_DATE_EPOCH` to the latest checked-out paper-source commit unless the caller
+explicitly sets it, so repeated builds of one paper revision are byte-identical.
 The readiness audit passes only when the selected page category, anonymity, PDF, and numeric
 traceability gates all pass. It is a mechanical gate, not peer review or submission authorization.
 

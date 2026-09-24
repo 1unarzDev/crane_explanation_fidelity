@@ -3756,5 +3756,10 @@
   clone fast-forwarded to that public commit and ran `scripts/verify_submission_reproduction.sh`.
   The paper gate passed at six pages, both land outputs were byte-identical, and command-motion was
   semantically identical after blind recomputation.
+- **PDF DETERMINISM:** two builds with the same commit-derived `SOURCE_DATE_EPOCH` produced
+  byte-identical PDFs with SHA-256
+  `43897d9a5e0dae5d2498925ee003f3e4109a75e5f37d578798eec73fcf21acd7`. The build script now sets
+  that epoch from the latest checked-out paper-source commit by default; callers may override it
+  explicitly.
 - **BOUNDARY:** this validates restoration and deterministic recomputation, not ROS/Unity runtime
   execution, semantic annotation, human trust, a method effect, or portal submission.
