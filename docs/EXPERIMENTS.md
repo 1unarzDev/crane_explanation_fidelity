@@ -4345,3 +4345,16 @@
   audit records that limitation and must not claim commit-proven binary provenance. Exact post-run
   evaluator-truth admission is still required. No episode, model call, Luna call, campaign, or
   alpha expenditure was created by this implementation.
+
+## 2026-09-24 — full-bundle land binding qualification v2 predeclaration
+
+- **STATUS:** `PREDECLARED / NOT_RUN`; one attempt, no language or judge calls.
+- **RUN:** `diagnostic-land-binding-dev-007`, v4 layout
+  `diagnostic-development-connected-detour-007`, seed 62006, ROS domain 129, port 12327. This is a
+  different fresh layout, not a retry or replacement of retained rejected run/layout 006.
+- **PRELAUNCH GATE:** pin build manifest `c210a098...a227`, managed assemblies
+  `387c769...2aaa`, runtime resources `9f3c231...baff`, and catalog `c2603491...f8a`; require
+  checkout-matching warehouse source/scene and exact catalog bytes inside runtime resources.
+- **POSTRUN GATE:** require exact v4 proving-ground evaluator truth for layout 007, seed/mechanism/
+  expected outcome, obstacle identities, and active state. Retain success or failure once; do not
+  substitute a different layout. No downstream diagnosis is authorized unless both gates pass.
