@@ -1180,3 +1180,7 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Revisit condition: add an independently recruited human audit if feasible; restrict or label a
   category exploratory if held-out Luna qualification misses its predeclared gate.
 - Protocol: `docs/LUNA_ANNOTATION_PROTOCOL.md`.
+- Outcome: prompt/suite v1 and the single authorized v2 clarification both failed development
+  qualification. V2 medium/high eliminated false material-error decisions but missed the 95%
+  required-unit gate. No effort was frozen; held-out and study scoring remain `NOT_RUN`. Thresholds
+  were not relaxed and prompt iteration stops.

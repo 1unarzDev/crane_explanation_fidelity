@@ -1,7 +1,7 @@
 # Luna automated annotation protocol
 
 Protocol ID: `luna-model-judge-v1`  
-Status: **PREDECLARED — NO STUDY LABELS GENERATED**  
+Status: **DEVELOPMENT QUALIFICATION FAILED — NO STUDY LABELS GENERATED**
 Declared: 2026-09-23
 
 This document defines a separately named automated evaluation arm. It does not amend or replace
@@ -75,8 +75,10 @@ Prompt/suite v1 failed every reasoning configuration on development and is retai
 `manifests/annotation/luna-model-judge-v1-development-v1.json`. Before any held-out call, v2 made
 one bounded clarification of rubric-derived output semantics and corrected ambiguous/incorrect
 fixture expectations through a hashed additive amendment. V1 is not overwritten or presented as a
-successful validation. No further prompt iteration is authorized by this protocol without another
-prospective decision entry.
+successful validation. V2 also failed: medium and high made no false material-error decisions and
+exceeded 94% core-field accuracy, but achieved only 93.75% and 87.5% required-unit accuracy against
+the fixed 95% gate. No effort was frozen, and neither held-out nor study scoring ran. No further
+prompt iteration is authorized by this protocol without another prospective decision entry.
 
 ## Input boundary and isolation
 

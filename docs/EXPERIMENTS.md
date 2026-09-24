@@ -3687,3 +3687,20 @@
   development clarification may be declared before any held-out call; v1 remains a negative result.
 - **ARTIFACT:** governed by `model_outputs.dvc`; tracked summary is
   `manifests/annotation/luna-model-judge-v1-development-v1.json`.
+## 2026-09-23 — Luna model-judge v2 development qualification also failed closed
+
+- **SCOPE:** one authorized clarification rerun over the same 14 development cases at low, medium,
+  and high reasoning. No held-out or study response was evaluated.
+- **CHANGE:** prompt v2 fixed explicit output-label semantics; a hashed additive suite amendment
+  corrected v1 reference ambiguities before any held-out call. Evidence and candidate answers were
+  unchanged. V1 remains retained.
+- **RESULT:** `NO_CONFIGURATION_QUALIFIED`. Medium/high had zero false acceptances, zero false
+  rejections, and 94.4%/95.3% core-field accuracy, but required-unit accuracy was 93.75%/87.5%,
+  below the fixed 95% gate. Low achieved 92.5% core accuracy and 81.25% unit accuracy but also
+  failed material-error and presentation-invariance gates. All 42 calls returned valid schemas.
+- **RESOURCE USE:** 565,521 input tokens, 22,429 output tokens, and 564,595 ms aggregate latency;
+  monetary cost was not reported.
+- **DISPOSITION:** stop prompt iteration. No Luna effort is frozen. Held-out qualification and
+  bulk legacy/diagnostic annotation remain `NOT_RUN`; the manuscript cannot report Luna-assessed
+  method effects from this arm. Artifacts are governed by `model_outputs.dvc` and summarized in
+  `manifests/annotation/luna-model-judge-v1-development-v2.json`.

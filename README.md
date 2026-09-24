@@ -323,10 +323,12 @@ scripts/build_paper.sh
 python scripts/audit_submission_readiness.py --category full
 ```
 
-This writes `output/pdf/main.pdf`. The current seven-page manuscript is a full-paper scaffold with
-an explicit method/evaluation-boundary figure and a bounded diagnostic-answer example. It is not
-submission-ready or yet page-category compliant: blinded annotation, final analysis, the results
-section, and every red pending marker remain incomplete.
+This writes `output/pdf/main.pdf`. The current manuscript is a full-paper scaffold with an explicit
+method/evaluation-boundary figure and a bounded diagnostic-answer example. It is not submission-ready
+or yet page-category compliant: the bounded Luna judge failed both development qualifications, so
+held-out/study semantic scoring, final analysis, the results section, and every red pending marker
+remain incomplete. The original human workflow remains available but incomplete; automated labels
+are never represented as human annotations.
 The readiness audit intentionally exits nonzero until the chosen category, anonymity, PDF, and
 traceability gates all pass.
 

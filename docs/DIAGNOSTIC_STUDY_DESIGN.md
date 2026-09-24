@@ -250,8 +250,10 @@ executable v2 computation as P. Project review finds R matches the checked answe
 stronger plan-following and approximately-per-metre update language; raw P is aligned but the fixed
 verifier rejects `route change from` under a narrower lexical matcher and final P falls back to T.
 These are not labels. The packet raises the development inventory to 52 responses, thirteen
-packets, and nine clusters, with human annotation/adjudication, protocol freeze, held-out
-collection, and inference still `NOT_RUN`. Aggregate immutable fallback is 13/13.
+packets, and nine clusters. The separately declared Luna arm failed two bounded development
+qualifications and therefore did not reach held-out or study scoring; human annotation/adjudication,
+protocol freeze, held-out collection, and inference remain `NOT_RUN`. Aggregate immutable fallback
+is 13/13.
 
 ## Other retained development cases at 2026-09-23
 
