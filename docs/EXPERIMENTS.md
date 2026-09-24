@@ -3919,3 +3919,15 @@
 - **DISPOSITION:** no freeze, no fresh `QN` held-out execution, no study labels, and no confirmatory
   alpha consumption. Report SHA-256:
   `4c80b810de2c4501acbb9e9f1530c82d9f4808a6bed42db3893f5b236f6707be`.
+
+## 2026-09-24 — final high-effort v4 development predeclaration
+
+- **STATUS:** `PREDECLARED / NOT_RUN`; fresh `QN` held-out executions remain zero.
+- **CONFIGURATION:** unchanged v4 prompt, suite, schema, rubrics, thresholds, isolation, and model;
+  high reasoning only over the same 28 exposed development cases.
+- **RATIONALE:** v4-medium left a narrow omission/materiality error and two unit-status misses.
+  Earlier high results used older prompts, so one high-only test can assess whether additional
+  reasoning follows the new literal boundary without spending fresh held-out cases.
+- **STOPPING:** every gate must pass before a high-effort freeze. Do not rerun low/medium and do not
+  retry usable judgments. Any high development or later held-out miss ends evaluator configuration
+  search for this submission and requires a prospective endpoint narrowing or replacement.

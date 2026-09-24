@@ -1,0 +1,27 @@
+{
+  "schema": "crane-luna-judge-development-predeclaration/v1",
+  "arm_id": "luna-model-judge-v1",
+  "prompt_version": "luna-model-judge-v4",
+  "configuration_id": "luna-model-judge-v4-high-final",
+  "declared_utc_date": "2026-09-24",
+  "status": "PREDECLARED_NOT_RUN",
+  "prompt": {
+    "path": "research/explanation_fidelity/prompts/luna-model-judge-v4.md",
+    "sha256": "a660135be8dd742f5e9547685b5aa09ff7de45bf7dd6240289f7ff7e41dfd15a"
+  },
+  "suite": {
+    "path": "research/explanation_fidelity/qualification/luna-model-judge-v4-fresh-heldout.json",
+    "sha256": "a1e7fca7896e5685b41639522c701007b1726b4f3b6470aa51115d9d14763538",
+    "development_cases": 28,
+    "fresh_heldout_cases": 14,
+    "fresh_heldout_model_executions_at_declaration": 0
+  },
+  "model": "gpt-6-luna",
+  "reasoning_efforts": ["high"],
+  "basis": "The unchanged v4 prompt at medium left one false material-error rejection and two exact unit-status misses. Prior high tests used older prompts, so one high-only v4 development test is informative without opening fresh heldout cases.",
+  "development_rule": "Run each exposed development case once at high reasoning. Every unchanged gate must pass. Do not rerun medium or low and do not retry a usable unfavorable judgment.",
+  "heldout_rule": "Only a full development pass permits a committed high-effort freeze followed by exactly two isolated passes over the still-fresh QN cases.",
+  "hard_stop": "If high fails any development or fresh-heldout gate, stop prompt/configuration search for this submission, retain the failure, and narrow or replace the semantic endpoint prospectively rather than continuing evaluator tuning.",
+  "study_evaluation_allowed": false,
+  "confirmatory_alpha_consumed": 0.0
+}

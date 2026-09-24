@@ -14,7 +14,7 @@ Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 | Information/tool/resource parity | DRAFT | Audit at campaign freeze |
 | Target land strata | PARTIAL | Existing cases are development only; fresh generators/configurations required |
 | Target surface strata | NOT_READY | Both geometric and command--motion admission required; do not reallocate weight |
-| Luna development qualification | V4 FAILED | One false rejection and 31/33 units; no configuration frozen |
+| Luna development qualification | V4 HIGH PREDECLARED | Final high-only run; unchanged prompt/suite; not yet executed |
 | Luna held-out qualification | V2 FAILED / V4 NOT_RUN | 14 fresh v4 cases remain unopened; no study scoring allowed |
 | Replication configurations reserved | NOT_RUN | Reserve before discovery collection |
 | Sequential null simulation | PASS_QA | 20,000 replicates per endpoint; all boundary estimates below component alpha 0.02 |
@@ -67,11 +67,11 @@ Record, without deleting earlier rows:
 
 ## Next action
 
-Do not collect confirmatory responses or open the v4 fresh held-out split. V4 failed its development
-gates and cannot be retried. Reassess whether one final bounded configuration test (for example,
-high reasoning under the unchanged v4 prompt and development suite) has greater expected value than
-a deterministically checkable narrower endpoint. Candidate/baseline/resource freezing, target-
-stratum readiness, and replication reservation remain independently incomplete.
+Do not collect confirmatory responses or open the v4 fresh held-out split. Execute the final
+predeclared high-only development run once. If it fails, stop evaluator configuration search for
+this submission and prospectively narrow or replace the semantic endpoint. Candidate/baseline/
+resource freezing, target-stratum readiness, and replication reservation remain independently
+incomplete.
 
 ## Held-out judge result (2026-09-24)
 

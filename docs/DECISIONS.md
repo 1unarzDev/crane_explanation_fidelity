@@ -1324,3 +1324,16 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Guardrails: same Luna alias, medium effort, schema, rubrics, thresholds, isolation, and retry
   policy. V4 must pass every development gate, then be hash-frozen before exactly two fresh held-out
   passes. Any miss is retained and study scoring remains prohibited.
+
+## 2026-09-24 — authorize one final high-only v4 configuration test
+
+- Decision: run the unchanged v4 prompt/suite once at high reasoning on the 28 exposed development
+  cases. Do not open the fresh held-out split unless every development gate passes.
+- Evidence: medium v4 missed one material-error category case and two unit statuses; earlier high
+  runs used older prompts and do not resolve whether the literal v4 boundary benefits from greater
+  reasoning effort.
+- Cost comparison: this bounded test directly addresses the primary-endpoint blocker. Another robot
+  episode, figure, or manuscript pass cannot establish semantic-judge validity.
+- Hard stop: failure at high development or later fresh held-out qualification ends Luna prompt/
+  configuration search for this submission. Preserve the result and prospectively narrow or replace
+  the endpoint rather than tuning against qualification outcomes.
