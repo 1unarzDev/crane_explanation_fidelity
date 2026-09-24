@@ -1,5 +1,17 @@
 # Experiment Log
 
+## 2026-09-24 — prospectively bind independent ambiguity mask/reference
+
+- **STATUS:** `AMENDED BEFORE FIRST AMBIGUITY RUN / TESTED / NOT_RUN`. Audit before fixed run 003
+  found that the historical mask correctly marked its paired variant as zero independent scenarios,
+  while the historical evaluator embedded that old case's abort sequence. Neither is valid for the
+  new independently configured ambiguity clusters.
+- **CHANGE:** amendment 1 pins a v2 mask whose schedule ID is `remove-delivered-odometry-v1`, whose
+  sole future method packet contains no odometry, and whose independent-cluster increment is one. A
+  separate v2 reference derives action status and execution counts from the current cluster.
+- **UNCHANGED:** schedule/order/interventions, raw evidence, diagnostic thresholds, semantic block,
+  replication reservation, and alpha state. No ambiguity run or output existed at amendment time.
+
 ## 2026-09-24 — land command--motion physical cohort run 002
 
 - **STATUS:** `VALID PHYSICAL + INDEPENDENT REFERENCE WITH RETAINED TEARDOWN ANOMALY / 2 OF 100

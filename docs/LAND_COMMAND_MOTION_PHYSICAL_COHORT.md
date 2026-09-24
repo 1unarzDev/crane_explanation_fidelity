@@ -59,6 +59,12 @@ a delivered-command/measured-motion discrepancy or its absence. It cannot establ
 actuator accepted the command, that Nav2 consumed delivered odometry, the evaluator intervention,
 or a unique cause such as obstruction, collision, slip, or motor failure.
 
+Before the first scheduled ambiguity run, amendment 1 replaced the historical paired-mask adapter
+for this cohort only. The versioned v2 mask marks each scheduled ambiguity case as one independent
+cluster, exposes only the masked export to future methods, and derives status and execution counts
+from that cluster. Its independent v2 reference cannot inherit the old development case's abort or
+attempt counts. Historical paired-mask files and results remain unchanged.
+
 ## Statistical boundary
 
 No semantic P--R result, confidence sequence, guardrail, significance claim, or alpha expenditure

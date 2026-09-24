@@ -9,6 +9,7 @@ CONTRACT = (
     / "research/explanation_fidelity/experiment_configs/prospective/"
     / "land-command-motion-physical-cohort-v1.json"
 )
+AMENDMENT = CONTRACT.with_name("land-command-motion-physical-cohort-v1-amendment-1.json")
 
 
 def _sha256(relative: str) -> str:
@@ -61,3 +62,16 @@ def test_semantic_activation_and_replication_fail_closed():
     assert contract["relationship_to_registered_framework"]["alpha_allocation"] == "UNBOUND"
     assert contract["physical_schedule"]["replication_collection_authorized"] is False
     assert contract["physical_schedule"]["replacements_allowed"] is False
+
+
+def test_independent_ambiguity_amendment_binds_versioned_adapters():
+    amendment = json.loads(AMENDMENT.read_text(encoding="utf-8"))
+    assert amendment["timing"]["ambiguous_runs_already_attempted"] == []
+    assert amendment["timing"]["ambiguous_outputs_or_labels_inspected"] is False
+    resolution = amendment["resolution"]
+    for path_field, hash_field in (
+        ("mask", "mask_sha256"),
+        ("independent_reference", "independent_reference_sha256"),
+        ("complete_reference_builder", "complete_reference_builder_sha256"),
+    ):
+        assert _sha256(resolution[path_field]) == resolution[hash_field]

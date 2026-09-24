@@ -1,0 +1,44 @@
+{
+  "schema": "crane-land-command-motion-physical-cohort-amendment/v1",
+  "amendment": 1,
+  "declared_date": "2026-09-24",
+  "status": "PROSPECTIVE_BEFORE_FIRST_AMBIGUITY_RUN",
+  "parent": "research/explanation_fidelity/experiment_configs/prospective/land-command-motion-physical-cohort-v1.json",
+  "timing": {
+    "physical_runs_already_attempted": [
+      "cm-land-conf-001",
+      "cm-land-conf-002"
+    ],
+    "ambiguous_runs_already_attempted": [],
+    "ambiguous_outputs_or_labels_inspected": false,
+    "next_fixed_run": "cm-land-conf-003"
+  },
+  "defect": "The historical missing-odometry mask encoded independent_scenario_increment=0 because it represented a paired variant, and its historical independent evaluator hardcoded one aborted three-attempt sequence. The new schedule's ambiguity cases are independently configured clusters with potentially different execution outcomes.",
+  "resolution": {
+    "schedule_operation": "remove-delivered-odometry-v1",
+    "mask": "analysis/mask_command_motion_evidence_v2.py",
+    "mask_sha256": "57a651cc82f8faf68819dbfb0fd3487f782b4d0a9099e556be9633537e7f6e3d",
+    "independent_reference": "analysis/reference_command_motion_missing_odometry_v2.py",
+    "independent_reference_sha256": "5d6fd4f10fc6b79265ab31313e56e14708d1f72ad7fd66238c17bb1dcb878133",
+    "complete_reference_builder": "analysis/build_command_motion_missing_reference_v2.py",
+    "complete_reference_builder_sha256": "86c7e527ea8641fdaac79fca2f2ef9d8c331ec13cfdd90bf95bac06d7d05374c",
+    "required_properties": [
+      "the masked export is the sole method-visible export for that independently configured cluster",
+      "delivered odometry samples are absent while delivered commands and execution evidence remain",
+      "independent_scenario_increment equals 1",
+      "action status and execution counts are derived from the current cluster rather than a historical template",
+      "the reference classifies command-to-motion diagnosis as insufficient and the retained execution sequence as answerable"
+    ]
+  },
+  "unchanged": [
+    "physical schedule, cluster identities, order, family quotas, layouts, seeds, interventions, ports, and domains",
+    "one-attempt and no-replacement rules",
+    "raw robot-visible capture and evaluator-only separation",
+    "diagnostic thresholds and command-motion computation",
+    "semantic activation remains blocked",
+    "replication remains unauthorized",
+    "minimum worthwhile difference and all guardrails",
+    "confirmatory alpha remains unbound and unconsumed"
+  ],
+  "historical_boundary": "The historical mask and evaluator remain unchanged for their prior paired development artifacts. This amendment applies only to the independently configured ambiguity clusters in the frozen v1 physical schedule."
+}
