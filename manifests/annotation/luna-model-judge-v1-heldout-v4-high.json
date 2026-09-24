@@ -1,0 +1,22 @@
+{
+  "schema": "crane-luna-judge-heldout-result/v1",
+  "arm_id": "luna-model-judge-v1",
+  "freeze_id": "luna-model-judge-v4-high-fresh-heldout",
+  "executed_utc_date": "2026-09-24",
+  "status": "HELDOUT_QUALIFICATION_FAILED",
+  "study_evaluation_allowed": false,
+  "result": {
+    "path": "model_outputs/automated_annotations/luna-model-judge-v1/heldout-v4-high/heldout-qualification.json",
+    "sha256": "14c428b5a6cf6e8d508e52d9ed89edf4ecfb3d75cde2891e1fc52f0439e8d63b",
+    "governance": "model_outputs.dvc"
+  },
+  "passes": {
+    "pass-1": {"qualified": false, "false_acceptances": 0, "false_rejections": 1, "unexpected_unresolved": 0, "required_unit_correct": 15, "required_unit_total": 16, "core_field_correct": 101, "core_field_total": 107, "failed_gates": ["category_material_error_rates", "required_unit_accuracy"]},
+    "pass-2": {"qualified": false, "false_acceptances": 0, "false_rejections": 2, "unexpected_unresolved": 0, "required_unit_correct": 15, "required_unit_total": 16, "core_field_correct": 99, "core_field_total": 107, "failed_gates": ["category_material_error_rates", "required_unit_accuracy"]}
+  },
+  "resource_use": {"valid_calls": 28, "attempts": 28, "transport_retries": 0, "input_tokens": 387018, "cached_input_tokens": 344064, "output_tokens": 16641, "reasoning_output_tokens": 5940, "aggregate_latency_ms": 439570.863568, "cost_usd": null},
+  "hard_stop_activated": true,
+  "interpretation": "Both fresh heldout passes failed the frozen omission-category and required-unit gates. Study scoring is prohibited and evaluator prompt/configuration search stops for this submission.",
+  "confirmatory_alpha_consumed": 0.0,
+  "study_responses_scored": 0
+}

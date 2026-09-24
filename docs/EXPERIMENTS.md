@@ -3946,3 +3946,15 @@
   `972985980f8811d12ac02e582cab635d206ca24f28296730860606bd624a42e2`.
 - **LIMIT:** development selection does not qualify the judge or authorize study scoring. Both
   fresh held-out passes must independently pass every frozen gate.
+
+## 2026-09-24 — Luna v4 high fresh held-out qualification failed; hard stop
+
+- **STATUS:** `HELDOUT_QUALIFICATION_FAILED / EVALUATOR_SEARCH_STOPPED`.
+- **PASS 1:** zero false acceptances, one false rejection, zero unresolved, 15/16 units, 101/107
+  core fields. **PASS 2:** zero false acceptances, two false rejections, zero unresolved, 15/16
+  units, 99/107 core fields. Both failed omission-category and required-unit gates; all boundary,
+  injection, invariance, core, unresolved, and false-acceptance gates passed.
+- **EXECUTION:** 28 valid calls, no retries/failures; 387,018 input tokens (344,064 cached), 16,641
+  output tokens including 5,940 reasoning tokens, and 439,571 ms latency; cost unavailable.
+- **DISPOSITION:** activate the predeclared hard stop. No study labels, no confirmatory alpha, no
+  further judge tuning. Report SHA-256 `14c428b5a6cf6e8d508e52d9ed89edf4ecfb3d75cde2891e1fc52f0439e8d63b`.

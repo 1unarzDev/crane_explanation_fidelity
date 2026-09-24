@@ -147,6 +147,13 @@ error rejection on a truthful vague answer and achieved 31/33 exact required-uni
 (93.9%), below the unchanged 95% gate. No configuration was frozen and none of the 14 fresh `QN`
 held-out cases was executed. Study scoring remains prohibited.
 
+A final predeclared high-reasoning v4 configuration passed development but failed both fresh
+held-out passes. Pass 1 made one false rejection and scored 15/16 units; pass 2 made two false
+rejections and scored 15/16 units. Both again failed diagnostic-omission/vague-correct category
+gates while passing boundary, injection, invariance, core-field, unresolved, and zero-false-
+acceptance gates. The declared hard stop is active: no study scoring and no further Luna prompt or
+configuration tuning for this submission.
+
 ## Input boundary and isolation
 
 Every response is judged in a new API request with no conversation history and no model tools. The
