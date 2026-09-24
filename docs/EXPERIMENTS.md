@@ -4633,3 +4633,6 @@
   `manifests/data/diagnostic-land-composition-dev-009-disposition.json`. No diagnostic export,
   independent reference, model call, or Luna call was produced. The run adds zero confirmatory
   clusters and consumes 0.000/0.050 alpha; P remains `NOT_READY`.
+- **REGRESSION:** all 263 umbrella-owned `tests/` and `analysis/` tests passed, the focused eight
+  frozen-integrity tests passed, data governance passed, and the local DVC cache and R2 remote
+  reported in sync. Frozen F/G/H artifacts were not modified.
