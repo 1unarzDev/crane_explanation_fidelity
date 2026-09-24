@@ -1,5 +1,30 @@
 # Decision Log
 
+## 2026-09-24 — Advance command--motion candidate v3 to confirmatory planning only
+
+- **Decision:** Candidate v3 met its prospectively declared bounded development-readiness gate and
+  may be used to design a new confirmatory campaign. Do not activate a campaign or inspect any
+  confirmatory response until the method, strongest baseline, Luna-v7 profile and references,
+  scenario distribution, guardrails, alpha allocation, stopping rule, and fresh replication
+  reservation are atomically frozen.
+- **Evidence:** Six of six fixed physical configurations were attempted once and admitted; the
+  paired ambiguous mask was valid; P-minus-R was +4 in both Luna passes; P had zero material
+  errors and no relative coverage degradation. The result is development-only and used zero
+  confirmatory alpha.
+- **Alternatives considered:** reject the candidate despite passing the gate; extend development
+  sampling; or start confirmation immediately. Rejection would ignore the registered screen,
+  extension would create an unbounded selection loop, and immediate collection would precede the
+  required fairness/statistical freeze.
+- **Impact:** the next highest-value work is confirmatory protocol finalization and fresh episode
+  reservation, followed by independent collection—not another candidate revision or environment
+  expansion.
+- **Validity risk:** the readiness advantage is based on six independent development clusters,
+  one clustered evidence mask, and repeated Luna measurements. Run 006 includes an internally
+  inconsistent R judge label/rationale. None of this is confirmatory evidence.
+- **Revisit:** only if the prospective freeze audit exposes an information/resource imbalance or a
+  failed judge/reference requirement, or if a separately governed confirmatory campaign fails its
+  registered guardrails or futility rule.
+
 ## 2026-09-24 — revise diagnostic language by removing inferred event ordering
 
 - Decision: develop a separately named candidate v3 that renders complete diagnostic intervals and

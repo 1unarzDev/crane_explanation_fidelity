@@ -9,7 +9,7 @@ Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 
 | Gate | Status | Evidence / next action |
 |---|---|---|
-| Candidate P frozen | NOT_READY / V3 PILOT ACTIVE | Candidate v3 run 001 is a valid tie; complete the remaining fixed development runs and mask before applying the readiness gate |
+| Candidate P frozen | READY FOR PROSPECTIVE FREEZE, NOT YET FROZEN | Candidate v3 completed its bounded development screen and met every readiness gate; freeze the complete confirmatory design before inspecting any confirmatory response |
 | Strongest baseline R frozen | DESIGNATED, NOT_HASH_FROZEN | Tool-enabled repository-aware R; freeze exact model/prompts/resources with candidate |
 | Information/tool/resource parity | DRAFT | Audit at campaign freeze |
 | Target land strata | DEVELOPMENT_NAMESPACE_QUALIFIED | V5 build/binding smoke passed; live ROS candidate cases and future confirmatory/replication reservation remain required |
@@ -52,9 +52,35 @@ Legacy and the eleven diagnostic-development clusters are intentionally absent f
 
 ## Candidate-v3 development readiness pilot
 
-The prospectively declared six-configuration candidate-v3 pilot is in progress. Run
-`cmv3-dev-001` was attempted once and governed as one valid independent development cluster. The
-exact player and scenario binding passed, Unity recorded zero errors/exceptions, and the independent
+The candidate-v3 development pilot is complete. All six prospectively declared physical
+configurations were attempted exactly once and yielded valid independent recordings; the one
+paired no-odometry mask is also valid and contributes zero independent clusters. P passed the
+supported-diagnostic-success endpoint in both Luna-v7 passes for every paired measurement, with
+zero material errors and no relative coverage degradation. Cumulative P-minus-R is +4 in each
+pass, exceeding the fixed +2 threshold. The candidate is therefore
+`READY_FOR_CONFIRMATION_PLANNING`—not confirmed, statistically significant, or publication-ready.
+No confirmatory campaign is active and alpha remains `0.000/0.050`.
+
+Run `cmv3-dev-006`, the fixed nominal clear-route control, succeeded after 17.478 m with one
+FollowPath attempt, zero failures, and zero source-qualified Wait invocations. The independent
+calculation agreed that the command--motion diagnostic did not trigger. P passed both Luna
+measurements. R failed both composite endpoints for different retained judge reasons: pass 1 found
+one material unsupported assertion, while pass 2 set mechanism identification to not applicable
+despite a rationale that described the premise rejection as correct. No third vote or repair was
+performed. Both answers were partial under the generic physical next-check reference. See
+`manifests/data/cmv3-dev-006-disposition.json` and
+`manifests/data/command-motion-candidate-v3-pilot-v1-summary.json`.
+
+The next admissible step is a prospective campaign freeze: candidate and baseline artifacts,
+exact Luna profile and references, fresh target distribution, guardrails, alpha allocation,
+sequential rule, and replication reservation must all be fixed before any confirmatory outcome is
+opened. The completed development screen alone cannot support a paper effect claim.
+
+### Retained run-by-run history
+
+The prospectively declared six-configuration candidate-v3 pilot began with run
+`cmv3-dev-001`, which was attempted once and governed as one valid independent development cluster.
+The exact player and scenario binding passed, Unity recorded zero errors/exceptions, and the independent
 reference matched the checked diagnostic before any model call. Both P and R passed the supported-
 diagnostic-success endpoint without material error in both isolated Luna-v7 passes, so cumulative
 P-minus-R was 0 in each pass for the unmasked run. This tie is retained and does not alter the fixed
@@ -87,9 +113,10 @@ passes with full coverage and no material error. Current state is 4/6 valid inde
 minimum numerical gates are provisionally satisfied, but the fixed pilot cannot stop early;
 `cmv3-dev-005` and `cmv3-dev-006` remain mandatory. Confirmation is inactive at `0.000/0.050`.
 
-Run `cmv3-dev-005` is governed as a valid transient-compensation tie. Current state is 5/6 valid
-clusters, 1/1 ambiguous variants, cumulative P-minus-R +3 in each pass, and zero P material errors.
-The sole fixed `cmv3-dev-006` attempt remains mandatory before readiness classification.
+Run `cmv3-dev-005` was governed as a valid transient-compensation tie. At that checkpoint the
+state was 5/6 valid clusters, 1/1 ambiguous variants, cumulative P-minus-R +3 in each pass, and zero
+P material errors. The sole fixed `cmv3-dev-006` attempt remained mandatory before readiness
+classification and was subsequently completed as recorded above.
 
 Candidate v2 now has an executable development runner. P is the exact checked deterministic
 diagnostic rendering with zero model calls; R gets the identical blind input, source, diagnostic

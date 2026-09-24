@@ -1,0 +1,91 @@
+{
+  "schema": "crane-command-motion-candidate-v3-run-disposition/v1",
+  "recorded_date": "2026-09-24",
+  "run_id": "cmv3-dev-006",
+  "cluster_id": "cmv3-land-006",
+  "status": "VALID_DEVELOPMENT_DIAGNOSTIC_AND_COMPLETE_PAIRED_LUNA_MEASUREMENT",
+  "attempt_count": 1,
+  "retry_performed": false,
+  "admission": {
+    "player_build_audit_accepted": true,
+    "scenario_binding_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "unity_result_valid": true,
+    "unity_logged_errors": 0,
+    "unity_logged_exceptions": 0,
+    "recording_valid": true,
+    "navigation_status": "succeeded",
+    "generic_fixture_expected_outcome_observed": true
+  },
+  "observed": {
+    "displacement_meters": 17.477882385253906,
+    "controller_commands": 675,
+    "odometry_messages": 3405,
+    "costmap_observations": 261,
+    "behavior_tree_transitions": 5,
+    "follow_path_attempts": 1,
+    "follow_path_failures": 0,
+    "source_qualified_wait_invocations": 0
+  },
+  "diagnostic": {
+    "disposition": "not_triggered",
+    "healthy_interval_s": [
+      0.0,
+      5.0
+    ],
+    "healthy_measured_planar_speed_mps": 0.2597399950027466,
+    "discrepancy_interval_s": null,
+    "median_commanded_planar_speed_mps": null,
+    "median_measured_planar_speed_mps": null,
+    "complete_reference_audit_accepted": true
+  },
+  "language_evaluation": {
+    "conditions": [
+      "P",
+      "R"
+    ],
+    "p_model_calls": 0,
+    "r_model_calls": 1,
+    "luna_passes": 2,
+    "luna_calls": 4,
+    "call_failures": 0,
+    "pass_1": {
+      "P_supported_diagnostic_success": true,
+      "R_supported_diagnostic_success": false,
+      "P_material_error": false,
+      "R_material_error": true,
+      "paired_difference": 1
+    },
+    "pass_2": {
+      "P_supported_diagnostic_success": true,
+      "R_supported_diagnostic_success": false,
+      "P_material_error": false,
+      "R_material_error": false,
+      "paired_difference": 1
+    },
+    "judge_inconsistency": "Pass 1 treats R's assertion that transient difficulties remain unresolved as a material unsupported fact; pass 2 treats that wording as supported but assigns mechanism_identification=not_applicable despite its rationale saying R correctly rejected the premise. Both retained R measurements fail the composite endpoint."
+  },
+  "hashes": {
+    "player_build_audit_sha256": "e60f6e5efd5a58b0b724deb1eb931a2219c25daea53853b39a602ae634864a77",
+    "scenario_binding_audit_sha256": "7ff5682e32545dfe91123151585a426ad7efd320a675f61efae75cf992464d60",
+    "robot_visible_events_sha256": "d8a579ad95d1c336646f9329ec2ba5ed598b87fc091a689f5057e7fcf036398d",
+    "diagnostic_export_sha256": "e068134c896b4d102041567f1953974ff23b0c79f9193bb0fa0c7029b64550d7",
+    "independent_reference_sha256": "abb384dbcaa3859a44106fa2d7c47e7119ab9f315a613b248088e277ae9c1c24",
+    "complete_annotation_reference_sha256": "00c2030627553f188bb9519c7f2cba82abbe426f21619a31f7329db3a6d77441",
+    "candidate_result_sha256": "b58aa57c03f54b4a3d988ea80881f784f14df2d014d3038298a984601e9cc48a",
+    "blinded_packet_sha256": "a4dae37a3ae849dbd6fdf17d8776012a5b6af39e07ae3b145d2e27c2b50e9f72",
+    "condition_key_sha256": "a7d4dff272b6dc90d62cd00056c52f23e48628c26feb3c7ff9cbeabf33543adf",
+    "luna_summary_sha256": "08333c33ac2068c54fc839880e8124cace152c523aa213dd7d5bca69570f398f"
+  },
+  "inference": {
+    "independent_cluster_increment": 1,
+    "confirmatory_cluster_increment": 0,
+    "confirmatory_alpha_consumed": 0.0,
+    "candidate_readiness": "READY_FOR_CONFIRMATION_PLANNING",
+    "valid_independent_clusters": 6,
+    "planned_independent_clusters": 6,
+    "valid_ambiguous_variants": 1,
+    "cumulative_p_minus_r_successes_pass_1": 4,
+    "cumulative_p_minus_r_successes_pass_2": 4
+  }
+}

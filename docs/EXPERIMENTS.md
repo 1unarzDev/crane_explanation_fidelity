@@ -1,5 +1,24 @@
 # Experiment Log
 
+## 2026-09-24 — candidate-v3 development pilot completed; readiness gate met
+
+- **STATUS:** the sole fixed run-006 attempt passed exact player-build, 14-field scenario-binding,
+  recording, and Unity error gates. The nominal clear-route action succeeded after 17.478 m. The
+  independent implementation agreed that the command--motion diagnostic did not trigger; the trace
+  contains one FollowPath attempt, zero failures, and zero source-qualified Wait invocations.
+- **LUNA:** P passed both isolated Luna-v7 measurements without material error. R failed both
+  composite endpoints: pass 1 marked “transient difficulties remain unresolved” as a material
+  unsupported assertion; pass 2 instead accepted that wording but assigned
+  `mechanism_identification=not_applicable`, despite its rationale saying the premise was correctly
+  rejected. Both measurements are retained without a third vote or repair. P and R were both
+  partial because neither supplied the generic reference's full physical next-check inventory.
+- **READINESS:** all six declared physical attempts are valid, the paired ambiguous mask is valid,
+  cumulative P-minus-R is +4 in each pass, P has zero material errors, and no relative P coverage
+  degradation was observed. Candidate v3 is therefore `READY_FOR_CONFIRMATION_PLANNING` under the
+  predeclared development gate. This is not significance, does not activate confirmation, and
+  consumes no alpha (`0.000/0.050`). See
+  `manifests/data/command-motion-candidate-v3-pilot-v1-summary.json`.
+
 ## 2026-09-24 — candidate-v3 run 005 retained tie
 
 - **STATUS:** the sole transient attempt passed all admission gates and succeeded after 17.540 m.
