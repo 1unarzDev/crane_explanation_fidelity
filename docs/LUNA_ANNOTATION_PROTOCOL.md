@@ -95,6 +95,14 @@ Based on v2 development only, medium is the sole predeclared reasoning configura
 not rerun. If medium fails any existing gate, judge development stops again. If it passes, its
 prompt/model/settings are frozen before the still-untouched two-pass held-out qualification.
 
+V3 was executed once on 2026-09-24 and failed the same exact-status gate: 15/16 required-unit
+statuses (93.75%), with zero false acceptances, false rejections, call failures, or unexpected
+unresolved judgments. It corrected QD003 to `omitted` under the new literal rule, but the unchanged
+development suite expected the analogous uncommunicated unique-cause limitation in QD011 to be
+`incorrect`. Held-out remained unrun. This exposes a development taxonomy/reference inconsistency
+that must be independently resolved before another judge version; it does not authorize lowering
+the 95% threshold or scoring study answers.
+
 ## Input boundary and isolation
 
 Every response is judged in a new API request with no conversation history and no model tools. The

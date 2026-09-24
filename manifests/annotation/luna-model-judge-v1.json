@@ -2,7 +2,7 @@
   "schema": "crane-automated-annotation-arm-manifest/v1",
   "arm_id": "luna-model-judge-v1",
   "declared_utc": "2026-09-23T00:00:00Z",
-  "status": "V3_DEVELOPMENT_PREDECLARED_NOT_RUN",
+  "status": "V3_DEVELOPMENT_FAILED_NO_STUDY_LABELS",
   "annotation_origin": "automated",
   "human_annotation_requirement": {
     "original_requirement": "two independent human annotators plus distinct human adjudication of disagreements",
@@ -114,7 +114,7 @@
     "inconvenient_label_retry_allowed": false
   },
   "qualification": {
-    "status": "V3_DEVELOPMENT_PREDECLARED_NOT_RUN",
+    "status": "V3_DEVELOPMENT_FAILED_NO_STUDY_LABELS",
     "suite": "research/explanation_fidelity/qualification/luna-model-judge-v2-amendment.json",
     "suite_sha256": "8fadf0225bd48b55538a74dc88e65a5d6673ffdbaff6a1a7542b09e3c1913943",
     "development_cases": 14,
@@ -149,8 +149,8 @@
     {
       "prompt": "research/explanation_fidelity/prompts/luna-model-judge-v3.md",
       "suite": "research/explanation_fidelity/qualification/luna-model-judge-v2-amendment.json",
-      "result_manifest": null,
-      "status": "PREDECLARED_NOT_RUN",
+      "result_manifest": "manifests/annotation/luna-model-judge-v1-development-v3.json",
+      "status": "NO_CONFIGURATION_QUALIFIED",
       "scope": "medium reasoning only; same 14 development cases; heldout remains uninspected"
     }
   ],

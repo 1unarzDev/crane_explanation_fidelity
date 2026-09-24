@@ -155,9 +155,10 @@ cmp /tmp/diagnostic-sequential-simulation-v2.json \
 
 Before confirmation, freeze and hash the Luna rubric, prompt, schema, model/provider/settings,
 independent references, two isolated passes, deterministic disagreement rules, retry policy, and
-held-out qualification report. Judge development and held-out cases are disjoint. The current
-v1/v2 judge failed development qualification and is ineligible. More study responses cannot repair
-judge validity.
+held-out qualification report. Judge development and held-out cases are disjoint. Luna judge
+versions v1--v3 failed development qualification and are ineligible; v3 additionally exposed an
+omitted-versus-incorrect required-unit reference-taxonomy conflict. More study responses cannot
+repair judge validity.
 
 Reserve fresh configuration identities before discovery. Replication uses byte-identical P/R,
 evidence contract, prompts, tools, thresholds, judge, and analysis hashes; it reuses no discovery

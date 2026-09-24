@@ -3817,3 +3817,20 @@
   labels, evidence, answers, schema, thresholds, or held-out cases.
 - **STOPPING:** one judgment per development case, immutable caching, transport retry only under the
   existing bounded policy. Pass every gate to freeze; otherwise retain failure and stop.
+
+## 2026-09-24 — Luna model-judge v3 development qualification failed closed
+
+- **SCOPE:** the predeclared 14 development cases at medium reasoning only; held-out and study
+  responses remained unrun.
+- **RESULT:** `NO_CONFIGURATION_QUALIFIED`. All 14 calls returned valid schemas with zero false
+  acceptances, zero false rejections, and zero unexpected unresolved labels. Core-field accuracy was
+  94.4%, but exact required-unit status remained 15/16 (93.75%), below the unchanged 95% gate.
+- **FINDING:** v3 consistently treated an uncommunicated limitation as `omitted`. This fixed QD003
+  but disagreed with QD011's unchanged `incorrect` expectation for the analogous pattern. The
+  negative result is retained; neither expectation nor output is altered after execution.
+- **RESOURCE USE:** 191,615 input tokens, 152,064 cached input tokens, 7,927 output tokens, and
+  186,283 ms aggregate latency; cost was not reported by the provider path. The isolated client
+  again retained its fallback-model-metadata warning.
+- **DISPOSITION:** no effort is frozen. Audit the development reference taxonomy independently
+  before any new judge version. Do not run held-out, score study answers, lower the threshold, or
+  retry the inconvenient label.

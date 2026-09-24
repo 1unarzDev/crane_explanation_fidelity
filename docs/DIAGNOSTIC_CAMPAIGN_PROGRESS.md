@@ -14,7 +14,7 @@ Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 | Information/tool/resource parity | DRAFT | Audit at campaign freeze |
 | Target land strata | PARTIAL | Existing cases are development only; fresh generators/configurations required |
 | Target surface strata | NOT_READY | Both geometric and command--motion admission required; do not reallocate weight |
-| Luna development qualification | FAILED | `luna-model-judge-v1` is ineligible |
+| Luna development qualification | FAILED | V1--V3 are ineligible; v3 exposed an omitted/incorrect reference-taxonomy conflict |
 | Luna held-out qualification | NOT_RUN | Requires a newly declared judge version that first passes development |
 | Replication configurations reserved | NOT_RUN | Reserve before discovery collection |
 | Sequential null simulation | PASS_QA | 20,000 replicates per endpoint; all boundary estimates below component alpha 0.02 |
@@ -67,6 +67,7 @@ Record, without deleting earlier rows:
 
 ## Next action
 
-Do not collect confirmatory responses. First develop and independently qualify a new Luna judge
-version, validate the missing fresh surface strata or prospectively register a land-only target,
-then freeze the candidate/baseline/resource contract and reserve replication configurations.
+Do not collect confirmatory responses. First independently audit and repair the development
+required-unit taxonomy before declaring any new Luna version; then qualify the judge, validate the
+missing fresh surface strata or prospectively register a land-only target, freeze the candidate/
+baseline/resource contract, and reserve replication configurations.

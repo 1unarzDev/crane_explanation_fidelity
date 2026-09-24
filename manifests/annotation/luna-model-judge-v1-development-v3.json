@@ -1,0 +1,38 @@
+{
+  "schema": "crane-luna-judge-development-result/v1",
+  "arm_id": "luna-model-judge-v1",
+  "prompt_version": "luna-model-judge-v3",
+  "suite_version": "luna-model-judge-v2-qualification",
+  "executed_utc_date": "2026-09-24",
+  "status": "NO_CONFIGURATION_QUALIFIED",
+  "result": {
+    "path": "model_outputs/automated_annotations/luna-model-judge-v1/qualification-v3/development-selection.json",
+    "sha256": "3fbe6e6a1ae22257288ed77dd164da3cb7b90596603a23103bdf976b15a1d442",
+    "governance": "model_outputs.dvc"
+  },
+  "cases": 14,
+  "reasoning_efforts": ["medium"],
+  "selected_calls": 14,
+  "selected_call_statuses": {"VALID": 14},
+  "selected_input_tokens": 191615,
+  "selected_cached_input_tokens": 152064,
+  "selected_output_tokens": 7927,
+  "selected_aggregate_latency_ms": 186282.974081,
+  "cost_usd": null,
+  "cost_status": "not_reported_by_codex_cli_provider_path",
+  "effort": {
+    "medium": {
+      "qualified": false,
+      "false_acceptances": 0,
+      "false_rejections": 0,
+      "unexpected_unresolved": 0,
+      "required_unit_accuracy": 0.9375,
+      "core_semantic_field_accuracy": 0.9439252336448598,
+      "failed_gates": ["required_unit_accuracy"]
+    }
+  },
+  "development_finding": "V3 corrected QD003's required limitation from incorrect to omitted, but the unchanged suite expected QD011's analogous uncommunicated unique-cause limitation to be incorrect. The prompt applied one consistent rule and therefore still scored 15/16 required units. This is a development-suite/status-taxonomy conflict, not held-out evidence and not a method comparison.",
+  "interpretation": "V3 failed the unchanged 95 percent exact required-unit-status gate. No effort was frozen; held-out qualification and all study annotation remain prohibited. Do not rerun or relabel this result. Audit whether the omitted-versus-incorrect distinction is independently coherent before declaring any later judge version.",
+  "heldout_evaluation_run": false,
+  "study_evaluation_run": false
+}
