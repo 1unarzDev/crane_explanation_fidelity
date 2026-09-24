@@ -50,10 +50,12 @@ the chosen allocation must be atomically bound to that campaign and cannot later
 No effect estimate, confidence sequence, guardrail result, or replication conclusion exists.
 Legacy and the eleven diagnostic-development clusters are intentionally absent from these counts.
 
-The separate physical/reference cohort has attempted 1/100 fixed confirmation-side configurations:
-1 valid, 0 invalid. Run 001 is the nominal false-premise family; navigation succeeded and the
-proposed and independent fixed computations both returned `not_triggered`. No language response or
-semantic label exists. The next immutable schedule item is `cm-land-conf-002`.
+The separate physical/reference cohort has attempted 2/100 fixed confirmation-side configurations:
+2 valid, 0 invalid. Run 001 is a nominal `not_triggered` control. Run 002 is a transient-
+compensation case with independently reproduced 10--20 s response loss, 23--24 s response recovery,
+and eventual success. Its wrapper-level endpoint teardown error is retained, while the frozen Unity
+worker-result admission gate passed. No language response or semantic label exists. The next
+immutable schedule item is `cm-land-conf-003`, an independently configured missing-odometry case.
 
 ## Frozen land command--motion physical cohort
 

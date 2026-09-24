@@ -1,0 +1,129 @@
+{
+  "schema": "crane-land-command-motion-physical-run-disposition/v1",
+  "recorded_date": "2026-09-24",
+  "run_id": "cm-land-conf-002",
+  "cluster_id": "cm-land-conf-cluster-002",
+  "status": "VALID_PHYSICAL_AND_INDEPENDENT_REFERENCE_WITH_RETAINED_TEARDOWN_ANOMALY_NO_SEMANTIC_RESPONSE",
+  "attempt_count": 1,
+  "retry_or_replacement_performed": false,
+  "contract": {
+    "path": "research/explanation_fidelity/experiment_configs/prospective/land-command-motion-physical-cohort-v1.json",
+    "schedule_sha256": "1f844ad45fa2e5cefb9edcfc5f3420a5a18aff32abda81ec72b7876ce376f215",
+    "cohort": "confirmation-physical",
+    "fixed_order": 2
+  },
+  "scheduled_configuration": {
+    "family": "transient-compensation",
+    "geometry_mechanism": "nominal-clear-route",
+    "layout_id": "diagnostic-command-motion-confirmation-reserve-nominal-clear-route-048",
+    "layout_seed": 92047,
+    "mobility_hold_after_s": 18.0,
+    "mobility_release_after_s": 30.0,
+    "evidence_mask": "none",
+    "ros_domain_id": 146,
+    "ros_tcp_port": 12346
+  },
+  "admission": {
+    "player_build_audit_accepted": true,
+    "scenario_binding_audit_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "unity_worker_result_valid": true,
+    "unity_logged_errors": 0,
+    "unity_logged_exceptions": 0,
+    "robot_visible_capture_manifest_present": true,
+    "robot_visible_runtime_manifest_present": true,
+    "independent_reference_completeness_audit_accepted": true,
+    "recording_valid_under_frozen_worker_result_gate": true
+  },
+  "retained_transport_anomaly": {
+    "generic_fixture_exit_status": 1,
+    "generic_fixture_valid_flag": false,
+    "endpoint_error_count": 1,
+    "endpoint_log_sequence": [
+      "Connection closed: No more data available",
+      "Exception [Errno 9] Bad file descriptor",
+      "Disconnected from 127.0.0.1"
+    ],
+    "timing": "after the Unity player completed and closed the connection during teardown",
+    "disposition": "The predeclared admission gate is the Unity worker result, which is valid with zero Unity errors/exceptions. Exact binding, action result, capture, and reference audits passed. The wrapper-level teardown anomaly is retained and reported rather than silently discarded."
+  },
+  "observed": {
+    "navigation_status": "succeeded",
+    "action_wall_seconds": 80.96013489301549,
+    "displacement_meters": 17.466901779174805,
+    "controller_commands": 785,
+    "odometry_messages": 4046,
+    "costmap_observations": 286,
+    "behavior_tree_transitions": 22,
+    "follow_path_attempts": 2,
+    "follow_path_failures": 1,
+    "observed_recovery_invocation_starts": 1,
+    "maximum_recovery_feedback": 1,
+    "behavior_tree_history_status": "not_proven",
+    "exact_recovery_count_eligible": false
+  },
+  "diagnostic": {
+    "computation_version": "command-motion-discrepancy-v3",
+    "config_id": "diagnostic-command-motion-low-speed-v1",
+    "proposed_disposition": "supported",
+    "independent_disposition": "supported",
+    "proposed_independent_parity": true,
+    "healthy_interval_s": [0.0, 5.0],
+    "healthy_commanded_planar_speed_mps": 0.26,
+    "healthy_measured_planar_speed_mps": 0.2597399950027466,
+    "discrepancy_interval_s": [10.0, 20.0],
+    "discrepancy_commanded_planar_speed_mps": 0.26,
+    "discrepancy_measured_planar_speed_mps": 0.0,
+    "response_ratio": 0.0,
+    "recovery_interval_s": [23.0, 24.0],
+    "recovered_measured_planar_speed_mps": 0.2597399950027466,
+    "recovered_response_ratio": 1.0,
+    "command_samples_in_reference": 784,
+    "odometry_samples_in_reference": 3665,
+    "bounded_conclusion": "A sustained delivered-command/measured-motion discrepancy is supported from 10 to 20 s, followed by a recovered measured response at 23 to 24 s and eventual action success. The record does not uniquely establish the evaluator intervention, actuator acceptance, Nav2 odometry consumption, or a physical cause."
+  },
+  "hashes": {
+    "player_build_audit_sha256": "30ffa7c084924284d6b0c6f0da12672db319d82e122e5b8a3892d6530b5e9964",
+    "scenario_binding_audit_sha256": "fbc1b616b6fed1832ae65228ff363bfdb665ef4fe250b6f92e956770a113890c",
+    "fixture_summary_sha256": "58f2fe6d1fa63e5fb44e4c95101a97fcf21fde5dec7baddee3d2ec12f8a7baae",
+    "fixture_exit_status_sha256": "bdc469c6d52b2356ca9eedc878747333c9a1956c51fbb501c0e3621259bf1229",
+    "navigation_reset_summary_sha256": "ffa0374f4811400b7e06ced3054511571c8974aab1584689995c99d77ed18b45",
+    "unity_worker_result_sha256": "3eaaf4b65ca8b07f996f32af3169fd39db53b6e7d0ab447c0955c6be8cbaa2f2",
+    "evaluator_truth_sha256": "717b36714e787563d95c65a374c4b44f9c3bcf2e70da67ec7e27dafd17ab3dee",
+    "robot_visible_events_sha256": "60a4f40d6f51e0abd3a278ca369c7f4bf71e567c0e90aa398fcf2d5e619af6ac",
+    "diagnostic_export_sha256": "d814e1c82aa8b58e8e191ee63081e39dcd3c72b85bddd9bcf1de6c0299b7343d",
+    "independent_reference_sha256": "0d54bd0f22e4ba44c624857f6d6bcb34ea590d61977c95e7b4ba949fe081d752",
+    "complete_reference_sha256": "fe895ae642214e8ad8e3155d2c298b319cdd6d38eda6c264c2a3c67d4e4dc7d6",
+    "robot_visible_manifest_sha256": "ef75644772c9bc0648de39c6f7c02997f3f2f99776e98c2f0da61be18b879d82",
+    "evaluator_only_manifest_sha256": "9bfbe2f23a05a3ef094ecec7509e0aae734c1f8ab791c9b6f87b507c438b2cd6"
+  },
+  "governance": {
+    "robot_visible_manifest": "manifests/data/cm-land-conf-002.robot-visible.json",
+    "evaluator_only_manifest": "manifests/data/cm-land-conf-002.evaluator-only.json",
+    "checkpoint": "manifests/checkpoints/cm-land-conf-002.json",
+    "dvc_remote_status": "IN_SYNC_AFTER_CHECKPOINT"
+  },
+  "semantic_boundary": {
+    "P_responses": 0,
+    "R_responses": 0,
+    "Luna_calls": 0,
+    "semantic_labels": 0,
+    "effect_estimate": null,
+    "confidence_sequence": null,
+    "confirmatory_alpha_consumed": 0.0
+  },
+  "progress": {
+    "fixed_confirmation_physical_clusters": 100,
+    "attempted": 2,
+    "valid": 2,
+    "invalid": 0,
+    "persistent_discrepancy": 0,
+    "transient_compensation": 1,
+    "ambiguous_missing_odometry": 0,
+    "nominal_false_premise": 1,
+    "diagnostic_supported": 1,
+    "diagnostic_not_triggered": 1,
+    "diagnostic_insufficient": 0,
+    "next_fixed_run_id": "cm-land-conf-003"
+  }
+}

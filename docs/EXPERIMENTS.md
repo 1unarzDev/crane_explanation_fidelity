@@ -1,5 +1,20 @@
 # Experiment Log
 
+## 2026-09-24 — land command--motion physical cohort run 002
+
+- **STATUS:** `VALID PHYSICAL + INDEPENDENT REFERENCE WITH RETAINED TEARDOWN ANOMALY / 2 OF 100
+  ATTEMPTED`. The exact build, all 14 scenario-binding checks, Unity worker validity with zero
+  errors/exceptions, robot-visible capture, and complete reference passed. The generic wrapper
+  returned 1 because the ROS endpoint logged `Bad file descriptor` after the player closed its
+  connection; that teardown anomaly is retained and did not replace the frozen worker-result gate.
+- **OBSERVED:** the scheduled transient-compensation action succeeded after 80.960 s and 17.467 m,
+  with two FollowPath starts, one failure, and one observed/source-qualified Wait invocation.
+- **REFERENCE:** both fixed implementations support a 10--20 s discrepancy at 0.260 m/s command
+  versus 0.000 m/s measured motion, followed by 0.25974 m/s measured response at 23--24 s. This
+  establishes bounded response loss and recovery, not the hidden intervention or a unique cause.
+- **SEMANTIC BOUNDARY:** zero responses/labels and zero alpha. Fixed missing-evidence run 003 is
+  next. See `cm-land-conf-002-disposition.json`.
+
 ## 2026-09-24 — land command--motion physical cohort run 001
 
 - **STATUS:** `VALID PHYSICAL + INDEPENDENT REFERENCE / 1 OF 100 ATTEMPTED`. The sole fixed
