@@ -1,5 +1,20 @@
 # Experiment Log
 
+## 2026-09-24 — candidate-v2 run 005 retained result
+
+- **STATUS:** one qualified transient-discrepancy cluster: navigation succeeded after 17.613 m.
+  The independently matched discrepancy lasted from 18--27 s at 0.260 m/s delivered command and
+  0.000 m/s delivered odometry; measured response recovered to 0.24975 m/s at 30--31 s. The
+  execution record contains two FollowPath failures, two source-qualified Wait invocations, and
+  three attempts.
+- **LUNA:** P and R both passed both isolated Luna-v7 passes, yielding paired difference 0 in each.
+  Both answers identified the bounded command--motion discrepancy, eventual recovery/success, and
+  the unresolved physical cause without material overclaim. No call failed and no rejudging
+  occurred.
+- **CUMULATIVE DEVELOPMENT:** across five clusters, P-minus-R remains 0 in pass 1 and +1 in pass 2.
+  Candidate readiness remains failed because P already has material-error labels. Confirmation is
+  inactive at `0.000/0.050`. See `manifests/data/cmv2-dev-005-disposition.json`.
+
 ## 2026-09-24 — predeclare candidate-v2 multi-configuration pilot
 
 - **PREDECLARED / DEVELOPMENT ONLY / NOT RUN:** six unique v5 configurations are fixed in order:

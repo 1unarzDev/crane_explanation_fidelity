@@ -1,0 +1,82 @@
+{
+  "schema": "crane-command-motion-candidate-v2-run-disposition/v1",
+  "recorded_date": "2026-09-24",
+  "run_id": "cmv2-dev-005",
+  "cluster_id": "cmv2-land-005",
+  "status": "VALID_DEVELOPMENT_DIAGNOSTIC_AND_COMPLETE_PAIRED_LUNA_MEASUREMENT",
+  "attempt_count": 1,
+  "retry_performed": false,
+  "admission": {
+    "player_build_audit_accepted": true,
+    "scenario_binding_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "unity_result_valid": true,
+    "recording_valid": true,
+    "navigation_status": "succeeded",
+    "generic_fixture_expected_outcome_observed": true
+  },
+  "observed": {
+    "displacement_meters": 17.612581848435532,
+    "controller_commands": 898,
+    "odometry_messages": 4658,
+    "costmap_observations": 331,
+    "behavior_tree_transitions": 39,
+    "follow_path_attempts": 3,
+    "follow_path_failures": 2,
+    "source_qualified_wait_invocations": 2
+  },
+  "diagnostic": {
+    "disposition": "supported",
+    "healthy_interval_s": [0.0, 5.0],
+    "healthy_measured_planar_speed_mps": 0.2597399950027466,
+    "discrepancy_interval_s": [18.0, 27.0],
+    "median_commanded_planar_speed_mps": 0.26,
+    "median_measured_planar_speed_mps": 0.0,
+    "response_recovery_interval_s": [30.0, 31.0],
+    "recovered_measured_planar_speed_mps": 0.24975000506766268,
+    "complete_reference_audit_accepted": true
+  },
+  "language_evaluation": {
+    "conditions": ["P", "R"],
+    "p_model_calls": 0,
+    "r_model_calls": 1,
+    "luna_passes": 2,
+    "luna_calls": 4,
+    "call_failures": 0,
+    "pass_1": {
+      "P_supported_diagnostic_success": true,
+      "R_supported_diagnostic_success": true,
+      "P_material_error": false,
+      "R_material_error": false,
+      "paired_difference": 0
+    },
+    "pass_2": {
+      "P_supported_diagnostic_success": true,
+      "R_supported_diagnostic_success": true,
+      "P_material_error": false,
+      "R_material_error": false,
+      "paired_difference": 0
+    },
+    "judge_inconsistency": null
+  },
+  "hashes": {
+    "player_build_audit_sha256": "e60f6e5efd5a58b0b724deb1eb931a2219c25daea53853b39a602ae634864a77",
+    "scenario_binding_audit_sha256": "3fc9b6b10bc2b8bda0cb4c3e8abc29b891a8cb7454b9da2357a100e918fd1df6",
+    "robot_visible_events_sha256": "3bde8f243d71d89d0361edafbfbbc18a70a565030e4fe8ab654111900f1c92d7",
+    "diagnostic_export_sha256": "a5e08df4dc49d74fbfb3ac5539bb4a13c93a5a4a9b9f540dfc10e420fa2c619e",
+    "independent_reference_sha256": "dba0d53073fac33c578c0f7344f75a580b8960147e61af81344d736d58fe8bde",
+    "complete_annotation_reference_sha256": "8cf2d7f2d3794f18fa8d1c0f3deabbb2fc429b8e5feb0df4e95561ae7e8e41a9",
+    "candidate_result_sha256": "76c4b9a1f379e73ca76b56e16d8729dac87c10fdc0b30e6717778c730fd19879",
+    "blinded_packet_sha256": "ee3943c2e14521b4884947ac5b89b277d7bb0f528e1acd8e81ad321d3fa344c8",
+    "condition_key_sha256": "3e4a24c8437d36fb97aae6c76ae57a5614b2456c45f26e3ed9e0850b5bed00a4",
+    "luna_summary_sha256": "1d1da41395745b21acd5234b05da64e0a3d850edc55c212956600efc6b397386"
+  },
+  "inference": {
+    "independent_cluster_increment": 1,
+    "confirmatory_cluster_increment": 0,
+    "confirmatory_alpha_consumed": 0.0,
+    "candidate_readiness": "FAILED_ZERO_MATERIAL_ERROR_GATE_ON_PRIOR_CLUSTERS",
+    "cumulative_p_minus_r_successes_pass_1": 0,
+    "cumulative_p_minus_r_successes_pass_2": 1
+  }
+}
