@@ -27,8 +27,12 @@ if [[ ! "${ros_domain_id}" =~ ^[0-9]+$ || ! "${ros_port}" =~ ^[0-9]+$ ]]; then
     echo "ROS_DOMAIN_ID and ROS_TCP_PORT must be integers" >&2
     exit 2
 fi
-if [[ "${catalog}" != "v4" && "${catalog}" != "v5" ]]; then
-    echo "Only versioned diagnostic catalogs v4 and v5 are supported: ${catalog}" >&2
+if [[ "${catalog}" != "v4" && "${catalog}" != "v5" && "${catalog}" != "v6" ]]; then
+    echo "Only versioned diagnostic catalogs v4, v5, and v6 are supported: ${catalog}" >&2
+    exit 2
+fi
+if [[ "${catalog}" == "v6" && "${CRANE_ALLOW_RESERVED_PHYSICAL_CAPTURE:-0}" != "1" ]]; then
+    echo "v6 is a physical-evidence reserve; set CRANE_ALLOW_RESERVED_PHYSICAL_CAPTURE=1 for an explicitly declared development capture" >&2
     exit 2
 fi
 
@@ -62,7 +66,12 @@ if len(matches) != 1:
 layout = matches[0]
 if layout.get("studySplit") == "confirmatory":
     raise SystemExit("confirmatory layouts are sealed until protocol freeze")
-expected_split = "development" if catalog_id == "v4" else "candidate-v2-development"
+expected_splits = {
+    "v4": "development",
+    "v5": "candidate-v2-development",
+    "v6": "command-motion-confirmation-reserve",
+}
+expected_split = expected_splits[catalog_id]
 if layout.get("studySplit") != expected_split:
     raise SystemExit("layout is calibration-only or outside the active diagnostic scope")
 if layout.get("diagnosticMechanism") not in {"connected-detour", "nominal-clear-route"}:

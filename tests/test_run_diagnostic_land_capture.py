@@ -176,6 +176,39 @@ def test_print_config_admits_only_v5_candidate_development_split(monkeypatch):
     assert config["bt_xml"].endswith("nav2_land_progress_recovery.xml")
 
 
+def test_v6_reserved_capture_requires_explicit_physical_only_gate(monkeypatch):
+    monkeypatch.delenv("CRANE_ALLOW_RESERVED_PHYSICAL_CAPTURE", raising=False)
+    command = [
+        "bash", str(SCRIPT), "--print-config", "cmv6-physical-qual-001", "144", "12344",
+        "v6", "diagnostic-command-motion-confirmation-reserve-connected-detour-001",
+    ]
+    rejected = subprocess.run(command, cwd=ROOT, capture_output=True, text=True)
+    assert rejected.returncode == 2
+    assert "physical-evidence reserve" in rejected.stderr
+
+    monkeypatch.setenv("CRANE_ALLOW_RESERVED_PHYSICAL_CAPTURE", "1")
+    accepted = subprocess.run(command, cwd=ROOT, check=True, capture_output=True, text=True)
+    config = json.loads(accepted.stdout)
+    assert config["catalog"] == "v6"
+    assert config["layout_seed"] == 91000
+    assert config["data_split"] == "dev"
+
+
+def test_v6_capture_rejects_replication_reserve_before_separate_activation(monkeypatch):
+    monkeypatch.setenv("CRANE_ALLOW_RESERVED_PHYSICAL_CAPTURE", "1")
+    completed = subprocess.run(
+        [
+            "bash", str(SCRIPT), "--print-config", "cmv6-rejected", "144", "12344",
+            "v6", "diagnostic-command-motion-replication-reserve-connected-detour-001",
+        ],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+    )
+    assert completed.returncode != 0
+    assert "outside the active diagnostic scope" in completed.stderr
+
+
 def test_capture_rejects_release_without_proving_ground_hold(monkeypatch):
     monkeypatch.setenv("CRANE_PROVING_GROUND_MOBILITY_RELEASE_AFTER", "20.0")
 
