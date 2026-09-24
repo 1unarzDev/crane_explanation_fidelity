@@ -310,11 +310,38 @@ def run_split(
     caller = caller_class(cache=cache, effort=effort, base_url=base_url)
     judgments: dict[str, dict[str, Any]] = {}
     cache_keys: dict[str, str] = {}
+    call_failures: dict[str, str] = {}
     for case in cases:
-        record = caller.call(qualification_envelope(case, pass_id))
+        try:
+            record = caller.call(qualification_envelope(case, pass_id))
+        except RuntimeError as error:
+            message = str(error)
+            call_failures[case["case_id"]] = message
+            path_text = message.rsplit(" at ", 1)[-1]
+            failure_path = Path(path_text)
+            failure = json.loads(failure_path.read_text(encoding="utf-8"))
+            cache_keys[case["case_id"]] = failure["cache_key"]
+            judgments[case["case_id"]] = {
+                "judgment_status": "unresolved",
+                "answerability": "unresolved",
+                "material_error": None,
+                "disposition": "nonanswer",
+                "mechanism_identification": "unresolved",
+                "correct_abstention": None,
+                "causal_overclaim": None,
+                "evidence_problem": False,
+                "required_units": [
+                    {"unit_id": item["unit_id"], "status": "unresolved"}
+                    for item in case["required_units"]
+                ],
+            }
+            continue
         judgments[case["case_id"]] = record["judgment"]
         cache_keys[case["case_id"]] = record["cache_key"]
-    return score(cases, judgments), cache_keys
+    report = score(cases, judgments)
+    report["call_failures"] = call_failures
+    report["call_failure_count"] = len(call_failures)
+    return report, cache_keys
 
 
 def main() -> None:
