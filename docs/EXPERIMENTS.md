@@ -1,5 +1,23 @@
 # Experiment Log
 
+## 2026-09-24 — isolate fresh land candidate-development capacity
+
+- **IMPLEMENTED / TESTED, NO EXPERIMENT RUN:** CRANE commit `7cafab0` adds a separate v5
+  proving-ground catalog containing 24 deterministic development-only geometries: 12 connected
+  detours and 12 nominal clear routes. IDs and generator seeds are disjoint from v4, and the
+  manifest declares `development-only-never-confirmatory-or-replication`.
+- **REPRODUCIBILITY:** v5 SHA-256 is
+  `dd693444df842a97570bbf65e1cd07737bead48314acbf54d5a1c4c0b8f093d6`. Regenerating v4 and v5
+  into temporary files reproduces both tracked files byte-for-byte. The unchanged v4 SHA-256 is
+  `c2603491c16b99ba007085237097fc0cd66ee2453d1b9e4e1fc7f490bd1a0f8a`.
+- **TESTED:** 35 focused catalog, geometry-invariant, and land runtime-contract tests pass.
+  Unity build/runtime validation is `NOT_RUN`; no episode, answer, or annotation was generated.
+- **BOUNDARY:** v5 is candidate-development capacity, not a sample-size source for the registered
+  campaign. Related interventions, controls, masks, and reruns on a layout remain one cluster.
+  Confirmatory v4 identities were not inspected or modified. Alpha remains `0.000/0.050`.
+- **NEXT GATE:** run one authenticated v5 build/scenario-binding smoke, then predeclare a bounded
+  multi-configuration candidate-v2 development pilot before any model or Luna call.
+
 ## 2026-09-23 — predeclare command-motion successful-compensation development case
 
 - **STATUS:** `PREDECLARED / DEVELOPMENT_ONLY / NOT_YET_RUN`; no model call or held-out use is

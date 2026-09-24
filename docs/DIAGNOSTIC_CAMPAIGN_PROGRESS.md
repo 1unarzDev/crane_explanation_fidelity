@@ -12,7 +12,7 @@ Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 | Candidate P frozen | NOT_READY | V4 multi-family scoring is mixed and packet-sensitive; do not freeze or open confirmation |
 | Strongest baseline R frozen | DESIGNATED, NOT_HASH_FROZEN | Tool-enabled repository-aware R; freeze exact model/prompts/resources with candidate |
 | Information/tool/resource parity | DRAFT | Audit at campaign freeze |
-| Target land strata | PARTIAL | Existing cases are development only; fresh generators/configurations required |
+| Target land strata | PARTIAL | Disjoint v5 development capacity exists; live qualification and future confirmatory/replication reservation remain required |
 | Target surface strata | NOT_READY | Both geometric and command--motion admission required; do not reallocate weight |
 | Luna historical qualification | V4 HIGH FAILED / PRESERVED | Both fresh passes failed; never retroactively qualified |
 | Luna v5 endpoint qualification | FAILED / PRESERVED | P1 passed; P2 missed core by one field and one protected subcheck |
@@ -49,6 +49,22 @@ the chosen allocation must be atomically bound to that campaign and cannot later
 
 No effect estimate, confidence sequence, guardrail result, or replication conclusion exists.
 Legacy and the eleven diagnostic-development clusters are intentionally absent from these counts.
+
+## Fresh candidate-development capacity (2026-09-24)
+
+CRANE commit `7cafab0` adds the separate `crane-land-proving-ground-v5` catalog for candidate-v2
+development only. It contains 12 connected-detour and 12 nominal-clear-route geometries with IDs
+and generator seeds disjoint from the unchanged v4 inventory. Its catalog SHA-256 is
+`dd693444df842a97570bbf65e1cd07737bead48314acbf54d5a1c4c0b8f093d6`; deterministic
+regeneration and 35 focused generator/runtime-contract tests pass. The sealed v4 bytes remain at
+SHA-256 `c2603491c16b99ba007085237097fc0cd66ee2453d1b9e4e1fc7f490bd1a0f8a`.
+
+This removes the immediate namespace-capacity blocker for a bounded fresh development pilot, but
+it supplies no episode, response, Luna label, effect estimate, or alpha consumption. Each layout
+can contribute at most one independent development cluster; intervention/control variants,
+evidence masks, and reruns remain clustered. V5 identities are permanently ineligible for
+confirmation or replication. The next gate is one live v5 source/build/scenario-binding smoke,
+followed by a prospectively declared small candidate-v2 pilot only if that smoke passes.
 
 The fresh land-binding qualification `diagnostic-land-binding-dev-006` was rejected and retained:
 the selected Unity bundle instantiated legacy clear-corridor truth rather than the declared v4

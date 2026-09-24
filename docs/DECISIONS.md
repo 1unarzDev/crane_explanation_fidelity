@@ -1,5 +1,25 @@
 # Decision Log
 
+## 2026-09-24 — isolate candidate-v2 development geometry from sealed study identities
+
+- Decision: add `crane-land-proving-ground-v5` as a permanently development-only catalog rather
+  than inspect, relabel, or consume any untouched v4 confirmatory identity while iterating on the
+  next diagnostic candidate.
+- Evidence: all 16 usable v4 development layouts have effectively been inspected, while 72 v4
+  layouts remain untouched confirmatory candidates. Fresh development evidence is necessary
+  before risking a confirmatory alpha allocation, and the existing manifest-driven generator can
+  provide distinct configurations without changing simulator physics or the frozen runtime.
+- Alternatives: tune on inspected cases; open v4 confirmation as development; create renamed
+  copies; or begin a campaign without credible development evidence. These would overfit, leak the
+  held-out inventory, inflate independence, or waste alpha.
+- Validity boundary: v5 provides 24 possible development clusters, not confirmation or
+  replication data. A layout remains one cluster across interventions, masks, questions, and
+  reruns. Its offline validity and runtime catalog support do not substitute for a live source,
+  build, and scenario-binding qualification.
+- Effect: no candidate is frozen, no model/judge call is authorized by this decision, and no alpha
+  is consumed. The next executable gate is one authenticated live v5 smoke before a bounded,
+  prospectively declared candidate-v2 development pilot.
+
 ## 2026-09-23 — retain bounded delivered-plan geometry for path-decision explanations
 
 - Decision: extend the shared Nav2 fixture's existing `planHistory` records with a content hash,
