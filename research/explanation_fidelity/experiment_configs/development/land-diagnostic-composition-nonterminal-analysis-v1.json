@@ -1,0 +1,71 @@
+{
+  "schema": "crane-land-diagnostic-composition-nonterminal-analysis/v1",
+  "status": "PREDECLARED_NOT_RUN",
+  "declared_at": "2026-09-24T12:08:00-05:00",
+  "purpose": "Determine whether the retained scenario-bound run 009 supports a bounded command-to-motion and geometric diagnosis during its declared observation window without inventing a terminal result.",
+  "development_status": {
+    "physical_outcome_already_inspected": true,
+    "post_outcome_tool_development": true,
+    "confirmatory_eligible": false,
+    "language_comparison_authorized": false
+  },
+  "source": {
+    "umbrella_commit_before_declaration": "a1f0faa460f2e854dcde4ac94174f2acfacd3ba2",
+    "crane_ml_commit": "3ebba7be193c29c5bec725af7bdcd39157738266",
+    "crane_explain_core_commit": "64f9e185c5feacfd9eb2a14e39ccae0a0a265528",
+    "robot_visible_manifest_sha256": "ff955cdd4656fc90219c12f302b9d7dcf9a21fe869e86a96faf1ddde578d72f1",
+    "events_sha256": "9db4e666a834207f749dbe3de9fb0bfc61f5fe76216d99edb7e4dc8a3f7fd3c9",
+    "capture_manifest_sha256": "eada8e18efd84500473e2cbf081c6ae2a0f61fa33454163facc551117a4bedad",
+    "runtime_manifest_sha256": "2c398bffb3aa37ba8c6ad6b7deaf4b6058d9f15002e0193f8742a065ed82b7dd",
+    "fixture_summary_sha256": "e7b5a017f970898396554720a551f0a714757afde06767a6e331a0193b7ceded",
+    "diagnostic_config_sha256": "9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85"
+  },
+  "analysis_contract": {
+    "method_visible_episode_id": "diagnostic-land-composition-observation-009",
+    "observation_boundary": "accepted goal wall timestamp plus the 100.0-second action_duration_s declared in the robot-visible runtime manifest",
+    "required_boundary_checks": [
+      "exactly one accepted NavigateToPose goal exists",
+      "no NavigateToPose result exists before the declared boundary",
+      "capture_stopped exists at or after the declared boundary",
+      "only records at or before the declared boundary enter the computation"
+    ],
+    "action_status": "remained active at the observation cutoff",
+    "terminal_claims_prohibited": [
+      "action aborted or failed",
+      "recovery exhausted",
+      "exact complete recovery count",
+      "terminal failure chain"
+    ],
+    "command_motion_config": "configs/diagnostic_command_motion_low_speed_v1.json",
+    "geometric_computation": "geometric-route-restriction-v2",
+    "independent_references_required": true,
+    "retain_supported_not_triggered_insufficient_and_tool_failure": true
+  },
+  "implementation_gate": [
+    "default terminal-result behavior remains byte-compatible",
+    "nonterminal analysis requires an explicit CLI flag",
+    "missing or invalid robot-visible cutoff metadata fails closed",
+    "tests cover opt-in, default rejection, premature capture stop, and records after cutoff"
+  ],
+  "evidence_boundary": {
+    "robot_visible": [
+      "delivered commands and independently delivered odometry",
+      "goal-scoped behavior-tree transitions through the cutoff",
+      "delivered plans and costmap observations through the retained fixture projection",
+      "exact runtime source/configuration hashes and declared action duration"
+    ],
+    "withheld": [
+      "evaluator intervention identity and timing",
+      "scenario expected outcome and evaluator geometry",
+      "a unique actuator, collision, obstruction, or slip cause",
+      "a terminal outcome that was not observed"
+    ]
+  },
+  "retention": {
+    "model_calls_authorized": 0,
+    "luna_calls_authorized": 0,
+    "confirmatory_cluster_increment": 0,
+    "confirmatory_alpha_consumed": 0.0
+  },
+  "next_gate": "Only if the bounded exports and independent references agree may a separate prospective declaration consider this inspected case for development-only composition-plan testing; terminal-failure language remains prohibited."
+}

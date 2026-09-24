@@ -4636,3 +4636,23 @@
 - **REGRESSION:** all 263 umbrella-owned `tests/` and `analysis/` tests passed, the focused eight
   frozen-integrity tests passed, data governance passed, and the local DVC cache and R2 remote
   reported in sync. Frozen F/G/H artifacts were not modified.
+
+## 2026-09-24 — bounded nonterminal composition-analysis predeclaration
+
+- **STATUS:** `PREDECLARED_NOT_RUN / POST_OUTCOME_DEVELOPMENT`; no model or Luna call is
+  authorized. The run 009 physical outcome and evaluator truth have already been inspected, so
+  this cannot become confirmatory evidence.
+- **PURPOSE:** test whether the robot-visible record supports a command-to-motion and geometric
+  diagnosis during the declared 100-second observation window without inventing a terminal
+  result. The opaque method-visible episode ID is
+  `diagnostic-land-composition-observation-009`.
+- **BOUNDARY:** a new exporter mode may end analysis at the accepted-goal wall timestamp plus the
+  robot-visible runtime manifest's declared action duration only when no earlier result exists and
+  capture continued through that boundary. The default exporter must continue requiring exactly
+  one action result. Records after the cutoff are excluded.
+- **PROHIBITED CLAIMS:** action abort/failure, recovery exhaustion, exact complete recovery count,
+  a terminal failure chain, the evaluator intervention, or a unique actuator/obstacle/collision/
+  slip cause. Retain supported, not-triggered, insufficient, or tool-failure outcomes unchanged.
+- **INFERENCE:** deterministic exports and separate reference computations only; zero explanation
+  clusters, model calls, Luna calls, confirmatory clusters, or alpha expenditure. Any later
+  development language test requires another committed declaration.
