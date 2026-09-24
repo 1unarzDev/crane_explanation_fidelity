@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
 from pathlib import Path
 from typing import Any
 
@@ -15,7 +16,9 @@ def sha256(path: Path) -> str:
 
 
 def validate_binding(truth: dict[str, Any], catalog: dict[str, Any], *,
-                     catalog_sha256: str, catalog_id: str, layout_id: str) -> dict[str, Any]:
+                     catalog_sha256: str, catalog_id: str, layout_id: str,
+                     expected_mobility_hold_after: float = -1.0,
+                     expected_mobility_release_after: float = -1.0) -> dict[str, Any]:
     layouts = [item for item in catalog.get("layouts", []) if item.get("id") == layout_id]
     if len(layouts) != 1:
         raise ValueError(f"requested layout must resolve exactly once: {layout_id}")
@@ -46,6 +49,18 @@ def validate_binding(truth: dict[str, Any], catalog: dict[str, Any], *,
             truth.get("obstacleActive")
             == [bool(item.get("activeInitially")) for item in layout.get("obstacles", [])]
         ),
+        "mobility_hold_configuration": math.isclose(
+            float(truth.get("mobilityHoldAfterSeconds", -1.0)),
+            expected_mobility_hold_after,
+            rel_tol=0.0,
+            abs_tol=1e-6,
+        ),
+        "mobility_release_configuration": math.isclose(
+            float(truth.get("mobilityReleaseAfterSeconds", -1.0)),
+            expected_mobility_release_after,
+            rel_tol=0.0,
+            abs_tol=1e-6,
+        ),
     }
     failed = sorted(name for name, accepted in checks.items() if not accepted)
     return {
@@ -57,6 +72,12 @@ def validate_binding(truth: dict[str, Any], catalog: dict[str, Any], *,
         "observed_truth_schema": truth.get("schema"),
         "observed_environment_id": truth.get("environmentId"),
         "observed_layout_id": truth.get("layoutId"),
+        "expected_mobility_hold_after_seconds": expected_mobility_hold_after,
+        "observed_mobility_hold_after_seconds": truth.get("mobilityHoldAfterSeconds", -1.0),
+        "expected_mobility_release_after_seconds": expected_mobility_release_after,
+        "observed_mobility_release_after_seconds": truth.get(
+            "mobilityReleaseAfterSeconds", -1.0
+        ),
         "checks": checks,
         "failed_checks": failed,
     }
@@ -68,6 +89,8 @@ def main() -> int:
     parser.add_argument("--catalog", required=True, type=Path)
     parser.add_argument("--catalog-id", required=True)
     parser.add_argument("--layout", required=True)
+    parser.add_argument("--expected-mobility-hold-after", type=float, default=-1.0)
+    parser.add_argument("--expected-mobility-release-after", type=float, default=-1.0)
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
 
@@ -79,6 +102,8 @@ def main() -> int:
         catalog_sha256=sha256(args.catalog),
         catalog_id=args.catalog_id,
         layout_id=args.layout,
+        expected_mobility_hold_after=args.expected_mobility_hold_after,
+        expected_mobility_release_after=args.expected_mobility_release_after,
     )
     rendered = json.dumps(result, indent=2, sort_keys=True) + "\n"
     if args.output:

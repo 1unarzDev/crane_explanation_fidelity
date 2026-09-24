@@ -41,6 +41,8 @@ def test_print_config_resolves_proving_ground_capture_contract():
         "layout_seed": 62001,
         "lidar_frame": "base_scan",
         "nav2_params": "packages/crane_ml/Tools/Performance/nav2_land_proving_ground_fixture.yaml",
+        "proving_ground_mobility_hold_after_s": -1.0,
+        "proving_ground_mobility_release_after_s": -1.0,
         "ros_domain_id": 121,
         "ros_tcp_port": 12321,
         "run_id": "diagnostic-land-dev-002",
@@ -122,6 +124,56 @@ def test_capture_rejects_legacy_corridor_intervention_with_proving_ground(monkey
     assert "cannot be combined with legacy corridor interventions" in completed.stderr
 
 
+def test_print_config_binds_proving_ground_mobility_intervention(monkeypatch):
+    monkeypatch.setenv("CRANE_PROVING_GROUND_MOBILITY_HOLD_AFTER", "18.0")
+    monkeypatch.setenv("CRANE_PROVING_GROUND_MOBILITY_RELEASE_AFTER", "-1")
+
+    completed = subprocess.run(
+        [
+            "bash",
+            str(SCRIPT),
+            "--print-config",
+            "diagnostic-land-composition-dev-009",
+            "131",
+            "12329",
+            "v4",
+            "diagnostic-development-nominal-clear-route-008",
+        ],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+
+    config = json.loads(completed.stdout)
+    assert config["diagnostic_mechanism"] == "nominal-clear-route"
+    assert config["proving_ground_mobility_hold_after_s"] == 18.0
+    assert config["proving_ground_mobility_release_after_s"] == -1.0
+
+
+def test_capture_rejects_release_without_proving_ground_hold(monkeypatch):
+    monkeypatch.setenv("CRANE_PROVING_GROUND_MOBILITY_RELEASE_AFTER", "20.0")
+
+    completed = subprocess.run(
+        [
+            "bash",
+            str(SCRIPT),
+            "--print-config",
+            "diagnostic-land-composition-rejected",
+            "131",
+            "12329",
+            "v4",
+            "diagnostic-development-nominal-clear-route-008",
+        ],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+    )
+
+    assert completed.returncode != 0
+    assert "release requires a configured hold boundary" in completed.stderr
+
+
 def test_runtime_manifest_hashes_the_executed_nav2_fixture_observer():
     text = MANIFEST_BUILDER.read_text(encoding="utf-8")
 
@@ -135,6 +187,8 @@ def test_capture_requires_exact_post_run_scenario_binding():
     assert "validate_land_scenario_binding.py" in text
     assert "--catalog-id \"${catalog}\"" in text
     assert "--layout \"${layout}\"" in text
+    assert "--expected-mobility-hold-after" in text
+    assert "--expected-mobility-release-after" in text
     assert "scenario-binding-audit.json" in text
 
 

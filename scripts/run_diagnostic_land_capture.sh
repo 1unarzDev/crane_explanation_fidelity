@@ -43,6 +43,8 @@ lidar_frame="base_scan"
 goal_distance_m="18.0"
 action_duration_s="100"
 data_split="${CRANE_DATA_SPLIT:-dev}"
+proving_ground_mobility_hold_after="${CRANE_PROVING_GROUND_MOBILITY_HOLD_AFTER:--1}"
+proving_ground_mobility_release_after="${CRANE_PROVING_GROUND_MOBILITY_RELEASE_AFTER:--1}"
 
 if [[ "${data_split}" != "dev" ]]; then
     echo "Diagnostic held-out/final capture is not authorized before protocol freeze" >&2
@@ -71,6 +73,20 @@ PY
 mapfile -t layout_metadata <<<"${layout_metadata_text}"
 layout_seed="${layout_metadata[0]}"
 
+python3 - "${proving_ground_mobility_hold_after}" \
+    "${proving_ground_mobility_release_after}" <<'PY'
+import math
+import sys
+
+hold, release = map(float, sys.argv[1:])
+if not math.isfinite(hold) or not math.isfinite(release):
+    raise SystemExit("Proving-ground mobility boundaries must be finite")
+if hold < 0.0 and release >= 0.0:
+    raise SystemExit("Proving-ground mobility release requires a configured hold boundary")
+if release >= 0.0 and release <= hold:
+    raise SystemExit("Proving-ground mobility release must occur after the hold begins")
+PY
+
 unity_extra_args="${CRANE_NAV2_UNITY_EXTRA_ARGS:-}"
 for incompatible_flag in \
     --crane-land-blocker \
@@ -87,11 +103,13 @@ done
 
 if [[ ${print_config} -eq 1 ]]; then
     python3 - "${run_id}" "${ros_domain_id}" "${ros_port}" "${catalog}" "${layout}" \
-        "${layout_seed}" "${layout_metadata[1]}" <<'PY'
+        "${layout_seed}" "${layout_metadata[1]}" \
+        "${proving_ground_mobility_hold_after}" \
+        "${proving_ground_mobility_release_after}" <<'PY'
 import json
 import sys
 
-run_id, domain, port, catalog, layout, layout_seed, mechanism = sys.argv[1:]
+run_id, domain, port, catalog, layout, layout_seed, mechanism, hold, release = sys.argv[1:]
 print(json.dumps({
     "schema": "crane-diagnostic-land-capture-config/v1",
     "run_id": run_id,
@@ -110,6 +128,8 @@ print(json.dumps({
     "goal_distance_m": 18.0,
     "action_duration_s": 100,
     "runtime_manifest_builder": "scripts/build_diagnostic_runtime_manifest.py",
+    "proving_ground_mobility_hold_after_s": float(hold),
+    "proving_ground_mobility_release_after_s": float(release),
 }, sort_keys=True))
 PY
     exit 0
@@ -209,6 +229,7 @@ CRANE_PLAYER="${player}" \
 CRANE_SEED_BASE="${layout_seed}" \
 CRANE_PROVING_GROUND_CATALOG="${catalog}" \
 CRANE_PROVING_GROUND_LAYOUT="${layout}" \
+CRANE_NAV2_UNITY_EXTRA_ARGS="--crane-land-proving-ground-mobility-hold-after ${proving_ground_mobility_hold_after} --crane-land-proving-ground-mobility-release-after ${proving_ground_mobility_release_after} ${unity_extra_args}" \
 bash "${crane_dir}/Tools/Performance/run_land_proving_ground_nav2_fixture.sh"
 
 truth_path="${evaluator_root}/worker-0/land-evaluator-truth.json"
@@ -222,6 +243,8 @@ python3 "${workspace_root}/analysis/validate_land_scenario_binding.py" \
     --catalog "${catalog_file}" \
     --catalog-id "${catalog}" \
     --layout "${layout}" \
+    --expected-mobility-hold-after "${proving_ground_mobility_hold_after}" \
+    --expected-mobility-release-after "${proving_ground_mobility_release_after}" \
     --output "${binding_audit}"
 
 cleanup

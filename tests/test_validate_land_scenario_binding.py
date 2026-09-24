@@ -93,3 +93,42 @@ def test_inactive_expected_obstacle_is_rejected():
     )
     assert result["accepted"] is False
     assert result["failed_checks"] == ["obstacles_active"]
+
+
+def test_exact_proving_ground_mobility_intervention_is_bound():
+    catalog, digest = catalog_and_hash()
+    truth = valid_truth(digest) | {
+        "mobilityHoldAfterSeconds": 18.0,
+        "mobilityReleaseAfterSeconds": -1.0,
+    }
+    result = validate_binding(
+        truth,
+        catalog,
+        catalog_sha256=digest,
+        catalog_id="v4",
+        layout_id="development-detour-001",
+        expected_mobility_hold_after=18.0,
+        expected_mobility_release_after=-1.0,
+    )
+
+    assert result["accepted"] is True
+    assert result["checks"]["mobility_hold_configuration"] is True
+    assert result["checks"]["mobility_release_configuration"] is True
+
+
+def test_unexpected_proving_ground_mobility_intervention_is_rejected():
+    catalog, digest = catalog_and_hash()
+    truth = valid_truth(digest) | {
+        "mobilityHoldAfterSeconds": 18.0,
+        "mobilityReleaseAfterSeconds": -1.0,
+    }
+    result = validate_binding(
+        truth,
+        catalog,
+        catalog_sha256=digest,
+        catalog_id="v4",
+        layout_id="development-detour-001",
+    )
+
+    assert result["accepted"] is False
+    assert result["failed_checks"] == ["mobility_hold_configuration"]

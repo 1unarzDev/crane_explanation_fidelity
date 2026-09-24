@@ -1614,3 +1614,22 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Effect: confirmation remains inactive at 0.000/0.050 alpha. A defensible candidate needs a
   validated multi-mechanism composition case or a separately developed method improvement; more
   single-mechanism route-change episodes have lower value than annotation, statistics, or paper work.
+
+## 2026-09-24 — bind one execution intervention to proving-ground scenario truth
+
+- Decision: add a narrowly scoped, proving-ground-specific timed mobility boundary rather than
+  relaxing the legacy-intervention rejection or adding another environment. Preserve the failed
+  run 008 and never retry or replace it.
+- Evidence: qualified single-mechanism cases repeatedly tie P and tool-enabled R. A fresh nominal
+  geometry plus an independently observed command--motion discrepancy can test whether the checked
+  method distinguishes execution restriction from route restriction while retaining both limits.
+- Fairness and validity: the schedule is evaluator-only, while both P and R will receive the same
+  robot-visible streams, source/configuration, and executable geometric and command--motion tools.
+  Exact requested boundaries are part of evaluator truth and post-run admission. Fault induction
+  remains separate from recording validity, and any unexpected valid outcome must be retained.
+- Alternatives rejected: reuse the invalid run 008; expose its evaluator intervention to the
+  methods; weaken R's tools; collect more easy route-change cases; or modify RoboBoat, geometry,
+  physics, and Nav2 configuration. None tests the needed composition fairly.
+- Effect: this creates only a development gate, not a frozen candidate or study campaign. The next
+  run must use a fresh, predeclared configuration and a clean hash-pinned player. Alpha remains
+  0.000/0.050.

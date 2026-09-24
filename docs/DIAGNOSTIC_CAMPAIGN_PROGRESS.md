@@ -214,3 +214,17 @@ The result adds zero confirmatory clusters and consumes no alpha. Together with 
 composition attempt, it leaves current P `NOT_READY`: the project should not expand easy
 route-change collection and should require genuinely deeper composition or a separately developed
 method change before freezing a confirmation candidate.
+
+## Scenario-bound composition infrastructure (2026-09-24)
+
+CRANE `3ebba7b` now supports a separately authenticated proving-ground execution intervention.
+Legacy corridor intervention flags remain rejected, the no-intervention configuration identity is
+unchanged, and active hold/release boundaries extend the proving-ground configuration hash and
+evaluator truth. The umbrella binding audit rejects undeclared or mismatched boundaries.
+
+A non-study, ROS-disabled headless smoke test compiled and exercised this seam successfully. It
+adds zero physical clusters, responses, labels, or alpha. The intended next development case uses
+a fresh nominal-clear-route configuration so geometry can act as a competing negative mechanism
+while command/odometry evidence tests an execution restriction. This is higher value than another
+easy route-change variant, but it cannot freeze P unless the actual retained evidence supports a
+compositional contract and a later fair P/R development comparison warrants a fresh candidate.

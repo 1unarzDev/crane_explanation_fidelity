@@ -4558,3 +4558,25 @@
 - **RESOURCE USE:** 8 valid calls; 120,036 input tokens (96,256 cached), 21,378 output tokens
   including 8,719 reasoning tokens, and 537,157.622 ms aggregate latency. Provider cost was not
   reported.
+
+## 2026-09-24 — proving-ground execution-intervention seam
+
+- **STATUS:** `IMPLEMENTED / COMPILED / HEADLESS_SMOKE_PASS / NO_STUDY_RUN`; CRANE commit
+  `3ebba7be193c29c5bec725af7bdcd39157738266` adds separately named proving-ground mobility
+  boundaries without enabling the rejected legacy corridor flags. The umbrella post-run audit
+  binds the requested hold/release values and fails closed on a mismatch.
+- **BOUNDARY:** the intervention schedule and activation remain evaluator-only. Robot-visible
+  evidence receives only commands, independently delivered odometry, paths, costmaps, action/BT
+  events, and exact source/configuration identities. The intervention does not identify a motor,
+  slip, collision, or obstacle cause.
+- **TESTS:** 96 CRANE reference/environment tests and 25 targeted umbrella launcher, binding, and
+  diagnostic tests passed. Unity 6000.5.10f1 compiled the dirty development checkout into an
+  isolated Linux player; this build is not eligible for a study run.
+- **NON-STUDY SMOKE:** with ROS disabled, unused development layout
+  `diagnostic-development-nominal-clear-route-002` scheduled a 1.0 s hold at simulation time
+  1.020 s, applied it at 1.040 s, retained `mobilityHeld=true`, and passed exact scenario binding.
+  A deliberately wrong no-hold expectation was rejected. No robot episode, response, or Luna
+  label was created.
+- **NEXT GATE:** rebuild from the clean pinned commit, prospectively declare one fresh unused
+  nominal-layout development episode, then retain its actual outcome once. Candidate P remains
+  `NOT_READY`; confirmation remains inactive at 0.000/0.050 alpha.
