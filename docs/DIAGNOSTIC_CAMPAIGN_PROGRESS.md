@@ -63,6 +63,12 @@ against the v3 diagnostic and source IDs without exposing P's answer plan. This 
 specific omission that invalidated the composition packet, but each fresh reference still must
 pass the audit before any Luna call.
 
+A six-cluster candidate-v2 development pilot is now prospectively declared but not run. Its fixed
+mixture has two persistent, two compensated, and two nominal configurations plus one clustered
+missing-odometry variant. The screen requires a two-net-success P advantage in each Luna pass with
+zero P material errors and no coverage/ambiguity regression. It cannot consume alpha or establish
+significance; its only role is deciding whether candidate v2 is credible enough to freeze.
+
 ## Fresh candidate-development capacity (2026-09-24)
 
 CRANE commit `7cafab0` adds the separate `crane-land-proving-ground-v5` catalog for candidate-v2

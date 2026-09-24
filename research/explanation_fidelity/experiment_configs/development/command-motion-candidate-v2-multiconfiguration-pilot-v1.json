@@ -1,0 +1,97 @@
+{
+  "schema": "crane-command-motion-candidate-v2-development-pilot/v1",
+  "declared_date": "2026-09-24",
+  "status": "PREDECLARED_DEVELOPMENT_ONLY_NOT_RUN",
+  "purpose": "Prospectively test deterministic checked diagnostic language against the strongest tool-enabled repository-agent baseline on multiple fresh independent configurations before any confirmatory freeze or alpha allocation.",
+  "scientific_boundary": {
+    "confirmatory": false,
+    "alpha_consumed": 0.0,
+    "legacy_data_reused": false,
+    "v4_confirmatory_identity_reused": false,
+    "unexpected_outcomes_retained": true,
+    "replacement_runs": false,
+    "effect_estimate_role": "candidate-readiness filter only; not confirmatory evidence"
+  },
+  "pinned_software": {
+    "umbrella_commit_before_declaration": "ce50adb7ffa36fa655f1ce3f8b1bcc9394b5073c",
+    "crane_commit": "8d1d308579fb4ea9f15186eb3d38a040edf52da0",
+    "diagnostic_core_commit": "bea12562324fa2caf9290698cfadddcb22bd8a8b",
+    "candidate_runner_sha256": "ba1848f88ae1fb85fbc564e96f565a6d8b105542a030cbfd88d8dd0ecedea3f2",
+    "independent_reference_sha256": "ae8650aa72678b1ff939be94315390b9287c3f7f2cd6b0a761da76c727ba2469",
+    "complete_reference_builder_sha256": "d7a08fcf03c313c1c15e171ab005a766c6f0987dbe60286a41ce5de7d8efaa98",
+    "shared_diagnostic_adapter_sha256": "8477955d95e9d1946062b3c1e0e85a861a57862e17c34a2f8ce83670fadbeaaa",
+    "repository_agent_prompt_sha256": "fecc91be8178762e58371fcceee783e493475f6f3c48687ce7dd1c120a027f6b",
+    "diagnostic_config_sha256": "9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85",
+    "catalog_sha256": "dd693444df842a97570bbf65e1cd07737bead48314acbf54d5a1c4c0b8f093d6",
+    "nav2_config_sha256": "e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+    "bt_policy_sha256": "14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+    "unity_build_manifest_sha256": "b49d121ce35b9adbf279f17a08687ea6a84a8397351973ff3132a54ab0c1d0fd",
+    "managed_assemblies_sha256": "432bfd07ac9febad1bd52726a811ed5c47ed29f11c74ba138a1ca2eaf35d4b6d"
+  },
+  "question": {
+    "question_id": "command-motion-candidate-v2-mechanism",
+    "question_kind": "diagnostic-mechanism-or-false-premise-v2",
+    "text": "Did a command-to-motion discrepancy prevent the robot from continuing toward the goal? Identify the deepest supported mechanism or reject the premise, connect it to the recorded navigation behavior, and state what remains unresolved."
+  },
+  "methods": {
+    "P": "deterministic-command-motion-candidate-v2: exact checked rendering of the v3 diagnostic; zero model calls",
+    "R": "gpt-6-sol high repository-aware agent; same blind input, exact CRANE/core source, and identical executable diagnostic; one call; no retry",
+    "comparison": "P versus R",
+    "resource_direction": "R receives strictly more language-model resource than P",
+    "model": "gpt-6-sol",
+    "reasoning_effort": "high",
+    "sampling": "provider defaults supported by the pinned Codex interface",
+    "maximum_calls_per_valid_primary_case": 1,
+    "retry_policy": "No retry for usable or inconvenient answers. A transport failure with no usable answer is retained and receives no replacement under this pilot."
+  },
+  "physical_runs_in_fixed_order": [
+    {"order":1,"run_id":"cmv2-dev-001","cluster_id":"cmv2-land-001","layout_id":"diagnostic-candidate-v2-development-connected-detour-001","seed":81000,"family":"persistent-discrepancy","mobility_hold_after_s":18.0,"mobility_release_after_s":-1.0,"ros_domain_id":132,"ros_port":12332},
+    {"order":2,"run_id":"cmv2-dev-002","cluster_id":"cmv2-land-002","layout_id":"diagnostic-candidate-v2-development-nominal-clear-route-002","seed":82001,"family":"transient-compensation","mobility_hold_after_s":18.0,"mobility_release_after_s":30.0,"ros_domain_id":133,"ros_port":12333},
+    {"order":3,"run_id":"cmv2-dev-003","cluster_id":"cmv2-land-003","layout_id":"diagnostic-candidate-v2-development-connected-detour-002","seed":81001,"family":"nominal-false-premise","mobility_hold_after_s":-1.0,"mobility_release_after_s":-1.0,"ros_domain_id":134,"ros_port":12334},
+    {"order":4,"run_id":"cmv2-dev-004","cluster_id":"cmv2-land-004","layout_id":"diagnostic-candidate-v2-development-nominal-clear-route-003","seed":82002,"family":"persistent-discrepancy","mobility_hold_after_s":25.0,"mobility_release_after_s":-1.0,"ros_domain_id":135,"ros_port":12335},
+    {"order":5,"run_id":"cmv2-dev-005","cluster_id":"cmv2-land-005","layout_id":"diagnostic-candidate-v2-development-connected-detour-003","seed":81002,"family":"transient-compensation","mobility_hold_after_s":25.0,"mobility_release_after_s":37.0,"ros_domain_id":136,"ros_port":12336},
+    {"order":6,"run_id":"cmv2-dev-006","cluster_id":"cmv2-land-006","layout_id":"diagnostic-candidate-v2-development-nominal-clear-route-004","seed":82003,"family":"nominal-false-premise","mobility_hold_after_s":-1.0,"mobility_release_after_s":-1.0,"ros_domain_id":137,"ros_port":12337}
+  ],
+  "paired_ambiguous_variant": {
+    "source_run_id": "cmv2-dev-001",
+    "variant_id": "cmv2-dev-001-mask-no-odometry",
+    "operation": "deterministically remove odometry samples after governing the unmasked export",
+    "independent_cluster_increment": 0,
+    "purpose": "Test appropriate specificity when the decisive measured-motion stream is absent."
+  },
+  "run_contract": {
+    "catalog": "v5",
+    "scene": "TurtleBot3 Warehouse Validation",
+    "goal_distance_m": 18.0,
+    "action_duration_s": 100,
+    "capture_duration_s": 110,
+    "diagnostic_computation_version": "command-motion-discrepancy-v3",
+    "allow_active_at_declared_cutoff": true,
+    "prelaunch_player_audit_required": true,
+    "postrun_scenario_binding_required": true,
+    "recording_validity_independent_of_expected_outcome": true,
+    "no_layout_or_run_replacement": true
+  },
+  "reference_and_annotation": {
+    "independent_reference_before_candidate_calls": true,
+    "complete_reference_audit_before_packet": true,
+    "proposed_answer_plan_excluded_from_judge": true,
+    "evaluator_intervention_excluded_from_methods_and_judge": true,
+    "judge": "qualified luna-model-judge-v7 exact frozen hashes/settings",
+    "passes": 2,
+    "passes_isolated": true,
+    "no_rejudge_for_disagreement": true,
+    "invalid_or_incomplete_packet": "evidence_problem; do not repair or score"
+  },
+  "development_readiness_gate": {
+    "minimum_valid_independent_clusters": 4,
+    "minimum_valid_ambiguous_variants": 1,
+    "required_each_luna_pass_net_p_minus_r_successes": 2,
+    "equivalent_minimum_difference_at_six_valid_clusters": 0.3333333333333333,
+    "p_material_errors_allowed": 0,
+    "p_ambiguous_case_must_qualify": true,
+    "coverage_degradation_allowed": 0.0,
+    "interpretation": "A screening gate stricter than +0.15, not an effect estimate or significance test. Failure means do not freeze this candidate or spend confirmatory alpha."
+  },
+  "stopping": "Run each declared physical configuration at most once in order. Process every valid unexpected result. After the declared six runs and paired mask, stop this pilot regardless of favorability."
+}

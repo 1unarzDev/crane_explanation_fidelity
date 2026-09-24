@@ -1,5 +1,23 @@
 # Experiment Log
 
+## 2026-09-24 — predeclare candidate-v2 multi-configuration pilot
+
+- **PREDECLARED / DEVELOPMENT ONLY / NOT RUN:** six unique v5 configurations are fixed in order:
+  two persistent-discrepancy attempts, two transient-compensation attempts, and two nominal false-
+  premise controls. One no-odometry mask is paired with run 001 and adds zero independent clusters.
+- **FIXED:** layout IDs/seeds, hold/release boundaries, ROS domains/ports, player/catalog/Nav2/BT/
+  diagnostic/method/reference/prompt hashes, question, model (`gpt-6-sol` high), one-call R budget,
+  no-retry/no-replacement policy, independent references, complete-reference gate, and Luna v7
+  two-pass procedure are recorded in
+  `command-motion-candidate-v2-multiconfiguration-pilot-v1.json`.
+- **READINESS SCREEN:** at least four valid independent clusters and the ambiguous variant are
+  required. Both Luna passes must show at least two more P successes than R successes, P must have
+  zero material errors, the ambiguous case must qualify, and P coverage cannot degrade. This is a
+  deliberately stringent development filter, not significance or a confirmatory effect estimate.
+- **BOUNDARY:** valid unexpected outcomes remain; invalid recordings are retained; no favorable
+  family replacement is allowed. Failure of this screen means do not freeze candidate v2 or spend
+  alpha. Confirmation remains inactive at `0.000/0.050`.
+
 ## 2026-09-24 — deterministic command--motion candidate-v2 runner
 
 - **IMPLEMENTED / TESTED / NOT FROZEN:** `analysis/run_command_motion_candidate_v2.py` compares
