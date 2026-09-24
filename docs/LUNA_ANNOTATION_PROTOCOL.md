@@ -220,6 +220,23 @@ pass-specific Wilson intervals are retained in
 false acceptances among six unsupported answers has a 95% Wilson upper bound of 39.0%, not zero
 population error.
 
+### Prospective v7 reference-audited cycle
+
+A post-run audit found that each of v6 pass 1's three counted factual false rejections identified a
+real mismatch between candidate wording and allowed evidence: one candidate converted a median
+speed into a claim that speed stayed constant, and two candidates added episode events absent from
+their packets. The v6 expected labels therefore did not meet this protocol's independent-reference
+requirement. This finding does not rescore or qualify v6.
+
+V7 is a final prospective reference-corrected cycle using 24 new identifiers, evidence packets,
+quantities, questions, and candidate answers. Before any call, every factual candidate was checked
+so its asserted event, statistic, temporal scope, and qualification occur in its allowed packet;
+truthful-omission candidates contain no extra event. Luna alias, high effort, v4 prompt, schema,
+rubrics, isolation, two-pass rule, 10/10 composite balance, 17 factual and six unsupported
+denominators, thresholds, protected rules, and retry policy remain unchanged. Both passes must
+clear every gate. A failure ends Luna qualification iteration for this submission rather than
+causing another post-result reference or threshold change.
+
 ## Input boundary and isolation
 
 Every response is judged in a new API request with no conversation history and no model tools. The

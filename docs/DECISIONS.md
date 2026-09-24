@@ -1392,3 +1392,19 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Effect: confirmatory alpha remains 0.000/0.050; no study responses are scored and no superiority
   claim is permitted. Any further judge work must be a separately versioned prospective cycle and
   must not weaken v6 after observing its result.
+
+## 2026-09-24 — authorize one final reference-audited v7 qualification
+
+- Decision: preserve v6 as failed and run one final fresh v7 suite after correcting the prospective
+  reference-construction procedure, without changing Luna, its prompt, or any acceptance gate.
+- Evidence: direct audit showed that v6's three pass-1 “false rejections” each concerned a real
+  unsupported scope or event in a candidate labeled factual. The expected references, not merely
+  Luna's strictness, violated the declared rule that factual candidates be supported claim by
+  claim. Pass 2 independently flagged two of the same cases.
+- Validity: v7 uses new packets, values, wording, answers, and identifiers. Its factual candidates
+  were audited before calls for event, statistic, temporal-scope, and qualification correspondence.
+  V6 is not rescored, and all thresholds and denominators stay fixed.
+- Alternatives: retroactively fix v6, waive its false-rejection gate, or start confirmation with an
+  unqualified judge are rejected. Another robot episode cannot resolve a reference-validity defect.
+- Stop: if either v7 pass fails, end Luna qualification iteration for this submission, retain the
+  negative result, and prohibit automated semantic study scoring.

@@ -17,6 +17,7 @@ Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 | Luna historical qualification | V4 HIGH FAILED / PRESERVED | Both fresh passes failed; never retroactively qualified |
 | Luna v5 endpoint qualification | FAILED / PRESERVED | P1 passed; P2 missed core by one field and one protected subcheck |
 | Luna v6 endpoint qualification | FAILED / PRESERVED | P1 false rejection 3/17 exceeded 15%; P2 passed every gate |
+| Luna v7 reference-audited qualification | PREDECLARED / NOT_RUN | Fresh cases; unchanged judge/gates; final qualification cycle |
 | Replication configurations reserved | NOT_RUN | Reserve before discovery collection |
 | Sequential null simulation | PASS_QA | 20,000 replicates per endpoint; all boundary estimates below component alpha 0.02 |
 | Alternative budget sensitivity | COMPLETE | +0.30 scenarios reach 0.9946/0.9366 joint success by 1,600; this is not observed power |
@@ -68,11 +69,10 @@ Record, without deleting earlier rows:
 
 ## Next action
 
-Do not score study responses with v6. Preserve the failed result and do not retry usable judgments.
-Before another automated semantic-evaluation cycle, make a prospective decision that accounts for
-the repeated factual-rejection instability without weakening observed qualification thresholds.
-Candidate/baseline/resource and target-generator readiness also remain incomplete; no confirmatory
-campaign may start.
+Do not score study responses with v6. Run the frozen v7 reference-audited qualification exactly
+once. Only if both passes clear every unchanged gate may Luna be activated for study scoring. A v7
+failure ends qualification iteration for this submission. Candidate/baseline/resource and target-
+generator readiness also remain incomplete; no confirmatory campaign may start.
 
 ## Held-out judge result (2026-09-24)
 

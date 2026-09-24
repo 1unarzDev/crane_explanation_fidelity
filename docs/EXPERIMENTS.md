@@ -4020,3 +4020,17 @@
 - **DISPOSITION:** preserve the failed run without usable-label retries, score no study response,
   consume no confirmatory alpha, and do not start confirmation. Report SHA-256
   `82801dc87d40d7c0c9d5eb1a4fa4c9410cfa45d3e07f5eb7ad53f6eb00297602`.
+
+## 2026-09-24 — v7 reference-audited qualification predeclaration
+
+- **STATUS:** `PREDECLARED / NOT_RUN`; 24 fresh cases and zero v7 model calls.
+- **REFERENCE AUDIT:** all three v6 pass-1 factual rejections were evidence-linked: a median was
+  rewritten as a constant-over-time claim, and two candidate answers asserted events absent from
+  their packets. V6 remains failed; it is neither rescored nor reused as heldout evidence.
+- **V7 CORRECTION:** new evidence, values, wording, identifiers, and responses were checked before
+  calls so factual candidates preserve statistic and event scope. Deliberately unsupported cases
+  retain explicit violations.
+- **UNCHANGED:** Luna alias, high reasoning, v4 prompt, schema, rubrics, two isolated passes,
+  thresholds, denominators, protected rules, uncertainty reporting, and retry policy.
+- **HARD STOP:** both passes must clear every gate. Any v7 failure ends Luna qualification
+  iteration for the submission and prohibits automated study scoring.
