@@ -31,7 +31,7 @@ def test_print_config_resolves_proving_ground_capture_contract():
     config = json.loads(completed.stdout)
     assert config == {
         "action_duration_s": 100,
-        "bt_xml": "packages/crane_ml/Tools/Performance/nav2_roboboat_distance_replanning.xml",
+        "bt_xml": "packages/crane_ml/Tools/Performance/nav2_land_progress_recovery.xml",
         "catalog": "v4",
         "command_flag": "--crane-ros-differential-cmd-vel",
         "data_split": "dev",
@@ -151,6 +151,31 @@ def test_print_config_binds_proving_ground_mobility_intervention(monkeypatch):
     assert config["proving_ground_mobility_release_after_s"] == -1.0
 
 
+def test_print_config_admits_only_v5_candidate_development_split(monkeypatch):
+    monkeypatch.setenv("CRANE_PROVING_GROUND_MOBILITY_HOLD_AFTER", "18.0")
+    completed = subprocess.run(
+        [
+            "bash",
+            str(SCRIPT),
+            "--print-config",
+            "cmv2-dev-001",
+            "132",
+            "12332",
+            "v5",
+            "diagnostic-candidate-v2-development-connected-detour-001",
+        ],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+    config = json.loads(completed.stdout)
+    assert config["catalog"] == "v5"
+    assert config["layout_seed"] == 81000
+    assert config["proving_ground_mobility_hold_after_s"] == 18.0
+    assert config["bt_xml"].endswith("nav2_land_progress_recovery.xml")
+
+
 def test_capture_rejects_release_without_proving_ground_hold(monkeypatch):
     monkeypatch.setenv("CRANE_PROVING_GROUND_MOBILITY_RELEASE_AFTER", "20.0")
 
@@ -190,6 +215,7 @@ def test_capture_requires_exact_post_run_scenario_binding():
     assert "--expected-mobility-hold-after" in text
     assert "--expected-mobility-release-after" in text
     assert "scenario-binding-audit.json" in text
+    assert 'CRANE_NAV2_BT_XML="${bt_xml}"' in text
 
 
 def test_capture_requires_declared_full_player_bundle_before_launch():

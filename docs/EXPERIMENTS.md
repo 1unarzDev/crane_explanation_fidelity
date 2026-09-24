@@ -17,6 +17,12 @@
 - **BOUNDARY:** valid unexpected outcomes remain; invalid recordings are retained; no favorable
   family replacement is allowed. Failure of this screen means do not freeze candidate v2 or spend
   alpha. Confirmation remains inactive at `0.000/0.050`.
+- **PRE-RUN AMENDMENT 1:** before any declared run or outcome, preflight found that the shared
+  capture launcher admitted only v4 and named a RoboBoat BT for provenance without binding it as
+  the executed Nav2 tree. The launcher now admits only v5's `candidate-v2-development` split and
+  explicitly executes the already declared `nav2_land_progress_recovery.xml`. The amendment pins
+  the corrected launcher hash; all run/method/analysis contracts remain unchanged. Eleven launcher
+  tests pass.
 
 ## 2026-09-24 — deterministic command--motion candidate-v2 runner
 

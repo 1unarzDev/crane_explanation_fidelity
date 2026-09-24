@@ -27,16 +27,16 @@ if [[ ! "${ros_domain_id}" =~ ^[0-9]+$ || ! "${ros_port}" =~ ^[0-9]+$ ]]; then
     echo "ROS_DOMAIN_ID and ROS_TCP_PORT must be integers" >&2
     exit 2
 fi
-if [[ "${catalog}" != "v4" ]]; then
-    echo "Only the versioned diagnostic catalog v4 is supported: ${catalog}" >&2
+if [[ "${catalog}" != "v4" && "${catalog}" != "v5" ]]; then
+    echo "Only versioned diagnostic catalogs v4 and v5 are supported: ${catalog}" >&2
     exit 2
 fi
 
 astro_dir="${workspace_root}/packages/astro_dock"
 crane_dir="${workspace_root}/packages/crane_ml"
-catalog_file="${crane_dir}/Assets/Resources/ReferenceEnvironments/crane_land_proving_ground_v4.json"
+catalog_file="${crane_dir}/Assets/Resources/ReferenceEnvironments/crane_land_proving_ground_${catalog}.json"
 nav2_params="${crane_dir}/Tools/Performance/nav2_land_proving_ground_fixture.yaml"
-bt_xml="${crane_dir}/Tools/Performance/nav2_roboboat_distance_replanning.xml"
+bt_xml="${crane_dir}/Tools/Performance/nav2_land_progress_recovery.xml"
 scene="TurtleBot3 Warehouse Validation"
 command_flag="--crane-ros-differential-cmd-vel"
 lidar_frame="base_scan"
@@ -50,11 +50,11 @@ if [[ "${data_split}" != "dev" ]]; then
     echo "Diagnostic held-out/final capture is not authorized before protocol freeze" >&2
     exit 2
 fi
-layout_metadata_text="$(python3 - "${catalog_file}" "${layout}" <<'PY'
+layout_metadata_text="$(python3 - "${catalog_file}" "${layout}" "${catalog}" <<'PY'
 import json
 import sys
 
-catalog_path, layout_id = sys.argv[1:]
+catalog_path, layout_id, catalog_id = sys.argv[1:]
 catalog = json.load(open(catalog_path, encoding="utf-8"))
 matches = [item for item in catalog.get("layouts", []) if item.get("id") == layout_id]
 if len(matches) != 1:
@@ -62,7 +62,8 @@ if len(matches) != 1:
 layout = matches[0]
 if layout.get("studySplit") == "confirmatory":
     raise SystemExit("confirmatory layouts are sealed until protocol freeze")
-if layout.get("studySplit") != "development":
+expected_split = "development" if catalog_id == "v4" else "candidate-v2-development"
+if layout.get("studySplit") != expected_split:
     raise SystemExit("layout is calibration-only or outside the active diagnostic scope")
 if layout.get("diagnosticMechanism") not in {"connected-detour", "nominal-clear-route"}:
     raise SystemExit("layout is calibration-only or outside the active diagnostic scope")
@@ -122,7 +123,7 @@ print(json.dumps({
     "data_split": "dev",
     "scene": "TurtleBot3 Warehouse Validation",
     "nav2_params": "packages/crane_ml/Tools/Performance/nav2_land_proving_ground_fixture.yaml",
-    "bt_xml": "packages/crane_ml/Tools/Performance/nav2_roboboat_distance_replanning.xml",
+    "bt_xml": "packages/crane_ml/Tools/Performance/nav2_land_progress_recovery.xml",
     "command_flag": "--crane-ros-differential-cmd-vel",
     "lidar_frame": "base_scan",
     "goal_distance_m": 18.0,
@@ -229,6 +230,7 @@ CRANE_PLAYER="${player}" \
 CRANE_SEED_BASE="${layout_seed}" \
 CRANE_PROVING_GROUND_CATALOG="${catalog}" \
 CRANE_PROVING_GROUND_LAYOUT="${layout}" \
+CRANE_NAV2_BT_XML="${bt_xml}" \
 CRANE_NAV2_UNITY_EXTRA_ARGS="--crane-land-proving-ground-mobility-hold-after ${proving_ground_mobility_hold_after} --crane-land-proving-ground-mobility-release-after ${proving_ground_mobility_release_after} ${unity_extra_args}" \
 bash "${crane_dir}/Tools/Performance/run_land_proving_ground_nav2_fixture.sh"
 

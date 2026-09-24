@@ -5,6 +5,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 DECLARATION = ROOT / "research/explanation_fidelity/experiment_configs/development/command-motion-candidate-v2-multiconfiguration-pilot-v1.json"
+AMENDMENT = ROOT / "research/explanation_fidelity/experiment_configs/development/command-motion-candidate-v2-multiconfiguration-pilot-v1-amendment-1.json"
 
 
 def sha256(relative: str) -> str:
@@ -60,3 +61,15 @@ def test_candidate_v2_pilot_hashes_live_inputs_and_keeps_strong_r():
     assert value["development_readiness_gate"][
         "required_each_luna_pass_net_p_minus_r_successes"
     ] == 2
+
+
+def test_pre_run_amendment_binds_actual_launcher_and_parent():
+    amendment = json.loads(AMENDMENT.read_text(encoding="utf-8"))
+    assert amendment["parent_declaration_sha256"] == sha256(
+        DECLARATION.relative_to(ROOT).as_posix()
+    )
+    assert amendment["correction"]["launcher_sha256"] == sha256(
+        "scripts/run_diagnostic_land_capture.sh"
+    )
+    assert amendment["outcomes_inspected_before_amendment"] is False
+    assert amendment["timing"].startswith("before any declared physical run")
