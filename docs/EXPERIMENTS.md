@@ -81,6 +81,24 @@
   six configurations. Zero confirmatory clusters and `0.000/0.050` alpha. See
   `manifests/data/cmv2-dev-002-disposition.json`.
 
+## 2026-09-24 — candidate-v2 run 003 retained false-premise result
+
+- **STATUS:** `VALID_DEVELOPMENT_FALSE_PREMISE_AND_COMPLETE_PAIRED_LUNA_MEASUREMENT`; the sole
+  no-intervention run passed build/binding/recording gates and succeeded after 17.589 m. The fixed
+  computation returned `not_triggered`, while the execution record still contained two FollowPath
+  failures, two source-qualified Wait invocations, and three attempts.
+- **CANDIDATE FAILURE:** P's decisive-evidence section reports those two failures and recoveries,
+  but its failure-chain sentence says none were observed. The deterministic verifier accepted this
+  contradiction. Both Luna passes labeled it material error. The candidate remains unchanged for
+  the rest of the fixed pilot.
+- **BASELINE/JUDGE:** R rejected the command-motion premise and preserved the execution counts, but
+  both passes found its statement that no individual qualifying window met the threshold stronger
+  than the reference, which establishes only absence of the required consecutive-window run. Both
+  P and R therefore failed both passes; paired difference 0 in each.
+- **INFERENCE:** candidate v2 has failed the zero-P-material-error readiness gate. Complete all six
+  predeclared configurations anyway; do not tune, repair, replace, or spend confirmatory alpha.
+  Tracked disposition: `manifests/data/cmv2-dev-003-disposition.json`.
+
 ## 2026-09-24 — deterministic command--motion candidate-v2 runner
 
 - **IMPLEMENTED / TESTED / NOT FROZEN:** `analysis/run_command_motion_candidate_v2.py` compares

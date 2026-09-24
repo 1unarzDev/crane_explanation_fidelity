@@ -1,0 +1,78 @@
+{
+  "schema": "crane-command-motion-candidate-v2-run-disposition/v1",
+  "recorded_date": "2026-09-24",
+  "run_id": "cmv2-dev-003",
+  "cluster_id": "cmv2-land-003",
+  "status": "VALID_DEVELOPMENT_FALSE_PREMISE_AND_COMPLETE_PAIRED_LUNA_MEASUREMENT",
+  "attempt_count": 1,
+  "retry_performed": false,
+  "admission": {
+    "player_build_audit_accepted": true,
+    "scenario_binding_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "unity_result_valid": true,
+    "recording_valid": true,
+    "navigation_status": "succeeded"
+  },
+  "observed": {
+    "displacement_meters": 17.589209776433982,
+    "controller_commands": 833,
+    "odometry_messages": 4298,
+    "costmap_observations": 327,
+    "behavior_tree_transitions": 39,
+    "follow_path_attempts": 3,
+    "follow_path_failures": 2,
+    "source_qualified_wait_invocations": 2
+  },
+  "diagnostic": {
+    "disposition": "not_triggered",
+    "healthy_interval_s": [0.0, 5.0],
+    "healthy_measured_planar_speed_mps": 0.2597399950027466,
+    "complete_reference_audit_accepted": true,
+    "candidate_internal_contradiction": "P reports two FollowPath failures and two Wait invocations in decisive evidence, then falsely denies both in its failure chain.",
+    "candidate_verifier_accepted_contradiction": true
+  },
+  "language_evaluation": {
+    "conditions": ["P", "R"],
+    "p_model_calls": 0,
+    "r_model_calls": 1,
+    "luna_passes": 2,
+    "luna_calls": 4,
+    "call_failures": 0,
+    "pass_1": {
+      "P_supported_diagnostic_success": false,
+      "R_supported_diagnostic_success": false,
+      "P_material_error": true,
+      "R_material_error": true,
+      "paired_difference": 0
+    },
+    "pass_2": {
+      "P_supported_diagnostic_success": false,
+      "R_supported_diagnostic_success": false,
+      "P_material_error": true,
+      "R_material_error": true,
+      "paired_difference": 0
+    },
+    "interpretation": "Both passes caught P's execution-count contradiction. R correctly rejected the premise but overstated the non-trigger predicate; no response was rejudged or repaired."
+  },
+  "hashes": {
+    "player_build_audit_sha256": "e60f6e5efd5a58b0b724deb1eb931a2219c25daea53853b39a602ae634864a77",
+    "scenario_binding_audit_sha256": "e61dd995957e13483f6ce198b6b7b43783ebd342a7b3c98acb2bee0d37010f50",
+    "robot_visible_events_sha256": "2005dcceff80048dfd67698396fa50e1f13261dd013a60de006ab202548a0b9d",
+    "diagnostic_export_sha256": "2fb65573fcfe44bf8486ee9b409f1c74bc8538aab65f0042bd1705ec96819f13",
+    "independent_reference_sha256": "a027c544fc2ddb048d35e877dd31fceff2df1614201213fa61d4b4e4ef722bf9",
+    "complete_annotation_reference_sha256": "8657073b0a577c522f41a8e96c80c92c639ea38a2a7291ac47653c84da6fe328",
+    "candidate_result_sha256": "a5946f29ca6c73b778909b913c7f63eeab6a8c53ec868b491f1dd5f525fd0f6a",
+    "blinded_packet_sha256": "e821b80c7af3440684d4919e6cc58730ad52eef973c8d5cb2209ce3dfc836a3b",
+    "condition_key_sha256": "4f9d2d19ff1e36ad37ee94659dacdebd71e9308bbf7917c2fd1efc807ee94b07",
+    "luna_summary_sha256": "07a5eef61ff95e80305cc62482c4a53c3a50fa951ccb5ab6bea8d63e2ba52f81"
+  },
+  "inference": {
+    "independent_cluster_increment": 1,
+    "confirmatory_cluster_increment": 0,
+    "confirmatory_alpha_consumed": 0.0,
+    "candidate_readiness": "FAILED_ZERO_MATERIAL_ERROR_GATE",
+    "paired_result": "TIE_IN_BOTH_PASSES",
+    "method_change_during_pilot": false
+  }
+}
