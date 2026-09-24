@@ -4290,3 +4290,15 @@
 - **FIX:** the capture path now writes a binding audit and fails closed unless truth matches the
   exact catalog hash, environment, layout, seed, mechanism, obstacle IDs, and active state. Legacy
   corridor truth and misspelled layouts are regression-tested rejection cases.
+
+## 2026-09-24 — fresh land scenario-binding qualification predeclaration
+
+- **STATUS:** `PREDECLARED / NOT_RUN`; one attempt, no language or judge calls.
+- **RUN:** `diagnostic-land-binding-dev-006`, v4 layout
+  `diagnostic-development-connected-detour-006`, seed 62005, ROS domain 128, port 12326.
+- **ADMISSION:** exact proving-ground truth schema, environment/layout/catalog hash, seed,
+  mechanism, broad outcome, obstacle identities, and active state must all match. Legacy corridor
+  truth fails the run even if navigation itself succeeds.
+- **RETENTION:** retain either accepted or failed binding, do not substitute another layout, and do
+  not generate explanation responses from an invalid binding. This is development pipeline
+  qualification, not confirmation or a method-effect measurement.

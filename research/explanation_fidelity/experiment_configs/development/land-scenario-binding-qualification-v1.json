@@ -1,0 +1,42 @@
+{
+  "schema": "crane-land-scenario-binding-qualification/v1",
+  "status": "PREDECLARED_DEVELOPMENT_ONLY_NOT_RUN",
+  "declared_at": "2026-09-24T09:55:11-05:00",
+  "purpose": "Prospectively verify that the corrected land capture path actually binds one fresh v4 obstacle layout and fails closed otherwise, after the retained land-005 pair was found to use legacy corridor truth.",
+  "run": {
+    "run_id": "diagnostic-land-binding-dev-006",
+    "catalog": "v4",
+    "layout": "diagnostic-development-connected-detour-006",
+    "layout_seed": 62005,
+    "ros_domain_id": 128,
+    "ros_tcp_port": 12326,
+    "scene": "TurtleBot3 Warehouse Validation",
+    "goal_distance_m": 18.0,
+    "action_duration_s": 100.0
+  },
+  "source": {
+    "umbrella_commit_before_declaration": "8608c09",
+    "crane_ml_commit": "f669e748c657a5e93324e8bcdf1732785e88ce47",
+    "astro_dock_commit": "36202373ae186a8fd247a20b7b477312a744de99",
+    "player_sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+    "catalog_sha256": "c2603491c16b99ba007085237097fc0cd66ee2453d1b9e4e1fc7f490bd1a0f8a",
+    "capture_orchestrator_sha256": "8bbcc574135fa5061189264e43a9242f4d6da9997c41406130bef91406f12cdb",
+    "binding_validator_sha256": "da92bd8afa91a04f540d6de0ca2490193a7aab34124ccd904836122515de8d00"
+  },
+  "admission": {
+    "required_truth_schema": "crane-land-proving-ground-truth-v1",
+    "required_environment_id": "crane-land-proving-ground-v4",
+    "required_layout_id": "diagnostic-development-connected-detour-006",
+    "require_catalog_hash_match": true,
+    "require_seed_mechanism_outcome_obstacle_identity_and_active_state_match": true,
+    "legacy_corridor_truth_is_invalid": true
+  },
+  "retention": {
+    "maximum_attempts": 1,
+    "retain_success_or_failure": true,
+    "do_not_substitute_another_layout": true,
+    "do_not_generate_language_from_invalid_binding": true
+  },
+  "allowed_use": "Capture-pipeline and physical-scenario development qualification only; not confirmation, candidate-effect evidence, power evidence, or replication.",
+  "next_gate": "Only a truth-bound accepted run may be processed into a robot-visible geometric diagnostic. No model or Luna calls are authorized by this declaration."
+}
