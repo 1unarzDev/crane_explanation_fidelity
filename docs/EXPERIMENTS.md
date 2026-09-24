@@ -1,5 +1,15 @@
 # Experiment Log
 
+## 2026-09-24 — candidate-v3 run 005 retained tie
+
+- **STATUS:** the sole transient attempt passed all admission gates and succeeded after 17.540 m.
+  The checked discrepancy spans 18--27 s at 0.250 versus 0.000 m/s; response recovered to 0.24975
+  m/s at 30--31 s. Three attempts, two failures, and two qualified Waits were retained.
+- **LUNA:** P and R both achieved full supported diagnostic success without material error in both
+  isolated passes. The paired difference is 0 in each.
+- **INFERENCE:** five of six clusters are valid; cumulative P-minus-R remains +3 in each pass, with
+  the mask valid and zero P material errors. Run 006 remains mandatory. Alpha is `0.000/0.050`.
+
 ## 2026-09-24 — candidate-v3 run 004 retained tie
 
 - **STATUS:** the sole persistent-discrepancy attempt passed build, binding, recording, and Unity

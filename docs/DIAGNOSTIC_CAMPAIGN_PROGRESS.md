@@ -87,6 +87,10 @@ passes with full coverage and no material error. Current state is 4/6 valid inde
 minimum numerical gates are provisionally satisfied, but the fixed pilot cannot stop early;
 `cmv3-dev-005` and `cmv3-dev-006` remain mandatory. Confirmation is inactive at `0.000/0.050`.
 
+Run `cmv3-dev-005` is governed as a valid transient-compensation tie. Current state is 5/6 valid
+clusters, 1/1 ambiguous variants, cumulative P-minus-R +3 in each pass, and zero P material errors.
+The sole fixed `cmv3-dev-006` attempt remains mandatory before readiness classification.
+
 Candidate v2 now has an executable development runner. P is the exact checked deterministic
 diagnostic rendering with zero model calls; R gets the identical blind input, source, diagnostic
 tool, and one high-reasoning model call. This accurately treats the proposed method as specialized
