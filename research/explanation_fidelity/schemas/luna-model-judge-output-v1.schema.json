@@ -27,9 +27,9 @@
     "rationale"
   ],
   "properties": {
-    "schema": {"const": "crane-luna-model-judge-output/v1"},
-    "annotation_origin": {"const": "automated"},
-    "arm_id": {"const": "luna-model-judge-v1"},
+    "schema": {"type": "string", "const": "crane-luna-model-judge-output/v1"},
+    "annotation_origin": {"type": "string", "const": "automated"},
+    "arm_id": {"type": "string", "const": "luna-model-judge-v1"},
     "opaque_response_id": {"type": "string", "minLength": 1},
     "pass_id": {"enum": ["pass-1", "pass-2", "qualification"]},
     "rubric": {"enum": ["legacy", "diagnostic"]},
@@ -93,4 +93,3 @@
     "rationale": {"type": "string", "minLength": 1}
   }
 }
-
