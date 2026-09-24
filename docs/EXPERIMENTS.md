@@ -4219,3 +4219,21 @@
   identities. It changes no run, question-family intent, model, retry rule, cluster, or outcome.
 - **VALIDITY:** the failed detour remains failed and cannot become a route-change case. This is a
   prospective execution correction, not a reset of the already-inspected physical batch.
+
+## 2026-09-24 — language-v4 multi-family response generation
+
+- **STATUS:** `GENERATED / BLINDED_SCORING_NOT_STARTED`; 12/12 planned model calls returned valid
+  outputs with no retry, producing four R/P/T/N envelopes across the two development clusters.
+- **MODEL/USE:** `gpt-6-sol`, high reasoning, one call per R/P/N configuration; T is deterministic.
+  Total use was 930,240 input tokens (675,200 cached), 13,957 output tokens including 5,342
+  reasoning tokens, and 431,414 ms aggregate latency. Cost was unavailable.
+- **VERIFICATION:** three P realizations passed verifier v4 with evidence-ID repair and no fallback.
+  The compensated command--motion realization omitted the explicit unresolved-unique-cause
+  proposition, failed closed, and used the deterministic T rendering. No answer was retried.
+- **PRE-LABEL OBSERVATIONS:** P and R both communicate the supported persistent and compensated
+  command--motion mechanisms. The no-computation ablation withholds that aligned diagnosis. Both
+  land pairs reject the failure premise; their outputs cannot establish route-change behavior.
+  These are execution observations, not semantic labels or a method-effect estimate.
+- **GOVERNANCE:** all result envelopes and raw call caches are hash-inventoried in
+  `manifests/model_outputs/diagnostic-language-v4-multifamily-development-v1.json`. Blinded packet
+  construction and the two predeclared qualified-Luna passes remain unrun.
