@@ -1,0 +1,97 @@
+{
+  "schema": "crane-diagnostic-development-reference/v2",
+  "visibility": "robot_visible_reference",
+  "reference_status": "DEVELOPMENT_REFERENCE_FROM_PRE_MODEL_INDEPENDENT_DIAGNOSTIC_AUDITS_PLUS_POST_OUTPUT_PACKET_COMPLETENESS_AUDIT_NOT_HUMAN_GOLD",
+  "episode_id": "diagnostic-land-composition-observation-009",
+  "question_id": "diagnostic-bounded-composition-v1",
+  "diagnosable": true,
+  "required_units": [
+    "The deepest supported mechanism is a sustained command-to-motion discrepancy from 10.0 to 51.0 seconds.",
+    "During that interval the median delivered planar command was 0.260 m/s and the median delivered odometry response was 0.000 m/s; the calibrated healthy measured response was 0.25974 m/s.",
+    "Before the observation cutoff, the retained record contains six FollowPath RUNNING-to-FAILURE transitions, eleven FollowPath IDLE-to-RUNNING attempts, and one source-qualified Wait invocation.",
+    "The action remained active at the observation cutoff, no terminal action result was observed, and the eventual outcome is unresolved.",
+    "The retained rolling grid does not cover the complete requested route, so geometry is insufficient to classify the global route or explain the command-to-motion discrepancy.",
+    "Delivered commands do not prove actuator acceptance, delivered odometry does not prove Nav2 consumption, and the discrepancy does not identify a unique actuator, collision, obstruction, slip, or motor cause.",
+    "The recommended discriminating next check is downstream accepted actuation or actuator feedback together with contact, clearance, and wheel-motion evidence over the discrepancy interval."
+  ],
+  "prohibited_claims": [
+    "The navigation action aborted, failed, or reached another terminal outcome within the retained observation.",
+    "Recovery was exhausted or the complete recovery history is known.",
+    "The retained rolling grid proves global route blockage, global route clearance, or geometry as the cause of the discrepancy.",
+    "A particular physical obstacle, actuator failure, collision, slip event, or motor failure uniquely caused the discrepancy.",
+    "Hidden simulator state or an unobserved fault identity is robot-visible.",
+    "Delivered commands prove actuator acceptance or delivered odometry proves Nav2 consumption."
+  ],
+  "allowed_evidence": {
+    "command_motion_reference": {
+      "disposition": "supported",
+      "mechanism": "command_to_motion_discrepancy",
+      "calibrated_healthy_measured_speed_mps": 0.2597399950027466,
+      "discrepancy_median_delivered_command_mps": 0.26,
+      "discrepancy_median_delivered_odometry_response_mps": 0.0,
+      "discrepancy_interval_s": [10.0, 51.0],
+      "discrepancy_duration_s": 41.0,
+      "independent_reference_parity": true
+    },
+    "execution_sequence": {
+      "follow_path_running_to_failure_count": 6,
+      "follow_path_idle_to_running_count": 11,
+      "source_qualified_wait_invocation_count": 1,
+      "wait_classifier_rule": "Wait:IDLE->RUNNING",
+      "wait_classifier_policy_sha256": "e47dadf5bb1228f031e1a7a15d60f0a784c5101ffff9fd11fc36ea7458ce3dce",
+      "spin_invocation_terminal_status": "FAILURE",
+      "wait_invocation_terminal_status": "SUCCESS",
+      "backup_invocation_terminal_status": "FAILURE",
+      "local_costmap_clear_success_transitions": 5,
+      "global_costmap_clear_success_transitions": 2,
+      "compute_path_running_to_success_count": 73,
+      "follow_path_running_at_observation_cutoff": true,
+      "exact_complete_recovery_count_eligible": false
+    },
+    "bounded_observation": {
+      "declared_observation_duration_s": 100.0,
+      "fixture_wall_seconds": 100.01087720901705,
+      "action_status": "remained active at the observation cutoff",
+      "terminal_result_observed": false,
+      "eventual_action_outcome": "unresolved",
+      "goal_x_m": 18.0,
+      "goal_y_m": 0.0,
+      "recorded_displacement_m": 2.710462093353277
+    },
+    "route_and_geometry_reference": {
+      "disposition": "insufficient",
+      "retained_full_geometry_plan_records": 8,
+      "delivered_plan_summary_count": 73,
+      "unique_delivered_plan_hash_count": 13,
+      "maximum_delivered_plan_lateral_deviation_m": 0.09999999999999964,
+      "maximum_delivered_odometry_lateral_deviation_m": 0.05956673249602318,
+      "complete_requested_route_covered": false,
+      "retained_grid_connected_from_last_pose_to_goal": false,
+      "global_route_classification": null,
+      "geometry_established_as_discrepancy_cause": false,
+      "independent_reference_parity": true
+    },
+    "source_and_provenance_limits": [
+      "The command and odometry streams are delivered robot-visible observations with declared frames; delivery does not prove downstream actuator acceptance or Nav2 consumption.",
+      "The source-qualified Wait count uses the exact configured recovery-child name and IDLE-to-RUNNING classifier under the retained BT policy hash.",
+      "A completed recovery leaf transition does not prove an external physical side effect or physical cause.",
+      "The retained rolling grid covers only part of the requested route; local disconnection does not prove global no-path.",
+      "Hidden simulator state and unobserved fault identity are unavailable to methods and the judge.",
+      "The case is inspected development data, not held-out or confirmatory evidence."
+    ],
+    "approved_next_check": "Record downstream accepted actuation or actuator feedback together with contact, clearance, and wheel-motion evidence over the 10.0 to 51.0 second discrepancy interval."
+  },
+  "reference_inputs": {
+    "command_motion_independent_reference_sha256": "a07bec2fbec883f6ba65dfe2285dc09ec913e3699a6f7e36e59df04ff209f534",
+    "geometric_independent_reference_sha256": "1b890cff71b91c6f55871f73c6714b198dfec0e3ed6c973d3793014811ede956",
+    "plan_geometry_independent_reference_sha256": "cd71f327d0886236afdff0433a4f0194f17e2a13864f98b6d65343abd68859e2",
+    "fixture_summary_sha256": "e7b5a017f970898396554720a551f0a714757afde06767a6e331a0193b7ceded",
+    "composition_independent_reference_sha256": "b9b81bc5f88062e6bd87246b7338e7800c6db1edbe23778f8ddf0c304aabf59e"
+  },
+  "reference_timing": {
+    "diagnostic_computations_and_independent_references_preceded_model_outputs": true,
+    "required_composition_contract_preceded_model_outputs": true,
+    "answer_claim_inventory_completed_after_output_inspection": true,
+    "human_gold": false
+  }
+}

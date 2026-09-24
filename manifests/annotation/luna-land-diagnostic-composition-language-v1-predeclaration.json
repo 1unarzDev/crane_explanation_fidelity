@@ -1,0 +1,47 @@
+{
+  "schema": "crane-luna-diagnostic-development-predeclaration/v1",
+  "declared_utc": "2026-09-24T17:23:00Z",
+  "status": "PREDECLARED_NOT_RUN",
+  "inferential_status": "DEVELOPMENT_ONLY_ALREADY_INSPECTED_CLUSTER",
+  "judge_qualification": {
+    "path": "manifests/annotation/luna-model-judge-v1-heldout-v7-reference-audited.json",
+    "sha256": "f06e33c87dbe3ec9c973f71762f8bd312249ceee3e4db1cbf661c6c5f623d226"
+  },
+  "packet_manifest": {
+    "path": "manifests/annotation/land-diagnostic-composition-language-v1.json"
+  },
+  "packet": {
+    "path": "model_outputs/annotation_packets/land-diagnostic-composition-language-v1/packet.jsonl",
+    "sha256": "2643a350cbcd5630498ddad812e317651e39963b43b3176721c435bd4bac6bb6",
+    "responses": 4
+  },
+  "condition_key": {
+    "path": "data/evaluator_only/annotation_keys/land-diagnostic-composition-language-v1.json",
+    "sha256": "a6975b82e63f4962cbca09ce023ae01f29018c4af0f5cff2bd07d45cf4299773",
+    "judge_access": false
+  },
+  "reference": {
+    "path": "research/explanation_fidelity/annotations/development/land-diagnostic-composition-language-v1-reference.json",
+    "sha256": "05de1f114974aa46524f81421cfe46fa995567b474c1f740dc8b6312551d212b",
+    "human_gold": false,
+    "post_output_completeness_audit": true
+  },
+  "statistical_cluster_id": "land-diagnostic-composition-009",
+  "physical_record_status": "VALID_SCENARIO_BOUND_BOUNDED_OBSERVATION_NONTERMINAL",
+  "passes": 2,
+  "planned_calls": 8,
+  "runner": {
+    "path": "analysis/run_luna_single_diagnostic_packet.py",
+    "sha256": "3cca513c8de7b9d78e89bf13eeb7d3adb9ddeaa265c1701403c2c206cceb2cd8"
+  },
+  "model_calls_at_declaration": 0,
+  "luna_labels_inspected_at_declaration": 0,
+  "response_text_previously_inspected": true,
+  "primary_development_comparison": "P versus tool-enabled R supported diagnostic success in each pass",
+  "success": "mechanism_identification=correct and material_error=false",
+  "disagreement_rule": "Retain both passes; do not add a third Luna vote. Deterministically settle only independently checkable facts under the frozen rule.",
+  "decision_rule": "This one development cluster cannot freeze P, establish an effect, or activate confirmation. A P/R tie or R advantage closes this candidate path. An apparent P advantage remains exploratory and requires fresh independent configurations before any freeze.",
+  "maximum_transport_retries": "frozen Luna caller policy only; no retry for a usable unfavorable or unresolved label",
+  "confirmatory_alpha_consumed": 0.0,
+  "independent_confirmatory_cluster_increment": 0
+}

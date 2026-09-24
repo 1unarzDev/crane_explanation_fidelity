@@ -4768,3 +4768,19 @@
   R independently produced a strong mechanism answer. This is not yet a semantic label, but it
   does not supply evidence of P-over-R advantage. Current P remains `NOT_READY`; alpha remains
   0.000/0.050. Raw/final outputs and caches are retained under the tracked artifact manifest.
+
+## 2026-09-24 — bounded composition Luna audit predeclaration
+
+- **STATUS:** `PREDECLARED_DEVELOPMENT_ONLY_NOT_RUN`; exactly two isolated Luna v7 passes over the
+  four retained R/P/T/N answers (eight calls), with no usable-label retry or third vote.
+- **REFERENCE:** the command--motion, geometry, plan, and composition computations were
+  independently checked before generation. A post-output packet-completeness audit adds
+  robot-visible BT transition, plan-summary, displacement, and boundary facts needed to assess
+  secondary claims actually present in R/N. This reference is not human gold.
+- **BLINDING:** each row contains an opaque response ID, question, complete robot-visible
+  reference, required units, prohibited claims, and the unchanged final answer. Condition keys,
+  fallback/verifier status, evaluator intervention, other answers, and desired comparison are
+  evaluator-only and unavailable to Luna.
+- **DECISION:** a P/R tie or R advantage closes this candidate path. An apparent P advantage is
+  exploratory and cannot freeze the method without fresh independent configurations. The audit
+  adds no physical/confirmatory cluster and consumes 0.000/0.050 alpha.

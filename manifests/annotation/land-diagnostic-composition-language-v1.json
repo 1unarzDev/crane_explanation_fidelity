@@ -1,0 +1,38 @@
+{
+  "schema": "crane-explain-annotation-packet-manifest/v1",
+  "status": "DEVELOPMENT_AUTOMATED_SCORING_NOT_RUN",
+  "study": "prospective-physical-diagnosis-development",
+  "packet": {
+    "path": "model_outputs/annotation_packets/land-diagnostic-composition-language-v1/packet.jsonl",
+    "sha256": "2643a350cbcd5630498ddad812e317651e39963b43b3176721c435bd4bac6bb6",
+    "dvc_pointer": "model_outputs.dvc",
+    "responses": 4,
+    "conditions_blinded": true
+  },
+  "key": {
+    "path": "data/evaluator_only/annotation_keys/land-diagnostic-composition-language-v1.json",
+    "sha256": "a6975b82e63f4962cbca09ce023ae01f29018c4af0f5cff2bd07d45cf4299773",
+    "dvc_pointer": "data/evaluator_only/annotation_keys.dvc",
+    "visibility": "evaluator_only"
+  },
+  "reference": {
+    "path": "research/explanation_fidelity/annotations/development/land-diagnostic-composition-language-v1-reference.json",
+    "sha256": "05de1f114974aa46524f81421cfe46fa995567b474c1f740dc8b6312551d212b",
+    "status": "DEVELOPMENT_REFERENCE_WITH_POST_OUTPUT_PACKET_COMPLETENESS_AUDIT_NOT_HUMAN_GOLD"
+  },
+  "source_result": {
+    "path": "model_outputs/dev/land-diagnostic-composition-language-v1/diagnostic-land-composition-observation-009.json",
+    "sha256": "31d9a0ed335880f0138655bd405ee8352f18e304481698babb5132b5c44f1484",
+    "governance": "model_outputs.dvc"
+  },
+  "rubric": {
+    "path": "docs/DIAGNOSTIC_ANNOTATION_GUIDE.md",
+    "automated_arm": "luna-model-judge-v7-reference-audited"
+  },
+  "limitations": [
+    "This is one already inspected development scenario, not held-out or confirmatory evidence.",
+    "The diagnostic computations, independent references, and required composition contract preceded model generation, but the complete answer-claim inventory was assembled after output inspection.",
+    "The reference is not human gold; Luna labels are automated semantic measurements.",
+    "Final P used deterministic fallback and is byte-identical to T in this packet."
+  ]
+}
