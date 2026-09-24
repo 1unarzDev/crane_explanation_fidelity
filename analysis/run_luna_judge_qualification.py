@@ -62,7 +62,27 @@ REQUIRED_CATEGORY_TAGS = {
 
 def load_suite(path: Path = SUITE_PATH) -> dict[str, Any]:
     suite = json.loads(path.read_text(encoding="utf-8"))
-    if suite.get("schema") != "crane-luna-judge-qualification-suite/v1":
+    if suite.get("schema") == "crane-luna-judge-qualification-suite-amendment/v2":
+        base_path = ROOT / suite["base_suite"]
+        if digest_path(base_path) != suite["base_suite_sha256"]:
+            raise ValueError("qualification amendment base-suite hash mismatch")
+        base = load_suite(base_path)
+        amendments = suite.get("expectation_amendments", {})
+        cases_by_id = {case["case_id"]: case for case in base["cases"]}
+        if set(amendments) - set(cases_by_id):
+            raise ValueError("qualification amendment references unknown cases")
+        for identifier, values in amendments.items():
+            if not isinstance(values, dict):
+                raise ValueError("qualification expectation amendment is not an object")
+            cases_by_id[identifier]["expected"].update(values)
+        base["schema"] = suite["schema"]
+        base["suite_id"] = suite["suite_id"]
+        base["amendment_path"] = str(path)
+        suite = base
+    if suite.get("schema") not in {
+        "crane-luna-judge-qualification-suite/v1",
+        "crane-luna-judge-qualification-suite-amendment/v2",
+    }:
         raise ValueError("qualification suite schema mismatch")
     cases = suite.get("cases")
     if not isinstance(cases, list) or not cases:
@@ -144,8 +164,13 @@ def score(cases: list[dict[str, Any]], judgments: dict[str, dict[str, Any]]) -> 
         actual = judgments[case["case_id"]]
         expected = case["expected"]
         field_matches = {field: actual.get(field) == expected[field] for field in CORE_FIELDS}
-        core_total += len(field_matches)
-        core_correct += sum(field_matches.values())
+        scored_core_fields = (
+            ("judgment_status", "answerability", "evidence_problem")
+            if expected["evidence_problem"]
+            else CORE_FIELDS
+        )
+        core_total += len(scored_core_fields)
+        core_correct += sum(field_matches[field] for field in scored_core_fields)
         expected_material = expected["material_error"]
         actual_material = actual.get("material_error")
         false_acceptance = expected_material is True and actual_material is False
@@ -189,6 +214,7 @@ def score(cases: list[dict[str, Any]], judgments: dict[str, dict[str, Any]]) -> 
             {
                 "case_id": case["case_id"],
                 "core_field_matches": field_matches,
+                "scored_core_fields": list(scored_core_fields),
                 "required_unit_matches": {
                     key: actual_units.get(key) == value for key, value in expected_units.items()
                 },
@@ -353,17 +379,19 @@ def main() -> None:
     parser.add_argument("--output-root", type=Path)
     parser.add_argument("--base-url")
     parser.add_argument("--freeze", type=Path)
+    parser.add_argument("--suite", type=Path, default=SUITE_PATH)
     parser.add_argument(
         "--transport", choices=("isolated-codex-cli", "direct-responses"), default="isolated-codex-cli"
     )
     args = parser.parse_args()
-    suite = load_suite()
+    suite_path = args.suite.resolve()
+    suite = load_suite(suite_path)
     counts = {
         split: sum(case["split"] == split for case in suite["cases"])
         for split in ("development", "heldout")
     }
     if args.phase == "validate":
-        print(json.dumps({"status": "VALID", "counts": counts, "sha256": digest_path(SUITE_PATH)}))
+        print(json.dumps({"status": "VALID", "counts": counts, "sha256": digest_path(suite_path)}))
         return
     if args.output_root is None:
         parser.error("--output-root is required for execution")
@@ -394,8 +422,8 @@ def main() -> None:
             )[0]
         report = {
             "schema": "crane-luna-judge-development-selection/v1",
-            "suite": str(SUITE_PATH.relative_to(ROOT)),
-            "suite_sha256": digest_path(SUITE_PATH),
+            "suite": str(suite_path.relative_to(ROOT)),
+            "suite_sha256": digest_path(suite_path),
             "split": "development",
             "cases": len(cases),
             "efforts": summaries,
@@ -413,7 +441,7 @@ def main() -> None:
     effort = freeze.get("reasoning_effort")
     if effort not in {"low", "medium", "high"}:
         raise ValueError("freeze has no valid reasoning_effort")
-    if freeze.get("suite_sha256") != digest_path(SUITE_PATH):
+    if freeze.get("suite_sha256") != digest_path(suite_path):
         raise ValueError("freeze qualification suite hash mismatch")
     cases = [case for case in suite["cases"] if case["split"] == "heldout"]
     passes: dict[str, Any] = {}
@@ -429,8 +457,8 @@ def main() -> None:
         )
     report = {
         "schema": "crane-luna-judge-heldout-qualification/v1",
-        "suite": str(SUITE_PATH.relative_to(ROOT)),
-        "suite_sha256": digest_path(SUITE_PATH),
+        "suite": str(suite_path.relative_to(ROOT)),
+        "suite_sha256": digest_path(suite_path),
         "split": "heldout",
         "cases": len(cases),
         "reasoning_effort": effort,

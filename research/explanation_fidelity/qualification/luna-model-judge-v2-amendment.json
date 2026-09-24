@@ -1,0 +1,30 @@
+{
+  "schema": "crane-luna-judge-qualification-suite-amendment/v2",
+  "suite_id": "luna-model-judge-v2-qualification",
+  "declared_utc": "2026-09-23T00:00:00Z",
+  "status": "PREDECLARED_BEFORE_V2_EXECUTION_AND_BEFORE_ANY_HELDOUT_EXECUTION",
+  "base_suite": "research/explanation_fidelity/qualification/luna-model-judge-v1-cases.json",
+  "base_suite_sha256": "482ccf01cf7928e53c19779e88a16fd1d71b27abe9776913de150b67da66f617",
+  "reason": "Development v1 exposed ambiguous or incorrect expected semantics for disposition, abstention, evidence-problem placeholders, and false blanket evidence-denial. Amendments apply explicit rubric-derived definitions and are not based on any method comparison or held-out result.",
+  "expectation_amendments": {
+    "QD002": {"disposition": "nonanswer"},
+    "QD003": {"disposition": "nonanswer"},
+    "QD004": {"disposition": "nonanswer"},
+    "QD005": {"disposition": "nonanswer"},
+    "QD006": {"disposition": "full"},
+    "QD007": {"material_error": true},
+    "QD011": {"disposition": "partial"},
+    "QD013": {"disposition": "nonanswer", "causal_overclaim": null},
+    "QD014": {"disposition": "full", "correct_abstention": true},
+    "QH001": {"disposition": "nonanswer"},
+    "QH002": {"disposition": "nonanswer"},
+    "QH003": {"disposition": "nonanswer"},
+    "QH004": {"disposition": "nonanswer"},
+    "QH007": {"disposition": "nonanswer"},
+    "QH008": {"disposition": "partial"},
+    "QH012": {"disposition": "partial"},
+    "QH013": {"disposition": "nonanswer", "causal_overclaim": null}
+  },
+  "scoring_clarification": "For evidence_problem reference cases, only judgment_status, answerability, and evidence_problem enter core-field accuracy; other schema-required values are noninferential placeholders. Boundary accuracy still requires all three fields.",
+  "heldout_exposure_at_declaration": "NOT_RUN"
+}

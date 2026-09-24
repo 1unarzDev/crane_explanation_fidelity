@@ -71,6 +71,13 @@ Reasoning effort is selected only on the judge-development split from the bounde
 then written to an additive freeze record before the held-out qualification split is run. Study
 responses cannot be judged until held-out qualification passes.
 
+Prompt/suite v1 failed every reasoning configuration on development and is retained in
+`manifests/annotation/luna-model-judge-v1-development-v1.json`. Before any held-out call, v2 made
+one bounded clarification of rubric-derived output semantics and corrected ambiguous/incorrect
+fixture expectations through a hashed additive amendment. V1 is not overwritten or presented as a
+successful validation. No further prompt iteration is authorized by this protocol without another
+prospective decision entry.
+
 ## Input boundary and isolation
 
 Every response is judged in a new API request with no conversation history and no model tools. The
