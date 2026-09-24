@@ -4302,3 +4302,26 @@
 - **RETENTION:** retain either accepted or failed binding, do not substitute another layout, and do
   not generate explanation responses from an invalid binding. This is development pipeline
   qualification, not confirmation or a method-effect measurement.
+
+## 2026-09-24 — fresh land scenario-binding qualification rejected
+
+- **STATUS:** `TESTED / RETAINED_REJECTED`; the one authorized
+  `diagnostic-land-binding-dev-006` attempt was run with seed 62005, domain 128, and port 12326.
+  No retry, substitute layout, diagnostic export, model call, or Luna call was made.
+- **ADMISSION RESULT:** fail-closed audit rejected 11 proving-ground identity/semantic fields. The
+  retained evaluator truth is `crane-land-corridor-truth-v1`, has no environment or layout ID, and
+  reports legacy `blocker=none`. Navigation nevertheless succeeded on a straight path with
+  17.4784 m displacement. This is not a connected-detour episode and contributes zero qualified
+  clusters.
+- **BUILD DIAGNOSIS:** the small launcher hash was unchanged, but the complete bundle was not. The
+  accepted `diagnostic-land-dev-002` through `-004` runs used build-manifest hash `c210a098...` and
+  managed-assembly hash `387c769...`; this rejected run used `e0d9db5...` and `d50bc73...`. Its
+  embedded manifest records older/different warehouse source and scene assets than checkout
+  `f669e74` and omits a reference manifest present in the accepted bundle. The bounded conclusion
+  is a build-bundle/source mismatch; retained evidence does not reconstruct exact Unity argv, so
+  it does not independently settle argument propagation.
+- **GOVERNANCE:** raw robot-visible and evaluator-only outputs, the rejected audit, build
+  provenance, and content inventories are retained. The tracked result is
+  `manifests/data/diagnostic-land-binding-dev-006-qualification-result.json`. A different fresh
+  run requires a prospectively declared layout and a proving-ground-capable build whose full
+  bundle identity is verified first; layout/run 006 will not be reused.

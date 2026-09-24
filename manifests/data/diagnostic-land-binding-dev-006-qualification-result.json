@@ -1,0 +1,68 @@
+{
+  "schema": "crane-land-scenario-binding-qualification-result/v1",
+  "recorded_utc_date": "2026-09-24",
+  "run_id": "diagnostic-land-binding-dev-006",
+  "status": "RETAINED_REJECTED_SINGLE_ATTEMPT",
+  "predeclaration": "research/explanation_fidelity/experiment_configs/development/land-scenario-binding-qualification-v1.json",
+  "requested": {
+    "catalog": "v4",
+    "catalog_sha256": "c2603491c16b99ba007085237097fc0cd66ee2453d1b9e4e1fc7f490bd1a0f8a",
+    "layout": "diagnostic-development-connected-detour-006",
+    "seed": 62005
+  },
+  "observed": {
+    "truth_schema": "crane-land-corridor-truth-v1",
+    "layout": null,
+    "seed": 62005,
+    "legacy_blocker": "none",
+    "navigation_status": "succeeded",
+    "path_shape": "straight",
+    "displacement_meters": 17.478374481201172
+  },
+  "admission": {
+    "accepted": false,
+    "audit_path": "data/evaluator_only/dev/diagnostic-land-binding-dev-006/scenario-binding-audit.json",
+    "audit_sha256": "dbb06a5a53452bd6be8d22f19573edb7a5c9d70e5c1f1238f23b6f366edb7b35",
+    "failed_checks": [
+      "diagnostic_mechanism",
+      "environment_id",
+      "expected_broad_outcome",
+      "generator_seed",
+      "layout_id",
+      "manifest_sha256",
+      "obstacle_semantic_ids",
+      "obstacles_active",
+      "relevant_obstacles",
+      "study_split",
+      "truth_schema"
+    ]
+  },
+  "artifact_identity": {
+    "player_launcher_sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+    "build_manifest_sha256": "e0d9db5815da621c3eb6880bcb80019919eb87d8f353826c223967b70d77e1a7",
+    "managed_assemblies_sha256": "d50bc73638e27f544232cf48516eb6b4970a3405d313ce44293e664fe8a12dc1",
+    "physics_assembly_sha256": "de9618a257ec5d856e3759772afabd9309235ea8a13d8b315ebcccc15e5897ac",
+    "checkout_at_run": "f669e748c657a5e93324e8bcdf1732785e88ce47"
+  },
+  "diagnosis": {
+    "status": "BUILD_BUNDLE_MISMATCH_ESTABLISHED",
+    "evidence": [
+      "The accepted diagnostic-land-dev-002 through -004 runs used build manifest c210a098bcf0a0a9d1dc47d0629b51e315f302e8d692f6343728c0326a6ea227 and managed-assembly set 387c76961a3fd4179176310c0423cffe6409e24bafa5023db1e65dddfa382aaa.",
+      "This rejected run used build manifest e0d9db5815da621c3eb6880bcb80019919eb87d8f353826c223967b70d77e1a7 and managed-assembly set d50bc73638e27f544232cf48516eb6b4970a3405d313ce44293e664fe8a12dc1.",
+      "The rejected-run build manifest records a 6,526-byte CraneReferenceWarehouse.cs and a 238,522-byte warehouse scene, while checkout f669e74 and the earlier accepted build manifest record the current 19,735-byte source and 316,320-byte scene; it also omits the warehouse-v2 reference manifest retained by the accepted build.",
+      "Runtime truth and the player log show that the legacy corridor bootstrap ran and that no proving-ground layout identity was emitted."
+    ],
+    "bounded_conclusion": "The Unity build bundle used for the attempt did not correspond to the proving-ground-capable source/assets in the recorded checkout. The unchanged small CRANE.x86_64 launcher hash was insufficient to identify the full build. The retained evidence does not independently reconstruct the exact shell argv received by Unity, so it does not rule on argument propagation beyond establishing that the selected build bundle was incompatible with the requested scenario."
+  },
+  "allowed_use": "Development capture-pipeline qualification failure and build-identity evidence only. This run is not a connected-detour episode, not a scenario-qualified statistical cluster, and not eligible for explanation generation.",
+  "retention": {
+    "attempt_count": 1,
+    "retry_performed": false,
+    "substitute_layout_used": false,
+    "model_calls": 0,
+    "luna_calls": 0,
+    "robot_visible_manifest": "manifests/data/diagnostic-land-binding-dev-006.robot-visible.json",
+    "evaluator_only_manifest": "manifests/data/diagnostic-land-binding-dev-006.evaluator-only.json"
+  },
+  "next_gate": "Create and verify a proving-ground-capable Unity build with full bundle identity before prospectively declaring any different fresh qualification run. Do not reuse run ID or layout 006."
+}
