@@ -205,6 +205,7 @@ def request_body(
             }
         },
         "store": False,
+        "stream": False,
         "tools": [],
     }
 
@@ -344,6 +345,7 @@ class LunaResponsesCaller:
         encoded = canonical_json(body).encode("utf-8")
         attempts: list[dict[str, Any]] = []
         response: dict[str, Any] | None = None
+        last_payload: bytes | None = None
         for attempt in range(1, self.manifest["retry_policy"]["maximum_transport_retries"] + 2):
             started_ns = time.time_ns()
             request = urllib.request.Request(
@@ -351,6 +353,7 @@ class LunaResponsesCaller:
                 data=encoded,
                 headers={
                     "Authorization": f"Bearer {api_key}",
+                    "Accept": "application/json",
                     "Content-Type": "application/json",
                     "User-Agent": "crane-explain-luna-judge/1",
                 },
@@ -359,9 +362,11 @@ class LunaResponsesCaller:
             try:
                 with self.opener(request, timeout=self.timeout_s) as result:
                     payload = result.read()
+                    last_payload = payload
                     http_status = getattr(result, "status", 200)
             except urllib.error.HTTPError as error:
                 payload = error.read()
+                last_payload = payload
                 http_status = error.code
                 attempts.append(
                     {
@@ -420,7 +425,15 @@ class LunaResponsesCaller:
             "attempts": attempts,
         }
         if response is None:
-            failure = {**base_record, "status": "TRANSPORT_OR_RESPONSE_FAILURE"}
+            failure = {
+                **base_record,
+                "status": "TRANSPORT_OR_RESPONSE_FAILURE",
+                "response_body_text": (
+                    last_payload.decode("utf-8", errors="replace")
+                    if last_payload is not None
+                    else None
+                ),
+            }
             atomic_write_json(cache_path, failure)
             raise RuntimeError(f"Luna call failed; retained at {cache_path}")
         try:

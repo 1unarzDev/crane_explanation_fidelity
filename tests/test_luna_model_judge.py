@@ -106,6 +106,7 @@ def test_request_exposes_no_tools_and_omits_sampling_settings():
         prompt="prompt", rubric_text="rubric", envelope=envelope, schema={"type": "object"}, effort="medium"
     )
     assert body["tools"] == []
+    assert body["stream"] is False
     assert "temperature" not in body
     assert "seed" not in body
     assert body["reasoning"] == {"effort": "medium"}
