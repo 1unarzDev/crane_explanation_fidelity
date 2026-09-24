@@ -1,5 +1,26 @@
 # Experiment Log
 
+## 2026-09-24 — v5 clean-source build and scenario-binding smoke
+
+- **QUALIFIED INFRASTRUCTURE / CALIBRATION ONLY:** Unity 6000.5.10f1 built CRANE commit
+  `8d1d308579fb4ea9f15186eb3d38a040edf52da0` with `sourceDirty=false`. The post-build audit
+  proves the exact source commit, managed assemblies, warehouse source/scene, runtime resources,
+  and embedded v5 catalog; it has no provenance limitation.
+- **HEADLESS PASS:** a three-second, ROS-disabled run instantiated
+  `diagnostic-candidate-v2-development-nominal-clear-route-001` at seed 82000. Runtime validity
+  passed with zero logged errors/exceptions and 15 LiDAR scans. All 14 exact scenario-binding
+  checks passed against configuration SHA-256
+  `a2c37808b9a816de98826e92174f49a0250c36092d9f12a9d25933035098cd20`.
+- **NEGATIVE BUILD QUALIFICATIONS RETAINED:** the first build revealed the missing tracked Unity
+  `.meta`; its post-build checkout was dirty. After correcting that, a second build embedded a
+  mistyped full source SHA and therefore failed `source_commit_proven`. Neither player is accepted.
+- **GOVERNANCE / BOUNDARY:** compact hashes and dispositions are retained in
+  `manifests/checkpoints/diagnostic-v5-development-smoke-v1.json`; no large Unity build is retained.
+  The smoke layout is calibration-only and excluded from candidate-effect work. This is not a ROS/
+  Nav2 episode and adds zero clusters, responses, Luna labels, effect evidence, or alpha.
+- **NEXT GATE:** predeclare a bounded candidate-v2 development pilot before any episode, model,
+  or judge execution. Confirmation remains inactive and candidate P remains `NOT_READY`.
+
 ## 2026-09-24 — isolate fresh land candidate-development capacity
 
 - **IMPLEMENTED / TESTED, NO EXPERIMENT RUN:** CRANE commit `7cafab0` adds a separate v5

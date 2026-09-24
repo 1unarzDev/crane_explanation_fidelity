@@ -12,7 +12,7 @@ Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 | Candidate P frozen | NOT_READY | V4 multi-family scoring is mixed and packet-sensitive; do not freeze or open confirmation |
 | Strongest baseline R frozen | DESIGNATED, NOT_HASH_FROZEN | Tool-enabled repository-aware R; freeze exact model/prompts/resources with candidate |
 | Information/tool/resource parity | DRAFT | Audit at campaign freeze |
-| Target land strata | PARTIAL | Disjoint v5 development capacity exists; live qualification and future confirmatory/replication reservation remain required |
+| Target land strata | DEVELOPMENT_NAMESPACE_QUALIFIED | V5 build/binding smoke passed; live ROS candidate cases and future confirmatory/replication reservation remain required |
 | Target surface strata | NOT_READY | Both geometric and command--motion admission required; do not reallocate weight |
 | Luna historical qualification | V4 HIGH FAILED / PRESERVED | Both fresh passes failed; never retroactively qualified |
 | Luna v5 endpoint qualification | FAILED / PRESERVED | P1 passed; P2 missed core by one field and one protected subcheck |
@@ -63,8 +63,15 @@ This removes the immediate namespace-capacity blocker for a bounded fresh develo
 it supplies no episode, response, Luna label, effect estimate, or alpha consumption. Each layout
 can contribute at most one independent development cluster; intervention/control variants,
 evidence masks, and reruns remain clustered. V5 identities are permanently ineligible for
-confirmation or replication. The next gate is one live v5 source/build/scenario-binding smoke,
-followed by a prospectively declared small candidate-v2 pilot only if that smoke passes.
+confirmation or replication.
+
+The clean-source v5 infrastructure smoke subsequently passed under CRANE `8d1d308`: the player
+proved its exact source commit and embedded catalog, the three-second headless run had zero logged
+errors/exceptions and 15 LiDAR scans, and all 14 scenario-binding checks passed. Layout
+`diagnostic-candidate-v2-development-nominal-clear-route-001` is now calibration-only and excluded
+from candidate-effect work, leaving 23 potential development layouts. No ROS/Nav2 episode was run.
+The compact audit is `manifests/checkpoints/diagnostic-v5-development-smoke-v1.json`; large Unity
+players remain ephemeral. The next gate is a prospectively declared, small candidate-v2 pilot.
 
 The fresh land-binding qualification `diagnostic-land-binding-dev-006` was rejected and retained:
 the selected Unity bundle instantiated legacy clear-corridor truth rather than the declared v4

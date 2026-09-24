@@ -1,0 +1,61 @@
+{
+  "schema": "crane-diagnostic-development-smoke/v1",
+  "checkpoint_id": "diagnostic-v5-development-smoke-v1",
+  "date": "2026-09-24",
+  "status": "QUALIFIED_INFRASTRUCTURE_CALIBRATION_ONLY",
+  "study_effect": {
+    "independent_cluster_increment": 0,
+    "model_response_increment": 0,
+    "luna_judgment_increment": 0,
+    "alpha_consumed": 0.0
+  },
+  "source": {
+    "crane_commit": "8d1d308579fb4ea9f15186eb3d38a040edf52da0",
+    "crane_branch": "diagnostic-composition-v1",
+    "source_dirty": false,
+    "unity_version": "6000.5.10f1"
+  },
+  "catalog": {
+    "id": "v5",
+    "environment_id": "crane-land-proving-ground-v5",
+    "sha256": "dd693444df842a97570bbf65e1cd07737bead48314acbf54d5a1c4c0b8f093d6",
+    "admission": "development-only-never-confirmatory-or-replication"
+  },
+  "build": {
+    "retained": false,
+    "retention_reason": "The reproducible source/catalog hashes are sufficient; the approximately 552 MB disposable Unity player is not governed study evidence.",
+    "build_manifest_sha256": "b49d121ce35b9adbf279f17a08687ea6a84a8397351973ff3132a54ab0c1d0fd",
+    "managed_assemblies_sha256": "432bfd07ac9febad1bd52726a811ed5c47ed29f11c74ba138a1ca2eaf35d4b6d",
+    "runtime_resources_sha256": "f6ea137847367975c951973454da451fa473d3b7c28ee0ced6508deb53541ee0",
+    "build_provenance_sha256": "a2b14bd405b2d98ffe03ce953258be3e760f52a5a4a71f0fa858cf7ad8ae0db9",
+    "player_build_audit_sha256": "e60f6e5efd5a58b0b724deb1eb931a2219c25daea53853b39a602ae634864a77",
+    "source_commit_proven": true,
+    "catalog_exactly_embedded": true
+  },
+  "smoke": {
+    "layout_id": "diagnostic-candidate-v2-development-nominal-clear-route-001",
+    "layout_disposition": "CALIBRATION_ONLY_EXCLUDE_FROM_CANDIDATE_EFFECT_PILOT",
+    "seed": 82000,
+    "configuration_sha256": "a2c37808b9a816de98826e92174f49a0250c36092d9f12a9d25933035098cd20",
+    "ros_enabled": false,
+    "duration_seconds": 3,
+    "runtime_valid": true,
+    "logged_errors": 0,
+    "logged_exceptions": 0,
+    "lidar_scans": 15,
+    "scenario_binding_accepted": true,
+    "evaluator_truth_sha256": "06381ebf8f6885b46f7bc1b0f86ba8797f7fea0a86234b0b0e3653466b3f5bd1",
+    "scenario_binding_audit_sha256": "a1d6755a20828cb6ebf215779990221b5ecfbb8289188edb1f77024d3f837f42",
+    "runtime_result_sha256": "221fe3f0c9bb4dcaf37642528ca0c7078314d698c9f449013c892f9784d6a58e",
+    "player_log_sha256": "81a31bced7c5e69b75e9f0d372ea3e82f4add148902aa312878d66f580f8e632"
+  },
+  "remaining_development_capacity": {
+    "eligible_layouts": 23,
+    "rule": "Each layout can contribute at most one independent development cluster across interventions, masks, questions, and reruns."
+  },
+  "failed_build_qualifications_retained_in_log": [
+    "First player was built before its generated Unity meta file was tracked, so post-build checkout-clean provenance failed.",
+    "Second player embedded a mistyped full source SHA, so content checks passed but source_commit_proven remained false."
+  ],
+  "next_gate": "Prospectively declare a bounded candidate-v2 development pilot before any live ROS episode, model call, or Luna call."
+}
