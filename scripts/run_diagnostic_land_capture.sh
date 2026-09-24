@@ -146,6 +146,8 @@ python3 "${script_dir}/record_build_provenance.py" \
 python3 "${workspace_root}/analysis/validate_diagnostic_player_build.py" \
     --provenance "${evaluator_root}/build-provenance.json" \
     --checkout "${crane_dir}" \
+    --player "${player}" \
+    --catalog "${catalog_file}" \
     --expected-build-manifest-sha256 "${expected_build_manifest_sha256}" \
     --expected-managed-assemblies-sha256 "${expected_managed_assemblies_sha256}" \
     --output "${evaluator_root}/player-build-audit.json"

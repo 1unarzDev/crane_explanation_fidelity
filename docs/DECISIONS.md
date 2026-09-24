@@ -1521,7 +1521,8 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Decision: every actual diagnostic land capture must prospectively pin both the embedded build-
   manifest SHA-256 and the aggregate managed-assembly SHA-256. Before ROS or Unity launch, a
   retained evaluator-only audit must also verify that the build manifest's warehouse generator
-  source and warehouse scene match the selected CRANE checkout byte-for-byte.
+  source and warehouse scene match the selected CRANE checkout byte-for-byte and that Unity's
+  runtime resources contain the exact selected catalog payload.
 - Evidence: `diagnostic-land-binding-dev-006` failed closed after a 110-second run. Its small
   `CRANE.x86_64` launcher hash matched earlier proving-ground runs, but its build manifest,
   managed assemblies, warehouse source, and scene differed; runtime truth instantiated the legacy

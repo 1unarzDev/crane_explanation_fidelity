@@ -120,4 +120,6 @@ def test_capture_requires_declared_full_player_bundle_before_launch():
     assert "CRANE_EXPECTED_MANAGED_ASSEMBLIES_SHA256" in text
     assert "validate_diagnostic_player_build.py" in text
     assert "player-build-audit.json" in text
+    assert '--catalog "${catalog_file}"' in text
+    assert '--player "${player}"' in text
     assert text.index("validate_diagnostic_player_build.py") < text.index("docker run -d")

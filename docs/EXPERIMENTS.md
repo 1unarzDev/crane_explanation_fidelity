@@ -4330,13 +4330,17 @@
 
 - **IMPLEMENTED:** `validate_diagnostic_player_build.py` compares the prospectively declared build-
   manifest and managed-assembly hashes with recorded player provenance, then verifies the embedded
-  warehouse generator source and scene hashes/sizes against the selected CRANE checkout. The land
-  capture orchestrator runs this audit before starting any container or Unity player and retains
+  warehouse generator source and scene hashes/sizes against the selected CRANE checkout, and
+  requires the exact catalog bytes inside Unity's `resources.assets`. The land capture orchestrator
+  runs this audit before starting any container or Unity player and retains
   `player-build-audit.json` under evaluator-only data.
-- **TESTED/PASS:** 19 focused capture, build-admission, scenario-binding, and frozen-study tests
+- **TESTED/PASS:** 20 focused capture, build-admission, scenario-binding, and frozen-study tests
   pass. The existing current-source `/tmp/crane-current-source-build-20260922` passes with manifest
-  `1805281a...fcae` and managed assemblies `f6a65a4f...d01c`; the default stale bundle fails on
-  warehouse source and scene hash/size. Data governance and diff checks pass.
+  `1805281a...fcae` and managed assemblies `f6a65a4f...d01c` matches source/scene but correctly
+  fails because it predates the v4 catalog. The proven v4-capable
+  `/tmp/crane-diagnostic-motion-player` bundle passes all gates with manifest `c210a098...a227`
+  and assemblies `387c769...2aaa`; the default stale bundle fails on warehouse source and scene.
+  Data governance and diff checks pass.
 - **BOUNDARY:** the historical current-source build does not embed a source commit, so a passing
   audit records that limitation and must not claim commit-proven binary provenance. Exact post-run
   evaluator-truth admission is still required. No episode, model call, Luna call, campaign, or

@@ -53,7 +53,8 @@ The fresh land-binding qualification `diagnostic-land-binding-dev-006` was rejec
 the selected Unity bundle instantiated legacy clear-corridor truth rather than the declared v4
 layout. It adds zero qualified clusters. Actual land captures now require prospectively pinned
 build-manifest and managed-assembly hashes plus a pre-launch source/scene compatibility audit; the
-post-run exact scenario-binding audit remains required. No replacement run is currently declared.
+audit also requires the exact selected catalog payload in Unity runtime resources. The post-run
+exact scenario-binding audit remains required. No replacement run is currently declared.
 
 ## Qualified-judge development result (2026-09-24)
 
