@@ -1535,3 +1535,21 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   field. Post-run evaluator-truth admission remains mandatory.
 - Effect: stale builds now fail before any episode starts. This does not activate confirmation,
   authorize a replacement for run/layout 006, or consume alpha.
+
+## 2026-09-24 — retain route-change tie warning and do not freeze the candidate
+
+- Decision: preserve the single qualified route-change language comparison, but do not freeze P/R,
+  score it with Luna without a separate declaration, or open confirmation.
+- Evidence: tool-enabled R produced a useful bounded route-change answer from the same fixture and
+  executable diagnostic tool. P's raw realization was also useful, but verifier v4 substituted T
+  because “then success” in Failure chain did not match its three literal accepted phrases. N also
+  recovered much of the route-change result without the decoded geometric computation.
+- Interpretation: the verifier rejection exposes a brittle deterministic language gate; it does
+  not make the raw P answer wrong. Conversely, a reasonable raw P answer does not establish an
+  advantage when R was comparably informative and causally restrained. Final P is fallback T.
+- Alternatives rejected: retry P, relax the verifier retroactively, ask Luna before registering a
+  complete blinded packet, or count this one development episode as confirmatory evidence.
+- Effect: candidate remains `NOT_READY`; alpha remains 0.000/0.050. Another independent physical
+  episode or manuscript/analysis work has higher default value than additional prompt iteration
+  on this episode. Any verifier repair must be prospective and regression-tested on broader phrase
+  variants rather than tuned to this answer alone.

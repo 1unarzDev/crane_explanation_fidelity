@@ -4408,3 +4408,30 @@
 - **ANNOTATION/INFERENCE:** zero Luna calls are authorized. A future blinded packet, independent
   required-unit inventory, and scoring declaration must be registered separately. Confirmation
   remains inactive at 0.000/0.050 alpha.
+
+## 2026-09-24 — qualified route-change language gate result
+
+- **STATUS:** `RUN / RETAINED / DEVELOPMENT_ONLY`; all three authorized calls completed once with
+  no retry. Deterministic T was embedded. No Luna call, confirmation, replication, or alpha
+  expenditure occurred.
+- **R:** the fair tool-enabled baseline identified the change from an initially direct plan to
+  later non-direct plans, reported the measured deviations and success, and withheld the physical
+  trigger and controller-consumption claims. Its retained source audit also noticed a runtime-log/
+  supplied-XML controller-name mismatch that warrants checking but was not promoted to a cause.
+- **P:** the raw realization likewise identified the route change, success, unresolved trigger,
+  controller-consumption limit, and prospective next check. Policy v4 nevertheless rejected it
+  because its Failure chain said “then success” rather than one of three literal accepted success
+  phrases. The final P response is therefore deterministic fallback T.
+- **N:** even without decoded geometric computation, N recovered substantial plan-change evidence
+  from supplied summaries and preserved causal restraint. This is a strong development warning
+  that the current case may not differentiate specialized P from a capable evidence-reading
+  alternative.
+- **RESOURCE USE:** three `gpt-6-sol` high calls; 422,105 input tokens (353,920 cached), 6,340
+  output tokens including 2,494 reasoning tokens, and 161,337 ms aggregate latency. Provider cost
+  was not reported.
+- **INTERPRETATION:** this is an apparent deterministic phrase-gate false rejection, not a model
+  resampling opportunity and not a semantic annotation. P has no demonstrated advantage over R
+  here; R's answer is already strong, and final P equals T. Candidate remains `NOT_READY`.
+- **GOVERNANCE:** raw outputs and caches are retained in DVC under
+  `diagnostic-language-route-change-development-v1`; the tracked manifest is
+  `manifests/model_outputs/diagnostic-language-route-change-development-v1.json`.

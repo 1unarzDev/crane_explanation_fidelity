@@ -137,6 +137,21 @@ therefore a recorded plan change with unresolved physical trigger—not obstacle
 language use requires a separate prospective declaration and equal evidence/tool access for P and
 tool-enabled R.
 
+## Qualified route-change language result (2026-09-24)
+
+The prospectively declared one-cluster language gate completed with one R/P/N call and deterministic
+T. Tool-enabled R gave a useful, causally restrained route-change answer. Raw P did as well, but
+bounded verifier v4 rejected “then success” in its Failure chain because that wording was outside
+the policy's literal success phrases, so final P fell back to T. N also extracted substantial
+route-change evidence from the supplied plan summaries without decoded geometric computation.
+
+No semantic labels were generated, so this is not a P--R endpoint result. It adds no confirmatory
+cluster and consumes no alpha. The result weakens the case for freezing the current candidate:
+R is already strong on this qualified episode, final P is deterministic, and the verifier has a
+prospective robustness defect. Do not retry or rescore this output. A future verifier repair must
+be versioned and tested beyond this phrase; candidate selection still requires independent
+physical clusters and a separately registered blinded evaluation.
+
 ## Required update for each collection batch
 
 Record, without deleting earlier rows:

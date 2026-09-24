@@ -1,0 +1,88 @@
+{
+  "schema": "crane-explain-model-artifact-manifest/v1",
+  "status": "DEVELOPMENT_ONLY_NOT_FROZEN",
+  "created_utc": "2026-09-24T15:25:56Z",
+  "provider": "codex",
+  "model": "gpt-6-sol",
+  "reasoning_effort": "high",
+  "adapter": "codex-cli-json/v1",
+  "single_sample_no_retry": true,
+  "new_model_calls": 3,
+  "model_condition_outputs": 3,
+  "embedded_non_model_conditions": [
+    "T"
+  ],
+  "embedded_non_model_outputs": 1,
+  "result_envelope_conditions": [
+    "N",
+    "P",
+    "R",
+    "T"
+  ],
+  "result_envelope_outputs": 4,
+  "statistical_clusters": [
+    "language-route-change-binding-007"
+  ],
+  "independent_confirmatory_cluster_increment": 0,
+  "episode_ids": [
+    "diagnostic-land-binding-dev-007"
+  ],
+  "evaluator_truth_available_to_methods": false,
+  "information_parity_audited": true,
+  "primary_comparison": "P versus tool-enabled R",
+  "output_root": "model_outputs/dev/diagnostic-language-route-change-development-v1",
+  "cache_root": "research/explanation_fidelity/model_cache/diagnostic-language-route-change-development-v1",
+  "artifacts": [
+    {
+      "path": "model_outputs/dev/diagnostic-language-route-change-development-v1/diagnostic-land-binding-dev-007.json",
+      "sha256": "40ebaafa5f2f2883f00a356e8ed4299b152157f3b43c18723565eea2b71bf6ef",
+      "bytes": 12602
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-language-route-change-development-v1/193fe05cbe1bb894b50262905ccbbc8f1ca49f76873365988f596f433ddb147e.json",
+      "sha256": "c7ad20b9af20f4e35eebb69d6589273172bb59f503f885aa7a917057578e23ba",
+      "bytes": 20140
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-language-route-change-development-v1/8ef75ff86e11b3639f487bda1fcc65f4c295c138c4043789c7ba82f470ecfd99.json",
+      "sha256": "ab6a096c43731515814ef754e973e5fafebd0d78e5f435b9c03a3406948dbd96",
+      "bytes": 351195
+    },
+    {
+      "path": "research/explanation_fidelity/model_cache/diagnostic-language-route-change-development-v1/d2bc72c5c5fb0382d21521dbc2e5fe8146c8d696506ef081d2260099cb31cc54.json",
+      "sha256": "baebbae48fb75a67f4f7763ae9c8c3985b13e48a06c10805e2a7addf383df31a",
+      "bytes": 55687
+    }
+  ],
+  "implementation": {
+    "declaration_path": "research/explanation_fidelity/experiment_configs/development/diagnostic-language-route-change-development-v1.json",
+    "declaration_sha256": "b051a3018f50e8a3915e8db8e374db7d1ee749ead3806a823c2f62924200fc9d",
+    "declaration_commit": "2531f74",
+    "land_runner_sha256": "50dad6e1692b999ba0299f49871fe38c7639fcc1891af4b1ddb003a4725b3bdb",
+    "diagnostic_wrapper_sha256": "11be6b2a3c11b570eb01c17783454cb1aef16a9a2a0b65a257eea87d8b1d5959",
+    "core_repository_commit": "64f9e185c5feacfd9eb2a14e39ccae0a0a265528",
+    "crane_ml_commit": "f669e748c657a5e93324e8bcdf1732785e88ce47"
+  },
+  "usage": {
+    "aggregate_latency_ms": 161337.135645,
+    "input_tokens": 422105,
+    "cached_input_tokens": 353920,
+    "output_tokens": 6340,
+    "reasoning_output_tokens": 2494,
+    "cost_usd": null,
+    "cost_status": "not_reported_by_codex_cli_chatgpt_login"
+  },
+  "pre_annotation_observations": {
+    "P_verified_without_fallback": 0,
+    "P_template_fallback": 1,
+    "fallback_episode": "diagnostic-land-binding-dev-007",
+    "fallback_reason": "missing required proposition: successful action outcome",
+    "raw_P_explicitly_reported_success": true,
+    "raw_P_failure_chain_wording": "then success; no terminal failure chain is recorded",
+    "verifier_interpretation": "Policy v4 requires one of three exact success phrases inside Failure chain; the semantically explicit but unmatched wording triggered deterministic fallback.",
+    "R_reported_supported_route_change_and_unresolved_trigger": true,
+    "semantic_labels_generated": false,
+    "inference": "These execution and phrase-gate facts are not semantic correctness labels and provide no P-over-R effect estimate."
+  },
+  "allowed_use": "Development candidate and verifier-policy audit only; no confirmation, replication, significance, Luna-assessed performance, or alpha-consumption claim."
+}
