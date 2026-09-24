@@ -9,7 +9,7 @@ Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 
 | Gate | Status | Evidence / next action |
 |---|---|---|
-| Candidate P frozen | NOT_READY | Qualified Luna found current fallback citations absent from judge packets; fresh development cycle required |
+| Candidate P frozen | NOT_READY | Citation-complete rerun removed the systematic citation defect, but only one reused cluster was tested and the two Luna passes disagreed on R/T |
 | Strongest baseline R frozen | DESIGNATED, NOT_HASH_FROZEN | Tool-enabled repository-aware R; freeze exact model/prompts/resources with candidate |
 | Information/tool/resource parity | DRAFT | Audit at campaign freeze |
 | Target land strata | PARTIAL | Existing cases are development only; fresh generators/configurations required |
@@ -67,6 +67,22 @@ The v1 framework was retired unused after pre-outcome feasibility checks. No v1 
 was consumed. The v2 fixed-fraction e-process and intersection--union decision rule are documented
 in `docs/SEQUENTIAL_STUDY_PROTOCOL.md`; retained simulation is planning evidence only.
 
+## Citation-complete command--motion development result (2026-09-24)
+
+The citation-contract repair was exercised prospectively on four fresh R/P/T/N answers for the
+existing compensated command--motion cluster. All governed identifiers cited by P/T were exposed
+to the blinded judge. Pass 1 scored P/R/T successful and N unsuccessful; pass 2 scored only P
+successful. R's pass-2 failure identified a genuine temporal-scope invention (“earlier healthy
+odometry”) from a calibrated healthy-response value. T's pass-2 failure concerned
+“independently delivered odometry,” which pass 1 accepted and the packet did not explicitly define
+as independent from the command stream.
+
+This result adds zero independent clusters, consumes no alpha, and cannot select or freeze a
+candidate. P also reached its final answer by deterministic fallback, so it is not evidence that
+model realization outperformed T. The next bounded development step is fresh configurations across
+multiple scenario families that prospectively avoid invented measurement scope and undeclared
+source relationships. Existing labels remain immutable and are not rerun.
+
 ## Required update for each collection batch
 
 Record, without deleting earlier rows:
@@ -83,11 +99,11 @@ Record, without deleting earlier rows:
 
 ## Next action
 
-Repair the annotation/evidence citation boundary in a new development version and generate fresh
-P/R responses under information parity. Re-score only those new responses with frozen Luna v7.
-Freeze P/R, target generators, and replication reservations only if both passes show a credible
-advantage without a packet defect. No confirmatory campaign is active and no alpha has been
-consumed.
+Create multiple fresh development configurations across the selected land diagnostic families,
+with explicit measurement scope and source-link contracts shared by P, tool-enabled R, and Luna.
+Use them to assess whether a candidate advantage is credible across independent clusters before
+freezing P/R, target generators, or replication reservations. No confirmatory campaign is active
+and no alpha has been consumed.
 
 ## Held-out judge result (2026-09-24)
 

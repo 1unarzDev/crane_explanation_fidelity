@@ -1449,3 +1449,18 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   immutable.
 - Expected effect: future P, R, T, and Luna receive the same citation basis, preventing both unfair
   citation rejection and post-hoc laundering of an unsupported source identity.
+
+## 2026-09-24 — retain citation-complete rerun and require multi-cluster development evidence
+
+- Decision: do not freeze P/R or activate confirmation from the citation-complete command--motion
+  rerun. Preserve all eight Luna judgments and test the observed error modes prospectively on fresh
+  configurations from multiple diagnostic families.
+- Evidence: the citation repair worked, but the run reused one development cluster. Pass 1 tied P
+  and R; pass 2 favored P while rejecting both R and deterministic T. R invented temporal scope for
+  a calibrated reference measurement. T's source-link phrase was accepted in one pass and rejected
+  in the other, and P's accepted final answer was the same deterministic fallback text.
+- Alternatives rejected: freeze P from the favorable second pass, adjudicate with a third Luna
+  call, retry until labels agree, or start collecting confirmatory responses. Each would mistake
+  repeated model measurements or one reused cluster for robust candidate-selection evidence.
+- Effect: the systematic citation-completeness blocker is closed for fresh packets, but candidate
+  readiness remains `NOT_READY`. Alpha consumption stays 0.000/0.050.

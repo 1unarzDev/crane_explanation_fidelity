@@ -4117,3 +4117,26 @@
   `f7c39cbc62b0cc82754fdb54772e5c2b8dcbcb3b37ce13506514c6cb9698941f`.
 - **SCORING:** exactly two isolated Luna v7 passes over four responses are predeclared. This is the
   existing compensation cluster and cannot add independent N or consume confirmatory alpha.
+
+## 2026-09-24 — citation-complete command--motion v2 Luna result
+
+- **STATUS:** `DEVELOPMENT_ONLY / INSUFFICIENT_FOR_CANDIDATE_FREEZE`; eight valid judgments, no
+  retries or call failures, and no confirmatory alpha consumed.
+- **PASS 1:** P, R, and T met supported diagnostic success; N did not. P minus R was 0.00.
+- **PASS 2:** P met supported diagnostic success; R, T, and N did not. P minus R was +1.00.
+  R and T therefore each had one primary-endpoint disagreement across passes.
+- **AUDIT:** the repaired packet exposed every cited governed identifier, so the earlier systematic
+  citation defect did not recur. R nevertheless described the calibrated healthy response as an
+  earlier healthy odometry observation, a real measurement-scope error. Pass 2 rejected T's phrase
+  “independently delivered odometry” as an unsupported source relationship while pass 1 accepted
+  it; retain both measurements rather than adjudicating through another Luna call.
+- **P FALLBACK:** P's raw realization failed the frozen verifier's lexical handling of a prospective
+  `actuation` next-check sentence and fell back to T. Both passes accepted P's final fallback even
+  though pass 2 rejected byte-identical T content, illustrating repeated-judge uncertainty rather
+  than independent evidence of a method effect.
+- **RESOURCE USE:** 118,456 input tokens (82,944 cached), 20,700 output tokens including 8,346
+  reasoning tokens, and 425,872 ms aggregate latency; cost unavailable.
+- **DISPOSITION:** this reuses one development cluster and adds zero independent episodes. Do not
+  freeze P/R or open confirmation. Test the observed measurement-scope and source-link issues only
+  prospectively on multiple fresh development configurations. Result SHA-256
+  `0091350bbefab9fee9fbb16e294d56e09cb9487cb176c11c43c0cb7e6da5b05f`.

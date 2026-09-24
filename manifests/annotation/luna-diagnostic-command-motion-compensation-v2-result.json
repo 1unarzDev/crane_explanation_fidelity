@@ -1,0 +1,55 @@
+{
+  "schema": "crane-luna-diagnostic-development-result/v1",
+  "executed_utc_date": "2026-09-24",
+  "status": "DEVELOPMENT_ONLY_INSUFFICIENT_FOR_CANDIDATE_FREEZE",
+  "predeclaration": "manifests/annotation/luna-diagnostic-command-motion-compensation-v2-predeclaration.json",
+  "result": {
+    "path": "model_outputs/automated_annotations/luna-model-judge-v1/diagnostic-command-motion-compensation-v2/development-summary.json",
+    "sha256": "0091350bbefab9fee9fbb16e294d56e09cb9487cb176c11c43c0cb7e6da5b05f",
+    "governance": "model_outputs.dvc"
+  },
+  "independent_cluster_increment": 0,
+  "responses": 4,
+  "judge_measurements": 8,
+  "call_failures": 0,
+  "transport_retries": 0,
+  "passes": {
+    "pass-1": {
+      "P": true,
+      "R": true,
+      "T": true,
+      "N": false,
+      "p_minus_r": 0.0
+    },
+    "pass-2": {
+      "P": true,
+      "R": false,
+      "T": false,
+      "N": false,
+      "p_minus_r": 1.0
+    }
+  },
+  "primary_endpoint_disagreements": 2,
+  "audit": {
+    "citation_contract": "The four permitted governed evidence identifiers were present in the blinded packet; the systematic absent-citation defect observed in the earlier selected cohort did not recur.",
+    "R_pass_2": "Genuine measurement-scope defect: R described the calibrated healthy response as an earlier healthy odometry observation, which the packet did not establish.",
+    "T_pass_2": "Judge-sensitive source-link wording: pass 2 rejected 'independently delivered odometry' because independence from the command stream was not established; pass 1 accepted the same phrase. Preserve both labels and do not adjudicate by retry.",
+    "P": "P used deterministic fallback after its raw realization failed the frozen verifier's lexical handling of prospective actuation wording. Both passes marked the final fallback successful.",
+    "N": "Both passes rejected N because it denied the time-aligned command-motion discrepancy and substituted terminal execution events for the supported mechanism."
+  },
+  "candidate_selection": "DO_NOT_FREEZE_FROM_ONE_REUSED_DEVELOPMENT_CLUSTER",
+  "next_development_action": "Prospectively test the measurement-scope and source-link wording on multiple fresh development configurations and scenario families; do not alter or rescore this run.",
+  "resource_use": {
+    "valid_calls": 8,
+    "attempts": 8,
+    "input_tokens": 118456,
+    "cached_input_tokens": 82944,
+    "output_tokens": 20700,
+    "reasoning_output_tokens": 8346,
+    "aggregate_latency_ms": 425871.625227,
+    "cost_usd": null
+  },
+  "qualified_caller_sha256": "0e83d22d7e3d284b2430d55240fb26483588e51f0d84df94515702964064b023",
+  "single_packet_scorer_sha256": "3cca513c8de7b9d78e89bf13eeb7d3adb9ddeaa265c1701403c2c206cceb2cd8",
+  "confirmatory_alpha_consumed": 0.0
+}
