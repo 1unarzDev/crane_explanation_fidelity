@@ -4784,3 +4784,27 @@
 - **DECISION:** a P/R tie or R advantage closes this candidate path. An apparent P advantage is
   exploratory and cannot freeze the method without fresh independent configurations. The audit
   adds no physical/confirmatory cluster and consumes 0.000/0.050 alpha.
+
+## 2026-09-24 — bounded composition Luna audit retained with evidence problem
+
+- **STATUS:** `RUN / RETAINED / DEVELOPMENT_ONLY_EVIDENCE_PROBLEM`; seven judgments are valid
+  records and pass-2 N returned an invalid mismatched opaque ID. It is retained with no retry. The
+  original summary then raised `StopIteration`; corrected runner `66f7596` reconstructed an
+  explicitly incomplete summary from the immutable caches without new calls.
+- **RAW LABELS:** before the reference audit, both passes marked P and R mechanism-correct but
+  materially erroneous, so P minus R was 0.0 in each. T matched P's endpoint; N failed in pass 1
+  and is unresolved in pass 2. These labels are not eligible for method comparison after the
+  packet problem below.
+- **REFERENCE AUDIT FAILURE:** the blinded packet omitted four independently checkable
+  robot-visible facts: `delivered-nav2-command-not-proof-of-actuator-acceptance` provenance, the
+  healthy comparator's explicit 0--5 s interval, the 240 × 0.05 m = 12 m grid extent, and BT
+  timestamps showing all six RUNNING-to-FAILURE transitions after discrepancy onset. Luna used
+  those omissions to create material P/T/R errors. Under the protocol, packet incompleteness is
+  `evidence_problem`, not proof that the answers were wrong.
+- **REPEATABILITY:** final P and T are byte-identical, yet pass-1 disposition and material-finding
+  sets differed. Both retained passes agreed on the binary endpoint, but this secondary variation
+  remains visible.
+- **DECISION:** do not amend/rejudge this inspected packet, add a vote, or claim P/R performance
+  from it. Current P remains `NOT_READY`; the strong unscored R answer and P fallback provide no
+  affirmative advantage evidence. Eight attempts consumed 424,526 ms; token use was not exposed.
+  No confirmatory cluster or alpha was added.

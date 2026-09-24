@@ -1697,3 +1697,19 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   independent episode, Luna label, confirmatory cluster, or alpha. A separate blinded Luna audit
   may characterize the retained answers; even a P success cannot establish advantage if R also
   succeeds.
+
+## 2026-09-24 — reject incomplete Luna packet as comparative evidence and close the candidate path
+
+- Decision: preserve all eight Luna attempts, but classify the composition audit as
+  `evidence_problem` and exclude its semantic labels from method comparison. Do not rebuild and
+  rejudge the inspected packet.
+- Evidence: after scoring, direct retained artifacts showed that the reference omitted Nav2
+  command provenance, the healthy interval, grid dimensions/resolution, and failure timestamps.
+  Luna explicitly used those missing facts to reject P/T/R statements. One N judgment also
+  returned the wrong opaque ID, and byte-identical P/T received different secondary findings.
+- Alternatives rejected: treat packet omission as method error; retroactively expand the packet
+  and rerun; add a third vote; report the raw 0.0 difference as a valid semantic tie; or search for
+  a favorable replacement case.
+- Effect: current P remains `NOT_READY` and this candidate path closes. The project has no
+  statistically significant or development-demonstrated P-over-R advantage. Future scoring must
+  complete independently checked reference construction before calls; alpha remains 0.000/0.050.

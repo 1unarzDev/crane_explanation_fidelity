@@ -1,0 +1,84 @@
+{
+  "schema": "crane-luna-diagnostic-development-result/v1",
+  "executed_utc_date": "2026-09-24",
+  "status": "DEVELOPMENT_ONLY_EVIDENCE_PROBLEM_CURRENT_CANDIDATE_NOT_READY",
+  "predeclaration": "manifests/annotation/luna-land-diagnostic-composition-language-v1-predeclaration.json",
+  "result": {
+    "path": "model_outputs/automated_annotations/luna-model-judge-v1/land-diagnostic-composition-language-v1/development-summary.json",
+    "sha256": "a30914361e12dc4d3aeee2ec26232370a5944292f72e9f473eda322ed31bfdc8",
+    "governance": "model_outputs.dvc"
+  },
+  "independent_cluster_increment": 0,
+  "development_cluster": "land-diagnostic-composition-009",
+  "responses": 4,
+  "planned_judge_measurements": 8,
+  "valid_judge_records": 7,
+  "invalid_judge_records": 1,
+  "transport_retries": 0,
+  "runner_failure_and_correction": {
+    "initial_failure": "The original summary path raised StopIteration after one missing judgment because it assumed all four conditions were present.",
+    "corrective_commit": "66f7596",
+    "correction": "The runner now emits null labels and an explicit incomplete status for missing judgments; it reused immutable cached records and made no new Luna call.",
+    "missing_judgment": {
+      "pass_id": "pass-2",
+      "condition": "N",
+      "status": "INVALID_JUDGMENT_NO_RETRY",
+      "reason": "The returned opaque response ID did not match the request."
+    }
+  },
+  "reported_passes_before_reference_audit": {
+    "pass-1": {
+      "P": false,
+      "R": false,
+      "T": false,
+      "N": false,
+      "p_minus_r": 0.0
+    },
+    "pass-2": {
+      "P": false,
+      "R": false,
+      "T": false,
+      "N": null,
+      "p_minus_r": 0.0
+    }
+  },
+  "post_judge_reference_audit": {
+    "evidence_problem": true,
+    "primary_labels_eligible_for_method_comparison": false,
+    "packet_and_labels_preserved_unchanged": true,
+    "new_judge_calls_authorized": 0,
+    "omitted_independently_checkable_facts": [
+      {
+        "fact": "The command provenance is explicitly 'delivered-nav2-command-not-proof-of-actuator-acceptance', supporting Nav2 command-source wording while retaining the actuator-acceptance limit.",
+        "effect": "Both passes treated Nav2 command attribution as a material P/T/R error because this provenance string was omitted from the packet."
+      },
+      {
+        "fact": "The calibrated healthy measured-speed interval is explicitly 0.0 to 5.0 seconds.",
+        "effect": "Both passes treated R's first-five-second healthy comparator as unsupported because the interval was omitted."
+      },
+      {
+        "fact": "The retained grid is 240 cells at 0.05 m/cell, yielding a 12 m extent.",
+        "effect": "Both passes treated R's 12 m rolling-grid statement as unsupported because dimensions/resolution were omitted."
+      },
+      {
+        "fact": "All six retained FollowPath RUNNING-to-FAILURE transitions occur after the 10.0-second discrepancy onset.",
+        "effect": "The packet supplied counts but no timestamps, so Luna could not assess P/T's temporal 'after the response loss' phrase from complete evidence."
+      }
+    ],
+    "protocol_interpretation": "This is an incomplete annotation packet, not evidence that supplied robot-visible evidence was insufficient or that the candidate answers were wrong. Luna's inability to see omitted facts cannot establish method error."
+  },
+  "identical_text_repeatability": "Final P and T are byte-identical. Their material-error endpoints agreed, but pass-1 disposition and cited material findings differed; retain this repeated-model variability.",
+  "candidate_selection": "DO_NOT_FREEZE_CURRENT_P",
+  "selection_basis": "The audit cannot establish a P-over-R advantage because its primary semantic labels are ineligible after the evidence problem. Independent project review still finds that tool-enabled R recovered the same central mechanism and limits, while final P is deterministic fallback T. No favorable result is established.",
+  "next_action": "Do not repair and rejudge this inspected packet or tune on it. Preserve the failure, close this candidate path, and prioritize independently governed configurations, valid reference construction before scoring, analysis, figures, and manuscript work.",
+  "resource_use": {
+    "valid_calls": 7,
+    "invalid_calls": 1,
+    "attempts": 8,
+    "transport_retries": 0,
+    "aggregate_latency_ms": 424525.953676,
+    "token_usage": "not exposed by isolated Codex CLI records",
+    "cost_usd": null
+  },
+  "confirmatory_alpha_consumed": 0.0
+}

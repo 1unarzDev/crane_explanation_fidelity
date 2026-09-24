@@ -284,3 +284,17 @@ and do not justify freezing P. The result adds one inspected development languag
 model calls, zero judge calls, and zero alpha. Further prompt/verifier tuning on this case is lower
 value than a bounded blinded audit followed by a stop/redirect decision, independent collection,
 analysis, figures, and manuscript work.
+
+## Composition audit evidence problem and stop decision (2026-09-24)
+
+The two Luna passes produced seven valid records and one invalid pass-2 N record. Raw primary
+labels gave P=R=failure in both passes, but a mandatory reference audit found that the packet
+omitted exact robot-visible provenance, interval, grid-size, and event-timing facts that Luna used
+to reject P/T/R claims. The labels are therefore ineligible for method comparison: packet
+incompleteness is not method error. No rejudging or third vote is authorized.
+
+Current P remains `NOT_READY`, and the composition candidate path is closed rather than tuned on
+this inspected case. There is still no demonstrated P-over-R advantage and no alpha use. The next
+scientifically useful work is fresh independent configurations only if a materially improved
+method is prospectively frozen; otherwise prioritize retained-data analysis, figures, and an
+honest short/WIP manuscript.
