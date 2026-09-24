@@ -100,6 +100,7 @@ def build_result(payload: dict[str, Any]) -> dict[str, Any]:
     if computation_version not in {
         "command-motion-discrepancy-v1",
         "command-motion-discrepancy-v2",
+        "command-motion-discrepancy-v3",
     }:
         raise ValueError("unsupported command-motion computation version")
     hashes = {

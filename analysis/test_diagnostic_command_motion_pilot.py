@@ -62,6 +62,8 @@ def test_runner_preserves_tool_parity_and_accepts_checked_p_candidate(tmp_path: 
     p = next(item for item in result["outputs"] if item["condition"] == "P")
     assert p["verification_accepted"]
     assert not p["used_template_fallback"]
+    assert p["verification_policy"] == "bounded-diagnostic-language-v4"
+    assert result["inputs"]["realization_prompt"] == "diagnostic_realization_dev_v1.txt"
     assert [item[0] for item in caller.calls] == [
         "diagnostic-command-motion-R",
         "diagnostic-command-motion-P-realization",
@@ -100,3 +102,29 @@ def test_runner_uses_declared_compensation_question_without_changing_parity(tmp_
     assert result["question_kind"] == "diagnostic-same-mechanism-different-outcome-v1"
     assert all(question in prompt for _, prompt, _ in caller.calls)
     assert result["information_parity"]["accepted"]
+
+
+def test_runner_uses_prospectively_selected_realization_prompt(tmp_path: Path):
+    export = json.loads(EVIDENCE.read_text(encoding="utf-8"))
+    caller = FakeCaller(export["final_answer"])
+    args = argparse.Namespace(
+        evidence=EVIDENCE,
+        repository=ROOT / "packages/crane_ml",
+        repository_url="https://github.com/1unarzDev/crane_ml.git",
+        repository_commit="6bf057b5acf1763eeca1b81be6530cd218a5405b",
+        core_repository=ROOT / "packages/astro_dock/src/crane_explain",
+        core_repository_commit="64f9e185c5feacfd9eb2a14e39ccae0a0a265528",
+        repository_prompt="diagnostic_repository_agent_command_motion_dev_v2.txt",
+        realization_prompt="diagnostic_realization_dev_v2.txt",
+        provider="codex",
+        model="test-model",
+        reasoning_effort="low",
+        cache=tmp_path / "cache",
+        output=tmp_path / "pilot.json",
+    )
+
+    result = run(args, caller=caller)
+
+    assert result["inputs"]["realization_prompt"] == "diagnostic_realization_dev_v2.txt"
+    assert "calibrated healthy response is a comparator" in caller.calls[0][1]
+    assert "Do not invent when a calibration measurement occurred" in caller.calls[1][1]

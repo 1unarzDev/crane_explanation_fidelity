@@ -9,7 +9,7 @@ Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 
 | Gate | Status | Evidence / next action |
 |---|---|---|
-| Candidate P frozen | NOT_READY | Citation-complete rerun removed the systematic citation defect, but only one reused cluster was tested and the two Luna passes disagreed on R/T |
+| Candidate P frozen | NOT_READY | Prospective language candidate v4 repairs exposed source/next-check wording; fresh multi-family development evidence is still required |
 | Strongest baseline R frozen | DESIGNATED, NOT_HASH_FROZEN | Tool-enabled repository-aware R; freeze exact model/prompts/resources with candidate |
 | Information/tool/resource parity | DRAFT | Audit at campaign freeze |
 | Target land strata | PARTIAL | Existing cases are development only; fresh generators/configurations required |

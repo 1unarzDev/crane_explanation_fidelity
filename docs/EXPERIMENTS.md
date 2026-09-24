@@ -4140,3 +4140,25 @@
   freeze P/R or open confirmation. Test the observed measurement-scope and source-link issues only
   prospectively on multiple fresh development configurations. Result SHA-256
   `0091350bbefab9fee9fbb16e294d56e09cb9487cb176c11c43c0cb7e6da5b05f`.
+
+## 2026-09-24 — prospective command--motion language candidate v4
+
+- **STATUS:** `IMPLEMENTED / TESTED / NO_MODEL_CALLS`; confirmation remains closed.
+- **CORE:** `crane_explain` commits `a8ad2196b5afd8dd0adb676083349aa0bacc2177` and
+  `64f9e185c5feacfd9eb2a14e39ccae0a0a265528`
+  changes only prospective diagnostic language. The command--motion template now says “delivered
+  odometry” rather than asserting an undeclared independence relationship. Verifier policy
+  `bounded-diagnostic-language-v4` accepts a noncausal imperative measurement request inside the
+  declared next-check section while still rejecting an imperative containing a causal assertion.
+- **VERSIONING CORRECTION:** the full umbrella regression caught that the first wording patch would
+  change recomputation of retained v1/v2 exports. The follow-up keeps their exact wording and assigns
+  the new wording to `command-motion-discrepancy-v3`, which is the default only for future exports.
+- **PROMPTS:** new v2 R and P prompts prohibit inventing temporal scope for a calibrated comparator
+  and prohibit adding undeclared source relationships. V1 prompts and every retained response are
+  unchanged.
+- **REPRODUCIBILITY:** the workspace lock now pins the new core commit; the runner records the
+  selected realization prompt and hash and declares verifier v4.
+- **TESTS:** 52 focused core tests and 94 total core tests passed; 24 combined runner/language tests
+  passed after the umbrella integration. No frozen artifact or qualified Luna file changed.
+- **NEXT GATE:** predeclare fresh development configurations before any model call. This repair is
+  based on exposed development errors and cannot itself support a method-effect estimate.

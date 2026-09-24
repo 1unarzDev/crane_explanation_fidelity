@@ -177,10 +177,13 @@ def run(args: argparse.Namespace, caller=None) -> dict[str, Any]:
     )
 
     diagnostic_result = export["diagnostic_result"]
+    realization_prompt = getattr(
+        args, "realization_prompt", "diagnostic_realization_dev_v1.txt"
+    )
     p_record = caller.call(
         "diagnostic-command-motion-P-realization",
         load_prompt(
-            "diagnostic_realization_dev_v1.txt",
+            realization_prompt,
             {
                 "QUESTION": question,
                 "DIAGNOSTIC_RESULT": json.dumps(
@@ -193,7 +196,7 @@ def run(args: argparse.Namespace, caller=None) -> dict[str, Any]:
             **repository_identity,
             "condition": "P",
             "diagnostic_sha256": sha256(evidence_path),
-            "bounded_verifier": "bounded-diagnostic-language-v3",
+            "bounded_verifier": "bounded-diagnostic-language-v4",
         },
     )
     calls.append(call_summary("P", p_record))
@@ -273,6 +276,8 @@ def run(args: argparse.Namespace, caller=None) -> dict[str, Any]:
             "diagnostic_adapter_sha256": sha256(adapter),
             "repository_prompt": args.repository_prompt,
             "repository_prompt_sha256": sha256(PROMPTS / args.repository_prompt),
+            "realization_prompt": realization_prompt,
+            "realization_prompt_sha256": sha256(PROMPTS / realization_prompt),
             "core_repository_commit": args.core_repository_commit,
         },
         "comparison_scope": {
@@ -313,6 +318,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--repository-prompt",
         default="diagnostic_repository_agent_command_motion_dev_v1.txt",
+    )
+    parser.add_argument(
+        "--realization-prompt",
+        default="diagnostic_realization_dev_v1.txt",
     )
     parser.add_argument("--question", default=QUESTION)
     parser.add_argument(

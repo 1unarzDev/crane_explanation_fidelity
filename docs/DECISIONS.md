@@ -1464,3 +1464,20 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   repeated model measurements or one reused cluster for robust candidate-selection evidence.
 - Effect: the systematic citation-completeness blocker is closed for fresh packets, but candidate
   readiness remains `NOT_READY`. Alpha consumption stays 0.000/0.050.
+
+## 2026-09-24 — version the command--motion language repair prospectively
+
+- Decision: create verifier policy v4 and v2 R/P prompts for future development responses; retain
+  v1--v3 code identities and all generated outputs as historical artifacts.
+- Evidence: exposed development identified two precise boundary errors: deterministic wording
+  asserted “independently delivered” without an explicit relationship in the judge packet, and the
+  verifier rejected a noncausal imperative request for actuation evidence solely because it lacked
+  a literal “next check” prefix despite appearing under that named section. R also invented an
+  “earlier” observation from a calibration comparator.
+- Scope: v4 removes the unsupported template modifier, recognizes only noncausal evidence-gathering
+  imperatives in the declared next-check section, and adds fail-closed regression coverage. V2
+  prompts forbid the observed temporal/source inventions. The diagnostic computation, thresholds,
+  Luna v7 arm, legacy study, and prior labels are unchanged.
+- Effect: this defines a prospective development candidate, not a frozen confirmatory method. It
+  must be exercised on fresh configurations across more than one scenario family before candidate
+  selection.
