@@ -4386,3 +4386,25 @@
   nested ROS/submodule tests without their ROS/Python environments (`crane_explain_ros`, `ament_*`,
   and CRANE `Tools` imports unavailable); it produced no test verdict and was not retried as a
   failing suite. The correctly scoped umbrella suite above completed successfully.
+
+## 2026-09-24 — qualified route-change language gate predeclaration
+
+- **STATUS:** `PREDECLARED_DEVELOPMENT_ONLY_NOT_RUN`; no generation or Luna call has occurred.
+- **INPUT:** the already qualified `diagnostic-land-binding-dev-007` robot-visible fixture and
+  checked geometric diagnostic. This adds one development language cluster and zero independent
+  physical or confirmatory clusters.
+- **QUESTION:** ask what changed during the successful navigation, what the record establishes
+  about why it changed, and what remains unresolved. The required causal restraint is part of the
+  evidence contract: do not name an evaluator-only obstacle, assert controller consumption of
+  every delivered plan, infer costmap-to-plan causation, or claim global infeasibility.
+- **COMPARISON:** one fixed `gpt-6-sol` high call each for P, tool-enabled R, and N, plus
+  deterministic T; no retry. R receives the same blind fixture, exact permitted repositories, and
+  executable geometric diagnostic wrapper as P. P receives only the checked output of that same
+  robot-visible computation.
+- **PAPER-VALUE GATE:** three calls are a bounded test of the current end-to-end language
+  bottleneck and are cheaper than another physical run, but add no independent episode evidence.
+  After this result, another independent governed episode or manuscript/analysis work has higher
+  default value than prompt iteration on this case.
+- **ANNOTATION/INFERENCE:** zero Luna calls are authorized. A future blinded packet, independent
+  required-unit inventory, and scoring declaration must be registered separately. Confirmation
+  remains inactive at 0.000/0.050 alpha.

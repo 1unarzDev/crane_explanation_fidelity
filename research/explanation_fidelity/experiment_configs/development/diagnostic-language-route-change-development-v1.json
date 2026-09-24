@@ -1,0 +1,99 @@
+{
+  "schema": "crane-diagnostic-language-route-change-development/v1",
+  "status": "PREDECLARED_DEVELOPMENT_ONLY_NOT_RUN",
+  "declared_at": "2026-09-24T10:20:12-05:00",
+  "purpose": "One bounded language-development comparison on the first scenario-binding-qualified route-change episode. This tests whether checked P communicates the supported plan-change mechanism and unresolved trigger more faithfully than the fair tool-enabled R baseline before any candidate freeze.",
+  "source": {
+    "umbrella_commit_before_declaration": "25c24d90fb50c16e788b84ec0597373a8150c3b6",
+    "crane_ml_commit": "f669e748c657a5e93324e8bcdf1732785e88ce47",
+    "astro_dock_commit": "36202373ae186a8fd247a20b7b477312a744de99",
+    "crane_explain_core_commit": "64f9e185c5feacfd9eb2a14e39ccae0a0a265528",
+    "crane_explain_ros_commit": "fc957a172967a849d677e467bcf09b344de581a1",
+    "land_pilot_runner": "analysis/run_diagnostic_land_pilot.py",
+    "land_pilot_runner_sha256": "50dad6e1692b999ba0299f49871fe38c7639fcc1891af4b1ddb003a4725b3bdb",
+    "diagnostic_wrapper": "analysis/export_geometric_route_diagnostic.py",
+    "diagnostic_wrapper_sha256": "11be6b2a3c11b570eb01c17783454cb1aef16a9a2a0b65a257eea87d8b1d5959",
+    "repository_prompt": "research/explanation_fidelity/prompts/diagnostic_repository_agent_plan_geometry_dev_v1.txt",
+    "repository_prompt_sha256": "7688778ed7bd18f9220fdaafdfd224c65137bea48ca1d421b230397d8ab6e2fe",
+    "diagnostic_realization_prompt": "research/explanation_fidelity/prompts/diagnostic_realization_dev_v2.txt",
+    "diagnostic_realization_prompt_sha256": "959a710146da0a6259fe06fc4ed183f3bcfca63565e36181604dbeb6dfa023fd",
+    "no_computation_prompt": "research/explanation_fidelity/prompts/diagnostic_no_computation_dev_v1.txt",
+    "no_computation_prompt_sha256": "adbbc64be0f324b77431b2f375481b692ef15dc00f71501216a565923c8d99c9"
+  },
+  "development_cluster": {
+    "statistical_cluster_id": "language-route-change-binding-007",
+    "episode_id": "diagnostic-land-binding-dev-007",
+    "family": "land-geometric-route-change",
+    "qualification_result": "manifests/data/diagnostic-land-binding-dev-007-qualification-result.json",
+    "qualification_status": "QUALIFIED_DEVELOPMENT_PHYSICAL_EVIDENCE",
+    "fixture": "data/robot_visible/dev/diagnostic-land-binding-dev-007/fixture-summary.json",
+    "fixture_sha256": "134445c6dd5fa6f771c91080acce7715b4f159ed428b381156b64fb4e451cf64",
+    "diagnostic": "data/robot_visible/dev/diagnostic-land-binding-dev-007/geometric-route-diagnostic-v2.json",
+    "diagnostic_sha256": "57da429c37708e926e6aedfa18680d3ba1d672812a566822815197afea91cd9e",
+    "nav2_config": "packages/crane_ml/Tools/Performance/nav2_land_proving_ground_fixture.yaml",
+    "nav2_config_sha256": "e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+    "behavior_tree": "packages/crane_ml/Tools/Performance/nav2_roboboat_distance_replanning.xml",
+    "behavior_tree_sha256": "e47dadf5bb1228f031e1a7a15d60f0a784c5101ffff9fd11fc36ea7458ce3dce",
+    "broad_outcome": "successful recorded plan change with unresolved physical trigger",
+    "independent_confirmatory_cluster_increment": 0
+  },
+  "question": {
+    "question_id": "diagnostic-supported-route-change-and-limits-v1",
+    "question_kind": "diagnostic-route-change-causal-restraint-v1",
+    "text": "What changed during this navigation action, what does the evidence establish about why it changed, and what remains unresolved?"
+  },
+  "method_comparison": {
+    "primary": "P versus tool-enabled R",
+    "P": "checked geometric diagnostic plus v2 realization prompt plus bounded-diagnostic-language-v4 verification/fallback",
+    "R": "repository-aware gpt-6-sol high agent with the same blind fixture, exact permitted source repositories, and the same executable diagnostic wrapper",
+    "T": "deterministic rendering of the same checked diagnostic result",
+    "N": "runtime/source presentation without decoded geometric diagnostic computation",
+    "provider": "codex",
+    "model": "gpt-6-sol",
+    "reasoning_effort": "high",
+    "samples_per_model_condition": 1,
+    "model_conditions": [
+      "R",
+      "P",
+      "N"
+    ],
+    "deterministic_conditions": [
+      "T"
+    ],
+    "maximum_new_model_calls": 3,
+    "valid_output_retries": 0
+  },
+  "evidence_boundary": {
+    "methods_receive": "the governed robot-visible fixture, exact permitted CRANE/core source, and the same executable geometric diagnostic tool; P additionally receives only the checked robot-visible diagnostic result produced by that tool",
+    "methods_do_not_receive": [
+      "catalog layout identity or semantic obstacle truth",
+      "evaluator-only geometry, intervention identity, or simulator truth",
+      "the expected broad outcome from this declaration",
+      "other methods' answers",
+      "verifier or Luna labels"
+    ],
+    "required_withholding": [
+      "which physical obstacle triggered the route change",
+      "controller consumption of every delivered plan",
+      "costmap-to-plan causation",
+      "global route infeasibility"
+    ]
+  },
+  "execution": {
+    "output": "model_outputs/dev/diagnostic-language-route-change-development-v1/diagnostic-land-binding-dev-007.json",
+    "cache": "research/explanation_fidelity/model_cache/diagnostic-language-route-change-development-v1",
+    "retain_all_calls_and_outputs": true,
+    "no_quality_driven_resampling": true,
+    "luna_calls_authorized": 0,
+    "confirmation_alpha_consumed": 0.0
+  },
+  "paper_value_decision": {
+    "why_now": "The physical episode already exists and passed fail-closed build, scenario-binding, leakage, and independent-reference checks. Three fixed calls can determine whether this candidate produces useful causal restraint on a valid route-change case before spending more collection or annotation resources.",
+    "relative_to_another_episode": "This comparison is cheaper and tests the end-to-end language bottleneck, but it adds no independent physical evidence. Another independent governed episode remains more valuable after this fixed gate.",
+    "relative_to_annotation": "No Luna call is authorized because an explicit blinded packet and independent required-unit inventory must be registered separately after outputs exist.",
+    "relative_to_statistics_figures_and_manuscript": "One unannotated development cluster cannot support an effect estimate, figure, or paper conclusion; it is only a candidate-readiness diagnostic.",
+    "stop_rule": "After the single R/P/N calls and deterministic T output, retain the result and stop. Do not revise prompts, retry, or add a favorable case based on the answers."
+  },
+  "allowed_use": "Development-only candidate assessment and response-quality audit. Not confirmation, replication, significance evidence, or authorization to freeze P/R.",
+  "decision_rule": "Inspect whether P preserves the supported plan-change diagnosis and required causal limits relative to tool-enabled R. Regardless of direction, retain the result. A later Luna evaluation requires a separate prospective declaration and cannot activate confirmation from this one cluster."
+}
