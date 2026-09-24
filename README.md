@@ -155,7 +155,7 @@ their own location. Exact repository commits and destinations are recorded in
   historical and the extension's smaller bounds are ineligible; see
   [sequential protocol](docs/SEQUENTIAL_STUDY_PROTOCOL.md)
   and [campaign progress](docs/DIAGNOSTIC_CAMPAIGN_PROGRESS.md).
-- **PHYSICAL/REFERENCE COLLECTION ACTIVE; SEMANTIC CAMPAIGN INACTIVE:** fourteen of the frozen 100
+- **PHYSICAL/REFERENCE COLLECTION ACTIVE; SEMANTIC CAMPAIGN INACTIVE:** fifteen of the frozen 100
   land command--motion confirmation configurations have been attempted once and are valid. Run 003
   preserves useful execution facts while correctly withholding the masked motion mechanism; run
   004 records recovered measured response followed by task abort, and run 005 is a successful
@@ -165,7 +165,8 @@ their own location. Exact repository commits and destinations are recorded in
   eventual task success; runs 009 and 010 add persistent measured response loss followed by action
   abort on the two geometry strata; run 011 adds another successful transient-compensation case;
   run 012 adds a nominal `not_triggered` control despite recovery activity; run 013 adds a clean
-  single-attempt nominal control; run 014 adds another persistent discrepancy followed by abort.
+  single-attempt nominal control; run 014 adds another persistent discrepancy followed by abort;
+  run 015 adds another successful compensation case.
   No P/R response, Luna label, effect estimate, confidence sequence, or
   alpha use exists. Replication remains untouched.
 - **TESTED (SECONDARY-ARM DEVELOPMENT):** the provider-neutral model-call contract now has a
