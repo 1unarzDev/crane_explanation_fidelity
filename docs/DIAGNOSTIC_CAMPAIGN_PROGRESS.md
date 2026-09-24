@@ -242,3 +242,18 @@ for P/R/N generation or Luna scoring under its current declaration. It adds zero
 clusters and consumes no alpha. Do not retry or replace it. Current P remains `NOT_READY`; the
 result favors closing this development branch and returning to qualified evidence, analysis, and
 the manuscript rather than searching for another favorable physical case.
+
+## Bounded nonterminal diagnosis from the retained attempt (2026-09-24)
+
+A prospectively declared post-outcome analysis used the robot-visible 100-second boundary without
+inventing an action result. Independent computations agree that the record supports a sustained
+10--51 s command--motion discrepancy (0.260 m/s command, 0.000 m/s measured response, calibrated
+healthy response 0.25974 m/s). Geometry remains insufficient because the final rolling grid does
+not cover the complete requested route and the retained plans/trajectory show only small lateral
+deviation. It cannot explain the discrepancy.
+
+The first geometric rendering falsely called the cutoff a terminal result; it is retained as an
+ineligible tool failure. The corrected version explicitly withholds the eventual action outcome.
+This improves the candidate's bounded composition behavior but adds no physical cluster, response,
+label, or alpha. A separately declared, fair P/R language test is the next development gate; it
+must give R the same two computations and cannot ask a terminal-failure question.

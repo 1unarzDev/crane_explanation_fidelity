@@ -4656,3 +4656,30 @@
 - **INFERENCE:** deterministic exports and separate reference computations only; zero explanation
   clusters, model calls, Luna calls, confirmatory clusters, or alpha expenditure. Any later
   development language test requires another committed declaration.
+
+## 2026-09-24 — bounded nonterminal composition-analysis result
+
+- **STATUS:** `RUN / VALID_BOUNDED_NONTERMINAL_DEVELOPMENT_DIAGNOSIS`; this is inspected
+  post-outcome development, not a new physical or confirmatory cluster.
+- **COMMAND--MOTION:** the checked robot-visible computation and a separately implemented
+  reference agree on a supported 10--51 s discrepancy: median command 0.260 m/s, measured response
+  0.000 m/s, versus a 0.25974 m/s calibrated healthy response. Before the cutoff the record has
+  six FollowPath failures, one source-qualified Wait invocation, and eleven FollowPath attempts.
+- **GEOMETRY:** the geometric result is `insufficient`, not a competing negative mechanism. The
+  rolling grid does not cover the complete requested route; 73 delivered plans contain 13 unique
+  hashes with at most 0.100 m lateral deviation, and delivered odometry deviates at most 0.060 m.
+  Neither the disconnected retained rolling grid nor those small deviations establish global
+  physical blockage or explain the command--motion discrepancy.
+- **MATERIAL TOOL FAILURE RETAINED:** the first geometric rendering incorrectly claimed that a
+  terminal result was retained. Its exact bytes are preserved evaluator-side and ineligible. Core
+  `706985f` and umbrella `abb65ef` add explicit nonterminal semantics and fail closed unless cutoff
+  use is requested. The corrected rendering states that no terminal result exists and the eventual
+  outcome remains unresolved.
+- **BOUNDARY:** the deepest supported mechanism is the execution-level discrepancy during the
+  observation window. Do not claim action failure, recovery exhaustion, a terminal chain, the
+  evaluator intervention, or a unique actuator/obstacle/collision/slip cause. No model or Luna
+  calls were made; confirmation remains inactive at 0.000/0.050 alpha.
+- **VALIDATION/GOVERNANCE:** all 30 retained run files match their refreshed SHA-256 inventories;
+  robot-visible leakage and data-governance checks pass; DVC cache and R2 are synchronized. The
+  combined umbrella, analysis, and diagnostic-core suite passes 363 tests, and all eight frozen-
+  integrity tests pass. Frozen F/G/H artifacts remain unchanged.

@@ -1650,3 +1650,18 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   eligible explanation cluster, model or Luna call, confirmation cluster, or alpha expenditure.
   P remains `NOT_READY`, and further composition-case engineering is lower value than analysis and
   manuscript work on already qualified evidence.
+
+## 2026-09-24 — diagnose the bounded interval while preserving the unresolved outcome
+
+- Decision: permit deterministic post-outcome analysis of run 009 through its declared
+  robot-visible cutoff, but keep the record ineligible for terminal-failure or confirmatory use.
+- Evidence: the command--motion exporter and independent reference agree on a 41-second sustained
+  response loss. The geometric computation is insufficient because the retained rolling grid is
+  partial; its first rendering also exposed a material false terminal-result claim.
+- Correction: retain the false rendering, add explicit opt-in cutoff semantics, and require the
+  checked diagnosis to say that no terminal result was observed. Do not reinterpret fixture
+  timeout as action abort or failure.
+- Effect: the record now supplies a useful supported execution mechanism plus an explicitly
+  unresolved geometric and terminal boundary. It remains development-only and adds no model call,
+  label, campaign cluster, or alpha. Any language comparison must be separately declared and fair
+  to tool-enabled R.

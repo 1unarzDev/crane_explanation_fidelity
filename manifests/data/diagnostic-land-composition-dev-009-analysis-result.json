@@ -1,0 +1,74 @@
+{
+  "schema": "crane-land-diagnostic-composition-nonterminal-analysis-result/v1",
+  "recorded_utc_date": "2026-09-24",
+  "run_id": "diagnostic-land-composition-dev-009",
+  "method_visible_episode_id": "diagnostic-land-composition-observation-009",
+  "status": "VALID_BOUNDED_NONTERMINAL_DEVELOPMENT_DIAGNOSIS",
+  "predeclaration": "research/explanation_fidelity/experiment_configs/development/land-diagnostic-composition-nonterminal-analysis-v1.json",
+  "development_boundary": {
+    "physical_outcome_inspected_before_analysis": true,
+    "post_outcome_tool_development": true,
+    "terminal_result_observed": false,
+    "confirmatory_eligible": false,
+    "language_comparison_authorized": false
+  },
+  "command_motion": {
+    "disposition": "supported",
+    "mechanism": "command_to_motion_discrepancy",
+    "calibrated_healthy_commanded_speed_mps": 0.26,
+    "calibrated_healthy_measured_speed_mps": 0.2597399950027466,
+    "discrepancy_commanded_speed_mps": 0.26,
+    "discrepancy_measured_speed_mps": 0.0,
+    "discrepancy_interval_s": [10.0, 51.0],
+    "discrepancy_duration_s": 41.0,
+    "follow_path_failures_before_cutoff": 6,
+    "source_qualified_wait_invocations_before_cutoff": 1,
+    "follow_path_attempts_before_cutoff": 11,
+    "method_export_sha256": "fb175a0d69a751ebc0734256aa8629edda563e25ff50f6f7193137bd1617674f",
+    "independent_reference_sha256": "a07bec2fbec883f6ba65dfe2285dc09ec913e3699a6f7e36e59df04ff209f534",
+    "qa_summary_sha256": "2c2720b4ef795c32cb664040d27cdeb94860b5834ac7887fcef261652a4b9470",
+    "independent_reference_parity": true
+  },
+  "geometry": {
+    "disposition": "insufficient",
+    "mechanism": "geometric_route_restriction",
+    "direct_route_classification": null,
+    "complete_requested_route_coverage": false,
+    "retained_grid_connection_from_last_pose_to_goal": false,
+    "maximum_delivered_odometry_lateral_deviation_m": 0.05956673249602318,
+    "delivered_plan_count": 73,
+    "unique_delivered_plan_count": 13,
+    "maximum_delivered_plan_lateral_deviation_m": 0.09999999999999964,
+    "method_export_sha256": "53aa78d688a8e45cc79d4534b354467f5bf01fcb7014a9be954f075e21c692f7",
+    "independent_geometric_reference_sha256": "1b890cff71b91c6f55871f73c6714b198dfec0e3ed6c973d3793014811ede956",
+    "independent_plan_reference_sha256": "cd71f327d0886236afdff0433a4f0194f17e2a13864f98b6d65343abd68859e2",
+    "plan_summary_parity_passed": true,
+    "required_withholding": [
+      "The retained rolling grid does not cover the complete requested route.",
+      "No robot-visible result establishes that geometry caused the command-to-motion discrepancy.",
+      "A disconnected retained rolling grid does not prove global physical no-path.",
+      "The eventual action outcome after the observation cutoff is unresolved."
+    ]
+  },
+  "rejected_output": {
+    "sha256": "1cfbc56bca02c7d2fc40343d867c6c7529b6bb0273e67a42d2d857f5af7674ee",
+    "reason": "The first geometric rendering materially and incorrectly stated that a terminal action result was retained.",
+    "preserved": true,
+    "eligible_for_use": false,
+    "corrective_core_commit": "706985f6ed1ef4815c859b82fe486b2c1cfb7d08",
+    "corrective_umbrella_commit": "abb65ef90bfb0f980af6c36f6430a196bf05a787"
+  },
+  "bounded_conclusion": "During the declared observation window, the robot-visible record supports a sustained command-to-motion discrepancy and a recorded execution sequence of FollowPath failures and one source-qualified Wait invocation. The retained geometry is insufficient to classify the complete requested route or establish a physical geometric cause. No terminal result was observed, so the record does not establish action failure, recovery exhaustion, or an eventual terminal chain.",
+  "evidence_boundary": {
+    "evaluator_intervention_disclosed_to_methods": false,
+    "unique_actuator_collision_obstacle_or_slip_cause_supported": false,
+    "controller_consumption_of_delivered_observations_proven": false
+  },
+  "retention": {
+    "model_calls": 0,
+    "luna_calls": 0,
+    "confirmatory_cluster_increment": 0,
+    "confirmatory_alpha_consumed": 0.0
+  },
+  "next_gate": "A separate prospective declaration may test a deterministic composition plan on this inspected development record. It must lead with the supported command-to-motion mechanism, report geometric insufficiency and the unresolved terminal outcome, and give tool-enabled R identical robot-visible evidence and computations."
+}
