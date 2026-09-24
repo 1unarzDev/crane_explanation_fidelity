@@ -1,5 +1,21 @@
 # Experiment Log
 
+## 2026-09-24 — candidate-v2 run 006 retained with invalid language measurement
+
+- **PHYSICAL/DIAGNOSTIC STATUS:** the sole nominal run passed build, binding, recording, and
+  reference gates and succeeded after 17.478 m. The independent computation found no qualifying
+  command--motion discrepancy, no FollowPath failure, no source-qualified Wait invocation, and one
+  FollowPath attempt.
+- **PROTOCOL DEVIATION / FAIL-CLOSED:** the one authorized R call completed, but its invocation
+  omitted the declaration's explicit question fields and therefore used the runner's similar but
+  non-identical default question/ID/kind. The annotation-packet builder rejected the fixed-reference
+  mismatch. No packet or Luna call was produced, and the output was not rerun, relabeled, repaired,
+  or replaced.
+- **INFERENCE:** this adds one valid physical development configuration but zero valid paired
+  language clusters. Five paired clusters remain. Candidate readiness had already failed; this
+  deviation supplies an additional reason not to freeze candidate v2. Confirmation remains inactive
+  at `0.000/0.050`. See `manifests/data/cmv2-dev-006-disposition.json`.
+
 ## 2026-09-24 — candidate-v2 run 005 retained result
 
 - **STATUS:** one qualified transient-discrepancy cluster: navigation succeeded after 17.613 m.

@@ -1,0 +1,67 @@
+{
+  "schema": "crane-command-motion-candidate-v2-run-disposition/v1",
+  "recorded_date": "2026-09-24",
+  "run_id": "cmv2-dev-006",
+  "cluster_id": "cmv2-land-006",
+  "status": "VALID_DEVELOPMENT_DIAGNOSTIC_BUT_PROTOCOL_INVALID_LANGUAGE_MEASUREMENT",
+  "attempt_count": 1,
+  "retry_performed": false,
+  "admission": {
+    "player_build_audit_accepted": true,
+    "scenario_binding_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "unity_result_valid": true,
+    "recording_valid": true,
+    "navigation_status": "succeeded",
+    "generic_fixture_expected_outcome_observed": true
+  },
+  "observed": {
+    "displacement_meters": 17.477882385253906,
+    "controller_commands": 676,
+    "odometry_messages": 3459,
+    "costmap_observations": 259,
+    "behavior_tree_transitions": 5,
+    "follow_path_attempts": 1,
+    "follow_path_failures": 0,
+    "source_qualified_wait_invocations": 0
+  },
+  "diagnostic": {
+    "disposition": "not_triggered",
+    "healthy_interval_s": [0.0, 5.0],
+    "healthy_measured_planar_speed_mps": 0.2597399950027466,
+    "complete_reference_audit_accepted": true
+  },
+  "language_evaluation": {
+    "conditions": ["P", "R"],
+    "p_model_calls": 0,
+    "r_model_calls": 1,
+    "luna_passes": 0,
+    "luna_calls": 0,
+    "call_failures": 0,
+    "valid_paired_measurement": false,
+    "invalid_reason": "The runner used its default question text, ID, and kind because the fixed declaration fields were omitted from the invocation. The fail-closed packet builder rejected the resulting question/reference identity mismatch.",
+    "declared_question_id": "command-motion-candidate-v2-mechanism",
+    "observed_question_id": "diagnostic-command-motion-candidate-v2",
+    "rerun_or_repair_performed": false,
+    "luna_disposition": "NOT_RUN_PROTOCOL_INVALID_PACKET"
+  },
+  "hashes": {
+    "player_build_audit_sha256": "e60f6e5efd5a58b0b724deb1eb931a2219c25daea53853b39a602ae634864a77",
+    "scenario_binding_audit_sha256": "dcdc6c582d5ff8e0d9f752025830d98475e773836da1d7dd5779c93d86d3142c",
+    "robot_visible_events_sha256": "d3240832c2e565d23f0a586503dcd1016a04c807afd9898da6fca60751e81af0",
+    "diagnostic_export_sha256": "bc9399ac949553c33d987f925ee4a35a637515910eaa52904c41befbefa5ccc6",
+    "independent_reference_sha256": "114eadbc14b7046bc3420fa72a959dd91b19bdb9227b734fac41dafef2979fbb",
+    "complete_annotation_reference_sha256": "ada575439a529b5f67b6ebbd71a25dbe24261291feba1dc982191985028cd5c9",
+    "candidate_result_sha256": "644668424d4c27512daaaab43f30974af0e03aab633644e3235f589badf93894"
+  },
+  "inference": {
+    "independent_physical_cluster_increment": 1,
+    "valid_paired_language_cluster_increment": 0,
+    "confirmatory_cluster_increment": 0,
+    "confirmatory_alpha_consumed": 0.0,
+    "candidate_readiness": "FAILED_ZERO_MATERIAL_ERROR_GATE_ON_PRIOR_CLUSTERS_AND_RUN_006_LANGUAGE_MEASUREMENT_INVALID",
+    "cumulative_valid_paired_clusters": 5,
+    "cumulative_p_minus_r_successes_pass_1": 0,
+    "cumulative_p_minus_r_successes_pass_2": 1
+  }
+}
