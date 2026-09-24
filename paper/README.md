@@ -6,13 +6,13 @@ double-blind branch. Every reported number must map to a retained result artifac
 committed manifest.
 
 `main.tex` is the living anonymous manuscript and `references.bib` contains only sources already
-checked against the research notes. Red `PENDING` markers are intentional acceptance gates: they
-must be replaced by manifest-traceable results after blinded annotation and prospective evaluation,
-never by estimated or development-only values. The current draft compiles with the IEEE conference
-class required by the workshop's IEEE BigData 2026 instructions. It is currently a six-page
-short/WIP-length scaffold, including references. A full-paper submission still requires enough
-prospective evidence to justify and fill 8--9 pages; the manuscript is not submission-ready while
-its empirical gates remain open.
+checked against the research notes. Any future `PENDING` marker is an acceptance gate that must be
+replaced by manifest-traceable results, never by estimated or development-only values. The current
+draft compiles with the IEEE conference class required by the workshop's IEEE BigData 2026
+instructions. It is a six-page short/WIP manuscript including references and has no unresolved
+pending marker. Its short-paper structural audit passes, but scientific review and the explicit
+submission decision remain required. A full-paper submission would still require enough
+prospective evidence to justify and fill 8--9 pages.
 
 The living claim audit is `CLAIM_EVIDENCE_MAP.md`; exact development-number provenance and its
 fail-closed validator are documented in `NUMBER_TRACEABILITY.md`. The manuscript story is a bounded legacy
@@ -45,4 +45,6 @@ Use `short` or `demo` only after a deliberate category decision. The audit check
 8--9 or 4--6 page range including references, unresolved `\pending{}` gates, anonymous author and
 PDF metadata, developer-specific path/repository fragments, letter page geometry, font embedding,
 PDF freshness, and numeric traceability. It does not submit or publish anything and does not replace
-visual inspection. The current seven-page, results-pending draft is expected to fail.
+visual inspection. As of 2026-09-24, a scratch build of the current source passed the short-paper
+audit at six pages and passed full-page visual inspection; this is not a submission or a claim that
+the scientific contribution has independent confirmatory support.
