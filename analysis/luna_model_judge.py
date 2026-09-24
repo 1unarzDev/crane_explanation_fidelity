@@ -644,6 +644,8 @@ class LunaIsolatedCodexCaller:
 
         attempts: list[dict[str, Any]] = []
         max_attempts = self.manifest["retry_policy"]["maximum_transport_retries"] + 1
+        last_stdout = ""
+        last_stderr = ""
         for attempt in range(1, max_attempts + 1):
             with tempfile.TemporaryDirectory(prefix="crane-luna-isolated-") as temporary:
                 root = Path(temporary)
@@ -763,6 +765,8 @@ class LunaIsolatedCodexCaller:
                         "stderr_sha256": digest_bytes(completed.stderr.encode("utf-8")),
                     }
                 )
+                last_stdout = completed.stdout
+                last_stderr = completed.stderr
                 if completed.returncode != 0 or not output_path.is_file():
                     if attempt < max_attempts:
                         continue
@@ -818,6 +822,10 @@ class LunaIsolatedCodexCaller:
             "cache_key": cache_key,
             "request_identity": identity,
             "attempts": attempts,
+            "stdout_events": (
+                self._events(last_stdout) if last_stdout.strip() else []
+            ),
+            "stderr": last_stderr,
         }
         atomic_write_json(cache_path, failure)
         raise RuntimeError(f"isolated Luna call failed; retained at {cache_path}")
