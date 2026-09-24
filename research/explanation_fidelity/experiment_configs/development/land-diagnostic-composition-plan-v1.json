@@ -1,0 +1,67 @@
+{
+  "schema": "crane-land-diagnostic-composition-plan-development/v1",
+  "status": "PREDECLARED_NOT_RUN",
+  "declared_at": "2026-09-24T13:02:00-05:00",
+  "purpose": "Test a narrow deterministic answer-plan composition over one supported command-motion diagnosis, one insufficient geometric diagnosis, and an unresolved nonterminal outcome before any language-model comparison.",
+  "paper_value": {
+    "supports_revised_q1": "Tests whether explicit diagnostic composition can preserve the deepest supported mechanism while retaining competing-mechanism and outcome limits.",
+    "relative_to_more_collection": "This is a required bounded candidate-readiness gate; it uses an already governed physical record and authorizes no new scenario search.",
+    "falsification": "The plan fails if it promotes geometry, implies a terminal result, omits the supported command-motion mechanism, or cannot be independently reconstructed."
+  },
+  "source": {
+    "umbrella_commit_before_declaration": "08cc27c",
+    "diagnostic_core_commit": "706985f6ed1ef4815c859b82fe486b2c1cfb7d08",
+    "episode_id": "diagnostic-land-composition-observation-009",
+    "command_motion_export_sha256": "fb175a0d69a751ebc0734256aa8629edda563e25ff50f6f7193137bd1617674f",
+    "geometric_export_sha256": "53aa78d688a8e45cc79d4534b354467f5bf01fcb7014a9be954f075e21c692f7",
+    "command_motion_reference_sha256": "a07bec2fbec883f6ba65dfe2285dc09ec913e3699a6f7e36e59df04ff209f534",
+    "geometric_reference_sha256": "1b890cff71b91c6f55871f73c6714b198dfec0e3ed6c973d3793014811ede956",
+    "plan_geometry_reference_sha256": "cd71f327d0886236afdff0433a4f0194f17e2a13864f98b6d65343abd68859e2"
+  },
+  "composition_contract": {
+    "primary_mechanism": "supported command_to_motion_discrepancy",
+    "required_decisive_evidence": [
+      "0.2597399950027466 m/s calibrated healthy measured response",
+      "0.26 m/s discrepancy-interval median delivered command",
+      "0.0 m/s discrepancy-interval median delivered odometry response",
+      "10.0--51.0 s discrepancy interval and 41.0 s duration"
+    ],
+    "required_execution_context": [
+      "six recorded FollowPath failures before cutoff",
+      "one source-qualified Wait invocation before cutoff",
+      "action remained active at the observation cutoff"
+    ],
+    "required_limits": [
+      "geometry is insufficient to classify the complete requested route",
+      "geometry is not established as the cause of the discrepancy",
+      "eventual action outcome is unresolved",
+      "commands do not prove actuator acceptance",
+      "odometry delivery does not prove Nav2 consumption",
+      "no unique actuator, collision, obstruction, or slip cause is established"
+    ],
+    "forbidden_claims": [
+      "the action aborted or failed",
+      "recovery was exhausted",
+      "geometry was clear or blocked globally",
+      "a physical obstacle caused the discrepancy",
+      "the evaluator intervention identity"
+    ],
+    "next_check": "downstream accepted actuation or actuator feedback plus contact, clearance, and wheel-motion evidence over the discrepancy interval"
+  },
+  "implementation": {
+    "narrow_adapter_only": true,
+    "inputs_must_be_robot_visible": true,
+    "episode_ids_must_match": true,
+    "accepted_disposition_pair": ["supported", "insufficient"],
+    "exact_text_verification_required": true,
+    "independent_reference_required": true,
+    "retain_failure_or_unexpected_result": true
+  },
+  "retention": {
+    "model_calls_authorized": 0,
+    "luna_calls_authorized": 0,
+    "confirmatory_cluster_increment": 0,
+    "confirmatory_alpha_consumed": 0.0
+  },
+  "next_gate": "Only an independently reproduced, checked composition may proceed to a separately declared one-shot P/R/N development comparison with equal evidence, tools, model strength, and budgets."
+}

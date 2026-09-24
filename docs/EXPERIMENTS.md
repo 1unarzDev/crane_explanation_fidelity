@@ -4683,3 +4683,21 @@
   robot-visible leakage and data-governance checks pass; DVC cache and R2 are synchronized. The
   combined umbrella, analysis, and diagnostic-core suite passes 363 tests, and all eight frozen-
   integrity tests pass. Frozen F/G/H artifacts remain unchanged.
+
+## 2026-09-24 — bounded diagnostic-composition plan predeclaration
+
+- **STATUS:** `PREDECLARED_NOT_RUN / DEVELOPMENT_ONLY`; deterministic plan construction and one
+  separate reference only. No model, Luna, physical, confirmatory, or replication call is
+  authorized.
+- **INPUT:** exact governed run 009 command--motion and geometric exports. The required pair is a
+  supported execution discrepancy plus insufficient geometry, with the action still active at
+  cutoff.
+- **REQUIRED OUTPUT:** lead with the 10--51 s command--motion mechanism and decisive speeds; retain
+  six FollowPath failures and one source-qualified Wait as recorded pre-cutoff execution context;
+  state that geometry does not classify the complete route or explain the discrepancy and that the
+  eventual outcome is unresolved.
+- **FAIL-CLOSED:** reject mismatched episode IDs, non-robot-visible inputs, altered hashes,
+  unexpected disposition pairs, missing cutoff semantics, terminal claims, unique physical-cause
+  claims, or an independently unreproducible plan. Retain any failure or unexpected result.
+- **INFERENCE:** inspected post-outcome development only, zero new physical/explanation clusters
+  and 0.000/0.050 alpha. A later fair P/R/N language comparison requires another declaration.
