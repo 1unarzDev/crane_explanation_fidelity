@@ -4204,3 +4204,18 @@
   clusters, no confirmatory clusters, no method effect, no judge labels, and no alpha consumption.
   The failed detour induction is ineligible for a route-change diagnostic claim; the nominal land
   outcome remains useful for false-premise handling.
+
+## 2026-09-24 — prospective land-language execution amendment
+
+- **STATUS:** `AMENDED_BEFORE_MODEL_CALLS`; physical outcomes were already known, but no R/P/N or
+  Luna call had started.
+- **DEFECT:** the pinned land runner could select the exact plan-geometry repository prompt, but it
+  hardcoded realization prompt v1, labeled the verifier as v3, and omitted the permitted citation-ID
+  set from its result. Those details conflict with the already-declared v4 language candidate and
+  citation-complete packet contract.
+- **CORRECTION:** amendment 1 pins runner SHA-256
+  `50dad6e1692b999ba0299f49871fe38c7639fcc1891af4b1ddb003a4725b3bdb`, the exact
+  plan-geometry repository prompt, realization prompt v2, verifier policy v4, and explicit citation
+  identities. It changes no run, question-family intent, model, retry rule, cluster, or outcome.
+- **VALIDITY:** the failed detour remains failed and cannot become a route-change case. This is a
+  prospective execution correction, not a reset of the already-inspected physical batch.

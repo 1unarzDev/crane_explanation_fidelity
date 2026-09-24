@@ -1,0 +1,35 @@
+{
+  "schema": "crane-diagnostic-language-multifamily-development-amendment/v1",
+  "status": "PROSPECTIVE_LANGUAGE_EXECUTION_AMENDMENT_BEFORE_MODEL_CALLS",
+  "declared_at": "2026-09-24T08:59:22-05:00",
+  "amends": "research/explanation_fidelity/experiment_configs/development/diagnostic-language-v4-multifamily-development-v1.json",
+  "amended_declaration_sha256": "00fa0aeac607af9ab2a811f8ef694de8b3d4f60bb19c7cd2fb0773ad187b05db",
+  "umbrella_commit_before_amendment": "7d9c66bb5ba164a2e9fdde7c6a8d1f280fe710c1",
+  "timing": {
+    "physical_runs_completed_and_inspected": true,
+    "generation_calls_started": false,
+    "luna_calls_started": false,
+    "confirmatory_alpha_consumed": 0.0
+  },
+  "reason": "Execution audit found that the pinned land runner could select the exact plan-geometry repository prompt but hardcoded the v1 realization prompt and recorded verifier policy v3. The parent declaration requires the prospective v2 realization wording and language-policy v4 used by this candidate. The land result also omitted the explicit permitted citation-ID set needed for the already-declared citation-complete evidence contract.",
+  "changes": {
+    "land_runner_path": "analysis/run_diagnostic_land_pilot.py",
+    "land_runner_sha256": "50dad6e1692b999ba0299f49871fe38c7639fcc1891af4b1ddb003a4725b3bdb",
+    "land_repository_prompt": "research/explanation_fidelity/prompts/diagnostic_repository_agent_plan_geometry_dev_v1.txt",
+    "land_repository_prompt_sha256": "7688778ed7bd18f9220fdaafdfd224c65137bea48ca1d421b230397d8ab6e2fe",
+    "land_realization_prompt": "research/explanation_fidelity/prompts/diagnostic_realization_dev_v2.txt",
+    "land_realization_prompt_sha256": "959a710146da0a6259fe06fc4ed183f3bcfca63565e36181604dbeb6dfa023fd",
+    "bounded_verifier": "bounded-diagnostic-language-v4",
+    "result_records_permitted_evidence_identifiers": true
+  },
+  "unchanged": [
+    "all four retained physical runs and both statistical-cluster assignments",
+    "questions and question-family intent",
+    "one R, P, and N generation call per eligible configuration with deterministic T",
+    "gpt-6-sol high generation configuration",
+    "qualified Luna v7 arm and two-pass rule",
+    "no retry, retention, evidence-boundary, and development-only rules",
+    "failed land detour induction and its ineligibility for a route-change claim"
+  ],
+  "interpretation": "This corrects stale execution metadata and makes the declared citation contract explicit before any response exists. It does not erase the inspected physical outcomes, add a configuration, change an endpoint, or authorize confirmation."
+}

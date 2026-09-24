@@ -95,3 +95,31 @@ def test_plan_geometry_repository_prompt_uses_exact_v2_runtime_contract():
     assert "--deadline-seconds 100" in result
     assert "Question: What changed?" in result
     assert "{{" not in result
+
+
+def test_cli_accepts_versioned_realization_prompt(monkeypatch, tmp_path):
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            str(SCRIPT),
+            "--fixture", "fixture.json",
+            "--diagnostic", "diagnostic.json",
+            "--nav2-config", "nav2.yaml",
+            "--bt-xml", "tree.xml",
+            "--repository", "crane_ml",
+            "--repository-url", "https://example.invalid/crane_ml.git",
+            "--repository-commit", "a" * 40,
+            "--core-repository", "crane_explain",
+            "--core-repository-commit", "b" * 40,
+            "--provider", "codex",
+            "--model", "gpt-6-sol",
+            "--cache", str(tmp_path / "cache"),
+            "--output", str(tmp_path / "output.json"),
+            "--realization-prompt", "diagnostic_realization_dev_v2.txt",
+        ],
+    )
+
+    args = MODULE.parse_args()
+
+    assert args.realization_prompt == "diagnostic_realization_dev_v2.txt"
