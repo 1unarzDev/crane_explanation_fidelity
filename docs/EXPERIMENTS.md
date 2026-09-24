@@ -99,6 +99,18 @@
   predeclared configurations anyway; do not tune, repair, replace, or spend confirmatory alpha.
   Tracked disposition: `manifests/data/cmv2-dev-003-disposition.json`.
 
+## 2026-09-24 — candidate-v2 run 004 retained result
+
+- **STATUS:** one qualified persistent-discrepancy cluster: abort after 4.570 m, with an
+  independently matched 18--50 s interval at 0.260 m/s command and 0.000 m/s measured response,
+  two FollowPath failures, two source-qualified Wait invocations, and three attempts.
+- **LUNA:** P passed both isolated passes; R failed pass 1 and passed pass 2, yielding +1 and 0.
+  Pass 1 penalized R's third-attempt temporal statement while accepting the corresponding
+  relationship in P. Preserve the asymmetry as judge variability; do not adjudicate with Luna.
+- **CUMULATIVE DEVELOPMENT:** across four clusters, P-minus-R is 0 in pass 1 and +1 in pass 2.
+  Candidate readiness remains failed because P already has material-error labels. Confirmation is
+  inactive at `0.000/0.050`. See `manifests/data/cmv2-dev-004-disposition.json`.
+
 ## 2026-09-24 — deterministic command--motion candidate-v2 runner
 
 - **IMPLEMENTED / TESTED / NOT FROZEN:** `analysis/run_command_motion_candidate_v2.py` compares
