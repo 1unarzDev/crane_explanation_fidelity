@@ -149,6 +149,9 @@ predeclared before any qualification labels:
   held-out cases;
 - unresolved rate at most 5% overall and no more than one unresolved case in any category;
 - required-unit status accuracy at least 95% overall;
+- accuracy at least 90% across the predeclared core semantic fields (judgment status,
+  answerability, material error, disposition, mechanism identification, abstention correctness,
+  causal overclaim, and evidence-problem status);
 - 100% material-error and disposition invariance within verified meaning-preserving pairs; and
 - 100% preservation of the distinction among answer insufficiency, packet evidence problems, and
   judge uncertainty.
@@ -171,4 +174,3 @@ measurements.” Disallowed claims include human agreement, human trust, complet
 or independent human adjudication. Automated legacy analysis is an additive analysis of frozen
 responses, not completion of the original human endpoint. Diagnostic-development cases remain
 development evidence regardless of how often they are judged.
-
