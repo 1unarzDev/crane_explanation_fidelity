@@ -4580,3 +4580,33 @@
 - **NEXT GATE:** rebuild from the clean pinned commit, prospectively declare one fresh unused
   nominal-layout development episode, then retain its actual outcome once. Candidate P remains
   `NOT_READY`; confirmation remains inactive at 0.000/0.050 alpha.
+
+## 2026-09-24 — authenticated land diagnostic-composition run predeclaration
+
+- **STATUS:** `PREDECLARED_NOT_RUN`; exactly one physical attempt, with no replacement run or
+  layout and no model or Luna call authorized by this declaration.
+- **RUN:** `diagnostic-land-composition-dev-009`, v4 layout
+  `diagnostic-development-nominal-clear-route-008`, seed 63007, ROS domain 131, port 12329. The
+  evaluator-only proving-ground mobility hold is requested at 18.0 s and remains active because
+  the release boundary is -1.0 s.
+- **PINNED SOURCE:** umbrella commit `96e3a5585d87eee4500984bf025926192a88d1e8` and CRANE commit
+  `3ebba7be193c29c5bec725af7bdcd39157738266`, both clean when the eligible player was built.
+- **PINNED BUILD:** player SHA-256 `a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292`,
+  build-manifest SHA-256 `7b5a465368808f68b986c57f431daefaa45ac22642ea15ce6d797a8209f4341a`,
+  managed-assemblies SHA-256 `26fb1fe4716c7466ecbd3f44c5c9334074f9607219b044733d254ca748ac1f20`,
+  physics-assembly SHA-256 `aa7d4bdea7e0b4b29db88ee156adb1c7601bcb0fa33ac951c701971c11bdb8f3`,
+  and catalog SHA-256 `c2603491c16b99ba007085237097fc0cd66ee2453d1b9e4e1fc7f490bd1a0f8a`.
+  The clean-player audit accepted every source, scene, catalog, and runtime-resource check before
+  this declaration.
+- **PURPOSE:** test whether nominal connected geometry supplies a supported negative geometric
+  mechanism while robot-visible command and independently delivered odometry evidence establish,
+  or fail to establish, a sustained execution-response discrepancy. The answer must not identify
+  the hidden intervention as a motor, slip, collision, or obstacle cause.
+- **ADMISSION/RETENTION:** recording validity, exact scenario binding, and fault-induction success
+  are separate. Retain any valid unexpected outcome and every invalid outcome; do not retry this
+  ID, reuse this layout, or substitute a favorable case. Downstream diagnostic computation is
+  permitted only after build and post-run binding admission pass, and requires independent
+  references before any language use.
+- **INFERENCE:** development-only; this run adds zero confirmatory clusters and consumes
+  0.000/0.050 alpha. A separate committed no-retry declaration is required before any P/R/N model
+  generation or Luna scoring.
