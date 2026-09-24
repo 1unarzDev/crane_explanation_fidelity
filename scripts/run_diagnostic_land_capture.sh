@@ -182,5 +182,18 @@ CRANE_PROVING_GROUND_CATALOG="${catalog}" \
 CRANE_PROVING_GROUND_LAYOUT="${layout}" \
 bash "${crane_dir}/Tools/Performance/run_land_proving_ground_nav2_fixture.sh"
 
+truth_path="${evaluator_root}/worker-0/land-evaluator-truth.json"
+binding_audit="${evaluator_root}/scenario-binding-audit.json"
+if [[ ! -f "${truth_path}" ]]; then
+    echo "Missing evaluator truth required for scenario-binding admission: ${truth_path}" >&2
+    exit 1
+fi
+python3 "${workspace_root}/analysis/validate_land_scenario_binding.py" \
+    --truth "${truth_path}" \
+    --catalog "${catalog_file}" \
+    --catalog-id "${catalog}" \
+    --layout "${layout}" \
+    --output "${binding_audit}"
+
 cleanup
 trap - EXIT INT TERM

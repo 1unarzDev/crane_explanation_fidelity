@@ -102,3 +102,12 @@ def test_runtime_manifest_hashes_the_executed_nav2_fixture_observer():
 
     assert '"Tools/Performance/nav2_follow_path_fixture.py"' in text
     assert '"nav2_fixture_observer"' in text
+
+
+def test_capture_requires_exact_post_run_scenario_binding():
+    text = SCRIPT.read_text(encoding="utf-8")
+
+    assert "validate_land_scenario_binding.py" in text
+    assert "--catalog-id \"${catalog}\"" in text
+    assert "--layout \"${layout}\"" in text
+    assert "scenario-binding-audit.json" in text

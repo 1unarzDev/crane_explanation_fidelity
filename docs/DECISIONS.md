@@ -1499,3 +1499,19 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Next priority: favor a deeper supported physical diagnostic and independent configurations over
   further wording-only iteration unless a narrow packet repair is required to evaluate them.
 - Effect: candidate remains `NOT_READY`; alpha remains 0.000/0.050.
+
+## 2026-09-24 — invalidate land-005 catalog comparison and require truth-bound admission
+
+- Decision: retain both land-005 recordings but exclude the pair from any claim about the requested
+  v4 detour/nominal scenarios or a route-change mechanism.
+- Evidence: evaluator truth for both runs is the legacy corridor schema with no layout identity and
+  no blocker, contradicting the requested proving-ground binding. The exact launch/runtime cause is
+  unresolved and the embedded build does not prove a source commit.
+- Correction: classify the recordings as generic clear-corridor false-premise development artifacts,
+  contributing zero scenario-binding-qualified clusters. Preserve their model outputs and Luna
+  measurements with this limitation.
+- Prospective rule: diagnostic land capture must fail closed on exact evaluator-truth correspondence
+  for catalog hash, environment, layout, seed, mechanism, obstacle identities, and active state.
+- Alternatives rejected: call this merely a failed induction, infer the requested layout from the
+  source catalog, delete the run, or rerun under the same ID.
+- Effect: candidate readiness remains `NOT_READY`; alpha remains 0.000/0.050.

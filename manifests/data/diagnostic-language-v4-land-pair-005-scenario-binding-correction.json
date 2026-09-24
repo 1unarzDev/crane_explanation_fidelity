@@ -1,0 +1,40 @@
+{
+  "schema": "crane-land-scenario-binding-correction/v1",
+  "recorded_utc_date": "2026-09-24",
+  "status": "RETAINED_RECORDINGS_INVALID_FOR_REQUESTED_CATALOG_SCENARIOS",
+  "requested_catalog": "v4",
+  "catalog_sha256": "c2603491c16b99ba007085237097fc0cd66ee2453d1b9e4e1fc7f490bd1a0f8a",
+  "runs": [
+    {
+      "run_id": "diagnostic-language-v4-land-detour-005",
+      "requested_layout": "diagnostic-development-connected-detour-005",
+      "truth_path": "data/evaluator_only/dev/diagnostic-language-v4-land-detour-005/worker-0/land-evaluator-truth.json",
+      "truth_sha256": "fbcdc36f3a8aad8cd6614e598f6a661ab9336b3c24c20b47cb1c477be7a78302",
+      "observed_truth_schema": "crane-land-corridor-truth-v1",
+      "observed_layout": null,
+      "observed_legacy_blocker": "none",
+      "recording_valid": true,
+      "requested_scenario_binding_valid": false,
+      "allowed_interpretation": "Retained generic clear-corridor recording and false-premise development response only; not a detour induction, route-change case, or valid member of the requested matched catalog pair."
+    },
+    {
+      "run_id": "diagnostic-language-v4-land-nominal-005",
+      "requested_layout": "diagnostic-development-nominal-clear-route-005",
+      "truth_path": "data/evaluator_only/dev/diagnostic-language-v4-land-nominal-005/worker-0/land-evaluator-truth.json",
+      "truth_sha256": "5e72c57c1cdf35d4d8e23015631006e2227862275dcc9bf3aa2178a11182c9b0",
+      "observed_truth_schema": "crane-land-corridor-truth-v1",
+      "observed_layout": null,
+      "observed_legacy_blocker": "none",
+      "recording_valid": true,
+      "requested_scenario_binding_valid": false,
+      "allowed_interpretation": "Retained generic clear-corridor recording and false-premise development response only; not proven to instantiate the requested nominal v4 layout or a valid member of the matched catalog pair."
+    }
+  ],
+  "cause": "The exact cause is unresolved. The player and catalog were present, but runtime evaluator truth proves the proving-ground layout was not active. Embedded build provenance does not prove a player source commit, and the retained run record does not prove which expected extra arguments reached Unity.",
+  "prospective_fix": {
+    "validator": "analysis/validate_land_scenario_binding.py",
+    "capture_orchestrator": "scripts/run_diagnostic_land_capture.sh",
+    "policy": "A diagnostic land capture now fails closed unless evaluator truth exactly matches catalog/environment/layout/hash/seed/mechanism/obstacle activation fields."
+  },
+  "preservation": "Raw recordings, generated responses, Luna labels, prior manifests, and experiment chronology remain retained. No output is deleted, relabeled as another scenario, or rerun for a favorable result."
+}

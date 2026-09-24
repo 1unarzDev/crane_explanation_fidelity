@@ -91,11 +91,11 @@ discrepancy followed by two recovery invocations and abort, while the compensate
 same discrepancy followed by measured recovery and success. Both use prospective diagnostic
 contract v3 and passed independent numeric/reference parity.
 
-The requested land detour did not occur: both the intervention and nominal runs succeeded with
-zero recorded lateral deviation. This failed induction is a preserved negative result and cannot
-be used as a route-change case or replaced after observation. It may be evaluated only under the
-answerability/false-premise contract justified by its retained evidence. No R/P/N or Luna calls
-have yet been made for this batch, no candidate is frozen, and alpha remains unconsumed.
+The requested land detour did not occur: both runs succeeded with zero lateral deviation. A later
+evaluator-truth audit established that neither requested v4 layout was bound; both used the legacy
+clear-corridor truth schema. The recordings and false-premise outputs remain preserved, but the
+pair contributes zero scenario-binding-qualified clusters and no route-change evidence. No
+candidate is frozen and alpha remains unconsumed.
 
 ## Language-v4 multi-family Luna result (2026-09-24)
 
@@ -111,6 +111,10 @@ failure-chain judgments. The immutable labels remain useful evidence of automate
 instability, but they do not justify freezing P or opening confirmation. The no-computation N arm
 failed both diagnosable cases in both passes, indicating development value in the diagnostic
 computation without establishing a statistically independent method advantage.
+
+The land pair is additionally invalid for its intended catalog comparison: retrospective truth
+validation found legacy clear-corridor runs rather than the requested v4 detour/nominal layouts.
+This is now a fail-closed admission error, not merely a negative fault induction.
 
 ## Required update for each collection batch
 

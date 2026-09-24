@@ -4274,3 +4274,19 @@
 - **DISPOSITION:** do not start confirmation. Preserve all negative and unstable results, retain
   the qualified judge status only for information-complete packets, and prioritize deeper physical
   evidence or genuinely independent development clusters over another wording-only iteration.
+
+## 2026-09-24 — retrospective land scenario-binding correction
+
+- **STATUS:** `RECORDINGS_RETAINED / REQUESTED_LAYOUT_BINDING_INVALID`; this corrects the earlier
+  “failed detour induction” interpretation without deleting any data, response, or label.
+- **EVIDENCE:** evaluator truth for both land-005 runs has schema `crane-land-corridor-truth-v1`,
+  no `layoutId`, and `blocker=none`. It does not match the requested v4 proving-ground layouts.
+  The detour and nominal runs are therefore generic clear-corridor recordings, not a valid matched
+  catalog pair. The exact argument-loss/runtime cause is unresolved; binary provenance does not
+  prove a source commit.
+- **EFFECT:** the land pair contributes zero scenario-binding-qualified development clusters and
+  no route-change evidence. Its false-premise language outputs and judge instability remain
+  historical development measurements with this limitation.
+- **FIX:** the capture path now writes a binding audit and fails closed unless truth matches the
+  exact catalog hash, environment, layout, seed, mechanism, obstacle IDs, and active state. Legacy
+  corridor truth and misspelled layouts are regression-tested rejection cases.
