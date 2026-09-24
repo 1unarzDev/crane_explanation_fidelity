@@ -160,10 +160,28 @@ def calculate(export: dict[str, Any]) -> dict[str, Any]:
             "command": len(commands),
             "odometry": len(odometry),
         },
+        "robot_visible_provenance": {
+            "command": method["command_provenance"],
+            "odometry": method["odometry_provenance"],
+            "anchor": method["anchor"],
+            "command_frame": method["command_frame"],
+            "measured_frame": method["measured_frame"],
+        },
+        "windowing": config,
+        "execution_basis": {
+            "action_status": method["action_status"],
+            "action_error_code": method["action_error_code"],
+            "recovery_node_classifier": sequence["recovery_node_classifier"],
+        },
         "result": {
             "disposition": disposition,
             "healthy_commanded_planar_speed_mps": healthy_command,
             "healthy_measured_planar_speed_mps": healthy_speed,
+            "healthy_interval_s": (
+                [calibration[0]["start_offset_s"], calibration[-1]["end_offset_s"]]
+                if calibration
+                else None
+            ),
             "discrepancy_commanded_planar_speed_mps": discrepancy_command,
             "discrepancy_measured_planar_speed_mps": discrepancy_motion,
             "response_ratio": (

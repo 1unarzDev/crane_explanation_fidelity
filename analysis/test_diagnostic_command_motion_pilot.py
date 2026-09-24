@@ -37,6 +37,23 @@ def test_no_computation_presentation_omits_checked_result():
     assert presentation["delivered_streams"]["command_sample_count"] == 376
 
 
+def test_independent_reference_retains_complete_visible_provenance():
+    from reference_command_motion import calculate
+
+    export = json.loads(EVIDENCE.read_text(encoding="utf-8"))
+    reference = calculate(export)
+
+    assert reference["result"]["healthy_interval_s"] == [0.0, 5.0]
+    assert reference["robot_visible_provenance"]["command"] == (
+        "delivered-nav2-command-not-proof-of-actuator-acceptance"
+    )
+    assert reference["robot_visible_provenance"]["odometry"] == (
+        "delivered-odometry-not-proof-of-nav2-consumption"
+    )
+    assert reference["execution_basis"]["action_status"] == "aborted"
+    assert reference["execution_basis"]["recovery_node_classifier"]["node_name"] == "Wait"
+
+
 def test_runner_preserves_tool_parity_and_accepts_checked_p_candidate(tmp_path: Path):
     export = json.loads(EVIDENCE.read_text(encoding="utf-8"))
     caller = FakeCaller(export["final_answer"])

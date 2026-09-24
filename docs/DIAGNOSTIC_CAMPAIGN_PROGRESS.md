@@ -56,6 +56,13 @@ tool, and one high-reasoning model call. This accurately treats the proposed met
 diagnosis plus deterministic natural-language rendering instead of attributing repeated fallback
 text to successful LLM reasoning. It remains unfrozen and has produced no new response or label.
 
+The candidate-v2 annotation path now requires a complete-reference audit before packet creation.
+The independent computation retains comparator/discrepancy/recovery intervals, thresholds,
+provenance semantics, action/sequence fields, and recovery-classifier derivation; it is checked
+against the v3 diagnostic and source IDs without exposing P's answer plan. This addresses the
+specific omission that invalidated the composition packet, but each fresh reference still must
+pass the audit before any Luna call.
+
 ## Fresh candidate-development capacity (2026-09-24)
 
 CRANE commit `7cafab0` adds the separate `crane-land-proving-ground-v5` catalog for candidate-v2

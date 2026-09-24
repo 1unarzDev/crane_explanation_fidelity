@@ -89,3 +89,19 @@ def test_builder_rejects_mismatched_identifier_contracts():
     result["permitted_evidence_identifiers"] = ["events-sha256:" + "a" * 64]
     with pytest.raises(ValueError, match="citation-identifier contracts differ"):
         MODULE.build_rows(result, reference, "secret")
+
+
+def test_builder_requires_and_propagates_v2_reference_completeness():
+    result, reference = fixtures()
+    reference["schema"] = "crane-command-motion-annotation-reference/v2"
+    reference["evidence_completeness"] = "All question-relevant facts are present."
+    reference["completeness_audit"] = {"accepted": False}
+    with pytest.raises(ValueError, match="completeness audit did not pass"):
+        MODULE.build_rows(result, reference, "secret")
+
+    reference["completeness_audit"]["accepted"] = True
+    rows, _ = MODULE.build_rows(result, reference, "secret")
+    assert all(
+        row["evidence_completeness"] == "All question-relevant facts are present."
+        for row in rows
+    )

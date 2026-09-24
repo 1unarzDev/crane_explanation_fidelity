@@ -27,6 +27,22 @@
 - **REPRODUCTION:** `manifests/workspace.lock.json` now pins the new nested core and the already
   committed CRANE v5 source. This change produces no new episode, response, label, or alpha use.
 
+### Candidate-v2 complete-reference gate
+
+- **IMPLEMENTED / TESTED:** the independent command--motion reference now retains the healthy
+  comparator interval, exact stream-provenance strings, window thresholds, action status/error,
+  and bounded recovery-classifier derivation. `build_command_motion_reference_v2.py` cross-checks
+  these against v3 diagnostic measurements, intervals, counts, source hashes, and evidence IDs.
+- **BOUNDARY:** the annotation reference contains the independent computation and robot-visible
+  provenance, not P's diagnostic result or answer plan. It replaces the generic evaluator label
+  with “unobserved intervention” and reveals no intervention identity. The packet builder fails
+  closed unless its completeness audit passes and supplies the completeness statement to Luna.
+- **REGRESSION:** 15 focused independent-reference, packet, current-runner, and candidate-v2 tests
+  pass, including intentional interval/provenance mismatches and a rejected incomplete audit.
+- **STATUS:** no new reference artifact, answer, or judge call has yet been produced from a fresh
+  scenario. This closes the known packet-omission failure mode by construction; it does not prove
+  future references are semantically exhaustive or that Luna will agree.
+
 ## 2026-09-24 — v5 clean-source build and scenario-binding smoke
 
 - **QUALIFIED INFRASTRUCTURE / CALIBRATION ONLY:** Unity 6000.5.10f1 built CRANE commit

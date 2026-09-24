@@ -47,6 +47,9 @@ def build_rows(
         raise ValueError("result/reference episode mismatch")
     if result["question_id"] != reference["question_id"]:
         raise ValueError("result/reference question mismatch")
+    if reference.get("schema") == "crane-command-motion-annotation-reference/v2":
+        if reference.get("completeness_audit", {}).get("accepted") is not True:
+            raise ValueError("command-motion reference completeness audit did not pass")
 
     declared_identifiers = reference.get("allowed_evidence_identifiers")
     result_identifiers = result.get("permitted_evidence_identifiers")
@@ -98,6 +101,7 @@ def build_rows(
                 "question_kind": result["question_kind"],
                 "diagnosable": reference["diagnosable"],
                 "reference_status": reference["reference_status"],
+                "evidence_completeness": reference.get("evidence_completeness"),
                 "required_units": reference["required_units"],
                 "prohibited_claims": reference["prohibited_claims"],
                 "allowed_evidence": allowed_evidence,
