@@ -1,5 +1,23 @@
 # Decision Log
 
+## 2026-09-24 — Do not activate candidate-v3 confirmation under the unmatched framework
+
+- **Decision:** keep confirmatory alpha unspent while resolving three prospective activation
+  failures: the general land/surface and geometry/motion mixture does not match the admitted
+  candidate, fresh configuration capacity is below the minimum, and current finite Luna-v7
+  validation uncertainty makes the fixed +0.15 sensitivity claim infeasible at pilot rates.
+- **Evidence:** v5 contains only 24 development-only layouts. Surface admission is incomplete.
+  Candidate v3 addresses land command--motion. Under the frozen v7 adverse rates, the observed
+  independent development rates asymptotically transform from P=1.0/R=0.5 to
+  P=0.6096/R=0.5922, a +0.0174 difference. This is a feasibility diagnostic, not confirmatory
+  evidence.
+- **Alternatives considered:** silently reweight the registered population; ignore sensitivity;
+  collect until nominal significance; weaken +0.15; or tune Luna on study outputs. All would
+  violate the prospective contract or the stated scientific objective.
+- **Next action:** freeze a bounded qualification extension using unchanged Luna-v7 on fresh
+  endpoint-focused cases, then register the narrower campaign and reserve disjoint confirmation
+  and replication configurations. Existing v7 qualification remains valid and immutable.
+
 ## 2026-09-24 — Advance command--motion candidate v3 to confirmatory planning only
 
 - **Decision:** Candidate v3 met its prospectively declared bounded development-readiness gate and

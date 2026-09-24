@@ -1,5 +1,19 @@
 # Experiment Log
 
+## 2026-09-24 — candidate-v3 confirmation activation audit
+
+- **STATUS:** `NOT_ACTIVATED / ZERO ALPHA CONSUMED`. The candidate passed development readiness,
+  but the registered mixed-domain/mixed-mechanism framework is not an admissible campaign for a
+  land command--motion-only candidate, and v5 lacks fresh confirmation/replication capacity.
+- **ANNOTATION FEASIBILITY:** at pilot rates P=6/6 and R=3/6, the frozen v7 adverse-label
+  transformation approaches 0.6096 versus 0.5922, only +0.0174. This is not an observed effect or
+  power claim; it demonstrates that current finite qualification uncertainty would block the
+  required sensitivity result even with more responses at unchanged rates.
+- **NEXT:** prospectively freeze a bounded unchanged-Luna-v7 qualification extension on fresh
+  endpoint-focused references. Do not change the +0.15 delta, guardrails, study labels, or prior
+  qualification results. See
+  `manifests/study/command-motion-candidate-v3-confirmation-activation-audit-v1.json`.
+
 ## 2026-09-24 — candidate-v3 development pilot completed; readiness gate met
 
 - **STATUS:** the sole fixed run-006 attempt passed exact player-build, 14-field scenario-binding,

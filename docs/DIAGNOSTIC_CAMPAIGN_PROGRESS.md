@@ -76,6 +76,17 @@ exact Luna profile and references, fresh target distribution, guardrails, alpha 
 sequential rule, and replication reservation must all be fixed before any confirmatory outcome is
 opened. The completed development screen alone cannot support a paper effect claim.
 
+The activation audit is currently fail-closed. The general protocol's surface/geometric mixture
+does not match the admitted land command--motion candidate, and v5 has no confirmatory or
+replication capacity. More importantly, applying the frozen v7 adverse-label rates to the observed
+independent-cluster pilot rates gives an asymptotic +0.0174 P-minus-R difference, below the fixed
++0.15 worthwhile threshold. This is not a confirmatory effect calculation; it establishes that
+finite judge-validation uncertainty is an endpoint threat that more study responses alone cannot
+repair. The next bounded step is a prospectively frozen extension of the unchanged Luna-v7 judge
+on fresh endpoint-focused references, followed by a land command--motion campaign registration and
+disjoint configuration reservation. See
+`manifests/study/command-motion-candidate-v3-confirmation-activation-audit-v1.json`.
+
 ### Retained run-by-run history
 
 The prospectively declared six-configuration candidate-v3 pilot began with run
