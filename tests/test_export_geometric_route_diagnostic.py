@@ -182,6 +182,62 @@ def test_export_fails_closed_when_rolling_grid_does_not_cover_direct_route(tmp_p
     assert "direct-route cost classification" in payload["diagnostic_result"]["limits"]
 
 
+def test_timeout_fixture_requires_opt_in_and_never_invents_terminal_result(tmp_path):
+    raw = bytes([0] * 25)
+    fixture_payload = {
+        "goal": {"position": {"x": 8.5, "y": 2.5}, "yaw": 0.0},
+        "initialPose": {"x": 0.5, "y": 2.5, "yaw": 0.0},
+        "actionResultPose": None,
+        "status": "timeout",
+        "wallSeconds": 100.01,
+        "trajectory": [{"x": 0.5, "y": 2.5}, {"x": 2.5, "y": 2.5}],
+        "planHistory": [],
+        "behaviorTreeTransitionCounts": {"ComputePathToPose:RUNNING->SUCCESS": 3},
+        "behaviorTreeCapture": {"completeness": {"terminalTransitionObserved": False}},
+        "latestCostmapSnapshot": {
+            "frameId": "odom",
+            "stamp": {"sec": 100, "nanosec": 0},
+            "resolution": 1.0,
+            "sizeX": 5,
+            "sizeY": 5,
+            "origin": {"x": 4.0, "y": 0.0, "yaw": 0.0},
+            "dataEncoding": "base64+zlib+uint8-row-major",
+            "dataSha256": hashlib.sha256(raw).hexdigest(),
+            "data": base64.b64encode(zlib.compress(raw)).decode("ascii"),
+        },
+    }
+    fixture = tmp_path / "fixture.json"
+    fixture.write_text(json.dumps(fixture_payload), encoding="utf-8")
+    nav2_config, bt_xml = _source_files(tmp_path)
+
+    with pytest.raises(ValueError, match="explicit active-at-declared-cutoff opt-in"):
+        MODULE.export(
+            fixture,
+            "nonterminal",
+            nav2_config,
+            bt_xml,
+            robot_radius_m=0.22,
+            inflation_radius_m=0.55,
+            deadline_seconds=100.0,
+        )
+
+    payload = MODULE.export(
+        fixture,
+        "nonterminal",
+        nav2_config,
+        bt_xml,
+        robot_radius_m=0.22,
+        inflation_radius_m=0.55,
+        deadline_seconds=100.0,
+        allow_active_at_declared_cutoff=True,
+    )
+
+    assert payload["diagnostic_result"]["disposition"] == "insufficient"
+    assert payload["method_input"]["observation_cutoff"]["terminal_result_observed"] is False
+    assert "No terminal action result is retained" in payload["final_answer"]
+    assert "A terminal action result is retained" not in payload["final_answer"]
+
+
 def test_export_fails_closed_when_costmap_cell_payload_is_withheld(tmp_path):
     fixture = tmp_path / "fixture.json"
     fixture.write_text(json.dumps({

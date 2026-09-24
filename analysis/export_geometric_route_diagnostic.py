@@ -124,6 +124,7 @@ def export(
     inflation_radius_m: float,
     deadline_seconds: float,
     computation_version: str = "geometric-route-restriction-v1",
+    allow_active_at_declared_cutoff: bool = False,
 ) -> dict:
     fixture = json.loads(fixture_path.read_text(encoding="utf-8"))
     goal = fixture["goal"]["position"]
@@ -195,6 +196,31 @@ def export(
         f"bt-xml-sha256:{bt_sha}",
     )
     completeness = fixture.get("behaviorTreeCapture", {}).get("completeness", {})
+    action_status = str(fixture["status"])
+    nonterminal_boundary = None
+    if action_status.lower() == "timeout":
+        if not allow_active_at_declared_cutoff:
+            raise ValueError(
+                "timeout fixture requires explicit active-at-declared-cutoff opt-in"
+            )
+        if fixture.get("actionResultPose") is not None:
+            raise ValueError("nonterminal cutoff fixture must not retain an action result pose")
+        if bool(completeness.get("terminalTransitionObserved", False)):
+            raise ValueError("nonterminal cutoff contradicts an observed terminal transition")
+        observed_duration = float(fixture["wallSeconds"])
+        if not math.isfinite(deadline_seconds) or deadline_seconds <= 0.0:
+            raise ValueError("declared nonterminal observation duration must be positive")
+        if observed_duration < deadline_seconds:
+            raise ValueError("fixture ended before the declared nonterminal observation cutoff")
+        action_status = "remained active at the observation cutoff"
+        nonterminal_boundary = {
+            "basis": "fixture_timeout_at_declared_observation_duration",
+            "declared_observation_duration_s": deadline_seconds,
+            "observed_fixture_wall_seconds": observed_duration,
+            "terminal_result_observed": False,
+        }
+    elif allow_active_at_declared_cutoff:
+        raise ValueError("active-at-declared-cutoff opt-in requires timeout fixture status")
     plan_geometry = summarize_delivered_plans(fixture)
     if computation_version == "geometric-route-restriction-v2" and plan_geometry is None:
         raise ValueError("v2 geometric diagnosis requires retained delivered plan poses")
@@ -202,7 +228,7 @@ def export(
         episode_id=episode_id,
         evidence_ids=evidence_ids,
         frame=str(snapshot["frameId"]),
-        action_status=str(fixture["status"]),
+        action_status=action_status,
         direct_route_has_lethal_cell=direct_route_has_lethal_cell,
         direct_route_minimum_clearance_m=direct_route_minimum_clearance_m,
         direct_route_first_lethal_x_m=(float(first_lethal["x"]) if first_lethal else None),
@@ -254,6 +280,11 @@ def export(
     verification = verify_diagnostic_text(result, answer)
     if not verification.accepted:
         raise RuntimeError("deterministic diagnostic rendering failed verification")
+    nonterminal_method_fields = (
+        {"observation_cutoff": nonterminal_boundary}
+        if nonterminal_boundary is not None
+        else {}
+    )
     return {
         "schema": "crane-geometric-route-diagnostic-export-v1",
         "episode_id": episode_id,
@@ -273,6 +304,7 @@ def export(
             "deadline_seconds": deadline_seconds,
             "computation_version": computation_version,
             "delivered_plan_geometry": plan_geometry,
+            **nonterminal_method_fields,
         },
         "reference_computation": (
             {
@@ -311,7 +343,11 @@ def export(
                 ),
                 "delivered odometry trajectory",
                 "delivered Nav2 global-plan geometry",
-                "NavigateToPose result status and timing",
+                (
+                    "NavigateToPose declared observation boundary without a terminal result"
+                    if nonterminal_boundary is not None
+                    else "NavigateToPose result status and timing"
+                ),
                 "exact Nav2 configuration and BT source hashes",
             ],
             "excluded": [
@@ -338,6 +374,7 @@ def main() -> None:
         choices=("geometric-route-restriction-v1", "geometric-route-restriction-v2"),
         default="geometric-route-restriction-v1",
     )
+    parser.add_argument("--allow-active-at-declared-cutoff", action="store_true")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     payload = export(
@@ -349,6 +386,7 @@ def main() -> None:
         inflation_radius_m=args.inflation_radius,
         deadline_seconds=args.deadline_seconds,
         computation_version=args.computation_version,
+        allow_active_at_declared_cutoff=args.allow_active_at_declared_cutoff,
     )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
