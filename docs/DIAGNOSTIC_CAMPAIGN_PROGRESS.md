@@ -228,3 +228,17 @@ a fresh nominal-clear-route configuration so geometry can act as a competing neg
 while command/odometry evidence tests an execution restriction. This is higher value than another
 easy route-change variant, but it cannot freeze P unless the actual retained evidence supports a
 compositional contract and a later fair P/R development comparison warrants a fresh candidate.
+
+## Authenticated composition attempt outcome (2026-09-24)
+
+The one declared run 009 attempt passed clean-player and exact scenario-binding admission, and the
+evaluator-only persistent execution restriction activated at its declared boundary. The retained
+robot-visible record is a useful bounded observation of commands, odometry, plans, costmaps, and
+recovery activity, but NavigateToPose remained active when the 100-second observation window ended.
+There is no terminal result or complete recovery history.
+
+The run is therefore retained but is not a terminal-failure explanation cluster and is ineligible
+for P/R/N generation or Luna scoring under its current declaration. It adds zero confirmatory
+clusters and consumes no alpha. Do not retry or replace it. Current P remains `NOT_READY`; the
+result favors closing this development branch and returning to qualified evidence, analysis, and
+the manuscript rather than searching for another favorable physical case.

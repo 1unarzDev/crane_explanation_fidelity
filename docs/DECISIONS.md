@@ -1633,3 +1633,20 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Effect: this creates only a development gate, not a frozen candidate or study campaign. The next
   run must use a fresh, predeclared configuration and a clean hash-pinned player. Alpha remains
   0.000/0.050.
+
+## 2026-09-24 — retain the authenticated bounded observation without promoting it to failure evidence
+
+- Decision: preserve the sole run 009 attempt and its successful scenario/intervention binding,
+  but do not treat it as a terminal-failure episode, generate language from it, or seek a
+  replacement run.
+- Evidence: the exact v4 nominal layout passed all 14 binding checks, Unity was valid with zero
+  logged errors/exceptions, and the hold was applied once. NavigateToPose nevertheless remained
+  active at the fixed 100-second cutoff; the configured terminal BT transition was absent and
+  exact recovery completeness was not established.
+- Alternatives rejected: call the timeout a terminal abort; infer recovery exhaustion from the
+  maximum feedback value; expose the evaluator intervention as a robot-visible cause; extend or
+  repeat the already completed attempt; or select another layout after observing this outcome.
+- Effect: the capture is retained as bounded development/instrumentation evidence only. It adds no
+  eligible explanation cluster, model or Luna call, confirmation cluster, or alpha expenditure.
+  P remains `NOT_READY`, and further composition-case engineering is lower value than analysis and
+  manuscript work on already qualified evidence.

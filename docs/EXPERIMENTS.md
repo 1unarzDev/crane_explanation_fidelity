@@ -4610,3 +4610,26 @@
 - **INFERENCE:** development-only; this run adds zero confirmatory clusters and consumes
   0.000/0.050 alpha. A separate committed no-retry declaration is required before any P/R/N model
   generation or Luna scoring.
+
+## 2026-09-24 — authenticated land diagnostic-composition run result
+
+- **STATUS:** `RUN / RETAINED_SCENARIO_BOUND_BOUNDED_OBSERVATION_NO_TERMINAL`; the sole declared
+  attempt ran once and was not retried or replaced.
+- **ADMISSION:** the clean-player audit passed, Unity reported a valid run with zero logged errors
+  or exceptions, and the post-run audit accepted all 14 exact scenario-binding checks. Evaluator
+  truth records the requested nominal-clear-route layout and a single persistent hold applied at
+  simulation time 18.040 s after its 18.020 s scheduled boundary.
+- **OBSERVED RECORD:** one NavigateToPose goal remained active at the fixed 100-second cutoff after
+  2.710 m displacement. The robot-visible stream retains 941 commands, 4,999 odometry messages,
+  4,943 trajectory records, 73 delivered plans, 207 costmap observations, and 6,355 BT
+  transitions. Recovery feedback reached 10 and three recovery invocation starts were observed,
+  but neither is an exact completed recovery count.
+- **LIMIT:** the configured terminal NavigateRecovery transition and action result were not
+  observed. This is therefore not a terminal-failure explanation episode and cannot establish
+  recovery exhaustion or a completed failure chain. The evaluator-only intervention cannot be
+  named as a robot-visible motor, slip, collision, or obstacle cause.
+- **GOVERNANCE:** both evidence roots are hash-manifested and retained in development DVC storage;
+  the disposition is
+  `manifests/data/diagnostic-land-composition-dev-009-disposition.json`. No diagnostic export,
+  independent reference, model call, or Luna call was produced. The run adds zero confirmatory
+  clusters and consumes 0.000/0.050 alpha; P remains `NOT_READY`.

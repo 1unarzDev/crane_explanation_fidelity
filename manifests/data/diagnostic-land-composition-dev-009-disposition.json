@@ -1,0 +1,77 @@
+{
+  "schema": "crane-land-diagnostic-composition-disposition/v1",
+  "recorded_utc_date": "2026-09-24",
+  "run_id": "diagnostic-land-composition-dev-009",
+  "status": "RETAINED_SCENARIO_BOUND_BOUNDED_OBSERVATION_NO_TERMINAL",
+  "predeclaration": "docs/EXPERIMENTS.md#2026-09-24--authenticated-land-diagnostic-composition-run-predeclaration",
+  "requested": {
+    "catalog": "v4",
+    "layout": "diagnostic-development-nominal-clear-route-008",
+    "seed": 63007,
+    "ros_domain_id": 131,
+    "ros_tcp_port": 12329,
+    "mobility_hold_after_fixed_simulation_s": 18.0,
+    "mobility_release_after_fixed_simulation_s": -1.0,
+    "maximum_attempts": 1
+  },
+  "admission": {
+    "prelaunch_build_accepted": true,
+    "postrun_scenario_binding_accepted": true,
+    "unity_result_valid": true,
+    "robot_visible_streams_retained": true,
+    "terminal_result_observed": false,
+    "recording_accepted_for_terminal_failure_language": false,
+    "player_build_audit_sha256": "b41f3e49dbe5b71a264384747b09bf851b4cf41e5a2146537e237690bc8fa50c",
+    "scenario_binding_audit_sha256": "fbf5827b726055dc91300428600840dd9fd130310ed03bb4ecb2201fee8d0cf2",
+    "scenario_truth_sha256": "44643a93abcf2ddc0ef41d12701eaa0f1dd0fdf8e383f92c474a6e9a01a0a42c",
+    "limitations": [
+      "The NavigateToPose action remained active when the fixed 100-second observation window ended.",
+      "The configured terminal NavigateRecovery transition was not observed after goal acceptance.",
+      "Exact recovery history is not eligible because terminal completeness was not established."
+    ]
+  },
+  "observed": {
+    "navigation_status": "timeout",
+    "goal_attempts": 1,
+    "controller_commands": 941,
+    "odometry_messages": 4999,
+    "trajectory_records": 4943,
+    "behavior_tree_transitions": 6355,
+    "costmap_observations": 207,
+    "delivered_plan_count": 73,
+    "maximum_recovery_feedback_seen": 10,
+    "observed_recovery_invocation_starts": 3,
+    "displacement_meters": 2.710462093353277,
+    "action_observation_wall_seconds": 100.01087720901705,
+    "unity_logged_errors": 0,
+    "unity_logged_exceptions": 0,
+    "fixture_summary_sha256": "e7b5a017f970898396554720a551f0a714757afde06767a6e331a0193b7ceded",
+    "robot_visible_events_sha256": "9db4e666a834207f749dbe3de9fb0bfc61f5fe76216d99edb7e4dc8a3f7fd3c9"
+  },
+  "fault_induction": {
+    "successful": true,
+    "evaluator_only": true,
+    "configured_hold_after_simulation_s": 18.0,
+    "scheduled_hold_simulation_s": 18.01999999291383,
+    "actual_hold_simulation_s": 18.039993608276644,
+    "release_configured": false,
+    "held_at_shutdown": true,
+    "player_log_sha256": "be5806e912c082964adee96160c4adc40894c8cede07eed8d5ba4f74e13dc6fc"
+  },
+  "bounded_conclusion": "The authenticated nominal-clear-route scenario and evaluator-only execution restriction were both established, and the retained robot-visible streams contain commands, independently delivered odometry, plans, costmap observations, and behavior-tree activity through a 100-second observation cutoff. The action did not reach a terminal result, so this record cannot support an explanation of a completed task failure, exact recovery exhaustion, or a terminal causal chain. The hidden intervention does not establish a robot-visible motor, slip, collision, or obstacle cause.",
+  "retention": {
+    "attempt_count": 1,
+    "retry_performed": false,
+    "replacement_layout_used": false,
+    "diagnostic_exports_created": false,
+    "independent_references_run": false,
+    "model_calls": 0,
+    "luna_calls": 0,
+    "confirmatory_cluster_increment": 0,
+    "confirmatory_alpha_consumed": 0.0,
+    "robot_visible_manifest": "manifests/data/diagnostic-land-composition-dev-009.robot-visible.json",
+    "evaluator_only_manifest": "manifests/data/diagnostic-land-composition-dev-009.evaluator-only.json"
+  },
+  "allowed_use": "Development capture and intervention-qualification evidence only. It is not a terminal-failure explanation cluster and is not eligible for model generation, Luna annotation, confirmation, or replication under the current declaration.",
+  "next_gate": "Do not retry or replace this run. Preserve it as a bounded negative capture outcome; candidate P remains NOT_READY and confirmation remains inactive."
+}
