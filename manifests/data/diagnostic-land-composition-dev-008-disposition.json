@@ -1,0 +1,65 @@
+{
+  "schema": "crane-land-diagnostic-composition-disposition/v1",
+  "recorded_utc_date": "2026-09-24",
+  "run_id": "diagnostic-land-composition-dev-008",
+  "status": "RETAINED_INVALID_SINGLE_ATTEMPT",
+  "predeclaration": "research/explanation_fidelity/experiment_configs/development/land-diagnostic-composition-qualification-v1.json",
+  "requested": {
+    "catalog": "v4",
+    "layout": "diagnostic-development-connected-detour-008",
+    "seed": 62007,
+    "mobility_hold_after_fixed_simulation_s": 18.0,
+    "maximum_attempts": 1
+  },
+  "admission": {
+    "prelaunch_build_accepted": true,
+    "postrun_recording_accepted": false,
+    "scenario_binding_accepted": false,
+    "terminal_result_observed": false,
+    "player_build_audit_sha256": "157240d34c382fa7e3c69a11447e6486acd7e9347218cfe68ef21773a1f09d87",
+    "scenario_truth_present": false,
+    "scenario_binding_audit_present": false,
+    "failure_reasons": [
+      "Unity rejected the requested proving-ground layout plus legacy mobility-hold intervention before scenario construction.",
+      "No evaluator scenario truth or scenario-binding audit was produced.",
+      "The accepted NavigateToPose goal ended only by the 100-second fixture timeout; the configured terminal BT transition was not observed."
+    ]
+  },
+  "observed": {
+    "navigation_status": "timeout",
+    "goal_attempts": 1,
+    "controller_commands": 942,
+    "odometry_messages": 4949,
+    "behavior_tree_transitions": 6343,
+    "costmap_observations": 185,
+    "maximum_recovery_feedback": 11,
+    "displacement_meters": 0.0,
+    "unity_result_valid": false,
+    "unity_logged_exceptions": 1,
+    "player_log_exception": "ArgumentException: Proving-ground layouts cannot be combined with legacy corridor interventions.",
+    "player_log_sha256": "74ffc1d67ff11545b77731de001cdf2876fc0cbcc5d84bf372d0c72e3bf76136",
+    "unity_result_sha256": "6c04c330f56426cf3264a652d7f0506750142d4b66eeeb3660c260a2a3a60ce8",
+    "fixture_summary_sha256": "7cbfbec1fe728ee0f46958505497f9044f699c520f3089d52601dcfcf42110f4"
+  },
+  "fault_induction": {
+    "successful": false,
+    "mobility_hold_marker_count": 0,
+    "reason": "The bootstrap rejected the incompatible argument combination before installing the scheduled mobility hold."
+  },
+  "bounded_diagnosis": "This attempt is an invalid scenario construction, not evidence of a command-to-motion mechanism or a valid composition case. The retained zero-displacement timeout and recovery activity occurred after bootstrap rejection and must not be used for diagnostic or language evaluation.",
+  "retention": {
+    "attempt_count": 1,
+    "retry_performed": false,
+    "replacement_layout_used": false,
+    "diagnostic_exports_created": false,
+    "independent_references_run": false,
+    "model_calls": 0,
+    "luna_calls": 0,
+    "confirmatory_cluster_increment": 0,
+    "confirmatory_alpha_consumed": 0.0,
+    "robot_visible_manifest": "manifests/data/diagnostic-land-composition-dev-008.robot-visible.json",
+    "evaluator_only_manifest": "manifests/data/diagnostic-land-composition-dev-008.evaluator-only.json"
+  },
+  "allowed_use": "Development pipeline failure evidence only. This run is not scenario-qualified physical evidence, not an explanation cluster, and not eligible for model generation, Luna annotation, confirmation, or replication.",
+  "next_gate": "Do not retry or replace this declared run. Fail closed before launch on incompatible proving-ground/legacy-intervention arguments; candidate P remains not ready."
+}

@@ -4490,3 +4490,27 @@
   from fault-induction success. Retain any valid unexpected outcome and do not rerun or replace the
   layout. Both proposed diagnostics require independent references before language generation.
 - **INFERENCE:** development-only; zero confirmatory clusters and 0.000/0.050 alpha consumed.
+
+## 2026-09-24 — land diagnostic-composition run retained invalid
+
+- **STATUS:** `RUN / RETAINED_INVALID_SINGLE_ATTEMPT`; the sole authorized
+  `diagnostic-land-composition-dev-008` attempt ran with seed 62007, domain 130, and port 12328.
+  It was not retried and no replacement layout was used.
+- **PRELAUNCH:** the pinned full-bundle build audit passed. After scene load, Unity raised
+  `ArgumentException: Proving-ground layouts cannot be combined with legacy corridor
+  interventions.` The proving-ground bootstrap therefore produced neither evaluator scenario truth
+  nor a scenario-binding audit, and the scheduled mobility hold was never installed (zero
+  `CRANE_LAND_MOBILITY_HELD` markers).
+- **OBSERVED RECORD:** one NavigateToPose goal was accepted, but the fixture timed out at 100 s
+  with 0.0 m displacement, 942 controller commands, 4,949 delivered odometry messages, 6,343 BT
+  transitions, 185 costmap observations, and recovery feedback reaching 11. The configured
+  terminal BT transition was absent, the Unity result was invalid with one logged exception, and
+  the recording fails the declared terminal-result and exact scenario-binding gates.
+- **INTERPRETATION:** this is an invalid scenario construction, not a sustained command--motion
+  diagnosis and not a composition case. No geometric/command diagnostic, independent reference,
+  language response, or Luna label was produced. The zero-displacement record must not be used as
+  explanation evidence.
+- **GOVERNANCE:** raw robot-visible and evaluator-only artifacts are retained separately and
+  hash-manifested. The tracked fail-closed disposition is
+  `manifests/data/diagnostic-land-composition-dev-008-disposition.json`. It contributes zero
+  qualified or confirmatory clusters and consumes 0.000/0.050 alpha.

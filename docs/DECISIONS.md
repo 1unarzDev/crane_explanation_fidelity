@@ -1585,3 +1585,18 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Effect: the next development case should require supported mechanism selection and competing-
   explanation restraint. This is a narrow adapter over retained evidence, not a new perception
   stack or general diagnosis framework.
+
+## 2026-09-24 — close invalid composition run without replacement
+
+- Decision: retain `diagnostic-land-composition-dev-008` as the one declared attempt, reject it
+  from all diagnostic/language evaluation, and do not retry the run or substitute another layout.
+- Evidence: the pinned build passed preflight, but Unity explicitly rejected the proving-ground
+  layout combined with the legacy mobility-hold argument before constructing the scenario. No
+  scenario truth, binding audit, or hold marker exists; the accepted action ended by fixture
+  timeout without a terminal BT transition.
+- Alternatives rejected: interpret zero motion as the intended discrepancy, create diagnostics
+  from the invalid fixture, retry without the intervention under the same ID, or move to a
+  favorable new layout. Each would violate the predeclared admission/retention rules.
+- Effect: the composition hypothesis remains untested, candidate P remains `NOT_READY`, and alpha
+  remains 0.000/0.050. Launch validation should reject this incompatible argument combination
+  before future physical resources are spent.

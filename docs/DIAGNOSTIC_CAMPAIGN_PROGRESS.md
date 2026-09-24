@@ -185,3 +185,18 @@ zero false acceptances, two false rejections, zero unresolved, and passed bounda
 presentation-invariance gates. Both failed the small-category zero-false-rejection rule, especially
 for diagnostic omission. There were 28 valid calls, no retries, no call failures, and no exposed
 tools. This consumes no confirmatory alpha and creates no study labels or effect estimate.
+
+## Invalid composition attempt (2026-09-24)
+
+The single prospectively declared `diagnostic-land-composition-dev-008` attempt is retained but
+inadmissible. Full-bundle preflight passed; Unity then rejected the proving-ground layout combined
+with the legacy mobility-hold intervention before scenario construction. There is no exact scenario
+truth, no binding audit, no hold marker, and no terminal action/BT result. The subsequent timeout,
+zero odometric displacement, commands, and recovery activity cannot be interpreted as a physical
+diagnostic case.
+
+No diagnostic exports, references, answers, or Luna calls were created. The run adds zero qualified
+clusters and consumes no alpha. It will not be retried or replaced. Candidate P remains
+`NOT_READY`; the next engineering change is only a fail-closed prelaunch rejection for this known
+incompatible argument combination, after which paper-value work should return to independent valid
+mechanisms, annotation, analysis, and manuscript preparation rather than another layout search.
