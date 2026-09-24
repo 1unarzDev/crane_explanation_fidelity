@@ -4001,3 +4001,22 @@
 - **DENOMINATORS:** 20 balanced composite cases and four additional protected cases per pass.
 - **STOPPING:** both passes must satisfy every gate; no usable label retry or post-result reference
   amendment is allowed.
+
+## 2026-09-24 — v6 endpoint-focused qualification failed
+
+- **STATUS:** `HELDOUT_QUALIFICATION_FAILED / STUDY_SCORING_PROHIBITED`.
+- **PASS 1:** not qualified; 19/20 composite (95.0%; Wilson 95% CI 76.4--99.1%), 32/32 units,
+  175/187 core fields (93.6%), three false rejections among 17 factual answers (17.6%; Wilson 95%
+  CI 6.2--41.0%), zero false acceptances among six unsupported answers, and zero protected,
+  invariance, or call failures. The factual false-rejection rate exceeded the frozen 15% maximum.
+- **PASS 2:** qualified; 19/20 composite, 32/32 units, 178/187 core fields (95.2%), two false
+  rejections among 17 factual answers (11.8%), zero false acceptances, and zero protected,
+  invariance, or call failures.
+- **UNCERTAINTY:** zero observed false acceptances has a per-pass Wilson 95% upper bound of 39.0%
+  because that category has only six cases. The result is not described as zero population error.
+- **RESOURCE USE:** 48 valid calls, no retries; 656,998 input tokens (575,488 cached), 31,916
+  output tokens including 11,787 reasoning tokens, and 811,839 ms aggregate latency; cost
+  unavailable.
+- **DISPOSITION:** preserve the failed run without usable-label retries, score no study response,
+  consume no confirmatory alpha, and do not start confirmation. Report SHA-256
+  `82801dc87d40d7c0c9d5eb1a4fa4c9410cfa45d3e07f5eb7ad53f6eb00297602`.

@@ -1378,3 +1378,17 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Validity: v5 stays failed. V6 has new answers/evidence/numbers and is committed before calls. Core
   accuracy remains >=90%; composite, error caps, and every other protected rule are unchanged.
 - Stop: both passes must qualify; otherwise preserve the result and do not score study answers.
+
+## 2026-09-24 — retain failed v6 and keep confirmation closed
+
+- Decision: retain v6 as failed, do not retry its usable judgments, and do not authorize Luna study
+  scoring or a confirmatory diagnostic campaign.
+- Evidence: pass 1 made three factual false rejections among 17 factual answers (17.6%), exceeding
+  the frozen 15% maximum. Pass 2 cleared every gate, and both passes met the composite, unit, core,
+  false-acceptance, protected-test, invariance, and transport requirements, but the protocol
+  required both passes to clear every gate.
+- Interpretation: this is a semantic-judge reliability failure, not evidence about P versus R.
+  Repeated factual-rejection instability cannot be repaired by collecting more robot responses.
+- Effect: confirmatory alpha remains 0.000/0.050; no study responses are scored and no superiority
+  claim is permitted. Any further judge work must be a separately versioned prospective cycle and
+  must not weaken v6 after observing its result.

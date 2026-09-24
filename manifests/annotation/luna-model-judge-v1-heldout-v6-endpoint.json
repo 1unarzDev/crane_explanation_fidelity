@@ -1,0 +1,72 @@
+{
+  "schema": "crane-luna-judge-heldout-result/v2",
+  "arm_id": "luna-model-judge-v1",
+  "qualification_id": "luna-model-judge-v6-endpoint-focused",
+  "executed_utc_date": "2026-09-24",
+  "status": "HELDOUT_QUALIFICATION_FAILED",
+  "study_evaluation_allowed": false,
+  "result": {
+    "path": "model_outputs/automated_annotations/luna-model-judge-v1/heldout-v6-endpoint/heldout-qualification.json",
+    "sha256": "82801dc87d40d7c0c9d5eb1a4fa4c9410cfa45d3e07f5eb7ad53f6eb00297602",
+    "governance": "model_outputs.dvc"
+  },
+  "passes": {
+    "pass-1": {
+      "qualified": false,
+      "composite_correct": 19,
+      "composite_total": 20,
+      "composite_wilson_95": [0.763868806553258, 0.9911185511992047],
+      "required_unit_correct": 32,
+      "required_unit_total": 32,
+      "required_unit_wilson_95": [0.8928208017449293, 1.0],
+      "core_correct": 175,
+      "core_total": 187,
+      "core_wilson_95": [0.8911983248928534, 0.9629137795065754],
+      "false_rejections": 3,
+      "factual_total": 17,
+      "false_rejection_wilson_95": [0.06191126637620997, 0.41029458568834126],
+      "false_acceptances": 0,
+      "unsupported_total": 6,
+      "false_acceptance_wilson_95": [2.7755575615628914e-17, 0.3903342879021653],
+      "protected_failures": 0,
+      "presentation_invariance": true,
+      "call_failures": 0
+    },
+    "pass-2": {
+      "qualified": true,
+      "composite_correct": 19,
+      "composite_total": 20,
+      "composite_wilson_95": [0.763868806553258, 0.9911185511992047],
+      "required_unit_correct": 32,
+      "required_unit_total": 32,
+      "required_unit_wilson_95": [0.8928208017449293, 1.0],
+      "core_correct": 178,
+      "core_total": 187,
+      "core_wilson_95": [0.911075982677249, 0.974475831086576],
+      "false_rejections": 2,
+      "factual_total": 17,
+      "false_rejection_wilson_95": [0.03287977376379267, 0.3433635059488588],
+      "false_acceptances": 0,
+      "unsupported_total": 6,
+      "false_acceptance_wilson_95": [2.7755575615628914e-17, 0.3903342879021653],
+      "protected_failures": 0,
+      "presentation_invariance": true,
+      "call_failures": 0
+    }
+  },
+  "failure_basis": "Pass 1 produced three factual false rejections among 17 factual answers (17.6 percent), above the frozen 15 percent maximum. Pass 2 satisfied every gate, but both isolated passes were required to qualify.",
+  "resource_use": {
+    "valid_calls": 48,
+    "attempts": 48,
+    "transport_retries": 0,
+    "input_tokens": 656998,
+    "cached_input_tokens": 575488,
+    "output_tokens": 31916,
+    "reasoning_output_tokens": 11787,
+    "aggregate_latency_ms": 811839.485298,
+    "cost_usd": null
+  },
+  "interpretation": "V6 remains failed under its frozen scorer. The result does not authorize study scoring. The finite-suite zero false-acceptance result has a Wilson 95 percent upper bound of 0.3903 in each pass and is not evidence of zero population error.",
+  "confirmatory_alpha_consumed": 0.0,
+  "study_responses_scored": 0
+}

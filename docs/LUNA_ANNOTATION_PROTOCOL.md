@@ -209,6 +209,17 @@ identification remains in composite and core scoring, but is not redundantly req
 subgate when an answer communicates a supported execution mechanism and then adds an unsupported
 physical identity. Twenty-four entirely new cases are frozen before any v6 call.
 
+V6 was executed once and also failed the frozen two-pass rule. Both passes scored 19/20 composite
+endpoints and 32/32 required units, made zero unsupported false acceptances, passed all protected
+tests and presentation invariance, and had no call failures. Pass 2 qualified in full. Pass 1,
+however, made three factual false rejections among 17 factual answers (17.6%), exceeding the
+predeclared 15% maximum; it otherwise scored 175/187 core fields (93.6%). The result is retained
+without retry. Luna is therefore not qualified for prospective study scoring under v6. The
+pass-specific Wilson intervals are retained in
+`manifests/annotation/luna-model-judge-v1-heldout-v6-endpoint.json`; in particular, zero observed
+false acceptances among six unsupported answers has a 95% Wilson upper bound of 39.0%, not zero
+population error.
+
 ## Input boundary and isolation
 
 Every response is judged in a new API request with no conversation history and no model tools. The
