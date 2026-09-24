@@ -19,7 +19,7 @@ Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 | Luna v6 endpoint qualification | FAILED / PRESERVED | P1 false rejection 3/17 exceeded 15%; P2 passed every gate |
 | Luna v7 reference-audited qualification | HISTORICALLY QUALIFIED; TARGETED EXTENSION FAILED | Original v7 passed, but the prospective command-motion endpoint-threat extension missed composite/core and protected gates in both passes; do not activate semantic confirmation |
 | V7 amendment/sensitivity enforcement | IMPLEMENTED, TESTED | Nonempty v2 results must bind exact v7 hashes and clear nominal plus adverse sensitivity gates |
-| Replication configurations reserved | NOT_RUN | Reserve before discovery collection |
+| Replication configurations reserved | 100 V6 LAND CONFIGURATIONS RESERVED / NOT AUTHORIZED | Disjoint fixed schedule; cannot substitute for confirmation-side runs |
 | Sequential null simulation | PASS_QA | 20,000 replicates per endpoint; all boundary estimates below component alpha 0.02 |
 | Alternative budget sensitivity | COMPLETE | +0.30 scenarios reach 0.9946/0.9366 joint success by 1,600; this is not observed power |
 
@@ -49,6 +49,20 @@ the chosen allocation must be atomically bound to that campaign and cannot later
 
 No effect estimate, confidence sequence, guardrail result, or replication conclusion exists.
 Legacy and the eleven diagnostic-development clusters are intentionally absent from these counts.
+
+## Frozen land command--motion physical cohort
+
+A separate land-only physical/reference cohort is now frozen without activating semantic
+confirmation. Its fixed confirmation-side schedule contains 100 configurations: 70 diagnosable
+command--motion cases, 15 independently configured missing-odometry cases, and 15 nominal controls,
+balanced across 50 connected-detour and 50 nominal-clear-route geometries. A disjoint 100-cluster
+replication schedule is reserved and not authorized for collection. The already inspected v6
+runtime-qualification layout is excluded.
+
+This schedule resolves physical sampling, intervention, mask, admission, exclusion, ordering, and
+retention before bulk collection. It does not resolve the failed Luna endpoint, bind semantic
+alpha, or authorize P/R response generation. Exact details are in
+`docs/LAND_COMMAND_MOTION_PHYSICAL_COHORT.md` and the machine-readable contract it links.
 
 ## Candidate-v3 development readiness pilot
 
@@ -318,9 +332,11 @@ Record, without deleting earlier rows:
 Do not start semantic confirmation: the prospective Luna endpoint-threat extension failed and
 hard-stopped activation. The v6 physical reserve has passed one player/runtime qualification, but
 its sampler, interventions, evidence masks, inclusion/exclusion rules, and analysis are not frozen.
-The next admissible collection step is a prospectively fixed physical/reference contract; those
-runs must not be described as supported-diagnostic-success confirmation. No confirmatory campaign
-is active and no alpha has been consumed.
+The fixed physical/reference contract is now in place. The next admissible action is the first
+confirmation-side physical capture in its immutable order, followed by governance and independent
+numeric reference construction only. P/R response generation and semantic scoring remain blocked;
+these runs must not be described as supported-diagnostic-success confirmation. No confirmatory
+campaign is active and no alpha has been consumed.
 
 ## Held-out judge result (2026-09-24)
 

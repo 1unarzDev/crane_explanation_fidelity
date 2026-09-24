@@ -1,5 +1,22 @@
 # Experiment Log
 
+## 2026-09-24 — freeze land command--motion physical/reference cohort
+
+- **STATUS:** `PHYSICAL CAPTURE FROZEN / SEMANTIC CAMPAIGN INACTIVE / NOT_RUN`. The exact schedule
+  fixes 100 confirmation-side physical configurations and 100 disjoint replication-reserve
+  configurations. Each set contains 70 diagnosable intervention cases, 15 independently configured
+  missing-odometry cases, and 15 nominal controls across equal connected-detour and clear-route
+  geometry.
+- **FIXED:** catalog/layout/seed, intervention timing, evidence mask, run order, one-attempt/no-
+  replacement rule, recording admission, independent numeric reference, robot/evaluator boundary,
+  and bounded causal interpretation. The previously inspected v6 qualification layout is excluded.
+- **BLOCKED SEMANTICS:** the failed Luna endpoint-threat extension is unchanged. No P/R response,
+  Luna call, effect estimate, confidence sequence, guardrail, replication run, or alpha allocation
+  is authorized by this freeze.
+- **NEXT:** collect the confirmation-side physical schedule in fixed order, governing every attempt;
+  construct independent numeric references before any future response call. See
+  `docs/LAND_COMMAND_MOTION_PHYSICAL_COHORT.md`.
+
 ## 2026-09-24 — v6 player/runtime qualification passed and governed
 
 - **STATUS:** `QUALIFIED DEVELOPMENT INFRASTRUCTURE / ONE ATTEMPT / NO CAMPAIGN ACTIVE`. The sole

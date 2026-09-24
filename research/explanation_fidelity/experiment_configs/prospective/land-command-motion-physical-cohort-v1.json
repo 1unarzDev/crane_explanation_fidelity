@@ -1,0 +1,164 @@
+{
+  "schema": "crane-land-command-motion-physical-cohort-contract/v1",
+  "declared_date": "2026-09-24",
+  "status": "PHYSICAL_CAPTURE_FROZEN_SEMANTIC_ACTIVATION_BLOCKED",
+  "purpose": "Collect a fixed, independently reproducible land command-to-motion physical/reference cohort without treating the failed Luna endpoint extension as valid semantic confirmation.",
+  "scope": {
+    "domain": "land",
+    "platform": "TurtleBot3 Waffle-class differential drive",
+    "environment": "crane-land-proving-ground-v6",
+    "diagnostic_mechanism": "bounded command-to-motion discrepancy",
+    "geometry_roles": [
+      "connected-detour",
+      "nominal-clear-route-with-irrelevant-side-clutter"
+    ],
+    "excluded": [
+      "RoboBoat",
+      "aerial",
+      "underwater",
+      "geometric infeasibility",
+      "unique obstacle causation",
+      "unique actuator, slip, collision, current, wind, or wave attribution"
+    ]
+  },
+  "relationship_to_registered_framework": {
+    "parent_protocol": "diagnostic-sequential-protocol-v2",
+    "target_distribution_change": "This physical cohort is land command-motion only and is not analyzed under the parent's frozen 80/20 land/surface and 50/50 geometric/command-motion mixture.",
+    "semantic_campaign_active": false,
+    "confirmatory_alpha_consumed": 0.0,
+    "alpha_allocation": "UNBOUND",
+    "required_future_action": "Before any P/R response is generated or inspected, an additive activation amendment must bind the land-only estimand, exact P/R transport, a valid semantic endpoint, reference inventory, result schema, monitor dry run, and candidate-v1 alpha allocation."
+  },
+  "physical_schedule": {
+    "path": "research/explanation_fidelity/experiment_configs/prospective/land-command-motion-physical-schedule-v1.json",
+    "sha256": "1f844ad45fa2e5cefb9edcfc5f3420a5a18aff32abda81ec72b7876ce376f215",
+    "generator": "analysis/build_land_command_motion_physical_schedule.py",
+    "generator_sha256": "1eb2ee01705b9e359774ff993e16a4f8b8fc01d635fdd27b54b9534e8ecfb0f5",
+    "qualification_layout_excluded": "diagnostic-command-motion-confirmation-reserve-connected-detour-001",
+    "confirmation_physical_clusters": 100,
+    "replication_reserved_clusters": 100,
+    "replication_collection_authorized": false,
+    "collection_order_fixed": true,
+    "replacements_allowed": false
+  },
+  "target_distribution_per_cohort": {
+    "connected_detour_geometry": 50,
+    "nominal_clear_route_geometry": 50,
+    "persistent_discrepancy": 35,
+    "transient_compensation": 35,
+    "ambiguous_missing_odometry": 15,
+    "nominal_false_premise": 15,
+    "primary_diagnosable_clusters_if_all_recordings_valid": 70,
+    "independent_ambiguous_clusters_if_all_recordings_valid": 15,
+    "independent_nominal_clusters_if_all_recordings_valid": 15,
+    "weighting": "equal weight per independently configured cluster within the fixed 100-cluster target distribution"
+  },
+  "interventions": {
+    "persistent_discrepancy": "Mobility hold begins at the schedule's fixed 18 s or 25 s boundary and is not released.",
+    "transient_compensation": "Mobility hold begins at the fixed 18 s or 25 s boundary and is released exactly 12 s later.",
+    "ambiguous_missing_odometry": "The physical run uses the persistent hold, but the sole method-visible derived export removes delivered odometry under remove-delivered-odometry-v1.",
+    "nominal_false_premise": "No mobility hold or release is configured.",
+    "blinding": "Intervention family, hold/release boundaries, catalog role, and evaluator truth remain unavailable to P, R, and the semantic judge."
+  },
+  "one_attempt_rule": {
+    "attempt_boundary": "An attempt begins when the run path is created and the source-audited Unity player is launched.",
+    "retry_or_replacement": "No run, layout, or method response is retried or replaced for an unexpected, unfavorable, insufficient, invalid, or unresolved result.",
+    "transport_before_attempt": "A failure before run-path creation and player launch may be corrected only if no episode evidence was emitted; it is logged and does not consume the physical layout.",
+    "fixed_order": "Confirmation physical runs proceed in schedule order. Replication runs remain untouched until separately activated."
+  },
+  "recording_validity": {
+    "included_when": [
+      "the exact source-pinned player/build audit passes",
+      "the exact catalog/layout/seed/intervention scenario-binding audit passes",
+      "the Unity worker result is valid with zero logged errors and exceptions",
+      "the robot-visible capture and runtime manifests are retained",
+      "goal send/acceptance and any available command, odometry, costmap, plan, action, and behavior-tree evidence are retained without parse corruption"
+    ],
+    "not_required": [
+      "expected navigation outcome",
+      "diagnostic trigger",
+      "action success or abort",
+      "recovery occurrence",
+      "complete behavior-tree history",
+      "a favorable P/R difference"
+    ],
+    "invalid_recordings": "Retain in the ledger with the predeclared failed gate and zero semantic contribution; do not replace.",
+    "unexpected_valid_recordings": "Retain and process under the fixed question/reference rules. Fault-induction success is reported separately from recording validity."
+  },
+  "robot_visible_contract": {
+    "required_raw_streams_when_published": [
+      "goal-bounded delivered cmd_vel commands",
+      "goal-bounded delivered odometry",
+      "NavigateToPose status and error code",
+      "delivered plan history",
+      "costmap observations or snapshots when retained",
+      "behavior-tree transitions with completeness metadata"
+    ],
+    "evaluator_only": [
+      "catalog geometry and semantic roles",
+      "intervention identity and boundaries",
+      "simulator truth",
+      "scenario-binding audit",
+      "fault-induction expectation"
+    ],
+    "causal_boundary": "Robot-visible discrepancy evidence may establish delivered-command/measured-motion mismatch. It does not reveal the evaluator intervention or uniquely establish obstruction, collision, slip, actuator rejection, or controller consumption."
+  },
+  "diagnostic_and_reference_freeze": {
+    "diagnostic_config": "configs/diagnostic_command_motion_low_speed_v1.json",
+    "diagnostic_config_sha256": "9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85",
+    "exporter_sha256": "79a6b32004dd914434cd6398ec010e576beb7fd925ed0393eade1f1b990859a8",
+    "shared_recomputation_sha256": "8477955d95e9d1946062b3c1e0e85a861a57862e17c34a2f8ce83670fadbeaaa",
+    "independent_reference_sha256": "ae8650aa72678b1ff939be94315390b9287c3f7f2cd6b0a761da76c727ba2469",
+    "complete_reference_builder_sha256": "eb2e60497eb75c557cbb202ef122e6a9956b2a01e943f063df41a6af0b71e77e",
+    "mask_generator_sha256": "01015dc7fa3fd7ed0609014c2ff912d9bc3141a6d991762956a46d94a542eac2",
+    "reference_timing": "Build and audit the independent numeric reference before any response call for that cluster.",
+    "answerability": "Reference sufficiency is determined from retained evidence and the declared computation, not from whether P succeeds."
+  },
+  "provisional_language_freeze_for_future_activation": {
+    "question": "Did a command-to-motion discrepancy prevent the robot from continuing toward the goal? Identify the deepest supported mechanism or reject the premise, connect it to the recorded navigation behavior, and state what remains unresolved.",
+    "P": "bounded-command-motion-candidate-v3 deterministic checked rendering",
+    "P_renderer_sha256": "49dbd7beecc35a803dbe408f73fba06d14bb55613f2e9fbfcf9bb445573ab9d2",
+    "P_R_runner_sha256": "bfc0b010dafe5c8b0d86f71702e0a428cd6740752e1bd713982a266483a81126",
+    "R": "one gpt-6-sol high repository-aware call with identical robot-visible method input, exact CRANE/core source, and identical executable diagnostic",
+    "R_prompt": "research/explanation_fidelity/prompts/diagnostic_repository_agent_command_motion_dev_v2.txt",
+    "R_prompt_sha256": "fecc91be8178762e58371fcceee783e493475f6f3c48687ce7dd1c120a027f6b",
+    "semantic_use": "PROHIBITED until the future activation amendment resolves the failed Luna endpoint and freezes transport/schema details. Changing any answer-affecting item requires a new candidate and fresh physical configurations."
+  },
+  "pinned_runtime": {
+    "umbrella_parent_before_declaration": "9bd70a016ccd0725afa9de30ccdcb110e68865ae",
+    "crane_commit": "05a1161e4b5a3ad6bbefe1c635507e7061ea8d58",
+    "diagnostic_core_commit": "bea12562324fa2caf9290698cfadddcb22bd8a8b",
+    "astro_dock_commit": "36202373ae186a8fd247a20b7b477312a744de99",
+    "unity_version": "6000.5.10f1",
+    "build_manifest_sha256": "39d034b545e8c1504771ebd29491260e2105931752cee708da08ae211c531e4d",
+    "managed_assemblies_sha256": "e044af4f9e1f2f5834116f3d745d8cc23ccfe91f96425fc225862ef35f77b261",
+    "runtime_resources_sha256": "4be81f6cdfe9dd03045c856c5d86667b967db25dc471e07d1ed0574974a44106",
+    "catalog_sha256": "c9cee3922fa1cc17f8237fde12d0a50ee6496649142f3cb14a4c6491fd72a0eb",
+    "capture_launcher_sha256": "badf482866d3724686499109451f4506b1be09e3be6afeaf071ddc5ad98cb021",
+    "runtime_manifest_builder_sha256": "14b34bc0cbc5a8f8a7761aefdbcb61ae5df4f6ef11506a8970ea304a3249d067",
+    "player_auditor_sha256": "f4e3c20e14c961be6eb96fb95daf990dafce1f787091cbcea0e346bc831d950f",
+    "binding_auditor_sha256": "6edcb26ce2cc6f4e5697869c1f3f2bec2c780ea578b8b124acad084c8bbad54b",
+    "nav2_config_sha256": "e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+    "bt_policy_sha256": "14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520"
+  },
+  "analysis_and_stopping": {
+    "physical_progress": "Report attempted, valid, invalid, diagnosable, ambiguous, nominal, trigger, outcome, and BT-completeness counts by fixed family without method-effect estimates.",
+    "semantic_endpoint": "Not evaluated while activation is blocked.",
+    "future_primary_endpoint": "P identifies the independently required supported mechanism and contains no material unsupported or contradicted assertion.",
+    "worthwhile_difference": 0.15,
+    "guardrails": {
+      "material_error_risk_P_minus_R_upper": 0.02,
+      "useful_coverage_P_minus_R_lower": -0.05,
+      "ambiguous_handling_P_minus_R_lower": -0.05
+    },
+    "sequential_method": "Inherit the parent protocol's paired cluster-level e-process only after a tested land-only activation config binds the estimand and alpha.",
+    "physical_collection_stop": "Attempt the fixed confirmation physical schedule in order exactly once. Stop after order 100, or close early for a documented resource/safety/validity reason; never stop because observed physical or method outcomes are favorable.",
+    "futility": "No semantic futility decision exists before activation. Physical invalidity or systematic binding failure pauses collection for a prospectively documented engineering review without replacing attempted layouts."
+  },
+  "replication": {
+    "status": "RESERVED_NOT_AUTHORIZED",
+    "fresh_configurations": 100,
+    "success_criterion": "Before replication collection, freeze the exact selected P/R/evidence/reference/judge/analysis hashes. Replication must independently clear +0.15 and all guardrails under its allocated alpha and declared annotation sensitivity.",
+    "no_substitution": "Replication layouts cannot replace invalid, unfavorable, or unresolved confirmation-side runs."
+  }
+}
