@@ -452,6 +452,35 @@ def main() -> int:
     require_close(route_result_manifest["confirmatory_alpha_consumed"], 0.0, 0.0, "route-change alpha")
     checked_assertions += 7
 
+    physical_dispositions = [
+        load(f"manifests/data/cm-land-conf-{index:03d}-disposition.json")
+        for index in range(1, 10)
+    ]
+    require_equal(len(physical_dispositions), 9, "physical cohort attempted configurations")
+    require_equal(
+        sum(
+            item["admission"].get(
+                "recording_valid_under_frozen_worker_result_gate",
+                item["admission"].get("recording_valid", False),
+            )
+            for item in physical_dispositions
+        ),
+        9,
+        "physical cohort valid configurations",
+    )
+    latest_physical = physical_dispositions[-1]
+    require_equal(pointer(latest_physical, "/contract/fixed_order"), 9, "run 009 fixed order")
+    require_equal(pointer(latest_physical, "/observed/navigation_status"), "aborted", "run 009 action status")
+    require_close(pointer(latest_physical, "/diagnostic/discrepancy_interval_s/0"), 10.0, 0.0, "run 009 discrepancy start")
+    require_close(pointer(latest_physical, "/diagnostic/discrepancy_interval_s/1"), 20.0, 0.0, "run 009 discrepancy end")
+    require_close(pointer(latest_physical, "/diagnostic/discrepancy_commanded_planar_speed_mps"), 0.26, 0.0, "run 009 command speed")
+    require_close(pointer(latest_physical, "/diagnostic/discrepancy_measured_planar_speed_mps"), 0.0, 0.0, "run 009 measured speed")
+    require_equal(pointer(latest_physical, "/progress/persistent_discrepancy"), 1, "persistent-discrepancy count")
+    require_equal(pointer(latest_physical, "/progress/method_visible_diagnostic_supported"), 4, "supported diagnostic count")
+    require_equal(pointer(latest_physical, "/progress/next_fixed_run_id"), "cm-land-conf-010", "next physical run")
+    require_close(pointer(latest_physical, "/semantic_boundary/confirmatory_alpha_consumed"), 0.0, 0.0, "physical cohort alpha")
+    checked_assertions += 12
+
     require_paper_fragments(
         [
             "33 included episode clusters",
@@ -492,6 +521,8 @@ def main() -> int:
             "13/13 development questions overall",
             "Primary planning subset & 6 clusters",
             "P--R: 0.0 in both passes",
+            "nine valid,",
+            "Physical cohort & 9/100 valid attempts",
         ]
     )
 

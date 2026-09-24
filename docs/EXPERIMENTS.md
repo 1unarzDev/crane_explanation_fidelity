@@ -1,5 +1,23 @@
 # Experiment Log
 
+## 2026-09-24 — land command--motion physical cohort run 009
+
+- **STATUS:** `VALID PERSISTENT DISCREPANCY / UNEXPECTED ABORT / 9 OF 100 ATTEMPTED`. The sole
+  fixed attempt passed exact build/binding, the zero-error Unity-worker gate, robot-visible
+  export, independent computation, and complete-reference audit. No retry or replacement occurred.
+- **OBSERVED/REFERENCE:** the action aborted after 44.360 s and 2.697 m, with three FollowPath
+  attempts, two failures, and two source-qualified Wait invocations. Both implementations support
+  a 10--20 s discrepancy at 0.260 versus 0.000 m/s; no measured-response recovery followed.
+- **INTERPRETATION:** this is the cohort's first persistent-discrepancy case at the measured
+  execution-response level. It does not expose the evaluator intervention or establish a unique
+  obstruction, actuator, collision, or other physical cause.
+- **BOUNDARY/QA:** 52 focused build, binding, reference, and frozen-integrity tests pass, as does
+  data governance. Numeric traceability passes with 127 checked assertions. The current paper
+  builds cleanly at seven pages, but the short-paper readiness audit fails because the permitted
+  range is 4--6 pages; rendered inspection found no visual defect. No response, Luna call,
+  semantic label, effect estimate, confidence sequence, or alpha use. Governed data are
+  synchronized to R2. Fixed persistent run 010 is next; see `cm-land-conf-009-disposition.json`.
+
 ## 2026-09-24 — land command--motion physical cohort run 008
 
 - **STATUS:** `VALID SUCCESSFUL TRANSIENT COMPENSATION / 8 OF 100 ATTEMPTED`. The sole fixed

@@ -35,7 +35,8 @@ Poppler and inspect it for column overflow, clipped tables, illegible references
 red `PENDING` markers.
 
 After building and visual inspection, run the fail-closed category/anonymity audit with the intended
-submission category:
+submission category. The current seven-page build is not eligible for either category and must be
+deliberately compressed to 4--6 pages or expanded into an evidence-supported 8--9 page full paper:
 
 ```bash
 python scripts/audit_submission_readiness.py --category full
@@ -45,6 +46,6 @@ Use `short` or `demo` only after a deliberate category decision. The audit check
 8--9 or 4--6 page range including references, unresolved `\pending{}` gates, anonymous author and
 PDF metadata, developer-specific path/repository fragments, letter page geometry, font embedding,
 PDF freshness, and numeric traceability. It does not submit or publish anything and does not replace
-visual inspection. As of 2026-09-24, a scratch build of the current source passed the short-paper
-audit at six pages and passed full-page visual inspection; this is not a submission or a claim that
-the scientific contribution has independent confirmatory support.
+visual inspection. As of 2026-09-24, the current source builds as seven visually inspected pages;
+the mechanical short-paper audit correctly fails its 4--6 page limit. This is not a submission or
+a claim that the scientific contribution has independent confirmatory support.
