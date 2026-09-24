@@ -13,8 +13,12 @@
 - **REGRESSION:** four renderer tests cover supported, not-triggered, insufficient, and evidence-
   boundary cases. Rendering succeeds on all six retained physical development configurations and
   the masked variant. No model/judge call, new episode, readiness result, or alpha use is created.
-- **NEXT GATE:** implement an exact P/R runner with mandatory declared question identity, then use
-  only fresh development configurations for any candidate-v3 readiness screen.
+- **RUNNER IMPLEMENTED / TESTED:** the v3 P/R runner records the renderer hash, keeps P at zero
+  model calls, gives R the identical robot-visible method input/executable diagnostic/source, and
+  requires explicit nonempty question text, ID, and kind. This prevents the silent default-identity
+  deviation retained in candidate-v2 run 006. Seven renderer/runner tests pass.
+- **NEXT GATE:** prospectively declare a bounded readiness screen using only unused development
+  configurations; no candidate-v3 model or judge call is authorized by implementation alone.
 
 ## 2026-09-24 — candidate-v2 pilot stopped: candidate not ready
 
