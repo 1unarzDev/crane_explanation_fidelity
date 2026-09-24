@@ -4701,3 +4701,24 @@
   claims, or an independently unreproducible plan. Retain any failure or unexpected result.
 - **INFERENCE:** inspected post-outcome development only, zero new physical/explanation clusters
   and 0.000/0.050 alpha. A later fair P/R/N language comparison requires another declaration.
+
+## 2026-09-24 — bounded diagnostic-composition result
+
+- **STATUS:** `RUN / VALID_BOUNDED_DEVELOPMENT_COMPOSITION`; deterministic rendering and one
+  independently implemented predicate reference only. This is post-outcome development over the
+  retained run 009 record, not a new physical or explanation cluster.
+- **RESULT:** the answer leads with the supported 10--51 s command--motion discrepancy (median
+  delivered command 0.260 m/s, delivered odometry response 0.000 m/s, calibrated healthy response
+  0.25974 m/s), then retains six FollowPath failures, one source-qualified Wait invocation, and
+  eleven FollowPath attempts as pre-cutoff execution context.
+- **WITHHOLDING:** it explicitly says that no terminal result was observed, the eventual outcome
+  is unresolved, and geometry is insufficient to classify the complete route or explain the
+  discrepancy. It does not claim abort, recovery exhaustion, global no-path, obstacle causation,
+  evaluator intervention, or a unique actuator/collision/obstruction/slip cause.
+- **REFERENCE:** exact rendering verification and the separately implemented numeric/semantic
+  audit both accept. The governed robot-visible composition SHA-256 is `90285feb...a637a`; the
+  evaluator-only independent reference is `b9b81bc5...b59e`.
+- **INFERENCE:** zero model or Luna calls, zero confirmatory clusters, and 0.000/0.050 alpha. This
+  establishes bounded deterministic composition on one inspected case, not P-over-R superiority.
+  Any language comparison requires another prospective declaration and a tool-enabled R with
+  identical evidence, diagnostics, source/configuration, model strength, and budget.

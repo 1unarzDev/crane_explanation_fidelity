@@ -1665,3 +1665,19 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   unresolved geometric and terminal boundary. It remains development-only and adds no model call,
   label, campaign cluster, or alpha. Any language comparison must be separately declared and fair
   to tool-enabled R.
+
+## 2026-09-24 — accept bounded deterministic composition without freezing P
+
+- Decision: accept the run 009 deterministic composition as a development implementation result,
+  but do not freeze candidate P or activate confirmation.
+- Evidence: exact final-text checks and a separately implemented reference agree that the answer
+  preserves the supported command--motion mechanism and measurements, retains recorded execution
+  context, and reports both geometric insufficiency and the unresolved action outcome. Fifty-nine
+  focused tests pass, including fail-closed input/hash/boundary checks.
+- Alternatives rejected: promote the cutoff to a failure; use disconnected partial-grid evidence
+  as proof of global blockage; disclose the intervention; claim a unique physical cause; treat the
+  deterministic check as semantic or comparative evidence; or proceed to model calls without a
+  new declaration.
+- Effect: the method now has a checked multi-result answer plan on one inspected development case,
+  but there is still no measured P-over-R advantage. Any next comparison must be one-shot,
+  prospectively declared, and resource/evidence/tool matched. Alpha remains 0.000/0.050.

@@ -257,3 +257,16 @@ ineligible tool failure. The corrected version explicitly withholds the eventual
 This improves the candidate's bounded composition behavior but adds no physical cluster, response,
 label, or alpha. A separately declared, fair P/R language test is the next development gate; it
 must give R the same two computations and cannot ask a terminal-failure question.
+
+## Bounded deterministic composition result (2026-09-24)
+
+The prospectively declared deterministic composer passed its exact final-text check and a separate
+predicate reference. It leads with the supported command--motion discrepancy, communicates the
+decisive interval and speeds, retains the pre-cutoff FollowPath/Wait context, and explicitly keeps
+geometry and the eventual action outcome unresolved. It makes no terminal, global-route,
+obstacle-causation, evaluator-intervention, or unique-physical-cause claim.
+
+This is a method-readiness increment, not comparative evidence: it adds no cluster, response,
+Luna label, or alpha, and current P remains `NOT_READY`. A one-shot P/R/N development comparison
+may be considered only under a new declaration that gives tool-enabled R the same robot-visible
+evidence, both diagnostic computations, source/configuration, model strength, and resource budget.

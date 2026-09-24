@@ -1,0 +1,62 @@
+{
+  "schema": "crane-land-diagnostic-composition-result/v1",
+  "recorded_utc_date": "2026-09-24",
+  "run_id": "diagnostic-land-composition-dev-009",
+  "method_visible_episode_id": "diagnostic-land-composition-observation-009",
+  "status": "VALID_BOUNDED_DEVELOPMENT_COMPOSITION",
+  "predeclaration": "research/explanation_fidelity/experiment_configs/development/land-diagnostic-composition-plan-v1.json",
+  "development_boundary": {
+    "physical_outcome_inspected_before_composition": true,
+    "post_outcome_method_development": true,
+    "terminal_result_observed": false,
+    "confirmatory_eligible": false,
+    "language_model_comparison_authorized": false
+  },
+  "composition": {
+    "primary_mechanism": "command_to_motion_discrepancy",
+    "primary_disposition": "supported",
+    "competing_mechanism": "geometric_route_restriction",
+    "competing_disposition": "insufficient",
+    "eventual_action_outcome": "unresolved",
+    "command_motion_export_sha256": "fb175a0d69a751ebc0734256aa8629edda563e25ff50f6f7193137bd1617674f",
+    "geometric_export_sha256": "53aa78d688a8e45cc79d4534b354467f5bf01fcb7014a9be954f075e21c692f7",
+    "composition_export_sha256": "90285feb7fb50e5a1710242bff30ee77b06c325a4cf82c5e18c008c2fe1a637a",
+    "independent_reference_sha256": "b9b81bc5f88062e6bd87246b7338e7800c6db1edbe23778f8ddf0c304aabf59e",
+    "independent_reference_accepted": true,
+    "final_text_verification_accepted": true
+  },
+  "required_content_retained": {
+    "discrepancy_interval_s": [10.0, 51.0],
+    "discrepancy_duration_s": 41.0,
+    "median_delivered_command_mps": 0.26,
+    "median_delivered_odometry_response_mps": 0.0,
+    "calibrated_healthy_response_mps": 0.2597399950027466,
+    "follow_path_failures_before_cutoff": 6,
+    "source_qualified_wait_invocations_before_cutoff": 1,
+    "follow_path_attempts_before_cutoff": 11
+  },
+  "withholding": {
+    "action_abort_or_failure_claimed": false,
+    "recovery_exhaustion_claimed": false,
+    "global_route_classification_claimed": false,
+    "geometry_or_obstacle_causation_claimed": false,
+    "evaluator_intervention_disclosed": false,
+    "unique_actuator_collision_obstruction_or_slip_cause_claimed": false
+  },
+  "implementation": {
+    "umbrella_commit": "8d44d74",
+    "composer_sha256": "41ecc824ea8e11fa229487925836a9f90c888348fdc71a7364f8e6e0ffc10c2f",
+    "independent_reference_implementation_sha256": "baf9844322907aef0a81cf0dba1a800123706ec84eab63755b9bd34e5620b867",
+    "focused_tests_passed": 59
+  },
+  "retention": {
+    "new_physical_clusters": 0,
+    "new_explanation_clusters": 0,
+    "model_calls": 0,
+    "luna_calls": 0,
+    "confirmatory_alpha_consumed": 0.0
+  },
+  "allowed_conclusion": "The deterministic development composer preserved the supported command-to-motion diagnosis, decisive measurements, pre-cutoff execution context, insufficient geometry, and unresolved terminal outcome on the retained run 009 record.",
+  "not_established": "This single inspected development record does not establish P-over-R superiority, generalization, a terminal failure diagnosis, or a unique physical cause.",
+  "next_gate": "A separately committed prospective declaration is required before any one-shot P/R/N development comparison; tool-enabled R must receive identical robot-visible evidence, executable diagnostics, source/configuration, model strength, and resource budget."
+}
