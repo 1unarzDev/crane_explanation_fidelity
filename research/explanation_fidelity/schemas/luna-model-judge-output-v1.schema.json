@@ -38,7 +38,6 @@
     "material_error": {"type": ["boolean", "null"]},
     "material_error_categories": {
       "type": "array",
-      "uniqueItems": true,
       "items": {
         "type": "string",
         "enum": [
@@ -90,7 +89,7 @@
     "causal_overclaim": {"type": ["boolean", "null"]},
     "evidence_problem": {"type": "boolean"},
     "evidence_problem_detail": {"type": ["string", "null"]},
-    "unresolved_fields": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "unresolved_fields": {"type": "array", "items": {"type": "string"}},
     "rationale": {"type": "string", "minLength": 1}
   }
 }
