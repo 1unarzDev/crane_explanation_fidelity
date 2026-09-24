@@ -1,5 +1,19 @@
 # Experiment Log
 
+## 2026-09-24 — land command--motion physical cohort run 007
+
+- **STATUS:** `VALID NOMINAL NOT_TRIGGERED / 7 OF 100 ATTEMPTED`. The sole fixed attempt passed
+  exact build/binding, the zero-error Unity-worker gate, robot-visible export, independent
+  computation, and complete-reference audit. No retry or replacement occurred.
+- **OBSERVED/REFERENCE:** the no-intervention nominal-clear action succeeded after 69.010 s and
+  17.478 m with one FollowPath attempt and zero observed failures/qualified Wait invocations. Both
+  implementations return `not_triggered`; the 0--5 s healthy interval is 0.260 m/s commanded and
+  0.25974 m/s measured. This is a fresh-layout false-premise control, not proof that every
+  transient difficulty was absent.
+- **BOUNDARY:** no response, Luna call, semantic label, effect estimate, confidence sequence, or
+  alpha use. Governed data are synchronized to R2. Fixed transient run 008 is next; see
+  `cm-land-conf-007-disposition.json`.
+
 ## 2026-09-24 — land command--motion physical cohort run 006
 
 - **STATUS:** `VALID INDEPENDENT AMBIGUITY CLUSTER / 6 OF 100 ATTEMPTED`. The sole fixed attempt

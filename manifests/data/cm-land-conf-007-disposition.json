@@ -1,0 +1,114 @@
+{
+  "schema": "crane-land-command-motion-physical-run-disposition/v1",
+  "recorded_date": "2026-09-24",
+  "run_id": "cm-land-conf-007",
+  "cluster_id": "cm-land-conf-cluster-007",
+  "status": "VALID_PHYSICAL_AND_INDEPENDENT_REFERENCE_NOMINAL_NOT_TRIGGERED_NO_SEMANTIC_RESPONSE",
+  "attempt_count": 1,
+  "retry_or_replacement_performed": false,
+  "contract": {
+    "path": "research/explanation_fidelity/experiment_configs/prospective/land-command-motion-physical-cohort-v1.json",
+    "schedule_sha256": "1f844ad45fa2e5cefb9edcfc5f3420a5a18aff32abda81ec72b7876ce376f215",
+    "cohort": "confirmation-physical",
+    "fixed_order": 7
+  },
+  "scheduled_configuration": {
+    "family": "nominal-false-premise",
+    "geometry_mechanism": "nominal-clear-route",
+    "layout_id": "diagnostic-command-motion-confirmation-reserve-nominal-clear-route-007",
+    "layout_seed": 92006,
+    "mobility_hold_after_s": -1.0,
+    "mobility_release_after_s": -1.0,
+    "evidence_mask": "none",
+    "ros_domain_id": 151,
+    "ros_tcp_port": 12351
+  },
+  "admission": {
+    "player_build_audit_accepted": true,
+    "scenario_binding_audit_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "unity_worker_result_valid": true,
+    "unity_logged_errors": 0,
+    "unity_logged_exceptions": 0,
+    "recording_valid_under_frozen_worker_result_gate": true,
+    "unexpected_navigation_outcome_retained": false,
+    "independent_reference_completeness_audit_accepted": true
+  },
+  "generic_fixture_expectation": {
+    "expected_navigation_status": "succeeded",
+    "observed_navigation_status": "succeeded",
+    "fixture_exit_status": 0,
+    "disposition": "The scheduled nominal action succeeded; admission remains independent of this expected outcome."
+  },
+  "observed": {
+    "navigation_status": "succeeded",
+    "action_wall_seconds": 69.0100359210046,
+    "displacement_meters": 17.4776554107666,
+    "controller_commands": 675,
+    "odometry_messages": 3405,
+    "costmap_observations": 259,
+    "behavior_tree_transitions": 5,
+    "follow_path_attempts": 1,
+    "follow_path_failures": 0,
+    "observed_recovery_invocation_starts": 0,
+    "maximum_recovery_feedback": 0,
+    "behavior_tree_history_status": "not_proven",
+    "exact_recovery_count_eligible": false
+  },
+  "diagnostic": {
+    "computation_version": "command-motion-discrepancy-v3",
+    "config_id": "diagnostic-command-motion-low-speed-v1",
+    "proposed_disposition": "not_triggered",
+    "independent_disposition": "not_triggered",
+    "proposed_independent_parity": true,
+    "healthy_interval_s": [0.0, 5.0],
+    "healthy_commanded_planar_speed_mps": 0.26,
+    "healthy_measured_planar_speed_mps": 0.2597399950027466,
+    "discrepancy_interval_s": null,
+    "response_recovery_interval_s": null,
+    "command_samples_in_reference": 675,
+    "odometry_samples_in_reference": 3105,
+    "bounded_conclusion": "The retained synchronized stream did not contain the required consecutive low-response windows after healthy-response calibration. The action succeeded with no observed FollowPath failure or source-qualified Wait invocation. This rejects the command-to-motion failure premise only for the retained interval and thresholds; it does not prove every transient difficulty absent."
+  },
+  "hashes": {
+    "player_build_audit_sha256": "30ffa7c084924284d6b0c6f0da12672db319d82e122e5b8a3892d6530b5e9964",
+    "scenario_binding_audit_sha256": "6afa6d805ff0c4a668457f3f89a8ebeae7415b35c300aeb7281b47196ab04e2a",
+    "fixture_summary_sha256": "1f2e2b4e1db22306fd42dcf56c660f0c182a14035712b00543d58e48aa83c97f",
+    "unity_worker_result_sha256": "7c4df77d7740ea611a694721e04e4607ff862c6f93f4cced0ac7f415a08db413",
+    "robot_visible_events_sha256": "a21db698220fa9b9bb3ab89dd8321696ea0aaa0685e0e045b2e972ee706e4e6f",
+    "diagnostic_export_sha256": "c8a4a85490e022e527f62e03c621e977d3c475c7828b2091c558c7d4609eca00",
+    "independent_reference_sha256": "87ba32679cb885eeab39bcd7ee25c45dac09ce738591dd01a28b4b26035aab4d",
+    "complete_reference_sha256": "208882f38215e7b82082225a88d816f8d6181ab1694bf03b702ee734e279d346",
+    "robot_visible_manifest_sha256": "eee69f2d66b85ca1e217838f394f43fd13d88fa9796e31b6010f7ecfd5ea9f30",
+    "evaluator_only_manifest_sha256": "b2c87a60e1debdad3fafc9f5025e99623f0983684f0172ea7cdd9110afa4805e"
+  },
+  "governance": {
+    "robot_visible_manifest": "manifests/data/cm-land-conf-007.robot-visible.json",
+    "evaluator_only_manifest": "manifests/data/cm-land-conf-007.evaluator-only.json",
+    "checkpoint": "manifests/checkpoints/cm-land-conf-007.json",
+    "dvc_remote_status": "IN_SYNC_AFTER_CHECKPOINT"
+  },
+  "semantic_boundary": {
+    "P_responses": 0,
+    "R_responses": 0,
+    "Luna_calls": 0,
+    "semantic_labels": 0,
+    "effect_estimate": null,
+    "confidence_sequence": null,
+    "confirmatory_alpha_consumed": 0.0
+  },
+  "progress": {
+    "fixed_confirmation_physical_clusters": 100,
+    "attempted": 7,
+    "valid": 7,
+    "invalid": 0,
+    "persistent_discrepancy": 0,
+    "transient_compensation": 2,
+    "ambiguous_missing_odometry": 2,
+    "nominal_false_premise": 3,
+    "method_visible_diagnostic_supported": 2,
+    "method_visible_diagnostic_not_triggered": 3,
+    "method_visible_diagnostic_insufficient": 2,
+    "next_fixed_run_id": "cm-land-conf-008"
+  }
+}
