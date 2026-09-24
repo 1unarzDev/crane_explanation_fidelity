@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Score one immutable four-condition diagnostic packet with two isolated Luna passes."""
+"""Score one immutable diagnostic packet with two isolated Luna passes.
+
+The bounded runner accepts either the historical four-arm R/P/T/N packet or the prospectively
+declared strongest-baseline comparison containing exactly R/P.  It never adds absent conditions.
+"""
 
 from __future__ import annotations
 
@@ -26,12 +30,15 @@ def success(judgment: dict[str, Any]) -> bool:
 
 def run(packet: Path, key_path: Path, output_root: Path) -> dict[str, Any]:
     rows = read_jsonl(packet)
-    if len(rows) != 4 or len({row["response_id"] for row in rows}) != 4:
-        raise ValueError("packet must contain four unique responses")
+    if len(rows) not in {2, 4} or len({row["response_id"] for row in rows}) != len(rows):
+        raise ValueError("packet must contain two or four unique responses")
     key = json.loads(key_path.read_text(encoding="utf-8"))
     conditions = {item["response_id"]: item["condition"] for item in key["entries"]}
     if set(conditions) != {row["response_id"] for row in rows}:
         raise ValueError("packet and condition-key inventories differ")
+    condition_order = tuple(condition for condition in ("R", "P", "T", "N") if condition in set(conditions.values()))
+    if set(condition_order) not in ({"R", "P"}, {"R", "P", "T", "N"}):
+        raise ValueError("condition inventory must be exactly R/P or R/P/T/N")
     joined: list[dict[str, Any]] = []
     failures: list[dict[str, str]] = []
     cache_keys: dict[str, dict[str, str]] = {}
@@ -67,7 +74,7 @@ def run(packet: Path, key_path: Path, output_root: Path) -> dict[str, Any]:
     for pass_id in ("pass-1", "pass-2"):
         selected = [item for item in joined if item["pass_id"] == pass_id]
         pass_result: dict[str, Any] = {}
-        for condition in ("R", "P", "T", "N"):
+        for condition in condition_order:
             matches = [
                 item["judgment"]
                 for item in selected
@@ -92,7 +99,7 @@ def run(packet: Path, key_path: Path, output_root: Path) -> dict[str, Any]:
             }
         pass_result["complete"] = all(
             pass_result[condition]["judgment_status"] == "valid"
-            for condition in ("R", "P", "T", "N")
+            for condition in condition_order
         )
         passes[pass_id] = pass_result
     report = {
@@ -107,7 +114,8 @@ def run(packet: Path, key_path: Path, output_root: Path) -> dict[str, Any]:
         "passes": passes,
         "call_failures": failures,
         "valid_judgments": len(joined),
-        "planned_judgments": 8,
+        "planned_judgments": 2 * len(rows),
+        "conditions": list(condition_order),
         "cache_keys": cache_keys,
         "confirmatory_alpha_consumed": 0.0,
     }

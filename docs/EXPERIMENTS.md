@@ -34,6 +34,10 @@
   prospectively pinned diagnostic-config hash. The corrected builder requires and exposes that
   robot-visible config identifier. The failed attempt is retained; no answer or Luna call had
   occurred, and no measurement, threshold, method, model, run, or readiness rule changed.
+- **ANNOTATION RUNNER:** the bounded two-pass Luna runner now accepts either its existing R/P/T/N
+  inventory or the prospectively declared strongest-baseline R/P inventory. It derives the exact
+  condition set from the sealed key, never synthesizes absent arms, and retains the same two fresh
+  isolated passes and no-rejudge rule. This is workflow support; no Luna call or label changed.
 
 ## 2026-09-24 — deterministic command--motion candidate-v2 runner
 
