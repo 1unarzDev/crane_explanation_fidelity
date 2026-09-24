@@ -1,5 +1,22 @@
 # Experiment Log
 
+## 2026-09-24 — land command--motion physical cohort run 005
+
+- **STATUS:** `VALID NOMINAL NOT_TRIGGERED / 5 OF 100 ATTEMPTED`. The sole fixed attempt passed
+  exact build and 14-field scenario binding, the zero-error Unity-worker gate, robot-visible
+  export, independent computation, and complete-reference audit. No retry or replacement occurred.
+- **OBSERVED:** the no-intervention nominal-clear action succeeded after 69.110 s and 17.477 m,
+  with one FollowPath attempt, zero observed failures, and zero source-qualified Wait invocations.
+  BT whole-history completeness remains `not_proven`, so the record does not claim an exact
+  lifetime recovery count.
+- **REFERENCE:** both implementations return `not_triggered`. The 0--5 s healthy interval has
+  median 0.260 m/s command and 0.25974 m/s measured motion. This rejects the command--motion
+  failure premise for the retained interval and thresholds without proving every transient
+  difficulty absent.
+- **BOUNDARY:** no response, Luna call, semantic label, effect estimate, confidence sequence, or
+  alpha use. Governed data are synchronized to R2. Fixed ambiguity run 006 is next; see
+  `cm-land-conf-005-disposition.json`.
+
 ## 2026-09-24 — land command--motion physical cohort run 004
 
 - **STATUS:** `VALID UNEXPECTED ABORT AFTER RESPONSE RECOVERY / 4 OF 100 ATTEMPTED`. Exact
