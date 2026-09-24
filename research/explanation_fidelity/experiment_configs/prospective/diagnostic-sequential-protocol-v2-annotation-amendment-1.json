@@ -1,0 +1,28 @@
+{
+  "schema": "crane-diagnostic-sequential-protocol-amendment/v1",
+  "amendment_id": "diagnostic-sequential-v2-annotation-amendment-1",
+  "declared_utc": "2026-09-24T00:00:00Z",
+  "base_protocol": "research/explanation_fidelity/experiment_configs/prospective/diagnostic-sequential-protocol-v2.json",
+  "base_protocol_sha256": "54631bd9d826c6ac483423377730de6105494bb2dc25c648d669d04e7b9f3e0b",
+  "applies_to": "future diagnostic confirmation campaigns only",
+  "legacy_and_v4_results_unchanged": true,
+  "primary_endpoint_unchanged": "required supported mechanism identified and no material unsupported or contradicted assertion",
+  "qualification_profile": "luna-model-judge-v5-endpoint-focused",
+  "qualification_requirements_per_pass": {
+    "composite_accuracy_minimum": 0.95,
+    "required_unit_accuracy_minimum": 0.90,
+    "core_semantic_field_accuracy_minimum": 0.90,
+    "factual_false_rejection_rate_maximum": 0.15,
+    "unsupported_false_acceptance_rate_maximum": 0.05,
+    "protected_causal_boundary_injection_invariance_failures_maximum": 0
+  },
+  "study_label_rule": "Both isolated Luna passes are retained. Agreement supplies the operational label; any primary or guardrail disagreement is unresolved unless an independently checkable fact or frozen rule resolves it.",
+  "annotation_error_sensitivity": {
+    "interval": "pass-specific Wilson 95 percent intervals from fresh qualification cases",
+    "method_specific_bounds": "For each method, subtract ceil(U_FA * judged_successes) for the worst-case supported-success count and add ceil(U_FR * judged_failures) for the best case, where U_FA and U_FR are the larger pass-specific qualification upper bounds. Disagreements remain adversarially unresolved in both bounds.",
+    "guardrail_rule": "Apply the analogous class-specific upper bounds to material-error counts; protected-category qualification failures prohibit activation.",
+    "success_rule": "Sequential corrected bounds and every guardrail must pass under the nominal agreed labels and under the declared worst-case annotation-error transformation. Otherwise any nominal crossing is label-sensitive and not confirmatory success."
+  },
+  "alpha_ledger_unchanged": true,
+  "campaign_alpha_consumed_at_amendment": 0.0
+}

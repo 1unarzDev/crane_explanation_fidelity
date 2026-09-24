@@ -4,7 +4,7 @@ Protocol: `diagnostic-sequential-protocol-v2`
 
 Declared: 2026-09-23
 
-Status: **REGISTERED FRAMEWORK / NO CAMPAIGN ACTIVE / ZERO ALPHA CONSUMED**
+Status: **REGISTERED FRAMEWORK + ANNOTATION AMENDMENT 1 / NO CAMPAIGN ACTIVE / ZERO ALPHA CONSUMED**
 
 This is the canonical forward-looking statistical contract for new physical-diagnosis campaigns.
 It does not apply to frozen F/G/H data, the nine inspected diagnostic-development clusters, or any
@@ -22,6 +22,8 @@ Machine-readable sources:
 - monitor: `analysis/sequential_diagnostic_monitor.py`;
 - retained simulation: `analysis/results/diagnostic-sequential-simulation-v2.json`;
 - progress report: `docs/DIAGNOSTIC_CAMPAIGN_PROGRESS.md`.
+- prospective annotation amendment:
+  `research/explanation_fidelity/experiment_configs/prospective/diagnostic-sequential-protocol-v2-annotation-amendment-1.json`.
 
 ## Population, unit, and sampling
 
@@ -80,6 +82,13 @@ the prospectively declared diagnosable strata. Semantic labels are Luna-assessed
 frozen judge passes held-out qualification. Deterministically recomputed geometry, motion, timing,
 count, and provenance predicates are reported separately.
 
+Annotation amendment 1 leaves this endpoint unchanged but qualifies the judge on the endpoint
+composite before secondary fields. Each of two fresh isolated passes must reach at least 95%
+composite accuracy, 90% unit accuracy, and 90% core-field accuracy; factual false rejection is
+capped at 15%, unsupported-claim false acceptance at 5%, and protected causal, boundary,
+prompt-injection, and meaning-invariance failures at zero. These are operational qualification
+tolerances, not permission for candidate hallucination.
+
 The minimum worthwhile improvement is `+0.15`. Added diagnostic and verification complexity is not
 worth a smaller gain. Success requires a one-sided anytime lower bound strictly above `+0.15`, not
 a positive estimate or a test against zero.
@@ -96,6 +105,16 @@ Coverage is a frozen required-unit fraction, not answer length. Ambiguity handli
 supported information plus withholding the unresolved mechanism. Packet defects are
 `evidence_problem`, not candidate errors. An unresolved required primary or guardrail label blocks
 success and remains in best/worst-case sensitivity rather than disappearing from the denominator.
+
+The amendment adds a validation-error sensitivity alongside nominal labels. Let `U_FA` and `U_FR`
+be the larger of the two pass-specific Wilson 95% upper bounds for qualification false acceptance
+and false rejection. For each method with `S` judged successes in `N` responses, the reported
+worst-case success count is `max(0, S - ceil(U_FA*S))` and the best case is
+`min(N, S + ceil(U_FR*(N-S)))`; pass disagreements remain adversarially unresolved. Material-error
+guardrails receive the analogous class-specific transformation. Confirmatory success requires the
+corrected sequential bounds and guardrails to pass under both agreed nominal labels and this frozen
+worst-case transformation. This is deliberately conservative, and the qualification intervals are
+reported rather than treating a small perfect sample as proof of zero judge error.
 
 ## Anytime-valid analysis and multiplicity
 
@@ -156,9 +175,11 @@ cmp /tmp/diagnostic-sequential-simulation-v2.json \
 Before confirmation, freeze and hash the Luna rubric, prompt, schema, model/provider/settings,
 independent references, two isolated passes, deterministic disagreement rules, retry policy, and
 held-out qualification report. Judge development and held-out cases are disjoint. Luna judge
-versions v1--v3 failed development qualification and are ineligible; v3 additionally exposed an
-omitted-versus-incorrect required-unit reference-taxonomy conflict. More study responses cannot
-repair judge validity.
+versions through v4 retain their failed qualification dispositions. V4-high passed its final
+development gate but failed both fresh held-out passes, and is never retroactively qualified. The
+prospectively authorized v5 profile keeps the v4 model/prompt unchanged, uses 24 new cases, and
+changes only qualification estimands/tolerances as recorded above. Both v5 passes must qualify
+before activation; more study responses cannot repair a failed qualification.
 
 Reserve fresh configuration identities before discovery. Replication uses byte-identical P/R,
 evidence contract, prompts, tools, thresholds, judge, and analysis hashes; it reuses no discovery

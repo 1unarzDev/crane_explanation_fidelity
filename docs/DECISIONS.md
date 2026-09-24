@@ -1337,3 +1337,19 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Hard stop: failure at high development or later fresh held-out qualification ends Luna prompt/
   configuration search for this submission. Preserve the result and prospectively narrow or replace
   the endpoint rather than tuning against qualification outcomes.
+
+## 2026-09-24 — prospectively amend judge qualification around endpoint-flipping errors
+
+- Decision: preserve v4's failure, keep Luna/prompt/settings unchanged, and evaluate a new v5
+  qualification profile on 24 fresh cases under composite-first thresholds.
+- Authorization: the revised research goal explicitly states that bounded annotation errors must
+  not stall valid collection and supplies empirical target ranges. This is a new prospective arm,
+  not a retroactive exception to v4.
+- Thresholds: per pass, composite accuracy >=95%, units/core >=90%, factual false rejection <=15%,
+  unsupported false acceptance <=5% (target zero), and no protected causal/boundary/injection/
+  invariance failure. Both passes must qualify.
+- Alternatives: use v4 despite failure, modify its labels, tune the prompt again, or ignore judge
+  uncertainty. These are rejected. Fresh cases and unchanged Luna separate the amended scientific
+  criterion from observed v4 outputs.
+- Inference effect: retain pass-specific Wilson uncertainty and require method-specific worst-case
+  label-error sensitivity to clear the primary delta and guardrails. Alpha ledger remains 0/0.05.

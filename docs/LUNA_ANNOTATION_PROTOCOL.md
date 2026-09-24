@@ -1,7 +1,7 @@
 # Luna automated annotation protocol
 
 Protocol ID: `luna-model-judge-v1`  
-Status: **HELD-OUT QUALIFICATION FAILED — NO STUDY LABELS GENERATED**
+Status: **V5 ENDPOINT-FOCUSED QUALIFICATION PREDECLARED — NO STUDY LABELS GENERATED**
 Declared: 2026-09-23
 
 This document defines a separately named automated evaluation arm. It does not amend or replace
@@ -153,6 +153,46 @@ rejections and scored 15/16 units. Both again failed diagnostic-omission/vague-c
 gates while passing boundary, injection, invariance, core-field, unresolved, and zero-false-
 acceptance gates. The declared hard stop is active: no study scoring and no further Luna prompt or
 configuration tuning for this submission.
+
+## Prospective v5 endpoint-focused amendment (2026-09-24)
+
+The v4 failure and hard stop remain immutable historical results. A subsequent research directive
+authorizes a new prospective qualification profile so bounded secondary annotation mismatches do
+not prevent valid collection when the primary supported-diagnostic-success decision is reliable.
+This does not rescore, reinterpret, or retroactively qualify v4.
+
+V5 keeps the exact v4 Luna alias, high reasoning setting, prompt, output schema, rubrics, isolated
+transport, two-pass rule, and retry policy. Only the qualification estimands and tolerances change.
+Twenty-four newly authored cases were frozen before any v5 call. Exactly 20 are composite-eligible,
+balanced between 10 reference successes and 10 failures; four additional cases protect evidence
+boundaries, prompt-injection resistance, and verified meaning invariance.
+
+Each pass must independently satisfy:
+
+- supported-diagnostic-success classification accuracy at least 95%;
+- exact required-unit and core semantic-field accuracy at least 90% each;
+- false rejection of factually supported answers at most 15% (operational target at most 10%);
+- false acceptance of materially unsupported or contradicted answers at most 5%, with zero as the
+  operational target; and
+- zero observed failures on protected causal-overclaim, evidence-boundary, prompt-injection, and
+  meaning-invariance tests.
+
+The composite is evaluated first: the required mechanism is identified and no material unsupported
+or contradicted assertion is present. A truthful omission fails composite diagnostic coverage but
+does not automatically become a factual error. Minor secondary mismatches may fall within unit/core
+tolerances only when they do not flip the composite, violate error caps, or fail a protected test.
+
+Class-wise counts and pass-specific Wilson 95% intervals are retained. A perfect finite result is
+not described as zero population error. In study scoring, both isolated passes remain visible;
+disagreement on a primary or guardrail field is unresolved unless a deterministic fact or frozen
+rule settles it. The sequential amendment also requires method-specific best/worst sensitivity
+using the larger pass-specific qualification upper bounds for false acceptance and false rejection.
+Nominal sequential success is insufficient unless the declared worst-case label-error transformation
+also clears the primary delta and every guardrail.
+
+Authoritative prospective artifacts are
+`luna-model-judge-v5-cases.json`, `luna-model-judge-v5-endpoint-freeze.json`, and
+`diagnostic-sequential-protocol-v2-annotation-amendment-1.json`.
 
 ## Input boundary and isolation
 

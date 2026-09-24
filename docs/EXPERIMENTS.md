@@ -3958,3 +3958,17 @@
   output tokens including 5,940 reasoning tokens, and 439,571 ms latency; cost unavailable.
 - **DISPOSITION:** activate the predeclared hard stop. No study labels, no confirmatory alpha, no
   further judge tuning. Report SHA-256 `14c428b5a6cf6e8d508e52d9ed89edf4ecfb3d75cde2891e1fc52f0439e8d63b`.
+
+## 2026-09-24 — v5 endpoint-focused Luna qualification predeclaration
+
+- **STATUS:** `PREDECLARED / NOT_RUN`; all 24 cases are fresh and model executions are zero.
+- **PRESERVATION:** v4 remains failed and its hard stop is not revoked retroactively. V5 is an
+  explicitly authorized prospective qualification profile.
+- **UNCHANGED CONFIGURATION:** `gpt-6-luna`, high reasoning, v4 prompt, schema, rubrics, isolated
+  transport, two passes, and retry policy.
+- **DENOMINATORS:** 24 cases/pass; 20 composite-eligible (10 success, 10 failure), six materially
+  unsupported answers, 17 factually supported answers, and four additional protected cases.
+- **GATES:** composite >=95%; units/core >=90%; false rejection <=15%; false acceptance <=5%; zero
+  protected causal/boundary/injection/invariance failures. Both passes must pass.
+- **UNCERTAINTY:** report class-wise counts and Wilson 95% intervals. Future confirmation must pass
+  nominal sequential inference and method-specific worst-case label-error sensitivity.
