@@ -1,0 +1,48 @@
+{
+  "schema": "crane-luna-judge-freeze/v1",
+  "freeze_id": "luna-model-judge-v2-medium-reference-v3",
+  "declared_utc": "2026-09-24T00:00:00Z",
+  "status": "FROZEN_BEFORE_HELDOUT_EXECUTION",
+  "arm_id": "luna-model-judge-v1",
+  "model": {
+    "requested_id": "gpt-6-luna",
+    "substitution_allowed": false,
+    "reasoning_effort": "medium",
+    "temperature": null,
+    "seed": null,
+    "provider": "codex-lb",
+    "transport": "isolated-codex-cli"
+  },
+  "prompt": {
+    "path": "research/explanation_fidelity/prompts/luna-model-judge-v2.md",
+    "sha256": "fa025d82377ef1132d849c9d1ca45befbc2514cd3881d42d17578978834e3005"
+  },
+  "qualification_suite": {
+    "path": "research/explanation_fidelity/qualification/luna-model-judge-v3-reference-amendment.json",
+    "sha256": "02a092a2e87caab74be0b1935cc8413189d9bed0ac77005474cf0a0fb93f08e4",
+    "heldout_cases": 14,
+    "heldout_model_executions_at_freeze": 0
+  },
+  "output_schema": {
+    "path": "research/explanation_fidelity/schemas/luna-model-judge-output-v1.schema.json",
+    "sha256": "93989e303fdb12e94ae5fe79adad16e46d9587006b7ba6de5c4624096f1b1c3f"
+  },
+  "rubrics": {
+    "legacy_sha256": "3677b34a6507a77471abeef974e6085c6874950bb8f94aee4e6aa5af364f2908",
+    "diagnostic_sha256": "fd836999fb3942eed741c43187aee3002ceddb4a567c4fcc0a9dbff44ce53c0e"
+  },
+  "caller_source_sha256": "0e83d22d7e3d284b2430d55240fb26483588e51f0d84df94515702964064b023",
+  "development_selection": {
+    "original_report": "model_outputs/automated_annotations/luna-model-judge-v1/qualification-v2/development-selection.json",
+    "original_report_sha256": "9c6d9bcea5dfd27074652182d00096d89c1a5721dc1dc3a585cfccf508d0fda0",
+    "offline_rescore": "analysis/results/luna-model-judge-v2-medium-rescore-v3-reference.json",
+    "offline_rescore_sha256": "1bf2d8159edfb21bb156292a90fe39af9536d67b3948eaa9c4154058097959a7",
+    "model_calls_made_during_rescore": 0,
+    "qualified": true
+  },
+  "two_pass_heldout_rule": ["pass-1", "pass-2"],
+  "disagreement_policy": "Only independently checkable facts or explicit frozen rules resolve disagreement; otherwise retain unresolved.",
+  "retry_policy": "Existing manifest transport-only bounded retry; never retry a usable or inconvenient judgment.",
+  "study_scoring_allowed": false,
+  "activation_condition": "Both untouched held-out passes must independently satisfy every frozen qualification gate."
+}

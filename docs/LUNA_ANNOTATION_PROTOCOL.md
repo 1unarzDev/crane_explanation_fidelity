@@ -103,6 +103,15 @@ development suite expected the analogous uncommunicated unique-cause limitation 
 that must be independently resolved before another judge version; it does not authorize lowering
 the 95% threshold or scoring study answers.
 
+The independent proposition-slot audit in `docs/LUNA_REQUIRED_UNIT_TAXONOMY.md` concluded that both
+QD003 and QD011 explicitly attempt and contradict the required unresolved-cause proposition, so
+both are `incorrect`; the prior QD003 `omitted` expectation was inconsistent. An additive amendment
+changes only that development expectation. Offline rescoring of the already retained v2-medium
+calls then passes every unchanged gate with 16/16 required-unit statuses, zero new model calls, and
+94.4% core-field accuracy. V2 medium and the audited suite are frozen in
+`luna-model-judge-v2-medium-freeze.json` before any held-out execution. This development selection
+does not itself qualify the judge or authorize study scoring.
+
 ## Input boundary and isolation
 
 Every response is judged in a new API request with no conversation history and no model tools. The

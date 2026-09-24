@@ -2,7 +2,7 @@
   "schema": "crane-automated-annotation-arm-manifest/v1",
   "arm_id": "luna-model-judge-v1",
   "declared_utc": "2026-09-23T00:00:00Z",
-  "status": "V3_DEVELOPMENT_FAILED_NO_STUDY_LABELS",
+  "status": "V2_MEDIUM_SELECTED_HELDOUT_NOT_RUN",
   "annotation_origin": "automated",
   "human_annotation_requirement": {
     "original_requirement": "two independent human annotators plus distinct human adjudication of disagreements",
@@ -26,15 +26,15 @@
     "sampling": {"temperature": null, "seed": null},
     "development_reasoning_candidates": ["medium"],
     "reasoning_candidate_basis": "V2 development made medium the lowest-cost near-qualifying configuration: zero false acceptances/rejections, 94.4% core-field accuracy, and one required-unit status miss. V3 changes only required-unit status instructions and prospectively evaluates medium once; it does not rerun low/high or select on held-out outcomes.",
-    "frozen_reasoning_effort": null
+    "frozen_reasoning_effort": "medium"
   },
   "protocol": {
     "path": "docs/LUNA_ANNOTATION_PROTOCOL.md"
   },
   "prompt": {
-    "path": "research/explanation_fidelity/prompts/luna-model-judge-v3.md",
-    "sha256": "2f36b9a33f84778212fd08c3596ca77ba09528dbcc5779c846dd5117b52a222d",
-    "version": "v3-required-unit-status-clarification"
+    "path": "research/explanation_fidelity/prompts/luna-model-judge-v2.md",
+    "sha256": "fa025d82377ef1132d849c9d1ca45befbc2514cd3881d42d17578978834e3005",
+    "version": "v2-selected-after-reference-taxonomy-audit"
   },
   "output_schema": {
     "path": "research/explanation_fidelity/schemas/luna-model-judge-output-v1.schema.json",
@@ -114,9 +114,9 @@
     "inconvenient_label_retry_allowed": false
   },
   "qualification": {
-    "status": "V3_DEVELOPMENT_FAILED_NO_STUDY_LABELS",
-    "suite": "research/explanation_fidelity/qualification/luna-model-judge-v2-amendment.json",
-    "suite_sha256": "8fadf0225bd48b55538a74dc88e65a5d6673ffdbaff6a1a7542b09e3c1913943",
+    "status": "DEVELOPMENT_SELECTED_HELDOUT_NOT_RUN",
+    "suite": "research/explanation_fidelity/qualification/luna-model-judge-v3-reference-amendment.json",
+    "suite_sha256": "02a092a2e87caab74be0b1935cc8413189d9bed0ac77005474cf0a0fb93f08e4",
     "development_cases": 14,
     "heldout_cases": 14,
     "development_and_heldout_required": true,
@@ -131,7 +131,9 @@
     "required_material_error_invariance": 1.0,
     "required_disposition_invariance": 1.0,
     "required_answerability_boundary_accuracy": 1.0,
-    "study_evaluation_allowed": false
+    "study_evaluation_allowed": false,
+    "freeze": "research/explanation_fidelity/experiment_configs/prospective/luna-model-judge-v2-medium-freeze.json",
+    "development_rescore": "analysis/results/luna-model-judge-v2-medium-rescore-v3-reference.json"
   },
   "qualification_history": [
     {
@@ -152,6 +154,13 @@
       "result_manifest": "manifests/annotation/luna-model-judge-v1-development-v3.json",
       "status": "NO_CONFIGURATION_QUALIFIED",
       "scope": "medium reasoning only; same 14 development cases; heldout remains uninspected"
+    },
+    {
+      "prompt": "research/explanation_fidelity/prompts/luna-model-judge-v2.md",
+      "suite": "research/explanation_fidelity/qualification/luna-model-judge-v3-reference-amendment.json",
+      "result_manifest": "analysis/results/luna-model-judge-v2-medium-rescore-v3-reference.json",
+      "status": "DEVELOPMENT_SELECTED_OFFLINE_ZERO_NEW_CALLS",
+      "scope": "medium reasoning; coherent QD003/QD011 limitation taxonomy; heldout unrun at selection"
     }
   ],
   "output_roots": {

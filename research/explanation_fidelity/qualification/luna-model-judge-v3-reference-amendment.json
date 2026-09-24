@@ -1,0 +1,17 @@
+{
+  "schema": "crane-luna-judge-qualification-suite-amendment/v2",
+  "suite_id": "luna-model-judge-v3-reference-audit",
+  "declared_utc": "2026-09-24T00:00:00Z",
+  "status": "DEVELOPMENT_REFERENCE_CORRECTION_BEFORE_ANY_HELDOUT_EXECUTION",
+  "base_suite": "research/explanation_fidelity/qualification/luna-model-judge-v2-amendment.json",
+  "base_suite_sha256": "8fadf0225bd48b55538a74dc88e65a5d6673ffdbaff6a1a7542b09e3c1913943",
+  "taxonomy": "docs/LUNA_REQUIRED_UNIT_TAXONOMY.md",
+  "reason": "QD003 and QD011 both explicitly assert a unique cause where the required proposition says cause identity remains unresolved. Under the proposition-slot taxonomy, both limitation units are attempted and incorrect; the prior omitted/incorrect mismatch was internally inconsistent.",
+  "expectation_amendments": {
+    "QD003": {
+      "required_unit_statuses": {"u-limit": "incorrect"}
+    }
+  },
+  "heldout_expectation_amendments": 0,
+  "heldout_execution_at_declaration": "NOT_RUN"
+}

@@ -14,8 +14,8 @@ Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 | Information/tool/resource parity | DRAFT | Audit at campaign freeze |
 | Target land strata | PARTIAL | Existing cases are development only; fresh generators/configurations required |
 | Target surface strata | NOT_READY | Both geometric and command--motion admission required; do not reallocate weight |
-| Luna development qualification | FAILED | V1--V3 are ineligible; v3 exposed an omitted/incorrect reference-taxonomy conflict |
-| Luna held-out qualification | NOT_RUN | Requires a newly declared judge version that first passes development |
+| Luna development qualification | SELECTED | Audited v2-medium offline rescore passes every gate; zero new calls |
+| Luna held-out qualification | NOT_RUN | Frozen two-pass execution is the next judge gate |
 | Replication configurations reserved | NOT_RUN | Reserve before discovery collection |
 | Sequential null simulation | PASS_QA | 20,000 replicates per endpoint; all boundary estimates below component alpha 0.02 |
 | Alternative budget sensitivity | COMPLETE | +0.30 scenarios reach 0.9946/0.9366 joint success by 1,600; this is not observed power |
@@ -67,7 +67,7 @@ Record, without deleting earlier rows:
 
 ## Next action
 
-Do not collect confirmatory responses. First independently audit and repair the development
-required-unit taxonomy before declaring any new Luna version; then qualify the judge, validate the
-missing fresh surface strata or prospectively register a land-only target, freeze the candidate/
-baseline/resource contract, and reserve replication configurations.
+Do not collect confirmatory responses. Run the frozen two-pass held-out Luna qualification once;
+only if both passes qualify may judge readiness advance. Then validate the missing fresh surface
+strata or prospectively register a land-only target, freeze the candidate/baseline/resource
+contract, and reserve replication configurations.

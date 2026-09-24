@@ -3834,3 +3834,20 @@
 - **DISPOSITION:** no effort is frozen. Audit the development reference taxonomy independently
   before any new judge version. Do not run held-out, score study answers, lower the threshold, or
   retry the inconvenient label.
+
+## 2026-09-24 — required-unit taxonomy audit and zero-call development rescore
+
+- **STATUS:** `DEVELOPMENT_SELECTED / HELDOUT_NOT_RUN`; no model call, held-out label, study label,
+  or confirmatory alpha was consumed.
+- **AUDIT:** a required limitation is `incorrect` when the answer explicitly fills and contradicts
+  that proposition slot; it is `omitted` only when the slot is not attempted. QD003 and QD011 both
+  assert unique causes where the reference requires unresolved cause identity, exposing an
+  inconsistent prior expectation.
+- **AMENDMENT:** change only QD003's development expected status from omitted to incorrect. No
+  held-out expectation, answer, evidence, threshold, schema, or prior output changes.
+- **RESCORE:** the 14 immutable v2-medium calls pass every gate under the coherent amendment:
+  16/16 required units, 94.4% core fields, zero false acceptances/rejections, zero unexpected
+  unresolved labels, and all category/invariance/boundary/injection gates. Model calls made: zero.
+- **FREEZE:** `luna-model-judge-v2-medium-reference-v3` pins prompt, suite, schema, rubrics, model,
+  medium effort, caller source, retry/disagreement rules, original calls, and rescore hashes before
+  held-out. Study scoring remains prohibited pending both held-out passes.

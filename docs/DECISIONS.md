@@ -1266,3 +1266,23 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   A valid but inconvenient judgment is never retried.
 - Failure rule: any missed existing gate retains v3 as another negative result and blocks held-out
   and study scoring. Thresholds will not be relaxed.
+
+## 2026-09-24 — audit required-unit references and freeze v2 medium for held-out
+
+- Decision: adopt the proposition-slot taxonomy in `docs/LUNA_REQUIRED_UNIT_TAXONOMY.md`, correct
+  QD003's development-only limitation status from `omitted` to `incorrect`, and select the retained
+  v2-medium configuration by offline rescoring. Freeze it before any held-out execution.
+- Evidence: QD003 says a scan return caused recovery while its required proposition says physical
+  cause remains unresolved; QD011 analogously asserts a failed motor where unique cause remains
+  unresolved. Both answers explicitly attempt and contradict the same cause-identity/qualification
+  slot. Labeling one omitted and one incorrect was not a coherent reference rule.
+- Alternatives: change QD011 to omitted so v3 passes; lower the 95% exact-status threshold; collapse
+  exact statuses after seeing failures; or keep prompting. These were rejected. The proposition-
+  slot rule supports the QD003 correction independently, preserves QD011, and leaves thresholds,
+  held-out expectations, evidence, and outputs unchanged.
+- Result: zero-call offline rescoring of the immutable v2-medium judgments passes every development
+  gate: 16/16 unit statuses, 94.4% core fields, zero false acceptances/rejections, and all boundary,
+  prompt-injection, category, and presentation-invariance gates.
+- Validity boundary: development selection is not judge qualification. V2 prompt, medium effort,
+  suite, schema, rubrics, caller, retry rule, and two-pass policy are hash-frozen before held-out.
+  Study scoring remains prohibited unless both untouched held-out passes independently qualify.
