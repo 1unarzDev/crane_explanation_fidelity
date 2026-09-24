@@ -81,6 +81,12 @@ relative coverage degradation because R is also partial. Current state: 3/6 vali
 clusters, 1/1 valid ambiguous variants, cumulative P-minus-R +3 in each pass, and zero P material
 errors. The pilot remains pending; `cmv3-dev-004` is next and alpha remains `0.000/0.050`.
 
+Run `cmv3-dev-004` is governed as a valid persistent-discrepancy tie: P and R passed both Luna
+passes with full coverage and no material error. Current state is 4/6 valid independent clusters,
+1/1 ambiguous variants, cumulative P-minus-R +3 in each pass, and zero P material errors. The
+minimum numerical gates are provisionally satisfied, but the fixed pilot cannot stop early;
+`cmv3-dev-005` and `cmv3-dev-006` remain mandatory. Confirmation is inactive at `0.000/0.050`.
+
 Candidate v2 now has an executable development runner. P is the exact checked deterministic
 diagnostic rendering with zero model calls; R gets the identical blind input, source, diagnostic
 tool, and one high-reasoning model call. This accurately treats the proposed method as specialized

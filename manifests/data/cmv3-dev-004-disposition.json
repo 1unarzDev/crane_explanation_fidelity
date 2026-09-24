@@ -1,0 +1,73 @@
+{
+  "schema": "crane-command-motion-candidate-v3-run-disposition/v1",
+  "recorded_date": "2026-09-24",
+  "run_id": "cmv3-dev-004",
+  "cluster_id": "cmv3-land-004",
+  "status": "VALID_DEVELOPMENT_DIAGNOSTIC_AND_COMPLETE_PAIRED_LUNA_MEASUREMENT",
+  "attempt_count": 1,
+  "retry_performed": false,
+  "admission": {
+    "player_build_audit_accepted": true,
+    "scenario_binding_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "unity_result_valid": true,
+    "unity_logged_errors": 0,
+    "unity_logged_exceptions": 0,
+    "recording_valid": true,
+    "navigation_status": "aborted",
+    "generic_fixture_expected_outcome_observed": false
+  },
+  "observed": {
+    "displacement_meters": 4.5441789627075195,
+    "controller_commands": 478,
+    "odometry_messages": 2580,
+    "costmap_observations": 133,
+    "behavior_tree_transitions": 39,
+    "follow_path_attempts": 3,
+    "follow_path_failures": 2,
+    "source_qualified_wait_invocations": 2
+  },
+  "diagnostic": {
+    "disposition": "supported",
+    "healthy_interval_s": [0.0, 5.0],
+    "healthy_measured_planar_speed_mps": 0.2597399950027466,
+    "discrepancy_interval_s": [18.0, 28.0],
+    "median_commanded_planar_speed_mps": 0.26,
+    "median_measured_planar_speed_mps": 0.0,
+    "complete_reference_audit_accepted": true
+  },
+  "language_evaluation": {
+    "conditions": ["P", "R"],
+    "p_model_calls": 0,
+    "r_model_calls": 1,
+    "luna_passes": 2,
+    "luna_calls": 4,
+    "call_failures": 0,
+    "pass_1": {"P_supported_diagnostic_success": true, "R_supported_diagnostic_success": true, "P_material_error": false, "R_material_error": false, "paired_difference": 0},
+    "pass_2": {"P_supported_diagnostic_success": true, "R_supported_diagnostic_success": true, "P_material_error": false, "R_material_error": false, "paired_difference": 0},
+    "judge_inconsistency": null
+  },
+  "hashes": {
+    "player_build_audit_sha256": "e60f6e5efd5a58b0b724deb1eb931a2219c25daea53853b39a602ae634864a77",
+    "scenario_binding_audit_sha256": "8933e434da0c0160bdd97045830bb07dfbffde6fbf2c3e77d3f61c2b55a6e2a5",
+    "robot_visible_events_sha256": "81a07d0fe6255da035facab87bb1bbd51602fb683623acc58bfa3b70c1722f0b",
+    "diagnostic_export_sha256": "53a82133e21e0fd12f1b284ca3b68500d9e4ccdc44ce125ce0e99cc20986d0eb",
+    "independent_reference_sha256": "2599031dd0cefd1cec71ed3eb2d58fcb47ce040c5586fe67f91b67211548b33f",
+    "complete_annotation_reference_sha256": "59f77daec36d9e08bc7922ec0051f2300c29ef2d28a8c5debe131f09c8b26ee8",
+    "candidate_result_sha256": "f39e759dc2abb54340e0229e21a7a2535effaddec7dce637de32ba3a75881a98",
+    "blinded_packet_sha256": "037dead8e74428ba5d91e56de61becbf1e6b10531e825174d9096acc578cd83c",
+    "condition_key_sha256": "e68ea508602579a9a82746df8e512b51fe70f032577ae291bcd28043aaf1560a",
+    "luna_summary_sha256": "d4828ff917f1924f78e7e38cb7c412d3645aaa40208ee18c3bd2473082c3776b"
+  },
+  "inference": {
+    "independent_cluster_increment": 1,
+    "confirmatory_cluster_increment": 0,
+    "confirmatory_alpha_consumed": 0.0,
+    "candidate_readiness": "PENDING_REMAINING_PREDECLARED_RUNS",
+    "valid_independent_clusters": 4,
+    "planned_independent_clusters": 6,
+    "valid_ambiguous_variants": 1,
+    "cumulative_p_minus_r_successes_pass_1": 3,
+    "cumulative_p_minus_r_successes_pass_2": 3
+  }
+}

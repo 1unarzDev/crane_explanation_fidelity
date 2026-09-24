@@ -1,5 +1,18 @@
 # Experiment Log
 
+## 2026-09-24 — candidate-v3 run 004 retained tie
+
+- **STATUS:** the sole persistent-discrepancy attempt passed build, binding, recording, and Unity
+  error gates. Navigation aborted after 4.544 m; the checked 18--28 s interval retained 0.260 m/s
+  commands and 0.000 m/s odometry, with three attempts, two failures, and two qualified Waits.
+- **LUNA:** P and R both fully covered the reference and passed both isolated Luna-v7 passes with no
+  material error. The paired difference is 0 in each pass.
+- **INFERENCE:** four of six independent clusters and the ambiguous variant are now valid.
+  Cumulative P-minus-R remains +3 in each pass with zero P material errors. The minimum cluster and
+  numerical gates are provisionally met, but the last two fixed attempts remain mandatory and no
+  readiness or confirmatory claim is yet allowed. Alpha remains `0.000/0.050`. See
+  `manifests/data/cmv3-dev-004-disposition.json`.
+
 ## 2026-09-24 — candidate-v3 run 003 retained nominal false-premise result
 
 - **STATUS:** the sole fixed nominal attempt passed player, binding, recording, and Unity error
