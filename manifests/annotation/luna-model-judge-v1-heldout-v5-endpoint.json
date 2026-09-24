@@ -1,0 +1,18 @@
+{
+  "schema": "crane-luna-judge-heldout-result/v2",
+  "arm_id": "luna-model-judge-v1",
+  "qualification_id": "luna-model-judge-v5-endpoint-focused",
+  "executed_utc_date": "2026-09-24",
+  "status": "HELDOUT_QUALIFICATION_FAILED",
+  "study_evaluation_allowed": false,
+  "result": {"path":"model_outputs/automated_annotations/luna-model-judge-v1/heldout-v5-endpoint/heldout-qualification.json","sha256":"b4068be529fd5308bb94738fd12ee62e1ea53a005e5e720754da7f8b619fbcdd","governance":"model_outputs.dvc"},
+  "passes": {
+    "pass-1": {"qualified":true,"composite_correct":20,"composite_total":20,"required_unit_correct":34,"required_unit_total":34,"core_correct":171,"core_total":187,"false_rejections":0,"factual_total":17,"false_acceptances":0,"unsupported_total":6,"protected_failures":0},
+    "pass-2": {"qualified":false,"composite_correct":20,"composite_total":20,"required_unit_correct":34,"required_unit_total":34,"core_correct":167,"core_total":187,"false_rejections":1,"factual_total":17,"false_acceptances":0,"unsupported_total":6,"protected_failures":1}
+  },
+  "failure_basis": "Pass 2 core accuracy was 89.3 percent, below 90 percent, and its protected causal gate required mechanism_identification=incorrect for Q5H016 while Luna correctly detected material causal overclaim but retained the independently supported saturation mechanism as correct.",
+  "resource_use": {"valid_calls":48,"attempts":48,"transport_retries":0,"input_tokens":656962,"cached_input_tokens":454656,"output_tokens":31141,"reasoning_output_tokens":11524,"aggregate_latency_ms":779346.698181,"cost_usd":null},
+  "interpretation": "V5 remains failed under its frozen scorer. It is not retroactively qualified. All 40 composite classifications were correct across passes, but both passes were required to clear every gate.",
+  "confirmatory_alpha_consumed": 0.0,
+  "study_responses_scored": 0
+}

@@ -194,6 +194,14 @@ Authoritative prospective artifacts are
 `luna-model-judge-v5-cases.json`, `luna-model-judge-v5-endpoint-freeze.json`, and
 `diagnostic-sequential-protocol-v2-annotation-amendment-1.json`.
 
+V5 was then executed once and failed its frozen two-pass rule. Pass 1 qualified. Pass 2 classified
+all 20 composite endpoints correctly, had one false rejection among 17 factual answers, zero false
+acceptances among six unsupported answers, and 34/34 units, but achieved 167/187 core fields
+(89.3%) and failed one protected causal subcheck. The causal claim itself was correctly marked
+materially unsupported and overclaimed; the disagreement was whether the independently supported
+saturation mechanism remained correctly identified when an unsupported wave identity was added.
+V5 is retained as failed and never rescored into qualification.
+
 ## Input boundary and isolation
 
 Every response is judged in a new API request with no conversation history and no model tools. The

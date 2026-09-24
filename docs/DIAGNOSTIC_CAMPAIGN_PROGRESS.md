@@ -15,7 +15,7 @@ Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 | Target land strata | PARTIAL | Existing cases are development only; fresh generators/configurations required |
 | Target surface strata | NOT_READY | Both geometric and command--motion admission required; do not reallocate weight |
 | Luna historical qualification | V4 HIGH FAILED / PRESERVED | Both fresh passes failed; never retroactively qualified |
-| Luna v5 endpoint qualification | PREDECLARED / NOT_RUN | Unchanged Luna; 24 fresh cases; composite-first tolerances frozen |
+| Luna v5 endpoint qualification | FAILED / PRESERVED | P1 passed; P2 missed core by one field and one protected subcheck |
 | Replication configurations reserved | NOT_RUN | Reserve before discovery collection |
 | Sequential null simulation | PASS_QA | 20,000 replicates per endpoint; all boundary estimates below component alpha 0.02 |
 | Alternative budget sensitivity | COMPLETE | +0.30 scenarios reach 0.9946/0.9366 joint success by 1,600; this is not observed power |
@@ -67,10 +67,9 @@ Record, without deleting earlier rows:
 
 ## Next action
 
-Run the frozen v5 endpoint-focused qualification exactly once (two isolated passes). Do not score
-study responses unless both passes qualify. If qualified, freeze the result hash, complete
-candidate/baseline/resource and target-generator readiness, reserve replication configurations,
-and begin independent collection under the amended sequential protocol.
+Do not score study responses from v5. Audit the endpoint-preserving mechanism/overclaim distinction
+on development evidence, then register any revision with entirely fresh cases before execution.
+Candidate/baseline/resource and target-generator readiness remain incomplete.
 
 ## Held-out judge result (2026-09-24)
 

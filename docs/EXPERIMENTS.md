@@ -3972,3 +3972,20 @@
   protected causal/boundary/injection/invariance failures. Both passes must pass.
 - **UNCERTAINTY:** report class-wise counts and Wilson 95% intervals. Future confirmation must pass
   nominal sequential inference and method-specific worst-case label-error sensitivity.
+
+## 2026-09-24 — v5 endpoint-focused qualification failed
+
+- **STATUS:** `HELDOUT_QUALIFICATION_FAILED / STUDY_SCORING_PROHIBITED`.
+- **PASS 1:** qualified; 20/20 composite, 34/34 units, 171/187 core, zero false rejection,
+  false acceptance, protected failure, or call failure.
+- **PASS 2:** not qualified; 20/20 composite, 34/34 units, 167/187 core (89.3%), one false
+  rejection among 17 factual answers, zero false acceptances among six unsupported answers, and
+  one protected causal failure.
+- **AUDIT:** Q5H016's material error and causal overclaim were correctly detected. The protected
+  miss arose because the frozen reference called mechanism identification incorrect, whereas the
+  judgment retained the supported saturation/drift mechanism as correct while separately rejecting
+  the unsupported wave identity. This observation does not change v5's result.
+- **RESOURCE USE:** 48 valid calls, no retries; 656,962 input tokens (454,656 cached), 31,141
+  output tokens including 11,524 reasoning tokens, and 779,347 ms latency; cost unavailable.
+- **DISPOSITION:** preserve failure, score no study response, consume no confirmatory alpha, and
+  require fresh cases for any prospectively refined qualification.

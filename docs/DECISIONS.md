@@ -1353,3 +1353,16 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   criterion from observed v4 outputs.
 - Inference effect: retain pass-specific Wilson uncertainty and require method-specific worst-case
   label-error sensitivity to clear the primary delta and guardrails. Alpha ledger remains 0/0.05.
+
+## 2026-09-24 — retain v5 failure despite perfect composite classification
+
+- Decision: keep v5 failed because both passes did not satisfy every frozen gate. Do not rescore
+  Q5H016 or waive the one-field core miss after inspection.
+- Evidence: both passes classified all 20 composite endpoints correctly and made zero false
+  acceptances. Pass 2 nevertheless scored 89.3% core fields and failed the protected causal rule's
+  mechanism-identification conjunct.
+- Scientific finding: the supported mechanism and an added unsupported causal identity are
+  separable. Detecting the latter as material/causal can coexist with correctly identifying the
+  former; a future protected causal test should target endpoint-flipping material/causal predicates
+  directly, but only prospectively on new cases.
+- Effect: no study scoring, no alpha consumption, and no claim that v5 qualified.
