@@ -4358,3 +4358,31 @@
 - **POSTRUN GATE:** require exact v4 proving-ground evaluator truth for layout 007, seed/mechanism/
   expected outcome, obstacle identities, and active state. Retain success or failure once; do not
   substitute a different layout. No downstream diagnosis is authorized unless both gates pass.
+
+## 2026-09-24 — full-bundle land binding qualification v2 result
+
+- **STATUS:** `RUN / RETAINED / QUALIFIED_DEVELOPMENT_PHYSICAL_EVIDENCE`; the single declared
+  `diagnostic-land-binding-dev-007` attempt passed the prelaunch full-bundle/catalog audit and all
+  12 exact post-run scenario-binding checks. Evaluator truth identifies the requested v4 layout,
+  seed 62006, connected-detour mechanism, two active expected obstacles, and catalog hash.
+- **RUNTIME:** NavigateToPose succeeded in 77.760 s after 17.598 m displacement. Robot-visible
+  evidence retains 762 controller commands, 3,841 odometry messages, 3,832 trajectory samples,
+  673 BT transitions, 294 costmap observations, 74 delivered plans, and zero recovery feedback.
+- **INDEPENDENT RESULT:** all 74 retained plan summaries and hashes recomputed with zero mismatch;
+  the first plan was direct at 0.000 m deviation and later plans spanned -1.407 m to +1.231 m, with
+  1.407 m maximum absolute plan deviation. Delivered odometry reached 1.301 m lateral deviation.
+- **BOUNDED DIAGNOSIS:** the checked v2 export supports a successful recorded plan change with an
+  unresolved physical trigger. The final rolling grid remains connected from the action-result
+  pose to the goal but does not cover the complete requested route. Do not claim a particular
+  obstacle caused the change, exact controller consumption, or costmap-to-plan causation.
+- **BOUNDARY/GOVERNANCE:** the fixture was copied byte-identically only after leakage scanning;
+  the full eight-file robot-visible root passes. Evaluator layout/obstacle truth remains physically
+  separate. One attempt, no retry, no model or Luna calls, no confirmatory cluster, and no alpha
+  expenditure. The tracked result is
+  `manifests/data/diagnostic-land-binding-dev-007-qualification-result.json`.
+- **REGRESSION:** 28 focused build/binding/reference/frozen tests and all 250 umbrella-owned
+  `tests/` plus `analysis/` tests pass; governance passes and DVC reports local cache/R2 in sync.
+  An unscoped repository-root pytest invocation was invalid in the host shell because it collected
+  nested ROS/submodule tests without their ROS/Python environments (`crane_explain_ros`, `ament_*`,
+  and CRANE `Tools` imports unavailable); it produced no test verdict and was not retried as a
+  failing suite. The correctly scoped umbrella suite above completed successfully.

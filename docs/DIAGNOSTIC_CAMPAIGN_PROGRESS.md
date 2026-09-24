@@ -123,6 +123,20 @@ The land pair is additionally invalid for its intended catalog comparison: retro
 validation found legacy clear-corridor runs rather than the requested v4 detour/nominal layouts.
 This is now a fail-closed admission error, not merely a negative fault induction.
 
+## Full-bundle land qualification result (2026-09-24)
+
+One different fresh development layout, `diagnostic-development-connected-detour-007`, passed both
+the new prelaunch full-bundle/catalog gate and exact post-run evaluator-truth binding. NavigateToPose
+succeeded; 74 independently recomputed delivered plans changed from an initially direct plan to
+non-direct geometry spanning -1.407 m to +1.231 m, and delivered odometry reached 1.301 m lateral
+deviation. This is one qualified development physical episode and adds no confirmatory cluster,
+model comparison, Luna judgment, or alpha expenditure.
+
+The final rolling costmap did not cover the complete requested route. The supported mechanism is
+therefore a recorded plan change with unresolved physical trigger—not obstacle causation. Future
+language use requires a separate prospective declaration and equal evidence/tool access for P and
+tool-enabled R.
+
 ## Required update for each collection batch
 
 Record, without deleting earlier rows:

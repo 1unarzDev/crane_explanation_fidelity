@@ -1,0 +1,65 @@
+{
+  "schema": "crane-land-scenario-binding-qualification-result/v1",
+  "recorded_utc_date": "2026-09-24",
+  "run_id": "diagnostic-land-binding-dev-007",
+  "status": "QUALIFIED_DEVELOPMENT_PHYSICAL_EVIDENCE",
+  "predeclaration": "research/explanation_fidelity/experiment_configs/development/land-scenario-binding-qualification-v2.json",
+  "admission": {
+    "prelaunch_build_accepted": true,
+    "postrun_scenario_binding_accepted": true,
+    "player_build_audit_sha256": "157240d34c382fa7e3c69a11447e6486acd7e9347218cfe68ef21773a1f09d87",
+    "scenario_binding_audit_sha256": "58d4a8434722e276947c80a5d8e58aa2dde2f4f992ec9f4f99d688a1eea9f690",
+    "truth_sha256": "9cffa38b9f0f067df1551881ab7ccd5a150ff36e30567fbe2dc136c630717a9c"
+  },
+  "scenario": {
+    "environment_id": "crane-land-proving-ground-v4",
+    "layout_id": "diagnostic-development-connected-detour-007",
+    "seed": 62006,
+    "diagnostic_mechanism": "connected-detour",
+    "expected_broad_outcome": "avoidance-and-path-change",
+    "navigation_status": "succeeded"
+  },
+  "robot_visible_measurements": {
+    "action_wall_seconds": 77.75993195699994,
+    "displacement_meters": 17.59812073923452,
+    "controller_commands": 762,
+    "odometry_messages": 3841,
+    "trajectory_samples": 3832,
+    "behavior_tree_transitions": 673,
+    "costmap_observations": 294,
+    "delivered_plan_count": 74,
+    "unique_delivered_plan_count": 74,
+    "first_plan_maximum_lateral_deviation_m": 0.0,
+    "all_plans_minimum_signed_lateral_deviation_m": -1.4065288543701167,
+    "all_plans_maximum_signed_lateral_deviation_m": 1.231144714355466,
+    "all_plans_maximum_absolute_lateral_deviation_m": 1.4065288543701167,
+    "delivered_odometry_maximum_lateral_deviation_m": 1.3011409044265747,
+    "maximum_recovery_feedback": 0
+  },
+  "independent_reference": {
+    "plan_summary_parity_passed": true,
+    "plan_summary_mismatch_count": 0,
+    "retained_grid_connected_from_action_result_to_goal_below_cost_253": true,
+    "retained_grid_covers_complete_requested_route": false,
+    "geometric_reference_sha256": "62e95bbe94b2ecc40483824e72ea184a55146853d5e30d9645b3a666e8b973e9",
+    "plan_reference_sha256": "c3cbbba8d552d4b8a06050c58ed93f2050319e4278c42d5578db3b95750e91b9"
+  },
+  "checked_diagnostic": {
+    "mechanism": "recorded_plan_change_with_unresolved_physical_trigger",
+    "disposition": "supported",
+    "final_text_verification_accepted": true,
+    "fixture_sha256": "134445c6dd5fa6f771c91080acce7715b4f159ed428b381156b64fb4e451cf64",
+    "export_sha256": "57da429c37708e926e6aedfa18680d3ba1d672812a566822815197afea91cd9e"
+  },
+  "bounded_conclusion": "The retained robot-visible record supports a successful delivered-plan change from an initially direct plan to later non-direct plans, accompanied by substantial delivered-odometry deviation. It does not establish which physical obstacle triggered the change, prove that the controller consumed every delivered plan, or establish observation-to-plan causation because the final rolling costmap does not cover the complete requested route.",
+  "retention": {
+    "attempt_count": 1,
+    "retry_performed": false,
+    "substitute_layout_used": false,
+    "model_calls": 0,
+    "luna_calls": 0,
+    "robot_visible_manifest": "manifests/data/diagnostic-land-binding-dev-007.robot-visible.json",
+    "evaluator_only_manifest": "manifests/data/diagnostic-land-binding-dev-007.evaluator-only.json"
+  },
+  "allowed_use": "Qualified development physical/capture evidence and future prospectively declared language-development input only; not confirmation, replication, or method-effect evidence."
+}
