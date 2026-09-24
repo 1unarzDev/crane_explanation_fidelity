@@ -1,0 +1,119 @@
+{
+  "schema": "crane-diagnostic-sequential-protocol-amendment/v2",
+  "amendment_id": "diagnostic-sequential-v2-annotation-amendment-2",
+  "declared_utc": "2026-09-24T15:45:00Z",
+  "status": "PROSPECTIVE_BEFORE_ANY_CONFIRMATORY_CAMPAIGN_OR_LABEL",
+  "base_protocol": "research/explanation_fidelity/experiment_configs/prospective/diagnostic-sequential-protocol-v2.json",
+  "base_protocol_sha256": "54631bd9d826c6ac483423377730de6105494bb2dc25c648d669d04e7b9f3e0b",
+  "prior_annotation_amendment": "research/explanation_fidelity/experiment_configs/prospective/diagnostic-sequential-protocol-v2-annotation-amendment-1.json",
+  "prior_annotation_amendment_sha256": "8b88c235ed67422a54df10ffc777ac3a3d51e99400b511cdb4b68fce0175e597",
+  "applies_to": "future diagnostic confirmation and replication campaigns only",
+  "legacy_and_development_results_unchanged": true,
+  "failed_luna_v4_v5_v6_dispositions_unchanged": true,
+  "confirmatory_responses_inspected_before_amendment": 0,
+  "confirmatory_alpha_consumed_at_amendment": 0.0,
+  "primary_endpoint_unchanged": "required supported mechanism identified and no material unsupported or contradicted assertion",
+  "qualification_profile": {
+    "id": "luna-model-judge-v7-reference-audited",
+    "status": "HELDOUT_QUALIFIED_FOR_PROSPECTIVE_USE",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "passes": 2,
+    "prompt_unchanged_from_failed_v4": true,
+    "freeze": {
+      "path": "research/explanation_fidelity/experiment_configs/prospective/luna-model-judge-v7-reference-audited-freeze.json",
+      "sha256": "63c2f25374c685a321dbe0d75ba803e9803718bb9eec289a2e4dcfecfd98ddc3"
+    },
+    "result": {
+      "path": "manifests/annotation/luna-model-judge-v1-heldout-v7-reference-audited.json",
+      "sha256": "f06e33c87dbe3ec9c973f71762f8bd312249ceee3e4db1cbf661c6c5f623d226"
+    },
+    "prompt": {
+      "path": "research/explanation_fidelity/prompts/luna-model-judge-v4.md",
+      "sha256": "a660135be8dd742f5e9547685b5aa09ff7de45bf7dd6240289f7ff7e41dfd15a"
+    },
+    "output_schema": {
+      "path": "research/explanation_fidelity/schemas/luna-model-judge-output-v1.schema.json",
+      "sha256": "93989e303fdb12e94ae5fe79adad16e46d9587006b7ba6de5c4624096f1b1c3f"
+    },
+    "fresh_denominators_per_pass": {
+      "cases": 24,
+      "composite": 20,
+      "composite_reference_success": 10,
+      "composite_reference_failure": 10,
+      "required_units": 32,
+      "core_semantic_fields": 187,
+      "factual_answers": 17,
+      "unsupported_answers": 6
+    },
+    "observed_per_pass": {
+      "pass_1": {
+        "composite_correct": 20,
+        "required_units_correct": 32,
+        "core_semantic_fields_correct": 176,
+        "false_rejections": 0,
+        "false_acceptances": 0,
+        "protected_failures": 0
+      },
+      "pass_2": {
+        "composite_correct": 20,
+        "required_units_correct": 32,
+        "core_semantic_fields_correct": 179,
+        "false_rejections": 0,
+        "false_acceptances": 0,
+        "protected_failures": 0
+      }
+    }
+  },
+  "qualification_requirements_per_pass": {
+    "composite_accuracy_minimum": 0.95,
+    "required_unit_accuracy_minimum": 0.90,
+    "core_semantic_field_accuracy_minimum": 0.90,
+    "factual_false_rejection_rate_maximum": 0.15,
+    "unsupported_false_acceptance_rate_maximum": 0.05,
+    "operational_false_rejection_target": 0.10,
+    "operational_false_acceptance_target": 0.0,
+    "protected_causal_boundary_injection_invariance_failures_maximum": 0
+  },
+  "study_label_rule": "Both isolated Luna passes are retained. Agreement supplies the operational semantic label. A primary or guardrail disagreement is unresolved unless an independently checkable fact or frozen rule settles it; no additional Luna vote is permitted.",
+  "annotation_error_sensitivity": {
+    "interpretation": "This is a predeclared robustness analysis under finite qualification uncertainty, not proof that the Wilson upper bounds are hard population error limits.",
+    "confidence_method": "pass-specific Wilson score 95 percent intervals; use the larger pass-specific upper bound and round upward to four decimals",
+    "supported_diagnostic_success": {
+      "false_acceptance_upper": 0.3904,
+      "false_rejection_upper": 0.1844,
+      "method_specific_count_rule": "At each registered look, P worst case changes up to ceil(0.3904 * judged P successes) P successes to failures; R best case changes up to ceil(0.1844 * judged R failures) R failures to successes. Use the adversarial paired arrangement that minimizes the P-minus-R lower bound."
+    },
+    "material_error": {
+      "false_acceptance_upper": 0.3904,
+      "false_rejection_upper": 0.1844,
+      "method_specific_count_rule": "At each registered look, P worst case changes up to ceil(0.3904 * judged P non-errors) to errors; R best case changes up to ceil(0.1844 * judged R errors) to non-errors. Use the adversarial paired arrangement that maximizes the P-minus-R upper bound."
+    },
+    "useful_required_unit_coverage": {
+      "unit_error_upper": 0.1072,
+      "source": "zero observed required-unit errors among 32 fresh units; larger pass-specific Wilson upper bound rounded upward",
+      "rule": "For each cluster and method, retain integer covered and total required-unit counts. Decrease P covered units and increase R covered units by ceil(0.1072 * that answer's required-unit total), within [0,total], before the paired coverage bound."
+    },
+    "correct_ambiguous_case_handling": {
+      "composite_error_upper": 0.1612,
+      "source": "zero observed composite errors among 20 fresh composite cases; larger pass-specific Wilson upper bound rounded upward",
+      "rule": "For ambiguous clusters, apply the same adversarial paired binary transformation as the primary endpoint, using 0.1612 for both P observed-correct to incorrect and R observed-incorrect to correct."
+    },
+    "unresolved_rule": "Any unresolved primary or guardrail field prevents success and remains in adversarial sensitivity; it is never removed from a denominator.",
+    "success_rule": "Nominal corrected sequential bounds, every nominal guardrail, and all annotation-sensitivity bounds must pass at the same registered look. Otherwise the result is label-sensitive and not confirmatory success."
+  },
+  "machine_enforcement": {
+    "nonempty_campaigns_require_results_schema": "crane-diagnostic-sequential-results/v2",
+    "nonempty_campaigns_require_this_amendment_hash": true,
+    "nominal_only_success_prohibited": true,
+    "empty_historical_v1_transport_fixture_may_remain": true
+  },
+  "alpha_ledger_unchanged": true,
+  "target_distribution_unchanged": true,
+  "minimum_worthwhile_improvement_unchanged": 0.15,
+  "guardrails_unchanged": {
+    "material_error_degradation_maximum": 0.02,
+    "useful_coverage_degradation_maximum": 0.05,
+    "ambiguity_handling_degradation_maximum": 0.05
+  }
+}

@@ -4,7 +4,7 @@ Protocol: `diagnostic-sequential-protocol-v2`
 
 Declared: 2026-09-23
 
-Status: **REGISTERED FRAMEWORK + ANNOTATION AMENDMENT 1 / NO CAMPAIGN ACTIVE / ZERO ALPHA CONSUMED**
+Status: **REGISTERED FRAMEWORK + V7 ANNOTATION AMENDMENT 2 / NO CAMPAIGN ACTIVE / ZERO ALPHA CONSUMED**
 
 This is the canonical forward-looking statistical contract for new physical-diagnosis campaigns.
 It does not apply to frozen F/G/H data, the nine inspected diagnostic-development clusters, or any
@@ -18,12 +18,15 @@ Machine-readable sources:
 
 - protocol: `research/explanation_fidelity/experiment_configs/prospective/diagnostic-sequential-protocol-v2.json`;
 - cumulative alpha ledger: `manifests/study/diagnostic-sequential-error-ledger-v2.json`;
-- result schema: `research/explanation_fidelity/schemas/diagnostic-sequential-results-v1.schema.json`;
+- nonempty result schema: `research/explanation_fidelity/schemas/diagnostic-sequential-results-v2.schema.json`;
+- historical empty transport schema: `research/explanation_fidelity/schemas/diagnostic-sequential-results-v1.schema.json`;
 - monitor: `analysis/sequential_diagnostic_monitor.py`;
 - retained simulation: `analysis/results/diagnostic-sequential-simulation-v2.json`;
 - progress report: `docs/DIAGNOSTIC_CAMPAIGN_PROGRESS.md`.
 - prospective annotation amendment:
   `research/explanation_fidelity/experiment_configs/prospective/diagnostic-sequential-protocol-v2-annotation-amendment-1.json`.
+- qualified-judge binding and executable-sensitivity amendment:
+  `research/explanation_fidelity/experiment_configs/prospective/diagnostic-sequential-protocol-v2-annotation-amendment-2.json`.
 
 ## Population, unit, and sampling
 
@@ -82,8 +85,10 @@ the prospectively declared diagnosable strata. Semantic labels are Luna-assessed
 frozen judge passes held-out qualification. Deterministically recomputed geometry, motion, timing,
 count, and provenance predicates are reported separately.
 
-Annotation amendment 1 leaves this endpoint unchanged but qualifies the judge on the endpoint
-composite before secondary fields. Each of two fresh isolated passes must reach at least 95%
+Annotation amendments 1 and 2 leave this endpoint unchanged. Amendment 1 registered the endpoint-
+focused qualification design; amendment 2 prospectively binds the reference-audited v7 judge that
+actually passed it. The judge is qualified on the endpoint composite before secondary fields.
+Each of two fresh isolated passes must reach at least 95%
 composite accuracy, 90% unit accuracy, and 90% core-field accuracy; factual false rejection is
 capped at 15%, unsupported-claim false acceptance at 5%, and protected causal, boundary,
 prompt-injection, and meaning-invariance failures at zero. These are operational qualification
@@ -106,7 +111,7 @@ supported information plus withholding the unresolved mechanism. Packet defects 
 `evidence_problem`, not candidate errors. An unresolved required primary or guardrail label blocks
 success and remains in best/worst-case sensitivity rather than disappearing from the denominator.
 
-The amendment adds a validation-error sensitivity alongside nominal labels. Let `U_FA` and `U_FR`
+Amendment 2 adds a validation-error sensitivity alongside nominal labels. Let `U_FA` and `U_FR`
 be the larger of the two pass-specific Wilson 95% upper bounds for qualification false acceptance
 and false rejection. For each method with `S` judged successes in `N` responses, the reported
 worst-case success count is `max(0, S - ceil(U_FA*S))` and the best case is
@@ -115,6 +120,14 @@ guardrails receive the analogous class-specific transformation. Confirmatory suc
 corrected sequential bounds and guardrails to pass under both agreed nominal labels and this frozen
 worst-case transformation. This is deliberately conservative, and the qualification intervals are
 reported rather than treating a small perfect sample as proof of zero judge error.
+
+For v7, the upward-rounded primary/material bounds are `U_FA=0.3904` and `U_FR=0.1844`.
+Required-unit coverage uses the upward-rounded `0.1072` unit-error bound, retaining integer unit
+counts per answer. Ambiguous-case handling uses the `0.1612` composite-error bound. Amendment 2
+defines the method-specific adverse transformations. These are robustness assumptions based on
+qualification uncertainty, not confidence guarantees that the study's unknown judge error rate is
+below each Wilson endpoint. Both nominal and sensitivity gates must pass at the same registered
+look.
 
 ## Anytime-valid analysis and multiplicity
 
@@ -177,9 +190,11 @@ independent references, two isolated passes, deterministic disagreement rules, r
 held-out qualification report. Judge development and held-out cases are disjoint. Luna judge
 versions through v4 retain their failed qualification dispositions. V4-high passed its final
 development gate but failed both fresh held-out passes, and is never retroactively qualified. The
-prospectively authorized v5 profile keeps the v4 model/prompt unchanged, uses 24 new cases, and
-changes only qualification estimands/tolerances as recorded above. Both v5 passes must qualify
-before activation; more study responses cannot repair a failed qualification.
+prospectively authorized v5 and v6 profiles failed and remain ineligible. V7 used 24 fresh,
+reference-audited cases with the same v4 prompt/model/settings and unchanged v5 thresholds. Both
+isolated v7 passes cleared every gate. Only the exact v7 freeze/result hashes in annotation
+amendment 2 are eligible for future scoring; more study responses cannot repair or reinterpret any
+earlier failure.
 
 Reserve fresh configuration identities before discovery. Replication uses byte-identical P/R,
 evidence contract, prompts, tools, thresholds, judge, and analysis hashes; it reuses no discovery

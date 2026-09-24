@@ -1553,3 +1553,19 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   episode or manuscript/analysis work has higher default value than additional prompt iteration
   on this episode. Any verifier repair must be prospective and regression-tested on broader phrase
   variants rather than tuned to this answer alone.
+
+## 2026-09-24 — bind qualified Luna v7 prospectively and require executable error sensitivity
+
+- Decision: future nonempty diagnostic campaigns must bind the exact reference-audited Luna v7
+  freeze/result hashes and pass both nominal sequential gates and predeclared method-specific
+  annotation-error sensitivity. Preserve the original protocol and amendment 1 as history; add
+  amendment 2 rather than editing their registered bytes.
+- Evidence: both fresh v7 passes achieved 20/20 composite, 32/32 required units, zero observed
+  false rejection among 17 factual cases, zero observed false acceptance among six unsupported
+  cases, zero protected failures, and 176/187 and 179/187 core fields. V4--v6 remain failed.
+- Uncertainty: small perfect denominators do not establish zero population error. The upward-
+  rounded Wilson upper bounds are 0.3904 false acceptance, 0.1844 false rejection, 0.1072 unit
+  error, and 0.1612 composite error. They are a conservative sensitivity model, not hard guarantees.
+- Effect: Luna no longer blocks prospective scoring under the exact v7 arm, but it does not make
+  the P/R candidate ready. Nominal-only success is prohibited, no study label exists yet, and alpha
+  remains 0.000/0.050.

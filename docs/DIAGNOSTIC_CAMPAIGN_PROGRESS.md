@@ -18,6 +18,7 @@ Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 | Luna v5 endpoint qualification | FAILED / PRESERVED | P1 passed; P2 missed core by one field and one protected subcheck |
 | Luna v6 endpoint qualification | FAILED / PRESERVED | P1 false rejection 3/17 exceeded 15%; P2 passed every gate |
 | Luna v7 reference-audited qualification | QUALIFIED | Both passes: 20/20 composite, 32/32 units, zero observed FR/FA, all protected gates |
+| V7 amendment/sensitivity enforcement | IMPLEMENTED, TESTED | Nonempty v2 results must bind exact v7 hashes and clear nominal plus adverse sensitivity gates |
 | Replication configurations reserved | NOT_RUN | Reserve before discovery collection |
 | Sequential null simulation | PASS_QA | 20,000 replicates per endpoint; all boundary estimates below component alpha 0.02 |
 | Alternative budget sensitivity | COMPLETE | +0.30 scenarios reach 0.9946/0.9366 joint success by 1,600; this is not observed power |
@@ -168,11 +169,11 @@ Record, without deleting earlier rows:
 
 ## Next action
 
-Do not start confirmation from the v4 language batch. Compare the expected paper value of a narrow,
-prospective information-complete packet repair against implementing/validating a deeper physical
-diagnostic mechanism and collecting genuinely independent clusters; prefer the latter unless the
-packet defect blocks all evaluation. No confirmatory campaign is active and no alpha has been
-consumed.
+Do not start confirmation from the v4 language batch or the one-cluster route-change result. Luna
+v7 no longer blocks prospective annotation, but P/R method/resource hashes, admitted fresh target
+generators, surface mechanism strata, and replication reservations remain unfrozen. Prioritize a
+deeper physical diagnostic and genuinely independent qualified configurations over further wording
+iteration. No confirmatory campaign is active and no alpha has been consumed.
 
 ## Held-out judge result (2026-09-24)
 

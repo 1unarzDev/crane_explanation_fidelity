@@ -23,6 +23,11 @@ DEFAULT_PROTOCOL = (
     "diagnostic-sequential-protocol-v2.json"
 )
 DEFAULT_LEDGER = ROOT / "manifests/study/diagnostic-sequential-error-ledger-v2.json"
+DEFAULT_ANNOTATION_AMENDMENT = (
+    ROOT
+    / "research/explanation_fidelity/experiment_configs/prospective/"
+    "diagnostic-sequential-protocol-v2-annotation-amendment-2.json"
+)
 
 
 def _require_probability(value: Any, label: str) -> float:
@@ -209,6 +214,153 @@ def protocol_sha256(protocol: dict[str, Any]) -> str:
     return hashlib.sha256(canonical).hexdigest()
 
 
+def amendment_sha256(amendment: dict[str, Any]) -> str:
+    canonical = json.dumps(amendment, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    return hashlib.sha256(canonical).hexdigest()
+
+
+def validate_annotation_amendment(
+    amendment: dict[str, Any], protocol: dict[str, Any]
+) -> None:
+    if amendment.get("schema") != "crane-diagnostic-sequential-protocol-amendment/v2":
+        raise ValueError("unsupported annotation amendment")
+    if amendment.get("amendment_id") != "diagnostic-sequential-v2-annotation-amendment-2":
+        raise ValueError("unexpected annotation amendment ID")
+    tracked_hash = hashlib.sha256(DEFAULT_PROTOCOL.read_bytes()).hexdigest()
+    if amendment.get("base_protocol_sha256") != tracked_hash:
+        raise ValueError("annotation amendment names a different base protocol")
+    if float(amendment.get("confirmatory_alpha_consumed_at_amendment", -1)) != 0.0:
+        raise ValueError("annotation amendment was not registered before alpha consumption")
+    profile = amendment["qualification_profile"]
+    if profile.get("id") != "luna-model-judge-v7-reference-audited":
+        raise ValueError("annotation amendment does not bind qualified Luna v7")
+    if profile.get("status") != "HELDOUT_QUALIFIED_FOR_PROSPECTIVE_USE":
+        raise ValueError("annotation amendment judge is not prospectively qualified")
+    for label, artifact in (
+        ("qualification freeze", profile["freeze"]),
+        ("qualification result", profile["result"]),
+        ("judge prompt", profile["prompt"]),
+        ("judge output schema", profile["output_schema"]),
+    ):
+        path = (ROOT / artifact["path"]).resolve()
+        if not path.is_relative_to(ROOT) or not path.is_file():
+            raise ValueError(f"missing pinned {label}")
+        if hashlib.sha256(path.read_bytes()).hexdigest() != artifact["sha256"]:
+            raise ValueError(f"pinned {label} hash differs")
+    thresholds = amendment["qualification_requirements_per_pass"]
+    expected = {
+        "composite_accuracy_minimum": 0.95,
+        "required_unit_accuracy_minimum": 0.90,
+        "core_semantic_field_accuracy_minimum": 0.90,
+        "factual_false_rejection_rate_maximum": 0.15,
+        "unsupported_false_acceptance_rate_maximum": 0.05,
+        "protected_causal_boundary_injection_invariance_failures_maximum": 0,
+    }
+    for key, value in expected.items():
+        if not math.isclose(float(thresholds[key]), float(value), abs_tol=1e-12):
+            raise ValueError(f"annotation qualification threshold changed: {key}")
+    sensitivity = amendment["annotation_error_sensitivity"]
+    for section, field, value in (
+        ("supported_diagnostic_success", "false_acceptance_upper", 0.3904),
+        ("supported_diagnostic_success", "false_rejection_upper", 0.1844),
+        ("material_error", "false_acceptance_upper", 0.3904),
+        ("material_error", "false_rejection_upper", 0.1844),
+        ("useful_required_unit_coverage", "unit_error_upper", 0.1072),
+        ("correct_ambiguous_case_handling", "composite_error_upper", 0.1612),
+    ):
+        if not math.isclose(float(sensitivity[section][field]), value, abs_tol=1e-12):
+            raise ValueError(f"annotation sensitivity changed: {section}.{field}")
+
+
+def _ceil_error(rate: float, count: int) -> int:
+    if count <= 0:
+        return 0
+    return min(count, math.ceil(rate * count - 1e-12))
+
+
+def adversarial_lower_binary(
+    proposed: list[int],
+    baseline: list[int],
+    proposed_success_flip_rate: float,
+    baseline_failure_flip_rate: float,
+) -> tuple[list[float], dict[str, int]]:
+    """Minimize paired P-R under fixed method-specific misclassification budgets.
+
+    Each permitted P success->failure or R failure->success flip decreases the paired
+    difference by one.  For the fixed-fraction product, a 0->-1 change is at least as adverse as
+    a +1->0 change.  The cell construction therefore creates -1 observations first, including
+    double flips of favorable discordances, and then uses any remaining single flips on +1 cells.
+    Products are permutation invariant, so the returned ordering is immaterial.
+    """
+
+    if len(proposed) != len(baseline):
+        raise ValueError("paired binary sequences must have equal length")
+    if any(item not in {0, 1} for item in (*proposed, *baseline)):
+        raise ValueError("annotation sensitivity requires binary labels")
+    cells = {(p, r): 0 for p in (0, 1) for r in (0, 1)}
+    for p, r in zip(proposed, baseline):
+        cells[(p, r)] += 1
+    p_budget = _ceil_error(proposed_success_flip_rate, sum(proposed))
+    r_budget = _ceil_error(baseline_failure_flip_rate, len(baseline) - sum(baseline))
+    p_initial, r_initial = p_budget, r_budget
+
+    # P: (1,1)->(0,1), and R: (0,0)->(0,1), both create -1 directly.
+    take = min(p_budget, cells[(1, 1)])
+    cells[(1, 1)] -= take
+    cells[(0, 1)] += take
+    p_budget -= take
+    take = min(r_budget, cells[(0, 0)])
+    cells[(0, 0)] -= take
+    cells[(0, 1)] += take
+    r_budget -= take
+
+    # Pair remaining flips on (1,0) before single flips, producing -1 instead of 0.
+    take = min(p_budget, r_budget, cells[(1, 0)])
+    cells[(1, 0)] -= take
+    cells[(0, 1)] += take
+    p_budget -= take
+    r_budget -= take
+    take = min(p_budget, cells[(1, 0)])
+    cells[(1, 0)] -= take
+    cells[(0, 0)] += take
+    p_budget -= take
+    take = min(r_budget, cells[(1, 0)])
+    cells[(1, 0)] -= take
+    cells[(1, 1)] += take
+    r_budget -= take
+    if p_budget or r_budget:
+        raise AssertionError("misclassification budget could not be applied")
+
+    values = (
+        [-1.0] * cells[(0, 1)]
+        + [0.0] * (cells[(0, 0)] + cells[(1, 1)])
+        + [1.0] * cells[(1, 0)]
+    )
+    return values, {
+        "proposed_successes_flipped": p_initial,
+        "baseline_failures_flipped": r_initial,
+    }
+
+
+def adversarial_upper_binary(
+    proposed: list[int],
+    baseline: list[int],
+    proposed_zero_flip_rate: float,
+    baseline_one_flip_rate: float,
+) -> tuple[list[float], dict[str, int]]:
+    # Maximize P-R by minimizing (1-P)-(1-R), then negate the paired differences.
+    lower, counts = adversarial_lower_binary(
+        [1 - item for item in proposed],
+        [1 - item for item in baseline],
+        proposed_zero_flip_rate,
+        baseline_one_flip_rate,
+    )
+    return [-item for item in lower], {
+        "proposed_zeros_flipped": counts["proposed_successes_flipped"],
+        "baseline_ones_flipped": counts["baseline_failures_flipped"],
+    }
+
+
 def validate_ledger(ledger: dict[str, Any], protocol: dict[str, Any]) -> None:
     if ledger.get("schema") != "crane-diagnostic-error-ledger/v1":
         raise ValueError("unsupported cumulative error ledger")
@@ -246,11 +398,21 @@ def validate_ledger(ledger: dict[str, Any], protocol: dict[str, Any]) -> None:
 
 
 def analyze(
-    payload: dict[str, Any], protocol: dict[str, Any], ledger: dict[str, Any]
+    payload: dict[str, Any],
+    protocol: dict[str, Any],
+    ledger: dict[str, Any],
+    annotation_amendment: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     validate_protocol(protocol)
     validate_ledger(ledger, protocol)
-    if payload.get("schema") != "crane-diagnostic-sequential-results/v1":
+    annotation_amendment = annotation_amendment or json.loads(
+        DEFAULT_ANNOTATION_AMENDMENT.read_text(encoding="utf-8")
+    )
+    validate_annotation_amendment(annotation_amendment, protocol)
+    if payload.get("schema") not in {
+        "crane-diagnostic-sequential-results/v1",
+        "crane-diagnostic-sequential-results/v2",
+    }:
         raise ValueError("unsupported result schema")
     campaign_id = str(payload["campaign_id"])
     if not campaign_id.startswith("diagnostic-seq-") or "legacy" in campaign_id.lower():
@@ -297,6 +459,15 @@ def analyze(
     rows = payload["clusters"]
     if not isinstance(rows, list):
         raise ValueError("clusters must be a chronological list")
+    if rows:
+        if payload.get("schema") != "crane-diagnostic-sequential-results/v2":
+            raise ValueError("nonempty campaigns require results schema v2")
+        if payload.get("annotation_amendment_id") != annotation_amendment["amendment_id"]:
+            raise ValueError("campaign does not name annotation amendment 2")
+        if payload.get("annotation_amendment_sha256") != amendment_sha256(
+            annotation_amendment
+        ):
+            raise ValueError("campaign annotation amendment hash does not match")
     if rows and (
         any(value == "0" * 64 for value in frozen_hashes.values())
         or payload.get("judge_quality", {}).get("qualification_manifest_sha256") == "0" * 64
@@ -345,6 +516,33 @@ def analyze(
         stratum_is_ambiguous = str(row["stratum_id"]).endswith("-ambiguous")
         if stratum_is_ambiguous != (row["answerability"] == "ambiguous"):
             raise ValueError("answerability disagrees with the frozen target stratum")
+        for field in (
+            "supported_diagnostic_success_p",
+            "supported_diagnostic_success_r",
+            "material_error_p",
+            "material_error_r",
+            "correct_ambiguity_handling_p",
+            "correct_ambiguity_handling_r",
+        ):
+            if row.get(field) not in {0, 1} or isinstance(row.get(field), bool):
+                raise ValueError(f"v2 cluster field must be binary: {field}")
+        total = row.get("required_unit_total")
+        covered_p = row.get("required_units_covered_p")
+        covered_r = row.get("required_units_covered_r")
+        if not isinstance(total, int) or isinstance(total, bool) or total <= 0:
+            raise ValueError("v2 clusters require a positive integer required-unit total")
+        for label, covered, reported in (
+            ("P", covered_p, row["useful_coverage_p"]),
+            ("R", covered_r, row["useful_coverage_r"]),
+        ):
+            if (
+                not isinstance(covered, int)
+                or isinstance(covered, bool)
+                or not 0 <= covered <= total
+            ):
+                raise ValueError(f"{label} required-unit covered count is invalid")
+            if not math.isclose(float(reported), covered / total, abs_tol=1e-12):
+                raise ValueError(f"{label} useful coverage differs from integer unit counts")
 
     primary = [
         paired_difference(
@@ -414,12 +612,97 @@ def analyze(
         ),
     }
 
+    sensitivity_config = annotation_amendment["annotation_error_sensitivity"]
+    primary_rows = [item for item in rows if item["answerability"] == "diagnosable"]
+    primary_sensitive, primary_adjustments = adversarial_lower_binary(
+        [int(item["supported_diagnostic_success_p"]) for item in primary_rows],
+        [int(item["supported_diagnostic_success_r"]) for item in primary_rows],
+        float(
+            sensitivity_config["supported_diagnostic_success"]["false_acceptance_upper"]
+        ),
+        float(
+            sensitivity_config["supported_diagnostic_success"]["false_rejection_upper"]
+        ),
+    )
+    material_sensitive, material_adjustments = adversarial_upper_binary(
+        [int(item["material_error_p"]) for item in rows],
+        [int(item["material_error_r"]) for item in rows],
+        float(sensitivity_config["material_error"]["false_acceptance_upper"]),
+        float(sensitivity_config["material_error"]["false_rejection_upper"]),
+    )
+    unit_error = float(
+        sensitivity_config["useful_required_unit_coverage"]["unit_error_upper"]
+    )
+    coverage_sensitive: list[float] = []
+    coverage_adjustments = {
+        "proposed_covered_units_removed": 0,
+        "baseline_covered_units_added": 0,
+    }
+    for item in rows:
+        total = int(item["required_unit_total"])
+        allowance = _ceil_error(unit_error, total)
+        proposed_covered = int(item["required_units_covered_p"])
+        baseline_covered = int(item["required_units_covered_r"])
+        proposed_removed = min(proposed_covered, allowance)
+        baseline_added = min(total - baseline_covered, allowance)
+        coverage_adjustments["proposed_covered_units_removed"] += proposed_removed
+        coverage_adjustments["baseline_covered_units_added"] += baseline_added
+        coverage_sensitive.append(
+            (proposed_covered - proposed_removed) / total
+            - (baseline_covered + baseline_added) / total
+        )
+    ambiguous_rows = [item for item in rows if item["answerability"] == "ambiguous"]
+    ambiguity_error = float(
+        sensitivity_config["correct_ambiguous_case_handling"]["composite_error_upper"]
+    )
+    ambiguity_sensitive, ambiguity_adjustments = adversarial_lower_binary(
+        [int(item["correct_ambiguity_handling_p"]) for item in ambiguous_rows],
+        [int(item["correct_ambiguity_handling_r"]) for item in ambiguous_rows],
+        ambiguity_error,
+        ambiguity_error,
+    )
+    sensitivity_endpoints = {
+        "supported_diagnostic_success": _endpoint(
+            primary_sensitive,
+            float(margins["minimum_worthwhile_improvement"]),
+            "lower",
+            gate_alpha,
+            bet_fractions,
+        ),
+        "material_error_difference": _endpoint(
+            material_sensitive,
+            float(margins["maximum_material_error_degradation"]),
+            "upper",
+            gate_alpha,
+            bet_fractions,
+        ),
+        "useful_coverage_difference": _endpoint(
+            coverage_sensitive,
+            -float(margins["maximum_useful_coverage_degradation"]),
+            "lower",
+            gate_alpha,
+            bet_fractions,
+        ),
+        "ambiguity_handling_difference": _endpoint(
+            ambiguity_sensitive,
+            -float(margins["maximum_ambiguity_handling_degradation"]),
+            "lower",
+            gate_alpha,
+            bet_fractions,
+        ),
+    }
+
     minimums = protocol["stopping_rule"]
     quality = payload["judge_quality"]
+    qualification = annotation_amendment["qualification_profile"]
     judge_ready = (
         quality.get("heldout_qualification_passed") is True
         and quality.get("frozen_configuration_used") is True
-        and _is_sha256(quality.get("qualification_manifest_sha256"))
+        and quality.get("qualification_id") == qualification["id"]
+        and quality.get("qualification_manifest_sha256")
+        == qualification["result"]["sha256"]
+        and quality.get("qualification_freeze_sha256")
+        == qualification["freeze"]["sha256"]
         and quality.get("two_isolated_passes_completed") is True
         and int(quality.get("unresolved_labels", 0)) == 0
         and int(quality["maximum_allowed_unresolved_labels"]) == 0
@@ -430,6 +713,9 @@ def analyze(
         and len(ambiguity) >= int(minimums["minimum_ambiguous_clusters_before_success"])
     )
     all_bounds_pass = all(item["passed"] for item in endpoints.values())
+    all_sensitivity_bounds_pass = all(
+        item["passed"] for item in sensitivity_endpoints.values()
+    )
 
     replication = payload.get("replication", {})
     replication_ready = True
@@ -442,11 +728,23 @@ def analyze(
 
     status = "CONTINUE"
     if len(rows) >= int(minimums["maximum_total_clusters"]):
-        if all_bounds_pass and enough and judge_ready and replication_ready:
+        if (
+            all_bounds_pass
+            and all_sensitivity_bounds_pass
+            and enough
+            and judge_ready
+            and replication_ready
+        ):
             status = "SUCCESS"
         else:
             status = "STOP_MAXIMUM_WITHOUT_SUCCESS"
-    elif all_bounds_pass and enough and judge_ready and replication_ready:
+    elif (
+        all_bounds_pass
+        and all_sensitivity_bounds_pass
+        and enough
+        and judge_ready
+        and replication_ready
+    ):
         status = "SUCCESS"
     elif len(rows) in set(int(item) for item in minimums["futility_review_cluster_counts"]):
         primary_upper = (
@@ -470,6 +768,19 @@ def analyze(
         "ambiguous_clusters": len(ambiguity),
         "realized_stratum_counts": counts,
         "endpoints": endpoints,
+        "annotation_amendment_id": annotation_amendment["amendment_id"],
+        "annotation_amendment_sha256": amendment_sha256(annotation_amendment),
+        "annotation_sensitivity": {
+            "interpretation": sensitivity_config["interpretation"],
+            "adjustments": {
+                "supported_diagnostic_success": primary_adjustments,
+                "material_error": material_adjustments,
+                "useful_coverage": coverage_adjustments,
+                "ambiguity_handling": ambiguity_adjustments,
+            },
+            "endpoints": sensitivity_endpoints,
+            "all_bounds_pass": all_sensitivity_bounds_pass,
+        },
         "judge_ready": judge_ready,
         "minimum_sample_requirements_met": enough,
         "replication_requirements_met": replication_ready,
@@ -487,12 +798,18 @@ def main() -> int:
     parser.add_argument("results", type=Path)
     parser.add_argument("--protocol", type=Path, default=DEFAULT_PROTOCOL)
     parser.add_argument("--ledger", type=Path, default=DEFAULT_LEDGER)
+    parser.add_argument(
+        "--annotation-amendment", type=Path, default=DEFAULT_ANNOTATION_AMENDMENT
+    )
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
     protocol = json.loads(args.protocol.read_text(encoding="utf-8"))
     ledger = json.loads(args.ledger.read_text(encoding="utf-8"))
+    annotation_amendment = json.loads(
+        args.annotation_amendment.read_text(encoding="utf-8")
+    )
     payload = json.loads(args.results.read_text(encoding="utf-8"))
-    result = analyze(payload, protocol, ledger)
+    result = analyze(payload, protocol, ledger, annotation_amendment)
     rendered = json.dumps(result, indent=2, sort_keys=True) + "\n"
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)

@@ -4435,3 +4435,25 @@
 - **GOVERNANCE:** raw outputs and caches are retained in DVC under
   `diagnostic-language-route-change-development-v1`; the tracked manifest is
   `manifests/model_outputs/diagnostic-language-route-change-development-v1.json`.
+
+## 2026-09-24 — sequential annotation amendment 2 registration
+
+- **STATUS:** `REGISTERED_PROSPECTIVELY / NO CAMPAIGN ACTIVE`; no study response was scored and no
+  alpha was consumed.
+- **BINDING:** exact Luna v7 freeze `63c2f253...8ddc3`, qualification result
+  `f06e33c8...d226`, unchanged v4 prompt `a660135b...d15a`, and unchanged output schema
+  `93989e30...1b1c3f`.
+- **QUALIFICATION:** both passes cleared the fixed v5/v6/v7 point-estimate thresholds on the fresh
+  reference-audited suite. Historical v4, v5, and v6 failures remain unchanged and ineligible.
+- **SENSITIVITY:** future success also requires method-specific adverse transforms using upward-
+  rounded finite-sample bounds: false acceptance 0.3904, false rejection 0.1844, required-unit
+  error 0.1072, and composite error 0.1612. These are robustness assumptions, not proof of bounded
+  population judge error.
+- **FAIL-CLOSED CONTRACT:** future nonempty campaigns must use the v2 result schema, bind amendment
+  2, and pass nominal plus sensitivity gates at the same registered look. The historical empty v1
+  transport fixture remains permitted only as a zero-outcome dry run.
+- **REGRESSION:** the full umbrella-owned `tests/` plus `analysis/` suite passed 255 tests; data
+  governance passed. The retained empty-v1 transport invocation returned `CONTINUE`, false judge
+  readiness, false sensitivity readiness, and `meaningful_advantage_not_established`. Focused
+  exhaustive enumeration verifies the paired adverse binary construction against every permitted
+  flip arrangement for all four-pair binary tables at representative null means.

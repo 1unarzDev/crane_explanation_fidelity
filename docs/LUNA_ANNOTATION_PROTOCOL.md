@@ -1,7 +1,7 @@
 # Luna automated annotation protocol
 
 Protocol ID: `luna-model-judge-v1`  
-Status: **V5 ENDPOINT-FOCUSED QUALIFICATION PREDECLARED — NO STUDY LABELS GENERATED**
+Status: **V7 REFERENCE-AUDITED HELD-OUT QUALIFIED — NO STUDY LABELS GENERATED**
 Declared: 2026-09-23
 
 This document defines a separately named automated evaluation arm. It does not amend or replace
@@ -248,6 +248,13 @@ Qualification uncertainty remains material: the Wilson 95% upper bounds are 18.4
 rejection and 39.0% for false acceptance. Future confirmatory analysis must use the conservatively
 rounded 0.1844 and 0.3904 bounds in the predeclared method-specific label-error sensitivity. A
 nominal method advantage that fails that sensitivity is label-sensitive, not confirmed.
+
+The prospective campaign binding is additive amendment 2, not a rewrite of v4 or amendment 1:
+`diagnostic-sequential-protocol-v2-annotation-amendment-2.json`. It pins the v7 freeze and result
+hashes, all qualification denominators, the unchanged prompt/schema/model configuration, and the
+finite-sample sensitivity bounds. Nonempty campaigns must use the v2 result contract and prove
+both nominal and sensitivity gates; a nominal Luna advantage alone cannot activate a success
+claim. No study response has been scored under v7 as of this amendment.
 
 ## Input boundary and isolation
 

@@ -10,6 +10,12 @@ diagnostic campaigns. It cannot ingest legacy or inspected development data. Its
 schema, and synthetic zero-outcome dry run are linked from
 `docs/SEQUENTIAL_STUDY_PROTOCOL.md`.
 
+Nonempty campaigns use result schema v2 and must bind annotation amendment 2 plus the exact
+qualified Luna v7 freeze/result hashes. The monitor reports nominal anytime bounds and separate
+method-specific adverse annotation-sensitivity bounds for primary success, material errors,
+required-unit coverage, and ambiguity handling. It cannot return `SUCCESS` unless both sets pass
+at the same registered look. The retained empty v1 fixture is transport QA only.
+
 ## F/G/H runtime parity gate
 
 Build the shared runtime presentation and question-specific parity audit before any repository-agent
