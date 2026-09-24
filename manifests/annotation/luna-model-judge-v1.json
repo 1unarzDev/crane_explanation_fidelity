@@ -1,0 +1,141 @@
+{
+  "schema": "crane-automated-annotation-arm-manifest/v1",
+  "arm_id": "luna-model-judge-v1",
+  "declared_utc": "2026-09-23T00:00:00Z",
+  "status": "PREDECLARED_NO_JUDGMENTS_GENERATED",
+  "annotation_origin": "automated",
+  "human_annotation_requirement": {
+    "original_requirement": "two independent human annotators plus distinct human adjudication of disagreements",
+    "preserved": true,
+    "completion_status": "NOT_RUN",
+    "automated_arm_fulfills_requirement": false
+  },
+  "model": {
+    "requested_id": "gpt-6-luna",
+    "substitution_allowed": false,
+    "official_documentation": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+    "provider": "codex-lb",
+    "wire_interface": "responses",
+    "availability_verified_utc": "2026-09-23T00:00:00Z",
+    "provider_inventory_listed": true,
+    "provider_reported_minimum_client": "0.155.0",
+    "observed_client": "codex-cli 0.155.1",
+    "resolved_backend_snapshot": null,
+    "snapshot_limitation": "Provider exposes the requested alias but not a resolved backend revision.",
+    "sampling": {"temperature": null, "seed": null},
+    "development_reasoning_candidates": ["low", "medium", "high"],
+    "frozen_reasoning_effort": null
+  },
+  "protocol": {
+    "path": "docs/LUNA_ANNOTATION_PROTOCOL.md"
+  },
+  "prompt": {
+    "path": "research/explanation_fidelity/prompts/luna-model-judge-v1.md",
+    "sha256": "8c4bb32abc4a71f2d835f27d30bba741555d92af68c04442aa355a142dced08e"
+  },
+  "output_schema": {
+    "path": "research/explanation_fidelity/schemas/luna-model-judge-output-v1.schema.json",
+    "sha256": "6694d4d6ca13c8980ea5cde6834295a80dcc54aea1b0ad095d7d120a85c64d8d"
+  },
+  "rubrics": {
+    "legacy": {
+      "path": "docs/ANNOTATION_GUIDE.md",
+      "sha256": "3677b34a6507a77471abeef974e6085c6874950bb8f94aee4e6aa5af364f2908",
+      "frozen": true
+    },
+    "diagnostic": {
+      "path": "docs/DIAGNOSTIC_ANNOTATION_GUIDE.md",
+      "sha256": "fd836999fb3942eed741c43187aee3002ceddb4a567c4fcc0a9dbff44ce53c0e",
+      "frozen": false,
+      "use": "development diagnostic responses only until a prospective study freeze exists"
+    }
+  },
+  "response_artifacts": {
+    "legacy_study": {
+      "packet": "model_outputs/annotation_packets/sealed-primary-v3/packet.jsonl",
+      "packet_sha256": "2718eec7ca1d0ade8326ee65f7c48ca82e04bfa69c0ce2191b590eac5394e548",
+      "responses": 198,
+      "statistical_clusters": 33,
+      "collection_status": "CLOSED_EARLY_BELOW_FROZEN_MINIMUM",
+      "evaluation_rubric": "legacy"
+    },
+    "legacy_calibration": {
+      "packet": "model_outputs/annotation_packets/legacy-calibration-e043-v1/packet.jsonl",
+      "packet_sha256": "52bc6201ada5881f0c0286e20ec102cbb5a8eaf940af4b35e1e187abd8cf8db0",
+      "responses": 6,
+      "statistical_clusters": 1,
+      "role": "WORKFLOW_SMOKE_TEST_NOT_JUDGE_QUALIFICATION",
+      "evaluation_rubric": "legacy"
+    },
+    "diagnostic_development": {
+      "inventory": "manifests/annotation/diagnostic-development-pilot-v1.json",
+      "inventory_sha256": "3600a1f46272c7e72838708f29653a351987579faeaa91e6fb01bb4d31417ddc",
+      "responses": 52,
+      "packets": 13,
+      "statistical_clusters": 9,
+      "primary_power_planning_clusters": 6,
+      "primary_endpoint_manifest": "research/explanation_fidelity/experiment_configs/development/diagnostic-pilot-primary-endpoints-v1.json",
+      "primary_endpoint_manifest_sha256": "1bc77e14242b6615016e02c1f86c7d92c6ce9f7bb32056d8865d208ae4444f19",
+      "inferential_status": "DEVELOPMENT_ONLY",
+      "evaluation_rubric": "diagnostic"
+    }
+  },
+  "prior_exposure": {
+    "sealed_response_text_inspected_during_collection_or_packaging": true,
+    "verification_or_fallback_metadata_inspected": true,
+    "sealed_semantic_labels_exist": false,
+    "sealed_adjudications_exist": false,
+    "condition_key_join_exists": false,
+    "comparative_effect_estimate_exists": false,
+    "diagnostic_development_answers_and_references_inspected": true
+  },
+  "isolation": {
+    "fresh_request_per_response": true,
+    "conversation_history": false,
+    "model_tools": false,
+    "filesystem_access": false,
+    "condition_key_available_to_judge": false,
+    "evaluator_only_truth_available_to_judge": false,
+    "other_candidate_answers_available_to_judge": false
+  },
+  "passes": {
+    "count": 2,
+    "context_isolated": true,
+    "independent_human_annotators": false,
+    "third_model_vote_allowed": false,
+    "unresolved_disagreement_policy": "retain both passes and mark affected field unresolved unless a deterministic fact or predeclared rule settles it"
+  },
+  "retry_policy": {
+    "maximum_transport_retries": 2,
+    "usable_judgment_retry_allowed": false,
+    "inconvenient_label_retry_allowed": false
+  },
+  "qualification": {
+    "status": "NOT_RUN",
+    "development_and_heldout_required": true,
+    "thresholds_predeclared": true,
+    "maximum_false_acceptance_rate": 0.1,
+    "maximum_false_rejection_rate": 0.1,
+    "small_category_zero_error_below_n": 10,
+    "maximum_overall_unresolved_rate": 0.05,
+    "maximum_category_unresolved_count": 1,
+    "minimum_required_unit_accuracy": 0.95,
+    "required_material_error_invariance": 1.0,
+    "required_disposition_invariance": 1.0,
+    "required_answerability_boundary_accuracy": 1.0,
+    "study_evaluation_allowed": false
+  },
+  "output_roots": {
+    "qualification": "model_outputs/automated_annotations/luna-model-judge-v1/qualification",
+    "study": "model_outputs/automated_annotations/luna-model-judge-v1/study",
+    "coordinator_only_keys": "data/evaluator_only/automated_annotation_keys/luna-model-judge-v1"
+  },
+  "allowed_claim": "Luna-assessed semantic fidelity conditional on the declared qualification suite",
+  "forbidden_claims": [
+    "human annotation complete",
+    "inter-human agreement",
+    "human trust",
+    "independent human adjudication",
+    "33 legacy clusters became 40 through repeated judgments"
+  ]
+}

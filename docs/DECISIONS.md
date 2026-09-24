@@ -1161,3 +1161,22 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   reported and never replaced post-label.
 - RQ impact: this protects Q1's fair P-versus-tool-enabled-R comparison and keeps Q2/Q3 masks and
   controls available as secondary evidence without pretending they increase primary power.
+## 2026-09-23 — use a qualified Luna model-judge as a separate automated arm
+
+- Decision: create `luna-model-judge-v1` for operational semantic evaluation, with two isolated
+  Luna passes, independently constructed answerable-unit references, fail-closed qualification,
+  immutable caching, and unresolved-label sensitivity analysis.
+- Original requirement preserved: `docs/ANNOTATION_GUIDE.md` and the dual-human/adjudication
+  workflow remain unchanged and incomplete. Luna outputs are never stored as human annotations.
+- Evidence motivating it: a full human campaign is not a prerequisite the remaining submission
+  schedule can safely assume. Automated scoring is useful only if its limitations and category-level
+  qualification are explicit.
+- Alternatives considered: block all analysis on two humans plus a third adjudicator; use one
+  unqualified judge pass; treat two model passes as two annotators; or use the project's verifier as
+  gold. The first was removed as a current prerequisite; the latter three are rejected as invalid.
+- Expected impact: enables auditable “Luna-assessed semantic fidelity” analyses while preserving
+  deterministic measurements and the physical-diagnosis redirect. It does not establish human
+  trust, human agreement, or unrestricted semantic accuracy.
+- Revisit condition: add an independently recruited human audit if feasible; restrict or label a
+  category exploratory if held-out Luna qualification misses its predeclared gate.
+- Protocol: `docs/LUNA_ANNOTATION_PROTOCOL.md`.

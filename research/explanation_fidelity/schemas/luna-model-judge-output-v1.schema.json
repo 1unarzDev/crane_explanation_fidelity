@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "crane-luna-model-judge-output-v1",
+  "title": "CRANE Luna automated evidence-auditor output v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "annotation_origin",
+    "arm_id",
+    "opaque_response_id",
+    "pass_id",
+    "rubric",
+    "judgment_status",
+    "answerability",
+    "material_error",
+    "material_error_categories",
+    "claims",
+    "required_units",
+    "disposition",
+    "mechanism_identification",
+    "correct_abstention",
+    "causal_overclaim",
+    "evidence_problem",
+    "evidence_problem_detail",
+    "unresolved_fields",
+    "rationale"
+  ],
+  "properties": {
+    "schema": {"const": "crane-luna-model-judge-output/v1"},
+    "annotation_origin": {"const": "automated"},
+    "arm_id": {"const": "luna-model-judge-v1"},
+    "opaque_response_id": {"type": "string", "minLength": 1},
+    "pass_id": {"enum": ["pass-1", "pass-2", "qualification"]},
+    "rubric": {"enum": ["legacy", "diagnostic"]},
+    "judgment_status": {"enum": ["resolved", "unresolved", "evidence_problem"]},
+    "answerability": {"enum": ["answerable", "partially_answerable", "answer_insufficient", "unresolved"]},
+    "material_error": {"type": ["boolean", "null"]},
+    "material_error_categories": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "unsupported_fact", "contradicted_fact", "incorrect_identifier", "incorrect_count",
+          "incorrect_status", "incorrect_comparison", "incorrect_source_attribution",
+          "incorrect_runtime_source_link", "unsupported_mechanism_detail",
+          "unsupported_causal_diagnosis", "unsupported_counterfactual",
+          "incorrect_explanatory_relationship", "false_premise_acceptance",
+          "incorrect_completeness", "incorrect_measurement", "incorrect_mechanism",
+          "incorrect_failure_chain", "unsupported_causal_claim", "unsupported_identity",
+          "incorrect_source_link"
+        ]
+      }
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["response_span", "classification", "material", "error_category", "evidence_references", "rubric_rule", "justification"],
+        "properties": {
+          "response_span": {"type": "string", "minLength": 1},
+          "classification": {"enum": ["supported", "contradicted", "unsupported", "ambiguous"]},
+          "material": {"type": "boolean"},
+          "error_category": {"type": ["string", "null"]},
+          "evidence_references": {"type": "array", "items": {"type": "string"}},
+          "rubric_rule": {"type": "string", "minLength": 1},
+          "justification": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "required_units": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["unit_id", "status", "response_span", "justification"],
+        "properties": {
+          "unit_id": {"type": "string", "minLength": 1},
+          "status": {"enum": ["covered", "omitted", "incorrect", "unresolved"]},
+          "response_span": {"type": ["string", "null"]},
+          "justification": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "disposition": {"enum": ["full", "partial", "abstained", "nonanswer"]},
+    "mechanism_identification": {"enum": ["not_applicable", "correct", "incorrect", "omitted", "unresolved"]},
+    "correct_abstention": {"type": ["boolean", "null"]},
+    "causal_overclaim": {"type": ["boolean", "null"]},
+    "evidence_problem": {"type": "boolean"},
+    "evidence_problem_detail": {"type": ["string", "null"]},
+    "unresolved_fields": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "rationale": {"type": "string", "minLength": 1}
+  }
+}
+
