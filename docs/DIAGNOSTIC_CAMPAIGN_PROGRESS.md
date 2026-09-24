@@ -57,13 +57,16 @@ The prospectively declared six-configuration candidate-v3 pilot is in progress. 
 exact player and scenario binding passed, Unity recorded zero errors/exceptions, and the independent
 reference matched the checked diagnostic before any model call. Both P and R passed the supported-
 diagnostic-success endpoint without material error in both isolated Luna-v7 passes, so cumulative
-P-minus-R is 0 in each pass. This tie is retained and does not alter the fixed run order or stopping
-rule. The paired no-odometry mask remains unbuilt until the unmasked record is governed.
+P-minus-R was 0 in each pass for the unmasked run. This tie is retained and does not alter the fixed
+run order or stopping rule.
 
-Current v3 readiness state: 1/6 valid independent clusters, 0/1 valid ambiguous variants, zero P
-material errors, and no coverage degradation observed. Readiness is still pending and confirmation
-remains inactive at `0.000/0.050`. The next authorized action is the paired mask governance followed
-by the single predeclared attempt of `cmv3-dev-002`; no run may be replaced based on outcome.
+The paired no-odometry mask is now governed as the required valid ambiguous variant and adds zero
+independent clusters. P fully covered the supported partial answer and correctly withheld a
+discrepancy conclusion in both passes; R was partial and failed the composite endpoint in both.
+Current v3 readiness state: 1/6 valid independent clusters, 1/1 valid ambiguous variants, cumulative
+P-minus-R +1 in each pass, zero P material errors, and no P coverage degradation. Readiness is still
+pending and confirmation remains inactive at `0.000/0.050`. The next authorized action is the
+single predeclared attempt of `cmv3-dev-002`; no run may be replaced based on outcome.
 
 Candidate v2 now has an executable development runner. P is the exact checked deterministic
 diagnostic rendering with zero model calls; R gets the identical blind input, source, diagnostic

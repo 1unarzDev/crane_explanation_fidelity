@@ -1,5 +1,22 @@
 # Experiment Log
 
+## 2026-09-24 — candidate-v3 paired no-odometry variant retained
+
+- **STATUS:** the prospectively declared mask was derived deterministically after governing its
+  unmasked source. It withholds delivered odometry, adds zero independent clusters, and passes the
+  complete-reference audit with 398 command samples, zero odometry samples, three FollowPath
+  attempts, two failures, two source-qualified Wait invocations, and the aborted status.
+- **LUNA:** P gave a full, correctly qualified insufficient-evidence answer with no material error
+  in both isolated passes. R correctly withheld the discrepancy diagnosis but omitted the three-
+  attempt unit in both passes and was partial. Pass 1 used `mechanism_identification=not_applicable`
+  without material error; pass 2 identified the mechanism correctly but found an unsupported
+  implication that physical motion stopped. Both R judgments fail the composite endpoint and are
+  retained without a third vote.
+- **INFERENCE:** the required ambiguous variant is valid and contributes zero clusters. With the
+  run-001 tie, cumulative P-minus-R is +1 in each pass, P has zero material errors, and confirmation
+  remains inactive at `0.000/0.050`. Five fixed physical runs remain; no readiness decision is yet
+  allowed. See `manifests/data/cmv3-dev-001-mask-no-odometry-disposition.json`.
+
 ## 2026-09-24 — candidate-v3 run 001 retained tie
 
 - **STATUS:** the sole predeclared attempt passed the exact player-build and 14-field scenario-

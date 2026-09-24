@@ -1,0 +1,82 @@
+{
+  "schema": "crane-command-motion-candidate-v3-run-disposition/v1",
+  "recorded_date": "2026-09-24",
+  "run_id": "cmv3-dev-001-mask-no-odometry",
+  "cluster_id": "cmv3-land-001",
+  "status": "VALID_PAIRED_AMBIGUOUS_VARIANT_AND_COMPLETE_PAIRED_LUNA_MEASUREMENT",
+  "attempt_count": 0,
+  "retry_performed": false,
+  "derived_from": "cmv3-dev-001",
+  "independent_physical_cluster_increment": 0,
+  "mask": {
+    "mask_id": "missing-independent-odometry-samples-v1",
+    "withheld": [
+      "independently delivered odometry samples"
+    ],
+    "source_episode_available_to_methods": false,
+    "complete_reference_audit_accepted": true
+  },
+  "diagnostic": {
+    "disposition": "insufficient",
+    "delivered_command_sample_count": 398,
+    "independent_odometry_sample_count": 0,
+    "action_status": "aborted",
+    "follow_path_attempts": 3,
+    "follow_path_failures": 2,
+    "source_qualified_wait_invocations": 2
+  },
+  "language_evaluation": {
+    "conditions": [
+      "P",
+      "R"
+    ],
+    "p_model_calls": 0,
+    "r_model_calls": 1,
+    "luna_passes": 2,
+    "luna_calls": 4,
+    "call_failures": 0,
+    "pass_1": {
+      "P_supported_diagnostic_success": true,
+      "R_supported_diagnostic_success": false,
+      "P_material_error": false,
+      "R_material_error": false,
+      "P_disposition": "full",
+      "R_disposition": "partial",
+      "P_correct_abstention": true,
+      "R_correct_abstention": true,
+      "paired_difference": 1
+    },
+    "pass_2": {
+      "P_supported_diagnostic_success": true,
+      "R_supported_diagnostic_success": false,
+      "P_material_error": false,
+      "R_material_error": true,
+      "P_disposition": "full",
+      "R_disposition": "partial",
+      "P_correct_abstention": true,
+      "R_correct_abstention": true,
+      "paired_difference": 1
+    },
+    "judge_inconsistency": "For R, pass 1 used mechanism_identification=not_applicable with no material error; pass 2 used mechanism_identification=correct but found a material unsupported implication that physical motion did not continue. Both passes omitted the required three-attempt detail. All judgments are retained without a third vote."
+  },
+  "hashes": {
+    "masked_export_sha256": "b9e009ea990228ad56d06eb87e3fdd6f72a0bdd623170d0efb37d930d48cbb43",
+    "independent_reference_sha256": "7fbb9c3970be477f9feaf7e9e259c300a18c8083dbeaf5fa0cef87dbcc6d5fc7",
+    "complete_annotation_reference_sha256": "87e3c5911c694e06d5f38c3146edff18ebaf88aaffc7d9cc7caddcb6b370149d",
+    "candidate_result_sha256": "7b0bdce9f641ff2736eff120743731c8b5154ede7fd8bff478c62d7d621caa76",
+    "blinded_packet_sha256": "8ad62357b92c92453212bcfec9de943fb9081ea6379013b25afef017555674a0",
+    "condition_key_sha256": "2591ad31dfa15af978bfc62b32205f707a5e391937f115107c5026deb07f2901",
+    "luna_summary_sha256": "2d7daac3a4a4c097003cf287e8b68cd47c082da4db56ee4d8edf0465b5c11170"
+  },
+  "inference": {
+    "valid_ambiguous_variant_increment": 1,
+    "independent_cluster_increment": 0,
+    "confirmatory_cluster_increment": 0,
+    "confirmatory_alpha_consumed": 0.0,
+    "candidate_readiness": "PENDING_REMAINING_PREDECLARED_RUNS",
+    "valid_independent_clusters": 1,
+    "valid_ambiguous_variants": 1,
+    "cumulative_p_minus_r_successes_pass_1": 1,
+    "cumulative_p_minus_r_successes_pass_2": 1
+  }
+}
