@@ -4237,3 +4237,17 @@
 - **GOVERNANCE:** all result envelopes and raw call caches are hash-inventoried in
   `manifests/model_outputs/diagnostic-language-v4-multifamily-development-v1.json`. Blinded packet
   construction and the two predeclared qualified-Luna passes remain unrun.
+
+## 2026-09-24 — language-v4 multi-family Luna scoring predeclaration
+
+- **STATUS:** `FOUR_PACKETS_BUILT / SCORING_NOT_RUN`; 16 immutable blinded responses, two isolated
+  passes, and 32 planned Luna calls.
+- **REFERENCES:** independent physical computations preceded model generation. Required-unit
+  inventories were assembled afterward but before Luna and disclose that timing; they are
+  robot-visible development references, not human gold and not proposed-verifier verdicts.
+- **ENDPOINTS:** the two command--motion configurations test diagnosable mechanisms but remain one
+  paired statistical cluster. Both land configurations test false-premise handling; the failed
+  detour is a secondary negative-induction case, never a route-change success.
+- **FREEZE:** packet, evaluator-only key, and reference hashes are pinned in
+  `luna-diagnostic-language-v4-multifamily-development-v1-predeclaration.json`. The qualified Luna
+  caller remains byte-identical. No calls, semantic labels, confirmatory alpha, or inference exist.

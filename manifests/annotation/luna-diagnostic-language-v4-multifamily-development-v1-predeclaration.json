@@ -1,0 +1,53 @@
+{
+  "schema": "crane-luna-diagnostic-development-predeclaration/v1",
+  "status": "PREDECLARED_NOT_RUN",
+  "declared_utc": "2026-09-24T14:13:58Z",
+  "purpose": "Two isolated qualified-Luna measurements for each immutable four-condition response packet in the language-v4 multi-family development batch.",
+  "development_only": true,
+  "confirmatory_alpha_consumed": 0.0,
+  "qualified_arm": "luna-model-judge-v1-v7-reference-audited",
+  "model": "gpt-6-luna",
+  "reasoning_effort": "high",
+  "passes": ["pass-1", "pass-2"],
+  "fresh_context_per_response": true,
+  "usable_label_retries": 0,
+  "transport_retry_policy": "No retry is performed by the single-packet runner; retain any call failure.",
+  "qualified_caller": {"path": "analysis/luna_model_judge.py", "sha256": "0e83d22d7e3d284b2430d55240fb26483588e51f0d84df94515702964064b023"},
+  "single_packet_runner": {"path": "analysis/run_luna_single_diagnostic_packet.py", "sha256": "3cca513c8de7b9d78e89bf13eeb7d3adb9ddeaa265c1701403c2c206cceb2cd8"},
+  "packets": [
+    {
+      "episode_id": "diagnostic-language-v4-land-detour-005",
+      "endpoint_role": "secondary_false_premise_failed_induction",
+      "packet": "model_outputs/annotation_packets/diagnostic-language-v4-multifamily-development-v1/diagnostic-language-v4-land-detour-005/packet.jsonl",
+      "packet_sha256": "903ca0081ae20b137a9db5d4d17a7e8bed26249dce89bb47a40a6c57685faafb",
+      "key_sha256": "2ef03657c72be18c6b0ac823545bde72967197c2030dda4da1406102fbab2808",
+      "reference_sha256": "1eea3b768851badf51890e0fcd58d08286b56bfc68df8155ec1e951aca751db1"
+    },
+    {
+      "episode_id": "diagnostic-language-v4-land-nominal-005",
+      "endpoint_role": "secondary_false_premise_nominal",
+      "packet": "model_outputs/annotation_packets/diagnostic-language-v4-multifamily-development-v1/diagnostic-language-v4-land-nominal-005/packet.jsonl",
+      "packet_sha256": "9a6cf547723d90300635efd1821509590204a88a0cb815421c3e104590e711a3",
+      "key_sha256": "6605e44d3ad41339621c042a6f6c3285acd4aee0299ca51bd4d79c34424a2401",
+      "reference_sha256": "75bec5519075e2650605aed26fc9371ae263c93e91d80d155d817b940c38b0d9"
+    },
+    {
+      "episode_id": "diagnostic-language-v4-motion-persistent-003",
+      "endpoint_role": "primary_diagnosable_mechanism",
+      "packet": "model_outputs/annotation_packets/diagnostic-language-v4-multifamily-development-v1/diagnostic-language-v4-motion-persistent-003/packet.jsonl",
+      "packet_sha256": "7b82c1bd44031c7fe908ff914b8e42702238f47fcb7a313bafd385e072f1024f",
+      "key_sha256": "125c8ddaaec561d9410f6538bcd93be76c93ab2a26dc8975a5b5c9bfe0b219fe",
+      "reference_sha256": "00479858067fe9a73a1a7afdd865c70be39d6f14420d628cd155ea076704fbeb"
+    },
+    {
+      "episode_id": "diagnostic-language-v4-motion-compensated-004",
+      "endpoint_role": "primary_diagnosable_mechanism",
+      "packet": "model_outputs/annotation_packets/diagnostic-language-v4-multifamily-development-v1/diagnostic-language-v4-motion-compensated-004/packet.jsonl",
+      "packet_sha256": "a1b3d50957d270fc57f1492009a7adde713f2773645ebf13971a7b56d2e4e03b",
+      "key_sha256": "53fca1c88a24604b024d610b60e45cf703196d4900f084607bcbafac14bff175",
+      "reference_sha256": "5b1b441572990ce89a809d9c9386157449215878dd2322265ad8d0eca4edf67a"
+    }
+  ],
+  "analysis_rule": "Report each pass and disagreement. The two diagnosable command-motion configurations are one statistical cluster and cannot be treated as two independent episodes. The two land configurations are secondary false-premise measurements; the failed detour is never scored as route-change induction.",
+  "stopping": "Run exactly the two declared passes over all four immutable packets, retain every usable judgment and failure, and do not rejudge for agreement."
+}

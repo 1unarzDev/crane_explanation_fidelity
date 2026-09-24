@@ -1,0 +1,35 @@
+{
+  "schema": "crane-diagnostic-development-reference/v2",
+  "visibility": "robot_visible_reference",
+  "reference_status": "DEVELOPMENT_REFERENCE_FROM_RETAINED_ROBOT_VISIBLE_EVIDENCE_AND_INDEPENDENT_GEOMETRIC_COMPUTATION_NOT_HUMAN_GOLD",
+  "episode_id": "diagnostic-language-v4-land-nominal-005",
+  "question_id": "diagnostic-language-v4-land-nominal-005-false-premise",
+  "diagnosable": false,
+  "allowed_evidence_identifiers": [
+    "bt-xml-sha256:e47dadf5bb1228f031e1a7a15d60f0a784c5101ffff9fd11fc36ea7458ce3dce",
+    "costmap-data-sha256:d7bbcf40fc3eab3408703da10119a989cd51e5e25ef25b3582a406eb399f0e98",
+    "fixture-summary-sha256:7e53ae266ab541abb44489b98ffa19dd0e0c2c67c892aff09b58c7669d66ff50",
+    "nav2-config-sha256:e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b"
+  ],
+  "required_units": [
+    "The navigation action succeeded, so the question's failure premise must be rejected.",
+    "The robot made about 17.478 m forward progress with 0.000 m maximum lateral deviation and completed in 69.011 s before the 100 s deadline.",
+    "The retained rolling grid has a connection from the action-result pose to the goal but does not cover the complete requested route, so it cannot establish that the full route was clear.",
+    "No terminal failure chain is recorded, and delivered plans or odometry do not prove exact Nav2/controller consumption.",
+    "Success does not rule out a temporary route constraint or control difficulty; synchronized plans and costmaps are the next check if transient restriction is the question."
+  ],
+  "prohibited_claims": [
+    "A route change or detour occurred.",
+    "The retained grid proves the complete route was clear or globally feasible.",
+    "A physical obstacle caused a plan change or failure.",
+    "The action failed, timed out, or exhausted recovery.",
+    "Delivered plans or odometry were proven consumed by Nav2 or its controller."
+  ],
+  "allowed_evidence": {
+    "action": {"status": "succeeded", "wall_seconds": 69.01066923799226, "deadline_seconds": 100.0, "goal_x_m": 18.0, "action_result_x_m": 17.46763038635254, "configured_xy_goal_tolerance_m": 0.55},
+    "motion_and_plans": {"maximum_forward_progress_m": 17.478374481201172, "maximum_lateral_deviation_m": 0.0, "delivered_plan_count": 66, "unique_delivered_plan_count": 66, "plan_provenance": "delivered-nav-msgs-path-not-proven-controller-consumed"},
+    "independent_geometry": {"cost_threshold": 253, "costmap_payload_available": true, "connected_from_action_result_to_goal_below_threshold": true, "direct_route_fully_covered": false, "substantial_route_deviation_observed": false},
+    "capture_limits": {"terminal_bt_transition_observed": false, "full_route_clearance_established": false, "evaluator_obstacle_identity_available": false, "exact_planner_or_controller_consumption_established": false}
+  },
+  "reference_timing": {"independent_geometry_computed_before_model_outputs": true, "unit_inventory_assembled_after_model_outputs_but_before_luna": true, "human_gold": false}
+}

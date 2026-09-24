@@ -1,0 +1,36 @@
+{
+  "schema": "crane-diagnostic-development-reference/v2",
+  "visibility": "robot_visible_reference",
+  "reference_status": "DEVELOPMENT_REFERENCE_FROM_PRE_MODEL_INDEPENDENT_WINDOW_COMPUTATION_NOT_HUMAN_GOLD",
+  "episode_id": "diagnostic-language-v4-motion-persistent-003",
+  "question_id": "diagnostic-language-v4-motion-persistent-003-mechanism",
+  "diagnosable": true,
+  "allowed_evidence_identifiers": [
+    "bt-policy-sha256:14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+    "events-sha256:cb31ac2480f178cf3eac6e978cd3b71f746bf706457f07158d5c44c425d993e6",
+    "nav2-config-sha256:3851544a099b4d3ed48e54ffd6140c51971d8e9f902a6ff78048a4a71bccf0c3",
+    "runtime-manifest-sha256:04c1014f5fd25183ec5cfbdf99a1c244e44032c178c4f2b9904d178e4523ccfe"
+  ],
+  "required_units": [
+    "A sustained delivered-command/measured-motion discrepancy prevented measured progress and preceded the aborted navigation outcome.",
+    "The calibrated healthy measured planar response is 0.2597 m/s over the 0.0 to 5.0 s window.",
+    "The earliest qualifying discrepancy interval is 11.0 to 21.0 s, lasting 10.0 s with 0.800 m/s median commanded planar speed, 0.000 m/s median measured planar speed, and response ratio 0.0.",
+    "The retained execution sequence records two FollowPath failures, two source-qualified Wait recovery invocations, a third FollowPath attempt, and eventual action abort.",
+    "Delivered command does not prove actuator acceptance and delivered odometry does not prove Nav2 consumption.",
+    "The evidence does not distinguish actuator rejection, mobility constraint, collision or obstruction, slip, or another execution-layer cause.",
+    "The next discriminating check is downstream accepted actuation or actuator feedback together with contact, clearance, and wheel-motion evidence during the discrepancy interval."
+  ],
+  "prohibited_claims": [
+    "A motor failure, wheel slip, collision, obstruction, or evaluator intervention uniquely caused the discrepancy.",
+    "The delivered command was proven accepted or applied by an actuator.",
+    "Nav2 was proven to consume the delivered odometry records.",
+    "Wait or retry physically caused any later motion response.",
+    "The discrepancy interval occurred outside 11.0 to 21.0 s or lasted longer than 10.0 s."
+  ],
+  "allowed_evidence": {
+    "command_motion": {"healthy_interval_s": [0.0, 5.0], "calibrated_healthy_measured_planar_speed_mps": 0.2597399950027466, "discrepancy_interval_s": [11.0, 21.0], "discrepancy_duration_s": 10.0, "median_commanded_planar_speed_mps": 0.8, "median_measured_planar_speed_mps": 0.0, "measured_response_ratio": 0.0, "command_sample_count": 418, "odometry_sample_count": 1992},
+    "execution": {"action_status": "aborted", "follow_path_failure_count": 2, "follow_path_attempt_count": 3, "source_qualified_wait_recovery_count": 2, "bt_policy_sha256": "14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520"},
+    "limits": ["The discrepancy is an execution mechanism, not a unique physical root cause.", "Temporal order does not show that recovery caused a later response.", "Command and odometry delivery do not establish downstream acceptance or internal consumption.", "Evaluator intervention identity is unavailable to methods."]
+  },
+  "reference_timing": {"physical_findings_and_independent_reference_computed_before_model_outputs": true, "unit_inventory_assembled_after_model_outputs_but_before_luna": true, "human_gold": false}
+}
