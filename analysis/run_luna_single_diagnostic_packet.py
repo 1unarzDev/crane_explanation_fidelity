@@ -45,7 +45,14 @@ def run(packet: Path, key_path: Path, output_root: Path) -> dict[str, Any]:
             try:
                 record = caller.call(packet_envelope(row, "diagnostic", pass_id))
             except RuntimeError as error:
-                failures.append({"pass_id": pass_id, "response_id": response_id, "error": str(error)})
+                failures.append(
+                    {
+                        "pass_id": pass_id,
+                        "response_id": response_id,
+                        "condition": conditions[response_id],
+                        "error": str(error),
+                    }
+                )
                 continue
             cache_keys[pass_id][response_id] = record["cache_key"]
             joined.append(
@@ -59,31 +66,48 @@ def run(packet: Path, key_path: Path, output_root: Path) -> dict[str, Any]:
     passes: dict[str, Any] = {}
     for pass_id in ("pass-1", "pass-2"):
         selected = [item for item in joined if item["pass_id"] == pass_id]
-        passes[pass_id] = {
-            condition: {
-                "supported_diagnostic_success": success(
-                    next(item["judgment"] for item in selected if item["condition"] == condition)
-                ),
-                "material_error": next(
-                    item["judgment"]["material_error"]
-                    for item in selected
-                    if item["condition"] == condition
-                ),
-                "mechanism_identification": next(
-                    item["judgment"]["mechanism_identification"]
-                    for item in selected
-                    if item["condition"] == condition
-                ),
+        pass_result: dict[str, Any] = {}
+        for condition in ("R", "P", "T", "N"):
+            matches = [
+                item["judgment"]
+                for item in selected
+                if item["condition"] == condition
+            ]
+            if len(matches) > 1:
+                raise ValueError(f"duplicate {pass_id} judgment for {condition}")
+            if not matches:
+                pass_result[condition] = {
+                    "judgment_status": "missing_due_to_retained_call_failure",
+                    "supported_diagnostic_success": None,
+                    "material_error": None,
+                    "mechanism_identification": None,
+                }
+                continue
+            judgment = matches[0]
+            pass_result[condition] = {
+                "judgment_status": "valid",
+                "supported_diagnostic_success": success(judgment),
+                "material_error": judgment["material_error"],
+                "mechanism_identification": judgment["mechanism_identification"],
             }
+        pass_result["complete"] = all(
+            pass_result[condition]["judgment_status"] == "valid"
             for condition in ("R", "P", "T", "N")
-        }
+        )
+        passes[pass_id] = pass_result
     report = {
         "schema": "crane-luna-single-diagnostic-packet-result/v1",
-        "status": "DEVELOPMENT_ONLY_NOT_CONFIRMATORY",
+        "status": (
+            "DEVELOPMENT_ONLY_NOT_CONFIRMATORY"
+            if not failures
+            else "DEVELOPMENT_ONLY_INCOMPLETE_JUDGE_FAILURE"
+        ),
         "packet_sha256": digest(packet),
         "condition_key_sha256": digest(key_path),
         "passes": passes,
         "call_failures": failures,
+        "valid_judgments": len(joined),
+        "planned_judgments": 8,
         "cache_keys": cache_keys,
         "confirmatory_alpha_consumed": 0.0,
     }
