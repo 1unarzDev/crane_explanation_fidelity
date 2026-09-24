@@ -155,11 +155,13 @@ their own location. Exact repository commits and destinations are recorded in
   historical and the extension's smaller bounds are ineligible; see
   [sequential protocol](docs/SEQUENTIAL_STUDY_PROTOCOL.md)
   and [campaign progress](docs/DIAGNOSTIC_CAMPAIGN_PROGRESS.md).
-- **PHYSICAL/REFERENCE COLLECTION ACTIVE; SEMANTIC CAMPAIGN INACTIVE:** five of the frozen 100
+- **PHYSICAL/REFERENCE COLLECTION ACTIVE; SEMANTIC CAMPAIGN INACTIVE:** six of the frozen 100
   land command--motion confirmation configurations have been attempted once and are valid. Run 003
   preserves useful execution facts while correctly withholding the masked motion mechanism; run
   004 records recovered measured response followed by task abort, and run 005 is a successful
-  nominal `not_triggered` control. No P/R response, Luna label, effect estimate, confidence
+  nominal `not_triggered` control. Run 006 adds another independently configured packet that
+  preserves execution facts while withholding the odometry-dependent mechanism. No P/R response,
+  Luna label, effect estimate, confidence
   sequence, or alpha use exists. Replication remains untouched.
 - **TESTED (SECONDARY-ARM DEVELOPMENT):** the provider-neutral model-call contract now has a
   Claude Code adapter as its first non-GPT instance. A predeclared control rejected Haiku and fixed

@@ -1,5 +1,21 @@
 # Experiment Log
 
+## 2026-09-24 — land command--motion physical cohort run 006
+
+- **STATUS:** `VALID INDEPENDENT AMBIGUITY CLUSTER / 6 OF 100 ATTEMPTED`. The sole fixed attempt
+  passed exact build/binding and the authoritative zero-error Unity-worker gate. The generic
+  expected-success wrapper returned 1 and marked its summary invalid after the action aborted;
+  outcome is not an admission gate, so the run is retained without retry or replacement.
+- **RAW PHYSICAL AUDIT:** the independent unmasked computation supports an 18--28 s discrepancy at
+  0.260 versus 0.000 m/s, followed by abort, three FollowPath attempts, two failures, and two
+  source-qualified Wait invocations.
+- **METHOD PACKET:** the frozen v2 adapter retains 488 command samples and zero odometry samples.
+  Its independently checked disposition is `insufficient`; the action/attempt/recovery sequence
+  remains answerable, while the discrepancy and unique physical cause must be withheld.
+- **BOUNDARY:** no response, Luna call, semantic label, effect estimate, confidence sequence, or
+  alpha use. Governed data are synchronized to R2. Fixed nominal run 007 is next; see
+  `cm-land-conf-006-disposition.json`.
+
 ## 2026-09-24 — land command--motion physical cohort run 005
 
 - **STATUS:** `VALID NOMINAL NOT_TRIGGERED / 5 OF 100 ATTEMPTED`. The sole fixed attempt passed

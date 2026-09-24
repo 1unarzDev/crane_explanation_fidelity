@@ -1,0 +1,130 @@
+{
+  "schema": "crane-land-command-motion-physical-run-disposition/v1",
+  "recorded_date": "2026-09-24",
+  "run_id": "cm-land-conf-006",
+  "cluster_id": "cm-land-conf-cluster-006",
+  "status": "VALID_PHYSICAL_INDEPENDENT_AMBIGUITY_MASK_UNEXPECTED_ABORT_NO_SEMANTIC_RESPONSE",
+  "attempt_count": 1,
+  "retry_or_replacement_performed": false,
+  "contract": {
+    "path": "research/explanation_fidelity/experiment_configs/prospective/land-command-motion-physical-cohort-v1.json",
+    "schedule_sha256": "1f844ad45fa2e5cefb9edcfc5f3420a5a18aff32abda81ec72b7876ce376f215",
+    "cohort": "confirmation-physical",
+    "fixed_order": 6
+  },
+  "scheduled_configuration": {
+    "family": "ambiguous-missing-odometry",
+    "geometry_mechanism": "connected-detour",
+    "layout_id": "diagnostic-command-motion-confirmation-reserve-connected-detour-044",
+    "layout_seed": 91043,
+    "mobility_hold_after_s": 25.0,
+    "mobility_release_after_s": -1.0,
+    "evidence_mask": "remove-delivered-odometry-v1",
+    "ros_domain_id": 150,
+    "ros_tcp_port": 12350
+  },
+  "admission": {
+    "player_build_audit_accepted": true,
+    "scenario_binding_audit_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "unity_worker_result_valid": true,
+    "unity_logged_errors": 0,
+    "unity_logged_exceptions": 0,
+    "recording_valid_under_frozen_worker_result_gate": true,
+    "unexpected_navigation_outcome_retained": true,
+    "independent_reference_completeness_audit_accepted": true
+  },
+  "generic_fixture_expectation": {
+    "expected_navigation_status": "succeeded",
+    "observed_navigation_status": "aborted",
+    "fixture_exit_status": 1,
+    "fixture_summary_valid_flag": false,
+    "disposition": "The generic fixture's expected-success summary is false, but the prospectively frozen admission gate is the valid zero-error Unity worker result. This valid unexpected physical outcome is retained without replacement."
+  },
+  "observed": {
+    "navigation_status": "aborted",
+    "action_wall_seconds": 51.709628568030894,
+    "displacement_meters": 4.524279285053701,
+    "controller_commands": 480,
+    "odometry_messages": 2584,
+    "costmap_observations": 130,
+    "behavior_tree_transitions": 39,
+    "follow_path_attempts": 3,
+    "follow_path_failures": 2,
+    "observed_recovery_invocation_starts": 2,
+    "maximum_recovery_feedback": 2,
+    "behavior_tree_history_status": "not_proven",
+    "exact_recovery_count_eligible": false
+  },
+  "raw_physical_reference": {
+    "disposition": "supported",
+    "healthy_interval_s": [0.0, 5.0],
+    "healthy_commanded_planar_speed_mps": 0.26,
+    "healthy_measured_planar_speed_mps": 0.2597399950027466,
+    "discrepancy_interval_s": [18.0, 28.0],
+    "discrepancy_commanded_planar_speed_mps": 0.26,
+    "discrepancy_measured_planar_speed_mps": 0.0,
+    "response_ratio": 0.0,
+    "command_samples": 488,
+    "odometry_samples": 2350,
+    "follow_path_attempts": 3,
+    "follow_path_failures": 2,
+    "source_qualified_wait_recovery_count": 2
+  },
+  "method_visible_reference": {
+    "mask_adapter": "remove-delivered-odometry-v1",
+    "mask_implementation": "mask-command-motion-evidence-v2",
+    "independent_cluster_increment": 1,
+    "disposition": "insufficient",
+    "command_samples": 488,
+    "odometry_samples": 0,
+    "action_status": "aborted",
+    "follow_path_attempts": 3,
+    "follow_path_failures": 2,
+    "source_qualified_wait_recovery_count": 2,
+    "bounded_conclusion": "The method packet preserves the action abort and bounded execution sequence, but the declared odometry mask removes the decisive motion measurement. It cannot establish a command-to-motion discrepancy or a unique physical cause."
+  },
+  "hashes": {
+    "player_build_audit_sha256": "30ffa7c084924284d6b0c6f0da12672db319d82e122e5b8a3892d6530b5e9964",
+    "scenario_binding_audit_sha256": "6e8ebb157dc019145c5ca15f7d9f2292de51ebddcacdd86ec0ba1d6d6e16f34d",
+    "fixture_summary_sha256": "225f1ae2c37fbb0f6b492c7211d12406881951a20eb7536b7b449788778a8fff",
+    "unity_worker_result_sha256": "7727b476533cf2b19482c6d4f05c11f83bfb24f07d3072ffa1b869adf6ea74dc",
+    "robot_visible_events_sha256": "65f1027956ce3bf93e5791ff0345656627df39b527384673b7c3161de5d34762",
+    "unmasked_diagnostic_sha256": "488b3ebba217058c26d23067584c302bc7278e95db67954b9c9cc54aa6a9e897",
+    "unmasked_independent_reference_sha256": "ef5feff9a84856593ac1a1d704b534b738783db6971e629647e73e65e1f7a5bf",
+    "masked_diagnostic_sha256": "66a40e651e07fc21578374594b56e7c813e8c3aa2528218c64718842bd06fddd",
+    "masked_independent_reference_sha256": "551467d0fc980cfbb47cc698a07661866725842ae42b51175e753cafcfa48dd2",
+    "complete_reference_sha256": "853d39d9a0f511e7e87a4706c68cb51cc5a7800a0fced59859b44162eb42d833",
+    "robot_visible_manifest_sha256": "bcaa0cb19925d15b216105ac1131354829bc6bafa5cba39306219fe3275a628b",
+    "evaluator_only_manifest_sha256": "43ef096d19e2bb50c437f28e104422aa66c66b602586f2e41e55412e2fdcad7e"
+  },
+  "governance": {
+    "robot_visible_manifest": "manifests/data/cm-land-conf-006.robot-visible.json",
+    "evaluator_only_manifest": "manifests/data/cm-land-conf-006.evaluator-only.json",
+    "checkpoint": "manifests/checkpoints/cm-land-conf-006.json",
+    "dvc_remote_status": "IN_SYNC_AFTER_CHECKPOINT"
+  },
+  "semantic_boundary": {
+    "P_responses": 0,
+    "R_responses": 0,
+    "Luna_calls": 0,
+    "semantic_labels": 0,
+    "effect_estimate": null,
+    "confidence_sequence": null,
+    "confirmatory_alpha_consumed": 0.0
+  },
+  "progress": {
+    "fixed_confirmation_physical_clusters": 100,
+    "attempted": 6,
+    "valid": 6,
+    "invalid": 0,
+    "persistent_discrepancy": 0,
+    "transient_compensation": 2,
+    "ambiguous_missing_odometry": 2,
+    "nominal_false_premise": 2,
+    "method_visible_diagnostic_supported": 2,
+    "method_visible_diagnostic_not_triggered": 2,
+    "method_visible_diagnostic_insufficient": 2,
+    "next_fixed_run_id": "cm-land-conf-007"
+  }
+}
