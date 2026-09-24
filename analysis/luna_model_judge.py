@@ -13,6 +13,8 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import shutil
+import subprocess
 import tempfile
 import time
 import tomllib
@@ -532,6 +534,295 @@ class LunaResponsesCaller:
         return record
 
 
+class LunaIsolatedCodexCaller:
+    """Run one ephemeral Codex turn in an OS namespace containing no project files."""
+
+    def __init__(
+        self,
+        *,
+        cache: Path,
+        effort: str,
+        base_url: str | None = None,
+        api_key_env: str = "CODEX_LB_API_KEY",
+        timeout_s: float = 300.0,
+        runner: Any = subprocess.run,
+    ) -> None:
+        self.manifest, self.prompt, self.schema, self.rubrics = load_arm()
+        self.cache = cache
+        self.effort = effort
+        self.base_url = resolve_base_url(base_url)
+        self.api_key_env = api_key_env
+        self.timeout_s = timeout_s
+        self.runner = runner
+        binary = shutil.which("codex")
+        bwrap = shutil.which("bwrap")
+        if binary is None or bwrap is None:
+            raise RuntimeError("isolated judge requires codex and bwrap")
+        self.binary = Path(binary).resolve()
+        self.bwrap = Path(bwrap).resolve()
+        self.cli_version = subprocess.run(
+            [str(self.binary), "--version"], check=True, capture_output=True, text=True
+        ).stdout.strip()
+
+    def _config(self) -> str:
+        return "\n".join(
+            (
+                f'model = "{MODEL_ID}"',
+                'model_provider = "judge-provider"',
+                f'model_reasoning_effort = "{self.effort}"',
+                '[model_providers.judge-provider]',
+                'name = "openai"',
+                f'base_url = "{self.base_url}"',
+                f'env_key = "{self.api_key_env}"',
+                'wire_api = "responses"',
+                'supports_websockets = true',
+                'requires_openai_auth = false',
+                '[shell_environment_policy]',
+                'inherit = "none"',
+                '[features]',
+                'apps = false',
+                'browser_use = false',
+                'computer_use = false',
+                'image_generation = false',
+                'plugins = false',
+                'shell_tool = false',
+                'sleep_tool = false',
+                'unified_exec = false',
+                '',
+            )
+        )
+
+    def _events(self, stdout: str) -> list[dict[str, Any]]:
+        events: list[dict[str, Any]] = []
+        for line in stdout.splitlines():
+            try:
+                event = json.loads(line)
+            except json.JSONDecodeError as error:
+                raise ValueError("Codex CLI emitted non-JSON output") from error
+            if not isinstance(event, dict):
+                raise ValueError("Codex CLI event is not an object")
+            events.append(event)
+        return events
+
+    def call(self, envelope: dict[str, Any]) -> dict[str, Any]:
+        if envelope["rubric"] not in self.rubrics:
+            raise ValueError("unknown rubric")
+        full_prompt = "\n".join(
+            (
+                self.prompt,
+                render_user_input(envelope, self.rubrics[envelope["rubric"]]),
+            )
+        )
+        source_hash = digest_path(Path(__file__))
+        identity = {
+            "adapter": "codex-cli-bwrap-json/v1",
+            "arm_manifest_sha256": digest_path(MANIFEST_PATH),
+            "caller_source_sha256": source_hash,
+            "model": MODEL_ID,
+            "reasoning_effort": self.effort,
+            "cli_version": self.cli_version,
+            "base_url": self.base_url,
+            "prompt_sha256": digest_bytes(full_prompt.encode("utf-8")),
+            "schema_sha256": digest_bytes(canonical_json(self.schema).encode("utf-8")),
+            "envelope": envelope,
+            "filesystem_view": "bwrap-system-runtime-plus-empty-workdir-v1",
+            "tools_policy": "features-disabled-and-any-tool-event-rejected",
+        }
+        cache_key = digest_bytes(canonical_json(identity).encode("utf-8"))
+        cache_path = self.cache / f"{cache_key}.json"
+        if cache_path.exists():
+            cached = load_json(cache_path)
+            if cached.get("request_identity") != identity:
+                raise RuntimeError(f"cache collision at {cache_path}")
+            if cached.get("status") != "VALID":
+                raise RuntimeError(f"cached call is not a valid judgment: {cache_path}")
+            validate_judgment(cached["judgment"], envelope)
+            return cached
+        api_key = os.environ.get(self.api_key_env)
+        if not api_key:
+            raise RuntimeError(f"{self.api_key_env} is not set")
+
+        attempts: list[dict[str, Any]] = []
+        max_attempts = self.manifest["retry_policy"]["maximum_transport_retries"] + 1
+        for attempt in range(1, max_attempts + 1):
+            with tempfile.TemporaryDirectory(prefix="crane-luna-isolated-") as temporary:
+                root = Path(temporary)
+                codex_home = root / "codex-home"
+                work = root / "work"
+                codex_home.mkdir()
+                work.mkdir()
+                (codex_home / "config.toml").write_text(self._config(), encoding="utf-8")
+                host_codex_home = Path(
+                    os.environ.get("CODEX_HOME", str(Path.home() / ".codex"))
+                )
+                model_cache = host_codex_home / "models_cache.json"
+                if model_cache.is_file():
+                    shutil.copyfile(model_cache, codex_home / "models_cache.json")
+                schema_path = work / "schema.json"
+                output_path = work / "judgment.json"
+                schema_path.write_text(json.dumps(self.schema), encoding="utf-8")
+                command = [
+                    str(self.bwrap),
+                    "--unshare-all",
+                    "--share-net",
+                    "--ro-bind",
+                    str(self.binary),
+                    "/codex",
+                    "--ro-bind",
+                    "/usr",
+                    "/usr",
+                    "--symlink",
+                    "usr/bin",
+                    "/bin",
+                    "--ro-bind",
+                    "/etc",
+                    "/etc",
+                    "--proc",
+                    "/proc",
+                    "--dev",
+                    "/dev",
+                    "--tmpfs",
+                    "/tmp",
+                    "--dir",
+                    "/home",
+                    "--dir",
+                    "/home/lunarz",
+                    "--bind",
+                    str(codex_home),
+                    "/home/lunarz/.codex",
+                    "--bind",
+                    str(work),
+                    "/work",
+                    "--chdir",
+                    "/work",
+                    "--clearenv",
+                    "--setenv",
+                    "HOME",
+                    "/home/lunarz",
+                    "--setenv",
+                    "CODEX_HOME",
+                    "/home/lunarz/.codex",
+                    "--setenv",
+                    "PATH",
+                    "/usr/bin:/bin",
+                    "--setenv",
+                    "NO_COLOR",
+                    "1",
+                    "--setenv",
+                    self.api_key_env,
+                    api_key,
+                    "/codex",
+                    "exec",
+                    "--json",
+                    "--ephemeral",
+                    "--ignore-rules",
+                    "--skip-git-repo-check",
+                    "--sandbox",
+                    "read-only",
+                    "--cd",
+                    "/work",
+                    "--model",
+                    MODEL_ID,
+                    "--config",
+                    f'model_reasoning_effort="{self.effort}"',
+                    "--output-schema",
+                    "/work/schema.json",
+                    "--output-last-message",
+                    "/work/judgment.json",
+                    "-",
+                ]
+                started_ns = time.time_ns()
+                try:
+                    completed = self.runner(
+                        command,
+                        input=full_prompt,
+                        text=True,
+                        capture_output=True,
+                        check=False,
+                        timeout=self.timeout_s,
+                    )
+                except subprocess.TimeoutExpired:
+                    attempts.append(
+                        {
+                            "attempt": attempt,
+                            "started_wall_time_ns": started_ns,
+                            "latency_ms": (time.time_ns() - started_ns) / 1_000_000,
+                            "transport_status": "TIMEOUT",
+                        }
+                    )
+                    if attempt < max_attempts:
+                        continue
+                    break
+                attempts.append(
+                    {
+                        "attempt": attempt,
+                        "started_wall_time_ns": started_ns,
+                        "latency_ms": (time.time_ns() - started_ns) / 1_000_000,
+                        "transport_status": f"EXIT_{completed.returncode}",
+                        "stdout_sha256": digest_bytes(completed.stdout.encode("utf-8")),
+                        "stderr_sha256": digest_bytes(completed.stderr.encode("utf-8")),
+                    }
+                )
+                if completed.returncode != 0 or not output_path.is_file():
+                    if attempt < max_attempts:
+                        continue
+                    break
+                try:
+                    events = self._events(completed.stdout)
+                    forbidden_items = []
+                    for event in events:
+                        item = event.get("item")
+                        if event.get("type") == "item.completed" and isinstance(item, dict):
+                            if item.get("type") not in {"agent_message", "reasoning"}:
+                                forbidden_items.append(item.get("type"))
+                    if forbidden_items:
+                        raise ValueError(f"model used or emitted forbidden tool/items: {forbidden_items}")
+                    raw_final = output_path.read_text(encoding="utf-8")
+                    judgment = json.loads(raw_final)
+                    if not isinstance(judgment, dict):
+                        raise ValueError("final judgment is not an object")
+                    validate_judgment(judgment, envelope)
+                except (ValueError, json.JSONDecodeError) as error:
+                    failure = {
+                        "schema": "crane-luna-model-judge-call/v1",
+                        "status": "INVALID_JUDGMENT_NO_RETRY",
+                        "cache_key": cache_key,
+                        "request_identity": identity,
+                        "attempts": attempts,
+                        "raw_final": locals().get("raw_final"),
+                        "validation_error": str(error),
+                    }
+                    atomic_write_json(cache_path, failure)
+                    raise RuntimeError(f"invalid Luna judgment; retained at {cache_path}") from error
+                record = {
+                    "schema": "crane-luna-model-judge-call/v1",
+                    "status": "VALID",
+                    "cache_key": cache_key,
+                    "request_identity": identity,
+                    "model": MODEL_ID,
+                    "reasoning_effort": self.effort,
+                    "temperature": None,
+                    "seed": None,
+                    "tools_exposed": [],
+                    "tool_events_observed": 0,
+                    "attempts": attempts,
+                    "events": events,
+                    "raw_final": raw_final,
+                    "judgment": judgment,
+                }
+                atomic_write_json(cache_path, record)
+                return record
+        failure = {
+            "schema": "crane-luna-model-judge-call/v1",
+            "status": "TRANSPORT_FAILURE",
+            "cache_key": cache_key,
+            "request_identity": identity,
+            "attempts": attempts,
+        }
+        atomic_write_json(cache_path, failure)
+        raise RuntimeError(f"isolated Luna call failed; retained at {cache_path}")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", required=True, type=Path)
@@ -541,6 +832,9 @@ def main() -> None:
     parser.add_argument("--effort", choices=("low", "medium", "high"), required=True)
     parser.add_argument("--cache", required=True, type=Path)
     parser.add_argument("--base-url")
+    parser.add_argument(
+        "--transport", choices=("isolated-codex-cli", "direct-responses"), default="isolated-codex-cli"
+    )
     args = parser.parse_args()
     value = load_json(args.input)
     if args.input_kind == "qualification":
@@ -549,7 +843,8 @@ def main() -> None:
         if args.rubric is None:
             parser.error("--rubric is required for packet input")
         envelope = packet_envelope(value, args.rubric, args.pass_id)
-    record = LunaResponsesCaller(
+    caller_class = LunaIsolatedCodexCaller if args.transport == "isolated-codex-cli" else LunaResponsesCaller
+    record = caller_class(
         cache=args.cache, effort=args.effort, base_url=args.base_url
     ).call(envelope)
     print(json.dumps({"cache_key": record["cache_key"], "status": record["status"]}))

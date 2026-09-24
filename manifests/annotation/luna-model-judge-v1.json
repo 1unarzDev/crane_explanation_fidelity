@@ -15,7 +15,7 @@
     "substitution_allowed": false,
     "official_documentation": "https://developers.openai.com/api/docs/models/gpt-6-luna",
     "provider": "codex-lb",
-    "wire_interface": "responses",
+    "wire_interface": "responses via isolated Codex CLI adapter",
     "availability_verified_utc": "2026-09-23T00:00:00Z",
     "provider_inventory_listed": true,
     "provider_reported_minimum_client": "0.155.0",
@@ -93,7 +93,7 @@
     "fresh_request_per_response": true,
     "conversation_history": false,
     "model_tools": false,
-    "filesystem_access": false,
+    "filesystem_access": "bubblewrap namespace exposes only system runtime, empty temporary workdir, schema, and non-secret minimal provider configuration",
     "condition_key_available_to_judge": false,
     "evaluator_only_truth_available_to_judge": false,
     "other_candidate_answers_available_to_judge": false

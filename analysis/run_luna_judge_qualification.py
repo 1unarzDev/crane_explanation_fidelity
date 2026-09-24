@@ -16,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "analysis"))
 
 from luna_model_judge import (  # noqa: E402
+    LunaIsolatedCodexCaller,
     LunaResponsesCaller,
     atomic_write_json,
     digest_path,
@@ -302,9 +303,11 @@ def run_split(
     pass_id: str,
     output_root: Path,
     base_url: str | None,
+    transport: str,
 ) -> tuple[dict[str, Any], dict[str, str]]:
     cache = output_root / "calls" / effort / pass_id
-    caller = LunaResponsesCaller(cache=cache, effort=effort, base_url=base_url)
+    caller_class = LunaIsolatedCodexCaller if transport == "isolated-codex-cli" else LunaResponsesCaller
+    caller = caller_class(cache=cache, effort=effort, base_url=base_url)
     judgments: dict[str, dict[str, Any]] = {}
     cache_keys: dict[str, str] = {}
     for case in cases:
@@ -320,6 +323,9 @@ def main() -> None:
     parser.add_argument("--output-root", type=Path)
     parser.add_argument("--base-url")
     parser.add_argument("--freeze", type=Path)
+    parser.add_argument(
+        "--transport", choices=("isolated-codex-cli", "direct-responses"), default="isolated-codex-cli"
+    )
     args = parser.parse_args()
     suite = load_suite()
     counts = {
@@ -343,6 +349,7 @@ def main() -> None:
                 pass_id="qualification",
                 output_root=output_root,
                 base_url=args.base_url,
+                transport=args.transport,
             )
         eligible = [effort for effort in ("low", "medium", "high") if summaries[effort]["qualified"]]
         selected = None
@@ -388,6 +395,7 @@ def main() -> None:
             pass_id=pass_id,
             output_root=output_root,
             base_url=args.base_url,
+            transport=args.transport,
         )
     report = {
         "schema": "crane-luna-judge-heldout-qualification/v1",

@@ -49,8 +49,11 @@ disposition remains recorded in `manifests/study/research-redirect-20260922.json
 - Official model page: <https://developers.openai.com/api/docs/models/gpt-6-luna>.
 - Officially documented interface: Responses API with structured outputs; documented reasoning
   efforts are `none`, `low`, `medium`, `high`, `xhigh`, and `max`.
-- Operational provider: the configured `codex-lb` Responses endpoint authenticated by the local
-  environment, accessed without model tools.
+- Operational provider: the configured `codex-lb` Responses endpoint through an ephemeral Codex CLI
+  process inside a bubblewrap namespace. The namespace contains only the system runtime, an empty
+  temporary work directory, the output schema, and non-secret minimal provider configuration. Shell,
+  browser, app, plugin, computer, and unified-exec features are disabled; any observed non-language
+  tool event invalidates the call without retry.
 - Provider inventory check on 2026-09-23: `gpt-6-luna` was listed and required Codex CLI version
   `0.155.0` or newer; installed CLI was `0.155.1`.
 - Snapshot limitation: the provider exposes the alias and capability metadata, not a resolved
