@@ -3807,3 +3807,13 @@
 - **INTERPRETATION:** theorem-to-code correspondence supplies validity; simulation supplies only QA
   and resource planning. Actual campaign planning remains blocked on qualified Luna development
   labels and may set a lower prospective ceiling.
+
+## 2026-09-23 — Luna model-judge v3 development predeclaration
+
+- **STATUS:** `PREDECLARED / NOT_RUN`; no new judge call or held-out case was opened at declaration.
+- **CONFIGURATION:** requested `gpt-6-luna`, medium reasoning only, isolated Codex CLI transport,
+  unchanged v2-amended 14-case development suite and all existing qualification gates.
+- **CHANGE:** prompt v3 adds literal required-unit status semantics only. It does not alter expected
+  labels, evidence, answers, schema, thresholds, or held-out cases.
+- **STOPPING:** one judgment per development case, immutable caching, transport retry only under the
+  existing bounded policy. Pass every gate to freeze; otherwise retain failure and stop.

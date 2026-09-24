@@ -88,6 +88,13 @@ exceeded 94% core-field accuracy, but achieved only 93.75% and 87.5% required-un
 the fixed 95% gate. No effort was frozen, and neither held-out nor study scoring ran. No further
 prompt iteration is authorized by this protocol without another prospective decision entry.
 
+That decision was recorded on 2026-09-23 for one bounded v3 development attempt. V3 does not
+change the suite, expected labels, thresholds, output schema, evidence, or held-out split. It adds
+literal definitions for `covered`, `omitted`, `incorrect`, and `unresolved` required-unit statuses.
+Based on v2 development only, medium is the sole predeclared reasoning configuration; low/high are
+not rerun. If medium fails any existing gate, judge development stops again. If it passes, its
+prompt/model/settings are frozen before the still-untouched two-pass held-out qualification.
+
 ## Input boundary and isolation
 
 Every response is judged in a new API request with no conversation history and no model tools. The

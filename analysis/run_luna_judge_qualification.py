@@ -19,6 +19,7 @@ sys.path.insert(0, str(ROOT / "analysis"))
 from luna_model_judge import (  # noqa: E402
     LunaIsolatedCodexCaller,
     LunaResponsesCaller,
+    MANIFEST_PATH,
     atomic_write_json,
     digest_path,
     qualification_envelope,
@@ -397,10 +398,14 @@ def main() -> None:
         parser.error("--output-root is required for execution")
     output_root = args.output_root.resolve()
     if args.phase == "development":
+        arm_manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
+        candidates = tuple(arm_manifest["model"]["development_reasoning_candidates"])
+        if not candidates or any(item not in {"low", "medium", "high"} for item in candidates):
+            raise ValueError("manifest has invalid development reasoning candidates")
         summaries: dict[str, Any] = {}
         keys: dict[str, Any] = {}
         cases = [case for case in suite["cases"] if case["split"] == "development"]
-        for effort in ("low", "medium", "high"):
+        for effort in candidates:
             summaries[effort], keys[effort] = run_split(
                 cases=cases,
                 effort=effort,
@@ -409,7 +414,7 @@ def main() -> None:
                 base_url=args.base_url,
                 transport=args.transport,
             )
-        eligible = [effort for effort in ("low", "medium", "high") if summaries[effort]["qualified"]]
+        eligible = [effort for effort in candidates if summaries[effort]["qualified"]]
         selected = None
         if eligible:
             selected = sorted(
@@ -417,7 +422,7 @@ def main() -> None:
                 key=lambda effort: (
                     summaries[effort]["false_acceptances"] + summaries[effort]["false_rejections"],
                     summaries[effort]["unexpected_unresolved_rate"],
-                    ("low", "medium", "high").index(effort),
+                    candidates.index(effort),
                 ),
             )[0]
         report = {

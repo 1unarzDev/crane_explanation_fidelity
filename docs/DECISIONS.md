@@ -1246,3 +1246,23 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Limits: simulations are not validity proofs or observed power. The large ceiling is not a sample
   target; a qualified-judge pilot must estimate discordance, invalid-run, and unresolved rates and
   set a campaign-specific ceiling prospectively.
+
+## 2026-09-23 — authorize one bounded Luna v3 development clarification
+
+- Decision: run exactly one new development qualification at medium reasoning with prompt v3,
+  using the unchanged v2-amended suite, expected labels, thresholds, schema, and 14 development
+  cases. Do not inspect or run held-out cases unless this configuration passes every development
+  gate and is frozen first.
+- Evidence: v2 medium had zero false acceptances, zero false rejections, 94.4% core-field accuracy,
+  and 93.75% required-unit accuracy—one status miss. The miss classified an uncommunicated required
+  limitation as `incorrect` because the answer contained a separate unsupported causal claim.
+  Material-error fields already capture that claim; the unit inventory needs a literal distinction
+  between omitted communication and an attempted-but-wrong unit.
+- Change boundary: v3 only defines required-unit statuses. A limitation is `omitted` when absent,
+  even if separate speculation is materially wrong; `incorrect` is reserved for an attempted unit
+  with a wrong value, identity, comparison, sequence, scope, or qualification.
+- Multiplicity and cost: this is judge development, not method confirmation and consumes no study
+  alpha. Medium is fixed from v2 development evidence and is run once; low/high are not resampled.
+  A valid but inconvenient judgment is never retried.
+- Failure rule: any missed existing gate retains v3 as another negative result and blocks held-out
+  and study scoring. Thresholds will not be relaxed.
