@@ -12,7 +12,7 @@ Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 | Candidate P frozen | READY FOR PROSPECTIVE FREEZE, NOT YET FROZEN | Candidate v3 completed its bounded development screen and met every readiness gate; freeze the complete confirmatory design before inspecting any confirmatory response |
 | Strongest baseline R frozen | DESIGNATED, NOT_HASH_FROZEN | Tool-enabled repository-aware R; freeze exact model/prompts/resources with candidate |
 | Information/tool/resource parity | DRAFT | Audit at campaign freeze |
-| Target land strata | DEVELOPMENT_NAMESPACE_QUALIFIED | V5 build/binding smoke passed; live ROS candidate cases and future confirmatory/replication reservation remain required |
+| Target land strata | V6 PLAYER/RUNTIME QUALIFIED; NO CAMPAIGN ACTIVE | One predeclared v6 reserve layout passed exact build and runtime binding; sampler, interventions, masks, exclusions, and analysis remain unfrozen |
 | Target surface strata | NOT_READY | Both geometric and command--motion admission required; do not reallocate weight |
 | Luna historical qualification | V4 HIGH FAILED / PRESERVED | Both fresh passes failed; never retroactively qualified |
 | Luna v5 endpoint qualification | FAILED / PRESERVED | P1 passed; P2 missed core by one field and one protected subcheck |
@@ -96,6 +96,21 @@ Consequently, no Luna-scored candidate-v3 semantic confirmation campaign may act
 diagnostic measurement collection can continue under a separately frozen physical-evidence plan,
 but it cannot be reported as supported-diagnostic-success confirmation. See
 `manifests/annotation/luna-model-judge-v7-endpoint-threat-extension-1-disposition.json`.
+
+## V6 physical-reserve runtime qualification
+
+The sole no-retry `cmv6-physical-qual-001` development attempt passed exact source-pinned player,
+embedded-catalog, scenario-binding, recording, and zero-error Unity checks. Navigation succeeded
+after 17.492 m. The robot-visible record retained commands, odometry, costmap observations, three
+plan messages, and BT transitions; it includes three observed FollowPath starts, two FollowPath
+failures, and two observed recovery invocation starts. BT history completeness was not proven, so
+the attempt does not support an exact recovery count or obstacle-causation claim.
+
+This is infrastructure qualification only. It adds zero confirmatory and replication clusters,
+uses no Luna calls, and consumes no alpha. The 120-layout physical reserve and disjoint 120-layout
+replication reserve remain unsampled. Bulk collection is not authorized until a fixed sampler,
+intervention, evidence-mask, inclusion/exclusion, and analysis contract is prospectively frozen.
+See `manifests/data/cmv6-physical-qual-001-disposition.json`.
 
 ### Retained run-by-run history
 
@@ -300,11 +315,12 @@ Record, without deleting earlier rows:
 
 ## Next action
 
-Do not start confirmation from the v4 language batch or the one-cluster route-change result. Luna
-v7 no longer blocks prospective annotation, but P/R method/resource hashes, admitted fresh target
-generators, surface mechanism strata, and replication reservations remain unfrozen. Prioritize a
-deeper physical diagnostic and genuinely independent qualified configurations over further wording
-iteration. No confirmatory campaign is active and no alpha has been consumed.
+Do not start semantic confirmation: the prospective Luna endpoint-threat extension failed and
+hard-stopped activation. The v6 physical reserve has passed one player/runtime qualification, but
+its sampler, interventions, evidence masks, inclusion/exclusion rules, and analysis are not frozen.
+The next admissible collection step is a prospectively fixed physical/reference contract; those
+runs must not be described as supported-diagnostic-success confirmation. No confirmatory campaign
+is active and no alpha has been consumed.
 
 ## Held-out judge result (2026-09-24)
 

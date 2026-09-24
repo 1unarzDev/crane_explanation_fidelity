@@ -1,5 +1,23 @@
 # Experiment Log
 
+## 2026-09-24 — v6 player/runtime qualification passed and governed
+
+- **STATUS:** `QUALIFIED DEVELOPMENT INFRASTRUCTURE / ONE ATTEMPT / NO CAMPAIGN ACTIVE`. The sole
+  predeclared `cmv6-physical-qual-001` attempt passed the exact source-pinned player audit, all 14
+  scenario-binding checks, zero-error Unity validity, and robot-visible capture admission. The
+  governed DVC payload is synchronized to R2.
+- **OBSERVED:** NavigateToPose succeeded after 85.710 s and 17.492 m. The retained record contains
+  829 controller commands, 4,284 odometry messages, 322 costmap observations, three delivered plan
+  messages, 39 BT transitions, three observed FollowPath starts, two FollowPath failures, and two
+  observed recovery invocation starts.
+- **LIMIT:** BT history is `not_proven`: the topic has no publisher sequence number and the
+  configured terminal transition was not observed. The record therefore cannot support an exact
+  recovery count. It also does not establish obstacle-to-controller causation.
+- **INFERENCE:** this qualifies the clean v6 player/catalog/runtime seam only. It adds no
+  confirmatory or replication cluster, creates no Luna label or semantic comparison, and consumes
+  no alpha. Bulk collection remains prohibited until a fixed sampler/intervention/evidence-mask/
+  exclusion contract is frozen. See `cmv6-physical-qual-001-disposition.json`.
+
 ## 2026-09-24 — predeclare v6 player/runtime qualification
 
 - **STATUS:** `PREDECLARED / NOT_RUN`. One no-retry development attempt will select

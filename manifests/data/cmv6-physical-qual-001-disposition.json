@@ -1,0 +1,85 @@
+{
+  "schema": "crane-command-motion-v6-runtime-qualification-disposition/v1",
+  "recorded_date": "2026-09-24",
+  "run_id": "cmv6-physical-qual-001",
+  "status": "QUALIFIED_DEVELOPMENT_PLAYER_CATALOG_AND_RUNTIME_BINDING",
+  "attempt_count": 1,
+  "retry_performed": false,
+  "predeclaration": "research/explanation_fidelity/experiment_configs/development/command-motion-v6-player-runtime-qualification-v1.json",
+  "admission": {
+    "player_build_audit_accepted": true,
+    "player_source_commit_proven": true,
+    "scenario_binding_audit_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "unity_result_valid": true,
+    "unity_logged_errors": 0,
+    "unity_logged_exceptions": 0,
+    "fixture_exit_status": 0,
+    "recording_valid": true,
+    "robot_visible_capture_manifest_present": true,
+    "robot_visible_runtime_manifest_present": true
+  },
+  "scenario": {
+    "catalog_id": "v6",
+    "catalog_sha256": "c9cee3922fa1cc17f8237fde12d0a50ee6496649142f3cb14a4c6491fd72a0eb",
+    "environment_id": "crane-land-proving-ground-v6",
+    "layout_id": "diagnostic-command-motion-confirmation-reserve-connected-detour-001",
+    "layout_seed": 91000,
+    "diagnostic_mechanism": "connected-detour",
+    "mobility_hold_after_seconds": -1.0,
+    "mobility_release_after_seconds": -1.0
+  },
+  "observed": {
+    "navigation_status": "succeeded",
+    "action_wall_seconds": 85.7102886599605,
+    "displacement_meters": 17.4921859837874,
+    "controller_commands": 829,
+    "odometry_messages": 4284,
+    "trajectory_samples": 85,
+    "costmap_observations": 322,
+    "maximum_occupied_costmap_cells": 10565,
+    "delivered_plan_messages": 3,
+    "behavior_tree_transitions": 39,
+    "follow_path_starts": 3,
+    "follow_path_failures": 2,
+    "observed_recovery_invocation_starts": 2,
+    "maximum_recovery_feedback": 2
+  },
+  "behavior_tree_completeness": {
+    "exact_recovery_count_eligible": false,
+    "history_status": "not_proven",
+    "terminal_transition_observed": false,
+    "message_loss_detectable": false,
+    "limitations": [
+      "BehaviorTreeLog has no publisher sequence number, so subscriber-side message loss cannot be excluded.",
+      "The configured terminal NavigateRecovery transition was not observed after goal acceptance."
+    ]
+  },
+  "hashes": {
+    "player_build_audit_sha256": "30ffa7c084924284d6b0c6f0da12672db319d82e122e5b8a3892d6530b5e9964",
+    "scenario_binding_audit_sha256": "4b43aa40d079674d20795d86d708ddb9c99fd40f32534b6a3a6dfa267e021fc5",
+    "fixture_summary_sha256": "8ff9c65ae9609ab360c580afd39cb24b5867ea6ebfb8f72054074c3eab4756d7",
+    "fixture_exit_status_sha256": "fc3a4f735a8ab592b70487420f60654037eedd60293c2fba4384511d73b28c8c",
+    "unity_result_sha256": "a2fe2456ff3c6651e4f4fb0d5a0933f835027769fbaa559e90242310ad8793f5",
+    "evaluator_truth_sha256": "456d88ae95d7e10226672e5d0c54a69846163a21b2a97be3822904cf795111cb",
+    "robot_visible_events_sha256": "e5719ad52549a6d5a32a74076465a8f2119a2633dff9ac12ddde8e54df2b9001",
+    "robot_visible_manifest_sha256": "12ef4e44141cdf74636e8f69051d1964a0834d120dc5c0da9e5d1bae5b0b34e9",
+    "evaluator_only_manifest_sha256": "dbdaff35aa908d6b064ccd3536d807a23d7177463f0838dadadba60c99c09164"
+  },
+  "governance": {
+    "robot_visible_manifest": "manifests/data/cmv6-physical-qual-001.robot-visible.json",
+    "evaluator_only_manifest": "manifests/data/cmv6-physical-qual-001.evaluator-only.json",
+    "checkpoint": "manifests/checkpoints/cmv6-physical-qual-001.json",
+    "dvc_remote_status": "IN_SYNC_AFTER_CHECKPOINT"
+  },
+  "bounded_conclusion": "The sole predeclared attempt proves that the source-pinned Unity player embedded and selected the exact v6 catalog entry and emitted matching evaluator binding truth while the shared fixture retained robot-visible commands, odometry, costmap observations, plans, and behavior-tree transitions. The successful action included three observed FollowPath starts, two FollowPath failures, and two observed recovery invocation starts. The retained stream does not prove an exact recovery count or a causal relationship between any obstacle observation and the controller behavior.",
+  "inference": {
+    "independent_confirmatory_cluster_increment": 0,
+    "replication_cluster_increment": 0,
+    "luna_calls": 0,
+    "semantic_method_comparison": false,
+    "confirmatory_alpha_consumed": 0.0,
+    "campaign_status": "NOT_ACTIVE",
+    "required_next_contract": "Freeze a fixed sampler, intervention, evidence-mask, inclusion/exclusion, and analysis contract before any bulk physical cohort collection."
+  }
+}
