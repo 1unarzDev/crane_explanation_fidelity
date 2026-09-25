@@ -158,7 +158,7 @@ their own location. Exact repository commits and destinations are recorded in
   remain historical and failed-cycle bounds are ineligible; see
   [sequential protocol](docs/SEQUENTIAL_STUDY_PROTOCOL.md)
   and [campaign progress](docs/DIAGNOSTIC_CAMPAIGN_PROGRESS.md).
-- **PHYSICAL/REFERENCE COLLECTION ACTIVE; SEMANTIC CAMPAIGN INACTIVE:** twenty-seven of the frozen 100
+- **PHYSICAL/REFERENCE COLLECTION ACTIVE; SEMANTIC CAMPAIGN INACTIVE:** twenty-eight of the frozen 100
   land command--motion confirmation configurations have been attempted once and are valid. Run 003
   preserves useful execution facts while correctly withholding the masked motion mechanism; run
   004 records recovered measured response followed by task abort, and run 005 is a successful
@@ -183,7 +183,9 @@ their own location. Exact repository commits and destinations are recorded in
   from 22--23 s, and eventual action success. Run 025 adds a connected-detour discrepancy from
   11--21 s followed by action abort. Run 026 adds a connected-detour discrepancy from 18--28 s,
   measured-response recovery from 30--31 s, and eventual action success. Run 027 adds a
-  connected-detour persistent discrepancy from 11--21 s followed by action abort.
+  connected-detour persistent discrepancy from 11--21 s followed by action abort. Run 028 adds an
+  independently configured missing-odometry case: its method-visible packet preserves the abort
+  sequence but correctly withholds the motion mechanism.
   No P/R response, Luna label, effect estimate, confidence sequence, or
   alpha use exists. Replication remains untouched.
 - **TESTED (SECONDARY-ARM DEVELOPMENT):** the provider-neutral model-call contract now has a

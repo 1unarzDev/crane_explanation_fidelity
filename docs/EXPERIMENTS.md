@@ -1,5 +1,20 @@
 # Experiment Log
 
+## 2026-09-25 — land command--motion physical cohort run 028
+
+- **STATUS:** `VALID INDEPENDENT AMBIGUITY CLUSTER / 28 OF 100 ATTEMPTED`. Exact build/binding,
+  zero-error Unity-worker recording, v2 mask, independent ambiguity reference, and complete-reference
+  audit passed. The scheduled persistent case aborted after 51.610 s and 4.576 m; this valid
+  unexpected outcome is retained despite the generic fixture's success expectation.
+- **RAW PHYSICAL AUDIT:** with odometry, independent computation supports a 19--28 s discrepancy at
+  0.260 versus 0.000 m/s, followed by abort, three FollowPath attempts, two failures, and two
+  source-qualified Wait invocations.
+- **METHOD PACKET:** the sole future method-visible export contains 487 command samples and zero
+  odometry samples. Its independently checked disposition is `insufficient`; the execution sequence
+  remains answerable, but the discrepancy and unique physical cause must be withheld.
+- **SEMANTIC BOUNDARY:** no response, label, effect, interval, or alpha use. Governed data are
+  synchronized to R2; fixed ambiguity run 029 is next.
+
 ## 2026-09-25 — land command--motion physical cohort run 027
 
 - **STATUS:** `VALID PERSISTENT DISCREPANCY / ABORT / 27 OF 100 ATTEMPTED`. The sole fixed attempt
