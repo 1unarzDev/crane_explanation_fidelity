@@ -454,9 +454,9 @@ def main() -> int:
 
     physical_dispositions = [
         load(f"manifests/data/cm-land-conf-{index:03d}-disposition.json")
-        for index in range(1, 38)
+        for index in range(1, 39)
     ]
-    require_equal(len(physical_dispositions), 37, "physical cohort attempted configurations")
+    require_equal(len(physical_dispositions), 38, "physical cohort attempted configurations")
     require_equal(
         sum(
             item["admission"].get(
@@ -465,7 +465,7 @@ def main() -> int:
             )
             for item in physical_dispositions
         ),
-        36,
+        37,
         "physical cohort valid configurations",
     )
     latest_physical = physical_dispositions[-1]
@@ -473,6 +473,7 @@ def main() -> int:
     run_034_physical = physical_dispositions[33]
     run_035_physical = physical_dispositions[34]
     run_036_physical = physical_dispositions[35]
+    run_037_physical = physical_dispositions[36]
     run_011_physical = physical_dispositions[10]
     run_026_physical = physical_dispositions[25]
     run_027_physical = physical_dispositions[26]
@@ -507,25 +508,35 @@ def main() -> int:
     require_equal(pointer(run_036_physical, "/observed/navigation_status"), "succeeded", "run 036 action status")
     require_equal(pointer(run_036_physical, "/observed/follow_path_failures"), 0, "run 036 FollowPath failures")
     require_equal(pointer(run_036_physical, "/observed/observed_recovery_invocation_starts"), 0, "run 036 observed recoveries")
-    require_equal(pointer(latest_physical, "/contract/fixed_order"), 37, "run 037 fixed order")
-    require_equal(pointer(latest_physical, "/diagnostic/independent_disposition"), "supported", "run 037 independent disposition")
-    require_equal(pointer(latest_physical, "/observed/navigation_status"), "succeeded", "run 037 action status")
-    require_equal(pointer(latest_physical, "/observed/follow_path_failures"), 1, "run 037 FollowPath failures")
-    require_equal(pointer(latest_physical, "/observed/observed_recovery_invocation_starts"), 1, "run 037 observed recoveries")
-    require_close(pointer(latest_physical, "/diagnostic/discrepancy_interval_s/0"), 10.0, 0.0, "run 037 discrepancy start")
-    require_close(pointer(latest_physical, "/diagnostic/discrepancy_interval_s/1"), 22.0, 0.0, "run 037 discrepancy end")
-    require_close(pointer(latest_physical, "/diagnostic/response_recovery_interval_s/0"), 22.0, 0.0, "run 037 recovery start")
-    require_close(pointer(latest_physical, "/diagnostic/response_recovery_interval_s/1"), 23.0, 0.0, "run 037 recovery end")
-    require_close(pointer(latest_physical, "/diagnostic/recovered_measured_planar_speed_mps"), 0.2597399950027466, 0.0, "run 037 recovered speed")
-    require_equal(pointer(latest_physical, "/progress/attempted"), 37, "physical attempted count")
-    require_equal(pointer(latest_physical, "/progress/valid"), 36, "physical valid count")
+    require_equal(pointer(run_037_physical, "/contract/fixed_order"), 37, "run 037 fixed order")
+    require_equal(pointer(run_037_physical, "/diagnostic/independent_disposition"), "supported", "run 037 independent disposition")
+    require_equal(pointer(run_037_physical, "/observed/navigation_status"), "succeeded", "run 037 action status")
+    require_equal(pointer(run_037_physical, "/observed/follow_path_failures"), 1, "run 037 FollowPath failures")
+    require_equal(pointer(run_037_physical, "/observed/observed_recovery_invocation_starts"), 1, "run 037 observed recoveries")
+    require_close(pointer(run_037_physical, "/diagnostic/discrepancy_interval_s/0"), 10.0, 0.0, "run 037 discrepancy start")
+    require_close(pointer(run_037_physical, "/diagnostic/discrepancy_interval_s/1"), 22.0, 0.0, "run 037 discrepancy end")
+    require_close(pointer(run_037_physical, "/diagnostic/response_recovery_interval_s/0"), 22.0, 0.0, "run 037 recovery start")
+    require_close(pointer(run_037_physical, "/diagnostic/response_recovery_interval_s/1"), 23.0, 0.0, "run 037 recovery end")
+    require_close(pointer(run_037_physical, "/diagnostic/recovered_measured_planar_speed_mps"), 0.2597399950027466, 0.0, "run 037 recovered speed")
+    require_equal(pointer(latest_physical, "/contract/fixed_order"), 38, "run 038 fixed order")
+    require_equal(pointer(latest_physical, "/diagnostic/independent_disposition"), "supported", "run 038 independent disposition")
+    require_equal(pointer(latest_physical, "/observed/navigation_status"), "succeeded", "run 038 action status")
+    require_equal(pointer(latest_physical, "/observed/follow_path_failures"), 1, "run 038 FollowPath failures")
+    require_equal(pointer(latest_physical, "/observed/observed_recovery_invocation_starts"), 1, "run 038 observed recoveries")
+    require_close(pointer(latest_physical, "/diagnostic/discrepancy_interval_s/0"), 19.0, 0.0, "run 038 discrepancy start")
+    require_close(pointer(latest_physical, "/diagnostic/discrepancy_interval_s/1"), 29.0, 0.0, "run 038 discrepancy end")
+    require_close(pointer(latest_physical, "/diagnostic/response_recovery_interval_s/0"), 31.0, 0.0, "run 038 recovery start")
+    require_close(pointer(latest_physical, "/diagnostic/response_recovery_interval_s/1"), 32.0, 0.0, "run 038 recovery end")
+    require_close(pointer(latest_physical, "/diagnostic/recovered_measured_planar_speed_mps"), 0.2597399950027466, 0.0, "run 038 recovered speed")
+    require_equal(pointer(latest_physical, "/progress/attempted"), 38, "physical attempted count")
+    require_equal(pointer(latest_physical, "/progress/valid"), 37, "physical valid count")
     require_equal(pointer(latest_physical, "/progress/invalid"), 1, "physical invalid count")
-    require_equal(pointer(latest_physical, "/progress/method_visible_diagnostic_supported"), 24, "supported diagnostic count")
+    require_equal(pointer(latest_physical, "/progress/method_visible_diagnostic_supported"), 25, "supported diagnostic count")
     require_equal(pointer(latest_physical, "/progress/method_visible_diagnostic_not_triggered"), 7, "not-triggered diagnostic count")
     require_equal(pointer(latest_physical, "/progress/method_visible_diagnostic_insufficient"), 5, "insufficient diagnostic count")
-    require_equal(pointer(latest_physical, "/progress/next_fixed_run_id"), "cm-land-conf-038", "next physical run")
+    require_equal(pointer(latest_physical, "/progress/next_fixed_run_id"), "cm-land-conf-039", "next physical run")
     require_close(pointer(latest_physical, "/semantic_boundary/confirmatory_alpha_consumed"), 0.0, 0.0, "physical cohort alpha")
-    checked_assertions += 51
+    checked_assertions += 61
 
     luna_v8 = load(
         "manifests/annotation/luna-model-judge-v1-heldout-v8-endpoint-first.json"
@@ -591,7 +602,7 @@ def main() -> int:
             "Primary planning subset & 6 clusters",
             "P--R: 0.0 in both passes",
             "Endpoint-first v8 & 48/48 composite in both passes",
-            "Physical cohort & 37 attempts; 36 valid, 1 invalid",
+            "Physical cohort & 38 attempts; 37 valid, 1 invalid",
         ]
     )
 
