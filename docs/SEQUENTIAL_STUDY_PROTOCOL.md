@@ -237,8 +237,8 @@ separate allocations.
 ## Activation and retention
 
 No campaign is active. The separately frozen 100-configuration land schedule is physical/reference
-collection only; twenty-two configurations have been attempted and valid, with no P/R response or Luna
-label. Activation requires frozen P/R and resource-parity hashes, a semantically valid evaluation
+collection only; twenty-three configurations have been attempted and valid, with no P/R response or
+Luna label. Activation requires frozen P/R and resource-parity hashes, a semantically valid evaluation
 arm, admitted target generators, one frozen question/reference/sufficiency label per
 cluster, a fixed sampler/exclusion contract, reserved replication configurations, and successful
 schema/monitor dry runs. Every candidate—including failed and futile versions—retains its
