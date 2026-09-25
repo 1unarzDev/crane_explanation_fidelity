@@ -51,8 +51,8 @@ the chosen allocation must be atomically bound to that campaign and cannot later
 No effect estimate, confidence sequence, guardrail result, or replication conclusion exists.
 Legacy and the eleven diagnostic-development clusters are intentionally absent from these counts.
 
-The separate physical/reference cohort has attempted 35/100 fixed confirmation-side configurations:
-34 valid, 1 invalid. The method-visible diagnostic dispositions are twenty-three supported, six
+The separate physical/reference cohort has attempted 36/100 fixed confirmation-side configurations:
+35 valid, 1 invalid. The method-visible diagnostic dispositions are twenty-three supported, seven
 `not_triggered`, and five `insufficient`. Run 004 is a valid unexpected transient case: measured
 response recovered after the discrepancy, but the action later aborted, preventing the study from
 equating compensation with task success. Run 005 is a successful no-intervention nominal control
@@ -104,7 +104,10 @@ run 035, which passed every admission and completeness gate. Proposed and indepe
 agree on a connected-detour discrepancy from 11--21 s at 0.260 versus 0.000 m/s, measured-response
 recovery from 23--24 s to 0.2298 m/s, and eventual action success after 92.260 s and 17.505 m. It
 adds one valid transient-compensation cluster but no response, semantic label, effect estimate, or
-alpha use. The next immutable schedule item is `cm-land-conf-036`.
+alpha use. Run 036 then passed every gate, succeeded after 69.010 s and 17.477 m, and independently returned
+`not_triggered` with one FollowPath attempt and no recorded failure or Wait invocation. It adds one
+valid nominal control and no semantic measurement or alpha. The next immutable schedule item is
+`cm-land-conf-037`.
 
 ## Frozen land command--motion physical cohort
 

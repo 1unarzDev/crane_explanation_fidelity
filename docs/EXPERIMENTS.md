@@ -1,5 +1,18 @@
 # Experiment Log
 
+## 2026-09-24 — land command--motion physical cohort run 036
+
+- **STATUS:** `VALID NOMINAL NOT_TRIGGERED / SUCCESS / 36 ATTEMPTED / 35 VALID / 1 INVALID`. The
+  sole fixed attempt passed exact build/binding, zero-error Unity-worker, expected-outcome, and
+  complete independent-reference gates without retry.
+- **REFERENCE:** both implementations return `not_triggered` after a calibrated 0--5 s response of
+  0.2597 m/s. The action succeeded after 69.010 s and 17.477 m with one FollowPath attempt, no
+  recorded FollowPath failure, and no source-qualified Wait invocation.
+- **BOUNDARY:** this supports rejection of the command-to-motion failure premise only within the
+  retained synchronized interval and declared thresholds. No P/R response, Luna label, semantic
+  effect, confidence sequence, or alpha use exists. Governed data are synchronized to R2; fixed
+  transient-compensation run 037 is next.
+
 ## 2026-09-24 — land command--motion physical cohort run 035
 
 - **STATUS:** `VALID TRANSIENT RESPONSE RECOVERY / SUCCESS / 35 ATTEMPTED / 34 VALID / 1 INVALID`.
