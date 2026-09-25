@@ -1,5 +1,15 @@
 # Experiment Log
 
+## 2026-09-24 — land command--motion physical cohort run 018
+
+- **STATUS:** `VALID INDEPENDENT AMBIGUITY CLUSTER / 18 OF 100 ATTEMPTED`. The sole fixed attempt
+  passed exact build/binding and the zero-error Unity-worker gate; its unexpected abort is retained.
+- **RAW/MASKED REFERENCE:** the evaluator audit supports an 18--28 s discrepancy at 0.260 versus
+  0.000 m/s. The sole method-visible packet retains 484 commands, zero odometry samples, the abort,
+  three FollowPath attempts, two failures, and two qualified Waits; its disposition is `insufficient`.
+- **BOUNDARY:** no unique cause, semantic response, Luna label, effect, or alpha use. Governed data
+  are synchronized to R2; 54 focused tests pass. Fixed persistent run 019 is next.
+
 ## 2026-09-24 — land command--motion physical cohort run 017
 
 - **STATUS:** `VALID PERSISTENT DISCREPANCY / ABORT / 17 OF 100 ATTEMPTED`. The sole fixed attempt

@@ -454,9 +454,9 @@ def main() -> int:
 
     physical_dispositions = [
         load(f"manifests/data/cm-land-conf-{index:03d}-disposition.json")
-        for index in range(1, 18)
+        for index in range(1, 19)
     ]
-    require_equal(len(physical_dispositions), 17, "physical cohort attempted configurations")
+    require_equal(len(physical_dispositions), 18, "physical cohort attempted configurations")
     require_equal(
         sum(
             item["admission"].get(
@@ -465,21 +465,21 @@ def main() -> int:
             )
             for item in physical_dispositions
         ),
-        17,
+        18,
         "physical cohort valid configurations",
     )
     latest_physical = physical_dispositions[-1]
     run_011_physical = physical_dispositions[10]
-    require_equal(pointer(latest_physical, "/contract/fixed_order"), 17, "run 017 fixed order")
-    require_equal(pointer(latest_physical, "/observed/navigation_status"), "aborted", "run 017 action status")
+    require_equal(pointer(latest_physical, "/contract/fixed_order"), 18, "run 018 fixed order")
+    require_equal(pointer(latest_physical, "/observed/navigation_status"), "aborted", "run 018 action status")
     require_close(pointer(run_011_physical, "/diagnostic/discrepancy_interval_s/0"), 10.0, 0.0, "run 011 discrepancy start")
     require_close(pointer(run_011_physical, "/diagnostic/discrepancy_interval_s/1"), 20.0, 0.0, "run 011 discrepancy end")
     require_close(pointer(run_011_physical, "/diagnostic/discrepancy_commanded_planar_speed_mps"), 0.26, 0.0, "run 011 command speed")
     require_close(pointer(run_011_physical, "/diagnostic/discrepancy_measured_planar_speed_mps"), 0.0, 0.0, "run 011 measured speed")
     require_equal(pointer(latest_physical, "/progress/persistent_discrepancy"), 4, "persistent-discrepancy count")
     require_equal(pointer(latest_physical, "/progress/method_visible_diagnostic_supported"), 10, "supported diagnostic count")
-    require_equal(pointer(latest_physical, "/diagnostic/independent_disposition"), "supported", "run 017 diagnostic disposition")
-    require_equal(pointer(latest_physical, "/progress/next_fixed_run_id"), "cm-land-conf-018", "next physical run")
+    require_equal(pointer(latest_physical, "/method_visible_reference/disposition"), "insufficient", "run 018 diagnostic disposition")
+    require_equal(pointer(latest_physical, "/progress/next_fixed_run_id"), "cm-land-conf-019", "next physical run")
     require_close(pointer(latest_physical, "/semantic_boundary/confirmatory_alpha_consumed"), 0.0, 0.0, "physical cohort alpha")
     checked_assertions += 13
 
@@ -523,8 +523,8 @@ def main() -> int:
             "13/13 development questions overall",
             "Primary planning subset & 6 clusters",
             "P--R: 0.0 in both passes",
-            "seventeen valid,",
-            "Physical cohort & 17/100 valid attempts",
+            "eighteen valid,",
+            "Physical cohort & 18/100 valid attempts",
         ]
     )
 
