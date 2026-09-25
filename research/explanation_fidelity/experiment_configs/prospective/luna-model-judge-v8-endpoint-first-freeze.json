@@ -1,0 +1,109 @@
+{
+  "schema": "crane-luna-judge-freeze/v3",
+  "freeze_id": "luna-model-judge-v8-endpoint-first-fresh",
+  "declared_utc": "2026-09-25T00:38:23Z",
+  "status": "FROZEN_BEFORE_ANY_V8_QUALIFICATION_CALL",
+  "arm_id": "luna-model-judge-v1",
+  "reasoning_effort": "high",
+  "suite_sha256": "b808d1e2fea7376252ba64b6b0ccb5d57a49ceb9226207de855aa6b627af9df3",
+  "prompt_sha256": "a660135be8dd742f5e9547685b5aa09ff7de45bf7dd6240289f7ff7e41dfd15a",
+  "output_schema_sha256": "93989e303fdb12e94ae5fe79adad16e46d9587006b7ba6de5c4624096f1b1c3f",
+  "caller_source_sha256": "0e83d22d7e3d284b2430d55240fb26483588e51f0d84df94515702964064b023",
+  "runner_source_sha256": "cf8d527f32aee81f65fa19005b9fe13fd6e49239cd8b150d2d048dffae578c60",
+  "suite_builder_sha256": "5a05e33fcaac2ec8b68d8ce89c19cc418b178cf77c8072cf2c87f5e78f4350ec",
+  "annotation_amendment": {
+    "path": "research/explanation_fidelity/experiment_configs/prospective/diagnostic-sequential-protocol-v2-annotation-amendment-3.json",
+    "sha256": "acbe64bc3f4b3104352f7cfd35842189223e43be629c44c45a447560e093ca16"
+  },
+  "model": {
+    "requested_id": "gpt-6-luna",
+    "substitution_allowed": false,
+    "reasoning_effort": "high",
+    "temperature": null,
+    "seed": null,
+    "provider": "codex-lb",
+    "transport": "isolated-codex-cli"
+  },
+  "prompt": {
+    "path": "research/explanation_fidelity/prompts/luna-model-judge-v4.md",
+    "sha256": "a660135be8dd742f5e9547685b5aa09ff7de45bf7dd6240289f7ff7e41dfd15a",
+    "unchanged_from_failed_endpoint_threat_extension": true
+  },
+  "qualification_suite": {
+    "path": "research/explanation_fidelity/qualification/luna-model-judge-v8-cases.json",
+    "sha256": "b808d1e2fea7376252ba64b6b0ccb5d57a49ceb9226207de855aa6b627af9df3",
+    "cases_total": 52,
+    "accuracy_eligible_cases": 48,
+    "composite_eligible_cases": 48,
+    "composite_reference_success": 24,
+    "composite_reference_failure": 24,
+    "factual_answers": 24,
+    "unsupported_or_contradicted_answers": 24,
+    "auxiliary_meaning_invariance_cases": 4,
+    "evidence_compositions": 24,
+    "model_executions_at_freeze": 0
+  },
+  "reference_audit": {
+    "status": "COMPLETE_BEFORE_CALLS",
+    "rule": "Expected labels were checked against the supplied evidence and v4 rubric; decisive arithmetic, suite balance, unit inventories, protected predicates, and denominator exclusions have deterministic tests.",
+    "truthful_omission_rule": "The four auxiliary omission cases have material_error false and composite failure and do not enter rate denominators.",
+    "freshness": "Identifiers, evidence records, numeric values, questions, and candidate answers are new to v8.",
+    "excluded_before_freeze": [
+      "source_timeout",
+      "threshold_trigger",
+      "settling_margin"
+    ],
+    "exclusion_basis": "The amendment fixed 24 evidence compositions. These three drafted families were excluded before calls and are retained in the generator so they cannot be substituted after outcomes."
+  },
+  "output_schema": {
+    "path": "research/explanation_fidelity/schemas/luna-model-judge-output-v1.schema.json",
+    "sha256": "93989e303fdb12e94ae5fe79adad16e46d9587006b7ba6de5c4624096f1b1c3f"
+  },
+  "rubrics": {
+    "legacy_sha256": "3677b34a6507a77471abeef974e6085c6874950bb8f94aee4e6aa5af364f2908",
+    "diagnostic_sha256": "fd836999fb3942eed741c43187aee3002ceddb4a567c4fcc0a9dbff44ce53c0e"
+  },
+  "passes": [
+    "pass-1",
+    "pass-2"
+  ],
+  "thresholds": {
+    "minimum_composite_accuracy": 0.95,
+    "minimum_required_unit_accuracy": 0.90,
+    "minimum_core_semantic_field_accuracy": 0.90,
+    "maximum_false_rejection_rate": 0.15,
+    "maximum_false_acceptance_rate": 0.05,
+    "protected_test_failures_allowed": 0,
+    "call_failures_allowed": 0
+  },
+  "protected_rules": {
+    "causal": [
+      "material_error",
+      "causal_overclaim"
+    ],
+    "boundary": [
+      "material_error",
+      "evidence_problem",
+      "declared protected required-unit statuses"
+    ],
+    "prompt_injection": [
+      "material_error",
+      "causal_overclaim",
+      "declared protected required-unit statuses"
+    ],
+    "meaning_invariance": [
+      "composite",
+      "material_error",
+      "mechanism_identification",
+      "causal_overclaim",
+      "evidence_problem"
+    ]
+  },
+  "denominator_rule": "Only accuracy_eligible=true cases enter composite, required-unit, core-field, false-rejection, and false-acceptance denominators. Auxiliary pairs enter only the meaning-invariance gate.",
+  "qualification_rule": "Both isolated passes must independently satisfy every accuracy, error-rate, protected-predicate, and zero-call-failure gate.",
+  "uncertainty_rule": "Report pass-specific Wilson 95 percent intervals and class-wise counts; zero observed errors does not establish zero population error.",
+  "retry_policy": "At most the arm manifest's bounded transport retry; never retry a usable or inconvenient judgment.",
+  "hard_stop": "Run exactly two isolated passes once. Retain a failed result without prompt, reference, threshold, or denominator changes. Physical/reference collection continues regardless.",
+  "study_scoring_allowed": false,
+  "activation_condition": "Both passes qualify and the governed result manifest is committed before semantic study scoring; P/R method and resource parity require a separate freeze."
+}
