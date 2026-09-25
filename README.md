@@ -150,9 +150,12 @@ their own location. Exact repository commits and destinations are recorded in
   and separately reserved fresh-config replication. It cannot use legacy or inspected development
   outcomes. The reference-audited Luna v7 arm remains historically qualified, but its later
   prospective command--motion endpoint-threat extension failed composite/core and protected gates
-  in both passes. Candidate-v3 semantic confirmation is therefore blocked; no confirmatory response
-  was judged and alpha remains 0.000/0.050. The original finite-qualification bounds remain
-  historical and the extension's smaller bounds are ineligible; see
+  in both passes. A later frozen v8 endpoint-first cycle classified all 48 composite cases and all
+  material-error polarities correctly in both passes, but still failed its required-unit,
+  core-field, and protected-causal gates. It is retained as failed rather than reinterpreted as an
+  endpoint-only pass. Candidate-v3 semantic confirmation is therefore blocked; no confirmatory
+  response was judged and alpha remains 0.000/0.050. The original finite-qualification bounds
+  remain historical and failed-cycle bounds are ineligible; see
   [sequential protocol](docs/SEQUENTIAL_STUDY_PROTOCOL.md)
   and [campaign progress](docs/DIAGNOSTIC_CAMPAIGN_PROGRESS.md).
 - **PHYSICAL/REFERENCE COLLECTION ACTIVE; SEMANTIC CAMPAIGN INACTIVE:** nineteen of the frozen 100

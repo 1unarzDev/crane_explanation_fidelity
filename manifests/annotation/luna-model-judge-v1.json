@@ -2,7 +2,7 @@
   "schema": "crane-automated-annotation-arm-manifest/v1",
   "arm_id": "luna-model-judge-v1",
   "declared_utc": "2026-09-23T00:00:00Z",
-  "status": "V7_REFERENCE_AUDITED_QUALIFIED",
+  "status": "V8_ENDPOINT_FIRST_FAILED_SEMANTIC_SCORING_BLOCKED",
   "annotation_origin": "automated",
   "human_annotation_requirement": {
     "original_requirement": "two independent human annotators plus distinct human adjudication of disagreements",
@@ -182,6 +182,21 @@
     "result_manifest": "manifests/annotation/luna-model-judge-v1-heldout-v7-reference-audited.json",
     "sensitivity_false_rejection_upper_rounded": 0.1844,
     "sensitivity_false_acceptance_upper_rounded": 0.3904
+  },
+  "qualification_amendment_v8": {
+    "status": "HELDOUT_QUALIFICATION_FAILED",
+    "historical_results_preserved": true,
+    "freeze": "research/explanation_fidelity/experiment_configs/prospective/luna-model-judge-v8-endpoint-first-freeze.json",
+    "suite": "research/explanation_fidelity/qualification/luna-model-judge-v8-cases.json",
+    "suite_sha256": "b808d1e2fea7376252ba64b6b0ccb5d57a49ceb9226207de855aa6b627af9df3",
+    "fresh_cases": 52,
+    "accuracy_eligible_cases": 48,
+    "auxiliary_cases": 4,
+    "model_executions_at_declaration": 0,
+    "study_evaluation_allowed": false,
+    "result_manifest": "manifests/annotation/luna-model-judge-v1-heldout-v8-endpoint-first.json",
+    "failure_basis": "Both passes achieved 48/48 composite with zero false acceptance and zero false rejection, but both missed the 90 percent required-unit and core-field gates and each had one protected causal mismatch. Every one of 104 calls was valid.",
+    "hard_stop": "No usable-judgment retry or post-outcome change to prompt, references, thresholds, denominators, or protected rules."
   },
   "qualification_history": [
     {

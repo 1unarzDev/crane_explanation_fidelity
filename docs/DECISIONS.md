@@ -1,5 +1,22 @@
 # Decision Log
 
+## 2026-09-25 — retain failed v8 qualification and continue physical collection
+
+- **Decision:** classify v8 as `HELDOUT_QUALIFICATION_FAILED` and prohibit semantic study scoring
+  under this arm. Preserve all 104 valid judgments and the exact frozen references; do not retry,
+  lower thresholds, drop protected fields, or call perfect endpoint polarity a qualified result.
+- **Evidence:** each pass achieved 48/48 composite, 0/24 factual false rejections, and 0/24
+  unsupported false acceptances, but both missed required-unit accuracy (79/92) and core-field
+  accuracy (336/384; 335/384), and each failed one protected causal predicate. Both passes were
+  required to clear every gate.
+- **Alternatives rejected:** qualify only the composite after seeing results; treat required-unit
+  and core failures as immaterial despite the freeze; correct expected labels and rescore; add a
+  third Luna pass; or stop collecting robot evidence while no semantic arm is valid.
+- **Effect:** the result supports a narrow statement that Luna classified endpoint polarity well on
+  this synthetic suite, not operational validation of the full annotation protocol. Semantic P--R
+  confirmation remains inactive, alpha remains `0.000/0.050`, and independent physical/reference
+  collection continues under its pre-existing schedule.
+
 ## 2026-09-24 — Block Luna-scored candidate-v3 confirmation after targeted extension failure
 
 - **Decision:** do not activate candidate-v3 semantic confirmation with Luna. Preserve the original

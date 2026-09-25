@@ -1,6 +1,6 @@
 # Diagnostic sequential-campaign progress
 
-Updated: 2026-09-24
+Updated: 2026-09-25
 
 Protocol: `diagnostic-sequential-protocol-v2`
 Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
@@ -18,6 +18,7 @@ Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 | Luna v5 endpoint qualification | FAILED / PRESERVED | P1 passed; P2 missed core by one field and one protected subcheck |
 | Luna v6 endpoint qualification | FAILED / PRESERVED | P1 false rejection 3/17 exceeded 15%; P2 passed every gate |
 | Luna v7 reference-audited qualification | HISTORICALLY QUALIFIED; TARGETED EXTENSION FAILED | Original v7 passed, but the prospective command-motion endpoint-threat extension missed composite/core and protected gates in both passes; do not activate semantic confirmation |
+| Luna v8 endpoint-first qualification | FAILED / PRESERVED | Both passes were 48/48 composite with zero material-polarity errors, but both missed unit/core thresholds and one protected causal predicate; semantic scoring remains blocked |
 | V7 amendment/sensitivity enforcement | IMPLEMENTED, TESTED | Nonempty v2 results must bind exact v7 hashes and clear nominal plus adverse sensitivity gates |
 | Replication configurations reserved | 100 V6 LAND CONFIGURATIONS RESERVED / NOT AUTHORIZED | Disjoint fixed schedule; cannot substitute for confirmation-side runs |
 | Sequential null simulation | PASS_QA | 20,000 replicates per endpoint; all boundary estimates below component alpha 0.02 |

@@ -1,5 +1,24 @@
 # Experiment Log
 
+## 2026-09-25 — v8 endpoint-first Luna qualification failed closed
+
+- **STATUS:** `RUN ONCE / RETAINED / HELDOUT_QUALIFICATION_FAILED`. The hash-frozen suite and
+  runner completed exactly two isolated high-effort Luna passes: 104/104 valid calls, no transport
+  retry, no usable-judgment retry, and no tool event.
+- **ENDPOINT POLARITY:** both passes scored 48/48 composite cases correctly, with zero false
+  rejection among 24 factual answers and zero false acceptance among 24 unsupported/contradicted
+  answers. The per-pass Wilson 95% upper bound for each zero-error material-polarity rate is 0.1380;
+  finite perfect results do not establish zero judge error.
+- **FAILED GATES:** both passes scored 79/92 required units (85.9%, below 90%). Core fields were
+  336/384 (87.5%) and 335/384 (87.2%), also below 90%. Pass 1 mismatched the protected causal label
+  for `Q8H11E`; pass 2 did so for `Q8H20E`. Both invariance pairs passed.
+- **DISPOSITION:** v8 is not qualified. Do not score semantic study responses, reinterpret this as
+  endpoint-only qualification, repair references after labels, or run another vote. The historical
+  v7 result remains preserved but does not override the prospectively required v8 gates.
+- **RESOURCES/INFERENCE:** 104 attempts, 1,890,989.8 ms aggregate latency; token use and cost were
+  not exposed by the isolated CLI records. Zero study response, effect estimate, or alpha use.
+  Physical/reference collection remains authorized; fixed land run 020 is next.
+
 ## 2026-09-24 — v8 endpoint-first Luna qualification amendment
 
 - **STATUS:** `PROSPECTIVELY AUTHORIZED / SUITE AND FREEZE NOT YET COMMITTED / ZERO CALLS`.

@@ -1,0 +1,80 @@
+{
+  "schema": "crane-luna-judge-heldout-result/v3",
+  "arm_id": "luna-model-judge-v1",
+  "qualification_id": "luna-model-judge-v8-endpoint-first-fresh",
+  "executed_utc_date": "2026-09-25",
+  "status": "HELDOUT_QUALIFICATION_FAILED",
+  "study_evaluation_allowed": false,
+  "freeze": {
+    "path": "research/explanation_fidelity/experiment_configs/prospective/luna-model-judge-v8-endpoint-first-freeze.json",
+    "sha256": "57890f1e3ffefe69ba34a675730196fb64f9aa33b47d31efd6c6aa0b3c5288a9"
+  },
+  "result": {
+    "path": "model_outputs/automated_annotations/luna-model-judge-v1/heldout-v8-endpoint-first/heldout-qualification.json",
+    "sha256": "3571d85e8f7bafcfa1d2704149e1ea00ffcb870b6b16cd77decac442ec526a9f",
+    "governance": "model_outputs.dvc"
+  },
+  "passes": {
+    "pass-1": {
+      "qualified": false,
+      "composite_correct": 48,
+      "composite_total": 48,
+      "composite_wilson_95": [0.9258998703338824, 0.9999999999999999],
+      "required_unit_correct": 79,
+      "required_unit_total": 92,
+      "required_unit_wilson_95": [0.7731141979919699, 0.915523066216171],
+      "core_correct": 336,
+      "core_total": 384,
+      "core_wilson_95": [0.8381628713865551, 0.9044085929321871],
+      "false_rejections": 0,
+      "factual_total": 24,
+      "false_rejection_wilson_95": [1.3877787807814457e-17, 0.13797620467498017],
+      "false_acceptances": 0,
+      "unsupported_total": 24,
+      "false_acceptance_wilson_95": [1.3877787807814457e-17, 0.13797620467498017],
+      "protected_failures": {
+        "protected_causal": ["Q8H11E"]
+      },
+      "presentation_invariance": true,
+      "call_failures": 0
+    },
+    "pass-2": {
+      "qualified": false,
+      "composite_correct": 48,
+      "composite_total": 48,
+      "composite_wilson_95": [0.9258998703338824, 0.9999999999999999],
+      "required_unit_correct": 79,
+      "required_unit_total": 92,
+      "required_unit_wilson_95": [0.7731141979919699, 0.915523066216171],
+      "core_correct": 335,
+      "core_total": 384,
+      "core_wilson_95": [0.8352976158699729, 0.902117102168778],
+      "false_rejections": 0,
+      "factual_total": 24,
+      "false_rejection_wilson_95": [1.3877787807814457e-17, 0.13797620467498017],
+      "false_acceptances": 0,
+      "unsupported_total": 24,
+      "false_acceptance_wilson_95": [1.3877787807814457e-17, 0.13797620467498017],
+      "protected_failures": {
+        "protected_causal": ["Q8H20E"]
+      },
+      "presentation_invariance": true,
+      "call_failures": 0
+    }
+  },
+  "resource_use": {
+    "valid_calls": 104,
+    "attempts": 104,
+    "transport_retries": 0,
+    "aggregate_latency_ms": 1890989.782932,
+    "token_use": null,
+    "cost_usd": null,
+    "token_limitation": "The isolated Codex CLI call records did not expose provider token usage."
+  },
+  "interpretation": "Both passes achieved perfect composite and material-error polarity decisions, but both failed the frozen required-unit, core-field, and zero-protected-failure gates. V8 is not qualified and no semantic study response may be scored under it.",
+  "failure_basis": "Pass 1 and pass 2 each scored 79/92 required units, below 90 percent; core accuracy was 336/384 and 335/384, below 90 percent; each pass also had one protected causal-overclaim mismatch. Every call was valid, both passes scored 48/48 composite, and each had zero false acceptances and zero false rejections.",
+  "uncertainty_limitation": "The zero-error material-polarity upper bound is approximately 0.1380 per pass. Perfect endpoint polarity does not override the prospectively required broader semantic and protected-predicate gates.",
+  "hard_stop_disposition": "Retain without retrying usable judgments or changing the prompt, references, thresholds, denominators, or protected rules. Continue physical/reference collection; semantic confirmation remains inactive.",
+  "confirmatory_alpha_consumed": 0.0,
+  "study_responses_scored": 0
+}

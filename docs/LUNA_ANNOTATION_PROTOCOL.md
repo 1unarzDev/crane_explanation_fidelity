@@ -316,6 +316,22 @@ allowed until v8 passes and a separate P/R/resource campaign contract is frozen.
 machine-readable amendment is
 `diagnostic-sequential-protocol-v2-annotation-amendment-3.json`.
 
+### V8 result and hard-stop disposition
+
+V8 was frozen before calls and executed once on 2026-09-25. All 104 isolated calls were valid and
+neither pass had a transport retry. Both passes classified all 48 composite cases correctly and
+made zero material-error false rejections or false acceptances in their respective 24-case
+denominators. Nevertheless, both failed the complete prospective gate: required-unit accuracy was
+79/92 in each pass, core-field accuracy was 336/384 and 335/384, and each pass had one protected
+causal mismatch. The four auxiliary presentations passed their registered invariance predicates.
+
+The result is `HELDOUT_QUALIFICATION_FAILED`. Perfect endpoint polarity does not retroactively
+remove the frozen unit/core/protected requirements. No usable judgment is retried, references and
+thresholds remain unchanged, and no study response is scored under v8. The exact report is governed
+under `model_outputs.dvc`, with its tracked summary at
+`manifests/annotation/luna-model-judge-v1-heldout-v8-endpoint-first.json`. Physical/reference
+episode collection remains independent of this failure.
+
 ## Input boundary and isolation
 
 Every response is judged in a new API request with no conversation history and no model tools. The

@@ -222,6 +222,12 @@ judgment retry or threshold change. It does not halt the separately authorized p
 collection, because robot episodes and deterministic reference computations do not depend on a
 semantic judge.
 
+That cycle ran once on 2026-09-25 and failed. Both passes were perfect on the 48-case composite and
+on 24-case factual/unsupported material-error polarity, but each scored 79/92 required units, core
+accuracy was 336/384 and 335/384, and each had one protected causal mismatch. Thus v8 supplies no
+operational semantic arm despite its strong endpoint-polarity result. No confirmatory response was
+scored and the alpha ledger remains untouched; the physical/reference cohort continues.
+
 Reserve fresh configuration identities before discovery. Replication uses byte-identical P/R,
 evidence contract, prompts, tools, thresholds, judge, and analysis hashes; it reuses no discovery
 response, mask, paraphrase, or configuration. A genuine-advantage claim requires both candidate

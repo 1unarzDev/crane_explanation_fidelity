@@ -483,6 +483,29 @@ def main() -> int:
     require_close(pointer(latest_physical, "/semantic_boundary/confirmatory_alpha_consumed"), 0.0, 0.0, "physical cohort alpha")
     checked_assertions += 13
 
+    luna_v8 = load(
+        "manifests/annotation/luna-model-judge-v1-heldout-v8-endpoint-first.json"
+    )
+    require_equal(luna_v8["status"], "HELDOUT_QUALIFICATION_FAILED", "Luna v8 status")
+    require_equal(luna_v8["resource_use"]["valid_calls"], 104, "Luna v8 valid calls")
+    require_equal(luna_v8["study_responses_scored"], 0, "Luna v8 study responses")
+    require_close(luna_v8["confirmatory_alpha_consumed"], 0.0, 0.0, "Luna v8 alpha")
+    for pass_name, expected_core in (("pass-1", 336), ("pass-2", 335)):
+        row = luna_v8["passes"][pass_name]
+        require_equal(row["composite_correct"], 48, f"Luna v8 {pass_name} composite")
+        require_equal(row["composite_total"], 48, f"Luna v8 {pass_name} composite total")
+        require_equal(row["required_unit_correct"], 79, f"Luna v8 {pass_name} unit correct")
+        require_equal(row["required_unit_total"], 92, f"Luna v8 {pass_name} unit total")
+        require_equal(row["core_correct"], expected_core, f"Luna v8 {pass_name} core correct")
+        require_equal(row["core_total"], 384, f"Luna v8 {pass_name} core total")
+        require_equal(row["false_rejections"], 0, f"Luna v8 {pass_name} false rejection")
+        require_equal(row["factual_total"], 24, f"Luna v8 {pass_name} factual total")
+        require_equal(row["false_acceptances"], 0, f"Luna v8 {pass_name} false acceptance")
+        require_equal(row["unsupported_total"], 24, f"Luna v8 {pass_name} unsupported total")
+        require_equal(row["call_failures"], 0, f"Luna v8 {pass_name} call failures")
+        checked_assertions += 11
+    checked_assertions += 4
+
     require_paper_fragments(
         [
             "33 included episode clusters",
@@ -523,6 +546,7 @@ def main() -> int:
             "13/13 development questions overall",
             "Primary planning subset & 6 clusters",
             "P--R: 0.0 in both passes",
+            "Endpoint-first v8 & 48/48 composite in both passes",
             "nineteen valid,",
             "Physical cohort & 19/100 valid attempts",
         ]
