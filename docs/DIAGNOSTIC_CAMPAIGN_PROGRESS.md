@@ -51,8 +51,8 @@ the chosen allocation must be atomically bound to that campaign and cannot later
 No effect estimate, confidence sequence, guardrail result, or replication conclusion exists.
 Legacy and the eleven diagnostic-development clusters are intentionally absent from these counts.
 
-The separate physical/reference cohort has attempted 19/100 fixed confirmation-side configurations:
-19 valid, 0 invalid. The method-visible diagnostic dispositions are eleven supported, five
+The separate physical/reference cohort has attempted 20/100 fixed confirmation-side configurations:
+20 valid, 0 invalid. The method-visible diagnostic dispositions are twelve supported, five
 `not_triggered`, and three `insufficient`. Run 004 is a valid unexpected transient case: measured
 response recovered after the discrepancy, but the action later aborted, preventing the study from
 equating compensation with task success. Run 005 is a successful no-intervention nominal control
@@ -75,7 +75,11 @@ with one recorded failure/recovery cycle.
 Run 017 adds a persistent discrepancy from 18--28 s followed by action abort. Run 018 retains the
 abort and execution sequence while the declared odometry mask makes the mechanism insufficient.
 Run 019 adds a connected-detour persistent discrepancy from 11--21 s followed by action abort.
-The next immutable schedule item is `cm-land-conf-020`.
+Run 020 adds a nominal-clear-route persistent discrepancy from 18--28 s followed by action abort.
+Its first derived export accidentally used the embedded 0.4 m/s threshold; those invalid derived
+artifacts are retained evaluator-only, and the canonical artifacts were recomputed once from the
+unchanged raw capture with the frozen low-speed configuration. The episode was not rerun. The next
+immutable schedule item is `cm-land-conf-021`.
 
 ## Frozen land command--motion physical cohort
 

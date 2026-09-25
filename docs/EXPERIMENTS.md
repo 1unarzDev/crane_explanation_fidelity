@@ -1,5 +1,23 @@
 # Experiment Log
 
+## 2026-09-25 — land command--motion physical cohort run 020
+
+- **STATUS:** `VALID PERSISTENT DISCREPANCY / ABORT / 20 OF 100 ATTEMPTED`. The sole fixed attempt
+  passed exact build/binding, zero-error Unity-worker, and complete independent-reference gates;
+  the expected-success fixture mismatch is retained without retry.
+- **REFERENCE:** proposed and independently implemented computations agree on an 18--28 s
+  discrepancy at 0.260 versus 0.000 m/s, after a 0--5 s healthy response of 0.2597 m/s. The action
+  aborted after 51.611 s and 4.279 m, with three FollowPath attempts, two failures, and two
+  source-qualified Wait invocations.
+- **PREPROCESSING AUDIT:** the first derived export omitted the frozen low-speed configuration and
+  used the embedded 0.4 m/s command threshold. Both invalid derived artifacts are retained
+  evaluator-only. Canonical artifacts were recomputed once from the unchanged raw capture with
+  `diagnostic-command-motion-low-speed-v1`; the physical episode was not rerun or replaced.
+- **BOUNDARY:** this supports a sustained execution-response discrepancy, not actuator acceptance,
+  Nav2 consumption of odometry, the hidden intervention, or a unique physical cause. No P/R
+  response, Luna label, semantic effect, confidence sequence, or alpha use exists. Governed data
+  are synchronized to R2; fixed run 021 is next.
+
 ## 2026-09-25 — v8 endpoint-first Luna qualification failed closed
 
 - **STATUS:** `RUN ONCE / RETAINED / HELDOUT_QUALIFICATION_FAILED`. The hash-frozen suite and
