@@ -1,9 +1,11 @@
 # Positioning CRANE's diagnosis-to-language pipeline
 
-**Audit date:** 2026-09-22  
-**Scope:** Primary-source check limited to the five works named below. This note positions the
-prospective CRANE method; it does not provide empirical evidence for CRANE and does not establish
-literature-wide novelty.
+**Audit date:** 2026-09-22; ROS/Nav2 prior-work addendum 2026-09-24
+**Scope:** The detailed primary-source reading below is limited to five language-planning and
+evaluation works. It must be read with the separate
+[`FERNANDEZ_BECERRA_PRIOR_WORK.md`](FERNANDEZ_BECERRA_PRIOR_WORK.md) audit of close ROS/Nav2
+accountability, agentic-RAG, and multimodal explanation precedents. Neither note provides empirical
+evidence for CRANE or establishes literature-wide novelty.
 
 ## Bottom line
 
@@ -32,6 +34,14 @@ the first such system, unless a broader systematic review supports priority.
 | Geifman and El-Yaniv (2019), SelectiveNet | Jointly train prediction and selection heads to minimize selective risk subject to target coverage; evaluate the risk–coverage trade-off. An auxiliary prediction head prevents the shared representation from focusing too early on the selected subset. | CRANE may use risk–coverage analysis and the general principle that withholding can reduce error, while defining coverage over answerable diagnostic claim families and measuring unnecessary abstention/fallback explicitly. | SelectiveNet is supervised classification/regression with an integrated learned reject option, not a claim-level language verifier, missing-evidence rule, or deterministic fallback system. CRANE does not implement SelectiveNet merely because it withholds unsupported clauses. Its target coverage can be violated and is calibrated post-training on an independent validation set; its experiments do not establish safety, causal validity, or generative factuality. |
 | Huynh et al. (arXiv:2206.06251v2) | Explainability-by-Design's technical phase models application logs as decision provenance, builds graph queries to retrieve explanation-relevant data, turns exemplar narratives into configurable NLG syntax-tree plans, and deploys a reusable Explanation Assistant. The provenance requirements include tracing outcomes to influencers, attribution, activities, timing, and contribution to outcomes. | CRANE can distinguish exact robot runtime/source linkage plus validated physical/execution diagnostics from provenance-backed narration of an application decision. Its prospective evaluation tests diagnostic correctness and realization faithfulness rather than assuming a trace is itself an adequate explanation. | Provenance-to-query-to-plan-to-language is prior art, as is a separate explanation service. Huynh et al. focus on the engineering phase, use designed provenance patterns and exemplar narratives, and simulate two decision pipelines. Requirements elicitation and stakeholder validation are outside the paper's scope; integration cost is excluded, development time is estimated retrospectively, and the authors assume explanations are separately validated. A provenance edge records the modeled decision history; it does not by itself prove a physical cause or counterfactual. |
 
+Fernández-Becerra et al. add closer robot-domain precedent than this five-source table: their ESWA
+work covers ROS 2/Nav2 records, agentic and source-aware retrieval, deterministic calculations,
+hallucination grading, and natural-language log explanations; their IGPL work covers accountable
+black-box recording and textual-plus-visual LLM/VLM context. CRANE therefore claims none of those
+capabilities as novel. Its prospective distinction is the independently checked physical or
+execution mechanism and its evidence-sufficiency limits, and any advantage claim depends on fresh
+scenario-clustered results.
+
 ## Detailed methodological reading
 
 ### 1. Explicit planning before realization
@@ -43,9 +53,11 @@ the direction in which a relation is expressed. The precise relationship between
 and a symbolic plan makes the plan checkable for completeness and faithfulness
 ([paper, Sections 2–3](https://aclanthology.org/N19-1236.pdf)).
 
-This is the closest precedent for CRANE's “checked plan → language” separation and should be cited
-as such. CRANE should not claim that inserting a symbolic/structured intermediate representation
-before neural realization is novel. The defensible distinction is the **semantics of the
+Within the five language-method sources analyzed in this note, this is the most direct precedent
+for CRANE's narrow “checked plan → language” separation. It is not a claim that Moryossef et al. are
+the closest prior work to the complete robot system. CRANE should not claim that inserting a
+symbolic/structured intermediate representation before neural realization is novel. The defensible
+distinction is the **semantics of the
 intermediate record**: CRANE first computes a bounded robot diagnosis and requires its answer plan
 to preserve support, contradiction, uncertainty, and limits on causal wording.
 
@@ -201,4 +213,3 @@ sentence” is therefore not a transferable cost estimate for CRANE.
    Methodology and Software Architecture to Support Explainability-by-Design.” arXiv
    [2206.06251v2](https://arxiv.org/abs/2206.06251v2), revised 25 May 2023. The audited source is the
    cited arXiv revision; no archival venue is asserted here.
-

@@ -35,6 +35,23 @@ definitely succeed, two failed retries when only one invocation is recorded, or 
 for a candidate never evaluated. The correct response separates observed, derived, source-defined,
 and unknown content; adding “probably” does not license an unsupported cause.
 
+## Prospective diagnosis-versus-repetition cases
+
+The separate prospective diagnostic study in `DIAGNOSTIC_STUDY_DESIGN.md` must include cases that
+cannot be solved by repeating a terminal event or a causal phrase already present in a log:
+
+- logs report replanning but do not establish the physical restriction;
+- logs assert an obstacle cause that retained physical evidence does not support;
+- similar terminal symptoms arise from geometric restriction and command-to-motion discrepancy;
+- visual evidence shows an obstacle without evidence that Nav2 consumed it; and
+- decisive evidence is masked, so the correct response must qualify or withhold the mechanism.
+
+The primary comparison uses a repository-aware, tool-enabled R with the same robot-visible
+evidence, relevant source/configuration, retrieval, deterministic calculation tools, and similar
+model/resource budget as P. R does not receive P's checked diagnostic outputs. Shared layouts,
+evidence masks, question variants, and repeated generations remain in one scenario cluster;
+repeated model calls are measurements, not independent robot episodes.
+
 ## Gold proposition format
 
 Each proposition records text-independent predicate/arguments, claim class, support status,
