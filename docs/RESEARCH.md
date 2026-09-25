@@ -26,8 +26,9 @@ Last primary-source check: 2026-09-24. This note records only claims checked aga
 The primary-source audit is retained in
 [`docs/research/FERNANDEZ_BECERRA_PRIOR_WORK.md`](research/FERNANDEZ_BECERRA_PRIOR_WORK.md).
 Fernández-Becerra et al.'s ESWA paper is close prior work for ROS 2/Nav2 accountability data,
-agentic RAG, hybrid and metadata-aware retrieval, source-bearing log explanations, deterministic
-calculations over retrieved records, hallucination grading, and natural-language evaluation. Its
+agentic RAG, hybrid and metadata-aware retrieval, source-bearing log explanations, model-performed
+aggregation and distance calculations over retrieved records, hallucination grading, and
+natural-language evaluation. Its
 curation rules can emit causal statements such as path modification due to obstacle detection.
 Faithfulness to such a retrieved event does not independently establish that the obstacle
 physically restricted the robot, entered the decision-relevant costmap, or caused replanning.

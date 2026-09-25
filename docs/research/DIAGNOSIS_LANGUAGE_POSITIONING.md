@@ -35,9 +35,10 @@ the first such system, unless a broader systematic review supports priority.
 | Huynh et al. (arXiv:2206.06251v2) | Explainability-by-Design's technical phase models application logs as decision provenance, builds graph queries to retrieve explanation-relevant data, turns exemplar narratives into configurable NLG syntax-tree plans, and deploys a reusable Explanation Assistant. The provenance requirements include tracing outcomes to influencers, attribution, activities, timing, and contribution to outcomes. | CRANE can distinguish exact robot runtime/source linkage plus validated physical/execution diagnostics from provenance-backed narration of an application decision. Its prospective evaluation tests diagnostic correctness and realization faithfulness rather than assuming a trace is itself an adequate explanation. | Provenance-to-query-to-plan-to-language is prior art, as is a separate explanation service. Huynh et al. focus on the engineering phase, use designed provenance patterns and exemplar narratives, and simulate two decision pipelines. Requirements elicitation and stakeholder validation are outside the paper's scope; integration cost is excluded, development time is estimated retrospectively, and the authors assume explanations are separately validated. A provenance edge records the modeled decision history; it does not by itself prove a physical cause or counterfactual. |
 
 Fernández-Becerra et al. add closer robot-domain precedent than this five-source table: their ESWA
-work covers ROS 2/Nav2 records, agentic and source-aware retrieval, deterministic calculations,
-hallucination grading, and natural-language log explanations; their IGPL work covers accountable
-black-box recording and textual-plus-visual LLM/VLM context. CRANE therefore claims none of those
+work covers ROS 2/Nav2 records, agentic and source-aware retrieval, model-performed aggregation and
+distance calculations, hallucination grading, and natural-language log explanations; their IGPL
+work covers accountable black-box recording and textual-plus-visual LLM/VLM context. CRANE
+therefore claims none of those
 capabilities as novel. Its prospective distinction is the independently checked physical or
 execution mechanism and its evidence-sufficiency limits, and any advantage claim depends on fresh
 scenario-clustered results.

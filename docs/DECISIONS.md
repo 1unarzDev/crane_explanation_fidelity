@@ -1881,9 +1881,10 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   hallucination grading. Frame the prospective contribution as evaluating independently checked
   physical/execution mechanisms and their evidence-sufficiency limits.
 - Evidence: Fernández-Becerra et al. (ESWA 2026) combine curated ROS 2/Nav2 events, source-bearing
-  records, retrieval and answer agents, hallucination grading, deterministic calculations, and
-  natural-language explanation evaluation. Their IGPL work is precedent for accountable recording
-  and textual-plus-visual LLM/VLM explanation context. Huynh et al. remain provenance-by-design
+  records, retrieval and answer agents, hallucination grading, model-performed aggregation and
+  distance calculations, and natural-language explanation evaluation. Their IGPL work is precedent
+  for accountable recording and textual-plus-visual LLM/VLM explanation context. Huynh et al.
+  remain provenance-by-design
   precedent, but are not the sole close work.
 - Baseline consequence: prospective R remains a strong repository-aware, tool-enabled alternative
   with the same robot-visible evidence, relevant source/configuration, retrieval, deterministic
