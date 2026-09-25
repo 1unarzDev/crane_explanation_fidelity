@@ -158,8 +158,9 @@ their own location. Exact repository commits and destinations are recorded in
   remain historical and failed-cycle bounds are ineligible; see
   [sequential protocol](docs/SEQUENTIAL_STUDY_PROTOCOL.md)
   and [campaign progress](docs/DIAGNOSTIC_CAMPAIGN_PROGRESS.md).
-- **PHYSICAL/REFERENCE COLLECTION ACTIVE; SEMANTIC CAMPAIGN INACTIVE:** thirty-three of the frozen 100
-  land command--motion confirmation configurations have been attempted once and are valid. Run 003
+- **PHYSICAL/REFERENCE COLLECTION ACTIVE; SEMANTIC CAMPAIGN INACTIVE:** thirty-four of the frozen 100
+  land command--motion confirmation configurations have been attempted once: thirty-three are
+  valid and one is a retained invalid recording. Run 003
   preserves useful execution facts while correctly withholding the masked motion mechanism; run
   004 records recovered measured response followed by task abort, and run 005 is a successful
   nominal `not_triggered` control. Run 006 adds another independently configured packet that
@@ -190,7 +191,10 @@ their own location. Exact repository commits and destinations are recorded in
   adds a connected-detour persistent discrepancy from 18--39 s followed by action abort. Run 031
   adds response loss from 19--28 s, measured recovery from 31--32 s, and eventual task success.
   Run 032 adds a nominal-clear-route persistent discrepancy from 18--28 s followed by abort.
-  Run 033 succeeds and independently returns `not_triggered` despite recovery activity.
+  Run 033 succeeds and independently returns `not_triggered` despite recovery activity. Run 034
+  passed exact build and scenario binding but failed the frozen transport-validity gate with 28
+  stale/rejected actions; it was retained without retry, diagnostic derivation, family-count
+  increment, or semantic use. Fixed run 035 is next.
   No P/R response, Luna label, effect estimate, confidence sequence, or
   alpha use exists. Replication remains untouched.
 - **TESTED (SECONDARY-ARM DEVELOPMENT):** the provider-neutral model-call contract now has a

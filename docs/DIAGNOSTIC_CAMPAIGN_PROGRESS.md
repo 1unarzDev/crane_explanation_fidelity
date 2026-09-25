@@ -51,8 +51,8 @@ the chosen allocation must be atomically bound to that campaign and cannot later
 No effect estimate, confidence sequence, guardrail result, or replication conclusion exists.
 Legacy and the eleven diagnostic-development clusters are intentionally absent from these counts.
 
-The separate physical/reference cohort has attempted 33/100 fixed confirmation-side configurations:
-33 valid, 0 invalid. The method-visible diagnostic dispositions are twenty-two supported, six
+The separate physical/reference cohort has attempted 34/100 fixed confirmation-side configurations:
+33 valid, 1 invalid. The method-visible diagnostic dispositions remain twenty-two supported, six
 `not_triggered`, and five `insufficient`. Run 004 is a valid unexpected transient case: measured
 response recovered after the discrepancy, but the action later aborted, preventing the study from
 equating compensation with task success. Run 005 is a successful no-intervention nominal control
@@ -95,7 +95,12 @@ persistent discrepancy from 18--39 s followed by action abort. Run 031 adds a no
 discrepancy from 19--28 s, measured-response recovery from 31--32 s, and action success. Run 032
 adds a nominal-clear-route persistent discrepancy from 18--28 s followed by action abort. The next
 run, 033, succeeds and independently returns `not_triggered` despite two FollowPath failures and
-two Wait invocations. The next immutable schedule item is `cm-land-conf-034`.
+two Wait invocations. Run 034 passed its exact player-build and 14-field scenario-binding audits,
+but the frozen worker-result validity gate failed with 28 stale and 28 rejected actions despite
+zero Unity errors or exceptions. Its raw robot-visible and evaluator-only records are retained and
+hash-governed, but it contributes no valid cluster, family result, diagnostic disposition, model
+response, label, or alpha. It was not retried or replaced. The next immutable schedule item is
+`cm-land-conf-035`.
 
 ## Frozen land command--motion physical cohort
 

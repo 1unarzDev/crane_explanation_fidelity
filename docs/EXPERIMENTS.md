@@ -1,5 +1,20 @@
 # Experiment Log
 
+## 2026-09-24 — land command--motion physical cohort run 034 retained invalid
+
+- **STATUS:** `RETAINED_INVALID TRANSPORT GATE / 34 ATTEMPTED / 33 VALID / 1 INVALID`. The sole
+  fixed attempt passed the exact player-build audit and all 14 scenario-binding checks, with zero
+  Unity errors or exceptions, but the predeclared worker-result gate returned `valid=false` after
+  28 stale and 28 rejected actions. The inconsistent retained timing state includes
+  `actionQueueAgeTicks=-1932` and `actionAgeTicks=3591`.
+- **OBSERVED, NOT ADMITTED:** the action aborted after 55.873 s and 5.765 m, with one retained Wait
+  invocation. These facts document the attempt but cannot establish a cohort diagnostic because
+  the action-transport validity rule failed independently of outcome.
+- **RETENTION:** both evidence partitions are hash-manifested and synchronized to governed DVC
+  storage. No retry, replacement, diagnostic/reference export, P/R response, Luna label, effect,
+  confidence sequence, or alpha use occurred. Family and method-visible disposition counts remain
+  unchanged; fixed transient-compensation run 035 is next.
+
 ## 2026-09-24 — land command--motion physical cohort run 033
 
 - **STATUS:** `VALID NOMINAL NOT_TRIGGERED / SUCCESS / 33 OF 100 ATTEMPTED`. The sole fixed attempt
