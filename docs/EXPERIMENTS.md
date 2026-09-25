@@ -1,5 +1,19 @@
 # Experiment Log
 
+## 2026-09-25 — land command--motion physical cohort run 021
+
+- **STATUS:** `VALID PERSISTENT DISCREPANCY / ABORT / 21 OF 100 ATTEMPTED`. The sole fixed attempt
+  passed exact build/binding, zero-error Unity-worker, and complete independent-reference gates;
+  the expected-success fixture mismatch is retained without retry.
+- **REFERENCE:** proposed and independently implemented computations agree on an 18--28 s
+  discrepancy at 0.250 versus 0.000 m/s, after a 0--5 s healthy response of 0.2597 m/s. The action
+  aborted after 40.511 s and 4.271 m, with three FollowPath attempts, two failures, and two
+  source-qualified Wait invocations.
+- **BOUNDARY:** this supports a sustained execution-response discrepancy, not actuator acceptance,
+  Nav2 consumption of odometry, the hidden intervention, or a unique physical cause. No P/R
+  response, Luna label, semantic effect, confidence sequence, or alpha use exists. Governed data
+  are synchronized to R2; fixed run 022 is next.
+
 ## 2026-09-25 — land command--motion physical cohort run 020
 
 - **STATUS:** `VALID PERSISTENT DISCREPANCY / ABORT / 20 OF 100 ATTEMPTED`. The sole fixed attempt
