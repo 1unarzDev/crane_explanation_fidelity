@@ -1,6 +1,6 @@
 # Experiment Log
 
-## 2026-09-25 — land command--motion physical cohort run 037
+## 2026-09-24 — land command--motion physical cohort run 037
 
 - **STATUS:** `VALID TRANSIENT RESPONSE RECOVERY / SUCCESS / 37 ATTEMPTED / 36 VALID / 1 INVALID`.
   The sole fixed attempt passed exact build/binding, zero-error Unity-worker, expected-outcome, and
