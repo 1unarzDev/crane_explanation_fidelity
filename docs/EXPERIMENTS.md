@@ -1,5 +1,20 @@
 # Experiment Log
 
+## 2026-09-24 — land command--motion physical cohort run 035
+
+- **STATUS:** `VALID TRANSIENT RESPONSE RECOVERY / SUCCESS / 35 ATTEMPTED / 34 VALID / 1 INVALID`.
+  The sole fixed attempt passed exact build/binding, zero-error Unity-worker, expected-outcome, and
+  complete independent-reference gates without retry.
+- **REFERENCE:** proposed and independently implemented computations agree on an 11--21 s
+  discrepancy at 0.260 versus 0.000 m/s, after a 0--5 s healthy response of 0.2597 m/s. Measured
+  response recovered to 0.2298 m/s during 23--24 s, and the action succeeded after 92.260 s and
+  17.505 m, with three FollowPath attempts, two failures, and two source-qualified Wait
+  invocations.
+- **BOUNDARY:** this supports transient execution-response loss, later measured recovery, and task
+  success—not actuator acceptance, Nav2 consumption of odometry, the hidden intervention, or a
+  unique physical cause. No P/R response, Luna label, semantic effect, confidence sequence, or
+  alpha use exists. Governed data are synchronized to R2; fixed nominal run 036 is next.
+
 ## 2026-09-24 — land command--motion physical cohort run 034 retained invalid
 
 - **STATUS:** `RETAINED_INVALID TRANSPORT GATE / 34 ATTEMPTED / 33 VALID / 1 INVALID`. The sole
