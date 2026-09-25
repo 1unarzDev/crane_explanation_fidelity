@@ -454,9 +454,9 @@ def main() -> int:
 
     physical_dispositions = [
         load(f"manifests/data/cm-land-conf-{index:03d}-disposition.json")
-        for index in range(1, 24)
+        for index in range(1, 25)
     ]
-    require_equal(len(physical_dispositions), 23, "physical cohort attempted configurations")
+    require_equal(len(physical_dispositions), 24, "physical cohort attempted configurations")
     require_equal(
         sum(
             item["admission"].get(
@@ -465,26 +465,28 @@ def main() -> int:
             )
             for item in physical_dispositions
         ),
-        23,
+        24,
         "physical cohort valid configurations",
     )
     latest_physical = physical_dispositions[-1]
     run_011_physical = physical_dispositions[10]
-    require_equal(pointer(latest_physical, "/contract/fixed_order"), 23, "run 023 fixed order")
-    require_equal(pointer(latest_physical, "/observed/navigation_status"), "aborted", "run 023 action status")
-    require_close(pointer(latest_physical, "/diagnostic/discrepancy_interval_s/0"), 18.0, 0.0, "run 023 discrepancy start")
-    require_close(pointer(latest_physical, "/diagnostic/discrepancy_interval_s/1"), 28.0, 0.0, "run 023 discrepancy end")
-    require_close(pointer(latest_physical, "/diagnostic/discrepancy_commanded_planar_speed_mps"), 0.26, 0.0, "run 023 discrepancy command")
+    require_equal(pointer(latest_physical, "/contract/fixed_order"), 24, "run 024 fixed order")
+    require_equal(pointer(latest_physical, "/observed/navigation_status"), "succeeded", "run 024 action status")
+    require_close(pointer(latest_physical, "/diagnostic/discrepancy_interval_s/0"), 10.0, 0.0, "run 024 discrepancy start")
+    require_close(pointer(latest_physical, "/diagnostic/discrepancy_interval_s/1"), 20.0, 0.0, "run 024 discrepancy end")
+    require_close(pointer(latest_physical, "/diagnostic/discrepancy_commanded_planar_speed_mps"), 0.26, 0.0, "run 024 discrepancy command")
     require_close(pointer(run_011_physical, "/diagnostic/discrepancy_interval_s/0"), 10.0, 0.0, "run 011 discrepancy start")
     require_close(pointer(run_011_physical, "/diagnostic/discrepancy_interval_s/1"), 20.0, 0.0, "run 011 discrepancy end")
     require_close(pointer(run_011_physical, "/diagnostic/discrepancy_commanded_planar_speed_mps"), 0.26, 0.0, "run 011 command speed")
     require_close(pointer(run_011_physical, "/diagnostic/discrepancy_measured_planar_speed_mps"), 0.0, 0.0, "run 011 measured speed")
-    require_equal(pointer(latest_physical, "/progress/persistent_discrepancy"), 9, "persistent-discrepancy count")
-    require_equal(pointer(latest_physical, "/progress/method_visible_diagnostic_supported"), 15, "supported diagnostic count")
-    require_equal(pointer(latest_physical, "/diagnostic/independent_disposition"), "supported", "run 023 diagnostic disposition")
-    require_equal(pointer(latest_physical, "/progress/next_fixed_run_id"), "cm-land-conf-024", "next physical run")
+    require_close(pointer(latest_physical, "/diagnostic/response_recovery_interval_s/0"), 22.0, 0.0, "run 024 recovery start")
+    require_close(pointer(latest_physical, "/diagnostic/response_recovery_interval_s/1"), 23.0, 0.0, "run 024 recovery end")
+    require_equal(pointer(latest_physical, "/progress/transient_compensation"), 7, "transient-compensation count")
+    require_equal(pointer(latest_physical, "/progress/method_visible_diagnostic_supported"), 16, "supported diagnostic count")
+    require_equal(pointer(latest_physical, "/diagnostic/independent_disposition"), "supported", "run 024 diagnostic disposition")
+    require_equal(pointer(latest_physical, "/progress/next_fixed_run_id"), "cm-land-conf-025", "next physical run")
     require_close(pointer(latest_physical, "/semantic_boundary/confirmatory_alpha_consumed"), 0.0, 0.0, "physical cohort alpha")
-    checked_assertions += 16
+    checked_assertions += 18
 
     luna_v8 = load(
         "manifests/annotation/luna-model-judge-v1-heldout-v8-endpoint-first.json"
@@ -550,8 +552,8 @@ def main() -> int:
             "Primary planning subset & 6 clusters",
             "P--R: 0.0 in both passes",
             "Endpoint-first v8 & 48/48 composite in both passes",
-            "twenty-three valid,",
-            "Physical cohort & 23/100 valid attempts",
+            "twenty-four valid,",
+            "Physical cohort & 24/100 valid attempts",
         ]
     )
 
