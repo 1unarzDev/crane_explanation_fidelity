@@ -46,8 +46,9 @@ name their unit and distinguish `at least N recorded` from `exactly N occurred`.
 
 Conditions A–H are specified in `STUDY_DESIGN.md`. In particular, F is a strong generic read-only
 coding-agent baseline, G is the provenance-linked checked method, and H isolates bounded provenance
-from unrestricted repository access. Central novelty comparisons are F versus G, H versus G, and D
-versus G; A–E remain necessary mechanistic controls.
+from unrestricted repository access. Central legacy treatment comparisons are F versus G, H versus
+G, and D versus G; A–E remain necessary mechanistic controls. These comparisons do not support
+priority claims for ROS-log RAG, source-aware explanation, or hallucination grading.
 
 F/G/H runs must pass a pre-call, question-specific information-unit audit. The shared runtime
 presentation contains the exact accepted goal/result identity, every recorded BT transition with a

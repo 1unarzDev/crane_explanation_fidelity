@@ -1,6 +1,6 @@
 # Fernández-Becerra robot-accountability and explanation precedents
 
-**Audit date:** 2026-09-24  
+**Audit date:** 2026-09-24
 **Scope:** Primary-source check limited to the two works below and their author-released software.
 This note positions the prospective CRANE physical-diagnosis study; it is not a reproduction, a
 systematic review, or empirical evidence for CRANE.
