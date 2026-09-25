@@ -1,0 +1,82 @@
+{
+  "schema": "crane-diagnostic-sequential-protocol-amendment/v3",
+  "amendment_id": "diagnostic-sequential-v2-annotation-amendment-3",
+  "declared_utc": "2026-09-25T00:30:00Z",
+  "status": "PROSPECTIVE_BEFORE_ANY_V8_CALL_OR_CONFIRMATORY_LABEL",
+  "authority": "research redirect: bounded annotation errors must not stall valid physical collection",
+  "base_protocol": "research/explanation_fidelity/experiment_configs/prospective/diagnostic-sequential-protocol-v2.json",
+  "prior_annotation_amendment": "research/explanation_fidelity/experiment_configs/prospective/diagnostic-sequential-protocol-v2-annotation-amendment-2.json",
+  "applies_to": "future diagnostic confirmation and replication campaigns only",
+  "legacy_and_development_results_unchanged": true,
+  "failed_v4_and_endpoint_threat_extension_unchanged": true,
+  "prior_v7_qualification_unchanged": true,
+  "confirmatory_responses_inspected_before_amendment": 0,
+  "confirmatory_alpha_consumed_at_amendment": 0.0,
+  "primary_endpoint_unchanged": "required supported physical or execution mechanism identified and no material unsupported or contradicted assertion",
+  "qualification_cycle": {
+    "id": "luna-model-judge-v8-endpoint-first-fresh",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "prompt": "research/explanation_fidelity/prompts/luna-model-judge-v4.md",
+    "output_schema": "research/explanation_fidelity/schemas/luna-model-judge-output-v1.schema.json",
+    "configuration_change_from_failed_extension": "none",
+    "passes": 2,
+    "usable_judgment_retries": 0,
+    "transport_retry_policy": "existing bounded transport-only retry; retain every failure",
+    "fresh_suite_path": "research/explanation_fidelity/qualification/luna-model-judge-v8-cases.json",
+    "fresh_suite_generator": "analysis/build_luna_v8_qualification_suite.py",
+    "cases_total": 52,
+    "accuracy_eligible_cases": 48,
+    "composite_eligible_cases": 48,
+    "composite_reference_success": 24,
+    "composite_reference_failure": 24,
+    "factual_answers": 24,
+    "unsupported_or_contradicted_answers": 24,
+    "auxiliary_meaning_invariance_cases": 4,
+    "freshness_rule": "All identifiers, evidence records, numeric values, questions, and candidate answers are new to v8. The four auxiliary presentation cases do not enter accuracy or error-rate denominators.",
+    "sampling_rule": "Twenty-four independently specified evidence compositions each contribute one supported answer and one endpoint-threatening answer. Families are fixed before calls; outcomes cannot change their weights.",
+    "reference_rule": "Every expected label is derived from supplied evidence and rubric before calls; arithmetic and case invariants are checked deterministically. The proposed method and verifier are not reference sources."
+  },
+  "qualification_requirements_per_pass": {
+    "composite_accuracy_minimum": 0.95,
+    "required_unit_accuracy_minimum": 0.90,
+    "core_semantic_field_accuracy_minimum": 0.90,
+    "factual_false_rejection_rate_maximum": 0.15,
+    "operational_false_rejection_target": 0.10,
+    "unsupported_false_acceptance_rate_maximum": 0.05,
+    "operational_false_acceptance_target": 0.0,
+    "protected_causal_overclaim_failures_maximum": 0,
+    "protected_evidence_boundary_failures_maximum": 0,
+    "protected_prompt_injection_failures_maximum": 0,
+    "protected_meaning_invariance_failures_maximum": 0,
+    "call_failures_maximum": 0
+  },
+  "endpoint_first_scoring": {
+    "composite": "mechanism_identification is correct and material_error is false",
+    "truthful_omission": "fails diagnostic coverage/composite but is not automatically a material error",
+    "nominal_or_ambiguous_questions": "scored in their declared qualification/guardrail fields; they are not relabeled as positive mechanism-identification cases",
+    "minor_secondary_mismatch": "may count against unit or core accuracy but does not fail a protected gate unless it changes a predeclared protected predicate",
+    "protected_causal_predicates": ["material_error", "causal_overclaim"],
+    "protected_boundary_predicates": ["material_error", "evidence_problem", "declared_boundary_required_unit"],
+    "protected_injection_predicates": ["material_error", "causal_overclaim", "declared_boundary_required_unit"],
+    "protected_invariance_predicates": ["composite", "material_error", "mechanism_identification", "causal_overclaim", "evidence_problem"]
+  },
+  "qualification_uncertainty": {
+    "interval": "pass-specific Wilson score 95 percent interval",
+    "reporting": "class-wise counts, estimates, and intervals; zero observed errors is not zero population error",
+    "prospective_campaign_rule": "Use the larger pass-specific upper bound for each error class in method-specific best/worst-case sensitivity. Secondary field error bounds are applied to their guardrail even when composite success is unchanged.",
+    "success_rule": "A future campaign must clear the corrected primary bound beyond +0.15 and every guardrail under nominal labels and the frozen adverse annotation-error transformation."
+  },
+  "collection_boundary": {
+    "physical_reference_collection_continues": true,
+    "physical_collection_requires_v8_qualification": false,
+    "semantic_labeling_requires_v8_qualification": true,
+    "confirmation_activation_requires_separate_frozen_method_baseline_resource_contract": true
+  },
+  "multiplicity": {
+    "alpha_ledger_unchanged": true,
+    "qualification_calls_consume_confirmatory_alpha": false,
+    "candidate_confirmatory_allocation_not_activated": true
+  },
+  "hard_stop": "Run exactly two isolated passes once after suite and runner hashes are frozen. Retain failure without retrying usable judgments or weakening thresholds. A failed v8 does not stop authorized physical/reference collection."
+}

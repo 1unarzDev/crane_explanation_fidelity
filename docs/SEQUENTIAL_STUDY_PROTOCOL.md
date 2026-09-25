@@ -27,6 +27,8 @@ Machine-readable sources:
   `research/explanation_fidelity/experiment_configs/prospective/diagnostic-sequential-protocol-v2-annotation-amendment-1.json`.
 - qualified-judge binding and executable-sensitivity amendment:
   `research/explanation_fidelity/experiment_configs/prospective/diagnostic-sequential-protocol-v2-annotation-amendment-2.json`.
+- prospective endpoint-first requalification amendment:
+  `research/explanation_fidelity/experiment_configs/prospective/diagnostic-sequential-protocol-v2-annotation-amendment-3.json`.
 
 ## Population, unit, and sampling
 
@@ -97,6 +99,16 @@ composite accuracy, 90% unit accuracy, and 90% core-field accuracy; factual fals
 capped at 15%, unsupported-claim false acceptance at 5%, and protected causal, boundary,
 prompt-injection, and meaning-invariance failures at zero. These are operational qualification
 tolerances, not permission for candidate hallucination.
+
+Amendment 3 also leaves the endpoint and thresholds unchanged while prospectively correcting the
+qualification estimand after the retained endpoint-threat failure. It uses the unchanged Luna
+model/prompt/settings on wholly fresh cases and applies the composite only where a supported
+mechanism is required. Nominal and ambiguous cases retain their own guardrail labels. Protected
+tests predeclare safety-relevant predicates; secondary answerability or disposition mismatches
+remain in core-field accuracy rather than masquerading as a causal, boundary, or injection
+failure. Each pass has 24 factual and 24 unsupported/contradicted accuracy cases, plus four
+auxiliary meaning-invariance presentations excluded from rate denominators. The false-acceptance
+cap remains 5% with zero as the operational target.
 
 The minimum worthwhile improvement is `+0.15`. Added diagnostic and verification complexity is not
 worth a smaller gain. Success requires a one-sided anytime lower bound strictly above `+0.15`, not
@@ -202,6 +214,13 @@ injection/boundary gates in each. Its hard stop blocks candidate-v3 semantic act
 changing the historical v7 result. The extension's smaller bounds are ineligible; amendment 2's
 original values remain the historical sensitivity bounds. More study responses cannot repair
 either judge-validity failure.
+
+The later amendment 3 authorizes exactly one v8 endpoint-first qualification cycle under the
+unchanged Luna configuration. It does not alter any failed disposition or authorize semantic study
+scoring before both fresh passes clear every gate. A v8 failure is retained without another usable-
+judgment retry or threshold change. It does not halt the separately authorized physical/reference
+collection, because robot episodes and deterministic reference computations do not depend on a
+semantic judge.
 
 Reserve fresh configuration identities before discovery. Replication uses byte-identical P/R,
 evidence contract, prompts, tools, thresholds, judge, and analysis hashes; it reuses no discovery

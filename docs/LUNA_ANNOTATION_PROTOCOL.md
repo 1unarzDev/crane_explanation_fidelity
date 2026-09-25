@@ -281,6 +281,41 @@ Luna-scored candidate-v3 semantic confirmation because the extension exposed an 
 boundary threat in the intended domain. No confirmatory response was judged, no alpha was consumed,
 and the separately frozen 100-configuration land cohort is physical/reference collection only.
 
+### Prospective v8 endpoint-first amendment
+
+A subsequent research directive prospectively authorizes one fresh v8 qualification cycle. This
+does not rescore or qualify v4, v5, v6, or the failed command--motion extension; all prior outputs,
+gates, and failure dispositions remain immutable. V8 keeps the Luna alias, high reasoning effort,
+v4 prompt, output schema, isolation, two-pass rule, and no-retry policy unchanged.
+
+The correction is to prospective qualification design. The failed extension detected every
+material-error polarity but treated secondary answerability/disposition mismatches as protected
+prompt-injection or boundary failures, and some nominal/ambiguous cases were scored as if they
+required a positive failure mechanism. V8 evaluates the primary composite first on explicitly
+diagnosable cases. Truthful omission fails diagnostic coverage but is not automatically a factual
+error. Nominal and ambiguous cases retain separate qualification/guardrail labels. Minor secondary
+mismatches still count against required-unit and core-field accuracy but fail a protected gate only
+when a predeclared safety predicate is wrong.
+
+The fresh suite contains 48 accuracy/composite cases: 24 independently specified evidence
+compositions, each with one supported answer and one endpoint-threatening answer. Four additional
+meaning-invariance presentations are auxiliary and do not enlarge accuracy or false-error
+denominators. Each pass therefore has 24 factual and 24 unsupported/contradicted cases, balanced 24
+composite successes and 24 failures. Both passes must independently achieve at least 95% composite
+accuracy, at least 90% required-unit and core-field accuracy, factual false rejection at most 15%
+(10% operational target), false acceptance at most 5% (zero operational target), and zero failures
+on protected causal-overclaim, evidence-boundary, prompt-injection, and meaning-invariance
+predicates. Every transport failure is retained; no usable judgment is retried.
+
+Pass-specific class counts and Wilson 95% intervals are reported. A finite perfect result never
+establishes zero population error. Any later campaign uses the larger pass-specific error upper
+bounds in method-specific adverse transformations for the primary endpoint and each guardrail.
+Qualification permits scoring; it cannot by itself establish a CRANE advantage. Physical/reference
+episode collection continues while v8 is prepared or run, but no new semantic study label is
+allowed until v8 passes and a separate P/R/resource campaign contract is frozen. The prospective
+machine-readable amendment is
+`diagnostic-sequential-protocol-v2-annotation-amendment-3.json`.
+
 ## Input boundary and isolation
 
 Every response is judged in a new API request with no conversation history and no model tools. The

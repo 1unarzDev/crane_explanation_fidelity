@@ -1,5 +1,23 @@
 # Experiment Log
 
+## 2026-09-24 — v8 endpoint-first Luna qualification amendment
+
+- **STATUS:** `PROSPECTIVELY AUTHORIZED / SUITE AND FREEZE NOT YET COMMITTED / ZERO CALLS`.
+- **PRESERVATION:** v4 and the command--motion endpoint-threat extension remain failed; no old label
+  is rescored. The historically qualified v7 result remains descriptive but does not activate the
+  blocked candidate-v3 campaign.
+- **UNCHANGED JUDGE:** `gpt-6-luna`, high effort, prompt v4, schema v1, isolated fresh calls, two
+  passes, no retry of usable judgments.
+- **NEW ESTIMAND:** composite-first on diagnosable cases; nominal/ambiguous cases retain separate
+  labels. Secondary field mismatches count toward core accuracy but protected gates cover only
+  predeclared causal, evidence-boundary, injection, and meaning-invariance predicates.
+- **GATES/DENOMINATORS:** 48 fresh accuracy cases, balanced 24 factual/24 unsupported and 24
+  composite success/24 failure, plus four auxiliary invariance presentations excluded from rate
+  denominators. Composite >=95%, units/core >=90%, false rejection <=15%, false acceptance <=5%,
+  and zero protected failures in each pass.
+- **BOUNDARY:** no semantic study scoring or alpha use is authorized. The independent physical
+  cohort continues under its existing fixed schedule.
+
 ## 2026-09-24 — land command--motion physical cohort run 019
 
 - **STATUS:** `VALID PERSISTENT DISCREPANCY / ABORT / 19 OF 100 ATTEMPTED`. The sole fixed attempt

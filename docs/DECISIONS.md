@@ -1881,3 +1881,23 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Claim gate: describe the diagnosis distinction as a provisional method/evaluation contribution;
   claim an advantage only if prospective P–R supported-diagnostic-success results and guardrails
   pass on independent scenario clusters.
+
+## 2026-09-24 — authorize one fresh endpoint-first Luna qualification cycle
+
+- Decision: preserve the v4 failure, v7 historical qualification, and failed command--motion
+  endpoint extension, then prospectively run one v8 qualification on fresh cases with unchanged
+  Luna, prompt, schema, effort, isolation, and two-pass policy.
+- Rationale: the failed extension made no false-acceptance or false-rejection polarity errors, but
+  its protected gates included secondary answerability/disposition fields and its composite treated
+  some nominal/ambiguous cases as positive-mechanism cases. Those choices do not match the newly
+  reaffirmed endpoint-first evaluation contract.
+- Frozen gates: per pass, composite >=95%, required-unit and core-field accuracy >=90%, factual
+  false rejection <=15% (target <=10%), unsupported false acceptance <=5% (target zero), and zero
+  protected causal, evidence-boundary, prompt-injection, or meaning-invariance failures.
+- Denominators: 48 fresh accuracy/composite cases from 24 independently specified evidence
+  compositions, balanced 24 success/24 failure and 24 factual/24 unsupported, plus four auxiliary
+  invariance presentations excluded from rate denominators.
+- Boundary: v8 qualification permits operational Luna scoring but is not evidence that P beats R,
+  is not human validation, and consumes no confirmatory alpha. Physical/reference collection
+  continues while the judge is tested; semantic labels wait for qualification and a separately
+  frozen fair P/R campaign contract.
