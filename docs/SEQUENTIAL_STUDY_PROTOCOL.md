@@ -228,13 +228,14 @@ accuracy was 336/384 and 335/384, and each had one protected causal mismatch. Th
 operational semantic arm despite its strong endpoint-polarity result. No confirmatory response was
 scored and the alpha ledger remains untouched; the physical/reference cohort continues.
 
-As of fixed-order run 036, the physical/reference ledger contains 36 attempts: 35 valid and one
+As of fixed-order run 037, the physical/reference ledger contains 37 attempts: 36 valid and one
 retained invalid recording. Run 034 failed the prospectively declared worker transport-validity
 gate (`staleActions=28`, `rejectedActions=28`) after exact build and scenario binding. It was not
 retried or replaced and contributes no diagnostic-family count, semantic response, or alpha. The
 following run 035 passed all physical/reference gates and adds one transient-compensation result;
-run 036 adds one valid nominal `not_triggered` control. Neither adds a semantic response or alpha.
-The next authorized physical item is fixed-order run 037.
+run 036 adds one valid nominal `not_triggered` control. Run 037 adds a valid transient-compensation
+success with independently reproduced discrepancy and measured-response recovery. None adds a
+semantic response or alpha. The next authorized physical item is fixed-order run 038.
 
 Reserve fresh configuration identities before discovery. Replication uses byte-identical P/R,
 evidence contract, prompts, tools, thresholds, judge, and analysis hashes; it reuses no discovery
@@ -245,9 +246,10 @@ separate allocations.
 ## Activation and retention
 
 No campaign is active. The separately frozen 100-configuration land schedule is physical/reference
-collection only; thirty-three configurations have been attempted and valid, with no P/R response or
-Luna label. Activation requires frozen P/R and resource-parity hashes, a semantically valid evaluation
-arm, admitted target generators, one frozen question/reference/sufficiency label per
+collection only; 37 configurations have been attempted, of which 36 are valid and one is retained
+invalid, with no P/R response or Luna label. Activation requires frozen P/R and resource-parity
+hashes, a semantically valid evaluation arm, admitted target generators, one frozen
+question/reference/sufficiency label per
 cluster, a fixed sampler/exclusion contract, reserved replication configurations, and successful
 schema/monitor dry runs. Every candidate—including failed and futile versions—retains its
 registration, runs, exclusions, raw/final answers, judge passes, deterministic measurements,
