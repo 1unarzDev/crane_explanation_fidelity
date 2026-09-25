@@ -34,7 +34,10 @@ The method has two separate evidence planes:
 
 A nearby topic sample is not automatically a consumed decision input. A plausible function found
 in a repository is not automatically the function that governed an observed event. Both
-relationships require retained provenance, and unresolved provenance remains explicit.
+relationships require retained provenance, and unresolved provenance remains explicit. Likewise,
+an image or other visual observation may establish that an obstacle was visible under a declared
+sensor contract; it does not by itself establish Nav2 consumption or obstacle causation. VLM
+context can be represented as another bounded observation source without changing this boundary.
 
 ## Model boundary and replication arms
 

@@ -134,11 +134,16 @@ does not measure whether a decisive mechanism was omitted~\cite{min2023factscore
 bidirectional semantic checks test both omissions and unsupported additions after realization
 ~\cite{dusek2020semantic}. Selective prediction motivates reporting error jointly with useful
 coverage~\cite{geifman2019selectivenet}. Explainability-by-Design already connects provenance,
-queries, explanation plans, and realization~\cite{huynh2023explainability}. Our narrower
-contribution is a robot-navigation evaluation in which the intermediate object is a validated,
-bounded physical or execution diagnosis, and diagnostic correctness is scored separately from
-language faithfulness. We do not claim priority for structured plans, factual checking,
-abstention, or provenance-backed generation.
+queries, explanation plans, and realization~\cite{huynh2023explainability}. Fern\'andez-Becerra
+et al. further combine curated ROS~2 navigation events with agentic RAG, retrieval and
+hallucination graders, and natural-language explanation evaluation~\cite{fernandezbecerra2026rag};
+their accountable black-box design supplies textual logs and visual context to LLM/VLM
+explainers~\cite{fernandezbecerra2026accountability}. We therefore claim no priority for ROS-log
+RAG, accountable recording, source-aware retrieval, multimodal context, or hallucination grading.
+Our narrower contribution is to test whether independently computed measurements establish a
+bounded physical or execution mechanism---with conflicts, unresolved alternatives, and explicit
+evidence sufficiency---and whether final language preserves it. Diagnostic correctness is scored
+separately from language faithfulness.
 
 Marine motion illustrates the need for semantic restraint: propulsion, current-relative
 hydrodynamics, wind, and wave loads are distinct terms in standard craft models~\cite{fossen2021handbook}.
@@ -158,7 +163,9 @@ delivered scans or costmaps, commands, accepted actuation where available, and i
 measured motion. Evaluator truth contains injected conditions, canonical simulator geometry,
 hidden force decomposition, expected propositions, and answerability labels. A diagnostic sensor
 need not have been consumed by Nav2 to establish a physical condition. Claiming that Nav2 chose an
-action \emph{because} it consumed that observation requires a recorded runtime dependency.
+action \emph{because} it consumed that observation requires a recorded runtime dependency. The
+same boundary applies to images: seeing an obstacle can establish visual presence under the sensor
+contract, but not Nav2 consumption or obstacle causation.
 
 We retain four evidence levels: recorded sequence; reconstructed software mechanism; inference
 under an explicit model; and controlled-intervention result. Temporal order alone supports only
@@ -227,9 +234,11 @@ results separately and describe this retained operating point as predominantly d
 
 \subsection{Prospective diagnostic comparison}
 
-The planned prospective study compares four compact conditions. R is a strong repository-aware agent with the same
-robot-visible evidence, exact source/configuration, and the same diagnostic tools and descriptions
-available to the proposal. P receives validated diagnostic results plus provenance, checked
+The planned prospective study compares four compact conditions. R is a strong repository-aware,
+tool-enabled agent with the same robot-visible evidence, exact source/configuration access,
+retrieval over those permitted artifacts, deterministic calculation tools and descriptions, and
+similar model/call/token/time budget as P, but no access to P's checked diagnostic outputs. P
+receives validated diagnostic results plus provenance, checked
 planning, generation, and final verification. T deterministically renders the same diagnostic
 result. N is a new-arm provenance/checking ablation without physical diagnostic computations; it
 does not modify the archived legacy method.
@@ -242,9 +251,12 @@ mechanism/location/time identification, evidence coverage and citation correctne
 check, latency/cost, and fallback frequency.
 
 Scenario families contain nominal success, successful compensation, similar terminal symptoms
-from different mechanisms, the same mechanism with different outcomes, irrelevant obstacles,
-sufficient versus missing evidence, false premises, and out-of-model causes. Shared layouts,
-interventions, evidence masks, and question variants stay in one split and one statistical cluster.
+from geometry versus command--motion discrepancy, logs that report replanning without establishing
+the restriction, unsupported obstacle-cause assertions, visible obstacles without proven Nav2
+consumption, sufficient versus masked evidence, false premises, and out-of-model causes. Shared
+layouts, interventions, evidence masks, and question variants stay in one split and one
+statistical cluster. Repeated LLM generations and judge passes are measurements on that cluster,
+not new robot episodes.
 Valid unexpected outcomes are retained; induction success and recording validity are reported
 separately. Development pilots determine thresholds and inform a new clustered paired power
 simulation before questions, labels, prompts, models, stopping rules, and held-out splits freeze.

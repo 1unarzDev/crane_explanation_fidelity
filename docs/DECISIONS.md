@@ -1855,3 +1855,29 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Effect: current P remains `NOT_READY` and this candidate path closes. The project has no
   statistically significant or development-demonstrated P-over-R advantage. Future scoring must
   complete independently checked reference construction before calls; alpha remains 0.000/0.050.
+
+## 2026-09-24 — narrow novelty after close ROS/Nav2 accountability precedents
+
+- Decision: supersede the forward-looking novelty framing in the 2026-09-19 runtime-to-source
+  decision without rewriting that historical record. Do not claim novelty for ROS-log or agentic
+  RAG, robot black-box accountability, source-aware explanation, multimodal/VLM context, or
+  hallucination grading. Frame the prospective contribution as evaluating independently checked
+  physical/execution mechanisms and their evidence-sufficiency limits.
+- Evidence: Fernández-Becerra et al. (ESWA 2026) combine curated ROS 2/Nav2 events, source-bearing
+  records, retrieval and answer agents, hallucination grading, deterministic calculations, and
+  natural-language explanation evaluation. Their IGPL work is precedent for accountable recording
+  and textual-plus-visual LLM/VLM explanation context. Huynh et al. remain provenance-by-design
+  precedent, but are not the sole close work.
+- Baseline consequence: prospective R remains a strong repository-aware, tool-enabled alternative
+  with the same robot-visible evidence, relevant source/configuration, retrieval, deterministic
+  calculation tools, and similar resource budget as P. It cannot read P's checked diagnostic
+  outputs, plans, verifier state, or fallback decision.
+- Evidence boundary: a logged causal statement or visible obstacle does not by itself establish
+  the physical restriction, Nav2 consumption, or decision causation. Benchmark cases must separate
+  those propositions and include masked decisive evidence requiring qualification.
+- Scope: do not add a VLM/perception workstream or a broad reproduction study. A small
+  development-only compatibility check with the released ESWA approach is optional only if it does
+  not delay independent CRANE episode collection, annotation, analysis, figures, or manuscript.
+- Claim gate: describe the diagnosis distinction as a provisional method/evaluation contribution;
+  claim an advantage only if prospective P–R supported-diagnostic-success results and guardrails
+  pass on independent scenario clusters.

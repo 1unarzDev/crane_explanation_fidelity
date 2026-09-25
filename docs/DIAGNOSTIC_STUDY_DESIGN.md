@@ -36,8 +36,10 @@ known; and fallback frequency. Diagnostic output and final language are scored s
 
 ## Compact methods
 
-- **R:** strong repository-aware agent with the same robot-visible physical evidence, exact
-  source/configuration, and the same executable diagnostic tools/descriptions available to P.
+- **R:** strong repository-aware, tool-enabled agent with the same robot-visible physical evidence,
+  exact relevant source/configuration access, retrieval over those permitted artifacts, the same
+  deterministic calculation tools/descriptions, and a similar model/call/token/time budget as P.
+  R cannot read P's checked diagnostic result, checked answer plan, verifier state, or fallback.
 - **P:** validated diagnostic computations + provenance + checked answer plan + language + final
   verification/fallback.
 - **T:** deterministic rendering of the same checked diagnostic result.
@@ -53,10 +55,13 @@ Start with two mechanisms and add a third only if both are healthy:
 
 1. **Land geometric restriction:** nominal traversable route, observed restriction relative to
    physical footprint, configured-envelope restriction, ambiguous/local-only evidence, and an
-   irrelevant visible obstacle.
+   irrelevant visible obstacle. Include logs that say replanning occurred without establishing the
+   physical restriction, an asserted obstacle cause unsupported by measurements, and an image or
+   scan that shows an obstacle without proving Nav2 consumed it.
 2. **Command-to-motion discrepancy:** calibrated nominal response, successful compensation,
    saturated/insufficient correction, and missing/ambiguous decisive motion evidence. Use land or
-   RoboBoat based on retained signal quality.
+   RoboBoat based on retained signal quality. Match at least one terminal symptom to a geometric
+   case so repeating the abort/recovery sequence cannot identify the mechanism.
 
 RoboBoat may additionally supply one geometric approach case and one execution/disturbance case.
 Wave/current labels are prohibited unless separately validated. Basic command mapping must pass
@@ -68,6 +73,8 @@ before any disturbance case is eligible.
 - Retain valid unexpected outcomes; report induction success separately from recording validity.
 - Group shared layouts, paired interventions, evidence masks, and question variants into one
   statistical cluster and one split.
+- Treat repeated model generations, question paraphrases, and judge passes as repeated
+  measurements within that cluster, never as additional independent robot episodes.
 - Keep held-out scenario configurations; perform actual controlled reruns rather than
   recorded-state counterfactual replay.
 - Freeze questions, sufficiency labels, thresholds, models, prompts, resource budgets, split,

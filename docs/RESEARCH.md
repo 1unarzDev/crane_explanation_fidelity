@@ -19,7 +19,32 @@ runtime event to the exact governing artifact. It also establishes that Nav2
 `number_of_recoveries` counts recovery leaf invocations and that Jazzy `BehaviorTreeLog` may omit
 terminal-tick transitions; benchmark labels must name the count unit and scope completeness.
 
-Last primary-source check: 2026-09-19. This note records only claims checked against a paper, an official proceedings/venue page, or an authors' repository. Recommendations for this project are labelled as such; they are not claims made by the cited authors.
+Last primary-source check: 2026-09-24. This note records only claims checked against a paper, an official proceedings/venue page, or an authors' repository. Recommendations for this project are labelled as such; they are not claims made by the cited authors.
+
+## 2026-09-24 — Fernández-Becerra accountability/explanation precedents
+
+The primary-source audit is retained in
+[`docs/research/FERNANDEZ_BECERRA_PRIOR_WORK.md`](research/FERNANDEZ_BECERRA_PRIOR_WORK.md).
+Fernández-Becerra et al.'s ESWA paper is close prior work for ROS 2/Nav2 accountability data,
+agentic RAG, hybrid and metadata-aware retrieval, source-bearing log explanations, deterministic
+calculations over retrieved records, hallucination grading, and natural-language evaluation. Its
+curation rules can emit causal statements such as path modification due to obstacle detection.
+Faithfulness to such a retrieved event does not independently establish that the obstacle
+physically restricted the robot, entered the decision-relevant costmap, or caused replanning.
+
+Their IGPL paper is precedent for black-box-like accountable recording, replay/privacy/authenticity,
+and explanation from textual robot records plus visual/VLM context. A visual observation may
+establish presence under its sensor contract; it does not establish Nav2 consumption or causation.
+The full IGPL text was not accessible in this audit, so detailed claims are limited to the
+publisher abstract and author-released implementation.
+
+CRANE therefore claims no novelty for ROS-log RAG, black-box accountability, source-aware robot
+explanations, multimodal/VLM context, or hallucination graders. Its prospective distinction is to
+evaluate independently derived physical/execution mechanisms using measurements, declared
+diagnostic computations, provenance, conflicting evidence, unresolved alternatives, and evidence
+sufficiency. Any advantage claim remains conditional on prospective scenario-clustered results.
+A small development-only compatibility check at the released ESWA structured-record boundary is
+optional, but must not delay independent episode collection, annotation, analysis, or the paper.
 
 ## Submission-domain scope decision (2026-09-21)
 
@@ -84,7 +109,7 @@ RoboBoat diagnostic study only where prospectively governed evidence supports it
 ## Immediate synthesis for RQ1--RQ4
 
 - The strongest methodological precedent for the proposed pipeline is the separation of symbolic content planning from language realization. Moryossef et al. show that an explicit plan can improve semantic faithfulness without sacrificing judged fluency; their planner is not a verifier, however, and their WebNLG result should not be presented as evidence for robot explanations [Moryossef et al. 2019](https://doi.org/10.18653/v1/N19-1236).
-- Provenance captured by design is a closer conceptual match than post-hoc log summarization. Huynh et al. explicitly separate requirements, provenance capture/querying, explanation plans, and realization. Their evidence is a two-scenario software-engineering case study, not an explanation-fidelity experiment [Huynh et al.](https://arxiv.org/abs/2206.06251).
+- Huynh et al. remain the provenance-by-design precedent: they separate requirements, provenance capture/querying, explanation plans, and realization, in a two-scenario software-engineering case study rather than an explanation-fidelity experiment [Huynh et al.](https://arxiv.org/abs/2206.06251). Fernández-Becerra et al. provide close ROS/Nav2 precedents for agentic retrieval over robot records and accountable textual-plus-visual explanation context ([ESWA 2026](https://doi.org/10.1016/j.eswa.2026.132631); [IGPL](https://doi.org/10.1093/jigpal/jzaf016)). None of these precedents makes a retrieved or visually plausible causal statement equivalent to an independently checked physical mechanism.
 - Generic NLI is useful but cannot be the trust boundary. Dušek and Kasner report useful cross-domain semantic-error detection, while Pramanick and Rossi show that off-the-shelf NLI models perform poorly on their robotics coherence labels until domain fine-tuning. Both motivate independent evaluation and deterministic checks for identifiers, counts, order, arithmetic, and status [Dušek and Kasner 2020](https://doi.org/10.18653/v1/2020.inlg-1.19), [Pramanick and Rossi 2024](https://doi.org/10.1109/IROS58592.2024.10802671).
 - Atomic-claim evaluation is directly useful for claim-level precision, but FActScore's Wikipedia-biography estimator and its reported error rate do not transfer to robot evidence. Reuse the decomposition idea, evaluate proposition extraction separately on this domain, and report response-level material errors as the primary outcome [Min et al. 2023](https://doi.org/10.18653/v1/2023.emnlp-main.741).
 - REFLECT/RoboFail is relevant external evidence for failure-explanation behavior, but its manipulated-object domain, ground-truth simulation perception, and human-rated “correct and informative” metric do not replace the paired CRANE/Nav2 experiment [Liu et al. 2023](https://arxiv.org/abs/2306.15724).

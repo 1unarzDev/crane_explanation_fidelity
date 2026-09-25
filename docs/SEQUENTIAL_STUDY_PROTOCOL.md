@@ -60,7 +60,9 @@ The sole confirmatory comparison is P versus tool-enabled R.
 - **P:** frozen physical diagnostic computations, runtime/source provenance, checked answer plan,
   language realization, and final verification/fallback.
 - **R:** the strongest development-selected repository-aware agent, given the same robot-visible
-  evidence, exact source/configuration, executable diagnostic tools, and tool descriptions.
+  evidence, exact relevant source/configuration access, retrieval over those permitted artifacts,
+  executable deterministic calculation tools, and tool descriptions, but not P's checked
+  diagnostic result, checked plan, verifier state, or fallback decision.
 
 Model/version, reasoning and sampling settings, call ceilings, tool calls, input-token ceiling,
 wall-clock allowance, and permitted external resources are matched. Actual calls, tokens, latency,

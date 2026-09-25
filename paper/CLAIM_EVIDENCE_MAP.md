@@ -6,6 +6,12 @@ experimental evidence.
 
 | Claim candidate | Retained support | Current verdict |
 | --- | --- | --- |
+| ROS-log or agentic RAG is novel to CRANE | Fernández-Becerra et al. (ESWA 2026) retrieve curated ROS 2/Nav2 events with an agentic RAG workflow | **DO NOT CLAIM NOVELTY** |
+| Robot black-box accountability is novel to CRANE | Fernández-Becerra et al. (IGPL 2026) describe accountable recording, replay, privacy, and authenticity | **DO NOT CLAIM NOVELTY** |
+| Source-aware natural-language robot explanation is novel to CRANE | ESWA retains source-bearing ROS records and generates natural-language navigation explanations; Huynh et al. link provenance, queries, plans, and realization | **DO NOT CLAIM NOVELTY**; exact CRANE runtime/source linkage may be described as implementation, not a broad priority claim |
+| Multimodal or VLM explanation context is novel to CRANE | The IGPL work combines textual robot records with visual/VLM context | **DO NOT CLAIM NOVELTY**; CRANE does not add a VLM workstream |
+| Hallucination grading is novel to CRANE | The ESWA agentic workflow includes a hallucination grader and answer grader | **DO NOT CLAIM NOVELTY** |
+| CRANE evaluates independently derived physical/execution diagnoses beyond causal statements already present in logs | Development diagnostics and separately implemented reference calculations exist, but no eligible confirmatory semantic comparison exists | **PROVISIONAL METHOD/EVALUATION CLAIM ONLY**; claim an advantage only if the prospective P–R endpoint and all guardrails pass on independent clusters |
 | Legacy provenance/checking improves response trustworthiness | 33 paired F/G/H episodes and 198 calls | **UNRESOLVED:** no sealed labels/adjudication; under frozen minimum |
 | Legacy method provides exact runtime-to-source software-mechanism links | BT/source hashes, parity audits, checked plans across 33 episodes | **SUPPORTED AS IMPLEMENTATION/CAPTURE**, not as an error-rate improvement |
 | Legacy method diagnoses physical causes | Legacy questions deliberately lack decisive physical evidence | **CONTRADICTED / DO NOT CLAIM** |
