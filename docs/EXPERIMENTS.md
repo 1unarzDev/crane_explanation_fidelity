@@ -1,5 +1,17 @@
 # Experiment Log
 
+## 2026-09-24 — land command--motion physical cohort run 033
+
+- **STATUS:** `VALID NOMINAL NOT_TRIGGERED / SUCCESS / 33 OF 100 ATTEMPTED`. The sole fixed attempt
+  passed exact build/binding, zero-error Unity-worker, expected-outcome, and complete independent-
+  reference gates without retry.
+- **REFERENCE:** both implementations return `not_triggered` after a calibrated 0--5 s response of
+  0.2597 m/s. The action succeeded after 85.710 s and 17.599 m even though the retained sequence
+  contains three FollowPath attempts, two failures, and two source-qualified Wait invocations.
+- **BOUNDARY:** recovery activity alone does not establish a command-to-motion discrepancy. No P/R
+  response, Luna label, semantic effect, confidence sequence, or alpha use exists. Governed data
+  are synchronized to R2; fixed transient-compensation run 034 is next.
+
 ## 2026-09-24 — land command--motion physical cohort run 032
 
 - **STATUS:** `VALID PERSISTENT DISCREPANCY / ABORT / 32 OF 100 ATTEMPTED`. The sole fixed attempt
