@@ -7247,3 +7247,19 @@
 - **NEXT:** a new candidate version may repair only the observed coverage omissions, but it must be
   screened prospectively on fresh configurations. These six clusters cannot be reused as evidence
   for successor promotion.
+
+# 2026-09-26 — hidden rendered RoboBoat launcher qualification
+
+- **PURPOSE:** stop the aquatic Unity window from flashing on the operator's active desktop while
+  preserving the frozen rendered graphics/water/sensor contract.
+- **REJECTED MODES:** Unity `-batchmode`/`-nographics` remain prohibited. Routing the window to an
+  inactive workspace without forcing unfocused rendering was also rejected: RTF fell to about
+  0.34 and the fixture accumulated stale observations.
+- **QUALIFIED EXECUTION ADAPTER:** `scripts/run_roboboat_hidden_render.sh` applies an exact
+  `CRANE.x86_64` / `ASV` Hyprland rule before launch, uses a silent inactive special workspace,
+  suppresses activation/focus requests, enables `render_unfocused`, raises the unfocused render
+  cap to 60 Hz for the child lifetime, and restores the prior cap at exit. Placement fails closed.
+- **MEASURED DEVELOPMENT PROBE:** `train-gpu` remained active with Vulkan/HDRP rendering. RTF was
+  1.011594; Unity errors/exceptions, failed observations, and invalid water searches were all zero;
+  the six-second measured interval retained 59 depth acquisitions and 61 LiDAR scans. The special
+  workspace never became active. This is display-path qualification only and adds zero study N.

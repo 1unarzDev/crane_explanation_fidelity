@@ -104,3 +104,19 @@ cross-episode commands; the reset probe reloaded the scene with no duplicate end
 Three technical setup failures (invalid DDS domain, FollowPath feedback schema mismatch, and an
 incorrect expected status) are retained. Concise governed summaries are declared in
 `manifests/data/roboboat-arm-freeze-development-validation-v1.json`; the large player is not kept.
+
+### Hidden rendered RoboBoat execution
+
+On the current Hyprland host, launch RoboBoat capture through
+`scripts/run_roboboat_hidden_render.sh COMMAND ...`. This is an execution-only display adapter: it
+routes the ordinary `CRANE.x86_64` / `ASV` XWayland window to an inactive special workspace before
+mapping, suppresses client activation, and forces the unfocused render path to 60 Hz. It restores
+the prior compositor limit on exit and fails closed if the rendered window appears on a visible
+workspace. The Unity command and scientific configuration are unchanged.
+
+Do not replace this adapter with Unity `-batchmode` or `-nographics`; the aquatic evidence contract
+requires the rendered Vulkan/HDRP water path. A 2026-09-26 development probe measured RTF 1.0116,
+zero Unity errors/exceptions, zero failed observations, zero invalid water searches, 59 depth
+acquisitions, and 61 LiDAR scans while the render workspace remained inactive. A rejected earlier
+special-workspace attempt without `render_unfocused` is retained in the experiment log: it reduced
+RTF to about 0.34 and is not qualified for capture.
