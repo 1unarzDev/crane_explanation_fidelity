@@ -1,5 +1,19 @@
 # Experiment Log
 
+## 2026-09-26 — Luna v12 complete-endpoint extension qualified
+
+- **RESULT:** both isolated passes qualified: 18/18 complete-endpoint classifications and 72/72
+  unit-coverage labels per pass, zero false accept/reject, and zero call failure.
+- **SECONDARY:** core fields were 140/144 and 141/144. Mismatches were confined to
+  `correct_abstention`, including repeatable omit-limit cases; endpoint and unit labels remained
+  correct. This limitation is retained rather than repaired post hoc.
+- **RESOURCES:** 36 one-attempt calls, 789,567.2 ms aggregate latency, 409,654 input tokens,
+  280,320 cached-input tokens, 34,942 output tokens, and 7,431 reasoning-output tokens. Cost was
+  not exposed; zero tools ran. The 36 fail-closed code-mode warnings were retained.
+- **BOUNDARY:** this qualifies the focused scorer under unchanged Luna v12 settings; it is not
+  human validation or a P/R result. Study N and alpha remain zero. Governed call records are in
+  `model_outputs.dvc`.
+
 ## 2026-09-26 — Luna v12 complete-endpoint extension frozen before calls
 
 - **STATUS:** `FROZEN / ZERO CALLS`. One final bounded extension contains 18 fresh held-out cases:

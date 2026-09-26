@@ -1,0 +1,67 @@
+{
+  "schema": "crane-luna-complete-endpoint-extension-manifest/v1",
+  "qualification_id": "luna-model-judge-v12-complete-endpoint-extension-v1",
+  "executed_utc_date": "2026-09-26",
+  "status": "HELDOUT_QUALIFIED",
+  "study_evaluation_allowed": true,
+  "freeze": {
+    "path": "research/explanation_fidelity/experiment_configs/prospective/luna-model-judge-v12-complete-endpoint-extension-v1-freeze.json",
+    "sha256": "2a11832243178da82cd45f4e09301abbb6d039717d5ea0d41a05405c890ec8b4"
+  },
+  "result": {
+    "path": "model_outputs/automated_annotations/luna-model-judge-v1/heldout-v12-complete-endpoint-extension-v1/heldout-extension.json",
+    "sha256": "32d1f6988825c89a6cad0b2d8b10ca542b363d0dfcc2f8845b44e15c3d7f9c90",
+    "governance": "model_outputs.dvc"
+  },
+  "endpoint": "Every independently declared question-essential mechanism, measurement, outcome, and causal-limit unit is covered and no material error occurs.",
+  "passes": {
+    "pass-1": {
+      "qualified": true,
+      "complete_endpoint_correct": 18,
+      "complete_endpoint_total": 18,
+      "complete_endpoint_wilson_95": [0.8241207763533425, 1.0],
+      "unit_coverage_correct": 72,
+      "unit_coverage_total": 72,
+      "unit_coverage_wilson_95": [0.9493488274035422, 1.0],
+      "core_correct": 140,
+      "core_total": 144,
+      "false_rejections": 0,
+      "complete_answers": 9,
+      "false_acceptances": 0,
+      "incomplete_answers": 9,
+      "call_failures": 0
+    },
+    "pass-2": {
+      "qualified": true,
+      "complete_endpoint_correct": 18,
+      "complete_endpoint_total": 18,
+      "complete_endpoint_wilson_95": [0.8241207763533425, 1.0],
+      "unit_coverage_correct": 72,
+      "unit_coverage_total": 72,
+      "unit_coverage_wilson_95": [0.9493488274035422, 1.0],
+      "core_correct": 141,
+      "core_total": 144,
+      "false_rejections": 0,
+      "complete_answers": 9,
+      "false_acceptances": 0,
+      "incomplete_answers": 9,
+      "call_failures": 0
+    }
+  },
+  "resource_use": {
+    "valid_calls": 36,
+    "attempts": 36,
+    "aggregate_latency_ms": 789567.18922,
+    "input_tokens": 409654,
+    "cached_input_tokens": 280320,
+    "output_tokens": 34942,
+    "reasoning_output_tokens": 7431,
+    "tool_events": 0,
+    "client_warnings": 36,
+    "cost_usd": null
+  },
+  "interpretation": "Under unchanged Luna v12 settings, both passes distinguished complete answers from answers omitting an essential measurement, outcome, or causal limit across all three focused primary families. This qualifies the declared semantic scorer; it is not human validation or evidence that P outperforms R.",
+  "limitations": "The extension contains 18 synthetic held-out cases. Zero observed endpoint errors has a 95 percent Wilson lower bound of 0.8241, not proof of zero judge error. Core-field mismatches were confined to correct_abstention, including repeated omit-limit cases; endpoint and unit labels remained correct. Same-family and synthetic-case bias remain possible and require sensitivity disclosure.",
+  "confirmatory_alpha_consumed": 0.0,
+  "study_responses_scored": 0
+}

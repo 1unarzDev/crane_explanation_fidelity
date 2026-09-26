@@ -30,6 +30,9 @@ BUILD_AMENDMENT = ROOT / (
     "focused-supported-diagnostic-communication-v1-build-amendment-1.json"
 )
 BUILD_MANIFEST = ROOT / "manifests/data/fsdc-v1-player-build-1.evaluator-only.json"
+COMPLETE_ENDPOINT_QUALIFICATION = ROOT / (
+    "manifests/annotation/luna-model-judge-v12-complete-endpoint-extension-v1.json"
+)
 FIRST_RUN = ROOT / "manifests/data/fsdc-land-geometry-001-disposition.json"
 SECOND_RUN = ROOT / "manifests/data/fsdc-land-geometry-002-disposition.json"
 THIRD_RUN = ROOT / "manifests/data/fsdc-land-geometry-003-disposition.json"
@@ -94,6 +97,17 @@ def test_selected_candidate_audit_and_judge_are_explicitly_bounded():
     assert audit["fairness_audit"]["judge_evidence_parity"] == "FAIL"
     assert protocol["judge"]["evidence_complete_packet_required"] is True
     assert judge["status"] == "HELDOUT_QUALIFIED"
+
+
+def test_complete_endpoint_extension_qualifies_without_study_scoring():
+    result = load(COMPLETE_ENDPOINT_QUALIFICATION)
+
+    assert result["status"] == "HELDOUT_QUALIFIED"
+    assert result["study_evaluation_allowed"] is True
+    assert all(item["complete_endpoint_correct"] == 18 for item in result["passes"].values())
+    assert all(item["unit_coverage_correct"] == 72 for item in result["passes"].values())
+    assert result["study_responses_scored"] == 0
+    assert result["confirmatory_alpha_consumed"] == 0.0
 
 
 def test_level_a_does_not_require_level_b_or_secondary_tradeoff_success():

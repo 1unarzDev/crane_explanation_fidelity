@@ -45,7 +45,11 @@ question-essential mechanism, measurement, outcome, and causal-limit units. The 
 path now binds and fail-closed scores the complete unit inventory without changing historical
 packets. Activation remains blocked pending one bounded, predeclared four-unit held-out extension
 under unchanged Luna v12 settings, then packet/resource/schema dry runs and atomic ledger binding.
-No focused response was opened while discovering or correcting this mismatch.
+That extension has now qualified in both passes: 18/18 complete-endpoint classifications and 72/72
+unit labels per pass, with no false accept/reject or call failure. Core fields were 140/144 and
+141/144; retained `correct_abstention` mismatches remain a disclosed limitation. Packet closure,
+exact P/R resources, schema/monitor dry run, and atomic ledger binding remain open. No focused
+response was opened while discovering, correcting, or qualifying this mismatch.
 
 The former physical-only land cohort is additively closed after run 040 (39 valid, one invalid).
 All artifacts and its original schedule remain immutable. Its never-attempted runs 041--100 are
