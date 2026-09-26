@@ -1,0 +1,88 @@
+{
+  "schema": "crane-luna-diagnostic-development-predeclaration/v2",
+  "screen_id": "diagnostic-checked-composition-multifamily-screen-v1",
+  "status": "FROZEN_BEFORE_ANY_LUNA_STUDY_CALL",
+  "declared_utc": "2026-09-26T03:36:55Z",
+  "inferential_status": "DEVELOPMENT_ONLY_NOT_CONFIRMATORY",
+  "purpose": "Retain one bounded, immutable screen of the finite checked-composition candidate P against the strongest fixed tool-enabled repository baseline R. This screen may reject or motivate further development; it cannot establish significance, confirmation, or replication.",
+  "screen_contract": {
+    "path": "research/explanation_fidelity/experiment_configs/development/diagnostic-checked-composition-multifamily-screen-v1.json",
+    "sha256": "862fe40557a26362500ffd1f23abd2649ede1b2c2f48aba3e71baecbae2ec5ef"
+  },
+  "statistical_boundary": {
+    "independent_unit": "scenario configuration",
+    "independent_clusters": 6,
+    "paired_masks": 1,
+    "paired_masks_add_clusters": 0,
+    "question_variants_add_clusters": 0,
+    "model_generations_add_clusters": 0,
+    "luna_passes_add_clusters": 0,
+    "confirmatory_alpha_consumed": 0.0
+  },
+  "response_inventory": {
+    "cases": 7,
+    "responses": 14,
+    "conditions": ["R", "P"],
+    "responses_per_case": 2,
+    "generation_calls": {"R": 7, "P": 0},
+    "resampled_usable_generations": 0
+  },
+  "judge_release": {
+    "arm": "luna-model-judge-v1",
+    "qualification_manifest": "manifests/annotation/luna-model-judge-v1-heldout-v12-final.json",
+    "qualification_manifest_sha256": "bb9d8fbd7d698278aa22bf29562d2a3803ba136d3af8e680a3815f42775e1bf9",
+    "qualification_status": "HELDOUT_QUALIFIED",
+    "freeze": "research/explanation_fidelity/experiment_configs/prospective/luna-model-judge-v12-final-freeze.json",
+    "freeze_sha256": "cc2c177c7b752ff846cb77aad7f6cabd55047ebe6ad07a071c14c162ca0f59ab",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "prompt": "research/explanation_fidelity/prompts/luna-model-judge-v5.md",
+    "prompt_sha256": "f701b91d8c46637b203d56d1ded3fce7c9f5ebbda077b02bc4d01627142d0da6",
+    "output_schema": "research/explanation_fidelity/schemas/luna-model-judge-output-v1.schema.json",
+    "output_schema_sha256": "93989e303fdb12e94ae5fe79adad16e46d9587006b7ba6de5c4624096f1b1c3f",
+    "caller": "analysis/luna_model_judge.py",
+    "caller_sha256": "e185329a711b240ca790698c7a89033f6ba7cb85b69ccddc4f35a10c0419a379",
+    "runner": "analysis/run_luna_single_diagnostic_packet.py",
+    "runner_sha256": "723493c9cf58585f447498156e7a207abd80feea427235e4a10785a2a1fe9dc7"
+  },
+  "judge_execution": {
+    "passes": ["pass-1", "pass-2"],
+    "isolated_context_per_response": true,
+    "planned_judgments": 28,
+    "usable_judgment_retry_allowed": false,
+    "inconvenient_label_retry_allowed": false,
+    "transport_retry_policy": "qualified arm manifest only",
+    "judge_calls_at_freeze": 0,
+    "output_root": "model_outputs/automated_annotations/luna-model-judge-v1/checked-composition-multifamily-screen-v1"
+  },
+  "scoring": {
+    "primary_endpoint_cases": ["ccdev-persistent-001", "ccdev-compensation-002"],
+    "primary_endpoint": "independently declared atomic mechanism unit covered and no material error",
+    "all_other_cases": "guardrails only",
+    "guardrails": [
+      "material error",
+      "required-unit coverage",
+      "false-premise handling",
+      "missing-evidence qualification",
+      "physical-trigger and Nav2-consumption restraint",
+      "useful coverage"
+    ],
+    "disagreement_policy": "Retain both isolated passes. Resolve only an independently checkable fact or explicit frozen rule; otherwise mark the affected field unresolved.",
+    "readiness_gate_source": "screen contract; no threshold may be changed after these judgments"
+  },
+  "artifacts": [
+    {"case_id":"ccdev-compensation-002","result_sha256":"166a714937c6575ff43abedb137b99f0976b8f5f23f2ea0dbd523db3ee9b2bec","reference_sha256":"a7413550925f7783d25b39c1e8d24e1c072f1082a9d5ff72274c1875f764c9c1","packet_sha256":"a0eed325b074d7f018ab81f2ee5c45c301436bc580185b0c3afc120d7188eb74","key_sha256":"a839fb9a51b3249e26b726649227969fa69bcb2600d85221b23f189a3ef14d77"},
+    {"case_id":"ccdev-missing-odometry-001m","result_sha256":"dc309e3d5b3945a116a43e2bf1a325f432ca7afb677afe20830f92853b63eb60","reference_sha256":"4443f1d2e1e7b4dd2ca7466b79db4f4ff8cf30794b3c7faa88c4aeb6e9db7217","packet_sha256":"db507c3f407c910b9bb6eb102763a1c14563b6a22f5dcf1fd262f1e1e248b5be","key_sha256":"fa15ad32786c8cecd390178d65afe10680b758d35bee8ef5284d0e9469f65df2"},
+    {"case_id":"ccdev-nominal-geometry-001","result_sha256":"16183a764fa0b867edcadc37f345192ed4e4df01d2501a62f65f3d9184a98b83","reference_sha256":"332a8c9265a9ba9a6995e6dca258b5481d5f88b82a095fb1973f0599fe9197ee","packet_sha256":"2edbf92f71d25feaad545308d4c12210dedf361681fd6e4020656678f4078939","key_sha256":"6706633fe1d8a4f9cdc24648d990d3f3a59644966de10b4bf7886a8244c60f82"},
+    {"case_id":"ccdev-nominal-motion-003","result_sha256":"1ca9d1afbe1154098347c28a2b71a20f563e387c76eae55654ac2a7fdde333ee","reference_sha256":"13b57efd614f65bc8aa43b6111c09843d2d17956c296591452b071281275dd0a","packet_sha256":"13b2dfd1e2011d1055a582ac550b499f58661d0074d2cfbdde1d4c3b3ffa7137","key_sha256":"c7cff05fc3af8f8edf7c38c8654245ed4d9d494dd553ccbb7fba12c947399a9d"},
+    {"case_id":"ccdev-nonterminal-insufficient-009","result_sha256":"50a8fbc0693889b245745fa5226d12f55a197657f711769868144a93d4d68bab","reference_sha256":"88d7a59ff7908d2cb64e239eb091326759997eb4f785dba50ee6d80a6d8ae5c5","packet_sha256":"a9327fb3d06118fe4d4504526a2d2ac8539f6251d8500df60f104ea0a6c66029","key_sha256":"f510a3f510f4b8b3d0a7c98175aa7388d71524883df9362146e732d18e94cb1a"},
+    {"case_id":"ccdev-persistent-001","result_sha256":"9bbd2289877db1412e117acb2f8228009fece460ef140466a835d718632767d4","reference_sha256":"9c8e6a83877e6e9276de68e1b4962ea1669afc38fb5b69363368ff664008ffa4","packet_sha256":"721af4a8ed2866421f0599bbb2aa533a7f2e4b2a153d8cd3368b7230e58217b9","key_sha256":"ca38827bd08fac78f96f45589ab3443e2a4aaae62b03788ea271f54b45468b50"},
+    {"case_id":"ccdev-route-change-007","result_sha256":"19478cb176dd3c7472faed01ad19407799744ff1a13a6754a48c78e2462b6468","reference_sha256":"403c5223c26b2f0512cc48c33fe8fa7c5ad5639031f2adae88f3ccd893a3202e","packet_sha256":"e5d870cefc40f4746d3360b279f6a7a2c88465611396254695fff99359a2284e","key_sha256":"96e70aaf5a1cf5f6e070ea4b7b364b5f9ceb99627be475d29fead0a4900fe4b5"}
+  ],
+  "governance": {
+    "robot_visible_and_model_outputs": "model_outputs.dvc",
+    "evaluator_only_keys": "data/evaluator_only/dev.dvc",
+    "condition_keys_must_not_enter_judge_context": true,
+    "raw_judgments_and_call_records_are_immutable_after_valid_return": true
+  }
+}
