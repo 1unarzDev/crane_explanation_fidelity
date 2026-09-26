@@ -157,3 +157,17 @@ def test_out_of_model_packet_retains_unresolved_alternatives_without_inventing_o
     assert result["answer_plan"]["primary_mechanism_id"] is None
     assert "command_to_motion_discrepancy" in result["answer_plan"]["unresolved_alternatives"]
     assert "geometric_route_restriction" in result["answer_plan"]["unresolved_alternatives"]
+    assert result["out_of_model_possible"] is True
+    assert len(result["registry_sha256"]) == 64
+    assert "unmodeled mechanisms remain possible" in result["answer_plan"]["scope_limit"]
+
+
+def test_registry_must_preserve_out_of_model_scope():
+    unsafe = copy.deepcopy(REGISTRY)
+    unsafe["out_of_model_possible"] = False
+    try:
+        compose(packet(("action_aborted", True, "action")), unsafe)
+    except ValueError as error:
+        assert "out-of-model" in str(error)
+    else:
+        raise AssertionError("registry without an out-of-model marker was accepted")

@@ -10,6 +10,7 @@ excluded, or unresolved across every admissible completion of missing evidence.
 from __future__ import annotations
 
 import argparse
+import hashlib
 from itertools import product
 import json
 from pathlib import Path
@@ -20,6 +21,11 @@ PACKET_SCHEMA = "crane-diagnostic-predicate-packet/v1"
 REGISTRY_SCHEMA = "crane-diagnostic-composition-registry/v1"
 CERTIFICATE_SCHEMA = "crane-diagnostic-composition-certificate/v1"
 MAX_PREDICATES = 20
+
+
+def _canonical_sha256(value: dict[str, Any]) -> str:
+    encoded = json.dumps(value, sort_keys=True, separators=(",", ":")).encode("utf-8")
+    return hashlib.sha256(encoded).hexdigest()
 
 
 def _literal_value(world: dict[str, bool], literal: dict[str, Any]) -> bool:
@@ -97,6 +103,8 @@ def compose(packet: dict[str, Any], registry: dict[str, Any]) -> dict[str, Any]:
         raise ValueError("unsupported diagnostic predicate packet schema")
     if registry.get("schema") != REGISTRY_SCHEMA:
         raise ValueError("unsupported diagnostic composition registry schema")
+    if registry.get("out_of_model_possible") is not True:
+        raise ValueError("registry must explicitly preserve the out-of-model possibility")
     predicates = registry.get("predicates")
     mechanisms = registry.get("mechanisms")
     if not isinstance(predicates, list) or not predicates or len(predicates) > MAX_PREDICATES:
@@ -123,6 +131,9 @@ def compose(packet: dict[str, Any], registry: dict[str, Any]) -> dict[str, Any]:
             "schema": CERTIFICATE_SCHEMA,
             "packet_id": packet.get("packet_id"),
             "registry_id": registry.get("registry_id"),
+            "registry_sha256": _canonical_sha256(registry),
+            "model_scope": registry.get("model_scope"),
+            "out_of_model_possible": True,
             "status": "evidence_problem",
             "evidence_problem": str(error),
             "admissible_world_count": 0,
@@ -136,6 +147,9 @@ def compose(packet: dict[str, Any], registry: dict[str, Any]) -> dict[str, Any]:
             "schema": CERTIFICATE_SCHEMA,
             "packet_id": packet.get("packet_id"),
             "registry_id": registry.get("registry_id"),
+            "registry_sha256": _canonical_sha256(registry),
+            "model_scope": registry.get("model_scope"),
+            "out_of_model_possible": True,
             "status": "evidence_problem",
             "evidence_problem": "retained observations violate the registered composition constraints",
             "admissible_world_count": 0,
@@ -201,11 +215,18 @@ def compose(packet: dict[str, Any], registry: dict[str, Any]) -> dict[str, Any]:
         "missing_discriminators": sorted(
             {name for item in unresolved for name in item["missing_discriminators"]}
         ),
+        "scope_limit": (
+            "The certificate is relative to the declared registry and retained observations; "
+            "unmodeled mechanisms remain possible."
+        ),
     }
     return {
         "schema": CERTIFICATE_SCHEMA,
         "packet_id": packet.get("packet_id"),
         "registry_id": registry.get("registry_id"),
+        "registry_sha256": _canonical_sha256(registry),
+        "model_scope": registry.get("model_scope"),
+        "out_of_model_possible": True,
         "status": "composed",
         "evidence_problem": None,
         "admissible_world_count": len(admissible),

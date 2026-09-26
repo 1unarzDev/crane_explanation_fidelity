@@ -21,6 +21,14 @@ contract** that turns independently computed observations into a complete set of
 diagnostic states, then permits only conclusions common to all admissible states. This targets the
 observed gap: reliable composition, preservation, and qualification rather than access to facts.
 
+The accompanying [primary-source audit](DIAGNOSTIC_COMPOSITION_PRIMARY_SOURCE_AUDIT.md) makes the
+scope explicit: entailment is relative to the declared finite registry and retained observations.
+The certificate must retain the registry hash and an `out_of_model_possible` marker; observation,
+chronology, provenance use, or program dependence alone cannot establish physical causal
+responsibility. Pearl's structural account supplies the causal-restraint basis: causal and
+counterfactual claims require an explicit causal model and its assumptions, not association alone
+([Pearl 2009](https://doi.org/10.1017/CBO9780511803161)).
+
 This is established model-based-diagnosis and logic-programming territory, not a claim of a new
 reasoning formalism:
 
@@ -88,6 +96,7 @@ Each entailed or unresolved claim should have a machine-auditable certificate:
 ```text
 claim ID and semantic type
 status and causal-language ceiling
+registry/model ID and hash, applicability scope, and `out_of_model_possible`
 supporting measurement/source predicate IDs
 rule/registry version and input hashes
 minimal sufficient support set(s)

@@ -15,11 +15,13 @@ SPEC.loader.exec_module(MODULE)
 
 ARM_ID = MODULE.ARM_ID
 LunaResponsesCaller = MODULE.LunaResponsesCaller
+LunaIsolatedCodexCaller = MODULE.LunaIsolatedCodexCaller
 packet_envelope = MODULE.packet_envelope
 parse_sse_response = MODULE.parse_sse_response
 qualification_envelope = MODULE.qualification_envelope
 request_body = MODULE.request_body
 validate_judgment = MODULE.validate_judgment
+is_benign_cli_warning = MODULE.is_benign_cli_warning
 
 
 def case() -> dict:
@@ -111,6 +113,31 @@ def test_request_exposes_no_tools_and_omits_sampling_settings():
     assert "temperature" not in body
     assert "seed" not in body
     assert body["reasoning"] == {"effort": "medium"}
+
+
+def test_isolated_config_disables_code_mode_host_and_tools():
+    caller = LunaIsolatedCodexCaller.__new__(LunaIsolatedCodexCaller)
+    caller.effort = "high"
+    caller.base_url = "https://example.invalid/v1"
+    caller.api_key_env = "CODEX_LB_API_KEY"
+    config = caller._config()
+    assert "code_mode_host = false" in config
+    assert "shell_tool = false" in config
+    assert "unified_exec = false" in config
+
+
+def test_code_mode_fail_closed_message_is_a_client_warning_not_tool_use():
+    assert is_benign_cli_warning(
+        {
+            "type": "error",
+            "message": (
+                "Code Mode is unavailable because code-mode host is disabled. "
+                "Code mode will fail closed; enable `features.code_mode_host` and install "
+                "`codex-code-mode-host`."
+            ),
+        }
+    )
+    assert not is_benign_cli_warning({"type": "error", "message": "tool execution failed"})
 
 
 def test_validator_rejects_identity_rewrite():

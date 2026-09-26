@@ -41,6 +41,18 @@ def digest_path(path: Path) -> str:
     return digest_bytes(path.read_bytes())
 
 
+def is_benign_cli_warning(item: dict[str, Any]) -> bool:
+    """Recognize only fail-closed client warnings; model/tool errors remain forbidden."""
+    if item.get("type") != "error":
+        return False
+    message = str(item.get("message", ""))
+    return message.startswith(f"Model metadata for `{MODEL_ID}` not found.") or (
+        message.startswith("Code Mode is unavailable because ")
+        and "Code mode will fail closed;" in message
+        and "codex-code-mode-host" in message
+    )
+
+
 def load_json(path: Path) -> dict[str, Any]:
     value = json.loads(path.read_text(encoding="utf-8"))
     if not isinstance(value, dict):
@@ -596,6 +608,7 @@ class LunaIsolatedCodexCaller:
                 'computer_use = false',
                 'image_generation = false',
                 'plugins = false',
+                'code_mode_host = false',
                 'shell_tool = false',
                 'sleep_tool = false',
                 'unified_exec = false',
@@ -792,10 +805,9 @@ class LunaIsolatedCodexCaller:
                     for event in events:
                         item = event.get("item")
                         if event.get("type") == "item.completed" and isinstance(item, dict):
-                            if item.get("type") == "error" and str(item.get("message", "")).startswith(
-                                f"Model metadata for `{MODEL_ID}` not found."
-                            ):
-                                client_warnings.append(item["message"])
+                            message = str(item.get("message", ""))
+                            if is_benign_cli_warning(item):
+                                client_warnings.append(message)
                             elif item.get("type") not in {"agent_message", "reasoning"}:
                                 forbidden_items.append(item.get("type"))
                     raw_final = output_path.read_text(encoding="utf-8")
@@ -812,6 +824,7 @@ class LunaIsolatedCodexCaller:
                         "cache_key": cache_key,
                         "request_identity": identity,
                         "attempts": attempts,
+                        "events": locals().get("events", []),
                         "raw_final": locals().get("raw_final"),
                         "validation_error": str(error),
                     }

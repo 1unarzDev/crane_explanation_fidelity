@@ -5915,3 +5915,32 @@
   from it. Current P remains `NOT_READY`; the strong unscored R answer and P fallback provide no
   affirmative advantage evidence. Eight attempts consumed 424,526 ms; token use was not exposed.
   No confirmatory cluster or alpha was added.
+
+## 2026-09-25 — Luna v9 atomic-semantics development attempt
+
+- **STATUS:** `RUN / RETAINED / DEVELOPMENT_ONLY / FAILED_CALLS`; no qualification,
+  confirmatory scoring, replication, or alpha use. The prompt, 16 exposed v8-derived cases,
+  project-authored atomic reference corrections, caller, runner, schema, model, high effort, and
+  single-pass rule were hash-frozen before calls. These cases can never serve as fresh held-out
+  qualification evidence.
+- **TRANSPORT RESULT:** all 16 isolated invocations returned schema-shaped final judgments, but
+  the frozen caller rejected all 16 because Codex CLI 0.157 emitted a fail-closed
+  `code-mode host unavailable` client warning as an `error` item. The caller's older allowlist
+  treated it as forbidden tool use. No label was retried or accepted under the frozen run.
+- **POST-HOC DIAGNOSIS:** parsing the retained final bytes solely to diagnose the failed
+  development prompt gave 14/16 composite matches, 30/32 required-unit matches, 122/128 core-field
+  matches, two factual false rejections, and zero unsupported false acceptances. It therefore
+  still failed the predeclared composite, required-unit, and false-rejection gates. Q9D01 and
+  Q9D15 reveal reference/candidate scope errors: both candidates promoted medians into broader
+  unqualified values. Q9D08 expected credit for a mechanism proposition that its candidate did not
+  actually state without an unsupported wave attribution. These are reference-audit failures,
+  not evidence that Luna passed.
+- **HARNESS FIX:** the isolated caller now records events on invalid outputs, recognizes only the
+  exact fail-closed code-mode warning as a benign client warning, continues to reject arbitrary
+  error/tool items, and explicitly disables `code_mode_host`. A synthetic transport-only smoke
+  call returned `VALID`, with zero tool events and one retained client warning. Regression tests
+  cover both the allowlisted warning and rejection of an arbitrary error.
+- **DECISION:** v8 remains failed and v9 remains failed. Do not rejudge the 16 exposed cases. Any
+  qualification attempt must use a new version, fresh cases, independently audited atomic
+  references, two isolated passes, and the repaired caller. Confirmation remains inactive with
+  semantic N = 0 and alpha 0.000/0.050.
