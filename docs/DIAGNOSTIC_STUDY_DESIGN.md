@@ -301,14 +301,16 @@ is 13/13.
 
 ## Prospective collection decision at 2026-09-23
 
-Protocol freeze remains `NOT_READY`. The immediate dependency is two independent blinded
-development annotators followed by a distinct adjudicator for disagreements. Until those labels
-exist, no defensible pilot discordance estimate, verifier error estimate, or response-quality
-assessment exists. Project-author review cannot fill that role.
+Protocol freeze remains `NOT_READY`, but Luna v12 now qualifies the declared automated semantic
+endpoint on fresh held-out reference cases. This removes the judge-availability block; it does not
+provide a P--R effect. The immediate dependency is a separately frozen, multi-family development
+comparison of mandatory checked diagnostic composition against the strongest fair tool-enabled R,
+followed only on successful development evidence by a prospective campaign freeze. Project-author
+review cannot fill the role of blinded semantic scoring.
 
 The retained land catalog and command--motion family establish two runnable mechanisms, but the
 catalog alone cannot supply the 92 independent clusters in the design sensitivity and current
-project review does not suggest a P-over-tool-enabled-R advantage. The post-annotation decision
+project review does not suggest a P-over-tool-enabled-R advantage. The post-development decision
 must therefore be prospective and explicit: either (a) demonstrate a feasible route to the
 predeclared powered target using genuinely distinct scenario configurations, or (b) freeze a
 deadline/resource-limited, explicitly underpowered study and report effects and clustered

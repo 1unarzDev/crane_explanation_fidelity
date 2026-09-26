@@ -1,0 +1,57 @@
+{
+  "schema": "crane-diagnostic-sequential-protocol-amendment/v4",
+  "amendment_id": "diagnostic-sequential-v2-annotation-amendment-4",
+  "declared_utc": "2026-09-26T01:48:00Z",
+  "status": "ACTIVE_BEFORE_ANY_CONFIRMATORY_SEMANTIC_LABEL",
+  "base_protocol": "research/explanation_fidelity/experiment_configs/prospective/diagnostic-sequential-protocol-v2.json",
+  "prior_annotation_amendment": "research/explanation_fidelity/experiment_configs/prospective/diagnostic-sequential-protocol-v2-annotation-amendment-3.json",
+  "confirmatory_semantic_n_before_amendment": 0,
+  "confirmatory_alpha_consumed_before_amendment": 0.0,
+  "legacy_and_prior_qualification_results_unchanged": true,
+  "v8_v9_v10_v11_failure_dispositions_unchanged": true,
+  "primary_endpoint_unchanged": "required supported physical or execution mechanism identified and no material unsupported or contradicted assertion",
+  "qualified_judge": {
+    "id": "luna-model-judge-v12-binary-unit-final",
+    "manifest": "manifests/annotation/luna-model-judge-v1-heldout-v12-final.json",
+    "manifest_sha256": "bb9d8fbd7d698278aa22bf29562d2a3803ba136d3af8e680a3815f42775e1bf9",
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "prompt": "research/explanation_fidelity/prompts/luna-model-judge-v5.md",
+    "passes": 2,
+    "fresh_accuracy_cases": 16,
+    "diagnosable_endpoint_cases": 8,
+    "auxiliary_cases": 2,
+    "result": "QUALIFIED_BOTH_PASSES"
+  },
+  "scoring_contract": {
+    "primary_endpoint_cases": "Only independently labeled diagnosable questions with a declared atomic mechanism unit enter supported diagnostic success.",
+    "primary_endpoint_success": "The declared mechanism unit is covered and material_error is false.",
+    "unit_coverage": "covered versus not-covered; raw incorrect, omitted, and unresolved labels remain retained for exploratory error analysis.",
+    "nominal_and_ambiguous_cases": "Remain guardrail cases for correct qualification, material risk, causal overclaim, and unnecessary specificity; they do not become positive mechanism-identification cases.",
+    "two_pass_disagreement": "Retain both passes. Resolve only independently checkable facts or predeclared rules; otherwise mark the affected field unresolved and apply the campaign sensitivity rule.",
+    "human_equivalence_forbidden": true
+  },
+  "qualification_uncertainty": {
+    "endpoint_cases_per_pass": 8,
+    "zero_error_wilson_95_upper": 0.32440756488388023,
+    "unit_coverage_cases_per_pass": 28,
+    "unit_coverage_zero_error_wilson_95_upper": 0.1206433047658457,
+    "rule": "Campaign reporting must retain these finite-suite limits and cannot treat observed zero errors as zero model-judge bias."
+  },
+  "activation_boundary": {
+    "semantic_packet_scoring_allowed": true,
+    "confirmation_activated": false,
+    "confirmation_requires": [
+      "a separately hash-frozen multi-family P candidate",
+      "the strongest fair tool-enabled R baseline",
+      "target scenario distribution and clustering",
+      "resource parity and prompts",
+      "guardrails, sequential rule, and replication reserve"
+    ],
+    "physical_collection_independent": true
+  },
+  "multiplicity": {
+    "qualification_alpha_consumed": 0.0,
+    "confirmatory_alpha_ledger_unchanged": true
+  }
+}

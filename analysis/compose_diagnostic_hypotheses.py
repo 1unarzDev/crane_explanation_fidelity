@@ -124,6 +124,35 @@ def compose(packet: dict[str, Any], registry: dict[str, Any]) -> dict[str, Any]:
         if any(item.get("predicate") not in predicate_set or not isinstance(item.get("value"), bool) for item in required):
             raise ValueError(f"mechanism {mechanism['id']} has invalid requirements")
 
+    applicable_ids = packet.get("applicable_mechanism_ids", mechanism_ids)
+    if (
+        not isinstance(applicable_ids, list)
+        or not applicable_ids
+        or any(not isinstance(value, str) for value in applicable_ids)
+        or len(set(applicable_ids)) != len(applicable_ids)
+        or not set(applicable_ids).issubset(set(mechanism_ids))
+    ):
+        raise ValueError("packet applicable mechanism IDs are invalid")
+    applicable = [item for item in mechanisms if item["id"] in set(applicable_ids)]
+
+    answer_units = packet.get("answer_units", [])
+    if not isinstance(answer_units, list):
+        raise ValueError("packet answer_units must be a list")
+    units_by_id: dict[str, dict[str, Any]] = {}
+    for item in answer_units:
+        identifier = item.get("unit_id")
+        if not isinstance(identifier, str) or not identifier or identifier in units_by_id:
+            raise ValueError("packet answer-unit IDs are invalid or repeated")
+        if item.get("role") not in {"diagnosis", "evidence", "execution", "limit", "outcome"}:
+            raise ValueError(f"answer unit {identifier} has an invalid role")
+        if not isinstance(item.get("text"), str) or not item["text"].strip():
+            raise ValueError(f"answer unit {identifier} has no text")
+        evidence_ids = item.get("evidence_ids", [])
+        if not isinstance(evidence_ids, list) or any(not isinstance(value, str) for value in evidence_ids):
+            raise ValueError(f"answer unit {identifier} has invalid evidence IDs")
+        units_by_id[identifier] = item
+    declared_unit_ids = set(units_by_id)
+
     try:
         known, evidence = _observations(packet, predicate_set)
     except ValueError as error:
@@ -158,7 +187,7 @@ def compose(packet: dict[str, Any], registry: dict[str, Any]) -> dict[str, Any]:
         }
 
     results = []
-    for mechanism in mechanisms:
+    for mechanism in applicable:
         truth = [_mechanism_holds(world, mechanism) for world in admissible]
         relevant = [item["predicate"] for item in mechanism["requires"]]
         if all(truth):
@@ -193,13 +222,23 @@ def compose(packet: dict[str, Any], registry: dict[str, Any]) -> dict[str, Any]:
     entailed.sort(
         key=lambda item: next(
             mechanism.get("priority", 0)
-            for mechanism in mechanisms
+            for mechanism in applicable
             if mechanism["id"] == item["mechanism_id"]
         ),
         reverse=True,
     )
     unresolved = [item for item in results if item["status"] == "unresolved"]
     primary = entailed[0] if entailed else None
+    missing_units = (
+        sorted(set(primary["required_unit_ids"]) - declared_unit_ids)
+        if primary
+        else []
+    )
+    # Mechanism classification is still useful before language compilation, but a
+    # certificate must never look language-ready when its decisive checked units
+    # are absent.  Keeping this state explicit lets conformance tests inspect the
+    # lattice while forcing every user-facing renderer to fail closed.
+    language_ready = bool(primary) and not missing_units
     answer_plan = {
         "primary_mechanism_id": primary["mechanism_id"] if primary else None,
         "primary_claim": primary["claim"] if primary else None,
@@ -215,6 +254,20 @@ def compose(packet: dict[str, Any], registry: dict[str, Any]) -> dict[str, Any]:
         "missing_discriminators": sorted(
             {name for item in unresolved for name in item["missing_discriminators"]}
         ),
+        "units": ([] if not language_ready else (
+            [
+                units_by_id[identifier]
+                for identifier in (primary["required_unit_ids"] if primary else [])
+            ]
+            + [
+                item
+                for item in answer_units
+                if item.get("always_include") is True
+                and item["unit_id"] not in set(primary["required_unit_ids"] if primary else [])
+            ]
+        )),
+        "language_ready": language_ready,
+        "missing_required_unit_ids": missing_units,
         "scope_limit": (
             "The certificate is relative to the declared registry and retained observations; "
             "unmodeled mechanisms remain possible."
@@ -226,6 +279,7 @@ def compose(packet: dict[str, Any], registry: dict[str, Any]) -> dict[str, Any]:
         "registry_id": registry.get("registry_id"),
         "registry_sha256": _canonical_sha256(registry),
         "model_scope": registry.get("model_scope"),
+        "applicable_mechanism_ids": applicable_ids,
         "out_of_model_possible": True,
         "status": "composed",
         "evidence_problem": None,

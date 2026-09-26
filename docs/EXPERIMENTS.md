@@ -6016,3 +6016,76 @@
 - **STOP RULE:** retain either outcome. Do not continue iterating judge suites after v12; a failure
   restricts Luna-supported claims and redirects effort to deterministic measurements and paper
   limitations.
+
+## 2026-09-25 — Luna v12 final qualification result
+
+- **STATUS:** `RUN / RETAINED / QUALIFIED`; 36/36 isolated calls returned valid judgments with no
+  retry. The governed result permits scoring only future, separately frozen semantic packets.
+- **PASS 1:** 8/8 primary endpoint decisions, 28/28 binary unit-coverage decisions, 117/120 scored
+  core fields, zero factual false rejections among eight, zero unsupported false acceptances among
+  eight, zero protected failures, and invariant paraphrases.
+- **PASS 2:** 8/8 primary endpoint decisions, 28/28 binary unit-coverage decisions, 119/120 scored
+  core fields, zero factual false rejections among eight, zero unsupported false acceptances among
+  eight, zero protected failures, and invariant paraphrases.
+- **LIMITS:** this is a model-judge qualification, not human agreement. Eight zero-error cases give
+  an approximately 0.3244 Wilson 95% upper bound, so systematic bias remains material. Raw
+  incorrect/omitted/unresolved statuses remain retained, but exact subtype agreement is
+  exploratory rather than an activation gate.
+- **ACTIVATION:** semantic packet scoring is available under annotation amendment 4. Confirmation
+  remains inactive: semantic N = 0, alpha = 0.000/0.050, and no candidate/baseline/campaign or
+  replication freeze exists.
+
+## 2026-09-25 — checked-composition multi-family screen implementation
+
+- **STATUS:** `IMPLEMENTED / TESTED / NOT_RUN`; no model or Luna calls, no new episode, no
+  confirmatory cluster, and no alpha use.
+- **CANDIDATE:** mandatory finite model-relative composition, complete checked answer units, and
+  deterministic rendering. The renderer now refuses a primary mechanism whose required units are
+  incomplete and limits missing discriminators to the packet's declared applicable families.
+- **ADAPTERS:** strict command--motion and geometric adapters pass real-fixture tests for persistent
+  discrepancy, measured response recovery, nominal false premises, missing odometry, recorded route
+  change with unresolved trigger, nominal geometry, and nonterminal geometric insufficiency.
+  Older positive geometry exports are rejected because action outcome is not retained as a
+  structured measurement; no prose reconstruction is allowed.
+- **FAIR R:** receives the identical blind primitive diagnostic return, exact source/configuration,
+  generic finite registry/composer, one `gpt-6-sol` high call, and permission to use deterministic
+  calculations or scripts. It does not receive P's episode certificate or answer plan. P uses zero
+  model calls.
+- **SCREEN:** draft contract fixes six independent retained development configurations plus one
+  within-cluster odometry mask. Questions, masks, calls, and Luna passes do not add clusters. The
+  runner refuses the current `DRAFT_UNCOMMITTED_DO_NOT_RUN` status.
+- **GATE:** P must beat R in at least two mechanism families with zero material-error excess, zero
+  useful-coverage degradation, and correct missing/ambiguous qualification. Fresh complete positive
+  geometry, visible-not-consumed, and out-of-model configurations remain mandatory before a
+  candidate freeze even if the retained screen is favorable.
+- **SCORER REPAIR:** the downstream two-pass packet runner still used the pre-v12 generic
+  `mechanism_identification` field. It now uses the coordinator-bound atomic mechanism unit plus
+  `material_error=false`, returns no positive endpoint for nominal/ambiguous guardrails, and strips
+  those coordinator fields before invoking the byte-unchanged frozen judge envelope. Historical
+  packets remain on their recorded interpretation. No model or judge call was made by this repair.
+
+## 2026-09-25 — checked-composition reference audit and structured-count repair
+
+- **STATUS:** `IMPLEMENTED / TESTED / NOT_RUN`; no response generation, Luna judgment,
+  confirmatory cluster, or alpha use.
+- **REFERENCE GATE:** all seven fixed development cases now have pre-model atomic required-unit
+  inventories bound to hash-checked independent computations. Only persistent discrepancy and
+  measured-response recovery are primary-endpoint eligible. Nominal, missing-evidence,
+  route-change-with-unresolved-trigger, and nonterminal cases are guardrails and cannot be counted
+  as supported-diagnostic successes.
+- **FOUND DEFECT:** dry deterministic rendering of `cmv3-dev-003` exposed an internally
+  inconsistent retained primitive: its prose said no FollowPath failure or qualified Wait
+  invocation, while its structured measurements and independently audited execution sequence each
+  recorded two. No model output or judge label was created from this screen.
+- **REPAIR:** the command--motion composition adapter no longer copies execution prose. It
+  reconstructs action status, attempt count, failure count, and qualified Wait count from
+  structured fields, verifies the duplicate count representations agree, and fails closed on a
+  mismatch. R receives the same robot-visible `method_input` and primitive result; P still receives
+  no privileged evidence.
+- **FREEZE GATE:** a frozen screen must now pin the runner, prompt, registry, composer, both
+  adapters, renderer, and reference inventory. The runner verifies all hashes before any call.
+- **TESTS:** 61 focused tests pass. The wider `tests analysis` run passes 401 tests and retains the
+  three already documented frozen/hash mismatches; unrestricted repository-wide pytest additionally
+  requires ROS/submodule-specific Python environments and is not the umbrella validation command.
+- **BLOCKER:** `.git` remains read-only and DNS remains unavailable in this managed session. The
+  milestone cannot be committed/pushed and the draft screen therefore remains deliberately unrun.

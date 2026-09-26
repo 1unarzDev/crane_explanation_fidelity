@@ -9,7 +9,7 @@ Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 
 | Gate | Status | Evidence / next action |
 |---|---|---|
-| Candidate P frozen | READY FOR PROSPECTIVE FREEZE, NOT YET FROZEN | Candidate v3 completed its bounded development screen and met every readiness gate; freeze the complete confirmatory design before inspecting any confirmatory response |
+| Candidate P frozen | NOT_READY | Candidate v3's historical screen is retained, but its single-family evidence and failed judge extension do not justify activation. Mandatory finite checked composition is the current bounded development candidate; its seven-case atomic reference inventory and executable hash gates are tested, but the P/R screen is `NOT_RUN` and must show recurring advantage over fair R across multiple families before any prospective freeze |
 | Strongest baseline R frozen | DESIGNATED, NOT_HASH_FROZEN | Tool-enabled repository-aware R; freeze exact model/prompts/resources with candidate |
 | Information/tool/resource parity | DRAFT | Audit at campaign freeze |
 | Target land strata | V6 PLAYER/RUNTIME QUALIFIED; NO CAMPAIGN ACTIVE | One predeclared v6 reserve layout passed exact build and runtime binding; sampler, interventions, masks, exclusions, and analysis remain unfrozen |
@@ -18,7 +18,9 @@ Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 | Luna v5 endpoint qualification | FAILED / PRESERVED | P1 passed; P2 missed core by one field and one protected subcheck |
 | Luna v6 endpoint qualification | FAILED / PRESERVED | P1 false rejection 3/17 exceeded 15%; P2 passed every gate |
 | Luna v7 reference-audited qualification | HISTORICALLY QUALIFIED; TARGETED EXTENSION FAILED | Original v7 passed, but the prospective command-motion endpoint-threat extension missed composite/core and protected gates in both passes; do not activate semantic confirmation |
-| Luna v8 endpoint-first qualification | FAILED / PRESERVED | Both passes were 48/48 composite with zero material-polarity errors, but both missed unit/core thresholds and one protected causal predicate; semantic scoring remains blocked |
+| Luna v8 endpoint-first qualification | FAILED / PRESERVED | Both passes were 48/48 composite with zero material-polarity errors, but both missed unit/core thresholds and one protected causal predicate |
+| Luna v9--v11 qualification cycles | FAILED / PRESERVED | Transport/reference and endpoint-alignment failures remain immutable negative development results |
+| Luna v12 endpoint-aligned qualification | QUALIFIED WITH FINITE-SUITE LIMITS | Both passes scored 8/8 endpoint and 28/28 binary unit-coverage decisions with zero material/protected/call failures; this enables future frozen scoring but supplies no P--R effect |
 | V7 amendment/sensitivity enforcement | IMPLEMENTED, TESTED | Nonempty v2 results must bind exact v7 hashes and clear nominal plus adverse sensitivity gates |
 | Replication configurations reserved | 100 V6 LAND CONFIGURATIONS RESERVED / NOT AUTHORIZED | Disjoint fixed schedule; cannot substitute for confirmation-side runs |
 | Sequential null simulation | PASS_QA | 20,000 replicates per endpoint; all boundary estimates below component alpha 0.02 |

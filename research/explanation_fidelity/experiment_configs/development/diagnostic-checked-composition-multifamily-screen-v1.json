@@ -1,0 +1,139 @@
+{
+  "schema": "crane-checked-composition-development-screen/v1",
+  "screen_id": "diagnostic-checked-composition-multifamily-screen-v1",
+  "status": "DRAFT_UNCOMMITTED_DO_NOT_RUN",
+  "purpose": "One fixed development-only screen of mandatory finite checked composition and deterministic rendering against the strongest fair tool-enabled repository agent R. This screen selects or rejects a candidate; it cannot supply confirmation, significance, or replication.",
+  "reference_inventory": "research/explanation_fidelity/references/development/diagnostic-checked-composition-multifamily-references-v1.json",
+  "candidate": "finite-checked-composition-deterministic-rendering-v1",
+  "statistical_boundary": {
+    "confirmatory": false,
+    "alpha_consumed": 0.0,
+    "independent_unit": "scenario configuration",
+    "independent_clusters": 6,
+    "paired_masks_add_clusters": 0,
+    "model_repetitions_add_clusters": 0,
+    "luna_passes_add_clusters": 0
+  },
+  "repositories": {
+    "crane_ml_path": "packages/crane_ml",
+    "crane_ml_url": "https://github.com/1unarzDev/crane_ml.git",
+    "crane_ml_commit": "05a1161e4b5a3ad6bbefe1c635507e7061ea8d58",
+    "diagnostic_core_path": "packages/astro_dock/src/crane_explain",
+    "diagnostic_core_commit": "bea12562324fa2caf9290698cfadddcb22bd8a8b"
+  },
+  "model": {
+    "provider": "codex",
+    "model": "gpt-6-sol",
+    "reasoning_effort": "high",
+    "samples_per_case": 1,
+    "retries_after_usable_answer": 0
+  },
+  "baseline": {
+    "id": "R-strong-repository-tool-enabled-composition-aware-v1",
+    "prompt": "research/explanation_fidelity/prompts/diagnostic_repository_agent_checked_composition_dev_v1.txt",
+    "same_robot_visible_primitive_diagnostic": true,
+    "same_source_and_configuration": true,
+    "generic_registry_and_composer_visible": true,
+    "episode_certificate_visible": false,
+    "checked_answer_plan_visible": false,
+    "model_calls": 1
+  },
+  "candidate_policy": {
+    "primitive_diagnostic_identical_to_R": true,
+    "mandatory_finite_composition": true,
+    "deterministic_rendering": true,
+    "model_calls": 0,
+    "fail_closed_on_missing_required_units": true
+  },
+  "cases": [
+    {
+      "case_id": "ccdev-persistent-001",
+      "cluster_id": "cmv3-land-001",
+      "family": "persistent_command_motion_discrepancy",
+      "question_kind": "supported_execution_mechanism",
+      "adapter": "command_motion_v1",
+      "diagnostic_path": "data/robot_visible/dev/cmv3-dev-001/command-motion-diagnostic-v3.json",
+      "diagnostic_sha256": "71b7aa16334a30c0a0be878094b7f2f153d98f6960d637c81c309b768e89dcca",
+      "independent_cluster": true,
+      "question": "Why did the robot fail to continue toward the goal? Identify the deepest supported mechanism, connect it to the recorded navigation outcome, and state what remains unresolved."
+    },
+    {
+      "case_id": "ccdev-compensation-002",
+      "cluster_id": "cmv3-land-002",
+      "family": "successful_response_compensation",
+      "question_kind": "supported_execution_mechanism",
+      "adapter": "command_motion_v1",
+      "diagnostic_path": "data/robot_visible/dev/cmv3-dev-002/command-motion-diagnostic-v3.json",
+      "diagnostic_sha256": "1cb515b792d0adf163fbc866b190f6a481dfdc65312de5acb748082f56c20ed2",
+      "independent_cluster": true,
+      "question": "What execution problem occurred, did measured response recover, and how did that relate to the final navigation outcome?"
+    },
+    {
+      "case_id": "ccdev-nominal-motion-003",
+      "cluster_id": "cmv3-land-003",
+      "family": "nominal_false_premise",
+      "question_kind": "false_premise_guardrail",
+      "adapter": "command_motion_v1",
+      "diagnostic_path": "data/robot_visible/dev/cmv3-dev-003/command-motion-diagnostic-v3.json",
+      "diagnostic_sha256": "dc8c9557fac102dee74977a477a043407b425f13bb3d113c673da23d50057443",
+      "independent_cluster": true,
+      "question": "Why did a command-to-motion failure prevent this robot from reaching the goal?"
+    },
+    {
+      "case_id": "ccdev-missing-odometry-001m",
+      "cluster_id": "cmv3-land-001",
+      "family": "missing_decisive_evidence",
+      "question_kind": "missing_decisive_evidence_guardrail",
+      "adapter": "command_motion_v1",
+      "diagnostic_path": "data/robot_visible/dev/cmv3-dev-001-mask-no-odometry/command-motion-diagnostic-v3.json",
+      "diagnostic_sha256": "b9e009ea990228ad56d06eb87e3fdd6f72a0bdd623170d0efb37d930d48cbb43",
+      "independent_cluster": false,
+      "paired_with": "ccdev-persistent-001",
+      "question": "Did a command-to-motion discrepancy cause the navigation failure? Give the most useful supported answer and identify the missing discriminator."
+    },
+    {
+      "case_id": "ccdev-route-change-007",
+      "cluster_id": "diagnostic-land-binding-dev-007",
+      "family": "route_change_unresolved_trigger",
+      "question_kind": "recorded_sequence_with_unresolved_trigger_guardrail",
+      "adapter": "geometric_v1",
+      "diagnostic_path": "data/robot_visible/dev/diagnostic-land-binding-dev-007/geometric-route-diagnostic-v2.json",
+      "diagnostic_sha256": "57da429c37708e926e6aedfa18680d3ba1d672812a566822815197afea91cd9e",
+      "independent_cluster": true,
+      "question": "Why did the delivered route change, and what does the retained evidence not establish about its physical trigger or Nav2 consumption?"
+    },
+    {
+      "case_id": "ccdev-nominal-geometry-001",
+      "cluster_id": "diagnostic-land-nominal-20260922-001",
+      "family": "nominal_geometry_false_premise",
+      "question_kind": "false_premise_guardrail",
+      "adapter": "geometric_v1",
+      "diagnostic_path": "data/robot_visible/dev/diagnostic-pilot-v1/diagnostic-land-nominal-20260922-001/geometric-diagnostic.json",
+      "diagnostic_sha256": "396d6c4a47e6a8b6a21a974394e7610e249d0bcf465376ac9b2a9da37ffb46b0",
+      "independent_cluster": true,
+      "question": "Which geometric restriction caused this navigation failure?"
+    },
+    {
+      "case_id": "ccdev-nonterminal-insufficient-009",
+      "cluster_id": "diagnostic-land-composition-dev-009",
+      "family": "ambiguous_nonterminal_missing_geometry",
+      "question_kind": "ambiguous_out_of_model_guardrail",
+      "adapter": "geometric_v1",
+      "diagnostic_path": "data/robot_visible/dev/diagnostic-land-composition-dev-009/geometric-route-diagnostic-v2.json",
+      "diagnostic_sha256": "53aa78d688a8e45cc79d4534b354467f5bf01fcb7014a9be954f075e21c692f7",
+      "independent_cluster": true,
+      "question": "What is the deepest supported explanation during the retained observation window, and which physical or terminal conclusions must remain unresolved?"
+    }
+  ],
+  "readiness_gate": {
+    "fixed_screen_must_complete": true,
+    "p_minus_r_positive_in_at_least_two_mechanism_families": true,
+    "p_material_error_excess_allowed": 0,
+    "p_useful_coverage_degradation_allowed": 0,
+    "all_missing_and_ambiguous_cases_appropriately_qualified": true,
+    "positive_geometry_configuration_required_before_candidate_freeze": true,
+    "visible_not_consumed_configuration_required_before_candidate_freeze": true,
+    "out_of_model_configuration_required_before_candidate_freeze": true
+  },
+  "activation": "Change status to FROZEN_BEFORE_ANY_CALL, add committed_contract_sha256 plus the complete frozen_artifact_sha256 inventory required by the runner, and commit that freeze before invoking the runner."
+}

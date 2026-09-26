@@ -171,3 +171,101 @@ def test_registry_must_preserve_out_of_model_scope():
         assert "out-of-model" in str(error)
     else:
         raise AssertionError("registry without an out-of-model marker was accepted")
+
+
+def test_stale_representation_is_distinct_from_obstacle_causation():
+    result = compose(
+        packet(
+            ("current_observation_clear", True, "scan-current"),
+            ("planning_representation_obstacle", True, "grid-old"),
+            ("representation_timing_inconsistent", True, "timestamps"),
+            ("decision_dependency_proven", False, "dependency-audit"),
+        ),
+        REGISTRY,
+    )
+    assert mechanisms(result)["stale_or_inconsistent_planning_representation"]["status"] == "entailed"
+    assert mechanisms(result)["observation_linked_navigation_response"]["status"] == "excluded"
+
+
+def test_answer_plan_compiles_declared_units_and_renderer_preserves_limits():
+    value = packet(("command_motion_supported", True, "diagnostic"))
+    value["answer_units"] = [
+        {
+            "unit_id": "healthy-comparator",
+            "role": "evidence",
+            "text": "Healthy measured-speed median was 0.31 m/s.",
+            "evidence_ids": ["healthy"],
+        },
+        {
+            "unit_id": "discrepancy-comparison",
+            "role": "diagnosis",
+            "text": "The interval supports a command-to-motion discrepancy.",
+            "evidence_ids": ["diagnostic"],
+        },
+        {
+            "unit_id": "cause-limit",
+            "role": "limit",
+            "text": "The unique physical cause is unresolved.",
+            "evidence_ids": ["missing-feedback"],
+        },
+    ]
+    result = compose(value, REGISTRY)
+    assert result["answer_plan"]["language_ready"] is True
+    assert result["answer_plan"]["missing_required_unit_ids"] == []
+    assert [item["unit_id"] for item in result["answer_plan"]["units"]] == [
+        "healthy-comparator",
+        "discrepancy-comparison",
+        "cause-limit",
+    ]
+
+
+def test_answer_plan_is_not_language_ready_when_registered_unit_is_missing():
+    value = packet(("command_motion_supported", True, "diagnostic"))
+    value["answer_units"] = [
+        {
+            "unit_id": "healthy-comparator",
+            "role": "evidence",
+            "text": "Healthy response was retained.",
+            "evidence_ids": ["healthy"],
+        }
+    ]
+    result = compose(value, REGISTRY)
+    assert result["status"] == "composed"
+    assert result["answer_plan"]["language_ready"] is False
+    assert result["answer_plan"]["missing_required_unit_ids"] == [
+        "cause-limit",
+        "discrepancy-comparison",
+    ]
+
+
+def test_mechanism_only_certificate_cannot_silently_claim_language_readiness():
+    result = compose(packet(("command_motion_supported", True, "diagnostic")), REGISTRY)
+
+    assert result["answer_plan"]["primary_mechanism_id"] == "command_to_motion_discrepancy"
+    assert result["answer_plan"]["language_ready"] is False
+    assert result["answer_plan"]["missing_required_unit_ids"] == [
+        "cause-limit",
+        "discrepancy-comparison",
+        "healthy-comparator",
+    ]
+
+
+def test_packet_applicability_scope_excludes_unrelated_missing_discriminators():
+    value = packet(("command_motion_supported", True, "diagnostic"))
+    value["applicable_mechanism_ids"] = ["command_to_motion_discrepancy"]
+    result = compose(value, REGISTRY)
+
+    assert result["applicable_mechanism_ids"] == ["command_to_motion_discrepancy"]
+    assert result["answer_plan"]["unresolved_alternatives"] == []
+    assert result["answer_plan"]["missing_discriminators"] == []
+
+
+def test_packet_rejects_unknown_applicable_mechanism():
+    value = packet(("command_motion_supported", True, "diagnostic"))
+    value["applicable_mechanism_ids"] = ["invented-mechanism"]
+    try:
+        compose(value, REGISTRY)
+    except ValueError as error:
+        assert "applicable mechanism IDs" in str(error)
+    else:
+        raise AssertionError("unknown applicable mechanism was accepted")

@@ -17,6 +17,47 @@ def test_supported_success_requires_mechanism_and_no_material_error() -> None:
     assert not MODULE.success({"mechanism_identification": "omitted", "material_error": False})
 
 
+def test_v12_success_uses_atomic_mechanism_unit_not_generic_semantic_field() -> None:
+    row = {
+        "primary_endpoint_eligible": True,
+        "mechanism_unit_id": "u-mechanism",
+    }
+    judgment = {
+        "mechanism_identification": "not_applicable",
+        "material_error": False,
+        "required_units": [
+            {"unit_id": "u-mechanism", "status": "covered"},
+            {"unit_id": "u-limit", "status": "covered"},
+        ],
+    }
+    assert MODULE.success(judgment, row) is True
+    judgment["required_units"][0]["status"] = "omitted"
+    assert MODULE.success(judgment, row) is False
+    judgment["required_units"][0]["status"] = "covered"
+    judgment["material_error"] = True
+    assert MODULE.success(judgment, row) is False
+
+
+def test_v12_guardrail_case_has_no_positive_mechanism_endpoint() -> None:
+    row = {"primary_endpoint_eligible": False}
+    judgment = {
+        "mechanism_identification": "not_applicable",
+        "material_error": False,
+        "required_units": [{"unit_id": "u-qualification", "status": "covered"}],
+    }
+    assert MODULE.success(judgment, row) is None
+
+
+def test_v12_coordinator_fields_are_not_exposed_to_frozen_judge_envelope() -> None:
+    row = {
+        "response_id": "opaque",
+        "primary_endpoint_eligible": True,
+        "mechanism_unit_id": "u-mechanism",
+    }
+    visible = MODULE.judge_visible_row(row)
+    assert visible == {"response_id": "opaque"}
+
+
 def test_incomplete_pass_is_represented_without_promoting_missing_label(tmp_path, monkeypatch) -> None:
     packet = tmp_path / "packet.jsonl"
     key = tmp_path / "key.json"

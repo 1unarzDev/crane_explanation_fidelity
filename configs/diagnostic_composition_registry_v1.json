@@ -8,11 +8,19 @@
     "action_succeeded",
     "command_motion_not_triggered",
     "command_motion_supported",
+    "command_motion_evidence_insufficient",
     "decision_dependency_proven",
     "geometry_sufficient",
     "geometry_supported",
+    "geometry_not_restricted",
+    "geometry_evidence_insufficient",
+    "deadline_source_qualified",
+    "deadline_timing_aligned",
     "nav2_consumption_proven",
     "obstacle_observed",
+    "current_observation_clear",
+    "planning_representation_obstacle",
+    "representation_timing_inconsistent",
     "response_recovered",
     "route_change_observed"
   ],
@@ -49,6 +57,32 @@
       "required_unit_ids": ["observed-condition", "runtime-consumption", "decision-dependency", "navigation-response"]
     },
     {
+      "id": "stale_or_inconsistent_planning_representation",
+      "priority": 45,
+      "requires": [
+        {
+          "predicate": "current_observation_clear",
+          "value": true
+        },
+        {
+          "predicate": "planning_representation_obstacle",
+          "value": true
+        },
+        {
+          "predicate": "representation_timing_inconsistent",
+          "value": true
+        }
+      ],
+      "causal_language_level": "observed_model_inconsistency",
+      "claim": "The retained current observation and planning representation establish a stale or inconsistent model state.",
+      "required_unit_ids": [
+        "current-observation",
+        "planning-representation",
+        "timing-comparison",
+        "origin-limit"
+      ]
+    },
+    {
       "id": "geometric_route_restriction",
       "priority": 40,
       "requires": [
@@ -71,6 +105,18 @@
       "required_unit_ids": ["discrepancy-comparison", "response-recovery", "task-outcome"]
     },
     {
+      "id": "deadline_aligned_abort",
+      "priority": 28,
+      "requires": [
+        {"predicate": "action_aborted", "value": true},
+        {"predicate": "deadline_source_qualified", "value": true},
+        {"predicate": "deadline_timing_aligned", "value": true}
+      ],
+      "causal_language_level": "bounded_execution_mechanism",
+      "claim": "The recorded abort is aligned with the source-qualified task deadline; this does not establish why navigation remained incomplete.",
+      "required_unit_ids": ["deadline-comparison", "retained-execution", "geometry-limit"]
+    },
+    {
       "id": "command_to_motion_discrepancy",
       "priority": 30,
       "requires": [
@@ -90,6 +136,38 @@
       "causal_language_level": "observed_and_computed",
       "claim": "The declared command-to-motion diagnostic did not trigger and the action succeeded.",
       "required_unit_ids": ["nominal-comparison", "false-premise-rejection"]
+    },
+    {
+      "id": "nominal_route_geometry",
+      "priority": 20,
+      "requires": [
+        {"predicate": "geometry_sufficient", "value": true},
+        {"predicate": "geometry_not_restricted", "value": true},
+        {"predicate": "action_succeeded", "value": true}
+      ],
+      "causal_language_level": "bounded_negative_diagnostic",
+      "claim": "The fully covered retained route audit did not trigger the registered geometric restriction and the action succeeded.",
+      "required_unit_ids": ["nominal-geometry-comparison", "false-premise-rejection"]
+    },
+    {
+      "id": "command_motion_evidence_insufficient",
+      "priority": 25,
+      "requires": [
+        {"predicate": "command_motion_evidence_insufficient", "value": true}
+      ],
+      "causal_language_level": "evidence_sufficiency",
+      "claim": "The retained evidence is insufficient to determine whether the registered command-to-motion mechanism occurred.",
+      "required_unit_ids": ["insufficiency-diagnosis", "retained-execution", "insufficiency-limit"]
+    },
+    {
+      "id": "geometry_evidence_insufficient",
+      "priority": 15,
+      "requires": [
+        {"predicate": "geometry_evidence_insufficient", "value": true}
+      ],
+      "causal_language_level": "evidence_sufficiency",
+      "claim": "The retained evidence is insufficient to determine whether the registered geometric restriction occurred.",
+      "required_unit_ids": ["insufficiency-diagnosis", "retained-execution", "geometry-limit"]
     },
     {
       "id": "recorded_route_change",

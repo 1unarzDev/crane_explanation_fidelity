@@ -1,5 +1,39 @@
 # Decision Log
 
+## 2026-09-25 — screen mandatory checked composition before any semantic confirmation
+
+- **Decision:** treat finite model-relative diagnostic composition plus deterministic,
+  evidence-locked rendering as the next bounded P candidate. Do not activate confirmation merely
+  because Luna v12 qualified or the deterministic tests pass.
+- **Evidence:** the confirmatory semantic cohort remains N=0. Strong tool-enabled R repeatedly
+  matches single-mechanism P/T answers; candidate v3's apparent advantage is single-family and its
+  targeted judge extension failed; the later route-change check is a P/R tie; and the bounded
+  composition audit had an incomplete judge packet. The retained failures primarily concern
+  omitted decisive units, causal promotion, mask handling, and language preservation.
+- **Treatment boundary:** P must compose validated primitive predicates into an episode-specific
+  certificate, compile all required units, and render deterministically. R receives identical
+  robot-visible evidence, source/configuration, primitive diagnostics, generic deterministic tools,
+  model strength, and comparable resources, but not P's completed episode certificate or checked
+  answer plan. R may inspect generic rules and write scripts/templates within budget.
+- **Alternatives rejected for now:** prompt-only changes do not make composition mandatory;
+  constrained decoding cannot repair a missing diagnosis; a post-hoc checker permits vacuous safe
+  answers unless it enforces the same obligations; a broader solver/agent framework adds schedule
+  risk without new evidence or a clearer treatment contrast.
+- **Development gate:** require recurring P-over-R supported-diagnostic success in at least two
+  mechanism families, no material-error excess, no useful-coverage degradation, and correct
+  missing-evidence/visible-not-consumed/ambiguous qualification on a fixed multi-family screen.
+  Questions, masks, repeated generations, and Luna passes remain within their independent scenario
+  configuration. Failure closes that candidate version; a tie is retained as the result.
+- **Implementation check:** the composer and strict command--motion/geometric adapters pass real-
+  fixture tests and now refuse rendering when a required answer unit is absent. Older positive
+  geometry exports lack structured action status and remain ineligible for the new composer rather
+  than being repaired from prose.
+- **Claim if later confirmed:** mandatory checked composition and deterministic realization improve
+  supported diagnostic success over a comparably resourced tool-enabled repository agent on the
+  tested navigation families, without violating material-error, useful-coverage, or ambiguity
+  guardrails. Do not claim novelty for model-based diagnosis, templates, plan-first generation,
+  constrained decoding, proof-carrying computation, or tool-using agents.
+
 ## 2026-09-25 — retain failed v8 qualification and continue physical collection
 
 - **Decision:** classify v8 as `HELDOUT_QUALIFICATION_FAILED` and prohibit semantic study scoring
@@ -1919,3 +1953,23 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   is not human validation, and consumes no confirmatory alpha. Physical/reference collection
   continues while the judge is tested; semantic labels wait for qualification and a separately
   frozen fair P/R campaign contract.
+
+## 2026-09-25 — require atomic independent references and structured facts before screening
+
+- Decision: do not freeze or run the checked-composition P/R screen until every case has a
+  hash-bound, independently computed, atomic reference inventory and the complete executable
+  treatment is committed. Score the primary endpoint only for independently diagnosable
+  physical/execution mechanisms; score false premises, masked evidence, route-only observations,
+  and nonterminal ambiguity as guardrails.
+- Evidence: Luna v12 is qualified for atomic mechanism-unit coverage, not the older generic
+  mechanism field. A dry render also found that one retained nominal diagnostic's prose contradicted
+  its structured failure/recovery counts. Copying the prose would create a material error despite
+  correct underlying measurements.
+- Alternatives rejected: count every useful route or qualification answer as a positive mechanism;
+  derive reference units from P's certificate; let the judge infer endpoint eligibility; silently
+  trust diagnostic prose over measurements; or create model outcomes on an uncommitted evaluator
+  and treatment release.
+- Effect: reference construction, endpoint metadata, and executable hashes are now fail-closed.
+  The command--motion adapter reconstructs execution facts from cross-checked structured fields.
+  This improves test validity but supplies no P-over-R effect. The screen remains
+  `DRAFT_UNCOMMITTED_DO_NOT_RUN`.

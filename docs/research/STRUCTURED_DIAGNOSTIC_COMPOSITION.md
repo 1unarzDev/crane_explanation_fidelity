@@ -180,6 +180,22 @@ a second free-text summary. This provides one concrete way to reduce required-un
 field mismatch in downstream judging, although Luna qualification must still be demonstrated
 independently; a cleaner packet does not validate the judge.
 
+The implementation now separates a valid mechanism certificate from a language-ready answer plan.
+If any registered unit required by the selected mechanism is absent, the certificate records
+`language_ready=false` and the renderer refuses to emit an answer. This prevents a valid lattice
+classification from silently becoming a response that drops the decisive comparison or limit.
+Packets also declare an outcome-independent applicability scope. This prevents a command--motion
+answer from dumping missing geometry, perception, or map-consistency predicates merely because
+those mechanisms exist in the global registry. The registry-wide `out_of_model_possible` boundary
+still applies.
+
+Strict adapters now compile the retained command--motion v3 and newer geometric v1/v2 diagnostic
+schemas into predicates and answer units. Real-fixture tests cover persistent discrepancy,
+measured response recovery, nominal false-premise rejection, missing odometry, route change with an
+unresolved trigger, nominal geometry, and nonterminal geometry insufficiency. Older positive
+geometry exports lack structured action status and are deliberately rejected rather than repaired
+from prose; use fresh complete captures for that family.
+
 Moryossef, Goldberg, and Dagan's plan-first data-to-text method and Dušek and Kasner's bidirectional
 semantic checking are already audited in
 [`DIAGNOSIS_LANGUAGE_POSITIONING.md`](DIAGNOSIS_LANGUAGE_POSITIONING.md). They support separating

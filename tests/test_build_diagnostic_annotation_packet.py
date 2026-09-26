@@ -49,6 +49,17 @@ def test_builder_blinds_conditions_and_keeps_duplicate_final_answers():
     assert len({entry["response_id"] for entry in key}) == 3
 
 
+def test_builder_records_per_output_generation_provenance_without_exposing_it_to_judge():
+    result, reference = fixtures()
+    result["outputs"][0]["provider"] = "deterministic"
+    result["outputs"][0]["model"] = None
+    rows, key = MODULE.build_rows(result, reference, "secret")
+    by_condition = {entry["condition"]: entry for entry in key}
+    assert by_condition["R"]["provider"] == "deterministic"
+    assert by_condition["R"]["model"] is None
+    assert all("provider" not in row and "model" not in row for row in rows)
+
+
 def test_builder_rejects_evaluator_truth_or_mismatched_reference():
     result, reference = fixtures()
     result["evaluator_truth_available_to_methods"] = True
@@ -105,3 +116,33 @@ def test_builder_requires_and_propagates_v2_reference_completeness():
         row["evidence_completeness"] == "All question-relevant facts are present."
         for row in rows
     )
+
+
+def test_builder_binds_v12_primary_endpoint_metadata_without_condition_leakage():
+    result, reference = fixtures()
+    reference["required_units"] = [
+        {"unit_id": "u-mechanism", "text": "The required mechanism."},
+        {"unit_id": "u-limit", "text": "The required limit."},
+    ]
+    reference["primary_endpoint_eligible"] = True
+    reference["mechanism_unit_id"] = "u-mechanism"
+    rows, _ = MODULE.build_rows(result, reference, "secret")
+    assert all(row["primary_endpoint_eligible"] is True for row in rows)
+    assert all(row["mechanism_unit_id"] == "u-mechanism" for row in rows)
+
+
+def test_builder_rejects_v12_endpoint_without_declared_atomic_unit():
+    result, reference = fixtures()
+    reference["required_units"] = [{"unit_id": "u-limit", "text": "Only a limit."}]
+    reference["primary_endpoint_eligible"] = True
+    reference["mechanism_unit_id"] = "u-mechanism"
+    with pytest.raises(ValueError, match="no declared mechanism unit"):
+        MODULE.build_rows(result, reference, "secret")
+
+
+def test_checked_composition_reference_must_pass_completeness_audit():
+    result, reference = fixtures()
+    reference["schema"] = "crane-checked-composition-annotation-reference/v1"
+    reference["completeness_audit"] = {"accepted": False}
+    with pytest.raises(ValueError, match="reference completeness audit did not pass"):
+        MODULE.build_rows(result, reference, "secret")

@@ -1,0 +1,72 @@
+{
+  "schema": "crane-luna-judge-heldout-result/v4",
+  "arm_id": "luna-model-judge-v1",
+  "qualification_id": "luna-model-judge-v12-binary-unit-final",
+  "executed_utc_date": "2026-09-26",
+  "status": "HELDOUT_QUALIFIED",
+  "study_evaluation_allowed": true,
+  "freeze": {
+    "path": "research/explanation_fidelity/experiment_configs/prospective/luna-model-judge-v12-final-freeze.json",
+    "sha256": "cc2c177c7b752ff846cb77aad7f6cabd55047ebe6ad07a071c14c162ca0f59ab"
+  },
+  "result": {
+    "path": "model_outputs/automated_annotations/luna-model-judge-v1/heldout-v12-final/heldout-qualification.json",
+    "sha256": "c4340b4717d56a0895e980a49bbc20489a948e09132bf96407862b9826bedb00",
+    "governance": "model_outputs.dvc"
+  },
+  "endpoint": "On independently specified diagnosable cases, the answer covers the required mechanism unit and has no material error.",
+  "unit_coverage": "Raw covered/incorrect/omitted/unresolved labels are retained; qualification accuracy compares covered versus not-covered.",
+  "passes": {
+    "pass-1": {
+      "qualified": true,
+      "primary_endpoint_correct": 8,
+      "primary_endpoint_total": 8,
+      "primary_endpoint_wilson_95": [0.6755924351161198, 1.0],
+      "unit_coverage_correct": 28,
+      "unit_coverage_total": 28,
+      "unit_coverage_wilson_95": [0.8793566952341543, 0.9999999999999998],
+      "core_correct": 117,
+      "core_total": 120,
+      "core_wilson_95": [0.9290699666721339, 0.9914618252300978],
+      "false_rejections": 0,
+      "factual_total": 8,
+      "false_acceptances": 0,
+      "unsupported_total": 8,
+      "protected_failures": {},
+      "presentation_invariance": true,
+      "call_failures": 0
+    },
+    "pass-2": {
+      "qualified": true,
+      "primary_endpoint_correct": 8,
+      "primary_endpoint_total": 8,
+      "primary_endpoint_wilson_95": [0.6755924351161198, 1.0],
+      "unit_coverage_correct": 28,
+      "unit_coverage_total": 28,
+      "unit_coverage_wilson_95": [0.8793566952341543, 0.9999999999999998],
+      "core_correct": 119,
+      "core_total": 120,
+      "core_wilson_95": [0.9543037087549505, 0.998527444266658],
+      "false_rejections": 0,
+      "factual_total": 8,
+      "false_acceptances": 0,
+      "unsupported_total": 8,
+      "protected_failures": {},
+      "presentation_invariance": true,
+      "call_failures": 0
+    }
+  },
+  "resource_use": {
+    "valid_calls": 36,
+    "attempts": 36,
+    "transport_retries": 0,
+    "aggregate_latency_ms": 758927.6004910001,
+    "benign_fail_closed_client_warnings": 36,
+    "token_use": null,
+    "cost_usd": null
+  },
+  "interpretation": "Luna v12 is qualified for the declared endpoint and coverage/risk fields on future, separately frozen study packets. This is model-judge qualification, not human agreement and not evidence that P outperforms R.",
+  "limitations": "Each pass has only eight endpoint-positive and eight unsupported cases; the zero-error 95 percent upper bound is approximately 0.3244. Same-family bias, untested language phenomena, and systematic model errors remain possible. Exact incorrect-versus-omitted subtype agreement is exploratory.",
+  "confirmatory_alpha_consumed": 0.0,
+  "study_responses_scored": 0
+}

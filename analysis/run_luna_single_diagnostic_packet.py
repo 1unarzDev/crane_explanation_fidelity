@@ -24,7 +24,37 @@ def read_jsonl(path: Path) -> list[dict[str, Any]]:
     return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line]
 
 
-def success(judgment: dict[str, Any]) -> bool:
+def judge_visible_row(row: dict[str, Any]) -> dict[str, Any]:
+    """Remove coordinator-only v12 fields without changing the frozen judge caller."""
+    return {
+        key: value
+        for key, value in row.items()
+        if key not in {"primary_endpoint_eligible", "mechanism_unit_id"}
+    }
+
+
+def success(judgment: dict[str, Any], row: dict[str, Any] | None = None) -> bool | None:
+    """Score either the qualified v12 endpoint or a retained historical packet.
+
+    V12 success is coverage of the independently declared atomic mechanism unit
+    with no material error. Historical packets did not carry endpoint metadata,
+    so their existing generic mechanism-field interpretation is preserved rather
+    than retroactively rewritten.
+    """
+    if row is not None and "primary_endpoint_eligible" in row:
+        if row["primary_endpoint_eligible"] is not True:
+            return None
+        mechanism_unit_id = row.get("mechanism_unit_id")
+        if not isinstance(mechanism_unit_id, str) or not mechanism_unit_id:
+            raise ValueError("eligible v12 row has no mechanism unit ID")
+        matches = [
+            item
+            for item in judgment.get("required_units", [])
+            if item.get("unit_id") == mechanism_unit_id
+        ]
+        if len(matches) != 1:
+            raise ValueError("eligible v12 judgment does not contain exactly one mechanism unit")
+        return matches[0].get("status") == "covered" and judgment["material_error"] is False
     return judgment["mechanism_identification"] == "correct" and judgment["material_error"] is False
 
 
@@ -34,6 +64,7 @@ def run(packet: Path, key_path: Path, output_root: Path) -> dict[str, Any]:
         raise ValueError("packet must contain two or four unique responses")
     key = json.loads(key_path.read_text(encoding="utf-8"))
     conditions = {item["response_id"]: item["condition"] for item in key["entries"]}
+    rows_by_id = {row["response_id"]: row for row in rows}
     if set(conditions) != {row["response_id"] for row in rows}:
         raise ValueError("packet and condition-key inventories differ")
     condition_order = tuple(condition for condition in ("R", "P", "T", "N") if condition in set(conditions.values()))
@@ -50,7 +81,7 @@ def run(packet: Path, key_path: Path, output_root: Path) -> dict[str, Any]:
         for row in rows:
             response_id = row["response_id"]
             try:
-                record = caller.call(packet_envelope(row, "diagnostic", pass_id))
+                record = caller.call(packet_envelope(judge_visible_row(row), "diagnostic", pass_id))
             except RuntimeError as error:
                 failures.append(
                     {
@@ -91,9 +122,23 @@ def run(packet: Path, key_path: Path, output_root: Path) -> dict[str, Any]:
                 }
                 continue
             judgment = matches[0]
+            response_id = next(
+                item["response_id"]
+                for item in selected
+                if item["condition"] == condition
+            )
+            row = rows_by_id[response_id]
+            endpoint = success(judgment, row)
             pass_result[condition] = {
                 "judgment_status": "valid",
-                "supported_diagnostic_success": success(judgment),
+                "supported_diagnostic_success": endpoint,
+                "primary_endpoint_eligible": row.get("primary_endpoint_eligible"),
+                "mechanism_unit_id": row.get("mechanism_unit_id"),
+                "endpoint_scoring_policy": (
+                    "v12_atomic_mechanism_unit_covered_and_no_material_error"
+                    if "primary_endpoint_eligible" in row
+                    else "historical_generic_mechanism_field_and_no_material_error"
+                ),
                 "material_error": judgment["material_error"],
                 "mechanism_identification": judgment["mechanism_identification"],
             }

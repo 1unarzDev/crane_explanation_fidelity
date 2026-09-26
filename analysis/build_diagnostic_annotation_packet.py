@@ -47,9 +47,12 @@ def build_rows(
         raise ValueError("result/reference episode mismatch")
     if result["question_id"] != reference["question_id"]:
         raise ValueError("result/reference question mismatch")
-    if reference.get("schema") == "crane-command-motion-annotation-reference/v2":
+    if reference.get("schema") in {
+        "crane-command-motion-annotation-reference/v2",
+        "crane-checked-composition-annotation-reference/v1",
+    }:
         if reference.get("completeness_audit", {}).get("accepted") is not True:
-            raise ValueError("command-motion reference completeness audit did not pass")
+            raise ValueError("reference completeness audit did not pass")
 
     declared_identifiers = reference.get("allowed_evidence_identifiers")
     result_identifiers = result.get("permitted_evidence_identifiers")
@@ -93,8 +96,7 @@ def build_rows(
                 **allowed_evidence,
                 "evidence_identifiers": declared_identifiers,
             }
-        rows.append(
-            {
+        row = {
                 "schema": "crane-diagnostic-annotation-row/v1",
                 "response_id": response_id,
                 "question": result["question"],
@@ -107,15 +109,31 @@ def build_rows(
                 "allowed_evidence": allowed_evidence,
                 "response_text": output["text"],
             }
-        )
+        if "primary_endpoint_eligible" in reference:
+            if not isinstance(reference["primary_endpoint_eligible"], bool):
+                raise ValueError("reference primary_endpoint_eligible must be boolean")
+            row["primary_endpoint_eligible"] = reference["primary_endpoint_eligible"]
+            mechanism_unit_id = reference.get("mechanism_unit_id")
+            if reference["primary_endpoint_eligible"]:
+                unit_ids = {
+                    item.get("unit_id")
+                    for item in reference["required_units"]
+                    if isinstance(item, dict)
+                }
+                if not isinstance(mechanism_unit_id, str) or mechanism_unit_id not in unit_ids:
+                    raise ValueError("eligible reference has no declared mechanism unit")
+                row["mechanism_unit_id"] = mechanism_unit_id
+            elif mechanism_unit_id is not None:
+                raise ValueError("ineligible reference must not declare a mechanism unit")
+        rows.append(row)
         key.append(
             {
                 "response_id": response_id,
                 "episode_id": result["episode_id"],
                 "question_id": result["question_id"],
                 "condition": condition,
-                "provider": result["provider"],
-                "model": result["model"],
+                "provider": output.get("provider", result["provider"]),
+                "model": output.get("model", result["model"]),
                 "final_output": True,
                 "used_template_fallback": output.get("used_template_fallback", False),
                 "verification_accepted": output.get("verification_accepted"),

@@ -332,6 +332,39 @@ under `model_outputs.dvc`, with its tracked summary at
 `manifests/annotation/luna-model-judge-v1-heldout-v8-endpoint-first.json`. Physical/reference
 episode collection remains independent of this failure.
 
+### V9--v12 endpoint-alignment disposition
+
+V9--v11 remain failed development/qualification cycles. V9 exposed a Codex CLI 0.157
+fail-closed client-warning transport bug and remaining reference errors. V10 and v11 then showed
+that exact four-way `covered`/`incorrect`/`omitted` subtype agreement and a generic
+`mechanism_identification` field were misaligned with the study endpoint when applied to nominal
+or intentionally qualified answers. None of those cycles is qualified or rescored.
+
+V12 was frozen on fresh cases before calls and is the active qualified configuration. On
+independently specified diagnosable cases, the primary judge endpoint requires the declared atomic
+mechanism unit to be `covered` and `material_error=false`. Unit-coverage accuracy uses binary
+`covered` versus `not covered`; raw four-way statuses remain retained for exploratory error
+analysis. Nominal, insufficient-evidence, visual-boundary, and conflicting-measurement cases remain
+mandatory risk and qualification controls, but are not relabeled as positive mechanism cases.
+
+Both isolated v12 passes qualified: 8/8 endpoint decisions, 28/28 unit-coverage decisions, core
+accuracy 117/120 and 119/120, zero material false rejections or false acceptances, zero protected
+failures, zero call failures, and invariant paraphrases. This permits scoring future separately
+frozen diagnostic-study packets; it does not supply a P--R effect, consume confirmatory alpha, or
+equal human validation. With eight factual and eight unsupported cases per pass, a zero observed
+material-error count still has an approximately 0.3244 Wilson 95% upper bound. The governed summary
+is `manifests/annotation/luna-model-judge-v1-heldout-v12-final.json`; annotation amendment 4 records
+the activation boundary.
+
+Prospective packet rows must bind two coordinator-only fields before judging:
+`primary_endpoint_eligible` and, for eligible diagnosable questions, the independently declared
+atomic `mechanism_unit_id`. The single-packet scorer now defines supported diagnostic success as
+that unit being `covered` with `material_error=false`. Ineligible nominal/ambiguous guardrails have
+no positive-mechanism endpoint and remain in risk/qualification summaries. These coordinator fields
+are stripped before constructing the Luna envelope, so the v12-qualified prompt, caller source,
+and model-visible input schema remain unchanged. Historical packets lacking these fields retain
+their historical generic-mechanism interpretation and are not retroactively rescored.
+
 ## Input boundary and isolation
 
 Every response is judged in a new API request with no conversation history and no model tools. The

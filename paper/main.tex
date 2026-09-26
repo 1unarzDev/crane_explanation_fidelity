@@ -288,6 +288,20 @@ blocked. This later failure does not retroactively alter the historical v7 label
 their use to activate the intended command--motion endpoint. No confirmatory response has been
 scored and no alpha was consumed.
 
+Subsequent v8--v11 cycles were retained as failures and exposed two evaluation defects: a client
+warning was initially misclassified as tool use, and exact subtype scoring treated
+``incorrect'' versus ``omitted'' as a primary coverage distinction while applying positive
+mechanism labels to nominal or intentionally qualified answers. Before any confirmatory semantic
+label, we froze a final fresh v12 qualification aligned to the declared endpoint. On diagnosable
+cases, success requires coverage of the declared atomic mechanism unit and no material error;
+nominal and ambiguous cases remain risk and qualification controls. Both isolated v12 passes
+scored 8/8 endpoint and 28/28 unit-coverage decisions, with core-field accuracy 117/120 and
+119/120, zero material false acceptance/rejection, zero protected failures, and zero call
+failures. V12 is therefore eligible for future separately frozen packets. It is automated
+model-judge evidence, not human agreement; each eight-case material class has an approximately
+0.3244 zero-error Wilson 95\% upper bound. Confirmation remains inactive at semantic $N=0$ and
+alpha 0.
+
 \section{Development Case: Terminal Margin}
 
 We first exercised the complete path on a retained RoboBoat development run; it is not a held-out
@@ -425,8 +439,8 @@ inventory therefore contains 52 responses in 13 packets over nine clusters. Its 
 remains unscored; separately governed later development labels do not turn it into a held-out
 result. Immutable final P fallback is 13/13 development questions overall.
 
-A separate frozen land command--motion physical/reference cohort now contains thirty-six
-single-attempt configurations from its fixed 100-configuration confirmation schedule: thirty-five
+A separate frozen land command--motion physical/reference cohort now contains forty
+single-attempt configurations from its fixed 100-configuration confirmation schedule: thirty-nine
 are valid and one is a retained invalid recording. It has no method responses or semantic labels.
 In run 003, the predeclared odometry mask removes the decisive
 motion measurement while preserving execution facts, so the independent method reference withholds
@@ -481,6 +495,9 @@ Run 037 adds a nominal-clear-route discrepancy from 10--22~s, measured-response 
 Run 038 adds another nominal-clear-route discrepancy from 19--29~s, measured-response recovery
 from 31--32~s, and eventual action success.
 Run 039 adds response loss from 18--28~s, measured recovery from 30--31~s, and task success.
+Run 040 adds a connected-detour persistent discrepancy from 18--28~s followed by an unexpected
+action abort; it remains valid under the frozen worker gate despite the generic fixture's expected-
+success check.
 These are physical/reference observations, not a semantic P--R effect.
 
 \section{Development Findings and Disposition}
@@ -500,8 +517,9 @@ Final P fallback & 13/13 questions & P final equals T \\
 Historical route-change & P--R: 0.0 in both passes & Development tie \\
 Historical Luna v7 composite & 20/20 in each pass & Preserved qualification \\
 Luna v7 core fields & P1: 176/187; P2: 179/187 & 94.1\%; 95.7\% \\
-Endpoint-threat extension & 16/20; 17/20 composite & Failed; blocks scoring \\
+Endpoint-threat extension & 16/20; 17/20 composite & Failed; blocked candidate v3 \\
 Endpoint-first v8 & 48/48 composite in both passes & Failed unit/core/protected gates \\
+Endpoint-aligned v12 & 8/8 endpoint in both passes & Qualified; no study labels \\
 Physical cohort & 40 attempts; 39 valid, 1 invalid & No semantic labels \\
 Legacy inventory & 33 clusters; 198 responses & Under-target; unscored \\
 \bottomrule
@@ -523,11 +541,13 @@ reference omitted robot-visible provenance, interval, grid-size, and event-timin
 judge used to reject answers. It is therefore neither a terminal-failure cluster nor a
 method-effect result.
 Although the original reference-audited Luna result is retained, the later endpoint-threat
-extension failed and blocks candidate-v3 semantic confirmation. A fresh endpoint-first v8 cycle
+extension failed and blocked candidate-v3 semantic confirmation. A fresh endpoint-first v8 cycle
 then classified all 48 composite cases correctly in each pass with zero material-error polarity
 mistakes, but still failed its prospectively required unit/core accuracy and protected-causal
-gates. It therefore remains ineligible for study scoring rather than being redefined as an
-endpoint-only success. These inspected development
+gates. It therefore remains ineligible rather than being redefined as an endpoint-only success.
+Subsequent failed cycles were retained, and the fresh endpoint-aligned v12 arm eventually qualified
+for future separately frozen packets. Qualification repaired the scoring bottleneck but did not
+select a treatment or create an effect. These inspected development
 outputs cannot become a held-out method comparison. No confirmatory campaign or study labels exist,
 so turning the observations into confirmatory counts, risk--coverage curves, or significance tests
 would overstate the evidence.
@@ -542,9 +562,10 @@ not uniquely identify a physical source. Evaluator truth is unavailable to ordin
 Experiments use simulation. They can test controlled mechanisms and simulation-based ecological
 relevance, not hardware reliability or real-world transfer. The study measures factual and
 diagnostic outcomes, not human trust. The original Luna v7 arm passed both fresh held-out
-qualification passes, but its later targeted endpoint-threat extension failed both passes and no
-confirmatory response has been scored. The subsequent v8 result likewise failed its complete gate
-despite perfect composite polarity on its finite suite. Repeated-model measurements would not constitute human
+qualification passes, but its later targeted endpoint-threat extension failed both passes. The
+subsequent v8--v11 cycles likewise failed their complete prospective gates. V12 qualified the
+endpoint-aligned automated arm, but no confirmatory response has been scored and its small held-out
+categories leave wide systematic-error bounds. Repeated-model measurements would not constitute human
 agreement. The failed composition audit further shows that judge qualification cannot repair
 an incomplete case reference. Its small error-category denominators also yield large finite-sample sensitivity
 bounds that a future nominal advantage may fail. The legacy cohort stopped below its
@@ -553,7 +574,7 @@ a significance claim. The development cases were selected to exercise the pipeli
 separately frozen prospective study can support comparative claims.
 
 Finally, deterministic rendering may outperform or dominate language-model realization. At this
-development operating point it supplied every final P answer; without qualified semantic labels we
+development operating point it supplied every final P answer; without prospective study labels we
 report that fallback frequency but do not infer comparative quality or attribute templated final
 answers to language-model reasoning.
 
