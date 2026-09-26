@@ -45,7 +45,11 @@ recovery, not a unique physical cause or proof of actuator acceptance. Fixed run
 `mccv2-dev-005`, is a valid nominal/false-premise control: navigation succeeded in 69.110 s with
 one plan, no FollowPath failure, no qualified Wait invocation, and no diagnostic discrepancy under
 the frozen thresholds. Visible scene clutter alone therefore does not license an obstacle-cause or
-failure claim. No response or Luna call has been made. Fixed run 6/6 is next.
+failure claim. Fixed run 6/6, `mccv2-dev-006`, is a valid mixed-evidence negative: it aborted after
+a supported 0.260 versus 0.000 m/s discrepancy over 9--19 s, but the incomplete retained grid
+showed no blocked direct-route cell and all three delivered plans remained on the requested line.
+The intended geometry predicate was not established and is withheld. All six fixed attempts are
+now retained; no response or Luna call has been made.
 
 ## Readiness
 

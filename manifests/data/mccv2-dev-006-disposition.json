@@ -1,0 +1,92 @@
+{
+  "schema": "crane-measurement-complete-v2-run-disposition/v1",
+  "recorded_utc_date": "2026-09-26",
+  "run_id": "mccv2-dev-006",
+  "cluster_id": "mccv2-land-006",
+  "status": "VALID_DEVELOPMENT_EXECUTION_DISCREPANCY_GEOMETRY_UNRESOLVED",
+  "predeclaration": "research/explanation_fidelity/experiment_configs/development/measurement-complete-composition-v2-physical-screen-v1.json",
+  "admission": {
+    "attempt_count": 1,
+    "retry_performed": false,
+    "replacement_layout_used": false,
+    "player_build_audit_accepted": true,
+    "scenario_binding_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "unity_result_valid": true,
+    "generic_fixture_valid": false,
+    "generic_fixture_limit": "The shared fixture expected success; its false valid flag records expected-outcome mismatch, not an invalid recording.",
+    "recording_valid": true
+  },
+  "scenario": {
+    "environment_id": "crane-land-proving-ground-v5",
+    "layout_id": "diagnostic-candidate-v2-development-connected-detour-009",
+    "layout_seed": 81008,
+    "family": "mixed-geometric-restriction-and-persistent-execution-discrepancy",
+    "mobility_hold_after_s": 18.0,
+    "mobility_release_after_s": -1.0
+  },
+  "observed": {
+    "navigation_status": "aborted",
+    "action_error_code": 105,
+    "action_wall_seconds": 44.41050008199818,
+    "displacement_meters": 2.4195613861083984,
+    "controller_commands": 398,
+    "odometry_messages": 2125,
+    "trajectory_samples": 43,
+    "behavior_tree_transitions": 39,
+    "costmap_observations": 102,
+    "delivered_plan_count": 3,
+    "unique_delivered_plan_count": 2,
+    "maximum_recovery_feedback": 2
+  },
+  "command_motion_reference": {
+    "disposition": "supported",
+    "mechanism": "command_to_motion_discrepancy",
+    "healthy_interval_s": [0.0, 5.0],
+    "healthy_commanded_planar_speed_mps": 0.26,
+    "healthy_measured_planar_speed_mps": 0.2597399950027466,
+    "discrepancy_interval_s": [9.0, 19.0],
+    "discrepancy_commanded_planar_speed_mps": 0.26,
+    "discrepancy_measured_planar_speed_mps": 0.0,
+    "follow_path_attempt_count": 3,
+    "follow_path_failure_count": 2,
+    "source_qualified_wait_recovery_count": 2,
+    "measured_response_recovered": false,
+    "unique_physical_cause_supported": false
+  },
+  "geometric_reference": {
+    "direct_route_restriction_supported": false,
+    "retained_grid_has_connection": false,
+    "substantial_route_deviation_observed": false,
+    "global_physical_no_path_supported": false,
+    "unique_physical_obstacle_supported": false,
+    "direct_route_fully_covered": false,
+    "direct_route_first_blocked": null,
+    "maximum_lateral_deviation_m": 0.0,
+    "multiple_distinct_delivered_plans": true,
+    "plan_summary_parity_passed": true
+  },
+  "interpretation": "The execution discrepancy is supported. The retained incomplete grid and plan/trajectory geometry do not establish the intended geometric restriction, a unique physical obstacle, global no-path, or geometry-to-abort causation.",
+  "hashes": {
+    "player_build_audit_sha256": "cf2d883d18dd7c65b70be949664ac11abab084430884492302e06bae26b13cd6",
+    "scenario_binding_audit_sha256": "35db1c41dd2c2a25fab6efc877330f758e724122fa782ba0bf7a11c83b133102",
+    "evaluator_truth_sha256": "be597375a05a170640a35536542405522d93d0f1ebb1876595dd60bfe6ad7471",
+    "fixture_summary_sha256": "2d0cecb5f042de9277b5e036cae7eb8ad080b9ff60f75e041fcd0e012f431ad9",
+    "command_motion_independent_reference_sha256": "4b8c64e9d72410335036db1687fa1e4d80011a2b3ba86bea45a496c86e0b9ccc",
+    "geometric_independent_reference_sha256": "ee107dc63a67359ea854dca11b4af91f5b74c637c5dc3113cb4d5dc896c81b6f",
+    "plan_geometry_independent_reference_sha256": "ed327fd18fbd2dc0cbcdc33ff0798c7825193cc95a8358df69908429136888db",
+    "robot_visible_command_motion_diagnostic_sha256": "adf6d75e88fa162267e7cec561135106bb38da686d23569d261f9cfa5ff269ce",
+    "robot_visible_geometric_diagnostic_sha256": "06bed2149d91d25895fd3a4cd7adcf3d1db93fe2ed75b0f2e1c6c755cbeaace3",
+    "robot_visible_manifest_sha256": "6d60dcb5d222ec0244576ddd360efe34daace581a704b407cba352b3a7a251b3",
+    "evaluator_only_manifest_sha256": "12b7bcf45807f79ac9e68a24e00da5023e84f99f38f645ed6185193c65a2809e"
+  },
+  "study_effect": {
+    "development_independent_cluster_increment": 1,
+    "confirmatory_cluster_increment": 0,
+    "model_response_increment": 0,
+    "luna_judgment_increment": 0,
+    "confirmatory_alpha_consumed": 0.0,
+    "candidate_readiness": "READY_FOR_SEPARATE_TREATMENT_SCREEN_PREDECLARATION"
+  },
+  "next_fixed_run": null
+}

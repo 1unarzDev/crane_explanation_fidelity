@@ -6250,3 +6250,28 @@
   execution difficulty was absent.
 - **GOVERNANCE:** raw and derived robot-visible/evaluator-only artifacts were separately
   hash-manifested and DVC-pushed. Fixed run 6/6 is next; language remains unauthorized.
+
+### Fixed run 6/6 — `mccv2-dev-006`
+
+- **STATUS:** `VALID_DEVELOPMENT_EXECUTION_DISCREPANCY_GEOMETRY_UNRESOLVED`; one attempt, no retry
+  or replacement, independent development clusters +1, confirmatory clusters +0, model/Luna calls
+  0. This completes the six prospectively fixed physical attempts.
+- **ADMISSION:** the pinned player passed all source/catalog checks and all 14 post-run binding
+  checks matched connected-detour 009 at seed 81008 with the predeclared persistent hold. The
+  fixture's generic success expectation failed because the action aborted; recording, binding, and
+  diagnostic validity passed independently.
+- **OBSERVED:** NavigateToPose aborted after 44.411 s and 2.420 m displacement, with three
+  delivered plans, two FollowPath failures, and two source-qualified Wait invocations.
+- **COMMAND--MOTION REFERENCE:** a healthy 0--5 s interval measured 0.259740 m/s. During 9--19 s,
+  median delivered command remained 0.260 m/s while measured planar speed was 0.000 m/s. No later
+  measured response recovery was observed before abort.
+- **NEGATIVE GEOMETRY RESULT:** the incomplete final rolling grid contained no observed blocked
+  direct-route cell; all three delivered plans had 0.000 m lateral deviation despite two distinct
+  hashes; and delivered odometry had 0.000 m maximum lateral deviation. The intended mixed
+  geometric-restriction predicate was not established.
+- **BOUNDARY:** diagnose the command--motion discrepancy while withholding obstacle identity,
+  global no-path, exact Nav2 consumption, and any claim that geometry caused the abort. The unique
+  execution-layer cause also remains unresolved.
+- **GOVERNANCE:** raw and derived robot-visible/evaluator-only artifacts were separately
+  hash-manifested and DVC-pushed. Language generation remains unauthorized until masks, independent
+  references, treatment hashes, information parity, and annotation packets are separately frozen.
