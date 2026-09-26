@@ -49,6 +49,7 @@ NINTH_RUN = ROOT / "manifests/data/cm-land-conf-045-disposition.json"
 TENTH_RUN = ROOT / "manifests/data/cm-land-conf-046-disposition.json"
 ELEVENTH_RUN = ROOT / "manifests/data/cm-land-conf-047-disposition.json"
 TWELFTH_RUN = ROOT / "manifests/data/cm-land-conf-048-disposition.json"
+THIRTEENTH_RUN = ROOT / "manifests/data/cm-land-conf-049-disposition.json"
 
 
 def load(path: Path) -> dict:
@@ -363,3 +364,19 @@ def test_second_masked_ambiguity_run_withholds_unobserved_motion_mechanism():
     assert run["semantic_boundary"]["R_responses"] == 0
     assert run["semantic_boundary"]["program_alpha_consumed"] == 0.02
     assert run["focused_progress"]["next_fixed_run_id"] == "cm-land-conf-049"
+
+
+def test_third_response_recovery_run_preserves_success_and_causal_limit():
+    run = load(THIRTEENTH_RUN)
+    reference = run["method_visible_reference"]
+
+    assert run["attempt_count"] == 1
+    assert run["observed"]["navigation_status"] == "succeeded"
+    assert reference["primary_endpoint_eligible"] is True
+    assert reference["response_ratio"] == 0.0
+    assert 0.95 < reference["recovered_response_ratio"] < 1.0
+    assert reference["recovery_caused_outcome_supported"] is False
+    assert reference["unique_physical_cause_supported"] is False
+    assert run["semantic_boundary"]["P_responses"] == 0
+    assert run["semantic_boundary"]["R_responses"] == 0
+    assert run["focused_progress"]["next_fixed_run_id"] == "cm-land-conf-050"
