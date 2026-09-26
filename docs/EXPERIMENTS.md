@@ -1,5 +1,18 @@
 # Experiment Log
 
+## 2026-09-26 — Luna v12 complete-endpoint extension frozen before calls
+
+- **STATUS:** `FROZEN / ZERO CALLS`. One final bounded extension contains 18 fresh held-out cases:
+  six per primary family, comprising nine complete answers and three omissions each of the
+  measurement, outcome, and causal-limit units.
+- **UNCHANGED JUDGE:** `gpt-6-luna`, high reasoning, v12 prompt/schema/caller, two isolated passes,
+  and the existing bounded transport retry rule. No model or prompt substitution is allowed.
+- **GATES:** each pass must meet the predeclared complete-endpoint, unit, core, false acceptance,
+  false rejection, category, and zero-call-failure thresholds. Either outcome is retained; failure
+  blocks semantic activation and does not authorize another unregistered judge iteration.
+- **BOUNDARY:** this extension qualifies scoring mechanics only. It contains no study answer,
+  consumes no confirmatory alpha, and cannot establish a P-minus-R effect.
+
 ## 2026-09-26 — focused semantic endpoint activation audit
 
 - **FINDING:** the registered endpoint requires mechanism, essential measurement, outcome, and

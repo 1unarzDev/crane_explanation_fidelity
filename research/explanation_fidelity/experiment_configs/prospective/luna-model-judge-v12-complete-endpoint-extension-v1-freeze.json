@@ -1,0 +1,51 @@
+{
+  "schema": "crane-luna-complete-endpoint-extension-freeze/v1",
+  "freeze_id": "luna-model-judge-v12-complete-endpoint-extension-v1",
+  "declared_utc": "2026-09-26T13:00:00Z",
+  "status": "FROZEN_BEFORE_ANY_EXTENSION_CALL",
+  "purpose": "One bounded held-out qualification of the focused four-unit complete-supported-diagnostic-communication scorer.",
+  "suite_sha256": "ba121ec4d91b1ac315e7e8c46558b72ceb46fcd8bac3d0adf4b4e27cfd0fea05",
+  "prompt_sha256": "f701b91d8c46637b203d56d1ded3fce7c9f5ebbda077b02bc4d01627142d0da6",
+  "output_schema_sha256": "93989e303fdb12e94ae5fe79adad16e46d9587006b7ba6de5c4624096f1b1c3f",
+  "caller_source_sha256": "e185329a711b240ca790698c7a89033f6ba7cb85b69ccddc4f35a10c0419a379",
+  "runner_source_sha256": "b2456e6f86208e4db545803f210aba37719e4f296c287c03a0301b23c3078481",
+  "suite_builder_sha256": "0b1e8de4742490d3ea82a9e9de5b9e8c8742a1fd600bda846f00c6d1714afe77",
+  "model": {
+    "requested_id": "gpt-6-luna",
+    "substitution_allowed": false,
+    "reasoning_effort": "high",
+    "provider": "codex-lb",
+    "temperature": null,
+    "seed": null
+  },
+  "suite": {
+    "path": "research/explanation_fidelity/qualification/luna-model-judge-v12-complete-endpoint-extension-v1.json",
+    "cases": 18,
+    "families": ["geometry", "persistent", "recovery"],
+    "complete_answers": 9,
+    "measurement_omissions": 3,
+    "outcome_omissions": 3,
+    "limit_omissions": 3,
+    "model_executions_at_freeze": 0,
+    "freshness": "New identifiers, quantities, wording, answers, and four-unit inventories; no extension case was exposed to Luna before freeze."
+  },
+  "passes": ["pass-1", "pass-2"],
+  "thresholds": {
+    "minimum_complete_endpoint_accuracy": 0.90,
+    "minimum_unit_coverage_accuracy": 0.95,
+    "minimum_core_field_accuracy": 0.95,
+    "maximum_false_rejection_rate": 0.12,
+    "maximum_false_acceptance_rate": 0.12,
+    "maximum_errors_per_omission_category": 1,
+    "call_failures_allowed": 0
+  },
+  "retry_policy": {
+    "maximum_transport_retries": 1,
+    "usable_judgment_retry_allowed": false,
+    "inconvenient_label_retry_allowed": false
+  },
+  "hard_stop": "Run both passes once and retain either outcome. Failure blocks focused semantic activation; it does not authorize another unregistered judge iteration.",
+  "study_scoring_allowed": false,
+  "confirmatory_responses_opened": 0,
+  "confirmatory_alpha_consumed": 0.0
+}
