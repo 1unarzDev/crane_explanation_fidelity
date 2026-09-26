@@ -1,0 +1,113 @@
+{
+  "schema": "crane-composite-mechanism-v6-physical-run-disposition/v1",
+  "recorded_date": "2026-09-26",
+  "run_id": "cmcv6-dev-001",
+  "cluster_id": "cmcv6-dev-cluster-001",
+  "status": "VALID_COMMAND_MOTION_SUPPORTED_GEOMETRY_INSUFFICIENT_UNEXPECTED_ABORT_NO_LANGUAGE_RESPONSE",
+  "attempt_count": 1,
+  "retry_or_replacement_performed": false,
+  "contract": {
+    "path": "research/explanation_fidelity/experiment_configs/development/composite-mechanism-v6-physical-screen-v1.json",
+    "player_amendment": "research/explanation_fidelity/experiment_configs/development/composite-mechanism-v6-physical-screen-v1-amendment-2.json",
+    "fixed_order": 1,
+    "development_only": true
+  },
+  "scheduled_configuration": {
+    "layout_id": "diagnostic-command-motion-confirmation-reserve-connected-detour-052",
+    "layout_seed": 91051,
+    "geometry": "connected-detour",
+    "intervention_family": "persistent-command-motion",
+    "mobility_hold_after_s": 18.0,
+    "mobility_release_after_s": -1.0,
+    "ros_domain_id": 225,
+    "ros_tcp_port": 12525
+  },
+  "admission": {
+    "player_build_audit_accepted": true,
+    "scenario_binding_audit_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "unity_worker_result_valid": true,
+    "unity_logged_errors": 0,
+    "unity_logged_exceptions": 0,
+    "stale_actions": 0,
+    "rejected_actions": 0,
+    "cross_episode_actions": 0,
+    "recording_valid_under_worker_result_gate": true,
+    "unexpected_navigation_outcome_retained": true
+  },
+  "generic_fixture_expectation": {
+    "expected_navigation_status": "succeeded",
+    "observed_navigation_status": "aborted",
+    "fixture_exit_status": 1,
+    "fixture_summary_valid_flag": false,
+    "disposition": "The generic expected-success check failed, but source/build binding, scenario binding, zero-error worker recording, and independent calculations passed. The unexpected valid abort is retained without replacement."
+  },
+  "observed": {
+    "navigation_status": "aborted",
+    "action_wall_seconds": 44.60989669799892,
+    "displacement_meters": 2.762409210205078,
+    "controller_commands": 410,
+    "odometry_messages": 2224,
+    "costmap_observations": 104,
+    "delivered_plans": 3,
+    "behavior_tree_transitions": 39,
+    "follow_path_attempts": 3,
+    "follow_path_failures": 2,
+    "observed_recovery_invocation_starts": 2,
+    "maximum_recovery_feedback": 2,
+    "behavior_tree_history_status": "not_proven",
+    "exact_recovery_count_eligible": false
+  },
+  "command_motion_reference": {
+    "proposed_disposition": "supported",
+    "independent_disposition": "supported",
+    "healthy_interval_s": [0.0, 5.0],
+    "healthy_measured_planar_speed_mps": 0.2597399950027466,
+    "discrepancy_interval_s": [11.0, 21.0],
+    "discrepancy_duration_s": 10.0,
+    "median_commanded_planar_speed_mps": 0.26,
+    "median_measured_planar_speed_mps": 0.0,
+    "response_recovery_interval_s": null,
+    "bounded_conclusion": "Delivered command and odometry establish a sustained command-to-motion discrepancy before abort. They do not establish actuator acceptance, Nav2 odometry consumption, the hidden intervention, or a unique physical cause."
+  },
+  "geometric_reference": {
+    "proposed_disposition": "insufficient",
+    "independent_direct_route_restriction_supported": false,
+    "direct_route_fully_covered": false,
+    "direct_route_first_blocked": null,
+    "maximum_forward_progress_m": 2.762409210205078,
+    "maximum_lateral_deviation_m": 0.0,
+    "delivered_plans": 3,
+    "unique_delivered_plans": 2,
+    "bounded_conclusion": "The retained local grid did not cover the decisive direct-route region. No geometric restriction, obstacle cause, global no-path, or geometry-to-abort relation is established."
+  },
+  "screen_consequence": {
+    "valid_independent_clusters": 1,
+    "composite_positive_clusters": 0,
+    "language_responses": 0,
+    "luna_calls": 0,
+    "confirmatory_semantic_n": 0,
+    "confirmatory_alpha_consumed": 0.0,
+    "next_fixed_run_id": "cmcv6-dev-002"
+  },
+  "hashes": {
+    "player_build_audit_sha256": "26d280c6500b113821c45f236f418271b08cdc3f06ae33304126b2a6babedc9d",
+    "scenario_binding_audit_sha256": "7c7212ba73b04314e6cfeb65481e1a5cc9be1b75adf01b00fba8210a63a2420c",
+    "unity_worker_result_sha256": "73c5357a2c3f55279256fa4fdcdf555d55382e2a8b021464de89dd4fb88b344a",
+    "fixture_summary_sha256": "1b2be841dc20d0dc915e6ac8a62be605193b19d848004ee850b344fa5c4d069b",
+    "robot_visible_events_sha256": "e3254681671f6c677818440045807fb53af62e1bf65aff6c8b585b23ebd479a1",
+    "command_motion_diagnostic_sha256": "4178fb0aa4dd0562fb4a368ec762b5c1fbfd5c6ed73ae223e042db33667bad78",
+    "command_motion_independent_reference_sha256": "6ffd4688b5425b8c2b4dba77d28825749725bf760538aefcec6c05d34b3a5ee3",
+    "geometric_diagnostic_sha256": "c680f6adddc6876a48bb284f51e0e5a3abc8082b1f2e3b65b03a807dfdab83a7",
+    "geometric_independent_reference_sha256": "b0b256ed4af0a9fd87f304e25d67c5b090f5ad5cf60c8e3e15dae4de510e8b3e",
+    "plan_geometry_independent_reference_sha256": "be9d821e050987e37e616aa3ef4d88ee935d1faa5be9020ee30b6aa37b39d5c8",
+    "robot_visible_manifest_sha256": "1580c361c12a6548c606bd7cf863424b236874b90f1528d856361403ec315071",
+    "evaluator_only_manifest_sha256": "a34db4a0b2fd3f606319296ac9ef54f7b6314c2f64874d7a3aef5ec7610a2ab4"
+  },
+  "governance": {
+    "robot_visible_manifest": "manifests/data/cmcv6-dev-001.robot-visible.json",
+    "evaluator_only_manifest": "manifests/data/cmcv6-dev-001.evaluator-only.json",
+    "checkpoint": "manifests/checkpoints/cmcv6-dev-001.json",
+    "dvc_remote_status": "IN_SYNC_BEFORE_GIT_POINTER"
+  }
+}

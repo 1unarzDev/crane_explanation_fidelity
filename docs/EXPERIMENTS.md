@@ -40,6 +40,23 @@
   build-generated diff was mechanically reversed, returning the submodule to the pinned clean
   commit before provenance was recorded. Run 001's physical attempt remains unspent.
 
+### Composite-mechanism v6 run 1/7 — command--motion supported, geometry insufficient
+
+- **STATUS:** `VALID / UNEXPECTED ABORT / NOT COMPOSITE-POSITIVE`. The sole fixed attempt passed
+  exact player and 14-field scenario binding plus the zero-error worker gate. It aborted after
+  44.610 s and 2.762 m; the generic expected-success check is not an admission gate.
+- **EXECUTION DIAGNOSIS:** independent computations agree on healthy measured response of
+  0.259740 m/s over 0--5 s and a sustained 11--21 s discrepancy between 0.260 m/s delivered
+  command and 0.000 m/s delivered odometry. The action recorded three FollowPath attempts, two
+  failures, and two source-qualified Wait starts before abort.
+- **GEOMETRY NEGATIVE:** because the robot stopped early, the final local grid did not cover the
+  decisive direct-route region. The geometric diagnostic is `insufficient`; all three delivered
+  plans remained direct and measured lateral deviation was 0.000 m. No obstacle cause or
+  geometry-to-abort relation is licensed.
+- **DISPOSITION:** retain without replacement. It counts as one valid development cluster but zero
+  composite-positive clusters, responses, or Luna calls. Fixed run 2 is next; confirmation N and
+  alpha remain zero.
+
 ## 2026-09-26 — evidence-complete raw-baseline v5 language screen rejects candidate v5
 
 - **STATUS:** `DEVELOPMENT_ONLY_CANDIDATE_REJECTED_FROZEN_GATE`.

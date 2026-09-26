@@ -9,6 +9,7 @@ CATALOG = ROOT / "packages/crane_ml/Assets/Resources/ReferenceEnvironments/crane
 SCHEDULE = ROOT / "research/explanation_fidelity/experiment_configs/prospective/land-command-motion-physical-schedule-v1.json"
 AMENDMENT_1 = ROOT / "research/explanation_fidelity/experiment_configs/development/composite-mechanism-v6-physical-screen-v1-amendment-1.json"
 AMENDMENT_2 = ROOT / "research/explanation_fidelity/experiment_configs/development/composite-mechanism-v6-physical-screen-v1-amendment-2.json"
+RUN_001_DISPOSITION = ROOT / "manifests/data/cmcv6-dev-001-disposition.json"
 
 
 def _load(path: Path):
@@ -88,3 +89,15 @@ def test_rebuilt_player_is_pinned_before_first_physical_launch():
     assert amendment["build"]["audit_failed_checks"] == []
     assert amendment["build"]["catalog_sha256"] == _sha256(CATALOG)
     assert amendment["build"]["large_player_retained_in_dvc"] is False
+
+
+def test_run_001_retains_supported_execution_and_insufficient_geometry():
+    result = _load(RUN_001_DISPOSITION)
+    assert result["attempt_count"] == 1
+    assert result["retry_or_replacement_performed"] is False
+    assert result["admission"]["recording_valid_under_worker_result_gate"] is True
+    assert result["command_motion_reference"]["independent_disposition"] == "supported"
+    assert result["geometric_reference"]["proposed_disposition"] == "insufficient"
+    assert result["geometric_reference"]["direct_route_fully_covered"] is False
+    assert result["screen_consequence"]["composite_positive_clusters"] == 0
+    assert result["screen_consequence"]["language_responses"] == 0

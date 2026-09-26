@@ -15,6 +15,13 @@ judge call existed at freeze. Candidate promotion requires at least two consensu
 wins on composite-positive cases plus strict risk, coverage, qualification, and two-pass gates.
 The screen consumes no confirmatory alpha and cannot contribute confirmation or replication N.
 
+Fixed run 1/7 is retained as a valid unexpected abort after one attempt. Independent command--motion
+computations support a 0.260 versus 0.000 m/s discrepancy over 11--21 s, two FollowPath failures,
+and two source-qualified Wait starts. The robot stopped at 2.762 m, so the final local grid did not
+cover the decisive direct-route region; geometry is insufficient and the case is not
+composite-positive. It contributes one development cluster, no response or Luna label, and no
+confirmatory N or alpha. Fixed run 2 is next.
+
 ## Coverage-complete v5 raw-baseline screen
 
 The frozen `raw-baseline-v5-language-screen-v1` is complete and rejected. Baseline R received the
