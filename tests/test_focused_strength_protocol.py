@@ -36,6 +36,7 @@ THIRD_RUN = ROOT / "manifests/data/fsdc-land-geometry-003-disposition.json"
 FOURTH_RUN = ROOT / "manifests/data/fsdc-land-geometry-004-disposition.json"
 FIFTH_RUN = ROOT / "manifests/data/cm-land-conf-041-disposition.json"
 SIXTH_RUN = ROOT / "manifests/data/cm-land-conf-042-disposition.json"
+SEVENTH_RUN = ROOT / "manifests/data/cm-land-conf-043-disposition.json"
 
 
 def load(path: Path) -> dict:
@@ -222,3 +223,20 @@ def test_second_reassigned_run_is_bounded_primary_discrepancy():
     assert run["semantic_boundary"]["R_responses"] == 0
     assert run["semantic_boundary"]["confirmatory_alpha_consumed"] == 0.0
     assert run["focused_progress"]["next_fixed_run_id"] == "cm-land-conf-043"
+
+
+def test_transient_run_preserves_recovery_and_success_without_unique_cause():
+    run = load(SEVENTH_RUN)
+
+    reference = run["method_visible_reference"]
+    assert run["attempt_count"] == 1
+    assert reference["primary_endpoint_eligible"] is True
+    assert reference["disposition"] == "supported"
+    assert reference["response_ratio"] == 0.0
+    assert reference["recovered_response_ratio"] == 1.0
+    assert reference["unique_physical_cause_supported"] is False
+    assert run["observed"]["navigation_status"] == "succeeded"
+    assert run["semantic_boundary"]["P_responses"] == 0
+    assert run["semantic_boundary"]["R_responses"] == 0
+    assert run["semantic_boundary"]["confirmatory_alpha_consumed"] == 0.0
+    assert run["focused_progress"]["next_fixed_run_id"] == "cm-land-conf-044"

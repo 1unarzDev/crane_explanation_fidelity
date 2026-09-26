@@ -1,5 +1,21 @@
 # Experiment Log
 
+## 2026-09-26 — focused physical run 7 / source order 43: `cm-land-conf-043`
+
+- **STATUS:** `VALID_FOCUSED_PHYSICAL_INDEPENDENT_PRIMARY_TRANSIENT_COMPENSATION_RESPONSE_UNOPENED`;
+  one attempt and no replacement. The expected success, source-pinned zero-error Unity worker, all
+  14 binding checks, and complete independent-reference gates passed.
+- **REFERENCE:** independent low-speed computation supports a 0.260 versus 0.000 m/s discrepancy
+  over 18--27 s after a healthy 0.2597 m/s response. Measured response recovered to 0.2597 m/s in
+  30--31 s; navigation ultimately succeeded after one FollowPath failure and one source-qualified
+  Wait invocation.
+- **BOUNDARY:** this supports transient response loss, later measured recovery, and task success,
+  not actuator acceptance, Nav2 consumption of odometry, the hidden intervention, or a unique
+  physical cause.
+- **GOVERNANCE:** robot-visible and evaluator-only roots were separately leakage/governance
+  checked, hash-manifested, and DVC-pushed before Git. Responses remain unopened and alpha remains
+  zero. Source-order run `cm-land-conf-044` is next.
+
 ## 2026-09-26 — focused physical run 6 / source order 42: `cm-land-conf-042`
 
 - **STATUS:** `VALID_FOCUSED_PHYSICAL_INDEPENDENT_PRIMARY_DIAGNOSABLE_UNEXPECTED_ABORT_RESPONSE_UNOPENED`;
