@@ -1,0 +1,63 @@
+{
+  "schema": "crane-luna-diagnostic-development-result/v2",
+  "screen_id": "diagnostic-checked-composition-multifamily-screen-v1",
+  "status": "DEVELOPMENT_ONLY_CANDIDATE_REJECTED",
+  "executed_utc_date": "2026-09-26",
+  "predeclaration": "manifests/annotation/luna-checked-composition-multifamily-screen-v1-predeclaration.json",
+  "predeclaration_sha256": "83089d84bd9624115ae7cd54aa230473f71e6ecbb6c2b3befc6551510931b46e",
+  "result": "model_outputs/automated_annotations/luna-model-judge-v1/checked-composition-multifamily-screen-v1/screen-result.json",
+  "result_sha256": "66992d6695e8d156538880b074d46b0c4a1f64c51f29b23e54f3771128e45bc6",
+  "governance": "model_outputs.dvc",
+  "execution": {
+    "planned_judgments": 28,
+    "valid_judgments": 26,
+    "retained_invalid_judgments": 2,
+    "invalid_detail": "Both invalid returns were R on the within-cluster missing-odometry mask and used a mismatched opaque response ID. They were retained without rejudging.",
+    "isolated_passes": 2,
+    "usable_label_retries": 0,
+    "independent_scenario_clusters": 6,
+    "paired_masks_add_clusters": 0
+  },
+  "paired_valid_metrics": {
+    "R": {
+      "valid_judgments": 12,
+      "material_errors": 8,
+      "required_units_covered": 86,
+      "required_units_total": 92,
+      "causal_overclaims": 2
+    },
+    "P": {
+      "valid_judgments": 12,
+      "material_errors": 10,
+      "required_units_covered": 84,
+      "required_units_total": 92,
+      "causal_overclaims": 0
+    }
+  },
+  "primary_endpoint": {
+    "eligible_cases": 2,
+    "pass_1_p_minus_r": 0.0,
+    "pass_2_p_minus_r": 0.5,
+    "cluster_resolution": "Persistent discrepancy was a failure for both methods in both passes. Compensation was a failure for R in both passes and unresolved for P because the two passes disagreed.",
+    "effect_estimate": null,
+    "confidence_sequence": null,
+    "statistical_significance": null
+  },
+  "readiness": {
+    "candidate_ready_for_confirmation": false,
+    "failed_gates": [
+      "screen completed without missing judgments",
+      "recurring positive advantage in two mechanism families",
+      "no material-error excess",
+      "no required-unit coverage degradation",
+      "complete missing/ambiguous-case qualification",
+      "fresh positive geometry configuration",
+      "fresh visible-but-not-consumed configuration",
+      "fresh out-of-model configuration"
+    ]
+  },
+  "diagnosis": "P's deterministic renderer appended an unsupported certificate/declared-registry statement and omitted required measurements or limits on several guardrails. R added unsupported identifiers/source links and twice causally attributed response recovery to a Wait invocation. P therefore showed better causal restraint but worse material-error risk and useful coverage overall.",
+  "decision": "Reject finite-checked-composition-deterministic-rendering-v1 for confirmation. Preserve all outputs and labels. Any successor must be a separately versioned development candidate, remove unsupported meta-claims, render every declared required unit, preserve conservative numeric bounds, and be tested on fresh configurations including positive geometry, visible-but-not-consumed evidence, and an out-of-model case before any confirmation freeze.",
+  "confirmatory_semantic_n": 0,
+  "confirmatory_alpha_consumed": 0.0
+}

@@ -302,6 +302,17 @@ model-judge evidence, not human agreement; each eight-case material class has an
 0.3244 zero-error Wilson 95\% upper bound. Confirmation remains inactive at semantic $N=0$ and
 alpha 0.
 
+We then froze a seven-packet development screen before any study judgment. It contains six
+independent scenario configurations and one within-cluster evidence mask; only persistent
+command--motion discrepancy and measured-response recovery enter the diagnostic-success endpoint.
+Luna returned 26 of 28 valid judgments. Both invalid returns were R on the evidence mask and used
+the wrong opaque response identifier; we retained them without retry. Among the 12 paired-valid
+judgments per method, P had 10 material errors and covered 84/92 required units, whereas R had
+8 material errors and covered 86/92. P made no causal overclaim and R made two, but P therefore
+failed the prespecified material-risk and useful-coverage guardrails. Pass-specific endpoint
+differences were 0.0 and 0.5 over only two eligible cases, and the passes disagreed on P for one
+case. We reject this versioned candidate for confirmation and report no effect estimate.
+
 \section{Development Case: Terminal Margin}
 
 We first exercised the complete path on a retained RoboBoat development run; it is not a held-out
@@ -520,6 +531,7 @@ Luna v7 core fields & P1: 176/187; P2: 179/187 & 94.1\%; 95.7\% \\
 Endpoint-threat extension & 16/20; 17/20 composite & Failed; blocked candidate v3 \\
 Endpoint-first v8 & 48/48 composite in both passes & Failed unit/core/protected gates \\
 Endpoint-aligned v12 & 8/8 endpoint in both passes & Qualified; no study labels \\
+Checked-composition screen & 26/28 valid; P risk/coverage worse & Candidate rejected \\
 Physical cohort & 40 attempts; 39 valid, 1 invalid & No semantic labels \\
 Legacy inventory & 33 clusters; 198 responses & Under-target; unscored \\
 \bottomrule
@@ -531,6 +543,11 @@ The artifact proves that the retained measurements can be recomputed and rendere
 diagnoses. It does not prove that P improves supported diagnostic success over R. Project review
 found frequent parity once R received the same executable tool, one promising compensation error
 by R, a qualified two-pass route-change tie, and repeated conservative-verifier failures by P.
+The later frozen checked-composition screen supplied blinded development labels but still did not
+establish an advantage: an unsupported certificate/registry footer made P materially erroneous in
+most paired-valid judgments, and omissions reduced its required-unit coverage below R. R's two
+unsupported recovery-causation claims show the intended causal-restraint benefit, but the complete
+prespecified gate rejects P rather than selecting that favorable component alone.
 Two single-attempt composition captures were also retained rather than tuned: the first failed
 scenario construction, while the second authenticated its scenario but did not reach a terminal
 action result within the fixed observation window. A prospectively declared post-outcome analysis

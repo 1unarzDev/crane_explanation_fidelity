@@ -404,14 +404,15 @@ Record, without deleting earlier rows:
 
 ## Next action
 
-Do not start semantic confirmation: the prospective Luna endpoint-threat extension failed and
-hard-stopped activation. The v6 physical reserve has passed one player/runtime qualification, but
-its sampler, interventions, evidence masks, inclusion/exclusion rules, and analysis are not frozen.
-The fixed physical/reference contract is now in place. The next admissible action is the first
-confirmation-side physical capture in its immutable order, followed by governance and independent
-numeric reference construction only. P/R response generation and semantic scoring remain blocked;
-these runs must not be described as supported-diagnostic-success confirmation. No confirmatory
-campaign is active and no alpha has been consumed.
+Do not start semantic confirmation. Luna v12 is qualified for future frozen packets, but the first
+v12-scored checked-composition candidate failed its development gate: 26/28 judgments were valid;
+on paired-valid rows P had 10/12 material errors and 84/92 covered units versus R's 8/12 and 86/92.
+The two endpoint cases yielded pass-specific P-minus-R values of 0.0 and 0.5, with one P endpoint
+unresolved across passes. Two masked-case R returns had mismatched opaque IDs and were retained
+without retry. A successor must be separately versioned, remove unsupported meta-claims, render
+all declared units, and pass fresh positive-geometry, visible-not-consumed, and out-of-model cases
+before any campaign freeze. Existing physical capture may continue only as governed reference
+collection; it is not semantic confirmation. Confirmatory semantic N and alpha remain zero.
 
 ## Held-out judge result (2026-09-24)
 

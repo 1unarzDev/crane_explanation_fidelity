@@ -303,14 +303,17 @@ is 13/13.
 
 Protocol freeze remains `NOT_READY`, but Luna v12 now qualifies the declared automated semantic
 endpoint on fresh held-out reference cases. This removes the judge-availability block; it does not
-provide a P--R effect. The immediate dependency is a separately frozen, multi-family development
-comparison of mandatory checked diagnostic composition against the strongest fair tool-enabled R,
-followed only on successful development evidence by a prospective campaign freeze. Project-author
-review cannot fill the role of blinded semantic scoring.
+provide a P--R effect. The separately frozen multi-family checked-composition comparison has now
+run and rejected that versioned candidate. It retained 26/28 judgments; P had 10/12 material
+errors and 84/92 covered required units on paired-valid judgments, versus R's 8/12 and 86/92.
+The two endpoint cases produced P-minus-R 0.0 in pass 1 and 0.5 in pass 2, with one P endpoint
+disagreement. These are development labels, not an effect estimate. A successor may proceed only
+as a new version tested prospectively on fresh positive-geometry, visible-not-consumed, and
+out-of-model configurations. Project-author review cannot substitute for this blinded gate.
 
 The retained land catalog and command--motion family establish two runnable mechanisms, but the
 catalog alone cannot supply the 92 independent clusters in the design sensitivity and current
-project review does not suggest a P-over-tool-enabled-R advantage. The post-development decision
+blinded development screen does not establish a P-over-tool-enabled-R advantage. The next decision
 must therefore be prospective and explicit: either (a) demonstrate a feasible route to the
 predeclared powered target using genuinely distinct scenario configurations, or (b) freeze a
 deadline/resource-limited, explicitly underpowered study and report effects and clustered

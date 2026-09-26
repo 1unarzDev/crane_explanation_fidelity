@@ -6089,3 +6089,29 @@
   requires ROS/submodule-specific Python environments and is not the umbrella validation command.
 - **BLOCKER:** `.git` remains read-only and DNS remains unavailable in this managed session. The
   milestone cannot be committed/pushed and the draft screen therefore remains deliberately unrun.
+
+## 2026-09-25/26 — frozen checked-composition multi-family Luna screen
+
+- **STATUS:** `RUN / RETAINED / DEVELOPMENT_ONLY_CANDIDATE_REJECTED`; confirmatory semantic N=0
+  and alpha=0.000/0.050. The prior Git/DNS blocker was absent: the screen contract, qualified-v12
+  runner repair, exact artifact predeclaration, governed inputs, and DVC objects were committed and
+  pushed before the first Luna study call.
+- **EXECUTION:** seven immutable R/P packets covering six independent configurations and one
+  within-cluster missing-odometry mask were judged in two isolated Luna v12 passes. Twenty-six of
+  28 judgments were valid. Both invalid records were R on the mask, returned a mismatched opaque
+  response ID, and were retained without retry. The mask and judge passes add no clusters.
+- **PAIRED-VALID GUARDRAILS:** P had 10/12 material errors and covered 84/92 required units; R had
+  8/12 material errors and covered 86/92. P made zero causal overclaims versus two for R, but this
+  advantage did not offset the prespecified risk and coverage failures.
+- **PRIMARY DEVELOPMENT ENDPOINT:** only persistent discrepancy and measured-response recovery
+  were eligible. P-minus-R was 0.0 in pass 1 and 0.5 in pass 2. Persistent discrepancy failed for
+  both methods in both passes; compensation failed for R twice but disagreed for P, so no resolved
+  recurring advantage exists and no cluster-level effect estimate is reported.
+- **ROOT CAUSES:** P's deterministic renderer appended an unsupported certificate/declared-registry
+  statement and omitted required measurements or limits on several guardrails. R added unsupported
+  identifiers/source links and twice attributed response recovery to a Wait invocation without
+  support. These outputs and labels remain immutable development evidence.
+- **DECISION:** reject `finite-checked-composition-deterministic-rendering-v1` for confirmation.
+  Any successor is a new candidate: remove unsupported meta-claims, render every required unit,
+  preserve conservative numeric bounds, and use fresh positive-geometry, visible-not-consumed,
+  and out-of-model configurations. Do not repair or rejudge this screen post hoc.

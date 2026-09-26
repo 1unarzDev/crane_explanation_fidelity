@@ -148,18 +148,18 @@ their own location. Exact repository commits and destinations are recorded in
   P-versus-tool-enabled-R sequential protocol with a +0.15 minimum worthwhile improvement,
   simultaneous material-error/coverage/ambiguity guardrails, a closed 0.05 program error ledger,
   and separately reserved fresh-config replication. It cannot use legacy or inspected development
-  outcomes. The reference-audited Luna v7 arm remains historically qualified, but its later
-  prospective command--motion endpoint-threat extension failed composite/core and protected gates
-  in both passes. A later frozen v8 endpoint-first cycle classified all 48 composite cases and all
-  material-error polarities correctly in both passes, but still failed its required-unit,
-  core-field, and protected-causal gates. It is retained as failed rather than reinterpreted as an
-  endpoint-only pass. Candidate-v3 semantic confirmation is therefore blocked; no confirmatory
-  response was judged and alpha remains 0.000/0.050. The original finite-qualification bounds
-  remain historical and failed-cycle bounds are ineligible; see
+  outcomes. The final fresh Luna v12 arm is qualified for the atomic-mechanism-plus-no-material-
+  error endpoint, with model-judge limitations; failed v8--v11 cycles remain retained. The first
+  separately frozen v12-scored method screen returned 26/28 valid judgments and rejected the
+  checked-composition candidate: on paired valid judgments P had 10/12 material errors and 84/92
+  required units covered, versus R's 8/12 and 86/92. The two endpoint cases gave pass-specific
+  P-minus-R values of 0.0 and 0.5, with P unresolved across passes on one case. This is development
+  evidence, not an effect estimate. No confirmatory response was judged and alpha remains
+  0.000/0.050; see
   [sequential protocol](docs/SEQUENTIAL_STUDY_PROTOCOL.md)
   and [campaign progress](docs/DIAGNOSTIC_CAMPAIGN_PROGRESS.md).
-- **PHYSICAL/REFERENCE COLLECTION ACTIVE; SEMANTIC CAMPAIGN INACTIVE:** thirty-nine of the frozen 100
-  land command--motion confirmation configurations have been attempted once: thirty-eight are
+- **PHYSICAL/REFERENCE COLLECTION ACTIVE; SEMANTIC CAMPAIGN INACTIVE:** forty of the frozen 100
+  land command--motion confirmation configurations have been attempted once: thirty-nine are
   valid and one is a retained invalid recording. Run 003
   preserves useful execution facts while correctly withholding the masked motion mechanism; run
   004 records recovered measured response followed by task abort, and run 005 is a successful
