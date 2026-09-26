@@ -5,12 +5,15 @@ import json
 from pathlib import Path
 import sys
 
+import pytest
+
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "analysis"))
 
 from build_command_motion_composition_packet_v2 import build as build_command  # noqa: E402
 from build_geometric_composition_packet_v3 import build as build_geometry  # noqa: E402
+from build_geometric_composition_packet_v4 import build as build_geometry_v4  # noqa: E402
 from compose_diagnostic_hypotheses_v2 import compose  # noqa: E402
 from render_diagnostic_composition_v2 import render  # noqa: E402
 
@@ -131,3 +134,54 @@ def test_v2_does_not_convert_configured_deadline_into_triggered_deadline() -> No
     assert "retained grid does not cover the complete requested route" in text
     assert "The action aborted" in text
     assert "action remained active" not in text
+
+
+def test_v4_restores_supported_geometry_details_missing_from_v2_screen() -> None:
+    expectations = {
+        "data/robot_visible/dev/mccv2-dev-001/geometric-route-diagnostic-v2.json": [
+            "1.309 m maximum lateral deviation",
+        ],
+        "data/robot_visible/dev/mccv2-dev-001-mask-no-costmap-cells/geometric-route-diagnostic-v2.json": [
+            "1.309 m maximum lateral deviation",
+            "costmap cell payload is unavailable",
+        ],
+        "data/robot_visible/dev/mccv2-dev-002/geometric-route-diagnostic-v2.json": [
+            "1.319 m maximum lateral deviation",
+            "no observed blocked direct-route cell",
+        ],
+        "data/robot_visible/dev/mccv2-dev-006/geometric-route-diagnostic-v2.json": [
+            "0.000 m maximum lateral deviation",
+            "All 3 delivered plans spanned 0.000 to 0.000 m",
+            "no observed blocked direct-route cell",
+            "does not establish obstacle identity, global no-path",
+        ],
+    }
+    for path, fragments in expectations.items():
+        document, digest = load(path)
+        text = render(compose(build_geometry_v4(document, source_sha256=digest), REGISTRY))
+        for fragment in fragments:
+            assert fragment in text
+
+
+def test_v4_retains_v3_bounded_mechanism_and_deadline_repairs() -> None:
+    document, digest = load(
+        "data/robot_visible/dev/mccv2-dev-001/geometric-route-diagnostic-v2.json"
+    )
+    certificate = compose(build_geometry_v4(document, source_sha256=digest), REGISTRY)
+    assert certificate["answer_plan"]["primary_mechanism_id"] == "geometric_route_restriction"
+
+    document, digest = load(
+        "data/robot_visible/dev/mccv2-dev-006/geometric-route-diagnostic-v2.json"
+    )
+    text = render(compose(build_geometry_v4(document, source_sha256=digest), REGISTRY))
+    assert "aligned with" not in text
+    assert "The action aborted" in text
+
+
+def test_v4_rejects_unknown_masked_geometry_declarations() -> None:
+    document, digest = load(
+        "data/robot_visible/dev/mccv2-dev-001-mask-no-costmap-cells/geometric-route-diagnostic-v2.json"
+    )
+    document["reference_computation"]["missing"] = ["misspelledCostmapPayload"]
+    with pytest.raises(ValueError, match="unexpected missing-evidence declaration"):
+        build_geometry_v4(document, source_sha256=digest)
