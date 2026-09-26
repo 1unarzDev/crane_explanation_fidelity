@@ -7,8 +7,8 @@ Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 
 ## Measurement-complete v2 development screen
 
-The physical allocation for `measurement-complete-checked-composition-v2` is now prospectively
-frozen, but no episode, response, or judgment has been produced. Six independent v5 scenario
+The fixed `measurement-complete-checked-composition-v2` development screen is complete and
+rejected only at its exact coverage gate. Six independent v5 scenario
 configurations are fixed in
 `research/explanation_fidelity/experiment_configs/development/measurement-complete-composition-v2-physical-screen-v1.json`:
 two connected-detour geometry cases, persistent and compensated command--motion cases, one
@@ -52,15 +52,22 @@ The intended geometry predicate was not established and is withheld. All six fix
 now retained. Both predeclared paired masks are also governed: without run 1's costmap cells,
 route change remains answerable but the physical trigger is unresolved; without run 3's odometry,
 the execution sequence remains answerable but command--motion diagnosis is insufficient. These
-masks add zero independent clusters. No response or Luna call has been made.
+masks add zero independent clusters.
+
+The separately frozen language screen then retained nine P/R pairs and 36/36 valid isolated Luna
+v12 judgments without retries. Across four eligible independent clusters, P scored 4/4 and R 1/4
+in both passes: three P wins and one tie across bounded geometry, compensation, and persistent
+command--motion discrepancy. P had 0/18 material errors versus R 14/18. However, P covered
+108/126 required units versus R 113/126. Because the frozen gate allowed no coverage degradation,
+candidate v2 is not promoted. This is favorable development evidence, not confirmation.
 
 ## Readiness
 
 | Gate | Status | Evidence / next action |
 |---|---|---|
-| Candidate P frozen | NOT_READY | Candidate v3's historical screen is retained, but its single-family evidence and failed judge extension do not justify activation. Mandatory finite checked composition is the current bounded development candidate; its seven-case atomic reference inventory and executable hash gates are tested, but the P/R screen is `NOT_RUN` and must show recurring advantage over fair R across multiple families before any prospective freeze |
-| Strongest baseline R frozen | DESIGNATED, NOT_HASH_FROZEN | Tool-enabled repository-aware R; freeze exact model/prompts/resources with candidate |
-| Information/tool/resource parity | DRAFT | Audit at campaign freeze |
+| Candidate P frozen | V2 DEVELOPMENT SCREEN COMPLETE; REJECTED AT COVERAGE GATE | P showed a repeated +0.75 endpoint difference and lower error risk, but 108/126 coverage versus R 113/126 violated the exact no-degradation gate; new version and fresh screen required |
+| Strongest baseline R frozen | COMPLETE FOR V2 DEVELOPMENT SCREEN | One `gpt-6-sol` high call per case with the same primitive evidence, computations, source/configuration, and deterministic tools; no P certificate/plan/output access |
+| Information/tool/resource parity | PASS FOR V2 DEVELOPMENT SCREEN | All nine results attest the frozen parity contract; confirmation requires a new campaign-specific freeze |
 | Target land strata | V6 PLAYER/RUNTIME QUALIFIED; NO CAMPAIGN ACTIVE | One predeclared v6 reserve layout passed exact build and runtime binding; sampler, interventions, masks, exclusions, and analysis remain unfrozen |
 | Target surface strata | NOT_READY | Both geometric and command--motion admission required; do not reallocate weight |
 | Luna historical qualification | V4 HIGH FAILED / PRESERVED | Both fresh passes failed; never retroactively qualified |
@@ -453,15 +460,13 @@ Record, without deleting earlier rows:
 
 ## Next action
 
-Do not start semantic confirmation. Luna v12 is qualified for future frozen packets, but the first
-v12-scored checked-composition candidate failed its development gate: 26/28 judgments were valid;
-on paired-valid rows P had 10/12 material errors and 84/92 covered units versus R's 8/12 and 86/92.
-The two endpoint cases yielded pass-specific P-minus-R values of 0.0 and 0.5, with one P endpoint
-unresolved across passes. Two masked-case R returns had mismatched opaque IDs and were retained
-without retry. A successor must be separately versioned, remove unsupported meta-claims, render
-all declared units, and pass fresh positive-geometry, visible-not-consumed, and out-of-model cases
-before any campaign freeze. Existing physical capture may continue only as governed reference
-collection; it is not semantic confirmation. Confirmatory semantic N and alpha remain zero.
+Do not start semantic confirmation. Luna v12 is qualified and the measurement-complete-v2 screen
+produced a repeated development endpoint advantage, but the candidate failed the prospectively
+frozen coverage guardrail: P covered 108/126 units versus R 113/126. A separately versioned
+successor may restore the omitted supported trajectory, discriminator, negative-geometry,
+plan-geometry, and cause-limit details, but must be evaluated on fresh independent configurations;
+the favorable six-cluster screen cannot be recycled as promotion evidence. Confirmatory semantic
+N and alpha remain zero.
 
 ## Held-out judge result (2026-09-24)
 

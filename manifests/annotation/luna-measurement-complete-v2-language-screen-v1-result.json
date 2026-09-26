@@ -1,0 +1,63 @@
+{
+  "schema": "crane-luna-diagnostic-development-result/v3",
+  "screen_id": "measurement-complete-v2-language-screen-v1",
+  "executed_utc_date": "2026-09-26",
+  "status": "DEVELOPMENT_ONLY_CANDIDATE_REJECTED_COVERAGE_GATE",
+  "packet_freeze": {
+    "path": "manifests/annotation/luna-measurement-complete-v2-language-screen-v1-predeclaration-amendment-2.json",
+    "sha256": "8cc4564cfbab2af16ce2d2d4faf6015b44e3667fe8530bc15e3c2500b59dcd05"
+  },
+  "result": {
+    "path": "model_outputs/dev/measurement-complete-v2-language-screen-v1/development-summary.json",
+    "sha256": "e8c00bd0c164caa6507c9f2b5fc32d7b5e4a7a71cdbeec355bd58a02874dd8c6",
+    "governance": "model_outputs.dvc"
+  },
+  "statistical_boundary": {
+    "independent_unit": "scenario configuration",
+    "independent_clusters": 6,
+    "response_pairs": 9,
+    "luna_judgments": 36,
+    "confirmatory": false,
+    "confirmatory_alpha_consumed": 0.0
+  },
+  "primary_endpoint": {
+    "definition": "The independently declared atomic mechanism unit is covered and the final answer has no material unsupported or contradicted assertion.",
+    "eligible_independent_clusters": 4,
+    "pass_1": {"P_successes":4,"R_successes":1,"total":4,"P_minus_R":0.75},
+    "pass_2": {"P_successes":4,"R_successes":1,"total":4,"P_minus_R":0.75},
+    "cluster_consensus": {"P_win_R_loss":3,"P_R_tie_success":1,"judge_disagreements":0},
+    "mechanism_families_with_P_advantage": ["bounded geometric restriction","successful command-motion compensation","persistent command-motion discrepancy"]
+  },
+  "risk_and_coverage": {
+    "P": {"material_errors":0,"judgments":18,"causal_overclaims":0,"required_units_covered":108,"required_units_total":126,"required_unit_coverage":0.8571428571428571},
+    "R": {"material_errors":14,"judgments":18,"causal_overclaims":1,"required_units_covered":113,"required_units_total":126,"required_unit_coverage":0.8968253968253969},
+    "coverage_difference_P_minus_R": -0.039682539682539764
+  },
+  "readiness_gates": {
+    "complete_without_missing_judgments": true,
+    "advantage_recurs_across_independent_clusters": true,
+    "advantage_in_at_least_two_mechanism_families": true,
+    "no_material_error_excess": true,
+    "no_required_unit_coverage_degradation": false,
+    "masked_ambiguous_and_false_premise_qualification": true,
+    "information_parity": true,
+    "candidate_ready_for_confirmation": false
+  },
+  "resource_use": {
+    "baseline_R_calls": 9,
+    "baseline_R_aggregate_latency_ms": 698070.780229,
+    "candidate_P_model_calls": 0,
+    "luna_valid_calls": 36,
+    "luna_attempts": 36,
+    "luna_transport_retries": 0,
+    "luna_aggregate_latency_ms": 2174359.365638,
+    "luna_input_tokens": 601108,
+    "luna_cached_input_tokens": 257280,
+    "luna_output_tokens": 94993,
+    "luna_reasoning_output_tokens": 34953,
+    "cost_usd": null
+  },
+  "interpretation": "Measurement-complete checked composition v2 produced a repeated Luna-assessed supported-diagnostic-success and material-error advantage over the fair tool-enabled repository baseline in this fixed development screen. It nevertheless failed its prospective no-coverage-degradation gate by 5 covered units over 126 per-condition unit judgments. It is rejected for confirmation without threshold relaxation. The result motivates a separately versioned successor that preserves the missing supported details, tested on fresh scenario configurations.",
+  "limitations": "This is a six-cluster development screen selected after physical outcomes and references were inspected, not confirmation, significance, or replication. Luna labels are automated semantic assessments, not human judgments. The finite v12 qualification has nontrivial systematic-error uncertainty. The screen lacks a terminal geometric-failure case.",
+  "next_action": "Repair only the identified composition coverage omissions, freeze a new version, and screen it prospectively on fresh independent configurations before any confirmatory activation."
+}

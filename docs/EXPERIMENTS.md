@@ -6292,3 +6292,30 @@
 - **GOVERNANCE:** masked robot-visible outputs and evaluator-only construction/reference artifacts
   are hash-manifested and DVC-pushed. Response generation remains unauthorized pending an exact
   treatment/evidence-parity and annotation predeclaration.
+# 2026-09-26 — measurement-complete v2 fixed language screen result
+
+- **STATUS:** `DEVELOPMENT_ONLY_CANDIDATE_REJECTED_COVERAGE_GATE`.
+- **INVENTORY:** six independent physical scenario configurations, nine fixed question/evidence
+  pairs, 18 final P/R responses, and 36/36 valid isolated Luna-v12 judgments. Masks and additional
+  questions add zero clusters. R was called exactly once per case with `gpt-6-sol` high; P used
+  deterministic checked composition with zero model calls. No usable response or judgment was
+  retried.
+- **PRIMARY DEVELOPMENT ENDPOINT:** P scored 4/4 versus R 1/4 in both passes, a descriptive
+  P-minus-R difference of +0.75. The three consensus P wins occurred in three independent clusters
+  spanning bounded geometry, measured-response compensation, and persistent command--motion
+  discrepancy; the fourth persistent-discrepancy cluster was a tie.
+- **RISK:** P had 0/18 Luna-assessed material errors and zero causal overclaims; R had 14/18
+  material errors and one causal-overclaim judgment. R frequently added unsupported per-window
+  values, costmap dimensions, source line numbers, or mechanism details beyond the supplied
+  packet. These are automated semantic labels, not human judgments.
+- **COVERAGE / FAILED GATE:** P covered 108/126 required units (85.7%) versus R 113/126 (89.7%).
+  The exact frozen readiness gate allowed no useful-coverage degradation, so the candidate is not
+  promoted despite the favorable endpoint and risk results. Missing P details concentrate in
+  trajectory deviation, masked-evidence discriminator language, negative geometry, retained plan
+  geometry, and a cause-limit unit.
+- **GOVERNANCE:** treatment, references, Luna release, packet bytes, condition keys, raw calls,
+  and aggregate result are hash-bound. Model artifacts were DVC-pushed before the Git pointer.
+  Confirmatory semantic N=0 and alpha=0.000; no significance or replication claim is licensed.
+- **NEXT:** a new candidate version may repair only the observed coverage omissions, but it must be
+  screened prospectively on fresh configurations. These six clusters cannot be reused as evidence
+  for successor promotion.

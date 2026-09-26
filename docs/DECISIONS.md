@@ -2016,3 +2016,22 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   visible-but-not-consumed, and out-of-model configurations and demonstrate recurring advantage
   across at least two mechanism families without material-error, useful-coverage, or ambiguity
   degradation. Confirmation N and alpha remain zero.
+# 2026-09-26 — reject measurement-complete v2 at its exact coverage gate despite a repeated endpoint advantage
+
+- **Decision:** retain `measurement-complete-checked-composition-v2` as a favorable but rejected
+  development candidate. Do not activate confirmation or weaken its zero-degradation guardrail.
+- **Evidence:** the fixed six-configuration screen produced nine P/R pairs and 36/36 valid Luna
+  v12 judgments. On four endpoint-eligible independent clusters, P scored 4/4 and R 1/4 in each
+  pass: three P wins and one tie, recurring across bounded geometry, compensation, and persistent
+  command--motion discrepancy. P had 0/18 material errors versus R 14/18 and 0 versus 1 causal
+  overclaim. However, P covered 108/126 required units versus R 113/126, a -3.97 percentage-point
+  difference, so the prospectively frozen no-coverage-degradation gate failed.
+- **Why this matters:** the screen finally supplies repeated evidence that finite checked
+  composition can protect supported diagnostic success against a strong tool-enabled repository
+  agent, chiefly by preventing unsupported measurements and source links. It also shows that
+  causal restraint alone is insufficient: useful supported trajectory, negative-geometry, and
+  limitation details must survive realization.
+- **Next action:** create a separately versioned successor that restores the identified missing
+  units, then test it once on fresh independent scenario configurations. The current answers and
+  judgments remain immutable and cannot be rescored as successor evidence. Confirmatory semantic
+  N and alpha remain zero.
