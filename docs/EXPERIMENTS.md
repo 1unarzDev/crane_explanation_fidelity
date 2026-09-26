@@ -6229,3 +6229,24 @@
   intervention identity, or a unique physical cause such as obstruction, slip, or actuator fault.
 - **GOVERNANCE:** raw and derived robot-visible/evaluator-only artifacts were separately
   hash-manifested and DVC-pushed. Fixed run 5/6 is next; language remains unauthorized.
+
+### Fixed run 5/6 — `mccv2-dev-005`
+
+- **STATUS:** `VALID_DEVELOPMENT_NOMINAL_FALSE_PREMISE_CONTROL`; one attempt, no retry or
+  replacement, independent development clusters +1, confirmatory clusters +0, model/Luna calls 0.
+  A rejected prelaunch command with a mistyped expected hash started no player, fixture, capture,
+  or physical episode and is not a scenario attempt.
+- **ADMISSION:** the pinned player passed all source/catalog checks and all 14 post-run binding
+  checks matched nominal-clear-route 010 at seed 82009 without a mobility intervention. The Unity
+  worker recording and generic fixture both passed.
+- **OBSERVED:** NavigateToPose succeeded after 69.110 s and 17.477 m displacement, using one
+  delivered plan with no recorded FollowPath failure or source-qualified Wait invocation.
+- **INDEPENDENT DIAGNOSIS:** both implementations returned `not_triggered`. The healthy 0--5 s
+  interval measured 0.259740 m/s for a 0.260 m/s median delivered command, and the retained stream
+  contained no required sequence of low-response windows.
+- **BOUNDARY:** successful motion and a negative discrepancy check reject the premise that a
+  command--motion failure prevented this action. Visible scene clutter does not establish that an
+  obstacle was consumed by Nav2 or caused any decision, and success does not prove every transient
+  execution difficulty was absent.
+- **GOVERNANCE:** raw and derived robot-visible/evaluator-only artifacts were separately
+  hash-manifested and DVC-pushed. Fixed run 6/6 is next; language remains unauthorized.

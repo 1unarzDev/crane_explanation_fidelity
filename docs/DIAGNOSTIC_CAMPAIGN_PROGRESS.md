@@ -41,8 +41,11 @@ and abort. The unique physical cause is unresolved. Fixed run 4/6, `mccv2-dev-00
 successful-compensation cluster: the same 0.260 versus 0.000 m/s discrepancy persisted over
 11--21 s, measured response recovered to 0.25974 m/s over 23--24 s, and navigation succeeded after
 one FollowPath failure and one qualified Wait invocation. The record supports measured response
-recovery, not a unique physical cause or proof of actuator acceptance. No response or Luna call has
-been made. Fixed run 5/6 is next.
+recovery, not a unique physical cause or proof of actuator acceptance. Fixed run 5/6,
+`mccv2-dev-005`, is a valid nominal/false-premise control: navigation succeeded in 69.110 s with
+one plan, no FollowPath failure, no qualified Wait invocation, and no diagnostic discrepancy under
+the frozen thresholds. Visible scene clutter alone therefore does not license an obstacle-cause or
+failure claim. No response or Luna call has been made. Fixed run 6/6 is next.
 
 ## Readiness
 
