@@ -188,6 +188,64 @@ def complete(
         return {"job_id": job_id, "state": item["state"]}
 
 
+def technical_failure(
+    ledger_path: Path,
+    job_id: str,
+    worker: str,
+    failure_manifest_path: Path,
+    retry: bool,
+) -> dict[str, Any]:
+    """Retain a failed attempt and either requeue it once or close it terminally.
+
+    This transition is for transport/runtime failures only. Scientific outcomes and judgment
+    content are never reasons to retry.
+    """
+    manifest = json.loads(failure_manifest_path.read_text(encoding="utf-8"))
+    if manifest.get("schema") != "crane-diagnostic-batch-technical-failure/v1":
+        raise ValueError("unexpected technical-failure manifest schema")
+    if manifest.get("job_id") != job_id:
+        raise ValueError("technical-failure manifest job mismatch")
+    reason = manifest.get("reason")
+    if not isinstance(reason, str) or not reason.strip():
+        raise ValueError("technical failure requires a reason")
+    artifacts = manifest.get("artifacts")
+    if not isinstance(artifacts, list) or not artifacts:
+        raise ValueError("technical-failure manifest is empty")
+    for artifact in artifacts:
+        path = Path(artifact["path"]).resolve(strict=True)
+        if path.stat().st_size != artifact.get("bytes") or digest(path) != artifact.get("sha256"):
+            raise ValueError(f"technical-failure artifact hash/size mismatch: {path}")
+
+    with locked_ledger(ledger_path) as ledger:
+        item = ledger["jobs"].get(job_id)
+        if item is None:
+            raise ValueError("unknown job")
+        if item["state"] != "RUNNING" or item.get("claim", {}).get("worker") != worker:
+            raise ValueError("only the current claim owner may record a technical failure")
+        record = {
+            "attempt": item["claim"]["attempt"],
+            "recorded_utc": stamp(),
+            "reason": reason,
+            "retry_authorized": retry,
+            "manifest": {
+                "path": str(failure_manifest_path.resolve()),
+                "sha256": digest(failure_manifest_path),
+            },
+        }
+        item.setdefault("technical_failures", []).append(record)
+        item["attempts"][-1].update(
+            {
+                "status": "TECHNICAL_FAILURE",
+                "completed_utc": record["recorded_utc"],
+                "failure_manifest": record["manifest"],
+            }
+        )
+        item["state"] = "QUEUED" if retry else "TECHNICAL_FAILURE"
+        item["claim"] = None
+        ledger["updated_utc"] = record["recorded_utc"]
+        return {"job_id": job_id, "state": item["state"], "attempt": record["attempt"]}
+
+
 def release(ledger_path: Path, arm: str, eligible_n: int) -> dict[str, Any]:
     with locked_ledger(ledger_path) as ledger:
         plan = json.loads(Path(ledger["plan_path"]).read_text(encoding="utf-8"))
@@ -242,6 +300,12 @@ def main() -> int:
     done.add_argument("--job-id", required=True)
     done.add_argument("--worker", required=True)
     done.add_argument("--artifact-manifest", required=True, type=Path)
+    failed = commands.add_parser("technical-failure")
+    failed.add_argument("--ledger", required=True, type=Path)
+    failed.add_argument("--job-id", required=True)
+    failed.add_argument("--worker", required=True)
+    failed.add_argument("--failure-manifest", required=True, type=Path)
+    failed.add_argument("--retry", action="store_true")
     publish = commands.add_parser("release")
     publish.add_argument("--ledger", required=True, type=Path)
     publish.add_argument("--arm", required=True)
@@ -257,6 +321,12 @@ def main() -> int:
         result = complete(
             args.ledger.resolve(strict=True), args.job_id, args.worker,
             args.artifact_manifest.resolve(strict=True),
+        )
+        print(json.dumps(result, sort_keys=True))
+    elif args.command == "technical-failure":
+        result = technical_failure(
+            args.ledger.resolve(strict=True), args.job_id, args.worker,
+            args.failure_manifest.resolve(strict=True), args.retry,
         )
         print(json.dumps(result, sort_keys=True))
     else:

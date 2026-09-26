@@ -138,6 +138,52 @@ def test_expired_claim_is_resumed_once_without_duplicate_completion(tmp_path: Pa
     assert resumed_job["claim"]["attempt"] == 2
 
 
+def test_technical_failure_retains_attempt_and_authorizes_bounded_retry(tmp_path: Path):
+    plan_path = tmp_path / "plan.json"
+    ledger = tmp_path / "ledger.json"
+    plan(plan_path)
+    assert invoke("init", "--plan", str(plan_path), "--ledger", str(ledger)).returncode == 0
+    claimed = json.loads(
+        invoke("claim", "--ledger", str(ledger), "--pool", "cpu", "--worker", "worker-1").stdout
+    )
+    artifact = tmp_path / "invalid-summary.json"
+    artifact.write_text('{"valid": false}\n', encoding="utf-8")
+    failure = tmp_path / "technical-failure.json"
+    failure.write_text(
+        json.dumps(
+            {
+                "schema": "crane-diagnostic-batch-technical-failure/v1",
+                "job_id": claimed["job_id"],
+                "reason": "capture validity gate rejected stale observations",
+                "artifacts": [
+                    {
+                        "path": str(artifact),
+                        "sha256": __import__("hashlib").sha256(artifact.read_bytes()).hexdigest(),
+                        "bytes": artifact.stat().st_size,
+                    }
+                ],
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    recorded = invoke(
+        "technical-failure", "--ledger", str(ledger), "--job-id", claimed["job_id"],
+        "--worker", "worker-1", "--failure-manifest", str(failure), "--retry",
+    )
+    assert recorded.returncode == 0, recorded.stderr
+    assert json.loads(recorded.stdout)["state"] == "QUEUED"
+
+    resumed = json.loads(
+        invoke("claim", "--ledger", str(ledger), "--pool", "cpu", "--worker", "worker-2").stdout
+    )
+    assert resumed["job_id"] == claimed["job_id"]
+    assert resumed["claim"]["attempt"] == 2
+    value = json.loads(ledger.read_text(encoding="utf-8"))["jobs"][claimed["job_id"]]
+    assert value["attempts"][0]["status"] == "TECHNICAL_FAILURE"
+    assert value["technical_failures"][0]["retry_authorized"] is True
+
+
 def test_registered_release_waits_for_complete_ordered_prefix(tmp_path: Path):
     plan_path = tmp_path / "plan.json"
     ledger = tmp_path / "ledger.json"
