@@ -1,5 +1,20 @@
 # Experiment Log
 
+## 2026-09-26 — headless RoboBoat production rows 003–004 closed
+
+- **ROW 003 VALID:** `boat-ext-narrow-003` completed once through the virtual-output renderer at
+  RTF 1.000063 with 4,500 depth acquisitions, 3,000 LiDAR scans, and zero stale/failed
+  observations, Unity errors/exceptions, or invalid water searches. The unexpected independent
+  docking-predicate failure is retained; capture admission did not depend on the expected outcome.
+- **ROW 004 TECHNICAL FAILURE:** both permitted attempts lost the ROS TCP endpoint before Unity
+  connected. Attempt one retained a complete 200-second rendered simulation but no odometry,
+  accepted goal, or usable navigation record. The sole retry showed the same connection-refused
+  condition and was stopped once a complete episode was impossible. Both attempts and hashes are
+  retained; no further retry or replacement N is authorized.
+- **DISPLAY/CLEANUP:** both rows mapped the ordinary rendered player only to a temporary Hyprland
+  headless output. The physical monitor did not host the player, and each temporary output was
+  removed on exit. Row 004 is a transport failure, not evidence against the scientific mechanism.
+
 ## 2026-09-26 — RoboBoat virtual-output rendering qualified
 
 - **QUALIFIED EXECUTION PROFILE:** the ordinary Vulkan/HDRP player ran on an active workspace of a
