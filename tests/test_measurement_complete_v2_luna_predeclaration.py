@@ -15,6 +15,11 @@ AMENDMENT = (
     / "manifests/annotation/"
     "luna-measurement-complete-v2-language-screen-v1-predeclaration-amendment-1.json"
 )
+PACKET_FREEZE = (
+    ROOT
+    / "manifests/annotation/"
+    "luna-measurement-complete-v2-language-screen-v1-predeclaration-amendment-2.json"
+)
 
 
 def load(path: Path) -> dict:
@@ -142,3 +147,47 @@ def test_prejudgment_amendment_changes_only_question_namespace_binding() -> None
         "confirmatory_alpha_consumed": 0.0,
     }
     assert manifest["statistical_boundary"]["independent_clusters"] == 6
+
+
+def test_packet_freeze_hashes_every_judge_input_and_condition_key() -> None:
+    amendment = load(AMENDMENT)
+    freeze = load(PACKET_FREEZE)
+    assert freeze["status"] == "FROZEN_PACKET_BYTES_BEFORE_ANY_LUNA_STUDY_CALL"
+    assert freeze["parent_amendment_sha256"] == digest(AMENDMENT)
+    assert freeze["judge_inventory"] == {
+        "planned_passes": 2,
+        "planned_judgments": 36,
+        "completed_judgments_at_freeze": 0,
+        "confirmatory_alpha_consumed": 0.0,
+    }
+    assert freeze["response_inventory"]["responses"] == 18
+    assert freeze["response_inventory"]["baseline_r_calls"] == 9
+    assert freeze["response_inventory"]["candidate_p_model_calls"] == 0
+    artifacts = freeze["artifacts"]
+    assert len(artifacts) == 9
+    assert len({item["case_id"] for item in artifacts}) == 9
+    for item in artifacts:
+        case_id = item["case_id"]
+        paths = {
+            "result_sha256": ROOT
+            / "model_outputs/dev/measurement-complete-v2-language-screen-v1/results"
+            / f"{case_id}.json",
+            "reference_sha256": ROOT
+            / "model_outputs/dev/measurement-complete-v2-language-screen-v1/references"
+            / f"{case_id}.json",
+            "packet_sha256": ROOT
+            / "model_outputs/dev/measurement-complete-v2-language-screen-v1/annotation_packets"
+            / f"{case_id}.jsonl",
+            "key_sha256": ROOT
+            / "data/evaluator_only/dev/measurement-complete-v2-language-screen-v1/annotation_keys"
+            / f"{case_id}.json",
+        }
+        for field, path in paths.items():
+            assert item[field] == digest(path)
+        rows = [json.loads(line) for line in paths["packet_sha256"].read_text().splitlines()]
+        key = load(paths["key_sha256"])
+        assert len(rows) == 2
+        assert {row["response_id"] for row in rows} == {
+            entry["response_id"] for entry in key["entries"]
+        }
+        assert all("condition" not in row for row in rows)
