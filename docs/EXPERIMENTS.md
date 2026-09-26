@@ -1,5 +1,21 @@
 # Experiment Log
 
+## 2026-09-26 — coverage-complete v4 paired evidence masks
+
+- **STATUS:** `IMPLEMENTED / INDEPENDENTLY_REFERENCED / GOVERNED`; two paired conditions,
+  independent development clusters +0, confirmation +0, model/Luna calls 0.
+- **GEOMETRY MASK:** costmap cells are withheld while declared metadata, three distinct delivered
+  plans, 1.325 m measured trajectory deviation, and success remain. Direct-route restriction and
+  retained-grid connectivity are unanswerable, so the physical trigger must remain unresolved.
+- **COMMAND--MOTION MASK:** delivered odometry is withheld while 414 delivered command samples,
+  abort, three FollowPath attempts, two failures, and two source-qualified Wait starts remain.
+  Without measured motion, neither a command--motion discrepancy nor a unique physical cause is
+  established. Amendment 2 binds the zero-increment paired masker and source cluster
+  `mccv4-land-004`; the unmasked source is unavailable to methods evaluating this condition.
+- **GOVERNANCE / NEXT:** both variants and evaluator-only independent references are separately
+  hash-manifested and DVC-synchronized. Freeze exact question inventory, reference units,
+  information-parity P/R treatment, and Luna packet bytes before generating any response.
+
 ## 2026-09-26 — coverage-complete v4 physical screen run 5/5
 
 - **STATUS:** `VALID_DEVELOPMENT_SUCCESSFUL_COMMAND_MOTION_COMPENSATION`; the fifth and final

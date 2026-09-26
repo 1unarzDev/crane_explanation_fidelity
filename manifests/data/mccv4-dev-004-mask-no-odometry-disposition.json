@@ -1,0 +1,35 @@
+{
+  "schema": "crane-coverage-complete-v4-mask-disposition/v1",
+  "recorded_utc_date": "2026-09-26",
+  "variant_id": "mccv4-dev-004-mask-no-odometry",
+  "source_run_id": "mccv4-dev-004",
+  "cluster_id": "mccv4-land-004",
+  "status": "VALID_PAIRED_MASK_COMMAND_MOTION_UNRESOLVED",
+  "predeclaration": "research/explanation_fidelity/experiment_configs/development/coverage-complete-v4-physical-screen-v1.json",
+  "mask_amendment": "research/explanation_fidelity/experiment_configs/development/coverage-complete-v4-physical-screen-v1-amendment-2.json",
+  "mask": {
+    "operation": "remove delivered odometry samples while retaining delivered commands and execution sequence",
+    "mask_id": "missing-independent-odometry-samples-v1",
+    "withheld": ["independently delivered odometry samples"],
+    "paired_source_available_to_methods": false,
+    "independent_scenario_increment": 0
+  },
+  "reference": {
+    "command_motion_discrepancy_answerable": false,
+    "recorded_execution_sequence_answerable": true,
+    "unique_physical_cause_answerable": false,
+    "delivered_command_sample_count": 414,
+    "independent_odometry_sample_count": 0,
+    "action_status": "aborted",
+    "follow_path_attempt_count": 3,
+    "follow_path_failure_count": 2,
+    "source_qualified_wait_recovery_count": 2,
+    "required_interpretation": "Missing delivered odometry prevents a time-aligned command-to-motion comparison; the retained execution sequence alone does not establish the discrepancy or a unique physical cause."
+  },
+  "hashes": {
+    "robot_visible_diagnostic_sha256": "89b93ece346e1d78bdc88f4238e5de3ad17c49f1108e9ce8e51592ceb8102d41",
+    "independent_reference_sha256": "f8a590970c22b0ce2f518cce06baf45f6a52ae2e2ab2443b2b8eef106dcef35a",
+    "robot_visible_manifest_sha256": "8320654c0ec256c5315d87aba437f9357408192dee606aa033166f16ad244fcd",
+    "evaluator_only_manifest_sha256": "ef6d8db66fe25ea93dc29ab2300cf39a6365126b1297954f28a876b4ec516755"
+  }
+}

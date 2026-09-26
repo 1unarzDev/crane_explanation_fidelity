@@ -37,7 +37,10 @@ additive amendment 1. No physical run, response, or label was retried. Fixed run
 successful-compensation cluster: after the same supported 0.260 versus 0.000 m/s discrepancy,
 measured response recovered to 0.259740 m/s and navigation succeeded after one qualified recovery
 start. All five fixed physical configurations are now retained. Confirmation N and alpha remain
-zero; masks, independent references, and an exact treatment/packet freeze are next.
+zero. Both fixed within-cluster masks are also governed: withholding costmap cells makes the
+physical route-change trigger unresolved, and withholding odometry makes the command--motion
+comparison unresolved while preserving execution counts. Masks add zero clusters. Exact question,
+reference, information-parity treatment, and Luna packet freezes are next.
 
 ## Measurement-complete v2 development screen
 
