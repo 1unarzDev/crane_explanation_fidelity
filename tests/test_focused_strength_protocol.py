@@ -79,7 +79,7 @@ def test_focused_mixture_counts_independent_clusters_only():
     assert "luna_pass" in protocol["zero_increment_relations"]
 
 
-def test_focused_alpha_is_available_and_not_silently_bound():
+def test_focused_alpha_is_explicitly_and_permanently_bound_before_responses():
     protocol = load(PROTOCOL)
     ledger = load(LEDGER)
     allocation_id = protocol["inference"]["discovery_allocation"]
@@ -87,7 +87,9 @@ def test_focused_alpha_is_available_and_not_silently_bound():
     allocations = ledger.get("allocations", ledger.get("error_budget", {}).get("allocations", []))
     allocation = next(item for item in allocations if item.get("allocation_id", item.get("id")) == allocation_id)
     assert allocation["alpha"] == protocol["inference"]["discovery_alpha"]
-    assert allocation["status"] == "AVAILABLE"
+    assert allocation["status"] == "CONSUMED"
+    assert allocation["campaign_id"] == "focused-supported-diagnostic-communication-v1-confirmation"
+    assert ledger["consumed_alpha"] == 0.02
     assert protocol["inference"]["allocation_status"] == "AVAILABLE_NOT_BOUND"
 
 

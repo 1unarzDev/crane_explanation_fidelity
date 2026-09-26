@@ -3,11 +3,11 @@
   "protocol_id": "diagnostic-sequential-protocol-v2",
   "program_alpha": 0.05,
   "allocations": [
-    {"allocation_id": "candidate-v1-confirmation", "role": "candidate", "alpha": 0.02, "status": "AVAILABLE", "campaign_id": null, "consumed_at": null},
+    {"allocation_id": "candidate-v1-confirmation", "role": "candidate", "alpha": 0.02, "status": "CONSUMED", "campaign_id": "focused-supported-diagnostic-communication-v1-confirmation", "consumed_at": "2026-09-26T13:30:38Z"},
     {"allocation_id": "candidate-revision-reserve", "role": "candidate", "alpha": 0.01, "status": "AVAILABLE", "campaign_id": null, "consumed_at": null},
     {"allocation_id": "selected-method-replication", "role": "replication", "alpha": 0.02, "status": "AVAILABLE", "campaign_id": null, "consumed_at": null}
   ],
-  "consumed_alpha": 0.0,
-  "updated": "2026-09-23T00:00:00Z",
-  "note": "V1 was retired unused. No v2 confirmatory response has been inspected. Bind and consume an allocation atomically before adding the first outcome row; consumed alpha is never refunded."
+  "consumed_alpha": 0.02,
+  "updated": "2026-09-26T13:30:38Z",
+  "note": "V1 was retired unused. The candidate-v1-confirmation allocation is prospectively and permanently bound to the focused campaign before its first semantic response. Semantic N remains zero at binding; consumed alpha is never refunded."
 }
