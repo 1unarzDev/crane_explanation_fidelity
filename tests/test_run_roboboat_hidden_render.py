@@ -99,6 +99,12 @@ def test_preserves_rendered_graphics_contract() -> None:
     assert "output remove" in text
     assert "render_unfocused = true" in text
     assert 'suppress_event = \\"activate activatefocus\\"' in text
+    # Route the dedicated player class on its first map. Requiring the final
+    # ASV title here lets Unity's startup window flash on a physical output
+    # before its title stabilizes. The placement check below remains strict.
+    rule_line = next(line for line in text.splitlines() if "hl.window_rule" in line)
+    assert 'class = \\\"${window_class_pattern}\\\"' in rule_line
+    assert "title =" not in rule_line
     assert "misc:render_unfocused_fps" in text
     executable_lines = [line for line in text.splitlines() if not line.lstrip().startswith("#")]
     assert not any("-nographics" in line for line in executable_lines)

@@ -109,9 +109,11 @@ incorrect expected status) are retained. Concise governed summaries are declared
 
 On the current Hyprland host, launch RoboBoat capture through
 `scripts/run_roboboat_hidden_render.sh COMMAND ...`. This is an execution-only display adapter: it
-creates a compositor-owned virtual headless output and routes the ordinary `CRANE.x86_64` / `ASV`
-XWayland window to the active workspace on that output before mapping. It verifies the monitor and
-workspace identities, suppresses client activation, and forces the unfocused render path to 60 Hz.
+creates a compositor-owned virtual headless output and routes the dedicated `CRANE.x86_64`
+XWayland player class to the active workspace on that output from its first map, without waiting
+for the final `ASV` title. It then verifies that the exact `CRANE.x86_64` / `ASV` window has the
+virtual monitor and workspace identities, suppresses client activation, and forces the unfocused
+render path to 60 Hz.
 On exit it removes the virtual output, restores the prior compositor limit, and reloads the
 compositor configuration to remove the transient routing rule. It fails closed if the rendered
 window escapes to the physical display. The Unity command and scientific configuration are

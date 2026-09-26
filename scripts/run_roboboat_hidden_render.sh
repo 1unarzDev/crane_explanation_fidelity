@@ -63,7 +63,7 @@ if [[ "${headless_windows}" != "0" ]]; then
 fi
 
 hyprctl eval \
-    "hl.window_rule({ name = \"crane-headless-render\", match = { class = \"${window_class_pattern}\", title = \"^${window_title}$\" }, workspace = \"${headless_workspace} silent\", no_initial_focus = true, render_unfocused = true, suppress_event = \"activate activatefocus\" })" \
+    "hl.window_rule({ name = \"crane-headless-render\", match = { class = \"${window_class_pattern}\" }, workspace = \"${headless_workspace} silent\", no_initial_focus = true, render_unfocused = true, suppress_event = \"activate activatefocus\" })" \
     >/dev/null
 
 original_render_fps="$(hyprctl getoption misc:render_unfocused_fps | awk '$1 == "int:" { print $2; exit }')"
