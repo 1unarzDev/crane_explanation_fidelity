@@ -32,7 +32,7 @@ replaced or counted as diagnosable primary cases. A prospective coordinator amen
 registry-exact references for both outcomes and makes the v2 monitor end after all 64 scheduled
 configurations while using only independently supported cases for eligible N. The candidate,
 baseline, judge, endpoint, alpha, and registered looks are unchanged. P/R responses remain
-unopened. Prospective physical configurations collected are 29/64 after 30 fixed-order attempts.
+unopened. Prospective physical configurations collected are 30/64 after 31 fixed-order attempts.
 Source-order run 041 adds a
 ambiguity control: the unmasked reference supports a discrepancy, while the sole method-visible
 masked condition correctly cannot establish it. Source-order run 042 independently supports a
@@ -82,9 +82,11 @@ source-order run 065 adds a connected-detour persistent discrepancy followed by 
 abort. Thus twenty-two valid configurations are primary-diagnosable and six are retained controls;
 source-order run 066 adds a connected-detour discrepancy followed by measured response recovery
 and success. Thus twenty-three valid configurations are primary-diagnosable and six are retained controls;
+source-order run 067 adds a nominal-route persistent discrepancy followed by a validly retained
+abort. Thus twenty-four valid configurations are primary-diagnosable and six are retained controls;
 primary semantic N, effect estimates, confidence sequences, significance, and replication results
-remain zero; program alpha consumption is 0.02 from prospective activation. The next fixed
-configuration is source-order `cm-land-conf-067`.
+remain zero; program alpha consumption is 0.02 from prospective activation. The registered first-look
+physical threshold is now reached, so the next action is the frozen 24-cluster semantic comparison.
 
 The 2026-09-26 semantic-activation audit found that the existing v12 packet runner scored only the
 atomic mechanism unit plus material-error absence, whereas this focused protocol requires all
