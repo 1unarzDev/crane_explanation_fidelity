@@ -1,7 +1,7 @@
 # Luna automated annotation protocol
 
 Protocol ID: `luna-model-judge-v1`  
-Status: **V7 HISTORICALLY QUALIFIED; TARGETED ENDPOINT-THREAT EXTENSION FAILED — SEMANTIC CONFIRMATION BLOCKED**
+Status: **V12 ENDPOINT-ALIGNED JUDGE QUALIFIED; STUDY SCORING REQUIRES A SEPARATELY FROZEN P/R SCREEN**
 Declared: 2026-09-23
 
 This document defines a separately named automated evaluation arm. It does not amend or replace
