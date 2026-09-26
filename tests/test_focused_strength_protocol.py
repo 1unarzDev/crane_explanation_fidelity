@@ -34,6 +34,7 @@ FIRST_RUN = ROOT / "manifests/data/fsdc-land-geometry-001-disposition.json"
 SECOND_RUN = ROOT / "manifests/data/fsdc-land-geometry-002-disposition.json"
 THIRD_RUN = ROOT / "manifests/data/fsdc-land-geometry-003-disposition.json"
 FOURTH_RUN = ROOT / "manifests/data/fsdc-land-geometry-004-disposition.json"
+FIFTH_RUN = ROOT / "manifests/data/cm-land-conf-041-disposition.json"
 
 
 def load(path: Path) -> dict:
@@ -192,3 +193,17 @@ def test_added_geometry_block_closes_with_second_retained_insufficiency_case():
     assert run["robot_visible_diagnostic"]["registered_primary_mechanism_established"] is False
     assert run["study_effect"]["outcome_dependent_replacement_performed"] is False
     assert run["next_fixed_run"] == "cm-land-conf-041"
+
+
+def test_first_reassigned_run_uses_only_masked_ambiguity_condition_for_methods():
+    run = load(FIFTH_RUN)
+
+    assert run["attempt_count"] == 1
+    assert run["raw_physical_reference"]["disposition"] == "supported"
+    assert run["method_visible_reference"]["mask_adapter"] == "remove-delivered-odometry-v1"
+    assert run["method_visible_reference"]["odometry_samples"] == 0
+    assert run["method_visible_reference"]["disposition"] == "insufficient"
+    assert run["method_visible_reference"]["primary_endpoint_eligible"] is False
+    assert run["semantic_boundary"]["P_responses"] == 0
+    assert run["semantic_boundary"]["R_responses"] == 0
+    assert run["semantic_boundary"]["confirmatory_alpha_consumed"] == 0.0

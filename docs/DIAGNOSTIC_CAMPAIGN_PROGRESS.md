@@ -27,9 +27,12 @@ configurations are complete after one attempt each: 001 and 003 independently su
 retained-grid restrictions plus recorded route changes and success; 002 and 004 support route
 change but lack decisive grid coverage and are retained as missing-evidence outcomes rather than
 replaced or counted as diagnosable primary cases. P/R responses remain unopened. Prospective
-physical configurations collected are 4/64;
+physical configurations collected are 5/64. Source-order run 041 adds a valid missing-odometry
+ambiguity control: the unmasked reference supports a discrepancy, while the sole method-visible
+masked condition correctly cannot establish it. Thus two collected configurations are currently
+primary-diagnosable and three are missing/ambiguous controls;
 primary semantic N, alpha consumption, effect estimates, confidence sequences, significance, and
-replication results remain zero. The next fixed configuration is reassigned `cm-land-conf-041`.
+replication results remain zero. The next fixed configuration is `cm-land-conf-042`.
 
 The former physical-only land cohort is additively closed after run 040 (39 valid, one invalid).
 All artifacts and its original schedule remain immutable. Its never-attempted runs 041--100 are

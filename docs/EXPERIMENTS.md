@@ -1,5 +1,22 @@
 # Experiment Log
 
+## 2026-09-26 — focused physical run 5 / source order 41: `cm-land-conf-041`
+
+- **STATUS:** `VALID_FOCUSED_PHYSICAL_INDEPENDENT_AMBIGUITY_MASK_UNEXPECTED_ABORT_RESPONSE_UNOPENED`;
+  one attempt and no replacement. The generic expected-success check failed, but the source-pinned
+  recording and all 14 binding checks passed, so the abort is valid evidence.
+- **RAW REFERENCE:** before masking, the independent low-speed computation finds 0.260 m/s delivered
+  command versus 0.000 m/s measured motion over 17--27 s, followed by abort. This establishes an
+  execution-response discrepancy, not actuator acceptance, Nav2 odometry consumption, the hidden
+  intervention, or a unique physical cause.
+- **SOLE METHOD-VISIBLE CONDITION:** the predeclared `remove-delivered-odometry-v1` mask retains the
+  abort, three FollowPath attempts, two failures, and two source-qualified Wait invocations but no
+  odometry samples. The required command--motion comparison is therefore insufficient; this is a
+  focused ambiguity control, not a primary-endpoint case.
+- **GOVERNANCE:** raw/unmasked and masked/reference roots were separately leakage-scanned,
+  hash-manifested, and DVC-pushed. Responses remain unopened and alpha remains zero. Source-order
+  run `cm-land-conf-042` is next.
+
 ## 2026-09-26 — focused physical run 4: `fsdc-land-geometry-004`
 
 - **STATUS:** `VALID_PROSPECTIVE_PHYSICAL_EVIDENCE_GEOMETRY_NOT_ESTABLISHED_RESPONSE_UNOPENED`;

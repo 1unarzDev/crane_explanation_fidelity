@@ -1,0 +1,118 @@
+{
+  "schema": "crane-land-command-motion-physical-run-disposition/v1",
+  "recorded_date": "2026-09-26",
+  "run_id": "cm-land-conf-041",
+  "cluster_id": "cm-land-conf-cluster-041",
+  "status": "VALID_FOCUSED_PHYSICAL_INDEPENDENT_AMBIGUITY_MASK_UNEXPECTED_ABORT_RESPONSE_UNOPENED",
+  "attempt_count": 1,
+  "retry_or_replacement_performed": false,
+  "contract": {
+    "focused_protocol": "research/explanation_fidelity/experiment_configs/prospective/focused-supported-diagnostic-communication-v1.json",
+    "focused_schedule": "research/explanation_fidelity/experiment_configs/prospective/focused-supported-diagnostic-communication-v1-schedule.json",
+    "source_physical_schedule": "research/explanation_fidelity/experiment_configs/prospective/land-command-motion-physical-schedule-v1.json",
+    "source_schedule_sha256": "1f844ad45fa2e5cefb9edcfc5f3420a5a18aff32abda81ec72b7876ce376f215",
+    "fixed_order": 41
+  },
+  "scheduled_configuration": {
+    "family": "ambiguous-missing-odometry",
+    "focused_family": "missing_decisive_or_ambiguous_evidence",
+    "geometry_mechanism": "connected-detour",
+    "layout_id": "diagnostic-command-motion-confirmation-reserve-connected-detour-048",
+    "layout_seed": 91047,
+    "mobility_hold_after_s": 25.0,
+    "mobility_release_after_s": -1.0,
+    "evidence_mask": "remove-delivered-odometry-v1",
+    "ros_domain_id": 185,
+    "ros_tcp_port": 12385
+  },
+  "admission": {
+    "player_build_audit_accepted": true,
+    "scenario_binding_audit_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "unity_worker_result_valid": true,
+    "unity_logged_errors": 0,
+    "unity_logged_exceptions": 0,
+    "recording_valid_under_frozen_worker_result_gate": true,
+    "unexpected_navigation_outcome_retained": true,
+    "independent_reference_complete": true
+  },
+  "generic_fixture_expectation": {
+    "expected_navigation_status": "succeeded",
+    "observed_navigation_status": "aborted",
+    "fixture_exit_status": 1,
+    "fixture_summary_valid_flag": false,
+    "disposition": "The generic expected-success check failed, but the source-pinned zero-error recording and exact binding passed. The unexpected abort is retained without replacement."
+  },
+  "observed": {
+    "navigation_status": "aborted",
+    "action_wall_seconds": 51.10969945399847,
+    "displacement_meters": 4.456783909825311,
+    "controller_commands": 473,
+    "odometry_messages": 2555,
+    "costmap_observations": 131,
+    "behavior_tree_transitions": 39,
+    "follow_path_attempts": 3,
+    "follow_path_failures": 2,
+    "observed_recovery_invocation_starts": 2,
+    "maximum_recovery_feedback": 2,
+    "behavior_tree_history_status": "not_proven",
+    "exact_recovery_count_eligible": false
+  },
+  "raw_physical_reference": {
+    "disposition": "supported",
+    "healthy_interval_s": [0.0, 5.0],
+    "healthy_commanded_planar_speed_mps": 0.26,
+    "healthy_measured_planar_speed_mps": 0.2597399950027466,
+    "discrepancy_interval_s": [17.0, 27.0],
+    "discrepancy_commanded_planar_speed_mps": 0.26,
+    "discrepancy_measured_planar_speed_mps": 0.0,
+    "response_ratio": 0.0,
+    "command_samples": 467,
+    "odometry_samples": 2272,
+    "source_qualified_wait_recovery_count": 2,
+    "unique_physical_cause_supported": false
+  },
+  "method_visible_reference": {
+    "mask_adapter": "remove-delivered-odometry-v1",
+    "independent_cluster_increment": 1,
+    "primary_endpoint_eligible": false,
+    "disposition": "insufficient",
+    "command_samples": 467,
+    "odometry_samples": 0,
+    "action_status": "aborted",
+    "follow_path_attempts": 3,
+    "follow_path_failures": 2,
+    "source_qualified_wait_recovery_count": 2,
+    "bounded_conclusion": "The sole method-visible condition preserves the abort and execution sequence but removes delivered odometry. It cannot establish a command-to-motion discrepancy or unique physical cause."
+  },
+  "hashes": {
+    "player_build_audit_sha256": "ee0b3388eab6339de5000aaf0201bb07d9d63bc3b349ed1e49ba3d3ddf2fc005",
+    "scenario_binding_audit_sha256": "1c001f4ba19d2f18ad41ccace61b5b4e31300edbdb500e9c3e13828ab9e23d5f",
+    "fixture_summary_sha256": "c4f076e33bcdd40fdae8f38f1bf7ae638ff859f8661b83cd8c3a08de00c3cfa3",
+    "unity_worker_result_sha256": "b8dbdd0ae1ae137706ca240a5cbabc0ea4787cf612b92469394d6c431d86cd5d",
+    "robot_visible_events_sha256": "e429fef321e8d39b4b3e3249a9b32a0d3c3875c434fab0662a8147cc4e01c3c7",
+    "unmasked_diagnostic_sha256": "79e620c35d45aa27bfa300bd3b6469abc6365564b06a061da10824db8ff69a66",
+    "unmasked_independent_reference_sha256": "247aece361d744b5bce755dbd4862b68b2971dc2c861172f34bb794d87b73a4a",
+    "masked_diagnostic_sha256": "06d57116f037330b5dbef547afde81f0bc183766cbd58489beb472f021e97f8e",
+    "masked_independent_reference_sha256": "aca97cfd4acde5dbe09e0cd79fefa0d8435797b6ba372000a5bd7635b128cb53",
+    "robot_visible_manifest_sha256": "03ac6984b374dd3e80db211b2179ce214b88c17c4cb96641b20a06c7cbef3c85",
+    "evaluator_only_manifest_sha256": "fc3a23584c7559e5ee2b1a7f833336f1b1d29fec45722a31563db8f9b4127722",
+    "masked_robot_visible_manifest_sha256": "24c09cc1ef7a53a67925c1d256374dc4f451c4772484413a57d517db64adea3d",
+    "masked_evaluator_only_manifest_sha256": "441951ac23fc52d9ace52f9655164dd0f3e61fac693223b4562683109f8e8766"
+  },
+  "semantic_boundary": {
+    "P_responses": 0,
+    "R_responses": 0,
+    "Luna_calls": 0,
+    "semantic_labels": 0,
+    "effect_estimate": null,
+    "confidence_sequence": null,
+    "confirmatory_alpha_consumed": 0.0
+  },
+  "focused_progress": {
+    "physical_configurations_collected": 5,
+    "primary_diagnosable_references": 2,
+    "missing_or_ambiguous_references": 3,
+    "next_fixed_run_id": "cm-land-conf-042"
+  }
+}
