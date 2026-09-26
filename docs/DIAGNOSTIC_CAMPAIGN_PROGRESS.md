@@ -33,7 +33,11 @@ delivered command remained 0.260 m/s while measured speed was 0.000 m/s over 11-
 0.259740 m/s healthy comparator, and the action aborted after two qualified recovery starts. The
 first deterministic derivation accidentally used the 0.4 m/s default threshold and returned
 insufficient; it is retained alongside the selected pre-existing low-speed computation under
-additive amendment 1. No physical run, response, or label was retried. Fixed run 5/5 is next.
+additive amendment 1. No physical run, response, or label was retried. Fixed run 5/5 is a valid
+successful-compensation cluster: after the same supported 0.260 versus 0.000 m/s discrepancy,
+measured response recovered to 0.259740 m/s and navigation succeeded after one qualified recovery
+start. All five fixed physical configurations are now retained. Confirmation N and alpha remain
+zero; masks, independent references, and an exact treatment/packet freeze are next.
 
 ## Measurement-complete v2 development screen
 

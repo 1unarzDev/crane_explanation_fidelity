@@ -1,0 +1,80 @@
+{
+  "schema": "crane-coverage-complete-v4-run-disposition/v1",
+  "recorded_utc_date": "2026-09-26",
+  "run_id": "mccv4-dev-005",
+  "cluster_id": "mccv4-land-005",
+  "status": "VALID_DEVELOPMENT_SUCCESSFUL_COMMAND_MOTION_COMPENSATION",
+  "predeclaration": "research/explanation_fidelity/experiment_configs/development/coverage-complete-v4-physical-screen-v1.json",
+  "derivation_amendment": "research/explanation_fidelity/experiment_configs/development/coverage-complete-v4-physical-screen-v1-amendment-1.json",
+  "admission": {
+    "attempt_count": 1,
+    "retry_performed": false,
+    "replacement_layout_used": false,
+    "player_build_audit_accepted": true,
+    "scenario_binding_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "unity_result_valid": true,
+    "expected_broad_outcome_observed": true,
+    "recording_valid": true
+  },
+  "scenario": {
+    "environment_id": "crane-land-proving-ground-v5",
+    "layout_id": "diagnostic-candidate-v2-development-nominal-clear-route-012",
+    "layout_seed": 82011,
+    "family": "successful-command-motion-compensation",
+    "mobility_hold_after_s": 18.0,
+    "mobility_release_after_s": 30.0
+  },
+  "observed": {
+    "navigation_status": "succeeded",
+    "action_wall_seconds": 81.00982409700373,
+    "displacement_meters": 17.467119216918945,
+    "controller_commands": 784,
+    "odometry_messages": 4004,
+    "trajectory_samples": 3995,
+    "behavior_tree_transitions": 22,
+    "costmap_observations": 285,
+    "delivered_plan_count": 2,
+    "maximum_recovery_feedback": 1
+  },
+  "diagnostic": {
+    "selected_config_sha256": "9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85",
+    "disposition": "supported",
+    "mechanism": "command_to_motion_discrepancy_with_measured_response_recovery",
+    "healthy_interval_s": [0.0, 5.0],
+    "healthy_commanded_planar_speed_mps": 0.26,
+    "healthy_measured_planar_speed_mps": 0.2597399950027466,
+    "discrepancy_interval_s": [10.0, 20.0],
+    "discrepancy_commanded_planar_speed_mps": 0.26,
+    "discrepancy_measured_planar_speed_mps": 0.0,
+    "sustained_discrepancy_duration_s": 10.0,
+    "response_recovery_interval_s": [22.0, 23.0],
+    "recovered_measured_planar_speed_mps": 0.2597399950027466,
+    "recovered_response_ratio": 1.0,
+    "follow_path_attempt_count": 2,
+    "follow_path_failure_count": 1,
+    "source_qualified_wait_recovery_count": 1,
+    "unique_physical_cause_supported": false,
+    "recovery_ordering_proves_causation": false,
+    "final_text_verification_accepted": true
+  },
+  "hashes": {
+    "player_build_audit_sha256": "cf2d883d18dd7c65b70be949664ac11abab084430884492302e06bae26b13cd6",
+    "scenario_binding_audit_sha256": "5fe05581a095513e41fd365ccf652023c017f032cf099360e8ce632176613d3b",
+    "evaluator_truth_sha256": "a94a2ab9a4810176a3337335fe63be45941a68fd321d24c9fb822d60d8dbcb8c",
+    "fixture_summary_sha256": "a7a7b59f8e0948d364fa49cf9e094dda68c52bd9b98afa6ef88369b8e96cbb25",
+    "selected_config_diagnostic_sha256": "db310725de2b00914241f6d1d34bdb7c394800b6aab906a0b8baeace2d5fd455",
+    "selected_config_reference_sha256": "0d26eec0c29b4cf4cd30bcd4e552eda8fedee11f266e697a5ba272f5ce1df3e0",
+    "robot_visible_manifest_sha256": "6faf2058561b172a2d20d4c60b033320689b1bd2132c6ca8fa5480f3bb71e0c1",
+    "evaluator_only_manifest_sha256": "b40e518bfac0e272705304c7aa274f1676d87404d185aac977fabbad8dde9be9"
+  },
+  "study_effect": {
+    "development_independent_cluster_increment": 1,
+    "confirmatory_cluster_increment": 0,
+    "model_response_increment": 0,
+    "luna_judgment_increment": 0,
+    "confirmatory_alpha_consumed": 0.0,
+    "candidate_readiness": "NOT_YET_ASSESSED"
+  },
+  "next_fixed_run": null
+}

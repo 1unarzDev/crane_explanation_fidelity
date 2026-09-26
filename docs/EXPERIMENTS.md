@@ -1,5 +1,22 @@
 # Experiment Log
 
+## 2026-09-26 — coverage-complete v4 physical screen run 5/5
+
+- **STATUS:** `VALID_DEVELOPMENT_SUCCESSFUL_COMMAND_MOTION_COMPENSATION`; the fifth and final
+  physical configuration was attempted once, without retry or replacement. The screen now has
+  five independent development clusters; confirmation N and alpha remain zero.
+- **OBSERVED / INDEPENDENT REFERENCE:** after a 0--5 s healthy response of 0.259740 m/s, median
+  delivered command remained 0.260 m/s while measured speed was 0.000 m/s over 10--20 s. Measured
+  response recovered to 0.259740 m/s over 22--23 s. Navigation succeeded after 81.010 s and
+  17.467 m, with two FollowPath attempts, one failure, and one source-qualified Wait start.
+- **BOUNDARY:** this establishes a transient command--motion discrepancy, later measured response
+  recovery, and success. It does not establish actuator acceptance, Nav2 odometry consumption,
+  hidden intervention identity, a unique physical cause, or that the Wait caused recovery.
+- **GOVERNANCE / NEXT:** the exact low-speed config is pinned by amendment 1; raw and derived
+  artifacts are separately governed and DVC-synchronized. Physical collection is complete. Next
+  create the two fixed masks and independent references, then freeze exact information-parity P/R
+  treatment and Luna packets before any response generation.
+
 ## 2026-09-26 — coverage-complete v4 physical screen run 4/5
 
 - **STATUS:** `VALID_DEVELOPMENT_PERSISTENT_COMMAND_MOTION_DISCREPANCY`; one fixed physical
