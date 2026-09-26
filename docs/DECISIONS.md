@@ -1,5 +1,18 @@
 # Decision Log
 
+## 2026-09-26 — Score every question-essential unit in the focused primary endpoint
+
+- **Decision:** focused confirmation succeeds only when Luna marks every prospectively bound
+  essential unit covered and finds no material error. Atomic mechanism coverage alone is
+  insufficient. Missing judge output for any essential unit fails closed.
+- **Why:** the focused claim explicitly includes decisive measurement, outcome, and necessary
+  causal limits. A mechanism-only implementation would silently test a narrower endpoint.
+- **Preservation:** historical study packets and v12 qualification results keep their declared
+  semantics. No focused response existed when the mismatch was found.
+- **Consequence:** run one bounded held-out extension under unchanged Luna v12 settings to qualify
+  four-unit composite scoring before semantic activation. This is a claim-specific validity gate,
+  not an open-ended judge redesign; physical evidence collection continues meanwhile.
+
 ## 2026-09-26 — pursue one focused atomic communication claim and accept measured tradeoffs
 
 - **Decision:** select the unchanged deterministic `measurement-complete-checked-composition-v2`

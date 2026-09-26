@@ -1,0 +1,43 @@
+{
+  "schema": "crane-focused-semantic-activation-audit/v1",
+  "recorded_date": "2026-09-26",
+  "protocol_id": "focused-supported-diagnostic-communication-v1",
+  "status": "ACTIVATION_BLOCKED_BOUNDED_ENDPOINT_QUALIFICATION_REQUIRED",
+  "audited_parent_commit": "ada7b97f6bb87ff08c29b5a5e89ed33e5cf4594d",
+  "authoritative_hashes": {
+    "protocol": "a3b3d842d0ab6d74cc3a22c9d8f34024d95fe70a8213ee1fb08cb21b01c24922",
+    "question_registry": "7748c592292f5f33cad864fa287a8773bbf68f0212d3e6d6439c02482d957204",
+    "luna_v12_freeze": "cc2c177c7b752ff846cb77aad7f6cabd55047ebe6ad07a071c14c162ca0f59ab",
+    "luna_v12_qualification_manifest": "bb9d8fbd7d698278aa22bf29562d2a3803ba136d3af8e680a3815f42775e1bf9",
+    "packet_builder_with_complete_endpoint_binding": "316649ba6e1fd5cc1bdc9b46310858bb45c5c17298ee7a3ffd6a48324e2450fb",
+    "packet_runner_with_complete_endpoint_scoring": "f1c2b58f18651e29b030a69487e3a5e7e0f6c0ef55f448e0653485c7ec56de6e"
+  },
+  "activation_gates": {
+    "fixed_configuration_schedule_and_disjoint_replication_reserve": "PASS",
+    "atomic_question_and_essential_unit_registry": "PASS",
+    "evidence_complete_packet_closure_dry_run": "OPEN",
+    "exact_P_R_resource_and_model_hashes": "OPEN",
+    "schema_and_monitor_dry_run": "OPEN",
+    "atomic_error_ledger_binding_before_first_response_is_opened": "AVAILABLE_NOT_BOUND"
+  },
+  "finding": {
+    "registered_endpoint": "Every question-essential mechanism, measurement/comparison, outcome, and causal/evidence-limit unit is covered and no material unsupported or contradicted assertion occurs.",
+    "prior_runner_endpoint": "Only the atomic mechanism unit was required, together with no material error.",
+    "impact": "The prior runner could incorrectly pass an answer that omitted an essential measurement, outcome, or causal limit. It must not score focused confirmation.",
+    "code_correction": "Prospective focused references may now bind complete_endpoint_unit_ids. The packet builder verifies that the binding names every required unit exactly once, and the runner fails closed unless each bound unit is covered.",
+    "historical_effect": "None. No focused P/R response or Luna study judgment exists, confirmatory N remains zero, and alpha consumption remains zero. Historical packets retain their original scoring semantics."
+  },
+  "qualification_gap": {
+    "luna_v12_status": "HELDOUT_QUALIFIED_FOR_ATOMIC_MECHANISM_ENDPOINT",
+    "existing_v12_required_units": "The diagnosable held-out cases exercised mechanism and limit units, but not the focused four-part mechanism/measurement/outcome/limit composite.",
+    "required_action": "Before activation, freeze and run one bounded held-out extension using unchanged Luna v12 model, prompt, schema, caller, settings, and two-pass rules. Include independently checkable four-unit cases spanning all three primary families and omissions of each essential unit. Predeclare complete-endpoint and unit-level gates before calls.",
+    "prohibited_action": "Do not score study responses, tune the judge on focused outcomes, relax the endpoint, or bind alpha until the extension and remaining activation gates pass."
+  },
+  "semantic_state": {
+    "P_responses": 0,
+    "R_responses": 0,
+    "Luna_study_calls": 0,
+    "confirmatory_semantic_clusters": 0,
+    "alpha_consumed": 0.0
+  }
+}

@@ -131,6 +131,26 @@ def test_builder_binds_v12_primary_endpoint_metadata_without_condition_leakage()
     assert all(row["mechanism_unit_id"] == "u-mechanism" for row in rows)
 
 
+def test_builder_binds_and_validates_complete_endpoint_units():
+    result, reference = fixtures()
+    reference["required_units"] = [
+        {"unit_id": "u-mechanism", "text": "The required mechanism."},
+        {"unit_id": "u-limit", "text": "The required limit."},
+    ]
+    reference["primary_endpoint_eligible"] = True
+    reference["mechanism_unit_id"] = "u-mechanism"
+    reference["complete_endpoint_unit_ids"] = ["u-mechanism", "u-limit"]
+    rows, _ = MODULE.build_rows(result, reference, "secret")
+    assert all(
+        row["complete_endpoint_unit_ids"] == ["u-mechanism", "u-limit"]
+        for row in rows
+    )
+
+    reference["complete_endpoint_unit_ids"] = ["u-mechanism"]
+    with pytest.raises(ValueError, match="every required unit exactly once"):
+        MODULE.build_rows(result, reference, "secret")
+
+
 def test_builder_rejects_v12_endpoint_without_declared_atomic_unit():
     result, reference = fixtures()
     reference["required_units"] = [{"unit_id": "u-limit", "text": "Only a limit."}]

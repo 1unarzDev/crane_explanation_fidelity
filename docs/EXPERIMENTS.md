@@ -1,5 +1,19 @@
 # Experiment Log
 
+## 2026-09-26 — focused semantic endpoint activation audit
+
+- **FINDING:** the registered endpoint requires mechanism, essential measurement, outcome, and
+  causal/evidence limit coverage with no material error. The existing v12 packet runner required
+  only the mechanism unit plus no material error and could therefore pass an incomplete answer.
+- **CORRECTION:** prospective focused packets can bind every essential unit explicitly; the builder
+  rejects incomplete/mismatched inventories and the runner requires every bound unit to be covered.
+  Historical packet semantics are unchanged.
+- **QUALIFICATION:** existing v12 held-out cases validate atomic mechanism/limit scoring but do not
+  span the focused four-unit composite. Semantic activation remains fail-closed pending one bounded
+  unchanged-v12 held-out extension and the remaining packet/resource/schema/ledger gates.
+- **BOUNDARY:** no P/R response or study Luna call was opened, semantic N and alpha remain zero,
+  and physical collection remains authorized.
+
 ## 2026-09-26 — focused physical run 10 / source order 46: `cm-land-conf-046`
 
 - **STATUS:** `VALID_FOCUSED_PHYSICAL_INDEPENDENT_PRIMARY_DIAGNOSABLE_UNEXPECTED_ABORT_RESPONSE_UNOPENED`;

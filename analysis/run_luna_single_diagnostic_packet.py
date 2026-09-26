@@ -91,17 +91,22 @@ def judge_visible_row(row: dict[str, Any]) -> dict[str, Any]:
     return {
         key: value
         for key, value in row.items()
-        if key not in {"primary_endpoint_eligible", "mechanism_unit_id"}
+        if key not in {
+            "primary_endpoint_eligible",
+            "mechanism_unit_id",
+            "complete_endpoint_unit_ids",
+        }
     }
 
 
 def success(judgment: dict[str, Any], row: dict[str, Any] | None = None) -> bool | None:
     """Score either the qualified v12 endpoint or a retained historical packet.
 
-    V12 success is coverage of the independently declared atomic mechanism unit
-    with no material error. Historical packets did not carry endpoint metadata,
-    so their existing generic mechanism-field interpretation is preserved rather
-    than retroactively rewritten.
+    V12 success defaults to coverage of the independently declared atomic mechanism
+    unit with no material error. A prospective focused packet may explicitly bind all
+    question-essential unit IDs; then every bound unit must be covered. Historical
+    packets did not carry endpoint metadata, so their existing generic mechanism-field
+    interpretation is preserved rather than retroactively rewritten.
     """
     if row is not None and "primary_endpoint_eligible" in row:
         if row["primary_endpoint_eligible"] is not True:
@@ -109,14 +114,26 @@ def success(judgment: dict[str, Any], row: dict[str, Any] | None = None) -> bool
         mechanism_unit_id = row.get("mechanism_unit_id")
         if not isinstance(mechanism_unit_id, str) or not mechanism_unit_id:
             raise ValueError("eligible v12 row has no mechanism unit ID")
-        matches = [
-            item
-            for item in judgment.get("required_units", [])
-            if item.get("unit_id") == mechanism_unit_id
-        ]
-        if len(matches) != 1:
-            raise ValueError("eligible v12 judgment does not contain exactly one mechanism unit")
-        return matches[0].get("status") == "covered" and judgment["material_error"] is False
+        required_ids = row.get("complete_endpoint_unit_ids", [mechanism_unit_id])
+        if (
+            not isinstance(required_ids, list)
+            or not required_ids
+            or any(not isinstance(item, str) or not item for item in required_ids)
+            or len(required_ids) != len(set(required_ids))
+        ):
+            raise ValueError("eligible v12 row has invalid endpoint unit IDs")
+        statuses: dict[str, str] = {}
+        for item in judgment.get("required_units", []):
+            unit_id = item.get("unit_id")
+            if unit_id in statuses:
+                raise ValueError("eligible v12 judgment contains duplicate required units")
+            statuses[unit_id] = item.get("status")
+        if any(unit_id not in statuses for unit_id in required_ids):
+            raise ValueError("eligible v12 judgment omits an endpoint required unit")
+        return (
+            all(statuses[unit_id] == "covered" for unit_id in required_ids)
+            and judgment["material_error"] is False
+        )
     return judgment["mechanism_identification"] == "correct" and judgment["material_error"] is False
 
 
@@ -199,8 +216,13 @@ def run(packet: Path, key_path: Path, output_root: Path) -> dict[str, Any]:
                 "supported_diagnostic_success": endpoint,
                 "primary_endpoint_eligible": row.get("primary_endpoint_eligible"),
                 "mechanism_unit_id": row.get("mechanism_unit_id"),
+                "complete_endpoint_unit_ids": row.get("complete_endpoint_unit_ids"),
                 "endpoint_scoring_policy": (
-                    "v12_atomic_mechanism_unit_covered_and_no_material_error"
+                    (
+                        "focused_all_question_essential_units_covered_and_no_material_error"
+                        if row.get("complete_endpoint_unit_ids") is not None
+                        else "v12_atomic_mechanism_unit_covered_and_no_material_error"
+                    )
                     if "primary_endpoint_eligible" in row
                     else "historical_generic_mechanism_field_and_no_material_error"
                 ),

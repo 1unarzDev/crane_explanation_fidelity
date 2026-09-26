@@ -39,6 +39,14 @@ collected configurations are currently primary-diagnosable and three are missing
 primary semantic N, alpha consumption, effect estimates, confidence sequences, significance, and
 replication results remain zero. The next fixed configuration is `cm-land-conf-047`.
 
+The 2026-09-26 semantic-activation audit found that the existing v12 packet runner scored only the
+atomic mechanism unit plus material-error absence, whereas this focused protocol requires all
+question-essential mechanism, measurement, outcome, and causal-limit units. The prospective packet
+path now binds and fail-closed scores the complete unit inventory without changing historical
+packets. Activation remains blocked pending one bounded, predeclared four-unit held-out extension
+under unchanged Luna v12 settings, then packet/resource/schema dry runs and atomic ledger binding.
+No focused response was opened while discovering or correcting this mismatch.
+
 The former physical-only land cohort is additively closed after run 040 (39 valid, one invalid).
 All artifacts and its original schedule remain immutable. Its never-attempted runs 041--100 are
 reassigned wholesale before outcomes, together with four unused connected-detour layouts, to a

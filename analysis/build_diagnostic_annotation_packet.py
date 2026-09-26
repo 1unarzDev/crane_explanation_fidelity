@@ -125,6 +125,26 @@ def build_rows(
                 row["mechanism_unit_id"] = mechanism_unit_id
             elif mechanism_unit_id is not None:
                 raise ValueError("ineligible reference must not declare a mechanism unit")
+            complete_unit_ids = reference.get("complete_endpoint_unit_ids")
+            if complete_unit_ids is not None:
+                if reference["primary_endpoint_eligible"] is not True:
+                    raise ValueError("ineligible reference cannot declare complete endpoint units")
+                required_ids = [
+                    item.get("unit_id")
+                    for item in reference["required_units"]
+                    if isinstance(item, dict)
+                ]
+                if (
+                    not isinstance(complete_unit_ids, list)
+                    or not complete_unit_ids
+                    or any(not isinstance(item, str) or not item for item in complete_unit_ids)
+                    or len(complete_unit_ids) != len(set(complete_unit_ids))
+                    or set(complete_unit_ids) != set(required_ids)
+                ):
+                    raise ValueError(
+                        "complete endpoint units must name every required unit exactly once"
+                    )
+                row["complete_endpoint_unit_ids"] = complete_unit_ids
         rows.append(row)
         key.append(
             {

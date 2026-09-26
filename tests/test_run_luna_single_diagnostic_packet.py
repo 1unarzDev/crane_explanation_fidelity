@@ -38,6 +38,49 @@ def test_v12_success_uses_atomic_mechanism_unit_not_generic_semantic_field() -> 
     assert MODULE.success(judgment, row) is False
 
 
+def test_focused_success_requires_every_declared_essential_unit() -> None:
+    row = {
+        "primary_endpoint_eligible": True,
+        "mechanism_unit_id": "u-mechanism",
+        "complete_endpoint_unit_ids": [
+            "u-mechanism",
+            "u-measurement",
+            "u-outcome",
+            "u-limit",
+        ],
+    }
+    judgment = {
+        "material_error": False,
+        "required_units": [
+            {"unit_id": "u-mechanism", "status": "covered"},
+            {"unit_id": "u-measurement", "status": "covered"},
+            {"unit_id": "u-outcome", "status": "covered"},
+            {"unit_id": "u-limit", "status": "covered"},
+        ],
+    }
+    assert MODULE.success(judgment, row) is True
+    judgment["required_units"][1]["status"] = "omitted"
+    assert MODULE.success(judgment, row) is False
+
+
+def test_focused_success_fails_closed_when_judge_omits_essential_unit() -> None:
+    row = {
+        "primary_endpoint_eligible": True,
+        "mechanism_unit_id": "u-mechanism",
+        "complete_endpoint_unit_ids": ["u-mechanism", "u-limit"],
+    }
+    judgment = {
+        "material_error": False,
+        "required_units": [{"unit_id": "u-mechanism", "status": "covered"}],
+    }
+    try:
+        MODULE.success(judgment, row)
+    except ValueError as error:
+        assert "omits an endpoint required unit" in str(error)
+    else:
+        raise AssertionError("missing essential unit was accepted")
+
+
 def test_v12_guardrail_case_has_no_positive_mechanism_endpoint() -> None:
     row = {"primary_endpoint_eligible": False}
     judgment = {
@@ -53,6 +96,7 @@ def test_v12_coordinator_fields_are_not_exposed_to_frozen_judge_envelope() -> No
         "response_id": "opaque",
         "primary_endpoint_eligible": True,
         "mechanism_unit_id": "u-mechanism",
+        "complete_endpoint_unit_ids": ["u-mechanism"],
     }
     visible = MODULE.judge_visible_row(row)
     assert visible == {"response_id": "opaque"}
