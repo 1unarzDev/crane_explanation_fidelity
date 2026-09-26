@@ -1,0 +1,172 @@
+{
+  "schema": "crane-measurement-complete-v2-development-screen/v1",
+  "screen_id": "measurement-complete-v2-language-screen-v1",
+  "status": "DRAFT_UNCOMMITTED_DO_NOT_RUN",
+  "purpose": "One fixed development-only comparison of measurement-complete checked composition v2 against the strongest fair tool-enabled repository baseline R. It selects or rejects a candidate and cannot establish confirmation, significance, or replication.",
+  "physical_screen": "research/explanation_fidelity/experiment_configs/development/measurement-complete-composition-v2-physical-screen-v1.json",
+  "reference_inventory": "research/explanation_fidelity/references/development/measurement-complete-v2-references-v1.json",
+  "candidate": "measurement-complete-checked-composition-v2",
+  "statistical_boundary": {
+    "confirmatory": false,
+    "alpha_consumed": 0.0,
+    "independent_unit": "scenario configuration",
+    "independent_clusters": 6,
+    "response_pairs": 9,
+    "paired_masks_add_clusters": 0,
+    "question_variants_add_clusters": 0,
+    "model_repetitions_add_clusters": 0,
+    "luna_passes_add_clusters": 0
+  },
+  "repositories": {
+    "crane_ml_path": "packages/crane_ml",
+    "crane_ml_url": "https://github.com/1unarzDev/crane_ml.git",
+    "crane_ml_commit": "05a1161e4b5a3ad6bbefe1c635507e7061ea8d58",
+    "diagnostic_core_path": "packages/astro_dock/src/crane_explain",
+    "diagnostic_core_commit": "bea12562324fa2caf9290698cfadddcb22bd8a8b"
+  },
+  "model": {
+    "provider": "codex",
+    "model": "gpt-6-sol",
+    "reasoning_effort": "high",
+    "samples_per_case": 1,
+    "retries_after_usable_answer": 0,
+    "selection_basis": "Strongest repository-aware tool-enabled baseline used in the preceding fixed development comparison; no weaker model is substituted to create an advantage."
+  },
+  "baseline": {
+    "id": "R-strong-repository-tool-enabled-measurement-complete-v2",
+    "prompt": "research/explanation_fidelity/prompts/diagnostic_repository_agent_measurement_complete_v2.txt",
+    "same_robot_visible_primitive_diagnostic": true,
+    "same_embedded_reference_computation": true,
+    "same_relevant_source_and_configuration": true,
+    "same_deterministic_calculation_tools": true,
+    "episode_certificate_visible": false,
+    "checked_answer_plan_visible": false,
+    "candidate_final_answer_visible": false,
+    "model_calls": 1
+  },
+  "candidate_policy": {
+    "primitive_diagnostic_identical_to_R": true,
+    "mandatory_finite_composition": true,
+    "measurement_complete_units": true,
+    "deterministic_rendering": true,
+    "model_calls": 0,
+    "fail_closed_on_missing_required_units": true
+  },
+  "frozen_artifact_sha256": {},
+  "cases": [
+    {
+      "case_id": "mccv2-geometry-supported-001",
+      "cluster_id": "mccv2-land-001",
+      "family": "bounded_geometric_restriction",
+      "question_kind": "supported_geometric_mechanism",
+      "adapter": "geometric_v3",
+      "diagnostic_path": "data/robot_visible/dev/mccv2-dev-001/geometric-route-diagnostic-v2.json",
+      "diagnostic_sha256": "cb2f6f4a684c0b8db1b2a727f7df2680ac895782baf91d7eb359074c97e3d0d5",
+      "independent_cluster": true,
+      "question": "What physically grounded route restriction is supported, how did the delivered path and measured trajectory change, and what stronger causal conclusions remain unproven?"
+    },
+    {
+      "case_id": "mccv2-geometry-masked-001m",
+      "cluster_id": "mccv2-land-001",
+      "family": "missing_decisive_geometry",
+      "question_kind": "missing_decisive_geometry_guardrail",
+      "adapter": "geometric_v3",
+      "diagnostic_path": "data/robot_visible/dev/mccv2-dev-001-mask-no-costmap-cells/geometric-route-diagnostic-v2.json",
+      "diagnostic_sha256": "68cf5c56712cade48845088175bfa496b5a6bbdeeff2653907c45a163bc24a1d",
+      "independent_cluster": false,
+      "paired_with": "mccv2-geometry-supported-001",
+      "question": "Why did the delivered route change? Give the useful supported path evidence and state whether the physical trigger can be established with the retained costmap cells unavailable."
+    },
+    {
+      "case_id": "mccv2-route-change-002",
+      "cluster_id": "mccv2-land-002",
+      "family": "route_change_unresolved_trigger",
+      "question_kind": "recorded_sequence_unresolved_trigger_guardrail",
+      "adapter": "geometric_v3",
+      "diagnostic_path": "data/robot_visible/dev/mccv2-dev-002/geometric-route-diagnostic-v2.json",
+      "diagnostic_sha256": "d3f91e8f1de8801a3a3cc24f97ce2b6f5321e742e31adf55f2935b280e7f1353",
+      "independent_cluster": true,
+      "question": "Why did the delivered route change, and what does the retained evidence establish or fail to establish about a physical restriction and Nav2 consumption?"
+    },
+    {
+      "case_id": "mccv2-persistent-003",
+      "cluster_id": "mccv2-land-003",
+      "family": "persistent_command_motion_discrepancy",
+      "question_kind": "supported_execution_mechanism",
+      "adapter": "command_motion_v2",
+      "diagnostic_path": "data/robot_visible/dev/mccv2-dev-003/command-motion-diagnostic-v3.json",
+      "diagnostic_sha256": "a95f6011fd33c15fc93479ec2b2f10bc25fa1ca6dbc2ca9df0ee5b1219ba6af0",
+      "independent_cluster": true,
+      "question": "Why did the robot fail to continue toward the goal? Identify the deepest supported execution mechanism, preserve its decisive comparison, and state what remains unresolved."
+    },
+    {
+      "case_id": "mccv2-missing-odometry-003m",
+      "cluster_id": "mccv2-land-003",
+      "family": "missing_decisive_motion",
+      "question_kind": "missing_decisive_evidence_guardrail",
+      "adapter": "command_motion_v2",
+      "diagnostic_path": "data/robot_visible/dev/mccv2-dev-003-mask-no-odometry/command-motion-diagnostic-v3.json",
+      "diagnostic_sha256": "f9b39387916fc67181e3d98430faf6284ebd3faf37e9afd97a232fdca9eb8baf",
+      "independent_cluster": false,
+      "paired_with": "mccv2-persistent-003",
+      "question": "Did a command-to-motion discrepancy cause the navigation failure? Give the most useful supported answer and identify the missing discriminator."
+    },
+    {
+      "case_id": "mccv2-compensation-004",
+      "cluster_id": "mccv2-land-004",
+      "family": "successful_command_motion_compensation",
+      "question_kind": "supported_execution_mechanism_and_compensation",
+      "adapter": "command_motion_v2",
+      "diagnostic_path": "data/robot_visible/dev/mccv2-dev-004/command-motion-diagnostic-v3.json",
+      "diagnostic_sha256": "ab6df443e35733cc8de436d61f799f2cd86d26a47dc42b1ff10e005d5c3f87cd",
+      "independent_cluster": true,
+      "question": "What execution problem occurred, did measured response recover, how did that relate to the final outcome, and what causal attribution is not justified?"
+    },
+    {
+      "case_id": "mccv2-nominal-005",
+      "cluster_id": "mccv2-land-005",
+      "family": "nominal_visible_clutter_false_premise",
+      "question_kind": "false_premise_guardrail",
+      "adapter": "command_motion_v2",
+      "diagnostic_path": "data/robot_visible/dev/mccv2-dev-005/command-motion-diagnostic-v3.json",
+      "diagnostic_sha256": "e648df0c9c4fdbf5a72e990a44f9aa56338894fc580097138cb70a7f45504e5e",
+      "independent_cluster": true,
+      "question": "Why did a command-to-motion failure or visible obstacle prevent this robot from reaching the goal?"
+    },
+    {
+      "case_id": "mccv2-persistent-006",
+      "cluster_id": "mccv2-land-006",
+      "family": "persistent_execution_discrepancy_mixed_layout",
+      "question_kind": "supported_execution_mechanism",
+      "adapter": "command_motion_v2",
+      "diagnostic_path": "data/robot_visible/dev/mccv2-dev-006/command-motion-diagnostic-v3.json",
+      "diagnostic_sha256": "adf6d75e88fa162267e7cec561135106bb38da686d23569d261f9cfa5ff269ce",
+      "independent_cluster": true,
+      "question": "What is the deepest supported execution explanation for the abort, and does the evidence uniquely establish an obstacle or actuator-level cause?"
+    },
+    {
+      "case_id": "mccv2-geometry-unresolved-006g",
+      "cluster_id": "mccv2-land-006",
+      "family": "terminal_geometry_unresolved",
+      "question_kind": "similar_terminal_geometry_guardrail",
+      "adapter": "geometric_v3",
+      "diagnostic_path": "data/robot_visible/dev/mccv2-dev-006/geometric-route-diagnostic-v2.json",
+      "diagnostic_sha256": "06bed2149d91d25895fd3a4cd7adcf3d1db93fe2ed75b0f2e1c6c755cbeaace3",
+      "independent_cluster": false,
+      "paired_with": "mccv2-persistent-006",
+      "question": "Did a physical route restriction cause this abort? State what the retained grid, delivered plans, and trajectory establish, and qualify what remains unresolved."
+    }
+  ],
+  "readiness_gate": {
+    "fixed_screen_must_complete": true,
+    "paired_valid_judgments_required": true,
+    "p_minus_r_supported_diagnostic_success_positive_in_at_least_two_mechanism_families": true,
+    "p_advantage_must_recur_across_independent_clusters": true,
+    "p_material_error_excess_allowed": 0,
+    "p_useful_coverage_degradation_allowed": 0,
+    "masked_and_ambiguous_qualification_required": true,
+    "information_parity_must_pass": true,
+    "failed_gate_action": "Reject or revise the candidate in a separately declared development cycle; do not activate confirmation."
+  },
+  "stopping": "Run each fixed case exactly once for R and once deterministically for P, retain every usable answer, do not resample an inconvenient result, and stop after the nine response pairs."
+}

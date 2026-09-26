@@ -10,7 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "analysis"))
 
 from build_command_motion_composition_packet_v2 import build as build_command  # noqa: E402
-from build_geometric_composition_packet_v2 import build as build_geometry  # noqa: E402
+from build_geometric_composition_packet_v3 import build as build_geometry  # noqa: E402
 from compose_diagnostic_hypotheses_v2 import compose  # noqa: E402
 from render_diagnostic_composition_v2 import render  # noqa: E402
 
@@ -94,3 +94,40 @@ def test_v2_geometry_fails_closed_without_method_visible_coverage_fact() -> None
         assert "route coverage is incomplete" in str(error)
     else:
         raise AssertionError("v2 adapter accepted an unavailable coverage fact")
+
+
+def test_v2_promotes_only_bounded_independently_computed_geometric_restriction() -> None:
+    document, digest = load(
+        "data/robot_visible/dev/mccv2-dev-001/geometric-route-diagnostic-v2.json"
+    )
+    certificate = compose(build_geometry(document, source_sha256=digest), REGISTRY)
+    text = render(certificate)
+
+    assert certificate["answer_plan"]["primary_mechanism_id"] == "geometric_route_restriction"
+    assert "non-traversable near x=11.575 m" in text
+    assert "retaining a below-threshold connection" in text
+    assert "does not prove global physical no-path" in text
+    assert "unique obstacle identity" in text
+
+
+def test_v2_does_not_promote_route_change_without_blocked_route_cell() -> None:
+    document, digest = load(
+        "data/robot_visible/dev/mccv2-dev-002/geometric-route-diagnostic-v2.json"
+    )
+    certificate = compose(build_geometry(document, source_sha256=digest), REGISTRY)
+
+    assert certificate["answer_plan"]["primary_mechanism_id"] == "recorded_route_change"
+
+
+def test_v2_does_not_convert_configured_deadline_into_triggered_deadline() -> None:
+    document, digest = load(
+        "data/robot_visible/dev/mccv2-dev-006/geometric-route-diagnostic-v2.json"
+    )
+    certificate = compose(build_geometry(document, source_sha256=digest), REGISTRY)
+    text = render(certificate)
+
+    assert certificate["answer_plan"]["primary_mechanism_id"] == "geometry_evidence_insufficient"
+    assert "aligned with" not in text
+    assert "retained grid does not cover the complete requested route" in text
+    assert "The action aborted" in text
+    assert "action remained active" not in text
