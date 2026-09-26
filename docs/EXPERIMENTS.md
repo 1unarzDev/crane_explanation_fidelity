@@ -1,5 +1,21 @@
 # Experiment Log
 
+## 2026-09-26 — focused physical run 6 / source order 42: `cm-land-conf-042`
+
+- **STATUS:** `VALID_FOCUSED_PHYSICAL_INDEPENDENT_PRIMARY_DIAGNOSABLE_UNEXPECTED_ABORT_RESPONSE_UNOPENED`;
+  one attempt and no replacement. The generic expected-success check failed, but the source-pinned
+  recording, zero-error Unity worker, and all 14 binding checks passed, so the abort is retained.
+- **REFERENCE:** independent low-speed computation supports a sustained discrepancy: a 0--5 s
+  healthy response of 0.2597 m/s, followed by 0.260 m/s delivered command versus 0.000 m/s
+  measured motion over 17--28 s. The action then aborted after two FollowPath failures and two
+  source-qualified Wait invocations.
+- **BOUNDARY:** this supports an execution-response discrepancy and its recorded sequence, not
+  actuator acceptance, Nav2 consumption of odometry, the hidden intervention, or a unique motor,
+  slip, collision, or obstruction cause.
+- **GOVERNANCE:** robot-visible and evaluator-only roots were separately leakage/governance
+  checked, hash-manifested, and DVC-pushed before Git. Responses remain unopened and alpha remains
+  zero. Source-order run `cm-land-conf-043` is next.
+
 ## 2026-09-26 — focused physical run 5 / source order 41: `cm-land-conf-041`
 
 - **STATUS:** `VALID_FOCUSED_PHYSICAL_INDEPENDENT_AMBIGUITY_MASK_UNEXPECTED_ABORT_RESPONSE_UNOPENED`;
