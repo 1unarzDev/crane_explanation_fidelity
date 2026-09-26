@@ -64,6 +64,7 @@ TWENTY_FOURTH_ATTEMPT = ROOT / "manifests/data/cm-land-conf-060-disposition.json
 TWENTY_FIFTH_ATTEMPT = ROOT / "manifests/data/cm-land-conf-061-disposition.json"
 TWENTY_SIXTH_ATTEMPT = ROOT / "manifests/data/cm-land-conf-062-disposition.json"
 TWENTY_SEVENTH_ATTEMPT = ROOT / "manifests/data/cm-land-conf-063-disposition.json"
+TWENTY_EIGHTH_ATTEMPT = ROOT / "manifests/data/cm-land-conf-064-disposition.json"
 
 
 def load(path: Path) -> dict:
@@ -662,3 +663,21 @@ def test_connected_detour_recovery_run_is_primary_and_causally_bounded():
     assert run["semantic_boundary"]["R_responses"] == 0
     assert run["focused_progress"]["primary_diagnosable_references"] == 20
     assert run["focused_progress"]["next_fixed_run_id"] == "cm-land-conf-064"
+
+
+def test_nominal_route_persistent_run_is_primary_and_causally_bounded():
+    run = load(TWENTY_EIGHTH_ATTEMPT)
+    reference = run["method_visible_reference"]
+
+    assert run["attempt_count"] == 1
+    assert run["admission"]["unexpected_navigation_outcome_retained"] is True
+    assert run["observed"]["navigation_status"] == "aborted"
+    assert reference["primary_endpoint_eligible"] is True
+    assert reference["discrepancy_interval_s"] == [10.0, 20.0]
+    assert reference["response_ratio"] == 0.0
+    assert reference["response_recovery_interval_s"] is None
+    assert reference["unique_physical_cause_supported"] is False
+    assert run["semantic_boundary"]["P_responses"] == 0
+    assert run["semantic_boundary"]["R_responses"] == 0
+    assert run["focused_progress"]["primary_diagnosable_references"] == 21
+    assert run["focused_progress"]["next_fixed_run_id"] == "cm-land-conf-065"

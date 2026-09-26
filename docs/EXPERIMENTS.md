@@ -1,5 +1,17 @@
 # Experiment Log
 
+## 2026-09-26 — focused valid physical run 27 / source order 64: `cm-land-conf-064`
+
+- **STATUS:** `VALID_FOCUSED_PHYSICAL_INDEPENDENT_PRIMARY_PERSISTENT_DISCREPANCY_UNEXPECTED_ABORT_RESPONSE_UNOPENED`;
+  one attempt, no replacement, unexpected abort retained, zero transport/Unity errors, all 14
+  binding checks, and complete independent reference.
+- **REFERENCE:** healthy motion was 0.25974 m/s; the event interval retained a 0.260 m/s delivered
+  command versus 0.000 m/s odometry over 10--20 s, followed by abort. Three FollowPath attempts,
+  two failures, and two source-qualified Wait starts are retained.
+- **BOUNDARY:** the streams do not establish actuator acceptance, exact Nav2 odometry consumption,
+  the evaluator intervention, or a unique physical cause. Registry-exact v3 dry run passed; no P/R
+  response or Luna label was opened. Run 065 is next.
+
 ## 2026-09-26 — focused valid physical run 26 / source order 63: `cm-land-conf-063`
 
 - **STATUS:** `VALID_FOCUSED_PHYSICAL_INDEPENDENT_PRIMARY_TRANSIENT_COMPENSATION_RESPONSE_UNOPENED`;
