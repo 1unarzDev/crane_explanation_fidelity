@@ -24,7 +24,11 @@ separated artifacts are governed and DVC-synchronized. Fixed run 2/5 is also val
 attempt: navigation succeeded in 84.810 s with three distinct plans and 1.105 m maximum measured
 deviation. Independent calculations found a direct-route blocked sample near x=11.525 m and a
 retained connection, repeating the bounded geometry pattern without licensing obstacle identity,
-global no-path, exact-consumption, or causation claims. Fixed run 3/5 is next.
+global no-path, exact-consumption, or causation claims. Fixed run 3/5 is also valid after one
+attempt: it succeeded in 89.110 s with three distinct plans, 1.558 m maximum measured deviation,
+a cost-254 direct-route sample near x=11.525 m, and retained connectivity. Thus all three fresh
+geometry configurations support the bounded mechanism while preserving the same causal limits.
+Fixed command--motion run 4/5 is next.
 
 ## Measurement-complete v2 development screen
 
