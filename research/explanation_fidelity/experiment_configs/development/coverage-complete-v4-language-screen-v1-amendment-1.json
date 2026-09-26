@@ -1,0 +1,24 @@
+{
+  "schema": "crane-coverage-complete-v4-language-screen-amendment/v1",
+  "amendment_id": "coverage-complete-v4-language-screen-v1-amendment-1",
+  "parent": "coverage-complete-v4-language-screen-v1",
+  "recorded_utc": "2026-09-26T07:27:49Z",
+  "timing": "Recorded after all seven fixed P/R response pairs and before building retained annotation-reference files, annotation packets, or any Luna judgment.",
+  "issue": "The separately versioned v4 runner correctly assigned result question IDs in the coverage-complete-v4 namespace, but its inherited in-memory annotation-reference builder retained the older checked-composition namespace. The runner recorded the canonical hash of that independently checked reference. Only the transport question_id differs from the result identifier required by the packet builder.",
+  "prospective_correction": {
+    "builder": "analysis/build_coverage_complete_v4_annotation_reference.py",
+    "builder_sha256": "6b7dc527e3cf7876b7e7d1228f7b2ed52ca46fd5d9ea4b57827d3bbc3b792fea",
+    "required_verification": "Rebuild and hash-check the inherited reference against each immutable result's inputs.annotation_reference_sha256 before changing question_id from checked-composition:<case_id> to coverage-complete-v4:<case_id>.",
+    "response_files_changed": false,
+    "response_calls_repeated": false,
+    "evidence_changed": false,
+    "required_units_changed": false,
+    "prohibited_claims_changed": false,
+    "answer_text_changed": false
+  },
+  "scientific_effect": "This is a fail-closed transport-binding correction made before annotation. It changes no method input, output, model call, reference fact, endpoint, readiness gate, cluster count, or alpha allocation. Both the inherited canonical reference hash and corrected identifier are retained in each annotation reference.",
+  "confirmation_status": {
+    "confirmatory_semantic_n": 0,
+    "confirmatory_alpha_consumed": 0.0
+  }
+}
