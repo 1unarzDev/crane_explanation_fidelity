@@ -1,5 +1,16 @@
 # Experiment Log
 
+## 2026-09-26 — focused valid physical run 21 / source order 58: `cm-land-conf-058`
+
+- **STATUS:** `VALID_FOCUSED_PHYSICAL_INDEPENDENT_PRIMARY_PERSISTENT_DISCREPANCY_UNEXPECTED_ABORT_RESPONSE_UNOPENED`;
+  one attempt and no replacement. The generic fixture expected success, but worker, transport,
+  source/build, and all 14 binding gates passed, so the abort is retained.
+- **REFERENCE:** healthy 0--5 s response was 0.25974 m/s; from 18--28 s the streams recorded 0.260
+  m/s commanded versus 0.000 m/s measured response. The action aborted after three FollowPath
+  attempts, two failures, and two source-qualified Wait starts.
+- **BOUNDARY:** the discrepancy is supported, but its unique physical cause is unresolved.
+  Registry-exact v3 dry run passed; no P/R response or Luna label was opened. Run 059 is next.
+
 ## 2026-09-26 — focused valid physical run 20 / source order 57: `cm-land-conf-057`
 
 - **STATUS:** `VALID_FOCUSED_PHYSICAL_INDEPENDENT_PRIMARY_TRANSIENT_COMPENSATION_RESPONSE_UNOPENED`;
