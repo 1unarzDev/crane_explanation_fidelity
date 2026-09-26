@@ -1,0 +1,107 @@
+{
+  "schema": "crane-composite-mechanism-v6-physical-run-disposition/v1",
+  "recorded_date": "2026-09-26",
+  "run_id": "cmcv6-dev-004",
+  "cluster_id": "cmcv6-dev-cluster-004",
+  "status": "VALID_SUCCESSFUL_COMPENSATION_ROUTE_CHANGE_GEOMETRIC_TRIGGER_INSUFFICIENT_NO_LANGUAGE_RESPONSE",
+  "attempt_count": 1,
+  "retry_or_replacement_performed": false,
+  "contract": {
+    "path": "research/explanation_fidelity/experiment_configs/development/composite-mechanism-v6-physical-screen-v1.json",
+    "fixed_order": 4,
+    "development_only": true
+  },
+  "scheduled_configuration": {
+    "layout_id": "diagnostic-command-motion-confirmation-reserve-connected-detour-055",
+    "layout_seed": 91054,
+    "geometry": "connected-detour",
+    "intervention_family": "transient-command-motion",
+    "mobility_hold_after_s": 25.0,
+    "mobility_release_after_s": 37.0,
+    "ros_domain_id": 228,
+    "ros_tcp_port": 12528
+  },
+  "admission": {
+    "player_build_audit_accepted": true,
+    "scenario_binding_audit_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "unity_worker_result_valid": true,
+    "unity_logged_errors": 0,
+    "unity_logged_exceptions": 0,
+    "stale_actions": 0,
+    "rejected_actions": 0,
+    "cross_episode_actions": 0,
+    "recording_valid_under_worker_result_gate": true
+  },
+  "observed": {
+    "navigation_status": "succeeded",
+    "action_wall_seconds": 100.00977774200146,
+    "displacement_meters": 17.484954254560975,
+    "controller_commands": 977,
+    "odometry_messages": 4999,
+    "costmap_observations": 356,
+    "delivered_plans": 3,
+    "behavior_tree_transitions": 39,
+    "observed_recovery_invocation_starts": 2,
+    "behavior_tree_history_status": "not_proven"
+  },
+  "command_motion_reference": {
+    "proposed_disposition": "supported",
+    "independent_disposition": "supported",
+    "healthy_interval_s": [0.0, 5.0],
+    "healthy_measured_planar_speed_mps": 0.2597399950027466,
+    "discrepancy_interval_s": [18.0, 30.0],
+    "discrepancy_duration_s": 12.0,
+    "median_commanded_planar_speed_mps": 0.25,
+    "median_measured_planar_speed_mps": 0.0,
+    "response_recovery_interval_s": [30.0, 31.0],
+    "recovered_measured_planar_speed_mps": 0.24974998744246502,
+    "recovered_response_ratio": 0.9615384316913692,
+    "bounded_conclusion": "Delivered command and odometry establish a transient command-to-motion discrepancy followed by measured recovery and eventual navigation success, but not its unique physical cause."
+  },
+  "geometric_reference": {
+    "proposed_disposition": "supported",
+    "independent_direct_route_restriction_supported": false,
+    "independent_substantial_plan_deviation_supported": true,
+    "independent_substantial_trajectory_deviation_supported": true,
+    "direct_route_fully_covered": false,
+    "retained_grid_connection_below_cost_253": true,
+    "maximum_forward_progress_m": 17.484901428222656,
+    "maximum_lateral_trajectory_deviation_m": 1.5573965311050415,
+    "maximum_lateral_plan_deviation_m": 1.5242019653320318,
+    "delivered_plans": 3,
+    "unique_delivered_plans": 3,
+    "bounded_conclusion": "The retained record establishes successful route change and substantial delivered-plan and trajectory deviation. The rolling grid is incomplete and does not establish the physical trigger, obstacle identity, exact Nav2 consumption, or snapshot-to-plan causation."
+  },
+  "screen_consequence": {
+    "valid_independent_clusters": 4,
+    "composite_positive_clusters": 2,
+    "successful_compensation_clusters": 1,
+    "proposed_method_complete_supported_packet_outputs": 1,
+    "language_responses": 0,
+    "luna_calls": 0,
+    "confirmatory_semantic_n": 0,
+    "confirmatory_alpha_consumed": 0.0,
+    "next_fixed_run_id": "cmcv6-dev-005"
+  },
+  "hashes": {
+    "player_build_audit_sha256": "26d280c6500b113821c45f236f418271b08cdc3f06ae33304126b2a6babedc9d",
+    "scenario_binding_audit_sha256": "4300f136ea87b867626856556828d27d5ee66135862a03e635d46eafad7603ab",
+    "unity_worker_result_sha256": "92c87ad3b776f7fa76afe2e122202a5adc93313b26c61082c67ca97e76910342",
+    "fixture_summary_sha256": "da19dc87b22dd15427e59ba597c6a23c656b7901078119de08fd4d989297b5b7",
+    "robot_visible_events_sha256": "0cbfffee1be06353929bb1f697fb9130857f2843ac03d13ab56086d57834e840",
+    "command_motion_diagnostic_sha256": "cac65f2335f0982af2c28f2b4f54a76bc20c112f968033c6ab3b5869f0b33cec",
+    "command_motion_independent_reference_sha256": "ca82fc55ec1694a989a0a6fd615c6500d693a2a0070887c44f4eac88da97f7c3",
+    "geometric_diagnostic_sha256": "e3b086162703fd6fdd1549dddb47f561c91d2cfdcd0bc4007ff0e00c76d0f1d2",
+    "geometric_independent_reference_sha256": "da5b7bf8f9e2f6ae35b89e0cb089c839eac310f5df488d03a406f54ac667755a",
+    "plan_geometry_independent_reference_sha256": "8ed1241d767fcf6b4b91e5650f06cdf38d04fa836a90aab3906f550e36d8e673",
+    "robot_visible_manifest_sha256": "598ce7491a08fb321bbc48450e905388aafad74430578b63abb0494db309788b",
+    "evaluator_only_manifest_sha256": "70020548c4070aa937709ce3b63b2b0666e7b01b1eee2e4b01a0c105eb84dcc3"
+  },
+  "governance": {
+    "robot_visible_manifest": "manifests/data/cmcv6-dev-004.robot-visible.json",
+    "evaluator_only_manifest": "manifests/data/cmcv6-dev-004.evaluator-only.json",
+    "checkpoint": "manifests/checkpoints/cmcv6-dev-004.json",
+    "dvc_remote_status": "IN_SYNC_BEFORE_GIT_POINTER"
+  }
+}

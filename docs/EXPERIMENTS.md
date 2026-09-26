@@ -96,6 +96,20 @@
   complete P composite outputs, and zero responses/Luna calls. Fixed run 4 is next; confirmation N
   and alpha remain zero.
 
+### Composite-mechanism v6 run 4/7 — successful compensation and route change
+
+- **STATUS:** `VALID / SUCCESS / GEOMETRIC TRIGGER INSUFFICIENT`. Its one attempt passed every
+  admission gate and succeeded after 100.010 s and 17.485 m.
+- **EXECUTION:** a 0.250 versus 0.000 m/s discrepancy persisted over 18--30 s, then measured
+  response recovered to 0.249750 m/s (0.962 of healthy) over 30--31 s before eventual success.
+- **ROUTE EVIDENCE:** three distinct delivered plans deviated by up to 1.524 m and measured
+  trajectory by 1.557 m. The final rolling grid remained incomplete, so the physical trigger,
+  obstacle identity, exact Nav2 consumption, and snapshot-to-plan causation remain unresolved.
+- **DISPOSITION:** this is the successful-compensation control, not another independently
+  supported geometric-restriction cluster. Totals are four valid clusters, two
+  composite-positive, one successful compensation, and zero responses/Luna calls. Fixed run 5 is
+  next; confirmation N and alpha remain zero.
+
 ## 2026-09-26 — evidence-complete raw-baseline v5 language screen rejects candidate v5
 
 - **STATUS:** `DEVELOPMENT_ONLY_CANDIDATE_REJECTED_FROZEN_GATE`.

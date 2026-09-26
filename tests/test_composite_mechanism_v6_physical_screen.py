@@ -12,6 +12,7 @@ AMENDMENT_2 = ROOT / "research/explanation_fidelity/experiment_configs/developme
 RUN_001_DISPOSITION = ROOT / "manifests/data/cmcv6-dev-001-disposition.json"
 RUN_002_DISPOSITION = ROOT / "manifests/data/cmcv6-dev-002-disposition.json"
 RUN_003_DISPOSITION = ROOT / "manifests/data/cmcv6-dev-003-disposition.json"
+RUN_004_DISPOSITION = ROOT / "manifests/data/cmcv6-dev-004-disposition.json"
 
 
 def _load(path: Path):
@@ -160,3 +161,19 @@ def test_run_003_repeats_composite_support_without_post_outcome_adapter_change()
     assert result["screen_consequence"]["proposed_method_complete_composite_outputs"] == 0
     assert result["screen_consequence"]["language_responses"] == 0
     _assert_disposition_hashes("cmcv6-dev-003", result)
+
+
+def test_run_004_retains_successful_compensation_without_inventing_geometric_trigger():
+    result = _load(RUN_004_DISPOSITION)
+    assert result["attempt_count"] == 1
+    assert result["retry_or_replacement_performed"] is False
+    assert result["observed"]["navigation_status"] == "succeeded"
+    assert result["command_motion_reference"]["independent_disposition"] == "supported"
+    assert result["command_motion_reference"]["response_recovery_interval_s"] == [30.0, 31.0]
+    assert result["geometric_reference"]["independent_direct_route_restriction_supported"] is False
+    assert result["geometric_reference"]["independent_substantial_plan_deviation_supported"] is True
+    assert result["geometric_reference"]["independent_substantial_trajectory_deviation_supported"] is True
+    assert result["screen_consequence"]["composite_positive_clusters"] == 2
+    assert result["screen_consequence"]["successful_compensation_clusters"] == 1
+    assert result["screen_consequence"]["language_responses"] == 0
+    _assert_disposition_hashes("cmcv6-dev-004", result)

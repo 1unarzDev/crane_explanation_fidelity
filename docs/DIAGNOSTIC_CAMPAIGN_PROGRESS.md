@@ -42,6 +42,13 @@ alignment. Totals are three valid clusters, two independently composite-positive
 composite outputs, zero responses/Luna calls, and zero confirmatory N or alpha. Fixed run 4 is
 next; no adapter repair is permitted within this candidate.
 
+Fixed run 4/7 supplies the successful-compensation control. The 0.250 versus 0.000 m/s discrepancy
+over 18--30 s was followed by measured recovery to 0.249750 m/s and navigation success. Three
+distinct delivered plans and the trajectory show substantial route change, but the final rolling
+grid does not fully cover the requested route, so the physical geometric trigger is insufficient.
+Totals are four valid clusters, two composite-positive, one successful compensation, zero
+responses/Luna calls, and zero confirmatory N or alpha. Fixed run 5 is next.
+
 ## Coverage-complete v5 raw-baseline screen
 
 The frozen `raw-baseline-v5-language-screen-v1` is complete and rejected. Baseline R received the
