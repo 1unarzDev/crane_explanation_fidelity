@@ -1,5 +1,14 @@
 # Experiment Log
 
+## 2026-09-26 — focused first-look threshold reached: `cm-land-conf-068`
+
+- **STATUS:** valid primary persistent-discrepancy recording; one attempt, unexpected abort retained,
+  all admission checks passed, and the independent reference supports 0.260 versus 0.000 m/s over
+  17--27 s while withholding a unique physical cause.
+- **MILESTONE:** 25 physical primary references and 24 untouched semantic-eligible clusters after
+  the run-042 exclusion. No P/R response or Luna study label has yet been opened. The frozen
+  24-cluster semantic comparison is next.
+
 ## 2026-09-26 — focused valid physical run 30 / source order 67: `cm-land-conf-067`
 
 - **STATUS:** `VALID_FOCUSED_PHYSICAL_INDEPENDENT_PRIMARY_PERSISTENT_DISCREPANCY_UNEXPECTED_ABORT_RESPONSE_UNOPENED`;

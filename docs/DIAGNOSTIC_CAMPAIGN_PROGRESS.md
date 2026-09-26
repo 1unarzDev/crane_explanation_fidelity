@@ -88,7 +88,9 @@ primary semantic N, effect estimates, confidence sequences, significance, and re
 remain zero; program alpha consumption is 0.02 from prospective activation. These 24 supported
 physical references include run 042, whose prospective exposure amendment assigns it zero
 confirmatory semantic N. The untouched semantic-eligible count is therefore 23, and source-order
-`cm-land-conf-068` remains next before the registered first look.
+run 068 adds a connected-detour persistent discrepancy followed by a validly retained abort. There
+are now 25 supported physical references and 24 untouched semantic-eligible clusters after the run
+042 exclusion. The registered first-look threshold is reached; the frozen semantic comparison is next.
 
 The 2026-09-26 semantic-activation audit found that the existing v12 packet runner scored only the
 atomic mechanism unit plus material-error absence, whereas this focused protocol requires all

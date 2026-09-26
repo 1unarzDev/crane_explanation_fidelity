@@ -68,6 +68,7 @@ TWENTY_EIGHTH_ATTEMPT = ROOT / "manifests/data/cm-land-conf-064-disposition.json
 TWENTY_NINTH_ATTEMPT = ROOT / "manifests/data/cm-land-conf-065-disposition.json"
 THIRTIETH_ATTEMPT = ROOT / "manifests/data/cm-land-conf-066-disposition.json"
 THIRTY_FIRST_ATTEMPT = ROOT / "manifests/data/cm-land-conf-067-disposition.json"
+THIRTY_SECOND_ATTEMPT = ROOT / "manifests/data/cm-land-conf-068-disposition.json"
 
 
 def load(path: Path) -> dict:
@@ -738,3 +739,13 @@ def test_physical_reference_24_preserves_run_042_semantic_exclusion():
     assert run["focused_progress"]["semantic_confirmation_eligible_after_run_042_exclusion"] == 23
     assert run["focused_progress"]["first_semantic_look_threshold_reached"] is False
     assert run["focused_progress"]["next_fixed_run_id"] == "cm-land-conf-068"
+
+
+def test_first_semantic_look_threshold_counts_only_untouched_clusters():
+    run = load(THIRTY_SECOND_ATTEMPT)
+    assert run["method_visible_reference"]["primary_endpoint_eligible"] is True
+    assert run["focused_progress"]["primary_diagnosable_references"] == 25
+    assert run["focused_progress"]["semantic_confirmation_eligible_after_run_042_exclusion"] == 24
+    assert run["focused_progress"]["first_semantic_look_threshold_reached"] is True
+    assert run["semantic_boundary"]["P_responses"] == 0
+    assert run["semantic_boundary"]["R_responses"] == 0
