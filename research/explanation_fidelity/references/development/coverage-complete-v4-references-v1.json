@@ -1,0 +1,189 @@
+{
+  "schema": "crane-checked-composition-reference-inventory/v1",
+  "inventory_id": "coverage-complete-v4-references-v1",
+  "status": "FROZEN_BEFORE_ANY_RESPONSE_OR_JUDGMENT",
+  "purpose": "Atomic independently computed reference units for the fixed coverage-complete-v4 development screen. These references are not human gold and cannot support confirmation.",
+  "cases": [
+    {
+      "case_id": "ccv4-geometry-001",
+      "diagnosable": true,
+      "primary_endpoint_eligible": true,
+      "mechanism_unit_id": "mechanism-bounded-geometric-restriction",
+      "question_kind": "supported_geometric_mechanism",
+      "reference_sources": [
+        {"path": "data/evaluator_only/dev/mccv4-dev-001/geometric-independent-reference-v1.json", "sha256": "7b5d932c3fff24012d3af29c039561a22a2feb554cc9da5e49d6adee77862e2f"},
+        {"path": "data/evaluator_only/dev/mccv4-dev-001/plan-geometry-independent-reference-v1.json", "sha256": "1866159bcd31301cedae698331aefe3d23eb608b3b7f7d9114345f5f38ef2cfd"}
+      ],
+      "required_units": [
+        {"unit_id": "mechanism-bounded-geometric-restriction", "atomic_predicate": "retained_grid_restricted_route_near_12_425_m_with_connection", "text": "A retained navigation-model snapshot marked the requested direct route non-traversable near x=12.425 m while retaining a connection to the goal."},
+        {"unit_id": "route-change", "atomic_predicate": "direct_first_plan_changed_to_nondirect_plans", "text": "The first delivered plan was direct and later delivered plans were non-direct."},
+        {"unit_id": "plan-range", "atomic_predicate": "plan_signed_deviation_minus_1_383_to_plus_1_272_m", "text": "Delivered plans spanned -1.383 m to 1.272 m signed lateral deviation."},
+        {"unit_id": "trajectory-deviation", "atomic_predicate": "measured_maximum_lateral_deviation_1_325_m", "text": "Delivered odometry reached 1.325 m maximum lateral deviation."},
+        {"unit_id": "outcome", "atomic_predicate": "navigation_action_succeeded", "text": "The recorded navigation action succeeded."},
+        {"unit_id": "model-scope-limit", "atomic_predicate": "snapshot_not_global_physical_no_path", "text": "The incomplete retained grid does not establish global physical no-path."},
+        {"unit_id": "identity-limit", "atomic_predicate": "unique_obstacle_identity_unresolved", "text": "The retained evidence does not establish a unique physical obstacle identity."},
+        {"unit_id": "causation-limit", "atomic_predicate": "snapshot_consumption_and_plan_causation_unproven", "text": "Delivered grid and plan evidence does not prove exact Nav2 consumption or that the snapshot caused the plan change."}
+      ],
+      "prohibited_claims": [
+        "The retained snapshot proves global physical no-path.",
+        "A named physical obstacle caused the route change.",
+        "Nav2 was proven to consume the retained snapshot or every delivered plan.",
+        "The costmap snapshot was proven to cause the plan change."
+      ]
+    },
+    {
+      "case_id": "ccv4-geometry-masked-001m",
+      "diagnosable": false,
+      "primary_endpoint_eligible": false,
+      "mechanism_unit_id": null,
+      "question_kind": "missing_decisive_geometry_guardrail",
+      "reference_sources": [
+        {"path": "data/evaluator_only/dev/mccv4-dev-001-mask-no-costmap-cells/geometric-independent-reference-v1.json", "sha256": "27fc0609d61276ead5840643136d254803adc0f5232989846458c902a6108a0b"},
+        {"path": "data/evaluator_only/dev/mccv4-dev-001-mask-no-costmap-cells/plan-geometry-independent-reference-v1.json", "sha256": "9715805b826eeee87026c1730aaa22643ff1449f991270d73fc31e9853e461ec"}
+      ],
+      "required_units": [
+        {"unit_id": "route-change", "atomic_predicate": "delivered_route_change_still_supported", "text": "The delivered plans changed from a direct first plan to later non-direct plans."},
+        {"unit_id": "plan-range", "atomic_predicate": "plan_signed_deviation_minus_1_383_to_plus_1_272_m", "text": "Delivered plans spanned -1.383 m to 1.272 m signed lateral deviation."},
+        {"unit_id": "trajectory-deviation", "atomic_predicate": "measured_maximum_lateral_deviation_1_325_m", "text": "Delivered odometry reached 1.325 m maximum lateral deviation."},
+        {"unit_id": "outcome", "atomic_predicate": "navigation_action_succeeded", "text": "The recorded navigation action succeeded."},
+        {"unit_id": "missing-discriminator", "atomic_predicate": "costmap_cells_missing_prevents_route_classification", "text": "With costmap cell values withheld, direct-route restriction and retained-grid connectivity cannot be classified."},
+        {"unit_id": "trigger-limit", "atomic_predicate": "physical_trigger_unresolved", "text": "The retained evidence does not establish the physical trigger of the route change."},
+        {"unit_id": "causation-limit", "atomic_predicate": "delivered_plans_do_not_prove_consumption_or_causation", "text": "Delivered plans do not prove controller consumption or costmap-to-plan causation."}
+      ],
+      "prohibited_claims": [
+        "A blocked direct-route cell is present in the masked evidence.",
+        "The paired unmasked costmap result is available in this packet.",
+        "A named obstacle caused the route change.",
+        "The delivered plans were proven consumed by the controller."
+      ]
+    },
+    {
+      "case_id": "ccv4-geometry-002",
+      "diagnosable": true,
+      "primary_endpoint_eligible": true,
+      "mechanism_unit_id": "mechanism-bounded-geometric-restriction",
+      "question_kind": "supported_geometric_mechanism_replication",
+      "reference_sources": [
+        {"path": "data/evaluator_only/dev/mccv4-dev-002/geometric-independent-reference-v1.json", "sha256": "159024e78ed18bd783bbe1639b154e3f94f891f8b4a3a1b21aeaff22d115eb37"},
+        {"path": "data/evaluator_only/dev/mccv4-dev-002/plan-geometry-independent-reference-v1.json", "sha256": "59e801a85c40329e878d29ae82d37718d1d3c1d81dda3e0bbd5202213d9a027a"}
+      ],
+      "required_units": [
+        {"unit_id": "mechanism-bounded-geometric-restriction", "atomic_predicate": "retained_grid_restricted_route_near_11_525_m_with_connection", "text": "A retained navigation-model snapshot marked the requested direct route non-traversable near x=11.525 m while retaining a connection to the goal."},
+        {"unit_id": "route-change", "atomic_predicate": "direct_first_plan_changed_to_nondirect_plans", "text": "The first delivered plan was direct and later delivered plans were non-direct."},
+        {"unit_id": "plan-range", "atomic_predicate": "plan_signed_deviation_minus_1_130_to_plus_1_054_m", "text": "Delivered plans spanned -1.130 m to 1.054 m signed lateral deviation."},
+        {"unit_id": "trajectory-deviation", "atomic_predicate": "measured_maximum_lateral_deviation_1_105_m", "text": "Delivered odometry reached 1.105 m maximum lateral deviation."},
+        {"unit_id": "outcome", "atomic_predicate": "navigation_action_succeeded", "text": "The recorded navigation action succeeded."},
+        {"unit_id": "model-scope-limit", "atomic_predicate": "snapshot_not_global_physical_no_path", "text": "The incomplete retained grid does not establish global physical no-path."},
+        {"unit_id": "identity-limit", "atomic_predicate": "unique_obstacle_identity_unresolved", "text": "The retained evidence does not establish a unique physical obstacle identity."},
+        {"unit_id": "causation-limit", "atomic_predicate": "snapshot_consumption_and_plan_causation_unproven", "text": "Delivered grid and plan evidence does not prove exact Nav2 consumption or that the snapshot caused the plan change."}
+      ],
+      "prohibited_claims": [
+        "The retained snapshot proves global physical no-path.",
+        "A named physical obstacle caused the route change.",
+        "Nav2 was proven to consume the retained snapshot or every delivered plan.",
+        "The costmap snapshot was proven to cause the plan change."
+      ]
+    },
+    {
+      "case_id": "ccv4-geometry-003",
+      "diagnosable": true,
+      "primary_endpoint_eligible": true,
+      "mechanism_unit_id": "mechanism-bounded-geometric-restriction",
+      "question_kind": "visible_obstacle_consumption_guardrail",
+      "reference_sources": [
+        {"path": "data/evaluator_only/dev/mccv4-dev-003/geometric-independent-reference-v1.json", "sha256": "495634588eedbdf3333de3f5ed578b375c31fd74b0cc08adc066997fb5e6bac7"},
+        {"path": "data/evaluator_only/dev/mccv4-dev-003/plan-geometry-independent-reference-v1.json", "sha256": "5e5d6e1976d60a8b79abc72abde4c8419d42a3aa0145f6fddf713baa1a254e18"}
+      ],
+      "required_units": [
+        {"unit_id": "mechanism-bounded-geometric-restriction", "atomic_predicate": "retained_grid_restricted_route_near_11_525_m_with_connection", "text": "A retained navigation-model snapshot marked the requested direct route non-traversable near x=11.525 m while retaining a connection to the goal."},
+        {"unit_id": "route-change", "atomic_predicate": "direct_first_plan_changed_to_nondirect_plans", "text": "The first delivered plan was direct and later delivered plans were non-direct."},
+        {"unit_id": "plan-range", "atomic_predicate": "plan_signed_deviation_minus_1_303_to_plus_1_523_m", "text": "Delivered plans spanned -1.303 m to 1.523 m signed lateral deviation."},
+        {"unit_id": "trajectory-deviation", "atomic_predicate": "measured_maximum_lateral_deviation_1_558_m", "text": "Delivered odometry reached 1.558 m maximum lateral deviation."},
+        {"unit_id": "outcome", "atomic_predicate": "navigation_action_succeeded", "text": "The recorded navigation action succeeded."},
+        {"unit_id": "model-scope-limit", "atomic_predicate": "snapshot_not_global_physical_no_path", "text": "The incomplete retained grid does not establish global physical no-path."},
+        {"unit_id": "identity-limit", "atomic_predicate": "unique_obstacle_identity_unresolved", "text": "The retained evidence does not establish a unique physical obstacle identity."},
+        {"unit_id": "causation-limit", "atomic_predicate": "snapshot_consumption_and_plan_causation_unproven", "text": "Delivered grid and plan evidence does not prove exact Nav2 consumption or that the snapshot caused the plan change."}
+      ],
+      "prohibited_claims": [
+        "A visible or named obstacle was proven to cause the route change.",
+        "Nav2 was proven to consume the retained observation or every delivered plan.",
+        "The incomplete snapshot proves global physical no-path.",
+        "Visual presence establishes decision causation."
+      ]
+    },
+    {
+      "case_id": "ccv4-persistent-004",
+      "diagnosable": true,
+      "primary_endpoint_eligible": true,
+      "mechanism_unit_id": "mechanism-command-motion-discrepancy",
+      "question_kind": "supported_execution_mechanism",
+      "reference_sources": [
+        {"path": "data/evaluator_only/dev/coverage-complete-v4-references-v1/mccv4-dev-004/command-motion-annotation-reference-v3.json", "sha256": "4abc3644a22829c1040422562910a443f512d1f78f0381b1d283b975f82822ea"}
+      ],
+      "required_units": [
+        {"unit_id": "mechanism-command-motion-discrepancy", "atomic_predicate": "sustained_command_motion_discrepancy_supported", "text": "A sustained delivered-command/measured-motion discrepancy is supported."},
+        {"unit_id": "healthy-comparator", "atomic_predicate": "healthy_measured_speed_0_2597_mps_during_0_5_s", "text": "The healthy comparator measured 0.2597 m/s during 0.0 to 5.0 s."},
+        {"unit_id": "discrepancy-comparison", "atomic_predicate": "command_0_260_motion_0_000_during_11_21_s", "text": "During 11.0 to 21.0 s, median delivered command was 0.260 m/s and measured speed was 0.000 m/s."},
+        {"unit_id": "outcome", "atomic_predicate": "action_aborted", "text": "The recorded navigation action aborted."},
+        {"unit_id": "execution", "atomic_predicate": "three_attempts_two_failures_two_waits", "text": "The sequence contains 3 FollowPath attempts, 2 failures, and 2 source-qualified Wait invocations."},
+        {"unit_id": "provenance-limit", "atomic_predicate": "command_and_odometry_delivery_not_acceptance_or_consumption", "text": "Delivered command does not prove actuator acceptance, and delivered odometry does not prove Nav2 consumption."},
+        {"unit_id": "cause-limit", "atomic_predicate": "unique_physical_cause_unresolved", "text": "The evidence does not uniquely identify obstruction, slip, mobility constraint, actuator rejection, or another execution-layer cause."},
+        {"unit_id": "next-check", "atomic_predicate": "next_check_actuation_contact_clearance_wheel_motion", "text": "The next discriminating check is accepted-actuation feedback together with contact, clearance, and wheel-motion evidence."}
+      ],
+      "prohibited_claims": [
+        "The delivered command was accepted or applied by an actuator.",
+        "Nav2 consumed the delivered odometry.",
+        "Motor failure, slip, collision, or obstruction was the unique cause.",
+        "A Wait invocation caused the discrepancy or abort."
+      ]
+    },
+    {
+      "case_id": "ccv4-missing-odometry-004m",
+      "diagnosable": false,
+      "primary_endpoint_eligible": false,
+      "mechanism_unit_id": null,
+      "question_kind": "missing_decisive_evidence_guardrail",
+      "reference_sources": [
+        {"path": "data/evaluator_only/dev/coverage-complete-v4-references-v1/mccv4-dev-004-mask-no-odometry/command-motion-annotation-reference-v2.json", "sha256": "085079042d6439d68fed1d3b63bfed3b827379a06952a5ab993fb3c46f1edd8a"}
+      ],
+      "required_units": [
+        {"unit_id": "missing-discriminator", "atomic_predicate": "odometry_missing_prevents_time_aligned_comparison", "text": "Missing delivered odometry prevents a time-aligned command-to-motion comparison."},
+        {"unit_id": "retained-streams", "atomic_predicate": "414_commands_zero_odometry", "text": "The retained evidence contains 414 delivered command samples and zero odometry samples."},
+        {"unit_id": "execution", "atomic_predicate": "aborted_three_attempts_two_failures_two_waits", "text": "The action aborted after 3 FollowPath attempts, 2 failures, and 2 source-qualified Wait invocations."},
+        {"unit_id": "cause-limit", "atomic_predicate": "execution_sequence_not_mechanism_or_unique_cause", "text": "The execution sequence alone does not establish a command-to-motion discrepancy or unique physical cause."},
+        {"unit_id": "next-check", "atomic_predicate": "next_check_synchronized_measured_motion", "text": "The next discriminating check is synchronized measured-motion evidence."}
+      ],
+      "prohibited_claims": [
+        "A command-to-motion discrepancy occurred in the masked evidence.",
+        "The paired unmasked diagnosis is available in this packet.",
+        "Motor failure, slip, collision, or obstruction caused the abort."
+      ]
+    },
+    {
+      "case_id": "ccv4-compensation-005",
+      "diagnosable": true,
+      "primary_endpoint_eligible": true,
+      "mechanism_unit_id": "mechanism-measured-response-recovery",
+      "question_kind": "false_premise_and_successful_compensation",
+      "reference_sources": [
+        {"path": "data/evaluator_only/dev/coverage-complete-v4-references-v1/mccv4-dev-005/command-motion-annotation-reference-v3.json", "sha256": "6bf7cf593f8af06677345f2ab8a15ea24893e6417048bbc3edc1ea88b5cf2ceb"}
+      ],
+      "required_units": [
+        {"unit_id": "mechanism-measured-response-recovery", "atomic_predicate": "response_recovered_after_supported_discrepancy", "text": "Measured response recovered after a supported command-to-motion discrepancy."},
+        {"unit_id": "healthy-comparator", "atomic_predicate": "healthy_measured_speed_0_2597_mps_during_0_5_s", "text": "The healthy comparator measured 0.2597 m/s during 0.0 to 5.0 s."},
+        {"unit_id": "discrepancy-comparison", "atomic_predicate": "command_0_260_motion_0_000_during_10_20_s", "text": "During 10.0 to 20.0 s, median delivered command was 0.260 m/s and measured speed was 0.000 m/s."},
+        {"unit_id": "recovered-response", "atomic_predicate": "measured_speed_0_2597_during_22_23_s", "text": "Measured speed recovered to 0.2597 m/s during 22.0 to 23.0 s."},
+        {"unit_id": "outcome", "atomic_predicate": "action_succeeded_false_failure_premise", "text": "The recorded navigation action succeeded, so the premise that the robot failed to reach the goal is false."},
+        {"unit_id": "execution", "atomic_predicate": "two_attempts_one_failure_one_wait", "text": "The sequence contains 2 FollowPath attempts, 1 failure, and 1 source-qualified Wait invocation."},
+        {"unit_id": "causation-limit", "atomic_predicate": "wait_not_proven_to_cause_recovery", "text": "The recorded ordering does not establish that the Wait invocation caused measured-response recovery."},
+        {"unit_id": "cause-limit", "atomic_predicate": "unique_physical_cause_unresolved", "text": "The evidence does not uniquely identify the physical cause of the discrepancy."}
+      ],
+      "prohibited_claims": [
+        "The action failed to reach the goal.",
+        "A visible obstacle caused the discrepancy.",
+        "The Wait invocation caused measured-response recovery.",
+        "The discrepancy uniquely establishes motor failure, slip, collision, or obstruction."
+      ]
+    }
+  ]
+}
