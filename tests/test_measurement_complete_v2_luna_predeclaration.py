@@ -10,6 +10,11 @@ MANIFEST = (
     ROOT
     / "manifests/annotation/luna-measurement-complete-v2-language-screen-v1-predeclaration.json"
 )
+AMENDMENT = (
+    ROOT
+    / "manifests/annotation/"
+    "luna-measurement-complete-v2-language-screen-v1-predeclaration-amendment-1.json"
+)
 
 
 def load(path: Path) -> dict:
@@ -113,3 +118,27 @@ def test_only_four_atomic_mechanism_cases_enter_primary_endpoint() -> None:
     assert manifest["prior_exposure"]["candidate_p_responses_generated"] == 0
     assert manifest["prior_exposure"]["baseline_r_responses_generated"] == 0
     assert manifest["prior_exposure"]["luna_study_judgments_generated"] == 0
+
+
+def test_prejudgment_amendment_changes_only_question_namespace_binding() -> None:
+    manifest = load(MANIFEST)
+    amendment = load(AMENDMENT)
+    correction = amendment["correction"]
+    assert amendment["status"] == "FROZEN_AFTER_RESPONSES_BEFORE_ANY_LUNA_STUDY_CALL"
+    assert amendment["parent_predeclaration_sha256"] == digest(MANIFEST)
+    assert correction["wrapper_sha256"] == digest(ROOT / correction["wrapper"])
+    assert correction["semantic_content_changed"] is False
+    assert correction["required_units_changed"] is False
+    assert correction["allowed_evidence_changed"] is False
+    assert correction["endpoint_eligibility_changed"] is False
+    assert correction["responses_regenerated"] is False
+    assert amendment["exposure_at_amendment"] == {
+        "candidate_p_responses_retained": 9,
+        "baseline_r_responses_retained": 9,
+        "usable_response_resampling": 0,
+        "annotation_packets_built": 0,
+        "luna_study_judgments_generated": 0,
+        "comparative_semantic_labels_inspected": False,
+        "confirmatory_alpha_consumed": 0.0,
+    }
+    assert manifest["statistical_boundary"]["independent_clusters"] == 6
