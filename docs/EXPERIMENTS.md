@@ -28,6 +28,18 @@
   and requires its hashes to be frozen before run 001's sole physical attempt. No configuration,
   intervention, endpoint, or gate changed.
 
+### Player rebuild 1 — exact source/catalog audit passed before physical launch
+
+- **STATUS:** `BUILT / EXACT_AUDIT_PASS / PINNED_BEFORE_RUN`. Unity 6000.5.10f1 rebuilt the
+  disposable Linux worker from clean CRANE commit `05a1161e`. The exact v6 catalog, warehouse
+  scene/source, runtime resources, build manifest, and managed assemblies pass the fail-closed
+  audit.
+- **PINNED HASHES:** build manifest `90f2a649...fed15`; managed assemblies `e044af4f...7b261`.
+  Provenance and audit JSON are governed; the large disposable player is not retained in DVC.
+- **SIDE EFFECT:** Unity batch import rewrote three tracked settings files. Only that known
+  build-generated diff was mechanically reversed, returning the submodule to the pinned clean
+  commit before provenance was recorded. Run 001's physical attempt remains unspent.
+
 ## 2026-09-26 — evidence-complete raw-baseline v5 language screen rejects candidate v5
 
 - **STATUS:** `DEVELOPMENT_ONLY_CANDIDATE_REJECTED_FROZEN_GATE`.

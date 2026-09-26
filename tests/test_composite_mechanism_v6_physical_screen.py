@@ -8,6 +8,7 @@ DECLARATION = ROOT / "research/explanation_fidelity/experiment_configs/developme
 CATALOG = ROOT / "packages/crane_ml/Assets/Resources/ReferenceEnvironments/crane_land_proving_ground_v6.json"
 SCHEDULE = ROOT / "research/explanation_fidelity/experiment_configs/prospective/land-command-motion-physical-schedule-v1.json"
 AMENDMENT_1 = ROOT / "research/explanation_fidelity/experiment_configs/development/composite-mechanism-v6-physical-screen-v1-amendment-1.json"
+AMENDMENT_2 = ROOT / "research/explanation_fidelity/experiment_configs/development/composite-mechanism-v6-physical-screen-v1-amendment-2.json"
 
 
 def _load(path: Path):
@@ -77,3 +78,13 @@ def test_failed_preflight_does_not_count_as_a_physical_attempt():
     assert amendment["preflight_result"]["robot_episode_created"] is False
     assert amendment["preflight_result"]["model_or_judge_calls"] == 0
     assert amendment["prospective_resolution"]["source_commit"] == "05a1161e4b5a3ad6bbefe1c635507e7061ea8d58"
+
+
+def test_rebuilt_player_is_pinned_before_first_physical_launch():
+    amendment = _load(AMENDMENT_2)
+    assert amendment["status"] == "FROZEN_BEFORE_FIRST_PHYSICAL_LAUNCH"
+    assert amendment["build"]["source_dirty"] is False
+    assert amendment["build"]["audit_accepted"] is True
+    assert amendment["build"]["audit_failed_checks"] == []
+    assert amendment["build"]["catalog_sha256"] == _sha256(CATALOG)
+    assert amendment["build"]["large_player_retained_in_dvc"] is False

@@ -1,0 +1,36 @@
+{
+  "schema": "crane-composite-mechanism-v6-physical-screen-amendment/v1",
+  "screen_id": "composite-mechanism-v6-physical-screen-v1",
+  "amendment_id": "pin-rebuilt-player-1",
+  "recorded_date": "2026-09-26",
+  "status": "FROZEN_BEFORE_FIRST_PHYSICAL_LAUNCH",
+  "depends_on": "composite-mechanism-v6-physical-screen-v1-amendment-1.json",
+  "build": {
+    "source_commit": "05a1161e4b5a3ad6bbefe1c635507e7061ea8d58",
+    "source_dirty": false,
+    "unity_editor": "6000.5.10f1",
+    "target": "StandaloneLinux64",
+    "execute_method": "CranePerformanceBuild.BuildLinuxWorker",
+    "build_manifest_sha256": "90f2a649378e9433ce09ee5998bd40881c2cdc7ccf58c65337ecf19aff2fed15",
+    "managed_assemblies_sha256": "e044af4f9e1f2f5834116f3d745d8cc23ccfe91f96425fc225862ef35f77b261",
+    "catalog_sha256": "c9cee3922fa1cc17f8237fde12d0a50ee6496649142f3cb14a4c6491fd72a0eb",
+    "provenance_sha256": "be87e300a386ec1ed777cee54148f9ba5790cc42209ee8e55a1c035985839fb8",
+    "audit_sha256": "26d280c6500b113821c45f236f418271b08cdc3f06ae33304126b2a6babedc9d",
+    "audit_accepted": true,
+    "audit_failed_checks": [],
+    "governed_directory": "data/evaluator_only/dev/cmcv6-dev-player-build-1",
+    "evaluator_only_manifest": "manifests/data/cmcv6-dev-player-build-1.evaluator-only.json",
+    "evaluator_only_manifest_sha256": "14541b2d5695baeec6fd56005b616ed1f27666d0b99f3577ee2f3ec2108c8943",
+    "dvc_remote_status": "PUSHED_BEFORE_GIT_POINTER",
+    "large_player_retained_in_dvc": false
+  },
+  "build_side_effect_disposition": "Unity batch import rewrote three tracked settings files. Their exact post-build diff was mechanically reversed before provenance was recorded; crane_ml is clean at the pinned commit. The disposable player bytes were not altered by that restoration.",
+  "authorization": "Run cmcv6-dev-001 may now receive its sole physical attempt using exactly these two expected hashes. Any subsequent source or player mismatch fails closed and is retained without selecting a different configuration.",
+  "unchanged": [
+    "all fixed scenarios, order, interventions, and masks",
+    "one physical attempt per configuration and no replacement",
+    "candidate, baseline, endpoint, and promotion gates",
+    "frozen confirmation and replication schedules",
+    "confirmatory semantic N=0 and alpha=0"
+  ]
+}
