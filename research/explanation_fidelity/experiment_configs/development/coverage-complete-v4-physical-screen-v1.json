@@ -1,0 +1,157 @@
+{
+  "schema": "crane-coverage-complete-v4-physical-screen/v1",
+  "screen_id": "coverage-complete-v4-physical-screen-v1",
+  "declared_utc": "2026-09-26T06:36:02Z",
+  "status": "FROZEN_BEFORE_ANY_EPISODE_OR_MODEL_CALL",
+  "purpose": "Collect one fixed development-only successor screen after measurement-complete v2 failed its exact useful-coverage gate. This screen may reject or motivate freezing a successor; it cannot establish confirmation, statistical significance, or replication.",
+  "scientific_boundary": {
+    "confirmatory": false,
+    "confirmatory_semantic_n": 0,
+    "confirmatory_alpha_consumed": 0.0,
+    "independent_unit": "scenario configuration",
+    "independent_clusters_planned": 5,
+    "question_variants_add_clusters": 0,
+    "evidence_masks_add_clusters": 0,
+    "model_generations_add_clusters": 0,
+    "luna_passes_add_clusters": 0,
+    "unexpected_outcomes_retained": true,
+    "invalid_recordings_retained": true,
+    "replacement_runs": false,
+    "confirmation_or_replication_reserves_consumed": false
+  },
+  "pinned_software": {
+    "umbrella_commit_before_declaration": "7d79aeab7241678b638434e954f94414090fd7e1",
+    "crane_commit": "05a1161e4b5a3ad6bbefe1c635507e7061ea8d58",
+    "astro_dock_commit": "36202373ae186a8fd247a20b7b477312a744de99",
+    "diagnostic_core_commit": "bea12562324fa2caf9290698cfadddcb22bd8a8b",
+    "capture_launcher_sha256": "badf482866d3724686499109451f4506b1be09e3be6afeaf071ddc5ad98cb021",
+    "command_motion_exporter_sha256": "79a6b32004dd914434cd6398ec010e576beb7fd925ed0393eade1f1b990859a8",
+    "geometric_exporter_sha256": "626b070c08e2bd09c55eeceea5d4ae39da6c35d82325c7b2e40533219dd7fe12",
+    "command_motion_adapter_v2_sha256": "551927284fbc3ef220d661870369c203b1258efe73d9839a8d1a395eae10b4c0",
+    "geometric_adapter_v4_sha256": "b00029dbad3e0964c974167860388eda84d4408ac2720208e5838ba087206e76",
+    "composer_v2_sha256": "c7c2862b9966971e94a7269141a44a0b7516a7ae1d5e538a35f09e6c1a36fd1e",
+    "renderer_v2_sha256": "c485b6d75abe2eefd5495120b369ffc3770b7694dc1391c0e526d94c5e034798",
+    "registry_sha256": "74d6ad56672713356ae596a44ffdfd2281e7c97db2f58f86c7f4032a4142e938",
+    "geometric_masker_sha256": "1f549cb88bf72225d7cf6f3f7ff8de94eb873614bc00013a20089cee2b345f92",
+    "command_motion_masker_v2_sha256": "57a651cc82f8faf68819dbfb0fd3487f782b4d0a9099e556be9633537e7f6e3d",
+    "catalog_sha256": "dd693444df842a97570bbf65e1cd07737bead48314acbf54d5a1c4c0b8f093d6",
+    "nav2_config_sha256": "e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+    "bt_policy_sha256": "14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+    "unity_version": "6000.5.10f1",
+    "player_sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+    "unity_build_manifest_sha256": "0f608436faa4ccffd5bc5e27c475e83430a8dbe0f9d889ffab9bc38b3ced45ef",
+    "managed_assemblies_sha256": "e044af4f9e1f2f5834116f3d745d8cc23ccfe91f96425fc225862ef35f77b261",
+    "runtime_resources_sha256": "e82771fcc7a865cf8d2ff274d7db796bf93c682be9da86a4ee64f9565daba7f1",
+    "source_commit_proven": true,
+    "exact_catalog_embedded": true
+  },
+  "physical_runs_in_fixed_order": [
+    {
+      "order": 1,
+      "run_id": "mccv4-dev-001",
+      "cluster_id": "mccv4-land-001",
+      "layout_id": "diagnostic-candidate-v2-development-connected-detour-010",
+      "seed": 81009,
+      "family": "bounded-geometric-restriction-a",
+      "mobility_hold_after_s": -1.0,
+      "mobility_release_after_s": -1.0,
+      "ros_domain_id": 41,
+      "ros_tcp_port": 13211
+    },
+    {
+      "order": 2,
+      "run_id": "mccv4-dev-002",
+      "cluster_id": "mccv4-land-002",
+      "layout_id": "diagnostic-candidate-v2-development-connected-detour-011",
+      "seed": 81010,
+      "family": "bounded-geometric-restriction-b",
+      "mobility_hold_after_s": -1.0,
+      "mobility_release_after_s": -1.0,
+      "ros_domain_id": 42,
+      "ros_tcp_port": 13212
+    },
+    {
+      "order": 3,
+      "run_id": "mccv4-dev-003",
+      "cluster_id": "mccv4-land-003",
+      "layout_id": "diagnostic-candidate-v2-development-connected-detour-012",
+      "seed": 81011,
+      "family": "bounded-geometric-restriction-c",
+      "mobility_hold_after_s": -1.0,
+      "mobility_release_after_s": -1.0,
+      "ros_domain_id": 43,
+      "ros_tcp_port": 13213
+    },
+    {
+      "order": 4,
+      "run_id": "mccv4-dev-004",
+      "cluster_id": "mccv4-land-004",
+      "layout_id": "diagnostic-candidate-v2-development-nominal-clear-route-011",
+      "seed": 82010,
+      "family": "persistent-command-motion-discrepancy",
+      "mobility_hold_after_s": 18.0,
+      "mobility_release_after_s": -1.0,
+      "ros_domain_id": 44,
+      "ros_tcp_port": 13214
+    },
+    {
+      "order": 5,
+      "run_id": "mccv4-dev-005",
+      "cluster_id": "mccv4-land-005",
+      "layout_id": "diagnostic-candidate-v2-development-nominal-clear-route-012",
+      "seed": 82011,
+      "family": "successful-command-motion-compensation",
+      "mobility_hold_after_s": 18.0,
+      "mobility_release_after_s": 30.0,
+      "ros_domain_id": 45,
+      "ros_tcp_port": 13215
+    }
+  ],
+  "paired_evidence_masks": [
+    {
+      "source_run_id": "mccv4-dev-001",
+      "variant_id": "mccv4-dev-001-mask-no-costmap-cells",
+      "operation": "remove retained costmap cell payload while preserving declared metadata and hashes",
+      "independent_cluster_increment": 0
+    },
+    {
+      "source_run_id": "mccv4-dev-004",
+      "variant_id": "mccv4-dev-004-mask-no-odometry",
+      "operation": "remove delivered odometry samples while preserving the governed unmasked record",
+      "independent_cluster_increment": 0
+    }
+  ],
+  "target_capabilities": [
+    "bounded geometric restriction and route change without converting a retained grid into global physical no-path",
+    "persistent delivered-command versus measured-motion discrepancy with unresolved physical alternatives",
+    "successful measured-response recovery without asserting that recovery ordering proves causation",
+    "similar navigation symptoms separated by geometry versus execution measurements",
+    "irrelevant side clutter without a Nav2-consumption or obstacle-causation claim",
+    "qualification when decisive costmap or odometry evidence is masked",
+    "false-premise handling on a recorded successful outcome",
+    "complete communication of independently declared decisive measurements and limitations"
+  ],
+  "run_contract": {
+    "catalog": "v5",
+    "catalog_split_name_is_legacy": "candidate-v2-development",
+    "freshness_basis": "The prior measurement-complete v2 screen consumed connected-detour 007-009 and nominal-clear-route 008-010. Earlier candidate screens consumed connected-detour 001-006 and nominal-clear-route 001-007. The selected connected-detour 010-012 and nominal-clear-route 011-012 configurations have no prior governed episode allocation.",
+    "scene": "TurtleBot3 Warehouse Validation",
+    "goal_distance_m": 18.0,
+    "action_duration_s": 100,
+    "capture_duration_s": 110,
+    "prelaunch_player_audit_required": true,
+    "postrun_scenario_binding_required": true,
+    "recording_validity_independent_of_expected_outcome": true,
+    "no_layout_or_run_replacement": true,
+    "fixed_order": true
+  },
+  "method_screen_boundary": {
+    "response_generation_authorized_by_this_file": false,
+    "next_gate": "After all five physical attempts and both masks are retained, independently compute and govern references, freeze exact P/R treatment artifacts and information-parity packets, and only then authorize one response per condition.",
+    "baseline_R": "A strong repository-aware, tool-enabled agent with the same robot-visible primitive evidence, embedded independent computations, exact relevant source/configuration, retrieval and deterministic calculation tools, and a comparable or stronger model/resource budget; it receives no P certificate, checked plan, verifier verdict, or P answer.",
+    "candidate_P": "Coverage-complete checked composition using the command-motion v2 adapter and geometric v4 adapter, deterministic composition and rendering, and zero model calls.",
+    "judge": "The exact qualified Luna v12 release in two fresh isolated passes, only after a separately hash-frozen annotation predeclaration and packet freeze.",
+    "promotion_gate": "P must show a recurring supported-diagnostic-success advantage over R across independent clusters and both mechanism families, no material-error or causal-overclaim excess, no useful-coverage degradation, correct masked/ambiguous/false-premise handling, and complete method/judge evidence parity. The exact gates may not be relaxed after responses. This development screen cannot establish statistical significance."
+  },
+  "stopping": "Attempt each fixed physical configuration exactly once in order and stop after five attempts. Retain every outcome and failed attempt. Do not add favorable layouts, replacements, retries, questions, generations, or judge passes after inspecting results."
+}
