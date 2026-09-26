@@ -1,0 +1,36 @@
+{
+  "schema": "crane-focused-supported-diagnostic-coordinator-amendment/v1",
+  "amendment_id": "focused-supported-diagnostic-communication-v1-coordinator-amendment-3",
+  "parent_amendment": "focused-supported-diagnostic-communication-v1-coordinator-amendment-2",
+  "recorded_utc": "2026-09-26T16:00:00Z",
+  "status": "ACTIVE_BEFORE_ANY_CONFIRMATORY_SEMANTIC_RESPONSE",
+  "issue": "The frozen low-level response-pair and Luna packet runners do not themselves join transport metadata or represent two-pass disagreement in the binary monitor schema.",
+  "correction": {
+    "adapter": "analysis/focused_first_look_coordinator.py",
+    "scope": "deterministic transport decoration and two-pass sensitivity only",
+    "least_favourable_rule": "For every unresolved endpoint or component, assign P the adverse value and R the favourable value. Only this payload may establish Level A or B.",
+    "most_favourable_rule": "The inverse assignment is retained solely as a sensitivity bound.",
+    "stable_labels": "When both isolated Luna passes agree, retain that value unchanged.",
+    "missing_or_invalid_call": "Fail closed; the cluster cannot enter the monitor until the frozen retry/failure policy yields a usable judgment.",
+    "response_integrity": "Candidate and baseline final text are copied byte-for-byte from the frozen pair output."
+  },
+  "inspection_boundary": {
+    "supported_physical_references": 25,
+    "untouched_semantic_eligible_clusters": 24,
+    "P_confirmatory_responses_opened": 0,
+    "R_confirmatory_responses_opened": 0,
+    "Luna_confirmatory_calls": 0,
+    "comparative_outcomes_inspected": false
+  },
+  "unchanged": [
+    "candidate, baseline, evidence and tool access",
+    "questions, essential units and primary endpoint",
+    "scenario order, eligibility and weighting",
+    "Luna model, prompt, rubric and two-pass procedure",
+    "focused monitor, registered looks and alpha allocation"
+  ],
+  "frozen_artifacts": {
+    "coordinator": {"path": "analysis/focused_first_look_coordinator.py", "sha256": "a097cbcc1cbf79d732f10d4408bca777cdb8682c44e8af3f62b262fb9f9f9da9"},
+    "regression": {"path": "tests/test_focused_first_look_coordinator.py", "sha256": "921da66693acb4725d8bd4640fc76653c3a442d2209551fe5d33d9969814fc10"}
+  }
+}

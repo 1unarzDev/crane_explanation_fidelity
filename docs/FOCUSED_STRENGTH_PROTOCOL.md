@@ -118,6 +118,14 @@ deterministic rule remain unresolved and stay in sensitivity bounds. Results are
 not human judgments. A bounded packet-closure dry run must pass before activation; this is not
 permission to tune Luna or the endpoint on campaign answers.
 
+Coordinator amendment 3 was frozen before any P/R response or Luna study call. It adds only the
+deterministic transport join between the already frozen pair, packet, judge, and monitor contracts.
+Both Luna passes are retained. For an unresolved endpoint or component, the confirmatory payload
+uses the least-favourable assignment (P adverse, R favourable); the inverse is reported only as a
+sensitivity bound. Missing or invalid calls cannot enter the monitor, and P/R final text remains
+byte-for-byte unchanged. Candidate, baseline, evidence, questions, judge, schedule, monitor, and
+alpha are not amended.
+
 ## Inference, levels of conclusion, and stopping
 
 For each eligible cluster, let `X = success_P - success_R` in `{-1,0,1}`. Reuse the validated

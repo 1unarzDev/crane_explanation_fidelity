@@ -1,5 +1,14 @@
 # Experiment Log
 
+## 2026-09-26 — focused first-look coordinator frozen before semantic output
+
+- **STATUS:** amendment 3 freezes byte-preserving pair decoration and two-pass Luna disagreement
+  handling at P-adverse/R-favourable for confirmatory inference, with the inverse retained only as
+  a sensitivity bound.
+- **BOUNDARY:** 24 untouched eligible clusters exist; P/R responses and Luna study calls remain
+  zero. Candidate, baseline, evidence, judge, endpoint, monitor, schedule, and alpha are unchanged.
+- **QA:** 28 packet, judge-runner, monitor, and new coordinator tests pass.
+
 ## 2026-09-26 — focused first-look threshold reached: `cm-land-conf-068`
 
 - **STATUS:** valid primary persistent-discrepancy recording; one attempt, unexpected abort retained,
