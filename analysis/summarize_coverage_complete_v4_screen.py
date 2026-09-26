@@ -53,8 +53,14 @@ def _metric(rows: list[dict[str, Any]]) -> dict[str, Any]:
 
 def _verify_artifact_inventory(predeclaration: dict[str, Any]) -> None:
     frozen = predeclaration["frozen_artifacts"]
-    manifest_path = ROOT / frozen["results_references_packets_manifest"]
-    if digest(manifest_path) != frozen["results_references_packets_manifest_sha256"]:
+    manifest_field = (
+        "results_references_packets_manifest"
+        if "results_references_packets_manifest" in frozen
+        else "references_and_packets_manifest"
+    )
+    manifest_hash_field = f"{manifest_field}_sha256"
+    manifest_path = ROOT / frozen[manifest_field]
+    if digest(manifest_path) != frozen[manifest_hash_field]:
         raise ValueError("frozen result/reference/packet manifest hash mismatch")
     manifest = load(manifest_path)
     if len(manifest.get("artifacts", [])) != frozen["artifact_count"]:
@@ -78,14 +84,38 @@ def _verify_artifact_inventory(predeclaration: dict[str, Any]) -> None:
 
 def aggregate(predeclaration_path: Path, annotation_root: Path) -> dict[str, Any]:
     predeclaration = load(predeclaration_path)
-    if predeclaration.get("status") != "FROZEN_AFTER_RESPONSES_BEFORE_ANY_LUNA_STUDY_CALL":
+    if predeclaration.get("status") not in {
+        "FROZEN_AFTER_RESPONSES_BEFORE_ANY_LUNA_STUDY_CALL",
+        "FROZEN_BEFORE_ANY_REVISED_LUNA_CALL",
+    }:
         raise ValueError("study annotation predeclaration was not frozen before Luna calls")
     _verify_artifact_inventory(predeclaration)
+
+    revised_arm = predeclaration.get("arm_id")
+    key_root = (
+        ROOT / f"data/evaluator_only/dev/{revised_arm}/annotation_keys"
+        if revised_arm
+        else KEY_ROOT
+    )
+    reference_root = (
+        ROOT / f"model_outputs/dev/{revised_arm}/references"
+        if revised_arm
+        else REFERENCE_ROOT
+    )
 
     declared = {item["case_id"]: item for item in predeclaration["cases"]}
     if len(declared) != len(predeclaration["cases"]):
         raise ValueError("duplicate declared case IDs")
-    treatment = load(ROOT / predeclaration["treatment_contract"]["path"])
+    if "treatment_contract" in predeclaration:
+        treatment_path = ROOT / predeclaration["treatment_contract"]["path"]
+    else:
+        original = load(
+            ROOT
+            / "manifests/annotation/"
+            "luna-coverage-complete-v4-language-screen-v1-predeclaration.json"
+        )
+        treatment_path = ROOT / original["treatment_contract"]["path"]
+    treatment = load(treatment_path)
     treatment_cases = {item["case_id"]: item for item in treatment["cases"]}
     if set(declared) != set(treatment_cases):
         raise ValueError("treatment and annotation case inventories differ")
@@ -94,7 +124,7 @@ def aggregate(predeclaration_path: Path, annotation_root: Path) -> dict[str, Any
     failures: list[dict[str, Any]] = []
     summary_hashes: dict[str, str] = {}
     for case_id, case in declared.items():
-        key_path = KEY_ROOT / f"{case_id}.json"
+        key_path = key_root / f"{case_id}.json"
         key = load(key_path)
         conditions = {item["response_id"]: item["condition"] for item in key["entries"]}
         if set(conditions.values()) != {"P", "R"}:
@@ -228,7 +258,7 @@ def aggregate(predeclaration_path: Path, annotation_root: Path) -> dict[str, Any
             )
         )
         information_parity = information_parity and bool(parity["baseline_deterministic_tools"])
-        reference = load(REFERENCE_ROOT / f"{case_id}.json")
+        reference = load(reference_root / f"{case_id}.json")
         allowed = reference.get("allowed_evidence", {})
         primitive = allowed.get("primitive_diagnostic", {})
         # R was explicitly allowed the complete primitive plus relevant source/configuration.

@@ -1,0 +1,54 @@
+{
+  "schema": "crane-luna-diagnostic-development-reevaluation-result/v1",
+  "arm_id": "coverage-complete-v4-language-screen-v1-evidence-complete-v2",
+  "recorded_utc": "2026-09-26T08:36:55Z",
+  "status": "DEVELOPMENT_CANDIDATE_REJECTED_NO_RECURRING_ADVANTAGE",
+  "inferential_status": "DEVELOPMENT_ONLY_NOT_CONFIRMATORY_NOT_REPLICATION",
+  "predeclaration": "manifests/annotation/luna-coverage-complete-v4-evidence-complete-v2-predeclaration.json",
+  "execution": {
+    "planned_judgments": 28,
+    "valid_judgments": 28,
+    "call_failures": 0,
+    "transport_retries": 0,
+    "inconvenient_label_retries": 0,
+    "luna_passes": 2
+  },
+  "results": {
+    "P_supported_diagnostic_success": {"pass-1": "5/5", "pass-2": "5/5"},
+    "R_supported_diagnostic_success": {"pass-1": "5/5", "pass-2": "4/5"},
+    "P_minus_R": {"pass-1": 0.0, "pass-2": 0.2},
+    "consensus_independent_clusters_with_P_advantage": 0,
+    "P_material_errors": "1/14",
+    "R_material_errors": "1/14",
+    "P_causal_overclaims": "0/14",
+    "R_causal_overclaims": "0/14",
+    "P_required_unit_coverage": "104/104",
+    "R_required_unit_coverage": "99/104"
+  },
+  "failed_frozen_gates": [
+    "positive advantage does not recur across independent scenario clusters",
+    "positive advantage is not established in at least two mechanism families",
+    "P produced one material unsupported statement in a masked-evidence answer, so the masked-evidence qualification gate failed"
+  ],
+  "interpretation": "Once Luna received the evidence R was permitted to inspect, the apparent large P advantage disappeared. P retained perfect required-unit coverage, but the strongest R achieved essentially the same supported-diagnostic endpoint. This candidate is not authorized for confirmation. The result supports redesigning the comparison so R receives raw robot-visible evidence and tools but not CRANE's already-computed diagnostic result, as required by the declared baseline definition.",
+  "audited_summary": {
+    "path": "model_outputs/dev/coverage-complete-v4-language-screen-v1-evidence-complete-v2/development-summary.json",
+    "sha256": "9b1142c903b3b65a51cd72d4bd1f833cb6878f537bf2ddf75e28ab1455fbae7c",
+    "summarizer": "analysis/summarize_coverage_complete_v4_screen.py",
+    "summarizer_sha256": "636a3eb7839e60fe9acdb18751cc5f8c7c284c2bfc24fb89e8f946a9d4494260"
+  },
+  "governed_artifacts": {
+    "manifest": "manifests/model_outputs/coverage-complete-v4-evidence-complete-v2-result.json",
+    "manifest_sha256": "caee437df1d93e102adca247db82077258427bf8a0bed7a44201db47bbec609d",
+    "artifact_count": 50,
+    "storage": "model_outputs.dvc"
+  },
+  "statistical_boundary": {
+    "independent_scenario_clusters": 5,
+    "new_independent_clusters_added_by_reevaluation": 0,
+    "confirmatory_semantic_n": 0,
+    "confirmatory_alpha_consumed": 0.0,
+    "statistical_significance_claimed": false,
+    "replication_claimed": false
+  }
+}
