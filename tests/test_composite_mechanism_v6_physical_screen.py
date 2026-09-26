@@ -7,6 +7,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DECLARATION = ROOT / "research/explanation_fidelity/experiment_configs/development/composite-mechanism-v6-physical-screen-v1.json"
 CATALOG = ROOT / "packages/crane_ml/Assets/Resources/ReferenceEnvironments/crane_land_proving_ground_v6.json"
 SCHEDULE = ROOT / "research/explanation_fidelity/experiment_configs/prospective/land-command-motion-physical-schedule-v1.json"
+AMENDMENT_1 = ROOT / "research/explanation_fidelity/experiment_configs/development/composite-mechanism-v6-physical-screen-v1-amendment-1.json"
 
 
 def _load(path: Path):
@@ -66,3 +67,13 @@ def test_fixed_order_and_statistical_units_are_unique_and_fail_closed():
     assert declaration["scientific_boundary"]["one_attempt_per_configuration_no_replacement"] is True
     assert declaration["promotion_gate_to_a_later_prospective_protocol"]["required_consensus_p_win_clusters"] == 2
     assert all(mask["independent_cluster_increment"] == 0 for mask in declaration["planned_within_cluster_masks"])
+
+
+def test_failed_preflight_does_not_count_as_a_physical_attempt():
+    amendment = _load(AMENDMENT_1)
+    assert amendment["status"] == "RECORDED_BEFORE_REBUILD_OR_PHYSICAL_LAUNCH"
+    assert amendment["preflight_result"]["physical_attempt_increment"] == 0
+    assert amendment["preflight_result"]["independent_cluster_increment"] == 0
+    assert amendment["preflight_result"]["robot_episode_created"] is False
+    assert amendment["preflight_result"]["model_or_judge_calls"] == 0
+    assert amendment["prospective_resolution"]["source_commit"] == "05a1161e4b5a3ad6bbefe1c635507e7061ea8d58"

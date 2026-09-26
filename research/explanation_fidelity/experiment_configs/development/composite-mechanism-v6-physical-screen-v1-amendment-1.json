@@ -1,0 +1,52 @@
+{
+  "schema": "crane-composite-mechanism-v6-physical-screen-amendment/v1",
+  "screen_id": "composite-mechanism-v6-physical-screen-v1",
+  "amendment_id": "preflight-player-rebuild-1",
+  "recorded_date": "2026-09-26",
+  "status": "RECORDED_BEFORE_REBUILD_OR_PHYSICAL_LAUNCH",
+  "trigger": "The first run-001 invocation stopped at the fail-closed player-build audit before the capture container, Unity player, ROS endpoint, controller, or navigation action launched.",
+  "preflight_result": {
+    "physical_attempt_increment": 0,
+    "independent_cluster_increment": 0,
+    "robot_episode_created": false,
+    "robot_visible_evidence_created": false,
+    "model_or_judge_calls": 0,
+    "expected_build_manifest_sha256": "39d034b545e8c1504771ebd29491260e2105931752cee708da08ae211c531e4d",
+    "observed_build_manifest_sha256": "e0d9db5815da621c3eb6880bcb80019919eb87d8f353826c223967b70d77e1a7",
+    "expected_managed_assemblies_sha256": "e044af4f9e1f2f5834116f3d745d8cc23ccfe91f96425fc225862ef35f77b261",
+    "observed_managed_assemblies_sha256": "d50bc73638e27f544232cf48516eb6b4970a3405d313ce44293e664fe8a12dc1",
+    "failed_checks": [
+      "declared_build_manifest",
+      "declared_managed_assemblies",
+      "exact_catalog_embedded",
+      "warehouse_scene_hash_matches_checkout",
+      "warehouse_scene_size_matches_checkout",
+      "warehouse_source_hash_matches_checkout",
+      "warehouse_source_size_matches_checkout"
+    ],
+    "retained_evaluator_only_path": "data/evaluator_only/dev/cmcv6-dev-001-preflight-1",
+    "evaluator_only_manifest": "manifests/data/cmcv6-dev-001-preflight-1.evaluator-only.json",
+    "evaluator_only_manifest_sha256": "324bf25ab2251237d8140830c7509f49ecfeb6e3b1f564523d25577e1b64a1a5",
+    "dvc_remote_status": "PUSHED_BEFORE_GIT_POINTER",
+    "player_build_audit_sha256": "5c7ccb8765d4b753401945e14d1d10d1476c48594e7814e3779a7252ff09820a",
+    "build_provenance_sha256": "c8c81cb1a953a30d74245904d4effda3b56179c1325ac435e93de231ef07f908"
+  },
+  "prospective_resolution": {
+    "action": "Build one new disposable Linux worker from the unchanged clean crane_ml commit and validate its source/catalog/scene bytes before run 001's sole physical attempt.",
+    "source_commit": "05a1161e4b5a3ad6bbefe1c635507e7061ea8d58",
+    "catalog_sha256": "c9cee3922fa1cc17f8237fde12d0a50ee6496649142f3cb14a4c6491fd72a0eb",
+    "editor": "6000.5.10f1",
+    "build_target": "StandaloneLinux64",
+    "execute_method": "CranePerformanceBuild.BuildLinuxWorker",
+    "next_gate": "Record the new build-manifest and managed-assembly hashes in a second additive amendment before any physical launch. If the rebuilt player fails exact validation, retain that failure and stop rather than selecting a different source revision."
+  },
+  "unchanged": [
+    "fixed configurations and order",
+    "one physical attempt per configuration",
+    "no replacement of valid or unfavorable outcomes",
+    "candidate and baseline definitions",
+    "promotion gate",
+    "confirmation and replication schedules",
+    "confirmatory semantic N=0 and alpha=0"
+  ]
+}

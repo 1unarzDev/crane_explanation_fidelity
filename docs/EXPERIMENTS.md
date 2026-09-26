@@ -17,6 +17,17 @@
   qualification controls. Physical capture alone cannot satisfy this gate. Confirmation N and
   alpha remain zero.
 
+### Run 001 preflight 1 — retained player mismatch before physical launch
+
+- **STATUS:** `PREFLIGHT_REJECTED / ZERO PHYSICAL ATTEMPTS`. The fail-closed player audit found
+  that the disposable player currently on disk did not match the pinned build, embedded v6
+  catalog, warehouse scene, or clean source bytes. It stopped before capture, Unity, ROS, or the
+  navigation action launched; no robot-visible episode exists.
+- **DISPOSITION:** evaluator-only build provenance and the failed audit are retained. Additive
+  amendment 1 authorizes exactly one clean player rebuild from unchanged CRANE commit `05a1161e`
+  and requires its hashes to be frozen before run 001's sole physical attempt. No configuration,
+  intervention, endpoint, or gate changed.
+
 ## 2026-09-26 — evidence-complete raw-baseline v5 language screen rejects candidate v5
 
 - **STATUS:** `DEVELOPMENT_ONLY_CANDIDATE_REJECTED_FROZEN_GATE`.
