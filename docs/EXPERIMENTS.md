@@ -5996,3 +5996,23 @@
   not removal of inconvenient cases. V8--v10 failures remain retained. Even qualification cannot
   activate confirmation until a fair multi-family P/R candidate and campaign are separately
   frozen.
+
+## 2026-09-25 — Luna v11 result and final v12 qualification freeze
+
+- **V11 STATUS:** `RUN / RETAINED / FAILED`; 44/44 calls were valid. Both passes scored the actual
+  supported-diagnostic-success endpoint 12/12, with zero material false rejections and zero
+  unsupported false acceptances. Core-field accuracy was 149/152 and 150/152. Pass 1 unit accuracy
+  was 50/52; pass 2 was 47/52. Both failed because one protected limitation and several exact
+  `omitted` versus `incorrect` unit subtypes differed from the references. V11 remains unqualified.
+- **SCORING FINDING:** the paper endpoint asks whether a required mechanism/unit was communicated,
+  while material-error and causal labels separately capture false assertions. Treating `omitted`
+  and `incorrect` as different failures is useful for error analysis but unnecessary for unit
+  coverage. V12 therefore retains the four-way raw labels and prospectively scores binary
+  `covered` versus `not covered`.
+- **V12 STATUS:** `FROZEN / FINAL_QUALIFICATION_ATTEMPT / NOT_YET_RUN`; 16 fresh accuracy cases,
+  including eight diagnosable endpoint cases, plus two invariance cases. Gates remain 0.95 for
+  primary endpoint, binary unit coverage, and core fields; material false acceptance/rejection,
+  protected boundaries, two isolated passes, and zero call failures remain mandatory.
+- **STOP RULE:** retain either outcome. Do not continue iterating judge suites after v12; a failure
+  restricts Luna-supported claims and redirects effort to deterministic measurements and paper
+  limitations.

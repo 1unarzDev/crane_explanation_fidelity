@@ -1,0 +1,21 @@
+{
+  "schema":"crane-luna-judge-freeze/v12",
+  "freeze_id":"luna-model-judge-v12-binary-unit-final",
+  "declared_utc":"2026-09-26T01:32:00Z",
+  "status":"FROZEN_BEFORE_ANY_V12_QUALIFICATION_CALL",
+  "suite_sha256":"86c67adf752ca93871ee8637195a6cc1270b84fe7f33c5bb29145db6cebfd32c",
+  "prompt_sha256":"f701b91d8c46637b203d56d1ded3fce7c9f5ebbda077b02bc4d01627142d0da6",
+  "output_schema_sha256":"93989e303fdb12e94ae5fe79adad16e46d9587006b7ba6de5c4624096f1b1c3f",
+  "caller_source_sha256":"e185329a711b240ca790698c7a89033f6ba7cb85b69ccddc4f35a10c0419a379",
+  "runner_source_sha256":"ca903fe5735df2070cfaa9657f62ed4278e8780c243c0789a62e7707ebc08dd3",
+  "suite_builder_sha256":"df78a7f473a021ede98697c00308a3bc268c27c4a397568e0833ed1ed540c3a0",
+  "model":{"requested_id":"gpt-6-luna","substitution_allowed":false,"reasoning_effort":"high","provider":"codex-lb","temperature":null,"seed":null},
+  "suite":{"path":"research/explanation_fidelity/qualification/luna-model-judge-v12-cases.json","sha256":"86c67adf752ca93871ee8637195a6cc1270b84fe7f33c5bb29145db6cebfd32c","accuracy_cases":16,"diagnosable_endpoint_cases":8,"auxiliary_cases":2,"model_executions_at_freeze":0,"freshness":"New identifiers, quantities, wording, and answers; no v12 case was exposed before freeze."},
+  "unit_scoring":"covered versus not-covered; incorrect, omitted, and unresolved are distinct retained raw labels but share not-covered status for coverage accuracy",
+  "passes":["pass-1","pass-2"],
+  "thresholds":{"minimum_primary_endpoint_accuracy":0.95,"minimum_unit_coverage_accuracy":0.95,"minimum_core_field_accuracy":0.95,"maximum_false_rejection_rate":0.05,"maximum_false_acceptance_rate":0.05,"protected_failures_allowed":0,"call_failures_allowed":0},
+  "retry_policy":{"maximum_transport_retries":1,"usable_judgment_retry_allowed":false,"inconvenient_label_retry_allowed":false},
+  "hard_stop":"This is the final judge-qualification attempt before redirecting effort. Run two passes once and retain either outcome.",
+  "study_scoring_allowed":false,
+  "activation_condition":"Both passes qualify; later study scoring still requires a separately frozen P/R campaign."
+}

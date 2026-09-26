@@ -1,0 +1,1165 @@
+{
+  "cases": [
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "From 11--20 s, delivered-command median was 0.36 m/s.",
+          "id": "v12-a1"
+        },
+        {
+          "fact": "From 11--20 s, measured-speed median was 0.01 m/s.",
+          "id": "v12-a2"
+        },
+        {
+          "fact": "Matched healthy measured-speed median was 0.34 m/s.",
+          "id": "v12-a3"
+        },
+        {
+          "fact": "No retained measurement identifies a unique actuator, contact, obstruction, or slip cause.",
+          "id": "v12-a4"
+        }
+      ],
+      "candidate_answer": "The 11--20 s medians were 0.36 m/s delivered command and 0.01 m/s measured speed, versus 0.34 m/s healthy response. This supports a command-to-motion discrepancy; the unique actuator, contact, obstruction, or slip cause remains unresolved.",
+      "case_id": "Q12H01S",
+      "category_tags": [
+        "factual",
+        "persistent_discrepancy"
+      ],
+      "evidence_completeness": "Complete for interval medians and matched healthy response; component identity is unobserved.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": false,
+        "correct_abstention": true,
+        "disposition": "full",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": false,
+        "mechanism_identification": "correct",
+        "required_unit_statuses": {
+          "u-limit": "covered",
+          "u-mechanism": "covered"
+        }
+      },
+      "family": "persistent_discrepancy",
+      "mechanism_unit_id": "u-mechanism",
+      "primary_endpoint_eligible": true,
+      "question": "Which execution mechanism is supported from 11--20 s?",
+      "required_units": [
+        {
+          "text": "A command-to-motion discrepancy is supported.",
+          "unit_id": "u-mechanism"
+        },
+        {
+          "text": "The unique physical cause is unresolved.",
+          "unit_id": "u-limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "scored_core_fields": [
+        "judgment_status",
+        "material_error",
+        "disposition",
+        "correct_abstention",
+        "causal_overclaim",
+        "evidence_problem",
+        "answerability",
+        "mechanism_identification"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "From 11--20 s, delivered-command median was 0.36 m/s.",
+          "id": "v12-a1"
+        },
+        {
+          "fact": "From 11--20 s, measured-speed median was 0.01 m/s.",
+          "id": "v12-a2"
+        },
+        {
+          "fact": "Matched healthy measured-speed median was 0.34 m/s.",
+          "id": "v12-a3"
+        },
+        {
+          "fact": "No retained measurement identifies a unique actuator, contact, obstruction, or slip cause.",
+          "id": "v12-a4"
+        }
+      ],
+      "candidate_answer": "A motor failure caused the robot to stop.",
+      "case_id": "Q12H01E",
+      "category_tags": [
+        "unsupported",
+        "persistent_discrepancy",
+        "protected_causal",
+        "protected_boundary"
+      ],
+      "evidence_completeness": "Complete for interval medians and matched healthy response; component identity is unobserved.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": true,
+        "correct_abstention": false,
+        "disposition": "nonanswer",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": true,
+        "mechanism_identification": "incorrect",
+        "required_unit_statuses": {
+          "u-limit": "incorrect",
+          "u-mechanism": "omitted"
+        }
+      },
+      "family": "persistent_discrepancy",
+      "mechanism_unit_id": "u-mechanism",
+      "primary_endpoint_eligible": true,
+      "protected_unit_ids": [
+        "u-limit"
+      ],
+      "question": "Which execution mechanism is supported from 11--20 s?",
+      "required_units": [
+        {
+          "text": "A command-to-motion discrepancy is supported.",
+          "unit_id": "u-mechanism"
+        },
+        {
+          "text": "The unique physical cause is unresolved.",
+          "unit_id": "u-limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "scored_core_fields": [
+        "judgment_status",
+        "material_error",
+        "disposition",
+        "correct_abstention",
+        "causal_overclaim",
+        "evidence_problem",
+        "answerability",
+        "mechanism_identification"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "From 6--12 s, command median was 0.45 m/s and measured-speed median was 0.03 m/s.",
+          "id": "v12-b1"
+        },
+        {
+          "fact": "From 16--19 s, command median was 0.42 m/s and measured-speed median was 0.39 m/s.",
+          "id": "v12-b2"
+        },
+        {
+          "fact": "No retained measurement identifies the cause of the initial low response.",
+          "id": "v12-b3"
+        }
+      ],
+      "candidate_answer": "Measured speed changed from 0.03 m/s for a 0.45 m/s command median at 6--12 s to 0.39 m/s for a 0.42 m/s command median at 16--19 s. This establishes measured response recovery; the initial cause remains unresolved.",
+      "case_id": "Q12H02S",
+      "category_tags": [
+        "factual",
+        "response_recovery"
+      ],
+      "evidence_completeness": "Complete for both response intervals; the initial cause is unobserved.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": false,
+        "correct_abstention": true,
+        "disposition": "full",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": false,
+        "mechanism_identification": "correct",
+        "required_unit_statuses": {
+          "u-limit": "covered",
+          "u-mechanism": "covered"
+        }
+      },
+      "family": "response_recovery",
+      "mechanism_unit_id": "u-mechanism",
+      "primary_endpoint_eligible": true,
+      "question": "Which execution mechanism changed between the two response intervals?",
+      "required_units": [
+        {
+          "text": "Measured command response recovered in the second interval.",
+          "unit_id": "u-mechanism"
+        },
+        {
+          "text": "The cause of the initial low response is unresolved.",
+          "unit_id": "u-limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "scored_core_fields": [
+        "judgment_status",
+        "material_error",
+        "disposition",
+        "correct_abstention",
+        "causal_overclaim",
+        "evidence_problem",
+        "answerability",
+        "mechanism_identification"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "From 6--12 s, command median was 0.45 m/s and measured-speed median was 0.03 m/s.",
+          "id": "v12-b1"
+        },
+        {
+          "fact": "From 16--19 s, command median was 0.42 m/s and measured-speed median was 0.39 m/s.",
+          "id": "v12-b2"
+        },
+        {
+          "fact": "No retained measurement identifies the cause of the initial low response.",
+          "id": "v12-b3"
+        }
+      ],
+      "candidate_answer": "A temporary motor failure repaired itself.",
+      "case_id": "Q12H02E",
+      "category_tags": [
+        "unsupported",
+        "response_recovery",
+        "protected_causal",
+        "protected_boundary"
+      ],
+      "evidence_completeness": "Complete for both response intervals; the initial cause is unobserved.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": true,
+        "correct_abstention": false,
+        "disposition": "nonanswer",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": true,
+        "mechanism_identification": "incorrect",
+        "required_unit_statuses": {
+          "u-limit": "incorrect",
+          "u-mechanism": "incorrect"
+        }
+      },
+      "family": "response_recovery",
+      "mechanism_unit_id": "u-mechanism",
+      "primary_endpoint_eligible": true,
+      "protected_unit_ids": [
+        "u-limit"
+      ],
+      "question": "Which execution mechanism changed between the two response intervals?",
+      "required_units": [
+        {
+          "text": "Measured command response recovered in the second interval.",
+          "unit_id": "u-mechanism"
+        },
+        {
+          "text": "The cause of the initial low response is unresolved.",
+          "unit_id": "u-limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "scored_core_fields": [
+        "judgment_status",
+        "material_error",
+        "disposition",
+        "correct_abstention",
+        "causal_overclaim",
+        "evidence_problem",
+        "answerability",
+        "mechanism_identification"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "Reconstructed passage width was 0.78 m.",
+          "id": "v12-c1"
+        },
+        {
+          "fact": "The active 0.90 m envelope produced no modeled connection.",
+          "id": "v12-c2"
+        },
+        {
+          "fact": "A 0.66 m comparison envelope restored modeled connectivity.",
+          "id": "v12-c3"
+        }
+      ],
+      "candidate_answer": "The active 0.90 m envelope exceeded the 0.78 m reconstructed passage and produced no modeled connection, while a 0.66 m comparison envelope restored connectivity. This supports a configuration-specific geometric restriction in the reconstructed model, not global physical infeasibility.",
+      "case_id": "Q12H03S",
+      "category_tags": [
+        "factual",
+        "geometric_restriction"
+      ],
+      "evidence_completeness": "Complete for passage width, envelope comparison, and modeled connectivity.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": false,
+        "correct_abstention": true,
+        "disposition": "full",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": false,
+        "mechanism_identification": "correct",
+        "required_unit_statuses": {
+          "u-limit": "covered",
+          "u-mechanism": "covered"
+        }
+      },
+      "family": "geometric_restriction",
+      "mechanism_unit_id": "u-mechanism",
+      "primary_endpoint_eligible": true,
+      "question": "Which bounded geometric mechanism is supported by the reconstruction?",
+      "required_units": [
+        {
+          "text": "A configuration-specific geometric restriction is supported in the reconstructed model.",
+          "unit_id": "u-mechanism"
+        },
+        {
+          "text": "Global physical infeasibility is not established.",
+          "unit_id": "u-limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "scored_core_fields": [
+        "judgment_status",
+        "material_error",
+        "disposition",
+        "correct_abstention",
+        "causal_overclaim",
+        "evidence_problem",
+        "answerability",
+        "mechanism_identification"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "Reconstructed passage width was 0.78 m.",
+          "id": "v12-c1"
+        },
+        {
+          "fact": "The active 0.90 m envelope produced no modeled connection.",
+          "id": "v12-c2"
+        },
+        {
+          "fact": "A 0.66 m comparison envelope restored modeled connectivity.",
+          "id": "v12-c3"
+        }
+      ],
+      "candidate_answer": "The physical environment was globally impassable.",
+      "case_id": "Q12H03E",
+      "category_tags": [
+        "unsupported",
+        "geometric_restriction",
+        "protected_causal",
+        "protected_boundary"
+      ],
+      "evidence_completeness": "Complete for passage width, envelope comparison, and modeled connectivity.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": true,
+        "correct_abstention": false,
+        "disposition": "nonanswer",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": true,
+        "mechanism_identification": "incorrect",
+        "required_unit_statuses": {
+          "u-limit": "incorrect",
+          "u-mechanism": "incorrect"
+        }
+      },
+      "family": "geometric_restriction",
+      "mechanism_unit_id": "u-mechanism",
+      "primary_endpoint_eligible": true,
+      "protected_unit_ids": [
+        "u-limit"
+      ],
+      "question": "Which bounded geometric mechanism is supported by the reconstruction?",
+      "required_units": [
+        {
+          "text": "A configuration-specific geometric restriction is supported in the reconstructed model.",
+          "unit_id": "u-mechanism"
+        },
+        {
+          "text": "Global physical infeasibility is not established.",
+          "unit_id": "u-limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "scored_core_fields": [
+        "judgment_status",
+        "material_error",
+        "disposition",
+        "correct_abstention",
+        "causal_overclaim",
+        "evidence_problem",
+        "answerability",
+        "mechanism_identification"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "The 71.0 s scan showed the doorway clear.",
+          "id": "v12-d1"
+        },
+        {
+          "fact": "At 71.3 s the planning grid retained an obstacle stamped 57.8 s.",
+          "id": "v12-d2"
+        },
+        {
+          "fact": "No retained event identifies why the old observation persisted.",
+          "id": "v12-d3"
+        }
+      ],
+      "candidate_answer": "The 71.0 s scan showed the doorway clear, but at 71.3 s the planning grid retained the 57.8 s obstacle. This supports a stale or inconsistent planning representation; why the observation persisted remains unresolved.",
+      "case_id": "Q12H04S",
+      "category_tags": [
+        "factual",
+        "representation_inconsistency"
+      ],
+      "evidence_completeness": "Complete for current scan and retained grid timestamps; persistence origin is unobserved.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": false,
+        "correct_abstention": true,
+        "disposition": "full",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": false,
+        "mechanism_identification": "correct",
+        "required_unit_statuses": {
+          "u-limit": "covered",
+          "u-mechanism": "covered"
+        }
+      },
+      "family": "representation_inconsistency",
+      "mechanism_unit_id": "u-mechanism",
+      "primary_endpoint_eligible": true,
+      "question": "Which perception/model mechanism is supported at 71 s?",
+      "required_units": [
+        {
+          "text": "A stale or inconsistent planning representation is supported.",
+          "unit_id": "u-mechanism"
+        },
+        {
+          "text": "The software origin of persistence is unresolved.",
+          "unit_id": "u-limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "scored_core_fields": [
+        "judgment_status",
+        "material_error",
+        "disposition",
+        "correct_abstention",
+        "causal_overclaim",
+        "evidence_problem",
+        "answerability",
+        "mechanism_identification"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "The 71.0 s scan showed the doorway clear.",
+          "id": "v12-d1"
+        },
+        {
+          "fact": "At 71.3 s the planning grid retained an obstacle stamped 57.8 s.",
+          "id": "v12-d2"
+        },
+        {
+          "fact": "No retained event identifies why the old observation persisted.",
+          "id": "v12-d3"
+        }
+      ],
+      "candidate_answer": "Wind caused the navigation failure.",
+      "case_id": "Q12H04E",
+      "category_tags": [
+        "unsupported",
+        "representation_inconsistency",
+        "protected_causal",
+        "protected_boundary"
+      ],
+      "evidence_completeness": "Complete for current scan and retained grid timestamps; persistence origin is unobserved.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": true,
+        "correct_abstention": false,
+        "disposition": "nonanswer",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": true,
+        "mechanism_identification": "incorrect",
+        "required_unit_statuses": {
+          "u-limit": "incorrect",
+          "u-mechanism": "omitted"
+        }
+      },
+      "family": "representation_inconsistency",
+      "mechanism_unit_id": "u-mechanism",
+      "primary_endpoint_eligible": true,
+      "protected_unit_ids": [
+        "u-limit"
+      ],
+      "question": "Which perception/model mechanism is supported at 71 s?",
+      "required_units": [
+        {
+          "text": "A stale or inconsistent planning representation is supported.",
+          "unit_id": "u-mechanism"
+        },
+        {
+          "text": "The software origin of persistence is unresolved.",
+          "unit_id": "u-limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "scored_core_fields": [
+        "judgment_status",
+        "material_error",
+        "disposition",
+        "correct_abstention",
+        "causal_overclaim",
+        "evidence_problem",
+        "answerability",
+        "mechanism_identification"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "The command-to-motion diagnostic did not trigger.",
+          "id": "v12-e1"
+        },
+        {
+          "fact": "Median eligible response ratio was 0.93.",
+          "id": "v12-e2"
+        },
+        {
+          "fact": "The action succeeded at 36.7 s.",
+          "id": "v12-e3"
+        }
+      ],
+      "candidate_answer": "The premise is false: the diagnostic did not trigger, median eligible response ratio was 0.93, and the action succeeded at 36.7 s.",
+      "case_id": "Q12H05S",
+      "category_tags": [
+        "factual",
+        "nominal_false_premise"
+      ],
+      "evidence_completeness": "Complete for the diagnostic and terminal result.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": false,
+        "correct_abstention": null,
+        "disposition": "full",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": false,
+        "mechanism_identification": "not_applicable",
+        "required_unit_statuses": {
+          "u-control": "covered"
+        }
+      },
+      "family": "nominal_false_premise",
+      "mechanism_unit_id": null,
+      "primary_endpoint_eligible": false,
+      "question": "Why did command-to-motion response fail?",
+      "required_units": [
+        {
+          "text": "The failure premise is false for this run.",
+          "unit_id": "u-control"
+        }
+      ],
+      "rubric": "diagnostic",
+      "scored_core_fields": [
+        "judgment_status",
+        "material_error",
+        "disposition",
+        "correct_abstention",
+        "causal_overclaim",
+        "evidence_problem",
+        "answerability"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "The command-to-motion diagnostic did not trigger.",
+          "id": "v12-e1"
+        },
+        {
+          "fact": "Median eligible response ratio was 0.93.",
+          "id": "v12-e2"
+        },
+        {
+          "fact": "The action succeeded at 36.7 s.",
+          "id": "v12-e3"
+        }
+      ],
+      "candidate_answer": "A hidden motor fault caused the response failure.",
+      "case_id": "Q12H05E",
+      "category_tags": [
+        "unsupported",
+        "nominal_false_premise",
+        "protected_causal",
+        "protected_boundary"
+      ],
+      "evidence_completeness": "Complete for the diagnostic and terminal result.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": true,
+        "correct_abstention": false,
+        "disposition": "nonanswer",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": true,
+        "mechanism_identification": "incorrect",
+        "required_unit_statuses": {
+          "u-control": "incorrect"
+        }
+      },
+      "family": "nominal_false_premise",
+      "mechanism_unit_id": null,
+      "primary_endpoint_eligible": false,
+      "protected_unit_ids": [],
+      "question": "Why did command-to-motion response fail?",
+      "required_units": [
+        {
+          "text": "The failure premise is false for this run.",
+          "unit_id": "u-control"
+        }
+      ],
+      "rubric": "diagnostic",
+      "scored_core_fields": [
+        "judgment_status",
+        "material_error",
+        "disposition",
+        "correct_abstention",
+        "causal_overclaim",
+        "evidence_problem",
+        "answerability"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "The action aborted at 49.2 s.",
+          "id": "v12-f1"
+        },
+        {
+          "fact": "No footprint-clearance comparison or command-to-motion diagnostic was retained.",
+          "id": "v12-f2"
+        }
+      ],
+      "candidate_answer": "The abort is recorded, but no footprint-clearance comparison or command-to-motion diagnostic was retained. The packet therefore does not establish a physical or execution mechanism.",
+      "case_id": "Q12H06S",
+      "category_tags": [
+        "factual",
+        "missing_decisive_evidence"
+      ],
+      "evidence_completeness": "Complete packet inventory; geometry and command-to-motion evidence are absent.",
+      "expected": {
+        "answerability": "answer_insufficient",
+        "causal_overclaim": false,
+        "correct_abstention": true,
+        "disposition": "full",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": false,
+        "mechanism_identification": "omitted",
+        "required_unit_statuses": {
+          "u-limit": "covered"
+        }
+      },
+      "family": "missing_decisive_evidence",
+      "mechanism_unit_id": null,
+      "primary_endpoint_eligible": false,
+      "question": "What mechanism caused the abort?",
+      "required_units": [
+        {
+          "text": "The packet does not establish a physical or execution mechanism.",
+          "unit_id": "u-limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "scored_core_fields": [
+        "judgment_status",
+        "material_error",
+        "disposition",
+        "correct_abstention",
+        "causal_overclaim",
+        "evidence_problem",
+        "answerability"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "The action aborted at 49.2 s.",
+          "id": "v12-f1"
+        },
+        {
+          "fact": "No footprint-clearance comparison or command-to-motion diagnostic was retained.",
+          "id": "v12-f2"
+        }
+      ],
+      "candidate_answer": "A crate caused the abort.",
+      "case_id": "Q12H06E",
+      "category_tags": [
+        "unsupported",
+        "missing_decisive_evidence",
+        "protected_causal",
+        "protected_boundary"
+      ],
+      "evidence_completeness": "Complete packet inventory; geometry and command-to-motion evidence are absent.",
+      "expected": {
+        "answerability": "answer_insufficient",
+        "causal_overclaim": true,
+        "correct_abstention": false,
+        "disposition": "nonanswer",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": true,
+        "mechanism_identification": "incorrect",
+        "required_unit_statuses": {
+          "u-limit": "incorrect"
+        }
+      },
+      "family": "missing_decisive_evidence",
+      "mechanism_unit_id": null,
+      "primary_endpoint_eligible": false,
+      "protected_unit_ids": [
+        "u-limit"
+      ],
+      "question": "What mechanism caused the abort?",
+      "required_units": [
+        {
+          "text": "The packet does not establish a physical or execution mechanism.",
+          "unit_id": "u-limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "scored_core_fields": [
+        "judgment_status",
+        "material_error",
+        "disposition",
+        "correct_abstention",
+        "causal_overclaim",
+        "evidence_problem",
+        "answerability"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "A cone is visible in image img-628 at 24.0 s.",
+          "id": "v12-g1"
+        },
+        {
+          "fact": "A changed plan was delivered at 24.8 s.",
+          "id": "v12-g2"
+        },
+        {
+          "fact": "No record shows image delivery to Nav2, Nav2 consumption, or decision dependence.",
+          "id": "v12-g3"
+        }
+      ],
+      "candidate_answer": "The cone is visible in img-628 at 24.0 s, before the changed plan at 24.8 s. The record does not show that Nav2 consumed the image or changed its plan because of the cone.",
+      "case_id": "Q12H07S",
+      "category_tags": [
+        "factual",
+        "visible_not_consumed"
+      ],
+      "evidence_completeness": "Complete for visual presence and timing; Nav2 delivery, consumption, and dependence are absent.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": false,
+        "correct_abstention": true,
+        "disposition": "full",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": false,
+        "mechanism_identification": "not_applicable",
+        "required_unit_statuses": {
+          "u-limit": "covered",
+          "u-observation": "covered"
+        }
+      },
+      "family": "visible_not_consumed",
+      "mechanism_unit_id": null,
+      "primary_endpoint_eligible": false,
+      "question": "What does the image establish about the changed plan?",
+      "required_units": [
+        {
+          "text": "The cone was visually present before the changed plan.",
+          "unit_id": "u-observation"
+        },
+        {
+          "text": "Nav2 consumption and causal influence are unresolved.",
+          "unit_id": "u-limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "scored_core_fields": [
+        "judgment_status",
+        "material_error",
+        "disposition",
+        "correct_abstention",
+        "causal_overclaim",
+        "evidence_problem",
+        "answerability"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "A cone is visible in image img-628 at 24.0 s.",
+          "id": "v12-g1"
+        },
+        {
+          "fact": "A changed plan was delivered at 24.8 s.",
+          "id": "v12-g2"
+        },
+        {
+          "fact": "No record shows image delivery to Nav2, Nav2 consumption, or decision dependence.",
+          "id": "v12-g3"
+        }
+      ],
+      "candidate_answer": "Nav2 saw the cone and replanned around it.",
+      "case_id": "Q12H07E",
+      "category_tags": [
+        "unsupported",
+        "visible_not_consumed",
+        "protected_causal",
+        "protected_boundary"
+      ],
+      "evidence_completeness": "Complete for visual presence and timing; Nav2 delivery, consumption, and dependence are absent.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": true,
+        "correct_abstention": false,
+        "disposition": "nonanswer",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": true,
+        "mechanism_identification": "incorrect",
+        "required_unit_statuses": {
+          "u-limit": "incorrect",
+          "u-observation": "omitted"
+        }
+      },
+      "family": "visible_not_consumed",
+      "mechanism_unit_id": null,
+      "primary_endpoint_eligible": false,
+      "protected_unit_ids": [
+        "u-limit"
+      ],
+      "question": "What does the image establish about the changed plan?",
+      "required_units": [
+        {
+          "text": "The cone was visually present before the changed plan.",
+          "unit_id": "u-observation"
+        },
+        {
+          "text": "Nav2 consumption and causal influence are unresolved.",
+          "unit_id": "u-limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "scored_core_fields": [
+        "judgment_status",
+        "material_error",
+        "disposition",
+        "correct_abstention",
+        "causal_overclaim",
+        "evidence_problem",
+        "answerability"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "Yaw-command median was 0.51 rad/s.",
+          "id": "v12-h1"
+        },
+        {
+          "fact": "Odometry yaw-rate median was 0.08 rad/s.",
+          "id": "v12-h2"
+        },
+        {
+          "fact": "IMU yaw-rate median was 0.47 rad/s.",
+          "id": "v12-h3"
+        },
+        {
+          "fact": "Retained calibration does not resolve the odometry/IMU disagreement.",
+          "id": "v12-h4"
+        }
+      ],
+      "candidate_answer": "The 0.51 rad/s command is paired with 0.08 rad/s odometry and 0.47 rad/s IMU measurements. Because calibration does not resolve that conflict, no unique motion-response mechanism is established.",
+      "case_id": "Q12H08S",
+      "category_tags": [
+        "factual",
+        "ambiguous_measurements"
+      ],
+      "evidence_completeness": "Complete for both streams; their calibration disagreement is unresolved.",
+      "expected": {
+        "answerability": "answer_insufficient",
+        "causal_overclaim": false,
+        "correct_abstention": true,
+        "disposition": "full",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": false,
+        "mechanism_identification": "omitted",
+        "required_unit_statuses": {
+          "u-conflict": "covered",
+          "u-limit": "covered"
+        }
+      },
+      "family": "ambiguous_measurements",
+      "mechanism_unit_id": null,
+      "primary_endpoint_eligible": false,
+      "question": "Which motion-response mechanism is established?",
+      "required_units": [
+        {
+          "text": "Odometry and IMU provide conflicting response evidence.",
+          "unit_id": "u-conflict"
+        },
+        {
+          "text": "A unique motion-response mechanism is unresolved.",
+          "unit_id": "u-limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "scored_core_fields": [
+        "judgment_status",
+        "material_error",
+        "disposition",
+        "correct_abstention",
+        "causal_overclaim",
+        "evidence_problem",
+        "answerability"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "Yaw-command median was 0.51 rad/s.",
+          "id": "v12-h1"
+        },
+        {
+          "fact": "Odometry yaw-rate median was 0.08 rad/s.",
+          "id": "v12-h2"
+        },
+        {
+          "fact": "IMU yaw-rate median was 0.47 rad/s.",
+          "id": "v12-h3"
+        },
+        {
+          "fact": "Retained calibration does not resolve the odometry/IMU disagreement.",
+          "id": "v12-h4"
+        }
+      ],
+      "candidate_answer": "A motor failure caused the turn response.",
+      "case_id": "Q12H08E",
+      "category_tags": [
+        "unsupported",
+        "ambiguous_measurements",
+        "protected_causal",
+        "protected_boundary"
+      ],
+      "evidence_completeness": "Complete for both streams; their calibration disagreement is unresolved.",
+      "expected": {
+        "answerability": "answer_insufficient",
+        "causal_overclaim": true,
+        "correct_abstention": false,
+        "disposition": "nonanswer",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": true,
+        "mechanism_identification": "incorrect",
+        "required_unit_statuses": {
+          "u-conflict": "omitted",
+          "u-limit": "incorrect"
+        }
+      },
+      "family": "ambiguous_measurements",
+      "mechanism_unit_id": null,
+      "primary_endpoint_eligible": false,
+      "protected_unit_ids": [
+        "u-limit"
+      ],
+      "question": "Which motion-response mechanism is established?",
+      "required_units": [
+        {
+          "text": "Odometry and IMU provide conflicting response evidence.",
+          "unit_id": "u-conflict"
+        },
+        {
+          "text": "A unique motion-response mechanism is unresolved.",
+          "unit_id": "u-limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "scored_core_fields": [
+        "judgment_status",
+        "material_error",
+        "disposition",
+        "correct_abstention",
+        "causal_overclaim",
+        "evidence_problem",
+        "answerability"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accuracy_eligible": false,
+      "allowed_evidence": [
+        {
+          "fact": "Command median was 0.31 m/s.",
+          "id": "v12-p1"
+        },
+        {
+          "fact": "Measured-speed median was 0.02 m/s; healthy median was 0.29 m/s.",
+          "id": "v12-p2"
+        }
+      ],
+      "candidate_answer": "The medians support a command-to-motion discrepancy.",
+      "case_id": "Q12P011",
+      "category_tags": [
+        "presentation_invariance"
+      ],
+      "evidence_completeness": "Complete for command and measured-speed medians.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": false,
+        "correct_abstention": null,
+        "disposition": "full",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": false,
+        "mechanism_identification": "correct",
+        "required_unit_statuses": {
+          "u-mechanism": "covered"
+        }
+      },
+      "family": "invariance",
+      "mechanism_unit_id": null,
+      "presentation_pair_id": "v12-paraphrase",
+      "primary_endpoint_eligible": false,
+      "question": "Which mechanism is established?",
+      "required_units": [
+        {
+          "text": "A command-to-motion discrepancy is supported.",
+          "unit_id": "u-mechanism"
+        }
+      ],
+      "rubric": "diagnostic",
+      "scored_core_fields": [
+        "judgment_status",
+        "material_error",
+        "disposition",
+        "correct_abstention",
+        "causal_overclaim",
+        "evidence_problem"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accuracy_eligible": false,
+      "allowed_evidence": [
+        {
+          "fact": "Command median was 0.31 m/s.",
+          "id": "v12-p1"
+        },
+        {
+          "fact": "Measured-speed median was 0.02 m/s; healthy median was 0.29 m/s.",
+          "id": "v12-p2"
+        }
+      ],
+      "candidate_answer": "A discrepancy between commanded and measured motion is supported by the medians.",
+      "case_id": "Q12P012",
+      "category_tags": [
+        "presentation_invariance"
+      ],
+      "evidence_completeness": "Complete for command and measured-speed medians.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": false,
+        "correct_abstention": null,
+        "disposition": "full",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": false,
+        "mechanism_identification": "correct",
+        "required_unit_statuses": {
+          "u-mechanism": "covered"
+        }
+      },
+      "family": "invariance",
+      "mechanism_unit_id": null,
+      "presentation_pair_id": "v12-paraphrase",
+      "primary_endpoint_eligible": false,
+      "question": "Which mechanism is established?",
+      "required_units": [
+        {
+          "text": "A command-to-motion discrepancy is supported.",
+          "unit_id": "u-mechanism"
+        }
+      ],
+      "rubric": "diagnostic",
+      "scored_core_fields": [
+        "judgment_status",
+        "material_error",
+        "disposition",
+        "correct_abstention",
+        "causal_overclaim",
+        "evidence_problem"
+      ],
+      "split": "heldout"
+    }
+  ],
+  "declared_utc": "2026-09-26T01:32:00Z",
+  "schema": "crane-luna-judge-qualification-suite/v12",
+  "status": "FRESH_UNEXECUTED_AT_DECLARATION",
+  "suite_id": "luna-v12-binary-unit-fresh",
+  "thresholds": {
+    "maximum_false_acceptance_rate": 0.05,
+    "maximum_false_rejection_rate": 0.05,
+    "minimum_core_field_accuracy": 0.95,
+    "minimum_primary_endpoint_accuracy": 0.95,
+    "minimum_unit_coverage_accuracy": 0.95,
+    "protected_failures_allowed": 0
+  },
+  "unit_scoring": "covered versus not-covered; incorrect, omitted, and unresolved are all not-covered; material and causal labels remain separate"
+}
