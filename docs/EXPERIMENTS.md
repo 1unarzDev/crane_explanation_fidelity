@@ -1,5 +1,18 @@
 # Experiment Log
 
+## 2026-09-26 — focused semantic campaign activated at N=0
+
+- **GATES:** exact P/R resources and source commits are hash-frozen; the focused results schema and
+  monitor fail closed; the no-model dry run returns `CONTINUE` at N=0; complete-endpoint Luna
+  qualification and evidence-complete packet closure already pass.
+- **ALPHA:** `candidate-v1-confirmation` alpha 0.02 was permanently bound to
+  `focused-supported-diagnostic-communication-v1-confirmation` before any campaign response was
+  opened. Program consumption is now 0.02/0.05 and cannot be refunded.
+- **STATE:** P responses=0, R responses=0, Luna study calls=0, independent semantic clusters=0.
+  There is no effect estimate, confidence-sequence result, significance result, or replication.
+- **NEXT:** continue the fixed physical source order at `cm-land-conf-047`. Do not inspect partial
+  P/R comparisons while changing the method, judge, endpoint, sampler, or monitor.
+
 ## 2026-09-26 — focused packet closure passed; run 042 semantic eligibility corrected
 
 - **PACKET:** a no-model dry run built a complete independent reference and two blinded synthetic

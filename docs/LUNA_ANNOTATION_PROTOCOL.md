@@ -383,6 +383,13 @@ from the question purpose before generation. Luna determines semantic communicat
 materiality; deterministic checks establish quantities, identifiers, units, and thresholds. The
 two passes remain repeated model measurements, not human annotations.
 
+Activation update (2026-09-26): the bounded complete-endpoint extension qualified both isolated
+passes (18/18 complete-answer classifications and 72/72 essential-unit decisions per pass). The
+evidence-complete packet dry run, exact resource freeze, focused result schema, and monitor dry run
+also pass. The focused campaign is active with alpha 0.02 permanently bound, but semantic N remains
+zero and Luna has scored no campaign response. Qualification and activation therefore establish
+scoring readiness, not a P--R effect or human validity.
+
 Every response is judged in a new API request with no conversation history and no model tools. The
 runner sends an in-memory, condition-blind envelope containing only:
 

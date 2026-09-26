@@ -3,7 +3,7 @@
 Updated: 2026-09-26
 
 Protocol: `diagnostic-sequential-protocol-v2`
-Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
+Current status: **FOCUSED CAMPAIGN ACTIVE / SEMANTIC N = 0**
 
 ## Focused supported-diagnostic-communication redirect
 
@@ -19,8 +19,9 @@ most challenged R facts were in allowed raw method inputs or exact sources but a
 packet. It also finds that v2's missing trajectory magnitude was essential to its historical
 geometry question. Those historical results remain unchanged; none becomes confirmation. The next
 action is a fixed fresh land schedule plus atomic question/unit registry and evidence-complete
-packet closure. The alpha ledger is still unbound, confirmatory N is 0, and no effect, confidence
-sequence, significance, or replication result exists.
+packet closure. All activation gates now pass and `candidate-v1-confirmation` alpha 0.02 is
+permanently bound. Confirmatory semantic N is still 0, and no effect, confidence sequence,
+significance, or replication result exists.
 
 Physical collection has started without activating semantic confirmation. The four added geometry
 configurations are complete after one attempt each: 001 and 003 independently support bounded
@@ -36,20 +37,20 @@ a second independently configured instance of that contrast. Run 045 adds a conn
 persistent discrepancy followed by abort; run 046 independently repeats that bounded pattern on a
 different connected-detour configuration. Thus seven
 collected configurations are currently primary-diagnosable and three are missing/ambiguous controls;
-primary semantic N, alpha consumption, effect estimates, confidence sequences, significance, and
-replication results remain zero. The next fixed configuration is `cm-land-conf-047`.
+primary semantic N, effect estimates, confidence sequences, significance, and replication results
+remain zero; program alpha consumption is 0.02 from prospective activation. The next fixed
+configuration is `cm-land-conf-047`.
 
 The 2026-09-26 semantic-activation audit found that the existing v12 packet runner scored only the
 atomic mechanism unit plus material-error absence, whereas this focused protocol requires all
 question-essential mechanism, measurement, outcome, and causal-limit units. The prospective packet
 path now binds and fail-closed scores the complete unit inventory without changing historical
-packets. Activation remains blocked pending one bounded, predeclared four-unit held-out extension
-under unchanged Luna v12 settings, then packet/resource/schema dry runs and atomic ledger binding.
-That extension has now qualified in both passes: 18/18 complete-endpoint classifications and 72/72
+packets. The bounded, predeclared four-unit held-out extension qualified in both passes: 18/18
+complete-endpoint classifications and 72/72
 unit labels per pass, with no false accept/reject or call failure. Core fields were 140/144 and
 141/144; retained `correct_abstention` mismatches remain a disclosed limitation. Packet closure,
-exact P/R resources, schema/monitor dry run, and atomic ledger binding remain open. No additional
-focused response was opened while discovering, correcting, or qualifying this mismatch.
+exact P/R resources, schema/monitor dry run, and atomic ledger binding now pass. No focused response
+was opened while discovering, correcting, qualifying, or activating this path.
 
 The evidence-complete packet closure now passes on run 042 with four bound essential units, full
 independent robot-visible evidence, blinded condition transport, and zero model/Luna calls. During
@@ -267,14 +268,14 @@ candidate v2 is not promoted. This is favorable development evidence, not confir
 
 | Allocation | Alpha | Status | Campaign |
 |---|---:|---|---|
-| `candidate-v1-confirmation` | 0.020 | AVAILABLE | none |
+| `candidate-v1-confirmation` | 0.020 | CONSUMED / BOUND | `focused-supported-diagnostic-communication-v1-confirmation` |
 | `candidate-revision-reserve` | 0.010 | AVAILABLE | none |
 | `selected-method-replication` | 0.020 | AVAILABLE | none |
 
-Consumed alpha: **0.000 / 0.050**. An allocation becomes consumed when its first confirmatory
-response is inspected, not when a favorable result appears. Machine-readable state is retained in
-`manifests/study/diagnostic-sequential-error-ledger-v2.json`; before the first response is opened,
-the chosen allocation must be atomically bound to that campaign and cannot later be refunded.
+Consumed alpha: **0.020 / 0.050**. CRANE conservatively consumed the allocation when it was
+atomically bound, before the first confirmatory response was opened; it cannot later be refunded.
+Machine-readable state is retained in
+`manifests/study/diagnostic-sequential-error-ledger-v2.json`.
 
 ## Cumulative evidence
 

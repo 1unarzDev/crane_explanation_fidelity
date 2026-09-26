@@ -1,5 +1,23 @@
 # Decision Log
 
+## 2026-09-26 — activate the focused semantic campaign after closing every gate
+
+- **Decision:** permanently bind the `candidate-v1-confirmation` allocation (alpha 0.02) to
+  `focused-supported-diagnostic-communication-v1-confirmation` before opening its first P/R
+  response. Treat the allocation as consumed immediately; it cannot be refunded.
+- **Gate evidence:** the fixed schedule and disjoint replication reserve, atomic question/unit
+  registry, complete-endpoint Luna extension, evidence-complete packet closure, exact P/R
+  resource/model freeze, focused results schema, and no-model sequential-monitor dry run all pass.
+- **Inference boundary:** semantic N remains zero. Activation creates no effect estimate,
+  confidence bound, statistical significance, or replication result. The first registered look is
+  24 eligible independent configurations with all three primary families represented.
+- **Tradeoff boundary:** Level A depends only on complete supported diagnostic communication and
+  its material-error condition. Supplemental coverage, controls, breadth, latency, and resource
+  use remain mandatory disclosures but are not silently restored as all-or-nothing gates.
+- **Next action:** continue the fixed source-order physical collection at `cm-land-conf-047`, then
+  generate immutable evidence-complete P/R pairs without inspecting partial comparisons or tuning
+  the method, judge, endpoint, or monitor.
+
 ## 2026-09-26 — Score every question-essential unit in the focused primary endpoint
 
 - **Decision:** focused confirmation succeeds only when Luna marks every prospectively bound

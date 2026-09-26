@@ -11,7 +11,7 @@ tradeoffs. No level is currently established.
 
 | Claim candidate | Retained support | Current verdict |
 | --- | --- | --- |
-| Checked composition improves complete supported diagnostic communication on registered atomic navigation questions | Development P outputs were restrained, but the v2 Luna packet omitted allowed R facts and v5 showed no consensus P-win cluster; fresh evidence-complete confirmation and replication are pending | **PROVISIONAL PROSPECTIVE CLAIM ONLY**; confirmatory N=0, no effect/bound/significance/replication |
+| Checked composition improves complete supported diagnostic communication on registered atomic navigation questions | Development P outputs were restrained, but the v2 Luna packet omitted allowed R facts and v5 showed no consensus P-win cluster; the evidence-complete campaign is activated with alpha 0.02 bound, while confirmation and replication outcomes remain pending | **PROVISIONAL PROSPECTIVE CLAIM ONLY**; confirmatory semantic N=0, no effect/bound/significance/replication |
 | P is superior on supplemental coverage, every mechanism, or overall robot debugging | V2 omitted question-essential geometry details and had lower aggregate unit coverage; v6 failed composite composition; v5 usually tied R | **DO NOT CLAIM**; report tradeoffs separately even if the focused endpoint wins |
 | The v2 14/18 R material-error count establishes P's advantage | Bounded audit found most challenged facts in R's allowed method inputs or exact sources but absent from compact Luna packets | **DO NOT CLAIM**; historical packet-relative labels are preserved, not a fair comparative effect |
 | ROS-log or agentic RAG is novel to CRANE | Fernández-Becerra et al. (ESWA 2026) retrieve curated ROS 2/Nav2 events with an agentic RAG workflow | **DO NOT CLAIM NOVELTY** |
@@ -54,6 +54,6 @@ tradeoffs. No level is currently established.
 
 The short/WIP paper structure is: (1) honestly bounded legacy provenance inventory, (2) the
 diagnosis-to-language method, (3) reproducible land and focused surface-vehicle development cases,
-(4) the historically qualified but now endpoint-threat-blocked model-judge arm and negative baseline/verifier findings, and (5) limitations
+(4) the qualified but finite automated-judge arm and negative baseline/verifier findings, and (5) limitations
 distinguishing simulation relevance, factual correctness, diagnostic usefulness, and human trust.
 It reports no confirmatory method effect.

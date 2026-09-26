@@ -4,7 +4,13 @@ Protocol: `focused-supported-diagnostic-communication-v1`
 
 Declared: 2026-09-26
 
-Status: **CANDIDATE SELECTED / PROSPECTIVE CAMPAIGN NOT YET ACTIVE / CONFIRMATORY N = 0 / ALPHA CONSUMED = 0**
+Status: **CAMPAIGN ACTIVE / CONFIRMATORY SEMANTIC N = 0 / ALPHA 0.02 PERMANENTLY BOUND**
+
+Activation is recorded in
+`manifests/study/focused-supported-diagnostic-communication-v1-activation.json`. Every
+preactivation gate passed before binding. No P/R confirmation response or Luna study judgment had
+been opened at activation, so no effect estimate, confidence bound, significance result, or
+replication result exists.
 
 This is an additive prospective direction. It does not rescore or replace frozen F/G/H, earlier
 development screens, failed candidates, judge qualifications, or the broader sequential framework.
@@ -149,9 +155,10 @@ The exact schedule and eligibility audit are in
 all 60 previously scheduled but unattempted configurations had no physical outcome at declaration.
 Runs 1--40 of the older physical cohort were inspected and are excluded.
 
-The `candidate-v1-confirmation` allocation (`alpha=0.02`) remains available and unbound. Activation
-must atomically bind it; abandonment after inspecting a confirmatory response consumes it. No
-ordinary repeated fixed-sample tests or post-outcome family reweighting are allowed.
+The `candidate-v1-confirmation` allocation (`alpha=0.02`) was permanently bound at activation on
+2026-09-26, before any confirmatory response was opened. It is treated conservatively as consumed
+and cannot be refunded even while semantic N remains zero. No ordinary repeated fixed-sample tests
+or post-outcome family reweighting are allowed.
 
 ## Replication and reporting
 
