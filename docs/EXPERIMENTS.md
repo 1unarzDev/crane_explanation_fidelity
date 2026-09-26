@@ -6192,3 +6192,21 @@
   a favorable geometry result.
 - **GOVERNANCE:** raw and derived artifacts were hash-manifested and DVC-pushed before the Git
   pointer is published. Fixed run 3/6 is next; language remains unauthorized.
+
+### Fixed run 3/6 — `mccv2-dev-003`
+
+- **STATUS:** `VALID_DEVELOPMENT_PERSISTENT_COMMAND_MOTION_DISCREPANCY`; one attempt, no retry or
+  replacement, independent development clusters +1, confirmatory clusters +0, model/Luna calls 0.
+- **OBSERVED:** the nominal-clear-route layout aborted after 44.210 s and 2.866 m displacement,
+  with two FollowPath failures and two source-qualified Wait invocations. The fixture's generic
+  success expectation was false, but the accepted goal, terminal result, capture, and scenario
+  binding make this a valid recording rather than an invalid run.
+- **INDEPENDENT DIAGNOSIS:** a healthy 0--5 s interval measured 0.259740 m/s. During 11--21 s,
+  median delivered command remained 0.260 m/s while measured planar speed was 0.000 m/s. The
+  independently implemented fixed-window calculation reproduced the supported discrepancy.
+- **BOUNDARY:** delivered command is not proof of actuator acceptance; odometry delivery is not
+  proof of Nav2 consumption; the record does not uniquely distinguish mobility constraint,
+  obstruction, slip, collision, or actuator rejection. Evaluator intervention identity remains
+  outside robot-visible evidence.
+- **GOVERNANCE:** raw and derived artifacts were separately hash-manifested and DVC-pushed. Fixed
+  run 4/6 is next; language remains unauthorized.

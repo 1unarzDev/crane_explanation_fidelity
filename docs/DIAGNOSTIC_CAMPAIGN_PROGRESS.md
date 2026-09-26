@@ -34,7 +34,11 @@ causation. Fixed run 2/6, `mccv2-dev-002`, is also a valid single-attempt cluste
 after three distinct detouring plans and 1.319 m measured deviation, but the incomplete final grid
 contained no observed blocked direct-route cell. Its intended repeated positive-geometry predicate
 therefore failed and the run is retained as route change with unresolved trigger, without
-replacement. No response or Luna call has been made. Fixed run 3/6 is next.
+replacement. Fixed run 3/6, `mccv2-dev-003`, is a valid persistent command--motion cluster:
+0.260 m/s median delivered command versus 0.000 m/s measured motion over 11--21 s after a
+0.25974 m/s healthy baseline, followed by two FollowPath failures, two qualified Wait invocations,
+and abort. The unique physical cause is unresolved. No response or Luna call has been made. Fixed
+run 4/6 is next.
 
 ## Readiness
 
