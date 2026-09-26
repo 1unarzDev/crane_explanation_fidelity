@@ -20,7 +20,11 @@ cycles, with 1.325 m maximum measured lateral deviation. Independent calculation
 sample on the requested direct route near x=12.425 m and a retained connection to the goal. The
 allowed conclusion is a bounded navigation-model restriction plus path change and success—not
 global no-path, obstacle identity, exact Nav2 consumption, or snapshot-to-plan causation. Its
-separated artifacts are governed and DVC-synchronized. Fixed run 2/5 is next.
+separated artifacts are governed and DVC-synchronized. Fixed run 2/5 is also valid after one
+attempt: navigation succeeded in 84.810 s with three distinct plans and 1.105 m maximum measured
+deviation. Independent calculations found a direct-route blocked sample near x=11.525 m and a
+retained connection, repeating the bounded geometry pattern without licensing obstacle identity,
+global no-path, exact-consumption, or causation claims. Fixed run 3/5 is next.
 
 ## Measurement-complete v2 development screen
 

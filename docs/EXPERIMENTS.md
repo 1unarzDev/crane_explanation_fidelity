@@ -1,5 +1,21 @@
 # Experiment Log
 
+## 2026-09-26 — coverage-complete v4 physical screen run 2/5
+
+- **STATUS:** `VALID_DEVELOPMENT_PHYSICAL_AND_REFERENCE_EVIDENCE`; one fixed attempt, no retry or
+  replacement, independent development clusters +1, confirmatory clusters +0, model/Luna calls 0.
+- **ADMISSION:** exact player/build/catalog and all 14 scenario-binding checks passed for
+  connected-detour 011 at seed 81010 without a mobility intervention; the worker and expected
+  broad success outcome were valid.
+- **OBSERVED / INDEPENDENT REFERENCE:** navigation succeeded after 84.810 s, three distinct
+  delivered plans, two recovery-feedback cycles, 17.515 m displacement, and 1.105 m maximum
+  lateral deviation. Independent calculations found a cost-253 direct-route intersection near
+  x=11.525 m, a retained connection to the goal, and direct-to-nondirect plan changes.
+- **BOUNDARY:** this independently repeats the bounded navigation-model restriction pattern; it
+  still does not establish global physical no-path, obstacle identity, exact Nav2 consumption, or
+  snapshot-to-plan causation. Artifacts are governed and DVC-synchronized. Fixed run 3/5 is next;
+  response generation remains unauthorized.
+
 ## 2026-09-26 — coverage-complete v4 physical screen run 1/5
 
 - **STATUS:** `VALID_DEVELOPMENT_PHYSICAL_AND_REFERENCE_EVIDENCE`; one fixed attempt, no retry or
