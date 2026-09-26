@@ -45,8 +45,8 @@
   },
   "production_gate": {
     "gate_id": "roboboat-readiness-v1",
-    "status": "OPEN",
-    "land_semantic_scale_up_allowed": false,
+    "status": "CLOSED_NARROW_ARM_FROZEN",
+    "land_semantic_scale_up_allowed": true,
     "requirements": [
       "nominal/successful-compensation boat development case",
       "diagnosable geometric or motion-response boat case",
@@ -54,7 +54,15 @@
       "one restorable end-to-end boat canary through two isolated Luna passes",
       "bounded boat-specific Luna qualification for extended marine concepts",
       "separate boat-arm prefreeze completed"
-    ]
+    ],
+    "closure": {
+      "registry": "roboboat-diagnostic-external-validity-v1-narrow-freeze.json",
+      "physical_configurations": 4,
+      "masked_controls": 1,
+      "masked_control_independent_n": 0,
+      "scope": "descriptive external-validity arm; no land N, alpha, or replication effect",
+      "development_application_and_reset": "PASS"
+    }
   },
   "artifact_disposition": "Existing 24 references and 18 pairs are immutable inputs. They are not regenerated. The interrupted cm-land-conf-063 call produced no pair or cache record."
 }

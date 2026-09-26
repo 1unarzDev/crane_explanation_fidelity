@@ -1,6 +1,6 @@
 # High-throughput diagnostic execution
 
-Status: **execution amendment active; RoboBoat canary restores; exact arm freeze gate open**
+Status: **execution amendment active; RoboBoat narrow arm frozen; production queues authorized**
 
 This runbook accelerates the frozen focused study without changing its claim, methods, evidence,
 judge, endpoint, population, alpha, stopping rule, or replication reserve. The authoritative
@@ -88,9 +88,19 @@ statistical N. P received concordant complete-endpoint labels. R's two passes ag
 correctness and absence of material error but disagreed on whether radial-error growth communicated
 the distinct displacement unit; the endpoint field remains unresolved.
 
-Production scale-up remains blocked because the exact prospective 6-10-configuration boat schedule
-is not frozen. The prefreeze requires independent configurations with exact starts, goals, supported
-conditions, masks, questions, references, and order. Do not fill the arm with repeated seeds of one
-docking setup or invent unsupported wind/current/wave mechanisms. If the existing platform cannot
-produce the required bounded families without controller or physics redesign, narrow the arm and
-record that limitation before freeze.
+The gate is now closed as `NARROW_ARM_FROZEN` by
+`roboboat-diagnostic-external-validity-v1-narrow-freeze.json`. Four exact physical configurations
+cover corrected `NavigateToPose`, corrected supplied-path following, the single 0.40 m
+goal-checker-margin intervention, and a wrong-side-goal bounded-grid test. One missing-return-speed
+mask is attached to its physical parent and adds zero N. Exact start admission, goals/path, launch
+values, source/build/config hashes, evidence/reference contracts, questions, order, and technical
+failure handling are frozen. Unsupported wind/current/wave and visible-not-consumed families were
+removed rather than manufactured. The boat arm remains descriptive and separate from land N,
+alpha, and replication.
+
+Development application and reset probes used distinct domains/ports and the validated
+graphics/water build. The full-path application run succeeded without stale, rejected, or
+cross-episode commands; the reset probe reloaded the scene with no duplicate endpoint registration.
+Three technical setup failures (invalid DDS domain, FollowPath feedback schema mismatch, and an
+incorrect expected status) are retained. Concise governed summaries are declared in
+`manifests/data/roboboat-arm-freeze-development-validation-v1.json`; the large player is not kept.

@@ -2,7 +2,7 @@
 
 Updated: 2026-09-26
 
-Status: **boat semantic/canary paths restore; exact prospective arm freeze gates scale-up**
+Status: **boat narrow arm frozen; production launch is the active stage**
 
 | Measure | Current value |
 | --- | ---: |
@@ -30,14 +30,14 @@ P/R cluster in about 3.3 minutes of judge wall time. This is an execution baseli
 production-throughput result. At Luna concurrency four, the same observed service times imply a
 best-case judge-stage wall time near the 55.8 s tail, subject to measured throttling tests.
 
-The dominant blocker is now scientific configuration closure, not the canary machinery: exact
-starts, goals, supported environmental conditions, evidence masks, questions, references, and the
-order for 6-10 independent boat configurations remain unfrozen. Repetitions of one docking setup
-cannot fill that gap. The canary batch now restores from a fresh checkout with all declared hashes
-and sizes matching. The restore audit repaired a missing historical robot-visible DVC directory
-object and retained one transient seven-object R2 failure before a successful technical retry.
-After the exact arm freeze closes, the operational profile begins at R concurrency 2 and Luna
-concurrency 4; the intended production metric remains valid fully reconciled P/R clusters per hour.
+The configuration blocker is closed as a prospectively frozen, honestly narrow arm: four exact
+physical configurations and one clustered missing-speed control. The arm omits unsupported
+disturbance families and remains separate from land N, alpha, and replication. Configuration
+application and reset isolation pass with the current immutable graphics/water build and validated
+Nav2 profile. Production begins with boat simulation concurrency 1, R concurrency 2, Luna
+concurrency 4, CPU concurrency 4, and a single publisher. The intended production metric remains
+valid fully reconciled P/R clusters per hour; no improvement is claimed until actual production
+clusters complete.
 
 Failures retained at this checkpoint: one invalid land transport recording (`cm-land-conf-052`),
 one deliberately interrupted response call for 063 with no output/cache record, and no provider

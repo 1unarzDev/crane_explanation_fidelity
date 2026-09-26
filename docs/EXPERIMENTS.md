@@ -1,5 +1,25 @@
 # Experiment Log
 
+## 2026-09-26 — RoboBoat narrow arm frozen after live configuration/reset validation
+
+- **FREEZE:** four ordered physical configurations and one clustered missing-speed control are
+  fixed in `roboboat-diagnostic-external-validity-v1-narrow-freeze.json`. The arm has exact
+  start-admission tolerances, goals/path, launch values, worker isolation, build/source/config
+  hashes, questions, evidence/reference contracts, and causal limits. It adds no land N or alpha.
+- **APPLICATION:** `boat-config-application-dev-003` completed the supplied far-dock path under the
+  current immutable profile. FollowPath succeeded with 2,459 feedback messages, 2,460 commands,
+  zero rejected/stale/cross-episode commands, 2,800 LiDAR scans, 4,200 depth acquisitions, no
+  observation/water failures, and real-time factor 1.00007.
+- **RESET:** `boat-reset-application-dev-002` executed the scene reload and expected timeout with
+  two sequential connections, maximum concurrency one, no duplicate endpoint registration,
+  rejected/stale/cross-episode command, observation failure, or water-query failure.
+- **FAILURES RETAINED:** invalid ROS domain 250, a FollowPath feedback-schema crash, and one
+  incorrect expected-status setting remain recorded as development technical failures. The schema
+  repair is submodule commit `f5a2a2c`; no recovery count is fabricated.
+- **BOUNDARY:** this closes readiness but produces no prospective boat N, land semantic N, effect
+  estimate, or throughput claim. Large Unity builds remain outside DVC; compact validation evidence
+  is governed separately by visibility.
+
 ## 2026-09-26 — current-protocol RoboBoat end-to-end canary completed
 
 - **PATH:** retained robot-visible terminal-margin capture -> separately implemented reference ->

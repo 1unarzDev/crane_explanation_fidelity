@@ -1,0 +1,38 @@
+{
+  "schema": "crane-data-manifest/v1",
+  "artifact_id": "roboboat-arm-freeze-development-validation-v1",
+  "status": "DEVELOPMENT_CONFIGURATION_AND_RESET_VALIDATED",
+  "executed_date": "2026-09-26",
+  "artifacts": [
+    {
+      "visibility": "robot_visible",
+      "path": "data/robot_visible/dev/roboboat-arm-freeze-v1/config-application-summary.json",
+      "sha256": "7f8beef37e15d3976d3cac9d34804bd46a71498ee98f41981fb120c0834d66db",
+      "bytes": 2599,
+      "dvc_pointer": "data/robot_visible/dev.dvc"
+    },
+    {
+      "visibility": "evaluator_only",
+      "path": "data/evaluator_only/dev/roboboat-arm-freeze-v1/readiness-summary.json",
+      "sha256": "a040616ad0b55553276a5ec238e6bf7358ca21fdc8193a93e2e67c72dbf78a07",
+      "bytes": 3130,
+      "dvc_pointer": "data/evaluator_only/dev.dvc"
+    }
+  ],
+  "source_identity": {
+    "crane_ml_commit": "f5a2a2c3f56c8bb6472c5c1a358b03bde55e96e2",
+    "unity_build_sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+    "unity_build_manifest_sha256": "42f14d41ddcf2cf644b0381f95672ba548ec6503c6c28702d940acb96edd8b81",
+    "managed_assemblies_sha256": "e044af4f9e1f2f5834116f3d745d8cc23ccfe91f96425fc225862ef35f77b261",
+    "nav2_profile_sha256": "047e0981aee88fb1e8833aabefe718a35ab2be49925dd95640139ac7b401385c",
+    "known_path_sha256": "314487f84caec06aee653fd9616670f1cbcd0158599854921ba9eb10d1c8c5f9"
+  },
+  "failure_disposition": "Three pre-success technical failures are retained in the evaluator-only summary. They add no statistical N and were not hidden or quality-retried.",
+  "build_disposition": "The large Unity player remains outside governed DVC storage; only its hashes and concise validation summaries are retained.",
+  "statistical_disposition": {
+    "development_only": true,
+    "land_n_added": 0,
+    "prospective_boat_n_added": 0,
+    "confirmatory_alpha_consumed": 0.0
+  }
+}

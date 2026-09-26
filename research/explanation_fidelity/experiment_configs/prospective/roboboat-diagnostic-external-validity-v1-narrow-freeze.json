@@ -1,0 +1,229 @@
+{
+  "schema": "crane-roboboat-diagnostic-arm-freeze/v1",
+  "arm_id": "roboboat-diagnostic-external-validity-v1-narrow",
+  "declared_date": "2026-09-26",
+  "status": "NARROW_ARM_FROZEN",
+  "scope_decision": "Four supported physical configurations replace the aspirational eight-family prefreeze. No validated prospective wind, current, wave, or independently actuated-sway manipulation exists, so those families are omitted rather than invented. The arm is descriptive external-validity evidence and is not pooled with land inference.",
+  "relationship_to_land": {
+    "separate_population": true,
+    "counts_toward_land_n": false,
+    "reserved_land_replication": false,
+    "land_alpha_consumed": 0.0,
+    "analysis": "separate descriptive external-validity arm; no pooling with land and no claim of same-population replication"
+  },
+  "platform_identity": {
+    "scene": "Roboboat Course",
+    "scene_reset": "reload scene default; no start teleport",
+    "scene_default_start_admission": {
+      "reference_pose_odom": {"x_m": -2.2768, "y_m": -4.8123, "yaw_rad": 0.00023},
+      "maximum_position_difference_m": 0.20,
+      "maximum_absolute_yaw_difference_rad": 0.15
+    },
+    "graphics_required": true,
+    "water_queries_required": true,
+    "nographics_prohibited": true,
+    "unity_build_sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+    "unity_build_manifest_sha256": "42f14d41ddcf2cf644b0381f95672ba548ec6503c6c28702d940acb96edd8b81",
+    "managed_assemblies_sha256": "e044af4f9e1f2f5834116f3d745d8cc23ccfe91f96425fc225862ef35f77b261",
+    "crane_ml_commit": "f5a2a2c3f56c8bb6472c5c1a358b03bde55e96e2",
+    "launcher": {
+      "path": "packages/crane_ml/Tools/Performance/run_nav2_controller_fixture.sh",
+      "sha256": "349a39753bf4d918f350e242894136e8616ea0c2a37234e045c047c11112051d"
+    },
+    "fixture": {
+      "path": "packages/crane_ml/Tools/Performance/nav2_follow_path_fixture.py",
+      "sha256": "04b75e09cc893ce0f3d6861a7db981aeb5fd92c91fc5371c01cd6cf4261b6d65"
+    },
+    "nav2_profile": {
+      "path": "packages/crane_ml/Tools/Performance/nav2_roboboat_validated_fixture.yaml",
+      "sha256": "047e0981aee88fb1e8833aabefe718a35ab2be49925dd95640139ac7b401385c"
+    },
+    "known_path": {
+      "path": "packages/crane_ml/Tools/Performance/roboboat_far_dock_known_path.json",
+      "sha256": "314487f84caec06aee653fd9616670f1cbcd0158599854921ba9eb10d1c8c5f9"
+    },
+    "vehicle": "existing four-thruster X-mixer catamaran",
+    "controllable_dof": ["body_surge", "body_sway", "yaw_rate"],
+    "observed_nav2_output_dof": ["body_surge", "yaw_rate"],
+    "nav2_lateral_command_observed": false,
+    "protected": ["scene", "dock geometry", "water physics", "buoyancy", "thruster mixer", "manual controller"]
+  },
+  "common_launch": {
+    "display": ":1",
+    "CRANE_NOGRAPHICS": "0",
+    "CRANE_SCENE": "Roboboat Course",
+    "CRANE_NAV2_PROFILE": "train-gpu",
+    "CRANE_NAV2_PARAMS": "packages/crane_ml/Tools/Performance/nav2_roboboat_validated_fixture.yaml",
+    "CRANE_NAV2_GOAL_X": "0.8641434",
+    "CRANE_NAV2_GOAL_Y": "-27.586906",
+    "CRANE_NAV2_GOAL_YAW": "1.5707963267948966",
+    "CRANE_DOCKING_EVALUATOR": "1",
+    "CRANE_DOCK_XY_TOLERANCE": "0.4",
+    "CRANE_DOCK_YAW_TOLERANCE": "0.35",
+    "CRANE_DOCK_SPEED_TOLERANCE": "0.05",
+    "CRANE_DOCK_YAW_RATE_TOLERANCE": "0.05",
+    "CRANE_DOCK_SETTLE_SECONDS": "5",
+    "CRANE_REQUIRE_OCCUPIED_COSTMAP": "1",
+    "CRANE_WARMUP": "3",
+    "CRANE_TIME_SCALE": "1"
+  },
+  "ordered_configurations": [
+    {
+      "order": 1,
+      "configuration_id": "boat-ext-narrow-001",
+      "cluster_id": "boat-corrected-far-dock-navigate-v1",
+      "family": "nominal_approach",
+      "independent_physical_configuration": true,
+      "question_id": "boat-supported-outcome-relationship-v1",
+      "question_intent": "State the observed approach/outcome and distinguish measured successful compensation from an unobserved disturbance cause.",
+      "action": "navigate-to-pose",
+      "goal_odom": {"x_m": 0.8641434, "y_m": -27.586906, "yaw_rad": 1.5707963267948966},
+      "launch_values": {
+        "CRANE_RUN_ID": "boat-ext-narrow-001",
+        "CRANE_ROS_DOMAIN_ID": "223",
+        "CRANE_ROS_PORT": "10900",
+        "CRANE_RESULT_ROOT": "PerformanceResults/prospective/roboboat-diagnostic-external-validity-v1/boat-ext-narrow-001",
+        "CRANE_NAV2_ACTION_MODE": "navigate-to-pose",
+        "CRANE_NAV2_ACTION_DURATION": "300",
+        "CRANE_NAV2_POST_RESULT_DURATION": "8",
+        "CRANE_DURATION": "320",
+        "CRANE_EXPECTED_NAV_STATUS": "succeeded"
+      },
+      "expected_outcome_is_not_admission": true
+    },
+    {
+      "order": 2,
+      "configuration_id": "boat-ext-narrow-002",
+      "cluster_id": "boat-corrected-far-dock-known-path-v1",
+      "family": "nominal_known_path",
+      "independent_physical_configuration": true,
+      "question_id": "boat-supported-terminal-margin-v1",
+      "question_intent": "Explain whether the measured action-return margin and post-result motion support or contradict the declared settled-docking outcome.",
+      "action": "follow-path",
+      "path": "packages/crane_ml/Tools/Performance/roboboat_far_dock_known_path.json",
+      "launch_values": {
+        "CRANE_RUN_ID": "boat-ext-narrow-002",
+        "CRANE_ROS_DOMAIN_ID": "224",
+        "CRANE_ROS_PORT": "10910",
+        "CRANE_RESULT_ROOT": "PerformanceResults/prospective/roboboat-diagnostic-external-validity-v1/boat-ext-narrow-002",
+        "CRANE_NAV2_ACTION_MODE": "follow-path",
+        "CRANE_NAV2_PATH_FILE": "packages/crane_ml/Tools/Performance/roboboat_far_dock_known_path.json",
+        "CRANE_NAV2_ACTION_DURATION": "280",
+        "CRANE_NAV2_POST_RESULT_DURATION": "8",
+        "CRANE_DURATION": "300",
+        "CRANE_EXPECTED_NAV_STATUS": "succeeded"
+      },
+      "expected_outcome_is_not_admission": true
+    },
+    {
+      "order": 3,
+      "configuration_id": "boat-ext-narrow-003",
+      "cluster_id": "boat-terminal-margin-xy040-v1",
+      "family": "terminal_margin",
+      "independent_physical_configuration": true,
+      "paired_layout_with": "boat-ext-narrow-002",
+      "question_id": "boat-goal-checker-terminal-margin-v1",
+      "question_intent": "Determine whether the configured return threshold left enough measured stopping margin for the independent settled-docking tolerance, without assigning a unique environmental cause.",
+      "action": "follow-path",
+      "path": "packages/crane_ml/Tools/Performance/roboboat_far_dock_known_path.json",
+      "single_declared_intervention": "controller_server goal_checker.xy_goal_tolerance changes from 0.20 m to 0.40 m through the launcher's controller parameter override; all other profile bytes remain fixed",
+      "launch_values": {
+        "CRANE_RUN_ID": "boat-ext-narrow-003",
+        "CRANE_ROS_DOMAIN_ID": "225",
+        "CRANE_ROS_PORT": "10920",
+        "CRANE_RESULT_ROOT": "PerformanceResults/prospective/roboboat-diagnostic-external-validity-v1/boat-ext-narrow-003",
+        "CRANE_NAV2_ACTION_MODE": "follow-path",
+        "CRANE_NAV2_PATH_FILE": "packages/crane_ml/Tools/Performance/roboboat_far_dock_known_path.json",
+        "CRANE_NAV2_CONTROLLER_EXTRA_ARGS": "-p goal_checker.xy_goal_tolerance:=0.40",
+        "CRANE_NAV2_ACTION_DURATION": "280",
+        "CRANE_NAV2_POST_RESULT_DURATION": "8",
+        "CRANE_DURATION": "300",
+        "CRANE_EXPECTED_NAV_STATUS": "succeeded"
+      },
+      "expected_outcome_is_not_admission": true
+    },
+    {
+      "order": 4,
+      "configuration_id": "boat-ext-narrow-004",
+      "cluster_id": "boat-wrong-side-goal-grid-v1",
+      "family": "bounded_geometry",
+      "independent_physical_configuration": true,
+      "question_id": "boat-bounded-navigation-grid-v1",
+      "question_intent": "State whether the retained robot-visible navigation grid supports a route to the requested cell and preserve the limitation that this does not prove global physical infeasibility.",
+      "action": "navigate-to-pose",
+      "goal_odom": {"x_m": 0.8641434, "y_m": -24.586906, "yaw_rad": -1.5707963267948966},
+      "launch_values": {
+        "CRANE_RUN_ID": "boat-ext-narrow-004",
+        "CRANE_ROS_DOMAIN_ID": "226",
+        "CRANE_ROS_PORT": "10930",
+        "CRANE_RESULT_ROOT": "PerformanceResults/prospective/roboboat-diagnostic-external-validity-v1/boat-ext-narrow-004",
+        "CRANE_NAV2_GOAL_Y": "-24.586906",
+        "CRANE_NAV2_GOAL_YAW": "-1.5707963267948966",
+        "CRANE_NAV2_ACTION_MODE": "navigate-to-pose",
+        "CRANE_NAV2_ACTION_DURATION": "180",
+        "CRANE_NAV2_POST_RESULT_DURATION": "3",
+        "CRANE_DURATION": "200",
+        "CRANE_EXPECTED_NAV_STATUS": "aborted"
+      },
+      "expected_outcome_is_not_admission": true
+    }
+  ],
+  "evidence_mask_controls": [
+    {
+      "control_id": "boat-ext-narrow-003-missing-return-speed",
+      "physical_parent": "boat-ext-narrow-003",
+      "cluster_id": "boat-terminal-margin-xy040-v1",
+      "independent_n_added": 0,
+      "mask": "omit independently measured return speed while retaining return error, task tolerance, post-result displacement, settled error, and provenance",
+      "required_disposition": "qualify the full terminal-margin chain because the stopped-state discriminator is unavailable"
+    }
+  ],
+  "accounting": {
+    "physical_configurations": 4,
+    "independent_configuration_ids": 4,
+    "masked_controls": 1,
+    "masked_control_independent_n": 0,
+    "paired_layouts_and_masks_clustered": true,
+    "analysis_unit": "independent physical configuration with paired intervention and mask dependence represented by cluster_id",
+    "fixed_order": ["boat-ext-narrow-001", "boat-ext-narrow-002", "boat-ext-narrow-003", "boat-ext-narrow-004"],
+    "stopping": "collect each ordered physical configuration once under the technical-failure policy; report all valid unexpected outcomes; no significance or adaptive family expansion is assigned to this narrow arm"
+  },
+  "evidence_contract": {
+    "robot_visible_required": [
+      "requested action/goal or supplied path and identities",
+      "timestamped pose, heading, odometry/body motion, and path/plan evidence",
+      "requested Nav2 commands and downstream accepted command audit",
+      "costmap/scan evidence when used by a geometry claim",
+      "action state/outcome, attempt identity, and terminal timing",
+      "return error, post-result motion, saturation/response-recovery evidence when applicable",
+      "sensor/TF freshness, runtime completeness, source/config/build hashes"
+    ],
+    "evaluator_only": [
+      "independent docking predicate interpretation",
+      "information-unit inventory and sufficiency labels",
+      "mask key and condition key",
+      "reference calculation results before packet blinding"
+    ],
+    "reference_computations": [
+      "independent terminal-margin calculation from retained measurements and declared thresholds",
+      "independent hull/pose/settle predicate calculation",
+      "independent bounded grid-connectivity calculation at threshold 253",
+      "deterministic identifier, timestamp, unit, path, hash, and count checks"
+    ],
+    "information_parity": "P and R receive the same robot-visible evidence, relevant exact source/configuration excerpts, retrieval access, and primitive deterministic calculation tools. R does not receive P's checked diagnostic output or evaluator-only keys."
+  },
+  "technical_failure_policy": {
+    "retain_every_attempt": true,
+    "valid_unexpected_outcomes_retained": true,
+    "quality_driven_retry_prohibited": true,
+    "retry_only_after": "a documented transport/runtime failure with no usable judgment or valid physical recording, after reconciling retained output and logical request identity",
+    "replacement_does_not_add_independent_n": true
+  },
+  "causal_limits": [
+    "Observed lateral displacement is not by itself wave, wind, or current attribution.",
+    "The current Nav2 controller emitted no lateral command in validated runs; unactuated sway is not a lateral-command interface failure.",
+    "A delivered costmap does not prove it was the exact state consumed by every planner invocation.",
+    "No route in a bounded retained grid does not prove global physical infeasibility or a unique obstacle identity.",
+    "Action success does not by itself establish the independent settled docking predicate, and event ordering does not prove a unique physical cause."
+  ]
+}

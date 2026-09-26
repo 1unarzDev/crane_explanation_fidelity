@@ -1,5 +1,37 @@
 # Decision Log
 
+## 2026-09-26 — freeze a four-configuration RoboBoat external-validity arm
+
+- **Decision:** close the readiness gate as `NARROW_ARM_FROZEN` with four exact physical
+  configurations: corrected far-dock `NavigateToPose`, corrected known-path `FollowPath`, the
+  single 0.40 m goal-checker-margin intervention, and the wrong-side-goal bounded-grid condition.
+  Attach the missing-return-speed mask to its physical parent with zero additional N.
+- **Reason:** these are the only bounded families supported by the protected scene, validated
+  graphics/water runtime, current controller interfaces, and retained development evidence.
+  Filling the eight-family prefreeze would require inventing disturbance attribution, treating
+  seeds as independent, or redesigning the platform.
+- **Validity:** exact start admission, goals/path, overrides, domains, ports, result roots,
+  questions, evidence/reference contracts, hashes, order, and technical-failure rules were frozen
+  before prospective outcomes. Valid unexpected outcomes remain eligible. Boat remains separate
+  from land N, alpha, and reserved replication.
+- **Operational consequence:** the boat readiness gate no longer blocks land semantic production.
+  Begin at one boat worker, two R workers, four Luna workers, four CPU workers, and one publisher;
+  scale only from measured stable production throughput.
+
+## 2026-09-26 — validate current boat configuration application and reset isolation
+
+- **Decision:** accept development runs `boat-config-application-dev-003` and
+  `boat-reset-application-dev-002` as configuration/reset readiness evidence under the current
+  source and graphics/water build. Retain concise robot-visible and evaluator-only summaries; do
+  not retain the large Unity build.
+- **Evidence:** the full known path returned success with 2,459 feedback messages, zero rejected,
+  stale, or cross-episode commands, fresh sensors/water queries, and real-time factor 1.00007. The
+  reset probe executed a scene reload with two sequential connections, maximum concurrency one,
+  no duplicate registration or endpoint error, and real-time factor 1.00064.
+- **Failures retained:** domain 250 exceeded Fast DDS limits; the first FollowPath application
+  exposed its missing recovery-count field; and the first reset probe used the wrong expected
+  action status. The schema fix records recovery count as unavailable rather than zero.
+
 ## 2026-09-26 — keep production scale-up blocked on an exact independent RoboBoat schedule
 
 - **Decision:** accept the restorable current-protocol boat canary and marine Luna qualification,
