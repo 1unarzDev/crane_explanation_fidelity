@@ -5,6 +5,16 @@ Updated: 2026-09-26
 Protocol: `diagnostic-sequential-protocol-v2`
 Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 
+## Composite-mechanism v6 development screen
+
+Seven source-generated v6 layouts that overlap neither frozen 100-cluster schedule are allocated
+prospectively and irreversibly to a development-only screen. Four combine connected-detour geometry
+with persistent or transient command--motion interventions; three isolate geometry, execution, and
+nominal false-premise behavior. Two masks remain within cluster. No physical attempt, response, or
+judge call existed at freeze. Candidate promotion requires at least two consensus independent P
+wins on composite-positive cases plus strict risk, coverage, qualification, and two-pass gates.
+The screen consumes no confirmatory alpha and cannot contribute confirmation or replication N.
+
 ## Coverage-complete v5 raw-baseline screen
 
 The frozen `raw-baseline-v5-language-screen-v1` is complete and rejected. Baseline R received the

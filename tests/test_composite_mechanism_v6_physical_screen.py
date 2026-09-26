@@ -1,0 +1,68 @@
+import hashlib
+import json
+from pathlib import Path
+
+
+ROOT = Path(__file__).resolve().parents[1]
+DECLARATION = ROOT / "research/explanation_fidelity/experiment_configs/development/composite-mechanism-v6-physical-screen-v1.json"
+CATALOG = ROOT / "packages/crane_ml/Assets/Resources/ReferenceEnvironments/crane_land_proving_ground_v6.json"
+SCHEDULE = ROOT / "research/explanation_fidelity/experiment_configs/prospective/land-command-motion-physical-schedule-v1.json"
+
+
+def _load(path: Path):
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _sha256(path: Path) -> str:
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def test_allocated_layouts_exist_and_do_not_overlap_frozen_schedules():
+    declaration = _load(DECLARATION)
+    catalog = _load(CATALOG)
+    schedule = _load(SCHEDULE)
+
+    catalog_by_id = {layout["id"]: layout for layout in catalog["layouts"]}
+    allocated = {run["layout_id"] for run in declaration["fixed_runs"]}
+    scheduled = {
+        run["layout_id"]
+        for cohort in schedule["cohorts"]
+        for run in cohort["runs"]
+    }
+
+    assert len(allocated) == 7
+    assert allocated.isdisjoint(scheduled)
+    for run in declaration["fixed_runs"]:
+        layout = catalog_by_id[run["layout_id"]]
+        assert layout["seed"] == run["layout_seed"]
+        assert layout["diagnosticMechanism"] == run["geometry"]
+        assert layout["studySplit"] == declaration["allocation"]["source_split_label"]
+
+
+def test_declaration_binds_current_catalog_schedule_and_implementation_bytes():
+    declaration = _load(DECLARATION)
+    assert declaration["allocation"]["catalog_sha256"] == _sha256(CATALOG)
+    assert declaration["allocation"]["frozen_schedule_sha256"] == _sha256(SCHEDULE)
+
+    paths = {
+        "composer": ROOT / "analysis/compose_diagnostic_hypotheses_v2.py",
+        "renderer": ROOT / "analysis/render_diagnostic_composition_v2.py",
+        "geometric_adapter": ROOT / "analysis/build_geometric_composition_packet_v5.py",
+        "command_motion_adapter": ROOT / "analysis/build_command_motion_composition_packet_v2.py",
+    }
+    for key, path in paths.items():
+        assert declaration["candidate"]["implementation_hashes_at_declaration"][key] == _sha256(path)
+
+
+def test_fixed_order_and_statistical_units_are_unique_and_fail_closed():
+    declaration = _load(DECLARATION)
+    runs = declaration["fixed_runs"]
+    assert [run["order"] for run in runs] == list(range(1, 8))
+    assert len({run["run_id"] for run in runs}) == len(runs)
+    assert len({run["cluster_id"] for run in runs}) == len(runs)
+    assert len({run["layout_seed"] for run in runs}) == len(runs)
+    assert len({run["ros_domain_id"] for run in runs}) == len(runs)
+    assert len({run["ros_tcp_port"] for run in runs}) == len(runs)
+    assert declaration["scientific_boundary"]["one_attempt_per_configuration_no_replacement"] is True
+    assert declaration["promotion_gate_to_a_later_prospective_protocol"]["required_consensus_p_win_clusters"] == 2
+    assert all(mask["independent_cluster_increment"] == 0 for mask in declaration["planned_within_cluster_masks"])

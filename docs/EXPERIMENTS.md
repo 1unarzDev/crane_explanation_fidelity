@@ -1,5 +1,22 @@
 # Experiment Log
 
+## 2026-09-26 — freeze composite-mechanism v6 physical development screen
+
+- **STATUS:** `FROZEN_BEFORE_ANY_PHYSICAL_ATTEMPT_RESPONSE_OR_JUDGMENT`.
+- **ALLOCATION:** seven v6 catalog entries absent from both fixed 100-cluster schedules are now
+  development-only and may never enter confirmation or replication. A regression test proves zero
+  overlap and binds exact catalog, schedule, source, composer, renderer, and adapter bytes.
+- **QUESTION:** can mandatory checked composition repeatedly preserve both an independently
+  supported geometric restriction and command--motion mechanism, decisive measurements, and causal
+  limits where strong raw-evidence R must perform the same composition itself?
+- **CONTROLS:** four composite opportunities, one geometry-only case, one execution-only case, one
+  nominal false-premise case, and two zero-increment within-cluster masks. Valid unexpected outcomes
+  remain; each physical configuration receives one attempt and no replacement.
+- **PROMOTION BOUNDARY:** require at least two consensus P-win composite clusters, positive endpoint
+  difference in both Luna passes, no material-risk or unit-coverage degradation, and correct
+  qualification controls. Physical capture alone cannot satisfy this gate. Confirmation N and
+  alpha remain zero.
+
 ## 2026-09-26 — evidence-complete raw-baseline v5 language screen rejects candidate v5
 
 - **STATUS:** `DEVELOPMENT_ONLY_CANDIDATE_REJECTED_FROZEN_GATE`.

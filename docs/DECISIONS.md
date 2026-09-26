@@ -1,5 +1,25 @@
 # Decision Log
 
+## 2026-09-26 — allocate unused v6 source layouts to one composite-mechanism development screen
+
+- **Decision:** irrevocably allocate seven v6 catalog layouts that occur in neither frozen
+  100-cluster schedule to `composite-mechanism-v6-physical-screen-v1`. Keep every scheduled
+  confirmation and replication configuration untouched.
+- **Rationale:** candidate v5 was perfectly faithful but did not repeatedly beat strong R on
+  single-mechanism questions. The smallest scientifically distinct test is whether mandatory
+  checked composition preserves two simultaneously supported mechanisms and their limits when R
+  must compose the same primitive evidence itself. Creating another broad framework or weakening R
+  has lower paper value.
+- **Design:** four connected-detour runs combine geometric opportunity with persistent/transient
+  command--motion intervention; three controls isolate geometry, execution, and a nominal false
+  premise. Two within-cluster masks test missing decisive geometry and odometry without increasing
+  independent N. Every physical configuration has one attempt and no replacement.
+- **Gate:** before confirmation can even be considered, the separately frozen language screen must
+  produce at least two consensus independent P wins on composite-positive configurations, a
+  positive supported-diagnostic-success difference in both Luna passes, no material-error or
+  required-unit-coverage degradation, and correct masked/false-premise handling. Failure rejects
+  v6 unchanged. This is development only and consumes no alpha.
+
 ## 2026-09-26 — reject coverage-complete candidate v5 after evidence-complete Luna audit
 
 - **Decision:** retain `coverage-complete-checked-composition-v5` and both Luna arms, but reject the
