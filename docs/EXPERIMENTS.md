@@ -1,5 +1,17 @@
 # Experiment Log
 
+## 2026-09-26 — focused physical run 10 / source order 46: `cm-land-conf-046`
+
+- **STATUS:** `VALID_FOCUSED_PHYSICAL_INDEPENDENT_PRIMARY_DIAGNOSABLE_UNEXPECTED_ABORT_RESPONSE_UNOPENED`;
+  one attempt and no replacement. The generic expected-success check failed, but source/build,
+  zero-error Unity execution, all 14 binding checks, and independent-reference gates passed.
+- **REFERENCE:** independent computation supports 0.260 m/s delivered command versus 0.000 m/s
+  measured response over 11--21 s after a healthy 0.2597 m/s response. Navigation aborted after
+  two FollowPath failures and two source-qualified Wait starts.
+- **BOUNDARY:** this supports the discrepancy and recorded sequence, not actuator acceptance,
+  Nav2 odometry consumption, the hidden intervention, or a unique physical cause. Responses remain
+  unopened and alpha remains zero; source-order run `cm-land-conf-047` is next.
+
 ## 2026-09-26 — focused physical run 9 / source order 45: `cm-land-conf-045`
 
 - **STATUS:** `VALID_FOCUSED_PHYSICAL_INDEPENDENT_PRIMARY_DIAGNOSABLE_UNEXPECTED_ABORT_RESPONSE_UNOPENED`;
