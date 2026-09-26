@@ -1,0 +1,176 @@
+{
+  "schema": "crane-coverage-complete-v4-development-screen/v1",
+  "screen_id": "coverage-complete-v4-language-screen-v1",
+  "status": "FROZEN_BEFORE_ANY_RESPONSE_OR_JUDGMENT",
+  "purpose": "One fixed development-only comparison of coverage-complete checked composition v4 against the strongest fair tool-enabled repository baseline R. It can select or reject a candidate but cannot establish confirmation, significance, or replication.",
+  "physical_screen": "research/explanation_fidelity/experiment_configs/development/coverage-complete-v4-physical-screen-v1.json",
+  "physical_screen_amendments": [
+    "research/explanation_fidelity/experiment_configs/development/coverage-complete-v4-physical-screen-v1-amendment-1.json",
+    "research/explanation_fidelity/experiment_configs/development/coverage-complete-v4-physical-screen-v1-amendment-2.json"
+  ],
+  "reference_inventory": "research/explanation_fidelity/references/development/coverage-complete-v4-references-v1.json",
+  "candidate": "coverage-complete-checked-composition-v4",
+  "statistical_boundary": {
+    "confirmatory": false,
+    "confirmatory_semantic_n": 0,
+    "confirmatory_alpha_consumed": 0.0,
+    "independent_unit": "scenario configuration",
+    "independent_clusters": 5,
+    "response_pairs": 7,
+    "paired_masks_add_clusters": 0,
+    "question_variants_add_clusters": 0,
+    "model_repetitions_add_clusters": 0,
+    "luna_passes_add_clusters": 0
+  },
+  "repositories": {
+    "crane_ml_path": "packages/crane_ml",
+    "crane_ml_url": "https://github.com/1unarzDev/crane_ml.git",
+    "crane_ml_commit": "05a1161e4b5a3ad6bbefe1c635507e7061ea8d58",
+    "diagnostic_core_path": "packages/astro_dock/src/crane_explain",
+    "diagnostic_core_commit": "bea12562324fa2caf9290698cfadddcb22bd8a8b"
+  },
+  "model": {
+    "provider": "codex",
+    "model": "gpt-6-sol",
+    "reasoning_effort": "high",
+    "samples_per_case": 1,
+    "retries_after_usable_answer": 0,
+    "selection_basis": "Strongest repository-aware tool-enabled baseline used in the preceding fixed development comparison; no weaker model or restricted tool budget is substituted to create an advantage."
+  },
+  "baseline": {
+    "id": "R-strong-repository-tool-enabled-coverage-complete-v4",
+    "prompt": "research/explanation_fidelity/prompts/diagnostic_repository_agent_measurement_complete_v2.txt",
+    "same_robot_visible_primitive_diagnostic": true,
+    "same_embedded_reference_computation": true,
+    "same_relevant_source_and_configuration": true,
+    "same_deterministic_calculation_tools": true,
+    "similar_or_greater_model_resource_budget": true,
+    "episode_certificate_visible": false,
+    "checked_answer_plan_visible": false,
+    "candidate_final_answer_visible": false,
+    "model_calls": 1
+  },
+  "candidate_policy": {
+    "primitive_diagnostic_identical_to_R": true,
+    "mandatory_finite_composition": true,
+    "geometry_adapter": "land-geometric-composition-adapter-v4",
+    "command_motion_adapter": "command-motion-composition-adapter-v2",
+    "deterministic_rendering": true,
+    "model_calls": 0,
+    "fail_closed_on_missing_required_units": true
+  },
+  "frozen_artifact_sha256": {
+    "base_runner": "97d75b94cc8fd17b4f3298a3f549d0f2851ac5dc7d4b3b0f543ad63b8494d16e",
+    "baseline_prompt": "3b8c0259b64355e5817d9159d4a4ea381d3b87841ba4d9a3e7081ffc3b527c16",
+    "baseline_tool:command_motion_config": "9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85",
+    "baseline_tool:recompute_command_motion": "8477955d95e9d1946062b3c1e0e85a861a57862e17c34a2f8ce83670fadbeaaa",
+    "baseline_tool:reference_command_motion": "ae8650aa72678b1ff939be94315390b9287c3f7f2cd6b0a761da76c727ba2469",
+    "baseline_tool:reference_land_geometric": "0f96ccec598becf56eb4736561520814bf217bea2711545dc314d5723cf84bb2",
+    "baseline_tool:reference_plan_geometry": "7e4d7a9ecb2f1112fa07b28c133c87c7af719e6ec5ff6aa3e52aae7224e275c8",
+    "command_adapter": "551927284fbc3ef220d661870369c203b1258efe73d9839a8d1a395eae10b4c0",
+    "command_reference_builder": "1076ce4b91d40a0ccd6ede9faf4dbd8d6d3871052d533855ea01c6e83363d611",
+    "composer": "c7c2862b9966971e94a7269141a44a0b7516a7ae1d5e538a35f09e6c1a36fd1e",
+    "geometric_adapter": "b00029dbad3e0964c974167860388eda84d4408ac2720208e5838ba087206e76",
+    "packet_builder": "bc00e449e8b596778d2f74634c0790a6028549d59a7ac2dd19a11c9914030fcf",
+    "reference_builder": "fa99169752effb34bdcecaa16db30af9e215b2accd18fd8d191e9169e082253b",
+    "reference_inventory": "b4243392cf0d2be51c85ac1c483e94cf27a8f13a1f3890157e422aefc63a7b7b",
+    "registry": "74d6ad56672713356ae596a44ffdfd2281e7c97db2f58f86c7f4032a4142e938",
+    "renderer": "c485b6d75abe2eefd5495120b369ffc3770b7694dc1391c0e526d94c5e034798",
+    "runner": "d7840779849b3bb999345bd589ccae89d80d4d98651c6fd0f0c1f44a4601f4f3"
+  },
+  "committed_contract_sha256": "67215c56a5ba9d4ff1bdd847953737b10e92cc930f78a5f897797da63331bb19",
+  "cases": [
+    {
+      "case_id": "ccv4-geometry-001",
+      "cluster_id": "mccv4-land-001",
+      "family": "bounded_geometric_restriction",
+      "question_kind": "supported_geometric_mechanism",
+      "adapter": "geometric_v4",
+      "diagnostic_path": "data/robot_visible/dev/mccv4-dev-001/geometric-route-diagnostic-v2.json",
+      "diagnostic_sha256": "dfb49e2301bbe13e324e06a8c62e77fd52fea16fcd697dc2574422d19ec54c78",
+      "independent_cluster": true,
+      "question": "What physically grounded route restriction is supported, how did the delivered path and measured trajectory change, and what stronger causal conclusions remain unproven?"
+    },
+    {
+      "case_id": "ccv4-geometry-masked-001m",
+      "cluster_id": "mccv4-land-001",
+      "family": "missing_decisive_geometry",
+      "question_kind": "missing_decisive_geometry_guardrail",
+      "adapter": "geometric_v4",
+      "diagnostic_path": "data/robot_visible/dev/mccv4-dev-001-mask-no-costmap-cells/geometric-route-diagnostic-v2.json",
+      "diagnostic_sha256": "c59186d09d62b93317374a10110c963b484fcb5be4c109e6e5da369f585dd36a",
+      "independent_cluster": false,
+      "paired_with": "ccv4-geometry-001",
+      "question": "Why did the delivered route change? Preserve the useful path and trajectory evidence and state whether the physical trigger can be established with costmap cells unavailable."
+    },
+    {
+      "case_id": "ccv4-geometry-002",
+      "cluster_id": "mccv4-land-002",
+      "family": "bounded_geometric_restriction",
+      "question_kind": "supported_geometric_mechanism_replication",
+      "adapter": "geometric_v4",
+      "diagnostic_path": "data/robot_visible/dev/mccv4-dev-002/geometric-route-diagnostic-v2.json",
+      "diagnostic_sha256": "113e30be8760bbec4ffcc942e815fb00326aacbf67718ea61f6ac6b7a9f078be",
+      "independent_cluster": true,
+      "question": "What bounded geometric mechanism and route change are supported, what decisive measurements establish them, and what does the evidence not prove?"
+    },
+    {
+      "case_id": "ccv4-geometry-003",
+      "cluster_id": "mccv4-land-003",
+      "family": "visible_obstacle_consumption_guardrail",
+      "question_kind": "visible_obstacle_consumption_guardrail",
+      "adapter": "geometric_v4",
+      "diagnostic_path": "data/robot_visible/dev/mccv4-dev-003/geometric-route-diagnostic-v2.json",
+      "diagnostic_sha256": "fffeff446615eec0e8dc0046b938782a70ed8108a668e016ca7c510ae61fc90f",
+      "independent_cluster": true,
+      "question": "Did a visible obstacle cause Nav2 to change this route? Give the deepest supported geometric diagnosis and separate observed restriction, path change, consumption, and causation."
+    },
+    {
+      "case_id": "ccv4-persistent-004",
+      "cluster_id": "mccv4-land-004",
+      "family": "persistent_command_motion_discrepancy",
+      "question_kind": "supported_execution_mechanism",
+      "adapter": "command_motion_v2",
+      "diagnostic_path": "data/robot_visible/dev/mccv4-dev-004/command-motion-diagnostic-v3-low-speed.json",
+      "diagnostic_sha256": "dae57b2df3cce84fe3e89d228e36a59bae1ef64d3bcb9a03fb62b5fc4aafabed",
+      "independent_cluster": true,
+      "question": "Why did the robot fail to continue toward the goal? Identify the deepest supported execution mechanism, preserve its decisive comparison, and state what remains unresolved."
+    },
+    {
+      "case_id": "ccv4-missing-odometry-004m",
+      "cluster_id": "mccv4-land-004",
+      "family": "missing_decisive_motion",
+      "question_kind": "missing_decisive_evidence_guardrail",
+      "adapter": "command_motion_v2",
+      "diagnostic_path": "data/robot_visible/dev/mccv4-dev-004-mask-no-odometry/command-motion-diagnostic-v3.json",
+      "diagnostic_sha256": "89b93ece346e1d78bdc88f4238e5de3ad17c49f1108e9ce8e51592ceb8102d41",
+      "independent_cluster": false,
+      "paired_with": "ccv4-persistent-004",
+      "question": "Did a command-to-motion discrepancy cause the abort? Give the useful retained execution evidence and identify the missing discriminator without using the paired unmasked result."
+    },
+    {
+      "case_id": "ccv4-compensation-005",
+      "cluster_id": "mccv4-land-005",
+      "family": "successful_command_motion_compensation",
+      "question_kind": "false_premise_and_successful_compensation",
+      "adapter": "command_motion_v2",
+      "diagnostic_path": "data/robot_visible/dev/mccv4-dev-005/command-motion-diagnostic-v3-low-speed.json",
+      "diagnostic_sha256": "db310725de2b00914241f6d1d34bdb7c394800b6aab906a0b8baeace2d5fd455",
+      "independent_cluster": true,
+      "question": "Why did the robot fail to reach the goal, and did the Wait recovery cause motion to resume? Correct any false premise, preserve the decisive response measurements, and qualify causation."
+    }
+  ],
+  "readiness_gate": {
+    "all_fixed_response_pairs_must_complete": true,
+    "two_valid_isolated_luna_v12_passes_required": true,
+    "p_minus_r_supported_diagnostic_success_positive_in_at_least_two_mechanism_families": true,
+    "p_advantage_must_recur_across_independent_clusters": true,
+    "p_material_error_excess_allowed": 0,
+    "p_causal_overclaim_excess_allowed": 0,
+    "p_useful_coverage_degradation_allowed": 0,
+    "masked_and_false_premise_handling_required": true,
+    "information_parity_must_pass": true,
+    "failed_gate_action": "Retain the negative or unresolved development result and do not activate confirmation. Any revised candidate requires a separately declared development cycle."
+  },
+  "stopping": "Run each fixed case exactly once for R and once deterministically for P, retain every usable answer, do not resample an inconvenient result, and stop after the seven response pairs."
+}
