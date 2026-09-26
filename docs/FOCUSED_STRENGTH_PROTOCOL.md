@@ -1,0 +1,165 @@
+# Focused-strength protocol
+
+Protocol: `focused-supported-diagnostic-communication-v1`
+
+Declared: 2026-09-26
+
+Status: **CANDIDATE SELECTED / PROSPECTIVE CAMPAIGN NOT YET ACTIVE / CONFIRMATORY N = 0 / ALPHA CONSUMED = 0**
+
+This is an additive prospective direction. It does not rescore or replace frozen F/G/H, earlier
+development screens, failed candidates, judge qualifications, or the broader sequential framework.
+The machine-readable registration is
+`research/explanation_fidelity/experiment_configs/prospective/focused-supported-diagnostic-communication-v1.json`.
+
+## Focused claim and selected treatment
+
+The sole primary claim is:
+
+> On the registered atomic navigation-diagnostic question families, checked composition increases
+> the probability of communicating the supported mechanism, question-essential measurement, and
+> necessary causal limit without a material unsupported or contradicted assertion, compared with a
+> strong repository-aware, tool-enabled agent.
+
+P is the unchanged `measurement-complete-checked-composition-v2` deterministic renderer, restricted
+to atomic question contracts it can satisfy. This is a specialized diagnostic-computation and
+checked-composition treatment, not an LLM-reasoning claim. Multi-mechanism composition, universal
+root-cause discovery, supplemental completeness, human trust, hardware reliability, and overall
+deployment preference are outside the primary claim.
+
+Selection follows the bounded development audit in
+`research/explanation_fidelity/experiment_configs/development/measurement-complete-v2-focused-audit-v1.json`.
+P was restrained and communicated the atomic mechanism in the eligible development cases. The
+audit also found that the compact v2 Luna packets omitted raw facts available to R, so the apparent
+three-cluster advantage and 14/18 R material-error count are not evidence for the new effect. The
+candidate is selected for deterministic auditability and bounded plausibility, not because a fair
+effect has already been observed.
+
+No code repair is folded into this version. A broader question or changed renderer creates a new
+candidate and cannot enter this campaign.
+
+## Endpoint and information units
+
+The independent unit is one prospectively generated scenario configuration. A question variant,
+evidence mask, exact-condition rerun, repeated generation, or Luna pass adds zero independent units.
+
+For one registered atomic diagnosable question per eligible cluster, **complete supported diagnostic
+communication** is one binary success only when the final answer:
+
+1. identifies the required supported physical or execution mechanism;
+2. gives the question-essential measurement or comparison with units and applicable interval/frame;
+3. reports the relevant task outcome and preserves the necessary causal/evidence qualification; and
+4. contains no material unsupported or contradicted assertion.
+
+The required units are fixed by family before collection:
+
+| Family | Essential units | Supplemental, separately reported |
+| --- | --- | --- |
+| Bounded geometric restriction | bounded navigation-model restriction; blocked route sample/cost versus threshold and location; relevant path/outcome fact; no obstacle identity, exact consumption, or global-no-path claim | extra timestamps, full cell histogram, every plan/trajectory extremum, suggested next check |
+| Persistent command--motion discrepancy | healthy measured comparator; commanded-versus-measured event comparison and interval; terminal outcome; unique actuator/obstacle/slip cause withheld | every sample/window, extra event locators, all recovery counts unless asked |
+| Measured response recovery | discrepancy comparison; recovered response value/ratio and interval; outcome; chronology does not prove recovery caused success/failure | supplemental source narration, every intermediate event, next check |
+
+An item is not reclassified as supplemental because P omits it. If a question asks for a count,
+trajectory magnitude, event order, or missing discriminator, that item is essential. The broader
+historical v2 geometry question therefore remains incomplete under this endpoint; its outcome is
+not retroactively changed.
+
+Mechanism identification, measurement correctness, outcome/limitation coverage, material error,
+causal overclaim, and supplemental coverage remain separately reported.
+
+## Population and fixed mixture
+
+The confirmation population is simulated land/Nav2 navigation under the existing validated
+warehouse/proving-ground fixture. New environment breadth, aerial, underwater, outdoor/campus, and
+perfect RoboBoat docking are not prerequisites. Surface cases may be a later separately registered
+replication or external-validity arm; they are not silently added to this population.
+
+Configurations are scheduled in fixed eight-cluster blocks:
+
+- two bounded geometric-restriction clusters;
+- two persistent command--motion discrepancy clusters;
+- two measured-response-recovery clusters;
+- one independent missing-decisive-evidence or ambiguous control; and
+- one independent nominal/false-premise or irrelevant-obstacle control, alternating by block.
+
+The first six are primary-endpoint eligible. Controls test qualification and adverse behavior but
+do not become primary successes or failures. Paired masks remain in their source cluster. Shared
+layout families and interventions are clustered together. Valid unexpected outcomes are retained;
+eligibility follows recording validity and independently computed mechanism support, never P/R
+answers. A fixed configuration manifest, order, hashes, exclusion rules, and disjoint replication
+reserve must exist before activation. Previously inspected development recordings are ineligible.
+
+## Fair R and evidence-complete judging
+
+R is one high-reasoning call from the strongest available repository-aware model selected on
+development evidence. R receives the same communication task, robot-visible observations, exact
+source/configuration, retrieval scope, primitive deterministic diagnostic tools, and calculation
+descriptions as P. R may run scripts and use templates. It does not receive P's checked diagnostic
+record, composition certificate, answer plan, verifier result, or final text. Calls, tokens, wall
+time, tool use, and P preprocessing cost are retained. Deterministic P and model-based R are a
+treatment comparison, not equal internal computation.
+
+The Luna packet must contain the facts actually available to both methods: complete relevant
+method inputs or deterministic summaries, exact source/configuration excerpts, provenance, and the
+independent essential-unit inventory. A valid R fact is not unsupported merely because a compact
+inventory omitted it. Claims outside the complete packet are `evidence_problem` or unresolved
+until independently checked, not automatic R errors. Ephemeral absolute paths are stripped from
+transport but candidate wording is otherwise unchanged.
+
+Scoring uses the frozen, held-out-qualified Luna v12 configuration and two isolated blinded passes.
+Quantities, IDs, units, thresholds, and hashes are checked deterministically. Luna assesses semantic
+support, materiality, and communicated essential units. Disagreements not settled by a declared
+deterministic rule remain unresolved and stay in sensitivity bounds. Results are “Luna-assessed,”
+not human judgments. A bounded packet-closure dry run must pass before activation; this is not
+permission to tune Luna or the endpoint on campaign answers.
+
+## Inference, levels of conclusion, and stopping
+
+For each eligible cluster, let `X = success_P - success_R` in `{-1,0,1}`. Reuse the validated
+mixture-martingale confidence sequence from `diagnostic-sequential-protocol-v2`, with the chosen
+campaign allocation recorded in `diagnostic-sequential-error-ledger-v2` before the first response
+is opened.
+
+- **Level A — focused benefit:** the one-sided anytime-valid lower confidence bound for mean `X`
+  is strictly greater than `0`.
+- **Level B — practical magnitude:** the same bound is strictly greater than the prospectively
+  chosen minimum worthwhile improvement of `+0.10` (ten percentage points).
+- **Level C — acceptable overall tradeoff:** separately reported controls and secondary outcomes
+  support a broader preference. This is not required for Level A or B.
+
+The nested Level A/B claims use one confidence sequence and one allocation; Level B implies Level A
+and is not a search over endpoints. The ten-point planning value reflects the added instrumentation
+and preprocessing while avoiding the older rule that made a 15-point benefit plus every secondary
+guardrail necessary to report any focused improvement.
+
+Material-error absence is inside the primary success definition. Secondary material-error rate,
+causal overclaim, ambiguous/false-premise handling, supplemental coverage, latency, tokens, model
+calls, and mechanism-family results are disclosed with intervals but do not all gate Level A.
+Evaluator leakage, unequal permitted evidence/tools, broken cluster identity, invalid judge packets,
+or outcome-dependent sampling invalidate the campaign. A severe repeated causal-boundary failure
+triggers a frozen-method review; it is never hidden as a mere coverage tradeoff.
+
+The first look requires at least 40 eligible independent clusters and representation from all three
+primary families. Planned reviews occur after 40, 80, 120, 200, 300, and 400 eligible clusters.
+Success may stop at any review when the registered bound clears Level A or B. Futility review occurs
+when the anytime-valid upper bound is at or below zero, or at the 400-cluster maximum without Level A.
+Inconclusive and negative campaigns are retained. Sample planning uses development assumptions only;
+the four-cluster v2 screen is not an effect-size estimate.
+
+The `candidate-v1-confirmation` allocation (`alpha=0.02`) remains available and unbound. Activation
+must atomically bind it; abandonment after inspecting a confirmatory response consumes it. No
+ordinary repeated fixed-sample tests or post-outcome family reweighting are allowed.
+
+## Replication and reporting
+
+After Level A, freeze no method, judge, question, or threshold changes and run the disjoint reserved
+configurations under `selected-method-replication` (`alpha=0.02`). Replication succeeds when its own
+one-sided anytime-valid lower bound is above zero with all validity gates intact. Level B replication
+is reported if achieved but is not silently required after a Level A discovery claim.
+
+The paper reports effect estimates and valid bounds for Levels A and B, then a tradeoff table for
+supplemental coverage, controls, mechanism breadth, determinism, calls, latency, and unresolved judge
+labels. An allowed conclusion is that P improves complete supported diagnostic communication on the
+registered families while providing less supplemental detail. It is not an overall-superiority
+claim. Until confirmation and replication exist, the manuscript continues to report zero
+confirmatory semantic clusters and no statistical advantage.
+

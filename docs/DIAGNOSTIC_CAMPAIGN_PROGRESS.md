@@ -5,6 +5,23 @@ Updated: 2026-09-26
 Protocol: `diagnostic-sequential-protocol-v2`
 Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 
+## Focused supported-diagnostic-communication redirect
+
+The additive `focused-supported-diagnostic-communication-v1` protocol selects unchanged,
+deterministic measurement-complete v2 for atomic land questions only. Its primary endpoint requires
+the supported mechanism, question-essential measurement, relevant outcome/causal limit, and no
+material unsupported assertion. It explicitly permits disclosed supplemental-coverage and breadth
+tradeoffs. Level A is a corrected anytime-valid lower bound above zero; Level B is above +0.10;
+Level C is a separate overall-tradeoff conclusion.
+
+The selection audit invalidates the old compact-packet comparison as evidence of R's error risk:
+most challenged R facts were in allowed raw method inputs or exact sources but absent from Luna's
+packet. It also finds that v2's missing trajectory magnitude was essential to its historical
+geometry question. Those historical results remain unchanged; none becomes confirmation. The next
+action is a fixed fresh land schedule plus atomic question/unit registry and evidence-complete
+packet closure. The alpha ledger is still unbound, confirmatory N is 0, and no effect, confidence
+sequence, significance, or replication result exists.
+
 ## Composite-mechanism v6 development screen
 
 Seven source-generated v6 layouts that overlap neither frozen 100-cluster schedule are allocated
@@ -185,8 +202,8 @@ candidate v2 is not promoted. This is favorable development evidence, not confir
 | Gate | Status | Evidence / next action |
 |---|---|---|
 | Candidate P frozen | V5 DEVELOPMENT SCREEN COMPLETE; REJECTED AT RECURRING-ADVANTAGE GATE | Evidence-complete scoring gave P 5/5 and R 4/5 per pass, but R's misses occurred in different clusters, leaving zero consensus P wins; no campaign is active |
-| Strongest baseline R frozen | COMPLETE FOR V2 DEVELOPMENT SCREEN | One `gpt-6-sol` high call per case with the same primitive evidence, computations, source/configuration, and deterministic tools; no P certificate/plan/output access |
-| Information/tool/resource parity | PASS FOR V2 DEVELOPMENT SCREEN | All nine results attest the frozen parity contract; confirmation requires a new campaign-specific freeze |
+| Strongest baseline R frozen | DEVELOPMENT GENERATION CONTRACT COMPLETE; FOCUSED FREEZE PENDING | V2 gave one `gpt-6-sol` high call the same primitive evidence, computations, source/configuration, and deterministic tools; the new campaign must pin the strongest available model and resource ceiling |
+| Information/tool/resource parity | GENERATION PASS / V2 JUDGE-PACKET FAIL / FOCUSED CLOSURE PENDING | R could inspect facts omitted from compact Luna packets. Confirmation requires evidence-complete judging plus a new campaign-specific freeze |
 | Target land strata | V6 PLAYER/RUNTIME QUALIFIED; NO CAMPAIGN ACTIVE | One predeclared v6 reserve layout passed exact build and runtime binding; sampler, interventions, masks, exclusions, and analysis remain unfrozen |
 | Target surface strata | NOT_READY | Both geometric and command--motion admission required; do not reallocate weight |
 | Luna historical qualification | V4 HIGH FAILED / PRESERVED | Both fresh passes failed; never retroactively qualified |

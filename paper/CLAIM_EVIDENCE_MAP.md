@@ -4,8 +4,16 @@ Status: living manuscript audit, 2026-09-24. The current anonymous artifact is a
 every numerical claim must point to a retained manifest/result. This file is not itself
 experimental evidence.
 
+Focused prospective update (2026-09-26): the intended positive claim is now limited to complete
+supported diagnostic communication on registered atomic land question families. Level A is a
+positive anytime-valid P-minus-R bound, Level B exceeds +0.10, and Level C concerns broader
+tradeoffs. No level is currently established.
+
 | Claim candidate | Retained support | Current verdict |
 | --- | --- | --- |
+| Checked composition improves complete supported diagnostic communication on registered atomic navigation questions | Development P outputs were restrained, but the v2 Luna packet omitted allowed R facts and v5 showed no consensus P-win cluster; fresh evidence-complete confirmation and replication are pending | **PROVISIONAL PROSPECTIVE CLAIM ONLY**; confirmatory N=0, no effect/bound/significance/replication |
+| P is superior on supplemental coverage, every mechanism, or overall robot debugging | V2 omitted question-essential geometry details and had lower aggregate unit coverage; v6 failed composite composition; v5 usually tied R | **DO NOT CLAIM**; report tradeoffs separately even if the focused endpoint wins |
+| The v2 14/18 R material-error count establishes P's advantage | Bounded audit found most challenged facts in R's allowed method inputs or exact sources but absent from compact Luna packets | **DO NOT CLAIM**; historical packet-relative labels are preserved, not a fair comparative effect |
 | ROS-log or agentic RAG is novel to CRANE | Fernández-Becerra et al. (ESWA 2026) retrieve curated ROS 2/Nav2 events with an agentic RAG workflow | **DO NOT CLAIM NOVELTY** |
 | Robot black-box accountability is novel to CRANE | Fernández-Becerra et al. (IGPL 2026) describe accountable recording, replay, privacy, and authenticity | **DO NOT CLAIM NOVELTY** |
 | Source-aware natural-language robot explanation is novel to CRANE | ESWA retains source-bearing ROS records and generates natural-language navigation explanations; Huynh et al. link provenance, queries, plans, and realization | **DO NOT CLAIM NOVELTY**; exact CRANE runtime/source linkage may be described as implementation, not a broad priority claim |

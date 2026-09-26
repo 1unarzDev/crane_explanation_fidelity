@@ -367,6 +367,22 @@ their historical generic-mechanism interpretation and are not retroactively resc
 
 ## Input boundary and isolation
 
+### Focused-strength evidence-closure rule (2026-09-26)
+
+The `focused-supported-diagnostic-communication-v1` campaign may use qualified Luna v12 only after
+a bounded packet-closure dry run. The packet must expose every relevant fact available to P and R,
+including complete deterministic summaries or method inputs and exact source/configuration excerpts.
+The measurement-complete-v2 development audit found that compact packets omitted facts R had
+legitimately derived; those packet-relative “unsupported” labels remain historical but cannot be
+used as fair R errors. A claim absent only from the answerable-unit inventory is checked against the
+complete allowed evidence; it is not automatically false. Packet incompleteness is
+`evidence_problem`, and unresolved interpretation stays unresolved.
+
+For the focused endpoint, required units are prospectively marked `essential` or `supplemental`
+from the question purpose before generation. Luna determines semantic communication and
+materiality; deterministic checks establish quantities, identifiers, units, and thresholds. The
+two passes remain repeated model measurements, not human annotations.
+
 Every response is judged in a new API request with no conversation history and no model tools. The
 runner sends an in-memory, condition-blind envelope containing only:
 

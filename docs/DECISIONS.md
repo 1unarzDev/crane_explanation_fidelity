@@ -1,5 +1,33 @@
 # Decision Log
 
+## 2026-09-26 — pursue one focused atomic communication claim and accept measured tradeoffs
+
+- **Decision:** select the unchanged deterministic `measurement-complete-checked-composition-v2`
+  renderer for a new prospective, land-only campaign limited to atomic bounded-geometry,
+  persistent command--motion, and measured-response-recovery questions. The primary endpoint is
+  complete supported diagnostic communication, not universal explanation superiority.
+- **Development audit:** the compact v2 Luna packets omitted raw method inputs and exact source
+  excerpts available to R. Most of the 14/18 historical R material-error labels concern facts
+  present in those allowed inputs or reproducible with allowed tools. Preserve those judgments,
+  but do not use them or the three apparent P wins as fair comparative evidence. The exact
+  trajectory magnitude omitted by P was essential to the historical geometry question, so that
+  historical 4/4 score is not silently reused under the new endpoint.
+- **Tradeoff policy:** lower supplemental coverage, narrower mechanism coverage, deterministic
+  language, and higher preprocessing may coexist with a Level A focused benefit. They are measured
+  and disclosed, not all treated as vetoes. Evaluator leakage, unfair tools/evidence, broken
+  cluster identity, and incomplete judge packets remain validity failures.
+- **Inference:** Level A requires an anytime-valid lower bound above zero; Level B requires the
+  same bound above the prospectively chosen +0.10 worthwhile effect; Level C is a separate broader
+  tradeoff conclusion. The available `candidate-v1-confirmation` alpha 0.02 is not yet bound or
+  consumed. Confirmation N remains zero.
+- **Alternatives considered:** promote v2 from its favorable compact-packet scores; continue v6
+  multi-mechanism composition; require v5-style total coverage; or seek a method that wins every
+  secondary metric. The first is invalid after the evidence audit, the second already failed
+  deterministic futility, and the latter two impose breadth not needed by the focused claim.
+- **Next gate:** freeze the exact configuration schedule, atomic questions/essential units,
+  evidence-complete Luna packets, R model/resource contract, and disjoint replication reserve;
+  then bind alpha before opening the first confirmatory response.
+
 ## 2026-09-26 — reject composite-mechanism v6 at deterministic futility gate
 
 - **Decision:** retain all seven one-attempt physical clusters and reject candidate v6 unchanged

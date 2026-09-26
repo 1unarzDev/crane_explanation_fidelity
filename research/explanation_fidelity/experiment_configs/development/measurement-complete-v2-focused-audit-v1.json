@@ -1,0 +1,156 @@
+{
+  "schema": "crane-focused-candidate-development-audit/v1",
+  "audit_id": "measurement-complete-v2-focused-audit-v1",
+  "audit_date": "2026-09-26",
+  "status": "COMPLETE_DEVELOPMENT_ONLY_NOT_A_RESCORING",
+  "candidate": "measurement-complete-checked-composition-v2",
+  "purpose": "Audit whether the apparent development advantage and coverage tradeoff support selection for a new focused, prospective campaign.",
+  "immutability": {
+    "historical_result_unchanged": "manifests/annotation/luna-measurement-complete-v2-language-screen-v1-result.json",
+    "historical_labels_rewritten": false,
+    "confirmatory_alpha_consumed": 0.0
+  },
+  "baseline_error_audit": {
+    "material_error_judgments": 14,
+    "unique_R_responses_affected": 7,
+    "finding": "The compact Luna packets did not expose the complete robot-visible method_input or exact source/configuration excerpts that R was allowed to inspect. Most challenged R assertions are directly present in those inputs or reproducible with the allowed deterministic calculations. The historical labels are valid descriptions of packet-relative support, but they are not a fair estimate of R's material-error risk under evidence-complete judging.",
+    "verified_examples": [
+      {
+        "case_id": "mccv2-geometry-supported-001",
+        "challenged_claim": "local/global costmap dimensions and ComputePathToPose-to-FollowPath wiring",
+        "audit_result": "SUPPORTED_IN_ALLOWED_SOURCE",
+        "basis": [
+          "packages/crane_ml/Tools/Performance/nav2_land_proving_ground_fixture.yaml",
+          "packages/crane_ml/Tools/Performance/nav2_land_progress_recovery.xml"
+        ]
+      },
+      {
+        "case_id": "mccv2-route-change-002",
+        "challenged_claim": "2640 cells at cost >=253, 374 lethal cells, rolling-grid extent, Navfn and scan-obstacle configuration",
+        "audit_result": "SUPPORTED_IN_ALLOWED_METHOD_INPUT_OR_SOURCE",
+        "basis": [
+          "data/robot_visible/dev/mccv2-dev-002/geometric-route-diagnostic-v2.json",
+          "packages/crane_ml/Tools/Performance/nav2_land_proving_ground_fixture.yaml"
+        ]
+      },
+      {
+        "case_id": "mccv2-missing-odometry-003m",
+        "challenged_claim": "43.349 s duration, command offsets/count, aborted error code 105 and result locator",
+        "audit_result": "SUPPORTED_IN_ALLOWED_METHOD_INPUT",
+        "basis": [
+          "data/robot_visible/dev/mccv2-dev-003-mask-no-odometry/command-motion-diagnostic-v3.json"
+        ],
+        "remaining_language_issue": "The statement that actuator acceptance is required for any physical attribution is broader than the evidence; alternative discriminators can establish some physical causes. This wording must not be treated as a generally valid rule."
+      },
+      {
+        "case_id": "mccv2-compensation-004",
+        "challenged_claim": "all ten one-second odometry medians were 0.000 m/s, event locators, and 10 s movement allowance",
+        "audit_result": "SUPPORTED_BY_ALLOWED_SAMPLES_OR_SOURCE",
+        "basis": [
+          "data/robot_visible/dev/mccv2-dev-004/command-motion-diagnostic-v3.json",
+          "packages/crane_ml/Tools/Performance/nav2_land_proving_ground_fixture.yaml"
+        ]
+      },
+      {
+        "case_id": "mccv2-nominal-005",
+        "challenged_claim": "5--67 s per-window healthy medians, 67.432 s duration, and event locators",
+        "audit_result": "SUPPORTED_BY_ALLOWED_SAMPLES_OR_METHOD_INPUT",
+        "basis": [
+          "data/robot_visible/dev/mccv2-dev-005/command-motion-diagnostic-v3.json"
+        ]
+      },
+      {
+        "case_id": "mccv2-persistent-006",
+        "challenged_claim": "event locators and source links",
+        "audit_result": "EVENT_LOCATORS_SUPPORTED; ABSOLUTE_TEMP_LINKS_NONPORTABLE",
+        "basis": [
+          "data/robot_visible/dev/mccv2-dev-006/command-motion-diagnostic-v3.json"
+        ],
+        "remaining_language_issue": "Ephemeral absolute /tmp links are not governed citations even though the repository-relative files and hashes are correct."
+      },
+      {
+        "case_id": "mccv2-geometry-unresolved-006g",
+        "challenged_claim": "240 by 240 cells, 3648 cells at cost >=253, and 563 lethal cells",
+        "audit_result": "SUPPORTED_IN_ALLOWED_METHOD_INPUT",
+        "basis": [
+          "data/robot_visible/dev/mccv2-dev-006/geometric-route-diagnostic-v2.json"
+        ]
+      }
+    ],
+    "consequence": "Do not use the historical 14/18 versus 0/18 material-error counts or the three apparent consensus wins as evidence that P beats a fairly judged R. New judge packets must include the complete facts available to both methods or explicitly mark extra claims unresolved."
+  },
+  "candidate_omission_audit": {
+    "rule": "Essential status follows the question's declared purpose, not which method omitted the unit.",
+    "cases": [
+      {
+        "case_id": "mccv2-geometry-supported-001",
+        "unit_id": "trajectory-deviation",
+        "classification": "ESSENTIAL_FOR_THAT_HISTORICAL_QUESTION",
+        "reason": "The question explicitly asks how the measured trajectory changed; stating only that it departed, without its decisive magnitude, is incomplete."
+      },
+      {
+        "case_id": "mccv2-geometry-masked-001m",
+        "unit_id": "trajectory-deviation",
+        "classification": "ESSENTIAL_FOR_THAT_HISTORICAL_QUESTION",
+        "reason": "The question asks for useful supported path evidence; the retained trajectory magnitude is part of that requested evidence."
+      },
+      {
+        "case_id": "mccv2-geometry-masked-001m",
+        "unit_id": "missing-discriminator",
+        "classification": "ESSENTIAL",
+        "reason": "The question explicitly asks whether the trigger can be established with cells unavailable."
+      },
+      {
+        "case_id": "mccv2-route-change-002",
+        "unit_id": "trajectory-deviation",
+        "classification": "ESSENTIAL_FOR_THAT_HISTORICAL_QUESTION",
+        "reason": "The question asks what the retained evidence establishes about the route change."
+      },
+      {
+        "case_id": "mccv2-route-change-002",
+        "unit_id": "negative-geometry",
+        "classification": "ESSENTIAL",
+        "reason": "The question expressly asks what is not established about a physical restriction."
+      },
+      {
+        "case_id": "mccv2-geometry-unresolved-006g",
+        "unit_ids": [
+          "negative-route-cell",
+          "plan-geometry",
+          "trajectory-geometry",
+          "cause-limit"
+        ],
+        "classification": "ESSENTIAL_FOR_THAT_HISTORICAL_QUESTION",
+        "reason": "The question expressly requests retained-grid, plan, trajectory, and causal-limit findings."
+      }
+    ],
+    "consequence": "The historical v2 4/4 endpoint score is not the new complete-supported-diagnostic-communication endpoint. Current v2 may be selected unchanged only for prospectively atomic questions whose essential units it actually renders. Composite or broader questions require a new candidate version."
+  },
+  "fairness_audit": {
+    "generation_task_parity": "PASS",
+    "robot_visible_evidence_parity_at_generation": "PASS_BY_FROZEN_CONTRACT",
+    "source_and_configuration_access_parity": "PASS_BY_FROZEN_CONTRACT",
+    "deterministic_tool_parity": "PASS_BY_FROZEN_CONTRACT",
+    "model_budget_parity": "NOT_APPLICABLE_TO_DETERMINISTIC_P; DISCLOSE_R_MODEL_CALL_AND_P_PREPROCESSING",
+    "judge_evidence_parity": "FAIL",
+    "resource_interpretation": "P is a deterministic checked renderer; any positive result is a specialized-computation/composition result, not an LLM-reasoning or prompting advantage."
+  },
+  "selection": {
+    "selected_candidate": "measurement-complete-checked-composition-v2",
+    "selection_scope": "UNCHANGED_ATOMIC_RENDERER_ONLY",
+    "selected_question_families": [
+      "bounded geometric restriction with one decisive grid/footprint comparison and required causal limits",
+      "persistent command-to-motion discrepancy with one healthy-versus-event comparison and required causal limits",
+      "measured response recovery with outcome and chronology-versus-causation limit"
+    ],
+    "excluded_from_primary_claim": [
+      "multi-mechanism composition",
+      "questions that require every plan and trajectory detail",
+      "global root-cause discovery",
+      "supplemental next-check completeness"
+    ],
+    "rationale": "The deterministic candidate was factually restrained in all 18 development judgments and communicated the atomic mechanism in every eligible development case. Its apparent comparative advantage is unproven after the judge-packet defect, so selection is based on bounded treatment plausibility and deterministic auditability, not an asserted effect.",
+    "repair_performed": false,
+    "confirmation_status": "NOT_ACTIVE"
+  }
+}

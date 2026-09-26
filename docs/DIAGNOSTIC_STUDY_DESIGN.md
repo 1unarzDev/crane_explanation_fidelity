@@ -1,5 +1,19 @@
 # Prospective physical-diagnosis study design
 
+## 2026-09-26 focused-strength amendment
+
+The next prospective campaign is governed by `docs/FOCUSED_STRENGTH_PROTOCOL.md`. It asks a
+narrower question than the earlier general framework: whether deterministic checked composition
+improves **complete supported diagnostic communication** on registered atomic geometry,
+command--motion, and response-recovery questions. It accepts and reports lower supplemental
+coverage, narrower breadth, and templated language. A positive anytime-valid bound is Level A;
+exceeding +0.10 is Level B; overall tradeoff acceptability is Level C.
+
+This amendment does not modify frozen F/G/H, rescore inspected development cases, or activate
+confirmation. The v2 development comparison had an incomplete judge-evidence packet, so its
+apparent R error rate is not a fair pilot effect. Fresh configuration, question/unit, R-resource,
+packet, and replication freezes are required before the existing alpha allocation is bound.
+
 Status: **DRAFT FOR DEVELOPMENT PILOT — NOT FROZEN, NOT A CONFIRMATORY PROTOCOL**.
 
 This study is separate from the frozen 33-episode provenance cohort. It uses new namespaces,

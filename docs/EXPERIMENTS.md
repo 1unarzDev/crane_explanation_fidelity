@@ -1,5 +1,26 @@
 # Experiment Log
 
+## 2026-09-26 — bounded v2 audit and focused-strength selection
+
+- **STATUS:** `DEVELOPMENT_AUDIT_COMPLETE / CANDIDATE_SELECTED / CONFIRMATION_NOT_ACTIVE`.
+- **R EVIDENCE AUDIT:** 14 historical material-error judgments span seven R responses. The compact
+  Luna packets omitted facts R could inspect in the permitted diagnostic `method_input` and exact
+  source/configuration. Verified examples include grid histograms/dimensions, event locators,
+  action duration/error code, per-window odometry medians, Nav2 costmap settings, and BT wiring.
+  Historical labels remain immutable, but the apparent P advantage is not a fair effect estimate.
+- **P COMPLETENESS AUDIT:** omitted trajectory magnitude and missing-discriminator/negative-geometry
+  units were essential where the historical question expressly requested them. They are not
+  reclassified as supplemental. The new candidate therefore uses unchanged v2 only on narrower,
+  prospectively atomic questions whose essential mechanism, measurement, outcome, and limit it
+  renders.
+- **SELECTION:** deterministic measurement-complete v2 is the bounded lead because it remained
+  factually restrained across the development screen and is auditable. Selection does not claim
+  it beat evidence-completely judged R. Multi-mechanism composition and exhaustive supplemental
+  detail are out of scope.
+- **PROSPECTIVE CONTRACT:** Level A tests a positive P-minus-R difference; Level B tests a +0.10
+  worthwhile difference; Level C separately evaluates the tradeoff. New evidence-complete packets
+  must expose the facts available to both methods. Confirmatory semantic N and alpha remain zero.
+
 ## 2026-09-26 — freeze composite-mechanism v6 physical development screen
 
 - **STATUS:** `FROZEN_BEFORE_ANY_PHYSICAL_ATTEMPT_RESPONSE_OR_JUDGMENT`.
