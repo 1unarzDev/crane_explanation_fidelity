@@ -1,5 +1,23 @@
 # Experiment Log
 
+## 2026-09-26 — focused physical run 2: `fsdc-land-geometry-002`
+
+- **STATUS:** `VALID_PROSPECTIVE_PHYSICAL_EVIDENCE_GEOMETRY_NOT_ESTABLISHED_RESPONSE_UNOPENED`;
+  one attempt, no retry or replacement. Physical configurations +1; primary semantic clusters,
+  responses, Luna judgments, and alpha remain zero.
+- **OBSERVED:** NavigateToPose succeeded in 85.060 s after 17.550 m displacement and three
+  distinct delivered plans. Plans span -1.114 m to +1.022 m and the measured trajectory reaches
+  1.096 m lateral deviation.
+- **NEGATIVE INDUCTION RESULT:** the final rolling grid remains connected but does not fully cover
+  the requested route and contains no independently supported blocked direct-route sample. The
+  registered bounded-geometric-restriction mechanism is therefore not established.
+- **BOUNDARY/DISPOSITION:** retain this as a valid missing-decisive-evidence outcome. Do not replace
+  it, count it as a diagnosable primary case, or infer obstacle identity, exact Nav2 consumption,
+  global no-path, or costmap-to-plan causation.
+- **GOVERNANCE:** raw and derived roots were independently referenced, hash-manifested, leakage-
+  scanned, and DVC-pushed. The next fixed configuration is `fsdc-land-geometry-003`; responses
+  remain unopened.
+
 ## 2026-09-26 — focused physical run 1: `fsdc-land-geometry-001`
 
 - **STATUS:** `VALID_PROSPECTIVE_PHYSICAL_AND_REFERENCE_EVIDENCE_RESPONSE_UNOPENED`; one attempt,

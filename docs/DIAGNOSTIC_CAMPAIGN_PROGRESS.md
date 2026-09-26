@@ -23,11 +23,13 @@ packet closure. The alpha ledger is still unbound, confirmatory N is 0, and no e
 sequence, significance, or replication result exists.
 
 Physical collection has started without activating semantic confirmation. Fixed configuration
-`fsdc-land-geometry-001` passed player and scenario admission after one attempt and independently
-supports a bounded retained-grid restriction plus recorded route change and success. Its P/R
-responses remain unopened. Prospective physical configurations collected are 1/64; primary
-semantic N, alpha consumption, effect estimates, confidence sequences, significance, and
-replication results remain zero. The next fixed configuration is `fsdc-land-geometry-002`.
+`fsdc-land-geometry-001` independently supports a bounded retained-grid restriction plus recorded
+route change and success. Configuration 002 is a valid unfavorable induction outcome: it supports
+route change, but incomplete grid coverage does not establish the registered restriction, so it
+is retained as missing-decisive-evidence rather than replaced or counted as a diagnosable primary
+case. P/R responses remain unopened. Prospective physical configurations collected are 2/64;
+primary semantic N, alpha consumption, effect estimates, confidence sequences, significance, and
+replication results remain zero. The next fixed configuration is `fsdc-land-geometry-003`.
 
 The former physical-only land cohort is additively closed after run 040 (39 valid, one invalid).
 All artifacts and its original schedule remain immutable. Its never-attempted runs 041--100 are

@@ -31,6 +31,7 @@ BUILD_AMENDMENT = ROOT / (
 )
 BUILD_MANIFEST = ROOT / "manifests/data/fsdc-v1-player-build-1.evaluator-only.json"
 FIRST_RUN = ROOT / "manifests/data/fsdc-land-geometry-001-disposition.json"
+SECOND_RUN = ROOT / "manifests/data/fsdc-land-geometry-002-disposition.json"
 
 
 def load(path: Path) -> dict:
@@ -156,3 +157,15 @@ def test_first_focused_physical_run_is_retained_without_semantic_or_alpha_increm
     assert run["study_effect"]["model_response_increment"] == 0
     assert run["study_effect"]["luna_judgment_increment"] == 0
     assert run["study_effect"]["confirmatory_alpha_consumed"] == 0.0
+
+
+def test_unfavorable_geometry_induction_is_retained_without_replacement_or_primary_count():
+    run = load(SECOND_RUN)
+
+    assert run["admission"]["attempt_count"] == 1
+    assert run["admission"]["replacement_layout_used"] is False
+    assert run["independent_reference"]["direct_route_restriction_supported"] is False
+    assert run["independent_reference"]["direct_route_fully_covered"] is False
+    assert run["robot_visible_diagnostic"]["registered_primary_mechanism_established"] is False
+    assert run["study_effect"]["primary_semantic_cluster_increment"] == 0
+    assert run["study_effect"]["outcome_dependent_replacement_performed"] is False
