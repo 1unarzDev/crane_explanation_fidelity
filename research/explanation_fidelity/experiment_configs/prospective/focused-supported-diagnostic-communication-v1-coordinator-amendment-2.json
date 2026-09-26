@@ -1,0 +1,53 @@
+{
+  "schema": "crane-focused-supported-diagnostic-coordinator-amendment/v1",
+  "amendment_id": "focused-supported-diagnostic-communication-v1-coordinator-amendment-2",
+  "parent_amendment": "focused-supported-diagnostic-communication-v1-coordinator-amendment-1",
+  "recorded_utc": "2026-09-26T14:38:00Z",
+  "status": "ACTIVE_BEFORE_ANY_CONFIRMATORY_SEMANTIC_RESPONSE",
+  "issue": "The frozen v2 reference adapter reused the nominal v1 reference texts by list position even though the focused registry combines action outcome and healthy motion into one unit and separates obstacle-causation and exact-consumption limits. A dry run on the first newly collected nominal control therefore attached the action outcome text to the obstacle-causation unit ID and attached the combined causal limit only to the exact-consumption unit ID.",
+  "correction": {
+    "adapter": "analysis/build_focused_annotation_reference_v3.py",
+    "scope": "nominal_false_premise_or_irrelevant_obstacle reference composition only",
+    "rule": "Construct the four nominal-control unit texts explicitly by semantic registry ID: false-premise rejection; action outcome plus healthy motion; no obstacle cause from visibility/order; and no exact Nav2-consumption or actuator-acceptance claim.",
+    "primary_family_behavior": "Delegates unchanged to frozen v2 for bounded geometry, persistent discrepancy, measured response recovery, and missing-evidence references.",
+    "historical_behavior": "The v2 builder and coordinator amendment 1 remain immutable and auditable.",
+    "required_future_builder": "All focused references created after this amendment use v3."
+  },
+  "inspection_boundary": {
+    "physical_attempts_completed": 18,
+    "valid_physical_configurations": 17,
+    "semantic_primary_N": 0,
+    "P_confirmatory_responses_opened": 0,
+    "R_confirmatory_responses_opened": 0,
+    "Luna_confirmatory_calls": 0,
+    "effect_estimate_exists": false,
+    "confidence_sequence_exists": false,
+    "statistical_significance_exists": false,
+    "replication_result_exists": false,
+    "observed_trigger": "Registry-exact dry-run output for the first valid nominal control, cm-land-conf-054; no candidate or baseline answer existed."
+  },
+  "unchanged": [
+    "candidate renderer and diagnostic computations",
+    "baseline model, evidence, tools, source access, and resource budget",
+    "registered questions and essential unit IDs",
+    "primary endpoint and eligible primary families",
+    "scenario schedule, weights, eligibility, and stopping procedure",
+    "Luna model, rubric, two-pass procedure, and qualification",
+    "alpha allocation and prior consumption"
+  ],
+  "scientific_effect": "This is a fail-closed semantic-ID repair discovered before any P/R confirmatory response or Luna confirmatory judgment. It prevents deterministic mis-scoring of nominal controls and cannot improve the primary eligible endpoint, select a favorable method comparison, or add an independent cluster.",
+  "frozen_artifacts": {
+    "reference_builder_v3": {
+      "path": "analysis/build_focused_annotation_reference_v3.py",
+      "sha256": "38e831db24b467e04660e045678fd9afed4cf0743affa1c84478e052a8fb4552"
+    },
+    "question_registry": {
+      "path": "research/explanation_fidelity/experiment_configs/prospective/focused-supported-diagnostic-communication-v1-questions.json",
+      "sha256": "7748c592292f5f33cad864fa287a8773bbf68f0212d3e6d6439c02482d957204"
+    },
+    "regression_tests": {
+      "path": "tests/test_focused_coordinator_amendment_2.py",
+      "sha256": "42212f815c76c143693ef12175e3f13f933915492b9b4e69d05f589707ca758f"
+    }
+  }
+}

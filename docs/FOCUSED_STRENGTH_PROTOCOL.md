@@ -169,6 +169,13 @@ confirmatory response was opened. It freezes registry-exact independent referenc
 the v2 monitor while preserving the candidate, baseline, question registry, Luna configuration,
 alpha allocation, and original activation record.
 
+Coordinator amendment 2 corrects a nominal-control-only semantic-ID composition defect found by
+the registry-exact dry run for run 054, still before any P/R response or Luna confirmatory call.
+The additive v3 adapter explicitly binds false-premise rejection, action-plus-motion evidence,
+obstacle-causation restraint, and exact-consumption restraint to their registered IDs. It delegates
+all primary-family and missing-evidence construction unchanged to frozen v2; candidate, endpoint,
+schedule, judge, and alpha remain unchanged.
+
 ## Replication and reporting
 
 After Level A, freeze no method, judge, question, or threshold changes and run the disjoint reserved

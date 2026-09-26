@@ -1,0 +1,101 @@
+{
+  "schema": "crane-land-command-motion-physical-run-disposition/v1",
+  "recorded_date": "2026-09-26",
+  "run_id": "cm-land-conf-054",
+  "cluster_id": "cm-land-conf-cluster-054",
+  "status": "VALID_FOCUSED_PHYSICAL_INDEPENDENT_NOMINAL_CONTROL_RESPONSE_UNOPENED",
+  "attempt_count": 1,
+  "retry_or_replacement_performed": false,
+  "contract": {
+    "focused_protocol": "research/explanation_fidelity/experiment_configs/prospective/focused-supported-diagnostic-communication-v1.json",
+    "focused_schedule": "research/explanation_fidelity/experiment_configs/prospective/focused-supported-diagnostic-communication-v1-schedule.json",
+    "source_physical_schedule": "research/explanation_fidelity/experiment_configs/prospective/land-command-motion-physical-schedule-v1.json",
+    "source_schedule_sha256": "1f844ad45fa2e5cefb9edcfc5f3420a5a18aff32abda81ec72b7876ce376f215",
+    "coordinator_amendment": "research/explanation_fidelity/experiment_configs/prospective/focused-supported-diagnostic-communication-v1-coordinator-amendment-2.json",
+    "fixed_order": 54
+  },
+  "scheduled_configuration": {
+    "family": "nominal-false-premise",
+    "focused_family": "nominal_false_premise_or_irrelevant_obstacle",
+    "geometry_mechanism": "nominal-clear-route",
+    "layout_id": "diagnostic-command-motion-confirmation-reserve-nominal-clear-route-050",
+    "layout_seed": 92049,
+    "mobility_hold_after_s": -1.0,
+    "mobility_release_after_s": -1.0,
+    "evidence_mask": "none",
+    "ros_domain_id": 198,
+    "ros_tcp_port": 12398
+  },
+  "admission": {
+    "player_build_audit_accepted": true,
+    "scenario_binding_audit_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "unity_worker_result_valid": true,
+    "unity_logged_errors": 0,
+    "unity_logged_exceptions": 0,
+    "recording_valid_under_frozen_worker_result_gate": true,
+    "unexpected_navigation_outcome_retained": false,
+    "independent_reference_complete": true,
+    "focused_registry_exact_reference_dry_run_passed": true,
+    "coordinator_v3_nominal_unit_binding_passed": true
+  },
+  "observed": {
+    "navigation_status": "succeeded",
+    "action_wall_seconds": 68.25958012499905,
+    "displacement_meters": 17.48284912109375,
+    "controller_commands": 675,
+    "odometry_messages": 3407,
+    "costmap_observations": 259,
+    "behavior_tree_transitions": 5,
+    "follow_path_attempts": 1,
+    "follow_path_failures": 0,
+    "observed_recovery_invocation_starts": 0,
+    "maximum_recovery_feedback": 0,
+    "behavior_tree_history_status": "not_proven",
+    "exact_recovery_count_eligible": false
+  },
+  "method_visible_reference": {
+    "independent_cluster_increment": 1,
+    "primary_endpoint_eligible": false,
+    "disposition": "not_triggered",
+    "healthy_interval_s": [0.0, 5.0],
+    "healthy_commanded_planar_speed_mps": 0.26,
+    "healthy_measured_planar_speed_mps": 0.2597399950027466,
+    "command_samples": 670,
+    "odometry_samples": 2999,
+    "source_qualified_wait_recovery_count": 0,
+    "command_motion_discrepancy_supported": false,
+    "obstacle_cause_supported": false,
+    "exact_nav2_consumption_supported": false,
+    "bounded_conclusion": "The action succeeded with healthy measured response and the command-to-motion diagnostic did not trigger. Visibility or event order does not establish an obstacle cause or exact Nav2 consumption."
+  },
+  "hashes": {
+    "player_build_audit_sha256": "ee0b3388eab6339de5000aaf0201bb07d9d63bc3b349ed1e49ba3d3ddf2fc005",
+    "scenario_binding_audit_sha256": "b6511b85586f96ed5ce342a7938d19914078a14ce63e26c3a4fbfd26a81bdf7a",
+    "fixture_summary_sha256": "a3a85571b5f24da98a918e965b094537afeb859f50d01275fd224e52e112300b",
+    "unity_worker_result_sha256": "5da692a154c63a22aef010a79612f16364b04f7f4828b1f6d556e57a17d7d96a",
+    "robot_visible_events_sha256": "581bad4a25601673babdb439fe2c59a9a128117b864f7ea64ceeeb1d5e167987",
+    "diagnostic_sha256": "52416fdd39f2b70a1ff3f4dc8f12057265ecb4f6cf9a7ad9d924032e01791ade",
+    "independent_reference_sha256": "9035af9ecbb658d8463cb5c25552bdc72c389f551d3077472f8456a0d9211e64",
+    "robot_visible_manifest_sha256": "5cf5e0b4062df248b7ee9bcf865bd4b1fbe47c1e24c0656405a725f23c783d2e",
+    "evaluator_only_manifest_sha256": "7fa2a5f8f94033287832309869aedda63a80754f33394d5f79993b1d585922b3"
+  },
+  "semantic_boundary": {
+    "P_responses": 0,
+    "R_responses": 0,
+    "Luna_calls": 0,
+    "semantic_labels": 0,
+    "effect_estimate": null,
+    "confidence_sequence": null,
+    "program_alpha_consumed": 0.02,
+    "alpha_consumption_reason": "prospective campaign activation; no semantic response has been opened"
+  },
+  "focused_progress": {
+    "scheduled_attempts": 18,
+    "physical_configurations_collected": 17,
+    "invalid_recordings": 1,
+    "primary_diagnosable_references": 11,
+    "missing_ambiguous_or_nominal_controls": 6,
+    "next_fixed_run_id": "cm-land-conf-055"
+  }
+}

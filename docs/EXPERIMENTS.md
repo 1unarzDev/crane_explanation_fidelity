@@ -1,5 +1,29 @@
 # Experiment Log
 
+## 2026-09-26 — focused valid nominal control / source order 54: `cm-land-conf-054`
+
+- **STATUS:** `VALID_FOCUSED_PHYSICAL_INDEPENDENT_NOMINAL_CONTROL_RESPONSE_UNOPENED`; one attempt,
+  no replacement, successful navigation in 68.260 s, zero transport/Unity errors, all 14 binding
+  checks, and complete independent reference.
+- **REFERENCE:** the diagnostic did not trigger; healthy 0--5 s measured response was 0.25974 m/s,
+  with one FollowPath attempt, zero failures, and zero source-qualified Wait starts. The action
+  succeeded.
+- **BOUNDARY:** this is a required false-premise/adverse-behavior control and adds no primary N.
+  Registry-exact v3 binds its outcome-plus-motion, obstacle-causation restraint, and exact-consumption
+  restraint to distinct semantic units. No P/R response or Luna call was opened; run 055 is next.
+
+## 2026-09-26 — focused coordinator amendment 2: nominal-control semantic-ID repair
+
+- **DEFECT:** the frozen v2 adapter assigned nominal-control texts by list position even though the
+  focused registry combined outcome and healthy motion while separating obstacle-causation and
+  exact-consumption limits. Run 054's dry run therefore attached true facts to the wrong unit IDs.
+- **CORRECTION:** additive v3 explicitly constructs the four registered nominal units and delegates
+  every primary and missing-evidence family unchanged to frozen v2. The original v2 file and its
+  hash-governed amendment remain untouched.
+- **BOUNDARY:** detected after physical run 054 but before any P/R confirmatory response or Luna
+  confirmatory call. Candidate, baseline, questions, endpoint, schedule, judge, alpha, and primary
+  eligibility are unchanged. The repair cannot improve primary N or select a favorable comparison.
+
 ## 2026-09-26 — focused valid physical run 16 / source order 53: `cm-land-conf-053`
 
 - **STATUS:** `VALID_FOCUSED_PHYSICAL_INDEPENDENT_PRIMARY_TRANSIENT_COMPENSATION_RESPONSE_UNOPENED`;
