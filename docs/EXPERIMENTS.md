@@ -6115,3 +6115,20 @@
   Any successor is a new candidate: remove unsupported meta-claims, render every required unit,
   preserve conservative numeric bounds, and use fresh positive-geometry, visible-not-consumed,
   and out-of-model configurations. Do not repair or rejudge this screen post hoc.
+
+## 2026-09-26 — measurement-complete checked-composition v2 implementation
+
+- **STATUS:** `IMPLEMENTED / REGRESSION_TESTED / EMPIRICAL_COMPARISON_NOT_RUN`; no model call,
+  Luna label, new episode, confirmatory cluster, or alpha use.
+- **CHANGE:** a narrow v2 wrapper reuses the finite v1 reasoner but compiles every supported
+  adapter-authored unit. Its renderer omits internal certificate/registry/predicate metadata.
+  Command--motion adds explicit recovery-causation, nominal-comparator, and masked sample-count
+  units. Geometry adds robot-visible grid-coverage, progress, nonterminal, and exact-value units.
+- **FAIL-CLOSED PARITY:** an insufficient-geometry coverage statement requires the retained
+  robot-visible costmap computation; absence is an adapter error. A future runner must expose that
+  same computation to R and the judge. Evaluator-only geometry remains forbidden.
+- **TESTS:** 40 focused v1/v2 composition tests pass over persistent discrepancy, recovered
+  response, nominal motion, missing odometry, route change, nominal geometry, and nonterminal
+  insufficiency. These old cases are regression fixtures, not a rescored v2 comparison.
+- **NEXT GATE:** identify and predeclare genuinely fresh positive-geometry,
+  visible-but-not-consumed, and out-of-model development configurations before any P/R generation.

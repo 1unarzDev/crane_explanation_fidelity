@@ -1973,3 +1973,26 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   The command--motion adapter reconstructs execution facts from cross-checked structured fields.
   This improves test validity but supplies no P-over-R effect. The screen remains
   `DRAFT_UNCOMMITTED_DO_NOT_RUN`.
+
+## 2026-09-26 — reject checked-composition v1; permit one measurement-complete successor
+
+- Decision: reject `finite-checked-composition-deterministic-rendering-v1` after its frozen
+  development screen, preserve every output/label, and permit one separately versioned v2
+  development candidate. Do not amend or rejudge the v1 responses.
+- Evidence: 26/28 Luna-v12 judgments were valid. On paired-valid rows P had 10/12 material errors
+  and 84/92 covered units; R had 8/12 and 86/92. P made zero causal overclaims versus R's two, but
+  failed the complete risk and coverage gate. Endpoint differences were 0.0 and 0.5 by pass over
+  only two eligible cases, with one P disagreement.
+- V1 failure mechanism: the renderer exposed an unsupported certificate/registry footer and raw
+  discriminator names, while adapters omitted supported counts, comparators, progress, and limits.
+  One judge-required grid-coverage unit also came from a robot-visible reference computation that
+  the runner had not supplied to either method, so future method/judge evidence parity must be
+  explicit.
+- V2 boundary: reuse the finite reasoner; retain all supported adapter units; suppress internal
+  metadata; use exact/conservative quantities; expose the same robot-visible computations to P and
+  tool-enabled R; and fail closed when a required coverage fact is absent. No broader ontology,
+  perception stack, or model family is authorized.
+- Promotion gate: a new predeclared screen must use fresh positive geometry,
+  visible-but-not-consumed, and out-of-model configurations and demonstrate recurring advantage
+  across at least two mechanism families without material-error, useful-coverage, or ambiguity
+  degradation. Confirmation N and alpha remain zero.

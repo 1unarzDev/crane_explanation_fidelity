@@ -1,6 +1,6 @@
 # Structured diagnostic composition under partial observability
 
-**Audit date:** 2026-09-25  
+**Audit date:** 2026-09-26
 **Scope:** Development guidance for the prospective physical-diagnosis study. This note neither
 amends the frozen F/G/H study nor establishes a CRANE effectiveness result.
 
@@ -295,6 +295,25 @@ If R invokes the tools and matches the certificate reliably, that is a valid neg
 structured composer may still improve auditability or deterministic rendering, but it does not
 justify a semantic-performance advantage claim. If both methods remain ambiguous, the next action
 is better discriminating instrumentation or a narrower question, not stronger causal wording.
+
+## Retained v1 result and measurement-complete v2 candidate
+
+The first frozen seven-packet v1 screen rejected the candidate. Across paired valid Luna-v12
+judgments, P had 10/12 material errors and 84/92 required units covered, versus R's 8/12 and
+86/92. P avoided R's two recovery-causation overclaims, but repeatedly emitted an unsupported
+certificate/registry footer and omitted supported measurements or limits. Two masked-case R
+judgments returned the wrong opaque response ID and remain missing without retry. This is six
+development clusters plus one within-cluster mask, not confirmation or an effect estimate.
+
+The separately versioned v2 implementation is deliberately narrow. It reuses the v1 finite
+reasoner, retains every adapter-authored supported answer unit, renders no internal certificate,
+registry, or raw predicate names, and adds explicit units for recovery-causation limits, healthy
+comparators, masked sample counts, grid coverage, progress, and nonterminal boundaries. It also
+uses exact measurements rather than rounding a claimed upper bound downward. A robot-visible
+costmap reference computation must be supplied to both P and R before a coverage claim is allowed;
+the adapter fails closed otherwise. These are regression-tested software properties only. V2 has
+not yet beaten R and is not eligible for confirmation until a separately frozen fresh development
+screen passes every risk, coverage, ambiguity, and multi-family gate.
 
 ## Primary sources
 
