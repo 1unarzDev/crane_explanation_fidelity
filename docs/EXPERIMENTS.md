@@ -1,5 +1,17 @@
 # Experiment Log
 
+## 2026-09-26 — focused valid physical run 19 / source order 56: `cm-land-conf-056`
+
+- **STATUS:** `VALID_FOCUSED_PHYSICAL_INDEPENDENT_PRIMARY_PERSISTENT_DISCREPANCY_UNEXPECTED_ABORT_RESPONSE_UNOPENED`;
+  one attempt and no replacement. The generic fixture expected success, but its independent worker,
+  transport, source/build, and all 14 binding gates passed, so the unexpected abort is retained.
+- **REFERENCE:** healthy 0--5 s response was 0.25974 m/s; from 12--21 s the robot-visible streams
+  recorded 0.260 m/s commanded versus 0.000 m/s measured response. The action aborted after three
+  FollowPath attempts, two failures, and two source-qualified Wait starts.
+- **BOUNDARY:** the discrepancy is supported, but no unique obstruction, collision, slip, actuator,
+  or other physical cause is. Registry-exact v3 dry run passed; no P/R response or Luna label was
+  opened. Run 057 is next.
+
 ## 2026-09-26 — focused valid physical run 18 / source order 55: `cm-land-conf-055`
 
 - **STATUS:** `VALID_FOCUSED_PHYSICAL_INDEPENDENT_PRIMARY_TRANSIENT_COMPENSATION_RESPONSE_UNOPENED`;
