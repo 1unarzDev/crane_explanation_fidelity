@@ -63,8 +63,13 @@ def args(tmp_path: Path, contract: Path) -> argparse.Namespace:
 
 
 def test_runner_refuses_uncommitted_draft(tmp_path: Path):
+    contract = json.loads(SOURCE_CONTRACT.read_text())
+    contract["status"] = "DRAFT_UNCOMMITTED_DO_NOT_RUN"
+    contract.pop("committed_contract_sha256", None)
+    draft = tmp_path / "draft.json"
+    draft.write_text(json.dumps(contract))
     with pytest.raises(ValueError, match="not committed/frozen"):
-        run(args(tmp_path, SOURCE_CONTRACT), caller=FakeCaller())
+        run(args(tmp_path, draft), caller=FakeCaller())
 
 
 def test_runner_gives_r_same_primitive_result_but_not_episode_certificate(tmp_path: Path):

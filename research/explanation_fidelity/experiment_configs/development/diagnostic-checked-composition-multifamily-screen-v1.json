@@ -1,7 +1,8 @@
 {
   "schema": "crane-checked-composition-development-screen/v1",
   "screen_id": "diagnostic-checked-composition-multifamily-screen-v1",
-  "status": "DRAFT_UNCOMMITTED_DO_NOT_RUN",
+  "status": "FROZEN_BEFORE_ANY_CALL",
+  "committed_contract_sha256": "f385dda7e0d5ce82b2b808e946b812f52165963163ffc565a44d0694dafa7a97",
   "purpose": "One fixed development-only screen of mandatory finite checked composition and deterministic rendering against the strongest fair tool-enabled repository agent R. This screen selects or rejects a candidate; it cannot supply confirmation, significance, or replication.",
   "reference_inventory": "research/explanation_fidelity/references/development/diagnostic-checked-composition-multifamily-references-v1.json",
   "candidate": "finite-checked-composition-deterministic-rendering-v1",
@@ -37,6 +38,16 @@
     "episode_certificate_visible": false,
     "checked_answer_plan_visible": false,
     "model_calls": 1
+  },
+  "frozen_artifact_sha256": {
+    "registry": "74d6ad56672713356ae596a44ffdfd2281e7c97db2f58f86c7f4032a4142e938",
+    "composer": "f60b3cb61ab23aab96bc6bfd3ee1875a5896683c125cb14cf86e13b7129f1ade",
+    "command_adapter": "8d9691972b13885b3b825bb5800df154851d279974ca2211accd2ddbf7424d3d",
+    "geometric_adapter": "8bf2831fb87ee935baeeaf27570250b872cbc67a090fd6d282614779983c6146",
+    "renderer": "48c8dac1c9c2b18c0a67592fd6550c105e4a034bcc3cfd5aac418fd3dd596113",
+    "runner": "bcc16efe9d5d02e50d38f95f4228bc91cc447f6a5b1861816e4d92546eb80b3e",
+    "baseline_prompt": "5c0481864b11e89e9f483a0ae12a89892d126e2a357e03c83c5f3fa455cd6a99",
+    "reference_inventory": "736bdf5a11a275e8e22a2995d032d781ea28dd463ac95f5f3a90b8591ca74f0a"
   },
   "candidate_policy": {
     "primitive_diagnostic_identical_to_R": true,
@@ -135,5 +146,5 @@
     "visible_not_consumed_configuration_required_before_candidate_freeze": true,
     "out_of_model_configuration_required_before_candidate_freeze": true
   },
-  "activation": "Change status to FROZEN_BEFORE_ANY_CALL, add committed_contract_sha256 plus the complete frozen_artifact_sha256 inventory required by the runner, and commit that freeze before invoking the runner."
+  "activation": "Satisfied prospectively: status, complete frozen_artifact_sha256 inventory, and committed_contract_sha256 are committed before any response-generation call."
 }
