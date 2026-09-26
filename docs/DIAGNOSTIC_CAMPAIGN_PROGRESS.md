@@ -37,8 +37,12 @@ therefore failed and the run is retained as route change with unresolved trigger
 replacement. Fixed run 3/6, `mccv2-dev-003`, is a valid persistent command--motion cluster:
 0.260 m/s median delivered command versus 0.000 m/s measured motion over 11--21 s after a
 0.25974 m/s healthy baseline, followed by two FollowPath failures, two qualified Wait invocations,
-and abort. The unique physical cause is unresolved. No response or Luna call has been made. Fixed
-run 4/6 is next.
+and abort. The unique physical cause is unresolved. Fixed run 4/6, `mccv2-dev-004`, is a valid
+successful-compensation cluster: the same 0.260 versus 0.000 m/s discrepancy persisted over
+11--21 s, measured response recovered to 0.25974 m/s over 23--24 s, and navigation succeeded after
+one FollowPath failure and one qualified Wait invocation. The record supports measured response
+recovery, not a unique physical cause or proof of actuator acceptance. No response or Luna call has
+been made. Fixed run 5/6 is next.
 
 ## Readiness
 

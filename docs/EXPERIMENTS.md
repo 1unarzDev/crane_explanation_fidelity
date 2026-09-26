@@ -6210,3 +6210,22 @@
   outside robot-visible evidence.
 - **GOVERNANCE:** raw and derived artifacts were separately hash-manifested and DVC-pushed. Fixed
   run 4/6 is next; language remains unauthorized.
+
+### Fixed run 4/6 — `mccv2-dev-004`
+
+- **STATUS:** `VALID_DEVELOPMENT_SUCCESSFUL_COMMAND_MOTION_COMPENSATION`; one attempt, no retry or
+  replacement, independent development clusters +1, confirmatory clusters +0, model/Luna calls 0.
+- **ADMISSION:** the pinned player passed all source/catalog checks and all 14 post-run binding
+  checks matched nominal-clear-route 009 at seed 82008 with the predeclared 18 s hold and 30 s
+  release. The Unity worker recording and generic fixture both passed.
+- **OBSERVED:** NavigateToPose succeeded after 80.260 s and 17.467 m displacement, with one
+  FollowPath failure and one source-qualified Wait invocation.
+- **INDEPENDENT DIAGNOSIS:** the healthy 0--5 s interval measured 0.259740 m/s. During 11--21 s,
+  median delivered command remained 0.260 m/s while measured planar speed was 0.000 m/s. A later
+  sufficiently sampled command-active window at 23--24 s measured 0.259740 m/s, a 1.000 response
+  ratio, before eventual action success. The independent implementation reproduced all values.
+- **BOUNDARY:** the evidence supports a transient command--motion discrepancy and measured response
+  recovery. It does not prove actuator acceptance, Nav2 consumption of odometry, the evaluator
+  intervention identity, or a unique physical cause such as obstruction, slip, or actuator fault.
+- **GOVERNANCE:** raw and derived robot-visible/evaluator-only artifacts were separately
+  hash-manifested and DVC-pushed. Fixed run 5/6 is next; language remains unauthorized.
