@@ -13,6 +13,18 @@ AUDIT = ROOT / (
 )
 LEDGER = ROOT / "manifests/study/diagnostic-sequential-error-ledger-v2.json"
 JUDGE = ROOT / "manifests/annotation/luna-model-judge-v1-heldout-v12-final.json"
+SCHEDULE = ROOT / (
+    "research/explanation_fidelity/experiment_configs/prospective/"
+    "focused-supported-diagnostic-communication-v1-schedule.json"
+)
+OLD_SCHEDULE = ROOT / (
+    "research/explanation_fidelity/experiment_configs/prospective/"
+    "land-command-motion-physical-schedule-v1.json"
+)
+QUESTIONS = ROOT / (
+    "research/explanation_fidelity/experiment_configs/prospective/"
+    "focused-supported-diagnostic-communication-v1-questions.json"
+)
 
 
 def load(path: Path) -> dict:
@@ -37,10 +49,10 @@ def test_focused_protocol_is_prospective_and_has_zero_results():
 
 def test_focused_mixture_counts_independent_clusters_only():
     protocol = load(PROTOCOL)
-    block = protocol["families"]["block_of_8"]
+    counts = protocol["families"]["fixed_discovery_counts"]
 
-    assert sum(block.values()) == 8
-    assert sum(block[name] for name in protocol["families"]["primary"]) == 6
+    assert sum(counts.values()) == 64
+    assert sum(counts[name] for name in protocol["families"]["primary"]) == 47
     assert "evidence_mask" in protocol["zero_increment_relations"]
     assert "luna_pass" in protocol["zero_increment_relations"]
 
@@ -77,3 +89,32 @@ def test_level_a_does_not_require_level_b_or_secondary_tradeoff_success():
     assert inference["level_B_minimum_worthwhile_improvement"] == 0.1
     assert inference["level_C_is_secondary_tradeoff_conclusion"] is True
     assert "supplemental_information_coverage" in protocol["secondary_not_level_A_gates"]
+
+
+def test_focused_schedule_reassigns_every_unattempted_configuration_without_selection():
+    schedule = load(SCHEDULE)
+    old = load(OLD_SCHEDULE)
+    confirmation = next(
+        item for item in old["cohorts"] if item["cohort"] == "confirmation-physical"
+    )
+    remaining = [item for item in confirmation["runs"] if 41 <= item["order"] <= 100]
+
+    assert len(remaining) == schedule["prior_physical_schedule"]["reassigned_count"] == 60
+    assert [item["order"] for item in remaining] == list(range(41, 101))
+    assert len(schedule["added_geometry_configurations"]) == 4
+    assert schedule["fixed_counts"]["total_independent_configurations"] == 64
+    assert schedule["fixed_counts"]["primary_eligible_if_independently_supported"] == 47
+
+
+def test_question_registry_matches_focused_families_and_marks_essentials():
+    protocol = load(PROTOCOL)
+    registry = load(QUESTIONS)
+    rows = {item["family"]: item for item in registry["questions"]}
+    expected = set(protocol["families"]["primary"] + protocol["families"]["controls"])
+
+    assert set(rows) == expected
+    assert all(item["essential_units"] for item in rows.values())
+    assert all(rows[name]["primary_endpoint_eligible"] for name in protocol["families"]["primary"])
+    assert not any(
+        rows[name]["primary_endpoint_eligible"] for name in protocol["families"]["controls"]
+    )

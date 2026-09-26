@@ -1,0 +1,91 @@
+{
+  "schema": "crane-focused-supported-diagnostic-question-registry/v1",
+  "registry_id": "focused-supported-diagnostic-communication-v1-questions",
+  "declared_date": "2026-09-26",
+  "status": "FROZEN_BEFORE_CONFIRMATORY_RESPONSE",
+  "unit_policy": "Essential units follow the question purpose and are fixed before physical outcome or method response. Supplemental facts are scored but cannot make the primary endpoint fail unless asserted materially incorrectly.",
+  "questions": [
+    {
+      "family": "bounded_geometric_restriction",
+      "primary_endpoint_eligible": true,
+      "text": "What bounded route restriction is supported by the retained navigation model, what decisive route measurement supports it, what was the recorded outcome, and which stronger physical or Nav2-causation conclusions remain unproven?",
+      "essential_units": [
+        "mechanism-bounded-navigation-model-restriction",
+        "direct-route-nontraversable-location-and-model-threshold-classification",
+        "retained-connection-or-path-and-action-outcome",
+        "no-global-no-path-obstacle-identity-or-exact-consumption"
+      ],
+      "supplemental_units": [
+        "all-grid-histogram-counts",
+        "every-plan-and-trajectory-extremum",
+        "extra-timestamps",
+        "next-check"
+      ]
+    },
+    {
+      "family": "persistent_command_motion_discrepancy",
+      "primary_endpoint_eligible": true,
+      "text": "What is the deepest supported execution mechanism, what healthy-versus-event measurement establishes it, how did the action end, and what unique physical or actuator cause remains unresolved?",
+      "essential_units": [
+        "mechanism-persistent-command-motion-discrepancy",
+        "healthy-and-event-commanded-versus-measured-comparison-with-interval",
+        "action-outcome",
+        "no-unique-actuator-obstacle-slip-collision-or-consumption-cause"
+      ],
+      "supplemental_units": [
+        "every-window-value",
+        "all-event-locators",
+        "recovery-counts-not-needed-by-question",
+        "next-check"
+      ]
+    },
+    {
+      "family": "measured_response_recovery",
+      "primary_endpoint_eligible": true,
+      "text": "What execution discrepancy occurred, what measurement shows whether response recovered, what was the final outcome, and what does the event order not prove?",
+      "essential_units": [
+        "mechanism-command-motion-discrepancy-with-measured-response-recovery",
+        "event-comparison-and-recovered-response-value-or-ratio-with-interval",
+        "action-outcome",
+        "recovery-order-does-not-prove-recovery-caused-outcome-or-unique-physical-cause"
+      ],
+      "supplemental_units": [
+        "every-intermediate-event",
+        "all-event-locators",
+        "extra-source-narration",
+        "next-check"
+      ]
+    },
+    {
+      "family": "missing_decisive_or_ambiguous_evidence",
+      "primary_endpoint_eligible": false,
+      "text": "Can the requested physical or execution mechanism be established from the retained evidence? Give the useful supported execution facts, name the missing or conflicting discriminator, and qualify the conclusion.",
+      "essential_units": [
+        "useful-supported-observation-or-execution-fact",
+        "missing-or-conflicting-discriminator",
+        "mechanism-withheld",
+        "no-unique-physical-cause"
+      ],
+      "supplemental_units": [
+        "extra-event-locators",
+        "next-check"
+      ]
+    },
+    {
+      "family": "nominal_false_premise_or_irrelevant_obstacle",
+      "primary_endpoint_eligible": false,
+      "text": "Did the alleged navigation failure or obstacle cause occur in this action? Correct any false premise, state the decisive recorded outcome and motion evidence, and preserve the Nav2-consumption and physical-causation limits.",
+      "essential_units": [
+        "false-premise-rejection",
+        "action-outcome-and-nominal-or-not-triggered-motion-evidence",
+        "no-obstacle-cause-from-visibility-alone",
+        "no-exact-nav2-consumption-claim"
+      ],
+      "supplemental_units": [
+        "every-healthy-window",
+        "all-event-locators",
+        "next-check"
+      ]
+    }
+  ]
+}

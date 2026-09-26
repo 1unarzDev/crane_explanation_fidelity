@@ -1,0 +1,98 @@
+{
+  "schema": "crane-focused-supported-diagnostic-communication-schedule/v1",
+  "schedule_id": "focused-supported-diagnostic-communication-v1-schedule",
+  "declared_date": "2026-09-26",
+  "status": "FROZEN_CONFIGURATIONS_BEFORE_PHYSICAL_OUTCOMES_OR_RESPONSES",
+  "protocol": "research/explanation_fidelity/experiment_configs/prospective/focused-supported-diagnostic-communication-v1.json",
+  "source_catalog": {
+    "path": "packages/crane_ml/Assets/Resources/ReferenceEnvironments/crane_land_proving_ground_v6.json",
+    "sha256": "c9cee3922fa1cc17f8237fde12d0a50ee6496649142f3cb14a4c6491fd72a0eb"
+  },
+  "prior_physical_schedule": {
+    "path": "research/explanation_fidelity/experiment_configs/prospective/land-command-motion-physical-schedule-v1.json",
+    "sha256": "1f844ad45fa2e5cefb9edcfc5f3420a5a18aff32abda81ec72b7876ce376f215",
+    "disposition": "The older physical-only cohort is closed after attempted runs 001--040 under an additive redirect disposition. Those inspected runs are excluded. Every unattempted run 041--100 is reassigned without selecting on an outcome; no physical artifact for those run IDs existed at this declaration.",
+    "reassigned_run_range": [41, 100],
+    "reassigned_count": 60
+  },
+  "eligibility_audit": {
+    "inspected_prior_runs_excluded": [1, 40],
+    "inspected_prior_run_count": 40,
+    "unattempted_reassigned_runs": [41, 100],
+    "unattempted_artifact_search_result": "NO_MATCHING_PHYSICAL_OR_MODEL_OUTPUT_ARTIFACTS",
+    "candidate_endpoint_or_family_selection_influenced_by_runs_1_to_40": true,
+    "outcomes_of_runs_41_to_100_inspected": false,
+    "added_geometry_layout_contents_inspected": true,
+    "added_geometry_physical_outcomes_exist": false,
+    "interpretation": "This is fresh prospective outcome evidence, not an untouched random sample from an unknown generator. Layout metadata and the first 40 development/physical outcomes informed the focused design and are disclosed."
+  },
+  "added_geometry_configurations": [
+    {
+      "focused_cluster_id": "fsdc-land-geometry-001",
+      "layout_id": "diagnostic-command-motion-confirmation-reserve-connected-detour-057",
+      "layout_seed": 91056,
+      "mobility_hold_after_s": -1.0,
+      "mobility_release_after_s": -1.0,
+      "family": "bounded_geometric_restriction"
+    },
+    {
+      "focused_cluster_id": "fsdc-land-geometry-002",
+      "layout_id": "diagnostic-command-motion-confirmation-reserve-connected-detour-058",
+      "layout_seed": 91057,
+      "mobility_hold_after_s": -1.0,
+      "mobility_release_after_s": -1.0,
+      "family": "bounded_geometric_restriction"
+    },
+    {
+      "focused_cluster_id": "fsdc-land-geometry-003",
+      "layout_id": "diagnostic-command-motion-confirmation-reserve-connected-detour-059",
+      "layout_seed": 91058,
+      "mobility_hold_after_s": -1.0,
+      "mobility_release_after_s": -1.0,
+      "family": "bounded_geometric_restriction"
+    },
+    {
+      "focused_cluster_id": "fsdc-land-geometry-004",
+      "layout_id": "diagnostic-command-motion-confirmation-reserve-connected-detour-060",
+      "layout_seed": 91059,
+      "mobility_hold_after_s": -1.0,
+      "mobility_release_after_s": -1.0,
+      "family": "bounded_geometric_restriction"
+    }
+  ],
+  "reassigned_run_classification": {
+    "cm-land-conf-052": {
+      "focused_cluster_id": "fsdc-land-geometry-005",
+      "family": "bounded_geometric_restriction",
+      "reason": "This connected-detour, no-intervention configuration tests the atomic geometry question. The classification uses frozen layout/intervention metadata before physical outcome."
+    },
+    "all_other_runs_041_to_100": {
+      "mapping": {
+        "persistent-discrepancy": "persistent_command_motion_discrepancy",
+        "transient-compensation": "measured_response_recovery",
+        "ambiguous-missing-odometry": "missing_decisive_or_ambiguous_evidence",
+        "nominal-false-premise": "nominal_false_premise_or_irrelevant_obstacle"
+      }
+    }
+  },
+  "fixed_counts": {
+    "total_independent_configurations": 64,
+    "primary_eligible_if_independently_supported": 47,
+    "bounded_geometric_restriction": 5,
+    "persistent_command_motion_discrepancy": 21,
+    "measured_response_recovery": 21,
+    "missing_decisive_or_ambiguous_evidence": 10,
+    "nominal_false_premise_or_irrelevant_obstacle": 7
+  },
+  "order": {
+    "physical": "Run the four added geometry configurations in listed order, then the reassigned prior-schedule configurations in their immutable original 041--100 order.",
+    "semantic": "Build the independent reference before either response for each valid cluster. Open P/R responses only after campaign activation and in physical order.",
+    "replacement": "No replacement for invalid, unexpected, insufficient, unfavorable, or unresolved outcomes."
+  },
+  "replication": {
+    "source": "replication cohort in land-command-motion-physical-schedule-v1.json",
+    "count": 100,
+    "status": "RESERVED_NOT_AUTHORIZED",
+    "overlap_with_discovery": 0
+  }
+}

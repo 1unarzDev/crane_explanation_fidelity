@@ -73,17 +73,16 @@ warehouse/proving-ground fixture. New environment breadth, aerial, underwater, o
 perfect RoboBoat docking are not prerequisites. Surface cases may be a later separately registered
 replication or external-validity arm; they are not silently added to this population.
 
-Configurations are scheduled in fixed eight-cluster blocks:
+The fixed discovery schedule contains 64 configurations: five bounded-geometry cases, 21
+persistent discrepancies, 21 measured-response-recovery cases, ten missing-evidence/ambiguous
+controls, and seven nominal/false-premise controls. The 47 diagnosable cases are primary-endpoint
+eligible. This deliberately weights the established high-throughput command--motion fixture more
+heavily than geometry; family-specific results are reported and the pooled claim applies only to
+this registered mixture.
 
-- two bounded geometric-restriction clusters;
-- two persistent command--motion discrepancy clusters;
-- two measured-response-recovery clusters;
-- one independent missing-decisive-evidence or ambiguous control; and
-- one independent nominal/false-premise or irrelevant-obstacle control, alternating by block.
-
-The first six are primary-endpoint eligible. Controls test qualification and adverse behavior but
-do not become primary successes or failures. Paired masks remain in their source cluster. Shared
-layout families and interventions are clustered together. Valid unexpected outcomes are retained;
+Controls test qualification and adverse behavior but do not become primary successes or failures.
+Paired masks remain in their source cluster. Shared layouts and interventions are clustered
+together. Valid unexpected outcomes are retained;
 eligibility follows recording validity and independently computed mechanism support, never P/R
 answers. A fixed configuration manifest, order, hashes, exclusion rules, and disjoint replication
 reserve must exist before activation. Previously inspected development recordings are ineligible.
@@ -138,12 +137,17 @@ Evaluator leakage, unequal permitted evidence/tools, broken cluster identity, in
 or outcome-dependent sampling invalidate the campaign. A severe repeated causal-boundary failure
 triggers a frozen-method review; it is never hidden as a mere coverage tradeoff.
 
-The first look requires at least 40 eligible independent clusters and representation from all three
-primary families. Planned reviews occur after 40, 80, 120, 200, 300, and 400 eligible clusters.
+The first formal look requires at least 24 eligible independent clusters and representation from
+all three primary families. Planned reviews occur after 24, 36, and the final 47 eligible clusters.
 Success may stop at any review when the registered bound clears Level A or B. Futility review occurs
-when the anytime-valid upper bound is at or below zero, or at the 400-cluster maximum without Level A.
+when the anytime-valid upper bound is at or below zero, or at the fixed schedule's end without Level A.
 Inconclusive and negative campaigns are retained. Sample planning uses development assumptions only;
 the four-cluster v2 screen is not an effect-size estimate.
+
+The exact schedule and eligibility audit are in
+`focused-supported-diagnostic-communication-v1-schedule.json`; the four added geometry layouts and
+all 60 previously scheduled but unattempted configurations had no physical outcome at declaration.
+Runs 1--40 of the older physical cohort were inspected and are excluded.
 
 The `candidate-v1-confirmation` allocation (`alpha=0.02`) remains available and unbound. Activation
 must atomically bind it; abandonment after inspecting a confirmatory response consumes it. No
@@ -162,4 +166,3 @@ labels. An allowed conclusion is that P improves complete supported diagnostic c
 registered families while providing less supplemental detail. It is not an overall-superiority
 claim. Until confirmation and replication exist, the manuscript continues to report zero
 confirmatory semantic clusters and no statistical advantage.
-

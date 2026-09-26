@@ -22,6 +22,14 @@ action is a fixed fresh land schedule plus atomic question/unit registry and evi
 packet closure. The alpha ledger is still unbound, confirmatory N is 0, and no effect, confidence
 sequence, significance, or replication result exists.
 
+The former physical-only land cohort is additively closed after run 040 (39 valid, one invalid).
+All artifacts and its original schedule remain immutable. Its never-attempted runs 041--100 are
+reassigned wholesale before outcomes, together with four unused connected-detour layouts, to a
+64-configuration focused discovery schedule. This produces 47 potentially eligible diagnosable
+clusters and 17 controls. The first 40 outcomes influenced the new design and are excluded; the
+reassigned outcomes did not exist at declaration. The 100 replication configurations remain
+untouched and unauthorized.
+
 ## Composite-mechanism v6 development screen
 
 Seven source-generated v6 layouts that overlap neither frozen 100-cluster schedule are allocated
@@ -245,7 +253,7 @@ the chosen allocation must be atomically bound to that campaign and cannot later
 No effect estimate, confidence sequence, guardrail result, or replication conclusion exists.
 Legacy and the eleven diagnostic-development clusters are intentionally absent from these counts.
 
-The separate physical/reference cohort has attempted 40/100 fixed confirmation-side configurations:
+The now-closed physical/reference cohort attempted 40/100 fixed confirmation-side configurations:
 39 valid, 1 invalid. The method-visible diagnostic dispositions are twenty-seven supported, seven
 `not_triggered`, and five `insufficient`. Run 004 is a valid unexpected transient case: measured
 response recovered after the discrepancy, but the action later aborted, preventing the study from
@@ -314,8 +322,9 @@ Run 040 passed the frozen build, binding, worker-recording, and independent-refe
 retained as a valid unexpected abort despite the generic fixture's expected-success failure.
 Proposed and independent computations agree on a connected-detour persistent discrepancy from
 18--28 s at 0.260 versus 0.000 m/s, with no later response recovery before abort after 52.111 s and
-4.383 m. Neither run adds semantic measurement or alpha. The next immutable schedule item is
-`cm-land-conf-041`.
+4.383 m. Neither run adds semantic measurement or alpha. The original schedule's next item was
+`cm-land-conf-041`; the cohort is now closed and that unattempted configuration is reassigned only
+through the focused schedule.
 
 ## Frozen land command--motion physical cohort
 
@@ -373,9 +382,10 @@ all 24 fresh cases with zero transport failures and zero false acceptance/reject
 errors, but composite accuracy was 80%/85%, core accuracy was 84.4%/87.0%, and both passes failed
 the frozen prompt-injection/evidence-boundary protected gates. The numerically smaller aggregate
 uncertainty bounds are ineligible; annotation amendment 2's original v7 bounds remain authoritative.
-Consequently, no Luna-scored candidate-v3 semantic confirmation campaign may activate. Deterministic
-diagnostic measurement collection can continue under a separately frozen physical-evidence plan,
-but it cannot be reported as supported-diagnostic-success confirmation. See
+Consequently, no Luna-scored candidate-v3 semantic confirmation campaign may activate. That
+historical physical-only plan is now closed by the focused redirect. New collection may proceed
+only after the focused evidence-complete semantic activation; it cannot be reported as the old
+candidate-v3 confirmation. See
 `manifests/annotation/luna-model-judge-v7-endpoint-threat-extension-1-disposition.json`.
 
 ## V6 physical-reserve runtime qualification

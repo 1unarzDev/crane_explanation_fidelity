@@ -27,6 +27,11 @@
 - **Next gate:** freeze the exact configuration schedule, atomic questions/essential units,
   evidence-complete Luna packets, R model/resource contract, and disjoint replication reserve;
   then bind alpha before opening the first confirmatory response.
+- **Physical-cohort disposition:** close the older physical-only cohort after run 040, preserving
+  39 valid and one invalid attempt. Reassign all never-attempted runs 041--100, without outcome
+  selection, plus four catalog layouts with no physical outcome to the focused schedule. The
+  original 100-run replication reserve remains untouched. This close is caused by the prospective
+  research redirect, not observed P--R effects; original semantic N was zero.
 
 ## 2026-09-26 — reject composite-mechanism v6 at deterministic futility gate
 

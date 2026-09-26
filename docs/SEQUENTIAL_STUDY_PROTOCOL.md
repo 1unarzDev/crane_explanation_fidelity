@@ -6,6 +6,13 @@ Declared: 2026-09-23
 
 Status: **REGISTERED FRAMEWORK / TARGETED LUNA EXTENSION FAILED / NO CAMPAIGN ACTIVE / ZERO ALPHA CONSUMED**
 
+Focused redirect (2026-09-26): this broader framework remains preserved, but the next campaign is
+the additive `focused-supported-diagnostic-communication-v1` protocol. It separates a positive
+Level A effect from a +0.10 Level B practical magnitude and a Level C tradeoff conclusion. The
+older +0.15-plus-all-guardrails success rule is not silently applied to that new claim. The
+physical-only cohort closed after run 040; its unattempted runs are prospectively reassigned by the
+focused schedule. No semantic response has been opened and the alpha ledger remains unbound.
+
 This is the canonical forward-looking statistical contract for new physical-diagnosis campaigns.
 It does not apply to frozen F/G/H data, the nine inspected diagnostic-development clusters, or any
 other outcome already reviewed. The earlier `diagnostic-sequential-protocol-v1` remains in Git as
@@ -239,7 +246,9 @@ another valid transient-compensation success with independent computation parity
 third consecutive valid transient-compensation success under a distinct frozen configuration.
 Run 040 adds a valid connected-detour persistent discrepancy followed by an unexpected abort; its
 generic expected-success failure does not override the passed frozen worker-validity gate. None
-adds a semantic response or alpha. The next authorized physical item is fixed-order run 041.
+adds a semantic response or alpha. The original physical-only cohort then closed under the dated
+focused-redirect disposition; run 041 is unattempted under that purpose and is reassigned only
+through the new focused schedule.
 
 Reserve fresh configuration identities before discovery. Replication uses byte-identical P/R,
 evidence contract, prompts, tools, thresholds, judge, and analysis hashes; it reuses no discovery
@@ -249,9 +258,9 @@ separate allocations.
 
 ## Activation and retention
 
-No campaign is active. The separately frozen 100-configuration land schedule is physical/reference
-collection only; 39 configurations have been attempted, of which 38 are valid and one is retained
-invalid, with no P/R response or Luna label. Activation requires frozen P/R and resource-parity
+No campaign is active. The separately frozen 100-configuration land schedule closed after 40
+attempts, of which 39 are valid and one is retained invalid, with no P/R response or Luna label.
+Its remaining configurations are governed by the additive focused disposition. Activation requires frozen P/R and resource-parity
 hashes, a semantically valid evaluation arm, admitted target generators, one frozen
 question/reference/sufficiency label per
 cluster, a fixed sampler/exclusion contract, reserved replication configurations, and successful

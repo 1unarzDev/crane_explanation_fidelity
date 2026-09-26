@@ -20,6 +20,12 @@
 - **PROSPECTIVE CONTRACT:** Level A tests a positive P-minus-R difference; Level B tests a +0.10
   worthwhile difference; Level C separately evaluates the tradeoff. New evidence-complete packets
   must expose the facts available to both methods. Confirmatory semantic N and alpha remain zero.
+- **FRESH SCHEDULE:** the physical-only cohort closes after run 040. Its 60 unattempted
+  configurations have no retained physical/model outputs and are reassigned wholesale, rather than
+  cherry-picked by outcome. Four previously unused connected-detour layouts add bounded-geometry
+  cases. The fixed discovery mixture is 5 geometry, 21 persistent discrepancy, 21 measured
+  recovery, 10 ambiguous/missing-evidence, and 7 nominal/false-premise clusters. The old
+  replication 100 remains reserved.
 
 ## 2026-09-26 — freeze composite-mechanism v6 physical development screen
 
