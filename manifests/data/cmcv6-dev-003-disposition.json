@@ -1,0 +1,123 @@
+{
+  "schema": "crane-composite-mechanism-v6-physical-run-disposition/v1",
+  "recorded_date": "2026-09-26",
+  "run_id": "cmcv6-dev-003",
+  "cluster_id": "cmcv6-dev-cluster-003",
+  "status": "VALID_INDEPENDENT_COMPOSITE_POSITIVE_PROPOSED_GEOMETRIC_ADAPTER_OMISSION_UNEXPECTED_ABORT_NO_LANGUAGE_RESPONSE",
+  "attempt_count": 1,
+  "retry_or_replacement_performed": false,
+  "contract": {
+    "path": "research/explanation_fidelity/experiment_configs/development/composite-mechanism-v6-physical-screen-v1.json",
+    "player_amendment": "research/explanation_fidelity/experiment_configs/development/composite-mechanism-v6-physical-screen-v1-amendment-2.json",
+    "fixed_order": 3,
+    "development_only": true
+  },
+  "scheduled_configuration": {
+    "layout_id": "diagnostic-command-motion-confirmation-reserve-connected-detour-054",
+    "layout_seed": 91053,
+    "geometry": "connected-detour",
+    "intervention_family": "persistent-command-motion",
+    "mobility_hold_after_s": 25.0,
+    "mobility_release_after_s": -1.0,
+    "ros_domain_id": 227,
+    "ros_tcp_port": 12527
+  },
+  "admission": {
+    "player_build_audit_accepted": true,
+    "scenario_binding_audit_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "unity_worker_result_valid": true,
+    "unity_logged_errors": 0,
+    "unity_logged_exceptions": 0,
+    "stale_actions": 0,
+    "rejected_actions": 0,
+    "cross_episode_actions": 0,
+    "recording_valid_under_worker_result_gate": true,
+    "unexpected_navigation_outcome_retained": true
+  },
+  "generic_fixture_expectation": {
+    "expected_navigation_status": "succeeded",
+    "observed_navigation_status": "aborted",
+    "fixture_exit_status": 1,
+    "fixture_summary_valid_flag": false,
+    "disposition": "The generic expected-success check failed, but source/build binding, scenario binding, zero-error worker recording, and independent calculations passed. The unexpected valid abort is retained without replacement."
+  },
+  "observed": {
+    "navigation_status": "aborted",
+    "action_wall_seconds": 51.61005895300332,
+    "displacement_meters": 4.573152494686186,
+    "controller_commands": 480,
+    "odometry_messages": 2580,
+    "costmap_observations": 131,
+    "delivered_plans": 3,
+    "behavior_tree_transitions": 39,
+    "follow_path_attempts": 3,
+    "follow_path_failures": 2,
+    "observed_recovery_invocation_starts": 2,
+    "maximum_recovery_feedback": 2,
+    "behavior_tree_history_status": "not_proven",
+    "exact_recovery_count_eligible": false
+  },
+  "command_motion_reference": {
+    "proposed_disposition": "supported",
+    "independent_disposition": "supported",
+    "healthy_interval_s": [0.0, 5.0],
+    "healthy_measured_planar_speed_mps": 0.2597399950027466,
+    "discrepancy_interval_s": [18.0, 28.0],
+    "discrepancy_duration_s": 10.0,
+    "median_commanded_planar_speed_mps": 0.26,
+    "median_measured_planar_speed_mps": 0.0,
+    "response_recovery_interval_s": null,
+    "bounded_conclusion": "Delivered command and odometry establish a sustained command-to-motion discrepancy. They do not establish actuator acceptance, Nav2 odometry consumption, the hidden intervention, or a unique physical cause."
+  },
+  "geometric_reference": {
+    "proposed_disposition": "not_triggered",
+    "proposed_adapter_omission": "The frozen geometric adapter bundles bounded route-restriction facts with deadline-aligned abort; this action aborted 48.390 s before the configured deadline, so the adapter omits an independently supported geometric unit.",
+    "independent_direct_route_restriction_supported": true,
+    "independent_substantial_plan_deviation_supported": true,
+    "independent_substantial_trajectory_deviation_supported": false,
+    "direct_route_fully_covered": true,
+    "direct_route_first_blocked": {
+      "x_m": 6.175000113621341,
+      "y_m": -0.024999911710620104,
+      "cost": 253
+    },
+    "retained_grid_connection_below_cost_253": false,
+    "maximum_forward_progress_m": 4.580541610717773,
+    "maximum_lateral_trajectory_deviation_m": 0.03003906086087227,
+    "maximum_lateral_plan_deviation_m": 1.1761192321777347,
+    "delivered_plans": 3,
+    "unique_delivered_plans": 2,
+    "bounded_conclusion": "The fully covered requested direct route crosses a blocked cell in the retained planner grid, and delivered plans show substantial deviation. Measured trajectory deviation is not substantial. The evidence does not establish global physical no-path, obstacle identity, exact Nav2 consumption, snapshot-to-plan causation, or geometry as the cause of abort."
+  },
+  "screen_consequence": {
+    "valid_independent_clusters": 3,
+    "composite_positive_clusters": 2,
+    "proposed_method_complete_composite_outputs": 0,
+    "language_responses": 0,
+    "luna_calls": 0,
+    "confirmatory_semantic_n": 0,
+    "confirmatory_alpha_consumed": 0.0,
+    "next_fixed_run_id": "cmcv6-dev-004"
+  },
+  "hashes": {
+    "player_build_audit_sha256": "26d280c6500b113821c45f236f418271b08cdc3f06ae33304126b2a6babedc9d",
+    "scenario_binding_audit_sha256": "fdf8bbc90f57d03a2a72fba8fc01030e302e98199615825d9506e7417cf887cf",
+    "unity_worker_result_sha256": "62d22e69314b397a23e9d71099d0f18d1a4bf4a564ac0b9a9c470174f1b02d94",
+    "fixture_summary_sha256": "26ccd5950daf754b80709ec5ed62bc26e23966bb6c4d0239377ae37bcb7b620d",
+    "robot_visible_events_sha256": "d38870c45867860fedfb11e77a9d2f6b0653df65c2eae907a23cb7c14caae711",
+    "command_motion_diagnostic_sha256": "7dee9f199e4d1a6fb23d38618c041f87c53a106eb5f73ae0489c928c3ba851cc",
+    "command_motion_independent_reference_sha256": "1b8fa463ba76aeab2e7432480a6dfc5f3d9710a62e24ac10f8616a9a49db4ba1",
+    "geometric_diagnostic_sha256": "933716d765e4183fd374bd5d46fdac1544bae3048da32c2b9288d49ddf591bb1",
+    "geometric_independent_reference_sha256": "20db6a55566d6a215c71eb225f989e6aa21aed638a9473098c658e575a9073ee",
+    "plan_geometry_independent_reference_sha256": "30a00afccefc0dd77a2152c70c56278c602e8ed95a06fc7db3c0ce90164e3a45",
+    "robot_visible_manifest_sha256": "1242d982a5cd7009d0b4ba8719be27bcfea76adc0ae1855e6da967387e196f87",
+    "evaluator_only_manifest_sha256": "52048f0810707c0cbc41a4520b6a409141ef88f937da3e5485e7e8561bb76b0b"
+  },
+  "governance": {
+    "robot_visible_manifest": "manifests/data/cmcv6-dev-003.robot-visible.json",
+    "evaluator_only_manifest": "manifests/data/cmcv6-dev-003.evaluator-only.json",
+    "checkpoint": "manifests/checkpoints/cmcv6-dev-003.json",
+    "dvc_remote_status": "IN_SYNC_BEFORE_GIT_POINTER"
+  }
+}

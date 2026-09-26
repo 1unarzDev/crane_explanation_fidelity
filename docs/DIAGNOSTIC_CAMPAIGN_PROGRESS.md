@@ -31,7 +31,16 @@ causation. The frozen geometric adapter nevertheless emits `not_triggered` becau
 these bounded geometry facts to a deadline-aligned abort, which was absent. This is an observed
 candidate omission, not a reason for post-outcome repair. Totals are two valid development
 clusters, one independently composite-positive, zero responses/Luna calls, and zero confirmatory N
-or alpha. Fixed run 3 is next.
+or alpha.
+
+Fixed run 3/7 repeats independent composite support after its one authorized attempt. The
+persistent execution evidence is 0.260 m/s delivered command versus 0.000 m/s odometry over
+18--28 s. The fully covered direct route crosses a cost-253 grid cell, and distinct delivered
+plans deviate by up to 1.176 m, although the measured trajectory deviates only 0.030 m before the
+abort. Frozen P again omits the bounded geometry unit because its adapter requires deadline
+alignment. Totals are three valid clusters, two independently composite-positive, zero complete P
+composite outputs, zero responses/Luna calls, and zero confirmatory N or alpha. Fixed run 4 is
+next; no adapter repair is permitted within this candidate.
 
 ## Coverage-complete v5 raw-baseline screen
 

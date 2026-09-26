@@ -11,6 +11,7 @@ AMENDMENT_1 = ROOT / "research/explanation_fidelity/experiment_configs/developme
 AMENDMENT_2 = ROOT / "research/explanation_fidelity/experiment_configs/development/composite-mechanism-v6-physical-screen-v1-amendment-2.json"
 RUN_001_DISPOSITION = ROOT / "manifests/data/cmcv6-dev-001-disposition.json"
 RUN_002_DISPOSITION = ROOT / "manifests/data/cmcv6-dev-002-disposition.json"
+RUN_003_DISPOSITION = ROOT / "manifests/data/cmcv6-dev-003-disposition.json"
 
 
 def _load(path: Path):
@@ -19,6 +20,27 @@ def _load(path: Path):
 
 def _sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _assert_disposition_hashes(run_id: str, result: dict):
+    robot = ROOT / f"data/robot_visible/dev/{run_id}"
+    evaluator = ROOT / f"data/evaluator_only/dev/{run_id}"
+    artifacts = {
+        "player_build_audit_sha256": evaluator / "player-build-audit.json",
+        "scenario_binding_audit_sha256": evaluator / "scenario-binding-audit.json",
+        "unity_worker_result_sha256": evaluator / "worker-0/result.json",
+        "fixture_summary_sha256": evaluator / "fixture-summary.json",
+        "robot_visible_events_sha256": robot / "capture/events.jsonl",
+        "command_motion_diagnostic_sha256": robot / "command-motion-diagnostic-v1.json",
+        "command_motion_independent_reference_sha256": evaluator / "independent-command-motion-reference-v1.json",
+        "geometric_diagnostic_sha256": robot / "geometric-route-diagnostic-v2.json",
+        "geometric_independent_reference_sha256": evaluator / "geometric-independent-reference-v1.json",
+        "plan_geometry_independent_reference_sha256": evaluator / "plan-geometry-independent-reference-v1.json",
+        "robot_visible_manifest_sha256": ROOT / f"manifests/data/{run_id}.robot-visible.json",
+        "evaluator_only_manifest_sha256": ROOT / f"manifests/data/{run_id}.evaluator-only.json",
+    }
+    for key, path in artifacts.items():
+        assert result["hashes"][key] == _sha256(path)
 
 
 def test_allocated_layouts_exist_and_do_not_overlap_frozen_schedules():
@@ -119,19 +141,22 @@ def test_run_002_retains_independent_composite_support_and_adapter_omission():
     assert result["screen_consequence"]["proposed_method_complete_composite_outputs"] == 0
     assert result["screen_consequence"]["language_responses"] == 0
 
-    artifacts = {
-        "player_build_audit_sha256": ROOT / "data/evaluator_only/dev/cmcv6-dev-002/player-build-audit.json",
-        "scenario_binding_audit_sha256": ROOT / "data/evaluator_only/dev/cmcv6-dev-002/scenario-binding-audit.json",
-        "unity_worker_result_sha256": ROOT / "data/evaluator_only/dev/cmcv6-dev-002/worker-0/result.json",
-        "fixture_summary_sha256": ROOT / "data/evaluator_only/dev/cmcv6-dev-002/fixture-summary.json",
-        "robot_visible_events_sha256": ROOT / "data/robot_visible/dev/cmcv6-dev-002/capture/events.jsonl",
-        "command_motion_diagnostic_sha256": ROOT / "data/robot_visible/dev/cmcv6-dev-002/command-motion-diagnostic-v1.json",
-        "command_motion_independent_reference_sha256": ROOT / "data/evaluator_only/dev/cmcv6-dev-002/independent-command-motion-reference-v1.json",
-        "geometric_diagnostic_sha256": ROOT / "data/robot_visible/dev/cmcv6-dev-002/geometric-route-diagnostic-v2.json",
-        "geometric_independent_reference_sha256": ROOT / "data/evaluator_only/dev/cmcv6-dev-002/geometric-independent-reference-v1.json",
-        "plan_geometry_independent_reference_sha256": ROOT / "data/evaluator_only/dev/cmcv6-dev-002/plan-geometry-independent-reference-v1.json",
-        "robot_visible_manifest_sha256": ROOT / "manifests/data/cmcv6-dev-002.robot-visible.json",
-        "evaluator_only_manifest_sha256": ROOT / "manifests/data/cmcv6-dev-002.evaluator-only.json",
-    }
-    for key, path in artifacts.items():
-        assert result["hashes"][key] == _sha256(path)
+    _assert_disposition_hashes("cmcv6-dev-002", result)
+
+
+def test_run_003_repeats_composite_support_without_post_outcome_adapter_change():
+    result = _load(RUN_003_DISPOSITION)
+    assert result["attempt_count"] == 1
+    assert result["retry_or_replacement_performed"] is False
+    assert result["admission"]["recording_valid_under_worker_result_gate"] is True
+    assert result["command_motion_reference"]["independent_disposition"] == "supported"
+    assert result["geometric_reference"]["independent_direct_route_restriction_supported"] is True
+    assert result["geometric_reference"]["direct_route_fully_covered"] is True
+    assert result["geometric_reference"]["independent_substantial_plan_deviation_supported"] is True
+    assert result["geometric_reference"]["independent_substantial_trajectory_deviation_supported"] is False
+    assert result["geometric_reference"]["proposed_disposition"] == "not_triggered"
+    assert result["screen_consequence"]["valid_independent_clusters"] == 3
+    assert result["screen_consequence"]["composite_positive_clusters"] == 2
+    assert result["screen_consequence"]["proposed_method_complete_composite_outputs"] == 0
+    assert result["screen_consequence"]["language_responses"] == 0
+    _assert_disposition_hashes("cmcv6-dev-003", result)

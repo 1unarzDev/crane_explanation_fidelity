@@ -79,6 +79,23 @@
   with zero language responses or Luna calls. Fixed run 3 is next; confirmation N and alpha remain
   zero.
 
+### Composite-mechanism v6 run 3/7 — repeated composite evidence, repeated adapter omission
+
+- **STATUS:** `VALID / UNEXPECTED ABORT / INDEPENDENTLY COMPOSITE-POSITIVE`. Its one fixed
+  attempt passed exact build, all 14 scenario bindings, and zero-error worker admission. It
+  aborted after 51.610 s and 4.573 m and is retained without replacement.
+- **INDEPENDENT DIAGNOSES:** delivered command and odometry support a persistent 0.260 versus
+  0.000 m/s discrepancy over 18--28 s. The final grid fully covers the requested direct route and
+  contains a cost-253 crossing near x=6.175 m; three delivered plans include two unique shapes and
+  as much as 1.176 m lateral deviation. Measured trajectory deviation remained only 0.030 m.
+- **BOUNDARY / METHOD RESULT:** no unique execution cause, obstacle identity, exact Nav2
+  consumption, snapshot-to-plan causation, global no-path, or geometry-to-abort relationship is
+  established. Frozen P again emits `not_triggered` for geometry because the abort was not aligned
+  with its deadline gate. The omission is retained without changing the adapter.
+- **DISPOSITION:** totals are three valid clusters, two independently composite-positive, zero
+  complete P composite outputs, and zero responses/Luna calls. Fixed run 4 is next; confirmation N
+  and alpha remain zero.
+
 ## 2026-09-26 — evidence-complete raw-baseline v5 language screen rejects candidate v5
 
 - **STATUS:** `DEVELOPMENT_ONLY_CANDIDATE_REJECTED_FROZEN_GATE`.
