@@ -24,6 +24,14 @@ provenance and audit. Response generation remains unauthorized until all fixed p
 are retained, independent references are computed, and a separate treatment/evidence-parity
 contract is hash-frozen.
 
+Fixed run 1/6, `mccv2-dev-001`, is retained as one valid development cluster after one attempt.
+The robot succeeded in 86.360 s after three distinct delivered plans, two feedback recoveries, and
+1.309 m maximum measured lateral deviation. Independent calculation found a cost-253 intersection
+on the requested direct route near x=11.575 m and a remaining connection in the retained grid. The
+allowed conclusion is a bounded navigation-model restriction plus recorded route change and
+success—not global no-path, obstacle identity, exact Nav2 consumption, or snapshot-to-plan
+causation. No response or Luna call has been made. Fixed run 2/6 is next.
+
 ## Readiness
 
 | Gate | Status | Evidence / next action |

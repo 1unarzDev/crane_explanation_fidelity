@@ -6158,3 +6158,22 @@
 - **NEXT GATE:** commit and push this predeclaration, then execute the six physical attempts in
   order. Do not generate P/R answers until complete independent references and an exact fair
   treatment contract are frozen.
+
+### Fixed run 1/6 — `mccv2-dev-001`
+
+- **STATUS:** `VALID_DEVELOPMENT_PHYSICAL_AND_REFERENCE_EVIDENCE`; one attempt, no retry or
+  replacement, independent development clusters +1, confirmatory clusters +0, model/Luna calls 0.
+- **ADMISSION:** the pinned player passed all source/catalog checks and all 14 post-run binding
+  checks matched connected-detour 007 at seed 81006 with no mobility intervention.
+- **OBSERVED:** NavigateToPose succeeded in 86.360 s after three distinct delivered plans, two
+  feedback recoveries, 17.579 m displacement, and 1.309 m maximum lateral deviation.
+- **INDEPENDENT GEOMETRY:** the retained grid contains a cost-253 cell on the requested direct
+  route near x=11.575 m and a connection from the action-result pose to the goal. Independent plan
+  recomputation confirmed direct-to-nondirect plan changes on both sides of the requested line.
+- **BOUNDARY:** the snapshot does not cover the complete requested route and does not prove global
+  no-path, a unique physical obstacle, exact Nav2 consumption, or costmap-to-plan causation. The
+  event remains a positive bounded restriction and successful route-change case, not a terminal
+  failure.
+- **GOVERNANCE:** raw and derived robot-visible/evaluator-only artifacts were separately
+  hash-manifested, DVC-pushed, and checkpointed. The disposable Unity player was not retained.
+- **NEXT:** execute fixed run 2/6; do not generate language yet.

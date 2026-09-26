@@ -1,0 +1,79 @@
+{
+  "schema": "crane-measurement-complete-v2-run-disposition/v1",
+  "recorded_utc_date": "2026-09-26",
+  "run_id": "mccv2-dev-001",
+  "cluster_id": "mccv2-land-001",
+  "status": "VALID_DEVELOPMENT_PHYSICAL_AND_REFERENCE_EVIDENCE",
+  "predeclaration": "research/explanation_fidelity/experiment_configs/development/measurement-complete-composition-v2-physical-screen-v1.json",
+  "admission": {
+    "attempt_count": 1,
+    "retry_performed": false,
+    "replacement_layout_used": false,
+    "player_build_audit_accepted": true,
+    "scenario_binding_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "unity_result_valid": true,
+    "expected_broad_outcome_observed": true,
+    "recording_valid": true
+  },
+  "scenario": {
+    "environment_id": "crane-land-proving-ground-v5",
+    "layout_id": "diagnostic-candidate-v2-development-connected-detour-007",
+    "layout_seed": 81006,
+    "family": "positive-geometric-restriction",
+    "mobility_hold_after_s": -1.0,
+    "mobility_release_after_s": -1.0
+  },
+  "observed": {
+    "navigation_status": "succeeded",
+    "action_wall_seconds": 86.3595460760007,
+    "displacement_meters": 17.579094403162816,
+    "controller_commands": 825,
+    "odometry_messages": 4256,
+    "trajectory_samples": 4240,
+    "behavior_tree_transitions": 39,
+    "costmap_observations": 318,
+    "delivered_plan_count": 3,
+    "unique_delivered_plan_count": 3,
+    "maximum_recovery_feedback": 2
+  },
+  "independent_reference": {
+    "direct_route_restriction_supported": true,
+    "retained_grid_has_connection": true,
+    "substantial_route_deviation_observed": true,
+    "global_physical_no_path_supported": false,
+    "unique_physical_obstacle_supported": false,
+    "controller_consumption_proven": false,
+    "costmap_caused_plan_change_proven": false,
+    "direct_route_first_blocked_center_x_m": 11.575000000372546,
+    "maximum_lateral_deviation_m": 1.309239149093628,
+    "plan_summary_parity_passed": true
+  },
+  "robot_visible_diagnostic": {
+    "disposition": "supported",
+    "mechanism": "recorded_plan_change_with_unresolved_physical_trigger",
+    "action_status": "succeeded",
+    "final_text_verification_accepted": true,
+    "bounded_interpretation": "The record supports a direct-route restriction in a retained navigation-model snapshot, a delivered-plan change, substantial measured deviation, and eventual success. It does not establish obstacle identity, exact Nav2 consumption, or that the retained snapshot caused the plan change."
+  },
+  "hashes": {
+    "player_build_audit_sha256": "cf2d883d18dd7c65b70be949664ac11abab084430884492302e06bae26b13cd6",
+    "scenario_binding_audit_sha256": "d82c3f12be5c86dd003129330b1569d249e57eef497b0c04448620b71ced6c68",
+    "evaluator_truth_sha256": "6d3af5f70774bacde8c39e24dd84d10899ba4c7389131dd2c3498779e4b2dd72",
+    "fixture_summary_sha256": "a9737476744c5c8571d673abb8553c39d61529f15b25041fe8e4b110b760a935",
+    "geometric_independent_reference_sha256": "dbe97838a1521e88e4516b88c1d5452ee6425f185e0d22b23f3334cf4f53d51d",
+    "plan_geometry_independent_reference_sha256": "16c157119696b19c221000be658d53b9509d7973854ded3f1a34a740510cdc97",
+    "robot_visible_diagnostic_sha256": "cb2f6f4a684c0b8db1b2a727f7df2680ac895782baf91d7eb359074c97e3d0d5",
+    "robot_visible_manifest_sha256": "9bbbcc0a9b44c646cdd07354f31911a0b8415a8b5a0440f32bb4c7bce788ac8b",
+    "evaluator_only_manifest_sha256": "dbe1805ff2d026423e59a5cbdae30bb1bf49fc8c24b35a1a3054910b4d2411db"
+  },
+  "study_effect": {
+    "development_independent_cluster_increment": 1,
+    "confirmatory_cluster_increment": 0,
+    "model_response_increment": 0,
+    "luna_judgment_increment": 0,
+    "confirmatory_alpha_consumed": 0.0,
+    "candidate_readiness": "NOT_YET_ASSESSED"
+  },
+  "next_fixed_run": "mccv2-dev-002"
+}
