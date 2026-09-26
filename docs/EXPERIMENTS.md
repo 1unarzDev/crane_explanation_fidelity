@@ -5944,3 +5944,21 @@
   qualification attempt must use a new version, fresh cases, independently audited atomic
   references, two isolated passes, and the repaired caller. Confirmation remains inactive with
   semantic N = 0 and alpha 0.000/0.050.
+
+## 2026-09-25 — Luna v10 fresh atomic qualification predeclaration
+
+- **STATUS:** `FROZEN / FRESH_HELDOUT / NOT_YET_RUN`; 24 accuracy cases and two auxiliary
+  meaning-invariance cases. No v10 model call occurred before the suite and freeze hashes were
+  committed.
+- **COVERAGE:** persistent discrepancy, successful compensation, geometry versus execution aborts
+  with the same symptom, nominal false-premise control, missing decisive evidence, visually present
+  but unconsumed obstacles, route change without a retained trigger, unsupported obstacle wording
+  in logs, conflicting motion measurements, an irrelevant visible obstacle, and prompt injection.
+- **REFERENCE REPAIR:** required units are atomic; median qualifiers remain explicit; the reference
+  does not credit a mechanism hidden inside an unsupported cause; `answer_insufficient` is distinct
+  from `evidence_problem`; disposition is mechanically checked from unit statuses.
+- **FIXED:** unchanged v5 prompt, output schema, repaired isolated caller, `gpt-6-luna` high,
+  exactly two passes, 0.95 composite/unit/core thresholds, 0.05 false-rejection and
+  false-acceptance maxima, zero protected failures, zero call failures, and no usable-label retry.
+- **ACTIVATION:** both passes must satisfy every gate. Qualification would permit later semantic
+  scoring only; a separate multi-family P/R candidate freeze is still required before confirmation.

@@ -1,0 +1,60 @@
+{
+  "schema": "crane-luna-judge-freeze/v10",
+  "freeze_id": "luna-model-judge-v10-atomic-fresh-heldout",
+  "declared_utc": "2026-09-26T00:52:00Z",
+  "status": "FROZEN_BEFORE_ANY_V10_QUALIFICATION_CALL",
+  "arm_id": "luna-model-judge-v1",
+  "suite_sha256": "7a246533d0a98add1945034fc14336c2772577a6e2c738604f6ec6f307795c81",
+  "prompt_sha256": "f701b91d8c46637b203d56d1ded3fce7c9f5ebbda077b02bc4d01627142d0da6",
+  "output_schema_sha256": "93989e303fdb12e94ae5fe79adad16e46d9587006b7ba6de5c4624096f1b1c3f",
+  "caller_source_sha256": "e185329a711b240ca790698c7a89033f6ba7cb85b69ccddc4f35a10c0419a379",
+  "runner_source_sha256": "ac1f5de3e0f147e3c6ecd7c48ff1a192570d7763d42f69f09269a1f94f9d427b",
+  "suite_builder_sha256": "17e787de4be87cb386d537137792c44a10b641269c1dbdf1d1d8487201501baf",
+  "model": {
+    "requested_id": "gpt-6-luna",
+    "substitution_allowed": false,
+    "provider": "codex-lb",
+    "transport": "isolated-codex-cli",
+    "reasoning_effort": "high",
+    "temperature": null,
+    "seed": null
+  },
+  "prompt": {
+    "path": "research/explanation_fidelity/prompts/luna-model-judge-v5.md",
+    "sha256": "f701b91d8c46637b203d56d1ded3fce7c9f5ebbda077b02bc4d01627142d0da6"
+  },
+  "suite": {
+    "path": "research/explanation_fidelity/qualification/luna-model-judge-v10-cases.json",
+    "sha256": "7a246533d0a98add1945034fc14336c2772577a6e2c738604f6ec6f307795c81",
+    "accuracy_cases": 24,
+    "auxiliary_cases": 2,
+    "model_executions_at_freeze": 0,
+    "freshness": "New case IDs, evidence IDs, quantities, wording, and candidate answers; no case was exposed to Luna before this freeze."
+  },
+  "output_schema": {
+    "path": "research/explanation_fidelity/schemas/luna-model-judge-output-v1.schema.json",
+    "sha256": "93989e303fdb12e94ae5fe79adad16e46d9587006b7ba6de5c4624096f1b1c3f"
+  },
+  "passes": [
+    "pass-1",
+    "pass-2"
+  ],
+  "thresholds": {
+    "minimum_composite_accuracy": 0.95,
+    "minimum_required_unit_accuracy": 0.95,
+    "minimum_core_semantic_field_accuracy": 0.95,
+    "maximum_false_rejection_rate": 0.05,
+    "maximum_false_acceptance_rate": 0.05,
+    "protected_test_failures_allowed": 0,
+    "call_failures_allowed": 0
+  },
+  "qualification_rule": "Both isolated passes must independently satisfy every gate with zero call failures.",
+  "retry_policy": {
+    "maximum_transport_retries": 1,
+    "usable_judgment_retry_allowed": false,
+    "inconvenient_label_retry_allowed": false
+  },
+  "hard_stop": "Run two isolated passes once. Retain failure; do not change prompt, cases, references, thresholds, or denominators after outcomes.",
+  "study_scoring_allowed": false,
+  "activation_condition": "Only a QUALIFIED result committed with its governed caches permits Luna scoring of later study responses; it does not activate confirmation without a separate method/baseline freeze."
+}
