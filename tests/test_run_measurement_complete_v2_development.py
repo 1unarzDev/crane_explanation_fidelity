@@ -76,8 +76,12 @@ def args(tmp_path: Path, contract: Path, case_id="mccv2-geometry-supported-001")
 
 
 def test_runner_refuses_draft_before_any_response(tmp_path: Path):
+    draft = json.loads(SOURCE_CONTRACT.read_text())
+    draft["status"] = "DRAFT_UNCOMMITTED_DO_NOT_RUN"
+    draft_path = tmp_path / "draft-contract.json"
+    draft_path.write_text(json.dumps(draft))
     with pytest.raises(ValueError, match="not committed/frozen"):
-        run(args(tmp_path, SOURCE_CONTRACT), caller=FakeCaller())
+        run(args(tmp_path, draft_path), caller=FakeCaller())
 
 
 def test_runner_exposes_complete_primitive_and_tools_but_not_candidate_plan(tmp_path: Path):
