@@ -5,6 +5,16 @@ Updated: 2026-09-26
 Protocol: `diagnostic-sequential-protocol-v2`
 Current status: **FOCUSED CAMPAIGN ACTIVE / SEMANTIC N = 0**
 
+Closeout checkpoint (2026-09-26): all 24 independent references for the registered first look were
+built before method responses. One immutable P/R pair was then generated in physical order for 18
+clusters through `cm-land-conf-062` (two geometry, eight measured-response-recovery, and eight
+persistent-discrepancy cases). The batch was deliberately interrupted before
+`cm-land-conf-063` at the user's closeout request. No pair file or baseline cache record exists for
+that interrupted cluster. No blinded packet, Luna study call, endpoint label, comparative outcome,
+effect estimate, confidence bound, significance decision, or replication result has been opened.
+Resume with the remaining fixed-order clusters 063--068, then build and judge all 24 packets before
+inspecting the registered first-look comparison.
+
 ## Focused supported-diagnostic-communication redirect
 
 The additive `focused-supported-diagnostic-communication-v1` protocol selects unchanged,

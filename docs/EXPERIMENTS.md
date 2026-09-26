@@ -1,5 +1,16 @@
 # Experiment Log
 
+## 2026-09-26 — focused semantic generation paused at a clean closeout boundary
+
+- **COMPLETED:** 24/24 independent references and 18/24 immutable P/R response pairs, in fixed
+  physical order through `cm-land-conf-062`; the completed pair inventory contains two geometry,
+  eight measured-response-recovery, and eight persistent-discrepancy cases.
+- **STOP:** the active call for `cm-land-conf-063` was interrupted on request. It produced neither
+  a pair artifact nor a cache record, so the exact resume point is 063 followed by 064--068.
+- **BLINDING:** pair contents and comparative outcomes were not inspected. Blinded packets, Luna
+  study calls, endpoint labels, monitor input, effect estimates, confidence bounds, significance,
+  and replication all remain absent; confirmatory semantic N remains zero.
+
 ## 2026-09-26 — focused first-look coordinator frozen before semantic output
 
 - **STATUS:** amendment 3 freezes byte-preserving pair decoration and two-pass Luna disagreement
