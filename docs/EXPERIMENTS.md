@@ -1,5 +1,17 @@
 # Experiment Log
 
+## 2026-09-26 — focused physical run 15 / source order 51: `cm-land-conf-051`
+
+- **STATUS:** `VALID_FOCUSED_PHYSICAL_INDEPENDENT_PRIMARY_TRANSIENT_COMPENSATION_RESPONSE_UNOPENED`;
+  one attempt, no replacement, successful navigation, source/build qualification, zero Unity
+  errors, all 14 binding checks, and complete independent reference.
+- **REFERENCE:** 0.260 versus 0.000 m/s over 11--21 s was followed by measured response recovery to
+  0.24975 m/s (ratio 0.9615) over 23--24 s and eventual task success. Two FollowPath failures and
+  two source-qualified Wait starts are retained.
+- **BOUNDARY:** ordering does not prove that response recovery caused success or establish a unique
+  physical/actuator cause. No response or Luna label was opened. Source-order `cm-land-conf-052`,
+  prospectively assigned to focused geometry alias `fsdc-land-geometry-005`, is next.
+
 ## 2026-09-26 — focused physical run 14 / source order 50: `cm-land-conf-050`
 
 - **STATUS:** `VALID_FOCUSED_PHYSICAL_INDEPENDENT_AMBIGUITY_MASK_UNEXPECTED_ABORT_RESPONSE_UNOPENED`;
