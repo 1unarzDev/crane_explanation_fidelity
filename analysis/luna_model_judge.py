@@ -349,8 +349,12 @@ class LunaResponsesCaller:
         api_key_env: str = "CODEX_LB_API_KEY",
         timeout_s: float = 300.0,
         opener: Any = urllib.request.urlopen,
+        prompt_path: Path | None = None,
     ) -> None:
         self.manifest, self.prompt, self.schema, self.rubrics = load_arm()
+        self.prompt_override_path = prompt_path.resolve() if prompt_path is not None else None
+        if self.prompt_override_path is not None:
+            self.prompt = self.prompt_override_path.read_text(encoding="utf-8")
         self.cache = cache
         self.effort = effort
         self.base_url = resolve_base_url(base_url)
@@ -373,6 +377,9 @@ class LunaResponsesCaller:
             "caller_source_sha256": digest_path(Path(__file__)),
             "request_body": body,
             "endpoint": f"{self.base_url}/responses",
+            "prompt_override_sha256": (
+                digest_path(self.prompt_override_path) if self.prompt_override_path else None
+            ),
         }
         cache_key = digest_bytes(canonical_json(identity).encode("utf-8"))
         cache_path = self.cache / f"{cache_key}.json"
@@ -546,8 +553,12 @@ class LunaIsolatedCodexCaller:
         api_key_env: str = "CODEX_LB_API_KEY",
         timeout_s: float = 300.0,
         runner: Any = subprocess.run,
+        prompt_path: Path | None = None,
     ) -> None:
         self.manifest, self.prompt, self.schema, self.rubrics = load_arm()
+        self.prompt_override_path = prompt_path.resolve() if prompt_path is not None else None
+        if self.prompt_override_path is not None:
+            self.prompt = self.prompt_override_path.read_text(encoding="utf-8")
         self.cache = cache
         self.effort = effort
         self.base_url = resolve_base_url(base_url)
@@ -623,6 +634,9 @@ class LunaIsolatedCodexCaller:
             "cli_version": self.cli_version,
             "base_url": self.base_url,
             "prompt_sha256": digest_bytes(full_prompt.encode("utf-8")),
+            "prompt_override_sha256": (
+                digest_path(self.prompt_override_path) if self.prompt_override_path else None
+            ),
             "schema_sha256": digest_bytes(canonical_json(self.schema).encode("utf-8")),
             "envelope": envelope,
             "filesystem_view": "bwrap-system-runtime-plus-empty-workdir-v1",

@@ -1,0 +1,57 @@
+{
+  "schema": "crane-luna-judge-development-freeze/v9",
+  "freeze_id": "luna-model-judge-v9-atomic-semantics-development",
+  "declared_utc": "2026-09-26T00:32:12Z",
+  "status": "FROZEN_BEFORE_ANY_V9_DEVELOPMENT_CALL",
+  "arm_id": "luna-model-judge-v1",
+  "confirmatory_use": false,
+  "suite_sha256": "04f7e094aa81fe623b04b6f10d5a02f66254e46e504aa42fa5483819877324df",
+  "prompt_sha256": "f701b91d8c46637b203d56d1ded3fce7c9f5ebbda077b02bc4d01627142d0da6",
+  "output_schema_sha256": "93989e303fdb12e94ae5fe79adad16e46d9587006b7ba6de5c4624096f1b1c3f",
+  "caller_source_sha256": "baf31f33b9a5eee6f6e9cbd4ab61d81a1dcdfbcc169e8a63382fcd503f9efb89",
+  "runner_source_sha256": "98be40178194ab69ff2dcebc226fcaf9e917b2abe380a82fd02db0a575d4992a",
+  "suite_builder_sha256": "68d7a4937f16e8ed3bab710f43ac7946db294fcf8788d90a5d68bde2bea768b3",
+  "model": {
+    "requested_id": "gpt-6-luna",
+    "substitution_allowed": false,
+    "provider": "codex-lb",
+    "transport": "isolated-codex-cli",
+    "reasoning_effort": "high",
+    "temperature": null,
+    "seed": null
+  },
+  "prompt": {
+    "path": "research/explanation_fidelity/prompts/luna-model-judge-v5.md",
+    "sha256": "f701b91d8c46637b203d56d1ded3fce7c9f5ebbda077b02bc4d01627142d0da6"
+  },
+  "suite": {
+    "path": "research/explanation_fidelity/qualification/luna-model-judge-v9-development.json",
+    "sha256": "04f7e094aa81fe623b04b6f10d5a02f66254e46e504aa42fa5483819877324df",
+    "cases": 16,
+    "source": "already exposed v8 cases with a project-authored atomic reference audit",
+    "future_heldout_eligibility": false
+  },
+  "output_schema": {
+    "path": "research/explanation_fidelity/schemas/luna-model-judge-output-v1.schema.json",
+    "sha256": "93989e303fdb12e94ae5fe79adad16e46d9587006b7ba6de5c4624096f1b1c3f"
+  },
+  "passes": [
+    "development-pass-1"
+  ],
+  "thresholds": {
+    "minimum_composite_accuracy": 0.95,
+    "minimum_required_unit_accuracy": 0.95,
+    "minimum_core_semantic_field_accuracy": 0.95,
+    "maximum_false_rejection_rate": 0.05,
+    "maximum_false_acceptance_rate": 0.05,
+    "protected_test_failures_allowed": 0,
+    "call_failures_allowed": 0
+  },
+  "retry_policy": {
+    "maximum_transport_retries": 1,
+    "usable_judgment_retry_allowed": false,
+    "inconvenient_label_retry_allowed": false
+  },
+  "hard_stop": "Run one isolated pass once. Retain failure; do not reinterpret v8 or use these exposed cases for qualification or confirmation.",
+  "activation_condition": "A development pass permits construction and independent audit of a fresh v9 held-out suite only. It does not activate semantic confirmation."
+}

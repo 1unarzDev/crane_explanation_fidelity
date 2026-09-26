@@ -1,0 +1,103 @@
+{
+  "schema": "crane-diagnostic-composition-registry/v1",
+  "registry_id": "crane-land-diagnostic-composition-v1-development",
+  "predicates": [
+    "action_aborted",
+    "action_succeeded",
+    "command_motion_not_triggered",
+    "command_motion_supported",
+    "decision_dependency_proven",
+    "geometry_sufficient",
+    "geometry_supported",
+    "nav2_consumption_proven",
+    "obstacle_observed",
+    "response_recovered",
+    "route_change_observed"
+  ],
+  "mutually_exclusive": [
+    ["action_aborted", "action_succeeded"],
+    ["command_motion_not_triggered", "command_motion_supported"]
+  ],
+  "implications": [
+    {
+      "if": {"predicate": "geometry_supported", "value": true},
+      "then": {"predicate": "geometry_sufficient", "value": true}
+    },
+    {
+      "if": {"predicate": "response_recovered", "value": true},
+      "then": {"predicate": "command_motion_supported", "value": true}
+    },
+    {
+      "if": {"predicate": "decision_dependency_proven", "value": true},
+      "then": {"predicate": "nav2_consumption_proven", "value": true}
+    }
+  ],
+  "mechanisms": [
+    {
+      "id": "observation_linked_navigation_response",
+      "priority": 50,
+      "requires": [
+        {"predicate": "obstacle_observed", "value": true},
+        {"predicate": "nav2_consumption_proven", "value": true},
+        {"predicate": "decision_dependency_proven", "value": true},
+        {"predicate": "route_change_observed", "value": true}
+      ],
+      "causal_language_level": "runtime_dependency",
+      "claim": "The retained runtime dependency links the observed obstacle input to the recorded navigation response.",
+      "required_unit_ids": ["observed-condition", "runtime-consumption", "decision-dependency", "navigation-response"]
+    },
+    {
+      "id": "geometric_route_restriction",
+      "priority": 40,
+      "requires": [
+        {"predicate": "geometry_sufficient", "value": true},
+        {"predicate": "geometry_supported", "value": true}
+      ],
+      "causal_language_level": "modeled_physical_mechanism",
+      "claim": "The audited geometry and active envelope establish a restriction in the reconstructed navigation model.",
+      "required_unit_ids": ["geometry-comparison", "model-scope-limit"]
+    },
+    {
+      "id": "measured_response_recovery",
+      "priority": 35,
+      "requires": [
+        {"predicate": "command_motion_supported", "value": true},
+        {"predicate": "response_recovered", "value": true}
+      ],
+      "causal_language_level": "execution_mechanism",
+      "claim": "Measured response recovered after a supported command-to-motion discrepancy.",
+      "required_unit_ids": ["discrepancy-comparison", "response-recovery", "task-outcome"]
+    },
+    {
+      "id": "command_to_motion_discrepancy",
+      "priority": 30,
+      "requires": [
+        {"predicate": "command_motion_supported", "value": true}
+      ],
+      "causal_language_level": "execution_mechanism",
+      "claim": "Delivered command and measured motion establish a command-to-motion discrepancy.",
+      "required_unit_ids": ["healthy-comparator", "discrepancy-comparison", "cause-limit"]
+    },
+    {
+      "id": "nominal_command_motion",
+      "priority": 20,
+      "requires": [
+        {"predicate": "command_motion_not_triggered", "value": true},
+        {"predicate": "action_succeeded", "value": true}
+      ],
+      "causal_language_level": "observed_and_computed",
+      "claim": "The declared command-to-motion diagnostic did not trigger and the action succeeded.",
+      "required_unit_ids": ["nominal-comparison", "false-premise-rejection"]
+    },
+    {
+      "id": "recorded_route_change",
+      "priority": 10,
+      "requires": [
+        {"predicate": "route_change_observed", "value": true}
+      ],
+      "causal_language_level": "recorded_sequence",
+      "claim": "The retained delivered paths establish a route change, without by themselves establishing its physical trigger.",
+      "required_unit_ids": ["path-comparison", "trigger-limit"]
+    }
+  ]
+}

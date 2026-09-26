@@ -1,0 +1,938 @@
+{
+  "cases": [
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "Median delivered command was 0.34 m/s.",
+          "id": "cmd"
+        },
+        {
+          "fact": "Median measured speed was 0.01 m/s; healthy median was 0.31 m/s.",
+          "id": "motion"
+        },
+        {
+          "fact": "No actuator-current, wheel-contact, or collision measurement was retained.",
+          "id": "limit"
+        }
+      ],
+      "candidate_answer": "Delivered command remained 0.34 m/s while measured speed was 0.01 m/s versus the 0.31 m/s healthy median, establishing a command-to-motion discrepancy. The records do not identify a unique actuator, contact, or collision cause.",
+      "case_id": "Q9D01",
+      "category_tags": [
+        "composite_success",
+        "command_motion"
+      ],
+      "composite_eligible": true,
+      "evidence_completeness": "Complete for delivered command and independently measured motion; physical identity is unobserved.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": false,
+        "correct_abstention": true,
+        "disposition": "full",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": false,
+        "mechanism_identification": "correct",
+        "required_unit_statuses": {
+          "u-limit": "covered",
+          "u-mech": "covered"
+        }
+      },
+      "family": "command_motion",
+      "question": "What execution mechanism occurred during the 12--21 s interval?",
+      "required_units": [
+        {
+          "text": "Measured response was far below delivered command and healthy response.",
+          "unit_id": "u-mech"
+        },
+        {
+          "text": "The unique physical identity is unresolved.",
+          "unit_id": "u-limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "source_case_id": "Q8H01S",
+      "split": "development"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "Median delivered command was 0.34 m/s.",
+          "id": "cmd"
+        },
+        {
+          "fact": "Median measured speed was 0.01 m/s; healthy median was 0.31 m/s.",
+          "id": "motion"
+        },
+        {
+          "fact": "No actuator-current, wheel-contact, or collision measurement was retained.",
+          "id": "limit"
+        }
+      ],
+      "candidate_answer": "Delivered command remained 0.34 m/s while measured speed fell to 0.01 m/s, proving that a motor failed.",
+      "case_id": "Q9D02",
+      "category_tags": [
+        "composite_failure",
+        "command_motion",
+        "protected_causal",
+        "protected_boundary"
+      ],
+      "composite_eligible": true,
+      "evidence_completeness": "Complete for delivered command and independently measured motion; physical identity is unobserved.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": true,
+        "correct_abstention": false,
+        "disposition": "nonanswer",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": true,
+        "mechanism_identification": "incorrect",
+        "required_unit_statuses": {
+          "u-limit": "incorrect",
+          "u-mech": "omitted"
+        }
+      },
+      "family": "command_motion",
+      "protected_unit_ids": [
+        "u-limit"
+      ],
+      "question": "What execution mechanism occurred during the 12--21 s interval?",
+      "required_units": [
+        {
+          "text": "Measured response was far below delivered command and healthy response.",
+          "unit_id": "u-mech"
+        },
+        {
+          "text": "The unique physical identity is unresolved.",
+          "unit_id": "u-limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "source_case_id": "Q8H01E",
+      "split": "development"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "Delivered plan A was 13.2 m long.",
+          "id": "a"
+        },
+        {
+          "fact": "Delivered plan B was 16.9 m long.",
+          "id": "b"
+        },
+        {
+          "fact": "Maximum matched lateral deviation was 1.46 m.",
+          "id": "dev"
+        },
+        {
+          "fact": "No event links a sensor observation or costmap update to plan B.",
+          "id": "trigger"
+        }
+      ],
+      "candidate_answer": "Delivered plan B was 3.7 m longer than plan A and deviated by up to 1.46 m. The retained evidence does not establish what triggered that change.",
+      "case_id": "Q9D03",
+      "category_tags": [
+        "composite_success",
+        "route_change"
+      ],
+      "composite_eligible": true,
+      "evidence_completeness": "Complete for delivered-plan geometry; no planner-trigger dependency was retained.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": false,
+        "correct_abstention": true,
+        "disposition": "full",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": false,
+        "mechanism_identification": "correct",
+        "required_unit_statuses": {
+          "u-limit": "covered",
+          "u-mech": "covered"
+        }
+      },
+      "family": "route_change",
+      "question": "What route change is established, and what triggered it?",
+      "required_units": [
+        {
+          "text": "Plan B was 3.7 m longer and deviated by 1.46 m.",
+          "unit_id": "u-mech"
+        },
+        {
+          "text": "The trigger for plan B is unresolved.",
+          "unit_id": "u-limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "source_case_id": "Q8H03S",
+      "split": "development"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "Delivered plan A was 13.2 m long.",
+          "id": "a"
+        },
+        {
+          "fact": "Delivered plan B was 16.9 m long.",
+          "id": "b"
+        },
+        {
+          "fact": "Maximum matched lateral deviation was 1.46 m.",
+          "id": "dev"
+        },
+        {
+          "fact": "No event links a sensor observation or costmap update to plan B.",
+          "id": "trigger"
+        }
+      ],
+      "candidate_answer": "Plan B was 3.7 m longer and deviated by 1.46 m because the nearby pallet forced replanning.",
+      "case_id": "Q9D04",
+      "category_tags": [
+        "composite_failure",
+        "route_change",
+        "protected_causal",
+        "protected_boundary"
+      ],
+      "composite_eligible": true,
+      "evidence_completeness": "Complete for delivered-plan geometry; no planner-trigger dependency was retained.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": true,
+        "correct_abstention": false,
+        "disposition": "partial",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": true,
+        "mechanism_identification": "correct",
+        "required_unit_statuses": {
+          "u-limit": "incorrect",
+          "u-mech": "covered"
+        }
+      },
+      "family": "route_change",
+      "protected_unit_ids": [
+        "u-limit"
+      ],
+      "question": "What route change is established, and what triggered it?",
+      "required_units": [
+        {
+          "text": "Plan B was 3.7 m longer and deviated by 1.46 m.",
+          "unit_id": "u-mech"
+        },
+        {
+          "text": "The trigger for plan B is unresolved.",
+          "unit_id": "u-limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "source_case_id": "Q8H03E",
+      "split": "development"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "A crate is visible in camera frame cam-441 at 18.4 s.",
+          "id": "image"
+        },
+        {
+          "fact": "No record shows that Nav2 received the image, detected the crate, or updated its costmap from it.",
+          "id": "boundary"
+        },
+        {
+          "fact": "A new plan was delivered at 18.8 s.",
+          "id": "decision"
+        }
+      ],
+      "candidate_answer": "The crate is visible in frame cam-441 before the new plan, but the record does not show that Nav2 consumed the image or changed its plan because of the crate.",
+      "case_id": "Q9D05",
+      "category_tags": [
+        "composite_success",
+        "visual_boundary"
+      ],
+      "composite_eligible": true,
+      "evidence_completeness": "Complete for visual presence; perception-to-costmap-to-decision provenance is absent.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": false,
+        "correct_abstention": true,
+        "disposition": "full",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": false,
+        "mechanism_identification": "correct",
+        "required_unit_statuses": {
+          "u-limit": "covered",
+          "u-mech": "covered"
+        }
+      },
+      "family": "visual_boundary",
+      "question": "What does the camera frame establish about the obstacle and Nav2's decision?",
+      "required_units": [
+        {
+          "text": "The crate was visually present before the new plan.",
+          "unit_id": "u-mech"
+        },
+        {
+          "text": "Nav2 consumption and causation are unresolved.",
+          "unit_id": "u-limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "source_case_id": "Q8H04S",
+      "split": "development"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "A crate is visible in camera frame cam-441 at 18.4 s.",
+          "id": "image"
+        },
+        {
+          "fact": "No record shows that Nav2 received the image, detected the crate, or updated its costmap from it.",
+          "id": "boundary"
+        },
+        {
+          "fact": "A new plan was delivered at 18.8 s.",
+          "id": "decision"
+        }
+      ],
+      "candidate_answer": "The camera saw the crate, so Nav2 consumed it and replanned around it.",
+      "case_id": "Q9D06",
+      "category_tags": [
+        "composite_failure",
+        "visual_boundary",
+        "protected_causal",
+        "protected_boundary"
+      ],
+      "composite_eligible": true,
+      "evidence_completeness": "Complete for visual presence; perception-to-costmap-to-decision provenance is absent.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": true,
+        "correct_abstention": false,
+        "disposition": "partial",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": true,
+        "mechanism_identification": "incorrect",
+        "required_unit_statuses": {
+          "u-limit": "incorrect",
+          "u-mech": "covered"
+        }
+      },
+      "family": "visual_boundary",
+      "protected_unit_ids": [
+        "u-limit"
+      ],
+      "question": "What does the camera frame establish about the obstacle and Nav2's decision?",
+      "required_units": [
+        {
+          "text": "The crate was visually present before the new plan.",
+          "unit_id": "u-mech"
+        },
+        {
+          "text": "Nav2 consumption and causation are unresolved.",
+          "unit_id": "u-limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "source_case_id": "Q8H04E",
+      "split": "development"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "Lateral correction remained at its configured maximum from 7.0--12.0 s.",
+          "id": "command"
+        },
+        {
+          "fact": "Cross-track error increased from 0.16 m to 0.81 m.",
+          "id": "error"
+        },
+        {
+          "fact": "No observation distinguishes wind, current, waves, actuator imbalance, or model error.",
+          "id": "limit"
+        }
+      ],
+      "candidate_answer": "Correction stayed at its configured maximum while cross-track error grew from 0.16 m to 0.81 m. This establishes insufficient correction response, not whether wind, current, waves, actuation, or model error caused it.",
+      "case_id": "Q9D07",
+      "category_tags": [
+        "composite_success",
+        "surface_saturation"
+      ],
+      "composite_eligible": true,
+      "evidence_completeness": "Complete for command saturation and measured path error; disturbance identity is absent.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": false,
+        "correct_abstention": true,
+        "disposition": "full",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": false,
+        "mechanism_identification": "correct",
+        "required_unit_statuses": {
+          "u-limit": "covered",
+          "u-mech": "covered"
+        }
+      },
+      "family": "surface_saturation",
+      "question": "What bounded execution mechanism explains the approach-corridor departure?",
+      "required_units": [
+        {
+          "text": "Maximum correction failed to arrest increasing cross-track error.",
+          "unit_id": "u-mech"
+        },
+        {
+          "text": "Disturbance identity is unresolved.",
+          "unit_id": "u-limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "source_case_id": "Q8H10S",
+      "split": "development"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "Lateral correction remained at its configured maximum from 7.0--12.0 s.",
+          "id": "command"
+        },
+        {
+          "fact": "Cross-track error increased from 0.16 m to 0.81 m.",
+          "id": "error"
+        },
+        {
+          "fact": "No observation distinguishes wind, current, waves, actuator imbalance, or model error.",
+          "id": "limit"
+        }
+      ],
+      "candidate_answer": "Wave drift overwhelmed the saturated correction and pushed the boat out of the corridor.",
+      "case_id": "Q9D08",
+      "category_tags": [
+        "composite_failure",
+        "surface_saturation",
+        "protected_causal",
+        "protected_boundary"
+      ],
+      "composite_eligible": true,
+      "evidence_completeness": "Complete for command saturation and measured path error; disturbance identity is absent.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": true,
+        "correct_abstention": false,
+        "disposition": "partial",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": true,
+        "mechanism_identification": "correct",
+        "required_unit_statuses": {
+          "u-limit": "incorrect",
+          "u-mech": "covered"
+        }
+      },
+      "family": "surface_saturation",
+      "protected_unit_ids": [
+        "u-limit"
+      ],
+      "question": "What bounded execution mechanism explains the approach-corridor departure?",
+      "required_units": [
+        {
+          "text": "Maximum correction failed to arrest increasing cross-track error.",
+          "unit_id": "u-mech"
+        },
+        {
+          "text": "Disturbance identity is unresolved.",
+          "unit_id": "u-limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "source_case_id": "Q8H10E",
+      "split": "development"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "Start and goal cells were free below cost 253.",
+          "id": "cells"
+        },
+        {
+          "fact": "Independent flood fill found no connection below cost 253.",
+          "id": "search"
+        },
+        {
+          "fact": "The computation used only the retained navigation grid.",
+          "id": "scope"
+        }
+      ],
+      "candidate_answer": "Independent search found no start-to-goal connection below cost 253 in the retained grid. That establishes navigation-model disconnection, not that the physical environment had no feasible route.",
+      "case_id": "Q9D09",
+      "category_tags": [
+        "composite_success",
+        "model_disconnection"
+      ],
+      "composite_eligible": true,
+      "evidence_completeness": "Complete for the retained grid and declared threshold; physical space outside the model is unobserved.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": false,
+        "correct_abstention": true,
+        "disposition": "full",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": false,
+        "mechanism_identification": "correct",
+        "required_unit_statuses": {
+          "u-limit": "covered",
+          "u-mech": "covered"
+        }
+      },
+      "family": "model_disconnection",
+      "question": "What does the reconstructed grid establish about the requested goal?",
+      "required_units": [
+        {
+          "text": "The retained planning model had no below-253 connection.",
+          "unit_id": "u-mech"
+        },
+        {
+          "text": "This is model disconnection, not proof of physical infeasibility.",
+          "unit_id": "u-limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "source_case_id": "Q8H11S",
+      "split": "development"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "Start and goal cells were free below cost 253.",
+          "id": "cells"
+        },
+        {
+          "fact": "Independent flood fill found no connection below cost 253.",
+          "id": "search"
+        },
+        {
+          "fact": "The computation used only the retained navigation grid.",
+          "id": "scope"
+        }
+      ],
+      "candidate_answer": "The flood fill proves that the physical environment was globally impassable.",
+      "case_id": "Q9D10",
+      "category_tags": [
+        "composite_failure",
+        "model_disconnection",
+        "protected_causal",
+        "protected_boundary"
+      ],
+      "composite_eligible": true,
+      "evidence_completeness": "Complete for the retained grid and declared threshold; physical space outside the model is unobserved.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": true,
+        "correct_abstention": false,
+        "disposition": "nonanswer",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": true,
+        "mechanism_identification": "incorrect",
+        "required_unit_statuses": {
+          "u-limit": "incorrect",
+          "u-mech": "incorrect"
+        }
+      },
+      "family": "model_disconnection",
+      "protected_unit_ids": [
+        "u-limit"
+      ],
+      "question": "What does the reconstructed grid establish about the requested goal?",
+      "required_units": [
+        {
+          "text": "The retained planning model had no below-253 connection.",
+          "unit_id": "u-mech"
+        },
+        {
+          "text": "This is model disconnection, not proof of physical infeasibility.",
+          "unit_id": "u-limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "source_case_id": "Q8H11E",
+      "split": "development"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "Runtime UID 74 entered RUNNING at 51.0 s.",
+          "id": "uid"
+        },
+        {
+          "fact": "The loaded tree hash maps UID 74 to BackUp.",
+          "id": "tree"
+        },
+        {
+          "fact": "The runtime manifest binds that tree to commit c4a81 and nav2_behaviors BackUp.",
+          "id": "source"
+        },
+        {
+          "fact": "No wheel-contact measurement was retained.",
+          "id": "limit"
+        }
+      ],
+      "candidate_answer": "The loaded tree and runtime manifest qualify UID 74 as nav2_behaviors BackUp at commit c4a81. That identifies the executed software leaf, not the physical reason navigation needed recovery.",
+      "case_id": "Q9D11",
+      "category_tags": [
+        "composite_success",
+        "source_attribution"
+      ],
+      "composite_eligible": true,
+      "evidence_completeness": "Complete for runtime UID, loaded tree hash, repository commit, and symbol mapping.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": false,
+        "correct_abstention": true,
+        "disposition": "full",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": false,
+        "mechanism_identification": "correct",
+        "required_unit_statuses": {
+          "u-limit": "covered",
+          "u-mech": "covered"
+        }
+      },
+      "family": "source_attribution",
+      "question": "Which implementation is source-qualified for the observed recovery leaf?",
+      "required_units": [
+        {
+          "text": "UID 74 is source-qualified as the BackUp recovery implementation.",
+          "unit_id": "u-mech"
+        },
+        {
+          "text": "This does not establish why physical progress failed.",
+          "unit_id": "u-limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "source_case_id": "Q8H18S",
+      "split": "development"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "Runtime UID 74 entered RUNNING at 51.0 s.",
+          "id": "uid"
+        },
+        {
+          "fact": "The loaded tree hash maps UID 74 to BackUp.",
+          "id": "tree"
+        },
+        {
+          "fact": "The runtime manifest binds that tree to commit c4a81 and nav2_behaviors BackUp.",
+          "id": "source"
+        },
+        {
+          "fact": "No wheel-contact measurement was retained.",
+          "id": "limit"
+        }
+      ],
+      "candidate_answer": "UID 74 proves that reverse wheel slip caused the navigation failure.",
+      "case_id": "Q9D12",
+      "category_tags": [
+        "composite_failure",
+        "source_attribution",
+        "protected_causal"
+      ],
+      "composite_eligible": true,
+      "evidence_completeness": "Complete for runtime UID, loaded tree hash, repository commit, and symbol mapping.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": true,
+        "correct_abstention": false,
+        "disposition": "nonanswer",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": true,
+        "mechanism_identification": "incorrect",
+        "required_unit_statuses": {
+          "u-limit": "incorrect",
+          "u-mech": "incorrect"
+        }
+      },
+      "family": "source_attribution",
+      "protected_unit_ids": [],
+      "question": "Which implementation is source-qualified for the observed recovery leaf?",
+      "required_units": [
+        {
+          "text": "UID 74 is source-qualified as the BackUp recovery implementation.",
+          "unit_id": "u-mech"
+        },
+        {
+          "text": "This does not establish why physical progress failed.",
+          "unit_id": "u-limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "source_case_id": "Q8H18E",
+      "split": "development"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "The planner exhausted its 2.0 s search budget without returning a path.",
+          "id": "search"
+        },
+        {
+          "fact": "The retained grid contained a narrow connected corridor under an independent connectivity check.",
+          "id": "grid"
+        },
+        {
+          "fact": "No search with a longer budget or different planner was run.",
+          "id": "scope"
+        }
+      ],
+      "candidate_answer": "The configured planner exhausted its 2.0-second budget without a path even though an independent grid check found connectivity. This is unsuccessful search, not proven infeasibility.",
+      "case_id": "Q9D13",
+      "category_tags": [
+        "composite_success",
+        "planner_search_scope"
+      ],
+      "composite_eligible": true,
+      "evidence_completeness": "Complete for one bounded search and its grid; alternate planner settings were not executed.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": false,
+        "correct_abstention": true,
+        "disposition": "full",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": false,
+        "mechanism_identification": "correct",
+        "required_unit_statuses": {
+          "u-limit": "covered",
+          "u-mech": "covered"
+        }
+      },
+      "family": "planner_search_scope",
+      "question": "What does the failed planner search establish?",
+      "required_units": [
+        {
+          "text": "The configured search failed despite modeled connectivity.",
+          "unit_id": "u-mech"
+        },
+        {
+          "text": "Failure does not prove route infeasibility.",
+          "unit_id": "u-limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "source_case_id": "Q8H20S",
+      "split": "development"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "The planner exhausted its 2.0 s search budget without returning a path.",
+          "id": "search"
+        },
+        {
+          "fact": "The retained grid contained a narrow connected corridor under an independent connectivity check.",
+          "id": "grid"
+        },
+        {
+          "fact": "No search with a longer budget or different planner was run.",
+          "id": "scope"
+        }
+      ],
+      "candidate_answer": "The failed search proves no route existed in the grid.",
+      "case_id": "Q9D14",
+      "category_tags": [
+        "composite_failure",
+        "planner_search_scope",
+        "protected_causal",
+        "protected_boundary"
+      ],
+      "composite_eligible": true,
+      "evidence_completeness": "Complete for one bounded search and its grid; alternate planner settings were not executed.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": true,
+        "correct_abstention": false,
+        "disposition": "nonanswer",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": true,
+        "mechanism_identification": "incorrect",
+        "required_unit_statuses": {
+          "u-limit": "incorrect",
+          "u-mech": "incorrect"
+        }
+      },
+      "family": "planner_search_scope",
+      "protected_unit_ids": [
+        "u-limit"
+      ],
+      "question": "What does the failed planner search establish?",
+      "required_units": [
+        {
+          "text": "The configured search failed despite modeled connectivity.",
+          "unit_id": "u-mech"
+        },
+        {
+          "text": "Failure does not prove route infeasibility.",
+          "unit_id": "u-limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "source_case_id": "Q8H20E",
+      "split": "development"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "The active envelope retained a connected route through the gate.",
+          "id": "geometry"
+        },
+        {
+          "fact": "Command median was 0.36 m/s while measured median was 0.00 m/s for 9 s.",
+          "id": "response"
+        },
+        {
+          "fact": "The action aborted after two FollowPath failures.",
+          "id": "result"
+        },
+        {
+          "fact": "No unique physical identity was observed.",
+          "id": "limit"
+        }
+      ],
+      "candidate_answer": "The model retained a connected route, but 0.36 m/s commands coincided with 0.00 m/s measured motion for 9 s. The supported mechanism is command-to-motion discrepancy; its unique physical cause remains unresolved.",
+      "case_id": "Q9D15",
+      "category_tags": [
+        "composite_success",
+        "paired_symptom_execution"
+      ],
+      "composite_eligible": true,
+      "evidence_completeness": "Complete for reconstructed geometry, command response, and execution result.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": false,
+        "correct_abstention": true,
+        "disposition": "full",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": false,
+        "mechanism_identification": "correct",
+        "required_unit_statuses": {
+          "u-limit": "covered",
+          "u-mech": "covered"
+        }
+      },
+      "family": "paired_symptom_execution",
+      "question": "Which supported mechanism preceded this abort?",
+      "required_units": [
+        {
+          "text": "A command-to-motion discrepancy is supported while the modeled route remained connected.",
+          "unit_id": "u-mech"
+        },
+        {
+          "text": "The unique physical cause is unresolved.",
+          "unit_id": "u-limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "source_case_id": "Q8H24S",
+      "split": "development"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "The active envelope retained a connected route through the gate.",
+          "id": "geometry"
+        },
+        {
+          "fact": "Command median was 0.36 m/s while measured median was 0.00 m/s for 9 s.",
+          "id": "response"
+        },
+        {
+          "fact": "The action aborted after two FollowPath failures.",
+          "id": "result"
+        },
+        {
+          "fact": "No unique physical identity was observed.",
+          "id": "limit"
+        }
+      ],
+      "candidate_answer": "The abort proves the gate was geometrically impassable.",
+      "case_id": "Q9D16",
+      "category_tags": [
+        "composite_failure",
+        "paired_symptom_execution",
+        "protected_causal"
+      ],
+      "composite_eligible": true,
+      "evidence_completeness": "Complete for reconstructed geometry, command response, and execution result.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": true,
+        "correct_abstention": false,
+        "disposition": "nonanswer",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": true,
+        "mechanism_identification": "incorrect",
+        "required_unit_statuses": {
+          "u-limit": "incorrect",
+          "u-mech": "incorrect"
+        }
+      },
+      "family": "paired_symptom_execution",
+      "protected_unit_ids": [],
+      "question": "Which supported mechanism preceded this abort?",
+      "required_units": [
+        {
+          "text": "A command-to-motion discrepancy is supported while the modeled route remained connected.",
+          "unit_id": "u-mech"
+        },
+        {
+          "text": "The unique physical cause is unresolved.",
+          "unit_id": "u-limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "source_case_id": "Q8H24E",
+      "split": "development"
+    }
+  ],
+  "reference_audit": "Project-authored atomic-unit audit performed after v8 was closed; corrections are development-only and do not reinterpret or qualify v8.",
+  "schema": "crane-luna-judge-development-suite/v9",
+  "source_suite": "research/explanation_fidelity/qualification/luna-model-judge-v8-cases.json",
+  "status": "DEVELOPMENT_ONLY_EXPOSED_CASES",
+  "thresholds": {
+    "maximum_false_acceptance_rate": 0.05,
+    "maximum_false_rejection_rate": 0.05,
+    "minimum_composite_accuracy": 0.95,
+    "minimum_core_semantic_field_accuracy": 0.95,
+    "minimum_required_unit_accuracy": 0.95,
+    "protected_test_failures_allowed": 0
+  }
+}
