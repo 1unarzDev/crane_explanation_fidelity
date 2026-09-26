@@ -32,6 +32,7 @@ BUILD_AMENDMENT = ROOT / (
 BUILD_MANIFEST = ROOT / "manifests/data/fsdc-v1-player-build-1.evaluator-only.json"
 FIRST_RUN = ROOT / "manifests/data/fsdc-land-geometry-001-disposition.json"
 SECOND_RUN = ROOT / "manifests/data/fsdc-land-geometry-002-disposition.json"
+THIRD_RUN = ROOT / "manifests/data/fsdc-land-geometry-003-disposition.json"
 
 
 def load(path: Path) -> dict:
@@ -169,3 +170,14 @@ def test_unfavorable_geometry_induction_is_retained_without_replacement_or_prima
     assert run["robot_visible_diagnostic"]["registered_primary_mechanism_established"] is False
     assert run["study_effect"]["primary_semantic_cluster_increment"] == 0
     assert run["study_effect"]["outcome_dependent_replacement_performed"] is False
+
+
+def test_third_focused_run_repeats_bounded_geometry_support_without_causal_overreach():
+    run = load(THIRD_RUN)
+
+    assert run["admission"]["attempt_count"] == 1
+    assert run["independent_reference"]["direct_route_restriction_supported"] is True
+    assert run["independent_reference"]["unique_physical_obstacle_supported"] is False
+    assert run["independent_reference"]["controller_consumption_proven"] is False
+    assert run["independent_reference"]["costmap_caused_plan_change_proven"] is False
+    assert run["study_effect"]["primary_semantic_cluster_increment"] == 0

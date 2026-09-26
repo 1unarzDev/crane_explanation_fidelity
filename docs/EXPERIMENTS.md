@@ -1,5 +1,19 @@
 # Experiment Log
 
+## 2026-09-26 — focused physical run 3: `fsdc-land-geometry-003`
+
+- **STATUS:** `VALID_PROSPECTIVE_PHYSICAL_AND_REFERENCE_EVIDENCE_RESPONSE_UNOPENED`; one attempt,
+  no retry/replacement, and no semantic or alpha increment.
+- **OBSERVED:** NavigateToPose succeeded in 85.310 s after 17.464 m displacement and three
+  distinct delivered plans. The independent grid reference finds a cost-253 direct-route sample
+  near x=11.675 m and retained-grid connectivity to the goal.
+- **ROUTE EVIDENCE:** the first plan was direct, later plans span -1.295 m to +1.059 m, and the
+  measured trajectory reaches 1.309 m lateral deviation. Independent plan recomputation reports
+  no summary mismatch.
+- **BOUNDARY/GOVERNANCE:** obstacle identity, exact consumption, global no-path, and grid-to-plan
+  causation remain unproved. Both evidence roots are leakage-scanned, hash-manifested, and DVC-
+  pushed. `fsdc-land-geometry-004` is next; responses remain unopened.
+
 ## 2026-09-26 — focused physical run 2: `fsdc-land-geometry-002`
 
 - **STATUS:** `VALID_PROSPECTIVE_PHYSICAL_EVIDENCE_GEOMETRY_NOT_ESTABLISHED_RESPONSE_UNOPENED`;
