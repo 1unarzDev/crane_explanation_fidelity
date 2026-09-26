@@ -53,6 +53,7 @@ THIRTEENTH_RUN = ROOT / "manifests/data/cm-land-conf-049-disposition.json"
 FOURTEENTH_RUN = ROOT / "manifests/data/cm-land-conf-050-disposition.json"
 FIFTEENTH_RUN = ROOT / "manifests/data/cm-land-conf-051-disposition.json"
 SIXTEENTH_ATTEMPT = ROOT / "manifests/data/cm-land-conf-052-disposition.json"
+SEVENTEENTH_ATTEMPT = ROOT / "manifests/data/cm-land-conf-053-disposition.json"
 
 
 def load(path: Path) -> dict:
@@ -439,3 +440,24 @@ def test_geometry_run_with_endpoint_error_is_retained_invalid_without_semantic_u
     assert run["retention"]["confirmatory_cluster_increment"] == 0
     assert run["focused_progress"]["valid_physical_configurations"] == 15
     assert run["focused_progress"]["next_fixed_run_id"] == "cm-land-conf-053"
+
+
+def test_fifth_response_recovery_run_preserves_success_and_causal_limit():
+    run = load(SEVENTEENTH_ATTEMPT)
+    reference = run["method_visible_reference"]
+
+    assert run["attempt_count"] == 1
+    assert run["retry_or_replacement_performed"] is False
+    assert run["admission"]["recording_valid_under_frozen_worker_result_gate"] is True
+    assert run["admission"]["focused_registry_exact_reference_dry_run_passed"] is True
+    assert run["observed"]["navigation_status"] == "succeeded"
+    assert reference["primary_endpoint_eligible"] is True
+    assert reference["disposition"] == "supported"
+    assert reference["response_ratio"] == 0.0
+    assert reference["recovered_response_ratio"] == 1.0
+    assert reference["recovery_caused_outcome_supported"] is False
+    assert reference["unique_physical_cause_supported"] is False
+    assert run["semantic_boundary"]["P_responses"] == 0
+    assert run["semantic_boundary"]["R_responses"] == 0
+    assert run["focused_progress"]["physical_configurations_collected"] == 16
+    assert run["focused_progress"]["next_fixed_run_id"] == "cm-land-conf-054"

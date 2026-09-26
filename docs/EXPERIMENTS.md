@@ -1,5 +1,17 @@
 # Experiment Log
 
+## 2026-09-26 — focused valid physical run 16 / source order 53: `cm-land-conf-053`
+
+- **STATUS:** `VALID_FOCUSED_PHYSICAL_INDEPENDENT_PRIMARY_TRANSIENT_COMPENSATION_RESPONSE_UNOPENED`;
+  one attempt, no replacement, successful navigation, zero transport/Unity errors, all 14 binding
+  checks, and complete independent reference.
+- **REFERENCE:** 0.260 versus 0.000 m/s over 11--21 s was followed by measured response recovery to
+  0.25974 m/s (ratio 1.0000) over 23--24 s and eventual task success. One FollowPath failure and
+  one source-qualified Wait start are retained.
+- **BOUNDARY:** ordering does not prove that response recovery caused success or establish a unique
+  physical/actuator cause. The registry-exact four-unit focused reference dry run passed. No P/R
+  response or Luna label was opened; source-order `cm-land-conf-054` is next.
+
 ## 2026-09-26 — focused fixed-order attempt 16 / source order 52: retained invalid
 
 - **STATUS:** `RETAINED_INVALID_RECORDING_TRANSPORT_GATE_NO_SEMANTIC_RESPONSE`; one attempt and no
