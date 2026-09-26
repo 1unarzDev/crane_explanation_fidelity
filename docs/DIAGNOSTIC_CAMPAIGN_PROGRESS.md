@@ -85,8 +85,10 @@ and success. Thus twenty-three valid configurations are primary-diagnosable and 
 source-order run 067 adds a nominal-route persistent discrepancy followed by a validly retained
 abort. Thus twenty-four valid configurations are primary-diagnosable and six are retained controls;
 primary semantic N, effect estimates, confidence sequences, significance, and replication results
-remain zero; program alpha consumption is 0.02 from prospective activation. The registered first-look
-physical threshold is now reached, so the next action is the frozen 24-cluster semantic comparison.
+remain zero; program alpha consumption is 0.02 from prospective activation. These 24 supported
+physical references include run 042, whose prospective exposure amendment assigns it zero
+confirmatory semantic N. The untouched semantic-eligible count is therefore 23, and source-order
+`cm-land-conf-068` remains next before the registered first look.
 
 The 2026-09-26 semantic-activation audit found that the existing v12 packet runner scored only the
 atomic mechanism unit plus material-error absence, whereas this focused protocol requires all

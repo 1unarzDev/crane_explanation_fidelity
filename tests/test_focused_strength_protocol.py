@@ -722,7 +722,7 @@ def test_shorter_connected_detour_recovery_run_is_primary_and_causally_bounded()
     assert run["focused_progress"]["next_fixed_run_id"] == "cm-land-conf-067"
 
 
-def test_first_semantic_look_threshold_is_reached_without_opening_responses():
+def test_physical_reference_24_preserves_run_042_semantic_exclusion():
     run = load(THIRTY_FIRST_ATTEMPT)
     reference = run["method_visible_reference"]
 
@@ -735,4 +735,6 @@ def test_first_semantic_look_threshold_is_reached_without_opening_responses():
     assert run["semantic_boundary"]["R_responses"] == 0
     assert run["semantic_boundary"]["Luna_calls"] == 0
     assert run["focused_progress"]["primary_diagnosable_references"] == 24
-    assert run["focused_progress"]["first_semantic_look_threshold_reached"] is True
+    assert run["focused_progress"]["semantic_confirmation_eligible_after_run_042_exclusion"] == 23
+    assert run["focused_progress"]["first_semantic_look_threshold_reached"] is False
+    assert run["focused_progress"]["next_fixed_run_id"] == "cm-land-conf-068"

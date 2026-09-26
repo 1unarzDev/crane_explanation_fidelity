@@ -1,6 +1,6 @@
 # Experiment Log
 
-## 2026-09-26 — focused first-look physical threshold / source order 67: `cm-land-conf-067`
+## 2026-09-26 — focused valid physical run 30 / source order 67: `cm-land-conf-067`
 
 - **STATUS:** `VALID_FOCUSED_PHYSICAL_INDEPENDENT_PRIMARY_PERSISTENT_DISCREPANCY_UNEXPECTED_ABORT_RESPONSE_UNOPENED`;
   one attempt, no replacement, unexpected abort retained, zero transport/Unity errors, all 14
@@ -8,9 +8,10 @@
 - **REFERENCE:** healthy motion was 0.25974 m/s; the event interval retained a 0.260 m/s delivered
   command versus 0.000 m/s odometry over 11--20 s, followed by abort. Three FollowPath attempts,
   two failures, and two source-qualified Wait starts are retained.
-- **MILESTONE:** this is the 24th independently diagnosable primary cluster, with all three primary
-  families represented. No P/R response or Luna label has yet been opened; the next action is the
-  frozen first-look semantic comparison, not additional physical collection.
+- **ACCOUNTING:** this is the 24th supported physical primary reference, but run 042 is included in
+  that physical count and prospectively contributes zero confirmatory semantic N after response
+  exposure. The untouched semantic-eligible count is 23. No P/R response or Luna label has been
+  opened; fixed source-order run 068 remains next.
 
 ## 2026-09-26 — focused valid physical run 29 / source order 66: `cm-land-conf-066`
 
