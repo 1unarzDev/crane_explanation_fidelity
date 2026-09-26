@@ -1,5 +1,23 @@
 # Decision Log
 
+## 2026-09-26 — keep production scale-up blocked on an exact independent RoboBoat schedule
+
+- **Decision:** accept the restorable current-protocol boat canary and marine Luna qualification,
+  but do not convert the eight-family prefreeze inventory into a prospective arm until 6-10 exact,
+  genuinely independent configurations can be bound to supported starts, goals, conditions,
+  questions, masks, references, and order.
+- **Evidence:** retained development artifacts establish nominal docking, the pre-correction
+  terminal-margin mechanism, bounded retained-grid disconnection, and missing-speed qualification.
+  They do not supply exact reproducible configurations for every proposed response/disturbance and
+  visible-not-consumed family. Repeated seeds of the same far-dock setup add runs, not independent
+  scenario configurations.
+- **Consequence:** RoboBoat remains separately registered at prefreeze with zero prospective N;
+  land production model calls and concurrency scale-up remain blocked by the user's readiness gate.
+  Do not invent wind/current/wave mechanisms, retune physics, or silently shrink the arm after
+  observing P/R results. The next bounded action is configuration-only development with the
+  validated graphics/water runtime, followed by an exact freeze or an explicit narrower-arm
+  disposition.
+
 ## 2026-09-26 — separate scheduled collection from independently supported primary eligibility
 
 - **Decision:** retain every valid configuration in the fixed 64-configuration discovery schedule,
