@@ -103,3 +103,43 @@ def test_retained_goal_supports_navigate_to_pose_schema_without_supplied_path():
         "y": -27.586906,
         "yaw": 1.5707963267948966,
     }
+
+
+def test_applied_goal_tolerance_override_has_reproducible_effective_identity(tmp_path):
+    repository = tmp_path / "repo"
+    repository.mkdir()
+    subprocess.run(["git", "init", "-q"], cwd=repository, check=True)
+    subprocess.run(["git", "config", "user.email", "test@example.invalid"], cwd=repository, check=True)
+    subprocess.run(["git", "config", "user.name", "Test"], cwd=repository, check=True)
+    (repository / "fixture.yaml").write_text(
+        "goal_checker:\n  xy_goal_tolerance: 0.20\n  trans_stopped_velocity: 0.05\n"
+    )
+    subprocess.run(["git", "add", "fixture.yaml"], cwd=repository, check=True)
+    subprocess.run(["git", "commit", "-qm", "fixture"], cwd=repository, check=True)
+    commit = subprocess.run(
+        ["git", "rev-parse", "HEAD"], cwd=repository, check=True, text=True, capture_output=True
+    ).stdout.strip()
+    run = tmp_path / "run-override"
+    run.mkdir()
+    summary = run / "fixture-summary.json"
+    summary.write_text(json.dumps({
+        "status": "succeeded",
+        "provenance": "latest-delivered-odometry-not-proven-internal-consumption",
+        "plannedPath": [{"x": 0.0, "y": 0.0, "yaw": 0.0}],
+        "actionResultPose": {"x": 0.35, "y": 0.0, "yaw": 0.0},
+        "finalPose": {"x": 0.55, "y": 0.0, "yaw": 0.0},
+        "motionAtActionResult": {"bodySpeedMetersPerSecond": 0.04},
+        "postResultCoastDistanceMeters": 0.20,
+        "trajectory": [
+            {"phase": "post_result", "simSeconds": 10.0},
+            {"phase": "post_result", "simSeconds": 18.0},
+        ],
+    }))
+    provenance = {"basis": "test", "launch_argument": "-p goal_checker.xy_goal_tolerance:=0.40"}
+    payload = MODULE.build_export(
+        summary, repository, commit, "fixture.yaml", 0.40, "fixture-summary.json",
+        applied_goal_tolerance_m=0.40, applied_override_provenance=provenance,
+    )
+    assert payload["observation"]["configured_goal_tolerance_m"] == 0.40
+    assert payload["source"]["applied_parameter_overrides"][0]["base_value"] == 0.20
+    assert len(payload["source"]["effective_config_sha256"]) == 64

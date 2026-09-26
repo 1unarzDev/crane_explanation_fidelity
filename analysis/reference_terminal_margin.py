@@ -20,6 +20,13 @@ import subprocess
 from typing import Any
 
 
+ROOT = Path(__file__).resolve().parents[1]
+BOAT_REGISTRY = ROOT / (
+    "research/explanation_fidelity/experiment_configs/prospective/"
+    "roboboat-diagnostic-external-validity-v1-narrow-freeze.json"
+)
+
+
 def config_number(text: str, key: str) -> float:
     match = re.search(rf"^\s*{re.escape(key)}:\s*([0-9]+(?:\.[0-9]+)?)\s*$", text, re.M)
     if not match:
@@ -42,6 +49,27 @@ def calculate(export: dict[str, Any], config_bytes: bytes) -> dict[str, Any]:
     config = config_bytes.decode("utf-8")
     observation = export["observation"]
     goal_tolerance = config_number(config, "xy_goal_tolerance")
+    overrides = source.get("applied_parameter_overrides", [])
+    if overrides:
+        if not isinstance(overrides, list) or len(overrides) != 1:
+            raise ValueError("unsupported applied parameter override inventory")
+        override = overrides[0]
+        if (
+            override.get("node") != "controller_server"
+            or override.get("parameter") != "goal_checker.xy_goal_tolerance"
+            or float(override.get("base_value")) != goal_tolerance
+        ):
+            raise ValueError("unsupported applied goal-tolerance override")
+        goal_tolerance = finite_nonnegative("applied_goal_tolerance_m", override["applied_value"])
+        effective_basis = {
+            "base_config_sha256": observed_hash,
+            "applied_parameter_overrides": overrides,
+        }
+        effective_hash = hashlib.sha256(
+            json.dumps(effective_basis, sort_keys=True, separators=(",", ":")).encode("utf-8")
+        ).hexdigest()
+        if source.get("effective_config_sha256") != effective_hash:
+            raise ValueError("effective configuration identity mismatch")
     stopped_threshold = config_number(config, "trans_stopped_velocity")
     if goal_tolerance != finite_nonnegative(
         "configured_goal_tolerance_m", observation["configured_goal_tolerance_m"]
@@ -184,6 +212,26 @@ def main() -> int:
     if args.prospective_external_validity:
         if export.get("study_status") != "PROSPECTIVE_EXTERNAL_VALIDITY_ARM":
             raise ValueError("prospective reference requires a prospective robot-visible export")
+        registry = json.loads(BOAT_REGISTRY.read_text(encoding="utf-8"))
+        if export.get("registry_sha256") != hashlib.sha256(BOAT_REGISTRY.read_bytes()).hexdigest():
+            raise ValueError("prospective boat registry identity mismatch")
+        row = next(
+            (
+                item
+                for item in registry["ordered_configurations"]
+                if item["configuration_id"] == export.get("configuration_id")
+            ),
+            None,
+        )
+        if row is None:
+            raise ValueError("prospective configuration is absent from the boat registry")
+        declared_argument = row.get("launch_values", {}).get("CRANE_NAV2_CONTROLLER_EXTRA_ARGS")
+        observed_overrides = export.get("source", {}).get("applied_parameter_overrides", [])
+        if declared_argument is None and observed_overrides:
+            raise ValueError("undeclared prospective controller override")
+        if declared_argument is not None:
+            if len(observed_overrides) != 1 or observed_overrides[0].get("launch_argument") != declared_argument:
+                raise ValueError("applied override differs from the frozen prospective registry")
         result["status"] = "PROSPECTIVE_EXTERNAL_VALIDITY_REFERENCE_NOT_HUMAN_GOLD"
         result["arm_id"] = export["arm_id"]
         result["configuration_id"] = export["configuration_id"]

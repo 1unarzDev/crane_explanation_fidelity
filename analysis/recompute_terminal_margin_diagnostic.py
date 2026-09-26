@@ -81,6 +81,27 @@ def build_result_from_config_bytes(
     config_text = config_bytes.decode("utf-8")
     observation = method_input["observation"]
     configured_goal_tolerance = config_value(config_text, "xy_goal_tolerance")
+    overrides = source.get("applied_parameter_overrides", [])
+    if overrides:
+        if not isinstance(overrides, list) or len(overrides) != 1:
+            raise ValueError("unsupported applied parameter override inventory")
+        override = overrides[0]
+        if (
+            override.get("node") != "controller_server"
+            or override.get("parameter") != "goal_checker.xy_goal_tolerance"
+            or float(override.get("base_value")) != configured_goal_tolerance
+        ):
+            raise ValueError("unsupported applied goal-tolerance override")
+        configured_goal_tolerance = float(override["applied_value"])
+        effective_basis = {
+            "base_config_sha256": actual_hash,
+            "applied_parameter_overrides": overrides,
+        }
+        effective_hash = hashlib.sha256(
+            json.dumps(effective_basis, sort_keys=True, separators=(",", ":")).encode()
+        ).hexdigest()
+        if source.get("effective_config_sha256") != effective_hash:
+            raise ValueError("effective configuration identity mismatch")
     configured_stopped_speed = config_value(config_text, "trans_stopped_velocity")
     if configured_goal_tolerance != observation["configured_goal_tolerance_m"]:
         raise ValueError("retained goal tolerance does not match the pinned configuration")

@@ -12,6 +12,7 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+import re
 
 from export_terminal_margin_diagnostic import build_export
 
@@ -55,6 +56,31 @@ def bind(payload: dict, configuration_id: str, summary_path: Path) -> dict:
     return result
 
 
+def declared_goal_tolerance_override(configuration_id: str) -> tuple[float | None, dict | None]:
+    registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
+    row = next(
+        (item for item in registry["ordered_configurations"] if item["configuration_id"] == configuration_id),
+        None,
+    )
+    if row is None:
+        raise ValueError("configuration is not in the frozen narrow arm")
+    raw = row.get("launch_values", {}).get("CRANE_NAV2_CONTROLLER_EXTRA_ARGS")
+    if raw is None:
+        return None, None
+    match = re.fullmatch(r"-p goal_checker[.]xy_goal_tolerance:=([0-9]+(?:[.][0-9]+)?)", raw)
+    if not match:
+        raise ValueError("unsupported or ambiguous prospective controller override")
+    launcher = registry["platform_identity"]["launcher"]
+    return float(match.group(1)), {
+        "basis": "frozen_registry_launch_value",
+        "registry_path": str(REGISTRY.relative_to(ROOT)),
+        "registry_sha256": digest(REGISTRY),
+        "launcher_path": launcher["path"],
+        "launcher_sha256": launcher["sha256"],
+        "launch_argument": raw,
+    }
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--configuration-id", required=True)
@@ -69,6 +95,9 @@ def main() -> int:
     args = parser.parse_args()
     if args.output.exists():
         raise FileExistsError(f"refusing existing output: {args.output}")
+    applied_tolerance, override_provenance = declared_goal_tolerance_override(
+        args.configuration_id
+    )
     payload = build_export(
         args.summary,
         args.config_repository,
@@ -77,6 +106,8 @@ def main() -> int:
         args.task_tolerance_m,
         args.source_reference,
         frozenset(args.mask),
+        applied_goal_tolerance_m=applied_tolerance,
+        applied_override_provenance=override_provenance,
     )
     result = bind(payload, args.configuration_id, args.summary)
     args.output.parent.mkdir(parents=True, exist_ok=True)

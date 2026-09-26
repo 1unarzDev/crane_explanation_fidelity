@@ -1,0 +1,62 @@
+{
+  "schema": "crane-diagnostic-batch-plan/v1",
+  "plan_id": "diagnostic-production-batch-007-land-081-084",
+  "created_date": "2026-09-26",
+  "scope": "Next four frozen land discovery captures in immutable source order; no response or annotation work is included.",
+  "pool_limits": {
+    "land_simulation": 2
+  },
+  "backpressure": {
+    "land_simulation": 4
+  },
+  "registered_looks": {
+    "land": [24, 36, 47],
+    "boat": []
+  },
+  "jobs": [
+    {
+      "job_id": "cm-land-conf-081-capture",
+      "configuration_id": "cm-land-conf-081",
+      "arm": "land",
+      "sequence_index": 81,
+      "stage": "capture",
+      "pool": "land_simulation",
+      "dependencies": [],
+      "registry": "research/explanation_fidelity/experiment_configs/prospective/land-command-motion-physical-schedule-v1.json",
+      "request_identity": "6d94f125678ce849f1d5ded814c23a21b2d2c51faedf10d027877cf6c194a725"
+    },
+    {
+      "job_id": "cm-land-conf-082-capture",
+      "configuration_id": "cm-land-conf-082",
+      "arm": "land",
+      "sequence_index": 82,
+      "stage": "capture",
+      "pool": "land_simulation",
+      "dependencies": [],
+      "registry": "research/explanation_fidelity/experiment_configs/prospective/land-command-motion-physical-schedule-v1.json",
+      "request_identity": "106a8436d520528c4f79472119410c3d87e9aae4f927eb121ecb4f9e215cd57b"
+    },
+    {
+      "job_id": "cm-land-conf-083-capture",
+      "configuration_id": "cm-land-conf-083",
+      "arm": "land",
+      "sequence_index": 83,
+      "stage": "capture",
+      "pool": "land_simulation",
+      "dependencies": [],
+      "registry": "research/explanation_fidelity/experiment_configs/prospective/land-command-motion-physical-schedule-v1.json",
+      "request_identity": "67a38a2da4d02f7ac872a876b74e7cb4c31c2497a8cb8b820f56719371bb2b3b"
+    },
+    {
+      "job_id": "cm-land-conf-084-capture",
+      "configuration_id": "cm-land-conf-084",
+      "arm": "land",
+      "sequence_index": 84,
+      "stage": "capture",
+      "pool": "land_simulation",
+      "dependencies": [],
+      "registry": "research/explanation_fidelity/experiment_configs/prospective/land-command-motion-physical-schedule-v1.json",
+      "request_identity": "c19af9ba7fa80e1a21963d4e1558f1f74f2a0de941b3652fecb150fe81746c76"
+    }
+  ]
+}

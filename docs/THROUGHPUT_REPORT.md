@@ -2,43 +2,55 @@
 
 Updated: 2026-09-26
 
-Status: **boat narrow arm frozen; production launch is the active stage**
+Status: **land discovery capture/semantic queues drained; registered first look remains invalid**
 
 | Measure | Current value |
 | --- | ---: |
-| Land physical attempts | 31 |
-| Valid land configurations | 30 |
-| Supported physical references | 25 |
-| Untouched semantic-eligible references | 24 |
-| Independent first-look references ready | 24 |
-| Immutable P/R pairs ready | 18 |
-| Fully reconciled P/R clusters | 0 |
-| Luna study judgments | 0 |
-| Boat prospective configurations | 0 |
-| Boat development P/R canary pairs | 1 |
-| Boat development Luna judgments | 4/4 valid |
+| Frozen focused land configurations | 64 |
+| Land configurations with immutable P/R pairs | 56 |
+| Land configurations with two complete Luna passes | 53 |
+| Valid land Luna judgments | 219/224 |
+| Eligible evaluator-only reconciliations | 41 |
+| Registered land looks released | 0 |
+| Boat prospective physical configurations attempted | 4 |
+| Boat valid / terminal technical-failure configurations | 2 / 2 |
+| Boat independent configurations with P/R semantics | 1 |
+| Boat P/R packets including its paired mask control | 2 |
+| Boat Luna judgments | 8/8 valid |
 
-The boat-specific Luna extension completed 24 isolated calls with no transport failure. Both
-passes achieved 1.0 endpoint and required-unit accuracy, zero false acceptance/rejection, and zero
-protected causal/boundary failures; core-field accuracy was 0.96875 and 0.97917. This closes the
-marine semantic-qualification subgate but does not itself authorize boat study collection or land
-production scale-up.
+The land physical schedule is closed at its frozen discovery endpoint. The final captured rows
+089--100 were derived with the frozen low-speed diagnostic configuration, independently
+referenced, hash-manifested, and completed in durable batch ledgers. All 56 admitted response
+pairs have now received their two isolated Luna passes. Five judgments are retained as invalid
+without retry: one for 062, two for 067, and two for 078. The remaining 219 judgments are valid.
 
-The current boat canary required 46.2 s for R. Its four Luna jobs took 28.9, 55.8, 35.5, and
-53.4 s; the bounded canary runner invoked them serially, yielding one fully reconciled development
-P/R cluster in about 3.3 minutes of judge wall time. This is an execution baseline, not a
-production-throughput result. At Luna concurrency four, the same observed service times imply a
-best-case judge-stage wall time near the 55.8 s tail, subject to measured throttling tests.
+The registered land N=24 look cannot be released: its exact ordered prefix contains unusable
+judgments for 062 and 067, and the frozen usable-answer retry budget is zero. Later configurations
+were processed in order and retained, but they cannot replace failed prefix rows or create an
+unregistered look. No effect estimate, confidence sequence, significance result, or replication
+claim is licensed from this campaign state.
 
-The configuration blocker is closed as a prospectively frozen, honestly narrow arm: four exact
-physical configurations and one clustered missing-speed control. The arm omits unsupported
-disturbance families and remains separate from land N, alpha, and replication. Configuration
-application and reset isolation pass with the current immutable graphics/water build and validated
-Nav2 profile. Production begins with boat simulation concurrency 1, R concurrency 2, Luna
-concurrency 4, CPU concurrency 4, and a single publisher. The intended production metric remains
-valid fully reconciled P/R clusters per hour; no improvement is claimed until actual production
-clusters complete.
+The boat arm remains prospectively narrow and separate from land N, alpha, and replication. Rows
+001 and 003 are valid physical recordings; 002 and 004 are terminal technical failures after the
+declared bounded retry policy. Row 003 has a complete P/R packet and two-pass Luna result, as does
+its missing-return-speed evidence-mask control; the control adds zero independent boat N. Row 001
+remains a valid nominal physical control without a semantic pair because the frozen terminal-margin
+packet path did not support its distinct nominal-approach question. This limitation is retained
+rather than retrofitting the method after inspecting the recording.
 
-Failures retained at this checkpoint: one invalid land transport recording (`cm-land-conf-052`),
-one deliberately interrupted response call for 063 with no output/cache record, and no provider
-throttle or Luna study failure. R2 matched the governed cache at the prior closeout.
+Execution used two isolated land workers, two R sessions, and up to four Luna sessions. Rows
+089--100 produced 12 fully processed physical configurations in about 22 minutes of this resumed
+run (approximately 32.7 physical configurations/hour); semantic work overlapped capture and then
+drained after simulation stopped. This is an observed batch rate, not evidence about method
+quality. The principal remaining bottleneck is governed publication/restoration, not collection.
+
+Failures retained at this checkpoint include the earlier invalid land recordings, the five
+no-retry Luna judgments above, the two terminal boat technical failures, and the invalid first
+registered look. Unexpected action outcomes remain admitted when capture/reference validity held.
+No provider throttling or quality-driven retry occurred in the final drain.
+
+The completed snapshot pushed 463 data/model objects plus 49 evaluator-analysis objects to
+governed remote `r2`; subsequent cloud status reported the cache and remote in sync. A clean
+`dvc get` materialization recovered row 100's
+robot-visible diagnostic, evaluator-only reference, annotation key, and Luna summary with matching
+content hashes.

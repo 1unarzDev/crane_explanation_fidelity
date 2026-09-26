@@ -1,0 +1,39 @@
+{
+  "schema": "crane-diagnostic-batch-plan/v1",
+  "plan_id": "diagnostic-production-batch-008-land-085-088",
+  "created_date": "2026-09-26",
+  "scope": "Next four frozen land discovery captures in immutable source order; no response or annotation work is included.",
+  "pool_limits": {"land_simulation": 2},
+  "backpressure": {"land_simulation": 4},
+  "registered_looks": {"land": [24, 36, 47], "boat": []},
+  "jobs": [
+    {
+      "job_id": "cm-land-conf-085-capture", "configuration_id": "cm-land-conf-085",
+      "arm": "land", "sequence_index": 85, "stage": "capture", "pool": "land_simulation",
+      "dependencies": [],
+      "registry": "research/explanation_fidelity/experiment_configs/prospective/land-command-motion-physical-schedule-v1.json",
+      "request_identity": "2d881dd235f15e8fcf40a2b282f436cabed849f5ef3e03ff72692e5c2dfb5a3f"
+    },
+    {
+      "job_id": "cm-land-conf-086-capture", "configuration_id": "cm-land-conf-086",
+      "arm": "land", "sequence_index": 86, "stage": "capture", "pool": "land_simulation",
+      "dependencies": [],
+      "registry": "research/explanation_fidelity/experiment_configs/prospective/land-command-motion-physical-schedule-v1.json",
+      "request_identity": "bf986bec24cff0297b48d7dcf082f2d9c8d0900f4074df20d8109d42d88ee820"
+    },
+    {
+      "job_id": "cm-land-conf-087-capture", "configuration_id": "cm-land-conf-087",
+      "arm": "land", "sequence_index": 87, "stage": "capture", "pool": "land_simulation",
+      "dependencies": [],
+      "registry": "research/explanation_fidelity/experiment_configs/prospective/land-command-motion-physical-schedule-v1.json",
+      "request_identity": "25d7647bf2299038254da4a8d3164fb3ece3c832448ee7535140058d70cbb194"
+    },
+    {
+      "job_id": "cm-land-conf-088-capture", "configuration_id": "cm-land-conf-088",
+      "arm": "land", "sequence_index": 88, "stage": "capture", "pool": "land_simulation",
+      "dependencies": [],
+      "registry": "research/explanation_fidelity/experiment_configs/prospective/land-command-motion-physical-schedule-v1.json",
+      "request_identity": "2963e196ee0804141a85db3baf1bdd15f2d5bbaabc1d13ab35674f9396c21084"
+    }
+  ]
+}

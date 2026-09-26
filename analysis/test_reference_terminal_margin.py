@@ -45,3 +45,26 @@ def test_reference_ignores_proposed_derived_result():
     result = calculate(evidence, CONFIG)
 
     assert result["reference_findings"]["full_terminal_margin_mechanism_supported"] is True
+
+
+def test_reference_uses_hash_checked_applied_goal_tolerance_override():
+    evidence = payload(UNMASKED)
+    override = {
+        "node": "controller_server",
+        "parameter": "goal_checker.xy_goal_tolerance",
+        "base_value": 0.40,
+        "applied_value": 0.50,
+        "unit": "m",
+        "basis": "test",
+    }
+    import hashlib
+    evidence["source"]["applied_parameter_overrides"] = [override]
+    evidence["source"]["effective_config_sha256"] = hashlib.sha256(
+        json.dumps({
+            "base_config_sha256": evidence["source"]["config_sha256"],
+            "applied_parameter_overrides": [override],
+        }, sort_keys=True, separators=(",", ":")).encode()
+    ).hexdigest()
+    evidence["observation"]["configured_goal_tolerance_m"] = 0.50
+    result = calculate(evidence, CONFIG)
+    assert result["measurements"]["goal_tolerance_m"] == 0.50

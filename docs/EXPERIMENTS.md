@@ -7291,3 +7291,36 @@
   1.011594; Unity errors/exceptions, failed observations, and invalid water searches were all zero;
   the six-second measured interval retained 59 depth acquisitions and 61 LiDAR scans. The special
   workspace never became active. This is display-path qualification only and adds zero study N.
+
+# 2026-09-26 — focused production drain and hidden-render correction
+
+- **DISPLAY CORRECTION:** the inactive-special-workspace approach above was superseded after a
+  full-length aquatic run stopped HDRP depth readbacks. The qualified wrapper now creates a
+  compositor-owned virtual headless output, installs the `CRANE.x86_64` routing rule before the
+  first map, and verifies the final `ASV` window on that output. RoboBoat still uses ordinary
+  rendered Vulkan/HDRP execution; `-batchmode` and `-nographics` remain prohibited. No aquatic
+  process was launched during the final land drain, and no CRANE/Unity/ASV client appeared on a
+  physical workspace.
+- **LAND COLLECTION:** the frozen focused schedule reached its discovery endpoint at
+  `cm-land-conf-100`. Rows 089--100 were captured with two isolated headless land workers, staged
+  with byte-identical Nav2 and low-speed diagnostic configurations, independently referenced,
+  hash-manifested, and closed in batch ledgers 009--011. Unexpected aborts were retained when the
+  recording, binding, and diagnostic evidence remained valid.
+- **SEMANTIC DRAIN:** the campaign retains 56 immutable P/R pairs and 56 two-pass Luna summaries.
+  Of 224 planned judgments, 219 are valid. The five invalid judgments are retained without retry:
+  one for 062, two for 067, and two for 078. Forty-one primary-eligible configurations with four
+  valid judgments have sealed evaluator-only reconciliations; controls remain in their raw
+  two-pass records and do not enter the primary cluster rows.
+- **REGISTERED LOOK:** the exact N=24 ordered prefix remains invalid because 062 and 067 lack the
+  required complete two-pass judgments and the frozen usable-answer retry budget is zero. Later
+  rows do not replace them. No unregistered look, effect estimate, confidence sequence,
+  significance statement, or replication result was produced.
+- **BOAT DISPOSITION:** prospective rows 001 and 003 are valid physical recordings; rows 002 and
+  004 are terminal technical failures after the bounded retry policy. Row 003 and its paired
+  missing-return-speed control each have one P/R packet and four valid Luna judgments. Row 001 is
+  retained as a nominal physical control without retrofitted semantics because the existing
+  packet path did not implement its distinct nominal-approach question before its recording was
+  inspected.
+- **OBSERVED THROUGHPUT:** rows 089--100 completed physical capture and derivation in about
+  22 minutes of the resumed run (approximately 32.7 configurations/hour) while response and judge
+  queues overlapped. This is an operational measurement, not a method-quality result.

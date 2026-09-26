@@ -46,6 +46,11 @@ QUESTION = (
     "navigation action returned? Identify the deepest supported execution or physical mechanism, "
     "how it connects to the outcome, and what remains unresolved."
 )
+MASKED_QUESTION = (
+    "Can the full terminal-margin mechanism be established from the retained evidence? State the "
+    "supported positional failure chain, identify the missing stopped-state discriminator, and "
+    "preserve the unresolved physical alternatives."
+)
 
 
 def digest(path: Path) -> str:
@@ -67,47 +72,106 @@ def exact_config(repository: Path, commit: str, path: str) -> bytes:
 
 
 def annotation_reference(
-    export: dict[str, Any], independent: dict[str, Any], recomputed: dict[str, Any]
+    export: dict[str, Any], independent: dict[str, Any], recomputed: dict[str, Any],
+    *, question_id: str = "boat-readiness-terminal-margin-canary-v1",
+    reference_status: str = "DEVELOPMENT_CANARY_INDEPENDENT_COMPUTATION_NOT_HUMAN_GOLD",
 ) -> dict[str, Any]:
     findings = independent["reference_findings"]
-    if findings["full_terminal_margin_mechanism_supported"] is not True:
-        raise ValueError("boat canary does not support the declared terminal-margin mechanism")
     if recomputed["final_text_verification"]["accepted"] is not True:
         raise ValueError("boat canary deterministic rendering did not verify")
-    units = [
-        {
-            "unit_id": "mechanism-terminal-margin",
-            "text": "The supported execution mechanism is insufficient terminal stopping margin for the observed post-result motion.",
-        },
-        {
-            "unit_id": "return-state-comparison",
-            "text": "At return, error was 0.3738 m and measured speed was 0.0486 m/s, within the configured 0.400 m and 0.050 m/s thresholds, leaving 0.0262 m task margin.",
-        },
-        {
-            "unit_id": "outcome-comparison",
-            "text": "Post-result displacement was 0.1876 m and settled error was 0.5614 m, outside the 0.400 m task tolerance.",
-        },
-        {
-            "unit_id": "causal-limit",
-            "text": "The evidence does not uniquely identify inertia, actuation, model mismatch, wind, current, waves, collision, or another physical source of residual motion.",
-        },
-    ]
-    return {
+    observation = export["observation"]
+    measurements = independent.get("measurements") or {
+        "return_error_m": observation["action_return_error_m"],
+        "measured_speed_at_return_mps": observation["measured_speed_at_return_mps"],
+        "goal_tolerance_m": observation["configured_goal_tolerance_m"],
+        "stopped_speed_threshold_mps": observation["configured_stopped_speed_mps"],
+        "position_margin_at_return_m": (
+            observation["task_acceptance_tolerance_m"]
+            - observation["action_return_error_m"]
+        ),
+        "post_result_displacement_m": observation["post_result_coast_m"],
+        "settled_error_m": observation["settled_error_m"],
+        "task_tolerance_m": observation["task_acceptance_tolerance_m"],
+    }
+    full_mechanism = findings["full_terminal_margin_mechanism_supported"] is True
+    masked_speed = (
+        findings.get("positional_failure_chain_supported") is True
+        and findings.get("stopped_speed_state") == "unresolved_missing_measured_speed"
+    )
+    if not full_mechanism and not masked_speed:
+        raise ValueError("boat evidence supports neither the full nor masked terminal-margin contract")
+    if full_mechanism:
+        units = [
+            {
+                "unit_id": "mechanism-terminal-margin",
+                "text": "The supported execution mechanism is insufficient terminal stopping margin for the observed post-result motion.",
+            },
+            {
+                "unit_id": "return-state-comparison",
+                "text": (
+                    f"At return, error was {measurements['return_error_m']:.4f} m and measured "
+                    f"speed was {measurements['measured_speed_at_return_mps']:.4f} m/s, within the "
+                    f"configured {measurements['goal_tolerance_m']:.3f} m and "
+                    f"{measurements['stopped_speed_threshold_mps']:.3f} m/s thresholds, leaving "
+                    f"{measurements['position_margin_at_return_m']:.4f} m task margin."
+                ),
+            },
+            {
+                "unit_id": "outcome-comparison",
+                "text": (
+                    f"Post-result displacement was {measurements['post_result_displacement_m']:.4f} m "
+                    f"and settled error was {measurements['settled_error_m']:.4f} m, outside the "
+                    f"{measurements['task_tolerance_m']:.3f} m task tolerance."
+                ),
+            },
+            {
+                "unit_id": "causal-limit",
+                "text": "The evidence does not uniquely identify inertia, actuation, model mismatch, wind, current, waves, collision, or another physical source of residual motion.",
+            },
+        ]
+    else:
+        units = [
+            {
+                "unit_id": "supported-positional-failure-chain",
+                "text": (
+                    f"The action returned at {measurements['return_error_m']:.4f} m error with "
+                    f"{measurements['position_margin_at_return_m']:.4f} m positional task margin; "
+                    f"post-result displacement was {measurements['post_result_displacement_m']:.4f} m "
+                    f"and settled error was {measurements['settled_error_m']:.4f} m, outside the "
+                    f"{measurements['task_tolerance_m']:.3f} m task tolerance."
+                ),
+            },
+            {
+                "unit_id": "missing-stopped-state-discriminator",
+                "text": (
+                    "Independently measured speed at action return is missing, so whether the "
+                    f"platform physically met the configured {measurements['stopped_speed_threshold_mps']:.3f} m/s "
+                    "stopped-speed threshold is unresolved."
+                ),
+            },
+            {
+                "unit_id": "full-mechanism-withheld",
+                "text": "The complete terminal-margin mechanism must remain qualified because its stopped-state discriminator is unavailable.",
+            },
+            {
+                "unit_id": "causal-limit",
+                "text": "The evidence does not uniquely identify inertia, actuation, model mismatch, wind, current, waves, collision, or another physical source of residual motion.",
+            },
+        ]
+    result = {
         "schema": "crane-boat-readiness-annotation-reference/v1",
         "visibility": "robot_visible_reference",
-        "reference_status": "DEVELOPMENT_CANARY_INDEPENDENT_COMPUTATION_NOT_HUMAN_GOLD",
+        "reference_status": reference_status,
         "episode_id": export["episode_id"],
-        "question_id": "boat-readiness-terminal-margin-canary-v1",
-        "diagnosable": True,
+        "question_id": question_id,
+        "diagnosable": full_mechanism,
         "evidence_completeness": (
             "The packet contains the retained robot-visible return state, post-result motion, "
             "exact configuration thresholds, and a separately implemented reference calculation. "
             "It excludes simulator force decomposition, evaluator interventions, method identity, "
             "the proposed checked plan, verifier verdict, and the competing answer."
         ),
-        "primary_endpoint_eligible": True,
-        "mechanism_unit_id": "mechanism-terminal-margin",
-        "complete_endpoint_unit_ids": [item["unit_id"] for item in units],
+        "primary_endpoint_eligible": full_mechanism,
         "required_units": units,
         "prohibited_claims": [
             "Wind, current, waves, collision, inertia, or actuator failure uniquely caused the residual motion.",
@@ -131,6 +195,10 @@ def annotation_reference(
             "human_gold": False,
         },
     }
+    if full_mechanism:
+        result["mechanism_unit_id"] = "mechanism-terminal-margin"
+        result["complete_endpoint_unit_ids"] = [item["unit_id"] for item in units]
+    return result
 
 
 def run(args: argparse.Namespace, caller=None) -> dict[str, Any]:
@@ -147,6 +215,18 @@ def run(args: argparse.Namespace, caller=None) -> dict[str, Any]:
         "robot_visible_declared_diagnostic_interface"
     ):
         raise ValueError("boat canary evidence boundary is not robot-visible")
+    prospective_configuration_id = getattr(args, "prospective_configuration_id", None)
+    prospective = prospective_configuration_id is not None
+    if prospective and (
+        export.get("study_status") != "PROSPECTIVE_EXTERNAL_VALIDITY_ARM"
+        or export.get("configuration_id") != prospective_configuration_id
+        or export.get("land_n_added") != 0
+    ):
+        raise ValueError("prospective boat response identity differs from the governed export")
+    masked_speed_control = export.get("evidence_boundary", {}).get("masked_fields") == [
+        "measured_speed_at_return"
+    ]
+    question = MASKED_QUESTION if masked_speed_control else QUESTION
 
     freeze = json.loads(RESOURCE_FREEZE.read_text(encoding="utf-8"))
     baseline = freeze["baseline"]
@@ -157,7 +237,17 @@ def run(args: argparse.Namespace, caller=None) -> dict[str, Any]:
     method_input = method_input_from_export(export)
     recomputed = build_result_from_config_bytes(method_input, config_bytes)
     independent = calculate_reference(export, config_bytes)
-    reference = annotation_reference(export, independent, recomputed)
+    reference = annotation_reference(
+        export,
+        independent,
+        recomputed,
+        question_id=(export["question_id"] if prospective else "boat-readiness-terminal-margin-canary-v1"),
+        reference_status=(
+            "PROSPECTIVE_EXTERNAL_VALIDITY_INDEPENDENT_REFERENCE_NOT_HUMAN_GOLD"
+            if prospective
+            else "DEVELOPMENT_CANARY_INDEPENDENT_COMPUTATION_NOT_HUMAN_GOLD"
+        ),
+    )
 
     caller = caller or caller_for(
         "codex", args.cache, baseline["requested_model_id"], baseline["reasoning_effort"]
@@ -177,12 +267,21 @@ def run(args: argparse.Namespace, caller=None) -> dict[str, Any]:
         method_bytes = (json.dumps(method_input, indent=2, sort_keys=True) + "\n").encode()
         (visible / "terminal-margin-input.json").write_bytes(method_bytes)
         record = caller.call(
-            "boat-readiness-terminal-margin-canary-R",
-            load_prompt(PROMPT.name, {"QUESTION": QUESTION}),
+            (
+                f"roboboat-prospective-{export['configuration_id']}"
+                f"{'-missing-return-speed' if masked_speed_control else ''}-R"
+                if prospective
+                else "boat-readiness-terminal-margin-canary-R"
+            ),
+            load_prompt(PROMPT.name, {"QUESTION": question}),
             ANSWER_SCHEMA,
             working_directory=workspace,
             workspace_identity={
-                "protocol": "roboboat-diagnostic-readiness-canary-v1",
+                "protocol": (
+                    "roboboat-diagnostic-external-validity-v1-narrow"
+                    if prospective
+                    else "roboboat-diagnostic-readiness-canary-v1"
+                ),
                 "condition": "R",
                 "episode_id": export["episode_id"],
                 "resource_freeze_sha256": digest(RESOURCE_FREEZE),
@@ -199,17 +298,44 @@ def run(args: argparse.Namespace, caller=None) -> dict[str, Any]:
         raise ValueError("boat canary R configuration differs from the focused freeze")
 
     result = {
-        "schema": "crane-boat-readiness-response-pair/v1",
-        "status": "DEVELOPMENT_ONLY_NOT_PROSPECTIVE_EVIDENCE",
-        "protocol_id": "roboboat-diagnostic-readiness-canary-v1",
-        "cluster_id": "boat-dev-terminal-margin-canary-001",
+        "schema": (
+            "crane-roboboat-prospective-response-pair/v1"
+            if prospective
+            else "crane-boat-readiness-response-pair/v1"
+        ),
+        "status": (
+            "PROSPECTIVE_EXTERNAL_VALIDITY_ARM_RESPONSE_PAIR"
+            if prospective
+            else "DEVELOPMENT_ONLY_NOT_PROSPECTIVE_EVIDENCE"
+        ),
+        "protocol_id": (
+            "roboboat-diagnostic-external-validity-v1-narrow"
+            if prospective
+            else "roboboat-diagnostic-readiness-canary-v1"
+        ),
+        "cluster_id": (
+            export["cluster_id"] if prospective else "boat-dev-terminal-margin-canary-001"
+        ),
         "episode_id": export["episode_id"],
         "question_id": reference["question_id"],
-        "question_kind": "complete-supported-diagnostic-communication-v1",
-        "question": QUESTION,
+        "question_kind": (
+            "missing_decisive_or_ambiguous_evidence"
+            if masked_speed_control
+            else "complete-supported-diagnostic-communication-v1"
+        ),
+        "question": question,
         "provider": "mixed-deterministic-and-codex",
         "model": baseline["requested_model_id"],
         "evaluator_truth_available_to_methods": False,
+        "configuration_id": export.get("configuration_id"),
+        "independent_physical_configuration": bool(
+            export.get("independent_physical_configuration", False)
+        ),
+        "land_n_added": 0,
+        "prospective_boat_n_added": int(prospective and not masked_speed_control),
+        "evidence_mask_control": (
+            "boat-ext-narrow-003-missing-return-speed" if masked_speed_control else None
+        ),
         "resource_freeze_sha256": digest(RESOURCE_FREEZE),
         "inputs": {
             "robot_visible_evidence_sha256": digest(evidence),
@@ -271,6 +397,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--cache", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--reference-output", required=True, type=Path)
+    parser.add_argument("--prospective-configuration-id")
     return parser.parse_args()
 
 

@@ -1,0 +1,162 @@
+{
+  "created_utc": "2026-09-26T18:14:22.737644Z",
+  "jobs": {
+    "boat-ext-narrow-002-capture": {
+      "arm": "boat",
+      "artifact_manifest": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "claimed_utc": "2026-09-26T18:14:22.778900Z",
+          "completed_utc": "2026-09-26T18:40:26.122649Z",
+          "expires_utc": "2026-09-26T18:44:22.778900Z",
+          "failure_manifest": {
+            "path": "/home/lunarz/crane_explain/manifests/operations/artifacts/boat-ext-narrow-002-attempt-001-technical-failure.manifest.json",
+            "sha256": "2145bba8340e40523aed24c27bd7d2538e20dcd6eaa0da86232a6dae372607f4"
+          },
+          "status": "TECHNICAL_FAILURE",
+          "worker": "boat-worker-1"
+        },
+        {
+          "attempt": 2,
+          "claimed_utc": "2026-09-26T18:40:26.162253Z",
+          "completed_utc": "2026-09-26T18:49:08.429630Z",
+          "expires_utc": "2026-09-26T19:10:26.162253Z",
+          "failure_manifest": {
+            "path": "/home/lunarz/crane_explain/manifests/operations/artifacts/boat-ext-narrow-002-attempt-002-technical-failure.manifest.json",
+            "sha256": "0f185af1ce5b191b2e654b62f42fd4f5d4895e7811e57e1367b7449a1d933341"
+          },
+          "status": "TECHNICAL_FAILURE",
+          "worker": "boat-worker-1"
+        }
+      ],
+      "claim": null,
+      "configuration_id": "boat-ext-narrow-002",
+      "dependencies": [],
+      "job_id": "boat-ext-narrow-002-capture",
+      "pool": "roboboat_simulation",
+      "registry": "research/explanation_fidelity/experiment_configs/prospective/roboboat-diagnostic-external-validity-v1-narrow-freeze.json",
+      "request_identity": "899a82734578ddda97d5705620dd710982035d70a82ea57d60b0136679878948",
+      "sequence_index": 2,
+      "stage": "capture",
+      "state": "TECHNICAL_FAILURE",
+      "technical_failures": [
+        {
+          "attempt": 1,
+          "manifest": {
+            "path": "/home/lunarz/crane_explain/manifests/operations/artifacts/boat-ext-narrow-002-attempt-001-technical-failure.manifest.json",
+            "sha256": "2145bba8340e40523aed24c27bd7d2538e20dcd6eaa0da86232a6dae372607f4"
+          },
+          "reason": "The fixed first attempt completed with the expected succeeded action and otherwise clean runtime, but the frozen generic capture-validity gate rejected exactly two stale observations at episode end; no valid physical recording was admitted.",
+          "recorded_utc": "2026-09-26T18:40:26.122649Z",
+          "retry_authorized": true
+        },
+        {
+          "attempt": 2,
+          "manifest": {
+            "path": "/home/lunarz/crane_explain/manifests/operations/artifacts/boat-ext-narrow-002-attempt-002-technical-failure.manifest.json",
+            "sha256": "0f185af1ce5b191b2e654b62f42fd4f5d4895e7811e57e1367b7449a1d933341"
+          },
+          "reason": "The sole authorized retry completed with the expected succeeded FollowPath action and otherwise clean runtime, but the frozen capture-validity gate rejected 1500 stale depth observations under the hidden-render execution profile; no valid physical recording was admitted and no further retry is authorized.",
+          "recorded_utc": "2026-09-26T18:49:08.429630Z",
+          "retry_authorized": false
+        }
+      ]
+    },
+    "boat-ext-narrow-003-capture": {
+      "arm": "boat",
+      "artifact_manifest": {
+        "path": "/home/lunarz/crane_explain/manifests/operations/artifacts/boat-ext-narrow-003-capture.manifest.json",
+        "sha256": "7763bcd23979c4c1e96c0af7d3662fad93990bb4323967debecc49303e4b1713"
+      },
+      "attempts": [
+        {
+          "attempt": 1,
+          "claimed_utc": "2026-09-26T19:10:41.336020Z",
+          "completed_utc": "2026-09-26T19:16:45.994452Z",
+          "expires_utc": "2026-09-26T19:40:41.336020Z",
+          "status": "COMPLETED",
+          "worker": "boat-headless-worker-1"
+        }
+      ],
+      "claim": null,
+      "configuration_id": "boat-ext-narrow-003",
+      "dependencies": [],
+      "job_id": "boat-ext-narrow-003-capture",
+      "pool": "roboboat_simulation",
+      "registry": "research/explanation_fidelity/experiment_configs/prospective/roboboat-diagnostic-external-validity-v1-narrow-freeze.json",
+      "request_identity": "8597d366053c5e088be2518982172a15ebbfec1bae9a328bbf0563ca0309df8f",
+      "sequence_index": 3,
+      "stage": "capture",
+      "state": "COMPLETED"
+    },
+    "boat-ext-narrow-004-capture": {
+      "arm": "boat",
+      "artifact_manifest": null,
+      "attempts": [
+        {
+          "attempt": 1,
+          "claimed_utc": "2026-09-26T19:16:53.710810Z",
+          "completed_utc": "2026-09-26T19:21:18.077749Z",
+          "expires_utc": "2026-09-26T19:36:53.710810Z",
+          "failure_manifest": {
+            "path": "/home/lunarz/crane_explain/manifests/operations/artifacts/boat-ext-narrow-004-attempt-001-technical-failure.manifest.json",
+            "sha256": "d3703b66720438d267098f645dd08aa0470c80373fc2aee2d741b99c42bf2ed4"
+          },
+          "status": "TECHNICAL_FAILURE",
+          "worker": "boat-headless-worker-1"
+        },
+        {
+          "attempt": 2,
+          "claimed_utc": "2026-09-26T19:21:21.970326Z",
+          "completed_utc": "2026-09-26T19:22:52.673595Z",
+          "expires_utc": "2026-09-26T19:41:21.970326Z",
+          "failure_manifest": {
+            "path": "/home/lunarz/crane_explain/manifests/operations/artifacts/boat-ext-narrow-004-attempt-002-technical-failure.manifest.json",
+            "sha256": "5d64704394bbd09ed12f2d17b18c2b4951d44594e2f74fb0da4a94f78753946d"
+          },
+          "status": "TECHNICAL_FAILURE",
+          "worker": "boat-headless-worker-1"
+        }
+      ],
+      "claim": null,
+      "configuration_id": "boat-ext-narrow-004",
+      "dependencies": [],
+      "job_id": "boat-ext-narrow-004-capture",
+      "pool": "roboboat_simulation",
+      "registry": "research/explanation_fidelity/experiment_configs/prospective/roboboat-diagnostic-external-validity-v1-narrow-freeze.json",
+      "request_identity": "a0a09f1e7f7aa750dd2d9b337f44b117e43456f84e856182d3690b357d1518bb",
+      "sequence_index": 4,
+      "stage": "capture",
+      "state": "TECHNICAL_FAILURE",
+      "technical_failures": [
+        {
+          "attempt": 1,
+          "manifest": {
+            "path": "/home/lunarz/crane_explain/manifests/operations/artifacts/boat-ext-narrow-004-attempt-001-technical-failure.manifest.json",
+            "sha256": "d3703b66720438d267098f645dd08aa0470c80373fc2aee2d741b99c42bf2ed4"
+          },
+          "reason": "The first attempt retained a healthy rendered simulation with zero stale or failed observations, but the ROS endpoint recorded zero Unity connections; no odometry, accepted goal, or usable physical navigation recording existed, so the frozen capture-validity gate rejected the attempt.",
+          "recorded_utc": "2026-09-26T19:21:18.077749Z",
+          "retry_authorized": true
+        },
+        {
+          "attempt": 2,
+          "manifest": {
+            "path": "/home/lunarz/crane_explain/manifests/operations/artifacts/boat-ext-narrow-004-attempt-002-technical-failure.manifest.json",
+            "sha256": "5d64704394bbd09ed12f2d17b18c2b4951d44594e2f74fb0da4a94f78753946d"
+          },
+          "reason": "The sole authorized retry again lost the ROS endpoint container before any Unity connection. The attempt was stopped after confirming that no complete physical navigation recording could be produced; the partial rendered capture is retained and no further retry is authorized.",
+          "recorded_utc": "2026-09-26T19:22:52.673595Z",
+          "retry_authorized": false
+        }
+      ]
+    }
+  },
+  "plan_id": "diagnostic-production-batch-003-boat-remaining",
+  "plan_path": "/home/lunarz/crane_explain/manifests/operations/diagnostic-production-batch-003-boat-plan.json",
+  "plan_sha256": "f8fee61381f5067251cad174680ee74015f0f0d5443909ab572afaa62e6c3c13",
+  "releases": [],
+  "schema": "crane-diagnostic-batch-ledger/v1",
+  "updated_utc": "2026-09-26T19:22:52.673595Z"
+}

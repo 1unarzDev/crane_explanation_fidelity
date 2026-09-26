@@ -16,6 +16,7 @@ assert SPEC and SPEC.loader
 MODULE = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(MODULE)
 bind = MODULE.bind
+declared_goal_tolerance_override = MODULE.declared_goal_tolerance_override
 
 
 def test_bind_changes_only_prospective_transport_metadata(tmp_path: Path) -> None:
@@ -43,3 +44,16 @@ def test_bind_rejects_unknown_configuration(tmp_path: Path) -> None:
     payload = {"source": {"fixture_summary_sha256": hashlib.sha256(summary.read_bytes()).hexdigest()}}
     with pytest.raises(ValueError, match="not in the frozen"):
         bind(payload, "boat-ext-narrow-999", summary)
+
+
+def test_declared_runtime_override_is_bound_to_registry_and_launcher() -> None:
+    value, provenance = declared_goal_tolerance_override("boat-ext-narrow-003")
+    assert value == 0.40
+    assert provenance["basis"] == "frozen_registry_launch_value"
+    assert provenance["launch_argument"] == "-p goal_checker.xy_goal_tolerance:=0.40"
+    assert len(provenance["registry_sha256"]) == 64
+    assert len(provenance["launcher_sha256"]) == 64
+
+
+def test_configuration_without_override_preserves_base_config() -> None:
+    assert declared_goal_tolerance_override("boat-ext-narrow-001") == (None, None)

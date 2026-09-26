@@ -42,6 +42,31 @@ def test_reference_declares_all_complete_endpoint_units():
     assert "waves" in " ".join(reference["prohibited_claims"])
 
 
+def test_masked_speed_reference_is_ineligible_and_requires_qualification():
+    export = json.loads(EVIDENCE.read_text())
+    export["observation"]["measured_speed_at_return_mps"] = None
+    export["evidence_boundary"]["masked_fields"] = ["measured_speed_at_return"]
+    independent = {
+        "reference_findings": {
+            "full_terminal_margin_mechanism_supported": False,
+            "positional_failure_chain_supported": True,
+            "stopped_speed_state": "unresolved_missing_measured_speed",
+        }
+    }
+    recomputed = {"final_text_verification": {"accepted": True}}
+    reference = annotation_reference(export, independent, recomputed)
+    assert reference["primary_endpoint_eligible"] is False
+    assert reference["diagnosable"] is False
+    assert "mechanism_unit_id" not in reference
+    assert "complete_endpoint_unit_ids" not in reference
+    assert [unit["unit_id"] for unit in reference["required_units"]] == [
+        "supported-positional-failure-chain",
+        "missing-stopped-state-discriminator",
+        "full-mechanism-withheld",
+        "causal-limit",
+    ]
+
+
 def test_canary_uses_current_focused_r_and_two_arms(tmp_path: Path):
     result = run(
         argparse.Namespace(

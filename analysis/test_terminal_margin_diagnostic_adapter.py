@@ -82,3 +82,30 @@ def test_export_conversion_strips_derived_fields():
     assert "diagnostic_result" not in payload
     assert "checked_answer" not in payload
     assert "final_text_verification" not in payload
+
+
+def test_recomputes_with_hash_checked_runtime_goal_tolerance_override(tmp_path):
+    config = tmp_path / "nav2.yaml"
+    config.write_text("xy_goal_tolerance: 0.2\ntrans_stopped_velocity: 0.05\n")
+    payload = method_input(EXPORT, config)
+    override = {
+        "node": "controller_server",
+        "parameter": "goal_checker.xy_goal_tolerance",
+        "base_value": 0.2,
+        "applied_value": 0.4,
+        "unit": "m",
+        "basis": "test",
+    }
+    payload["source"]["applied_parameter_overrides"] = [override]
+    payload["source"]["effective_config_sha256"] = hashlib.sha256(
+        json.dumps(
+            {
+                "base_config_sha256": payload["source"]["config_sha256"],
+                "applied_parameter_overrides": [override],
+            },
+            sort_keys=True,
+            separators=(",", ":"),
+        ).encode()
+    ).hexdigest()
+    result = build_result(payload, config)
+    assert result["diagnostic_result"]["disposition"] == "supported"

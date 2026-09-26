@@ -79,6 +79,8 @@ def build_export(
     task_tolerance_m: float,
     source_reference: str,
     masks: frozenset[str] = frozenset(),
+    applied_goal_tolerance_m: float | None = None,
+    applied_override_provenance: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     raw = summary_path.read_bytes()
     summary = json.loads(raw)
@@ -117,12 +119,50 @@ def build_export(
         "task-contract:xy-acceptance-tolerance",
         f"nav2-config:sha256:{config_hash}",
     )
+    base_goal_tolerance = config_value(config_text, "xy_goal_tolerance")
+    configured_goal_tolerance = (
+        base_goal_tolerance
+        if applied_goal_tolerance_m is None
+        else float(applied_goal_tolerance_m)
+    )
+    if not math.isfinite(configured_goal_tolerance) or configured_goal_tolerance < 0.0:
+        raise ValueError("applied goal tolerance must be finite and nonnegative")
+    if (applied_goal_tolerance_m is None) != (applied_override_provenance is None):
+        raise ValueError("applied goal tolerance and provenance must be supplied together")
+    source = {
+        "fixture_summary": source_reference,
+        "fixture_summary_sha256": summary_hash,
+        "config_repository": "https://github.com/1unarzDev/crane_ml.git",
+        "config_commit": config_commit,
+        "config_path": config_path,
+        "config_sha256": config_hash,
+    }
+    if applied_override_provenance is not None:
+        override = {
+            "node": "controller_server",
+            "parameter": "goal_checker.xy_goal_tolerance",
+            "base_value": base_goal_tolerance,
+            "applied_value": configured_goal_tolerance,
+            "unit": "m",
+            **applied_override_provenance,
+        }
+        effective_basis = {
+            "base_config_sha256": config_hash,
+            "applied_parameter_overrides": [override],
+        }
+        source["applied_parameter_overrides"] = [override]
+        source["effective_config_sha256"] = sha256_bytes(
+            json.dumps(
+                effective_basis, sort_keys=True, separators=(",", ":")
+            ).encode("utf-8")
+        )
+
     observation = GoalTerminationObservation(
         episode_id=summary_path.parent.name,
         evidence_ids=evidence_ids,
         frame="odom",
         action_status=summary["status"],
-        configured_goal_tolerance_m=config_value(config_text, "xy_goal_tolerance"),
+        configured_goal_tolerance_m=configured_goal_tolerance,
         configured_stopped_speed_mps=config_value(config_text, "trans_stopped_velocity"),
         task_acceptance_tolerance_m=task_tolerance_m,
         action_return_error_m=pose_error(return_pose, goal),
@@ -169,14 +209,7 @@ def build_export(
                 "of every value consumed internally by Nav2."
             ),
         },
-        "source": {
-            "fixture_summary": source_reference,
-            "fixture_summary_sha256": summary_hash,
-            "config_repository": "https://github.com/1unarzDev/crane_ml.git",
-            "config_commit": config_commit,
-            "config_path": config_path,
-            "config_sha256": config_hash,
-        },
+        "source": source,
         "observation": {
             "episode_id": observation.episode_id,
             "frame": observation.frame,
