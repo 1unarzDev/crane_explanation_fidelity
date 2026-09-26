@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://crane.local/schemas/focused-supported-diagnostic-results-v1.schema.json",
+  "title": "Focused supported diagnostic communication campaign",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "campaign_id", "protocol_id", "protocol_sha256", "resource_freeze_sha256", "development_or_legacy_data_included", "sampling_rule_changed_after_outcomes", "judge", "clusters"],
+  "properties": {
+    "schema": {"const": "crane-focused-supported-diagnostic-results/v1"},
+    "campaign_id": {"const": "focused-supported-diagnostic-communication-v1-confirmation"},
+    "protocol_id": {"const": "focused-supported-diagnostic-communication-v1"},
+    "protocol_sha256": {"$ref": "#/$defs/sha256"},
+    "resource_freeze_sha256": {"$ref": "#/$defs/sha256"},
+    "development_or_legacy_data_included": {"const": false},
+    "sampling_rule_changed_after_outcomes": {"const": false},
+    "judge": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["qualification_id", "two_isolated_passes"],
+      "properties": {
+        "qualification_id": {"const": "luna-model-judge-v12-complete-endpoint-extension-v1"},
+        "two_isolated_passes": {"const": true}
+      }
+    },
+    "clusters": {"type": "array", "maxItems": 64, "items": {"$ref": "#/$defs/cluster"}}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "binary": {"type": "integer", "enum": [0, 1]},
+    "cluster": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cluster_id", "configuration_id", "sequence_index", "independent_scenario_configuration", "family", "primary_endpoint_eligible", "complete_supported_diagnostic_communication_p", "complete_supported_diagnostic_communication_r", "material_error_p", "material_error_r", "mechanism_correct_p", "mechanism_correct_r", "measurement_correct_p", "measurement_correct_r", "causal_limit_preserved_p", "causal_limit_preserved_r", "essential_unit_total", "essential_units_covered_p", "essential_units_covered_r"],
+      "properties": {
+        "cluster_id": {"type": "string", "minLength": 1},
+        "configuration_id": {"type": "string", "minLength": 1},
+        "sequence_index": {"type": "integer", "minimum": 1},
+        "independent_scenario_configuration": {"const": true},
+        "family": {"enum": ["bounded_geometric_restriction", "persistent_command_motion_discrepancy", "measured_response_recovery", "missing_decisive_or_ambiguous_evidence", "nominal_false_premise_or_irrelevant_obstacle"]},
+        "primary_endpoint_eligible": {"type": "boolean"},
+        "complete_supported_diagnostic_communication_p": {"$ref": "#/$defs/binary"},
+        "complete_supported_diagnostic_communication_r": {"$ref": "#/$defs/binary"},
+        "material_error_p": {"$ref": "#/$defs/binary"},
+        "material_error_r": {"$ref": "#/$defs/binary"},
+        "mechanism_correct_p": {"$ref": "#/$defs/binary"},
+        "mechanism_correct_r": {"$ref": "#/$defs/binary"},
+        "measurement_correct_p": {"$ref": "#/$defs/binary"},
+        "measurement_correct_r": {"$ref": "#/$defs/binary"},
+        "causal_limit_preserved_p": {"$ref": "#/$defs/binary"},
+        "causal_limit_preserved_r": {"$ref": "#/$defs/binary"},
+        "essential_unit_total": {"type": "integer", "minimum": 1},
+        "essential_units_covered_p": {"type": "integer", "minimum": 0},
+        "essential_units_covered_r": {"type": "integer", "minimum": 0}
+      }
+    }
+  }
+}
