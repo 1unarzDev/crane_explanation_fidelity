@@ -1,5 +1,16 @@
 # Experiment Log
 
+## 2026-09-26 — boat-specific Luna qualification passed
+
+- **RESULT:** both frozen passes qualified over all 12 held-out cases. Endpoint and required-unit
+  accuracy were 1.0 in both passes; core-field accuracy was 0.96875/0.97917; false acceptance,
+  false rejection, protected failures, and call failures were all zero.
+- **RESOURCE:** 24 isolated calls, no transport retry/failure. All call records and the aggregate
+  report are governed in `model_outputs.dvc` and synchronized to R2.
+- **LIMIT:** this qualifies bounded boat semantics only. It is not human validation, a P-over-R
+  result, or authorization for prospective boat collection. The restorable end-to-end canary and
+  exact arm freeze remain open.
+
 ## 2026-09-26 — boat-specific Luna qualification frozen before calls
 
 - **SUITE:** 12 fresh held-out cases (six supported/error pairs) cover terminal margin, bounded

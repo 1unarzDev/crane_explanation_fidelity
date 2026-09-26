@@ -1,0 +1,23 @@
+{
+  "schema": "crane-luna-boat-qualification-manifest/v1",
+  "qualification_id": "luna-boat-diagnostic-heldout-v1",
+  "executed_date": "2026-09-26",
+  "status": "HELDOUT_QUALIFIED",
+  "boat_study_scoring_allowed": true,
+  "land_qualification_unchanged": true,
+  "freeze": {
+    "path": "research/explanation_fidelity/experiment_configs/prospective/luna-boat-diagnostic-v1-freeze.json",
+    "sha256": "d3d495bb0f10b54e46328dbbb04a1da89bde7df302f8f79e7096afa2087030f0"
+  },
+  "result": {
+    "path": "model_outputs/automated_annotations/luna-model-judge-v1/heldout-boat-v1/heldout-qualification.json",
+    "sha256": "728ce9cee4b9939c6e78eccf5d710585d1a4b2a5b25f4eb3cbd8372b6ae84e4a",
+    "dvc_pointer": "model_outputs.dvc"
+  },
+  "passes": {
+    "pass-1": {"endpoint_accuracy": 1.0, "unit_accuracy": 1.0, "core_accuracy": 0.96875, "false_rejection_rate": 0.0, "false_acceptance_rate": 0.0, "protected_failures": 0, "call_failures": 0},
+    "pass-2": {"endpoint_accuracy": 1.0, "unit_accuracy": 1.0, "core_accuracy": 0.9791666666666666, "false_rejection_rate": 0.0, "false_acceptance_rate": 0.0, "protected_failures": 0, "call_failures": 0}
+  },
+  "resource_use": {"isolated_calls": 24, "transport_failures": 0},
+  "interpretation": "Luna is qualified on this bounded boat-specific suite for the declared terminal-margin, modeled-geometry, command-axis, disturbance, nominal, and missing-evidence semantics. This is automated judge qualification, not human validity or evidence that P beats R."
+}
