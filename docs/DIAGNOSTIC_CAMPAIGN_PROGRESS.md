@@ -48,8 +48,16 @@ under unchanged Luna v12 settings, then packet/resource/schema dry runs and atom
 That extension has now qualified in both passes: 18/18 complete-endpoint classifications and 72/72
 unit labels per pass, with no false accept/reject or call failure. Core fields were 140/144 and
 141/144; retained `correct_abstention` mismatches remain a disclosed limitation. Packet closure,
-exact P/R resources, schema/monitor dry run, and atomic ledger binding remain open. No focused
-response was opened while discovering, correcting, or qualifying this mismatch.
+exact P/R resources, schema/monitor dry run, and atomic ledger binding remain open. No additional
+focused response was opened while discovering, correcting, or qualifying this mismatch.
+
+The evidence-complete packet closure now passes on run 042 with four bound essential units, full
+independent robot-visible evidence, blinded condition transport, and zero model/Luna calls. During
+that audit, the deterministic candidate text previously displayed for run 042 was recognized as a
+preactivation exposure. Run 042 therefore remains valid physical/development evidence but is
+conservatively excluded from semantic confirmation. A nominal-clear-route persistent replacement
+(`...-051`, seed 92050) is fixed now for collection after source-order run 100; its selection did
+not use an R response, Luna label, or method comparison. The registered family mixture is unchanged.
 
 The former physical-only land cohort is additively closed after run 040 (39 valid, one invalid).
 All artifacts and its original schedule remain immutable. Its never-attempted runs 041--100 are

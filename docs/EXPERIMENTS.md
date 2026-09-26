@@ -1,5 +1,21 @@
 # Experiment Log
 
+## 2026-09-26 — focused packet closure passed; run 042 semantic eligibility corrected
+
+- **PACKET:** a no-model dry run built a complete independent reference and two blinded synthetic
+  transport rows from run 042. All four essential units were bound, allowed evidence was complete,
+  evaluator truth was absent, candidate wording was preserved, and condition metadata stayed out
+  of judge-visible rows. No response was scored.
+- **EXPOSURE:** the deterministic run-042 candidate text had been displayed during preprocessing.
+  The physical/reference result remains valid, but the cluster is excluded prospectively from
+  semantic confirmation instead of being called unopened.
+- **REPLACEMENT:** before another physical outcome or any R/Luna study call, fixed one unused
+  nominal-clear-route layout (`...-051`, seed 92050) with the same persistent-discrepancy family.
+  It will run after source order 100, once, with no outcome-dependent replacement. The 64-cluster
+  mixture and disjoint replication reserve remain intact.
+- **BOUNDARY:** packet closure consumes no alpha. Exact P/R resources, schema/monitor dry run, and
+  atomic ledger binding remain open.
+
 ## 2026-09-26 — Luna v12 complete-endpoint extension qualified
 
 - **RESULT:** both isolated passes qualified: 18/18 complete-endpoint classifications and 72/72

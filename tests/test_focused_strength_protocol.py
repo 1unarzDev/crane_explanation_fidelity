@@ -33,6 +33,10 @@ BUILD_MANIFEST = ROOT / "manifests/data/fsdc-v1-player-build-1.evaluator-only.js
 COMPLETE_ENDPOINT_QUALIFICATION = ROOT / (
     "manifests/annotation/luna-model-judge-v12-complete-endpoint-extension-v1.json"
 )
+ELIGIBILITY_AMENDMENT = ROOT / (
+    "research/explanation_fidelity/experiment_configs/prospective/"
+    "focused-supported-diagnostic-communication-v1-eligibility-amendment-1.json"
+)
 FIRST_RUN = ROOT / "manifests/data/fsdc-land-geometry-001-disposition.json"
 SECOND_RUN = ROOT / "manifests/data/fsdc-land-geometry-002-disposition.json"
 THIRD_RUN = ROOT / "manifests/data/fsdc-land-geometry-003-disposition.json"
@@ -108,6 +112,20 @@ def test_complete_endpoint_extension_qualifies_without_study_scoring():
     assert all(item["unit_coverage_correct"] == 72 for item in result["passes"].values())
     assert result["study_responses_scored"] == 0
     assert result["confirmatory_alpha_consumed"] == 0.0
+
+
+def test_preactivation_exposure_is_excluded_with_fixed_family_matched_replacement():
+    amendment = load(ELIGIBILITY_AMENDMENT)
+    excluded = amendment["excluded_from_semantic_confirmation"]
+    replacement = amendment["prospectively_fixed_replacement"]
+
+    assert amendment["status"].startswith("FROZEN_BEFORE_REPLACEMENT_PHYSICAL_OUTCOME")
+    assert excluded["run_id"] == "cm-land-conf-042"
+    assert excluded["independent_confirmatory_semantic_increment"] == 0
+    assert replacement["focused_family"] == excluded["family"]
+    assert replacement["attempt_rule"].startswith("one attempt")
+    assert amendment["uniformity"]["observed_method_comparison_used"] is False
+    assert amendment["uniformity"]["alpha_consumed"] == 0.0
 
 
 def test_level_a_does_not_require_level_b_or_secondary_tradeoff_success():
