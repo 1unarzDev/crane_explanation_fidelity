@@ -1,5 +1,18 @@
 # Experiment Log
 
+## 2026-09-26 — RoboBoat virtual-output rendering qualified
+
+- **QUALIFIED EXECUTION PROFILE:** the ordinary Vulkan/HDRP player ran on an active workspace of a
+  temporary Hyprland headless output rather than on the physical display or an inactive special
+  workspace. A full-duration development probe completed in 230.002 wall seconds at RTF 1.0000806
+  with 3,450 depth acquisitions, 2,300 LiDAR scans, and zero stale/failed observations, Unity
+  errors/exceptions, or invalid water searches. The temporary output was removed after exit.
+- **REJECTED PROFILE:** an inactive special workspace is no longer qualified. Its short canary was
+  insufficient; the subsequent full capture retained 1,500 stale depth observations even with
+  unfocused rendering enabled. Unity `-batchmode` and `-nographics` remain prohibited.
+- **SCOPE:** this changes only host display routing. The rendered player, water path, frozen boat
+  configuration, source/build identities, evidence gates, and statistical accounting are unchanged.
+
 ## 2026-09-26 — RoboBoat narrow arm frozen after live configuration/reset validation
 
 - **FREEZE:** four ordered physical configurations and one clustered missing-speed control are

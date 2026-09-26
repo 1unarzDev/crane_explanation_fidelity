@@ -109,14 +109,18 @@ incorrect expected status) are retained. Concise governed summaries are declared
 
 On the current Hyprland host, launch RoboBoat capture through
 `scripts/run_roboboat_hidden_render.sh COMMAND ...`. This is an execution-only display adapter: it
-routes the ordinary `CRANE.x86_64` / `ASV` XWayland window to an inactive special workspace before
-mapping, suppresses client activation, and forces the unfocused render path to 60 Hz. It restores
-the prior compositor limit on exit and fails closed if the rendered window appears on a visible
-workspace. The Unity command and scientific configuration are unchanged.
+creates a compositor-owned virtual headless output and routes the ordinary `CRANE.x86_64` / `ASV`
+XWayland window to the active workspace on that output before mapping. It verifies the monitor and
+workspace identities, suppresses client activation, and forces the unfocused render path to 60 Hz.
+On exit it removes the virtual output, restores the prior compositor limit, and reloads the
+compositor configuration to remove the transient routing rule. It fails closed if the rendered
+window escapes to the physical display. The Unity command and scientific configuration are
+unchanged.
 
 Do not replace this adapter with Unity `-batchmode` or `-nographics`; the aquatic evidence contract
-requires the rendered Vulkan/HDRP water path. A 2026-09-26 development probe measured RTF 1.0116,
-zero Unity errors/exceptions, zero failed observations, zero invalid water searches, 59 depth
-acquisitions, and 61 LiDAR scans while the render workspace remained inactive. A rejected earlier
-special-workspace attempt without `render_unfocused` is retained in the experiment log: it reduced
-RTF to about 0.34 and is not qualified for capture.
+requires the rendered Vulkan/HDRP water path. A 2026-09-26 full-duration development probe on the
+virtual output measured 230.002 wall seconds, RTF 1.0000806, 3,450 depth acquisitions, 2,300 LiDAR
+scans, zero stale or failed observations, zero Unity errors/exceptions, and zero invalid water
+searches. The temporary output was absent after cleanup. The earlier inactive-special-workspace
+profile is rejected: although a short probe succeeded, a full capture later accumulated 1,500 stale
+depth observations. It is not qualified for production capture.

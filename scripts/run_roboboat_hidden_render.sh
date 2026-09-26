@@ -8,7 +8,6 @@ usage() {
 
 (( $# > 0 )) || usage
 
-workspace_name="${CRANE_HIDDEN_RENDER_WORKSPACE:-crane-headless}"
 window_class="${CRANE_RENDER_WINDOW_CLASS:-CRANE.x86_64}"
 window_class_pattern="${CRANE_RENDER_WINDOW_CLASS_PATTERN:-^CRANE[.]x86_64$}"
 window_title="${CRANE_RENDER_WINDOW_TITLE:-ASV}"
@@ -36,12 +35,35 @@ if [[ ! "${render_fps}" =~ ^[1-9][0-9]*$ ]]; then
     exit 2
 fi
 
-# Aquatic evidence requires the ordinary rendered Vulkan/XWayland loop. Route that real window to
-# an unshown special workspace before it maps; do not substitute Unity -batchmode or -nographics.
-# Hyprland normally throttles invisible clients, so render_unfocused and the 60 Hz cap are required
-# to preserve the validated real-time water/sensor path.
+# Aquatic evidence requires the ordinary rendered Vulkan/XWayland loop. An inactive special
+# workspace eventually stopped HDRP depth readbacks during a full-length capture even with
+# render_unfocused enabled. Give the window an active workspace on a compositor-owned virtual
+# headless output instead. This keeps the real Vulkan surface rendered without placing it on a
+# physical display; it is not Unity -batchmode or -nographics.
+monitors_before="$(hyprctl monitors all -j)"
+hyprctl output create headless >/dev/null
+monitors_after="$(hyprctl monitors all -j)"
+headless_state="$(jq -c --argjson before "${monitors_before}" '
+    [.[] | select(.name as $name | ($before | map(.name) | index($name) | not)) |
+      {id, name, workspace: .activeWorkspace.name}]' <<<"${monitors_after}")"
+if ! jq -e 'length == 1 and .[0].name != null and .[0].workspace != null' \
+    <<<"${headless_state}" >/dev/null; then
+    echo "could not identify exactly one new Hyprland headless output: ${headless_state}" >&2
+    exit 1
+fi
+headless_name="$(jq -r '.[0].name' <<<"${headless_state}")"
+headless_monitor_id="$(jq -r '.[0].id' <<<"${headless_state}")"
+headless_workspace="$(jq -r '.[0].workspace' <<<"${headless_state}")"
+headless_windows="$(hyprctl workspaces -j | jq -r --arg monitor "${headless_name}" \
+    '[.[] | select(.monitor == $monitor) | .windows] | add // 0')"
+if [[ "${headless_windows}" != "0" ]]; then
+    hyprctl output remove "${headless_name}" >/dev/null 2>&1 || true
+    echo "new headless output captured an existing workspace with windows" >&2
+    exit 1
+fi
+
 hyprctl eval \
-    "hl.window_rule({ match = { class = \"${window_class_pattern}\", title = \"^${window_title}$\" }, workspace = \"special:${workspace_name} silent\", no_initial_focus = true, render_unfocused = true, suppress_event = \"activate activatefocus\" })" \
+    "hl.window_rule({ name = \"crane-headless-render\", match = { class = \"${window_class_pattern}\", title = \"^${window_title}$\" }, workspace = \"${headless_workspace} silent\", no_initial_focus = true, render_unfocused = true, suppress_event = \"activate activatefocus\" })" \
     >/dev/null
 
 original_render_fps="$(hyprctl getoption misc:render_unfocused_fps | awk '$1 == "int:" { print $2; exit }')"
@@ -50,13 +72,6 @@ if [[ ! "${original_render_fps}" =~ ^[0-9]+$ ]]; then
     exit 2
 fi
 hyprctl keyword misc:render_unfocused_fps "${render_fps}" >/dev/null
-
-active_special="$({ hyprctl monitors -j || true; } | jq -r \
-    --arg workspace "special:${workspace_name}" \
-    '[.[] | .specialWorkspace.name // empty] | any(. == $workspace)')"
-if [[ "${active_special}" == "true" ]]; then
-    hyprctl dispatch togglespecialworkspace "${workspace_name}" >/dev/null
-fi
 
 setsid --wait "$@" &
 child_pid=$!
@@ -67,7 +82,10 @@ cleanup() {
         kill -TERM -- "-${child_pid}" 2>/dev/null || true
         wait "${child_pid}" 2>/dev/null || true
     fi
+    hyprctl output remove "${headless_name}" >/dev/null 2>&1 || true
     hyprctl keyword misc:render_unfocused_fps "${original_render_fps}" >/dev/null 2>&1 || true
+    # Drop the transient Lua rule so a later interactive CRANE launch is not redirected.
+    hyprctl reload config-only >/dev/null 2>&1 || true
 }
 trap cleanup INT TERM EXIT
 
@@ -78,19 +96,22 @@ while kill -0 "${child_pid}" 2>/dev/null; do
         --arg class "${window_class}" \
         --arg title "${window_title}" \
         '[.[] | select(.class == $class and .title == $title) |
-          {address, class, title, workspace: .workspace.name, mapped}]')"
+          {address, class, title, workspace: .workspace.name, monitor, mapped}]')"
     if [[ "${client_state}" != "[]" ]]; then
-        if ! jq -e --arg workspace "special:${workspace_name}" \
-            'length == 1 and all(.[]; .workspace == $workspace and .mapped == true)' \
+        if ! jq -e --arg workspace "${headless_workspace}" \
+            --argjson monitor "${headless_monitor_id}" \
+            'length == 1 and all(.[];
+              .workspace == $workspace and .monitor == $monitor and .mapped == true)' \
             <<<"${client_state}" >/dev/null; then
-            echo "render window escaped hidden workspace: ${client_state}" >&2
+            echo "render window escaped headless output: ${client_state}" >&2
             exit 1
         fi
-        active_special="$(hyprctl monitors -j | jq -r \
-            --arg workspace "special:${workspace_name}" \
-            '[.[] | .specialWorkspace.name // empty] | any(. == $workspace)')"
-        if [[ "${active_special}" == "true" ]]; then
-            echo "hidden render workspace became visible during launch" >&2
+        if ! hyprctl monitors all -j | jq -e \
+            --arg name "${headless_name}" --arg workspace "${headless_workspace}" \
+            --argjson monitor "${headless_monitor_id}" \
+            'any(.[]; .name == $name and .id == $monitor and
+              .activeWorkspace.name == $workspace)' >/dev/null; then
+            echo "headless render output disappeared during launch" >&2
             exit 1
         fi
         placement_verified=1
@@ -113,6 +134,8 @@ fi
 
 wait "${child_pid}"
 child_status=$?
+hyprctl output remove "${headless_name}" >/dev/null
 hyprctl keyword misc:render_unfocused_fps "${original_render_fps}" >/dev/null
+hyprctl reload config-only >/dev/null 2>&1 || true
 trap - INT TERM EXIT
 exit "${child_status}"
