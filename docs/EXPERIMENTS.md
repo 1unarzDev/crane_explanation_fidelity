@@ -1,5 +1,24 @@
 # Experiment Log
 
+## 2026-09-26 — focused coordinator eligibility and scheduled-stop amendment
+
+- **DEFECT:** the activated v1 monitor equated membership in a scheduled primary family with
+  primary-endpoint eligibility. It therefore rejected valid geometry runs 002 and 004, whose
+  independent references retain route-change evidence but do not establish the registered bounded
+  restriction. It also treated nominal eligible N=47 as the only final boundary even though valid
+  unexpected outcomes can reduce eligible N.
+- **CORRECTION:** before any P/R confirmatory response or Luna study call, freeze a registry-exact
+  reference builder and v2 monitor. Supported geometry, persistent discrepancy, recovery, masked
+  missing-odometry, and outcome-insufficient geometry now receive explicit independent references.
+  All valid configurations increment the fixed 64-configuration schedule; only independently
+  supported mechanisms increment primary N. Ineligible records are neither failures nor dropped.
+- **PRESERVED:** 13 physical outcomes had been inspected; semantic N remained 0. Candidate, R,
+  question registry, judge, alpha, confidence-sequence implementation, activation record, and all
+  physical artifacts are unchanged.
+- **REGRESSION:** the focused coordinator suite plus existing focused protocol/monitor and
+  command-motion tests pass (51 tests). A synthetic final schedule with two outcome-insufficient
+  geometry records ends `INCONCLUSIVE_FINAL` at 64 scheduled configurations and eligible N=45.
+
 ## 2026-09-26 — focused physical run 13 / source order 49: `cm-land-conf-049`
 
 - **STATUS:** `VALID_FOCUSED_PHYSICAL_INDEPENDENT_PRIMARY_TRANSIENT_COMPENSATION_RESPONSE_UNOPENED`;

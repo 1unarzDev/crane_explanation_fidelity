@@ -1,0 +1,70 @@
+{
+  "schema": "crane-focused-supported-diagnostic-communication-coordinator-amendment/v1",
+  "protocol_id": "focused-supported-diagnostic-communication-v1",
+  "amendment_id": "independent-reference-eligibility-and-scheduled-stop-1",
+  "recorded_date": "2026-09-26",
+  "status": "FROZEN_AFTER_PHYSICAL_OUTCOMES_BUT_BEFORE_FIRST_P_OR_R_CONFIRMATORY_RESPONSE",
+  "reason": "The activated v1 monitor incorrectly required every configuration scheduled from a primary family to be primary-endpoint eligible. The frozen protocol instead makes eligibility depend on independent support for the registered mechanism. Geometry runs 002 and 004 are valid retained configurations whose rolling snapshots do not establish the registered bounded restriction; they must increment the 64-configuration schedule but add neither a primary success nor a primary failure. The original monitor also treated nominal eligible N=47 as the only final boundary even though valid unexpected outcomes can reduce eligible N.",
+  "inspection_boundary": {
+    "physical_configurations_inspected": 13,
+    "independently_primary_diagnosable": 9,
+    "missing_or_ambiguous_controls": 4,
+    "P_confirmatory_responses_opened": 0,
+    "R_confirmatory_responses_opened": 0,
+    "Luna_confirmatory_calls": 0,
+    "semantic_primary_N": 0,
+    "effect_estimate_exists": false,
+    "confidence_sequence_result_exists": false,
+    "significance_result_exists": false,
+    "replication_result_exists": false,
+    "known_pre_activation_candidate_exposure": "cm-land-conf-042 remains excluded under eligibility amendment 1"
+  },
+  "prospective_correction": {
+    "collection_stop": "End discovery after all 64 scheduled configurations, including valid outcome-insufficient configurations.",
+    "inference_population": "Increment primary N only when the independent reference supports the registered primary mechanism; scheduled controls and outcome-insufficient primary-family configurations remain in risk, qualification, and tradeoff summaries.",
+    "registered_looks": "Evaluate the existing 24, 36, and 47 looks against eligible primary N. If the 64-configuration schedule ends at another eligible N without an earlier registered success or futility decision, report INCONCLUSIVE_FINAL.",
+    "reference_construction": "Bind exact frozen registry unit IDs. Build complete independent references for supported geometry, persistent discrepancy, measured response recovery, missing odometry, and outcome-insufficient geometry without exposing evaluator intervention truth.",
+    "no_outcome_replacement": true,
+    "no_ineligible_case_counted_as_primary_failure": true,
+    "no_ineligible_case_dropped": true
+  },
+  "frozen_artifacts": {
+    "reference_builder_v2": {
+      "path": "analysis/build_focused_annotation_reference_v2.py",
+      "sha256": "3ecc22f4acd68680492ad4a7e4fa574b1560b8346aab58e967d619ca0829930a"
+    },
+    "monitor_v2": {
+      "path": "analysis/focused_sequential_monitor_v2.py",
+      "sha256": "0b95ffa39bb7187790ab4db4b1227c2deee9ac505378aa7bb67231134d30ea44"
+    },
+    "regression_tests": {
+      "path": "tests/test_focused_coordinator_amendment.py",
+      "sha256": "c19b424cfbd7fe584777d7673b166bded2e0b7010b88197693ddd42dde4b7d34"
+    }
+  },
+  "preserved_frozen_inputs": {
+    "protocol_sha256": "a3b3d842d0ab6d74cc3a22c9d8f34024d95fe70a8213ee1fb08cb21b01c24922",
+    "resource_freeze_sha256": "9f45e472cef34dbb8e6bbed5de692f1706e75de1c6e9ab158c742d76db65dfef",
+    "question_registry_sha256": "7748c592292f5f33cad864fa287a8773bbf68f0212d3e6d6439c02482d957204",
+    "schedule_sha256": "7fa1350e9ec68bdd7be161ea8354981d4d8ccbd4abb5cc4c6eff83ce02a9a07e",
+    "activation_manifest_sha256": "9c28d68e5d3ea895ea03a2362a96c1cc9a1546e442c743ecb402d73b815365f1",
+    "v1_monitor_sha256": "00c7d4ba4a98efeafdbb334369b5ce153ec373d0711fbd261cef78ccdd0c2f10",
+    "candidate_changed": false,
+    "baseline_changed": false,
+    "questions_or_units_changed": false,
+    "judge_changed": false,
+    "alpha_or_inference_bound_changed": false
+  },
+  "validation": {
+    "command": "PYTHONPATH=analysis:. pytest -q tests/test_focused_coordinator_amendment.py tests/test_focused_sequential_monitor.py tests/test_focused_strength_protocol.py analysis/test_command_motion_diagnostic.py",
+    "result": "51 passed",
+    "covered_paths": [
+      "supported bounded geometry",
+      "outcome-insufficient bounded geometry",
+      "supported persistent command-motion discrepancy",
+      "supported measured response recovery",
+      "masked missing-odometry control",
+      "64 scheduled configurations with eligible N below 47"
+    ]
+  }
+}

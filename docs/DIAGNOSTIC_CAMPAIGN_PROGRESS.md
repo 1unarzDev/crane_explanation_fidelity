@@ -28,7 +28,10 @@ The four added geometry
 configurations are complete after one attempt each: 001 and 003 independently support bounded
 retained-grid restrictions plus recorded route changes and success; 002 and 004 support route
 change but lack decisive grid coverage and are retained as missing-evidence outcomes rather than
-replaced or counted as diagnosable primary cases. P/R responses remain unopened. Prospective
+replaced or counted as diagnosable primary cases. A prospective coordinator amendment now freezes
+registry-exact references for both outcomes and makes the v2 monitor end after all 64 scheduled
+configurations while using only independently supported cases for eligible N. The candidate,
+baseline, judge, endpoint, alpha, and registered looks are unchanged. P/R responses remain unopened. Prospective
 physical configurations collected are 13/64. Source-order run 041 adds a valid missing-odometry
 ambiguity control: the unmasked reference supports a discrepancy, while the sole method-visible
 masked condition correctly cannot establish it. Source-order run 042 independently supports a

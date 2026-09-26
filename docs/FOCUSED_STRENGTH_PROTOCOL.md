@@ -81,8 +81,9 @@ replication or external-validity arm; they are not silently added to this popula
 
 The fixed discovery schedule contains 64 configurations: five bounded-geometry cases, 21
 persistent discrepancies, 21 measured-response-recovery cases, ten missing-evidence/ambiguous
-controls, and seven nominal/false-premise controls. The 47 diagnosable cases are primary-endpoint
-eligible. This deliberately weights the established high-throughput command--motion fixture more
+controls, and seven nominal/false-premise controls. At most 47 scheduled primary-family cases are
+primary-endpoint eligible, and only when their independent reference establishes the registered
+mechanism. This deliberately weights the established high-throughput command--motion fixture more
 heavily than geometry; family-specific results are reported and the pooled claim applies only to
 this registered mixture.
 
@@ -143,8 +144,11 @@ Evaluator leakage, unequal permitted evidence/tools, broken cluster identity, in
 or outcome-dependent sampling invalidate the campaign. A severe repeated causal-boundary failure
 triggers a frozen-method review; it is never hidden as a mere coverage tradeoff.
 
-The first formal look requires at least 24 eligible independent clusters and representation from
-all three primary families. Planned reviews occur after 24, 36, and the final 47 eligible clusters.
+The first formal look requires 24 eligible independent clusters and representation from all three
+primary families. Planned reviews occur after 24, 36, and 47 eligible clusters. The immutable
+collection boundary is instead all 64 scheduled configurations: valid unexpected or
+outcome-insufficient configurations remain retained but do not enter primary N. If collection ends
+with eligible N below 47 and no earlier registered decision, the result is `INCONCLUSIVE_FINAL`.
 Success may stop at any review when the registered bound clears Level A or B. Futility review occurs
 when the anytime-valid upper bound is at or below zero, or at the fixed schedule's end without Level A.
 Inconclusive and negative campaigns are retained. Sample planning uses development assumptions only;
@@ -159,6 +163,11 @@ The `candidate-v1-confirmation` allocation (`alpha=0.02`) was permanently bound 
 2026-09-26, before any confirmatory response was opened. It is treated conservatively as consumed
 and cannot be refunded even while semantic N remains zero. No ordinary repeated fixed-sample tests
 or post-outcome family reweighting are allowed.
+
+Coordinator amendment 1 records this eligibility/scheduled-stop correction before any P or R
+confirmatory response was opened. It freezes registry-exact independent reference construction and
+the v2 monitor while preserving the candidate, baseline, question registry, Luna configuration,
+alpha allocation, and original activation record.
 
 ## Replication and reporting
 

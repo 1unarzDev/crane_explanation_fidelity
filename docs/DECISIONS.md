@@ -1,5 +1,22 @@
 # Decision Log
 
+## 2026-09-26 — separate scheduled collection from independently supported primary eligibility
+
+- **Decision:** retain every valid configuration in the fixed 64-configuration discovery schedule,
+  but increment primary N only when its independent reference establishes the registered mechanism.
+  A primary-family configuration with insufficient decisive evidence is neither a primary failure
+  nor a replacement candidate; it remains a qualification/tradeoff observation.
+- **Reason:** geometry runs 002 and 004 validly recorded route changes but their rolling costmaps did
+  not cover enough of the requested route to establish the registered bounded restriction. The
+  original monitor incorrectly coupled eligibility to the scheduled family and would reject them.
+- **Stopping:** registered looks remain at eligible N 24, 36, and 47. Discovery nevertheless ends
+  after all 64 scheduled configurations; if eligible N is below 47 without an earlier decision,
+  report `INCONCLUSIVE_FINAL`.
+- **Prospective boundary:** this coordinator-only repair was frozen after 13 physical outcomes but
+  before any P/R confirmatory response or Luna study call. It changes no candidate, baseline,
+  question/unit, judge, alpha, or confidence-sequence calculation. The additive record is
+  `focused-supported-diagnostic-communication-v1-coordinator-amendment-1.json`.
+
 ## 2026-09-26 — activate the focused semantic campaign after closing every gate
 
 - **Decision:** permanently bind the `candidate-v1-confirmation` allocation (alpha 0.02) to
