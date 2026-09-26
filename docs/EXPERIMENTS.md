@@ -1,5 +1,19 @@
 # Experiment Log
 
+## 2026-09-26 — high-throughput execution amendment and RoboBoat gate opened
+
+- **RECONCILIATION:** the 13/64 briefing is stale. Current governed state is 31 land attempts,
+  30 valid configurations, one invalid retained recording, 25 supported primary references, 24
+  untouched semantic-eligible clusters after the run-042 exclusion, 24 references, and 18 pairs.
+- **EXECUTION ONLY:** a durable coordinator now owns exclusive claims, leases, hash-checked
+  completion, duplicate logical-request rejection, and ordered release. Scientific resources,
+  alpha, endpoint, and looks are unchanged.
+- **ROBOBOAT:** an eight-configuration separate external-validity arm is predeclared but collection
+  remains prohibited pending marine-specific Luna qualification and a restorable two-pass canary.
+  It contributes neither land N nor reserved replication.
+- **BOUNDARY:** no new model or Luna call was made while recording this amendment. Production land
+  scale-up remains blocked on RoboBoat readiness.
+
 ## 2026-09-26 — focused semantic generation paused at a clean closeout boundary
 
 - **COMPLETED:** 24/24 independent references and 18/24 immutable P/R response pairs, in fixed

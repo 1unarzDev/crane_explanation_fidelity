@@ -1,0 +1,52 @@
+{
+  "schema": "crane-roboboat-diagnostic-arm-prefreeze/v1",
+  "arm_id": "roboboat-diagnostic-external-validity-v1",
+  "declared_date": "2026-09-26",
+  "status": "READINESS_GATE_OPEN_COLLECTION_PROHIBITED",
+  "relationship_to_land": {
+    "separate_population": true,
+    "counts_toward_land_n": false,
+    "reserved_land_replication": false,
+    "alpha_allocation": "NOT_ASSIGNED_BEFORE_READINESS",
+    "analysis": "separate external-validity estimate; no pooling with land"
+  },
+  "platform_contract": {
+    "scene": "Roboboat Course",
+    "graphics_required": true,
+    "water_queries_required": true,
+    "headless_or_nographics_prohibited": true,
+    "vehicle": "existing four-thruster X-mixer catamaran",
+    "controllable_dof": ["body_surge", "body_sway", "yaw_rate"],
+    "active_nav2_output_observed": ["body_surge", "yaw_rate"],
+    "active_nav2_lateral_command_observed": false,
+    "protected": ["scene", "dock geometry", "water physics", "buoyancy", "thruster mixer", "manual controller"]
+  },
+  "planned_configurations": [
+    {"id": "boat-ext-001", "family": "nominal_approach", "purpose": "successful corrected far-dock approach control"},
+    {"id": "boat-ext-002", "family": "terminal_margin", "purpose": "goal-checker/settling margin diagnostic"},
+    {"id": "boat-ext-003", "family": "bounded_geometry", "purpose": "retained-model route restriction with physical-global qualification"},
+    {"id": "boat-ext-004", "family": "response_recovery", "purpose": "transient response discrepancy followed by measured compensation"},
+    {"id": "boat-ext-005", "family": "persistent_response_discrepancy", "purpose": "persistent requested-to-measured response mismatch"},
+    {"id": "boat-ext-006", "family": "missing_decisive_evidence", "purpose": "masked response discriminator requiring qualification"},
+    {"id": "boat-ext-007", "family": "visible_not_consumed", "purpose": "visible obstacle without proven Nav2 consumption"},
+    {"id": "boat-ext-008", "family": "ambiguous_disturbance", "purpose": "observed lateral disturbance without unique wind/current/wave attribution"}
+  ],
+  "selection_rule": "Freeze exact starts, goals, conditions, questions, evidence masks, references, and order after development readiness without inspecting prospective P/R differences.",
+  "readiness_evidence": {
+    "retained_nominal": "three strict-valid known-path docks and three strict-valid far NavigateToPose docks under the current corrected configuration",
+    "retained_diagnosable": "pre-correction terminal-margin failure and retained-grid disconnection development artifacts",
+    "retained_evidence_limited": "terminal-margin measured-speed mask",
+    "missing": [
+      "fresh boat-specific Luna qualification",
+      "two-pass Luna-scored end-to-end canary",
+      "restoration test of the full canary artifact set",
+      "exact prospective configuration freeze"
+    ]
+  },
+  "causal_limits": [
+    "Observed lateral displacement is not by itself wave drift.",
+    "A lumped response residual does not uniquely identify current, wind, waves, collision, or actuator failure.",
+    "Visible geometry does not establish Nav2 delivery, consumption, or decision dependence.",
+    "Retained-grid disconnection establishes only a bounded navigation-model result, not global physical infeasibility."
+  ]
+}

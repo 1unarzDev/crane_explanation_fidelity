@@ -126,6 +126,13 @@ sensitivity bound. Missing or invalid calls cannot enter the monitor, and P/R fi
 byte-for-byte unchanged. Candidate, baseline, evidence, questions, judge, schedule, monitor, and
 alpha are not amended.
 
+Execution amendment 4 replaces the development-era serial workflow with a resumable multistage
+coordinator and separate resource pools. It changes only scheduling, batching, and publication;
+one response/pass remains one isolated logical request and registered release remains in physical
+order. Production scale-up is gated on a separately registered RoboBoat readiness canary. The boat
+arm is external validity, contributes no land N or land replication cases, and cannot alter the
+land stopping rule.
+
 ## Inference, levels of conclusion, and stopping
 
 For each eligible cluster, let `X = success_P - success_R` in `{-1,0,1}`. Reuse the validated
