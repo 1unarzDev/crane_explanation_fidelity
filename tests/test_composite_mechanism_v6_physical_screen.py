@@ -13,6 +13,7 @@ RUN_001_DISPOSITION = ROOT / "manifests/data/cmcv6-dev-001-disposition.json"
 RUN_002_DISPOSITION = ROOT / "manifests/data/cmcv6-dev-002-disposition.json"
 RUN_003_DISPOSITION = ROOT / "manifests/data/cmcv6-dev-003-disposition.json"
 RUN_004_DISPOSITION = ROOT / "manifests/data/cmcv6-dev-004-disposition.json"
+RUN_005_DISPOSITION = ROOT / "manifests/data/cmcv6-dev-005-disposition.json"
 
 
 def _load(path: Path):
@@ -177,3 +178,16 @@ def test_run_004_retains_successful_compensation_without_inventing_geometric_tri
     assert result["screen_consequence"]["successful_compensation_clusters"] == 1
     assert result["screen_consequence"]["language_responses"] == 0
     _assert_disposition_hashes("cmcv6-dev-004", result)
+
+
+def test_run_005_geometry_only_control_rejects_execution_failure_premise():
+    result = _load(RUN_005_DISPOSITION)
+    assert result["attempt_count"] == 1
+    assert result["retry_or_replacement_performed"] is False
+    assert result["observed"]["navigation_status"] == "succeeded"
+    assert result["command_motion_reference"]["independent_disposition"] == "not_triggered"
+    assert result["geometric_reference"]["independent_direct_route_restriction_supported"] is True
+    assert result["geometric_reference"]["retained_grid_connection_below_cost_253"] is True
+    assert result["screen_consequence"]["geometry_only_controls_correct"] == 1
+    assert result["screen_consequence"]["language_responses"] == 0
+    _assert_disposition_hashes("cmcv6-dev-005", result)

@@ -110,6 +110,18 @@
   composite-positive, one successful compensation, and zero responses/Luna calls. Fixed run 5 is
   next; confirmation N and alpha remain zero.
 
+### Composite-mechanism v6 run 5/7 — geometry-only control
+
+- **STATUS:** `VALID / SUCCESS / GEOMETRY ONLY`. Its sole attempt passed all admission gates and
+  succeeded after 85.210 s and 17.541 m.
+- **CONTROL RESULT:** command--motion correctly returns `not_triggered`. The retained grid has a
+  cost-253 direct-route crossing near x=12.775 m and remains connected from the result pose to the
+  goal; three distinct plans and the trajectory deviate substantially before success.
+- **BOUNDARY / DISPOSITION:** the record does not establish obstacle identity, exact Nav2
+  consumption, or snapshot-to-plan causation. Totals are five valid clusters, two
+  composite-positive, one successful-compensation case, one correct geometry-only control, and
+  zero responses/Luna calls. Fixed run 6 is next; confirmation N and alpha remain zero.
+
 ## 2026-09-26 — evidence-complete raw-baseline v5 language screen rejects candidate v5
 
 - **STATUS:** `DEVELOPMENT_ONLY_CANDIDATE_REJECTED_FROZEN_GATE`.

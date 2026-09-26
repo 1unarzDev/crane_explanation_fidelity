@@ -1,0 +1,96 @@
+{
+  "schema": "crane-composite-mechanism-v6-physical-run-disposition/v1",
+  "recorded_date": "2026-09-26",
+  "run_id": "cmcv6-dev-005",
+  "cluster_id": "cmcv6-dev-cluster-005",
+  "status": "VALID_GEOMETRY_ONLY_SUCCESS_COMMAND_MOTION_NOT_TRIGGERED_NO_LANGUAGE_RESPONSE",
+  "attempt_count": 1,
+  "retry_or_replacement_performed": false,
+  "contract": {
+    "path": "research/explanation_fidelity/experiment_configs/development/composite-mechanism-v6-physical-screen-v1.json",
+    "fixed_order": 5,
+    "development_only": true
+  },
+  "scheduled_configuration": {
+    "layout_id": "diagnostic-command-motion-confirmation-reserve-connected-detour-056",
+    "layout_seed": 91055,
+    "geometry": "connected-detour",
+    "intervention_family": "none",
+    "mobility_hold_after_s": -1.0,
+    "mobility_release_after_s": -1.0,
+    "ros_domain_id": 229,
+    "ros_tcp_port": 12529
+  },
+  "admission": {
+    "player_build_audit_accepted": true,
+    "scenario_binding_audit_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "unity_worker_result_valid": true,
+    "unity_logged_errors": 0,
+    "unity_logged_exceptions": 0,
+    "stale_actions": 0,
+    "rejected_actions": 0,
+    "cross_episode_actions": 0,
+    "recording_valid_under_worker_result_gate": true
+  },
+  "observed": {
+    "navigation_status": "succeeded",
+    "action_wall_seconds": 85.20997032599553,
+    "displacement_meters": 17.540733801747717,
+    "controller_commands": 816,
+    "odometry_messages": 4257,
+    "costmap_observations": 319,
+    "delivered_plans": 3
+  },
+  "command_motion_reference": {
+    "proposed_disposition": "not_triggered",
+    "independent_disposition": "not_triggered",
+    "bounded_conclusion": "The action succeeded and the retained streams contain no required consecutive low-response windows; a command-to-motion failure premise is false."
+  },
+  "geometric_reference": {
+    "proposed_disposition": "supported",
+    "independent_direct_route_restriction_supported": true,
+    "independent_substantial_plan_deviation_supported": true,
+    "independent_substantial_trajectory_deviation_supported": true,
+    "direct_route_fully_covered": false,
+    "direct_route_first_blocked": {"x_m": 12.77500001825394, "y_m": -0.02499990724027068, "cost": 253},
+    "retained_grid_connection_below_cost_253": true,
+    "maximum_forward_progress_m": 17.538806915283203,
+    "maximum_lateral_trajectory_deviation_m": 1.1772832870483398,
+    "maximum_lateral_plan_deviation_m": 1.2351787567138697,
+    "delivered_plans": 3,
+    "unique_delivered_plans": 3,
+    "bounded_conclusion": "The requested direct route crosses a blocked retained-grid cell, the retained grid still connects the result pose to the goal, and plans and trajectory deviate substantially before success. This does not prove obstacle identity, exact consumption, or snapshot-to-plan causation."
+  },
+  "screen_consequence": {
+    "valid_independent_clusters": 5,
+    "composite_positive_clusters": 2,
+    "geometry_only_controls_correct": 1,
+    "successful_compensation_clusters": 1,
+    "language_responses": 0,
+    "luna_calls": 0,
+    "confirmatory_semantic_n": 0,
+    "confirmatory_alpha_consumed": 0.0,
+    "next_fixed_run_id": "cmcv6-dev-006"
+  },
+  "hashes": {
+    "player_build_audit_sha256": "26d280c6500b113821c45f236f418271b08cdc3f06ae33304126b2a6babedc9d",
+    "scenario_binding_audit_sha256": "ed49999ef8b38c7aad5bf25457a3bfc9f27f070435f8ce8725c773c28bf0f00c",
+    "unity_worker_result_sha256": "ef20afe00de5ac765560f4c221c56675cd0938be8ee637010b9e8a3b61df46cb",
+    "fixture_summary_sha256": "2f78c22462e7e46a7eb0c5e799477942e3dc1029ee52061bd0dff597531db3c9",
+    "robot_visible_events_sha256": "39bbec3fb386044e05be456e26b3341a33fd78f9ae83d5e5b4b850b7b44e0925",
+    "command_motion_diagnostic_sha256": "38da8dee85379c86c16d117a64a5bd42c351f8fc039c95025b1ba89cf9431266",
+    "command_motion_independent_reference_sha256": "520dda6561b5c282b34ace94d56b466ce553446ec336b49af04e9f30954127fd",
+    "geometric_diagnostic_sha256": "bd9dbc1863fdba5428f5ce11a677bcc41afe394180a7451d586bad2189fcb585",
+    "geometric_independent_reference_sha256": "29256f203a570945a02c3b5289bbfc7a9953216f4e49367a8b510623228d94fc",
+    "plan_geometry_independent_reference_sha256": "d5158d9f7544c43da9935d245ad866740ff0f6c62a50d6925d483e5373b47175",
+    "robot_visible_manifest_sha256": "ec2832359df8ddf58fc2c111371ff0ea5ddb20f45e4410f8bb947a64d2eaa46b",
+    "evaluator_only_manifest_sha256": "7e06892329a8916d7eba3dd982a8bd9ff22a37773985ec134f53bbf65e8f99da"
+  },
+  "governance": {
+    "robot_visible_manifest": "manifests/data/cmcv6-dev-005.robot-visible.json",
+    "evaluator_only_manifest": "manifests/data/cmcv6-dev-005.evaluator-only.json",
+    "checkpoint": "manifests/checkpoints/cmcv6-dev-005.json",
+    "dvc_remote_status": "IN_SYNC_BEFORE_GIT_POINTER"
+  }
+}

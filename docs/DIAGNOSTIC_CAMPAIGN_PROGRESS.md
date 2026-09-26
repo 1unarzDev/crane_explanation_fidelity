@@ -49,6 +49,12 @@ grid does not fully cover the requested route, so the physical geometric trigger
 Totals are four valid clusters, two composite-positive, one successful compensation, zero
 responses/Luna calls, and zero confirmatory N or alpha. Fixed run 5 is next.
 
+Fixed run 5/7 is the valid geometry-only control: navigation succeeded, the direct route crosses a
+blocked retained-grid cell, connectivity remains, and plans/trajectory deviate substantially.
+Command--motion correctly returns `not_triggered`. Totals are five valid clusters, two
+composite-positive, one successful compensation, one correct geometry-only control, zero
+responses/Luna calls, and zero confirmatory N or alpha. Fixed run 6 is next.
+
 ## Coverage-complete v5 raw-baseline screen
 
 The frozen `raw-baseline-v5-language-screen-v1` is complete and rejected. Baseline R received the
