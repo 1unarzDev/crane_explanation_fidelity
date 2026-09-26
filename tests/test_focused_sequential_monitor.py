@@ -90,8 +90,12 @@ def test_frozen_resource_inventory_and_exact_runner_are_present():
 def test_nonempty_results_require_atomic_alpha_binding():
     value = payload()
     value["clusters"] = [row(1)]
+    unbound = load(LEDGER_PATH)
+    allocation = next(x for x in unbound["allocations"] if x["allocation_id"] == "candidate-v1-confirmation")
+    allocation.update(status="AVAILABLE", campaign_id=None, consumed_at=None)
+    unbound["consumed_alpha"] = 0.0
     with pytest.raises(ValueError, match="atomically bound"):
-        validate_inputs(value, load(PROTOCOL_PATH), load(LEDGER_PATH), load(FREEZE_PATH))
+        validate_inputs(value, load(PROTOCOL_PATH), unbound, load(FREEZE_PATH))
 
 
 def test_complete_endpoint_fails_closed_on_missing_component():

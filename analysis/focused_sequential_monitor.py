@@ -92,6 +92,8 @@ def validate_inputs(
         raise ValueError("focused alpha must be atomically bound before outcomes")
     if not rows and allocation.get("status") not in {"AVAILABLE", "CONSUMED"}:
         raise ValueError("unknown focused allocation status")
+    if not rows and allocation.get("status") == "CONSUMED" and allocation.get("campaign_id") != payload["campaign_id"]:
+        raise ValueError("focused alpha is bound to another campaign")
 
     ids: set[str] = set()
     configurations: set[str] = set()
