@@ -49,7 +49,10 @@ failure claim. Fixed run 6/6, `mccv2-dev-006`, is a valid mixed-evidence negativ
 a supported 0.260 versus 0.000 m/s discrepancy over 9--19 s, but the incomplete retained grid
 showed no blocked direct-route cell and all three delivered plans remained on the requested line.
 The intended geometry predicate was not established and is withheld. All six fixed attempts are
-now retained; no response or Luna call has been made.
+now retained. Both predeclared paired masks are also governed: without run 1's costmap cells,
+route change remains answerable but the physical trigger is unresolved; without run 3's odometry,
+the execution sequence remains answerable but command--motion diagnosis is insufficient. These
+masks add zero independent clusters. No response or Luna call has been made.
 
 ## Readiness
 

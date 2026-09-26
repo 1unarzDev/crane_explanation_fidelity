@@ -1,0 +1,33 @@
+{
+  "schema": "crane-measurement-complete-v2-mask-disposition/v1",
+  "recorded_utc_date": "2026-09-26",
+  "variant_id": "mccv2-dev-001-mask-no-costmap-cells",
+  "source_run_id": "mccv2-dev-001",
+  "cluster_id": "mccv2-land-001",
+  "status": "VALID_PAIRED_MASK_PHYSICAL_TRIGGER_UNRESOLVED",
+  "predeclaration": "research/explanation_fidelity/experiment_configs/development/measurement-complete-composition-v2-physical-screen-v1.json",
+  "mask": {
+    "operation": "remove retained costmap cell payload while preserving metadata and hashes",
+    "mask_id": "withhold-costmap-cell-payload-v1",
+    "removed_json_pointers": ["/latestCostmapSnapshot/data"],
+    "paired_source_available_to_methods": false,
+    "independent_scenario_increment": 0
+  },
+  "reference": {
+    "route_change_and_substantial_deviation_answerable": true,
+    "direct_route_restriction_answerable": false,
+    "retained_grid_connection_answerable": false,
+    "global_physical_no_path_supported": false,
+    "unique_physical_obstacle_supported": false,
+    "required_interpretation": "The route change, deviation, and eventual success remain supported, but the physical trigger cannot be classified without costmap cells."
+  },
+  "hashes": {
+    "masked_fixture_sha256": "9e58e995439aaa046bb2d481f9cc78a377fffb1ecd0430d8ee3baef3cadc09ea",
+    "mask_manifest_sha256": "f07e5f34d3a7dcb63dfda16f6119e00e383cffa766519b8d34462840268f6c79",
+    "geometric_independent_reference_sha256": "71020d95e9fa55afbff7eca4d651dd268eaf143fa093ca7a3bcc4493f18fc65f",
+    "plan_geometry_independent_reference_sha256": "a268518facf187ea01b9efcca7f3666473514b6fd764eec95fde05d07e1a5944",
+    "robot_visible_diagnostic_sha256": "68cf5c56712cade48845088175bfa496b5a6bbdeeff2653907c45a163bc24a1d",
+    "robot_visible_manifest_sha256": "ecb35150bf8e00f382a9599ec6edf380251a79f80e5fce28f4cf8956edf711e9",
+    "evaluator_only_manifest_sha256": "edbad84a4db680907e17ac3cba78694da285ceac4a45e87132358bf198f9f942"
+  }
+}

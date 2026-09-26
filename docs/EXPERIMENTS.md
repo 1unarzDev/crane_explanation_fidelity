@@ -6275,3 +6275,20 @@
 - **GOVERNANCE:** raw and derived robot-visible/evaluator-only artifacts were separately
   hash-manifested and DVC-pushed. Language generation remains unauthorized until masks, independent
   references, treatment hashes, information parity, and annotation packets are separately frozen.
+
+### Fixed paired masks — `mccv2-dev-001` and `mccv2-dev-003`
+
+- **STATUS:** `IMPLEMENTED / INDEPENDENTLY_REFERENCED / GOVERNED`; independent development clusters
+  +0, confirmatory clusters +0, model/Luna calls 0.
+- **GEOMETRY MASK:** removing only the retained costmap cell payload preserves metadata, hashes,
+  three distinct delivered plans, substantial route deviation, and success. The masked reference
+  makes direct-route restriction and retained-grid connectivity unanswerable, so the physical
+  trigger must remain unresolved.
+- **COMMAND--MOTION MASK:** removing delivered odometry preserves command samples and the execution
+  sequence but makes a time-aligned command--motion comparison insufficient. The action's three
+  FollowPath attempts, two failures, and two source-qualified Wait invocations remain answerable.
+- **BOUNDARY:** neither paired unmasked record is available to a method scoring its masked variant.
+  Both variants retain their source scenario cluster IDs and cannot inflate independent N.
+- **GOVERNANCE:** masked robot-visible outputs and evaluator-only construction/reference artifacts
+  are hash-manifested and DVC-pushed. Response generation remains unauthorized pending an exact
+  treatment/evidence-parity and annotation predeclaration.

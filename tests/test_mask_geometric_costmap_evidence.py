@@ -33,3 +33,13 @@ def test_mask_rejects_already_missing_cells():
         assert "absent" in str(error)
     else:
         raise AssertionError("missing costmap cells were accepted")
+
+
+def test_governed_partition_recognizes_both_visibility_roots():
+    assert MODULE.governed_partition(
+        (MODULE.ROOT / "data/robot_visible/dev/example.json").resolve()
+    ) == "robot_visible"
+    assert MODULE.governed_partition(
+        (MODULE.ROOT / "data/evaluator_only/dev/example.json").resolve()
+    ) == "evaluator_only"
+    assert MODULE.governed_partition((MODULE.ROOT / "docs/example.json").resolve()) is None

@@ -17,6 +17,15 @@ def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def governed_partition(path: Path) -> str | None:
+    """Return the governed visibility partition containing *path*, if any."""
+    for name in ("robot_visible", "evaluator_only"):
+        root = (ROOT / "data" / name).resolve(strict=True)
+        if root in path.parents:
+            return name
+    return None
+
+
 def mask_costmap_cells(payload: dict[str, Any]) -> tuple[dict[str, Any], list[str]]:
     masked = json.loads(json.dumps(payload))
     snapshot = masked.get("latestCostmapSnapshot")
@@ -37,9 +46,16 @@ def main() -> int:
     source = (ROOT / args.input).resolve(strict=True)
     output = (ROOT / args.output).resolve()
     manifest = (ROOT / args.manifest).resolve()
-    robot_root = (ROOT / "data" / "robot_visible").resolve(strict=True)
-    if robot_root not in source.parents or robot_root not in output.parents:
-        parser.error("input and output must both be under data/robot_visible/")
+    source_partition = governed_partition(source)
+    output_partition = governed_partition(output)
+    manifest_partition = governed_partition(manifest)
+    if source_partition is None or not (
+        source_partition == output_partition == manifest_partition
+    ):
+        parser.error(
+            "input, output, and manifest must remain in the same governed "
+            "data/robot_visible or data/evaluator_only partition"
+        )
     if output.exists() or manifest.exists():
         raise SystemExit("refusing to overwrite an existing masked fixture or manifest")
 
@@ -51,9 +67,13 @@ def main() -> int:
     manifest.write_text(
         json.dumps(
             {
-                "schema": "crane-robot-visible-evidence-mask/v1",
+                "schema": (
+                    "crane-robot-visible-evidence-mask/v1"
+                    if source_partition == "robot_visible"
+                    else "crane-evaluator-only-evidence-mask/v1"
+                ),
                 "mask_id": args.mask_id,
-                "visibility": "robot_visible",
+                "visibility": source_partition,
                 "source": source.relative_to(ROOT).as_posix(),
                 "source_sha256": sha256(source),
                 "output": output.relative_to(ROOT).as_posix(),
@@ -61,6 +81,8 @@ def main() -> int:
                 "removed_json_pointers": removed,
                 "purpose": "Test qualification when decisive costmap cell values are unavailable.",
                 "evaluator_truth_available_to_methods": False,
+                "paired_source_available_to_methods": False,
+                "independent_scenario_increment": 0,
             },
             indent=2,
             sort_keys=True,

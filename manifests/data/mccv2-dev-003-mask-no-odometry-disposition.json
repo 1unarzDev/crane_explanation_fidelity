@@ -1,0 +1,28 @@
+{
+  "schema": "crane-measurement-complete-v2-mask-disposition/v1",
+  "recorded_utc_date": "2026-09-26",
+  "variant_id": "mccv2-dev-003-mask-no-odometry",
+  "source_run_id": "mccv2-dev-003",
+  "cluster_id": "mccv2-land-003",
+  "status": "VALID_PAIRED_MASK_COMMAND_MOTION_INSUFFICIENT",
+  "predeclaration": "research/explanation_fidelity/experiment_configs/development/measurement-complete-composition-v2-physical-screen-v1.json",
+  "mask": {
+    "operation": "remove delivered odometry samples while preserving the governed unmasked record",
+    "mask_id": "missing-independent-odometry-samples-v1",
+    "withheld": ["independently delivered odometry samples"],
+    "paired_source_available_to_methods": false,
+    "independent_scenario_increment": 0
+  },
+  "reference": {
+    "command_motion_discrepancy": "insufficient",
+    "recorded_execution_sequence": "answerable",
+    "unique_physical_cause": "insufficient",
+    "required_interpretation": "The missing odometry prevents a time-aligned command-to-motion comparison; the retained execution sequence remains reportable but does not establish the mechanism."
+  },
+  "hashes": {
+    "robot_visible_diagnostic_sha256": "f9b39387916fc67181e3d98430faf6284ebd3faf37e9afd97a232fdca9eb8baf",
+    "independent_reference_sha256": "fa00c27f8f7f266fb2ffc4c2652c87b32883067b944f973ab54427724b3da0df",
+    "robot_visible_manifest_sha256": "f2f6d46e7f439ace9de75a7b9199e039ad8c56b564bc52bf136ece0dd1f0a9fe",
+    "evaluator_only_manifest_sha256": "76a5b6a046b756a6c03f4c1bb147782f1585054be94e6b0bb9edd84f06a97c53"
+  }
+}
