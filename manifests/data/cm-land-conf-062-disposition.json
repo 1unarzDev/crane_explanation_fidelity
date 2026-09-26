@@ -1,0 +1,103 @@
+{
+  "schema": "crane-land-command-motion-physical-run-disposition/v1",
+  "recorded_date": "2026-09-26",
+  "run_id": "cm-land-conf-062",
+  "cluster_id": "cm-land-conf-cluster-062",
+  "status": "VALID_FOCUSED_PHYSICAL_INDEPENDENT_PRIMARY_PERSISTENT_DISCREPANCY_UNEXPECTED_ABORT_RESPONSE_UNOPENED",
+  "attempt_count": 1,
+  "retry_or_replacement_performed": false,
+  "contract": {
+    "focused_protocol": "research/explanation_fidelity/experiment_configs/prospective/focused-supported-diagnostic-communication-v1.json",
+    "focused_schedule": "research/explanation_fidelity/experiment_configs/prospective/focused-supported-diagnostic-communication-v1-schedule.json",
+    "source_physical_schedule": "research/explanation_fidelity/experiment_configs/prospective/land-command-motion-physical-schedule-v1.json",
+    "source_schedule_sha256": "1f844ad45fa2e5cefb9edcfc5f3420a5a18aff32abda81ec72b7876ce376f215",
+    "coordinator_amendment": "research/explanation_fidelity/experiment_configs/prospective/focused-supported-diagnostic-communication-v1-coordinator-amendment-2.json",
+    "fixed_order": 62
+  },
+  "scheduled_configuration": {
+    "family": "persistent-discrepancy",
+    "focused_family": "persistent_command_motion_discrepancy",
+    "geometry_mechanism": "nominal-clear-route",
+    "layout_id": "diagnostic-command-motion-confirmation-reserve-nominal-clear-route-042",
+    "layout_seed": 92041,
+    "mobility_hold_after_s": 18.0,
+    "mobility_release_after_s": -1.0,
+    "evidence_mask": "none",
+    "ros_domain_id": 206,
+    "ros_tcp_port": 12406
+  },
+  "admission": {
+    "player_build_audit_accepted": true,
+    "scenario_binding_audit_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "unity_worker_result_valid": true,
+    "unity_logged_errors": 0,
+    "unity_logged_exceptions": 0,
+    "recording_valid_under_frozen_worker_result_gate": true,
+    "unexpected_navigation_outcome_retained": true,
+    "independent_reference_complete": true,
+    "focused_registry_exact_reference_dry_run_passed": true
+  },
+  "observed": {
+    "navigation_status": "aborted",
+    "action_wall_seconds": 44.70965020300355,
+    "displacement_meters": 2.7520198822021484,
+    "controller_commands": 410,
+    "odometry_messages": 2234,
+    "costmap_observations": 104,
+    "behavior_tree_transitions": 39,
+    "follow_path_attempts": 3,
+    "follow_path_failures": 2,
+    "observed_recovery_invocation_starts": 2,
+    "maximum_recovery_feedback": 2,
+    "behavior_tree_history_status": "not_proven",
+    "exact_recovery_count_eligible": false
+  },
+  "method_visible_reference": {
+    "independent_cluster_increment": 1,
+    "primary_endpoint_eligible": true,
+    "disposition": "supported",
+    "healthy_interval_s": [0.0, 5.0],
+    "healthy_commanded_planar_speed_mps": 0.26,
+    "healthy_measured_planar_speed_mps": 0.2597399950027466,
+    "discrepancy_interval_s": [11.0, 22.0],
+    "discrepancy_commanded_planar_speed_mps": 0.26,
+    "discrepancy_measured_planar_speed_mps": 0.0,
+    "response_ratio": 0.0,
+    "response_recovery_interval_s": null,
+    "command_samples": 418,
+    "odometry_samples": 2049,
+    "source_qualified_wait_recovery_count": 2,
+    "unique_physical_cause_supported": false,
+    "bounded_conclusion": "The robot-visible streams support a persistent delivered-command/measured-motion discrepancy followed by an abort. They do not identify actuator acceptance, exact Nav2 odometry consumption, the evaluator intervention, or a unique obstruction, collision, slip, actuator, or other physical cause."
+  },
+  "hashes": {
+    "player_build_audit_sha256": "ee0b3388eab6339de5000aaf0201bb07d9d63bc3b349ed1e49ba3d3ddf2fc005",
+    "scenario_binding_audit_sha256": "82eb32211fa27bf164c6c556805f184038d00fb9b2eb420338cf81a8265a59da",
+    "fixture_summary_sha256": "9138bb2e421f1dc1a5430b605a6319e9fea0d4490b0096d8d97ebc33af793aaa",
+    "unity_worker_result_sha256": "09fed7c3d9d5cb86c873d7e61c97a3fc940b99302c75e3b607b4f38a025c1ac3",
+    "robot_visible_events_sha256": "a871a9b5afbfce90c3c7ec2b3d72272378c52dcb6a90bfc803d23c3cf0ad0e8e",
+    "diagnostic_sha256": "c18fcd5e07d81c98a8f4c0c9edfdfa11ca18d68a360c21cf1dcc97a3bbb6baa3",
+    "independent_reference_sha256": "d19e533bd26bfb858abb94f69bdf586e160e3a45f67bcfa0dd19e6894e5c550e",
+    "robot_visible_manifest_sha256": "4b73584f3fdbcaaa910b056e635d176e684ef7ab88ec58fcca2d25d9a52cee01",
+    "evaluator_only_manifest_sha256": "44cf0e2477b04da00a5ed35b096619b1bf51c2d138f0d8f59d20460a24768e9e"
+  },
+  "semantic_boundary": {
+    "P_responses": 0,
+    "R_responses": 0,
+    "Luna_calls": 0,
+    "semantic_labels": 0,
+    "effect_estimate": null,
+    "confidence_sequence": null,
+    "program_alpha_consumed": 0.02,
+    "alpha_consumption_reason": "prospective campaign activation; no semantic response has been opened"
+  },
+  "focused_progress": {
+    "scheduled_attempts": 26,
+    "physical_configurations_collected": 25,
+    "invalid_recordings": 1,
+    "primary_diagnosable_references": 19,
+    "missing_ambiguous_or_nominal_controls": 6,
+    "next_fixed_run_id": "cm-land-conf-063"
+  }
+}
