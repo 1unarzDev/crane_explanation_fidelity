@@ -1,5 +1,16 @@
 # Experiment Log
 
+## 2026-09-26 — focused valid physical run 26 / source order 63: `cm-land-conf-063`
+
+- **STATUS:** `VALID_FOCUSED_PHYSICAL_INDEPENDENT_PRIMARY_TRANSIENT_COMPENSATION_RESPONSE_UNOPENED`;
+  one attempt, no replacement, successful navigation, zero transport/Unity errors, all 14 binding
+  checks, and complete independent reference.
+- **REFERENCE:** 0.260 versus 0.000 m/s over 18--28 s was followed by measured response recovery to
+  0.24975 m/s (ratio 0.9615) over 30--31 s and eventual success. Two FollowPath failures and two
+  source-qualified Wait starts are retained.
+- **BOUNDARY:** event order does not prove recovery caused success or identify a unique physical
+  cause. Registry-exact v3 dry run passed; no P/R response or Luna label was opened. Run 064 is next.
+
 ## 2026-09-26 — focused valid physical run 25 / source order 62: `cm-land-conf-062`
 
 - **STATUS:** `VALID_FOCUSED_PHYSICAL_INDEPENDENT_PRIMARY_PERSISTENT_DISCREPANCY_UNEXPECTED_ABORT_RESPONSE_UNOPENED`;
