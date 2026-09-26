@@ -32,7 +32,7 @@ replaced or counted as diagnosable primary cases. A prospective coordinator amen
 registry-exact references for both outcomes and makes the v2 monitor end after all 64 scheduled
 configurations while using only independently supported cases for eligible N. The candidate,
 baseline, judge, endpoint, alpha, and registered looks are unchanged. P/R responses remain
-unopened. Prospective physical configurations collected are 17/64 after 18 fixed-order attempts.
+unopened. Prospective physical configurations collected are 18/64 after 19 fixed-order attempts.
 Source-order run 041 adds a
 ambiguity control: the unmasked reference supports a discrepancy, while the sole method-visible
 masked condition correctly cannot establish it. Source-order run 042 independently supports a
@@ -56,9 +56,11 @@ case followed by task success. Thus eleven valid configurations are primary-diag
 are missing/ambiguous controls. Source-order run 054 adds a valid nominal false-premise control:
 the action succeeded with healthy response, the discrepancy diagnostic did not trigger, and no
 recovery invocation was observed. It adds no primary N, bringing retained controls to six;
+source-order run 055 adds a sixth independent measured-response-recovery case followed by task
+success. Thus twelve valid configurations are primary-diagnosable and six are retained controls;
 primary semantic N, effect estimates, confidence sequences, significance, and replication results
 remain zero; program alpha consumption is 0.02 from prospective activation. The next fixed
-configuration is source-order `cm-land-conf-055`.
+configuration is source-order `cm-land-conf-056`.
 
 The 2026-09-26 semantic-activation audit found that the existing v12 packet runner scored only the
 atomic mechanism unit plus material-error absence, whereas this focused protocol requires all
