@@ -13,6 +13,20 @@
 - **NEXT:** continue the fixed physical source order at `cm-land-conf-047`. Do not inspect partial
   P/R comparisons while changing the method, judge, endpoint, sampler, or monitor.
 
+## 2026-09-26 — focused physical run 11 / source order 47: `cm-land-conf-047`
+
+- **STATUS:** `VALID_FOCUSED_PHYSICAL_INDEPENDENT_PRIMARY_RESPONSE_RECOVERY_EVENTUAL_ABORT_RESPONSE_UNOPENED`;
+  one attempt and no replacement. The generic expected-success check failed, but source/build,
+  zero-error Unity execution, all 14 binding checks, and independent-reference gates passed.
+- **REFERENCE:** independent computation supports 0.260 m/s delivered command versus 0.000 m/s
+  measured response over 18--28 s after a healthy 0.2597 m/s response. Response recovered to
+  0.24975 m/s (ratio 0.9615) over 30--31 s, yet navigation eventually aborted after two FollowPath
+  failures and two source-qualified Wait starts.
+- **BOUNDARY:** event ordering does not establish that recovery caused the eventual outcome and
+  does not identify actuator acceptance, Nav2 odometry consumption, the hidden intervention, or a
+  unique physical cause. Responses remain unopened; alpha 0.02 is already bound from activation;
+  source-order run `cm-land-conf-048` is next.
+
 ## 2026-09-26 — focused packet closure passed; run 042 semantic eligibility corrected
 
 - **PACKET:** a no-model dry run built a complete independent reference and two blinded synthetic

@@ -47,6 +47,7 @@ SEVENTH_RUN = ROOT / "manifests/data/cm-land-conf-043-disposition.json"
 EIGHTH_RUN = ROOT / "manifests/data/cm-land-conf-044-disposition.json"
 NINTH_RUN = ROOT / "manifests/data/cm-land-conf-045-disposition.json"
 TENTH_RUN = ROOT / "manifests/data/cm-land-conf-046-disposition.json"
+ELEVENTH_RUN = ROOT / "manifests/data/cm-land-conf-047-disposition.json"
 
 
 def load(path: Path) -> dict:
@@ -323,3 +324,22 @@ def test_second_connected_detour_persistent_run_is_independent_and_bounded():
     assert reference["unique_physical_cause_supported"] is False
     assert run["semantic_boundary"]["confirmatory_alpha_consumed"] == 0.0
     assert run["focused_progress"]["next_fixed_run_id"] == "cm-land-conf-047"
+
+
+def test_response_recovery_then_abort_remains_primary_and_causally_bounded():
+    run = load(ELEVENTH_RUN)
+    reference = run["method_visible_reference"]
+
+    assert run["attempt_count"] == 1
+    assert run["retry_or_replacement_performed"] is False
+    assert run["observed"]["navigation_status"] == "aborted"
+    assert reference["primary_endpoint_eligible"] is True
+    assert reference["disposition"] == "supported"
+    assert reference["response_ratio"] == 0.0
+    assert 0.95 < reference["recovered_response_ratio"] < 1.0
+    assert reference["recovery_caused_outcome_supported"] is False
+    assert reference["unique_physical_cause_supported"] is False
+    assert run["semantic_boundary"]["P_responses"] == 0
+    assert run["semantic_boundary"]["R_responses"] == 0
+    assert run["semantic_boundary"]["program_alpha_consumed"] == 0.02
+    assert run["focused_progress"]["next_fixed_run_id"] == "cm-land-conf-048"
