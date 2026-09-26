@@ -1,0 +1,35 @@
+{
+  "schema": "crane-development-annotation-amendment/v1",
+  "amendment_id": "raw-baseline-v5-language-screen-v1-annotation-amendment-1",
+  "declared_utc": "2026-09-26T17:15:00Z",
+  "status": "RECORDED_AFTER_FIRST_LUNA_ARM_BEFORE_REVISED_CALLS",
+  "screen": "raw-baseline-v5-language-screen-v1",
+  "affected_arm": "luna-raw-baseline-v5-language-screen-v1",
+  "discovery": "The first v5 judge packet included independent endpoint computations and compact raw-evidence provenance/inventories, but omitted raw command/odometry samples, plan and trajectory samples, costmap cells, and some exact event locators that R was permitted to inspect. Luna consequently labeled several potentially checkable R details unsupported.",
+  "disposition": {
+    "responses_changed": false,
+    "required_units_changed": false,
+    "prohibited_claims_changed": false,
+    "judgments_retained": true,
+    "comparative_material_error_estimates_valid_for_promotion": false,
+    "candidate_promotion_allowed": false,
+    "confirmatory_semantic_n": 0,
+    "confirmatory_alpha_consumed": 0.0
+  },
+  "prospective_correction": {
+    "principle": "Construct a response-independent deterministic closure of raw evidence sufficient to verify facts exposed by the permitted tools and repositories, or mark claims outside that closure unresolved rather than unsupported.",
+    "full_raw_payload_in_prompt": false,
+    "reason_full_payload_not_embedded": "The costmap, path, trajectory, command, and odometry payloads are too large for a bounded model-judge prompt.",
+    "required_content": [
+      "complete command and odometry census, extrema, value frequencies, record locators, intervals, and independently recomputed windows",
+      "complete plan metadata and independently verified summaries",
+      "trajectory extrema and their sample times plus declared aggregate geometry",
+      "ordered BT transitions and recovery classifications",
+      "systematic direct-route costmap threshold crossings, coverage bounds, and connectivity results",
+      "action, pose, timing, source, configuration, and provenance facts",
+      "an explicit judge rule that omitted raw content is an evidence_problem or unresolved field, not proof that a candidate claim is false"
+    ],
+    "selection_rule": "The closure schema is fixed by raw field types and declared diagnostic tools, not by condition identity or which method benefits.",
+    "next_gate": "Hash-freeze corrected references, packets, condition keys, exact unchanged responses, and Luna release before any revised calls. The revised arm remains development-only and adds zero independent clusters."
+  }
+}

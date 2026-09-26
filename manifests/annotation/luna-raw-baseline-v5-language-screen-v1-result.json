@@ -1,0 +1,1173 @@
+{
+  "candidate_ready_for_prospective_freeze": false,
+  "condition_metrics": {
+    "P": {
+      "causal_overclaims": 0,
+      "evidence_problems": 0,
+      "judge_unresolved_fields": 0,
+      "judgments": 14,
+      "material_error_rate": 0.0,
+      "material_errors": 0,
+      "required_unit_coverage": 1.0,
+      "required_units_covered": 104,
+      "required_units_total": 104
+    },
+    "R": {
+      "causal_overclaims": 1,
+      "evidence_problems": 0,
+      "judge_unresolved_fields": 0,
+      "judgments": 14,
+      "material_error_rate": 0.7857142857142857,
+      "material_errors": 11,
+      "required_unit_coverage": 0.9038461538461539,
+      "required_units_covered": 94,
+      "required_units_total": 104
+    }
+  },
+  "confirmatory_alpha_consumed": 0.0,
+  "confirmatory_semantic_n": 0,
+  "consensus_p_advantage_clusters": [
+    {
+      "P": true,
+      "P_pass_values": [
+        true,
+        true
+      ],
+      "R": false,
+      "R_pass_values": [
+        false,
+        false
+      ],
+      "case_id": "ccv5-geometry-001",
+      "cluster_id": "mccv4-land-001",
+      "family": "bounded_geometric_restriction",
+      "mechanism_unit_id": "mechanism-bounded-geometric-restriction"
+    },
+    {
+      "P": true,
+      "P_pass_values": [
+        true,
+        true
+      ],
+      "R": false,
+      "R_pass_values": [
+        false,
+        false
+      ],
+      "case_id": "ccv5-geometry-002",
+      "cluster_id": "mccv4-land-002",
+      "family": "bounded_geometric_restriction",
+      "mechanism_unit_id": "mechanism-bounded-geometric-restriction"
+    },
+    {
+      "P": true,
+      "P_pass_values": [
+        true,
+        true
+      ],
+      "R": false,
+      "R_pass_values": [
+        false,
+        false
+      ],
+      "case_id": "ccv5-geometry-003",
+      "cluster_id": "mccv4-land-003",
+      "family": "visible_obstacle_consumption_guardrail",
+      "mechanism_unit_id": "mechanism-bounded-geometric-restriction"
+    }
+  ],
+  "interpretation": "The candidate failed at least one frozen development gate. In this arm Luna received independent endpoint computations and a compact raw-evidence binding, but not every raw observation R was permitted to inspect. Claims that Luna called unsupported may be independently checkable from omitted raw samples or cells. Retain the judgments, repair judge evidence parity prospectively, and do not activate confirmation or claim a diagnostic advantage from this result.",
+  "judgments": [
+    {
+      "call_sha256": "84d5bfbe7b12f954007a0a6aca41005082b756499a5c5ae8ff8236fecaf34228",
+      "case_id": "ccv5-geometry-001",
+      "causal_overclaim": false,
+      "cluster_id": "mccv4-land-001",
+      "condition": "P",
+      "correct_abstention": true,
+      "evidence_problem": false,
+      "family": "bounded_geometric_restriction",
+      "independent_cluster": true,
+      "material_error": false,
+      "material_error_categories": [],
+      "mechanism_unit_id": "mechanism-bounded-geometric-restriction",
+      "pass_id": "pass-1",
+      "primary_endpoint_eligible": true,
+      "required_units_covered": 8,
+      "required_units_total": 8,
+      "response_id": "0c430b3a97f999188459b6a1",
+      "supported_diagnostic_success": true,
+      "uncovered_units": [],
+      "unit_status": {
+        "causation-limit": "covered",
+        "identity-limit": "covered",
+        "mechanism-bounded-geometric-restriction": "covered",
+        "model-scope-limit": "covered",
+        "outcome": "covered",
+        "plan-range": "covered",
+        "route-change": "covered",
+        "trajectory-deviation": "covered"
+      },
+      "unresolved_fields": []
+    },
+    {
+      "call_sha256": "5c33d4903bc088c53af37f192265a769b640e139f783d783f1181b812d6a712a",
+      "case_id": "ccv5-geometry-001",
+      "causal_overclaim": false,
+      "cluster_id": "mccv4-land-001",
+      "condition": "R",
+      "correct_abstention": true,
+      "evidence_problem": false,
+      "family": "bounded_geometric_restriction",
+      "independent_cluster": true,
+      "material_error": true,
+      "material_error_categories": [
+        "unsupported_fact"
+      ],
+      "mechanism_unit_id": "mechanism-bounded-geometric-restriction",
+      "pass_id": "pass-1",
+      "primary_endpoint_eligible": true,
+      "required_units_covered": 8,
+      "required_units_total": 8,
+      "response_id": "aba4f0a7cc4cb05758713ea7",
+      "supported_diagnostic_success": false,
+      "uncovered_units": [],
+      "unit_status": {
+        "causation-limit": "covered",
+        "identity-limit": "covered",
+        "mechanism-bounded-geometric-restriction": "covered",
+        "model-scope-limit": "covered",
+        "outcome": "covered",
+        "plan-range": "covered",
+        "route-change": "covered",
+        "trajectory-deviation": "covered"
+      },
+      "unresolved_fields": []
+    },
+    {
+      "call_sha256": "e1a712cffb33651bbe5b0320129fe5463aabf23163dd6863d768b6bd30680102",
+      "case_id": "ccv5-geometry-001",
+      "causal_overclaim": false,
+      "cluster_id": "mccv4-land-001",
+      "condition": "P",
+      "correct_abstention": true,
+      "evidence_problem": false,
+      "family": "bounded_geometric_restriction",
+      "independent_cluster": true,
+      "material_error": false,
+      "material_error_categories": [],
+      "mechanism_unit_id": "mechanism-bounded-geometric-restriction",
+      "pass_id": "pass-2",
+      "primary_endpoint_eligible": true,
+      "required_units_covered": 8,
+      "required_units_total": 8,
+      "response_id": "0c430b3a97f999188459b6a1",
+      "supported_diagnostic_success": true,
+      "uncovered_units": [],
+      "unit_status": {
+        "causation-limit": "covered",
+        "identity-limit": "covered",
+        "mechanism-bounded-geometric-restriction": "covered",
+        "model-scope-limit": "covered",
+        "outcome": "covered",
+        "plan-range": "covered",
+        "route-change": "covered",
+        "trajectory-deviation": "covered"
+      },
+      "unresolved_fields": []
+    },
+    {
+      "call_sha256": "b3a56855ef2631087a07d10872577d415d2d078b117c8562dd0d5f036f543e1a",
+      "case_id": "ccv5-geometry-001",
+      "causal_overclaim": false,
+      "cluster_id": "mccv4-land-001",
+      "condition": "R",
+      "correct_abstention": true,
+      "evidence_problem": false,
+      "family": "bounded_geometric_restriction",
+      "independent_cluster": true,
+      "material_error": true,
+      "material_error_categories": [
+        "incorrect_measurement",
+        "unsupported_fact"
+      ],
+      "mechanism_unit_id": "mechanism-bounded-geometric-restriction",
+      "pass_id": "pass-2",
+      "primary_endpoint_eligible": true,
+      "required_units_covered": 8,
+      "required_units_total": 8,
+      "response_id": "aba4f0a7cc4cb05758713ea7",
+      "supported_diagnostic_success": false,
+      "uncovered_units": [],
+      "unit_status": {
+        "causation-limit": "covered",
+        "identity-limit": "covered",
+        "mechanism-bounded-geometric-restriction": "covered",
+        "model-scope-limit": "covered",
+        "outcome": "covered",
+        "plan-range": "covered",
+        "route-change": "covered",
+        "trajectory-deviation": "covered"
+      },
+      "unresolved_fields": []
+    },
+    {
+      "call_sha256": "f74ef1ca65d7917a2245213232cea46099a0daa7ada62451308c991784f99ce1",
+      "case_id": "ccv5-geometry-masked-001m",
+      "causal_overclaim": false,
+      "cluster_id": "mccv4-land-001",
+      "condition": "P",
+      "correct_abstention": true,
+      "evidence_problem": false,
+      "family": "missing_decisive_geometry",
+      "independent_cluster": false,
+      "material_error": false,
+      "material_error_categories": [],
+      "mechanism_unit_id": null,
+      "pass_id": "pass-1",
+      "primary_endpoint_eligible": false,
+      "required_units_covered": 7,
+      "required_units_total": 7,
+      "response_id": "9946ed2c037ef419f5908c68",
+      "supported_diagnostic_success": null,
+      "uncovered_units": [],
+      "unit_status": {
+        "causation-limit": "covered",
+        "missing-discriminator": "covered",
+        "outcome": "covered",
+        "plan-range": "covered",
+        "route-change": "covered",
+        "trajectory-deviation": "covered",
+        "trigger-limit": "covered"
+      },
+      "unresolved_fields": []
+    },
+    {
+      "call_sha256": "1e61935d1cea270b0bd725ac3fe94fd111cc9f71bc6e8474c088b51607f6cb88",
+      "case_id": "ccv5-geometry-masked-001m",
+      "causal_overclaim": false,
+      "cluster_id": "mccv4-land-001",
+      "condition": "R",
+      "correct_abstention": true,
+      "evidence_problem": false,
+      "family": "missing_decisive_geometry",
+      "independent_cluster": false,
+      "material_error": true,
+      "material_error_categories": [
+        "incorrect_measurement"
+      ],
+      "mechanism_unit_id": null,
+      "pass_id": "pass-1",
+      "primary_endpoint_eligible": false,
+      "required_units_covered": 6,
+      "required_units_total": 7,
+      "response_id": "d426add0dd7557b0678c8aa0",
+      "supported_diagnostic_success": null,
+      "uncovered_units": [
+        {
+          "status": "omitted",
+          "unit_id": "missing-discriminator"
+        }
+      ],
+      "unit_status": {
+        "causation-limit": "covered",
+        "missing-discriminator": "omitted",
+        "outcome": "covered",
+        "plan-range": "covered",
+        "route-change": "covered",
+        "trajectory-deviation": "covered",
+        "trigger-limit": "covered"
+      },
+      "unresolved_fields": []
+    },
+    {
+      "call_sha256": "b8cf04b8782fdf64330518e152fb27daa3d13b17a9c5ede03dd4a7e6cc5d0778",
+      "case_id": "ccv5-geometry-masked-001m",
+      "causal_overclaim": false,
+      "cluster_id": "mccv4-land-001",
+      "condition": "P",
+      "correct_abstention": true,
+      "evidence_problem": false,
+      "family": "missing_decisive_geometry",
+      "independent_cluster": false,
+      "material_error": false,
+      "material_error_categories": [],
+      "mechanism_unit_id": null,
+      "pass_id": "pass-2",
+      "primary_endpoint_eligible": false,
+      "required_units_covered": 7,
+      "required_units_total": 7,
+      "response_id": "9946ed2c037ef419f5908c68",
+      "supported_diagnostic_success": null,
+      "uncovered_units": [],
+      "unit_status": {
+        "causation-limit": "covered",
+        "missing-discriminator": "covered",
+        "outcome": "covered",
+        "plan-range": "covered",
+        "route-change": "covered",
+        "trajectory-deviation": "covered",
+        "trigger-limit": "covered"
+      },
+      "unresolved_fields": []
+    },
+    {
+      "call_sha256": "05c02bcb292e69a4a15dd6ff3292a179964eb5d52e5314c2b7705483c302044e",
+      "case_id": "ccv5-geometry-masked-001m",
+      "causal_overclaim": false,
+      "cluster_id": "mccv4-land-001",
+      "condition": "R",
+      "correct_abstention": true,
+      "evidence_problem": false,
+      "family": "missing_decisive_geometry",
+      "independent_cluster": false,
+      "material_error": true,
+      "material_error_categories": [
+        "unsupported_fact",
+        "incorrect_measurement"
+      ],
+      "mechanism_unit_id": null,
+      "pass_id": "pass-2",
+      "primary_endpoint_eligible": false,
+      "required_units_covered": 5,
+      "required_units_total": 7,
+      "response_id": "d426add0dd7557b0678c8aa0",
+      "supported_diagnostic_success": null,
+      "uncovered_units": [
+        {
+          "status": "omitted",
+          "unit_id": "missing-discriminator"
+        },
+        {
+          "status": "omitted",
+          "unit_id": "causation-limit"
+        }
+      ],
+      "unit_status": {
+        "causation-limit": "omitted",
+        "missing-discriminator": "omitted",
+        "outcome": "covered",
+        "plan-range": "covered",
+        "route-change": "covered",
+        "trajectory-deviation": "covered",
+        "trigger-limit": "covered"
+      },
+      "unresolved_fields": []
+    },
+    {
+      "call_sha256": "2f1e44ff18f1fefbe6d0b107f64ab69e089d8047935c0ea90e032f887ce0d3da",
+      "case_id": "ccv5-geometry-002",
+      "causal_overclaim": false,
+      "cluster_id": "mccv4-land-002",
+      "condition": "P",
+      "correct_abstention": true,
+      "evidence_problem": false,
+      "family": "bounded_geometric_restriction",
+      "independent_cluster": true,
+      "material_error": false,
+      "material_error_categories": [],
+      "mechanism_unit_id": "mechanism-bounded-geometric-restriction",
+      "pass_id": "pass-1",
+      "primary_endpoint_eligible": true,
+      "required_units_covered": 8,
+      "required_units_total": 8,
+      "response_id": "1ed16ec5154b5904ee254d2e",
+      "supported_diagnostic_success": true,
+      "uncovered_units": [],
+      "unit_status": {
+        "causation-limit": "covered",
+        "identity-limit": "covered",
+        "mechanism-bounded-geometric-restriction": "covered",
+        "model-scope-limit": "covered",
+        "outcome": "covered",
+        "plan-range": "covered",
+        "route-change": "covered",
+        "trajectory-deviation": "covered"
+      },
+      "unresolved_fields": []
+    },
+    {
+      "call_sha256": "c38b3670c4289e7d8b8ec019a0978df64f28f71ce7598533425e40287dc8bfbb",
+      "case_id": "ccv5-geometry-002",
+      "causal_overclaim": false,
+      "cluster_id": "mccv4-land-002",
+      "condition": "R",
+      "correct_abstention": true,
+      "evidence_problem": false,
+      "family": "bounded_geometric_restriction",
+      "independent_cluster": true,
+      "material_error": true,
+      "material_error_categories": [
+        "incorrect_measurement",
+        "unsupported_fact"
+      ],
+      "mechanism_unit_id": "mechanism-bounded-geometric-restriction",
+      "pass_id": "pass-1",
+      "primary_endpoint_eligible": true,
+      "required_units_covered": 7,
+      "required_units_total": 8,
+      "response_id": "b4ae6476276ad981e0b8e0d9",
+      "supported_diagnostic_success": false,
+      "uncovered_units": [
+        {
+          "status": "omitted",
+          "unit_id": "causation-limit"
+        }
+      ],
+      "unit_status": {
+        "causation-limit": "omitted",
+        "identity-limit": "covered",
+        "mechanism-bounded-geometric-restriction": "covered",
+        "model-scope-limit": "covered",
+        "outcome": "covered",
+        "plan-range": "covered",
+        "route-change": "covered",
+        "trajectory-deviation": "covered"
+      },
+      "unresolved_fields": []
+    },
+    {
+      "call_sha256": "373f8528235624b567ecefa538d3b7134b88cdb811c6fd6bca6d58af01a9afd6",
+      "case_id": "ccv5-geometry-002",
+      "causal_overclaim": false,
+      "cluster_id": "mccv4-land-002",
+      "condition": "P",
+      "correct_abstention": true,
+      "evidence_problem": false,
+      "family": "bounded_geometric_restriction",
+      "independent_cluster": true,
+      "material_error": false,
+      "material_error_categories": [],
+      "mechanism_unit_id": "mechanism-bounded-geometric-restriction",
+      "pass_id": "pass-2",
+      "primary_endpoint_eligible": true,
+      "required_units_covered": 8,
+      "required_units_total": 8,
+      "response_id": "1ed16ec5154b5904ee254d2e",
+      "supported_diagnostic_success": true,
+      "uncovered_units": [],
+      "unit_status": {
+        "causation-limit": "covered",
+        "identity-limit": "covered",
+        "mechanism-bounded-geometric-restriction": "covered",
+        "model-scope-limit": "covered",
+        "outcome": "covered",
+        "plan-range": "covered",
+        "route-change": "covered",
+        "trajectory-deviation": "covered"
+      },
+      "unresolved_fields": []
+    },
+    {
+      "call_sha256": "c028ceb51c99b9d4542ac3290cd16b1d79c28a155b2494034957c7765543f6e4",
+      "case_id": "ccv5-geometry-002",
+      "causal_overclaim": true,
+      "cluster_id": "mccv4-land-002",
+      "condition": "R",
+      "correct_abstention": false,
+      "evidence_problem": false,
+      "family": "bounded_geometric_restriction",
+      "independent_cluster": true,
+      "material_error": true,
+      "material_error_categories": [
+        "unsupported_causal_claim",
+        "unsupported_fact"
+      ],
+      "mechanism_unit_id": "mechanism-bounded-geometric-restriction",
+      "pass_id": "pass-2",
+      "primary_endpoint_eligible": true,
+      "required_units_covered": 7,
+      "required_units_total": 8,
+      "response_id": "b4ae6476276ad981e0b8e0d9",
+      "supported_diagnostic_success": false,
+      "uncovered_units": [
+        {
+          "status": "incorrect",
+          "unit_id": "identity-limit"
+        }
+      ],
+      "unit_status": {
+        "causation-limit": "covered",
+        "identity-limit": "incorrect",
+        "mechanism-bounded-geometric-restriction": "covered",
+        "model-scope-limit": "covered",
+        "outcome": "covered",
+        "plan-range": "covered",
+        "route-change": "covered",
+        "trajectory-deviation": "covered"
+      },
+      "unresolved_fields": []
+    },
+    {
+      "call_sha256": "6fc6859072fb47e4154618945eb7deb8479bd2e022cf811622db47b8489b458d",
+      "case_id": "ccv5-geometry-003",
+      "causal_overclaim": false,
+      "cluster_id": "mccv4-land-003",
+      "condition": "P",
+      "correct_abstention": true,
+      "evidence_problem": false,
+      "family": "visible_obstacle_consumption_guardrail",
+      "independent_cluster": true,
+      "material_error": false,
+      "material_error_categories": [],
+      "mechanism_unit_id": "mechanism-bounded-geometric-restriction",
+      "pass_id": "pass-1",
+      "primary_endpoint_eligible": true,
+      "required_units_covered": 8,
+      "required_units_total": 8,
+      "response_id": "39678676405f6de4c0d7a668",
+      "supported_diagnostic_success": true,
+      "uncovered_units": [],
+      "unit_status": {
+        "causation-limit": "covered",
+        "identity-limit": "covered",
+        "mechanism-bounded-geometric-restriction": "covered",
+        "model-scope-limit": "covered",
+        "outcome": "covered",
+        "plan-range": "covered",
+        "route-change": "covered",
+        "trajectory-deviation": "covered"
+      },
+      "unresolved_fields": []
+    },
+    {
+      "call_sha256": "ed5f06151dcd0627c316c36581fa63b6db5c36bac9df8749d42ff721169355c3",
+      "case_id": "ccv5-geometry-003",
+      "causal_overclaim": false,
+      "cluster_id": "mccv4-land-003",
+      "condition": "R",
+      "correct_abstention": true,
+      "evidence_problem": false,
+      "family": "visible_obstacle_consumption_guardrail",
+      "independent_cluster": true,
+      "material_error": true,
+      "material_error_categories": [
+        "unsupported_fact",
+        "incorrect_measurement"
+      ],
+      "mechanism_unit_id": "mechanism-bounded-geometric-restriction",
+      "pass_id": "pass-1",
+      "primary_endpoint_eligible": true,
+      "required_units_covered": 5,
+      "required_units_total": 8,
+      "response_id": "b568208314a1f2f9e5419374",
+      "supported_diagnostic_success": false,
+      "uncovered_units": [
+        {
+          "status": "incorrect",
+          "unit_id": "trajectory-deviation"
+        },
+        {
+          "status": "omitted",
+          "unit_id": "model-scope-limit"
+        },
+        {
+          "status": "omitted",
+          "unit_id": "causation-limit"
+        }
+      ],
+      "unit_status": {
+        "causation-limit": "omitted",
+        "identity-limit": "covered",
+        "mechanism-bounded-geometric-restriction": "covered",
+        "model-scope-limit": "omitted",
+        "outcome": "covered",
+        "plan-range": "covered",
+        "route-change": "covered",
+        "trajectory-deviation": "incorrect"
+      },
+      "unresolved_fields": []
+    },
+    {
+      "call_sha256": "2c18736913431b76478d902ab36ec700f0060f5e8c37ef948018bdd9125511ef",
+      "case_id": "ccv5-geometry-003",
+      "causal_overclaim": false,
+      "cluster_id": "mccv4-land-003",
+      "condition": "P",
+      "correct_abstention": true,
+      "evidence_problem": false,
+      "family": "visible_obstacle_consumption_guardrail",
+      "independent_cluster": true,
+      "material_error": false,
+      "material_error_categories": [],
+      "mechanism_unit_id": "mechanism-bounded-geometric-restriction",
+      "pass_id": "pass-2",
+      "primary_endpoint_eligible": true,
+      "required_units_covered": 8,
+      "required_units_total": 8,
+      "response_id": "39678676405f6de4c0d7a668",
+      "supported_diagnostic_success": true,
+      "uncovered_units": [],
+      "unit_status": {
+        "causation-limit": "covered",
+        "identity-limit": "covered",
+        "mechanism-bounded-geometric-restriction": "covered",
+        "model-scope-limit": "covered",
+        "outcome": "covered",
+        "plan-range": "covered",
+        "route-change": "covered",
+        "trajectory-deviation": "covered"
+      },
+      "unresolved_fields": []
+    },
+    {
+      "call_sha256": "57e1752ae15b370023cda57c57e2f3e41fd080655597cbcbf995d436fbb789c9",
+      "case_id": "ccv5-geometry-003",
+      "causal_overclaim": false,
+      "cluster_id": "mccv4-land-003",
+      "condition": "R",
+      "correct_abstention": true,
+      "evidence_problem": false,
+      "family": "visible_obstacle_consumption_guardrail",
+      "independent_cluster": true,
+      "material_error": true,
+      "material_error_categories": [
+        "unsupported_fact",
+        "incorrect_measurement",
+        "unsupported_mechanism_detail",
+        "incorrect_source_link"
+      ],
+      "mechanism_unit_id": "mechanism-bounded-geometric-restriction",
+      "pass_id": "pass-2",
+      "primary_endpoint_eligible": true,
+      "required_units_covered": 6,
+      "required_units_total": 8,
+      "response_id": "b568208314a1f2f9e5419374",
+      "supported_diagnostic_success": false,
+      "uncovered_units": [
+        {
+          "status": "incorrect",
+          "unit_id": "mechanism-bounded-geometric-restriction"
+        },
+        {
+          "status": "incorrect",
+          "unit_id": "trajectory-deviation"
+        }
+      ],
+      "unit_status": {
+        "causation-limit": "covered",
+        "identity-limit": "covered",
+        "mechanism-bounded-geometric-restriction": "incorrect",
+        "model-scope-limit": "covered",
+        "outcome": "covered",
+        "plan-range": "covered",
+        "route-change": "covered",
+        "trajectory-deviation": "incorrect"
+      },
+      "unresolved_fields": []
+    },
+    {
+      "call_sha256": "9097dfd2d2c4ef5c685f6433398883034bf53691fe18ad3404ad4ceaf0da566d",
+      "case_id": "ccv5-persistent-004",
+      "causal_overclaim": false,
+      "cluster_id": "mccv4-land-004",
+      "condition": "R",
+      "correct_abstention": true,
+      "evidence_problem": false,
+      "family": "persistent_command_motion_discrepancy",
+      "independent_cluster": true,
+      "material_error": false,
+      "material_error_categories": [],
+      "mechanism_unit_id": "mechanism-command-motion-discrepancy",
+      "pass_id": "pass-1",
+      "primary_endpoint_eligible": true,
+      "required_units_covered": 8,
+      "required_units_total": 8,
+      "response_id": "874c5e5e7036f3e780801650",
+      "supported_diagnostic_success": true,
+      "uncovered_units": [],
+      "unit_status": {
+        "cause-limit": "covered",
+        "discrepancy-comparison": "covered",
+        "execution": "covered",
+        "healthy-comparator": "covered",
+        "mechanism-command-motion-discrepancy": "covered",
+        "next-check": "covered",
+        "outcome": "covered",
+        "provenance-limit": "covered"
+      },
+      "unresolved_fields": []
+    },
+    {
+      "call_sha256": "cc6915e9497335fe4ed2eae7c66485785d7c3373e20e968826e2bf0eadcf7189",
+      "case_id": "ccv5-persistent-004",
+      "causal_overclaim": false,
+      "cluster_id": "mccv4-land-004",
+      "condition": "P",
+      "correct_abstention": true,
+      "evidence_problem": false,
+      "family": "persistent_command_motion_discrepancy",
+      "independent_cluster": true,
+      "material_error": false,
+      "material_error_categories": [],
+      "mechanism_unit_id": "mechanism-command-motion-discrepancy",
+      "pass_id": "pass-1",
+      "primary_endpoint_eligible": true,
+      "required_units_covered": 8,
+      "required_units_total": 8,
+      "response_id": "ea33e113b3031129be5d735b",
+      "supported_diagnostic_success": true,
+      "uncovered_units": [],
+      "unit_status": {
+        "cause-limit": "covered",
+        "discrepancy-comparison": "covered",
+        "execution": "covered",
+        "healthy-comparator": "covered",
+        "mechanism-command-motion-discrepancy": "covered",
+        "next-check": "covered",
+        "outcome": "covered",
+        "provenance-limit": "covered"
+      },
+      "unresolved_fields": []
+    },
+    {
+      "call_sha256": "6775a891de7e460d652864eff4e02439e327a34dbe05ff2be6098728ce09d356",
+      "case_id": "ccv5-persistent-004",
+      "causal_overclaim": false,
+      "cluster_id": "mccv4-land-004",
+      "condition": "R",
+      "correct_abstention": true,
+      "evidence_problem": false,
+      "family": "persistent_command_motion_discrepancy",
+      "independent_cluster": true,
+      "material_error": false,
+      "material_error_categories": [],
+      "mechanism_unit_id": "mechanism-command-motion-discrepancy",
+      "pass_id": "pass-2",
+      "primary_endpoint_eligible": true,
+      "required_units_covered": 8,
+      "required_units_total": 8,
+      "response_id": "874c5e5e7036f3e780801650",
+      "supported_diagnostic_success": true,
+      "uncovered_units": [],
+      "unit_status": {
+        "cause-limit": "covered",
+        "discrepancy-comparison": "covered",
+        "execution": "covered",
+        "healthy-comparator": "covered",
+        "mechanism-command-motion-discrepancy": "covered",
+        "next-check": "covered",
+        "outcome": "covered",
+        "provenance-limit": "covered"
+      },
+      "unresolved_fields": []
+    },
+    {
+      "call_sha256": "be68588b78042fcf3300f2f71e786ba7e5c798a54a2e80a44ad5d5f28094e2fb",
+      "case_id": "ccv5-persistent-004",
+      "causal_overclaim": false,
+      "cluster_id": "mccv4-land-004",
+      "condition": "P",
+      "correct_abstention": true,
+      "evidence_problem": false,
+      "family": "persistent_command_motion_discrepancy",
+      "independent_cluster": true,
+      "material_error": false,
+      "material_error_categories": [],
+      "mechanism_unit_id": "mechanism-command-motion-discrepancy",
+      "pass_id": "pass-2",
+      "primary_endpoint_eligible": true,
+      "required_units_covered": 8,
+      "required_units_total": 8,
+      "response_id": "ea33e113b3031129be5d735b",
+      "supported_diagnostic_success": true,
+      "uncovered_units": [],
+      "unit_status": {
+        "cause-limit": "covered",
+        "discrepancy-comparison": "covered",
+        "execution": "covered",
+        "healthy-comparator": "covered",
+        "mechanism-command-motion-discrepancy": "covered",
+        "next-check": "covered",
+        "outcome": "covered",
+        "provenance-limit": "covered"
+      },
+      "unresolved_fields": []
+    },
+    {
+      "call_sha256": "3d3ae05868ec08de331372068dad11d9fd517aa7c2b675f5912084eeedd9ad6d",
+      "case_id": "ccv5-missing-odometry-004m",
+      "causal_overclaim": false,
+      "cluster_id": "mccv4-land-004",
+      "condition": "R",
+      "correct_abstention": true,
+      "evidence_problem": false,
+      "family": "missing_decisive_motion",
+      "independent_cluster": false,
+      "material_error": true,
+      "material_error_categories": [
+        "incorrect_measurement"
+      ],
+      "mechanism_unit_id": null,
+      "pass_id": "pass-1",
+      "primary_endpoint_eligible": false,
+      "required_units_covered": 5,
+      "required_units_total": 5,
+      "response_id": "c05edbdd3452dd0e529d408b",
+      "supported_diagnostic_success": null,
+      "uncovered_units": [],
+      "unit_status": {
+        "cause-limit": "covered",
+        "execution": "covered",
+        "missing-discriminator": "covered",
+        "next-check": "covered",
+        "retained-streams": "covered"
+      },
+      "unresolved_fields": []
+    },
+    {
+      "call_sha256": "d990a03fe8ade50704a6a5b334e05786d04bd32012e57cf7ee26e12c4b2c1d09",
+      "case_id": "ccv5-missing-odometry-004m",
+      "causal_overclaim": false,
+      "cluster_id": "mccv4-land-004",
+      "condition": "P",
+      "correct_abstention": true,
+      "evidence_problem": false,
+      "family": "missing_decisive_motion",
+      "independent_cluster": false,
+      "material_error": false,
+      "material_error_categories": [],
+      "mechanism_unit_id": null,
+      "pass_id": "pass-1",
+      "primary_endpoint_eligible": false,
+      "required_units_covered": 5,
+      "required_units_total": 5,
+      "response_id": "f70ecee0f17ea68ac7e06864",
+      "supported_diagnostic_success": null,
+      "uncovered_units": [],
+      "unit_status": {
+        "cause-limit": "covered",
+        "execution": "covered",
+        "missing-discriminator": "covered",
+        "next-check": "covered",
+        "retained-streams": "covered"
+      },
+      "unresolved_fields": []
+    },
+    {
+      "call_sha256": "638dc19f182a4b3fb51db02e0e1a93d6691bbde6d48f992e0ecd496d3ae9133e",
+      "case_id": "ccv5-missing-odometry-004m",
+      "causal_overclaim": false,
+      "cluster_id": "mccv4-land-004",
+      "condition": "R",
+      "correct_abstention": true,
+      "evidence_problem": false,
+      "family": "missing_decisive_motion",
+      "independent_cluster": false,
+      "material_error": true,
+      "material_error_categories": [
+        "incorrect_measurement"
+      ],
+      "mechanism_unit_id": null,
+      "pass_id": "pass-2",
+      "primary_endpoint_eligible": false,
+      "required_units_covered": 5,
+      "required_units_total": 5,
+      "response_id": "c05edbdd3452dd0e529d408b",
+      "supported_diagnostic_success": null,
+      "uncovered_units": [],
+      "unit_status": {
+        "cause-limit": "covered",
+        "execution": "covered",
+        "missing-discriminator": "covered",
+        "next-check": "covered",
+        "retained-streams": "covered"
+      },
+      "unresolved_fields": []
+    },
+    {
+      "call_sha256": "2a040446b082c06441a6fb2ca272f79a1948cd551c84d84c0e05541956f27c38",
+      "case_id": "ccv5-missing-odometry-004m",
+      "causal_overclaim": false,
+      "cluster_id": "mccv4-land-004",
+      "condition": "P",
+      "correct_abstention": true,
+      "evidence_problem": false,
+      "family": "missing_decisive_motion",
+      "independent_cluster": false,
+      "material_error": false,
+      "material_error_categories": [],
+      "mechanism_unit_id": null,
+      "pass_id": "pass-2",
+      "primary_endpoint_eligible": false,
+      "required_units_covered": 5,
+      "required_units_total": 5,
+      "response_id": "f70ecee0f17ea68ac7e06864",
+      "supported_diagnostic_success": null,
+      "uncovered_units": [],
+      "unit_status": {
+        "cause-limit": "covered",
+        "execution": "covered",
+        "missing-discriminator": "covered",
+        "next-check": "covered",
+        "retained-streams": "covered"
+      },
+      "unresolved_fields": []
+    },
+    {
+      "call_sha256": "ddb5cc8168c1209c40aabe5c78d882ba9b770708c03d908aec9c88985a68db13",
+      "case_id": "ccv5-compensation-005",
+      "causal_overclaim": false,
+      "cluster_id": "mccv4-land-005",
+      "condition": "R",
+      "correct_abstention": true,
+      "evidence_problem": false,
+      "family": "successful_command_motion_compensation",
+      "independent_cluster": true,
+      "material_error": false,
+      "material_error_categories": [],
+      "mechanism_unit_id": "mechanism-measured-response-recovery",
+      "pass_id": "pass-1",
+      "primary_endpoint_eligible": true,
+      "required_units_covered": 8,
+      "required_units_total": 8,
+      "response_id": "164bf2ea34811f73a4706a5f",
+      "supported_diagnostic_success": true,
+      "uncovered_units": [],
+      "unit_status": {
+        "causation-limit": "covered",
+        "cause-limit": "covered",
+        "discrepancy-comparison": "covered",
+        "execution": "covered",
+        "healthy-comparator": "covered",
+        "mechanism-measured-response-recovery": "covered",
+        "outcome": "covered",
+        "recovered-response": "covered"
+      },
+      "unresolved_fields": []
+    },
+    {
+      "call_sha256": "573962b7fbc28e3621cfd769af423b09c8c977b74fa06f3918d37d083ae4b5b5",
+      "case_id": "ccv5-compensation-005",
+      "causal_overclaim": false,
+      "cluster_id": "mccv4-land-005",
+      "condition": "P",
+      "correct_abstention": true,
+      "evidence_problem": false,
+      "family": "successful_command_motion_compensation",
+      "independent_cluster": true,
+      "material_error": false,
+      "material_error_categories": [],
+      "mechanism_unit_id": "mechanism-measured-response-recovery",
+      "pass_id": "pass-1",
+      "primary_endpoint_eligible": true,
+      "required_units_covered": 8,
+      "required_units_total": 8,
+      "response_id": "a855a002e3ebbc93756d34ab",
+      "supported_diagnostic_success": true,
+      "uncovered_units": [],
+      "unit_status": {
+        "causation-limit": "covered",
+        "cause-limit": "covered",
+        "discrepancy-comparison": "covered",
+        "execution": "covered",
+        "healthy-comparator": "covered",
+        "mechanism-measured-response-recovery": "covered",
+        "outcome": "covered",
+        "recovered-response": "covered"
+      },
+      "unresolved_fields": []
+    },
+    {
+      "call_sha256": "7a4c8ad0e89ec64985cfcea7329736fcb1d6ac6d94fb91fb3a9452c4a7910499",
+      "case_id": "ccv5-compensation-005",
+      "causal_overclaim": false,
+      "cluster_id": "mccv4-land-005",
+      "condition": "R",
+      "correct_abstention": true,
+      "evidence_problem": false,
+      "family": "successful_command_motion_compensation",
+      "independent_cluster": true,
+      "material_error": true,
+      "material_error_categories": [
+        "incorrect_source_link"
+      ],
+      "mechanism_unit_id": "mechanism-measured-response-recovery",
+      "pass_id": "pass-2",
+      "primary_endpoint_eligible": true,
+      "required_units_covered": 8,
+      "required_units_total": 8,
+      "response_id": "164bf2ea34811f73a4706a5f",
+      "supported_diagnostic_success": false,
+      "uncovered_units": [],
+      "unit_status": {
+        "causation-limit": "covered",
+        "cause-limit": "covered",
+        "discrepancy-comparison": "covered",
+        "execution": "covered",
+        "healthy-comparator": "covered",
+        "mechanism-measured-response-recovery": "covered",
+        "outcome": "covered",
+        "recovered-response": "covered"
+      },
+      "unresolved_fields": []
+    },
+    {
+      "call_sha256": "3b9cbab0dc135c7526bb5186731de3dd405d317b7ce7aeaeaf57b3bbbd4507d1",
+      "case_id": "ccv5-compensation-005",
+      "causal_overclaim": false,
+      "cluster_id": "mccv4-land-005",
+      "condition": "P",
+      "correct_abstention": true,
+      "evidence_problem": false,
+      "family": "successful_command_motion_compensation",
+      "independent_cluster": true,
+      "material_error": false,
+      "material_error_categories": [],
+      "mechanism_unit_id": "mechanism-measured-response-recovery",
+      "pass_id": "pass-2",
+      "primary_endpoint_eligible": true,
+      "required_units_covered": 8,
+      "required_units_total": 8,
+      "response_id": "a855a002e3ebbc93756d34ab",
+      "supported_diagnostic_success": true,
+      "uncovered_units": [],
+      "unit_status": {
+        "causation-limit": "covered",
+        "cause-limit": "covered",
+        "discrepancy-comparison": "covered",
+        "execution": "covered",
+        "healthy-comparator": "covered",
+        "mechanism-measured-response-recovery": "covered",
+        "outcome": "covered",
+        "recovered-response": "covered"
+      },
+      "unresolved_fields": []
+    }
+  ],
+  "planned_judgments": 28,
+  "predeclaration": "manifests/annotation/luna-raw-baseline-v5-language-screen-v1-predeclaration.json",
+  "predeclaration_sha256": "1dfd178e3910ea8648381ba5e289286bf982aac4f5195cf698cd462665158b37",
+  "primary_endpoint_by_cluster": [
+    {
+      "P": true,
+      "P_pass_values": [
+        true,
+        true
+      ],
+      "R": null,
+      "R_pass_values": [
+        true,
+        false
+      ],
+      "case_id": "ccv5-compensation-005",
+      "cluster_id": "mccv4-land-005",
+      "family": "successful_command_motion_compensation",
+      "mechanism_unit_id": "mechanism-measured-response-recovery"
+    },
+    {
+      "P": true,
+      "P_pass_values": [
+        true,
+        true
+      ],
+      "R": false,
+      "R_pass_values": [
+        false,
+        false
+      ],
+      "case_id": "ccv5-geometry-001",
+      "cluster_id": "mccv4-land-001",
+      "family": "bounded_geometric_restriction",
+      "mechanism_unit_id": "mechanism-bounded-geometric-restriction"
+    },
+    {
+      "P": true,
+      "P_pass_values": [
+        true,
+        true
+      ],
+      "R": false,
+      "R_pass_values": [
+        false,
+        false
+      ],
+      "case_id": "ccv5-geometry-002",
+      "cluster_id": "mccv4-land-002",
+      "family": "bounded_geometric_restriction",
+      "mechanism_unit_id": "mechanism-bounded-geometric-restriction"
+    },
+    {
+      "P": true,
+      "P_pass_values": [
+        true,
+        true
+      ],
+      "R": false,
+      "R_pass_values": [
+        false,
+        false
+      ],
+      "case_id": "ccv5-geometry-003",
+      "cluster_id": "mccv4-land-003",
+      "family": "visible_obstacle_consumption_guardrail",
+      "mechanism_unit_id": "mechanism-bounded-geometric-restriction"
+    },
+    {
+      "P": true,
+      "P_pass_values": [
+        true,
+        true
+      ],
+      "R": true,
+      "R_pass_values": [
+        true,
+        true
+      ],
+      "case_id": "ccv5-persistent-004",
+      "cluster_id": "mccv4-land-004",
+      "family": "persistent_command_motion_discrepancy",
+      "mechanism_unit_id": "mechanism-command-motion-discrepancy"
+    }
+  ],
+  "primary_endpoint_by_pass": {
+    "pass-1": {
+      "P": {
+        "successes": 5,
+        "total": 5
+      },
+      "R": {
+        "successes": 2,
+        "total": 5
+      },
+      "p_minus_r": 0.6
+    },
+    "pass-2": {
+      "P": {
+        "successes": 5,
+        "total": 5
+      },
+      "R": {
+        "successes": 1,
+        "total": 5
+      },
+      "p_minus_r": 0.8
+    }
+  },
+  "readiness_gates": {
+    "false_premise_and_causation_handling": true,
+    "fixed_screen_completed_without_missing_judgments": true,
+    "information_parity": true,
+    "judge_evidence_parity": false,
+    "masked_evidence_qualification": true,
+    "no_causal_overclaim_excess": true,
+    "no_judge_evidence_problem": true,
+    "no_material_error_excess": true,
+    "no_required_unit_coverage_degradation": true,
+    "positive_advantage_in_at_least_two_mechanism_families": false,
+    "positive_advantage_recurs_across_independent_clusters": true
+  },
+  "retained_call_failures": [],
+  "schema": "crane-raw-baseline-v5-language-screen-result/v1",
+  "status": "DEVELOPMENT_ONLY_CANDIDATE_REJECTED_FROZEN_GATE",
+  "summary_hashes": {
+    "ccv5-compensation-005": "caba2ffe2bb5215e073467af0c97d03c919b2d54ccf24c7de37278705035b679",
+    "ccv5-geometry-001": "421f2e497035c897669c79e4f7903c343a52abd31313c17cefd3d39eb4c590e4",
+    "ccv5-geometry-002": "6f0c6fa60979e6a3abb8dec2d2ea1be995794fc9e65dd7007bc45a5243768d64",
+    "ccv5-geometry-003": "eea93d44d158ef9cfb31fe687583de2dc10e35419e615b767e53c2a27bb3432a",
+    "ccv5-geometry-masked-001m": "093975867d04d5242e84d783727daff0c6f9f4f2415666e0efa2dccfa060728e",
+    "ccv5-missing-odometry-004m": "733c9e93e6d0f1cd7dcce9b9cec58de24c8919a30fc6c3a3c3bac9b3b42a537c",
+    "ccv5-persistent-004": "9a4f10f546a4995e9c75224fb69da3a29f0930a4fe5c6ac4af34911bb0f9c7c1"
+  },
+  "valid_judgments": 28
+}
