@@ -5962,3 +5962,37 @@
   false-acceptance maxima, zero protected failures, zero call failures, and no usable-label retry.
 - **ACTIVATION:** both passes must satisfy every gate. Qualification would permit later semantic
   scoring only; a separate multi-family P/R candidate freeze is still required before confirmation.
+
+## 2026-09-25 — Luna v10 qualification result
+
+- **STATUS:** `RUN / RETAINED / FAILED`; 52/52 isolated calls returned valid judgments with zero
+  call failures. V10 does not authorize study scoring.
+- **MATERIAL/PROTECTED RESULTS:** both passes had zero factual false rejections, zero unsupported
+  false acceptances, zero protected causal/boundary/injection failures, and invariant paraphrase
+  classifications. Thus the transport and material-risk repair worked.
+- **FAILED GATES:** pass 1 achieved 20/24 composite, 60/64 required units, and 179/192 core fields;
+  pass 2 achieved 19/24, 60/64, and 178/192. Both failed their 0.95 thresholds.
+- **ROOT CAUSE:** the generic composite required `mechanism_identification=correct` for nominal
+  false-premise rejection, visual-presence boundaries, path comparison, source-qualified event
+  reporting, and ambiguity withholding. Luna consistently labeled several `not_applicable` or
+  `omitted`; the two passes also disagreed on whether a route change counted as a mechanism.
+  Several bad-answer units were still non-atomic (for example, mentioning a later speed without
+  the required interval). These are endpoint/reference-design errors. V10 remains failed.
+
+## 2026-09-25 — Luna v11 endpoint-aligned qualification predeclaration
+
+- **STATUS:** `FROZEN / FRESH_HELDOUT / NOT_YET_RUN`; 20 accuracy cases, including 12 diagnosable
+  endpoint cases, plus two paraphrase-invariance cases. No v11 model call occurred before the
+  committed hashes.
+- **PRIMARY JUDGE ENDPOINT:** on diagnosable cases, the candidate covers the case's declared atomic
+  mechanism unit and has no material error. Nominal, insufficient-evidence, visual-boundary, and
+  conflicting-measurement controls do not enter that denominator; their required units,
+  material/causal risk, answerability, disposition, abstention, and evidence-problem fields remain
+  scored.
+- **FIXED GATES:** 0.95 primary-endpoint, required-unit, and scored-core-field accuracy; at most
+  0.05 factual false rejection and unsupported false acceptance; zero protected failures and call
+  failures; two isolated high-effort Luna passes; no usable-label retry.
+- **VALIDITY:** this is a prospective alignment to the already declared diagnostic-study endpoint,
+  not removal of inconvenient cases. V8--v10 failures remain retained. Even qualification cannot
+  activate confirmation until a fair multi-family P/R candidate and campaign are separately
+  frozen.
