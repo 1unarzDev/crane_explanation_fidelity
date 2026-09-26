@@ -1,0 +1,38 @@
+{
+  "schema": "crane-focused-supported-diagnostic-communication-build-amendment/v1",
+  "protocol_id": "focused-supported-diagnostic-communication-v1",
+  "amendment_id": "pin-disposable-player-build-1",
+  "recorded_date": "2026-09-26",
+  "status": "FROZEN_BEFORE_FIRST_FOCUSED_PHYSICAL_LAUNCH",
+  "reason": "The only previously available disposable player carried stale build-manifest bytes and failed the source/build admission gate before a physical episode started. This additive amendment pins a clean rebuild of the unchanged source revision; it does not alter the candidate, population, endpoint, order, or analysis.",
+  "build": {
+    "source_commit": "05a1161e4b5a3ad6bbefe1c635507e7061ea8d58",
+    "source_dirty": false,
+    "source_commit_proven": true,
+    "unity_editor": "6000.5.10f1",
+    "target": "StandaloneLinux64",
+    "execute_method": "CranePerformanceBuild.BuildLinuxWorker",
+    "build_manifest_sha256": "42f14d41ddcf2cf644b0381f95672ba548ec6503c6c28702d940acb96edd8b81",
+    "managed_assemblies_sha256": "e044af4f9e1f2f5834116f3d745d8cc23ccfe91f96425fc225862ef35f77b261",
+    "runtime_resources_sha256": "80b07aaeddb62ea250462ec4d4a8f443a5473e41e92f1031ca3a0421ff5112f9",
+    "catalog_sha256": "c9cee3922fa1cc17f8237fde12d0a50ee6496649142f3cb14a4c6491fd72a0eb",
+    "provenance_sha256": "ffbe1abaef0e01475a8976c33b9e4f965aa9b038008aad4c9d9cafe069a64c89",
+    "audit_sha256": "ee0b3388eab6339de5000aaf0201bb07d9d63bc3b349ed1e49ba3d3ddf2fc005",
+    "audit_accepted": true,
+    "audit_failed_checks": [],
+    "governed_directory": "data/evaluator_only/dev/fsdc-v1-player-build-1",
+    "evaluator_only_manifest": "manifests/data/fsdc-v1-player-build-1.evaluator-only.json",
+    "evaluator_only_manifest_sha256": "221f939a70e811faa3b7c8d30251246e023c38eacfbb5496d84117072f0c226a",
+    "dvc_remote_status": "PUSHED_BEFORE_GIT_POINTER",
+    "large_player_retained_in_dvc": false
+  },
+  "build_side_effect_disposition": "Unity batch import rewrote the same three tracked settings files seen in prior builds. Only those mechanical diffs were restored after inspection; crane_ml is clean at the pinned commit. The disposable player bytes were not altered.",
+  "authorization": "The first registered physical configuration, fsdc-land-geometry-001, may receive its single physical attempt with exactly these expected build and assembly hashes. This does not authorize response generation, Luna annotation, alpha binding, or confirmatory inspection before the remaining activation gates close.",
+  "unchanged": [
+    "fixed scenario schedule and independent-cluster identity",
+    "one physical attempt per configuration and no outcome-dependent replacement",
+    "candidate, baseline, endpoint, question registry, and reporting hierarchy",
+    "confirmatory semantic N=0 and alpha consumed=0",
+    "frozen legacy F/G/H artifacts and protected RoboBoat content"
+  ]
+}

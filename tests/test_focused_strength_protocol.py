@@ -25,6 +25,11 @@ QUESTIONS = ROOT / (
     "research/explanation_fidelity/experiment_configs/prospective/"
     "focused-supported-diagnostic-communication-v1-questions.json"
 )
+BUILD_AMENDMENT = ROOT / (
+    "research/explanation_fidelity/experiment_configs/prospective/"
+    "focused-supported-diagnostic-communication-v1-build-amendment-1.json"
+)
+BUILD_MANIFEST = ROOT / "manifests/data/fsdc-v1-player-build-1.evaluator-only.json"
 
 
 def load(path: Path) -> dict:
@@ -118,3 +123,20 @@ def test_question_registry_matches_focused_families_and_marks_essentials():
     assert not any(
         rows[name]["primary_endpoint_eligible"] for name in protocol["families"]["controls"]
     )
+
+
+def test_focused_player_build_is_hash_bound_without_retaining_large_player():
+    amendment = load(BUILD_AMENDMENT)
+    manifest = load(BUILD_MANIFEST)
+    build = amendment["build"]
+
+    assert amendment["protocol_id"] == "focused-supported-diagnostic-communication-v1"
+    assert amendment["status"] == "FROZEN_BEFORE_FIRST_FOCUSED_PHYSICAL_LAUNCH"
+    assert build["source_commit_proven"] is True
+    assert build["audit_accepted"] is True
+    assert build["audit_failed_checks"] == []
+    assert build["large_player_retained_in_dvc"] is False
+    assert manifest["file_count"] == 2
+    hashes = {item["sha256"] for item in manifest["files"]}
+    assert build["provenance_sha256"] in hashes
+    assert build["audit_sha256"] in hashes

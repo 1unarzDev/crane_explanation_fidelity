@@ -1,5 +1,23 @@
 # Experiment Log
 
+## 2026-09-26 — focused campaign disposable-player qualification
+
+- **STATUS:** `BUILD_QUALIFIED / FIRST_PHYSICAL_CONFIGURATION_NOT_RUN`.
+- **BUILD:** Unity 6000.5.10f1 rebuilt the Linux worker from clean pinned `crane_ml`
+  `05a1161...d58`. The embedded manifest proves that source revision; manifest SHA-256 is
+  `42f14d41...8b81`, managed-assembly aggregate is `e044af4f...7b261`, and runtime resources are
+  `80b07aae...12f9`.
+- **ADMISSION:** all source, scene, catalog, checkout, and runtime-resource checks passed. The exact
+  v6 catalog hash remains `c9cee392...a0eb`. Only compact build provenance and the accepted audit
+  are retained in governed evaluator-only development storage; the 552.8 MB disposable build is
+  not retained in DVC.
+- **SIDE EFFECTS:** Unity mechanically rewrote the same three tracked settings files observed in
+  earlier builds. Those inspected formatting/default-solution diffs were restored, leaving the
+  submodule clean; no scene, model, controller, or RoboBoat content changed.
+- **AUTHORIZATION BOUNDARY:** `fsdc-land-geometry-001` may now receive its one registered physical
+  attempt with these exact hashes. No P/R response, Luna label, confidence sequence, alpha binding,
+  effect estimate, or significance result exists yet.
+
 ## 2026-09-26 — bounded v2 audit and focused-strength selection
 
 - **STATUS:** `DEVELOPMENT_AUDIT_COMPLETE / CANDIDATE_SELECTED / CONFIRMATION_NOT_ACTIVE`.
