@@ -228,7 +228,7 @@ accuracy was 336/384 and 335/384, and each had one protected causal mismatch. Th
 operational semantic arm despite its strong endpoint-polarity result. No confirmatory response was
 scored and the alpha ledger remains untouched; the physical/reference cohort continues.
 
-As of fixed-order run 039, the physical/reference ledger contains 39 attempts: 38 valid and one
+As of fixed-order run 040, the physical/reference ledger contains 40 attempts: 39 valid and one
 retained invalid recording. Run 034 failed the prospectively declared worker transport-validity
 gate (`staleActions=28`, `rejectedActions=28`) after exact build and scenario binding. It was not
 retried or replaced and contributes no diagnostic-family count, semantic response, or alpha. The
@@ -237,7 +237,9 @@ run 036 adds one valid nominal `not_triggered` control. Run 037 adds a valid tra
 success with independently reproduced discrepancy and measured-response recovery. Run 038 adds
 another valid transient-compensation success with independent computation parity. Run 039 adds a
 third consecutive valid transient-compensation success under a distinct frozen configuration.
-None adds a semantic response or alpha. The next authorized physical item is fixed-order run 040.
+Run 040 adds a valid connected-detour persistent discrepancy followed by an unexpected abort; its
+generic expected-success failure does not override the passed frozen worker-validity gate. None
+adds a semantic response or alpha. The next authorized physical item is fixed-order run 041.
 
 Reserve fresh configuration identities before discovery. Replication uses byte-identical P/R,
 evidence contract, prompts, tools, thresholds, judge, and analysis hashes; it reuses no discovery

@@ -1,5 +1,21 @@
 # Experiment Log
 
+## 2026-09-25 — land command--motion physical cohort run 040
+
+- **STATUS:** `VALID PERSISTENT DISCREPANCY / UNEXPECTED ABORT / 40 ATTEMPTED / 39 VALID / 1 INVALID`.
+  The sole fixed attempt passed exact player-build, 14-field scenario-binding, zero-error worker,
+  and independent-reference gates without retry. The generic fixture expected success and returned
+  `valid=false` after the action aborted; admission uses the separately frozen worker recording-
+  validity gate, which passed with zero stale or rejected actions.
+- **REFERENCE:** proposed and independently implemented computations agree on an 18--28 s
+  discrepancy at 0.260 versus 0.000 m/s after a 0--5 s healthy response of 0.2597 m/s. No later
+  measured-response recovery qualified. The action aborted after 52.111 s and 4.383 m, with three
+  FollowPath attempts, two failures, and two source-qualified Wait invocation starts.
+- **BOUNDARY:** this supports a persistent delivered-command/measured-motion discrepancy before
+  abort, not actuator acceptance, Nav2 consumption of odometry, the hidden intervention, or a
+  unique physical cause. No P/R response, Luna label, effect estimate, confidence sequence, or
+  alpha use exists. Governed data are synchronized to R2; fixed run 041 is next.
+
 ## 2026-09-24 — land command--motion physical cohort run 039
 
 - **STATUS:** `VALID TRANSIENT RESPONSE RECOVERY / SUCCESS / 39 ATTEMPTED / 38 VALID / 1 INVALID`.
