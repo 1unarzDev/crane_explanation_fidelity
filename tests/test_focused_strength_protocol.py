@@ -50,6 +50,7 @@ TENTH_RUN = ROOT / "manifests/data/cm-land-conf-046-disposition.json"
 ELEVENTH_RUN = ROOT / "manifests/data/cm-land-conf-047-disposition.json"
 TWELFTH_RUN = ROOT / "manifests/data/cm-land-conf-048-disposition.json"
 THIRTEENTH_RUN = ROOT / "manifests/data/cm-land-conf-049-disposition.json"
+FOURTEENTH_RUN = ROOT / "manifests/data/cm-land-conf-050-disposition.json"
 
 
 def load(path: Path) -> dict:
@@ -380,3 +381,22 @@ def test_third_response_recovery_run_preserves_success_and_causal_limit():
     assert run["semantic_boundary"]["P_responses"] == 0
     assert run["semantic_boundary"]["R_responses"] == 0
     assert run["focused_progress"]["next_fixed_run_id"] == "cm-land-conf-050"
+
+
+def test_third_masked_ambiguity_run_is_retained_after_unexpected_abort():
+    run = load(FOURTEENTH_RUN)
+    raw = run["raw_physical_reference"]
+    masked = run["method_visible_reference"]
+
+    assert run["attempt_count"] == 1
+    assert run["retry_or_replacement_performed"] is False
+    assert run["admission"]["unexpected_navigation_outcome_retained"] is True
+    assert raw["disposition"] == "supported"
+    assert raw["response_ratio"] == 0.0
+    assert masked["primary_endpoint_eligible"] is False
+    assert masked["disposition"] == "insufficient"
+    assert masked["command_samples"] == 399
+    assert masked["odometry_samples"] == 0
+    assert run["semantic_boundary"]["P_responses"] == 0
+    assert run["semantic_boundary"]["R_responses"] == 0
+    assert run["focused_progress"]["next_fixed_run_id"] == "cm-land-conf-051"

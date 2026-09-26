@@ -1,5 +1,19 @@
 # Experiment Log
 
+## 2026-09-26 — focused physical run 14 / source order 50: `cm-land-conf-050`
+
+- **STATUS:** `VALID_FOCUSED_PHYSICAL_INDEPENDENT_AMBIGUITY_MASK_UNEXPECTED_ABORT_RESPONSE_UNOPENED`;
+  one attempt and no replacement. The nominal-clear-route action unexpectedly aborted, but the
+  source/build audit, all 14 binding checks, Unity worker validity, zero logged Unity errors, and
+  independent-reference gates passed, so the outcome is retained.
+- **REFERENCE:** the complete evaluator-side record supports a 0.260 versus 0.000 m/s discrepancy
+  over 10--20 s after healthy 0.2597 m/s response. The sole method-visible condition retains 399
+  command samples, the abort, three FollowPath attempts, two failures, and two source-qualified
+  Wait starts, but removes all delivered odometry.
+- **BOUNDARY:** the masked condition cannot establish a command--motion mechanism or unique
+  physical cause. The registry-exact focused control reference dry run passed. No P/R response or
+  Luna label was opened; source-order run `cm-land-conf-051` is next.
+
 ## 2026-09-26 — focused coordinator eligibility and scheduled-stop amendment
 
 - **DEFECT:** the activated v1 monitor equated membership in a scheduled primary family with
@@ -16,7 +30,7 @@
   question registry, judge, alpha, confidence-sequence implementation, activation record, and all
   physical artifacts are unchanged.
 - **REGRESSION:** the focused coordinator suite plus existing focused protocol/monitor and
-  command-motion tests pass (51 tests). A synthetic final schedule with two outcome-insufficient
+  command-motion tests pass (52 tests). A synthetic final schedule with two outcome-insufficient
   geometry records ends `INCONCLUSIVE_FINAL` at 64 scheduled configurations and eligible N=45.
 
 ## 2026-09-26 — focused physical run 13 / source order 49: `cm-land-conf-049`
