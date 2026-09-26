@@ -20,7 +20,18 @@ computations support a 0.260 versus 0.000 m/s discrepancy over 11--21 s, two Fol
 and two source-qualified Wait starts. The robot stopped at 2.762 m, so the final local grid did not
 cover the decisive direct-route region; geometry is insufficient and the case is not
 composite-positive. It contributes one development cluster, no response or Luna label, and no
-confirmatory N or alpha. Fixed run 2 is next.
+confirmatory N or alpha.
+
+Fixed run 2/7 is also a valid unexpected abort after one attempt and is the first independently
+composite-positive cluster. A 0.260 versus 0.000 m/s discrepancy over 10--19 s was followed by
+measured recovery to 0.259740 m/s over 22--23 s. Independent geometry references find a blocked
+direct-route cell plus substantial delivered-plan (1.192 m) and measured-trajectory (1.178 m)
+deviation, while withholding obstacle identity, exact consumption, global no-path, and abort
+causation. The frozen geometric adapter nevertheless emits `not_triggered` because it couples
+these bounded geometry facts to a deadline-aligned abort, which was absent. This is an observed
+candidate omission, not a reason for post-outcome repair. Totals are two valid development
+clusters, one independently composite-positive, zero responses/Luna calls, and zero confirmatory N
+or alpha. Fixed run 3 is next.
 
 ## Coverage-complete v5 raw-baseline screen
 

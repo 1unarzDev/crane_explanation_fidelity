@@ -57,6 +57,28 @@
   composite-positive clusters, responses, or Luna calls. Fixed run 2 is next; confirmation N and
   alpha remain zero.
 
+### Composite-mechanism v6 run 2/7 — independent composite case exposes frozen adapter omission
+
+- **STATUS:** `VALID / UNEXPECTED ABORT / INDEPENDENTLY COMPOSITE-POSITIVE`. The sole fixed
+  attempt passed exact player, 14-field scenario binding, and zero-error worker admission. It
+  aborted after 67.211 s and 11.796 m and is retained without replacement.
+- **EXECUTION DIAGNOSIS:** independent computations agree on a transient 10--19 s discrepancy
+  between 0.260 m/s delivered command and 0.000 m/s delivered odometry, followed by measured
+  response recovery to 0.259740 m/s over 22--23 s. Two FollowPath failures and two
+  source-qualified Wait starts were recorded; the evidence does not identify a unique physical
+  cause.
+- **GEOMETRY DIAGNOSIS:** independent references find a cost-253 cell on the requested direct
+  route, three distinct delivered plans with 1.192 m maximum lateral deviation, and 1.178 m
+  measured trajectory deviation. They do not prove complete-route coverage, global no-path,
+  obstacle identity, Nav2 consumption, snapshot-to-plan causation, or geometry as the abort cause.
+- **METHOD OMISSION:** the frozen geometric adapter reports `not_triggered` because it bundles the
+  supported route-restriction facts with a deadline-aligned-abort requirement, while this abort
+  occurred 32.789 s before the configured deadline. This is retained as a P-side omission; no
+  post-outcome adapter repair is allowed for this candidate.
+- **DISPOSITION:** two valid development clusters now exist, one independently composite-positive,
+  with zero language responses or Luna calls. Fixed run 3 is next; confirmation N and alpha remain
+  zero.
+
 ## 2026-09-26 — evidence-complete raw-baseline v5 language screen rejects candidate v5
 
 - **STATUS:** `DEVELOPMENT_ONLY_CANDIDATE_REJECTED_FROZEN_GATE`.
