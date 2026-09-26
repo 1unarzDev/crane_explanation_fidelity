@@ -30,7 +30,11 @@ The robot succeeded in 86.360 s after three distinct delivered plans, two feedba
 on the requested direct route near x=11.575 m and a remaining connection in the retained grid. The
 allowed conclusion is a bounded navigation-model restriction plus recorded route change and
 success—not global no-path, obstacle identity, exact Nav2 consumption, or snapshot-to-plan
-causation. No response or Luna call has been made. Fixed run 2/6 is next.
+causation. Fixed run 2/6, `mccv2-dev-002`, is also a valid single-attempt cluster: it succeeded
+after three distinct detouring plans and 1.319 m measured deviation, but the incomplete final grid
+contained no observed blocked direct-route cell. Its intended repeated positive-geometry predicate
+therefore failed and the run is retained as route change with unresolved trigger, without
+replacement. No response or Luna call has been made. Fixed run 3/6 is next.
 
 ## Readiness
 

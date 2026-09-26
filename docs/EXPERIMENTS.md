@@ -6177,3 +6177,18 @@
 - **GOVERNANCE:** raw and derived robot-visible/evaluator-only artifacts were separately
   hash-manifested, DVC-pushed, and checkpointed. The disposable Unity player was not retained.
 - **NEXT:** execute fixed run 2/6; do not generate language yet.
+
+### Fixed run 2/6 — `mccv2-dev-002`
+
+- **STATUS:** `VALID_DEVELOPMENT_ROUTE_CHANGE_WITH_UNRESOLVED_TRIGGER`; one attempt, no retry or
+  replacement, independent development clusters +1, confirmatory clusters +0, model/Luna calls 0.
+- **OBSERVED:** NavigateToPose succeeded in 88.710 s after three distinct delivered plans, two
+  feedback recoveries, 17.584 m displacement, and 1.319 m maximum lateral deviation.
+- **NEGATIVE FAULT-INDUCTION RESULT:** independent calculation confirmed route change and a
+  retained-grid connection, but the incomplete final rolling grid contained no observed blocked
+  direct-route cell. The intended repeated positive restriction predicate was not established.
+- **BOUNDARY:** retain the useful path evidence while withholding the physical trigger, obstacle
+  identity, exact Nav2 consumption, and costmap-to-plan causation. Do not replace this layout with
+  a favorable geometry result.
+- **GOVERNANCE:** raw and derived artifacts were hash-manifested and DVC-pushed before the Git
+  pointer is published. Fixed run 3/6 is next; language remains unauthorized.
