@@ -1,0 +1,21 @@
+{
+  "schema": "crane-coverage-complete-v4-physical-screen-amendment/v1",
+  "amendment_id": "coverage-complete-v4-physical-screen-v1-amendment-2",
+  "parent": "coverage-complete-v4-physical-screen-v1",
+  "recorded_utc": "2026-09-26T07:00:01Z",
+  "timing": "Recorded after all five physical attempts and before either predeclared evidence mask, any P/R response, any Luna judgment, or any treatment freeze.",
+  "issue": "The parent pins mask_command_motion_evidence_v2.py, whose output is explicitly designed to represent an independent ambiguity cluster and declares independent_scenario_increment=1. The parent separately and correctly declares this screen's odometry mask paired within mccv4-land-004 with independent_cluster_increment=0. Those semantics are incompatible.",
+  "prospective_correction": {
+    "paired_command_motion_masker": "analysis/mask_command_motion_evidence.py",
+    "paired_command_motion_masker_sha256": "01015dc7fa3fd7ed0609014c2ff912d9bc3141a6d991762956a46d94a542eac2",
+    "required_independent_scenario_increment": 0,
+    "paired_source_available_to_methods": false,
+    "source_run_id": "mccv4-dev-004",
+    "variant_id": "mccv4-dev-004-mask-no-odometry"
+  },
+  "scientific_effect": "This corrects the tool selection to implement the already declared paired-mask semantics. It does not change the mask operation, physical data, question inventory, cluster count, treatment, endpoint, gate, alpha allocation, or stopping rule. The originally pinned v2 masker is not executed for this screen.",
+  "confirmation_status": {
+    "confirmatory_semantic_n": 0,
+    "confirmatory_alpha_consumed": 0.0
+  }
+}

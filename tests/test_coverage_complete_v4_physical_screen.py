@@ -9,6 +9,11 @@ CONTRACT = (
     / "research/explanation_fidelity/experiment_configs/development"
     / "coverage-complete-v4-physical-screen-v1.json"
 )
+MASK_AMENDMENT = (
+    ROOT
+    / "research/explanation_fidelity/experiment_configs/development"
+    / "coverage-complete-v4-physical-screen-v1-amendment-2.json"
+)
 CATALOG = (
     ROOT
     / "packages/crane_ml/Assets/Resources/ReferenceEnvironments"
@@ -97,3 +102,13 @@ def test_successor_masks_do_not_inflate_cluster_count() -> None:
         assert mask["source_run_id"] in run_ids
         assert mask["independent_cluster_increment"] == 0
     assert contract["method_screen_boundary"]["response_generation_authorized_by_this_file"] is False
+
+
+def test_paired_odometry_mask_amendment_selects_zero_increment_adapter() -> None:
+    amendment = json.loads(MASK_AMENDMENT.read_text(encoding="utf-8"))
+    correction = amendment["prospective_correction"]
+    masker = ROOT / correction["paired_command_motion_masker"]
+    assert correction["required_independent_scenario_increment"] == 0
+    assert correction["paired_source_available_to_methods"] is False
+    assert sha256(masker) == correction["paired_command_motion_masker_sha256"]
+    assert '"independent_scenario_increment": 0' in masker.read_text(encoding="utf-8")
