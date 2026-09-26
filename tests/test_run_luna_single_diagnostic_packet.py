@@ -82,9 +82,12 @@ def test_incomplete_pass_is_represented_without_promoting_missing_label(tmp_path
     packet.write_text("".join(__import__("json").dumps(row) + "\n" for row in rows))
     key.write_text(__import__("json").dumps({"entries": entries}))
 
+    prompt_paths = []
+
     class FakeCaller:
-        def __init__(self, *, cache, effort):
+        def __init__(self, *, cache, effort, prompt_path):
             self.pass_id = cache.name
+            prompt_paths.append(prompt_path)
 
         def call(self, envelope):
             if self.pass_id == "pass-2" and envelope["opaque_response_id"] == "opaque-R":
@@ -111,6 +114,7 @@ def test_incomplete_pass_is_represented_without_promoting_missing_label(tmp_path
     assert report["passes"]["pass-2"]["complete"] is False
     assert report["passes"]["pass-2"]["R"]["supported_diagnostic_success"] is None
     assert report["call_failures"][0]["condition"] == "R"
+    assert prompt_paths == [MODULE.V12_PROMPT, MODULE.V12_PROMPT]
 
 
 def test_two_condition_packet_runs_exactly_two_isolated_passes(tmp_path, monkeypatch) -> None:
@@ -137,9 +141,12 @@ def test_two_condition_packet_runs_exactly_two_isolated_passes(tmp_path, monkeyp
     packet.write_text("".join(__import__("json").dumps(row) + "\n" for row in rows))
     key.write_text(__import__("json").dumps({"entries": entries}))
 
+    prompt_paths = []
+
     class FakeCaller:
-        def __init__(self, *, cache, effort):
+        def __init__(self, *, cache, effort, prompt_path):
             self.pass_id = cache.name
+            prompt_paths.append(prompt_path)
 
         def call(self, envelope):
             return {
@@ -163,3 +170,20 @@ def test_two_condition_packet_runs_exactly_two_isolated_passes(tmp_path, monkeyp
     assert report["valid_judgments"] == 4
     assert report["passes"]["pass-1"]["complete"] is True
     assert set(report["passes"]["pass-1"]) == {"R", "P", "complete"}
+    assert prompt_paths == [MODULE.V12_PROMPT, MODULE.V12_PROMPT]
+    assert report["qualified_judge_release"]["prompt_sha256"] == MODULE.digest(
+        MODULE.V12_PROMPT
+    )
+
+
+def test_qualified_release_rejects_prompt_other_than_v12_v5(tmp_path, monkeypatch) -> None:
+    wrong_prompt = tmp_path / "luna-model-judge-v4.md"
+    wrong_prompt.write_text("older prompt", encoding="utf-8")
+    monkeypatch.setattr(MODULE, "V12_PROMPT", wrong_prompt)
+
+    try:
+        MODULE.qualified_release()
+    except ValueError as error:
+        assert "prompt_sha256" in str(error)
+    else:
+        raise AssertionError("runner accepted a prompt other than the v12-qualified v5 prompt")

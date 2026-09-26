@@ -16,8 +16,70 @@ from typing import Any
 from luna_model_judge import LunaIsolatedCodexCaller, atomic_write_json, packet_envelope
 
 
+ROOT = Path(__file__).resolve().parents[1]
+V12_PROMPT = ROOT / "research/explanation_fidelity/prompts/luna-model-judge-v5.md"
+V12_SCHEMA = (
+    ROOT / "research/explanation_fidelity/schemas/luna-model-judge-output-v1.schema.json"
+)
+V12_CALLER = ROOT / "analysis/luna_model_judge.py"
+V12_FREEZE = (
+    ROOT
+    / "research/explanation_fidelity/experiment_configs/prospective"
+    / "luna-model-judge-v12-final-freeze.json"
+)
+V12_QUALIFICATION = ROOT / "manifests/annotation/luna-model-judge-v1-heldout-v12-final.json"
+
+
 def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def load_object(path: Path) -> dict[str, Any]:
+    value = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(value, dict):
+        raise ValueError(f"{path} is not a JSON object")
+    return value
+
+
+def qualified_release() -> dict[str, str]:
+    """Fail closed unless the exact qualified v12 judge release is present."""
+    qualification = load_object(V12_QUALIFICATION)
+    if qualification.get("status") != "HELDOUT_QUALIFIED" or qualification.get(
+        "study_evaluation_allowed"
+    ) is not True:
+        raise ValueError("Luna v12 is not qualified and activated for study evaluation")
+    if qualification.get("qualification_id") != "luna-model-judge-v12-binary-unit-final":
+        raise ValueError("unexpected Luna qualification identity")
+
+    freeze = load_object(V12_FREEZE)
+    declared_freeze = qualification.get("freeze")
+    if not isinstance(declared_freeze, dict) or declared_freeze.get("sha256") != digest(V12_FREEZE):
+        raise ValueError("qualified Luna result does not pin the current v12 freeze")
+    expected = {
+        "prompt_sha256": V12_PROMPT,
+        "output_schema_sha256": V12_SCHEMA,
+        "caller_source_sha256": V12_CALLER,
+    }
+    for field, path in expected.items():
+        if freeze.get(field) != digest(path):
+            raise ValueError(f"qualified Luna v12 {field} differs from the current file")
+
+    result_spec = qualification.get("result")
+    if not isinstance(result_spec, dict):
+        raise ValueError("qualified Luna manifest has no retained result specification")
+    result_path = ROOT / str(result_spec.get("path", ""))
+    if not result_path.is_file() or result_spec.get("sha256") != digest(result_path):
+        raise ValueError("retained Luna v12 qualification result is absent or differs")
+
+    return {
+        "qualification_manifest_sha256": digest(V12_QUALIFICATION),
+        "qualification_result_sha256": digest(result_path),
+        "freeze_sha256": digest(V12_FREEZE),
+        "prompt_sha256": digest(V12_PROMPT),
+        "output_schema_sha256": digest(V12_SCHEMA),
+        "caller_source_sha256": digest(V12_CALLER),
+        "runner_source_sha256": digest(Path(__file__)),
+    }
 
 
 def read_jsonl(path: Path) -> list[dict[str, Any]]:
@@ -59,6 +121,7 @@ def success(judgment: dict[str, Any], row: dict[str, Any] | None = None) -> bool
 
 
 def run(packet: Path, key_path: Path, output_root: Path) -> dict[str, Any]:
+    judge_release = qualified_release()
     rows = read_jsonl(packet)
     if len(rows) not in {2, 4} or len({row["response_id"] for row in rows}) != len(rows):
         raise ValueError("packet must contain two or four unique responses")
@@ -75,7 +138,9 @@ def run(packet: Path, key_path: Path, output_root: Path) -> dict[str, Any]:
     cache_keys: dict[str, dict[str, str]] = {}
     for pass_id in ("pass-1", "pass-2"):
         caller = LunaIsolatedCodexCaller(
-            cache=output_root / "calls" / "high" / pass_id, effort="high"
+            cache=output_root / "calls" / "high" / pass_id,
+            effort="high",
+            prompt_path=V12_PROMPT,
         )
         cache_keys[pass_id] = {}
         for row in rows:
@@ -156,6 +221,7 @@ def run(packet: Path, key_path: Path, output_root: Path) -> dict[str, Any]:
         ),
         "packet_sha256": digest(packet),
         "condition_key_sha256": digest(key_path),
+        "qualified_judge_release": judge_release,
         "passes": passes,
         "call_failures": failures,
         "valid_judgments": len(joined),
