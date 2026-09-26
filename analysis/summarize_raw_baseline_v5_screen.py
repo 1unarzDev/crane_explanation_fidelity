@@ -65,12 +65,20 @@ def _metric(rows: list[dict[str, Any]]) -> dict[str, Any]:
 
 def aggregate(predeclaration_path: Path, annotation_root: Path) -> dict[str, Any]:
     predeclaration = load(predeclaration_path)
-    if predeclaration.get("status") != "FROZEN_BEFORE_ANY_LUNA_STUDY_CALL":
+    if predeclaration.get("status") not in {
+        "FROZEN_BEFORE_ANY_LUNA_STUDY_CALL",
+        "FROZEN_BEFORE_ANY_REVISED_LUNA_CALL",
+    }:
         raise ValueError("Luna arm was not frozen before calls")
     frozen = predeclaration["frozen_artifacts"]
+    artifact_manifest_field = (
+        "results_references_packets_manifest"
+        if "results_references_packets_manifest" in frozen
+        else "references_and_packets_manifest"
+    )
     _verify_file_manifest(
-        ROOT / frozen["results_references_packets_manifest"],
-        frozen["results_references_packets_manifest_sha256"],
+        ROOT / frozen[artifact_manifest_field],
+        frozen[f"{artifact_manifest_field}_sha256"],
         "artifact_count",
         frozen["artifact_count"],
     )
@@ -81,7 +89,14 @@ def aggregate(predeclaration_path: Path, annotation_root: Path) -> dict[str, Any
         frozen["condition_key_count"],
     )
 
-    contract = load(ROOT / predeclaration["treatment_contract"]["path"])
+    treatment_predeclaration = predeclaration
+    if "treatment_contract" not in treatment_predeclaration:
+        treatment_predeclaration = load(
+            ROOT
+            / "manifests/annotation/"
+            "luna-raw-baseline-v5-language-screen-v1-predeclaration.json"
+        )
+    contract = load(ROOT / treatment_predeclaration["treatment_contract"]["path"])
     treatment_cases = {item["case_id"]: item for item in contract["cases"]}
     declared = {item["case_id"]: item for item in predeclaration["cases"]}
     if len(declared) != len(predeclaration["cases"]) or set(declared) != set(treatment_cases):
@@ -90,7 +105,12 @@ def aggregate(predeclaration_path: Path, annotation_root: Path) -> dict[str, Any
     arm_id = predeclaration["arm_id"]
     key_root = ROOT / f"data/evaluator_only/dev/{arm_id}/annotation_keys"
     reference_root = ROOT / f"model_outputs/dev/{arm_id}/references"
-    result_root = ROOT / f"model_outputs/dev/{arm_id}/results"
+    result_arm = (
+        arm_id
+        if (ROOT / f"model_outputs/dev/{arm_id}/results").is_dir()
+        else treatment_predeclaration["arm_id"]
+    )
+    result_root = ROOT / f"model_outputs/dev/{result_arm}/results"
     rows: list[dict[str, Any]] = []
     failures: list[dict[str, Any]] = []
     summary_hashes: dict[str, str] = {}
@@ -244,9 +264,20 @@ def aggregate(predeclaration_path: Path, annotation_root: Path) -> dict[str, Any
         )
         # A content hash and compact inventory do not let the judge verify arbitrary
         # measurements that R legitimately computed from the full raw samples/cells.
-        judge_evidence_parity = judge_evidence_parity and (
+        closure = allowed.get("raw_evidence_closure")
+        complete_raw_or_systematic_closure = (
             raw_binding.get("complete_raw_observations_available_to_judge") is True
+            or (
+                audit.get("systematic_raw_evidence_closure") is True
+                and raw_binding.get("systematic_closure_available_to_judge") is True
+                and isinstance(closure, dict)
+                and closure.get("raw_evidence_sha256")
+                == treatment_cases[case_id]["baseline_evidence_sha256"]
+                and bool(closure.get("selection_rule"))
+                and bool(closure.get("claim_scope_rule"))
+            )
         )
+        judge_evidence_parity = judge_evidence_parity and complete_raw_or_systematic_closure
         judge_evidence_parity = judge_evidence_parity and all(
             field in allowed
             for field in (
@@ -290,8 +321,13 @@ def aggregate(predeclaration_path: Path, annotation_root: Path) -> dict[str, Any
         and metrics["R"]["evidence_problems"] == 0,
     }
     accepted = all(readiness.values())
+    closure_arm = "evidence-closure" in predeclaration.get("arm_id", "")
     return {
-        "schema": "crane-raw-baseline-v5-language-screen-result/v1",
+        "schema": (
+            "crane-raw-baseline-v5-language-screen-result/v2"
+            if closure_arm
+            else "crane-raw-baseline-v5-language-screen-result/v1"
+        ),
         "status": (
             "DEVELOPMENT_ONLY_CANDIDATE_PASSED_FROZEN_GATE"
             if accepted
@@ -314,12 +350,22 @@ def aggregate(predeclaration_path: Path, annotation_root: Path) -> dict[str, Any
             "are not confirmatory evidence, statistical significance, or replication."
             if accepted
             else (
-                "The candidate failed at least one frozen development gate. In this arm Luna "
-                "received independent endpoint computations and a compact raw-evidence binding, "
-                "but not every raw observation R was permitted to inspect. Claims that Luna called "
-                "unsupported may be independently checkable from omitted raw samples or cells. "
-                "Retain the judgments, repair judge evidence parity prospectively, and do not "
-                "activate confirmation or claim a diagnostic advantage from this result."
+                (
+                    "The candidate failed at least one frozen development gate. If judge-evidence "
+                    "parity is false, claims Luna called unsupported may be independently checkable "
+                    "from omitted raw samples or cells; retain the judgments and repair packet evidence "
+                    "prospectively. In every case, do not activate confirmation or claim a diagnostic "
+                    "advantage from this result."
+                )
+                if closure_arm
+                else (
+                    "The candidate failed at least one frozen development gate. In this arm Luna "
+                    "received independent endpoint computations and a compact raw-evidence binding, "
+                    "but not every raw observation R was permitted to inspect. Claims that Luna called "
+                    "unsupported may be independently checkable from omitted raw samples or cells. "
+                    "Retain the judgments, repair judge evidence parity prospectively, and do not "
+                    "activate confirmation or claim a diagnostic advantage from this result."
+                )
             )
         ),
         "confirmatory_semantic_n": 0,
