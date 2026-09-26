@@ -1,9 +1,28 @@
 # Diagnostic sequential-campaign progress
 
-Updated: 2026-09-25
+Updated: 2026-09-26
 
 Protocol: `diagnostic-sequential-protocol-v2`
 Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
+
+## Measurement-complete v2 development screen
+
+The physical allocation for `measurement-complete-checked-composition-v2` is now prospectively
+frozen, but no episode, response, or judgment has been produced. Six independent v5 scenario
+configurations are fixed in
+`research/explanation_fidelity/experiment_configs/development/measurement-complete-composition-v2-physical-screen-v1.json`:
+two connected-detour geometry cases, persistent and compensated command--motion cases, one
+nominal visible-clutter control, and one mixed geometry/execution case. Two evidence masks remain
+within their source clusters. The fixed set uses only previously unallocated v5 layouts and does
+not consume confirmation or replication reserves.
+
+The disposable Unity player is pinned to CRANE `05a1161e4b5a3ad6bbefe1c635507e7061ea8d58`.
+Its source identity, exact embedded v5 catalog, warehouse scene/source, build-manifest hash, and
+managed-assembly hash passed the existing fail-closed player audit. The player itself remains under
+`/tmp` and is not a governed artifact; each attempted run must retain its own evaluator-only build
+provenance and audit. Response generation remains unauthorized until all fixed physical attempts
+are retained, independent references are computed, and a separate treatment/evidence-parity
+contract is hash-frozen.
 
 ## Readiness
 

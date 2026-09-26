@@ -1,5 +1,25 @@
 # Decision Log
 
+## 2026-09-26 — freeze one fresh physical screen for measurement-complete composition v2
+
+- **Decision:** authorize exactly six development-only v5 physical attempts, in fixed order, before
+  any P/R generation for the v2 successor. Evidence masks remain within their source cluster and
+  no failed or unfavorable run receives a replacement.
+- **Rationale:** the rejected v1 screen exposed renderer omissions and one method/judge evidence
+  mismatch. Regression tests alone cannot show that v2 fixes user-facing performance. Fresh
+  physical configurations are required to test two repeated mechanism families and the declared
+  ambiguity, false-premise, visible-clutter, and masked-evidence guardrails without reusing
+  inspected outcomes.
+- **Allocation:** connected-detour 007--009 and nominal-clear-route 008--010 from the v5
+  development-only catalog. Earlier v5 allocations and the v6 confirmation/replication reserves
+  remain untouched.
+- **Execution boundary:** the screen freezes physical collection only. It does not authorize model
+  calls. After collection, independent calculations, reference inventories, the candidate runner,
+  baseline R's equal tool/evidence access, and Luna packets must be hash-frozen separately.
+- **Interpretation:** passing this development screen may justify a prospective confirmatory
+  freeze; it is not statistical significance. Failure rejects this candidate version without
+  changing endpoints, margins, or sampling toward favorable families.
+
 ## 2026-09-25 — screen mandatory checked composition before any semantic confirmation
 
 - **Decision:** treat finite model-relative diagnostic composition plus deterministic,

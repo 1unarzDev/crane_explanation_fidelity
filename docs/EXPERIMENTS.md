@@ -6132,3 +6132,29 @@
   insufficiency. These old cases are regression fixtures, not a rescored v2 comparison.
 - **NEXT GATE:** identify and predeclare genuinely fresh positive-geometry,
   visible-but-not-consumed, and out-of-model development configurations before any P/R generation.
+
+## 2026-09-26 — measurement-complete v2 physical screen predeclaration
+
+- **STATUS:** `FROZEN_BEFORE_ANY_EPISODE_OR_MODEL_CALL / DEVELOPMENT_ONLY`; independent physical
+  N=0 for this screen, response N=0, Luna N=0, confirmatory alpha=0.000/0.050.
+- **FIXED ALLOCATION:** six v5 configurations in fixed order: connected-detour 007 and 008 without
+  mobility intervention; nominal-clear-route 008 with persistent hold; nominal-clear-route 009
+  with hold/release; nominal-clear-route 010 without intervention; and connected-detour 009 with
+  persistent hold. These layouts are disjoint from the candidate-v2, candidate-v3, and v5
+  calibration allocations already inspected.
+- **CAPABILITY COVERAGE:** the allocation targets repeated positive geometry, persistent
+  discrepancy, measured compensation, nominal/false-premise handling, visible but not
+  event-specifically proven-consumed clutter, masked decisive evidence, and a mixed-mechanism case.
+  Expected outcomes do not determine recording validity.
+- **NO ADAPTIVE REPLACEMENT:** each configuration is attempted once; invalid and unexpected runs
+  are retained without a favorable replacement. Costmap and odometry masks add zero independent
+  clusters.
+- **PLAYER QUALIFICATION:** a disposable Unity 6000.5.10f1 player built from clean CRANE
+  `05a1161e4b5a3ad6bbefe1c635507e7061ea8d58` passed every source/catalog/scene audit. Build-manifest
+  SHA-256 is `0f608436faa4ccffd5bc5e27c475e83430a8dbe0f9d889ffab9bc38b3ced45ef`;
+  managed-assembly SHA-256 is `e044af4f9e1f2f5834116f3d745d8cc23ccfe91f96425fc225862ef35f77b261`.
+  The large player remains ephemeral; run-level evaluator-only provenance must retain these hashes.
+- **TESTS:** 25 focused physical-screen, candidate-v2, and capture-launcher tests pass.
+- **NEXT GATE:** commit and push this predeclaration, then execute the six physical attempts in
+  order. Do not generate P/R answers until complete independent references and an exact fair
+  treatment contract are frozen.
