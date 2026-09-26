@@ -1,0 +1,52 @@
+{
+  "schema": "crane-luna-diagnostic-development-result/v1",
+  "screen_id": "coverage-complete-v4-language-screen-v1",
+  "recorded_utc": "2026-09-26T08:02:54Z",
+  "status": "RETAINED_INVALID_FOR_CANDIDATE_PROMOTION_INCOMPLETE_JUDGE_EVIDENCE",
+  "inferential_status": "DEVELOPMENT_ONLY_NOT_CONFIRMATORY",
+  "predeclaration": "manifests/annotation/luna-coverage-complete-v4-language-screen-v1-predeclaration.json",
+  "execution": {
+    "planned_judgments": 28,
+    "valid_judgments": 28,
+    "call_failures": 0,
+    "transport_retries": 0,
+    "inconvenient_label_retries": 0,
+    "luna_passes": 2
+  },
+  "observed_labels_not_valid_for_promotion": {
+    "P_supported_diagnostic_success": {"pass-1": "5/5", "pass-2": "5/5"},
+    "R_supported_diagnostic_success": {"pass-1": "3/5", "pass-2": "2/5"},
+    "P_material_errors": "0/14",
+    "R_material_errors": "9/14",
+    "P_required_unit_coverage": "104/104",
+    "R_required_unit_coverage": "104/104"
+  },
+  "invalidating_defect": {
+    "description": "R was explicitly allowed the complete robot-visible primitive, exact relevant repository source/configuration, and deterministic tools. The blinded judge reference contained a reduced primitive without method_input and no source/configuration excerpts. Most R material-error labels therefore treated source links, configuration details, or event-level details as unsupported solely because the judge packet omitted evidence R was allowed to use.",
+    "affected_R_material_error_judgments": 9,
+    "promotion_allowed": false,
+    "confirmation_activation_allowed": false,
+    "responses_regenerated": false,
+    "judgments_deleted": false,
+    "required_action": "Create and freeze evidence-complete annotation references and packets, then run a separately declared bounded Luna development re-evaluation. Preserve these labels as an evaluation-packet failure, not evidence that P beat R."
+  },
+  "audited_summary": {
+    "path": "model_outputs/dev/coverage-complete-v4-language-screen-v1/development-summary-parity-audited.json",
+    "sha256": "6683e1f12d47abd82c90fbaa6d09a4c3378342e2b6a02cc3d0d05cc415aff7f0",
+    "summarizer": "analysis/summarize_coverage_complete_v4_screen.py",
+    "summarizer_sha256": "bd41be96070ccdf74824edceb95c38150ad1799b4952a6c09df98ededd2d5a38"
+  },
+  "governed_artifacts": {
+    "manifest": "manifests/model_outputs/coverage-complete-v4-luna-incomplete-evidence-v1.json",
+    "manifest_sha256": "ff851a5e13cfc3cca4d147e0d878d912dcc5f87d5a7622bbb1583088597f52da",
+    "artifact_count": 58,
+    "storage": "model_outputs.dvc"
+  },
+  "statistical_boundary": {
+    "independent_scenario_clusters": 5,
+    "confirmatory_semantic_n": 0,
+    "confirmatory_alpha_consumed": 0.0,
+    "statistical_significance_claimed": false,
+    "replication_claimed": false
+  }
+}
