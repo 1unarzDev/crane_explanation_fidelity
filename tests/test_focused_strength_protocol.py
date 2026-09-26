@@ -30,6 +30,7 @@ BUILD_AMENDMENT = ROOT / (
     "focused-supported-diagnostic-communication-v1-build-amendment-1.json"
 )
 BUILD_MANIFEST = ROOT / "manifests/data/fsdc-v1-player-build-1.evaluator-only.json"
+FIRST_RUN = ROOT / "manifests/data/fsdc-land-geometry-001-disposition.json"
 
 
 def load(path: Path) -> dict:
@@ -140,3 +141,18 @@ def test_focused_player_build_is_hash_bound_without_retaining_large_player():
     hashes = {item["sha256"] for item in manifest["files"]}
     assert build["provenance_sha256"] in hashes
     assert build["audit_sha256"] in hashes
+
+
+def test_first_focused_physical_run_is_retained_without_semantic_or_alpha_increment():
+    run = load(FIRST_RUN)
+
+    assert run["admission"]["attempt_count"] == 1
+    assert run["admission"]["retry_performed"] is False
+    assert run["admission"]["scenario_binding_checks_passed"] == 14
+    assert run["independent_reference"]["direct_route_restriction_supported"] is True
+    assert run["independent_reference"]["costmap_caused_plan_change_proven"] is False
+    assert run["study_effect"]["prospective_physical_configuration_increment"] == 1
+    assert run["study_effect"]["primary_semantic_cluster_increment"] == 0
+    assert run["study_effect"]["model_response_increment"] == 0
+    assert run["study_effect"]["luna_judgment_increment"] == 0
+    assert run["study_effect"]["confirmatory_alpha_consumed"] == 0.0

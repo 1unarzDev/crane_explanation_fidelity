@@ -1,0 +1,84 @@
+{
+  "schema": "crane-focused-supported-diagnostic-communication-run-disposition/v1",
+  "recorded_utc_date": "2026-09-26",
+  "protocol_id": "focused-supported-diagnostic-communication-v1",
+  "run_id": "fsdc-land-geometry-001",
+  "cluster_id": "fsdc-land-geometry-001",
+  "status": "VALID_PROSPECTIVE_PHYSICAL_AND_REFERENCE_EVIDENCE_RESPONSE_UNOPENED",
+  "predeclaration": "research/explanation_fidelity/experiment_configs/prospective/focused-supported-diagnostic-communication-v1-schedule.json",
+  "admission": {
+    "attempt_count": 1,
+    "retry_performed": false,
+    "replacement_layout_used": false,
+    "player_build_audit_accepted": true,
+    "scenario_binding_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "unity_result_valid": true,
+    "expected_broad_outcome_observed": true,
+    "recording_valid": true
+  },
+  "scenario": {
+    "environment_id": "crane-land-proving-ground-v6",
+    "layout_id": "diagnostic-command-motion-confirmation-reserve-connected-detour-057",
+    "layout_seed": 91056,
+    "family": "bounded_geometric_restriction",
+    "mobility_hold_after_s": -1.0,
+    "mobility_release_after_s": -1.0
+  },
+  "observed": {
+    "navigation_status": "succeeded",
+    "action_wall_seconds": 85.1108340330029,
+    "displacement_meters": 17.514682094399266,
+    "controller_commands": 824,
+    "odometry_messages": 4252,
+    "trajectory_summary_samples": 84,
+    "behavior_tree_transitions": 39,
+    "costmap_observations": 324,
+    "delivered_plan_count": 3,
+    "unique_delivered_plan_count": 3,
+    "maximum_recovery_feedback": 2
+  },
+  "independent_reference": {
+    "direct_route_restriction_supported": true,
+    "retained_grid_has_connection": true,
+    "substantial_route_deviation_observed": true,
+    "global_physical_no_path_supported": false,
+    "unique_physical_obstacle_supported": false,
+    "controller_consumption_proven": false,
+    "costmap_caused_plan_change_proven": false,
+    "direct_route_first_blocked_center_x_m": 13.025000022724287,
+    "direct_route_first_blocked_cost": 253,
+    "cost_threshold": 253,
+    "maximum_plan_lateral_deviation_m": 1.1303745269775396,
+    "maximum_trajectory_lateral_deviation_m": 1.1059424877166748,
+    "plan_summary_parity_passed": true
+  },
+  "robot_visible_diagnostic": {
+    "disposition": "supported",
+    "mechanism": "recorded_plan_change_with_unresolved_physical_trigger",
+    "action_status": "succeeded",
+    "final_text_verification_accepted": true,
+    "bounded_interpretation": "The record supports a blocked direct-route sample in a retained navigation-model snapshot, a delivered-plan change, substantial plan and trajectory deviation, and eventual success. It does not establish obstacle identity, exact Nav2 consumption, global no-path, or that the retained snapshot caused the plan change."
+  },
+  "hashes": {
+    "player_build_audit_sha256": "ee0b3388eab6339de5000aaf0201bb07d9d63bc3b349ed1e49ba3d3ddf2fc005",
+    "scenario_binding_audit_sha256": "7c4bde2b5d9c10857515d78a2dc2e8d039ddc406f8799c2c80e5f363c20d655b",
+    "evaluator_truth_sha256": "57748315f764e99c119db572c8d3d1d0a1e08099c8cd9e2cb45e609a8ca77a28",
+    "fixture_summary_sha256": "aebcf33d91ffdf3848e219bc17cf65515eda87f5ce44bdf5402a7961e64155e3",
+    "geometric_independent_reference_sha256": "61e1eee01611f9792b1e4c0614efd5ff8e66c0546ea6d981200ba1e9b89b247c",
+    "plan_geometry_independent_reference_sha256": "c415052403161d7d89c6aa02f921a490ee411c0286946ecd86f22bb22ebe0fcd",
+    "robot_visible_diagnostic_sha256": "02a3148a972c0b38b3f52a3602ccc82a7f73a172109bc9dda8d00302ad1f26dd",
+    "robot_visible_manifest_sha256": "0aa1b178a2bb4b64c35f8ab1c485e18e4289cee0ec65de987953d7aac9f9d682",
+    "evaluator_only_manifest_sha256": "a23568a1b149a39bf7992d2d822eaabe8ea2018c7be219ac3bd3dbd33787e335"
+  },
+  "study_effect": {
+    "prospective_physical_configuration_increment": 1,
+    "primary_semantic_cluster_increment": 0,
+    "model_response_increment": 0,
+    "luna_judgment_increment": 0,
+    "confirmatory_alpha_consumed": 0.0,
+    "candidate_or_endpoint_changed_after_outcome": false,
+    "campaign_activation_status": "PHYSICAL_COLLECTION_STARTED_SEMANTIC_CONFIRMATION_NOT_ACTIVE"
+  },
+  "next_fixed_run": "fsdc-land-geometry-002"
+}

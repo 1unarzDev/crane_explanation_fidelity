@@ -1,5 +1,27 @@
 # Experiment Log
 
+## 2026-09-26 — focused physical run 1: `fsdc-land-geometry-001`
+
+- **STATUS:** `VALID_PROSPECTIVE_PHYSICAL_AND_REFERENCE_EVIDENCE_RESPONSE_UNOPENED`; one attempt,
+  no retry or replacement. Prospective physical configurations +1; primary semantic clusters,
+  model responses, Luna judgments, and alpha consumption remain zero.
+- **ADMISSION:** the pinned player passed every source/build/catalog check, the Unity fixture was
+  valid, and all 14 scenario-binding checks matched connected-detour 057 at seed 91056 with no
+  mobility intervention.
+- **OBSERVED:** NavigateToPose succeeded in 85.111 s after 17.515 m displacement, three distinct
+  delivered plans, two recovery-feedback increments, and substantial route deviation.
+- **INDEPENDENT GEOMETRY:** the final retained grid contains a cost-253 direct-route sample near
+  x=13.025 m and remains connected from the action-result pose to the goal. The first delivered
+  plan was direct; later plans span -1.130 m to +1.063 m, and the measured trajectory reaches
+  1.106 m lateral deviation. Independent plan and grid implementations passed parity checks.
+- **BOUNDARY:** this supports a bounded navigation-model restriction, recorded plan change, route
+  deviation, and success. It does not prove global physical no-path, obstacle identity, exact Nav2
+  consumption, or that the retained grid caused the plan change.
+- **GOVERNANCE:** raw and derived robot-visible/evaluator-only roots are hash-manifested and DVC-
+  pushed. The next fixed physical configuration is `fsdc-land-geometry-002`; P/R responses remain
+  unopened until the evidence-complete packet, treatment/resource, monitor, and alpha-binding gates
+  close.
+
 ## 2026-09-26 — focused campaign disposable-player qualification
 
 - **STATUS:** `BUILD_QUALIFIED / FIRST_PHYSICAL_CONFIGURATION_NOT_RUN`.
