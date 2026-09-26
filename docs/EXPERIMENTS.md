@@ -1,5 +1,16 @@
 # Experiment Log
 
+## 2026-09-26 — boat-specific Luna qualification frozen before calls
+
+- **SUITE:** 12 fresh held-out cases (six supported/error pairs) cover terminal margin, bounded
+  navigation geometry, controller-axis semantics, uncompensated lateral disturbance, nominal
+  docking, and missing decisive motion evidence.
+- **GATES:** both isolated high-reasoning Luna passes must meet 0.95 endpoint/unit/core accuracy,
+  <=0.05 false acceptance/rejection, zero protected causal/boundary failures, and zero call
+  failures. No substitution or label-driven retry is allowed.
+- **BOUNDARY:** the land v12 qualification is unchanged. No boat qualification or study call had
+  been made when the suite, runner, prompt, schema, and caller hashes were frozen.
+
 ## 2026-09-26 — high-throughput execution amendment and RoboBoat gate opened
 
 - **RECONCILIATION:** the 13/64 briefing is stale. Current governed state is 31 land attempts,

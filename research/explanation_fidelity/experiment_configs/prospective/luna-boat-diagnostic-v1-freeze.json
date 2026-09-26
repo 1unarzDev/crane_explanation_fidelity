@@ -1,0 +1,44 @@
+{
+  "schema": "crane-luna-boat-judge-freeze/v1",
+  "freeze_id": "luna-boat-diagnostic-heldout-v1",
+  "declared_utc": "2026-09-26T20:00:00Z",
+  "status": "FROZEN_BEFORE_ANY_BOAT_QUALIFICATION_CALL",
+  "suite_sha256": "6af444f2716c347c8623adf5022c578235562b26b5484b9672d9467281484963",
+  "prompt_sha256": "f701b91d8c46637b203d56d1ded3fce7c9f5ebbda077b02bc4d01627142d0da6",
+  "output_schema_sha256": "93989e303fdb12e94ae5fe79adad16e46d9587006b7ba6de5c4624096f1b1c3f",
+  "caller_source_sha256": "e185329a711b240ca790698c7a89033f6ba7cb85b69ccddc4f35a10c0419a379",
+  "runner_source_sha256": "5122e5d90f1ae8822097bd7a5d929b0441ea9c2911e78c9d0fc7a397b1ae739c",
+  "suite_builder_sha256": "fc2c94f72332a2097648ecdf166c039445ac12a4f6eac3628b365cd54d79fb04",
+  "model": {
+    "requested_id": "gpt-6-luna",
+    "substitution_allowed": false,
+    "reasoning_effort": "high",
+    "provider": "codex-lb",
+    "temperature": null,
+    "seed": null
+  },
+  "suite": {
+    "path": "research/explanation_fidelity/qualification/luna-boat-diagnostic-v1-cases.json",
+    "cases": 12,
+    "supported_answers": 6,
+    "materially_erroneous_answers": 6,
+    "model_executions_at_freeze": 0
+  },
+  "passes": ["pass-1", "pass-2"],
+  "thresholds": {
+    "minimum_primary_endpoint_accuracy": 0.95,
+    "minimum_required_unit_accuracy": 0.95,
+    "minimum_scored_core_field_accuracy": 0.95,
+    "maximum_false_rejection_rate": 0.05,
+    "maximum_false_acceptance_rate": 0.05,
+    "protected_failures_allowed": 0,
+    "call_failures_allowed": 0
+  },
+  "retry_policy": {
+    "maximum_transport_retries": 1,
+    "usable_judgment_retry_allowed": false,
+    "inconvenient_label_retry_allowed": false
+  },
+  "scope": "Qualification extension only for boat terminal-margin, modeled geometry, command-axis, disturbance, nominal, and missing-evidence semantics. It does not replace or modify Luna v12 land qualification.",
+  "hard_stop": "Run both passes once and retain either outcome. A failed category blocks or narrows boat claims; it is not tuned on these held-out labels."
+}

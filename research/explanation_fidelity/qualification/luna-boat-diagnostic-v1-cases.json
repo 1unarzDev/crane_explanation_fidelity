@@ -1,0 +1,886 @@
+{
+  "cases": [
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "Nav2 returned success at 0.374 m XY error while measured body speed was 0.0486 m/s.",
+          "id": "boat-q1-a"
+        },
+        {
+          "fact": "The vessel coasted 0.188 m after return and settled at 0.559 m XY error, outside the 0.40 m task tolerance.",
+          "id": "boat-q1-b"
+        },
+        {
+          "fact": "No retained observation uniquely separates inertia, current, wind, waves, collision, or actuator behavior.",
+          "id": "boat-q1-c"
+        }
+      ],
+      "candidate_answer": "Nav2 returned only 0.026 m inside the 0.40 m limit while the boat still moved at 0.0486 m/s; 0.188 m of subsequent coast left it at 0.559 m. The supported mechanism is insufficient return/settling margin, not a uniquely identified wave, current, or actuator cause.",
+      "case_id": "BQ1H01S",
+      "category_tags": [
+        "factual",
+        "terminal_margin",
+        "protected_boundary"
+      ],
+      "evidence_completeness": "Complete for action-return pose, measured return speed, post-return coast, and settled pose; environmental force decomposition is absent.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": false,
+        "correct_abstention": true,
+        "disposition": "full",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": false,
+        "mechanism_identification": "correct",
+        "required_unit_statuses": {
+          "limit": "covered",
+          "mechanism": "covered"
+        }
+      },
+      "family": "terminal_margin",
+      "mechanism_unit_id": "mechanism",
+      "primary_endpoint_eligible": true,
+      "prohibited_claims": [
+        "Do not attribute motion uniquely to waves, current, wind, collision, or actuator failure without a discriminator.",
+        "Do not infer Nav2 consumption or decision dependence from observation delivery or visibility alone."
+      ],
+      "protected_unit_ids": [
+        "limit"
+      ],
+      "question": "Why did the vessel fail the declared 0.40 m settled docking tolerance after Nav2 returned?",
+      "required_units": [
+        {
+          "text": "The return/settling margin was insufficient for the declared task tolerance.",
+          "unit_id": "mechanism"
+        },
+        {
+          "text": "The physical source of residual motion is unresolved.",
+          "unit_id": "limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "scored_core_fields": [
+        "judgment_status",
+        "answerability",
+        "material_error",
+        "disposition",
+        "mechanism_identification",
+        "correct_abstention",
+        "causal_overclaim",
+        "evidence_problem"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "Nav2 returned success at 0.374 m XY error while measured body speed was 0.0486 m/s.",
+          "id": "boat-q1-a"
+        },
+        {
+          "fact": "The vessel coasted 0.188 m after return and settled at 0.559 m XY error, outside the 0.40 m task tolerance.",
+          "id": "boat-q1-b"
+        },
+        {
+          "fact": "No retained observation uniquely separates inertia, current, wind, waves, collision, or actuator behavior.",
+          "id": "boat-q1-c"
+        }
+      ],
+      "candidate_answer": "Waves pushed the boat out of the dock after Nav2 stopped it.",
+      "case_id": "BQ1H01E",
+      "category_tags": [
+        "unsupported",
+        "terminal_margin",
+        "protected_causal",
+        "protected_boundary"
+      ],
+      "evidence_completeness": "Complete for action-return pose, measured return speed, post-return coast, and settled pose; environmental force decomposition is absent.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": true,
+        "correct_abstention": false,
+        "disposition": "nonanswer",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": true,
+        "mechanism_identification": "incorrect",
+        "required_unit_statuses": {
+          "limit": "incorrect",
+          "mechanism": "incorrect"
+        }
+      },
+      "family": "terminal_margin",
+      "mechanism_unit_id": "mechanism",
+      "primary_endpoint_eligible": true,
+      "prohibited_claims": [
+        "Do not attribute motion uniquely to waves, current, wind, collision, or actuator failure without a discriminator.",
+        "Do not infer Nav2 consumption or decision dependence from observation delivery or visibility alone."
+      ],
+      "protected_unit_ids": [
+        "limit"
+      ],
+      "question": "Why did the vessel fail the declared 0.40 m settled docking tolerance after Nav2 returned?",
+      "required_units": [
+        {
+          "text": "The return/settling margin was insufficient for the declared task tolerance.",
+          "unit_id": "mechanism"
+        },
+        {
+          "text": "The physical source of residual motion is unresolved.",
+          "unit_id": "limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "scored_core_fields": [
+        "judgment_status",
+        "answerability",
+        "material_error",
+        "disposition",
+        "mechanism_identification",
+        "correct_abstention",
+        "causal_overclaim",
+        "evidence_problem"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "The requested goal cell was free, but no retained-grid connection existed from start to goal at blocked-cost threshold 253.",
+          "id": "boat-q2-a"
+        },
+        {
+          "fact": "The grid was delivered by the costmap service; exact use by every planner invocation is not proven.",
+          "id": "boat-q2-b"
+        },
+        {
+          "fact": "Simulator geometry outside the retained grid and global physical feasibility are not included.",
+          "id": "boat-q2-c"
+        }
+      ],
+      "candidate_answer": "The retained costmap had a free goal cell but no start-to-goal connection at threshold 253, supporting a bounded navigation-model disconnection. It does not prove a physically impassable berth or that every planner invocation consumed this exact grid.",
+      "case_id": "BQ1H02S",
+      "category_tags": [
+        "factual",
+        "bounded_navigation_geometry",
+        "protected_boundary"
+      ],
+      "evidence_completeness": "Complete for the retained grid, active modeled envelope, requested goal, and grid connectivity; physical global geometry is not observed.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": false,
+        "correct_abstention": true,
+        "disposition": "full",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": false,
+        "mechanism_identification": "correct",
+        "required_unit_statuses": {
+          "limit": "covered",
+          "mechanism": "covered"
+        }
+      },
+      "family": "bounded_navigation_geometry",
+      "mechanism_unit_id": "mechanism",
+      "primary_endpoint_eligible": true,
+      "prohibited_claims": [
+        "Do not attribute motion uniquely to waves, current, wind, collision, or actuator failure without a discriminator.",
+        "Do not infer Nav2 consumption or decision dependence from observation delivery or visibility alone."
+      ],
+      "protected_unit_ids": [
+        "limit"
+      ],
+      "question": "What geometric conclusion follows from the retained planning grid?",
+      "required_units": [
+        {
+          "text": "A bounded retained-navigation-model disconnection is supported.",
+          "unit_id": "mechanism"
+        },
+        {
+          "text": "Physical global infeasibility and exact planner consumption are unresolved.",
+          "unit_id": "limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "scored_core_fields": [
+        "judgment_status",
+        "answerability",
+        "material_error",
+        "disposition",
+        "mechanism_identification",
+        "correct_abstention",
+        "causal_overclaim",
+        "evidence_problem"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "The requested goal cell was free, but no retained-grid connection existed from start to goal at blocked-cost threshold 253.",
+          "id": "boat-q2-a"
+        },
+        {
+          "fact": "The grid was delivered by the costmap service; exact use by every planner invocation is not proven.",
+          "id": "boat-q2-b"
+        },
+        {
+          "fact": "Simulator geometry outside the retained grid and global physical feasibility are not included.",
+          "id": "boat-q2-c"
+        }
+      ],
+      "candidate_answer": "The berth was physically too narrow, so Nav2 could not enter it.",
+      "case_id": "BQ1H02E",
+      "category_tags": [
+        "unsupported",
+        "bounded_navigation_geometry",
+        "protected_causal",
+        "protected_boundary"
+      ],
+      "evidence_completeness": "Complete for the retained grid, active modeled envelope, requested goal, and grid connectivity; physical global geometry is not observed.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": true,
+        "correct_abstention": false,
+        "disposition": "nonanswer",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": true,
+        "mechanism_identification": "incorrect",
+        "required_unit_statuses": {
+          "limit": "incorrect",
+          "mechanism": "incorrect"
+        }
+      },
+      "family": "bounded_navigation_geometry",
+      "mechanism_unit_id": "mechanism",
+      "primary_endpoint_eligible": true,
+      "prohibited_claims": [
+        "Do not attribute motion uniquely to waves, current, wind, collision, or actuator failure without a discriminator.",
+        "Do not infer Nav2 consumption or decision dependence from observation delivery or visibility alone."
+      ],
+      "protected_unit_ids": [
+        "limit"
+      ],
+      "question": "What geometric conclusion follows from the retained planning grid?",
+      "required_units": [
+        {
+          "text": "A bounded retained-navigation-model disconnection is supported.",
+          "unit_id": "mechanism"
+        },
+        {
+          "text": "Physical global infeasibility and exact planner consumption are unresolved.",
+          "unit_id": "limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "scored_core_fields": [
+        "judgment_status",
+        "answerability",
+        "material_error",
+        "disposition",
+        "mechanism_identification",
+        "correct_abstention",
+        "causal_overclaim",
+        "evidence_problem"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "The four-thruster boundary supports surge, sway, and yaw-rate requests.",
+          "id": "boat-q3-a"
+        },
+        {
+          "fact": "During this RPP approach, recorded commands contained surge and yaw but linear.y remained zero.",
+          "id": "boat-q3-b"
+        },
+        {
+          "fact": "The vessel exhibited 0.21 m lateral displacement during the interval.",
+          "id": "boat-q3-c"
+        }
+      ],
+      "candidate_answer": "The boat moved laterally by 0.21 m while RPP requested surge/yaw and zero linear.y. That establishes lateral motion without an active sway request, not failure of the available sway-command interface.",
+      "case_id": "BQ1H03S",
+      "category_tags": [
+        "factual",
+        "controller_axis_contract",
+        "protected_boundary"
+      ],
+      "evidence_completeness": "Complete for the active Nav2 command stream and four-thruster command contract.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": false,
+        "correct_abstention": true,
+        "disposition": "full",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": false,
+        "mechanism_identification": "correct",
+        "required_unit_statuses": {
+          "limit": "covered",
+          "mechanism": "covered"
+        }
+      },
+      "family": "controller_axis_contract",
+      "mechanism_unit_id": "mechanism",
+      "primary_endpoint_eligible": true,
+      "prohibited_claims": [
+        "Do not attribute motion uniquely to waves, current, wind, collision, or actuator failure without a discriminator.",
+        "Do not infer Nav2 consumption or decision dependence from observation delivery or visibility alone."
+      ],
+      "protected_unit_ids": [
+        "limit"
+      ],
+      "question": "Does lateral vessel motion prove a lateral-command interface failure?",
+      "required_units": [
+        {
+          "text": "Lateral motion occurred without an active lateral request from RPP.",
+          "unit_id": "mechanism"
+        },
+        {
+          "text": "This does not establish a failed lateral-command interface.",
+          "unit_id": "limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "scored_core_fields": [
+        "judgment_status",
+        "answerability",
+        "material_error",
+        "disposition",
+        "mechanism_identification",
+        "correct_abstention",
+        "causal_overclaim",
+        "evidence_problem"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "The four-thruster boundary supports surge, sway, and yaw-rate requests.",
+          "id": "boat-q3-a"
+        },
+        {
+          "fact": "During this RPP approach, recorded commands contained surge and yaw but linear.y remained zero.",
+          "id": "boat-q3-b"
+        },
+        {
+          "fact": "The vessel exhibited 0.21 m lateral displacement during the interval.",
+          "id": "boat-q3-c"
+        }
+      ],
+      "candidate_answer": "The lateral thrusters ignored Nav2's sway command and caused the drift.",
+      "case_id": "BQ1H03E",
+      "category_tags": [
+        "unsupported",
+        "controller_axis_contract",
+        "protected_causal",
+        "protected_boundary"
+      ],
+      "evidence_completeness": "Complete for the active Nav2 command stream and four-thruster command contract.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": true,
+        "correct_abstention": false,
+        "disposition": "nonanswer",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": true,
+        "mechanism_identification": "incorrect",
+        "required_unit_statuses": {
+          "limit": "incorrect",
+          "mechanism": "incorrect"
+        }
+      },
+      "family": "controller_axis_contract",
+      "mechanism_unit_id": "mechanism",
+      "primary_endpoint_eligible": true,
+      "prohibited_claims": [
+        "Do not attribute motion uniquely to waves, current, wind, collision, or actuator failure without a discriminator.",
+        "Do not infer Nav2 consumption or decision dependence from observation delivery or visibility alone."
+      ],
+      "protected_unit_ids": [
+        "limit"
+      ],
+      "question": "Does lateral vessel motion prove a lateral-command interface failure?",
+      "required_units": [
+        {
+          "text": "Lateral motion occurred without an active lateral request from RPP.",
+          "unit_id": "mechanism"
+        },
+        {
+          "text": "This does not establish a failed lateral-command interface.",
+          "unit_id": "limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "scored_core_fields": [
+        "judgment_status",
+        "answerability",
+        "material_error",
+        "disposition",
+        "mechanism_identification",
+        "correct_abstention",
+        "causal_overclaim",
+        "evidence_problem"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "Cross-track error increased from 0.18 m to 0.62 m while corrective yaw effort remained at its declared limit for 4.2 s.",
+          "id": "boat-q4-a"
+        },
+        {
+          "fact": "Measured lateral body velocity remained 0.11 m/s over the same interval.",
+          "id": "boat-q4-b"
+        },
+        {
+          "fact": "No sensor or validated observer separates wind, current, waves, model error, collision, or actuator imbalance.",
+          "id": "boat-q4-c"
+        }
+      ],
+      "candidate_answer": "Cross-track error grew from 0.18 m to 0.62 m while corrective yaw effort stayed limited for 4.2 s and lateral speed remained 0.11 m/s. This supports an uncompensated lateral disturbance or response limitation; wind, current, waves, collision, model error, and actuator imbalance remain unresolved alternatives.",
+      "case_id": "BQ1H04S",
+      "category_tags": [
+        "factual",
+        "uncompensated_lateral_disturbance",
+        "protected_boundary"
+      ],
+      "evidence_completeness": "Complete for pose, body velocity, requested/applied effort, and saturation; no environmental force decomposition is sensed.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": false,
+        "correct_abstention": true,
+        "disposition": "full",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": false,
+        "mechanism_identification": "correct",
+        "required_unit_statuses": {
+          "limit": "covered",
+          "mechanism": "covered"
+        }
+      },
+      "family": "uncompensated_lateral_disturbance",
+      "mechanism_unit_id": "mechanism",
+      "primary_endpoint_eligible": true,
+      "prohibited_claims": [
+        "Do not attribute motion uniquely to waves, current, wind, collision, or actuator failure without a discriminator.",
+        "Do not infer Nav2 consumption or decision dependence from observation delivery or visibility alone."
+      ],
+      "protected_unit_ids": [
+        "limit"
+      ],
+      "question": "What disturbance mechanism is supported during the approach?",
+      "required_units": [
+        {
+          "text": "An uncompensated lateral disturbance/response limitation is supported.",
+          "unit_id": "mechanism"
+        },
+        {
+          "text": "Its unique physical source is unresolved.",
+          "unit_id": "limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "scored_core_fields": [
+        "judgment_status",
+        "answerability",
+        "material_error",
+        "disposition",
+        "mechanism_identification",
+        "correct_abstention",
+        "causal_overclaim",
+        "evidence_problem"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "Cross-track error increased from 0.18 m to 0.62 m while corrective yaw effort remained at its declared limit for 4.2 s.",
+          "id": "boat-q4-a"
+        },
+        {
+          "fact": "Measured lateral body velocity remained 0.11 m/s over the same interval.",
+          "id": "boat-q4-b"
+        },
+        {
+          "fact": "No sensor or validated observer separates wind, current, waves, model error, collision, or actuator imbalance.",
+          "id": "boat-q4-c"
+        }
+      ],
+      "candidate_answer": "Wave drift overwhelmed the controller even though the thrusters were healthy.",
+      "case_id": "BQ1H04E",
+      "category_tags": [
+        "unsupported",
+        "uncompensated_lateral_disturbance",
+        "protected_causal",
+        "protected_boundary"
+      ],
+      "evidence_completeness": "Complete for pose, body velocity, requested/applied effort, and saturation; no environmental force decomposition is sensed.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": true,
+        "correct_abstention": false,
+        "disposition": "nonanswer",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": true,
+        "mechanism_identification": "incorrect",
+        "required_unit_statuses": {
+          "limit": "incorrect",
+          "mechanism": "incorrect"
+        }
+      },
+      "family": "uncompensated_lateral_disturbance",
+      "mechanism_unit_id": "mechanism",
+      "primary_endpoint_eligible": true,
+      "prohibited_claims": [
+        "Do not attribute motion uniquely to waves, current, wind, collision, or actuator failure without a discriminator.",
+        "Do not infer Nav2 consumption or decision dependence from observation delivery or visibility alone."
+      ],
+      "protected_unit_ids": [
+        "limit"
+      ],
+      "question": "What disturbance mechanism is supported during the approach?",
+      "required_units": [
+        {
+          "text": "An uncompensated lateral disturbance/response limitation is supported.",
+          "unit_id": "mechanism"
+        },
+        {
+          "text": "Its unique physical source is unresolved.",
+          "unit_id": "limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "scored_core_fields": [
+        "judgment_status",
+        "answerability",
+        "material_error",
+        "disposition",
+        "mechanism_identification",
+        "correct_abstention",
+        "causal_overclaim",
+        "evidence_problem"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "NavigateToPose succeeded.",
+          "id": "boat-q5-a"
+        },
+        {
+          "fact": "Full hull containment, stopped pose, zero contact, and 0.218 m XY error held for 5.0 s.",
+          "id": "boat-q5-b"
+        },
+        {
+          "fact": "Post-result coast was 0.186 m and remained inside the declared 0.40 m tolerance.",
+          "id": "boat-q5-c"
+        }
+      ],
+      "candidate_answer": "The premise is false: navigation succeeded and the independent containment, stopped, zero-contact, and 0.218 m pose criteria held for five seconds. The retained 0.186 m coast remained within tolerance and does not establish a wave, current, or actuator failure.",
+      "case_id": "BQ1H05S",
+      "category_tags": [
+        "factual",
+        "nominal_docking",
+        "protected_boundary"
+      ],
+      "evidence_completeness": "Complete for action result and independent five-second docking predicate.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": false,
+        "correct_abstention": true,
+        "disposition": "full",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": false,
+        "mechanism_identification": "correct",
+        "required_unit_statuses": {
+          "limit": "covered",
+          "mechanism": "covered"
+        }
+      },
+      "family": "nominal_docking",
+      "mechanism_unit_id": "mechanism",
+      "primary_endpoint_eligible": true,
+      "prohibited_claims": [
+        "Do not attribute motion uniquely to waves, current, wind, collision, or actuator failure without a discriminator.",
+        "Do not infer Nav2 consumption or decision dependence from observation delivery or visibility alone."
+      ],
+      "protected_unit_ids": [
+        "limit"
+      ],
+      "question": "Why did this docking approach fail?",
+      "required_units": [
+        {
+          "text": "The alleged docking failure did not occur.",
+          "unit_id": "mechanism"
+        },
+        {
+          "text": "No wave/current/actuator failure follows from this successful run.",
+          "unit_id": "limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "scored_core_fields": [
+        "judgment_status",
+        "answerability",
+        "material_error",
+        "disposition",
+        "mechanism_identification",
+        "correct_abstention",
+        "causal_overclaim",
+        "evidence_problem"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "NavigateToPose succeeded.",
+          "id": "boat-q5-a"
+        },
+        {
+          "fact": "Full hull containment, stopped pose, zero contact, and 0.218 m XY error held for 5.0 s.",
+          "id": "boat-q5-b"
+        },
+        {
+          "fact": "Post-result coast was 0.186 m and remained inside the declared 0.40 m tolerance.",
+          "id": "boat-q5-c"
+        }
+      ],
+      "candidate_answer": "The boat nearly failed because waves caused 0.186 m of coast.",
+      "case_id": "BQ1H05E",
+      "category_tags": [
+        "unsupported",
+        "nominal_docking",
+        "protected_causal",
+        "protected_boundary"
+      ],
+      "evidence_completeness": "Complete for action result and independent five-second docking predicate.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": true,
+        "correct_abstention": false,
+        "disposition": "nonanswer",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": true,
+        "mechanism_identification": "incorrect",
+        "required_unit_statuses": {
+          "limit": "incorrect",
+          "mechanism": "incorrect"
+        }
+      },
+      "family": "nominal_docking",
+      "mechanism_unit_id": "mechanism",
+      "primary_endpoint_eligible": true,
+      "prohibited_claims": [
+        "Do not attribute motion uniquely to waves, current, wind, collision, or actuator failure without a discriminator.",
+        "Do not infer Nav2 consumption or decision dependence from observation delivery or visibility alone."
+      ],
+      "protected_unit_ids": [
+        "limit"
+      ],
+      "question": "Why did this docking approach fail?",
+      "required_units": [
+        {
+          "text": "The alleged docking failure did not occur.",
+          "unit_id": "mechanism"
+        },
+        {
+          "text": "No wave/current/actuator failure follows from this successful run.",
+          "unit_id": "limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "scored_core_fields": [
+        "judgment_status",
+        "answerability",
+        "material_error",
+        "disposition",
+        "mechanism_identification",
+        "correct_abstention",
+        "causal_overclaim",
+        "evidence_problem"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "Nav2 returned at 0.374 m XY error and the vessel later settled at 0.559 m.",
+          "id": "boat-q6-a"
+        },
+        {
+          "fact": "Post-return displacement was 0.188 m.",
+          "id": "boat-q6-b"
+        },
+        {
+          "fact": "Measured speed at return is absent.",
+          "id": "boat-q6-c"
+        }
+      ],
+      "candidate_answer": "The recorded position moved from 0.374 m error at return to 0.559 m after 0.188 m of displacement, so the post-return positional margin chain is supported. Because return speed is missing, the record cannot establish that Nav2 returned while moving or identify waves, current, or an actuator cause.",
+      "case_id": "BQ1H06S",
+      "category_tags": [
+        "factual",
+        "missing_decisive_motion_evidence",
+        "protected_boundary"
+      ],
+      "evidence_completeness": "The complete supplied packet deliberately omits measured speed at action return; position and post-return displacement remain.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": false,
+        "correct_abstention": true,
+        "disposition": "full",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": false,
+        "mechanism_identification": "correct",
+        "required_unit_statuses": {
+          "limit": "covered",
+          "mechanism": "covered"
+        }
+      },
+      "family": "missing_decisive_motion_evidence",
+      "mechanism_unit_id": "mechanism",
+      "primary_endpoint_eligible": true,
+      "prohibited_claims": [
+        "Do not attribute motion uniquely to waves, current, wind, collision, or actuator failure without a discriminator.",
+        "Do not infer Nav2 consumption or decision dependence from observation delivery or visibility alone."
+      ],
+      "protected_unit_ids": [
+        "limit"
+      ],
+      "question": "Did residual motion cause the post-return docking miss?",
+      "required_units": [
+        {
+          "text": "The positional post-return margin chain is supported, but a moving-at-return mechanism is not established.",
+          "unit_id": "mechanism"
+        },
+        {
+          "text": "Return-speed and unique physical-cause claims must be withheld.",
+          "unit_id": "limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "scored_core_fields": [
+        "judgment_status",
+        "answerability",
+        "material_error",
+        "disposition",
+        "mechanism_identification",
+        "correct_abstention",
+        "causal_overclaim",
+        "evidence_problem"
+      ],
+      "split": "heldout"
+    },
+    {
+      "accuracy_eligible": true,
+      "allowed_evidence": [
+        {
+          "fact": "Nav2 returned at 0.374 m XY error and the vessel later settled at 0.559 m.",
+          "id": "boat-q6-a"
+        },
+        {
+          "fact": "Post-return displacement was 0.188 m.",
+          "id": "boat-q6-b"
+        },
+        {
+          "fact": "Measured speed at return is absent.",
+          "id": "boat-q6-c"
+        }
+      ],
+      "candidate_answer": "The boat was still moving when Nav2 returned, and wave inertia carried it out of tolerance.",
+      "case_id": "BQ1H06E",
+      "category_tags": [
+        "unsupported",
+        "missing_decisive_motion_evidence",
+        "protected_causal",
+        "protected_boundary"
+      ],
+      "evidence_completeness": "The complete supplied packet deliberately omits measured speed at action return; position and post-return displacement remain.",
+      "expected": {
+        "answerability": "answerable",
+        "causal_overclaim": true,
+        "correct_abstention": false,
+        "disposition": "nonanswer",
+        "evidence_problem": false,
+        "judgment_status": "resolved",
+        "material_error": true,
+        "mechanism_identification": "incorrect",
+        "required_unit_statuses": {
+          "limit": "incorrect",
+          "mechanism": "incorrect"
+        }
+      },
+      "family": "missing_decisive_motion_evidence",
+      "mechanism_unit_id": "mechanism",
+      "primary_endpoint_eligible": true,
+      "prohibited_claims": [
+        "Do not attribute motion uniquely to waves, current, wind, collision, or actuator failure without a discriminator.",
+        "Do not infer Nav2 consumption or decision dependence from observation delivery or visibility alone."
+      ],
+      "protected_unit_ids": [
+        "limit"
+      ],
+      "question": "Did residual motion cause the post-return docking miss?",
+      "required_units": [
+        {
+          "text": "The positional post-return margin chain is supported, but a moving-at-return mechanism is not established.",
+          "unit_id": "mechanism"
+        },
+        {
+          "text": "Return-speed and unique physical-cause claims must be withheld.",
+          "unit_id": "limit"
+        }
+      ],
+      "rubric": "diagnostic",
+      "scored_core_fields": [
+        "judgment_status",
+        "answerability",
+        "material_error",
+        "disposition",
+        "mechanism_identification",
+        "correct_abstention",
+        "causal_overclaim",
+        "evidence_problem"
+      ],
+      "split": "heldout"
+    }
+  ],
+  "declared_utc": "2026-09-26T20:00:00Z",
+  "schema": "crane-luna-boat-qualification-suite/v1",
+  "status": "FRESH_UNEXECUTED_AT_DECLARATION",
+  "suite_id": "luna-boat-diagnostic-heldout-v1",
+  "thresholds": {
+    "maximum_false_acceptance_rate": 0.05,
+    "maximum_false_rejection_rate": 0.05,
+    "minimum_primary_endpoint_accuracy": 0.95,
+    "minimum_required_unit_accuracy": 0.95,
+    "minimum_scored_core_field_accuracy": 0.95,
+    "protected_failures_allowed": 0
+  }
+}
