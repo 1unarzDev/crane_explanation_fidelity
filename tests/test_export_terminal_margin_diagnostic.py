@@ -78,3 +78,28 @@ def test_export_uses_goal_and_odometry_without_evaluator_label(tmp_path):
     assert masked["observation"]["measured_speed_at_return_mps"] is None
     assert masked["evidence_boundary"]["masked_fields"] == ["measured_speed_at_return"]
     assert "independently measured speed" in masked["diagnostic_result"]["limits"]
+
+
+def test_retained_goal_supports_navigate_to_pose_schema_without_supplied_path():
+    summary = {
+        "plannedPath": [],
+        "goal": {
+            "frame_id": "odom",
+            "position": {"x": 0.8641434, "y": -27.586906, "z": 0.1},
+            "yaw": 1.5707963267948966,
+        },
+        "planHistory": [
+            {
+                "terminal": {
+                    "x": 0.8641434,
+                    "y": -27.586906,
+                    "yaw": 1.5707963267948966,
+                }
+            }
+        ],
+    }
+    assert MODULE.retained_goal(summary) == {
+        "x": 0.8641434,
+        "y": -27.586906,
+        "yaw": 1.5707963267948966,
+    }

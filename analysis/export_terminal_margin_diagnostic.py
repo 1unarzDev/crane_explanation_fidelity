@@ -46,6 +46,31 @@ def config_value(config_text: str, key: str) -> float:
     return float(match.group(1))
 
 
+def retained_goal(summary: dict[str, Any]) -> dict[str, float]:
+    """Return the requested terminal pose for either supported Nav2 action schema."""
+
+    path = summary.get("plannedPath") or []
+    if path:
+        return path[-1]
+    requested = summary.get("goal") or {}
+    position = requested.get("position") or {}
+    if not all(key in position for key in ("x", "y")) or "yaw" not in requested:
+        raise ValueError("fixture has neither a supplied path goal nor a retained requested goal")
+    goal = {
+        "x": float(position["x"]),
+        "y": float(position["y"]),
+        "yaw": float(requested["yaw"]),
+    }
+    history = summary.get("planHistory") or []
+    if history:
+        terminal = history[-1].get("terminal") or {}
+        if all(key in terminal for key in ("x", "y")) and math.hypot(
+            float(terminal["x"]) - goal["x"], float(terminal["y"]) - goal["y"]
+        ) > 1e-6:
+            raise ValueError("retained requested goal disagrees with terminal plan history")
+    return goal
+
+
 def build_export(
     summary_path: Path,
     config_repository: Path,
@@ -69,15 +94,12 @@ def build_export(
         raise ValueError("fixture does not declare the required independent odometry provenance")
     if summary.get("status") != "succeeded":
         raise ValueError("terminal-margin diagnostic currently requires a succeeded action")
-    path = summary.get("plannedPath") or []
-    if not path:
-        raise ValueError("fixture has no retained planned path goal")
+    goal = retained_goal(summary)
     trajectory = summary.get("trajectory") or []
     post_result = [sample for sample in trajectory if sample.get("phase") == "post_result"]
     if not post_result:
         raise ValueError("fixture has no post-result measured trajectory")
 
-    goal = path[-1]
     return_pose = summary["actionResultPose"]
     final_pose = summary["finalPose"]
     summary_hash = sha256_bytes(raw)

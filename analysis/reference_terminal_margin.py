@@ -166,6 +166,11 @@ def main() -> int:
     parser.add_argument("evidence_export", type=Path)
     parser.add_argument("--config-repository", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
+    parser.add_argument(
+        "--prospective-external-validity",
+        action="store_true",
+        help="Bind the independently computed reference to the frozen prospective boat arm.",
+    )
     args = parser.parse_args()
     export = json.loads(args.evidence_export.read_text(encoding="utf-8"))
     source = export["source"]
@@ -176,6 +181,15 @@ def main() -> int:
         capture_output=True,
     ).stdout
     result = calculate(export, config_bytes)
+    if args.prospective_external_validity:
+        if export.get("study_status") != "PROSPECTIVE_EXTERNAL_VALIDITY_ARM":
+            raise ValueError("prospective reference requires a prospective robot-visible export")
+        result["status"] = "PROSPECTIVE_EXTERNAL_VALIDITY_REFERENCE_NOT_HUMAN_GOLD"
+        result["arm_id"] = export["arm_id"]
+        result["configuration_id"] = export["configuration_id"]
+        result["cluster_id"] = export["cluster_id"]
+        result["land_n_added"] = 0
+        result["land_alpha_consumed"] = 0.0
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     return 0
