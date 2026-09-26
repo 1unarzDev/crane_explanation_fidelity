@@ -1,0 +1,97 @@
+{
+  "schema": "crane-diagnostic-batch-plan/v1",
+  "plan_id": "diagnostic-production-batch-001",
+  "created_date": "2026-09-26",
+  "scope": "First frozen boat capture plus the six missing immutable land first-look response pairs. Existing 18 pairs are inputs and are not regenerated.",
+  "pool_limits": {
+    "roboboat_simulation": 1,
+    "r_agent": 2
+  },
+  "backpressure": {
+    "roboboat_simulation": 1,
+    "r_agent": 6
+  },
+  "registered_looks": {
+    "land": [24, 36, 47],
+    "boat": []
+  },
+  "jobs": [
+    {
+      "job_id": "boat-ext-narrow-001-capture",
+      "configuration_id": "boat-ext-narrow-001",
+      "arm": "boat",
+      "sequence_index": 1,
+      "stage": "capture",
+      "pool": "roboboat_simulation",
+      "dependencies": [],
+      "request_identity": "59427b8abda4397dbfef6e9a6e10a9c2e8757b110c9f25e9fdd33a954b010acf",
+      "registry": "research/explanation_fidelity/experiment_configs/prospective/roboboat-diagnostic-external-validity-v1-narrow-freeze.json"
+    },
+    {
+      "job_id": "cm-land-conf-063-response-pair",
+      "configuration_id": "cm-land-conf-063",
+      "arm": "land",
+      "sequence_index": 63,
+      "stage": "answers",
+      "pool": "r_agent",
+      "dependencies": [],
+      "request_identity": "32367d301f253bcf88359b9fbc43e4fc0ead675b8b7592f4064029f354a6cdf7",
+      "family": "measured_response_recovery"
+    },
+    {
+      "job_id": "cm-land-conf-064-response-pair",
+      "configuration_id": "cm-land-conf-064",
+      "arm": "land",
+      "sequence_index": 64,
+      "stage": "answers",
+      "pool": "r_agent",
+      "dependencies": [],
+      "request_identity": "a1ab999e81dae546ed5649568d5e8003cd0451f593c7b03d255f47f23e73d014",
+      "family": "persistent_command_motion_discrepancy"
+    },
+    {
+      "job_id": "cm-land-conf-065-response-pair",
+      "configuration_id": "cm-land-conf-065",
+      "arm": "land",
+      "sequence_index": 65,
+      "stage": "answers",
+      "pool": "r_agent",
+      "dependencies": [],
+      "request_identity": "7829426343c92a227c8f42ee4a76fc450bbe0b059619984859cb184cf33cd182",
+      "family": "persistent_command_motion_discrepancy"
+    },
+    {
+      "job_id": "cm-land-conf-066-response-pair",
+      "configuration_id": "cm-land-conf-066",
+      "arm": "land",
+      "sequence_index": 66,
+      "stage": "answers",
+      "pool": "r_agent",
+      "dependencies": [],
+      "request_identity": "5de999626a4379f75377c9dd991322ccd5dd42534c712a1cfe519fb2002fbe1d",
+      "family": "measured_response_recovery"
+    },
+    {
+      "job_id": "cm-land-conf-067-response-pair",
+      "configuration_id": "cm-land-conf-067",
+      "arm": "land",
+      "sequence_index": 67,
+      "stage": "answers",
+      "pool": "r_agent",
+      "dependencies": [],
+      "request_identity": "cc3e7387ac1e8ecbb18c31575d73655fefcc5028fc8cf9af828cc33a9bb467b0",
+      "family": "persistent_command_motion_discrepancy"
+    },
+    {
+      "job_id": "cm-land-conf-068-response-pair",
+      "configuration_id": "cm-land-conf-068",
+      "arm": "land",
+      "sequence_index": 68,
+      "stage": "answers",
+      "pool": "r_agent",
+      "dependencies": [],
+      "request_identity": "08635799b6df4eba591b2f7a6421d064a8aac4999b50b055acb461dc75c61646",
+      "family": "persistent_command_motion_discrepancy"
+    }
+  ]
+}
