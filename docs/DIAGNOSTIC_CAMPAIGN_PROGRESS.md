@@ -5,6 +5,23 @@ Updated: 2026-09-26
 Protocol: `diagnostic-sequential-protocol-v2`
 Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 
+## Coverage-complete v4 successor screen
+
+The separately frozen `coverage-complete-v4-physical-screen-v1` uses five previously unallocated
+v5 scenario configurations, two mechanism families, and two within-cluster missing-evidence masks.
+It is development-only: confirmation N and alpha remain zero, and neither confirmation nor
+replication reserves are consumed. Its deterministic P treatment uses command--motion adapter v2
+and geometric adapter v4; language generation remains unauthorized until physical collection,
+independent references, evidence parity, and exact P/R and Luna packet procedures are frozen.
+
+Fixed run 1/5, `mccv4-dev-001`, is one valid independent development cluster after one attempt.
+Navigation succeeded in 87.810 s after three distinct delivered plans and two recovery-feedback
+cycles, with 1.325 m maximum measured lateral deviation. Independent calculations found a blocked
+sample on the requested direct route near x=12.425 m and a retained connection to the goal. The
+allowed conclusion is a bounded navigation-model restriction plus path change and success—not
+global no-path, obstacle identity, exact Nav2 consumption, or snapshot-to-plan causation. Its
+separated artifacts are governed and DVC-synchronized. Fixed run 2/5 is next.
+
 ## Measurement-complete v2 development screen
 
 The fixed `measurement-complete-checked-composition-v2` development screen is complete and

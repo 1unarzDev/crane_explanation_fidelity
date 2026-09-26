@@ -1,5 +1,22 @@
 # Experiment Log
 
+## 2026-09-26 — coverage-complete v4 physical screen run 1/5
+
+- **STATUS:** `VALID_DEVELOPMENT_PHYSICAL_AND_REFERENCE_EVIDENCE`; one fixed attempt, no retry or
+  replacement, independent development clusters +1, confirmatory clusters +0, model/Luna calls 0.
+- **ADMISSION:** the source-pinned player passed its exact build/catalog checks and all 14
+  scenario-binding checks matched connected-detour 010 at seed 81009 without a mobility
+  intervention. The Unity record and expected broad success outcome were valid.
+- **OBSERVED / INDEPENDENT REFERENCE:** NavigateToPose succeeded after 87.810 s, three distinct
+  delivered plans, two recovery-feedback cycles, 17.499 m displacement, and 1.325 m maximum
+  lateral deviation. Independent calculations found a cost-253 intersection on the requested
+  direct route near x=12.425 m, a retained below-threshold connection from the result pose to the
+  goal, and direct-to-nondirect delivered-plan changes.
+- **BOUNDARY:** this establishes a bounded restriction in one retained navigation-model snapshot,
+  path change, deviation, and success—not global physical no-path, obstacle identity, exact Nav2
+  consumption, or costmap-to-plan causation. Raw and derived evidence is separated, hash-
+  manifested, and DVC-pushed. Fixed run 2/5 is next; response generation remains unauthorized.
+
 ## 2026-09-25 — land command--motion physical cohort run 040
 
 - **STATUS:** `VALID PERSISTENT DISCREPANCY / UNEXPECTED ABORT / 40 ATTEMPTED / 39 VALID / 1 INVALID`.
