@@ -1,5 +1,18 @@
 # Experiment Log
 
+## 2026-09-26 — focused physical run 4: `fsdc-land-geometry-004`
+
+- **STATUS:** `VALID_PROSPECTIVE_PHYSICAL_EVIDENCE_GEOMETRY_NOT_ESTABLISHED_RESPONSE_UNOPENED`;
+  one attempt, no retry/replacement, and no semantic or alpha increment.
+- **OBSERVED:** navigation succeeded in 85.110 s with three distinct delivered plans, plan
+  deviation from -1.104 m to +0.949 m, and 1.079 m measured trajectory deviation.
+- **NEGATIVE INDUCTION RESULT:** incomplete final rolling-grid coverage contains no independently
+  supported blocked direct-route sample. Retain the route change, but withhold the registered
+  physical restriction and all obstacle/consumption/causation claims.
+- **GEOMETRY BLOCK COMPLETE:** the four added fixed configurations produced two bounded-restriction
+  positives (001, 003) and two valid missing-decisive-geometry outcomes (002, 004). All responses
+  remain unopened. The next fixed configuration is reassigned `cm-land-conf-041`.
+
 ## 2026-09-26 — focused physical run 3: `fsdc-land-geometry-003`
 
 - **STATUS:** `VALID_PROSPECTIVE_PHYSICAL_AND_REFERENCE_EVIDENCE_RESPONSE_UNOPENED`; one attempt,

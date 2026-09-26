@@ -1,0 +1,84 @@
+{
+  "schema": "crane-focused-supported-diagnostic-communication-run-disposition/v1",
+  "recorded_utc_date": "2026-09-26",
+  "protocol_id": "focused-supported-diagnostic-communication-v1",
+  "run_id": "fsdc-land-geometry-004",
+  "cluster_id": "fsdc-land-geometry-004",
+  "status": "VALID_PROSPECTIVE_PHYSICAL_EVIDENCE_GEOMETRY_NOT_ESTABLISHED_RESPONSE_UNOPENED",
+  "predeclaration": "research/explanation_fidelity/experiment_configs/prospective/focused-supported-diagnostic-communication-v1-schedule.json",
+  "admission": {
+    "attempt_count": 1,
+    "retry_performed": false,
+    "replacement_layout_used": false,
+    "player_build_audit_accepted": true,
+    "scenario_binding_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "unity_result_valid": true,
+    "expected_broad_outcome_observed": true,
+    "recording_valid": true
+  },
+  "scenario": {
+    "environment_id": "crane-land-proving-ground-v6",
+    "layout_id": "diagnostic-command-motion-confirmation-reserve-connected-detour-060",
+    "layout_seed": 91059,
+    "registered_family": "bounded_geometric_restriction",
+    "observed_evidence_class": "missing_decisive_geometry",
+    "mobility_hold_after_s": -1.0,
+    "mobility_release_after_s": -1.0
+  },
+  "observed": {
+    "navigation_status": "succeeded",
+    "action_wall_seconds": 85.10991016199841,
+    "displacement_meters": 17.482267904918054,
+    "controller_commands": 805,
+    "odometry_messages": 4254,
+    "trajectory_summary_samples": 84,
+    "behavior_tree_transitions": 39,
+    "costmap_observations": 314,
+    "delivered_plan_count": 3,
+    "unique_delivered_plan_count": 3,
+    "maximum_recovery_feedback": 2
+  },
+  "independent_reference": {
+    "direct_route_restriction_supported": false,
+    "direct_route_fully_covered": false,
+    "retained_grid_has_connection": true,
+    "substantial_route_deviation_observed": true,
+    "global_physical_no_path_supported": false,
+    "unique_physical_obstacle_supported": false,
+    "controller_consumption_proven": false,
+    "costmap_caused_plan_change_proven": false,
+    "maximum_plan_lateral_deviation_m": 1.1039772033691433,
+    "maximum_trajectory_lateral_deviation_m": 1.0789402723312378,
+    "plan_summary_parity_passed": true
+  },
+  "robot_visible_diagnostic": {
+    "disposition": "supported",
+    "mechanism": "recorded_plan_change_with_unresolved_physical_trigger",
+    "registered_primary_mechanism_established": false,
+    "action_status": "succeeded",
+    "final_text_verification_accepted": true,
+    "bounded_interpretation": "The record supports a successful route change and substantial plan/trajectory deviation, but the incomplete rolling costmap does not establish the registered bounded direct-route restriction. The physical trigger, obstacle identity, exact Nav2 consumption, and costmap-to-plan causation remain unresolved."
+  },
+  "hashes": {
+    "player_build_audit_sha256": "ee0b3388eab6339de5000aaf0201bb07d9d63bc3b349ed1e49ba3d3ddf2fc005",
+    "scenario_binding_audit_sha256": "5bd69b4e809ed2aa2dcd58c1094245a7e13c53cde0ff9ce0aeef430734412ef9",
+    "evaluator_truth_sha256": "391f0996d794632b063b8c05496c1405ae21e5fcf423c64a7b29cee232f4e544",
+    "fixture_summary_sha256": "9523d03147dc2913ea93b5d1483b0f3175515313341d6ba6049c4a4a9685d019",
+    "geometric_independent_reference_sha256": "92759458e1d7e487faf3fdcfe3ec62e358a62ecc0e3aa7e61c7fcd19821c6a68",
+    "plan_geometry_independent_reference_sha256": "218327fb9a58ffa648f5073c5e81b23e33a9db8f2f6f36987f75ac7f41fd70f6",
+    "robot_visible_diagnostic_sha256": "4c5ad74f4934b9eab432bb9313bfa53d5d9e69e3b6cd2b473500c56cb60b700b",
+    "robot_visible_manifest_sha256": "e987745dc1f1ce43cde079814957acc234513ad9f8778feb454e1cca2618c564",
+    "evaluator_only_manifest_sha256": "879056882510b620d392c104b4e486a83c607b00dc4f15b1463522ee9596a1ee"
+  },
+  "study_effect": {
+    "prospective_physical_configuration_increment": 1,
+    "primary_semantic_cluster_increment": 0,
+    "model_response_increment": 0,
+    "luna_judgment_increment": 0,
+    "confirmatory_alpha_consumed": 0.0,
+    "outcome_dependent_replacement_performed": false,
+    "campaign_activation_status": "PHYSICAL_COLLECTION_STARTED_SEMANTIC_CONFIRMATION_NOT_ACTIVE"
+  },
+  "next_fixed_run": "cm-land-conf-041"
+}

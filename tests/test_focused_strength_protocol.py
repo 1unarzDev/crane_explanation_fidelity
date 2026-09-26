@@ -33,6 +33,7 @@ BUILD_MANIFEST = ROOT / "manifests/data/fsdc-v1-player-build-1.evaluator-only.js
 FIRST_RUN = ROOT / "manifests/data/fsdc-land-geometry-001-disposition.json"
 SECOND_RUN = ROOT / "manifests/data/fsdc-land-geometry-002-disposition.json"
 THIRD_RUN = ROOT / "manifests/data/fsdc-land-geometry-003-disposition.json"
+FOURTH_RUN = ROOT / "manifests/data/fsdc-land-geometry-004-disposition.json"
 
 
 def load(path: Path) -> dict:
@@ -181,3 +182,13 @@ def test_third_focused_run_repeats_bounded_geometry_support_without_causal_overr
     assert run["independent_reference"]["controller_consumption_proven"] is False
     assert run["independent_reference"]["costmap_caused_plan_change_proven"] is False
     assert run["study_effect"]["primary_semantic_cluster_increment"] == 0
+
+
+def test_added_geometry_block_closes_with_second_retained_insufficiency_case():
+    run = load(FOURTH_RUN)
+
+    assert run["admission"]["attempt_count"] == 1
+    assert run["independent_reference"]["direct_route_restriction_supported"] is False
+    assert run["robot_visible_diagnostic"]["registered_primary_mechanism_established"] is False
+    assert run["study_effect"]["outcome_dependent_replacement_performed"] is False
+    assert run["next_fixed_run"] == "cm-land-conf-041"

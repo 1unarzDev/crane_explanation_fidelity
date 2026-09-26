@@ -22,14 +22,14 @@ action is a fixed fresh land schedule plus atomic question/unit registry and evi
 packet closure. The alpha ledger is still unbound, confirmatory N is 0, and no effect, confidence
 sequence, significance, or replication result exists.
 
-Physical collection has started without activating semantic confirmation. Fixed configurations
-001 and 003 independently support bounded retained-grid restrictions plus recorded route changes
-and success. Configuration 002 is a valid unfavorable induction outcome: it supports route change,
-but incomplete grid coverage does not establish the registered restriction, so it is retained as
-missing-decisive-evidence rather than replaced or counted as a diagnosable primary case. P/R
-responses remain unopened. Prospective physical configurations collected are 3/64;
+Physical collection has started without activating semantic confirmation. The four added geometry
+configurations are complete after one attempt each: 001 and 003 independently support bounded
+retained-grid restrictions plus recorded route changes and success; 002 and 004 support route
+change but lack decisive grid coverage and are retained as missing-evidence outcomes rather than
+replaced or counted as diagnosable primary cases. P/R responses remain unopened. Prospective
+physical configurations collected are 4/64;
 primary semantic N, alpha consumption, effect estimates, confidence sequences, significance, and
-replication results remain zero. The next fixed configuration is `fsdc-land-geometry-004`.
+replication results remain zero. The next fixed configuration is reassigned `cm-land-conf-041`.
 
 The former physical-only land cohort is additively closed after run 040 (39 valid, one invalid).
 All artifacts and its original schedule remain immutable. Its never-attempted runs 041--100 are
