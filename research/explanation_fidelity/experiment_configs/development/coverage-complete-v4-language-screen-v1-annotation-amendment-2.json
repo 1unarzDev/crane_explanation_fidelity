@@ -1,0 +1,35 @@
+{
+  "schema": "crane-coverage-complete-v4-annotation-amendment/v1",
+  "amendment_id": "coverage-complete-v4-language-screen-v1-annotation-amendment-2",
+  "parent": "coverage-complete-v4-language-screen-v1",
+  "recorded_utc": "2026-09-26T08:06:06Z",
+  "timing": "Recorded after retaining the first 28 Luna judgments and their invalidating evidence-parity audit, but before creating evidence-complete reference files, revised packets, or any revised Luna judgment.",
+  "issue": "The first blinded annotation references reduced the robot-visible primitive and omitted relevant source/configuration/tool excerpts. R had explicitly received the complete primitive, exact repository source/configuration, and deterministic tools. Nine of fourteen R judgments were labeled materially erroneous mainly because Luna could not verify details that were within R's permitted evidence. Those judgments cannot support candidate promotion.",
+  "retained_failed_arm": {
+    "result_manifest": "manifests/annotation/luna-coverage-complete-v4-language-screen-v1-incomplete-evidence-result.json",
+    "status": "RETAINED_INVALID_FOR_CANDIDATE_PROMOTION_INCOMPLETE_JUDGE_EVIDENCE",
+    "responses_regenerated": false,
+    "judgments_deleted": false,
+    "labels_used_for_candidate_selection": false
+  },
+  "prospective_correction": {
+    "reference_builder": "analysis/build_coverage_complete_v4_evidence_complete_reference.py",
+    "reference_builder_sha256": "a463df0b3d5577a680ec579c64797787749602c4c43826434cbec487cd8c961d",
+    "complete_robot_visible_primitive_required": true,
+    "relevant_source_configuration_and_tool_text_required": true,
+    "evaluator_truth_excluded": true,
+    "condition_identity_excluded": true,
+    "candidate_certificate_plan_verifier_excluded": true,
+    "method_answers_unchanged": true,
+    "reference_required_units_unchanged": true,
+    "reference_prohibited_claims_unchanged": true,
+    "judge_prompt_model_and_settings_unchanged": true,
+    "passes": 2,
+    "usable_judgment_retries": 0
+  },
+  "interpretation_rule": "The revised arm is a development re-evaluation of the same responses after repairing judge evidence parity, not a new independent episode cohort or replication. It may decide whether this candidate is ready for a future prospective freeze, but cannot establish confirmation, significance, or replication.",
+  "confirmation_status": {
+    "confirmatory_semantic_n": 0,
+    "confirmatory_alpha_consumed": 0.0
+  }
+}
