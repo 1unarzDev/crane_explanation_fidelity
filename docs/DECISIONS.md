@@ -1,5 +1,18 @@
 # Decision Log
 
+## 2026-09-26 — reject composite-mechanism v6 at deterministic futility gate
+
+- **Decision:** retain all seven one-attempt physical clusters and reject candidate v6 unchanged
+  before response generation or Luna judging.
+- **Evidence:** two fresh clusters independently require both command--motion and bounded geometry
+  units. Frozen P's geometric adapter returns `not_triggered` in both, and its composer accepts one
+  packet with no declared checked multi-packet joiner. P therefore cannot satisfy the primary
+  endpoint on either composite cluster, making the required two consensus P wins impossible.
+- **Why stop early:** baseline or judge calls cannot add a mechanism missing from P's frozen checked
+  plan. Avoiding those calls is deterministic futility, not outcome deletion or a favorable retry.
+- **Next:** any successor must be separately versioned, implement a fail-closed multi-packet joiner,
+  and use fresh development configurations. Confirmation remains inactive at N=0 and alpha=0.
+
 ## 2026-09-26 — allocate unused v6 source layouts to one composite-mechanism development screen
 
 - **Decision:** irrevocably allocate seven v6 catalog layouts that occur in neither frozen

@@ -122,6 +122,24 @@
   composite-positive, one successful-compensation case, one correct geometry-only control, and
   zero responses/Luna calls. Fixed run 6 is next; confirmation N and alpha remain zero.
 
+### Composite-mechanism v6 runs 6--7 and final disposition — deterministic futility
+
+- **RUN 6:** valid execution-only abort after one attempt. A 0.260 versus 0.000 m/s discrepancy
+  persisted for 21 s; geometry remained insufficient because the robot stopped at 2.747 m.
+- **RUN 7:** valid nominal success after one attempt, with one direct plan, 0.000 m lateral
+  deviation, zero recovery starts, and both diagnostic premises correctly `not_triggered`.
+- **PHYSICAL SCREEN:** all 7/7 fixed configurations are valid with no replacement; two are
+  independently composite-positive. Controls cover successful compensation, geometry only,
+  execution only, and nominal false premise.
+- **FATAL CANDIDATE GAP:** the frozen composer accepts one packet, and the declaration hashes no
+  multi-packet joiner. Moreover, the frozen geometric adapter emits `not_triggered` on both
+  composite-positive clusters despite independently required bounded geometry units. Thus P
+  cannot meet supported diagnostic success on either eligible cluster and the maximum possible
+  consensus P wins is zero, below the required two.
+- **DISPOSITION:** reject v6 by deterministic futility before model or Luna calls. This avoids
+  spending calls that cannot change the gate; it is not a semantic effect estimate. Confirmation
+  N and alpha remain zero, with no confidence sequence, significance, or replication result.
+
 ## 2026-09-26 — evidence-complete raw-baseline v5 language screen rejects candidate v5
 
 - **STATUS:** `DEVELOPMENT_ONLY_CANDIDATE_REJECTED_FROZEN_GATE`.

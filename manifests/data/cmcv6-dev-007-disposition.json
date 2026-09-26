@@ -1,0 +1,31 @@
+{
+  "schema": "crane-composite-mechanism-v6-physical-run-disposition/v1",
+  "recorded_date": "2026-09-26",
+  "run_id": "cmcv6-dev-007",
+  "cluster_id": "cmcv6-dev-cluster-007",
+  "status": "VALID_NOMINAL_FALSE_PREMISE_CONTROL_NO_LANGUAGE_RESPONSE",
+  "attempt_count": 1,
+  "retry_or_replacement_performed": false,
+  "contract": {"path": "research/explanation_fidelity/experiment_configs/development/composite-mechanism-v6-physical-screen-v1.json", "fixed_order": 7, "development_only": true},
+  "scheduled_configuration": {"layout_id": "diagnostic-command-motion-confirmation-reserve-nominal-clear-route-053", "layout_seed": 92052, "geometry": "nominal-clear-route", "intervention_family": "none", "mobility_hold_after_s": -1.0, "mobility_release_after_s": -1.0, "ros_domain_id": 231, "ros_tcp_port": 12531},
+  "admission": {"player_build_audit_accepted": true, "scenario_binding_audit_accepted": true, "scenario_binding_checks_passed": 14, "unity_worker_result_valid": true, "unity_logged_errors": 0, "unity_logged_exceptions": 0, "stale_actions": 0, "rejected_actions": 0, "cross_episode_actions": 0, "recording_valid_under_worker_result_gate": true},
+  "observed": {"navigation_status": "succeeded", "action_wall_seconds": 68.31043995599612, "displacement_meters": 17.4776554107666, "controller_commands": 676, "odometry_messages": 3413, "costmap_observations": 254, "delivered_plans": 1, "observed_recovery_invocation_starts": 0},
+  "command_motion_reference": {"proposed_disposition": "not_triggered", "independent_disposition": "not_triggered", "bounded_conclusion": "The action succeeded and retained streams contain no sustained low-response windows; the failure premise is false."},
+  "geometric_reference": {"proposed_disposition": "not_triggered", "independent_direct_route_restriction_supported": false, "independent_substantial_plan_deviation_supported": false, "independent_substantial_trajectory_deviation_supported": false, "retained_grid_connection_below_cost_253": true, "maximum_lateral_trajectory_deviation_m": 0.0, "delivered_plans": 1, "unique_delivered_plans": 1, "bounded_conclusion": "The action succeeded on one direct plan with no lateral deviation; the route-restriction failure premise is false."},
+  "screen_consequence": {"valid_independent_clusters": 7, "composite_positive_clusters": 2, "nominal_false_premise_controls_correct": 1, "language_responses": 0, "luna_calls": 0, "confirmatory_semantic_n": 0, "confirmatory_alpha_consumed": 0.0, "next_fixed_run_id": null},
+  "hashes": {
+    "player_build_audit_sha256": "26d280c6500b113821c45f236f418271b08cdc3f06ae33304126b2a6babedc9d",
+    "scenario_binding_audit_sha256": "32511bf06d9bd1cc207cd7aa7e9f2c2adaefe4c19e13b0a23ff8670a36402c69",
+    "unity_worker_result_sha256": "a3aa00f85ce0855da47f5b5965a04f3d359c87a50f65692e98ddbff99b1d4b4a",
+    "fixture_summary_sha256": "b4fdace3709e3c4ca0a62f27915c3c9cc3c2224871484288f89b0a1077c0239c",
+    "robot_visible_events_sha256": "54ced6ec1f50ec6f0c4375f2e43534dc3e7d128719410183d0363ef89d1d57fd",
+    "command_motion_diagnostic_sha256": "83d873f058627aecf7f536df99cde656a4a479fb04d450c3923a8cb7451092dd",
+    "command_motion_independent_reference_sha256": "d04270cec5a95397ab0e1faeff2a249b9f22e4578cd545bd3a44b8769bbb2913",
+    "geometric_diagnostic_sha256": "887914369acfb40f673cc0f09a4c4a3943cb6e91c517b6ea45afdf0b32aa8b9f",
+    "geometric_independent_reference_sha256": "9ab3fb4c8f9fbf3db3979675613c36f9c3e6bcc7c9bf9ac1c51866c7b0df828d",
+    "plan_geometry_independent_reference_sha256": "278a816ae21c857bcd7558d5964afa525f966858cf808df692ab96b2f6963f7d",
+    "robot_visible_manifest_sha256": "d26d38368d8ad1205c99ba82fec47333bc3c0462a64a0b6ef23c6a9e205e54cb",
+    "evaluator_only_manifest_sha256": "fd6e3163721a32be08515f3b5afdbfde88eae3f58ffd1b614f06b8e6e48d8bdf"
+  },
+  "governance": {"robot_visible_manifest": "manifests/data/cmcv6-dev-007.robot-visible.json", "evaluator_only_manifest": "manifests/data/cmcv6-dev-007.evaluator-only.json", "checkpoint": "manifests/checkpoints/cmcv6-dev-007.json", "dvc_remote_status": "IN_SYNC_BEFORE_GIT_POINTER"}
+}

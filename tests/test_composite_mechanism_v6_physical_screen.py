@@ -1,4 +1,5 @@
 import hashlib
+import inspect
 import json
 from pathlib import Path
 
@@ -14,6 +15,9 @@ RUN_002_DISPOSITION = ROOT / "manifests/data/cmcv6-dev-002-disposition.json"
 RUN_003_DISPOSITION = ROOT / "manifests/data/cmcv6-dev-003-disposition.json"
 RUN_004_DISPOSITION = ROOT / "manifests/data/cmcv6-dev-004-disposition.json"
 RUN_005_DISPOSITION = ROOT / "manifests/data/cmcv6-dev-005-disposition.json"
+RUN_006_DISPOSITION = ROOT / "manifests/data/cmcv6-dev-006-disposition.json"
+RUN_007_DISPOSITION = ROOT / "manifests/data/cmcv6-dev-007-disposition.json"
+SCREEN_RESULT = ROOT / "research/explanation_fidelity/experiment_configs/development/composite-mechanism-v6-physical-screen-result-v1.json"
 
 
 def _load(path: Path):
@@ -191,3 +195,28 @@ def test_run_005_geometry_only_control_rejects_execution_failure_premise():
     assert result["screen_consequence"]["geometry_only_controls_correct"] == 1
     assert result["screen_consequence"]["language_responses"] == 0
     _assert_disposition_hashes("cmcv6-dev-005", result)
+
+
+def test_final_controls_and_deterministic_futility_reject_v6_without_model_calls():
+    run_006 = _load(RUN_006_DISPOSITION)
+    run_007 = _load(RUN_007_DISPOSITION)
+    result = _load(SCREEN_RESULT)
+    assert run_006["command_motion_reference"]["independent_disposition"] == "supported"
+    assert run_006["geometric_reference"]["proposed_disposition"] == "insufficient"
+    assert run_007["command_motion_reference"]["independent_disposition"] == "not_triggered"
+    assert run_007["geometric_reference"]["proposed_disposition"] == "not_triggered"
+    _assert_disposition_hashes("cmcv6-dev-006", run_006)
+    _assert_disposition_hashes("cmcv6-dev-007", run_007)
+    assert result["physical_collection"]["valid_independent_clusters"] == 7
+    assert len(result["physical_collection"]["composite_positive_clusters"]) == 2
+    assert result["candidate_audit"]["executable_multi_packet_composition_present"] is False
+    assert result["candidate_audit"]["maximum_possible_consensus_p_win_composite_clusters"] == 0
+    assert result["promotion_gate"]["overall"] == "FAIL"
+    assert result["language_evaluation"]["luna_calls"] == 0
+    assert result["scientific_boundary"]["confirmatory_semantic_n"] == 0
+    assert result["scientific_boundary"]["confirmatory_alpha_consumed"] == 0.0
+
+    import sys
+    sys.path.insert(0, str(ROOT / "analysis"))
+    from compose_diagnostic_hypotheses_v2 import compose
+    assert list(inspect.signature(compose).parameters) == ["packet", "registry"]

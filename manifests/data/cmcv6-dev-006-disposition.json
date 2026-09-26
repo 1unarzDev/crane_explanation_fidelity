@@ -1,0 +1,31 @@
+{
+  "schema": "crane-composite-mechanism-v6-physical-run-disposition/v1",
+  "recorded_date": "2026-09-26",
+  "run_id": "cmcv6-dev-006",
+  "cluster_id": "cmcv6-dev-cluster-006",
+  "status": "VALID_EXECUTION_ONLY_ABORT_GEOMETRY_INSUFFICIENT_NO_LANGUAGE_RESPONSE",
+  "attempt_count": 1,
+  "retry_or_replacement_performed": false,
+  "contract": {"path": "research/explanation_fidelity/experiment_configs/development/composite-mechanism-v6-physical-screen-v1.json", "fixed_order": 6, "development_only": true},
+  "scheduled_configuration": {"layout_id": "diagnostic-command-motion-confirmation-reserve-nominal-clear-route-052", "layout_seed": 92051, "geometry": "nominal-clear-route", "intervention_family": "persistent-command-motion", "mobility_hold_after_s": 18.0, "mobility_release_after_s": -1.0, "ros_domain_id": 230, "ros_tcp_port": 12530},
+  "admission": {"player_build_audit_accepted": true, "scenario_binding_audit_accepted": true, "scenario_binding_checks_passed": 14, "unity_worker_result_valid": true, "unity_logged_errors": 0, "unity_logged_exceptions": 0, "stale_actions": 0, "rejected_actions": 0, "cross_episode_actions": 0, "recording_valid_under_worker_result_gate": true, "unexpected_navigation_outcome_retained": true},
+  "observed": {"navigation_status": "aborted", "action_wall_seconds": 44.40971764999995, "displacement_meters": 2.7468252182006836, "controller_commands": 408, "odometry_messages": 2219, "costmap_observations": 103, "delivered_plans": 3},
+  "command_motion_reference": {"proposed_disposition": "supported", "independent_disposition": "supported", "healthy_interval_s": [0.0, 5.0], "healthy_measured_planar_speed_mps": 0.2597399950027466, "discrepancy_interval_s": [11.0, 32.0], "discrepancy_duration_s": 21.0, "median_commanded_planar_speed_mps": 0.26, "median_measured_planar_speed_mps": 0.0, "bounded_conclusion": "Delivered command and odometry establish a sustained command-to-motion discrepancy, but not its unique physical cause."},
+  "geometric_reference": {"proposed_disposition": "insufficient", "independent_direct_route_restriction_supported": false, "direct_route_fully_covered": false, "maximum_forward_progress_m": 2.7468252182006836, "maximum_lateral_trajectory_deviation_m": 0.0, "bounded_conclusion": "The retained local grid does not cover the decisive route region; geometry and obstacle causation remain unresolved."},
+  "screen_consequence": {"valid_independent_clusters": 6, "composite_positive_clusters": 2, "execution_only_controls_correct": 1, "language_responses": 0, "luna_calls": 0, "confirmatory_semantic_n": 0, "confirmatory_alpha_consumed": 0.0, "next_fixed_run_id": "cmcv6-dev-007"},
+  "hashes": {
+    "player_build_audit_sha256": "26d280c6500b113821c45f236f418271b08cdc3f06ae33304126b2a6babedc9d",
+    "scenario_binding_audit_sha256": "aa64af4d17b489d7bbc979eff74c0cfa737a3f4433cbffc56ffefa9094dbfdc4",
+    "unity_worker_result_sha256": "9cbd52d58ed04c8900f6b2fac14c83c3341095734fd3f34fba4a612a9b969251",
+    "fixture_summary_sha256": "100c8eef5a0134c9ec36744d9885e23c6fe1605c7e7819703ad64cb8597c9b2f",
+    "robot_visible_events_sha256": "c94cb2082936fc7fc487324f038b7bdffc088ecf1e6aea259cde84ea6e79237b",
+    "command_motion_diagnostic_sha256": "e104aa989bcb6ff4f9eeb634bb3855a1a042e76aa0287c12744547ea9b57eb53",
+    "command_motion_independent_reference_sha256": "35aec8d17176727b9a3491d1e99c2b2e289fccf40969b4c3cfa86060a74fce26",
+    "geometric_diagnostic_sha256": "4ff1d7928e50da1cbf2cf45301942b647d862e08a1b56e98d2e18ec415ae649c",
+    "geometric_independent_reference_sha256": "bcacd720b6d210b098ab1248ed30109d9d4ceee37c560f86baee819949629de3",
+    "plan_geometry_independent_reference_sha256": "d5c1a63820181899d5879c82b910a94754f4eadf01f5982d5994ec38aee45024",
+    "robot_visible_manifest_sha256": "dc6d291e91a0f80a1bb30ed5e9e648f1d6ada0d751ac929aeb159aea6e58c4c2",
+    "evaluator_only_manifest_sha256": "70fca0dad41d08c99a5cd3dc7c8774c948f10683fd7fc430e52d950866709b37"
+  },
+  "governance": {"robot_visible_manifest": "manifests/data/cmcv6-dev-006.robot-visible.json", "evaluator_only_manifest": "manifests/data/cmcv6-dev-006.evaluator-only.json", "checkpoint": "manifests/checkpoints/cmcv6-dev-006.json", "dvc_remote_status": "IN_SYNC_BEFORE_GIT_POINTER"}
+}

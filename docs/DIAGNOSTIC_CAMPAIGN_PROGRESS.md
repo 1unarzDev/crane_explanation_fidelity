@@ -55,6 +55,15 @@ Command--motion correctly returns `not_triggered`. Totals are five valid cluster
 composite-positive, one successful compensation, one correct geometry-only control, zero
 responses/Luna calls, and zero confirmatory N or alpha. Fixed run 6 is next.
 
+The v6 physical screen is complete and rejected by deterministic futility. Runs 6 and 7 correctly
+isolate execution-only and nominal false-premise behavior, and all seven fixed configurations are
+valid after one attempt each. Two clusters are independently composite-positive, but frozen P's
+geometric adapter omits the required geometry unit in both. The frozen composer also accepts only
+one packet and no checked joiner is part of the declared implementation. Therefore P's maximum
+possible consensus wins on the required composite cases is zero versus a gate of two. No model or
+Luna calls were run because they cannot repair P's checked plan or change that bound. Candidate v6
+is rejected; confirmatory N and alpha remain zero.
+
 ## Coverage-complete v5 raw-baseline screen
 
 The frozen `raw-baseline-v5-language-screen-v1` is complete and rejected. Baseline R received the
