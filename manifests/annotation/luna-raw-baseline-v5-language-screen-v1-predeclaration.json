@@ -1,0 +1,153 @@
+{
+  "arm_id": "raw-baseline-v5-language-screen-v1",
+  "cases": [
+    {
+      "case_id": "ccv5-geometry-001",
+      "cluster_id": "mccv4-land-001",
+      "independent_cluster": true,
+      "mechanism_unit_id": "mechanism-bounded-geometric-restriction",
+      "primary_endpoint_eligible": true
+    },
+    {
+      "case_id": "ccv5-geometry-masked-001m",
+      "cluster_id": "mccv4-land-001",
+      "independent_cluster": false,
+      "mechanism_unit_id": null,
+      "primary_endpoint_eligible": false
+    },
+    {
+      "case_id": "ccv5-geometry-002",
+      "cluster_id": "mccv4-land-002",
+      "independent_cluster": true,
+      "mechanism_unit_id": "mechanism-bounded-geometric-restriction",
+      "primary_endpoint_eligible": true
+    },
+    {
+      "case_id": "ccv5-geometry-003",
+      "cluster_id": "mccv4-land-003",
+      "independent_cluster": true,
+      "mechanism_unit_id": "mechanism-bounded-geometric-restriction",
+      "primary_endpoint_eligible": true
+    },
+    {
+      "case_id": "ccv5-persistent-004",
+      "cluster_id": "mccv4-land-004",
+      "independent_cluster": true,
+      "mechanism_unit_id": "mechanism-command-motion-discrepancy",
+      "primary_endpoint_eligible": true
+    },
+    {
+      "case_id": "ccv5-missing-odometry-004m",
+      "cluster_id": "mccv4-land-004",
+      "independent_cluster": false,
+      "mechanism_unit_id": null,
+      "primary_endpoint_eligible": false
+    },
+    {
+      "case_id": "ccv5-compensation-005",
+      "cluster_id": "mccv4-land-005",
+      "independent_cluster": true,
+      "mechanism_unit_id": "mechanism-measured-response-recovery",
+      "primary_endpoint_eligible": true
+    }
+  ],
+  "declared_utc": "2026-09-26T16:30:00Z",
+  "frozen_artifacts": {
+    "artifact_count": 21,
+    "condition_key_count": 7,
+    "condition_key_manifest": "manifests/data/raw-baseline-v5-language-screen-v1.annotation-keys.evaluator-only.json",
+    "condition_key_manifest_sha256": "059885bdf02de9fb00a61adb9d50f9a5d738d795b463f6118d4c83c0e30f1026",
+    "packet_builder": "analysis/build_diagnostic_annotation_packet.py",
+    "packet_builder_sha256": "bc00e449e8b596778d2f74634c0790a6028549d59a7ac2dd19a11c9914030fcf",
+    "reference_builder": "analysis/build_raw_baseline_v5_annotation_reference.py",
+    "reference_builder_sha256": "08cf5a8bf11f0ea1f72f90fd544ff6dcf660c2b1d76a3efbf8ade8b81e94f6fe",
+    "results_references_packets_manifest": "manifests/model_outputs/raw-baseline-v5-language-screen-v1-freeze.json",
+    "results_references_packets_manifest_sha256": "131b5d9b93e8fb7e67a63f7616176327bd124e014603eb18c1fbc4319439bcb8"
+  },
+  "inferential_status": "DEVELOPMENT_ONLY_NOT_CONFIRMATORY_NOT_REPLICATION",
+  "judge_execution": {
+    "inconvenient_label_retry_allowed": false,
+    "isolated_context_per_response": true,
+    "output_root": "model_outputs/automated_annotations/luna-model-judge-v1/raw-baseline-v5-language-screen-v1",
+    "passes": [
+      "pass-1",
+      "pass-2"
+    ],
+    "planned_judgments": 28,
+    "usable_judgment_retry_allowed": false
+  },
+  "judge_release": {
+    "arm": "luna-model-judge-v1",
+    "caller": "analysis/luna_model_judge.py",
+    "caller_sha256": "e185329a711b240ca790698c7a89033f6ba7cb85b69ccddc4f35a10c0419a379",
+    "freeze": "research/explanation_fidelity/experiment_configs/prospective/luna-model-judge-v12-final-freeze.json",
+    "freeze_sha256": "cc2c177c7b752ff846cb77aad7f6cabd55047ebe6ad07a071c14c162ca0f59ab",
+    "model": "gpt-6-luna",
+    "output_schema": "research/explanation_fidelity/schemas/luna-model-judge-output-v1.schema.json",
+    "output_schema_sha256": "93989e303fdb12e94ae5fe79adad16e46d9587006b7ba6de5c4624096f1b1c3f",
+    "prompt": "research/explanation_fidelity/prompts/luna-model-judge-v5.md",
+    "prompt_sha256": "f701b91d8c46637b203d56d1ded3fce7c9f5ebbda077b02bc4d01627142d0da6",
+    "provider": "codex-lb",
+    "qualification_manifest": "manifests/annotation/luna-model-judge-v1-heldout-v12-final.json",
+    "qualification_manifest_sha256": "bb9d8fbd7d698278aa22bf29562d2a3803ba136d3af8e680a3815f42775e1bf9",
+    "qualification_status": "HELDOUT_QUALIFIED",
+    "reasoning_effort": "high",
+    "runner": "analysis/run_luna_single_diagnostic_packet.py",
+    "runner_sha256": "723493c9cf58585f447498156e7a207abd80feea427235e4a10785a2a1fe9dc7",
+    "seed": null,
+    "temperature": null
+  },
+  "prior_exposure": {
+    "confirmatory_alpha_consumed": 0.0,
+    "luna_study_judgments_generated": 0,
+    "physical_configurations_previously_used_in_development": true,
+    "predecessor_v4_results_and_luna_labels_inspected": true,
+    "v5_baseline_responses_generated": 7,
+    "v5_baseline_responses_semantically_reviewed_before_freeze": false,
+    "v5_candidate_responses_generated": 7
+  },
+  "purpose": "Evaluate the seven immutable one-shot P/R pairs after correcting method treatment parity: R received raw robot-visible evidence plus exact source/configuration and executable tools, but no precomputed checked diagnosis. This screen can select or reject a future prospective candidate; it cannot establish significance.",
+  "reference_boundary": {
+    "evaluator_truth_visible_to_judge": false,
+    "independent_reference_computations": true,
+    "proposed_diagnostic_used_as_gold": false,
+    "proposed_plan_verifier_or_answer_visible_to_judge": false,
+    "raw_evidence_and_source_configuration_binding": true,
+    "required_units_changed_from_predecessor": false
+  },
+  "schema": "crane-luna-raw-baseline-v5-development-predeclaration/v1",
+  "scoring": {
+    "guardrail_cases": [
+      "ccv5-geometry-masked-001m",
+      "ccv5-missing-odometry-004m"
+    ],
+    "primary_endpoint": "For independently declared diagnosable questions, the atomic mechanism unit is covered and the final answer contains no material unsupported or contradicted assertion.",
+    "primary_endpoint_cases": [
+      "ccv5-geometry-001",
+      "ccv5-geometry-002",
+      "ccv5-geometry-003",
+      "ccv5-persistent-004",
+      "ccv5-compensation-005"
+    ],
+    "readiness_gate": "Recurring P advantage across at least two independent clusters and two mechanism families; no P excess material error or causal overclaim; no useful-coverage degradation; correct masked and false-premise handling; complete method and judge evidence parity. Do not relax this gate after labels."
+  },
+  "statistical_boundary": {
+    "confirmatory_alpha_consumed": 0.0,
+    "confirmatory_semantic_n": 0,
+    "independent_clusters": 5,
+    "independent_unit": "scenario configuration",
+    "new_independent_clusters": 0,
+    "paired_masks_add_clusters": 0,
+    "repeated_judge_passes_add_clusters": 0,
+    "response_pairs": 7,
+    "responses": 14
+  },
+  "status": "FROZEN_BEFORE_ANY_LUNA_STUDY_CALL",
+  "stopping": "Run exactly two isolated Luna judgments for each of fourteen immutable responses. Retain all usable judgments; do not retry inconvenient labels.",
+  "treatment_contract": {
+    "committed_contract_sha256": "46adee70e1c0d5c25c1a20f53006e4a4f69494c2c79cbcce8fe79f3e938958df",
+    "file_sha256": "52e9dfb807e11f40660f2c205c853583603b71bd2a7dd2ac80b1a58e9486f09f",
+    "path": "research/explanation_fidelity/experiment_configs/development/raw-baseline-v5-language-screen-v1.json",
+    "status": "FROZEN_BEFORE_ANY_RESPONSE_OR_JUDGMENT"
+  }
+}
