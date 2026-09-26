@@ -1,5 +1,32 @@
 # Experiment Log
 
+## 2026-09-26 — evidence-complete raw-baseline v5 language screen rejects candidate v5
+
+- **STATUS:** `DEVELOPMENT_ONLY_CANDIDATE_REJECTED_FROZEN_GATE`.
+- **EVIDENCE REPAIR:** the first Luna-v12 arm is retained but is ineligible because its compact
+  judge packet omitted robot-visible samples and cells that baseline R used. A prospectively frozen
+  closure supplied every requested-route costmap cell and threshold crossing, the full cost
+  histogram, complete plan summaries and hashes, trajectory extrema/timestamps, all BT transitions
+  and recovery classifications, the command/odometry census and record locators, and exact
+  action/configuration/source/provenance facts. Claims beyond that closure were explicitly
+  unresolved rather than presumed false.
+- **VALID RESULT:** all 28/28 isolated judgments completed without retry or transport failure. P
+  scored 5/5 eligible clusters in both passes, with 0/14 material errors, 0/14 causal overclaims,
+  and 104/104 required units. R scored 4/5 in both passes, with 2/14 material errors,
+  0/14 causal overclaims, and 96/104 required units.
+- **FAILED PROMOTION GATE:** R's failure occurred in a different cluster in each pass, leaving zero
+  consensus independent clusters where P beat R. The frozen recurring-advantage and
+  two-mechanism-family gates therefore failed. The apparent pass-level difference of +0.20 is not
+  a stable cluster-level advantage and does not authorize confirmation.
+- **INTERPRETATION:** checked deterministic composition remains perfectly faithful on this finite
+  screen, but a strong raw-evidence, repository-aware, tool-enabled R usually reaches the same
+  diagnosis. The candidate is rejected unchanged. Confirmatory semantic N remains 0 and alpha
+  consumed remains 0.000.
+- **NEXT:** do not activate the general P-versus-R campaign. Any successor must be separately
+  versioned and tested on fresh configurations. The narrower prospective opportunity is complete
+  decisive-information preservation with lower material-assertion risk and lower inference cost,
+  while retaining supported diagnostic success and qualification under masked evidence.
+
 ## 2026-09-26 — coverage-complete v4 paired evidence masks
 
 - **STATUS:** `IMPLEMENTED / INDEPENDENTLY_REFERENCED / GOVERNED`; two paired conditions,

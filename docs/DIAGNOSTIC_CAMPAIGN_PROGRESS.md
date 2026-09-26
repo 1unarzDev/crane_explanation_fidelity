@@ -5,6 +5,29 @@ Updated: 2026-09-26
 Protocol: `diagnostic-sequential-protocol-v2`
 Current status: **NO ACTIVE CONFIRMATORY CAMPAIGN**
 
+## Coverage-complete v5 raw-baseline screen
+
+The frozen `raw-baseline-v5-language-screen-v1` is complete and rejected. Baseline R received the
+same raw robot-visible measurements, exact source/configuration, and deterministic diagnostic
+tools as P, used one `gpt-6-sol` high-reasoning call, and received no checked certificate, plan,
+verifier state, or P answer. The first Luna arm is retained but invalid for comparison because its
+compact judge evidence omitted facts R derived from the fuller raw record. The separately frozen
+evidence closure repaired that evaluation defect prospectively rather than relabeling old calls.
+
+Under the valid closure, 28/28 Luna-v12 judgments completed. P scored 5/5 endpoint-eligible
+clusters in both passes, 0/14 material errors, and 104/104 required units. R scored 4/5 in both
+passes, 2/14 material errors, and 96/104 units. However, R failed a different cluster in each pass,
+so the number of consensus independent P wins is zero. The frozen repeated-advantage and
+two-mechanism-family gates fail, and candidate v5 is not eligible for confirmation. These five
+clusters and two masks are development observations only; they add no independent confirmation N
+and consume no alpha.
+
+The next scientific decision is not to weaken this gate. The most defensible fresh claim candidate
+is narrower: checked deterministic composition may preserve complete decisive-information coverage
+while lowering material-assertion risk and inference cost relative to strong R. That claim remains
+prospective and requires a separately frozen development screen on unused configurations before
+any confirmation design is activated.
+
 ## Coverage-complete v4 successor screen
 
 The separately frozen `coverage-complete-v4-physical-screen-v1` uses five previously unallocated
@@ -102,7 +125,7 @@ candidate v2 is not promoted. This is favorable development evidence, not confir
 
 | Gate | Status | Evidence / next action |
 |---|---|---|
-| Candidate P frozen | V2 DEVELOPMENT SCREEN COMPLETE; REJECTED AT COVERAGE GATE | P showed a repeated +0.75 endpoint difference and lower error risk, but 108/126 coverage versus R 113/126 violated the exact no-degradation gate; new version and fresh screen required |
+| Candidate P frozen | V5 DEVELOPMENT SCREEN COMPLETE; REJECTED AT RECURRING-ADVANTAGE GATE | Evidence-complete scoring gave P 5/5 and R 4/5 per pass, but R's misses occurred in different clusters, leaving zero consensus P wins; no campaign is active |
 | Strongest baseline R frozen | COMPLETE FOR V2 DEVELOPMENT SCREEN | One `gpt-6-sol` high call per case with the same primitive evidence, computations, source/configuration, and deterministic tools; no P certificate/plan/output access |
 | Information/tool/resource parity | PASS FOR V2 DEVELOPMENT SCREEN | All nine results attest the frozen parity contract; confirmation requires a new campaign-specific freeze |
 | Target land strata | V6 PLAYER/RUNTIME QUALIFIED; NO CAMPAIGN ACTIVE | One predeclared v6 reserve layout passed exact build and runtime binding; sampler, interventions, masks, exclusions, and analysis remain unfrozen |

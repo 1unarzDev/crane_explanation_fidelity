@@ -1,5 +1,26 @@
 # Decision Log
 
+## 2026-09-26 — reject coverage-complete candidate v5 after evidence-complete Luna audit
+
+- **Decision:** retain `coverage-complete-checked-composition-v5` and both Luna arms, but reject the
+  candidate for prospective confirmation. Do not interpret the invalid compact-evidence arm or the
+  valid pass-level +0.20 differences as recurring P-over-R evidence.
+- **Evidence:** the corrected closure produced 28/28 valid Luna-v12 judgments. P was 5/5 on the
+  supported-diagnostic-success endpoint in each pass, with zero material errors and complete
+  104/104 unit coverage. R was 4/5 in each pass, with two material errors and 96/104 units, but its
+  endpoint miss changed clusters between passes. Consequently, there were zero consensus
+  independent P-win clusters and neither the recurring-advantage nor two-family gate passed.
+- **Invalid arm disposition:** the earlier arm is immutable negative workflow evidence. Its judge
+  packet omitted raw measurements and grid cells available to R, so Luna incorrectly treated
+  independently checkable R details as unsupported. It cannot support a comparative claim.
+- **Research consequence:** a strong tool-enabled R has now matched P on every consensus-eligible
+  cluster in this screen. The general superiority claim lacks a development basis and confirmation
+  remains inactive. Future development may test a narrower risk--coverage--cost claim, but only
+  under a new prospective contract and fresh independent configurations; inspected v5 data cannot
+  be retrofitted to select its endpoint or margins.
+- **Preserved limits:** confirmatory semantic N=0, alpha consumed=0.000, no confidence sequence,
+  significance, or replication result. All failed/invalid results remain governed.
+
 ## 2026-09-26 — freeze one fresh physical screen for measurement-complete composition v2
 
 - **Decision:** authorize exactly six development-only v5 physical attempts, in fixed order, before
