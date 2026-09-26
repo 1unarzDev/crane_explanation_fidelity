@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "analysis"))
 
 from build_raw_diagnostic_baseline_evidence import FORBIDDEN_KEYS  # noqa: E402
-from recompute_command_motion_diagnostic import build_result as recompute_command  # noqa: E402
+from recompute_command_motion_diagnostic_v2 import build_result as recompute_command  # noqa: E402
 from reference_land_geometric import calculate as calculate_geometry  # noqa: E402
 from reference_land_plan_geometry import calculate as calculate_plans  # noqa: E402
 

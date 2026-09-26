@@ -109,9 +109,6 @@ def build_result(payload: dict[str, Any]) -> dict[str, Any]:
         "bt-policy": str(source["bt_policy_sha256"]),
         "nav2-config": str(source["nav2_config_sha256"]),
     }
-    diagnostic_config_sha256 = source.get("diagnostic_config_sha256")
-    if diagnostic_config_sha256 is not None:
-        hashes["diagnostic-config"] = str(diagnostic_config_sha256)
     if any(len(value) != 64 for value in hashes.values()):
         raise ValueError("source SHA-256 values must be present")
     classifier = sequence["recovery_node_classifier"]
