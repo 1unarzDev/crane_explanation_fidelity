@@ -1,5 +1,24 @@
 # Experiment Log
 
+## 2026-09-26 — coverage-complete v4 physical screen run 4/5
+
+- **STATUS:** `VALID_DEVELOPMENT_PERSISTENT_COMMAND_MOTION_DISCREPANCY`; one fixed physical
+  attempt, no retry or replacement, independent development clusters +1, confirmation +0.
+- **OBSERVED / INDEPENDENT REFERENCE:** the held nominal-clear-route case aborted after 44.110 s
+  and 2.679 m, with three FollowPath attempts, two failures, and two source-qualified Wait starts.
+  The selected low-speed computation and independent implementation agree on a healthy 0--5 s
+  response of 0.259740 m/s, followed by 0.260 m/s median delivered command versus 0.000 m/s
+  measured speed over 11--21 s and no recovered response before abort.
+- **CONFIGURATION-SENSITIVITY RESULT:** the first deterministic derivation omitted the pre-existing
+  low-speed config; its default 0.4 m/s active-command threshold correctly returned insufficient
+  for the 0.26 m/s Nav2 profile. Both outputs are retained. Additive amendment 1 records the issue;
+  the later treatment freeze must pin config SHA-256 `9fa4e521...a0b85` and designate the
+  low-speed output. No episode, response, or judgment was retried.
+- **BOUNDARY:** the evidence establishes delivered-command/measured-motion discrepancy, not
+  actuator acceptance, Nav2 odometry consumption, hidden intervention identity, obstruction,
+  slip, collision, or another unique physical cause. Artifacts are governed and DVC-synchronized;
+  fixed compensated run 5/5 is next.
+
 ## 2026-09-26 — coverage-complete v4 physical screen run 3/5
 
 - **STATUS:** `VALID_DEVELOPMENT_PHYSICAL_AND_REFERENCE_EVIDENCE`; one fixed attempt, no retry or

@@ -1,0 +1,87 @@
+{
+  "schema": "crane-coverage-complete-v4-run-disposition/v1",
+  "recorded_utc_date": "2026-09-26",
+  "run_id": "mccv4-dev-004",
+  "cluster_id": "mccv4-land-004",
+  "status": "VALID_DEVELOPMENT_PERSISTENT_COMMAND_MOTION_DISCREPANCY",
+  "predeclaration": "research/explanation_fidelity/experiment_configs/development/coverage-complete-v4-physical-screen-v1.json",
+  "derivation_amendment": "research/explanation_fidelity/experiment_configs/development/coverage-complete-v4-physical-screen-v1-amendment-1.json",
+  "admission": {
+    "attempt_count": 1,
+    "retry_performed": false,
+    "replacement_layout_used": false,
+    "player_build_audit_accepted": true,
+    "scenario_binding_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "unity_result_valid": true,
+    "generic_fixture_valid": false,
+    "generic_fixture_limit": "The shared fixture expected success; its false valid flag records expected-outcome mismatch, not an invalid recording.",
+    "recording_valid": true
+  },
+  "scenario": {
+    "environment_id": "crane-land-proving-ground-v5",
+    "layout_id": "diagnostic-candidate-v2-development-nominal-clear-route-011",
+    "layout_seed": 82010,
+    "family": "persistent-command-motion-discrepancy",
+    "mobility_hold_after_s": 18.0,
+    "mobility_release_after_s": -1.0
+  },
+  "observed": {
+    "navigation_status": "aborted",
+    "action_error_code": 105,
+    "action_wall_seconds": 44.110342847998254,
+    "displacement_meters": 2.6792945861816406,
+    "controller_commands": 406,
+    "odometry_messages": 2203,
+    "trajectory_samples": 2192,
+    "behavior_tree_transitions": 39,
+    "costmap_observations": 102,
+    "delivered_plan_count": 3,
+    "maximum_recovery_feedback": 2
+  },
+  "diagnostic": {
+    "selected_config_sha256": "9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85",
+    "disposition": "supported",
+    "mechanism": "command_to_motion_discrepancy",
+    "healthy_interval_s": [0.0, 5.0],
+    "healthy_commanded_planar_speed_mps": 0.26,
+    "healthy_measured_planar_speed_mps": 0.2597399950027466,
+    "discrepancy_interval_s": [11.0, 21.0],
+    "discrepancy_commanded_planar_speed_mps": 0.26,
+    "discrepancy_measured_planar_speed_mps": 0.0,
+    "sustained_discrepancy_duration_s": 10.0,
+    "follow_path_attempt_count": 3,
+    "follow_path_failure_count": 2,
+    "source_qualified_wait_recovery_count": 2,
+    "measured_response_recovered": false,
+    "unique_physical_cause_supported": false,
+    "final_text_verification_accepted": true
+  },
+  "retained_configuration_sensitivity": {
+    "default_minimum_commanded_speed_mps": 0.4,
+    "default_config_disposition": "insufficient",
+    "reason": "The 0.4 m/s default cannot calibrate a source-configured 0.26 m/s profile.",
+    "independent_cluster_increment": 0
+  },
+  "hashes": {
+    "player_build_audit_sha256": "cf2d883d18dd7c65b70be949664ac11abab084430884492302e06bae26b13cd6",
+    "scenario_binding_audit_sha256": "ca2aa756ec223647546cbba12f8649c2de8986654c9d7c9f4a7e00dadbe3b494",
+    "evaluator_truth_sha256": "64513a190c240e6d65399038e8cf1b77055ceea4c74dd7fdf78d2b078799b3ff",
+    "fixture_summary_sha256": "11e3215546e4df5b17329e4774200217586b37d710dfbce4460d92258f573209",
+    "default_config_diagnostic_sha256": "39b7797a56300e6ae1c1fc0b10da13eafcde3853701a54d7399871c4d477050b",
+    "default_config_reference_sha256": "428e0d69b79e55d7b7e64ddf9e9d3279dffdc075a188dbb0f2ff944e96231d77",
+    "selected_config_diagnostic_sha256": "dae57b2df3cce84fe3e89d228e36a59bae1ef64d3bcb9a03fb62b5fc4aafabed",
+    "selected_config_reference_sha256": "882cc266590d37477b8d4c612e3321ff060576c4e55393c2993f4f8b1fb32e09",
+    "robot_visible_manifest_sha256": "a98edb5adad67c11a4f05edfc474b0cd562956f559dddf2b898f027309156f5a",
+    "evaluator_only_manifest_sha256": "88ee672eae01f2f359a0fad4d85df74aa8cf1ad4d79fed39b262a35b5acb2ea8"
+  },
+  "study_effect": {
+    "development_independent_cluster_increment": 1,
+    "confirmatory_cluster_increment": 0,
+    "model_response_increment": 0,
+    "luna_judgment_increment": 0,
+    "confirmatory_alpha_consumed": 0.0,
+    "candidate_readiness": "NOT_YET_ASSESSED"
+  },
+  "next_fixed_run": "mccv4-dev-005"
+}

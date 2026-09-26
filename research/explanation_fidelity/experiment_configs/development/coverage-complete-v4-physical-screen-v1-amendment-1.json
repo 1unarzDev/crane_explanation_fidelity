@@ -1,0 +1,25 @@
+{
+  "schema": "crane-coverage-complete-v4-physical-screen-amendment/v1",
+  "amendment_id": "coverage-complete-v4-physical-screen-v1-amendment-1",
+  "parent": "coverage-complete-v4-physical-screen-v1",
+  "recorded_utc": "2026-09-26T06:54:44Z",
+  "timing": "Recorded after physical runs 1-4 and before physical run 5, any evidence mask, any P/R response, any Luna judgment, or any treatment freeze.",
+  "issue": "The parent physical-collection contract pins the command-motion exporter but omits the already selected low-speed diagnostic configuration. During run-4 derivation, an operator first invoked the exporter without --diagnostic-config. The default 0.4 m/s active-command threshold returned an insufficient result for the source-configured 0.26 m/s proving-ground profile.",
+  "disposition": {
+    "physical_run_repeated": false,
+    "model_or_judge_call_repeated": false,
+    "first_default_config_output_retained": "data/robot_visible/dev/mccv4-dev-004/command-motion-diagnostic-v3.json",
+    "first_default_config_reference_retained": "data/evaluator_only/dev/mccv4-dev-004/command-motion-independent-reference-v1.json",
+    "selected_development_config": "configs/diagnostic_command_motion_low_speed_v1.json",
+    "selected_development_config_sha256": "9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85",
+    "selection_date": "2026-09-24",
+    "selection_precedes_this_screen": true,
+    "low_speed_output": "data/robot_visible/dev/mccv4-dev-004/command-motion-diagnostic-v3-low-speed.json",
+    "low_speed_reference": "data/evaluator_only/dev/mccv4-dev-004/command-motion-independent-reference-v1-low-speed.json"
+  },
+  "scientific_effect": "No physical schedule, episode, evidence stream, hypothesis, endpoint, readiness gate, alpha allocation, or cluster count changes. The later treatment contract must pin the exact low-speed config and uniquely designate which output enters P/R information-parity packets. The default-config insufficiency remains a retained configuration-sensitivity result and is not an additional case.",
+  "confirmation_status": {
+    "confirmatory_semantic_n": 0,
+    "confirmatory_alpha_consumed": 0.0
+  }
+}

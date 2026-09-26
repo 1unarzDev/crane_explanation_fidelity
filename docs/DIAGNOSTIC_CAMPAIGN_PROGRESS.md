@@ -28,7 +28,12 @@ global no-path, exact-consumption, or causation claims. Fixed run 3/5 is also va
 attempt: it succeeded in 89.110 s with three distinct plans, 1.558 m maximum measured deviation,
 a cost-254 direct-route sample near x=11.525 m, and retained connectivity. Thus all three fresh
 geometry configurations support the bounded mechanism while preserving the same causal limits.
-Fixed command--motion run 4/5 is next.
+Fixed command--motion run 4/5 is a valid persistent-discrepancy cluster after one attempt: median
+delivered command remained 0.260 m/s while measured speed was 0.000 m/s over 11--21 s, after a
+0.259740 m/s healthy comparator, and the action aborted after two qualified recovery starts. The
+first deterministic derivation accidentally used the 0.4 m/s default threshold and returned
+insufficient; it is retained alongside the selected pre-existing low-speed computation under
+additive amendment 1. No physical run, response, or label was retried. Fixed run 5/5 is next.
 
 ## Measurement-complete v2 development screen
 
