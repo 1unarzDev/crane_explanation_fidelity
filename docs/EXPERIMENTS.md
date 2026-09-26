@@ -13,8 +13,12 @@
   unresolved; there was no retry or third vote.
 - **BOUNDARY:** this reuses a retained development episode and is not prospective boat evidence,
   land confirmation, or replication. The exact 6-10-configuration boat arm is still not frozen,
-  so boat collection and land production scale-up remain prohibited pending that bounded step and
-  a successful remote restore.
+  so boat collection and land production scale-up remain prohibited pending that bounded step.
+- **RESTORE:** a fresh checkout at `9ca0e48` restored and hash/size-verified the robot-visible
+  evidence, evaluator reference and key, P/R pair, blinded packet, summaries, and reconciliation.
+  The first pull exposed a missing historical robot-visible DVC directory object; 85 objects were
+  published. A seven-object R2 `ServiceUnavailable` was retained as a technical failure and the
+  bounded retry succeeded.
 
 ## 2026-09-26 — boat-specific Luna qualification passed
 

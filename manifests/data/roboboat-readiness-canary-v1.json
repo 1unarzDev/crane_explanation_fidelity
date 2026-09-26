@@ -2,7 +2,7 @@
   "schema": "crane-roboboat-readiness-canary-manifest/v1",
   "artifact_id": "roboboat-readiness-canary-v1",
   "executed_date": "2026-09-26",
-  "status": "END_TO_END_DEVELOPMENT_CANARY_COMPLETE_ARM_FREEZE_PENDING",
+  "status": "END_TO_END_DEVELOPMENT_CANARY_RESTORED_ARM_FREEZE_PENDING",
   "statistical_disposition": {
     "development_only": true,
     "land_n_added": 0,
@@ -100,9 +100,11 @@
     "current_focused_p_r_pair": "PASS",
     "two_isolated_luna_passes_per_answer": "PASS",
     "declared_reconciliation": "PASS_WITH_ONE_UNRESOLVED_R_FIELD",
-    "artifact_restoration": "PENDING_REMOTE_PUBLICATION_AND_FRESH_RESTORE",
+    "artifact_restoration": "PASS_FRESH_CHECKOUT_9ca0e48_ALL_DECLARED_HASHES_AND_SIZES_MATCH",
+    "remote_publication": "PASS_R2",
     "exact_prospective_boat_arm_freeze": "PENDING"
   },
   "production_scale_up_allowed": false,
-  "blocker": "The end-to-end canary is valid, but exact starts, goals, supported conditions, evidence masks, questions, references, and order for 6-10 independent prospective boat configurations have not been frozen. The prefreeze explicitly requires that step; inventing disturbance mechanisms or treating repetitions as independent configurations would violate the arm contract."
+  "restore_note": "The first fresh pull exposed a missing pre-existing robot-visible directory object. It was published from the governed local cache. A subsequent transient R2 ServiceUnavailable affected seven objects; the declared technical retry succeeded. A fresh checkout then restored every artifact listed above with matching SHA-256 and byte count.",
+  "blocker": "The end-to-end canary is valid and restorable, but exact starts, goals, supported conditions, evidence masks, questions, references, and order for 6-10 independent prospective boat configurations have not been frozen. The prefreeze explicitly requires that step; inventing disturbance mechanisms or treating repetitions as independent configurations would violate the arm contract."
 }

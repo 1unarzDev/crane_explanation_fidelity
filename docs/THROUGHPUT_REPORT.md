@@ -2,7 +2,7 @@
 
 Updated: 2026-09-26
 
-Status: **boat semantic/canary paths pass; exact arm freeze and remote restore still gate scale-up**
+Status: **boat semantic/canary paths restore; exact prospective arm freeze gates scale-up**
 
 | Measure | Current value |
 | --- | ---: |
@@ -33,9 +33,11 @@ best-case judge-stage wall time near the 55.8 s tail, subject to measured thrott
 The dominant blocker is now scientific configuration closure, not the canary machinery: exact
 starts, goals, supported environmental conditions, evidence masks, questions, references, and the
 order for 6-10 independent boat configurations remain unfrozen. Repetitions of one docking setup
-cannot fill that gap. Remote publication/restore is the next operational subgate. After both close,
-the operational profile begins at R concurrency 2 and Luna concurrency 4; the intended production
-metric remains valid fully reconciled P/R clusters per hour.
+cannot fill that gap. The canary batch now restores from a fresh checkout with all declared hashes
+and sizes matching. The restore audit repaired a missing historical robot-visible DVC directory
+object and retained one transient seven-object R2 failure before a successful technical retry.
+After the exact arm freeze closes, the operational profile begins at R concurrency 2 and Luna
+concurrency 4; the intended production metric remains valid fully reconciled P/R clusters per hour.
 
 Failures retained at this checkpoint: one invalid land transport recording (`cm-land-conf-052`),
 one deliberately interrupted response call for 063 with no output/cache record, and no provider

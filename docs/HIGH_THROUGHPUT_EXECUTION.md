@@ -1,6 +1,6 @@
 # High-throughput diagnostic execution
 
-Status: **execution amendment active; RoboBoat canary passed; exact arm freeze/restore gate open**
+Status: **execution amendment active; RoboBoat canary restores; exact arm freeze gate open**
 
 This runbook accelerates the frozen focused study without changing its claim, methods, evidence,
 judge, endpoint, population, alpha, stopping rule, or replication reserve. The authoritative
@@ -72,8 +72,9 @@ to be reconciled and sealed. Fast later jobs cannot replace slow prefix jobs.
 Land production scale-up is blocked until the separate boat readiness gate passes. Retained
 development evidence covers nominal successful docking, terminal-margin failure, bounded grid
 disconnection, and a missing-speed mask. The marine-specific Luna qualification and current P/R
-two-pass development canary now pass. Remote restoration and the exact prospective arm freeze
-remain open. RoboBoat remains separate from land N and the reserved land replication.
+two-pass development canary now pass, and the governed batch restores from a fresh checkout with
+matching hashes and sizes. The exact prospective arm freeze remains open. RoboBoat remains
+separate from land N and the reserved land replication.
 
 The active boat is holonomic at the four-thruster interface, but current RPP has only emitted surge
 and yaw, not lateral command. Unactuated sway under that controller is not a command-interface
@@ -87,9 +88,8 @@ statistical N. P received concordant complete-endpoint labels. R's two passes ag
 correctness and absence of material error but disagreed on whether radial-error growth communicated
 the distinct displacement unit; the endpoint field remains unresolved.
 
-Production scale-up remains blocked for two explicit reasons: the canary batch must be published
-and restored from governed storage, and the exact prospective 6-10-configuration boat schedule is
-not frozen. The prefreeze requires independent configurations with exact starts, goals, supported
+Production scale-up remains blocked because the exact prospective 6-10-configuration boat schedule
+is not frozen. The prefreeze requires independent configurations with exact starts, goals, supported
 conditions, masks, questions, references, and order. Do not fill the arm with repeated seeds of one
 docking setup or invent unsupported wind/current/wave mechanisms. If the existing platform cannot
 produce the required bounded families without controller or physics redesign, narrow the arm and
