@@ -1,5 +1,21 @@
 # Experiment Log
 
+## 2026-09-26 — current-protocol RoboBoat end-to-end canary completed
+
+- **PATH:** retained robot-visible terminal-margin capture -> separately implemented reference ->
+  current deterministic P and frozen `gpt-6-sol`/high R -> blinded two-row packet -> two isolated
+  Luna/high passes per answer -> conservative reconciliation. The canary made four valid Luna
+  judgments with zero transport failures and consumed no prospective N or alpha.
+- **RESULT:** both passes scored P as complete supported diagnostic communication without material
+  error. Both scored R's mechanism correct and without material error; they disagreed on endpoint
+  completeness because one treated the reported 0.1876 m radial-error growth as satisfying the
+  displacement unit and one required the displacement identity explicitly. That field remains
+  unresolved; there was no retry or third vote.
+- **BOUNDARY:** this reuses a retained development episode and is not prospective boat evidence,
+  land confirmation, or replication. The exact 6-10-configuration boat arm is still not frozen,
+  so boat collection and land production scale-up remain prohibited pending that bounded step and
+  a successful remote restore.
+
 ## 2026-09-26 — boat-specific Luna qualification passed
 
 - **RESULT:** both frozen passes qualified over all 12 held-out cases. Endpoint and required-unit

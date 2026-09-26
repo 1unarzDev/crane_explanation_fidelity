@@ -2,7 +2,7 @@
 
 Updated: 2026-09-26
 
-Status: **baseline established; boat judge qualified; end-to-end canary still required**
+Status: **boat semantic/canary paths pass; exact arm freeze and remote restore still gate scale-up**
 
 | Measure | Current value |
 | --- | ---: |
@@ -15,6 +15,8 @@ Status: **baseline established; boat judge qualified; end-to-end canary still re
 | Fully reconciled P/R clusters | 0 |
 | Luna study judgments | 0 |
 | Boat prospective configurations | 0 |
+| Boat development P/R canary pairs | 1 |
+| Boat development Luna judgments | 4/4 valid |
 
 The boat-specific Luna extension completed 24 isolated calls with no transport failure. Both
 passes achieved 1.0 endpoint and required-unit accuracy, zero false acceptance/rejection, and zero
@@ -22,12 +24,18 @@ protected causal/boundary failures; core-field accuracy was 0.96875 and 0.97917.
 marine semantic-qualification subgate but does not itself authorize boat study collection or land
 production scale-up.
 
-The completed serial semantic segment generated 18 pairs before closeout. Per-call wall times were
-not yet aggregated into a governed baseline report, so no throughput-improvement claim is made.
-The dominant current bottleneck is the restorable RoboBoat end-to-end canary, followed by Luna
-annotation (96 isolated judgments for the first 24 two-answer/two-pass clusters). The operational
-profile begins at R concurrency 2 and Luna concurrency 4; production scaling is prohibited until
-the readiness gate and development concurrency canaries pass.
+The current boat canary required 46.2 s for R. Its four Luna jobs took 28.9, 55.8, 35.5, and
+53.4 s; the bounded canary runner invoked them serially, yielding one fully reconciled development
+P/R cluster in about 3.3 minutes of judge wall time. This is an execution baseline, not a
+production-throughput result. At Luna concurrency four, the same observed service times imply a
+best-case judge-stage wall time near the 55.8 s tail, subject to measured throttling tests.
+
+The dominant blocker is now scientific configuration closure, not the canary machinery: exact
+starts, goals, supported environmental conditions, evidence masks, questions, references, and the
+order for 6-10 independent boat configurations remain unfrozen. Repetitions of one docking setup
+cannot fill that gap. Remote publication/restore is the next operational subgate. After both close,
+the operational profile begins at R concurrency 2 and Luna concurrency 4; the intended production
+metric remains valid fully reconciled P/R clusters per hour.
 
 Failures retained at this checkpoint: one invalid land transport recording (`cm-land-conf-052`),
 one deliberately interrupted response call for 063 with no output/cache record, and no provider

@@ -1,0 +1,108 @@
+{
+  "schema": "crane-roboboat-readiness-canary-manifest/v1",
+  "artifact_id": "roboboat-readiness-canary-v1",
+  "executed_date": "2026-09-26",
+  "status": "END_TO_END_DEVELOPMENT_CANARY_COMPLETE_ARM_FREEZE_PENDING",
+  "statistical_disposition": {
+    "development_only": true,
+    "land_n_added": 0,
+    "prospective_boat_n_added": 0,
+    "confirmatory_alpha_consumed": 0.0,
+    "may_be_used_as_replication": false
+  },
+  "simulation_and_capture_provenance": {
+    "episode_id": "roboboat-gate5-known-dock-1",
+    "source_fixture": "PerformanceResults/roboboat-gate5-known-dock-1/fixture-summary.json",
+    "source_fixture_sha256": "6bcc1c1f7d926a45b6d3ec2f9b0f06cfe8770d067d57ed2a92a45ebbd8c2223a",
+    "source_repository": "https://github.com/1unarzDev/crane_ml.git",
+    "source_commit": "4ae5124c12c39af93ee5b256e33778aec490ecd3",
+    "source_config": "Tools/Performance/nav2_controller_fixture.yaml",
+    "source_config_sha256": "7ad4490b570c54526528db2118aaa5625879c478a67331e6e7155e533323593f",
+    "note": "Retained development capture; no prospective episode was collected or counted."
+  },
+  "artifacts": [
+    {
+      "visibility": "robot_visible",
+      "path": "data/robot_visible/dev/diagnostic-pilot-v1/roboboat-terminal-margin/evidence.json",
+      "sha256": "4a032e064a266cad50aaf39e120e03808b8a79466d6e83f3060b2310056a35c6",
+      "bytes": 11851,
+      "dvc_pointer": "data/robot_visible/dev.dvc"
+    },
+    {
+      "visibility": "evaluator_only",
+      "path": "data/evaluator_only/dev/boat-readiness-canary-v1/reference.json",
+      "sha256": "2ba9ece62baef06cb81e17464910ca068cd664b124899a4ba82110a563e624ff",
+      "bytes": 7426,
+      "dvc_pointer": "data/evaluator_only/dev.dvc"
+    },
+    {
+      "visibility": "evaluator_only",
+      "path": "data/evaluator_only/annotation_keys/boat-readiness-canary-v1/key.json",
+      "sha256": "578cdbf3aaa81cb717ba1bfe9a8240f0ed1f69f345f53b5fa1716f3de473c6f4",
+      "bytes": 1529,
+      "dvc_pointer": "data/evaluator_only/annotation_keys.dvc"
+    },
+    {
+      "visibility": "governed_model_output",
+      "path": "model_outputs/dev/boat-readiness-canary-v1/pair.json",
+      "sha256": "92dd8809b5520c201d5c852ab463e531c8c1af9836df59713207de5927273b91",
+      "bytes": 5765,
+      "dvc_pointer": "model_outputs.dvc"
+    },
+    {
+      "visibility": "blinded_annotation_packet",
+      "path": "model_outputs/annotation_packets/boat-readiness-canary-v1/packet.jsonl",
+      "sha256": "f0def4addee2b231ef5a3cf389482d45ed819050be16301d7814d2080878b5bf",
+      "bytes": 15378,
+      "dvc_pointer": "model_outputs.dvc"
+    },
+    {
+      "visibility": "governed_model_output",
+      "path": "model_outputs/automated_annotations/luna-model-judge-v1/boat-readiness-canary-v1/boat-readiness-summary.json",
+      "sha256": "3a05c4a334a3ccac244587f08b37858102dda79b3bd82326bd00128bde7b1660",
+      "bytes": 2080,
+      "dvc_pointer": "model_outputs.dvc"
+    },
+    {
+      "visibility": "governed_model_output",
+      "path": "model_outputs/automated_annotations/luna-model-judge-v1/boat-readiness-canary-v1/reconciliation.json",
+      "sha256": "c4ff71031fb257b360ab6569a6e6c48d63e76448f4c276a3898e543319c394ef",
+      "bytes": 682,
+      "dvc_pointer": "model_outputs.dvc"
+    }
+  ],
+  "model_execution": {
+    "r": {
+      "model": "gpt-6-sol",
+      "reasoning_effort": "high",
+      "calls": 1,
+      "latency_ms": 46232.853116,
+      "cache_key": "c5d6417fd0cbf029c8ee344a9214d51ee2a32f21e44461178b37c09b8f31232f"
+    },
+    "luna": {
+      "model": "gpt-6-luna",
+      "reasoning_effort": "high",
+      "isolated_calls": 4,
+      "transport_failures": 0,
+      "latency_ms": [28899.328267, 55766.720111, 35520.159975, 53352.367907]
+    }
+  },
+  "reconciliation": {
+    "p": "two-pass agreement: complete supported diagnostic success, no material error",
+    "r": "endpoint disagreement: one pass treated radial error growth as the displacement comparison and one required the explicit displacement identity; retained unresolved",
+    "no_quality_retry": true,
+    "no_third_model_vote": true
+  },
+  "gate_disposition": {
+    "robot_visible_capture": "PASS_RETAINED_DEVELOPMENT_CAPTURE",
+    "independent_reference": "PASS_SEPARATE_IMPLEMENTATION_NOT_HUMAN_GOLD",
+    "information_parity": "PASS",
+    "current_focused_p_r_pair": "PASS",
+    "two_isolated_luna_passes_per_answer": "PASS",
+    "declared_reconciliation": "PASS_WITH_ONE_UNRESOLVED_R_FIELD",
+    "artifact_restoration": "PENDING_REMOTE_PUBLICATION_AND_FRESH_RESTORE",
+    "exact_prospective_boat_arm_freeze": "PENDING"
+  },
+  "production_scale_up_allowed": false,
+  "blocker": "The end-to-end canary is valid, but exact starts, goals, supported conditions, evidence masks, questions, references, and order for 6-10 independent prospective boat configurations have not been frozen. The prefreeze explicitly requires that step; inventing disturbance mechanisms or treating repetitions as independent configurations would violate the arm contract."
+}

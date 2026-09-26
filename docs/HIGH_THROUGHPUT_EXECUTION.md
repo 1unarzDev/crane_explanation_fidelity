@@ -1,6 +1,6 @@
 # High-throughput diagnostic execution
 
-Status: **execution amendment active; RoboBoat readiness gate open; production scale-up blocked**
+Status: **execution amendment active; RoboBoat canary passed; exact arm freeze/restore gate open**
 
 This runbook accelerates the frozen focused study without changing its claim, methods, evidence,
 judge, endpoint, population, alpha, stopping rule, or replication reserve. The authoritative
@@ -70,12 +70,27 @@ to be reconciled and sealed. Fast later jobs cannot replace slow prefix jobs.
 ## RoboBoat readiness gate
 
 Land production scale-up is blocked until the separate boat readiness gate passes. Retained
-development evidence already covers nominal successful docking, terminal-margin failure, bounded
-grid disconnection, and a missing-speed mask. The remaining gate is a fresh marine-specific Luna
-qualification, one two-pass end-to-end canary with restorable boundaries, and exact prospective
-arm freeze. RoboBoat remains separate from land N and the reserved land replication.
+development evidence covers nominal successful docking, terminal-margin failure, bounded grid
+disconnection, and a missing-speed mask. The marine-specific Luna qualification and current P/R
+two-pass development canary now pass. Remote restoration and the exact prospective arm freeze
+remain open. RoboBoat remains separate from land N and the reserved land replication.
 
 The active boat is holonomic at the four-thruster interface, but current RPP has only emitted surge
 and yaw, not lateral command. Unactuated sway under that controller is not a command-interface
 defect. “Wave drift” is prohibited without validated wave-related evidence; use “observed” or
 “uncompensated lateral disturbance” when that is all the record supports.
+
+The canary is recorded in `manifests/data/roboboat-readiness-canary-v1.json`. It validates the
+retained robot-visible capture, separate reference computation, parity-checked current P/R pair,
+blinded packet, four isolated Luna calls, and conservative reconciliation without adding
+statistical N. P received concordant complete-endpoint labels. R's two passes agreed on mechanism
+correctness and absence of material error but disagreed on whether radial-error growth communicated
+the distinct displacement unit; the endpoint field remains unresolved.
+
+Production scale-up remains blocked for two explicit reasons: the canary batch must be published
+and restored from governed storage, and the exact prospective 6-10-configuration boat schedule is
+not frozen. The prefreeze requires independent configurations with exact starts, goals, supported
+conditions, masks, questions, references, and order. Do not fill the arm with repeated seeds of one
+docking setup or invent unsupported wind/current/wave mechanisms. If the existing platform cannot
+produce the required bounded families without controller or physics redesign, narrow the arm and
+record that limitation before freeze.
