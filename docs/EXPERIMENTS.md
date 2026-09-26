@@ -1,5 +1,18 @@
 # Experiment Log
 
+## 2026-09-26 — focused physical run 12 / source order 48: `cm-land-conf-048`
+
+- **STATUS:** `VALID_FOCUSED_PHYSICAL_INDEPENDENT_AMBIGUITY_MASK_UNEXPECTED_ABORT_RESPONSE_UNOPENED`;
+  one attempt and no replacement. The unexpected abort is valid under the source/build, zero-error
+  Unity, all-14-binding-check, and independent-reference gates.
+- **REFERENCE:** the complete evaluator-side record supports a 0.260 versus 0.000 m/s discrepancy
+  over 17--27 s after healthy 0.2597 m/s response. The prospectively declared sole method-visible
+  condition retains 475 command samples, the abort and execution sequence, but removes all
+  delivered odometry; it therefore cannot establish that discrepancy or a unique physical cause.
+- **BOUNDARY:** the paired complete record is evaluator-only and unavailable to P/R. No response or
+  Luna label was opened; alpha 0.02 remains bound from activation; source-order run
+  `cm-land-conf-049` is next.
+
 ## 2026-09-26 — focused semantic campaign activated at N=0
 
 - **GATES:** exact P/R resources and source commits are hash-frozen; the focused results schema and

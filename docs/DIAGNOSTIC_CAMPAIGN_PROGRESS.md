@@ -29,7 +29,7 @@ configurations are complete after one attempt each: 001 and 003 independently su
 retained-grid restrictions plus recorded route changes and success; 002 and 004 support route
 change but lack decisive grid coverage and are retained as missing-evidence outcomes rather than
 replaced or counted as diagnosable primary cases. P/R responses remain unopened. Prospective
-physical configurations collected are 11/64. Source-order run 041 adds a valid missing-odometry
+physical configurations collected are 12/64. Source-order run 041 adds a valid missing-odometry
 ambiguity control: the unmasked reference supports a discrepancy, while the sole method-visible
 masked condition correctly cannot establish it. Source-order run 042 independently supports a
 persistent command--motion discrepancy and is primary-diagnosable. Run 043 independently supports
@@ -38,11 +38,12 @@ a second independently configured instance of that contrast. Run 045 adds a conn
 persistent discrepancy followed by abort; run 046 independently repeats that bounded pattern on a
 different connected-detour configuration. Run 047 adds a transient discrepancy followed by
 measured response recovery and an eventual abort, demonstrating that response recovery is not task
-success. Thus eight collected configurations are currently primary-diagnosable and three are
-missing/ambiguous controls;
+success. Run 048 adds a second prospectively masked missing-odometry control: its complete physical
+record supports a discrepancy, while the sole method-visible condition cannot. Thus eight collected
+configurations are currently primary-diagnosable and four are missing/ambiguous controls;
 primary semantic N, effect estimates, confidence sequences, significance, and replication results
 remain zero; program alpha consumption is 0.02 from prospective activation. The next fixed
-configuration is `cm-land-conf-048`.
+configuration is `cm-land-conf-049`.
 
 The 2026-09-26 semantic-activation audit found that the existing v12 packet runner scored only the
 atomic mechanism unit plus material-error absence, whereas this focused protocol requires all

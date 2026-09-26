@@ -48,6 +48,7 @@ EIGHTH_RUN = ROOT / "manifests/data/cm-land-conf-044-disposition.json"
 NINTH_RUN = ROOT / "manifests/data/cm-land-conf-045-disposition.json"
 TENTH_RUN = ROOT / "manifests/data/cm-land-conf-046-disposition.json"
 ELEVENTH_RUN = ROOT / "manifests/data/cm-land-conf-047-disposition.json"
+TWELFTH_RUN = ROOT / "manifests/data/cm-land-conf-048-disposition.json"
 
 
 def load(path: Path) -> dict:
@@ -343,3 +344,22 @@ def test_response_recovery_then_abort_remains_primary_and_causally_bounded():
     assert run["semantic_boundary"]["R_responses"] == 0
     assert run["semantic_boundary"]["program_alpha_consumed"] == 0.02
     assert run["focused_progress"]["next_fixed_run_id"] == "cm-land-conf-048"
+
+
+def test_second_masked_ambiguity_run_withholds_unobserved_motion_mechanism():
+    run = load(TWELFTH_RUN)
+    raw = run["raw_physical_reference"]
+    masked = run["method_visible_reference"]
+
+    assert run["attempt_count"] == 1
+    assert run["retry_or_replacement_performed"] is False
+    assert raw["disposition"] == "supported"
+    assert raw["response_ratio"] == 0.0
+    assert masked["mask_adapter"] == "remove-delivered-odometry-v1"
+    assert masked["primary_endpoint_eligible"] is False
+    assert masked["disposition"] == "insufficient"
+    assert masked["odometry_samples"] == 0
+    assert run["semantic_boundary"]["P_responses"] == 0
+    assert run["semantic_boundary"]["R_responses"] == 0
+    assert run["semantic_boundary"]["program_alpha_consumed"] == 0.02
+    assert run["focused_progress"]["next_fixed_run_id"] == "cm-land-conf-049"
