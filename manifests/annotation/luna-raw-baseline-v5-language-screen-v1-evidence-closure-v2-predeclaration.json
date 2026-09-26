@@ -1,0 +1,149 @@
+{
+  "arm_id": "raw-baseline-v5-language-screen-v1-evidence-closure-v2",
+  "cases": [
+    {
+      "case_id": "ccv5-geometry-001",
+      "cluster_id": "mccv4-land-001",
+      "independent_cluster": true,
+      "mechanism_unit_id": "mechanism-bounded-geometric-restriction",
+      "primary_endpoint_eligible": true
+    },
+    {
+      "case_id": "ccv5-geometry-masked-001m",
+      "cluster_id": "mccv4-land-001",
+      "independent_cluster": false,
+      "mechanism_unit_id": null,
+      "primary_endpoint_eligible": false
+    },
+    {
+      "case_id": "ccv5-geometry-002",
+      "cluster_id": "mccv4-land-002",
+      "independent_cluster": true,
+      "mechanism_unit_id": "mechanism-bounded-geometric-restriction",
+      "primary_endpoint_eligible": true
+    },
+    {
+      "case_id": "ccv5-geometry-003",
+      "cluster_id": "mccv4-land-003",
+      "independent_cluster": true,
+      "mechanism_unit_id": "mechanism-bounded-geometric-restriction",
+      "primary_endpoint_eligible": true
+    },
+    {
+      "case_id": "ccv5-persistent-004",
+      "cluster_id": "mccv4-land-004",
+      "independent_cluster": true,
+      "mechanism_unit_id": "mechanism-command-motion-discrepancy",
+      "primary_endpoint_eligible": true
+    },
+    {
+      "case_id": "ccv5-missing-odometry-004m",
+      "cluster_id": "mccv4-land-004",
+      "independent_cluster": false,
+      "mechanism_unit_id": null,
+      "primary_endpoint_eligible": false
+    },
+    {
+      "case_id": "ccv5-compensation-005",
+      "cluster_id": "mccv4-land-005",
+      "independent_cluster": true,
+      "mechanism_unit_id": "mechanism-measured-response-recovery",
+      "primary_endpoint_eligible": true
+    }
+  ],
+  "correction": {
+    "amendment": "research/explanation_fidelity/experiment_configs/development/raw-baseline-v5-language-screen-v1-annotation-amendment-1.json",
+    "amendment_sha256": "864101be8a0bcea6e87885f73cfaf82a8521815bd4eee7bb8bc99271bf7e3e9e",
+    "closure_builder": "analysis/build_raw_baseline_v5_evidence_closure.py",
+    "closure_builder_sha256": "a82ebb8133ff06affb2e91d0486fff4fd26be8b639570b9f0066ceaf18de1dc3",
+    "judge_release_changed": false,
+    "prohibited_claims_changed": false,
+    "required_units_changed": false,
+    "responses_changed": false,
+    "systematic_schema_driven_closure": true
+  },
+  "declared_utc": "2026-09-26T17:45:00Z",
+  "frozen_artifacts": {
+    "artifact_count": 14,
+    "condition_key_count": 7,
+    "condition_key_manifest": "manifests/data/raw-baseline-v5-language-screen-v1-evidence-closure-v2.annotation-keys.evaluator-only.json",
+    "condition_key_manifest_sha256": "54841fb457340e4c1ccbbd0fa0857f49b8a0fa7c3f4bd5dcc1d3c3a16b282ed3",
+    "immutable_response_manifest": "manifests/model_outputs/raw-baseline-v5-language-screen-v1-freeze.json",
+    "immutable_response_manifest_sha256": "131b5d9b93e8fb7e67a63f7616176327bd124e014603eb18c1fbc4319439bcb8",
+    "references_and_packets_manifest": "manifests/model_outputs/raw-baseline-v5-language-screen-v1-evidence-closure-v2-freeze.json",
+    "references_and_packets_manifest_sha256": "5cfbc78ca3b5f3b1459cea8904e7d6488b0fb0f28e1e2b43c9d7cb5c462980d9"
+  },
+  "inferential_status": "DEVELOPMENT_REEVALUATION_NOT_CONFIRMATORY_NOT_REPLICATION",
+  "judge_execution": {
+    "inconvenient_label_retry_allowed": false,
+    "isolated_context_per_response": true,
+    "output_root": "model_outputs/automated_annotations/luna-model-judge-v1/raw-baseline-v5-language-screen-v1-evidence-closure-v2",
+    "passes": [
+      "pass-1",
+      "pass-2"
+    ],
+    "planned_judgments": 28,
+    "usable_judgment_retry_allowed": false
+  },
+  "judge_release": {
+    "arm": "luna-model-judge-v1",
+    "caller": "analysis/luna_model_judge.py",
+    "caller_sha256": "e185329a711b240ca790698c7a89033f6ba7cb85b69ccddc4f35a10c0419a379",
+    "freeze": "research/explanation_fidelity/experiment_configs/prospective/luna-model-judge-v12-final-freeze.json",
+    "freeze_sha256": "cc2c177c7b752ff846cb77aad7f6cabd55047ebe6ad07a071c14c162ca0f59ab",
+    "model": "gpt-6-luna",
+    "output_schema": "research/explanation_fidelity/schemas/luna-model-judge-output-v1.schema.json",
+    "output_schema_sha256": "93989e303fdb12e94ae5fe79adad16e46d9587006b7ba6de5c4624096f1b1c3f",
+    "prompt": "research/explanation_fidelity/prompts/luna-model-judge-v5.md",
+    "prompt_sha256": "f701b91d8c46637b203d56d1ded3fce7c9f5ebbda077b02bc4d01627142d0da6",
+    "provider": "codex-lb",
+    "qualification_manifest": "manifests/annotation/luna-model-judge-v1-heldout-v12-final.json",
+    "qualification_manifest_sha256": "bb9d8fbd7d698278aa22bf29562d2a3803ba136d3af8e680a3815f42775e1bf9",
+    "qualification_status": "HELDOUT_QUALIFIED",
+    "reasoning_effort": "high",
+    "runner": "analysis/run_luna_single_diagnostic_packet.py",
+    "runner_sha256": "723493c9cf58585f447498156e7a207abd80feea427235e4a10785a2a1fe9dc7",
+    "seed": null,
+    "temperature": null
+  },
+  "prior_exposure": {
+    "confirmatory_alpha_consumed": 0.0,
+    "first_arm_invalid_for_promotion": "manifests/annotation/luna-raw-baseline-v5-language-screen-v1-result.json",
+    "first_arm_invalid_result_sha256": "419727567a7e94f7a91c4f36086068c90ec5573f1d22cd8bf0c4186fa35fac86",
+    "first_luna_arm_judgments_inspected": 28,
+    "first_luna_arm_rationales_inspected": true,
+    "responses_unchanged_and_previously_inspected": true,
+    "revised_luna_calls_generated": 0
+  },
+  "purpose": "Re-evaluate fourteen unchanged v5 responses after prospectively freezing a systematic, response-independent closure of facts exposed by R's raw evidence and tools. This arm can assess development readiness only; it cannot establish significance.",
+  "schema": "crane-luna-raw-baseline-v5-evidence-closure-predeclaration/v1",
+  "scoring": {
+    "guardrail_cases": [
+      "ccv5-geometry-masked-001m",
+      "ccv5-missing-odometry-004m"
+    ],
+    "primary_endpoint": "For independently declared diagnosable questions, the atomic mechanism unit is covered and the final answer contains no material unsupported or contradicted assertion.",
+    "primary_endpoint_cases": [
+      "ccv5-geometry-001",
+      "ccv5-geometry-002",
+      "ccv5-geometry-003",
+      "ccv5-persistent-004",
+      "ccv5-compensation-005"
+    ],
+    "readiness_gate": "Recurring P advantage across at least two independent clusters and two mechanism families; no P excess material error or causal overclaim; no useful-coverage degradation; correct masked and false-premise handling; complete method and judge evidence parity. Do not relax this gate after labels."
+  },
+  "statistical_boundary": {
+    "confirmatory_alpha_consumed": 0.0,
+    "confirmatory_semantic_n": 0,
+    "independent_clusters": 5,
+    "independent_unit": "scenario configuration",
+    "new_independent_clusters": 0,
+    "paired_masks_add_clusters": 0,
+    "repeated_judge_passes_add_clusters": 0,
+    "response_pairs": 7,
+    "responses": 14,
+    "this_reevaluation_adds_clusters": 0
+  },
+  "status": "FROZEN_BEFORE_ANY_REVISED_LUNA_CALL",
+  "stopping": "Run exactly two isolated Luna judgments for each of fourteen unchanged responses. Retain every usable judgment and do not retry inconvenient labels."
+}
