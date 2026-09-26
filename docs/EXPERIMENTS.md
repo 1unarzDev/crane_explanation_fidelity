@@ -1,5 +1,19 @@
 # Experiment Log
 
+## 2026-09-26 — focused fixed-order attempt 16 / source order 52: retained invalid
+
+- **STATUS:** `RETAINED_INVALID_RECORDING_TRANSPORT_GATE_NO_SEMANTIC_RESPONSE`; one attempt and no
+  retry or replacement. The player build audit passed, all 14 scenario-binding checks passed, the
+  Unity worker reported valid with zero Unity errors/exceptions, and navigation succeeded in
+  86.410 s over 17.521 m.
+- **FAILED GATE:** the shared fixture recorded one ROS-TCP endpoint error (`Errno 9: Bad file
+  descriptor`) during teardown and therefore returned `valid=false`. Consistent with run 034's
+  fail-closed transport precedent, the attempt is not admitted for geometry/reference derivation.
+- **BOUNDARY:** raw robot-visible and evaluator-only records are retained for validity accounting;
+  no diagnostic export, P/R response, Luna call, semantic label, confirmatory N, or alpha increment
+  was created. Valid physical counts remain 15 (10 primary-diagnosable and five controls), and the
+  next fixed configuration is `cm-land-conf-053`.
+
 ## 2026-09-26 — focused physical run 15 / source order 51: `cm-land-conf-051`
 
 - **STATUS:** `VALID_FOCUSED_PHYSICAL_INDEPENDENT_PRIMARY_TRANSIENT_COMPENSATION_RESPONSE_UNOPENED`;

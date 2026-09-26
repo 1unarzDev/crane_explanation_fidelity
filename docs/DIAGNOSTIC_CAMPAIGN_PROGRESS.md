@@ -32,7 +32,8 @@ replaced or counted as diagnosable primary cases. A prospective coordinator amen
 registry-exact references for both outcomes and makes the v2 monitor end after all 64 scheduled
 configurations while using only independently supported cases for eligible N. The candidate,
 baseline, judge, endpoint, alpha, and registered looks are unchanged. P/R responses remain
-unopened. Prospective physical configurations collected are 15/64. Source-order run 041 adds a
+unopened. Prospective physical configurations collected are 15/64 after 16 fixed-order attempts.
+Source-order run 041 adds a
 ambiguity control: the unmasked reference supports a discrepancy, while the sole method-visible
 masked condition correctly cannot establish it. Source-order run 042 independently supports a
 persistent command--motion discrepancy and is primary-diagnosable. Run 043 independently supports
@@ -46,13 +47,15 @@ record supports a discrepancy, while the sole method-visible condition cannot. R
 third independent measured-response-recovery case followed by task success. Run 050 adds a third
 prospectively masked missing-odometry control: its complete record supports a discrepancy and
 unexpected abort, while the sole method-visible condition cannot establish the mechanism. Run 051
-adds a fourth independent measured-response-recovery case followed by task success. Thus ten
-collected configurations are currently primary-diagnosable and five are missing/ambiguous
-controls;
+adds a fourth independent measured-response-recovery case followed by task success. Thus ten valid
+configurations are currently primary-diagnosable and five are missing/ambiguous controls.
+Source-order run 052 / focused alias `fsdc-land-geometry-005` completed navigation, but one ROS-TCP
+endpoint error during teardown failed the frozen shared transport-validity gate. The single attempt
+is retained as an invalid recording without diagnostic/reference derivation, P/R responses, Luna
+calls, or replacement; valid physical counts therefore remain unchanged;
 primary semantic N, effect estimates, confidence sequences, significance, and replication results
 remain zero; program alpha consumption is 0.02 from prospective activation. The next fixed
-configuration is source-order `cm-land-conf-052`, which the focused schedule prospectively aliases
-to the fifth bounded-geometry configuration `fsdc-land-geometry-005`.
+configuration is source-order `cm-land-conf-053`.
 
 The 2026-09-26 semantic-activation audit found that the existing v12 packet runner scored only the
 atomic mechanism unit plus material-error absence, whereas this focused protocol requires all

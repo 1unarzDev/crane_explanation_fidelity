@@ -1,0 +1,108 @@
+{
+  "schema": "crane-land-command-motion-physical-run-disposition/v1",
+  "recorded_date": "2026-09-26",
+  "run_id": "cm-land-conf-052",
+  "cluster_id": "cm-land-conf-cluster-052",
+  "focused_alias": "fsdc-land-geometry-005",
+  "status": "RETAINED_INVALID_RECORDING_TRANSPORT_GATE_NO_SEMANTIC_RESPONSE",
+  "attempt_count": 1,
+  "retry_or_replacement_performed": false,
+  "contract": {
+    "focused_protocol": "research/explanation_fidelity/experiment_configs/prospective/focused-supported-diagnostic-communication-v1.json",
+    "focused_schedule": "research/explanation_fidelity/experiment_configs/prospective/focused-supported-diagnostic-communication-v1-schedule.json",
+    "source_physical_schedule": "research/explanation_fidelity/experiment_configs/prospective/land-command-motion-physical-schedule-v1.json",
+    "source_schedule_sha256": "1f844ad45fa2e5cefb9edcfc5f3420a5a18aff32abda81ec72b7876ce376f215",
+    "fixed_order": 52
+  },
+  "scheduled_configuration": {
+    "source_family": "nominal-false-premise",
+    "focused_family": "bounded_geometric_restriction",
+    "geometry_mechanism": "connected-detour",
+    "layout_id": "diagnostic-command-motion-confirmation-reserve-connected-detour-003",
+    "layout_seed": 91002,
+    "mobility_hold_after_s": -1.0,
+    "mobility_release_after_s": -1.0,
+    "evidence_mask": "none",
+    "ros_domain_id": 196,
+    "ros_tcp_port": 12396
+  },
+  "admission": {
+    "player_build_audit_accepted": true,
+    "scenario_binding_audit_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "unity_worker_result_valid": true,
+    "unity_logged_errors": 0,
+    "unity_logged_exceptions": 0,
+    "shared_fixture_valid": false,
+    "recording_valid_under_frozen_transport_gate": false,
+    "failed_gate": "ros_tcp_endpoint_errors_zero",
+    "failed_gate_measurements": {
+      "endpoint_errors": 1,
+      "connections": 1,
+      "disconnects": 1,
+      "active_connections_at_shutdown": 0,
+      "endpoint_log_error": "Exception [Errno 9] Bad file descriptor"
+    },
+    "independent_reference_completeness_audit_accepted": false
+  },
+  "generic_fixture_observation": {
+    "expected_navigation_status": "succeeded",
+    "observed_navigation_status": "succeeded",
+    "expected_outcome_observed": true,
+    "fixture_exit_status": 1,
+    "fixture_summary_valid_flag": false,
+    "disposition": "The successful navigation is retained as an observation, but the attempt is not scientifically admitted because the predeclared shared transport-validity gate recorded one ROS-TCP endpoint error during teardown."
+  },
+  "observed_but_ineligible": {
+    "navigation_status": "succeeded",
+    "action_wall_seconds": 86.4097378170045,
+    "displacement_meters": 17.521153679045185,
+    "controller_commands": 828,
+    "odometry_messages": 4319,
+    "costmap_observations": 318,
+    "behavior_tree_transitions": 39,
+    "follow_path_attempts": 3,
+    "follow_path_failures": 2,
+    "maximum_recovery_feedback": 2,
+    "observed_recovery_invocation_starts": 2,
+    "behavior_tree_history_status": "not_proven",
+    "exact_recovery_count_eligible": false,
+    "interpretation": "These observations document the retained attempt only. They cannot contribute a geometry diagnosis, family count, or semantic comparison because endpoint transport failed the frozen recording-validity rule."
+  },
+  "hashes": {
+    "player_build_audit_sha256": "ee0b3388eab6339de5000aaf0201bb07d9d63bc3b349ed1e49ba3d3ddf2fc005",
+    "scenario_binding_audit_sha256": "23ae3033facfa16ae701b8fbdf28731d4dd0acedf47970cb76342650648cc157",
+    "fixture_summary_sha256": "c19639c6156dbe524cacd4fe92f7ea0f63b55be6b3fc8d8a3872b3af9247fd2b",
+    "navigation_reset_summary_sha256": "348f201915b670664fe0eeb940a2c582ff22b373d7c739448f5fc962f168fe22",
+    "unity_worker_result_sha256": "05ca843b272c99805b7d11aeec30d3ed8e45bf48638ff39e69414333bea1d3f2",
+    "robot_visible_events_sha256": "17499ca26e78fff95169e5df9c7368c216ebb75fb1c1d4757efd57a4b38d41b0",
+    "robot_visible_manifest_sha256": "1682fe0a5b63cda25d45f473c47ad4232c34db79e148dbcaa1205f51f659e9ca",
+    "evaluator_only_manifest_sha256": "f52677ceb47f6f23316ad5bd464c777b73ba67d895b1054ecadf6baaa4e07259"
+  },
+  "governance": {
+    "robot_visible_manifest": "manifests/data/cm-land-conf-052.robot-visible.json",
+    "evaluator_only_manifest": "manifests/data/cm-land-conf-052.evaluator-only.json",
+    "checkpoint": "manifests/checkpoints/cm-land-conf-052.json",
+    "dvc_remote_status": "IN_SYNC_AFTER_INVALID_ATTEMPT_CHECKPOINT"
+  },
+  "retention": {
+    "diagnostic_exports_created": false,
+    "independent_references_run": false,
+    "P_responses": 0,
+    "R_responses": 0,
+    "Luna_calls": 0,
+    "semantic_labels": 0,
+    "confirmatory_cluster_increment": 0,
+    "confirmatory_alpha_consumed": 0.0
+  },
+  "focused_progress": {
+    "scheduled_attempts": 16,
+    "valid_physical_configurations": 15,
+    "invalid_recordings": 1,
+    "primary_diagnosable_references": 10,
+    "missing_or_ambiguous_references": 5,
+    "next_fixed_run_id": "cm-land-conf-053"
+  },
+  "allowed_use": "Recording-validity and infrastructure-failure accounting only. This retained attempt is not a valid physical/reference cluster and is ineligible for diagnostic derivation, method generation, Luna annotation, confirmation, or replication.",
+  "next_gate": "Do not rerun or replace cm-land-conf-052. Continue with the fixed schedule at cm-land-conf-053."
+}

@@ -52,6 +52,7 @@ TWELFTH_RUN = ROOT / "manifests/data/cm-land-conf-048-disposition.json"
 THIRTEENTH_RUN = ROOT / "manifests/data/cm-land-conf-049-disposition.json"
 FOURTEENTH_RUN = ROOT / "manifests/data/cm-land-conf-050-disposition.json"
 FIFTEENTH_RUN = ROOT / "manifests/data/cm-land-conf-051-disposition.json"
+SIXTEENTH_ATTEMPT = ROOT / "manifests/data/cm-land-conf-052-disposition.json"
 
 
 def load(path: Path) -> dict:
@@ -417,3 +418,24 @@ def test_fourth_response_recovery_run_preserves_success_and_causal_limit():
     assert run["semantic_boundary"]["P_responses"] == 0
     assert run["semantic_boundary"]["R_responses"] == 0
     assert run["focused_progress"]["next_fixed_run_id"].startswith("cm-land-conf-052")
+
+
+def test_geometry_run_with_endpoint_error_is_retained_invalid_without_semantic_use():
+    run = load(SIXTEENTH_ATTEMPT)
+    admission = run["admission"]
+
+    assert run["attempt_count"] == 1
+    assert run["retry_or_replacement_performed"] is False
+    assert run["status"] == "RETAINED_INVALID_RECORDING_TRANSPORT_GATE_NO_SEMANTIC_RESPONSE"
+    assert admission["unity_worker_result_valid"] is True
+    assert admission["shared_fixture_valid"] is False
+    assert admission["failed_gate"] == "ros_tcp_endpoint_errors_zero"
+    assert admission["failed_gate_measurements"]["endpoint_errors"] == 1
+    assert run["retention"]["diagnostic_exports_created"] is False
+    assert run["retention"]["independent_references_run"] is False
+    assert run["retention"]["P_responses"] == 0
+    assert run["retention"]["R_responses"] == 0
+    assert run["retention"]["Luna_calls"] == 0
+    assert run["retention"]["confirmatory_cluster_increment"] == 0
+    assert run["focused_progress"]["valid_physical_configurations"] == 15
+    assert run["focused_progress"]["next_fixed_run_id"] == "cm-land-conf-053"
