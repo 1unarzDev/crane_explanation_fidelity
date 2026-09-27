@@ -13,6 +13,8 @@ sys.path.insert(0, str(ROOT / "analysis"))
 
 from compose_contract_complete_answer import compile_answer  # noqa: E402
 from compose_contract_complete_answer_v3 import compile_answer as compile_answer_v3  # noqa: E402
+from compose_contract_complete_answer_v4 import compile_answer as compile_answer_v4  # noqa: E402
+from mask_command_motion_command_evidence_v1 import build_masked_export as mask_command  # noqa: E402
 from run_contract_complete_response_pair import (  # noqa: E402
     BASELINE,
     PRODUCTION_TOOLS,
@@ -178,6 +180,59 @@ def test_v3_does_not_change_supported_recovery_text() -> None:
         source_sha256=hashlib.sha256(raw).hexdigest(), question_registry=CONTRACT,
     )
     assert v3["final_answer"] == v2["final_answer"]
+
+
+def test_v4_preserves_v3_missing_motion_contract() -> None:
+    path = ROOT / "data/robot_visible/dev/cc-pilot-017/command-motion-diagnostic-v3.json"
+    raw = path.read_bytes()
+    document = json.loads(raw)
+    v3 = compile_answer_v3(
+        document, family="missing_decisive_or_ambiguous_evidence",
+        source_sha256=hashlib.sha256(raw).hexdigest(), question_registry=CONTRACT,
+    )
+    v4 = compile_answer_v4(
+        document, family="missing_decisive_or_ambiguous_evidence",
+        source_sha256=hashlib.sha256(raw).hexdigest(), question_registry=CONTRACT,
+    )
+    assert v4["candidate_version"] == "p-contract-v4-development"
+    assert v4["missing_stream_contract"] == "missing-measured-motion-v1"
+    assert v4["final_answer"] == v3["final_answer"]
+
+
+def test_v4_distinguishes_missing_delivered_commands_in_final_text() -> None:
+    source_path = ROOT / "data/evaluator_only/dev/cc-pilot-017/command-motion-unmasked-source-v3.json"
+    source = json.loads(source_path.read_text(encoding="utf-8"))
+    masked = mask_command(source, "v4-command-mask-regression")
+    raw = json.dumps(masked, sort_keys=True).encode()
+    result = compile_answer_v4(
+        masked, family="missing_decisive_or_ambiguous_evidence",
+        source_sha256=hashlib.sha256(raw).hexdigest(), question_registry=CONTRACT,
+    )
+    lower = result["final_answer"].lower()
+    measurements = {
+        item["id"]: item["value"] for item in masked["diagnostic_result"]["measurements"]
+    }
+    assert result["missing_stream_contract"] == "missing-delivered-command-v1"
+    assert "0 delivered command samples" in lower
+    assert f"{measurements['independent_odometry_sample_count']} independent odometry samples" in lower
+    assert "delivered command is the decisive missing discriminator" in lower
+    assert "requested-to-delivered-to-measured response chain" in lower
+    assert "actuator acceptance" in lower
+    assert "unique physical cause" in lower
+
+
+def test_v4_fails_closed_if_both_decisive_streams_are_absent() -> None:
+    source_path = ROOT / "data/evaluator_only/dev/cc-pilot-017/command-motion-unmasked-source-v3.json"
+    masked = mask_command(json.loads(source_path.read_text()), "v4-double-mask-regression")
+    masked["method_input"]["odometry_samples"] = []
+    for item in masked["diagnostic_result"]["measurements"]:
+        if item["id"] == "independent_odometry_sample_count":
+            item["value"] = 0
+    with pytest.raises(ValueError, match="exactly one retained decisive stream"):
+        compile_answer_v4(
+            masked, family="missing_decisive_or_ambiguous_evidence",
+            source_sha256="0" * 64, question_registry=CONTRACT,
+        )
 
 
 def test_above_threshold_geometry_remains_bounded_and_supported() -> None:

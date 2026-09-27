@@ -1,5 +1,21 @@
 # Experiment Log
 
+## 2026-09-27 — P-contract v4 two-contract development pilot frozen
+
+- **RATIONALE:** v3 repaired the repeated missing-motion limitation omission but could not support
+  a general missing-evidence claim from one mask. Before new output, v4 adds the complementary
+  missing-delivered-command contract while leaving supported-family answers unchanged.
+- **DESIGN:** 16 fresh v7 development-only configurations: six missing-motion, six missing-command,
+  two fully evidenced controls, and two nominal controls, balanced across connected-detour and
+  nominal-clear-route strata. One physical configuration remains the unit.
+- **ENDPOINTS:** retain both prospectively named Claim A and Claim B, two isolated Luna passes, and
+  pass-sensitive reporting. A bounded missing-command judge qualification is required before
+  interpreting labels.
+- **BOUNDARY:** development only; confirmation N=0, candidate-revision alpha remains unbound, and
+  no prior mask, layout, answer, or Luna label becomes fresh evidence.
+- **NEXT:** rebuild the immutable land player with v7, run `cc-v4-pilot-001`, and process it through
+  masked independent reference, P/R response, and two-pass Luna canary.
+
 ## 2026-09-27 — P-contract v3 bounded repair implemented after pilot close
 
 - **DEFECT:** `cc-pilot-014` and `cc-pilot-017` independently reproduced P v2's omission of the

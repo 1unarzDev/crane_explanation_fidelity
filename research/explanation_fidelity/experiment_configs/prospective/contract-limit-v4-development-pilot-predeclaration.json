@@ -1,0 +1,99 @@
+{
+  "schema": "crane-contract-limit-v4-development-predeclaration/v1",
+  "campaign_id": "contract-limit-v4-fresh-development-pilot",
+  "declared_date": "2026-09-27",
+  "status": "FROZEN_DEVELOPMENT_BEFORE_CAPTURE_OR_MODEL_OUTPUT",
+  "scientific_boundary": {
+    "role": "bounded development pilot only",
+    "confirmatory_semantic_N": 0,
+    "confirmatory_alpha_spent": 0.0,
+    "candidate_revision_reserve_bound": false,
+    "legacy_and_closed_v2_results_unchanged": true,
+    "cc_pilot_014_and_017_role": "inspected regression evidence only"
+  },
+  "candidate": {
+    "id": "p-contract-v4-development",
+    "parent": "p-contract-v3-development",
+    "implementation": "analysis/compose_contract_complete_answer_v4.py",
+    "sha256": "2c1cf56ca332c9f7ec01e6c9b116d9a8b32de58c844ba1d3aad735c646fd82e1",
+    "runner": "analysis/run_contract_complete_response_pair_v4.py",
+    "runner_sha256": "ace805e983d0f457f892f49a7d8c6044d44e799febb594883929d66a7787b5c9",
+    "deterministic": true,
+    "change_from_v3": "Distinguish missing delivered commands from missing measured motion; supported-family text remains unchanged."
+  },
+  "baseline": {
+    "id": "r-contract-v1-development",
+    "model": "gpt-6-sol",
+    "reasoning_effort": "high",
+    "top_level_calls_per_configuration": 1,
+    "prompt": "research/explanation_fidelity/prompts/diagnostic_repository_agent_contract_complete_v1.txt",
+    "prompt_sha256": "73d2ccd4c08e7be5ca7eb6926fbb3123088a2b1923c698a57935e9995b33462d",
+    "same_public_task_and_robot_visible_evidence": true,
+    "same_production_computation_and_primitive_tools": true,
+    "checked_P_outputs_available": false,
+    "evaluator_references_available": false
+  },
+  "public_contract": {
+    "path": "research/explanation_fidelity/experiment_configs/prospective/contract-complete-diagnostic-communication-v1-questions.json",
+    "sha256": "04985925118b14509ac02b50303a9a9755ee50dee8aa41ed002ed26637904638",
+    "episode_specific_answers_present": false,
+    "required_components": ["M", "Q", "O", "L"]
+  },
+  "population": {
+    "schedule": "research/explanation_fidelity/experiment_configs/prospective/contract-limit-v4-development-pilot-schedule.json",
+    "schedule_sha256": "12a1d0353a8d904b44803445cc8d3a14f2b35482e5ae1ae84f7ed0a045bedef9",
+    "catalog": "packages/crane_ml/Assets/Resources/ReferenceEnvironments/crane_land_proving_ground_v7.json",
+    "catalog_sha256": "15d34f439a570d532ccf68c056f2a19358c0e722f29dd197eb4e1719398f9e57",
+    "independent_primary_configurations": 12,
+    "controls": 4,
+    "evidence_deficiency_contracts": {
+      "remove-delivered-odometry-v1": 6,
+      "remove-delivered-command-v1": 6
+    },
+    "geometry_strata": {"connected-detour": 8, "nominal-clear-route": 8},
+    "underlying_intervention_roles": {"persistent": 8, "recovery": 6, "nominal": 2},
+    "statistical_unit": "one independent physical scenario configuration",
+    "not_independent_units": ["evidence variants of one capture", "questions", "generations", "Luna passes"]
+  },
+  "development_endpoints": {
+    "claim_A": "P-minus-R probability of M AND Q AND O AND L AND NOT substantive_material_error",
+    "claim_B": "R-minus-P response-level substantive unsupported-or-contradicted assertion risk",
+    "primary_population": "the 12 prospectively masked independent configurations",
+    "controls_enter_primary_effect": false,
+    "two_pass_reporting": "retain each isolated Luna pass and least/favourable disagreement sensitivity; no third vote",
+    "qualification": "A bounded missing-command extension must pass before study labels are interpreted."
+  },
+  "judge": {
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "provider": "codex-lb",
+    "substitution_allowed": false,
+    "prior_qualified_release": "contract-complete-luna-qualification-v2",
+    "prior_freeze_sha256": "724c89556bf224f75dd2950cf154b85449e28e1d1822b931e912443f05154f8f",
+    "passes": ["pass-1", "pass-2"],
+    "quality_retry_allowed": false,
+    "new_gap": "semantic attachment of a missing delivered-command stream rather than a missing measured-motion stream"
+  },
+  "promotion_rule": {
+    "required": [
+      "At least one registered claim has a positive P-favouring difference in each frozen Luna pass.",
+      "That claim has at least two P-favouring paired discordances and no R-favouring discordance in each pass.",
+      "P has no repeated contract-specific omission or material unsupported assertion.",
+      "Judge-evidence closure and the bounded missing-command qualification pass."
+    ],
+    "not_required": [
+      "pilot statistical significance",
+      "supplemental-detail superiority",
+      "universal performance across diagnosable families"
+    ],
+    "futility": "Do not promote if neither claim is positive in both passes, R routinely matches P without favorable discordance, or a systematic P defect remains.",
+    "alpha_action": "No alpha is bound by this pilot. A separate atomic confirmation freeze is required."
+  },
+  "retention": {
+    "all_scheduled_cases_retained": true,
+    "unexpected_outcomes_retained_if_capture_valid": true,
+    "no_outcome_driven_replacement": true,
+    "no_quality_driven_model_retry": true,
+    "fixed_order": true
+  }
+}

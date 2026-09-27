@@ -1,6 +1,6 @@
 # Contract-complete diagnostic communication campaign
 
-Status: **THIRTEEN DEVELOPMENT CLUSTERS RECONCILED; PRIMARY V2 N=10; CONFIRMATION NOT FROZEN**
+Status: **V2 PILOT CLOSED; P-CONTRACT V4 TWO-CONTRACT DEVELOPMENT PILOT FROZEN; CONFIRMATION INACTIVE**
 Recorded: 2026-09-27
 
 This is the operational form of the contract-complete research redirect. It is additive. It does
@@ -53,6 +53,20 @@ The repaired candidate is `p-contract-v2-development`. It adds the recovered com
 from the same half-open recovery interval used for measured motion and renders the outcome as
 occurring after measured recovery. The repaired output passes the final-text regression on the
 inspected case; that regression is not a new method comparison.
+
+The completed v2 pilot retained 19 canaries: one v1 canary, 14 fresh v2 primary clusters, and four
+controls. Claim A sensitivity was 0.000/+0.286 and Claim B was 0.000/+0.214 across the two frozen
+Luna passes; every apparent advantage disappeared under the other pass. P-contract v2 was not
+promoted. Two independent masked controls then established the same missing-evidence L omission.
+P-contract v3 repaired that exact omission but left all broad primary-family answers unchanged, so
+it was not used to rerun the closed broad comparison.
+
+Before any new physical or model output, `p-contract-v4-development` extends the bounded repair to
+two public evidence-deficiency contracts: missing measured motion and missing delivered commands.
+It preserves v3 text byte-for-byte for missing measured motion and all supported-family text, but
+renders the correct decisive stream and limitation when commands are absent. Its new 16-case v7
+development schedule contains 12 independent masked configurations (six per contract) and four
+controls across both existing geometry strata. This is a zero-alpha pilot, not confirmation.
 
 The public question registry is
 `research/explanation_fidelity/experiment_configs/prospective/contract-complete-diagnostic-communication-v1-questions.json`.
@@ -260,23 +274,24 @@ The existing staged pipeline will be reused after these gates:
    registered-analysis queues;
 8. preserve ordered release and run fresh replication if a claim is selected.
 
-Current checkpoint:
+Historical v2 checkpoint (closed; retained for audit):
 
 | Item | Status |
 | --- | --- |
-| Candidate | `p-contract-v2-development`; v1 failure retained and v2 deterministic regression passes |
+| Candidate | `p-contract-v2-development`; not promoted after the complete pilot |
 | Known omission regressions | Healthy/event/recovery command+motion, post-recovery outcome scope, causal limits, geometry cost threshold pass |
 | Baseline | R-contract v1 made one fresh call and passed Claim A in both canary passes |
 | Field evaluator | Deterministic Claim A/B scorer implemented; corrected v2 qualified 12/12 endpoints in each pass with 47/48 unit decisions |
-| Fresh pilot | Physical/answer N=13, reconciled semantic N=13; primary v2 N=10 and controls=2; Claim A pass effects 0.0/+0.300 and Claim B 0.0/+0.200, entirely judge-sensitive |
+| Fresh pilot | Complete: 19 canaries; v2 primary N=14, controls=4, plus one v1 canary; Claim A 0.000/+0.286 and Claim B 0.000/+0.214 across passes |
 | Confirmation | Not frozen; no alpha newly consumed; no look or effect |
 | Replication | Reserve untouched; criterion pending confirmation freeze |
 | Manuscript | Historical status corrected; contract-complete results remain pending |
 
-Next executable action: continue the bounded pilot in fixed order at `cc-pilot-014`, the first
-missing-evidence control. New v2
-comparisons use cases whose contents did not influence the repair; confirmation remains prohibited
-until the bounded pilot and atomic freeze are complete.
+Current prospective checkpoint: P-contract v4 and the unchanged strong R-contract are frozen for
+the development-only `contract-limit-v4-fresh-development-pilot`. The next executable action is
+the v7 build/capture canary `cc-v4-pilot-001`, followed by independent masked reference, paired
+response, and two-pass Luna processing. Confirmation remains prohibited until the bounded pilot,
+missing-command judge extension, and a separate atomic freeze are complete.
 
 The first seven fresh v2 comparisons contain six complete ties and one pass-specific unresolved R
 failure. This does not justify confirmation yet: it shows that strengthened R routinely performs

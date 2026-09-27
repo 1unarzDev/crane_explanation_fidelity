@@ -360,6 +360,21 @@ atomically bound, before the first confirmatory response was opened; it cannot l
 Machine-readable state is retained in
 `manifests/study/diagnostic-sequential-error-ledger-v2.json`.
 
+## 2026-09-27 contract-limit v4 prospective development freeze
+
+The closed contract-complete v2 pilot contains 19 canaries: 14 fresh v2 primary clusters, four
+controls, and one earlier v1 canary. Its final pass sensitivity is Claim A 0.000/+0.286 and Claim B
+0.000/+0.214; no advantage survives both isolated Luna passes. It was not promoted, confirmation
+N remains zero, and no revision-reserve alpha has been bound.
+
+P-contract v4 is a new development candidate, not a correction of those results. It distinguishes
+two prospectively declared evidence deficiencies—missing measured motion and missing delivered
+commands—while preserving supported-family text. A fixed 16-configuration v7 pilot now registers
+12 primary evidence-limited clusters (six per contract) and four controls. Both existing land
+geometry strata are balanced. All are fresh development-only layouts; no replication-reserve or
+prior pilot layout is reused. The first physical action is `cc-v4-pilot-001`; no v4 physical,
+response, annotation, or effect result exists at this freeze.
+
 ## Cumulative focused-campaign evidence
 
 | Quantity | Current value |

@@ -27,8 +27,8 @@ if [[ ! "${ros_domain_id}" =~ ^[0-9]+$ || ! "${ros_port}" =~ ^[0-9]+$ ]]; then
     echo "ROS_DOMAIN_ID and ROS_TCP_PORT must be integers" >&2
     exit 2
 fi
-if [[ "${catalog}" != "v4" && "${catalog}" != "v5" && "${catalog}" != "v6" ]]; then
-    echo "Only versioned diagnostic catalogs v4, v5, and v6 are supported: ${catalog}" >&2
+if [[ "${catalog}" != "v4" && "${catalog}" != "v5" && "${catalog}" != "v6" && "${catalog}" != "v7" ]]; then
+    echo "Only versioned diagnostic catalogs v4, v5, v6, and v7 are supported: ${catalog}" >&2
     exit 2
 fi
 if [[ "${catalog}" == "v6" && "${CRANE_ALLOW_RESERVED_PHYSICAL_CAPTURE:-0}" != "1" ]]; then
@@ -70,6 +70,7 @@ expected_splits = {
     "v4": "development",
     "v5": "candidate-v2-development",
     "v6": "command-motion-confirmation-reserve",
+    "v7": "contract-limit-v4-development",
 }
 expected_split = expected_splits[catalog_id]
 if layout.get("studySplit") != expected_split:
