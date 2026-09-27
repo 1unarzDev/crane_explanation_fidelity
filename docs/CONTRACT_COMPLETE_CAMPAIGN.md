@@ -352,6 +352,12 @@ L, and R missing explicit actuator-acceptance scope in L. This establishes a sys
 control-composition defect for a future version. Control N=4; primary N and effects are unchanged,
 and fixed order advances to `cc-pilot-018`.
 
+The recovery case `cc-pilot-018` adds another pass-specific R causal error: pass 2 treated
+"make Wait-to-recovery plausible" as materially unsupported, while pass 1 accepted it. P passed
+both claims twice. At primary N=13 and controls N=4, Claim A is 0.0/+0.308 and Claim B
+0.0/+0.231; the entire advantage remains pass-sensitive. Fixed order advances to final pilot case
+`cc-pilot-019`.
+
 ## Tested development commands
 
 Render one deterministic P-contract regression artifact:

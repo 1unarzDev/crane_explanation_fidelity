@@ -1,5 +1,14 @@
 # Experiment Log
 
+## 2026-09-27 — thirteenth fresh P-contract v2 comparison retained
+
+- **CAPTURE/REFERENCE:** `cc-pilot-018` passed all gates and independently reproduced a
+  0.260/0.000 m/s discrepancy over 10--20 s, recovery to 0.25974 m/s over 22--23 s, and success.
+- **SEMANTICS:** P passed both claims twice. R passed in pass 1; pass 2 marked its statement that
+  the failure and Wait make Wait-to-recovery plausible as a material unsupported causal claim.
+- **STATUS:** primary v2 N=13, controls N=4. Claim A is 0.0/+0.308 and Claim B 0.0/+0.231,
+  entirely pass-sensitive. Fixed order advances to final pilot case `cc-pilot-019`.
+
 ## 2026-09-27 — second contract-complete missing-evidence control retained
 
 - **CAPTURE/REFERENCE:** `cc-pilot-017` passed all gates; its sole method-visible masked export has

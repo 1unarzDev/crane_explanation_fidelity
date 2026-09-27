@@ -1,0 +1,35 @@
+{
+  "schema": "crane-contract-complete-pilot-canary/v1",
+  "pilot_id": "contract-complete-diagnostic-communication-v1-fresh-pilot",
+  "run_id": "cc-pilot-018",
+  "cluster_id": "cc-pilot-cluster-018",
+  "date": "2026-09-27",
+  "status": "DEVELOPMENT_RECONCILED_JUDGE_SENSITIVE_R_CAUSAL_ERROR",
+  "schedule_order": 18,
+  "fresh_v2_development_N": 13,
+  "control_N": 4,
+  "confirmatory_N": 0,
+  "family": "measured_response_recovery",
+  "primary_endpoint_eligible": true,
+  "physical_admission": {"attempts": 1, "generic_fixture_valid_flag": true, "recording_valid_after_outcome_separation": true, "player_build_audit_accepted": true, "scenario_binding_audit_accepted": true, "scenario_binding_checks_passed": 14, "navigation_status": "succeeded", "transport_endpoint_errors": 0},
+  "independent_measurement": {"disposition": "supported", "healthy_interval_s": [0.0, 5.0], "healthy_commanded_mps": 0.26, "healthy_measured_mps": 0.2597399950027466, "event_interval_s": [10.0, 20.0], "event_commanded_mps": 0.26, "event_measured_mps": 0.0, "response_recovery_interval_s": [22.0, 23.0], "recovered_measured_mps": 0.2597399950027466, "recovered_response_ratio": 1.0, "action_status": "succeeded", "follow_path_failures": 1, "wait_invocations": 1},
+  "artifacts": {
+    "robot_visible_diagnostic": {"path": "data/robot_visible/dev/cc-pilot-018/command-motion-diagnostic-v3.json", "sha256": "eb36f5672e2fe3cd08b71147a9b40b344ed8fb29626c8d19cbec959433ebfc59"},
+    "independent_reference": {"path": "data/evaluator_only/dev/cc-pilot-018/command-motion-independent-reference-v1.json", "sha256": "8873fc9f3f0100302a433849be3c7ab083fa3eaa9a357925f2a97105c02e7b32"},
+    "contract_reference": {"path": "data/evaluator_only/dev/cc-pilot-018/contract-complete-annotation-reference-v1.json", "sha256": "bd3976fe2061422dc92b0a3d2dd43b3bb32e62799cc3d3966011c378e42814e0"},
+    "response_pair": {"path": "model_outputs/contract-complete-diagnostic-communication-v1-pilot/response-pairs/cc-pilot-018.json", "sha256": "e63d7f578086ed38a9f90e106e05cc61e5989ccc7d95631954cbdf7e59bbc94d"},
+    "blinded_annotation_packet": {"path": "model_outputs/annotation_packets/contract-complete-v1-pilot/cc-pilot-018.jsonl", "sha256": "15176df57dd5e412c0fa35dce10865fca502d58e34f3a7ae452f29604c6ea017"},
+    "annotation_key": {"path": "data/evaluator_only/annotation_keys/contract-complete-v1-pilot/cc-pilot-018.json", "sha256": "9b8ea891ef1d97696f9788780393691dba6266ccc4d5d916581ae8eb88dd5ecb"},
+    "luna_development_summary": {"path": "model_outputs/luna-model-judge-v1/contract-complete-v1-pilot/cc-pilot-018/development-summary.json", "sha256": "7401d065d931f11cceefa9fa7e3371c084c69b89fc409cbaec4afd16b095824d"}
+  },
+  "method_execution": {"P_contract_version": "p-contract-v2-development", "R_contract_version": "r-contract-v1-development", "R_contract_model": "gpt-6-sol", "R_contract_reasoning_effort": "high", "R_contract_calls": 1, "R_contract_latency_ms": 94356.982441, "judge_calls": 4, "judge_call_failures": 0, "qualified_judge_release": "contract-complete-luna-qualification-v2"},
+  "development_semantic_result": {
+    "pass_1": {"claim_a_P": true, "claim_a_R": true, "claim_b_substantive_error_P": false, "claim_b_substantive_error_R": false},
+    "pass_2": {"claim_a_P": true, "claim_a_R": false, "claim_b_substantive_error_P": false, "claim_b_substantive_error_R": true},
+    "disagreement": "Pass 2 treated R's statement that the failure and Wait make Wait-to-recovery plausible as a material unsupported causal claim; pass 1 accepted it. The labels are retained without retry.",
+    "confirmatory_alpha_consumed": 0.0
+  },
+  "cumulative_v2_sensitivity_after_thirteen_clusters": {"claim_a_P_minus_R": {"pass_1": 0.0, "pass_2": 0.3076923076923077}, "claim_b_R_minus_P_error_risk": {"pass_1": 0.0, "pass_2": 0.23076923076923078}},
+  "interpretation": "P passed both claims twice; the apparent advantage remains wholly Luna-pass-sensitive.",
+  "next_state": "CONTINUE_FIXED_PILOT_ORDER_AT_CC_PILOT_019_PERSISTENT_DISCREPANCY"
+}

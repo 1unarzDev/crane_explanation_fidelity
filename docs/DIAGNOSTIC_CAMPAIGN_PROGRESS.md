@@ -511,6 +511,12 @@ P omitted execution-sequence scope from L and R omitted explicit actuator-accept
 Control N=4, primary N=12 and its effects are unchanged, and fixed order advances to
 `cc-pilot-018`.
 
+Thirteenth v2 update (2026-09-27): `cc-pilot-018` passed all gates and reproduced discrepancy,
+recovery, and success. P passed both claims twice. Pass 2 marked R's "make Wait-to-recovery
+plausible" statement as a material unsupported causal claim; pass 1 accepted it. At primary N=13,
+Claim A is 0.0/+0.308 and Claim B 0.0/+0.231, wholly pass-sensitive. Fixed order advances to
+`cc-pilot-019`.
+
 The now-closed physical/reference cohort attempted 40/100 fixed confirmation-side configurations:
 39 valid, 1 invalid. The method-visible diagnostic dispositions are twenty-seven supported, seven
 `not_triggered`, and five `insufficient`. Run 004 is a valid unexpected transient case: measured
