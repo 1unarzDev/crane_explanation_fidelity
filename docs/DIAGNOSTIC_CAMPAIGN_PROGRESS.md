@@ -455,6 +455,14 @@ and obstacle-visibility limitation twice; pass 1 also marked its individual-wind
 materially unsupported while pass 2 did not. The labels remain unreconciled at material-error
 level. Control N=1, primary v2 N=7, confirmation N=0, and primary effects are unchanged.
 
+Eighth v2 update (2026-09-27): `cc-pilot-010` passed all physical/evidence gates and independently
+supports a 0.260/0.000 m/s discrepancy over 17--27 s, recovery to 0.25974 m/s over 29--30 s, and
+eventual action success. P passed both claims twice. R passed Claim B twice and Claim A once; pass 2
+treated Q as omitted because R said the recovered value was equal to calibrated healthy response
+without printing the numeric ratio 1.0000. Pass 1 accepted the same Q, so the difference remains
+unresolved. Primary v2 N=8, control N=1, Claim A sensitivity is 0.0/+0.250, Claim B is 0.0/+0.125,
+confirmation N and alpha remain zero, and fixed order advances to `cc-pilot-011`.
+
 The now-closed physical/reference cohort attempted 40/100 fixed confirmation-side configurations:
 39 valid, 1 invalid. The method-visible diagnostic dispositions are twenty-seven supported, seven
 `not_triggered`, and five `insufficient`. Run 004 is a valid unexpected transient case: measured

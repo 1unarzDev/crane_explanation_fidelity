@@ -1,6 +1,6 @@
 # Contract-complete diagnostic communication campaign
 
-Status: **NINE DEVELOPMENT CLUSTERS RECONCILED; FIRST CONTROL COMPLETE; CONFIRMATION NOT FROZEN**
+Status: **TEN DEVELOPMENT CLUSTERS RECONCILED; PRIMARY V2 N=8; CONFIRMATION NOT FROZEN**
 Recorded: 2026-09-27
 
 This is the operational form of the contract-complete research redirect. It is additive. It does
@@ -268,12 +268,12 @@ Current checkpoint:
 | Known omission regressions | Healthy/event/recovery command+motion, post-recovery outcome scope, causal limits, geometry cost threshold pass |
 | Baseline | R-contract v1 made one fresh call and passed Claim A in both canary passes |
 | Field evaluator | Deterministic Claim A/B scorer implemented; corrected v2 qualified 12/12 endpoints in each pass with 47/48 unit decisions |
-| Fresh pilot | Physical/answer N=9, reconciled semantic N=9; primary v2 N=7 and controls=1; primary pass effects remain 0.0 and +0.143 |
+| Fresh pilot | Physical/answer N=10, reconciled semantic N=10; primary v2 N=8 and controls=1; Claim A pass effects 0.0/+0.250 and Claim B 0.0/+0.125, both judge-sensitive |
 | Confirmation | Not frozen; no alpha newly consumed; no look or effect |
 | Replication | Reserve untouched; criterion pending confirmation freeze |
 | Manuscript | Historical status corrected; contract-complete results remain pending |
 
-Next executable action: continue the bounded pilot in fixed order at `cc-pilot-010`. New v2
+Next executable action: continue the bounded pilot in fixed order at `cc-pilot-011`. New v2
 comparisons use cases whose contents did not influence the repair; confirmation remains prohibited
 until the bounded pilot and atomic freeze are complete.
 
@@ -292,6 +292,13 @@ The first nominal control (`cc-pilot-009`) is separately reconciled. P covered M
 error twice. R omitted the required transient-difficulty and obstacle-visibility limitation twice;
 one pass also marked an overstatement about individual low-response windows materially unsupported.
 The disagreement is retained. This control changes neither primary N nor the Claim A/B effects.
+
+The next recovery case (`cc-pilot-010`) independently reproduced a 0.260/0.000 m/s discrepancy
+over 17--27 s, recovery to 0.25974 m/s over 29--30 s, and eventual action success. P passed both
+claims twice. R passed Claim B twice and Claim A in one pass; the other pass required the explicit
+numeric recovery ratio even though R stated that recovered speed equaled calibrated healthy speed.
+The frozen disagreement is retained. Across eight fresh v2 primary cases, Claim A sensitivity is
+0.0/+0.250 and Claim B is 0.0/+0.125; neither is robust enough to activate confirmation.
 
 ## Tested development commands
 

@@ -1,5 +1,17 @@
 # Experiment Log
 
+## 2026-09-27 — eighth fresh P-contract v2 comparison retained
+
+- **CAPTURE/REFERENCE:** `cc-pilot-010` passed all gates and independently reproduced a
+  0.260/0.000 m/s discrepancy over 17--27 s, measured recovery to 0.25974 m/s over 29--30 s, and
+  eventual action success.
+- **SEMANTICS:** P passed Claims A and B twice. R passed Claim B twice and Claim A in pass 1; pass 2
+  called Q incomplete because R expressed equality with calibrated healthy response without the
+  explicit numeric ratio 1.0000. The disagreement is retained without retry or relabeling.
+- **STATUS:** fresh v2 primary N=8 and control N=1. Claim A pass effects are 0.0/+0.250 and Claim B
+  effects are 0.0/+0.125. Both apparent benefits remain judge-sensitive; confirmation N and alpha
+  are zero. Fixed order advances to `cc-pilot-011`.
+
 ## 2026-09-27 — first contract-complete control retained
 
 - **CAPTURE/REFERENCE:** `cc-pilot-009` passed all gates without intervention. Independent
