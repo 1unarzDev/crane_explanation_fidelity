@@ -1,5 +1,22 @@
 # Decision Log
 
+## 2026-09-27 — resume the frozen causal-restraint pilot on retained physical captures
+
+- **Decision:** after P-contract-v4 failed both contract-complete promotion signals, resume the
+  previously frozen explicit contract-prohibited causal-link pilot as the next bounded campaign.
+- **Boundary:** the 20 scheduled physical configurations were subsequently collected and inspected
+  under the contract-complete pilot. Eighteen valid captures may therefore support development
+  only; the two retained failures are neither recollected nor replaced. Causal-prompt R outputs
+  have not yet been generated.
+- **Method:** keep frozen P-contract-v3, the explicitly instructed strong R-contract prompt, finite
+  detector, and public causal contract unchanged. This tests a narrower reliability property; it
+  does not reinterpret the failed Claims A/B pilot or claim general semantic correctness.
+- **Gate:** at least two net R-only detector discordances across the 14 physically valid primary
+  clusters, plus all original audit/fairness/content gates. Passing authorizes a separate freeze
+  over untouched `cr-conf` cases; it is not confirmation or significance.
+- **Record:** `explicit-causal-restraint-successor-v1-pilot-resumption-amendment-1.json` was frozen
+  before any causal-successor response generation. Alpha and confirmatory N remain zero.
+
 ## 2026-09-27 — do not promote P-contract v4 after the fixed-suffix pilot
 
 - **Decision:** close the 19-configuration development pilot and leave confirmation inactive.

@@ -5,6 +5,21 @@ Updated: 2026-09-27
 Protocol: `diagnostic-sequential-protocol-v2`
 Current status: **P-CONTRACT-V4 PILOT COMPLETE / NOT PROMOTED / CONFIRMATION N=0**
 
+## Causal-restraint pilot resumption (2026-09-27)
+
+The next bounded campaign resumes the already frozen explicit contract-prohibited causal-link
+endpoint. Its 20 pilot configurations were later collected under the contract-complete campaign:
+18 captures are valid (14 primary and four controls), while `cr-pilot-007` and `cr-pilot-017`
+remain unreplaced physical failures. Because their outcomes and earlier contract-complete answers
+have been inspected, all 18 are development-only for this successor.
+
+No causal-prompt R output existed when the resumption amendment was frozen. P-contract-v3, the
+strong explicitly restrained R prompt, public finite contract, detector, and schedule remain
+byte-identical to their earlier freeze. The new semantic pilot requires at least two net R-only
+detector discordances among the 14 valid primary cases and the original fairness/content audits.
+Passing only permits a new confirmation freeze over untouched `cr-conf` configurations. Current
+causal-successor confirmation N=0, alpha bound=0, and `cr-repl` remains untouched.
+
 ## Contract-complete v4 fixed-suffix pilot close (2026-09-27)
 
 All 19 scheduled configurations received exactly one headless physical attempt. Seventeen passed

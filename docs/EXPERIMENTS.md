@@ -1,5 +1,21 @@
 # Experiment Log
 
+## 2026-09-27 — causal-restraint successor resumed before new semantic output
+
+- **WHY:** the completed contract-complete pilot tied under its required conservative mapping, so
+  the existing narrower causal-restraint endpoint is the next predeclared candidate rather than a
+  post-hoc control metric.
+- **REUSE:** the exact 20 frozen pilot configurations were later physically attempted once. Reuse
+  18 valid governed captures for development only; retain failures 007 and 017 without retry or
+  replacement.
+- **UNCHANGED:** P-contract-v3, R-contract-causal-restraint-v1, prompt, source/tools, finite public
+  contract, detector, and configuration order retain their pinned identities.
+- **BEFORE OUTPUT:** no causal-prompt R response, detector result, confirmation case, or alpha use
+  existed when amendment 1 was recorded.
+- **DECISION RULE:** require at least two net R-only finite-detector discordances in the 14 valid
+  primary captures plus the original manual-event, parity, and severe-harm checks. Otherwise close
+  the successor without confirmation.
+
 ## 2026-09-27 — P-contract-v4 fixed-suffix pilot closed without promotion
 
 - **SCHEDULE:** 19 prospectively fixed configurations, one physical attempt each; 15 planned

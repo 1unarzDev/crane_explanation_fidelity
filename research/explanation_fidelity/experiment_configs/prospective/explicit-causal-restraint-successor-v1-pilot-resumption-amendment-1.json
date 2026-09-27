@@ -1,0 +1,67 @@
+{
+  "schema": "crane-causal-restraint-successor-pilot-resumption-amendment/v1",
+  "amendment_id": "explicit-causal-restraint-successor-v1-pilot-resumption-amendment-1",
+  "recorded_date": "2026-09-27",
+  "status": "FROZEN_BEFORE_CAUSAL_SUCCESSOR_RESPONSE_GENERATION",
+  "reason": "The later P-contract-v4/R-contract development pilot failed its frozen promotion gate. The previously frozen causal-restraint successor remains a narrower, research-relevant next campaign, but its pilot physical configurations were subsequently collected and inspected under the later contract-complete campaign.",
+  "preserved_results": {
+    "contract_complete_result": "manifests/analysis/contract-complete-v2-development-pilot-result.json",
+    "contract_complete_result_sha256": "20705a5d0a6d7d549aabe165140aca6970181dfeb43e59aa306dd60297277954",
+    "interpretation": "The contract-complete tie, control judge-evidence failure, and non-promotion remain unchanged. This amendment cannot rescue or reinterpret Claims A or B."
+  },
+  "frozen_predecessor": {
+    "predeclaration": "research/explanation_fidelity/experiment_configs/prospective/explicit-causal-restraint-successor-v1-pilot-predeclaration.json",
+    "schedule": "research/explanation_fidelity/experiment_configs/prospective/explicit-causal-restraint-successor-v1-schedule.json",
+    "schedule_sha256": "576872bb8e749dc372553be2630a76d904721ba3de157ee4a0736d8cc49e71f0",
+    "candidate_renderer_sha256": "fc4784d98dc8e6f9056c96619ae37ab34c7e7839725cc70e6a975a1f30d87f04",
+    "pair_runner_sha256": "90092ec1eeba54e37f1b21c9c411e5185f9a969924dd40753126e333aa931f8a",
+    "base_runner_sha256": "f87b48459fdd6f1287379c11ae76491fdd849781f00dd3aad587f59d6ca8bf1e",
+    "baseline_prompt_sha256": "825c0e80c653d1aba2f922400997d63404a92759b3dee09e647e284b620d8b03",
+    "detector_sha256": "c1c09dbf5e71f32a2be787975b1791901e0c2e998e0ffd4f8de1765fa861b69d"
+  },
+  "physical_disposition": {
+    "scheduled": 20,
+    "valid_reused_development_captures": 18,
+    "valid_primary": 14,
+    "valid_controls": 4,
+    "technical_failures": [
+      {
+        "run_id": "cr-pilot-007",
+        "manifest": "manifests/operations/artifacts/cr-pilot-007-attempt-001-technical-failure.manifest.json",
+        "sha256": "903dba6c1c4fc86214bff6533bdf712c84e6b13c23050679e98af29986aeb45c"
+      },
+      {
+        "run_id": "cr-pilot-017",
+        "manifest": "manifests/operations/artifacts/cr-pilot-017-attempt-001-technical-failure.manifest.json",
+        "sha256": "f14d72d2af92d1e6e4e4cb69e3584cd8ec14772e59b22cfe0c06229cb0b9dda9"
+      }
+    ],
+    "no_recollection_or_replacement": true,
+    "freshness_limit": "All physical outcomes and prior P-contract-v4/R-contract answers are inspected development evidence. Only the causal-restraint prompt outputs and finite-detector measurements are new. Nothing from this pilot can be confirmation or replication."
+  },
+  "semantic_execution": {
+    "candidate": "p-contract-v3",
+    "baseline": "r-contract-causal-restraint-v1",
+    "one_new_baseline_call_per_valid_cluster": true,
+    "candidate_generation": "deterministic",
+    "output_root": "model_outputs/explicit-causal-restraint-successor-v1-pilot",
+    "cache_root": "model_outputs/caches/explicit-causal-restraint-successor-v1-pilot",
+    "forbidden_reuse": "Do not reuse the prior R-contract-v1 output; its prompt did not contain the frozen explicit causal contract.",
+    "technical_retry_policy": "Only unusable transport failures may follow the existing bounded retry rule. Do not retry for answer content or detector outcome."
+  },
+  "pilot_decision_rule": {
+    "available_primary_denominator": 14,
+    "required_net_r_only_discordances": 2,
+    "other_original_gates_unchanged": true,
+    "rationale": "The denominator reduction is fixed from already retained physical failures before any causal-successor answer is generated. No replacement case is selected.",
+    "promotion_effect": "Passing permits a new confirmation freeze on untouched cr-conf configurations; it does not establish significance or bind alpha by itself.",
+    "failure_effect": "Retain the new responses and stop this successor without confirmation."
+  },
+  "confirmation": {
+    "independent_n": 0,
+    "alpha_bound": 0.0,
+    "activation": "PROHIBITED_DURING_RESUMED_PILOT",
+    "fresh_population": "Only untouched cr-conf configurations may enter a later separately frozen discovery campaign.",
+    "replication_population": "cr-repl remains protected and untouched."
+  }
+}
