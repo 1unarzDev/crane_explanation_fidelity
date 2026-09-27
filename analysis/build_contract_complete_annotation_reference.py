@@ -82,42 +82,66 @@ def build_reference(
     question = _question(family)
     result = independent["result"]
     status = independent["execution_basis"]["action_status"]
-    if family != "measured_response_recovery":
-        raise ValueError("current contract reference slice supports measured recovery only")
-    interval = result.get("response_recovery_interval_s")
-    if result.get("disposition") != "supported" or not isinstance(interval, list):
-        raise ValueError("measured-recovery family does not match independent computation")
-    recovered_command, recovered_command_count = _median_in_interval(
-        export["method_input"]["command_samples"], interval
+    if result.get("disposition") != "supported":
+        raise ValueError("diagnosable contract family does not match independent computation")
+    common_comparison = (
+        f"Healthy {result['healthy_interval_s'][0]:.1f}--{result['healthy_interval_s'][1]:.1f} s medians were "
+        f"{result['healthy_commanded_planar_speed_mps']:.3f} m/s commanded and "
+        f"{result['healthy_measured_planar_speed_mps']:.4f} m/s measured; event "
+        f"{result['interval_s'][0]:.1f}--{result['interval_s'][1]:.1f} s medians were "
+        f"{result['discrepancy_commanded_planar_speed_mps']:.3f} m/s commanded and "
+        f"{result['discrepancy_measured_planar_speed_mps']:.3f} m/s measured"
     )
-    texts = {
-        "M": "A delivered-command/measured-motion discrepancy followed by measured response recovery is supported.",
-        "Q": (
-            f"Healthy {result['healthy_interval_s'][0]:.1f}--{result['healthy_interval_s'][1]:.1f} s medians were "
-            f"{result['healthy_commanded_planar_speed_mps']:.3f} m/s commanded and "
-            f"{result['healthy_measured_planar_speed_mps']:.4f} m/s measured; event "
-            f"{result['interval_s'][0]:.1f}--{result['interval_s'][1]:.1f} s medians were "
-            f"{result['discrepancy_commanded_planar_speed_mps']:.3f} m/s commanded and "
-            f"{result['discrepancy_measured_planar_speed_mps']:.3f} m/s measured; recovery "
-            f"{interval[0]:.1f}--{interval[1]:.1f} s medians were {recovered_command:.3f} m/s commanded and "
-            f"{result['recovered_measured_planar_speed_mps']:.4f} m/s measured "
-            f"(response ratio {result['recovered_response_ratio']:.4f})."
-        ),
-        "O": f"The recorded navigation action {status} after the measured response recovery.",
-        "L": (
-            "The retained ordering does not establish that a Wait invocation caused recovery, "
-            "does not establish that recovery caused the action outcome, and does not identify "
-            "the original physical or actuator cause."
-        ),
-    }
-    supplemental = {
-        "schema": "crane-contract-recovery-command-reference/v1",
-        "implementation": "independent_half_open_interval_median_over_robot_visible_commands",
-        "interval_s": [float(interval[0]), float(interval[1])],
-        "command_sample_count": recovered_command_count,
-        "recovered_commanded_planar_speed_mps": recovered_command,
-        "unit": "m/s",
-    }
+    supplemental: dict[str, Any] | None = None
+    if family == "measured_response_recovery":
+        interval = result.get("response_recovery_interval_s")
+        if not isinstance(interval, list):
+            raise ValueError("measured-recovery family lacks independent recovery")
+        recovered_command, recovered_command_count = _median_in_interval(
+            export["method_input"]["command_samples"], interval
+        )
+        texts = {
+            "M": "A delivered-command/measured-motion discrepancy followed by measured response recovery is supported.",
+            "Q": (
+                f"{common_comparison}; recovery {interval[0]:.1f}--{interval[1]:.1f} s medians were "
+                f"{recovered_command:.3f} m/s commanded and "
+                f"{result['recovered_measured_planar_speed_mps']:.4f} m/s measured "
+                f"(response ratio {result['recovered_response_ratio']:.4f})."
+            ),
+            "O": f"The recorded navigation action {status} after the measured response recovery.",
+            "L": (
+                "The retained ordering does not establish that a Wait invocation caused recovery, "
+                "does not establish that recovery caused the action outcome, and does not identify "
+                "the original physical or actuator cause."
+            ),
+        }
+        supplemental = {
+            "schema": "crane-contract-recovery-command-reference/v1",
+            "implementation": "independent_half_open_interval_median_over_robot_visible_commands",
+            "interval_s": [float(interval[0]), float(interval[1])],
+            "command_sample_count": recovered_command_count,
+            "recovered_commanded_planar_speed_mps": recovered_command,
+            "unit": "m/s",
+        }
+    elif family == "persistent_command_motion_discrepancy":
+        if result.get("response_recovery_interval_s") is not None:
+            raise ValueError("persistent family unexpectedly contains measured recovery")
+        texts = {
+            "M": "A persistent command-to-measured-motion discrepancy is supported.",
+            "Q": f"{common_comparison}.",
+            "O": f"The recorded navigation action {status}.",
+            "L": (
+                "The retained evidence does not uniquely identify actuator rejection, mobility "
+                "constraint, collision, obstruction, slip, or another physical cause; delivered "
+                "commands do not prove actuator acceptance, and delivered odometry does not prove "
+                "Nav2 consumption."
+            ),
+        }
+    else:
+        raise ValueError("current contract reference slice supports command-motion primary families only")
+    independent_computations = [_visible_independent(independent)]
+    if supplemental is not None:
+        independent_computations.append(supplemental)
     return {
         "schema": "crane-checked-composition-annotation-reference/v1",
         "visibility": "robot_visible_reference",
@@ -146,9 +170,7 @@ def build_reference(
         ),
         "allowed_evidence": {
             "primitive_diagnostic": _blind(export),
-            "independent_reference_computations": [
-                _visible_independent(independent), supplemental,
-            ],
+            "independent_reference_computations": independent_computations,
             "reference_boundary": (
                 "Independent calculations verify quantities and answerable units; evaluator intervention "
                 "identity and physical-cause truth remain excluded."

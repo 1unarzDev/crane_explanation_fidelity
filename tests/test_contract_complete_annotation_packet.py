@@ -12,6 +12,8 @@ ROOT = Path(__file__).resolve().parents[1]
 EXPORT = ROOT / "data/robot_visible/dev/cc-pilot-001/command-motion-diagnostic-v3.json"
 INDEPENDENT = ROOT / "data/evaluator_only/dev/cc-pilot-001/command-motion-independent-reference-v1.json"
 PAIR = ROOT / "model_outputs/contract-complete-diagnostic-communication-v1-pilot/response-pairs/cc-pilot-001.json"
+PERSISTENT_EXPORT = ROOT / "data/robot_visible/dev/cc-pilot-002/command-motion-diagnostic-v3.json"
+PERSISTENT_INDEPENDENT = ROOT / "data/evaluator_only/dev/cc-pilot-002/command-motion-independent-reference-v1.json"
 
 
 def artifacts() -> tuple[dict, dict]:
@@ -56,3 +58,21 @@ def test_packet_blinds_condition_and_preserves_verbatim_answers() -> None:
     source_texts = {item["text"] for item in json.loads(PAIR.read_text())["outputs"]}
     assert {row["response_text"] for row in rows} == source_texts
     assert {item["response_id"] for item in key} == {row["response_id"] for row in rows}
+
+
+def test_persistent_reference_has_exact_contract_units_and_comparisons() -> None:
+    reference = build_reference(
+        json.loads(PERSISTENT_EXPORT.read_text()),
+        json.loads(PERSISTENT_INDEPENDENT.read_text()),
+        family="persistent_command_motion_discrepancy",
+        question_id="cc-persistent-command-motion-v1",
+    )
+    units = {item["unit_id"]: item["text"] for item in reference["required_units"]}
+
+    assert list(units) == ["M", "Q", "O", "L"]
+    assert "persistent command-to-measured-motion discrepancy" in units["M"]
+    assert "0.260 m/s commanded and 0.2597 m/s measured" in units["Q"]
+    assert "0.260 m/s commanded and 0.000 m/s measured" in units["Q"]
+    assert "10.0--20.0 s" in units["Q"]
+    assert "navigation action aborted" in units["O"]
+    assert "does not uniquely identify" in units["L"]
