@@ -12,6 +12,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "analysis"))
 
 from compose_contract_complete_answer import compile_answer  # noqa: E402
+from compose_contract_complete_answer_v3 import compile_answer as compile_answer_v3  # noqa: E402
 from run_contract_complete_response_pair import (  # noqa: E402
     BASELINE,
     PRODUCTION_TOOLS,
@@ -145,6 +146,38 @@ def test_missing_motion_evidence_is_qualified_instead_of_mapped_as_failure() -> 
     assert "cannot be established" in lower
     assert "0 independent odometry samples" in lower
     assert "measured motion is the decisive missing discriminator" in lower
+
+
+@pytest.mark.parametrize("run_id", ["cc-pilot-014", "cc-pilot-017"])
+def test_v3_repairs_replicated_missing_evidence_limitation_in_final_text(run_id: str) -> None:
+    path = ROOT / f"data/robot_visible/dev/{run_id}/command-motion-diagnostic-v3.json"
+    raw = path.read_bytes()
+    result = compile_answer_v3(
+        json.loads(raw),
+        family="missing_decisive_or_ambiguous_evidence",
+        source_sha256=hashlib.sha256(raw).hexdigest(),
+        question_registry=CONTRACT,
+    )
+    lower = result["final_answer"].lower()
+    assert result["candidate_version"] == "p-contract-v3-development"
+    assert result["parent_candidate_version"] == "p-contract-v2-development"
+    assert "command delivery and the recorded execution sequence cannot establish" in lower
+    assert "actuator acceptance" in lower
+    assert "unique physical cause" in lower
+
+
+def test_v3_does_not_change_supported_recovery_text() -> None:
+    path = ROOT / "data/robot_visible/dev/cc-pilot-018/command-motion-diagnostic-v3.json"
+    raw = path.read_bytes()
+    v2 = compile_answer(
+        json.loads(raw), family="measured_response_recovery",
+        source_sha256=hashlib.sha256(raw).hexdigest(), question_registry=CONTRACT,
+    )
+    v3 = compile_answer_v3(
+        json.loads(raw), family="measured_response_recovery",
+        source_sha256=hashlib.sha256(raw).hexdigest(), question_registry=CONTRACT,
+    )
+    assert v3["final_answer"] == v2["final_answer"]
 
 
 def test_above_threshold_geometry_remains_bounded_and_supported() -> None:

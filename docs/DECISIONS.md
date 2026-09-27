@@ -1,5 +1,18 @@
 # Decision Log
 
+## 2026-09-27 — close broad v2 pilot; repair and narrow prospectively
+
+The closed P-contract-v2 pilot is not promoted: at fresh primary N=14, every positive Claim A/B
+difference disappears under one of the two frozen Luna passes. Two independent missing-evidence
+controls do, however, reproduce a specific P omission and a distinct R omission. P-contract v3
+repairs only P's atomic L wording while leaving supported persistent/recovery answers unchanged.
+
+The next defensible comparison is prospectively narrow: complete supported diagnostic
+communication when a declared decisive physical measurement is absent. The old controls are
+regression/development evidence only. A separate registration must define diverse independent
+evidence-deficiency contracts, controls, alpha, and stopping before fresh evaluation. Broad v2
+confirmation remains inactive (N=0, alpha spent=0).
+
 ## 2026-09-27 — version the first contract-completeness repair
 
 - **Decision:** close `p-contract-v1-development` after its first canary and create

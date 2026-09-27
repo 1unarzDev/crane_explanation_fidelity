@@ -1,0 +1,42 @@
+{
+  "schema": "crane-contract-complete-pilot-amendment/v1",
+  "amendment_id": "contract-complete-pilot-amendment-5-p-contract-v3",
+  "date": "2026-09-27",
+  "timing": "after the complete cc-pilot-001--019 development schedule and before any v3 fresh-development or confirmatory output",
+  "trigger": "Both prospectively masked missing-evidence controls independently reproduced the same P-contract-v2 omission: its L component limited command delivery but omitted that the recorded execution sequence also cannot establish the mechanism or unique physical cause.",
+  "historical_boundary": {
+    "v2_outputs_labels_and_effects_immutable": true,
+    "v2_fresh_primary_N": 14,
+    "v2_control_N": 4,
+    "v2_claim_a_pass_effects": [0.0, 0.2857142857142857],
+    "v2_claim_b_pass_effects": [0.0, 0.21428571428571427],
+    "v2_promotion_decision": "not_promoted",
+    "confirmation_N": 0,
+    "confirmation_alpha_spent": 0.0
+  },
+  "candidate": {
+    "id": "p-contract-v3-development",
+    "parent": "p-contract-v2-development",
+    "implementation": "analysis/compose_contract_complete_answer_v3.py",
+    "implementation_sha256": "fc4784d98dc8e6f9056c96619ae37ab34c7e7839725cc70e6a975a1f30d87f04",
+    "development_pair_runner": "analysis/run_contract_complete_response_pair_v3.py",
+    "development_pair_runner_sha256": "83eb0b78a071cb85193bb5d8cf06800832b6d5e5009ab2ef4248f77bcd69b67d",
+    "sole_change": "For missing_decisive_or_ambiguous_evidence, L now states that command delivery and the recorded execution sequence cannot establish a command-to-motion discrepancy, actuator acceptance, or a unique physical cause.",
+    "supported_primary_family_text_unchanged": true,
+    "deterministic": true
+  },
+  "development_regression": {
+    "inspected_cases": ["cc-pilot-014", "cc-pilot-017"],
+    "role": "regression_only_not_fresh_evidence",
+    "required_final_text_checks": ["execution-sequence scope is present", "actuator-acceptance scope is present", "unique physical cause remains unresolved"],
+    "supported_recovery_text_must_equal_v2": true
+  },
+  "prospective_direction": {
+    "status": "requires_separate_registration_before_collection",
+    "candidate_comparison": "P-contract-v3 versus the unchanged strong R-contract",
+    "focused_population": "independent configurations whose question requires useful qualification because a prospectively declared decisive physical measurement is absent",
+    "provisional_endpoint": "M AND Q AND O AND L AND NOT material_error",
+    "rationale": "The v2 primary population showed no pass-robust advantage, while two independent controls established a repeatable, question-relevant baseline omission and a deterministic P composition defect that v3 repairs.",
+    "constraints": ["do not count cc-pilot-014 or cc-pilot-017 as fresh evidence", "do not reuse masks of one robot episode as independent clusters", "include more than one prospectively declared evidence-deficiency contract before confirmation", "retain nominal and fully evidenced controls", "freeze population, baseline, judge, analysis, alpha, and stopping before confirmation"]
+  }
+}

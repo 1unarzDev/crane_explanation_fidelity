@@ -366,6 +366,17 @@ reproduce a P v2 atomic-L omission. P-contract v2 is therefore not promoted; con
 alpha remain zero. The next bounded action is a new-version repair limited to the demonstrated
 missing-evidence composition defect, followed by regression and fresh development evidence.
 
+P-contract v3 implements that bounded repair in a new source/runner pair. On both inspected
+missing-evidence controls its final L text now covers command delivery *and the recorded execution
+sequence*; supported recovery output remains byte-identical to v2. Fourteen candidate regression
+tests pass. This does not improve or rescore the closed v2 result.
+
+Because v3 leaves the old primary-family texts unchanged, rerunning the broad v2 claim would not be
+a credible route to a new advantage. The next prospective claim is instead limited to complete,
+supported qualification when a declared decisive physical measurement is absent. It must use
+fresh independent configurations, more than one evidence-deficiency contract, unchanged strong R,
+nominal/fully evidenced controls, and a separately frozen analysis/error budget before confirmation.
+
 ## Tested development commands
 
 Render one deterministic P-contract regression artifact:

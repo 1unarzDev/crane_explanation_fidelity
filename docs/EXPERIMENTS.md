@@ -1,5 +1,15 @@
 # Experiment Log
 
+## 2026-09-27 — P-contract v3 bounded repair implemented after pilot close
+
+- **DEFECT:** `cc-pilot-014` and `cc-pilot-017` independently reproduced P v2's omission of the
+  execution-sequence scope from missing-evidence limitation L.
+- **REPAIR:** new `p-contract-v3-development` adds only that clause. It does not modify v2 source,
+  outputs, labels, or effects, and it leaves supported recovery text unchanged.
+- **VALIDATION/DIRECTION:** 14 candidate tests pass, including final-text regressions on both
+  inspected controls. Those cases remain regression-only. A new prospective missing-decisive-
+  evidence communication campaign must be separately registered before fresh collection.
+
 ## 2026-09-27 — bounded P-contract v2 pilot closed without promotion
 
 - **FINAL CASE:** `cc-pilot-019` retained a valid unexpected abort, independently found a
