@@ -1,5 +1,16 @@
 # Experiment Log
 
+## 2026-09-27 — tenth fresh P-contract v2 comparison retained
+
+- **CAPTURE/REFERENCE:** `cc-pilot-013` retained a valid unexpected abort and independently found
+  a 0.260/0.000 m/s persistent discrepancy over 11--21 s, two FollowPath failures, two Waits, and
+  no measured recovery.
+- **SEMANTICS:** P passed both claims twice. R passed both in pass 1; pass 2 marked "The Waits did
+  not lead to task success" as a material unsupported causal relationship. No retry or relabeling
+  occurred.
+- **STATUS:** primary v2 N=10, controls N=2. Claim A sensitivity is 0.0/+0.300 and Claim B is
+  0.0/+0.200, entirely judge-sensitive. Confirmation remains inactive; `cc-pilot-014` is next.
+
 ## 2026-09-27 — second contract-complete control retained
 
 - **CAPTURE/REFERENCE:** `cc-pilot-012` passed all gates, succeeded without intervention, and

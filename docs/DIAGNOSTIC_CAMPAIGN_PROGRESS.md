@@ -478,6 +478,13 @@ but both passes marked L incomplete because it omitted the obstacle-visibility v
 consumption/causation boundary. Control N=2, primary v2 N=9, primary effects and alpha are unchanged,
 and fixed order advances to `cc-pilot-013`.
 
+Tenth v2 update (2026-09-27): `cc-pilot-013` retained another valid unexpected abort and
+independently supports a 0.260/0.000 m/s discrepancy over 11--21 s, two FollowPath failures, two
+Waits, and no recovery. P passed both claims twice. R passed both in pass 1; pass 2 treated "The
+Waits did not lead to task success" as a material unsupported causal relationship. The disagreement
+is retained. Primary v2 N=10 gives Claim A 0.0/+0.300 and Claim B 0.0/+0.200, entirely dependent on
+one Luna pass. Confirmation remains inactive; `cc-pilot-014` is the next missing-evidence control.
+
 The now-closed physical/reference cohort attempted 40/100 fixed confirmation-side configurations:
 39 valid, 1 invalid. The method-visible diagnostic dispositions are twenty-seven supported, seven
 `not_triggered`, and five `insufficient`. Run 004 is a valid unexpected transient case: measured
