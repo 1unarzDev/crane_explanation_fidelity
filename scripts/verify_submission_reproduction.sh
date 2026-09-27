@@ -24,7 +24,7 @@ done
 
 scripts/check_data_governance.sh
 scripts/build_paper.sh >"${scratch}/paper-build.log" 2>&1
-python3 scripts/audit_submission_readiness.py --category short \
+python3 scripts/audit_submission_readiness.py --category full \
   >"${scratch}/submission-readiness.json"
 
 PYTHONPATH=packages/astro_dock/src/crane_explain/src \

@@ -4,10 +4,17 @@ import subprocess
 
 
 SCRIPT = Path(__file__).parents[1] / "scripts" / "audit_submission_readiness.py"
+REPRODUCTION_SCRIPT = Path(__file__).parents[1] / "scripts" / "verify_submission_reproduction.sh"
 SPEC = importlib.util.spec_from_file_location("audit_submission_readiness", SCRIPT)
 MODULE = importlib.util.module_from_spec(SPEC)
 assert SPEC.loader is not None
 SPEC.loader.exec_module(MODULE)
+
+
+def test_reproduction_wrapper_audits_declared_full_paper_category():
+    script = REPRODUCTION_SCRIPT.read_text(encoding="utf-8")
+    assert "audit_submission_readiness.py --category full" in script
+    assert "audit_submission_readiness.py --category short" not in script
 
 
 def completed(stdout: str = "", returncode: int = 0, stderr: str = ""):
