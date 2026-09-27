@@ -1,8 +1,22 @@
 # Diagnostic throughput report
 
-Updated: 2026-09-26
+Updated: 2026-09-27
 
-Status: **land discovery capture/semantic queues drained; registered first look remains invalid**
+Status: **P-contract-v4 pilot queues drained; development promotion failed**
+
+## Contract-complete fixed-suffix batch
+
+The 19 scheduled one-attempt physical jobs ran in fixed order with two isolated headless workers.
+Capture closed in approximately 35.1 minutes (about 32.5 scheduled configurations/hour); 17
+valid full P/R/two-pass-Luna comparisons closed in approximately 40.9 minutes from the first
+capture manifest (about 24.9 reconciled comparisons/hour). The two technical failures were retained
+without replacement. CPU export/reference work, isolated R calls, and four Luna calls per valid
+pair overlapped physical capture; no Luna transport call failed. The semantic promotion result is
+reported separately and did not influence scheduling.
+
+This batch added 17 R calls and 68 Luna calls. R median top-level latency was 84.225 s; P was
+deterministic and used zero model calls. The model queues were the tail bottleneck after physical
+capture ended. Publication remains single-writer and is performed as one immutable DVC batch.
 
 | Measure | Current value |
 | --- | ---: |

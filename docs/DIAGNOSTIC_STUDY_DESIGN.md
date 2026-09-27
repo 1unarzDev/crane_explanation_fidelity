@@ -10,9 +10,12 @@ with no positive bound. All inspected cases now serve only as development/regres
 
 The new development candidate is deterministic P-contract versus equally instructed R-contract.
 Both must answer M (mechanism), Q (decisive comparison), O (outcome), and L (necessary limit).
-Two claims—complete supported M/Q/O/L communication and lower substantive assertion risk—must be
-registered together before fresh confirmation. No new pilot or confirmation cluster exists yet,
-and the available 0.01 candidate-revision alpha remains unconsumed.
+Two claims—complete supported M/Q/O/L communication and lower substantive assertion risk—were
+registered together for a fresh alpha-zero pilot. That pilot closed with 13 primary and four
+control comparisons: both claims tied under the required least-favourable mapping, so the frozen
+promotion rule failed. No confirmation cluster exists, and the available 0.01 candidate-revision
+alpha remains unconsumed. Any control-focused successor is a new hypothesis requiring fresh
+development evidence and judge-evidence closure.
 
 ## 2026-09-26 focused-strength amendment (historical predecessor)
 

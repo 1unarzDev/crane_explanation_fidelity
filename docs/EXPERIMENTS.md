@@ -1,5 +1,27 @@
 # Experiment Log
 
+## 2026-09-27 — P-contract-v4 fixed-suffix pilot closed without promotion
+
+- **SCHEDULE:** 19 prospectively fixed configurations, one physical attempt each; 15 planned
+  primary and four controls. `cr-pilot-001` remained excluded after inspection.
+- **RETAINED:** 17 complete P/R/two-pass-Luna comparisons: 13 primary and four controls. There were
+  68 isolated Luna calls and no judge transport failures.
+- **TECHNICAL FAILURES:** `cr-pilot-007` retained two accepted goal identities and failed the exact
+  episode boundary; `cr-pilot-017` had four stale/rejected actions and failed worker validity.
+  Neither was retried or replaced.
+- **PRIMARY RESULT:** Claim A P-minus-R = 0.000 least-favourable and +0.0769 most-favourable;
+  Claim B R-error-minus-P-error = 0.000 under both mappings. The frozen two-net-discordance
+  promotion rule failed. This is alpha-zero development evidence, not a significance test.
+- **TRADEOFFS:** P median 95 words and zero model calls; R median 172 words, 17 calls, and median
+  84.225 s call latency. These do not substitute for the failed primary differentiation.
+- **DETERMINISTIC AUDIT:** both immutable Luna passes rejected R's claimed 18--19 s nominal-control
+  values. Independent half-open filtering finds 6 command and 43 odometry samples with medians
+  0.25 m/s and 0.0 m/s, so the claim is supported. The raw labels remain unchanged; the apparent
+  Claim B control error is excluded from substantive interpretation.
+- **DISPOSITION:** `DEVELOPMENT_PILOT_COMPLETE_NOT_PROMOTED`; confirmation N=0, alpha bound=0,
+  replication not started. Authoritative result:
+  `manifests/analysis/contract-complete-v2-development-pilot-result.json`.
+
 ## 2026-09-27 — contract-complete v2 redirect and headless canary
 
 - Claims A and B again become the prospective priority. Closed pilots, failed qualifications, and

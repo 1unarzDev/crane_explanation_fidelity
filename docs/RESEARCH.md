@@ -1,8 +1,19 @@
 # Research and benchmark source audit
 
-Current checkpoint: the v2 redirect keeps both contract-complete claims prospective. The valid
-headless `cr-pilot-001` capture is development-only because its configuration and outcome were
-inspected during direction selection. Confirmatory N remains zero and no revision alpha is bound.
+Current checkpoint: the fixed-suffix P-contract-v4/R-contract development pilot is complete and
+did not pass its prospective promotion gate. Of 19 scheduled configurations, 17 produced complete
+two-pass comparisons (13 primary and four controls); two physical attempts were retained as
+technical failures without replacement. On the primary population, Claim A was 0.000 under the
+least-favourable mapping and +0.0769 under the most-favourable mapping; Claim B was 0.000 under
+both. Confirmation remains at N=0 and no revision alpha is bound.
+
+The control slice is hypothesis-generating only. P was more complete in two of four controls in
+pass 1 and all four in pass 2, but three R limitation decisions disagreed between Luna passes.
+Moreover, both passes incorrectly rejected R's independently reproducible 18--19 s window values
+in one nominal control. The raw Luna records remain immutable; a separate deterministic audit
+shows six command samples, 43 odometry samples, and medians 0.25 m/s commanded and 0.0 m/s
+measured. This removes the apparent Claim B control error and demonstrates why a control-focused
+successor must close judge evidence before confirmation.
 
 ## 2026-09-27 — contract-complete empirical redirect
 

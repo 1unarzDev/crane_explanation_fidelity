@@ -1,6 +1,13 @@
 # High-throughput diagnostic execution
 
-Status: **execution amendment active; RoboBoat narrow arm frozen; production queues authorized**
+Status: **contract-complete development batch complete; confirmation queues not authorized**
+
+The 2026-09-27 contract-complete batch reused this runner with two headless land workers and
+overlapped reference, R, and Luna stages. All 19 scheduled attempts ran once; 17 reached
+reconciled semantic completion and two were retained as technical failures. Fixed-order release
+then failed the scientific promotion gate, so the throughput machinery must not enqueue
+confirmation for P-contract v4. The measured batch rates and artifacts remain valid operational
+evidence; they do not authorize a new endpoint or candidate.
 
 This runbook accelerates the frozen focused study without changing its claim, methods, evidence,
 judge, endpoint, population, alpha, stopping rule, or replication reserve. The authoritative

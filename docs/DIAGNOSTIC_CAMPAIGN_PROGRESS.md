@@ -3,7 +3,30 @@
 Updated: 2026-09-27
 
 Protocol: `diagnostic-sequential-protocol-v2`
-Current status: **CONTRACT-COMPLETE DEVELOPMENT REOPENED PROSPECTIVELY / CONFIRMATION N=0**
+Current status: **P-CONTRACT-V4 PILOT COMPLETE / NOT PROMOTED / CONFIRMATION N=0**
+
+## Contract-complete v4 fixed-suffix pilot close (2026-09-27)
+
+All 19 scheduled configurations received exactly one headless physical attempt. Seventeen passed
+the frozen gates and completed P/R generation plus two isolated Luna passes per answer: 13 primary
+command--motion/recovery clusters and four controls. `cr-pilot-007` failed the single-goal episode
+boundary; `cr-pilot-017` failed the pinned action-lag gate with four stale/rejected actions. Both
+are retained as technical failures and were neither retried nor replaced.
+
+The primary result does not support promotion. Claim A was tied in all 13 clusters under the
+least-favourable mapping; its most-favourable effect was one P-only discordance, +1/13 = +0.0769.
+Claim B was tied under both mappings. The registered requirement of at least two net P-favourable
+discordances for either claim therefore failed. Confirmation was not activated,
+candidate-revision alpha remains unbound, and no confidence sequence, significance result, or
+replication result exists.
+
+P covered the four required fields and avoided substantive errors in every valid pilot response,
+but strong R usually did the same. P used no model calls and had median 95 words versus R's 172;
+R made 17 calls with median latency 84.225 s. Those are measured tradeoffs, not the registered
+scientific advantage. The four controls show a possible evidence-limit/false-premise completeness
+direction, but three R limitation fields disagreed between Luna passes and one consensus R error
+label is contradicted by an independent raw-sample calculation. That slice is development evidence
+only and cannot be promoted post hoc.
 
 ## Contract-complete v2 redirect checkpoint (2026-09-27)
 
@@ -21,11 +44,10 @@ valid and unanimously scored both methods complete with no substantive error. Th
 effect is therefore exactly zero for Claims A and B on this one inspected cluster. A narrow
 recomputation-provenance fix restored the diagnostic-config evidence ID and exact parity.
 
-The untouched fixed-order suffix has been frozen before further capture as the v2 pilot: primary
-N planned=15 and controls=4. The first run is `cr-pilot-002`; `cr-pilot-001` is excluded. Exact
-candidate/baseline/tool/schedule hashes and a zero-alpha promotion rule are bound in the pilot
-predeclaration. Confirmation remains prohibited pending pilot close and bounded causal-field judge
-qualification.
+The untouched fixed-order suffix was frozen before further capture as the v2 pilot: primary N
+planned=15 and controls=4. It is now closed as described above; technical failures reduced the
+reconciled primary N to 13. The later causal-field qualification was not run because the earlier,
+necessary promotion gate had already failed and could not be changed by more judge qualification.
 
 ## Current causal-restraint successor checkpoint (2026-09-27)
 

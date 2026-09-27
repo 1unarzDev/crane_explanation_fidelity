@@ -4,6 +4,12 @@ Protocol ID: `luna-model-judge-v1`
 Status: **V12 ENDPOINT-ALIGNED JUDGE QUALIFIED; STUDY SCORING REQUIRES A SEPARATELY FROZEN P/R SCREEN**
 Declared: 2026-09-23
 
+Current contract-complete note (2026-09-27): 68 calls over 17 development comparisons completed
+without transport failure. Three R limitation fields disagreed across passes. In one control, both
+passes rejected window values that an independent half-open raw-sample calculation reproduces;
+the raw judgments remain immutable and the corrected interpretation is explicitly deterministic,
+not a replacement Luna label. This pilot was not promoted and produced no confirmatory label.
+
 This document defines a separately named automated evaluation arm. It does not amend or replace
 the frozen human rubric in `docs/ANNOTATION_GUIDE.md`, does not turn automated judgments into human
 annotations, and does not satisfy the original two-human-plus-adjudicator requirement documented in

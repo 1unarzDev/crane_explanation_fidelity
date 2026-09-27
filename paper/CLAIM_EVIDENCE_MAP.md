@@ -5,9 +5,10 @@ every numerical claim must point to a retained manifest/result. This file is not
 experimental evidence.
 
 V2 redirect checkpoint: the deterministic compiler passes the three requested completeness
-repairs, but `cr-pilot-001` is only an inspected development capture. Claims A and B are reopened
-prospectively, not established: confirmatory N=0; no effect, valid bound, significance, or
-replication result exists; candidate-revision alpha remains unbound.
+repairs, and the fixed-suffix P-contract-v4 pilot is now complete. Thirteen primary and four
+control comparisons completed both Luna passes; two scheduled primary captures failed frozen
+physical gates without replacement. The promotion rule failed, so confirmatory N=0; no valid
+bound, significance, or replication result exists; candidate-revision alpha remains unbound.
 
 Contract-complete redirect (2026-09-27): the closed focused campaign is development/regression
 evidence. Its original registered N=24 release is invalid; its opaque-ID-corrected N=24 analysis is
@@ -17,6 +18,9 @@ risk as distinct claims. No level is currently established for either claim.
 
 | Claim candidate | Retained support | Current verdict |
 | --- | --- | --- |
+| P-contract-v4 improves complete supported M/Q/O/L communication over matched R-contract on persistent-discrepancy and response-recovery cases | Fixed-suffix alpha-zero pilot: 13 primary comparisons, 52 isolated Luna judgments; least-favourable P-minus-R 0.000, most-favourable +0.0769 from one pass-specific R limitation omission | **DEVELOPMENT CLAIM NOT PROMOTED**; the frozen two-net-discordance gate failed, confirmation N=0, and no alpha was bound |
+| P-contract-v4 reduces substantive unsupported/contradicted assertion risk on that primary population | Same 13 primary comparisons; both least- and most-favourable R-error-minus-P-error effects 0.000 | **DEVELOPMENT TIE / DO NOT CONFIRM THIS CANDIDATE**; strong R made no Luna-assessed primary substantive error |
+| P-contract-v4 has a control-focused reliability advantage | Four controls showed P completeness advantages, but three R L fields disagreed across Luna passes; both passes also rejected R's 18--19 s values even though an independent calculation reproduces 0.25 m/s commanded and 0.0 m/s measured from 6/43 samples | **HYPOTHESIS-GENERATING ONLY**; the apparent Claim B error is a judge false rejection, and exact limitation-template coverage is not a validated headline endpoint. A successor needs fresh controls and closed judge evidence |
 | P-contract reduces explicit causal/effectiveness links that the evidence contract declares unestablished | Post-hoc finite audit of fourteen v2 primary development clusters: P 0/14, R 3/14, with three R-only and zero P-only discordances; exact spans and detector/contract/report hashes retained | **PROMISING DEVELOPMENT SIGNAL / NOT CONFIRMATION**; supports one narrow prospective successor only. The finite detector does not establish broad semantic correctness, significance, or replication |
 | P-contract improves complete supported M/Q/O/L communication over R-contract | Closed v2 pilot: fourteen fresh primary clusters, pass-specific P-minus-R differences 0.000 and +0.286; the final fresh causal-language qualification scored 11/12 and 12/12 composite endpoints but failed protected gates | **DEVELOPMENT CLAIM NOT PROMOTED**; confirmation N=0, no significance or replication, and current evidence does not justify confirmation |
 | P-contract reduces substantive unsupported/contradicted assertion risk over R-contract | Closed v2 pilot: fourteen fresh primary clusters, pass-specific R-minus-P material-error differences 0.000 and +0.214; final causal qualification retained one material false rejection and protected-field failures | **DEVELOPMENT CLAIM NOT PROMOTED**; confirmation remains unstarted and the apparent benefit is not robust to judge disagreement |

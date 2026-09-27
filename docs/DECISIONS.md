@@ -1,5 +1,24 @@
 # Decision Log
 
+## 2026-09-27 — do not promote P-contract v4 after the fixed-suffix pilot
+
+- **Decision:** close the 19-configuration development pilot and leave confirmation inactive.
+- **Evidence:** 13 reconciled primary clusters tied under the required least-favourable mapping for
+  both registered claims. Claim A had only one P-only discordance under the most-favourable mapping;
+  Claim B remained tied. This fails the prospectively frozen minimum of two net P-favourable
+  discordances for at least one claim.
+- **Validity:** two scheduled primary attempts failed physical gates and remain visible without
+  retry. All 17 admitted comparisons used one P answer, one isolated R answer, and two isolated
+  Luna passes per answer. Pilot alpha was zero.
+- **Interpretation:** the deterministic compiler is complete and concise on these families, but a
+  fairly instructed strong R usually matches it. We will not spend alpha merely to confirm a
+  development tie.
+- **Next development direction:** audit a narrowly scoped evidence-limit/false-premise reliability
+  claim because controls, not diagnosable primary cases, showed differentiation. Before any new
+  confirmation, use fresh controls, independently materialized audit quantities, and a public
+  limitation contract that does not reward exact template enumeration. This is a new hypothesis,
+  not a post-hoc reclassification of the four pilot controls.
+
 ## 2026-09-27 — restore contract-complete Claims A and B prospectively
 
 - The newest redirect supersedes the causal-restraint successor as forward priority while

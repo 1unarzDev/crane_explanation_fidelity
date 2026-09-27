@@ -158,6 +158,15 @@ their own location. Exact repository commits and destinations are recorded in
   0.000/0.050; see
   [sequential protocol](docs/SEQUENTIAL_STUDY_PROTOCOL.md)
   and [campaign progress](docs/DIAGNOSTIC_CAMPAIGN_PROGRESS.md).
+- **CONTRACT-COMPLETE DEVELOPMENT PILOT CLOSED / NOT PROMOTED:** the fixed-suffix
+  P-contract-v4/R-contract pilot attempted 19 configurations once and completed two-pass Luna
+  evaluation for 13 primary clusters and four controls; two physical failures were retained
+  without replacement. Primary Claim A tied under the least-favourable mapping and was +1/13 only
+  under the most-favourable mapping; Claim B tied under both. The frozen promotion gate failed,
+  confirmation remains N=0, no alpha was bound, and replication is unstarted. A separate raw-sample
+  audit also disproved one consensus Luna rejection of valid R control measurements. See the
+  [contract campaign](docs/CONTRACT_COMPLETE_CAMPAIGN.md) and its
+  [result manifest](manifests/analysis/contract-complete-v2-development-pilot-result.json).
 - **PHYSICAL/REFERENCE COLLECTION ACTIVE; SEMANTIC CAMPAIGN INACTIVE:** forty of the frozen 100
   land command--motion confirmation configurations have been attempted once: thirty-nine are
   valid and one is a retained invalid recording. Run 003
@@ -222,6 +231,35 @@ their own location. Exact repository commits and destinations are recorded in
 - **NOT_RUN:** blinded dual annotation, final statistics/figures, and final A–E model evaluation.
 - **NOT_RUN:** source-to-binary rebuild verification.
 - **DEFERRED:** arbitrary-LLM proposition extraction until independently evaluated.
+
+## Contract-complete pilot reproduction
+
+After pulling the five development DVC roots, reproduce the immutable descriptive summary and the
+independent control-window audit without changing the retained outputs:
+
+```bash
+dvc pull data/robot_visible/dev.dvc data/evaluator_only/dev.dvc \
+  data/evaluator_only/analysis.dvc data/evaluator_only/annotation_keys.dvc model_outputs.dvc
+
+python analysis/summarize_contract_complete_v2_pilot.py \
+  --schedule research/explanation_fidelity/experiment_configs/prospective/contract-complete-diagnostic-communication-v2-pilot-schedule.json \
+  --result-root model_outputs/luna-model-judge-v1/contract-complete-v2-pilot \
+  --failure-root manifests/operations/artifacts \
+  --pair-root model_outputs/contract-complete-diagnostic-communication-v2-pilot/response-pairs \
+  --output /tmp/contract-complete-v2-development-summary.json
+cmp /tmp/contract-complete-v2-development-summary.json \
+  model_outputs/contract-complete-diagnostic-communication-v2-pilot/development-summary.json
+
+python analysis/audit_command_motion_window_claim.py \
+  data/robot_visible/dev/cr-pilot-006/command-motion-diagnostic-v3.json \
+  --start 18 --end 19 \
+  --output /tmp/cr-pilot-006-window-18-19-audit.json
+cmp /tmp/cr-pilot-006-window-18-19-audit.json \
+  data/evaluator_only/analysis/contract-complete-v2-development-pilot/cr-pilot-006-window-18-19-audit.json
+```
+
+The summary is alpha-zero development analysis. These commands reproduce its accounting; they do
+not activate confirmation or turn the four inspected controls into a prospective endpoint.
 
 ## CPU-only demo
 

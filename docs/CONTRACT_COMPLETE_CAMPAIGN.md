@@ -1,6 +1,6 @@
 # Contract-complete diagnostic communication campaign
 
-Status: **CONTRACT-COMPLETE DEVELOPMENT REOPENED PROSPECTIVELY; CONFIRMATION INACTIVE**
+Status: **P-CONTRACT-V4 DEVELOPMENT PILOT COMPLETE; NOT PROMOTED; CONFIRMATION INACTIVE**
 Recorded: 2026-09-27
 
 This is the operational form of the contract-complete research redirect. It is additive. It does
@@ -12,6 +12,30 @@ The 2026-09-27 v2 redirect supersedes only the forward priority assigned to the 
 causal-restraint successor. It does not erase that audit, its canary, closed v2/v4 pilots, or failed
 judge qualifications. Claims A and B are again the prospective priority. No historical response
 or label is repaired, and no inspected configuration can enter confirmation.
+
+## 2026-09-27 fixed-suffix result
+
+The bounded P-contract-v4/R-contract pilot is closed. All 19 scheduled configurations received one
+attempt; 17 completed the full semantic path (13 primary, four controls) and two were retained as
+technical failures without retry. The least-favourable primary effect was 0.000 for Claim A and
+0.000 for Claim B. The most-favourable effect was +0.0769 for Claim A and 0.000 for Claim B. Thus
+the frozen minimum-signal rule failed, confirmation remains N=0, and none of the available 0.01
+candidate-revision alpha was bound.
+
+The result identifies the limiting mechanism: after receiving the same explicit M/Q/O/L task,
+robot-visible evidence, diagnostic primitive, source/configuration access, and calculation tools,
+R-contract usually communicated the same complete supported answer. P remained shorter and
+deterministic (median 95 versus 172 words; zero versus 17 model calls), but those secondary
+differences do not establish either registered scientific claim.
+
+The four controls are not a valid rescue endpoint. Their Claim A differences are dominated by
+question-specific L wording and three R two-pass disagreements. Both Luna passes also called R's
+18--19 s values unsupported in `cr-pilot-006`; an independent half-open-window calculation proves
+those values from the supplied raw samples. Raw labels are preserved, the apparent Claim B control
+error is not accepted as evidence, and the episode is recorded as a judge-evidence interpretation
+failure rather than an R factual error. Any evidence-limit/false-premise successor requires a new
+development screen, fresh population, explicit public limitation contract, and independently
+precomputed audit fields before a new confirmation decision.
 
 ## 1. Reconciled starting state
 

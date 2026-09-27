@@ -7,8 +7,11 @@ below. It uses two isolated blinded Luna passes and required-unit IDs `M`, `Q`, 
 `analysis/score_contract_complete_judgment.py` derives complete supported communication and
 substantive assertion-risk endpoints deterministically while preserving unresolved fields. A
 cosmetic citation-format exclusion requires an independent deterministic finding; source
-attribution that changes meaning remains substantive. No fresh pilot labels exist yet. Full
-protocol and evidence-boundary details are in `docs/CONTRACT_COMPLETE_CAMPAIGN.md`.
+attribution that changes meaning remains substantive. The fixed-suffix development pilot now has
+68 immutable Luna calls over 17 P/R comparisons; it failed promotion and remains development-only.
+One independently reproducible R measurement was falsely rejected in both passes, so raw labels
+are retained alongside a separate deterministic audit rather than silently repaired. Full protocol
+and evidence-boundary details are in `docs/CONTRACT_COMPLETE_CAMPAIGN.md`.
 
 Operational companion to `docs/ANNOTATION_GUIDE.md`. The guide is hash-frozen and states *what* to
 label; this file states *how* to run the process with the committed tooling, and is not frozen.

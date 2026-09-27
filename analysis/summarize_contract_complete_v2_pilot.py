@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import statistics
 from collections import Counter
 from pathlib import Path
 from typing import Any
@@ -60,10 +61,37 @@ def _effect(rows: list[dict[str, int]], mode: str) -> dict[str, Any]:
     }
 
 
-def summarize(schedule: dict[str, Any], result_root: Path, failure_root: Path) -> dict[str, Any]:
+def _pass_assignment(report: dict[str, Any], claim: str, pass_id: str) -> dict[str, int] | None:
+    current = report["passes"][pass_id]
+    if claim == "A":
+        values = [current[condition].get("claim_a_complete_supported_communication") for condition in ("P", "R")]
+    elif claim == "B":
+        errors = [current[condition].get("claim_b_substantive_assertion_error") for condition in ("P", "R")]
+        values = [None if value is None else not value for value in errors]
+    else:
+        raise ValueError(f"unknown claim: {claim}")
+    if any(value is None for value in values):
+        return None
+    return {"pass_p": int(values[0]), "pass_r": int(values[1])}
+
+
+def summarize(
+    schedule: dict[str, Any], result_root: Path, failure_root: Path,
+    pair_root: Path | None = None,
+) -> dict[str, Any]:
     primary: dict[str, list[dict[str, int]]] = {"A": [], "B": []}
+    primary_passes: dict[str, dict[str, list[dict[str, int]]]] = {
+        claim: {pass_id: [] for pass_id in ("pass-1", "pass-2")} for claim in ("A", "B")
+    }
+    controls: dict[str, dict[str, list[dict[str, int]]]] = {
+        claim: {pass_id: [] for pass_id in ("pass-1", "pass-2")} for claim in ("A", "B")
+    }
     rows: list[dict[str, Any]] = []
     unresolved_fields: Counter[str] = Counter()
+    pass_disagreements: Counter[str] = Counter()
+    lengths: dict[str, list[dict[str, int]]] = {"P": [], "R": []}
+    r_latencies: list[float] = []
+    r_usage: Counter[str] = Counter()
     for config in schedule["configurations"]:
         run_id = config["run_id"]
         result_path = result_root / run_id / "development-summary.json"
@@ -82,22 +110,66 @@ def summarize(schedule: dict[str, Any], result_root: Path, failure_root: Path) -
                 row["status"] = report.get("status", "INVALID_RESULT")
             else:
                 row["status"] = "RECONCILED_TWO_PASS"
+                if pair_root is not None:
+                    pair = json.loads((pair_root / f"{run_id}.json").read_text(encoding="utf-8"))
+                    for output in pair["outputs"]:
+                        condition = "P" if str(output["condition"]).startswith("P") else "R"
+                        lengths[condition].append({
+                            "characters": len(output["text"]),
+                            "words": len(output["text"].split()),
+                        })
+                    for call in pair.get("calls", []):
+                        if call.get("condition") in {"R", "R-contract"}:
+                            r_latencies.append(float(call["latency_ms"]))
+                            for key, value in (call.get("usage") or {}).items():
+                                if isinstance(value, int):
+                                    r_usage[key] += value
                 row["claims"] = {
                     claim: _claim_assignments(report, claim) for claim in ("A", "B")
+                }
+                row["pass_values"] = {
+                    claim: {
+                        pass_id: _pass_assignment(report, claim, pass_id)
+                        for pass_id in ("pass-1", "pass-2")
+                    }
+                    for claim in ("A", "B")
                 }
                 for pass_id in ("pass-1", "pass-2"):
                     for condition in ("P", "R"):
                         endpoint = report["passes"][pass_id][condition]
                         for field in endpoint.get("unresolved_fields", []):
                             unresolved_fields[f"{condition}:{field}"] += 1
+                for condition in ("P", "R"):
+                    first, second = (report["passes"][pass_id][condition] for pass_id in ("pass-1", "pass-2"))
+                    for claim, field in {
+                        "A": "claim_a_complete_supported_communication",
+                        "B": "claim_b_substantive_assertion_error",
+                    }.items():
+                        if first.get(field) != second.get(field):
+                            pass_disagreements[f"{condition}:{claim}"] += 1
+                    for field in ("M", "Q", "O", "L"):
+                        if first.get("fields", {}).get(field) != second.get("fields", {}).get(field):
+                            pass_disagreements[f"{condition}:field:{field}"] += 1
                 if config["primary_eligible_family"]:
                     for claim in ("A", "B"):
                         primary[claim].append(row["claims"][claim])
+                        for pass_id in ("pass-1", "pass-2"):
+                            assignment = row["pass_values"][claim][pass_id]
+                            if assignment is not None:
+                                primary_passes[claim][pass_id].append(assignment)
+                else:
+                    for claim in ("A", "B"):
+                        for pass_id in ("pass-1", "pass-2"):
+                            assignment = row["pass_values"][claim][pass_id]
+                            if assignment is not None:
+                                controls[claim][pass_id].append(assignment)
         rows.append(row)
 
     claims = {}
     for claim, claim_rows in primary.items():
         claims[claim] = {
+            "pass_1": _effect(primary_passes[claim]["pass-1"], "pass"),
+            "pass_2": _effect(primary_passes[claim]["pass-2"], "pass"),
             "least_favourable": _effect(claim_rows, "least"),
             "most_favourable": _effect(claim_rows, "most"),
         }
@@ -106,6 +178,13 @@ def summarize(schedule: dict[str, Any], result_root: Path, failure_root: Path) -
         for claim in ("A", "B")
     )
     statuses = Counter(row["status"] for row in rows)
+    def length_summary(condition: str) -> dict[str, Any]:
+        values = lengths[condition]
+        return {
+            "n": len(values),
+            "median_characters": statistics.median(item["characters"] for item in values) if values else None,
+            "median_words": statistics.median(item["words"] for item in values) if values else None,
+        }
     return {
         "schema": "crane-contract-complete-v2-pilot-summary/v1",
         "status": "COMPLETE" if statuses["PENDING"] == 0 else "IN_PROGRESS",
@@ -121,7 +200,23 @@ def summarize(schedule: dict[str, Any], result_root: Path, failure_root: Path) -
             for row in rows
         ),
         "claims": claims,
+        "controls_descriptive": {
+            claim: {
+                "pass_1": _effect(controls[claim]["pass-1"], "pass"),
+                "pass_2": _effect(controls[claim]["pass-2"], "pass"),
+            }
+            for claim in ("A", "B")
+        },
         "unresolved_field_counts": dict(sorted(unresolved_fields.items())),
+        "two_pass_disagreement_counts": dict(sorted(pass_disagreements.items())),
+        "communication_tradeoffs": {
+            "P": {**length_summary("P"), "model_calls": 0},
+            "R": {
+                **length_summary("R"), "model_calls": len(r_latencies),
+                "median_latency_ms": statistics.median(r_latencies) if r_latencies else None,
+                "total_usage": dict(sorted(r_usage.items())),
+            },
+        },
         "minimum_signal_gate": {
             "rule": "at least two net P-favourable discordances for either claim under least-favourable two-pass mapping",
             "passed": minimum_signal,
@@ -136,11 +231,12 @@ def main() -> None:
     parser.add_argument("--schedule", required=True, type=Path)
     parser.add_argument("--result-root", required=True, type=Path)
     parser.add_argument("--failure-root", required=True, type=Path)
+    parser.add_argument("--pair-root", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
     args = parser.parse_args()
     report = summarize(
         json.loads(args.schedule.read_text(encoding="utf-8")),
-        args.result_root, args.failure_root,
+        args.result_root, args.failure_root, args.pair_root,
     )
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n", encoding="utf-8")

@@ -1,0 +1,61 @@
+{
+  "alpha_consumed": 0.0,
+  "analysis_implementations": {
+    "deterministic_window_audit": {
+      "path": "analysis/audit_command_motion_window_claim.py",
+      "sha256": "e747e6eb52910f3a8195cbb934f27a7e4f54daf749449a095c97e4cbd21a4169"
+    },
+    "pilot_summarizer": {
+      "path": "analysis/summarize_contract_complete_v2_pilot.py",
+      "sha256": "558a01976cf0c71f8a4fe61c39fec180cd4c9b3452aeb315454542a256b85af5"
+    }
+  },
+  "candidate": "p-contract-v4-development",
+  "confirmation": {
+    "activated": false,
+    "alpha_bound": 0.0,
+    "independent_n": 0,
+    "reason": "The prospectively frozen development promotion rule did not pass."
+  },
+  "deterministic_label_audit": {
+    "interpretation": "Both immutable Luna passes labeled R's 18--19 s control-window values unsupported or incorrect. The separately computed half-open window contains six command samples and 43 odometry samples, has medians 0.25 m/s and 0.0 m/s, and satisfies the declared window sample thresholds. The raw Luna labels remain unchanged; Claim B's apparent one-control R error is not accepted as substantive evidence.",
+    "path": "data/evaluator_only/analysis/contract-complete-v2-development-pilot/cr-pilot-006-window-18-19-audit.json",
+    "sha256": "823852629ec43e9af59f5e667b098f8c8fd620c6589b08a0de98074387379693"
+  },
+  "frozen_inputs": {
+    "predeclaration_path": "research/explanation_fidelity/experiment_configs/prospective/contract-complete-diagnostic-communication-v2-pilot-predeclaration.json",
+    "predeclaration_sha256": "11e31cdb4c3c37c5b5c4f15f68a48ce73a023b520b15f0d9353c22cb75ef2ab9",
+    "schedule_path": "research/explanation_fidelity/experiment_configs/prospective/contract-complete-diagnostic-communication-v2-pilot-schedule.json",
+    "schedule_sha256": "ee4007f3f9c117e12b9b3a55e857aaa8cd2dd6fdef0b2597686b1cd223015b60"
+  },
+  "pilot_counts": {
+    "controls_reconciled": 4,
+    "primary_reconciled": 13,
+    "scheduled": 19,
+    "technical_failures": 2,
+    "two_pass_luna_calls": 68
+  },
+  "promotion": {
+    "minimum_signal_gate_passed": false,
+    "reason": "Neither claim had two net P-favourable discordances under least-favourable two-pass mapping.",
+    "status": "NOT_PROMOTED"
+  },
+  "recorded_date": "2026-09-27",
+  "result": {
+    "claim_A_least_favourable_p_minus_r": 0.0,
+    "claim_A_most_favourable_p_minus_r": 0.07692307692307693,
+    "claim_B_least_favourable_r_error_minus_p_error": 0.0,
+    "claim_B_most_favourable_r_error_minus_p_error": 0.0,
+    "path": "model_outputs/contract-complete-diagnostic-communication-v2-pilot/development-summary.json",
+    "sha256": "e2ecf236e0b79bd7f2a46185d090d841cf4c174e13916a2b7607672650120d9d"
+  },
+  "schema": "crane-contract-complete-v2-development-pilot-result/v1",
+  "status": "DEVELOPMENT_PILOT_COMPLETE_NOT_PROMOTED",
+  "tradeoffs": {
+    "P_median_words": 95,
+    "P_model_calls": 0,
+    "R_median_latency_ms": 84225.025995,
+    "R_median_words": 172,
+    "R_model_calls": 17
+  }
+}
