@@ -1,0 +1,70 @@
+{
+  "schema": "crane-contract-complete-pilot-canary/v1",
+  "pilot_id": "contract-complete-diagnostic-communication-v1-fresh-pilot",
+  "run_id": "cc-pilot-014",
+  "cluster_id": "cc-pilot-cluster-014",
+  "date": "2026-09-27",
+  "status": "DEVELOPMENT_RECONCILED_MISSING_EVIDENCE_CONTROL_MQO_ONLY",
+  "schedule_order": 14,
+  "fresh_v2_development_N": 10,
+  "control_N": 3,
+  "confirmatory_N": 0,
+  "family": "missing_decisive_or_ambiguous_evidence",
+  "primary_endpoint_eligible": false,
+  "evidence_mask": "remove-delivered-odometry-v1",
+  "physical_admission": {
+    "attempts": 1,
+    "generic_fixture_valid_flag": false,
+    "recording_valid_after_outcome_separation": true,
+    "player_build_audit_accepted": true,
+    "scenario_binding_audit_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "navigation_status": "aborted",
+    "transport_endpoint_errors": 0,
+    "unexpected_outcome_retained": true
+  },
+  "masked_independent_measurement": {
+    "disposition": "insufficient",
+    "delivered_command_samples": 388,
+    "independent_odometry_samples": 0,
+    "action_status": "aborted",
+    "follow_path_attempts": 3,
+    "follow_path_failures": 2,
+    "source_qualified_wait_invocations": 2,
+    "paired_unmasked_export_available_to_methods_or_judge": false
+  },
+  "artifacts": {
+    "masked_robot_visible_diagnostic": {"path": "data/robot_visible/dev/cc-pilot-014/command-motion-diagnostic-v3.json", "sha256": "29a1a4cc8ffb0ccd336e3f853a5b7317d4a86b9046ee4bebddfd60fc8d8f9e11"},
+    "evaluator_only_unmasked_source": {"path": "data/evaluator_only/dev/cc-pilot-014/command-motion-unmasked-source-v3.json", "sha256": "70b9d6dcf399ebdda4b96977313b5a1a71bb33e7e6caf933d6ace08d1aae5496"},
+    "independent_masked_reference": {"path": "data/evaluator_only/dev/cc-pilot-014/command-motion-independent-reference-v2.json", "sha256": "a31af0dd4effb533758dfe2eee0ccf98750b27da2d7c7397c34caf927c56e4fa"},
+    "contract_reference": {"path": "data/evaluator_only/dev/cc-pilot-014/contract-complete-annotation-reference-v1.json", "sha256": "906e3103936008a3e0623cfdc301eed2e70744754f8661d883d44728ce259634"},
+    "response_pair": {"path": "model_outputs/contract-complete-diagnostic-communication-v1-pilot/response-pairs/cc-pilot-014.json", "sha256": "a4c3a0cc8abac2cfa60b0d7816f272401b1a4b87ffc344e3a17fc7f5907b6bcb"},
+    "blinded_annotation_packet": {"path": "model_outputs/annotation_packets/contract-complete-v1-pilot/cc-pilot-014.jsonl", "sha256": "6c2a514516083fee26d281e38b18992a58009b0a90d244e0711f8a338deb728f"},
+    "annotation_key": {"path": "data/evaluator_only/annotation_keys/contract-complete-v1-pilot/cc-pilot-014.json", "sha256": "52312d279ecb75d91ee221092bd08d9e0c543f5397f7b2b23525ff8bf733ea67"},
+    "luna_development_summary": {"path": "model_outputs/luna-model-judge-v1/contract-complete-v1-pilot/cc-pilot-014/development-summary.json", "sha256": "c5767b0d649d64fcca91ee1a14dfe644802cd4ea97c5e2dc1ea5efbecb58bf45"}
+  },
+  "method_execution": {
+    "P_contract_version": "p-contract-v2-development",
+    "R_contract_version": "r-contract-v1-development",
+    "R_contract_model": "gpt-6-sol",
+    "R_contract_reasoning_effort": "high",
+    "R_contract_calls": 1,
+    "R_contract_latency_ms": 42811.756509,
+    "judge_calls": 4,
+    "judge_call_failures": 0,
+    "qualified_judge_release": "contract-complete-luna-qualification-v2"
+  },
+  "development_semantic_result": {
+    "pass_1": {"claim_a_P": false, "claim_a_R": false, "claim_b_substantive_error_P": false, "claim_b_substantive_error_R": false, "failed_field_P": "L", "failed_field_R": "L"},
+    "pass_2": {"claim_a_P": false, "claim_a_R": false, "claim_b_substantive_error_P": false, "claim_b_substantive_error_R": false, "failed_field_P": "L", "failed_field_R": "L"},
+    "field_interpretation": "Both passes found M, Q, and O covered. P omitted the required execution-sequence scope from L; R omitted the explicit actuator-acceptance limit from L. No label was repaired or retried.",
+    "confirmatory_alpha_consumed": 0.0
+  },
+  "primary_effect_boundary": {
+    "control_contribution_to_primary_N": 0,
+    "claim_a_P_minus_R": {"pass_1": 0.0, "pass_2": 0.3},
+    "claim_b_R_minus_P_error_risk": {"pass_1": 0.0, "pass_2": 0.2}
+  },
+  "interpretation": "Both methods appropriately withheld the masked mechanism without material error, but neither completely communicated the atomic L contract. This non-primary control exposes a P composition omission and leaves primary effects unchanged.",
+  "next_state": "CONTINUE_FIXED_PILOT_ORDER_AT_CC_PILOT_015_RESPONSE_RECOVERY"
+}

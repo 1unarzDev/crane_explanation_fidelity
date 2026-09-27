@@ -485,6 +485,15 @@ Waits did not lead to task success" as a material unsupported causal relationshi
 is retained. Primary v2 N=10 gives Claim A 0.0/+0.300 and Claim B 0.0/+0.200, entirely dependent on
 one Luna pass. Confirmation remains inactive; `cc-pilot-014` is the next missing-evidence control.
 
+Third control update (2026-09-27): `cc-pilot-014` retained a valid unexpected abort and applied the
+prospectively frozen no-odometry mask. The sole method-visible record contained 388 delivered
+commands and zero odometry samples. P and R both correctly withheld the mechanism, covered M/Q/O,
+and had no material error in either Luna pass; both missed one atomic part of L (execution-sequence
+scope for P, actuator-acceptance scope for R). No retry or relabeling occurred. This control adds
+zero primary N: fresh v2 primary N remains 10, controls are 3, pass-specific effects remain
+0.0/+0.300 for Claim A and 0.0/+0.200 for Claim B, and confirmation remains inactive. Fixed order
+advances to `cc-pilot-015`.
+
 The now-closed physical/reference cohort attempted 40/100 fixed confirmation-side configurations:
 39 valid, 1 invalid. The method-visible diagnostic dispositions are twenty-seven supported, seven
 `not_triggered`, and five `insufficient`. Run 004 is a valid unexpected transient case: measured

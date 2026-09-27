@@ -327,6 +327,15 @@ odometry v2 reference and emits exact non-primary M/Q/O/L units. The frozen
 unmasked export is excluded. Candidate, baseline, judge, questions, schedule, primary claims, and
 confirmation state are unchanged. Twenty-one focused candidate/reference/runner/schedule tests pass.
 
+The first missing-evidence control (`cc-pilot-014`) passed the physical, masking, independent-
+reference, parity, and four-call annotation path. Both methods correctly withheld the command-to-
+motion mechanism and made no material error. Both Luna passes nevertheless found atomic L
+incomplete: P did not say that the recorded execution sequence also cannot establish the mechanism
+or unique cause, while R did not explicitly preserve the actuator-acceptance limit. These labels
+are retained as development evidence, not repaired. The control contributes zero primary N:
+fresh v2 primary N remains 10, controls are 3, Claim A sensitivity remains 0.0/+0.300, Claim B
+remains 0.0/+0.200, and confirmation remains inactive. Fixed order advances to `cc-pilot-015`.
+
 ## Tested development commands
 
 Render one deterministic P-contract regression artifact:

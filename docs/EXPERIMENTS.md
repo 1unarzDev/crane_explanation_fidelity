@@ -1,5 +1,20 @@
 # Experiment Log
 
+## 2026-09-27 — first contract-complete missing-evidence control retained
+
+- **CAPTURE/REFERENCE:** `cc-pilot-014` passed the build, all 14 scenario-binding, transport,
+  worker-validity, capture, mask, and independent-reference gates. The registered intervention
+  produced an unexpected abort, which is retained separately from the generic expected-success
+  check. The sole method/judge-visible export contains 388 command samples and zero odometry
+  samples; the paired unmasked source remains evaluator-only.
+- **SEMANTICS:** both isolated Luna passes found M/Q/O covered and no material error for either
+  method. Both marked L incomplete: P omitted that the recorded execution sequence also cannot
+  establish the mechanism/cause; R omitted the explicit actuator-acceptance limitation. The valid
+  labels are retained without retry or repair.
+- **BOUNDARY:** this control adds zero primary N. Fresh v2 primary N remains 10, controls become 3,
+  Claim A sensitivity remains 0.0/+0.300, Claim B remains 0.0/+0.200, confirmation N and alpha
+  remain zero, and fixed order advances to `cc-pilot-015`.
+
 ## 2026-09-27 — missing-evidence control path frozen before capture
 
 - **GAP:** the pre-`cc-pilot-014` audit found that the frozen mask, independent masked calculation,
