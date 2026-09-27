@@ -1,0 +1,75 @@
+{
+  "schema": "crane-contract-complete-development-pilot-amendment/v1",
+  "amendment_id": "contract-complete-pilot-amendment-1-p-contract-v2",
+  "declared_date": "2026-09-27",
+  "status": "FROZEN_BEFORE_CC_PILOT_002_CAPTURE_OR_MODEL_CALL",
+  "parent_predeclaration": {
+    "path": "research/explanation_fidelity/experiment_configs/prospective/contract-complete-diagnostic-communication-v1-pilot-predeclaration.json",
+    "sha256": "4210e7297568585b7de52fa63f236417af476648a39c5b34e6ce70a077084ce5"
+  },
+  "schedule": {
+    "path": "research/explanation_fidelity/experiment_configs/prospective/contract-complete-diagnostic-communication-v1-pilot-schedule.json",
+    "sha256": "9a66747fdd0387b51933e6c10d7dba917aed9ca45be58d1523e903ebca2998eb",
+    "unchanged": true,
+    "next_order": 2,
+    "next_run_id": "cc-pilot-002"
+  },
+  "observed_trigger": {
+    "run_id": "cc-pilot-001",
+    "candidate": "p-contract-v1-development",
+    "claim_a_P": [false, false],
+    "claim_a_R": [true, true],
+    "claim_b_substantive_error_P": [false, false],
+    "claim_b_substantive_error_R": [false, false],
+    "systematic_defects": [
+      "Q omitted the recovered commanded median",
+      "one Luna pass found O lacked explicit post-recovery scope"
+    ],
+    "future_role": "INSPECTED_DEVELOPMENT_REGRESSION_ONLY"
+  },
+  "candidate": {
+    "id": "p-contract-v2-development",
+    "generation": "deterministic",
+    "compiler_path": "analysis/compose_contract_complete_answer.py",
+    "compiler_sha256": "c3b2025ce5260776d5d8317ee7d56edff4d47361523a0e90cce1094a12e7bdb8",
+    "only_changes": [
+      "compute and render the median delivered command over the declared recovery interval",
+      "render the recorded outcome explicitly after measured response recovery"
+    ]
+  },
+  "baseline": {
+    "id": "r-contract-v1-development",
+    "runner_path": "analysis/run_contract_complete_response_pair.py",
+    "runner_sha256": "421c0542c070009cd85701387208d31f60ced50d602d7fdcb79c069b2fd63dd2",
+    "prompt_sha256": "73d2ccd4c08e7be5ca7eb6926fbb3123088a2b1923c698a57935e9995b33462d",
+    "model": "gpt-6-sol",
+    "reasoning_effort": "high",
+    "scientific_resources_changed": false
+  },
+  "evaluation": {
+    "annotation_reference_builder_sha256": "4849c9e1b48fab66a9d10b28b0b78837b4ad31c71d26a0a9ab9b2f4d1600e987",
+    "annotation_pair_adapter_sha256": "26eff2f865a59c6b83e682348c4bc93eb3759ad8ccc8a4465238938cc6f7a0e8",
+    "luna_packet_runner_sha256": "477d2e8511e8aec61dc4c61d8142ef81a8d994612dea6aed935f454f5430d5ca",
+    "endpoint_scorer_sha256": "cd553a7071a860983dd423ebfc5e0e6af81e4fc6385075df1f93add110d132ba",
+    "qualified_judge_manifest_sha256": "dc38334b06d25efe0224881accf80783ba006f143c55f67a6c41bd29d406f36b",
+    "isolated_passes_per_answer": 2,
+    "quality_driven_retries": 0
+  },
+  "unchanged_scientific_elements": [
+    "public M/Q/O/L question registry",
+    "fixed scenario schedule and order",
+    "P/R evidence and source access",
+    "R prompt, model, reasoning effort, and top-level call budget",
+    "Claim A and Claim B definitions",
+    "judge prompt, model, settings, and disagreement policy",
+    "confirmation and replication error budgets"
+  ],
+  "accounting": {
+    "remaining_pilot_configurations": 18,
+    "remaining_diagnosable_configurations": 14,
+    "remaining_controls": 4,
+    "confirmatory_N": 0,
+    "confirmatory_alpha_consumed": 0.0,
+    "replication_reserve_untouched": true
+  }
+}
