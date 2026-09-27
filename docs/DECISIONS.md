@@ -1,5 +1,15 @@
 # Decision Log
 
+## 2026-09-27 — restore contract-complete Claims A and B prospectively
+
+- The newest redirect supersedes the causal-restraint successor as forward priority while
+  preserving it and every closed P-contract/judge result as development evidence.
+- Use the deterministic compiler whose final-text regressions already cover the three required
+  repairs; do not create a behavior-identical version merely to rename it.
+- Compare only with equally instructed, repository-aware, tool-enabled R-contract and require
+  judge-evidence closure for valid extra facts from either method.
+- `cr-pilot-001` is development, not confirmation. No alpha is bound; confirmatory N remains zero.
+
 ## 2026-09-27 — close broad v2 pilot; repair and narrow prospectively
 
 The closed P-contract-v2 pilot is not promoted: at fresh primary N=14, every positive Claim A/B

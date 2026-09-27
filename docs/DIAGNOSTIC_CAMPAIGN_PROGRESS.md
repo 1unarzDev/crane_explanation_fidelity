@@ -3,7 +3,17 @@
 Updated: 2026-09-27
 
 Protocol: `diagnostic-sequential-protocol-v2`
-Current status: **CONTRACT-COMPLETE PROMOTION CLOSED / FINITE CAUSAL-RESTRAINT ENDPOINT IN DEVELOPMENT / CONFIRMATION N=0**
+Current status: **CONTRACT-COMPLETE DEVELOPMENT REOPENED PROSPECTIVELY / CONFIRMATION N=0**
+
+## Contract-complete v2 redirect checkpoint (2026-09-27)
+
+The newest redirect restores the two contract-complete claims as the forward priority without
+relabeling any closed result. The causal-restraint work below remains development history. The
+current deterministic P source passes the requested M/Q/O/L repairs and the matched R prompt
+remains the strong baseline. Headless `cr-pilot-001` passed physical capture and provenance but is
+development-only because it was inspected during direction selection. Revision alpha 0.01 remains
+available and unbound; replication alpha 0.02 is untouched. Confirmatory N=0 and both effects and
+bounds are undefined.
 
 ## Current causal-restraint successor checkpoint (2026-09-27)
 

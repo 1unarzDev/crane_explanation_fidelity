@@ -4,6 +4,11 @@ Status: living manuscript audit, 2026-09-27. The current anonymous artifact is a
 every numerical claim must point to a retained manifest/result. This file is not itself
 experimental evidence.
 
+V2 redirect checkpoint: the deterministic compiler passes the three requested completeness
+repairs, but `cr-pilot-001` is only an inspected development capture. Claims A and B are reopened
+prospectively, not established: confirmatory N=0; no effect, valid bound, significance, or
+replication result exists; candidate-revision alpha remains unbound.
+
 Contract-complete redirect (2026-09-27): the closed focused campaign is development/regression
 evidence. Its original registered N=24 release is invalid; its opaque-ID-corrected N=24 analysis is
 post-hoc sensitivity evidence and establishes no positive effect under either disagreement bound.

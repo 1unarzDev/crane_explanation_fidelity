@@ -1,5 +1,9 @@
 # Research and benchmark source audit
 
+Current checkpoint: the v2 redirect keeps both contract-complete claims prospective. The valid
+headless `cr-pilot-001` capture is development-only because its configuration and outcome were
+inspected during direction selection. Confirmatory N remains zero and no revision alpha is bound.
+
 ## 2026-09-27 — contract-complete empirical redirect
 
 The operational prospective plan is now

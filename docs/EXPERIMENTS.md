@@ -1,5 +1,17 @@
 # Experiment Log
 
+## 2026-09-27 — contract-complete v2 redirect and headless canary
+
+- Claims A and B again become the prospective priority. Closed pilots, failed qualifications, and
+  the causal-restraint audit remain immutable development evidence.
+- Forty-two candidate/reference/detector/capture tests pass; all three requested final-text repairs
+  are present in the deterministic compiler.
+- `cr-pilot-001` passed exact scenario/build admission, headless capture, and transport closure. It
+  recorded success, one FollowPath failure, one source-qualified Wait, and response recovery, with
+  no rejected, stale, or cross-episode actions.
+- It is development-only because inspected during selection. Confirmatory N and alpha remain zero;
+  next is governed diagnostic/reference derivation and one matched P/R packet.
+
 ## 2026-09-27 — causal-restraint fresh population and detector qualification frozen
 
 - **FRESHNESS:** twenty v6 layouts never assigned to the original physical schedule and absent

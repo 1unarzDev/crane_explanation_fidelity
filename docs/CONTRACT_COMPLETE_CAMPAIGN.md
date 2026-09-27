@@ -1,12 +1,17 @@
 # Contract-complete diagnostic communication campaign
 
-Status: **P-CONTRACT ROUTE CLOSED; FINITE CAUSAL-RESTRAINT SUCCESSOR UNDER DEVELOPMENT; CONFIRMATION INACTIVE**
+Status: **CONTRACT-COMPLETE DEVELOPMENT REOPENED PROSPECTIVELY; CONFIRMATION INACTIVE**
 Recorded: 2026-09-27
 
 This is the operational form of the contract-complete research redirect. It is additive. It does
 not alter the frozen legacy provenance study, the closed focused campaign, its original invalid
 release, the post-hoc opaque-ID sensitivity analysis, prior candidate failures, raw responses, or
 annotations.
+
+The 2026-09-27 v2 redirect supersedes only the forward priority assigned to the finite
+causal-restraint successor. It does not erase that audit, its canary, closed v2/v4 pilots, or failed
+judge qualifications. Claims A and B are again the prospective priority. No historical response
+or label is repaired, and no inspected configuration can enter confirmation.
 
 ## 1. Reconciled starting state
 
@@ -528,3 +533,22 @@ PYTHONPATH=analysis pytest -q \
 `analysis/run_contract_complete_response_pair.py` is the development-only paired runner. Do not
 use it for confirmation until its exact code, prompt, sources, tools, model settings, resource
 budget, schedule, and output schema are hash-frozen in the pilot/confirmation declarations.
+
+## 11. V2 redirect and resume boundary
+
+The operational record is `contract-complete-diagnostic-communication-v2-redirect.json`. The
+bounded audit verified that the deterministic compiler already implements all three requested
+repairs in final text: healthy/event commanded and measured comparisons; distinct Wait-to-recovery
+and recovery-to-outcome limits with the original cause unresolved; and observed geometry cost
+versus threshold. Forty-two focused tests pass, so no cosmetic architecture version was created.
+
+Headless `cr-pilot-001` is a valid physical development capture: exact scenario and player
+provenance passed; the action succeeded after one FollowPath failure and one source-qualified Wait;
+response recovered after release; 783 actions were accepted with no rejected, stale, or
+cross-episode action; transport closed cleanly; real-time factor was about 1.000014. Its inspected
+configuration and outcome make it development-only and zero confirmatory N.
+
+Next: derive its governed diagnostic and independent reference, run one matched P/R pair and
+field-level packet, complete the bounded pilot, then atomically freeze both claims, evidence
+closure, judge/reference versions, population, monitor, and replication rule. The 0.01 revision
+and 0.02 replication reserves remain available and unbound here. Confirmation remains N=0.
