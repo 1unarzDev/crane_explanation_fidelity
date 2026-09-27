@@ -1,0 +1,107 @@
+{
+  "schema": "crane-contract-complete-pilot-canary/v1",
+  "pilot_id": "contract-complete-diagnostic-communication-v1-fresh-pilot",
+  "run_id": "cc-pilot-004",
+  "cluster_id": "cc-pilot-cluster-004",
+  "date": "2026-09-27",
+  "status": "DEVELOPMENT_RECONCILED_COMPLETE_TIE",
+  "schedule_order": 4,
+  "fresh_v2_development_N": 3,
+  "confirmatory_N": 0,
+  "family": "measured_response_recovery",
+  "physical_admission": {
+    "attempts": 1,
+    "worker_result_valid": true,
+    "player_build_audit_accepted": true,
+    "scenario_binding_audit_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "navigation_status": "succeeded",
+    "transport_endpoint_errors": 0,
+    "unexpected_outcome_retained": false
+  },
+  "independent_measurement": {
+    "disposition": "supported",
+    "healthy_interval_s": [0.0, 5.0],
+    "healthy_commanded_mps": 0.26,
+    "healthy_measured_mps": 0.2597399950027466,
+    "event_interval_s": [18.0, 28.0],
+    "event_commanded_mps": 0.26,
+    "event_measured_mps": 0.0,
+    "response_recovery_interval_s": [30.0, 31.0],
+    "recovery_commanded_mps": 0.25,
+    "recovery_measured_mps": 0.24974999504542536,
+    "recovered_response_ratio": 0.9615384609627964,
+    "action_status": "succeeded",
+    "follow_path_failures": 2,
+    "wait_invocations": 2
+  },
+  "artifacts": {
+    "robot_visible_diagnostic": {
+      "path": "data/robot_visible/dev/cc-pilot-004/command-motion-diagnostic-v3.json",
+      "sha256": "c4608a9cd4765a97a9d092347932ccc870f6753d7bf2a34c5f2813cf4e326766"
+    },
+    "independent_reference": {
+      "path": "data/evaluator_only/dev/cc-pilot-004/command-motion-independent-reference-v1.json",
+      "sha256": "fc792247517958aded930bd1e3835061fb4617a9642fa2fb177d724bdd28e83c"
+    },
+    "contract_reference": {
+      "path": "data/evaluator_only/dev/cc-pilot-004/contract-complete-annotation-reference-v1.json",
+      "sha256": "fc11707c9af12b9c5d9f739a3ef0c9e7ca2bf9d388c1ee4451ce5e9c6ea35210"
+    },
+    "response_pair": {
+      "path": "model_outputs/contract-complete-diagnostic-communication-v1-pilot/response-pairs/cc-pilot-004.json",
+      "sha256": "80ed41b1892e6fd7b6a008067d74079d33ea59d44289d7ec4cd311042acd59ba"
+    },
+    "blinded_annotation_packet": {
+      "path": "model_outputs/annotation_packets/contract-complete-v1-pilot/cc-pilot-004.jsonl",
+      "sha256": "4c6ee290fc2ce02e150e6ff61cfae5b79420c4bcad6d9208b203ec2a1dc7a8cd"
+    },
+    "annotation_key": {
+      "path": "data/evaluator_only/annotation_keys/contract-complete-v1-pilot/cc-pilot-004.json",
+      "sha256": "a5fb35e51dda3721899e0386c826a0a33d0065f554f339e54a38e54bbd802327"
+    },
+    "luna_development_summary": {
+      "path": "model_outputs/luna-model-judge-v1/contract-complete-v1-pilot/cc-pilot-004/development-summary.json",
+      "sha256": "4f3e9779c9ae474e6f9b99a90c42f5ef23f86b08aca7e32f1deffbdd589b9de0"
+    }
+  },
+  "method_execution": {
+    "P_contract_version": "p-contract-v2-development",
+    "P_contract_generation": "deterministic",
+    "R_contract_version": "r-contract-v1-development",
+    "R_contract_model": "gpt-6-sol",
+    "R_contract_reasoning_effort": "high",
+    "R_contract_calls": 1,
+    "R_contract_latency_ms": 69241.137592,
+    "judge_calls": 4,
+    "judge_call_failures": 0,
+    "qualified_judge_release": "contract-complete-luna-qualification-v2"
+  },
+  "development_semantic_result": {
+    "pass_1": {
+      "claim_a_P": true,
+      "claim_a_R": true,
+      "claim_b_substantive_error_P": false,
+      "claim_b_substantive_error_R": false
+    },
+    "pass_2": {
+      "claim_a_P": true,
+      "claim_a_R": true,
+      "claim_b_substantive_error_P": false,
+      "claim_b_substantive_error_R": false
+    },
+    "confirmatory_alpha_consumed": 0.0
+  },
+  "cumulative_v2_sensitivity_after_three_clusters": {
+    "claim_a_P_minus_R": {
+      "pass_1": 0.0,
+      "pass_2": 0.3333333333333333
+    },
+    "claim_b_R_minus_P_error_risk": {
+      "pass_1": 0.0,
+      "pass_2": 0.3333333333333333
+    }
+  },
+  "interpretation": "Both methods communicated M/Q/O/L completely and without a substantive material error in both passes. The first fresh v2 recovery-family comparison is a complete tie; the only cumulative advantage remains the unresolved R label from cc-pilot-003.",
+  "next_state": "CONTINUE_FIXED_PILOT_ORDER_AT_CC_PILOT_005"
+}

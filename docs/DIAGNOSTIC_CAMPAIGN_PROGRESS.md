@@ -413,6 +413,14 @@ field is retained unresolved because deterministic facts do not settle its seman
 v2 N=2 therefore has pass-specific differences 0.0 and +0.5 for both claims, controls remain 0,
 and confirmation N remains 0. Fixed order advances to `cc-pilot-004`.
 
+Third v2 update (2026-09-27): `cc-pilot-004` passed all physical/evidence gates and provides the
+first untouched v2 measured-response-recovery comparison. Independent computation found a
+0.260/0.000 m/s discrepancy over 18--28 s, recovery to 0.24975 m/s over 30--31 s, and subsequent
+action success. Both methods covered M/Q/O/L without substantive error in both Luna passes. Fresh
+v2 N=3 therefore has pass-specific Claim A and B advantages of 0.0 and +0.333; the positive value
+still comes entirely from the unresolved `cc-pilot-003` R label. Controls and confirmation N remain
+0, no alpha was consumed, and fixed order advances to `cc-pilot-005`.
+
 The now-closed physical/reference cohort attempted 40/100 fixed confirmation-side configurations:
 39 valid, 1 invalid. The method-visible diagnostic dispositions are twenty-seven supported, seven
 `not_triggered`, and five `insufficient`. Run 004 is a valid unexpected transient case: measured

@@ -1,5 +1,16 @@
 # Experiment Log
 
+## 2026-09-27 — first fresh v2 recovery cluster is a complete tie
+
+- **CAPTURE:** `cc-pilot-004` passed all physical and evidence gates. Independent computation
+  supports a 0.260/0.000 m/s discrepancy over 18--28 s, measured recovery to 0.24975 m/s over
+  30--31 s, and subsequent action success.
+- **SEMANTICS:** all four isolated Luna calls were valid. P-contract v2 and R-contract each covered
+  M/Q/O/L without a substantive material error in both passes.
+- **RESULT:** fresh v2 development N=3 has pass-specific Claim A and B advantages of 0.0 and
+  +0.333. The latter remains entirely due to the unresolved R judgment in `cc-pilot-003`.
+  Confirmation N and alpha remain zero; fixed order advances to `cc-pilot-005`.
+
 ## 2026-09-27 — second fresh P-contract v2 cluster retains endpoint disagreement
 
 - **CAPTURE:** `cc-pilot-003` passed every physical/evidence gate and independently supports an
