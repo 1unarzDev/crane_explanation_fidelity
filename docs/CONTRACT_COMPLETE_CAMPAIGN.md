@@ -1,6 +1,6 @@
 # Contract-complete diagnostic communication campaign
 
-Status: **ELEVEN DEVELOPMENT CLUSTERS RECONCILED; PRIMARY V2 N=9; CONFIRMATION NOT FROZEN**
+Status: **TWELVE DEVELOPMENT CLUSTERS RECONCILED; TWO CONTROLS COMPLETE; CONFIRMATION NOT FROZEN**
 Recorded: 2026-09-27
 
 This is the operational form of the contract-complete research redirect. It is additive. It does
@@ -268,13 +268,12 @@ Current checkpoint:
 | Known omission regressions | Healthy/event/recovery command+motion, post-recovery outcome scope, causal limits, geometry cost threshold pass |
 | Baseline | R-contract v1 made one fresh call and passed Claim A in both canary passes |
 | Field evaluator | Deterministic Claim A/B scorer implemented; corrected v2 qualified 12/12 endpoints in each pass with 47/48 unit decisions |
-| Fresh pilot | Physical/answer N=11, reconciled semantic N=11; primary v2 N=9 and controls=1; Claim A pass effects 0.0/+0.222 and Claim B 0.0/+0.111, both judge-sensitive |
+| Fresh pilot | Physical/answer N=12, reconciled semantic N=12; primary v2 N=9 and controls=2; Claim A pass effects 0.0/+0.222 and Claim B 0.0/+0.111, both judge-sensitive |
 | Confirmation | Not frozen; no alpha newly consumed; no look or effect |
 | Replication | Reserve untouched; criterion pending confirmation freeze |
 | Manuscript | Historical status corrected; contract-complete results remain pending |
 
-Next executable action: continue the bounded pilot in fixed order at `cc-pilot-012`, the second
-scheduled control. New v2
+Next executable action: continue the bounded pilot in fixed order at `cc-pilot-013`. New v2
 comparisons use cases whose contents did not influence the repair; confirmation remains prohibited
 until the bounded pilot and atomic freeze are complete.
 
@@ -307,6 +306,12 @@ layout's broad expectation was success; player, scenario binding, transport, cap
 independent evidence checks passed. Under the frozen separation of recording validity from outcome,
 the unexpected abort is retained. Primary v2 N=9 now gives Claim A 0.0/+0.222 and Claim B
 0.0/+0.111; the candidate still lacks a disagreement-robust development advantage.
+
+The second nominal control (`cc-pilot-012`) is also separately reconciled. P covered M/Q/O/L
+without error twice. R correctly rejected the premise, gave the healthy comparison and success,
+but omitted the question-contract boundary that obstacle visibility alone does not establish Nav2
+consumption or obstacle causation; both Luna passes marked L missing. The control adds zero primary
+N and leaves the primary effects unchanged.
 
 ## Tested development commands
 

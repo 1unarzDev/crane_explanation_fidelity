@@ -1,5 +1,16 @@
 # Experiment Log
 
+## 2026-09-27 — second contract-complete control retained
+
+- **CAPTURE/REFERENCE:** `cc-pilot-012` passed all gates, succeeded without intervention, and
+  independently returned `not_triggered` with a 0.260/0.25974 m/s healthy comparison, no FollowPath
+  failure, and no Wait.
+- **SEMANTICS:** P covered M/Q/O/L twice. R correctly rejected the premise and had no material
+  assertion error, but both passes found L incomplete because it omitted the obstacle-visibility
+  versus Nav2-consumption/causation boundary.
+- **BOUNDARY:** this is non-primary control evidence. Control N=2; primary v2 N=9 and its effects are
+  unchanged. Fixed order advances to `cc-pilot-013`.
+
 ## 2026-09-27 — ninth fresh P-contract v2 comparison retained
 
 - **CAPTURE/REFERENCE:** `cc-pilot-011` retained a valid unexpected abort. The generic fixture

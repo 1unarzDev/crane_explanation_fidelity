@@ -471,6 +471,13 @@ failures, two Waits, no recovery, and abort. Both methods passed both claims twi
 now gives Claim A 0.0/+0.222 and Claim B 0.0/+0.111. Confirmation remains inactive; `cc-pilot-012`
 is the next fixed-order control.
 
+Second control update (2026-09-27): `cc-pilot-012` passed all gates, succeeded without intervention,
+and independently returned `not_triggered` with a 0.260/0.25974 m/s healthy comparison, zero
+FollowPath failures, and zero Waits. P covered M/Q/O/L twice. R correctly rejected the false premise
+but both passes marked L incomplete because it omitted the obstacle-visibility versus Nav2-
+consumption/causation boundary. Control N=2, primary v2 N=9, primary effects and alpha are unchanged,
+and fixed order advances to `cc-pilot-013`.
+
 The now-closed physical/reference cohort attempted 40/100 fixed confirmation-side configurations:
 39 valid, 1 invalid. The method-visible diagnostic dispositions are twenty-seven supported, seven
 `not_triggered`, and five `insufficient`. Run 004 is a valid unexpected transient case: measured

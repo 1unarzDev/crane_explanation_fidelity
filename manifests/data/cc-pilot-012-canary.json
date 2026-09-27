@@ -1,0 +1,60 @@
+{
+  "schema": "crane-contract-complete-pilot-canary/v1",
+  "pilot_id": "contract-complete-diagnostic-communication-v1-fresh-pilot",
+  "run_id": "cc-pilot-012",
+  "cluster_id": "cc-pilot-cluster-012",
+  "date": "2026-09-27",
+  "status": "DEVELOPMENT_CONTROL_RECONCILED_R_LIMITATION_FAILURE",
+  "schedule_order": 12,
+  "fresh_v2_primary_N": 9,
+  "control_N": 2,
+  "confirmatory_N": 0,
+  "family": "nominal_false_premise_or_irrelevant_obstacle",
+  "primary_endpoint_eligible": false,
+  "physical_admission": {
+    "attempts": 1,
+    "worker_result_valid": true,
+    "player_build_audit_accepted": true,
+    "scenario_binding_audit_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "navigation_status": "succeeded",
+    "transport_endpoint_errors": 0
+  },
+  "independent_measurement": {
+    "disposition": "not_triggered",
+    "healthy_interval_s": [0.0, 5.0],
+    "healthy_commanded_mps": 0.26,
+    "healthy_measured_mps": 0.2597399950027466,
+    "action_status": "succeeded",
+    "follow_path_failures": 0,
+    "wait_invocations": 0
+  },
+  "artifacts": {
+    "robot_visible_diagnostic": {"path": "data/robot_visible/dev/cc-pilot-012/command-motion-diagnostic-v3.json", "sha256": "6714f49be8419b5718986fb8d87a773bffcfdd807dddd4bc139fcc5e1afd5949"},
+    "independent_reference": {"path": "data/evaluator_only/dev/cc-pilot-012/command-motion-independent-reference-v1.json", "sha256": "d582171fbae304bf47388a2716afff66edef4ba148581e06b3309c1825f3c30c"},
+    "contract_reference": {"path": "data/evaluator_only/dev/cc-pilot-012/contract-complete-annotation-reference-v1.json", "sha256": "fb949fc59ee757e1638a3b9358c1ae9da4066e901e90e30ea8ede3fef9a88881"},
+    "response_pair": {"path": "model_outputs/contract-complete-diagnostic-communication-v1-pilot/response-pairs/cc-pilot-012.json", "sha256": "e0fe590d131f5174c2a9f83cb7980d06d7dcf13cb39a87777b81873ba00ca1cd"},
+    "blinded_annotation_packet": {"path": "model_outputs/annotation_packets/contract-complete-v1-pilot/cc-pilot-012.jsonl", "sha256": "34d845d5ce22297e7660080a162385070422189b5a43fbe3474b608444034a86"},
+    "annotation_key": {"path": "data/evaluator_only/annotation_keys/contract-complete-v1-pilot/cc-pilot-012.json", "sha256": "f84eb44a95b28aef5c015376a8fa7d4d106ae001e499e23fe095be2a5edd8570"},
+    "luna_development_summary": {"path": "model_outputs/luna-model-judge-v1/contract-complete-v1-pilot/cc-pilot-012/development-summary.json", "sha256": "915967e0a69db7d29b6d6e72f578b5799ac69f30cd76112f36bde1e3ad56c806"}
+  },
+  "method_execution": {
+    "P_contract_version": "p-contract-v2-development",
+    "R_contract_version": "r-contract-v1-development",
+    "R_contract_model": "gpt-6-sol",
+    "R_contract_reasoning_effort": "high",
+    "R_contract_calls": 1,
+    "R_contract_latency_ms": 68583.230355,
+    "judge_calls": 4,
+    "judge_call_failures": 0,
+    "qualified_judge_release": "contract-complete-luna-qualification-v2"
+  },
+  "development_control_result": {
+    "pass_1": {"P_MQOL_complete": true, "P_material_error": false, "R_MQOL_complete": false, "R_material_error": false, "R_failed_fields": ["L"]},
+    "pass_2": {"P_MQOL_complete": true, "P_material_error": false, "R_MQOL_complete": false, "R_material_error": false, "R_failed_fields": ["L"]},
+    "primary_effect_unchanged": true,
+    "confirmatory_alpha_consumed": 0.0
+  },
+  "interpretation": "P handled the nominal false-premise control completely twice. R correctly rejected the premise and stated the healthy measurements and success, but both passes found that L omitted the contract's obstacle-visibility versus Nav2-consumption/causation boundary. This is separately reported control evidence and adds zero primary N.",
+  "next_state": "CONTINUE_FIXED_PILOT_ORDER_AT_CC_PILOT_013"
+}
