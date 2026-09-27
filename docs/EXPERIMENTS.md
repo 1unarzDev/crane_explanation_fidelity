@@ -18,6 +18,12 @@
   Next is one no-repair detector qualification, then a technical build/capture canary and the
   fixed fresh pilot.
 
+Qualification/build update: the one frozen detector run passed 24/24 polarity, relation-set, and
+exact-span cases with zero failures. Unity CLI then produced a clean, source-proven
+6000.5.10f1 land worker in batch/no-graphics mode from CRANE `bcab3547`; manifest, assemblies,
+resources, capture runner, methods, prompt, and schedule are pinned in the pilot predeclaration.
+This authorizes only the zero-alpha fresh pilot, beginning with its fixed-order technical canary.
+
 ## 2026-09-27 — finite prohibited-causal-link audit motivates a narrow successor
 
 - **SCOPE:** post-hoc development audit of all 14 retained P-contract-v2 primary response pairs;

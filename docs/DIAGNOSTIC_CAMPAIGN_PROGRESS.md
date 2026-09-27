@@ -27,8 +27,11 @@ never-assigned layouts outside the protected 100-layout replication schedule; th
 and 60 replication configurations, each with 48 primary and 12 fixed controls. Their exact
 geometry/family/timing/mask order is frozen in
 `explicit-causal-restraint-successor-v1-schedule.json`. No capture or model output has been opened.
-The detector's 24-case exact qualification suite is frozen and not yet executed; alpha remains
-unbound.
+The detector's 24-case exact qualification passed once with 24/24 polarity, relation-set, and
+exact-span decisions and zero execution failures. This qualifies only its finite grammar. A clean
+Unity 6000.5.10f1 headless v8 land worker was built from CRANE `bcab3547`; its source, manifest,
+managed assemblies, resources, catalog, capture runner, methods, prompt, schedule, and pilot rules
+are now hash-pinned. The 20-configuration pilot is authorized; alpha remains unbound.
 
 ## Opaque-ID transport correction and first-look sensitivity (2026-09-26)
 

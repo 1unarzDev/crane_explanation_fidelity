@@ -27,12 +27,16 @@ if [[ ! "${ros_domain_id}" =~ ^[0-9]+$ || ! "${ros_port}" =~ ^[0-9]+$ ]]; then
     echo "ROS_DOMAIN_ID and ROS_TCP_PORT must be integers" >&2
     exit 2
 fi
-if [[ "${catalog}" != "v4" && "${catalog}" != "v5" && "${catalog}" != "v6" && "${catalog}" != "v7" ]]; then
-    echo "Only versioned diagnostic catalogs v4, v5, v6, and v7 are supported: ${catalog}" >&2
+if [[ "${catalog}" != "v4" && "${catalog}" != "v5" && "${catalog}" != "v6" && "${catalog}" != "v7" && "${catalog}" != "v8" ]]; then
+    echo "Only versioned diagnostic catalogs v4 through v8 are supported: ${catalog}" >&2
     exit 2
 fi
-if [[ "${catalog}" == "v6" && "${CRANE_ALLOW_RESERVED_PHYSICAL_CAPTURE:-0}" != "1" ]]; then
+if [[ "${catalog}" == "v6" && "${CRANE_ALLOW_RESERVED_PHYSICAL_CAPTURE:-0}" != "1" && "${CRANE_ALLOW_CAUSAL_RESTRAINT_CAPTURE:-0}" != "1" ]]; then
     echo "v6 is a physical-evidence reserve; set CRANE_ALLOW_RESERVED_PHYSICAL_CAPTURE=1 for an explicitly declared development capture" >&2
+    exit 2
+fi
+if [[ "${catalog}" == "v8" && "${CRANE_ALLOW_CAUSAL_RESTRAINT_CAPTURE:-0}" != "1" ]]; then
+    echo "v8 is reserved for the causal-restraint successor; explicit schedule activation is required" >&2
     exit 2
 fi
 
@@ -49,16 +53,21 @@ action_duration_s="100"
 data_split="${CRANE_DATA_SPLIT:-dev}"
 proving_ground_mobility_hold_after="${CRANE_PROVING_GROUND_MOBILITY_HOLD_AFTER:--1}"
 proving_ground_mobility_release_after="${CRANE_PROVING_GROUND_MOBILITY_RELEASE_AFTER:--1}"
+causal_restraint_stage="${CRANE_CAUSAL_RESTRAINT_STAGE:-}"
+causal_restraint_schedule="${workspace_root}/research/explanation_fidelity/experiment_configs/prospective/explicit-causal-restraint-successor-v1-schedule.json"
 
 if [[ "${data_split}" != "dev" ]]; then
     echo "Diagnostic held-out/final capture is not authorized before protocol freeze" >&2
     exit 2
 fi
-layout_metadata_text="$(python3 - "${catalog_file}" "${layout}" "${catalog}" <<'PY'
+layout_metadata_text="$(python3 - "${catalog_file}" "${layout}" "${catalog}" "${run_id}" \
+    "${CRANE_ALLOW_CAUSAL_RESTRAINT_CAPTURE:-0}" "${causal_restraint_stage}" \
+    "${causal_restraint_schedule}" "${proving_ground_mobility_hold_after}" \
+    "${proving_ground_mobility_release_after}" <<'PY'
 import json
 import sys
 
-catalog_path, layout_id, catalog_id = sys.argv[1:]
+catalog_path, layout_id, catalog_id, run_id, successor, stage, schedule_path, hold, release = sys.argv[1:]
 catalog = json.load(open(catalog_path, encoding="utf-8"))
 matches = [item for item in catalog.get("layouts", []) if item.get("id") == layout_id]
 if len(matches) != 1:
@@ -72,9 +81,26 @@ expected_splits = {
     "v6": "command-motion-confirmation-reserve",
     "v7": "contract-limit-v4-development",
 }
-expected_split = expected_splits[catalog_id]
-if layout.get("studySplit") != expected_split:
-    raise SystemExit("layout is calibration-only or outside the active diagnostic scope")
+if successor == "1" and catalog_id in {"v6", "v8"}:
+    if stage not in {"pilot", "discovery", "replication"}:
+        raise SystemExit("causal-restraint capture requires an explicit valid stage")
+    schedule = json.load(open(schedule_path, encoding="utf-8"))
+    scheduled_matches = [
+        item for item in schedule["stages"][stage] if item["run_id"] == run_id
+    ]
+    if len(scheduled_matches) != 1:
+        raise SystemExit("run is absent or duplicated in the frozen causal-restraint stage")
+    scheduled = scheduled_matches[0]
+    if scheduled["catalog_id"] != catalog_id or scheduled["layout_id"] != layout_id:
+        raise SystemExit("catalog/layout differs from the frozen causal-restraint schedule")
+    if float(scheduled["mobility_hold_after_s"]) != float(hold) or float(
+        scheduled["mobility_release_after_s"]
+    ) != float(release):
+        raise SystemExit("mobility timing differs from the frozen causal-restraint schedule")
+else:
+    expected_split = expected_splits[catalog_id]
+    if layout.get("studySplit") != expected_split:
+        raise SystemExit("layout is calibration-only or outside the active diagnostic scope")
 if layout.get("diagnosticMechanism") not in {"connected-detour", "nominal-clear-route"}:
     raise SystemExit("layout is calibration-only or outside the active diagnostic scope")
 print(layout["seed"])

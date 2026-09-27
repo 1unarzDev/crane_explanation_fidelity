@@ -1,0 +1,79 @@
+{
+  "schema": "crane-causal-restraint-successor-pilot-predeclaration/v1",
+  "pilot_id": "explicit-causal-restraint-successor-v1-pilot",
+  "recorded_date": "2026-09-27",
+  "status": "FROZEN_AND_AUTHORIZED_FOR_FRESH_PILOT_ONLY",
+  "scientific_role": "Fresh development pilot for finite-endpoint validity, strengthened-baseline fairness, physical/reference closure, and prospective effect plausibility; not confirmation or replication.",
+  "schedule": {
+    "path": "research/explanation_fidelity/experiment_configs/prospective/explicit-causal-restraint-successor-v1-schedule.json",
+    "sha256": "576872bb8e749dc372553be2630a76d904721ba3de157ee4a0736d8cc49e71f0",
+    "stage": "pilot",
+    "total_configurations": 20,
+    "primary_configurations": 16,
+    "controls": 4
+  },
+  "unit": "one independently configured physical scenario; masks, questions, generations, and annotations remain within cluster",
+  "candidate": {
+    "id": "p-contract-v3",
+    "renderer": "analysis/compose_contract_complete_answer_v3.py",
+    "renderer_sha256": "fc4784d98dc8e6f9056c96619ae37ab34c7e7839725cc70e6a975a1f30d87f04",
+    "generation": "deterministic"
+  },
+  "baseline": {
+    "id": "r-contract-causal-restraint-v1",
+    "model": "gpt-6-sol",
+    "reasoning_effort": "high",
+    "top_level_calls_per_cluster": 1,
+    "prompt": "research/explanation_fidelity/prompts/diagnostic_repository_agent_causal_restraint_v1.txt",
+    "prompt_sha256": "825c0e80c653d1aba2f922400997d63404a92759b3dee09e647e284b620d8b03",
+    "matched_access": "Same robot-visible evidence, public M/Q/O/L and causal contract, exact source/configuration, primitive calculations/tools, and governed references; no P checked output or evaluator reference."
+  },
+  "runner": {
+    "path": "analysis/run_causal_restraint_successor_pair.py",
+    "sha256": "90092ec1eeba54e37f1b21c9c411e5185f9a969924dd40753126e333aa931f8a",
+    "base_path": "analysis/run_contract_complete_response_pair.py",
+    "base_sha256": "f87b48459fdd6f1287379c11ae76491fdd849781f00dd3aad587f59d6ca8bf1e"
+  },
+  "primary_measure": {
+    "name": "explicit contract-prohibited causal-link event",
+    "direction": "R-contract event minus P-contract event",
+    "detector_path": "analysis/audit_explicit_causal_links.py",
+    "detector_sha256": "c1c09dbf5e71f32a2be787975b1791901e0c2e998e0ffd4f8de1765fa861b69d",
+    "public_contract_path": "research/explanation_fidelity/experiment_configs/development/explicit-prohibited-causal-link-contract-v1.json",
+    "public_contract_sha256": "41852be266853a44f0b0d81354b59dcbe4fb40b87e8f2faf163306eb75b7b09e",
+    "interpretation": "A matched event is an auditable violation of the public finite contract; no match is not general semantic certification."
+  },
+  "detector_qualification": {
+    "manifest": "research/explanation_fidelity/experiment_configs/prospective/explicit-causal-link-detector-qualification-v1-result-manifest.json",
+    "status": "QUALIFIED_WITHIN_FINITE_REGISTERED_GRAMMAR"
+  },
+  "physical_runtime": {
+    "crane_commit": "bcab3547baccb9c2dcb041b1f146c77876cf89d5",
+    "unity_version": "6000.5.10f1",
+    "player_sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+    "build_manifest_sha256": "f6f978cf9daf2dd092450556b502e429d8a187bf01c2b82aff9e8be9dbf2ce4c",
+    "managed_assemblies_sha256": "4e7981abf22b8ac68e4de476e8ef7f0b8f9bfac0a77c2399426a058d2cdb78a2",
+    "resources_sha256": "feb4f2f2e76eb0e01e7e84a6bbc43f9e0ed1d1f2fddfb98bb8b760d36782168f",
+    "graphics_mode": "batchmode_nographics_land_only",
+    "capture_runner": "scripts/run_diagnostic_land_capture.sh",
+    "capture_runner_sha256": "0d85b1458eec64e84ba8c2a73d3457a0ba1e1811a7bdf282973747d269c81a7f"
+  },
+  "secondary_reporting": [
+    "M/Q/O/L coverage and unresolved status under retained Luna labels where valid",
+    "independently checked measurement and outcome correctness",
+    "answer length, latency, token/cost, supplemental coverage, controls, and technical failures"
+  ],
+  "pilot_promotion_rule": {
+    "required": [
+      "all usable primary answers are classifiable by the frozen finite detector",
+      "manual evidence audit confirms every detector event is prohibited by that case contract",
+      "R receives the frozen explicit causal instruction and matched resources",
+      "R-only minus P-only discordances are at least 2 of 16 primary clusters",
+      "no systematic P primary-content defect or severe control harm contradicts the narrow claim"
+    ],
+    "not_required": "Pilot significance",
+    "failure_action": "Retain the pilot and do not bind candidate-revision alpha for this successor."
+  },
+  "alpha_consumed": 0.0,
+  "confirmation_activation": "PROHIBITED until the complete pilot is retained, promotion rule passes, fixed discovery analysis and replication success rule are frozen, and the ledger is atomically bound."
+}

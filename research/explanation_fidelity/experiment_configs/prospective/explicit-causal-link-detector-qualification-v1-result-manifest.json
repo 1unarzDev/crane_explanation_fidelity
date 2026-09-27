@@ -1,0 +1,25 @@
+{
+  "schema": "crane-qualification-result-manifest/v1",
+  "qualification_id": "explicit-causal-link-detector-qualification-v1",
+  "recorded_date": "2026-09-27",
+  "status": "QUALIFIED_WITHIN_FINITE_REGISTERED_GRAMMAR",
+  "suite": {
+    "path": "research/explanation_fidelity/experiment_configs/prospective/explicit-causal-link-detector-qualification-v1.json",
+    "sha256": "9d9b92238ad97ff524278e84217f8604d0ecbc9fe945fc3ed9f4c710ee3e40e6"
+  },
+  "detector": {
+    "path": "analysis/audit_explicit_causal_links.py",
+    "sha256": "c1c09dbf5e71f32a2be787975b1791901e0c2e998e0ffd4f8de1765fa861b69d"
+  },
+  "result": {
+    "path": "model_outputs/development/explicit-causal-link-detector-qualification-v1.json",
+    "sha256": "1e93f30034717fe6cc677a5daa510cbd72c5e02c4f0d2f36bcb946d28f973aa2",
+    "case_count": 24,
+    "case_polarity_accuracy": 1.0,
+    "relation_set_accuracy": 1.0,
+    "exact_span_accuracy": 1.0,
+    "execution_failures": 0,
+    "passed": true
+  },
+  "limit": "Qualification validates exact behavior only within the frozen finite grammar. It does not establish sensitivity or specificity for unrestricted natural-language causal meaning."
+}
