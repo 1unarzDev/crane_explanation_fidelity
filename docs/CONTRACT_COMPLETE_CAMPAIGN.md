@@ -342,6 +342,10 @@ in both Luna passes. At fresh primary v2 N=11 and controls N=3, Claim A sensitiv
 0.0/+0.273 and Claim B is 0.0/+0.182. The positive signal remains wholly pass-sensitive, so
 confirmation stays inactive and fixed order advances to `cc-pilot-016`.
 
+The persistent case `cc-pilot-016` is another unanimous P/R tie. At fresh primary v2 N=12 and
+controls N=3, Claim A sensitivity is 0.0/+0.250 and Claim B is 0.0/+0.167. Confirmation remains
+inactive and fixed order advances to missing-evidence control `cc-pilot-017`.
+
 ## Tested development commands
 
 Render one deterministic P-contract regression artifact:

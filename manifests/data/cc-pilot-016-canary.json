@@ -1,0 +1,34 @@
+{
+  "schema": "crane-contract-complete-pilot-canary/v1",
+  "pilot_id": "contract-complete-diagnostic-communication-v1-fresh-pilot",
+  "run_id": "cc-pilot-016",
+  "cluster_id": "cc-pilot-cluster-016",
+  "date": "2026-09-27",
+  "status": "DEVELOPMENT_RECONCILED_COMPLETE_TIE",
+  "schedule_order": 16,
+  "fresh_v2_development_N": 12,
+  "control_N": 3,
+  "confirmatory_N": 0,
+  "family": "persistent_command_motion_discrepancy",
+  "primary_endpoint_eligible": true,
+  "physical_admission": {"attempts": 1, "generic_fixture_valid_flag": false, "recording_valid_after_outcome_separation": true, "player_build_audit_accepted": true, "scenario_binding_audit_accepted": true, "scenario_binding_checks_passed": 14, "navigation_status": "aborted", "transport_endpoint_errors": 0, "unexpected_outcome_retained": true},
+  "independent_measurement": {"disposition": "supported", "healthy_interval_s": [0.0, 5.0], "healthy_commanded_mps": 0.26, "healthy_measured_mps": 0.2597399950027466, "event_interval_s": [10.0, 20.0], "event_commanded_mps": 0.26, "event_measured_mps": 0.0, "response_recovery_interval_s": null, "action_status": "aborted", "follow_path_failures": 2, "wait_invocations": 2},
+  "artifacts": {
+    "robot_visible_diagnostic": {"path": "data/robot_visible/dev/cc-pilot-016/command-motion-diagnostic-v3.json", "sha256": "e3406760d92388072cfdd2515ad305560e4a07820d849833f9419158106476f6"},
+    "independent_reference": {"path": "data/evaluator_only/dev/cc-pilot-016/command-motion-independent-reference-v1.json", "sha256": "8708c20f6008ba7da3378c533fedeb7e505343a0b26abc7e4118da2a3bc94262"},
+    "contract_reference": {"path": "data/evaluator_only/dev/cc-pilot-016/contract-complete-annotation-reference-v1.json", "sha256": "a5754052b2639600fd99597b04e5ed5aa77d09e128ef97096a4088c44cd4e7a3"},
+    "response_pair": {"path": "model_outputs/contract-complete-diagnostic-communication-v1-pilot/response-pairs/cc-pilot-016.json", "sha256": "4c670e7799db8b32f5427c71123491350ea88db9d546787b53354c2909f9924c"},
+    "blinded_annotation_packet": {"path": "model_outputs/annotation_packets/contract-complete-v1-pilot/cc-pilot-016.jsonl", "sha256": "80412238c1a96313c9b602cb468dc9e97901c4b4d641e842fc1752879a20f043"},
+    "annotation_key": {"path": "data/evaluator_only/annotation_keys/contract-complete-v1-pilot/cc-pilot-016.json", "sha256": "f89b9fdcf55a0244efac8c6292f8d29ee75b04a7f06bd657c2a86bc18c3bde3d"},
+    "luna_development_summary": {"path": "model_outputs/luna-model-judge-v1/contract-complete-v1-pilot/cc-pilot-016/development-summary.json", "sha256": "f5f10a4d82fea3ef188eb20b8ccc9e3f45ba05764096c464f874918792d60901"}
+  },
+  "method_execution": {"P_contract_version": "p-contract-v2-development", "R_contract_version": "r-contract-v1-development", "R_contract_model": "gpt-6-sol", "R_contract_reasoning_effort": "high", "R_contract_calls": 1, "R_contract_latency_ms": 72154.675778, "judge_calls": 4, "judge_call_failures": 0, "qualified_judge_release": "contract-complete-luna-qualification-v2"},
+  "development_semantic_result": {
+    "pass_1": {"claim_a_P": true, "claim_a_R": true, "claim_b_substantive_error_P": false, "claim_b_substantive_error_R": false},
+    "pass_2": {"claim_a_P": true, "claim_a_R": true, "claim_b_substantive_error_P": false, "claim_b_substantive_error_R": false},
+    "confirmatory_alpha_consumed": 0.0
+  },
+  "cumulative_v2_sensitivity_after_twelve_clusters": {"claim_a_P_minus_R": {"pass_1": 0.0, "pass_2": 0.25}, "claim_b_R_minus_P_error_risk": {"pass_1": 0.0, "pass_2": 0.16666666666666666}},
+  "interpretation": "P and R both communicated complete supported M/Q/O/L content without substantive error in both passes.",
+  "next_state": "CONTINUE_FIXED_PILOT_ORDER_AT_CC_PILOT_017_MISSING_EVIDENCE_CONTROL"
+}

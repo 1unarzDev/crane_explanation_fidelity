@@ -500,6 +500,11 @@ eventual action success. P and R both passed Claims A and B in both Luna passes.
 v2 N=11 and controls N=3 give Claim A sensitivity 0.0/+0.273 and Claim B 0.0/+0.182.
 Confirmation remains inactive; fixed order advances to `cc-pilot-016`.
 
+Twelfth v2 update (2026-09-27): `cc-pilot-016` retained a valid unexpected abort and produced a
+0.260/0.000 m/s persistent discrepancy over 10--20 s. P and R both passed Claims A and B in both
+Luna passes. Fresh primary v2 N=12 and controls N=3 give Claim A 0.0/+0.250 and Claim B
+0.0/+0.167. Confirmation remains inactive; fixed order advances to `cc-pilot-017`.
+
 The now-closed physical/reference cohort attempted 40/100 fixed confirmation-side configurations:
 39 valid, 1 invalid. The method-visible diagnostic dispositions are twenty-seven supported, seven
 `not_triggered`, and five `insufficient`. Run 004 is a valid unexpected transient case: measured

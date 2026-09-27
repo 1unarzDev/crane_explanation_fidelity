@@ -1,5 +1,14 @@
 # Experiment Log
 
+## 2026-09-27 — twelfth fresh P-contract v2 comparison retained
+
+- **CAPTURE/REFERENCE:** `cc-pilot-016` retained a valid unexpected abort and independently found
+  a 0.260/0.000 m/s persistent discrepancy over 10--20 s, two FollowPath failures, two Waits, and
+  no measured recovery.
+- **SEMANTICS:** P and R both covered M/Q/O/L without substantive error in both Luna passes.
+- **STATUS:** fresh primary v2 N=12, controls N=3. Claim A sensitivity is 0.0/+0.250 and Claim B
+  is 0.0/+0.167. Confirmation remains inactive; fixed order advances to `cc-pilot-017`.
+
 ## 2026-09-27 — eleventh fresh P-contract v2 comparison retained
 
 - **CAPTURE/REFERENCE:** `cc-pilot-015` passed all gates and independently reproduced healthy
