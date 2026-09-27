@@ -1,0 +1,37 @@
+{
+  "schema": "crane-contract-complete-pilot-canary/v1",
+  "pilot_id": "contract-complete-diagnostic-communication-v1-fresh-pilot",
+  "run_id": "cc-pilot-017",
+  "cluster_id": "cc-pilot-cluster-017",
+  "date": "2026-09-27",
+  "status": "DEVELOPMENT_RECONCILED_MISSING_EVIDENCE_CONTROL_MQO_ONLY",
+  "schedule_order": 17,
+  "fresh_v2_development_N": 12,
+  "control_N": 4,
+  "confirmatory_N": 0,
+  "family": "missing_decisive_or_ambiguous_evidence",
+  "primary_endpoint_eligible": false,
+  "evidence_mask": "remove-delivered-odometry-v1",
+  "physical_admission": {"attempts": 1, "generic_fixture_valid_flag": false, "recording_valid_after_outcome_separation": true, "player_build_audit_accepted": true, "scenario_binding_audit_accepted": true, "scenario_binding_checks_passed": 14, "navigation_status": "aborted", "transport_endpoint_errors": 0, "unexpected_outcome_retained": true},
+  "masked_independent_measurement": {"disposition": "insufficient", "delivered_command_samples": 393, "independent_odometry_samples": 0, "action_status": "aborted", "follow_path_attempts": 3, "follow_path_failures": 2, "source_qualified_wait_invocations": 2, "paired_unmasked_export_available_to_methods_or_judge": false},
+  "artifacts": {
+    "masked_robot_visible_diagnostic": {"path": "data/robot_visible/dev/cc-pilot-017/command-motion-diagnostic-v3.json", "sha256": "e66de17a727d51cfa87e74c02931c1d440bc88d13f0d2f092ca06f79b823170a"},
+    "evaluator_only_unmasked_source": {"path": "data/evaluator_only/dev/cc-pilot-017/command-motion-unmasked-source-v3.json", "sha256": "515ae5ab7fb48887a7fc264f61f3c1f2f9c327c0e53870d15806309f1f10f8b7"},
+    "independent_masked_reference": {"path": "data/evaluator_only/dev/cc-pilot-017/command-motion-independent-reference-v2.json", "sha256": "bb365f0dc1ebd5db6742bfc6fb7ba20e620bd7d0aabba97722918ff287e32c77"},
+    "contract_reference": {"path": "data/evaluator_only/dev/cc-pilot-017/contract-complete-annotation-reference-v1.json", "sha256": "2b8028df956a50ed776629add13a21c19ad54b4b55012cbc955ca7cba97937db"},
+    "response_pair": {"path": "model_outputs/contract-complete-diagnostic-communication-v1-pilot/response-pairs/cc-pilot-017.json", "sha256": "42de4f8fb2f21a84a6a5479fa6d8445bcc8f3123b3b2f76442652d77601d741b"},
+    "blinded_annotation_packet": {"path": "model_outputs/annotation_packets/contract-complete-v1-pilot/cc-pilot-017.jsonl", "sha256": "a7844aa33a351d255cb2af79207e24206cfb3782d71a93502a88f91228b846f7"},
+    "annotation_key": {"path": "data/evaluator_only/annotation_keys/contract-complete-v1-pilot/cc-pilot-017.json", "sha256": "a9d9f12867caa425bf5412b4f4b8b9107a27b99e64a6e02be5c7ca99d37fbc1c"},
+    "luna_development_summary": {"path": "model_outputs/luna-model-judge-v1/contract-complete-v1-pilot/cc-pilot-017/development-summary.json", "sha256": "7ee7f539dcef1e0ab5ad577b332f374a0ed7fcf55c82249a4f65bdea0abe6a22"}
+  },
+  "method_execution": {"P_contract_version": "p-contract-v2-development", "R_contract_version": "r-contract-v1-development", "R_contract_model": "gpt-6-sol", "R_contract_reasoning_effort": "high", "R_contract_calls": 1, "R_contract_latency_ms": 46871.139991, "judge_calls": 4, "judge_call_failures": 0, "qualified_judge_release": "contract-complete-luna-qualification-v2"},
+  "development_semantic_result": {
+    "pass_1": {"claim_a_P": false, "claim_a_R": false, "claim_b_substantive_error_P": false, "claim_b_substantive_error_R": false, "failed_field_P": "L", "failed_field_R": "L"},
+    "pass_2": {"claim_a_P": false, "claim_a_R": false, "claim_b_substantive_error_P": false, "claim_b_substantive_error_R": false, "failed_field_P": "L", "failed_field_R": "L"},
+    "field_interpretation": "The cc-pilot-014 pattern reproduced: P omitted execution-sequence scope from L, while R omitted explicit actuator-acceptance scope. No retry or relabeling occurred.",
+    "confirmatory_alpha_consumed": 0.0
+  },
+  "primary_effect_boundary": {"control_contribution_to_primary_N": 0, "claim_a_P_minus_R": {"pass_1": 0.0, "pass_2": 0.25}, "claim_b_R_minus_P_error_risk": {"pass_1": 0.0, "pass_2": 0.16666666666666666}},
+  "interpretation": "This second missing-evidence control reproduces the method-specific atomic L omissions without changing primary N.",
+  "next_state": "CONTINUE_FIXED_PILOT_ORDER_AT_CC_PILOT_018_RESPONSE_RECOVERY"
+}

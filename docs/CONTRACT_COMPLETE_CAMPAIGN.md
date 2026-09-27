@@ -346,6 +346,12 @@ The persistent case `cc-pilot-016` is another unanimous P/R tie. At fresh primar
 controls N=3, Claim A sensitivity is 0.0/+0.250 and Claim B is 0.0/+0.167. Confirmation remains
 inactive and fixed order advances to missing-evidence control `cc-pilot-017`.
 
+The second missing-evidence control (`cc-pilot-017`) reproduced the first control's exact semantic
+pattern in both passes: M/Q/O covered, no substantive error, P missing execution-sequence scope in
+L, and R missing explicit actuator-acceptance scope in L. This establishes a systematic P v2
+control-composition defect for a future version. Control N=4; primary N and effects are unchanged,
+and fixed order advances to `cc-pilot-018`.
+
 ## Tested development commands
 
 Render one deterministic P-contract regression artifact:

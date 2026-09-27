@@ -505,6 +505,12 @@ Twelfth v2 update (2026-09-27): `cc-pilot-016` retained a valid unexpected abort
 Luna passes. Fresh primary v2 N=12 and controls N=3 give Claim A 0.0/+0.250 and Claim B
 0.0/+0.167. Confirmation remains inactive; fixed order advances to `cc-pilot-017`.
 
+Fourth control update (2026-09-27): `cc-pilot-017` passed all gates and reproduced the prior
+missing-evidence control result in both Luna passes. P and R covered M/Q/O without material error;
+P omitted execution-sequence scope from L and R omitted explicit actuator-acceptance scope.
+Control N=4, primary N=12 and its effects are unchanged, and fixed order advances to
+`cc-pilot-018`.
+
 The now-closed physical/reference cohort attempted 40/100 fixed confirmation-side configurations:
 39 valid, 1 invalid. The method-visible diagnostic dispositions are twenty-seven supported, seven
 `not_triggered`, and five `insufficient`. Run 004 is a valid unexpected transient case: measured

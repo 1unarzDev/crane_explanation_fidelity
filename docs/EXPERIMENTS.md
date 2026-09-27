@@ -1,5 +1,15 @@
 # Experiment Log
 
+## 2026-09-27 — second contract-complete missing-evidence control retained
+
+- **CAPTURE/REFERENCE:** `cc-pilot-017` passed all gates; its sole method-visible masked export has
+  393 commands, zero odometry samples, and an aborted action. The unmasked source is evaluator-only.
+- **SEMANTICS:** both passes reproduced the first missing-evidence result: P and R covered M/Q/O
+  without material error, while P omitted execution-sequence scope from L and R omitted explicit
+  actuator-acceptance scope. No retry or relabeling occurred.
+- **BOUNDARY:** control N=4; primary N=12 and its effects are unchanged. Fixed order advances to
+  `cc-pilot-018`.
+
 ## 2026-09-27 — twelfth fresh P-contract v2 comparison retained
 
 - **CAPTURE/REFERENCE:** `cc-pilot-016` retained a valid unexpected abort and independently found
