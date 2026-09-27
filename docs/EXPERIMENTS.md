@@ -1,5 +1,17 @@
 # Experiment Log
 
+## 2026-09-27 — concise v1 screen stopped before Luna evaluation
+
+- **PAIRS:** 18/18 valid inspected captures received one deterministic P-v5 answer and one isolated
+  R-concise answer; zero transport failures.
+- **WORD GATE:** P range 51--78, median 60; R range 61--116, median 81.5. Both were at or below 120
+  words in every case.
+- **STOP:** user-directed closeout before 72 planned Luna calls because the proposed research angle
+  was too weak. No semantic output was opened or generated.
+- **RESULT:** Claim A and Claim B effects are `null`; candidate not promoted; confirmation N=0,
+  alpha bound=0, replication unstarted. Preserve all calls and do not infer semantic superiority
+  from shorter answers alone.
+
 ## 2026-09-27 — contract-complete concise v1 screen frozen
 
 - **HYPOTHESIS:** deterministic checked composition may improve complete supported diagnostic

@@ -1,5 +1,16 @@
 # Decision Log
 
+## 2026-09-27 — close concise-contract direction before semantic scoring
+
+- **Decision:** stop the P-contract-v5-concise screen at the user's direction; do not spend 72 Luna
+  calls or consume fresh configurations on a weakly motivated word-budget claim.
+- **Retained work:** all 18 one-shot pairs completed without transport failure. P used 51--78 words
+  and R used 61--116; both conditions met the 120-word limit in every case.
+- **Unanswered:** no semantic labels were generated, so there is no Claim A or Claim B effect,
+  promotion result, significance claim, or evidence that compact P was more complete than compact R.
+- **Disposition:** retain the candidate, prompt, calls, and deterministic measurements as inspected
+  development artifacts. Confirmation N, alpha, and replication remain zero/unbound/unstarted.
+
 ## 2026-09-27 — screen one budgeted contract-complete candidate
 
 - **Decision:** test P-contract-v5-concise against an equally capped strong R-contract on the 18

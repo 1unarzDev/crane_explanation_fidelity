@@ -5,6 +5,18 @@ Updated: 2026-09-27
 Protocol: `diagnostic-sequential-protocol-v2`
 Current status: **P-CONTRACT-V4 PILOT COMPLETE / NOT PROMOTED / CONFIRMATION N=0**
 
+## Concise-contract screen closed by direction (2026-09-27)
+
+P-contract-v5-concise and the equally capped R baseline completed 18 inspected-case pairs with no
+transport failure. P answers contained 51--78 whitespace-delimited words (median 60); R answers
+contained 61--116 (median 81.5). Both met the 120-word ceiling in all 18 cases. The user judged
+this proposed direction too weak and requested closeout before the planned 72 Luna calls.
+
+Accordingly, no semantic endpoint was scored and no P advantage, promotion, statistical result, or
+replication result exists for v5. The outputs are retained, but this screen must not be resumed or
+treated as evidence for Claim A/B without a new explicit direction. Confirmation remains N=0 and
+alpha remains unbound.
+
 ## Causal-restraint pilot closed (2026-09-27)
 
 The resumed semantic pilot completed one new causal-prompt R call for every one of the 18 valid

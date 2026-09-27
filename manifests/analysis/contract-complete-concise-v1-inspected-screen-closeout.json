@@ -1,0 +1,59 @@
+{
+  "schema": "crane-contract-complete-concise-screen-closeout/v1",
+  "recorded_date": "2026-09-27",
+  "status": "CLOSED_BEFORE_SEMANTIC_EVALUATION_BY_USER_DIRECTION",
+  "reason": "The user judged the proposed bounded-verbosity direction too weak and requested closeout before providing a new direction.",
+  "predeclaration": {
+    "path": "research/explanation_fidelity/experiment_configs/development/contract-complete-concise-v1-inspected-screen-predeclaration.json",
+    "sha256": "9c1589185d44ac2c962a1bd145e02879de71dc7ff801dd169020dc9a259455db"
+  },
+  "candidate": {
+    "id": "p-contract-v5-concise-development",
+    "renderer_sha256": "0921e0c7aadca79676469030204abfdb60d48b40f3d6a7f204d606c5be65f03d"
+  },
+  "baseline": {
+    "id": "r-contract-concise-v1-development",
+    "runner_sha256": "04a4a4671f400559c129f2e47fdef3c60b51617c9b3e4c074bf7fca68350e552",
+    "prompt_sha256": "943e5e57dd82d317158e9b5d21fcc99eec905266a4376953af509829b5332d02"
+  },
+  "execution": {
+    "valid_pairs": 18,
+    "primary_pairs": 14,
+    "control_pairs": 4,
+    "new_r_calls": 18,
+    "transport_failures": 0,
+    "pair_hash_list_rule": "sha256sum over response-pair files in lexical path order, then SHA-256 of that line-oriented list",
+    "pair_hash_list_sha256": "b013c9359bedaf6b291241ad329a49ff9b7b2e3222f6ec8ed9e2c158c882ac72"
+  },
+  "deterministic_word_measurement": {
+    "maximum_words": 120,
+    "count_rule": "Python len(final_answer.split())",
+    "P": {"minimum": 51, "median": 60.0, "maximum": 78, "violations": 0},
+    "R": {"minimum": 61, "median": 81.5, "maximum": 116, "violations": 0}
+  },
+  "resource_measurement": {
+    "P_model_calls": 0,
+    "R_model_calls": 18,
+    "R_median_latency_ms": 80003.2525655,
+    "R_total_usage": {
+      "input_tokens": 3752755,
+      "cached_input_tokens": 3261440,
+      "output_tokens": 55986,
+      "reasoning_output_tokens": 24170,
+      "cache_write_input_tokens": 0
+    }
+  },
+  "semantic_evaluation": {
+    "luna_calls": 0,
+    "claim_A_effect": null,
+    "claim_B_effect": null,
+    "promotion_decision": "NOT_EVALUATED_AND_NOT_PROMOTED"
+  },
+  "confirmation": {
+    "activated": false,
+    "independent_n": 0,
+    "alpha_bound": 0.0,
+    "replication_started": false
+  },
+  "disposition": "Preserve outputs as inspected development artifacts. Do not resume this screen or infer a semantic advantage without a new explicit user direction."
+}
