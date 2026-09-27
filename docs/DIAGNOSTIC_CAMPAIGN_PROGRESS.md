@@ -391,6 +391,12 @@ unit decisions, zero material false acceptances/rejections, and zero protected-c
 pass. Secondary subtype/category mismatches remain reportable. No pilot response has yet been
 scored, fresh pilot N remains zero, and no confirmation alpha was consumed.
 
+Fresh canary update (2026-09-27): fixed-order `cc-pilot-001` completed one valid physical attempt
+and independent reference. Production and independent calculations agree on an 18--28 s
+0.260/0.000 m/s discrepancy, 30--31 s recovery to 0.24975 m/s, and eventual action success. One
+deterministic P-contract and one isolated R-contract response now exist. Physical/answer N is 1;
+reconciled semantic N remains 0 because the contract-specific packet and four Luna calls are next.
+
 The now-closed physical/reference cohort attempted 40/100 fixed confirmation-side configurations:
 39 valid, 1 invalid. The method-visible diagnostic dispositions are twenty-seven supported, seven
 `not_triggered`, and five `insufficient`. Run 004 is a valid unexpected transient case: measured

@@ -258,14 +258,14 @@ Current checkpoint:
 | Known omission regressions | Healthy command+motion, recovery/outcome limits, geometry cost threshold pass |
 | Baseline | R-contract prompt and development runner implemented; no fresh call yet |
 | Field evaluator | Deterministic Claim A/B scorer implemented; corrected v2 qualified 12/12 endpoints in each pass with 47/48 unit decisions |
-| Fresh pilot | N=0; controls=0; fixed 15-diagnosable/4-control schedule and resource predeclaration frozen |
+| Fresh pilot | Physical/answer N=1, reconciled semantic N=0, controls=0; fixed 15-diagnosable/4-control schedule |
 | Confirmation | Not frozen; no alpha newly consumed; no look or effect |
 | Replication | Reserve untouched; criterion pending confirmation freeze |
 | Manuscript | Historical status corrected; contract-complete results remain pending |
 
-Next executable action: run the first fixed-order configuration as an end-to-end technical canary,
-then continue the bounded pilot through capture, P/R generation, two-pass Luna scoring, and
-reconciliation.
+Next executable action: finish the first fixed-order canary by building its evidence-closed
+contract packet, running four isolated Luna calls, and reconciling the two methods. Then continue
+the bounded pilot in fixed order.
 
 ## Tested development commands
 

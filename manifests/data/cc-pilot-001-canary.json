@@ -1,0 +1,60 @@
+{
+  "schema": "crane-contract-complete-pilot-canary/v1",
+  "pilot_id": "contract-complete-diagnostic-communication-v1-fresh-pilot",
+  "run_id": "cc-pilot-001",
+  "cluster_id": "cc-pilot-cluster-001",
+  "date": "2026-09-27",
+  "status": "ANSWERS_READY_ANNOTATION_PACKET_PENDING",
+  "fresh_independent_N": 1,
+  "confirmatory_N": 0,
+  "family": "measured_response_recovery",
+  "physical_admission": {
+    "attempts": 1,
+    "worker_result_valid": true,
+    "player_build_audit_accepted": true,
+    "scenario_binding_audit_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "navigation_status": "succeeded",
+    "transport_endpoint_errors": 0
+  },
+  "independent_measurement": {
+    "disposition": "supported",
+    "healthy_interval_s": [0.0, 5.0],
+    "healthy_commanded_mps": 0.26,
+    "healthy_measured_mps": 0.2597399950027466,
+    "event_interval_s": [18.0, 28.0],
+    "event_commanded_mps": 0.26,
+    "event_measured_mps": 0.0,
+    "recovery_interval_s": [30.0, 31.0],
+    "recovered_commanded_mps": 0.25,
+    "recovered_measured_mps": 0.24974999569063366,
+    "recovered_response_ratio": 0.9615384634468508,
+    "action_status": "succeeded",
+    "follow_path_failures": 2,
+    "wait_invocations": 2
+  },
+  "artifacts": {
+    "robot_visible_diagnostic": {
+      "path": "data/robot_visible/dev/cc-pilot-001/command-motion-diagnostic-v3.json",
+      "sha256": "f46ab13ee93b3a69b199a45b8afdef1c42f9e0e44c040b2b0606d87c4603ca68"
+    },
+    "independent_reference": {
+      "path": "data/evaluator_only/dev/cc-pilot-001/command-motion-independent-reference-v1.json",
+      "sha256": "36e122138aa7b1feed89e80de5279fbba6989c55a60585385c4007be58c114dc"
+    },
+    "response_pair": {
+      "path": "model_outputs/contract-complete-diagnostic-communication-v1-pilot/response-pairs/cc-pilot-001.json",
+      "sha256": "157567951dbb46d4eee068e89a844a5b7ca70fd3756c0734f8778faaf874a368"
+    }
+  },
+  "method_execution": {
+    "P_contract_generation": "deterministic",
+    "R_contract_model": "gpt-6-sol",
+    "R_contract_reasoning_effort": "high",
+    "R_contract_calls": 1,
+    "R_contract_latency_ms": 85536.382055,
+    "judge_calls": 0
+  },
+  "interpretation": "Physical capture, independent computation, P rendering, and R generation pass. The first R answer adds a deterministically verified recovered-command median of 0.25 m/s from the allowed raw stream. A contract-specific evidence-closed packet adapter is still required before the four Luna calls; no semantic outcome has been opened.",
+  "next_state": "BUILD_CONTRACT_PACKET_AND_RUN_FOUR_ISOLATED_LUNA_CALLS"
+}

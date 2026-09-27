@@ -7408,3 +7408,15 @@
   complete endpoints and 47/48 exact unit statuses, with zero material false acceptance, zero
   material false rejection, zero protected-causal failure, and zero call failure. Secondary
   answerability/abstention/category-name mismatches are retained under the predeclared tolerance.
+
+# 2026-09-27 — contract-complete pilot canary physical capture and answers
+
+- **CAPTURE:** fixed-order `cc-pilot-001` completed once with the pinned headless land build,
+  14/14 scenario-binding checks, valid worker result, zero endpoint errors, and action success.
+- **REFERENCE:** production and independent computations agree on healthy 0.260/0.25974 m/s,
+  event 0.260/0.000 m/s over 18--28 s, recovery to 0.24975 m/s over 30--31 s, and two Wait starts.
+- **ANSWERS:** deterministic P-contract and one `gpt-6-sol` high-reasoning R-contract response are
+  immutable. R's extra recovered command median (0.250 m/s) was independently checked against the
+  allowed raw stream rather than rejected for absence from the compact reference.
+- **STATUS:** physical/answer N=1, semantic/reconciled N=0, confirmation N=0. Next is the
+  evidence-closed contract packet and four isolated Luna calls; no comparative label was opened.
