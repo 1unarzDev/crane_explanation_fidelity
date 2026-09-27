@@ -1,0 +1,39 @@
+{
+  "artifacts": [
+    {
+      "bytes": 3451586,
+      "path": "/home/lunarz/crane_explain/data/robot_visible/dev/cr-pilot-017/capture/events.jsonl",
+      "sha256": "75bf580d52057c089480c8a228438c6ede45c5656c08ba81e1afaa91504beed7"
+    },
+    {
+      "bytes": 797,
+      "path": "/home/lunarz/crane_explain/data/robot_visible/dev/cr-pilot-017/capture/manifest.json",
+      "sha256": "a7d63cde66fd26215bd883d7cca638a9d21cd850b289643fa67c62b1f8501b66"
+    },
+    {
+      "bytes": 865882,
+      "path": "/home/lunarz/crane_explain/data/evaluator_only/dev/cr-pilot-017/fixture-summary.json",
+      "sha256": "74e628fe1206af02998f59ffabfc2e1201e55b0fc8845ba828f52ea1b81694b0"
+    },
+    {
+      "bytes": 138792,
+      "path": "/home/lunarz/crane_explain/data/evaluator_only/dev/cr-pilot-017/worker-0/result.json",
+      "sha256": "abc10cb25064e20bd1154f08ca7ff489a9cd470ba4f6ac1a85888cfd891d3722"
+    },
+    {
+      "bytes": 1174,
+      "path": "/home/lunarz/crane_explain/data/evaluator_only/dev/cr-pilot-017/scenario-binding-audit.json",
+      "sha256": "977e252d8039d2749ef48013090cbc0d8ae3b58fa372f1d346022cb111bd9c86"
+    }
+  ],
+  "attempt_id": "cr-pilot-017-attempt-001",
+  "cluster_id": "cr-pilot-cluster-017",
+  "job_id": "cr-pilot-017-capture",
+  "reason": "The scenario binding and episode identity passed, but the immutable Unity worker rejected four stale actions under the pinned bounded-lag policy and set worker valid=false. The recording therefore fails the physical timing-validity gate and contributes no physical or semantic cluster.",
+  "retry": {
+    "authorized": false,
+    "replacement_authorized": false,
+    "reason": "The frozen pilot assigns one physical attempt per scheduled configuration and prohibits replacement or quality-driven retry."
+  },
+  "schema": "crane-diagnostic-batch-technical-failure/v1"
+}
