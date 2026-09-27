@@ -1,5 +1,17 @@
 # Experiment Log
 
+## 2026-09-27 — second fresh P-contract v2 cluster retains endpoint disagreement
+
+- **CAPTURE:** `cc-pilot-003` passed every physical/evidence gate and independently supports an
+  11--21 s persistent discrepancy (0.260 versus 0.000 m/s) followed by abort.
+- **SEMANTICS:** P passed both claims in both Luna passes. R passed both in pass 1; pass 2 marked
+  “The Wait invocations did not yield a successful action” materially unsupported because Wait
+  invocation and eventual abort do not establish each Wait result.
+- **DISPOSITION:** the phrase can also refer to the overall aborted action, so the disagreement is
+  unresolved under frozen rules. No relabel, retry, or third vote occurred. Across two fresh v2
+  clusters, pass-specific Claim A and B advantages are 0.0 and +0.5; this is development
+  sensitivity, not significance. Confirmation remains N=0.
+
 ## 2026-09-27 — first fresh P-contract v2 cluster is a complete tie
 
 - **CAPTURE:** fixed-order `cc-pilot-002` passed 14/14 scenario-binding checks and all worker,

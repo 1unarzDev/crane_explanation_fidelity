@@ -268,12 +268,12 @@ Current checkpoint:
 | Known omission regressions | Healthy/event/recovery command+motion, post-recovery outcome scope, causal limits, geometry cost threshold pass |
 | Baseline | R-contract v1 made one fresh call and passed Claim A in both canary passes |
 | Field evaluator | Deterministic Claim A/B scorer implemented; corrected v2 qualified 12/12 endpoints in each pass with 47/48 unit decisions |
-| Fresh pilot | Physical/answer N=2, reconciled semantic N=2, controls=0; v1 has one R win, fresh v2 N=1 is a two-pass tie on both claims |
+| Fresh pilot | Physical/answer N=3, reconciled semantic N=3, controls=0; v1 has one R win; fresh v2 N=2 gives pass-specific effects 0.0 and +0.5 for both claims |
 | Confirmation | Not frozen; no alpha newly consumed; no look or effect |
 | Replication | Reserve untouched; criterion pending confirmation freeze |
 | Manuscript | Historical status corrected; contract-complete results remain pending |
 
-Next executable action: continue the bounded pilot in fixed order at `cc-pilot-003`. New v2
+Next executable action: continue the bounded pilot in fixed order at `cc-pilot-004`. New v2
 comparisons use cases whose contents did not influence the repair; confirmation remains prohibited
 until the bounded pilot and atomic freeze are complete.
 

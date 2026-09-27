@@ -1,0 +1,91 @@
+{
+  "schema": "crane-contract-complete-pilot-canary/v1",
+  "pilot_id": "contract-complete-diagnostic-communication-v1-fresh-pilot",
+  "run_id": "cc-pilot-003",
+  "cluster_id": "cc-pilot-cluster-003",
+  "date": "2026-09-27",
+  "status": "DEVELOPMENT_RECONCILED_ENDPOINT_DISAGREEMENT_RETAINED",
+  "schedule_order": 3,
+  "fresh_v2_development_N": 2,
+  "confirmatory_N": 0,
+  "family": "persistent_command_motion_discrepancy",
+  "physical_admission": {
+    "attempts": 1,
+    "worker_result_valid": true,
+    "player_build_audit_accepted": true,
+    "scenario_binding_audit_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "navigation_status": "aborted",
+    "transport_endpoint_errors": 0,
+    "unexpected_outcome_retained": true
+  },
+  "independent_measurement": {
+    "disposition": "supported",
+    "healthy_interval_s": [0.0, 5.0],
+    "healthy_commanded_mps": 0.26,
+    "healthy_measured_mps": 0.2597399950027466,
+    "event_interval_s": [11.0, 21.0],
+    "event_commanded_mps": 0.26,
+    "event_measured_mps": 0.0,
+    "response_recovery_interval_s": null,
+    "action_status": "aborted",
+    "follow_path_failures": 2,
+    "wait_invocations": 2
+  },
+  "artifacts": {
+    "robot_visible_diagnostic": {"path": "data/robot_visible/dev/cc-pilot-003/command-motion-diagnostic-v3.json", "sha256": "0d8d5d7b0d2bc45823c1b5d6cbd193eee1e8e93ff58dc3f3f99ebb244563b642"},
+    "independent_reference": {"path": "data/evaluator_only/dev/cc-pilot-003/command-motion-independent-reference-v1.json", "sha256": "2cd4b2090eed176a2966d960decd56ff0d06b8d337e70340c1d25d5229d82802"},
+    "contract_reference": {"path": "data/evaluator_only/dev/cc-pilot-003/contract-complete-annotation-reference-v1.json", "sha256": "6a1a906aa1fb460fcccd12dcf7bbec1992de0e0970726ef79ae8950fc6d454b1"},
+    "response_pair": {"path": "model_outputs/contract-complete-diagnostic-communication-v1-pilot/response-pairs/cc-pilot-003.json", "sha256": "cc9a6ba371dd222fcaa500557c0d047972c434247213a57bcf8b9061510cb2ff"},
+    "blinded_annotation_packet": {"path": "model_outputs/annotation_packets/contract-complete-v1-pilot/cc-pilot-003.jsonl", "sha256": "3410f3750d4b9f0d68e4e4919f56597a7b61e9641b2131fb85b5ee4cace88e20"},
+    "annotation_key": {"path": "data/evaluator_only/annotation_keys/contract-complete-v1-pilot/cc-pilot-003.json", "sha256": "e9c89ec789fee398781858445e61bafa6a0cee2067b7a4b924cb3372b0fbf1e0"},
+    "luna_development_summary": {"path": "model_outputs/luna-model-judge-v1/contract-complete-v1-pilot/cc-pilot-003/development-summary.json", "sha256": "4123fd012659ebe05c35923163358493213552f496bb860de07517aba792349b"}
+  },
+  "method_execution": {
+    "P_contract_version": "p-contract-v2-development",
+    "P_contract_generation": "deterministic",
+    "R_contract_version": "r-contract-v1-development",
+    "R_contract_model": "gpt-6-sol",
+    "R_contract_reasoning_effort": "high",
+    "R_contract_calls": 1,
+    "R_contract_latency_ms": 59273.415355,
+    "judge_calls": 4,
+    "judge_call_failures": 0,
+    "qualified_judge_release": "contract-complete-luna-qualification-v2"
+  },
+  "development_semantic_result": {
+    "pass_1": {
+      "claim_a_P": true,
+      "claim_a_R": true,
+      "claim_b_substantive_error_P": false,
+      "claim_b_substantive_error_R": false
+    },
+    "pass_2": {
+      "claim_a_P": true,
+      "claim_a_R": false,
+      "claim_b_substantive_error_P": false,
+      "claim_b_substantive_error_R": true
+    },
+    "endpoint_disagreement": {
+      "condition": "R-contract",
+      "response_span": "The Wait invocations did not yield a successful action.",
+      "pass_1": "supported/no material error",
+      "pass_2": "unsupported material incorrect_failure_chain",
+      "resolution": "UNRESOLVED_UNDER_FROZEN_RULES",
+      "reason": "The sentence can refer to the eventual aborted navigation action or imply the unestablished result of each Wait invocation; deterministic facts do not settle its semantic scope."
+    },
+    "confirmatory_alpha_consumed": 0.0
+  },
+  "cumulative_v2_sensitivity_after_two_clusters": {
+    "claim_a_P_minus_R": {
+      "pass_1": 0.0,
+      "pass_2": 0.5
+    },
+    "claim_b_R_minus_P_error_risk": {
+      "pass_1": 0.0,
+      "pass_2": 0.5
+    }
+  },
+  "interpretation": "P-contract v2 is complete and error-free in both passes. R is complete and error-free in pass 1 but fails both claims in pass 2 because of one semantically ambiguous failure-chain sentence. This is promising only under one repeated measurement and remains explicitly judge-sensitive development evidence.",
+  "next_state": "CONTINUE_FIXED_PILOT_ORDER_AT_CC_PILOT_004"
+}

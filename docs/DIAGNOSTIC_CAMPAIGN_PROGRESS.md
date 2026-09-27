@@ -406,6 +406,13 @@ passed M/Q/O/L completeness without material error in both passes. Thus fresh v2
 is a tie for both claims. Total pilot physical/answer and reconciled semantic N are 2, controls are
 0, confirmation N is 0, and fixed order advances to `cc-pilot-003`.
 
+Second v2 update (2026-09-27): `cc-pilot-003` also passed all physical/evidence gates and supports
+an independent 11--21 s persistent discrepancy. P passed both claims in both Luna passes; R tied
+in pass 1 but pass 2 marked one ambiguous Wait-to-action sentence materially unsupported. The
+field is retained unresolved because deterministic facts do not settle its semantic scope. Fresh
+v2 N=2 therefore has pass-specific differences 0.0 and +0.5 for both claims, controls remain 0,
+and confirmation N remains 0. Fixed order advances to `cc-pilot-004`.
+
 The now-closed physical/reference cohort attempted 40/100 fixed confirmation-side configurations:
 39 valid, 1 invalid. The method-visible diagnostic dispositions are twenty-seven supported, seven
 `not_triggered`, and five `insufficient`. Run 004 is a valid unexpected transient case: measured
