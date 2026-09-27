@@ -1,5 +1,24 @@
 # Experiment Log
 
+## 2026-09-27 — v4 canary setup failure retained; bounded retry authorized
+
+- **ATTEMPT 1:** fixed-order `cc-v4-pilot-001` launched once with the original v7 player. Unity
+  rejected catalog ID `v7` in `CraneLandProvingGround.ResolveManifestResource` before proving-
+  ground construction. Nav2 subsequently emitted commands against the unconfigured scene, but
+  Unity accepted zero actuation actions, displacement was zero, and no evaluator truth existed.
+- **DISPOSITION:** `TECHNICAL_FAILURE`; the raw robot-visible/evaluator-only artifacts and hashes
+  are retained. It contributes no physical cluster, response, Luna label, effect estimate, or
+  alpha use and will not be overwritten.
+- **REPAIR:** a new fast regression reproduced the runtime allowlist mismatch before the one-line
+  fix. The full fixture/catalog contract suite passes 34 tests. CRANE commit
+  `a868b7a41feac689d201cdd3fd7e3c2ad09d48ef` is pushed.
+- **PLAYER:** immutable `CRANE-Worker-v7a` proves that exact clean commit. Build manifest
+  `af3d8005...b557`, managed assemblies `97944d4e...3af8`, player
+  `a7ad5b15...e292`, and runtime resources `e3c2222d...ac36` pass the build/catalog audit.
+- **RETRY POLICY:** exactly one setup retry is authorized as `cc-v4-pilot-001-attempt-002`, using
+  the same scheduled layout, intervention, mask, question, and cluster identity. Only the runtime
+  resolver and player identity change; the retry is not a new independent configuration.
+
 ## 2026-09-27 — P-contract v4 two-contract development pilot frozen
 
 - **RATIONALE:** v3 repaired the repeated missing-motion limitation omission but could not support
@@ -13,8 +32,8 @@
   interpreting labels.
 - **BOUNDARY:** development only; confirmation N=0, candidate-revision alpha remains unbound, and
   no prior mask, layout, answer, or Luna label becomes fresh evidence.
-- **NEXT:** rebuild the immutable land player with v7, run `cc-v4-pilot-001`, and process it through
-  masked independent reference, P/R response, and two-pass Luna canary.
+- **NEXT:** run the authorized technical retry `cc-v4-pilot-001-attempt-002`, then process an
+  admitted capture through masked independent reference, P/R response, and two-pass Luna canary.
 
 ## 2026-09-27 — P-contract v3 bounded repair implemented after pilot close
 

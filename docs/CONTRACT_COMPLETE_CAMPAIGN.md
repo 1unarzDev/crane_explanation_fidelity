@@ -288,10 +288,14 @@ Historical v2 checkpoint (closed; retained for audit):
 | Manuscript | Historical status corrected; contract-complete results remain pending |
 
 Current prospective checkpoint: P-contract v4 and the unchanged strong R-contract are frozen for
-the development-only `contract-limit-v4-fresh-development-pilot`. The next executable action is
-the v7 build/capture canary `cc-v4-pilot-001`, followed by independent masked reference, paired
-response, and two-pass Luna processing. Confirmation remains prohibited until the bounded pilot,
-missing-command judge extension, and a separate atomic freeze are complete.
+the development-only `contract-limit-v4-fresh-development-pilot`. The first v7 canary attempt is a
+retained setup failure: the runtime resolver omitted v7 although the catalog was embedded. The
+minimal fix and regression are committed in CRANE `a868b7a41feac689d201cdd3fd7e3c2ad09d48ef`;
+the clean `CRANE-Worker-v7a` replacement passes the exact build/catalog audit. The next executable
+action is the single authorized same-cluster retry `cc-v4-pilot-001-attempt-002`, followed by
+independent masked reference, paired response, and two-pass Luna processing. Confirmation remains
+prohibited until the bounded pilot, missing-command judge extension, and a separate atomic freeze
+are complete.
 
 The first seven fresh v2 comparisons contain six complete ties and one pass-specific unresolved R
 failure. This does not justify confirmation yet: it shows that strengthened R routinely performs

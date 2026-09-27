@@ -375,6 +375,14 @@ geometry strata are balanced. All are fresh development-only layouts; no replica
 prior pilot layout is reused. The first physical action is `cc-v4-pilot-001`; no v4 physical,
 response, annotation, or effect result exists at this freeze.
 
+The first physical attempt is now retained as a setup failure, not a cluster. The original player
+accepted the v7 argument outside Unity but its runtime proving-ground resolver allowlisted only
+v1--v6. Consequently no v7 scene or evaluator truth was constructed, Unity accepted no actuation,
+and the robot did not move. A source regression is green after adding v7 to that resolver, and a
+new immutable `CRANE-Worker-v7a` passes exact catalog, source, scene, build-manifest, assembly, and
+clean-commit provenance checks. One retry of the same scheduled configuration is authorized as
+attempt 2; v4 physical N, response N, semantic N, confirmation N, and alpha use all remain zero.
+
 ## Cumulative focused-campaign evidence
 
 | Quantity | Current value |

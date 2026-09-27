@@ -1,0 +1,47 @@
+{
+  "artifacts": [
+    {
+      "bytes": 53839,
+      "path": "/home/lunarz/crane_explain/data/evaluator_only/dev/cc-v4-pilot-001/build-provenance.json",
+      "sha256": "4a64f3746923e64c7dba438a1d600fe1def6cc7bff1226309531e21248c35556"
+    },
+    {
+      "bytes": 1375,
+      "path": "/home/lunarz/crane_explain/data/evaluator_only/dev/cc-v4-pilot-001/player-build-audit.json",
+      "sha256": "cb6916230934d7eec8231b985a75eedce6ad682116a7bf909c4a299921f5f940"
+    },
+    {
+      "bytes": 657462,
+      "path": "/home/lunarz/crane_explain/data/evaluator_only/dev/cc-v4-pilot-001/fixture-summary.json",
+      "sha256": "d9e96ff6ff5c51200688faff6732926cb223159a8c95c2bb48038481eadecda8"
+    },
+    {
+      "bytes": 13671,
+      "path": "/home/lunarz/crane_explain/data/evaluator_only/dev/cc-v4-pilot-001/worker-0/player.log",
+      "sha256": "3c2fc7a58823acd4aad2dd08653c9e9064c4738681d4fe3e22faae210c535a96"
+    },
+    {
+      "bytes": 138182,
+      "path": "/home/lunarz/crane_explain/data/evaluator_only/dev/cc-v4-pilot-001/worker-0/result.json",
+      "sha256": "9c7ee685e3213b80ca1c381a1af15e6c67d45a5ed7acdc6c296cb41da467722e"
+    },
+    {
+      "bytes": 803,
+      "path": "/home/lunarz/crane_explain/data/robot_visible/dev/cc-v4-pilot-001/capture/manifest.json",
+      "sha256": "70b48be6d9e163b9c745fce358d87b7bd8d5417491a29607271733e86628a44e"
+    }
+  ],
+  "attempt_id": "cc-v4-pilot-001-attempt-001",
+  "cluster_id": "cc-v4-pilot-cluster-001",
+  "job_id": "cc-v4-pilot-001-capture",
+  "reason": "The v7 catalog bytes were embedded and the capture runner accepted v7, but CraneLandProvingGround.ResolveManifestResource still rejected catalog ID v7 before scene construction. The player therefore wrote no evaluator truth, accepted no actuation, and produced zero displacement. This retained setup failure contributes no physical or semantic cluster. One retry of the same scheduled configuration is authorized only after the source regression passes and a new clean, provenance-bound player is audited.",
+  "retry": {
+    "authorized_attempt_id": "cc-v4-pilot-001-attempt-002",
+    "changes_permitted": [
+      "runtime catalog resolver accepts the already frozen v7 catalog",
+      "new immutable player and provenance identities"
+    ],
+    "scientific_changes_permitted": false
+  },
+  "schema": "crane-diagnostic-batch-technical-failure/v1"
+}
