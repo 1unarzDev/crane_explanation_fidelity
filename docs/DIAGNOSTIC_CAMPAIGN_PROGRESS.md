@@ -3,7 +3,29 @@
 Updated: 2026-09-26
 
 Protocol: `diagnostic-sequential-protocol-v2`
-Current status: **FOCUSED CAMPAIGN ACTIVE / SEMANTIC N = 0**
+Current status: **FOCUSED COLLECTION CLOSED / POST-HOC TRANSPORT-CORRECTED N=24 SENSITIVITY AVAILABLE / REGISTERED RELEASE REMAINS INVALID**
+
+## Opaque-ID transport correction and first-look sensitivity (2026-09-26)
+
+The five retained invalid Luna calls in `cm-land-conf-062`, `cm-land-conf-067`, and
+`cm-land-conf-078` were audited without opening a new judge call. Every output was complete,
+parseable, and schema-complete; each had failed only because Luna malformed the requested opaque
+response ID. An additive `luna-opaque-response-id-transport-repair-v1` derivative replaces that
+single transport field from the immutable request envelope, verifies that no semantic payload
+field changes, and records original/repaired hashes. The original five call records remain
+immutable and invalid. The repaired derivatives validate as 12/12 judgments across the three
+affected clusters; the two primary clusters, 062 and 067, now have separately marked post-hoc
+reconciliations. Cluster 078 remains a control and is not promoted into primary N.
+
+The frozen monitor was run at the exact N=24 ordered-prefix boundary as a post-hoc sensitivity,
+not as the original registered release. Under the required least-favourable disagreement mapping,
+P scored 0/24 and R 5/24 on complete supported diagnostic communication (difference -0.2083;
+anytime-valid 98% confidence sequence [-0.5331, 0.0800]). Under the most-favourable mapping, P
+scored 8/24 and R 2/24 (difference +0.25; interval [-0.1838, 0.6281]). Neither mapping establishes
+a positive benefit. The width and sign reversal expose substantial two-pass semantic uncertainty;
+the correction enables analysis but does not support statistical significance. Because the frozen
+usable-answer retry rule did not authorize post-hoc ID correction, these results are explicitly a
+sensitivity analysis and do not retroactively validate the registered first look.
 
 Closeout checkpoint (2026-09-26): all 24 independent references for the registered first look were
 built before method responses. One immutable P/R pair was then generated in physical order for 18

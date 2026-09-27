@@ -7324,3 +7324,27 @@
 - **OBSERVED THROUGHPUT:** rows 089--100 completed physical capture and derivation in about
   22 minutes of the resumed run (approximately 32.7 configurations/hour) while response and judge
   queues overlapped. This is an operational measurement, not a method-quality result.
+
+# 2026-09-26 — deterministic opaque-ID repair and post-hoc N=24 sensitivity
+
+- **FAILURE AUDIT:** all five invalid Luna records were complete JSON judgments with the full
+  required schema. Their sole validator error was an `opaque_response_id` mismatch: one inserted
+  UUID-like punctuation pattern (062), two single-character corruptions (067), and two inserted
+  spaces (078). No semantic field, required unit, claim, or rationale was absent.
+- **REPAIR:** `luna-opaque-response-id-transport-repair-v1` derives the expected ID only from the
+  immutable request envelope and unique blinded-packet inventory, changes exactly that field,
+  reruns the unchanged validator, and records byte/content hashes. It rejects non-ID failures,
+  ambiguous mappings, incomplete packets, and any remaining schema defect. No Luna call, third
+  vote, answer rewrite, or semantic relabeling occurred. Original failed records remain intact.
+- **VALIDATION:** the three corrected cluster summaries contain 12/12 valid judgments. Primary
+  clusters 062 and 067 reconcile through both original pass identities; control 078 remains outside
+  primary N. Seventeen targeted runner/coordinator/repair regressions pass.
+- **POST-HOC ANALYSIS:** the exact ordered primary prefix reaches N=24 and ends at
+  `cm-land-conf-068`. Least-favourable scoring gives P=0/24, R=5/24, difference -0.2083 and 98%
+  anytime-valid bounds [-0.5331, 0.0800]. Most-favourable scoring gives P=8/24, R=2/24,
+  difference +0.25 and bounds [-0.1838, 0.6281]. Neither establishes Level A or Level B.
+- **INFERENCE BOUNDARY:** this is a transparent post-hoc transport-corrected sensitivity analysis.
+  The original registered no-retry release remains invalid, so the repaired analysis cannot be
+  reported as the prespecified confirmatory result. It nevertheless shows that the repaired labels
+  do not create a statistically significant finding and that repeated-pass uncertainty is outcome
+  consequential.

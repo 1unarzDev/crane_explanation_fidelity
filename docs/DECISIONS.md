@@ -2220,3 +2220,14 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   units, then test it once on fresh independent scenario configurations. The current answers and
   judgments remain immutable and cannot be rescored as successor evidence. Confirmatory semantic
   N and alpha remain zero.
+
+## 2026-09-26 — permit deterministic ID-only derivatives, not semantic repair
+
+- Decision: permit an additive post-hoc derivative for the five Luna judgments rejected solely by
+  malformed opaque response IDs. Preserve the original records and frozen no-retry disposition.
+- Boundary: the derivative may replace only `opaque_response_id` with the uniquely bound value in
+  the immutable request envelope and blinded packet. It must reject every other validator failure,
+  semantic/schema defect, ambiguous mapping, or changed semantic payload. It cannot call Luna.
+- Inference: use the derivatives only for an explicitly labeled sensitivity analysis. Do not call
+  it the original registered release or reset the error ledger. Both conservative disagreement
+  bounds fail to establish a positive benefit, so there is no significance or replication claim.
