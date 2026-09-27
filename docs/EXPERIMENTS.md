@@ -1,5 +1,15 @@
 # Experiment Log
 
+## 2026-09-27 — fifth tie in six fresh v2 comparisons
+
+- **CAPTURE:** `cc-pilot-007` passed authoritative worker, transport, build, and scenario-binding
+  checks. The unexpected abort is retained. Independent computation supports a 0.260/0.000 m/s
+  discrepancy over 17--27 s without measured recovery.
+- **SEMANTICS:** both methods passed both claims in both isolated Luna passes.
+- **INTERPRETATION:** fresh v2 N=6 has pass effects 0.0 and +0.167; five comparisons are ties and
+  the sole apparent advantage remains unresolved. Confirmation stays inactive and `cc-pilot-008`
+  is next.
+
 ## 2026-09-27 — third consecutive fresh v2 tie
 
 - **CAPTURE:** `cc-pilot-006` passed all gates and independently supports a 0.260/0.000 m/s

@@ -435,6 +435,13 @@ effects of 0.0 and +0.20; four clusters are complete ties and the only advantage
 unresolved `cc-pilot-003` R label. This weakens the case for freezing confirmation without
 invalidating the ongoing bounded pilot. Confirmation N and alpha remain zero; `cc-pilot-007` is next.
 
+Sixth v2 update (2026-09-27): `cc-pilot-007` passed worker, transport, build, and all 14 binding
+checks. Its expected-status mismatch is retained rather than excluded. Independent computation
+supports a 17--27 s 0.260/0.000 m/s persistent discrepancy without recovery and action abort. Both
+methods passed both claims in both Luna passes. Fresh v2 N=6 therefore has effects of 0.0 and
++0.167 by pass; five cases are ties and the remaining advantage is unresolved. Confirmation and
+alpha remain zero, and fixed order advances to `cc-pilot-008`.
+
 The now-closed physical/reference cohort attempted 40/100 fixed confirmation-side configurations:
 39 valid, 1 invalid. The method-visible diagnostic dispositions are twenty-seven supported, seven
 `not_triggered`, and five `insufficient`. Run 004 is a valid unexpected transient case: measured
