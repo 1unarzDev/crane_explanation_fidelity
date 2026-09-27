@@ -385,6 +385,12 @@ closed-campaign or replication-reserve overlap. The M/Q/O/L Luna extension is fr
 cases and two isolated passes (24 planned physical judge calls). Neither qualification nor pilot
 execution has begun; fresh pilot and confirmation N remain zero and no alpha was consumed.
 
+Judge update (2026-09-27): the first contract-specific qualification failed and is retained. Its
+corrected, prospectively frozen v2 qualified in both passes: 12/12 endpoint decisions, 47/48 exact
+unit decisions, zero material false acceptances/rejections, and zero protected-causal failures per
+pass. Secondary subtype/category mismatches remain reportable. No pilot response has yet been
+scored, fresh pilot N remains zero, and no confirmation alpha was consumed.
+
 The now-closed physical/reference cohort attempted 40/100 fixed confirmation-side configurations:
 39 valid, 1 invalid. The method-visible diagnostic dispositions are twenty-seven supported, seven
 `not_triggered`, and five `insufficient`. Run 004 is a valid unexpected transient case: measured

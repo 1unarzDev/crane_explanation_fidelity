@@ -7404,3 +7404,7 @@
   corrected hypothesis semantics, and endpoint/unit/material/causal gates. Answerability subtype,
   abstention subtype, and category-name differences remain visible but nonblocking. The Luna
   prompt, model, reasoning setting, schema, and two-pass/no-quality-retry policy are unchanged.
+- **V2 RESULT:** **QUALIFIED** in both frozen passes. Each pass correctly classified 12/12
+  complete endpoints and 47/48 exact unit statuses, with zero material false acceptance, zero
+  material false rejection, zero protected-causal failure, and zero call failure. Secondary
+  answerability/abstention/category-name mismatches are retained under the predeclared tolerance.

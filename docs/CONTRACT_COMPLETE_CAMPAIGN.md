@@ -140,7 +140,10 @@ expected hypothesis label contradicted the rubric, and secondary category-name m
 incorrectly blocking. All 24 calls and the failed report are retained. A single corrected v2 is
 frozen with entirely fresh cases, question-specific units, corrected unsupported-hypothesis
 semantics, and only endpoint-changing fields as blocking gates; the judge prompt/settings are
-unchanged. V2 targets:
+unchanged. V2 then qualified in both isolated passes: 12/12 endpoint decisions per pass, 47/48
+exact unit decisions per pass, zero material false acceptances/rejections, and zero protected-causal
+failures. Secondary answerability, abstention, and category-name mismatches remain reportable. V2
+targets:
 
 - omission versus fabrication;
 - recovery versus eventual task outcome;
@@ -254,15 +257,15 @@ Current checkpoint:
 | Candidate | `p-contract-v1-development`; deterministic M/Q/O/L compiler implemented |
 | Known omission regressions | Healthy command+motion, recovery/outcome limits, geometry cost threshold pass |
 | Baseline | R-contract prompt and development runner implemented; no fresh call yet |
-| Field evaluator | Deterministic Claim A/B scorer implemented; 12-case/two-pass qualification extension frozen before calls |
+| Field evaluator | Deterministic Claim A/B scorer implemented; corrected v2 qualified 12/12 endpoints in each pass with 47/48 unit decisions |
 | Fresh pilot | N=0; controls=0; fixed 15-diagnosable/4-control schedule and resource predeclaration frozen |
 | Confirmation | Not frozen; no alpha newly consumed; no look or effect |
 | Replication | Reserve untouched; criterion pending confirmation freeze |
 | Manuscript | Historical status corrected; contract-complete results remain pending |
 
-Next executable action: commit the prospective freezes, execute the two Luna qualification passes,
-then run the first fixed-order configuration as an end-to-end technical canary before continuing
-the bounded pilot.
+Next executable action: run the first fixed-order configuration as an end-to-end technical canary,
+then continue the bounded pilot through capture, P/R generation, two-pass Luna scoring, and
+reconciliation.
 
 ## Tested development commands
 
