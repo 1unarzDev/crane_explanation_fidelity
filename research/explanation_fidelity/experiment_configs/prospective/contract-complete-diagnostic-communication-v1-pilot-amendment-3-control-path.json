@@ -1,0 +1,33 @@
+{
+  "schema": "crane-contract-complete-development-pilot-amendment/v1",
+  "amendment_id": "contract-complete-pilot-amendment-3-control-path",
+  "recorded_date": "2026-09-27",
+  "status": "FROZEN_BEFORE_FIRST_CONTROL_CAPTURE_OR_LABEL",
+  "trigger": "The pre-control execution audit found that the candidate supported the frozen nominal M/Q/O/L contract, but the contract-specific independent-reference builder and Luna packet runner accepted primary diagnosable rows only.",
+  "scope": {
+    "change": "Add independently computed nominal-control M/Q/O/L references and permit non-primary control packets with the same exact field inventory while prohibiting primary endpoint eligibility.",
+    "first_affected_run": "cc-pilot-009",
+    "primary_claims_changed": false,
+    "candidate_changed": false,
+    "baseline_prompt_or_resources_changed": false,
+    "judge_prompt_model_or_settings_changed": false,
+    "pilot_order_or_population_changed": false,
+    "confirmatory_alpha_consumed": 0.0
+  },
+  "control_invariants": {
+    "required_fields": ["M", "Q", "O", "L"],
+    "primary_endpoint_eligible": false,
+    "control_results_reported_separately": true,
+    "not_triggered_reference_required": true,
+    "full_robot_visible_evidence_available_to_both_methods_and_judge": true,
+    "obstacle_visibility_does_not_establish_nav2_consumption_or_causation": true
+  },
+  "frozen_identities": {
+    "reference_builder_sha256": "dff8916d935b7ab5c1040a9bcd3c576708fbd1f0920fe01852c26f018fd79d7f",
+    "luna_packet_runner_sha256": "a5bcb0cf9e9e141b4b7e239bfa74bb5456099781db0670ee000eacb03611c090",
+    "control_reference_test_sha256": "17916c3e9aaf4ec33612518392f091b2bd5a59a49aad1cc306cacbdcb402ebfa",
+    "pilot_schedule_sha256": "9a66747fdd0387b51933e6c10d7dba917aed9ca45be58d1523e903ebca2998eb",
+    "question_registry_sha256": "04985925118b14509ac02b50303a9a9755ee50dee8aa41ed002ed26637904638"
+  },
+  "interpretation": "This closes a planned control transport gap prospectively. It does not alter or rescue a primary method comparison, and control clusters add zero primary diagnostic N."
+}

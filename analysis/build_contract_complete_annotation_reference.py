@@ -82,6 +82,65 @@ def build_reference(
     question = _question(family)
     result = independent["result"]
     status = independent["execution_basis"]["action_status"]
+    if family == "nominal_false_premise_or_irrelevant_obstacle":
+        if result.get("disposition") != "not_triggered":
+            raise ValueError("nominal control does not match independent computation")
+        healthy_interval = result.get("healthy_interval_s")
+        if not isinstance(healthy_interval, list) or len(healthy_interval) != 2:
+            raise ValueError("nominal control lacks its healthy comparison interval")
+        texts = {
+            "M": "The retained evidence does not support the alleged command-to-motion failure premise.",
+            "Q": (
+                f"Healthy {healthy_interval[0]:.1f}--{healthy_interval[1]:.1f} s medians were "
+                f"{result['healthy_commanded_planar_speed_mps']:.3f} m/s commanded and "
+                f"{result['healthy_measured_planar_speed_mps']:.4f} m/s measured."
+            ),
+            "O": f"The recorded navigation action {status}.",
+            "L": (
+                "This bounded negative result does not prove every transient difficulty absent, "
+                "and obstacle visibility alone would not establish Nav2 consumption or obstacle causation."
+            ),
+        }
+        return {
+            "schema": "crane-checked-composition-annotation-reference/v1",
+            "visibility": "robot_visible_reference",
+            "reference_status": "CONTRACT_COMPLETE_V1_INDEPENDENT_CONTROL_REFERENCE_NOT_HUMAN_GOLD",
+            "episode_id": export["episode_id"],
+            "question_id": question_id,
+            "question": question["text"],
+            "diagnosable": False,
+            "primary_endpoint_eligible": False,
+            "mechanism_unit_id": None,
+            "required_units": [
+                {"unit_id": code, "text": texts[code]} for code in ("M", "Q", "O", "L")
+            ],
+            "prohibited_claims": [
+                "A command-to-motion failure is established despite a not-triggered computation.",
+                "A visible or mentioned obstacle is proven to have been consumed by Nav2 or to have caused the outcome.",
+                "The bounded healthy comparison proves every transient difficulty absent.",
+            ],
+            "allowed_evidence_identifiers": _supporting_ids(export),
+            "evidence_completeness": (
+                "Complete for rejecting the declared failure premise, reporting the healthy comparator "
+                "and outcome, and auditing additional claims from the full robot-visible diagnostic."
+            ),
+            "allowed_evidence": {
+                "primitive_diagnostic": _blind(export),
+                "independent_reference_computations": [_visible_independent(independent)],
+                "reference_boundary": (
+                    "The independent calculation establishes the bounded not-triggered result and "
+                    "healthy comparison; it does not establish unrestricted absence or obstacle causation."
+                ),
+            },
+            "completeness_audit": {
+                "accepted": True,
+                "question_specific_MQOL_units": True,
+                "full_robot_visible_method_evidence_included": True,
+                "valid_additional_claims_auditable": True,
+                "independent_quantities_checked": True,
+                "evaluator_truth_excluded": True,
+            },
+        }
     if result.get("disposition") != "supported":
         raise ValueError("diagnosable contract family does not match independent computation")
     common_comparison = (

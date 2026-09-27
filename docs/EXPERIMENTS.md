@@ -1,5 +1,15 @@
 # Experiment Log
 
+## 2026-09-27 — control execution path frozen before first control
+
+- **GAP:** the pre-`cc-pilot-009` audit found that P already rendered the frozen nominal M/Q/O/L
+  contract, but the contract reference builder and Luna runner admitted primary rows only.
+- **REPAIR:** amendment 3 adds independently computed nominal-control M/Q/O/L references and
+  explicit non-primary packet handling. Controls remain separately reported and add zero primary N.
+- **BOUNDARY:** no control was captured, answered, or labeled before this amendment. Candidate,
+  R prompt/resources, judge prompt/settings, schedule, claims, and alpha are unchanged. Twenty-two
+  focused tests pass.
+
 ## 2026-09-27 — sixth tie in seven fresh v2 comparisons
 
 - **CAPTURE:** `cc-pilot-008` passed admission and independently reproduced a 0.260/0.000 m/s

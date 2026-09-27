@@ -283,6 +283,12 @@ failure. This does not justify confirmation yet: it shows that strengthened R ro
 the communication contract and that the only observed advantage is judge-sensitive. Continue the
 fixed pilot to estimate discordance and retain the possibility that neither claim is worth freezing.
 
+Pre-control amendment 3 (2026-09-27) closes an execution-only gap found before `cc-pilot-009`:
+the independent reference builder now emits question-specific nominal-control M/Q/O/L units, and
+the Luna packet runner accepts those rows only when they are explicitly non-primary. Controls keep
+the same blinded two-pass semantic audit but contribute zero Claim A/B primary N. Candidate,
+baseline, questions, judge prompt/settings, schedule, and confirmation state are unchanged.
+
 ## Tested development commands
 
 Render one deterministic P-contract regression artifact:

@@ -103,9 +103,18 @@ def run(packet: Path, key_path: Path, output_root: Path) -> dict[str, Any]:
     rows = read_jsonl(packet)
     if len(rows) != 2 or len({row.get("response_id") for row in rows}) != 2:
         raise ValueError("contract packet must contain exactly two unique responses")
+    eligibility = {row.get("primary_endpoint_eligible") for row in rows}
+    if len(eligibility) != 1 or eligibility not in ({True}, {False}):
+        raise ValueError("contract packet has inconsistent primary eligibility")
+    primary_eligible = next(iter(eligibility))
     for row in rows:
-        if row.get("complete_endpoint_unit_ids") != ["M", "Q", "O", "L"]:
-            raise ValueError("contract packet endpoint inventory is not exact M/Q/O/L")
+        complete_ids = row.get("complete_endpoint_unit_ids")
+        if primary_eligible and complete_ids != ["M", "Q", "O", "L"]:
+            raise ValueError("primary contract packet endpoint inventory is not exact M/Q/O/L")
+        if not primary_eligible and complete_ids is not None:
+            raise ValueError("control packet must not declare primary endpoint units")
+        if [unit.get("unit_id") for unit in row.get("required_units", [])] != ["M", "Q", "O", "L"]:
+            raise ValueError("contract packet field inventory is not exact M/Q/O/L")
     key = load_object(key_path)
     conditions = {item["response_id"]: item["condition"] for item in key["entries"]}
     if set(conditions.values()) != {"P", "R"} or set(conditions) != {row["response_id"] for row in rows}:
@@ -156,6 +165,7 @@ def run(packet: Path, key_path: Path, output_root: Path) -> dict[str, Any]:
         "qualified_judge_release": release, "passes": passes,
         "call_failures": failures, "valid_judgments": len(judgments), "planned_judgments": 4,
         "cache_keys": cache_keys, "confirmatory_alpha_consumed": 0.0,
+        "primary_endpoint_eligible": primary_eligible,
     }
     atomic_write_json(output_root / "development-summary.json", report)
     return report

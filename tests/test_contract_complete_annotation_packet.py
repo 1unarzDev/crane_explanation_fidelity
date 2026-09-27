@@ -14,6 +14,8 @@ INDEPENDENT = ROOT / "data/evaluator_only/dev/cc-pilot-001/command-motion-indepe
 PAIR = ROOT / "model_outputs/contract-complete-diagnostic-communication-v1-pilot/response-pairs/cc-pilot-001.json"
 PERSISTENT_EXPORT = ROOT / "data/robot_visible/dev/cc-pilot-002/command-motion-diagnostic-v3.json"
 PERSISTENT_INDEPENDENT = ROOT / "data/evaluator_only/dev/cc-pilot-002/command-motion-independent-reference-v1.json"
+CONTROL_EXPORT = ROOT / "data/robot_visible/dev/cmv3-dev-003/command-motion-diagnostic-v3.json"
+CONTROL_INDEPENDENT = ROOT / "data/evaluator_only/dev/cmv3-dev-003/command-motion-independent-reference-v1.json"
 
 
 def artifacts() -> tuple[dict, dict]:
@@ -76,3 +78,21 @@ def test_persistent_reference_has_exact_contract_units_and_comparisons() -> None
     assert "10.0--20.0 s" in units["Q"]
     assert "navigation action aborted" in units["O"]
     assert "does not uniquely identify" in units["L"]
+
+
+def test_nominal_control_reference_is_mqol_but_not_primary_eligible() -> None:
+    reference = build_reference(
+        json.loads(CONTROL_EXPORT.read_text()),
+        json.loads(CONTROL_INDEPENDENT.read_text()),
+        family="nominal_false_premise_or_irrelevant_obstacle",
+        question_id="cc-nominal-false-premise-v1",
+    )
+    units = {item["unit_id"]: item["text"] for item in reference["required_units"]}
+
+    assert list(units) == ["M", "Q", "O", "L"]
+    assert reference["primary_endpoint_eligible"] is False
+    assert "complete_endpoint_unit_ids" not in reference
+    assert "does not support" in units["M"]
+    assert "0.260 m/s commanded" in units["Q"]
+    assert "succeeded" in units["O"]
+    assert "obstacle visibility" in units["L"]
