@@ -1077,3 +1077,16 @@ This is retained as a failed qualification, not repaired or reinterpreted. It co
 and produces no study label. Because the defect is confined to the expected composition of a
 required unit and an additional error, one final fresh corrected extension may be frozen; it must
 use new cases and the unchanged Luna prompt/settings. Another failure closes the route.
+# 2026-09-27 — final primary causal-language qualification failed; promotion closed
+
+The fresh v2 correction completed all 24 calls without retry or transport failure. Pass 1 scored
+11/12 composite endpoints, 47/48 required units, and 69/72 endpoint fields; pass 2 scored 12/12,
+47/48, and 71/72. Pass 1 falsely rejected a chronology-only recovery statement (`CCP206`). Both
+passes failed the protected mapping for a response that preserved causal limits and then
+contradicted itself with a blocked-wheel cause (`CCP211`).
+
+Per the frozen no-further-correction rule, the judge route and this candidate's promotion are
+closed. Confirmation N remains zero; no effect estimate, valid bound, significance result, or
+replication exists. The candidate-revision alpha 0.01 is still available because no campaign was
+activated, and the 0.02 replication reserve remains untouched. Deadline work now prioritizes an
+honest manuscript/artifact snapshot rather than another judge or candidate cycle.

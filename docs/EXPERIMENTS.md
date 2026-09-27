@@ -7754,3 +7754,15 @@
 - **DISPOSITION:** Failed and immutable; no labels repaired and no alpha consumed. One final fresh
   reference-corrected extension is allowed under the unchanged judge. A second failure ends this
   promotion route.
+# 2026-09-27 — final primary causal-language qualification v2 failed
+
+- **EXECUTION:** 24/24 fresh, isolated Luna-high calls completed with no retry or transport failure.
+- **PASS 1:** 11/12 composite endpoints, 47/48 units, 69/72 endpoint fields, one material false
+  rejection, and protected failures on `CCP206` and `CCP211`.
+- **PASS 2:** 12/12 endpoints, 47/48 units, 71/72 fields, zero material polarity error, and a
+  protected failure on `CCP211`.
+- **FAILURES:** Pass 1 rejected a supported chronology-only answer. Both passes disagreed with the
+  frozen field mapping for an answer that stated the correct causal boundary and then contradicted
+  it by asserting a blocked-wheel cause.
+- **DISPOSITION:** Final failure; no further correction, no promotion, no alpha binding.
+  Confirmatory N=0 and replication remains unstarted.

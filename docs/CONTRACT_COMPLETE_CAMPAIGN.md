@@ -354,6 +354,18 @@ reference-corrected extension is permissible because the defect is in the expect
 composition, not the judge prompt or observed method outcome; failure of that fresh extension ends
 this promotion route.
 
+The fresh v2 correction also failed, so the route is closed. Pass 1 matched 11/12 composite
+endpoints, 47/48 unit statuses, and 69/72 endpoint fields, with one material false rejection and
+protected failures on chronology-only case `CCP206` and contradictory-cause case `CCP211`. Pass 2
+matched 12/12 endpoints, 47/48 units, and 71/72 fields, with `CCP211` still failing the protected
+gate. All 24 calls were valid and no retry occurred.
+
+No further judge correction is authorized for this candidate. P-contract remains development-only;
+confirmation N=0, no confidence sequence or significance test exists, the 0.01 candidate-revision
+reserve remains available and unbound, and the 0.02 replication reserve remains untouched. The
+submission snapshot reports a tested deterministic composition method and negative/inconclusive
+comparative evidence, not a statistically established P-over-R benefit.
+
 Pre-control amendment 3 (2026-09-27) closes an execution-only gap found before `cc-pilot-009`:
 the independent reference builder now emits question-specific nominal-control M/Q/O/L units, and
 the Luna packet runner accepts those rows only when they are explicitly non-primary. Controls keep

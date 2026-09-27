@@ -1,0 +1,39 @@
+{
+  "schema": "crane-contract-primary-causal-luna-qualification-manifest/v2",
+  "qualification_id": "contract-primary-causal-luna-qualification-v2",
+  "date": "2026-09-27",
+  "status": "HELDOUT_FAILED_FINAL_RETAINED",
+  "study_evaluation_allowed": false,
+  "further_corrections_allowed": 0,
+  "planned_calls": 24,
+  "valid_calls": 24,
+  "quality_retries": 0,
+  "transport_failures": 0,
+  "result": {
+    "path": "model_outputs/luna-model-judge-v1/contract-primary-causal-luna-qualification-v2/heldout-qualification.json",
+    "sha256": "0614690e832a18ff038664475d2cfa9e642abbfc342cb6c7693eef3ee10b15b8"
+  },
+  "freeze": {
+    "path": "research/explanation_fidelity/experiment_configs/prospective/contract-primary-causal-luna-qualification-v2-freeze.json",
+    "sha256": "440f79db7b15612125e3035396a785e332b645545b2deaec72b3c6a5b1fe6c97"
+  },
+  "pass_1": {
+    "endpoint_decisions": "11/12",
+    "required_unit_decisions": "47/48",
+    "endpoint_field_decisions": "69/72",
+    "material_false_acceptances": 0,
+    "material_false_rejections": 1,
+    "protected_causal_failures": ["CCP206", "CCP211"]
+  },
+  "pass_2": {
+    "endpoint_decisions": "12/12",
+    "required_unit_decisions": "47/48",
+    "endpoint_field_decisions": "71/72",
+    "material_false_acceptances": 0,
+    "material_false_rejections": 0,
+    "protected_causal_failures": ["CCP211"]
+  },
+  "failure_interpretation": "Pass 1 falsely rejected a chronology-only recovery answer. Both passes treated a final blocked-wheel causal assertion as contradicting the earlier causal limitation and therefore did not preserve the frozen expected L/disposition mapping. These endpoint-changing and protected-field failures prevent qualification.",
+  "campaign_consequence": "The P-contract primary-family promotion route is closed. Candidate-revision alpha remains available but unbound; confirmatory N remains zero; no significance or replication claim exists.",
+  "confirmatory_alpha_consumed": 0.0
+}
