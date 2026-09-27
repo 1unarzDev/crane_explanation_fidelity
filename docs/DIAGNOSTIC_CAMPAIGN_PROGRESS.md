@@ -1063,3 +1063,17 @@ qualified semantic N=2, blocked semantic N=2, confirmatory N=0, and zero alpha. 
 is a bounded qualification of the actual primary-family ambiguity exposed by the completed v2
 pilot—hedged causal language and recovery-to-outcome scope—before deciding whether unchanged
 P-contract is worth a fresh, disjoint confirmation freeze.
+
+## 2026-09-27 — primary causal-language qualification v1 failed on reference composition
+
+All 24 frozen calls returned valid judgments. Both passes were 12/12 on the Claim-A composite,
+made zero material false acceptances/rejections, and correctly detected every tested causal
+overclaim. Both nevertheless failed the protected gate on `CCPC05`: the frozen expected record
+treated an added unsupported causal sentence as making the separately present L unit incorrect,
+whereas Luna preserved L as covered and independently marked the added sentence material. The
+endpoint still failed as intended through `material_error=true`.
+
+This is retained as a failed qualification, not repaired or reinterpreted. It consumes no alpha
+and produces no study label. Because the defect is confined to the expected composition of a
+required unit and an additional error, one final fresh corrected extension may be frozen; it must
+use new cases and the unchanged Luna prompt/settings. Another failure closes the route.

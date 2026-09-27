@@ -337,6 +337,23 @@ pilot remains the planning evidence: its least-favourable effect was zero for bo
 its favorable pass suggested Claim A +0.286 and Claim B +0.214. This pass sensitivity—not physical
 collection capacity—is the immediate validity bottleneck.
 
+### Primary causal-language qualification v1
+
+The bounded 12-case, two-pass extension completed 24/24 calls and is retained as **failed**. Both
+passes correctly classified all 12 composite endpoints, every material-error decision, and every
+causal-overclaim decision, with no false acceptance, false rejection, unresolved output, or call
+failure. Each pass scored 46/48 required-unit statuses and 71/72 endpoint fields.
+
+The blocking mismatch is the same frozen reference-composition defect in both passes. `CCPC05`
+contains the required L limitation and then adds a separate unsupported sentence that Wait did not
+lead to task success. The expected record incorrectly marked L itself `incorrect` and therefore
+expected partial disposition; Luna marked L covered while still finding the added sentence a
+material causal overclaim. The protected-causal gate consequently fails. No old judgment is
+repaired, no call is retried, and this v1 extension is not called qualified. One final fresh
+reference-corrected extension is permissible because the defect is in the expected unit/error
+composition, not the judge prompt or observed method outcome; failure of that fresh extension ends
+this promotion route.
+
 Pre-control amendment 3 (2026-09-27) closes an execution-only gap found before `cc-pilot-009`:
 the independent reference builder now emits question-specific nominal-control M/Q/O/L units, and
 the Luna packet runner accepts those rows only when they are explicitly non-primary. Controls keep

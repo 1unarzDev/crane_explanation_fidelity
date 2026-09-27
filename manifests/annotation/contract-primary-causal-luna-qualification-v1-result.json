@@ -1,0 +1,38 @@
+{
+  "schema": "crane-contract-primary-causal-luna-qualification-manifest/v1",
+  "qualification_id": "contract-primary-causal-luna-qualification-v1",
+  "date": "2026-09-27",
+  "status": "HELDOUT_FAILED_RETAINED",
+  "study_evaluation_allowed": false,
+  "planned_calls": 24,
+  "valid_calls": 24,
+  "quality_retries": 0,
+  "transport_failures": 0,
+  "result": {
+    "path": "model_outputs/luna-model-judge-v1/contract-primary-causal-luna-qualification-v1/heldout-qualification.json",
+    "sha256": "50122decf7461422d59ac364ed9237b624c529f1672542aca1b2431feec01773"
+  },
+  "freeze": {
+    "path": "research/explanation_fidelity/experiment_configs/prospective/contract-primary-causal-luna-qualification-v1-freeze.json",
+    "sha256": "7817c792c7fce8503fc9d28caf257a83bf1c302dbd06585703106b3ee096a403"
+  },
+  "pass_1": {
+    "endpoint_decisions": "12/12",
+    "required_unit_decisions": "46/48",
+    "endpoint_field_decisions": "71/72",
+    "material_false_acceptances": 0,
+    "material_false_rejections": 0,
+    "protected_causal_failures": ["CCPC05"]
+  },
+  "pass_2": {
+    "endpoint_decisions": "12/12",
+    "required_unit_decisions": "46/48",
+    "endpoint_field_decisions": "71/72",
+    "material_false_acceptances": 0,
+    "material_false_rejections": 0,
+    "protected_causal_failures": ["CCPC05"]
+  },
+  "failure_interpretation": "Both passes correctly found the added Wait-to-success assertion materially unsupported and causally overclaiming, but the frozen expected record incorrectly required the separately present L limitation itself to be incorrect and therefore expected partial disposition. The answer covered L and then added a distinct material error. This reference-composition defect triggers the frozen protected-causal gate in both passes; the run is not reinterpreted as qualified.",
+  "effect_on_existing_release": "Does not revoke contract-complete-luna-qualification-v2; does not qualify this extension or authorize relabeling prior study responses.",
+  "confirmatory_alpha_consumed": 0.0
+}

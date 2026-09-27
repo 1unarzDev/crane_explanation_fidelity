@@ -7741,3 +7741,16 @@
 - **NEXT:** Audit the actual v2 primary-family disagreement—especially hedged Wait/recovery causal
   language—under a bounded fresh qualification before any new candidate freeze. Do not select the
   favorable missing-motion slice as a headline endpoint.
+
+# 2026-09-27 — primary causal-language qualification v1 retained failed
+
+- **EXECUTION:** 24/24 isolated Luna-high calls completed, with no retry or transport failure.
+- **PERFORMANCE:** Both passes matched 12/12 composite endpoints, 46/48 required-unit statuses,
+  and 71/72 endpoint fields, with zero material false acceptance/rejection.
+- **BLOCKER:** Both passes failed protected case `CCPC05`. The frozen expected record incorrectly
+  made L itself incorrect when the answer actually stated L and then added a separate unsupported
+  Wait-to-success assertion. Luna correctly preserved L and separately marked material error and
+  causal overclaim, but that still violates the frozen gate.
+- **DISPOSITION:** Failed and immutable; no labels repaired and no alpha consumed. One final fresh
+  reference-corrected extension is allowed under the unchanged judge. A second failure ends this
+  promotion route.
