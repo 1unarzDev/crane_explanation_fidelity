@@ -421,6 +421,13 @@ v2 N=3 therefore has pass-specific Claim A and B advantages of 0.0 and +0.333; t
 still comes entirely from the unresolved `cc-pilot-003` R label. Controls and confirmation N remain
 0, no alpha was consumed, and fixed order advances to `cc-pilot-005`.
 
+Fourth v2 update (2026-09-27): `cc-pilot-005` passed all gates on a nominal-clear-route recovery
+configuration. The independent reference found a 0.260/0.000 m/s discrepancy over 11--21 s,
+recovery to 0.25974 m/s over 23--24 s, and subsequent action success. Both P and R covered M/Q/O/L
+without substantive error in both passes. Fresh v2 N=4 has pass-specific Claim A and B effects of
+0.0 and +0.25; the latter remains entirely attributable to the unresolved `cc-pilot-003` label.
+Controls and confirmation N remain 0, and fixed order advances to `cc-pilot-006`.
+
 The now-closed physical/reference cohort attempted 40/100 fixed confirmation-side configurations:
 39 valid, 1 invalid. The method-visible diagnostic dispositions are twenty-seven supported, seven
 `not_triggered`, and five `insufficient`. Run 004 is a valid unexpected transient case: measured

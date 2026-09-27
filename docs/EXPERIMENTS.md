@@ -1,5 +1,15 @@
 # Experiment Log
 
+## 2026-09-27 — second fresh v2 recovery cluster is a complete tie
+
+- **CAPTURE:** `cc-pilot-005` passed physical and evidence gates on its nominal-clear-route
+  configuration. Independent computation found a 0.260/0.000 m/s discrepancy over 11--21 s,
+  response recovery to 0.25974 m/s over 23--24 s, and later action success.
+- **SEMANTICS:** all four isolated calls were valid. Both methods covered M/Q/O/L and had no
+  substantive material error in either pass.
+- **RESULT:** fresh v2 N=4 has pass-specific Claim A and B effects of 0.0 and +0.25. No alpha was
+  consumed; the fixed pilot proceeds to `cc-pilot-006`.
+
 ## 2026-09-27 — first fresh v2 recovery cluster is a complete tie
 
 - **CAPTURE:** `cc-pilot-004` passed all physical and evidence gates. Independent computation
