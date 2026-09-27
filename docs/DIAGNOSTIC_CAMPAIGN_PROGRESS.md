@@ -463,6 +463,14 @@ without printing the numeric ratio 1.0000. Pass 1 accepted the same Q, so the di
 unresolved. Primary v2 N=8, control N=1, Claim A sensitivity is 0.0/+0.250, Claim B is 0.0/+0.125,
 confirmation N and alpha remain zero, and fixed order advances to `cc-pilot-011`.
 
+Ninth v2 update (2026-09-27): `cc-pilot-011` retained a valid unexpected abort after a persistent
+hold. The generic fixture flag failed only its broad expected-success check; player, binding,
+transport, capture, and evidence checks passed, so the frozen outcome-separation rule retains the
+case without retry. Independent computation supports 0.260/0.000 m/s over 17--27 s, two FollowPath
+failures, two Waits, no recovery, and abort. Both methods passed both claims twice. Primary v2 N=9
+now gives Claim A 0.0/+0.222 and Claim B 0.0/+0.111. Confirmation remains inactive; `cc-pilot-012`
+is the next fixed-order control.
+
 The now-closed physical/reference cohort attempted 40/100 fixed confirmation-side configurations:
 39 valid, 1 invalid. The method-visible diagnostic dispositions are twenty-seven supported, seven
 `not_triggered`, and five `insufficient`. Run 004 is a valid unexpected transient case: measured

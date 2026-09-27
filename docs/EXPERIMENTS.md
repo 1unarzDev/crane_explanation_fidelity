@@ -1,5 +1,15 @@
 # Experiment Log
 
+## 2026-09-27 — ninth fresh P-contract v2 comparison retained
+
+- **CAPTURE/REFERENCE:** `cc-pilot-011` retained a valid unexpected abort. The generic fixture
+  flag failed its broad expected-success check, while build, binding, transport, capture closure,
+  and evidence checks passed. Independent computation found a 0.260/0.000 m/s persistent
+  discrepancy over 17--27 s, two FollowPath failures, two Waits, and no recovery.
+- **SEMANTICS:** P and R both passed Claims A and B in both Luna passes.
+- **STATUS:** primary v2 N=9, control N=1. Claim A sensitivity is 0.0/+0.222 and Claim B is
+  0.0/+0.111. Confirmation remains inactive and fixed order advances to control `cc-pilot-012`.
+
 ## 2026-09-27 — eighth fresh P-contract v2 comparison retained
 
 - **CAPTURE/REFERENCE:** `cc-pilot-010` passed all gates and independently reproduced a
