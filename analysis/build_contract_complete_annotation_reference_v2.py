@@ -85,7 +85,8 @@ def _missing_command_reference(
         "question": v1._question("missing_decisive_or_ambiguous_evidence")["text"],
         "diagnosable": False,
         "primary_endpoint_eligible": True,
-        "mechanism_unit_id": None,
+        "mechanism_unit_id": "M",
+        "complete_endpoint_unit_ids": ["M", "Q", "O", "L"],
         "required_units": [
             {"unit_id": code, "text": texts[code]} for code in ("M", "Q", "O", "L")
         ],
@@ -126,6 +127,8 @@ def build_reference(
     if family == "missing_decisive_or_ambiguous_evidence":
         result = copy.deepcopy(result)
         result["primary_endpoint_eligible"] = True
+        result["mechanism_unit_id"] = "M"
+        result["complete_endpoint_unit_ids"] = ["M", "Q", "O", "L"]
         result["reference_status"] = (
             "CONTRACT_COMPLETE_V2_INDEPENDENT_MISSING_MOTION_REFERENCE_NOT_HUMAN_GOLD"
         )

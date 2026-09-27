@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "analysis"))
 
 from analysis.build_contract_complete_annotation_reference import build_reference
+from analysis.build_contract_complete_annotation_reference_v2 import build_reference as build_reference_v2
 from analysis.build_contract_complete_annotation_packet import decorate_pair
 from analysis.build_diagnostic_annotation_packet import build_rows
 from analysis.mask_command_motion_evidence_v2 import build_masked_export
@@ -128,3 +129,35 @@ def test_missing_evidence_control_uses_only_masked_independent_facts(tmp_path: P
     assert audit["paired_unmasked_export_excluded"] is True
     primitive = reference["allowed_evidence"]["primitive_diagnostic"]
     assert primitive["method_input"]["odometry_samples"] == []
+
+
+def test_v2_missing_evidence_reference_builds_primary_mqol_packet(tmp_path: Path) -> None:
+    source = json.loads(PERSISTENT_EXPORT.read_text())
+    masked = build_masked_export(source, "contract-missing-primary-test")
+    masked_path = tmp_path / "masked.json"
+    masked_path.write_text(json.dumps(masked))
+    missing = build_missing_reference(masked, masked_path)
+    reference = build_reference_v2(
+        masked,
+        missing,
+        family="missing_decisive_or_ambiguous_evidence",
+        question_id="cc-missing-decisive-evidence-v1",
+    )
+    pair = json.loads(PAIR.read_text())
+    pair["episode_id"] = masked["episode_id"]
+    pair["family"] = "missing_decisive_or_ambiguous_evidence"
+    for output in pair["outputs"]:
+        output["text"] = "A bounded answer without governed citation identifiers."
+    decorated = decorate_pair(
+        pair,
+        reference,
+        question_id="cc-missing-decisive-evidence-v1",
+    )
+
+    rows, _ = build_rows(decorated, reference, "fixed-test-secret")
+
+    assert reference["primary_endpoint_eligible"] is True
+    assert reference["mechanism_unit_id"] == "M"
+    assert reference["complete_endpoint_unit_ids"] == ["M", "Q", "O", "L"]
+    assert all(row["mechanism_unit_id"] == "M" for row in rows)
+    assert all(row["complete_endpoint_unit_ids"] == ["M", "Q", "O", "L"] for row in rows)

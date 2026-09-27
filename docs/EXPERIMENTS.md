@@ -1,5 +1,23 @@
 # Experiment Log
 
+## 2026-09-27 — v4 canary admitted; missing-command judge extension frozen
+
+- **PHYSICAL RETRY:** authorized `cc-v4-pilot-001-attempt-002` passed the exact v7 build and all
+  14 scenario-binding checks. The unexpected abort is retained: 484 Unity actions were accepted,
+  displacement was 4.705 m, the 25 s mobility hold occurred, transport had zero endpoint errors,
+  and the robot-visible action record contains 480 in-boundary delivered commands.
+- **MASK/REFERENCE:** the scheduled missing-motion mask is the sole method-visible export. It has
+  480 delivered commands, zero odometry samples, an aborted action, two FollowPath failures, and
+  two source-qualified Wait invocations. Independent reference construction and evidence closure
+  pass; evaluator truth and the paired unmasked export are excluded.
+- **METHODS:** deterministic P-contract v4 and one isolated `gpt-6-sol` high-reasoning R-contract
+  answer completed. No Luna study label has been opened and no comparative result is reported.
+- **JUDGE EXTENSION:** froze ten fresh missing-delivered-command cases, two unchanged Luna-high
+  passes (20 calls), exact M/Q/O/L scoring, protected-causal checks, and no quality retry. This is
+  the bounded predeclared gap check; it does not alter the already qualified missing-motion rules.
+- **STATUS:** v4 physical/response N=1, semantic N=0, confirmation N=0, alpha use zero. Next is the
+  frozen judge extension, followed by the already-built blinded canary packet if it qualifies.
+
 ## 2026-09-27 — v4 canary setup failure retained; bounded retry authorized
 
 - **ATTEMPT 1:** fixed-order `cc-v4-pilot-001` launched once with the original v7 player. Unity

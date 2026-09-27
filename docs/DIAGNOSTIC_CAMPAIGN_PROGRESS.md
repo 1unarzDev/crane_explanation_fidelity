@@ -383,6 +383,14 @@ new immutable `CRANE-Worker-v7a` passes exact catalog, source, scene, build-mani
 clean-commit provenance checks. One retry of the same scheduled configuration is authorized as
 attempt 2; v4 physical N, response N, semantic N, confirmation N, and alpha use all remain zero.
 
+Attempt 2 passed the replacement-player audit and all 14 scenario-binding checks. Its unexpected
+abort is valid development evidence: the scheduled 25 s hold occurred after 4.705 m displacement,
+484 actions were accepted, and transport reported zero endpoint errors. The scheduled missing-
+motion export and its independent reference pass closure, and P-contract v4 plus one R-contract
+answer now exist. Thus v4 physical/response N is 1 while semantic N remains zero. Before study
+labels are interpreted, a ten-case, 20-call missing-delivered-command Luna extension is frozen
+under the unchanged prompt, model, high reasoning, schema, and two-pass policy.
+
 ## Cumulative focused-campaign evidence
 
 | Quantity | Current value |

@@ -1,0 +1,49 @@
+{
+  "schema": "crane-contract-limit-luna-qualification-freeze/v1",
+  "freeze_id": "contract-limit-missing-command-luna-qualification-v1",
+  "declared_date": "2026-09-27",
+  "status": "FROZEN_BEFORE_ANY_QUALIFICATION_CALL",
+  "purpose": "One bounded fresh extension testing Luna's interpretation of the new missing-delivered-command contract before v4 pilot labels are interpreted.",
+  "prior_qualified_release": "contract-complete-luna-qualification-v2",
+  "suite_sha256": "da42532d24d43554b771ede0a72f62ef1e5009c1d903a9937f7a9aa0ee84d251",
+  "prompt_sha256": "f701b91d8c46637b203d56d1ded3fce7c9f5ebbda077b02bc4d01627142d0da6",
+  "output_schema_sha256": "93989e303fdb12e94ae5fe79adad16e46d9587006b7ba6de5c4624096f1b1c3f",
+  "caller_source_sha256": "e185329a711b240ca790698c7a89033f6ba7cb85b69ccddc4f35a10c0419a379",
+  "runner_source_sha256": "fae2878eabd01dc0fc53818cd1aefe5e1791422641142a621ac9ac9a58245abf",
+  "suite_builder_sha256": "8c32b3971e1c08c5f702f741cd126f9da591739743b098920f03f5a618aab429",
+  "model": {
+    "requested_id": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "provider": "codex-lb",
+    "substitution_allowed": false,
+    "temperature": null,
+    "seed": null
+  },
+  "passes": [
+    "pass-1",
+    "pass-2"
+  ],
+  "suite": {
+    "path": "research/explanation_fidelity/qualification/contract-limit-missing-command-luna-qualification-v1.json",
+    "cases": 10,
+    "physical_model_calls": 20,
+    "freshness": "New opaque case IDs, measurements, wording, assertions, and missing-command compositions not used in the v1/v2 contract qualification."
+  },
+  "blocking_gates": {
+    "minimum_endpoint_accuracy": 0.9,
+    "minimum_required_unit_accuracy": 0.95,
+    "minimum_endpoint_field_accuracy": 0.95,
+    "maximum_false_rejection_rate": 0.2,
+    "maximum_false_acceptance_rate": 0.2,
+    "protected_causal_errors_allowed": 0,
+    "call_failures_allowed": 0
+  },
+  "retry_policy": {
+    "maximum_transport_retries": 1,
+    "usable_judgment_retry_allowed": false,
+    "quality_driven_retry_allowed": false
+  },
+  "hard_stop": "Run both passes once and retain either outcome. Failure blocks interpretation of v4 missing-command study labels; it does not authorize another held-out iteration.",
+  "confirmatory_alpha_consumed": 0.0,
+  "study_responses_scored": 0
+}
