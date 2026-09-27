@@ -1,5 +1,14 @@
 # Experiment Log
 
+## 2026-09-27 — eleventh fresh P-contract v2 comparison retained
+
+- **CAPTURE/REFERENCE:** `cc-pilot-015` passed all gates and independently reproduced healthy
+  0.260/0.25974 m/s response, a 0.260/0.000 m/s discrepancy over 17--27 s, recovery to
+  0.25974 m/s over 29--30 s, and eventual action success.
+- **SEMANTICS:** P and R both covered M/Q/O/L without substantive error in both Luna passes.
+- **STATUS:** fresh primary v2 N=11, controls N=3. Claim A sensitivity is 0.0/+0.273 and Claim B
+  is 0.0/+0.182. Confirmation remains inactive; fixed order advances to `cc-pilot-016`.
+
 ## 2026-09-27 — first contract-complete missing-evidence control retained
 
 - **CAPTURE/REFERENCE:** `cc-pilot-014` passed the build, all 14 scenario-binding, transport,

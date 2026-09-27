@@ -336,6 +336,12 @@ are retained as development evidence, not repaired. The control contributes zero
 fresh v2 primary N remains 10, controls are 3, Claim A sensitivity remains 0.0/+0.300, Claim B
 remains 0.0/+0.200, and confirmation remains inactive. Fixed order advances to `cc-pilot-015`.
 
+The recovery case `cc-pilot-015` passed every gate and produced the registered healthy, discrepancy,
+recovery, and successful-outcome sequence. Both P and R covered M/Q/O/L without substantive error
+in both Luna passes. At fresh primary v2 N=11 and controls N=3, Claim A sensitivity is
+0.0/+0.273 and Claim B is 0.0/+0.182. The positive signal remains wholly pass-sensitive, so
+confirmation stays inactive and fixed order advances to `cc-pilot-016`.
+
 ## Tested development commands
 
 Render one deterministic P-contract regression artifact:

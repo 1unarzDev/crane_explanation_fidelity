@@ -494,6 +494,12 @@ zero primary N: fresh v2 primary N remains 10, controls are 3, pass-specific eff
 0.0/+0.300 for Claim A and 0.0/+0.200 for Claim B, and confirmation remains inactive. Fixed order
 advances to `cc-pilot-015`.
 
+Eleventh v2 update (2026-09-27): `cc-pilot-015` passed all capture and reference gates, with a
+0.260/0.000 m/s discrepancy over 17--27 s, measured recovery to 0.25974 m/s over 29--30 s, and
+eventual action success. P and R both passed Claims A and B in both Luna passes. Fresh primary
+v2 N=11 and controls N=3 give Claim A sensitivity 0.0/+0.273 and Claim B 0.0/+0.182.
+Confirmation remains inactive; fixed order advances to `cc-pilot-016`.
+
 The now-closed physical/reference cohort attempted 40/100 fixed confirmation-side configurations:
 39 valid, 1 invalid. The method-visible diagnostic dispositions are twenty-seven supported, seven
 `not_triggered`, and five `insufficient`. Run 004 is a valid unexpected transient case: measured
