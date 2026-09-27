@@ -1,5 +1,14 @@
 # Experiment Log
 
+## 2026-09-27 — sixth tie in seven fresh v2 comparisons
+
+- **CAPTURE:** `cc-pilot-008` passed admission and independently reproduced a 0.260/0.000 m/s
+  persistent discrepancy over 17--27 s without recovery; its unexpected abort is retained.
+- **SEMANTICS:** P and R passed both claims in both Luna passes.
+- **INTERPRETATION:** fresh v2 pass effects are 0.0 and +0.143 at N=7. Six clusters tie; the
+  remaining apparent advantage is unresolved. Confirmation stays inactive; `cc-pilot-009` is the
+  next fixed-order control.
+
 ## 2026-09-27 — fifth tie in six fresh v2 comparisons
 
 - **CAPTURE:** `cc-pilot-007` passed authoritative worker, transport, build, and scenario-binding

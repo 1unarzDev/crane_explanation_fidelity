@@ -442,6 +442,12 @@ methods passed both claims in both Luna passes. Fresh v2 N=6 therefore has effec
 +0.167 by pass; five cases are ties and the remaining advantage is unresolved. Confirmation and
 alpha remain zero, and fixed order advances to `cc-pilot-008`.
 
+Seventh v2 update (2026-09-27): `cc-pilot-008` passed the same admission gates and independently
+reproduced a 17--27 s 0.260/0.000 m/s persistent discrepancy without recovery and with action
+abort. Both methods again passed both claims in both Luna passes. Fresh v2 N=7 has pass effects
+0.0 and +0.143; six clusters are ties and the remaining signal is unresolved. Confirmation and
+alpha remain zero. Fixed order advances to `cc-pilot-009`, the first control.
+
 The now-closed physical/reference cohort attempted 40/100 fixed confirmation-side configurations:
 39 valid, 1 invalid. The method-visible diagnostic dispositions are twenty-seven supported, seven
 `not_triggered`, and five `insufficient`. Run 004 is a valid unexpected transient case: measured
