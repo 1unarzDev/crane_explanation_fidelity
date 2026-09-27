@@ -1,0 +1,47 @@
+{
+  "schema": "crane-contract-complete-luna-qualification-freeze/v1",
+  "freeze_id": "contract-complete-luna-qualification-v1",
+  "declared_date": "2026-09-27",
+  "status": "FROZEN_BEFORE_ANY_QUALIFICATION_CALL",
+  "purpose": "One bounded held-out qualification of exact M/Q/O/L coverage, substantive assertion risk, and protected causal interpretation under unchanged Luna v12 settings.",
+  "suite_sha256": "e792ec767fdcec0aecffb5e2bf1c7a63947995bcf5dc1a2b819699f612da98ee",
+  "prompt_sha256": "f701b91d8c46637b203d56d1ded3fce7c9f5ebbda077b02bc4d01627142d0da6",
+  "output_schema_sha256": "93989e303fdb12e94ae5fe79adad16e46d9587006b7ba6de5c4624096f1b1c3f",
+  "caller_source_sha256": "e185329a711b240ca790698c7a89033f6ba7cb85b69ccddc4f35a10c0419a379",
+  "runner_source_sha256": "1464f897a4c638be3e91f4efc3aaa70ff643052f5990f3b988893847641e3da9",
+  "suite_builder_sha256": "b59edeb4576f884d3a9afa1b028f9aac7791d79648e62366bfe4500222425829",
+  "model": {
+    "requested_id": "gpt-6-luna",
+    "substitution_allowed": false,
+    "reasoning_effort": "high",
+    "provider": "codex-lb",
+    "temperature": null,
+    "seed": null
+  },
+  "suite": {
+    "path": "research/explanation_fidelity/qualification/contract-complete-luna-qualification-v1.json",
+    "cases": 12,
+    "passes": 2,
+    "physical_model_calls": 24,
+    "freshness": "New opaque IDs, quantities, answers, and exact M/Q/O/L inventories; no case was exposed to Luna before this freeze."
+  },
+  "passes": ["pass-1", "pass-2"],
+  "thresholds": {
+    "minimum_endpoint_accuracy": 0.9,
+    "minimum_required_unit_accuracy": 0.95,
+    "minimum_core_field_accuracy": 0.95,
+    "maximum_false_rejection_rate": 0.15,
+    "maximum_false_acceptance_rate": 0.15,
+    "protected_causal_errors_allowed": 0,
+    "call_failures_allowed": 0
+  },
+  "retry_policy": {
+    "maximum_transport_retries": 1,
+    "usable_judgment_retry_allowed": false,
+    "quality_driven_retry_allowed": false
+  },
+  "hard_stop": "Run both passes once and retain either outcome. Failure blocks contract-complete semantic scoring; it does not authorize prompt tuning on held-out cases.",
+  "fresh_pilot_responses_opened": 0,
+  "confirmatory_responses_opened": 0,
+  "confirmatory_alpha_consumed": 0.0
+}

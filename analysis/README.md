@@ -13,6 +13,9 @@ development-only P-contract/R-contract pair with matched evidence and production
 `score_contract_complete_judgment.py` derives the complete-communication and substantive-risk
 endpoints from field-level Luna labels. Governance, commands, and inference limits are in
 `docs/CONTRACT_COMPLETE_CAMPAIGN.md`; none of these development commands activates confirmation.
+`build_contract_complete_pilot_schedule.py` fixes the disjoint 19-configuration development pilot;
+`build_contract_complete_luna_qualification.py` and
+`run_contract_complete_luna_qualification.py` govern the bounded M/Q/O/L judge extension.
 
 `sequential_diagnostic_monitor.py` is the prospective, fail-closed anytime monitor for new
 diagnostic campaigns. It cannot ingest legacy or inspected development data. Its protocol, result

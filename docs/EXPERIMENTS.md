@@ -7375,3 +7375,18 @@
 - **STATUS:** fresh pilot N=0, confirmation N=0, candidate-revision alpha remains available, and
   replication reserve remains untouched. Next is a hash-bound fresh pilot predeclaration and
   technical canary, not reuse of these inspected cases.
+
+# 2026-09-27 — contract-complete fresh-pilot and judge-extension freeze
+
+- **FRESHNESS AUDIT:** the v6 catalog contains 20 confirmation-split layouts outside the closed
+  physical schedule. One connected-detour layout was already used for runtime qualification and is
+  excluded. The remaining 19 have no overlap with the closed schedule or replication reserve.
+- **PILOT FREEZE:** fixed 15 diagnosable configurations (eight persistent discrepancy, seven
+  measured recovery) and four controls (two missing odometry, two nominal/false premise), with
+  deterministic collection order, intervention timing, masks, domains, and ports.
+- **JUDGE FREEZE:** added 12 fresh held-out reference cases and two isolated Luna passes targeting
+  exact M/Q/O/L field semantics, omission/fabrication, causal connectives, numerical scope, valid
+  extra facts, unsupported extra facts, missing evidence, and instruction injection. Twenty-four
+  calls are planned; zero have run at this checkpoint.
+- **TESTED:** 23 contract candidate, scorer, schedule, and qualification tests pass. Freeze hashes
+  validate against the executable sources. Pilot N=0, confirmation N=0, and alpha use remains zero.

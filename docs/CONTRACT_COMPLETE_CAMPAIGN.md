@@ -1,6 +1,6 @@
 # Contract-complete diagnostic communication campaign
 
-Status: **DEVELOPMENT IMPLEMENTED; FRESH PILOT NOT YET RUN; CONFIRMATION NOT FROZEN**
+Status: **DEVELOPMENT PILOT SCHEDULE AND JUDGE EXTENSION FROZEN; CALLS NOT YET RUN; CONFIRMATION NOT FROZEN**
 Recorded: 2026-09-27
 
 This is the operational form of the contract-complete research redirect. It is additive. It does
@@ -178,12 +178,17 @@ Both success and failure outcomes must be represented where the independently re
 supports them. Geometry is a smaller secondary family. Nominal, missing-evidence, and false-premise
 controls use a fixed reporting plan and do not enter the diagnosable primary endpoint.
 
-Fresh development pilot target: 12--16 diagnosable independent configurations, balanced across the
-two primary families as capacity permits, plus four to six fixed controls and at most two secondary
-geometry cases. Related layouts, interventions, masks, paraphrases, generations, and judge passes
-remain in one cluster. Pilot selection is based on evidence requirements, not observed method
-differences. The pilot checks contract execution, evidence closure, R fairness, judge validity,
-discordance, and throughput; significance is neither required nor claimed.
+The fresh development pilot is now frozen at 19 independent configurations: eight persistent
+command--motion discrepancies, seven measured-response-recovery cases, two missing-odometry
+controls, and two nominal/false-premise controls. The schedule uses the 19 v6
+confirmation-split layouts never assigned to the closed 100-configuration schedule after excluding
+the already inspected runtime-qualification layout. It has zero overlap with the protected
+replication reserve. The exact order and isolated worker identities are in
+`contract-complete-diagnostic-communication-v1-pilot-schedule.json`; the hash-bound resource and
+retention rules are in the adjacent pilot predeclaration. Related layouts, masks, generations, and
+judge passes remain in one cluster. The pilot checks contract execution, evidence closure, R
+fairness, judge validity, discordance, and throughput; significance is neither required nor
+claimed.
 
 Before calling any retained recording fresh, inventory whether its content influenced P-contract,
 the claims, question construction, or scenario selection. Every current focused-campaign episode
@@ -227,7 +232,7 @@ RAG, VLM, or model-family work is authorized by this redirect.
 The existing staged pipeline will be reused after these gates:
 
 1. complete inspected-case final-text regressions;
-2. hash-bind the development P/R runner and fresh pilot schedule;
+2. hash-bind the development P/R runner and fresh pilot schedule (**complete**);
 3. build independent evaluation references and evidence-closure packets;
 4. qualify the M/Q/O/L annotation extension on fresh cases;
 5. run the fresh pilot and fix only demonstrated systematic defects;
@@ -243,14 +248,15 @@ Current checkpoint:
 | Candidate | `p-contract-v1-development`; deterministic M/Q/O/L compiler implemented |
 | Known omission regressions | Healthy command+motion, recovery/outcome limits, geometry cost threshold pass |
 | Baseline | R-contract prompt and development runner implemented; no fresh call yet |
-| Field evaluator | Deterministic Claim A/B scorer implemented; qualification extension pending |
-| Fresh pilot | N=0; controls=0; schedule/predeclaration pending |
+| Field evaluator | Deterministic Claim A/B scorer implemented; 12-case/two-pass qualification extension frozen before calls |
+| Fresh pilot | N=0; controls=0; fixed 15-diagnosable/4-control schedule and resource predeclaration frozen |
 | Confirmation | Not frozen; no alpha newly consumed; no look or effect |
 | Replication | Reserve untouched; criterion pending confirmation freeze |
 | Manuscript | Historical status corrected; contract-complete results remain pending |
 
-Next executable action: predeclare fresh pilot configurations and exact development resource
-hashes, then run one end-to-end technical canary before starting the bounded pilot.
+Next executable action: commit the prospective freezes, execute the two Luna qualification passes,
+then run the first fixed-order configuration as an end-to-end technical canary before continuing
+the bounded pilot.
 
 ## Tested development commands
 

@@ -2247,3 +2247,16 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Error budget: preserve the consumed 0.02 and replication 0.02. The available 0.01 revision
   reserve is not yet consumed; a 0.005/0.005 split is provisional until pilot-informed planning
   and an atomic freeze.
+
+## 2026-09-27 — freeze a disjoint 19-configuration contract-complete pilot
+
+- Decision: use all 19 v6 confirmation-split layouts that were never assigned to the closed
+  100-configuration schedule after excluding the previously inspected runtime-qualification
+  layout. Do not borrow from the protected replication reserve.
+- Composition: eight persistent discrepancies, seven measured-response-recovery cases, two
+  missing-odometry controls, and two nominal/false-premise controls in a deterministic fixed order.
+- Judge gate: freeze one 12-case, two-pass Luna extension for exact M/Q/O/L coverage and
+  substantive-error semantics before any pilot response is scored. It protects recovery/outcome
+  causality and distinguishes omissions, unsupported fabrication, and valid extra facts.
+- Interpretation: this is development evidence only. It consumes no confirmation alpha and cannot
+  establish either registered claim.

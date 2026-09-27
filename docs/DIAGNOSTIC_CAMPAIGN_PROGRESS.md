@@ -379,6 +379,12 @@ values reported at the top of this document; neither establishes benefit and nei
 validates the original release. No fresh P-contract effect, registered confirmation conclusion, or
 replication conclusion exists. Legacy and earlier diagnostic-development clusters remain separate.
 
+Contract-complete pilot freeze (2026-09-27): 19 previously unassigned v6 layouts are now fixed in
+physical order for development only—15 diagnosable configurations and four controls, with zero
+closed-campaign or replication-reserve overlap. The M/Q/O/L Luna extension is frozen at 12 held-out
+cases and two isolated passes (24 planned physical judge calls). Neither qualification nor pilot
+execution has begun; fresh pilot and confirmation N remain zero and no alpha was consumed.
+
 The now-closed physical/reference cohort attempted 40/100 fixed confirmation-side configurations:
 39 valid, 1 invalid. The method-visible diagnostic dispositions are twenty-seven supported, seven
 `not_triggered`, and five `insufficient`. Run 004 is a valid unexpected transient case: measured
