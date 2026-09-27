@@ -391,6 +391,15 @@ answer now exist. Thus v4 physical/response N is 1 while semantic N remains zero
 labels are interpreted, a ten-case, 20-call missing-delivered-command Luna extension is frozen
 under the unchanged prompt, model, high reasoning, schema, and two-pass policy.
 
+The extension completed all 20 calls but failed its frozen protected-causal gate in both passes,
+despite perfect 10/10 endpoint decisions and zero material false acceptance or rejection. It
+therefore blocks interpretation of missing-command study labels and is not repaired. The already
+qualified missing-motion release remained applicable to cluster 001: both passes score P complete
+and R incomplete only on actuator-acceptance limitation L, with no substantive error in either
+answer. Fresh v4 semantic N is 1; Claim A P-minus-R is +1.0/+1.0 and Claim B is 0.0/0.0. This is
+development evidence only. Fixed order continues through blocked-label rows 002--003 before the
+next qualified missing-motion row 004.
+
 ## Cumulative focused-campaign evidence
 
 | Quantity | Current value |

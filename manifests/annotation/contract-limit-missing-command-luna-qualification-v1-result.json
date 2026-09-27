@@ -1,0 +1,27 @@
+{
+  "schema": "crane-automated-annotation-qualification-manifest/v1",
+  "qualification_id": "contract-limit-missing-command-luna-qualification-v1",
+  "status": "HELDOUT_FAILED",
+  "study_evaluation_allowed": false,
+  "result": {
+    "path": "model_outputs/luna-model-judge-v1/contract-limit-missing-command-qualification-v1/heldout-qualification.json",
+    "sha256": "752215c6898352d3b38316029768e87c40c6631e27a58aed33db8f97e7749796"
+  },
+  "calls": {
+    "planned": 20,
+    "completed": 20,
+    "failures": 0,
+    "passes": 2,
+    "cases_per_pass": 10
+  },
+  "result_summary": {
+    "endpoint_accuracy_each_pass": 1.0,
+    "required_unit_accuracy_each_pass": 0.975,
+    "endpoint_field_accuracy_each_pass": 0.9833333333333333,
+    "false_acceptances_each_pass": 0,
+    "false_rejections_each_pass": 0,
+    "protected_causal_failures_each_pass": ["CCMC09"]
+  },
+  "interpretation": "Both passes classified every complete endpoint and every material-error direction correctly, but both failed the frozen protected-causal unit-attachment rule for CCMC09. The failure blocks Luna interpretation of missing-delivered-command v4 cases and does not revoke the earlier independently qualified missing-motion release.",
+  "confirmatory_alpha_consumed": 0.0
+}

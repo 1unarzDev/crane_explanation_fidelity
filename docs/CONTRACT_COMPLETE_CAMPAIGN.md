@@ -302,6 +302,14 @@ extension is frozen before any extension call; no canary label will be interpret
 unchanged Luna-high passes meet its registered gates. Current v4 physical/response N is 1,
 semantic N is 0, confirmation N is 0, and no revision-reserve alpha is bound.
 
+The extension subsequently failed its protected-causal gate in both passes and is retained without
+repair; missing-command study labels are blocked. The earlier qualified missing-motion release
+validly scored cluster 001. Both passes found P complete on M/Q/O/L and R incomplete only on L,
+because R did not explicitly preserve actuator-acceptance uncertainty; neither answer had a
+substantive material error. This is one development discordance, not a promotion or inferential
+result. Fixed-order physical collection may continue, but rows 002--003 remain semantically sealed
+before the next qualified missing-motion row 004.
+
 The first seven fresh v2 comparisons contain six complete ties and one pass-specific unresolved R
 failure. This does not justify confirmation yet: it shows that strengthened R routinely performs
 the communication contract and that the only observed advantage is judge-sensitive. Continue the

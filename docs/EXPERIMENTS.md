@@ -1,5 +1,20 @@
 # Experiment Log
 
+## 2026-09-27 — v4 canary semantic result; missing-command qualification retained failed
+
+- **QUALIFICATION:** all 20 missing-command extension calls completed. Both passes achieved 10/10
+  endpoint decisions, 39/40 unit decisions, 59/60 endpoint-field decisions, and zero material
+  false acceptance/rejection. Both nevertheless failed the frozen protected-causal rule on
+  `CCMC09`, so missing-command study labels are blocked; the result is not repaired or rerun.
+- **CANARY SEMANTICS:** the current missing-motion case remains within the earlier qualified v2
+  release. Both isolated passes scored P complete on M/Q/O/L without material error and scored R
+  incomplete on L without material error. R omitted explicit actuator-acceptance qualification.
+- **DEVELOPMENT EFFECT:** at v4 N=1, Claim A P-minus-R is +1.0 in both passes; Claim B substantive-
+  error-risk difference is 0.0 in both. This is a single development cluster, not significance,
+  confirmation, or promotion.
+- **NEXT:** preserve fixed order. Collect rows 002 and 003 without interpreting their blocked
+  missing-command labels, then reach row 004, the next qualified missing-motion case.
+
 ## 2026-09-27 — v4 canary admitted; missing-command judge extension frozen
 
 - **PHYSICAL RETRY:** authorized `cc-v4-pilot-001-attempt-002` passed the exact v7 build and all

@@ -1,0 +1,69 @@
+{
+  "schema": "crane-contract-limit-v4-pilot-canary/v1",
+  "pilot_id": "contract-limit-v4-fresh-development-pilot",
+  "run_id": "cc-v4-pilot-001",
+  "retained_physical_attempt_id": "cc-v4-pilot-001-attempt-002",
+  "cluster_id": "cc-v4-pilot-cluster-001",
+  "date": "2026-09-27",
+  "status": "DEVELOPMENT_RECONCILED_MISSING_MOTION_PRIMARY",
+  "schedule_order": 1,
+  "fresh_v4_development_N": 1,
+  "control_N": 0,
+  "confirmatory_N": 0,
+  "family": "missing_decisive_or_ambiguous_evidence",
+  "primary_endpoint_eligible": true,
+  "evidence_mask": "remove-delivered-odometry-v1",
+  "physical_admission": {
+    "attempts": 2,
+    "technical_failures": 1,
+    "player_build_audit_accepted": true,
+    "scenario_binding_audit_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "navigation_status": "aborted",
+    "unexpected_outcome_retained": true,
+    "accepted_unity_actions": 484,
+    "displacement_m": 4.704721558903175,
+    "transport_endpoint_errors": 0
+  },
+  "masked_independent_measurement": {
+    "disposition": "insufficient",
+    "delivered_command_samples": 480,
+    "independent_odometry_samples": 0,
+    "action_status": "aborted",
+    "follow_path_failures": 2,
+    "source_qualified_wait_invocations": 2,
+    "paired_unmasked_export_available_to_methods_or_judge": false
+  },
+  "artifact_hashes": {
+    "scenario_binding_audit": "830fc9480ea77c4a33b3482e339f7aee45af09bcf0b42c19d6658d87ed0218f0",
+    "worker_result": "d92510826528e0634fd74d31066b70cab4a88094a88b901d35e99d6b6409f35d",
+    "masked_robot_visible_diagnostic": "0f3250598e5bd029375ef298fdf9348d6012cd06e50d347eb28e20f9220ce32a",
+    "independent_masked_reference": "74a5da60791c53077496e93072ee18ccfe26f9d155d431b7dbf92a020620c3d9",
+    "contract_reference": "f2397674cece63b1ab575adf7a50e1ad37f60f9b0b4b8f9328caa5aff485bc84",
+    "response_pair": "8313a1052508d7a39727196e1a6329296102bee49f72ca71137e5515646a12d2",
+    "blinded_annotation_packet": "0552ea7aeef3d8582d1d4d8ab2dd44e06248d0098c366f325be050f62d99d2ca",
+    "annotation_key": "9b38637c15a30d7a78168d401a2a807fe9615700cfe5a7094bacc42db7c73f7e",
+    "luna_development_summary": "7d5484b871d4c8028f95815d6304194aa86a670bd1c835f49daaa85e9e852182"
+  },
+  "method_execution": {
+    "P_contract_version": "p-contract-v4-development",
+    "R_contract_version": "r-contract-v1-development",
+    "R_contract_model": "gpt-6-sol",
+    "R_contract_reasoning_effort": "high",
+    "R_contract_calls": 1,
+    "judge_calls": 4,
+    "judge_call_failures": 0,
+    "qualified_judge_release": "contract-complete-luna-qualification-v2"
+  },
+  "development_semantic_result": {
+    "pass_1": {"claim_a_P": true, "claim_a_R": false, "claim_b_substantive_error_P": false, "claim_b_substantive_error_R": false, "failed_field_R": "L"},
+    "pass_2": {"claim_a_P": true, "claim_a_R": false, "claim_b_substantive_error_P": false, "claim_b_substantive_error_R": false, "failed_field_R": "L"},
+    "interpretation": "Both Luna passes found P complete and R incomplete only on L: R did not explicitly preserve the actuator-acceptance limitation. Neither response contained a substantive material error.",
+    "confirmatory_alpha_consumed": 0.0
+  },
+  "development_effect": {
+    "claim_a_P_minus_R": {"pass_1": 1.0, "pass_2": 1.0},
+    "claim_b_R_minus_P_error_risk": {"pass_1": 0.0, "pass_2": 0.0}
+  },
+  "next_state": "COLLECT_FIXED_ORDER_ROWS_002_AND_003_WITH_MISSING_COMMAND_LABELS_BLOCKED_THEN_ROW_004"
+}
