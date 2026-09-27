@@ -1,0 +1,50 @@
+{
+  "schema": "crane-contract-complete-question-registry/v1",
+  "registry_id": "contract-complete-diagnostic-communication-v1-questions",
+  "declared_date": "2026-09-27",
+  "status": "DEVELOPMENT_BEFORE_FRESH_PILOT",
+  "episode_specific_answers_present": false,
+  "component_policy": {
+    "M": "State the supported mechanism, or explicitly withhold it when the permitted evidence is insufficient.",
+    "Q": "State the question-essential decisive comparison with values, units, and relevant intervals when available.",
+    "O": "State the recorded action outcome at the scope established by the retained record.",
+    "L": "State the question-specific causal or evidence limitation without converting ordering, visibility, or configuration into causation."
+  },
+  "questions": [
+    {
+      "family": "persistent_command_motion_discrepancy",
+      "population_role": "primary",
+      "text": "State the supported mechanism, the healthy-versus-event commanded/measured comparison, the recorded action outcome, and the unresolved physical, actuator, and consumption limits.",
+      "required_components": ["M", "Q", "O", "L"],
+      "question_essential_detail": "Q includes healthy commanded and measured medians and event commanded and measured medians, each with its interval."
+    },
+    {
+      "family": "measured_response_recovery",
+      "population_role": "primary",
+      "text": "State the discrepancy and measured response recovery, the decisive initial/recovered comparison, the recorded action outcome, and the limits on Wait-to-recovery, recovery-to-outcome, and original-cause attribution.",
+      "required_components": ["M", "Q", "O", "L"],
+      "question_essential_detail": "L separately preserves that Wait need not have caused recovery, recovery need not have caused the task outcome, and the original cause remains unresolved."
+    },
+    {
+      "family": "bounded_geometric_restriction",
+      "population_role": "secondary",
+      "text": "State the bounded navigation-model restriction, the observed route-cell cost and applicable threshold classification, the recorded action outcome, and the limits on global route, obstacle identity, Nav2 consumption, and geometry-to-outcome causation.",
+      "required_components": ["M", "Q", "O", "L"],
+      "question_essential_detail": "Q includes the observed cell cost, the non-traversable threshold, and the bounded location; the restriction remains independent of an outcome-causation claim."
+    },
+    {
+      "family": "missing_decisive_or_ambiguous_evidence",
+      "population_role": "control",
+      "text": "State what mechanism cannot be established, the decisive missing measurement, the recorded action outcome, and the resulting evidence limitation.",
+      "required_components": ["M", "Q", "O", "L"],
+      "question_essential_detail": "Evidence insufficiency is used only when the permitted record genuinely lacks the decisive measurement."
+    },
+    {
+      "family": "nominal_false_premise_or_irrelevant_obstacle",
+      "population_role": "control",
+      "text": "Reject the unsupported failure premise, state the decisive healthy commanded/measured comparison, state the recorded outcome, and preserve physical-cause and Nav2-consumption limits.",
+      "required_components": ["M", "Q", "O", "L"],
+      "question_essential_detail": "Visibility alone does not establish Nav2 consumption or obstacle causation."
+    }
+  ]
+}

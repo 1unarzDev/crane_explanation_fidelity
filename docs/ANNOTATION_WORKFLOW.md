@@ -1,5 +1,15 @@
 # Blinded dual-annotation workflow
 
+## Contract-complete automated arm (2026-09-27)
+
+The planned `luna-model-judge` contract-complete arm is separate from the frozen human workflow
+below. It uses two isolated blinded Luna passes and required-unit IDs `M`, `Q`, `O`, and `L`.
+`analysis/score_contract_complete_judgment.py` derives complete supported communication and
+substantive assertion-risk endpoints deterministically while preserving unresolved fields. A
+cosmetic citation-format exclusion requires an independent deterministic finding; source
+attribution that changes meaning remains substantive. No fresh pilot labels exist yet. Full
+protocol and evidence-boundary details are in `docs/CONTRACT_COMPLETE_CAMPAIGN.md`.
+
 Operational companion to `docs/ANNOTATION_GUIDE.md`. The guide is hash-frozen and states *what* to
 label; this file states *how* to run the process with the committed tooling, and is not frozen.
 

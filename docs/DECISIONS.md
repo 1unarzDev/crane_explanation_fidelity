@@ -2231,3 +2231,19 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - Inference: use the derivatives only for an explicitly labeled sensitivity analysis. Do not call
   it the original registered release or reset the error ledger. Both conservative disagreement
   bounds fail to establish a positive benefit, so there is no significance or replication claim.
+
+## 2026-09-27 — test contract completeness and assertion reliability as separate claims
+
+- Decision: close the inspected focused cohort as development/regression evidence and create one
+  deterministic P-contract candidate. Do not repair old answers and relabel them as confirmation.
+- Method: compile M, Q, O, and L from robot-visible production diagnostics, with independent
+  support and completeness checks. Keep geometry secondary and avoid a new diagnosis architecture.
+- Baseline: strengthen R to R-contract with the identical four-component task, evidence/source
+  access, production tools, and one high-reasoning `gpt-6-sol` call. Exclude evaluator reference
+  tools and P's checked output.
+- Claims: prospectively register complete supported M/Q/O/L communication and substantive
+  assertion reliability together. An omission can fail completeness without becoming a false
+  assertion. Cosmetic path formatting is not headline risk; meaning-changing attribution is.
+- Error budget: preserve the consumed 0.02 and replication 0.02. The available 0.01 revision
+  reserve is not yet consumed; a 0.005/0.005 split is provisional until pilot-informed planning
+  and an atomic freeze.

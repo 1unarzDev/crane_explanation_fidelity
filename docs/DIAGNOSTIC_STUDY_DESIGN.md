@@ -1,6 +1,20 @@
 # Prospective physical-diagnosis study design
 
-## 2026-09-26 focused-strength amendment
+## 2026-09-27 contract-complete redirect
+
+The current prospective direction is governed by
+`docs/CONTRACT_COMPLETE_CAMPAIGN.md`. The earlier focused campaign is closed: 56 immutable pairs
+exist, its exact registered ordered-prefix release is invalid after five original transport-invalid
+Luna judgments, and its ID-corrected N=24 analysis is explicitly post-hoc sensitivity evidence
+with no positive bound. All inspected cases now serve only as development/regression evidence.
+
+The new development candidate is deterministic P-contract versus equally instructed R-contract.
+Both must answer M (mechanism), Q (decisive comparison), O (outcome), and L (necessary limit).
+Two claims—complete supported M/Q/O/L communication and lower substantive assertion risk—must be
+registered together before fresh confirmation. No new pilot or confirmation cluster exists yet,
+and the available 0.01 candidate-revision alpha remains unconsumed.
+
+## 2026-09-26 focused-strength amendment (historical predecessor)
 
 The next prospective campaign is governed by `docs/FOCUSED_STRENGTH_PROTOCOL.md`. It asks a
 narrower question than the earlier general framework: whether deterministic checked composition

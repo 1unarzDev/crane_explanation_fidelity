@@ -5,6 +5,15 @@ through committed manifests, preserve episode/scenario clustering, and never tre
 independent observations. Generated figures and tables should be reproducible from a frozen data
 manifest and configuration hash.
 
+## Contract-complete development candidate
+
+`compose_contract_complete_answer.py` deterministically compiles the public M/Q/O/L question
+contract from governed robot-visible diagnostics. `run_contract_complete_response_pair.py` runs a
+development-only P-contract/R-contract pair with matched evidence and production tools.
+`score_contract_complete_judgment.py` derives the complete-communication and substantive-risk
+endpoints from field-level Luna labels. Governance, commands, and inference limits are in
+`docs/CONTRACT_COMPLETE_CAMPAIGN.md`; none of these development commands activates confirmation.
+
 `sequential_diagnostic_monitor.py` is the prospective, fail-closed anytime monitor for new
 diagnostic campaigns. It cannot ingest legacy or inspected development data. Its protocol, result
 schema, and synthetic zero-outcome dry run are linked from

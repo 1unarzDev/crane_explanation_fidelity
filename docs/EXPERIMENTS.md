@@ -7348,3 +7348,30 @@
   reported as the prespecified confirmatory result. It nevertheless shows that the repaired labels
   do not create a statistically significant finding and that repeated-pass uncertainty is outcome
   consequential.
+
+# 2026-09-27 — contract-complete candidate implementation and inspected-case regression
+
+- **AUDIT:** verified 56 immutable focused P/R pairs, 41 original primary reconciliations, two
+  separately marked primary ID-only derivatives, and 13 controls. Across 86 primary judgments per
+  method, P covered 271/344 units with zero primary material-error labels; R covered 303/344 units
+  with 57 material-error labels. Overlapping R categories extend beyond source links to
+  measurements, failure chains, causal claims, and unsupported facts. This is inspected,
+  judge-sensitive development evidence only.
+- **CANDIDATE:** implemented deterministic `p-contract-v1-development` over the existing validated
+  diagnostic adapters/composer. Final answers contain exactly M, Q, O, and L and pass separate
+  support/completeness gates. No evaluator-only reference or episode gold is read.
+- **REPAIRS:** supported discrepancy includes healthy commanded+measured and event
+  commanded+measured medians with intervals; recovery separately limits Wait-to-recovery,
+  recovery-to-outcome, and original-cause attribution; bounded geometry includes observed cell
+  cost and threshold without requiring geometry-to-outcome causation.
+- **FAIR BASELINE:** added the equally explicit R-contract prompt and development pair runner with
+  the same public contract, robot-visible diagnostic, exact source snapshots, and production
+  tools. Independent reference builders are not exposed. No fresh R call was made in this
+  checkpoint.
+- **EVALUATION:** added deterministic M/Q/O/L and substantive-risk scoring with explicit unresolved
+  values and a narrowly controlled cosmetic-identifier exception. Sixteen focused candidate/
+  scorer tests and 94 relevant regression/governance tests pass; manuscript numeric traceability
+  and the nine-page paper build pass.
+- **STATUS:** fresh pilot N=0, confirmation N=0, candidate-revision alpha remains available, and
+  replication reserve remains untouched. Next is a hash-bound fresh pilot predeclaration and
+  technical canary, not reuse of these inspected cases.

@@ -1,17 +1,19 @@
 # Manuscript claim-to-evidence map
 
-Status: living manuscript audit, 2026-09-24. The current anonymous artifact is a short/WIP paper;
+Status: living manuscript audit, 2026-09-27. The current anonymous artifact is a short/WIP paper;
 every numerical claim must point to a retained manifest/result. This file is not itself
 experimental evidence.
 
-Focused prospective update (2026-09-26): the intended positive claim is now limited to complete
-supported diagnostic communication on registered atomic land question families. Level A is a
-positive anytime-valid P-minus-R bound, Level B exceeds +0.10, and Level C concerns broader
-tradeoffs. No level is currently established.
+Contract-complete redirect (2026-09-27): the closed focused campaign is development/regression
+evidence. Its original registered N=24 release is invalid; its opaque-ID-corrected N=24 analysis is
+post-hoc sensitivity evidence and establishes no positive effect under either disagreement bound.
+The next prospective candidate registers complete M/Q/O/L communication and substantive assertion
+risk as distinct claims. No level is currently established for either claim.
 
 | Claim candidate | Retained support | Current verdict |
 | --- | --- | --- |
-| Checked composition improves complete supported diagnostic communication on registered atomic navigation questions | Development P outputs were restrained, but the v2 Luna packet omitted allowed R facts and v5 showed no consensus P-win cluster; the evidence-complete campaign is activated with alpha 0.02 bound, while confirmation and replication outcomes remain pending | **PROVISIONAL PROSPECTIVE CLAIM ONLY**; confirmatory semantic N=0, no effect/bound/significance/replication |
+| P-contract improves complete supported M/Q/O/L communication over R-contract | The closed campaign has 56 pairs, 43 reconciled primary clusters after two separately marked ID-only derivatives, and 13 controls. P omitted required content systematically; the post-hoc N=24 sensitivity ranges from -0.2083 to +0.25 by disagreement assignment and both valid bounds cross zero | **NEW PROSPECTIVE CLAIM ONLY**; inspected cases are regression/development evidence, fresh pilot and confirmation N=0, no significance or replication |
+| P-contract reduces substantive unsupported/contradicted assertion risk over R-contract | Across 86 inspected primary judgments per method, P has 0 primary material-error labels and R 57, with R categories extending beyond source links to measurements, failure chains, causal claims, and unsupported facts; packet and judge sensitivity remain material concerns | **NEW PROSPECTIVE CLAIM ONLY**; must be retested with R-contract, judge-evidence closure, a prespecified substantive/cosmetic split, and fresh clusters |
 | P is superior on supplemental coverage, every mechanism, or overall robot debugging | V2 omitted question-essential geometry details and had lower aggregate unit coverage; v6 failed composite composition; v5 usually tied R | **DO NOT CLAIM**; report tradeoffs separately even if the focused endpoint wins |
 | The v2 14/18 R material-error count establishes P's advantage | Bounded audit found most challenged facts in R's allowed method inputs or exact sources but absent from compact Luna packets | **DO NOT CLAIM**; historical packet-relative labels are preserved, not a fair comparative effect |
 | ROS-log or agentic RAG is novel to CRANE | Fernández-Becerra et al. (ESWA 2026) retrieve curated ROS 2/Nav2 events with an agentic RAG workflow | **DO NOT CLAIM NOVELTY** |

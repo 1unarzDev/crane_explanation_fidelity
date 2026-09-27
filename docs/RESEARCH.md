@@ -1,5 +1,15 @@
 # Research and benchmark source audit
 
+## 2026-09-27 — contract-complete empirical redirect
+
+The operational prospective plan is now
+[`docs/CONTRACT_COMPLETE_CAMPAIGN.md`](CONTRACT_COMPLETE_CAMPAIGN.md). It preserves the closed
+focused campaign and its unfavorable, disagreement-sensitive post-hoc result, then tests a narrow
+communication contribution: whether deterministic P-contract more reliably communicates the
+supported mechanism, decisive comparison, recorded outcome, and necessary limitation than a
+fairly instructed tool-enabled R-contract, and whether it lowers substantive assertion risk.
+This is not a new diagnostic architecture or a claim of better physical-cause discovery.
+
 ## 2026-09-22 — physical-diagnosis redirect source audit
 
 Primary-source findings for Liu and Brandão (ICRA 2024), Diehl and Ramirez-Amaro (RA-L 2022),

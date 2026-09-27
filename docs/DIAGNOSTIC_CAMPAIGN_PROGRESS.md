@@ -360,19 +360,24 @@ atomically bound, before the first confirmatory response was opened; it cannot l
 Machine-readable state is retained in
 `manifests/study/diagnostic-sequential-error-ledger-v2.json`.
 
-## Cumulative evidence
+## Cumulative focused-campaign evidence
 
 | Quantity | Current value |
 |---|---:|
-| New independent confirmatory clusters | 0 |
-| Diagnosable confirmatory clusters | 0 |
-| Ambiguous confirmatory clusters | 0 |
+| Immutable P/R response pairs | 56 |
+| Primary clusters with originally valid sealed reconciliations | 41 |
+| Primary clusters with separately marked ID-only derivatives | 2 |
+| Controls | 13 |
+| Original valid Luna judgments | 219 / 224 |
+| Post-hoc corrected sensitivity N | 24 |
+| Originally valid registered-look N | 0 |
 | Discovery configurations reused in replication | 0 |
-| Luna confirmatory judgments | 0 |
-| Unresolved confirmatory labels | 0 |
+| Fresh P-contract pilot / confirmation clusters | 0 / 0 |
 
-No effect estimate, confidence sequence, guardrail result, or replication conclusion exists.
-Legacy and the eleven diagnostic-development clusters are intentionally absent from these counts.
+The only effect estimate and confidence sequence are the post-hoc transport-corrected sensitivity
+values reported at the top of this document; neither establishes benefit and neither retroactively
+validates the original release. No fresh P-contract effect, registered confirmation conclusion, or
+replication conclusion exists. Legacy and earlier diagnostic-development clusters remain separate.
 
 The now-closed physical/reference cohort attempted 40/100 fixed confirmation-side configurations:
 39 valid, 1 invalid. The method-visible diagnostic dispositions are twenty-seven supported, seven
