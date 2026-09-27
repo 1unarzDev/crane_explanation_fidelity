@@ -1,5 +1,17 @@
 # Experiment Log
 
+## 2026-09-27 — first fresh P-contract v2 cluster is a complete tie
+
+- **CAPTURE:** fixed-order `cc-pilot-002` passed 14/14 scenario-binding checks and all worker,
+  transport, and capture-quality gates. Its unexpected abort is retained. Independent and
+  production computations agree on healthy 0.260/0.25974 m/s and event 0.260/0.000 m/s over
+  10--20 s, without measured recovery.
+- **SEMANTICS:** all four isolated Luna calls completed. Both passes marked every M/Q/O/L field
+  covered and found no substantive material error for either P-contract v2 or R-contract.
+- **RESULT:** Claim A difference is 0 and Claim B reliability advantage is 0 in each pass. This is
+  fresh v2 development N=1, not confirmation; no alpha was consumed. Fixed order advances to
+  `cc-pilot-003`.
+
 ## 2026-09-27 — first contract-complete canary retained; P-contract v2 regression opened
 
 - **CANARY:** `cc-pilot-001` completed one valid measured-response-recovery capture, independent

@@ -395,7 +395,16 @@ Fresh canary update (2026-09-27): fixed-order `cc-pilot-001` completed one valid
 and independent reference. Production and independent calculations agree on an 18--28 s
 0.260/0.000 m/s discrepancy, 30--31 s recovery to 0.24975 m/s, and eventual action success. One
 deterministic P-contract and one isolated R-contract response now exist. Physical/answer N is 1;
-reconciled semantic N remains 0 because the contract-specific packet and four Luna calls are next.
+the four-call semantic evaluation subsequently found R complete twice and P-contract v1
+incomplete twice because Q omitted the recovered commanded median. Neither method had a
+substantive error. This inspected case triggered p-contract v2 and is regression-only for it.
+
+P-contract v2 update (2026-09-27): fixed-order `cc-pilot-002` passed all physical and evidence
+gates and supports a persistent discrepancy over 10--20 s (0.260 m/s commanded versus 0.000 m/s
+measured) followed by abort. All four Luna judgments are valid; P-contract v2 and R-contract each
+passed M/Q/O/L completeness without material error in both passes. Thus fresh v2 development N=1
+is a tie for both claims. Total pilot physical/answer and reconciled semantic N are 2, controls are
+0, confirmation N is 0, and fixed order advances to `cc-pilot-003`.
 
 The now-closed physical/reference cohort attempted 40/100 fixed confirmation-side configurations:
 39 valid, 1 invalid. The method-visible diagnostic dispositions are twenty-seven supported, seven
