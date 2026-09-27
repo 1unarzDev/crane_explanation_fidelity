@@ -92,3 +92,19 @@ def test_recompute_rejects_unknown_computation_version():
 
     with pytest.raises(ValueError, match="unsupported command-motion computation version"):
         build_result(method_input)
+
+
+def test_recompute_preserves_optional_diagnostic_config_provenance():
+    export = json.loads(COMPENSATED.read_text(encoding="utf-8"))
+    method_input = method_input_from_export(export)
+    config_sha256 = "a" * 64
+    method_input["source"]["diagnostic_config_sha256"] = config_sha256
+
+    recomputed = build_result(method_input)
+    evidence_id = f"diagnostic-config-sha256:{config_sha256}"
+
+    assert evidence_id in recomputed["diagnostic_result"]["supporting_evidence"]
+    assert all(
+        evidence_id in measurement["evidence_ids"]
+        for measurement in recomputed["diagnostic_result"]["measurements"]
+    )

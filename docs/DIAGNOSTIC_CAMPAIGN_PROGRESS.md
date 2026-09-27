@@ -15,6 +15,12 @@ development-only because it was inspected during direction selection. Revision a
 available and unbound; replication alpha 0.02 is untouched. Confirmatory N=0 and both effects and
 bounds are undefined.
 
+`cr-pilot-001` has now traversed capture through independent reference, matched P/R generation,
+blinded packet construction, and two isolated Luna passes per answer. All four judgments were
+valid and unanimously scored both methods complete with no substantive error. The development
+effect is therefore exactly zero for Claims A and B on this one inspected cluster. A narrow
+recomputation-provenance fix restored the diagnostic-config evidence ID and exact parity.
+
 ## Current causal-restraint successor checkpoint (2026-09-27)
 
 The contract-complete v2/v4 routes and both final Luna qualification attempts remain closed. No

@@ -1,0 +1,50 @@
+{
+  "schema": "crane-contract-complete-v2-development-canary/v1",
+  "run_id": "cr-pilot-001",
+  "cluster_id": "cr-pilot-cluster-001",
+  "date": "2026-09-27",
+  "status": "DEVELOPMENT_RECONCILED_P_R_TIE",
+  "family": "measured_response_recovery",
+  "confirmatory_N": 0,
+  "confirmatory_alpha_consumed": 0.0,
+  "disposition": "development only because configuration and outcome were inspected during campaign selection",
+  "diagnostic": {
+    "disposition": "supported",
+    "healthy_commanded_mps": 0.26,
+    "healthy_measured_mps": 0.2597399950027466,
+    "event_interval_s": [9.0, 19.0],
+    "event_commanded_mps": 0.26,
+    "event_measured_mps": 0.0,
+    "recovery_interval_s": [21.0, 22.0],
+    "recovered_commanded_mps": 0.26,
+    "recovered_measured_mps": 0.22976996004581451,
+    "recovered_response_ratio": 0.884615247811123,
+    "action_status": "succeeded",
+    "follow_path_failures": 1,
+    "wait_invocations": 1
+  },
+  "quality": {
+    "independent_reference_agrees": true,
+    "exact_production_recomputation_parity_after_provenance_fix": true,
+    "P_support_check": true,
+    "P_completeness_check": true,
+    "valid_luna_judgments": 4,
+    "planned_luna_judgments": 4,
+    "judge_failures": 0
+  },
+  "semantic_result": {
+    "pass_1": {"P_claim_A": true, "R_claim_A": true, "P_claim_B_error": false, "R_claim_B_error": false},
+    "pass_2": {"P_claim_A": true, "R_claim_A": true, "P_claim_B_error": false, "R_claim_B_error": false},
+    "endpoint_changing_disagreement": false
+  },
+  "artifacts": {
+    "robot_visible_diagnostic": {"path": "data/robot_visible/dev/cr-pilot-001/command-motion-diagnostic-v3.json", "sha256": "61ba1355d565bbf8a93c6b6d1d66cc047649b12c9242f54860df894629692a6a"},
+    "independent_reference": {"path": "data/evaluator_only/dev/cr-pilot-001/command-motion-independent-reference-v1.json", "sha256": "0c121a232d6379aac9bfb9d1ca2adfdecec535db460be90d60a062c7a332b38e"},
+    "response_pair": {"path": "model_outputs/contract-complete-diagnostic-communication-v2-development/response-pairs/cr-pilot-001.json", "sha256": "bb679f45ec6185c0931dc7d11ab6b59fc4c0f7e5acad09bb11aa8c5a18f04479"},
+    "annotation_reference": {"path": "data/evaluator_only/dev/cr-pilot-001/contract-complete-annotation-reference-v1.json", "sha256": "4626cf777c3d16bab2050083e8602b924aede9f85f2c7dde067ce6d3f969edf8"},
+    "blinded_packet": {"path": "model_outputs/annotation_packets/contract-complete-v2-development/blinded/cr-pilot-001.jsonl", "sha256": "e6c11465101e7b712809bbe3abfee5bb60a31884701f18629ac6f4326b194e40"},
+    "condition_key": {"path": "data/evaluator_only/annotation_keys/contract-complete-v2-development/cr-pilot-001.json", "sha256": "8ee7a6f3003f1e7f65e2586a91577679499ed34e5a177b90d6516e0eee6bc780"},
+    "luna_summary": {"path": "model_outputs/luna-model-judge-v1/contract-complete-v2-development/cr-pilot-001/development-summary.json", "sha256": "cddc7f714449e9e7a2f4f723259f99e8e1741c5690f1d73edaf7abcc43032c05"}
+  },
+  "interpretation": "Both methods communicated complete supported M/Q/O/L content without a Luna-assessed substantive error in both isolated passes. This is a development tie, not evidence for either prospective claim."
+}

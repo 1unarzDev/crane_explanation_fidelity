@@ -12,6 +12,14 @@
 - It is development-only because inspected during selection. Confirmatory N and alpha remain zero;
   next is governed diagnostic/reference derivation and one matched P/R packet.
 
+The full canary is now complete. The low-speed diagnostic and independent implementation agree on
+a 0.260/0.000 m/s discrepancy over 9--19 s, recovery to 0.22977 m/s over 21--22 s, and eventual
+success. A provenance-parity defect in the production recomputation tool dropped the optional
+diagnostic-config hash; the narrow fix and regression restore exact parity without changing any
+quantity or conclusion. P and R both passed Claims A and B in both isolated Luna passes (four valid
+calls, no disagreement or failure). This is an unfavorable-to-advantage development tie and is
+retained as such; it contributes no confirmation N or alpha.
+
 ## 2026-09-27 — causal-restraint fresh population and detector qualification frozen
 
 - **FRESHNESS:** twenty v6 layouts never assigned to the original physical schedule and absent
