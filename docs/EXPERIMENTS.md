@@ -1,5 +1,16 @@
 # Experiment Log
 
+## 2026-09-27 — first contract-complete control retained
+
+- **CAPTURE/REFERENCE:** `cc-pilot-009` passed all gates without intervention. Independent
+  computation returned `not_triggered`; the healthy comparison was 0.260/0.25974 m/s and the
+  action succeeded.
+- **SEMANTICS:** P covered M/Q/O/L without material error twice. R omitted L twice. Pass 1 also
+  found its claim that no individual eligible window met the low-response boundary unsupported;
+  pass 2 did not mark that assertion material. No retry or extra vote occurred.
+- **BOUNDARY:** this is non-primary control evidence. It adds zero primary N and does not change
+  the 0.0/+0.143 pass-specific primary effects. Fixed order advances to `cc-pilot-010`.
+
 ## 2026-09-27 — control execution path frozen before first control
 
 - **GAP:** the pre-`cc-pilot-009` audit found that P already rendered the frozen nominal M/Q/O/L

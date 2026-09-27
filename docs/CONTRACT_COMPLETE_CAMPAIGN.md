@@ -1,6 +1,6 @@
 # Contract-complete diagnostic communication campaign
 
-Status: **EIGHT DEVELOPMENT CLUSTERS RECONCILED; P-CONTRACT V2 PILOT ACTIVE; CONFIRMATION NOT FROZEN**
+Status: **NINE DEVELOPMENT CLUSTERS RECONCILED; FIRST CONTROL COMPLETE; CONFIRMATION NOT FROZEN**
 Recorded: 2026-09-27
 
 This is the operational form of the contract-complete research redirect. It is additive. It does
@@ -268,13 +268,12 @@ Current checkpoint:
 | Known omission regressions | Healthy/event/recovery command+motion, post-recovery outcome scope, causal limits, geometry cost threshold pass |
 | Baseline | R-contract v1 made one fresh call and passed Claim A in both canary passes |
 | Field evaluator | Deterministic Claim A/B scorer implemented; corrected v2 qualified 12/12 endpoints in each pass with 47/48 unit decisions |
-| Fresh pilot | Physical/answer N=8, reconciled semantic N=8, controls=0; v1 has one R win; fresh v2 N=7 gives pass-specific effects 0.0 and +0.143 for both claims |
+| Fresh pilot | Physical/answer N=9, reconciled semantic N=9; primary v2 N=7 and controls=1; primary pass effects remain 0.0 and +0.143 |
 | Confirmation | Not frozen; no alpha newly consumed; no look or effect |
 | Replication | Reserve untouched; criterion pending confirmation freeze |
 | Manuscript | Historical status corrected; contract-complete results remain pending |
 
-Next executable action: continue the bounded pilot in fixed order at `cc-pilot-009`, the first
-scheduled control. New v2
+Next executable action: continue the bounded pilot in fixed order at `cc-pilot-010`. New v2
 comparisons use cases whose contents did not influence the repair; confirmation remains prohibited
 until the bounded pilot and atomic freeze are complete.
 
@@ -288,6 +287,11 @@ the independent reference builder now emits question-specific nominal-control M/
 the Luna packet runner accepts those rows only when they are explicitly non-primary. Controls keep
 the same blinded two-pass semantic audit but contribute zero Claim A/B primary N. Candidate,
 baseline, questions, judge prompt/settings, schedule, and confirmation state are unchanged.
+
+The first nominal control (`cc-pilot-009`) is separately reconciled. P covered M/Q/O/L without
+error twice. R omitted the required transient-difficulty and obstacle-visibility limitation twice;
+one pass also marked an overstatement about individual low-response windows materially unsupported.
+The disagreement is retained. This control changes neither primary N nor the Claim A/B effects.
 
 ## Tested development commands
 

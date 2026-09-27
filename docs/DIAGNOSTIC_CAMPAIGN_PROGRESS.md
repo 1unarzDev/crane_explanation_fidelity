@@ -448,6 +448,13 @@ abort. Both methods again passed both claims in both Luna passes. Fresh v2 N=7 h
 0.0 and +0.143; six clusters are ties and the remaining signal is unresolved. Confirmation and
 alpha remain zero. Fixed order advances to `cc-pilot-009`, the first control.
 
+First control update (2026-09-27): `cc-pilot-009` passed all admission gates without intervention.
+Independent computation returned `not_triggered`, with a 0.260/0.25974 m/s healthy comparison and
+action success. P covered all M/Q/O/L fields without error twice. R omitted the required transient
+and obstacle-visibility limitation twice; pass 1 also marked its individual-window statement
+materially unsupported while pass 2 did not. The labels remain unreconciled at material-error
+level. Control N=1, primary v2 N=7, confirmation N=0, and primary effects are unchanged.
+
 The now-closed physical/reference cohort attempted 40/100 fixed confirmation-side configurations:
 39 valid, 1 invalid. The method-visible diagnostic dispositions are twenty-seven supported, seven
 `not_triggered`, and five `insufficient`. Run 004 is a valid unexpected transient case: measured
