@@ -12,6 +12,7 @@ import hashlib
 import json
 from pathlib import Path
 import re
+import statistics
 from typing import Any
 
 from build_command_motion_composition_packet import _evidence_ids, _format_number, _interval, _measurement_map
@@ -21,7 +22,7 @@ from compose_diagnostic_hypotheses_v2 import compose as compose_checked
 
 
 SCHEMA = "crane-contract-complete-answer/v1"
-VERSION = "p-contract-v1-development"
+VERSION = "p-contract-v2-development"
 REGISTRY_SCHEMA = "crane-contract-complete-question-registry/v1"
 REQUIRED_COMPONENTS = ["M", "Q", "O", "L"]
 BLOCKED_COST_THRESHOLD = 253
@@ -61,6 +62,37 @@ def _action(measurements: dict[str, dict[str, Any]]) -> tuple[dict[str, Any], st
     }:
         raise ValueError("contract answer lacks a bounded recorded action outcome")
     return action, str(action["value"])
+
+
+def _recovered_command_measurement(
+    document: dict[str, Any], recovered: dict[str, Any]
+) -> dict[str, Any]:
+    interval = recovered.get("interval_s")
+    samples = document.get("method_input", {}).get("command_samples")
+    if (
+        not isinstance(interval, list)
+        or len(interval) != 2
+        or not isinstance(samples, list)
+    ):
+        raise ValueError("recovery contract lacks its command-comparison inputs")
+    start, end = map(float, interval)
+    values = [
+        float(item["planar_speed_mps"])
+        for item in samples
+        if isinstance(item, dict)
+        and isinstance(item.get("offset_s"), (int, float))
+        and start <= float(item["offset_s"]) < end
+        and isinstance(item.get("planar_speed_mps"), (int, float))
+    ]
+    if not values:
+        raise ValueError("recovery interval has no delivered-command samples")
+    return {
+        "id": "recovered_commanded_planar_speed",
+        "value": float(statistics.median(values)),
+        "unit": "m/s",
+        "interval_s": [start, end],
+        "evidence_ids": list(recovered.get("evidence_ids", [])),
+    }
 
 
 def _command_components(
@@ -125,9 +157,13 @@ def _command_components(
         waits = measurements.get("source_qualified_wait_recoveries")
         if recovered is None or ratio is None or waits is None:
             raise ValueError("recovery contract lacks measured recovery or Wait-order evidence")
+        recovered_command = _recovered_command_measurement(document, recovered)
         comparison += (
-            f" Measured response recovered to {_format_number(recovered['value'])} "
-            f"{recovered.get('unit')} during {_interval(recovered)} "
+            f" Measured response recovered in the recovery interval {_interval(recovered)}: "
+            f"the commanded median was "
+            f"{_format_number(recovered_command['value'])} {recovered_command.get('unit')} and "
+            f"the measured median was {_format_number(recovered['value'])} "
+            f"{recovered.get('unit')} "
             f"({_format_number(ratio['value'])} of the calibrated healthy response)."
         )
         return [
@@ -139,9 +175,15 @@ def _command_components(
                 recovered,
             ),
             _component(
-                "Q", comparison, healthy_command, healthy_measured, event_command, event_measured, recovered, ratio
+                "Q", comparison, healthy_command, healthy_measured, event_command, event_measured,
+                recovered_command, recovered, ratio
             ),
-            _component("O", f"The recorded navigation action {action_value}.", action),
+            _component(
+                "O",
+                f"After that measured response recovery, the recorded navigation action {action_value}.",
+                recovered,
+                action,
+            ),
             _component(
                 "L",
                 "The retained ordering does not establish that a Wait invocation caused the measured response recovery, and it does not establish that the measured response recovery caused the eventual action outcome; the original physical or actuator cause remains unresolved.",

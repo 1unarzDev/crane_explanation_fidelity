@@ -1,5 +1,18 @@
 # Experiment Log
 
+## 2026-09-27 — first contract-complete canary retained; P-contract v2 regression opened
+
+- **CANARY:** `cc-pilot-001` completed one valid measured-response-recovery capture, independent
+  reference, P/R pair, evidence-closed packet, and four isolated qualified Luna calls with zero
+  transport failures. Both passes scored R-contract complete and P-contract v1 incomplete.
+- **FAILURE:** both passes marked P's Q omitted because it omitted the recovered commanded median
+  of 0.250 m/s. One pass also required O to state explicitly that the recorded success followed
+  recovery. Claim B tied with no substantive material error for either answer.
+- **REPAIR:** the original answer and labels remain immutable. `p-contract-v2-development` now
+  renders commanded and measured recovery medians together and preserves post-recovery outcome
+  scope. The inspected case passes deterministic final-text regression only and is ineligible as
+  untouched evidence for v2. Confirmation N remains zero and no alpha was consumed.
+
 ## 2026-09-26 — headless RoboBoat production rows 003–004 closed
 
 - **ROW 003 VALID:** `boat-ext-narrow-003` completed once through the virtual-output renderer at

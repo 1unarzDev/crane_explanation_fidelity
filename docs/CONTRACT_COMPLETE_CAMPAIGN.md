@@ -1,6 +1,6 @@
 # Contract-complete diagnostic communication campaign
 
-Status: **DEVELOPMENT PILOT SCHEDULE AND JUDGE EXTENSION FROZEN; CALLS NOT YET RUN; CONFIRMATION NOT FROZEN**
+Status: **FIRST DEVELOPMENT CANARY RECONCILED; P-CONTRACT V2 REPAIR IN REGRESSION; CONFIRMATION NOT FROZEN**
 Recorded: 2026-09-27
 
 This is the operational form of the contract-complete research redirect. It is additive. It does
@@ -40,9 +40,19 @@ Consequences:
   four-component instruction, governed evidence references, and a substantive/cosmetic split.
 - Legacy and RoboBoat evidence remain analytically separate.
 
-## 2. P-contract v1 development candidate
+## 2. P-contract development candidates
 
-Candidate ID: `p-contract-v1-development`.
+The first candidate was `p-contract-v1-development`. Its first fresh development canary is now
+immutable and unfavorable: both Luna passes marked its Q unit omitted because it did not render
+the recovered commanded median, while one pass also marked O omitted because the outcome sentence
+did not state its post-recovery scope. R-contract passed Claim A in both passes. Neither method had
+a substantive material error. This case is retained as inspected development evidence and cannot
+become fresh evidence for the repair.
+
+The repaired candidate is `p-contract-v2-development`. It adds the recovered commanded median
+from the same half-open recovery interval used for measured motion and renders the outcome as
+occurring after measured recovery. The repaired output passes the final-text regression on the
+inspected case; that regression is not a new method comparison.
 
 The public question registry is
 `research/explanation_fidelity/experiment_configs/prospective/contract-complete-diagnostic-communication-v1-questions.json`.
@@ -254,18 +264,18 @@ Current checkpoint:
 
 | Item | Status |
 | --- | --- |
-| Candidate | `p-contract-v1-development`; deterministic M/Q/O/L compiler implemented |
-| Known omission regressions | Healthy command+motion, recovery/outcome limits, geometry cost threshold pass |
-| Baseline | R-contract prompt and development runner implemented; no fresh call yet |
+| Candidate | `p-contract-v2-development`; v1 failure retained and v2 deterministic regression passes |
+| Known omission regressions | Healthy/event/recovery command+motion, post-recovery outcome scope, causal limits, geometry cost threshold pass |
+| Baseline | R-contract v1 made one fresh call and passed Claim A in both canary passes |
 | Field evaluator | Deterministic Claim A/B scorer implemented; corrected v2 qualified 12/12 endpoints in each pass with 47/48 unit decisions |
-| Fresh pilot | Physical/answer N=1, reconciled semantic N=0, controls=0; fixed 15-diagnosable/4-control schedule |
+| Fresh pilot | Physical/answer N=1, reconciled semantic N=1, controls=0; v1 P loses Claim A to R in both passes and Claim B ties; case now development-only for v2 |
 | Confirmation | Not frozen; no alpha newly consumed; no look or effect |
 | Replication | Reserve untouched; criterion pending confirmation freeze |
 | Manuscript | Historical status corrected; contract-complete results remain pending |
 
-Next executable action: finish the first fixed-order canary by building its evidence-closed
-contract packet, running four isolated Luna calls, and reconciling the two methods. Then continue
-the bounded pilot in fixed order.
+Next executable action: checkpoint the v2 regression, then continue the bounded pilot in fixed
+order at `cc-pilot-002`. New v2 comparisons must use cases whose contents did not influence this
+repair; confirmation remains prohibited until the bounded pilot and atomic freeze are complete.
 
 ## Tested development commands
 

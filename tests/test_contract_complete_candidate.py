@@ -71,8 +71,12 @@ def test_recovery_followed_by_abort_preserves_both_causal_limits() -> None:
     lower = text.lower()
 
     assert result["completeness_check"]["passed"] is True
+    assert result["candidate_version"] == "p-contract-v2-development"
     assert "measured response recovered" in lower
-    assert "recorded navigation action aborted" in lower
+    assert "recovery interval" in lower
+    assert "commanded median was 0.25 m/s" in lower
+    assert "measured median was 0.24975 m/s" in lower
+    assert "after that measured response recovery, the recorded navigation action aborted" in lower
     assert "does not establish that a wait invocation caused the measured response recovery" in lower
     assert "does not establish that the measured response recovery caused the eventual action outcome" in lower
     assert "original physical or actuator cause remains unresolved" in lower

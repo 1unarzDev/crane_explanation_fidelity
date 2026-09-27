@@ -10,6 +10,13 @@ supported mechanism, decisive comparison, recorded outcome, and necessary limita
 fairly instructed tool-enabled R-contract, and whether it lowers substantive assertion risk.
 This is not a new diagnostic architecture or a claim of better physical-cause discovery.
 
+The first fresh development canary exposed a candidate-side completeness defect: P-contract v1
+omitted the recovered commanded median and did not always communicate the post-recovery scope of
+the action outcome. R-contract passed complete M/Q/O/L communication in both isolated Luna passes;
+both methods had zero Luna-assessed substantive errors. The immutable unfavorable result is
+retained. `p-contract-v2-development` is a new version that repairs only those two deterministic
+rendering omissions; the inspected canary is regression evidence, not fresh support for v2.
+
 ## 2026-09-22 — physical-diagnosis redirect source audit
 
 Primary-source findings for Liu and Brandão (ICRA 2024), Diehl and Ramirez-Amaro (RA-L 2022),

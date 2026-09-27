@@ -140,7 +140,7 @@ def run(args: argparse.Namespace, caller=None) -> dict[str, Any]:
     result = {
         "schema": "crane-contract-complete-response-pair/v1",
         "status": "DEVELOPMENT_ONLY_NOT_CONFIRMATORY",
-        "candidate": "p-contract-v1-development",
+        "candidate": p_result["candidate_version"],
         "baseline": "r-contract-v1-development",
         "cluster_id": args.cluster_id,
         "family": args.family,

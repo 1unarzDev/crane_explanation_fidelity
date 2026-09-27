@@ -1,0 +1,39 @@
+{
+  "schema": "crane-contract-complete-candidate-regression/v1",
+  "candidate_id": "p-contract-v2-development",
+  "date": "2026-09-27",
+  "status": "DEVELOPMENT_REGRESSION_PASSED_NOT_CONFIRMATORY",
+  "predecessor": "p-contract-v1-development",
+  "trigger": {
+    "canary": "cc-pilot-001",
+    "retained_result": "P v1 failed Claim A in both Luna passes while R passed",
+    "repaired_omissions": [
+      "recovered commanded median in Q",
+      "post-recovery action-outcome scope in O"
+    ]
+  },
+  "source": {
+    "path": "analysis/compose_contract_complete_answer.py",
+    "sha256": "c3b2025ce5260776d5d8317ee7d56edff4d47361523a0e90cce1094a12e7bdb8"
+  },
+  "question_registry": {
+    "path": "research/explanation_fidelity/experiment_configs/prospective/contract-complete-diagnostic-communication-v1-questions.json",
+    "sha256": "04985925118b14509ac02b50303a9a9755ee50dee8aa41ed002ed26637904638"
+  },
+  "regression_output": {
+    "path": "model_outputs/contract-complete-diagnostic-communication-v1-pilot/regressions/cc-pilot-001-p-contract-v2.json",
+    "sha256": "dd26637d5234563bc59bb914d0a13a7bf78a177105ea3c5bfdb79f87ee00be22"
+  },
+  "validation": {
+    "command": "PYTHONPATH=. pytest -q tests/test_contract_complete_candidate.py tests/test_contract_complete_annotation_packet.py tests/test_run_contract_complete_luna_packet.py tests/test_score_contract_complete_judgment.py",
+    "result": "20 passed",
+    "final_text_checked": true,
+    "evaluator_truth_read_by_candidate": false
+  },
+  "scientific_boundary": {
+    "inspected_canary_reused_as_fresh_evidence": false,
+    "confirmatory_N": 0,
+    "confirmatory_alpha_consumed": 0.0,
+    "next_eligible_development_case": "cc-pilot-002"
+  }
+}

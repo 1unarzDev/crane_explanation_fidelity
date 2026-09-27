@@ -1,5 +1,18 @@
 # Decision Log
 
+## 2026-09-27 — version the first contract-completeness repair
+
+- **Decision:** close `p-contract-v1-development` after its first canary and create
+  `p-contract-v2-development`; do not alter or relabel the v1 response.
+- **Evidence:** both isolated Luna passes agreed that v1 omitted the required recovered commanded
+  median. One pass additionally marked the outcome's post-recovery scope omitted. R-contract
+  passed Claim A twice, so the canary is unfavorable to P rather than evidence of advantage.
+- **Scope:** v2 changes deterministic communication only: it computes the delivered-command median
+  over the already declared recovery interval and explicitly locates the recorded outcome after
+  recovery. The diagnostic mechanism and causal limits are unchanged.
+- **Consequence:** `cc-pilot-001` is regression/development evidence for v2. Continue at the next
+  fixed pilot configuration; do not activate confirmation or spend alpha.
+
 ## 2026-09-26 — freeze a four-configuration RoboBoat external-validity arm
 
 - **Decision:** close the readiness gate as `NARROW_ARM_FROZEN` with four exact physical
