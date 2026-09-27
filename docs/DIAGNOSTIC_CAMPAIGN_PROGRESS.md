@@ -1,9 +1,25 @@
 # Diagnostic sequential-campaign progress
 
-Updated: 2026-09-26
+Updated: 2026-09-27
 
 Protocol: `diagnostic-sequential-protocol-v2`
-Current status: **FOCUSED COLLECTION CLOSED / POST-HOC TRANSPORT-CORRECTED N=24 SENSITIVITY AVAILABLE / REGISTERED RELEASE REMAINS INVALID**
+Current status: **CONTRACT-COMPLETE PROMOTION CLOSED / FINITE CAUSAL-RESTRAINT ENDPOINT IN DEVELOPMENT / CONFIRMATION N=0**
+
+## Current causal-restraint successor checkpoint (2026-09-27)
+
+The contract-complete v2/v4 routes and both final Luna qualification attempts remain closed. No
+labels were repaired or rerun. A deterministic post-hoc audit instead measured a narrower,
+independently inspectable outcome: an overt causal/effectiveness link forbidden by the public
+family contract. Across the fourteen retained v2 primary development clusters, P-contract had
+0/14 events and R-contract 3/14, yielding three R-only discordances, zero P-only discordances, and
+a descriptive R-minus-P risk difference of +0.2143. Alpha use remains zero.
+
+This result is candidate/endpoint development only. The finite detector does not establish that an
+unmatched answer is semantically error-free, and the three inspected errors cannot enter a future
+test. The detector/contract/report identities are pinned by
+`explicit-prohibited-causal-link-audit-v1-manifest.json`. Next action is an eligibility and
+configuration-diversity audit for a fresh, disjoint successor population; only then may one narrow
+claim, analysis, alpha allocation, and replication rule be frozen.
 
 ## Opaque-ID transport correction and first-look sensitivity (2026-09-26)
 

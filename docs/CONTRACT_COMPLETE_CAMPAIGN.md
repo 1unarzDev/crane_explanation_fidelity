@@ -1,6 +1,6 @@
 # Contract-complete diagnostic communication campaign
 
-Status: **V2 PILOT CLOSED; V4 TWO-CONTRACT PILOT CLOSED WITHOUT PROMOTION; CONFIRMATION INACTIVE**
+Status: **P-CONTRACT ROUTE CLOSED; FINITE CAUSAL-RESTRAINT SUCCESSOR UNDER DEVELOPMENT; CONFIRMATION INACTIVE**
 Recorded: 2026-09-27
 
 This is the operational form of the contract-complete research redirect. It is additive. It does
@@ -459,6 +459,36 @@ a credible route to a new advantage. The next prospective claim is instead limit
 supported qualification when a declared decisive physical measurement is absent. It must use
 fresh independent configurations, more than one evidence-deficiency contract, unchanged strong R,
 nominal/fully evidenced controls, and a separately frozen analysis/error budget before confirmation.
+
+## 10. Post-hoc finite causal-link audit and successor boundary
+
+After closing the semantic promotion route, a bounded deterministic audit tested one narrower
+property that does not require repairing or replacing Luna labels: whether the final answer makes
+an overt causal/effectiveness link that the public family contract expressly leaves
+unestablished. The v1 inventory covers Wait-to-recovery, Wait-to-outcome,
+recovery-to-outcome, discrepancy-to-outcome, and named-physical-source links. It exempts explicit
+non-establishment language and chronology alone. The detector is deliberately finite; absence of
+a match is not a general semantic-correctness judgment.
+
+On all fourteen retained v2 primary development clusters, P-contract produced 0/14 detector
+events and R-contract produced 3/14, with three R-only and zero P-only discordances (descriptive
+R-minus-P risk +0.2143). The exact spans were two assertions that Wait did not yield/lead to task
+success and one statement that the failure and Wait made Wait-to-recovery plausible. The result is
+post-hoc development evidence: no alpha was used and it is not a significance result.
+
+The detector now binds prohibited relation IDs by family, preserves exact spans, and has mutation
+tests for Markdown, explicit negation, chronology, multiple findings, hedging, and prospectively
+licensed relations. A future evidence contract that establishes a covered relation must remove it
+from that family's prohibited set before response generation. This prevents the detector from
+turning a genuinely supported cause into an error.
+
+The scientifically defensible next course is one separately registered successor claim limited to
+**explicit contract-prohibited causal-link risk**. It may use the unchanged deterministic
+P-contract and same strong R-contract only after fresh configurations, the public causal contract,
+detector/hash, population, fixed or sequential analysis, alpha allocation, and replication rule
+are frozen atomically. M/Q/O/L coverage and Luna-assessed semantics remain mandatory secondary
+tradeoff evidence. The successor cannot claim general error-free explanation, better physical
+discovery, or confirmation from the fourteen inspected clusters.
 
 ## Tested development commands
 

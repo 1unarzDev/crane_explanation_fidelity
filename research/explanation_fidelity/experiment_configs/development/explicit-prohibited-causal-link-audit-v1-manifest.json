@@ -1,0 +1,33 @@
+{
+  "schema": "crane-development-audit-manifest/v1",
+  "audit_id": "explicit-prohibited-causal-link-audit-v1-contract-validated",
+  "recorded_date": "2026-09-27",
+  "status": "POST_HOC_DEVELOPMENT_ONLY",
+  "detector": {
+    "path": "analysis/audit_explicit_causal_links.py",
+    "sha256": "c1c09dbf5e71f32a2be787975b1791901e0c2e998e0ffd4f8de1765fa861b69d"
+  },
+  "contract": {
+    "path": "research/explanation_fidelity/experiment_configs/development/explicit-prohibited-causal-link-contract-v1.json",
+    "sha256": "41852be266853a44f0b0d81354b59dcbe4fb40b87e8f2faf163306eb75b7b09e"
+  },
+  "input": {
+    "root": "model_outputs/contract-complete-diagnostic-communication-v1-pilot/response-pairs",
+    "selection": "All 14 retained p-contract-v2-development pairs in the persistent_command_motion_discrepancy and measured_response_recovery families",
+    "independent_cluster_count": 14
+  },
+  "output": {
+    "path": "model_outputs/development/explicit-causal-link-audit-v1-contract-validated.json",
+    "sha256": "abb88568dc43564cb1883426065e5493fa358991e1d540312bd196990719fe93"
+  },
+  "result": {
+    "P_contract_events": 0,
+    "R_contract_events": 3,
+    "P_only_discordances": 0,
+    "R_only_discordances": 3,
+    "descriptive_R_minus_P_risk": 0.21428571428571427
+  },
+  "invalid_predecessor_retained": "model_outputs/development/explicit-causal-link-audit-v1-invalid-pre-fix.json",
+  "scientific_boundary": "The result motivated a possible successor endpoint. It is not confirmation, significance, replication, or proof that answers without a finite detector event are error-free.",
+  "alpha_consumed": 0.0
+}

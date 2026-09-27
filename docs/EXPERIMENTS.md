@@ -1,5 +1,24 @@
 # Experiment Log
 
+## 2026-09-27 — finite prohibited-causal-link audit motivates a narrow successor
+
+- **SCOPE:** post-hoc development audit of all 14 retained P-contract-v2 primary response pairs;
+  controls, v1, v3/v4, and all confirmation/replication reserves are excluded.
+- **MEASURE:** deterministic exact-span detection of five public-contract-prohibited relation
+  types. Family-specific prohibited IDs are explicit; chronology and explicit non-establishment
+  language are exempt; unmatched language is not certified error-free.
+- **VALIDATION:** eight tests cover the retained spans, Markdown, negation, multiple findings,
+  hedged relations, finite-grammar limitations, unknown-rule rejection, and prospective exclusion
+  of a relation that future evidence actually supports.
+- **RESULT:** P-contract 0/14, R-contract 3/14; R-only discordances 3, P-only 0; descriptive
+  R-minus-P risk +0.2143. The R spans assert Wait-to-outcome ineffectiveness twice and
+  Wait-to-recovery plausibility once.
+- **BOUNDARY:** development only, alpha 0, no confidence sequence, significance, or replication.
+  This does not repair Luna labels or establish broad substantive-error superiority.
+- **NEXT:** audit fresh configuration eligibility/diversity and, if adequate, atomically freeze one
+  successor claim for explicit contract-prohibited causal-link risk with M/Q/O/L and Luna results
+  retained as secondary tradeoff evidence.
+
 ## 2026-09-27 — v4 canary semantic result; missing-command qualification retained failed
 
 - **QUALIFICATION:** all 20 missing-command extension calls completed. Both passes achieved 10/10

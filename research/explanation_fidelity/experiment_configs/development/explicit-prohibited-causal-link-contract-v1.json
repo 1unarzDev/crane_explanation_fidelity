@@ -1,0 +1,44 @@
+{
+  "schema": "crane-explicit-prohibited-causal-link-contract/v1",
+  "contract_id": "explicit-prohibited-causal-link-contract-v1",
+  "declared_date": "2026-09-27",
+  "status": "POST_HOC_DEVELOPMENT_BEFORE_ANY_SUCCESSOR_FREEZE",
+  "scope": [
+    "persistent_command_motion_discrepancy",
+    "measured_response_recovery"
+  ],
+  "event_definition": "The final answer explicitly asserts a named causal or causal-effectiveness relationship that the supplied evidence contract declares unestablished.",
+  "covered_relations": [
+    "Wait caused, restored, or probably/plausibly helped measured recovery",
+    "Wait yielded, led to, or produced task success or its absence",
+    "measured recovery caused the eventual task outcome",
+    "the command-motion discrepancy caused the terminal outcome",
+    "a named physical source caused the discrepancy or outcome"
+  ],
+  "prohibited_relation_ids_by_family": {
+    "persistent_command_motion_discrepancy": [
+      "wait_to_outcome_effect",
+      "wait_to_recovery_effect",
+      "recovery_to_outcome_effect",
+      "discrepancy_to_outcome_effect",
+      "physical_cause_assertion"
+    ],
+    "measured_response_recovery": [
+      "wait_to_outcome_effect",
+      "wait_to_recovery_effect",
+      "recovery_to_outcome_effect",
+      "discrepancy_to_outcome_effect",
+      "physical_cause_assertion"
+    ]
+  },
+  "not_events": [
+    "chronology without a causal connective",
+    "an explicit statement that the evidence does not establish or prove the relation",
+    "a statement that the relation remains unresolved",
+    "an unsupported relation outside the finite detector inventory, which remains for semantic review"
+  ],
+  "interpretation_boundary": "A detector event is an independently auditable explicit causal link prohibited by the family contract. No detector event is not proof that the complete natural-language answer is error-free. A future family or episode that licenses a covered relation must exclude that relation prospectively rather than relying on the detector to infer support.",
+  "method_blinding": "The same finite rule is applied to both methods' actual final text.",
+  "statistical_unit": "independent physical scenario configuration",
+  "development_use_only": true
+}
