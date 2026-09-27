@@ -1,0 +1,39 @@
+{
+  "artifacts": [
+    {
+      "bytes": 3130075,
+      "path": "/home/lunarz/crane_explain/data/robot_visible/dev/cr-pilot-007/capture/events.jsonl",
+      "sha256": "cac42fce805782874e1c53d260d74c456ccf233ae8e4cf2f74839ea3280360ed"
+    },
+    {
+      "bytes": 797,
+      "path": "/home/lunarz/crane_explain/data/robot_visible/dev/cr-pilot-007/capture/manifest.json",
+      "sha256": "48925622601950a98c92474adfa7b2438e0dd3dc8bf967ea713a67d8e969cb92"
+    },
+    {
+      "bytes": 59378,
+      "path": "/home/lunarz/crane_explain/data/evaluator_only/dev/cr-pilot-007/fixture-summary.json",
+      "sha256": "e0a2ac32f8b205831114c154e1f994be9feaa9a65a8f69dd34bbb41c0f9ca1c5"
+    },
+    {
+      "bytes": 138700,
+      "path": "/home/lunarz/crane_explain/data/evaluator_only/dev/cr-pilot-007/worker-0/result.json",
+      "sha256": "8f5dfb25406117f1d4b623c05cf131aa2ac71aa60036639b36eb4bc3e36ff3b0"
+    },
+    {
+      "bytes": 1168,
+      "path": "/home/lunarz/crane_explain/data/evaluator_only/dev/cr-pilot-007/scenario-binding-audit.json",
+      "sha256": "efde62ff9e2ddadb32fc7fc051b2b0b6ba3b045d088e2df1552e18fd89265aba"
+    }
+  ],
+  "attempt_id": "cr-pilot-007-attempt-001",
+  "cluster_id": "cr-pilot-cluster-007",
+  "job_id": "cr-pilot-007-capture",
+  "reason": "The retained capture contains two accepted-goal records with different goal identities for one fixture attempt. The governed exporter therefore rejected it at the predeclared exactly-one-accepted-goal boundary. The scenario binding passed, but the command-motion evidence cannot be assigned to one unambiguous action episode. This attempt contributes no physical or semantic cluster.",
+  "retry": {
+    "authorized": false,
+    "replacement_authorized": false,
+    "reason": "The frozen pilot assigns one physical attempt per scheduled configuration and prohibits replacement or quality-driven retry."
+  },
+  "schema": "crane-diagnostic-batch-technical-failure/v1"
+}
