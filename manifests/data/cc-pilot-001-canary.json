@@ -4,7 +4,7 @@
   "run_id": "cc-pilot-001",
   "cluster_id": "cc-pilot-cluster-001",
   "date": "2026-09-27",
-  "status": "ANSWERS_READY_ANNOTATION_PACKET_PENDING",
+  "status": "DEVELOPMENT_RECONCILED_SYSTEMATIC_P_OMISSION_FOUND",
   "fresh_independent_N": 1,
   "confirmatory_N": 0,
   "family": "measured_response_recovery",
@@ -45,6 +45,22 @@
     "response_pair": {
       "path": "model_outputs/contract-complete-diagnostic-communication-v1-pilot/response-pairs/cc-pilot-001.json",
       "sha256": "157567951dbb46d4eee068e89a844a5b7ca70fd3756c0734f8778faaf874a368"
+    },
+    "contract_reference": {
+      "path": "data/evaluator_only/dev/cc-pilot-001/contract-complete-annotation-reference-v1.json",
+      "sha256": "d46f84320ce7866d17950c16b09dcb4d9555f2d49b295e3d5315b06990854f99"
+    },
+    "blinded_annotation_packet": {
+      "path": "model_outputs/annotation_packets/contract-complete-v1-pilot/cc-pilot-001.jsonl",
+      "sha256": "68e073af72f0355e687712d7ef1ecc6fea113cec99bf3c7bf9ac71d473ab333c"
+    },
+    "annotation_key": {
+      "path": "data/evaluator_only/annotation_keys/contract-complete-v1-pilot/cc-pilot-001.json",
+      "sha256": "3da6a566be4ecb72146d605d95b6fe56fcdb598b19e9a26fe43041cc7b015931"
+    },
+    "luna_development_summary": {
+      "path": "model_outputs/luna-model-judge-v1/contract-complete-v1-pilot/cc-pilot-001/development-summary.json",
+      "sha256": "93a9f22d1d1df9b8269d37e31b142fbc05fe584bc75ecbc52c149cd66374f54c"
     }
   },
   "method_execution": {
@@ -53,8 +69,31 @@
     "R_contract_reasoning_effort": "high",
     "R_contract_calls": 1,
     "R_contract_latency_ms": 85536.382055,
-    "judge_calls": 0
+    "judge_calls": 4,
+    "judge_call_failures": 0,
+    "qualified_judge_release": "contract-complete-luna-qualification-v2"
   },
-  "interpretation": "Physical capture, independent computation, P rendering, and R generation pass. The first R answer adds a deterministically verified recovered-command median of 0.25 m/s from the allowed raw stream. A contract-specific evidence-closed packet adapter is still required before the four Luna calls; no semantic outcome has been opened.",
-  "next_state": "BUILD_CONTRACT_PACKET_AND_RUN_FOUR_ISOLATED_LUNA_CALLS"
+  "development_semantic_result": {
+    "claim_a": {
+      "P_contract_passes": [false, false],
+      "R_contract_passes": [true, true],
+      "endpoint_changing_disagreement": false
+    },
+    "claim_b_substantive_error": {
+      "P_contract": [false, false],
+      "R_contract": [false, false],
+      "endpoint_changing_disagreement": false
+    },
+    "field_disagreement": {
+      "condition": "P-contract",
+      "field": "O",
+      "pass_1": "omitted",
+      "pass_2": "covered",
+      "effect_on_claim_a": "none because Q failed in both passes"
+    },
+    "systematic_candidate_defect": "P-contract omitted the recovered commanded median of 0.250 m/s from Q; both Luna passes therefore marked Q omitted. One pass additionally required the outcome sentence to state explicitly that success followed recovery.",
+    "confirmatory_alpha_consumed": 0.0
+  },
+  "interpretation": "This fresh development canary is unfavorable to P-contract v1. R-contract satisfied Claim A in both isolated Luna passes, whereas P-contract failed Claim A in both because its deterministic Q rendering omitted the independently verified recovered commanded median. Neither answer had a Luna-assessed substantive material error. The result is retained as development evidence and cannot be reused as untouched confirmation after repair.",
+  "next_state": "CREATE_NEW_P_CONTRACT_VERSION_AND_REGRESSION_TEST_THE_Q_AND_O_REPAIRS"
 }
