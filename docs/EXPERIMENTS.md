@@ -1,5 +1,16 @@
 # Experiment Log
 
+## 2026-09-27 — missing-evidence control path frozen before capture
+
+- **GAP:** the pre-`cc-pilot-014` audit found that the frozen mask, independent masked calculation,
+  P renderer, and R runner supported the task, while the contract annotation-reference builder did
+  not yet accept the missing-odometry v2 reference schema.
+- **CHANGE:** amendment 4 adds exact non-primary M/Q/O/L reference units and verifies agreement
+  between masked production facts and the independent calculation. The paired unmasked export is
+  excluded from both methods and Luna.
+- **BOUNDARY:** candidate, R resources, judge, questions, schedule, claims, and alpha are unchanged.
+  Twenty-one focused tests pass. No `cc-pilot-014` capture or label existed at freeze time.
+
 ## 2026-09-27 — tenth fresh P-contract v2 comparison retained
 
 - **CAPTURE/REFERENCE:** `cc-pilot-013` retained a valid unexpected abort and independently found

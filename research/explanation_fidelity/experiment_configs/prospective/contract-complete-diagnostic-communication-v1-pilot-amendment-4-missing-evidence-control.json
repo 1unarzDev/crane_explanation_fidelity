@@ -1,0 +1,36 @@
+{
+  "schema": "crane-contract-complete-development-pilot-amendment/v1",
+  "amendment_id": "contract-complete-pilot-amendment-4-missing-evidence-control",
+  "recorded_date": "2026-09-27",
+  "status": "FROZEN_BEFORE_FIRST_MISSING_EVIDENCE_CAPTURE_OR_LABEL",
+  "trigger": "The pre-cc-pilot-014 execution audit found that the candidate, baseline runner, mask adapter, and independent masked calculation supported the frozen missing-evidence task, but the contract-specific annotation-reference builder recognized only primary and nominal-reference schemas.",
+  "scope": {
+    "change": "Add an evidence-closed M/Q/O/L reference for the already frozen remove-delivered-odometry-v1 control using the independent missing-odometry v2 calculation, while excluding the paired unmasked export from both methods and the judge.",
+    "first_affected_run": "cc-pilot-014",
+    "primary_claims_changed": false,
+    "candidate_changed": false,
+    "baseline_prompt_or_resources_changed": false,
+    "judge_prompt_model_or_settings_changed": false,
+    "pilot_order_or_population_changed": false,
+    "confirmatory_alpha_consumed": 0.0
+  },
+  "control_invariants": {
+    "required_fields": ["M", "Q", "O", "L"],
+    "primary_endpoint_eligible": false,
+    "control_results_reported_separately": true,
+    "mask_id": "remove-delivered-odometry-v1",
+    "mask_is_sole_method_visible_export": true,
+    "paired_unmasked_export_available_to_methods_or_judge": false,
+    "independent_masked_reference_required": true,
+    "mechanism_and_unique_cause_must_be_withheld": true
+  },
+  "frozen_identities": {
+    "reference_builder_sha256": "562d7ded0df696f6314b8b4ca852b17c50967d185c55c1761dbeb547a3993674",
+    "reference_test_sha256": "e180bb5dd2d84f5e8eddbeeb7d008f575d8ddce8481ff67999ecd309d228374a",
+    "mask_adapter_sha256": "57a651cc82f8faf68819dbfb0fd3487f782b4d0a9099e556be9633537e7f6e3d",
+    "independent_masked_reference_sha256": "5d6fd4f10fc6b79265ab31313e56e14708d1f72ad7fd66238c17bb1dcb878133",
+    "pilot_schedule_sha256": "9a66747fdd0387b51933e6c10d7dba917aed9ca45be58d1523e903ebca2998eb",
+    "question_registry_sha256": "04985925118b14509ac02b50303a9a9755ee50dee8aa41ed002ed26637904638"
+  },
+  "interpretation": "This prospectively closes the planned missing-evidence control transport path. It does not alter a primary method comparison, and these controls contribute zero primary Claim A/B N."
+}

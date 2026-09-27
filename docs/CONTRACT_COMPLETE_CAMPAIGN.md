@@ -320,6 +320,13 @@ success" as a material unsupported causal relationship while pass 1 accepted the
 both claims twice. At primary v2 N=10, Claim A sensitivity is 0.0/+0.300 and Claim B is 0.0/+0.200;
 the entire positive signal disappears under the other frozen pass, so confirmation remains unjustified.
 
+Pre-missing-control amendment 4 (2026-09-27) closes the final planned control transport gap before
+`cc-pilot-014`: the annotation-reference builder now accepts the independently computed missing-
+odometry v2 reference and emits exact non-primary M/Q/O/L units. The frozen
+`remove-delivered-odometry-v1` export is the sole evidence given to P, R, and Luna; the paired
+unmasked export is excluded. Candidate, baseline, judge, questions, schedule, primary claims, and
+confirmation state are unchanged. Twenty-one focused candidate/reference/runner/schedule tests pass.
+
 ## Tested development commands
 
 Render one deterministic P-contract regression artifact:

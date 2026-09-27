@@ -2,13 +2,18 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+import sys
+
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "analysis"))
 
 from analysis.build_contract_complete_annotation_reference import build_reference
 from analysis.build_contract_complete_annotation_packet import decorate_pair
 from analysis.build_diagnostic_annotation_packet import build_rows
+from analysis.mask_command_motion_evidence_v2 import build_masked_export
+from analysis.reference_command_motion_missing_odometry_v2 import build_reference as build_missing_reference
 
-
-ROOT = Path(__file__).resolve().parents[1]
 EXPORT = ROOT / "data/robot_visible/dev/cc-pilot-001/command-motion-diagnostic-v3.json"
 INDEPENDENT = ROOT / "data/evaluator_only/dev/cc-pilot-001/command-motion-independent-reference-v1.json"
 PAIR = ROOT / "model_outputs/contract-complete-diagnostic-communication-v1-pilot/response-pairs/cc-pilot-001.json"
@@ -96,3 +101,30 @@ def test_nominal_control_reference_is_mqol_but_not_primary_eligible() -> None:
     assert "0.260 m/s commanded" in units["Q"]
     assert "succeeded" in units["O"]
     assert "obstacle visibility" in units["L"]
+
+
+def test_missing_evidence_control_uses_only_masked_independent_facts(tmp_path: Path) -> None:
+    source = json.loads(PERSISTENT_EXPORT.read_text())
+    masked = build_masked_export(source, "contract-missing-control-test")
+    masked_path = tmp_path / "masked.json"
+    masked_path.write_text(json.dumps(masked))
+    missing = build_missing_reference(masked, masked_path)
+    reference = build_reference(
+        masked,
+        missing,
+        family="missing_decisive_or_ambiguous_evidence",
+        question_id="cc-missing-decisive-evidence-v1",
+    )
+    units = {item["unit_id"]: item["text"] for item in reference["required_units"]}
+
+    assert list(units) == ["M", "Q", "O", "L"]
+    assert reference["primary_endpoint_eligible"] is False
+    assert "complete_endpoint_unit_ids" not in reference
+    assert "cannot be established" in units["M"]
+    assert "0 independent odometry samples" in units["Q"]
+    assert "recorded navigation action" in units["O"]
+    assert "cannot establish a command-to-motion discrepancy" in units["L"]
+    audit = reference["completeness_audit"]
+    assert audit["paired_unmasked_export_excluded"] is True
+    primitive = reference["allowed_evidence"]["primitive_diagnostic"]
+    assert primitive["method_input"]["odometry_samples"] == []

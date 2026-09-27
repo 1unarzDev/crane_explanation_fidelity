@@ -73,13 +73,108 @@ def build_reference(
 ) -> dict[str, Any]:
     if export.get("visibility") != "robot_visible":
         raise ValueError("contract reference input is not robot-visible")
+    question = _question(family)
+    if family == "missing_decisive_or_ambiguous_evidence":
+        if independent.get("schema") != "crane-command-motion-missing-odometry-reference/v2":
+            raise ValueError("missing-evidence contract requires the independent masked reference")
+        if export.get("episode_id") != independent.get("episode_id"):
+            raise ValueError("contract export/reference episode mismatch")
+        if independent.get("independent_of_proposed_diagnostic_result") is not True:
+            raise ValueError("masked independent reference identity is not established")
+        mask = export.get("evidence_mask") or {}
+        if (
+            mask.get("mask_id") != "remove-delivered-odometry-v1"
+            or mask.get("paired_unmasked_export_available_to_methods") is not False
+            or mask.get("independent_scenario_increment") != 1
+        ):
+            raise ValueError("missing-evidence export does not carry the frozen independent mask")
+        diagnostic = export.get("diagnostic_result") or {}
+        if diagnostic.get("disposition") != "insufficient":
+            raise ValueError("missing-evidence diagnostic did not withhold the mechanism")
+        observations = independent.get("observations") or {}
+        answerability = independent.get("answerability") or {}
+        commands = observations.get("delivered_command_sample_count")
+        odometry = observations.get("independent_odometry_sample_count")
+        status = observations.get("action_status")
+        if (
+            not isinstance(commands, int)
+            or isinstance(commands, bool)
+            or commands <= 0
+            or odometry != 0
+            or not isinstance(status, str)
+            or answerability.get("command_motion_discrepancy") != "insufficient"
+            or answerability.get("recorded_execution_sequence") != "answerable"
+            or answerability.get("unique_physical_cause") != "insufficient"
+        ):
+            raise ValueError("masked independent reference has inconsistent answerability facts")
+        measurements = {
+            item.get("id"): item.get("value")
+            for item in diagnostic.get("measurements", [])
+            if isinstance(item, dict)
+        }
+        if (
+            measurements.get("delivered_command_sample_count") != commands
+            or measurements.get("independent_odometry_sample_count") != odometry
+            or measurements.get("action_status") != status
+        ):
+            raise ValueError("masked production and independent facts disagree")
+        texts = {
+            "M": "A command-to-measured-motion mechanism cannot be established from the retained evidence.",
+            "Q": (
+                f"The record contains {commands} delivered command samples and {odometry} independent "
+                "odometry samples; measured motion is the decisive missing discriminator."
+            ),
+            "O": f"The recorded navigation action {status}.",
+            "L": (
+                "Without the missing measured-motion stream, command delivery and the recorded "
+                "execution sequence cannot establish a command-to-motion discrepancy, actuator "
+                "acceptance, or a unique physical cause."
+            ),
+        }
+        return {
+            "schema": "crane-checked-composition-annotation-reference/v1",
+            "visibility": "robot_visible_reference",
+            "reference_status": "CONTRACT_COMPLETE_V1_INDEPENDENT_MISSING_EVIDENCE_REFERENCE_NOT_HUMAN_GOLD",
+            "episode_id": export["episode_id"],
+            "question_id": question_id,
+            "question": question["text"],
+            "diagnosable": False,
+            "primary_endpoint_eligible": False,
+            "mechanism_unit_id": None,
+            "required_units": [
+                {"unit_id": code, "text": texts[code]} for code in ("M", "Q", "O", "L")
+            ],
+            "prohibited_claims": list(independent.get("prohibited_claims") or ()),
+            "allowed_evidence_identifiers": _supporting_ids(export),
+            "evidence_completeness": (
+                "Complete for auditing the declared missing-evidence M/Q/O/L contract and additional "
+                "claims available from the sole masked robot-visible export. The paired unmasked export "
+                "and evaluator intervention identity are unavailable to both methods and the judge."
+            ),
+            "allowed_evidence": {
+                "primitive_diagnostic": _blind(export),
+                "independent_reference_computations": [_visible_independent(independent)],
+                "reference_boundary": (
+                    "The independent calculation verifies the retained command count, absent odometry, "
+                    "and execution outcome; it cannot establish the masked mechanism or unique cause."
+                ),
+            },
+            "completeness_audit": {
+                "accepted": True,
+                "question_specific_MQOL_units": True,
+                "full_robot_visible_method_evidence_included": True,
+                "valid_additional_claims_auditable": True,
+                "independent_quantities_checked": True,
+                "evaluator_truth_excluded": True,
+                "paired_unmasked_export_excluded": True,
+            },
+        }
     if independent.get("schema") != "crane-command-motion-independent-reference/v1":
         raise ValueError("contract reference requires the independent command-motion calculation")
     if export.get("episode_id") != independent.get("episode_id"):
         raise ValueError("contract export/reference episode mismatch")
     if independent.get("implementation_independence", {}).get("human_label") is not False:
         raise ValueError("independent reference identity is not established")
-    question = _question(family)
     result = independent["result"]
     status = independent["execution_basis"]["action_status"]
     if family == "nominal_false_premise_or_irrelevant_obstacle":
