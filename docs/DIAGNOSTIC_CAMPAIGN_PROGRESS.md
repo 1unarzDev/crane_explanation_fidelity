@@ -517,6 +517,12 @@ plausible" statement as a material unsupported causal claim; pass 1 accepted it.
 Claim A is 0.0/+0.308 and Claim B 0.0/+0.231, wholly pass-sensitive. Fixed order advances to
 `cc-pilot-019`.
 
+Pilot-close update (2026-09-27): `cc-pilot-019` was an unanimous P/R tie. Final fresh v2 primary
+N=14 and controls N=4 give Claim A 0.000/+0.286 and Claim B 0.000/+0.214 across Luna passes. Every
+positive result disappears under the other pass, while both missing-evidence controls reproduce a
+P limitation-composition omission. V2 is not promoted; confirmation N=0 and alpha spent=0. The
+next action is a narrowly versioned composition repair and fresh development testing.
+
 The now-closed physical/reference cohort attempted 40/100 fixed confirmation-side configurations:
 39 valid, 1 invalid. The method-visible diagnostic dispositions are twenty-seven supported, seven
 `not_triggered`, and five `insufficient`. Run 004 is a valid unexpected transient case: measured

@@ -358,6 +358,14 @@ both claims twice. At primary N=13 and controls N=4, Claim A is 0.0/+0.308 and C
 0.0/+0.231; the entire advantage remains pass-sensitive. Fixed order advances to final pilot case
 `cc-pilot-019`.
 
+The terminal case `cc-pilot-019` is an unanimous tie. The bounded pilot is now complete: fresh
+P-contract v2 primary N=14, controls N=4, plus one separately retained v1 canary. Claim A
+P-minus-R is 0.000/+0.286 across the two frozen passes; Claim B R-minus-P substantive-error risk is
+0.000/+0.214. Every positive difference is pass-sensitive, and the two missing-evidence controls
+reproduce a P v2 atomic-L omission. P-contract v2 is therefore not promoted; confirmation N and
+alpha remain zero. The next bounded action is a new-version repair limited to the demonstrated
+missing-evidence composition defect, followed by regression and fresh development evidence.
+
 ## Tested development commands
 
 Render one deterministic P-contract regression artifact:

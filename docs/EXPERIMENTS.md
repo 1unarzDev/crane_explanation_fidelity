@@ -1,5 +1,16 @@
 # Experiment Log
 
+## 2026-09-27 — bounded P-contract v2 pilot closed without promotion
+
+- **FINAL CASE:** `cc-pilot-019` retained a valid unexpected abort, independently found a
+  0.260/0.000 m/s discrepancy over 16--26 s, and was a complete P/R tie in both Luna passes.
+- **PILOT RESULT:** fresh v2 primary N=14 plus four controls (the first canary used v1 and remains
+  separate). Claim A P-minus-R is 0.000/+0.286 across passes; Claim B R-minus-P error risk is
+  0.000/+0.214. Every positive result vanishes under the other pass. Two missing-evidence controls
+  also reproduce a P omission in L.
+- **DECISION:** do not activate confirmation or spend alpha for v2. Preserve the full pilot and
+  implement only the demonstrated missing-evidence composition repair as a new development version.
+
 ## 2026-09-27 — thirteenth fresh P-contract v2 comparison retained
 
 - **CAPTURE/REFERENCE:** `cc-pilot-018` passed all gates and independently reproduced a
