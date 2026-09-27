@@ -1,5 +1,23 @@
 # Experiment Log
 
+## 2026-09-27 — causal-restraint fresh population and detector qualification frozen
+
+- **FRESHNESS:** twenty v6 layouts never assigned to the original physical schedule and absent
+  from retained data/model artifacts are reassigned to a 16-primary/four-control pilot. The
+  original protected 100-layout replication schedule remains untouched.
+- **NEW RESERVE:** immutable v8 catalog adds 60 discovery and 60 replication configurations in the
+  validated land world. Each stage has 48 primary and 12 fixed controls and balances both geometry
+  strata, persistent discrepancy, measured recovery, intervention timing, and masks.
+- **FAIR BASELINE:** new R prompt states the same finite public causal contract explicitly,
+  including positive, negative, and hedged causal/effectiveness language. Evidence, sources,
+  tools, model strength, and four-component task remain matched.
+- **QUALIFICATION:** a 24-case exact detector suite and 100% polarity/relation/span gates are frozen
+  before execution. This validates only the finite grammar, not unrestricted natural-language
+  semantics.
+- **STATUS:** no fresh capture, answer, endpoint, alpha binding, effect, or replication result.
+  Next is one no-repair detector qualification, then a technical build/capture canary and the
+  fixed fresh pilot.
+
 ## 2026-09-27 — finite prohibited-causal-link audit motivates a narrow successor
 
 - **SCOPE:** post-hoc development audit of all 14 retained P-contract-v2 primary response pairs;

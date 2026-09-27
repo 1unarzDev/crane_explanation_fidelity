@@ -21,6 +21,15 @@ test. The detector/contract/report identities are pinned by
 configuration-diversity audit for a fresh, disjoint successor population; only then may one narrow
 claim, analysis, alpha allocation, and replication rule be frozen.
 
+The eligibility audit found a valid disjoint route. The original v6 catalog contains twenty
+never-assigned layouts outside the protected 100-layout replication schedule; these now form a
+20-configuration fresh pilot (16 primary, four controls). New v8 reserves contain 60 discovery
+and 60 replication configurations, each with 48 primary and 12 fixed controls. Their exact
+geometry/family/timing/mask order is frozen in
+`explicit-causal-restraint-successor-v1-schedule.json`. No capture or model output has been opened.
+The detector's 24-case exact qualification suite is frozen and not yet executed; alpha remains
+unbound.
+
 ## Opaque-ID transport correction and first-look sensitivity (2026-09-26)
 
 The five retained invalid Luna calls in `cm-land-conf-062`, `cm-land-conf-067`, and

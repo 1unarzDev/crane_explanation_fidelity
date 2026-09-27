@@ -490,6 +490,21 @@ are frozen atomically. M/Q/O/L coverage and Luna-assessed semantics remain manda
 tradeoff evidence. The successor cannot claim general error-free explanation, better physical
 discovery, or confirmation from the fourteen inspected clusters.
 
+Fresh-population preparation is now frozen without activating inference. Twenty never-assigned v6
+layouts form a 16-primary/four-control pilot; they are disjoint from the original protected
+100-layout replication schedule. A new v8 catalog supplies 60 discovery and 60 replication
+configurations, each balanced across connected-detour and nominal-clear-route geometry. Each arm
+contains 48 primary cases (24 persistent discrepancy, 24 measured recovery) and 12 controls (six
+masked missing-evidence and six nominal/false-premise). The catalog changes configuration geometry
+within the validated land world; it does not add a new world or mechanism family.
+
+R-contract now receives an explicit versioned causal-language instruction matching the finite
+public contract, including the rule that neither positive nor negative causal effectiveness may be
+asserted for an unestablished relation. P-contract-v3 and R-contract retain matched robot-visible
+evidence, source/configuration access, calculations, and four-component task. A 24-case frozen
+detector qualification must pass exactly before the fresh pilot. This preparation binds no alpha
+and produces no successor effect.
+
 ## Tested development commands
 
 Render one deterministic P-contract regression artifact:

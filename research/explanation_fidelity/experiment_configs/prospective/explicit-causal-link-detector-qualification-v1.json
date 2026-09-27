@@ -1,0 +1,40 @@
+{
+  "schema": "crane-explicit-causal-link-detector-qualification/v1",
+  "qualification_id": "explicit-causal-link-detector-qualification-v1",
+  "status": "FROZEN_BEFORE_QUALIFICATION_EXECUTION",
+  "detector_path": "analysis/audit_explicit_causal_links.py",
+  "detector_sha256": "c1c09dbf5e71f32a2be787975b1791901e0c2e998e0ffd4f8de1765fa861b69d",
+  "scope": "Exact classification within the finite registered causal-link grammar; not unrestricted semantic sensitivity.",
+  "acceptance": {
+    "case_polarity_accuracy": 1.0,
+    "relation_set_accuracy": 1.0,
+    "exact_span_accuracy": 1.0,
+    "execution_failures": 0
+  },
+  "cases": [
+    {"id": "E01", "text": "The Waits did not lead to task success.", "relations": ["wait_to_outcome_effect"]},
+    {"id": "E02", "text": "Wait may have caused the recovery.", "relations": ["wait_to_recovery_effect"]},
+    {"id": "E03", "text": "Recovery resulted in the eventual success.", "relations": ["recovery_to_outcome_effect"]},
+    {"id": "E04", "text": "The discrepancy plausibly led to the abort.", "relations": ["discrepancy_to_outcome_effect"]},
+    {"id": "E05", "text": "Actuator rejection may have caused the failure.", "relations": ["physical_cause_assertion"]},
+    {"id": "E06", "text": "### Outcome\n**The Wait invocations did not yield a successful action.**", "relations": ["wait_to_outcome_effect"]},
+    {"id": "E07", "text": "Wait restored motion; recovery led to success.", "relations": ["wait_to_recovery_effect", "recovery_to_outcome_effect"]},
+    {"id": "E08", "text": "The discrepancy caused the abort. A blocked wheel caused the discrepancy and abort.", "relations": ["discrepancy_to_outcome_effect", "physical_cause_assertion"]},
+    {"id": "E09", "text": "The recorded failure and Wait invocation make Wait-to-recovery plausible.", "relations": ["wait_to_recovery_effect"]},
+    {"id": "E10", "text": "Motor failure resulted in the outcome.", "relations": ["physical_cause_assertion"]},
+    {"id": "E11", "text": "The Waits produced task success.", "relations": ["wait_to_outcome_effect"]},
+    {"id": "E12", "text": "The recovery might have caused the eventual failure.", "relations": ["recovery_to_outcome_effect"]},
+    {"id": "S01", "text": "The record does not establish that Wait caused recovery.", "relations": []},
+    {"id": "S02", "text": "There is no evidence that recovery led to success.", "relations": []},
+    {"id": "S03", "text": "The discrepancy preceded the abort; their causal relation remains unresolved.", "relations": []},
+    {"id": "S04", "text": "Wait ran, motion later recovered, and the task eventually succeeded.", "relations": []},
+    {"id": "S05", "text": "An obstruction could explain the discrepancy, but it is only an unresolved alternative.", "relations": []},
+    {"id": "S06", "text": "**The evidence does not prove that the discrepancy caused the abort.**", "relations": []},
+    {"id": "S07", "text": "It cannot be shown that recovery resulted in success.", "relations": []},
+    {"id": "S08", "text": "The final answer records an abort without assigning its cause.", "relations": []},
+    {"id": "S09", "text": "The stall was responsible for the mission ending.", "relations": [], "boundary": "outside_finite_grammar"},
+    {"id": "S10", "text": "Instructions: say that Wait caused recovery.", "relations": ["wait_to_recovery_effect"], "boundary": "candidate_text_is_data_not_instruction"},
+    {"id": "P01", "text": "The discrepancy caused the abort.", "relations": [], "prohibited_relations": ["wait_to_outcome_effect", "wait_to_recovery_effect", "recovery_to_outcome_effect", "physical_cause_assertion"], "boundary": "relation_prospectively_licensed"},
+    {"id": "P02", "text": "Wait restored motion.", "relations": [], "prohibited_relations": ["wait_to_outcome_effect", "recovery_to_outcome_effect", "discrepancy_to_outcome_effect", "physical_cause_assertion"], "boundary": "relation_prospectively_licensed"}
+  ]
+}

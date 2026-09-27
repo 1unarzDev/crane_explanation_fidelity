@@ -30,6 +30,9 @@ SOURCE_SNAPSHOT = ROOT / (
     "focused-supported-diagnostic-communication-v1-resource-freeze.json"
 )
 BASELINE = {"model": "gpt-6-sol", "reasoning_effort": "high", "top_level_calls": 1}
+PAIR_STATUS = "DEVELOPMENT_ONLY_NOT_CONFIRMATORY"
+BASELINE_ID = "r-contract-v1-development"
+CAMPAIGN_ID = "contract-complete-diagnostic-communication-v1-development"
 PRODUCTION_TOOLS = {
     "recompute_command_motion": ROOT / "analysis/recompute_command_motion_diagnostic.py",
     "command_motion_config": ROOT / "configs/diagnostic_command_motion_low_speed_v1.json",
@@ -121,7 +124,7 @@ def run(args: argparse.Namespace, caller=None) -> dict[str, Any]:
             ANSWER_SCHEMA,
             working_directory=workspace,
             workspace_identity={
-                "campaign": "contract-complete-diagnostic-communication-v1-development",
+                "campaign": CAMPAIGN_ID,
                 "cluster_id": args.cluster_id,
                 "condition": "R-contract",
                 "question_registry_sha256": digest(QUESTION_REGISTRY),
@@ -139,9 +142,10 @@ def run(args: argparse.Namespace, caller=None) -> dict[str, Any]:
         raise ValueError("realized R-contract model settings differ from the development declaration")
     result = {
         "schema": "crane-contract-complete-response-pair/v1",
-        "status": "DEVELOPMENT_ONLY_NOT_CONFIRMATORY",
+        "status": PAIR_STATUS,
+        "study_stage": args.study_stage,
         "candidate": p_result["candidate_version"],
-        "baseline": "r-contract-v1-development",
+        "baseline": BASELINE_ID,
         "cluster_id": args.cluster_id,
         "family": args.family,
         "question": question,
@@ -190,6 +194,11 @@ def parse_args() -> argparse.Namespace:
     ))
     parser.add_argument("--cache", required=True, type=Path)
     parser.add_argument("--output", required=True, type=Path)
+    parser.add_argument(
+        "--study-stage",
+        choices=("development", "pilot", "discovery", "replication"),
+        default="development",
+    )
     return parser.parse_args()
 
 
