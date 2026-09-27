@@ -1,0 +1,43 @@
+{
+  "schema": "crane-contract-limit-v4-pilot-canary/v1",
+  "pilot_id": "contract-limit-v4-fresh-development-pilot",
+  "run_id": "cc-v4-pilot-002",
+  "cluster_id": "cc-v4-pilot-cluster-002",
+  "date": "2026-09-27",
+  "status": "DEVELOPMENT_PHYSICAL_AND_RESPONSES_COMPLETE_SEMANTIC_BLOCKED",
+  "schedule_order": 2,
+  "family": "missing_decisive_or_ambiguous_evidence",
+  "evidence_mask": "remove-delivered-command-v1",
+  "confirmation_N": 0,
+  "physical_admission": {
+    "scenario_binding_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "worker_valid": true,
+    "accepted_unity_actions": 590,
+    "navigation_status": "aborted",
+    "logged_errors": 0,
+    "logged_exceptions": 0
+  },
+  "masked_independent_measurement": {
+    "disposition": "insufficient",
+    "delivered_command_samples": 0,
+    "independent_odometry_samples": 2836,
+    "follow_path_attempts": 3,
+    "follow_path_failures": 2,
+    "source_qualified_wait_invocations": 2
+  },
+  "artifact_hashes": {
+    "scenario_binding_audit": "f234ba72efa213e64924fe6cfc88fd797c7b5f5d33ff7348dc2b0e9111060034",
+    "worker_result": "7171be0cf3027d3fd1eb6f8c35951b830714b3c3a35c570e6bcfcaea99b09aff",
+    "masked_robot_visible_diagnostic": "37786001117d52a3c235fd3cdaf6d25fbc0b3d0ef746aa0a031ecfde5d00cd38",
+    "independent_masked_reference": "3ccc8ffa98c060ef2fdd0aa2a8677f023227c7eded4821cf8ee005aadf5cf421",
+    "contract_reference": "8c7241fc4de265c3aa34aa7fbed942b337dcd8ee58e1b8eb948c47f0ffe96b5b",
+    "response_pair": "40408f16ba58e464a7a5deb80e1ce9ead8588261ec434da4beb504eb17936bc1"
+  },
+  "semantic_disposition": {
+    "labels_generated": false,
+    "reason": "The prospectively frozen missing-command Luna extension failed its protected-causal gate in both passes.",
+    "allowed_use": "physical and response-generation development only",
+    "repair_or_rejudge_authorized": false
+  }
+}

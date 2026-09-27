@@ -1047,3 +1047,19 @@ this inspected case. There is still no demonstrated P-over-R advantage and no al
 scientifically useful work is fresh independent configurations only if a materially improved
 method is prospectively frozen; otherwise prioritize retained-data analysis, figures, and an
 honest short/WIP manuscript.
+# 2026-09-27 — v4 two-contract pilot closed without promotion
+
+Fixed-order rows 002 and 003 are retained as valid missing-command physical captures and immutable
+P/R response pairs, but no study labels were generated after the missing-command qualification
+failed its protected-causal gate. Row 004 completed the qualified missing-motion path with four
+valid Luna calls. Both passes scored P as complete and R as missing only the actuator-acceptance
+part of L; neither response had a substantive material error. Thus rows 001 and 004 provide two
+unanimous missing-motion development discordances.
+
+That narrow signal is not promoted. V4 declared two evidence-deficiency contracts, only one has a
+qualified judge, and the current redirect assigns missing-evidence cases to control reporting rather
+than the mature primary population. The pilot closes at physical N=4, immutable response-pair N=4,
+qualified semantic N=2, blocked semantic N=2, confirmatory N=0, and zero alpha. The next valid step
+is a bounded qualification of the actual primary-family ambiguity exposed by the completed v2
+pilot—hedged causal language and recovery-to-outcome scope—before deciding whether unchanged
+P-contract is worth a fresh, disjoint confirmation freeze.

@@ -7724,3 +7724,20 @@
   allowed raw stream rather than rejected for absence from the compact reference.
 - **STATUS:** physical/answer N=1, semantic/reconciled N=0, confirmation N=0. Next is the
   evidence-closed contract packet and four isolated Luna calls; no comparative label was opened.
+# 2026-09-27 — contract-limit v4 close after qualified row 004
+
+- **ROWS 002--003:** Both scheduled missing-command recordings passed all 14 scenario-binding
+  checks, independent masking/reference construction, and one-shot P/R generation. They remain
+  semantically unscored because the frozen missing-command Luna extension failed its protected-
+  causal gate; no label repair, retry, or interpretation was performed.
+- **ROW 004:** The missing-odometry recording retained 917 delivered command samples, zero
+  odometry samples, two FollowPath failures, two qualified Wait invocations, and action success.
+  Four isolated qualified Luna calls completed without failure. Both passes gave P Claim A success,
+  R Claim A failure only on L, and neither method a Claim B event.
+- **DISPOSITION:** Rows 001 and 004 are two unanimous missing-motion development discordances, but
+  v4 is not promoted. Its second declared contract lacks qualified measurement, and missing-evidence
+  cases are controls under the current primary-population plan. The pilot closes early at physical
+  N=4, response N=4, qualified semantic N=2, blocked semantic N=2, confirmation N=0, alpha=0.
+- **NEXT:** Audit the actual v2 primary-family disagreement—especially hedged Wait/recovery causal
+  language—under a bounded fresh qualification before any new candidate freeze. Do not select the
+  favorable missing-motion slice as a headline endpoint.

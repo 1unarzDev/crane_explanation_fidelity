@@ -1,6 +1,6 @@
 # Contract-complete diagnostic communication campaign
 
-Status: **V2 PILOT CLOSED; P-CONTRACT V4 TWO-CONTRACT DEVELOPMENT PILOT FROZEN; CONFIRMATION INACTIVE**
+Status: **V2 PILOT CLOSED; V4 TWO-CONTRACT PILOT CLOSED WITHOUT PROMOTION; CONFIRMATION INACTIVE**
 Recorded: 2026-09-27
 
 This is the operational form of the contract-complete research redirect. It is additive. It does
@@ -314,6 +314,28 @@ The first seven fresh v2 comparisons contain six complete ties and one pass-spec
 failure. This does not justify confirmation yet: it shows that strengthened R routinely performs
 the communication contract and that the only observed advantage is judge-sensitive. Continue the
 fixed pilot to estimate discordance and retain the possibility that neither claim is worth freezing.
+
+### V4 two-contract pilot close
+
+Fixed-order rows 002 and 003 passed physical, masking, independent-reference, and P/R generation
+checks, but their missing-command labels were never generated because the prospectively frozen
+judge extension failed. Row 004 passed the already qualified missing-motion path. In both isolated
+passes P covered M/Q/O/L, R omitted the actuator-acceptance part of L, and neither made a
+substantive material error. Together with row 001, this gives two unanimous development
+discordances for the missing-motion contract.
+
+This does **not** promote v4: the other half of the declared two-contract candidate lacks qualified
+measurement, and missing-evidence behavior is a control under the current primary-population
+redirect. The remaining v4 schedule is closed early to preserve fresh configurations and deadline
+time. Physical N=4, response-pair N=4, qualified semantic N=2, blocked semantic N=2, confirmatory
+N=0, and alpha use=0.
+
+The favorable missing-motion slice will not be selected as a headline population. Any successor
+must use fresh evidence, retain the mature persistent-discrepancy and response-recovery families,
+and close the observed primary-family judge gap before alpha is bound. The completed v2 primary
+pilot remains the planning evidence: its least-favourable effect was zero for both claims, while
+its favorable pass suggested Claim A +0.286 and Claim B +0.214. This pass sensitivity—not physical
+collection capacity—is the immediate validity bottleneck.
 
 Pre-control amendment 3 (2026-09-27) closes an execution-only gap found before `cc-pilot-009`:
 the independent reference builder now emits question-specific nominal-control M/Q/O/L units, and

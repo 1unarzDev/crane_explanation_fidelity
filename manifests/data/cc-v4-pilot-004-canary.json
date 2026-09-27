@@ -1,0 +1,62 @@
+{
+  "schema": "crane-contract-limit-v4-pilot-canary/v1",
+  "pilot_id": "contract-limit-v4-fresh-development-pilot",
+  "run_id": "cc-v4-pilot-004",
+  "cluster_id": "cc-v4-pilot-cluster-004",
+  "date": "2026-09-27",
+  "status": "DEVELOPMENT_RECONCILED_MISSING_MOTION_PRIMARY",
+  "schedule_order": 4,
+  "fresh_v4_qualified_semantic_N": 2,
+  "confirmation_N": 0,
+  "family": "missing_decisive_or_ambiguous_evidence",
+  "evidence_mask": "remove-delivered-odometry-v1",
+  "physical_admission": {
+    "scenario_binding_accepted": true,
+    "scenario_binding_checks_passed": 14,
+    "worker_valid": true,
+    "accepted_unity_actions": 908,
+    "navigation_status": "succeeded",
+    "logged_errors": 0,
+    "logged_exceptions": 0
+  },
+  "masked_independent_measurement": {
+    "disposition": "insufficient",
+    "delivered_command_samples": 917,
+    "independent_odometry_samples": 0,
+    "follow_path_attempts": 3,
+    "follow_path_failures": 2,
+    "source_qualified_wait_invocations": 2
+  },
+  "artifact_hashes": {
+    "scenario_binding_audit": "7d9144013d12a7d554c4fcf65af1ba737a73f6117a4c9af2e8b9483eb19c1f69",
+    "worker_result": "196de68ff53a03c6ec22f16d50b682846643f1c5a99fd3f8dcb9dda23e0a1277",
+    "masked_robot_visible_diagnostic": "36e18673cd15ebcc3ea5b1f6466c704c425cce976efcc332e48eaee5c2066765",
+    "independent_masked_reference": "baf36267cfa61fe3cf879d33cc8d3e2752b14d46e26452bc471fe08054b30ac4",
+    "contract_reference": "3f205bc191196db253fd3a4a0482c5d88394145eb7793b101873a969dcc94047",
+    "response_pair": "fcadca059b42a3011428a0f623ddbb4dd6abb82497037ec6915919b923febb03",
+    "blinded_annotation_packet": "8af8303775f2e7e11e2d6037cd45962d1452348dc9e6bc8a346b923aac224fe1",
+    "annotation_key": "f82ec13c3b02df6bc01640f57f33ea6ac2502df833a68d38abd36f2eb5d3f248",
+    "luna_development_summary": "73d5898c7b2034e57866d4fa41d24c914e1d479ddbe0f7522b41e5d6236ecea3"
+  },
+  "method_execution": {
+    "P_contract_version": "p-contract-v4-development",
+    "R_contract_version": "r-contract-v1-development",
+    "R_contract_model": "gpt-6-sol",
+    "R_contract_reasoning_effort": "high",
+    "R_contract_calls": 1,
+    "judge_calls": 4,
+    "judge_call_failures": 0,
+    "qualified_judge_release": "contract-complete-luna-qualification-v2"
+  },
+  "development_semantic_result": {
+    "pass_1": {"claim_a_P": true, "claim_a_R": false, "claim_b_substantive_error_P": false, "claim_b_substantive_error_R": false, "failed_field_R": "L"},
+    "pass_2": {"claim_a_P": true, "claim_a_R": false, "claim_b_substantive_error_P": false, "claim_b_substantive_error_R": false, "failed_field_R": "L"},
+    "interpretation": "Both Luna passes found P complete and R incomplete only on L: R did not explicitly preserve actuator-acceptance uncertainty. Neither response contained a substantive material error.",
+    "confirmatory_alpha_consumed": 0.0
+  },
+  "development_effect": {
+    "claim_a_P_minus_R": {"pass_1": 1.0, "pass_2": 1.0},
+    "claim_b_R_minus_P_error_risk": {"pass_1": 0.0, "pass_2": 0.0}
+  },
+  "next_state": "CLOSE_INVALID_TWO_CONTRACT_PILOT_WITHOUT_PROMOTION"
+}
