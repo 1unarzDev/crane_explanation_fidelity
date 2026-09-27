@@ -1,5 +1,15 @@
 # Experiment Log
 
+## 2026-09-27 — third consecutive fresh v2 tie
+
+- **CAPTURE:** `cc-pilot-006` passed all gates and independently supports a 0.260/0.000 m/s
+  discrepancy over 11--21 s, near-full measured recovery over 23--24 s, and subsequent success.
+- **SEMANTICS:** both methods passed Claims A and B in both isolated Luna passes.
+- **INTERPRETATION:** fresh v2 N=5 contains four complete ties and one pass-specific unresolved R
+  failure. Effects are 0.0 and +0.20 by pass, so no robust advantage is yet demonstrated and the
+  strengthened baseline routinely fulfills the contract. Confirmation remains inactive;
+  `cc-pilot-007` is next in fixed order.
+
 ## 2026-09-27 — second fresh v2 recovery cluster is a complete tie
 
 - **CAPTURE:** `cc-pilot-005` passed physical and evidence gates on its nominal-clear-route

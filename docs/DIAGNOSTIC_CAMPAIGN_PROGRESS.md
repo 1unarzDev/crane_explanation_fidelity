@@ -428,6 +428,13 @@ without substantive error in both passes. Fresh v2 N=4 has pass-specific Claim A
 0.0 and +0.25; the latter remains entirely attributable to the unresolved `cc-pilot-003` label.
 Controls and confirmation N remain 0, and fixed order advances to `cc-pilot-006`.
 
+Fifth v2 update (2026-09-27): `cc-pilot-006` passed all gates and independently supports an
+11--21 s 0.260/0.000 m/s discrepancy, near-full measured recovery over 23--24 s, and subsequent
+success. Both methods passed both claims in both Luna passes. Fresh v2 N=5 now yields pass-specific
+effects of 0.0 and +0.20; four clusters are complete ties and the only advantage remains the
+unresolved `cc-pilot-003` R label. This weakens the case for freezing confirmation without
+invalidating the ongoing bounded pilot. Confirmation N and alpha remain zero; `cc-pilot-007` is next.
+
 The now-closed physical/reference cohort attempted 40/100 fixed confirmation-side configurations:
 39 valid, 1 invalid. The method-visible diagnostic dispositions are twenty-seven supported, seven
 `not_triggered`, and five `insufficient`. Run 004 is a valid unexpected transient case: measured
