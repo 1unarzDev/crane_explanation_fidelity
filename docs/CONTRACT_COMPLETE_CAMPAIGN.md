@@ -134,7 +134,13 @@ Two-pass disagreement is never resolved by another Luna vote. Independently chec
 frozen rule may resolve a field; otherwise least-/most-favourable analyses retain the uncertainty
 and identify the responsible M/Q/O/L field.
 
-Before pilot scoring, run one bounded fresh qualification extension targeting:
+The first bounded extension (`contract-complete-luna-qualification-v1`) was executed and failed.
+Its generic missing-evidence unit text conflicted with the intended withholding/count contract, its
+expected hypothesis label contradicted the rubric, and secondary category-name mismatches were
+incorrectly blocking. All 24 calls and the failed report are retained. A single corrected v2 is
+frozen with entirely fresh cases, question-specific units, corrected unsupported-hypothesis
+semantics, and only endpoint-changing fields as blocking gates; the judge prompt/settings are
+unchanged. V2 targets:
 
 - omission versus fabrication;
 - recovery versus eventual task outcome;

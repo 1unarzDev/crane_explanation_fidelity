@@ -1,0 +1,51 @@
+{
+  "schema": "crane-contract-complete-luna-qualification-freeze/v2",
+  "freeze_id": "contract-complete-luna-qualification-v2",
+  "declared_date": "2026-09-27",
+  "status": "FROZEN_BEFORE_ANY_QUALIFICATION_CALL",
+  "purpose": "One bounded corrected qualification using fresh cases and question-specific M/Q/O/L units after retaining v1 reference-construction failure.",
+  "prior_failure": "contract-complete-luna-qualification-v1-result.json",
+  "suite_sha256": "9454b72f3c2274a0fa1eab5e7f7ffe5fa3bcda78e067ce74e171e2866f0eb6a1",
+  "prompt_sha256": "f701b91d8c46637b203d56d1ded3fce7c9f5ebbda077b02bc4d01627142d0da6",
+  "output_schema_sha256": "93989e303fdb12e94ae5fe79adad16e46d9587006b7ba6de5c4624096f1b1c3f",
+  "caller_source_sha256": "e185329a711b240ca790698c7a89033f6ba7cb85b69ccddc4f35a10c0419a379",
+  "runner_source_sha256": "572f57991b3b407391333f8414c9a180cb21411709f416015eb55c2228bd2e99",
+  "suite_builder_sha256": "956359e0dab992a6221bdd5f0bb703e3c2d22e72fe2e008b8fa43f6e5435ab42",
+  "model": {
+    "requested_id": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "provider": "codex-lb",
+    "substitution_allowed": false,
+    "temperature": null,
+    "seed": null
+  },
+  "passes": ["pass-1", "pass-2"],
+  "suite": {
+    "path": "research/explanation_fidelity/qualification/contract-complete-luna-qualification-v2.json",
+    "cases": 12,
+    "physical_model_calls": 24,
+    "freshness": "New opaque IDs, evidence identifiers, quantities, wording, answers, and case-specific units; no v2 case was exposed before freeze."
+  },
+  "blocking_gates": {
+    "minimum_endpoint_accuracy": 0.9,
+    "minimum_required_unit_accuracy": 0.95,
+    "minimum_endpoint_field_accuracy": 0.95,
+    "maximum_false_rejection_rate": 0.15,
+    "maximum_false_acceptance_rate": 0.15,
+    "protected_causal_errors_allowed": 0,
+    "call_failures_allowed": 0
+  },
+  "nonblocking_but_reported": [
+    "material_error_category_name",
+    "answerability_subcategory",
+    "correct_abstention"
+  ],
+  "retry_policy": {
+    "maximum_transport_retries": 1,
+    "usable_judgment_retry_allowed": false,
+    "quality_driven_retry_allowed": false
+  },
+  "hard_stop": "Run both passes once and retain either outcome. Failure blocks contract-complete semantic scoring and does not authorize another held-out iteration.",
+  "confirmatory_alpha_consumed": 0.0,
+  "study_responses_scored": 0
+}

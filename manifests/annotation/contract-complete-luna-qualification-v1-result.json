@@ -1,0 +1,53 @@
+{
+  "schema": "crane-contract-complete-luna-qualification-manifest/v1",
+  "qualification_id": "contract-complete-luna-qualification-v1",
+  "executed_date": "2026-09-27",
+  "status": "FAILED_RETAINED",
+  "study_evaluation_allowed": false,
+  "freeze": {
+    "path": "research/explanation_fidelity/experiment_configs/prospective/contract-complete-luna-qualification-v1-freeze.json"
+  },
+  "result": {
+    "path": "model_outputs/automated_annotations/luna-model-judge-v1/contract-complete-luna-qualification-v1/heldout-qualification.json",
+    "sha256": "bd57a21a850158f30eca119ba0f6ab242c74ceb6d34b28d7438ba9d6b7fa224b",
+    "governance": "model_outputs.dvc"
+  },
+  "passes": {
+    "pass-1": {
+      "endpoint_correct": 10,
+      "endpoint_total": 12,
+      "required_units_correct": 43,
+      "required_units_total": 48,
+      "core_fields_correct": 90,
+      "core_fields_total": 108,
+      "false_rejections": 1,
+      "false_acceptances": 1,
+      "protected_causal_failures": ["CCLQ09"],
+      "call_failures": 0
+    },
+    "pass-2": {
+      "endpoint_correct": 11,
+      "endpoint_total": 12,
+      "required_units_correct": 46,
+      "required_units_total": 48,
+      "core_fields_correct": 94,
+      "core_fields_total": 108,
+      "false_rejections": 1,
+      "false_acceptances": 0,
+      "protected_causal_failures": [],
+      "call_failures": 0
+    }
+  },
+  "resource_use": {
+    "valid_calls": 24,
+    "attempts": 24,
+    "aggregate_latency_ms": 744145.02201,
+    "tool_events": 0,
+    "client_warnings": 24,
+    "cost_usd": null
+  },
+  "audit": "The frozen references were defective in two ways: generic unit text did not state the intended missing-evidence withholding/count units, and the expected label treated an unsupported named causal hypothesis as nonmaterial despite the rubric. Exact material-error category and other secondary-field mismatches were also incorrectly included in the blocking aggregate.",
+  "disposition": "Retain all calls and the failed result. Do not score pilot responses under v1. A separately frozen v2 uses entirely fresh cases, case-specific units, corrected hypothesis semantics, and endpoint-changing gates while leaving the Luna prompt and settings unchanged.",
+  "confirmatory_alpha_consumed": 0.0,
+  "study_responses_scored": 0
+}

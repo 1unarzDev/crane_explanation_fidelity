@@ -7390,3 +7390,17 @@
   calls are planned; zero have run at this checkpoint.
 - **TESTED:** 23 contract candidate, scorer, schedule, and qualification tests pass. Freeze hashes
   validate against the executable sources. Pilot N=0, confirmation N=0, and alpha use remains zero.
+
+# 2026-09-27 — contract-complete Luna v1 failed; corrected v2 frozen
+
+- **V1 RESULT:** all 24 declared calls completed without transport failure, but neither pass met
+  every gate. Endpoint accuracy was 10/12 and 11/12; unit accuracy was 43/48 and 46/48. V1 is
+  retained as failed and cannot score pilot responses.
+- **REFERENCE AUDIT:** generic missing-evidence M/Q units conflicted with the intended bounded
+  withholding/count answer; one packet falsely claimed completeness relative to an interval
+  requirement. The expected label for a named unsupported causal hypothesis also contradicted the
+  rubric. Exact category names and secondary fields were overpromoted to blocking status.
+- **V2 FREEZE:** one final bounded extension uses 12 entirely fresh cases with case-specific units,
+  corrected hypothesis semantics, and endpoint/unit/material/causal gates. Answerability subtype,
+  abstention subtype, and category-name differences remain visible but nonblocking. The Luna
+  prompt, model, reasoning setting, schema, and two-pass/no-quality-retry policy are unchanged.
