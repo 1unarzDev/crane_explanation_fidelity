@@ -1,0 +1,79 @@
+{
+  "schema": "crane-causal-restraint-pilot-finding-audit/v1",
+  "audit_id": "explicit-causal-restraint-successor-v1-pilot-finding-audit",
+  "recorded_date": "2026-09-27",
+  "scope": "Project-authored contextual audit of every finite-detector finding; not a Luna or human annotation campaign.",
+  "rule": "A detector substring is not a prohibited causal assertion when the containing response sentence explicitly says that the relation is not established or frames whether the relation holds as unestablished.",
+  "findings": [
+    {
+      "run_id": "cr-pilot-003",
+      "pair_sha256": "db9a3eafbddfaa1845e8d709445022964f279109a8164766c44ba2957e306e15",
+      "condition": "R-contract",
+      "relation": "discrepancy_to_outcome_effect",
+      "span": "the discrepancy caused the outcome",
+      "context": "That ordering does not establish that Wait restored motion, that recovered motion caused success, or that the discrepancy caused the outcome.",
+      "disposition": "FALSE_POSITIVE_EXPLICIT_NONESTABLISHMENT"
+    },
+    {
+      "run_id": "cr-pilot-008",
+      "pair_sha256": "38cfecd6c58d45851c733184b16d4656426102757149c50b5c532b7d539b7ed6",
+      "condition": "R-contract",
+      "relation": "wait_to_recovery_effect",
+      "span": "Wait restored motion",
+      "context": "Whether Wait restored motion or affected the outcome, or whether the discrepancy caused the abort, is unestablished.",
+      "disposition": "FALSE_POSITIVE_EXPLICIT_NONESTABLISHMENT"
+    },
+    {
+      "run_id": "cr-pilot-008",
+      "pair_sha256": "38cfecd6c58d45851c733184b16d4656426102757149c50b5c532b7d539b7ed6",
+      "condition": "R-contract",
+      "relation": "discrepancy_to_outcome_effect",
+      "span": "the discrepancy caused the abort",
+      "context": "Whether Wait restored motion or affected the outcome, or whether the discrepancy caused the abort, is unestablished.",
+      "disposition": "FALSE_POSITIVE_EXPLICIT_NONESTABLISHMENT"
+    },
+    {
+      "run_id": "cr-pilot-012",
+      "pair_sha256": "f6b79cda280ff3022705e1953c87572f1e4b74561e2b85faeb191a0746ff1739",
+      "condition": "R-contract",
+      "relation": "recovery_to_outcome_effect",
+      "span": "recovery caused success",
+      "context": "It also does not establish that measured recovery caused success, or that the discrepancy caused the terminal outcome.",
+      "disposition": "FALSE_POSITIVE_EXPLICIT_NONESTABLISHMENT"
+    },
+    {
+      "run_id": "cr-pilot-015",
+      "pair_sha256": "2a5b240cf47dd2f5478284ba9f44829a90edbd3513b6228cbb929a0a806d207b",
+      "condition": "R-contract",
+      "relation": "discrepancy_to_outcome_effect",
+      "span": "the discrepancy caused the abort",
+      "context": "Whether the discrepancy caused the abort is unestablished",
+      "disposition": "FALSE_POSITIVE_EXPLICIT_NONESTABLISHMENT"
+    },
+    {
+      "run_id": "cr-pilot-018",
+      "pair_sha256": "f7afa5d801c016e8b68e044b33f3f7b14da2374b4f03cf2f1285d9289b2e1b4a",
+      "condition": "R-contract",
+      "relation": "discrepancy_to_outcome_effect",
+      "span": "the discrepancy caused the abort",
+      "context": "Whether Wait restored measured response, whether Wait or that recovery affected the eventual abort, and whether the discrepancy caused the abort are **unestablished**.",
+      "disposition": "FALSE_POSITIVE_EXPLICIT_NONESTABLISHMENT"
+    },
+    {
+      "run_id": "cr-pilot-019",
+      "pair_sha256": "b2ae677f315a4e4ab049996da71781838dcee9bf4cf6f49de42d37735034ed0e",
+      "condition": "R-contract",
+      "relation": "wait_to_recovery_effect",
+      "span": "Wait restored motion",
+      "context": "The ordering supports Wait preceding the observed recovery, but whether Wait restored motion or affected task success is unestablished.",
+      "disposition": "FALSE_POSITIVE_EXPLICIT_NONESTABLISHMENT"
+    }
+  ],
+  "summary": {
+    "raw_detector_findings": 7,
+    "raw_affected_clusters": 6,
+    "confirmed_prohibited_assertions": 0,
+    "false_positive_findings": 7,
+    "interpretation": "The finite detector failed its required contextual audit. These responses state the required causal limitation; they do not assert the matched relation."
+  }
+}

@@ -37,6 +37,14 @@ failure rather than an R factual error. Any evidence-limit/false-premise success
 development screen, fresh population, explicit public limitation contract, and independently
 precomputed audit fields before a new confirmation decision.
 
+A separately frozen causal-restraint successor was subsequently run as bounded development on the
+same retained physical schedule. Its finite detector appeared to favor P in six of fourteen valid
+primary clusters, but the required exact-span audit showed that all seven matches occurred inside
+R statements explicitly saying the relation was unestablished. The strengthened R baseline had
+complied; the detector had not modeled the surrounding negation/question scope. That successor is
+closed without Luna scoring, alpha, confirmation, or replication. Its raw outputs cannot be
+rescored after a detector repair to create a positive pilot.
+
 ## 1. Reconciled starting state
 
 The focused campaign has 56 immutable P/R response pairs: 43 primary clusters and 13 controls

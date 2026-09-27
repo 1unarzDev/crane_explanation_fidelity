@@ -1,5 +1,20 @@
 # Decision Log
 
+## 2026-09-27 — close causal-restraint successor after contextual audit
+
+- **Decision:** do not promote the explicit causal-restraint successor and do not spend alpha.
+- **Raw result:** across 14 valid primary pairs, the frozen finite detector marked P 0 and R 6
+  clusters (seven total spans), superficially exceeding the two-discordance gate.
+- **Required audit:** every span was inside explicit non-establishment language such as “does not
+  establish that ... caused ...” or “whether ... caused/restored ... is unestablished.” Thus all
+  seven are detector false positives and there are zero confirmed R violations.
+- **Interpretation:** the strengthened R baseline followed the public causal instruction. This is
+  evidence against the proposed advantage, not a label to repair. No Luna calls were warranted
+  after the necessary first gate failed.
+- **Disposition:** retain all 18 one-shot R calls and raw detector findings; keep `cr-conf` and
+  `cr-repl` untouched. A repaired detector may be development infrastructure but cannot turn these
+  inspected answers into a promotable result.
+
 ## 2026-09-27 — resume the frozen causal-restraint pilot on retained physical captures
 
 - **Decision:** after P-contract-v4 failed both contract-complete promotion signals, resume the

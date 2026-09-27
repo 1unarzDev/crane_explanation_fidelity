@@ -5,7 +5,21 @@ Updated: 2026-09-27
 Protocol: `diagnostic-sequential-protocol-v2`
 Current status: **P-CONTRACT-V4 PILOT COMPLETE / NOT PROMOTED / CONFIRMATION N=0**
 
-## Causal-restraint pilot resumption (2026-09-27)
+## Causal-restraint pilot closed (2026-09-27)
+
+The resumed semantic pilot completed one new causal-prompt R call for every one of the 18 valid
+retained captures, with no transport failure. Fourteen were primary and four controls. The frozen
+finite detector reported prohibited links in 0 P versus 6 R primary clusters (seven spans), but
+the required contextual audit rejected every span: all appeared inside an explicit statement that
+the relation was not established. Confirmed events were therefore 0 versus 0, the promotion gate
+failed, no Luna calls were launched, and confirmation/alpha/replication remain 0/unbound/unstarted.
+
+This is not a minor annotation mismatch. It invalidates the apparent endpoint signal because the
+strengthened R baseline actually communicated the requested causal limits. The raw detector output
+and responses are retained unchanged. `cr-conf` and `cr-repl` remain untouched; repairing the
+detector on these inspected answers cannot promote this candidate.
+
+## Causal-restraint pilot resumption (historical pre-output checkpoint, 2026-09-27)
 
 The next bounded campaign resumes the already frozen explicit contract-prohibited causal-link
 endpoint. Its 20 pilot configurations were later collected under the contract-complete campaign:

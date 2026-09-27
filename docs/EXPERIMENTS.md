@@ -1,5 +1,19 @@
 # Experiment Log
 
+## 2026-09-27 — causal-restraint pilot completed and rejected
+
+- **EXECUTION:** 18 valid retained captures each received one new isolated causal-prompt R call;
+  P was deterministic. There were zero model transport failures and no retries.
+- **RAW DETECTOR:** primary N=14, P 0 event clusters, R 6 event clusters, seven matched spans;
+  descriptive raw R-minus-P risk +0.4286.
+- **CONTEXT AUDIT:** 7/7 matches were within explicit non-establishment statements. Confirmed
+  prohibited assertions were P 0 and R 0, so net R-only confirmed discordances were zero.
+- **GATE:** failed the frozen requirement of at least two confirmed net R-only discordances. Luna
+  annotation was not run because it could not rescue this necessary endpoint failure.
+- **DISPOSITION:** `DEVELOPMENT_PILOT_COMPLETE_NOT_PROMOTED`; confirmation N=0, alpha bound=0,
+  replication unstarted. Preserve raw calls/findings; do not tune the detector and rescore these
+  inspected answers into a positive pilot.
+
 ## 2026-09-27 — causal-restraint successor resumed before new semantic output
 
 - **WHY:** the completed contract-complete pilot tied under its required conservative mapping, so

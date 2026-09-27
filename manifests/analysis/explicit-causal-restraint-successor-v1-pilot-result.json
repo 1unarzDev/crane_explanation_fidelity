@@ -1,0 +1,54 @@
+{
+  "schema": "crane-causal-restraint-successor-pilot-result/v1",
+  "recorded_date": "2026-09-27",
+  "status": "DEVELOPMENT_PILOT_COMPLETE_NOT_PROMOTED",
+  "candidate": "p-contract-v3",
+  "baseline": "r-contract-causal-restraint-v1",
+  "resumption_amendment": {
+    "path": "research/explanation_fidelity/experiment_configs/prospective/explicit-causal-restraint-successor-v1-pilot-resumption-amendment-1.json",
+    "sha256": "81145f7f1129688f0b3ba4c7fd6c71a3bba4c01ecde962dd4cfe9ed8d78d507c"
+  },
+  "execution": {
+    "scheduled_physical_configurations": 20,
+    "reused_valid_development_captures": 18,
+    "technical_failures": 2,
+    "primary_pairs": 14,
+    "control_pairs": 4,
+    "new_r_calls": 18,
+    "transport_failures": 0,
+    "luna_calls": 0
+  },
+  "raw_frozen_detector": {
+    "p_event_clusters": 0,
+    "r_event_clusters": 6,
+    "r_only_clusters": 6,
+    "raw_findings": 7,
+    "descriptive_r_minus_p_cluster_risk": 0.42857142857142855
+  },
+  "required_contextual_audit": {
+    "path": "research/explanation_fidelity/experiment_configs/development/explicit-causal-restraint-successor-v1-pilot-finding-audit.json",
+    "sha256": "77f974aaedd767311939256e22f479a9a21248669b77bd162d4008f39665e07d",
+    "confirmed_prohibited_assertions": 0,
+    "false_positive_findings": 7,
+    "net_r_only_confirmed_discordances": 0,
+    "interpretation": "Every detector match was embedded in explicit non-establishment language. The baseline complied with the strengthened causal instruction; the raw signal is a detector failure, not an R semantic error."
+  },
+  "summary": {
+    "path": "model_outputs/explicit-causal-restraint-successor-v1-pilot/development-summary.json",
+    "sha256": "3aef42f0a8e0d7e3c52699dfcfd072b1a39d3a0008d4f0a60433bdb2558d1c29",
+    "producer": "analysis/summarize_causal_restraint_successor_pilot.py",
+    "producer_sha256": "ab86662b868ab7fdc3dda9400ae8e3321e3cb81452ae54839ae9c1b80c97c749"
+  },
+  "promotion": {
+    "required_net_r_only_confirmed_discordances": 2,
+    "passed": false,
+    "reason": "The apparent six-cluster detector signal contained zero contextually confirmed prohibited assertions."
+  },
+  "confirmation": {
+    "activated": false,
+    "independent_n": 0,
+    "alpha_bound": 0.0,
+    "replication_started": false
+  },
+  "disposition": "Close this successor unchanged. Do not repair the detector on inspected pilot answers and promote the repaired result. Untouched cr-conf and cr-repl configurations remain unused."
+}
