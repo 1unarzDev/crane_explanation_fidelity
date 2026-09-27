@@ -1,0 +1,67 @@
+{
+  "schema": "crane-contract-complete-v2-pilot-predeclaration/v1",
+  "pilot_id": "contract-complete-diagnostic-communication-v2-development-pilot",
+  "recorded_date": "2026-09-27",
+  "status": "FROZEN_BEFORE_CR_PILOT_002_CAPTURE_OR_MODEL_OUTPUT",
+  "purpose": "Bounded development check of contract correctness, matched R fairness, judge-evidence closure, discordance, controls, and throughput; not significance testing.",
+  "candidate": "p-contract-v4-development",
+  "baseline": "r-contract-v1-development",
+  "claims": {
+    "A": "complete supported M/Q/O/L communication without substantive material error",
+    "B": "response-level substantive unsupported or contradicted assertion risk"
+  },
+  "schedule": {
+    "path": "research/explanation_fidelity/experiment_configs/prospective/contract-complete-diagnostic-communication-v2-pilot-schedule.json",
+    "sha256": "ee4007f3f9c117e12b9b3a55e857aaa8cd2dd6fdef0b2597686b1cd223015b60",
+    "primary": 15,
+    "controls": 4,
+    "order_fixed": true,
+    "inspected_cr_pilot_001_excluded": true
+  },
+  "frozen_resources": {
+    "candidate_source": {"path": "analysis/compose_contract_complete_answer_v4.py", "sha256": "2c1cf56ca332c9f7ec01e6c9b116d9a8b32de58c844ba1d3aad735c646fd82e1"},
+    "candidate_parent_v3": {"path": "analysis/compose_contract_complete_answer_v3.py", "sha256": "fc4784d98dc8e6f9056c96619ae37ab34c7e7839725cc70e6a975a1f30d87f04"},
+    "candidate_parent_v2": {"path": "analysis/compose_contract_complete_answer.py", "sha256": "c3b2025ce5260776d5d8317ee7d56edff4d47361523a0e90cce1094a12e7bdb8"},
+    "pair_runner": {"path": "analysis/run_contract_complete_response_pair_v4.py", "sha256": "ace805e983d0f457f892f49a7d8c6044d44e799febb594883929d66a7787b5c9"},
+    "pair_runner_base": {"path": "analysis/run_contract_complete_response_pair.py", "sha256": "f87b48459fdd6f1287379c11ae76491fdd849781f00dd3aad587f59d6ca8bf1e"},
+    "composition_adapter": {"path": "analysis/build_command_motion_composition_packet_v2.py", "sha256": "551927284fbc3ef220d661870369c203b1258efe73d9839a8d1a395eae10b4c0"},
+    "checked_composer": {"path": "analysis/compose_diagnostic_hypotheses_v2.py", "sha256": "c7c2862b9966971e94a7269141a44a0b7516a7ae1d5e538a35f09e6c1a36fd1e"},
+    "recomputation": {"path": "analysis/recompute_command_motion_diagnostic.py", "sha256": "e7382521b27370bee9990a62eeddaabcfeeb0996107cb2c70fdebb049f558aaa"},
+    "independent_reference": {"path": "analysis/reference_command_motion.py", "sha256": "ae8650aa72678b1ff939be94315390b9287c3f7f2cd6b0a761da76c727ba2469"},
+    "annotation_reference": {"path": "analysis/build_contract_complete_annotation_reference.py", "sha256": "562d7ded0df696f6314b8b4ca852b17c50967d185c55c1761dbeb547a3993674"},
+    "packet_builder": {"path": "analysis/build_diagnostic_annotation_packet.py", "sha256": "316649ba6e1fd5cc1bdc9b46310858bb45c5c17298ee7a3ffd6a48324e2450fb"},
+    "judge_runner": {"path": "analysis/run_contract_complete_luna_packet.py", "sha256": "a5bcb0cf9e9e141b4b7e239bfa74bb5456099781db0670ee000eacb03611c090"},
+    "capture_runner": {"path": "scripts/run_diagnostic_land_capture.sh", "sha256": "7a4b005a669dccaa63bb95b2d8c6eac1d0d4f71d9b35d631bb2b29e50c2ec33c"},
+    "R_prompt": {"path": "research/explanation_fidelity/prompts/diagnostic_repository_agent_contract_complete_v1.txt", "sha256": "73d2ccd4c08e7be5ca7eb6926fbb3123088a2b1923c698a57935e9995b33462d"},
+    "question_contract": {"path": "research/explanation_fidelity/experiment_configs/prospective/contract-complete-diagnostic-communication-v1-questions.json", "sha256": "04985925118b14509ac02b50303a9a9755ee50dee8aa41ed002ed26637904638"}
+  },
+  "judge": {
+    "qualified_release": "contract-complete-luna-qualification-v2",
+    "freeze_sha256": "724c89556bf224f75dd2950cf154b85449e28e1d1822b931e912443f05154f8f",
+    "qualification_manifest_sha256": "dc38334b06d25efe0224881accf80783ba006f143c55f67a6c41bd29d406f36b",
+    "passes_per_answer": 2,
+    "known_gap": "later causal-language extensions failed protected gates; a bounded fresh qualification targeting the actual M/Q/O/L causal fields is mandatory before confirmation",
+    "quality_retries": false
+  },
+  "analysis": {
+    "unit": "independent physical configuration",
+    "primary_effect_A": "P success minus R success",
+    "primary_effect_B": "R substantive-error event minus P substantive-error event",
+    "report_each_pass_and_least_favourable_disagreement_sensitivity": true,
+    "controls_excluded_from_primary_effects": true,
+    "alpha": 0.0
+  },
+  "promotion_review": {
+    "requires_complete_fixed_pilot": true,
+    "requires_no_systematic_P_content_defect_or_severe_control_harm": true,
+    "requires_judge_evidence_closure": true,
+    "requires_bounded_causal_field_qualification_before_confirmation": true,
+    "minimum_signal": "at least two net P-favourable discordances for at least one claim under the least-favourable two-pass mapping",
+    "if_not_met": "retain the pilot and do not bind confirmation alpha"
+  },
+  "confirmation": {
+    "N": 0,
+    "alpha_bound": 0.0,
+    "activation": "PROHIBITED_UNTIL_POST_PILOT_ATOMIC_FREEZE"
+  }
+}

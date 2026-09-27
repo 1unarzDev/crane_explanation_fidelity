@@ -31,7 +31,7 @@ if [[ "${catalog}" != "v4" && "${catalog}" != "v5" && "${catalog}" != "v6" && "$
     echo "Only versioned diagnostic catalogs v4 through v8 are supported: ${catalog}" >&2
     exit 2
 fi
-if [[ "${catalog}" == "v6" && "${CRANE_ALLOW_RESERVED_PHYSICAL_CAPTURE:-0}" != "1" && "${CRANE_ALLOW_CAUSAL_RESTRAINT_CAPTURE:-0}" != "1" ]]; then
+if [[ "${catalog}" == "v6" && "${CRANE_ALLOW_RESERVED_PHYSICAL_CAPTURE:-0}" != "1" && "${CRANE_ALLOW_CAUSAL_RESTRAINT_CAPTURE:-0}" != "1" && "${CRANE_ALLOW_CONTRACT_COMPLETE_V2_CAPTURE:-0}" != "1" ]]; then
     echo "v6 is a physical-evidence reserve; set CRANE_ALLOW_RESERVED_PHYSICAL_CAPTURE=1 for an explicitly declared development capture" >&2
     exit 2
 fi
@@ -55,6 +55,8 @@ proving_ground_mobility_hold_after="${CRANE_PROVING_GROUND_MOBILITY_HOLD_AFTER:-
 proving_ground_mobility_release_after="${CRANE_PROVING_GROUND_MOBILITY_RELEASE_AFTER:--1}"
 causal_restraint_stage="${CRANE_CAUSAL_RESTRAINT_STAGE:-}"
 causal_restraint_schedule="${workspace_root}/research/explanation_fidelity/experiment_configs/prospective/explicit-causal-restraint-successor-v1-schedule.json"
+contract_complete_v2="${CRANE_ALLOW_CONTRACT_COMPLETE_V2_CAPTURE:-0}"
+contract_complete_v2_schedule="${workspace_root}/research/explanation_fidelity/experiment_configs/prospective/contract-complete-diagnostic-communication-v2-pilot-schedule.json"
 
 if [[ "${data_split}" != "dev" ]]; then
     echo "Diagnostic held-out/final capture is not authorized before protocol freeze" >&2
@@ -63,11 +65,12 @@ fi
 layout_metadata_text="$(python3 - "${catalog_file}" "${layout}" "${catalog}" "${run_id}" \
     "${CRANE_ALLOW_CAUSAL_RESTRAINT_CAPTURE:-0}" "${causal_restraint_stage}" \
     "${causal_restraint_schedule}" "${proving_ground_mobility_hold_after}" \
-    "${proving_ground_mobility_release_after}" <<'PY'
+    "${proving_ground_mobility_release_after}" "${contract_complete_v2}" \
+    "${contract_complete_v2_schedule}" <<'PY'
 import json
 import sys
 
-catalog_path, layout_id, catalog_id, run_id, successor, stage, schedule_path, hold, release = sys.argv[1:]
+catalog_path, layout_id, catalog_id, run_id, successor, stage, schedule_path, hold, release, contract_v2, contract_schedule_path = sys.argv[1:]
 catalog = json.load(open(catalog_path, encoding="utf-8"))
 matches = [item for item in catalog.get("layouts", []) if item.get("id") == layout_id]
 if len(matches) != 1:
@@ -81,7 +84,21 @@ expected_splits = {
     "v6": "command-motion-confirmation-reserve",
     "v7": "contract-limit-v4-development",
 }
-if successor == "1" and catalog_id in {"v6", "v8"}:
+if successor == "1" and contract_v2 == "1":
+    raise SystemExit("causal-restraint and contract-complete capture activations are mutually exclusive")
+if contract_v2 == "1":
+    if catalog_id != "v6":
+        raise SystemExit("contract-complete v2 pilot requires catalog v6")
+    schedule = json.load(open(contract_schedule_path, encoding="utf-8"))
+    scheduled_matches = [item for item in schedule["configurations"] if item["run_id"] == run_id]
+    if len(scheduled_matches) != 1:
+        raise SystemExit("run is absent or duplicated in the frozen contract-complete v2 pilot")
+    scheduled = scheduled_matches[0]
+    if scheduled["catalog_id"] != catalog_id or scheduled["layout_id"] != layout_id:
+        raise SystemExit("catalog/layout differs from the frozen contract-complete v2 schedule")
+    if float(scheduled["mobility_hold_after_s"]) != float(hold) or float(scheduled["mobility_release_after_s"]) != float(release):
+        raise SystemExit("mobility timing differs from the frozen contract-complete v2 schedule")
+elif successor == "1" and catalog_id in {"v6", "v8"}:
     if stage not in {"pilot", "discovery", "replication"}:
         raise SystemExit("causal-restraint capture requires an explicit valid stage")
     schedule = json.load(open(schedule_path, encoding="utf-8"))

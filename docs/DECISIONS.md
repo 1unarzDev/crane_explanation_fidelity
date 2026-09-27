@@ -9,6 +9,9 @@
 - Compare only with equally instructed, repository-aware, tool-enabled R-contract and require
   judge-evidence closure for valid extra facts from either method.
 - `cr-pilot-001` is development, not confirmation. No alpha is bound; confirmatory N remains zero.
+- After its unanimous P/R tie, freeze the untouched orders 2--20 as one bounded development pilot
+  with 15 primary configurations and four controls. Require a least-favourable net signal and the
+  bounded causal-field judge qualification before any confirmation activation.
 
 ## 2026-09-27 — close broad v2 pilot; repair and narrow prospectively
 

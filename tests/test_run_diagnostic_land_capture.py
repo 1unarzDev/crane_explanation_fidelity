@@ -233,6 +233,25 @@ def test_causal_restraint_pilot_requires_exact_frozen_run_layout_and_timing(monk
     assert "differs from the frozen causal-restraint schedule" in rejected.stderr
 
 
+def test_contract_complete_v2_pilot_requires_exact_uninspected_schedule(monkeypatch):
+    monkeypatch.setenv("CRANE_ALLOW_CONTRACT_COMPLETE_V2_CAPTURE", "1")
+    monkeypatch.setenv("CRANE_PROVING_GROUND_MOBILITY_HOLD_AFTER", "18.0")
+    monkeypatch.setenv("CRANE_PROVING_GROUND_MOBILITY_RELEASE_AFTER", "-1.0")
+    command = [
+        "bash", str(SCRIPT), "--print-config", "cr-pilot-002", "32", "12702",
+        "v6", "diagnostic-command-motion-replication-reserve-nominal-clear-route-060",
+    ]
+    accepted = subprocess.run(command, cwd=ROOT, check=True, capture_output=True, text=True)
+    config = json.loads(accepted.stdout)
+    assert config["layout_seed"] == 102059
+
+    rejected = subprocess.run(
+        command[:3] + ["cr-pilot-001"] + command[4:], cwd=ROOT, capture_output=True, text=True
+    )
+    assert rejected.returncode != 0
+    assert "absent or duplicated" in rejected.stderr
+
+
 def test_capture_rejects_release_without_proving_ground_hold(monkeypatch):
     monkeypatch.setenv("CRANE_PROVING_GROUND_MOBILITY_RELEASE_AFTER", "20.0")
 

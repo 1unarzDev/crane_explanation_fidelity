@@ -21,6 +21,12 @@ valid and unanimously scored both methods complete with no substantive error. Th
 effect is therefore exactly zero for Claims A and B on this one inspected cluster. A narrow
 recomputation-provenance fix restored the diagnostic-config evidence ID and exact parity.
 
+The untouched fixed-order suffix has been frozen before further capture as the v2 pilot: primary
+N planned=15 and controls=4. The first run is `cr-pilot-002`; `cr-pilot-001` is excluded. Exact
+candidate/baseline/tool/schedule hashes and a zero-alpha promotion rule are bound in the pilot
+predeclaration. Confirmation remains prohibited pending pilot close and bounded causal-field judge
+qualification.
+
 ## Current causal-restraint successor checkpoint (2026-09-27)
 
 The contract-complete v2/v4 routes and both final Luna qualification attempts remain closed. No

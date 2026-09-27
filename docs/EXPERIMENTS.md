@@ -20,6 +20,12 @@ quantity or conclusion. P and R both passed Claims A and B in both isolated Luna
 calls, no disagreement or failure). This is an unfavorable-to-advantage development tie and is
 retained as such; it contributes no confirmation N or alpha.
 
+The remaining 19-config fixed suffix is now frozen as a distinct contract-complete v2 development
+pilot (15 primary, four controls). `cr-pilot-001` is explicitly excluded. A separate capture flag
+checks exact run, catalog, layout, and mobility timing against this schedule; 44 focused schedule,
+capture, candidate, and recomputation tests pass. No further physical or model output was opened
+before the freeze.
+
 ## 2026-09-27 — causal-restraint fresh population and detector qualification frozen
 
 - **FRESHNESS:** twenty v6 layouts never assigned to the original physical schedule and absent

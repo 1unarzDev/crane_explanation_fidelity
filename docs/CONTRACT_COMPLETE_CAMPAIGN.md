@@ -552,3 +552,12 @@ Next: derive its governed diagnostic and independent reference, run one matched 
 field-level packet, complete the bounded pilot, then atomically freeze both claims, evidence
 closure, judge/reference versions, population, monitor, and replication rule. The 0.01 revision
 and 0.02 replication reserves remain available and unbound here. Confirmation remains N=0.
+
+That canary path is complete and is a unanimous P/R tie in both Luna passes. The remaining
+pre-existing fixed-order suffix is now separately frozen as the v2 development pilot: 15 untouched
+primary configurations and four controls, with `cr-pilot-001` excluded. Capture authorization is
+distinct from the superseded causal-restraint protocol. Pilot alpha is zero. Before confirmation,
+the later protected-causal qualification gap must pass one bounded fresh qualification; the older
+failed extensions remain immutable. Promotion review requires a complete pilot, evidence closure,
+no systematic P defect or severe control harm, and at least two net P-favourable discordances for
+one claim under the least-favourable two-pass mapping.
