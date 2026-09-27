@@ -1,5 +1,18 @@
 # Experiment Log
 
+## 2026-09-27 — contract-complete concise v1 screen frozen
+
+- **HYPOTHESIS:** deterministic checked composition may improve complete supported diagnostic
+  communication when both methods must fit an operator-facing 120-word brief.
+- **P REPAIR:** P-contract-v5 shortens rendering only; its final answers retain M/Q/O/L and all
+  question-essential comparisons/limits in 51--78 words across 18 inspected valid cases.
+- **BASELINE:** R-contract-concise receives the same fixed budget, task, evidence, tools, source,
+  high-reasoning `gpt-6-sol`, and explicit permission to use scripts/templates.
+- **SCREEN:** 14 primary and four control captures, all inspected development evidence; two prior
+  physical failures remain visible. Alpha=0 and confirmation N=0.
+- **NEXT:** generate one R-concise answer per valid cluster, then two isolated Luna passes per
+  answer. Require at least two conservative net P-only budgeted-endpoint discordances before any
+  fresh development collection.
 ## 2026-09-27 — causal-restraint pilot completed and rejected
 
 - **EXECUTION:** 18 valid retained captures each received one new isolated causal-prompt R call;

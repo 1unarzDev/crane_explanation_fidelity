@@ -1,5 +1,19 @@
 # Decision Log
 
+## 2026-09-27 — screen one budgeted contract-complete candidate
+
+- **Decision:** test P-contract-v5-concise against an equally capped strong R-contract on the 18
+  valid inspected pilot captures before consuming fresh configurations.
+- **Focused endpoint:** complete supported M/Q/O/L communication without material error within 120
+  whitespace-delimited words. Brevity alone cannot pass.
+- **Candidate:** deterministic compaction preserves all essential values, units, intervals, outcome,
+  and causal limits in 51--78 words across the entire inspected set. It changes presentation, not
+  the diagnostic computation.
+- **Fair R:** same evidence/source/tools/model and 120-word budget; scripts/templates explicitly
+  permitted. The cap is not permission to omit essential content.
+- **Gate:** require at least two net P-only primary discordances under the least-favourable two-pass
+  Luna mapping. Passing leads only to a fresh bounded development pilot; failure closes v5.
+
 ## 2026-09-27 — close causal-restraint successor after contextual audit
 
 - **Decision:** do not promote the explicit causal-restraint successor and do not spend alpha.

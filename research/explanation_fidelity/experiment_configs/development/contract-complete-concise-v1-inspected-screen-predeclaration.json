@@ -1,0 +1,79 @@
+{
+  "schema": "crane-contract-complete-concise-screen-predeclaration/v1",
+  "screen_id": "contract-complete-concise-v1-inspected-screen",
+  "recorded_date": "2026-09-27",
+  "status": "FROZEN_BEFORE_R_CONCISE_OR_LUNA_OUTPUTS",
+  "scientific_role": "Alpha-zero regression and plausibility screen on inspected development captures. It cannot establish significance, confirmation, or replication.",
+  "rationale": "The contract-complete and causal-restraint candidates tied a strong explicitly instructed baseline on semantic content, while P communicated the complete contract substantially more compactly. This screen tests complete supported diagnostic communication under a fixed operator-facing budget, not brevity alone.",
+  "candidate": {
+    "id": "p-contract-v5-concise-development",
+    "renderer": "analysis/compose_contract_complete_answer_v5.py",
+    "sha256": "0921e0c7aadca79676469030204abfdb60d48b40f3d6a7f204d606c5be65f03d",
+    "generation": "deterministic"
+  },
+  "baseline": {
+    "id": "r-contract-concise-v1-development",
+    "model": "gpt-6-sol",
+    "reasoning_effort": "high",
+    "top_level_calls_per_cluster": 1,
+    "prompt": "research/explanation_fidelity/prompts/diagnostic_repository_agent_contract_complete_concise_v1.txt",
+    "prompt_sha256": "943e5e57dd82d317158e9b5d21fcc99eec905266a4376953af509829b5332d02",
+    "templates_and_scripts_permitted": true
+  },
+  "runner": {
+    "path": "analysis/run_contract_complete_response_pair_v5_concise.py",
+    "sha256": "04a4a4671f400559c129f2e47fdef3c60b51617c9b3e4c074bf7fca68350e552",
+    "base_path": "analysis/run_contract_complete_response_pair.py",
+    "base_sha256": "f87b48459fdd6f1287379c11ae76491fdd849781f00dd3aad587f59d6ca8bf1e"
+  },
+  "question_contract": {
+    "path": "research/explanation_fidelity/experiment_configs/prospective/contract-complete-diagnostic-communication-v1-questions.json",
+    "sha256": "04985925118b14509ac02b50303a9a9755ee50dee8aa41ed002ed26637904638"
+  },
+  "population": {
+    "source_schedule": "research/explanation_fidelity/experiment_configs/prospective/explicit-causal-restraint-successor-v1-schedule.json",
+    "source_schedule_sha256": "576872bb8e749dc372553be2630a76d904721ba3de157ee4a0736d8cc49e71f0",
+    "scheduled": 20,
+    "valid_reused": 18,
+    "primary": 14,
+    "controls": 4,
+    "retained_technical_failures": ["cr-pilot-007", "cr-pilot-017"],
+    "freshness": "All physical outcomes and previous answers are inspected; only P-v5 text, R-concise responses, and their judgments are new."
+  },
+  "communication_budget": {
+    "maximum_words": 120,
+    "count_rule": "len(final_answer.split()) using Python Unicode whitespace splitting; section labels and evidence references count",
+    "reason": "A short four-field operator brief. P was deliberately compacted to a maximum of 78 words on the entire inspected screen before the R-concise prompt was run; the cap is not the prior P maximum of 136 words.",
+    "violation": "The budgeted endpoint fails regardless of semantic labels."
+  },
+  "primary_development_endpoint": "budgeted_complete_supported_communication = (M AND Q AND O AND L AND NOT material_error) AND word_count <= 120",
+  "secondary_endpoints": [
+    "unbudgeted complete supported M/Q/O/L communication",
+    "substantive unsupported/contradicted assertion risk",
+    "M/Q/O/L field coverage",
+    "word count, latency, model calls and token use",
+    "nominal and missing-evidence control behavior"
+  ],
+  "annotation": {
+    "judge": "existing qualified contract-complete Luna release",
+    "passes_per_answer": 2,
+    "isolated_and_blinded": true,
+    "endpoint_computation": "analysis/score_contract_complete_judgment.py",
+    "endpoint_computation_sha256": "cd553a7071a860983dd423ebfc5e0e6af81e4fc6385075df1f93add110d132ba",
+    "packet_builder_sha256": "26eff2f865a59c6b83e682348c4bc93eb3759ad8ccc8a4465238938cc6f7a0e8",
+    "runner_sha256": "a5bcb0cf9e9e141b4b7e239bfa74bb5456099781db0670ee000eacb03611c090"
+  },
+  "promotion_rule": {
+    "required": [
+      "all 14 valid primary clusters have complete P/R and two-pass judgments or retained technical dispositions",
+      "least-favourable two-pass mapping yields at least two net P-only budgeted-endpoint discordances",
+      "no systematic unsupported P assertion or severe control failure contradicts the focused claim",
+      "judge packets cover valid extra facts available to either method"
+    ],
+    "not_required": "Pilot significance or improvement on every secondary metric",
+    "pass_action": "Freeze a bounded fresh development pilot from untouched cr-conf configurations before any confirmatory campaign.",
+    "failure_action": "Retain and close this candidate without fresh collection."
+  },
+  "alpha_consumed": 0.0,
+  "confirmation": {"activated": false, "independent_n": 0, "replication_started": false}
+}
