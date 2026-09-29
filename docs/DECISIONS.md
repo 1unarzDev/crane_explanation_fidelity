@@ -2490,3 +2490,21 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   independent episodes, and retain deterministic evaluation of exact quantities and identities.
 - **Consequence:** the measurement qualification gate is closed; fair B2 output generation and the
   development-only B2/B4 annotation remain required before P11 can freeze.
+
+## 2026-09-29 — require a complete atomic handoff before annotating the inspected pilot
+
+- **Decision:** retain all 60 B4 condition results, 57 valid B2 responses, and three original B2
+  technical failures. The three missing B2 conditions are all from `cm-land-conf-042`; exclude that
+  episode's whole ladder from paired episode-level development estimates. Retain its valid E3
+  response as descriptive development material, without replacing or retrying E0--E2.
+- **Evidence:** the read-only handoff audit verifies the 57 B2 answer/call-record bindings and
+  reproduces the 60 B4 results from the unchanged physical inputs. Only 15 episodes and 56
+  conditions have complete paired ladders. No comparative atomic packet or label exists yet.
+- **Measurement gate:** before any qualified Astra pilot annotation, create method-blind exhaustive
+  atomic inventories with verbatim response spans, audit that no substantive assertion is omitted,
+  and bind a common condition-specific rubric independent of method output. The existing packet
+  builder now rejects a claim span absent from the final response. An unqualified extractor or an
+  incomplete inventory must not silently turn an unsupported B2 claim into a non-event.
+- **Boundary:** this is a development disposition made before blinded comparison or episode-level
+  effect calculation. It changes no immutable response, cache, mask, qualification, confirmatory
+  N, or alpha allocation. P11 remains closed.

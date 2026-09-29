@@ -42,6 +42,14 @@ Model calls must run from a normal network-enabled host terminal. The managed Co
 inside it cannot enable outbound sockets. Follow `docs/MODEL_JOB_HOST_RUNBOOK.md` and proceed only
 after `analysis/audit_b2_transport_readiness.py` reports `READY_FOR_SCHEMA_CANARY`.
 
+For the retained B2/B4 development pilot, first run
+`python analysis/audit_evidence_calibration_pilot_handoff.py`. The pilot's B2 answers are prose;
+the existing packet builder requires an exhaustive, method-blind atomic inventory with exact
+response spans and a common condition rubric. Neither is present yet. Qualify or independently
+check the atomization process and audit inventory completeness before building pilot packets.
+The three retained `cm-land-conf-042` B2 technical failures remove that whole episode ladder
+from paired development estimates; its valid E3 output remains descriptive only.
+
 Build packets with `analysis/build_agent_atomic_claim_annotation_packets.py`, then run:
 
 ```bash

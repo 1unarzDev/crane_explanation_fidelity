@@ -75,6 +75,8 @@ def build(condition_entry: dict[str, Any], response: dict[str, Any], rubric: dic
                 {"support_references"}, "atomic claim")
         if claim["claim_id"] in seen_claims or not claim["text"].strip():
             raise ValueError("atomic claims must be unique and nonempty")
+        if not claim["response_span"] or claim["response_span"] not in response["final_response"]:
+            raise ValueError("atomic claim span must occur verbatim in the final response")
         seen_claims.add(claim["claim_id"])
         item_id = "ci-" + _opaque(blinding_salt, response["response_id"], str(index), claim["claim_id"])
         claim_items.append({

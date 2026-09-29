@@ -67,3 +67,10 @@ def test_claim_items_are_deterministic_but_not_independent_samples():
     second, _ = build(*inputs(), "development-blinding-secret-v1")
     assert first == second
     assert "independent_sample" not in json.dumps(first)
+
+
+def test_packet_builder_rejects_an_atomic_claim_without_a_verbatim_response_span():
+    current, response, rubric = inputs()
+    response["atomic_claims"][1]["response_span"] = "The motor failed."
+    with pytest.raises(ValueError, match="span must occur verbatim"):
+        build(current, response, rubric, "development-blinding-secret-v1")
