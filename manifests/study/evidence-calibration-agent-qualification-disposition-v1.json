@@ -1,0 +1,78 @@
+{
+  "schema": "crane-evidence-calibration-agent-qualification-disposition/v1",
+  "disposition_id": "evidence-calibration-agent-qualification-disposition-v1",
+  "recorded_date": "2026-09-29",
+  "measurement_scope": "AGENT_ASSESSED_ATOMIC_EVIDENCE_ANNOTATION_ONLY",
+  "human_validity_established": false,
+  "independent_episode_n": 0,
+  "confirmatory_alpha_consumed": 0.0,
+  "attempts": [
+    {
+      "version": "v1",
+      "model": "gpt-6-luna",
+      "transport": "codex-lb-responses-no-tools/v1",
+      "disposition": "RETAINED_PRE_INFERENCE_TRANSPORT_FAILURE",
+      "detail": "The first and only call returned HTTP 403 before inference; no semantic output exists and the call was not retried."
+    },
+    {
+      "version": "v2",
+      "model": "gpt-6-luna",
+      "transport": "codex-cli-chatgpt-login-ephemeral/v1",
+      "disposition": "RETAINED_PRE_INFERENCE_SCHEMA_FAILURE",
+      "detail": "The provider rejected the strict output schema before inference because const/enum fields lacked explicit JSON types; no semantic output exists and the call was not retried."
+    },
+    {
+      "version": "v3",
+      "model": "gpt-6-luna",
+      "transport": "codex-cli-chatgpt-login-ephemeral/v1",
+      "disposition": "INVALIDATED_REFERENCE_CONTRACT",
+      "detail": "Sixteen calls were retained. A geometry case incorrectly required NOT_APPLICABLE false-premise handling for a question that challenges global no-path; the observed REJECTED_FALSE_PREMISE answer exposed the gold defect. No score was promoted."
+    },
+    {
+      "version": "v4",
+      "model": "gpt-6-astra",
+      "transport": "codex-cli-chatgpt-login-ephemeral/v1",
+      "disposition": "QUALIFIED",
+      "detail": "Two isolated passes completed 40 calls with no quality-driven retries. Each pass achieved 21/21 held-out atomic accuracy, 1.0 field accuracy, zero supported false rejection, zero unsupported false acceptance, 1.0 physically-true-but-unsupported recall, and 1.0 prompt-injection accuracy."
+    }
+  ],
+  "qualified_binding": {
+    "model": "gpt-6-astra",
+    "reasoning_effort": "high",
+    "transport": "codex-cli-chatgpt-login-ephemeral/v1",
+    "isolated_passes": 2,
+    "tools": "none",
+    "quality_driven_retries": 0,
+    "suite": {
+      "path": "research/explanation_fidelity/qualification/evidence-calibration-agent-exact-task-v4.json",
+      "sha256": "d1649da2994c46fb6359edc23897dbe4830624f10af3e4402ec3df15fc08d7b0"
+    },
+    "freeze": {
+      "path": "research/explanation_fidelity/experiment_configs/prospective/evidence-calibration-agent-exact-task-v4-freeze.json",
+      "sha256": "ea3d6438a44538ff58c4bda940d08102b16cc7c68e138de01016c57a8b6f28f7"
+    },
+    "prompt": {
+      "path": "research/explanation_fidelity/prompts/evidence-calibration-agent-annotator-v1.md",
+      "sha256": "e85eba2778c3d740edb38ba0525eaeecaf2b73460b4bc95172e04820ad3cc4a9"
+    },
+    "annotation_schema": {
+      "path": "research/explanation_fidelity/schemas/blinded-agent-atomic-annotation-return-v2.schema.json",
+      "sha256": "7b10a601c48f08a720bcc2c52c69bab0b1773e72ee552f4ac88a7bbd4c1a044f"
+    },
+    "adjudication_schema": {
+      "path": "research/explanation_fidelity/schemas/blinded-agent-atomic-adjudication-v2.schema.json",
+      "sha256": "aa86c71f9bd1ac2a998836115a0b99d2fe145bd182f33eecc4f9dd5b3c04e829"
+    },
+    "result": {
+      "path": "model_outputs/automated_annotations/evidence-calibration-agent-exact-task-v4/qualification-result.json",
+      "sha256": "b09aedfd6be10b9e3feda1f21d1361ac04f0438c69292dd08bd5e34c789df428"
+    }
+  },
+  "limitations": [
+    "Qualification establishes performance on the frozen construction-defined suite, not human validity.",
+    "Two passes from one model family may share correlated errors.",
+    "Deterministic checks remain authoritative for quantities, hashes, identities, intervals, thresholds, and endpoint derivation.",
+    "Method identities and evaluator join keys remain hidden until blinded annotation and disagreement-only adjudication are finalized."
+  ],
+  "next_gate": "Apply this binding prospectively to the fresh B2/B4 development pilot, then use development-only results to complete P11."
+}

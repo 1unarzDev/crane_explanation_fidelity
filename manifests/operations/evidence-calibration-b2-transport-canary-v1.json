@@ -2,11 +2,11 @@
   "alternate_chatgpt_login_route": {
     "chatgpt_login_present": true,
     "dns": {
-      "api.openai.com": false,
-      "auth.openai.com": false,
-      "chatgpt.com": false
+      "api.openai.com": true,
+      "auth.openai.com": true,
+      "chatgpt.com": true
     },
-    "status": "LOGIN_PRESENT_BUT_NETWORK_UNRESOLVED"
+    "status": "LOGIN_ROUTE_NETWORK_REACHABLE"
   },
   "audit_id": "evidence-calibration-b2-transport-canary-v1",
   "authentication": {
@@ -17,9 +17,9 @@
   "checks": {
     "authentication_present": true,
     "codex_cli_available": true,
-    "parent_network_enabled": false,
+    "parent_network_enabled": true,
     "provider_base_url_https": true,
-    "provider_dns_resolved": false,
+    "provider_dns_resolved": true,
     "responses_wire_api": true
   },
   "codex_cli_path": "/home/lunarz/.local/bin/codex",
@@ -27,20 +27,33 @@
   "confirmation_independent_n": 0,
   "execution_environment": {
     "bubblewrap_share_net_can_bypass_parent": false,
-    "codex_sandbox_network_disabled": true
+    "codex_sandbox_network_disabled": false
   },
-  "model_call_attempted": false,
-  "next_action": "Run this same audit from a normal network-enabled host terminal; do not change DNS, credentials, repository artifacts, or caches in this managed session.",
+  "model_call_attempted": true,
+  "schema_canary": {
+    "scope": "NON_STUDY_INFRASTRUCTURE_CANARY",
+    "model": "gpt-6-sol",
+    "reasoning_effort": "high",
+    "transport": "codex-cli-json-bounded-login/v1",
+    "answer_schema": "analysis.run_llm_episode_pilot.ANSWER_SCHEMA",
+    "status": "PASS",
+    "return_code": 0,
+    "latency_ms": 8118.329589,
+    "cache_key": "ea3cbc00739dd790ee87a2cdbdd97f192a18c60e0e34852fc216e7c0205abc16",
+    "record_sha256": "f104a8253adf1407e56be65a036620b04c081a840501c0e577f9cd2b0e9819cf",
+    "scientific_sample": false
+  },
+  "next_action": "Admit only the 57 never-launched development requests under the transport-only amendment; never retry E0/E1/E2.",
   "provider_hostname": "codex.lunarz.dev",
   "provider_name": "codex-lb",
   "provider_scheme": "https",
   "recorded_date": "2026-09-29",
   "replication_independent_n": 0,
-  "resolved_address_count": 0,
+  "resolved_address_count": 4,
   "schema": "crane-evidence-calibration-b2-transport-readiness/v1",
   "scientific_sample": false,
   "scope": "NON_STUDY_INFRASTRUCTURE_CANARY",
-  "status": "RUN_FROM_NETWORK_ENABLED_HOST",
+  "status": "SCHEMA_CANARY_PASS",
   "study_request_attempted": false,
   "wire_api": "responses"
 }

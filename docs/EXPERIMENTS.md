@@ -8172,3 +8172,32 @@ This authorizes only the zero-alpha fresh pilot, beginning with its fixed-order 
   0/60 valid, and no comparative annotation or effect estimate exists. The three failed B2 logical
   requests remain retired; only the 57 never-launched requests may resume from a network-enabled
   host after `READY_FOR_SCHEMA_CANARY`.
+
+# 2026-09-29 — exact-task automated annotation qualification completed
+
+- **PRESERVED FAILURES:** v1 ended in an HTTP 403 before inference; v2 ended in provider schema
+  rejection before inference; v3 retained 16 calls but was invalidated when a geometry question
+  exposed an incorrect false-premise gold contract. No failed version was rescored or promoted.
+- **QUALIFIED MEASUREMENT:** v4 used `gpt-6-astra` at high effort through the login-backed,
+  ephemeral, read-only Codex CLI. Two isolated passes completed 40 calls with no quality-driven
+  retries. Both passes achieved 21/21 held-out atomic accuracy and passed every frozen field,
+  false-acceptance, false-rejection, physical-truth-but-unsupported, and injection gate.
+- **BOUNDARY:** this qualifies agent-assessed atomic measurement on the declared task; it does not
+  establish human validity and adds zero independent episodes and zero alpha use. The hash-bound
+  disposition is `manifests/study/evidence-calibration-agent-qualification-disposition-v1.json`.
+- **NEXT:** amend only the never-launched B2 transport identities, run the 57 remaining development
+  requests once, and annotate the complete B2/B4 pilot before making any P11 choice.
+
+# 2026-09-29 — B2 development transport correction and output completion
+
+- **CANARY:** a content-free full-answer-schema `gpt-6-sol` canary passed through the existing
+  ChatGPT-login-backed Codex CLI in 8.1 seconds before any new study request was admitted.
+- **TRANSPORT-ONLY AMENDMENT:** direct-key staging was replaced with the historical login-backed,
+  ephemeral, read-only CLI route. Model, high effort, prompt, evidence, source/tool access, schema,
+  and one-call/no-retry policy remained fixed. The runner rejects the three retired IDs.
+- **RESULT:** all 57 never-launched requests produced valid, cache-bound B2 outputs; zero transport
+  failures or tracebacks occurred. Median latency was 36.26 s and p95 was 55.88 s with three
+  workers. The earlier E0/E1/E2 failures remain retained and were not retried.
+- **BOUNDARY:** these are development outputs, not confirmation. No B2/B4 difference has been
+  inspected, no annotation has been joined, independent confirmatory N remains zero, and alpha use
+  remains zero. Next is blinded qualified-Astra annotation of the 57 valid pairs.

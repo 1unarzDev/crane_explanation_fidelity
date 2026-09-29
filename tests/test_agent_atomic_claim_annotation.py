@@ -25,7 +25,7 @@ def test_agent_packet_preserves_blinding_and_declares_qualification_gate() -> No
     assert packet["annotation_origin"] == "automated_agent"
     assert packet["independent_agent_invocations_required"] == 2
     assert "independent_annotator_count_required" not in packet
-    assert packet["qualification_status"].endswith("BEFORE_PRIMARY_SCORING")
+    assert packet["qualification_status"] == "EXACT_TASK_V4_ASTRA_QUALIFIED_AGENT_ASSESSED_ONLY"
     assert key["packet_set_sha256"] == canonical_sha256(packet)
     assert key["annotation_origin"] == "automated_agent"
 
@@ -42,7 +42,7 @@ class FakeCaller:
             parsed = {
                 "schema": "crane-blinded-atomic-annotation-adjudication/v1",
                 "agreement_report_sha256": payload["handoff"]["agreement_report_sha256"],
-                "adjudicator_id": "agent-C-luna-v1",
+                "adjudicator_id": "agent-C-astra-v4",
                 "decisions": [{
                     "disagreement_id": disagreement["disagreement_id"],
                     "selected_value": disagreement["annotator_a_value"],
@@ -65,7 +65,7 @@ class FakeCaller:
                 "form_id": form["form_id"],
                 "packet_id": form["packet_id"],
                 "annotator_slot": slot,
-                "annotator_id": f"agent-{slot}-luna-v1",
+                "annotator_id": f"agent-{slot}-astra-v4",
                 "atomic_labels": labels,
                 "required_unit_coverage": [
                     {"unit_prompt": item["unit_prompt"], "communicated": True, "response_span": "exact span"}

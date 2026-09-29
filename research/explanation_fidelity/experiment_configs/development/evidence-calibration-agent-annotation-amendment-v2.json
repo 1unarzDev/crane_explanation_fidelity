@@ -1,0 +1,19 @@
+{
+  "schema": "crane-evidence-calibration-annotation-amendment/v2",
+  "amendment_id": "evidence-calibration-agent-annotation-amendment-v2-astra",
+  "declared_date": "2026-09-29",
+  "status": "PROSPECTIVE_BEFORE_ASTRA_CALLS",
+  "amends": "research/explanation_fidelity/experiment_configs/development/evidence-calibration-agent-annotation-amendment-v1.json",
+  "reason": "Direct-key Luna v1 failed HTTP 403, login-backed Luna v2 failed pre-inference schema validation, and Luna v3 exposed an invalid false-premise reference contract. All are retained with zero confirmatory alpha.",
+  "candidate_model": "gpt-6-astra",
+  "reasoning_effort": "high",
+  "transport": "codex-cli-chatgpt-login-ephemeral/v1",
+  "measurement_design_unchanged": true,
+  "two_isolated_passes": true,
+  "disagreement_only_agent_c": true,
+  "quality_driven_retries": 0,
+  "reporting": "agent-assessed automated annotation; not human validation",
+  "confirmation_independent_n": 0,
+  "replication_independent_n": 0,
+  "confirmatory_alpha_consumed": 0.0
+}

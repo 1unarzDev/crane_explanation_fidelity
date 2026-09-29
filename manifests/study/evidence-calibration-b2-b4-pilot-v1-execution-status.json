@@ -2,7 +2,7 @@
   "schema": "crane-evidence-calibration-development-pilot-status/v1",
   "pilot_id": "evidence-calibration-b2-b4-pilot-v1",
   "recorded_date": "2026-09-29",
-  "status": "B4_COMPLETE_B2_BLOCKED_STOPPED",
+  "status": "B2_B4_OUTPUTS_COMPLETE_PENDING_BLINDED_AGENT_ANNOTATION",
   "independent_episode_count_scheduled": 16,
   "within_episode_conditions_scheduled": 60,
   "b4": {
@@ -12,29 +12,37 @@
     "source": "manifests/study/evidence-calibration-b2-b4-pilot-v1-input-validation.json"
   },
   "b2": {
-    "valid_outputs": 0,
+    "valid_outputs": 57,
     "technical_failures": 3,
     "pre_inference_initialization_failures": 1,
     "bounded_transport_timeouts": 2,
-    "remaining_not_launched": 57,
+    "remaining_not_launched": 0,
     "failed_conditions": ["cm-land-conf-042-E0", "cm-land-conf-042-E1", "cm-land-conf-042-E2"],
     "note": "E0 failed before inference under the read-only app-server path. E1 timed out after the writable-home repair. E2 timed out after direct-provider staging. E0 is retained in the model cache; E1 and E2 have explicit technical-failure records. None is a valid semantic response.",
-    "admission_stopped": true,
-    "quality_driven_retries": 0
+    "admission_stopped": false,
+    "quality_driven_retries": 0,
+    "login_transport_calls": 57,
+    "login_transport_failures": 0,
+    "median_latency_ms": 36255.651072,
+    "p95_latency_ms": 55877.270929,
+    "transport_amendment": "research/explanation_fidelity/experiment_configs/development/evidence-calibration-b2-login-transport-amendment-v1.json"
   },
-  "human_annotation": {
-    "independent_annotators_complete": 0,
-    "adjudicated_packets": 0
+  "agent_annotation": {
+    "qualified_model": "gpt-6-astra",
+    "independent_passes_complete": 0,
+    "adjudicated_packets": 0,
+    "qualification_disposition": "manifests/study/evidence-calibration-agent-qualification-disposition-v1.json",
+    "human_validity_established": false
   },
   "transport_readiness": {
     "audit": "manifests/operations/evidence-calibration-b2-transport-canary-v1.json",
-    "audit_sha256": "267d1c5d4b864d13a6663a25f59c626f460db4e2fdb00e83c55d2f11e346222e",
-    "status": "RUN_FROM_NETWORK_ENABLED_HOST",
+    "audit_sha256": "c514d7d8ce0be97787b037430ee1055957a8bb103165c032f4c649090278c1f2",
+    "status": "SCHEMA_CANARY_PASS",
     "codex_cli_available": true,
     "credential_present": true,
-    "provider_dns_resolved": false,
-    "managed_parent_network_disabled": true,
-    "model_call_attempted_by_preflight": false,
+    "provider_dns_resolved": true,
+    "managed_parent_network_disabled": false,
+    "model_call_attempted_by_preflight": true,
     "scientific_sample": false
   },
   "scientific_interpretation": "NOT_AVAILABLE",
@@ -42,5 +50,5 @@
   "confirmation_alpha": 0.0,
   "confirmation_independent_n": 0,
   "p11_unlocked": false,
-  "next_action": "From a normal network-enabled host terminal using this repository and its unchanged immutable caches, rerun the non-study preflight. Proceed only at READY_FOR_SCHEMA_CANARY, then run one schema-only transport canary and resume only never-launched logical requests; do not retry the three failed condition requests."
+  "next_action": "Build blinded atomic packets for the 57 valid B2/B4 pairs, run two isolated qualified Astra passes per answer with disagreement-only adjudication, and analyze development results episode-clustered before P11."
 }

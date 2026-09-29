@@ -19,7 +19,7 @@ from evidence_calibration_io import canonical_json_bytes, canonical_sha256
 PACKET_SCHEMA = "crane-blinded-agent-atomic-annotation-packet-set/v1"
 KEY_SCHEMA = "crane-blinded-agent-atomic-annotation-key/v1"
 BUILDER_ID = "blinded-agent-atomic-claim-annotation-builder"
-BUILDER_VERSION = "v1-development"
+BUILDER_VERSION = "v2-astra-qualified"
 
 
 def build(condition_entry: dict, response: dict, rubric: dict, blinding_salt: str):
@@ -32,7 +32,8 @@ def build(condition_entry: dict, response: dict, rubric: dict, blinding_salt: st
             "annotation_origin": "automated_agent",
             "independent_agent_invocations_required": 2,
             "adjudication_agent_policy": "DISTINCT_DISAGREEMENT_ONLY_INVOCATION",
-            "qualification_status": "EXACT_TASK_QUALIFICATION_REQUIRED_BEFORE_PRIMARY_SCORING",
+            "qualification_status": "EXACT_TASK_V4_ASTRA_QUALIFIED_AGENT_ASSESSED_ONLY",
+            "qualification_disposition": "manifests/study/evidence-calibration-agent-qualification-disposition-v1.json",
         }
     )
     packet.pop("independent_annotator_count_required", None)

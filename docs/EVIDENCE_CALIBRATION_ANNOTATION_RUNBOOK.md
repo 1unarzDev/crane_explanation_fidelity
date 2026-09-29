@@ -1,6 +1,18 @@
-# Evidence-calibration human annotation runbook
+# Evidence-calibration annotation runbook
 
-Status: **development workflow; no human return or adjudication exists yet**.
+Status: **qualified agent-assessed workflow for prospective uncollected annotations**.
+
+The original human-oriented workflow below is preserved as historical design context. Prospective
+uncollected evidence-calibration annotations now use two isolated `gpt-6-astra` passes and a
+distinct disagreement-only agent under the hash-bound v4 disposition in
+`manifests/study/evidence-calibration-agent-qualification-disposition-v1.json`. Results must be
+called **agent-assessed**, never human annotations or human validation. Deterministic checks remain
+authoritative for quantities, hashes, identities, intervals, thresholds, and endpoint derivation.
+
+Qualification history is cumulative and immutable: v1 failed with HTTP 403 before inference; v2
+failed provider schema validation before inference; v3 was invalidated after a geometry
+false-premise gold defect was exposed; v4 completed 40 calls over two isolated passes and passed
+every prospectively declared held-out gate. None of these calls adds independent episode N.
 
 This runbook applies only to the prospective evidence-calibration study. It does not rescore the
 legacy provenance cohort, the closed focused campaign, or any Luna output. Automated judgments are

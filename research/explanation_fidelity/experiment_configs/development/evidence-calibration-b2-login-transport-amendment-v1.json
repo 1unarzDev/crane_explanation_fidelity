@@ -1,0 +1,36 @@
+{
+  "schema": "crane-evidence-calibration-b2-operational-amendment/v1",
+  "amendment_id": "evidence-calibration-b2-login-transport-amendment-v1",
+  "recorded_date": "2026-09-29",
+  "scope": "TRANSPORT_ONLY_FOR_NEVER_LAUNCHED_DEVELOPMENT_REQUESTS",
+  "predecessor_pilot": "research/explanation_fidelity/experiment_configs/development/evidence-calibration-b2-b4-pilot-v1.json",
+  "retired_logical_requests": [
+    "cm-land-conf-042-E0",
+    "cm-land-conf-042-E1",
+    "cm-land-conf-042-E2"
+  ],
+  "eligible_request_count": 57,
+  "unchanged": [
+    "gpt-6-sol model",
+    "high reasoning effort",
+    "one isolated call per condition",
+    "prompt and answer schema",
+    "robot-visible evidence and source/tool access",
+    "resource limits",
+    "fixed schedule order",
+    "development-only interpretation"
+  ],
+  "replacement_transport": {
+    "adapter": "codex-cli-json-bounded-login/v1",
+    "authentication": "existing ChatGPT login",
+    "command": "codex exec --ephemeral --sandbox read-only",
+    "provider_configuration": "existing login-backed codex-lb configuration with requires_openai_auth=true",
+    "direct_api_key_used": false,
+    "quality_driven_retries": 0,
+    "lost_acknowledgement_policy": "reconcile immutable cache identity before any retry"
+  },
+  "admission_gate": "One content-free non-study full-answer-schema canary must succeed before any of the 57 requests is launched.",
+  "scientific_change": false,
+  "confirmation_independent_n": 0,
+  "confirmatory_alpha_consumed": 0.0
+}

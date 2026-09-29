@@ -11,7 +11,12 @@ from typing import Any
 
 from adjudicate_evidence_calibration_annotations import validate_return
 from evidence_calibration_io import canonical_json_bytes, canonical_sha256
-from run_evidence_calibration_agent_annotation import PROMPT, RETURN_SCHEMA, StructuredAgentCaller
+from run_evidence_calibration_agent_annotation import (
+    PROMPT,
+    RETURN_SCHEMA,
+    StructuredAgentCaller,
+    StructuredCodexCliAgentCaller,
+)
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -131,14 +136,27 @@ def gates_pass(metrics: dict[str, Any], gates: dict[str, Any]) -> tuple[bool, di
     return all(checks.values()), checks
 
 
-def run(suite_path: Path, freeze_path: Path, output_root: Path, caller_factory: Any = StructuredAgentCaller) -> dict[str, Any]:
+def run(suite_path: Path, freeze_path: Path, output_root: Path, caller_factory: Any | None = None) -> dict[str, Any]:
     suite = json.loads(suite_path.read_text(encoding="utf-8"))
     freeze = json.loads(freeze_path.read_text(encoding="utf-8"))
     suite_hash = canonical_sha256(suite)
     if suite_hash != freeze["qualification_suite_sha256"]:
         raise ValueError("qualification suite does not match prospective freeze")
+    if caller_factory is None:
+        transport = freeze["candidate"]["transport"]
+        if transport == "codex-lb-responses-no-tools/v1":
+            caller_factory = StructuredAgentCaller
+        elif transport == "codex-cli-chatgpt-login-ephemeral/v1":
+            model = freeze["candidate"]["model"]
+            effort = freeze["candidate"]["reasoning_effort"]
+            caller_factory = lambda cache: StructuredCodexCliAgentCaller(
+                cache, model=model, effort=effort
+            )
+        else:
+            raise ValueError(f"unsupported frozen qualification transport: {transport}")
     prompt = PROMPT.read_text(encoding="utf-8")
-    schema = json.loads(RETURN_SCHEMA.read_text(encoding="utf-8"))
+    schema_path = ROOT / freeze["candidate"]["structured_output"]
+    schema = json.loads(schema_path.read_text(encoding="utf-8"))
     all_passes = []
     for slot in ("A", "B"):
         caller = caller_factory(output_root / f"pass-{slot}" / "calls")

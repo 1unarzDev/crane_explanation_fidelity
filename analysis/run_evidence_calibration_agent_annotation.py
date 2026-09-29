@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Run two blinded agent annotations and disagreement-only agent adjudication.
 
-This runner is development-only until an exact-task qualification manifest is frozen.  It makes
+This runner uses the frozen v4 Astra exact-task qualification. It makes
 one no-tool Responses request per logical agent identity, retains failures without quality-driven
 retry, and never reads the evaluator join key.
 """
@@ -14,6 +14,7 @@ import json
 import os
 from pathlib import Path
 import tempfile
+import subprocess
 import time
 from typing import Any
 import urllib.error
@@ -25,12 +26,12 @@ from luna_model_judge import extract_output_text, parse_sse_response, resolve_ba
 
 
 ROOT = Path(__file__).resolve().parents[1]
-MODEL = "gpt-6-luna"
+MODEL = "gpt-6-astra"
 EFFORT = "high"
 PROMPT = ROOT / "research/explanation_fidelity/prompts/evidence-calibration-agent-annotator-v1.md"
-RETURN_SCHEMA = ROOT / "research/explanation_fidelity/schemas/blinded-agent-atomic-annotation-return-v1.schema.json"
-ADJUDICATION_SCHEMA = ROOT / "research/explanation_fidelity/schemas/blinded-agent-atomic-adjudication-v1.schema.json"
-AMENDMENT = ROOT / "research/explanation_fidelity/experiment_configs/development/evidence-calibration-agent-annotation-amendment-v1.json"
+RETURN_SCHEMA = ROOT / "research/explanation_fidelity/schemas/blinded-agent-atomic-annotation-return-v2.schema.json"
+ADJUDICATION_SCHEMA = ROOT / "research/explanation_fidelity/schemas/blinded-agent-atomic-adjudication-v2.schema.json"
+AMENDMENT = ROOT / "research/explanation_fidelity/experiment_configs/development/evidence-calibration-agent-annotation-amendment-v2.json"
 
 
 def _canonical(value: Any) -> str:
@@ -148,11 +149,122 @@ class StructuredAgentCaller:
         return record
 
 
+class StructuredCodexCliAgentCaller:
+    """Login-backed, ephemeral structured caller with an empty read-only workspace."""
+
+    def __init__(self, cache: Path, *, model: str = MODEL, effort: str = EFFORT,
+                 timeout_s: float = 300.0, runner: Any = subprocess.run):
+        self.cache = cache
+        self.model = model
+        self.effort = effort
+        self.timeout_s = timeout_s
+        self.runner = runner
+        self.cli_version = subprocess.run(
+            ["codex", "--version"], check=True, capture_output=True, text=True
+        ).stdout.strip()
+
+    def call(self, *, logical_role: str, payload: dict[str, Any], schema: dict[str, Any], prompt: str) -> dict[str, Any]:
+        full_prompt = "\n".join((
+            prompt,
+            "UNTRUSTED_ANNOTATION_DATA_BEGIN",
+            _canonical(payload),
+            "UNTRUSTED_ANNOTATION_DATA_END",
+            "Return only the object required by the output schema. Do not use tools.",
+        ))
+        identity = {
+            "transport": "codex-cli-chatgpt-login-ephemeral/v1",
+            "logical_role": logical_role,
+            "model": self.model,
+            "effort": self.effort,
+            "cli_version": self.cli_version,
+            "prompt_sha256": _digest(full_prompt.encode()),
+            "schema_sha256": _digest(canonical_json_bytes(schema)),
+            "payload": payload,
+            "amendment_sha256": _digest(AMENDMENT.read_bytes()),
+            "workspace": "empty-temporary-read-only",
+        }
+        cache_key = _digest(_canonical(identity).encode())
+        path = self.cache / f"{cache_key}.json"
+        if path.exists():
+            record = json.loads(path.read_text(encoding="utf-8"))
+            if record.get("request_identity") != identity:
+                raise RuntimeError(f"cache collision at {path}")
+            if record.get("status") != "VALID":
+                raise RuntimeError(f"retained agent failure at {path}")
+            return record
+        started = time.time_ns()
+        with tempfile.TemporaryDirectory(prefix="crane-agent-cli-") as temporary:
+            root = Path(temporary)
+            schema_path = root / "schema.json"
+            output_path = root / "output.json"
+            schema_path.write_bytes(canonical_json_bytes(schema) + b"\n")
+            command = [
+                "codex", "exec", "--json", "--ephemeral", "--skip-git-repo-check",
+                "--sandbox", "read-only", "--cd", str(root), "--model", self.model,
+                "--config", f'model_reasoning_effort="{self.effort}"',
+                "--output-schema", str(schema_path), "--output-last-message", str(output_path), "-",
+            ]
+            try:
+                completed = self.runner(
+                    command, input=full_prompt, text=True, capture_output=True, check=False,
+                    env={**os.environ, "NO_COLOR": "1"}, timeout=self.timeout_s,
+                )
+                return_code, stdout, stderr = completed.returncode, completed.stdout, completed.stderr
+                timed_out = False
+            except subprocess.TimeoutExpired as error:
+                return_code, timed_out = 124, True
+                stdout = error.stdout.decode() if isinstance(error.stdout, bytes) else (error.stdout or "")
+                stderr = error.stderr.decode() if isinstance(error.stderr, bytes) else (error.stderr or "")
+            events = []
+            invalid_event = None
+            for line in stdout.splitlines():
+                try:
+                    event = json.loads(line)
+                except json.JSONDecodeError:
+                    event = {"type": "unparsed_stdout", "text_sha256": _digest(line.encode())}
+                events.append(event)
+                item = event.get("item") if isinstance(event, dict) else None
+                if isinstance(item, dict) and item.get("type") not in {"agent_message", "reasoning"}:
+                    invalid_event = item.get("type")
+                if isinstance(event, dict) and event.get("type") in {"error", "turn.failed"}:
+                    invalid_event = event.get("type")
+            raw_final = output_path.read_text(encoding="utf-8") if output_path.exists() else ""
+        base = {
+            "schema": "crane-evidence-calibration-agent-call/v1",
+            "cache_key": cache_key,
+            "request_identity": identity,
+            "request_sha256": _digest(full_prompt.encode()),
+            "latency_ms": (time.time_ns() - started) / 1_000_000,
+            "return_code": return_code,
+            "timed_out": timed_out,
+            "attempt_count": 1,
+            "quality_driven_retries": 0,
+            "credential_persisted": False,
+            "stderr_sha256": _digest(stderr.encode()),
+            "event_types": [event.get("type") for event in events if isinstance(event, dict)],
+        }
+        if return_code != 0 or invalid_event is not None or not raw_final:
+            record = {**base, "status": "TRANSPORT_OR_TOOL_POLICY_FAILURE", "invalid_event": invalid_event}
+            _atomic_write(path, record)
+            raise RuntimeError(f"agent CLI call failed; retained at {path}")
+        try:
+            parsed = json.loads(raw_final)
+            if not isinstance(parsed, dict):
+                raise ValueError("structured return is not an object")
+        except (ValueError, json.JSONDecodeError) as error:
+            record = {**base, "status": "INVALID_RETURN_NO_RETRY", "validation_error": str(error), "raw_final_sha256": _digest(raw_final.encode())}
+            _atomic_write(path, record)
+            raise RuntimeError(f"invalid agent return; retained at {path}") from error
+        record = {**base, "status": "VALID", "parsed_final": parsed}
+        _atomic_write(path, record)
+        return record
+
+
 def _annotation_payload(packet: dict[str, Any], form: dict[str, Any], slot: str) -> dict[str, Any]:
     return {
         "task": "BLINDED_ATOMIC_EVIDENCE_ANNOTATION",
         "annotation_origin": "automated_agent",
-        "agent_identity": f"agent-{slot}-luna-v1",
+        "agent_identity": f"agent-{slot}-astra-v4",
         "packet_set_sha256": canonical_sha256(packet),
         "form": form,
         "required_attestation": "INDEPENDENT_BLINDED_COMPLETE",
@@ -166,16 +278,21 @@ def run(packet_path: Path, output_root: Path, *, caller: Any | None = None) -> d
     forms = {item["annotator_slot"]: item for item in packet.get("forms", [])}
     if set(forms) != {"A", "B"}:
         raise ValueError("packet must contain exactly agent slots A and B")
-    caller = caller or StructuredAgentCaller(output_root / "calls")
+    def caller_for(slot: str) -> Any:
+        if caller is not None:
+            return caller
+        return StructuredCodexCliAgentCaller(
+            output_root / f"pass-{slot}" / "calls", model=MODEL, effort=EFFORT
+        )
     prompt = PROMPT.read_text(encoding="utf-8")
     schema = json.loads(RETURN_SCHEMA.read_text(encoding="utf-8"))
     returned: dict[str, dict[str, Any]] = {}
     cache_keys: dict[str, str] = {}
     for slot in ("A", "B"):
-        record = caller.call(logical_role=f"atomic-agent-{slot}", payload=_annotation_payload(packet, forms[slot], slot), schema=schema, prompt=prompt)
+        record = caller_for(slot).call(logical_role=f"atomic-agent-{slot}", payload=_annotation_payload(packet, forms[slot], slot), schema=schema, prompt=prompt)
         value = record["parsed_final"]
         validate_return(packet, value)
-        expected_id = f"agent-{slot}-luna-v1"
+        expected_id = f"agent-{slot}-astra-v4"
         if value["annotator_id"] != expected_id:
             raise ValueError("agent return changed its assigned opaque annotator identity")
         returned[slot] = value
@@ -192,12 +309,12 @@ def run(packet_path: Path, output_root: Path, *, caller: Any | None = None) -> d
         adjudication_payload = {
             "task": "BLINDED_DISAGREEMENT_ONLY_ADJUDICATION",
             "annotation_origin": "automated_agent",
-            "agent_identity": "agent-C-luna-v1",
+            "agent_identity": "agent-C-astra-v4",
             "blinded_form": forms["A"],
             "handoff": handoff,
             "required_attestation": "DISAGREEMENT_ONLY_BLINDED_COMPLETE",
         }
-        record = caller.call(logical_role="atomic-agent-C", payload=adjudication_payload, schema=adjudication_schema, prompt=prompt)
+        record = caller_for("C").call(logical_role="atomic-agent-C", payload=adjudication_payload, schema=adjudication_schema, prompt=prompt)
         adjudication = record["parsed_final"]
         final = finalize(report, adjudication)
         adjudication_cache_key = record["cache_key"]
@@ -215,7 +332,8 @@ def run(packet_path: Path, output_root: Path, *, caller: Any | None = None) -> d
         _atomic_write(output_root / "final.json", final)
     summary = {
         "schema": "crane-evidence-calibration-agent-annotation-run/v1",
-        "status": "DEVELOPMENT_ONLY_EXACT_TASK_QUALIFICATION_PENDING",
+        "status": "DEVELOPMENT_AGENT_ASSESSED_V4_QUALIFIED",
+        "qualification_disposition": "manifests/study/evidence-calibration-agent-qualification-disposition-v1.json",
         "packet_sha256": _digest(packet_path.read_bytes()),
         "agent_assessed": True,
         "human_annotations_collected": 0,

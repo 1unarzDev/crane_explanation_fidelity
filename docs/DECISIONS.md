@@ -2479,3 +2479,14 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   false-acceptance, false-rejection, physical-truth-but-unsupported, field, and injection gates.
 - **Failure policy:** retain transport, schema, and accuracy failures; issue no quality-driven retry
   and do not lower gates. A pass qualifies automated measurement only, not human validity.
+
+## 2026-09-29 — qualify Astra for prospective atomic annotation after preserving three failures
+
+- **Decision:** bind `gpt-6-astra` high-effort, login-backed ephemeral CLI, the v2 structured
+  schemas, and two isolated passes for uncollected evidence-calibration annotation.
+- **Evidence:** both v4 passes passed every frozen held-out gate (21/21 atomic labels and 1.0 field
+  accuracy per pass). v1 and v2 pre-inference failures and the v3 invalid-gold run remain retained.
+- **Scope:** call the results agent-assessed. Do not claim human validation, do not treat passes as
+  independent episodes, and retain deterministic evaluation of exact quantities and identities.
+- **Consequence:** the measurement qualification gate is closed; fair B2 output generation and the
+  development-only B2/B4 annotation remain required before P11 can freeze.

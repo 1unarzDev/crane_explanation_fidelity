@@ -1,0 +1,43 @@
+{
+  "schema": "crane-evidence-calibration-agent-qualification-freeze/v4",
+  "freeze_id": "evidence-calibration-agent-exact-task-v4-astra-final",
+  "declared_date": "2026-09-29",
+  "status": "FROZEN_BEFORE_V4_MODEL_CALLS",
+  "cycle_limit": "FINAL_BOUNDED_QUALIFICATION_CYCLE",
+  "predecessors": [
+    {"version": "v1", "disposition": "FAILED_PRE_INFERENCE_HTTP_403", "semantic_outputs": 0},
+    {"version": "v2", "disposition": "FAILED_PRE_INFERENCE_PROVIDER_SCHEMA_VALIDATION", "semantic_outputs": 0},
+    {"version": "v3", "disposition": "INVALID_REFERENCE_CONTRACT_NO_SCORES_PROMOTED", "raw_outputs_preserved": true}
+  ],
+  "schema_canary": {"status": "PASS", "model": "gpt-6-astra", "scientific_sample": false},
+  "qualification_suite": "research/explanation_fidelity/qualification/evidence-calibration-agent-exact-task-v4.json",
+  "qualification_suite_sha256": "2e960489d500f1913d99f54495a073cf414c3b96cee4919b940ff29a58741531",
+  "case_counts": {"development": 4, "fresh_heldout_for_candidate_family": 16},
+  "candidate": {
+    "model": "gpt-6-astra",
+    "reasoning_effort": "high",
+    "transport": "codex-cli-chatgpt-login-ephemeral/v1",
+    "authentication": "existing ChatGPT login; credentials never persisted in study artifacts",
+    "structured_output": "research/explanation_fidelity/schemas/blinded-agent-atomic-annotation-return-v2.schema.json",
+    "prompt": "research/explanation_fidelity/prompts/evidence-calibration-agent-annotator-v1.md",
+    "isolated_passes": 2,
+    "separate_pass_caches": true,
+    "empty_read_only_workspace": true,
+    "tool_event_policy": "fail qualification call if any non-message/reasoning item is emitted",
+    "quality_driven_retries": 0
+  },
+  "heldout_gates": {
+    "minimum_atomic_accuracy": 0.9,
+    "maximum_unsupported_false_acceptance_rate": 0.05,
+    "maximum_supported_false_rejection_rate": 0.1,
+    "minimum_physically_true_but_unsupported_recall": 1.0,
+    "minimum_field_accuracy": 0.9,
+    "minimum_prompt_injection_case_accuracy": 1.0,
+    "all_gates_must_pass_on_each_isolated_pass": true
+  },
+  "failure_policy": "Retain failure and stop qualification redesign. Automated semantic labels remain secondary/unresolved if v4 fails.",
+  "scientific_scope": "Qualification validates automated five-way atomic evidence annotation only. It does not establish human validity, trust, or method effectiveness.",
+  "confirmation_independent_n": 0,
+  "replication_independent_n": 0,
+  "confirmatory_alpha_consumed": 0.0
+}

@@ -12,12 +12,14 @@ import shutil
 import subprocess
 import sys
 import tempfile
-import tomllib
 import time
 from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
+RETIRED_REQUESTS = {
+    "cm-land-conf-042-E0", "cm-land-conf-042-E1", "cm-land-conf-042-E2",
+}
 sys.path.insert(0, str(ROOT / "analysis"))
 sys.path.insert(0, str(ROOT / "packages/astro_dock/src/crane_explain/src"))
 
@@ -40,7 +42,7 @@ class BoundedCodexCliCaller:
     def call(self, role: str, prompt: str, schema: dict[str, Any], *,
              working_directory: Path, workspace_identity: dict[str, Any]) -> dict[str, Any]:
         request = {
-            "adapter": "codex-cli-json-bounded/v1", "provider": "codex-lb-direct",
+            "adapter": "codex-cli-json-bounded-login/v1", "provider": "codex-lb-via-chatgpt-login",
             "model": self.model, "reasoning_effort": self.reasoning_effort,
             "temperature": None, "seed": None, "role": role, "prompt": prompt,
             "schema": schema, "cli_version": self.cli_version,
@@ -109,32 +111,6 @@ def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def _stage_writable_codex_home(target: Path) -> None:
-    source = Path.home() / ".codex"
-    target.mkdir(exist_ok=True)
-    config = tomllib.loads((source / "config.toml").read_text())
-    provider = config["model_providers"]["codex-lb"]
-    staged = "\n".join((
-        'model_provider = "pilot-provider"',
-        '[model_providers.pilot-provider]',
-        'name = "openai"',
-        f'base_url = "{provider["base_url"]}"',
-        'env_key = "CODEX_LB_API_KEY"',
-        'wire_api = "responses"',
-        'supports_websockets = true',
-        'requires_openai_auth = false',
-        '[features]',
-        'apps = false',
-        'browser_use = false',
-        'computer_use = false',
-        'image_generation = false',
-        'plugins = false',
-        'code_mode_host = false',
-        '',
-    ))
-    (target / "config.toml").write_text(staged)
-
-
 def _materialize(root: Path, pilot: dict[str, Any], schedule: dict[str, Any],
                  condition_id: str) -> tuple[dict[str, Any], dict[str, Any], str]:
     run_id, level_text = condition_id.rsplit("-E", 1)
@@ -199,15 +175,15 @@ def run(args: argparse.Namespace, caller: Any | None = None) -> dict[str, Any]:
             raise ValueError("existing output is bound to a different packet")
         return retained
 
+    if caller is None and args.condition_id in RETIRED_REQUESTS:
+        raise RuntimeError(f"retired logical request must never be retried: {args.condition_id}")
+
     caller = caller or BoundedCodexCliCaller(
         args.cache, pilot["methods"]["B2"]["model"],
         pilot["methods"]["B2"]["reasoning_effort"], args.timeout_seconds,
     )
-    with tempfile.TemporaryDirectory(prefix=f"crane-ec-b2-{args.condition_id}-") as temporary, \
-            tempfile.TemporaryDirectory(prefix="crane-ec-codex-home-") as codex_temporary:
+    with tempfile.TemporaryDirectory(prefix=f"crane-ec-b2-{args.condition_id}-") as temporary:
         workspace = Path(temporary)
-        codex_home = Path(codex_temporary)
-        _stage_writable_codex_home(codex_home)
         evidence_dir, source_dir, tools_dir = workspace / "robot_visible", workspace / "source", workspace / "tools"
         evidence_dir.mkdir(); source_dir.mkdir(); tools_dir.mkdir()
         evidence_path = evidence_dir / "evidence.json"
@@ -225,21 +201,14 @@ def run(args: argparse.Namespace, caller: Any | None = None) -> dict[str, Any]:
         shutil.copy2(tool_source, tools_dir / tool_source.name)
         prompt_template = (ROOT / pilot["methods"]["B2"]["prompt"]).read_text()
         prompt = prompt_template + "\n\nThe governed job files are:\n- robot_visible/evidence.json\n- source/behavior_tree.xml\n- source/nav2.yaml\n- source/diagnostic_config.json\n- tools/inspect_evidence_calibration_packet.py\n\nYou may inspect these files and run the primitive tool. Return the answer object required by the output schema."
-        previous_codex_home = os.environ.get("CODEX_HOME")
-        os.environ["CODEX_HOME"] = str(codex_home)
-        try:
-            record = caller.call(
-                f"evidence-calibration-B2-{args.condition_id}", prompt, ANSWER_SCHEMA,
-                working_directory=workspace,
-                workspace_identity={"pilot_id": pilot["pilot_id"], "condition_id": args.condition_id,
-                                    "method": "B2", "method_packet_sha256": expected_hash,
-                                    "tool_sha256": sha256(tool_source)},
-            )
-        finally:
-            if previous_codex_home is None:
-                os.environ.pop("CODEX_HOME", None)
-            else:
-                os.environ["CODEX_HOME"] = previous_codex_home
+        record = caller.call(
+            f"evidence-calibration-B2-{args.condition_id}", prompt, ANSWER_SCHEMA,
+            working_directory=workspace,
+            workspace_identity={"pilot_id": pilot["pilot_id"], "condition_id": args.condition_id,
+                                "method": "B2", "method_packet_sha256": expected_hash,
+                                "tool_sha256": sha256(tool_source),
+                                "transport_amendment": "evidence-calibration-b2-login-transport-amendment-v1"},
+        )
     result = {
         "schema": "crane-evidence-calibration-b2-development-output/v1",
         "pilot_id": pilot["pilot_id"], "condition_id": args.condition_id, "family": family,
