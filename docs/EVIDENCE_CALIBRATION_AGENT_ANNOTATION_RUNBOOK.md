@@ -1,6 +1,6 @@
 # Evidence-calibration automated-agent annotation runbook
 
-Status: **prospective development workflow; exact-task qualification is frozen but has not been executed, and the empirical dry run is not complete**.
+Status: **qualified prospective automated-annotation configuration; empirical B2/B4 dry run is not complete**. The 2026-09-29 v4 qualification disposition and amendment v2 supersede the older Luna candidate below. See `manifests/study/evidence-calibration-agent-qualification-disposition-v1.json` for the hash-bound active configuration.
 
 This runbook applies only to annotation not yet generated for the prospective evidence-calibration study. The earlier two-human development plan remains retained in its original pilot declaration; the prospective replacement is recorded by `evidence-calibration-agent-annotation-amendment-v1.json`. No historical output is relabeled.
 
@@ -10,7 +10,7 @@ Every return under this runbook is an **automated annotation** and every reporte
 
 - Agent A and Agent B are separate, blinded provider invocations with different logical request identities and retained call records. Each receives one form and no other return.
 - Agent C is invoked only for disagreements. It receives the original blinded form and disagreement-only handoff, not annotator identities, agreed decisions, the evaluator join key, or method identity.
-- The candidate is `gpt-6-luna` at high reasoning effort through the Codex LB Responses API, with structured output, no tools, no storage, and no quality-driven retry.
+- The qualified configuration is `gpt-6-astra` at high reasoning effort through the login-backed ephemeral Codex CLI, with the v2 structured schemas, no tools, and no quality-driven retry.
 - One model family creates correlated-error risk. Separate invocations measure repeatability; they do not create independent human raters or robot episodes.
 - Quantities, units, intervals, thresholds, hashes, identities, mask relations, and endpoint logic remain deterministically checked. Agents evaluate semantic attachment, evidential scope, abstraction level, limitations, and false-premise handling.
 
@@ -26,13 +26,14 @@ Luna v12 remains qualified only for its frozen complete-supported-diagnostic end
 
 Before primary scoring, freeze and run a bounded exact-task qualification: use development cases for debugging, then two isolated passes over fresh held-out cases. Protect physical truth versus visible support, unsupported versus contradicted specificity, useful partial diagnosis versus over-abstention, recovery chronology versus outcome causation, false premises, valid extra facts, prompt injection, and method blinding. Predeclare accuracy and false-acceptance/rejection gates. Retain any failed qualification without lowering gates or retrying poor returns.
 
-That qualification is now prospectively frozen at
-`research/explanation_fidelity/experiment_configs/prospective/evidence-calibration-agent-exact-task-v1-freeze.json`.
-It binds four construction-defined development cases and 16 fresh held-out cases before any call.
-Each isolated pass must independently satisfy every frozen gate. The host queue is
-`manifests/operations/evidence-calibration-agent-qualification-host-queue-v1.json`.
+The active qualification is frozen at
+`research/explanation_fidelity/experiment_configs/prospective/evidence-calibration-agent-exact-task-v4-freeze.json`.
+The v4 suite and its qualified result are hash-bound by the disposition above. Two isolated passes
+passed every held-out gate. The v1/v2 pre-inference failures and invalid v3 reference remain retained.
 
-Until that gate passes, agent labels are development or secondary sensitivity evidence only. Deterministically checkable quantities and endpoint operations remain code-scored.
+Qualification permits prospective agent-assessed scoring on the declared task. It does not make
+the inspected B2/B4 pilot a fresh confirmation sample. Deterministically checkable quantities and
+endpoint operations remain code-scored.
 
 ## Execution
 
@@ -49,17 +50,19 @@ python analysis/run_evidence_calibration_agent_annotation.py \
   --output-root /path/to/immutable-output-directory
 ```
 
-The Luna runner uses `CODEX_LB_API_KEY`; it never writes credentials into artifacts. Sol uses the
-historical ChatGPT-login-backed `codex exec --ephemeral --sandbox read-only` transport. Both must
-pass the same host-side non-study preflight before use.
+The qualified Astra route uses the existing ChatGPT-login-backed
+`codex exec --ephemeral --sandbox read-only` transport and the exact v2 schemas bound in the
+qualification disposition. It never writes credentials into artifacts.
 
 Each request has one immutable cache identity. Failed or invalid returns are retained and not quality-retried. Agreement is agent-pass repeatability, not effectiveness or accuracy. Agent C can select only a supplied value and must justify it. Original disagreements remain retained.
 
-Run the frozen qualification from the host with:
+The completed qualification was run from the host with:
 
 ```bash
 python analysis/run_evidence_calibration_agent_qualification.py \
-  --output-root model_outputs/automated_annotations/evidence-calibration-agent-exact-task-v1
+  --suite research/explanation_fidelity/qualification/evidence-calibration-agent-exact-task-v4.json \
+  --freeze research/explanation_fidelity/experiment_configs/prospective/evidence-calibration-agent-exact-task-v4-freeze.json \
+  --output-root model_outputs/automated_annotations/evidence-calibration-agent-exact-task-v4
 ```
 
 ## P11 acceptance gate
