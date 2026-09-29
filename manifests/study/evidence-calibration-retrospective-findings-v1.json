@@ -1,0 +1,67 @@
+{
+  "schema": "crane-evidence-calibration-retrospective-findings/v1",
+  "recorded_date": "2026-09-29",
+  "inferential_status": "DEVELOPMENT_AND_LEGACY_ONLY_NOT_CONFIRMATORY_NOT_REPLICATION",
+  "inventory": {
+    "path": "manifests/study/evidence-calibration-retrospective-run-audit-v1.json",
+    "sha256": "6e5f25629f42b8a1911a21dc8dd7ae6ce85054b3e11502ed3dc4cef4256bc00a",
+    "files": 10168,
+    "bytes": 1814108225,
+    "historical_annotation_packets_no_automatic_conversion": 386,
+    "response_pairs_requiring_evidence_closure_before_development_atomic_annotation": 237,
+    "parse_errors_retained": 1
+  },
+  "findings": [
+    {
+      "finding_id": "measurement-complete-v2-apparent-risk-coverage-tradeoff",
+      "source": "manifests/annotation/luna-measurement-complete-v2-language-screen-v1-result.json",
+      "source_sha256": "75f8d9f719284ba6758a3ac1c29fbc1790ee9008c0bbe6cc307637dd0992516a",
+      "independent_clusters": 6,
+      "eligible_primary_clusters": 4,
+      "observed": "P had 0/18 Luna-assessed material errors and 108/126 required units versus R 14/18 and 113/126.",
+      "disposition": "Candidate rejected on its frozen coverage gate; later evidence-parity audit prevents promotion of the apparent R-error signal. Development motivation only."
+    },
+    {
+      "finding_id": "evidence-complete-rerun-removes-apparent-large-advantage",
+      "source": "manifests/annotation/luna-coverage-complete-v4-evidence-complete-v2-result.json",
+      "source_sha256": "9f8d70628c6070bb7125e3a0966c03f9dfb53c496c1536ed70752a0aa4152203",
+      "independent_clusters": 5,
+      "observed": "P and R each had 1/14 material errors; required-unit coverage was 104/104 versus 99/104; no recurring consensus cluster advantage remained.",
+      "disposition": "Development candidate rejected. Strong evidence that judge-evidence closure, not weak baseline capability, explained much of the earlier apparent advantage."
+    },
+    {
+      "finding_id": "contract-complete-v2-no-promotion-signal",
+      "source": "manifests/analysis/contract-complete-v2-development-pilot-result.json",
+      "source_sha256": "20705a5d0a6d7d549aabe165140aca6970181dfeb43e59aa306dd60297277954",
+      "primary_clusters": 13,
+      "controls": 4,
+      "observed": "Claim A P-minus-R ranged from 0.0 least-favorable to 0.0769 most-favorable; Claim B was 0.0 under both mappings.",
+      "disposition": "Development pilot not promoted; no confirmatory alpha consumed."
+    },
+    {
+      "finding_id": "causal-restraint-detector-false-positive-collapse",
+      "source": "model_outputs/explicit-causal-restraint-successor-v1-pilot/development-summary.json",
+      "source_sha256": "3aef42f0a8e0d7e3c52699dfcfd072b1a39d3a0008d4f0a60433bdb2558d1c29",
+      "primary_clusters": 14,
+      "controls": 4,
+      "observed": "The raw detector produced seven findings in six R clusters; contextual audit classified all seven as false positives, leaving P=0 and R=0 confirmed events.",
+      "disposition": "Development pilot not promoted; shows why semantic scope cannot be inferred from lexical causal triggers alone."
+    },
+    {
+      "finding_id": "new-evidence-calibration-pilot-has-no-comparison-yet",
+      "source": "manifests/study/evidence-calibration-b2-b4-pilot-v1-execution-status.json",
+      "source_sha256": "6f764973915ea0ba357e34d3a46f0f98da23dca5dd3a7b43cad6832fed350b51",
+      "episodes_scheduled": 16,
+      "within_episode_conditions": 60,
+      "b4_outputs": 60,
+      "b2_valid_outputs": 0,
+      "b2_failed_logical_requests_no_retry": 3,
+      "b2_never_launched": 57,
+      "disposition": "No semantic effect estimate exists and no annotation can be run for a B2/B4 comparison. Resume only never-launched B2 requests on a network-enabled host after the transport preflight."
+    }
+  ],
+  "scientific_conclusion": "Retained runs support the redirect toward evidence calibration: strong tool-enabled agents often match central diagnosis once evidence access is fair, deterministic checking trades unsupported-claim risk against coverage, and old semantic judges are sensitive to evidence closure and causal scope. They do not establish a new B4-versus-B2 effect.",
+  "confirmation_independent_n": 0,
+  "replication_independent_n": 0,
+  "confirmatory_alpha_consumed": 0.0
+}

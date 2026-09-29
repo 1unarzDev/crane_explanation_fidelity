@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://crane.local/schemas/evidence-calibrated-diagnostic-result-v1.schema.json",
+  "title": "Maximal supported diagnostic result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "episode_id", "configuration_id", "condition_id", "contract_catalog_id", "contract_catalog_sha256", "diagnostic_algorithm_id", "diagnostic_algorithm_version", "state", "maximal_node_ids", "approved_claim_ids", "claim_evaluations", "missing_requirement_ids", "contradicted_claim_ids", "ambiguity_node_ids", "required_non_entailment_ids"],
+  "properties": {
+    "schema": {"const": "crane-evidence-calibrated-diagnostic-result/v1"},
+    "episode_id": {"$ref": "#/$defs/id"}, "configuration_id": {"$ref": "#/$defs/id"},
+    "condition_id": {"$ref": "#/$defs/id"}, "contract_catalog_id": {"$ref": "#/$defs/id"},
+    "contract_catalog_sha256": {"$ref": "#/$defs/sha256"},
+    "diagnostic_algorithm_id": {"$ref": "#/$defs/id"}, "diagnostic_algorithm_version": {"$ref": "#/$defs/id"},
+    "state": {"enum": ["KNOWN", "SUPPORTED_PARTIAL", "AMBIGUOUS", "INSUFFICIENT_EVIDENCE", "FALSE_PREMISE", "NOT_TRIGGERED"]},
+    "maximal_node_ids": {"$ref": "#/$defs/id_array"}, "approved_claim_ids": {"$ref": "#/$defs/id_array"},
+    "claim_evaluations": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/claim_evaluation"}},
+    "missing_requirement_ids": {"$ref": "#/$defs/id_array"},
+    "contradicted_claim_ids": {"$ref": "#/$defs/id_array"},
+    "ambiguity_node_ids": {"$ref": "#/$defs/id_array"},
+    "required_non_entailment_ids": {"$ref": "#/$defs/id_array"}
+  },
+  "$defs": {
+    "id": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "id_array": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+    "requirement_evaluation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["requirement_id", "status", "support_references", "detail"],
+      "properties": {
+        "requirement_id": {"$ref": "#/$defs/id"},
+        "status": {"enum": ["SATISFIED", "ABSENT", "INVALID", "CONTRADICTED"]},
+        "support_references": {"$ref": "#/$defs/id_array"}, "detail": {"type": "string"}
+      }
+    },
+    "claim_evaluation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["claim_id", "supported", "requirement_evaluations", "support_references", "contradiction_references", "limitations"],
+      "properties": {
+        "claim_id": {"$ref": "#/$defs/id"}, "supported": {"type": "boolean"},
+        "requirement_evaluations": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/requirement_evaluation"}},
+        "support_references": {"$ref": "#/$defs/id_array"},
+        "contradiction_references": {"$ref": "#/$defs/id_array"},
+        "limitations": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://crane.local/schemas/blinded-agent-atomic-adjudication-v1.schema.json",
+  "title": "Blinded automated-agent disagreement adjudication",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "agreement_report_sha256", "adjudicator_id", "decisions", "attestation"],
+  "properties": {
+    "schema": {"const": "crane-blinded-atomic-annotation-adjudication/v1"},
+    "agreement_report_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "adjudicator_id": {"type": "string", "pattern": "^agent-C-[A-Za-z0-9._-]+$"},
+    "decisions": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["disagreement_id", "selected_value", "rationale"], "properties": {"disagreement_id": {"type": "string"}, "selected_value": {"type": ["string", "boolean", "null"]}, "rationale": {"type": "string", "minLength": 1}}}},
+    "attestation": {"const": "DISAGREEMENT_ONLY_BLINDED_COMPLETE"}
+  }
+}

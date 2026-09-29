@@ -14,8 +14,8 @@
   \centering\footnotesize\textbf{#1}\\[2pt]#2
   \end{minipage}}}
 
-\title{Beyond Terminal Events: Evidence-Checked Physical Diagnosis\\
-for Natural-Language Robot Navigation Explanations}
+\title{How Specific Should a Robot Explanation Be?\\
+Evidence-Calibrated Failure Diagnosis under Partial Observability}
 
 \author{Anonymous submission}
 
@@ -23,33 +23,28 @@ for Natural-Language Robot Navigation Explanations}
 \maketitle
 
 \begin{abstract}
-Robot navigation systems expose action results, behavior-tree transitions, maps, commands, and
-motion estimates, yet a fluent explanation can still stop at ``recovery was exhausted'' or invent
-a physical cause that those signals do not establish. We present a diagnosis-to-language pipeline
-that first computes a bounded physical or execution mechanism, links it to exact runtime and source
-evidence, records conflicting evidence and unresolved alternatives, and only then realizes and
-checks natural language. We distinguish diagnostic correctness from language faithfulness and
-design a matched-evidence, matched-tool comparison against repository-aware agents. A separately
-preserved legacy study evaluates runtime-to-source provenance and factual restraint but is not
-reinterpreted as physical diagnosis. Development evidence exercises geometric restriction and
-command-to-motion mechanisms in simulated land navigation and a focused surface-vessel setting,
-including cases with deliberately missing decisive evidence. Across nine development clusters
-(52 responses), the repository-aware baseline often matched the proposed diagnosis when given the
-same tool, and every proposed final answer used deterministic fallback (13/13). After preserving
-multiple failed judge configurations, a final prospectively frozen endpoint-aligned Luna arm
-qualified on two fresh held-out passes. A bounded audit nevertheless found that an earlier compact
-judge packet omitted raw facts available to the repository-aware baseline. We therefore register a
-narrower evidence-complete comparison of atomic diagnostic communication. That campaign produced
-56 response pairs, but five of 224 Luna judgments were transport-invalid and its registered
-ordered-prefix release was invalid. A transparent opaque-ID-only correction enabled a post-hoc
-$N=24$ sensitivity analysis; both conservative and favorable confidence sequences crossed zero.
-The next prospective candidate repairs question-contract completeness and separately registers
-complete M/Q/O/L communication and substantive assertion risk. This WIP establishes reproducible
-diagnostic measurements and a bounded evaluation path, but not superiority.
+Natural-language robot explanations can be physically correct yet unjustified by the evidence
+available to the robot. We study \emph{evidence-calibrated specificity}: whether an explanation
+asserts the deepest diagnostic mechanism supported by robot-visible evidence, becomes less
+specific when decisive evidence is removed, and retains useful partial diagnoses instead of
+silently overclaiming or over-abstaining. We formalize explanations as atomic claims with explicit
+evidence requirements and non-entailments, and propose controlled, nested evidence interventions
+over autonomous-navigation episodes. The resulting benchmark separates evaluator-only physical
+truth from method-visible evidence and measures unsupported specificity, supported diagnostic
+recall, evidence-level calibration, monotonicity, abstention, and false-premise rejection. Our
+full method computes a maximal supported diagnostic plan, realizes it in language, and verifies
+final clauses against approved claim identifiers and values. Strong raw, structured-evidence, and
+tool-enabled agent baselines receive the same permitted evidence; the intended contribution is
+safer calibration at useful coverage, not universally better root-cause diagnosis. Preserved
+development evidence motivates this redirect: a strong tool-enabled agent often matched the
+central diagnosis, all 13 original proposed answers used deterministic fallback, and multiple
+candidate and automated-judge campaigns were negative, inconclusive, or invalid for confirmatory
+inference. We report those outcomes as development evidence and make no statistical superiority,
+human-trust, hardware-transfer, or model-faithfulness claim.
 \end{abstract}
 
 \begin{IEEEkeywords}
-robot explanation, navigation diagnosis, evidence provenance, selective explanation
+robot explanation, evidence calibration, partial observability, selective prediction, navigation diagnosis
 \end{IEEEkeywords}
 
 \section{Introduction}
@@ -58,18 +53,17 @@ The last message emitted by a navigation stack is rarely its most useful explana
 may abort after recovery exhaustion, but a user or maintainer needs to know what prevented a
 successful path or execution. Conversely, telemetry preceding an abort does not license an
 unobserved obstacle identity, a unique actuator defect, or a causal claim about wind or waves.
-Natural-language generation makes this tension acute: the most readable answer can be the least
-auditable one.
+Natural-language generation makes this tension acute: a plausible answer can be physically true
+in the simulator yet unjustified by anything the robot was permitted to observe.
 
-We study explanations whose claims are constrained by retained robot evidence. As
-Fig.~\ref{fig:pipeline} shows, the method separates robot-visible evidence, bounded diagnosis,
-checked planning, realization, and final verification from evaluator-only truth and scoring.
-The diagnosis is not free-form reasoning. It is a versioned computation over quantities with
-units, frames, time intervals, evidence identifiers, assumptions, and applicability limits. Its
-output identifies candidate mechanisms, supporting and contradictory observations, and
-alternatives that remain observationally equivalent. The language layer must preserve this
-content; if it cannot be verified after one bounded repair, the system falls back to a checked
-deterministic rendering.
+We ask whether explanation specificity tracks the evidence actually available to the robot. As
+Fig.~\ref{fig:pipeline} shows, the method separates robot-visible evidence, claim-contract
+evaluation, maximal-supported diagnosis, realization, and final verification from evaluator-only
+physical truth and scoring. Each atomic claim has required evidence and explicit non-entailments.
+The strongest valid output may therefore be a partial diagnosis, an ambiguity set, an
+insufficient-evidence statement, or rejection of a false failure premise. The objective is not
+silence: a calibrated system should retain every useful supported claim while withholding only
+the unsupported increase in causal or mechanistic specificity.
 
 \begin{figure*}[t]
 \centering
@@ -77,44 +71,48 @@ deterministic rendering.
 \begin{tabular}{@{}c c c c c c c@{}}
 \stagebox{Robot-visible evidence}{observations, commands, motion, runtime events, source/config hashes}
 & $\boldsymbol{\rightarrow}$ &
-\stagebox{Bounded diagnosis}{measurements, mechanism, conflicts, assumptions, unresolved alternatives}
+\stagebox{Claim contracts}{required evidence, non-entailments, validated measurements}
 & $\boldsymbol{\rightarrow}$ &
-\stagebox{Checked answer plan}{supported claims, evidence IDs, causal level, required limits}
+\stagebox{Maximal diagnosis}{deepest supported nodes, ambiguity, limits, evidence IDs}
 & $\boldsymbol{\rightarrow}$ &
-\stagebox{Language and final check}{one bounded repair; otherwise deterministic fallback}
+\stagebox{Constrained language}{claim-ID realization, numeric checks, removal or generalization}
 \\[12pt]
 \multicolumn{3}{c}{\fbox{\parbox{0.355\textwidth}{\centering\footnotesize
 \textbf{Evaluator-only truth}\\injected condition, canonical geometry, expected mechanism,
 answerability}}}
 & $\boldsymbol{\longrightarrow}$ &
 \multicolumn{3}{c}{\fbox{\parbox{0.355\textwidth}{\centering\footnotesize
-\textbf{Independent evaluation}\\diagnostic correctness, language faithfulness,
-material error, useful coverage}}}
+\textbf{Independent evaluation}\\physical truth, highest justified level,
+unsupported specificity, useful coverage}}}
 \end{tabular}
-\caption{Method and evaluation boundary. Evaluator-only truth is unavailable to R, P, T, and N;
-it enters only independent reference computation and blinded scoring. A final answer is accepted
-only if it preserves the checked mechanism and its limits.}
+\caption{Method and evaluation boundary. Evaluator-only truth is unavailable to every explanation
+condition; it enters only independent reference construction and blinded scoring. Removing
+robot-visible evidence may lower the maximum justified specificity but never changes physical
+truth.}
 \label{fig:pipeline}
 \end{figure*}
 
-The paper asks three prospective questions. \emph{Q1:} do physical diagnostic computations plus
-runtime/source provenance improve correct and informative failure explanations over a strong
-repository-aware agent with equivalent evidence and tools? \emph{Q2:} does final language preserve
-the diagnosis, decisive measurements, mechanism, and limitations? \emph{Q3:} does the method give
-a mechanism when evidence supports one and narrow its answer when decisive evidence is absent?
+The paper asks three prospective questions. \emph{Q1:} when decisive evidence is absent, do
+explanation systems avoid claims whose evidential requirements are unsatisfied? \emph{Q2:} do they
+retain the deepest useful partial diagnosis supported by each evidence condition rather than
+over-abstaining? \emph{Q3:} across nested evidence conditions, does asserted specificity increase
+only when the added evidence supports that increase, including on false-premise success controls?
 
 This work makes three bounded contributions:
 \begin{itemize}
-  \item a diagnosis record and checked language path that preserve measurement semantics,
-  provenance, conflicts, unresolved alternatives, and permitted causal language;
-  \item two navigation-focused diagnostics---geometric restriction and command-to-motion
-  discrepancy---with explicit conditions under which they must abstain or qualify; and
-  \item an audited WIP evaluation that separates deterministic diagnostic measurements from
-  Luna-assessed semantic judgments, carries finite judge-error sensitivity into the planned
-  comparison, and preserves negative baseline, verifier, and judge-development results.
+  \item a formalization of evidence-calibrated robotic explanation using atomic claims,
+  evidence requirements, diagnostic abstraction levels, non-entailments, partial diagnoses,
+  ambiguity, false-premise handling, and evidence monotonicity;
+  \item a controlled navigation benchmark in which deterministic nested evidence interventions
+  vary robot-visible support while evaluator-only physical truth, episode identity, and
+  provenance remain fixed; and
+  \item a diagnostic-contract method and comparative risk--coverage evaluation that test whether
+  enforcing maximal supported specificity reduces overclaiming without collapsing useful
+  diagnostic coverage.
 \end{itemize}
-We do not claim universal root-cause discovery, human trust, hardware reliability, or that
-structured records alone are novel. The empirical scope is simulation-based navigation.
+These are exactly the three claimed contributions. We do not claim universal root-cause
+discovery, improved human trust, hardware reliability, model-internal faithfulness, or that
+structured records alone are novel. The empirical scope is simulation-based land navigation.
 
 \section{Related Work}
 
@@ -147,8 +145,8 @@ explainers~\cite{fernandezbecerra2026accountability}. We therefore claim no prio
 RAG, accountable recording, source-aware retrieval, multimodal context, or hallucination grading.
 Our narrower contribution is to test whether independently computed measurements establish a
 bounded physical or execution mechanism---with conflicts, unresolved alternatives, and explicit
-evidence sufficiency---and whether final language preserves it. Diagnostic correctness is scored
-separately from language faithfulness.
+evidence sufficiency---and whether final language asserts exactly the supported level. Diagnostic
+correctness, claim support, and required-content coverage are scored separately.
 
 Marine motion illustrates the need for semantic restraint: propulsion, current-relative
 hydrodynamics, wind, and wave loads are distinct terms in standard craft models~\cite{fossen2021handbook}.
@@ -158,7 +156,36 @@ navigation feedback field may not mean what its label suggests. In the audited N
 motion~\cite{nav2controller}. Our diagnostic contracts retain command and measured motion as
 different evidence types.
 
-\section{Evidence and Diagnostic Method}
+\section{Evidence Calibration and Diagnostic Method}
+
+\subsection{Terminology and formal objective}
+
+Let $E$ denote the robot-visible evidence supplied under one deterministic evidence condition and
+let $T$ denote evaluator-only physical truth. An atomic explanation claim $c$ is evidentially
+supported only if its versioned requirement $\operatorname{RequiredEvidence}(c)$ is satisfied by
+$E$. Physical truth ($c$ agrees with $T$) and evidential support are deliberately distinct: a
+physically true claim is still an unsupported specificity error when its required evidence is
+absent from $E$. \emph{Diagnostic correctness} asks whether the emitted diagnosis matches the
+strongest supported mechanism; \emph{evidence calibration} asks whether the explanation's
+specificity corresponds to the support available in $E$. We reserve \emph{model faithfulness} for
+correspondence with a model's internal decision process, which this study does not test.
+
+Diagnostic nodes form a mechanism-specific hierarchy or directed acyclic graph from task outcome
+through software/action failure, recovery, command--motion or geometry evidence, bounded physical
+execution mechanisms, and specific physical causes. For a condition $E$, the method validates
+evidence, removes contradicted nodes, and selects the maximal supported node or incomparable set of
+nodes. Its state is one of \texttt{KNOWN}, \texttt{SUPPORTED\_PARTIAL}, \texttt{AMBIGUOUS},
+\texttt{INSUFFICIENT\_EVIDENCE}, \texttt{FALSE\_PREMISE}, or \texttt{NOT\_TRIGGERED}; these states
+are not collapsed into a generic unknown. Appropriate abstention withholds only the unsupported
+deeper mechanism, whereas over-abstention discards a useful supported node.
+
+For nested conditions $E_0\subset E_1\subset\cdots\subset E_{\mathrm{k}}$, evidence monotonicity forbids an
+answer under $E_{\mathrm{i}}$ from asserting a claim whose required evidence first appears only in some
+$E_{\mathrm{j}}$, $\mathrm{j}>\mathrm{i}$. This constraint concerns evidential license, not verbal consistency: added evidence
+may contradict an earlier candidate or resolve ambiguity. Each claim contract therefore records
+required and optional evidence, supported propositions, forbidden implications, evidence
+references, numeric values and tolerances, and required limitations. It never obtains an
+episode-specific answer from evaluator-only truth.
 
 \subsection{Evidence boundary}
 
@@ -174,7 +201,10 @@ contract, but not Nav2 consumption or obstacle causation.
 
 We retain four evidence levels: recorded sequence; reconstructed software mechanism; inference
 under an explicit model; and controlled-intervention result. Temporal order alone supports only
-the first level. Every claim names its evidence IDs and level.
+the first level. Every claim names its evidence IDs and level. Deterministic masks only remove
+fields or streams: they never rewrite values, events, or outcomes. Method-visible packets must
+therefore be reproducible from the episode and mask identity while excluding every evaluator-only
+field.
 
 \subsection{Diagnostic result}
 
@@ -211,13 +241,16 @@ $\Delta e_{\mathrm{settle}} > m_{\mathrm{return}}$ and the platform settles outs
 tolerance, the evidence supports an inadequate terminal stopping margin. It does not establish why
 the residual motion occurred.
 
-\subsection{Checked answer and final verification}
+\subsection{Claim-aware realization and final verification}
 
-Answers contain four short sections: \emph{Diagnosis}; \emph{Decisive evidence}; \emph{Failure
-chain}; and \emph{Limits and next check}. Measurements are included only when they support the
-mechanism. The diagnostic plan is checked before generation, but the final text is also checked.
-Unverified clauses are never silently accepted. We retain candidate text, verification outcome,
-repair/fallback decision, final text, latency, tokens, and cost where available.
+The diagnostic plan supplies approved claim identifiers, numeric values, support references,
+required limitations, and relevant non-entailments. Realization maps each sentence or clause back
+to those identifiers. The final verifier checks required-claim coverage, rejects unapproved
+mechanistic claims, checks numeric values within declared tolerances, and preserves limitations
+and false-premise status. A failed clause is removed or generalized to a supported ancestor; it
+does not erase independently supported content. A deterministic claim-level reconstruction is the
+fail-closed output when free language cannot be verified. We retain candidate text, clause maps,
+verification decisions, final text, latency, tokens, and cost where available.
 
 \section{Evaluation Design}
 
@@ -229,59 +262,75 @@ rules remain unchanged. Collection was prospectively closed at 33 included episo
 recovery-success and 16 terminal-abort), below the frozen minimum of 40 and target of 50. The
 cohort contains 198 one-shot responses across three conditions. No sealed label or effect estimate
 was inspected when collection was closed. The cohort remains available for analysis under its
-original rubric, but is reported here only as under-target and unscored; it is not pooled with or
-rescored as the diagnostic study.
+original rubric, but is labeled \textsc{Legacy Exploratory / Under-Target} and reported only as
+under-target and unscored; it is not pooled with or rescored as the evidence-calibration study.
 
 The legacy study evaluates software-mechanism provenance, factual restraint, and evidence
 insufficiency. Its checked condition used deterministic fallback for 46 of 66 responses (69.7\%),
 including every recovery-mechanism response. We therefore report candidate and final-output
 results separately and describe this retained operating point as predominantly deterministic.
 
-\subsection{Prospective diagnostic comparison}
+\subsection{Prospective evidence-intervention comparison}
 
-The next prospective primary comparison is P-contract versus R-contract. Both receive the same
-public four-component communication task, robot-visible evidence, exact source/configuration
-access, production diagnostic calculation, primitive tools, and governed evidence identifiers.
-R-contract is a strong repository-aware, tool-enabled agent with one matched high-reasoning call;
-it has no access to P's checked plan or final answer. P-contract deterministically compiles the
-supported mechanism (M), decisive comparison (Q), recorded outcome (O), and necessary limitation
-(L), then checks both support and completeness. P-old is a bounded mechanistic ablation, not the
-headline baseline. T and N remain descriptive or exploratory unless separately authorized.
+The prospective benchmark compares five logically distinct conditions. B0 receives the ordinary
+deterministic runtime presentation without diagnostic contracts or executable diagnostic tools.
+B1 receives structured robot-visible evidence but no executable contracts. B2 is the strongest
+fair repository-aware, tool-enabled agent condition available. B3 runs the deterministic
+diagnostic contract and planner but omits complete final-claim verification. B4 adds maximal-
+supported planning, claim-ID-aware realization, and final removal or generalization of unsupported
+clauses. A deterministic rendering is retained to separate diagnostic computation from language
+generation. All paired conditions receive the same evidence condition and governed source and
+configuration access appropriate to their declared interface; B2 is not intentionally weakened.
 
-The new campaign registers two claims before confirmation. Claim A is \emph{complete supported
-diagnostic communication}: the final answer identifies M, communicates question-essential Q and
-O, preserves L, and contains no substantive material unsupported or contradicted assertion. Claim
-B is lower response-level substantive unsupported/contradicted assertion risk. Cosmetic citation
-path formatting is secondary, while meaning-changing source attribution remains substantive.
-Secondary outcomes are diagnostic correctness, language faithfulness,
-material-error risk, causal overclaiming, unnecessary abstention, appropriate qualification,
-mechanism/location/time identification, evidence coverage and citation correctness, selected next
-check, latency/cost, and fallback frequency.
+The primary paired comparison is B4 versus B2. For each independently generated episode, a method
+incurs an evidence-calibration failure if, anywhere on its prospectively specified evidence
+ladder, it (a) emits at least one mechanistic claim whose required evidence is absent from that
+condition or (b) asserts a diagnostic abstraction level deeper than the evaluator-defined maximum
+justified level. The confirmatory question is whether B4 reduces this episode-level failure risk
+while retaining a development-selected, prospectively frozen minimum of useful diagnostic
+coverage. The coverage floor is a precondition on interpretation, not a value chosen after
+confirmatory scoring.
 
-We separate three conclusions. Level A requires an anytime-valid lower bound above zero for the
-paired cluster-level P-minus-R endpoint difference. Level B requires the same bound above a
-prospectively selected +0.10 worthwhile improvement. Level C additionally considers supplemental
-coverage, controls, mechanism breadth, determinism, and resources. Lower supplemental coverage can
-coexist with Level A; it must be disclosed rather than made an undeclared veto or ignored.
+Secondary decompositions report unsupported specificity rate (unsupported mechanistic claims over
+all emitted mechanistic claims), supported diagnostic recall (emitted required units over
+available supported required units), exact evidence-calibration accuracy, over- and under-
+specific errors, monotonicity violations, appropriate abstention, over-abstention, false-premise
+rejection, and risk--coverage operating points. Every numerator and denominator is retained. No
+single arbitrary aggregate replaces these quantities.
 
-Scenario families contain nominal success, successful compensation, similar terminal symptoms
-from geometry versus command--motion discrepancy, logs that report replanning without establishing
-the restriction, unsupported obstacle-cause assertions, visible obstacles without proven Nav2
-consumption, sufficient versus masked evidence, false premises, and out-of-model causes. Shared
-layouts, interventions, evidence masks, and question variants stay in one split and one
-statistical cluster. Repeated LLM generations and judge passes are measurements on that cluster,
-not new robot episodes.
-Valid unexpected outcomes are retained; induction success and recording validity are reported
-separately. Development pilots determine thresholds and inform a new clustered paired power
-simulation before questions, labels, prompts, models, stopping rules, and held-out splits freeze.
+The independent unit is the prospectively generated episode/configuration. Evidence masks,
+questions, prompts, methods, outputs, and annotations within an episode are clustered repeated
+measurements. The primary analysis reports paired episode counts, discordant pairs, absolute risk
+difference with interval, and an exact McNemar test where its assumptions apply. Evidence-level
+analysis uses a predeclared episode-clustered model and whole-episode bootstrap intervals;
+secondary multiplicity uses Holm correction. Power simulation is driven by plausible development
+ranges for discordant episode probabilities, within-episode dependence, family prevalence, and
+invalid-episode rate---never by treating masks as independent samples.
+The current sensitivity uses the audited maximum remaining discovery alpha of 0.01. Under
+hypothetical 8-, 16-, and 26-point paired reductions, 100 acquired episodes provide estimated
+powers of 0.103, 0.500, and 0.923, respectively; the 16-point scenario first exceeds 0.80 at 200
+episodes in the simulated grid. These values are planning assumptions, not effect estimates, and
+no sample size is frozen.
 
-The operational semantic arm was designed to use two context-isolated passes of GPT-6 Luna over
-randomized, condition-blind packets, with condition keys withheld until scoring. These are repeated
-model measurements, not two humans. Independent reference computations, not the runtime verifier
-or checked plan, provide diagnostic reference units. A bounded development and held-out judge
-qualification precedes study scoring; category errors, unresolved fields, pass disagreement, and
-sensitivity bounds must accompany scenario-clustered paired estimates. Human packets remain
-available for a later audit but are not a prerequisite for the automated arm.
+The mature command--motion family is primary, with nominal response, persistent discrepancy,
+transient discrepancy followed by recovery, abort after discrepancy, and invalid or absent
+odometry. Geometry/planning and execution/recovery supply bounded secondary families where their
+evidence contracts are stable. Each episode has deterministic nested evidence conditions that
+remove outcome, recovery, commands, synchronized odometry, or stronger validated physical evidence
+according to its frozen family ladder. Nominal successes, missing-evidence cases, ambiguity, and
+false-premise questions are fixed controls. Shared layouts, interventions, masks, and paraphrases
+remain in one split and one statistical cluster.
+
+The prospective measurement uses two separately invoked, blinded automated agents over atomic-claim
+packets. They classify each claim as supported, contradicted, insufficiently supported, physically
+true but unsupported, or uninterpretable, and separately record required-unit coverage,
+false-premise handling, highest asserted level, and limitation preservation. A third, distinct
+agent invocation adjudicates disagreements before method identities are joined. Exact quantities,
+identities, mask relations, and endpoint derivations remain code-scored. These labels are
+agent-assessed, not human annotations; repeated calls to one model family may share systematic
+errors. The retained Luna history below documents measurement development, but its earlier endpoint
+qualification does not automatically validate the new five-way atomic-support task. That exact task
+requires a bounded fresh held-out qualification before primary scoring.
 
 Earlier v4--v6 judge configurations failed their prospectively fixed gates and remain ineligible.
 The reference-audited v7 cycle retained the same Luna alias, high reasoning setting, prompt,
@@ -311,7 +360,8 @@ cases, success requires coverage of the declared atomic mechanism unit and no ma
 nominal and ambiguous cases remain risk and qualification controls. Both isolated v12 passes
 scored 8/8 endpoint and 28/28 unit-coverage decisions, with core-field accuracy 117/120 and
 119/120, zero material false acceptance/rejection, zero protected failures, and zero call
-failures. V12 is therefore eligible for future separately frozen packets. It is automated
+failures. V12 is therefore eligible for future separately frozen packets under that historical
+endpoint. It is automated
 model-judge evidence, not human agreement; each eight-case material class has an approximately
 0.3244 zero-error Wilson 95\% upper bound. A bounded complete-endpoint extension then classified
 18/18 complete or incomplete answers and 72/72 essential-unit decisions correctly in each pass.
@@ -489,102 +539,24 @@ inventory therefore contains 52 responses in 13 packets over nine clusters. Its 
 remains unscored; separately governed later development labels do not turn it into a held-out
 result. Immutable final P fallback is 13/13 development questions overall.
 
-A separate frozen land command--motion physical/reference cohort now contains forty
-single-attempt configurations from its fixed 100-configuration confirmation schedule: thirty-nine
-are valid and one is a retained invalid recording. It has no method responses or semantic labels.
-In run 003, the predeclared odometry mask removes the decisive
-motion measurement while preserving execution facts, so the independent method reference withholds
-the discrepancy mechanism. In run 004, independently recomputed measured motion recovered after
-the discrepancy, but the navigation action later aborted. The latter prevents equating recovered
-response with task success. Run 005 supplies a successful nominal \texttt{not\_triggered} control.
-Run 006 independently repeats the missing-odometry boundary while retaining an unexpected abort;
-run 007 adds a fresh-layout nominal control. Run 008 adds independently reproduced response loss,
-recovery, and eventual task success. Runs 009 and 010 supply persistent-discrepancy cases on both
-geometry strata, with independently reproduced response loss followed by action abort and no
-unique physical-cause claim.
-Run 011 adds another independently reproduced response recovery followed by task success.
-Run 012 adds a nominal case where recovery activity occurred but the measured discrepancy did not.
-Run 013 adds a clean single-attempt nominal case without recovery activity.
-Run 014 adds another persistent discrepancy followed by action abort.
-Run 015 adds another measured-response recovery followed by task success.
-Run 016 adds the corresponding nominal-clear-route compensation case.
-Run 017 adds a nominal-clear-route persistent discrepancy followed by action abort.
-Run 018 adds a third independently configured missing-odometry case; it retains execution facts
-while the method-visible reference withholds the command--motion mechanism.
-Run 019 adds a connected-detour persistent discrepancy followed by action abort.
-Run 020 adds the corresponding nominal-clear-route persistent discrepancy from 18--28~s followed
-by action abort. Its wrong-threshold first preprocessing output is retained as an invalid
-evaluator-only derivation; the episode itself was not rerun.
-Run 021 adds a connected-detour persistent discrepancy from 18--28~s followed by action abort.
-Run 022 adds the corresponding nominal-clear-route persistent discrepancy followed by action abort.
-Run 023 adds another connected-detour persistent discrepancy from 18--28~s followed by action abort.
-Run 024 adds a nominal-clear-route discrepancy from 10--20~s, measured-response recovery from
-22--23~s, and eventual action success.
-Run 025 adds a connected-detour persistent discrepancy from 11--21~s followed by action abort.
-Run 026 adds a connected-detour discrepancy from 18--28~s, measured-response recovery from
-30--31~s, and eventual action success.
-Run 027 adds a connected-detour persistent discrepancy from 11--21~s followed by action abort.
-Run 028 adds a fourth independently configured missing-odometry case: its masked method packet
-retains 487 commands and the abort sequence but correctly withholds the motion mechanism.
-Run 029 adds a fifth such case, retaining 406 commands and zero method-visible odometry samples.
-Run 030 adds a connected-detour persistent discrepancy from 18--39~s followed by action abort.
-Run 031 adds a nominal-clear-route discrepancy from 19--28~s, measured-response recovery from
-31--32~s, and eventual action success.
-Run 032 adds a nominal-clear-route persistent discrepancy from 18--28~s followed by action abort.
-Run 033 succeeds and independently returns \texttt{not\_triggered} despite two recorded
-FollowPath failures and two source-qualified Wait invocations.
-Run 034 passed exact build and scenario binding but failed the frozen recording-validity gate with
-28 stale/rejected actions. It was retained without retry and contributes no family, diagnostic, or
-semantic result.
-Run 035 adds a connected-detour discrepancy from 11--21~s, measured-response recovery from
-23--24~s, and eventual action success.
-Run 036 adds a clean successful \texttt{not\_triggered} control with one FollowPath attempt and no
-recorded recovery.
-Run 037 adds a nominal-clear-route discrepancy from 10--22~s, measured-response recovery from
-22--23~s, and eventual action success.
-Run 038 adds another nominal-clear-route discrepancy from 19--29~s, measured-response recovery
-from 31--32~s, and eventual action success.
-Run 039 adds response loss from 18--28~s, measured recovery from 30--31~s, and task success.
-Run 040 adds a connected-detour persistent discrepancy from 18--28~s followed by an unexpected
-action abort; it remains valid under the frozen worker gate despite the generic fixture's expected-
-success check.
-These are physical/reference observations, not a semantic P--R effect.
+The governed v6 land inventory now contains physical artifacts for all 120
+confirmation-labelled layouts and for 20 replication-labelled layouts used by later development
+pilots. The remaining 100 replication-labelled layouts have no physical artifacts but are already
+allocated by the old frozen replication schedule. An executable catalog/schedule/artifact audit
+records this distinction: materialized layouts are development-only for the redirect, while the
+100 scheduled non-materialized layouts remain quarantined pending a prospective allocation and
+power decision. Invalid recordings, wrong-threshold derivations, responses, and semantic labels
+remain under their original dispositions. None constitutes a new evidence-calibration effect or
+an independent sample multiplied by within-episode masks.
 
 \section{Development Findings and Disposition}
 
-\begin{table}[t]
-\caption{Audited development evidence. Semantic method effects are deliberately not reported.}
-\label{tab:development-results}
-\centering
-\resizebox{\columnwidth}{!}{%
-\begin{tabular}{@{}lll@{}}
-\toprule
-Item & Observed result & Interpretation \\
-\midrule
-Diagnostic inventory & 9 clusters; 52 responses & Development only \\
-Primary planning subset & 6 clusters & No qualified labels \\
-Final P fallback & 13/13 questions & P final equals T \\
-Historical route-change & P--R: 0.0 in both passes & Development tie \\
-Historical Luna v7 composite & 20/20 in each pass & Preserved qualification \\
-Luna v7 core fields & P1: 176/187; P2: 179/187 & 94.1\%; 95.7\% \\
-Endpoint-threat extension & 16/20; 17/20 composite & Failed; blocked candidate v3 \\
-Endpoint-first v8 & 48/48 composite in both passes & Failed unit/core/protected gates \\
-Endpoint-aligned v12 & 8/8 endpoint in both passes & Qualified; no study labels \\
-Checked-composition v1 & 26/28 valid; P risk/coverage worse & Candidate rejected \\
-Measurement-complete v2 & P 4/4 vs. R 1/4 in compact packets & Packet audit bars effect use \\
-Coverage-complete v5 & P 5/5 vs. R 4/5 per pass; 0 consensus wins & Candidate rejected \\
-Focused atomic campaign & 56 pairs; 43 primary, 13 controls & Closed; registered look invalid \\
-Post-hoc corrected $N=24$ & Difference $-0.2083$ to $+0.25$ by sensitivity & Both confidence sequences cross zero \\
-P-contract/R-contract & Closed: 19 canaries (primary v2 $N=14$, controls $N=4$, one v1); confirmation $N=0$ & Claim A 0.000/+0.286; Claim B 0.000/+0.214; v2 not promoted \\
-P-contract-v4 fixed suffix & 17/19 complete (primary $N=13$, controls $N=4$) & Claim A 0.000/+0.0769; Claim B 0.000/0.000; not promoted \\
-Causal-restraint successor & 18/20 pairs (primary $N=14$, controls $N=4$) & Raw P/R detector events 0/6; contextual audit confirmed 0/0; not promoted \\
-Primary causal judge extension & 24 fresh calls per version; final v2 endpoints 11/12 and 12/12 & Protected gates failed; promotion closed \\
-Physical cohort & 40 attempts; 39 valid, 1 invalid & No semantic labels \\
-Legacy inventory & 33 clusters; 198 responses & Under-target; unscored \\
-\bottomrule
-\end{tabular}
-}
-\end{table}
+For the redirected evidence-calibration pilot, the deterministic full-system arm completed its
+fixed development ladders and passed claim-aware verification. The strong-agent canaries produced
+no valid response because of retained initialization and transport failures, after which admission
+stopped. No failed request was retried, no human annotation was collected, and no comparative
+estimate is available. This partial execution validates neither an advantage nor a disadvantage
+for either method and does not unlock the prospective semantic freeze.
 
 The artifact proves that the retained measurements can be recomputed and rendered into bounded
 diagnoses. It does not prove that P improves supported diagnostic success over R. Project review
@@ -603,16 +575,15 @@ effect. A further
 coverage-complete successor repaired risk and coverage, yet the strong raw-evidence R missed
 different clusters across the two Luna passes. With zero consensus P-win clusters, it failed the
 predeclared recurrence and mechanism-family gates. Thus the sequence supports the feasibility of
-faithful deterministic composition, not a stable semantic advantage over R. We prospectively
-select one narrower claim: complete supported communication of an atomic mechanism, decisive
-measurement, outcome, and causal limit. The closed campaign's corrected sensitivity is highly
-dependent on repeated-judge disagreement and establishes no positive effect. Its labels also show
-the motivating tradeoff: P omitted required content while R accumulated many Luna-assessed
-substantive-error labels. We therefore treat every inspected case as development evidence and
-introduce a fresh P-contract/R-contract comparison with two claims fixed from the start: complete
-M/Q/O/L communication and substantive assertion reliability. A positive bound (Level A), a +0.10
-worthwhile bound (Level B), and broader tradeoff acceptability (Level C) are reported separately.
-None is currently established. The subsequent v4 control pilot did not change that conclusion.
+faithful deterministic composition, not a stable semantic advantage over R. A predecessor redirect
+then selected complete supported communication of an atomic mechanism, decisive measurement,
+outcome, and causal limit. Its closed campaign's corrected sensitivity is highly dependent on
+repeated-judge disagreement and establishes no positive effect. Its labels also show the motivating
+tradeoff: P omitted required content while R accumulated many Luna-assessed substantive-error
+labels. Every inspected case remains development evidence. The new study does not revive either
+of those P-contract superiority claims; it uses the failures to motivate controlled measurement of
+specificity as robot-visible evidence is added or removed. The subsequent v4 control pilot did not
+change that conclusion.
 Two qualified missing-odometry cases produced unanimous P wins on complete communication, but the
 separately frozen missing-command judge extension failed, leaving two additional response pairs
 unscored. We do not select the favorable control slice as a headline population. A final fresh
@@ -670,9 +641,10 @@ advantage or a replication result.
 As a bounded post-hoc development audit, we also applied a finite exact-span detector to the 14
 v2 primary pairs for overt causal links that the public family contract expressly left
 unestablished. P produced 0/14 events and R produced 3/14 (three R-only discordances; descriptive
-R-minus-P risk $0.214$). This motivates a separately registered causal-restraint successor, not a
-significance claim: the inventory is finite, the endpoint was selected after inspecting these
-answers, and absence of a match does not certify an answer as semantically correct.
+R-minus-P risk $0.214$). The follow-on audit found that a narrower detector's apparent baseline
+errors were all negated non-establishment statements. These results are historical development
+motivation for claim-level calibration, not a significance claim: the inventories are finite, the
+endpoints followed answer inspection, and absence of a match does not certify semantic correctness.
 
 \section{Limitations and Validity}
 
@@ -680,6 +652,10 @@ The diagnostic families are deliberately narrow. A correct result applies only t
 model, signals, interval, and assumptions. Delivered observations do not prove controller
 consumption; local geometry does not prove global infeasibility; a command--motion residual does
 not uniquely identify a physical source. Evaluator truth is unavailable to ordinary methods.
+Consequently, agreement with physical truth cannot excuse a claim unsupported by the corresponding
+robot-visible evidence condition. Conversely, conservative wording is not automatically good: an
+answer that withholds an available supported diagnosis incurs an under-specificity or
+over-abstention error.
 
 Experiments use simulation. They can test controlled mechanisms and simulation-based ecological
 relevance, not hardware reliability or real-world transfer. The study measures factual and
@@ -689,7 +665,8 @@ subsequent v8--v11 cycles likewise failed their complete prospective gates. V12 
 endpoint-aligned automated arm, but the later campaign's five transport-invalid judgments
 prevented its original registered release. The post-hoc correction does not change the small
 held-out categories or wide systematic-error bounds. Repeated-model measurements do not
-constitute human agreement. The failed composition audit further shows that judge qualification cannot repair
+constitute independent human agreement, and the new atomic-support annotation task remains
+unqualified. The failed composition audit further shows that judge qualification cannot repair
 an incomplete case reference. Its small error-category denominators also yield large finite-sample sensitivity
 bounds that a future nominal advantage may fail. The legacy cohort stopped below its
 frozen minimum and has no completed semantic scoring, so it supports neither an effect estimate nor
@@ -703,14 +680,17 @@ answers to language-model reasoning.
 
 \section{Conclusion}
 
-Useful robot explanations require more than narrating the event that ended an action. Our method
-places a validated, bounded diagnosis between robot evidence and language, then checks whether the
-final response preserves both the mechanism and its limits. Development evidence shows that the
-measurements and qualifications are reproducible, but also that a fair tool-enabled agent often
-matches the diagnosis, conservative verification can erase faithful language, and automated-judge
-qualification requires complete independent references and explicit error sensitivity. We therefore make no superiority claim. The WIP artifact instead
-establishes an auditable basis for a later clustered comparison while preserving the distinction
-between observation, reconstructed software semantics, modeled inference, and intervention.
+Trustworthy robot explanations should not merely be correct when sufficient information happens to
+be available. Their causal and mechanistic specificity should track what the robot can justify.
+We formalize that requirement with atomic claims, evidence contracts, diagnostic abstraction
+levels, and non-entailments; operationalize it through nested evidence interventions on fixed robot
+episodes; and evaluate a diagnostic-contract method through unsupported-specificity risk and
+useful coverage. Development evidence shows why this reframing is necessary: fair tool-enabled
+agents often recover the same central diagnosis, deterministic fallback dominated the original
+pipeline, and several candidate or judge campaigns were negative, inconclusive, or invalid for
+confirmation. We preserve those outcomes and make no superiority claim. The prospective study
+therefore tests evidence calibration rather than which system appears to reason better, with
+episodes---not masks, questions, generations, or annotations---as its independent units.
 
 \balance
 \bibliographystyle{IEEEtran}

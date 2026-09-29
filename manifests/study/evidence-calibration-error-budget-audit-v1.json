@@ -1,0 +1,56 @@
+{
+  "schema": "crane-evidence-calibration-error-budget-audit/v1",
+  "audit_id": "evidence-calibration-error-budget-audit-v1",
+  "recorded_date": "2026-09-29",
+  "status": "AUDITED_PROVISIONAL_UNBOUND",
+  "source_ledger": {
+    "path": "manifests/study/diagnostic-sequential-error-ledger-v2.json",
+    "sha256": "d6e67e9d4c8da68c434fa639a67ce34de53039f85734c51714a83973bca2dfbe",
+    "program_alpha": 0.05,
+    "consumed_alpha": 0.02,
+    "available_alpha": 0.03
+  },
+  "redirect_audit": {
+    "path": "manifests/study/evidence-calibration-redirect-audit-v1.json",
+    "sha256": "1b413d9d8266b924aec47b0bdb9c70caa9c0d4ec12d0a39ed9116d5b369353d5"
+  },
+  "immutable_disposition": [
+    {
+      "allocation_id": "candidate-v1-confirmation",
+      "role": "candidate",
+      "alpha": 0.02,
+      "status": "CONSUMED",
+      "permanently_unavailable": true
+    },
+    {
+      "allocation_id": "candidate-revision-reserve",
+      "role": "candidate",
+      "alpha": 0.01,
+      "status": "AVAILABLE",
+      "permanently_unavailable": false
+    },
+    {
+      "allocation_id": "selected-method-replication",
+      "role": "replication",
+      "alpha": 0.02,
+      "status": "AVAILABLE",
+      "permanently_unavailable": false
+    }
+  ],
+  "prospective_boundary": {
+    "discovery_allocation_id": "candidate-revision-reserve",
+    "maximum_discovery_alpha": 0.01,
+    "replication_allocation_id": "selected-method-replication",
+    "reserved_replication_alpha": 0.02,
+    "primary_confirmatory_endpoint_count": 1,
+    "secondary_multiplicity": "Holm within the prospectively declared secondary family; descriptive outputs consume no discovery claim alpha",
+    "binding_condition": "Bind the discovery allocation atomically in the P11 freeze after the fresh development pilot fixes the endpoint, coverage floor, practical effect, sample size, population, methods, and stopping rule, and before any confirmatory semantic output is generated or inspected.",
+    "consumption_condition": "Follow the authoritative ledger rule: consumption begins when the first confirmatory response is inspected and is never refunded.",
+    "replication_protection": "The replication allocation cannot be borrowed for discovery, pilot work, judge qualification, or infrastructure failures."
+  },
+  "bound_by_this_audit": 0.0,
+  "consumed_by_this_audit": 0.0,
+  "confirmation_authorized": false,
+  "confirmation_independent_n": 0,
+  "replication_independent_n": 0
+}

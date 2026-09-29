@@ -1,0 +1,87 @@
+{
+  "schema": "crane-evidence-calibration-population/v1-development",
+  "population_id": "land-command-motion-evidence-calibration-v1-development",
+  "recorded_date": "2026-09-29",
+  "status": "DEVELOPMENT_CANDIDATE_NOT_FROZEN_FOR_CONFIRMATION",
+  "independent_unit": "prospectively_generated_episode_configuration",
+  "sampling_frame": "land/Nav2 command-motion configurations generated without reference to method outputs",
+  "fixed_total_population_weights": [
+    {
+      "stratum_id": "persistent-command-motion-discrepancy",
+      "weight": 0.35,
+      "analysis_role": "PRIMARY",
+      "ladder_id": "command-motion-full-v1-development"
+    },
+    {
+      "stratum_id": "measured-response-recovery",
+      "weight": 0.35,
+      "analysis_role": "PRIMARY",
+      "ladder_id": "command-motion-full-v1-development"
+    },
+    {
+      "stratum_id": "missing-odometry",
+      "weight": 0.15,
+      "analysis_role": "CONTROL_SEPARATELY_REPORTED",
+      "ladder_id": "command-motion-missing-odometry-v1-development"
+    },
+    {
+      "stratum_id": "nominal-false-premise",
+      "weight": 0.15,
+      "analysis_role": "CONTROL_SEPARATELY_REPORTED",
+      "ladder_id": "nominal-false-premise-v1-development"
+    }
+  ],
+  "primary_conditional_weights": {
+    "persistent-command-motion-discrepancy": 0.5,
+    "measured-response-recovery": 0.5
+  },
+  "orthogonal_schedule_factors": {
+    "geometry_strata": {
+      "nominal-clear-route": 0.5,
+      "connected-detour": 0.5
+    },
+    "task_outcome_rule": "Schedule interventions intended to represent both success and abort where physically plausible; retain valid unexpected outcomes and do not replace or reweight after observation.",
+    "timing_rule": "Balance declared intervention timing blocks prospectively; timing is not selected from method behavior."
+  },
+  "eligibility": {
+    "uses_method_outputs": false,
+    "uses_semantic_labels": false,
+    "uses_observed_P_or_B2_performance": false,
+    "validity_decision_before_method_identity_join": true,
+    "quality_driven_replacement": false,
+    "questions_masks_generations_and_annotations_are_repeated_measurements": true
+  },
+  "secondary_geometry_arm": {
+    "included_in_primary_endpoint": false,
+    "status": "DEFERRED_PENDING_ADAPTER_AND_DIVERSITY_VALIDATION",
+    "ladder_id": "geometry-planning-secondary-v1-development",
+    "pooled_with_primary": false
+  },
+  "analysis_boundary": {
+    "primary_endpoint_population": "PRIMARY strata only",
+    "controls": "Report missing-evidence and false-premise behavior separately and in overall descriptive risk-coverage tables; do not use them to dilute or rescue the primary paired test.",
+    "weight_changes_after_outputs": false
+  },
+  "sample_size": {
+    "status": "UNSET_PENDING_VALID_B2_B4_DEVELOPMENT_DISCORDANCE",
+    "planning_alpha_maximum": 0.01,
+    "current_sensitivity": "At alpha 0.01, the moderate 16-point scenario first exceeds 0.80 power at 200 acquired primary episodes; this is hypothetical and not a frozen target."
+  },
+  "stopping_candidate": {
+    "semantic_looks": "ONE_FIXED_TERMINAL_LOOK",
+    "unregistered_partial_effect_previews": false,
+    "technical_monitoring_only_before_terminal_look": true,
+    "futility_rule": "NONE_IN_DEVELOPMENT_CANDIDATE; define prospectively at P11 if used",
+    "invalid_episode_disposition": "retain with reason; do not replace based on method or semantic quality"
+  },
+  "replication_candidate": {
+    "alpha_reserved": 0.02,
+    "fresh_episode_configurations_required": true,
+    "method_and_endpoint_unchanged": true,
+    "reported_independently": true,
+    "sample_size_status": "UNSET_UNTIL_DISCOVERY_PLAN_AND_SELECTION_RULE_ARE_FROZEN"
+  },
+  "confirmation_authorized": false,
+  "confirmation_independent_n": 0,
+  "replication_independent_n": 0
+}

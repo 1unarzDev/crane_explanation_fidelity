@@ -1,0 +1,21 @@
+{
+  "schema": "crane-evidence-calibration-agent-qualification-host-queue/v1",
+  "queue_id": "evidence-calibration-agent-exact-task-v1-host",
+  "status": "READY_AFTER_NETWORK_PREFLIGHT",
+  "execution_environment": "normal network-enabled host terminal only",
+  "preflight": [
+    "test ${CODEX_SANDBOX_NETWORK_DISABLED:-0} != 1",
+    "getent ahosts example.com",
+    "getent ahosts codex.lunarz.dev",
+    "python analysis/audit_b2_transport_readiness.py"
+  ],
+  "required_preflight_result": "READY_FOR_SCHEMA_CANARY",
+  "authentication": "CODEX_LB_API_KEY exported in host shell; never persisted",
+  "suite": "research/explanation_fidelity/qualification/evidence-calibration-agent-exact-task-v1.json",
+  "suite_sha256": "dfec9d53f968412f29c3971d2934a3590a34d224c5919d24b47edb924b68ae31",
+  "freeze": "research/explanation_fidelity/experiment_configs/prospective/evidence-calibration-agent-exact-task-v1-freeze.json",
+  "command": "python analysis/run_evidence_calibration_agent_qualification.py --output-root model_outputs/automated_annotations/evidence-calibration-agent-exact-task-v1",
+  "overwrite": false,
+  "quality_driven_retries": 0,
+  "follow_on": "Only if status is QUALIFIED may the same frozen agent measurement be used for new development atomic annotations. Confirmation remains prohibited until P11 passes."
+}

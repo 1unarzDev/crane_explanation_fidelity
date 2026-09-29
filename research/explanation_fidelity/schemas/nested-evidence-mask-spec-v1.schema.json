@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://crane.local/schemas/nested-evidence-mask-spec-v1.schema.json",
+  "title": "CRANE removal-only nested evidence mask specification",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "ladder_id", "condition_builder_id", "condition_builder_version", "condition_builder_sha256", "source_configuration_sha256", "runtime_manifest_sha256", "conditions"],
+  "properties": {
+    "schema": {"const": "crane-nested-evidence-mask-spec/v1"},
+    "ladder_id": {"$ref": "#/$defs/id"}, "condition_builder_id": {"$ref": "#/$defs/id"},
+    "condition_builder_version": {"$ref": "#/$defs/id"}, "condition_builder_sha256": {"$ref": "#/$defs/sha256"},
+    "source_configuration_sha256": {"$ref": "#/$defs/sha256"}, "runtime_manifest_sha256": {"$ref": "#/$defs/sha256"},
+    "conditions": {"type": "array", "minItems": 2, "items": {"$ref": "#/$defs/condition"}}
+  },
+  "$defs": {
+    "id": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "nullable_id": {"oneOf": [{"$ref": "#/$defs/id"}, {"type": "null"}]},
+    "condition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["condition_id", "level_index", "removed_json_pointers", "mask_id", "mask_version"],
+      "properties": {
+        "condition_id": {"$ref": "#/$defs/id"}, "level_index": {"type": "integer", "minimum": 0},
+        "removed_json_pointers": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^/evidence/"}},
+        "mask_id": {"$ref": "#/$defs/nullable_id"}, "mask_version": {"$ref": "#/$defs/nullable_id"}
+      }
+    }
+  }
+}

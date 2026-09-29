@@ -1,0 +1,53 @@
+{
+  "schema": "crane-command-motion-layout-freshness-audit/v1",
+  "audit_id": "command-motion-layout-freshness-audit-v1",
+  "recorded_date": "2026-09-29",
+  "status": "RECONCILED_DEVELOPMENT_BOUNDARY",
+  "purpose": "Correct the living evidence-calibration inventory by distinguishing old schedule allocation, physical materialization, and semantic inspection for every v6 command-motion reserve layout.",
+  "catalog": {
+    "path": "packages/crane_ml/Assets/Resources/ReferenceEnvironments/crane_land_proving_ground_v6.json",
+    "sha256": "c9cee3922fa1cc17f8237fde12d0a50ee6496649142f3cb14a4c6491fd72a0eb"
+  },
+  "allocation_sources": [
+    {
+      "path": "research/explanation_fidelity/experiment_configs/development/command-motion-v6-player-runtime-qualification-v1.json",
+      "sha256": "7efae65f84aaf6ac9a8940a339599e49987e6b14d0e8c21b61eb7add7e11c4e0"
+    },
+    {
+      "path": "research/explanation_fidelity/experiment_configs/prospective/land-command-motion-physical-schedule-v1.json",
+      "sha256": "1f844ad45fa2e5cefb9edcfc5f3420a5a18aff32abda81ec72b7876ce376f215"
+    },
+    {
+      "path": "research/explanation_fidelity/experiment_configs/prospective/contract-complete-diagnostic-communication-v1-pilot-schedule.json",
+      "sha256": "9a66747fdd0387b51933e6c10d7dba917aed9ca45be58d1523e903ebca2998eb"
+    },
+    {
+      "path": "research/explanation_fidelity/experiment_configs/prospective/contract-complete-diagnostic-communication-v2-pilot-schedule.json",
+      "sha256": "ee4007f3f9c117e12b9b3a55e857aaa8cd2dd6fdef0b2597686b1cd223015b60"
+    },
+    {
+      "path": "research/explanation_fidelity/experiment_configs/prospective/contract-complete-diagnostic-communication-v2-redirect.json",
+      "sha256": "16ca79443c02a3a78faf1ef94eb1ce6d3f210ef276df9039d470468e01983ec6"
+    }
+  ],
+  "expected_counts": {
+    "command-motion-confirmation-reserve": {
+      "catalog_layouts": 120,
+      "scheduled_layouts": 120,
+      "physically_materialized_layouts": 120,
+      "never_physically_materialized_layouts": 0
+    },
+    "command-motion-replication-reserve": {
+      "catalog_layouts": 120,
+      "scheduled_layouts": 120,
+      "physically_materialized_layouts": 20,
+      "never_physically_materialized_layouts": 100
+    }
+  },
+  "boundaries": [
+    "This audit changes no frozen schedule, output, annotation, or disposition.",
+    "The 120 physically materialized confirmation layouts and 20 physically materialized replication layouts are development-only for the evidence-calibration redirect.",
+    "The 100 non-materialized replication layouts remain governed by their old frozen schedule and are quarantined pending a prospective reassignment decision; they are not an available convenience pilot pool.",
+    "Physical non-materialization does not itself establish semantic eligibility, adequate sample size, or authorization for confirmation."
+  ]
+}

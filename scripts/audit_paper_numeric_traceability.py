@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import hashlib
+import importlib.util
 import json
 import math
 from pathlib import Path
@@ -571,6 +572,53 @@ def main() -> int:
         checked_assertions += 11
     checked_assertions += 4
 
+    freshness_declaration = load(
+        "manifests/study/command-motion-layout-freshness-audit-v1.json"
+    )
+    freshness_spec = importlib.util.spec_from_file_location(
+        "command_motion_layout_freshness",
+        ROOT / "analysis/audit_command_motion_layout_freshness.py",
+    )
+    if freshness_spec is None or freshness_spec.loader is None:
+        raise AssertionError("cannot load command-motion layout freshness audit")
+    freshness_module = importlib.util.module_from_spec(freshness_spec)
+    freshness_spec.loader.exec_module(freshness_module)
+    freshness = freshness_module.audit(ROOT, freshness_declaration)
+    confirmation_split = freshness["splits"]["command-motion-confirmation-reserve"]
+    replication_split = freshness["splits"]["command-motion-replication-reserve"]
+    require_equal(confirmation_split["physically_materialized_layouts"], 120,
+                  "confirmation-labelled materialized layouts")
+    require_equal(replication_split["physically_materialized_layouts"], 20,
+                  "replication-labelled materialized layouts")
+    require_equal(replication_split["never_physically_materialized_layouts"], 100,
+                  "replication-labelled non-materialized layouts")
+    checked_assertions += 3
+
+    power = load("manifests/study/evidence-calibration-power-analysis-v1-development.json")
+    require_close(power["alpha"], 0.01, 0.0, "evidence-calibration planning alpha")
+    rows = {
+        (item["scenario_id"], item["acquired_episode_count"]): item
+        for item in power["results"]
+    }
+    for scenario_id, expected in (
+        ("small-low-discordance", 0.1026),
+        ("moderate-balanced-discordance", 0.4998),
+        ("large-high-discordance", 0.9232),
+    ):
+        require_close(rows[(scenario_id, 100)]["estimated_power"], expected, 0.0,
+                      f"{scenario_id} N=100 power")
+    require_equal(
+        min(
+            item["acquired_episode_count"]
+            for item in power["results"]
+            if item["scenario_id"] == "moderate-balanced-discordance"
+            and item["estimated_power"] >= 0.8
+        ),
+        200,
+        "first moderate scenario N with at least 0.8 power",
+    )
+    checked_assertions += 5
+
     require_paper_fragments(
         [
             "33 included episode clusters",
@@ -609,10 +657,11 @@ def main() -> int:
             "contain 12 blinded responses but form one paired/masked cluster",
             "52 responses in 13 packets over nine clusters",
             "13/13 development questions overall",
-            "Primary planning subset & 6 clusters",
-            "P--R: 0.0 in both passes",
-            "Endpoint-first v8 & 48/48 composite in both passes",
-            "Physical cohort & 40 attempts; 39 valid, 1 invalid",
+            "all 120 confirmation-labelled layouts",
+            "20 replication-labelled layouts",
+            "remaining 100 replication-labelled layouts",
+            "powers of 0.103, 0.500, and 0.923",
+            "exceeds 0.80 at 200 episodes",
         ]
     )
 

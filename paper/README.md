@@ -9,17 +9,17 @@ committed manifest.
 checked against the research notes. Any future `PENDING` marker is an acceptance gate that must be
 replaced by manifest-traceable results, never by estimated or development-only values. The current
 draft compiles with the IEEE conference class required by the workshop's IEEE BigData 2026
-instructions. It is a six-page short/WIP manuscript including references and has no unresolved
-pending marker. Its short-paper structural audit passes, but scientific review and the explicit
-submission decision remain required. A full-paper submission would still require enough
-prospective evidence to justify and fill 8--9 pages.
+instructions. It is a nine-page full-paper snapshot including references and has no unresolved
+pending marker. Its structural audit passes, but the paper deliberately reports development and
+legacy evidence only: new evidence-calibration confirmation and replication both remain at
+independent N=0 until the prospective freeze passes.
 
 The living claim audit is `CLAIM_EVIDENCE_MAP.md`; exact development-number provenance and its
-fail-closed validator are documented in `NUMBER_TRACEABILITY.md`. The manuscript story is a bounded legacy
-provenance result followed by a separately prospective diagnosis-to-language method and
-land/RoboBoat evidence only where the new study supports it. Simulation evidence must not be
-presented as hardware validation, factual correctness as human trust, or lateral disturbance as
-wave drift without discrimination.
+fail-closed validator are documented in `NUMBER_TRACEABILITY.md`. The manuscript distinguishes
+physical truth from robot-visible evidential support and presents the older provenance and
+P-versus-R studies only as motivation. Simulation evidence must not be presented as hardware
+validation, factual correctness as human trust, or lateral disturbance as wave drift without
+discrimination.
 
 Reproducible build command (downloads the pinned Tectonic 0.17.0 Linux archive and verifies its
 SHA-256 before execution):
@@ -30,13 +30,18 @@ scripts/build_paper.sh
 
 The PDF is written to `output/pdf/main.pdf`; pass a different output directory as the first
 argument when building a scratch copy. Tectonic downloads its TeX bundle on first use, so a fresh
-machine requires network access for that initial build. Before delivery, render every page with
-Poppler and inspect it for column overflow, clipped tables, illegible references, and unresolved
-red `PENDING` markers.
+machine requires network access for that initial build. A machine with a verified Tectonic binary
+and populated resource cache may build without network access:
+
+```bash
+TECTONIC_BIN=/path/to/tectonic TECTONIC_ONLY_CACHED=1 scripts/build_paper.sh
+```
+
+Before delivery, render every page with Poppler and inspect it for column overflow, clipped tables,
+illegible references, and unresolved red `PENDING` markers.
 
 After building and visual inspection, run the fail-closed category/anonymity audit with the intended
-submission category. The current seven-page build is not eligible for either category and must be
-deliberately compressed to 4--6 pages or expanded into an evidence-supported 8--9 page full paper:
+submission category. The current snapshot targets the 8--9 page full-paper category:
 
 ```bash
 python scripts/audit_submission_readiness.py --category full
@@ -46,6 +51,6 @@ Use `short` or `demo` only after a deliberate category decision. The audit check
 8--9 or 4--6 page range including references, unresolved `\pending{}` gates, anonymous author and
 PDF metadata, developer-specific path/repository fragments, letter page geometry, font embedding,
 PDF freshness, and numeric traceability. It does not submit or publish anything and does not replace
-visual inspection. As of 2026-09-24, the current source builds as seven visually inspected pages;
-the mechanical short-paper audit correctly fails its 4--6 page limit. This is not a submission or
-a claim that the scientific contribution has independent confirmatory support.
+visual inspection. As of 2026-09-29, the current source builds as nine visually inspected pages and
+passes the mechanical full-paper audit. This is not a submission or a claim that the scientific
+contribution has independent confirmatory support.

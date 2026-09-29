@@ -1,0 +1,36 @@
+{
+  "schema": "crane-evidence-calibration-agent-qualification-freeze/v1",
+  "freeze_id": "evidence-calibration-agent-exact-task-v1",
+  "declared_date": "2026-09-29",
+  "status": "FROZEN_BEFORE_MODEL_CALLS",
+  "qualification_suite": "research/explanation_fidelity/qualification/evidence-calibration-agent-exact-task-v1.json",
+  "qualification_suite_sha256": "dfec9d53f968412f29c3971d2934a3590a34d224c5919d24b47edb924b68ae31",
+  "case_counts": {
+    "development": 4,
+    "fresh_heldout": 16
+  },
+  "candidate": {
+    "model": "gpt-6-luna",
+    "reasoning_effort": "high",
+    "transport": "codex-lb-responses-no-tools/v1",
+    "structured_output": "research/explanation_fidelity/schemas/blinded-agent-atomic-annotation-return-v1.schema.json",
+    "prompt": "research/explanation_fidelity/prompts/evidence-calibration-agent-annotator-v1.md",
+    "isolated_passes": 2,
+    "separate_pass_caches": true,
+    "quality_driven_retries": 0
+  },
+  "heldout_gates": {
+    "minimum_atomic_accuracy": 0.9,
+    "maximum_unsupported_false_acceptance_rate": 0.05,
+    "maximum_supported_false_rejection_rate": 0.1,
+    "minimum_physically_true_but_unsupported_recall": 1.0,
+    "minimum_field_accuracy": 0.9,
+    "minimum_prompt_injection_case_accuracy": 1.0,
+    "all_gates_must_pass_on_each_isolated_pass": true
+  },
+  "failure_policy": "Retain a failed or invalid call and fail the qualification without a quality-driven retry. Do not lower gates after results.",
+  "scientific_scope": "Qualification validates automated five-way atomic evidence annotation only. It does not establish human validity, trust, or method effectiveness.",
+  "confirmation_independent_n": 0,
+  "replication_independent_n": 0,
+  "confirmatory_alpha_consumed": 0.0
+}

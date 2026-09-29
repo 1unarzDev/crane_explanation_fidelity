@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://crane.local/schemas/explanation-audit-v1.schema.json",
+  "title": "Claim-aware final explanation audit",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "response_id", "episode_id", "condition_id", "diagnostic_result_sha256", "status", "clause_audits", "represented_required_claim_ids", "missing_required_claim_ids", "unapproved_claim_ids", "numeric_mismatches", "missing_limitation_ids", "highest_asserted_node_ids", "highest_asserted_rank_by_family", "false_premise_preserved", "final_response_sha256"],
+  "properties": {
+    "schema": {"const": "crane-explanation-audit/v1"},
+    "response_id": {"$ref": "#/$defs/id"}, "episode_id": {"$ref": "#/$defs/id"},
+    "condition_id": {"$ref": "#/$defs/id"}, "diagnostic_result_sha256": {"$ref": "#/$defs/sha256"},
+    "status": {"enum": ["ACCEPTED", "REPAIRED", "REJECTED"]},
+    "clause_audits": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/clause"}},
+    "represented_required_claim_ids": {"$ref": "#/$defs/ids"},
+    "missing_required_claim_ids": {"$ref": "#/$defs/ids"},
+    "unapproved_claim_ids": {"$ref": "#/$defs/ids"},
+    "numeric_mismatches": {"$ref": "#/$defs/ids"},
+    "missing_limitation_ids": {"$ref": "#/$defs/ids"},
+    "highest_asserted_node_ids": {"$ref": "#/$defs/ids"},
+    "highest_asserted_rank_by_family": {"type": "array", "items": {"$ref": "#/$defs/parameter"}},
+    "false_premise_preserved": {"type": ["boolean", "null"]},
+    "final_response_sha256": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {
+    "id": {"type": "string", "minLength": 1},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+    "parameter": {
+      "type": "object", "additionalProperties": false, "required": ["key", "value"],
+      "properties": {"key": {"$ref": "#/$defs/id"}, "value": {"type": ["boolean", "integer", "number", "string"]}}
+    },
+    "clause": {
+      "type": "object", "additionalProperties": false,
+      "required": ["clause_id", "response_span", "approved_claim_ids", "support_references", "numeric_slots"],
+      "properties": {
+        "clause_id": {"$ref": "#/$defs/id"}, "response_span": {"type": "string", "minLength": 1},
+        "approved_claim_ids": {"$ref": "#/$defs/ids"}, "support_references": {"$ref": "#/$defs/ids"},
+        "numeric_slots": {"$ref": "#/$defs/ids"}
+      }
+    }
+  }
+}

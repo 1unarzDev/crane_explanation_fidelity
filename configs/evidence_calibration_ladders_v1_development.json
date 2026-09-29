@@ -1,0 +1,77 @@
+{
+  "schema": "crane-evidence-calibration-ladder-catalog/v1-development",
+  "catalog_id": "evidence-calibration-ladders-v1-development",
+  "recorded_date": "2026-09-29",
+  "status": "DEVELOPMENT_CANDIDATE_NOT_FROZEN_FOR_CONFIRMATION",
+  "ontology": {
+    "path": "configs/evidence_calibration_claim_contracts_v1.json",
+    "sha256": "49edd3b035d23bf356aa42e9037b265a769efd745b8d44a3dd130c3349fbacc8"
+  },
+  "shared_rules": {
+    "order": "E0 is weakest; each later level restores evidence without changing any retained value.",
+    "unit": "One episode/configuration contributes one independent unit regardless of ladder length.",
+    "truth_boundary": "Evaluator-only intervention and physical truth are absent from every level.",
+    "claim_boundary": "Potential assessability means only that required evidence roles are present; episode predicates must still pass before a claim is supported.",
+    "specific_cause_boundary": "No primary command-motion level exposes validated motor, collision, slip, obstruction, or intervention-identity evidence."
+  },
+  "ladders": [
+    {
+      "ladder_id": "command-motion-full-v1-development",
+      "diagnostic_purpose": "persistent command-motion discrepancy or measured response recovery",
+      "population_role": "PRIMARY_CANDIDATE",
+      "independent_unit_increment": 1,
+      "in_scope_node_ids": ["node-task-success", "node-task-abort", "node-recovery-invocation", "node-measured-response-recovery", "node-command-observed", "node-command-motion-discrepancy", "node-false-premise-rejection"],
+      "required_non_entailment_ids": ["ne-discrepancy-does-not-identify-physical-cause", "ne-discrepancy-does-not-reveal-intervention", "ne-recovery-does-not-establish-outcome", "ne-response-recovery-does-not-establish-task-outcome"],
+      "terminal_evidence_roles": ["navigate_to_pose_result", "behavior_tree_transitions", "source_anchors", "delivered_command_stream", "delivered_odometry_stream", "command_motion_computation"],
+      "levels": [
+        {"condition_id_suffix": "E0", "level_index": 0, "label": "task outcome", "newly_restored_roles": ["navigate_to_pose_result"], "available_evidence_roles": ["navigate_to_pose_result"], "potentially_assessable_claim_ids": ["claim-task-success", "claim-task-abort"]},
+        {"condition_id_suffix": "E1", "level_index": 1, "label": "outcome plus source-qualified recovery trace", "newly_restored_roles": ["behavior_tree_transitions", "source_anchors"], "available_evidence_roles": ["navigate_to_pose_result", "behavior_tree_transitions", "source_anchors"], "potentially_assessable_claim_ids": ["claim-task-success", "claim-task-abort", "claim-recovery-invoked"]},
+        {"condition_id_suffix": "E2", "level_index": 2, "label": "recovery evidence plus delivered commands", "newly_restored_roles": ["delivered_command_stream"], "available_evidence_roles": ["navigate_to_pose_result", "behavior_tree_transitions", "source_anchors", "delivered_command_stream"], "potentially_assessable_claim_ids": ["claim-task-success", "claim-task-abort", "claim-recovery-invoked", "claim-command-observed"]},
+        {"condition_id_suffix": "E3", "level_index": 3, "label": "synchronized command-motion evidence", "newly_restored_roles": ["delivered_odometry_stream", "command_motion_computation"], "available_evidence_roles": ["navigate_to_pose_result", "behavior_tree_transitions", "source_anchors", "delivered_command_stream", "delivered_odometry_stream", "command_motion_computation"], "potentially_assessable_claim_ids": ["claim-task-success", "claim-task-abort", "claim-recovery-invoked", "claim-measured-response-recovered", "claim-command-observed", "claim-command-motion-discrepancy", "claim-false-premise-success"]}
+      ]
+    },
+    {
+      "ladder_id": "command-motion-missing-odometry-v1-development",
+      "diagnostic_purpose": "genuinely missing decisive measured-motion evidence",
+      "population_role": "CONTROL_CANDIDATE",
+      "independent_unit_increment": 1,
+      "in_scope_node_ids": ["node-task-success", "node-task-abort", "node-recovery-invocation", "node-command-observed"],
+      "required_non_entailment_ids": ["ne-recovery-does-not-establish-outcome"],
+      "terminal_evidence_roles": ["navigate_to_pose_result", "behavior_tree_transitions", "source_anchors", "delivered_command_stream"],
+      "levels": [
+        {"condition_id_suffix": "E0", "level_index": 0, "label": "task outcome", "newly_restored_roles": ["navigate_to_pose_result"], "available_evidence_roles": ["navigate_to_pose_result"], "potentially_assessable_claim_ids": ["claim-task-success", "claim-task-abort"]},
+        {"condition_id_suffix": "E1", "level_index": 1, "label": "outcome plus source-qualified recovery trace", "newly_restored_roles": ["behavior_tree_transitions", "source_anchors"], "available_evidence_roles": ["navigate_to_pose_result", "behavior_tree_transitions", "source_anchors"], "potentially_assessable_claim_ids": ["claim-task-success", "claim-task-abort", "claim-recovery-invoked"]},
+        {"condition_id_suffix": "E2", "level_index": 2, "label": "delivered command without odometry", "newly_restored_roles": ["delivered_command_stream"], "available_evidence_roles": ["navigate_to_pose_result", "behavior_tree_transitions", "source_anchors", "delivered_command_stream"], "potentially_assessable_claim_ids": ["claim-task-success", "claim-task-abort", "claim-recovery-invoked", "claim-command-observed"]}
+      ]
+    },
+    {
+      "ladder_id": "nominal-false-premise-v1-development",
+      "diagnostic_purpose": "successful or non-triggered episode asked as a failure",
+      "population_role": "CONTROL_CANDIDATE",
+      "independent_unit_increment": 1,
+      "in_scope_node_ids": ["node-task-success", "node-command-observed", "node-false-premise-rejection"],
+      "required_non_entailment_ids": ["ne-discrepancy-does-not-identify-physical-cause"],
+      "terminal_evidence_roles": ["navigate_to_pose_result", "delivered_command_stream", "delivered_odometry_stream", "command_motion_computation"],
+      "levels": [
+        {"condition_id_suffix": "E0", "level_index": 0, "label": "recorded task outcome", "newly_restored_roles": ["navigate_to_pose_result"], "available_evidence_roles": ["navigate_to_pose_result"], "potentially_assessable_claim_ids": ["claim-task-success", "claim-task-abort"]},
+        {"condition_id_suffix": "E1", "level_index": 1, "label": "outcome plus delivered command", "newly_restored_roles": ["delivered_command_stream"], "available_evidence_roles": ["navigate_to_pose_result", "delivered_command_stream"], "potentially_assessable_claim_ids": ["claim-task-success", "claim-task-abort", "claim-command-observed"]},
+        {"condition_id_suffix": "E2", "level_index": 2, "label": "full command-motion evidence for non-trigger and premise rejection", "newly_restored_roles": ["delivered_odometry_stream", "command_motion_computation"], "available_evidence_roles": ["navigate_to_pose_result", "delivered_command_stream", "delivered_odometry_stream", "command_motion_computation"], "potentially_assessable_claim_ids": ["claim-task-success", "claim-task-abort", "claim-measured-response-recovered", "claim-command-observed", "claim-command-motion-discrepancy", "claim-false-premise-success"]}
+      ]
+    },
+    {
+      "ladder_id": "geometry-planning-secondary-v1-development",
+      "diagnostic_purpose": "direct-route restriction, retained-grid connectivity, and delivered-plan evidence",
+      "population_role": "SECONDARY_DEFERRED_PENDING_ADAPTER_VALIDATION",
+      "independent_unit_increment": 1,
+      "in_scope_node_ids": ["node-task-success", "node-task-abort", "node-direct-route-restriction", "node-connected-detour", "node-global-infeasibility", "node-recorded-plan-change"],
+      "required_non_entailment_ids": ["ne-direct-restriction-does-not-establish-global-no-path"],
+      "terminal_evidence_roles": ["navigate_to_pose_result", "costmap_geometry_computation", "independent_connectivity_computation", "delivered_plan_history"],
+      "levels": [
+        {"condition_id_suffix": "E0", "level_index": 0, "label": "task outcome", "newly_restored_roles": ["navigate_to_pose_result"], "available_evidence_roles": ["navigate_to_pose_result"], "potentially_assessable_claim_ids": ["claim-task-success", "claim-task-abort"]},
+        {"condition_id_suffix": "E1", "level_index": 1, "label": "route-covered costmap geometry", "newly_restored_roles": ["costmap_geometry_computation"], "available_evidence_roles": ["navigate_to_pose_result", "costmap_geometry_computation"], "potentially_assessable_claim_ids": ["claim-task-success", "claim-task-abort", "claim-direct-route-restriction", "claim-connected-detour-exists"]},
+        {"condition_id_suffix": "E2", "level_index": 2, "label": "independent connectivity result", "newly_restored_roles": ["independent_connectivity_computation"], "available_evidence_roles": ["navigate_to_pose_result", "costmap_geometry_computation", "independent_connectivity_computation"], "potentially_assessable_claim_ids": ["claim-task-success", "claim-task-abort", "claim-direct-route-restriction", "claim-connected-detour-exists", "claim-global-infeasibility"]},
+        {"condition_id_suffix": "E3", "level_index": 3, "label": "delivered plan history", "newly_restored_roles": ["delivered_plan_history"], "available_evidence_roles": ["navigate_to_pose_result", "costmap_geometry_computation", "independent_connectivity_computation", "delivered_plan_history"], "potentially_assessable_claim_ids": ["claim-task-success", "claim-task-abort", "claim-direct-route-restriction", "claim-connected-detour-exists", "claim-global-infeasibility", "claim-recorded-plan-change"]}
+      ]
+    }
+  ]
+}

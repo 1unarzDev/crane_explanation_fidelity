@@ -1,8 +1,52 @@
 # Manuscript claim-to-evidence map
 
-Status: living manuscript audit, 2026-09-27. The current anonymous artifact is a short/WIP paper;
+Status: living manuscript audit, 2026-09-28. The current anonymous artifact is a short/WIP paper;
 every numerical claim must point to a retained manifest/result. This file is not itself
 experimental evidence.
+
+## Evidence-calibration redirect and claim migration (2026-09-28)
+
+The manuscript's central question is now whether the specificity of a natural-language robot
+explanation tracks the robot-visible evidence available under deterministic nested evidence
+conditions. It no longer asks whether checked P generally diagnoses failures better than a strong
+tool-enabled R. All P-versus-R diagnostic-superiority, contract-completeness, causal-restraint,
+and automated-judge claims below are **HISTORICAL DEVELOPMENT / EXPLORATORY** unless a row states
+an even more restrictive disposition. They remain visible because their negative, tied,
+inconclusive, and invalid outcomes motivate the redirect; none supplies confirmation for the new
+endpoint.
+
+The paper now claims exactly three contributions:
+
+| Contribution / claim | Evidence required for manuscript support | Current status |
+| --- | --- | --- |
+| **C1: Formalization.** Evidence-calibrated robotic explanation distinguishes physical truth from robot-visible evidential support using atomic claims, evidence requirements, diagnostic abstraction levels, non-entailments, partial diagnosis, ambiguity, false-premise handling, and evidence monotonicity. | Versioned protocol plus machine-readable schemas/contracts and validation tests; no comparative effect is required for the formal definition. | **METHOD/FORMALISM CLAIM IN PROGRESS.** Manuscript terminology and formal objective are redirected; implementation evidence must be traced to the eventual frozen schemas and tests before submission. |
+| **C2: Benchmark.** Controlled nested evidence interventions make explanation specificity auditable without changing the underlying episode or exposing evaluator-only truth. | Frozen deterministic mask definitions; nestedness, leakage, and byte-reproducibility tests; evaluator-side highest-defensible references; prospectively generated independent land/Nav2 episodes. | **BENCHMARK CLAIM IN PROGRESS.** Existing command--motion physical/reference episodes and historical masks are development inputs only until the new benchmark protocol, eligibility audit, and semantic freeze are complete. |
+| **C3: Method and evaluation.** A diagnostic-contract method is evaluated for the risk--coverage consequences of enforcing maximal supported specificity against fair B0--B4 conditions. | B4 maximal-supported plan and claim-ID verifier; parity-audited B2; two isolated blinded agent annotations plus disagreement-only agent adjudication; exact-task qualification; frozen episode-level endpoint, useful-coverage floor, clustered analysis, and prospective confirmation. | **PROSPECTIVE / NO EFFECT YET.** No new confirmatory outputs, qualified atomic agent annotations, effect estimate, confidence interval, significance result, or replication result exists. Automated outputs will be reported as agent-assessed, not human-validated. |
+
+The candidate primary endpoint is an episode-level evidence-calibration failure: over the frozen
+evidence ladder, a method fails if it emits any mechanistic claim whose required evidence is absent
+or asserts deeper than the evaluator-defined maximum justified level. The planned primary
+comparison is B4 versus B2 subject to a prospectively frozen useful-diagnostic-coverage floor.
+This is a design statement, not an empirical claim. Evidence masks, questions, prompts, outputs,
+and annotations within an episode are repeated clustered measurements, never independent samples.
+
+Terminology migration:
+
+- **physical truth** is evaluator-only what actually occurred;
+- **robot-visible evidence** is what the explanation method may legitimately inspect;
+- **evidential support** is whether that evidence licenses an atomic claim;
+- **unsupported specificity** includes physically true claims not licensed by visible evidence;
+- **appropriate abstention** withholds an unsupported deeper mechanism while retaining supported
+  partial diagnosis;
+- **over-abstention** unnecessarily withholds an available supported diagnosis; and
+- **model faithfulness** is not claimed because the study does not inspect a model's internal
+  decision process.
+
+The legacy 33-episode F/G/H provenance cohort remains **LEGACY EXPLORATORY / UNDER-TARGET** and
+immutable. It may motivate why provenance alone is insufficient, but it is neither rescored nor
+used as confirmatory evidence for C1--C3. The active physical/reference cohort is reusable only
+after the contamination and eligibility audit; already inspected semantic outputs cannot become
+fresh evidence-calibration confirmation.
 
 V2 redirect checkpoint: the deterministic compiler passes the three requested completeness
 repairs, and the fixed-suffix P-contract-v4 pilot is now complete. Thirteen primary and four
@@ -41,7 +85,7 @@ risk as distinct claims. No level is currently established for either claim.
 | Proposed diagnostic pipeline improves supported diagnostic success | Prior parity-audited pilots plus the fixed six-configuration measurement-complete-v2 screen with nine P/R pairs and 36/36 valid Luna-v12 judgments | **PROMISING DEVELOPMENT EVIDENCE; NOT CONFIRMED**. On four eligible independent clusters, P scored 4/4 and R 1/4 in both passes (+0.75 descriptive difference), with three consensus wins across geometry and command--motion families. P had 0/18 material errors versus R 14/18, but covered 108/126 units versus R 113/126 and therefore failed the frozen no-coverage-degradation gate. Confirmatory semantic N=0; no confidence sequence, significance, or replication result exists |
 | Mandatory checked composition is the strongest next treatment candidate | Model-relative finite composer, deterministic renderer, strict command--motion/geometric adapters, atomic independent reference inventory, real-fixture conformance tests, and one frozen seven-case P/R screen | **REJECTED AS VERSIONED DEVELOPMENT CANDIDATE**. It was causally more restrained than R (0 versus 2 overclaims on paired-valid judgments), but an unsupported certificate/registry footer produced repeated material errors and missing units reduced coverage. Two invalid masked-case R returns were retained without retry. A successor requires a new version and fresh positive-geometry, visible-not-consumed, and out-of-model configurations; this result cannot be repaired or rescored post hoc |
 | Luna can operationally assess the prospective supported-diagnostic-success endpoint | V12 used two isolated high-effort passes over fresh cases. Each pass scored 8/8 endpoint and 28/28 binary unit-coverage decisions; core fields were 117/120 and 119/120, with zero material false rejection/acceptance, protected failure, or call failure | **QUALIFIED FOR FUTURE SEPARATELY FROZEN PACKETS, WITH LIMITS**. Raw four-way unit labels remain available, while the endpoint uses covered versus not-covered. This is model-judge qualification, not human agreement or P--R evidence. Each eight-case material class has a zero-error Wilson 95% upper bound of about 0.3244; no confirmatory response has been scored and no alpha was consumed |
-| Frozen land command--motion cohort supplies independently checkable physical/reference evidence | Fixed 100-cluster confirmation schedule plus disjoint 100-cluster replication reserve; 40/100 confirmation configurations attempted once, with 39 valid and one retained invalid transport recording. Twenty-seven method-visible references are supported, seven are `not_triggered`, and five are `insufficient`; runs 028--029 verify masking, runs 031/035/037--039 add response recovery followed by success, runs 030/032/040 add persistent discrepancies, runs 033/036 are nominal false-premise controls with and without recovery activity, and run 034 failed the frozen stale/rejected-action gate without retry | **PHYSICAL/REFERENCE COLLECTION ACTIVE; SEMANTIC CAMPAIGN INACTIVE**. Run 040's unexpected abort is valid under the frozen worker gate despite the generic fixture's expected-success failure. The valid runs demonstrate selective evidence handling, distinguish response recovery from task outcome, and retain false-premise controls. The invalid attempt demonstrates prospective fail-closed retention and contributes no family or diagnostic count. The cohort establishes no P--R semantic effect, confidence sequence, significance, or replication result; no responses or Luna labels exist |
+| Frozen land command--motion artifacts supply independently checkable development physical/reference evidence | Executable reserve reconciliation joins the v6 catalog, fixed schedules, robot-visible artifacts, and semantic artifact identities: all 120 confirmation-labelled layouts and 20 replication-labelled layouts were physically materialized; the remaining 100 replication-labelled layouts are allocated by the old frozen schedule but have no physical artifacts | **DEVELOPMENT / GOVERNANCE EVIDENCE ONLY FOR THE REDIRECT**. The earlier campaigns, invalid attempts, responses, and labels remain preserved under their original dispositions. This inventory licenses no evidence-calibration effect: new confirmation N=0 and replication N=0. The 100 scheduled non-materialized layouts are quarantined pending one prospective allocation and P11; they are not an ad hoc pilot pool |
 | The attempted land composition episodes supply a valid terminal multi-mechanism case | Two separately declared, single-attempt development captures plus a prospectively declared post-outcome bounded analysis of run 009 | **NOT ESTABLISHED AS A TERMINAL CASE**; run 008 was rejected before scenario construction. Run 009 passed clean-build and exact scenario binding but remained active at cutoff, so no terminal result or complete recovery history exists. Its later bounded analysis supports a 10--51 s command--motion discrepancy with insufficient geometry and unresolved outcome; one R/P/T/N language gate was retained, but its Luna packet omitted decisive robot-visible facts and is ineligible for comparison. Neither run supports terminal-failure or method-effect claims |
 | Diagnostic pipeline can express a bounded terminal-margin mechanism | Governed RoboBoat development export links exact Nav2 thresholds, measured return motion, post-result displacement, and settled error; a separate evaluator-side implementation reproduces the arithmetic | **IMPLEMENTED/TESTED ON ONE DEVELOPMENT RUN**, not an effectiveness claim or independently reviewed gold |
 | Diagnostic pipeline can express a retained navigation-model disconnection | Compact governed RoboBoat development export independently decodes a hash-checked costmap, finds result cell cost 0, goal cell cost 253, no connection below 253, and 23 matching Navfn failure messages before abort | **IMPLEMENTED/TESTED ON ONE RETROSPECTIVE DEVELOPMENT RUN**; exact dirty source snapshot was not retained, so it is ineligible for confirmatory evaluation and supports neither physical berth infeasibility nor a unique obstacle cause |
@@ -66,9 +110,13 @@ risk as distinct claims. No level is currently established for either claim.
 | RoboBoat has credible baseline navigation/docking | command-response tests, long path tracking, independent docking predicates, 8/8 post-correction docks | **SUPPORTED FOR DEVELOPMENT BASELINE**, prospective diagnosis `NOT_RUN` |
 | Wave drift is diagnosed | no validated wave-force attribution or robot-visible discriminator | **DO NOT CLAIM** |
 | Human trust or real-world reliability improved | no user study or hardware validation | **DO NOT CLAIM** |
+| CRANE has a machine-readable evidence-calibration method stack | P2--P10 development artifacts implement claim contracts, deletion-only evidence ladders, evaluator references, maximal-supported diagnosis, constrained realization, B0--B4 parity export, blinded automated-agent packets, and episode-clustered analysis; the focused stack passes | **SUPPORTED AS DEVELOPMENT IMPLEMENTATION ONLY**; B4 has 60 development responses, but B2 has zero valid new-pilot responses, the exact atomic agent task is unqualified, and there is no confirmatory effect or deployment evidence |
+| B4 reduces evidence-calibration failures relative to B2 | New prospective evidence-calibration confirmation has not started | **UNRESOLVED / DO NOT CLAIM AN EFFECT**; confirmatory independent N=0, replication N=0, and P11 is not frozen |
+| The new study is adequately powered at a fixed sample size | Hypothetical paired-discordance simulation at the audited maximum discovery alpha of 0.01 spans 40--320 acquired episodes. At N=100, estimated power is 0.103, 0.500, and 0.923 for illustrative 8-, 16-, and 26-point reductions; the 16-point scenario first exceeds 0.80 at N=200 in the grid | **DESIGN SENSITIVITY ONLY / ADEQUACY UNRESOLVED**; values are assumptions, not pilot estimates. No N or coverage floor is frozen, and the 100 non-materialized old-schedule layouts cannot be assumed sufficient |
 
-The short/WIP paper structure is: (1) honestly bounded legacy provenance inventory, (2) the
-diagnosis-to-language method, (3) reproducible land and focused surface-vehicle development cases,
-(4) the qualified but finite automated-judge arm and negative baseline/verifier findings, and (5) limitations
-distinguishing simulation relevance, factual correctness, diagnostic usefulness, and human trust.
-It reports no confirmatory method effect.
+The redirected short/WIP paper structure is: (1) evidence-calibration formalism, (2) nested
+robot-visible evidence interventions over fixed land/Nav2 episodes, (3) maximal-supported
+diagnosis and claim-aware realization, (4) a prospective B0--B4 risk--coverage evaluation, and
+(5) preserved historical development evidence explaining why raw diagnostic superiority and
+automated-judge results are insufficient. RoboBoat remains development context rather than a new
+submission-scope contribution. The manuscript reports no confirmatory method effect.

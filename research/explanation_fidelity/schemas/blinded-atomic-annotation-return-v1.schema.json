@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://crane.local/schemas/blinded-atomic-annotation-return-v1.schema.json",
+  "title": "Completed independent blinded atomic annotation return",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "packet_set_sha256", "form_id", "packet_id", "annotator_slot", "annotator_id", "atomic_labels", "required_unit_coverage", "highest_asserted_abstraction_level", "limitation_preservation", "false_premise_handling", "annotator_attestation"],
+  "properties": {
+    "schema": {"const": "crane-blinded-atomic-annotation-return/v1"},
+    "packet_set_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "form_id": {"type": "string", "minLength": 1},
+    "packet_id": {"type": "string", "minLength": 1},
+    "annotator_slot": {"enum": ["A", "B"]},
+    "annotator_id": {"type": "string", "minLength": 1},
+    "atomic_labels": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["item_id", "label", "annotation_notes"], "properties": {"item_id": {"type": "string"}, "label": {"enum": ["SUPPORTED_BY_VISIBLE_EVIDENCE", "CONTRADICTED_BY_VISIBLE_EVIDENCE", "INSUFFICIENT_VISIBLE_EVIDENCE", "PHYSICALLY_TRUE_BUT_UNSUPPORTED", "UNINTERPRETABLE"]}, "annotation_notes": {"type": ["string", "null"]}}}},
+    "required_unit_coverage": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["unit_prompt", "communicated", "response_span"], "properties": {"unit_prompt": {"type": "string"}, "communicated": {"type": "boolean"}, "response_span": {"type": ["string", "null"]}}}},
+    "highest_asserted_abstraction_level": {"type": "string", "minLength": 1},
+    "limitation_preservation": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["limitation_prompt", "preserved", "response_span"], "properties": {"limitation_prompt": {"type": "string"}, "preserved": {"type": "boolean"}, "response_span": {"type": ["string", "null"]}}}},
+    "false_premise_handling": {"enum": ["NOT_APPLICABLE", "REJECTED_FALSE_PREMISE", "ACCEPTED_FALSE_PREMISE", "PARTIAL_OR_AMBIGUOUS", "UNINTERPRETABLE"]},
+    "annotator_attestation": {"const": "INDEPENDENT_BLINDED_COMPLETE"}
+  }
+}

@@ -1,6 +1,110 @@
 # Research and benchmark source audit
 
-Current checkpoint: the fixed-suffix P-contract-v4/R-contract development pilot is complete and
+## 2026-09-28 — evidence-calibrated specificity redirect
+
+The forward research question is now whether explanation specificity tracks the diagnostic
+evidence available to the robot. The project no longer centers a claim that a checked pipeline is
+a better failure diagnostician than a strong repository-aware/tool-enabled agent. Existing
+development evidence does not support that framing: strong agents often recovered the same central
+diagnosis, checked candidates frequently relied on deterministic fallback, and the completed
+contract screens did not justify confirmation.
+
+The additive prospective specification is
+[`docs/EVIDENCE_CALIBRATION_PROTOCOL.md`](EVIDENCE_CALIBRATION_PROTOCOL.md), and the machine-readable
+P0 disposition is
+[`manifests/study/evidence-calibration-redirect-audit-v1.json`](../manifests/study/evidence-calibration-redirect-audit-v1.json).
+The formal target is a set of atomic claims whose specificity is licensed by claim-specific
+robot-visible evidence contracts. Controlled, removal-only evidence masks hold a physical episode
+fixed while changing what the explanation method may observe. Evaluator truth and evidential
+support remain separate, including the explicit category `PHYSICALLY_TRUE_BUT_UNSUPPORTED`.
+
+The paper is limited to exactly three contributions: (C1) the evidence-calibration formalism, (C2)
+a controlled nested-evidence land/Nav2 benchmark, and (C3) a diagnostic-contract method with
+risk/coverage evaluation. ROS/Nav2 RAG, accountable recording, provenance-to-language planning,
+atomic attribution, abstention, risk--coverage, and input-removal evaluation are established prior
+art. The scoped gap and its primary-source boundaries are audited in
+[`docs/research/EVIDENCE_CALIBRATED_EXPLANATION_FOUNDATIONS.md`](research/EVIDENCE_CALIBRATED_EXPLANATION_FOUNDATIONS.md).
+
+All prior results remain visible. The 33-episode F/G/H cohort is **LEGACY EXPLORATORY /
+UNDER-TARGET**. The old focused campaign's 56 paired outputs and automated labels are fully
+inspected development/regression evidence; its registered N=24 release was invalid, and its
+ID-repaired analysis is only a post-hoc sensitivity. The new evidence-calibration study has
+confirmation N=0, replication N=0, no frozen coverage floor, and no authorized confirmatory model
+outputs. The next gate is validation of contracts, masks, references, methods, qualified automated
+agent annotation, and episode-clustered statistics before a new semantic freeze.
+
+Current redirect checkpoint (2026-09-29): P0--P10 development infrastructure is implemented for
+typed claim contracts, deterministic removal-only evidence ladders, evaluator references,
+maximal-supported diagnosis, constrained claim-aware realization, B0--B4 parity packets, blinded
+automated-agent annotation packets, episode-clustered analysis, prospective power simulation, and a
+fail-closed P11 readiness audit. On 16 inspected physical/reference episodes, B4 generated and
+verified 60/60 deterministic condition-level outputs. B2 produced zero valid outputs after three
+retained, non-retried infrastructure/transport failures; 57 logical requests were never launched.
+This is a pipeline pilot, not the required fresh development pilot and not evidence for either
+method. P11 remains closed with 14 genuine prerequisites; confirmation and replication remain at
+independent N=0. The prospective agent-annotation amendment adds exact-task held-out qualification
+rather than assuming Luna v12 transfers automatically.
+
+A non-study transport preflight now separates the external blocker from the study: the Codex CLI,
+Responses provider configuration, and credential are present, but the managed shell disables
+outbound sockets. Model execution therefore moves to a normal network-enabled host terminal using
+the same repository and immutable caches; no DNS or authentication change is justified here. The configured provider hostname
+does not resolve in the current sandbox. No study request was launched by that preflight. The
+cumulative error-budget audit also closes an ambiguity without spending alpha: 0.02 is permanently
+consumed, at most 0.01 remains for one future discovery endpoint, and the remaining 0.02 is
+replication-only. Final binding still belongs in P11 after the fresh pilot fixes the endpoint and
+coverage requirement.
+
+Power sensitivity has therefore been rerun at the actually available maximum discovery alpha of
+0.01, not a generic 0.05. With the declared hypothetical paired-outcome ranges and invalid rates,
+100 acquired episodes yield about 0.50 power for a moderate 16-point paired risk reduction and
+about 0.92 only for a large 26-point reduction. The moderate scenario reaches at least 0.80 near
+200 acquired episodes; an 8-point reduction remains underpowered even at 320. These are planning
+sensitivities, not effect estimates. They rule out treating the 100 non-materialized old-schedule
+layouts as automatically adequate and reinforce the requirement to estimate discordance from a
+valid development pilot before freezing N.
+
+Mechanism-specific ladders are no longer merely prose placeholders. An ontology-checked
+development catalog now defines four removal-only ladders: full command--motion/recovery,
+genuinely missing odometry, nominal false premise, and secondary geometry/planning. The primary
+terminal condition can support a discrepancy or measured recovery but contains no validated motor,
+collision, slip, obstruction, or intervention-identity evidence; those deeper claims therefore
+remain structurally unavailable. This closes the design ambiguity at development level, but the
+ladders are not frozen for confirmation until the pilot validates packet construction and scoring.
+
+The corresponding population candidate preserves the mature old-schedule mixture without treating
+controls as primary wins: 35% persistent discrepancy, 35% measured recovery, 15% genuinely
+missing-odometry controls, and 15% nominal false-premise controls. The primary paired comparison is
+conditionally balanced 50/50 across the first two families; controls are reported separately, and
+geometry remains a non-pooled secondary arm. The candidate uses one terminal semantic look and no
+quality-driven replacement. These choices are recorded before new outputs but remain development
+candidates until valid pilot discordance supports an achievable N and P11 freezes them.
+
+The original human-measurement path remains preserved but is prospectively superseded for
+not-yet-generated annotation. The active candidate uses dedicated schemas, two isolated blinded
+agent calls, an agreement report, and disagreement-only Agent C. No empirical agent dry run or
+exact-task held-out qualification exists, so this tooling does not satisfy P11 and adds no
+scientific sample. Outputs must be called agent-assessed; same-model correlated error remains a
+declared limitation.
+
+Reserve reconciliation (2026-09-29) corrects an overbroad living-status statement without changing
+any frozen artifact. The executable v6 audit finds that all 120 confirmation-reserve layouts have
+robot-visible physical artifacts: the original schedule and later development qualification/pilot
+work together exhausted that catalog split. It also finds that `cr-pilot-001` through
+`cr-pilot-020` physically used 20 layouts carrying the replication-reserve label. The other 100
+replication layouts have no physical artifacts, but every one is already allocated by the old
+frozen replication schedule. They are therefore **scheduled but non-materialized and quarantined**,
+not an untouched convenience pool for another pilot. The evidence-calibration redirect treats the
+140 materialized layouts as development only and spends none of the remaining 100 before a
+prospective cohort-allocation decision. The pinned audit is
+[`manifests/study/command-motion-layout-freshness-audit-v1.json`](../manifests/study/command-motion-layout-freshness-audit-v1.json).
+
+The anonymous manuscript now builds as a visually inspected nine-page full-paper snapshot. Its
+mechanical submission audit passes page range, anonymity, embedded-font, source-freshness, and
+numeric-traceability checks. This packaging result does not satisfy the scientific freeze or turn
+development evidence into a submission claim.
+
+Prior contract checkpoint: the fixed-suffix P-contract-v4/R-contract development pilot is complete and
 did not pass its prospective promotion gate. Of 19 scheduled configurations, 17 produced complete
 two-pass comparisons (13 primary and four controls); two physical attempts were retained as
 technical failures without replacement. On the primary population, Claim A was 0.000 under the
@@ -384,6 +488,20 @@ Fit and cost: high positioning value but low direct integration value. Its custo
 - The Explainability-by-Design work was verified as an arXiv preprint only; do not invent a journal venue or DOI.
 - External datasets must be audited for episode-level duplication and evaluator-truth leakage before use.
 
+## 2026-09-29 retained-run and annotation-qualification update
+
+The repository-wide retained-run audit binds 10,168 prior JSON/JSONL artifacts by hash. It confirms
+that 386 historical annotation packets use earlier schemas and cannot be recast as the new atomic
+evidence-calibration labels. The 237 retained response-pair artifacts are eligible only for a
+case-by-case, development-only evidence-closure review. The audit also preserves one malformed
+historical packet rather than repairing it.
+
+A prospective exact-task agent qualification is frozen with four development fixtures and 16 fresh
+held-out construction-defined cases. No qualification call has yet run because the managed shell
+cannot open outbound sockets. Therefore no automated agent is authorized for primary scoring, no
+B2/B4 comparison can yet be annotated, and the scientific state remains confirmation N=0 and
+replication N=0.
+
 ## Primary-source index
 
 - TRUSTMORE 2026 official site and portal configuration: <https://trustmoreai.github.io/workshop2026/>, <https://api2.openreview.net/invitations?id=IEEE.org%2FBigData%2F2026%2FWorkshop%2FTRUSTMORE%2F-%2FSubmission>
@@ -399,3 +517,39 @@ Fit and cost: high positioning value but low direct integration value. Its custo
 - HEXAR: <https://arxiv.org/abs/2601.03070>
 - HEXAR project/data: <https://pradippramanick.github.io/hexar/>, <https://github.com/fgebelli/HEXAR>
 - Temporal counterfactual BT explanations: <https://arxiv.org/abs/2509.07674>, <https://github.com/tamlinlove/btcm>
+
+## 2026-09-29 implementation status: evidence-calibrated explanation
+
+The redirect now has development implementations for P2 through P10: a 24-requirement/16-claim
+ontology with five non-entailments and a 16-node diagnostic DAG; deterministic removal-only nested
+evidence conditions; evaluator-only maximum-defensible references; a maximal-supported production
+diagnosis; constrained claim-ID realization with local repair; parity-audited B0--B4 packet export;
+two-form blinded agent atomic annotation with a separate join key and disagreement-only third-agent
+adjudication; and episode-clustered analysis and power
+sensitivity. The focused stack passes 59 tests, including a byte-reproducible end-to-end
+physical-truth-versus-visible-support canary.
+
+This is an implementation milestone, not an empirical finding. The new campaign still has
+confirmatory N=0 and replication N=0. No fresh B2/B4 model pilot or exact-task agent-annotation
+qualification/dry run has
+been completed, and no coverage floor, minimum practical effect, alpha allocation, model/prompt
+configuration, family weighting, stopping rule, or replication rule has been frozen. The
+hypothetical power grid shows why mask counts cannot rescue a weak episode-level effect: the small
+scenario reaches only 0.436 estimated power at 160 acquired episodes, while the illustrative
+moderate 16-point reduction reaches 0.820 near 120 acquired episodes after 10% invalidity. These
+values are sensitivity assumptions only and must not be presented as observed effect estimates.
+
+P11 therefore remains gated on a bounded fresh development pilot with actual B2 and B4 outputs,
+two isolated blinded agent annotations plus disagreement-only agent adjudication, exact-task
+held-out qualification, and an audit of the existing
+error-budget ledger. Confirmation may begin only after those results justify and freeze the
+measurement contract; negative pilot or confirmatory evidence remains a valid outcome.
+
+The fixed 16-episode inspected-data pipeline pilot has since produced all 60 deterministic B4 ladder outputs,
+each accepted by claim-aware verification. It has produced zero valid B2 responses: one condition
+failed before inference on a read-only app-server path and two distinct follow-up infrastructure
+canaries timed out without output, after which admission stopped. None was retried. This is a
+transport blocker, not evidence for or against B2, and no method comparison or qualified agent
+annotation is
+available. Fifty-seven B2 condition requests remain never launched, and the required fresh
+development pilot has not begun.

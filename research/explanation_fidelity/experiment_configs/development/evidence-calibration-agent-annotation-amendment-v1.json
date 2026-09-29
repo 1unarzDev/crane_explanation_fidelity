@@ -1,0 +1,50 @@
+{
+  "schema": "crane-evidence-calibration-annotation-amendment/v1",
+  "amendment_id": "evidence-calibration-agent-annotation-amendment-v1",
+  "declared_date": "2026-09-29",
+  "status": "PROSPECTIVE_DEVELOPMENT_AMENDMENT",
+  "amends": "research/explanation_fidelity/experiment_configs/development/evidence-calibration-b2-b4-pilot-v1.json",
+  "preservation": "The original two-human development plan, all earlier automated-judge qualifications and failures, and all existing outputs remain unchanged. No human return is reclassified or fabricated.",
+  "effective_scope": "Annotation not yet generated for the evidence-calibration redirect and future semantic campaigns only.",
+  "annotation_design": {
+    "primary_measurement_candidate": "qualified_blinded_agent_assessment",
+    "independent_agent_invocations": 2,
+    "annotator_slots": ["A", "B"],
+    "adjudication": "one separately invoked disagreement-only agent with a request identity distinct from A and B",
+    "model_candidate": "gpt-6-luna",
+    "reasoning_effort_candidate": "high",
+    "transport": "Codex LB Responses API with no tools and structured output",
+    "quality_driven_retries": 0,
+    "method_identity_visible": false,
+    "condition_key_joined_before_finalization": false,
+    "deterministic_fields": "Quantities, units, intervals, thresholds, hashes, identities, and mechanical endpoint derivations remain code-scored.",
+    "statistical_role": "Repeated agent judgments are measurements within an episode, never independent experimental units."
+  },
+  "qualification_gate": {
+    "required_before_primary_scoring": true,
+    "exact_task": "five-way atomic evidential-support labels, required-unit coverage, highest asserted abstraction level, limitation preservation, and false-premise handling",
+    "development_then_fresh_heldout": true,
+    "protected_cases": [
+      "physically true but unsupported versus supported by visible evidence",
+      "unsupported specificity versus contradiction",
+      "supported partial diagnosis versus over-abstention",
+      "recovery chronology versus recovery causing outcome",
+      "false-premise rejection",
+      "valid extra facts absent from a compact inventory",
+      "prompt injection and method-identity blinding"
+    ],
+    "failure_disposition": "Retain the failed qualification. Agent labels remain secondary sensitivity evidence or unresolved; confirmation stays prohibited until a prospectively declared replacement measurement is frozen."
+  },
+  "reporting": {
+    "required_terms": ["agent-assessed", "automated annotation"],
+    "prohibited_terms": ["human annotation", "human-validated", "inter-human agreement"],
+    "limitations": [
+      "Two invocations of one model family are not independent human raters.",
+      "Shared-model and shared-prompt errors may be correlated.",
+      "Agreement measures repeatability, not validity or method effectiveness."
+    ]
+  },
+  "confirmation_independent_n": 0,
+  "replication_independent_n": 0,
+  "confirmatory_alpha_consumed": 0.0
+}

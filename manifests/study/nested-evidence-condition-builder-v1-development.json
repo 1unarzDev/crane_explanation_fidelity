@@ -1,0 +1,45 @@
+{
+  "schema": "crane-nested-evidence-condition-builder-checkpoint/v1",
+  "checkpoint_id": "nested-evidence-condition-builder-v1-development",
+  "recorded_date": "2026-09-29",
+  "status": "P3_DEVELOPMENT_IMPLEMENTED_NOT_FROZEN_FOR_CONFIRMATION",
+  "implementation": {
+    "path": "analysis/build_nested_evidence_conditions.py",
+    "sha256": "82e4a2f54be3b983af13473dadd95f059684105b55e3456100ac2c271c870548",
+    "builder_id": "nested-evidence-condition-builder",
+    "builder_version": "v1"
+  },
+  "schemas": [
+    {"path": "research/explanation_fidelity/schemas/evidence-condition-v1.schema.json", "sha256": "8921a53da770c8c6256647f536def2183ad9d089c54ad69c9a305d3fdb8d3961"},
+    {"path": "research/explanation_fidelity/schemas/nested-evidence-mask-spec-v1.schema.json", "sha256": "34871c6c02f0ac4643571ae246b7d335b3f67f4cb761e9da67c04c2ec44bfa85"}
+  ],
+  "semantics": {
+    "order": "E0 is the weakest condition and Ek is the unmasked strongest condition.",
+    "independent_unit_increment_per_ladder": 1,
+    "mask_operation": "DELETE_ONLY_UNDER_EVIDENCE_OBJECT",
+    "stronger_condition_rule": "A stronger condition may only restore pointers removed from a weaker condition.",
+    "truth_isolation": "Known evaluator-only keys are rejected recursively before and after masking.",
+    "determinism": "Every condition is independently derived from one canonical source packet; canonical JSON and SHA-256 identify source, mask, and output."
+  },
+  "validation": {
+    "tests": "tests/test_nested_evidence_conditions.py",
+    "passed": 5,
+    "failed": 0,
+    "coverage": [
+      "byte-identical rebuild",
+      "set-nested roles and evidence IDs",
+      "removal-only value preservation",
+      "evaluator-truth rejection",
+      "metadata-removal rejection",
+      "non-monotone mask rejection",
+      "missing and overlapping pointer rejection"
+    ]
+  },
+  "limitations": [
+    "Mechanism-specific land ladders and source-packet adapters remain development work and must be frozen before confirmation.",
+    "The generic builder does not declare evidence sufficient; P4 evaluator references and public claim requirements make that determination.",
+    "Legacy masks remain immutable and are not silently converted into independent samples."
+  ],
+  "confirmation": {"authorized": false, "independent_n": 0},
+  "next_gate": "P4 evaluator-only highest-defensible-diagnosis references for each episode and evidence condition."
+}

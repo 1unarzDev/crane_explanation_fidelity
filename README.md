@@ -434,12 +434,13 @@ scripts/build_paper.sh
 python scripts/audit_submission_readiness.py --category short
 ```
 
-This writes `output/pdf/main.pdf`. The current manuscript is an anonymous seven-page WIP draft
-with no unresolved result placeholders, so it is not yet eligible for the 4--6 page short/WIP or
-8--9 page full-paper categories. It reports deterministic development measurements,
-information-parity negative findings, 13/13 proposed-method fallback, and the failed bounded Luna
-judge qualification; it makes no semantic superiority claim. The original human workflow remains
-available but incomplete, and automated labels are never represented as human annotations.
+This writes `output/pdf/main.pdf`. The current manuscript is an anonymous nine-page full-paper
+snapshot with no unresolved result placeholders. It reports deterministic development measurements,
+information-parity negative findings, extensive fallback, and the complete retained Luna
+qualification/failure history; it makes no semantic superiority claim. The original human workflow
+is preserved as historical development design. New evidence-calibration annotations prospectively
+use a separately qualified blinded agent workflow and are always reported as agent-assessed, never
+human-validated.
 The build pins `SOURCE_DATE_EPOCH` to the latest checked-out paper-source commit unless the caller
 explicitly sets it, so repeated builds of one paper revision are byte-identical.
 The readiness audit passes only when the selected page category, anonymity, PDF, and numeric

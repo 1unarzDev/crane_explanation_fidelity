@@ -1,5 +1,77 @@
 # Experiment Log
 
+## 2026-09-29 — v6 reserve freshness reconciliation
+
+- **AUDIT:** hash-pinned executable reconciliation joins the v6 catalog, original 100+100 schedule,
+  contract-complete schedules, physical manifests/directories, and model-output identities.
+- **CONFIRMATION-LABELLED SPLIT:** 120/120 layouts have robot-visible physical artifacts and are
+  development-only for the evidence-calibration redirect; 73 currently have discoverable semantic
+  output artifacts.
+- **REPLICATION-LABELLED SPLIT:** 20/120 layouts have physical development artifacts from
+  `cr-pilot-001...020`; 18 have discoverable semantic outputs. The remaining 100 have no physical
+  artifacts but are allocated by the old frozen `cm-land-repl` schedule.
+- **CORRECTION:** prior living text saying the whole replication reserve was untouched was too
+  broad. Frozen historical files and outputs are unchanged. The accurate current description is
+  “20 development-contaminated; 100 scheduled but non-materialized and quarantined.”
+- **DECISION:** do not spend the remaining 100 on a convenience pilot. Complete transport and
+  development calibration on already materialized episodes, then make one prospective allocation
+  decision informed by episode-level power—not by method outcomes.
+- **RECORD:** `analysis/audit_command_motion_layout_freshness.py` and
+  `manifests/study/command-motion-layout-freshness-audit-v1.json`.
+
+## 2026-09-29 — power sensitivity aligned to the audited alpha ledger
+
+- **CORRECTION:** development power simulation now uses alpha=0.01, the maximum still available
+  for discovery, rather than generic alpha=0.05. This binds and spends no alpha.
+- **UNIT:** whole episode/configuration; evidence masks remain repeated observations and never
+  increase independent N.
+- **RESULT:** at acquired N=100, estimated power is 0.103 for an 8-point paired reduction, 0.500
+  for a 16-point reduction, and 0.923 for a 26-point reduction under the declared invalid rates.
+  The 16-point scenario first exceeds 0.80 in the grid at N=200; the 8-point scenario remains below
+  0.80 through N=320.
+- **DECISION:** no sample size is frozen. The 100 scheduled non-materialized layouts are not assumed
+  adequate; actual development discordance and useful-coverage behavior must inform P11.
+
+## 2026-09-29 — mechanism-specific ladder catalog validated in development
+
+- **CATALOG:** four explicit removal-only ladders cover full command--motion/recovery, missing
+  odometry, nominal false premise, and secondary geometry/planning.
+- **CONTRACT CHECK:** each level's potentially assessable claims are derived from the public
+  ontology's required evidence roles; stronger levels may only restore roles.
+- **CAUSAL BOUNDARY:** primary E3 exposes no validated motor, collision, slip, obstruction, or
+  intervention identity. Missing-odometry E2 cannot assess discrepancy or measured recovery.
+- **STATUS:** `PASS_DEVELOPMENT_NOT_FROZEN`; no model output, annotation, independent N, or alpha.
+- **NEXT:** validate instantiated packets in the development pilot, then freeze the selected
+  ladders at P11 rather than changing them after confirmatory scoring.
+
+## 2026-09-29 — population and stopping candidates recorded before new outputs
+
+- **MIXTURE:** 35% persistent discrepancy, 35% measured recovery, 15% missing-odometry controls,
+  and 15% nominal false-premise controls. The primary conditional comparison is 50/50 across the
+  first two families; controls cannot dilute or rescue it.
+- **FACTORS:** balance nominal-clear-route/connected-detour schedule strata; retain valid unexpected
+  task outcomes without replacement or outcome-dependent reweighting.
+- **GEOMETRY:** separate secondary arm, deferred pending adapter/diversity validation and never
+  pooled into the primary test.
+- **STOPPING CANDIDATE:** one fixed terminal semantic look, operational monitoring only beforehand,
+  and no quality-driven retries or replacements.
+- **REPLICATION CANDIDATE:** fresh configurations, unchanged selected method/endpoint, separate
+  reporting, and the protected alpha=0.02. N remains unset.
+- **STATUS:** development candidate only; P11 and confirmation remain closed.
+
+## 2026-09-29 — redirect validation checkpoint after reserve and design corrections
+
+- **FOCUSED:** 76/76 evidence-calibration, ladder/population/freshness, pilot, transport, alpha,
+  and annotation/adjudication tests pass; compilation and whitespace checks pass.
+- **REPOSITORY-WIDE:** with the repository root on `PYTHONPATH`, 549 tests pass and the same 24
+  historical frozen-artifact hash checks fail. Those failures correctly expose legacy protocols
+  pinning older shared-code bytes; frozen manifests were not rewritten to hide them.
+- **PAPER:** nine pages; mechanical full-paper audit passes, and 220 empirical assertions trace to
+  machine-readable artifacts. Visual review found no clipping, overlap, or unreadable table/reference
+  content.
+- **P11:** still fails closed on 13 substantive requirements. Confirmation N=0, replication N=0,
+  and no alpha is newly bound or consumed.
+
 ## 2026-09-27 — concise v1 screen stopped before Luna evaluation
 
 - **PAIRS:** 18/18 valid inspected captures received one deterministic P-v5 answer and one isolated
@@ -7912,3 +7984,191 @@ This authorizes only the zero-alpha fresh pilot, beginning with its fixed-order 
   it by asserting a blocked-wheel cause.
 - **DISPOSITION:** Final failure; no further correction, no promotion, no alpha binding.
   Confirmatory N=0 and replication remains unstarted.
+# 2026-09-29 — evidence-calibration P0/P1 audit and P2 ontology checkpoint
+
+- **REDIRECT:** the forward question is whether natural-language diagnostic specificity tracks the
+  robot-visible evidence condition, not whether checked P generally diagnoses better than strong
+  tool-enabled R. The additive protocol defines exactly three contributions: formalization,
+  controlled nested-evidence benchmark, and diagnostic-contract risk/coverage evaluation.
+- **PRESERVATION:** the 33-episode/198-response F/G/H cohort is `LEGACY EXPLORATORY /
+  UNDER-TARGET`. The focused campaign's 56 inspected P/R pairs (43 primary, 13 controls), invalid
+  registered N=24 release, post-hoc ID-repair sensitivity, failed candidates, and consumed 0.02
+  alpha remain unchanged and cannot become new confirmation.
+- **ONTOLOGY:** `crane-land-evidence-calibration-contracts-v1-development` contains 24 typed
+  evidence requirements, 16 atomic claim contracts, five explicit non-entailments, and a 16-node
+  per-family DAG. Public contracts contain no episode answer or evaluator truth. Command--motion
+  discrepancy requires valid synchronized command and odometry evidence and explicitly does not
+  entail motor failure, collision, slip, obstruction, or intervention identity.
+- **VALIDATION:** strict canonical JSON loading, cross-reference/DAG validation, evaluator-leakage
+  rejection, evidence-condition identity checks, derived-support enforcement, ambiguity,
+  false-premise, and schema tests pass (10/10 ontology tests; 14/14 with submission-readiness
+  checks). Manuscript numeric traceability passes all 212 retained assertions.
+- **BOUNDARY:** this is development infrastructure, not a semantic freeze or result. New
+  evidence-calibration confirmation and replication N remain zero.
+- **P3 CONDITION BUILDER:** the new generic builder derives every condition from one normalized
+  method-visible source packet. E0 is weakest and Ek is the unmasked strongest condition; removed
+  pointer sets can only shrink as evidence increases. The builder rejects value rewriting,
+  metadata removal, absent/overlapping pointers, evaluator-only keys, non-contiguous levels, and
+  non-monotone masks. Five focused tests prove byte-identical rebuild, set nesting, value
+  preservation, and leakage rejection. Mechanism-specific ladders are not frozen yet; P4
+  evaluator-only maximum-defensible references are next.
+- **P4 EVALUATOR REFERENCE:** a separate evaluator-only builder now requires a complete requirement
+  assessment for every evidence condition, accepts support references only when their evidence IDs
+  are visible in that condition, and joins physical truth only after support is computed. Its
+  output distinguishes supported, contradicted, insufficient, and
+  `PHYSICALLY_TRUE_BUT_UNSUPPORTED` claims and computes the highest defensible node set over the
+  diagnostic DAG. A five-level development fixture deepens from outcome/recovery facts to a
+  command--motion discrepancy and then to a specific obstruction only after independent
+  obstruction evidence is restored. This one episode remains one development cluster and adds no
+  confirmation N. P5 maximal-supported production diagnosis is next.
+- **P5 MAXIMAL-SUPPORTED DIAGNOSIS:** the production engine evaluates only robot-visible
+  requirement facts bound to one condition hash. It retains independent lower-level claims,
+  selects maximal supported nodes per diagnostic DAG, emits explicit ambiguity for incomparable
+  alternatives, and attaches registered non-entailments. In the development ladder, missing
+  odometry retains the command observation but withholds discrepancy; synchronized odometry enables
+  the discrepancy with causal limits; a specific obstruction is approved only when separately
+  validated evidence is visible. Five production-engine tests join the P2--P4 suite for 29/29
+  focused checks. No confirmation output is authorized.
+
+# 2026-09-29 — evidence-calibration P6--P10 development implementation
+
+- **P6 CLAIM-AWARE REALIZATION:** a closed realization plan binds required/optional approved claim
+  IDs, every registered numeric slot, and every required non-entailment to the diagnostic-result
+  hash. Candidate clauses cannot introduce free-form propositions. Invalid or numerically
+  inconsistent clauses are removed locally; independently valid clauses remain, and missing
+  required claims or limitations are reconstructed deterministically. This is a development B4
+  component, not evidence that realization is useful or superior.
+- **P7 METHOD PARITY:** the B0--B4 packet builder gives every condition the same hash-bound evidence
+  inventory and audits B2--B4 against identical governed source assets and primitive tools. B3 and
+  B4 alone receive the diagnostic-contract assets that define those methods; only B4 enables final
+  claim verification. Five method packets from one ladder condition add zero physical samples.
+- **P8 HUMAN ANNOTATION:** the packet builder creates exactly two blank atomic-claim forms. Method,
+  response, and registered claim identities are held in a separate key that may be joined only
+  after adjudication. Automated judges are marked secondary sensitivity only. No human annotation
+  was collected at this checkpoint.
+- **P9 ANALYSIS:** development code aggregates the primary failure over the entire evidence ladder
+  at episode level; reports the paired four-cell table, B4-minus-B2 risk difference, whole-episode
+  bootstrap interval, and exact two-sided McNemar test; and reports USR, SDR, ECA, EMVR,
+  abstention, over-abstention, and false-premise counts with raw denominators. The declared
+  evidence-level alternative is cluster-robust logistic regression by episode and fails visibly on
+  separation or insufficient clusters. Secondary-family multiplicity remains Holm.
+- **POWER SENSITIVITY:** 5,000-replicate hypothetical scenarios cover 40--160 acquired independent
+  episodes, explicit invalid-run attrition, and B2-only/B4-only discordance. Under the illustrative
+  moderate scenario (0.24 B2-only versus 0.08 B4-only failure; 10% invalid), estimated power is
+  0.738 at 100 acquired episodes and 0.820 at 120. Under the small scenario it remains 0.436 even
+  at 160. These are planning sensitivities, not effect estimates, targets, or alpha spending.
+- **P10 INTEGRATION:** the end-to-end development canary verifies that an evaluator-side obstruction
+  can be physically true but unsupported at E3, remains unavailable to the production diagnosis,
+  cannot appear in B4 output, and is separated from blinded method identity. The focused P2--P10
+  suite passes 59/59 tests and byte-reproducibility checks.
+- **STOP/GATE:** P11 is deliberately not frozen. A fresh actual B2/B4 development pilot, a
+  two-human annotation/adjudication dry run, ledger-based alpha allocation, and prospective choices
+  of coverage floor, practical effect, models, prompts, population, and stopping rule remain
+  necessary. Confirmatory N=0; replication N=0; no confirmatory model output or annotation was
+  generated.
+- **PIPELINE-PILOT PREDECLARATION:** `evidence-calibration-b2-b4-pilot-v1` fixes 16 inspected
+  physical/reference episodes by a source-order-within-family rule: six persistent discrepancies,
+  six recovery cases, two missing-evidence controls, and two nominal/false-premise controls. It
+  compares one-shot high-reasoning `gpt-6-sol` B2 against deterministic B4 over registered nested
+  conditions with two independent human annotators. The pilot is `PREDECLARED_NOT_RUN`, uses no
+  alpha, is not the still-required fresh development pilot, and cannot become confirmation. Its
+  immediate unresolved dependency is materializing the family-specific method packets and
+  obtaining actual model/human work.
+- **PILOT PARTIAL EXECUTION:** all 60 B4 condition outputs were generated deterministically and
+  passed claim-aware verification. B2 produced zero valid outputs. E0 failed before inference when
+  Codex attempted a read-only app-server path; E1 timed out after writable-home staging; E2 timed
+  out after direct-provider staging. All failures are retained, none was retried, and admission of
+  the remaining 57 conditions stopped. No human annotation or scientific comparison is available;
+  P11 remains locked.
+
+# 2026-09-29 — manuscript packaging and repository-wide validation checkpoint
+
+- **PAPER:** the redirected anonymous manuscript builds reproducibly as nine letter-size pages,
+  with all fonts embedded and no unresolved pending markers. Every page was rendered and visually
+  inspected; the unreadable legacy-summary table was removed because its claims are already
+  retained in prose and governed artifacts. The full-paper submission-readiness audit passes,
+  including all 212 mapped empirical assertions. This is packaging readiness, not scientific
+  confirmation or submission.
+- **OFFLINE BUILD:** `scripts/build_paper.sh` retains its default pinned Tectonic download and now
+  also accepts an explicit executable plus cache-only mode. The cache-only path reproduced the
+  audited PDF without changing manuscript content or bypassing font checks.
+- **REDIRECT TESTS:** 55 focused redirect and submission-readiness tests pass. Python compilation,
+  shell syntax, redirect JSON parsing, and `git diff --check` also pass.
+- **REPOSITORY-WIDE AUDIT:** the root `tests/` run passed 527 tests and failed 24 historical
+  frozen-artifact checks. Those failures compare old protocol hashes with later bytes already in
+  repository `HEAD` (including shared diagnostic, capture, packet, and judge code); they are not
+  repaired by rewriting frozen manifests. Unscoped collection also encounters seven missing
+  ROS/package-environment imports. These are preserved integrity/environment findings, not
+  evidence-calibration test regressions.
+- **FREEZE:** the P11 audit still fails closed on 13 substantive prerequisites. Confirmation and
+  replication remain at independent N=0.
+
+# 2026-09-29 — B2 transport preflight and cumulative alpha audit
+
+- **TRANSPORT PREFLIGHT:** a content-free, non-study schema canary timed out after 90 seconds with
+  no parsed answer. A subsequent fail-fast preflight verified `codex-cli 0.158.0`, the active
+  Responses provider configuration, and credential presence, but found zero resolved addresses for
+  the configured provider hostname. The preflight attempted no model or study request and changed
+  no scientific N. Admission remains stopped; E0/E1/E2 are not retried.
+- **ALPHA LEDGER:** the authoritative 0.05 program ledger contains 0.02 permanently consumed by the
+  closed focused campaign, 0.01 available as the sole candidate-revision reserve, and 0.02 available
+  only for selected-method replication. The new audit validates every allocation and source hash.
+  It binds and consumes 0.0 and does not authorize confirmation.
+- **PROSPECTIVE BOUNDARY:** if the fresh development pilot justifies confirmation, P11 may bind at
+  most the 0.01 candidate reserve to exactly one primary endpoint. The 0.02 replication reserve
+  cannot be borrowed for pilot work, infrastructure failures, judge qualification, or discovery.
+- **P8 COMPLETION TOOLING:** the evidence-calibration annotation path now validates completed A/B
+  returns, exact opaque-claim inventories, required-unit and limitation spans, abstraction levels,
+  false-premise labels, distinct human identities, and blinded attestations. It computes agreement,
+  emits a disagreement-only handoff without annotator/method/key identities, requires a distinct
+  third-person adjudicator, preserves both original values, and rejects invented third values or
+  premature key joining. Eight focused packet/adjudication tests pass. No human return or
+  adjudication has been fabricated; both P11 human gates remain `TOOLING_READY_NOT_RUN`.
+- **EXPANDED REGRESSION:** 68 focused redirect, transport, alpha, annotation/adjudication, pilot,
+  and submission-readiness tests pass after these additions.
+
+# 2026-09-29 — automated-agent annotation amendment and transport-route audit
+
+- **AMENDMENT:** `evidence-calibration-agent-annotation-amendment-v1` prospectively replaces only
+  uncollected annotations. The original human-oriented pilot declaration and every prior Luna
+  success/failure remain immutable historical artifacts.
+- **AGENT WORKFLOW:** new tooling builds blinded automated-agent packets, runs separate A/B
+  structured no-tool requests, validates exact atomic/unit/limitation inventories, and invokes C
+  only on a disagreement-only handoff. The evaluator join key is never read by the runner. A unit
+  canary exercises all three logical calls and finalization without adding scientific N.
+- **QUALIFICATION STATUS:** `NOT_RUN`. Existing v12 evidence does not validate the new five-way
+  label taxonomy or physical-truth-but-unsupported distinction. Primary automated scoring is
+  prohibited pending a prospectively frozen fresh held-out qualification.
+- **TRANSPORT:** the updated fail-fast canary finds the CLI, exported LB credential, and ChatGPT
+  login, then identifies `CODEX_SANDBOX_NETWORK_DISABLED=1`. The resulting lookup failures are a
+  managed-parent socket boundary, not a reason to change DNS or authentication. No model call was
+  attempted. Host execution must reuse this repository and its immutable caches, proceed only at
+  `READY_FOR_SCHEMA_CANARY`, leave the three failed B2 identities retired, and resume only the 57
+  never-launched requests.
+- **REPORTING:** future semantic results are `agent-assessed`, never human-validated. Agreement is
+  pass repeatability, same-family correlated error is a limitation, and episodes remain the only
+  independent units.
+- **VALIDATION:** 57 focused evidence-calibration/transport tests pass. The complete root test
+  directory now reports 556 passed and the same 24 historical frozen-artifact hash failures; no
+  frozen manifest was rewritten to conceal them. Unscoped repository collection still stops on the
+  same seven missing ROS/ament/package-environment imports.
+
+# 2026-09-29 — retained-run audit and exact-task annotation qualification freeze
+
+- **RETROSPECTIVE INVENTORY:** a hash-bound audit covers 10,168 retained JSON/JSONL artifacts
+  totaling 1.81 GB. It identifies 237 response-pair artifacts requiring case-level evidence closure
+  before any fresh development annotation and 386 historical packets that must not be converted to
+  the new five-way taxonomy. One malformed historical JSONL packet is retained and flagged.
+- **RETROSPECTIVE RESULT:** fair evidence closure eliminated the earlier large apparent P advantage;
+  the contract-complete pilot produced no robust promotion signal; and all seven findings from the
+  causal-link keyword detector failed contextual audit. These are development findings supporting
+  the redirect, not a new effect estimate.
+- **QUALIFICATION FREEZE:** the automated-agent exact-task suite is frozen before calls with four
+  construction-defined development cases and 16 held-out cases. It tests five-way atomic support,
+  coverage, abstraction, limitations, false premises, prompt injection, and the physical-truth
+  versus visible-support distinction. Both isolated Luna passes must pass every declared gate;
+  failures are retained without quality-driven retry.
+- **CURRENT ANALYSIS BOUNDARY:** B4 remains complete at 60/60 within-episode conditions, B2 remains
+  0/60 valid, and no comparative annotation or effect estimate exists. The three failed B2 logical
+  requests remain retired; only the 57 never-launched requests may resume from a network-enabled
+  host after `READY_FOR_SCHEMA_CANARY`.

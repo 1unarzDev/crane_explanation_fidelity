@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://crane.local/schemas/evidence-condition-v1.schema.json",
+  "title": "CRANE nested robot-visible evidence condition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "episode_id", "configuration_id", "condition_id", "ladder_id", "level_index", "parent_condition_id", "source_packet_sha256", "method_packet_sha256", "source_configuration_sha256", "runtime_manifest_sha256", "condition_builder_id", "condition_builder_version", "condition_builder_sha256", "mask_id", "mask_version", "mask_sha256", "available_evidence_ids", "available_evidence_roles", "removed_json_pointers", "visibility", "evaluator_only_absent"],
+  "properties": {
+    "schema": {"const": "crane-evidence-condition/v1"},
+    "episode_id": {"$ref": "#/$defs/id"}, "configuration_id": {"$ref": "#/$defs/id"},
+    "condition_id": {"$ref": "#/$defs/id"}, "ladder_id": {"$ref": "#/$defs/id"},
+    "level_index": {"type": "integer", "minimum": 0},
+    "parent_condition_id": {"oneOf": [{"$ref": "#/$defs/id"}, {"type": "null"}]},
+    "source_packet_sha256": {"$ref": "#/$defs/sha256"}, "method_packet_sha256": {"$ref": "#/$defs/sha256"},
+    "source_configuration_sha256": {"$ref": "#/$defs/sha256"}, "runtime_manifest_sha256": {"$ref": "#/$defs/sha256"},
+    "condition_builder_id": {"$ref": "#/$defs/id"}, "condition_builder_version": {"$ref": "#/$defs/id"},
+    "condition_builder_sha256": {"$ref": "#/$defs/sha256"},
+    "mask_id": {"oneOf": [{"$ref": "#/$defs/id"}, {"type": "null"}]},
+    "mask_version": {"oneOf": [{"$ref": "#/$defs/id"}, {"type": "null"}]},
+    "mask_sha256": {"oneOf": [{"$ref": "#/$defs/sha256"}, {"type": "null"}]},
+    "available_evidence_ids": {"$ref": "#/$defs/id_array"},
+    "available_evidence_roles": {"$ref": "#/$defs/id_array"},
+    "removed_json_pointers": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^/evidence/"}},
+    "visibility": {"const": "robot_visible"}, "evaluator_only_absent": {"const": true}
+  },
+  "$defs": {
+    "id": {"type": "string", "minLength": 1, "pattern": "^\\S(?:.*\\S)?$"},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "id_array": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/id"}}
+  }
+}

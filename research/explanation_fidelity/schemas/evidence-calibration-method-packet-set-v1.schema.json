@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://crane.local/schemas/evidence-calibration-method-packet-set-v1.schema.json",
+  "title": "Auditable B0--B4 evidence-calibration method packet set",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema", "builder_id", "builder_version", "execution_contract_id", "episode_id", "condition_id", "evidence_basis_sha256", "b2_b4_source_assets_sha256", "b2_b4_primitive_tools_sha256", "independent_episode_increment", "method_packets"],
+  "properties": {
+    "schema": {"const": "crane-evidence-calibration-method-packet-set/v1"},
+    "builder_id": {"$ref": "#/$defs/id"}, "builder_version": {"$ref": "#/$defs/id"},
+    "execution_contract_id": {"$ref": "#/$defs/id"}, "episode_id": {"$ref": "#/$defs/id"},
+    "condition_id": {"$ref": "#/$defs/id"}, "evidence_basis_sha256": {"$ref": "#/$defs/sha"},
+    "b2_b4_source_assets_sha256": {"$ref": "#/$defs/sha"}, "b2_b4_primitive_tools_sha256": {"$ref": "#/$defs/sha"},
+    "independent_episode_increment": {"const": 1},
+    "method_packets": {"type": "array", "minItems": 5, "maxItems": 5, "items": {"$ref": "#/$defs/packet"}}
+  },
+  "$defs": {
+    "id": {"type": "string", "minLength": 1}, "sha": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "ids": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/id"}},
+    "asset": {"type": "object", "additionalProperties": false, "required": ["asset_id", "version", "sha256"], "properties": {"asset_id": {"$ref": "#/$defs/id"}, "version": {"$ref": "#/$defs/id"}, "sha256": {"$ref": "#/$defs/sha"}}},
+    "packet": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schema", "method_id", "method_class", "episode_id", "condition_id", "question_instruction", "evidence_basis_sha256", "method_packet_sha256", "available_evidence_ids", "presentation", "source_assets", "primitive_tools", "contract_assets", "final_claim_verification", "physical_sample_increment", "packet_sha256"],
+      "properties": {
+        "schema": {"const": "crane-evidence-calibration-method-packet/v1"},
+        "method_id": {"enum": ["B0", "B1", "B2", "B3", "B4"]}, "method_class": {"$ref": "#/$defs/id"},
+        "episode_id": {"$ref": "#/$defs/id"}, "condition_id": {"$ref": "#/$defs/id"},
+        "question_instruction": {"type": "string", "minLength": 1}, "evidence_basis_sha256": {"$ref": "#/$defs/sha"},
+        "method_packet_sha256": {"$ref": "#/$defs/sha"}, "available_evidence_ids": {"$ref": "#/$defs/ids"},
+        "presentation": {}, "source_assets": {"type": "array", "items": {"$ref": "#/$defs/asset"}},
+        "primitive_tools": {"type": "array", "items": {"$ref": "#/$defs/asset"}},
+        "contract_assets": {"type": "array", "items": {"$ref": "#/$defs/asset"}},
+        "final_claim_verification": {"type": "boolean"}, "physical_sample_increment": {"const": 0},
+        "packet_sha256": {"$ref": "#/$defs/sha"}
+      }
+    }
+  }
+}

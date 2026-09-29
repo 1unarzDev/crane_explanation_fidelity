@@ -1,0 +1,46 @@
+{
+  "schema": "crane-evidence-calibration-development-pilot-status/v1",
+  "pilot_id": "evidence-calibration-b2-b4-pilot-v1",
+  "recorded_date": "2026-09-29",
+  "status": "B4_COMPLETE_B2_BLOCKED_STOPPED",
+  "independent_episode_count_scheduled": 16,
+  "within_episode_conditions_scheduled": 60,
+  "b4": {
+    "outputs_complete": 60,
+    "accepted_claim_aware_audits": 60,
+    "model_calls": 0,
+    "source": "manifests/study/evidence-calibration-b2-b4-pilot-v1-input-validation.json"
+  },
+  "b2": {
+    "valid_outputs": 0,
+    "technical_failures": 3,
+    "pre_inference_initialization_failures": 1,
+    "bounded_transport_timeouts": 2,
+    "remaining_not_launched": 57,
+    "failed_conditions": ["cm-land-conf-042-E0", "cm-land-conf-042-E1", "cm-land-conf-042-E2"],
+    "note": "E0 failed before inference under the read-only app-server path. E1 timed out after the writable-home repair. E2 timed out after direct-provider staging. E0 is retained in the model cache; E1 and E2 have explicit technical-failure records. None is a valid semantic response.",
+    "admission_stopped": true,
+    "quality_driven_retries": 0
+  },
+  "human_annotation": {
+    "independent_annotators_complete": 0,
+    "adjudicated_packets": 0
+  },
+  "transport_readiness": {
+    "audit": "manifests/operations/evidence-calibration-b2-transport-canary-v1.json",
+    "audit_sha256": "267d1c5d4b864d13a6663a25f59c626f460db4e2fdb00e83c55d2f11e346222e",
+    "status": "RUN_FROM_NETWORK_ENABLED_HOST",
+    "codex_cli_available": true,
+    "credential_present": true,
+    "provider_dns_resolved": false,
+    "managed_parent_network_disabled": true,
+    "model_call_attempted_by_preflight": false,
+    "scientific_sample": false
+  },
+  "scientific_interpretation": "NOT_AVAILABLE",
+  "fresh_episode_pilot": false,
+  "confirmation_alpha": 0.0,
+  "confirmation_independent_n": 0,
+  "p11_unlocked": false,
+  "next_action": "From a normal network-enabled host terminal using this repository and its unchanged immutable caches, rerun the non-study preflight. Proceed only at READY_FOR_SCHEMA_CANARY, then run one schema-only transport canary and resume only never-launched logical requests; do not retry the three failed condition requests."
+}

@@ -1,5 +1,44 @@
 # Decision Log
 
+## 2026-09-29 — correct the reserve boundary and protect the remaining physical cohort
+
+- **Decision:** replace the living shorthand “replication reserve untouched” with the audited
+  distinction “20 layouts physically materialized for development; 100 old-schedule layouts
+  non-materialized and quarantined.”
+- **Evidence:** the pinned catalog/schedule/artifact join finds 120/120 confirmation-labelled
+  layouts and 20/120 replication-labelled layouts physically materialized. `cr-pilot-001...020`
+  account for the latter 20. The remaining 100 all have old `cm-land-repl` allocations.
+- **Integrity consequence:** materialized layouts remain development-only; frozen schedules and
+  outputs are not edited. Non-materialized layouts are not spent on a new convenience pilot or
+  described as unallocated.
+- **Next gate:** use already materialized cases for transport, contract, annotation, and power
+  calibration. Reassign any of the 100 only once, prospectively, after the episode-level sample-size
+  requirement and replication protection are explicit.
+- **Record:** `manifests/study/command-motion-layout-freshness-audit-v1.json`.
+
+## 2026-09-28 — redirect the central claim to evidence-calibrated specificity
+
+- **Decision:** the forward study asks whether natural-language diagnostic specificity tracks
+  robot-visible evidence under controlled nested evidence conditions. It does not ask whether P is
+  universally or generally better than a strong tool-enabled R at diagnosing failures.
+- **Reason:** preserved development evidence shows that strong agents frequently match the central
+  diagnosis, while checked candidates have relied heavily on deterministic fallback and have not
+  demonstrated a robust confirmatory advantage. The scientifically testable gap is whether systems
+  retain or withdraw mechanistic claims at the correct evidence boundary without collapsing into
+  unhelpful abstention.
+- **Contributions:** exactly three: a formalization, a controlled land/Nav2 nested-evidence
+  benchmark, and a diagnostic-contract method with risk/coverage evaluation.
+- **Integrity boundary:** all previous cohorts, schedules, outputs, annotations, invalid releases,
+  post-hoc sensitivities, failed candidates, and alpha use remain immutable. The 33-episode F/G/H
+  cohort is `LEGACY EXPLORATORY / UNDER-TARGET`; all 56 inspected focused pairs are development-only
+  for the redirect. Confirmation and replication N are zero.
+- **Operational consequence:** complete P1 before experiment-code changes; then implement contracts,
+  masks, evaluator references, maximal-supported diagnosis, constrained realization, fair baseline
+  export, blinded human annotation, and clustered statistics. No confirmatory output is authorized
+  before the P11 freeze.
+- **Records:** `docs/EVIDENCE_CALIBRATION_PROTOCOL.md` and
+  `manifests/study/evidence-calibration-redirect-audit-v1.json`.
+
 ## 2026-09-27 — close concise-contract direction before semantic scoring
 
 - **Decision:** stop the P-contract-v5-concise screen at the user's direction; do not spend 72 Luna
@@ -2375,3 +2414,68 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   causality and distinguishes omissions, unsupported fabrication, and valid extra facts.
 - Interpretation: this is development evidence only. It consumes no confirmation alpha and cannot
   establish either registered claim.
+
+## 2026-09-29 — implement P2--P10, but refuse a premature evidence-calibration freeze
+
+- Decision: retain the machine-readable ontology, deletion-only evidence ladders, evaluator-side
+  references, maximal-supported diagnosis, constrained realization, B0--B4 parity exporter,
+  two-human blind packets, and episode-clustered analysis as one development stack. Do not generate
+  new confirmatory semantic outputs until its actual pilot and human dry run close the remaining
+  measurement risks.
+- Evidence: 59 focused tests include an end-to-end case in which evaluator truth makes obstruction
+  physically true while E3 lacks the required robot-visible evidence. The production result stops
+  at command--motion discrepancy and preserves the registered non-entailment. Rebuilding packets is
+  byte-identical, and the annotation form contains neither method nor registered claim identity.
+- Statistical boundary: paired inference is driven by independent episode discordances. The
+  development power grid shows that plausible small effects remain poorly powered even with 160
+  acquired episodes, whereas a hypothetical 16-point discordant-risk reduction reaches about 82%
+  power near 120 acquired episodes after 10% invalidity. These ranges cannot select a favorable
+  confirmatory endpoint or stand in for pilot estimates.
+- Alternatives rejected: count masks as samples; use Luna as primary annotation because it is
+  available; freeze a convenient coverage floor without development justification; treat
+  deterministic reconstruction as proof of method benefit; or reuse inspected P/R outputs as
+  fresh confirmation.
+- Next gate: one bounded fresh B2/B4 development pilot plus two independent human annotations and
+  blinded adjudication, followed by a single P11 freeze that records the error-budget ledger,
+  coverage floor, practical effect, family proportions, ladders, models, prompts, and stopping and
+  replication rules.
+
+## 2026-09-29 — prospectively replace uncollected human annotation with qualified agents
+
+- **Decision:** preserve the original two-human development plan and all historical judge results,
+  but replace annotation not yet generated for the evidence-calibration redirect with two isolated,
+  blinded agent invocations and a distinct disagreement-only adjudication agent.
+- **Measurement boundary:** automated returns are reported as agent-assessed. They are not human
+  annotations, do not establish human validity or trust, and do not increase independent episode N.
+  Two invocations of `gpt-6-luna` may have correlated systematic errors.
+- **Qualification:** Luna v12 remains qualified only for its historical endpoint. Primary use on
+  five-way atomic evidential-support labels requires a new bounded development/fresh-held-out
+  qualification covering physical-truth-versus-support, unsupported specificity, abstraction
+  depth, limitations, false premises, and useful partial diagnosis.
+- **Execution:** retain deterministic checks for quantities, identities, thresholds, hashes, mask
+  relations, and endpoint derivation. Use structured no-tool Responses calls with distinct logical
+  request identities, no quality-driven retry, immutable failure records, and method-key joining
+  only after finalization.
+- **Transport finding:** both the Codex LB credential and ChatGPT login are present. The managed
+  shell exports `CODEX_SANDBOX_NETWORK_DISABLED=1`; its failed name lookups are a consequence of
+  the parent socket sandbox, not an in-repository DNS or authentication defect. Bubblewrap cannot
+  bypass the parent network boundary, so no model call was admitted.
+- **Next gate:** use the unchanged repository and immutable caches from a normal network-enabled
+  host terminal, obtain `READY_FOR_SCHEMA_CANARY`, pass a content-free transport canary, run the exact-task agent
+  qualification and development dry run, then use development-only discordance to complete P11.
+
+## 2026-09-29 — freeze the atomic agent qualification; do not retrofit old annotations
+
+- **Decision:** preserve all historical packet labels and build a file-level, hash-bound
+  retrospective inventory instead of rescoring every old packet under the new endpoint.
+- **Reason:** prior packets use different questions, evidence boundaries, and schemas. Automatic
+  conversion would conflate physical truth, judge inventory membership, and visible-evidence
+  support, while cases used to design the redirect cannot become confirmation.
+- **Eligibility:** old response pairs may enter a fresh development-only atomic audit only after
+  robot-visible evidence closure, evaluator-reference closure, and contamination review. Masks,
+  questions, calls, and annotator passes never increase independent N.
+- **Qualification:** freeze four development and 16 held-out synthetic construction-defined cases
+  before any calls. Require each of two isolated Luna passes to meet the frozen accuracy,
+  false-acceptance, false-rejection, physical-truth-but-unsupported, field, and injection gates.
+- **Failure policy:** retain transport, schema, and accuracy failures; issue no quality-driven retry
+  and do not lower gates. A pass qualifies automated measurement only, not human validity.

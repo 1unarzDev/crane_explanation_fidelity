@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://crane.local/schemas/blinded-atomic-annotation-key-v1.schema.json",
+  "title": "Evaluator-only atomic annotation join key",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema", "builder_id", "builder_version", "packet_set_sha256", "packet_id", "response_id", "method_id", "method_configuration_sha256", "episode_id", "configuration_id", "condition_id", "claim_items", "join_after_adjudication"],
+  "properties": {
+    "schema": {"const": "crane-blinded-atomic-annotation-key/v1"},
+    "builder_id": {"type": "string"}, "builder_version": {"type": "string"},
+    "packet_set_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "packet_id": {"type": "string"}, "response_id": {"type": "string"}, "method_id": {"type": "string"},
+    "method_configuration_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "episode_id": {"type": "string"}, "configuration_id": {"type": "string"}, "condition_id": {"type": "string"},
+    "claim_items": {"type": "array", "minItems": 1, "items": {"type": "object"}},
+    "join_after_adjudication": {"const": true}
+  }
+}

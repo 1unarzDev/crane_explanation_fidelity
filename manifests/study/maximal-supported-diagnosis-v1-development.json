@@ -1,0 +1,30 @@
+{
+  "schema": "crane-maximal-supported-diagnosis-checkpoint/v1",
+  "checkpoint_id": "maximal-supported-diagnosis-v1-development",
+  "recorded_date": "2026-09-29",
+  "status": "P5_DEVELOPMENT_IMPLEMENTED_NOT_FROZEN_FOR_CONFIRMATION",
+  "implementation": {"path": "analysis/maximal_supported_diagnosis.py", "sha256": "1784960164122a3a4eb563d295d552b74cb2f7c87985fa4054bd0ca23ce61814", "algorithm_id": "maximal-supported-diagnosis", "algorithm_version": "v1-development"},
+  "result_schema": {"path": "research/explanation_fidelity/schemas/evidence-calibrated-diagnostic-result-v1.schema.json", "sha256": "39bf5289be8f709af74fd90fd9533efb94bb462a10a16e5460ad475561025a65"},
+  "domain_types": {"path": "analysis/evidence_calibration.py", "sha256": "2b81bed7302fa5981a526846942d98bdb041c4afab860d3a18d3aca5a8540f7c"},
+  "properties": [
+    "Every approved claim has all required robot-visible evidence statuses satisfied.",
+    "Missing odometry retains a supported command observation but cannot approve command-motion discrepancy.",
+    "Independent task outcome, recovery, geometry, and execution claims are not suppressed by unrelated missing relationships.",
+    "Explicit incomparable alternatives yield AMBIGUOUS without choosing a hidden cause.",
+    "Supported discrepancy automatically carries its registered non-entailments into the answer plan.",
+    "A false-premise result cannot include any approved failure-mechanism claim.",
+    "Evidence references absent from the exact condition are rejected."
+  ],
+  "development_fixture": {
+    "episode_clusters": 1,
+    "evidence_conditions": 5,
+    "independent_sample_increment": 1,
+    "e0": "INSUFFICIENT_EVIDENCE with recorded abort retained",
+    "e2": "SUPPORTED_PARTIAL with command observation retained and discrepancy withheld because odometry is absent",
+    "e3": "SUPPORTED_PARTIAL with command-motion discrepancy and required causal limits",
+    "e4": "KNOWN only after independently validated obstruction evidence is visible"
+  },
+  "validation": {"focused_stack_tests_passed": 59, "focused_stack_tests_failed": 0, "git_diff_check": "PASS"},
+  "confirmation": {"authorized": false, "independent_n": 0},
+  "next_gate": "Fresh B2/B4 development pilot and two-human annotation dry run before P11 freeze."
+}

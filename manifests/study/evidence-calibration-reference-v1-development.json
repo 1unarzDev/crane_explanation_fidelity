@@ -1,0 +1,39 @@
+{
+  "schema": "crane-evidence-calibration-reference-checkpoint/v1",
+  "checkpoint_id": "evidence-calibration-reference-v1-development",
+  "recorded_date": "2026-09-29",
+  "status": "P4_DEVELOPMENT_IMPLEMENTED_NOT_FROZEN_FOR_CONFIRMATION",
+  "implementation": {"path": "analysis/build_evidence_calibration_reference.py", "sha256": "eff8b2b42ff83e42abdd184564c1c8d71493247932f59763dfc8cfb3431a6c78", "builder_id": "evidence-calibration-independent-reference", "builder_version": "v1-development"},
+  "schema_artifact": {"path": "research/explanation_fidelity/schemas/evidence-calibration-reference-v1.schema.json", "sha256": "c4be7be5b20f1195b175fdb15fa42008271dcb87b441c9132211cf6cb65d4a93"},
+  "ontology": {"path": "configs/evidence_calibration_claim_contracts_v1.json", "sha256": "49edd3b035d23bf356aa42e9037b265a769efd745b8d44a3dd130c3349fbacc8"},
+  "properties": [
+    "Physical truth and visible-evidence support are separately represented.",
+    "Requirement support references must name evidence IDs present in that exact method condition.",
+    "All registered evidence requirements are evaluated for every condition.",
+    "Supported, contradicted, insufficient, and physically-true-but-unsupported claims remain distinct.",
+    "Highest defensible nodes are computed per diagnostic DAG and may retain independent atomic components.",
+    "Evaluator references are explicitly method_visible=false and contain no method packet export path.",
+    "The builder is canonical and byte-deterministic for identical ontology, condition bundle, and reference input."
+  ],
+  "development_fixture": {
+    "episode_clusters": 1,
+    "evidence_conditions": 5,
+    "independent_sample_increment": 1,
+    "result": "The reference progresses from physically-true-but-unsupported command-motion diagnosis to supported discrepancy and finally a specific obstruction only after independent obstruction evidence is restored.",
+    "scientific_use": "REGRESSION_ONLY"
+  },
+  "validation": {
+    "command": "python -m pytest -q tests/test_evidence_calibration_reference.py tests/test_evidence_calibration.py tests/test_nested_evidence_conditions.py tests/test_audit_submission_readiness.py",
+    "passed": 24,
+    "failed": 0,
+    "numeric_traceability_assertions_passed": 212,
+    "git_diff_check": "PASS"
+  },
+  "confirmation": {"authorized": false, "independent_n": 0},
+  "limitations": [
+    "Requirement evaluations still need mechanism-specific independent adapters for retained land recordings.",
+    "The development fixture is not an empirical result or a sample-size contribution.",
+    "Human annotation and the maximal-supported production engine remain incomplete."
+  ],
+  "next_gate": "P5 maximal-supported-diagnosis engine using only robot-visible requirement facts for production and the separately governed reference for evaluation."
+}

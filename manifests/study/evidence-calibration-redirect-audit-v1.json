@@ -1,0 +1,183 @@
+{
+  "schema": "crane-evidence-calibration-redirect-audit/v1",
+  "audit_id": "evidence-calibration-redirect-audit-v1",
+  "recorded_date": "2026-09-28",
+  "status": "P0_AUDIT_COMPLETE_P1_SPECIFICATION_PENDING_FREEZE",
+  "purpose": "Protect prior studies and establish which artifacts may be used for development, confirmation, or replication under the evidence-calibrated explanation redirect.",
+  "independent_unit": "prospectively generated episode/configuration",
+  "integrity_rules": [
+    "Questions, evidence masks, prompts, methods, generations, and annotations from one episode are repeated observations, not independent samples.",
+    "No frozen or legacy output is modified, regenerated, relabeled, or reinterpreted to improve a result.",
+    "Evaluator-only truth is prohibited from every method-visible execution path.",
+    "An already inspected semantic output is development evidence for any candidate or endpoint selected after inspection.",
+    "Physical and evaluator-reference artifacts may be reused for development and regression when their provenance remains valid; reuse does not restore semantic confirmatory status."
+  ],
+  "legacy_provenance_study": {
+    "study_id": "sealed-primary-v3",
+    "required_label": "LEGACY EXPLORATORY / UNDER-TARGET COHORT",
+    "independent_episodes": 33,
+    "responses": 198,
+    "status": "IMMUTABLE_UNDER_TARGET_UNANNOTATED",
+    "confirmatory_use_for_redirect": "PROHIBITED",
+    "preserved_findings": [
+      "The collection stopped below its frozen minimum and target.",
+      "No completed blinded annotation or adjudicated effect exists.",
+      "The checked condition used deterministic fallback for 46 of 66 responses.",
+      "It remains relevant only as exploratory evidence that provenance checking and physical diagnosis are distinct."
+    ],
+    "authoritative_sources": [
+      "docs/RESEARCH_REDIRECT.md",
+      "docs/LUNA_ANNOTATION_PROTOCOL.md",
+      "docs/ANNOTATION_WORKFLOW.md"
+    ]
+  },
+  "original_land_command_motion_cohort": {
+    "schedule": {
+      "path": "research/explanation_fidelity/experiment_configs/prospective/land-command-motion-physical-schedule-v1.json",
+      "sha256": "1f844ad45fa2e5cefb9edcfc5f3420a5a18aff32abda81ec72b7876ce376f215",
+      "confirmation_configurations": 100,
+      "replication_reserved_configurations": 100
+    },
+    "original_runs_001_to_040": {
+      "attempted": 40,
+      "valid": 39,
+      "invalid_retained": 1,
+      "semantic_outputs_generated_under_original_purpose": 0,
+      "status": "CLOSED_EARLY_BY_PRIOR_PROSPECTIVE_REDIRECT",
+      "new_redirect_use": "DEVELOPMENT_AND_REFERENCE_REGRESSION_ONLY",
+      "reason": "Their outcomes and metadata influenced later candidate and study design."
+    },
+    "replication_reserve": {
+      "configurations": 100,
+      "physical_collection_authorized": false,
+      "status": "SCHEDULED_NOT_MATERIALIZED_UNDER_OLD_PROTOCOL",
+      "new_redirect_disposition": "QUARANTINED_PENDING_PROSPECTIVE_ELIGIBILITY_AND_NEW_FREEZE",
+      "note": "These 100 old-schedule layouts have no physical artifacts. Separately, 20 other replication-labelled catalog layouts were physically used by cr-pilot-001 through cr-pilot-020 and are development-contaminated. Do not call either set a fresh evidence-calibration replication cohort until a prospective audit proves compatibility and assigns the non-materialized cases before any outcome is opened.",
+      "current_reconciliation": {
+        "path": "manifests/study/command-motion-layout-freshness-audit-v1.json",
+        "status": "20_REPLICATION_LABELLED_MATERIALIZED_100_OLD_SCHEDULE_NON_MATERIALIZED"
+      }
+    }
+  },
+  "focused_supported_diagnostic_campaign": {
+    "schedule": {
+      "path": "research/explanation_fidelity/experiment_configs/prospective/focused-supported-diagnostic-communication-v1-schedule.json",
+      "sha256": "7fa1350e9ec68bdd7be161ea8354981d4d8ccbd4abb5cc4c6eff83ce02a9a07e",
+      "scheduled_configurations": 64,
+      "scheduled_primary_if_supported": 47,
+      "scheduled_controls": 17
+    },
+    "physical_status": {
+      "schedule_endpoint_reached": true,
+      "last_source_order_configuration": "cm-land-conf-100",
+      "retained_invalid_configuration": "cm-land-conf-052",
+      "physical_and_reference_reuse": "DEVELOPMENT_AND_MASK_CONSTRUCTION_ALLOWED_AFTER_PROVENANCE_REVALIDATION",
+      "confirmatory_reuse": "PROHIBITED_FOR_NEW_SEMANTIC_ENDPOINT"
+    },
+    "semantic_inventory": {
+      "immutable_p_r_pairs": 56,
+      "primary_pairs": 43,
+      "control_pairs": 13,
+      "family_counts": {
+        "bounded_geometric_restriction": 2,
+        "persistent_command_motion_discrepancy": 20,
+        "measured_response_recovery": 21,
+        "missing_decisive_or_ambiguous_evidence": 7,
+        "nominal_false_premise_or_irrelevant_obstacle": 6
+      },
+      "planned_luna_judgments": 224,
+      "original_valid_luna_judgments": 219,
+      "original_invalid_luna_judgments": 5,
+      "original_primary_reconciliations": 41,
+      "id_only_primary_derivatives": 2,
+      "all_outputs_inspected": true,
+      "new_redirect_status": "DEVELOPMENT_REGRESSION_ONLY"
+    },
+    "registered_release": {
+      "planned_first_look_n": 24,
+      "status": "INVALID",
+      "reason": "The ordered prefix contained incomplete original two-pass judgment sets and the frozen retry budget was zero.",
+      "valid_confirmatory_effect": false
+    },
+    "post_hoc_id_repair_sensitivity": {
+      "status": "POST_HOC_SENSITIVITY_NOT_CONFIRMATION",
+      "least_favourable_p_minus_r": -0.2083,
+      "least_favourable_98_percent_anytime_interval": [-0.5331, 0.08],
+      "most_favourable_p_minus_r": 0.25,
+      "most_favourable_98_percent_anytime_interval": [-0.1838, 0.6281],
+      "interpretation": "Neither mapping establishes a positive benefit, and the sign reversal shows endpoint-changing judge disagreement."
+    },
+    "alpha": {
+      "allocation_id": "candidate-v1-confirmation",
+      "bound": 0.02,
+      "status": "CONSUMED_BY_PRIOR_CAMPAIGN_NOT_RESETTABLE"
+    },
+    "authoritative_sources": [
+      "docs/EXPERIMENTS.md",
+      "docs/DIAGNOSTIC_CAMPAIGN_PROGRESS.md",
+      "manifests/study/diagnostic-sequential-error-ledger-v2.json",
+      "model_outputs/focused-supported-diagnostic-communication-v1-confirmation/pairs/",
+      "model_outputs/automated_annotations/luna-model-judge-v1/focused-supported-diagnostic-communication-v1-confirmation/",
+      "data/evaluator_only/analysis/focused-supported-diagnostic-communication-v1-confirmation/"
+    ]
+  },
+  "closed_development_candidates": [
+    {
+      "id": "contract-complete-v2-development-pilot",
+      "status": "NOT_PROMOTED",
+      "primary_clusters": 13,
+      "controls": 4,
+      "retained_technical_failures": 2,
+      "claim_a_p_minus_r_least_favourable": 0.0,
+      "claim_a_p_minus_r_most_favourable": 0.07692307692307693,
+      "claim_b_difference": 0.0,
+      "confirmation_n": 0,
+      "source": "manifests/analysis/contract-complete-v2-development-pilot-result.json",
+      "source_sha256": "20705a5d0a6d7d549aabe165140aca6970181dfeb43e59aa306dd60297277954"
+    },
+    {
+      "id": "explicit-causal-restraint-successor-v1-pilot",
+      "status": "NOT_PROMOTED_DETECTOR_SCOPE_FAILURE",
+      "primary_clusters": 14,
+      "controls": 4,
+      "raw_detector_events_p": 0,
+      "raw_detector_events_r": 6,
+      "context_audited_events_p": 0,
+      "context_audited_events_r": 0,
+      "confirmation_n": 0,
+      "source": "manifests/analysis/explicit-causal-restraint-successor-v1-pilot-result.json",
+      "source_sha256": "f97b310737466f1114f5accdda9de08ddc2f91c80f7d2e0fdc0d8538e1715410"
+    },
+    {
+      "id": "contract-complete-concise-v1-inspected-screen",
+      "status": "CLOSED_BEFORE_SEMANTIC_EVALUATION",
+      "pairs": 18,
+      "semantic_effect_exists": false,
+      "confirmation_n": 0,
+      "source": "manifests/analysis/contract-complete-concise-v1-inspected-screen-closeout.json",
+      "source_sha256": "543a792a91a3dade55a97597765738a8af0a093277e8f7bc379fe3ce1c69d94a"
+    }
+  ],
+  "error_budget": {
+    "source": "manifests/study/diagnostic-sequential-error-ledger-v2.json",
+    "source_sha256": "d6e67e9d4c8da68c434fa639a67ce34de53039f85734c51714a83973bca2dfbe",
+    "candidate_v1_confirmation": {"alpha": 0.02, "status": "CONSUMED"},
+    "candidate_revision_reserve": {"alpha": 0.01, "status": "AVAILABLE_BUT_NOT_AUTOMATICALLY_ASSIGNED_TO_REDIRECT"},
+    "selected_method_replication": {"alpha": 0.02, "status": "AVAILABLE_RESERVED"},
+    "required_action": "Prospectively document whether the new study inherits this ledger or receives a separately justified family before any confirmatory output is generated."
+  },
+  "new_evidence_calibration_study": {
+    "development_material": [
+      "All prior physical episodes, references, method outputs, masks, annotations, failures, and negative results listed above",
+      "Previously inspected P/R pairs and judge disagreements",
+      "RoboBoat artifacts only as separately scoped development/external-validity evidence"
+    ],
+    "confirmation_n": 0,
+    "replication_n": 0,
+    "semantic_protocol_frozen": false,
+    "primary_endpoint_frozen": false,
+    "coverage_floor_frozen": false,
+    "model_outputs_authorized": false,
+    "next_gate": "Complete P1 specification, then implement and validate contracts, masks, references, methods, annotation, and episode-clustered analysis before P11 freeze."
+  }
+}
