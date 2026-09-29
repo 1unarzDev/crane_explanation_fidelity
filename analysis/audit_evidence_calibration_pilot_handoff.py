@@ -10,6 +10,8 @@ import json
 from pathlib import Path
 
 from evidence_calibration_io import canonical_sha256
+from build_evidence_calibration_pilot_source_context import build as build_source_context
+from run_evidence_calibration_b2_pilot import _materialize
 from validate_evidence_calibration_pilot_inputs import validate
 
 
@@ -22,6 +24,7 @@ def audit(root: Path = ROOT) -> dict:
     status = json.loads((root / f"manifests/study/{PILOT}-execution-status.json").read_text())
     pilot = json.loads((root / f"research/explanation_fidelity/experiment_configs/development/{PILOT}.json").read_text())
     schedule = json.loads((root / "research/explanation_fidelity/experiment_configs/prospective/land-command-motion-physical-schedule-v1.json").read_text())
+    catalog = json.loads((root / "configs/evidence_calibration_ladders_v1_development.json").read_text())
     outputs = root / "model_outputs" / PILOT
     expected = {
         condition_id: (row["family"], packet_hash, diagnostic)
@@ -35,6 +38,26 @@ def audit(root: Path = ROOT) -> dict:
     errors: list[str] = []
     if canonical_sha256(validate(root, pilot, schedule)) != canonical_sha256(validation):
         errors.append("retained B4 and condition validation differs from a fresh deterministic rebuild")
+    catalog_by_id = {ladder["ladder_id"]: ladder for ladder in catalog["ladders"]}
+    family_ladder = {
+        "persistent_command_motion_discrepancy": "command-motion-full-v1-development",
+        "measured_response_recovery": "command-motion-full-v1-development",
+        "missing_decisive_evidence": "command-motion-missing-odometry-v1-development",
+        "nominal_false_premise": "nominal-false-premise-v1-development",
+    }
+    catalog_role_mismatches = []
+    for row in validation["episodes"]:
+        ladder = catalog_by_id[family_ladder[row["family"]]]
+        for index, condition_id in enumerate(row["condition_ids"]):
+            entry, _, _ = _materialize(root, pilot, schedule, condition_id)
+            actual = set(entry["method_packet"]["evidence"])
+            declared = set(ladder["levels"][index]["available_evidence_roles"])
+            if actual != declared:
+                catalog_role_mismatches.append({
+                    "condition_id": condition_id,
+                    "extra_roles": sorted(actual - declared),
+                    "missing_roles": sorted(declared - actual),
+                })
     if set(b2_paths) | set(failure_paths) != set(expected) or set(b2_paths) & set(failure_paths):
         errors.append("B2 outputs and retained failures do not partition the fixed condition inventory")
     if set(failure_paths) != set(status["b2"]["failed_conditions"]):
@@ -49,6 +72,7 @@ def audit(root: Path = ROOT) -> dict:
         errors.append("B4 output count differs from execution status")
 
     cache_root = root / "research/explanation_fidelity/model_cache" / PILOT
+    source_context_count = 0
     for condition_id, path in sorted(b2_paths.items()):
         if condition_id not in expected:
             continue
@@ -71,6 +95,12 @@ def audit(root: Path = ROOT) -> dict:
                 or record.get("return_code") != 0
                 or record.get("parsed_final", {}).get("answer") != value["answer"]):
             errors.append(f"B2 call record mismatch: {condition_id}")
+        try:
+            build_source_context(condition_id, root)
+        except (ValueError, KeyError, FileNotFoundError) as error:
+            errors.append(f"B2 source context mismatch: {condition_id}: {error}")
+        else:
+            source_context_count += 1
     for condition_id, path in sorted(failure_paths.items()):
         if condition_id not in expected:
             continue
@@ -97,13 +127,27 @@ def audit(root: Path = ROOT) -> dict:
         row["run_id"] for row in validation["episodes"]
         if not set(row["condition_ids"]) <= set(b2_paths)
     ]
+    handoff_gaps = []
+    if not errors and packet_count == 0:
+        handoff_gaps.extend([
+            "B2 outputs contain prose but no governed atomic-claim inventory or exact response spans",
+            "No pilot-specific, hash-bound rubric has been prepared for the 57 valid B2/B4 pairs",
+        ])
+    if catalog_role_mismatches:
+        handoff_gaps.append("Nominal control masks retain source and BT roles excluded by the declared development ladder")
     return {
         "schema": "crane-evidence-calibration-pilot-handoff-audit/v1",
         "pilot_id": PILOT,
-        "status": "RETAINED_OUTPUTS_VALID_ANNOTATION_PREPARATION_REQUIRED" if not errors else "INVALID_RETAINED_OUTPUTS",
+        "status": (
+            "INVALID_RETAINED_OUTPUTS" if errors else
+            "RETAINED_OUTPUTS_VALID_WITH_CATALOG_ROLE_MISMATCH" if catalog_role_mismatches else
+            "RETAINED_OUTPUTS_VALID_ANNOTATION_PREPARATION_REQUIRED"
+        ),
         "independent_development_episodes": len(validation["episodes"]),
         "within_episode_conditions": len(expected),
         "valid_b2_outputs": len(b2_paths),
+        "hash_checked_source_contexts": source_context_count,
+        "catalog_role_mismatches": catalog_role_mismatches,
         "retained_b2_technical_failures": len(failure_paths),
         "accepted_deterministic_b4_outputs": len(expected),
         "complete_paired_episode_count": len(complete_episodes),
@@ -113,10 +157,7 @@ def audit(root: Path = ROOT) -> dict:
             if row["run_id"] in complete_episodes
         ),
         "blinded_atomic_packet_files": packet_count,
-        "handoff_gaps": [
-            "B2 outputs contain prose but no governed atomic-claim inventory or exact response spans",
-            "No pilot-specific, hash-bound rubric has been prepared for the 57 valid B2/B4 pairs",
-        ] if not errors and packet_count == 0 else [],
+        "handoff_gaps": handoff_gaps,
         "confirmatory_independent_n": 0,
         "errors": errors,
     }

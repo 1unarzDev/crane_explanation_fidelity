@@ -1,8 +1,12 @@
 from __future__ import annotations
 
+import hashlib
 import importlib.util
+import json
 from pathlib import Path
 import sys
+
+import pytest
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -28,6 +32,18 @@ def test_agent_packet_preserves_blinding_and_declares_qualification_gate() -> No
     assert packet["qualification_status"] == "EXACT_TASK_V4_ASTRA_QUALIFIED_AGENT_ASSESSED_ONLY"
     assert key["packet_set_sha256"] == canonical_sha256(packet)
     assert key["annotation_origin"] == "automated_agent"
+
+
+def test_agent_packet_includes_same_hash_checked_visible_source_for_both_blind_forms() -> None:
+    source = "configured progress threshold: 0.10 m\n"
+    assets = [{"asset_id": "source/nav2.yaml", "sha256": hashlib.sha256(source.encode()).hexdigest(), "text": source}]
+    packet, key = build(*FIXTURES.inputs(), "development-blinding-secret-v1", source_assets=assets)
+    assert all(form["robot_visible_evidence"]["exact_source_assets"] == assets for form in packet["forms"])
+    assert packet["annotation_source_assets_sha256"] == key["annotation_source_assets_sha256"]
+    assert '"method_id"' not in json.dumps(packet)
+    assets[0]["text"] = "configured progress threshold: 0.20 m\n"
+    with pytest.raises(ValueError, match="do not match"):
+        build(*FIXTURES.inputs(), "development-blinding-secret-v1", source_assets=assets)
 
 
 class FakeCaller:

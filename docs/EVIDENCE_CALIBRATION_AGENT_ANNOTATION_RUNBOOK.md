@@ -49,6 +49,15 @@ response spans and a common condition rubric. Neither is present yet. Qualify or
 check the atomization process and audit inventory completeness before building pilot packets.
 The three retained `cm-land-conf-042` B2 technical failures remove that whole episode ladder
 from paired development estimates; its valid E3 output remains descriptive only.
+Build the annotation source supplement with
+`analysis/build_evidence_calibration_pilot_source_context.py` and pass it using
+`--source-asset-manifest`. The packet builder verifies each file's bytes and exposes the same
+source/tool context to both blinded forms. Construct candidate condition rubrics with
+`analysis/build_evidence_calibration_pilot_rubric.py` from the independent physical reference;
+review and hash-bind them before use. The retained nominal control masks contain extra BT/source
+roles relative to the catalog, so score those development answers only against the actual packet
+and do not treat them as validation of the declared nominal ladder. A source-context measurement
+canary and exhaustive atomic-inventory check remain required before pilot annotation.
 
 Build packets with `analysis/build_agent_atomic_claim_annotation_packets.py`, then run:
 

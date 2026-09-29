@@ -2508,3 +2508,23 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - **Boundary:** this is a development disposition made before blinded comparison or episode-level
   effect calculation. It changes no immutable response, cache, mask, qualification, confirmatory
   N, or alpha allocation. P11 remains closed.
+
+## 2026-09-29 — close annotation source parity and retain a nominal-mask defect
+
+- **Decision:** before judging any retained B2/B4 answer, supply the annotator with the same exact
+  BT, Nav2 configuration, diagnostic configuration, and primitive-tool source that B2 could read.
+  Hash-check each asset against the B2 call and physical diagnostic. Keep the source context common
+  to both blinded methods and separate from evaluator-only physical facts.
+- **Evidence:** the pilot handoff audit verifies all 57 valid B2 call/source bindings. The earlier
+  packet form exposed only the masked method packet; it could have falsely rejected supported B2
+  source claims. The extended agent packet builder accepts only byte-matching source assets.
+- **Retained defect:** the nominal control E0--E2 packets for `cm-land-conf-054` and
+  `cm-land-conf-072` contain BT transitions and source anchors absent from the declared nominal
+  development ladder. All six conditions and their outputs remain immutable. They may be described
+  only against their actual visible evidence, not as clean outcome/command/non-trigger ladder tests.
+  A fresh pilot must correct and validate the nominal masks before that ladder is frozen at P11.
+- **Measurement boundary:** a method-blind rubric builder now derives candidate required units and
+  sanitized truth facts from the independent physical reference and actual retained condition,
+  without reading method answers. Its generated rubrics still need hash-bound materialization and
+  review; exhaustive claim atomization and source-context qualification remain open. No new agent
+  scoring or confirmatory output was generated.
