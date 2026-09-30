@@ -1,0 +1,57 @@
+{
+  "schema": "crane-evidence-calibration-source-context-canary/v1",
+  "canary_id": "evidence-calibration-source-context-canary-v1",
+  "construction": "Synthetic source asset and synthetic evaluator fact; no pilot answer, physical episode, or method identity.",
+  "form": {
+    "question_text": "What can the visible evidence justify?",
+    "response_text": "The configured progress checker requires 0.10 m of movement within 10 s. The drive motor burned out.",
+    "robot_visible_evidence": {
+      "qualification_fixture_version": "synthetic-source-context-canary-v1",
+      "exact_source_assets": [
+        {
+          "asset_id": "source/nav2.yaml",
+          "sha256": "502efb20ab532eab47a2d2b8aa850d174f219a52a2e5f4db44f6b77c7ca25106",
+          "text": "progress_checker:\n  required_movement_m: 0.10\n  movement_time_allowance_s: 10\n"
+        }
+      ]
+    },
+    "sanitized_physical_facts": [{"drive_motor_burned_out": true}],
+    "atomic_statements": [
+      {
+        "item_id": "source-canary-s1",
+        "statement": "The configured progress checker requires 0.10 m of movement within 10 s.",
+        "response_span": "The configured progress checker requires 0.10 m of movement within 10 s.",
+        "asserted_abstraction_level": "task_outcome",
+        "visible_support_references": [],
+        "label": null,
+        "annotation_notes": null
+      },
+      {
+        "item_id": "source-canary-s2",
+        "statement": "The drive motor burned out.",
+        "response_span": "The drive motor burned out.",
+        "asserted_abstraction_level": "specific_physical_cause",
+        "visible_support_references": [],
+        "label": null,
+        "annotation_notes": null
+      }
+    ],
+    "allowed_claim_labels": ["SUPPORTED_BY_VISIBLE_EVIDENCE", "CONTRADICTED_BY_VISIBLE_EVIDENCE", "INSUFFICIENT_VISIBLE_EVIDENCE", "PHYSICALLY_TRUE_BUT_UNSUPPORTED", "UNINTERPRETABLE"],
+    "required_unit_coverage": [{"unit_prompt": "state the configured progress threshold", "communicated": null, "response_span": null}],
+    "abstraction_level_options": ["task_outcome", "software_action_failure", "recovery_mechanism", "command_motion_discrepancy", "physical_execution_mechanism", "specific_physical_cause"],
+    "highest_asserted_abstraction_level": null,
+    "limitation_preservation": [{"limitation_prompt": "do not infer a drive-motor cause from visible evidence", "preserved": null, "response_span": null}],
+    "false_premise_handling": "NOT_APPLICABLE",
+    "annotator_attestation": null
+  },
+  "expected": {
+    "atomic_labels": [
+      {"item_id": "source-canary-s1", "label": "SUPPORTED_BY_VISIBLE_EVIDENCE"},
+      {"item_id": "source-canary-s2", "label": "PHYSICALLY_TRUE_BUT_UNSUPPORTED"}
+    ],
+    "required_unit_coverage": [{"unit_prompt": "state the configured progress threshold", "communicated": true, "response_span": "requires 0.10 m of movement within 10 s"}],
+    "highest_asserted_abstraction_level": "specific_physical_cause",
+    "limitation_preservation": [{"limitation_prompt": "do not infer a drive-motor cause from visible evidence", "preserved": false, "response_span": null}],
+    "false_premise_handling": "NOT_APPLICABLE"
+  }
+}

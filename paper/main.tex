@@ -312,10 +312,10 @@ powers of 0.103, 0.500, and 0.923, respectively; the 16-point scenario first exc
 episodes in the simulated grid. These values are planning assumptions, not effect estimates, and
 no sample size is frozen.
 
-The mature command--motion family is primary, with nominal response, persistent discrepancy,
-transient discrepancy followed by recovery, abort after discrepancy, and invalid or absent
-odometry. Geometry/planning and execution/recovery supply bounded secondary families where their
-evidence contracts are stable. Each episode has deterministic nested evidence conditions that
+The primary candidate population balances persistent command--motion discrepancy and discrepancy
+followed by measured response recovery. Missing-odometry and nominal false-premise episodes are
+separately reported controls; geometry/planning is a non-pooled secondary arm. Each episode has
+deterministic nested evidence conditions that
 remove recovery traces, delivered commands, or synchronized odometry and its governed computation
 according to the development family ladder. No evaluator-only physical cause is restored as a
 stronger primary condition. Nominal successes, missing-evidence cases, ambiguity, and
@@ -332,7 +332,9 @@ agent-assessed, not human annotations; repeated calls to one model family may sh
 errors. The retained Luna history below documents measurement development, but its earlier endpoint
 qualification does not validate the new five-way atomic-support task. A separately frozen
 qualification of \texttt{gpt-6-astra} at high effort passed both isolated held-out passes on that
-task. No B2/B4 comparison has yet been annotated or scored.
+support task. Affirmative claim roles and asserted diagnostic ranks require a separately frozen
+synthetic role qualification that has not run; the extractor's raw abstraction tags are excluded
+from scoring. No B2/B4 comparison has yet been annotated or scored.
 
 Earlier v4--v6 judge configurations failed their prospectively fixed gates and remain ineligible.
 The reference-audited v7 cycle retained the same Luna alias, high reasoning setting, prompt,

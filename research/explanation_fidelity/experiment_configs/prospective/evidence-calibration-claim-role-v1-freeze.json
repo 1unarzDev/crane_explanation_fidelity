@@ -1,0 +1,54 @@
+{
+  "candidate": {
+    "isolated_passes": 2,
+    "method_visible_input": [
+      "opaque_response_id",
+      "response_text",
+      "claims"
+    ],
+    "model": "gpt-6-astra",
+    "prompt": {
+      "path": "research/explanation_fidelity/prompts/evidence-calibration-claim-role-v1-development.md",
+      "raw_sha256": "b64613c5ce29022dee61653399ad11c5ea76b2a41fed4dd80d80861ff7fdd18e"
+    },
+    "quality_driven_retries": 0,
+    "reasoning_effort": "high",
+    "return_schema": {
+      "path": "research/explanation_fidelity/schemas/evidence-calibration-claim-role-return-v1-development.schema.json",
+      "raw_sha256": "60ec855349f62f786c2159aa4668616b1e780cae8ef5321ef5b7f0369b0d4f41"
+    },
+    "runner": {
+      "path": "analysis/run_evidence_calibration_claim_role_qualification.py",
+      "raw_sha256": "707e4dab67acbd850c56fd52f8925c57886401426a25503f159a2008d7095b8e"
+    },
+    "tools": "none",
+    "transport": "codex-cli-chatgpt-login-ephemeral/v1"
+  },
+  "confirmatory_alpha_consumed": 0.0,
+  "construction_review": {
+    "path": "manifests/annotation/evidence-calibration-claim-role-v1-construction-review.json",
+    "raw_sha256": "f55ec46684cba348cea0598d42907d69cfaa387e8fe630d3e3e96c2e286a9669"
+  },
+  "declared_date": "2026-09-29",
+  "endpoint_mapping_frozen": false,
+  "failure_policy": "Retain failed calls, interrupted intents, and poor outputs without retry or resampling. A reference defect invalidates this qualification and requires a fresh held-out suite before any further role-model call.",
+  "freeze_id": "evidence-calibration-claim-role-v1-synthetic",
+  "heldout_gates": {
+    "both_isolated_passes_must_individually_pass": true,
+    "exact_role_and_level_for_every_reviewed_atomic_claim_per_pass": true,
+    "heldout_case_count": 20,
+    "independent_project_semantic_review_required": true,
+    "zero_missing_extra_or_reordered_claim_ids_per_pass": true,
+    "zero_unresolved_roles_per_pass": true
+  },
+  "independent_episode_n": 0,
+  "pilot_role_annotation_authorized": false,
+  "pre_call_gate": "A separate non-study structured schema canary must complete with a structurally valid retained return before either qualification pass. Transport readiness must report READY_FOR_SCHEMA_CANARY on a normal network-enabled host.",
+  "schema": "crane-evidence-calibration-claim-role-qualification-freeze/v1",
+  "scope": "Separate synthetic qualification of method-blind assertion role and abstraction classification; no support-label qualification or endpoint mapping.",
+  "status": "FROZEN_BEFORE_ANY_ROLE_MODEL_CALL",
+  "suite": {
+    "path": "research/explanation_fidelity/qualification/evidence-calibration-claim-role-v1-development.json",
+    "raw_sha256": "2f34e7b6f258110cd661a36bc59277c028820fa73f4d22a4bbb746c12794990e"
+  }
+}

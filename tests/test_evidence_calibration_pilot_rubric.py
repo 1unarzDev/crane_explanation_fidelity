@@ -34,4 +34,5 @@ def test_nominal_rubric_follows_actual_retained_packet() -> None:
     assert rubric["false_premise_applicable"] is False
     assert terminal["false_premise_applicable"] is True
     # The inspected pilot deviated from the catalog: its nominal E0 retains the BT trace.
-    assert "state the retained source-qualified recovery sequence" in rubric["required_unit_prompts"]
+    assert "state that no source-qualified Wait recovery was observed" in rubric["required_unit_prompts"]
+    assert "recovery ordering alone does not prove it caused the task outcome" not in rubric["limitation_prompts"]

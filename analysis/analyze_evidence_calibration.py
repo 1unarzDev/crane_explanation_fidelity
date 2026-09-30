@@ -44,9 +44,11 @@ def _percentile(values: list[float], probability: float) -> float:
     return ordered[lower] + (ordered[upper] - ordered[lower]) * (position - lower)
 
 
-def _response_failure(response: dict[str, Any]) -> bool:
+def _response_failure(response: dict[str, Any], level_index: int) -> bool:
     unsupported_mechanism = any(
-        item["mechanistic"] and item["label"] in UNSUPPORTED_LABELS for item in response["claims"]
+        item["mechanistic"] and
+        (item["label"] in UNSUPPORTED_LABELS or item["required_minimum_level"] > level_index)
+        for item in response["claims"]
     )
     overspecific = response["highest_asserted_rank"] is not None and \
         response["highest_asserted_rank"] > response["maximum_justified_rank"]
@@ -54,33 +56,85 @@ def _response_failure(response: dict[str, Any]) -> bool:
 
 
 def _validate(data: dict[str, Any], plan: dict[str, Any]) -> None:
+    def nonnegative_int(value: Any) -> bool:
+        return isinstance(value, int) and not isinstance(value, bool) and value >= 0
+
+    def probability(value: Any) -> bool:
+        return (isinstance(value, (int, float)) and not isinstance(value, bool)
+                and math.isfinite(value) and 0 <= value <= 1)
+
     if data.get("schema") != INPUT_SCHEMA or plan.get("schema") != PLAN_SCHEMA:
         raise ValueError("unsupported analysis input or plan schema")
     if set(plan["methods"]) != {"B2", "B4"}:
         raise ValueError("primary paired methods must be B2 and B4")
+    family_roles = ("primary_families", "control_families", "secondary_families")
+    declared_families = []
+    for role in family_roles:
+        families = plan.get(role)
+        if not isinstance(families, list) or any(not isinstance(item, str) or not item for item in families):
+            raise ValueError(f"{role} must list named mechanism families")
+        declared_families.extend(families)
+    if not plan["primary_families"] or len(declared_families) != len(set(declared_families)):
+        raise ValueError("primary families must be nonempty and family roles disjoint")
     if plan.get("clustered_model") != "LOGISTIC_CLUSTER_ROBUST_EPISODE":
         raise ValueError("clustered response model must be frozen explicitly")
-    if not 0 <= plan["coverage_floor"] <= 1 or not 0 < plan["alpha"] < 1:
+    if not probability(plan["coverage_floor"]) or not probability(plan["alpha"]) or not 0 < plan["alpha"] < 1:
         raise ValueError("coverage floor or alpha is invalid")
+    if (not probability(plan["minimum_practically_meaningful_reduction"])
+            or not nonnegative_int(plan["bootstrap_replicates"])
+            or plan["bootstrap_replicates"] == 0
+            or not nonnegative_int(plan["bootstrap_seed"])):
+        raise ValueError("analysis effect or bootstrap settings are invalid")
     episode_ids = [item["episode_id"] for item in data["episodes"]]
-    if len(episode_ids) != len(set(episode_ids)):
+    if any(not isinstance(item, str) or not item for item in episode_ids) or len(episode_ids) != len(set(episode_ids)):
         raise ValueError("episode IDs must be unique independent clusters")
     for episode in data["episodes"]:
+        if episode.get("mechanism_family") not in declared_families:
+            raise ValueError("episode mechanism family has no declared analysis role")
+        if not episode["conditions"]:
+            raise ValueError("an independent episode needs at least one condition")
         condition_ids = [item["condition_id"] for item in episode["conditions"]]
-        if len(condition_ids) != len(set(condition_ids)):
+        if (any(not isinstance(item, str) or not item for item in condition_ids)
+                or len(condition_ids) != len(set(condition_ids))):
             raise ValueError("condition IDs must be unique within episode")
         levels = [item["level_index"] for item in episode["conditions"]]
-        if levels != sorted(levels):
-            raise ValueError("evidence conditions must follow registered ladder order")
+        if (any(not nonnegative_int(level) for level in levels)
+                or levels != sorted(levels) or len(levels) != len(set(levels))):
+            raise ValueError("evidence conditions must have distinct ordered ladder levels")
         for condition in episode["conditions"]:
+            if not isinstance(condition["evidence_insufficient"], bool) or not isinstance(condition["false_premise"], bool):
+                raise ValueError("condition evidence and false-premise flags must be boolean")
             if set(condition["methods"]) != {"B2", "B4"}:
                 raise ValueError("every condition needs a paired B2/B4 result")
             for response in condition["methods"].values():
-                if response["supported_required_emitted"] > response["supported_required_available"]:
-                    raise ValueError("supported required emission cannot exceed availability")
+                emitted, available = response["supported_required_emitted"], response["supported_required_available"]
+                if not nonnegative_int(emitted) or not nonnegative_int(available) or emitted > available:
+                    raise ValueError("supported required counts must be nonnegative and emission cannot exceed availability")
+                if not isinstance(response["false_premise_rejected"], bool):
+                    raise ValueError("false-premise rejection must be boolean")
+                maximum, asserted = response["maximum_justified_rank"], response["highest_asserted_rank"]
+                if not nonnegative_int(maximum) or (asserted is not None and not nonnegative_int(asserted)):
+                    raise ValueError("diagnostic abstraction ranks must be nonnegative integers or null assertion")
+                claim_ids = [claim["claim_id"] for claim in response["claims"]]
+                if (any(not isinstance(item, str) or not item for item in claim_ids)
+                        or len(claim_ids) != len(set(claim_ids))):
+                    raise ValueError("atomic claim IDs must be nonempty and unique within a response")
                 for claim in response["claims"]:
+                    if not isinstance(claim["mechanistic"], bool):
+                        raise ValueError("mechanistic claim flag must be an adjudicated boolean")
+                    minimum = claim["required_minimum_level"]
+                    if minimum is not None and not nonnegative_int(minimum):
+                        raise ValueError("required minimum evidence level must be a nonnegative integer or null")
+                    if claim["mechanistic"] and minimum is None:
+                        raise ValueError("mechanistic claim needs a required minimum evidence level")
                     if claim["label"] not in UNSUPPORTED_LABELS | {"SUPPORTED_BY_VISIBLE_EVIDENCE", "UNINTERPRETABLE"}:
                         raise ValueError("unknown adjudicated claim label")
+                    if claim["label"] == "UNINTERPRETABLE":
+                        raise ValueError("UNINTERPRETABLE has no prospectively bound endpoint mapping")
+            b2, b4 = condition["methods"]["B2"], condition["methods"]["B4"]
+            if (b2["maximum_justified_rank"] != b4["maximum_justified_rank"]
+                    or b2["supported_required_available"] != b4["supported_required_available"]):
+                raise ValueError("paired methods must share the same evaluator reference for a condition")
 
 
 def _cluster_robust_logistic(data: dict[str, Any]) -> dict[str, Any]:
@@ -93,7 +147,8 @@ def _cluster_robust_logistic(data: dict[str, Any]) -> dict[str, Any]:
             level = condition["level_index"] - center
             for method in ("B2", "B4"):
                 treatment = int(method == "B4")
-                rows.append((cluster_index, float(_response_failure(condition["methods"][method])),
+                rows.append((cluster_index, float(_response_failure(condition["methods"][method],
+                                                                   condition["level_index"])),
                              [1.0, treatment, level, treatment * level]))
     names = ["intercept", "method_B4", "evidence_level_centered", "B4_by_evidence_level"]
     if len({item[0] for item in rows}) <= len(names):
@@ -102,6 +157,11 @@ def _cluster_robust_logistic(data: dict[str, Any]) -> dict[str, Any]:
     clusters = np.asarray([item[0] for item in rows])
     y = np.asarray([item[1] for item in rows])
     x = np.asarray([item[2] for item in rows], dtype=float)
+    rank = int(np.linalg.matrix_rank(x))
+    if rank < x.shape[1]:
+        return {"status": "RANK_DEFICIENT_DESIGN", "coefficient_names": names,
+                "design_rank": rank, "required_rank": x.shape[1],
+                "episode_clusters": len(set(clusters)), "observation_count": len(rows)}
     beta = np.zeros(x.shape[1])
     converged = False
     for _ in range(100):
@@ -146,9 +206,12 @@ def _cluster_robust_logistic(data: dict[str, Any]) -> dict[str, Any]:
 
 def _episode_summary(episode: dict[str, Any], method: str) -> dict[str, Any]:
     conditions = [item["methods"][method] for item in episode["conditions"]]
-    claims = [claim for response in conditions for claim in response["claims"]]
-    mechanistic = [claim for claim in claims if claim["mechanistic"]]
-    unsupported = [claim for claim in mechanistic if claim["label"] in UNSUPPORTED_LABELS]
+    claims_with_levels = [(claim, condition["level_index"])
+                          for condition in episode["conditions"]
+                          for claim in condition["methods"][method]["claims"]]
+    mechanistic = [(claim, level) for claim, level in claims_with_levels if claim["mechanistic"]]
+    unsupported = [(claim, level) for claim, level in mechanistic
+                   if claim["label"] in UNSUPPORTED_LABELS or claim["required_minimum_level"] > level]
     emitted = sum(item["supported_required_emitted"] for item in conditions)
     available = sum(item["supported_required_available"] for item in conditions)
     monotonicity = 0
@@ -161,7 +224,7 @@ def _episode_summary(episode: dict[str, Any], method: str) -> dict[str, Any]:
     insufficient = [item for item in episode["conditions"] if item["evidence_insufficient"]]
     sufficient = [item for item in episode["conditions"] if not item["evidence_insufficient"]]
     appropriate = sum(
-        not _response_failure(item["methods"][method]) and
+        not _response_failure(item["methods"][method], item["level_index"]) and
         item["methods"][method]["supported_required_emitted"] > 0 for item in insufficient
     )
     over_abstention = sum(
@@ -171,7 +234,8 @@ def _episode_summary(episode: dict[str, Any], method: str) -> dict[str, Any]:
     false_premise = [item for item in episode["conditions"] if item["false_premise"]]
     return {
         "episode_id": episode["episode_id"],
-        "primary_failure": any(_response_failure(item) for item in conditions),
+        "primary_failure": any(_response_failure(item["methods"][method], item["level_index"])
+                               for item in episode["conditions"]),
         "unsupported_mechanistic_claims": len(unsupported),
         "mechanistic_claims_emitted": len(mechanistic),
         "supported_required_emitted": emitted, "supported_required_available": available,
@@ -193,8 +257,12 @@ def _ratio(numerator: int, denominator: int) -> float | None:
 
 def analyze(data: dict[str, Any], plan: dict[str, Any]) -> dict[str, Any]:
     _validate(data, plan)
+    primary = [episode for episode in data["episodes"]
+               if episode["mechanism_family"] in plan["primary_families"]]
+    if not primary:
+        raise ValueError("primary comparison has no independent episodes")
     summaries = {
-        method: [_episode_summary(episode, method) for episode in data["episodes"]]
+        method: [_episode_summary(episode, method) for episode in primary]
         for method in ("B2", "B4")
     }
     pairs = list(zip(summaries["B2"], summaries["B4"]))
@@ -247,10 +315,26 @@ def analyze(data: dict[str, Any], plan: dict[str, Any]) -> dict[str, Any]:
     ci = None if not bootstrap else [
         _percentile(bootstrap, plan["alpha"] / 2), _percentile(bootstrap, 1 - plan["alpha"] / 2)
     ]
+    nonprimary = {}
+    for role in ("control_families", "secondary_families"):
+        for family in plan[role]:
+            episodes = [episode for episode in data["episodes"] if episode["mechanism_family"] == family]
+            nonprimary[family] = {
+                "role": role.removesuffix("_families"),
+                "independent_episode_count": len(episodes),
+                "B2_episode_failures": sum(_episode_summary(episode, "B2")["primary_failure"] for episode in episodes),
+                "B4_episode_failures": sum(_episode_summary(episode, "B4")["primary_failure"] for episode in episodes),
+            }
     return {
         "schema": OUTPUT_SCHEMA, "input_sha256": canonical_sha256(data),
         "analysis_plan_sha256": canonical_sha256(plan), "independent_unit": "episode_configuration",
         "independent_episode_count": n,
+        "total_independent_episode_count": len(data["episodes"]),
+        "primary_families": plan["primary_families"],
+        "primary_family_counts": {family: sum(episode["mechanism_family"] == family for episode in primary)
+                                  for family in plan["primary_families"]},
+        "primary_family_weighting": "OBSERVED_EPISODE_MIX_DEVELOPMENT_ONLY",
+        "nonprimary_family_descriptives": nonprimary,
         "within_episode_repeated_observations": ["evidence_conditions", "methods", "claims", "annotations"],
         "paired_primary": {
             "neither_failure": counts[(False, False)], "b2_only_failure": counts[(True, False)],
@@ -264,7 +348,7 @@ def analyze(data: dict[str, Any], plan: dict[str, Any]) -> dict[str, Any]:
         "method_metrics": method_metrics,
         "episode_summaries": summaries,
         "secondary_multiplicity": "HOLM_PREDECLARED_FAMILIES_REQUIRED_AT_FREEZE",
-        "clustered_response_model": _cluster_robust_logistic(data),
+        "clustered_response_model": _cluster_robust_logistic({"episodes": primary}),
     }
 
 

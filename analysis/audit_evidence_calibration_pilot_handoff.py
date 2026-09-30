@@ -10,6 +10,9 @@ import json
 from pathlib import Path
 
 from evidence_calibration_io import canonical_sha256
+from audit_evidence_calibration_pilot_atomization import audit as audit_atomization
+from audit_evidence_calibration_pilot_rubric_bundle import audit as audit_rubrics
+from audit_evidence_calibration_pilot_source_context_bundle import audit as audit_source_bundle
 from build_evidence_calibration_pilot_source_context import build as build_source_context
 from run_evidence_calibration_b2_pilot import _materialize
 from validate_evidence_calibration_pilot_inputs import validate
@@ -123,6 +126,16 @@ def audit(root: Path = ROOT) -> dict:
     atomization_bank_entries = 0
     if atomization_bank.exists():
         atomization_bank_entries = json.loads(atomization_bank.read_text()).get("response_count", 0)
+    try:
+        atomization = audit_atomization(
+            root / "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-atomization-v2",
+            allow_incomplete=True,
+        )
+        rubric_bundle = audit_rubrics(root)
+        source_bundle = audit_source_bundle(root)
+    except (ValueError, KeyError, FileNotFoundError) as error:
+        errors.append(f"annotation preparation audit failed: {error}")
+        atomization, rubric_bundle, source_bundle = None, None, None
     complete_episodes = [
         row["run_id"] for row in validation["episodes"]
         if set(row["condition_ids"]) <= set(b2_paths)
@@ -133,10 +146,13 @@ def audit(root: Path = ROOT) -> dict:
     ]
     handoff_gaps = []
     if not errors and packet_count == 0:
-        handoff_gaps.extend([
-            "B2 outputs contain prose but no governed atomic-claim inventory or exact response spans",
-            "No pilot-specific, hash-bound rubric has been prepared for the 57 valid B2/B4 pairs",
-        ])
+        handoff_gaps.append(
+            f"Only {atomization['structural_returns']}/114 atomization records exist; "
+            f"ambiguous technical request count is {atomization['retained_ambiguous_technical_interruptions']}; "
+            "no per-response semantic completeness review exists"
+        )
+        handoff_gaps.append("Extractor abstraction tags are unqualified and cannot anchor endpoint scoring")
+        handoff_gaps.append("The common source-context annotation extension has no passing synthetic canary")
     if catalog_role_mismatches:
         handoff_gaps.append("Nominal control masks retain source and BT roles excluded by the declared development ladder")
     return {
@@ -162,6 +178,10 @@ def audit(root: Path = ROOT) -> dict:
         ),
         "blinded_atomic_packet_files": packet_count,
         "blinded_atomization_bank_responses": atomization_bank_entries,
+        "structural_atomization_returns": None if atomization is None else atomization["structural_returns"],
+        "retained_ambiguous_atomization_requests": None if atomization is None else atomization["retained_ambiguous_technical_interruptions"],
+        "reviewed_method_blind_rubrics": None if rubric_bundle is None else rubric_bundle["rubrics"],
+        "common_source_context_conditions": None if source_bundle is None else source_bundle["condition_count"],
         "handoff_gaps": handoff_gaps,
         "confirmatory_independent_n": 0,
         "errors": errors,

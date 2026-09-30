@@ -1,5 +1,21 @@
 # Research and benchmark source audit
 
+## 2026-09-29 — later operational reconciliation
+
+The earlier same-day checkpoint below records the state before valid B2 continuation and before
+the current annotation qualifications. The retained inspected development pilot now has 60
+accepted deterministic B4 outputs and 57 valid B2 outputs; three earlier B2 technical failures
+remain retired. Fifteen episodes have complete paired ladders, but no comparative atomic support
+annotation or effect analysis exists. The hash-bound `gpt-6-astra` high-effort task qualified for
+five-way atomic support in two isolated passes. A separate method-blind assertion-role synthetic
+task is frozen before calls and remains unrun; extractor abstraction tags and the support task's
+raw highest-level field cannot directly define the endpoint. The role task's 49 call slots are
+uncalled. P11 still fails closed on 18 conditions, with independent confirmation and replication
+N=0. See the newest [decisions](DECISIONS.md), [current-state checkpoint](CURRENT_STATE_2026-09-29.md),
+and [P11 manifest](../manifests/study/evidence-calibration-p11-prefreeze-readiness.json). This
+amendment prospectively supersedes only the older living-status statements; it does not relabel
+their historical outputs.
+
 ## 2026-09-28 — evidence-calibrated specificity redirect
 
 The forward research question is now whether explanation specificity tracks the diagnostic

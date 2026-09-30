@@ -20,7 +20,7 @@ from evidence_calibration_io import canonical_json_bytes, canonical_sha256
 PACKET_SCHEMA = "crane-blinded-agent-atomic-annotation-packet-set/v1"
 KEY_SCHEMA = "crane-blinded-agent-atomic-annotation-key/v1"
 BUILDER_ID = "blinded-agent-atomic-claim-annotation-builder"
-BUILDER_VERSION = "v2-astra-qualified"
+BUILDER_VERSION = "v3-astra-response-text-parity"
 
 
 def _validated_source_assets(source_assets: list[dict] | None) -> list[dict]:
@@ -62,6 +62,7 @@ def build(condition_entry: dict, response: dict, rubric: dict, blinding_salt: st
             "schema": PACKET_SCHEMA,
             "builder_id": BUILDER_ID,
             "builder_version": BUILDER_VERSION,
+            "response_text": response["final_response"],
             "annotation_origin": "automated_agent",
             "independent_agent_invocations_required": 2,
             "adjudication_agent_policy": "DISTINCT_DISAGREEMENT_ONLY_INVOCATION",

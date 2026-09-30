@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Normalize retained robot-visible command-motion inputs without copying old answers."""
+"""Normalize retained robot-visible command-motion inputs without copying old answers.
+
+The default role inventory preserves the inspected development pilot byte for byte. A future
+nominal ladder may explicitly omit recovery transitions and source anchors before building its
+removal-only masks; this projection does not alter any retained condition.
+"""
 
 from __future__ import annotations
 
@@ -15,7 +20,7 @@ SCHEMA = "crane-normalized-method-evidence/v1"
 
 
 def normalize(diagnostic: dict[str, Any], *, configuration_id: str, question: str,
-              omit_odometry: bool = False) -> dict[str, Any]:
+              omit_odometry: bool = False, omit_recovery_and_source_anchors: bool = False) -> dict[str, Any]:
     required = {"schema", "episode_id", "source", "method_input", "diagnostic_result",
                 "final_answer", "final_text_verification", "evidence_boundary", "development_only",
                 "visibility"}
@@ -59,6 +64,9 @@ def normalize(diagnostic: dict[str, Any], *, configuration_id: str, question: st
             "windowing": method["windowing"],
         },
     }
+    if omit_recovery_and_source_anchors:
+        del evidence["behavior_tree_transitions"]
+        del evidence["source_anchors"]
     if not omit_odometry:
         evidence["delivered_odometry_stream"] = {
             "evidence_ids": ["delivered-odometry-stream"], "frame": method["measured_frame"],
@@ -85,10 +93,12 @@ def main() -> None:
     parser.add_argument("--configuration-id", required=True)
     parser.add_argument("--question", required=True)
     parser.add_argument("--omit-odometry", action="store_true")
+    parser.add_argument("--omit-recovery-and-source-anchors", action="store_true")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     output = normalize(json.loads(args.diagnostic.read_text()), configuration_id=args.configuration_id,
-                       question=args.question, omit_odometry=args.omit_odometry)
+                       question=args.question, omit_odometry=args.omit_odometry,
+                       omit_recovery_and_source_anchors=args.omit_recovery_and_source_anchors)
     args.output.write_bytes(canonical_json_bytes(output) + b"\n")
 
 

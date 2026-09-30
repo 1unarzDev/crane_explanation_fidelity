@@ -261,11 +261,15 @@ class StructuredCodexCliAgentCaller:
 
 
 def _annotation_payload(packet: dict[str, Any], form: dict[str, Any], slot: str) -> dict[str, Any]:
+    response_text = packet.get("response_text")
+    if not isinstance(response_text, str) or not response_text.strip():
+        raise ValueError("automated annotation packet requires the exact response text")
     return {
         "task": "BLINDED_ATOMIC_EVIDENCE_ANNOTATION",
         "annotation_origin": "automated_agent",
         "agent_identity": f"agent-{slot}-astra-v4",
         "packet_set_sha256": canonical_sha256(packet),
+        "response_text": response_text,
         "form": form,
         "required_attestation": "INDEPENDENT_BLINDED_COMPLETE",
     }

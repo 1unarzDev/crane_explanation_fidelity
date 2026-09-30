@@ -1,0 +1,158 @@
+{
+  "schema": "crane-evidence-calibration-pilot-rubric-review/v1",
+  "reviewed_date": "2026-09-29",
+  "reviewer_role": "project_method_blind_reference_reviewer",
+  "status": "REVIEWED_FOR_DEVELOPMENT_SOURCE_CONTEXT_CANARY_PENDING",
+  "candidate_manifest_path": "manifests/study/evidence-calibration-b2-b4-pilot-v1-rubric-candidates-v1.json",
+  "candidate_manifest_raw_sha256": "4345a4fd05ef6a90cc3b5a0a5291105bbe0c45d7ad4581ace3ef3c3316ccf8fa",
+  "reviewed_condition_count": 57,
+  "reviewed_distinct_templates": 10,
+  "review_basis": "Every candidate rubric was byte-recomputed from independent reference and actual masked packet; project reviewer inspected all ten distinct required-unit/limitation patterns without consulting method answers. Zero-Wait traces require an explicit absence unit and no recovery-order causation limitation.",
+  "templates": [
+    {
+      "template_sha256": "6d2d807627b8e206406401480dddad09fe985474f9334bc049e60c6257ba7932",
+      "condition_count": 1,
+      "required_unit_prompts": [
+        "state the recorded navigation action outcome",
+        "state that no source-qualified Wait recovery was observed"
+      ],
+      "limitation_prompts": [
+        "do not identify a unique hidden physical cause from this evidence"
+      ],
+      "false_premise_applicable": false
+    },
+    {
+      "template_sha256": "0a1713da00514eca2990e97aa2649db79eac7e69bc1d0c7899f40cb82dcf2043",
+      "condition_count": 1,
+      "required_unit_prompts": [
+        "state the recorded navigation action outcome",
+        "state that no source-qualified Wait recovery was observed",
+        "state the delivered command observation"
+      ],
+      "limitation_prompts": [
+        "do not identify a unique hidden physical cause from this evidence",
+        "delivered command alone does not establish measured motion"
+      ],
+      "false_premise_applicable": false
+    },
+    {
+      "template_sha256": "ada8f56e6c7d909552c4a51db830fb6f4d301b75e90470c3ea4061e6f8820e5b",
+      "condition_count": 1,
+      "required_unit_prompts": [
+        "state the recorded navigation action outcome",
+        "state that no source-qualified Wait recovery was observed",
+        "state the delivered command observation",
+        "state that the registered command-motion discrepancy did not trigger"
+      ],
+      "limitation_prompts": [
+        "do not identify a unique hidden physical cause from this evidence"
+      ],
+      "false_premise_applicable": true
+    },
+    {
+      "template_sha256": "3bbe5fe7e1013b528fe85abcb6bf2202284f4f387f693899af5380bb3fb43f0c",
+      "condition_count": 14,
+      "required_unit_prompts": [
+        "state the recorded navigation action outcome",
+        "state the retained source-qualified recovery sequence"
+      ],
+      "limitation_prompts": [
+        "do not identify a unique hidden physical cause from this evidence",
+        "recovery ordering alone does not prove it caused the task outcome"
+      ],
+      "false_premise_applicable": false
+    },
+    {
+      "template_sha256": "98c3e9f856683f679c380dde48ec235100ab5b31488ce22c018ce477da022667",
+      "condition_count": 12,
+      "required_unit_prompts": [
+        "state the recorded navigation action outcome",
+        "state the retained source-qualified recovery sequence",
+        "state the delivered command observation"
+      ],
+      "limitation_prompts": [
+        "do not identify a unique hidden physical cause from this evidence",
+        "recovery ordering alone does not prove it caused the task outcome",
+        "delivered command alone does not establish measured motion"
+      ],
+      "false_premise_applicable": false
+    },
+    {
+      "template_sha256": "815d64e8172c296e2cf472916f1468c312cceaea4598cd7c992c3467e4e05b03",
+      "condition_count": 2,
+      "required_unit_prompts": [
+        "state the recorded navigation action outcome",
+        "state the retained source-qualified recovery sequence",
+        "state the delivered command observation"
+      ],
+      "limitation_prompts": [
+        "do not identify a unique hidden physical cause from this evidence",
+        "recovery ordering alone does not prove it caused the task outcome",
+        "delivered command alone does not establish measured motion",
+        "missing odometry prevents an odometry-dependent motion diagnosis"
+      ],
+      "false_premise_applicable": false
+    },
+    {
+      "template_sha256": "36511965ea7eae66906d3e52db8de4033693894aa920ea08ff08c0347016d850",
+      "condition_count": 1,
+      "required_unit_prompts": [
+        "state the recorded navigation action outcome",
+        "state the retained source-qualified recovery sequence",
+        "state the delivered command observation",
+        "state that the registered command-motion discrepancy did not trigger"
+      ],
+      "limitation_prompts": [
+        "do not identify a unique hidden physical cause from this evidence",
+        "recovery ordering alone does not prove it caused the task outcome"
+      ],
+      "false_premise_applicable": true
+    },
+    {
+      "template_sha256": "766a2678721d98e5716fc6d1136d5e4b9d6c85e89014d5806f7fe28ad6bcdf36",
+      "condition_count": 6,
+      "required_unit_prompts": [
+        "state the recorded navigation action outcome",
+        "state the retained source-qualified recovery sequence",
+        "state the delivered command observation",
+        "state the supported command-to-measured-motion discrepancy and interval"
+      ],
+      "limitation_prompts": [
+        "do not identify a unique hidden physical cause from this evidence",
+        "recovery ordering alone does not prove it caused the task outcome"
+      ],
+      "false_premise_applicable": false
+    },
+    {
+      "template_sha256": "1217bb3b7b1909a721edca42dd519301d3712a2d6797ec9a1376826eb6ed889e",
+      "condition_count": 6,
+      "required_unit_prompts": [
+        "state the recorded navigation action outcome",
+        "state the retained source-qualified recovery sequence",
+        "state the delivered command observation",
+        "state the supported command-to-measured-motion discrepancy and interval",
+        "state the later measured-response recovery when supported"
+      ],
+      "limitation_prompts": [
+        "do not identify a unique hidden physical cause from this evidence",
+        "recovery ordering alone does not prove it caused the task outcome",
+        "measured recovery before the outcome does not prove outcome causation"
+      ],
+      "false_premise_applicable": false
+    },
+    {
+      "template_sha256": "e646bbc45eed652d421d9d610017f24593d70b5ab556b986cbff0af1b4419b8e",
+      "condition_count": 13,
+      "required_unit_prompts": [
+        "state the recorded navigation action outcome"
+      ],
+      "limitation_prompts": [
+        "do not identify a unique hidden physical cause from this evidence"
+      ],
+      "false_premise_applicable": false
+    }
+  ],
+  "method_answer_text_used": false,
+  "support_annotation_authorized": false,
+  "confirmation_independent_n": 0
+}

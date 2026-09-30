@@ -37,6 +37,8 @@ def dataset():
 def plan():
     return {"schema": "crane-evidence-calibration-analysis-plan/v1-development",
             "methods": ["B2", "B4"], "coverage_floor": 0.75, "alpha": 0.05,
+            "primary_families": ["command_motion"], "control_families": ["nominal"],
+            "secondary_families": ["geometry"],
             "clustered_model": "LOGISTIC_CLUSTER_ROBUST_EPISODE",
             "minimum_practically_meaningful_reduction": 0.10,
             "bootstrap_seed": 7, "bootstrap_replicates": 200}
@@ -63,10 +65,112 @@ def test_extra_condition_does_not_increment_independent_n():
     assert output["independent_episode_count"] == 4
 
 
+def test_control_and_secondary_episodes_cannot_change_primary_comparison():
+    data = dataset()
+    baseline = analyze(data, plan())
+    for family, b2_failure, b4_failure in [("nominal", False, True), ("geometry", False, True)]:
+        item = copy.deepcopy(data["episodes"][0])
+        item["episode_id"] = family
+        item["mechanism_family"] = family
+        item["conditions"][0]["condition_id"] = family + "-e1"
+        item["conditions"][0]["methods"] = {
+            "B2": response(b2_failure), "B4": response(b4_failure),
+        }
+        data["episodes"].append(item)
+    output = analyze(data, plan())
+    assert output["paired_primary"] == baseline["paired_primary"]
+    assert output["method_metrics"] == baseline["method_metrics"]
+    assert output["independent_episode_count"] == 4
+    assert output["total_independent_episode_count"] == 6
+    assert output["primary_family_counts"] == {"command_motion": 4}
+    assert output["primary_family_weighting"] == "OBSERVED_EPISODE_MIX_DEVELOPMENT_ONLY"
+    assert output["nonprimary_family_descriptives"]["nominal"]["B4_episode_failures"] == 1
+    assert output["nonprimary_family_descriptives"]["geometry"]["role"] == "secondary"
+
+
+def test_undeclared_family_cannot_enter_primary_by_default():
+    data = dataset()
+    data["episodes"][0]["mechanism_family"] = "unregistered"
+    with pytest.raises(ValueError, match="no declared analysis role"):
+        analyze(data, plan())
+
+
+def test_missing_required_evidence_fails_even_if_agent_labels_claim_supported():
+    data = dataset()
+    target = data["episodes"][3]["conditions"][0]["methods"]["B2"]["claims"][0]
+    assert target["label"] == "SUPPORTED_BY_VISIBLE_EVIDENCE"
+    target["required_minimum_level"] = 2
+    output = analyze(data, plan())
+    assert output["paired_primary"]["b2_only_failure"] == 3
+    assert output["method_metrics"]["B2"]["usr_numerator"] == 3
+    assert output["method_metrics"]["B2"]["emvr_numerator"] == 1
+
+
+def test_paired_methods_cannot_use_different_evaluator_references():
+    data = dataset()
+    b4 = data["episodes"][0]["conditions"][0]["methods"]["B4"]
+    b4["maximum_justified_rank"] = 2
+    with pytest.raises(ValueError, match="same evaluator reference"):
+        analyze(data, plan())
+    b4["maximum_justified_rank"] = 1
+    b4["supported_required_available"] = 2
+    with pytest.raises(ValueError, match="same evaluator reference"):
+        analyze(data, plan())
+
+
+def test_cluster_model_reports_rank_deficiency_instead_of_fake_level_coefficients():
+    data = dataset()
+    for index in (0, 2):
+        item = copy.deepcopy(data["episodes"][index])
+        item["episode_id"] += "-copy"
+        item["conditions"][0]["condition_id"] += "-copy"
+        data["episodes"].append(item)
+    model = analyze(data, plan())["clustered_response_model"]
+    assert model["status"] == "RANK_DEFICIENT_DESIGN"
+    assert model["design_rank"] == 2
+    assert model["required_rank"] == 4
+    assert "coefficients" not in model
+
+
 def test_analysis_rejects_unpaired_condition():
     data = dataset()
     del data["episodes"][0]["conditions"][0]["methods"]["B4"]
     with pytest.raises(ValueError, match="paired"):
+        analyze(data, plan())
+
+
+def test_analysis_rejects_unreviewed_truthy_mechanistic_flags():
+    data = dataset()
+    data["episodes"][0]["conditions"][0]["methods"]["B2"]["claims"][0]["mechanistic"] = "false"
+    with pytest.raises(ValueError, match="mechanistic claim flag"):
+        analyze(data, plan())
+
+
+def test_analysis_rejects_invalid_coverage_and_abstraction_values():
+    data = dataset()
+    response = data["episodes"][0]["conditions"][0]["methods"]["B2"]
+    response["supported_required_available"] = -1
+    with pytest.raises(ValueError, match="supported required counts"):
+        analyze(data, plan())
+    response["supported_required_available"] = 1
+    response["highest_asserted_rank"] = True
+    with pytest.raises(ValueError, match="diagnostic abstraction ranks"):
+        analyze(data, plan())
+
+
+def test_analysis_rejects_duplicate_ladder_levels_with_distinct_condition_ids():
+    data = dataset()
+    extra = copy.deepcopy(data["episodes"][0]["conditions"][0])
+    extra["condition_id"] = "second-mask-at-same-level"
+    data["episodes"][0]["conditions"].append(extra)
+    with pytest.raises(ValueError, match="distinct ordered ladder levels"):
+        analyze(data, plan())
+
+
+def test_analysis_does_not_silently_map_uninterpretable_claims_to_nonfailure():
+    data = dataset()
+    data["episodes"][0]["conditions"][0]["methods"]["B2"]["claims"][0]["label"] = "UNINTERPRETABLE"
+    with pytest.raises(ValueError, match="no prospectively bound endpoint mapping"):
         analyze(data, plan())
 
 

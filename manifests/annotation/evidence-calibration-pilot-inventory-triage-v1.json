@@ -1,0 +1,41 @@
+{
+  "schema": "crane-evidence-calibration-pilot-inventory-triage/v1",
+  "recorded_date": "2026-09-29",
+  "status": "PRELIMINARY_METHOD_BLIND_TRIAGE_NOT_SEMANTIC_APPROVAL",
+  "scope": {
+    "review_form_root": "model_outputs/annotation_packets/evidence-calibration-b2-b4-pilot-v1/atomization-review-v1",
+    "review_forms_inspected": 17,
+    "sorted_filename_and_raw_sha256_pairs_json_sha256": "2d8ee38431ff9042cf67b56835ce2bef286c661a8df243f1cfede828b97a8c5a",
+    "candidate_claims_inspected": 160,
+    "method_join_key_opened": false,
+    "evaluator_truth_opened": false
+  },
+  "findings": [
+    {
+      "opaque_response_id": "ax-e40daca7a99ef38a2d4e8d4d6889f798",
+      "candidate_indices": [3],
+      "issue": "The response says two FollowPath failures, while the normalized atomic claim says only two failures. Preserve the FollowPath qualifier before a claim is scored in isolation.",
+      "proposed_claim_text_replacements": {
+        "3": "The trace records two FollowPath failures."
+      }
+    },
+    {
+      "opaque_response_id": "ax-ff10727fb4a1d16159a2b77e3862eac9",
+      "candidate_indices": [3, 4],
+      "issue": "The response's FollowPath context is dropped from the normalized three-attempt and two-failure claims. Resolve the actor in both atomic claims before isolated support scoring.",
+      "proposed_claim_text_replacements": {
+        "3": "The trace records three FollowPath attempts.",
+        "4": "The trace records two FollowPath failures."
+      }
+    }
+  ],
+  "triage_notes": [
+    "The four uncovered-text flags contain citation or punctuation fragments. They are mechanical triage signals, not evidence that all substantive assertions were captured.",
+    "Overlapping spans and nested normalized assertions still require a per-response acceptance and omission review. This triage does not mark any review form complete.",
+    "The extractor's diagnostic abstraction tags remain unqualified. No support label, endpoint, paired comparison, episode count, or alpha is inferred here."
+  ],
+  "semantic_inventory_approved": false,
+  "support_annotation_authorized": false,
+  "confirmation_independent_n": 0,
+  "replication_independent_n": 0
+}

@@ -1,0 +1,31 @@
+{
+  "schema": "crane-evidence-calibration-source-context-canary-freeze/v1",
+  "freeze_id": "evidence-calibration-source-context-canary-v1",
+  "declared_date": "2026-09-29",
+  "status": "FROZEN_BEFORE_SOURCE_CONTEXT_CANARY_CALLS",
+  "scope": "Synthetic measurement-extension canary only; not a pilot annotation or an independent episode.",
+  "payload_boundary": "Before any canary call, supply the exact response text as a top-level annotation payload field, matching the qualified v4 task; validate every positive quoted span against those exact bytes. The form remains method-blind.",
+  "case": {
+    "path": "research/explanation_fidelity/qualification/evidence-calibration-source-context-canary-v1.json",
+    "raw_sha256": "032cfa84dca310384b417a669b33dc21af6b8e5a9f8982caaccb02d605b1436a"
+  },
+  "qualified_annotator": {
+    "disposition_path": "manifests/study/evidence-calibration-agent-qualification-disposition-v1.json",
+    "model": "gpt-6-astra",
+    "reasoning_effort": "high",
+    "transport": "codex-cli-chatgpt-login-ephemeral/v1",
+    "prompt_path": "research/explanation_fidelity/prompts/evidence-calibration-agent-annotator-v1.md",
+    "prompt_raw_sha256": "e85eba2778c3d740edb38ba0525eaeecaf2b73460b4bc95172e04820ad3cc4a9",
+    "return_schema_path": "research/explanation_fidelity/schemas/blinded-agent-atomic-annotation-return-v2.schema.json",
+    "return_schema_raw_sha256": "7b10a601c48f08a720bcc2c52c69bab0b1773e72ee552f4ac88a7bbd4c1a044f"
+  },
+  "isolated_passes": ["A", "B"],
+  "tools": "none",
+  "quality_driven_retries": 0,
+  "pass_gate": "Each pass must structurally validate and exactly match both frozen atomic labels, required-unit coverage, highest asserted level, limitation preservation, and false-premise handling. A failure is retained without retry or threshold change.",
+  "execution_gate": "Run only from a normal network-enabled host after transport readiness reports READY_FOR_SCHEMA_CANARY; the managed shell is network-disabled.",
+  "output_root": "model_outputs/automated_annotations/evidence-calibration-source-context-canary-v1",
+  "pilot_support_annotation_authorized_by_canary_alone": false,
+  "confirmation_independent_n": 0,
+  "confirmatory_alpha_consumed": 0.0
+}

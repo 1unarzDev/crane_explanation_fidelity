@@ -56,8 +56,12 @@ def build(condition_id: str, blinding_salt: str, root: Path = ROOT) -> tuple[dic
     units = ["state the recorded navigation action outcome"]
     limits = ["do not identify a unique hidden physical cause from this evidence"]
     if "behavior_tree_transitions" in evidence:
-        units.append("state the retained source-qualified recovery sequence")
-        limits.append("recovery ordering alone does not prove it caused the task outcome")
+        wait_count = evidence["behavior_tree_transitions"]["execution_sequence"]["source_qualified_wait_recovery_count"]
+        if wait_count > 0:
+            units.append("state the retained source-qualified recovery sequence")
+            limits.append("recovery ordering alone does not prove it caused the task outcome")
+        else:
+            units.append("state that no source-qualified Wait recovery was observed")
     if "delivered_command_stream" in evidence:
         units.append("state the delivered command observation")
         if "delivered_odometry_stream" not in evidence:

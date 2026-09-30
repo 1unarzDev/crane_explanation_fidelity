@@ -33,6 +33,9 @@ def _form(packet_set: dict[str, Any], form_id: str) -> dict[str, Any]:
 
 
 def validate_return(packet_set: dict[str, Any], returned: dict[str, Any]) -> dict[str, Any]:
+    response_text = packet_set.get("response_text")
+    if "response_text" in packet_set and (not isinstance(response_text, str) or not response_text.strip()):
+        raise ValueError("packet response text is invalid")
     required = {
         "schema", "packet_set_sha256", "form_id", "packet_id", "annotator_slot",
         "annotator_id", "atomic_labels", "required_unit_coverage",
@@ -73,8 +76,10 @@ def validate_return(packet_set: dict[str, Any], returned: dict[str, Any]) -> dic
             raise ValueError("required-unit annotation has missing or unknown fields")
         if not isinstance(item["communicated"], bool):
             raise ValueError("required-unit communicated must be boolean")
-        if item["communicated"] and not item["response_span"]:
+        if item["communicated"] and (not isinstance(item["response_span"], str) or not item["response_span"]):
             raise ValueError("communicated required unit needs an exact response span")
+        if item["communicated"] and response_text is not None and item["response_span"] not in response_text:
+            raise ValueError("required-unit response span is not in the exact response text")
 
     level = returned["highest_asserted_abstraction_level"]
     if level not in form["abstraction_level_options"]:
@@ -89,8 +94,10 @@ def validate_return(packet_set: dict[str, Any], returned: dict[str, Any]) -> dic
             raise ValueError("limitation annotation has missing or unknown fields")
         if not isinstance(item["preserved"], bool):
             raise ValueError("limitation preserved must be boolean")
-        if item["preserved"] and not item["response_span"]:
+        if item["preserved"] and (not isinstance(item["response_span"], str) or not item["response_span"]):
             raise ValueError("preserved limitation needs an exact response span")
+        if item["preserved"] and response_text is not None and item["response_span"] not in response_text:
+            raise ValueError("limitation response span is not in the exact response text")
 
     false_premise = returned["false_premise_handling"]
     allowed_false_premise = {

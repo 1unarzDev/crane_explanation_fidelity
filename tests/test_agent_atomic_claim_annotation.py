@@ -12,6 +12,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "analysis"))
 from build_agent_atomic_claim_annotation_packets import build  # noqa: E402
+from adjudicate_evidence_calibration_annotations import validate_return  # noqa: E402
 from evidence_calibration_io import canonical_sha256  # noqa: E402
 from run_evidence_calibration_agent_annotation import run  # noqa: E402
 
@@ -32,6 +33,7 @@ def test_agent_packet_preserves_blinding_and_declares_qualification_gate() -> No
     assert packet["qualification_status"] == "EXACT_TASK_V4_ASTRA_QUALIFIED_AGENT_ASSESSED_ONLY"
     assert key["packet_set_sha256"] == canonical_sha256(packet)
     assert key["annotation_origin"] == "automated_agent"
+    assert packet["response_text"] == FIXTURES.inputs()[1]["final_response"]
 
 
 def test_agent_packet_includes_same_hash_checked_visible_source_for_both_blind_forms() -> None:
@@ -68,6 +70,7 @@ class FakeCaller:
             }
         else:
             form = payload["form"]
+            assert payload["response_text"] == FIXTURES.inputs()[1]["final_response"]
             slot = form["annotator_slot"]
             labels = []
             for index, item in enumerate(form["atomic_statements"]):
@@ -84,7 +87,8 @@ class FakeCaller:
                 "annotator_id": f"agent-{slot}-astra-v4",
                 "atomic_labels": labels,
                 "required_unit_coverage": [
-                    {"unit_prompt": item["unit_prompt"], "communicated": True, "response_span": "exact span"}
+                    {"unit_prompt": item["unit_prompt"], "communicated": True,
+                     "response_span": "The action aborted."}
                     for item in form["required_unit_coverage"]
                 ],
                 "highest_asserted_abstraction_level": "execution_discrepancy",
@@ -121,3 +125,50 @@ def test_runner_does_not_invoke_agent_c_when_passes_agree(tmp_path: Path) -> Non
     assert summary["adjudication_agent_invoked"] is False
     assert summary["finalized"] is True
     assert (tmp_path / "out/final.json").is_file()
+
+
+def test_agent_return_rejects_a_quote_absent_from_the_exact_response() -> None:
+    packet, _ = build(*FIXTURES.inputs(), "development-blinding-secret-v1")
+    form = packet["forms"][0]
+    returned = {
+        "schema": "crane-blinded-atomic-annotation-return/v1",
+        "packet_set_sha256": canonical_sha256(packet),
+        "form_id": form["form_id"], "packet_id": form["packet_id"],
+        "annotator_slot": form["annotator_slot"], "annotator_id": "agent-test",
+        "atomic_labels": [
+            {"item_id": item["item_id"], "label": "SUPPORTED_BY_VISIBLE_EVIDENCE", "annotation_notes": None}
+            for item in form["atomic_statements"]
+        ],
+        "required_unit_coverage": [
+            {"unit_prompt": item["unit_prompt"], "communicated": True,
+             "response_span": "The action aborted."}
+            for item in form["required_unit_coverage"]
+        ],
+        "highest_asserted_abstraction_level": "execution_discrepancy",
+        "limitation_preservation": [
+            {"limitation_prompt": item["limitation_prompt"], "preserved": True,
+             "response_span": "The action aborted."}
+            for item in form["limitation_preservation"]
+        ],
+        "false_premise_handling": "NOT_APPLICABLE",
+        "annotator_attestation": "INDEPENDENT_BLINDED_COMPLETE",
+    }
+    validate_return(packet, returned)
+    returned["required_unit_coverage"][0]["response_span"] = "never spoken"
+    with pytest.raises(ValueError, match="not in the exact response"):
+        validate_return(packet, returned)
+    returned["required_unit_coverage"][0]["response_span"] = "The action aborted."
+    returned["limitation_preservation"][0]["response_span"] = "never spoken"
+    with pytest.raises(ValueError, match="not in the exact response"):
+        validate_return(packet, returned)
+
+
+def test_runner_rejects_packet_without_exact_response_before_agent_call(tmp_path: Path) -> None:
+    packet, _ = build(*FIXTURES.inputs(), "development-blinding-secret-v1")
+    del packet["response_text"]
+    packet_path = tmp_path / "packet.json"
+    packet_path.write_text(json.dumps(packet), encoding="utf-8")
+    caller = FakeCaller()
+    with pytest.raises(ValueError, match="requires the exact response text"):
+        run(packet_path, tmp_path / "out", caller=caller)
+    assert caller.roles == []

@@ -2625,3 +2625,363 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   scoring or to anchor the support annotator. Every real response still needs exhaustive inventory
   review, and the common rubric/source context must be bound before qualified support annotation.
   This run cannot change the retained B2/B4 answers, masks, episode N, alpha, or P11 status.
+
+## 2026-09-29 — retain an interrupted extraction call without retry
+
+- **Decision:** preserve the first 17 structurally valid, method-blind development inventory
+  returns. The long-running process handle disappeared before a terminal record for bank index 17
+  (`ax-6042b1c29021e662d8184d39e26738c5`) existed. A process search found no live extractor.
+  Whether that request reached the provider is unknown; therefore do not retry that opaque response
+  or describe it as a semantic failure. The exact prefix and unresolved request are bound in
+  `evidence-calibration-b2-b4-pilot-atomization-v2-interruption-v1.json`.
+- **Execution repair:** future calls write a durable intent before network execution. A missing
+  terminal record after an intent prohibits automatic retry. The pilot runner requires the
+  interruption disposition, skips the ambiguous response, and can resume only the other uncalled
+  bank entries from a network-enabled host after transport preflight. The managed shell now reports
+  `RUN_FROM_NETWORK_ENABLED_HOST` with outbound sockets disabled; it made no further model call.
+- **Scientific boundary:** 17 claim inventories are unreviewed development candidates. This
+  technical gap cannot be counted as model behavior or patched into a complete paired ladder.
+  No support annotation, comparative result, P11 freeze, confirmatory N, or alpha use follows.
+
+## 2026-09-29 — bind method-blind rubric and exact source context before annotation
+
+- **Decision:** all 57 valid B2 call/source bindings resolve to one identical set of four exact
+  source/tool assets. A common source supplement and per-condition hashes are materialized without
+  opening the method join key. Fifty-seven rubric candidates were reconstructed from independent
+  references and actual masked condition packets, without reading answer text. Their ten distinct
+  required-unit/limitation patterns received project review; the candidates and review are bound
+  by separate machine-readable manifests.
+- **Pre-annotation correction:** a retained BT trace with zero source-qualified Wait recoveries
+  must require an explicit no-recovery statement, not a recovery sequence. The recovery-order
+  causation limitation is vacuous in that case and is omitted. This was corrected before any
+  pilot support annotation or method-key join, based only on the visible trace and independent
+  reference. The six nominal mask mismatches remain historical and unfixed in the retained outputs.
+- **Remaining measurement gate:** the common source supplement changes the annotation form relative
+  to the synthetic Astra qualification; a source-context measurement canary and full response
+  inventory review remain necessary. Extractor abstraction tags are still unqualified.
+
+## 2026-09-29 — freeze a synthetic source-context annotation canary
+
+- **Decision:** before pilot support annotation, test the exact qualified Astra high-effort
+  prompt/schema/transport on a synthetic form containing a hash-checked Nav2-style source asset.
+  The frozen construction reference requires a source-supported configuration claim and a
+  physically true but robot-visible-unsupported motor claim. Two isolated calls must each match
+  the atomic labels, unit coverage, highest asserted level, limitation, and false-premise fields.
+  The case and settings are bound by `evidence-calibration-source-context-canary-v1-freeze.json`.
+- **Execution:** this is a no-tool, no-retry measurement-extension canary. The current managed shell
+  reports outbound sockets disabled and therefore cannot run it. A normal network-enabled host
+  must run it after transport readiness; every failed or interrupted call remains retained.
+- **Boundary:** canary success would validate this source-asset extension only. It would not
+  establish real-pilot inventory completeness, qualify extractor abstraction tags, create a
+  human annotation, or authorize confirmation.
+
+## 2026-09-29 — restore exact response-text parity before automated pilot annotation
+
+- **Defect found before calls:** the qualified v4 Astra task supplied the exact response text as a
+  top-level payload field, but the prospective packet builder and source-context canary omitted it.
+  The return validator required a nonempty quoted span for positive required units and preserved
+  limitations without checking that the quote occurred in the response. This could make the real
+  task harder to interpret than qualification and accept an invented span.
+- **Repair:** the automated-agent packet retains the unchanged raw answer at packet level and the
+  annotation payload supplies it at the same top-level field as qualification. The source-context
+  canary does likewise before its first call. Positive unit/limitation spans are now checked as
+  exact substrings of that text; legacy packets without a response-text field retain their
+  historical validation behavior. An offline check found all 28 positive spans across the 40
+  retained v4 qualification calls verbatim in their exact response text.
+- **Boundary:** this is prospective measurement parity and deterministic validation, not a change
+  to the qualified model, prompt, return schema, raw B2/B4 answers, prior calls, or study endpoint.
+  The source-context canary and pilot support annotation remain unrun; no confirmation N or alpha
+  changes.
+
+## 2026-09-29 — fail closed on ambiguous source-context canary resumption
+
+- **Defect found before calls:** the synthetic source-context canary runner checked a prior
+  intent's retained record only for a valid status and logical role, then passed the request back
+  through the caller. If the frozen payload changed, the caller could derive a new cache key and
+  make a second call for the same slot despite the earlier intent.
+- **Repair:** an existing intent must match the current packet/freeze hashes, and its sole retained
+  call must match the complete current payload, prompt/schema hashes, qualified model/effort,
+  transport, amendment, no-retry fields, and cache-key derivation. A matching call is consumed
+  directly without invoking the caller. A call record without an intent, a missing terminal
+  record after intent, a mismatched record, or an existing final result stops execution. Tests
+  exercise retained-request matching and orphan-record refusal without a model call.
+- **Boundary:** the source-context canary still has no executed pass. This is a prospective
+  technical safeguard; it changes no qualified call, pilot annotation, episode N, or alpha.
+
+## 2026-09-29 — retain the extractor abstraction-tag prohibition after blind prefix triage
+
+- **Evidence:** a method-blind preliminary read of the 17 retained pilot extraction records
+  inspected all 33 claims tagged at command-motion discrepancy or deeper. Six assert only command
+  observations, seven assert absence of visible evidence, and 20 express non-entailment or a
+  limitation. All five `specific_physical_cause` tags are on statements that explicitly deny
+  establishment of a physical cause. The exact opaque IDs, candidate indices, call-prefix hash,
+  and partition replay audit are bound in
+  `manifests/annotation/evidence-calibration-pilot-extractor-tag-triage-v1.json`.
+- **Decision:** continue to treat all extractor-provided abstraction tags as unqualified. Do not
+  turn a high tag on a negated or source-only statement into an asserted mechanistic claim, an
+  episode failure, or an anchor supplied to the qualified support annotator. A separately
+  validated claim-role/level treatment remains required before support scoring.
+- **Boundary:** this is preliminary agent-assisted project triage of inspected development
+  responses, not a semantic inventory approval, support annotation, paired result, or change to
+  confirmation N or alpha. It does not inspect the 96 uncalled bank entries or the quarantined
+  ambiguous request.
+
+## 2026-09-29 — add a prospective nominal source-role gate without rewriting the pilot
+
+- **Defect:** both retained nominal controls normalized behavior-tree transitions and source
+  anchors into the unmasked source, so every E0--E2 condition retained them even though the
+  development nominal ladder catalog excludes those roles. Removal-only masking cannot remove a
+  role from the strongest condition while leaving the source unchanged.
+- **Repair for a future pilot:** normalization now has an explicit opt-in that omits those two
+  roles from the nominal source before masks are built. A separate catalog-bound materialization
+  validator requires exact role equality at every level, byte-preserving removal from one source,
+  and an unmasked terminal packet with the declared terminal roles. The historical default
+  regenerates the entire retained pilot input-validation manifest byte-for-byte; the opt-in
+  yields the catalog's four terminal roles, while the old six-role source fails the new gate.
+- **Boundary:** the old nominal packets, B2/B4 answers, and pilot manifests remain unchanged and
+  descriptive against their actual visible evidence. The opt-in and validator do not constitute
+  a fresh pilot or P11 freeze. Exact source/configuration asset access for B2 remains a separate
+  parity requirement and must be accounted for in the future pilot packet/annotation design.
+
+## 2026-09-29 — fail closed on unbound claim roles and unresolved labels in analysis
+
+- **Defect:** the development analyzer consumed `mechanistic` as a truth value without requiring a
+  boolean, so a string such as `"false"` would be scored as a mechanistic claim. It also accepted
+  malformed ranks and coverage counts. The five-way annotation schema permits `UNINTERPRETABLE`,
+  but the analyzer implicitly treated that label as a nonfailure despite the unresolved-label
+  endpoint mapping being deliberately unfrozen.
+- **Repair:** analysis input validation now requires boolean mechanistic/false-premise flags,
+  nonnegative integer levels and coverage counts, distinct ordered ladder levels, unique atomic
+  IDs, and finite plan probabilities. An `UNINTERPRETABLE` claim stops endpoint scoring until a
+  prospective mapping is selected. P11 readiness now lists that mapping as an explicit open gate.
+- **Boundary:** validation does not qualify the source of a mechanistic flag or decide how to map
+  unresolved labels. The pilot still needs a separately validated claim-role/level treatment and
+  development evidence before the endpoint, coverage floor, or mapping can be frozen. No old
+  response, alpha, or independent episode count changes.
+
+## 2026-09-29 — require assertion-aware response rank for endpoint scoring
+
+- **Finding:** the qualified Astra support task's synthetic reference `qd-ho-13` gives the
+  command-motion level to "Measured response cannot be assessed because odometry is unavailable";
+  `qd-ho-14` includes "Global infeasibility is not established" at the physical-execution level.
+  Those statements preserve limits; they do not assert the named diagnoses. The extractor's
+  unqualified per-claim tags show the same polarity problem in the inspected pilot prefix.
+- **Decision:** the separately validated role treatment must determine both whether each atomic
+  claim affirmatively asserts a mechanism and the highest *affirmatively asserted* diagnostic
+  abstraction in each response. Neither the extractor tags nor the support task's raw highest-level
+  field may be mapped directly to the two branches of the primary endpoint. Keep the existing
+  Astra qualification for its declared support/coverage task; qualify any new role treatment on
+  independent synthetic cases before applying it to pilot or confirmatory scoring.
+- **Boundary:** this is a pre-analysis measurement gate, not a reinterpretation of retained
+  responses, a new model result, or a P11 freeze. Confirmation and replication N remain zero.
+
+## 2026-09-29 — prepare a separate, unqualified assertion-role task
+
+- **Decision:** add a method-blind development interface that consumes only the exact answer and
+  reviewed atomic claim inventory. Its six roles distinguish affirmative diagnosis, an endorsed
+  hedged diagnostic candidate, observation/source fact, limitation/non-entailment, unendorsed
+  hypothetical/quotation, and unresolved role. Only the first two carry an abstraction level;
+  the validator reports them separately and never authorizes endpoint scoring.
+- **Construction check:** a 20-case synthetic candidate (four development, 16 held out) includes
+  command-only versus measured discrepancy, "did not occur" versus "cannot be established,"
+  measured recovery versus recovery causation, missing odometry, physical cause, qualified
+  alternatives, source quotation, geometry limits, and prompt injection. The exact task, gold,
+  and taxonomy still need independent project review and prospective freeze before model calls.
+  The hedged-candidate endpoint mapping must itself be bound before P11.
+- **Boundary:** this prepares measurement infrastructure only. It does not borrow Astra's support
+  qualification, classify pilot claims, create an automated annotation, or change N or alpha.
+
+## 2026-09-29 — repair draft role references before any qualification freeze
+
+- **Finding:** review of the uncalled synthetic role candidate exposed merged or omitted atomic
+  meanings in the causal fault, Wait/recovery limitation, counterfactual, and alternative-cause
+  examples. This repeats the known reference-contract threat from atomization v1.
+- **Repair:** split distinct underlying facts, relations, and alternatives into separate input
+  claims, and simplify sentences with unnecessary implicit assertions. These edits precede any
+  role-classifier model call and any task freeze. The 20-case count and four/sixteen split remain
+  unchanged; structural validation passes but does not certify the semantic reference.
+- **Boundary:** the role suite is still a development construction candidate, not a qualified
+  measurement instrument or a scored pilot result. P11 remains closed.
+
+## 2026-09-29 — keep ontology claim kind separate from assertion role
+
+- **Finding:** the ontology gives task outcomes, command observations, recovery mechanisms,
+  execution discrepancies, and specific physical causes different claim kinds. Calling every
+  affirmative statement a diagnosis could turn an outcome into a `mechanistic=true` endpoint
+  claim without a governed mapping. The draft role validator also allowed a rationale from any
+  part of the response, including a different atomic claim.
+- **Repair:** rename the draft role to `AFFIRMATIVE_EPISODE_ASSERTION`, require each rationale to
+  be an exact substring of its own reviewed claim span, and keep asserted and hedged levels
+  separate. Structural output explicitly withholds mechanistic flags and response ranks. The
+  claim-kind/role-to-endpoint mapping remains a prospective development/P11 decision.
+- **Boundary:** no draft role label has been applied to pilot answers or frozen as a study
+  instrument. The change does not modify the ontology, the qualified support annotation task,
+  method responses, independent N, or alpha.
+
+## 2026-09-29 — review expanded synthetic role construction before freeze
+
+- **Decision:** expand the draft held-out role suite from 16 to 20 cases before any role model
+  call. The new cases distinguish quoted source words followed by an endorsed run diagnosis,
+  missing recovery records from asserted nonoccurrence, and physical stationarity without a
+  command-motion diagnosis. A case-by-case project construction review is bound to the exact
+  24-case suite, prompt, and schema under
+  `manifests/annotation/evidence-calibration-claim-role-v1-construction-review.json`.
+- **Gate:** structural validation and construction review do not qualify the task. The exact
+  configuration and gates must be frozen before a network-enabled host runs a non-study schema
+  canary and two isolated synthetic passes. Any valid missing gold atom invalidates the reference
+  rather than counting as a role-model error; pilot claims remain unopened to this task.
+- **Boundary:** no role-model call, pilot role label, support annotation, effect estimate, P11
+  freeze, independent episode, or alpha allocation follows from this construction review.
+
+## 2026-09-29 — freeze the separate synthetic assertion-role qualification task
+
+- **Decision:** bind the reviewed 24-case synthetic suite, construction review, prompt, and
+  structured return schema before any role-classifier model call. The candidate is
+  `gpt-6-astra` high effort through the login-backed ephemeral CLI, no tools, two isolated
+  passes, and no quality-driven retries. Each pass must match every held-out atomic role and
+  level exactly, with no missing, extra, reordered, or unresolved claims. A separate non-study
+  schema canary and independent semantic review are required.
+- **Evidence:** `evidence-calibration-claim-role-v1-freeze.json` and the offline
+  `audit_evidence_calibration_claim_role_freeze.py` bind and validate the exact components and
+  gates. The audit makes no model call. The qualification passes and any disposition have not run.
+- **Boundary:** this is a measurement-task freeze only. It does not qualify support annotation,
+  choose the mechanistic/hedged endpoint mapping, authorize pilot role labels, freeze P11, or
+  change independent N or alpha. A reference defect invalidates the role qualification rather
+  than becoming a model failure.
+
+## 2026-09-29 — bind no-retry host execution for role qualification
+
+- **Decision:** the frozen role task uses a dedicated login-backed ephemeral CLI runner. It
+  requires the read-only transport preflight, a separate non-study schema canary, exact frozen
+  request identities, and a durable intent before every call. An intent without a terminal record,
+  an orphan record, a changed request, or a retained failure stops without retry. The freeze pins
+  the runner bytes; the host runbook gives the execution order.
+- **Evidence:** offline tests cover exact reuse, changed-request refusal, interrupted intent,
+  orphan terminal record, network-disabled refusal before intent, and retention of a transport
+  failure. No actual model call was made in this managed shell.
+- **Boundary:** structural returns require independent reference review and a passing
+  qualification disposition. The runner does not classify the development pilot, choose an
+  endpoint mapping, or change confirmatory authorization, N, or alpha.
+
+## 2026-09-29 — audit retained role returns before semantic qualification
+
+- **Defect prevented:** exact request identity alone did not verify that a retained successful
+  call still matched its own raw final text and structural validation. Reuse now checks both,
+  along with terminal status, attempt count, and the matching durable intent.
+- **Audit:** a read-only synthetic qualification audit enumerates the one canary and 48 isolated
+  case calls. It separates uncalled slots, intent-only interruptions, retained failures, and
+  mechanically exact held-out role/level matches; it does not turn an exact candidate into a
+  qualification disposition. Offline tests cover complete synthetic candidates and missing,
+  orphaned, changed, or failed records. No real role-model call has run.
+- **Boundary:** the audit is measurement infrastructure, not model evidence or a pilot effect.
+  Independent project semantic review, a passing disposition, and prospective endpoint mapping
+  remain open before pilot scoring or P11.
+
+## 2026-09-29 — synchronize manuscript scope with the current role gate
+
+- **Decision:** revise only the living paper's prospective population and measurement sentences:
+  the primary candidate balances persistent command-motion discrepancy and measured recovery;
+  missing-odometry and nominal episodes remain separate controls; geometry is non-pooled. The
+  passed Astra atomic-support qualification does not qualify affirmative assertion roles or
+  response ranks, whose separate synthetic task is frozen but unrun.
+- **Verification:** the anonymous full-paper PDF rebuilt from the revised source as nine pages,
+  passed the mechanical submission-readiness audit, and was rendered for layout inspection. No
+  effect estimate, sample size, alpha allocation, or confirmatory result was added.
+- **Boundary:** the manuscript remains a development snapshot, not a submission-ready scientific
+  result. P11 remains closed, with confirmation and replication independent N=0.
+
+## 2026-09-29 — make the first-read documentation resolve dated scope explicitly
+
+- **Finding:** the README's opening still called the older diagnosis-to-language/RoboBoat framing
+  forward-looking, its status heading appeared current, and its paper instructions invoked the
+  short category despite a nine-page full-paper snapshot. `docs/RESEARCH.md` still opened its
+  same-day operational checkpoint with B2 at zero valid responses and no qualified support task.
+- **Repair:** add an active dated evidence-calibration notice to README before the preserved
+  historical framing and ledger; fix its paper command to `--category full`; and add a later dated
+  operational reconciliation at the start of `docs/RESEARCH.md`. The older text remains visible
+  as the state at which it was written. The newer decisions and machine-readable manifests govern
+  prospective work.
+- **Boundary:** this resolves documentation drift only. It changes no response, mask, annotation,
+  physical layout allocation, paper result, P11 authorization, N, or alpha.
+
+## 2026-09-29 — bind three proposed blind inventory repairs without approving annotation
+
+- **Finding:** the retained method-blind atomization triage identified three normalized claims
+  across two responses that lose the `FollowPath` actor when scored in isolation. The raw extractor
+  returns and all 17 review forms remain unchanged.
+- **Repair proposal:** the triage manifest now gives exact actor-qualified replacement wording for
+  those three claims. A read-only audit binds the proposal to the raw hashes of all 17 blind forms,
+  the blinded-bank response text, retained extractor-call bytes and candidate claims, pending
+  review fields, and closed annotation boundary. Its script and updated manifest are pinned by
+  P11 readiness.
+- **Boundary:** these are proposed claim texts for the later per-response project review, not an
+  approved complete inventory, support label, model qualification, or endpoint score. The ambiguous
+  bank request remains quarantined; confirmation and replication N remain zero.
+
+## 2026-09-29 — exclude control and secondary families from development primary inference
+
+- **Defect:** the P9 development analyzer pooled every supplied episode into `paired_primary`.
+  A nominal, missing-odometry, or geometry episode could therefore change the paired B2/B4
+  primary risk difference and McNemar count, contrary to the current primary-population boundary.
+- **Repair:** the development plan must explicitly declare disjoint primary, control, and secondary
+  mechanism families. Only declared primary episodes enter paired inference, primary method metrics,
+  the whole-episode bootstrap, and the cluster model. Nonprimary families receive descriptive
+  episode-failure counts. The output reports observed primary-family counts and labels its pooled
+  estimate as development-only observed-mix weighting; tests verify that adding controls or geometry
+  cannot change the primary comparison.
+- **Boundary:** this does not freeze the exact family names, 50/50 target weighting, attrition rule,
+  sample size, endpoint, alpha, or coverage floor. Those still require valid development-pilot
+  evidence and a prospective P11 decision. No historical result was rescored.
+
+## 2026-09-29 — enforce the claim-specific evidence threshold in development scoring
+
+- **Defect:** the analyzer counted a mechanistic claim as a primary failure only when its automated
+  support label was unsupported or its response rank exceeded the maximum. It omitted the
+  mechanically checkable case where the claim's required minimum evidence level exceeds the
+  visible condition level, despite the active candidate endpoint explicitly including absent
+  required evidence. Such a claim could be labeled supported and escape the primary failure and
+  unsupported-specificity numerator.
+- **Repair:** score absent required evidence directly from the claim contract and condition level,
+  alongside the adjudicated support label. Use the same rule for episode failure, condition-level
+  cluster modeling, appropriate partial diagnosis, and the unsupported-specificity numerator.
+  A focused test covers a supported-labeled claim that requires E2 but appears at E1.
+- **Boundary:** the minimum-level contract and mechanistic assertion role still require qualified,
+  blinded measurement and a prospective P11 endpoint mapping. This repairs development scoring;
+  it does not rescore retained outputs or authorize confirmation.
+
+## 2026-09-29 — require a shared evaluator reference within each paired condition
+
+- **Defect:** the development analyzer accepted a different evaluator-defined maximum justified
+  rank or available required-unit count for B2 and B4 on the same masked episode. This could make
+  a paired comparison depend on method-specific reference standards even though both methods
+  receive the same governed robot-visible condition.
+- **Repair:** fail closed when either reference quantity differs across the paired method records.
+  A focused test checks both quantities. Method-specific asserted ranks, claims, labels, and
+  emitted-unit counts remain free to differ.
+- **Boundary:** this is an input-consistency check, not a support annotation, endpoint freeze, or
+  new scientific result. The qualified measurement and P11 planning gates remain open.
+
+## 2026-09-29 — report a rank-deficient secondary cluster model explicitly
+
+- **Defect:** with more than four episode clusters but only one evidence level per episode, the
+  secondary logistic model's level and method-by-level columns are zero. Its pseudoinverse path
+  returned `FIT` with zero coefficients and zero standard errors for unidentified terms.
+- **Repair:** check the four-column design rank before fitting and return
+  `RANK_DEFICIENT_DESIGN` with observed and required ranks, without coefficients. A six-episode
+  synthetic test reproduces the prior false fit and verifies the explicit status.
+- **Boundary:** the paired episode-level primary test is unchanged. This is a development-analysis
+  validity check, not evidence of a B2/B4 effect or a prospective model freeze.
+
+## 2026-09-29 — retain a provisional blinded review of the 17 extracted inventories
+
+- **Review:** one agent-assessed, method-blind development pass inspected the answer and atomic
+  candidates for each of the 17 retained extractor returns. It found no further omitted claim
+  meaning in that prefix, while retaining the three proposed `FollowPath` actor repairs across two
+  responses. Four uncovered-text signals are citation/punctuation fragments. The review manifest
+  records a per-response provisional disposition and binds the exact form set and earlier triage;
+  the read-only triage audit checks all 17 rows, 160 candidates, three repair indices, upstream
+  blinded-bank/extractor provenance, and closed authorization flags.
+- **Boundary:** this is not independent human validation or a final semantic-inventory approval.
+  The 17 form review fields remain pending, 96 bank responses are uncalled, one request remains
+  quarantined, and extractor abstraction tags and assertion roles remain unqualified. No support
+  annotation, endpoint score, episode N, alpha, or P11 status changes.

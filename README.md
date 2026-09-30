@@ -6,6 +6,27 @@ submission. The workshop advertises **October 4, 2026 AoE**, but the live portal
 earlier than literal end-of-day AoE; the project keeps October 3 as its completion/review buffer.
 The central failure mode is fluent but unsupported language—not awkward wording.
 
+## Active research state — 2026-09-29
+
+The forward question is whether a robot explanation's specificity tracks the diagnostic evidence
+actually visible to the robot. The paper has three contributions: atomic claim/evidence contracts;
+a same-episode, removal-only land/Nav2 evidence-ladder benchmark; and a maximal-supported-
+diagnosis method compared with fair B0--B4 conditions. The primary comparison candidate is B2
+versus B4 on persistent command--motion discrepancy and measured response recovery.
+Missing-odometry and nominal false-premise episodes are separate controls; geometry is a
+non-pooled secondary arm. RoboBoat is
+bounded development/external-validity material.
+
+The inspected development pipeline has 60 accepted B4 outputs and 57 valid B2 outputs, but no
+qualified paired support annotation or evidence-calibration effect. P11 is not frozen;
+confirmation and replication each have independent N=0. The exact active boundaries and open
+gates are in the [current-state checkpoint](docs/CURRENT_STATE_2026-09-29.md),
+[evidence-calibration protocol](docs/EVIDENCE_CALIBRATION_PROTOCOL.md), and newest entries of the
+[decision log](docs/DECISIONS.md). The older framing and development ledger below remain dated
+history; they do not supersede those decisions or authorize confirmatory calls.
+
+## Earlier project framing (historical)
+
 The forward-looking contribution is a diagnosis-to-language method: validated physical/execution
 diagnostics plus runtime/source provenance, checked planning, language, and final verification. It
 is not a generic robot adapter, graph store, logging format, universal root-cause system, or LLM
@@ -34,7 +55,7 @@ Do not depend on developer-specific absolute paths. Project scripts resolve the 
 their own location. Exact repository commits and destinations are recorded in
 `manifests/workspace.lock.json`.
 
-## Current status
+## Retained development status ledger
 
 - **IMPLEMENTED, TESTED:** evidence records, checked answer plans, final-text verification,
   deterministic fallback, Dock/Slalom regressions, terminal-status distinctions, bounded
@@ -431,7 +452,7 @@ Build the anonymous IEEE-format paper with the pinned toolchain:
 
 ```bash
 scripts/build_paper.sh
-python scripts/audit_submission_readiness.py --category short
+python scripts/audit_submission_readiness.py --category full
 ```
 
 This writes `output/pdf/main.pdf`. The current manuscript is an anonymous nine-page full-paper
@@ -453,7 +474,7 @@ independently checked diagnostic results together:
 scripts/verify_submission_reproduction.sh
 ```
 
-This fails unless the short-paper readiness audit passes, the delivered-plan diagnostic and its
+This fails unless the full-paper readiness audit passes, the delivered-plan diagnostic and its
 independent reference regenerate byte-for-byte, and the blind command-motion recomputation matches
 the retained versioned diagnosis and checked answer.
 
@@ -517,6 +538,8 @@ delivered odometry proven controller consumption.
 
 ## Documentation
 
+- [Current evidence-calibration checkpoint](docs/CURRENT_STATE_2026-09-29.md)
+- [Active evidence-calibration protocol](docs/EVIDENCE_CALIBRATION_PROTOCOL.md)
 - [Project language](CONTEXT.md)
 - [Architecture](docs/ARCHITECTURE.md)
 - [Study design](docs/STUDY_DESIGN.md)
