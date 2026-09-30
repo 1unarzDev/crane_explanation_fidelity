@@ -1,0 +1,100 @@
+{
+  "schema": "crane-harness-prompt-observation/v1-development",
+  "recorded_date": "2026-09-30",
+  "status": "HOST_SKILL_FRAMING_OBSERVED_ACTUAL_TOOL_REQUEST_UNVERIFIED",
+  "bindings": [
+    {
+      "path": "docs/HARNESS_PROMPT_INSPECTION_2026-09-30.md",
+      "raw_sha256": "55aab0c763ae23658cd44aa2ac38af3519b79f29f0b8d2ad865efdab5889fc76"
+    },
+    {
+      "path": "manifests/operations/evidence-calibration-local-tool-isolation-v1-development.json",
+      "raw_sha256": "182e962199399312d7f05b48a7abe160a2a81e95533da66fa91abaaed62bd812"
+    },
+    {
+      "path": "manifests/operations/evidence-calibration-measurement-reopening-proposal-v1.json",
+      "raw_sha256": "fc087f214e56c7d470558e6daa2748eb605603e572256d90f646da00d095322d"
+    }
+  ],
+  "official_sources": [
+    {
+      "requested_url": "https://developers.openai.com/codex/config-reference/?q=disable%20shell%20MCP%20tools",
+      "fetched_html_sha256": "0f7604c32537efee683bf8ad1186018f5ce7f598a7b9e64137a50ca7fa552271",
+      "canonical_url": "https://learn.chatgpt.com/docs/config-file/config-reference"
+    },
+    {
+      "requested_url": "https://developers.openai.com/codex/mcp/",
+      "fetched_html_sha256": "1dd9cfe570d09bc8c2609b5700d47893c8393c344021eeeadb69d7272bbd13e0",
+      "canonical_url": "https://learn.chatgpt.com/docs/extend/mcp"
+    }
+  ],
+  "cli_version": "codex-cli 0.159.2",
+  "model": "gpt-6-sol",
+  "reasoning_effort": "high",
+  "disabled_features": [
+    "shell_tool",
+    "unified_exec",
+    "apps",
+    "plugins",
+    "remote_plugin",
+    "multi_agent",
+    "memories",
+    "hooks",
+    "skill_search",
+    "view_image"
+  ],
+  "web_search": "disabled",
+  "configured_user_mcp_server_count": 0,
+  "discovered_skill_paths_disabled_in_second_probe": 35,
+  "observations": [
+    {
+      "profile": "tool_flags_disabled",
+      "raw_output_sha256": "747f746bdb345d645ec30904e13607c6dc77d3af76e8982b22c5151f7c679c13",
+      "serialized_utf8_bytes": 22863,
+      "message_count": 5,
+      "roles": [
+        "developer",
+        "developer",
+        "developer",
+        "user",
+        "user"
+      ],
+      "host_skill_catalog_present": true,
+      "host_path_present": true,
+      "tool_definition_fields_present": false,
+      "return_code": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "profile": "tool_flags_and_all_discovered_skills_disabled",
+      "raw_output_sha256": "4bca4d6ff4ec30168d920c7e1196dfb747b5088d5e51c547e788770369335929",
+      "serialized_utf8_bytes": 6628,
+      "message_count": 5,
+      "roles": [
+        "developer",
+        "developer",
+        "developer",
+        "user",
+        "user"
+      ],
+      "host_skill_catalog_present": false,
+      "host_path_present": false,
+      "tool_definition_fields_present": false,
+      "return_code": 0,
+      "stderr_bytes": 0
+    }
+  ],
+  "raw_host_instructions_copied_to_repository": false,
+  "user_config_changed": false,
+  "full_tool_surface_bound": false,
+  "provider_harness_confinement_verified": false,
+  "context_capacity_verified": false,
+  "model_call_attempted": false,
+  "study_request_attempted": false,
+  "measurement_proposal_adopted": false,
+  "pilot_annotation_authorized": false,
+  "endpoint_scoring_authorized": false,
+  "p11_authorized": false,
+  "confirmation_independent_n": 0,
+  "replication_independent_n": 0
+}

@@ -4226,3 +4226,28 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   zero calls; automatic continuation is not approval. P11 retains nineteen open conditions with
   no component hash mismatch; confirmation/replication N remain zero. Qualified measurement,
   complete execution/capacity and fresh episode-level comparative evidence remain outstanding.
+
+
+## 2026-09-30 — inspect offline harness framing; tool-disable flags do not certify confinement
+
+- **Official source:** current OpenAI configuration/MCP documentation describes shell controls,
+  web-search settings, per-skill disable entries and MCP tool allowlists. Inspect installed CLI
+  0.159.2 `debug prompt-input` from empty temporary directories with no episode or study prompt;
+  it renders messages without a model invocation. Command-scoped overrides change no user file,
+  provider authentication, method prompt or immutable cache.
+- **Observed framing:** disabling shell/unified-exec/apps/plugins/remote-plugin/multi-agent/memories/
+  hooks/skill-search/view-image plus web search still includes the host skill catalog and paths.
+  Disabling all 35 discovered skills individually removes those entries and host paths. Both
+  invocations return five messages, zero stderr and exit code zero; serialized output decreases
+  from 22863 to 6628 bytes. This includes serialization/temp-cwd differences and is neither an
+  exact token saving nor evidence of model behavior. Raw host instructions remain outside Git;
+  only sanitized observations and hashes are retained.
+- **Limit:** neither debug output includes actual tool definitions. Do not infer that live shell,
+  filesystem, connector or other access is absent, or declare a confined provider harness.
+  The local isolated computation seam remains unconnected. Actual tool schema/event enforcement,
+  method permissions, runtime/capacity and complete overhead/budgets remain open; the initial
+  debug prompt is not a complete model request or capacity certificate.
+- **Governance:** no semantic output, annotation, key join, alpha allocation or physical acquisition
+  occurred. The failed combined canary and unlaunched C remain unchanged; the proposed measurement
+  reopening has no user decision and authorizes zero calls. P11 retains nineteen open conditions
+  with no component hash mismatch, and confirmation/replication independent N remain zero.
