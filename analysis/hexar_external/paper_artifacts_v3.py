@@ -35,6 +35,14 @@ def main():
     assert result['p_value'] is None and not result['statistically_supported_improvement_claim']
     values = result['methods']
     assert all(values[m]['n_jobs'] == causal['methods'][m]['n_jobs'] == 108 for m in METHODS)
+    recording_scores = json.loads((base / 'recording_scores.json').read_text())['recordings']
+    assert len(recording_scores) == 12
+    secondary_bounds = [sum(r['HX-CONTRACT_bounds'][0] - r['HX-ORIGINAL_bounds'][1]
+                            for r in recording_scores) / 12,
+                        sum(r['HX-CONTRACT_bounds'][1] - r['HX-ORIGINAL_bounds'][0]
+                            for r in recording_scores) / 12]
+    secondary_pairs = [r['HX-CONTRACT'] - r['HX-ORIGINAL'] for r in recording_scores
+                       if r['HX-CONTRACT'] is not None and r['HX-ORIGINAL'] is not None]
     out = base / 'paper'
     out.mkdir(exist_ok=True)
     lines = [
@@ -54,6 +62,9 @@ def main():
         '',
         f"Registered contract-minus-prompt full-cohort effect bounds: **{bounds(result['primary_full_cohort_effect_bounds'], True)}**. "
         f"Complete principal recording pairs: {result['paired_complete_recordings']}/12. No confirmatory alpha or p-value.",
+        f"Predeclared contextual contract-minus-original contrast on the same endpoint: "
+        f"{bounds(secondary_bounds, True)}; complete recording pairs:{len(secondary_pairs)}/12. "
+        'HX-ORIGINAL keeps its concise upstream format; the equally formatted strengthened baseline is the principal comparator.',
     ])
     (out / 'result_table.md').write_text('\n'.join(lines) + '\n')
     operations = ['| Method | Median realization ms | Model calls | Template | Fallback | Blanket abstention² | Required-unit control consistency³ |',
@@ -69,6 +80,28 @@ def main():
     operations.extend(['', 'Timings measure realization from prebuilt packets, not whole replay/extraction latency or pure model compute. Hosted cost/immutable weights are unavailable.',
                        '² Finalized assessments; detects limitation-only blanket refusal missing required units, not all unnecessary hedging. ³ Endpoint and required-unit equality among complete intact/control pairs; selected packets are byte-identical. No complete semantic invariance claim.'])
     (out / 'operations.md').write_text('\n'.join(operations) + '\n')
+    uncertainty = result['annotation']
+    (out / 'annotation_uncertainty.md').write_text(
+        f"# Agent-assessment uncertainty\n\n"
+        f"Qualified completion:{annotation['qualified_completed']}/324; retained technical failures:{annotation['technical_failures']}. "
+        f"Original A/B disagreement:{uncertainty['decision_disagreements']}/{uncertainty['decisions']} decisions; "
+        f"atomic-label agreement:{percent(uncertainty['claim_agreement'])}. Disagreement-only C follows the qualified pipeline.\n\n"
+        f"Pass A full-cohort contract-minus-prompt bounds:{bounds(uncertainty['pass_full_cohort_effect_bounds']['A'], True)}. "
+        f"Pass B bounds:{bounds(uncertainty['pass_full_cohort_effect_bounds']['B'], True)}. "
+        f"Common complete recording pairs across A/B/final:{uncertainty['pass_common_complete_recordings']}/12.\n\n"
+        'These are repeated assessments of the same physical recordings, not additional independent N. '
+        'High agreement does not establish human validity, unbiased references or qualified atom extraction. '
+        'Unqualified blind causal-role disagreements and uninterpretable support stay unknown under the frozen secondary protocol.\n')
+    write(out / 'secondary_context.json', {
+        'comparison': 'HX-CONTRACT minus HX-ORIGINAL',
+        'endpoint': result['primary_endpoint'], 'independent_recordings': 12,
+        'full_cohort_missing_label_bounds': secondary_bounds,
+        'complete_recording_pairs': len(secondary_pairs),
+        'conditional_complete_pair_mean': sum(secondary_pairs) / len(secondary_pairs) if secondary_pairs else None,
+        'recording_scores_sha256': sha(base / 'recording_scores.json'),
+        'new_endpoint_or_inference': False, 'primary_comparison_changed': False,
+        'alpha_consumed': 0, 'p_value': None,
+    })
     import matplotlib
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
