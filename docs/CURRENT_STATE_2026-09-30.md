@@ -1,5 +1,18 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Service broker/MCP addendum after `a480c8f5` — 2026-09-30
+
+A [separate broker v3 and stdio adapter v2](SERVICE_BROKER_MCP_2026-09-30.md)
+connect the verified v4 service executor with explicit local/tree limits and nested
+one-shot records. All five actual fixed stdio exchanges pass; B0/B1 have zero tools,
+B2/B3/B4 share exact inventories/full reads and technical overflow supplies no partial
+evidence. Sixty-two focused tests pass. Existing study/CLI callers are unchanged;
+full model-facing tools/rendering, capacity/turn budgets, immutable runtime and
+qualified measurement remain open. No semantic model/annotation call, method-key
+join, real-pilot score or alpha spending occurs. P11 keeps nineteen open conditions,
+zero confirmation/replication N and pending measurement reopening.
+
+
 ## Bounded service capture addendum after `fb0eb763` — 2026-09-30
 
 A [separate service-backed computation candidate](SERVICE_BOUNDED_CAPTURE_2026-09-30.md)

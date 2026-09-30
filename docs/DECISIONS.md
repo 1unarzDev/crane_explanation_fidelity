@@ -4543,3 +4543,26 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   retained response score, physical acquisition, alpha spending or P11 freeze.
   Preserve failed combined support/unlaunched C and pending reopening. P11 retains
   nineteen open conditions and confirmation/replication independent N=0.
+
+
+## 2026-09-30 — connect service executor to a separate broker and local MCP adapter
+
+- **Candidate integration:** broker v3 requires explicit TreeLimits and selects
+  only v4 service computation. Preserve tool inventories, staged full reads,
+  source/config access and call/replay policy. Each computation binds nested
+  executor intent/terminal; partial failure bytes never become successful output.
+- **Local protocol:** stdio adapter v2 requires exact tree-limit config and session
+  binding while preserving tools-only MCP, strict wire retention and failure
+  rendering. Existing study callers and installed-client inspectors are unchanged.
+- **Evidence:** 62 focused broker/new/old adapter tests pass. An actual fixed local
+  stdio client retains all five method exchanges, full 4096-character Unicode
+  reads, exact literal code and null-result overflow failures. B0/B1 execute no
+  tools; B2/B3/B4 inventories match; every service is absent after cleanup. An
+  existing staged B2 primitive still matches its deterministic reference.
+- **Boundary:** no full model-facing tool/renderer/alternative-route certification,
+  turn output/token budget, cumulative CPU/scratch or immutable runtime adoption.
+  Full reads remain available; these synthetic limits are not study budgets.
+- **Governance:** no provider/Codex turn, semantic model/automated annotation call,
+  method-key join, retained answer scoring, physical acquisition, alpha spending
+  or P11 freeze. Failed combined support/unlaunched C and pending reopening stay
+  unchanged. P11 retains nineteen open conditions and confirmation/replication N=0.
