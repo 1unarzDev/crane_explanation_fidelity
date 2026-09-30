@@ -1,0 +1,26 @@
+{
+  "schema": "crane-evidence-calibration-development-atomization-run/v1",
+  "run_id": "evidence-calibration-b2-b4-pilot-v1-atomization-v2",
+  "declared_date": "2026-09-29",
+  "status": "DECLARED_BEFORE_PILOT_ATOMIZATION_CALLS",
+  "scientific_scope": "Inspected development-only B2/B4 pilot; no confirmatory semantic output or effect score.",
+  "blinded_bank": {
+    "path": "model_outputs/annotation_packets/evidence-calibration-b2-b4-pilot-v1/atomization-bank.json",
+    "raw_sha256": "df3376f302956b280252eb0aa78c4d3c74cf15f9012156e57d8bab45a689e232",
+    "response_count": 114
+  },
+  "qualified_inventory_extractor": {
+    "disposition_path": "manifests/study/evidence-calibration-atomization-v2-disposition.json",
+    "disposition_raw_sha256": "4d779b04f36e9d6f63fcb385c8658d32a08e4ee1752ad5307ade3ba4cd63b528",
+    "freeze_path": "research/explanation_fidelity/experiment_configs/prospective/evidence-calibration-atomization-v2-freeze.json",
+    "freeze_raw_sha256": "c09eef10822de34c13266ac58761e601ff69fd00aeac10549ca205fecfb0493a"
+  },
+  "method_visible_input": ["opaque_response_id", "response_text"],
+  "call_policy": "One immutable, no-tool, no-retry call per response. Retain technical failures and stop; never quality-retry. No evaluator key is opened by the runner.",
+  "output_root": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-atomization-v2",
+  "unqualified_output_fields": ["asserted_abstraction_level"],
+  "next_gates": ["exhaustive_per_response_claim_inventory_review", "validated_abstraction_tag_treatment", "method_blind_rubric_and_source_context_binding", "qualified_support_annotation"],
+  "support_annotation_authorized": false,
+  "confirmation_independent_n": 0,
+  "confirmatory_alpha_consumed": 0.0
+}

@@ -2613,3 +2613,15 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   this exact configuration, followed by a separate completeness review of every response and
   a bound treatment of diagnostic levels. No pilot support label, paired effect, P11 freeze,
   confirmatory episode, or alpha expenditure follows from the synthetic qualification alone.
+
+## 2026-09-29 — declare the one-shot inspected-pilot inventory extraction
+
+- **Decision:** use the hash-bound v2 inventory extractor on the existing 114-response method-blind
+  raw bank as development-only measurement preparation. The declaration
+  `evidence-calibration-b2-b4-pilot-atomization-v2-run.json` binds the exact bank, v2 disposition,
+  freeze, input fields, output root, and one-call-per-opaque-ID policy before any pilot extraction.
+  Its runner reads no evaluator join key and stops on a retained failure.
+- **Boundary:** extractor-provided abstraction tags are unqualified and cannot be used in endpoint
+  scoring or to anchor the support annotator. Every real response still needs exhaustive inventory
+  review, and the common rubric/source context must be bound before qualified support annotation.
+  This run cannot change the retained B2/B4 answers, masks, episode N, alpha, or P11 status.
