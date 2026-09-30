@@ -635,3 +635,18 @@ execution without silent evidence truncation or condition removal. No actual mod
 annotation, effect or DVC pointer was generated. The failed support gate remains closed and P11
 retains nineteen open conditions. See `docs/BASELINE_ORDINARY_INTERFACES_2026-09-30.md` and the
 baseline request audit snapshot. Alpha, quarantine and zero confirmation/replication N are unchanged.
+
+## Latest 2026-09-30 model-context observation checkpoint
+
+Capacity remains unverified for the 120 baseline request candidates. Official gpt-6-sol model
+information advertises 1050000 context tokens, while the current CLI 0.159.2 catalog reports a
+272000 default and 872000 maximum with 95% effective context. No context/compaction/catalog
+configuration override is present. Exact tokenizer lookup fails under tiktoken 0.12.0 and 0.14.0;
+no alternate encoding or model is substituted. The sanitized snapshot records these observations
+without credentials/account identity. Five offline guard checks and two readiness checks pass.
+
+The configured provider's actual capacity, complete token counts/harness overhead and output/
+reasoning reserve still require binding. No settings, prompts, evidence or immutable caches were
+changed; no canary, study request or model call ran. The failed support gate remains closed and
+P11 retains nineteen open conditions. See `docs/CONTEXT_CAPACITY_2026-09-30.md` and the context-
+capacity observation. Alpha, quarantine and zero confirmation/replication N remain unchanged.

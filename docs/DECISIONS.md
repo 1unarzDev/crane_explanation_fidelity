@@ -4031,3 +4031,25 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   occurred. The failed combined support canary and unlaunched C remain unchanged. Execution/model
   capacity declarations, qualified measurement and prospective episode comparisons remain open.
   P11 retains nineteen open conditions; quarantine and confirmation/replication N are unchanged.
+
+
+## 2026-09-30 — retain unresolved actual-route/tokenizer capacity instead of assuming published limits
+
+- **Sources:** fetched official gpt-6-sol documentation advertises 1050000 context and 128000
+  maximum output tokens. Current CLI 0.159.2 debug catalog reports 272000 default, 872000 maximum,
+  95 percent effective context and experimental context support false. Current configuration has
+  no context/compaction/catalog override. The older 0.155.1 cache shares the smaller default, now
+  corroborated by the current CLI query. Retain sanitized model metadata and source hashes only.
+- **Exact tokenizer lookup:** isolated tiktoken 0.12.0 and independently resolved 0.14.0 both fail
+  encoding_for_model for the exact gpt-6-sol name. Do not substitute another model or guess its
+  encoding. No model/provider setting or immutable study cache is changed. This is an unresolved
+  infrastructure binding, not model-semantic failure or evidence of tokenizer impossibility.
+- **Gate:** all baseline request token-fit fields remain unknown. Byte ranges and advertised API
+  capacity cannot certify the configured route. Future execution requires exact model/provider/
+  tokenizer binding, all prompt/schema/harness/tool overhead and an output/reasoning reserve.
+  Do not silently truncate evidence, remove conditions, weaken B2 or set a larger override from
+  these observations. No schema/model canary or semantic invocation is activated.
+- **Verification/governance:** five focused offline replay/guard checks plus two readiness checks
+  pass. The failed combined support gate and unlaunched C remain unchanged. No model call, study
+  request, annotation, endpoint, alpha spending or physical acquisition occurred. P11 retains
+  nineteen open conditions; all prospective five-method comparisons/reporting remain required.

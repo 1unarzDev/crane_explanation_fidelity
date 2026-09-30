@@ -1,0 +1,76 @@
+{
+  "baseline_request_audit": {
+    "path": "manifests/study/evidence-calibration-baseline-requests-v1-development.json",
+    "raw_sha256": "b4c65c191cb1d972e6500b2659224bb8d782e1101b3552cb8c6222a39c57fae1"
+  },
+  "candidate_model": "gpt-6-sol",
+  "candidate_reasoning_effort": "high",
+  "codex_catalog": {
+    "cli_version": "0.159.2",
+    "command": "codex debug models",
+    "raw_catalog_sha256": "262dc36e0e7beb290aef8196bd59f42acf51647b8f7b68dafa533ae7742019e6",
+    "selected_model": {
+      "context_window": 272000,
+      "effective_context_window_percent": 95,
+      "max_context_window": 872000,
+      "slug": "gpt-6-sol",
+      "supports_experimental_context": false,
+      "truncation_policy": {
+        "limit": 10000,
+        "mode": "tokens"
+      }
+    }
+  },
+  "complete_request_token_counts_available": false,
+  "config_observation": {
+    "auto_compact_override_present": false,
+    "catalog_override_present": false,
+    "context_window_override_present": false,
+    "provider": "codex-lb",
+    "secrets_recorded": false
+  },
+  "context_or_provider_settings_changed": false,
+  "exact_tokenizer_resolution": [
+    {
+      "alternate_encoding_selected": false,
+      "api": "encoding_for_model",
+      "model": "gpt-6-sol",
+      "package": "tiktoken",
+      "status": "UNMAPPED_EXACT_MODEL",
+      "version": "0.12.0"
+    },
+    {
+      "alternate_encoding_selected": false,
+      "api": "encoding_for_model",
+      "model": "gpt-6-sol",
+      "package": "tiktoken",
+      "status": "UNMAPPED_EXACT_MODEL",
+      "version": "0.14.0"
+    }
+  ],
+  "harness_schema_tool_overhead_bound": false,
+  "model_call_attempted": false,
+  "official_documentation": [
+    {
+      "context_window_tokens": 1050000,
+      "excerpt": "1,050,000 context window; 128,000 max output tokens",
+      "fetched_url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
+      "max_output_tokens": 128000,
+      "raw_html_sha256": "0cf9159c34ff13fe947a72b8ac4bb3b425ca8a3572f76dddc6ac6fd978bc1f19",
+      "title": "GPT-6 Sol Model | OpenAI API",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6-sol"
+    },
+    {
+      "excerpt": "model_context_window: Context window tokens available to the active model. model_auto_compact_token_limit: Token threshold that triggers automatic history compaction (unset uses model defaults).",
+      "fetched_url": "https://learn.chatgpt.com/docs/config-file/config-reference",
+      "raw_html_sha256": "5f032b4dcf8c3349f6ad54128db6449d3628f4c2029b507cf1769aa21c850bd8",
+      "url": "https://developers.openai.com/codex/config-reference/"
+    }
+  ],
+  "output_reasoning_reserve_bound": false,
+  "provider_route_capacity_verified": false,
+  "recorded_date": "2026-09-30",
+  "schema": "crane-context-capacity-observation/v1-development",
+  "scope": "NON_STUDY_INFRASTRUCTURE_OBSERVATION",
+  "study_request_attempted": false
+}

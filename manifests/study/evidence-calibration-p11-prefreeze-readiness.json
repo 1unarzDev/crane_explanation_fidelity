@@ -4,6 +4,10 @@
   "recorded_date": "2026-09-29",
   "status": "NOT_READY_CONFIRMATION_PROHIBITED",
   "development_components": [
+    {"path": "analysis/audit_evidence_calibration_context_capacity.py", "sha256": "050f5dec06651b2bfc95bbad35998529f9bb094513bfc8e9b7cb8df6d8796d90"},
+    {"path": "tests/test_evidence_calibration_context_capacity.py", "sha256": "e675255a0a8880e6dd60261854920534681de8370f86169afbc47c2273100a94"},
+    {"path": "docs/CONTEXT_CAPACITY_2026-09-30.md", "sha256": "bab5824eef06de138c1bedd61a7f3854b45c005d9299fe6fac2c8f3e3c6dc508"},
+    {"path": "manifests/operations/evidence-calibration-context-capacity-observation-v1.json", "sha256": "23af46d884dadf129bb144e90b05df0bd0a34aecd5e20203dcf3ff3dd3705550"},
     {"path": "analysis/prepare_evidence_calibration_baselines.py", "sha256": "6545c11eb136ac5bde5e0998e88e9260dd5d6d690a7fac0715f0485d75ef76d6"},
     {"path": "analysis/audit_evidence_calibration_baseline_requests.py", "sha256": "e894f6cfe89e743a8c78a4060e4b1398f52be3db3d9ef9b2b473bddb0d075c13"},
     {"path": "tests/test_evidence_calibration_baselines.py", "sha256": "80a5a669b31f752799cf0041fe0d2fe6eaace3bb8a60aa9984982a8d314870fb"},
@@ -261,7 +265,7 @@
     {"requirement_id": "population_and_family_weights", "status": "DEVELOPMENT_CANDIDATE_NOT_FROZEN", "evidence": "Candidate fixed mixture is 35% persistent discrepancy, 35% measured recovery, 15% missing-odometry controls, and 15% nominal false-premise controls; the primary conditional comparison is balanced 50/50 across the first two families, with geometry separate and deferred."},
     {"requirement_id": "mechanism_specific_ladders", "status": "DEVELOPMENT_VALIDATED_NOT_FROZEN", "evidence": "Four ontology-checked removal-only development ladders now cover full command-motion/recovery, genuinely missing odometry, nominal false-premise, and secondary geometry/planning. They expose no specific-cause or intervention evidence in the primary ladder and remain subject to pilot validation and P11 freeze."},
     {"requirement_id": "prospective_non_entailment_wording", "status": "V2_CANDIDATE_NOT_EXERCISED_IN_FRESH_PILOT", "evidence": "The retained v1 B4 development pilot emitted an unbound deictic physical-cause limitation in 12/60 outputs and an unsupported negative-causation wording in six measured-recovery outputs. A versioned v2 ontology changes only three rationale strings and passes a diff audit. A fresh development pilot must bind and exercise the corrected wording before P11; old outputs remain unchanged and unrescored."},
-    {"requirement_id": "model_prompt_tool_budgets", "status": "UNSET", "evidence": null},
+    {"requirement_id": "model_prompt_tool_budgets", "status": "UNSET", "evidence": "The later non-study capacity observation retains official gpt-6-sol API context=1050000 versus CLI 0.159.2 catalog default=272000/max=872000/effective=95 percent. No context/compaction/catalog override is present. Exact tokenizer lookup is unmapped under tiktoken 0.12.0 and 0.14.0, with no alternate encoding chosen. All 120 baseline request token-fit statuses remain unknown; complete exact-model/route/tokenizer and harness/schema/tool/output/reasoning budgets must be bound before execution. Five replay/guard checks pass. No override, truncation, condition removal, canary or model call is authorized."},
     {"requirement_id": "stopping_and_replication_rules", "status": "DEVELOPMENT_CANDIDATE_NOT_FROZEN", "evidence": "Candidate uses one fixed terminal semantic look, technical-only monitoring beforehand, no quality-driven replacement, and independently reported fresh replication with unchanged selected method/endpoint and protected alpha=0.02. Exact N and any futility rule remain unset pending valid development discordance."}
   ],
   "confirmation_authorized": false,
