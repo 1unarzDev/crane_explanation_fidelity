@@ -4588,3 +4588,28 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   score, physical acquisition, alpha spending or P11 freeze. Preserve failed combined
   support/unlaunched C and pending reopening. P11 keeps nineteen open conditions and
   confirmation/replication independent N=0; existing study callers are unchanged.
+
+
+## 2026-09-30 — bound registered scratch mounts and preserve mechanical failures
+
+- **Prior observation:** v4 namespace allows regular-file writes at root/tmp/dev/shm
+  surfaces, each reporting 16721104896-byte capacity. Group memory is not a registered
+  filesystem scratch quota. Retain the fixed one-byte inspection and source version.
+- **Failed candidate:** v5 sizes tmp/shm, remounts root/device backing read-only and
+  disables nested user namespaces; launch fails because the disable option requires
+  explicit unshare-user. Preserve that startup error/transaction and generic failure
+  envelope. It is not a model failure or a valid primitive result.
+- **Repair/evidence:** v6 adds only explicit user-namespace creation. Exact capacities,
+  ENOSPC after 1 MiB on each scratch mount, EROFS on root/dev regular-file writes,
+  usable null device and denied nested namespace creation are observed. Preserve a
+  validator's wrong EPERM assumption: actual namespace denial returns ENOSPC. Bind a
+  distinct mechanical validation of unchanged bytes; do not relaunch or rewrite it.
+- **Checks/scope:** twelve scratch tests pass across two targeted invocations, with
+  preserved service tests and a staged B2 primitive reference match. Source/interpreter
+  access is preserved. No existing broker/MCP/caller adopts v6. Synthetic capacities
+  are not study budgets; inode/kernel-memory, cumulative CPU, failure-origin and full
+  runtime/provider/turn-budget certification remain open.
+- **Governance:** no semantic model/automated annotation call, method-key join, real-
+  pilot score, physical acquisition, alpha spending or P11 freeze. Preserve failed
+  combined support/unlaunched C and pending reopening. P11 keeps nineteen open
+  conditions and confirmation/replication independent N=0.

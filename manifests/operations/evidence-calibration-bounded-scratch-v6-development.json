@@ -1,0 +1,140 @@
+{
+  "schema": "crane-bounded-scratch-binding/v6-development",
+  "recorded_date": "2026-09-30",
+  "status": "V5_STARTUP_FAILURE_RETAINED_V6_CAPACITY_AND_NAMESPACE_DENIAL_OBSERVED",
+  "bindings": [
+    {
+      "path": "analysis/evidence_calibration_local_tool_sandbox_v5.py",
+      "raw_sha256": "d9979b92b5f7041ebbbc9e0b1280523a6eb2f42fdd502036bd9540aa83e4c2f1"
+    },
+    {
+      "path": "analysis/evidence_calibration_local_tool_sandbox_v6.py",
+      "raw_sha256": "0b8b247839885b7d3fb21287aaecd24b2ccd51025781c0cdf98c64bb8cf2c918"
+    },
+    {
+      "path": "tests/test_evidence_calibration_bounded_scratch.py",
+      "raw_sha256": "93fd2907c50511d47edc338983d91d99b40704e495edc5c6d5cf15b96fba43e4"
+    },
+    {
+      "path": "docs/BOUNDED_SCRATCH_2026-09-30.md",
+      "raw_sha256": "b697cfbe2e0b9174c5f9cc3f6c604f6118b0e17e4b2b2c9e23353e0f31c40de6"
+    },
+    {
+      "path": "analysis/evidence_calibration_local_tool_sandbox_v4.py",
+      "raw_sha256": "347fd464d967569f32b66137984ed8891e5c8596e442bfa09a5d5122832afce1"
+    },
+    {
+      "path": "analysis/evidence_calibration_local_tool_sandbox_v2.py",
+      "raw_sha256": "e6ef4a67af326bb76293186ef5e99743e041bb41622d9b7154ef651d072e5906"
+    },
+    {
+      "path": "analysis/stage_evidence_calibration_workspace.py",
+      "raw_sha256": "3044778ac6f6de74b80884a8b5e777d7cea9e9e42cea56e20bde7999954a7d0b"
+    },
+    {
+      "path": "analysis/observe_evidence_calibration_cgroup_limits.py",
+      "raw_sha256": "aaa610f75a0c872f05941957f291ed6a09dd239510fae056ee4bb864679ccddb"
+    },
+    {
+      "path": "analysis/evidence_calibration_io.py",
+      "raw_sha256": "c70fef1e03274c55746a8ed7395cec221d2ed0bc63c83eb7fd005429a0925422"
+    }
+  ],
+  "local_transactions": [
+    {
+      "directory": "output/infrastructure/scratch-boundary-inspection-v1",
+      "records": [
+        {
+          "relative_path": "inspection/intent.json",
+          "raw_sha256": "500ea78c31bc4aebfd76a72f993b1b62734fe5d0d538d78a7f0beff3f2581588"
+        },
+        {
+          "relative_path": "inspection/terminal.json",
+          "raw_sha256": "7ab9107fb1ce6f95a95d718f463a0af7343cd858e27f928cf19866c4e739a158"
+        }
+      ]
+    },
+    {
+      "directory": "output/infrastructure/bounded-scratch-development-v1",
+      "records": [
+        {
+          "relative_path": "inspection/intent.json",
+          "raw_sha256": "674d32d2ddd999aa82d26704111673387395ac7cd10313abd6799174dbc6d591"
+        },
+        {
+          "relative_path": "inspection/terminal.json",
+          "raw_sha256": "cd016ab7c225ed793064acaba0075bf21b667bc99bf6e5e642c5fb0b3a8ea4c3"
+        }
+      ]
+    },
+    {
+      "directory": "output/infrastructure/bounded-scratch-development-v2",
+      "records": [
+        {
+          "relative_path": "exhaustion/intent.json",
+          "raw_sha256": "d4b4c8c4552b83791e4a2d9b1098c98079f7322d72abd415f03d1bd3a09ace28"
+        },
+        {
+          "relative_path": "exhaustion/terminal.json",
+          "raw_sha256": "ea280df6cd940c0e9261d494d6c64c750ae782e1a96a741b1f8d44a47b4ffc3f"
+        },
+        {
+          "relative_path": "inspection/intent.json",
+          "raw_sha256": "7c25caafac5a33c30c6f36b9ecd87845886f29a20d5dcf13ac9b1f9684e65a7e"
+        },
+        {
+          "relative_path": "inspection/terminal.json",
+          "raw_sha256": "e24b010ff8df4cd852c4d565f7867ada9189d145305f1deddd6077431fa779ee"
+        },
+        {
+          "relative_path": "validated-observation.json",
+          "raw_sha256": "bb202a04f7c20eea3e2ba57bd0d23a564c072dcccf72c4477e916ea9dfa0707f"
+        },
+        {
+          "relative_path": "validation-assumption-failure.json",
+          "raw_sha256": "d93b7b3535f24bb3d3851a50703956d9f4717e3ab957896b4e158c223cc62501"
+        }
+      ]
+    }
+  ],
+  "scratch_tests_passed": 12,
+  "preserved_service_tests_passed_during_integration": 19,
+  "expected_errno_resolution": {
+    "original_assumption": 1,
+    "observed": 28,
+    "return": -1,
+    "executor_edited_after_exhaustion": false,
+    "exhaustion_transaction_relaunched": false
+  },
+  "observation": {
+    "status": "SCRATCH_CAPACITY_AND_USERNS_DENIAL_OBSERVED_WITH_ERRNO_CLARIFICATION",
+    "source_terminal_sha256": "ea280df6cd940c0e9261d494d6c64c750ae782e1a96a741b1f8d44a47b4ffc3f",
+    "observation": {
+      "/tmp/full": {
+        "errno": 28,
+        "bytes_written": 1048576
+      },
+      "/dev/shm/full": {
+        "errno": 28,
+        "bytes_written": 1048576
+      },
+      "nested_userns": {
+        "return": -1,
+        "errno": 28
+      },
+      "device_null_write": true
+    },
+    "mechanical_reference_resolution": "Namespace denial returns ENOSPC, not the originally assumed EPERM. No semantic output or endpoint is rescored.",
+    "executor_changed": false,
+    "transaction_relaunched": false
+  },
+  "existing_study_callers_migrated": false,
+  "scratch_budget_frozen": false,
+  "all_kernel_storage_certified": false,
+  "failure_origin_classification_complete": false,
+  "model_calls_authorized": false,
+  "pilot_annotation_authorized": false,
+  "p11_authorized": false,
+  "confirmation_independent_n": 0,
+  "replication_independent_n": 0
+}

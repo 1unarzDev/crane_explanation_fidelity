@@ -1,5 +1,18 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Scratch boundary addendum after `878e19fb` — 2026-09-30
+
+A [separate scratch-capacity candidate](BOUNDED_SCRATCH_2026-09-30.md) retains a v5
+namespace-startup failure. V6 adds explicit user-namespace creation and observes
+sized temporary/shared-memory mounts, read-only root/device backing mounts and
+nested namespace denial. Preserve an EPERM expectation error: actual denial is
+ENOSPC; a separate validator binds unchanged bytes without relaunch. Twelve scratch
+tests and an existing staged primitive pass; callers/brokers/MCP remain unchanged.
+Complete budgets, failure-origin classification, immutable runtime, model-facing
+rendering and measurement remain open. No semantic invocation, endpoint score or
+alpha spending occurs. P11 keeps nineteen open conditions, N=0 and pending reopening.
+
+
 ## Installed-client service route addendum after `d2871be0` — 2026-09-30
 
 A [separate offline observer v2](INSTALLED_CLIENT_SERVICE_MCP_2026-09-30.md)
