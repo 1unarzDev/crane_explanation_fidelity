@@ -171,3 +171,12 @@ The continuation's separate non-study schema canary subsequently passed under th
 Astra-high configuration, following a network-ready non-study host preflight. Its record,
 intent, and read-only audit are bound and DVC-pushed. No continuation pilot call had run at
 this pre-call checkpoint; all P11, support, endpoint, and alpha gates remain unchanged.
+
+The continuation was subsequently launched after the pushed declaration and canary gate. It is
+live as exec session `56406` at this checkpoint; poll that handle rather than restarting the job.
+Its bound runner, prompt, schema, input bundle, and declarations must remain unchanged while it
+runs. The original 69-return prefix has a separate exact-input variance audit: four repeated
+answer/claim/span groups have differing kind tags, with agreeing stance and polarity. This is
+mechanical review triage only; semantic review, endpoint mapping, and support annotation remain
+open. After a terminal run state, audit the new records, govern and push the DVC objects, and
+update this checkpoint without reclassifying interruptions as model failures.

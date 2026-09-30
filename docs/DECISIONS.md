@@ -3422,3 +3422,21 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   only the already declared 158 never-launched development stance/kind/polarity calls. The
   original unknown A identity remains quarantined; support labels, endpoint rank, comparative
   effect, P11, independent confirmation/replication N, and alpha remain unchanged.
+
+## 2026-09-30 — retain exact-input kind variance in the first pilot role prefix
+
+- **Mechanical finding:** the preserved 69 A returns contain 669 atomic judgments. Grouping
+  by exact complete answer text, normalized claim text, and exact claim span finds four groups
+  with different role tuples despite identical semantic input. Two groups assign navigation
+  action abort to `TASK_OUTCOME` or `SOFTWARE_ACTION_EVENT`; two assign command-stream validity
+  to `COMMAND_OBSERVATION` or `SOURCE_OR_CONFIG_FACT`. Stance and polarity agree within these
+  groups. Opaque response and item IDs are excluded from grouping.
+- **Retention:** the new read-only prefix-variance audit binds the original interrupted call
+  snapshot and input bundle, reproduces all four groups, and assigns no corrected role, support
+  label, or endpoint score. The synthetic v2r2 qualification is not regraded. Full blind semantic
+  review and prospective endpoint mapping remain open; structural validity does not establish
+  semantic agreement on these broader pilot atoms.
+- **Execution boundary:** the separately declared continuation is live and uses unchanged
+  qualified task bytes. This mechanical prefix triage does not select, retry, or alter any model
+  return. The original unknown A identity remains quarantined. P11, independent N, and alpha are
+  unchanged.
