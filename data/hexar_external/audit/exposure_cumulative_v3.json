@@ -1,6 +1,6 @@
 {
   "schema": "hexar-cumulative-exposure/v3",
-  "stage": "before reserved activation",
+  "stage": "reserved generation active after frozen descriptive activation",
   "initial_declaration_sha256": "c3c5d1ab5df550f63e2f5672b35fbb4b766b277ed3209e6a684f71553c33a4ff",
   "development_source_ids": [
     "bagfile_10_1.bag",
@@ -17,9 +17,22 @@
   ],
   "historical_release_exposure": "All released scenario/gold/answer/annotation fields accessed for category A accounting; these never enter methods. Public-data model familiarity remains possible.",
   "reserved_inventory_exposure": "Metadata, topic lists, SQLite counts and source hashes inspected across all twelve reserved bags.",
-  "reserved_semantic_packets_generated": false,
-  "reserved_method_answers_generated": false,
+  "reserved_semantic_packets_generated": true,
+  "reserved_method_answers_generated": true,
   "independent_physical_recordings_added_by_v3": 0,
   "initial_split_rewritten": false,
-  "updated_on_final_release_required": true
+  "updated_on_final_release_required": true,
+  "activation_history": [
+    {
+      "stage": "before reserved activation",
+      "reserved_semantic_packets_generated": false,
+      "reserved_method_answers_generated": false
+    },
+    {
+      "stage": "frozen descriptive reserved activation",
+      "utc": "2026-09-30T14:36:30.971435+00:00",
+      "reserved_semantic_packets_generated": true,
+      "reserved_method_generation": "active; root has not inspected comparative answer semantics"
+    }
+  ]
 }

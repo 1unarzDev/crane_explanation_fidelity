@@ -46,3 +46,9 @@ HX-PROMPT is a strong control: 100% mean required-unit coverage and zero unsuppo
 Four of 1,320 finalized decision comparisons differed, with 99.69% atomic-label agreement. The independently assessed pass means over the same three complete pairs are +18.5 and +14.8 points; their full-cohort missing-label bounds both include zero. The high agreement does not repair invalid protocol returns or establish human validity/atomizer qualification.
 
 The fresh v3 sentinel-only compatibility qualification began after the verified v2 process closed, under the unchanged 100% gates and current main prompt/schema/validator. It was independently constructed and hash-frozen before inference, with no old failed-return rescoring or method tuning. Twelve reserved bags remain untouched. See v3/INTERFACE_REVIEW.md and PROSPECTIVE_INTERFACE_PILOT.md.
+
+## V3 compatibility gate closed; reserved study activated
+
+Both fresh qualification passes passed unchanged 100% gates. The fixed all-family q1 infrastructure slice produced 54 valid answers and 54 valid qualified assessments, with zero technical failures/retries. Independent inventory has 246 propositions; all mechanical and numerical boundary checks pass. This is a technical compatibility pilot, not extra physical N or a replacement scientific endpoint.
+
+The guarded ordered release froze the complete twelve-recording descriptive design and secondary causal reporting before answers, built 108 closure-valid packets, released independent references and began all 324 method jobs. Model/annotation queues remain sequential and capped at two workers. No comparative reserved scores or superiority result exist yet; alpha remains zero. Private closed-development restoration verified 2,279 exact asset files and both source repositories, with 13 restored tests passing.

@@ -96,3 +96,22 @@ data/hexar_external/.venv/bin/python analysis/hexar_external/archive_v3.py
 ```
 
 The release is twelve reserved recordings, all three original questions and three conditions (108 packets, 324 method outputs). Generation and annotation queues remain sequential, each with at most two inference workers. Resume reuses immutable completed outputs; zero technical or quality retries are allowed. The final archive hashes ignored local call/cache assets separately from integration artifacts. Recording redistribution rights remain unresolved.
+
+## Private byte preservation and runtime identity
+
+The audit environment is Python 3.14.7 on Linux/glibc, with Codex CLI 0.159.2; exact executable SHA-256 and OS identity are in `v3/runtime_provenance.json`. The requirements lock does not replace that interpreter record. Hosted weights/tokenizer/backend remain unknown, and restoring retained calls does not promise identical new inference. Source/data attribution is to Love et al.; full author names and package notices are in SOURCE_AUDIT.md.
+
+`archive_bundle_v3.py` creates private local code/upstream Git bundles plus an actual compressed asset archive (including ignored native traces, extraction/call/cache bytes and original source data), then clones both repositories, extracts all selected assets, verifies every SHA-256 and runs the 13 scoped tests. Mutable virtual environments, temporary directories, compiled caches and archive recursion are excluded. No external transfer/publication or shared storage mutation occurs. The closed-development bundle restored 2,279 files; a final whole-study bundle remains required.
+
+```bash
+data/hexar_external/.venv/bin/python analysis/hexar_external/archive_bundle_v3.py --tag 20260930_closed_development --closed-development-only
+# Existing tags are immutable and refused; do not rerun the existing tag.
+# Once the complete reserved study passes final integrity:
+data/hexar_external/.venv/bin/python analysis/hexar_external/validate_v3.py --require-final
+data/hexar_external/.venv/bin/python analysis/hexar_external/archive_v3.py
+data/hexar_external/.venv/bin/python analysis/hexar_external/archive_bundle_v3.py --tag 20260930_final
+```
+
+Private archive location and all bundle/tar hashes are recorded in the checked restore receipts. The byte archive is restorable but resides on the local filesystem; an independent disaster-recovery copy/transfer destination remains optional coordination work. Recording redistribution rights remain unresolved, so do not treat this private preservation as authority to publish raw bags, extracted streams or source-bearing provider payloads.
+
+For complete unsupported-causal reporting, the final-only secondary `report_causal_v3.py` requires separately blind-coded and independently reviewed causal-role sidecars. It preserves qualified support labels and the primary endpoint, records ambiguous roles/support as unknown bounds, and reports no causal p-value. The protocol was hash-bound in the descriptive freeze before reserved generation; see v3/CAUSAL_REPORTING.md.
