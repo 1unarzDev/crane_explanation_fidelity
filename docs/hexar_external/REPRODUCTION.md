@@ -64,3 +64,13 @@ data/hexar_external/.venv/bin/python analysis/hexar_external/annotate_v2.py --co
 ```
 
 The blind developer claim inventory must be complete before `--stage packets` and `--stage annotate`. The latter uses the current support schema/pipeline plus the exact externally qualified v2 amendment for A/B/C; it does not upgrade developer extraction to qualified annotation.
+
+```bash
+data/hexar_external/.venv/bin/python analysis/hexar_external/audit_inventory_v2.py --cohort development
+data/hexar_external/.venv/bin/python analysis/hexar_external/numerical_audit_v2.py --cohort development
+data/hexar_external/.venv/bin/python analysis/hexar_external/annotate_v2.py --cohort development --stage packets
+data/hexar_external/.venv/bin/python analysis/hexar_external/annotate_v2.py --cohort development --stage annotate
+data/hexar_external/.venv/bin/python analysis/hexar_external/after_pilot_v2.py
+```
+
+The ordered release waits for the development annotation summary, computes the declared pilot endpoint, admits only the descriptive frozen design, builds all twelve reserved recordings' transformed packets and independent references, then regenerates all three methods and exports their blind bank. It never allocates alpha, changes a model/source pin or runs annotation simultaneously with model generation. If a stage fails, inspect its retained log and resume the same script; completed immutable outputs are reused. Reserved inventory and qualified annotations remain a separate final gate, followed by `report_v2.py --cohort reserved`, `validate_v2.py` and `archive_v2.py`. Do not reinterpret a frozen technical failure as a semantic result or silently regenerate it.
