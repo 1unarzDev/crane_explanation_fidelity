@@ -2580,3 +2580,18 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - **Next gate:** construct a fresh held-out suite with atomically complete construction references,
   freeze it before calls, then perform two isolated passes and an independent completeness review.
   No v1 held-out score, pilot annotation, confirmatory N, or alpha claim is promoted.
+
+## 2026-09-29 — freeze fresh v2 extraction references after v1 invalidation
+
+- **Decision:** retain v1 as invalid and freeze 16 new synthetic held-out explanations plus four
+  development cases under `evidence-calibration-atomization-v2-freeze.json` before any v2 model
+  call. The v2 construction explicitly lists event facts separately from temporal/causal relations,
+  and lists each alternative cause and non-entailment separately. No prior study answer or v1
+  held-out response text is used as a v2 held-out case.
+- **Configuration and gates:** retain the previously declared `gpt-6.1-sol` high-effort, no-tool,
+  two-isolated-pass extractor and exact prompt/schema. Run a separate non-study schema canary,
+  then require at least 0.95 atom recall, complete critical-atom recall, zero unmatched assertions,
+  zero unresolved spans, and complete prompt-injection cases on each pass, with independent
+  semantic review. Any further gold defect invalidates v2; it is not scored as a model failure.
+- **Boundary:** v2 qualification is development measurement only. It cannot authorize support
+  annotation until the real pilot inventory receives its own completeness review.

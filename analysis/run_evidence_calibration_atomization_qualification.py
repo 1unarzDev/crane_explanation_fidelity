@@ -41,10 +41,12 @@ def bound_file(binding: dict[str, str]) -> Path:
 
 def load_freeze(path: Path = FREEZE) -> tuple[dict[str, Any], dict[str, Any], str, dict[str, Any]]:
     freeze = json.loads(path.read_text(encoding="utf-8"))
-    if freeze["schema"] != "crane-evidence-calibration-atomization-qualification-freeze/v1":
+    if freeze["schema"] not in {"crane-evidence-calibration-atomization-qualification-freeze/v1",
+                                "crane-evidence-calibration-atomization-qualification-freeze/v2"}:
         raise ValueError("unsupported atomization qualification freeze")
     suite = json.loads(bound_file(freeze["suite"]).read_text(encoding="utf-8"))
-    if suite["schema"] != "crane-evidence-calibration-atomization-qualification-suite/v1":
+    if suite["schema"] not in {"crane-evidence-calibration-atomization-qualification-suite/v1",
+                              "crane-evidence-calibration-atomization-qualification-suite/v2"}:
         raise ValueError("unsupported atomization qualification suite")
     prompt = bound_file(freeze["candidate"]["prompt"]).read_text(encoding="utf-8")
     schema = json.loads(bound_file(freeze["candidate"]["return_schema"]).read_text(encoding="utf-8"))
@@ -63,6 +65,7 @@ def load_freeze(path: Path = FREEZE) -> tuple[dict[str, Any], dict[str, Any], st
 def call_once(
     *, entry: dict[str, str], role: str, freeze: dict[str, Any], prompt: str,
     schema: dict[str, Any], output: Path, runner: Any = subprocess.run,
+    freeze_path: Path = FREEZE,
 ) -> dict[str, Any]:
     candidate = freeze["candidate"]
     if candidate["transport"] != "codex-cli-chatgpt-login-ephemeral/v1" or candidate["tools"] != "none":
@@ -78,7 +81,7 @@ def call_once(
     ))
     identity = {
         "role": role, "model": model, "reasoning_effort": effort,
-        "transport": candidate["transport"], "freeze_sha256": sha256(FREEZE.read_bytes()),
+        "transport": candidate["transport"], "freeze_sha256": sha256(freeze_path.read_bytes()),
         "payload_sha256": sha256(canonical(payload)),
         "prompt_sha256": sha256(full_prompt.encode("utf-8")),
         "schema_sha256": sha256(canonical(schema)),
@@ -150,8 +153,9 @@ def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--mode", choices=("canary", "qualification"), required=True)
     parser.add_argument("--output-root", type=Path, required=True)
+    parser.add_argument("--freeze", type=Path, default=FREEZE)
     args = parser.parse_args()
-    freeze, suite, prompt, schema = load_freeze()
+    freeze, suite, prompt, schema = load_freeze(args.freeze)
     if args.mode == "canary":
         cases = [{"case_id": "non-study-schema-canary", "response_text": "The action succeeded."}]
         passes = ("canary",)
@@ -170,7 +174,7 @@ def main() -> int:
             entry = {"opaque_response_id": f"{case['case_id']}-{slot}", "response_text": case["response_text"]}
             output = args.output_root / slot / f"{case['case_id']}.json"
             result = call_once(entry=entry, role=f"atomizer-{slot}", freeze=freeze,
-                               prompt=prompt, schema=schema, output=output)
+                               prompt=prompt, schema=schema, output=output, freeze_path=args.freeze)
             summary.append({"slot": slot, "case_id": case["case_id"], "status": result["status"]})
             if result["status"] != "STRUCTURALLY_VALID_COMPLETENESS_UNQUALIFIED":
                 print(json.dumps({"status": "STOPPED_ON_RETAINED_FAILURE", "calls": summary}, indent=2))

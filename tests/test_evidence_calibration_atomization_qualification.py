@@ -22,6 +22,20 @@ def test_frozen_suite_is_disjoint_and_construction_defined() -> None:
     assert all("cm-land-conf-" not in case["response_text"] for case in cases)
 
 
+def test_v2_heldout_is_fresh_and_component_facts_are_explicit() -> None:
+    v1 = load_freeze()[1]
+    v2_path = ROOT / "research/explanation_fidelity/experiment_configs/prospective/evidence-calibration-atomization-v2-freeze.json"
+    freeze, v2, _, _ = load_freeze(v2_path)
+    assert freeze["predecessor"].startswith("v1 is INVALID_REFERENCE_CONTRACT")
+    old_texts = {case["response_text"] for case in v1["cases"]}
+    new_heldout = [case for case in v2["cases"] if case["split"] == "heldout"]
+    assert len(new_heldout) == 16
+    assert all(case["response_text"] not in old_texts for case in new_heldout)
+    by_id = {case["case_id"]: case for case in new_heldout}
+    assert len(by_id["ae-ho-05"]["expected"]) == 4
+    assert len(by_id["ae-ho-06"]["expected"]) == 4
+
+
 def test_one_retained_call_does_not_retry_or_claim_completeness(tmp_path: Path) -> None:
     freeze, _, prompt, schema = load_freeze()
     entry = {"opaque_response_id": "canary", "response_text": "The action succeeded."}
