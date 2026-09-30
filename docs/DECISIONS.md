@@ -3463,3 +3463,28 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   not semantic correctness. Both-pass review and incomplete-pass disposition remain open;
   continuation session `56406` remains live with unchanged task bytes. P11, alpha, and
   confirmation/replication N are unchanged.
+
+## 2026-09-30 — construct an uncalled neutral-level support input candidate
+
+- **Problem:** the support task's original qualification supplied per-atom abstraction levels,
+  while real-pilot extractor levels are unqualified and the qualified role task supplies no
+  levels. Broad kind tags cannot resolve this handoff through a blanket conversion.
+- **Candidate:** supply null per-atom levels under the unchanged Astra-high support prompt and
+  v2 return/adjudication schemas. Preserve the raw highest-level return field but exclude it
+  from support qualification credit and endpoint rank. The existing qualified v4 disposition
+  and its final-cycle boundary remain intact; this is a separately scoped input-extension
+  question, not another attempt to promote a failed v4 annotator.
+- **Construction:** 20 fresh synthetic answers with explicit evidence and construction notes
+  exercise all five support labels and coverage, false-premise, and limitation fields. The
+  candidate remains uncalled and unqualified. Reference review, prospective gates, two isolated
+  passes, durable-intent execution, and a separate canary are required before any use.
+- **Mechanical evidence:** four focused tests pass, including raw-rank independence, rejection
+  of supplied level anchors and invented positive spans, and preservation of useful action
+  coverage despite an unsupported measured-recovery assertion. Eight tests pass including the
+  historical qualification regression tests. Synthetic perfect returns are structural test
+  fixtures, not observed annotation accuracy.
+- **Records:** `docs/NEUTRAL_LEVEL_SUPPORT_CANDIDATE_2026-09-30.md` and
+  `manifests/annotation/evidence-calibration-neutral-level-support-construction-v1.json` bind
+  the uncalled suite and offline scoring helpers. No model call is authorized by these records;
+  no support label, endpoint score, alpha expenditure, physical allocation, or P11 freeze
+  follows. The separate pilot role continuation remains live with unchanged bytes.

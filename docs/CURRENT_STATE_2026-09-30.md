@@ -208,3 +208,23 @@ as fresh episodes. The error-budget audit passes provisionally with 0.02 consume
 P11 still fails closed on 19 conditions with no component hash mismatch. Five focused
 retention/readiness tests pass. No confirmatory output, support label, or endpoint score was
 generated in this checkpoint work; confirmation and replication independent N remain zero.
+
+## Later 2026-09-30 support-input candidate checkpoint
+
+An uncalled neutral-level support candidate now addresses the input-level anchoring dependency.
+It uses null per-atom abstraction levels with the unchanged qualified Astra-high support prompt
+and v2 return/adjudication schemas. Twenty new synthetic cases and offline scoring helpers are
+bound by `evidence-calibration-neutral-level-support-construction-v1.json`. References cover the
+five-way support taxonomy, coverage, false-premise handling, and limitation preservation. The
+schema's raw highest-level return remains retained and explicitly unqualified for endpoint use.
+Four focused tests pass; eight pass with historical qualification regression tests. These are
+mechanical tests using synthetic returns, not model accuracy evidence. Reference review and a
+separate prospective input-extension qualification/canary remain open; the candidate authorizes
+no calls or pilot annotation and leaves the existing v4 disposition unchanged.
+
+The continuation remains live as session `56406`, with all 44 continuation A identities complete
+and B processing underway. Poll that handle and preserve every terminal/unknown outcome. Do not
+change its bound task or DVC-add the live output root. Both-pass role review, incomplete-pass
+disposition, neutral-input qualification, claim attachment and endpoint treatment, support and
+adjudication dry runs, and fresh aligned five-method pilot evidence remain next dependencies.
+P11 still has 19 open conditions; confirmation and replication independent N remain zero.
