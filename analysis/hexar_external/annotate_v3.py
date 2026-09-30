@@ -2,7 +2,7 @@
 """Versioned unchanged support pipeline plus qualified form-applicability clarification."""
 import json
 from audit_release import ROOT,sha,write
-from verify_v3 import V3,qualified
+from verify_v3 import V3,qualified,study
 from qualify_v3 import effective_prompt
 import annotate_v2
 
@@ -12,5 +12,5 @@ def main():
  dest=V3/'annotation_binding.json'
  if dest.exists():assert json.loads(dest.read_text())==binding
  else:write(dest,binding)
- annotate_v2.V2=V3;annotate_v2.qualified=qualified;annotate_v2.effective_prompt=effective_prompt;annotate_v2.main()
+ annotate_v2.V2=V3;annotate_v2.qualified=qualified;annotate_v2.study=study;annotate_v2.effective_prompt=effective_prompt;annotate_v2.main()
 if __name__=='__main__':main()

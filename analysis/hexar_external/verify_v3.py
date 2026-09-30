@@ -15,3 +15,9 @@ def qualified():
  assert f['base_external_v2_amendment_sha256']==sha(ROOT/'docs/hexar_external/v2/annotation_amendment.txt')
  assert f['prompt_sha256']==sha(ROOT/'research/explanation_fidelity/prompts/evidence-calibration-agent-annotator-v1.md')
  assert f['schema_sha256']==sha(ROOT/'research/explanation_fidelity/schemas/blinded-agent-atomic-annotation-return-v2.schema.json')
+
+def study():
+ qualified();freeze=json.loads((V3/'study_freeze.json').read_text())
+ if freeze['alpha_allocated']!=0:raise ValueError('This executor admits only the declared descriptive design.')
+ for file,digest in freeze['file_hashes'].items():
+  if sha(ROOT/file)!=digest:raise ValueError('Frozen external file changed: '+file)
