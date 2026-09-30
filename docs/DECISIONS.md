@@ -4436,3 +4436,26 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - **Governance:** no model/annotation call, method-key join, episode effect, physical acquisition,
   alpha spending or scientific runtime adoption. P11 remains closed with nineteen open conditions
   and N=0; failed combined measurement/unlaunched C and pending reopening remain unchanged.
+
+## 2026-09-30 — verify a fresh complete restoration and bounded runtime parity
+
+- **Prospective repair execution:** run the declared FSETID-bearing restoration helper on a fresh
+  destination and transaction identity. Preserve the earlier failed destination/terminal. Exact
+  restored inventory identity matches across 397044 members; every nanosecond mtime, 2710 hardlinks
+  and all xattr bytes on seven entries pass archive-based checks. Keep two GNU tar hdrcharset
+  warnings; exact binary xattr preservation passes. The helper container is absent.
+- **Parity evidence:** a separate standalone probe changes only the read-only runtime source of
+  the existing v2 namespace command. All sixty original staged inventory-tool outputs reproduce
+  byte-exactly between host/restored runtime and match deterministic references. A fixed stdlib
+  probe also matches. Retain workspace/result hashes and the separate immutable parity transaction.
+  The original restoration terminal is not rewritten to claim the later checks.
+- **Scope:** observed tool/stdlib equality is not general computation or semantic-method equivalence.
+  Existing callers/runtimes remain unchanged; B2's full staged primitive/source access is preserved.
+  No model response, new annotation or endpoint result exists. Three focused parity tests pass;
+  the arbitrary-code bounded broker remains distinct from these finite operator-authored probes.
+- **Remaining gates:** restored tree is operator-writable, not immutable; distribution, scientific
+  adoption, complete runtime/kernel/provider harness, actual model-facing tool/renderer behavior,
+  capacity and complete budgets remain open. Passing local infrastructure cannot freeze P11.
+- **Governance:** preserve failed measurement/unlaunched C and pending reopening. No model/agent
+  annotation invocation, method-key join, physical acquisition, alpha expenditure or independent N
+  increase. P11 retains nineteen open conditions; confirmation/replication N remain zero.

@@ -1,5 +1,15 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Successful restoration addendum after `533dfed8` — 2026-09-30
+
+A [fresh repaired restoration and separate parity audit](RESTORED_RUNTIME_PARITY_2026-09-30.md)
+now pass complete content/metadata, nanosecond mtimes, 2710 hardlinks and all seven xattr entries.
+All sixty original inventory-tool outputs plus fixed stdlib probes match live/restored runtime
+bytes. The earlier failed restoration remains unchanged. No caller adopts the tree; operator
+mutability, distribution, scientific/runtime/harness binding, actual tool rendering/capacity and
+model execution remain open. P11 retains nineteen open conditions, N=0 and pending measurement
+reopening. These deterministic probes generate no semantic method or annotation outputs.
+
 ## Restoration addendum after `392c3ff7` — 2026-09-30
 
 The [first full restoration](RUNTIME_RESTORATION_2026-09-30.md) is retained as failed: `wall` and
