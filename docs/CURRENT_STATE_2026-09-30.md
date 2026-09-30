@@ -1,5 +1,15 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Local transport addendum after `2da7c6c1` — 2026-09-30
+
+A [local MCP stdio candidate](LOCAL_MCP_STDIO_2026-09-30.md) now connects the bounded broker to
+method-specific wire tools with immutable request/response retention. B0/B1 advertise no tools;
+B2/B3/B4 advertise identical read/computation schemas. Real local subprocess checks pass for all
+five methods. This resolves the local adapter implementation gap only: no provider is connected,
+and actual model tool exposure, alternative-route exclusion, runtime/capacity and complete budgets
+remain open. No model output or measurement occurred; P11 retains nineteen open conditions,
+confirmation/replication N=0 and the pending measurement reopening decision.
+
 ## Execution addendum after `ed3281f` — 2026-09-30
 
 The offline broker now has a separate bounded-computation v2 candidate: explicit wall time,

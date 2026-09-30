@@ -4295,3 +4295,24 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   P11 stays closed with nineteen open conditions; no new model call, annotation, method-key join,
   episode effect, physical allocation or alpha expenditure occurs. The measurement reopening
   proposal remains pending; earlier combined support failure and unlaunched C remain unchanged.
+
+## 2026-09-30 — connect the bounded broker to a local MCP stdio candidate
+
+- **Execution prerequisite:** add a limited tools-only MCP 2025-06-18 stdio adapter on the existing
+  v2 broker, without switching any study caller. Official dated protocol pages govern newline
+  transport, initialization/version negotiation, tool schemas and structured/error returns.
+- **Access and retention:** exact wire tool lists preserve B0/B1 denial and B2/B3/B4 parity. The
+  client cannot switch methods or access resource/prompt/sampling routes. Each frame/response
+  and primitive call is retained before return; storage failure stops with unknown intents.
+  Repeated tool-call IDs and existing session namespaces cannot replay. Oversized/missing-newline
+  frames stop without interpreting later input; explicit request/message limits are development
+  implementation guards, not selected study budgets. Full registered-file reads remain lossless.
+- **Verification boundary:** deterministic tests include real stdio subprocesses for every method.
+  They establish local protocol routing/advertisement only. Provider connectivity, actual model
+  request schemas, alternative-route exclusion, runtime/tokenizer/capacity and full execution
+  budgets remain open. Sequential operation has no in-flight cancellation or idle timeout, and
+  no general MCP conformance or provider confinement claim is made.
+- **Scientific governance:** zero model/annotation calls, method-key joins, endpoint estimates,
+  physical allocations or alpha expenditure. The measurement reopening proposal remains pending;
+  the failed combined support gate and unlaunched C are retained. P11 still has nineteen open
+  conditions, with confirmation/replication N=0. No scientific endpoint or historical result changes.
