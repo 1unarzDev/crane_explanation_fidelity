@@ -3345,3 +3345,25 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   endpoint mapping, response rank, support labels, or an effect estimate. The manual-inventory
   provenance sensitivity remains required. P11, confirmation N, replication N, and alpha remain
   unchanged.
+
+## 2026-09-30 — include all five methods in prospective paired reporting
+
+- **Prospective decision:** retain B2 versus B4 as the sole candidate primary discovery comparison
+  and include B0, B1, and B3 in the same acquired episode ladders. Predeclare B4 versus each of
+  B0, B1, and B3 as three secondary method contrasts on the primary discrepancy/recovery strata.
+  The versioned five-method comparison manifest binds the direction, common episode unit, and
+  reporting obligations before any confirmatory semantic output.
+- **Reporting:** for every contrast, report paired episode counts, both discordant directions,
+  B4-minus-comparator failure-risk difference with a whole-episode interval, and the exact
+  two-sided McNemar p-value when applicable. Adjust the three secondary method p-values together
+  by Holm. Report null, unfavorable, and inconclusive outcomes, controls, and geometry under their
+  separate roles. No response, mask, or annotation pass contributes an independent N.
+- **Alpha and gate:** these are secondary/exploratory p-values without a new discovery allocation.
+  The ledger permits at most 0.01 for a future discovery endpoint and protects 0.02 for
+  replication. P11 must still freeze exact five-method configurations, shared validity rules,
+  interval procedure, family weighting, technical-failure handling, and multiplicity before
+  confirmation. A new development-only analyzer projects each comparator onto the validated
+  paired analysis, checks common evaluator references, and reports all three Holm values; focused
+  synthetic tests pass. No five-method semantic outputs exist, and readiness fails explicitly on
+  the remaining generation/validation/freeze gate. No P11 authorization,
+  independent confirmation episode, or alpha consumption follows.

@@ -7,6 +7,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "analysis"))
 from analyze_evidence_calibration import analyze, exact_mcnemar_p  # noqa: E402
+from analyze_evidence_calibration_five_methods import analyze_five_methods, holm_adjusted_p  # noqa: E402
 from simulate_evidence_calibration_power import simulate  # noqa: E402
 
 
@@ -42,6 +43,53 @@ def plan():
             "clustered_model": "LOGISTIC_CLUSTER_ROBUST_EPISODE",
             "minimum_practically_meaningful_reduction": 0.10,
             "bootstrap_seed": 7, "bootstrap_replicates": 200}
+
+
+def five_method_dataset():
+    data = dataset()
+    for index, episode in enumerate(data["episodes"]):
+        methods = episode["conditions"][0]["methods"]
+        methods["B0"] = response(index != 3)
+        methods["B1"] = response(index in (0, 1))
+        methods["B3"] = response(index == 0)
+    return data
+
+
+def five_method_declaration():
+    return {"schema": "crane-evidence-calibration-five-method-comparisons/v1-development",
+            "methods": ["B0", "B1", "B2", "B3", "B4"],
+            "primary_comparison": {"comparator": "B2"},
+            "secondary_method_comparisons": {"comparators": ["B0", "B1", "B3"]},
+            "confirmatory_semantic_output_authorized": False}
+
+
+def test_five_method_pairs_keep_episode_n_and_report_every_secondary_contrast():
+    data = five_method_dataset()
+    extra = copy.deepcopy(data["episodes"][0]["conditions"][0])
+    extra.update(condition_id="episode-0-e2", level_index=2)
+    data["episodes"][0]["conditions"].append(extra)
+    output = analyze_five_methods(data, plan(), five_method_declaration())
+    assert output["primary_b2_vs_b4"]["independent_episode_count"] == 4
+    assert set(output["secondary_method_family"]) == {"B0", "B1", "B3"}
+    for row in output["secondary_method_family"].values():
+        assert row["independent_paired_episode_count"] == 4
+        assert sum(row[key] for key in ("neither_failure", "comparator_only_failure",
+                                        "b4_only_failure", "both_failure")) == 4
+        assert row["whole_episode_bootstrap_confidence_interval"] is not None
+        assert row["holm_adjusted_p_across_three_method_contrasts"] >= row["exact_mcnemar_two_sided_p"]
+
+
+def test_holm_step_down_and_five_method_parity_fail_closed():
+    assert holm_adjusted_p({"B0": 0.01, "B1": 0.04, "B3": 0.03}) == {
+        "B0": 0.03, "B3": 0.06, "B1": 0.06}
+    data = five_method_dataset()
+    del data["episodes"][0]["conditions"][0]["methods"]["B3"]
+    with pytest.raises(ValueError, match="exactly B0"):
+        analyze_five_methods(data, plan(), five_method_declaration())
+    data = five_method_dataset()
+    data["episodes"][0]["conditions"][0]["methods"]["B1"]["maximum_justified_rank"] = 2
+    with pytest.raises(ValueError, match="same evaluator reference"):
+        analyze_five_methods(data, plan(), five_method_declaration())
 
 
 def test_analysis_clusters_masks_and_reports_paired_discordances():

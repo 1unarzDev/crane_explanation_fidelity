@@ -291,9 +291,24 @@ practically meaningful paired risk difference, family weights, and exact treatme
 annotations are deliberately unset at P1. They must be chosen from development/calibration data and
 frozen at P11 before any confirmatory semantic output.
 
-USR, SDR, ECA, EMVR, abstention, false-premise rejection, and risk–coverage are secondary
-decompositions. Secondary hypothesis tests use Holm correction. The endpoint is not changed after
-confirmation begins.
+The prospective evaluation also includes B0, B1, and B3 on the same acquired episodes and fixed
+evidence ladders. Their three predeclared paired contrasts are B4 versus B0, B4 versus B1, and B4
+versus B3, using the same episode-level `PrimaryFailure` definition and the same two primary
+mechanism strata as B2 versus B4. For each contrast, report both discordant directions, failure
+rates, B4-minus-comparator absolute paired risk difference, a whole-episode interval, the exact
+two-sided McNemar p-value when applicable, and a Holm-adjusted p-value across these **three**
+secondary method contrasts. Report all three even when the estimate is unfavorable, the interval
+spans zero, or the adjusted p-value is inconclusive. The point estimate and interval are not
+replaced by a significance label. Controls and geometry remain separately reported and cannot
+rescue a primary-stratum result. The versioned prospective comparison declaration is
+`manifests/study/evidence-calibration-five-method-comparisons-v1-development.json`.
+
+These three adjusted p-values are secondary/exploratory unless P11 prospectively allocates
+confirmatory alpha to them within the audited remaining discovery budget. Holm correction alone
+does not create additional alpha or permit borrowing the replication reserve. B2 versus B4 remains
+the sole candidate primary discovery test. USR, SDR, ECA, EMVR, abstention, false-premise
+rejection, and risk–coverage remain secondary decompositions; any additional tested family and its
+multiplicity rule must be bound at P11. The endpoint is not changed after confirmation begins.
 
 ## Automated-agent annotation
 
@@ -324,10 +339,15 @@ validation. Same-model correlated error and conclusion-reversal sensitivity must
 
 ## Statistical plan boundary
 
-The independent unit is an episode/configuration. The primary B2/B4 comparison will report paired
-failure counts, both discordant-pair counts, absolute paired risk difference with interval, and an
-exact McNemar test when its assumptions match the frozen design. Power planning is driven by
-independent discordant episodes, not response count.
+The independent unit is an episode/configuration. All four B4 comparisons use complete paired
+episode ladders under a common prospective validity and missingness rule. The primary B2/B4
+comparison will report paired failure counts, both discordant-pair counts, absolute paired risk
+difference with interval, and an exact McNemar test when its assumptions match the frozen design.
+The three additional contrasts follow the reporting rule above. Intervals and resampling retain
+whole episodes as clusters; masks, prompts, and annotation passes do not increase N. Power
+planning is driven by independent B2/B4 discordant episodes, not response count. P11 must freeze
+the five method implementations, shared episode admission and technical-failure disposition, exact
+interval procedure, family weighting, multiplicity, and reporting rule before confirmatory calls.
 
 Nested conditions will use a predeclared episode-clustered model such as a mixed-effects logistic
 regression with Method, EvidenceLevel, their interaction, and episode random intercept. A

@@ -113,3 +113,31 @@ A separate prospective development declaration now fixes 228 role requests over 
 the exact qualified v2r2 task. Host transport preflight and a non-study structured canary passed;
 the canary is hash-bound and DVC-pushed. No pilot role call had been made at this checkpoint, and
 all endpoint, support annotation, and P11 gates remain closed.
+
+## Later 2026-09-30 five-method comparison decision
+
+The prospective evaluation now explicitly includes B0, B1, and B3 alongside B2 and B4 on the
+same admitted episode ladders. B2 versus B4 remains the sole candidate primary discovery test.
+The three secondary B4 contrasts use episode-level paired failure risks, whole-episode intervals,
+exact two-sided McNemar p-values where applicable, and Holm adjustment across those three tests.
+All effects and corrected p-values, including null, unfavorable, and inconclusive results, must be
+reported. The new comparison declaration is a development candidate, not a P11 freeze. A new
+development analyzer implements the three additional paired contrasts with common episode and
+evaluator-reference checks; its focused synthetic tests pass. Aligned five-method output
+generation, valid development evidence, technical-failure rules, and exact P11 binding remain an
+explicit open gate. These secondary tests have no new alpha allocation; the
+remaining discovery maximum is 0.01 and the 0.02 replication reserve remains protected.
+
+The manuscript's two stale development-status passages were corrected to reflect 57 valid B2
+outputs and the qualified narrow atomic-support task. Neither correction supplies a paired
+evidence-calibration effect. The role-classification run declared at the preceding checkpoint is
+development measurement in progress at this decision point, with no support labels or endpoint
+scores.
+
+The read-only P11 audit now reports 19 open conditions, including the five-method gate, and no
+component hash mismatch. Freshness reconciliation still records 120 former confirmation layouts
+and 20 former replication layouts physically materialized, with the remaining 100 old replication
+layouts allocated and quarantined. The error-budget audit still records 0.02 consumed, at most
+0.01 future discovery, and 0.02 protected replication. Host transport is
+`READY_FOR_SCHEMA_CANARY` without a study call. The revised manuscript builds as nine pages and
+passes the anonymous full-paper packaging/traceability audit; scientific confirmation remains N=0.
