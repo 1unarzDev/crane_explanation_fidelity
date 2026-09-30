@@ -19,8 +19,10 @@ bounded development/external-validity material.
 
 The inspected development pipeline has 60 accepted B4 outputs and 57 valid B2 outputs, but no
 paired support annotation or evidence-calibration effect. Astra-high is qualified for the
-synthetic atomic-support task and a separate stance/kind/polarity task; pilot inventories and
-endpoint mapping remain open. P11 is not frozen;
+synthetic atomic-support task and a separate stance/kind/polarity task. All 114 blind answer
+inventories have a reviewed route, including one manual inventory with differential provenance.
+The declared role application stopped after 69 valid A returns and one unknown-disposition intent;
+158 requests remain unlaunched. Support annotation and endpoint mapping remain open. P11 is not frozen;
 confirmation and replication each have independent N=0. The exact active boundaries and open
 gates are in the [current-state checkpoint](docs/CURRENT_STATE_2026-09-30.md),
 [evidence-calibration protocol](docs/EVIDENCE_CALIBRATION_PROTOCOL.md), and newest entries of the

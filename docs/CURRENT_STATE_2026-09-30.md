@@ -141,3 +141,22 @@ layouts allocated and quarantined. The error-budget audit still records 0.02 con
 0.01 future discovery, and 0.02 protected replication. Host transport is
 `READY_FOR_SCHEMA_CANARY` without a study call. The revised manuscript builds as nine pages and
 passes the anonymous full-paper packaging/traceability audit; scientific confirmation remains N=0.
+
+## Later 2026-09-30 role-run interruption checkpoint
+
+The prior process handle is absent and direct process inspection confirms no live role runner.
+The declared role application retained 69 valid A-pass returns followed by one intent without a
+terminal record, at unknown disposition. Forty-four A and 114 B identities were never launched.
+The unknown request is quarantined without retry or replacement; the original declaration and
+runner remain unchanged. No inference about model behavior follows from this interruption.
+
+`analysis/audit_evidence_calibration_pilot_role_returns.py` recomputes every retained qualified
+identity and raw structural return, checks the declared sequential stop boundary, and reproduces
+`manifests/study/evidence-calibration-pilot-role-v2r2-interruption-v1.json`. All retained bytes and
+the unknown intent are now DVC-governed and pushed. The 69 returns still require blind semantic
+review, and the 158 never-launched requests require a prospective disposition before continuation.
+No support label or endpoint score was produced. P11 remains closed on 19 conditions; confirmation
+and replication independent N remain zero and the alpha ledger is unchanged.
+
+This checkpoint is on `codex/roboboat_terminal_evidence` in the new worktree. The submission
+benchmark remains land/Nav2; RoboBoat remains bounded development/external-validity material.

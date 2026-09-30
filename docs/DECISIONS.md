@@ -3367,3 +3367,25 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   synthetic tests pass. No five-method semantic outputs exist, and readiness fails explicitly on
   the remaining generation/validation/freeze gate. No P11 authorization,
   independent confirmation episode, or alpha consumption follows.
+
+## 2026-09-30 — retain the interrupted pilot role application without retry
+
+- **Observed state:** after the worktree/session interruption, the original process handle was
+  absent and process inspection found no live pilot role runner or model subprocess. The immutable
+  output root contains 69 structurally valid A-pass records, followed by one durable A intent
+  without a terminal record (`ax-b183aeec5ee108fc6f52de5e478e1063`). The remaining 44 A and all
+  114 B requests were never launched. No terminal model failure was recorded.
+- **Retention:** the new read-only role-return audit recomputes qualified request identities,
+  raw structured returns, no-tool/no-retry fields, and exact sequential call coverage. It binds
+  every retained intent and record and preserves the 158 uncalled identities. The DVC objects
+  were pushed before this Git checkpoint. Three offline tests exercise unknown disposition,
+  rejection of calls after an ambiguous intent, and rejection of altered raw returns.
+- **Decision:** quarantine the unknown-disposition request without retry or replacement. The
+  original declaration and runner remain unchanged. This audit authorizes no resumption; any
+  subsequent disposition for never-launched requests must be prospectively recorded, while the
+  unknown identity remains excluded from retry. Review of the 69 returns remains method-blind
+  stance/kind/polarity development work and cannot supply support labels or endpoint rank.
+- **Boundary:** retain both the narrow synthetic qualification and earlier failed v1 gate.
+  No comparative effect, support assessment, P11 freeze, confirmation episode, replication
+  episode, or alpha consumption is created. The new worktree name does not change the submission
+  benchmark or promote RoboBoat beyond its bounded development/external-validity role.
