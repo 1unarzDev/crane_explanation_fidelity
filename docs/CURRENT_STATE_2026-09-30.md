@@ -535,3 +535,19 @@ five-method pilot and does not override the failed combined support canary. P11 
 conditions with no component hash mismatch. Future population/question/parity/model choices,
 claim-specific endpoint mapping, measurement, episode effects, power and allocation remain open.
 Alpha, quarantined layouts and manuscript claims are unchanged.
+
+## Latest 2026-09-30 claim-attachment inventory checkpoint
+
+A read-only, hash-bound inventory now records the sixteen public contracts' role prerequisites
+across all four ladders. It explicitly distinguishes role availability from predicate satisfaction
+and family-local ranks from the unbound response-rank map. Recovery invocation can have its roles
+at primary E1, while measured recovery and command–motion discrepancy require E3. Unique physical
+causes/intervention identity have no eligible level; missing odometry never supplies discrepancy
+prerequisites. No new evidence level or endpoint mapping follows.
+
+All 1,084 atoms remain unattached, with existing reviewed scope concerns retained. Exact contextual
+claim attachment, unmatched/negative/modal proposition treatment, unresolved labels, support
+measurement and episode inference remain open. The combined canary failure and unlaunched C are
+unchanged. No model call, key join, annotation label, endpoint result, alpha spending or physical
+allocation occurred. P11 still has nineteen open conditions; confirmation/replication N remain zero.
+See `docs/CLAIM_ATTACHMENT_BOUNDARY_2026-09-30.md` and its machine-readable inventory.

@@ -1,0 +1,668 @@
+{
+  "attachment_prerequisites": [
+    "Resolve exact proposition, endorsement, modality, polarity and referent in full answer/question context.",
+    "Keep explicit negative causal assertions distinct from non-establishment limitations.",
+    "Keep source/configuration facts distinct from episode events and software recovery distinct from measured recovery.",
+    "Bind requirements for unmatched propositions instead of borrowing a nearby positive contract.",
+    "Validate family-to-response rank and mechanistic endpoint mappings; raw roles/highest levels are unqualified.",
+    "Bind treatment of unresolved scope and UNINTERPRETABLE before episode inference.",
+    "Complete authorized support measurement/adjudication before a method-key join or endpoint export."
+  ],
+  "bindings": [
+    {
+      "path": "configs/evidence_calibration_claim_contracts_v2_development.json",
+      "sha256": "3ff03b682e8a2c7363ab8d94d76bdc90f6a3c06ef09307ae1feb6a9ab7e02368"
+    },
+    {
+      "path": "configs/evidence_calibration_ladders_v1_development.json",
+      "sha256": "5f4363d1d9783b2f5bf6347d1a9c009c6850740cf411e8f749bf789b5f1a8913"
+    },
+    {
+      "path": "manifests/annotation/evidence-calibration-pilot-role-disposition-v1.json",
+      "sha256": "aa45a2148356964d9fe9ff233b3a6573a4dfd30617e45415418c540ad520b315"
+    },
+    {
+      "path": "analysis/audit_evidence_calibration_attachment_boundary.py",
+      "sha256": "1f53ec902d8a1781d1f7052760758966626fcd2551c9df431691de8fc6cda5bd"
+    },
+    {
+      "path": "docs/CLAIM_ATTACHMENT_BOUNDARY_2026-09-30.md",
+      "sha256": "84378c504350d336d15fc46fdd9c1b897a42e7dc0137f45bfb92ad2383dbb311"
+    }
+  ],
+  "carried_project_review_concern_counts": {
+    "EXPLICIT_NEGATIVE_CAUSATION_ASSERTION_MUST_NOT_BECOME_LIMITATION": 6,
+    "LITERAL_DEICTIC_ANTECEDENT_NOT_SUPPLIED": 12,
+    "QUESTION_BOUND_AFFIRMATIVE_SCOPE_REQUIRES_ATTACHMENT": 3,
+    "RECOVERY_REFERENT_REQUIRES_CLAIM_CONTEXT_ATTACHMENT": 1,
+    "REVIEWED_ABORT_OCCURRENCE_POLARITY_ERROR_RAW_RETAINED": 2,
+    "SOFTWARE_RESOLUTION_NOT_AUTOMATIC_PHYSICAL_CAUSAL_DIAGNOSIS": 1
+  },
+  "catalog_claim_kind_counts": {
+    "EXECUTION_DISCREPANCY": 1,
+    "FALSE_PREMISE_REJECTION": 1,
+    "OBSERVATION": 1,
+    "PHYSICAL_MECHANISM": 3,
+    "RECOVERY_MECHANISM": 2,
+    "SOFTWARE_ACTION": 1,
+    "SPECIFIC_PHYSICAL_CAUSE": 5,
+    "TASK_OUTCOME": 2
+  },
+  "confirmation_independent_n": 0,
+  "contract_count": 16,
+  "contracts": [
+    {
+      "claim_id": "claim-collision",
+      "claim_kind": "SPECIFIC_PHYSICAL_CAUSE",
+      "diagnostic_node_id": "node-collision",
+      "mechanism_family": "command_motion",
+      "proposition": "Independent robot-visible evidence establishes collision.",
+      "rank_within_family": 2,
+      "required_evidence_ids": [
+        "req-specific-cause-collision"
+      ],
+      "required_roles": [
+        "validated_collision_evidence"
+      ],
+      "role_availability": [
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "command-motion-full-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "command-motion-missing-odometry-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "nominal-false-premise-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "geometry-planning-secondary-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        }
+      ]
+    },
+    {
+      "claim_id": "claim-command-motion-discrepancy",
+      "claim_kind": "EXECUTION_DISCREPANCY",
+      "diagnostic_node_id": "node-command-motion-discrepancy",
+      "mechanism_family": "command_motion",
+      "proposition": "Delivered commanded motion was not reflected in measured robot motion over the declared interval.",
+      "rank_within_family": 1,
+      "required_evidence_ids": [
+        "req-command-stream-valid",
+        "req-odometry-stream-valid",
+        "req-command-odometry-synchronized",
+        "req-command-above-threshold",
+        "req-interval-duration-sufficient",
+        "req-measured-response-low"
+      ],
+      "required_roles": [
+        "command_motion_computation",
+        "delivered_command_stream",
+        "delivered_odometry_stream"
+      ],
+      "role_availability": [
+        {
+          "first_role_complete_level": 3,
+          "ladder_id": "command-motion-full-v1-development",
+          "status": "ROLES_ONLY_PREDICATES_UNCHECKED"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "command-motion-missing-odometry-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": 2,
+          "ladder_id": "nominal-false-premise-v1-development",
+          "status": "ROLES_ONLY_PREDICATES_UNCHECKED"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "geometry-planning-secondary-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        }
+      ]
+    },
+    {
+      "claim_id": "claim-command-observed",
+      "claim_kind": "OBSERVATION",
+      "diagnostic_node_id": "node-command-observed",
+      "mechanism_family": "command_motion",
+      "proposition": "A valid delivered command stream is present.",
+      "rank_within_family": 0,
+      "required_evidence_ids": [
+        "req-command-stream-valid"
+      ],
+      "required_roles": [
+        "delivered_command_stream"
+      ],
+      "role_availability": [
+        {
+          "first_role_complete_level": 2,
+          "ladder_id": "command-motion-full-v1-development",
+          "status": "ROLES_ONLY_PREDICATES_UNCHECKED"
+        },
+        {
+          "first_role_complete_level": 2,
+          "ladder_id": "command-motion-missing-odometry-v1-development",
+          "status": "ROLES_ONLY_PREDICATES_UNCHECKED"
+        },
+        {
+          "first_role_complete_level": 1,
+          "ladder_id": "nominal-false-premise-v1-development",
+          "status": "ROLES_ONLY_PREDICATES_UNCHECKED"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "geometry-planning-secondary-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        }
+      ]
+    },
+    {
+      "claim_id": "claim-connected-detour-exists",
+      "claim_kind": "PHYSICAL_MECHANISM",
+      "diagnostic_node_id": "node-connected-detour",
+      "mechanism_family": "geometry_planning",
+      "proposition": "The retained grid remains connected through a detour.",
+      "rank_within_family": 1,
+      "required_evidence_ids": [
+        "req-route-coverage-complete",
+        "req-retained-grid-connected"
+      ],
+      "required_roles": [
+        "costmap_geometry_computation"
+      ],
+      "role_availability": [
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "command-motion-full-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "command-motion-missing-odometry-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "nominal-false-premise-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": 1,
+          "ladder_id": "geometry-planning-secondary-v1-development",
+          "status": "ROLES_ONLY_PREDICATES_UNCHECKED"
+        }
+      ]
+    },
+    {
+      "claim_id": "claim-direct-route-restriction",
+      "claim_kind": "PHYSICAL_MECHANISM",
+      "diagnostic_node_id": "node-direct-route-restriction",
+      "mechanism_family": "geometry_planning",
+      "proposition": "The audited direct route crosses a cell meeting the frozen geometric restriction criterion.",
+      "rank_within_family": 0,
+      "required_evidence_ids": [
+        "req-route-coverage-complete",
+        "req-direct-route-restricted"
+      ],
+      "required_roles": [
+        "costmap_geometry_computation"
+      ],
+      "role_availability": [
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "command-motion-full-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "command-motion-missing-odometry-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "nominal-false-premise-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": 1,
+          "ladder_id": "geometry-planning-secondary-v1-development",
+          "status": "ROLES_ONLY_PREDICATES_UNCHECKED"
+        }
+      ]
+    },
+    {
+      "claim_id": "claim-external-obstruction",
+      "claim_kind": "SPECIFIC_PHYSICAL_CAUSE",
+      "diagnostic_node_id": "node-external-obstruction",
+      "mechanism_family": "command_motion",
+      "proposition": "Independent robot-visible evidence establishes external obstruction.",
+      "rank_within_family": 2,
+      "required_evidence_ids": [
+        "req-specific-cause-obstruction"
+      ],
+      "required_roles": [
+        "validated_obstruction_evidence"
+      ],
+      "role_availability": [
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "command-motion-full-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "command-motion-missing-odometry-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "nominal-false-premise-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "geometry-planning-secondary-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        }
+      ]
+    },
+    {
+      "claim_id": "claim-false-premise-success",
+      "claim_kind": "FALSE_PREMISE_REJECTION",
+      "diagnostic_node_id": "node-false-premise-rejection",
+      "mechanism_family": "false_premise",
+      "proposition": "The failure premise is rejected because the action succeeded and registered failure diagnostics did not trigger.",
+      "rank_within_family": 0,
+      "required_evidence_ids": [
+        "req-action-result-valid",
+        "req-action-succeeded",
+        "req-no-failure-triggered"
+      ],
+      "required_roles": [
+        "command_motion_computation",
+        "navigate_to_pose_result"
+      ],
+      "role_availability": [
+        {
+          "first_role_complete_level": 3,
+          "ladder_id": "command-motion-full-v1-development",
+          "status": "ROLES_ONLY_PREDICATES_UNCHECKED"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "command-motion-missing-odometry-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": 2,
+          "ladder_id": "nominal-false-premise-v1-development",
+          "status": "ROLES_ONLY_PREDICATES_UNCHECKED"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "geometry-planning-secondary-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        }
+      ]
+    },
+    {
+      "claim_id": "claim-global-infeasibility",
+      "claim_kind": "PHYSICAL_MECHANISM",
+      "diagnostic_node_id": "node-global-infeasibility",
+      "mechanism_family": "geometry_planning",
+      "proposition": "Independent computation establishes global infeasibility in the declared navigation model.",
+      "rank_within_family": 1,
+      "required_evidence_ids": [
+        "req-global-infeasibility-demonstrated"
+      ],
+      "required_roles": [
+        "independent_connectivity_computation"
+      ],
+      "role_availability": [
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "command-motion-full-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "command-motion-missing-odometry-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "nominal-false-premise-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": 2,
+          "ladder_id": "geometry-planning-secondary-v1-development",
+          "status": "ROLES_ONLY_PREDICATES_UNCHECKED"
+        }
+      ]
+    },
+    {
+      "claim_id": "claim-intervention-identity",
+      "claim_kind": "SPECIFIC_PHYSICAL_CAUSE",
+      "diagnostic_node_id": "node-intervention-identity",
+      "mechanism_family": "command_motion",
+      "proposition": "Robot-visible evidence identifies the intervention.",
+      "rank_within_family": 2,
+      "required_evidence_ids": [
+        "req-intervention-identity-visible"
+      ],
+      "required_roles": [
+        "robot_visible_intervention_evidence"
+      ],
+      "role_availability": [
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "command-motion-full-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "command-motion-missing-odometry-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "nominal-false-premise-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "geometry-planning-secondary-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        }
+      ]
+    },
+    {
+      "claim_id": "claim-measured-response-recovered",
+      "claim_kind": "RECOVERY_MECHANISM",
+      "diagnostic_node_id": "node-measured-response-recovery",
+      "mechanism_family": "execution_recovery",
+      "proposition": "Measured response recovered in the declared later interval.",
+      "rank_within_family": 1,
+      "required_evidence_ids": [
+        "req-command-stream-valid",
+        "req-odometry-stream-valid",
+        "req-command-odometry-synchronized",
+        "req-measured-response-recovered"
+      ],
+      "required_roles": [
+        "command_motion_computation",
+        "delivered_command_stream",
+        "delivered_odometry_stream"
+      ],
+      "role_availability": [
+        {
+          "first_role_complete_level": 3,
+          "ladder_id": "command-motion-full-v1-development",
+          "status": "ROLES_ONLY_PREDICATES_UNCHECKED"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "command-motion-missing-odometry-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": 2,
+          "ladder_id": "nominal-false-premise-v1-development",
+          "status": "ROLES_ONLY_PREDICATES_UNCHECKED"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "geometry-planning-secondary-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        }
+      ]
+    },
+    {
+      "claim_id": "claim-motor-failure",
+      "claim_kind": "SPECIFIC_PHYSICAL_CAUSE",
+      "diagnostic_node_id": "node-motor-failure",
+      "mechanism_family": "command_motion",
+      "proposition": "Independent robot-visible evidence establishes motor failure.",
+      "rank_within_family": 2,
+      "required_evidence_ids": [
+        "req-specific-cause-motor"
+      ],
+      "required_roles": [
+        "validated_motor_evidence"
+      ],
+      "role_availability": [
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "command-motion-full-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "command-motion-missing-odometry-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "nominal-false-premise-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "geometry-planning-secondary-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        }
+      ]
+    },
+    {
+      "claim_id": "claim-recorded-plan-change",
+      "claim_kind": "SOFTWARE_ACTION",
+      "diagnostic_node_id": "node-recorded-plan-change",
+      "mechanism_family": "planning_execution",
+      "proposition": "The retained delivered-plan record establishes a route change.",
+      "rank_within_family": 0,
+      "required_evidence_ids": [
+        "req-plan-record-valid",
+        "req-plan-change-observed"
+      ],
+      "required_roles": [
+        "delivered_plan_history"
+      ],
+      "role_availability": [
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "command-motion-full-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "command-motion-missing-odometry-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "nominal-false-premise-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": 3,
+          "ladder_id": "geometry-planning-secondary-v1-development",
+          "status": "ROLES_ONLY_PREDICATES_UNCHECKED"
+        }
+      ]
+    },
+    {
+      "claim_id": "claim-recovery-invoked",
+      "claim_kind": "RECOVERY_MECHANISM",
+      "diagnostic_node_id": "node-recovery-invocation",
+      "mechanism_family": "execution_recovery",
+      "proposition": "The retained source-qualified trace records recovery invocation.",
+      "rank_within_family": 0,
+      "required_evidence_ids": [
+        "req-recovery-trace-valid",
+        "req-recovery-invoked"
+      ],
+      "required_roles": [
+        "behavior_tree_transitions",
+        "source_anchors"
+      ],
+      "role_availability": [
+        {
+          "first_role_complete_level": 1,
+          "ladder_id": "command-motion-full-v1-development",
+          "status": "ROLES_ONLY_PREDICATES_UNCHECKED"
+        },
+        {
+          "first_role_complete_level": 1,
+          "ladder_id": "command-motion-missing-odometry-v1-development",
+          "status": "ROLES_ONLY_PREDICATES_UNCHECKED"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "nominal-false-premise-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "geometry-planning-secondary-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        }
+      ]
+    },
+    {
+      "claim_id": "claim-task-abort",
+      "claim_kind": "TASK_OUTCOME",
+      "diagnostic_node_id": "node-task-abort",
+      "mechanism_family": "task_outcome",
+      "proposition": "The recorded navigation action aborted.",
+      "rank_within_family": 0,
+      "required_evidence_ids": [
+        "req-action-result-valid",
+        "req-action-aborted"
+      ],
+      "required_roles": [
+        "navigate_to_pose_result"
+      ],
+      "role_availability": [
+        {
+          "first_role_complete_level": 0,
+          "ladder_id": "command-motion-full-v1-development",
+          "status": "ROLES_ONLY_PREDICATES_UNCHECKED"
+        },
+        {
+          "first_role_complete_level": 0,
+          "ladder_id": "command-motion-missing-odometry-v1-development",
+          "status": "ROLES_ONLY_PREDICATES_UNCHECKED"
+        },
+        {
+          "first_role_complete_level": 0,
+          "ladder_id": "nominal-false-premise-v1-development",
+          "status": "ROLES_ONLY_PREDICATES_UNCHECKED"
+        },
+        {
+          "first_role_complete_level": 0,
+          "ladder_id": "geometry-planning-secondary-v1-development",
+          "status": "ROLES_ONLY_PREDICATES_UNCHECKED"
+        }
+      ]
+    },
+    {
+      "claim_id": "claim-task-success",
+      "claim_kind": "TASK_OUTCOME",
+      "diagnostic_node_id": "node-task-success",
+      "mechanism_family": "task_outcome",
+      "proposition": "The recorded navigation action succeeded.",
+      "rank_within_family": 0,
+      "required_evidence_ids": [
+        "req-action-result-valid",
+        "req-action-succeeded"
+      ],
+      "required_roles": [
+        "navigate_to_pose_result"
+      ],
+      "role_availability": [
+        {
+          "first_role_complete_level": 0,
+          "ladder_id": "command-motion-full-v1-development",
+          "status": "ROLES_ONLY_PREDICATES_UNCHECKED"
+        },
+        {
+          "first_role_complete_level": 0,
+          "ladder_id": "command-motion-missing-odometry-v1-development",
+          "status": "ROLES_ONLY_PREDICATES_UNCHECKED"
+        },
+        {
+          "first_role_complete_level": 0,
+          "ladder_id": "nominal-false-premise-v1-development",
+          "status": "ROLES_ONLY_PREDICATES_UNCHECKED"
+        },
+        {
+          "first_role_complete_level": 0,
+          "ladder_id": "geometry-planning-secondary-v1-development",
+          "status": "ROLES_ONLY_PREDICATES_UNCHECKED"
+        }
+      ]
+    },
+    {
+      "claim_id": "claim-wheel-slip",
+      "claim_kind": "SPECIFIC_PHYSICAL_CAUSE",
+      "diagnostic_node_id": "node-wheel-slip",
+      "mechanism_family": "command_motion",
+      "proposition": "Independent robot-visible evidence establishes wheel slip.",
+      "rank_within_family": 2,
+      "required_evidence_ids": [
+        "req-specific-cause-slip"
+      ],
+      "required_roles": [
+        "validated_slip_evidence"
+      ],
+      "role_availability": [
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "command-motion-full-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "command-motion-missing-odometry-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "nominal-false-premise-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        },
+        {
+          "first_role_complete_level": null,
+          "ladder_id": "geometry-planning-secondary-v1-development",
+          "status": "REQUIRED_ROLES_ABSENT_AT_ALL_REGISTERED_LEVELS"
+        }
+      ]
+    }
+  ],
+  "endpoint_scores_generated": false,
+  "method_key_opened": false,
+  "model_call_attempted": false,
+  "no_registered_role_complete_level_means": "No eligible level in this catalog; do not encode as zero, invent E4, or silently drop the claim.",
+  "p11_authorized": false,
+  "pilot_annotation_authorized": false,
+  "rank_scope": "WITHIN_MECHANISM_FAMILY_ONLY_NO_RESPONSE_RANK_MAPPING",
+  "raw_role_atom_count": 1084,
+  "recorded_date": "2026-09-30",
+  "replication_independent_n": 0,
+  "required_roles_are_sufficient_for_support": false,
+  "schema": "crane-evidence-calibration-attachment-boundary/v1-development",
+  "status": "INVENTORY_AUDITED_SEMANTIC_ATTACHMENT_OPEN",
+  "support_labels_generated": false,
+  "unattached_atom_count": 1084
+}

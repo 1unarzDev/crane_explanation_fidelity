@@ -3877,3 +3877,25 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   combined support gate is unchanged; no new canary/support/C call is authorized. P11 retains
   nineteen open conditions with no component hash mismatch. No effect, p-value, alpha allocation,
   physical reserve use, independent confirmation/replication N or manuscript result changed.
+
+## 2026-09-30 — inventory claim attachment prerequisites without scoring retained answers
+
+- **Mechanical scope:** the read-only attachment audit validates the bound v1 ladder catalog and
+  v2 wording-only amendment, inventories sixteen contracts, and reproduces the compact snapshot.
+  It lists required roles and first role-complete levels only, with predicates explicitly unchecked.
+  Recovery invocation has role availability at primary E1; measured recovery and discrepancy need
+  E3. Missing odometry never supplies discrepancy prerequisites; nominal non-trigger rejection
+  needs E2. Unique-cause/intervention contracts have no eligible level in any registered ladder.
+  Absence is not E0, an invented E4, evaluator-truth support or permission to drop a claim.
+- **Measurement boundary:** catalog ranks remain family-local. No cross-family response rank,
+  raw-role/rank conversion, negative-proposition contract, support label or mechanistic endpoint
+  flag is assigned. All 1,084 atoms remain unattached, with six negative-causation assertions,
+  twelve deictic limitations, three bare affirmatives and the other reviewed scope concerns
+  carried forward. Exact context, polarity/modality/endorsement, source-versus-event and
+  software-versus-measured-recovery meaning still require a prospectively validated map.
+- **Governance:** this closes inventory only. The failed combined canary is preserved and C
+  remains unlaunched. No new candidate cycle, support call, adjudication or method-key join is
+  authorized. P11 retains nineteen open conditions. Fresh aligned B0–B4 development and qualified
+  measurement remain necessary; all B0/B1/B3 versus B4 secondary episode effects, intervals and
+  Holm-corrected paired p-values must eventually be reported, including inconclusive/unfavorable
+  outcomes. Alpha, quarantine, physical allocation and confirmation/replication N are unchanged.
