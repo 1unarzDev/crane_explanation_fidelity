@@ -98,3 +98,8 @@ valid extraction forms now have project-reviewed atomic inventories; their initi
 assertions remain explicit, with scope reserved for later qualified role treatment. One answer in
 the 114-answer bank still lacks a known extraction outcome and remains quarantined without retry.
 Whole-bank handoff, support annotation, endpoint scoring, and P11 remain closed.
+
+The final bank answer now has a separately hash-bound 15-atom project inventory from its unchanged
+blind text. Its extractor request still has unknown disposition and was not retried. This manual
+route is distinct measurement provenance and will require an affected whole-episode sensitivity
+before any paired development estimate. Support annotation and endpoint scoring remain closed.

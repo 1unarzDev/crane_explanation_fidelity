@@ -3300,3 +3300,19 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   question-dependent assertions also need prospective role treatment before endpoint use. The
   reviewed forms are agent-assisted development work, not human validation. P11, method joining,
   effect scoring, independent N, and alpha remain unchanged.
+
+## 2026-09-30 — inventory the interrupted answer without replacing its model call
+
+- **Decision:** preserve the one-shot extractor request at unknown disposition and issue no
+  replacement call. A separate project-authored, method-blind inventory binds the unchanged raw
+  answer and 15 exact-span atomic meanings. It is explicitly marked as differential development
+  measurement provenance, not a qualified extractor return.
+- **Review boundary:** one answer's cited retained behavior tree is said to record two `Wait`
+  recoveries. That wording is inventoried literally; the review does not silently correct or
+  support it. Likewise, the answer's measured-motion presupposition and limitations remain
+  separate claims for later assessment.
+- **Consequence:** all 114 bank answers now have an atomic inventory route, but the unknown call
+  remains unknown and whole-bank support annotation is not yet authorized. Any later paired
+  development estimate using this manually inventoried answer must disclose its provenance and
+  show a whole-episode exclusion sensitivity. The method key, evaluator truth, P11, independent N,
+  and alpha remain untouched.

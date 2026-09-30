@@ -1,0 +1,81 @@
+{
+  "schema": "crane-evidence-calibration-pilot-manual-inventory/v1-development",
+  "recorded_date": "2026-09-30",
+  "status": "PROJECT_AUTHORED_AFTER_UNKNOWN_EXTRACTION_DISPOSITION",
+  "opaque_response_id": "ax-6042b1c29021e662d8184d39e26738c5",
+  "blind_bank_raw_sha256": "df3376f302956b280252eb0aa78c4d3c74cf15f9012156e57d8bab45a689e232",
+  "interruption_raw_sha256": "e6ac90093c375f320cd3829fa423352b1c98ea3294048184548c4c921e5b2566",
+  "response_text_sha256": "848ac9431926553d4b4eedf529e8546f2282d73f82dd21df2813d36efd06159f",
+  "extractor_status": "UNKNOWN_NOT_RETRIED",
+  "atomic_claims": [
+    {
+      "response_span": "The strongest supported diagnosis is a **temporary command–motion discrepancy during navigation**",
+      "claim_text": "The strongest supported diagnosis is a temporary command–motion discrepancy during navigation."
+    },
+    {
+      "response_span": "not a failed navigation episode",
+      "claim_text": "The episode was not a failed navigation episode."
+    },
+    {
+      "response_span": "Delivered Nav2 commands remained at 0.26 m/s",
+      "claim_text": "Nav2 delivered commands at 0.26 m/s during the 9–19 s interval."
+    },
+    {
+      "response_span": "measured odometry was 0 m/s for 10 seconds (9–19 s)",
+      "claim_text": "Measured odometry was 0 m/s for 10 seconds during 9–19 s."
+    },
+    {
+      "response_span": "after an initial measured response of about 0.26 m/s",
+      "claim_text": "An initial measured response of about 0.26 m/s preceded the 9–19 s discrepancy."
+    },
+    {
+      "response_span": "Measured motion returned to about 0.25 m/s at 21–22 s",
+      "claim_text": "Measured motion returned to about 0.25 m/s at 21–22 s."
+    },
+    {
+      "response_span": "`FollowPath` failed twice",
+      "claim_text": "FollowPath failed twice."
+    },
+    {
+      "response_span": "the retained behavior tree records two `Wait` recoveries",
+      "claim_text": "The retained behavior tree records two Wait recoveries."
+    },
+    {
+      "response_span": "two `Wait` recoveries before the NavigateToPose action **succeeded**",
+      "claim_text": "Two Wait recoveries preceded NavigateToPose success."
+    },
+    {
+      "response_span": "the NavigateToPose action **succeeded**",
+      "claim_text": "The NavigateToPose action succeeded."
+    },
+    {
+      "response_span": "motion stopped",
+      "claim_text": "Measured motion stopped during the described interval."
+    },
+    {
+      "response_span": "The evidence does not establish why motion stopped",
+      "claim_text": "The evidence does not establish why measured motion stopped."
+    },
+    {
+      "response_span": "whether the actuator accepted the commands",
+      "claim_text": "The evidence does not establish whether the actuator accepted the commands."
+    },
+    {
+      "response_span": "whether Nav2 consumed the delivered odometry",
+      "claim_text": "The evidence does not establish whether Nav2 consumed the delivered odometry."
+    },
+    {
+      "response_span": "whether waiting caused motion to resume",
+      "claim_text": "The evidence does not establish whether waiting caused motion to resume."
+    }
+  ],
+  "review_basis": "Project-authored method-blind inventory from the unchanged answer text because the one-shot qualified extractor request has unknown disposition and cannot be retried. The source-wording and presupposed measured-motion assertions are preserved for later support review. This is differential development measurement provenance; any future paired estimate must report a sensitivity excluding the affected whole episode.",
+  "method_identity_opened": false,
+  "evaluator_truth_opened": false,
+  "qualified_extractor_return": false,
+  "support_annotation_authorized": false,
+  "endpoint_scoring_authorized": false,
+  "p11_authorized": false,
+  "confirmation_independent_n": 0,
+  "replication_independent_n": 0
+}
