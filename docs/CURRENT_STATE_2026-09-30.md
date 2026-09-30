@@ -92,3 +92,9 @@ A later question-only handoff now binds the original nominal false-premise quest
 opaque IDs by unique exact-answer matches. It exports no method or condition identity and does not
 read the evaluator annotation key. Their atomic inventories remain under review; no support label
 or endpoint result follows from this context artifact.
+
+The three question-dependent inventories were then reviewed with that context. All 113 structurally
+valid extraction forms now have project-reviewed atomic inventories; their initial `Yes.`/`No.`
+assertions remain explicit, with scope reserved for later qualified role treatment. One answer in
+the 114-answer bank still lacks a known extraction outcome and remains quarantined without retry.
+Whole-bank handoff, support annotation, endpoint scoring, and P11 remain closed.

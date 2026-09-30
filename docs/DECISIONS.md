@@ -3283,3 +3283,20 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - **Boundary:** the three inventories still require project review. The context artifact assigns
   no support label, diagnostic rank, or effect. The unknown-disposition extraction request remains
   quarantined; P11, independent N, and alpha remain unchanged.
+
+## 2026-09-30 — preserve question-dependent pilot assertions without endpoint scoring
+
+- **Review:** inspect the three one-word answers with the bound original nominal false-premise
+  question. Accept their 41 extractor candidates and add one separate `Yes.` or `No.` assertion
+  per response, yielding 44 reviewed atoms. The two affirmative answers later scope their meaning
+  to transient `FollowPath` failures while denying a terminal goal failure; the broad initial
+  “navigation failure” wording remains explicit for later role review rather than being silently
+  narrowed or discarded.
+- **Binding:** the cumulative 113 structurally valid extraction forms now have project-reviewed
+  atomic inventories. The new audit binds exact answer/form/call/context hashes and verifies that
+  no method key, evaluator truth, support label, or endpoint rank entered this review.
+- **Boundary:** one bank answer still has an unknown-disposition extraction request and remains
+  quarantined without retry. Its inventory needs a separate governed disposition. The three
+  question-dependent assertions also need prospective role treatment before endpoint use. The
+  reviewed forms are agent-assisted development work, not human validation. P11, method joining,
+  effect scoring, independent N, and alpha remain unchanged.
