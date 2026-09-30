@@ -4316,3 +4316,29 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   physical allocations or alpha expenditure. The measurement reopening proposal remains pending;
   the failed combined support gate and unlaunched C are retained. P11 still has nineteen open
   conditions, with confirmation/replication N=0. No scientific endpoint or historical result changes.
+
+## 2026-09-30 — verify offline installed-client MCP compatibility; correct outer probe devices and flag
+
+- **Source and scope:** official app-server/MCP documentation and CLI 0.159.2-generated schemas
+  permit thread-scoped inventory and direct local tool calls without a model turn. A guarded
+  observer uses fresh synthetic files and four allowlisted RPC methods in a private network
+  namespace. No provider/model/annotation call or authentication change occurs.
+- **Retained failure:** initial arithmetic probes discover exact schemas but fail opening
+  `/dev/null`. Preserve both failing observations. Bare Python in the outer network-only
+  `--bind / /` probe reproduces the failure; adding private `--dev /dev` fixes both the minimized
+  case and original client round trip. No registered inner sandbox/broker code changes.
+- **Configuration correction:** the installed flag is singular `remote_plugin`; earlier plural
+  `remote_plugins` is ignored and emits a warning. Preserve earlier records and prospectively use
+  singular spelling with strict configuration parsing. The corrected five-method observations
+  have zero stderr bytes; this does not retroactively certify earlier flags or confinement.
+- **Evidence:** all five assigned MCP inventories match. B0/B1 list no tools; B2/B3/B4 read exact
+  synthetic Unicode text and compute `42` with identical schemas. No turn/item events appear.
+  Dedicated observation process groups are stopped by SIGTERM after completed RPCs, rather than
+  adopting a background process. Preserve absent session terminals where forced cleanup leaves
+  them absent. Twelve focused tests exercise real installed-client routing and the minimized
+  device regression; network denial and forbidden model/execution RPC checks pass.
+- **Remaining boundary:** server inventory/direct raw tool results do not prove the complete
+  model-facing tool set, lossless renderer output or default truncation behavior. Actual provider
+  request tools, runtime, tokenizer/capacity, complete budgets and durable model execution stay
+  open. P11 keeps nineteen open conditions; failed measurement, pending reopening, zero
+  confirmation/replication N, physical quarantine and alpha boundaries are unchanged.

@@ -1,0 +1,407 @@
+{
+  "schema": "crane-installed-client-mcp-observation/v1-development",
+  "recorded_date": "2026-09-30",
+  "status": "OFFLINE_INSTALLED_CLIENT_COMPATIBILITY_PASS_PROVIDER_TOOL_ENUMERATION_OPEN",
+  "cli_version": "codex-cli 0.159.2",
+  "bindings": [
+    {
+      "path": "analysis/observe_evidence_calibration_app_server_mcp.py",
+      "raw_sha256": "63a429d54f8260de08464e4e76b3cf97ff8e5b5e474114435b9cae5cbed02e61"
+    },
+    {
+      "path": "tests/test_evidence_calibration_app_server_mcp.py",
+      "raw_sha256": "8d20461c081334970c9ee19d557587ef73b7fc3fadaf88b35ecad0bbcc766ba9"
+    },
+    {
+      "path": "docs/INSTALLED_CLIENT_MCP_OBSERVATION_2026-09-30.md",
+      "raw_sha256": "efc67b41c709e1a57d4ab542eaeb611f9fd1cbbb565d926c060bcffa5d2e5545"
+    },
+    {
+      "path": "analysis/evidence_calibration_mcp_stdio.py",
+      "raw_sha256": "2b21dcd02fb39065a11670bebd6be0d236c4ba1301c026427614923dc5e4dd5b"
+    },
+    {
+      "path": "analysis/evidence_calibration_tool_broker_v2.py",
+      "raw_sha256": "f7250b3f00b7ca3f9cc65d72b4ff96ba3b756a831702e2965f8eee9a5ac13dcf"
+    },
+    {
+      "path": "analysis/evidence_calibration_local_tool_sandbox_v2.py",
+      "raw_sha256": "e6ef4a67af326bb76293186ef5e99743e041bb41622d9b7154ef651d072e5906"
+    }
+  ],
+  "official_sources": [
+    {
+      "url": "https://developers.openai.com/codex/app-server",
+      "retrieved_date": "2026-09-30",
+      "retrieved_html_raw_sha256": "3db13ddb60e7831310f47a9b00820ace8b66bbbc8b4b1fb36a2d33431c90ec5c"
+    },
+    {
+      "url": "https://learn.chatgpt.com/docs/extend/mcp",
+      "retrieved_date": "2026-09-30",
+      "retrieved_html_raw_sha256": "8d4b281baf7a6a39ee09d44c15c25384fdfda448054b1d0c42979b877d064127"
+    }
+  ],
+  "generated_schema_bindings": [
+    {
+      "filename": "v1/InitializeParams.json",
+      "raw_sha256": "b55124e7c0f36a1789396daa5578217a92be67f053903696236686e59f6f212e"
+    },
+    {
+      "filename": "v2/ThreadStartParams.json",
+      "raw_sha256": "e9c6d3cc18d049bfbc0249add3808fb8e5a27e1a0b5a423767aafbc3859a9428"
+    },
+    {
+      "filename": "v2/ListMcpServerStatusParams.json",
+      "raw_sha256": "30b978c6502b37c9f0002aeba241f41c91d4c6adf0f92d89242b62ffde415a2d"
+    },
+    {
+      "filename": "v2/McpServerToolCallParams.json",
+      "raw_sha256": "7039a7583a1cbf38e9e0f5fe6398ff3711acd4d654b81b0be562514087fce6ba"
+    }
+  ],
+  "focused_tests_passed": 12,
+  "combined_targeted_tests_passed": 76,
+  "observations": [
+    {
+      "schema": "crane-offline-app-server-mcp-observation/v1-development",
+      "method_id": "B0",
+      "status": "PASS",
+      "tools": {},
+      "tools_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "runtime_status": "connected",
+      "provider_request_tools_verified": false,
+      "model_call_attempted": false,
+      "ephemeral_thread_started": true,
+      "network_namespace_used": true,
+      "full_harness_confinement_verified": false,
+      "synthetic_read_and_computation_passed": null,
+      "request_methods": [
+        "initialize",
+        "thread/start",
+        "mcpServerStatus/list"
+      ],
+      "cleanup": "OBSERVATION_GROUP_SIGTERM",
+      "process_exit_code": -15,
+      "stdout_bytes": 3530,
+      "stderr_bytes": 0,
+      "stdout_sha256": "cf962045824bc1dcaebd6ccd202edb51390e0d32ccead9450b96011361642872",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "turn_or_item_notification_count": 0,
+      "mcp_session_terminal_present": false,
+      "rpc_intents_count": 3,
+      "tool_intents_count": 0,
+      "all_rpc_and_tool_intents_have_terminal_records": true
+    },
+    {
+      "schema": "crane-offline-app-server-mcp-observation/v1-development",
+      "method_id": "B1",
+      "status": "PASS",
+      "tools": {},
+      "tools_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "runtime_status": "connected",
+      "provider_request_tools_verified": false,
+      "model_call_attempted": false,
+      "ephemeral_thread_started": true,
+      "network_namespace_used": true,
+      "full_harness_confinement_verified": false,
+      "synthetic_read_and_computation_passed": null,
+      "request_methods": [
+        "initialize",
+        "thread/start",
+        "mcpServerStatus/list"
+      ],
+      "cleanup": "OBSERVATION_GROUP_SIGTERM",
+      "process_exit_code": -15,
+      "stdout_bytes": 3530,
+      "stderr_bytes": 0,
+      "stdout_sha256": "af8f6e857146f8ef385eeb5d53545e5b537e48f05703445a1ff26d94b4adc4e2",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "turn_or_item_notification_count": 0,
+      "mcp_session_terminal_present": false,
+      "rpc_intents_count": 3,
+      "tool_intents_count": 0,
+      "all_rpc_and_tool_intents_have_terminal_records": true
+    },
+    {
+      "schema": "crane-offline-app-server-mcp-observation/v1-development",
+      "method_id": "B2",
+      "status": "PASS",
+      "tools": {
+        "compute_visible_python": {
+          "name": "compute_visible_python",
+          "description": "Run local Python calculations over full staged visible records/source in an isolated namespace.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "code"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "read_staged_file": {
+          "name": "read_staged_file",
+          "description": "Read exact staged file text using explicit Unicode character offsets; no inferred summary.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "offset": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "length": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1
+              }
+            },
+            "required": [
+              "path",
+              "offset",
+              "length"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "tools_sha256": "b0275850c911b44bbbde37c5a323df2626f3b6a492fc8638227f14536dff7fb4",
+      "runtime_status": "connected",
+      "provider_request_tools_verified": false,
+      "model_call_attempted": false,
+      "ephemeral_thread_started": true,
+      "network_namespace_used": true,
+      "full_harness_confinement_verified": false,
+      "synthetic_read_and_computation_passed": true,
+      "request_methods": [
+        "initialize",
+        "thread/start",
+        "mcpServerStatus/list",
+        "mcpServer/tool/call",
+        "mcpServer/tool/call"
+      ],
+      "cleanup": "OBSERVATION_GROUP_SIGTERM",
+      "process_exit_code": -15,
+      "stdout_bytes": 5032,
+      "stderr_bytes": 0,
+      "stdout_sha256": "96d2f75c1159e27c9db968b5f02bfa26f60e13493d8f5e666314f349d11c197d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "turn_or_item_notification_count": 0,
+      "mcp_session_terminal_present": false,
+      "rpc_intents_count": 5,
+      "tool_intents_count": 2,
+      "all_rpc_and_tool_intents_have_terminal_records": true
+    },
+    {
+      "schema": "crane-offline-app-server-mcp-observation/v1-development",
+      "method_id": "B3",
+      "status": "PASS",
+      "tools": {
+        "read_staged_file": {
+          "name": "read_staged_file",
+          "description": "Read exact staged file text using explicit Unicode character offsets; no inferred summary.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "offset": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "length": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1
+              }
+            },
+            "required": [
+              "path",
+              "offset",
+              "length"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "compute_visible_python": {
+          "name": "compute_visible_python",
+          "description": "Run local Python calculations over full staged visible records/source in an isolated namespace.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "code"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "tools_sha256": "b0275850c911b44bbbde37c5a323df2626f3b6a492fc8638227f14536dff7fb4",
+      "runtime_status": "connected",
+      "provider_request_tools_verified": false,
+      "model_call_attempted": false,
+      "ephemeral_thread_started": true,
+      "network_namespace_used": true,
+      "full_harness_confinement_verified": false,
+      "synthetic_read_and_computation_passed": true,
+      "request_methods": [
+        "initialize",
+        "thread/start",
+        "mcpServerStatus/list",
+        "mcpServer/tool/call",
+        "mcpServer/tool/call"
+      ],
+      "cleanup": "OBSERVATION_GROUP_SIGTERM",
+      "process_exit_code": -15,
+      "stdout_bytes": 5032,
+      "stderr_bytes": 0,
+      "stdout_sha256": "ae24b184db04ff5a4afada2fb88ecef0260dbd189f020540ebd090a1310e99a6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "turn_or_item_notification_count": 0,
+      "mcp_session_terminal_present": false,
+      "rpc_intents_count": 5,
+      "tool_intents_count": 2,
+      "all_rpc_and_tool_intents_have_terminal_records": true
+    },
+    {
+      "schema": "crane-offline-app-server-mcp-observation/v1-development",
+      "method_id": "B4",
+      "status": "PASS",
+      "tools": {
+        "read_staged_file": {
+          "name": "read_staged_file",
+          "description": "Read exact staged file text using explicit Unicode character offsets; no inferred summary.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "offset": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "length": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1
+              }
+            },
+            "required": [
+              "path",
+              "offset",
+              "length"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "compute_visible_python": {
+          "name": "compute_visible_python",
+          "description": "Run local Python calculations over full staged visible records/source in an isolated namespace.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "code"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "tools_sha256": "b0275850c911b44bbbde37c5a323df2626f3b6a492fc8638227f14536dff7fb4",
+      "runtime_status": "connected",
+      "provider_request_tools_verified": false,
+      "model_call_attempted": false,
+      "ephemeral_thread_started": true,
+      "network_namespace_used": true,
+      "full_harness_confinement_verified": false,
+      "synthetic_read_and_computation_passed": true,
+      "request_methods": [
+        "initialize",
+        "thread/start",
+        "mcpServerStatus/list",
+        "mcpServer/tool/call",
+        "mcpServer/tool/call"
+      ],
+      "cleanup": "OBSERVATION_GROUP_SIGTERM",
+      "process_exit_code": -15,
+      "stdout_bytes": 5032,
+      "stderr_bytes": 0,
+      "stdout_sha256": "593927310845564cd0383ed6e57da55f33ad196cbf805ae2363754776d3b5863",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "turn_or_item_notification_count": 0,
+      "mcp_session_terminal_present": false,
+      "rpc_intents_count": 5,
+      "tool_intents_count": 2,
+      "all_rpc_and_tool_intents_have_terminal_records": true
+    }
+  ],
+  "retained_failed_outer_inspector_probes": [
+    {
+      "status": "TECHNICAL_FAILURE",
+      "error_type": "PermissionError",
+      "error": "[Errno 13] Permission denied: '/dev/null'",
+      "tool_terminal_raw_sha256": "bf75d991d53b45217a45bca3b0e809508a484d9518b3defd6cf9a60502b4e0fc",
+      "app_server_stdout_raw_sha256": "530780ac2857aef707a157e34ab664bdfdffd09d1b84770d2e8f6ab4b41d656b",
+      "app_server_stderr_raw_sha256": "265ab06240324213e0db51fd637b8853ac5a6a9de3bbc7e12330b2bca1724d64",
+      "model_call_attempted": false,
+      "reinterpreted_as_model_failure": false
+    },
+    {
+      "status": "TECHNICAL_FAILURE",
+      "error_type": "PermissionError",
+      "error": "[Errno 13] Permission denied: '/dev/null'",
+      "tool_terminal_raw_sha256": "bf75d991d53b45217a45bca3b0e809508a484d9518b3defd6cf9a60502b4e0fc",
+      "app_server_stdout_raw_sha256": "583398fdcf2244598ef953b56f1568c3eb30d62c55d50524e18c21121f7f1e9d",
+      "app_server_stderr_raw_sha256": "5a3cd23f2893543fc5581ccfbad7243cae3ace138c0109a96e215c242035e0b8",
+      "model_call_attempted": false,
+      "reinterpreted_as_model_failure": false
+    }
+  ],
+  "device_root_cause": "Outer normal root bind denies /dev/null; private /dev fixes bare Python and original client computation.",
+  "inner_registered_broker_repaired": false,
+  "ignored_plural_feature_preserved": true,
+  "prospective_corrected_feature": "remote_plugin",
+  "command_scoped_strict_config": true,
+  "raw_host_framing_committed": false,
+  "raw_retention_location": "temporary host storage only",
+  "provider_request_tool_set_verified": false,
+  "lossless_model_facing_tool_output_verified": false,
+  "provider_harness_confinement_verified": false,
+  "full_runtime_bound": false,
+  "actual_route_capacity_verified": false,
+  "complete_study_budgets_selected": false,
+  "model_calls_authorized": false,
+  "model_call_attempted": false,
+  "pilot_annotation_authorized": false,
+  "measurement_proposal_adopted": false,
+  "endpoint_scoring_authorized": false,
+  "method_key_opened": false,
+  "p11_authorized": false,
+  "confirmation_independent_n": 0,
+  "replication_independent_n": 0
+}

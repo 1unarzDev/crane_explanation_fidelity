@@ -1,5 +1,16 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Installed-client addendum after `90ef4b74` — 2026-09-30
+
+[Offline installed-client observations](INSTALLED_CLIENT_MCP_OBSERVATION_2026-09-30.md) now verify
+Codex CLI 0.159.2 discovers exact assigned MCP schemas for all five methods and routes synthetic
+reads/computation for B2/B3/B4 without a model turn. Initial outer-namespace `/dev/null` failures
+remain retained; private devices fix the inspector, without changing the registered broker.
+The profile uses singular `remote_plugin` with strict parsing; earlier ignored plural flags remain
+historical. Actual model-facing tool enumeration, lossless renderer output/default truncation,
+runtime/capacity, complete budgets and one-shot model execution remain open. P11 still has nineteen
+open conditions, no new semantic output or measurement, N=0 and a pending reopening decision.
+
 ## Local transport addendum after `2da7c6c1` — 2026-09-30
 
 A [local MCP stdio candidate](LOCAL_MCP_STDIO_2026-09-30.md) now connects the bounded broker to
