@@ -1,5 +1,18 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Installed-client service route addendum after `d2871be0` — 2026-09-30
+
+A [separate offline observer v2](INSTALLED_CLIENT_SERVICE_MCP_2026-09-30.md)
+verifies assigned service-backed MCP tools through CLI 0.159.2 for all five methods.
+B0/B1 list no tools; B2/B3/B4 return exact literal/Unicode results and null-result
+bounded failures. Fourteen tests pass; all six computation services are absent and
+no turn/item notifications occur. Raw host framing stays private; dedicated client
+groups require recorded SIGTERM cleanup. Full model-facing tools/rendering, capacity,
+turn budgets, immutable runtime and measurement remain open. No semantic invocation,
+method-key join, endpoint score or alpha spending occurs. P11 keeps nineteen open
+conditions, N=0 and pending measurement reopening; existing study callers remain.
+
+
 ## Service broker/MCP addendum after `a480c8f5` — 2026-09-30
 
 A [separate broker v3 and stdio adapter v2](SERVICE_BROKER_MCP_2026-09-30.md)

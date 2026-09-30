@@ -1,0 +1,844 @@
+{
+  "schema": "crane-installed-client-service-mcp-binding/v2-development",
+  "recorded_date": "2026-09-30",
+  "status": "ALL_FIVE_ASSIGNED_SERVER_ROUTES_PASS_MODEL_FACING_RENDERING_OPEN",
+  "cli_version": "0.159.2",
+  "bindings": [
+    {
+      "path": "analysis/observe_evidence_calibration_app_server_mcp_v2.py",
+      "raw_sha256": "bea0992c072f47a5feb098f18352715ac572b95e055ce498930aa384c1c8afad"
+    },
+    {
+      "path": "tests/test_evidence_calibration_app_server_mcp_v2.py",
+      "raw_sha256": "cc10ebc936faf6ee363103195de97d3aaaad988cd1113c65e89820cb31f81411"
+    },
+    {
+      "path": "docs/INSTALLED_CLIENT_SERVICE_MCP_2026-09-30.md",
+      "raw_sha256": "1f4fa3fbd0116fbe0709a10a7b9349af188d26cb289eb8b7c240a80cb5ffb0f8"
+    },
+    {
+      "path": "analysis/observe_evidence_calibration_app_server_mcp.py",
+      "raw_sha256": "63a429d54f8260de08464e4e76b3cf97ff8e5b5e474114435b9cae5cbed02e61"
+    },
+    {
+      "path": "analysis/evidence_calibration_mcp_stdio_v2.py",
+      "raw_sha256": "428b7a630f6146248a31b99dd9e5ea3ab5a6515d0e4220fb4957f2981d66d48c"
+    },
+    {
+      "path": "analysis/evidence_calibration_tool_broker_v3.py",
+      "raw_sha256": "cddf234a7f609fe8cc6cb8ccfefedf7348643e82e6e6781b2d0bd4b470bf0759"
+    },
+    {
+      "path": "analysis/evidence_calibration_local_tool_sandbox_v4.py",
+      "raw_sha256": "347fd464d967569f32b66137984ed8891e5c8596e442bfa09a5d5122832afce1"
+    },
+    {
+      "path": "analysis/evidence_calibration_io.py",
+      "raw_sha256": "c70fef1e03274c55746a8ed7395cec221d2ed0bc63c83eb7fd005429a0925422"
+    },
+    {
+      "path": "analysis/stage_evidence_calibration_workspace.py",
+      "raw_sha256": "3044778ac6f6de74b80884a8b5e777d7cea9e9e42cea56e20bde7999954a7d0b"
+    },
+    {
+      "path": "analysis/observe_evidence_calibration_cgroup_limits.py",
+      "raw_sha256": "aaa610f75a0c872f05941957f291ed6a09dd239510fae056ee4bb864679ccddb"
+    }
+  ],
+  "official_config_reference": {
+    "url": "https://learn.chatgpt.com/docs/extend/mcp",
+    "fetched_page_sha256": "8a360159b102d1a997d4c6984fa4d35602de19d93d5c00148002dfac2e998f1c",
+    "relevant_setting": "env_vars only XDG_RUNTIME_DIR and DBUS_SESSION_BUS_ADDRESS"
+  },
+  "private_raw_root": "/tmp/crane-service-installed-client-20260930-bsq17ez1",
+  "private_plan_sha256": "9f537710c63ecbfa701e5b92fbfe131458d18ea0470644fb40e8c5f4a0199b41",
+  "private_summary_sha256": "5b4d966ecf76eccadbb5c18308b85069ec474ab7aa678e0559bf03f91ea064d4",
+  "observations": {
+    "B0": {
+      "schema": "crane-offline-app-server-mcp-observation/v2-development",
+      "method_id": "B0",
+      "status": "PASS",
+      "tools": {},
+      "tools_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "runtime_status": "connected",
+      "provider_request_tools_verified": false,
+      "model_call_attempted": false,
+      "ephemeral_thread_started": true,
+      "network_namespace_used": true,
+      "full_harness_confinement_verified": false,
+      "synthetic_read_and_computation_passed": null,
+      "bounded_tool_failure_passed": null,
+      "request_methods": [
+        "initialize",
+        "thread/start",
+        "mcpServerStatus/list"
+      ],
+      "cleanup": "OBSERVATION_GROUP_SIGTERM",
+      "process_exit_code": -15,
+      "stdout_bytes": 3698,
+      "stderr_bytes": 0,
+      "stdout_sha256": "18e538c31de0ec7b78ad722aada99acf8961f55677956106767c0f50b54840c4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "turn_or_item_notification_count": 0,
+      "retained_executor_terminal_count": 0,
+      "all_computation_units_absent": true,
+      "private_record_hashes": [
+        {
+          "relative_path": "app-server-stderr.bin",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "relative_path": "app-server-stdout.bin",
+          "raw_sha256": "18e538c31de0ec7b78ad722aada99acf8961f55677956106767c0f50b54840c4"
+        },
+        {
+          "relative_path": "configuration.json",
+          "raw_sha256": "93916f8688d196bd8c53ec40ed1ab18a5fea606336ff555004dd2b4d5228d000"
+        },
+        {
+          "relative_path": "events/rpc-00000001.intent.json",
+          "raw_sha256": "d1953b23563c8f74899c064a864f49458d01729c55f6f71802de0e0e600f448b"
+        },
+        {
+          "relative_path": "events/rpc-00000001.result.json",
+          "raw_sha256": "584252f1eeaffbaabff39239379b1133c64511cf2f99a955bfaa52591c190a8e"
+        },
+        {
+          "relative_path": "events/rpc-00000002.intent.json",
+          "raw_sha256": "dcd3c558c0f82a93190b7d999529c66884336b68c058f2981080dcbda32016fd"
+        },
+        {
+          "relative_path": "events/rpc-00000002.result.json",
+          "raw_sha256": "e23f3cadc6a3b3eea5bdc0c669b6dbb97c65831c07b8b702b65767e8fb141bdf"
+        },
+        {
+          "relative_path": "events/rpc-00000003.intent.json",
+          "raw_sha256": "b276883087a5b8c34e34ce04c7a368a9690405fec1cb7cd34b92ba5b081a883f"
+        },
+        {
+          "relative_path": "events/rpc-00000003.result.json",
+          "raw_sha256": "2f97c6d7b5323aab1e5d266a6d95bf13da857dd58ab2038b4def03aa0d19a611"
+        },
+        {
+          "relative_path": "events/session.intent.json",
+          "raw_sha256": "3f5e7f4b3bf5a6705df9bfe06da49375b07866674c29a558dc03c54150132211"
+        },
+        {
+          "relative_path": "job/visible.txt",
+          "raw_sha256": "42c2820692c5d40ffa999a877c1ffa0ea89fdeae30d7186da4227fcce3e617e3"
+        },
+        {
+          "relative_path": "observer.intent.json",
+          "raw_sha256": "a7f9cb12771b27cc867a7669605830f662aca0427ed79372411709aea3b8e36f"
+        },
+        {
+          "relative_path": "request-log.json",
+          "raw_sha256": "428c12f1411990d6c48fe70bc0cecacbae97e91f9895bce7543d39a1a1bfed3b"
+        },
+        {
+          "relative_path": "sanitized-result.json",
+          "raw_sha256": "45f75effea9b6df7ef2378786f35f6166ea0a7f8d070ae2c97857420ef9b883a"
+        }
+      ]
+    },
+    "B1": {
+      "schema": "crane-offline-app-server-mcp-observation/v2-development",
+      "method_id": "B1",
+      "status": "PASS",
+      "tools": {},
+      "tools_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "runtime_status": "connected",
+      "provider_request_tools_verified": false,
+      "model_call_attempted": false,
+      "ephemeral_thread_started": true,
+      "network_namespace_used": true,
+      "full_harness_confinement_verified": false,
+      "synthetic_read_and_computation_passed": null,
+      "bounded_tool_failure_passed": null,
+      "request_methods": [
+        "initialize",
+        "thread/start",
+        "mcpServerStatus/list"
+      ],
+      "cleanup": "OBSERVATION_GROUP_SIGTERM",
+      "process_exit_code": -15,
+      "stdout_bytes": 3698,
+      "stderr_bytes": 0,
+      "stdout_sha256": "c116c12c86aabecc480d3c127bf5a5fa32cc1f0bbd68bce84f8d018c97229d71",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "turn_or_item_notification_count": 0,
+      "retained_executor_terminal_count": 0,
+      "all_computation_units_absent": true,
+      "private_record_hashes": [
+        {
+          "relative_path": "app-server-stderr.bin",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "relative_path": "app-server-stdout.bin",
+          "raw_sha256": "c116c12c86aabecc480d3c127bf5a5fa32cc1f0bbd68bce84f8d018c97229d71"
+        },
+        {
+          "relative_path": "configuration.json",
+          "raw_sha256": "7105edaf3db4e4339f155e96bfbc88966f867e04e8eaa6ca9742855e7e4b1461"
+        },
+        {
+          "relative_path": "events/rpc-00000001.intent.json",
+          "raw_sha256": "d1953b23563c8f74899c064a864f49458d01729c55f6f71802de0e0e600f448b"
+        },
+        {
+          "relative_path": "events/rpc-00000001.result.json",
+          "raw_sha256": "584252f1eeaffbaabff39239379b1133c64511cf2f99a955bfaa52591c190a8e"
+        },
+        {
+          "relative_path": "events/rpc-00000002.intent.json",
+          "raw_sha256": "dcd3c558c0f82a93190b7d999529c66884336b68c058f2981080dcbda32016fd"
+        },
+        {
+          "relative_path": "events/rpc-00000002.result.json",
+          "raw_sha256": "e23f3cadc6a3b3eea5bdc0c669b6dbb97c65831c07b8b702b65767e8fb141bdf"
+        },
+        {
+          "relative_path": "events/rpc-00000003.intent.json",
+          "raw_sha256": "b276883087a5b8c34e34ce04c7a368a9690405fec1cb7cd34b92ba5b081a883f"
+        },
+        {
+          "relative_path": "events/rpc-00000003.result.json",
+          "raw_sha256": "2f97c6d7b5323aab1e5d266a6d95bf13da857dd58ab2038b4def03aa0d19a611"
+        },
+        {
+          "relative_path": "events/session.intent.json",
+          "raw_sha256": "d01dd5bce697d84e2bb4d580ee455c29ebbe0b6bff8272cd9ea025748c0416fd"
+        },
+        {
+          "relative_path": "job/visible.txt",
+          "raw_sha256": "42c2820692c5d40ffa999a877c1ffa0ea89fdeae30d7186da4227fcce3e617e3"
+        },
+        {
+          "relative_path": "observer.intent.json",
+          "raw_sha256": "5d302a5c40444971f537093504bf1ceb8d2b48f22a6963502773d5bc849d0ad3"
+        },
+        {
+          "relative_path": "request-log.json",
+          "raw_sha256": "f6ad75cf2c6bc3b33ce51b95adbe6a02ac4404edef543c75e3cfa36f6c6ce910"
+        },
+        {
+          "relative_path": "sanitized-result.json",
+          "raw_sha256": "56951b911e33270be54e752a0e23cd43c1fb1cfdd5053b93191b23bdb559bb9d"
+        }
+      ]
+    },
+    "B2": {
+      "schema": "crane-offline-app-server-mcp-observation/v2-development",
+      "method_id": "B2",
+      "status": "PASS",
+      "tools": {
+        "compute_visible_python": {
+          "name": "compute_visible_python",
+          "description": "Run local Python calculations over full staged visible records/source in an isolated namespace.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "code"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "read_staged_file": {
+          "name": "read_staged_file",
+          "description": "Read exact staged file text using explicit Unicode character offsets; no inferred summary.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "offset": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "length": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1
+              }
+            },
+            "required": [
+              "path",
+              "offset",
+              "length"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "tools_sha256": "b0275850c911b44bbbde37c5a323df2626f3b6a492fc8638227f14536dff7fb4",
+      "runtime_status": "connected",
+      "provider_request_tools_verified": false,
+      "model_call_attempted": false,
+      "ephemeral_thread_started": true,
+      "network_namespace_used": true,
+      "full_harness_confinement_verified": false,
+      "synthetic_read_and_computation_passed": true,
+      "bounded_tool_failure_passed": true,
+      "request_methods": [
+        "initialize",
+        "thread/start",
+        "mcpServerStatus/list",
+        "mcpServer/tool/call",
+        "mcpServer/tool/call",
+        "mcpServer/tool/call"
+      ],
+      "cleanup": "OBSERVATION_GROUP_SIGTERM",
+      "process_exit_code": -15,
+      "stdout_bytes": 5538,
+      "stderr_bytes": 0,
+      "stdout_sha256": "56b75a349e978451f46a43e3109f9baedef946b154ecb71dd8a0332fc82c1bb3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "turn_or_item_notification_count": 0,
+      "retained_executor_terminal_count": 2,
+      "all_computation_units_absent": true,
+      "private_record_hashes": [
+        {
+          "relative_path": "app-server-stderr.bin",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "relative_path": "app-server-stdout.bin",
+          "raw_sha256": "56b75a349e978451f46a43e3109f9baedef946b154ecb71dd8a0332fc82c1bb3"
+        },
+        {
+          "relative_path": "configuration.json",
+          "raw_sha256": "d7ee5db12c8e541a546151a8898fcde360d652e7a4fb08cd54241d141a9a6c21"
+        },
+        {
+          "relative_path": "events/rpc-00000001.intent.json",
+          "raw_sha256": "d1953b23563c8f74899c064a864f49458d01729c55f6f71802de0e0e600f448b"
+        },
+        {
+          "relative_path": "events/rpc-00000001.result.json",
+          "raw_sha256": "584252f1eeaffbaabff39239379b1133c64511cf2f99a955bfaa52591c190a8e"
+        },
+        {
+          "relative_path": "events/rpc-00000002.intent.json",
+          "raw_sha256": "dcd3c558c0f82a93190b7d999529c66884336b68c058f2981080dcbda32016fd"
+        },
+        {
+          "relative_path": "events/rpc-00000002.result.json",
+          "raw_sha256": "e23f3cadc6a3b3eea5bdc0c669b6dbb97c65831c07b8b702b65767e8fb141bdf"
+        },
+        {
+          "relative_path": "events/rpc-00000003.intent.json",
+          "raw_sha256": "b276883087a5b8c34e34ce04c7a368a9690405fec1cb7cd34b92ba5b081a883f"
+        },
+        {
+          "relative_path": "events/rpc-00000003.result.json",
+          "raw_sha256": "2545b622d6cacb6b60c99e805c0d739eafb06d53a6f804285103a112096fe920"
+        },
+        {
+          "relative_path": "events/rpc-00000004.intent.json",
+          "raw_sha256": "9462274f5cb1c42eab3d49437453bfefdc40339ac59b5755b31c045198d0c100"
+        },
+        {
+          "relative_path": "events/rpc-00000004.result.json",
+          "raw_sha256": "4e450414bce2470ef0ab0286a351421b4c35abb0e5825a440b19d5e7778ff726"
+        },
+        {
+          "relative_path": "events/rpc-00000005.intent.json",
+          "raw_sha256": "b62bd889de14f6eb65106127658c52afab10afb6fac110cbba47e18db68940ee"
+        },
+        {
+          "relative_path": "events/rpc-00000005.result.json",
+          "raw_sha256": "18d52e142b0163e2073dc5ea9d80fd33ccaaabd2d52ce00390f50c6353f3cff3"
+        },
+        {
+          "relative_path": "events/rpc-00000006.intent.json",
+          "raw_sha256": "26485347814c3a9cbd094d2917a2092b809e48eafc1091af760f5c7338e074f2"
+        },
+        {
+          "relative_path": "events/rpc-00000006.result.json",
+          "raw_sha256": "980f8372d5274b82ec3b9ca2d5a917d3fbdf79820d104be0153e0c4521bf9abf"
+        },
+        {
+          "relative_path": "events/session.intent.json",
+          "raw_sha256": "299518d35d69ecaae22fe8047507deacde28f31d5bb0c5924928172461e97b63"
+        },
+        {
+          "relative_path": "events/tool-00000004.intent.json",
+          "raw_sha256": "d4a3bf4e6c7abff8f096ea7b2ff9e15d079c9da04582c67d8fd24216da890a37"
+        },
+        {
+          "relative_path": "events/tool-00000004.result.json",
+          "raw_sha256": "ec731df59c5c48d584f34821f148f40bd60e57e14d8e1d0a8b13cc8d56a5edf6"
+        },
+        {
+          "relative_path": "events/tool-00000005.execution/intent.json",
+          "raw_sha256": "ba805e856ffdc921e1082b205001cf9b6b47dcbf15792f0fbb15d9b9588a29f2"
+        },
+        {
+          "relative_path": "events/tool-00000005.execution/terminal.json",
+          "raw_sha256": "51c224a339440cb2ebe7865e2f5e08c0b4abe35a58c40285a030a23dc83d6fc2"
+        },
+        {
+          "relative_path": "events/tool-00000005.intent.json",
+          "raw_sha256": "b34b754685a346b69a53a71aa32cc6f4fbb4afdcc08ddaa3e963564bdf4d0fd3"
+        },
+        {
+          "relative_path": "events/tool-00000005.result.json",
+          "raw_sha256": "67737aa07cdc557f7f6b39076cc73cb8de2b96a969b451cf00b1a1c5a674d3b8"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/intent.json",
+          "raw_sha256": "fbbfe8d9ff2c3ea896912412502096fe6ef1dcd6cf9423b227ec8042d7e26d8a"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/terminal.json",
+          "raw_sha256": "a56cb1756fb52e3d9913d07f47e4323f4a2e57afea61d8d41348ece00d9e1ac9"
+        },
+        {
+          "relative_path": "events/tool-00000006.intent.json",
+          "raw_sha256": "c2fbd388211625268d1b4fdd8b31c1078d1c3bc8922e9a441977c6fe7c723502"
+        },
+        {
+          "relative_path": "events/tool-00000006.result.json",
+          "raw_sha256": "24e8aec5671750d30d367a84cf698d5563b946e1baf911f7336bb61c8de8776a"
+        },
+        {
+          "relative_path": "job/visible.txt",
+          "raw_sha256": "42c2820692c5d40ffa999a877c1ffa0ea89fdeae30d7186da4227fcce3e617e3"
+        },
+        {
+          "relative_path": "observer.intent.json",
+          "raw_sha256": "02bb141c8b2f1a198574048e2e7effc7176e6c188ccdc74b533e15251126038e"
+        },
+        {
+          "relative_path": "request-log.json",
+          "raw_sha256": "9d044b2462172eb10330f18afa7eaf083286fd90416964b86fea28c2775ddc74"
+        },
+        {
+          "relative_path": "sanitized-result.json",
+          "raw_sha256": "9da8148d122c9936be52aa520ff7c8512375d14cf5bc1e75a159aa08fcbbd351"
+        }
+      ]
+    },
+    "B3": {
+      "schema": "crane-offline-app-server-mcp-observation/v2-development",
+      "method_id": "B3",
+      "status": "PASS",
+      "tools": {
+        "compute_visible_python": {
+          "name": "compute_visible_python",
+          "description": "Run local Python calculations over full staged visible records/source in an isolated namespace.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "code"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "read_staged_file": {
+          "name": "read_staged_file",
+          "description": "Read exact staged file text using explicit Unicode character offsets; no inferred summary.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "offset": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "length": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1
+              }
+            },
+            "required": [
+              "path",
+              "offset",
+              "length"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "tools_sha256": "b0275850c911b44bbbde37c5a323df2626f3b6a492fc8638227f14536dff7fb4",
+      "runtime_status": "connected",
+      "provider_request_tools_verified": false,
+      "model_call_attempted": false,
+      "ephemeral_thread_started": true,
+      "network_namespace_used": true,
+      "full_harness_confinement_verified": false,
+      "synthetic_read_and_computation_passed": true,
+      "bounded_tool_failure_passed": true,
+      "request_methods": [
+        "initialize",
+        "thread/start",
+        "mcpServerStatus/list",
+        "mcpServer/tool/call",
+        "mcpServer/tool/call",
+        "mcpServer/tool/call"
+      ],
+      "cleanup": "OBSERVATION_GROUP_SIGTERM",
+      "process_exit_code": -15,
+      "stdout_bytes": 5538,
+      "stderr_bytes": 0,
+      "stdout_sha256": "a56fcd8052d3e885cff101cac049a2aa5dc961580fb3d883aa34c38ae0bb3156",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "turn_or_item_notification_count": 0,
+      "retained_executor_terminal_count": 2,
+      "all_computation_units_absent": true,
+      "private_record_hashes": [
+        {
+          "relative_path": "app-server-stderr.bin",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "relative_path": "app-server-stdout.bin",
+          "raw_sha256": "a56fcd8052d3e885cff101cac049a2aa5dc961580fb3d883aa34c38ae0bb3156"
+        },
+        {
+          "relative_path": "configuration.json",
+          "raw_sha256": "2c587f01f7757c62e62380ef51e029fde0bc68480344a13a46129413b5e1a95e"
+        },
+        {
+          "relative_path": "events/rpc-00000001.intent.json",
+          "raw_sha256": "d1953b23563c8f74899c064a864f49458d01729c55f6f71802de0e0e600f448b"
+        },
+        {
+          "relative_path": "events/rpc-00000001.result.json",
+          "raw_sha256": "584252f1eeaffbaabff39239379b1133c64511cf2f99a955bfaa52591c190a8e"
+        },
+        {
+          "relative_path": "events/rpc-00000002.intent.json",
+          "raw_sha256": "dcd3c558c0f82a93190b7d999529c66884336b68c058f2981080dcbda32016fd"
+        },
+        {
+          "relative_path": "events/rpc-00000002.result.json",
+          "raw_sha256": "e23f3cadc6a3b3eea5bdc0c669b6dbb97c65831c07b8b702b65767e8fb141bdf"
+        },
+        {
+          "relative_path": "events/rpc-00000003.intent.json",
+          "raw_sha256": "b276883087a5b8c34e34ce04c7a368a9690405fec1cb7cd34b92ba5b081a883f"
+        },
+        {
+          "relative_path": "events/rpc-00000003.result.json",
+          "raw_sha256": "2545b622d6cacb6b60c99e805c0d739eafb06d53a6f804285103a112096fe920"
+        },
+        {
+          "relative_path": "events/rpc-00000004.intent.json",
+          "raw_sha256": "9177959a61b3fb8d068e467638313749fa96684a5008a4fb1c1087f1d3cee8ba"
+        },
+        {
+          "relative_path": "events/rpc-00000004.result.json",
+          "raw_sha256": "4e450414bce2470ef0ab0286a351421b4c35abb0e5825a440b19d5e7778ff726"
+        },
+        {
+          "relative_path": "events/rpc-00000005.intent.json",
+          "raw_sha256": "6a22cd1d5442c46162413016425f1218af2aa8e525593d76c291b1089bbfd2d7"
+        },
+        {
+          "relative_path": "events/rpc-00000005.result.json",
+          "raw_sha256": "18d52e142b0163e2073dc5ea9d80fd33ccaaabd2d52ce00390f50c6353f3cff3"
+        },
+        {
+          "relative_path": "events/rpc-00000006.intent.json",
+          "raw_sha256": "e1054edcf7a9e3ba57f5f78fcd58d0c11fc5f8c4e36108bd912698add95a4fd3"
+        },
+        {
+          "relative_path": "events/rpc-00000006.result.json",
+          "raw_sha256": "980f8372d5274b82ec3b9ca2d5a917d3fbdf79820d104be0153e0c4521bf9abf"
+        },
+        {
+          "relative_path": "events/session.intent.json",
+          "raw_sha256": "2d92888ad48403fab9c6b2c0f026282fe0f5dac47ddb78c01731755e2ec94d91"
+        },
+        {
+          "relative_path": "events/tool-00000004.intent.json",
+          "raw_sha256": "ddf9fb0aec3f78010be46b2df917e3121098a0ef1e21fad4e13359554aedecd2"
+        },
+        {
+          "relative_path": "events/tool-00000004.result.json",
+          "raw_sha256": "20e49258287a09150ab907a019d1f920faafb43ef4918413a9822242fd12b55d"
+        },
+        {
+          "relative_path": "events/tool-00000005.execution/intent.json",
+          "raw_sha256": "7a374828126025a65b85950b1ce4418f1d78ea232a05eaa88b7d816e7cf21fa1"
+        },
+        {
+          "relative_path": "events/tool-00000005.execution/terminal.json",
+          "raw_sha256": "a812cef34ff445fb16498f52d1fe2123b4c1e98305334f223d884771cad476eb"
+        },
+        {
+          "relative_path": "events/tool-00000005.intent.json",
+          "raw_sha256": "2aa06153bc97126994b97027e777fff3e889cd2e9b51eac5fccd80a8ce067339"
+        },
+        {
+          "relative_path": "events/tool-00000005.result.json",
+          "raw_sha256": "c5b19e03b95eb22d319e7af6f965fd7493fd2180f33de4843fd23053315a55de"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/intent.json",
+          "raw_sha256": "a35c9465e2b60058d6423cffe233a5d4223bcc00b4e775712c13d18a2651f1a2"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/terminal.json",
+          "raw_sha256": "6e2b2123a0c116471b826d94698ecac83218d67469925b65e0f6b1168e94040b"
+        },
+        {
+          "relative_path": "events/tool-00000006.intent.json",
+          "raw_sha256": "9d9dcf63d6e9166576f60c9e1dfda41a555e8b0809bc749625e0212836634260"
+        },
+        {
+          "relative_path": "events/tool-00000006.result.json",
+          "raw_sha256": "4bbe76d39bcde58c27cf8643a1f9dea3bb39c1946e8960fe458a764e51568145"
+        },
+        {
+          "relative_path": "job/visible.txt",
+          "raw_sha256": "42c2820692c5d40ffa999a877c1ffa0ea89fdeae30d7186da4227fcce3e617e3"
+        },
+        {
+          "relative_path": "observer.intent.json",
+          "raw_sha256": "ff5bcaa3e3b9e575046b3ca3a9b8aed48a6660e27573f38a484ac9729c61ffc9"
+        },
+        {
+          "relative_path": "request-log.json",
+          "raw_sha256": "9d71ae4e1dc1e3f4a887fba132275c087355968d3084476ccaa821fcbc498681"
+        },
+        {
+          "relative_path": "sanitized-result.json",
+          "raw_sha256": "29649270524e7af514738d42b106ebd78f202072164d3295da506993f989f656"
+        }
+      ]
+    },
+    "B4": {
+      "schema": "crane-offline-app-server-mcp-observation/v2-development",
+      "method_id": "B4",
+      "status": "PASS",
+      "tools": {
+        "read_staged_file": {
+          "name": "read_staged_file",
+          "description": "Read exact staged file text using explicit Unicode character offsets; no inferred summary.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "offset": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "length": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1
+              }
+            },
+            "required": [
+              "path",
+              "offset",
+              "length"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "compute_visible_python": {
+          "name": "compute_visible_python",
+          "description": "Run local Python calculations over full staged visible records/source in an isolated namespace.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "code"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "tools_sha256": "b0275850c911b44bbbde37c5a323df2626f3b6a492fc8638227f14536dff7fb4",
+      "runtime_status": "connected",
+      "provider_request_tools_verified": false,
+      "model_call_attempted": false,
+      "ephemeral_thread_started": true,
+      "network_namespace_used": true,
+      "full_harness_confinement_verified": false,
+      "synthetic_read_and_computation_passed": true,
+      "bounded_tool_failure_passed": true,
+      "request_methods": [
+        "initialize",
+        "thread/start",
+        "mcpServerStatus/list",
+        "mcpServer/tool/call",
+        "mcpServer/tool/call",
+        "mcpServer/tool/call"
+      ],
+      "cleanup": "OBSERVATION_GROUP_SIGTERM",
+      "process_exit_code": -15,
+      "stdout_bytes": 5538,
+      "stderr_bytes": 0,
+      "stdout_sha256": "04ed393ed140552340166b5391ba77f001d5146c25c98f0c0f7fafaac9e595bb",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "turn_or_item_notification_count": 0,
+      "retained_executor_terminal_count": 2,
+      "all_computation_units_absent": true,
+      "private_record_hashes": [
+        {
+          "relative_path": "app-server-stderr.bin",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "relative_path": "app-server-stdout.bin",
+          "raw_sha256": "04ed393ed140552340166b5391ba77f001d5146c25c98f0c0f7fafaac9e595bb"
+        },
+        {
+          "relative_path": "configuration.json",
+          "raw_sha256": "782d4d00fd70edc4b2a0e1475b47551d4bc0ad866209621a6bf619f8729c585b"
+        },
+        {
+          "relative_path": "events/rpc-00000001.intent.json",
+          "raw_sha256": "d1953b23563c8f74899c064a864f49458d01729c55f6f71802de0e0e600f448b"
+        },
+        {
+          "relative_path": "events/rpc-00000001.result.json",
+          "raw_sha256": "584252f1eeaffbaabff39239379b1133c64511cf2f99a955bfaa52591c190a8e"
+        },
+        {
+          "relative_path": "events/rpc-00000002.intent.json",
+          "raw_sha256": "dcd3c558c0f82a93190b7d999529c66884336b68c058f2981080dcbda32016fd"
+        },
+        {
+          "relative_path": "events/rpc-00000002.result.json",
+          "raw_sha256": "e23f3cadc6a3b3eea5bdc0c669b6dbb97c65831c07b8b702b65767e8fb141bdf"
+        },
+        {
+          "relative_path": "events/rpc-00000003.intent.json",
+          "raw_sha256": "b276883087a5b8c34e34ce04c7a368a9690405fec1cb7cd34b92ba5b081a883f"
+        },
+        {
+          "relative_path": "events/rpc-00000003.result.json",
+          "raw_sha256": "2545b622d6cacb6b60c99e805c0d739eafb06d53a6f804285103a112096fe920"
+        },
+        {
+          "relative_path": "events/rpc-00000004.intent.json",
+          "raw_sha256": "93361a0791954615e885c1b53611ab1f2ea958a1864622ffde6514ca730e43cd"
+        },
+        {
+          "relative_path": "events/rpc-00000004.result.json",
+          "raw_sha256": "4e450414bce2470ef0ab0286a351421b4c35abb0e5825a440b19d5e7778ff726"
+        },
+        {
+          "relative_path": "events/rpc-00000005.intent.json",
+          "raw_sha256": "e89b7b906d61ec432121354e7c2ddbd7a839e6bb3024bbac1162c34524bcd1df"
+        },
+        {
+          "relative_path": "events/rpc-00000005.result.json",
+          "raw_sha256": "18d52e142b0163e2073dc5ea9d80fd33ccaaabd2d52ce00390f50c6353f3cff3"
+        },
+        {
+          "relative_path": "events/rpc-00000006.intent.json",
+          "raw_sha256": "e1cc8ab0eec2eabf52f2bf09ff287a79d7eb78021eb2b52112e00dc4abbfb58e"
+        },
+        {
+          "relative_path": "events/rpc-00000006.result.json",
+          "raw_sha256": "980f8372d5274b82ec3b9ca2d5a917d3fbdf79820d104be0153e0c4521bf9abf"
+        },
+        {
+          "relative_path": "events/session.intent.json",
+          "raw_sha256": "ebb7641049e7767c7141e19d0d312d72481ff0bb9ba373bd0eed8fcb02322107"
+        },
+        {
+          "relative_path": "events/tool-00000004.intent.json",
+          "raw_sha256": "a44654ba90b5cf23cb986fa0d95b2df5b7664d888e47841f3ac704a15459401c"
+        },
+        {
+          "relative_path": "events/tool-00000004.result.json",
+          "raw_sha256": "906e8ff225c799681cab86b614577c4a3c5ffc7b440b58a5725a6e6c6bd2f21b"
+        },
+        {
+          "relative_path": "events/tool-00000005.execution/intent.json",
+          "raw_sha256": "4e958a756f81ace8ccdcd3a602701e28cf80457e8d3574f1163cc25406a4a3a1"
+        },
+        {
+          "relative_path": "events/tool-00000005.execution/terminal.json",
+          "raw_sha256": "5083b8b88280117378a784cdb3fb46b03b0c8a56eadcb55a837bd756a7fce208"
+        },
+        {
+          "relative_path": "events/tool-00000005.intent.json",
+          "raw_sha256": "517e7260824cf7059ff01f73b564f2083035975af8c6d731bbbd42192d02de6d"
+        },
+        {
+          "relative_path": "events/tool-00000005.result.json",
+          "raw_sha256": "e6e39e45532aadc2f50372e21e7a73be3dd560f6e4078482d197dd5ab13f8ec1"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/intent.json",
+          "raw_sha256": "703aa4803307273b8b095a673cae026929c651e1487c4b83dcb99be839613c5a"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/terminal.json",
+          "raw_sha256": "2b79a12721b78db35373496003ed9cf3c14c71fdc2c1ecf2a2a2fc500184900f"
+        },
+        {
+          "relative_path": "events/tool-00000006.intent.json",
+          "raw_sha256": "2c06325b06de31f20685e590472e582dd87ca23ce2b77a8a16cb31e2f1f618b5"
+        },
+        {
+          "relative_path": "events/tool-00000006.result.json",
+          "raw_sha256": "3128b55a45279175d685367ee23e5b730c0e766a5b51bfc745d9d77836b9358f"
+        },
+        {
+          "relative_path": "job/visible.txt",
+          "raw_sha256": "42c2820692c5d40ffa999a877c1ffa0ea89fdeae30d7186da4227fcce3e617e3"
+        },
+        {
+          "relative_path": "observer.intent.json",
+          "raw_sha256": "ca293e6f0701e44667fa0cfcb13729e965d56a60803da09348b231a2f8448962"
+        },
+        {
+          "relative_path": "request-log.json",
+          "raw_sha256": "50acbe3f330c712eb53c914262ad62c3c956a50b011ffd13cf8096a8fd083fd0"
+        },
+        {
+          "relative_path": "sanitized-result.json",
+          "raw_sha256": "6786771fbb294bfd68470cb4c76f207bb3154c954c37869ff78e2843f72c0db7"
+        }
+      ]
+    }
+  },
+  "focused_tests_passed": 14,
+  "provider_request_tools_verified": false,
+  "model_visible_rendering_verified": false,
+  "existing_study_callers_migrated": false,
+  "model_calls_authorized": false,
+  "pilot_annotation_authorized": false,
+  "p11_authorized": false,
+  "confirmation_independent_n": 0,
+  "replication_independent_n": 0
+}

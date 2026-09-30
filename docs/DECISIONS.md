@@ -4566,3 +4566,25 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   method-key join, retained answer scoring, physical acquisition, alpha spending
   or P11 freeze. Failed combined support/unlaunched C and pending reopening stay
   unchanged. P11 retains nineteen open conditions and confirmation/replication N=0.
+
+
+## 2026-09-30 — verify installed-client routing to the separate service-backed adapter
+
+- **Candidate:** preserve the old observer; v2 selects new MCP/broker/service versions
+  and forwards only documented local runtime/user-bus variables. Exact command and
+  config/source hashes bind before launch. Early launch failures retain dispositions.
+  Original RPC allowlist/network-disabled inspector and strict features remain.
+- **Observed evidence:** all five CLI 0.159.2 assigned-server inventories/routes pass.
+  B0/B1 have no tools; B2/B3/B4 preserve literal/Unicode results and receive null-result
+  overflow failures with no audit bytes. Six computation services are absent after
+  cleanup; no turn/item notifications or app-server stderr occur. Fourteen tests pass.
+- **Cleanup/provenance:** dedicated app-server groups require SIGTERM after completed
+  RPCs. Keep that cleanup and potentially absent overall MCP session terminal; do
+  not invent graceful completion. Raw framing is private/hash-bound under /tmp.
+- **Boundary:** assigned MCP discovery/direct calls do not prove full model-facing
+  schemas, absence of other routes or lossless provider rendering/default truncation.
+  Exact capacity/turn budgets, immutable runtime and complete harness stay open.
+- **Governance:** no turn/model/automated annotation call, method-key join, real-pilot
+  score, physical acquisition, alpha spending or P11 freeze. Preserve failed combined
+  support/unlaunched C and pending reopening. P11 keeps nineteen open conditions and
+  confirmation/replication independent N=0; existing study callers are unchanged.
