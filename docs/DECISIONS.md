@@ -3925,3 +3925,30 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   B0–B4 development remain open. Alpha, physical allocation and confirmation/replication N are
   unchanged. All prospective episode comparisons and inconclusive/unfavorable reporting remain
   required.
+
+
+## 2026-09-30 — reconstruct aligned B0–B4 packet candidate on the fixed inspected selection
+
+- **Integration:** reuse the existing five-method packet builder, normalizer, removal-only builder
+  and catalog validator across all sixteen original inspected development episodes. Keep six
+  persistent discrepancies, six measured recoveries and both two-episode control families,
+  including cm-land-conf-042 with its retained B2 technical failures. Reproduce all sixty old
+  packet hashes without rewriting outputs or selecting episodes by outcomes.
+- **New packets:** use catalog ladder IDs and a separate five-method-aligned-v1 condition
+  namespace. Nominal projection/question reuse the separately audited scoped adapter; other
+  question text is unchanged. Sixty conditions produce three hundred candidate packets in
+  memory. B2/B3/B4 share exact hash-checked source/config assets and primitive tools; v2 contract
+  assets go only to B3/B4. Verification flags preserve the existing B3/B4 distinction but are
+  specifications, not executed ablation evidence. Count independent units once per unique
+  episode/configuration rather than summing the builder's per-condition increment metadata.
+- **Presentation boundary:** B0 currently uses a lossless raw JSON serialization; B1 uses the
+  same structured object. Parsing must preserve every value. Exact raw-summary/structured
+  prompts and model choices are still unbound, so these packets do not establish completed
+  baseline execution or a substantive prompt distinction. No baseline is weakened for an effect.
+- **Verification/governance:** seven focused integration checks and five existing packet/readiness
+  checks pass. The compact snapshot contains hashes/counts only; no method prose, semantic output,
+  model call, DVC pointer change, annotation or physical acquisition occurred. These remain
+  inspected development recordings. The failed support canary and unlaunched C are unchanged.
+  Exact execution and measurement declarations remain necessary; P11 stays closed on nineteen
+  conditions. Alpha, quarantine, confirmation/replication N and all prospective episode-level
+  comparison/reporting requirements are unchanged.

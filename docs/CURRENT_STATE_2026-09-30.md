@@ -568,3 +568,21 @@ atom has been interpreted, attached or scored. The failed combined support canar
 remain unchanged. P11 still has nineteen open conditions and confirmation/replication N remain zero.
 See `docs/CONTEXTUAL_ATTACHMENT_RECORDS_2026-09-30.md` and the contextual-attachment development
 candidate declaration. Semantic qualification and fresh aligned five-method measurement remain open.
+
+## Latest 2026-09-30 aligned five-method packet checkpoint
+
+The existing B0–B4 packet builder now integrates all sixteen episodes of the original fixed
+inspected pilot selection, including the retained B2 transport-failure episode. All sixty old
+packet hashes reproduce. A separate namespace has sixty catalog-aligned removal-only conditions
+and three hundred five-method packets, reconstructed in memory with exact source/tool parity.
+Nominal conditions use the scoped question and duplicate-trace projection; other questions remain
+unchanged. The v2 contract asset applies to B3/B4. Unique configurations determine the development
+count; method/mask increments add no independent N.
+
+Twelve focused integration/packet/readiness checks pass. B0's raw JSON serialization preserves
+B1's structured evidence exactly, but meaningful raw-summary/structured prompts and model choices
+still require a prospective execution declaration. Verification flags are packet specifications,
+not executed B3/B4 ablation evidence. No method prose, model output, annotation, DVC pointer change,
+physical acquisition or effect was generated. The failed combined support canary remains closed;
+P11 has nineteen open conditions and confirmation/replication N remain zero. See
+`docs/FIVE_METHOD_PACKET_CANDIDATE_2026-09-30.md` and the hash-bound packet candidate snapshot.
