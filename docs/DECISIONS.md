@@ -3269,3 +3269,17 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   quarantined. This is agent-assisted development inventory review, not human validation or atomic
   support annotation. No method join, effect estimate, P11 authorization, independent N, or alpha
   use follows.
+
+## 2026-09-30 — disclose the registered question only for three one-word answers
+
+- **Decision:** bind a question-only context artifact for the three unresolved `Yes.`/`No.` spans.
+  The builder matches each blinded answer exactly once against retained development outputs and
+  verifies that all three came from the nominal false-premise family. It then exports only opaque
+  response ID, answer hash, and the original registered question. It does not read the evaluator
+  annotation key or salt and does not disclose method identity or condition ID to the reviewer.
+- **Reason:** the answer-only atomization bank cannot assign an atomic meaning to a bare one-word
+  answer without its question. The original key's `join_after_atomic_inventory_validation` rule
+  remains intact; this bounded question handoff is not a method-key join.
+- **Boundary:** the three inventories still require project review. The context artifact assigns
+  no support label, diagnostic rank, or effect. The unknown-disposition extraction request remains
+  quarantined; P11, independent N, and alpha remain unchanged.

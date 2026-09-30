@@ -87,3 +87,8 @@ candidate atoms without changing original extraction records. Cumulative project
 110 of 113 structurally valid inventories. The last three contain bare `Yes.`/`No.` spans that need
 question context under a governed, method-blind handoff; the interrupted fourth request remains
 quarantined. The P11 audit still fails closed on 18 conditions, including the absent freeze.
+
+A later question-only handoff now binds the original nominal false-premise question for those three
+opaque IDs by unique exact-answer matches. It exports no method or condition identity and does not
+read the evaluator annotation key. Their atomic inventories remain under review; no support label
+or endpoint result follows from this context artifact.
