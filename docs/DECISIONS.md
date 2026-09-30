@@ -4152,3 +4152,30 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   P11 retains nineteen open conditions with no component hash mismatch; confirmation/replication
   N remain zero. Fresh five-method semantic outputs and qualified measurement remain required,
   with all prospective primary/secondary episode effects, intervals and corrected p-values.
+
+
+## 2026-09-30 — verify namespace isolation for local primitive computation, keep provider harness open
+
+- **Host evidence:** bubblewrap 0.12.0 and user namespaces are available. Actual deterministic
+  subprocesses can execute an isolated standard-library Python entry point with read-only staged
+  evidence and system runtime, private scratch and new mount/PID/network namespaces. Synthetic
+  probes deny outside-file reads, `/home`, outside access through `/proc/1/root`, inherited
+  environment values, visible-file writes and access to a parent loopback listener. No external
+  provider connection, credential or actual evaluator file is probed.
+- **Implementation:** a separate local-tool seam checks workspace inventory before/after, clears
+  environment/descriptors, invokes bubblewrap directly without a shell and permits full local
+  computations. Namespace/runtime failure or timeout does not fall back to host execution. The
+  original staged inventory tool and standard-library arithmetic remain usable. No existing
+  method runner, prompt, source, evidence ladder or immutable cache changes.
+- **Limit:** this is local primitive isolation, not provider/agent harness confinement. The exposed
+  `/usr` runtime is not yet bound as a complete immutable environment; recorded executable hashes
+  identify entry points only. Routing every future tool through this seam, excluding alternative
+  access routes, enforcing method permissions/budgets and retaining/auditing events remain open.
+  The provider process requires separate transport integration. No final tool surface is frozen
+  or narrowed to favor B4; B2 source and primitive computation capability must remain strong.
+- **Verification/governance:** nine focused isolation checks, fifteen workspace and two readiness
+  checks pass, including actual timeout termination. No model output, annotation, key join, alpha
+  spending or physical acquisition occurs. P11 retains nineteen open conditions with no hash
+  mismatch; the failed combined support canary and unlaunched C remain binding. Capacity and
+  qualified measurement remain open, confirmation/replication N remain zero, and all prospective
+  primary/secondary episode effects, intervals and corrected p-values remain required.

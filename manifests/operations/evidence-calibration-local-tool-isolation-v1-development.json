@@ -1,0 +1,65 @@
+{
+  "schema": "crane-local-tool-isolation-observation/v1-development",
+  "recorded_date": "2026-09-30",
+  "status": "LOCAL_PRIMITIVE_NAMESPACE_CHECKS_PASS_HARNESS_INTEGRATION_OPEN",
+  "bindings": [
+    {
+      "path": "analysis/evidence_calibration_local_tool_sandbox.py",
+      "raw_sha256": "3fc22a0519736f6764452fe90b57340e7a2018defc2e89187fece6fd978da90c"
+    },
+    {
+      "path": "tests/test_evidence_calibration_local_tool_sandbox.py",
+      "raw_sha256": "efe996c7d70d78188165fc8df380a76c7e54f06ea5cba565f2499bde590339a6"
+    },
+    {
+      "path": "docs/LOCAL_TOOL_ISOLATION_2026-09-30.md",
+      "raw_sha256": "0725c6aa0328c8aced066384da405114411480529429e68201d1409b7adaa08a"
+    },
+    {
+      "path": "analysis/stage_evidence_calibration_workspace.py",
+      "raw_sha256": "3044778ac6f6de74b80884a8b5e777d7cea9e9e42cea56e20bde7999954a7d0b"
+    },
+    {
+      "path": "manifests/operations/evidence-calibration-combined-support-canary-disposition-v1.json",
+      "raw_sha256": "355dd15cc1a3792cb16cfab1bbdb2e43a61f8a9c2c3df662549502da28372b26"
+    }
+  ],
+  "runtime_entry_points": [
+    {
+      "path": "/usr/bin/bwrap",
+      "raw_sha256": "7c44fa8e7326e62e81ab3f70ff682bfc0eb3b447b39cf9fbb779a31948364762",
+      "version": "bubblewrap 0.12.0"
+    },
+    {
+      "path": "/usr/bin/python3",
+      "raw_sha256": "d78f9cf7178ecff09963551399855543c297f37ac207e626228bfe43cb26a70c",
+      "version": "Python 3.14.7"
+    }
+  ],
+  "kernel_release": "7.2.6-arch2-1",
+  "observed_checks": {
+    "visible_read": true,
+    "outside_absent": true,
+    "home_absent": true,
+    "parent_root_absent": true,
+    "environment_absent": true,
+    "visible_write_denied": true,
+    "scratch_available": true,
+    "parent_network_denied": true,
+    "staged_inventory_tool_runs": true,
+    "stdlib_arithmetic_runs": true,
+    "no_host_fallback_on_runtime_failure": true
+  },
+  "focused_tests_passed": 9,
+  "complete_runtime_bound": false,
+  "all_provider_tools_routed": false,
+  "provider_harness_confinement_verified": false,
+  "method_tool_permissions_frozen": false,
+  "model_calls_authorized": false,
+  "model_call_attempted": false,
+  "pilot_annotation_authorized": false,
+  "method_key_opened": false,
+  "p11_authorized": false,
+  "confirmation_independent_n": 0,
+  "replication_independent_n": 0
+}
