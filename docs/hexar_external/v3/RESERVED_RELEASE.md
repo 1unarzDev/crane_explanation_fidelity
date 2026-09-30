@@ -1,6 +1,6 @@
 # Frozen reserved release — generation closed
 
-Current disposition: gates passed, descriptive freeze and independent references preceded all324 valid answers. Blind inventory and independent parent causal roles are complete; qualified support runs in ordered bounded queues. The protocol below preserves the prospective pre-activation instructions; completed generation/report-v2 commands must not be rerun. Current status/resume is in[../STATUS.md](../STATUS.md) and[../REPRODUCTION.md](../REPRODUCTION.md).
+Current disposition: gates passed, descriptive freeze and independent references preceded all 324 valid answers. Blind inventory and independent parent causal roles are complete; qualified support runs in ordered bounded queues. The protocol below preserves the prospective pre-activation instructions; completed generation/report-v2 commands must not be rerun. Current status/resume is in [../STATUS.md](../STATUS.md) and [../REPRODUCTION.md](../REPRODUCTION.md).
 
 Release requires the v3 fixture qualification to pass both unchanged 100% gates and the fresh all-family q1 compatibility pilot to close with at least 90% qualified technical completion. Its three production conditions remain unchanged and regeneration uses the same requested hosted model config. The entire v2 full-query pilot is retained and reported separately, including failures; it is not relabeled under v3.
 

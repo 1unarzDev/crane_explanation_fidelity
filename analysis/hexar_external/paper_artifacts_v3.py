@@ -49,11 +49,11 @@ def main():
                      f"{bounds(value['evidence_success_bounds']['intact'])} | {value['median_answer_words']:g} |")
     lines.extend([
         '',
-        '¹ Full declared denominator:108 answers/method, grouped by12 physical recordings in six known families. Ranges are unknown-label/role bounds, not confidence intervals. Intact denominator:36 answers/method.',
+        '¹ Full declared denominator: 108 answers/method, grouped by 12 physical recordings in six known families. Ranges are unknown-label/role bounds, not confidence intervals. Intact denominator: 36 answers/method.',
         '² Mean compact required-unit coverage among finalized agent assessments; not exhaustive information coverage. Unsupported material includes noncausal facts. Causal roles are independently blind-coded developer judgments, not qualified/human-validated; qualified support labels are unchanged.',
         '',
         f"Registered contract-minus-prompt full-cohort effect bounds: **{bounds(result['primary_full_cohort_effect_bounds'], True)}**. "
-        f"Complete principal recording pairs:{result['paired_complete_recordings']}/12. No confirmatory alpha or p-value.",
+        f"Complete principal recording pairs: {result['paired_complete_recordings']}/12. No confirmatory alpha or p-value.",
     ])
     (out / 'result_table.md').write_text('\n'.join(lines) + '\n')
     operations = ['| Method | Median realization ms | Model calls | Template | Fallback | Blanket abstention² | Required-unit control consistency³ |',
