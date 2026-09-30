@@ -119,3 +119,31 @@ python analysis/run_roboboat_pilot_atomic_inventory.py
 ```
 
 Declared before calls, all 36 retained answers included. There are 31 unique exact texts; each receives A/B isolated extraction passes. The blind bank contains only opaque text hashes and answer text; its evaluator join remains outside extractor input. Qualified source model/base prompt/schema and separately checked marine appendix are hash-bound. Do not run concurrent copies. Resumption uses retained terminal records and fails closed on unresolved intents or structural failures. Structural completion does not authorize support annotation. Full method-unaware project inventory review must establish faithful actors, phases, quantities, scope, negation, component facts and relations first. Abstraction tags remain unqualified and cannot enter endpoint/rank scores. Subsequent support passes must retain the current qualified Astra binding and full evidence packet.
+
+### Reviewed atomic reassessment (development successor)
+
+The complete bank must finish and all 31 unique source answers must have complete faithful project reviews before preparation. Inspect the live extraction process before resuming it; do not launch a second extraction process. Support reassessment preserves all 36 original answer/evidence instances, including exact-text duplicates, and original sentence-inventory scores stay published separately.
+
+```bash
+python analysis/run_roboboat_atomic_reassessment.py prepare
+python analysis/run_roboboat_atomic_reassessment.py run
+```
+
+The preparation command writes `marine_atomic_reassessment_declaration_v1.json` only once, freezes every blind packet and relevant source/qualification/review hash, and fails closed on incomplete/mismatched inputs. The run command submits at most two packets concurrently, caches finalized terminals, and rejects unresolved per-packet intents. It must not be used to retry quality failures. Output: `artifacts/roboboat-terminal-atomic-reassessment-v1`; evaluator join is separate from judge inputs. Completion of support calls still requires developmental endpoint derivation and judge-sensitivity analysis; it does not promote a confirmatory endpoint.
+
+Current regression command (the historical September 26 live-source freeze assertion is a separately documented boundary):
+
+```bash
+PYTHONPATH=analysis python - <<'PY'
+import subprocess
+from pathlib import Path
+files = [str(p) for p in sorted(Path('tests').glob('test_roboboat*.py'))
+         if p.name != 'test_roboboat_external_validity_registry.py']
+files += ['tests/test_export_terminal_margin_diagnostic.py',
+          'analysis/test_reference_terminal_margin.py',
+          'analysis/test_terminal_margin_diagnostic_adapter.py']
+raise SystemExit(subprocess.call(['python', '-m', 'pytest', '-q', *files]))
+PY
+```
+
+Result: 67 passed. The frozen historical platform's Git objects were also read-only verified against its four declared hashes; current launcher/fixture differ, current profile/route match. Neither freeze nor inherited test was edited.
