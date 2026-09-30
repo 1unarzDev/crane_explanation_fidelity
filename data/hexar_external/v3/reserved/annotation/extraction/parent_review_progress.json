@@ -4,10 +4,10 @@
   "ranges_reviewed": [
     [
       0,
-      40
+      162
     ]
   ],
-  "all_unique_texts_reviewed": false,
+  "all_unique_texts_reviewed": true,
   "support_labels_accessed": false,
   "method_keys_or_references_accessed": false,
   "coarse_indices_reclassified": false,
@@ -43,6 +43,54 @@
       ],
       "reason": "Negative evidence-establishment wording is not a separate assertion of physically slow movement.",
       "unique_text_id": "u-44e484fde2d6ffb84165d3cc7c81bb7265b6d393e52a7675291979bb41d4d663"
+    },
+    {
+      "text_index": 41,
+      "unique_text_id": "u-49896c48f1ba0fff8a7b76641e85f4ae33e05f2c570d52a46de58413344040a7",
+      "remove_atom_indices": [
+        9
+      ],
+      "reason": "Preserve the embedded delay/perceived-motion phrase inside its epistemic limitation; do not promote it to a separate unqualified fact."
+    },
+    {
+      "text_index": 79,
+      "unique_text_id": "u-7d22712dac302dd7d6b9de30471d9025afae0a4a8a7676f5ebfb17fe31fca7fe",
+      "remove_atom_indices": [
+        5
+      ],
+      "reason": "Preserve the embedded delay/perceived-motion phrase inside its epistemic limitation; do not promote it to a separate unqualified fact."
+    },
+    {
+      "text_index": 83,
+      "unique_text_id": "u-83a0dedf53b30894c39112cefae156e3489c68266ef1834e661f03e865757077",
+      "remove_atom_indices": [
+        7
+      ],
+      "reason": "Retain perceived slowness inside the epistemic clause, without converting it to an additional unqualified motion assertion."
+    },
+    {
+      "text_index": 122,
+      "unique_text_id": "u-c3f0347f7336936506c843002feee9f38d3a60d8b5e2314dbd8ac96e21d792a2",
+      "remove_atom_indices": [
+        9
+      ],
+      "reason": "Preserve perceived movement inside the epistemic non-establishment clause; do not promote it to a standalone motion assertion."
+    },
+    {
+      "text_index": 147,
+      "unique_text_id": "u-e45fe3d5ab09df67d23a7f6a86e285c58c46c19b45dfbd4e26f4897670c2d697",
+      "remove_atom_indices": [
+        8
+      ],
+      "reason": "Preserve perceived movement inside the epistemic non-establishment clause; do not promote it to a standalone motion assertion."
+    },
+    {
+      "text_index": 155,
+      "unique_text_id": "u-f206f439e7785906238b957b9d957191daf8e5bce40f6aac577a1e1af1e2fc83",
+      "remove_atom_indices": [
+        7
+      ],
+      "reason": "Preserve perceived movement inside the epistemic non-establishment clause; do not promote it to a standalone motion assertion."
     }
   ],
   "additions": [
@@ -57,5 +105,28 @@
   ],
   "original_candidate_preserved": true,
   "method_or_reference_or_scoring_rules_changed": false,
-  "human_or_qualified_extraction": false
+  "human_or_qualified_extraction": false,
+  "replacements": [
+    {
+      "text_index": 75,
+      "unique_text_id": "u-780726317bfca432bf59856bbe1a608558303932bf6703fbfd1c96fc10281eba",
+      "atom_index": 4,
+      "statement": "The planner reports of no valid path and navigation abort explain inability to reach the living room.",
+      "reason": "Retain the answer\u2019s explanatory colon relation as its causal claim; do not turn it into a trivially true statement about what the answer presents."
+    },
+    {
+      "text_index": 105,
+      "unique_text_id": "u-b26ee469099937c6b42778eda9d72e7c90a25f1bf8c48d503aa8a25f6db9e753",
+      "atom_index": 8,
+      "statement": "The available evidence does not show what caused the delay.",
+      "reason": "Do not narrow the unresolved delay to the second navigation when the source answer leaves that scope unspecified."
+    },
+    {
+      "text_index": 152,
+      "unique_text_id": "u-e9a1addbdae8165c3587733b78b3abcc25a9b657db8b837823c91c45d2db0c00",
+      "atom_index": 5,
+      "statement": "The request for help still waiting explains not completing the bottle delivery.",
+      "reason": "Retain the asserted explanatory relation rather than a tautology about answer attribution."
+    }
+  ]
 }
