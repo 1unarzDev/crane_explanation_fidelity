@@ -277,3 +277,21 @@ Read-only live/main ledger recheck matches local SHA `d6e67e9d4c8da68c434fa639a6
 
 
 Contact-v2 full-source inventories are 9/11 project-reviewed at this update, with complete retained quantity/time/motion/contact and modal scope; source answers remain unchanged. New support/analysis modules reuse the current qualified global/marine pipeline, with development-only independent partial-answerability selection and two whole-answer limitations. Eighteen new targeted QA tests pass, total scoped suite 156 pass. The support runner requires complete extraction and every source review before one-shot preparation, and a separately locked analysis plan before calls. The original bank and unqualified material-primary mapping are not scored/promoted. No inferential effect is estimated from this inspected replay. Extraction `85824` is still live; no restart.
+
+
+Contact-v2 extraction completed normally: 22 valid returns/calls, eleven unique texts and all twelve answer/evidence instances retained. Complete-source project reviews cover 226 unique-text asserted atoms; no human validation or new physical N. `project-review-summary.json` binds complete review disposition. One-shot support preparation succeeded: twelve distinct blinded packets, unchanged current qualified Astra/high binding, existing marine support gate, independently selected positive sampled-information unit and two whole-answer limitations. `contact_policy_support_declaration_v2.json` and `contact_policy_support_analysis_plan_v2.json` were frozen before support calls; all hashes reproduce. Newer failed qualification scores and unqualified material primary mapping remain unchanged. Current live queue: session `15140`, log `/tmp/roboboat-contact-policy-v2-support.log`, at most two packets, original 300 s deadline, disagreement-only adjudication, zero retries. Prior extraction session `85824` is terminal. No comparative scores released yet. Next: poll `15140`, reproduce complete-bank validation/agreement/adjudication, then release only declared development sensitivities and publish a separate capsule. Confirmation/replication still zero and unauthorized pending coordinator disposition/resources, qualified primary mapping and untouched freeze.
+
+
+Exact contact-v2 support commands from this isolated checkout:
+
+```bash
+# Already executed; prepare is one-shot and refuses overwrite.
+PYTHONPATH=analysis python analysis/run_roboboat_contact_policy_support_v2.py prepare
+# Live in session 15140: do not start another instance.
+# After a terminal state, reuse only finalized identities; unresolved intents require disposition, not retry.
+PYTHONPATH=analysis python analysis/run_roboboat_contact_policy_support_v2.py run
+# Run only after all twelve development-summary.json terminals are finalized.
+PYTHONPATH=analysis python analysis/analyze_roboboat_contact_policy_support_v2.py --output artifacts/roboboat-contact-policy-support-v2/development-results-v2.json
+```
+
+The analyzer rehashes the frozen inputs and reproduces both pass labels, agreement and disagreement-only finalization. It refuses missing/duplicate/partial banks and immutable-result overwrite. The reported scores are strict common/extended development sensitivities, not the proposed no-material-unsupported-assertion primary or inferential estimates. Original complete pairs/old settling support remain separate. The preparation and analysis-lock inline command executions are retained through complete dependency bindings and immutable output declarations; no retrospective metric switch is allowed.
