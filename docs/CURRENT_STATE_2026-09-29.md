@@ -269,3 +269,11 @@ v2 construction cases only. It binds a `gpt-6.1-sol` high-effort, no-tool, no-re
 and requires a non-study schema canary. Its output will be an automated critique for project
 adjudication, not human validation or role-task qualification. The request has not yet run at
 this checkpoint; P11 remains closed.
+
+The bound synthetic second review has now run: one non-study schema canary and one 24-case
+`gpt-6.1-sol` high-effort critique returned structurally valid records without retries or pilot
+data. It found eight case issues and three codebook ambiguities. Project adjudication accepted
+the findings and placed repairs in separate uncalled `v2r2` suite/prompt files, leaving the
+reviewed v2 inputs immutable. `manifests/annotation/evidence-calibration-claim-role-v2-reference-review-adjudication.json`
+binds the raw calls and the exact repairs. V2r2 still needs final pre-call review, freeze, and
+two isolated classifier qualification passes; no pilot role labels or B2/B4 effect exist.

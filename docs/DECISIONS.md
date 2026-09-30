@@ -3112,3 +3112,20 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   qualification, human validation, pilot annotation, or endpoint mapping. The critique must be
   adjudicated against the original text; it cannot automatically repair gold or authorize P11.
   No model call has run at this pre-call decision.
+
+## 2026-09-30 — retain the synthetic reviewer findings and versioned repair
+
+- **Observed review:** the bound non-study schema canary and one 24-case synthetic review call
+  completed with structurally valid returns, no tool use or quality-driven retry. The separate
+  reviewer flagged eight case-level reference defects or ambiguities and three codebook boundaries:
+  unsourced motion return, command delivery versus packet-field availability, and polarity of a
+  negated mismatch. The exact raw calls and reviewer text are retained under `model_outputs.dvc`.
+- **Adjudication:** project review accepted these findings. A new uncalled `v2r2` suite and prompt
+  preserve full-window scope, odometry source, exact modality, geometry intersection, source
+  quotation, and Wait-action causation. The missing-odometry example now uses two independent
+  sentences, and the codebook defines the three disputed boundaries. The original reviewed v2
+  files and request remain unchanged; the hash-bound adjudication manifest records every repair.
+- **Boundary:** this is automated reference critique followed by project adjudication, not human
+  validation or role-classifier qualification. V2r2 needs a final pre-call review and explicit
+  task freeze before a schema canary or two isolated qualification passes. No pilot role label,
+  endpoint score, P11 authorization, independent episode, or alpha use follows.
