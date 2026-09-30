@@ -4518,3 +4518,28 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   response score, method-key join, physical acquisition, alpha spending or P11
   freeze. Preserve failed combined support/unlaunched C and pending reopening.
   P11 keeps nineteen open conditions and confirmation/replication independent N=0.
+
+
+## 2026-09-30 — retain argument-expansion defect and add bounded service computation candidate
+
+- **Implementation:** separate service-backed executor combines unchanged namespace/
+  prlimit access with bounded capture, tree resource controls, exclusive intent/
+  terminal records and service-cgroup cleanup. Ordinary program failures remain
+  distinct from OOM/wall/transport/cleanup failures. Partial output is audit-only.
+- **Retained defect:** the initial arithmetic run has its pre-guard source snapshot;
+  a disposition guard precedes further v3 probes. A later fixed literal check shows
+  systemd changes braced environment and doubled-dollar code text. Preserve that
+  return/source; v3 arbitrary computation adoption is unauthorized. No study input
+  or credential expression was involved.
+- **Prospective repair:** v4 changes only --expand-environment=no. Exact diff and
+  literal-dollar/percent/Unicode/newline tests pass. Separate retained v4 probes
+  verify literal text, bounded stderr, group OOM and detached-wall failure/cleanup.
+  Fifty-one targeted tests pass; no existing broker/MCP/method caller migrates.
+- **Scope:** CPU rate is not cumulative CPU; scratch/model-turn output/tokenizer,
+  immutable restored runtime and complete provider/harness budgets remain open.
+  Service control cleanup adds time beyond execution wall; no exact caller wall
+  certification is made. These probes are infrastructure, not comparative evidence.
+- **Governance:** no semantic model/automated annotation call, method-key join,
+  retained response score, physical acquisition, alpha spending or P11 freeze.
+  Preserve failed combined support/unlaunched C and pending reopening. P11 retains
+  nineteen open conditions and confirmation/replication independent N=0.

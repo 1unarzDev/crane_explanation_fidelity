@@ -1,5 +1,18 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Bounded service capture addendum after `fb0eb763` — 2026-09-30
+
+A [separate service-backed computation candidate](SERVICE_BOUNDED_CAPTURE_2026-09-30.md)
+combines bounded output, one-shot records and service cgroup cleanup. A v3 literal
+argument probe exposes systemd environment expansion; retain that defect and source.
+A diff-bound v4 disables expansion and passes exact literal/Unicode output, overflow,
+OOM and detached-wall checks. Fifty-one targeted tests pass; no existing broker/MCP/
+method caller migrates. Cumulative CPU/scratch, full model-turn budgets, immutable
+runtime and provider integration remain open. No semantic method or annotation call,
+method-key join, endpoint score or alpha spending occurs. P11 remains at nineteen
+open conditions, N=0 and pending measurement reopening.
+
+
 ## Namespace/resource integration addendum after `9552c693` — 2026-09-30
 
 A [fixed service/namespace observation](CGROUP_SANDBOX_INTEGRATION_2026-09-30.md)
