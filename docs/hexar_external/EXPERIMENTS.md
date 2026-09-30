@@ -12,7 +12,8 @@
 | V3 infrastructure slice |Same six recordings,q1 only,54 answers|54/54 generated and qualified assessments; adds no physical N|
 | B/C: frozen reserved generation |12 recordings,108 packets,324 answers|324 valid,zero generation failures/retries; all108 closure-valid packets|
 | Reserved blind inventory |162 unique texts,324 responses|1,425 final propositions; all source spans/hash/coverage valid;25 numerical checks|
-| Reserved support assessment |324 separate answer jobs,A/B plus disagreement-only C|Ordered after separate blind roles; no results yet|
+| Reserved blind causal coding |27 unique-text batches|27/27 valid,zero failures/retries; independent parent review preceded support|
+| Reserved support assessment |324 separate answer jobs,A/B plus disagreement-only C|Active after separate blind roles; no closed results yet|
 | Scoped verification |13 boundary/endpoint/core tests|Passed in pinned scoped virtual environment|
 | Confirmatory inference |Zero alpha|Not activated; no superiority p-value or supported improvement claim|
 
