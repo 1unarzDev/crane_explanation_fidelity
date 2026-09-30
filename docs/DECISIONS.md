@@ -3253,3 +3253,19 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   valid inventories are reviewed; 42 remain, including three bare `Yes.`/`No.` spans. The
   interrupted request is still quarantined. No method-key join, B2/B4 effect, P11 authorization,
   independent N, or alpha use follows.
+
+## 2026-09-30 — review the remaining complete answer-only pilot inventories
+
+- **Review:** read each of the 39 previously unreviewed forms without an unresolved span against
+  its exact answer and all 513 candidate atomic meanings. Accept the candidates and find no
+  substantive omission. Residual uncovered-text flags are citation markup, separators, or
+  punctuation. The original extraction calls and pending forms remain unchanged.
+- **Binding:** `evidence-calibration-pilot-remaining-complete-inventories-v1.json` binds exact form
+  hashes, all candidate indices, and the three response IDs withheld for question-dependent
+  `Yes.`/`No.` meaning. The read-only audit verifies the cumulative 110-of-113 review set, answer
+  and call bindings, and closed scoring flags.
+- **Boundary:** the remaining three answers need a prospectively governed question-context handoff
+  without method-key disclosure. The one unknown-disposition extraction request remains
+  quarantined. This is agent-assisted development inventory review, not human validation or atomic
+  support annotation. No method join, effect estimate, P11 authorization, independent N, or alpha
+  use follows.

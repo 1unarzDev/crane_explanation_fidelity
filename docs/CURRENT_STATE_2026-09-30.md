@@ -79,3 +79,11 @@ question-dependent bare answers under a recorded rule, then run the qualified ag
 development annotation and a genuinely fresh B2/B4 pilot. Use episode-level paired discordance
 and useful coverage to make an honest power/allocation decision before a single explicit P11
 freeze. No confirmatory semantic outputs are authorized now.
+
+## Later 2026-09-30 inventory review update
+
+A further method-blind review bound the 39 remaining complete answer-only forms and their 513
+candidate atoms without changing original extraction records. Cumulative project review now covers
+110 of 113 structurally valid inventories. The last three contain bare `Yes.`/`No.` spans that need
+question context under a governed, method-blind handoff; the interrupted fourth request remains
+quarantined. The P11 audit still fails closed on 18 conditions, including the absent freeze.
