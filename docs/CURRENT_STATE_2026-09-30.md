@@ -1,5 +1,16 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Complete inspection addendum after `ccd11317` — 2026-09-30
+
+A [pinned read-only container helper](CONTAINER_RUNTIME_AUDIT_2026-09-30.md) now completes the
+inventory of the entire existing host `/usr`: 285548 files, 19047 directories, 92448 symlinks and
+14956824852 regular-file bytes. The prior host failure and a later no-capability container failure
+remain retained. Only the trusted audit helper receives read/search capability; method runtimes,
+permissions and primitive access are unchanged. A complete live content digest now exists, but
+the mounted Arch tree remains mutable and is not an immutable scientific runtime. Full runtime,
+provider/model-facing tools, rendering/capacity and execution gates remain open. P11 still has
+nineteen open conditions, N=0 and a pending measurement reopening decision; no model call occurred.
+
 ## Runtime audit addendum after `3e2d6589` — 2026-09-30
 
 A [full runtime-tree audit candidate](RUNTIME_TREE_AUDIT_2026-09-30.md) now verifies content,

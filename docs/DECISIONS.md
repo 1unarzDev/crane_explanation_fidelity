@@ -4365,3 +4365,28 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - **Governance:** no model/annotation invocation, method key, semantic score, physical acquisition
   or alpha expenditure. Preserve combined measurement failure and unlaunched C; reopening remains
   pending. P11 remains closed with nineteen open conditions and confirmation/replication N=0.
+
+## 2026-09-30 — complete existing-runtime inspection through a pinned read-only audit helper
+
+- **Resolution of prior status:** keep the ordinary host/sudo failures. Docker is available and a
+  public digest-pinned Python 3.14.7 image supplies an operator-side read-only audit route. Inspect
+  the existing full `/usr` tree rather than narrowing the methods' available software or switching
+  their runtime. The selected image is an audit helper only; no registered caller changes.
+- **Retained second failure:** a no-capability container reads `cupsd` but fails on root/group
+  execute-only mode-04110 `lib/dbus-daemon-launch-helper`. Its terminal/stdout/stderr remain retained
+  and its container is gone. A targeted `DAC_READ_SEARCH` probe then succeeds; a distinct declared
+  helper invocation carries only that read/search capability, read-only root/mounts, no network,
+  no-new-privileges and explicit resource limits. No file permissions or bytes are altered.
+- **Complete observation:** the unchanged inventory implementation now records 285548 files,
+  19047 directories and 92448 symlinks, covering 14956824852 regular-file bytes. Canonical identity
+  `87244600302de9b8157ca8d05c292f805ceb97584e56c814e9c24cd7ac7da814` identifies this complete live
+  content/metadata observation. Preserve raw inventory outside Git and bind sanitized provenance.
+  Four focused tests include unreadable-fixture hashing/mode preservation and fail-closed cleanup.
+- **Remaining boundary:** this supersedes only the prior absence of a complete runtime digest.
+  A pinned helper image does not freeze the mutable mounted Arch tree. Atomic/immutable runtime,
+  kernel/provider harness, actual model-facing tools, lossless output rendering, capacity and
+  durable study execution remain open. Audit capabilities are never added to explanation tools.
+- **Scientific governance:** zero semantic/model/annotation invocations, method keys, episode
+  effects, physical acquisitions or alpha expenditure. Preserve failed measurement and unlaunched
+  C; reopening remains pending. P11 keeps nineteen open conditions and confirmation/replication
+  N=0. No endpoint, method, population, sample size or stopping rule is frozen.

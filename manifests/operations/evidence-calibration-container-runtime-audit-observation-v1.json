@@ -1,0 +1,169 @@
+{
+  "schema": "crane-container-runtime-audit-observation/v1-development",
+  "recorded_date": "2026-09-30",
+  "status": "COMPLETE_EXISTING_RUNTIME_CONTENT_OBSERVATION_IMMUTABILITY_AND_EXECUTION_OPEN",
+  "bindings": [
+    {
+      "path": "analysis/observe_evidence_calibration_container_runtime_audit.py",
+      "raw_sha256": "962c4e6a59b1530b009846f97a4bd1897cec07cb0a085807dfc08b648337eaae"
+    },
+    {
+      "path": "tests/test_evidence_calibration_container_runtime_audit.py",
+      "raw_sha256": "35765c619d7a6cb0cf5c14b298d6953f442612a1ec927450fc3b3823195e6836"
+    },
+    {
+      "path": "docs/CONTAINER_RUNTIME_AUDIT_2026-09-30.md",
+      "raw_sha256": "bc6ea7b6976f475caad0d9e639c8998e3ba633db14736b2c4861b1e5e0146a7b"
+    },
+    {
+      "path": "analysis/audit_evidence_calibration_runtime_tree.py",
+      "raw_sha256": "c34991329508aae06d6815763c7c5873b69b76e37767a29f4d138b0bc04ed88b"
+    }
+  ],
+  "focused_tests_passed": 4,
+  "combined_targeted_tests_passed": 92,
+  "complete_observation_request": {
+    "audit_image": {
+      "image_id": "sha256:7bf6c3111fe094f8ee1a1cbcdc63c4cfb345b0e3df42d5aa9a90b3b4b022ab6d",
+      "platform": "linux/amd64",
+      "reference": "python@sha256:7bf6c3111fe094f8ee1a1cbcdc63c4cfb345b0e3df42d5aa9a90b3b4b022ab6d",
+      "repo_digests": [
+        "python@sha256:7bf6c3111fe094f8ee1a1cbcdc63c4cfb345b0e3df42d5aa9a90b3b4b022ab6d"
+      ],
+      "rootfs_layers": [
+        "sha256:a6dc765193a52cbaede3c93a9ff48b9540948dd0774bbe7031fcb5847606f9ac",
+        "sha256:5e09159a80eda79a300ae7642528f3e8f24385c9573b9695c993bb68b5283e01",
+        "sha256:4d88774e9a7c5774bb9213d34764c7d0cbcb5961e8cf18af79d8178d87c131ec",
+        "sha256:3feb2e8eb9abdd7a26545e87458c8a3ed3d24584d6f53b15c06fd7fb74e0f9c3"
+      ]
+    },
+    "capabilities": [
+      "DAC_READ_SEARCH"
+    ],
+    "command_code_sha256": "3606ad640532742c63ea2bf9bd9b616edda836754f94d1fd31e3815ec0ecd0b4",
+    "controller_source_sha256": "962c4e6a59b1530b009846f97a4bd1897cec07cb0a085807dfc08b648337eaae",
+    "controller_timeout_seconds": 900,
+    "cpus": 2,
+    "memory_bytes": 1073741824,
+    "method_runtime_changed": false,
+    "model_call_attempted": false,
+    "mounts_read_only": true,
+    "network": "none",
+    "pids_limit": 32,
+    "rootfs_read_only": true,
+    "runtime_root": "/usr",
+    "schema": "crane-container-runtime-audit-request/v1-development",
+    "scope": "NON_STUDY_READ_ONLY_EXISTING_RUNTIME_AUDIT",
+    "source_files": {
+      "audit_b2_transport_readiness.py": "373a88b06a94ebd7c9449930491ff4ff06385f6e2f93fb8223110a00e0e0297c",
+      "audit_evidence_calibration_claim_role_v2_reference_adjudication.py": "6537d075617a29e7b76720df0c3710a6bd44235a1380ab99b0682dbfc17850ed",
+      "audit_evidence_calibration_claim_role_v2r2_final_review.py": "8a57fca88c1e0a42fc819c5be29b28fefc33b765e5f0e69269f1ffb20c9ddf12",
+      "audit_evidence_calibration_claim_role_v2r2_freeze.py": "1432e91e4d9c95ba2e2298dfb2ed0942e6862593273f85e864ca50ec7cac96e8",
+      "audit_evidence_calibration_pilot_atomization.py": "f90adcb92fd6ae019a6d00dfaa0259d27e1c914addb8641e92a73361630ccc59",
+      "audit_evidence_calibration_runtime_tree.py": "c34991329508aae06d6815763c7c5873b69b76e37767a29f4d138b0bc04ed88b",
+      "evidence_calibration.py": "2b81bed7302fa5981a526846942d98bdb041c4afab860d3a18d3aca5a8540f7c",
+      "evidence_calibration_io.py": "c70fef1e03274c55746a8ed7395cec221d2ed0bc63c83eb7fd005429a0925422",
+      "run_evidence_calibration_atomization_qualification.py": "d50c0c4773a1c568383316995a1d07942a3a6bae89bc5a587bf00a9196ff0f27",
+      "run_evidence_calibration_claim_role_v2r2_qualification.py": "7bfa14eecf1aaa3b378a0f514d8a7c2dbfbffda432a8202dc49217c163f9295a",
+      "run_evidence_calibration_pilot_atomization.py": "8cf02552895782aee11fad607b26ff1ddfd6e1c8896caf7aed934e5a09628d0e",
+      "validate_evidence_calibration_atomization.py": "92194bd62d860fe9c29328b7299082eeaab79a1a0f0c904d4805989b815794f6",
+      "validate_evidence_calibration_claim_roles_v2.py": "17e0ea439fb75ac545c12e60b97d0c8ff708e42864d4cc5ffba69ed8214b01ae"
+    }
+  },
+  "complete_observation_terminal": {
+    "container_removed_or_absent": true,
+    "error": null,
+    "full_runtime_frozen": false,
+    "method_runtime_changed": false,
+    "model_call_attempted": false,
+    "request_sha256": "ece903b32474626a1ac034f4a0f4708539caa50f27f5aefe0fe0af4ff1265236",
+    "result": {
+      "entry_counts": {
+        "directory": 19047,
+        "file": 285548,
+        "symlink": 92448
+      },
+      "inventory_sha256": "87244600302de9b8157ca8d05c292f805ceb97584e56c814e9c24cd7ac7da814",
+      "raw_inventory_sha256": "b0bb1c96e24de9bf43c7f506cbac0ef3c58d88fe6a97c30304c05c26d0bbaf15",
+      "regular_file_bytes": 14956824852
+    },
+    "schema": "crane-container-runtime-audit-terminal/v1-development",
+    "status": "COMPLETE_CONTENT_OBSERVATION_LIVE_RUNTIME_NOT_FROZEN"
+  },
+  "raw_observation_bindings": [
+    {
+      "local_path": "output/infrastructure/runtime-inspection-2026-09-30/read-search-complete/request.intent.json",
+      "raw_sha256": "1a8f276fed70c8287a682e062a25fd4ab16e531c338b467151b1d9c45aa482d7"
+    },
+    {
+      "local_path": "output/infrastructure/runtime-inspection-2026-09-30/read-search-complete/terminal.json",
+      "raw_sha256": "585dcb7f47d2ce0e02bc5952e50f7f63396e982ee596913cdfe234988cff1ede"
+    },
+    {
+      "local_path": "output/infrastructure/runtime-inspection-2026-09-30/read-search-complete/inventory.json",
+      "raw_sha256": "b0bb1c96e24de9bf43c7f506cbac0ef3c58d88fe6a97c30304c05c26d0bbaf15"
+    },
+    {
+      "local_path": "output/infrastructure/runtime-inspection-2026-09-30/read-search-complete/stderr.bin",
+      "raw_sha256": "483e329f9fe580c903b36d01ac0ac90563d03f772571eea481bf446e12d2a241"
+    },
+    {
+      "local_path": "output/infrastructure/runtime-inspection-2026-09-30/no-capability-failure/request.intent.json",
+      "raw_sha256": "30e1624a695f43cee84b0221594ffcf49fe7e1c18e59d9cbf90ef243c1c2fbed"
+    },
+    {
+      "local_path": "output/infrastructure/runtime-inspection-2026-09-30/no-capability-failure/terminal.json",
+      "raw_sha256": "d10b07286a1d9508d56785088d471c72628d6574f14127ba02085b3889b5e1ca"
+    },
+    {
+      "local_path": "output/infrastructure/runtime-inspection-2026-09-30/no-capability-failure/stderr.bin",
+      "raw_sha256": "f9e2c311c4e95bebc2e41cf212d1578f388eaad17ba1399d5961a94831c12e96"
+    },
+    {
+      "local_path": "output/infrastructure/runtime-inspection-2026-09-30/crane-usr-runtime-inventory-v1.intent.json",
+      "raw_sha256": "af35aa50aa79308a22d3d3a19744058eaac7f170e7e96275e1f4f2820fed10b6"
+    },
+    {
+      "local_path": "output/infrastructure/runtime-inspection-2026-09-30/crane-usr-runtime-inventory-v1.failure.json",
+      "raw_sha256": "d3f82de786d963ae00b4c9597f9da2af897e7c6f65c3d337bd2df9e36a286cbd"
+    }
+  ],
+  "retained_no_capability_container_failure": {
+    "container_removed_or_absent": true,
+    "error": "RuntimeError: container audit failed; retain stderr and partial inventory without replay",
+    "full_runtime_frozen": false,
+    "method_runtime_changed": false,
+    "model_call_attempted": false,
+    "request_sha256": "1dc208c070225a266372a93d525239187e097633ae0702308892daa5a5e588f1",
+    "result": null,
+    "schema": "crane-container-runtime-audit-terminal/v1-development",
+    "status": "FAILED_RUNTIME_AUDIT_RETAIN_NO_REPLAY"
+  },
+  "protected_binary_probe_sha256": {
+    "usr/bin/cupsd": "318da489fae3448d435871fc18d051b321e0816aebe2c0334e46f6990c584d11",
+    "usr/lib/dbus-daemon-launch-helper": "0ab4cead4fd96fc856b855a9281e88729f739d721e88f0b031061256d2851791"
+  },
+  "complete_runtime_inventory_available": true,
+  "raw_runtime_paths_committed": false,
+  "raw_artifacts_retained_locally_outside_git": true,
+  "source_closure_only_no_repository_data_mount": true,
+  "permission_bits_changed": false,
+  "method_runtime_changed": false,
+  "audit_image_is_method_runtime": false,
+  "capability_added_to_explanation_tools": false,
+  "full_runtime_immutable": false,
+  "scientific_runtime_freeze_adopted": false,
+  "provider_request_tools_verified": false,
+  "lossless_model_facing_tool_output_verified": false,
+  "actual_route_capacity_verified": false,
+  "complete_study_budgets_selected": false,
+  "model_calls_authorized": false,
+  "model_call_attempted": false,
+  "pilot_annotation_authorized": false,
+  "measurement_proposal_adopted": false,
+  "endpoint_scoring_authorized": false,
+  "method_key_opened": false,
+  "p11_authorized": false,
+  "confirmation_independent_n": 0,
+  "replication_independent_n": 0
+}
