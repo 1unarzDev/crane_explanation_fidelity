@@ -63,3 +63,5 @@ python3 analysis/audit_roboboat_terminal_numbers.py artifacts/roboboat-terminal-
 ```
 
 Executed: 38 tests pass; 18 answer numeric audits pass. The numeric audit has a red-capable check: an unobserved `0.1234 m/s` in L0 is rejected, while the declared `0.4000 m` bound passes. Numeric association/temporal correctness remains evaluated with the complete qualified semantic packet; rounded value/unit matching alone is not explanation correctness. The optional legacy evidence exports were restored as byte copies into this isolated ignored data namespace for regression testing, without modifying DVC pointers.
+
+Capsule publication completed and hash/size/member count verified. A separate relative-root and atomic coordinator-intake regression passed: `PYTHONPATH=analysis python3 -m pytest -q tests/test_roboboat_capsule_publication.py`. Published capsule excludes the retained incomplete packaging attempt.

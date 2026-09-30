@@ -7,7 +7,7 @@ from build_roboboat_terminal_batch import save
 ROOT=Path(__file__).resolve().parents[1];DOC=ROOT/'docs/roboboat_terminal_evidence'
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--artifact-root',type=Path,required=True);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--artifact-root',type=Path,required=True);a=p.parse_args();a.artifact_root=a.artifact_root.resolve()
     result=json.loads((a.artifact_root/'comparison-results.json').read_text())
     if result['missing_annotations'] or len(result['rows'])!=18:raise RuntimeError('incomplete comparison cannot publish a completed capsule')
     capsule=a.artifact_root/'publication/development-capsule-v1.tar.gz'
@@ -16,12 +16,14 @@ def main():
     files=sorted(p for p in a.artifact_root.rglob('*') if p.is_file() and 'publication' not in p.parts and not p.name.endswith('.lock'))
     files+=sorted(p for p in DOC.rglob('*') if p.is_file() and p.suffix!='.png')
     files+=sorted(p for p in (ROOT/'analysis').glob('*roboboat*.py'))
-    with capsule.open('wb') as raw:
+    staging=capsule.with_suffix('.tmp')
+    with staging.open('wb') as raw:
         with gzip.GzipFile(fileobj=raw,mode='wb',mtime=0,filename='') as compressed:
             with tarfile.open(fileobj=compressed,mode='w') as tar:
                 for path in files:
                     info=tar.gettarinfo(str(path),str(path.relative_to(ROOT)));info.uid=info.gid=0;info.uname=info.gname='';info.mtime=0
                     with path.open('rb') as f:tar.addfile(info,f)
+    staging.replace(capsule)
     sha=hashlib.sha256(capsule.read_bytes()).hexdigest()
     identity=hashlib.sha256(('marine-development-intake-v1:'+sha).encode()).hexdigest()
     plan={'schema':'crane-diagnostic-batch-plan/v1','plan_id':'roboboat-terminal-development-intake-v1',
