@@ -3952,3 +3952,31 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   Exact execution and measurement declarations remain necessary; P11 stays closed on nineteen
   conditions. Alpha, quarantine, confirmation/replication N and all prospective episode-level
   comparison/reporting requirements are unchanged.
+
+
+## 2026-09-30 — preserve v1 numeric-audit defect and add exact prospective finite-number repair
+
+- **Observed defect:** an otherwise complete synthetic in-memory candidate with a NaN number
+  passes v1's tolerance comparison and receives ACCEPTED with no numeric mismatch. V1 renders
+  the approved number, so the reproduction concerns audit detection, not an unsupported final
+  numeric statement. No retained model output is claimed to contain NaN and no model call ran.
+- **Prospective repair:** preserve the original realizer byte-for-byte; a separate v2 changes
+  only its version identifier, a math import and finite-float guard. Nonfinite candidate values
+  invalidate their clause and enter the existing mismatch/local-reconstruction path, preserving
+  independent supported outcome and limitation clauses. Invalid approved plan values still
+  fail before realization. Finite valid outputs are identical apart from the version identifier.
+- **Verification:** six regression and two integrity checks plus four existing realization checks
+  pass; the two readiness tests also pass. A seven-component hash-bound diff audit verifies
+  exactly the three source changes and rejects retrospective-rescore authorization. The new
+  realizer is unexercised in a pilot; existing callers, source packets, caches and outputs are
+  unchanged. Future execution must bind and exercise its selected version explicitly.
+- **Execution seam:** current B3 wording specifies ordinary language realization while B4 uses
+  constrained claim-aware realization/verification. The existing executable realizer compiles
+  registered IDs to text; a packet verification flag alone does not implement the ordinary B3
+  path or establish a verifier-only ablation. Record this open scope rather than silently
+  substituting a shared-candidate design. No prompt or model configuration is frozen here.
+- **Governance:** no semantic method output, annotation, model call, effect or physical acquisition
+  follows. The failed combined support canary and unlaunched C remain unchanged. P11 retains
+  nineteen open conditions with no component hash mismatch; alpha, quarantine and independent
+  confirmation/replication N remain unchanged. All five-method comparison/reporting requirements
+  continue to apply.

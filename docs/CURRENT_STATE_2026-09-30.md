@@ -586,3 +586,19 @@ not executed B3/B4 ablation evidence. No method prose, model output, annotation,
 physical acquisition or effect was generated. The failed combined support canary remains closed;
 P11 has nineteen open conditions and confirmation/replication N remain zero. See
 `docs/FIVE_METHOD_PACKET_CANDIDATE_2026-09-30.md` and the hash-bound packet candidate snapshot.
+
+## Latest 2026-09-30 realizer numeric-audit checkpoint
+
+A synthetic in-memory NaN candidate exposes a v1 audit-detection defect: tolerance comparison
+accepts the invalid value with no mismatch, although rendering still uses the approved number.
+The original realizer remains unchanged. A separate v2 finite-float guard enters the existing
+local repair/mismatch path; valid finite outputs differ only in version. Twelve realization/diff
+checks and two readiness checks pass. The hash-bound prospective repair has not been used in a
+pilot and authorizes no model call or retrospective rescore.
+
+The B3 ordinary-realization path specified by the protocol remains unimplemented; packet flags
+alone do not establish a verifier-only ablation against the constrained realizer. Exact execution
+paths, prompts and model choices still require a prospective declaration. No retained output,
+semantic annotation, endpoint score, physical allocation or alpha spending changed. The failed
+support canary remains closed and P11 retains nineteen open conditions. See
+`docs/REALIZER_FINITE_NUMBER_REPAIR_2026-09-30.md` and its bound prospective repair manifest.

@@ -1,0 +1,47 @@
+{
+  "b3_ordinary_realization_execution_path": "UNIMPLEMENTED_REQUIRES_EXPLICIT_PROSPECTIVE_SCOPE_DECISION",
+  "bindings": {
+    "audit": {
+      "path": "analysis/audit_claim_aware_realization_v2.py",
+      "raw_sha256": "43c335bcd1e1b9e779dbab714ec1e025118ed89b6726900094322cc1dc02a433"
+    },
+    "failed_measurement_gate": {
+      "path": "manifests/operations/evidence-calibration-combined-support-canary-disposition-v1.json",
+      "raw_sha256": "355dd15cc1a3792cb16cfab1bbdb2e43a61f8a9c2c3df662549502da28372b26"
+    },
+    "new_realizer": {
+      "path": "analysis/realize_evidence_calibrated_explanation_v2.py",
+      "raw_sha256": "7c40fa0f2c7baf78d3d063733c9161845a03ae8fcaac12f72342eeb8b00b2e50"
+    },
+    "note": {
+      "path": "docs/REALIZER_FINITE_NUMBER_REPAIR_2026-09-30.md",
+      "raw_sha256": "b7529e93569c22f012e24ba6623549a1c2a5e93e63dfb9f16dd1f0f2341dd675"
+    },
+    "old_realizer": {
+      "path": "analysis/realize_evidence_calibrated_explanation.py",
+      "raw_sha256": "cddc947e2276a586f136a9b6ce19c5f6b871abc3e4a7ce84f92c20ce9e9b99d1"
+    },
+    "synthetic_fixtures": {
+      "path": "tests/test_claim_aware_realization.py",
+      "raw_sha256": "15659abb6f2d5fd24539ad8fca2159c9a0fa4fe2ace849b25df0eaeb43d0cc3c"
+    },
+    "tests": {
+      "path": "tests/test_claim_aware_realization_v2.py",
+      "raw_sha256": "54087be894cfc1b503a9be79ae1cccae4ddef7115203c7c95e1c1ab1c6a709f2"
+    }
+  },
+  "changed_behavior": "Nonfinite candidate float invalidates its clause; existing local repair and mismatch audit apply. Finite valid outputs differ only in version.",
+  "confirmation_independent_n": 0,
+  "confirmatory_alpha_consumed": 0.0,
+  "model_calls_authorized": false,
+  "new_version_used_in_pilot": false,
+  "observation_scope": "Project-authored synthetic in-memory NaN candidate; v1 renders approved value but incorrectly audits ACCEPTED with no numeric mismatch. No retained model output is implicated.",
+  "old_outputs_rescored": false,
+  "old_realizer_changed": false,
+  "p11_authorized": false,
+  "pilot_annotation_authorized": false,
+  "recorded_date": "2026-09-30",
+  "replication_independent_n": 0,
+  "schema": "crane-claim-realizer-finite-number-amendment/v1-development",
+  "status": "PROSPECTIVE_DEVELOPMENT_REPAIR_NOT_EXECUTION_FROZEN"
+}
