@@ -1,5 +1,8 @@
 # Executed marine development results
 
+Latest completed contact-v2 replay is reported in [CONTACT_V2_RESULTS.md](CONTACT_V2_RESULTS.md): strict scores 5/6 B2 and 6/6 B4, both 24/24 common units and 2/2 answerable sampled intervals. A tiny growth-reference scope discrepancy does not establish a material useful-outcome advantage. This inspected replay adds zero physical/configuration N; no confirmatory/replication or superiority result exists. Earlier development snapshots below remain distinct and unchanged in their immutable capsules.
+
+
 The strong tool agent and deterministic marine contract condition tied on the completed development comparison. This is agent-assessed feasibility evidence, not superiority or human validation. Historical replay is not fresh; the two fresh physical recordings constitute one paired approach cluster. The pilot stopped at a third capture's strict technical failure, preserving four physically untouched rows under the pilot allocation. No confirmatory alpha or pooled land N is used.
 
 | Recording | B2 answer success | Marine B4 answer success | B2 required units | Marine B4 required units |

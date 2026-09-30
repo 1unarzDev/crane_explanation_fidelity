@@ -316,3 +316,6 @@ PYTHONPATH=analysis python analysis/publish_roboboat_contact_policy_capsule_v2.p
 ```
 
 No response, extraction or support queue remains live. Do not regenerate the completed banks or retry retained failed qualification identities. Publication requires complete-bank hash/annotation reproduction and includes all original source answers, reviews, labels and failed qualifier versions separately. It changes no shared DVC pointer or main branch.
+
+
+Completed contact-comparison-v2 capsule verified and isolated coordinator intake completed: 623 unique safe files, 9,642,758 bytes, SHA-256 `290846d37f5a9112ca10b062e149a236a9392fce74914035677ddae3d8985855`. Source integration checkpoint `1c889ad`, unchanged crane_ml `0df6838` and astro `3620237`; manifest/ledger are `publication_artifact_manifest_contact-comparison-v2.json` / `publication_intake_ledger_contact-comparison-v2.json`. Mixed evaluator/qualification material must never be mounted wholesale to methods. All pipeline stages are terminal. No shared DVC/ledger/main integration or submission. This completes the inspected contact-repair development replay, not the whole registered study: prospective material-primary/citation qualification, coordinated allocation/resources, untouched confirmation and fresh replication remain absent.
