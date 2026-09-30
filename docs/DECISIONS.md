@@ -4983,3 +4983,51 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   acquisition, alpha spending or P11 freeze. Failed support/unlaunched C and unanswered
   reopening remain controlling. N=0 and nineteen open conditions; prospective
   five-method reporting and unfavorable/inconclusive outcomes remain required.
+
+
+## 2026-09-30 — account complete local MCP responses through separate egress guard
+
+- **Gap:** MCP v5 retained generated responses but did not check sink write counts or
+  total egress bytes. Preserve prior modules. New ledger/coordinator v3 binds typed
+  output total in allowed plan configuration; selected source set includes the ledger.
+- **Policy:** reserve whole encoded reply including framing before send; short counts
+  advance only unsent suffix. Flush and retention precede settlement. Unknown counts,
+  write/flush/storage failures close admission with pending/null remaining state.
+  Oversized replies are withheld in full; preserve generated RPC records, charge
+  CPU already consumed and stop queued calls. No truncation, summary replacement,
+  response/computation replay or owner reset. No scientific failure mapping frozen.
+- **Evidence:** 46 distinct focused checks plus two targeted strengthened-check reruns
+  and seven pre-bound fixed flows pass. B0/B1 write/flush 429 bytes each; B2/B3/B4
+  exactly 18,099 each under short writes, preserving full reads/literals. Separate
+  1,024-byte flow withholds full tool response, retains 33.701 ms CPU and leaves queued
+  call unexecuted. Injected two-byte sink failure retains unknown delivery/null
+  remaining state. Four services absent; all seven owners reject restart.
+- **Boundary:** scope is encoded local replies, not peer/model receipt, provider tokens,
+  input/stderr/audit bytes, host work or full turn budget. No generation/pre-computation
+  byte cap. Installed-client v3, full model tools/rendering/capacity, immutable runtime/
+  storage and power-loss/distributed durability remain open. No caller migration.
+- **Governance:** no semantic/annotation output, method-key join, pilot score, physical
+  acquisition, alpha spending or P11 freeze. Failed support/unlaunched C and unanswered
+  reopening remain controlling; N=0 and nineteen open conditions. Scientific budgets
+  and five-method comparative reporting remain prospectively governed.
+
+
+## 2026-09-30 — preserve unwritten-flush egress defect and require complete write
+
+- **Defect:** initial writer v1 allowed flush after intent-retention failure before
+  any write. A retained injected regression produces a false receipt: 3 settled
+  bytes, 0 actual sink bytes. Initial 46 checks/two reruns missed this path. Preserve
+  original writer/coordinator v3, raw flows and false receipt; do not adopt it.
+- **Repair:** writer v2 adds completed-write state and requires it before flush.
+  Coordinator v4 changes only writer/source selection and owner schema. Matched
+  regression rejects unwritten flush, preserves 0 settled bytes, pending response 1,
+  null remaining total and no settlement record. No old receipt is replaced.
+- **Evidence:** 48 repaired checks, a separate seven-flow set and two retained
+  regressions pass. Exact byte totals remain 429 for B0/B1, 18,099 for B2/B3/B4.
+  Repaired budget flow withholds full result, charges 33.616 ms CPU and leaves queued
+  call unexecuted. Eight services across both fixed sets are absent.
+- **Boundary:** local writes/flush only; installed-client v4, peer/model receipt,
+  rendering/capacity, full turn accounting, immutable runtime and durability remain
+  open. No semantic/annotation output, score, acquisition, alpha spending, caller
+  migration or P11 freeze. N=0, nineteen open conditions and unanswered reopening
+  remain. This is an implementation defect, not an observed model/method failure.

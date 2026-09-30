@@ -1,5 +1,28 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Response egress addendum after `1e9ae2e6` — 2026-09-30
+
+A [separate repaired egress ledger/coordinator v4](RESPONSE_EGRESS_2026-09-30.md) binds explicit
+response-byte total in the development plan and accounts complete encoded local MCP
+responses/framing. Exact short writes advance only the unsent suffix; flush/settlement
+must succeed before settlement. Uncertain write/storage closes admission with pending
+state and null remaining budget. Oversized whole responses are withheld and retained
+operator-side; CPU already used remains charged and queued calls do not execute.
+Initial suites pass 46 checks plus two targeted reruns but miss an unwritten-flush
+defect: retained v1 falsely settles 3 bytes with 0 sink bytes after intent-storage
+failure. Preserve it. Writer v2 requires complete write before flush; coordinator v4
+changes only selection/source binding and owner schema. Forty-eight repaired checks,
+a separate seven-flow set and two matched retained regressions pass. Exact outputs total 429 bytes for B0/B1 and 18,099 for each
+B2/B3/B4 under short writes. A 1,024-byte flow withholds the generated Unicode tool
+response and retains 33.701 ms CPU; an injected two-byte sink failure remains unknown.
+The repaired budget flow retains 33.616 ms CPU. Eight retained services across both
+fixed sets are absent and all scopes reject restart. Local flush does not prove
+peer/model receipt or rendering. Installed-client v4, complete turn accounting/capacity,
+immutable runtime and durability remain open. Study callers/observers do not migrate.
+No semantic/annotation call, score, acquisition, alpha spending or P11 freeze; N=0,
+nineteen open conditions and unanswered measurement reopening remain.
+
+
 ## Installed-client plan-bound owner addendum after `60c52cfb` — 2026-09-30
 
 A [separate observer v7](INSTALLED_CLIENT_PLANNED_OWNER_2026-09-30.md) routes through
