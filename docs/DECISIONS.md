@@ -4663,3 +4663,26 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   pilot score, physical acquisition, alpha spending or P11 freeze. Failed combined
   support/unlaunched C and pending reopening remain; the explicit decision request
   is unanswered. P11 keeps nineteen open conditions and confirmation/replication N=0.
+
+
+## 2026-09-30 — connect scratch/lifecycle executor through separate broker and MCP versions
+
+- **Integration:** broker v4 selects executor v7, requiring explicit local/tree/
+  scratch limits in each request. Preserve exact tools, full reads, permissions,
+  nested one-shot records and no replay. MCP stdio v3 binds scratch in strict
+  coordinator/session config and returns null technical errors for incomplete
+  lifecycle, without exposing partial audit bytes.
+- **Evidence:** 40 focused checks pass across two invocations. Actual fixed stdio
+  exchanges pass for all five methods: B0/B1 execute zero tools and B2/B3/B4 have
+  identical inventories, exact full reads/literal output and null overflow errors.
+  A distinct in-process dispatch (not installed client) injects a missing mount;
+  incomplete lifecycle yields null technical failure. All seven services are absent.
+  An existing staged B2 primitive matches its deterministic reference.
+- **Scope:** existing installed-client inspectors and study callers do not migrate.
+  Full provider/model-facing tools/renderer/capacity, cumulative/turn budgets,
+  immutable runtime and intermediate startup attestation remain open. Synthetic
+  limits are not study budgets; full read access is not silently truncated.
+- **Governance:** no semantic model/automated annotation call, method-key join,
+  real-pilot score, physical acquisition, alpha spending or P11 freeze. Preserve
+  failed support/unlaunched C and unanswered reopening. P11 keeps nineteen open
+  conditions, confirmation/replication N=0 and all prospective method comparisons.

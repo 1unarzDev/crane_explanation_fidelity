@@ -1,5 +1,18 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Scratch/lifecycle broker addendum after `b6121955` — 2026-09-30
+
+A [separate broker v4/MCP stdio v3](LIFECYCLE_BROKER_MCP_2026-09-30.md) connects
+executor v7 with explicit local/tree/scratch limits and complete-lifecycle gating.
+Forty focused checks, five actual fixed stdio exchanges and a separate injected
+mount-failure dispatch pass. Tool parity/full reads are preserved; incomplete
+namespace status supplies no partial result. All seven computation services are
+absent. Existing installed-client inspectors/study callers are unchanged; full
+provider/model-facing integration, capacity/turn budgets, immutable runtime and
+measurement remain open. No semantic invocation, score or alpha spending occurs.
+P11 keeps nineteen open conditions, N=0 and the unanswered reopening decision.
+
+
 ## Service lifecycle addendum after `9f06ed37` — 2026-09-30
 
 A [separate executor v7 and operator wrapper](SERVICE_NAMESPACE_LIFECYCLE_2026-09-30.md)
