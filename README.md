@@ -6,7 +6,7 @@ submission. The workshop advertises **October 4, 2026 AoE**, but the live portal
 earlier than literal end-of-day AoE; the project keeps October 3 as its completion/review buffer.
 The central failure mode is fluent but unsupported language—not awkward wording.
 
-## Active research state — 2026-09-29
+## Active research state — 2026-09-30
 
 The forward question is whether a robot explanation's specificity tracks the diagnostic evidence
 actually visible to the robot. The paper has three contributions: atomic claim/evidence contracts;
@@ -18,7 +18,9 @@ non-pooled secondary arm. RoboBoat is
 bounded development/external-validity material.
 
 The inspected development pipeline has 60 accepted B4 outputs and 57 valid B2 outputs, but no
-qualified paired support annotation or evidence-calibration effect. P11 is not frozen;
+paired support annotation or evidence-calibration effect. Astra-high is qualified for the
+synthetic atomic-support task and a separate stance/kind/polarity task; pilot inventories and
+endpoint mapping remain open. P11 is not frozen;
 confirmation and replication each have independent N=0. The exact active boundaries and open
 gates are in the [current-state checkpoint](docs/CURRENT_STATE_2026-09-29.md),
 [evidence-calibration protocol](docs/EVIDENCE_CALIBRATION_PROTOCOL.md), and newest entries of the

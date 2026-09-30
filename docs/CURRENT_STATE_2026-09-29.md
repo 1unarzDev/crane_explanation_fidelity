@@ -284,3 +284,22 @@ isolated 24-case passes are governed by
 `research/explanation_fidelity/experiment_configs/prospective/evidence-calibration-claim-role-v2r2-freeze.json`.
 The offline freeze audit and no-retry runner tests pass. These calls have not yet run at this
 checkpoint; endpoint mapping and P11 remain closed.
+
+## 2026-09-30 v2r2 role qualification reconciliation
+
+The frozen v2r2 non-study canary and both isolated 24-case synthetic passes have now completed.
+All 49 calls are structurally valid and retained without retry; each pass exactly matched the
+frozen stance/kind/polarity reference on 20/20 held-out cases. A project semantic review of all
+24 cases and 39 atomic meanings found no reference defect. The hash-bound disposition qualifies
+only the synthetic stance/kind/polarity task. It does not qualify mechanistic endpoint mapping,
+response abstraction ranks, support, or physical truth. The v1 12/20 and 14/20 failure remains
+retained. The 113 pilot inventories still need response-level review, and one interrupted inventory
+request remains quarantined; no pilot role or support label has been generated.
+
+`model_outputs.dvc` now binds the v2r2 raw calls and its objects are remotely synchronized. The
+P11 component hashes match, but its readiness audit still fails closed on 17 conditions including
+the absent freeze. The freshness audit still reports 120 former confirmation layouts and 20 former
+replication layouts physically materialized, with 100 old-schedule replication layouts quarantined.
+The error-budget audit still reports 0.02 consumed, at most 0.01 future discovery alpha, and 0.02
+replication-only. Confirmation and replication independent N remain zero. The manuscript and
+claim–evidence map describe this as development measurement readiness, not a comparative result.

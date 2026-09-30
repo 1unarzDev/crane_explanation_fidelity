@@ -3144,3 +3144,24 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - **Boundary:** this is not P11. No pilot role, mechanistic flag, response rank, endpoint score,
   confirmation authorization, independent episode, or alpha follows. A model pass must still be
   independently compared with the frozen reference and explicitly disposed.
+
+## 2026-09-30 — qualify the v2r2 synthetic stance/kind/polarity task only
+
+- **Retained execution:** the non-study schema canary and both isolated 24-case Astra-high passes
+  completed with one durable-intent call per identity, structurally valid returns, no interrupted
+  intent, and no quality-driven retry. The read-only audit found exact stance/kind/polarity
+  agreement on all 20 held-out cases in each pass. The retained 49-call set, frozen task, and
+  audit are bound in `evidence-calibration-claim-role-v2r2-qualification-outcome.json` and
+  synchronized under `model_outputs.dvc`.
+- **Project semantic review:** a read of all 24 synthetic answers, 39 reviewed atomic meanings,
+  and the revised codebook found no remaining reference defect in the frozen task. This is
+  agent-assisted project review, not human validation. The earlier failed v1 task remains failed
+  and its outputs remain preserved.
+- **Decision:** qualify only method-blind stance, ontology kind, and polarity on this synthetic
+  task. Do not infer support, physical truth, mechanistic endpoint status, or a linear response
+  abstraction rank from this pass. Pilot use still requires complete reviewed atomic inventories;
+  hedged/unresolved endpoint mapping and abstraction treatment require separate prospective
+  development and P11 decisions.
+- **Boundary:** no pilot role label or B2/B4 comparative annotation was generated. P11 remains
+  closed on 17 readiness conditions including the absent freeze; confirmation and replication
+  independent N remain zero, and no new alpha was used.

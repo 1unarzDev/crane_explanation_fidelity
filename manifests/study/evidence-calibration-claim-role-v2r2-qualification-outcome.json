@@ -1,0 +1,42 @@
+{
+  "schema": "crane-evidence-calibration-claim-role-v2r2-qualification-outcome/v1",
+  "recorded_date": "2026-09-30",
+  "status": "PASS_SYNTHETIC_STANCE_KIND_POLARITY_ONLY",
+  "freeze_path": "research/explanation_fidelity/experiment_configs/prospective/evidence-calibration-claim-role-v2r2-freeze.json",
+  "freeze_raw_sha256": "8207d88e63fdd2d9f7e1426d6d3cdc21179a86ab5a886ef5d4a572604a2e90cc",
+  "retained_output_root": "model_outputs/automated_annotations/evidence-calibration-claim-role-v2r2-synthetic",
+  "retained_call_count": 49,
+  "retained_call_record_set_canonical_sha256": "67f2319cb8f8e8172f9357eba0b39412d425a136148a6d54a999dbb0ee6e109e",
+  "qualification_audit_canonical_sha256": "f0ac588a89ca71575f707e78a83dc506552d1c86d54323dadf244d9bf2affe0d",
+  "canary_status": "STRUCTURALLY_VALID_ROLE_QUALIFICATION_UNSCORED",
+  "isolated_passes": {
+    "A": {
+      "structurally_valid_cases": 24,
+      "heldout_exact_matches": 20,
+      "heldout_cases": 20,
+      "retained_failures": 0,
+      "interrupted_intents": 0
+    },
+    "B": {
+      "structurally_valid_cases": 24,
+      "heldout_exact_matches": 20,
+      "heldout_cases": 20,
+      "retained_failures": 0,
+      "interrupted_intents": 0
+    }
+  },
+  "independent_project_semantic_review_complete": true,
+  "semantic_review": "Project read of all 24 frozen synthetic response texts, 39 atomic meanings, prompt boundaries, and both exact-return comparisons found no reference defect. This is agent-assisted project review, not human validation; exact agreement establishes only the stated synthetic classification task.",
+  "role_stance_kind_polarity_qualification_authorized": true,
+  "quality_driven_retries": 0,
+  "pilot_role_annotation_authorized": false,
+  "endpoint_scoring_authorized": false,
+  "p11_authorized": false,
+  "open_gates": [
+    "113 blinded pilot inventories require response-level completeness review; one interrupted inventory remains quarantined",
+    "prospective treatment of hedged and unresolved roles and mapping from role/kind/polarity to mechanistic endpoint and abstraction rank",
+    "fresh paired development pilot, nominal ladder alignment, useful coverage and episode-level discordance, prospective P11 freeze"
+  ],
+  "confirmation_independent_n": 0,
+  "replication_independent_n": 0
+}
