@@ -160,3 +160,9 @@ and replication independent N remain zero and the alpha ledger is unchanged.
 
 This checkpoint is on `codex/roboboat_terminal_evidence` in the new worktree. The submission
 benchmark remains land/Nav2; RoboBoat remains bounded development/external-validity material.
+
+A later prospective continuation now binds only the 158 never-launched identities in original
+order, with an unchanged qualified task and a separate output root. Six offline tests pass.
+Its new non-study schema canary has not run at this declaration checkpoint. The unknown A
+identity remains quarantined; even a completed continuation will need a recorded incomplete-pass
+measurement disposition and whole-episode sensitivity before paired development interpretation.

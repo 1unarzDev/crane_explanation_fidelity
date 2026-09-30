@@ -3389,3 +3389,23 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   No comparative effect, support assessment, P11 freeze, confirmation episode, replication
   episode, or alpha consumption is created. The new worktree name does not change the submission
   benchmark or promote RoboBoat beyond its bounded development/external-validity role.
+
+## 2026-09-30 — declare only the never-launched pilot role continuation
+
+- **Prospective scope:** bind exactly the 158 never-launched fixed identities from the retained
+  interruption audit: 44 A and 114 B calls in original order. Preserve the unknown A identity
+  without retry or replacement. Keep the exact qualified v2r2 prompt, schema, Astra-high setting,
+  no-tool transport, and CLI version. A separate output root preserves the original 69-return
+  interruption snapshot and its audit byte-for-byte.
+- **Execution gate:** the new hash-bound continuation runner first verifies the original
+  declaration, reviewed inputs, qualified task, interruption snapshot, and exact uncalled task
+  list. A new non-study schema canary must pass before continuation pilot calls. The continuation
+  retains durable intent, one call per identity, stop on first failure, and no quality-driven
+  retry. Six targeted offline tests pass; no continuation model call has been made at this
+  pre-call checkpoint.
+- **Measurement consequence:** one A return will remain missing even if the continuation
+  completes. Its B identity is a separately declared isolated pass, not a replacement for A.
+  A prospective measurement disposition and whole-episode exclusion sensitivity are required
+  before interpreting any later paired development estimate. The continuation generates only
+  stance/kind/polarity returns; it authorizes no support label, diagnostic rank, endpoint score,
+  P11 freeze, independent confirmation N, replication N, or alpha consumption.
