@@ -1,5 +1,18 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Five-method reporting addendum after `a16a63f9` — 2026-09-30
+
+A [separate v2 reporting layer](FIVE_METHOD_REPORTING_2026-09-30.md) now reports
+actual method names, failure rates, useful coverage and explicit pointwise interval
+interpretation for all four declared B4 contrasts. Original effects, intervals,
+exact p-values and three-secondary Holm values are preserved; ties, unfavorable and
+inconclusive results remain visible. Twenty-three synthetic analysis/report checks
+pass. No retained response scoring, method-key join or model/annotation call occurred.
+P11 retains nineteen open conditions, zero confirmation/replication N, no secondary
+alpha allocation and pending measurement reopening. Exact prospective inference and
+fresh qualified five-method evidence remain open.
+
+
 ## Successful restoration addendum after `533dfed8` — 2026-09-30
 
 A [fresh repaired restoration and separate parity audit](RESTORED_RUNTIME_PARITY_2026-09-30.md)

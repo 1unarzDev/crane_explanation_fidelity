@@ -4459,3 +4459,22 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - **Governance:** preserve failed measurement/unlaunched C and pending reopening. No model/agent
   annotation invocation, method-key join, physical acquisition, alpha expenditure or independent N
   increase. P11 retains nineteen open conditions; confirmation/replication N remain zero.
+
+
+## 2026-09-30 — preserve five-method inference and clarify development reporting
+
+- **Finding:** v1 retains every secondary comparison and Holm p-value, but secondary
+  rows omit explicit risks and projected control descriptors carry B2 field names.
+- **Resolution:** add a separate v2 reporting wrapper bound to the exact current
+  comparison declaration. Uniformly report actual comparators, counts/risks,
+  discordances, coverage, effects, pointwise bootstrap intervals and exact/adjusted
+  p-values. Preserve v1 and every existing estimate and inference choice.
+- **Interpretation:** retain tied, unfavorable and inconclusive results. Flag
+  zero-spanning/degenerate intervals; no-discordance empirical bootstrap bounds do
+  not establish population equivalence. No confirmatory rejection decision or
+  additional alpha allocation is made; three-secondary Holm correction remains
+  exploratory pending P11.
+- **Verification:** 23 synthetic reporting/analysis tests pass. No retained response
+  scoring, method-key join, model/annotation invocation, physical acquisition or
+  alpha expenditure. The failed combined support gate and pending reopening stay
+  unchanged. P11 keeps nineteen open conditions and confirmation/replication N=0.
