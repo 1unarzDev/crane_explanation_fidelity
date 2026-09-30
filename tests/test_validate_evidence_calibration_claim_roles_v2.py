@@ -28,7 +28,7 @@ def example() -> tuple[dict, dict]:
         "schema": RETURN_SCHEMA,
         "opaque_response_id": "synthetic-01",
         "claim_roles": [
-            {"item_id": "c1", "stance": "ASSERTED_CURRENT_EPISODE",
+            {"item_id": "c1", "stance": "ASSERTED_FACT",
              "claim_kind": "RECOVERY_TRACE_EVENT", "polarity": "POSITIVE",
              "rationale_span": "Wait completion"},
             {"item_id": "c2", "stance": "INFERENCE_LIMITATION",

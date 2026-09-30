@@ -10,7 +10,7 @@ nonempty `rationale_span` copied from that atom's `response_span`. Do not combin
 
 `stance`:
 
-- `ASSERTED_CURRENT_EPISODE`: the answer asserts a fact about this run. This includes an explicit
+- `ASSERTED_FACT`: the answer asserts a fact about this run, its evidence, or its configuration. This includes an explicit
   negative finding such as “no recovery occurred.” A statement about what a trace records is
   also asserted, but its kind is `SOURCE_OR_CONFIG_FACT` when it only describes the record.
 - `HEDGED_CURRENT_EPISODE`: the answer offers a possibility for this run (“might be wheel slip”).
@@ -28,7 +28,8 @@ nonempty `rationale_span` copied from that atom's `response_span`. Do not combin
   code alone does not establish measured robot motion.
 - `RECOVERY_TRACE_EVENT`: recovery invocation, completed `Wait` child, or explicit episode-level
   nonoccurrence of recovery. “No recovery was recorded in the retained trace” is instead
-  `SOURCE_OR_CONFIG_FACT`; it does not assert physical nonoccurrence.
+  `SOURCE_OR_CONFIG_FACT`; it does not assert physical nonoccurrence. A reported temporal order
+  between a recovery event and later goal result is `RECOVERY_TRACE_EVENT`, not a causal claim.
 - `MEASURED_RESPONSE_RECOVERY`: an explicit later return of measured robot response. A bare
   unsourced phrase such as “motion returned” is ambiguous; choose `UNRESOLVED` if the atom and
   answer do not identify what returned.

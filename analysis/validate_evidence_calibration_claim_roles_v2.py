@@ -13,7 +13,7 @@ from typing import Any
 INPUT_SCHEMA = "crane-evidence-calibration-claim-role-input/v2-development"
 RETURN_SCHEMA = "crane-evidence-calibration-claim-role-return/v2-development"
 STANCES = {
-    "ASSERTED_CURRENT_EPISODE", "HEDGED_CURRENT_EPISODE",
+    "ASSERTED_FACT", "HEDGED_CURRENT_EPISODE",
     "INFERENCE_LIMITATION", "UNENDORSED_HYPOTHETICAL_OR_QUOTE", "UNRESOLVED",
 }
 KINDS = {

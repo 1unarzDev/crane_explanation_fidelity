@@ -3072,3 +3072,18 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - **Boundary:** no fresh held-out suite, semantic construction review, task freeze, schema canary,
   qualification call, pilot role label, or endpoint mapping exists yet. The failed v1 disposition
   and P11 prohibition remain in force; independent N and alpha do not change.
+
+## 2026-09-30 — construct fresh uncalled v2 role references
+
+- **Construction:** a 24-case v2 draft has four development and 20 held-out synthetic answers,
+  with 41 atomic meanings. The text does not exactly reuse any v1 answer. Cases test trace
+  absence versus episode nonoccurrence, completed `Wait` versus measured recovery and causation,
+  raw stationarity versus command-motion relation, hedged physical causes, geometry/planning,
+  source quotations, and inference limits. The candidate now calls its general asserted stance
+  `ASSERTED_FACT`, so source/configuration facts do not masquerade as episode-only speech acts.
+- **Review boundary:** structural validation confirms IDs, exact spans, categories, and return
+  shape; five focused tests pass. An initial construction read corrected three overextended or
+  underspecified claim texts before any call. A separate semantic reference review remains open
+  before a prospective task freeze. The draft is not a qualified instrument.
+- **Boundary:** no schema canary, role-classifier call, pilot role label, endpoint score, P11
+  authorization, independent episode, or alpha follows from the synthetic construction.

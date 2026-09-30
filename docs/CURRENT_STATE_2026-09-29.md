@@ -254,3 +254,9 @@ validator tests pass, and its outputs explicitly cannot authorize a mechanistic 
 rank, or endpoint score. The candidate lacks a fresh held-out suite, reviewed gold, freeze,
 qualification, and prospectively bound endpoint mapping. The v1 failed result remains the active
 measurement disposition; P11 remains closed.
+
+The v2 draft now includes 24 fresh synthetic answers (four development, 20 held out) and 41
+atomic reference meanings. All exact spans and return fields validate, and an initial
+construction read corrected three claim texts before calls. The draft still needs a separate
+semantic reference review, exact freeze, canary, two isolated qualification passes, and a bound
+endpoint mapping. No pilot role label has been generated.
