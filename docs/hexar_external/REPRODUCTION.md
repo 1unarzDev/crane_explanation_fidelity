@@ -115,3 +115,25 @@ data/hexar_external/.venv/bin/python analysis/hexar_external/archive_bundle_v3.p
 Private archive location and all bundle/tar hashes are recorded in the checked restore receipts. The byte archive is restorable but resides on the local filesystem; an independent disaster-recovery copy/transfer destination remains optional coordination work. Recording redistribution rights remain unresolved, so do not treat this private preservation as authority to publish raw bags, extracted streams or source-bearing provider payloads.
 
 For complete unsupported-causal reporting, the final-only secondary `report_causal_v3.py` requires separately blind-coded and independently reviewed causal-role sidecars. It preserves qualified support labels and the primary endpoint, records ambiguous roles/support as unknown bounds, and reports no causal p-value. The protocol was hash-bound in the descriptive freeze before reserved generation; see v3/CAUSAL_REPORTING.md.
+
+## Reserved blind extraction route
+
+Once ordered generation closes, session 36685 runs `after_reserved_generation_v3.py --release-pid 1252763` and logs to `v3/ordered-extraction.log`. It verifies the live release process identity, waits for its termination, then binds a projection containing only opaque IDs/exact answer text, runs at most two isolated no-tool Astra/high developer extraction calls, and stops at a candidate inventory. The projection contains no question, evidence/reference, method key, ontology or support label. Unique exact texts share extraction only; all physical recording/question/mask jobs retain separate support assessment and analysis identities.
+
+```bash
+data/hexar_external/.venv/bin/python analysis/hexar_external/extract_v3.py --stage project
+data/hexar_external/.venv/bin/python analysis/hexar_external/extract_v3.py --stage extract
+data/hexar_external/.venv/bin/python analysis/hexar_external/extract_v3.py --stage assemble
+# Independently review every unique raw text/statement/span, then release atomic_inventory.json
+# with a hash-bound parent_inventory_review.json before any support output.
+data/hexar_external/.venv/bin/python analysis/hexar_external/audit_v3.py --cohort reserved
+data/hexar_external/.venv/bin/python analysis/hexar_external/extract_v3.py --stage roles
+data/hexar_external/.venv/bin/python analysis/hexar_external/extract_v3.py --stage assemble-roles
+# Independently code parent roles from causal_roles.parent_projection.json, without viewing coder labels.
+data/hexar_external/.venv/bin/python analysis/hexar_external/annotate_v3.py --cohort reserved --stage packets
+data/hexar_external/.venv/bin/python analysis/hexar_external/annotate_v3.py --cohort reserved --stage annotate
+data/hexar_external/.venv/bin/python analysis/hexar_external/report_v3.py --cohort reserved
+data/hexar_external/.venv/bin/python analysis/hexar_external/report_causal_v3.py
+```
+
+Extraction/role coding is unqualified developer work, separate from the qualified support task. Its prompt/schema/executor/model binding is immutable before calls; no quality/technical retries are performed. Exact source sentence spans must collectively cover every non-whitespace source character, but that mechanical check does not prove semantic exhaustiveness. The parent reviews all unique texts before support scoring. Raw failed calls stay retained; separately documented manual completion can fill an unextracted text without retrying or rescoring the provider return. Failed causal-role calls remain null in bounds. Earlier v1/v2/v3 development inventories and labels remain unchanged.
