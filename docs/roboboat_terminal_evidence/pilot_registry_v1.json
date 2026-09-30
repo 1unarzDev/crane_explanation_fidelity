@@ -1,0 +1,90 @@
+{
+  "schema": "roboboat-terminal-pilot-registry/v1",
+  "disposition": "DEVELOPMENT_EXPLORATORY_NO_CONFIRMATORY_ALLOCATION",
+  "created_date": "2026-09-30",
+  "configuration_n": 6,
+  "cluster_n": 3,
+  "rows": [
+    {
+      "id": "boat-terminal-pilot-001",
+      "cluster_id": "approach-01",
+      "family": "known-route",
+      "action_mode": "follow-path",
+      "shape": "known",
+      "heading_offset": 0.0,
+      "internal_xy_tolerance_m": 0.2,
+      "seed": 31000,
+      "status": "untouched-prospectively-registered",
+      "retry_budget": 0
+    },
+    {
+      "id": "boat-terminal-pilot-002",
+      "cluster_id": "approach-01",
+      "family": "known-route",
+      "action_mode": "follow-path",
+      "shape": "known",
+      "heading_offset": 0.0,
+      "internal_xy_tolerance_m": 0.4,
+      "seed": 31000,
+      "status": "untouched-prospectively-registered",
+      "retry_budget": 0
+    },
+    {
+      "id": "boat-terminal-pilot-003",
+      "cluster_id": "approach-02",
+      "family": "direct-route",
+      "action_mode": "navigate-to-pose",
+      "shape": "direct",
+      "heading_offset": 0.0,
+      "internal_xy_tolerance_m": 0.4,
+      "seed": 31001,
+      "status": "untouched-prospectively-registered",
+      "retry_budget": 0
+    },
+    {
+      "id": "boat-terminal-pilot-004",
+      "cluster_id": "approach-02",
+      "family": "direct-route",
+      "action_mode": "navigate-to-pose",
+      "shape": "direct",
+      "heading_offset": 0.0,
+      "internal_xy_tolerance_m": 0.2,
+      "seed": 31001,
+      "status": "untouched-prospectively-registered",
+      "retry_budget": 0
+    },
+    {
+      "id": "boat-terminal-pilot-005",
+      "cluster_id": "approach-03",
+      "family": "shifted-known-route",
+      "action_mode": "follow-path",
+      "shape": "shifted-known",
+      "heading_offset": 0.0,
+      "internal_xy_tolerance_m": 0.2,
+      "seed": 31002,
+      "status": "untouched-prospectively-registered",
+      "retry_budget": 0
+    },
+    {
+      "id": "boat-terminal-pilot-006",
+      "cluster_id": "approach-03",
+      "family": "shifted-known-route",
+      "action_mode": "follow-path",
+      "shape": "shifted-known",
+      "heading_offset": 0.0,
+      "internal_xy_tolerance_m": 0.4,
+      "seed": 31002,
+      "status": "untouched-prospectively-registered",
+      "retry_budget": 0
+    }
+  ],
+  "contract_sha256": "f4cb6a91dd5b00f1e913ca0e0f1d1e1e845c95ccfe336ee669b1549fe7e73049",
+  "no_outcome_selection": true,
+  "stop_on_technical_failure": true,
+  "confirmation": {
+    "authorized": false,
+    "alpha_allocated": 0.0,
+    "untouched_registry": "not-yet-allocated",
+    "coordinator_decision_required": true
+  }
+}
