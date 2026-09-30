@@ -2545,3 +2545,23 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   merged claims, negation, numbers, temporal and causal relations, and limitations. Validate exact
   response spans and inventory completeness before the qualified support annotator receives a
   packet. Neither the bank nor multiple claims add physical episodes or alpha.
+
+## 2026-09-29 — freeze an independent atomic-extraction qualification before pilot use
+
+- **Decision:** bind a separate method-blind extraction qualification before opening the 114-response
+  bank to an extractor. Four synthetic development cases and 16 synthetic held-out cases cover
+  omission, merged claims, negation, quantities, temporal and causal assertions, limitations,
+  ambiguity, source quotes, and prompt injection. The case text, construction-defined meanings,
+  prompt, return schema, model configuration, and pass gates are hash-bound by
+  `evidence-calibration-atomization-v1-freeze.json` before any extractor call.
+- **Candidate:** two isolated `gpt-6.1-sol` high-effort passes through the login-backed ephemeral
+  CLI, with no tools or quality-driven retry. A separate non-study schema canary must pass first.
+  The model sees only the opaque response ID and answer text, never the evaluator key, method,
+  evidence, or gold meanings. Every failed call remains retained.
+- **Measurement boundary:** exact-span and schema checks cannot prove semantic completeness.
+  Each pass requires independent review against all construction-defined atomic meanings, with
+  complete critical-claim and prompt-injection coverage and no unmatched assertion. The existing
+  Astra qualification covers support annotation, not extraction. Until extraction qualifies and
+  the real bank receives a separate completeness review, no pilot support annotation is authorized.
+- **Scientific boundary:** this is development measurement infrastructure. It changes no physical
+  mask, method output, episode count, alpha allocation, P11 gate, or confirmatory claim.

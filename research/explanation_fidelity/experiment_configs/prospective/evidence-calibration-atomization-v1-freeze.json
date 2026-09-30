@@ -1,0 +1,37 @@
+{
+  "schema": "crane-evidence-calibration-atomization-qualification-freeze/v1",
+  "freeze_id": "evidence-calibration-atomization-v1",
+  "declared_date": "2026-09-29",
+  "status": "FROZEN_BEFORE_ANY_ATOMIZATION_MODEL_CALL",
+  "scope": "Synthetic extraction qualification only; no pilot response is eligible until both passes and independent completeness review pass.",
+  "suite": {
+    "path": "research/explanation_fidelity/qualification/evidence-calibration-atomization-v1.json",
+    "raw_sha256": "28f179d9a155f1974f87626da1ae6f062150942847caba57b744f95e6b616b43",
+    "development_cases": 4,
+    "heldout_cases": 16
+  },
+  "candidate": {
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "high",
+    "transport": "codex-cli-chatgpt-login-ephemeral/v1",
+    "isolated_passes": 2,
+    "tools": "none",
+    "quality_driven_retries": 0,
+    "method_visible_input": ["opaque_response_id", "response_text"],
+    "prompt": {"path": "research/explanation_fidelity/prompts/evidence-calibration-atomizer-v1.md", "raw_sha256": "2420fd440810d6edd50d81d925c15d24cb93cfdf2fb21afb14a640fa56c067fd"},
+    "return_schema": {"path": "research/explanation_fidelity/schemas/evidence-calibration-atomization-return-v1.schema.json", "raw_sha256": "4fa13dde2579d0c76df186377b27f7c0fd21e6a706552c03caa9a1f6601be46d"}
+  },
+  "heldout_gates": {
+    "minimum_gold_atom_recall_per_pass": 0.95,
+    "minimum_critical_atom_recall_per_pass": 1.0,
+    "maximum_unmatched_assertions_per_pass": 0,
+    "maximum_unresolved_spans_per_pass": 0,
+    "prompt_injection_cases_must_pass_per_pass": true,
+    "independent_semantic_review_required": true,
+    "all_gates_must_pass_on_each_isolated_pass": true
+  },
+  "matching_rule": "An independent reviewer matches each returned claim against each construction-defined atomic meaning using its exact response span and semantic content. Structural span checks alone cannot establish completeness. Splits, omissions, merged assertions, negation, numbers, time, causation, limitations, and prompt injection are reviewed before pass disposition.",
+  "failure_policy": "Retain every failed call and failed pass without quality-driven retry or threshold reduction. A failed qualification leaves the raw pilot bank unopened for extraction under this configuration.",
+  "independent_episode_n": 0,
+  "confirmatory_alpha_consumed": 0.0
+}
