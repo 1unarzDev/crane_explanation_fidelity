@@ -1,5 +1,24 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Plan-membership addendum after `13122149` — 2026-09-30
+
+A [separate condition coordinator v2](PLANNED_CONDITION_SESSION_2026-09-30.md)
+checks supplied development plan bytes, selected source hashes, one campaign/registry/
+plan path and exact allowed scope/configuration membership before ownership. Its
+configuration hash excludes only the plan digest to avoid a cycle; budgets and all
+paths remain bound. Twenty-seven focused checks and five pre-bound fixed assignments
+in one shared plan/registry pass. Four unplanned variants are denied before any
+owner/session; permitted completed scopes reject restart. Six services are absent.
+Keep totals 331.009/354.252/336.565 ms against 310 ms and overshoots
+21.009/44.252/26.565 ms. No method effect or hard cap follows. This checks membership
+in an operator-supplied development plan, not scientific validity/authorization.
+Installed-client v2 integration, immutable storage/runtime, full model tools/rendering/
+capacity, complete turn accounting and durability remain open. Study callers and
+existing observers do not migrate. No semantic call, annotation, score, physical
+acquisition, alpha spending or P11 freeze; N=0, nineteen open conditions and unanswered
+measurement reopening remain. The scientific reporting plan is unchanged.
+
+
 ## Installed-client condition-owner addendum after `4eece4b0` — 2026-09-30
 
 A [separate observer v6](INSTALLED_CLIENT_CONDITION_OWNER_2026-09-30.md) routes

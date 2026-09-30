@@ -4931,3 +4931,29 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   acquisition, alpha spending or P11 freeze. Existing study callers stay unchanged.
   Failed combined support/unlaunched C and unanswered reopening remain controlling.
   N=0 and nineteen open P11 conditions; prospective five-method reporting remains.
+
+
+## 2026-09-30 — check development plan membership before condition ownership
+
+- **Gap:** original ownership accepted caller-supplied plan hash without validating
+  plan contents/configuration membership. Preserve original. Coordinator v2 checks
+  exact plan bytes, selected source hashes, campaign, plan/registry paths, unique
+  scope entries and permitted full configuration hashes before registry/admission.
+- **Binding:** configuration digest excludes only raw plan digest to avoid a cycle.
+  Scope, identity, paths, budgets and limits stay bound. Duplicate scopes with changed
+  budgets are rejected. Plan is development infrastructure only and model authorization
+  false. A copied plan or recomputed changed digest cannot rebind an existing registry.
+- **Evidence:** 27 focused checks and five fixed assignments in one shared plan/registry
+  pass. Four predeclared unplanned variants are denied before owner/session creation;
+  permitted completed scopes reject restart. Failed CPU charging/denial and full reads
+  remain exact; six services absent. Retain 331.009/354.252/336.565 ms total against
+  310 ms and 21.009/44.252/26.565 ms overshoot without hard-cap or method-effect claim.
+- **Limits:** supplied-plan membership is not scientific authorization. Alternative
+  plans/campaigns, mutable files, bypass, complete dependency/runtime binding and
+  power-loss/distributed durability remain open. Installed-client v2 integration,
+  full model tools/rendering/capacity and complete turn accounting remain open.
+- **Governance:** existing observers/study callers do not migrate. No semantic or
+  automated annotation output, method-key join, pilot score, physical acquisition,
+  alpha spending or P11 freeze. Failed combined support/unlaunched C and unanswered
+  reopening remain controlling. N=0 and nineteen open conditions; five-method
+  reporting remains required. This freezes no scientific schedule/population/budget.
