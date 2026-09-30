@@ -3980,3 +3980,30 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   nineteen open conditions with no component hash mismatch; alpha, quarantine and independent
   confirmation/replication N remain unchanged. All five-method comparison/reporting requirements
   continue to apply.
+
+
+## 2026-09-30 — implement B3 ordinary request/retention helpers and clarify ablation interpretation
+
+- **Implementation:** new pure helpers reuse the diagnostic engine, plan validator and paired
+  method packets to export required/optional approved propositions, numbers, support references,
+  v2 limitations, missing requirements and ambiguity for ordinary natural-language realization.
+  The candidate prompt asks for supported content and preserves useful partial diagnosis. Hash,
+  condition, question and B2/B3/B4 source/tool parity checks run before request preparation.
+- **Return behavior:** check technical envelope and raw/parsed identity only; retain the answer
+  verbatim, including empty strings, omissions, unsupported causes and wrong numbers. No claim
+  verification, repair, reconstruction or fallback runs for B3. Such behavior requires later
+  governed semantic assessment rather than quality-driven retry. Technical records remain the
+  enclosing durable caller's responsibility. No caller/stager or pilot launch path is added.
+- **Prospective interpretation:** preserve the protocol's ordinary B3 realization and constrained
+  B4 realization/verification paths. This candidate compares their combined realization-and-
+  verification contribution; it cannot isolate only final verification. This dated clarification
+  supersedes that narrower future attribution for this candidate, while preserving the older
+  “isolates the final verification layer” wording and old records. No shared-candidate design is
+  substituted and no model configuration, execution or endpoint is frozen.
+- **Verification/governance:** eleven synthetic interface checks plus three existing packet and
+  two readiness checks pass. The nine-component bound candidate authorizes zero model/annotation
+  calls and no pure-verifier causal claim. No real pilot request/return, semantic label, method-key
+  join or effect is generated. The failed combined canary and unlaunched C remain unchanged.
+  P11 still has nineteen open conditions; fresh aligned B0–B4 execution, qualified measurement,
+  episode effects, coverage and power remain open. Alpha, quarantine and independent
+  confirmation/replication N are unchanged; all required comparisons/reporting remain required.

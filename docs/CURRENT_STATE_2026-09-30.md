@@ -602,3 +602,20 @@ paths, prompts and model choices still require a prospective declaration. No ret
 semantic annotation, endpoint score, physical allocation or alpha spending changed. The failed
 support canary remains closed and P11 retains nineteen open conditions. See
 `docs/REALIZER_FINITE_NUMBER_REPAIR_2026-09-30.md` and its bound prospective repair manifest.
+
+## Latest 2026-09-30 B3 ordinary-realization interface checkpoint
+
+The protocol's ordinary B3 path now has pure request-preparation and answer-retention helpers.
+They export the existing supported plan after input/hash/parity checks and preserve ordinary
+answers verbatim after technical-envelope checks, with no semantic verification or repair.
+Eleven synthetic interface checks plus five packet/readiness checks pass. There is still no
+caller, workspace stager, execution declaration or model-backed B3 output. The nine-component
+candidate authorizes zero calls and does not interpret or score any retained pilot response.
+
+This ordinary-realization candidate versus constrained B4 realization/verification measures the
+combined realization-and-verification contribution. The newest dated decision clarifies that it
+cannot support a pure final-verifier-only attribution, preserving older protocol wording and
+historical records. Exact execution/model/prompt choices and qualified measurement remain open.
+The failed combined support gate, alpha, quarantine and zero confirmation/replication N are
+unchanged; P11 retains nineteen open conditions. See `docs/B3_ORDINARY_INTERFACE_2026-09-30.md`
+and the bound B3 interface candidate manifest.
