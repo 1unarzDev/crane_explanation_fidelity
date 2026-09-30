@@ -1,5 +1,23 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Computation CPU MCP addendum after `1311fcc8` — 2026-09-30
+
+A [separate MCP v5](COMPUTATION_CPU_MCP_2026-09-30.md) selects broker v7/ledger v2,
+requires and binds an explicit session computation total, and retains an operator
+terminal snapshot. Thirty-five focused checks and five fixed stdio exchanges plus
+one separate injected auditor-fault flow pass. Failed work is charged; exhausted
+compute preserves reads; unknown accounting blocks all tools and withholds success.
+Settlement storage failure remains pending without replay/adoption. Seven retained
+services are absent. Keep observed totals 330.409/336.782/403.257 ms against 310 ms
+and overshoots 20.409/26.782/93.257 ms; these are not method effects or hard caps.
+Installed-client routing for v5 and full model-facing tools/rendering/capacity,
+whole-turn budgets, immutable runtime and durability remain open. Study callers
+stay unchanged. No semantic outputs, annotation, scores, alpha spending or P11
+freeze occur. N=0, nineteen open conditions, no hash mismatches and unanswered
+measurement reopening remain. Alpha/freshness and five-method reporting are
+unchanged; the nine-page manuscript passes mechanical checks only.
+
+
 ## Computation CPU ledger addendum after `d2f4007c` — 2026-09-30
 
 A [separate ledger v2/broker v7](COMPUTATION_CPU_LEDGER_2026-09-30.md) charges actual

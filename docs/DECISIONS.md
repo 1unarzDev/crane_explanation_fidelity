@@ -4830,3 +4830,26 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   pilot score, physical acquisition, alpha spending or P11 freeze. Preserve failed
   support/unlaunched C and unanswered reopening. P11 keeps nineteen open conditions,
   no hash mismatches and confirmation/replication independent N=0.
+
+
+## 2026-09-30 — connect serial computation CPU ledger to separate MCP v5
+
+- **Candidate:** preserve MCP v4; v5 selects broker v7/ledger v2/executor v10,
+  requires explicit session total, binds it in intent and retains operator ledger
+  snapshot in terminal. Protocol/inventories remain exact. Study callers do not migrate.
+- **Evidence:** 35 focused checks and five fixed stdio exchanges plus a separate
+  operator-injected auditor uncertainty flow pass. Charge failed work and unclamped
+  CPU; deny exhausted computation without launch while preserving full reads.
+  Unknown accounting withholds success and closes both tools. Settlement retention
+  failure stays pending without replay/adoption. Seven retained services are absent.
+- **Overshoot:** retain 330.409/336.782/403.257 ms total against 310 ms and
+  20.409/26.782/93.257 ms overshoot. No method effect, hard cap or worst-case bound.
+- **Scope:** direct stdio only. Installed-client v5, full model-facing tools and
+  rendering/capacity, full turn/condition budget boundary, overshoot policy,
+  immutable runtime and crash durability remain open. Sibling servers are not
+  budget resets; host read/control/provider work remains outside this counter.
+- **Governance:** no semantic or automated annotation calls, pilot scoring, physical
+  acquisition, alpha spending or P11 freeze. Preserve failed combined support,
+  unlaunched C and unanswered reopening. N=0 and nineteen open P11 conditions;
+  alpha/freshness and prospective five-method reporting stay unchanged. Manuscript
+  numeric traceability and nine-page mechanical full-paper checks pass only.
