@@ -53,14 +53,16 @@ maximum justified levels remain deterministic/reference-scored, never inferred f
 
 The uncalled draft suite is
 `research/explanation_fidelity/qualification/evidence-calibration-claim-role-v2-development.json`:
-four development and 20 held-out synthetic cases with 41 atomic meanings. Exposed v1 held-out
+four development and 20 held-out synthetic cases with 39 atomic meanings after a pre-call desk
+review. Exposed v1 held-out
 sentences cannot be reused as held-out qualification. The draft includes, in new wording, paired
 contrasts for recorded versus physical nonoccurrence, `Wait` completion versus measured motion
 recovery, raw stationarity versus command-motion relation, physical-cause hedges, geometry
 relations, source quotation versus endorsed diagnosis, limitation versus negative finding, and
 temporal recovery order versus causal attribution. Split every independent fact and relation
 into an atom before freezing. Structural validation and an initial construction read do not
-complete the required separate semantic reference review.
+complete the required independent second semantic reference review. The provisional desk review
+is hash-bound in `manifests/annotation/evidence-calibration-claim-role-v2-construction-desk-review.json`.
 
 Before any model call: review each atom and gold field against the exact text, validate the
 schema and prompt, bind raw hashes and the no-retry runner, and freeze explicit held-out gates.

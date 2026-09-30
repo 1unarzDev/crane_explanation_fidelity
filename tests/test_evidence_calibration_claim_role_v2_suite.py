@@ -8,6 +8,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "analysis"))
 from validate_evidence_calibration_claim_roles_v2 import INPUT_SCHEMA, RETURN_SCHEMA, validate  # noqa: E402
+from audit_evidence_calibration_pilot_atomization import uncovered_text  # noqa: E402
 
 
 def test_v2_draft_reference_is_structural_and_fresh_from_v1() -> None:
@@ -19,7 +20,7 @@ def test_v2_draft_reference_is_structural_and_fresh_from_v1() -> None:
     assert len({case["case_id"] for case in suite["cases"]}) == 24
     assert not ({case["response_text"] for case in suite["cases"]}
                 & {case["response_text"] for case in prior["cases"]})
-    assert sum(len(case["claims"]) for case in suite["cases"]) == 41
+    assert sum(len(case["claims"]) for case in suite["cases"]) == 39
     for case in suite["cases"]:
         payload = {"schema": INPUT_SCHEMA, "opaque_response_id": case["case_id"],
                    "response_text": case["response_text"], "claims": case["claims"]}
@@ -28,3 +29,4 @@ def test_v2_draft_reference_is_structural_and_fresh_from_v1() -> None:
                     "attestation": "METHOD_BLIND_ROLE_KIND_POLARITY_ATTEMPT"}
         result = validate(payload, returned)
         assert result["endpoint_scoring_authorized"] is False
+        assert uncovered_text(case["response_text"], case["claims"]) == []

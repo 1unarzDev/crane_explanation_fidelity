@@ -3087,3 +3087,16 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   before a prospective task freeze. The draft is not a qualified instrument.
 - **Boundary:** no schema canary, role-classifier call, pilot role label, endpoint score, P11
   authorization, independent episode, or alpha follows from the synthetic construction.
+
+## 2026-09-30 — correct v2 synthetic references before qualification
+
+- **Desk-review finding:** a case-by-case agent-assisted read of all 24 uncalled synthetic cases
+  found one causal atom that added “measured” where the text said only “observed.” Several cases
+  also mixed source attribution or metalinguistic text with the intended diagnostic atom. The
+  cases were simplified before any role-classifier call. The revised draft has 39 atomic meanings
+  and no substantial uncovered text under the structural triage. Exact cases and review notes
+  are hash-bound in `evidence-calibration-claim-role-v2-construction-desk-review.json`.
+- **Boundary:** this is a provisional pre-call desk review, not independent second reference
+  review, human validation, or model qualification. A separate semantic review and prospective
+  freeze remain required. The v1 failure, pending pilot inventories, P11 prohibition, N=0, and
+  alpha ledger are unchanged.
