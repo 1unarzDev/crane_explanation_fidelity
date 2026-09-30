@@ -446,3 +446,28 @@ analysis, or statistical superiority without valid endpoint evidence. The intend
    values or old inspected method outputs.
 5. P12–P15: only then generate confirmation, annotate/adjudicate blindly, join identities once,
    analyze, and generate manuscript tables/figures from machine-readable results.
+
+## 2026-09-30 prospective nominal question and source-projection candidate
+
+The separate `evidence-calibration-nominal-alignment-v1.json` declaration prospectively scopes
+future nominal controls to the registered sustained command–measured-motion discrepancy. Its
+fixed question is recorded verbatim in that declaration. This supersedes the older broad future
+question about “a navigation failure” for this candidate only; it does not change the immutable
+old pilot question, responses or references. A successful recording with transient FollowPath
+failures may still be nominal for the registered command-motion predicate. Do not describe that
+as evidence that no navigation/software failure of any kind occurred.
+
+The source projection removes top-level trace/source-anchor roles plus duplicated FollowPath
+failure and Wait-recovery measurements and their trace-count assumption from the computation.
+It preserves surviving samples, values, provenance, thresholds and computation identity. It then
+uses the existing nominal catalog's E0 action result, E1 delivered command and E2 synchronized
+odometry/registered computation ladder, with one unchanged question across levels and methods.
+Static relevant source/configuration/tool access must remain equal across methods in the later
+execution declaration. Source hashes alone do not establish an episode trace event.
+
+Both fixed inspected nominal recordings pass deterministic source-projection, catalog and
+contract checks; all six old mismatch hashes remain preserved. This candidate does not generate
+semantic method outputs or authorize a fresh pilot. Its compact audit is development regression
+evidence only. Exact population/question/model/parity choices remain to be prospectively bound
+for the fresh five-method pilot after measurement gates permit it. The failed combined support
+canary, claim-specific endpoint mapping, P11, alpha and physical quarantine are unchanged.

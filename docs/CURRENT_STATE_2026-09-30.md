@@ -512,3 +512,26 @@ attachment, semantic ambiguity treatment and actual sensitivity execution remain
 has nineteen open conditions with no component hash mismatch. No support call, endpoint outcome,
 statistical N, physical allocation, alpha spending or manuscript result changed. The failed
 combined-format canary and unlaunched C remain retained; pilot support calls stay closed.
+
+## Latest 2026-09-30 prospective nominal-alignment checkpoint
+
+The separate nominal adapter now addresses duplicated trace facts and question scope as well as
+catalog role mismatch. It removes the two trace/source roles, two FollowPath/Wait count entries
+and their trace-count assumption, preserving all surviving values. It uses the existing nominal
+E0/E1/E2 catalog with a fixed question specifically asserting a registered sustained command–
+measured-motion discrepancy. A denial of that premise does not deny genuine transient FollowPath
+failures or all possible hidden physical causes. The old broad question and all six old condition
+hashes/mismatches remain unchanged; no answer is rescored and no episode is reselected.
+
+Both fixed inspected nominal recordings pass the candidate's deterministic removal-only,
+catalog-role and contract boundary checks. Supported task success remains available at every
+level; the registered non-trigger false-premise contract is licensed only at full E2. Eleven
+focused adapter/normalizer/catalog tests pass. The compact bound audit contains packet/reference
+hashes and deterministic states, not method prose or model behavior. No new physical acquisition,
+semantic method output, support annotation or independent confirmation/replication N follows.
+
+This closes candidate packet/question preparation only. It is unexercised in a fresh aligned
+five-method pilot and does not override the failed combined support canary. P11 has nineteen open
+conditions with no component hash mismatch. Future population/question/parity/model choices,
+claim-specific endpoint mapping, measurement, episode effects, power and allocation remain open.
+Alpha, quarantined layouts and manuscript claims are unchanged.

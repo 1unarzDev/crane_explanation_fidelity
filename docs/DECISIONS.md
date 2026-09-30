@@ -3841,3 +3841,39 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   or C call is authorized. The five-method development, alpha, physical allocation and manuscript
   result boundaries remain unchanged. Next independent work is assertion-aware claim attachment
   and nominal-alignment governance, carrying all retained failures and scope concerns forward.
+
+## 2026-09-30 — bind prospective nominal packet and question alignment without semantic execution
+
+- **Defects:** the immutable nominal materializer retains trace and source-anchor roles at all
+  levels, causing six catalog role mismatches. The existing top-level removal option still
+  leaves FollowPath failure and Wait-recovery count measurements plus their trace-count
+  assumption inside computation. The broad old question about “a navigation failure” also
+  admits truthful transient-software-failure affirmatives in the successful/non-triggered
+  `cm-land-conf-072` recording. These are scope/materialization defects, not unfavorable
+  method effects to be relabeled or fixed through retrospective response scoring.
+- **Separate candidate:** reuse the existing normalizer, JSON-pointer deletion, nested builder,
+  catalog validator, requirement evaluator and diagnostic-contract machinery in a separate
+  adapter. Remove two trace roles, two duplicated count entries and one trace-count assumption;
+  preserve every surviving value. Use the unchanged three-level nominal role catalog and a
+  new condition namespace. All levels/methods receive the exact fixed question about why a
+  sustained command–measured-motion discrepancy occurred under the registered computation.
+  The question contains the false premise without supplying task success. Its denial is bounded
+  to that computation, not every software event, anomaly or unique hidden physical cause.
+- **Prospective resolution:** the new development declaration and protocol amendment supersede
+  the older broad future nominal-question scope only for this candidate. Preserve the original
+  question, all old packet hashes, six mismatches, raw answers, references and their ambiguity.
+  No old response is rescored. Both fixed controls from the original predeclared pilot are used;
+  no episode is reselected based on model outcomes. The original physical recordings remain
+  inspected development material, not fresh acquisition or confirmation.
+- **Mechanical evidence:** eleven focused projection/normalization/catalog tests pass. Both
+  retained controls produce six new catalog-aligned removal-only conditions with an invariant
+  scoped question. The diagnostic-contract checks preserve supported success at every level;
+  registered non-trigger and false-premise rejection appear only at E2. Removal of computation
+  removes the license. Duplicate trace facts are absent from primitive summaries, and invalid
+  or unregistered source shapes fail closed. The compact audit records hashes and deterministic
+  reference states, with zero semantic method outputs, model calls or physical acquisitions.
+- **Remaining gate:** a fresh five-method declaration must prospectively bind the exact population,
+  question, evidence, static source/tool parity and model choices before outputs. The failed
+  combined support gate is unchanged; no new canary/support/C call is authorized. P11 retains
+  nineteen open conditions with no component hash mismatch. No effect, p-value, alpha allocation,
+  physical reserve use, independent confirmation/replication N or manuscript result changed.
