@@ -295,3 +295,24 @@ PYTHONPATH=analysis python analysis/analyze_roboboat_contact_policy_support_v2.p
 ```
 
 The analyzer rehashes the frozen inputs and reproduces both pass labels, agreement and disagreement-only finalization. It refuses missing/duplicate/partial banks and immutable-result overwrite. The reported scores are strict common/extended development sensitivities, not the proposed no-material-unsupported-assertion primary or inferential estimates. Original complete pairs/old settling support remain separate. The preparation and analysis-lock inline command executions are retained through complete dependency bindings and immutable output declarations; no retrospective metric switch is allowed.
+
+
+Completed contact-v2 support replay: twelve finalized packets, 27 valid calls (24 passes + three abstraction-only adjudications), no retry/timeout. Analysis fully reproduces. Both methods cover 24/24 common units and 2/2 positive sampled-compliance intervals. Strict development score B2 5/6, B4 6/6 in A/B/final; the only B2 failure is a 0.000144942 m growth discrepancy from a 20 ms pre-dwell starting observation, independently checked. Supported physical outcome/compliance and answerable coverage are unchanged, so this is not demonstrated material useful-outcome superiority. No effect/CI/p-value or primary promotion. See CONTACT_V2_RESULTS.md. All queues are terminal; 163 scoped tests pass with the historical source-freeze exclusion unchanged. Next: immutable separate capsule publication, then prospective material-primary/citation qualification and coordinated allocation/resources/untouched design. Full goal remains incomplete.
+
+
+Completed session `15140` exited normally. Safe reproduction:
+
+```bash
+PYTHONPATH=analysis python analysis/inspect_roboboat_contact_v2_growth_scope.py --output artifacts/roboboat-contact-policy-support-v2/growth-scope-reference-v1.json
+# The released-result CLI refuses overwrite; use read-only in-memory reproduction.
+PYTHONPATH=analysis python - <<'PYCODE'
+import json
+from analyze_roboboat_contact_policy_support_v2 import analyze, OUT
+assert analyze() == json.loads((OUT/'development-results-v2.json').read_text())
+print('complete locked development analysis reproduces')
+PYCODE
+# One-shot isolated publication; execute only once.
+PYTHONPATH=analysis python analysis/publish_roboboat_contact_policy_capsule_v2.py
+```
+
+No response, extraction or support queue remains live. Do not regenerate the completed banks or retry retained failed qualification identities. Publication requires complete-bank hash/annotation reproduction and includes all original source answers, reviews, labels and failed qualifier versions separately. It changes no shared DVC pointer or main branch.
