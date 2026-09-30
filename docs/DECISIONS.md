@@ -3236,3 +3236,20 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   neither rewrites nor rescores the v1 outputs. P11 readiness now lists fresh-pilot exercise of
   the corrected wording as an open gate. No support annotation, B2/B4 effect, P11 authorization,
   independent N, or alpha use follows.
+
+## 2026-09-30 — preserve unresolved deictic meaning in retained pilot inventories
+
+- **Finding:** all twelve answers with the retained “these specific physical causes” sentence
+  have one extractor atom that paraphrases the causes as “referred to in the explanation,” though
+  the answer supplies no antecedent list. Two of these answers were in the prior nine-response
+  review; ten were still pending.
+- **Review:** bind the original answer/form/call hashes and replace the twelve normalized atom
+  texts with the answer's exact deictic sentence. Review the remaining ten complete answer
+  inventories and add the separately asserted delivered-command atom in each. Preserve the six
+  retained negative-causation statements as assertions for later qualified assessment; do not
+  silently turn them into the corrected prospective v2 wording.
+- **Boundary:** this is method-blind, agent-assisted development inventory review. The deictic
+  referent remains unresolved and no support label is assigned. Seventy-one of 113 structurally
+  valid inventories are reviewed; 42 remain, including three bare `Yes.`/`No.` spans. The
+  interrupted request is still quarantined. No method-key join, B2/B4 effect, P11 authorization,
+  independent N, or alpha use follows.

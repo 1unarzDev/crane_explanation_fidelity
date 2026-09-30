@@ -337,3 +337,11 @@ fails to establish causation. A separate v2 development ontology corrects three 
 rationales without changing any evidence requirement, claim contract, number, or diagnostic
 node. The diff audit passes. The v1 outputs remain unmodified and unrescored; the corrected
 ontology has not been exercised in a fresh pilot. P11 now has this explicit open wording gate.
+
+The companion blind inventory review found that all twelve old deictic B4 answers had extractor
+atoms that implied a cause list was supplied in the explanation. A hash-bound review now keeps the
+exact unresolved “these specific physical causes” sentence, amends two earlier reviewed forms,
+and completes ten additional inventories with a separate delivered-command atom. It assigns no
+support label and does not soften the six retained negative-causation assertions. Seventy-one of
+113 structurally valid inventories are reviewed; 42 remain, including three bare `Yes.`/`No.`
+spans. The quarantined extraction request and all old method outputs remain untouched.
