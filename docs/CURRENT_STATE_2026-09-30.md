@@ -1,5 +1,20 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Installed-client CPU addendum after `c1f8fb92` — 2026-09-30
+
+A [separate installed-client observer v4](INSTALLED_CLIENT_CPU_MCP_2026-09-30.md)
+verifies MCP v4/broker v5/executor v10 through CLI 0.159.2. Thirty-seven focused checks
+and five separately retained fresh observations pass. Exact inventories/Unicode/
+literals, null CPU cutoff replies, nested budgets/raw final counters/quiescence and
+six absent services are verified. Retain observed 95.763/47.502/49.351 ms overshoot;
+no hard cap, worst-case bound or scientific method effect follows. Dedicated client
+SIGTERM cleanup stays explicit. No model turn is launched. Full provider/model-facing
+tools, rendering/capacity, whole-turn budgets, crash durability, immutable runtime
+and measurement remain open; study callers do not migrate. P11 keeps nineteen open
+conditions, no hash mismatches, N=0 and unanswered measurement reopening. No new
+annotation, score, alpha spending or scientific freeze occurs.
+
+
 ## CPU broker/MCP addendum after `0d612f1f` — 2026-09-30
 
 A [separate broker v5/MCP stdio v4](CPU_BROKER_MCP_2026-09-30.md) connects executor

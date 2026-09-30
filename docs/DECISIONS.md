@@ -4778,3 +4778,24 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   pilot score, physical acquisition, alpha spending or P11 freeze. Failed combined
   support/unlaunched C and unanswered reopening remain. P11 keeps nineteen open
   conditions, no hash mismatches and confirmation/replication independent N=0.
+
+
+## 2026-09-30 — inspect sampled CPU MCP through installed client without model turns
+
+- **Candidate:** preserve older observers; v4 selects MCP v4/broker v5/executor v10
+  with explicit synthetic CPU budget. Keep offline RPC allowlist, network namespace,
+  strict flags and two service-control variables. No study caller or model turn.
+- **Evidence:** 37 focused checks across two invocations and five separately retained
+  observations pass on CLI 0.159.2. All assigned inventories, exact reads/literals,
+  null CPU cutoff replies, nested budget/status/sample identities and exited/quiescent
+  final accounting match. All six computation services are absent after cleanup.
+- **Overshoot/cleanup:** retain 95.763/47.502/49.351 ms on fixed assigned inventories.
+  No method effect, hard cap or worst-case bound follows. Dedicated app-server groups
+  need recorded SIGTERM; no graceful overall MCP-session terminal is fabricated.
+- **Scope:** assigned-server direct routing is verified, not full provider tool set
+  or model-visible rendering. Capacity, immutable runtime, complete confinement,
+  whole-turn budgets/overshoot policy and crash durability remain open.
+- **Governance:** no semantic model/automated annotation call, method-key join, real-
+  pilot score, physical acquisition, alpha spending or P11 freeze. Preserve failed
+  support/unlaunched C and unanswered reopening. P11 keeps nineteen open conditions,
+  no hash mismatches, confirmation/replication N=0 and prospective five-method reporting.

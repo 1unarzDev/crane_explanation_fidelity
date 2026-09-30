@@ -1,0 +1,1315 @@
+{
+  "schema": "crane-installed-client-cpu-mcp-binding/v4-development",
+  "recorded_date": "2026-09-30",
+  "status": "ALL_FIVE_ASSIGNED_SERVER_CPU_ROUTES_PASS_MODEL_FACING_RENDERING_AND_TURN_BUDGETS_OPEN",
+  "cli_version": "0.159.2",
+  "bindings": [
+    {
+      "path": "analysis/observe_evidence_calibration_app_server_mcp_v4.py",
+      "raw_sha256": "b117259f58d8ab8b9280c93cf600a0879caa57f51efe4c92c91f7e6d3a91b198"
+    },
+    {
+      "path": "tests/test_evidence_calibration_app_server_mcp_v4.py",
+      "raw_sha256": "0e62cffb7ecd9cd5d46f209ebf4c82de109553783abd9ceba5a1a05f67fb3b0e"
+    },
+    {
+      "path": "docs/INSTALLED_CLIENT_CPU_MCP_2026-09-30.md",
+      "raw_sha256": "c573f61c6789d31f0103783e364e8276938902d662fa17da5c3f54c4a7f5d1b3"
+    },
+    {
+      "path": "analysis/observe_evidence_calibration_app_server_mcp_v3.py",
+      "raw_sha256": "f3cb83bed1b9a8b12ee9260be4415830fcdf9b1954ba033adecc7bc8c2fffd38"
+    },
+    {
+      "path": "analysis/evidence_calibration_mcp_stdio_v4.py",
+      "raw_sha256": "6b8148981720e30bc83a82ee0f969801c0748924e4339da26736ba8577003ea2"
+    },
+    {
+      "path": "analysis/evidence_calibration_tool_broker_v5.py",
+      "raw_sha256": "360bbf19594ebae6f642833fca1071fed74b2fb580f779fc54a12d4789232c4b"
+    },
+    {
+      "path": "analysis/evidence_calibration_local_tool_sandbox_v10.py",
+      "raw_sha256": "2d3ca3b5063015e1361f3da0632cfc6c8aaa3fbe76afe0b700a5d12e845e72f3"
+    },
+    {
+      "path": "analysis/evidence_calibration_namespace_wrapper.py",
+      "raw_sha256": "3cbc9d9ee03ebb7b35a2ca8d552bc47c398066bfb28fba96fa29a32d4242d9a0"
+    },
+    {
+      "path": "analysis/audit_evidence_calibration_namespace_lifecycle.py",
+      "raw_sha256": "a39988459f8d4e6ceb3073cbc24e6e1dfcec8dbdd28a7563389e6500ba6806c3"
+    },
+    {
+      "path": "analysis/observe_evidence_calibration_tree_cpu_accounting_v3.py",
+      "raw_sha256": "a6e479d2273fc1d59ca0d3bb77b1beb78cd68eb0ff675f6f2032c5de79c600ac"
+    },
+    {
+      "path": "manifests/operations/evidence-calibration-cpu-broker-mcp-v4-development.json",
+      "raw_sha256": "5cf00b000c14ce2bb3d1d095102ff4def2925358d3a504e47893e95175cf8bf1"
+    },
+    {
+      "path": "manifests/operations/evidence-calibration-installed-client-lifecycle-mcp-v3.json",
+      "raw_sha256": "c7409985cec3a72f843f6318aaee82f1e63181b927a74cf90781802cb7982ec1"
+    }
+  ],
+  "private_raw_root": "/tmp/crane-cpu-installed-client-20260930-a9xwrl3q",
+  "private_plan_sha256": "e858e42ca81199d4114002737cc365fd8517c2b2111b120adc2888d12bd37161",
+  "private_summary_sha256": "6dca0d86884ef0f53306d489f583c013031ac83d445ef7dc336789698417c32f",
+  "observations": {
+    "B0": {
+      "schema": "crane-offline-app-server-mcp-observation/v4-development",
+      "method_id": "B0",
+      "status": "PASS",
+      "tools": {},
+      "tools_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "runtime_status": "connected",
+      "provider_request_tools_verified": false,
+      "model_call_attempted": false,
+      "ephemeral_thread_started": true,
+      "network_namespace_used": true,
+      "full_harness_confinement_verified": false,
+      "synthetic_read_and_computation_passed": null,
+      "bounded_tool_failure_passed": null,
+      "request_methods": [
+        "initialize",
+        "thread/start",
+        "mcpServerStatus/list"
+      ],
+      "cleanup": "OBSERVATION_GROUP_SIGTERM",
+      "process_exit_code": -15,
+      "stdout_bytes": 3666,
+      "stderr_bytes": 0,
+      "stdout_sha256": "a1f1c4cf838ed6f0601347f11874cc71c4eac339d5f9fec0414bed653aa226fd",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "turn_or_item_notification_count": 0,
+      "private_record_hashes": [
+        {
+          "relative_path": "app-server-stderr.bin",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "relative_path": "app-server-stdout.bin",
+          "raw_sha256": "a1f1c4cf838ed6f0601347f11874cc71c4eac339d5f9fec0414bed653aa226fd"
+        },
+        {
+          "relative_path": "configuration.json",
+          "raw_sha256": "9d81d49f99ddb2566fc3df01f48bc47c0ace9d7d0088d2443f1d473169624ebb"
+        },
+        {
+          "relative_path": "events/rpc-00000001.intent.json",
+          "raw_sha256": "d1953b23563c8f74899c064a864f49458d01729c55f6f71802de0e0e600f448b"
+        },
+        {
+          "relative_path": "events/rpc-00000001.result.json",
+          "raw_sha256": "0ab0a411895553e75f4c626188a47b0126db8d6c417431df38afde1e4e032747"
+        },
+        {
+          "relative_path": "events/rpc-00000002.intent.json",
+          "raw_sha256": "dcd3c558c0f82a93190b7d999529c66884336b68c058f2981080dcbda32016fd"
+        },
+        {
+          "relative_path": "events/rpc-00000002.result.json",
+          "raw_sha256": "e23f3cadc6a3b3eea5bdc0c669b6dbb97c65831c07b8b702b65767e8fb141bdf"
+        },
+        {
+          "relative_path": "events/rpc-00000003.intent.json",
+          "raw_sha256": "b276883087a5b8c34e34ce04c7a368a9690405fec1cb7cd34b92ba5b081a883f"
+        },
+        {
+          "relative_path": "events/rpc-00000003.result.json",
+          "raw_sha256": "2f97c6d7b5323aab1e5d266a6d95bf13da857dd58ab2038b4def03aa0d19a611"
+        },
+        {
+          "relative_path": "events/session.intent.json",
+          "raw_sha256": "6c3203fc10741c487b283278c4400157169aeb0d5cf5693d9929f0f96fb7bd00"
+        },
+        {
+          "relative_path": "job/visible.txt",
+          "raw_sha256": "42c2820692c5d40ffa999a877c1ffa0ea89fdeae30d7186da4227fcce3e617e3"
+        },
+        {
+          "relative_path": "observer.intent.json",
+          "raw_sha256": "5594b41c4e438e7b56b8e0f29024e71090a7792afd62f7b5fa85f952a0a2c6f3"
+        },
+        {
+          "relative_path": "request-log.json",
+          "raw_sha256": "36cefc68227bff8de37aaf01af4d08d154630452655e862f7a106da7ebdeb094"
+        },
+        {
+          "relative_path": "sanitized-result.json",
+          "raw_sha256": "db1819d48ff8aceafdd18fc8a006d30f9e696a2ba428d029aee4163b907d306e"
+        }
+      ]
+    },
+    "B1": {
+      "schema": "crane-offline-app-server-mcp-observation/v4-development",
+      "method_id": "B1",
+      "status": "PASS",
+      "tools": {},
+      "tools_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "runtime_status": "connected",
+      "provider_request_tools_verified": false,
+      "model_call_attempted": false,
+      "ephemeral_thread_started": true,
+      "network_namespace_used": true,
+      "full_harness_confinement_verified": false,
+      "synthetic_read_and_computation_passed": null,
+      "bounded_tool_failure_passed": null,
+      "request_methods": [
+        "initialize",
+        "thread/start",
+        "mcpServerStatus/list"
+      ],
+      "cleanup": "OBSERVATION_GROUP_SIGTERM",
+      "process_exit_code": -15,
+      "stdout_bytes": 3666,
+      "stderr_bytes": 0,
+      "stdout_sha256": "02877337c2f02b83b5632b07e35135e39e7ffe4c957c0240cc1c4bcd7d6c9348",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "turn_or_item_notification_count": 0,
+      "private_record_hashes": [
+        {
+          "relative_path": "app-server-stderr.bin",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "relative_path": "app-server-stdout.bin",
+          "raw_sha256": "02877337c2f02b83b5632b07e35135e39e7ffe4c957c0240cc1c4bcd7d6c9348"
+        },
+        {
+          "relative_path": "configuration.json",
+          "raw_sha256": "0fd5e3a5f35075bb2c43ffe4e27e56050f5e68149b6c1be8f252b9b98b09c56a"
+        },
+        {
+          "relative_path": "events/rpc-00000001.intent.json",
+          "raw_sha256": "d1953b23563c8f74899c064a864f49458d01729c55f6f71802de0e0e600f448b"
+        },
+        {
+          "relative_path": "events/rpc-00000001.result.json",
+          "raw_sha256": "0ab0a411895553e75f4c626188a47b0126db8d6c417431df38afde1e4e032747"
+        },
+        {
+          "relative_path": "events/rpc-00000002.intent.json",
+          "raw_sha256": "dcd3c558c0f82a93190b7d999529c66884336b68c058f2981080dcbda32016fd"
+        },
+        {
+          "relative_path": "events/rpc-00000002.result.json",
+          "raw_sha256": "e23f3cadc6a3b3eea5bdc0c669b6dbb97c65831c07b8b702b65767e8fb141bdf"
+        },
+        {
+          "relative_path": "events/rpc-00000003.intent.json",
+          "raw_sha256": "b276883087a5b8c34e34ce04c7a368a9690405fec1cb7cd34b92ba5b081a883f"
+        },
+        {
+          "relative_path": "events/rpc-00000003.result.json",
+          "raw_sha256": "2f97c6d7b5323aab1e5d266a6d95bf13da857dd58ab2038b4def03aa0d19a611"
+        },
+        {
+          "relative_path": "events/session.intent.json",
+          "raw_sha256": "18ddb6d4b5c49096d83e4c52c1d8a4949c0f3932b0480a3f846144774c77a9ab"
+        },
+        {
+          "relative_path": "job/visible.txt",
+          "raw_sha256": "42c2820692c5d40ffa999a877c1ffa0ea89fdeae30d7186da4227fcce3e617e3"
+        },
+        {
+          "relative_path": "observer.intent.json",
+          "raw_sha256": "d6df7156d8faf50fbd926bc72f6a9f16f7802cf6061b48b94ef11bc38b1a1268"
+        },
+        {
+          "relative_path": "request-log.json",
+          "raw_sha256": "3b2716503a976023afaecb5d576f9e994c447a538ddfa94611284074ecb7c1e8"
+        },
+        {
+          "relative_path": "sanitized-result.json",
+          "raw_sha256": "617d481a3db2e5a217ef9cb29df07f99c36b97a741d8291c278625d255034c53"
+        }
+      ]
+    },
+    "B2": {
+      "schema": "crane-offline-app-server-mcp-observation/v4-development",
+      "method_id": "B2",
+      "status": "PASS",
+      "tools": {
+        "read_staged_file": {
+          "name": "read_staged_file",
+          "description": "Read exact staged file text using explicit Unicode character offsets; no inferred summary.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "offset": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "length": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1
+              }
+            },
+            "required": [
+              "path",
+              "offset",
+              "length"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "compute_visible_python": {
+          "name": "compute_visible_python",
+          "description": "Run local Python calculations over full staged visible records/source in an isolated namespace.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "code"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "tools_sha256": "b0275850c911b44bbbde37c5a323df2626f3b6a492fc8638227f14536dff7fb4",
+      "runtime_status": "connected",
+      "provider_request_tools_verified": false,
+      "model_call_attempted": false,
+      "ephemeral_thread_started": true,
+      "network_namespace_used": true,
+      "full_harness_confinement_verified": false,
+      "synthetic_read_and_computation_passed": true,
+      "bounded_tool_failure_passed": true,
+      "execution_records": [
+        {
+          "terminal_sha256": "8ed245cf3a658a6725d3ade7859d6e29cc3f001595b739030b12005409c67f65",
+          "intent_sha256": "1db032bc9add37d5d7baf5e3da25abb2575c9473475865b7e1aa2f9fb547f092",
+          "namespace_status_sha256": "eb7f88c76d9ad8075c084f6aede77065863fb86b32b5c4f993f34db73b57f00c",
+          "status": "RETURNED",
+          "unit_absent": true,
+          "limits_match_configuration": true,
+          "cpu_accounting": {
+            "budget": {
+              "cumulative_nanoseconds": 300000000,
+              "poll_milliseconds": 20,
+              "query_timeout_milliseconds": 250
+            },
+            "sample_count": 3,
+            "last_observed_cpu_nanoseconds": 34136000,
+            "final_cpu_nanoseconds": 34136000,
+            "observed_overshoot_nanoseconds": 0,
+            "maximum_sample_spacing_nanoseconds": 40485988,
+            "hard_cpu_cap_verified": false,
+            "whole_turn_cpu_accounting_verified": false
+          },
+          "cpu_sample_sha256": [
+            "072880b862c9466d7fe57909617f6462e80849f304a7c2461ac4bb5b2f6a055f",
+            "ad4352d06f2a6485c1c0bb093717beb5cc52ee219de6e70ceea122f2945a682b",
+            "ebbb8b9fb5ef92b7ae42be77665b1a9d1a54d378be1292b3b89768ea27202c95"
+          ],
+          "payload_exit_verified": true
+        },
+        {
+          "terminal_sha256": "00dcdeb67f13e2e4d551e10e095821f6c69b08e2773b8475434cfa7f2a305f39",
+          "intent_sha256": "47299130b6f368e320227ad7574ec53ed98f538a0f930fa997fe183f26a8c153",
+          "namespace_status_sha256": "80ff01364633318b99da8faa275235635942bec28a6ed1263f269f35fc2074a0",
+          "status": "TECHNICAL_FAILURE",
+          "unit_absent": true,
+          "limits_match_configuration": true,
+          "cpu_accounting": {
+            "budget": {
+              "cumulative_nanoseconds": 300000000,
+              "poll_milliseconds": 20,
+              "query_timeout_milliseconds": 250
+            },
+            "sample_count": 17,
+            "last_observed_cpu_nanoseconds": 395763000,
+            "final_cpu_nanoseconds": 395763000,
+            "observed_overshoot_nanoseconds": 95763000,
+            "maximum_sample_spacing_nanoseconds": 26466858,
+            "hard_cpu_cap_verified": false,
+            "whole_turn_cpu_accounting_verified": false
+          },
+          "cpu_sample_sha256": [
+            "3f5736ad58743707da8c07fd505dd2688e11ecd2814596038148d06af410e063",
+            "5f10bd517db52ab43810667890c931f59840093e351a5448f9461af54d6bcda7",
+            "b9bb90f7cc861aa94c22b17cd755056f32f56bcbd3b2eeee6bb184332ca57cc9",
+            "fb4a389c77040db35bca0794754dc908eb7f08be19062e8951dbeb04dccb7aac",
+            "7d02693d4d9693b2b0a737cf6c68363e245aaa5eb180fb3b161f80661950349f",
+            "148f6d02bdb881204514a9b9dce24983bcb7e6695981038ac6d2a18c7341fa29",
+            "83a5c6b470cb5e594129fad8b9829e4aab798189a4b517d5bd8218850038089c",
+            "75dcd5021f46c92ede104fcbb8b6db9c4e4e2325fcfb5fa928bf948bbb87183e",
+            "330f80b284f5ea229cdec107c7318331c294876ef6a46d9b9698270472a21f6b",
+            "fb56808b53d539a8b565a7b30fbe1c4281762ad6d111bd92284631c3178dc260",
+            "9148e83e703df48478d937b2bfdc9d5f76ed0931415f6bd5e8a51e28dffd63ea",
+            "4f898251d997f44d83f9d00ea8e34416985a6bcc7f7275fb54f8d41f9556e64c",
+            "452267c637cf6c2cff02d765736bb634f4c1864052ee36d2644278ef2556a757",
+            "890e9ba47c9bbdfa48c36a6fb2322ed1b191d170c147c3aee44a78b6a3e86d0b",
+            "8bf41dbaf5ba9ed946efc39a5b86723969622afffa33654a4e2fcf61c0a2528d",
+            "a93f7d6102e8c3865ae7a0e0807c883e836042201457161e3f2f07a14fc4364d",
+            "43f2d953574fc2c7fc727b493b00a87b899a4f5e25b18938a1975b53a1bdea00"
+          ],
+          "payload_exit_verified": false
+        }
+      ],
+      "request_methods": [
+        "initialize",
+        "thread/start",
+        "mcpServerStatus/list",
+        "mcpServer/tool/call",
+        "mcpServer/tool/call",
+        "mcpServer/tool/call"
+      ],
+      "cleanup": "OBSERVATION_GROUP_SIGTERM",
+      "process_exit_code": -15,
+      "stdout_bytes": 5522,
+      "stderr_bytes": 0,
+      "stdout_sha256": "431db262daf25778f532b9b2f058190bdd5cbd9036b3b0da33dd49befe0ecd33",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "turn_or_item_notification_count": 0,
+      "private_record_hashes": [
+        {
+          "relative_path": "app-server-stderr.bin",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "relative_path": "app-server-stdout.bin",
+          "raw_sha256": "431db262daf25778f532b9b2f058190bdd5cbd9036b3b0da33dd49befe0ecd33"
+        },
+        {
+          "relative_path": "configuration.json",
+          "raw_sha256": "b95a4097d99daa88bafea2a7ab853996988ade6c725625372b02091188d4914d"
+        },
+        {
+          "relative_path": "events/rpc-00000001.intent.json",
+          "raw_sha256": "d1953b23563c8f74899c064a864f49458d01729c55f6f71802de0e0e600f448b"
+        },
+        {
+          "relative_path": "events/rpc-00000001.result.json",
+          "raw_sha256": "0ab0a411895553e75f4c626188a47b0126db8d6c417431df38afde1e4e032747"
+        },
+        {
+          "relative_path": "events/rpc-00000002.intent.json",
+          "raw_sha256": "dcd3c558c0f82a93190b7d999529c66884336b68c058f2981080dcbda32016fd"
+        },
+        {
+          "relative_path": "events/rpc-00000002.result.json",
+          "raw_sha256": "e23f3cadc6a3b3eea5bdc0c669b6dbb97c65831c07b8b702b65767e8fb141bdf"
+        },
+        {
+          "relative_path": "events/rpc-00000003.intent.json",
+          "raw_sha256": "b276883087a5b8c34e34ce04c7a368a9690405fec1cb7cd34b92ba5b081a883f"
+        },
+        {
+          "relative_path": "events/rpc-00000003.result.json",
+          "raw_sha256": "2545b622d6cacb6b60c99e805c0d739eafb06d53a6f804285103a112096fe920"
+        },
+        {
+          "relative_path": "events/rpc-00000004.intent.json",
+          "raw_sha256": "f9f6def9ae1ffb564e85ad088653362d8453e4fb40f89dd9967ae3c4b5e23b4f"
+        },
+        {
+          "relative_path": "events/rpc-00000004.result.json",
+          "raw_sha256": "4e450414bce2470ef0ab0286a351421b4c35abb0e5825a440b19d5e7778ff726"
+        },
+        {
+          "relative_path": "events/rpc-00000005.intent.json",
+          "raw_sha256": "b70695650b04f447c17a97f5fc0145a52500717eabad978cbaf3965b32f26dcf"
+        },
+        {
+          "relative_path": "events/rpc-00000005.result.json",
+          "raw_sha256": "18d52e142b0163e2073dc5ea9d80fd33ccaaabd2d52ce00390f50c6353f3cff3"
+        },
+        {
+          "relative_path": "events/rpc-00000006.intent.json",
+          "raw_sha256": "609c49754efbf911a4c46a3cd42139b4a212838574339fd5fb9448deb3747712"
+        },
+        {
+          "relative_path": "events/rpc-00000006.result.json",
+          "raw_sha256": "bfa05d20f0cce04f13e60b96fdd08a3f6cd89edfbebd02b0fba3534610e72dc2"
+        },
+        {
+          "relative_path": "events/session.intent.json",
+          "raw_sha256": "197a6879939866888da6cb211e80b49db5ff3fb80362c224fbd7b52dffc8882b"
+        },
+        {
+          "relative_path": "events/tool-00000004.intent.json",
+          "raw_sha256": "dba1ebde2f45f20603cf0ae8f6dbff7c7a0977bf26aa86cd749a357e7df6915b"
+        },
+        {
+          "relative_path": "events/tool-00000004.result.json",
+          "raw_sha256": "f8c68ed18361ebdd197aa262ac37b45755b5f3438c0e2f3b51cf3dd40ce27808"
+        },
+        {
+          "relative_path": "events/tool-00000005.execution/cpu-sample-00000000.json",
+          "raw_sha256": "072880b862c9466d7fe57909617f6462e80849f304a7c2461ac4bb5b2f6a055f"
+        },
+        {
+          "relative_path": "events/tool-00000005.execution/cpu-sample-00000001.json",
+          "raw_sha256": "ad4352d06f2a6485c1c0bb093717beb5cc52ee219de6e70ceea122f2945a682b"
+        },
+        {
+          "relative_path": "events/tool-00000005.execution/cpu-sample-00000002.json",
+          "raw_sha256": "ebbb8b9fb5ef92b7ae42be77665b1a9d1a54d378be1292b3b89768ea27202c95"
+        },
+        {
+          "relative_path": "events/tool-00000005.execution/intent.json",
+          "raw_sha256": "1db032bc9add37d5d7baf5e3da25abb2575c9473475865b7e1aa2f9fb547f092"
+        },
+        {
+          "relative_path": "events/tool-00000005.execution/namespace-request.json",
+          "raw_sha256": "1a34153ba5b6ad8acdb548178a02309a59d9a0e94d884be37c922b8824cbbe72"
+        },
+        {
+          "relative_path": "events/tool-00000005.execution/namespace-status.bin",
+          "raw_sha256": "eb7f88c76d9ad8075c084f6aede77065863fb86b32b5c4f993f34db73b57f00c"
+        },
+        {
+          "relative_path": "events/tool-00000005.execution/terminal.json",
+          "raw_sha256": "8ed245cf3a658a6725d3ade7859d6e29cc3f001595b739030b12005409c67f65"
+        },
+        {
+          "relative_path": "events/tool-00000005.intent.json",
+          "raw_sha256": "967f09264401ffe9fdb76d17ae4c316cc802901605fb55b2d3e287b7cea2bfee"
+        },
+        {
+          "relative_path": "events/tool-00000005.result.json",
+          "raw_sha256": "8e5cbe383edde20d75edefb0af362a4c3ba52836be6d531d117716feaa1693a2"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000000.json",
+          "raw_sha256": "3f5736ad58743707da8c07fd505dd2688e11ecd2814596038148d06af410e063"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000001.json",
+          "raw_sha256": "5f10bd517db52ab43810667890c931f59840093e351a5448f9461af54d6bcda7"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000002.json",
+          "raw_sha256": "b9bb90f7cc861aa94c22b17cd755056f32f56bcbd3b2eeee6bb184332ca57cc9"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000003.json",
+          "raw_sha256": "fb4a389c77040db35bca0794754dc908eb7f08be19062e8951dbeb04dccb7aac"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000004.json",
+          "raw_sha256": "7d02693d4d9693b2b0a737cf6c68363e245aaa5eb180fb3b161f80661950349f"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000005.json",
+          "raw_sha256": "148f6d02bdb881204514a9b9dce24983bcb7e6695981038ac6d2a18c7341fa29"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000006.json",
+          "raw_sha256": "83a5c6b470cb5e594129fad8b9829e4aab798189a4b517d5bd8218850038089c"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000007.json",
+          "raw_sha256": "75dcd5021f46c92ede104fcbb8b6db9c4e4e2325fcfb5fa928bf948bbb87183e"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000008.json",
+          "raw_sha256": "330f80b284f5ea229cdec107c7318331c294876ef6a46d9b9698270472a21f6b"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000009.json",
+          "raw_sha256": "fb56808b53d539a8b565a7b30fbe1c4281762ad6d111bd92284631c3178dc260"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000010.json",
+          "raw_sha256": "9148e83e703df48478d937b2bfdc9d5f76ed0931415f6bd5e8a51e28dffd63ea"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000011.json",
+          "raw_sha256": "4f898251d997f44d83f9d00ea8e34416985a6bcc7f7275fb54f8d41f9556e64c"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000012.json",
+          "raw_sha256": "452267c637cf6c2cff02d765736bb634f4c1864052ee36d2644278ef2556a757"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000013.json",
+          "raw_sha256": "890e9ba47c9bbdfa48c36a6fb2322ed1b191d170c147c3aee44a78b6a3e86d0b"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000014.json",
+          "raw_sha256": "8bf41dbaf5ba9ed946efc39a5b86723969622afffa33654a4e2fcf61c0a2528d"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000015.json",
+          "raw_sha256": "a93f7d6102e8c3865ae7a0e0807c883e836042201457161e3f2f07a14fc4364d"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000016.json",
+          "raw_sha256": "43f2d953574fc2c7fc727b493b00a87b899a4f5e25b18938a1975b53a1bdea00"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/intent.json",
+          "raw_sha256": "47299130b6f368e320227ad7574ec53ed98f538a0f930fa997fe183f26a8c153"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/namespace-request.json",
+          "raw_sha256": "1620ebce86bf3d2cd39e05d5cce95d6ed8e26c07a0eef18c650c1b2b73017d2b"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/namespace-status.bin",
+          "raw_sha256": "80ff01364633318b99da8faa275235635942bec28a6ed1263f269f35fc2074a0"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/terminal.json",
+          "raw_sha256": "00dcdeb67f13e2e4d551e10e095821f6c69b08e2773b8475434cfa7f2a305f39"
+        },
+        {
+          "relative_path": "events/tool-00000006.intent.json",
+          "raw_sha256": "f2d92edead2b2db728e307b814df9549355bc22b4390de2f1ea9f842b19c3e7f"
+        },
+        {
+          "relative_path": "events/tool-00000006.result.json",
+          "raw_sha256": "511dfcbe8dab5de57d24cdc011670a92ae298e81a3ec8ce5094265b885defd12"
+        },
+        {
+          "relative_path": "job/visible.txt",
+          "raw_sha256": "42c2820692c5d40ffa999a877c1ffa0ea89fdeae30d7186da4227fcce3e617e3"
+        },
+        {
+          "relative_path": "observer.intent.json",
+          "raw_sha256": "7548b8fe9df255149effe234fb61234ca9dc2b58cd1717b7664c456af3fa31a9"
+        },
+        {
+          "relative_path": "request-log.json",
+          "raw_sha256": "e93784f8e624b8022037bc0cfdd061e935a77338aaa19fec7d4b020342973c5e"
+        },
+        {
+          "relative_path": "sanitized-result.json",
+          "raw_sha256": "6d0568f1fc8f593d991699a105dfcc2cd376aab61eec18045efff0ecde0f46d6"
+        }
+      ]
+    },
+    "B3": {
+      "schema": "crane-offline-app-server-mcp-observation/v4-development",
+      "method_id": "B3",
+      "status": "PASS",
+      "tools": {
+        "compute_visible_python": {
+          "name": "compute_visible_python",
+          "description": "Run local Python calculations over full staged visible records/source in an isolated namespace.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "code"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "read_staged_file": {
+          "name": "read_staged_file",
+          "description": "Read exact staged file text using explicit Unicode character offsets; no inferred summary.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "offset": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "length": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1
+              }
+            },
+            "required": [
+              "path",
+              "offset",
+              "length"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "tools_sha256": "b0275850c911b44bbbde37c5a323df2626f3b6a492fc8638227f14536dff7fb4",
+      "runtime_status": "connected",
+      "provider_request_tools_verified": false,
+      "model_call_attempted": false,
+      "ephemeral_thread_started": true,
+      "network_namespace_used": true,
+      "full_harness_confinement_verified": false,
+      "synthetic_read_and_computation_passed": true,
+      "bounded_tool_failure_passed": true,
+      "execution_records": [
+        {
+          "terminal_sha256": "1217ecf382ec71fb4b96335642b2b935ae6faa5a30a5633936c7504322e21ea2",
+          "intent_sha256": "58a665adc15a6e9ad81a094f3692852b29f15bee4f41ba0c334c85e92d05f4be",
+          "namespace_status_sha256": "7f5ba00c748c8d0300c99fae4a77d5152f16da295ec3850cc212fe359e6b6027",
+          "status": "RETURNED",
+          "unit_absent": true,
+          "limits_match_configuration": true,
+          "cpu_accounting": {
+            "budget": {
+              "cumulative_nanoseconds": 300000000,
+              "poll_milliseconds": 20,
+              "query_timeout_milliseconds": 250
+            },
+            "sample_count": 3,
+            "last_observed_cpu_nanoseconds": 32883000,
+            "final_cpu_nanoseconds": 32883000,
+            "observed_overshoot_nanoseconds": 0,
+            "maximum_sample_spacing_nanoseconds": 40590124,
+            "hard_cpu_cap_verified": false,
+            "whole_turn_cpu_accounting_verified": false
+          },
+          "cpu_sample_sha256": [
+            "88651a45f639c7777909be9edc49ccdcdf9cc666960f72f474871111c1ec311e",
+            "a89ac171eb306ee2b6323a1ebfb7abaae41a430908c2facd007f4c54c9a50f4a",
+            "6742069d61c58382c9d2dca397dfa16a9610dd16d5bb4d0dae02bfe85a3b1205"
+          ],
+          "payload_exit_verified": true
+        },
+        {
+          "terminal_sha256": "a51b3d12adb309bc1d2f3d6e62d66f75b786669fc7bd03a3480777ff9501db06",
+          "intent_sha256": "e22d97fdbe95847aa4acc332cb9147875ffa574495463292717cc16205948aff",
+          "namespace_status_sha256": "b3940ce41772fbf49b8cb784fecb3bd644fd272a41d1af59269a2d39d2d6f4fb",
+          "status": "TECHNICAL_FAILURE",
+          "unit_absent": true,
+          "limits_match_configuration": true,
+          "cpu_accounting": {
+            "budget": {
+              "cumulative_nanoseconds": 300000000,
+              "poll_milliseconds": 20,
+              "query_timeout_milliseconds": 250
+            },
+            "sample_count": 13,
+            "last_observed_cpu_nanoseconds": 347502000,
+            "final_cpu_nanoseconds": 347502000,
+            "observed_overshoot_nanoseconds": 47502000,
+            "maximum_sample_spacing_nanoseconds": 26557990,
+            "hard_cpu_cap_verified": false,
+            "whole_turn_cpu_accounting_verified": false
+          },
+          "cpu_sample_sha256": [
+            "0b344e9b7ceb9636780bdea92911428aefcd50e62c25a9c91981b9a3674c246a",
+            "5865ca7ff9a2df7ad56339e2631001491f3186c23deff9412ac8ae882b95794e",
+            "16c162deda60aecd63bc3e5c07a8b3e7deb9e44a9b83f75ae424275bbdde02bd",
+            "059fe2da8a74502b8eb213baffcc2c2024f49b5d5168e81da42d79bacd6c7e0e",
+            "7030cf623096dcf6cf98f972d35df14d3e07a4689cc962ca14f0b5fd5481b9b2",
+            "d623a36f2c459837b86d0b6d6a1cd8b927ce0fdd47a36e46087a468a69dc0977",
+            "351718220257db10a0989967adc93fdf06246b46f1be9a3b320f773edc2617d7",
+            "a8804024736cefbed3672c633dddf0a2137dd6748deedf0194dafc8ebf9adb15",
+            "da5bed85329e6699024aceabd0ed8a39408456a6c63cd089325374a7eb61cc31",
+            "c1fb1b71a24963e1a1b272a3267e394c00ea9cdf91b7db77ad3dfc5eea32e486",
+            "5dc36f83b493321c732c91e3febea0a1d10374acd1d9d66bad5b25d55721b5e7",
+            "733b6e65d3ce09335fca8ce861f1589b196de27b2c974100c94ea3d991746d25",
+            "c7137a00aed9e2cc54a7438b6dc793cb677e241507e4351a247501431c189ebf"
+          ],
+          "payload_exit_verified": false
+        }
+      ],
+      "request_methods": [
+        "initialize",
+        "thread/start",
+        "mcpServerStatus/list",
+        "mcpServer/tool/call",
+        "mcpServer/tool/call",
+        "mcpServer/tool/call"
+      ],
+      "cleanup": "OBSERVATION_GROUP_SIGTERM",
+      "process_exit_code": -15,
+      "stdout_bytes": 5522,
+      "stderr_bytes": 0,
+      "stdout_sha256": "4995b704d59b99bea54eafeff313783a30d3258602728d0c22f011aaf5591ab9",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "turn_or_item_notification_count": 0,
+      "private_record_hashes": [
+        {
+          "relative_path": "app-server-stderr.bin",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "relative_path": "app-server-stdout.bin",
+          "raw_sha256": "4995b704d59b99bea54eafeff313783a30d3258602728d0c22f011aaf5591ab9"
+        },
+        {
+          "relative_path": "configuration.json",
+          "raw_sha256": "f44b8ccdf5faa04986d2b961081f9672096473e47995dbf7e87e1bab1051f6fe"
+        },
+        {
+          "relative_path": "events/rpc-00000001.intent.json",
+          "raw_sha256": "d1953b23563c8f74899c064a864f49458d01729c55f6f71802de0e0e600f448b"
+        },
+        {
+          "relative_path": "events/rpc-00000001.result.json",
+          "raw_sha256": "0ab0a411895553e75f4c626188a47b0126db8d6c417431df38afde1e4e032747"
+        },
+        {
+          "relative_path": "events/rpc-00000002.intent.json",
+          "raw_sha256": "dcd3c558c0f82a93190b7d999529c66884336b68c058f2981080dcbda32016fd"
+        },
+        {
+          "relative_path": "events/rpc-00000002.result.json",
+          "raw_sha256": "e23f3cadc6a3b3eea5bdc0c669b6dbb97c65831c07b8b702b65767e8fb141bdf"
+        },
+        {
+          "relative_path": "events/rpc-00000003.intent.json",
+          "raw_sha256": "b276883087a5b8c34e34ce04c7a368a9690405fec1cb7cd34b92ba5b081a883f"
+        },
+        {
+          "relative_path": "events/rpc-00000003.result.json",
+          "raw_sha256": "2545b622d6cacb6b60c99e805c0d739eafb06d53a6f804285103a112096fe920"
+        },
+        {
+          "relative_path": "events/rpc-00000004.intent.json",
+          "raw_sha256": "dd7cbcc842672b5776ca562d875e558b2883bb32c5e91877f695bc34b63fd513"
+        },
+        {
+          "relative_path": "events/rpc-00000004.result.json",
+          "raw_sha256": "4e450414bce2470ef0ab0286a351421b4c35abb0e5825a440b19d5e7778ff726"
+        },
+        {
+          "relative_path": "events/rpc-00000005.intent.json",
+          "raw_sha256": "b934bd9490081ece5e98d17e7a4ffb8696e69c9effca5c93632b64c1f2c299b2"
+        },
+        {
+          "relative_path": "events/rpc-00000005.result.json",
+          "raw_sha256": "18d52e142b0163e2073dc5ea9d80fd33ccaaabd2d52ce00390f50c6353f3cff3"
+        },
+        {
+          "relative_path": "events/rpc-00000006.intent.json",
+          "raw_sha256": "d33543bd51c025e428f50f47ca25566a04e7ae218b15ed92995542c0f4716e20"
+        },
+        {
+          "relative_path": "events/rpc-00000006.result.json",
+          "raw_sha256": "bfa05d20f0cce04f13e60b96fdd08a3f6cd89edfbebd02b0fba3534610e72dc2"
+        },
+        {
+          "relative_path": "events/session.intent.json",
+          "raw_sha256": "3f0c6ed62b4c0ce335b107435f86465c07940e8dc0a50c6e1ede770c6607afa7"
+        },
+        {
+          "relative_path": "events/tool-00000004.intent.json",
+          "raw_sha256": "464a293f7400472cfefbf9726d90f35a0fcfed1d97d6498c695dfda0f312ab5b"
+        },
+        {
+          "relative_path": "events/tool-00000004.result.json",
+          "raw_sha256": "5ba50b29112401834d3129d16e1cfae84f469950cfe82834de701f67f0699621"
+        },
+        {
+          "relative_path": "events/tool-00000005.execution/cpu-sample-00000000.json",
+          "raw_sha256": "88651a45f639c7777909be9edc49ccdcdf9cc666960f72f474871111c1ec311e"
+        },
+        {
+          "relative_path": "events/tool-00000005.execution/cpu-sample-00000001.json",
+          "raw_sha256": "a89ac171eb306ee2b6323a1ebfb7abaae41a430908c2facd007f4c54c9a50f4a"
+        },
+        {
+          "relative_path": "events/tool-00000005.execution/cpu-sample-00000002.json",
+          "raw_sha256": "6742069d61c58382c9d2dca397dfa16a9610dd16d5bb4d0dae02bfe85a3b1205"
+        },
+        {
+          "relative_path": "events/tool-00000005.execution/intent.json",
+          "raw_sha256": "58a665adc15a6e9ad81a094f3692852b29f15bee4f41ba0c334c85e92d05f4be"
+        },
+        {
+          "relative_path": "events/tool-00000005.execution/namespace-request.json",
+          "raw_sha256": "56ae5cb5f612b979e66e7b64cbb8ed2df5ea6d9f945fdb70876d63e429deb12d"
+        },
+        {
+          "relative_path": "events/tool-00000005.execution/namespace-status.bin",
+          "raw_sha256": "7f5ba00c748c8d0300c99fae4a77d5152f16da295ec3850cc212fe359e6b6027"
+        },
+        {
+          "relative_path": "events/tool-00000005.execution/terminal.json",
+          "raw_sha256": "1217ecf382ec71fb4b96335642b2b935ae6faa5a30a5633936c7504322e21ea2"
+        },
+        {
+          "relative_path": "events/tool-00000005.intent.json",
+          "raw_sha256": "8a6f5d60056b4f70e6c3bc40f8a0197a3d02a9f205ebc7ae5c3c7d8c8e760427"
+        },
+        {
+          "relative_path": "events/tool-00000005.result.json",
+          "raw_sha256": "bef4708b1a44c70f5ae26b82a528d51f8deeff20b82e0b6219e290ba73d2c73a"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000000.json",
+          "raw_sha256": "0b344e9b7ceb9636780bdea92911428aefcd50e62c25a9c91981b9a3674c246a"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000001.json",
+          "raw_sha256": "5865ca7ff9a2df7ad56339e2631001491f3186c23deff9412ac8ae882b95794e"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000002.json",
+          "raw_sha256": "16c162deda60aecd63bc3e5c07a8b3e7deb9e44a9b83f75ae424275bbdde02bd"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000003.json",
+          "raw_sha256": "059fe2da8a74502b8eb213baffcc2c2024f49b5d5168e81da42d79bacd6c7e0e"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000004.json",
+          "raw_sha256": "7030cf623096dcf6cf98f972d35df14d3e07a4689cc962ca14f0b5fd5481b9b2"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000005.json",
+          "raw_sha256": "d623a36f2c459837b86d0b6d6a1cd8b927ce0fdd47a36e46087a468a69dc0977"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000006.json",
+          "raw_sha256": "351718220257db10a0989967adc93fdf06246b46f1be9a3b320f773edc2617d7"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000007.json",
+          "raw_sha256": "a8804024736cefbed3672c633dddf0a2137dd6748deedf0194dafc8ebf9adb15"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000008.json",
+          "raw_sha256": "da5bed85329e6699024aceabd0ed8a39408456a6c63cd089325374a7eb61cc31"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000009.json",
+          "raw_sha256": "c1fb1b71a24963e1a1b272a3267e394c00ea9cdf91b7db77ad3dfc5eea32e486"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000010.json",
+          "raw_sha256": "5dc36f83b493321c732c91e3febea0a1d10374acd1d9d66bad5b25d55721b5e7"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000011.json",
+          "raw_sha256": "733b6e65d3ce09335fca8ce861f1589b196de27b2c974100c94ea3d991746d25"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000012.json",
+          "raw_sha256": "c7137a00aed9e2cc54a7438b6dc793cb677e241507e4351a247501431c189ebf"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/intent.json",
+          "raw_sha256": "e22d97fdbe95847aa4acc332cb9147875ffa574495463292717cc16205948aff"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/namespace-request.json",
+          "raw_sha256": "d0c0c7ef0a922c74dbb01a3ef3114800940811a9fffa18bd3e8efd64bbffbbca"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/namespace-status.bin",
+          "raw_sha256": "b3940ce41772fbf49b8cb784fecb3bd644fd272a41d1af59269a2d39d2d6f4fb"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/terminal.json",
+          "raw_sha256": "a51b3d12adb309bc1d2f3d6e62d66f75b786669fc7bd03a3480777ff9501db06"
+        },
+        {
+          "relative_path": "events/tool-00000006.intent.json",
+          "raw_sha256": "ffe52b299222353b160e9b3e97d389808663c336d2c88b1dbf24c78b9808424d"
+        },
+        {
+          "relative_path": "events/tool-00000006.result.json",
+          "raw_sha256": "8953b8663f5f7932c231437da6c27462be9bc4405f29a9b623d91a5b3732d6eb"
+        },
+        {
+          "relative_path": "job/visible.txt",
+          "raw_sha256": "42c2820692c5d40ffa999a877c1ffa0ea89fdeae30d7186da4227fcce3e617e3"
+        },
+        {
+          "relative_path": "observer.intent.json",
+          "raw_sha256": "95fa362350f1e47ccf0c0568ac19e11d419191aff8f808fd6c14f25d448bfeac"
+        },
+        {
+          "relative_path": "request-log.json",
+          "raw_sha256": "f5c6ca21c2fccff9eb2d009306c10fe32d1b55e63a095738bc9bdda4d2861b83"
+        },
+        {
+          "relative_path": "sanitized-result.json",
+          "raw_sha256": "8bca126b01d8e057dc85ec9bf36134ae5f901a169e4f97b823dcb9312eb5dae0"
+        }
+      ]
+    },
+    "B4": {
+      "schema": "crane-offline-app-server-mcp-observation/v4-development",
+      "method_id": "B4",
+      "status": "PASS",
+      "tools": {
+        "compute_visible_python": {
+          "name": "compute_visible_python",
+          "description": "Run local Python calculations over full staged visible records/source in an isolated namespace.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "code"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "read_staged_file": {
+          "name": "read_staged_file",
+          "description": "Read exact staged file text using explicit Unicode character offsets; no inferred summary.",
+          "inputSchema": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string"
+              },
+              "offset": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "length": {
+                "type": [
+                  "integer",
+                  "null"
+                ],
+                "minimum": 1
+              }
+            },
+            "required": [
+              "path",
+              "offset",
+              "length"
+            ],
+            "additionalProperties": false
+          }
+        }
+      },
+      "tools_sha256": "b0275850c911b44bbbde37c5a323df2626f3b6a492fc8638227f14536dff7fb4",
+      "runtime_status": "connected",
+      "provider_request_tools_verified": false,
+      "model_call_attempted": false,
+      "ephemeral_thread_started": true,
+      "network_namespace_used": true,
+      "full_harness_confinement_verified": false,
+      "synthetic_read_and_computation_passed": true,
+      "bounded_tool_failure_passed": true,
+      "execution_records": [
+        {
+          "terminal_sha256": "c62842ce16367e353972bbf8ba3092b3299093cd287a80e1ed380655d49416d4",
+          "intent_sha256": "9bf82e9ed28296990c980c58ba1fc9817d5106f312b691a385630c71f7a91736",
+          "namespace_status_sha256": "62d16927e4f2a16e4d42e0417c22fae01ddc7b5df3772ca329bf92f53853e66d",
+          "status": "RETURNED",
+          "unit_absent": true,
+          "limits_match_configuration": true,
+          "cpu_accounting": {
+            "budget": {
+              "cumulative_nanoseconds": 300000000,
+              "poll_milliseconds": 20,
+              "query_timeout_milliseconds": 250
+            },
+            "sample_count": 3,
+            "last_observed_cpu_nanoseconds": 35542000,
+            "final_cpu_nanoseconds": 35542000,
+            "observed_overshoot_nanoseconds": 0,
+            "maximum_sample_spacing_nanoseconds": 40353126,
+            "hard_cpu_cap_verified": false,
+            "whole_turn_cpu_accounting_verified": false
+          },
+          "cpu_sample_sha256": [
+            "bceeeb8e6ec03f1be3c4fd189e2acd0681b95abb16e2d6fee602a117efe35183",
+            "03f35c393b2ac79b6581790b2804cccb7035a0dacf31b8e618f07f25b7307aac",
+            "133f6029c7b5b500d6eb073a43ccab72f09fc951db65eb1ae84f3a5717242d99"
+          ],
+          "payload_exit_verified": true
+        },
+        {
+          "terminal_sha256": "af5dbe80cb40118419ea8fea2d08c4991b83c31f38bc629bd24c4cdb3983566f",
+          "intent_sha256": "90e70fa19059e4a40c385ee2abb2856c8cea1748e0924fa5a83297122a7f7c00",
+          "namespace_status_sha256": "b1fdb1c66466bb7d39209445ca64428318cf135514e4beeccf103b1819e093e3",
+          "status": "TECHNICAL_FAILURE",
+          "unit_absent": true,
+          "limits_match_configuration": true,
+          "cpu_accounting": {
+            "budget": {
+              "cumulative_nanoseconds": 300000000,
+              "poll_milliseconds": 20,
+              "query_timeout_milliseconds": 250
+            },
+            "sample_count": 13,
+            "last_observed_cpu_nanoseconds": 349351000,
+            "final_cpu_nanoseconds": 349351000,
+            "observed_overshoot_nanoseconds": 49351000,
+            "maximum_sample_spacing_nanoseconds": 42349076,
+            "hard_cpu_cap_verified": false,
+            "whole_turn_cpu_accounting_verified": false
+          },
+          "cpu_sample_sha256": [
+            "393c8a7a9e85324cdf969a8644a66cbc117c60c0ca0a94dc840a222cf53eb570",
+            "24ffd12f0f998eb7a574b1f829d9818814f8459cffc9228e0000ced19f9b48ca",
+            "2463a5f0580211186634f835118fa8e282b0f398681c340842efb62f5c9b719e",
+            "77f216be707d7d8cb8d222519b50265e0028884628eaabf88d1d8dbc9b6ef98f",
+            "5eb0578157a9affd231c0855919af79c4aa15cbad66fb0f6d424abd76cb35021",
+            "8e1616472aa5561ee7cfd3bfb8e46478fd68dff3b18212168c77f9ba65a3c610",
+            "0b0e6fa5dd9772dd8c038ad4a9f7ea68bb438b3309e65e07ae412dfc7668b844",
+            "02edfd4005328ce6c2ff79e580b379927afa122cd2bb2a4a9c6c48f603c7bc49",
+            "9029f8f989cf9d19a36edb7c198f1670f10f87b26c01dfa96b1c390542513dd2",
+            "ca861668f6c2fff29ae98aa22869af5a61dd54ade33b6905d16bd1a18f4894e6",
+            "827e355d8b690e05f0441e447dee16001939d2d3d02464600ebe74cdfae654a4",
+            "2167a8559e345f01e63ddde15a7e72408b0bd6d68a606ad8cf95a244eed521d5",
+            "63c2fbab55a407237222d5403b4f6b588a43d806b07d727bac05fce4aaeb2c65"
+          ],
+          "payload_exit_verified": false
+        }
+      ],
+      "request_methods": [
+        "initialize",
+        "thread/start",
+        "mcpServerStatus/list",
+        "mcpServer/tool/call",
+        "mcpServer/tool/call",
+        "mcpServer/tool/call"
+      ],
+      "cleanup": "OBSERVATION_GROUP_SIGTERM",
+      "process_exit_code": -15,
+      "stdout_bytes": 5522,
+      "stderr_bytes": 0,
+      "stdout_sha256": "75958036616f4a73b4fec1051a3afc1aab7cadd62e9d4b598fa2ae740c504249",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "turn_or_item_notification_count": 0,
+      "private_record_hashes": [
+        {
+          "relative_path": "app-server-stderr.bin",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "relative_path": "app-server-stdout.bin",
+          "raw_sha256": "75958036616f4a73b4fec1051a3afc1aab7cadd62e9d4b598fa2ae740c504249"
+        },
+        {
+          "relative_path": "configuration.json",
+          "raw_sha256": "7246c50e5d50625cf5c003efcb8d1c55b37b263917491b0f594594b7ff2e6ae3"
+        },
+        {
+          "relative_path": "events/rpc-00000001.intent.json",
+          "raw_sha256": "d1953b23563c8f74899c064a864f49458d01729c55f6f71802de0e0e600f448b"
+        },
+        {
+          "relative_path": "events/rpc-00000001.result.json",
+          "raw_sha256": "0ab0a411895553e75f4c626188a47b0126db8d6c417431df38afde1e4e032747"
+        },
+        {
+          "relative_path": "events/rpc-00000002.intent.json",
+          "raw_sha256": "dcd3c558c0f82a93190b7d999529c66884336b68c058f2981080dcbda32016fd"
+        },
+        {
+          "relative_path": "events/rpc-00000002.result.json",
+          "raw_sha256": "e23f3cadc6a3b3eea5bdc0c669b6dbb97c65831c07b8b702b65767e8fb141bdf"
+        },
+        {
+          "relative_path": "events/rpc-00000003.intent.json",
+          "raw_sha256": "b276883087a5b8c34e34ce04c7a368a9690405fec1cb7cd34b92ba5b081a883f"
+        },
+        {
+          "relative_path": "events/rpc-00000003.result.json",
+          "raw_sha256": "2545b622d6cacb6b60c99e805c0d739eafb06d53a6f804285103a112096fe920"
+        },
+        {
+          "relative_path": "events/rpc-00000004.intent.json",
+          "raw_sha256": "89af7b56359405b8f07fb434160a73cf7d5191af4bb4e9c8a22269fb7b54fde6"
+        },
+        {
+          "relative_path": "events/rpc-00000004.result.json",
+          "raw_sha256": "4e450414bce2470ef0ab0286a351421b4c35abb0e5825a440b19d5e7778ff726"
+        },
+        {
+          "relative_path": "events/rpc-00000005.intent.json",
+          "raw_sha256": "f02704a6c6ecc4b1c7907e707c525eefac91eeb9c7065f89508e224d41682a67"
+        },
+        {
+          "relative_path": "events/rpc-00000005.result.json",
+          "raw_sha256": "18d52e142b0163e2073dc5ea9d80fd33ccaaabd2d52ce00390f50c6353f3cff3"
+        },
+        {
+          "relative_path": "events/rpc-00000006.intent.json",
+          "raw_sha256": "27424dc85934e8aed0617c2331e5bd69b1e172863eda8c3ca6b702b94ae5f67f"
+        },
+        {
+          "relative_path": "events/rpc-00000006.result.json",
+          "raw_sha256": "bfa05d20f0cce04f13e60b96fdd08a3f6cd89edfbebd02b0fba3534610e72dc2"
+        },
+        {
+          "relative_path": "events/session.intent.json",
+          "raw_sha256": "398f63ea62091a66779d597166f2814a3bb3d950f5e91eba6e16b02196670eac"
+        },
+        {
+          "relative_path": "events/tool-00000004.intent.json",
+          "raw_sha256": "8f4009455c30c598f08309b0ff52a3024d960680b61feb40422dfed42b50c7d6"
+        },
+        {
+          "relative_path": "events/tool-00000004.result.json",
+          "raw_sha256": "f0b1bcf8708780f11e55cd15b9dd411f3b11a6427969318ec03dafb67a26ac5b"
+        },
+        {
+          "relative_path": "events/tool-00000005.execution/cpu-sample-00000000.json",
+          "raw_sha256": "bceeeb8e6ec03f1be3c4fd189e2acd0681b95abb16e2d6fee602a117efe35183"
+        },
+        {
+          "relative_path": "events/tool-00000005.execution/cpu-sample-00000001.json",
+          "raw_sha256": "03f35c393b2ac79b6581790b2804cccb7035a0dacf31b8e618f07f25b7307aac"
+        },
+        {
+          "relative_path": "events/tool-00000005.execution/cpu-sample-00000002.json",
+          "raw_sha256": "133f6029c7b5b500d6eb073a43ccab72f09fc951db65eb1ae84f3a5717242d99"
+        },
+        {
+          "relative_path": "events/tool-00000005.execution/intent.json",
+          "raw_sha256": "9bf82e9ed28296990c980c58ba1fc9817d5106f312b691a385630c71f7a91736"
+        },
+        {
+          "relative_path": "events/tool-00000005.execution/namespace-request.json",
+          "raw_sha256": "ad03fb58728a53c8371220fd5f00a987ed74803c70805853cb1660f2e707e2eb"
+        },
+        {
+          "relative_path": "events/tool-00000005.execution/namespace-status.bin",
+          "raw_sha256": "62d16927e4f2a16e4d42e0417c22fae01ddc7b5df3772ca329bf92f53853e66d"
+        },
+        {
+          "relative_path": "events/tool-00000005.execution/terminal.json",
+          "raw_sha256": "c62842ce16367e353972bbf8ba3092b3299093cd287a80e1ed380655d49416d4"
+        },
+        {
+          "relative_path": "events/tool-00000005.intent.json",
+          "raw_sha256": "35208f0f996835b1eccbfa872ef1086b4d92fc7e7d375604794036b84acb88bc"
+        },
+        {
+          "relative_path": "events/tool-00000005.result.json",
+          "raw_sha256": "726a79cf1779d06b1241d9f46f4bf33d23e2fd716523948e95aeeb8e5e91e2af"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000000.json",
+          "raw_sha256": "393c8a7a9e85324cdf969a8644a66cbc117c60c0ca0a94dc840a222cf53eb570"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000001.json",
+          "raw_sha256": "24ffd12f0f998eb7a574b1f829d9818814f8459cffc9228e0000ced19f9b48ca"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000002.json",
+          "raw_sha256": "2463a5f0580211186634f835118fa8e282b0f398681c340842efb62f5c9b719e"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000003.json",
+          "raw_sha256": "77f216be707d7d8cb8d222519b50265e0028884628eaabf88d1d8dbc9b6ef98f"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000004.json",
+          "raw_sha256": "5eb0578157a9affd231c0855919af79c4aa15cbad66fb0f6d424abd76cb35021"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000005.json",
+          "raw_sha256": "8e1616472aa5561ee7cfd3bfb8e46478fd68dff3b18212168c77f9ba65a3c610"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000006.json",
+          "raw_sha256": "0b0e6fa5dd9772dd8c038ad4a9f7ea68bb438b3309e65e07ae412dfc7668b844"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000007.json",
+          "raw_sha256": "02edfd4005328ce6c2ff79e580b379927afa122cd2bb2a4a9c6c48f603c7bc49"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000008.json",
+          "raw_sha256": "9029f8f989cf9d19a36edb7c198f1670f10f87b26c01dfa96b1c390542513dd2"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000009.json",
+          "raw_sha256": "ca861668f6c2fff29ae98aa22869af5a61dd54ade33b6905d16bd1a18f4894e6"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000010.json",
+          "raw_sha256": "827e355d8b690e05f0441e447dee16001939d2d3d02464600ebe74cdfae654a4"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000011.json",
+          "raw_sha256": "2167a8559e345f01e63ddde15a7e72408b0bd6d68a606ad8cf95a244eed521d5"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/cpu-sample-00000012.json",
+          "raw_sha256": "63c2fbab55a407237222d5403b4f6b588a43d806b07d727bac05fce4aaeb2c65"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/intent.json",
+          "raw_sha256": "90e70fa19059e4a40c385ee2abb2856c8cea1748e0924fa5a83297122a7f7c00"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/namespace-request.json",
+          "raw_sha256": "bd6f743e01d294e668470aa1b421890e42709e40e24468d15061163ac9bf26cd"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/namespace-status.bin",
+          "raw_sha256": "b1fdb1c66466bb7d39209445ca64428318cf135514e4beeccf103b1819e093e3"
+        },
+        {
+          "relative_path": "events/tool-00000006.execution/terminal.json",
+          "raw_sha256": "af5dbe80cb40118419ea8fea2d08c4991b83c31f38bc629bd24c4cdb3983566f"
+        },
+        {
+          "relative_path": "events/tool-00000006.intent.json",
+          "raw_sha256": "02c56e99e52e7966711bd3fb8c68c0e9bcee0eab12d11c4358a2c46ad4b3c682"
+        },
+        {
+          "relative_path": "events/tool-00000006.result.json",
+          "raw_sha256": "01b6d277bc2506d59ca54afa22a91c8a62b70da5c4fed7ead053a470861f1589"
+        },
+        {
+          "relative_path": "job/visible.txt",
+          "raw_sha256": "42c2820692c5d40ffa999a877c1ffa0ea89fdeae30d7186da4227fcce3e617e3"
+        },
+        {
+          "relative_path": "observer.intent.json",
+          "raw_sha256": "098dd98663a3668025572e02a1be7d0036ae0dc0fbc5c745dda0400b629ec300"
+        },
+        {
+          "relative_path": "request-log.json",
+          "raw_sha256": "4793ce6d87f1c3d70284a610058d627892b133752a1a16ce7934661161eb9d95"
+        },
+        {
+          "relative_path": "sanitized-result.json",
+          "raw_sha256": "7c474711071d0a6e167266817995fa81ebf4fded0991ab502a1bff878dfb13be"
+        }
+      ]
+    }
+  },
+  "targeted_tests_passed": 37,
+  "test_invocations": [
+    {
+      "passed": 14
+    },
+    {
+      "passed": 23
+    }
+  ],
+  "computation_services_absent": 6,
+  "installed_client_assigned_server_route_verified": true,
+  "model_facing_tools_verified": false,
+  "model_visible_rendering_verified": false,
+  "hard_cumulative_cpu_cap_verified": false,
+  "worst_case_overshoot_bound_verified": false,
+  "whole_turn_cpu_accounting_verified": false,
+  "existing_study_callers_migrated": false,
+  "scientific_budgets_frozen": false,
+  "model_calls_authorized": false,
+  "pilot_annotation_authorized": false,
+  "p11_authorized": false,
+  "confirmation_independent_n": 0,
+  "replication_independent_n": 0
+}
