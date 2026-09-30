@@ -4076,3 +4076,28 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   remain open. P11 retains nineteen open conditions; confirmation/replication N remain zero.
   Alpha and physical quarantine are unchanged. B0/B1/B3 versus B4 effects, intervals and corrected
   p-values, including inconclusive/unfavorable results, remain prospectively required.
+
+
+## 2026-09-30 — implement B4 candidate request/return seam using the existing v2 realizer
+
+- **Preparation:** a pure helper reuses the frozen shared B3 input/parity checks, derives the same
+  supported diagnosis and binds evidence, packet set, ontology, facts, plan, prompt and v2 realizer
+  version. It prepares a structured ordered-clause candidate request; there is no provider caller
+  or execution declaration. B3 code/prompt and original realizers remain unchanged.
+- **Retention/realization:** successful technical envelopes must match the recomputed request,
+  prompt/schema, response/plan identity and raw/parsed candidate. The unchanged candidate and raw
+  hashes are retained alongside one invocation of the existing v2 deterministic realizer. Invalid
+  contract choices, wrong finite numbers and missing required content remain visible through local
+  removal/reconstruction audits. Structural/transport failures stop compilation without replacement
+  candidates or retry authorization; enclosing durable retention remains required before this seam.
+- **Scope:** this is constrained selection/order and registered template realization, not an observed
+  free-prose semantic-verification result. B3/B4 still compares combined realization/verification,
+  not pure verifier causality. Output schema allows unknown contract IDs to reach verification and
+  empty clause lists to expose reconstruction rather than silently constrain those errors away.
+- **Verification/governance:** fourteen synthetic interface checks, eleven existing B3, eight v2
+  realizer and two readiness checks pass. Duplicate raw keys, Boolean/nonfinite numbers, prose
+  injection and changed identities are rejected. No model call, pilot rescore, key join or annotation
+  occurred. The failed combined canary and unlaunched C remain unchanged. P11 retains nineteen open
+  conditions; alpha, quarantine and confirmation/replication N are unchanged. Actual capacity,
+  harness/tool enforcement, fresh five-method outputs and qualified measurement remain open;
+  required secondary comparisons, episode effects/intervals and corrected p-values are preserved.

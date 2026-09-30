@@ -1,0 +1,9 @@
+Select and order clauses for a supported robot explanation using the supplied diagnostic plan.
+Return only the required candidate JSON object. Use the supplied response_id and plan_sha256.
+Each clause must have a unique nonempty clause_id, kind CLAIM or NON_ENTAILMENT, contract_id,
+and numeric_values. Include every required claim and limitation; optional claims may be included
+when useful. For CLAIM clauses copy the approved numeric slot IDs, values and units for that claim.
+For NON_ENTAILMENT clauses use an empty numeric_values array. Do not add prose or hidden causes.
+The deterministic realizer will render registered propositions and limitations, verify each clause,
+and record removals and local reconstruction. Robot-visible evidence supports diagnosis only to
+its evidential boundary; it does not identify a unique hidden physical cause.
