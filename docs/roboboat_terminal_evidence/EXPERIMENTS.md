@@ -196,3 +196,25 @@ python analysis/publish_roboboat_terminal_capsule.py \
 ```
 
 Do not rerun after immutable publication. This capsule is core development/failure accounting, not a claim that the fresh stopping-extension annotations or full study are complete. No shared DVC/storage pointer or inference look is released.
+
+### Settling reviewed support and development coverage sensitivity
+
+All eleven inventories are project-reviewed; both commands below have executed, and the support run is live in session `45424` (PID `1377578`). Do not start a second queue while the process exists or retry any unresolved/failed intent.
+
+```bash
+python analysis/run_roboboat_settling_support.py prepare
+python analysis/run_roboboat_settling_support.py run
+python analysis/analyze_roboboat_settling_support.py \
+  --output artifacts/roboboat-terminal-settling-support-v1/development-results-v1.json
+```
+
+Preparation is one-shot and freezes 12 episode-specific packets, all exact reviews/returns/source answers, public evidence and current qualified binding. Deadline remains 300 s; original core timeout stays immutable. The analysis is not yet released; it fails closed while any judgment is missing. It revalidates the complete return inventory, reproduces agreement and disagreement-only adjudication, then reports inherited four-unit and added L2 partial-compliance coverage separately for both passes and final labels. The extra unit was declared after inspecting the method responses and before support calls; its result is developmental sensitivity and cannot be promoted to confirmatory superiority. Complete supported supplemental facts remain admissible. The two internal-stopping variants remain inside existing approach clusters, adding no independent N.
+
+```bash
+python analysis/audit_roboboat_terminal_numbers.py \
+  artifacts/roboboat-terminal-settling-v1/responses \
+  --batch-root artifacts/roboboat-terminal-settling-v1/batches \
+  --output artifacts/roboboat-terminal-settling-v1/numeric-audit-v1.json
+```
+
+Executed: 12/12 pass. Numeric audit covers rounded value/unit matches, not full association/temporal semantics. Current scoped test command above: 84 passed.
