@@ -1,0 +1,33 @@
+{
+  "schema": "crane-cgroup-sandbox-failed-observation/v1-development",
+  "recorded_date": "2026-09-30",
+  "status": "RETAINED_PRELAUNCH_UNSUPPORTED_SYSTEMD_PROPERTY",
+  "bindings": [
+    {
+      "path": "analysis/observe_evidence_calibration_cgroup_sandbox.py",
+      "raw_sha256": "7190b5409f60e64d87994b667def0c052b68f096247f15554f4eb4000675dcaa"
+    },
+    {
+      "path": "tests/test_evidence_calibration_cgroup_sandbox.py",
+      "raw_sha256": "c18a982e5631b5059e8b03d32c3fc0d1e733f10fed73fc23afc2fc6c0c52d19e"
+    }
+  ],
+  "retained_transaction": {
+    "directory": "output/infrastructure/cgroup-sandbox-development-v1",
+    "intent_sha256": "89e4fed2b54de52802c6c7aa764dd2c34d6b1cb5f2768e3eb227a93e0cfb927a",
+    "probe_terminal_sha256": "6dc824400dc8a2e8303fcc5d68f186819b19fe95a427435668e6ab52b4748ead",
+    "terminal_sha256": "2b70b08e1709699ee8ed194a788b318013e48f5f3ab921f9e20299929d4899cf"
+  },
+  "launched_namespace_probes": 0,
+  "unlaunched_probes": [
+    "task_limit",
+    "memory_pressure",
+    "service_wall"
+  ],
+  "failure": "Unknown assignment: MemoryOOMGroup=yes",
+  "replacement_candidate": "analysis/observe_evidence_calibration_cgroup_sandbox_v2.py",
+  "repair": "Remove unsupported redundant property; installed systemd.service documentation states OOMPolicy=kill sets memory.oom.group=1.",
+  "installed_documentation_sha256": "b157f17c335c7dc42f1074e144b38a1d42603103b003cbd1a5c34d07124055b5",
+  "model_calls_authorized": false,
+  "p11_authorized": false
+}

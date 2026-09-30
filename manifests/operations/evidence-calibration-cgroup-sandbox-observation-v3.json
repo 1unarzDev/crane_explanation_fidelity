@@ -1,0 +1,136 @@
+{
+  "schema": "crane-cgroup-sandbox-observation-binding/v3-development",
+  "recorded_date": "2026-09-30",
+  "status": "PASS_FIXED_NAMESPACE_RESOURCE_PROBES_ONLY",
+  "bindings": [
+    {
+      "path": "analysis/observe_evidence_calibration_cgroup_sandbox.py",
+      "raw_sha256": "7190b5409f60e64d87994b667def0c052b68f096247f15554f4eb4000675dcaa"
+    },
+    {
+      "path": "analysis/observe_evidence_calibration_cgroup_sandbox_v2.py",
+      "raw_sha256": "a4928e7a85b6c4a88b3fb6596b1711928a18b06c0dd37444a77fbf85afc5d253"
+    },
+    {
+      "path": "analysis/observe_evidence_calibration_cgroup_sandbox_v3.py",
+      "raw_sha256": "28c22006bf25d7d11fc667029baedea6ae9b8353dc2e615d574cda50e3e7c30e"
+    },
+    {
+      "path": "tests/test_evidence_calibration_cgroup_sandbox.py",
+      "raw_sha256": "c18a982e5631b5059e8b03d32c3fc0d1e733f10fed73fc23afc2fc6c0c52d19e"
+    },
+    {
+      "path": "tests/test_evidence_calibration_cgroup_sandbox_v3.py",
+      "raw_sha256": "c05333708dc9d90ec5c7473a665bb6673457194f645ba404f46e845c546bb054"
+    },
+    {
+      "path": "docs/CGROUP_SANDBOX_INTEGRATION_2026-09-30.md",
+      "raw_sha256": "1df5d95e1365a9db483d36808d34ac658f3b7ecabb94448bebe6fe3595d38b65"
+    },
+    {
+      "path": "analysis/evidence_calibration_local_tool_sandbox.py",
+      "raw_sha256": "3fc22a0519736f6764452fe90b57340e7a2018defc2e89187fece6fd978da90c"
+    },
+    {
+      "path": "analysis/evidence_calibration_local_tool_sandbox_v2.py",
+      "raw_sha256": "e6ef4a67af326bb76293186ef5e99743e041bb41622d9b7154ef651d072e5906"
+    },
+    {
+      "path": "analysis/stage_evidence_calibration_workspace.py",
+      "raw_sha256": "3044778ac6f6de74b80884a8b5e777d7cea9e9e42cea56e20bde7999954a7d0b"
+    },
+    {
+      "path": "analysis/observe_evidence_calibration_cgroup_limits.py",
+      "raw_sha256": "aaa610f75a0c872f05941957f291ed6a09dd239510fae056ee4bb864679ccddb"
+    },
+    {
+      "path": "manifests/operations/evidence-calibration-cgroup-sandbox-failure-v1.json",
+      "raw_sha256": "6124558653b765008223399b195d67ac6825e78bc9168456dc409edd2714391c"
+    },
+    {
+      "path": "manifests/operations/evidence-calibration-cgroup-sandbox-failure-v2.json",
+      "raw_sha256": "6f3a836100f194ef84345cdfa87e5ca742be6df5dff521628a8ee6c52fdd3503"
+    }
+  ],
+  "local_transaction": {
+    "directory": "output/infrastructure/cgroup-sandbox-development-v3",
+    "records": [
+      {
+        "path": "isolation.intent.json",
+        "raw_sha256": "79ec48c5a0f0e4d7acfa358d3bf99dd2467914ae2f1f4e733415646bb8375210"
+      },
+      {
+        "path": "isolation.terminal.json",
+        "raw_sha256": "e9190759ed966fbf0a933f251910d0fbd0d1547baf3d1d0829015df120705068"
+      },
+      {
+        "path": "memory_pressure.intent.json",
+        "raw_sha256": "524415e5cc6aae8902651bac836815ae19ec7d31ff3b2c34cead536093828877"
+      },
+      {
+        "path": "memory_pressure.terminal.json",
+        "raw_sha256": "e8e6c721ba34f2161c5381f690aecd3b57b3f26a34d654b0e9dea0b142d80224"
+      },
+      {
+        "path": "service_wall.intent.json",
+        "raw_sha256": "5496bb7bed47c03223d6f01d608383827cce3b4cda48f297bb46e1c56c008433"
+      },
+      {
+        "path": "service_wall.terminal.json",
+        "raw_sha256": "8cf617f86589645e02cb7eb41570b27a7e16b4910d0605cff7ff04fa366dfa7c"
+      },
+      {
+        "path": "task_limit.intent.json",
+        "raw_sha256": "c8d42a36c04f4528176127e9e8a536eb371e6df509dc12f2904b4dad90e7f742"
+      },
+      {
+        "path": "task_limit.terminal.json",
+        "raw_sha256": "abc08756ea36eadb6b4748bcaaa9ac9d8b6cf719a17f2e4bad94275092876b56"
+      },
+      {
+        "path": "terminal.json",
+        "raw_sha256": "2955a1f135b8a6e9a1f839b3296c67d546e85be46cb816d6ed0422924210ea55"
+      }
+    ]
+  },
+  "probes": {
+    "isolation": {
+      "status": "PASS_FIXED_OPERATOR_PROBE",
+      "return_code": 0,
+      "stdout": "{\"visible_read\": true, \"home_absent\": true, \"sysfs_absent\": true, \"environment_cleared\": true, \"arithmetic\": true, \"visible_write_denied\": true}\n",
+      "unit_result": "success",
+      "cleanup_load_state": "not-found"
+    },
+    "task_limit": {
+      "status": "PASS_FIXED_OPERATOR_PROBE",
+      "return_code": 0,
+      "stdout": "{\"children_started\": 13, \"task_creation_blocked\": true, \"children_reaped\": true}\n",
+      "unit_result": "success",
+      "cleanup_load_state": "not-found"
+    },
+    "memory_pressure": {
+      "status": "PASS_FIXED_OPERATOR_PROBE",
+      "return_code": 1,
+      "stdout": "",
+      "unit_result": "oom-kill",
+      "cleanup_load_state": "not-found"
+    },
+    "service_wall": {
+      "status": "PASS_FIXED_OPERATOR_PROBE",
+      "return_code": 1,
+      "stdout": "",
+      "unit_result": "timeout",
+      "cleanup_load_state": "not-found"
+    }
+  },
+  "targeted_tests_passed": 42,
+  "arbitrary_code_output_containment_certified": false,
+  "cumulative_cpu_limit_certified": false,
+  "scratch_limit_certified": false,
+  "scientific_harness_adopted": false,
+  "model_calls_authorized": false,
+  "pilot_annotation_authorized": false,
+  "p11_authorized": false,
+  "confirmation_independent_n": 0,
+  "replication_independent_n": 0
+}

@@ -1,0 +1,34 @@
+{
+  "schema": "crane-cgroup-sandbox-failed-observation/v2-development",
+  "recorded_date": "2026-09-30",
+  "status": "RETAINED_PROBE_ENVIRONMENT_EXPECTATION_FAILURE",
+  "bindings": [
+    {
+      "path": "analysis/observe_evidence_calibration_cgroup_sandbox_v2.py",
+      "raw_sha256": "a4928e7a85b6c4a88b3fb6596b1711928a18b06c0dd37444a77fbf85afc5d253"
+    }
+  ],
+  "retained_transaction": {
+    "directory": "output/infrastructure/cgroup-sandbox-development-v2",
+    "intent_sha256": "eae4a64c56d48d156537b782c3cf20434570899774e7b56489dd180bda408502",
+    "probe_terminal_sha256": "775456cb5f8fb5fe63661c0ec52af8944530625ee45ce9138fef26ac006eb737",
+    "terminal_sha256": "5385a8051815c0edf71cc212077ba85bee05e4fd67981b316ba67e26989ea7de"
+  },
+  "launched_namespace_probes": 1,
+  "unlaunched_probes": [
+    "task_limit",
+    "memory_pressure",
+    "service_wall"
+  ],
+  "failure": "namespace behavior changed: environment_cleared=false; other five isolation checks pass",
+  "supplementary_original_v2_namespace_environment": {
+    "PATH": "/usr/bin:/bin",
+    "LC_ALL": "C.UTF-8",
+    "PWD": "/work"
+  },
+  "supplementary_probe_provenance": "Separate fixed operator invocation of unchanged sandbox v2 printed the whole cleared namespace environment; not a service-probe rerun.",
+  "replacement_candidate": "analysis/observe_evidence_calibration_cgroup_sandbox_v3.py",
+  "repair": "Require exact configured PATH/locale plus bubblewrap PWD=/work; retain old failed reference and terminal.",
+  "model_calls_authorized": false,
+  "p11_authorized": false
+}

@@ -4496,3 +4496,25 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   method-key join, physical acquisition, alpha expenditure or P11 freeze. Failed
   combined measurement/unlaunched C and pending reopening remain unchanged. P11
   retains nineteen open conditions and confirmation/replication independent N=0.
+
+
+## 2026-09-30 — preserve resource-integration failures and verify fixed namespace probes
+
+- **Failures:** v1 operator service rejects unsupported MemoryOOMGroup before
+  namespace launch. v2 removes only that assignment, but retains a failed probe
+  expectation excluding bubblewrap PWD. A separate original-namespace inspection
+  confirms exact PATH/locale/PWD. Neither failed transaction or source is rewritten.
+- **Repair/evidence:** v3 additionally fixes only the exact environment expectation;
+  tested diffs preserve all other code. Four fixed synthetic probes pass namespace
+  reads/write denial, descendant task blocking, group memory OOM termination and
+  service wall termination. Registered systemd Result fields distinguish expected
+  resource failures from generic exits. All services are absent after cleanup.
+- **Verification:** forty-two targeted integration/version-diff/resource/bounded-tool
+  tests pass. Earlier unlaunched probes remain unlaunched. No method caller adopts
+  the observer; it captures only finite operator-authored outputs and does not
+  enforce the v2 output-byte limit. CPUQuota is a rate cap; cumulative CPU/scratch,
+  arbitrary-output and complete runtime/provider/harness budgets remain open.
+- **Governance:** no semantic method/automated annotation invocation, retained
+  response score, method-key join, physical acquisition, alpha spending or P11
+  freeze. Preserve failed combined support/unlaunched C and pending reopening.
+  P11 keeps nineteen open conditions and confirmation/replication independent N=0.

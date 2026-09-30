@@ -1,5 +1,18 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Namespace/resource integration addendum after `9552c693` — 2026-09-30
+
+A [fixed service/namespace observation](CGROUP_SANDBOX_INTEGRATION_2026-09-30.md)
+retains an unsupported-property failure and an incorrect environment-expectation
+failure. A separately diff-bound v3 passes visible-read/write isolation, descendant
+task blocking, memory OOM termination and service wall-time termination. All units
+are absent after cleanup; forty-two targeted checks pass. Existing sandbox/broker/
+MCP callers are unchanged. Arbitrary output capture, cumulative CPU/scratch budgets,
+restored-runtime and complete provider integration remain open. No model/annotation
+call, retained response scoring or alpha spending occurred. P11 keeps nineteen
+open conditions, zero confirmation/replication N and pending measurement reopening.
+
+
 ## Process-tree controls addendum after `c7ecb8fb` — 2026-09-30
 
 A [one-shot operator probe](CGROUP_AVAILABILITY_2026-09-30.md) observes user-service
