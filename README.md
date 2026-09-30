@@ -24,8 +24,11 @@ inventories have a reviewed route, including one manual inventory with different
 The separate role continuation completed all 158 requests, giving 113 known A and 114 B returns;
 one original A intent remains quarantined. The neutral-v2 synthetic support-input extension is
 qualified within its bound scope, but the combined-format canary failed its frozen B recovery-
-coverage reference after two valid support returns. C was never launched. Pilot annotation,
-role/missingness disposition and claim-specific endpoint mapping remain open. P11 has 19 open gates;
+coverage reference after two valid support returns. C was never launched. Raw role/missingness bookkeeping is now bound; semantic claim attachment, response ranks,
+pilot annotation and episode measurement remain open. Offline preparation covers all five methods
+on 60 aligned conditions from the same 16 inspected episodes. Local tool namespace checks pass,
+but provider harness enforcement and actual-route context capacity remain unbound. A proposed
+bounded measurement reopening awaits an explicit user decision and authorizes no calls. P11 has 19 open gates;
 confirmation and replication each have independent N=0. The exact active boundaries and open
 gates are in the [current-state checkpoint](docs/CURRENT_STATE_2026-09-30.md),
 [evidence-calibration protocol](docs/EVIDENCE_CALIBRATION_PROTOCOL.md), and newest entries of the

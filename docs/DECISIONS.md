@@ -4201,3 +4201,28 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   an explicit user decision to reopen the bound no-further-cycle boundary. Exact new components,
   runtime/capacity/budgets, references and execution freeze would still precede any model call.
   Existing independent execution/capacity work may continue while that decision is pending.
+
+
+## 2026-09-30 — synchronize entry-point state and manuscript with retained measurement failure
+
+- **Documentation drift:** README still listed raw role/missingness disposition as open after its
+  mechanical binding, and the long dated checkpoint lacked the latest method request/staging,
+  full-cohort integration, local namespace isolation and pending measurement proposal. Add a
+  concise current summary above the preserved dated record; update README's current-status text.
+  Semantic scope/attachment/rank measurement remains open; bookkeeping closure is not qualification.
+- **Manuscript:** retain earlier Astra-high qualification passes while explicitly stating the later
+  combined-format recovery-coverage failure, unlaunched adjudication and closed pilot annotation.
+  Clarify B3 ordinary realization versus B4 constrained realization/verification as a combined
+  comparison without pure verifier attribution. Tighten surrounding wording to preserve the
+  nine-page full-paper snapshot; no result, endpoint or historical response is changed.
+- **Verification:** the paper builds, all 220 audited empirical assertions retain numeric traceability,
+  and anonymous full-paper packaging passes at nine pages with embedded fonts. Render all pages;
+  the contact sheet and changed pages four/nine show no clipping/overlap. These checks establish
+  mechanical snapshot readiness only. Recomputed freshness still records 120 former confirmation
+  and 20 replication layouts materialized, with 100 allocated replication layouts quarantined.
+  The alpha audit remains provisional: 0.02 consumed, at most 0.01 discovery and 0.02 replication-only.
+- **Governance:** no new model call, annotation, method-key join, physical acquisition, alpha binding
+  or submission occurred. The reopening proposal awaits an explicit user decision and authorizes
+  zero calls; automatic continuation is not approval. P11 retains nineteen open conditions with
+  no component hash mismatch; confirmation/replication N remain zero. Qualified measurement,
+  complete execution/capacity and fresh episode-level comparative evidence remain outstanding.

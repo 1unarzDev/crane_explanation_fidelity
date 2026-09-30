@@ -1,5 +1,47 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Current summary after `2ad2a27` — 2026-09-30
+
+This summary supersedes earlier status statements below; the dated checkpoints remain preserved.
+The latest machine-readable P11 audit has **19 open conditions**, no component hash mismatch,
+and confirmation/replication independent N=0. The paper is a development full-paper snapshot,
+not a frozen scientific result or submission-ready experiment.
+
+- **Inputs:** all 16 original inspected configurations and 60 aligned conditions reproduce. The
+  full-cohort integration prepares 240 B0/B1/B3/B4 requests and stages 300 B0–B4 workspaces;
+  the supplementary B2 audit supplies the other 60 request candidates. Original packet,
+  baseline-request and workspace hashes are preserved, including retained-failure episodes.
+- **Method paths:** B0/B1/B2/B3 retain ordinary answers without semantic repair; B4 retains its
+  structured candidate alongside the unchanged v2 local-realization audit. B3 versus B4 combines
+  realization and verification differences and cannot identify pure verifier causality.
+- **Execution:** local bubblewrap namespace probes and the original staged tool pass. Provider
+  tool routing, method permissions, full runtime binding, durable one-shot execution and actual
+  tokenizer/provider capacity remain open. Large evidence and tool results cannot be silently
+  truncated. No new model-backed comparative outputs follow from these input/isolation checks.
+- **Measurement:** 227/228 role returns and all 1,084 atoms have bound raw disagreement/missingness
+  bookkeeping. Semantic attachment, scope/unresolved treatment and response ranks remain
+  unqualified. The combined support canary failed its B recovery-coverage reference; old C remains
+  unlaunched. The separate earlier qualifications do not authorize pilot annotation.
+- **Pending decision:** the [measurement reopening proposal](MEASUREMENT_REOPENING_PROPOSAL_2026-09-30.md)
+  requests one fresh bounded support/communication cycle (24 synthetic cases, at most 53 calls).
+  It is not adopted, freezes no new configuration and authorizes zero calls. Automatic goal
+  continuations are not an answer to that decision.
+- **Resources:** recomputed freshness accounting retains 120 former confirmation and 20 former
+  replication layouts as materialized development, with 100 old allocated replication layouts
+  quarantined. Recomputed program alpha remains 0.02 consumed, at most 0.01 discovery and 0.02
+  replication-only. No fresh allocation or alpha binding occurred.
+
+Authoritative records: `evidence-calibration-method-preparation-v1-development.json`,
+`evidence-calibration-b2-requests-v1-development.json` under `manifests/study/`, and
+`evidence-calibration-local-tool-isolation-v1-development.json` plus
+`evidence-calibration-measurement-reopening-proposal-v1.json` under `manifests/operations/`.
+Fresh aligned comparative outputs, qualified whole-episode measurement, coverage/discordances,
+power and compatible prospective allocation remain required before P11. Primary B2/B4 and
+secondary B0/B1/B3-versus-B4 effects, intervals and corrected p-values must include inconclusive
+and unfavorable outcomes; controls cannot rescue the primary result.
+
+## Earlier checkpoint record
+
 This checkpoint reconciles the checkout at `70e8816` before this documentation and test update.
 It is a development status record, not a P11 freeze, semantic result, or amendment to historical
 outputs. Newer dated decisions and their bound manifests govern where earlier living text differs.

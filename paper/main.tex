@@ -272,15 +272,15 @@ results separately and describe this retained operating point as predominantly d
 
 \subsection{Prospective evidence-intervention comparison}
 
-The prospective benchmark compares five logically distinct conditions. B0 receives the ordinary
-deterministic runtime presentation without diagnostic contracts or executable diagnostic tools.
-B1 receives structured robot-visible evidence but no executable contracts. B2 is the strongest
-fair repository-aware, tool-enabled agent condition available. B3 runs the deterministic
-diagnostic contract and planner but omits complete final-claim verification. B4 adds maximal-
-supported planning, claim-ID-aware realization, and final removal or generalization of unsupported
-clauses. A deterministic rendering is retained to separate diagnostic computation from language
-generation. All paired conditions receive the same evidence condition and governed source and
-configuration access appropriate to their declared interface; B2 is not intentionally weakened.
+The benchmark compares five conditions. B0 receives an ordinary deterministic runtime
+presentation without diagnostic contracts or tools; B1 receives the same structured evidence.
+B2 is the strongest fair repository-aware, tool-enabled agent. B3 uses the deterministic contract
+and planner with ordinary realization and no final verification. B4 uses maximal-supported
+planning, constrained claim-ID realization and local clause verification/repair. Thus B3/B4
+compares combined realization and verification, not a pure verifier effect. A deterministic
+rendering separates diagnostic computation from language generation. All conditions receive
+the same evidence and source/configuration access appropriate to their interface; B2 is not
+intentionally weakened.
 
 The primary paired comparison is B4 versus B2; secondary contrasts pair B4 with B0, B1, and B3
 on the same episodes. For each episode, a method
@@ -335,7 +335,9 @@ agent-assessed, not human annotations; repeated calls to one model family may sh
 errors. The retained Luna history below documents measurement development, but its earlier endpoint
 qualification does not validate the new five-way atomic-support task. A separately frozen
 qualification of \texttt{gpt-6-astra} at high effort passed both isolated held-out passes on that
-support task. The first frozen assertion-role task failed its exact held-out gate (12/20 and 14/20
+support task. A later combined-format compatibility canary failed its frozen measured-recovery
+coverage reference despite matching atomic labels in both passes; its adjudication call was not
+launched. That retained failure keeps pilot support annotation closed. The first frozen assertion-role task failed its exact held-out gate (12/20 and 14/20
 cases). After a separately retained reference critique and prospective versioned repair, the
 v2r2 synthetic stance/kind/polarity task passed 20/20 held-out cases in each of two isolated
 passes. This qualifies only that classification task. Mechanistic endpoint mapping and asserted
@@ -672,9 +674,9 @@ Simulation tests controlled mechanisms, not hardware reliability or human trust.
 its original held-out qualification but failed an endpoint-threat extension; v8--v11 also failed
 their gates. V12 qualified, but five transport-invalid judgments prevented the original campaign
 release. Post-hoc correction does not eliminate small-category or systematic-error uncertainty.
-Repeated agent measurements are not independent human agreement. The atomic-support task passed
-two isolated Astra-high qualification passes, and a separate synthetic stance/kind/polarity task
-passed its narrower gate. Pilot endpoint mapping and comparative support assessment remain open.
+Repeated agent measurements are not independent human agreement. Earlier Astra-high support and
+stance/kind/polarity qualifications do not qualify the pilot pipeline: its combined-format coverage
+gate failed. Pilot endpoint mapping and comparative assessment remain open.
 Judge qualification cannot repair incomplete references. The legacy cohort stopped below its
 minimum without completed semantic scoring. Development cases exercise the pipeline; only a
 separately frozen prospective study can support comparative claims.
