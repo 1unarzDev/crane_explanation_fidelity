@@ -311,3 +311,13 @@ remain immutable. A defect in the old prefix triage audit was repaired: it now v
 17 IDs even though 96 later forms share the directory. This is partial development inventory
 review; 96 forms and the quarantined request remain unresolved. No support or role annotation,
 method join, comparative score, or P11 authorization follows.
+
+Further review exposed an atomicity error in that first project approval: one bundled candidate
+said a command stream was present, valid, and delivered, though five otherwise identical answers
+split those facts. A versioned v2 review preserves the older artifact, splits that candidate and
+ten equivalent candidates in an additional 35 short responses, and binds 52 response-level
+reviews in total. Its 274 original candidates yield 296 reviewed atoms, including the three
+earlier `FollowPath` actor repairs. Sixty-one of 113 inventories still need review; three contain
+bare `Yes.`/`No.` spans whose question-dependent meaning remains open in the answer-only bank.
+The quarantined extraction request is untouched. The v2 audit passes while support annotation,
+method joining, endpoint scoring, and P11 remain prohibited.

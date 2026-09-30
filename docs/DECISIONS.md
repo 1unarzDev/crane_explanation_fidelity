@@ -3182,3 +3182,22 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   request remains quarantined. Whole-bank completeness, qualified support annotation, role
   application, method-key join, B2/B4 effect, and P11 remain closed. No independent N or alpha
   changes.
+
+## 2026-09-30 — amend the pilot atomic review for separable command-stream claims
+
+- **Defect found:** the first project review accepted one extractor claim that bundled command
+  stream presence, validity, and delivery. Five otherwise identical answers split those into
+  three atoms. These are separately testable facts with potentially different evidence
+  requirements, so the earlier 17-form completeness disposition was too broad.
+- **Versioned resolution:** preserve the v1 review and its original 17 pending forms. The v2
+  method-blind project review rejects that composite candidate, adds the three atomic meanings,
+  and applies the same repair to ten additional short responses. It independently reviews 35
+  additional answer texts, for 52 reviewed responses total. Across this set, 274 original
+  candidates become 296 reviewed atoms after 11 composite splits; the three previously accepted
+  `FollowPath` actor repairs remain bound. The read-only v2 audit verifies original form/call
+  hashes, bank text, the selected response set, exact splits, and closed scoring flags.
+- **Boundary:** 61 of 113 structurally valid inventories remain unreviewed, including three
+  bare `Yes.`/`No.` spans whose question-dependent meaning is not available in the blinded
+  answer-only bank. The one unknown-disposition extraction request remains quarantined. No
+  support or role annotation, method join, B2/B4 effect, P11 authorization, independent episode,
+  or alpha use follows.
