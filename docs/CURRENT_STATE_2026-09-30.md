@@ -1,5 +1,20 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## CPU broker/MCP addendum after `0d612f1f` — 2026-09-30
+
+A [separate broker v5/MCP stdio v4](CPU_BROKER_MCP_2026-09-30.md) connects executor
+v10 with mandatory typed CPU budget and unchanged local/tree/scratch constraints.
+Forty-four focused checks and five retained fixed stdio exchanges pass. Full Unicode
+reads/literals and all assigned inventories remain exact; sampled CPU cutoff is a
+null technical wire error with partial bytes/counters retained only in operator
+records. All six computation services are absent. Overshoot remains visible, not
+claimed as a hard cap or scientific method effect. Installed-client route for this
+candidate, full turn accounting, capacity/rendering, immutable runtime and measurement
+remain open. Existing study callers do not migrate. No semantic execution, annotation,
+scoring, alpha spending or P11 freeze occurs. N=0, nineteen open conditions and the
+unanswered reopening decision remain.
+
+
 ## Sampled CPU executor addendum after `65835d7d` — 2026-09-30
 
 A [separate cumulative-CPU candidate](SAMPLED_TREE_CPU_EXECUTOR_2026-09-30.md)

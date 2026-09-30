@@ -4755,3 +4755,26 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   key join, physical acquisition, alpha spending or P11 freeze. Preserve failed
   combined support/unlaunched C and unanswered reopening. P11 retains nineteen open
   conditions, no hash mismatches and confirmation/replication N=0.
+
+
+## 2026-09-30 — connect sampled CPU executor through separate broker and MCP versions
+
+- **Integration:** broker v5 selects executor v10, requiring and binding typed CPU
+  budget alongside local/tree/scratch limits. MCP stdio v4 strictly requires CPU
+  config and binds it in session intent. Preserve protocol, exact tool definitions,
+  lossless reads, one-shot records and null-error behavior; no study caller migrates.
+- **Evidence:** 44 focused checks across two invocations pass. Five distinct fixed
+  stdio exchanges pass: B0/B1 perform zero tools; B2/B3/B4 each perform full read,
+  literal computation and fixed CPU workload. Wire CPU errors withhold all partial
+  output/audit bytes. All six services retain accounting and are absent after cleanup.
+  Staged B2 primitive parity still passes; these are not comparative pilot outputs.
+- **Overshoot:** retain 67.638, 20.257 and 58.609 ms on the three fixed inventory
+  assignments at 0.300 s threshold. No method effect, hard cap or worst-case bound
+  follows. Preserve prior startup failures and larger/smaller executor overshoots.
+- **Remaining integration:** installed-client routing for this candidate, full model-
+  facing tools/renderer/capacity, cumulative turn budgets/overshoot policy, runtime/
+  confinement and crash durability remain open. Accounting stays operator-side.
+- **Governance:** no semantic model/automated annotation call, method-key join, real-
+  pilot score, physical acquisition, alpha spending or P11 freeze. Failed combined
+  support/unlaunched C and unanswered reopening remain. P11 keeps nineteen open
+  conditions, no hash mismatches and confirmation/replication independent N=0.
