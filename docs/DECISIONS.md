@@ -4731,3 +4731,27 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   method-key join, physical acquisition, alpha spending or P11 freeze. Preserve
   failed support/unlaunched C and unanswered reopening. P11 keeps nineteen open
   conditions and confirmation/replication independent N=0.
+
+
+## 2026-09-30 — add a separate sampled cumulative CPU executor
+
+- **Candidate:** executor v8 extends v7 with explicit CPU threshold/poll/query limits,
+  exclusive fsynced raw samples, retained final counters before release/reset, and
+  exact-tree termination on threshold/resource failures. Missing/regressing counters
+  yield no successful result; interrupted payload bytes remain audit-only.
+- **Retained defect:** first two v8 transactions stop before payload startup because
+  loaded inactive/dead state has an unset counter. Preserve null failures/records.
+  Separate v9 accepts only unobserved pending startup, never zero consumption.
+- **Final-counter repair:** v10 requires terminal state plus explicit task-zero or
+  retired-cgroup form; main-process exit alone is not enough. Preserve v9/source/
+  outputs. Thirty-six targeted checks pass across three invocations; staged B2
+  diagnostic computation matches its reference. All six retained services are absent.
+- **Observed cutoff:** v9 records 66.374 ms overshoot at 0.300 s; v10 records 10.511 ms.
+  Both stay visible. Neither is a hard CPU cap or worst-case guarantee. Actual sample
+  spacing includes I/O/control delays and final queries; synthetic polls/budgets are
+  not scientific limits. Full turn accounting/overshoot policy/crash durability and
+  broker/MCP/provider integration remain open; existing callers do not adopt v10.
+- **Governance:** no semantic output, automated annotation, real-pilot score, method-
+  key join, physical acquisition, alpha spending or P11 freeze. Preserve failed
+  combined support/unlaunched C and unanswered reopening. P11 retains nineteen open
+  conditions, no hash mismatches and confirmation/replication N=0.

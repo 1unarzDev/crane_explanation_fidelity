@@ -1,5 +1,20 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Sampled CPU executor addendum after `65835d7d` — 2026-09-30
+
+A [separate cumulative-CPU candidate](SAMPLED_TREE_CPU_EXECUTOR_2026-09-30.md)
+extends preserved v7. Keep v8's two premature-startup failures; v9 recognizes only
+unobserved pending startup and v10 adds quiescent-tree final-counter acceptance.
+Thirty-six focused checks across three invocations pass, including actual detached
+CPU cutoff, null resource/accounting failures and staged B2 primitive parity. Six
+retained services are absent. V10's 0.300 s cutoff records 0.310511 s CPU and 10.511 ms
+overshoot; this is a sampled stop, not a hard cap or worst-case bound. Raw samples
+and prior failures stay hash-bound. Broker/MCP/study callers do not migrate. Total
+turn budgets, crash durability, runtime/confinement, capacity and measurement remain
+open. No semantic call, annotation, scoring, alpha spending or P11 freeze occurs.
+N=0, nineteen open conditions and unanswered measurement reopening remain.
+
+
 ## CPU accounting addendum after `71f3c050` — 2026-09-30
 
 A [fixed CPU-accounting probe](TREE_CPU_ACCOUNTING_2026-09-30.md) supplies evidence
