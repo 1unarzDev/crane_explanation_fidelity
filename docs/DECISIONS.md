@@ -3808,3 +3808,36 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   stale operational wording while preserving older records. No manuscript result, paired method
   effect, corrected p-value, alpha allocation, physical allocation or confirmation/replication N
   follows from this canary. B0/B1/B3 versus B4 remain required prospective secondary contrasts.
+
+## 2026-09-30 — bind raw role-disagreement handling and distinct missingness sensitivities
+
+- **Reconstruction:** the new role disposition reproduces the reviewed 114-answer/1,084-atom
+  bank and all unchanged raw A/B returns, prior review bindings, original quarantine and terminal
+  continuation. It records 1,071 paired atoms, 1,018 matching tuples, 53 differing tuples and 13
+  B-only atoms. Axis differences remain 0 stance / 46 kind / 12 polarity. These are automated
+  role consistency counts, not accuracy, statistical N or method effects.
+- **Raw-role decision:** retain both differing candidates without selecting a pass or voting.
+  Agreement remains advisory and cannot qualify evidential support or rank. Every atom has null
+  selected role, contract, mechanistic flag and asserted rank. Carry forward the two reviewed
+  abort polarity errors, six explicit negative-causation assertions, twelve literal deictic
+  limitations, three question-bound affirmatives, ambiguous recovery referent and software
+  “handled” scope. No raw role or answer is changed; no synthetic qualification is regraded.
+- **Distinct missingness:** the project-authored extraction inventory is answer
+  `ax-6042b1c29021e662d8184d39e26738c5` (15 atoms); the quarantined missing role A is another
+  answer, `ax-b183aeec5ee108fc6f52de5e478e1063` (13 atoms). B does not impute A. Predefine four
+  development sensitivity variants: full flagged bank, whole episodes containing manual inventory,
+  whole episodes containing missing A, and the union of both exclusion sets. Resolve triggers
+  only after an authorized key join; exclude all methods/masks/questions, deduplicate overlapping
+  episodes, and never select the reported variant by effect or p-value. This is not a confirmation
+  exclusion rule. No real method key or joined pilot metadata was accessed.
+- **Verification:** ten focused offline checks pass, including raw/parsed inconsistency rejection,
+  candidate retention, negative-assertion preservation, complete reconstruction and whole-episode
+  sensitivity closure. The new bookkeeping disposition is machine-readable and hash-bound in
+  the living P11 manifest. It closes raw handling/provenance policy only, not semantic role
+  adjudication, ambiguity resolution, claim-specific endpoint attachment or actual sensitivity
+  analysis. P11 remains closed on nineteen conditions with no component hash mismatch.
+- **Boundaries:** no model call, support label, rank, effect, p-value or independent episode N
+  was generated. The combined support-format gate remains failed; no new canary, support pass
+  or C call is authorized. The five-method development, alpha, physical allocation and manuscript
+  result boundaries remain unchanged. Next independent work is assertion-aware claim attachment
+  and nominal-alignment governance, carrying all retained failures and scope concerns forward.

@@ -489,3 +489,26 @@ new support calls. Any later measurement decision must retain and explicitly add
 scope; it cannot silently overwrite the reference or replace the retained failure with a success.
 Fresh aligned five-method evidence, useful coverage, paired episode discordances, power and
 compatible allocation remain required before P11.
+
+## Latest 2026-09-30 raw role-disposition checkpoint
+
+The raw-role disagreement and missingness policy is now mechanically bound. All 1,084 atoms
+retain exact A/B tuples and distinct candidate sets. The 53 differing tuples remain unselected;
+1,018 matching tuples remain advisory. No role, rank, contract or mechanistic flag is assigned
+for endpoint use. Prior reviewed abort-polarity, negative-causation, deictic, affirmative,
+recovery-referent and software-resolution concerns remain visible even when tags agree.
+The original missing A remains quarantined; the bank is still 227/228 known returns.
+
+The 15-atom project-authored extraction inventory and 13-atom missing-role-A answer are different
+answers. Four development sensitivity variants are predefined: full retained flagged bank;
+exclude whole episodes containing manual inventory; exclude whole episodes containing missing A;
+exclude the union. A tested metadata helper defaults to rejecting an unauthorized join, excludes
+all methods/masks/questions, and deduplicates overlapping episode triggers. It has not accessed
+the real coordinator key or joined pilot metadata. No variant may be chosen by effect or p-value.
+
+Ten focused offline tests pass; the full disposition exactly reproduces prior reviewed raw
+returns. This closes bookkeeping and raw-role handling only. Claim-specific meaning/contract/rank
+attachment, semantic ambiguity treatment and actual sensitivity execution remain open. P11 still
+has nineteen open conditions with no component hash mismatch. No support call, endpoint outcome,
+statistical N, physical allocation, alpha spending or manuscript result changed. The failed
+combined-format canary and unlaunched C remain retained; pilot support calls stay closed.
