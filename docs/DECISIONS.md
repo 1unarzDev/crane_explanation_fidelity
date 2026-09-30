@@ -3028,3 +3028,32 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   support annotation or B2/B4 comparative evidence. The quarantined request is not retried or
   replaced. P11 remains closed; confirmation and replication independent N and new alpha use are
   zero.
+
+## 2026-09-30 — review the failed v1 role reference without regrading it
+
+- **Finding:** post-output case review finds underdefined abstraction mappings for completed
+  `Wait`, unsourced motion return, response loss, and geometry/planning claims. The v1 prompt
+  also lacks explicit wheel-slip cause, trace-absence, stationarity, and quoted-refusal boundaries.
+  The exact mismatches and construction implications are in
+  `docs/CLAIM_ROLE_V1_SEMANTIC_REVIEW.md`.
+- **Decision:** keep the frozen v1 failure and raw gold/returns unchanged. A successor measurement
+  task must separate assertion role from ontology claim kind, define family-specific abstraction
+  mappings, use a new reference-complete held-out set, and bind hedged/unresolved endpoint treatment
+  before P11. The exposed v1 held-out cases may be development examples only.
+- **Boundary:** this post-output review is not a corrected v1 qualification or a pilot role label.
+  It changes no method output, endpoint score, independent N, alpha, or confirmatory authorization.
+
+## 2026-09-30 — flag additional blind inventory actor losses
+
+- **Finding:** an exact search over the 113 pending method-blind review forms found eight more
+  normalized claims across seven responses that say only “failures” where the answer's local
+  context identifies `FollowPath` failures. The two earlier response IDs and three proposed
+  repairs remain separately bound in the prefix triage.
+- **Decision:** retain eight actor-qualified replacement *proposals* in
+  `manifests/annotation/evidence-calibration-pilot-full-bank-actor-triage-v1.json`. A read-only
+  audit checks their exact pending form hashes and the closed method/annotation boundary. Reviewers
+  must decide these along with the complete inventories; no review form or extractor return is
+  rewritten.
+- **Boundary:** the search does not establish that these are the only missing qualifiers or that
+  any of the 113 inventories is semantically complete. It creates no support label, role label,
+  endpoint score, independent episode, or alpha use.

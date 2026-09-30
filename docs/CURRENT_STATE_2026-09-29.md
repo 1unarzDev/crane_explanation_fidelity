@@ -233,3 +233,17 @@ B2/B4 pilot, blind inventory and role measurement, nominal-ladder alignment, epi
 discordance/power, and prospective endpoint/coverage/population/model/stopping decisions.
 Confirmation and replication independent N remain zero. The full-paper manuscript is a
 mechanically passing nine-page development snapshot, not a frozen scientific result.
+
+Post-output review of the failed v1 assertion-role suite now identifies concrete ambiguity in
+the level codebook for completed `Wait`, unsourced motion return, response loss, and geometry
+claims, plus distinctions between a trace absence and physical nonoccurrence. The hash-identified
+review is `docs/CLAIM_ROLE_V1_SEMANTIC_REVIEW.md`. It leaves v1 failed, its frozen gold and raw
+returns untouched, and the pilot role/endpoint gate closed. A successor needs a fresh held-out
+suite with explicit speech-act, ontology-kind, and abstraction mappings.
+
+Full-bank blind triage also flagged eight additional normalized claims across seven pending
+forms that omit the `FollowPath` actor from a failure statement. Their exact form hashes and
+proposed wording are bound by
+`manifests/annotation/evidence-calibration-pilot-full-bank-actor-triage-v1.json` and its read-only
+audit. Alongside the earlier three proposals, these are review candidates only; no form is
+approved and support annotation remains prohibited.
