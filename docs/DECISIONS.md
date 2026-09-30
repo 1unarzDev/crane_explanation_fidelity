@@ -3440,3 +3440,26 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   qualified task bytes. This mechanical prefix triage does not select, retry, or alter any model
   return. The original unknown A identity remains quarantined. P11, independent N, and alpha are
   unchanged.
+## 2026-09-30 — bind blind development review of the original role prefix
+
+- **Scope:** all 69 original A-pass answers and 669 stance/kind/polarity tuples were reviewed
+  using blind answer/inventory text and retained returns. No method key, evidence packet,
+  evaluator support label, or physical truth was opened for this review.
+- **Findings:** preserve the four exact-input kind-variance groups, trace-attribution concerns,
+  generic diagnostic non-trigger ambiguity, unresolved deictic limitations, numerical tag
+  variability, and three explicit negative-causation assertions. The last remain assertions,
+  rather than being silently converted to non-establishment limitations.
+- **Disposition:** this is agent-assisted project review with open measurement gates, not
+  corrected labels, support annotation, or endpoint qualification. Existing claim-specific
+  contracts govern evidence requirements; broad role kinds do not uniquely determine rank or
+  support. Synthetic qualification remains unchanged within its frozen scope.
+- **Handoff gate:** the support-packet builder requires asserted abstraction levels that the
+  qualified role task does not supply. Validate attachment/abstraction treatment or qualify a
+  prospective payload amendment before support handoff. Extractor ranks and the support
+  annotator's raw highest-level field cannot directly anchor endpoint scoring.
+- **Records:** `docs/ROLE_PREFIX_REVIEW_2026-09-30.md` and
+  `manifests/annotation/evidence-calibration-pilot-role-prefix-project-review-v1.json` bind the
+  full prefix and representative exact claims/returns. Their read-only audit verifies bindings,
+  not semantic correctness. Both-pass review and incomplete-pass disposition remain open;
+  continuation session `56406` remains live with unchanged task bytes. P11, alpha, and
+  confirmation/replication N are unchanged.

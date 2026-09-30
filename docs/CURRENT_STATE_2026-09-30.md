@@ -180,3 +180,31 @@ answer/claim/span groups have differing kind tags, with agreeing stance and pola
 mechanical review triage only; semantic review, endpoint mapping, and support annotation remain
 open. After a terminal run state, audit the new records, govern and push the DVC objects, and
 update this checkpoint without reclassifying interruptions as model failures.
+
+## Later 2026-09-30 blind role-prefix review checkpoint
+
+All 69 original A returns and their 669 atomic judgments now have a hash-bound agent-assisted
+project review in `docs/ROLE_PREFIX_REVIEW_2026-09-30.md` and its annotation manifest. The
+read-only review audit passes. Kind variance and trace attribution remain open concerns; no
+returns were relabeled. Explicit negative-causation assertions and literal deictic limitations
+remain preserved. This review does not qualify support, endpoint rank, or whole-bank handoff.
+The support builder still requires asserted abstraction levels that the qualified role task
+does not supply; validated claim attachment or a qualified prospective payload amendment is
+required before support handoff.
+
+The continuation remains live in session `56406`. At this checkpoint all 44 never-launched A
+identities and the first five B identities have structurally valid returns. The original unknown
+A request remains quarantined. Poll the existing handle; do not restart or alter bound task
+bytes. Audit and DVC-push the continuation records only after its terminal state.
+
+The new worktree initially lacked the catalog submodule and some governed physical recordings.
+The pinned `crane_ml` submodule was initialized and the robot-visible dev/final datasets restored
+from the shared DVC cache. The freshness audit now passes here, reproducing 120 former
+confirmation layouts and 20 former replication layouts materialized, with 100 old-schedule
+replication layouts unmaterialized and quarantined. Missing local recordings were not treated
+as fresh episodes. The error-budget audit passes provisionally with 0.02 consumed, at most
+0.01 discovery, and 0.02 protected replication. A read-only host transport preflight reports
+`READY_FOR_SCHEMA_CANARY` without a model/study call; the historical canary was not overwritten.
+P11 still fails closed on 19 conditions with no component hash mismatch. Five focused
+retention/readiness tests pass. No confirmatory output, support label, or endpoint score was
+generated in this checkpoint work; confirmation and replication independent N remain zero.

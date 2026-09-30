@@ -1,0 +1,879 @@
+{
+  "bindings": {
+    "contracts": {
+      "path": "configs/evidence_calibration_claim_contracts_v1.json",
+      "raw_sha256": "49edd3b035d23bf356aa42e9037b265a769efd745b8d44a3dd130c3349fbacc8"
+    },
+    "input_bundle": {
+      "path": "model_outputs/annotation_packets/evidence-calibration-b2-b4-pilot-v1/claim-role-inputs-v1.json",
+      "raw_sha256": "498923947921ac4145667d2bf8eb48b2bdaa7fbe921c74be6a5ab4c98567b014"
+    },
+    "qualified_prompt": {
+      "path": "research/explanation_fidelity/prompts/evidence-calibration-claim-role-v2r2-development.md",
+      "raw_sha256": "a3407995cf8fe788b2e1f0fe70e645ce05ff5f45b22dbba10207d8aaf975e5b1"
+    },
+    "review_note": {
+      "path": "docs/ROLE_PREFIX_REVIEW_2026-09-30.md",
+      "raw_sha256": "a2b81571e3f157363f2cfe0ac19473171dc33066c2d01e5a078585273491ce19"
+    },
+    "snapshot": {
+      "path": "manifests/study/evidence-calibration-pilot-role-v2r2-interruption-v1.json",
+      "raw_sha256": "f34b06dda1678cf14e6237e6dad8246a0c478a23541457719539d9fb96f70d04"
+    },
+    "support_packet_builder": {
+      "path": "analysis/build_atomic_claim_annotation_packets.py",
+      "raw_sha256": "a27c0dc129e9a72a37c34401823c8d3889061a94d04d9ea7515e9a510e612f0e"
+    },
+    "variance": {
+      "path": "manifests/annotation/evidence-calibration-pilot-role-prefix-variance-v1.json",
+      "raw_sha256": "8e4a44785399f22d19b00a35e2e9b25446fef6b3a1b51fe2ea1734d0c5807c54"
+    }
+  },
+  "both_pass_review_complete": false,
+  "confirmation_independent_n": 0,
+  "endpoint_scores_generated": false,
+  "evaluator_truth_opened": false,
+  "method_key_opened": false,
+  "p11_authorized": false,
+  "recorded_date": "2026-09-30",
+  "replication_independent_n": 0,
+  "representative_findings": [
+    {
+      "case_id": "ax-09d8dee77255b5f4d4068cc14924caed",
+      "claim": {
+        "claim_text": "The trace records two FollowPath failures.",
+        "item_id": "ri-7f834362a240692bcea8",
+        "response_span": "The trace records two FollowPath failures"
+      },
+      "returned_role": {
+        "claim_kind": "SOFTWARE_ACTION_EVENT",
+        "item_id": "ri-7f834362a240692bcea8",
+        "polarity": "POSITIVE",
+        "rationale_span": "The trace records two FollowPath failures",
+        "stance": "ASSERTED_FACT"
+      }
+    },
+    {
+      "case_id": "ax-09d8dee77255b5f4d4068cc14924caed",
+      "claim": {
+        "claim_text": "The trace records two Wait recoveries under the bounded retry tree.",
+        "item_id": "ri-c7762b422804241e62d1",
+        "response_span": "two Wait recoveries under the bounded retry tree"
+      },
+      "returned_role": {
+        "claim_kind": "RECOVERY_TRACE_EVENT",
+        "item_id": "ri-c7762b422804241e62d1",
+        "polarity": "POSITIVE",
+        "rationale_span": "two Wait recoveries under the bounded retry tree",
+        "stance": "ASSERTED_FACT"
+      }
+    },
+    {
+      "case_id": "ax-1c0459ac8234ac4485f0f0fd18f6d156",
+      "claim": {
+        "claim_text": "Measured response recovery does not cause the eventual task outcome.",
+        "item_id": "ri-d1bbe309cbae001c15a4",
+        "response_span": "Measured response recovery does not establish or cause the eventual task outcome"
+      },
+      "returned_role": {
+        "claim_kind": "RECOVERY_CAUSAL_RELATION",
+        "item_id": "ri-d1bbe309cbae001c15a4",
+        "polarity": "NEGATIVE",
+        "rationale_span": "Measured response recovery does not establish or cause the eventual task outcome",
+        "stance": "ASSERTED_FACT"
+      }
+    },
+    {
+      "case_id": "ax-2142718321154c4c4541d9e8ca9400e9",
+      "claim": {
+        "claim_text": "The retained behavior tree shows one FollowPath failure.",
+        "item_id": "ri-3630893bcac163c9d7cb",
+        "response_span": "The retained behavior tree shows one FollowPath failure"
+      },
+      "returned_role": {
+        "claim_kind": "SOFTWARE_ACTION_EVENT",
+        "item_id": "ri-3630893bcac163c9d7cb",
+        "polarity": "POSITIVE",
+        "rationale_span": "The retained behavior tree shows one FollowPath failure",
+        "stance": "ASSERTED_FACT"
+      }
+    },
+    {
+      "case_id": "ax-2142718321154c4c4541d9e8ca9400e9",
+      "claim": {
+        "claim_text": "The retained behavior tree shows one Wait recovery.",
+        "item_id": "ri-54df2ce3e088130f28de",
+        "response_span": "one Wait recovery"
+      },
+      "returned_role": {
+        "claim_kind": "RECOVERY_TRACE_EVENT",
+        "item_id": "ri-54df2ce3e088130f28de",
+        "polarity": "POSITIVE",
+        "rationale_span": "one Wait recovery",
+        "stance": "ASSERTED_FACT"
+      }
+    },
+    {
+      "case_id": "ax-2142718321154c4c4541d9e8ca9400e9",
+      "claim": {
+        "claim_text": "The retained behavior tree shows a second FollowPath attempt.",
+        "item_id": "ri-4ef40599c2ccdf452842",
+        "response_span": "a second FollowPath attempt"
+      },
+      "returned_role": {
+        "claim_kind": "SOFTWARE_ACTION_EVENT",
+        "item_id": "ri-4ef40599c2ccdf452842",
+        "polarity": "POSITIVE",
+        "rationale_span": "a second FollowPath attempt",
+        "stance": "ASSERTED_FACT"
+      }
+    },
+    {
+      "case_id": "ax-3bbe6361b85b1b08a8eb0639568cb7bf",
+      "claim": {
+        "claim_text": "Registered failure diagnostics did not trigger.",
+        "item_id": "ri-cdeeefaaa0ba00ba5d21",
+        "response_span": "registered failure diagnostics did not trigger"
+      },
+      "returned_role": {
+        "claim_kind": "SOFTWARE_ACTION_EVENT",
+        "item_id": "ri-cdeeefaaa0ba00ba5d21",
+        "polarity": "NEGATIVE",
+        "rationale_span": "registered failure diagnostics did not trigger",
+        "stance": "ASSERTED_FACT"
+      }
+    },
+    {
+      "case_id": "ax-71fbb2069815c0fa677a7b5ade4fe7e9",
+      "claim": {
+        "claim_text": "Measured response recovery does not cause the eventual task outcome.",
+        "item_id": "ri-b0ad52716be157031d28",
+        "response_span": "Measured response recovery does not establish or cause the eventual task outcome."
+      },
+      "returned_role": {
+        "claim_kind": "RECOVERY_CAUSAL_RELATION",
+        "item_id": "ri-b0ad52716be157031d28",
+        "polarity": "NEGATIVE",
+        "rationale_span": "Measured response recovery does not establish or cause the eventual task outcome.",
+        "stance": "ASSERTED_FACT"
+      }
+    },
+    {
+      "case_id": "ax-a4acdf43e1d96cf40a5e379ed4e99ec6",
+      "claim": {
+        "claim_text": "Measured response recovery does not cause the eventual task outcome.",
+        "item_id": "ri-23835765640ee3254107",
+        "response_span": "Measured response recovery does not establish or cause the eventual task outcome."
+      },
+      "returned_role": {
+        "claim_kind": "RECOVERY_CAUSAL_RELATION",
+        "item_id": "ri-23835765640ee3254107",
+        "polarity": "NEGATIVE",
+        "rationale_span": "Measured response recovery does not establish or cause the eventual task outcome.",
+        "stance": "ASSERTED_FACT"
+      }
+    }
+  ],
+  "returned_labels_changed": false,
+  "review_type": "AGENT_ASSISTED_PROJECT_REVIEW_NOT_SUPPORT_ANNOTATION",
+  "reviewed_atomic_judgment_count": 669,
+  "reviewed_records": [
+    {
+      "atomic_judgment_count": 11,
+      "case_id": "ax-02093d80f6dba9d40347381e977488a5",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-02093d80f6dba9d40347381e977488a5.json",
+        "raw_sha256": "75660597508555d385aa62e449903badefa5931239158b9e8e30af0ed3c8963d"
+      }
+    },
+    {
+      "atomic_judgment_count": 16,
+      "case_id": "ax-022420df8809b4ae3844b88bb49814fa",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-022420df8809b4ae3844b88bb49814fa.json",
+        "raw_sha256": "f633d0d6169c85d140309c719c68bed87452d03c466f90f03f6413aa5b306202"
+      }
+    },
+    {
+      "atomic_judgment_count": 16,
+      "case_id": "ax-0764d4a226e8a6729ba55121c6b5e8fd",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-0764d4a226e8a6729ba55121c6b5e8fd.json",
+        "raw_sha256": "a2e67dc8d061b2401b066530887b57d9b8faad981415bcb074e0c59731f32549"
+      }
+    },
+    {
+      "atomic_judgment_count": 16,
+      "case_id": "ax-09b2c5c4ecea884005bd28b5eced81f5",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-09b2c5c4ecea884005bd28b5eced81f5.json",
+        "raw_sha256": "d6bb249316e95da0345bb0a40bec31903f6fadd6ae532f6bffb1890943ac4f71"
+      }
+    },
+    {
+      "atomic_judgment_count": 10,
+      "case_id": "ax-09d8dee77255b5f4d4068cc14924caed",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-09d8dee77255b5f4d4068cc14924caed.json",
+        "raw_sha256": "bbb92ca98e6856ffa275fa35c2009d9381a17413fce08ad3df614f1a0af12941"
+      }
+    },
+    {
+      "atomic_judgment_count": 4,
+      "case_id": "ax-0bd0dd800a3190a5fc19da957f461b8b",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-0bd0dd800a3190a5fc19da957f461b8b.json",
+        "raw_sha256": "22be6d771b29bc9deff9f990c5ead00f1bf1280cfae6e14fa1c8928b69d9260c"
+      }
+    },
+    {
+      "atomic_judgment_count": 4,
+      "case_id": "ax-154d59622fa1933ff25c42cbd4a7e0fb",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-154d59622fa1933ff25c42cbd4a7e0fb.json",
+        "raw_sha256": "a0020ecbc2f89dacbd95992ad35e3180344456cd80d35b86406d3dc7dcbf4423"
+      }
+    },
+    {
+      "atomic_judgment_count": 4,
+      "case_id": "ax-16d85b68fc07c5488d2bf066c95666a7",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-16d85b68fc07c5488d2bf066c95666a7.json",
+        "raw_sha256": "1aefdd5cb8f96d7895eed84b0e4f2f8728eb14b90c8630316c7830524116a173"
+      }
+    },
+    {
+      "atomic_judgment_count": 10,
+      "case_id": "ax-17332c64d52a5631d48d576ab675ce07",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-17332c64d52a5631d48d576ab675ce07.json",
+        "raw_sha256": "6982c0b2be7f1cf2868b43d0e179059beb0b8e755a09e597b3fc1cb9d4569c98"
+      }
+    },
+    {
+      "atomic_judgment_count": 7,
+      "case_id": "ax-181158cbd7d6082d6efe79e573efe552",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-181158cbd7d6082d6efe79e573efe552.json",
+        "raw_sha256": "726cd886663d50fb11c8caa083fa110ee2b5d47d8bcd698526f65072099ffe92"
+      }
+    },
+    {
+      "atomic_judgment_count": 1,
+      "case_id": "ax-18a36c5758811329ffe40b7c5349e3dd",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-18a36c5758811329ffe40b7c5349e3dd.json",
+        "raw_sha256": "007193bd35141c25d3bfc4ea373076a7ec9fb5dc157d46cf1c71a393165f3291"
+      }
+    },
+    {
+      "atomic_judgment_count": 13,
+      "case_id": "ax-1a143838f571159938d9b4f1b41a805b",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-1a143838f571159938d9b4f1b41a805b.json",
+        "raw_sha256": "da952f57d47c1748948f02063ddd7f55e28c0584ede9bc65ddac4fd7ff4d7586"
+      }
+    },
+    {
+      "atomic_judgment_count": 4,
+      "case_id": "ax-1baa18b48e39aab691894c433cff39f1",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-1baa18b48e39aab691894c433cff39f1.json",
+        "raw_sha256": "7c7991733e52e637adaf772073f3eacc7a851cb21abeccb75069ef15c8b336a0"
+      }
+    },
+    {
+      "atomic_judgment_count": 15,
+      "case_id": "ax-1c0459ac8234ac4485f0f0fd18f6d156",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-1c0459ac8234ac4485f0f0fd18f6d156.json",
+        "raw_sha256": "1f69900b54b62820dd9b31e01096c3ee9b67f248b26d865c28bef4c77c2a91b3"
+      }
+    },
+    {
+      "atomic_judgment_count": 14,
+      "case_id": "ax-1e64653bca0905eacc45752e33462a9f",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-1e64653bca0905eacc45752e33462a9f.json",
+        "raw_sha256": "8fd5ee45667d29694ae28e0348522239a08d64962bc26484de927b401abaac3e"
+      }
+    },
+    {
+      "atomic_judgment_count": 12,
+      "case_id": "ax-2142718321154c4c4541d9e8ca9400e9",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-2142718321154c4c4541d9e8ca9400e9.json",
+        "raw_sha256": "2a820b4efaa4a71986237280c0ce96cb8f39de080362ab15ba4306b3be4dc890"
+      }
+    },
+    {
+      "atomic_judgment_count": 12,
+      "case_id": "ax-2345ee3fe74ac36913a3ac6d3c8ea0b9",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-2345ee3fe74ac36913a3ac6d3c8ea0b9.json",
+        "raw_sha256": "bf03ea27d4e9c3993f3942ffdbef5956d455127031c098ca09732a6de45f10a8"
+      }
+    },
+    {
+      "atomic_judgment_count": 8,
+      "case_id": "ax-25ce18d6d76130dbacd30ef63b716fa8",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-25ce18d6d76130dbacd30ef63b716fa8.json",
+        "raw_sha256": "5a28834783a00b905de81a9d03788979d8f8c6f5904e7dda7f95b2b712ff979b"
+      }
+    },
+    {
+      "atomic_judgment_count": 12,
+      "case_id": "ax-29e5692faa220a136a8dc8b9f69da44b",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-29e5692faa220a136a8dc8b9f69da44b.json",
+        "raw_sha256": "9ed7b6ad7b81db86615753c4851d11367109a3dde51a6d9aca95988ba2adacd5"
+      }
+    },
+    {
+      "atomic_judgment_count": 1,
+      "case_id": "ax-2bbad4dd91e2b968fc9a13c0cf23e652",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-2bbad4dd91e2b968fc9a13c0cf23e652.json",
+        "raw_sha256": "742be299445cbccde63081c929a6607fb1d783310c4f5015b54fcd180b0c72d7"
+      }
+    },
+    {
+      "atomic_judgment_count": 12,
+      "case_id": "ax-3003a7e4c7094c2da82861ffe77e9db1",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-3003a7e4c7094c2da82861ffe77e9db1.json",
+        "raw_sha256": "481657655daa366e86a516bd20a863fc74b37fea92bfdf630c4bf46ee4a9900b"
+      }
+    },
+    {
+      "atomic_judgment_count": 4,
+      "case_id": "ax-32e26468a75fa9623a25e5c02e2cd1cb",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-32e26468a75fa9623a25e5c02e2cd1cb.json",
+        "raw_sha256": "a4b6937e838ffd22e564d23cecdf9b8cbd1391bee7dbe1ccc44836377665be87"
+      }
+    },
+    {
+      "atomic_judgment_count": 11,
+      "case_id": "ax-346763f5babfd48fd7ba6de4c20527a5",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-346763f5babfd48fd7ba6de4c20527a5.json",
+        "raw_sha256": "609aae46fa3cdf366ed02a1b78f281336cf9904d0b85defb59e7407cd24ec2f2"
+      }
+    },
+    {
+      "atomic_judgment_count": 7,
+      "case_id": "ax-3bbe6361b85b1b08a8eb0639568cb7bf",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-3bbe6361b85b1b08a8eb0639568cb7bf.json",
+        "raw_sha256": "b9d05163107238c96c9522c2cd0591c21369bd1a34bbc9ebac75110039ade6f3"
+      }
+    },
+    {
+      "atomic_judgment_count": 16,
+      "case_id": "ax-3e151be8f4d51ddd22270328892c1610",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-3e151be8f4d51ddd22270328892c1610.json",
+        "raw_sha256": "3c19605f6d17526d7743bf7be48145ae29a40642faeab2a5496ad71e2d01ebf1"
+      }
+    },
+    {
+      "atomic_judgment_count": 8,
+      "case_id": "ax-42874ad998d29d2d67a0b20f29646849",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-42874ad998d29d2d67a0b20f29646849.json",
+        "raw_sha256": "79c6cbaf1744645ae20dec417dc808507b7bcffaab9a7b5c50edaf2d6667be0e"
+      }
+    },
+    {
+      "atomic_judgment_count": 7,
+      "case_id": "ax-467fa2184455ea5ca073eb5fd3075c0f",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-467fa2184455ea5ca073eb5fd3075c0f.json",
+        "raw_sha256": "13947d7113bc5a72278fa419f34527039696903b4694da15c76b9965f0ee1190"
+      }
+    },
+    {
+      "atomic_judgment_count": 12,
+      "case_id": "ax-4acdcf48d44b117b92730636bddd1ee2",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-4acdcf48d44b117b92730636bddd1ee2.json",
+        "raw_sha256": "8745dacd96f3442520a510cf6e95546ebbd46829a4505946a3ac98fb34101cd1"
+      }
+    },
+    {
+      "atomic_judgment_count": 1,
+      "case_id": "ax-4ca721b2c9fbbfcf4b170f03de55148b",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-4ca721b2c9fbbfcf4b170f03de55148b.json",
+        "raw_sha256": "7a82afdf0f96d357646c3040c989998c0eb133dc02a3958d4098c266a3568c21"
+      }
+    },
+    {
+      "atomic_judgment_count": 10,
+      "case_id": "ax-4e2a3ed8c6e3de96f1bfd4c07b45af9e",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-4e2a3ed8c6e3de96f1bfd4c07b45af9e.json",
+        "raw_sha256": "e49616d10015fe9a06c95d5db0322b3b1fe6639e468beb27383ca884149c4a9e"
+      }
+    },
+    {
+      "atomic_judgment_count": 15,
+      "case_id": "ax-6042b1c29021e662d8184d39e26738c5",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-6042b1c29021e662d8184d39e26738c5.json",
+        "raw_sha256": "abbe45c56fa3e04989c85e145644b40a715890c92a27b57c2ed1f22508007eaf"
+      }
+    },
+    {
+      "atomic_judgment_count": 7,
+      "case_id": "ax-63485ffd20baa05a984b1cf538306cb5",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-63485ffd20baa05a984b1cf538306cb5.json",
+        "raw_sha256": "72bbe208b24d3e9b59cd093f50444b0cbb58836a7355e32ca8edb23a911e40bf"
+      }
+    },
+    {
+      "atomic_judgment_count": 7,
+      "case_id": "ax-63d3389fd5dba72c998e8644ed8e67e1",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-63d3389fd5dba72c998e8644ed8e67e1.json",
+        "raw_sha256": "e60437b261c6e175316379010a8c171177e27a9407e58c6a6e31d084847f6a62"
+      }
+    },
+    {
+      "atomic_judgment_count": 12,
+      "case_id": "ax-66936b170d41bbe34c7b12bb28bbf7a9",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-66936b170d41bbe34c7b12bb28bbf7a9.json",
+        "raw_sha256": "ccaa22202cb69d01761379c5dd401fd363be53745296f84052b5234845188b7c"
+      }
+    },
+    {
+      "atomic_judgment_count": 7,
+      "case_id": "ax-671e0b54437a0f81ec39d509ec0546df",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-671e0b54437a0f81ec39d509ec0546df.json",
+        "raw_sha256": "9a982576e1967a408186e19ab2f5f086d5f529354ddd8d4f64869bc9d34091e4"
+      }
+    },
+    {
+      "atomic_judgment_count": 12,
+      "case_id": "ax-67b2da8ea3ee9d86a8f6c20b5f85efe8",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-67b2da8ea3ee9d86a8f6c20b5f85efe8.json",
+        "raw_sha256": "e7326f3b1f16d01d4b50eb0fc30187999b7d97d84af71b1c7bf70d26410bf576"
+      }
+    },
+    {
+      "atomic_judgment_count": 7,
+      "case_id": "ax-681fead76ad32c3271b457a0daca0ce6",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-681fead76ad32c3271b457a0daca0ce6.json",
+        "raw_sha256": "630764450293a352804a51713bd31dc056633db0820f6e403f5a73205b9e9b1d"
+      }
+    },
+    {
+      "atomic_judgment_count": 10,
+      "case_id": "ax-694e9f65fdd554c0688c1386ed519e43",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-694e9f65fdd554c0688c1386ed519e43.json",
+        "raw_sha256": "57367cbf5225d54567eccc026e1382609c63ed5bb338d0266337b5e1d29cfeef"
+      }
+    },
+    {
+      "atomic_judgment_count": 14,
+      "case_id": "ax-6bfa529d1aedb5c70b85ed31b73eafa4",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-6bfa529d1aedb5c70b85ed31b73eafa4.json",
+        "raw_sha256": "eb2dbc8da038c094f754de51929b49f761e23dc6e8f68b0e8624e225d64e3cc5"
+      }
+    },
+    {
+      "atomic_judgment_count": 7,
+      "case_id": "ax-6ce392edfed61df33ee29648d47c936f",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-6ce392edfed61df33ee29648d47c936f.json",
+        "raw_sha256": "fcbf92f2db5852d77a908df045ab2c71110b276ca78fae8711b8de7d09a83570"
+      }
+    },
+    {
+      "atomic_judgment_count": 13,
+      "case_id": "ax-6ef13bb8d249ab98644c1a979de4fb62",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-6ef13bb8d249ab98644c1a979de4fb62.json",
+        "raw_sha256": "b8668f2878dfd298434be1022d0a5b76cbc92d10f48b91444c0cc330c60938b5"
+      }
+    },
+    {
+      "atomic_judgment_count": 15,
+      "case_id": "ax-71fbb2069815c0fa677a7b5ade4fe7e9",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-71fbb2069815c0fa677a7b5ade4fe7e9.json",
+        "raw_sha256": "622bf30855b7911fe2898a182082060c42be880323b7635aa04973299e4acf82"
+      }
+    },
+    {
+      "atomic_judgment_count": 13,
+      "case_id": "ax-73a3353cb99c07abdb97332487e76f22",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-73a3353cb99c07abdb97332487e76f22.json",
+        "raw_sha256": "bef676c8c2b6e9054cb89b62ccafc9e823e232278f9104cfc32d48f44104571a"
+      }
+    },
+    {
+      "atomic_judgment_count": 1,
+      "case_id": "ax-74156f1686d309a0cd874f0f064943dc",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-74156f1686d309a0cd874f0f064943dc.json",
+        "raw_sha256": "3d9d5fb60335e84e33a9ca04b2eb730f6fa06f251f8d8ed7d3987093bf62b330"
+      }
+    },
+    {
+      "atomic_judgment_count": 12,
+      "case_id": "ax-74edc592cafd4c758c84e49b78eabcbf",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-74edc592cafd4c758c84e49b78eabcbf.json",
+        "raw_sha256": "e67fac1c6dd3a21fd2a707da701ecdaf6fdd2154c59f6f81c2fde6c60b7aabe1"
+      }
+    },
+    {
+      "atomic_judgment_count": 11,
+      "case_id": "ax-784be0c8dc0cfd427aa9bdf3c04265d7",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-784be0c8dc0cfd427aa9bdf3c04265d7.json",
+        "raw_sha256": "337a92adfb757c6f0c3ea528122333c9f11c7bb42caa4a23c1cec79561584bb9"
+      }
+    },
+    {
+      "atomic_judgment_count": 15,
+      "case_id": "ax-78cab91302395a539d1269742c005ca0",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-78cab91302395a539d1269742c005ca0.json",
+        "raw_sha256": "8e775e624691a449510f35b6ec73521442d517ccfed728bcb5cda7ad6e3e8699"
+      }
+    },
+    {
+      "atomic_judgment_count": 12,
+      "case_id": "ax-7cd9af6fe20e0bba2fb43eac88203aa2",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-7cd9af6fe20e0bba2fb43eac88203aa2.json",
+        "raw_sha256": "cdc6354ace68dfbbccbaa300154956ba712be9fdbee4a5ec8eb13d2bad215089"
+      }
+    },
+    {
+      "atomic_judgment_count": 14,
+      "case_id": "ax-81a04c9fc033736a72a3c6db2c335a24",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-81a04c9fc033736a72a3c6db2c335a24.json",
+        "raw_sha256": "1010b5a49c568bd713687973cb7cae737cdd7c20d57fb4652d10548f4f11fa43"
+      }
+    },
+    {
+      "atomic_judgment_count": 12,
+      "case_id": "ax-88fd32bfcb7ae613c45ee706376f7536",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-88fd32bfcb7ae613c45ee706376f7536.json",
+        "raw_sha256": "4b641708b3040219895ce38b467bb02cf9e49ef17e736729dfe19043c7e450d0"
+      }
+    },
+    {
+      "atomic_judgment_count": 16,
+      "case_id": "ax-895852a0f93b3e0943af819e7d85811c",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-895852a0f93b3e0943af819e7d85811c.json",
+        "raw_sha256": "c62e40b4aaa855e22bad05650e4592ac8b085fadaa659174902fa4994168f091"
+      }
+    },
+    {
+      "atomic_judgment_count": 4,
+      "case_id": "ax-8988a149f5972613c9e002a6944028fd",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-8988a149f5972613c9e002a6944028fd.json",
+        "raw_sha256": "7adf941d4b1db4c6811f0b3628ee7b29522bcb3ce8a33856cf384047c895f352"
+      }
+    },
+    {
+      "atomic_judgment_count": 7,
+      "case_id": "ax-8a2cb1fed37a411cc1378c6492d28ec1",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-8a2cb1fed37a411cc1378c6492d28ec1.json",
+        "raw_sha256": "fdac6042302e73618d168edff13b3d9481c9d2fbd515c17a65b63de7e4227664"
+      }
+    },
+    {
+      "atomic_judgment_count": 14,
+      "case_id": "ax-8e8224a765650b9b9933e7b30281b835",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-8e8224a765650b9b9933e7b30281b835.json",
+        "raw_sha256": "b3bd79588a68a35025e9860f98518552b6e92aecf33eced908a4ae36b709987e"
+      }
+    },
+    {
+      "atomic_judgment_count": 13,
+      "case_id": "ax-8faedb11987771a681951bebc60d3fdf",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-8faedb11987771a681951bebc60d3fdf.json",
+        "raw_sha256": "a626a05337d6e87266e290d1660d72b52edf01acd8d33b68452acbf8659d8d25"
+      }
+    },
+    {
+      "atomic_judgment_count": 1,
+      "case_id": "ax-9362b9e39ee6b9d31ac9226d06fb3551",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-9362b9e39ee6b9d31ac9226d06fb3551.json",
+        "raw_sha256": "6c28bb09ffd09cd51996c9606f3190c76446a7536c295a5bff261d49b0f8a455"
+      }
+    },
+    {
+      "atomic_judgment_count": 4,
+      "case_id": "ax-946bea9bc8d65c106e2a4aae80c2af71",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-946bea9bc8d65c106e2a4aae80c2af71.json",
+        "raw_sha256": "aad64e9a92733cbd292ff95447a43f13e39f9acdeba77fc30bae02038d0c8bea"
+      }
+    },
+    {
+      "atomic_judgment_count": 8,
+      "case_id": "ax-96955ad4f71ebb5011ebfe5d46d4b3ab",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-96955ad4f71ebb5011ebfe5d46d4b3ab.json",
+        "raw_sha256": "a1915aa351819a8b5ca719b54f4d0406098c36eb4a9f9e2a968632253a9dc3b8"
+      }
+    },
+    {
+      "atomic_judgment_count": 7,
+      "case_id": "ax-971a14b9e89bb915bc64c3f2a21e99a5",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-971a14b9e89bb915bc64c3f2a21e99a5.json",
+        "raw_sha256": "bb3ac15f7f6e51a73e626e0a718786b54bc256ca239e9dd17ee3455d2eae43e5"
+      }
+    },
+    {
+      "atomic_judgment_count": 15,
+      "case_id": "ax-99ba577363297382083274a6a2984c00",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-99ba577363297382083274a6a2984c00.json",
+        "raw_sha256": "fcdcd060c9bc1b555683c1d65ddb4776e094cd72eb727658c5e84e8693b498b9"
+      }
+    },
+    {
+      "atomic_judgment_count": 1,
+      "case_id": "ax-9d5c087b9cdcaa94b163d9fe99946cde",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-9d5c087b9cdcaa94b163d9fe99946cde.json",
+        "raw_sha256": "24f5fc37c58566c36fb748c9cc02e8a945b8fdbc5cd87f3144f2fecdeaadf962"
+      }
+    },
+    {
+      "atomic_judgment_count": 15,
+      "case_id": "ax-9f711cb3726203d90a85b9099c849dd6",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-9f711cb3726203d90a85b9099c849dd6.json",
+        "raw_sha256": "444c11fc6ce0fc936eec5d176a62288d34bbf23df6ac973843ad169ea0f82c9b"
+      }
+    },
+    {
+      "atomic_judgment_count": 12,
+      "case_id": "ax-9fcc3451811abec590210fd651213796",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-9fcc3451811abec590210fd651213796.json",
+        "raw_sha256": "e9e4b2e57cbe263acbde13b81cf233526049420f58a65e2fc151e3eec060b84c"
+      }
+    },
+    {
+      "atomic_judgment_count": 12,
+      "case_id": "ax-a1a93275a7120c54cdc03297426635fb",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-a1a93275a7120c54cdc03297426635fb.json",
+        "raw_sha256": "ecaaf5c192b22cca6089085644ec0d6f897e5e43bb1794984e444149b05fac9c"
+      }
+    },
+    {
+      "atomic_judgment_count": 4,
+      "case_id": "ax-a3b4f383a81e94d735318f032df3d6b9",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-a3b4f383a81e94d735318f032df3d6b9.json",
+        "raw_sha256": "d4205079d8cdcee4f704ae77c21725e9e7b5f61a02fef3844106f547eee702fa"
+      }
+    },
+    {
+      "atomic_judgment_count": 15,
+      "case_id": "ax-a4acdf43e1d96cf40a5e379ed4e99ec6",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-a4acdf43e1d96cf40a5e379ed4e99ec6.json",
+        "raw_sha256": "4fd879a73e9695b0f1caf50bc9081b070ffdfa8fd370044e57d63e60ee9f0f87"
+      }
+    },
+    {
+      "atomic_judgment_count": 11,
+      "case_id": "ax-a777052fe24048b59c560f5d34de85fe",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-a777052fe24048b59c560f5d34de85fe.json",
+        "raw_sha256": "efae8f0a3a917b27adee3fef49aaddc91dec32774f2e7e4cd746b1e4ac7a6657"
+      }
+    },
+    {
+      "atomic_judgment_count": 12,
+      "case_id": "ax-ad7e3275e84e07c61c8ef38372f9ce5b",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-ad7e3275e84e07c61c8ef38372f9ce5b.json",
+        "raw_sha256": "99c557a3a9da1115c9918b0477edf4ec122dc0b7a1785e2374a20cf159a05c0a"
+      }
+    },
+    {
+      "atomic_judgment_count": 4,
+      "case_id": "ax-ae1157b0c75b1d36146e1a920129e1fc",
+      "project_review": "REVIEWED_WITH_CONCERNS_NO_RELABELING",
+      "slot": "A",
+      "terminal_record": {
+        "path": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2/A/ax-ae1157b0c75b1d36146e1a920129e1fc.json",
+        "raw_sha256": "69e8e7a1eaeaf749f1f445549e9958b09c68c0451deeb5a626ac4dd0b53227b4"
+      }
+    }
+  ],
+  "reviewed_response_count": 69,
+  "schema": "crane-evidence-calibration-pilot-role-prefix-project-review/v1-development",
+  "status": "BLIND_DEVELOPMENT_REVIEW_WITH_OPEN_MEASUREMENT_GATES",
+  "support_handoff_authorized": false,
+  "support_labels_generated": false,
+  "synthetic_qualification_regraded": false,
+  "visible_evidence_opened": false
+}
