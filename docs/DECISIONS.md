@@ -4613,3 +4613,27 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   pilot score, physical acquisition, alpha spending or P11 freeze. Preserve failed
   combined support/unlaunched C and pending reopening. P11 keeps nineteen open
   conditions and confirmation/replication independent N=0.
+
+
+## 2026-09-30 — inspect structured namespace status without retrospective failure attribution
+
+- **Gap:** generic nonzero launcher exits do not distinguish namespace setup/exec
+  failures from program failures. Do not rely on stderr phrasing or relabel old calls.
+- **Retained expectation failure:** first fixed observer expects empty status on a
+  missing mount. Actual child/namespace identity precedes setup; final exit is absent.
+  Preserve that failure/source and its unlaunched descriptor probe.
+- **Prospective evidence:** separate v2 observes normal and nonzero program exits
+  with matching final records, missing mount/exec with incomplete records, and status
+  descriptor absence from payload-visible proc/fd entries. All five fixed probes pass.
+- **Mechanical audit:** 15 tests cover bounded strict JSON, typed IDs/exits, matching
+  return code, incomplete/unverified status and descriptor-exposure rejection. A
+  distinct audit binds unchanged v2 raw bytes. No semantic failure is attributed.
+- **Scope:** initial PID is not successful payload execution; absent final status is
+  not uniquely a mount error. Direct finite probes are not the full service wrapper,
+  complete interpreter-startup attestation or general confinement proof. Existing
+  executors/brokers/MCP/callers remain unchanged; full integration stays open.
+- **Governance:** no semantic model/automated annotation call, method-key join, real-
+  pilot score, physical acquisition, alpha spending or P11 freeze. Preserve failed
+  support/unlaunched C and pending reopening. An explicit bounded-reopening decision
+  is requested; automatic continuation does not supply it. P11 keeps nineteen open
+  conditions and confirmation/replication independent N=0.

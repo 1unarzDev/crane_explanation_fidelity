@@ -1,5 +1,17 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Namespace lifecycle addendum after `2b3f352c` — 2026-09-30
+
+A [fixed structured-status observation](NAMESPACE_LIFECYCLE_2026-09-30.md) retains
+a wrong empty-status expectation on mount failure. A separate v2 observes five
+normal/program/mount/exec/descriptor probes; child identity precedes setup and only
+a final matching exit verifies a completed lifecycle. Fifteen mechanical tests pass.
+No old failure or method answer is rescored. The service wrapper/caller integration
+is still open; no existing executor selects this seam. No semantic invocation,
+endpoint score or alpha spending occurs. P11 keeps nineteen open conditions, N=0
+and pending measurement reopening; an explicit user decision has been requested.
+
+
 ## Scratch boundary addendum after `878e19fb` — 2026-09-30
 
 A [separate scratch-capacity candidate](BOUNDED_SCRATCH_2026-09-30.md) retains a v5
