@@ -95,3 +95,27 @@ python analysis/publish_roboboat_terminal_capsule.py --artifact-root artifacts/r
 The combined result contains 30 fresh answers: 12 from v1 plus 18 from the continuation, excluding six historical replay answers. Historical evidence adds no N. V3 publication includes retained v2 launch/canary/diagnostic failures; the original immutable v1 capsule is a separate hash-bound dependency. The intake ledger/manifest names carry v3 and cannot overwrite v1. Never rerun publication after its immutable capsule exists. Exact provider dollar cost remains unavailable from the login-backed adapter.
 
 The separately versioned precision renderer is exercised with `PYTHONPATH=analysis python -m pytest -q tests/test_roboboat_temporal_renderer_v2.py`; its inspected row005 answer is retained under `artifacts/roboboat-terminal-v3/renderer-successor-development`. It is not a scored comparative response. The example panels add `--terminal-detail` to the plotting command for yaw-rate/hull evidence.
+
+## Fractional cluster QA and bounded extraction qualification
+
+```bash
+PYTHONPATH=analysis python -m pytest -q tests/test_roboboat_cluster_analysis.py
+python analysis/plan_roboboat_cluster_throughput.py
+python analysis/run_roboboat_atomization_extension_v3.py --output-root artifacts/roboboat-terminal-atomization-v3
+```
+
+Planning is simulation only, using the inherited e-process primitives and hypothetical alpha, not a marine allocation or look. The qualified method-blind atomizer is resolved from the current v2 inventory disposition and freeze (`gpt-6.1-sol` high); its prompt/schema remain unchanged and abstraction tags remain unqualified. Each extension case receives two isolated no-tool passes. V1 retained a two-call tool-policy failure from mistakenly asking for a file read. V2 passed structural extraction on all eight cases, but independent project review found incomplete construction-defined gold, so no score is promoted. V3 freezes eight fresh held-out cases with explicit component/requirement/relation closure before calls. All calls/failures remain retained, no quality retries, no land binding changes, no physical or confirmatory N. Successful structural returns still require separate semantic/completeness review before qualification.
+
+The v4 sub-suite did not qualify: both passes added odometry-result actor specificity to an unspecified receipt. V5 is a separately declared marine appendix candidate, not a silent replacement of the land prompt. Four fresh construction-defined held-out cases and 27 critical meanings per pass passed independent project review in both isolated passes. This qualifies only bounded text/span extraction of the stated actor/clock/phase/completeness concepts, not abstraction tags, real-bank completeness, support labels, human validity or confirmation. No earlier failed/reference-invalid suite is rescored.
+
+```bash
+python analysis/run_roboboat_atomization_extension_v5.py --output-root artifacts/roboboat-terminal-atomization-v5
+```
+
+## Complete blind development inventory reassessment
+
+```bash
+python analysis/run_roboboat_pilot_atomic_inventory.py
+```
+
+Declared before calls, all 36 retained answers included. There are 31 unique exact texts; each receives A/B isolated extraction passes. The blind bank contains only opaque text hashes and answer text; its evaluator join remains outside extractor input. Qualified source model/base prompt/schema and separately checked marine appendix are hash-bound. Do not run concurrent copies. Resumption uses retained terminal records and fails closed on unresolved intents or structural failures. Structural completion does not authorize support annotation. Full method-unaware project inventory review must establish faithful actors, phases, quantities, scope, negation, component facts and relations first. Abstraction tags remain unqualified and cannot enter endpoint/rank scores. Subsequent support passes must retain the current qualified Astra binding and full evidence packet.

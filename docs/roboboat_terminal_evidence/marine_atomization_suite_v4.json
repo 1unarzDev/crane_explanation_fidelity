@@ -1,0 +1,95 @@
+{
+  "schema": "roboboat-atomic-extraction-extension/v4",
+  "scope": "Fresh bounded held-out check of marine phase/measurement/interval and clock qualifiers only; not broad annotation qualification. Generic qualified extractor remains unchanged.",
+  "cases": [
+    {
+      "case_id": "marine-phase-extraction-v4-01",
+      "split": "heldout",
+      "response_text": "A speed measurement was obtained. The measurement occurred after the result receipt. Its speed value was 0.05003 m/s. The declared speed bound was 0.05000 m/s. The measurement belongs to the declared dwell. The measured speed exceeded the declared bound. The dwell failed. The speed violation establishes that dwell failure.",
+      "expected": [
+        {
+          "source_span": "A speed measurement was obtained.",
+          "meaning": "A speed measurement was obtained.",
+          "critical": true
+        },
+        {
+          "source_span": "The measurement occurred after the result receipt.",
+          "meaning": "The measurement occurred after the result receipt.",
+          "critical": true
+        },
+        {
+          "source_span": "Its speed value was 0.05003 m/s.",
+          "meaning": "The obtained speed measurement value was 0.05003 m/s.",
+          "critical": true
+        },
+        {
+          "source_span": "The declared speed bound was 0.05000 m/s.",
+          "meaning": "The declared speed bound was 0.05000 m/s.",
+          "critical": true
+        },
+        {
+          "source_span": "The measurement belongs to the declared dwell.",
+          "meaning": "The measurement belongs to the declared dwell.",
+          "critical": true
+        },
+        {
+          "source_span": "The measured speed exceeded the declared bound.",
+          "meaning": "The measured speed exceeded the declared bound.",
+          "critical": true
+        },
+        {
+          "source_span": "The dwell failed.",
+          "meaning": "The dwell failed.",
+          "critical": true
+        },
+        {
+          "source_span": "The speed violation establishes that dwell failure.",
+          "meaning": "The speed violation establishes that dwell failure.",
+          "critical": true
+        }
+      ]
+    },
+    {
+      "case_id": "marine-phase-extraction-v4-02",
+      "split": "heldout",
+      "response_text": "An odometry measurement was obtained. Its timestamp was 94.2 s. The timestamp used the simulation clock. The result receipt used the fixture monotonic clock. Those two clocks were not directly aligned. The measurement occurred before receipt. The exact physical state at receipt is unknown.",
+      "expected": [
+        {
+          "source_span": "An odometry measurement was obtained.",
+          "meaning": "An odometry measurement was obtained.",
+          "critical": true
+        },
+        {
+          "source_span": "Its timestamp was 94.2 s.",
+          "meaning": "The obtained odometry measurement timestamp was 94.2 s.",
+          "critical": true
+        },
+        {
+          "source_span": "The timestamp used the simulation clock.",
+          "meaning": "The timestamp used the simulation clock.",
+          "critical": true
+        },
+        {
+          "source_span": "The result receipt used the fixture monotonic clock.",
+          "meaning": "The result receipt used the fixture monotonic clock.",
+          "critical": true
+        },
+        {
+          "source_span": "Those two clocks were not directly aligned.",
+          "meaning": "The simulation clock and fixture monotonic receipt clock were not directly aligned.",
+          "critical": true
+        },
+        {
+          "source_span": "The measurement occurred before receipt.",
+          "meaning": "The measurement occurred before receipt.",
+          "critical": true
+        },
+        {
+          "source_span": "The exact physical state at receipt is unknown.",
+          "meaning": "The exact physical state at receipt is unknown.",
+          "critical": true
+        }
+      ]
+    }
+  ]
+}

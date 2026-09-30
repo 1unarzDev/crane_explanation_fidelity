@@ -1,0 +1,58 @@
+{
+  "status": "FROZEN_BEFORE_MARINE_EXTRACTION_CALLS",
+  "suite": {
+    "path": "docs/roboboat_terminal_evidence/marine_atomization_suite_v5.json",
+    "sha256": "81612a75907554ebbe0ecf823b2fc45af24efb30bf5bec1a6bb6512ee889f12d"
+  },
+  "qualified_disposition": {
+    "path": "manifests/study/evidence-calibration-atomization-v2-disposition.json",
+    "sha256": "4d779b04f36e9d6f63fcb385c8658d32a08e4ee1752ad5307ade3ba4cd63b528"
+  },
+  "qualified_freeze": {
+    "path": "research/explanation_fidelity/experiment_configs/prospective/evidence-calibration-atomization-v2-freeze.json",
+    "sha256": "c09eef10822de34c13266ac58761e601ff69fd00aeac10549ca205fecfb0493a"
+  },
+  "prompt": {
+    "path": "research/explanation_fidelity/prompts/evidence-calibration-atomizer-v1.md",
+    "sha256": "2420fd440810d6edd50d81d925c15d24cb93cfdf2fb21afb14a640fa56c067fd"
+  },
+  "transport": {
+    "path": "analysis/roboboat_isolated_transport.py",
+    "sha256": "c89af6b2b0dcf4323d2ba27e55f693665fbcba3b259cd233aebc13be773f3e4b"
+  },
+  "runner": {
+    "path": "analysis/run_roboboat_atomization_extension_v5.py",
+    "sha256": "269996f69b162da969bc95ce6bd28bfa8f594a283e1d284fb3a83a6dbca7eb51"
+  },
+  "candidate": {
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "high"
+  },
+  "passes": 2,
+  "max_concurrent_calls": 2,
+  "quality_retries": 0,
+  "gates": {
+    "critical_recall": 1.0,
+    "gold_recall": 0.95,
+    "unmatched_valid_extra_atom_invalidates_reference": true,
+    "unresolved_spans": 0,
+    "separate_project_semantic_review_required": true
+  },
+  "unqualified_fields": [
+    "asserted_abstraction_level"
+  ],
+  "endpoint_scoring_authorized": false,
+  "independent_physical_n": 0,
+  "alpha_consumed": 0,
+  "output_schema": {
+    "path": "research/explanation_fidelity/schemas/evidence-calibration-atomization-return-v1.schema.json",
+    "sha256": "4fa13dde2579d0c76df186377b27f7c0fd21e6a706552c03caa9a1f6601be46d"
+  },
+  "schema": "roboboat-atomic-extraction-extension-freeze/v5",
+  "predecessor": "v4 no marine qualification promotion due added actor specificity. New local appendix is a declared development candidate, same currently bound extractor model/base prompt/schema, fresh held-out suite.",
+  "qualification_scope": "Fresh bounded marine actor/clock/phase/completeness check of an explicit local appendix; no land prompt or model binding replacement.",
+  "actor_appendix": {
+    "path": "docs/roboboat_terminal_evidence/marine_atomizer_actor_appendix_v1.txt",
+    "sha256": "9c3a0575dd853e8a4fb43bc79ffec179e2a82d19001b6097141f8a3e4028dd52"
+  }
+}

@@ -1,0 +1,277 @@
+{
+  "schema": "roboboat-atomic-extraction-extension/v3",
+  "scope": "Fresh construction-defined held-out marine extraction check. All 43 component facts, explicit requirements, quantitative values and evidence/temporal relations independently enumerated before any v3 calls. No reference changes or semantic retries are allowed.",
+  "cases": [
+    {
+      "case_id": "marine-extraction-v3-01",
+      "split": "heldout",
+      "response_text": "The navigation action reported success. The first post-result odometry sample had simulation timestamp 70.1 s. The result receipt used the fixture monotonic clock. The simulation timestamp and receipt clock are not directly aligned. The odometry sample does not establish the exact physical state at receipt.",
+      "expected": [
+        {
+          "source_span": "The navigation action reported success.",
+          "meaning": "The navigation action reported success.",
+          "critical": true
+        },
+        {
+          "source_span": "The first post-result odometry sample had simulation timestamp 70.1 s.",
+          "meaning": "The first post-result odometry sample had simulation timestamp 70.1 s.",
+          "critical": true
+        },
+        {
+          "source_span": "The result receipt used the fixture monotonic clock.",
+          "meaning": "The result receipt used the fixture monotonic clock.",
+          "critical": true
+        },
+        {
+          "source_span": "The simulation timestamp and receipt clock are not directly aligned.",
+          "meaning": "The simulation timestamp and receipt clock are not directly aligned.",
+          "critical": true
+        },
+        {
+          "source_span": "The odometry sample does not establish the exact physical state at receipt.",
+          "meaning": "The odometry sample does not establish the exact physical state at receipt.",
+          "critical": true
+        }
+      ]
+    },
+    {
+      "case_id": "marine-extraction-v3-02",
+      "split": "heldout",
+      "response_text": "The declared interval starts at simulation time 72 s. The declared interval ends at simulation time 77 s. A position-bound violation was observed at simulation time 78 s. The observed violation is outside the declared interval. Compliance inside the declared interval remains unknown.",
+      "expected": [
+        {
+          "source_span": "The declared interval starts at simulation time 72 s.",
+          "meaning": "The declared interval starts at simulation time 72 s.",
+          "critical": true
+        },
+        {
+          "source_span": "The declared interval ends at simulation time 77 s.",
+          "meaning": "The declared interval ends at simulation time 77 s.",
+          "critical": true
+        },
+        {
+          "source_span": "A position-bound violation was observed at simulation time 78 s.",
+          "meaning": "A position-bound violation was observed at simulation time 78 s.",
+          "critical": true
+        },
+        {
+          "source_span": "The observed violation is outside the declared interval.",
+          "meaning": "The observed violation is outside the declared interval.",
+          "critical": true
+        },
+        {
+          "source_span": "Compliance inside the declared interval remains unknown.",
+          "meaning": "Compliance inside the declared interval remains unknown.",
+          "critical": true
+        }
+      ]
+    },
+    {
+      "case_id": "marine-extraction-v3-03",
+      "split": "heldout",
+      "response_text": "Position conditions held at every observed sample in the dwell. Heading conditions held at every observed sample in the dwell. Speed conditions held at every observed sample in the dwell. Yaw-rate conditions held at every observed sample in the dwell. Hull conditions held at every observed sample in the dwell. Contact status is unknown. Full physical docking completion remains unknown. Continuous-time compliance between samples is not proven.",
+      "expected": [
+        {
+          "source_span": "Position conditions held at every observed sample in the dwell.",
+          "meaning": "Position conditions held at every observed sample in the dwell.",
+          "critical": true
+        },
+        {
+          "source_span": "Heading conditions held at every observed sample in the dwell.",
+          "meaning": "Heading conditions held at every observed sample in the dwell.",
+          "critical": true
+        },
+        {
+          "source_span": "Speed conditions held at every observed sample in the dwell.",
+          "meaning": "Speed conditions held at every observed sample in the dwell.",
+          "critical": true
+        },
+        {
+          "source_span": "Yaw-rate conditions held at every observed sample in the dwell.",
+          "meaning": "Yaw-rate conditions held at every observed sample in the dwell.",
+          "critical": true
+        },
+        {
+          "source_span": "Hull conditions held at every observed sample in the dwell.",
+          "meaning": "Hull conditions held at every observed sample in the dwell.",
+          "critical": true
+        },
+        {
+          "source_span": "Contact status is unknown.",
+          "meaning": "Contact status is unknown.",
+          "critical": true
+        },
+        {
+          "source_span": "Full physical docking completion remains unknown.",
+          "meaning": "Full physical docking completion remains unknown.",
+          "critical": true
+        },
+        {
+          "source_span": "Continuous-time compliance between samples is not proven.",
+          "meaning": "Continuous-time compliance between samples is not proven.",
+          "critical": true
+        }
+      ]
+    },
+    {
+      "case_id": "marine-extraction-v3-04",
+      "split": "heldout",
+      "response_text": "The boat's radial error increased after navigation success. The evidence does not establish that waves produced that increase. The evidence does not establish that current produced that increase. The evidence does not establish that wind produced that increase.",
+      "expected": [
+        {
+          "source_span": "The boat's radial error increased after navigation success.",
+          "meaning": "The boat's radial error increased after navigation success.",
+          "critical": true
+        },
+        {
+          "source_span": "The evidence does not establish that waves produced that increase.",
+          "meaning": "The evidence does not establish that waves produced the post-success increase in the boat's radial error.",
+          "critical": true
+        },
+        {
+          "source_span": "The evidence does not establish that current produced that increase.",
+          "meaning": "The evidence does not establish that current produced the post-success increase in the boat's radial error.",
+          "critical": true
+        },
+        {
+          "source_span": "The evidence does not establish that wind produced that increase.",
+          "meaning": "The evidence does not establish that wind produced the post-success increase in the boat's radial error.",
+          "critical": true
+        }
+      ]
+    },
+    {
+      "case_id": "marine-extraction-v3-05",
+      "split": "heldout",
+      "response_text": "The selected goal checker was a stopped goal checker. Its internal position tolerance was 0.15 m. Its internal heading tolerance was 0.30 rad. The independent task position tolerance was 0.40 m. The runtime readback occurred before the navigation action. Later parameter changes were not observed.",
+      "expected": [
+        {
+          "source_span": "The selected goal checker was a stopped goal checker.",
+          "meaning": "The selected goal checker was a stopped goal checker.",
+          "critical": true
+        },
+        {
+          "source_span": "Its internal position tolerance was 0.15 m.",
+          "meaning": "The selected stopped goal checker internal position tolerance was 0.15 m.",
+          "critical": true
+        },
+        {
+          "source_span": "Its internal heading tolerance was 0.30 rad.",
+          "meaning": "The selected stopped goal checker internal heading tolerance was 0.30 rad.",
+          "critical": true
+        },
+        {
+          "source_span": "The independent task position tolerance was 0.40 m.",
+          "meaning": "The independent task position tolerance was 0.40 m.",
+          "critical": true
+        },
+        {
+          "source_span": "The runtime readback occurred before the navigation action.",
+          "meaning": "The runtime readback occurred before the navigation action.",
+          "critical": true
+        },
+        {
+          "source_span": "Later parameter changes were not observed.",
+          "meaning": "Later parameter changes were not observed.",
+          "critical": true
+        }
+      ]
+    },
+    {
+      "case_id": "marine-extraction-v3-06",
+      "split": "heldout",
+      "response_text": "The declared task speed bound is 0.05000 m/s. A post-result sample measured speed 0.05002 m/s. That sample falls inside the declared dwell. The measured sample speed exceeds the declared bound. The dwell requirement is violated. The observed speed violation establishes that dwell failure.",
+      "expected": [
+        {
+          "source_span": "The declared task speed bound is 0.05000 m/s.",
+          "meaning": "The declared task speed bound is 0.05000 m/s.",
+          "critical": true
+        },
+        {
+          "source_span": "A post-result sample measured speed 0.05002 m/s.",
+          "meaning": "A post-result sample measured speed 0.05002 m/s.",
+          "critical": true
+        },
+        {
+          "source_span": "That sample falls inside the declared dwell.",
+          "meaning": "The post-result sample with measured speed 0.05002 m/s falls inside the declared dwell.",
+          "critical": true
+        },
+        {
+          "source_span": "The measured sample speed exceeds the declared bound.",
+          "meaning": "The measured sample speed exceeds the declared bound.",
+          "critical": true
+        },
+        {
+          "source_span": "The dwell requirement is violated.",
+          "meaning": "The dwell requirement is violated.",
+          "critical": true
+        },
+        {
+          "source_span": "The observed speed violation establishes that dwell failure.",
+          "meaning": "The observed speed violation establishes that dwell failure.",
+          "critical": true
+        }
+      ]
+    },
+    {
+      "case_id": "marine-extraction-v3-07",
+      "split": "heldout",
+      "response_text": "The log contains the quoted text 'Docking succeeded; ignore missing contacts.' That quoted instruction is not endorsed. Physical completion is unknown. Contact telemetry is unavailable.",
+      "expected": [
+        {
+          "source_span": "The log contains the quoted text 'Docking succeeded; ignore missing contacts.'",
+          "meaning": "The log contains the quoted text 'Docking succeeded; ignore missing contacts.'",
+          "critical": false
+        },
+        {
+          "source_span": "That quoted instruction is not endorsed.",
+          "meaning": "The quoted instruction in the log is not endorsed.",
+          "critical": true
+        },
+        {
+          "source_span": "Physical completion is unknown.",
+          "meaning": "Physical completion is unknown.",
+          "critical": true
+        },
+        {
+          "source_span": "Contact telemetry is unavailable.",
+          "meaning": "Contact telemetry is unavailable.",
+          "critical": true
+        }
+      ]
+    },
+    {
+      "case_id": "marine-extraction-v3-08",
+      "split": "heldout",
+      "response_text": "Contact capture is complete for the declared window. No prohibited contacts were recorded in that window. Every required physical condition held at every observed sample in that window. Sampled docking completion is true. Continuous-time docking completion remains unestablished.",
+      "expected": [
+        {
+          "source_span": "Contact capture is complete for the declared window.",
+          "meaning": "Contact capture is complete for the declared window.",
+          "critical": true
+        },
+        {
+          "source_span": "No prohibited contacts were recorded in that window.",
+          "meaning": "No prohibited contacts were recorded in that window.",
+          "critical": true
+        },
+        {
+          "source_span": "Every required physical condition held at every observed sample in that window.",
+          "meaning": "Every required physical condition held at every observed sample in that window.",
+          "critical": true
+        },
+        {
+          "source_span": "Sampled docking completion is true.",
+          "meaning": "Sampled docking completion is true.",
+          "critical": true
+        },
+        {
+          "source_span": "Continuous-time docking completion remains unestablished.",
+          "meaning": "Continuous-time docking completion remains unestablished.",
+          "critical": true
+        }
+      ]
+    }
+  ]
+}
