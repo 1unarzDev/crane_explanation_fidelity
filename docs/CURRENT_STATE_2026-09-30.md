@@ -363,3 +363,32 @@ now bound as `PASS_NON_STUDY_NEUTRAL_INPUT_SCHEMA_CANARY` / `DVC_PUSH_VERIFIED`.
 only the fresh forty-call synthetic qualification; none of those requests had run at this gate
 checkpoint. No pilot support annotation or raw rank/endpoint use is authorized. P11 and all
 scientific allocation/inference boundaries remain unchanged.
+
+## Latest 2026-09-30 qualified non-rank support-input checkpoint
+
+Session `42151` has terminated successfully. All forty fresh v2 synthetic requests have valid
+retained records; both isolated passes matched nineteen of nineteen held-out atomic labels and
+all registered communication-field references across sixteen cases, including all eight critical
+cases. The read-only audit reproduces the exact frozen requests and scoring. DVC pushed eighty-two
+objects after termination; the new pointer contains 3,946 files. The original checkout's pointer
+was restored byte-for-byte and its Git state is clean.
+
+`manifests/annotation/evidence-calibration-neutral-level-support-v2-disposition.json` now qualifies
+this support-input extension only: Astra-high, unchanged no-tool transport/prompt/v2 schemas,
+null per-atom levels and uniformly supplied `NO_DIAGNOSTIC_ASSERTION` / `UNINTERPRETABLE` options.
+The raw highest-level field is retained and remains unqualified for accuracy, ordinal conversion
+or endpoint rank. References are project-constructed and agent-reviewed synthetic cases, not
+independent human validation or observed real-pilot accuracy. The original v4 qualification and
+separate source-context extension retain their scope. The stopped v1 neutral-input run remains
+unqualified and unchanged; none of its requests is retried, repaired, rescored or resumed.
+
+The disposition permits support-packet construction; it authorizes no pilot model call. Next,
+bind and audit the combined source-context/null-level blind packet format and a separate call
+inventory/canary, then perform two isolated support passes and disagreement-only adjudication.
+Role disagreement and missing-A dispositions, claim-specific mechanistic/rank attachment,
+unresolved-label mapping and whole-episode sensitivities remain prerequisites for endpoint use.
+Nominal masks and fresh B0–B4 development outputs still need alignment before useful coverage,
+paired episode discordances, power/allocation and exact P11 choices. The primary B2/B4 and the
+three corrected B0/B1/B3-versus-B4 comparisons remain prospective; no paired effect exists.
+P11 still has nineteen open conditions, confirmation/replication N remain zero, and the
+0.02-consumed / at-most-0.01-discovery / 0.02-replication alpha and layout quarantine are unchanged.

@@ -89,3 +89,33 @@ python analysis/run_evidence_calibration_agent_qualification.py \
 ## P11 acceptance gate
 
 Before P11: exact-task held-out qualification must pass; A/B identities and caches must be separate; malformed returns must fail closed; C must be distinct and disagreement-only; all artifacts must remain hash-audited; the method key must remain unopened through finalization; and method-specific judge-error sensitivity must be disclosed. Passing qualifies only the declared automated measurement, not human validity or trust.
+
+## 2026-09-30 — qualified neutral-level support payload extension
+
+The separately declared v2 compatibility qualification completed forty synthetic calls in two
+isolated passes. Each pass matched all nineteen held-out atomic labels and all registered
+coverage, false-premise and limitation references across sixteen cases, including eight critical
+cases. The exact result, request/return audit and DVC retention are bound by
+`manifests/annotation/evidence-calibration-neutral-level-support-v2-disposition.json`.
+This is agent-assessed automated qualification on project-constructed synthetic references,
+not independent human validation or real-pilot accuracy evidence.
+
+The extension retains the exact Astra-high model/transport, support prompt and v2 annotation/
+adjudication schemas. It permits null per-atom levels and the same six diagnostic options plus
+`NO_DIAGNOSTIC_ASSERTION` and `UNINTERPRETABLE`, uniformly supplied on every form. The raw
+highest-level field remains required and retained but is **unqualified and excluded from endpoint
+rank**. Neither sentinel maps to zero or to any ordinal. Claim-specific assertion/contract
+attachment must establish diagnostic rank separately; neither extractor levels nor broad role
+kinds may replace it. This dated scope supersedes use of the earlier generic highest-level
+instruction as an endpoint measure for these new support forms, while preserving the original
+v4 disposition in its original scope.
+
+The earlier v1 neutral-input qualification remains stopped and unqualified after its retained
+packet-validation failure. Do not repair, rescore, retry, replace or resume it. The v2 extension
+is a separate fresh synthetic cohort, with unchanged support accuracy thresholds; its disposition
+does not authorize further model calls. Prospective pilot support use requires a separately bound
+packet/call inventory and canary, with two isolated blinded A/B invocations and a distinct
+**disagreement-only** C invocation when disagreements exist. The earlier source-context canary
+remains a separately qualified extension; exercise the combined packet format before pilot use.
+All rank, role-disagreement/missingness, endpoint, comparative, allocation and P11 gates remain
+separate. Repeated passes do not increase independent episode N.

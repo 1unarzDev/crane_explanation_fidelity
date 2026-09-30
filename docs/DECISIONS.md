@@ -3638,3 +3638,31 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - This releases only the separately declared forty-call fresh synthetic qualification. At this
   gate checkpoint none of those calls has run. No support accuracy, raw rank qualification,
   pilot activation, endpoint outcome, new alpha allocation or P11 authorization follows.
+
+## 2026-09-30 — qualify and retain the bounded non-rank support-input extension
+
+- **Observed:** session `42151` terminated successfully after all forty declared requests returned
+  structurally valid records, with no retry, replacement, tool event or retained failure. Both
+  isolated passes matched nineteen of nineteen held-out atomic labels across sixteen cases,
+  all coverage/limitation/false-premise references, and every field of all eight critical cases.
+  The result is `PASS_INPUT_EXTENSION_PENDING_DISPOSITION`; the read-only audit exactly
+  reproduces frozen requests, raw/parsed returns, stop frontier and scoring.
+- **Retention:** after termination, DVC added/pushed eighty-one new intent/terminal/result files
+  plus the directory object (82 objects pushed). The pointer now contains 3,946 files. The
+  original checkout's pointer was restored byte-for-byte and its Git state is clean. The terminal
+  audit and separate passing disposition are hash-bound and record verified retention.
+- **Qualification scope:** `evidence-calibration-neutral-level-support-v2-disposition.json`
+  qualifies only the four declared support/communication fields with null atomic levels and
+  uniformly offered non-rank options, under unchanged Astra-high prompt/transport/v2 schemas.
+  Raw highest-level output is retained but unqualified, regardless of A/B agreement; neither
+  sentinel may become an ordinal or endpoint score. The original v4 disposition, source-context
+  qualification and stopped v1 extension remain preserved within their own scopes.
+- **Activation:** permit construction of prospective support packets under that exact binding.
+  No pilot model call is authorized by the passing disposition. A separately declared combined
+  packet/call inventory and canary, two isolated blinded support passes and distinct
+  disagreement-only adjudication remain required. Role disagreement/missingness, claim-specific
+  endpoint/rank attachment, nominal-mask alignment and fresh five-method evidence remain open.
+- **Limits:** synthetic references were constructed and reviewed by the project agent, not by
+  independent humans. These are automated qualification results, not real-pilot accuracy, paired
+  method effects, statistical N, a sample-size estimate or confirmation. P11 still fails closed
+  on nineteen conditions; alpha/freshness allocations and confirmation/replication N are unchanged.
