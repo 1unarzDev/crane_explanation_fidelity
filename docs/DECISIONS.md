@@ -4708,3 +4708,26 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   combined support, unlaunched C and unanswered reopening. P11 retains nineteen open
   conditions, no hash mismatches and confirmation/replication N=0. Five-method paired
   reporting remains prospective, including all inconclusive results.
+
+
+## 2026-09-30 — establish exited-descendant CPU accounting before cumulative guard integration
+
+- **Fixed scope:** three children with 0.15 CPU seconds each plus 0.10 parent CPU
+  seconds, one-second per-process RLIMIT_CPU and one-core tree rate. Bind fresh
+  service/source/limits and compare kernel, process and retained service counters.
+- **Retain failures:** v1 wrongly requires deprecated CPUAccounting property; it
+  stops and cleans up. V2 removes that property only, completes fixed work, then
+  wrongly requires a live cgroup/zero task counter after exit. Both original failed
+  dispositions remain unchanged; both exact services are absent after cleanup.
+- **Resolution:** v3 accepts retired cgroup/unset task count with earlier matching
+  running identity and successful exit. No v3 service launches. A separate exclusive
+  audit of unchanged v2 bytes records 0.616181 retained service CPU seconds after
+  reaped descendants and kernel-group retirement. No task-zero value is fabricated.
+  Eighteen targeted checks pass; source changes and raw artifacts are hash-bound.
+- **Boundary:** accounting is not a cumulative hard limit. Cutoff/overshoot/crash
+  durability and whole-turn integration remain open. Existing executor/broker/MCP/
+  study paths stay preserved. Never interpret a vanished cgroup as zero CPU usage.
+- **Governance:** no semantic model/automated annotation call, real-pilot score,
+  method-key join, physical acquisition, alpha spending or P11 freeze. Preserve
+  failed support/unlaunched C and unanswered reopening. P11 keeps nineteen open
+  conditions and confirmation/replication independent N=0.

@@ -1,0 +1,125 @@
+{
+  "schema": "crane-tree-cpu-accounting-binding/v1-development",
+  "recorded_date": "2026-09-30",
+  "status": "RETAINED_FAILURES_SEPARATE_ACCOUNTING_VALIDATION_PASS_NO_BUDGET_ENFORCEMENT",
+  "bindings": [
+    {
+      "path": "analysis/observe_evidence_calibration_tree_cpu_accounting.py",
+      "raw_sha256": "54c7f3e58cca305489dc7903c1457c973596d585198c4ee99d20d981bea42f87"
+    },
+    {
+      "path": "analysis/observe_evidence_calibration_tree_cpu_accounting_v2.py",
+      "raw_sha256": "f6b5b51d12f7f37b7b64593eb17472f2cf6a160828dfdd1972cb3c96606cc273"
+    },
+    {
+      "path": "analysis/observe_evidence_calibration_tree_cpu_accounting_v3.py",
+      "raw_sha256": "a6e479d2273fc1d59ca0d3bb77b1beb78cd68eb0ff675f6f2032c5de79c600ac"
+    },
+    {
+      "path": "analysis/audit_evidence_calibration_tree_cpu_accounting.py",
+      "raw_sha256": "092797f45e4fac125e459158eb3249b4f745fc3871e3427a869dadbfb065f430"
+    },
+    {
+      "path": "tests/test_evidence_calibration_tree_cpu_accounting.py",
+      "raw_sha256": "473cc8b0613403a26c58a1c4bc470fdf7090167b450415a0f02534db36277fb0"
+    },
+    {
+      "path": "docs/TREE_CPU_ACCOUNTING_2026-09-30.md",
+      "raw_sha256": "01912a53fc4f097f7dc86079d4e1427b355b09f616fd6981eac9f025dfabba17"
+    },
+    {
+      "path": "analysis/evidence_calibration_mcp_stdio_v3.py",
+      "raw_sha256": "f26e3329636ae4e852319b46d14a242c8ed557520568af70744947f42e1b2bf9"
+    },
+    {
+      "path": "analysis/observe_evidence_calibration_cgroup_limits.py",
+      "raw_sha256": "aaa610f75a0c872f05941957f291ed6a09dd239510fae056ee4bb864679ccddb"
+    }
+  ],
+  "installed_systemd_version": "261.3-1-arch",
+  "installed_manual": {
+    "path": "/usr/share/man/man5/systemd.resource-control.5.gz",
+    "raw_sha256": "5d6ed3a6c1b84141fe9547b26a5c1c8ff54eedcdf2a0c57625bf99ad155ab42f",
+    "recorded_statement": "CPUAccounting is deprecated since systemd 258; accounting always available on unified hierarchy"
+  },
+  "local_transactions": [
+    {
+      "directory": "output/infrastructure/tree-cpu-accounting-development-v1",
+      "records": [
+        {
+          "relative_path": "intent.json",
+          "raw_sha256": "ca01b0b2d696a62aa4ce0264efb4f7072c438d33076e857ed1f11610f36946a6"
+        },
+        {
+          "relative_path": "terminal.json",
+          "raw_sha256": "f854251a4f8476f577fcc2fd2e0c9cebc67a9dad930a8efaf94a78c6c009733e"
+        }
+      ]
+    },
+    {
+      "directory": "output/infrastructure/tree-cpu-accounting-development-v2",
+      "records": [
+        {
+          "relative_path": "expectation-correction.json",
+          "raw_sha256": "d43a6f4f9c7b1f89adf810274289c13fb5cc6a4d9599a88c58df3eb9dc1349b3"
+        },
+        {
+          "relative_path": "intent.json",
+          "raw_sha256": "98d5751eab6546a41f0152e60a00388431a17bcd2499502c9a65393132197f65"
+        },
+        {
+          "relative_path": "probe.json",
+          "raw_sha256": "283a3e8905ca1b24c7c70c24634ec55e8b905f714307613de39f009ab59340c9"
+        },
+        {
+          "relative_path": "terminal.json",
+          "raw_sha256": "b08373adbcf7a1ccbf2f213f0057ef79db9d4ddfa65d0c0dee65ff1e1b2533a9"
+        }
+      ]
+    }
+  ],
+  "original_transactions": [
+    {
+      "status": "TECHNICAL_FAILURE",
+      "error": "missing or unexpected service properties",
+      "service_absent": true
+    },
+    {
+      "status": "TECHNICAL_FAILURE",
+      "error": "retained accounting lacks successful empty process tree",
+      "service_absent": true
+    }
+  ],
+  "separate_correction": {
+    "schema": "crane-tree-cpu-accounting-correction/v1-development",
+    "status": "PASS_RETAINED_ACCOUNTING_EXPECTATION_CORRECTION_NO_RELAUNCH",
+    "original_transaction_status": "TECHNICAL_FAILURE",
+    "terminal_sha256": "b08373adbcf7a1ccbf2f213f0057ef79db9d4ddfa65d0c0dee65ff1e1b2533a9",
+    "validator_sha256": "092797f45e4fac125e459158eb3249b4f745fc3871e3427a869dadbfb065f430",
+    "corrected_observer_sha256": "a6e479d2273fc1d59ca0d3bb77b1beb78cd68eb0ff675f6f2032c5de79c600ac",
+    "retained_service_cpu_nanoseconds": 616181000,
+    "kernel_after_usage_microseconds": 610111,
+    "descendant_work_cpu_seconds": 0.45257687599999996,
+    "parent_work_cpu_seconds": 0.10065533,
+    "post_exit_cgroup_retained": false,
+    "tasks_current_measured_as_zero": false,
+    "cumulative_budget_enforced": false,
+    "model_call_attempted": false,
+    "transaction_relaunched": false
+  },
+  "targeted_tests_passed": 18,
+  "observed_services_absent": 2,
+  "v3_service_launched": false,
+  "process_tree_cpu_accounting_observed_on_fixed_probe": true,
+  "post_exit_cgroup_retained": false,
+  "tasks_current_measured_as_zero": false,
+  "cumulative_cpu_limit_enforced": false,
+  "whole_turn_accounting_verified": false,
+  "scientific_budgets_frozen": false,
+  "existing_study_callers_migrated": false,
+  "model_calls_authorized": false,
+  "pilot_annotation_authorized": false,
+  "p11_authorized": false,
+  "confirmation_independent_n": 0,
+  "replication_independent_n": 0
+}

@@ -1,5 +1,19 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## CPU accounting addendum after `71f3c050` — 2026-09-30
+
+A [fixed CPU-accounting probe](TREE_CPU_ACCOUNTING_2026-09-30.md) supplies evidence
+for cumulative-resource integration. Preserve v1's deprecated-property failure and
+v2's incorrect live-cgroup expectation. A separate validator confirms unchanged v2
+bytes without relaunch: service CPU retains 0.616181 s after descendants exit and
+the kernel cgroup retires. Eighteen focused checks pass; both observed services are
+absent. V3 corrects the expectation but has not launched; original terminals stay
+failed. This verifies accounting only, not a cumulative cutoff or turn aggregation.
+Existing method callers are unchanged. No semantic execution, annotation, scoring,
+alpha spending or P11 freeze occurs. N=0, nineteen open conditions and pending
+measurement reopening remain.
+
+
 ## Installed-client lifecycle addendum after `cb067ab2` — 2026-09-30
 
 A [separate installed-client observer v3](INSTALLED_CLIENT_LIFECYCLE_MCP_2026-09-30.md)
