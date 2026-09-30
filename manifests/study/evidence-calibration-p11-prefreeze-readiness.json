@@ -24,7 +24,7 @@
     {"path": "analysis/audit_evidence_calibration_pilot_handoff.py", "sha256": "55e6c84a8c2a26fe17c29f3175ad7bf3bff6c88de38bcab854f56813d0b2fb1b"},
     {"path": "analysis/build_evidence_calibration_atomization_bank.py", "sha256": "f7089facf7a48e3fd64cc33c9a82eb624d960b98d60c240d4f663ea4230f7cca"},
     {"path": "manifests/study/evidence-calibration-b2-b4-pilot-v1-atomization-bank-v1.json", "sha256": "5ca2947dbd5d6d6c580cd98424c374cab916e1c678a51cdc9e9c268851c1f0cc"},
-    {"path": "model_outputs.dvc", "sha256": "913cf2ca5757c1a5ee69c761dd2b73f5edde1c054e2f13b895ccb1eb8004895c"},
+    {"path": "model_outputs.dvc", "sha256": "198884ecdd2dc6363e9fddd14acafc7f113f530b999ec29a9fca7c407eff3322"},
     {"path": "data/evaluator_only/annotation_keys.dvc", "sha256": "0a6ff62e5a17db84971663a80859f34ca4d88bca3af34d4eb896e2f81c469839"},
     {"path": "analysis/build_evidence_calibration_pilot_source_context.py", "sha256": "4189fae12aab9cfca7bba11f752b872304c0e79658776cc2193db092024b909c"},
     {"path": "analysis/build_evidence_calibration_pilot_rubric.py", "sha256": "4030a415938ab29b681e1a9f04bbf6c48c77a2a939abd9007ac1cf7c4fb3f0bd"},
@@ -60,7 +60,12 @@
     {"path": "research/explanation_fidelity/schemas/blinded-agent-atomic-annotation-return-v2.schema.json", "sha256": "7b10a601c48f08a720bcc2c52c69bab0b1773e72ee552f4ac88a7bbd4c1a044f"},
     {"path": "research/explanation_fidelity/schemas/blinded-agent-atomic-adjudication-v2.schema.json", "sha256": "aa86c71f9bd1ac2a998836115a0b99d2fe145bd182f33eecc4f9dd5b3c04e829"},
     {"path": "research/explanation_fidelity/experiment_configs/development/evidence-calibration-b2-login-transport-amendment-v1.json", "sha256": "35206bce0c2b3f57dddce072611ceb40fc4e5e7dceb127e55798d46f98fcc2b2"},
-    {"path": "manifests/study/evidence-calibration-b2-b4-pilot-v1-execution-status.json", "sha256": "ed4a4cc41406777067d53e903bfb14e5881549e9a526329df218fdbc13f9a09d"}
+    {"path": "manifests/study/evidence-calibration-b2-b4-pilot-v1-execution-status.json", "sha256": "ed4a4cc41406777067d53e903bfb14e5881549e9a526329df218fdbc13f9a09d"},
+    {"path": "research/explanation_fidelity/experiment_configs/prospective/evidence-calibration-atomization-v2-freeze.json", "sha256": "c09eef10822de34c13266ac58761e601ff69fd00aeac10549ca205fecfb0493a"},
+    {"path": "research/explanation_fidelity/qualification/evidence-calibration-atomization-v2.json", "sha256": "30bb10e312ca31fea42ffbcadad0c15582bc651a973344da8034456098781b07"},
+    {"path": "manifests/study/evidence-calibration-atomization-v2-disposition.json", "sha256": "4d779b04f36e9d6f63fcb385c8658d32a08e4ee1752ad5307ade3ba4cd63b528"},
+    {"path": "manifests/annotation/evidence-calibration-atomization-v2-semantic-review.json", "sha256": "2aa48cf61f9894f8da9ff08beaa01e50cc4afd22ab9d44982633ac9db76597d6"},
+    {"path": "analysis/audit_evidence_calibration_atomization_v2_disposition.py", "sha256": "58ae8fcf81e45be8077f401b6055c7308480e98d5edaa4878ec777b8ea8e834a"}
   ],
   "requirements": [
     {"requirement_id": "focused_stack_tests", "status": "PASS", "evidence": "82 focused P2--P10, ladder/population/freshness, pilot-path, transport-preflight, alpha-ledger, and annotation/adjudication tests, including the new automated-agent workflow"},
@@ -68,7 +73,7 @@
     {"requirement_id": "fresh_b2_b4_development_pilot", "status": "NOT_RUN", "evidence": null},
     {"requirement_id": "physical_cohort_freshness_reconciled", "status": "PASS", "evidence": "Pinned audit establishes 120 confirmation-labelled and 20 replication-labelled layouts as physically materialized development evidence; the other 100 replication-labelled layouts are old-schedule allocated, non-materialized, and quarantined."},
     {"requirement_id": "agent_annotation_exact_task_qualification", "status": "PASS", "evidence": "The hash-bound v4 gpt-6-astra high-effort qualification passed every frozen held-out gate in two isolated passes. Earlier v1/v2 failures and invalid v3 reference remain retained. See manifests/study/evidence-calibration-agent-qualification-disposition-v1.json; this qualifies agent-assessed measurement only."},
-    {"requirement_id": "atomic_pilot_handoff", "status": "BANK_BUILT_ATOMIZATION_AND_RUBRIC_PENDING", "evidence": "A blinded raw-response bank now binds 114 paired development answers with a separate evaluator-only key; 112 answers belong to 15 complete paired ladders. Atomic inventories and exact spans are not yet generated. A method-blind rubric builder uses independent physical references, and source context is hash-checked for all 57 B2 calls, but rubrics remain unbound and zero atomic pilot packets exist. Extraction qualification, inventory completeness, rubric closure, and source-context measurement validation remain mandatory before agent annotation."},
+    {"requirement_id": "atomic_pilot_handoff", "status": "SYNTHETIC_INVENTORY_QUALIFIED_PILOT_COMPLETENESS_LEVELS_AND_RUBRIC_PENDING", "evidence": "The 114-response bank remains unprocessed. The v2 synthetic extractor passed inventory-only qualification in two isolated passes; abstraction tags are unqualified. Pilot inventory completeness, diagnostic-level treatment, bound method-blind rubrics, and source-context measurement validation remain mandatory before support annotation."},
     {"requirement_id": "nominal_control_ladder_alignment", "status": "DEVELOPMENT_PILOT_MASK_MISMATCH", "evidence": "The two retained nominal controls expose BT transitions and source anchors at E0--E2 despite the development ladder catalog excluding those roles. Six immutable condition outputs remain descriptive only; a fresh pilot must correct and validate the nominal mask before P11 freeze."},
     {"requirement_id": "two_agent_annotation_dry_run", "status": "TOOLING_READY_QUALIFIED_CONFIGURATION_NOT_RUN_ON_B2_B4", "evidence": "The exact v4 Astra configuration is qualified and tooling is tested, but no two-pass blinded annotation of the valid B2/B4 outputs has run; atomization and rubric closure are prerequisites."},
     {"requirement_id": "blinded_agent_adjudication_dry_run", "status": "TOOLING_READY_EMPIRICAL_DISAGREEMENT_ADJUDICATION_NOT_RUN", "evidence": "Disagreement-only Agent C tooling is tested; empirical B2/B4 disagreements have not been adjudicated."},

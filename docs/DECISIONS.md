@@ -2595,3 +2595,21 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   semantic review. Any further gold defect invalidates v2; it is not scored as a model failure.
 - **Boundary:** v2 qualification is development measurement only. It cannot authorize support
   annotation until the real pilot inventory receives its own completeness review.
+
+## 2026-09-29 — qualify v2 claim inventory while withholding abstraction tags
+
+- **Decision:** the v2 synthetic extractor qualifies for development-only atomic claim-text/span
+  inventory. A non-study schema canary and two isolated 20-case no-tool passes completed with no
+  quality-driven retries. Independent project review mapped all 45 held-out construction meanings
+  in each pass to distinct returned claims; there were no unmatched or unresolved claims, and both
+  prompt-injection cases passed in both passes. The raw calls, review, and frozen gates are bound by
+  `manifests/study/evidence-calibration-atomization-v2-disposition.json`.
+- **Limitation found during review:** the return schema lacks a non-diagnostic/source-metadata
+  abstraction level. Quoted source text is tagged `task_outcome`, while grid-check and
+  non-entailment text receive inconsistent level tags. The v2 gates assessed the claim inventory,
+  not these abstraction classifications. No extractor-provided level may enter endpoint scoring or
+  anchor the qualified support annotator until a separate treatment is validated.
+- **Next gate:** the method-blind development bank may receive one-shot inventory extraction under
+  this exact configuration, followed by a separate completeness review of every response and
+  a bound treatment of diagnostic levels. No pilot support label, paired effect, P11 freeze,
+  confirmatory episode, or alpha expenditure follows from the synthetic qualification alone.

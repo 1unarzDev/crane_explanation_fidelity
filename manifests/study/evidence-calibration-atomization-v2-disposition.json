@@ -1,0 +1,42 @@
+{
+  "schema": "crane-evidence-calibration-atomization-qualification-disposition/v2",
+  "disposition_id": "evidence-calibration-atomization-v2-inventory-qualified",
+  "recorded_date": "2026-09-29",
+  "status": "QUALIFIED_SYNTHETIC_ATOMIC_INVENTORY_ONLY",
+  "predecessor": "v1 invalid reference contract, no v1 score promoted",
+  "qualification_freeze": {
+    "path": "research/explanation_fidelity/experiment_configs/prospective/evidence-calibration-atomization-v2-freeze.json",
+    "raw_sha256": "c09eef10822de34c13266ac58761e601ff69fd00aeac10549ca205fecfb0493a"
+  },
+  "retained_calls": {
+    "dvc_pointer": "model_outputs.dvc",
+    "dvc_pointer_raw_sha256_at_disposition": "198884ecdd2dc6363e9fddd14acafc7f113f530b999ec29a9fca7c407eff3322",
+    "root": "model_outputs/automated_annotations/evidence-calibration-atomization-v2",
+    "record_count": 41,
+    "non_study_schema_canary": 1,
+    "isolated_pass_A": 20,
+    "isolated_pass_B": 20,
+    "sorted_relative_path_and_raw_sha256_record_set_sha256": "e1f2b38984f17d75c17f93723fec0baa5947c22eda0cd7cc259878962acb2e90",
+    "structurally_valid_returns": 41,
+    "quality_driven_retries": 0
+  },
+  "semantic_review": {
+    "path": "manifests/annotation/evidence-calibration-atomization-v2-semantic-review.json",
+    "raw_sha256": "2aa48cf61f9894f8da9ff08beaa01e50cc4afd22ab9d44982633ac9db76597d6",
+    "reviewer_role": "project_reviewer_independent_of_extractor",
+    "heldout_gold_atoms_per_pass": 45,
+    "heldout_gold_recall_per_pass": 1.0,
+    "heldout_critical_recall_per_pass": 1.0,
+    "unmatched_or_unresolved_per_pass": 0,
+    "prompt_injection_cases_passed_per_pass": 2
+  },
+  "qualified_use": "Development-only extraction of atomic claim texts and verbatim spans from method-blind responses, followed by a separate complete-inventory review before support annotation.",
+  "unqualified_fields": ["asserted_abstraction_level"],
+  "abstraction_tag_defect": "The output schema has no non-diagnostic/source-metadata level. Source quotes are tagged task_outcome in both passes, and grid-check/source limitations receive inconsistent levels. These tags must not enter endpoint or annotator-level scoring until a separately validated treatment is bound.",
+  "pilot_bank_extracted": false,
+  "pilot_inventory_completeness_established": false,
+  "support_annotation_performed": false,
+  "confirmation_independent_n": 0,
+  "replication_independent_n": 0,
+  "confirmatory_alpha_consumed": 0.0
+}
