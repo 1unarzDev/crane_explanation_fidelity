@@ -50,3 +50,17 @@ data/hexar_external/.venv/bin/python analysis/hexar_external/validate_artifacts.
 Retained model failures are not retried; the same cached request is deduplicated. A failed qualification-result file is reused with its failed status, never overwritten or repaired retrospectively. The first canary's misplaced literal instruction and separate v2 request repair are both recorded. Model caches are retained locally under scoped ignored paths; responses, references, declarations and qualification summaries are integration artifacts. The publication manifest lists local archive hashes for the coordinator; this run makes no shared DVC update.
 
 These commands reproduce the **completed development tranche only**. They do not authorize reserved semantic outputs or confirmation. Resume expanded evaluation only after independent qualification-construction review and a fresh prospectively bound external qualification, all-family mask/reference validation, fixed endpoint-role/technical-disposition rules, available-model provenance and coordinated quotas. Confirmatory use additionally requires the publication owner's explicit allocation through the existing ledger. Do not run this failed candidate again on its held-out qualification cases, lower its gates or use baseline ties to tune away a strong control.
+
+## Resumed V2 commands
+
+Use the existing isolated checkout and scoped virtual environment. Each script refuses immutable declaration/reference mismatches; model/annotation outputs are reused on resume, with no quality/technical retry. Do not run model and annotation queues simultaneously: each is capped at two inference workers.
+
+```bash
+data/hexar_external/.venv/bin/python analysis/hexar_external/qualify_v2.py
+data/hexar_external/.venv/bin/python analysis/hexar_external/build_v2_packets.py --cohort development
+data/hexar_external/.venv/bin/python analysis/hexar_external/build_references_v2.py --cohort development
+data/hexar_external/.venv/bin/python analysis/hexar_external/run_v2.py --cohort development
+data/hexar_external/.venv/bin/python analysis/hexar_external/annotate_v2.py --cohort development --stage bank
+```
+
+The blind developer claim inventory must be complete before `--stage packets` and `--stage annotate`. The latter uses the current support schema/pipeline plus the exact externally qualified v2 amendment for A/B/C; it does not upgrade developer extraction to qualified annotation.

@@ -1,0 +1,46 @@
+{
+  "atomic": [
+    {
+      "actual": "CONTRADICTED_BY_VISIBLE_EVIDENCE",
+      "correct": true,
+      "expected": "CONTRADICTED_BY_VISIBLE_EVIDENCE",
+      "item_id": "hxq2-01-s1"
+    },
+    {
+      "actual": "SUPPORTED_BY_VISIBLE_EVIDENCE",
+      "correct": true,
+      "expected": "SUPPORTED_BY_VISIBLE_EVIDENCE",
+      "item_id": "hxq2-01-s2"
+    },
+    {
+      "actual": "SUPPORTED_BY_VISIBLE_EVIDENCE",
+      "correct": true,
+      "expected": "SUPPORTED_BY_VISIBLE_EVIDENCE",
+      "item_id": "hxq2-01-s3"
+    }
+  ],
+  "case_id": "hxq2-01",
+  "false_premise_correct": true,
+  "highest_level_correct": true,
+  "limitations": [],
+  "required_units": [
+    {
+      "correct": true,
+      "unit_prompt": "Communicate the supported proposition that the most recent recorded manual indicator was ON. OFF or a mere manual-topic mention does not communicate this ON unit."
+    },
+    {
+      "correct": true,
+      "unit_prompt": "Communicate that the latest recorded charging indicator was FALSE/off; do not require a claim about the entire execution."
+    },
+    {
+      "correct": true,
+      "unit_prompt": "Communicate the reported navigation timeout outcome."
+    }
+  ],
+  "split": "heldout",
+  "threat_tags": [
+    "manual_true_wrong_polarity",
+    "charging_false_supported",
+    "timeout"
+  ]
+}

@@ -1,0 +1,407 @@
+{
+  "answer": "The navigation skill reported a timeout. The latest received joystick-priority indicator was on. These records do not establish a unique physical cause or a measured reason for navigation time.",
+  "condition": "irrelevant_removal",
+  "contract_artifact": {
+    "answer": "The navigation skill reported a timeout. The latest received joystick-priority indicator was on. These records do not establish a unique physical cause or a measured reason for navigation time.",
+    "diagnostic_result": {
+      "ambiguity_node_ids": [],
+      "approved_claim_ids": [
+        "claim-failure",
+        "claim-manual",
+        "claim-progress",
+        "claim-timeout"
+      ],
+      "claim_evaluations": [
+        {
+          "claim_id": "claim-failure",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+              "requirement_id": "req-failure",
+              "status": "SATISFIED",
+              "support_references": [
+                "s0001"
+              ]
+            }
+          ],
+          "support_references": [
+            "s0001"
+          ],
+          "supported": true
+        },
+        {
+          "claim_id": "claim-success",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+              "requirement_id": "req-success",
+              "status": "ABSENT",
+              "support_references": []
+            }
+          ],
+          "support_references": [],
+          "supported": false
+        },
+        {
+          "claim_id": "claim-timeout",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+              "requirement_id": "req-timeout",
+              "status": "SATISFIED",
+              "support_references": [
+                "s0001"
+              ]
+            }
+          ],
+          "support_references": [
+            "s0001"
+          ],
+          "supported": true
+        },
+        {
+          "claim_id": "claim-abort",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+              "requirement_id": "req-abort",
+              "status": "ABSENT",
+              "support_references": []
+            }
+          ],
+          "support_references": [],
+          "supported": false
+        },
+        {
+          "claim_id": "claim-manual",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+              "requirement_id": "req-manual",
+              "status": "SATISFIED",
+              "support_references": [
+                "state-joy_priority"
+              ]
+            }
+          ],
+          "support_references": [
+            "state-joy_priority"
+          ],
+          "supported": true
+        },
+        {
+          "claim_id": "claim-charging",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+              "requirement_id": "req-charging",
+              "status": "ABSENT",
+              "support_references": []
+            }
+          ],
+          "support_references": [],
+          "supported": false
+        },
+        {
+          "claim_id": "claim-uncertainty",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+              "requirement_id": "req-uncertainty",
+              "status": "ABSENT",
+              "support_references": []
+            }
+          ],
+          "support_references": [],
+          "supported": false
+        },
+        {
+          "claim_id": "claim-planner",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+              "requirement_id": "req-planner",
+              "status": "ABSENT",
+              "support_references": []
+            }
+          ],
+          "support_references": [],
+          "supported": false
+        },
+        {
+          "claim_id": "claim-progress",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+              "requirement_id": "req-progress",
+              "status": "SATISFIED",
+              "support_references": [
+                "l0004",
+                "l0009",
+                "l0014",
+                "l0018"
+              ]
+            }
+          ],
+          "support_references": [
+            "l0004",
+            "l0009",
+            "l0014",
+            "l0018"
+          ],
+          "supported": true
+        },
+        {
+          "claim_id": "claim-physical",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+              "requirement_id": "req-physical",
+              "status": "ABSENT",
+              "support_references": []
+            }
+          ],
+          "support_references": [],
+          "supported": false
+        }
+      ],
+      "condition_id": "D003-q2-irrelevant_removal-HX-CONTRACT",
+      "configuration_id": "hexar-navigation-component-v2",
+      "contract_catalog_id": "hexar-navigation-public-v2",
+      "contract_catalog_sha256": "2274a6fa68bba023652f348924fc0a85158500eaef8448596d0ab1b352e76f00",
+      "contradicted_claim_ids": [],
+      "diagnostic_algorithm_id": "maximal-supported-diagnosis",
+      "diagnostic_algorithm_version": "v1-development",
+      "episode_id": "D003",
+      "maximal_node_ids": [
+        "node-failure",
+        "node-manual",
+        "node-progress",
+        "node-timeout"
+      ],
+      "missing_requirement_ids": [
+        "req-abort",
+        "req-charging",
+        "req-physical",
+        "req-planner",
+        "req-success",
+        "req-uncertainty"
+      ],
+      "required_non_entailment_ids": [
+        "limit-physical-and-delay"
+      ],
+      "schema": "crane-evidence-calibrated-diagnostic-result/v1",
+      "state": "SUPPORTED_PARTIAL"
+    },
+    "facts": {
+      "ambiguity_node_ids": [],
+      "condition_id": "D003-q2-irrelevant_removal-HX-CONTRACT",
+      "method_packet_sha256": "55af39debbd27af3eef38ffbe164258e847d72d8d3a30e5da3466291c6a3e2e3",
+      "question_contract": {
+        "failure_premise": false,
+        "question_id": "df04ac9b40171b5f",
+        "required_mechanism_families": [
+          "navigation"
+        ]
+      },
+      "requirement_evaluations": [
+        {
+          "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+          "requirement_id": "req-failure",
+          "status": "SATISFIED",
+          "support_references": [
+            "s0001"
+          ]
+        },
+        {
+          "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+          "requirement_id": "req-success",
+          "status": "ABSENT",
+          "support_references": []
+        },
+        {
+          "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+          "requirement_id": "req-timeout",
+          "status": "SATISFIED",
+          "support_references": [
+            "s0001"
+          ]
+        },
+        {
+          "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+          "requirement_id": "req-abort",
+          "status": "ABSENT",
+          "support_references": []
+        },
+        {
+          "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+          "requirement_id": "req-manual",
+          "status": "SATISFIED",
+          "support_references": [
+            "state-joy_priority"
+          ]
+        },
+        {
+          "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+          "requirement_id": "req-charging",
+          "status": "ABSENT",
+          "support_references": []
+        },
+        {
+          "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+          "requirement_id": "req-uncertainty",
+          "status": "ABSENT",
+          "support_references": []
+        },
+        {
+          "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+          "requirement_id": "req-planner",
+          "status": "ABSENT",
+          "support_references": []
+        },
+        {
+          "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+          "requirement_id": "req-progress",
+          "status": "SATISFIED",
+          "support_references": [
+            "l0004",
+            "l0009",
+            "l0014",
+            "l0018"
+          ]
+        },
+        {
+          "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+          "requirement_id": "req-physical",
+          "status": "ABSENT",
+          "support_references": []
+        }
+      ],
+      "schema": "crane-visible-evidence-requirement-facts/v1"
+    },
+    "fallback": false,
+    "model_calls": 0,
+    "realization": {
+      "audit": {
+        "clause_audits": [
+          {
+            "approved_claim_ids": [
+              "claim-timeout"
+            ],
+            "clause_id": "c0",
+            "numeric_slots": [],
+            "response_span": "The navigation skill reported a timeout.",
+            "support_references": [
+              "s0001"
+            ]
+          },
+          {
+            "approved_claim_ids": [
+              "claim-manual"
+            ],
+            "clause_id": "c1",
+            "numeric_slots": [],
+            "response_span": "The latest received joystick-priority indicator was on.",
+            "support_references": [
+              "state-joy_priority"
+            ]
+          },
+          {
+            "approved_claim_ids": [],
+            "clause_id": "n0",
+            "numeric_slots": [],
+            "response_span": "These records do not establish a unique physical cause or a measured reason for navigation time.",
+            "support_references": []
+          }
+        ],
+        "condition_id": "D003-q2-irrelevant_removal-HX-CONTRACT",
+        "diagnostic_result_sha256": "2a113553239f1900cf5ce11edca35e8fc0a4bba5efc589974f8b0f27c801d174",
+        "episode_id": "D003",
+        "false_premise_preserved": null,
+        "final_response_sha256": "88bd1bbe03bb1b4d0c7129d60808cb93c61dacfdfc91b3d1646eb1b5feaadfb6",
+        "highest_asserted_node_ids": [
+          "node-manual",
+          "node-timeout"
+        ],
+        "highest_asserted_rank_by_family": [
+          {
+            "key": "navigation",
+            "value": 0
+          }
+        ],
+        "missing_limitation_ids": [],
+        "missing_required_claim_ids": [],
+        "numeric_mismatches": [],
+        "represented_required_claim_ids": [
+          "claim-manual",
+          "claim-timeout"
+        ],
+        "response_id": "D003-q2-irrelevant_removal-HX-CONTRACT",
+        "schema": "crane-explanation-audit/v1",
+        "status": "ACCEPTED",
+        "unapproved_claim_ids": []
+      },
+      "candidate_sha256": "a16db2e612bb294cf3f4c2e549bf8ad828e76b2ad3a38fa4b09f98669f1463c5",
+      "final_clauses": [
+        {
+          "clause_id": "c0",
+          "contract_id": "claim-timeout",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The navigation skill reported a timeout."
+        },
+        {
+          "clause_id": "c1",
+          "contract_id": "claim-manual",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The latest received joystick-priority indicator was on."
+        },
+        {
+          "clause_id": "n0",
+          "contract_id": "limit-physical-and-delay",
+          "kind": "NON_ENTAILMENT",
+          "numeric_slot_ids": [],
+          "text": "These records do not establish a unique physical cause or a measured reason for navigation time."
+        }
+      ],
+      "final_response": "The navigation skill reported a timeout. The latest received joystick-priority indicator was on. These records do not establish a unique physical cause or a measured reason for navigation time.",
+      "plan_sha256": "529e9118deebe5dd8eb927abbd9ad27604c0b456b8e017acce69bf3ada775cd9",
+      "realizer_id": "claim-aware-constrained-realizer",
+      "realizer_version": "v1-development",
+      "schema": "crane-claim-aware-realization/v1"
+    },
+    "template": true
+  },
+  "end_to_end_ms": 1.8959110020659864,
+  "fallback": false,
+  "job_id": "D003-q2-irrelevant_removal-HX-CONTRACT",
+  "method": "HX-CONTRACT",
+  "model_calls": 0,
+  "packet_sha256": "55af39debbd27af3eef38ffbe164258e847d72d8d3a30e5da3466291c6a3e2e3",
+  "question_id": "q2",
+  "recording_id": "D003",
+  "schema": "hexar-response/v2",
+  "status": "VALID",
+  "template": true
+}
