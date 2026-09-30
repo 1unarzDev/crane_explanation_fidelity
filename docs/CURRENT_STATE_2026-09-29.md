@@ -321,3 +321,11 @@ earlier `FollowPath` actor repairs. Sixty-one of 113 inventories still need revi
 bare `Yes.`/`No.` spans whose question-dependent meaning remains open in the answer-only bank.
 The quarantined extraction request is untouched. The v2 audit passes while support annotation,
 method joining, endpoint scoring, and P11 remain prohibited.
+
+A second blind project-review batch resolved two exact-answer inventory count differences and
+bound nine more response reviews. The corrections split one bundled command-stream candidate,
+removed standalone trace-provenance duplicates from two returns, and added one explicit delivered
+command fact missing from another. The batch has 79 original candidates and 78 reviewed atoms;
+together with v2, 61 of 113 structurally valid response inventories are reviewed. Fifty-two
+remain, including the three bare `Yes.`/`No.` spans. Source output, evaluator keys, and the
+quarantined request are untouched. No support label or B2/B4 effect has been scored.

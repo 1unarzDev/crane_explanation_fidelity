@@ -3201,3 +3201,22 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   answer-only bank. The one unknown-disposition extraction request remains quarantined. No
   support or role annotation, method join, B2/B4 effect, P11 authorization, independent episode,
   or alpha use follows.
+
+## 2026-09-30 — reconcile repeated-answer atomic variance in a second blind review batch
+
+- **Measurement finding:** 113 retained extraction forms cover 75 distinct answer texts. Eight
+  exact-text groups repeat; two groups have unequal candidate counts. In the reviewed cases,
+  isolated `retained` and `source-qualified` trace qualifiers duplicate a trace-content claim
+  that already preserves those qualifiers, while a separate delivered-command fact is missing
+  from one command--motion comparison inventory.
+- **Review:** inspect and bind nine more method-blind response inventories. Split one composite
+  command-stream candidate into presence, validity, and delivery; reject two duplicate trace
+  metadata candidates in each of two responses; add one delivered-command atom to a third.
+  Seventy-nine original candidates yield 78 reviewed atoms in this batch. The original forms
+  and extractor returns stay unchanged. A separate read-only audit verifies exact source hashes,
+  answer text, response IDs, and correction indices.
+- **Boundary:** 61 of 113 structurally valid responses now have project-reviewed inventories;
+  52 remain unreviewed, including the three bare `Yes.`/`No.` cases. This is agent-assisted
+  development review, not human validation or atomic-support annotation. The one ambiguous
+  extraction request remains quarantined. P11, method joining, effect scoring, independent N,
+  and alpha remain unchanged.
