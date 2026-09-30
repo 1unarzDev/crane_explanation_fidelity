@@ -1,5 +1,22 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Computation CPU ledger addendum after `d2f4007c` — 2026-09-30
+
+A [separate ledger v2/broker v7](COMPUTATION_CPU_LEDGER_2026-09-30.md) charges actual
+service CPU across serial computation calls, including failed work and overshoot.
+Exclusive reservations bind reduced remaining thresholds; unknown accounting closes
+all tool admission with null totals, not zero consumption. Forty-two focused checks and
+four retained fixed flows across two versions pass; six services are absent. The ordinary flow charges
+336.393 ms in v1 and 351.852 ms in repaired v2 against a 310 ms synthetic total,
+denying another computation while preserving full reads. A separately injected auditor-read fault withholds delivery
+and blocks later read/compute calls without altering original executor records. V1's shallow reservation-object defect
+is preserved; v2 isolates returned budgets from pending state.
+MCP/installed-client integration for this candidate, complete turn budgets, overshoot
+policy, crash durability, runtime/confinement, capacity and measurement remain open.
+Study callers do not migrate; no semantic output, annotation, score, alpha spending
+or P11 freeze occurs. N=0, nineteen open conditions and unanswered reopening remain.
+
+
 ## Installed-client CPU addendum after `c1f8fb92` — 2026-09-30
 
 A [separate installed-client observer v4](INSTALLED_CLIENT_CPU_MCP_2026-09-30.md)

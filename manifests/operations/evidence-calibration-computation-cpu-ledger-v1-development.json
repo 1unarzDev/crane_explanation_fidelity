@@ -1,0 +1,738 @@
+{
+  "schema": "crane-computation-cpu-ledger-binding/v1-development",
+  "recorded_date": "2026-09-30",
+  "status": "SERIAL_COMPUTATION_CPU_CHARGING_AND_UNKNOWN_ADMISSION_DEVELOPMENT_VALIDATED_MCP_AND_TURN_OPEN",
+  "bindings": [
+    {
+      "path": "analysis/evidence_calibration_computation_cpu_ledger.py",
+      "raw_sha256": "527b9a08a915bd2eb920e00594f7f3cb3df138b1bb6f6fd6084cbf2051650201"
+    },
+    {
+      "path": "analysis/evidence_calibration_tool_broker_v6.py",
+      "raw_sha256": "1f603872ca36a10564003de8fce3074491cbeed170884b16ea1d75eb2244e480"
+    },
+    {
+      "path": "tests/test_evidence_calibration_computation_cpu_ledger.py",
+      "raw_sha256": "2e6931b3a2f405eb899500b4a750e80f86a6cea0a0fc76696a050596358ffc09"
+    },
+    {
+      "path": "tests/test_evidence_calibration_cpu_ledger_broker.py",
+      "raw_sha256": "246e7348fb72a8321721887dd93eac125ffd2ae4ff9b9992f740ada47663445a"
+    },
+    {
+      "path": "docs/COMPUTATION_CPU_LEDGER_2026-09-30.md",
+      "raw_sha256": "76bb007f965cfe94ad0ac989683819b60696502d4bb1b84cf160662983b9dd89"
+    },
+    {
+      "path": "analysis/evidence_calibration_tool_broker_v5.py",
+      "raw_sha256": "360bbf19594ebae6f642833fca1071fed74b2fb580f779fc54a12d4789232c4b"
+    },
+    {
+      "path": "analysis/evidence_calibration_local_tool_sandbox_v10.py",
+      "raw_sha256": "2d3ca3b5063015e1361f3da0632cfc6c8aaa3fbe76afe0b700a5d12e845e72f3"
+    },
+    {
+      "path": "analysis/observe_evidence_calibration_tree_cpu_accounting_v3.py",
+      "raw_sha256": "a6e479d2273fc1d59ca0d3bb77b1beb78cd68eb0ff675f6f2032c5de79c600ac"
+    },
+    {
+      "path": "analysis/evidence_calibration_mcp_stdio_v3.py",
+      "raw_sha256": "f26e3329636ae4e852319b46d14a242c8ed557520568af70744947f42e1b2bf9"
+    },
+    {
+      "path": "analysis/evidence_calibration_io.py",
+      "raw_sha256": "c70fef1e03274c55746a8ed7395cec221d2ed0bc63c83eb7fd005429a0925422"
+    },
+    {
+      "path": "analysis/stage_evidence_calibration_workspace.py",
+      "raw_sha256": "3044778ac6f6de74b80884a8b5e777d7cea9e9e42cea56e20bde7999954a7d0b"
+    },
+    {
+      "path": "manifests/operations/evidence-calibration-installed-client-cpu-mcp-v4.json",
+      "raw_sha256": "efc569335da90b1f847fd0e18ecbc8fdfbbcd06c086914ce4e27807276b42892"
+    },
+    {
+      "path": "analysis/evidence_calibration_computation_cpu_ledger_v2.py",
+      "raw_sha256": "2b6b3fac0948032547849a4e798871212a1c784045c50cc0950e3de8c3299049"
+    },
+    {
+      "path": "analysis/evidence_calibration_tool_broker_v7.py",
+      "raw_sha256": "aeae6160616368a132512f51eef2eea39a262597ac6a7d69bb14020a862ddd5d"
+    },
+    {
+      "path": "tests/test_evidence_calibration_computation_cpu_ledger_v2.py",
+      "raw_sha256": "bcc742e197c548e6cc1ded94b19278219377b11c07398cd720e4c902f9929bc2"
+    }
+  ],
+  "targeted_tests_passed": 42,
+  "test_invocations": [
+    {
+      "passed": 38
+    },
+    {
+      "passed": 2
+    },
+    {
+      "passed": 2
+    }
+  ],
+  "ledger_tests_passed": 25,
+  "broker_tests_passed": 15,
+  "computation_services_absent": 6,
+  "scope": "COMPUTATION_SERVICE_TREES_ACROSS_SERIAL_CALLS_ONLY",
+  "actual_failed_cpu_charged": true,
+  "unknown_totals_are_null": true,
+  "unknown_accounting_closes_all_tool_admission": true,
+  "known_cpu_exhaustion_closes_computation_admission_only": true,
+  "existing_ledgers_may_be_adopted": false,
+  "mcp_and_installed_client_route_verified_for_this_candidate": false,
+  "model_facing_tools_verified": false,
+  "model_visible_rendering_verified": false,
+  "whole_turn_cpu_accounting_verified": false,
+  "hard_cumulative_cpu_cap_verified": false,
+  "worst_case_overshoot_bound_verified": false,
+  "power_loss_durability_verified": false,
+  "distributed_coordinator_verified": false,
+  "existing_study_callers_migrated": false,
+  "scientific_budgets_frozen": false,
+  "model_calls_authorized": false,
+  "pilot_annotation_authorized": false,
+  "p11_authorized": false,
+  "confirmation_independent_n": 0,
+  "replication_independent_n": 0,
+  "local_transactions": [
+    {
+      "directory": "output/infrastructure/computation-cpu-ledger-development-v1",
+      "records": [
+        {
+          "relative_path": "audit_fault/events/cpu-ledger/ledger.intent.json",
+          "raw_sha256": "062affe8256f66909c9732e975c8fd1cd1e9ba36310bdfe63c5ab0502aaf1046"
+        },
+        {
+          "relative_path": "audit_fault/events/cpu-ledger/reservation-00000001.intent.json",
+          "raw_sha256": "dab0c3bdc46264284bf8602dbe24019a9a57f81128ada40696d7983454271d58"
+        },
+        {
+          "relative_path": "audit_fault/events/cpu-ledger/reservation-00000001.result.json",
+          "raw_sha256": "82b1b3576a27510d8eb1a9f57982f06fddcc373919445e8454f716b3249cab64"
+        },
+        {
+          "relative_path": "audit_fault/events/denied_compute.intent.json",
+          "raw_sha256": "7f64f5ae93d6da4607671cae1d31da0f9b1244e30d8756c5bb3d5b271e26a7e0"
+        },
+        {
+          "relative_path": "audit_fault/events/denied_compute.result.json",
+          "raw_sha256": "05bc4784714552ef73460e9d4a225475e4053152bcade932daca3014feb59eaa"
+        },
+        {
+          "relative_path": "audit_fault/events/denied_read.intent.json",
+          "raw_sha256": "6da9fb099bce04e57ae778ac3a97795fcaf5bedb9273bf060ab2551e6232437f"
+        },
+        {
+          "relative_path": "audit_fault/events/denied_read.result.json",
+          "raw_sha256": "480b941b3746513ea82e5d637acab75612a49ced989b32e5dd880112e27e0f67"
+        },
+        {
+          "relative_path": "audit_fault/events/unknown.execution/cpu-sample-00000000.json",
+          "raw_sha256": "f8d775cdf07cbe10304fd4cb35b41eca9d1d1b3c492a8dcee67f882fec9f9bf2"
+        },
+        {
+          "relative_path": "audit_fault/events/unknown.execution/cpu-sample-00000001.json",
+          "raw_sha256": "fb93aec76d00388eb436ecddf8564fc8789fd085fac88fd17399a8cfa98c2ac3"
+        },
+        {
+          "relative_path": "audit_fault/events/unknown.execution/cpu-sample-00000002.json",
+          "raw_sha256": "82ebf06f53cd7966758dbe33ff6459f003110501118b599deaeab9de3f1bf7c3"
+        },
+        {
+          "relative_path": "audit_fault/events/unknown.execution/intent.json",
+          "raw_sha256": "f2f68513a73c9e0a9751efa86ad2db37c354968c5caba6ac25d55d5a0d77ecd4"
+        },
+        {
+          "relative_path": "audit_fault/events/unknown.execution/namespace-request.json",
+          "raw_sha256": "99cebc0a0364a504e045255c92575cbdbdc72ab58b330ad864bafb8d33f4861e"
+        },
+        {
+          "relative_path": "audit_fault/events/unknown.execution/namespace-status.bin",
+          "raw_sha256": "94836430bcf67960e43ef0b052f458b1337770a409dd7138618deb9458ba4641"
+        },
+        {
+          "relative_path": "audit_fault/events/unknown.execution/terminal.json",
+          "raw_sha256": "270750c8cb41d0d378c1b31db4f47c94e0cb0d52fda21a63b0f3bacc190d7536"
+        },
+        {
+          "relative_path": "audit_fault/events/unknown.intent.json",
+          "raw_sha256": "704dcf50dc5199957d4b79dd1ebf99a3030f1e836499c76981e8cf1f3950a639"
+        },
+        {
+          "relative_path": "audit_fault/events/unknown.result.json",
+          "raw_sha256": "909b291163c75bd6a9df620977e2ff075d1789f21a6523b4031088c421f75779"
+        },
+        {
+          "relative_path": "audit_fault/workspace/visible.txt",
+          "raw_sha256": "6329321b98e870b5b7e1a8c020fbe19cd92eff8544429abd57fc410fabe981d6"
+        },
+        {
+          "relative_path": "budget/events/cpu-ledger/ledger.intent.json",
+          "raw_sha256": "062affe8256f66909c9732e975c8fd1cd1e9ba36310bdfe63c5ab0502aaf1046"
+        },
+        {
+          "relative_path": "budget/events/cpu-ledger/reservation-00000001.intent.json",
+          "raw_sha256": "625145877f24236eeae9818783906342b78706469ff9413b0b1e6e54e70df3eb"
+        },
+        {
+          "relative_path": "budget/events/cpu-ledger/reservation-00000001.result.json",
+          "raw_sha256": "fe276f527875d36a3756f9eb83a236f481e8d61961c0ff5c61bee127da694195"
+        },
+        {
+          "relative_path": "budget/events/cpu-ledger/reservation-00000002.intent.json",
+          "raw_sha256": "1c2c8a40bf69c3f685443eccb437c04f8ae5854ca5046f88ccbe4282c1ca3047"
+        },
+        {
+          "relative_path": "budget/events/cpu-ledger/reservation-00000002.result.json",
+          "raw_sha256": "56a2fac2d0dad29905ba291b69542f4ea01674729aaab288c1d62e0a4c062d19"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/cpu-sample-00000000.json",
+          "raw_sha256": "4009bed12a38f47b68776261429ab025119d66a93fd824ae74aeb05613d93cc0"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/cpu-sample-00000001.json",
+          "raw_sha256": "94901e528fbd9690fe27c2ef164cbdce6be41152d3cc302480da2c59bc47e677"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/cpu-sample-00000002.json",
+          "raw_sha256": "10c359ecf239a90235a3211585462eab47d2861c68efb4b7a42c973519e51e5b"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/cpu-sample-00000003.json",
+          "raw_sha256": "da1e9adc61db70f4c16f988ab6be57ee0805bf29a16e772057c4190cd9d3b676"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/cpu-sample-00000004.json",
+          "raw_sha256": "16f2f95222e4deeaf9f1df043d4c7f6500675f56023a70c028b6ced67ee62433"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/cpu-sample-00000005.json",
+          "raw_sha256": "7a8c10542596e149c885f8bb857d0c3ca2b1bea3d1f022821c484c1097082c35"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/cpu-sample-00000006.json",
+          "raw_sha256": "a9a615fe6fe11ec316b258bb58f7fa074b7b3f64260d940eb6d7160ef306af49"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/cpu-sample-00000007.json",
+          "raw_sha256": "1d37578491732a52f360815254110225b5a772dc6b40d15e27a5602e38e69e41"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/cpu-sample-00000008.json",
+          "raw_sha256": "5756f8f1b91a8caf11c00779c45b7585565c751a4cbafeb11c43749174d55760"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/cpu-sample-00000009.json",
+          "raw_sha256": "d61c32f49096c8842a798034d0a6ef471a605cda5bcaab8db783abd184dcc4ea"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/cpu-sample-00000010.json",
+          "raw_sha256": "a1319dcbf38f40937d6fb5d757d8bb91b913163539ffa6f54bc85cc91c6d5abb"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/intent.json",
+          "raw_sha256": "3cb56a19f09d73a7f1e8cf1f7ddcd11e16d679ea855f4f6124470134de9481ad"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/namespace-request.json",
+          "raw_sha256": "1534a886cca2bf146b2e095e472668535b056bb48138a2fc64d46eea5227aa04"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/namespace-status.bin",
+          "raw_sha256": "5164fa4d560a2582a076ce5f57092e26f9d763ef4d75c721b3880b4d05523c33"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/terminal.json",
+          "raw_sha256": "fbf7d629c99714f884ea7ec43449a8854398bd5ac76893d43b619d09e7c0cf41"
+        },
+        {
+          "relative_path": "budget/events/cutoff.intent.json",
+          "raw_sha256": "91b633fcfb7793162fa8afa56a34066daaa86aacc81393566bc1eb9b0ed7e78e"
+        },
+        {
+          "relative_path": "budget/events/cutoff.result.json",
+          "raw_sha256": "b214cf67fc6cf28b22dbbb5672343a55e9bd74ba5c5765bf82401f64d4ad1e44"
+        },
+        {
+          "relative_path": "budget/events/denied.intent.json",
+          "raw_sha256": "96921be56ac1381b82ec7891204279d718ba64ee82aa09dcff6036c7b9ca7528"
+        },
+        {
+          "relative_path": "budget/events/denied.result.json",
+          "raw_sha256": "22b8ecc67ed7e4fededeaceebbe3b23ee36f1e446546055ca7c2dd2c09d29f10"
+        },
+        {
+          "relative_path": "budget/events/literal.execution/cpu-sample-00000000.json",
+          "raw_sha256": "29503f862cd61c3bf7ec1d1642583b7ba73d71d7a4494bb310308f6fb1f34b61"
+        },
+        {
+          "relative_path": "budget/events/literal.execution/cpu-sample-00000001.json",
+          "raw_sha256": "2342014f350699571cfe1fea5c9db3a4983af9ec8965aaf7791f9a22c525da3f"
+        },
+        {
+          "relative_path": "budget/events/literal.execution/cpu-sample-00000002.json",
+          "raw_sha256": "79c7e813230944ebfcb7e41bc7dc22137bbe481bc02da7d22ca8e9bc36f2704d"
+        },
+        {
+          "relative_path": "budget/events/literal.execution/intent.json",
+          "raw_sha256": "aa41dbdc664cf377ab06464aba06512a985a43c855908a72344b0ce921d35fa3"
+        },
+        {
+          "relative_path": "budget/events/literal.execution/namespace-request.json",
+          "raw_sha256": "96b7f3565d0b57dbd599dc293a89cf159b1a57b4a025a0011a68d1433efd4dd8"
+        },
+        {
+          "relative_path": "budget/events/literal.execution/namespace-status.bin",
+          "raw_sha256": "603381aeb8c32b037724d5b1f9ccb039c508bfb67e43499b3c4e32bb5698c8d4"
+        },
+        {
+          "relative_path": "budget/events/literal.execution/terminal.json",
+          "raw_sha256": "c492d6dc41f3f87c7952c4c47a0b5d4d6419ebd04e75aca3af3e2d29b068fd95"
+        },
+        {
+          "relative_path": "budget/events/literal.intent.json",
+          "raw_sha256": "11cc891d8c1c67a38837631dd05b2e7c6f93b81690d9ce2b4ccbb1f6ba9acf02"
+        },
+        {
+          "relative_path": "budget/events/literal.result.json",
+          "raw_sha256": "b16d450ec551c197d3558db5c2bf0ca3ae571114a5f3e6c83a621abfad24a178"
+        },
+        {
+          "relative_path": "budget/events/read.intent.json",
+          "raw_sha256": "8f1921eee1bc3916b91d280b8443af9328d25b78eb28e09e6ae62c5b8d5ca8c7"
+        },
+        {
+          "relative_path": "budget/events/read.result.json",
+          "raw_sha256": "4784ad3045219086fb63448f6f68788f14c2f87c3d53f9e53a83401499682553"
+        },
+        {
+          "relative_path": "budget/workspace/visible.txt",
+          "raw_sha256": "6329321b98e870b5b7e1a8c020fbe19cd92eff8544429abd57fc410fabe981d6"
+        },
+        {
+          "relative_path": "client.py",
+          "raw_sha256": "0dc84c29e99a7d2501840d5187dca3a61651ee77cb698f9cc5182e0d86c65919"
+        },
+        {
+          "relative_path": "plan.json",
+          "raw_sha256": "7633ab258ffd158ff5a57ede5071a1685bf2dea76865ae5f4eb208a0d078cd82"
+        },
+        {
+          "relative_path": "summary.json",
+          "raw_sha256": "4258ae0e127d811af462e172c1ec9ca000970b0614af413663a8b8f610098af0"
+        }
+      ]
+    },
+    {
+      "directory": "output/infrastructure/computation-cpu-ledger-development-v2",
+      "records": [
+        {
+          "relative_path": "audit_fault/events/cpu-ledger/ledger.intent.json",
+          "raw_sha256": "347fb01d42888905c55afb5c5e0242c305e0391cbe79856320611f7817392dc4"
+        },
+        {
+          "relative_path": "audit_fault/events/cpu-ledger/reservation-00000001.intent.json",
+          "raw_sha256": "c675c8f55cdb24abd49ca10b8a9f284c96edeb9349c51fc1ea41232652e0c68a"
+        },
+        {
+          "relative_path": "audit_fault/events/cpu-ledger/reservation-00000001.result.json",
+          "raw_sha256": "912aa29bab38f41293f4d3edaae45e0961cf575ba748a10d9b44b816f5cfc7ba"
+        },
+        {
+          "relative_path": "audit_fault/events/denied_compute.intent.json",
+          "raw_sha256": "a58edc320da7707b893fe982693bef21d09ba7aee908697e323b838ed77a4602"
+        },
+        {
+          "relative_path": "audit_fault/events/denied_compute.result.json",
+          "raw_sha256": "44b173bd7b56ec3b5fc4c83162b8e11a8cbd2d86e703467fa86e8b3073502cb8"
+        },
+        {
+          "relative_path": "audit_fault/events/denied_read.intent.json",
+          "raw_sha256": "75afd3e61cded4d063209c32a826772ad5c9ccb3ae1564eaded32284d7df6b26"
+        },
+        {
+          "relative_path": "audit_fault/events/denied_read.result.json",
+          "raw_sha256": "309723e47d568e4eeab192e85860f038110611e17a72645be8ecf6e5022afb3b"
+        },
+        {
+          "relative_path": "audit_fault/events/unknown.execution/cpu-sample-00000000.json",
+          "raw_sha256": "52fd116ab414fa4c9a282d5314062e233d5e8747c677ee443f36db8cdf185052"
+        },
+        {
+          "relative_path": "audit_fault/events/unknown.execution/cpu-sample-00000001.json",
+          "raw_sha256": "2f4a89a94c5aae4372a3219ab5cef4ef16cca62f9182e595fb3e3a53eae9c366"
+        },
+        {
+          "relative_path": "audit_fault/events/unknown.execution/cpu-sample-00000002.json",
+          "raw_sha256": "47b36a5d6374ad822011a3e345372afc728bbd6481581dd4e9ef203ee00e3ca4"
+        },
+        {
+          "relative_path": "audit_fault/events/unknown.execution/intent.json",
+          "raw_sha256": "da7b71f74bcf033c7a54162abf71ff741c136851c7bb362aa14df2157732cd52"
+        },
+        {
+          "relative_path": "audit_fault/events/unknown.execution/namespace-request.json",
+          "raw_sha256": "4c28e087eb0c19c7e138168319dda5af42e61f8b6865ed0811608abb77a220af"
+        },
+        {
+          "relative_path": "audit_fault/events/unknown.execution/namespace-status.bin",
+          "raw_sha256": "cabaa197da96612b1fa12a1371bc243ad418563a9b39cfb0f816a64344534290"
+        },
+        {
+          "relative_path": "audit_fault/events/unknown.execution/terminal.json",
+          "raw_sha256": "0e1f80951a168c704ce8d1699f406e45df5debf6f6de4189a415a1eeecde928a"
+        },
+        {
+          "relative_path": "audit_fault/events/unknown.intent.json",
+          "raw_sha256": "f58f8ef1b177304b9e38875024a9f5a0cd4db8eb6cb38de15edf49bd8b1e8bf2"
+        },
+        {
+          "relative_path": "audit_fault/events/unknown.result.json",
+          "raw_sha256": "50a6cd31f488fb82594ef710096f1397a4f089b92916c04eb30c8de15f17b1bf"
+        },
+        {
+          "relative_path": "audit_fault/workspace/visible.txt",
+          "raw_sha256": "6329321b98e870b5b7e1a8c020fbe19cd92eff8544429abd57fc410fabe981d6"
+        },
+        {
+          "relative_path": "budget/events/cpu-ledger/ledger.intent.json",
+          "raw_sha256": "347fb01d42888905c55afb5c5e0242c305e0391cbe79856320611f7817392dc4"
+        },
+        {
+          "relative_path": "budget/events/cpu-ledger/reservation-00000001.intent.json",
+          "raw_sha256": "87dabe3c3a35d04adb4b971f50d18d7d3c8a499824ae4d5e6ca2b7774517b348"
+        },
+        {
+          "relative_path": "budget/events/cpu-ledger/reservation-00000001.result.json",
+          "raw_sha256": "27863c10e88feece790ad0e55cb6ce50ee3631a05baa18669e264e6a2a3867c8"
+        },
+        {
+          "relative_path": "budget/events/cpu-ledger/reservation-00000002.intent.json",
+          "raw_sha256": "c29432ec824053a7143cf505f60afe8ac34ceece10183d2546ca7287f8c3e279"
+        },
+        {
+          "relative_path": "budget/events/cpu-ledger/reservation-00000002.result.json",
+          "raw_sha256": "f43a05bd62e1569419534fdd93a536afffe0350d1ea2e333bfc242e812c96827"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/cpu-sample-00000000.json",
+          "raw_sha256": "429dff9a111e17017e0132492a373a0cfef3a4d9128787de0467eb400aedc48a"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/cpu-sample-00000001.json",
+          "raw_sha256": "c7e9ecf8e043f29d09466f2b58dd4d0a833a5be8a6bae54c3f0b2a7e3e73d09b"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/cpu-sample-00000002.json",
+          "raw_sha256": "43ac978f729c9b40a6e789902b08e4b78035aef6b1abc19f0d93af246af6bc19"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/cpu-sample-00000003.json",
+          "raw_sha256": "b4364710cdb141067900fea0f5068059d781fd60d03116ccf61b76f46777f7bd"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/cpu-sample-00000004.json",
+          "raw_sha256": "70c10158b59a840f967fc69bd1ed2d36d8b4ba21b9d3b606ce9eb78d4b0ae0d5"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/cpu-sample-00000005.json",
+          "raw_sha256": "c52955d8d87dd713887cd77e04fd98b02f2a21afd24dd32ff92d88f70448c5d0"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/cpu-sample-00000006.json",
+          "raw_sha256": "9f47eb9319d24a65dc3037d06a638ca9d8c4075f7dcf1832c6272044f96f69a3"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/cpu-sample-00000007.json",
+          "raw_sha256": "3d3d49a166b1cca51afc7b5d4093c2eee2dc5335cb087043b8195513637d8f37"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/cpu-sample-00000008.json",
+          "raw_sha256": "7f01860d601340cd89e5c10c85e8cfb64798f92673521cd24eabc6e9b318fa84"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/cpu-sample-00000009.json",
+          "raw_sha256": "a6dee22edd61a514a388b96aed58bceb0b6d89f7a1c55148ca30bb7bdaca4e90"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/cpu-sample-00000010.json",
+          "raw_sha256": "e21d63a6616b2ce781de07837c8a46002ed81e0578d4a1dbfe2393b83d58c740"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/cpu-sample-00000011.json",
+          "raw_sha256": "1f4748dcc959e8bc762d275523f31c33e5afd8c8d4834f4ce599e595d12b8f56"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/cpu-sample-00000012.json",
+          "raw_sha256": "daca8a819dc96cae86fe5811cc5a8b8f4ca8e325ed92345153e9e0f6361afa32"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/cpu-sample-00000013.json",
+          "raw_sha256": "4600c3ea673445dc748ff6fb8ca890934a6ebab2856e0e1a3de053ada0b53592"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/intent.json",
+          "raw_sha256": "a069bb59c98cb52dd8b7570ee624f0051a3a1482c5dd806f282b94a7af760500"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/namespace-request.json",
+          "raw_sha256": "d84e4e55a8924a16b4ab9dc432838b2a5547c0c69683fddbeb8b6e8316e80ff8"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/namespace-status.bin",
+          "raw_sha256": "619e2dd8e224521ab88a7aaf3da35625e2443fc694fedfe4cf6c011916c66ea0"
+        },
+        {
+          "relative_path": "budget/events/cutoff.execution/terminal.json",
+          "raw_sha256": "d0110ccc024a05d93b3d4787c3e96d9e12841c17f709e9a50140a69c252c2604"
+        },
+        {
+          "relative_path": "budget/events/cutoff.intent.json",
+          "raw_sha256": "288cfea97f39470d9554569785a643eacbb308ed08b7908f42212540557f178c"
+        },
+        {
+          "relative_path": "budget/events/cutoff.result.json",
+          "raw_sha256": "328cc87159d5b0e6d2ad0a9cc323aca41e4e253b1e6f4afba5ef5b2e4d474a5a"
+        },
+        {
+          "relative_path": "budget/events/denied.intent.json",
+          "raw_sha256": "4ec8bbbde8cda0500f242421c9934dc0ff3d16ca5f0726a8b7f2766553f8bfc5"
+        },
+        {
+          "relative_path": "budget/events/denied.result.json",
+          "raw_sha256": "3c8cf78caee6ae7390d1dc21305431c78743eaf0da9d9c48c17e51990d9adaf6"
+        },
+        {
+          "relative_path": "budget/events/literal.execution/cpu-sample-00000000.json",
+          "raw_sha256": "b3f5485de9246de2316101431891d6254f8c3b61bd32420665e1ad0e2d74e853"
+        },
+        {
+          "relative_path": "budget/events/literal.execution/cpu-sample-00000001.json",
+          "raw_sha256": "12a2c52a1f8c95f9f4eb5ef32784263cbccbe1436627cbbe4b997ad39780411e"
+        },
+        {
+          "relative_path": "budget/events/literal.execution/cpu-sample-00000002.json",
+          "raw_sha256": "2db1ee65f835596da6748d4e1119f0d279bf579ef11f4fe7674ad955bcbe60c3"
+        },
+        {
+          "relative_path": "budget/events/literal.execution/intent.json",
+          "raw_sha256": "a5244daf21670824d708f23ec77999f7d9fbd9941f22ade672636d2a107a7618"
+        },
+        {
+          "relative_path": "budget/events/literal.execution/namespace-request.json",
+          "raw_sha256": "0090ee70fc687bd15c3b2b25c80d025f660a862c9ffe69b1e7d886aa0b5e8657"
+        },
+        {
+          "relative_path": "budget/events/literal.execution/namespace-status.bin",
+          "raw_sha256": "061f7c811573519a561e8ae9abc0069cc5de17782b4af3d5d58ef127ce8f05df"
+        },
+        {
+          "relative_path": "budget/events/literal.execution/terminal.json",
+          "raw_sha256": "275d6cfebcf4d4aeed53b2e909219d1e7a8b9b3f2b043c8a04c709fc59ce56f5"
+        },
+        {
+          "relative_path": "budget/events/literal.intent.json",
+          "raw_sha256": "1b85f4740542a12abea00c041fb5a7b2de19a3e960677aa3b11210bdde16a401"
+        },
+        {
+          "relative_path": "budget/events/literal.result.json",
+          "raw_sha256": "99211028876e1a20f5ab07da5627944fe7aa9c75edcab820dea039c2c9c7d3d1"
+        },
+        {
+          "relative_path": "budget/events/read.intent.json",
+          "raw_sha256": "5740ba067c2b2d61df7c0c8dad1a5e6421120ed81e9bd404ce5a63b4157c594e"
+        },
+        {
+          "relative_path": "budget/events/read.result.json",
+          "raw_sha256": "e70468bc7ad4b50564df63ce85f5366df553d36b1a6599504ce7149c79226424"
+        },
+        {
+          "relative_path": "budget/workspace/visible.txt",
+          "raw_sha256": "6329321b98e870b5b7e1a8c020fbe19cd92eff8544429abd57fc410fabe981d6"
+        },
+        {
+          "relative_path": "client.py",
+          "raw_sha256": "306e5dca7893e5ab5cfdd0ec3b8e25c991cd1c2b9686bcbb10c1c19e14d4ba0c"
+        },
+        {
+          "relative_path": "plan.json",
+          "raw_sha256": "3342dcc2ae233334c6c6922ce7cd9cd756e0a316f17c7e11ee3748bb3ba5a9e9"
+        },
+        {
+          "relative_path": "summary.json",
+          "raw_sha256": "18ce80d44697c4f055ffd8aefd66f42368044ea596777e6cea3ac0172e34d6ad"
+        }
+      ]
+    }
+  ],
+  "fixed_flow_observations": [
+    {
+      "budget": {
+        "status": "PASS_CHARGED_FAILURE_AND_DENIED_NEXT_COMPUTATION_READ_PRESERVED",
+        "ledger": {
+          "spent_nanoseconds": 336393000,
+          "settled_known_cpu_nanoseconds": 336393000,
+          "remaining_nanoseconds": 0,
+          "unknown_accounting": false,
+          "pending_event": null,
+          "limit": {
+            "total_nanoseconds": 310000000
+          },
+          "scope": "COMPUTATION_SERVICE_TREES_ONLY"
+        },
+        "first_cpu": 34665000,
+        "cutoff": {
+          "actual_cpu_nanoseconds": 301728000,
+          "error": null,
+          "event_id": "cutoff",
+          "evidence_hashes": {
+            "cpu_sample_sha256": [
+              "4009bed12a38f47b68776261429ab025119d66a93fd824ae74aeb05613d93cc0",
+              "94901e528fbd9690fe27c2ef164cbdce6be41152d3cc302480da2c59bc47e677",
+              "10c359ecf239a90235a3211585462eab47d2861c68efb4b7a42c973519e51e5b",
+              "da1e9adc61db70f4c16f988ab6be57ee0805bf29a16e772057c4190cd9d3b676",
+              "16f2f95222e4deeaf9f1df043d4c7f6500675f56023a70c028b6ced67ee62433",
+              "7a8c10542596e149c885f8bb857d0c3ca2b1bea3d1f022821c484c1097082c35",
+              "a9a615fe6fe11ec316b258bb58f7fa074b7b3f64260d940eb6d7160ef306af49",
+              "1d37578491732a52f360815254110225b5a772dc6b40d15e27a5602e38e69e41",
+              "5756f8f1b91a8caf11c00779c45b7585565c751a4cbafeb11c43749174d55760",
+              "d61c32f49096c8842a798034d0a6ef471a605cda5bcaab8db783abd184dcc4ea",
+              "a1319dcbf38f40937d6fb5d757d8bb91b913163539ffa6f54bc85cc91c6d5abb"
+            ],
+            "execution_intent_sha256": "3cb56a19f09d73a7f1e8cf1f7ddcd11e16d679ea855f4f6124470134de9481ad",
+            "execution_terminal_sha256": "fbf7d629c99714f884ea7ec43449a8854398bd5ac76893d43b619d09e7c0cf41",
+            "service_status": "TECHNICAL_FAILURE"
+          },
+          "ordinal": 2,
+          "reservation": {
+            "effective_cpu_budget": {
+              "cumulative_nanoseconds": 275335000,
+              "poll_milliseconds": 20,
+              "query_timeout_milliseconds": 250
+            },
+            "event_id": "cutoff",
+            "execution_directory": "/home/lunarz/.codex/worktrees/f235/crane_explain/output/infrastructure/computation-cpu-ledger-development-v1/budget/events/cutoff.execution",
+            "ordinal": 2,
+            "remaining_before_nanoseconds": 275335000,
+            "schema": "crane-computation-cpu-reservation/v1-development",
+            "spent_before_nanoseconds": 34665000,
+            "tool_request_sha256": "1c8d436fd7d353114a620d2316c7d3adb247f02e002bbcb60e318ba2bfe9d249",
+            "workspace_sha256": "09fa76102a2d4e5578fb20adbf71d7390ed4ac4c6561e2b8ed3f94df55360c86"
+          },
+          "schema": "crane-computation-cpu-settlement/v1-development",
+          "spent_after_nanoseconds": 336393000,
+          "spent_before_nanoseconds": 34665000,
+          "status": "CHARGED_ACTUAL_SERVICE_CPU",
+          "unclamped_overshoot_nanoseconds": 26393000
+        }
+      },
+      "audit_fault": {
+        "status": "PASS_OPERATOR_INJECTED_AUDIT_UNCERTAINTY_CLOSES_ADMISSION",
+        "ledger": {
+          "spent_nanoseconds": null,
+          "settled_known_cpu_nanoseconds": 0,
+          "remaining_nanoseconds": null,
+          "unknown_accounting": true,
+          "pending_event": null,
+          "limit": {
+            "total_nanoseconds": 310000000
+          },
+          "scope": "COMPUTATION_SERVICE_TREES_ONLY"
+        },
+        "original_executor_terminal_preserved": true,
+        "injection_is_a_method_failure": false
+      }
+    },
+    {
+      "budget": {
+        "status": "PASS_CHARGED_FAILURE_AND_DENIED_NEXT_COMPUTATION_READ_PRESERVED",
+        "ledger": {
+          "spent_nanoseconds": 351852000,
+          "settled_known_cpu_nanoseconds": 351852000,
+          "remaining_nanoseconds": 0,
+          "unknown_accounting": false,
+          "pending_event": null,
+          "limit": {
+            "total_nanoseconds": 310000000
+          },
+          "scope": "COMPUTATION_SERVICE_TREES_ONLY"
+        },
+        "first_cpu": 34572000,
+        "cutoff": {
+          "actual_cpu_nanoseconds": 317280000,
+          "error": null,
+          "event_id": "cutoff",
+          "evidence_hashes": {
+            "cpu_sample_sha256": [
+              "429dff9a111e17017e0132492a373a0cfef3a4d9128787de0467eb400aedc48a",
+              "c7e9ecf8e043f29d09466f2b58dd4d0a833a5be8a6bae54c3f0b2a7e3e73d09b",
+              "43ac978f729c9b40a6e789902b08e4b78035aef6b1abc19f0d93af246af6bc19",
+              "b4364710cdb141067900fea0f5068059d781fd60d03116ccf61b76f46777f7bd",
+              "70c10158b59a840f967fc69bd1ed2d36d8b4ba21b9d3b606ce9eb78d4b0ae0d5",
+              "c52955d8d87dd713887cd77e04fd98b02f2a21afd24dd32ff92d88f70448c5d0",
+              "9f47eb9319d24a65dc3037d06a638ca9d8c4075f7dcf1832c6272044f96f69a3",
+              "3d3d49a166b1cca51afc7b5d4093c2eee2dc5335cb087043b8195513637d8f37",
+              "7f01860d601340cd89e5c10c85e8cfb64798f92673521cd24eabc6e9b318fa84",
+              "a6dee22edd61a514a388b96aed58bceb0b6d89f7a1c55148ca30bb7bdaca4e90",
+              "e21d63a6616b2ce781de07837c8a46002ed81e0578d4a1dbfe2393b83d58c740",
+              "1f4748dcc959e8bc762d275523f31c33e5afd8c8d4834f4ce599e595d12b8f56",
+              "daca8a819dc96cae86fe5811cc5a8b8f4ca8e325ed92345153e9e0f6361afa32",
+              "4600c3ea673445dc748ff6fb8ca890934a6ebab2856e0e1a3de053ada0b53592"
+            ],
+            "execution_intent_sha256": "a069bb59c98cb52dd8b7570ee624f0051a3a1482c5dd806f282b94a7af760500",
+            "execution_terminal_sha256": "d0110ccc024a05d93b3d4787c3e96d9e12841c17f709e9a50140a69c252c2604",
+            "service_status": "TECHNICAL_FAILURE"
+          },
+          "ordinal": 2,
+          "reservation": {
+            "effective_cpu_budget": {
+              "cumulative_nanoseconds": 275428000,
+              "poll_milliseconds": 20,
+              "query_timeout_milliseconds": 250
+            },
+            "event_id": "cutoff",
+            "execution_directory": "/home/lunarz/.codex/worktrees/f235/crane_explain/output/infrastructure/computation-cpu-ledger-development-v2/budget/events/cutoff.execution",
+            "ordinal": 2,
+            "remaining_before_nanoseconds": 275428000,
+            "schema": "crane-computation-cpu-reservation/v2-development",
+            "spent_before_nanoseconds": 34572000,
+            "tool_request_sha256": "96d282ffdd2e36d911108a3d79f5c9f91c9a4cb248a289f285f9dc01487a69df",
+            "workspace_sha256": "09fa76102a2d4e5578fb20adbf71d7390ed4ac4c6561e2b8ed3f94df55360c86"
+          },
+          "schema": "crane-computation-cpu-settlement/v2-development",
+          "spent_after_nanoseconds": 351852000,
+          "spent_before_nanoseconds": 34572000,
+          "status": "CHARGED_ACTUAL_SERVICE_CPU",
+          "unclamped_overshoot_nanoseconds": 41852000
+        }
+      },
+      "audit_fault": {
+        "status": "PASS_OPERATOR_INJECTED_AUDIT_UNCERTAINTY_CLOSES_ADMISSION",
+        "ledger": {
+          "spent_nanoseconds": null,
+          "settled_known_cpu_nanoseconds": 0,
+          "remaining_nanoseconds": null,
+          "unknown_accounting": true,
+          "pending_event": null,
+          "limit": {
+            "total_nanoseconds": 310000000
+          },
+          "scope": "COMPUTATION_SERVICE_TREES_ONLY"
+        },
+        "original_executor_terminal_preserved": true,
+        "injection_is_a_method_failure": false
+      }
+    }
+  ],
+  "reservation_isolation_tests_passed": 2,
+  "current_broker_version": 7,
+  "prior_reservation_mutability_defect_preserved": true,
+  "returned_reservation_isolated_in_v2": true
+}

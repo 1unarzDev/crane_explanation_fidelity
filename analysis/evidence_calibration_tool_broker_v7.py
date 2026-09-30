@@ -1,0 +1,128 @@
+"""Versioned bounded-compute broker candidate; no provider transport or activation.
+
+Read tools remain lossless and are not governed by the subprocess output limit.
+"""
+from __future__ import annotations
+
+from copy import deepcopy
+import hashlib
+from pathlib import Path
+import re
+import subprocess
+
+from evidence_calibration_io import canonical_sha256
+from dataclasses import asdict
+from evidence_calibration_local_tool_sandbox_v2 import ExecutionFailure, Limits
+from evidence_calibration_local_tool_sandbox_v10 import TreeLimits, ScratchLimits, CpuBudget, run
+from run_evidence_calibration_claim_role_v2r2_qualification import _write_once
+from stage_evidence_calibration_workspace import verify
+from evidence_calibration_computation_cpu_ledger_v2 import ComputationCpuLedger, ComputationCpuLimit
+
+READ = "read_staged_file"
+COMPUTE = "compute_visible_python"
+
+
+def tool_definitions(method: str) -> list[dict]:
+    if method not in {"B0", "B1", "B2", "B3", "B4"}:
+        raise ValueError("unknown method")
+    if method in {"B0", "B1"}:
+        return []
+    return [
+        {"name": READ, "description": "Read exact staged file text using explicit Unicode character offsets; no inferred summary.",
+         "inputSchema": {"type": "object", "properties": {"path": {"type": "string"},
+            "offset": {"type": "integer", "minimum": 0}, "length": {"type": ["integer", "null"], "minimum": 1}},
+            "required": ["path", "offset", "length"], "additionalProperties": False}},
+        {"name": COMPUTE, "description": "Run local Python calculations over full staged visible records/source in an isolated namespace.",
+         "inputSchema": {"type": "object", "properties": {"code": {"type": "string", "minLength": 1}},
+                         "required": ["code"], "additionalProperties": False}},
+    ]
+
+
+class ToolBroker:
+    def __init__(self, workspace: Path, identity: dict, event_directory: Path, *, max_calls: int, limits: Limits, tree_limits: TreeLimits, scratch_limits: ScratchLimits, cpu_budget: CpuBudget, computation_cpu_limit: ComputationCpuLimit):
+        verify(workspace, identity)
+        if type(max_calls) is not int or max_calls < 1 or not isinstance(limits, Limits) or not isinstance(tree_limits, TreeLimits) or not isinstance(scratch_limits, ScratchLimits) or not isinstance(cpu_budget, CpuBudget) or not isinstance(computation_cpu_limit, ComputationCpuLimit):
+            raise ValueError("explicit positive call budget, local Limits, TreeLimits, ScratchLimits, CpuBudget and ComputationCpuLimit required")
+        if event_directory.resolve() == workspace.resolve() or workspace.resolve() in event_directory.resolve().parents:
+            raise ValueError("event records must be outside method workspace")
+        if event_directory.exists():
+            raise ValueError("fresh event namespace required; existing intents must be quarantined")
+        event_directory.mkdir(parents=True)
+        self.workspace, self.identity, self.events = workspace, deepcopy(identity), event_directory
+        self.max_calls, self.limits, self.tree_limits, self.scratch_limits, self.calls = max_calls, limits, tree_limits, scratch_limits, 0
+        self.cpu_budget = cpu_budget
+        self.cpu_ledger = ComputationCpuLedger(event_directory / "cpu-ledger", identity["workspace_sha256"],
+                                               limit=computation_cpu_limit, per_call=cpu_budget)
+        self.definitions = tool_definitions(identity["method_id"])
+
+    def call(self, event_id: str, name: str, arguments: dict) -> dict:
+        if not isinstance(event_id, str) or not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]{0,100}", event_id):
+            raise ValueError("invalid tool event ID")
+        intent, terminal = self.events / (event_id + ".intent.json"), self.events / (event_id + ".result.json")
+        if intent.exists() or terminal.exists():
+            raise ValueError("retained tool event/unknown intent; no replay or retry")
+        if self.calls >= self.max_calls:
+            raise ValueError("tool call budget exhausted")
+        request = {"schema": "crane-tool-event-request/v7-development", "event_id": event_id,
+                   "method_id": self.identity["method_id"], "workspace_sha256": self.identity["workspace_sha256"],
+                   "name": name, "arguments": arguments, "local_limits": asdict(self.limits),
+                   "tree_limits": asdict(self.tree_limits), "scratch_limits": asdict(self.scratch_limits), "cpu_budget": asdict(self.cpu_budget), "cpu_ledger_before": self.cpu_ledger.snapshot(), "max_calls": self.max_calls, "ordinal": self.calls + 1}
+        _write_once(intent, {"request": request, "request_sha256": canonical_sha256(request), "terminal_record_pending": True})
+        self.calls += 1
+        result = None
+        settlement = None
+        execution_error = None
+        try:
+            verify(self.workspace, self.identity)
+            self.cpu_ledger.ensure_known()
+            if name not in {row["name"] for row in self.definitions}:
+                raise ValueError("tool not permitted for this method")
+            if name == READ:
+                if (not isinstance(arguments, dict) or set(arguments) != {"path", "offset", "length"}
+                        or not isinstance(arguments["path"], str)
+                        or arguments["path"] not in self.identity["inventory"]["files"]
+                        or type(arguments["offset"]) is not int or arguments["offset"] < 0
+                        or (arguments["length"] is not None and (type(arguments["length"]) is not int or arguments["length"] < 1))):
+                    raise ValueError("read requires a registered path and valid explicit character range")
+                content = (self.workspace / arguments["path"]).read_bytes()
+                file_sha = hashlib.sha256(content).hexdigest()
+                if file_sha != self.identity["inventory"]["files"][arguments["path"]]:
+                    raise ValueError("staged file hash changed during read")
+                text = content.decode("utf-8")
+                start = arguments["offset"]
+                if start > len(text):
+                    raise ValueError("read offset exceeds file length")
+                end = len(text) if arguments["length"] is None else min(len(text), start + arguments["length"])
+                result = {"text": text[start:end], "file_sha256": file_sha, "total_characters": len(text),
+                          "start_character": start, "end_character": end, "eof": end == len(text)}
+            else:
+                if not isinstance(arguments, dict) or set(arguments) != {"code"} or not isinstance(arguments["code"], str) or not arguments["code"].strip():
+                    raise ValueError("computation requires nonempty Python code")
+                execution_directory = self.events / (event_id + ".execution")
+                reservation = self.cpu_ledger.reserve(event_id, execution_directory, canonical_sha256(request))
+                try:
+                    completed = run(self.workspace, self.identity, ["-c", arguments["code"]], limits=self.limits,
+                        tree_limits=self.tree_limits, scratch_limits=self.scratch_limits,
+                        cpu_budget=CpuBudget(**reservation['effective_cpu_budget']), event_directory=execution_directory)
+                except (ValueError, OSError, ExecutionFailure) as caught:
+                    execution_error = caught
+                settlement = self.cpu_ledger.settle(event_id)
+                if settlement['status'] != 'CHARGED_ACTUAL_SERVICE_CPU':
+                    raise ValueError('CPU_LEDGER_ACCOUNTING_UNKNOWN') from execution_error
+                if execution_error is not None:
+                    raise execution_error
+                result = {"return_code": completed.returncode, "stdout": completed.stdout, "stderr": completed.stderr}
+            verify(self.workspace, self.identity)
+        except (ValueError, OSError, ExecutionFailure) as error:
+            # Full technical error retained; no replacement, host fallback or fabricated output.
+            record = {"request": request, "status": "TECHNICAL_FAILURE", "result": None,
+                      "error_type": type(error).__name__, "error": str(error),
+                      "execution_audit": error.audit if isinstance(error, ExecutionFailure) else None,
+                      "cpu_ledger_settlement": settlement,
+                      "original_execution_error": str(execution_error) if execution_error else None}
+            _write_once(terminal, record)
+            raise
+        record = {"request": request, "status": "RETURNED" if name == READ or result["return_code"] == 0 else "TOOL_RUNTIME_FAILURE",
+                  "result": result, "error_type": None, "error": None, "cpu_ledger_settlement": settlement}
+        _write_once(terminal, record)
+        return deepcopy(record)

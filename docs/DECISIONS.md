@@ -4799,3 +4799,34 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   pilot score, physical acquisition, alpha spending or P11 freeze. Preserve failed
   support/unlaunched C and unanswered reopening. P11 keeps nineteen open conditions,
   no hash mismatches, confirmation/replication N=0 and prospective five-method reporting.
+
+
+## 2026-09-30 — charge actual computation CPU across a separate serial broker candidate
+
+- **Ledger:** bind a fresh typed total/per-call budget, workspace and source. Persist
+  exclusive reservation before execution and settlement before delivery. Reduce
+  effective threshold to remaining total; reject below executor minimum. Validate
+  identity, raw sequential/monotonic counters, final quiescence, budget and cleanup.
+- **Failure policy:** charge actual verified CPU for successful and failed work,
+  including unclamped overshoot. Unknown accounting closes all tool admission with
+  null spent/remaining totals. Retention failure stays pending with no settlement
+  replay/adoption. Preserve executor results even when delivery is withheld.
+- **Evidence:** 42 focused checks and four pre-bound retained fixed flows across
+  two source versions pass. The
+  ordinary flow charges 34.665+301.728=336.393 ms against 310 ms total, denies another
+  computation and preserves full read access. Separate operator-injected auditor
+  corruption withholds output and denies future read/compute calls; original executor
+  bytes stay unchanged. Preserve v1's shallow reservation-object defect; v2 returns an isolated copy and
+  broker v7 changes only selector/request schema. The repaired fixed flow charges
+  351.852 ms against 310 ms, retaining its larger 41.852 ms overshoot. Two additional
+  checks prove budget isolation/exact repair. All six retained services are absent;
+  staged B2 primitive parity passed under broker v6.
+- **Boundary:** scope is service CPU across serial computation calls, not host read/
+  control/provider CPU or full turn accounting. No hard cap/overshoot bound, power-loss
+  or distributed durability claim. MCP/client/turn-policy integration remains open;
+  fresh sibling brokers are not authorized budget resets. Existing study callers
+  and prior versions remain unchanged; synthetic totals are not scientific budgets.
+- **Governance:** no semantic model/automated annotation call, method-key join, real-
+  pilot score, physical acquisition, alpha spending or P11 freeze. Preserve failed
+  support/unlaunched C and unanswered reopening. P11 keeps nineteen open conditions,
+  no hash mismatches and confirmation/replication independent N=0.
