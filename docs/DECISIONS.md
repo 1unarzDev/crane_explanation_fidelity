@@ -3626,3 +3626,15 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   gates. The v1 terminal audit still reproduces its retained failure. No v2 model call has run at
   this declaration checkpoint. P11, endpoint mapping, role disagreement/missingness, alpha,
   physical allocation and confirmation/replication independent N remain unchanged.
+
+## 2026-09-30 — retain and bind the separate v2 compatibility schema canary
+
+- The new non-study v2 canary returned a structurally valid annotation under its exact frozen
+  payload and unchanged Astra-high support prompt/schema. Its read-only audit passes.
+- The canary's intent and terminal record were DVC-added only after its session terminated;
+  the remote push reported three objects including the directory object. The original checkout's
+  pointer was restored byte-for-byte and its Git state is clean. The separate gate is now
+  `PASS_NON_STUDY_NEUTRAL_INPUT_SCHEMA_CANARY` / `DVC_PUSH_VERIFIED`.
+- This releases only the separately declared forty-call fresh synthetic qualification. At this
+  gate checkpoint none of those calls has run. No support accuracy, raw rank qualification,
+  pilot activation, endpoint outcome, new alpha allocation or P11 authorization follows.

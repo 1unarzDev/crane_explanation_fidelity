@@ -353,3 +353,13 @@ pre-call checkpoint the v2 canary and qualification are unrun. A DVC-pushed pass
 required before qualification, and a separately bound passing disposition before pilot use.
 Raw rank, role disagreement/missingness, endpoint attachment, five-method development evidence,
 P11, alpha, physical allocation and confirmation/replication N remain open/unchanged.
+
+## Later 2026-09-30 pushed v2 canary gate checkpoint
+
+The separate v2 compatibility canary passed, its read-only audit verifies frozen request/return
+identities and exact spans, and DVC pushed its intent/terminal record plus directory object.
+The original checkout's pointer was restored exactly and its Git state is clean. The v2 gate is
+now bound as `PASS_NON_STUDY_NEUTRAL_INPUT_SCHEMA_CANARY` / `DVC_PUSH_VERIFIED`. This permits
+only the fresh forty-call synthetic qualification; none of those requests had run at this gate
+checkpoint. No pilot support annotation or raw rank/endpoint use is authorized. P11 and all
+scientific allocation/inference boundaries remain unchanged.
