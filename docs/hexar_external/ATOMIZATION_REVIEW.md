@@ -1,0 +1,25 @@
+# Method-blind development atomization review
+
+Completed 2026-09-30. Input access was restricted to `data/hexar_external/annotation/blind_bank.json`; the already completed independent packet review supplies source-semantics context. The evaluator-only join key, response/model caches, production contract adapter and execution console were not read. No method identity was assigned or guessed in the inventory.
+
+The artifact `data/hexar_external/annotation/atomic_inventory.json` contains 27 response inventories and 140 atomic propositions. The route is **method-blind developer inventory, not qualified model atomizer**. This is separately documented development measurement by an automated research agent, never a human validation or confirmatory atomization claim. No support, contradiction, correctness, endpoint or response-rank labels were assigned.
+
+## Decomposition and checks
+
+Every response has a SHA-256 binding to its exact UTF-8 text, and every atom has a globally unique item ID and an exact substring `response_span`. A structural check verified all 27 IDs, all text hashes and all 140 spans. The full response text remains necessary context; overlapping spans are intentional when a compound phrase supports multiple separately testable propositions.
+
+Inventories retain task noncompletion and timeout, controller reports of lack of progress, action aborts, new goal/path receipt, local and global clearing separately, requested versus completed clearing, recovery purpose, manual-mode selection, charging state, uncertainty about physical causes and uncertainty about manual effects. Explicit causal connectives are separately represented from their antecedent and outcome; in particular manual selection, navigation inability and a claimed manual-caused inability are three distinct propositions. The timing claim that failures persisted after clearing requests/new paths is distinct from the existence of those requests/paths.
+
+Denials and unknown statements retain their negative or epistemic force. A claim that records do not establish a physical cause is a limitation, not an assertion that a cause occurred or did not occur. Whether manual mode affected motion remains unknown is represented separately from the unknown cause of progress failure. Recovery-purpose wording does not assert that recovery succeeded. Reported failures retain report attribution rather than being silently strengthened to measured physical motion.
+
+The supplied level vocabulary is used as a coarse inventory index: `task_outcome`, `software_action_failure`, `recorded_override_state`, `specific_physical_cause`, and `limitation`. The software level also indexes action receipt, clearing and path facts because the requested vocabulary has no separate software-event level. The override level indexes charging state as well as manual selection. These labels describe the proposition's semantic subject and do not establish support, asserted diagnostic rank or endpoint role.
+
+## Ambiguities and limitations
+
+“Got stuck” is preserved as a generic progress/movement difficulty, without rewriting it as obstacle contact, mechanical immobilization or motor failure. It is indexed under software-action failure; a semantic assessor must retain the original phrase and context when deciding whether it overstates the observation. “Could not navigate” may communicate unsuccessful navigation, physical inability or control inhibition depending on its attached causal clause. The inventory preserves the outcome and the asserted causal relation separately instead of deciding that ambiguity here.
+
+The unqualified blanket word “charging was off” is retained as written rather than narrowed by the atomizer to a last-message state; original evidence scope must govern later assessment. “It cleared” preserves completed action rather than being silently repaired to a clearing request. “During retries,” “then,” “after” and the count four retain temporal/numerical attachment where explicitly stated. Descriptive colon-separated outcomes and event clauses do not automatically become unique physical-cause claims.
+
+Task/delivery claims may echo a question premise; the atomizer records assertions made in answers without using unseen task-plan details to validate them. Any extra supported fact absent from the compact required-unit list must still be judged against all permitted evidence. Repeated identical response texts retain separate blinded response IDs and inventories; they are not independent robot executions.
+
+This is a single developer review with no separately qualified atomizer-completeness measurement. Shared wording and one reviewer can induce correlated omissions or scope errors. Subsequent support assessment must use the complete response alongside the inventory and retain any missing or ambiguous atomic proposition rather than accept inventory completeness as empirical validation. The external exact-task qualifier's reported field-gate failure blocks promotion to qualified endpoint measurement; no qualifier retries, endpoint labels or scoring occurred in this atomization task.

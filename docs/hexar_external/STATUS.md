@@ -1,0 +1,19 @@
+# HEXAR external evaluation status — 2026-09-30
+
+**The first development tranche is executed; qualified endpoint evaluation and expansion are blocked by a retained measurement-qualification failure. No improvement claim or confirmatory test is supported.**
+
+Completed: saved the full handoff; verified isolated checkout/worktree/submodule state; pinned and hashed upstream source/data and main contract core; independently audited paper/code/licensing; recalculated all 540 released result rows; inventoried every navigation bag; reserved repetitions 2–3 before tuning; extracted one development recording read-only; passed native 1× component input/state/window/prompt parity; tested removal closure/clean state/missingness; ran all three methods over three original questions × three conditions (27 valid outputs); constructed independent packet references; exported a blinded 140-atom developer inventory; executed both external qualification passes; retained all failures; generated historical result table, evidence-level figure, operational results, planning sensitivity and development-safe paper text.
+
+The main September 30 checkpoint, current qualified Astra/high annotation binding and actual error-budget ledger were read and hash-bound. Shared component pins, land/boat artifacts, source data, main freezes, manuscript claims and the global ledger were left unchanged. No Unity, physical robot connection, GPU model launch, shared DVC update or external message was used.
+
+Open gates, in order:
+
+1. Independent qualification-construction review and a genuinely fresh prospectively bound external coverage/support task. The existing external candidate failed and must not be retried, rescored or promoted. Its two passes had 8/8 correct support labels and 19/20 correct fields; neither passed the frozen 100% field gate.
+2. Complete all-family development replay/mask closure and independent packet references, preserving the six declared situations. The current removal is decisive for recorded manual state, not for an independently verified physical root cause. Other masks are not yet validated.
+3. Freeze materiality, required units, endpoint roles/weighting, technical disposition, model/harness provenance and qualified annotation/adjudication before reserved outputs. Resolve historical-model limitations and explicitly retain matched available-model adaptation framing.
+4. Use a valid development pilot to establish recording-level discordance/coverage and realistic family-aware precision. Coordinate bounded model quotas and a publication-owner decision on descriptive versus confirmatory use. Only the main coordinator can allocate the governed discovery reserve; the protected replication reserve cannot be borrowed.
+5. Execute the admitted reserved cohort, blind annotations/adjudication and a single authorized paired analysis; then replace this section's pending fields with honest effects/uncertainty, including ties or tradeoffs.
+
+No qualified primary score, paired effect, confidence interval or p-value is produced. Pending metrics are null, never favorable zeros. Twelve reserved bags remain semantically untouched, and no family is claimed held out. The complete population target remains the released navigation situations; this one-family development tranche cannot stand in for it.
+
+For October 4, the integration-ready bounded deliverable is the executed reproduction/feasibility package and transparent measurement limitation. A statistically supported external benefit must not be promised at the cost of weakening the prompt control, skipping qualification, using hidden causes, inflating N or taking unallocated alpha. Exact completed-tranche run/resume commands are in REPRODUCTION.md. No requested future shared-study coordination has been performed on another owner's behalf.
