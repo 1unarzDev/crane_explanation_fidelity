@@ -3550,3 +3550,23 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   process handle or direct inspection proves termination. Never restart because observation
   timed out. Ten focused qualification/readiness tests pass. P11, alpha, and independent N remain
   unchanged.
+
+## 2026-09-30 — retain the terminal continuation and release the neutral-input canary gate
+
+- **Observed terminal state:** session `56406` exited successfully after all 158 prospectively
+  declared continuation requests returned structurally valid role records. Together with the
+  original prefix, there are 227 known returns across 113 A and 114 B answers. The original
+  unknown A request remains quarantined; the bank is not a complete two-pass bank.
+- **Retention:** the terminal continuation audit verifies all request identities, raw returns,
+  expected paths, and the original quarantine. `dvc add model_outputs` ran only after termination;
+  the remote push reported 319 objects, including continuation records, the neutral-input canary,
+  and the directory object. The original checkout's pointer was restored byte-for-byte afterward
+  and its Git state is clean. The new pointer contains 3,855 files.
+- **Canary gate:** its retained record and intent have now been DVC-pushed and the gate manifest
+  is updated to `PASS_NON_STUDY_NEUTRAL_INPUT_SCHEMA_CANARY` / `DVC_PUSH_VERIFIED`. The read-only
+  audit passes. This permits only the separately declared synthetic input-extension qualification;
+  it does not permit pilot support annotation or endpoint use.
+- **Operational reconciliation:** replace the living P11 shorthand that B had not begun with the
+  terminal 227/228 status and open review/mapping dependencies. Preserve the older interruption
+  snapshot and all historical decisions. P11 remains closed on 19 conditions; alpha, physical
+  allocation, and independent confirmation/replication N remain unchanged.

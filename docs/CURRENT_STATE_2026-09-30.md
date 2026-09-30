@@ -265,3 +265,26 @@ requires explicit terminal-process verification before writing a terminal snapsh
 `56406` remains live with B processing underway. Poll it; audit and DVC-push the accumulated
 artifacts only after termination. The support qualification, complete B review, disagreement and
 missingness dispositions, endpoint mapping, fresh five-method pilot, and P11 remain open.
+
+## Later 2026-09-30 terminal continuation and pushed canary checkpoint
+
+Role session `56406` has exited successfully. All 158 declared continuation requests have
+structurally valid returns; the terminal audit is bound in
+`evidence-calibration-pilot-role-v2r2-continuation-terminal-v1.json`. The combined bank contains
+113 known A and 114 B returns, with the original missing A still quarantined and un-replaced.
+This is 227 known returns of 228; it is not a complete two-pass measurement bank.
+
+After termination, the model-output directory was DVC-added and pushed (319 objects; the new
+pointer contains 3,855 files). The original checkout's pointer was restored exactly and its Git
+state is clean. The neutral-input canary now has verified artifact retention, a passing bound
+launch gate, and a passing read-only audit. The separate 40-call synthetic qualification may now
+be launched under its unchanged declaration; none of its requests had run at this pre-call
+checkpoint. It still cannot authorize pilot support labels until its passing disposition is bound.
+
+The living P11 requirement now records 227/228 retained role returns and open review/mapping
+work, rather than the obsolete status that B had not begun. The old interruption snapshot remains
+unchanged. P11 still has 19 open conditions and no component hash mismatch. B review, role
+disagreement and missing-A dispositions, input-extension qualification, assertion-aware endpoint
+attachment, support/adjudication dry runs, and fresh aligned five-method development evidence
+remain prerequisites. Confirmation/replication N are zero; alpha and quarantine accounting are
+unchanged.
