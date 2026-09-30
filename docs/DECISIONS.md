@@ -3129,3 +3129,18 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   validation or role-classifier qualification. V2r2 needs a final pre-call review and explicit
   task freeze before a schema canary or two isolated qualification passes. No pilot role label,
   endpoint score, P11 authorization, independent episode, or alpha use follows.
+
+## 2026-09-30 — freeze the separate v2r2 synthetic role qualification task
+
+- **Construction review:** the 24-case, 39-atom v2r2 reference has a final project review
+  linked to the independent automated critique and exact pre-call repairs. It keeps original
+  reviewed v2 bytes immutable and checks that no v1 response text is reused verbatim. This is
+  agent-assisted construction review, not human validation.
+- **Measurement-task freeze:** bind the v2r2 suite, prompt, v2 structured schema,
+  `gpt-6-astra` high-effort login-backed no-tool model, two isolated passes, exact held-out
+  stance/kind/polarity gate, and durable-intent no-retry runner. The non-study schema canary must
+  pass first. The offline freeze audit and nine focused final-review/runner tests pass before any
+  v2r2 role-model call.
+- **Boundary:** this is not P11. No pilot role, mechanistic flag, response rank, endpoint score,
+  confirmation authorization, independent episode, or alpha follows. A model pass must still be
+  independently compared with the frozen reference and explicitly disposed.

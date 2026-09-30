@@ -1,0 +1,54 @@
+{
+  "schema": "crane-evidence-calibration-claim-role-v2r2-qualification-freeze/v1",
+  "freeze_id": "evidence-calibration-claim-role-v2r2-synthetic",
+  "declared_date": "2026-09-30",
+  "status": "FROZEN_BEFORE_ANY_V2R2_ROLE_MODEL_CALL",
+  "scope": "Separate synthetic qualification of method-blind assertion stance, claim kind, and polarity; no support-label qualification or endpoint mapping.",
+  "suite": {
+    "path": "research/explanation_fidelity/qualification/evidence-calibration-claim-role-v2r2-development.json",
+    "raw_sha256": "ce9bbb256a9cb88af39f60892e36d93b4e99615b0a8f8e9facc1548493148cc6"
+  },
+  "construction_review": {
+    "path": "manifests/annotation/evidence-calibration-claim-role-v2r2-final-construction-review.json",
+    "raw_sha256": "45278e084f453b1a78ce77fe0eeba3552ff9495ce786e71696d8f9841d29baf8"
+  },
+  "candidate": {
+    "model": "gpt-6-astra",
+    "reasoning_effort": "high",
+    "transport": "codex-cli-chatgpt-login-ephemeral/v1",
+    "tools": "none",
+    "isolated_passes": 2,
+    "quality_driven_retries": 0,
+    "method_visible_input": [
+      "opaque_response_id",
+      "response_text",
+      "claims"
+    ],
+    "prompt": {
+      "path": "research/explanation_fidelity/prompts/evidence-calibration-claim-role-v2r2-development.md",
+      "raw_sha256": "a3407995cf8fe788b2e1f0fe70e645ce05ff5f45b22dbba10207d8aaf975e5b1"
+    },
+    "return_schema": {
+      "path": "research/explanation_fidelity/schemas/evidence-calibration-claim-role-return-v2-development.schema.json",
+      "raw_sha256": "fb4a1caf006fb1f31ea9c687fdbf4d4bad762de11b8e26bc803560e15eb56712"
+    },
+    "runner": {
+      "path": "analysis/run_evidence_calibration_claim_role_v2r2_qualification.py",
+      "raw_sha256": "7bfa14eecf1aaa3b378a0f514d8a7c2dbfbffda432a8202dc49217c163f9295a"
+    }
+  },
+  "pre_call_gate": "Transport readiness must report READY_FOR_SCHEMA_CANARY on a network-enabled host. A separate non-study structured schema canary must complete with a retained structurally valid return before either qualification pass.",
+  "heldout_gates": {
+    "heldout_case_count": 20,
+    "both_isolated_passes_must_individually_pass": true,
+    "exact_stance_kind_polarity_per_atomic_claim_per_pass": true,
+    "zero_missing_extra_or_reordered_claim_ids_per_pass": true,
+    "zero_unresolved_roles_per_pass": true,
+    "independent_project_semantic_review_required": true
+  },
+  "failure_policy": "Retain failed calls, interrupted intents, and poor outputs without retry or resampling. A reference defect invalidates this qualification and requires a fresh held-out suite before further role-model calls.",
+  "endpoint_mapping_frozen": false,
+  "pilot_role_annotation_authorized": false,
+  "independent_episode_n": 0,
+  "confirmatory_alpha_consumed": 0.0
+}

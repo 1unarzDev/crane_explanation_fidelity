@@ -277,3 +277,10 @@ the findings and placed repairs in separate uncalled `v2r2` suite/prompt files, 
 reviewed v2 inputs immutable. `manifests/annotation/evidence-calibration-claim-role-v2-reference-review-adjudication.json`
 binds the raw calls and the exact repairs. V2r2 still needs final pre-call review, freeze, and
 two isolated classifier qualification passes; no pilot role labels or B2/B4 effect exist.
+
+The v2r2 reference has now passed a final hash-bound pre-call project review and a separate
+synthetic measurement-task freeze. The exact `gpt-6-astra` high-effort, no-tool canary and two
+isolated 24-case passes are governed by
+`research/explanation_fidelity/experiment_configs/prospective/evidence-calibration-claim-role-v2r2-freeze.json`.
+The offline freeze audit and no-retry runner tests pass. These calls have not yet run at this
+checkpoint; endpoint mapping and P11 remain closed.
