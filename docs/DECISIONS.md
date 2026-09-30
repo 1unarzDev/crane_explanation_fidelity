@@ -4101,3 +4101,28 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   conditions; alpha, quarantine and confirmation/replication N are unchanged. Actual capacity,
   harness/tool enforcement, fresh five-method outputs and qualified measurement remain open;
   required secondary comparisons, episode effects/intervals and corrected p-values are preserved.
+
+
+## 2026-09-30 — verify full inspected-cohort method preparation and staging offline
+
+- **Cohort:** reconstruct all original sixteen inspected episodes, including retained B2 technical
+  failures, with unchanged 6/6/2/2 quotas and sixty aligned conditions. All source packet hashes
+  reproduce; all 120 prior B0/B1 request hashes are identical. No old answer or cache is accessed,
+  rescored, excluded or rewritten.
+- **Integration:** derive facts through existing visible requirement evaluation and diagnosis,
+  reuse the historical maximal-node plan rule and discrepancy number/interval bindings, and
+  validate each aligned plan. Prepare 240 B0/B1/B3/B4 requests and stage 300 B0–B4 workspaces;
+  exact B2/B3/B4 source/tool/evidence file parity holds. Persist only input hashes/counts/byte
+  sizes, not answers, realized text, labels, coverage or episode effects.
+- **Remaining scope:** B2 complete request and permitted computation/tool surface remain unbound;
+  staging does not establish harness confinement. Maximum prompt sizes are 554254/809592/866915/
+  866602 bytes for B0/B1/B3/B4. Exact tokenizer/provider capacity and complete overhead/reserves
+  remain unresolved; no truncation or condition omission is authorized. Input integration is not
+  a model-backed pilot or new validation of diagnostic thresholds/predicates.
+- **Verification/governance:** five integration tests, fifteen workspace, fourteen B4 interface and
+  two readiness checks pass. Family checks preserve E3 discrepancy/recovery and E2 nominal
+  non-trigger boundaries; missing odometry never licenses deeper claims. No model, annotation,
+  key join, physical acquisition or alpha spending occurs. The failed combined support canary
+  and unlaunched C remain unchanged. P11 retains nineteen open conditions with no hash mismatch;
+  confirmation/replication N remain zero. Qualified measurement and fresh comparative outputs
+  remain required, including all prospective secondary episode effects/intervals/corrected p-values.

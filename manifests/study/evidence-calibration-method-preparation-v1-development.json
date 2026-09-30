@@ -1,0 +1,3361 @@
+{
+  "schema": "crane-method-preparation-integration/v1-development",
+  "recorded_date": "2026-09-30",
+  "status": "FULL_INSPECTED_COHORT_INPUTS_STAGED_EXECUTION_UNBOUND",
+  "bindings": [
+    {
+      "path": "analysis/audit_evidence_calibration_method_preparation.py",
+      "raw_sha256": "4140c3d77c2120d63d6070c5e16b3f26b484bf1d0325f391651f7b88b26f4a9b"
+    },
+    {
+      "path": "tests/test_evidence_calibration_method_preparation.py",
+      "raw_sha256": "a285dbd96a8b021b56adfda7065b65b639d71bfdd05a1674dce6ddc259118b22"
+    },
+    {
+      "path": "manifests/study/evidence-calibration-five-method-packet-candidate-v1-development.json",
+      "raw_sha256": "bb986627a2ade8d5cb0b34500d7cd7805e45fa8b11c3d984e253d25a48ab0119"
+    },
+    {
+      "path": "manifests/study/evidence-calibration-baseline-requests-v1-development.json",
+      "raw_sha256": "b4c65c191cb1d972e6500b2659224bb8d782e1101b3552cb8c6222a39c57fae1"
+    },
+    {
+      "path": "analysis/evaluate_command_motion_requirements.py",
+      "raw_sha256": "44749faa803a34f4b7a3232158d8af7a902d9ab4c00f90c21262530ede3458ba"
+    },
+    {
+      "path": "analysis/maximal_supported_diagnosis.py",
+      "raw_sha256": "1784960164122a3a4eb563d295d552b74cb2f7c87985fa4054bd0ca23ce61814"
+    },
+    {
+      "path": "analysis/validate_evidence_calibration_pilot_inputs.py",
+      "raw_sha256": "102f180e8b88f054aacac4e452d9f95f6c8b49bf9db474908bee27ea36fa3b49"
+    },
+    {
+      "path": "configs/evidence_calibration_claim_contracts_v2_development.json",
+      "raw_sha256": "3ff03b682e8a2c7363ab8d94d76bdc90f6a3c06ef09307ae1feb6a9ab7e02368"
+    },
+    {
+      "path": "analysis/prepare_evidence_calibration_baselines.py",
+      "raw_sha256": "6545c11eb136ac5bde5e0998e88e9260dd5d6d690a7fac0715f0485d75ef76d6"
+    },
+    {
+      "path": "analysis/prepare_evidence_calibration_b3_ordinary.py",
+      "raw_sha256": "62421e0cd153f74ce8a870f47d90b6580b8cb9a9d3288d3d72322fc59f419556"
+    },
+    {
+      "path": "analysis/prepare_evidence_calibration_b4_candidate.py",
+      "raw_sha256": "82ba9aabbe0a52574577441de86b297dd8ed9f803ea98d3037ca5adc82ba9cab"
+    },
+    {
+      "path": "analysis/stage_evidence_calibration_workspace.py",
+      "raw_sha256": "3044778ac6f6de74b80884a8b5e777d7cea9e9e42cea56e20bde7999954a7d0b"
+    },
+    {
+      "path": "research/explanation_fidelity/prompts/evidence_calibration_baseline_ordinary_development_v1.txt",
+      "raw_sha256": "e8b7bbea2feebe43d70b372463e317295157ab8296af9e56ca7ab3e3eb6d10e9"
+    },
+    {
+      "path": "research/explanation_fidelity/prompts/evidence_calibration_b3_ordinary_development_v1.txt",
+      "raw_sha256": "7305f4c1de4c4eb13ceaece64de166442e454d9a1759a2b5ac97ffdcf2cc7814"
+    },
+    {
+      "path": "research/explanation_fidelity/prompts/evidence_calibration_b4_candidate_development_v1.txt",
+      "raw_sha256": "a83daf89c3004738e2808e0f0d1b6f08e309cb5de76c2ce75b29e7a4b718f9d0"
+    },
+    {
+      "path": "analysis/realize_evidence_calibrated_explanation_v2.py",
+      "raw_sha256": "7c40fa0f2c7baf78d3d063733c9161845a03ae8fcaac12f72342eeb8b00b2e50"
+    },
+    {
+      "path": "docs/METHOD_PREPARATION_INTEGRATION_2026-09-30.md",
+      "raw_sha256": "13927660da0f541242707b020f8cdc1b38849ab8207f99f07f9a0d68c2b72bd9"
+    },
+    {
+      "path": "manifests/operations/evidence-calibration-combined-support-canary-disposition-v1.json",
+      "raw_sha256": "355dd15cc1a3792cb16cfab1bbdb2e43a61f8a9c2c3df662549502da28372b26"
+    }
+  ],
+  "inspected_development_episode_count": 16,
+  "within_episode_condition_count": 60,
+  "prepared_request_count": 240,
+  "staged_workspace_count": 300,
+  "prepared_methods": [
+    "B0",
+    "B1",
+    "B3",
+    "B4"
+  ],
+  "b2_complete_request_bound": false,
+  "harness_confinement_verified": false,
+  "token_capacity_status": "UNVERIFIED_NO_TRUNCATION_AUTHORIZED",
+  "prompt_utf8_byte_ranges": {
+    "B0": {
+      "minimum": 1538,
+      "maximum": 554254
+    },
+    "B1": {
+      "minimum": 1560,
+      "maximum": 809592
+    },
+    "B3": {
+      "minimum": 3726,
+      "maximum": 866915
+    },
+    "B4": {
+      "minimum": 3186,
+      "maximum": 866602
+    }
+  },
+  "conditions": [
+    {
+      "source_run_id": "cm-land-conf-042",
+      "configuration_id": "cm-land-conf-cluster-042",
+      "family": "persistent_command_motion_discrepancy",
+      "condition_id": "cm-land-conf-042-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "facts_sha256": "222c91e250ad04d6a294d1a10deadb67f6efc65823cf28265aab771eb1a86897",
+      "diagnostic_result_sha256": "e1c08b52b48a770ff3a8744ee9ca82b3b1a4438610498977e5ac803eba8e1012",
+      "plan_sha256": "f0dcf9c5b87229fb3356f9b17e7801b0fe434f97f3e2987bf1567d6824102466",
+      "requests": {
+        "B0": {
+          "request_sha256": "df0cca298ddd68dd172f969db681ff332ff17769e5373937c18ec95a22f822b8",
+          "prompt_utf8_bytes": 1538,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "a9331dd67005a7c4a91615365e5ef1730eabfb146e956dc3204308abae261f02",
+          "prompt_utf8_bytes": 1560,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "7458612424dff73217ef7e241e8296a12423e670b9510e12501c3fa7603750f1",
+          "prompt_utf8_bytes": 3726,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "89d22adc423b09f349bdcf3b9e394d3be1dc7552cebe3b9cecfc3a768d8351c5",
+          "prompt_utf8_bytes": 3186,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "e0cd5b2d78fb66313fe7f56595c5e739638ab91e7fa249101ca0aadb8ff223e5",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "fcdf47f5016ceaa11969088f3687f8f600ec029b0a1f7c53fef4570c6adf7f15",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "9430034aa5f90625bc66cbcd7a8d0954fe9a90ff4378dd17664b0949572f8ea2",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "9e2dab3de121f3715cbf6da09af17bcd80ee96660f73153e546fd379ddff6558",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "080e188738210f9178dc848e542804900de075469f9cede95bf2dbb1af0df3d0",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-042",
+      "configuration_id": "cm-land-conf-cluster-042",
+      "family": "persistent_command_motion_discrepancy",
+      "condition_id": "cm-land-conf-042-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "facts_sha256": "413824bb8efaa4d8c7a5f879d1961ea9d09899baef7246685b8ed8e81c4e3043",
+      "diagnostic_result_sha256": "a629244dbf6549f795e13cd3fa12c08e9e7b8a5589e128d10213606e93acb220",
+      "plan_sha256": "dcb8d35ffbf28e5e9c7512d29187651e0eeda534065176661c49549ef36c1143",
+      "requests": {
+        "B0": {
+          "request_sha256": "5e75fdb907c2712f4d3a54a4473f34cf5a38d493382d7591860e1a95388a5fc4",
+          "prompt_utf8_bytes": 2423,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "0f7beceb9a6bb682b1481b6ecc67159a4e90f32b8631d845465ac0164399ae09",
+          "prompt_utf8_bytes": 2611,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "64699df700fdab7c18a453ca3a31e9215204bc7787c48859098d0534e7e4df1a",
+          "prompt_utf8_bytes": 5164,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "984df1b7beff5b87b778db6c3b99037197c0884790dd00a5485c56eb8a96789f",
+          "prompt_utf8_bytes": 4668,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "679f506e6d29abcfa080a31345766e8b77f7ccda6f9971af9cbd21e51e5e1012",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "0f47e115096118530959c33cb20e40d73e78e0079353e16660f503a8211fdfa2",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "125350ac959ccfc3ee0085abfa56a1ad048b78d2ad55130bc32c4a19ffbd2fe1",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "9197b299ab467cc41de98a79f5d37f58f3756fdc99af541e3910f7b5e3c77faf",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "5ea8441830de1443198c8f2751b3d541c80eab0d5289177d66092043b6bc9564",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-042",
+      "configuration_id": "cm-land-conf-cluster-042",
+      "family": "persistent_command_motion_discrepancy",
+      "condition_id": "cm-land-conf-042-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "facts_sha256": "00879dceff8b4829b3a46fc637770a3d7d56e3686412c709ebaff66c7049707e",
+      "diagnostic_result_sha256": "3f9689147acfbeef113e144e9baaf750fcdc11bd9eff381202d31af2fa58ff3b",
+      "plan_sha256": "2abbcdfc90e47590739fe7c8cbe29fdf3fc57c1024b43e4ec695455e4411dc03",
+      "requests": {
+        "B0": {
+          "request_sha256": "6e145fec27fe14511686e0d7e152e016b66425b9477bd55d2759036e42c6606c",
+          "prompt_utf8_bytes": 46823,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "6173f1df32762dde77aed126ba8eec103f660baf22dcb0d3813e24b95506db3f",
+          "prompt_utf8_bytes": 69883,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "35b791448cc0836a4c554da71dcd36912bd5ea58884ea4e13d9cc4c05e4a9e91",
+          "prompt_utf8_bytes": 77335,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "e7893c251b756306beed08cf8b5f5b3a5253ba8542067c2f0cb49aa3de590b53",
+          "prompt_utf8_bytes": 76839,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "c262cee553f49c80b7640e12b7535b79f661d4f83b22cc6d17ebe98b235f2835",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "79f186c1cd43f1f04ea73a0c9279bd01dc0236b23c67b796551b51fb16ed689a",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "81f14e3c0f666e176cd2959e8e120754e5fc674c9235e28f245a279868db0fbf",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "a78268537fc7a5230e5910dfff0e9d4e821062687083c7054ffa05f7a8319782",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "c83a7268167fa02ab17d781d65f9ffcd73c7ef0c1665323834c2a6b60d4db57e",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-042",
+      "configuration_id": "cm-land-conf-cluster-042",
+      "family": "persistent_command_motion_discrepancy",
+      "condition_id": "cm-land-conf-042-worker-0-five-method-aligned-v1-E3",
+      "level_index": 3,
+      "facts_sha256": "e0058a3653490532bbfa36c6458179e268aaea60d8066e81ece77b98cbbf195e",
+      "diagnostic_result_sha256": "087f698751aca13b1c1eade0334b09378be1a2660b99f96da25f2c3c00e0cea2",
+      "plan_sha256": "6a532015bd840b86b78123e35550ab4be078d18962470bc52a0d904648075f56",
+      "requests": {
+        "B0": {
+          "request_sha256": "63879ac336b18fa772ba565d8784ee9a4c175e5b906cc24b0934203810b9d534",
+          "prompt_utf8_bytes": 277621,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "0b1c6fe3debdccfdf1783c9551afd367332965ce258a05741b955d62de39e288",
+          "prompt_utf8_bytes": 413527,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "d4c36d5e0aeb4a734c80d485b1e0df0d3b9314021f763e4220b7af7a1eed5af3",
+          "prompt_utf8_bytes": 445558,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "22206911c461f633dbe7a670dc8cc30e3aeffe23e592df06e6b1397839275bec",
+          "prompt_utf8_bytes": 445180,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "8660e138feb6a9dcca318a9a5a447f360f69cc295fd0de32dd2c8edd99982f71",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "1b77dff34a5592adbdd54460116227542c0e136d4dc2bc5144e41db0109aeb85",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "4697908e93cb29266f556f36cce194febdee61d5dc9d2d6f83e603616918a453",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "87db4bfd8e0c1477e63ac4abb3e4af3a8767408d62f19a43e673da5f820f1e52",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "0a334437b260e60fb42ce1276e06bbd7e2d57076971f112d330f6fa5cbc200fc",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-045",
+      "configuration_id": "cm-land-conf-cluster-045",
+      "family": "persistent_command_motion_discrepancy",
+      "condition_id": "cm-land-conf-045-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "facts_sha256": "6749af1cd9e80c1c274728ace0dd8ad3f44929c517ca8ba13354c817af6b54c6",
+      "diagnostic_result_sha256": "bdcdc201c40f4f18d669bac9ea10fe8ba3a80c456e08a1eeb69a4b21a85c49d0",
+      "plan_sha256": "f0a5f315ce980b1534dcbca67aa3d82ac676d01115f68345d843f2c20b1d0950",
+      "requests": {
+        "B0": {
+          "request_sha256": "4f57d9afe67a31860f79654f7ac2aa847d439c102d582eb768a27c2d38fa52ad",
+          "prompt_utf8_bytes": 1538,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "bbb4d7f32f52e0cdb6b37f5bd1a46c4c5398f41a5221845444d6371f5e84dd0e",
+          "prompt_utf8_bytes": 1560,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "e317a2ffb7603144f4f7c64d1f03ba4027f9434fadd73ec590e378c33105270b",
+          "prompt_utf8_bytes": 3726,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "f6dcc44c5d46cc52279ee3c58e0eb52ca3b9167a864af476b9d766f905dfccfa",
+          "prompt_utf8_bytes": 3186,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "af825e856cf3425b82a09ea7a523455d9b973df08e3f99e75c387e12dd9bcbfb",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "b703bdae91b3812f364711fda3095f20d9034ad4e0b7ae04d9ebc6dc98faa43a",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "e6789c5d3a21ef014534a07dfc870f3fed565d00fa37deb6d0b1a8929589aa45",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "9d972b19a05cc4383f745d50d525e46ccc70ceb0e26a24c54adc7f64443bd7e7",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "f5f41ececa698261c8462c52589247a34f62484eb29f0759ba835922e7859edf",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-045",
+      "configuration_id": "cm-land-conf-cluster-045",
+      "family": "persistent_command_motion_discrepancy",
+      "condition_id": "cm-land-conf-045-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "facts_sha256": "ae33fad3239bee5ece842256abddd6bc540027660dc33fa05c526bcf1f999486",
+      "diagnostic_result_sha256": "baf2a386c9a27171f0de2804e9ec775edebcd81d166bdf1dc6b048378c0964f8",
+      "plan_sha256": "a476d28c0f6c87d181dcb5bc01791959b5d0fe75791591ead004e1598608c9f9",
+      "requests": {
+        "B0": {
+          "request_sha256": "8ce3d370b8acce8cbf151e099150f3f787ae3cb2131bb664da406aa09ddceeef",
+          "prompt_utf8_bytes": 2423,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "6b71d32058f85c297dd1c115eb63411b73d9f8f980ef5939f0b9c1cb1bcc239f",
+          "prompt_utf8_bytes": 2611,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "6c395a18237beb7225c8b337e98ce19c384fa60930b217bd0de08fbe6d820ca5",
+          "prompt_utf8_bytes": 5164,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "4cecaadbe38ddd9e594b01a36ab668a71c39e6e9639dceda796fd2aea1a1439d",
+          "prompt_utf8_bytes": 4668,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "db244307a4e4f91657bf132e3078a3fba185fa8797379307a0807d0aea016113",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "f741374ee41852c437ae0f792db9b77f1349beb4c95cbc8b1cc55381d17b022c",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "439c5827c33775fb837e2239b3432b6c9b7844114be0c0216481cd0414edce06",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "ab06833dd11c57bfc07c7bab0be7b125bd1eb719727245287d4cebe92a815891",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "84b95fdb5c707739cc1b0a33124d9bfa62661ad9c5bb664677e733349fac8523",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-045",
+      "configuration_id": "cm-land-conf-cluster-045",
+      "family": "persistent_command_motion_discrepancy",
+      "condition_id": "cm-land-conf-045-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "facts_sha256": "793b87b92ebad571c4396b4d7c1d1475aa997264ba478ccf2d81f48cd0b1ad08",
+      "diagnostic_result_sha256": "70cb50c18e1bda9886ab5b8360c2f0016031a5c78f8564d48b58f22af8d4a21a",
+      "plan_sha256": "08f96a684a3d1c769ff9c06345e12694ec8ac7a5563d8faa55bf646dd58144f3",
+      "requests": {
+        "B0": {
+          "request_sha256": "fbd674bfccaa4df2cf9f878316186403c0ece17ca8d6d8efa54ce515bc53d284",
+          "prompt_utf8_bytes": 39793,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "c630f7655e08a47afea42f43b36f43dfaa9aef509bb0f58975bf9b00330901b2",
+          "prompt_utf8_bytes": 59205,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "c64a5714099a2967dd45807715421e3be37ceaea350d49dbad3e635e0daec08f",
+          "prompt_utf8_bytes": 65897,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "effca4796887fca8d0734ed1985ca44507fc9b7246ea102211cc46ec8ef79246",
+          "prompt_utf8_bytes": 65401,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "7c5b6b5231cce8f0264e43ce3e4dc1c21356e8ad3174f28ce6f8644357fa575c",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "c774d9f95504dada69547d4b6ec0e5c7d1e921f8d7053c56512e66cd633ab568",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "3ab05697825e1bda34d9c30afa955951e903b9da20e6890beca2dc9c5a8c00ae",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "0a2aa0d30b886ddfb78601b39c1b5f09d0e838f6312b990b999cc0ee81c35367",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "d5fbdbf385700957db0343f0fdd3ba70a2e12d72520cca89b9e775012e590977",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-045",
+      "configuration_id": "cm-land-conf-cluster-045",
+      "family": "persistent_command_motion_discrepancy",
+      "condition_id": "cm-land-conf-045-worker-0-five-method-aligned-v1-E3",
+      "level_index": 3,
+      "facts_sha256": "09268aa646f687da90983acec948698e86528e24ac1cd693c12d595bf2ec3c03",
+      "diagnostic_result_sha256": "0b709b9a1d94c60cb2d450db9fde711467e121b5e9ded37055138d1bf6ca880f",
+      "plan_sha256": "abf877537fba5e7511aa57ee2ac2538b5ef82a9953cd409aec7071ed2c7cb103",
+      "requests": {
+        "B0": {
+          "request_sha256": "9c079989c88787cdbc91f254882095e1de68ba576d72948f85f6a05fa742ffa2",
+          "prompt_utf8_bytes": 228182,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "375101076eba00d8451415f0d7f1f66effd6d2ae8607f7599ec7af7c3ae540a0",
+          "prompt_utf8_bytes": 341336,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "50daace6d8431a656a44134042c386193371b1eb82f4681e57126a4c72f82427",
+          "prompt_utf8_bytes": 368626,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "23f4e1dbcdc22717dd79e3e07cb0234dd7be39d712227f5e0ade9b278279ac6c",
+          "prompt_utf8_bytes": 368248,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "c1d95600c8b52d5c16bec5a68635c9de843a36938d2b2f68a90ea01fea119c83",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "3ba58a488fd34e1a306a0004b675e0de0dd1e9fd3def4c6dd759a506836b0cc6",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "eaa6f01c8b21fa4a7aee28095e6c724c7a80077d0f7bda19b2153fc142e0ee69",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "09ed1f3e1ddc0a920c112364646bb6d59244fd0fcad50c0c05e98472d5f083c8",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "09b113443f0f23228fd4301824acbf6a309e81cfde25d5f2777c1787db91b268",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-046",
+      "configuration_id": "cm-land-conf-cluster-046",
+      "family": "persistent_command_motion_discrepancy",
+      "condition_id": "cm-land-conf-046-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "facts_sha256": "22e7093c0dc7636a1406ccb851035d6936103a48fbc05d15f6bf518698f8f4f5",
+      "diagnostic_result_sha256": "04c6052849b5e107fa9664c24fa316586c2bb5354a303ce1257d36dd0bbd7b4a",
+      "plan_sha256": "b771b70def3f9af053f92d9e351d1917ff420453d24c676eebe35e9e226d3f50",
+      "requests": {
+        "B0": {
+          "request_sha256": "fbbae52b00697f7057e32b6dcd446d3bcfaf71eafcd0bd5cbaf727b2186298c4",
+          "prompt_utf8_bytes": 1538,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "128f8e4ad322f3e70529c6a7f9c33e6d9274be38ee5666a3c306932f1c2d8007",
+          "prompt_utf8_bytes": 1560,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "8f30835516226eafaad50acdb08bfd424e85843a7c5e0f111c520395ca1c40d2",
+          "prompt_utf8_bytes": 3726,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "e910eef814104e8332bbd5fd114fedd5caaea43c4081b744bb649902b951eb4f",
+          "prompt_utf8_bytes": 3186,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "e88b0da95c0146f147b465ffc0d101dc97b90234f2d06a86a964b676e8114e57",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "3302e1b04c6dfa560a7feb17e16dfb3d9bdb0efb8156652eaef9661c41ddfdac",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "bb11ba2772f3ec55e8278f9022a039a2b0ff284d8b4b4f1e06e70fffb58a198f",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "efc70373f0dc0a94933989465d0aa73da0845438e09e9f6e9677d473ac39f8a2",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "aab4d332c2863d3f2995676d00788b917a1ed775028ead8d3dba4841679d3d17",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-046",
+      "configuration_id": "cm-land-conf-cluster-046",
+      "family": "persistent_command_motion_discrepancy",
+      "condition_id": "cm-land-conf-046-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "facts_sha256": "d943c882d05499d943ae0c260a68234ec9ef324db4157169a852825d6fd36e8c",
+      "diagnostic_result_sha256": "0288d1e09c42599dfa0299f823cfd52d165427b888755efdbceeb0ad1696d17f",
+      "plan_sha256": "2ee70a4de9bd98325c8a8da17f84527f902dcd4d364db87cc8d7da3d9620555d",
+      "requests": {
+        "B0": {
+          "request_sha256": "00884a8aad81a3f7efed9aa817760e39276cb74121c04218a07b3f7b6ceda70d",
+          "prompt_utf8_bytes": 2423,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "f79b66cc098dfc9221cac86bd7279a86bd1dd3d82c9b445a933ef6126af78c91",
+          "prompt_utf8_bytes": 2611,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "a8c89b25b9b02845b3add909a13bb8ea5292349f903dcdd7545453e275062d42",
+          "prompt_utf8_bytes": 5164,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "9119e2b33a1dcfbf7f7f21889e896177ffa4410a7c759886956a4478a3a5ef6d",
+          "prompt_utf8_bytes": 4668,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "2122b90464f0ec22e11f94b0dc0724ab29e38e21a9173a07e1c3065f12def436",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "5eb9e5a5bb2f8f636bd916a094b3d17c4839056453b33ad0b8196991daebdd84",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "b3443ea5b2e0dabae8133fcefb18d751202605ca60cd85e7b19087fc0d17e3a3",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "f03f8a899f449c8bba2263f596ceb4c4d062b0f6cf1058805d54c5414547e13a",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "46b20a8320c8ae9e3be84b6614a39fa417e59d40a16b24eee9de5dfff3761211",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-046",
+      "configuration_id": "cm-land-conf-cluster-046",
+      "family": "persistent_command_motion_discrepancy",
+      "condition_id": "cm-land-conf-046-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "facts_sha256": "d0f1f651b290063586d175018a859ba5895f349b1bc3da829a2735149ea22dfa",
+      "diagnostic_result_sha256": "bd687f54f682c35c4bdd386174bc0c14982995dfba3afa9e45c4d247b5c88a3e",
+      "plan_sha256": "0c662351307be9e3694c9a1874352fd932a69d9a26bc1232b0a948512a75279f",
+      "requests": {
+        "B0": {
+          "request_sha256": "0eb6e5aee6e66780862937455bdc7c1be6ea3a0e52d136f1d2ec8947d3fc88c1",
+          "prompt_utf8_bytes": 41358,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "70de0c2897ee33e7f2f139bf8c9b360d821a0984dd6dc25e3bde2f990fe2fb65",
+          "prompt_utf8_bytes": 61586,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "6ab911cc921d765d7dd5852b2e86729b07eb0a949a73b36afdd38205cc5b1697",
+          "prompt_utf8_bytes": 68448,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "4a8d41a19097d218bc349a83800c8d21fad6f3642bb0ad59018eaf5ed5c87bed",
+          "prompt_utf8_bytes": 67952,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "469a21d69f654ba9b36653e28fe0f6d659d79e1ef1f52f6fb80f0a38d32d24aa",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "f31f0f165e20e047a59ceb72b2253a95f64edaa6ae120734749807b319f66e58",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "1baf5999de6e931b344e8737934fd892b7607b4f804301764b47572af1809dde",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "fe74dd27ba7531ee0ebf98fadd6bf8da09a7e4dae6aca8b5686b6e1105443997",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "a485253beb1649ccb510566efd3539c139276882aa3ee9d4ae558c80bbff4af3",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-046",
+      "configuration_id": "cm-land-conf-cluster-046",
+      "family": "persistent_command_motion_discrepancy",
+      "condition_id": "cm-land-conf-046-worker-0-five-method-aligned-v1-E3",
+      "level_index": 3,
+      "facts_sha256": "948dc5d8a7963404011c34ad57a495037371ad3b6cb23a87618246418c334737",
+      "diagnostic_result_sha256": "26a609f998dd6b570d44e20ef63d8ff705847a3a4dfda17440a094daffc401ee",
+      "plan_sha256": "8abbe3c4aeb63494e20ad62ab3026defa3c0191083bbb3315e06aa75603bce57",
+      "requests": {
+        "B0": {
+          "request_sha256": "e8627d2acb6576a1ca528a9b96b3edfa1424f13a02808aa5354b46961e43d385",
+          "prompt_utf8_bytes": 234986,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "5cdffb8de3a5bc97aa2fb7e05f7b0baba9accc8c7e9cfd243cf989f1b71aa05c",
+          "prompt_utf8_bytes": 351020,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "890d163fdc5075d309b06d1d29cbe32545247ae723265cc6845f05d1f47f2a30",
+          "prompt_utf8_bytes": 378911,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "e27a8ac2bc72b804fe61e09e0e9d68d6abbe5b46b99f2a3c25f608fdf124147b",
+          "prompt_utf8_bytes": 378533,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "bde34a5a1b1fb4df737bf7ea5676f540a5e43ec4993abc5137c1d3cf9e2734ef",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "2354e2f29b51d32644042ba573740d03852ba7e4cc3c9d60449c433d43624676",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "9befecd7ffe8b2c46d4ffb03ac23b4de15c0b1735e9270c9a5a1a2e266d05163",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "80d70799dfdec4ce98af922d217298e1e52b4007142b29d7b78c8e6ffc4c8e42",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "58fd38aac9acdc84bf72b21375f350232e824c774c6437b70b329f8e964f683a",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-056",
+      "configuration_id": "cm-land-conf-cluster-056",
+      "family": "persistent_command_motion_discrepancy",
+      "condition_id": "cm-land-conf-056-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "facts_sha256": "07f33121f633c64ed451304413449e1d8d52f9d80dd3b6436f6209a7c3bfe22d",
+      "diagnostic_result_sha256": "cbb0309b882b4d667139bd09eea1438b07f215298d34b54f428f7a88cdf33cfb",
+      "plan_sha256": "c86741e08cdd630ef8082f26616a4e6635563e30ab3820c78fa4952bf18593d8",
+      "requests": {
+        "B0": {
+          "request_sha256": "5fe2067a127605e5765f5d4d95f0479da2075de46296ea71b87eacfe3ae3e9a0",
+          "prompt_utf8_bytes": 1538,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "7716615344bc8e0ff3d39ac68d8526ccdc5c02c5c381acad03a470a6bb752f38",
+          "prompt_utf8_bytes": 1560,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "d981f2b5678316243451f309c3a61a265592a49e39ce7aa562c28ab3bb94eb80",
+          "prompt_utf8_bytes": 3726,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "c0ad056c8c137553cef57feb418e1c38f5d68835cee007f9c07fb9b5998cd977",
+          "prompt_utf8_bytes": 3186,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "977c51fb9983b6d0686e6cd4b0113b38fc4bcf601fb40e5c2f4596969a73c01b",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "3c745ede2d7000bf41a81addfdc3ab6200beecda5118a1f8222fbe9b3f23f461",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "539266a497a53cd5050aceea7a7d499396ccc098946393c5b5c32dd3e6bde6df",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "c4ce36e7d765cc9493cd84520948d4585937546fda18427c7cfcca356f4c9054",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "09f0a2bb59e9592111b9670c0f77e1f89def161ceed36ed216da19be475c90e5",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-056",
+      "configuration_id": "cm-land-conf-cluster-056",
+      "family": "persistent_command_motion_discrepancy",
+      "condition_id": "cm-land-conf-056-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "facts_sha256": "3b763bd36c1725962c89375cd338302fcac2a89697702c1fbe8cfeeac00208b3",
+      "diagnostic_result_sha256": "22bc7117af4dc84a9a5f0bd7aa860e875c0cd99fc0f5ad9e52528a8502e8dc8f",
+      "plan_sha256": "9654cfba29b3684ef2c3229a370bb3bb81bf28eafcc233acab55165a445fb4c7",
+      "requests": {
+        "B0": {
+          "request_sha256": "7da30c8417c76deff58e3df3633c20acf2903e8153faf884db4ca071cdf509b2",
+          "prompt_utf8_bytes": 2423,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "6c7a0d96f3bc86a70f77df33f2dacc759ef18841d2d4ae36982ee4b9e52df9e4",
+          "prompt_utf8_bytes": 2611,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "d76ab4983b72c4a68b2a469d5397b08df31e6bf5673ad0e2ab93f851d30d1019",
+          "prompt_utf8_bytes": 5164,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "a877f1c56a3c7100d0541d08bc5f35f0da7963839c1e7648118299d2b5c770d8",
+          "prompt_utf8_bytes": 4668,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "02a722c0ff7dbba9d8422f8ce613a6c60e90e6681d4d80e8dcc99f86f5c41243",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "9fec5f7713d11133cce4670ab624404503df8ce7aa7e91988c3c515d41c84837",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "7b83aad8de688aec51e01fadc0315ff41239f545c2b6e1a44cfae8408961c1e3",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "a25b40925efc10387ee3f99fa6e2bb034a6893387a3ab309dfdee6333de80d1d",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "346fcd6e3b3e3e6a980e658f8498d3ab2c157169fb98f18926e73469b24d0974",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-056",
+      "configuration_id": "cm-land-conf-cluster-056",
+      "family": "persistent_command_motion_discrepancy",
+      "condition_id": "cm-land-conf-056-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "facts_sha256": "ad1d0937f3ff21fe2af03ec223183c7a59addaf1cfdacdceb33c5d32fe90e15a",
+      "diagnostic_result_sha256": "a466624883d64cf5048f1a12c61a9f455fe4345d3699f6b5c23f4ae6aa260948",
+      "plan_sha256": "83a23d096e9d26076243974cde3fabd421401b7e8ff1d41acadcd8643d3c889b",
+      "requests": {
+        "B0": {
+          "request_sha256": "aa4ce09e9c4cb8ea55d69e1fa3b1f176da23435fabe0ab99b9c28f0150ca8e44",
+          "prompt_utf8_bytes": 41533,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "dedec2e25877f99551dce46d01406572a08d25164fcf8722d65dc1f91b093293",
+          "prompt_utf8_bytes": 61857,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "6637541d03ae6fea448aa87337b47b61058472cf1436293554a0ae0f4768f522",
+          "prompt_utf8_bytes": 68739,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "dc3dd8eb54a3f8dbb0abc2676ce7938c7fef4bb45d07245fda0352660c49df35",
+          "prompt_utf8_bytes": 68243,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "3855fdde57773458de078e1a53f969ee506d949fdd94b07da999127ba60586d0",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "7b267cc50b145e5f2ed7195020c4fce7a0ee5a2de6836a417ad24ad0ae51aea1",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "5a69c51ad798ffa0cc12406a6ea1ca45009c342f2ec9a39064b67c10e14fd12f",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "070bf085cde927e8dfded0cf52d517c8333d2b13cea75f0d27bd476402e84461",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "c6526bb484ae79ef8db0c0fb46188448a7e83928dcda01774d0267bdec6138b1",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-056",
+      "configuration_id": "cm-land-conf-cluster-056",
+      "family": "persistent_command_motion_discrepancy",
+      "condition_id": "cm-land-conf-056-worker-0-five-method-aligned-v1-E3",
+      "level_index": 3,
+      "facts_sha256": "3db0c6a9e6f48bd63d282cac8e4e75808f73fa2671cb954f01240174d3862301",
+      "diagnostic_result_sha256": "53441d761bc22c6af2cfe1e79222d2c7d1aa8e2e00ea66aa52ee9cd6b6b0f8b2",
+      "plan_sha256": "85804a08269da4dac6b60b2726d7f0c1a9d352d478dc6b1ff3ab4c3a8c30ebe8",
+      "requests": {
+        "B0": {
+          "request_sha256": "36c858c836af938da18accbee0681590531f33d081d1e61d3a31a0b0c43a2fe3",
+          "prompt_utf8_bytes": 228019,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "4db7436d348f8f151c10d9007314245dc2c3c9d2e880667ffa527f05ab103bee",
+          "prompt_utf8_bytes": 340309,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "268e1ae418c0522acbb045adc38f29003e10d5854814489e1d3d2653571d28e6",
+          "prompt_utf8_bytes": 367420,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "d4862aeb30245a0dd3affc2afc821a75919eb692b51a06926f358e6192fa8061",
+          "prompt_utf8_bytes": 367042,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "29e14acf486c02d52820973b586330252d2c69a491133e8c0df97715ef212457",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "40bb060734dcff7b42a09e7cea4cd15f209d1ea10a79fdb76cd30a827511e149",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "38b2373968d7d884bbde43fe9e436ddea6fcaeebc03a681e62a7113c0d6ab553",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "03fab31047aafb66060f4ff64bdd08993ef4340be8a470735c0220babcc3ea13",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "e0c49c7e781083b42e57c5e7af21a4b66f7125d611a3dec8a2aedf32904b7b16",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-058",
+      "configuration_id": "cm-land-conf-cluster-058",
+      "family": "persistent_command_motion_discrepancy",
+      "condition_id": "cm-land-conf-058-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "facts_sha256": "ddf236c61aa63242a9a0499dca44381784c31ac43a0645f65164a4844197da56",
+      "diagnostic_result_sha256": "05aefe981551bc8c4c056cfa81f5d9da65e69328d99b164679cbe2ffbf860b3e",
+      "plan_sha256": "7bc52fd94cff12752751bc8031ad59d651eb47af88c793e2b8878be6caa66101",
+      "requests": {
+        "B0": {
+          "request_sha256": "1252c738eebde923a1c2d5623fe514a724ec04d755ace74395d08496e1034f86",
+          "prompt_utf8_bytes": 1538,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "f0ed02554c6dac1f1c07f03d8b12a932f9f372d2eb8964a61074262c490a05b8",
+          "prompt_utf8_bytes": 1560,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "4b3b7f28f5498a5edce039243840ef6e44ca71f8b766826f464f5275f3f578d4",
+          "prompt_utf8_bytes": 3726,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "2fdda85b65a2136b31408067989fe620c27637ec8c86dce765020d95062e00f1",
+          "prompt_utf8_bytes": 3186,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "513bce5b6a55ebe758c6ef5b0b3f6a2c49edb64229ba1173bb021aa3f7cf4f40",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "3b0f5186178eb4f9c9e15191c6497ad57dabfe45d70d99459c0c259b3a30d194",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "92b2048794b1b64ec39f2d580e3d3aab17bce3524eb532c04f4606862ba21c5d",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "f71d94cf02630ca2bdced10e5c08804035a7f0fc1dcb2eb8e210f8cff1050ebe",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "f478982f2e1d5f722d634e697633660e89bd1a9d8c21f64e44a4365c6ec536af",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-058",
+      "configuration_id": "cm-land-conf-cluster-058",
+      "family": "persistent_command_motion_discrepancy",
+      "condition_id": "cm-land-conf-058-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "facts_sha256": "a4682ff58f1679ce7ce5d18e60cec5fb81423777fd63a65601f14eff459a3869",
+      "diagnostic_result_sha256": "07ae2baf90e0bd4caafca6c4c1e4fc5dbddb27f316945e8bbe21230133e9e36a",
+      "plan_sha256": "10d10ac13b6cee69b75cf5de19ad1b222de0b7ca6201ab90f7ecbda8a90ab3c4",
+      "requests": {
+        "B0": {
+          "request_sha256": "9d6a79b0e8a9ece1318784e1b57f2c1faf7590e59fc08152ad9be8edf2bd3196",
+          "prompt_utf8_bytes": 2423,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "3e5aa60facc1f5e8404041c0257bdcdcd45519848f837a9939c024964b511841",
+          "prompt_utf8_bytes": 2611,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "ac432343c8c68cea1c8d404c495c82db760ae50d24701fd8c16935a5ed1c82e9",
+          "prompt_utf8_bytes": 5164,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "6641b18117d7d88d41df309824ccc8e06f683394732e38901582b4d682e0eb16",
+          "prompt_utf8_bytes": 4668,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "e8d693bc5105fadbaaa3d040c874d1a6192bc7f0d0d41511158b18d8888fe290",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "e4601ce6aafda34e342a5690f5537e6166904cade45142a6b60237d8fa1f59d6",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "d70df0cad78eec35963b1ffd31449284a72586577161889769f0bc7ad3e66e6d",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "96f4e43a407a6e2685416e148472564d9aa0871dd37d38a9f886901fcfb001d8",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "0dfe5e555683995839c701f31d8e3c29bac36e5d364e98564d6a8af1cfc54ad9",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-058",
+      "configuration_id": "cm-land-conf-cluster-058",
+      "family": "persistent_command_motion_discrepancy",
+      "condition_id": "cm-land-conf-058-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "facts_sha256": "f2d967b36a3e83a4df448f9d53982f138a5f8741bd13b71c772021a964b1cede",
+      "diagnostic_result_sha256": "2719246e6a645c19cf31412ba0b5791d72615947ef2432892817f181cdb0ed4e",
+      "plan_sha256": "8a60e07fedcbefdc3117abdb2c3c7c399c6d1942c73931b0556d1219f83e1c1a",
+      "requests": {
+        "B0": {
+          "request_sha256": "9f78e86753d5e6228d4336f3ad9f9f23b095127a9c99f8b8b08ac6146f5b2b63",
+          "prompt_utf8_bytes": 47953,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "9403351b3458eaf76c6cceb0320a4277110799bb139093ce03cd33e60b01efb7",
+          "prompt_utf8_bytes": 71589,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "fbd41f43a87e28d73b5c5a23db1031bb87a20b7c69af4cce89961a5e8427a182",
+          "prompt_utf8_bytes": 79161,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "6d8cc9e8e1de2da22bf30f8a2f657648e24ea9656ad10659976a6d3c87023595",
+          "prompt_utf8_bytes": 78665,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "e9fff5cda4d7f926ce327652e723ffe1a89942b2ac349aa346309182701c5de7",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "27452fda3d9e5ad199da4750773234131f485369c9c4f256481ca3cd1f0f4570",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "221891ace9e611f3fea468014a44902e0f34d45ea770e2ff68202323d06c2349",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "556a689c00446a26e47a9c1497323f849e34f2c8d66e1d262e11e24ebb611d69",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "3bed8eee6d334a503d97b9d63b441d5462aa98986cd2f35fb89e0e06b917d9dc",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-058",
+      "configuration_id": "cm-land-conf-cluster-058",
+      "family": "persistent_command_motion_discrepancy",
+      "condition_id": "cm-land-conf-058-worker-0-five-method-aligned-v1-E3",
+      "level_index": 3,
+      "facts_sha256": "10f155cd5c1dd5ec4074a6e760f8d6f19ba3c58e02f970bdefcd1726f10cb2f8",
+      "diagnostic_result_sha256": "6e9731726c86b979f590766880c18189cc442fff5949b971a2f84835ec7759c7",
+      "plan_sha256": "81ec733713ae39fcc635a49a1152b53e42eefc344e8bf355f8c1ec3940220ad4",
+      "requests": {
+        "B0": {
+          "request_sha256": "257ed98138cee1441fda73966cfb03be5f6de8ddd3a8d0d46a3cdea9d782b29d",
+          "prompt_utf8_bytes": 280884,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "0a53f3b4254728d1441aaf2cd1f9f3ff85901db8bfca0acd14172ee0e5bf10dc",
+          "prompt_utf8_bytes": 418278,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "020223cd7828e684777e1f12d89bcb38218a2763c631cee9e6e2e74763361fca",
+          "prompt_utf8_bytes": 450619,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "ecb25802dc111d88720b73f9cf953cdaa8f0a3db61fe343180cc4c7ee52f3f31",
+          "prompt_utf8_bytes": 450241,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "7ded09da635fd5b304cb41fb1d988f1678fa554b3b3c78b96ac1a965366474fd",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "2204a471cd6f4385f78fd68269367ca6936145047afa617baa4c1adea6e5f4bc",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "ee949b936dd6d5e045184fb6e79687cb70ffdf8ce801a94cf13c9b760bbe9fd3",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "484ff1601956b6a70d3186f7555584ab8e3b1a959b03b2aed263fbde0e0a6f55",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "056d6f7dd6e87ce652ee55c80025d39758694160910266ee6bbf7fc20ff2798a",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-060",
+      "configuration_id": "cm-land-conf-cluster-060",
+      "family": "persistent_command_motion_discrepancy",
+      "condition_id": "cm-land-conf-060-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "facts_sha256": "f4276b7f9ea6021d4265350e45b4c578491489cdd3bed0b15697341deea34093",
+      "diagnostic_result_sha256": "13b694b4579e77c4e2895afe189de82f4a1d1bb7cb159a94e2504011fa815a7b",
+      "plan_sha256": "32d95019cab726e972192a86e3d827cc762866dbed79303a92eb5f843d9a4931",
+      "requests": {
+        "B0": {
+          "request_sha256": "327b468904b932ae07656a126eeb538f5853c347660ef9377848e6fb8c77705e",
+          "prompt_utf8_bytes": 1538,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "db9ce271b853729b03e29ccd7fcc1a9493da871219e8cb7e8b419ec2badddd26",
+          "prompt_utf8_bytes": 1560,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "ac3db7b6c608dd2d5682c260d2ebc4d46c3f39a74df08b79881e8f9851eaba26",
+          "prompt_utf8_bytes": 3726,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "8f44cb98753eb35d1dfcd15fbf1aaf164114d24ff51aaa7ad73b400504313104",
+          "prompt_utf8_bytes": 3186,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "b833df2fa4dc19479f43d3480634072b83753e82a87b65d6b9a00c33a2082c77",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "d385e1334a580218b1ffb96023b5d61d04a866c63ccf84584c50e5e3160cc3d2",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "3cf8508a97b7dcba364e835558ea566e7f8f76bed0041319d65cee70324f6735",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "69b3f26032d51ff2cd8203c1c11681c0833bd285593666cd5f6ef3a5f7f127dc",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "d4ced361cf1cc59d7266ae12b51bbf6074098b3eac3173f020cc9c7c3e5aa338",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-060",
+      "configuration_id": "cm-land-conf-cluster-060",
+      "family": "persistent_command_motion_discrepancy",
+      "condition_id": "cm-land-conf-060-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "facts_sha256": "dd099ef6757cc3084044748e6f9e7d39da65497cfecd94d6f6a41c46133e7ca9",
+      "diagnostic_result_sha256": "bf27b3132da4a846470d8c0fc67b24b650545a948e7f850e31a3b9b57189b522",
+      "plan_sha256": "521ce85497c36415ff8469267971a1793eae882c535a1a2be4a37cffcbad1d6e",
+      "requests": {
+        "B0": {
+          "request_sha256": "714c4a650e02b18f6f1dd9eda1756069f3011fcabe8b467f69b21c71dbc3074f",
+          "prompt_utf8_bytes": 2423,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "f0511671c45a6ed75a52168797a2372181aaad0d2eb8df335a73e53ec46c0690",
+          "prompt_utf8_bytes": 2611,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "64e0564e14ea58c765d00e11de934f3b22a5c2212a6bdf32e641b4f03d823cf1",
+          "prompt_utf8_bytes": 5164,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "f5df1cfb9aa17c0d9aae56a0f09038546554d51ef214d8515f4f275f3eb302b8",
+          "prompt_utf8_bytes": 4668,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "b5afcfc2bf658a2bf211533a43d7cb9960142d03c796a7ec320472d0a323c9f0",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "f4588d7d172db3567e1cb1bd560064d7b02e43dab20e9c29e4e1957eeb635be3",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "a23d0ff22c57c14b7c7ca1c41c6e16027261a84cacc81ed0679bf722f1facadd",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "773fda68bca8415e99f2632f45d3efb229a392a5c437b89f03032a92a622b14c",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "d5b2069b19a15f9fba7d471ef049d6af3f437fb69a54c8670edde6fcee9a73db",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-060",
+      "configuration_id": "cm-land-conf-cluster-060",
+      "family": "persistent_command_motion_discrepancy",
+      "condition_id": "cm-land-conf-060-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "facts_sha256": "949c73eddbb3f9e2dc08e6cb417746edda16a6843a11edddd3af83eecc750f4a",
+      "diagnostic_result_sha256": "c55baac6ccb41d618bdd44b1006bf79ef8fdc5ee0cd104a9f2c25c89a9e1101a",
+      "plan_sha256": "087f7a283b932599a21cde4b6781558321e3b86833badb24bb020fea5d3baab1",
+      "requests": {
+        "B0": {
+          "request_sha256": "ce9e654954c0f738a4494b772d9a724f736f7dc1f95d39db9eb711fb1770f630",
+          "prompt_utf8_bytes": 41444,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "0718010ec0b53b921e7a761c6dc9fe0946a97eb9724466db803eef2b8bf0a103",
+          "prompt_utf8_bytes": 61720,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "ed4b41e1abd773e8605d343b415c21b116399845296b563934bf7809a7296010",
+          "prompt_utf8_bytes": 68592,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "246bda6217a3fe8c5fe8749783a8b9dae4e419de545d0e42dad1fdf88bf19339",
+          "prompt_utf8_bytes": 68096,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "19550c387d1e53810d9e7822d3cc8741ef52ec5245e0eb3eafd95c8fc5771995",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "e5b16315c644603ecc4695bfe39a7abc4303bd96f30c510c90ce732afd4415fb",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "9c700c3d2f455cef51f6d915418bc8077ea67ed88bdeed1d149ca5247d6792e6",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "e70f9653bc77d5e1cfa1f9b92407cb9b487a69fb67f1e905fe0e687cb8d4f885",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "87610fd208189f4957356f4d24d0ecdce84b1031f4fe98e3909a21040214781b",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-060",
+      "configuration_id": "cm-land-conf-cluster-060",
+      "family": "persistent_command_motion_discrepancy",
+      "condition_id": "cm-land-conf-060-worker-0-five-method-aligned-v1-E3",
+      "level_index": 3,
+      "facts_sha256": "bbc5d128d3a81c16c38c60532afb7a0e54706b81af99f4c3de01cae487dc99e7",
+      "diagnostic_result_sha256": "848ffde03c43c59e7f2eb5fc2c5ea1841c7d499893376b283e9a9c2b65836270",
+      "plan_sha256": "12b200ffe5c43b65deb19c5cdf6e6345e4906c6b5c597adff16e22e87982c0d8",
+      "requests": {
+        "B0": {
+          "request_sha256": "5990332382d57606c0826a25c237d39235b32a1433c1acbbb5ff1f271dc7ca16",
+          "prompt_utf8_bytes": 231217,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "26a956d0b08c465d8fe656bd9b9d49b697b35674620ba41272b6c6d848485545",
+          "prompt_utf8_bytes": 345667,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "34f268d33238a29c7474193e33ef54a256e1fde810be0929e34e5d766002d289",
+          "prompt_utf8_bytes": 373228,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "8baf6010926c73038c9d0c232ae30932e5ee59e7117200facb3a28893c96eb33",
+          "prompt_utf8_bytes": 372850,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "6e91831ee61f7fb689d3585f3b01cee1900c667199d953eeb1a13c223e2c753a",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "2102c8a12c0054b7c4b76a5380338820cd311670c5063bca6dd47d3951fc6d08",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "2e2d6bd10b7c950d6a9e9863b49946e6d7b682afbf9fcb1ac7323df64fe27a2c",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "fa31c438704ff72a3b7e79ec177e901073ffcd8dd2c74195edf98780a44034e3",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "7e685f4418bd3a992c2e9f8a4fe5fe2d6504795b63ba215fa66c2310fa2288f0",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-043",
+      "configuration_id": "cm-land-conf-cluster-043",
+      "family": "measured_response_recovery",
+      "condition_id": "cm-land-conf-043-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "facts_sha256": "2341fd1621eb738d1cc0c16c6c02247627c0a761fb5d7b6230f89830f8eeb78b",
+      "diagnostic_result_sha256": "949c904653672c41c0fa16aa643a056e1100cf701465316abed95f6d4ae56060",
+      "plan_sha256": "a672aa42fb55c0910df5b88caa15aae6fddce5e214bf31f9e355f3d17518aada",
+      "requests": {
+        "B0": {
+          "request_sha256": "1d86ae6df3737b4c8bcafb777218d6bc1c9d5a704e0e5b989d1e092ee0e14a27",
+          "prompt_utf8_bytes": 1539,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "ef577e0884caced8690ad0bee74545145b1295112d2cf97f9559971363e010ea",
+          "prompt_utf8_bytes": 1561,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "c6719a6edbe950cbe32f161ee0aeeea2dc05a57d0e384f9f61ef0bd1bed0ac61",
+          "prompt_utf8_bytes": 3731,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "44cc3f5ea50496e97b26b11035045647475785393e34d193bf4822e8ff82ba04",
+          "prompt_utf8_bytes": 3193,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "630d8f8b8cf42336a5e5527e92816d6f6ce23b1ada31b8da47af91d0c5a52514",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "b191e2cb252a2ccbd8466879b79442bb41f04724d814657ec2f13cbc73ffb063",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "c264e0eaa5718706f1b18be7324b22d77df7e46088a94ef46da2c51430c63711",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "6d9642627ca675c43ce0ac5cd27df73c46e9dbcb1a486efed3214ac305887e00",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "e1bdb19ca719ce0c7b29c12c8e1d7a1bf55cedb22614177e509149895a1637b6",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-043",
+      "configuration_id": "cm-land-conf-cluster-043",
+      "family": "measured_response_recovery",
+      "condition_id": "cm-land-conf-043-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "facts_sha256": "11a5f8cc709892930a925ded608d456bf016d64c1a2cdeea0415d8da073e5acc",
+      "diagnostic_result_sha256": "917a5b7108f33b950246c4a5a539eff82414ddd1e632ee7107a222e8e61aefd8",
+      "plan_sha256": "baa24fec68f6fd00c6b0549949e1d64e65566bf5596b7cab200bb00907465b07",
+      "requests": {
+        "B0": {
+          "request_sha256": "13ada77e44f21d75bd0e043b4ee835f4c773d8051cc8bab17b0a4e2a1ef5052d",
+          "prompt_utf8_bytes": 2424,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "a8cae3c50955ee1137ad1ccc96503d3a7a98de1422a002c692d1783454b30d1a",
+          "prompt_utf8_bytes": 2612,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "9f7b40626e096f98376d2ba5e535a5117cc173481c43cb2c7a6134a9cb18c7a1",
+          "prompt_utf8_bytes": 5169,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "4cad605c1ef89ef4362a53f49708f9e09015bb79d6d207d2e5d9f8f9e1c9deee",
+          "prompt_utf8_bytes": 4675,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "9b2cc14b1581e883be20c7ec9039d19df3fb461d79b2dd10962a86deca455ec9",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "ebd5976d6660a2379200452c68ad9f1eff83b39644052df9f559123f2a98e676",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "bd6c0d7f04a19ac5ce96d0e5112e32299f727c3c4a8d0a705b2544b469496bae",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "0763d3c8d6ded7f6257c9588b4fa2b771eca328ece8d5414c6a39cdef0aca68b",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "41ff0faf4eeb732876adee9a9e150a483ff307c89930dd460737de9e5eaf0ab4",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-043",
+      "configuration_id": "cm-land-conf-cluster-043",
+      "family": "measured_response_recovery",
+      "condition_id": "cm-land-conf-043-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "facts_sha256": "ac4b9d2e473618118ac5be93f320a00ece582edddd55d9fb03a3b0ff5ebdc4c8",
+      "diagnostic_result_sha256": "8398f89822f4842ebc2401b12126c80b2180a405720549d5a4cd9cc5dc7c7e48",
+      "plan_sha256": "c07e649a5067597a194d4852b9636fca79250a030b0b6dc8af52b4a074ce1e4f",
+      "requests": {
+        "B0": {
+          "request_sha256": "4d52de998f61f9571e57f8daafa6ef69472e919a582cee19610cc9dd90670794",
+          "prompt_utf8_bytes": 75438,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "5f5ae789db30c4cebd0b64c98e1872e84dba009f37f1e0768899184cbffba993",
+          "prompt_utf8_bytes": 113186,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "386bb5448bc90ebe8146cdba1d6d950d6bee4b954a74b630d9a200040dba24a0",
+          "prompt_utf8_bytes": 123702,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "ee228e0fa6a5aa6917d5768193e9bc8644a7ca1b317f5090386c55d5c6a293be",
+          "prompt_utf8_bytes": 123208,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "112cf0e0d52bf33b0cfa0b6cc45d8ba5269f539a4ed25e2545126d06fdb0bb33",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "38255287c30ee5ebd153a894291de24a91b937cada107fa24fd44ce935620d85",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "8204d0336fe90a63a08c7b0b627f21999060d085a387276a63d182a85e4fba4f",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "8100f3a7771853509db64549590e88eecca2bcacce905f64e7ea07e97f09fe7b",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "fcc2b7f420006311cd6c771a64a5c566249bf4c1d2ec1ad1c41a8017e9a4a714",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-043",
+      "configuration_id": "cm-land-conf-cluster-043",
+      "family": "measured_response_recovery",
+      "condition_id": "cm-land-conf-043-worker-0-five-method-aligned-v1-E3",
+      "level_index": 3,
+      "facts_sha256": "5d2e828261d7bda6f5c636229c3d68a333e316bb79f8c2f3c596ad5ae67421eb",
+      "diagnostic_result_sha256": "67c69e27bb7db5081f643d36c73fc814d62150066e9d28872fc0d803cc8a51ad",
+      "plan_sha256": "d937f24d43e7f7efd38ef52750b5bde7dccebde22e2decd3f8cd3722cc5c426a",
+      "requests": {
+        "B0": {
+          "request_sha256": "19f36c33f8a3f184dc3f04104fa0a67b31d33cda4a5ec296cc821afac599ae82",
+          "prompt_utf8_bytes": 458785,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "e5f507bca30bcdbdcb4d1366c4019b14f2ea7f31f858e19ebf4629d913e4026c",
+          "prompt_utf8_bytes": 670971,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "e60d0c05ebfa09ac128062c95a650cd89af73046e15ad7b55af46fd9443106e6",
+          "prompt_utf8_bytes": 719304,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "da52ef0fbb076dafedc75836685d3de316dd39c7f8c6b7fa9276e6a2db270c7f",
+          "prompt_utf8_bytes": 718991,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "59973c2aab60313f780f924527c7d98edfdf30bbc7497422e388287895a89a16",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "a77b5d5bcc1d214a9411324c1c35812d1afbff7608c21e3202eefd5633c2d398",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "a78f6c19ad16932064a4cc453a32b41c37e0e6628336cad787a89cde420d8f2f",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "4afe329f8e6c602e172cd298e088f4b6d927f7f7f57770bd23d1fbbaba3a5331",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "04d990c6d4bcd1fab54250bda0caa09ce5bc4f7c10223b2bc0f5470104e6193d",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-044",
+      "configuration_id": "cm-land-conf-cluster-044",
+      "family": "measured_response_recovery",
+      "condition_id": "cm-land-conf-044-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "facts_sha256": "6d1cca2ae37dde3893b10078c344c75f415bd9ad63eb2f0e21d979799d4ce6ab",
+      "diagnostic_result_sha256": "9358dd048798e70116588f7c0219de2cc03257879d9c55106a3f52adf87b4aab",
+      "plan_sha256": "9b721ec240bef0b3b6ce4448327a8ffdde97d90d718ffcdc4b98deddccc9be8a",
+      "requests": {
+        "B0": {
+          "request_sha256": "27d21e333985af3b96a9213117f6a7781891043ad6d170c7d45d9e54506895ca",
+          "prompt_utf8_bytes": 1539,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "b6110023cc229d365c3210d3ca5554fd86d1d7f3cabaf9a9fc39d7e5fa9f4537",
+          "prompt_utf8_bytes": 1561,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "4fb3709fb2a84cf2abd16b6a8bcc617b54f79a8d1451e142d29943a158a1beff",
+          "prompt_utf8_bytes": 3731,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "977940ca46415313562f9282c9bcdd12a72ba3b2a35c9136e792458bf8c2aaf6",
+          "prompt_utf8_bytes": 3193,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "1f849da8b5bde0c789a17ca9838428b33ceb8ab90b0ebca2fd3a46809db40942",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "a747f3c6db53dc63878860bfd7664ceec318b1075c82707ce96858199525300c",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "f17738feb8271e07d7eed3d84713cdf90b90fe83a2408509a67ced2d36c7f5aa",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "5ad74fe9a502459b04da0dd1ec94a3fe33427a665096f28bfec5fab4f7de35b7",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "457c400c0bb6e0e477f84832c979f283d7b8853a146fb0ba274b1501912a49f6",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-044",
+      "configuration_id": "cm-land-conf-cluster-044",
+      "family": "measured_response_recovery",
+      "condition_id": "cm-land-conf-044-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "facts_sha256": "c3b9554034b9ee72fac73cd5dd6582c628b225073cd53efd1dfd0e9a02e326c7",
+      "diagnostic_result_sha256": "aaa928aa44eb29c90edfc6edf687a7e01953662a432ec3dd687f32bba0f18ba2",
+      "plan_sha256": "465728b3a64ab425d6ce172e29dec517c1b01b28330b79c321fc9b591d62afdc",
+      "requests": {
+        "B0": {
+          "request_sha256": "39fbd1be02b4a9afb16bebe0feeef5438c1b4cd4f17976bc5cd60af0deff214d",
+          "prompt_utf8_bytes": 2424,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "be908d8f7c94538df6f337258756be5b28f41cbd0b294c5c78b8259529d524e9",
+          "prompt_utf8_bytes": 2612,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "fd7d5e31e8c9b4b2316f5022dbb4ef26c9ea7703cdc6e613be6d0ea5c30d96dd",
+          "prompt_utf8_bytes": 5169,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "11a15130284a0cab7c2df8573a1f406fac370d4336e23d473d41ac476628c5f1",
+          "prompt_utf8_bytes": 4675,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "976f0facb88d121544a2f91e5d119a102ff5fabe3353f0e9d69f297a99eb816f",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "c17cbe46eed738ec5217ff3352b6a8d203fde3537de105c4e5e70d9448942d9e",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "72c65900eb93ccf3602a42f73ac9ff0ee74c95267b6de73220fae2a5f3b6882e",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "e881461c357aa0a1c14db2b69aa833b4a5f9fa4709a101924af3cbd656921a2e",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "c31eeff58e60c8b22192a9ab8ad72a8f69c5a21e5ab378619076e64279847bae",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-044",
+      "configuration_id": "cm-land-conf-cluster-044",
+      "family": "measured_response_recovery",
+      "condition_id": "cm-land-conf-044-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "facts_sha256": "7770003a5f78601ba33d3d4ee1c7aef37ad1144b70d27a84a009f42ed0bfc890",
+      "diagnostic_result_sha256": "e54bfdf72929358419f0f7297d4f2071707429c2934f0a1960d0883e7ac9c42b",
+      "plan_sha256": "befafe3b8731636d8dd0996bc801e0e45fb3ddb13ec406197514873195c09e43",
+      "requests": {
+        "B0": {
+          "request_sha256": "9f6ab1a1ac3b10d5dc31030959ad7c969b9b24c3c2ab57da8a936736046d4109",
+          "prompt_utf8_bytes": 75834,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "943ed1abd9445a2ad866e9fec398a07b5fe082e1620c3d83c3b90ccd8c8a8ca1",
+          "prompt_utf8_bytes": 113774,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "c4e2230b081618e406c33d1719f2fb08cd7ee3919b0d03935f8e0c3a992c6f75",
+          "prompt_utf8_bytes": 124330,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "421d708285d0e8230b6b202a9c87d812872a9a0664cd5d75d8d4e56f2792a06f",
+          "prompt_utf8_bytes": 123836,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "5dd61af089f741bba5b60ea492cc20f4c87f404b204ecad0c7781d3ef9ce6d0c",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "081cc6f5f6c68c1333771a6cf6cb0e9a2b7c1b5b1f667b295b870e2e93be04c8",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "3706887f7af1741683a73d0185473e08cd7a8da389271cf5464a26d793cac40f",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "0018b2ed8c5aa39a01971a0b27c875b0f9101a33ed584f71b9b8237af7aaf60e",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "032e841cf767b7a6340ad1de3ff5f475a9d9f54106f70f170b094de12a3c385d",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-044",
+      "configuration_id": "cm-land-conf-cluster-044",
+      "family": "measured_response_recovery",
+      "condition_id": "cm-land-conf-044-worker-0-five-method-aligned-v1-E3",
+      "level_index": 3,
+      "facts_sha256": "2d1a9afa5f5c36772e2e5ff1fc148db7d3191dc4d635eb02fef65a57f1f2d04d",
+      "diagnostic_result_sha256": "32c5a4f7825b1ee8de250038a6a53afd3f943eefa9be52dffb4f6be64cac21c7",
+      "plan_sha256": "aa2ec85fb77242acc34d201bb7fb2a9946f0055192a942b8ff48265e9fd8eabd",
+      "requests": {
+        "B0": {
+          "request_sha256": "64ccecde4f71914acefcbf5118092b90e262714fe85686bcdcefb1e4f269cf0c",
+          "prompt_utf8_bytes": 471144,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "404d53f3da118d67d8197e2ee353daf48dbd8e32e76fdcc9b0921af6a919722a",
+          "prompt_utf8_bytes": 688946,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "6ea196dc2a76df0fb0cc9ed264825b4849ebe662356a06dd2225d697b0d9118a",
+          "prompt_utf8_bytes": 738449,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "936f576c7e66cc824704da718ba714c4ca85498e718eedb682fc1e0f92200cbc",
+          "prompt_utf8_bytes": 738136,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "dd9c59734ad9231d14fc4869335cdd20ed086e14bafa0bd9818d4188434b4a76",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "f20f4a77177e1da16c75cfe8c1429ae73fed0004176ba7ffaba2f971d7a0f277",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "51478f9eb77012173ee139cf32b82c471e523177c8ae3c07b8c730f6a09487da",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "271617171fab056be4c59314767aea46c4b9c7564962532ac69e663fba49b255",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "17ab47cc56557b5e20165f152b8f1700d10107371798828a9e79672f9a300245",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-047",
+      "configuration_id": "cm-land-conf-cluster-047",
+      "family": "measured_response_recovery",
+      "condition_id": "cm-land-conf-047-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "facts_sha256": "99a57a495837e7babaf33b93a07abc1368ff94b5eb5d6520976183dc16e503b9",
+      "diagnostic_result_sha256": "e20df057105e220068adc0b5c5c1ece709d753eb34cdb35e43748ae921529238",
+      "plan_sha256": "5766a2b20d3cebd16711a4a16072f03d18d6ed0d821754e8d1d02131e44c8254",
+      "requests": {
+        "B0": {
+          "request_sha256": "95e9e725763f493c18d41c98c0745116b1f2ca58038e7ed2e8fe04a503f1c877",
+          "prompt_utf8_bytes": 1538,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "efeebc8b9c6c272dd7a7fa3b69a28ac8926b99a450902b45b230bea7ff27cc5e",
+          "prompt_utf8_bytes": 1560,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "e1d418041542d41e567c802f15180be175f5c03a513ac537b1cb5a2dfc94a835",
+          "prompt_utf8_bytes": 3726,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "68cedc4d4f1eef9466bda083ea70b53b48093a2f21a553d2b1703c1b37df24d0",
+          "prompt_utf8_bytes": 3186,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "dc533e3df9b9420fb7f7acc32ca487b11b539d3a5066cec994d435f8bf9f0b2c",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "e8c777ebd3f316c4dfbadbcc0aa86c57ea6204a9eae99aaef474685c2ae8da6f",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "1aafb0c05ff32177134ce9212ea4b7d077c4bc8660f54745a76b03703960fcfb",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "dc1a482d20ca3426067f015f7a35aa4a290ade56f69d2c3a53e799c9125f164f",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "ab65c3f919497dc0a4dda474ca2b3005875f3cdf3d27ba4c6ac4a8b46afde2b3",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-047",
+      "configuration_id": "cm-land-conf-cluster-047",
+      "family": "measured_response_recovery",
+      "condition_id": "cm-land-conf-047-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "facts_sha256": "5b24af95163c30f9202c2e14d2b86d870a64a05e24a1e55ed08770526336a181",
+      "diagnostic_result_sha256": "73a143db19645d0c132ff02192a5162fd00fe5eb66f3291f882e0d560bc79190",
+      "plan_sha256": "4f292be03557cf8d08a9b8c52802f486592715116d9b3ba0558df0249100d28c",
+      "requests": {
+        "B0": {
+          "request_sha256": "55e567f8d1502c9f8ffb0822877c5eb05f62bfad5f76c26ac540973aac6922d1",
+          "prompt_utf8_bytes": 2423,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "7d085e1a93954a5fefb36010dc0d3d7264967ace55e4e0ad903ed0148878f4d2",
+          "prompt_utf8_bytes": 2611,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "204ec5698356dbff3530fa34aaee5a14572d32a98ea0a9a07304bbcfb93e6adf",
+          "prompt_utf8_bytes": 5164,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "e5e55d8890e93391608b642dbdfe48edff2e002bc1e0acdb9a7114514167c1bb",
+          "prompt_utf8_bytes": 4668,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "27f8b7b874bbf1650c40ba34f22466de4f328158ef5e19b65dd1016b0b496aa0",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "96b31e932f50e5c7bd783e871be52321a0a7662f4698a0b967fbf899676ce5fd",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "81d9d66150b296fdb13adce8831f10fefa9f6e89ed3227ad5d62ef360dc6cc12",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "435cd4e8edf2b56f8477fe62b761042d9feedcbe73da0ce16f3f5397a5a58fa0",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "fe257f1da6790495c0e15df7090c4ebef31fdced5d51d7a7d7e0278ff77b0562",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-047",
+      "configuration_id": "cm-land-conf-cluster-047",
+      "family": "measured_response_recovery",
+      "condition_id": "cm-land-conf-047-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "facts_sha256": "02e808452ee3ae7351988385d9d3933eb3c27b62ce0a0991a2217ad4ecea8462",
+      "diagnostic_result_sha256": "8fc1b4940c601bf4418d1e5a7e5da6399d054e30e102a58d0ac453d03fe7b8a4",
+      "plan_sha256": "c8b244c89c8ea5f4e88b851f2116cd739a4fd207ecefb8cb6c9193e92aa40afb",
+      "requests": {
+        "B0": {
+          "request_sha256": "087ec768fc542a21ca041b78b14195ca05431ca85dc4aa8910f0aa3d9b4b784d",
+          "prompt_utf8_bytes": 54103,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "8486d6232093aeac4260c0f424c85afc6d7f93ed6b3e1a65db6a585125dc05e4",
+          "prompt_utf8_bytes": 80907,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "d1a8801b06221652d1b7dc25477c613fb53dbf022dfc5228c6bec3d8ff0042c7",
+          "prompt_utf8_bytes": 89139,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "3ec42321f6aa73335332880147e83601319d0f50759e3ca3613636c7cb92285e",
+          "prompt_utf8_bytes": 88643,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "3a2db0e71c9a4dd6b65b256dcb18a702a6aaa83726abeb2740002d2b0ecc5dda",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "c4c458c816a4a04998f98eb8ccaf8fb42ccc39cec1ed052b9de5cb9d2fa5188d",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "79322cc8b5d9562766a73b00ffdc32b6de911d5bf23a23b9d532cd498fc474cd",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "f82ea9847e3a3304e8f96621655b38493f4bf7bd2078ff6de36c95ce86ef6b43",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "f5406eb73145680820b751fa4ecf81e69fb5c558ea9d5ff9ee9baed63cf1d1bc",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-047",
+      "configuration_id": "cm-land-conf-cluster-047",
+      "family": "measured_response_recovery",
+      "condition_id": "cm-land-conf-047-worker-0-five-method-aligned-v1-E3",
+      "level_index": 3,
+      "facts_sha256": "eee69f5708997fb12eb19be3faee3f570cd54e053b2e6cfa1c92e168a9eef839",
+      "diagnostic_result_sha256": "da8fdc818b3e4217512c35e52f2db1f4aa601bf1e8c8d5db407e7b73e227f4b7",
+      "plan_sha256": "41a6e1c5cb81a02193df8a679ede790ebfd46440f09c212aeee363cb54833525",
+      "requests": {
+        "B0": {
+          "request_sha256": "288670cab539a892f4a42f0ec8abab6a18a612ac82a55405ee449f2c337be0c3",
+          "prompt_utf8_bytes": 338465,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "552c91041aef28d63f23f46f33fa42e31e2b1d9b319a5329f96990205ea9acce",
+          "prompt_utf8_bytes": 495835,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "ebca4fa52e837724f1f588e0e7de69e6322b825930c28cc36f70848e339a6300",
+          "prompt_utf8_bytes": 532744,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "4e2baef2adba70e07e6b228f853e0df0562fc0604d3e40950fcd64c7be8bc160",
+          "prompt_utf8_bytes": 532429,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "de78335eb04d9295126ca06d6b2ba442866dae7954e3b779a76b3e19142560c3",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "ba048381327ddf8843cba6229fc7aee0304790e3ed8449264525ccdb3b0d24e5",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "dca4ad03e1673f94edd10b685979b448066b845a5308824cb31cc4c50a31f280",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "7cec0c267093d0dacb68918c23cd61dc493eca3cd80c49ee313f12c422564ec7",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "734daf873126a5f5759763da121d0485fc504a5d8c41c122aa34305e9d85405b",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-049",
+      "configuration_id": "cm-land-conf-cluster-049",
+      "family": "measured_response_recovery",
+      "condition_id": "cm-land-conf-049-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "facts_sha256": "902fb77bcc6d3249ab2b5ecfd6d7654e487ce2d27bbd137b0a8ba7459111743b",
+      "diagnostic_result_sha256": "ab520fda4a927a6d55b1a2c5132024cf8302019f3f02c1fe172d67eb5ba74b17",
+      "plan_sha256": "cd11cdf1ff518e90062b2858fd4ad2784259163ac6743666b3fcf19843f51c6b",
+      "requests": {
+        "B0": {
+          "request_sha256": "b2cc86e9055788c452ca523c9c116e7de139f4efb4434a395ed78c357147b004",
+          "prompt_utf8_bytes": 1539,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "76a297a6540c1c85ee311774b13d1e5c947dd5291c7c90618cb95b2aaa77f590",
+          "prompt_utf8_bytes": 1561,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "ea1f48d804ecea29419352647be53c82a0be8fa9fb9beaf9bad1d496142d4877",
+          "prompt_utf8_bytes": 3731,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "c3d6764ab5987ca9d72d0b06c56a437f427e5281df200d68c4714fb782ed232c",
+          "prompt_utf8_bytes": 3193,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "c3394adacd5a8e7401ca7a3f950380c1ea4ecd7ca708a342007ad2c65f6bda86",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "be9231a6ca8c8df7a363453474c24ca0e76e71a56648ade0159c9aa2fc000e6a",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "bfbcd827a6f41b6c6996f9ba24fb538f24730f146b9e816b39f1d6a1e3eb7d8a",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "f8418ff1dbff3cbf2cc512396408988428a5cd2ad041453e2acde3834d9f9ac1",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "f63b9e34cbb9ddffeea8fe2cac4f73072eb37f25e2bed84a40046076399c0b60",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-049",
+      "configuration_id": "cm-land-conf-cluster-049",
+      "family": "measured_response_recovery",
+      "condition_id": "cm-land-conf-049-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "facts_sha256": "7261b98903651da8ec7aa9601ee599b37b433c6f00ef1496a003a84e2179d71a",
+      "diagnostic_result_sha256": "33cea2f1d79adfdb4424c2275f259cc69db834048b15a74d0db5852b32c39b50",
+      "plan_sha256": "3e44b74e4a941f2987f7c5e6e25c4a9584374a9deebc2f35b6a4945f2670fc96",
+      "requests": {
+        "B0": {
+          "request_sha256": "f2b3e433ac357bf5ceeafdde5e6d406cc4919abd25c502205ffe6225ed510244",
+          "prompt_utf8_bytes": 2424,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "a52b144d5cd6a61eee416c468f7a09d1c20b0f7dcc61ef8617b56a9bd3e9bf5f",
+          "prompt_utf8_bytes": 2612,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "28efd649ebbf1dd244d82fe0378654135cda4b1f4b1d3ba12cfb9815f1f3be61",
+          "prompt_utf8_bytes": 5169,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "8ac63fbc678b09f614c4c619a1cfeb7c7e82e8b45ee3dbe17cbc21655b0da438",
+          "prompt_utf8_bytes": 4675,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "14d83c476939b2b0eae48d6d5c21d773ca334f0397ddb4264e47df94e72d3045",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "f3427db2c04e3630d77de4fbcac8612de214bf8e00f8003365e00cf4643b2523",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "47edc0e70e1a8bcc5242c2c74d13bac20ecc5f1271e3f1447b3879e9b76f6d20",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "13072f727c89a60b55177581192b8a2ad474c771e873458e2f5222b878c75610",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "6cb8c5fd2507fab5d061d85345781d61dc1e662c88596ca511046cc1147e55f3",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-049",
+      "configuration_id": "cm-land-conf-cluster-049",
+      "family": "measured_response_recovery",
+      "condition_id": "cm-land-conf-049-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "facts_sha256": "f11e9cb6fc0b19f401cb6f8b9907dfb07547e2f0a8bbc39a0043c0de1dde16e4",
+      "diagnostic_result_sha256": "93694b37e3d1cb78828c15ec7d7cf6029fff901a57e916c542d10cbcee346e58",
+      "plan_sha256": "1b11f09604a002df522fc1f0195eb6d4dd78b363c451a2c1ba61434a221cfb32",
+      "requests": {
+        "B0": {
+          "request_sha256": "77f88c4222f36fa2bd7c71eb0ece8607dc333d7e7f97feb06ea3db9e3d7656a5",
+          "prompt_utf8_bytes": 88779,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "eef89c697593fd66e2c0167fc992a1b8a2a12537b1d18b565ea9bc036ee06185",
+          "prompt_utf8_bytes": 133295,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "23091d0d5a6119323a4de868daf17d344549e647147d0795e5089f29fe4d7e02",
+          "prompt_utf8_bytes": 145221,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "c6e61fd33f560caa1e1ce39d902d7d5744b3fbb9116900e3b071c01699008f19",
+          "prompt_utf8_bytes": 144727,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "8f9add773b9b74527ca1e77c4b6a80475f14201124b56617ab1500e9be0c9122",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "641da0de4e9d8b9c6bd010aa2281dec6f895788b0175b6698a92305b3a739fbc",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "3a03791363bdecd5f6db010100127b7f591caf9c9fd7873a8ccdbc8f13117d48",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "186e7a3a533a125d09db35a66a820a7f5016fd9558e6a3b5ee0f2afb9f69da93",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "c628688a46a780837b1865b0a69b24f2859e6e403dc5b06bd873f7c5e0780440",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-049",
+      "configuration_id": "cm-land-conf-cluster-049",
+      "family": "measured_response_recovery",
+      "condition_id": "cm-land-conf-049-worker-0-five-method-aligned-v1-E3",
+      "level_index": 3,
+      "facts_sha256": "27ed6de3406e92661ef5187b04d562518dd2f3683ae2102bd81677698df6b273",
+      "diagnostic_result_sha256": "c286334bbc47d417a9a64736fd949b8b715860e09ed6a398c280204c65918840",
+      "plan_sha256": "4fa0ead8be0d3cf2b3abd0d803883c906cc631347a4d2daa24cb25275240b221",
+      "requests": {
+        "B0": {
+          "request_sha256": "2a940f3f64f184d5eaebe7c03393a58b5070274b69bc53aa66eca70b55b229c4",
+          "prompt_utf8_bytes": 550805,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "e65e5abd2fc60a1d1ecb3035ff8c92307f402d1df7d93c7691575132076ad928",
+          "prompt_utf8_bytes": 804463,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "916a7c720f02a68cef47163e41e46a7bac5c90a94827c3a5e0d2717171377bde",
+          "prompt_utf8_bytes": 861435,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "4ec01846f35749978900bafb36afc0f9caf985baf03ea121a4de1ad21e98eb29",
+          "prompt_utf8_bytes": 861122,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "393d4ad84cd446adb6d2b1a06867c1fc23abed88b39b251bdc84fd07dfce573b",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "b2cafe33a528207f18c85ff0958773e1797dab53a40245982de241d0f0cabce1",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "e517f2802312038e3bbcef4eb3d77e3b68db369e4e3e6881dc9b1536ec3e3eb7",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "ec37196b7114b80b6392efed1d610ea85066782a31810548aa92515f5f2ee639",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "161bf80ba9842ef286aa494994d8d0bbbc31fd57c217595c6466f534c9836487",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-051",
+      "configuration_id": "cm-land-conf-cluster-051",
+      "family": "measured_response_recovery",
+      "condition_id": "cm-land-conf-051-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "facts_sha256": "412cac1574a21bd30aaab28ce31e6b14b68d5d89b446977e56e62c59fdc7c42b",
+      "diagnostic_result_sha256": "ff3c4e2ce0c187c3422cd31768aa2c83729e7dd29a4857b6b915328c097f8347",
+      "plan_sha256": "71e759942ee21fa6717a3fb12de935192a45766823b17b75e3b9577a3af2009a",
+      "requests": {
+        "B0": {
+          "request_sha256": "1af7e564b7f6cea0b59fdfdfb5caf78943c3b17dfaffea293d5751a26639d858",
+          "prompt_utf8_bytes": 1539,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "8acf22fe006a020e32ff0b644d4aa4872dc857fd127962e47187ff142b42efa6",
+          "prompt_utf8_bytes": 1561,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "3a6fe1013c148e2ef2f27af64f5020e3db95d479b7e2435b43eebb19af2407bb",
+          "prompt_utf8_bytes": 3731,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "a49ca0c7f6b81c1e35aaba60228455004702e8e6839304bab0de50202fc06e60",
+          "prompt_utf8_bytes": 3193,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "4bce71c02f87061e9b9256a1134db15ed7f6415d9421dc35cc860cd56ee43b31",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "184e7c4bde009b3c5977e14085f9a17223fcdb5fbfbe46725fa80894ba93c2c9",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "f94b337cd53140f12069422117023138f4c68d54f83ac73f4465df8da4a8cff3",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "a7f694b231fd1629aefcca3b6ff4415f19beab2796ca6c7712a182ccf683ee2a",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "d696d98bf2515a93c80cc4c8ef1a0fef1c8b39e483f46ce7c43aa4887be3d070",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-051",
+      "configuration_id": "cm-land-conf-cluster-051",
+      "family": "measured_response_recovery",
+      "condition_id": "cm-land-conf-051-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "facts_sha256": "60e3e58a2a18eb0f7945c36bbd69854ee5ac1508a458a0517e5965863957847c",
+      "diagnostic_result_sha256": "61a4917ba16a8f66854774e3888a62b4657655ceff3655d98a6f6d05920f45dc",
+      "plan_sha256": "001e465a3faaca3f662490ad0e8621004cf9e0f688f33ce44bf93dd498db859e",
+      "requests": {
+        "B0": {
+          "request_sha256": "46b2ff16ac646b482473f802480ec9fd4011c6fd0b418e6239a9f17271923cda",
+          "prompt_utf8_bytes": 2424,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "d69d7a2349e682f1a7feb6a18a88b8417d335456307b6a3c8f6805ca44e89db5",
+          "prompt_utf8_bytes": 2612,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "2be4a9b17a4937bd9eb91bf9c0f879ebcbddfb459a2f05284151932125e773c7",
+          "prompt_utf8_bytes": 5169,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "9be38b9e78e63ce9052c83afb98fa5e30c9afc52d3071b763ec7ebf9eb5022a3",
+          "prompt_utf8_bytes": 4675,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "44151c8a226fc6a1df703820135337dc9bf131b424b04b569fd73d35d42bd0f3",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "d2baf2e2b782c72041d4ad1411d8f3a066d200cbb44e535c7bbdbb5d75efeac8",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "15a1458225009a1e0782e1c83f4d8748763ca2c121d0e7eb90008b9df06cfe1f",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "73adfc99cc8a100cb4268e8626db323bfd96e5cb12bfca5e2b7a2562b02b373f",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "8230886865aa7f76e40a3e79736bcff417d54816fead27653e6833809590db77",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-051",
+      "configuration_id": "cm-land-conf-cluster-051",
+      "family": "measured_response_recovery",
+      "condition_id": "cm-land-conf-051-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "facts_sha256": "f40103435e99b319afc73dd42c9b16754c964dd69e89a76668b58a66f443797c",
+      "diagnostic_result_sha256": "cb780aa1ff23c221e915fcaff26ead0dab13566eec39192716e6097f7f27e481",
+      "plan_sha256": "1dc195d22e0eb51ac953a590836b839cd2df263e4895974487c81ac21497d488",
+      "requests": {
+        "B0": {
+          "request_sha256": "3a25bcb6236b8ae461e18974d75ef88af87630660295f9156a28fa249b6570dd",
+          "prompt_utf8_bytes": 87777,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "e35cd0d6c860eab050485aa9a52f9383f54093df68416301715cbfd337f7e2d2",
+          "prompt_utf8_bytes": 131765,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "ac7ff49512ce44a310f251c087e42ffa150d60c3cb44bb3efa6d7aa9b6fa1e0e",
+          "prompt_utf8_bytes": 143581,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "d2b91180f805b033c1b598d7280b86a9dac7195868d80965cb610d606a306c4f",
+          "prompt_utf8_bytes": 143087,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "b57e898d06021a3ff1d04f42248dfe02869e0402b4841e757bb06be1ca161df5",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "b29c7c4d2084f832e1169049770310594f5ab22f10c18373678049053eeb53a2",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "d8117ba92123d9b8740fad64efe9d62130e02cd6df130d22aa4154c6966e8d89",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "b21ef4babd5a6023e2e4fe38605dcf6195f1105104830214d716943d7a946165",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "22b8e2c8ba47a6bb35179d931ded27d92d7520bf7e0d83c2b0a655a9295b02b8",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-051",
+      "configuration_id": "cm-land-conf-cluster-051",
+      "family": "measured_response_recovery",
+      "condition_id": "cm-land-conf-051-worker-0-five-method-aligned-v1-E3",
+      "level_index": 3,
+      "facts_sha256": "65dcc9c57d8bd2d31fc97baee08dffbd1b1209edb484a1ecd5cd6c61494a114f",
+      "diagnostic_result_sha256": "0b62dd0c8c0ac27b168207e986685e81ce5f13f2323d90eb80891b4bda7cdf0f",
+      "plan_sha256": "d59b10054398c8b7309b0da3224861a01acb219859ab4295912db5730cbfa683",
+      "requests": {
+        "B0": {
+          "request_sha256": "d66e985716ad2c8cb4c1a93fba1a01731940dedc7341610b3aeca991997d5154",
+          "prompt_utf8_bytes": 554254,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "f51aa7a2848ea01449f6e1ea0acd7762bfa6eb9af3683563765763d21dae161c",
+          "prompt_utf8_bytes": 809592,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "2d9c538375ec751081bf542e8da0c2fcb9d58f8fd03af93947ff26b520e97584",
+          "prompt_utf8_bytes": 866915,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "da9483b00c202eae8cdad86aa004c3af64cd9b14a9d0966ae2593108e8bd052d",
+          "prompt_utf8_bytes": 866602,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "da3c7bb0c1c613124456d1f1922b736333194b66a3760e63dda8738d615c2249",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "e4d961ffbcfab8bdfe1b914d4e5d3ec13755073ef146c50d0b10997e51c6130a",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "8b490644d2332ed26aaf409ffe31fd67186bd81ef66814fe565843ab0446bfa0",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "942a3e2d7bc962594c0c3663ade3b528f3a1ed55f89bc2a3bcc6a2edd8a57db0",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "e1eb44a0d2b63dfd21b4f964af60521a1a6a1c3043cf2fbaeb8ded226f7646ce",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-053",
+      "configuration_id": "cm-land-conf-cluster-053",
+      "family": "measured_response_recovery",
+      "condition_id": "cm-land-conf-053-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "facts_sha256": "46fa63db880761b36ed0d387a51beebcf83b47765b660eee262f84e290e7856d",
+      "diagnostic_result_sha256": "98db6a8e2b9bf145fc21d6f4d504e7a64ca51f917b38fb82e3f305b3f3b51442",
+      "plan_sha256": "8945baedaf7fe94013c5b12d8074aefc7b37ceff3a1df20a2fb4fd5900ef796e",
+      "requests": {
+        "B0": {
+          "request_sha256": "8b4fc2b12a924f71d434c0864c3142953ad3104a2ad7c499efd09bddba2f287f",
+          "prompt_utf8_bytes": 1539,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "8844e3981aacea344ea49f006cb5639fe9e05117a64787d2d46a737cafaf7430",
+          "prompt_utf8_bytes": 1561,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "1154582928dcbb0195ef53caf74dd8df7d10b91061ec741269ebbbddb1979103",
+          "prompt_utf8_bytes": 3731,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "626077c638687959c4e86cc5cde2d0849543b7ee90c3ea64ef6695eecad12de7",
+          "prompt_utf8_bytes": 3193,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "65c7041bb9e6db6ac6f1244125cb78173120899ed26237393a07892b427c074b",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "377e77890df66eb680ec9dcdaaeb6c503d50274df69e11525ab793c2b98cdec5",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "ad012ebe5603d353ceff857528d9cb50d43e6d762061a0b07f0697c3e255676e",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "47cf208531a905af068f7725219fbc5913c256799b2a0cc364bd06e959d7e8a5",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "ecac4b928e96fbe9ac9903c5827172069b3ab9fa37726c96c25ca0b8c926d57c",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-053",
+      "configuration_id": "cm-land-conf-cluster-053",
+      "family": "measured_response_recovery",
+      "condition_id": "cm-land-conf-053-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "facts_sha256": "1f986ffa2512473cbb80c6af3fe4f7bccd6c0ed7e7d79f0a31e0c82cbdb9a87e",
+      "diagnostic_result_sha256": "ff8cb066506438a0c839daa6f0f5ba9962cbd3d45aed6413e70f3b3c14eacb0b",
+      "plan_sha256": "cfe5c94e296c81cb2701899b8f8e97921cc9a58a614334e4850698daa48c68d2",
+      "requests": {
+        "B0": {
+          "request_sha256": "0f91d9ba1da0661a4914df2d8dd3d143b2cbf74a355b5aefb05b86848555087c",
+          "prompt_utf8_bytes": 2424,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "3a62c00618fe1f054402927c0b63f86680e11ceb45ed31e44e93a4a13e62704d",
+          "prompt_utf8_bytes": 2612,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "1b27719d1579527abae4a730065131793aef0e283bb75a1b721d9120a78bc52f",
+          "prompt_utf8_bytes": 5169,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "2734172658cf387ce4d0edda377589c05d8921b01389bf7e9e99d2c868ae3d6e",
+          "prompt_utf8_bytes": 4675,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "a130d0429c6d042f0514dcd04cb0753f82a263b97241b763ca03c3cbdc790c96",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "3292bf85b2a627f1f4936c8c34e944b4aa1e1d974f3921cf216ee8d9ec511e20",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "2a0c0898774a40edabb07137bb4b0e040c9df579a596114d1906cee512eaad62",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "434a90c4213d393e86e9f29b74fcb76466759cd0690064f78a8897aa78119050",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "444fb87a2c3d5e6673ba7a3da69d1a196346d636e7f06a5e7b21188c4b65c20a",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-053",
+      "configuration_id": "cm-land-conf-cluster-053",
+      "family": "measured_response_recovery",
+      "condition_id": "cm-land-conf-053-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "facts_sha256": "43189f53540dbd4507ab0543ab20042d0007dfe3b1a691fc7ce3eed8efa56b58",
+      "diagnostic_result_sha256": "6d9ac6c23b849c9027be1dcd6374e59e276d9df7abf3bf959457145dd532a5d9",
+      "plan_sha256": "56d2f812162f4017034191a632220c642352fe26d87734fbef149c11b1134e27",
+      "requests": {
+        "B0": {
+          "request_sha256": "7e8ee00b79795e3335801b91b9ac41e685ed5cb750e1a6c712196c57c1681e79",
+          "prompt_utf8_bytes": 76489,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "c9e6afaadb3c9cf9cc62450528caf6de55182eaabe04fc662225db3b9c2c0177",
+          "prompt_utf8_bytes": 114765,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "1104b0d4496cff45717ad973a75302145f3ab9eddf3299c35b63303a88087803",
+          "prompt_utf8_bytes": 125391,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "f68a9e562ec93aa1504c29981199daa0f113c9890db4e36712fc189ccb11b809",
+          "prompt_utf8_bytes": 124897,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "51cd0c99e553f23342946220fd152b28c41e40ffa2ef4d566ada334f1424df3b",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "7b5ab809cdb14cf7e67230e8d9d6171b4d7f140092e90d829cd6ba3a62170c8b",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "b452c70482442ca580442638b96f36ad8b219ae80080f620348974baaba2ee04",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "207c30eca8fc59721e564741658be4de2808e6261641bce6b907cc5f05e6e145",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "7d675811fc29383e5e860fad56ca4c43bfda1a639a591b7e7771487eb0c8f2a4",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-053",
+      "configuration_id": "cm-land-conf-cluster-053",
+      "family": "measured_response_recovery",
+      "condition_id": "cm-land-conf-053-worker-0-five-method-aligned-v1-E3",
+      "level_index": 3,
+      "facts_sha256": "7edce8a70f4a200bff8bf7ba236ae48751588b2778dbd671b50822a2e7cf5569",
+      "diagnostic_result_sha256": "8310563d18a5a94bf992d5b87a525934e21450f216430efef060309e0f113f26",
+      "plan_sha256": "02e69c1fb4160941c955609364b9584e4281c2b15e82209d388fe54805ca2035",
+      "requests": {
+        "B0": {
+          "request_sha256": "029a8557786882f3314768ac4fb87e6de78f5ddee2f49cf1d6759ec53fa5ed25",
+          "prompt_utf8_bytes": 470235,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "d3881636bca82c2b2f86e654e4c799aa758d03bac9e4168e5e1e0330d8c8c809",
+          "prompt_utf8_bytes": 687893,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "4156e3f1082f15b13b304f137e0f2c409924bc2e4acdc4b75b7dde511e4fc992",
+          "prompt_utf8_bytes": 737366,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "51538748de656915b03661c67af0591615826dda3c3eeb44b93415ce559c4516",
+          "prompt_utf8_bytes": 737053,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "4a5f1982b4d2bf389f991d6640e5f35f5c78adf459fd7022189f821e87fd0054",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "6b475f571def10f36947c0c2a61e3c43436248cb9923f2ae6732209a220b2484",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "4a4147b442361a11e9052acaae2f9e0513f99586e9f0206b9b2ecb3bcad82314",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "51b5edaf805b355cb21617b75682e40a7decf7e96acf56de08ef2b714b225dc7",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "f04c15184b165206e98fd201ea3184a1cd3ba06fcc02664849eb7b873a24dbc7",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-041",
+      "configuration_id": "cm-land-conf-cluster-041",
+      "family": "missing_decisive_evidence",
+      "condition_id": "cm-land-conf-041-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "facts_sha256": "feb2529e92ea7b773144bbcd96e1411e78087bc481bd0e5e4e8948a604e63351",
+      "diagnostic_result_sha256": "faefb0f0612747aee5d93151c2cfec989f9d1e5ed8aa7f7bd814baa37916c6fc",
+      "plan_sha256": "5b6b9fefedff352dbec411f142d00366683ec67b67b63137b119b7319e28de60",
+      "requests": {
+        "B0": {
+          "request_sha256": "c552ae56a330a04168e7b77927cb8113f8ac1f599f0c92c02ced8ec2b7702176",
+          "prompt_utf8_bytes": 1538,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "f52151dc4cb637c3eee23d2424bd3c964153f994020b52bac79da5d5d0f8b66c",
+          "prompt_utf8_bytes": 1560,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "ed1210fce6115ae2cd1a4bc550967ff0071cf43312790283cb8d703a1b5d3280",
+          "prompt_utf8_bytes": 3726,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "d49c8104039946a2bce076b8db5e67ef3366197b36d5d38eb52d964057270565",
+          "prompt_utf8_bytes": 3186,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "be07aba0a3a518796827004146463c32ecad2319c3ef5dd621fd0734f069bc06",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "975fe9eb08924899d0358742d1595add3f0905f10096eed97495a7e8ca89bcb9",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "826e3886566d43c0ba6a1bb128be9a707783d88571d8aa3681777f790b7aa0a3",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "39af742c4e954a046b8c965638dbf52fa6e44562b4d8b0daaf44c5ff5f574ab3",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "a41327c3d168430cd5b40193612bdd4a0bc368914d44e131db7df47fca58c2ce",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-041",
+      "configuration_id": "cm-land-conf-cluster-041",
+      "family": "missing_decisive_evidence",
+      "condition_id": "cm-land-conf-041-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "facts_sha256": "c8de1928a8ae24095a8e1c7e1c8a69465b309e69453a731e458e25667cb9e768",
+      "diagnostic_result_sha256": "ecbb3e69a609c2371e04a3769b00ef37bc2b0f8269791c5c3366d3e16b63e82e",
+      "plan_sha256": "48f90aaac512f3ba3bd89e4d020aa65fcc54ca73f20b46272aee8d2e25c6942b",
+      "requests": {
+        "B0": {
+          "request_sha256": "b90f6313b5912330b5ee96c486d9136e04e2fb75a576c3ff0b794a30507d421c",
+          "prompt_utf8_bytes": 2423,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "d563ef54cea8b1c96f32f44774a4370faa17babb1ce3b7ad77e4a02d92e1573e",
+          "prompt_utf8_bytes": 2611,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "70094549268a1c157e89603124442968e44aa4eebcfd5ff05518b39a4bcb4370",
+          "prompt_utf8_bytes": 5164,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "cf7dc62c4f8aaed8b99d5667d9aa4de58df3408553e825f6d40e2867ed8a78e3",
+          "prompt_utf8_bytes": 4668,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "65b53a9a38f18611cde35e2f8f08db87ec85e1359620c9f41c040714b4adb85e",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "86c79685da763c8f1cc4a56869263980ea1ff518eddb637af45c7296714d4432",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "9c073cf7d512550b7db2169551e9abea014d31e518da321d2995398b77656e5a",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "4f158b23fd4b97847e38756b6e3f741e8e42265ca0cb6d8122c34d54aa13203d",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "85e373a6ddabec968dba0b5256a6e66fe7d3ffe93f04705e06e21f32121512e8",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-041",
+      "configuration_id": "cm-land-conf-cluster-041",
+      "family": "missing_decisive_evidence",
+      "condition_id": "cm-land-conf-041-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "facts_sha256": "587f56d652ffa37fabe2afc290730f2ce9c0feb9a6e5168c8b8a76385e7b1442",
+      "diagnostic_result_sha256": "424445ea5d5d07e89bcf81275586de917c348aae7fee88f407e2a355ffd392d6",
+      "plan_sha256": "8a6b529707764ece5cc0dc0aef5672f555d88aa2f173f94082427275deb97fce",
+      "requests": {
+        "B0": {
+          "request_sha256": "59a67db8b2c725f8ecc856bd3157480619f08497522d88d5aaceeffeea4ecba7",
+          "prompt_utf8_bytes": 46190,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "0edbd96a30930d471ea0f973cdebf192ccef71216f7eceb6a525f4faab62e294",
+          "prompt_utf8_bytes": 68914,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "c3d000d9a04868460ac6b991d57bbec6c529519ae1ddff5be9971e2ebbe6774f",
+          "prompt_utf8_bytes": 76296,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "a552a00eb5a7f11d38f7ce9b6acadddae5cb9220b0f0f96f66add0d013610100",
+          "prompt_utf8_bytes": 75800,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "6aad128877c55331369b938f53982fa4c4a7104cb73b146951fee55367b181ef",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "9d16310ca51f9bf44c74fa17185701661493a44fd20b69649750a18d5db6d2a6",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "07ec551dee8f9375f8f037e824e1b0a9426182c3bcd4026cf21652a0316a2584",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "d5a297a9ef964101496704ca839a8bdd3b2da5e15e7fb16636d13ceca191275a",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "bba50260e337d1201da70e6d584d206dae358d59ee1350b908fb7e937b623cad",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-048",
+      "configuration_id": "cm-land-conf-cluster-048",
+      "family": "missing_decisive_evidence",
+      "condition_id": "cm-land-conf-048-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "facts_sha256": "bc64eb4426d1bf8a6676cf5d4921e666a347229b995a1069c6a3a8fed50c5ff7",
+      "diagnostic_result_sha256": "ae5c12575f85d96e8e465869665a291d1ba42b18ab2b2742792346f316ffc870",
+      "plan_sha256": "6967cb7dc6f9b0f814d8b590aa3b8b0f1e3f5ed4f6bf9306552e30d3cc3510d2",
+      "requests": {
+        "B0": {
+          "request_sha256": "da310cb7bee47312126586b2a8af2442ec60b35f3ab30432ec8605da6920de43",
+          "prompt_utf8_bytes": 1538,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "268fc2839805bc24283a3eefbce26a47a4fc4ed96d7b7e5be3e75be006fd6c27",
+          "prompt_utf8_bytes": 1560,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "8ab1784c339f254aa297fc9197fb44fda0f2f9873b9ef018497c92203717ef35",
+          "prompt_utf8_bytes": 3726,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "5c44b3963a4118885dea4abc349ae40a6abf588a36592f459dcd9d64993c6146",
+          "prompt_utf8_bytes": 3186,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "eded95d1be5b01000a46460842ca41b8822f674fb03aa05176342ab992600220",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "7b40d395453b06e9c4e5adc20e3ec07686d531d2ac48ea0e1c2d2b99938ebc97",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "ab3095a6f1f2811b09d21e9b59c205377da092238ee41a3c261363b5e787f132",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "ded383bdd64c06bac8c63efc08bc8f61e862126884bf0b905771c4a0c25826a5",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "450c4670cb3cdac519d6e049439686c75a0f4680a31f8cf62c2130e531a6071f",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-048",
+      "configuration_id": "cm-land-conf-cluster-048",
+      "family": "missing_decisive_evidence",
+      "condition_id": "cm-land-conf-048-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "facts_sha256": "addbb9f38aeb452725bd0eed54ef44a70b274ee456148633b21d5d7a9af33463",
+      "diagnostic_result_sha256": "50025868aabc7588df3f076d0c0bee73cd9b497f878bf0fcf13b402d6c98de3a",
+      "plan_sha256": "6041d1bd327716b37faa6fdf5757ff1a1a0dd55d88b1225fd475d5460cdfaa82",
+      "requests": {
+        "B0": {
+          "request_sha256": "9540a0ce50fec6667f940ad8435f41e4e113d0d09c1cbc5314feef9c2b49274c",
+          "prompt_utf8_bytes": 2423,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "d723d3a5560f394f8c3f325caf8124f1629629ace6735bd176239309430b5596",
+          "prompt_utf8_bytes": 2611,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "8781f08435e5aa94e848e827289b47687d69998eee9318855d43316086d7014b",
+          "prompt_utf8_bytes": 5164,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "efb40b1f0c9ee11f369d717000e7a47c1e780dc74a757627bdec930639ddaf13",
+          "prompt_utf8_bytes": 4668,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "765d68e6e68554815570058550f54b462c2312fd6ba4c09122856578d9de7efa",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "d842df227c5700f03609e028cd3f4d552732eaadd03d7cdd04488e83c0836177",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "6051f9e64447eef6d32f56356bdbe70f09d44c621a23eb0402f83028c4f99075",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "ac53d501ff819cd0e8b813c2449da8944cc9cc675914a514aae44afb0370569d",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "f00cc646cccc72aabec2db6ee25ea2045b095aa0f01543ec28f97daac31186a5",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-048",
+      "configuration_id": "cm-land-conf-cluster-048",
+      "family": "missing_decisive_evidence",
+      "condition_id": "cm-land-conf-048-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "facts_sha256": "463f520cd1e9d2664f59661f9b539740aa258428fee54afbb0f2755792d00a15",
+      "diagnostic_result_sha256": "0bedf2d0a1226671393846a39dfccf4609f0a5cfc87214afd52a014e651fbe78",
+      "plan_sha256": "9551e1148f4bd0aad448536435def5856c27e6314e259cb179adda85556eff5e",
+      "requests": {
+        "B0": {
+          "request_sha256": "b2e93f9e9584f1edcabb12edffc62b83389c2346db34c196499b4c91e87c1667",
+          "prompt_utf8_bytes": 46920,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "94c900b035a2c002e7b73745ce19a6bf4f09b2b8d6b86132b4fa03c173ede979",
+          "prompt_utf8_bytes": 70028,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "1eab20cca4e707f40e79acf3f32c217e251b12d5b9b054cc4f46221707f2c065",
+          "prompt_utf8_bytes": 77490,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "5f8a999d5f382002f0dac6ec8c8c14ad4e398ef64f8d35fc89179770f9869c99",
+          "prompt_utf8_bytes": 76994,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "5fbd51cdeae5db02b2ba95f134e539d62ac3188a0a2c033884b51e453af828e1",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "6a4bd2689573cd0930101ab527f2ebf9516abf9f003836cc25534bbff48a3f5d",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "b1895ae06c4d95ab0d52aec600157c0e1fd53b96cc3582b8126eea5c075bc875",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "2a51ba8289910f6579462b8d6d55aa74c7eb65be37d3937bf698588f684ae581",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "e594494082cb87bdc52adbe014a39d53a86e12c7f767cb06a3a67b5c8d39abb7",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-054",
+      "configuration_id": "cm-land-conf-cluster-054",
+      "family": "nominal_false_premise",
+      "condition_id": "cm-land-conf-054-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "facts_sha256": "a3304bf7512cb7ace742555b71a7e6f54390fe90b2c1f838c3b4d87f68c4f2a4",
+      "diagnostic_result_sha256": "909d6dcf2abab189406b96e3e33aefa255ae850e3910f76a67a026f3bfd01cf8",
+      "plan_sha256": "1656a9095a588e7bb67af42e3c20d9500373c5a61e0fcf79aa2b0041ea4445e5",
+      "requests": {
+        "B0": {
+          "request_sha256": "cb37ee467c06890c1f2b4909f6765da5a9386f4d5057b0285cbc7353818a463e",
+          "prompt_utf8_bytes": 1572,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "81673125e89d62e15bd1fcc5476f1a86eda52f44f3e6e3cfaad52f76ed0ab11b",
+          "prompt_utf8_bytes": 1594,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "7e3ee85d1d65be7dc35297abeba46a88fe50706d14336af998e7de8f916db7ff",
+          "prompt_utf8_bytes": 3797,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "fd83255ce817fc7adfbe8afaba81b4e968110a6644dc83aeab8cab260a2bad1a",
+          "prompt_utf8_bytes": 3226,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "ddf9ca8968e3aeabb86f0d085fe404460e99401b6f933cee2cee96691ac1e5b7",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "696760c6172650d0eae73121ce76a805765504a0b852557953a23153dbb9ab4a",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "c69bfee62efc92825f0b04b6029639a2f6896adf4b67a04b4a0178d66fb119e8",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "4815bc695809e8ac88a8d09c7a9782db15efc947b9a78e758a3464af89aeea23",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "88fd1486763ef77159aefa63b1539b819a5155a66463c848965ffb7cb08c72e9",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-054",
+      "configuration_id": "cm-land-conf-cluster-054",
+      "family": "nominal_false_premise",
+      "condition_id": "cm-land-conf-054-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "facts_sha256": "fd125cd5b212de5cc7dc11a12cc395edee6876df0eeb4550ef93a22843e9c8ef",
+      "diagnostic_result_sha256": "60212ce68c47859e4e89b149e85ffbb20ec015d52f3c138cf0d2d7998681a9d7",
+      "plan_sha256": "092fd16d431ceaa2e3dec50e07cff0173bfc50967724cff582bd66028879059d",
+      "requests": {
+        "B0": {
+          "request_sha256": "979e3d0792acd4b442e73d612a3524276fa3622f366ac94c30acbedb5685e95f",
+          "prompt_utf8_bytes": 64239,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "73ebe3f5fc03bf41ea243d2256127405ff999d2e84a6ba6a81faac398ed600e8",
+          "prompt_utf8_bytes": 96541,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "c51dd552b59d7832bcda169ba8e5e3f59e81172f62e2dcff98c6d72614d2d49e",
+          "prompt_utf8_bytes": 105607,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "9c666945e3f040cf09bc8225b7441909e51ad8c9fdc39a5c00f09fd2e9a2bfe6",
+          "prompt_utf8_bytes": 105036,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "a041e2e9da9ac9ca9633d0f9c4bbafe9893cc5005fa1410bbc0e8c8df321651a",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "e6ab44aee229ac5957cd11135a95fe1fab6f5576d354b0daac21e19810f0fef3",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "beba638a80b90dc931bfb28af49770cb72a42cb8fb287ae03b9effc18098c81e",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "7250700927e2f6ac4f50a9edd6d500968ba60f0fcf9c8b95f1231a96c06c4562",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "07d85958e3ff3b23135f662ee69fceaa69bf861c7c3e5beac906b3bf89979913",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-054",
+      "configuration_id": "cm-land-conf-cluster-054",
+      "family": "nominal_false_premise",
+      "condition_id": "cm-land-conf-054-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "facts_sha256": "259fe9162da1cc3aebc303e16c90918245738a80752bbc350f49615ab4edf8e5",
+      "diagnostic_result_sha256": "773af5ba37996257c24846263778f997eae8bd117fdca2f1c1eecda1be31f13c",
+      "plan_sha256": "3e7d5bb80d6d9d766d86117e9b64a25e74a3697896c97880847b77971674752f",
+      "requests": {
+        "B0": {
+          "request_sha256": "77982d681283acb7125f390629f68e4c8978df51f4ccf9d3b93d30e5e47ea689",
+          "prompt_utf8_bytes": 387508,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "4fc53d7ba19358a28252504c084df3af704d1152dc8fae50fbda121075f6fe09",
+          "prompt_utf8_bytes": 564520,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "baa1f6fb2b36e18fd7e1bb5d2bba5a5bae9113297278dc1ba51716910e0c74ae",
+          "prompt_utf8_bytes": 603703,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "b13c201693f7383dd42caf8c994e8a8b0e55a88c5e6c85f09e911ffca773c9d3",
+          "prompt_utf8_bytes": 603149,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "30cb1c77baf595b6f88fb9682497b6a7f1354b2176bb1c26a50d0062c89b6cf5",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "b13b1047e820e22f847d48e6812c6d6760bbd35f2659b1a18bfff407ef0d7934",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "92554c181240464f7df293cf2a006efa1c7e4981e49e8a88559212c1a7ec71fa",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "8476048ece6f81c618bee0522de6ccdeeec74fda74a0f8391804a8c4e3a0366a",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "1f9bf59e226f5193b877f61ba45d1ed5fdc63acdbcf674eb01cf6561fb1b87d3",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-072",
+      "configuration_id": "cm-land-conf-cluster-072",
+      "family": "nominal_false_premise",
+      "condition_id": "cm-land-conf-072-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "facts_sha256": "17b7c36e5af68d3eacb2d7ac3829d2b7a70322cd8f36346f660bf57f9137f488",
+      "diagnostic_result_sha256": "b5c59725ebacfde9df81d9c2cef39ec03c5dd855a9c4a5dac82f6e3ebc767506",
+      "plan_sha256": "7816cb8215b025fb9c075cc1e40bf8d7057f8a981fc18db9e92c69772d4f1002",
+      "requests": {
+        "B0": {
+          "request_sha256": "e12699ad72494cdda7b6df23745d27246311473ab15144f633f47af8a36cde4e",
+          "prompt_utf8_bytes": 1572,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "c46f33cc5721cf4a42b3cfb62a3e006f0d070d8bfa1d350a854ca89f3dfd860e",
+          "prompt_utf8_bytes": 1594,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "c28d0fb2e6debd5d124b96073d3c275ffada26daa0633f92d183d22598243b25",
+          "prompt_utf8_bytes": 3797,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "28a408d5ed512134b757ec018480d7aea2a7e3a46e840cd8d7e152676f34ede5",
+          "prompt_utf8_bytes": 3226,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "cf290a305bca89f3aa199942dbe88ebcee74322a4411c8d5a76814e2d9796f05",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "c45ba30f9306682e3c0b352c76b6cbad491f944896c445104e81b027da6cc6fc",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "7607f8f15e3094ea8b98c854e3a635e6fbcbaf99cb96c866379c4b8ce0e608cd",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "121a02fafe116dc42a5c27390b2466de2e3fdeb4dd52d4ad2a36288bb60ff681",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "cc0e0818078502349242d5dc96055f316fa8d9e5bf1393b6ef9129dc9638bc1c",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-072",
+      "configuration_id": "cm-land-conf-cluster-072",
+      "family": "nominal_false_premise",
+      "condition_id": "cm-land-conf-072-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "facts_sha256": "af2c7e8016d2966675b52f52984bf7a172117e3acf12a18cffd78da35afd3e22",
+      "diagnostic_result_sha256": "8064637e422ecc2f6fcdb97fe246859dec5af8034e9b29b732d58a5aa682480d",
+      "plan_sha256": "c22512e75f37fac2b0d5f926338eaca3aee57f64e74ae60b92da1b3c89130b4f",
+      "requests": {
+        "B0": {
+          "request_sha256": "37a12cdf89b8a3d86d218e44312abac0cd35d5790bc217583691c91d0725f64f",
+          "prompt_utf8_bytes": 78772,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "39b456bff80eb94da6dda8c90a4af6161fee82279703dc842d22a55a79b33f2f",
+          "prompt_utf8_bytes": 118418,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "f5a683f44c35e4cceca74d20adf5424565df76433b0ee0163c15e9b0c144085c",
+          "prompt_utf8_bytes": 129014,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "78af16417615bebcd6dc78ab7d46ad5820ec6ed896785946ad8abb1a87374fc5",
+          "prompt_utf8_bytes": 128443,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "6faf5e0d3edc6dc62ed909b05a381c0e4301f78e420905c728cb32111a9c6ad3",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "1f07121e3bed0ca8515d84ea614c872831f2c9c2a509bc8609b35e7729c31ed8",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "cc1db7aec2b9ceb6d196caaa1d24bf07c6ce8c2ccbf84c3f7197f49d232edb88",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "92710f24987d3688dd701bd0f0ac212032a1a5bd772ce42e25ed069aceb898ab",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "d847d5136b52465085d7e6f82d86d0abac35f92fe1b1d8de81d9b25b631bd591",
+          "file_count": 6
+        }
+      }
+    },
+    {
+      "source_run_id": "cm-land-conf-072",
+      "configuration_id": "cm-land-conf-cluster-072",
+      "family": "nominal_false_premise",
+      "condition_id": "cm-land-conf-072-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "facts_sha256": "0cd074fce020731e25c95f259fcd3bb0fb3005736c54673c8e166bde202428d0",
+      "diagnostic_result_sha256": "46c5f315457f42f9a185e6b60a49bf74d0c7635c2736f0db2928eb8ccd7e12e8",
+      "plan_sha256": "a51b76af97cb42d7a933bbaf82aa74995220e984bb4a9d39b0d2365db7be9731",
+      "requests": {
+        "B0": {
+          "request_sha256": "045a666488df35e38a9f3bcacf3a2e1d6fa6788d2775b3f27c8056b720b40c17",
+          "prompt_utf8_bytes": 459281,
+          "token_fit": null
+        },
+        "B1": {
+          "request_sha256": "dbd2849cd8663e3fb273d540f12b69da62e2f2aba69b2123b2cff9dbaacda3c5",
+          "prompt_utf8_bytes": 669077,
+          "token_fit": null
+        },
+        "B3": {
+          "request_sha256": "6f623616bf3e07b3be51c370999484ea0c4d31b54a452ffdbe43084145f48245",
+          "prompt_utf8_bytes": 715090,
+          "token_fit": null
+        },
+        "B4": {
+          "request_sha256": "fc3f5bb101bdeabc8b585d2a00a5b5e4614ff3e74e94b0ea3f7e10d60e07b1c1",
+          "prompt_utf8_bytes": 714536,
+          "token_fit": null
+        }
+      },
+      "workspaces": {
+        "B0": {
+          "workspace_sha256": "48b9c2106d6be1273982416479129f803e7094d7e0563646be6cfebb4d5d7e93",
+          "file_count": 0
+        },
+        "B1": {
+          "workspace_sha256": "292c973e5ba3d96f602f886e9022886d4f3ec2c09763d03c12ef782bddf450db",
+          "file_count": 0
+        },
+        "B2": {
+          "workspace_sha256": "5e0bd8a6b56e41eaaa52fbedc38f4887f1be2a5aadee4069ead8672c5c96c303",
+          "file_count": 5
+        },
+        "B3": {
+          "workspace_sha256": "983f43b8b48ffd529181728f46818201231f59bd6f350ba96a849bb26d2fa8f5",
+          "file_count": 6
+        },
+        "B4": {
+          "workspace_sha256": "6b263869dca5015c0ccbeadd58bc677e12cc4f74833e4837a5616ab8a0c9fab4",
+          "file_count": 6
+        }
+      }
+    }
+  ],
+  "model_calls_authorized": false,
+  "model_call_attempted": false,
+  "semantic_method_outputs_generated": 0,
+  "pilot_annotation_authorized": false,
+  "method_key_opened": false,
+  "old_packets_or_outputs_changed": false,
+  "p11_authorized": false,
+  "confirmation_independent_n": 0,
+  "replication_independent_n": 0
+}
