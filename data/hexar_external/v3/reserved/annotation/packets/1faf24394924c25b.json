@@ -1,0 +1,572 @@
+{
+  "annotation_origin": "automated_agent",
+  "builder_id": "hexar-external-v2",
+  "builder_version": "v2",
+  "forms": [
+    {
+      "abstraction_level_options": [
+        "task_outcome",
+        "software_action_failure",
+        "recorded_override_state",
+        "specific_physical_cause",
+        "limitation"
+      ],
+      "allowed_claim_labels": [
+        "SUPPORTED_BY_VISIBLE_EVIDENCE",
+        "CONTRADICTED_BY_VISIBLE_EVIDENCE",
+        "INSUFFICIENT_VISIBLE_EVIDENCE",
+        "PHYSICALLY_TRUE_BUT_UNSUPPORTED",
+        "UNINTERPRETABLE"
+      ],
+      "annotator_attestation": null,
+      "annotator_slot": "A",
+      "atomic_statements": [
+        {
+          "annotation_notes": null,
+          "asserted_abstraction_level": "software_action_failure",
+          "item_id": "1faf24394924c25b-a001",
+          "label": null,
+          "response_span": "I received the goal to go to the living room, but navigation failed with a recorded timeout before I could bring the water.",
+          "statement": "I received the goal to go to the living room.",
+          "visible_support_references": []
+        },
+        {
+          "annotation_notes": null,
+          "asserted_abstraction_level": "software_action_failure",
+          "item_id": "1faf24394924c25b-a002",
+          "label": null,
+          "response_span": "I received the goal to go to the living room, but navigation failed with a recorded timeout before I could bring the water.",
+          "statement": "Navigation failed with a recorded timeout.",
+          "visible_support_references": []
+        },
+        {
+          "annotation_notes": null,
+          "asserted_abstraction_level": "task_outcome",
+          "item_id": "1faf24394924c25b-a003",
+          "label": null,
+          "response_span": "I received the goal to go to the living room, but navigation failed with a recorded timeout before I could bring the water.",
+          "statement": "Navigation failed before I could bring the water.",
+          "visible_support_references": []
+        },
+        {
+          "annotation_notes": null,
+          "asserted_abstraction_level": "software_action_failure",
+          "item_id": "1faf24394924c25b-a004",
+          "label": null,
+          "response_span": "My request for human help was still waiting.",
+          "statement": "My request for human help was still waiting.",
+          "visible_support_references": []
+        },
+        {
+          "annotation_notes": null,
+          "asserted_abstraction_level": "limitation",
+          "item_id": "1faf24394924c25b-a005",
+          "label": null,
+          "response_span": "The available logs do not show why navigation timed out.",
+          "statement": "The available logs do not show why navigation timed out.",
+          "visible_support_references": []
+        }
+      ],
+      "false_premise_handling": "NOT_APPLICABLE",
+      "form_id": "1faf24394924c25b-A",
+      "highest_asserted_abstraction_level": null,
+      "independent_reference": {
+        "answerability": {
+          "bounded_diagnostic_answerable": false,
+          "charging_state_answerable": false,
+          "manual_selection_answerable": false,
+          "measured_delay_reason_answerable": false,
+          "note": "Physical-cause and measured-delay limits apply even when observed outcome and diagnostics are answerable.",
+          "state": "SUPPORTED_PARTIAL",
+          "supported_execution_information": true,
+          "unique_physical_failure_mechanism_answerable": false
+        },
+        "material_unsupported_mechanisms": [
+          "Unique obstacle, moving-obstacle or wall mechanism inferred from planning failures or clearing requests.",
+          "Manual/charging indicator uniquely caused this episode failure or physically inhibited motion without controller/arbitration and applied-motion evidence.",
+          "Localization uncertainty uniquely caused bad motion or delay without an independent causal measurement.",
+          "A planning-attempt failure proves global route infeasibility or no possible route.",
+          "Nominal/successful logs prove safety-limited speed, normal geometry or the measured reason for perceived slowness.",
+          "Definite negative causal claims substituted for missing-cause uncertainty."
+        ],
+        "optional_supported_detail": [
+          {
+            "detail": "Recorded software log: SkillNavigateToZone received a new goal",
+            "evidence_ids": [
+              "l0000"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: Waiting for NavigateToZone to finish...",
+            "evidence_ids": [
+              "l0001"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded navigation skill navigate_to_zone status: failed; explicit error: The skill has timed out.",
+            "evidence_ids": [
+              "s0001"
+            ],
+            "scope": "No error string does not itself establish normal physical motion."
+          },
+          {
+            "detail": "Actual instruction, locations, ordered skill statuses and task-error fields in the supplied recorded_task are eligible supplemental facts when accurately attributed.",
+            "evidence_ids": [
+              "task-latest"
+            ],
+            "scope": "An instruction is a request, not proof that requested physical delivery occurred; skill success is recorded execution status."
+          }
+        ],
+        "production_input_boundary": "Only this permitted packet supports answer assertions; source bag IDs, family names, evaluator interventions, references and raw alternate representations remain evaluator-only.",
+        "question": "Why didn't you bring it?",
+        "question_id": "q1",
+        "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+        "required_communication_units": [
+          {
+            "acceptable_abstraction": "Navigation failed/did not complete; recorded timeout/abort is valid compact specificity when explicitly retained. Exact wording or durations are unnecessary.",
+            "requirement": "Communicate that the recorded navigation failed/did not complete. Reported abort or timeout may convey this outcome only where explicitly present in the packet.",
+            "supporting_evidence_ids": [
+              "s0001"
+            ],
+            "unit_id": "navigation_execution_outcome"
+          }
+        ],
+        "required_scope_limits": [
+          {
+            "explicit_abstention_phrase_required": false,
+            "limitation_id": "physical_cause_or_delay_unknown",
+            "requirement": "Separate recorded outcome and diagnostics from unique physical causation or a measured explanation of bad/slow motion. Explicit uncertainty OR clearly source-bounded observation wording is acceptable. Do not claim a measured delay mechanism, obstacle identity, inhibited applied motion or safety-speed policy from these records."
+          },
+          {
+            "explicit_abstention_phrase_required": false,
+            "limitation_id": "removed_diagnostics_unknown",
+            "requirement": "Unavailable manual, charging, localization and planner/controller diagnostic channels cannot be treated as false, normal, successful or absent physical mechanisms. Mentioning each missing channel is optional when the answer remains bounded to retained outcomes."
+          }
+        ],
+        "scoring_constraints": [
+          "One supported outcome unit plus at least one diagnostic alternative when available; diagnostics are disjunctive, never an exhaustive required list.",
+          "Explicit cause-unknown sentence is optional if observations are clearly bounded and no overstrong cause is asserted.",
+          "Additional valid facts from the complete permitted packet remain valid outside this compact inventory.",
+          "Preserve polarity, modality, source attribution and scope; limitation/denial of evidential establishment is not a positive cause claim.",
+          "Wrong physical cause does not erase a correctly communicated outcome; unsupported material mechanism is scored separately.",
+          "No timestamps, exact wording, list lengths, source-file names or full task plans are required.",
+          "A question suggesting slow or bad movement does not license a measured speed, defective behavior or unsupported causal premise."
+        ]
+      },
+      "limitation_preservation": [
+        {
+          "limitation_prompt": "Separate recorded outcome and diagnostics from unique physical causation or a measured explanation of bad/slow motion. Explicit uncertainty OR clearly source-bounded observation wording is acceptable. Do not claim a measured delay mechanism, obstacle identity, inhibited applied motion or safety-speed policy from these records.",
+          "preserved": null,
+          "response_span": null
+        },
+        {
+          "limitation_prompt": "Unavailable manual, charging, localization and planner/controller diagnostic channels cannot be treated as false, normal, successful or absent physical mechanisms. Mentioning each missing channel is optional when the answer remains bounded to retained outcomes.",
+          "preserved": null,
+          "response_span": null
+        }
+      ],
+      "packet_id": "1faf24394924c25b",
+      "question_text": "Why didn't you bring it?",
+      "required_unit_coverage": [
+        {
+          "communicated": null,
+          "response_span": null,
+          "unit_prompt": "Communicate that the recorded navigation failed/did not complete. Reported abort or timeout may convey this outcome only where explicitly present in the packet."
+        }
+      ],
+      "response_text": "I received the goal to go to the living room, but navigation failed with a recorded timeout before I could bring the water. My request for human help was still waiting. The available logs do not show why navigation timed out.",
+      "robot_visible_evidence": {
+        "availability": {
+          "charging_state": "unavailable",
+          "manual_state": "unavailable",
+          "navigation_logs": "present",
+          "navigation_outcomes": "present",
+          "recorded_task": "present"
+        },
+        "diagnostic_channels": {
+          "charging": false,
+          "localization_samples": false,
+          "manual": false,
+          "planner_controller_logs": false
+        },
+        "evidence": {
+          "charging_state": [],
+          "manual_state": [],
+          "navigation_logs": [
+            {
+              "callback_time": "1753797398.627872006",
+              "evidence_id": "l0000",
+              "logger": "skill_navigate_to_zone",
+              "message": "SkillNavigateToZone received a new goal"
+            },
+            {
+              "callback_time": "1753797398.729959657",
+              "evidence_id": "l0001",
+              "logger": "skill_navigate_to_zone",
+              "message": "Waiting for NavigateToZone to finish..."
+            }
+          ],
+          "navigation_outcomes": [
+            {
+              "error_msg": "The skill has timed out",
+              "evidence_id": "s0001",
+              "skill": "navigate_to_zone",
+              "status": "failed"
+            }
+          ],
+          "recorded_task": [
+            {
+              "evidence_id": "task-latest",
+              "value": {
+                "instruction": "go to the living room and bring me a bottle of water",
+                "skill_sequence": [
+                  {
+                    "error_msg": "",
+                    "params": {
+                      "input": "Sure, I'll go to the living room and get you a bottle of water"
+                    },
+                    "skill": "say",
+                    "status": "succeeded"
+                  },
+                  {
+                    "error_msg": "The skill has timed out",
+                    "params": {
+                      "location": "living_room"
+                    },
+                    "skill": "navigate_to_zone",
+                    "status": "failed"
+                  },
+                  {
+                    "error_msg": "",
+                    "params": {
+                      "question": "Hello, can you please give me a bottle of water?"
+                    },
+                    "skill": "ask_human_for_help",
+                    "status": "waiting"
+                  },
+                  {
+                    "error_msg": "",
+                    "params": {
+                      "input": "Here is your bottle of water"
+                    },
+                    "skill": "say",
+                    "status": "waiting"
+                  }
+                ],
+                "task_error_msg": "",
+                "task_id": "task-opaque",
+                "task_status": "valid"
+              }
+            }
+          ]
+        },
+        "public_communication_requirements": {
+          "extra_details": "Additional supported details are welcome, without requiring timestamps or exhaustive lists.",
+          "scope": "Separate observed execution facts from unique physical causation and measured reasons for delay. Explicit uncertainty OR clearly source-bounded observation language is acceptable.",
+          "useful_diagnosis": "If retained observations show manual/charging selection, localization uncertainty or planner/progress trouble, preserve at least one useful bounded fact rather than blanket refusal.",
+          "useful_outcome": "Report the supported navigation outcome, if present; preserve timeout/abort only when explicit."
+        },
+        "question": "Why didn't you bring it?",
+        "schema": "hexar-permitted-method-packet/v2",
+        "source_context": {
+          "event_scope": "Planner/progress failure and clearing-request logs are software execution evidence, not direct geometry or unique physical causes. No supplied costmap/scan/path measurement proves an obstacle or moving obstacle. A clearing request does not prove completed clearing.",
+          "indicator_semantics": "The released component treats /joy_priority as manual mode and /power/is_charging as charging. No governing robot controller/arbitration source or applied-motion measurement is supplied.",
+          "localization_semantics": "The original callback appends a high-uncertainty diagnostic after its count exceeds five samples with mean XY covariance or orientation variance above .2. Its count decrements on low samples; this is preserved, not a new localization detector.",
+          "missingness": "Unavailable evidence is unknown; do not replace it with false, zero, success or normal behavior.",
+          "timing_scope": "Requested window follows upstream task bookkeeping and its sec.nanosec conversion. A recorded navigation success does not establish a safety-speed policy or a measured cause of slowness."
+        },
+        "task_window": [
+          "1753797398.527994050",
+          "1753797458.728963433"
+        ]
+      },
+      "sanitized_physical_facts": []
+    },
+    {
+      "abstraction_level_options": [
+        "task_outcome",
+        "software_action_failure",
+        "recorded_override_state",
+        "specific_physical_cause",
+        "limitation"
+      ],
+      "allowed_claim_labels": [
+        "SUPPORTED_BY_VISIBLE_EVIDENCE",
+        "CONTRADICTED_BY_VISIBLE_EVIDENCE",
+        "INSUFFICIENT_VISIBLE_EVIDENCE",
+        "PHYSICALLY_TRUE_BUT_UNSUPPORTED",
+        "UNINTERPRETABLE"
+      ],
+      "annotator_attestation": null,
+      "annotator_slot": "B",
+      "atomic_statements": [
+        {
+          "annotation_notes": null,
+          "asserted_abstraction_level": "software_action_failure",
+          "item_id": "1faf24394924c25b-a001",
+          "label": null,
+          "response_span": "I received the goal to go to the living room, but navigation failed with a recorded timeout before I could bring the water.",
+          "statement": "I received the goal to go to the living room.",
+          "visible_support_references": []
+        },
+        {
+          "annotation_notes": null,
+          "asserted_abstraction_level": "software_action_failure",
+          "item_id": "1faf24394924c25b-a002",
+          "label": null,
+          "response_span": "I received the goal to go to the living room, but navigation failed with a recorded timeout before I could bring the water.",
+          "statement": "Navigation failed with a recorded timeout.",
+          "visible_support_references": []
+        },
+        {
+          "annotation_notes": null,
+          "asserted_abstraction_level": "task_outcome",
+          "item_id": "1faf24394924c25b-a003",
+          "label": null,
+          "response_span": "I received the goal to go to the living room, but navigation failed with a recorded timeout before I could bring the water.",
+          "statement": "Navigation failed before I could bring the water.",
+          "visible_support_references": []
+        },
+        {
+          "annotation_notes": null,
+          "asserted_abstraction_level": "software_action_failure",
+          "item_id": "1faf24394924c25b-a004",
+          "label": null,
+          "response_span": "My request for human help was still waiting.",
+          "statement": "My request for human help was still waiting.",
+          "visible_support_references": []
+        },
+        {
+          "annotation_notes": null,
+          "asserted_abstraction_level": "limitation",
+          "item_id": "1faf24394924c25b-a005",
+          "label": null,
+          "response_span": "The available logs do not show why navigation timed out.",
+          "statement": "The available logs do not show why navigation timed out.",
+          "visible_support_references": []
+        }
+      ],
+      "false_premise_handling": "NOT_APPLICABLE",
+      "form_id": "1faf24394924c25b-B",
+      "highest_asserted_abstraction_level": null,
+      "independent_reference": {
+        "answerability": {
+          "bounded_diagnostic_answerable": false,
+          "charging_state_answerable": false,
+          "manual_selection_answerable": false,
+          "measured_delay_reason_answerable": false,
+          "note": "Physical-cause and measured-delay limits apply even when observed outcome and diagnostics are answerable.",
+          "state": "SUPPORTED_PARTIAL",
+          "supported_execution_information": true,
+          "unique_physical_failure_mechanism_answerable": false
+        },
+        "material_unsupported_mechanisms": [
+          "Unique obstacle, moving-obstacle or wall mechanism inferred from planning failures or clearing requests.",
+          "Manual/charging indicator uniquely caused this episode failure or physically inhibited motion without controller/arbitration and applied-motion evidence.",
+          "Localization uncertainty uniquely caused bad motion or delay without an independent causal measurement.",
+          "A planning-attempt failure proves global route infeasibility or no possible route.",
+          "Nominal/successful logs prove safety-limited speed, normal geometry or the measured reason for perceived slowness.",
+          "Definite negative causal claims substituted for missing-cause uncertainty."
+        ],
+        "optional_supported_detail": [
+          {
+            "detail": "Recorded software log: SkillNavigateToZone received a new goal",
+            "evidence_ids": [
+              "l0000"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: Waiting for NavigateToZone to finish...",
+            "evidence_ids": [
+              "l0001"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded navigation skill navigate_to_zone status: failed; explicit error: The skill has timed out.",
+            "evidence_ids": [
+              "s0001"
+            ],
+            "scope": "No error string does not itself establish normal physical motion."
+          },
+          {
+            "detail": "Actual instruction, locations, ordered skill statuses and task-error fields in the supplied recorded_task are eligible supplemental facts when accurately attributed.",
+            "evidence_ids": [
+              "task-latest"
+            ],
+            "scope": "An instruction is a request, not proof that requested physical delivery occurred; skill success is recorded execution status."
+          }
+        ],
+        "production_input_boundary": "Only this permitted packet supports answer assertions; source bag IDs, family names, evaluator interventions, references and raw alternate representations remain evaluator-only.",
+        "question": "Why didn't you bring it?",
+        "question_id": "q1",
+        "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+        "required_communication_units": [
+          {
+            "acceptable_abstraction": "Navigation failed/did not complete; recorded timeout/abort is valid compact specificity when explicitly retained. Exact wording or durations are unnecessary.",
+            "requirement": "Communicate that the recorded navigation failed/did not complete. Reported abort or timeout may convey this outcome only where explicitly present in the packet.",
+            "supporting_evidence_ids": [
+              "s0001"
+            ],
+            "unit_id": "navigation_execution_outcome"
+          }
+        ],
+        "required_scope_limits": [
+          {
+            "explicit_abstention_phrase_required": false,
+            "limitation_id": "physical_cause_or_delay_unknown",
+            "requirement": "Separate recorded outcome and diagnostics from unique physical causation or a measured explanation of bad/slow motion. Explicit uncertainty OR clearly source-bounded observation wording is acceptable. Do not claim a measured delay mechanism, obstacle identity, inhibited applied motion or safety-speed policy from these records."
+          },
+          {
+            "explicit_abstention_phrase_required": false,
+            "limitation_id": "removed_diagnostics_unknown",
+            "requirement": "Unavailable manual, charging, localization and planner/controller diagnostic channels cannot be treated as false, normal, successful or absent physical mechanisms. Mentioning each missing channel is optional when the answer remains bounded to retained outcomes."
+          }
+        ],
+        "scoring_constraints": [
+          "One supported outcome unit plus at least one diagnostic alternative when available; diagnostics are disjunctive, never an exhaustive required list.",
+          "Explicit cause-unknown sentence is optional if observations are clearly bounded and no overstrong cause is asserted.",
+          "Additional valid facts from the complete permitted packet remain valid outside this compact inventory.",
+          "Preserve polarity, modality, source attribution and scope; limitation/denial of evidential establishment is not a positive cause claim.",
+          "Wrong physical cause does not erase a correctly communicated outcome; unsupported material mechanism is scored separately.",
+          "No timestamps, exact wording, list lengths, source-file names or full task plans are required.",
+          "A question suggesting slow or bad movement does not license a measured speed, defective behavior or unsupported causal premise."
+        ]
+      },
+      "limitation_preservation": [
+        {
+          "limitation_prompt": "Separate recorded outcome and diagnostics from unique physical causation or a measured explanation of bad/slow motion. Explicit uncertainty OR clearly source-bounded observation wording is acceptable. Do not claim a measured delay mechanism, obstacle identity, inhibited applied motion or safety-speed policy from these records.",
+          "preserved": null,
+          "response_span": null
+        },
+        {
+          "limitation_prompt": "Unavailable manual, charging, localization and planner/controller diagnostic channels cannot be treated as false, normal, successful or absent physical mechanisms. Mentioning each missing channel is optional when the answer remains bounded to retained outcomes.",
+          "preserved": null,
+          "response_span": null
+        }
+      ],
+      "packet_id": "1faf24394924c25b",
+      "question_text": "Why didn't you bring it?",
+      "required_unit_coverage": [
+        {
+          "communicated": null,
+          "response_span": null,
+          "unit_prompt": "Communicate that the recorded navigation failed/did not complete. Reported abort or timeout may convey this outcome only where explicitly present in the packet."
+        }
+      ],
+      "response_text": "I received the goal to go to the living room, but navigation failed with a recorded timeout before I could bring the water. My request for human help was still waiting. The available logs do not show why navigation timed out.",
+      "robot_visible_evidence": {
+        "availability": {
+          "charging_state": "unavailable",
+          "manual_state": "unavailable",
+          "navigation_logs": "present",
+          "navigation_outcomes": "present",
+          "recorded_task": "present"
+        },
+        "diagnostic_channels": {
+          "charging": false,
+          "localization_samples": false,
+          "manual": false,
+          "planner_controller_logs": false
+        },
+        "evidence": {
+          "charging_state": [],
+          "manual_state": [],
+          "navigation_logs": [
+            {
+              "callback_time": "1753797398.627872006",
+              "evidence_id": "l0000",
+              "logger": "skill_navigate_to_zone",
+              "message": "SkillNavigateToZone received a new goal"
+            },
+            {
+              "callback_time": "1753797398.729959657",
+              "evidence_id": "l0001",
+              "logger": "skill_navigate_to_zone",
+              "message": "Waiting for NavigateToZone to finish..."
+            }
+          ],
+          "navigation_outcomes": [
+            {
+              "error_msg": "The skill has timed out",
+              "evidence_id": "s0001",
+              "skill": "navigate_to_zone",
+              "status": "failed"
+            }
+          ],
+          "recorded_task": [
+            {
+              "evidence_id": "task-latest",
+              "value": {
+                "instruction": "go to the living room and bring me a bottle of water",
+                "skill_sequence": [
+                  {
+                    "error_msg": "",
+                    "params": {
+                      "input": "Sure, I'll go to the living room and get you a bottle of water"
+                    },
+                    "skill": "say",
+                    "status": "succeeded"
+                  },
+                  {
+                    "error_msg": "The skill has timed out",
+                    "params": {
+                      "location": "living_room"
+                    },
+                    "skill": "navigate_to_zone",
+                    "status": "failed"
+                  },
+                  {
+                    "error_msg": "",
+                    "params": {
+                      "question": "Hello, can you please give me a bottle of water?"
+                    },
+                    "skill": "ask_human_for_help",
+                    "status": "waiting"
+                  },
+                  {
+                    "error_msg": "",
+                    "params": {
+                      "input": "Here is your bottle of water"
+                    },
+                    "skill": "say",
+                    "status": "waiting"
+                  }
+                ],
+                "task_error_msg": "",
+                "task_id": "task-opaque",
+                "task_status": "valid"
+              }
+            }
+          ]
+        },
+        "public_communication_requirements": {
+          "extra_details": "Additional supported details are welcome, without requiring timestamps or exhaustive lists.",
+          "scope": "Separate observed execution facts from unique physical causation and measured reasons for delay. Explicit uncertainty OR clearly source-bounded observation language is acceptable.",
+          "useful_diagnosis": "If retained observations show manual/charging selection, localization uncertainty or planner/progress trouble, preserve at least one useful bounded fact rather than blanket refusal.",
+          "useful_outcome": "Report the supported navigation outcome, if present; preserve timeout/abort only when explicit."
+        },
+        "question": "Why didn't you bring it?",
+        "schema": "hexar-permitted-method-packet/v2",
+        "source_context": {
+          "event_scope": "Planner/progress failure and clearing-request logs are software execution evidence, not direct geometry or unique physical causes. No supplied costmap/scan/path measurement proves an obstacle or moving obstacle. A clearing request does not prove completed clearing.",
+          "indicator_semantics": "The released component treats /joy_priority as manual mode and /power/is_charging as charging. No governing robot controller/arbitration source or applied-motion measurement is supplied.",
+          "localization_semantics": "The original callback appends a high-uncertainty diagnostic after its count exceeds five samples with mean XY covariance or orientation variance above .2. Its count decrements on low samples; this is preserved, not a new localization detector.",
+          "missingness": "Unavailable evidence is unknown; do not replace it with false, zero, success or normal behavior.",
+          "timing_scope": "Requested window follows upstream task bookkeeping and its sec.nanosec conversion. A recorded navigation success does not establish a safety-speed policy or a measured cause of slowness."
+        },
+        "task_window": [
+          "1753797398.527994050",
+          "1753797458.728963433"
+        ]
+      },
+      "sanitized_physical_facts": []
+    }
+  ],
+  "packet_count": 1,
+  "response_text": "I received the goal to go to the living room, but navigation failed with a recorded timeout before I could bring the water. My request for human help was still waiting. The available logs do not show why navigation timed out.",
+  "schema": "crane-blinded-agent-atomic-annotation-packet-set/v1"
+}
