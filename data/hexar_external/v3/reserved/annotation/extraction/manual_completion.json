@@ -1,0 +1,238 @@
+{
+  "schema": "hexar-independent-manual-extraction-completion/v3",
+  "items": [
+    {
+      "unique_text_id": "u-059ef2bd808b535e43e247700aac2819043aa034528065b212eef2d2e467ed13",
+      "atoms": [
+        {
+          "statement": "Completed recorded navigation to the living room.",
+          "response_span": "I completed the recorded navigation to the living room and kitchen, and a separate pose navigation also succeeded.",
+          "asserted_abstraction_level": "task_outcome"
+        },
+        {
+          "statement": "Completed recorded navigation to the kitchen.",
+          "response_span": "I completed the recorded navigation to the living room and kitchen, and a separate pose navigation also succeeded.",
+          "asserted_abstraction_level": "task_outcome"
+        },
+        {
+          "statement": "Separate pose navigation also succeeded.",
+          "response_span": "I completed the recorded navigation to the living room and kitchen, and a separate pose navigation also succeeded.",
+          "asserted_abstraction_level": "task_outcome"
+        },
+        {
+          "statement": "Speed measurements are unavailable.",
+          "response_span": "I have no speed measurements or controller diagnostics here, so I can’t tell what made me go slowly.",
+          "asserted_abstraction_level": "limitation"
+        },
+        {
+          "statement": "Controller diagnostics are unavailable here.",
+          "response_span": "I have no speed measurements or controller diagnostics here, so I can’t tell what made me go slowly.",
+          "asserted_abstraction_level": "limitation"
+        },
+        {
+          "statement": "Cannot establish what caused slow movement.",
+          "response_span": "I have no speed measurements or controller diagnostics here, so I can’t tell what made me go slowly.",
+          "asserted_abstraction_level": "limitation"
+        }
+      ]
+    },
+    {
+      "unique_text_id": "u-05bc45c1305a3eb4ac2a878b74067c1ffb23b1507c8b167c5cbbc891cfc546ec",
+      "atoms": [
+        {
+          "statement": "Was plugged in.",
+          "response_span": "I was plugged in and charging, so I could not navigate to bring it.",
+          "asserted_abstraction_level": "recorded_override_state"
+        },
+        {
+          "statement": "Was charging.",
+          "response_span": "I was plugged in and charging, so I could not navigate to bring it.",
+          "asserted_abstraction_level": "recorded_override_state"
+        },
+        {
+          "statement": "Could not navigate to bring the item.",
+          "response_span": "I was plugged in and charging, so I could not navigate to bring it.",
+          "asserted_abstraction_level": "task_outcome"
+        },
+        {
+          "statement": "Being plugged in and charging prevented navigation to bring the item.",
+          "response_span": "I was plugged in and charging, so I could not navigate to bring it.",
+          "asserted_abstraction_level": "specific_physical_cause"
+        }
+      ]
+    },
+    {
+      "unique_text_id": "u-07435ab93ab0999e126602f8b59b9fe98e3297870720f54ec5db08d65a490d50",
+      "atoms": [
+        {
+          "statement": "Was charging.",
+          "response_span": "I was charging, so I could not bring it.",
+          "asserted_abstraction_level": "recorded_override_state"
+        },
+        {
+          "statement": "Could not bring the item.",
+          "response_span": "I was charging, so I could not bring it.",
+          "asserted_abstraction_level": "task_outcome"
+        },
+        {
+          "statement": "Charging caused inability to bring the item.",
+          "response_span": "I was charging, so I could not bring it.",
+          "asserted_abstraction_level": "task_outcome"
+        }
+      ]
+    },
+    {
+      "unique_text_id": "u-08e325034213a7e84c6f6a7654b1b09e7471b5019e1fdcebd89c0d03b6a4dadc",
+      "atoms": [
+        {
+          "statement": "Could not complete the coffee delivery.",
+          "response_span": "I couldn't complete the coffee delivery because navigation to the living room failed with a recorded skill timeout.",
+          "asserted_abstraction_level": "task_outcome"
+        },
+        {
+          "statement": "Navigation to the living room failed.",
+          "response_span": "I couldn't complete the coffee delivery because navigation to the living room failed with a recorded skill timeout.",
+          "asserted_abstraction_level": "task_outcome"
+        },
+        {
+          "statement": "Navigation failure had a recorded skill timeout.",
+          "response_span": "I couldn't complete the coffee delivery because navigation to the living room failed with a recorded skill timeout.",
+          "asserted_abstraction_level": "task_outcome"
+        },
+        {
+          "statement": "The navigation failure explains inability to complete the coffee delivery.",
+          "response_span": "I couldn't complete the coffee delivery because navigation to the living room failed with a recorded skill timeout.",
+          "asserted_abstraction_level": "task_outcome"
+        },
+        {
+          "statement": "Controller repeatedly reported failure to make progress.",
+          "response_span": "The controller repeatedly reported failure to make progress and aborted path following; a manual mode indicator was also on.",
+          "asserted_abstraction_level": "software_action_failure"
+        },
+        {
+          "statement": "Controller aborted path following.",
+          "response_span": "The controller repeatedly reported failure to make progress and aborted path following; a manual mode indicator was also on.",
+          "asserted_abstraction_level": "software_action_failure"
+        },
+        {
+          "statement": "A manual-mode indicator was on.",
+          "response_span": "The controller repeatedly reported failure to make progress and aborted path following; a manual mode indicator was also on.",
+          "asserted_abstraction_level": "recorded_override_state"
+        },
+        {
+          "statement": "Logs do not establish what physically prevented progress.",
+          "response_span": "The logs do not establish what physically prevented progress or whether manual mode caused the failure.",
+          "asserted_abstraction_level": "limitation"
+        },
+        {
+          "statement": "Logs do not establish whether manual mode caused the failure.",
+          "response_span": "The logs do not establish what physically prevented progress or whether manual mode caused the failure.",
+          "asserted_abstraction_level": "limitation"
+        }
+      ]
+    },
+    {
+      "unique_text_id": "u-09e1f4e24a48d25ea3a098ab6e76e5e9321338276f938255b95a904c245bb009",
+      "atoms": [
+        {
+          "statement": "During the first trip, logged high position uncertainty.",
+          "response_span": "During my first trip, I logged high position uncertainty, a failed plan, and empty-path controller aborts before receiving a new path.",
+          "asserted_abstraction_level": "software_action_failure"
+        },
+        {
+          "statement": "During the first trip, logged a failed plan.",
+          "response_span": "During my first trip, I logged high position uncertainty, a failed plan, and empty-path controller aborts before receiving a new path.",
+          "asserted_abstraction_level": "software_action_failure"
+        },
+        {
+          "statement": "During the first trip, logged empty-path controller aborts.",
+          "response_span": "During my first trip, I logged high position uncertainty, a failed plan, and empty-path controller aborts before receiving a new path.",
+          "asserted_abstraction_level": "software_action_failure"
+        },
+        {
+          "statement": "During the first trip, received a new path after those logs.",
+          "response_span": "During my first trip, I logged high position uncertainty, a failed plan, and empty-path controller aborts before receiving a new path.",
+          "asserted_abstraction_level": "software_action_failure"
+        },
+        {
+          "statement": "Both recorded zone trips succeeded.",
+          "response_span": "Both recorded zone trips succeeded.",
+          "asserted_abstraction_level": "task_outcome"
+        },
+        {
+          "statement": "Records do not establish the cause of planning trouble.",
+          "response_span": "The records do not show what caused the planning trouble or how much time it added.",
+          "asserted_abstraction_level": "limitation"
+        },
+        {
+          "statement": "Records do not show how much time the planning trouble added.",
+          "response_span": "The records do not show what caused the planning trouble or how much time it added.",
+          "asserted_abstraction_level": "limitation"
+        }
+      ]
+    },
+    {
+      "unique_text_id": "u-0afd388ee81a28125a60d0ebe4cf0b46e8b67f6db12d55831f7993cc110aa610",
+      "atoms": [
+        {
+          "statement": "Did not bring the water.",
+          "response_span": "I didn’t bring the water because I didn’t reach the living room: navigation timed out after the controller repeatedly reported failure to make progress.",
+          "asserted_abstraction_level": "task_outcome"
+        },
+        {
+          "statement": "Did not reach the living room.",
+          "response_span": "I didn’t bring the water because I didn’t reach the living room: navigation timed out after the controller repeatedly reported failure to make progress.",
+          "asserted_abstraction_level": "task_outcome"
+        },
+        {
+          "statement": "Failure to reach the living room explains not bringing the water.",
+          "response_span": "I didn’t bring the water because I didn’t reach the living room: navigation timed out after the controller repeatedly reported failure to make progress.",
+          "asserted_abstraction_level": "task_outcome"
+        },
+        {
+          "statement": "Navigation timed out.",
+          "response_span": "I didn’t bring the water because I didn’t reach the living room: navigation timed out after the controller repeatedly reported failure to make progress.",
+          "asserted_abstraction_level": "task_outcome"
+        },
+        {
+          "statement": "Controller repeatedly reported failure to make progress.",
+          "response_span": "I didn’t bring the water because I didn’t reach the living room: navigation timed out after the controller repeatedly reported failure to make progress.",
+          "asserted_abstraction_level": "software_action_failure"
+        },
+        {
+          "statement": "Navigation timeout followed the repeated controller progress-failure reports.",
+          "response_span": "I didn’t bring the water because I didn’t reach the living room: navigation timed out after the controller repeatedly reported failure to make progress.",
+          "asserted_abstraction_level": "software_action_failure"
+        },
+        {
+          "statement": "Latest indicators showed manual mode on.",
+          "response_span": "My latest indicators showed manual mode on and charging off, but the evidence doesn’t show what physically stopped me or whether manual mode caused the failure.",
+          "asserted_abstraction_level": "recorded_override_state"
+        },
+        {
+          "statement": "Latest indicators showed charging off.",
+          "response_span": "My latest indicators showed manual mode on and charging off, but the evidence doesn’t show what physically stopped me or whether manual mode caused the failure.",
+          "asserted_abstraction_level": "recorded_override_state"
+        },
+        {
+          "statement": "Evidence does not establish what physically stopped movement.",
+          "response_span": "My latest indicators showed manual mode on and charging off, but the evidence doesn’t show what physically stopped me or whether manual mode caused the failure.",
+          "asserted_abstraction_level": "limitation"
+        },
+        {
+          "statement": "Evidence does not establish whether manual mode caused the failure.",
+          "response_span": "My latest indicators showed manual mode on and charging off, but the evidence doesn’t show what physically stopped me or whether manual mode caused the failure.",
+          "asserted_abstraction_level": "limitation"
+        }
+      ]
+    }
+  ],
+  "provider_returns_retried_or_rescored": false,
+  "source": "exact blind text projection only; parent developer decomposition after retained batch-001 technical failure",
+  "support_or_method_keys_accessed": false,
+  "human_validated_or_qualified": false,
+  "failure_provenance": [
+    "atoms/batch-001.json"
+  ],
+  "role_labels_assigned": false
+}
