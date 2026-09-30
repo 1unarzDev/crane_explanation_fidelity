@@ -2985,3 +2985,46 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   The 17 form review fields remain pending, 96 bank responses are uncalled, one request remains
   quarantined, and extractor abstraction tags and assertion roles remain unqualified. No support
   annotation, endpoint score, episode N, alpha, or P11 status changes.
+
+## 2026-09-30 — retain the failed frozen v1 assertion-role qualification
+
+- **Observed outcome:** the non-study schema canary and all 48 isolated synthetic case calls
+  returned structurally valid records with no retained failure or quality-driven retry. The exact
+  held-out role-and-level gate failed: pass A matched 12/20 cases and pass B matched 14/20.
+  `evidence-calibration-claim-role-v1-qualification-outcome.json` binds the 49 call records and
+  the read-only audit. Both passes disagree with the frozen reference on Wait completion, geometry
+  statements, hedged wheel slip, quoted text, or stationarity in at least one case.
+- **Decision:** v1 is not a qualified role/level instrument. Preserve all references and raw
+  returns; do not retry, regrade, or apply its labels to pilot answers. The mismatches need a
+  separate semantic reference review before attributing them to model behavior. A successor, if
+  pursued, needs a newly constructed held-out suite and a prospective freeze with explicit
+  abstraction definitions; v1 held-out cases are development evidence for that successor.
+- **Boundary:** the qualified Astra atomic-support task remains qualified for its stated scope.
+  No pilot role label, B2/B4 effect, P11 authorization, independent episode, or alpha follows.
+
+## 2026-09-30 — pass the synthetic source-context measurement canary
+
+- **Evidence:** after a `READY_FOR_SCHEMA_CANARY` transport preflight on the network-enabled host,
+  the frozen source-context canary completed two isolated Astra calls. Both passed their exact
+  atomic-label, required-unit, false-premise, highest-level, and limitation checks. The retained
+  result reports `PASS_MEASUREMENT_EXTENSION` and `pilot_annotation_performed=false`.
+- **Boundary:** this qualifies the exact source-context payload extension for the already
+  qualified atomic-support task only. It does not approve incomplete pilot atom inventories,
+  qualify assertion roles or diagnostic ranks, estimate a B2/B4 effect, or authorize P11.
+
+## 2026-09-30 — retain the completed blind pilot extraction as unreviewed inventory
+
+- **Observed outcome:** the frozen no-retry continuation completed the 96 previously uncalled
+  bank entries. The read-only audit finds 113 structurally valid one-shot returns with 1,035
+  candidate claims, no missing or failed records, and the original bank-index-17 request still
+  quarantined as an unknown-disposition interruption. Twenty-one responses have uncovered-text
+  signals and three have unresolved `Yes.` or `No.` spans. All 113 method-blind review forms are
+  pending; the earlier 17-form provisional review and three actor-repair proposals remain intact.
+- **Decision:** retain the exact extractor returns and pending review forms under `model_outputs.dvc`.
+  Review atomic completeness and source/actor qualifiers response by response before support
+  annotation. The extractor's abstraction tags remain unqualified, and the failed v1 assertion-role
+  task cannot provide endpoint roles or response ranks.
+- **Boundary:** structural inventory is development measurement preparation, not agent-assessed
+  support annotation or B2/B4 comparative evidence. The quarantined request is not retried or
+  replaced. P11 remains closed; confirmation and replication independent N and new alpha use are
+  zero.

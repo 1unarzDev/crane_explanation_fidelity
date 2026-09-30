@@ -207,3 +207,29 @@ passes with a nine-page paper, and 111 focused evidence-calibration tests pass. 
 on 18 scientific/authorization conditions with confirmation and replication N=0. The next actions
 are Git synchronization, then the frozen non-study model canaries and uncalled development jobs
 under `docs/MODEL_JOB_HOST_RUNBOOK.md`.
+
+## 2026-09-30 host reconciliation (current)
+
+The writable, network-enabled host passed the frozen synthetic source-context canary in two
+isolated Astra-high calls. The separate frozen v1 assertion-role task returned 49 structurally
+valid canary/case records, but failed exact held-out agreement (12/20 in pass A; 14/20 in pass B).
+Its roles and abstraction ranks are not qualified; no pilot role label or endpoint score is
+authorized. The failed outcome and raw returns are retained without retry or regrading.
+
+The method-blind pilot atomizer completed all 96 formerly uncalled responses. The 114-answer
+bank now has 113 structurally valid one-shot inventories with 1,035 candidate claims, zero
+missing or failed records, and the original unknown-disposition request still quarantined. All
+113 blind inventory review forms are pending. Three answers have unresolved `Yes.`/`No.` spans;
+21 have uncovered text flagged for review. The preliminary `FollowPath` actor repairs remain
+proposals. No support annotation, method-key join, comparative effect, fresh independent pilot,
+or confirmatory output has occurred.
+
+The physical freshness and error-budget audits still pass: all 120 former confirmation layouts
+and 20 replication layouts were physically materialized in development; 100 other replication
+layouts are old-schedule allocated and quarantined. Program alpha is 0.02 consumed, at most 0.01
+future discovery, and 0.02 replication-only. The exact qualified support annotator remains
+`gpt-6-astra` at high effort with the bound v2 schemas. P11 remains fail-closed on the fresh
+B2/B4 pilot, blind inventory and role measurement, nominal-ladder alignment, episode-level
+discordance/power, and prospective endpoint/coverage/population/model/stopping decisions.
+Confirmation and replication independent N remain zero. The full-paper manuscript is a
+mechanically passing nine-page development snapshot, not a frozen scientific result.
