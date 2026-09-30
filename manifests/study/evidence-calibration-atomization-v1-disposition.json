@@ -1,0 +1,42 @@
+{
+  "schema": "crane-evidence-calibration-atomization-qualification-disposition/v1",
+  "disposition_id": "evidence-calibration-atomization-v1-invalid-reference",
+  "recorded_date": "2026-09-29",
+  "status": "INVALID_REFERENCE_CONTRACT_NO_QUALIFICATION_SCORE",
+  "qualification_freeze": {
+    "path": "research/explanation_fidelity/experiment_configs/prospective/evidence-calibration-atomization-v1-freeze.json",
+    "raw_sha256": "3e5f68f22849f402450e07bcae19caa5b830f749cbf813baa4a0097c2eec8641"
+  },
+  "retained_calls": {
+    "dvc_pointer": "model_outputs.dvc",
+    "dvc_pointer_raw_sha256": "f1643e58ef80c873103417572059e070a662cddeb5a3155a165d9cfad3b2f8b7",
+    "root": "model_outputs/automated_annotations/evidence-calibration-atomization-v1",
+    "record_count": 41,
+    "non_study_schema_canary": 1,
+    "isolated_pass_A": 20,
+    "isolated_pass_B": 20,
+    "sorted_relative_path_and_raw_sha256_record_set_sha256": "7b0113bc16cda01a183476e2a999a6f973e66312a40a9fd28eff27b5ca56941d",
+    "structurally_valid_returns": 41,
+    "quality_driven_retries": 0
+  },
+  "reference_defects": [
+    {
+      "case_id": "at-ho-05",
+      "gold_atom_count": 2,
+      "observed_atom_count_each_pass": 4,
+      "finding": "The construction gold records the temporal relation and causal claim but omits the separately asserted facts that the robot moved and Wait finished. Both passes extracted all four. These extra atoms are valid under the frozen split-independent-assertions rule."
+    },
+    {
+      "case_id": "at-ho-06",
+      "gold_atom_count": 4,
+      "observed_atom_count_each_pass": 5,
+      "finding": "The construction gold merges two independent limitations (slip not identified; obstruction not identified) into one atom. Both passes split them as required by the frozen prompt."
+    }
+  ],
+  "scientific_disposition": "The construction-defined held-out reference is not exhaustive. No held-out pass score or qualification is promoted. The raw returns and failed reference remain immutable development evidence. A new prospective suite requires fresh held-out text and a separate pre-call freeze.",
+  "pilot_bank_extracted": false,
+  "support_annotation_performed": false,
+  "confirmation_independent_n": 0,
+  "replication_independent_n": 0,
+  "confirmatory_alpha_consumed": 0.0
+}

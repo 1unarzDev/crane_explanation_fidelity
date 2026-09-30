@@ -2565,3 +2565,18 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   the real bank receives a separate completeness review, no pilot support annotation is authorized.
 - **Scientific boundary:** this is development measurement infrastructure. It changes no physical
   mask, method output, episode count, alpha allocation, P11 gate, or confirmatory claim.
+
+## 2026-09-29 — invalidate atomic-extraction v1 gold without promoting a model score
+
+- **Decision:** retain the passing non-study schema canary and all 40 no-retry synthetic extractor
+  returns, but invalidate the v1 held-out reference contract. Do not call the extractor qualified
+  and do not open the pilot bank under v1.
+- **Observed defect:** the v1 gold for `at-ho-05` merges movement, Wait completion, and their
+  temporal relation, omitting two atomic facts; the gold for `at-ho-06` merges the independent
+  limitations that neither slip nor obstruction is identified. Both isolated passes separated
+  these assertions in accordance with the frozen prompt. Scoring the extra claims as extraction
+  errors would punish correct atomization. The complete return set and the precise defect are
+  bound in `manifests/study/evidence-calibration-atomization-v1-disposition.json`.
+- **Next gate:** construct a fresh held-out suite with atomically complete construction references,
+  freeze it before calls, then perform two isolated passes and an independent completeness review.
+  No v1 held-out score, pilot annotation, confirmatory N, or alpha claim is promoted.
