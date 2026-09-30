@@ -5,6 +5,7 @@ import json
 import math
 import statistics
 from collections import Counter
+from pathlib import Path
 
 from audit_release import ROOT, sha, write
 from verify_v3 import V3, qualified, study
@@ -19,7 +20,9 @@ def read(path):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--require-final', action='store_true')
+    parser.add_argument('--require-preservation', action='store_true')
     args = parser.parse_args()
+    assert not args.require_preservation or args.require_final
     validate_v2.V2 = V3
     validate_v2.qualified = qualified
     validate_v2.study = study
@@ -101,10 +104,25 @@ def main():
                 if complete_pairs < 12:
                     assert result['descriptive_family_t95'] is None
                 assert all(r['success'] is None for r in scored if r['technical_failure'])
+                causal = read(base / 'causal_reporting.json')
+                assert causal['independent_recordings'] == 12
+                assert not causal['primary_endpoint_changed'] and causal['alpha_consumed'] == 0
+                assert causal['p_value'] is None and not causal['human_validated']
+                assert all(r['n_jobs'] == 108 for r in causal['methods'].values())
                 assert all(p.exists() for p in [base / 'result_table.md', base / 'evidence_results.svg', base / 'evidence_results.png'])
         rows.append(row)
+    if args.require_preservation:
+        receipt = read(V3 / 'final_restore_receipt.json')
+        archive = Path(receipt['archive_location'])
+        for name, field in [('private-assets.tar.gz', 'assets_sha256'),
+                            ('code.bundle', 'code_bundle_sha256'),
+                            ('upstream.bundle', 'upstream_bundle_sha256'),
+                            ('assets_manifest.json', 'manifest_sha256')]:
+            assert sha(archive / name) == receipt[field]
+        assert receipt['scoped_tests_restored'] and receipt['files_restored_and_sha256_checked'] > 0
     write(V3 / 'integrity_audit.json', {'schema': 'hexar-provenance-completeness-audit/v3',
           'required_final': args.require_final, 'cohorts': rows, 'alpha_consumed': 0,
+          'private_preservation_checked': args.require_preservation,
           'effectiveness_or_human_validity_proven': False,
           'auditor_sha256': sha(ROOT / 'analysis/hexar_external/validate_v3.py')})
     print('V3_PROVENANCE_COMPLETENESS_PASS', 'FINAL' if args.require_final else 'RESUMABLE')
