@@ -3100,3 +3100,15 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   review, human validation, or model qualification. A separate semantic review and prospective
   freeze remain required. The v1 failure, pending pilot inventories, P11 prohibition, N=0, and
   alpha ledger are unchanged.
+
+## 2026-09-30 — bind an isolated synthetic second-review request before calls
+
+- **Decision:** bind the exact v2 synthetic suite, candidate codebook, review prompt, structured
+  schema, runner, `gpt-6.1-sol` high-effort login-backed no-tool configuration, and no-retry
+  disposition in `evidence-calibration-claim-role-v2-reference-review-request.json`. A separate
+  non-study schema canary must pass before one 24-case reference critique. Three offline tests
+  check the request hashes, exact case coverage, and interrupted-intent refusal.
+- **Boundary:** this is reference review by a separate automated model, not a v2 classifier
+  qualification, human validation, pilot annotation, or endpoint mapping. The critique must be
+  adjudicated against the original text; it cannot automatically repair gold or authorize P11.
+  No model call has run at this pre-call decision.

@@ -263,3 +263,9 @@ case notes and component hashes are bound in
 All exact spans and return fields validate, with no substantial uncovered text. The draft still
 needs an independent second semantic reference review, exact freeze, canary, two isolated
 qualification passes, and a bound endpoint mapping. No pilot role label has been generated.
+
+The independent second reference-review request is now frozen **before calls** over synthetic
+v2 construction cases only. It binds a `gpt-6.1-sol` high-effort, no-tool, no-retry review route
+and requires a non-study schema canary. Its output will be an automated critique for project
+adjudication, not human validation or role-task qualification. The request has not yet run at
+this checkpoint; P11 remains closed.

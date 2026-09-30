@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://crane.local/schemas/evidence-calibration-claim-role-v2-reference-review.schema.json",
+  "title": "Synthetic role-reference review; development only",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "case_reviews", "global_issues", "attestation"],
+  "properties": {
+    "schema": {"type": "string", "const": "crane-evidence-calibration-claim-role-v2-reference-review/v1"},
+    "case_reviews": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["case_id", "status", "issues"],
+        "properties": {
+          "case_id": {"type": "string", "minLength": 1},
+          "status": {"type": "string", "enum": ["ACCEPT", "ISSUE"]},
+          "issues": {"type": "array", "items": {"type": "string", "minLength": 1}}
+        }
+      }
+    },
+    "global_issues": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "attestation": {"type": "string", "const": "SYNTHETIC_REFERENCE_REVIEW_ONLY_NO_STUDY_LABELS"}
+  }
+}
