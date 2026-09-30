@@ -1,0 +1,668 @@
+{
+  "schema": "crane-b2-request-audit/v1-development",
+  "recorded_date": "2026-09-30",
+  "status": "B2_REQUEST_CONTENT_AUDITED_HARNESS_AND_EXECUTION_UNBOUND",
+  "bindings": [
+    {
+      "path": "analysis/prepare_evidence_calibration_b2_agent.py",
+      "raw_sha256": "f8ff3be0856d4109c0ce7ad6eb1284269819289bb6a29d25adb2762d164cacc4"
+    },
+    {
+      "path": "analysis/audit_evidence_calibration_b2_requests.py",
+      "raw_sha256": "7e5ab1fb4e15f6b63c760ceb23e6a02cb043b2b2e24204da9420f3ce7a2e288c"
+    },
+    {
+      "path": "tests/test_evidence_calibration_b2_agent.py",
+      "raw_sha256": "31dd79f6579501e47635b655129f7f5f470b8bb6523687beec3ac4db8e983b36"
+    },
+    {
+      "path": "tests/test_evidence_calibration_b2_requests.py",
+      "raw_sha256": "a00156de9582964ab53802786e2aec503aa51d65cb7d4c3f5cbac2dff709a48c"
+    },
+    {
+      "path": "research/explanation_fidelity/prompts/evidence_calibration_b2_development_v1.txt",
+      "raw_sha256": "15989b568c63e181d9d8076974769600a94778524cd65fc5547aa17a1ac77270"
+    },
+    {
+      "path": "analysis/stage_evidence_calibration_workspace.py",
+      "raw_sha256": "3044778ac6f6de74b80884a8b5e777d7cea9e9e42cea56e20bde7999954a7d0b"
+    },
+    {
+      "path": "manifests/study/evidence-calibration-five-method-packet-candidate-v1-development.json",
+      "raw_sha256": "bb986627a2ade8d5cb0b34500d7cd7805e45fa8b11c3d984e253d25a48ab0119"
+    },
+    {
+      "path": "manifests/study/evidence-calibration-method-preparation-v1-development.json",
+      "raw_sha256": "f469ba4f006faaf65361ba8c6dc2f52ca7e9c170a54a0ad7589c4e1fb8cf83e3"
+    },
+    {
+      "path": "docs/B2_AGENT_INTERFACE_2026-09-30.md",
+      "raw_sha256": "ca4313b77c4c774b3efcb8136417ac976c72a40b0d6bc01c76eaaed9d3073e56"
+    },
+    {
+      "path": "manifests/operations/evidence-calibration-combined-support-canary-disposition-v1.json",
+      "raw_sha256": "355dd15cc1a3792cb16cfab1bbdb2e43a61f8a9c2c3df662549502da28372b26"
+    }
+  ],
+  "inspected_development_episode_count": 16,
+  "within_episode_condition_count": 60,
+  "b2_request_count": 60,
+  "prompt_utf8_byte_range": {
+    "minimum": 1798,
+    "maximum": 1828
+  },
+  "conditions": [
+    {
+      "source_run_id": "cm-land-conf-042",
+      "configuration_id": "cm-land-conf-cluster-042",
+      "condition_id": "cm-land-conf-042-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "request_sha256": "fcfa64bfbf205bad7562bd5b6aa125e94e8065565ff99699c92b8db8a0eb85b8",
+      "workspace_sha256": "9430034aa5f90625bc66cbcd7a8d0954fe9a90ff4378dd17664b0949572f8ea2",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-042",
+      "configuration_id": "cm-land-conf-cluster-042",
+      "condition_id": "cm-land-conf-042-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "request_sha256": "8021e0b0d49d1b53f897043b39ef97b5358faf12861e6e8840e43802c8d6ad31",
+      "workspace_sha256": "125350ac959ccfc3ee0085abfa56a1ad048b78d2ad55130bc32c4a19ffbd2fe1",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-042",
+      "configuration_id": "cm-land-conf-cluster-042",
+      "condition_id": "cm-land-conf-042-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "request_sha256": "c8bc6d0ce0b54c411fa9fb6ac3be1cecec9638ac11314daa7b7ba41999ee02c1",
+      "workspace_sha256": "81f14e3c0f666e176cd2959e8e120754e5fc674c9235e28f245a279868db0fbf",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-042",
+      "configuration_id": "cm-land-conf-cluster-042",
+      "condition_id": "cm-land-conf-042-worker-0-five-method-aligned-v1-E3",
+      "level_index": 3,
+      "request_sha256": "58143492f74b476a4b14057ecf3cb0f86958ad3168b81f1e70a7b9c4637bb142",
+      "workspace_sha256": "4697908e93cb29266f556f36cce194febdee61d5dc9d2d6f83e603616918a453",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-045",
+      "configuration_id": "cm-land-conf-cluster-045",
+      "condition_id": "cm-land-conf-045-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "request_sha256": "fb7c6674b65053ae40a52075504792410436a773e676f9d8b18fe7682cb21dc1",
+      "workspace_sha256": "e6789c5d3a21ef014534a07dfc870f3fed565d00fa37deb6d0b1a8929589aa45",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-045",
+      "configuration_id": "cm-land-conf-cluster-045",
+      "condition_id": "cm-land-conf-045-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "request_sha256": "685868a9798df8162505ffc605b5d7939a6f994a8731ec8837ca214878ea056e",
+      "workspace_sha256": "439c5827c33775fb837e2239b3432b6c9b7844114be0c0216481cd0414edce06",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-045",
+      "configuration_id": "cm-land-conf-cluster-045",
+      "condition_id": "cm-land-conf-045-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "request_sha256": "2babbf775c47cb8948a019d91fe5ebaa32dbeb1a53bfe93eddff502e83ae7b85",
+      "workspace_sha256": "3ab05697825e1bda34d9c30afa955951e903b9da20e6890beca2dc9c5a8c00ae",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-045",
+      "configuration_id": "cm-land-conf-cluster-045",
+      "condition_id": "cm-land-conf-045-worker-0-five-method-aligned-v1-E3",
+      "level_index": 3,
+      "request_sha256": "526978c81c4bc08771f2e8f81a6cd328dcee2667843c663a16e2ec328d0a6f10",
+      "workspace_sha256": "eaa6f01c8b21fa4a7aee28095e6c724c7a80077d0f7bda19b2153fc142e0ee69",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-046",
+      "configuration_id": "cm-land-conf-cluster-046",
+      "condition_id": "cm-land-conf-046-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "request_sha256": "638fc5d83c0f40bab6cbd67cd0a96d0a16157e763560c0c6bd094917b2208f23",
+      "workspace_sha256": "bb11ba2772f3ec55e8278f9022a039a2b0ff284d8b4b4f1e06e70fffb58a198f",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-046",
+      "configuration_id": "cm-land-conf-cluster-046",
+      "condition_id": "cm-land-conf-046-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "request_sha256": "652a0ac830a42e68bb615570a9edecd715ed09243f5d429ee2c543c5179dec93",
+      "workspace_sha256": "b3443ea5b2e0dabae8133fcefb18d751202605ca60cd85e7b19087fc0d17e3a3",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-046",
+      "configuration_id": "cm-land-conf-cluster-046",
+      "condition_id": "cm-land-conf-046-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "request_sha256": "049407055d719cf68923e2f3c47650fdc40e440d7298d9a55d4b032dee8213d6",
+      "workspace_sha256": "1baf5999de6e931b344e8737934fd892b7607b4f804301764b47572af1809dde",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-046",
+      "configuration_id": "cm-land-conf-cluster-046",
+      "condition_id": "cm-land-conf-046-worker-0-five-method-aligned-v1-E3",
+      "level_index": 3,
+      "request_sha256": "ca4b285ff9fa6923d0ae783e1b0b85aeda00b443dadeb6af645f6f5cce7b594b",
+      "workspace_sha256": "9befecd7ffe8b2c46d4ffb03ac23b4de15c0b1735e9270c9a5a1a2e266d05163",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-056",
+      "configuration_id": "cm-land-conf-cluster-056",
+      "condition_id": "cm-land-conf-056-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "request_sha256": "853055a9e668f6ac375ff4c9a3c914180389e8b04c741389ef9ed380126cd7d8",
+      "workspace_sha256": "539266a497a53cd5050aceea7a7d499396ccc098946393c5b5c32dd3e6bde6df",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-056",
+      "configuration_id": "cm-land-conf-cluster-056",
+      "condition_id": "cm-land-conf-056-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "request_sha256": "b9169ec68a33500d31ad9a709115f31e8b37b470ffa48edbdcbb7554ac98a98b",
+      "workspace_sha256": "7b83aad8de688aec51e01fadc0315ff41239f545c2b6e1a44cfae8408961c1e3",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-056",
+      "configuration_id": "cm-land-conf-cluster-056",
+      "condition_id": "cm-land-conf-056-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "request_sha256": "54de15dd7c1c6d5d24f82eb456b332c0c25d6e02030e51bfd4d0e94305bd08d3",
+      "workspace_sha256": "5a69c51ad798ffa0cc12406a6ea1ca45009c342f2ec9a39064b67c10e14fd12f",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-056",
+      "configuration_id": "cm-land-conf-cluster-056",
+      "condition_id": "cm-land-conf-056-worker-0-five-method-aligned-v1-E3",
+      "level_index": 3,
+      "request_sha256": "aae5015e1646537ec5e2c238d6787cf23d1b9a54e64bb3b5dba574b6d38737fa",
+      "workspace_sha256": "38b2373968d7d884bbde43fe9e436ddea6fcaeebc03a681e62a7113c0d6ab553",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-058",
+      "configuration_id": "cm-land-conf-cluster-058",
+      "condition_id": "cm-land-conf-058-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "request_sha256": "ea184de8582f41a4d85932a5e04c6d83abd4938489e1bfa5f2251ba32c9b72ae",
+      "workspace_sha256": "92b2048794b1b64ec39f2d580e3d3aab17bce3524eb532c04f4606862ba21c5d",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-058",
+      "configuration_id": "cm-land-conf-cluster-058",
+      "condition_id": "cm-land-conf-058-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "request_sha256": "b9aa2f6cdd3cb41d73b1c295864be0fb325e9cfca1344bb4842e4092fc48a0bb",
+      "workspace_sha256": "d70df0cad78eec35963b1ffd31449284a72586577161889769f0bc7ad3e66e6d",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-058",
+      "configuration_id": "cm-land-conf-cluster-058",
+      "condition_id": "cm-land-conf-058-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "request_sha256": "cfc214cdd4269fab6665c90b0f3c18e46e231dc84d44dfd25dcf6c61cc1c1b95",
+      "workspace_sha256": "221891ace9e611f3fea468014a44902e0f34d45ea770e2ff68202323d06c2349",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-058",
+      "configuration_id": "cm-land-conf-cluster-058",
+      "condition_id": "cm-land-conf-058-worker-0-five-method-aligned-v1-E3",
+      "level_index": 3,
+      "request_sha256": "7f0ba7d5b8baa6dc81613f825cfc9e6e68dfd614d6918a3c37164bc27ea9c3de",
+      "workspace_sha256": "ee949b936dd6d5e045184fb6e79687cb70ffdf8ce801a94cf13c9b760bbe9fd3",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-060",
+      "configuration_id": "cm-land-conf-cluster-060",
+      "condition_id": "cm-land-conf-060-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "request_sha256": "7218e35973b02bea880921d31a76d74a63aa74d57c91a6ee2f1d994a8f87a291",
+      "workspace_sha256": "3cf8508a97b7dcba364e835558ea566e7f8f76bed0041319d65cee70324f6735",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-060",
+      "configuration_id": "cm-land-conf-cluster-060",
+      "condition_id": "cm-land-conf-060-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "request_sha256": "f685c5bc078064a1c73f1594ad5eece5e472f680aed88cbca735dfbe3df5135d",
+      "workspace_sha256": "a23d0ff22c57c14b7c7ca1c41c6e16027261a84cacc81ed0679bf722f1facadd",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-060",
+      "configuration_id": "cm-land-conf-cluster-060",
+      "condition_id": "cm-land-conf-060-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "request_sha256": "39e167c9ded31d09da9146460877e40accd3a3da90cfb27bfcb51598ea17cefc",
+      "workspace_sha256": "9c700c3d2f455cef51f6d915418bc8077ea67ed88bdeed1d149ca5247d6792e6",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-060",
+      "configuration_id": "cm-land-conf-cluster-060",
+      "condition_id": "cm-land-conf-060-worker-0-five-method-aligned-v1-E3",
+      "level_index": 3,
+      "request_sha256": "09e79025c38338e4fe7d6b14e9f6b2bf6b736e19a904cbd97bb5c2bcf9c99016",
+      "workspace_sha256": "2e2d6bd10b7c950d6a9e9863b49946e6d7b682afbf9fcb1ac7323df64fe27a2c",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-043",
+      "configuration_id": "cm-land-conf-cluster-043",
+      "condition_id": "cm-land-conf-043-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "request_sha256": "0a99232fd61c400cd7a5b70b51d328ab3a86e82d11b58fdc49df7c75e580a092",
+      "workspace_sha256": "c264e0eaa5718706f1b18be7324b22d77df7e46088a94ef46da2c51430c63711",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-043",
+      "configuration_id": "cm-land-conf-cluster-043",
+      "condition_id": "cm-land-conf-043-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "request_sha256": "87ddf41f2091e5694b64bb6726dc5cdf39f5f9ad43c65cecefb282ab3cfc5b91",
+      "workspace_sha256": "bd6c0d7f04a19ac5ce96d0e5112e32299f727c3c4a8d0a705b2544b469496bae",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-043",
+      "configuration_id": "cm-land-conf-cluster-043",
+      "condition_id": "cm-land-conf-043-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "request_sha256": "6c3b03336d58c923f584c6bcb77166973d8c2de4280f283d9100ec683f90f40a",
+      "workspace_sha256": "8204d0336fe90a63a08c7b0b627f21999060d085a387276a63d182a85e4fba4f",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-043",
+      "configuration_id": "cm-land-conf-cluster-043",
+      "condition_id": "cm-land-conf-043-worker-0-five-method-aligned-v1-E3",
+      "level_index": 3,
+      "request_sha256": "bd79e7a2be11c3ceab50f5de1aa7fc8bca896304aa7fa814479866cacfccd667",
+      "workspace_sha256": "a78f6c19ad16932064a4cc453a32b41c37e0e6628336cad787a89cde420d8f2f",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-044",
+      "configuration_id": "cm-land-conf-cluster-044",
+      "condition_id": "cm-land-conf-044-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "request_sha256": "13ac5e9fbb8669913097f50bef8e24803785bba0e9545fa9722ab3131451dd6b",
+      "workspace_sha256": "f17738feb8271e07d7eed3d84713cdf90b90fe83a2408509a67ced2d36c7f5aa",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-044",
+      "configuration_id": "cm-land-conf-cluster-044",
+      "condition_id": "cm-land-conf-044-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "request_sha256": "9f25f32e08d7153be379337c5de9636b364170a5ce09ec1ec8e207e964ad4891",
+      "workspace_sha256": "72c65900eb93ccf3602a42f73ac9ff0ee74c95267b6de73220fae2a5f3b6882e",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-044",
+      "configuration_id": "cm-land-conf-cluster-044",
+      "condition_id": "cm-land-conf-044-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "request_sha256": "89effcb73f2188dd50bfd438714eb524fa5f38a2aa78f7be095dbabbfab5a540",
+      "workspace_sha256": "3706887f7af1741683a73d0185473e08cd7a8da389271cf5464a26d793cac40f",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-044",
+      "configuration_id": "cm-land-conf-cluster-044",
+      "condition_id": "cm-land-conf-044-worker-0-five-method-aligned-v1-E3",
+      "level_index": 3,
+      "request_sha256": "4db627af5587085266fdf9ca5fbc68ad1e55b1a7439e18553d92114ee269b338",
+      "workspace_sha256": "51478f9eb77012173ee139cf32b82c471e523177c8ae3c07b8c730f6a09487da",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-047",
+      "configuration_id": "cm-land-conf-cluster-047",
+      "condition_id": "cm-land-conf-047-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "request_sha256": "f2ccbbc040740ba572a36a711e7e5462bc49dc31a8e92a2bc27290a6663854f2",
+      "workspace_sha256": "1aafb0c05ff32177134ce9212ea4b7d077c4bc8660f54745a76b03703960fcfb",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-047",
+      "configuration_id": "cm-land-conf-cluster-047",
+      "condition_id": "cm-land-conf-047-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "request_sha256": "94480b5a20eba37cf6a6945ddfa89db80f85c11b766fa7d36d09684dfeb950b7",
+      "workspace_sha256": "81d9d66150b296fdb13adce8831f10fefa9f6e89ed3227ad5d62ef360dc6cc12",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-047",
+      "configuration_id": "cm-land-conf-cluster-047",
+      "condition_id": "cm-land-conf-047-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "request_sha256": "cc9d8804ee27f04dd33edfd9eaecd15b7dd4e2e241fba629d4b73a747628438b",
+      "workspace_sha256": "79322cc8b5d9562766a73b00ffdc32b6de911d5bf23a23b9d532cd498fc474cd",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-047",
+      "configuration_id": "cm-land-conf-cluster-047",
+      "condition_id": "cm-land-conf-047-worker-0-five-method-aligned-v1-E3",
+      "level_index": 3,
+      "request_sha256": "fd0dbd9835a6911b176cd8853826a781b79f7f8e8aeaeba9a31bc96a68894b13",
+      "workspace_sha256": "dca4ad03e1673f94edd10b685979b448066b845a5308824cb31cc4c50a31f280",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-049",
+      "configuration_id": "cm-land-conf-cluster-049",
+      "condition_id": "cm-land-conf-049-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "request_sha256": "2193ca89c1cdf882db70200f46bd0c657721a53b781a7552e0dacea66e4a974a",
+      "workspace_sha256": "bfbcd827a6f41b6c6996f9ba24fb538f24730f146b9e816b39f1d6a1e3eb7d8a",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-049",
+      "configuration_id": "cm-land-conf-cluster-049",
+      "condition_id": "cm-land-conf-049-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "request_sha256": "77577d9fd2dad4bae2cd82fed60da22bd4c943eb812dd014aed2fbb56d85df73",
+      "workspace_sha256": "47edc0e70e1a8bcc5242c2c74d13bac20ecc5f1271e3f1447b3879e9b76f6d20",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-049",
+      "configuration_id": "cm-land-conf-cluster-049",
+      "condition_id": "cm-land-conf-049-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "request_sha256": "c9c34a5d8cd2090138d599d9392fe3cf89cd31382390b4ae9799dde3c38d3e31",
+      "workspace_sha256": "3a03791363bdecd5f6db010100127b7f591caf9c9fd7873a8ccdbc8f13117d48",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-049",
+      "configuration_id": "cm-land-conf-cluster-049",
+      "condition_id": "cm-land-conf-049-worker-0-five-method-aligned-v1-E3",
+      "level_index": 3,
+      "request_sha256": "6d8e3c4392d513f73b2819f586544828464688fcf88141ad5354b09c511d3f1c",
+      "workspace_sha256": "e517f2802312038e3bbcef4eb3d77e3b68db369e4e3e6881dc9b1536ec3e3eb7",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-051",
+      "configuration_id": "cm-land-conf-cluster-051",
+      "condition_id": "cm-land-conf-051-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "request_sha256": "612c9b6e81de46007dccc2d69664add1e1d179eea8dd32a3feb0e7001f81e4e9",
+      "workspace_sha256": "f94b337cd53140f12069422117023138f4c68d54f83ac73f4465df8da4a8cff3",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-051",
+      "configuration_id": "cm-land-conf-cluster-051",
+      "condition_id": "cm-land-conf-051-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "request_sha256": "32ede03db6a578507d4c2cac340cd86569b61a19b2eb256d5db39cdac64e9eb6",
+      "workspace_sha256": "15a1458225009a1e0782e1c83f4d8748763ca2c121d0e7eb90008b9df06cfe1f",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-051",
+      "configuration_id": "cm-land-conf-cluster-051",
+      "condition_id": "cm-land-conf-051-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "request_sha256": "7bbbdf186581fb43f1d8b73bc874b1de1beb883df0a4566f09f0f2f7a1c3d0bf",
+      "workspace_sha256": "d8117ba92123d9b8740fad64efe9d62130e02cd6df130d22aa4154c6966e8d89",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-051",
+      "configuration_id": "cm-land-conf-cluster-051",
+      "condition_id": "cm-land-conf-051-worker-0-five-method-aligned-v1-E3",
+      "level_index": 3,
+      "request_sha256": "43952d93e6ce1a5754fbfe2718c6abdca3c3466df74254370cab46f1d6fb1999",
+      "workspace_sha256": "8b490644d2332ed26aaf409ffe31fd67186bd81ef66814fe565843ab0446bfa0",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-053",
+      "configuration_id": "cm-land-conf-cluster-053",
+      "condition_id": "cm-land-conf-053-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "request_sha256": "03572fdee726dd016d2bb28145ac4b63477be9b6e3212da142c49509980708d1",
+      "workspace_sha256": "ad012ebe5603d353ceff857528d9cb50d43e6d762061a0b07f0697c3e255676e",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-053",
+      "configuration_id": "cm-land-conf-cluster-053",
+      "condition_id": "cm-land-conf-053-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "request_sha256": "0ba34ddc9e081101c5e3942e29d1b65e617d60f14a90aff58f5afb38886774d8",
+      "workspace_sha256": "2a0c0898774a40edabb07137bb4b0e040c9df579a596114d1906cee512eaad62",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-053",
+      "configuration_id": "cm-land-conf-cluster-053",
+      "condition_id": "cm-land-conf-053-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "request_sha256": "09a31274349000de2871617f5d05a04fbf040b4b226372ff31dfd4037baae53d",
+      "workspace_sha256": "b452c70482442ca580442638b96f36ad8b219ae80080f620348974baaba2ee04",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-053",
+      "configuration_id": "cm-land-conf-cluster-053",
+      "condition_id": "cm-land-conf-053-worker-0-five-method-aligned-v1-E3",
+      "level_index": 3,
+      "request_sha256": "e21bfae48813e75f605756f9ac113eeafcab00ff699d2cc04690725abcb06f0b",
+      "workspace_sha256": "4a4147b442361a11e9052acaae2f9e0513f99586e9f0206b9b2ecb3bcad82314",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-041",
+      "configuration_id": "cm-land-conf-cluster-041",
+      "condition_id": "cm-land-conf-041-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "request_sha256": "b447562faf7330243d80b52681608b5d7e0431b34eea3d2afe8f9517dad12df0",
+      "workspace_sha256": "826e3886566d43c0ba6a1bb128be9a707783d88571d8aa3681777f790b7aa0a3",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-041",
+      "configuration_id": "cm-land-conf-cluster-041",
+      "condition_id": "cm-land-conf-041-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "request_sha256": "f40a6f34c6f32fe7cf129de35a9b3f830791a5c1507d8cc9e589ae8c7f6f3ed1",
+      "workspace_sha256": "9c073cf7d512550b7db2169551e9abea014d31e518da321d2995398b77656e5a",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-041",
+      "configuration_id": "cm-land-conf-cluster-041",
+      "condition_id": "cm-land-conf-041-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "request_sha256": "8bccf721ef3ccf89267f1303b7bbd2a31faf978e6caf27e32146f20b0efddd97",
+      "workspace_sha256": "07ec551dee8f9375f8f037e824e1b0a9426182c3bcd4026cf21652a0316a2584",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-048",
+      "configuration_id": "cm-land-conf-cluster-048",
+      "condition_id": "cm-land-conf-048-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "request_sha256": "e68f7770bed2c2260b191e55d3a3d68906d8e469f0ea406239e0c9aaf6a1f81f",
+      "workspace_sha256": "ab3095a6f1f2811b09d21e9b59c205377da092238ee41a3c261363b5e787f132",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-048",
+      "configuration_id": "cm-land-conf-cluster-048",
+      "condition_id": "cm-land-conf-048-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "request_sha256": "874bf79b70dbbbf49e2b89b1834d52645d676b0ec0d1865305d4c13e99394037",
+      "workspace_sha256": "6051f9e64447eef6d32f56356bdbe70f09d44c621a23eb0402f83028c4f99075",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-048",
+      "configuration_id": "cm-land-conf-cluster-048",
+      "condition_id": "cm-land-conf-048-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "request_sha256": "8af9ddef7685ef9f0846c5596fea82fd112f523b3e0b5ec5cf88b720fb458870",
+      "workspace_sha256": "b1895ae06c4d95ab0d52aec600157c0e1fd53b96cc3582b8126eea5c075bc875",
+      "prompt_utf8_bytes": 1798,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-054",
+      "configuration_id": "cm-land-conf-cluster-054",
+      "condition_id": "cm-land-conf-054-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "request_sha256": "515c20c03b203fd9661f2405c978dd54ef1914a9be1a42945d545d56083c7d92",
+      "workspace_sha256": "c69bfee62efc92825f0b04b6029639a2f6896adf4b67a04b4a0178d66fb119e8",
+      "prompt_utf8_bytes": 1828,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-054",
+      "configuration_id": "cm-land-conf-cluster-054",
+      "condition_id": "cm-land-conf-054-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "request_sha256": "3e6a46bb855c13423c768a935c8113e4f9430feb9141a27792fd31e8e1ec3887",
+      "workspace_sha256": "beba638a80b90dc931bfb28af49770cb72a42cb8fb287ae03b9effc18098c81e",
+      "prompt_utf8_bytes": 1828,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-054",
+      "configuration_id": "cm-land-conf-cluster-054",
+      "condition_id": "cm-land-conf-054-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "request_sha256": "a4e2f606641d510671f9a3d4cff0142dafe097a033471e543b47ac8efa0bb286",
+      "workspace_sha256": "92554c181240464f7df293cf2a006efa1c7e4981e49e8a88559212c1a7ec71fa",
+      "prompt_utf8_bytes": 1828,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-072",
+      "configuration_id": "cm-land-conf-cluster-072",
+      "condition_id": "cm-land-conf-072-worker-0-five-method-aligned-v1-E0",
+      "level_index": 0,
+      "request_sha256": "3318266948ee8cd0f7280e463a96b47fa988b9a649f56570ed57b2f4e4070219",
+      "workspace_sha256": "7607f8f15e3094ea8b98c854e3a635e6fbcbaf99cb96c866379c4b8ce0e608cd",
+      "prompt_utf8_bytes": 1828,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-072",
+      "configuration_id": "cm-land-conf-cluster-072",
+      "condition_id": "cm-land-conf-072-worker-0-five-method-aligned-v1-E1",
+      "level_index": 1,
+      "request_sha256": "a4b9922ac224a736cb8010070516787048dfc924f6dd23d9319be0403b2bb6ad",
+      "workspace_sha256": "cc1db7aec2b9ceb6d196caaa1d24bf07c6ce8c2ccbf84c3f7197f49d232edb88",
+      "prompt_utf8_bytes": 1828,
+      "token_fit": null
+    },
+    {
+      "source_run_id": "cm-land-conf-072",
+      "configuration_id": "cm-land-conf-cluster-072",
+      "condition_id": "cm-land-conf-072-worker-0-five-method-aligned-v1-E2",
+      "level_index": 2,
+      "request_sha256": "c30cab9db2187d198e6a10e402194d0f36b12e1ac33913fbf690e9baed178f67",
+      "workspace_sha256": "5e0bd8a6b56e41eaaa52fbedc38f4887f1be2a5aadee4069ead8672c5c96c303",
+      "prompt_utf8_bytes": 1828,
+      "token_fit": null
+    }
+  ],
+  "harness_permissions_enforced": false,
+  "full_tool_surface_bound": false,
+  "context_capacity_verified": false,
+  "model_calls_authorized": false,
+  "model_call_attempted": false,
+  "semantic_method_outputs_generated": 0,
+  "pilot_annotation_authorized": false,
+  "method_key_opened": false,
+  "old_packets_or_outputs_changed": false,
+  "p11_authorized": false,
+  "confirmation_independent_n": 0,
+  "replication_independent_n": 0
+}

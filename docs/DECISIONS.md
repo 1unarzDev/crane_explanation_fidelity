@@ -4126,3 +4126,29 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   and unlaunched C remain unchanged. P11 retains nineteen open conditions with no hash mismatch;
   confirmation/replication N remain zero. Qualified measurement and fresh comparative outputs
   remain required, including all prospective secondary episode effects/intervals/corrected p-values.
+
+
+## 2026-09-30 — bind B2 request content while retaining local computation and open harness gates
+
+- **Request:** preserve the original B2 development prompt unchanged; append versioned staged-file
+  instructions, explicit local computation over full retained records and the exact question.
+  Permit speed/interval/threshold/recovery/non-trigger calculations with the supplied configuration;
+  the primitive inventory tool remains a convenience rather than the exclusive computation route.
+  Verify exact registered B2/B3/B4 asset and evidence parity. No approved diagnosis, evaluator
+  reference or contract asset is supplied to B2. There is no provider caller or launch command.
+- **Retention:** recompute request/input identity and preserve successful ordinary answers verbatim
+  after prompt/schema, technical and raw/parsed checks. Empty/unsupported/wrong-numeric answers do
+  not cause semantic repair, fallback or retry. Raw tool events remain hash-bound; their legitimacy
+  must be checked in a separate enclosing permission/event audit, not rejected because B2 uses tools.
+- **Integration:** sixty requests across all original sixteen inspected episodes reproduce prior
+  B2 workspace hashes, including retained-failure episodes. The prior 240-request preparation
+  snapshot remains unchanged. Combined dated records cover request content for all five methods;
+  executable tool/harness permissions, complete budgets/capacity and durable one-shot caller
+  retention remain open. Initial B2 prompts are 1798–1828 UTF-8 bytes, which excludes evidence
+  read through tools and cannot establish context fit.
+- **Verification/governance:** sixteen interface checks, one full-cohort replay, fifteen workspace
+  and two readiness checks pass. No model output, annotation, key join, alpha spending or physical
+  acquisition follows. The failed combined support canary and unlaunched C remain unchanged.
+  P11 retains nineteen open conditions with no component hash mismatch; confirmation/replication
+  N remain zero. Fresh five-method semantic outputs and qualified measurement remain required,
+  with all prospective primary/secondary episode effects, intervals and corrected p-values.
