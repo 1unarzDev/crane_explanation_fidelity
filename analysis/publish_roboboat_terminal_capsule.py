@@ -6,15 +6,31 @@ from diagnostic_batch_pipeline import initialize,claim,complete
 from build_roboboat_terminal_batch import save
 ROOT=Path(__file__).resolve().parents[1];DOC=ROOT/'docs/roboboat_terminal_evidence'
 
+def publication_gate(result,version,expected_answers):
+    if version=='atomic-v1':
+        if (result.get('schema')!='roboboat-atomic-missing-judgment-development-sensitivity/v1'
+            or result.get('accounted_original_answers')!=expected_answers
+            or len(result['rows'])!=expected_answers
+            or result.get('finalized_answers',0)+result.get('unavailable_judgments',0)!=expected_answers
+            or len(result['missing_annotations'])!=result.get('unavailable_judgments')
+            or result.get('original_complete_bank_score_released') is not False):
+            raise RuntimeError('retained-failure capsule needs complete explicit judgment accounting')
+    elif result['missing_annotations'] or len(result['rows'])!=expected_answers:
+        raise RuntimeError('incomplete comparison cannot publish a completed capsule')
+
 def main():
     p=argparse.ArgumentParser();p.add_argument('--artifact-root',type=Path,required=True)
-    p.add_argument('--version',choices=('v1','v3'),default='v1')
+    p.add_argument('--version',choices=('v1','v3','atomic-v1'),default='v1')
     p.add_argument('--results-file',default='comparison-results.json')
     p.add_argument('--expected-answers',type=int,default=18)
     p.add_argument('--additional-artifact-root',type=Path,action='append',default=[])
     a=p.parse_args();a.artifact_root=a.artifact_root.resolve()
     result=json.loads((a.artifact_root/a.results_file).read_text())
-    if result['missing_annotations'] or len(result['rows'])!=a.expected_answers:raise RuntimeError('incomplete comparison cannot publish a completed capsule')
+    publication_gate(result,a.version,a.expected_answers)
+    if a.version=='atomic-v1':
+        disposition=DOC/'marine_atomic_timeout_disposition_v1.json'
+        if hashlib.sha256(disposition.read_bytes()).hexdigest()!=result['disposition_sha256']:
+            raise RuntimeError('retained-failure disposition changed')
     capsule=a.artifact_root/f'publication/development-capsule-{a.version}.tar.gz'
     capsule.parent.mkdir(parents=True,exist_ok=True)
     if capsule.exists():raise RuntimeError('immutable capsule already exists')
@@ -43,7 +59,8 @@ def main():
     save(manifest_path,{'schema':'crane-diagnostic-batch-artifact-manifest/v1','job_id':'boat-terminal-capsule-intake','request_identity':identity,
        'visibility':'mixed-separated-development-capsule-evaluator-only-not-a-method-input',
        'artifacts':[{'path':str(capsule.resolve()),'bytes':capsule.stat().st_size,'sha256':sha}],
-       'file_count':len(files),'shared_dvc_pointer_updated':False,'confirmation_n_added':0,'alpha_consumed':0.})
+       'file_count':len(files),'shared_dvc_pointer_updated':False,'confirmation_n_added':0,'alpha_consumed':0.,
+       'annotation_completion':'retained-timeout-complete-accounting-not-complete-annotation' if a.version=='atomic-v1' else 'complete-development-annotation'})
     initialize(plan_path,ledger);job=claim(ledger,'publication','marine-intake-worker',300)
     assert job['job_id']=='boat-terminal-capsule-intake'
     print(complete(ledger,job['job_id'],'marine-intake-worker',manifest_path))

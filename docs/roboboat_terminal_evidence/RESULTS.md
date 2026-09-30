@@ -75,3 +75,24 @@ Largest bottleneck: inferential readiness—no marine allocation, insufficient i
 ### Atomic development reassessment pending
 
 The separately declared extraction/review successor completed 62 returns and 31 source-level reviews for all 36 retained answers. Reviewed inventories contain 595 unique-text claims and 660 episode/evidence-specific claim instances. These are annotation workloads, never independent configuration N. Support annotation is running; no new atomic score or uncertainty result exists yet. Published sentence-inventory scores remain intact. Original “Missing requirements” and growth/margin ambiguities remain in full responses for judgment; the candidate renderer's clearer wording is not substituted into this bank.
+
+### Completed atomic timeout accounting
+
+35/36 reviewed atomic packets finalized. One B2 L0 judgment for the original unpaired direct-route variant timed out after 300 s in pass A; pass B was not invoked and no semantic label exists. It is retained without retry. The original complete-bank release gate remains closed. `atomic-timeout-sensitivity-v1.json` separately accounts for every original answer, assigning the missing explanation judgment bounds [0,1] rather than a false physical or baseline-merit label.
+
+The original two complete paired clusters remain tied: final/A/B conditional mean-difference bounds [0.0,0.0]. This is missing-judgment sensitivity conditional on available agent labels, not a statistical confidence interval or population equality claim. Among 35 finalized packets: no claim-support, required-unit or causal-limitation disagreements; three unqualified abstraction-level disagreements are excluded from scoring. Fresh B2 has 14 assessed successes plus one unassessed judgment (success count bounds 14–15/15); B4 has 15/15 assessed successes. This does not establish method superiority. Same-family judges may share errors, and the strict all-assertion score remains a development sensitivity rather than the planned material-assertion primary endpoint.
+
+### Fixed stopping-threshold development extension
+
+Two prospectively fixed new recordings used existing known/direct approaches and internal translational/yaw stopping thresholds 0.02 instead of 0.05. Independent task thresholds and all controller/physics/environment defaults remained unchanged. Both captures pass strict validity, with real-time factors about 1.00009 and zero stale/rejected actions, stale/failed observations or invalid water searches. Each declared five-second dwell has 251 samples and maximum gap about 0.020 s. All observed position, heading, speed, yaw-rate and hull conditions held; contact remains unknown and continuous compliance is unproved.
+
+| Existing approach | Maximum dwell position error | Maximum dwell measured speed | Remaining minimum position margin |
+|---|---:|---:|---:|
+| known route | 0.33910 m | 0.04590 m/s | 0.06090 m |
+| direct route | 0.21807 m | 0.04362 m/s | 0.18193 m |
+
+These are two additional variants within existing approach clusters, not new independent clusters or replication. The main five-recording experiment and its weights are unchanged. No outcome was required for admission and no failed/undesired run was resampled.
+
+The known-route recording later crossed the position bound at 255.460267 s (0.400286 m), about 7.04 s after the first post-result observation, beyond the declared dwell ending 253.420270 s. Its longer-capture endpoint error is 0.424730 m. This observed later violation cannot be used to falsify the earlier fixed five-second sampled compliance. The interval was fixed before execution. The direct-route longer-capture endpoint remains 0.307594 m. Independent direct Euclidean-distance calculations over every retained post-result position match the production primitive; no cause is identified.
+
+All 12 comparative responses are retained, with the full v3 renderer/certificate executable source available equally to the strong agent. Their new support labels are pending. A qualitative renderer gap is recorded without changing frozen responses: v3 limits full success appropriately but does not explicitly communicate the known sampled kinematic/hull compliance; unpromoted v4 adds that interval witness while retaining contact/continuous/causal limits. Three candidate regressions pass. This is a proposed utility correction, not a comparative win.

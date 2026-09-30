@@ -161,3 +161,38 @@ python analysis/run_roboboat_terminal_capture.py \
 ```
 
 Use one immutable graphics-enabled player at a time. ROS domain 181/port 10481 are unchanged isolated marine resources. Verify live resource/process validity first; preserve strict admission. Runtime readback must match the declared node/plugin and all three internal threshold overrides before publishing method packets. Capture completion alone is not a physical-outcome label.
+
+Both stopping captures and all twelve declared responses completed. The immutable player and baseline profile remain unchanged; component `0df6838` adds only the separate internal-stopping profile. The core support queue is terminal with one retained timeout, not resumable for that failed identity. Do not rerun it to obtain a favorable/complete result.
+
+```bash
+python analysis/analyze_roboboat_atomic_failure_bounds.py \
+  --output artifacts/roboboat-terminal-atomic-reassessment-v1/atomic-timeout-sensitivity-v1.json
+python analysis/build_roboboat_settling_batch.py \
+  --capture-root artifacts/roboboat-terminal-settling-v1/captures \
+  --output-root artifacts/roboboat-terminal-settling-v1/batches
+python analysis/inspect_roboboat_post_dwell_positions.py \
+  --root artifacts/roboboat-terminal-settling-v1 \
+  --output artifacts/roboboat-terminal-settling-v1/post-dwell-position-observations-v1.json
+python analysis/run_roboboat_settling_responses.py --available-only
+python analysis/run_roboboat_settling_atomization.py
+```
+
+The analysis output is sealed and refuses overwrite; inspect it rather than rerunning the first command after release. Batch/reference and completed response commands verify/reuse exact retained artifacts. The final extraction command is live in session `82608` (PID `1363996`); poll the live handle before any resume, never start another queue. Intent/return records reject unresolved or failed identities. Eleven unique answer texts yield 22 planned extraction returns, not new N. Exact source responses remain immutable and abstraction tags unqualified; every complete answer/inventory still requires project completeness review before support calls.
+
+Panel commands add `--terminal-detail --mark-dwell` to `plot_roboboat_terminal_evidence.py`; both SVG/PNG panels are under `docs/roboboat_terminal_evidence/figures/settling_{known,direct}_terminal_panel`. The fixed five-second samples appear in green; the later capture appears in blue. These visible later observations cannot move the registered dwell. Standard Matplotlib renders were inspected, with the path legend moved outside the axes to preserve the target and trajectory.
+
+Current scoped regression command above now reports 81 passed. The six new strong-agent calls have median isolated transport latency 62.34 s; deterministic v3 uses zero model calls. Dollar cost and standalone certificate computation latency remain unmeasured. Original sentence-based and core atomic sensitivity outputs are not pooled with this new method/physical-variant development comparison.
+
+The completed core timeout-accounting capsule uses the existing isolated coordinator intake, explicitly marked incomplete annotation with complete judgment accounting:
+
+```bash
+python analysis/publish_roboboat_terminal_capsule.py \
+  --version atomic-v1 \
+  --artifact-root artifacts/roboboat-terminal-atomic-reassessment-v1 \
+  --results-file atomic-timeout-sensitivity-v1.json --expected-answers 36 \
+  --additional-artifact-root artifacts/roboboat-terminal-atomic-inventory-v1 \
+  --additional-artifact-root artifacts/roboboat-terminal-v1 \
+  --additional-artifact-root artifacts/roboboat-terminal-v3
+```
+
+Do not rerun after immutable publication. This capsule is core development/failure accounting, not a claim that the fresh stopping-extension annotations or full study are complete. No shared DVC/storage pointer or inference look is released.
