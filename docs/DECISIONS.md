@@ -4251,3 +4251,27 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   occurred. The failed combined canary and unlaunched C remain unchanged; the proposed measurement
   reopening has no user decision and authorizes zero calls. P11 retains nineteen open conditions
   with no component hash mismatch, and confirmation/replication independent N remain zero.
+
+
+## 2026-09-30 — add offline staged-file/computation broker and immutable local event retention
+
+- **Dispatch:** B0/B1 expose no tools; B2/B3/B4 share exact staged-file-read and local Python
+  computation definitions. Reads require registered paths and exact hashes, with explicit Unicode
+  ranges/EOF and full-read support. Computation uses the existing isolated namespace seam,
+  preserving full visible source/sample access without host fallback or summary-only restriction.
+- **Events:** require fresh records outside the workspace and explicit call/runtime limits. Reuse
+  the existing exclusive-create/fsync helper to retain bound intents before dispatch and terminal
+  results/failures before returning. Unknown intents and existing identities cannot be replayed;
+  denied/failed/timed-out calls remain retained. Runtime errors receive no semantic repair or
+  fabricated answer. Distinct normal tool requests within budget remain within one episode.
+- **Scope:** no provider client, MCP transport, model call or pilot activation is added. Sequential
+  local dispatch is tested; provider tool schema/permission enforcement, alternative-route disabling,
+  complete model-call retention, runtime/capacity and resource budgets remain unbound. In-memory
+  output capture is not a bound output/memory/CPU limit; overflow/truncation behavior requires an
+  explicit future gate. Do not equate this seam with a complete confined/fair executed harness.
+- **Verification/governance:** twelve broker, nine namespace and two readiness checks pass,
+  including actual staged-tool execution and timeout retention. No semantic output, annotation,
+  method-key join, alpha spending or physical acquisition occurs. The measurement proposal remains
+  unadopted; the failed combined canary and unlaunched C are unchanged. P11 retains nineteen open
+  conditions with no hash mismatch; confirmation/replication independent N remain zero, and all
+  prospective episode comparisons, intervals and corrected p-values remain required.
