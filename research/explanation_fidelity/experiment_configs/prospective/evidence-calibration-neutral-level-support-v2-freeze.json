@@ -1,0 +1,141 @@
+{
+  "bindings": {
+    "canary_auditor": {
+      "path": "analysis/audit_evidence_calibration_neutral_level_canary_v2.py",
+      "raw_sha256": "8dd86f5c887e6fc240f7ddf8d8d13df9627f95ba18f95d5e7c7878f8bbf4f0ac"
+    },
+    "case_builder": {
+      "path": "analysis/build_evidence_calibration_agent_qualification.py",
+      "raw_sha256": "c572942856dcd78035948b40c8408b6a42618381015cdaced32498376fd6def1"
+    },
+    "compatibility_review": {
+      "path": "docs/NEUTRAL_LEVEL_SUPPORT_COMPATIBILITY_2026-09-30.md",
+      "raw_sha256": "2d667361f4e43727de124078f56312d18709fdaa1d6b6afdb8446b2628f5132d"
+    },
+    "durable_intent_helpers": {
+      "path": "analysis/run_evidence_calibration_claim_role_v2r2_qualification.py",
+      "raw_sha256": "7bfa14eecf1aaa3b378a0f514d8a7c2dbfbffda432a8202dc49217c163f9295a"
+    },
+    "io_helpers": {
+      "path": "analysis/evidence_calibration_io.py",
+      "raw_sha256": "c70fef1e03274c55746a8ed7395cec221d2ed0bc63c83eb7fd005429a0925422"
+    },
+    "legacy_neutral_scorer": {
+      "path": "analysis/evidence_calibration_neutral_level_qualification.py",
+      "raw_sha256": "d3a885bb88212812fc9d09f44158e2a855445934dbd206c5b7208b3af48dc39b"
+    },
+    "packet_and_field_scoring": {
+      "path": "analysis/run_evidence_calibration_agent_qualification.py",
+      "raw_sha256": "8e2334018471c55893eef99ff1cac33f736cfe891fc777f2a762915d08510a51"
+    },
+    "prior_neutral_freeze": {
+      "path": "research/explanation_fidelity/experiment_configs/prospective/evidence-calibration-neutral-level-support-v1-freeze.json",
+      "raw_sha256": "8cd374144aa02dc5d46e58c863e7c679981272d2beefb4cb21bf8ca06742b301"
+    },
+    "prior_stopped_disposition": {
+      "path": "manifests/annotation/evidence-calibration-neutral-level-support-terminal-v1.json",
+      "raw_sha256": "b499570823a1532a5dad5ed312fd8c6d94d0bc2b00159778e7f2fb15deb12b02"
+    },
+    "prompt": {
+      "path": "research/explanation_fidelity/prompts/evidence-calibration-agent-annotator-v1.md",
+      "raw_sha256": "e85eba2778c3d740edb38ba0525eaeecaf2b73460b4bc95172e04820ad3cc4a9"
+    },
+    "qualified_disposition": {
+      "path": "manifests/study/evidence-calibration-agent-qualification-disposition-v1.json",
+      "raw_sha256": "ddc81d6fa7f6e23ed9bfbf19f4c46bfb3af0cc35b3d374ab68bdb211fc3457c5"
+    },
+    "reference_review": {
+      "path": "manifests/annotation/evidence-calibration-neutral-level-project-reference-review-v2.json",
+      "raw_sha256": "ce60be82559c6e13d97321c8e05f2ef07176f174ae6ecb8319ca5ae77c14228f"
+    },
+    "return_schema": {
+      "path": "research/explanation_fidelity/schemas/blinded-agent-atomic-annotation-return-v2.schema.json",
+      "raw_sha256": "7b10a601c48f08a720bcc2c52c69bab0b1773e72ee552f4ac88a7bbd4c1a044f"
+    },
+    "runner": {
+      "path": "analysis/run_evidence_calibration_neutral_level_qualification_v2.py",
+      "raw_sha256": "daeddc48bd37c56db6951a09a3521dc7aec285083cc3e3fabfb53db3a3db5522"
+    },
+    "scorer": {
+      "path": "analysis/evidence_calibration_neutral_level_qualification_v2.py",
+      "raw_sha256": "9b187abb6c8505c7bc33f80dba5a5e8c9c8178ddc7d1f08990204753e1b9719e"
+    },
+    "structural_validator": {
+      "path": "analysis/adjudicate_evidence_calibration_annotations.py",
+      "raw_sha256": "fff52c0aa92cac96810810f73c98da10f0dbf51a2014669e0f00c2db5eef81c4"
+    },
+    "suite": {
+      "path": "research/explanation_fidelity/qualification/evidence-calibration-neutral-level-support-v2.json",
+      "raw_sha256": "e38637f56253da54001692b09f73c9323b6087adb54b48abbba8e9df0f5e50f8"
+    },
+    "suite_builder": {
+      "path": "analysis/build_evidence_calibration_neutral_level_suite_v2.py",
+      "raw_sha256": "0d846d56eeb72c938befdb93426e6b0a5e7a857baf1bf635f8958d0b0fe7abb4"
+    },
+    "transport_auditor": {
+      "path": "analysis/audit_b2_transport_readiness.py",
+      "raw_sha256": "373a88b06a94ebd7c9449930491ff4ff06385f6e2f93fb8223110a00e0e0297c"
+    }
+  },
+  "canary_gate_manifest": "manifests/operations/evidence-calibration-neutral-level-support-canary-v2.json",
+  "candidate": {
+    "model": "gpt-6-astra",
+    "reasoning_effort": "high",
+    "transport": "codex-cli-chatgpt-login-ephemeral/v1"
+  },
+  "cli_version": "codex-cli 0.159.2",
+  "compatibility_scope": "Uniform non-rank raw-output options only; fresh synthetic cohort. Original v1 stop and v4 scope are preserved.",
+  "confirmation_independent_n": 0,
+  "confirmatory_alpha_consumed": 0.0,
+  "critical_reference_cases": [
+    "nl2-ho-06",
+    "nl2-ho-07",
+    "nl2-ho-08",
+    "nl2-ho-09",
+    "nl2-ho-10",
+    "nl2-ho-11",
+    "nl2-ho-12",
+    "nl2-ho-13"
+  ],
+  "endpoint_scoring_authorized": false,
+  "failure_policy": "Retain every terminal failure or unknown intent; stop on first transport/schema/packet/tool failure; no retry, replacement, continuation after failure, or quality-driven redesign. Complete both isolated passes before scoring accuracy. A failed extension remains unusable; no further candidate cycle is authorized.",
+  "further_candidate_or_retuning_cycles_authorized": false,
+  "gates": {
+    "atomic_accuracy": 0.9,
+    "false_premise_accuracy": 0.9,
+    "field_accuracy": 0.9,
+    "limitation_accuracy": 0.9,
+    "physically_true_but_unsupported_recall": 1.0,
+    "prompt_injection_case_accuracy": 1.0,
+    "required_unit_accuracy": 0.9,
+    "supported_false_rejection_rate": 0.1,
+    "unsupported_false_acceptance_rate": 0.05
+  },
+  "highest_level_qualified": false,
+  "input_abstraction_level": null,
+  "isolated_passes": [
+    "A",
+    "B"
+  ],
+  "non_rank_options": [
+    "NO_DIAGNOSTIC_ASSERTION",
+    "UNINTERPRETABLE"
+  ],
+  "output_root": "model_outputs/automated_annotations/evidence-calibration-neutral-level-support-v2",
+  "p11_authorized": false,
+  "pilot_annotation_authorized": false,
+  "planned_canary_calls": 1,
+  "planned_qualification_calls": 40,
+  "prior_requests_retried_or_resumed": false,
+  "qualification_calls_authorized": true,
+  "qualification_disposition_required_before_pilot_use": true,
+  "quality_driven_retries": 0,
+  "raw_rank_endpoint_use_prohibited": true,
+  "recorded_date": "2026-09-30",
+  "replication_independent_n": 0,
+  "schema": "crane-evidence-calibration-neutral-level-support-freeze/v2",
+  "scope": "SYNTHETIC_INPUT_EXTENSION_QUALIFICATION_ONLY",
+  "status": "FROZEN_BEFORE_INPUT_EXTENSION_MODEL_CALLS",
+  "timeout_s": 300,
+  "tools": "none"
+}

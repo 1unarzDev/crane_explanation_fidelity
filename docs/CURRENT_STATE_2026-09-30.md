@@ -333,3 +333,23 @@ paired episode discordances, power, compatible fresh allocation, exact protocol 
 can inform P11. B2/B4 remains the candidate primary comparison; B0/B1/B3 versus B4 must report
 episode-level effects, intervals, exact paired p-values and Holm-corrected p-values, including
 inconclusive and unfavorable results, without new discovery alpha.
+
+## Later 2026-09-30 prospective non-rank compatibility declaration
+
+A separate v2 payload candidate addresses the structural absence of a legitimate highest-level
+option when no diagnostic assertion can be interpreted. It supplies the same six diagnostic
+levels plus `NO_DIAGNOSTIC_ASSERTION` and `UNINTERPRETABLE` uniformly on every form; all atomic
+levels remain null. The unchanged Astra-high prompt/model/transport, v2 schemas and validator
+remain bound. Neither diagnostic raw rank nor either sentinel is scored or used for endpoint
+rank. The stopped v1 run is unchanged, remains unqualified, and is not resumed or rescored.
+
+The new twenty-case synthetic cohort has four development and sixteen held-out cases with fresh
+answer text. Project construction review accepts its references; it is not independent reference
+critique or human validation. The separate v2 freeze authorizes one new canary and forty isolated
+qualification calls with unchanged support accuracy thresholds, eight critical cases, durable
+intents, no tools and no retries/replacements. It authorizes no further candidate cycle. Sixteen
+focused tests pass and the v1 terminal audit still reproduces its retained failure. At this
+pre-call checkpoint the v2 canary and qualification are unrun. A DVC-pushed passing canary is
+required before qualification, and a separately bound passing disposition before pilot use.
+Raw rank, role disagreement/missingness, endpoint attachment, five-method development evidence,
+P11, alpha, physical allocation and confirmation/replication N remain open/unchanged.

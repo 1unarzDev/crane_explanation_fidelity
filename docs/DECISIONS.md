@@ -3598,3 +3598,31 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   preflight makes no model call. No support accuracy, paired method effect, manuscript result,
   physical allocation, alpha expenditure or confirmation authorization follows. Independent
   confirmation/replication N remain zero. The prospective five-method comparisons remain required.
+
+## 2026-09-30 — declare a separate non-rank payload compatibility qualification
+
+- **Reason:** the v1 packet interface offered no legitimate highest-level option for an answer
+  with no interpretable diagnostic assertion. This is an interface representability defect, not
+  evidence of passed support-label accuracy. Preserve the stopped v1 run and its 36 unlaunched
+  requests; no repair, rescore, retry, replacement or continuation is authorized.
+- **Candidate:** uniformly append `NO_DIAGNOSTIC_ASSERTION` and `UNINTERPRETABLE` to every new
+  form's six diagnostic options. All atomic input levels remain null. Retain the exact Astra-high
+  model/transport, support prompt, v2 annotation/adjudication schemas and structural validator.
+  Raw levels and both non-rank sentinels remain excluded from accuracy, ordinal conversion and
+  endpoint use. None can waive atomic-label, communication-field or exact-span checks.
+- **Fresh references:** four development and sixteen held-out synthetic cases have fresh answer
+  text and explicit constructions. Project review by the constructing agent accepts all references
+  unchanged; this is not independent critique or human validation. No study response, method key
+  or evaluator key was used. No observed support accuracy or comparative effect informed the gates.
+- **Bounded declaration:** the separate v2 freeze binds all components, prior failed disposition
+  and project review. It authorizes one new non-study canary and forty synthetic calls in two
+  isolated passes only after the canary is audited and DVC-pushed. Support accuracy thresholds
+  remain unchanged; an additional supported-recovery/limitation case is critical. Stop on the
+  first transport/schema/packet/tool failure, retain all failures, and prohibit retries,
+  replacements and further candidate/retuning cycles under this freeze. Complete both passes
+  before accuracy scoring; a pass still requires a separate disposition before pilot use.
+- **Evidence:** sixteen focused offline tests pass, including legacy non-mutation, sentinel score
+  exclusion, unsupported-claim and invented-span rejection, no-retry/isolation, and critical-error
+  gates. The v1 terminal audit still reproduces its retained failure. No v2 model call has run at
+  this declaration checkpoint. P11, endpoint mapping, role disagreement/missingness, alpha,
+  physical allocation and confirmation/replication independent N remain unchanged.
