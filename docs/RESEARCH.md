@@ -1,5 +1,20 @@
 # Research and benchmark source audit
 
+## 2026-09-30 — latest measurement-gate reconciliation
+
+The older operational entries below remain dated records. The known role bank is now 113 A plus
+114 B returns (227/228), with the original missing A quarantined. The separate neutral-v2
+support-input synthetic qualification passed and remains qualified within its bound scope; raw
+highest level and assertion-role kinds do not qualify endpoint rank. The subsequent combined-
+format canary has terminated: A/B matched all four atomic labels, but B differed from the frozen
+recovery-coverage reference. The failure is retained without retry, replacement, reference change
+or rescore; C was never launched. No real-pilot support annotation or paired episode effect exists.
+Its terminal audit and DVC-pushed failing disposition keep pilot activation closed. These are
+agent-assessed synthetic records, not human validation or independent episode samples. P11 still
+has 19 open gates; confirmation/replication N remain zero. Alpha and physical-layout quarantine
+are unchanged. See the [current checkpoint](CURRENT_STATE_2026-09-30.md), newest decisions and
+living P11 manifest for the remaining claim-specific mapping and fresh five-method prerequisites.
+
 ## 2026-09-29 — later operational reconciliation
 
 The earlier same-day checkpoint below records the state before valid B2 continuation and before

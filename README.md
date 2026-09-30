@@ -21,8 +21,11 @@ The inspected development pipeline has 60 accepted B4 outputs and 57 valid B2 ou
 paired support annotation or evidence-calibration effect. Astra-high is qualified for the
 synthetic atomic-support task and a separate stance/kind/polarity task. All 114 blind answer
 inventories have a reviewed route, including one manual inventory with differential provenance.
-The declared role application stopped after 69 valid A returns and one unknown-disposition intent;
-158 requests remain unlaunched. Support annotation and endpoint mapping remain open. P11 is not frozen;
+The separate role continuation completed all 158 requests, giving 113 known A and 114 B returns;
+one original A intent remains quarantined. The neutral-v2 synthetic support-input extension is
+qualified within its bound scope, but the combined-format canary failed its frozen B recovery-
+coverage reference after two valid support returns. C was never launched. Pilot annotation,
+role/missingness disposition and claim-specific endpoint mapping remain open. P11 has 19 open gates;
 confirmation and replication each have independent N=0. The exact active boundaries and open
 gates are in the [current-state checkpoint](docs/CURRENT_STATE_2026-09-30.md),
 [evidence-calibration protocol](docs/EVIDENCE_CALIBRATION_PROTOCOL.md), and newest entries of the

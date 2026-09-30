@@ -463,3 +463,29 @@ At this pre-call checkpoint none of the three calls has run. Commit/push the dec
 launch, then retain and audit the terminal result. A passing DVC-pushed canary and separately bound
 execution declaration are required before any pilot call. P11 remains closed, and the primary
 B2/B4 plus three corrected B0/B1/B3 contrasts remain prospective with no episode effects yet.
+
+## Latest 2026-09-30 failed combined-format canary checkpoint
+
+Session `57113` terminated with exit 1 after two structurally valid A/B calls. Both matched all
+four atomic reference labels. B marked recovery coverage true and quoted the threshold plus the
+claimed displacement, while the frozen recovery-coverage reference is false; A matched it.
+Limitation and false-premise references matched. The result is
+`FAILED_SYNTHETIC_REFERENCE_RETAIN_NO_RETRY`. C was never launched. This is a retained synthetic
+reference disagreement, not a transport failure, pilot support accuracy or episode method effect.
+No retry, replacement, reference change, rescore, continuation or further candidate cycle is
+authorized. Raw highest values disagree and remain unqualified. Earlier component qualifications
+retain their scope but cannot override the failed combined gate or activate pilot annotation.
+
+The terminal audit reproduces exact request/return identities, references and the stop frontier.
+DVC pushed six objects after termination; the pointer has 3,952 files. The original checkout
+pointer was restored exactly and its Git state is clean. The failed disposition and updated P11
+prerequisites are hash-bound. Twenty-one focused offline tests pass; P11 has nineteen open gates
+and no component hash mismatch. No alpha, physical allocation, manuscript claim or independent
+confirmation/replication N changed. B2/B4 plus B0/B1/B3-versus-B4 effects remain unobserved.
+
+Support execution and empirical C adjudication remain closed. Independent role/missingness,
+claim-specific contract/rank attachment and nominal-alignment governance can continue without
+new support calls. Any later measurement decision must retain and explicitly address this failed
+scope; it cannot silently overwrite the reference or replace the retained failure with a success.
+Fresh aligned five-method evidence, useful coverage, paired episode discordances, power and
+compatible allocation remain required before P11.

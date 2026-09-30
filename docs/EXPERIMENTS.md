@@ -8213,3 +8213,23 @@ This authorizes only the zero-alpha fresh pilot, beginning with its fixed-order 
 - **BOUNDARY:** these are development outputs, not confirmation. No B2/B4 difference has been
   inspected, no annotation has been joined, independent confirmatory N remains zero, and alpha use
   remains zero. Next is blinded qualified-Astra annotation of the 57 valid pairs.
+
+## 2026-09-30 — combined support-format synthetic compatibility canary (failed)
+
+- **Pre-call state:** declaration commit `b137867`, exact Astra-high qualified prompt/v2 schemas,
+  CLI 0.159.2, fresh synthetic source/odometry/truth fixture and null atomic levels. Three calls
+  declared: isolated actual support A/B and constructed-disagreement C only after support passed.
+  Transport preflight passed without changing credentials, DNS or retained study artifacts.
+- **Observed:** session `57113` terminated with exit 1 after two structurally valid support
+  returns. Both matched all four atom labels. B disagreed with the frozen recovery-coverage
+  reference (true returned versus false reference); A matched. Both matched limitation and
+  false-premise fields. B quoted the configured threshold and claimed 0.81 m displacement for
+  its recovery coverage. C was never launched. This result is not a transport or schema failure.
+- **Disposition:** `FAILED_SYNTHETIC_REFERENCE_RETAIN_NO_RETRY`; preserve all references,
+  returns and raw highest disagreement. No rescore, retry, replacement, continuation or further
+  candidate cycle under the freeze. The terminal audit exactly reproduces the failure/frontier;
+  six DVC objects were pushed and the original checkout pointer restored byte-for-byte.
+- **Limits:** project-constructed references and automated agent assessment; no human validation,
+  pilot support accuracy, empirical disagreement adjudication, independent episode N, paired
+  method effect, corrected p-value or confirmatory result. Pilot activation stays closed. Prior
+  component qualification scopes are retained; P11, alpha and physical allocation are unchanged.

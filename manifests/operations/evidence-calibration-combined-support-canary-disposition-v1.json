@@ -1,0 +1,84 @@
+{
+  "artifact_retention": "DVC_PUSH_VERIFIED",
+  "atomic_labels_match_in_both_passes": true,
+  "bindings": {
+    "freeze": {
+      "path": "research/explanation_fidelity/experiment_configs/prospective/evidence-calibration-combined-support-canary-v1-freeze.json",
+      "raw_sha256": "5344faf521016861d92aa55f9480c9cb550703f3d445b512980c5aa3c2b4876b"
+    },
+    "model_outputs_pointer": {
+      "path": "model_outputs.dvc",
+      "raw_sha256": "4dc92315dabce52706bb147f339cdf0152ff3cc91871f75f68ff43c6f0c3ff25"
+    },
+    "terminal_audit": {
+      "path": "manifests/annotation/evidence-calibration-combined-support-canary-terminal-v1.json",
+      "raw_sha256": "d920981744f67436002babcd212257d9182c59598661ef3343943907499b953f"
+    }
+  },
+  "confirmation_independent_n": 0,
+  "confirmatory_alpha_consumed": 0.0,
+  "constructed_C_calls": 0,
+  "continuation_after_failure_authorized": false,
+  "dvc_push_objects": 6,
+  "endpoint_scoring_authorized": false,
+  "failure_field": "B.required_unit_coverage:state whether measured response recovered",
+  "further_candidate_cycles_authorized": false,
+  "highest_level_qualified": false,
+  "human_validation_claimed": false,
+  "independent_reference_validation_claimed": false,
+  "known_support_returns": 2,
+  "limitations": [
+    "Fresh project-constructed synthetic case; this result is not real-pilot support accuracy or an episode-level method comparison.",
+    "B supplied a verbatim span about the threshold and claimed displacement for recovery coverage; preserve the reference disagreement without retrospectively reinterpreting recovery or changing the reference.",
+    "Constructed C compatibility and real-pilot disagreement adjudication remain untested."
+  ],
+  "new_model_outputs_file_count": 3952,
+  "observed_B_communicated": true,
+  "original_checkout_git_clean": true,
+  "original_checkout_pointer_restored_byte_for_byte": true,
+  "p11_authorized": false,
+  "pilot_annotation_authorized": false,
+  "qualification_scope": "Earlier v4, source-context and neutral-v2 support-input qualifications remain retained within their existing scopes; this combined-format gate failed and does not activate pilot use.",
+  "raw_highest_level_disagreement_retained_unqualified": true,
+  "recorded_date": "2026-09-30",
+  "reference_communicated": false,
+  "references_changed": false,
+  "replication_independent_n": 0,
+  "retries_or_replacements": 0,
+  "returns_repaired_or_rescored": false,
+  "schema": "crane-combined-support-canary-disposition/v1",
+  "status": "FAILED_COMBINED_CANARY_PILOT_GATE_CLOSED",
+  "terminal_result": {
+    "completed_slots": [
+      "A",
+      "B"
+    ],
+    "confirmation_independent_n": 0,
+    "constructed_c_not_observed_ab_disagreement": true,
+    "endpoint_scoring_authorized": false,
+    "freeze_raw_sha256": "5344faf521016861d92aa55f9480c9cb550703f3d445b512980c5aa3c2b4876b",
+    "highest_level_qualified": false,
+    "p11_authorized": false,
+    "pilot_annotation_authorized": false,
+    "replication_independent_n": 0,
+    "schema": "crane-combined-support-canary-result/v1",
+    "scientific_sample": false,
+    "status": "FAILED_SYNTHETIC_REFERENCE_RETAIN_NO_RETRY",
+    "suite_sha256": "8c37e7781b6e2b8dc75e4900749a99013d13f815e85fa300d5b66f10f9a007a2",
+    "support_checks": {
+      "A": {
+        "atomic_labels": true,
+        "false_premise_handling": true,
+        "limitation_preservation": true,
+        "required_unit_coverage": true
+      },
+      "B": {
+        "atomic_labels": true,
+        "false_premise_handling": true,
+        "limitation_preservation": true,
+        "required_unit_coverage": false
+      }
+    }
+  },
+  "transport_or_structural_failure": false
+}

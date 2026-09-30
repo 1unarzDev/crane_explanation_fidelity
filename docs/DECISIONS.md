@@ -3776,3 +3776,35 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   checkpoint. Passing, audited and DVC-pushed canary artifacts plus a separate execution
   declaration are still required before development support annotation. P11 and all endpoint,
   alpha, freshness, physical allocation and confirmation/replication N boundaries are unchanged.
+
+## 2026-09-30 — retain failing combined-format support canary; do not open pilot calls
+
+- **Observed terminal:** session `57113` exited 1 after two structurally valid isolated A/B
+  returns. Both matched all four frozen atomic labels, limitation preservation and false-premise
+  references. A matched both coverage references; B marked measured-recovery coverage true,
+  while the frozen reference is false. B supplied the exact span containing the source threshold
+  and the claimed 0.81 m displacement. The stopped result is
+  `FAILED_SYNTHETIC_REFERENCE_RETAIN_NO_RETRY`, not a transport/schema failure. Preserve this
+  reference disagreement without retrospectively redefining recovery or changing/rescoring the
+  fixture. The declared C compatibility call was never launched.
+- **Raw levels:** A returned `physical_execution_mechanism`, B `specific_physical_cause`.
+  Preserve both unqualified raw values; this disagreement neither repairs coverage nor defines
+  an endpoint score. No pilot answer or method key was accessed by either invocation.
+- **Reproduction/retention:** the read-only terminal audit reconstructs both request identities,
+  raw/parsed returns, support fields and the stop frontier. After process termination DVC pushed
+  the five new intent/record/result files plus directory object (six objects). The new pointer
+  has 3,952 files. The original checkout's pointer was restored byte-for-byte and its Git state
+  is clean. The bound failing disposition records verified retention and zero C calls.
+- **Governance:** the earlier v4, source-context and neutral-v2 qualifications remain preserved
+  within their existing scopes. They do not override this failed combined-format gate. No retry,
+  replacement, reference change, continuation, further candidate cycle or pilot activation is
+  authorized by this freeze/disposition. Constructed C compatibility and real-pilot adjudication
+  remain untested. Independent governance/inventory/mapping work can continue without semantic
+  support calls; any future measurement decision must explicitly preserve this failure and its
+  scope rather than treating another favorable canary as its replacement.
+- **Current state:** twenty-one focused offline tests pass. P11 still fails closed on nineteen
+  conditions with no component hash mismatch; its living annotation prerequisites now name
+  the combined reference failure. README and the newest research/checkpoint entries resolve
+  stale operational wording while preserving older records. No manuscript result, paired method
+  effect, corrected p-value, alpha allocation, physical allocation or confirmation/replication N
+  follows from this canary. B0/B1/B3 versus B4 remain required prospective secondary contrasts.
