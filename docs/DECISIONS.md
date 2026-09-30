@@ -4053,3 +4053,26 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   pass. The failed combined support gate and unlaunched C remain unchanged. No model call, study
   request, annotation, endpoint, alpha spending or physical acquisition occurred. P11 retains
   nineteen open conditions; all prospective five-method comparisons/reporting remain required.
+
+
+## 2026-09-30 — add offline method workspace staging without claiming harness confinement
+
+- **Implementation:** a temporary staging helper checks condition/evidence/packet identities and
+  resolves only exact versioned, hash-checked registry assets. B0/B1 working directories are empty;
+  B2/B3/B4 receive identical evidence and source/config/tool bytes with legacy B2 filenames.
+  B3/B4 additionally receive public v2 contracts. No evaluator reference or approved diagnosis is
+  staged for B2. Original runners, packets, caches and outputs remain unchanged.
+- **Integrity and limits:** stable workspace identities exclude temporary paths; pre/post inventory
+  checks detect changed/added files, extra directories, symlinks and special files. Source symlinks
+  and unknown/missing/duplicate/wrong-category assets fail before writing. Cleanup occurs even after
+  integrity failures. These final-inventory checks cannot establish confinement or detect transient
+  reads/restored changes. Actual harness filesystem/tool/network enforcement and full permitted
+  B2 primitive-computation access remain separate prospective requirements.
+- **Verification:** fifteen focused checks, seven existing packet checks and two readiness checks
+  pass. A deterministic subprocess runs the original staged primitive inventory tool successfully
+  without changing inventory. No model invocation or semantic output is generated.
+- **Governance:** the failed combined support canary and unlaunched C remain unchanged. Actual-route
+  capacity, qualified measurement, fresh aligned five-method outputs and episode-level inference
+  remain open. P11 retains nineteen open conditions; confirmation/replication N remain zero.
+  Alpha and physical quarantine are unchanged. B0/B1/B3 versus B4 effects, intervals and corrected
+  p-values, including inconclusive/unfavorable results, remain prospectively required.
