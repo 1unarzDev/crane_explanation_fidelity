@@ -1,5 +1,18 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Service lifecycle addendum after `9f06ed37` — 2026-09-30
+
+A [separate executor v7 and operator wrapper](SERVICE_NAMESPACE_LIFECYCLE_2026-09-30.md)
+now bind namespace argv/status outside the payload and require a matching complete
+lifecycle before returning a computation result. Incomplete/corrupt status withholds
+output; prior resource/encoding failure dispositions remain. Thirty-one targeted
+checks and three retained fixed service transactions pass. Existing broker/MCP/study
+callers are unchanged. Intermediate startup attestation, full integration, immutable
+runtime, capacity/rendering and measurement remain open. No semantic invocation,
+endpoint score or alpha spending occurs. P11 keeps nineteen open conditions, N=0
+and pending measurement reopening; the requested decision is still unanswered.
+
+
 ## Namespace lifecycle addendum after `2b3f352c` — 2026-09-30
 
 A [fixed structured-status observation](NAMESPACE_LIFECYCLE_2026-09-30.md) retains

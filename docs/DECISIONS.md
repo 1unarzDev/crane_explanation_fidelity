@@ -4637,3 +4637,29 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   support/unlaunched C and pending reopening. An explicit bounded-reopening decision
   is requested; automatic continuation does not supply it. P11 keeps nineteen open
   conditions and confirmation/replication independent N=0.
+
+
+## 2026-09-30 — require complete namespace lifecycle in a separate service candidate
+
+- **Integration:** executor v7 selects an operator-side wrapper with hash-bound
+  namespace request and separate exclusive status FD/file. Preserve namespace,
+  resource/scratch constraints, payload argv and bounded outer stdout/stderr capture.
+  Intent binds both code hashes, request bytes and workspace/limit identities.
+- **Disposition:** a completed tool result requires strict matching lifecycle/exit
+  records after cleanup. Empty/incomplete/corrupt/oversized status withholds output.
+  OOM/overflow/UTF-8/wall/cleanup failures retain prior dispositions. Never parse
+  stderr wording or attribute a semantic model failure from this mechanical signal.
+- **Evidence:** 31 targeted checks pass across two invocations, including actual
+  service failures, status corruption, descriptor visibility, bounded capture,
+  resource cleanup and existing staged B2 primitive parity. Three distinct retained
+  transactions show literal success, setup-looking program error with verified exit,
+  and an operator-injected mount failure with incomplete status/null result. All
+  services are absent; fault-injection provenance is explicit.
+- **Scope:** final status is not every interpreter/tool startup stage. Full broker/
+  MCP/provider integration, immutable runtime, cumulative/turn budgets, capacity
+  and model-facing rendering remain open. Existing callers do not adopt v7; old
+  failures/outputs/versions remain unchanged.
+- **Governance:** no semantic model/automated annotation call, method-key join, real-
+  pilot score, physical acquisition, alpha spending or P11 freeze. Failed combined
+  support/unlaunched C and pending reopening remain; the explicit decision request
+  is unanswered. P11 keeps nineteen open conditions and confirmation/replication N=0.
