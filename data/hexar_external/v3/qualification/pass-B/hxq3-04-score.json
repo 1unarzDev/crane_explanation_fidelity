@@ -1,0 +1,48 @@
+{
+  "atomic": [
+    {
+      "actual": "SUPPORTED_BY_VISIBLE_EVIDENCE",
+      "correct": true,
+      "expected": "SUPPORTED_BY_VISIBLE_EVIDENCE",
+      "item_id": "hxq3-04-s1"
+    },
+    {
+      "actual": "CONTRADICTED_BY_VISIBLE_EVIDENCE",
+      "correct": true,
+      "expected": "CONTRADICTED_BY_VISIBLE_EVIDENCE",
+      "item_id": "hxq3-04-s2"
+    },
+    {
+      "actual": "INSUFFICIENT_VISIBLE_EVIDENCE",
+      "correct": true,
+      "expected": "INSUFFICIENT_VISIBLE_EVIDENCE",
+      "item_id": "hxq3-04-s3"
+    }
+  ],
+  "case_id": "hxq3-04",
+  "false_premise_correct": true,
+  "highest_level_correct": true,
+  "limitations": [
+    {
+      "correct": true,
+      "limitation_prompt": "Do not upgrade latest after-trip indicator samples into a throughout-trip state conclusion."
+    }
+  ],
+  "required_units": [
+    {
+      "correct": true,
+      "unit_prompt": "Communicate recorded navigation SUCCESS."
+    },
+    {
+      "correct": true,
+      "unit_prompt": "Communicate that the latest charging indicator was ON; OFF does not cover this value."
+    }
+  ],
+  "split": "heldout",
+  "threat_tags": [
+    "indicator_polarity",
+    "temporal_scope",
+    "subjective_delay",
+    "form_controlled_not_applicable"
+  ]
+}
