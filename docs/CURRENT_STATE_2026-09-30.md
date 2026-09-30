@@ -288,3 +288,48 @@ disagreement and missing-A dispositions, input-extension qualification, assertio
 attachment, support/adjudication dry runs, and fresh aligned five-method development evidence
 remain prerequisites. Confirmation/replication N are zero; alpha and quarantine accounting are
 unchanged.
+
+## Latest 2026-09-30 terminal support-qualification checkpoint
+
+The separate neutral-input synthetic qualification ran after the pushed canary gate. Session
+`58681` terminated with exit code 1 after three structurally valid A returns and one
+`FAILED_NO_RETRY` return on `nl-dev-04`. The CLI returned code 0, with no timeout or forbidden
+event; local packet validation rejected `highest_asserted_abstraction_level=UNINTERPRETABLE`
+because it is outside the packet's six abstraction options. The return schema permits a nonempty
+string, while packet validation imposes the narrower options. This is a retained interface
+validation failure, not a transport failure or measured support-label accuracy result. Even
+though raw rank was excluded from accuracy and endpoint use, it remained a structural gate in
+the frozen runner. Do not remove that gate retrospectively, repair the record, or score the prefix.
+
+The read-only terminal auditor and
+`manifests/annotation/evidence-calibration-neutral-level-support-terminal-v1.json` bind all eight
+new intent/terminal files: three valid calls, one failed call, and 36 never-launched requests.
+No retry, replacement, or continuation is authorized. DVC pushed nine objects including the new
+directory object; the pointer now contains 3,863 files. The original checkout's pointer was
+restored byte-for-byte and its Git state is clean. The original Astra-high v4 support qualification
+and v2 schemas remain active only within their original bound scope; the neutral-input extension
+is not qualified and cannot activate pilot support annotation. A future compatibility treatment
+for uninterpretable/no-assertion answers requires a separate prospective decision and qualification.
+
+The B application review now covers 114 answers / 1,084 judgments through its disclosed route:
+carry forward the A review and concerns for 1,018 matching tuples, explicitly review 53 differing
+tuples and 13 B-only atoms. Across 1,071 paired atoms, disagreement counts are 0 stance, 46 kind,
+and 12 polarity. These are automated annotation consistency counts, not accuracy or independent
+N. Raw roles remain unchanged. Disagreement disposition, missing-A handling, and claim-specific
+contract/rank attachment remain open before endpoint use.
+
+Recomputed checks: 14 focused tests pass; P11 fails closed on the same 19 conditions with no
+component hash mismatch; freshness is `PASS_RECONCILED`; alpha is `PASS_PROVISIONAL_UNBOUND`
+(0.02 consumed, at most 0.01 discovery, 0.02 replication-only). The host transport preflight is
+`READY_FOR_SCHEMA_CANARY`, with no model/study request attempted and no historical canary
+overwritten. The 120 former confirmation and 20 replication layouts remain materialized; the
+other 100 replication layouts remain allocated and quarantined. No manuscript result changed.
+Confirmation and replication independent N remain zero.
+
+Next dependencies remain qualified support input/measurement, role disagreement and missingness
+disposition, assertion-aware endpoint mapping, two isolated support passes and disagreement-only
+adjudication, nominal-mask alignment, and fresh aligned B0–B4 development evidence. Then coverage,
+paired episode discordances, power, compatible fresh allocation, exact protocol and alpha binding
+can inform P11. B2/B4 remains the candidate primary comparison; B0/B1/B3 versus B4 must report
+episode-level effects, intervals, exact paired p-values and Holm-corrected p-values, including
+inconclusive and unfavorable results, without new discovery alpha.

@@ -3570,3 +3570,31 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   terminal 227/228 status and open review/mapping dependencies. Preserve the older interruption
   snapshot and all historical decisions. P11 remains closed on 19 conditions; alpha, physical
   allocation, and independent confirmation/replication N remain unchanged.
+
+## 2026-09-30 — retain stopped neutral-input qualification and complete disclosed B review
+
+- **Terminal qualification:** session `58681` exited 1 after three valid A returns and the
+  `nl-dev-04` local packet-validation failure. Its CLI exit code was 0; no timeout or forbidden
+  event was recorded. The raw highest-level value `UNINTERPRETABLE` is outside the packet's six
+  options, although the return schema permits a nonempty string. Rank exclusion from accuracy
+  did not remove this frozen structural gate. Preserve the failure and all raw support fields;
+  do not retroactively relax validation, rescore the prefix, retry, replace, or continue the run.
+- **Disposition:** the neutral-input extension is not qualified. The 36 never-launched requests
+  are not authorized to resume. Any future no-assertion/uninterpretable interface treatment needs
+  a separate prospective compatibility decision and qualification. The existing v4 support
+  disposition, prompt and v2 schemas remain unchanged within their original scope.
+- **Retention:** the read-only terminal audit and annotation disposition bind three valid
+  records, one failure and all intents. DVC pushed nine objects after both jobs were terminal;
+  the new pointer contains 3,863 files. The original checkout's pointer was restored exactly and
+  its Git state is clean. The living P11 pointer hash and operational wording are synchronized.
+- **B review:** `ROLE_B_REVIEW_2026-09-30.md` and its bound manifest disclose carry-forward of A
+  review for 1,018 matching tuples plus explicit review of 53 differences and 13 B-only atoms.
+  All 114 B returns / 1,084 atoms are covered by this route. Preserve abort-polarity errors,
+  recovery-referent ambiguity and all six old negative-causation assertions. No raw label changed;
+  disagreement and missing-A treatment remain open before endpoint use. This is agent-assisted
+  project review, not human validation or independent interpretation of every matching B atom.
+- **Checks and boundaries:** 14 focused tests pass. P11 retains 19 open conditions with no
+  component hash mismatch. Freshness and provisional alpha audits pass; the host transport
+  preflight makes no model call. No support accuracy, paired method effect, manuscript result,
+  physical allocation, alpha expenditure or confirmation authorization follows. Independent
+  confirmation/replication N remain zero. The prospective five-method comparisons remain required.
