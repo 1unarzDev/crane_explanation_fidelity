@@ -1,5 +1,24 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Condition ownership addendum after `8d656369` — 2026-09-30
+
+A [separate guarded coordinator](CONDITION_SESSION_OWNERSHIP_2026-09-30.md) reserves
+one MCP v5 session per declared campaign/episode/condition/method in one operator
+registry before server creation. Budgets, record paths and source/config changes
+cannot alter that ownership key. Interrupted storage and construction consume
+ownership without adoption/replacement. Nineteen focused checks and three retained
+fixed flows pass; two computation services are absent. A charged failed workload
+consumes 440.887 ms against 310 ms, retaining 130.887 ms overshoot; a larger-budget
+sibling is denied before a new session. Full reads remain available after known
+compute exhaustion. No global registry enforcement, plan-membership validation,
+power-loss durability or actual model-turn binding is established. Installed-client
+coordinator integration and full model tools/rendering/capacity, other costs,
+overshoot policy, immutable runtime and one-shot model execution remain open.
+Study callers stay unchanged. No semantic outputs, annotation, scores, alpha
+spending or P11 freeze occur; N=0, nineteen open conditions and unanswered
+measurement reopening remain.
+
+
 ## Installed-client serial CPU addendum after `a3f6be22` — 2026-09-30
 
 A [separate observer v5](INSTALLED_CLIENT_COMPUTATION_CPU_MCP_2026-09-30.md)

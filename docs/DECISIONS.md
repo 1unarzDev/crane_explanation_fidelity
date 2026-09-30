@@ -4877,3 +4877,31 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   annotation, pilot scoring, physical acquisition, alpha spending or P11 freeze.
   Failed support/unlaunched C and unanswered reopening remain. N=0 and nineteen
   open conditions; prospective five-method reporting remains required.
+
+
+## 2026-09-30 — reserve one operator-local MCP session per declared condition/method
+
+- **Gap:** serial CPU ledger lifetime was one server; fresh siblings could reset it.
+  Separate guarded coordinator reserves campaign/episode/condition/method ownership
+  before unchanged MCP v5 construction. Configuration, record paths, budgets and
+  source changes cannot change the key within the same operator registry.
+- **Failure policy:** exclusive directory before intent retention; file/directory
+  fsync requested. Construction/retention interruption consumes ownership. Never
+  adopt, resume, complete a partial owner or replace a retained session. Operator
+  terminal binds final session hash and ledger snapshot; scope stays off tool replies.
+- **Evidence:** 19 focused checks and three pre-bound offline fixed flows pass,
+  including two-process contention and actual subprocess computation. A changed
+  records/larger-budget sibling is denied. Constructor failure and separately
+  injected intent-storage failure also block replacement. Two services are absent.
+  Retain 440.887 ms actual CPU against 310 ms and 130.887 ms overshoot without
+  claiming a hard cap, worst-case bound or method effect.
+- **Boundary:** one declared registry only; plan hash is caller-supplied and scope
+  membership is not verified. Alternative registries/identity relabeling, distributed/
+  power-loss durability and eventual complete model-turn binding remain open.
+  Installed-client coordinator integration, full model tools/rendering/capacity,
+  other costs, overshoot policy and immutable runtime remain open. This is neither
+  a scientific schedule freeze nor provider execution; study callers stay unchanged.
+- **Governance:** no semantic/annotation call, pilot score, method-key join, physical
+  acquisition, alpha spending or P11 freeze. Preserve failed support/unlaunched C
+  and unanswered reopening. N=0 and nineteen open conditions; prospective five-method
+  reporting remains required.
