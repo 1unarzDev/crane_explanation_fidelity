@@ -5,6 +5,17 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 DOC=ROOT/'docs/roboboat_terminal_evidence'
 
+def configuration_path(registry):
+    binding=registry.get('nav2_configuration')
+    if binding is None:
+        return ROOT/'packages/crane_ml/Tools/Performance/roboboat_terminal_v1.yaml'
+    path=(ROOT/binding['path']).resolve(strict=True)
+    if not path.is_relative_to(ROOT/'packages/crane_ml/Tools/Performance'):
+        raise ValueError('configuration must be isolated component configuration')
+    if hashlib.sha256(path.read_bytes()).hexdigest()!=binding['sha256']:
+        raise ValueError('registered per-run configuration changed')
+    return path
+
 def atomic(path, value):
     tmp=path.with_suffix('.tmp');tmp.write_text(json.dumps(value,indent=2)+'\n');tmp.replace(path)
 
@@ -12,6 +23,7 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--output-root',required=True,type=Path);p.add_argument('--limit',type=int,default=6)
     p.add_argument('--registry',type=Path,default=DOC/'pilot_registry_v1.json');a=p.parse_args()
     registry=json.loads(a.registry.read_text())
+    nav2_configuration=configuration_path(registry)
     a.output_root.mkdir(parents=True,exist_ok=True)
     for row in registry['rows'][:a.limit]:
         out=a.output_root/row['id']; record=out/'capture-attempt.json'
@@ -25,7 +37,7 @@ def main():
              'CRANE_ASTRO_DOCK':'/home/lunarz/crane_explain/packages/astro_dock',
              'CRANE_NOGRAPHICS':'0','CRANE_DURATION':'290','CRANE_WARMUP':'3',
              'CRANE_NAV2_ACTION_DURATION':'270','CRANE_NAV2_POST_RESULT_DURATION':'8',
-             'CRANE_NAV2_PARAMS':str(ROOT/'packages/crane_ml/Tools/Performance/roboboat_terminal_v1.yaml'),
+             'CRANE_NAV2_PARAMS':str(nav2_configuration),
              'CRANE_NAV2_ACTION_MODE':row['action_mode'],'CRANE_NAV2_PROFILE':'train-gpu',
              'CRANE_NAV2_CONTROLLER_EXTRA_ARGS':f"-p goal_checker.xy_goal_tolerance:={row['internal_xy_tolerance_m']}",
              'CRANE_NAV2_GOAL_X':'0.8641434','CRANE_NAV2_GOAL_Y':'-27.586906','CRANE_NAV2_GOAL_YAW':'1.5707963267948966',

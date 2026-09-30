@@ -149,3 +149,15 @@ PY
 Result: 67 passed. The frozen historical platform's Git objects were also read-only verified against its four declared hashes; current launcher/fixture differ, current profile/route match. Neither freeze nor inherited test was edited.
 
 Both commands above have now executed: preparation passed and all 36 packets are frozen; support run is live in session `58415`. Extraction session `97278` completed with all 62 returns. Do not restart either live/resolved request identity. All 31 project reviews and their retained histories are under `artifacts/roboboat-terminal-atomic-inventory-v1`; the reassessment declaration binds exact bytes. At initial publication there are two support intents and no finalized annotations. Use the existing session to poll; only resume the command after verifying the previous process ended and checking for unresolved intents. No provisional score should be inferred from packet publication or transport progress.
+
+### Fixed two-recording internal-stopping development extension
+
+`settling_pilot_registry_v1.json` fixes two fresh variants on the already inspected known/direct approaches. Only internal StoppedGoalChecker translational/yaw stopping thresholds change from 0.05 to 0.02 in separately committed crane_ml profile `0df6838`; the validated baseline profile and independent task contract remain byte-identical. No controller dynamics, physics or environment changes. Two configuration-diff and hash/path regressions pass; six runtime/callback regressions also pass. These variants add no independent approach-cluster N. They are not confirmation or replication and cannot repair the missing original direct-route counterpart. All unexpected valid results and failures are retained; zero retries, stop at technical failure, no desired-label resampling. They can establish sampled kinematic settling if observed, while contact limitations still prevent full compound success.
+
+```bash
+python analysis/run_roboboat_terminal_capture.py \
+  --registry docs/roboboat_terminal_evidence/settling_pilot_registry_v1.json \
+  --output-root artifacts/roboboat-terminal-settling-v1/captures --limit 2
+```
+
+Use one immutable graphics-enabled player at a time. ROS domain 181/port 10481 are unchanged isolated marine resources. Verify live resource/process validity first; preserve strict admission. Runtime readback must match the declared node/plugin and all three internal threshold overrides before publishing method packets. Capture completion alone is not a physical-outcome label.

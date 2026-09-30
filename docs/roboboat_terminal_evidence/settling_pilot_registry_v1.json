@@ -1,0 +1,83 @@
+{
+  "schema": "roboboat-fixed-internal-stopping-development-pilot/v1",
+  "disposition": "DEVELOPMENT_EXPLORATORY_NO_CONFIRMATORY_ALLOCATION",
+  "created_date": "2026-09-30",
+  "configuration_n": 2,
+  "new_independent_cluster_n": 0,
+  "rows": [
+    {
+      "id": "boat-terminal-settling-001",
+      "cluster_id": "approach-01",
+      "family": "known-route-internal-stop-0.02",
+      "action_mode": "follow-path",
+      "shape": "known",
+      "internal_xy_tolerance_m": 0.2,
+      "internal_trans_stopped_velocity_mps": 0.02,
+      "internal_rot_stopped_velocity_radps": 0.02,
+      "seed": 31000,
+      "retry_budget": 0,
+      "status": "untouched-prospectively-registered"
+    },
+    {
+      "id": "boat-terminal-settling-002",
+      "cluster_id": "approach-02",
+      "family": "direct-route-internal-stop-0.02",
+      "action_mode": "navigate-to-pose",
+      "shape": "direct",
+      "internal_xy_tolerance_m": 0.2,
+      "internal_trans_stopped_velocity_mps": 0.02,
+      "internal_rot_stopped_velocity_radps": 0.02,
+      "seed": 31001,
+      "retry_budget": 0,
+      "status": "untouched-prospectively-registered"
+    }
+  ],
+  "nav2_configuration": {
+    "path": "packages/crane_ml/Tools/Performance/roboboat_terminal_settling_v1.yaml",
+    "sha256": "3876552c6f650c1502934900f8283908396f4695602b02e7d99406f9fd8c12cb"
+  },
+  "contract_sha256": "f4cb6a91dd5b00f1e913ca0e0f1d1e1e845c95ccfe336ee669b1549fe7e73049",
+  "capture_runtime_parameters": true,
+  "source_bindings": [
+    {
+      "path": "analysis/run_roboboat_terminal_capture.py",
+      "sha256": "c85f41546358fae568a54e4af2211e3599c744318d833447f275a1059f41be35"
+    },
+    {
+      "path": "scripts/run_roboboat_hidden_render.sh",
+      "sha256": "1a56b3d64ae0ba757702a4ca19e57572a5c318c49d9ff20355650a603351853f"
+    },
+    {
+      "path": "packages/crane_ml/Tools/Performance/run_nav2_controller_fixture.sh",
+      "sha256": "e73025f913d34ee4b7ee7d1be1d3229c1d370bd4e7352a9feedb5deef90b0262"
+    },
+    {
+      "path": "packages/crane_ml/Tools/Performance/capture_nav2_runtime_parameters.py",
+      "sha256": "bee2a84afc53ad2647535361969e9e090eb15eb0831f4acce9ac562cb7987ffd"
+    },
+    {
+      "path": "packages/crane_ml/Tools/Performance/nav2_follow_path_fixture.py",
+      "sha256": "b186389c3bc1c79066e79cd839b74da383c7fc9a57a07d08aeb61bb8d0522b32"
+    }
+  ],
+  "component_commit": "0df6838",
+  "baseline_config_sha256": "047e0981aee88fb1e8833aabefe718a35ab2be49925dd95640139ac7b401385c",
+  "player_sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+  "resources": {
+    "boat_workers": 1,
+    "fixed_recordings": 2,
+    "maximum_player_duration_per_recording_s": 290,
+    "ROS_domain": 181,
+    "TCP_port": 10481,
+    "quality_retries": 0
+  },
+  "coverage_goal": "Measure whether stricter internal stopping conditions provide sampled kinematic settling under unchanged independent requirements. Full compound success may remain unknown because contact evidence is unavailable.",
+  "admission": "Unchanged strict fixture validity. Stop at first technical failure; retain every unexpected valid physical outcome. No desired-label resampling.",
+  "physical_n_rule": "Fresh additional internal-stopping variants of previously inspected approach-01/02. No independent approach cluster, confirmation episode, or replication added; separate development reporting only.",
+  "population_selection": "Both previously feasible known and direct approaches fixed before capture; no method-failure selection.",
+  "confirmation": {
+    "authorized": false,
+    "alpha_allocated": 0,
+    "coordinator_decision_required": true
+  }
+}
