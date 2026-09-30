@@ -1,5 +1,14 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Restoration addendum after `392c3ff7` — 2026-09-30
+
+The [first full restoration](RUNTIME_RESTORATION_2026-09-30.md) is retained as failed: `wall` and
+`write` lose their setgid mode bits, while all other inventory content/metadata matches. A minimal
+container probe confirms missing `FSETID`; a prospective helper repair is unexercised on a full
+tree. The failed destination stays unchanged. Exact restoration, remaining xattr/mtime/hardlink
+checks, execution parity and scientific adoption stay open. P11 keeps nineteen open conditions,
+N=0 and pending measurement reopening; no model/annotation call occurred.
+
 ## Runtime archive addendum after `aadbd6bc` — 2026-09-30
 
 The [exact runtime snapshot candidate](RUNTIME_SNAPSHOT_2026-09-30.md) now preserves all inventoried

@@ -4414,3 +4414,25 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - **Governance:** no model/annotation call, method key, semantic endpoint, physical acquisition,
   alpha spending or P11 freeze. Preserve failed support canary/unlaunched C; reopening remains
   pending. P11 keeps nineteen open conditions with confirmation/replication independent N=0.
+
+## 2026-09-30 — retain failed runtime restoration; diagnose setgid capability loss
+
+- **Restoration candidate:** verify the whole bound archive before a fresh destination, then
+  extract through the pinned network-disabled helper with only destination writable. Bind code,
+  privileges/limits and transaction identity. The verifier recomputes whole content/owner/mode
+  identity and separately checks archive timestamps, xattrs and hardlink identities. No method
+  runtime or caller adopts this tree.
+- **Actual failed gate:** the full restoration extracts but fails complete inventory equality.
+  Preserve the failure, raw stderr (including two GNU tar `hdrcharset` warnings), original source
+  and restored tree. A distinct read-only full-tree difference audit finds exactly two mismatches:
+  `bin/wall` and `bin/write` lose registered setgid mode 02755 and become 0755. Their bytes and
+  owners/groups match, as do all other inventory entries and root metadata. Xattr/mtime/hardlink
+  checks remain uncompleted because the verifier stops at the first inventory gate.
+- **Causal probe and future repair:** an actual minimal container probe reproduces lost setgid
+  without `FSETID` and preserved setgid with it. Add that capability only to the prospective trusted
+  restoration-helper candidate; do not patch the failed tree, retry its identity or relabel its
+  terminal. Another full restoration and execution parity remain open. Seven focused tests pass;
+  those do not substitute for the failed whole-runtime gate.
+- **Governance:** no model/annotation call, method-key join, episode effect, physical acquisition,
+  alpha spending or scientific runtime adoption. P11 remains closed with nineteen open conditions
+  and N=0; failed combined measurement/unlaunched C and pending reopening remain unchanged.

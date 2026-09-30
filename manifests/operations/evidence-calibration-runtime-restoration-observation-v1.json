@@ -1,0 +1,177 @@
+{
+  "schema": "crane-runtime-restoration-observation/v1-development",
+  "recorded_date": "2026-09-30",
+  "status": "FULL_RESTORATION_FAILED_SETGID_LOSS_PROSPECTIVE_CAPABILITY_REPAIR_UNEXERCISED",
+  "bindings": [
+    {
+      "path": "analysis/restore_evidence_calibration_runtime_snapshot.py",
+      "raw_sha256": "facea8fa4c3b56a656a0536720b38a958eda222ae0c5b747068e63fade5e9256"
+    },
+    {
+      "path": "analysis/verify_evidence_calibration_runtime_restoration.py",
+      "raw_sha256": "cc8b1967bf26fa2a131adc6972874b4fbb6d49b32f21b3a15c093b68e16c8726"
+    },
+    {
+      "path": "tests/test_evidence_calibration_runtime_restoration.py",
+      "raw_sha256": "04581c74522fc02914db8171423f6586d11d4e7778149dc6538eafd2228e1f4f"
+    },
+    {
+      "path": "docs/RUNTIME_RESTORATION_2026-09-30.md",
+      "raw_sha256": "7f7774495547d0aad7a5c1cbec5e849d0e9468dc3afb2a6c8ad66d6ed2724797"
+    }
+  ],
+  "focused_tests_passed": 7,
+  "combined_targeted_tests_passed": 110,
+  "original_request": {
+    "archive_verification": {
+      "archive_bytes": 15589560320,
+      "archive_raw_sha256": "2169ee2f7b4cb82f159e5a4427769c33ef3d4e79ee64ff03e674584b0815fb5d",
+      "entries_with_extended_attributes": 7,
+      "extended_attributes_sha256": "d6e0c43cd9c7e6369abfecef25e98d3b58878ef3405cec87a9e436db19e5fec0",
+      "extraction_or_runtime_restoration_verified": false,
+      "inventory_sha256": "87244600302de9b8157ca8d05c292f805ceb97584e56c814e9c24cd7ac7da814",
+      "validated_members": 397044
+    },
+    "capabilities": [
+      "DAC_OVERRIDE",
+      "DAC_READ_SEARCH",
+      "CHOWN",
+      "FOWNER",
+      "SETFCAP"
+    ],
+    "command_code_sha256": "b34dfa8412aa613597bd88f1a4f962a9b39918bde431e8dece7addc1225d8051",
+    "controller_raw_sha256": "b70e562ff19e328519957a4feb11908c5f4cf281c09f5744a435bd64795b9ef2",
+    "cpus": 2,
+    "helper_image": "python@sha256:7bf6c3111fe094f8ee1a1cbcdc63c4cfb345b0e3df42d5aa9a90b3b4b022ab6d",
+    "helper_rootfs_read_only": true,
+    "memory_bytes": 2147483648,
+    "method_runtime_changed": false,
+    "model_call_attempted": false,
+    "network": "none",
+    "pids_limit": 32,
+    "schema": "crane-runtime-restoration-request/v1-development",
+    "source_files": {
+      "audit_b2_transport_readiness.py": "373a88b06a94ebd7c9449930491ff4ff06385f6e2f93fb8223110a00e0e0297c",
+      "audit_evidence_calibration_claim_role_v2_reference_adjudication.py": "6537d075617a29e7b76720df0c3710a6bd44235a1380ab99b0682dbfc17850ed",
+      "audit_evidence_calibration_claim_role_v2r2_final_review.py": "8a57fca88c1e0a42fc819c5be29b28fefc33b765e5f0e69269f1ffb20c9ddf12",
+      "audit_evidence_calibration_claim_role_v2r2_freeze.py": "1432e91e4d9c95ba2e2298dfb2ed0942e6862593273f85e864ca50ec7cac96e8",
+      "audit_evidence_calibration_pilot_atomization.py": "f90adcb92fd6ae019a6d00dfaa0259d27e1c914addb8641e92a73361630ccc59",
+      "audit_evidence_calibration_runtime_tree.py": "c34991329508aae06d6815763c7c5873b69b76e37767a29f4d138b0bc04ed88b",
+      "evidence_calibration.py": "2b81bed7302fa5981a526846942d98bdb041c4afab860d3a18d3aca5a8540f7c",
+      "evidence_calibration_io.py": "c70fef1e03274c55746a8ed7395cec221d2ed0bc63c83eb7fd005429a0925422",
+      "run_evidence_calibration_atomization_qualification.py": "d50c0c4773a1c568383316995a1d07942a3a6bae89bc5a587bf00a9196ff0f27",
+      "run_evidence_calibration_claim_role_v2r2_qualification.py": "7bfa14eecf1aaa3b378a0f514d8a7c2dbfbffda432a8202dc49217c163f9295a",
+      "run_evidence_calibration_pilot_atomization.py": "8cf02552895782aee11fad607b26ff1ddfd6e1c8896caf7aed934e5a09628d0e",
+      "validate_evidence_calibration_atomization.py": "92194bd62d860fe9c29328b7299082eeaab79a1a0f0c904d4805989b815794f6",
+      "validate_evidence_calibration_claim_roles_v2.py": "17e0ea439fb75ac545c12e60b97d0c8ff708e42864d4cc5ffba69ed8214b01ae",
+      "verify_evidence_calibration_runtime_restoration.py": "cc8b1967bf26fa2a131adc6972874b4fbb6d49b32f21b3a15c093b68e16c8726"
+    },
+    "timeout_seconds": 1800,
+    "writable_mount": "fresh restoration root only"
+  },
+  "retained_terminal": {
+    "container_removed_or_absent": true,
+    "error": "ValueError: restoration failed; retain partial tree and raw error",
+    "execution_parity_verified": false,
+    "model_call_attempted": false,
+    "request_sha256": "e0b3eb94b9d83e9f20f2ca6abb197f22ed855b0594f4053d7c4551692addc812",
+    "restored_tree_is_immutable": false,
+    "result": null,
+    "schema": "crane-runtime-restoration-terminal/v1-development",
+    "scientific_runtime_adopted": false,
+    "status": "FAILED_RESTORATION_RETAIN_NO_REPLAY"
+  },
+  "difference_count": 2,
+  "root_metadata_matches": true,
+  "differences": [
+    {
+      "path": "bin/wall",
+      "expected": {
+        "bytes": 22688,
+        "gid": 5,
+        "kind": "file",
+        "mode": 1517,
+        "raw_sha256": "4b503fbec3ea18e7a5123c316fb0fa9e0b7dfb098e2fc54e954d3bdbceb44d3d",
+        "uid": 0
+      },
+      "actual": {
+        "bytes": 22688,
+        "gid": 5,
+        "kind": "file",
+        "mode": 493,
+        "raw_sha256": "4b503fbec3ea18e7a5123c316fb0fa9e0b7dfb098e2fc54e954d3bdbceb44d3d",
+        "uid": 0
+      }
+    },
+    {
+      "path": "bin/write",
+      "expected": {
+        "bytes": 22688,
+        "gid": 5,
+        "kind": "file",
+        "mode": 1517,
+        "raw_sha256": "5a6908e4927292b1224a7b88e314dfb54e4564991e01ad2154bd7140a95bc5cb",
+        "uid": 0
+      },
+      "actual": {
+        "bytes": 22688,
+        "gid": 5,
+        "kind": "file",
+        "mode": 493,
+        "raw_sha256": "5a6908e4927292b1224a7b88e314dfb54e4564991e01ad2154bd7140a95bc5cb",
+        "uid": 0
+      }
+    }
+  ],
+  "raw_record_bindings": [
+    {
+      "local_path": "output/infrastructure/runtime-restoration-development-v1/intent.json",
+      "raw_sha256": "646d14e8d4d1f4ef73ecb4a9b370889ec50db5f6eb6dbcc0480d32a39450d5ba"
+    },
+    {
+      "local_path": "output/infrastructure/runtime-restoration-development-v1/terminal.json",
+      "raw_sha256": "94a24076855c5fecc2ffaff836c6d0b427ae1388b8c26fb54663f9032089ff30"
+    },
+    {
+      "local_path": "output/infrastructure/runtime-restoration-development-v1/controller-original.py",
+      "raw_sha256": "b70e562ff19e328519957a4feb11908c5f4cf281c09f5744a435bd64795b9ef2"
+    },
+    {
+      "local_path": "output/infrastructure/runtime-restoration-development-v1/stderr.bin",
+      "raw_sha256": "a611d5c622d44028cb0cf377adecddd94a88c47a104ecfe38cd1b8bb0db1fa89"
+    },
+    {
+      "local_path": "output/infrastructure/runtime-restoration-development-v1/difference-audit.json",
+      "raw_sha256": "fa2b67bff2f729089e46d7276e1d7ccb83b24e9be336f05bb710779b70258ab8"
+    },
+    {
+      "local_path": "output/infrastructure/runtime-restoration-development-v1/difference-raw/inventory.json",
+      "raw_sha256": "29e887350a92002101dbb78db25effc0f50a0bc2a7f06b1efcc72c5a299a07a7"
+    },
+    {
+      "local_path": "output/infrastructure/runtime-restoration-development-v1/difference-raw/terminal.json",
+      "raw_sha256": "9d1c2c9f853936c21025252012114cb893c033d38524bacc0c8608e12b6b8639"
+    }
+  ],
+  "setgid_capability_probe": {
+    "without_fsetid_mode": "0755",
+    "with_fsetid_mode": "02755",
+    "actual_container_probe_passed": true
+  },
+  "prospective_fsetid_helper_repair_implemented": true,
+  "full_repaired_restoration_run": false,
+  "failed_tree_modified": false,
+  "nanosecond_timestamp_xattr_and_hardlink_gate_completed": false,
+  "execution_parity_verified": false,
+  "scientific_runtime_adopted": false,
+  "method_runtime_changed": false,
+  "model_calls_authorized": false,
+  "model_call_attempted": false,
+  "pilot_annotation_authorized": false,
+  "measurement_proposal_adopted": false,
+  "endpoint_scoring_authorized": false,
+  "method_key_opened": false,
+  "p11_authorized": false,
+  "confirmation_independent_n": 0,
+  "replication_independent_n": 0
+}
