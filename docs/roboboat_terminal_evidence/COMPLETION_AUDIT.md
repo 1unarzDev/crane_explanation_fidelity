@@ -50,3 +50,10 @@ Completed contact-v2 support replay: twelve finalized packets, 27 valid calls (2
 
 
 Completed contact-comparison-v2 capsule verified and isolated coordinator intake completed: 623 unique safe files, 9,642,758 bytes, SHA-256 `290846d37f5a9112ca10b062e149a236a9392fce74914035677ddae3d8985855`. Source integration checkpoint `1c889ad`, unchanged crane_ml `0df6838` and astro `3620237`; manifest/ledger are `publication_artifact_manifest_contact-comparison-v2.json` / `publication_intake_ledger_contact-comparison-v2.json`. Mixed evaluator/qualification material must never be mounted wholesale to methods. All pipeline stages are terminal. No shared DVC/ledger/main integration or submission. This completes the inspected contact-repair development replay, not the whole registered study: prospective material-primary/citation qualification, coordinated allocation/resources, untouched confirmation and fresh replication remain absent.
+
+
+## Completed bounded material/citation extension (supersedes running state above)
+
+Session 41268 is terminal. Twenty unique valid returns, no reissued request/retry/timeout; first return reused exactly after the retained v2 adapter failure. Both passes match 41/41 atomic labels and all frozen boolean fields. Complete-source project review covers all 86 fields/citations. Separate disposition `material_qualification_development_disposition_v3.json` records bounded-development pass; original automatic citation-review-pending result remains untouched. See MATERIAL_QUALIFICATION_V3_RESULTS.md. This is agent-assessed with same-family shared-error risk; no population error rate, human validation, physical N or comparative effect is inferred.
+
+Safe resume/reproduction: `PYTHONPATH=analysis python analysis/verify_roboboat_material_qualification_v3.py`. Do not restart terminal qualification runners. Next: coordinator allocation/resources, prospective complete endpoint/workflow/analysis freeze and untouched physical/replication registries. Whole goal remains active/incomplete; no confirmation, replication, shared pointer change, merge or submission is authorized by this development result.

@@ -75,3 +75,10 @@ PYTHONPATH=analysis python analysis/run_roboboat_material_qualification_v3.py > 
 ```
 
 Do not launch it again: output-root creation is one-shot. Poll the live handle/log and, after termination, inspect `qualification-result.json` or `retained-failure.json`. A passing automated gate leaves complete-source semantic citation review pending; any failure is retained without tuning/retry. Do not rerun original v2 or alter bound dependencies. Full goal remains active/incomplete: coordinator allocation/resources, untouched confirmation/replication freezes and execution remain missing. Seven valid fresh recordings, three approach clusters, two original complete pairs; confirmation/replication N=0, marine alpha=0.
+
+
+## Completed bounded material/citation extension (supersedes running state above)
+
+Session 41268 is terminal. Twenty unique valid returns, no reissued request/retry/timeout; first return reused exactly after the retained v2 adapter failure. Both passes match 41/41 atomic labels and all frozen boolean fields. Complete-source project review covers all 86 fields/citations. Separate disposition `material_qualification_development_disposition_v3.json` records bounded-development pass; original automatic citation-review-pending result remains untouched. See MATERIAL_QUALIFICATION_V3_RESULTS.md. This is agent-assessed with same-family shared-error risk; no population error rate, human validation, physical N or comparative effect is inferred.
+
+Safe resume/reproduction: `PYTHONPATH=analysis python analysis/verify_roboboat_material_qualification_v3.py`. Do not restart terminal qualification runners. Next: coordinator allocation/resources, prospective complete endpoint/workflow/analysis freeze and untouched physical/replication registries. Whole goal remains active/incomplete; no confirmation, replication, shared pointer change, merge or submission is authorized by this development result.

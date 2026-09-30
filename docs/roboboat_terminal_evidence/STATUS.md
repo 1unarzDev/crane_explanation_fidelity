@@ -1,14 +1,14 @@
 # Status — 2026-09-30
 
-## Current state — prospective material/citation qualification running
+## Current state — bounded material/citation extension completed
 
 The full goal remains active and incomplete. Latest completed result: [CONTACT_V2_RESULTS.md](CONTACT_V2_RESULTS.md). Seven valid fresh physical recordings remain in three approach clusters; original complete-pair N=2. Contact-v2 replay adds zero recordings/clusters; confirmation/replication N=0 and marine alpha=0.
 
 Twelve new answers, eleven complete reviewed inventories (226 atoms), and twelve finalized support packets reproduce. Both methods communicate all common units (24/24) and both answerable partial-compliance intervals (2/2). Strict development success: B2 5/6, B4 6/6 in both passes/final. The single failure is a 20 ms growth-reference scope mismatch (0.000145 m), without changed supported task outcome or compliance. No material useful-outcome superiority, confidence interval or p-value is established. Same-family agent assessments remain uncertain; no human validation.
 
-Contact-v2 queues, including sessions 85824, 15140 and publication 36394, are terminal. The separate material/citation qualification is live in session 41268; pass A is complete and pass B is running. Scoped regressions: 183 pass; the historical external-validity source-freeze exclusion remains documented. Capsule: 623 files, 9,642,758 bytes, SHA `290846d37f5a9112ca10b062e149a236a9392fce74914035677ddae3d8985855`; isolated intake completed. Source/result checkpoint `1c889ad`, component `0df6838`; no main/shared-pointer/ledger changes.
+Contact-v2 queues, including sessions 85824, 15140 and publication 36394, are terminal. The separate material/citation qualification session 41268 is terminal: both passes match 41/41 atomic labels and all boolean fields; complete-source project review covers 86 fields. Separate bounded-development disposition passes, with whole confirmation readiness/activation still false. Scoped regressions: 183 pass; the historical external-validity source-freeze exclusion remains documented. Capsule: 623 files, 9,642,758 bytes, SHA `290846d37f5a9112ca10b062e149a236a9392fce74914035677ddae3d8985855`; isolated intake completed. Source/result checkpoint `1c889ad`, component `0df6838`; no main/shared-pointer/ledger changes.
 
-Largest remaining gates: qualified prospective material-primary and citation handling; explicit coordinator allocation/disposition and resources; genuinely untouched valid configuration/replication schedules. Next authorized development is a fresh audited qualification/mapping design that preserves negation/whole-answer scope and accepts valid citation alternatives, rather than regrading failed suites or exploiting the inspected tiny baseline discrepancy. Reconcile the actual alpha authority before activation; no allocation is inferred from the local ledger.
+Largest remaining gates: complete prospective endpoint/workflow/analysis freeze; explicit coordinator allocation/disposition and resources; genuinely untouched valid configuration/replication schedules. The bounded construction extension is agent-assessed, not a judge error-rate estimate. Next: integrate its exact bindings into the proposed prospective workflow while preserving all prior banks; coordinate allocation before activation. Reconcile the actual alpha authority before activation; no allocation is inferred from the local ledger.
 
 Safe read-only reproduction:
 
@@ -23,7 +23,7 @@ PYCODE
 sha256sum artifacts/roboboat-contact-policy-support-v2/publication/development-capsule-contact-comparison-v2.tar.gz
 ```
 
-The following chronological records retain earlier queue states and superseded development snapshots. They are historical; only the current-state qualification handle is live.
+The following chronological records retain earlier queue states and superseded development snapshots. They are historical; all current queues are terminal.
 
 
 Development only. Core pilot: five valid fresh recordings, three approach clusters and two complete internal-XY tolerance pairs. Fixed stopping-threshold extension: two additional valid fresh variants in existing approach clusters; sampled kinematic/hull compliance observed, full docking unknown because contact evidence is unavailable. Total valid fresh recordings=7; independent approach clusters remain 3, original paired-comparison N=2. Original B4/B2 comparison ties. Atomic reassessment finalized 35/36 packets; one retained 300-second judge timeout belongs to the unpaired direct-route variant. Conditional missing-judgment bounds on the original paired mean remain [0.0,0.0], not confidence bounds. All 12 stopping-extension responses are retained; separate atomic extraction/review is running. Confirmation N=0; replication N=0; alpha allocated/consumed=0. No land bindings, shared ledger, main checkout, baseline physics/controller or environment changed.
@@ -183,3 +183,10 @@ PYTHONPATH=analysis python analysis/run_roboboat_material_qualification_v3.py > 
 ```
 
 Do not launch it again: output-root creation is one-shot. Poll the live handle/log and, after termination, inspect `qualification-result.json` or `retained-failure.json`. A passing automated gate leaves complete-source semantic citation review pending; any failure is retained without tuning/retry. Do not rerun original v2 or alter bound dependencies. Full goal remains active/incomplete: coordinator allocation/resources, untouched confirmation/replication freezes and execution remain missing. Seven valid fresh recordings, three approach clusters, two original complete pairs; confirmation/replication N=0, marine alpha=0.
+
+
+## Completed bounded material/citation extension (supersedes running state above)
+
+Session 41268 is terminal. Twenty unique valid returns, no reissued request/retry/timeout; first return reused exactly after the retained v2 adapter failure. Both passes match 41/41 atomic labels and all frozen boolean fields. Complete-source project review covers all 86 fields/citations. Separate disposition `material_qualification_development_disposition_v3.json` records bounded-development pass; original automatic citation-review-pending result remains untouched. See MATERIAL_QUALIFICATION_V3_RESULTS.md. This is agent-assessed with same-family shared-error risk; no population error rate, human validation, physical N or comparative effect is inferred.
+
+Safe resume/reproduction: `PYTHONPATH=analysis python analysis/verify_roboboat_material_qualification_v3.py`. Do not restart terminal qualification runners. Next: coordinator allocation/resources, prospective complete endpoint/workflow/analysis freeze and untouched physical/replication registries. Whole goal remains active/incomplete; no confirmation, replication, shared pointer change, merge or submission is authorized by this development result.
