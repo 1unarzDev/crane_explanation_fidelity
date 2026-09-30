@@ -26,3 +26,15 @@ data/hexar_external/.venv/bin/python analysis/hexar_external/report_v3.py --coho
 Report the full-cohort mean paired contrast or its fixed-denominator range when labels are missing, complete-case mean and conditional t95 interval, six-family sensitivity, independent-pass sensitivity/disagreement and all technical exclusions/missingness. The fixed finite public sample and known-family split do not justify universal navigation, unseen-family transfer, human validity or historical phi4 equivalence. Preserve ties and baseline supplemental-detail/template tradeoffs. No superiority p-value or confirmatory improvement claim is admitted without a governed allocation; this prepared release allocates/consumes zero alpha.
 
 A concise final external section, one compact table and evidence-level figure, licenses/attribution, immutable-input/call archive hashes and exact resume commands are still required after actual execution. Prepared code and passing boundary tests are not evidence that the held-out study has finished.
+
+## Final provenance/completeness audit
+
+`validate_v3.py` checks the pinned core/qualification/freeze, all declared recording/family/query/mask combinations, packet/reference/answer hashes, intact/irrelevant input equality, explicit missing indicator channels, and one retained assessment disposition per valid answer. The final mode independently checks fixed-denominator missing-label bounds and the twelve-recording paired effect bounds from retained scored jobs; it rejects unfinished assessment, missing outputs or incomplete family sensitivity falsely represented as complete. It proves artifact accounting, not semantic validity or a superiority result.
+
+```bash
+data/hexar_external/.venv/bin/python analysis/hexar_external/validate_v3.py
+# Only after the complete reserved report and assessment exist:
+data/hexar_external/.venv/bin/python analysis/hexar_external/validate_v3.py --require-final
+```
+
+The resumable audit passes on the current compatibility slice. Final mode currently rejects it because support assessment is active; this expected rejection must remain until the declared reserved study is actually finished.
