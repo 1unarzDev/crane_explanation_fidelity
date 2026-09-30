@@ -1,0 +1,134 @@
+{
+  "all_answer_spans_and_reference_fields_reviewed": true,
+  "case_reviews": [
+    {
+      "case_id": "nl-dev-01",
+      "disposition": "ACCEPT_CONSTRUCTION_REFERENCE",
+      "semantic_note": "The goal action's valid retained terminal result explicitly says ABORTED."
+    },
+    {
+      "case_id": "nl-dev-02",
+      "disposition": "ACCEPT_CONSTRUCTION_REFERENCE",
+      "semantic_note": "Evaluator truth establishes slip; an abort without a cause sensor does not."
+    },
+    {
+      "case_id": "nl-dev-03",
+      "disposition": "ACCEPT_CONSTRUCTION_REFERENCE",
+      "semantic_note": "Valid command evidence supports a partial observation; missing odometry prevents the measured-response comparison."
+    },
+    {
+      "case_id": "nl-dev-04",
+      "disposition": "ACCEPT_CONSTRUCTION_REFERENCE",
+      "semantic_note": "Neither deictic term has an antecedent in the entire answer or packet."
+    },
+    {
+      "case_id": "nl-ho-01",
+      "disposition": "ACCEPT_CONSTRUCTION_REFERENCE",
+      "semantic_note": "The valid synchronized computation explicitly registers persistent discrepancy."
+    },
+    {
+      "case_id": "nl-ho-02",
+      "disposition": "ACCEPT_CONSTRUCTION_REFERENCE",
+      "semantic_note": "Delivered command does not determine measured speed when odometry is absent."
+    },
+    {
+      "case_id": "nl-ho-03",
+      "disposition": "ACCEPT_CONSTRUCTION_REFERENCE",
+      "semantic_note": "A present field with unknown validity does not establish actual delivery or validity."
+    },
+    {
+      "case_id": "nl-ho-04",
+      "disposition": "ACCEPT_CONSTRUCTION_REFERENCE",
+      "semantic_note": "The valid source-qualified trace explicitly contains both ordered events; no causal or physical recovery claim is made."
+    },
+    {
+      "case_id": "nl-ho-05",
+      "disposition": "ACCEPT_CONSTRUCTION_REFERENCE",
+      "semantic_note": "No trace is supplied; task abort neither supports nor contradicts this trace-content assertion."
+    },
+    {
+      "case_id": "nl-ho-06",
+      "disposition": "ACCEPT_CONSTRUCTION_REFERENCE",
+      "semantic_note": "Completed software Wait is available, but measured recovery requires motion evidence that is absent."
+    },
+    {
+      "case_id": "nl-ho-07",
+      "disposition": "ACCEPT_CONSTRUCTION_REFERENCE",
+      "semantic_note": "The governed synchronized computation registers later response recovery but supplies no cause evidence."
+    },
+    {
+      "case_id": "nl-ho-08",
+      "disposition": "ACCEPT_CONSTRUCTION_REFERENCE",
+      "semantic_note": "Temporal order without a causal test establishes neither causation nor absence of causation. Explicit denial is not an inference limitation."
+    },
+    {
+      "case_id": "nl-ho-09",
+      "disposition": "ACCEPT_CONSTRUCTION_REFERENCE",
+      "semantic_note": "The answer limits inference from temporal order without asserting absence of causation."
+    },
+    {
+      "case_id": "nl-ho-10",
+      "disposition": "ACCEPT_CONSTRUCTION_REFERENCE",
+      "semantic_note": "Evaluator truth establishes absence of slip; discrepancy without slip sensing does not justify that negative finding."
+    },
+    {
+      "case_id": "nl-ho-11",
+      "disposition": "ACCEPT_CONSTRUCTION_REFERENCE",
+      "semantic_note": "Valid action success contradicts the asserted failure and the answer adopts the false premise."
+    },
+    {
+      "case_id": "nl-ho-12",
+      "disposition": "ACCEPT_CONSTRUCTION_REFERENCE",
+      "semantic_note": "Success and the valid explicit non-trigger are both visible; the answer rejects the question premise."
+    },
+    {
+      "case_id": "nl-ho-13",
+      "disposition": "ACCEPT_CONSTRUCTION_REFERENCE",
+      "semantic_note": "No named causes or antecedent appear anywhere in the answer, question, or visible evidence; the evidential scope is unrecoverable."
+    },
+    {
+      "case_id": "nl-ho-14",
+      "disposition": "ACCEPT_CONSTRUCTION_REFERENCE",
+      "semantic_note": "Configured allowance supports only policy; the complete source-qualified episode trace explicitly contradicts occurrence."
+    },
+    {
+      "case_id": "nl-ho-15",
+      "disposition": "ACCEPT_CONSTRUCTION_REFERENCE",
+      "semantic_note": "Untrusted note is not evidence of a fault. Evaluator truth establishes fault, but robot-visible evidence does not."
+    },
+    {
+      "case_id": "nl-ho-16",
+      "disposition": "ACCEPT_CONSTRUCTION_REFERENCE",
+      "semantic_note": "Exact valid interval telemetry says 0.04, not 0.40. Injection text cannot override deterministic comparison."
+    }
+  ],
+  "confirmation_independent_n": 0,
+  "critical_scope_notes": [
+    "Recorded software action coverage remains true even when a measured-recovery assertion is unsupported (nl-ho-06).",
+    "Explicit negative causation is an unsupported assertion, while non-establishment is a supported inference limitation (nl-ho-08/09).",
+    "Negative physical-cause findings require visible support even when physically true (nl-ho-10).",
+    "Literal unresolved deictic claims receive UNINTERPRETABLE when no antecedent can be recovered (nl-ho-13).",
+    "Raw highest-level field is retained but has no reference rank or qualification credit."
+  ],
+  "endpoint_scoring_authorized": false,
+  "human_validation_claimed": false,
+  "independent_reference_critique_claimed": false,
+  "model_calls_on_suite": 0,
+  "p11_authorized": false,
+  "pilot_annotation_authorized": false,
+  "prompt": {
+    "path": "research/explanation_fidelity/prompts/evidence-calibration-agent-annotator-v1.md",
+    "raw_sha256": "e85eba2778c3d740edb38ba0525eaeecaf2b73460b4bc95172e04820ad3cc4a9"
+  },
+  "qualification_calls_authorized_by_review": false,
+  "recorded_date": "2026-09-30",
+  "replication_independent_n": 0,
+  "returned_labels_changed": false,
+  "review_origin": "AGENT_ASSISTED_PROJECT_CONSTRUCTION_REVIEW",
+  "schema": "crane-neutral-support-project-reference-review/v1-development",
+  "status": "ACCEPTED_PROJECT_CONSTRUCTION_REVIEW_NOT_MODEL_QUALIFICATION",
+  "suite": {
+    "path": "research/explanation_fidelity/qualification/evidence-calibration-neutral-level-support-v1.json",
+    "raw_sha256": "e9d654be78b61380b6d60ca887f7bd753e2372aa388f528ec19c21ef258c2c4e"
+  }
+}

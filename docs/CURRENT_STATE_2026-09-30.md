@@ -228,3 +228,17 @@ change its bound task or DVC-add the live output root. Both-pass role review, in
 disposition, neutral-input qualification, claim attachment and endpoint treatment, support and
 adjudication dry runs, and fresh aligned five-method pilot evidence remain next dependencies.
 P11 still has 19 open conditions; confirmation and replication independent N remain zero.
+
+## Later 2026-09-30 neutral-input qualification declaration
+
+The 20-case neutral-input construction now has a bound project reference review accepting its
+references unchanged. This is agent-assisted project review, not independent critique or model
+accuracy evidence. A separate prospective qualification freeze fixes the unchanged Astra-high
+support prompt/schema, two isolated 20-case passes, per-field and critical-case gates, durable
+intents, no tools, and no retries/replacements. Seven focused offline tests pass. Raw rank remains
+unqualified and excluded from qualification credit and endpoint scoring. No model call has run
+under this declaration yet. The new non-study canary must pass and be hash-bound/DVC-pushed before
+the 40 qualification requests; pilot support use remains prohibited until a passing disposition.
+The original v4 qualification and all role/pilot records remain unchanged. The role continuation
+remains live as session `56406`; preserve its task bytes and poll the existing handle. P11,
+alpha, physical allocation, and confirmation/replication independent N are unchanged.

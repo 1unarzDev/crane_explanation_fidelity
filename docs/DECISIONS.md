@@ -3488,3 +3488,31 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   the uncalled suite and offline scoring helpers. No model call is authorized by these records;
   no support label, endpoint score, alpha expenditure, physical allocation, or P11 freeze
   follows. The separate pilot role continuation remains live with unchanged bytes.
+
+## 2026-09-30 — review and declare the separate neutral-input qualification
+
+- **Reference review:** all 20 candidate synthetic answers, evidence constructions, physical-fact
+  views, spans, and reference fields were reviewed against the unchanged support prompt. Their
+  construction references are accepted unchanged. This is agent-assisted project construction
+  review, not independent reference critique, human validation, or observed model accuracy.
+- **Declaration:** a separate input-extension freeze authorizes one non-study schema canary and
+  40 qualification requests (20 cases in each of two isolated passes), with Astra-high, the
+  unchanged v4 prompt and v2 return schema, CLI `0.159.2`, empty read-only workspaces, no tools,
+  durable intents, and no retries or replacements. The freeze does not authorize pilot annotation.
+- **Scoring:** preserve the existing support-label thresholds and report coverage, limitation,
+  and false-premise fields separately. Require perfect reference-field treatment of the seven
+  declared critical cases covering retained action coverage, negative versus unestablished
+  causation, physical-truth separation, nominal/non-trigger handling, and unresolved deixis on
+  each pass. Do not use the raw highest-level field for qualification credit or endpoint rank.
+- **Failure boundary:** stop at the first transport/schema/tool failure; quarantine an intent
+  without terminal record. Finish both isolated passes before accuracy scoring. Retain an
+  unfavorable result without quality-driven redesign. A passing result still needs a separately
+  bound disposition before use.
+- **Execution gate:** a new separately hash-bound, DVC-pushed canary is required before the 40
+  qualification requests. No model call has run at this declaration checkpoint. Seven focused
+  offline tests pass, including unknown-intent and terminal-failure no-retry behavior, raw-return
+  consistency, slot isolation, and detection of a critical error despite passing aggregate
+  accuracy. P11 remains closed; confirmation/replication N and alpha are unchanged.
+- **Records:** `evidence-calibration-neutral-level-project-reference-review-v1.json` and
+  `evidence-calibration-neutral-level-support-v1-freeze.json`, with the new bound runner and
+  unchanged candidate suite. The existing v4 disposition remains active within its original scope.

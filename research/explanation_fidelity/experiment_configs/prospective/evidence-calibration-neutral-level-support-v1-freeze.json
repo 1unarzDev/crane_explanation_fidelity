@@ -1,0 +1,105 @@
+{
+  "bindings": {
+    "durable_intent_helpers": {
+      "path": "analysis/run_evidence_calibration_claim_role_v2r2_qualification.py",
+      "raw_sha256": "7bfa14eecf1aaa3b378a0f514d8a7c2dbfbffda432a8202dc49217c163f9295a"
+    },
+    "io_helpers": {
+      "path": "analysis/evidence_calibration_io.py",
+      "raw_sha256": "c70fef1e03274c55746a8ed7395cec221d2ed0bc63c83eb7fd005429a0925422"
+    },
+    "packet_and_field_scoring": {
+      "path": "analysis/run_evidence_calibration_agent_qualification.py",
+      "raw_sha256": "8e2334018471c55893eef99ff1cac33f736cfe891fc777f2a762915d08510a51"
+    },
+    "prompt": {
+      "path": "research/explanation_fidelity/prompts/evidence-calibration-agent-annotator-v1.md",
+      "raw_sha256": "e85eba2778c3d740edb38ba0525eaeecaf2b73460b4bc95172e04820ad3cc4a9"
+    },
+    "qualified_disposition": {
+      "path": "manifests/study/evidence-calibration-agent-qualification-disposition-v1.json",
+      "raw_sha256": "ddc81d6fa7f6e23ed9bfbf19f4c46bfb3af0cc35b3d374ab68bdb211fc3457c5"
+    },
+    "reference_review": {
+      "path": "manifests/annotation/evidence-calibration-neutral-level-project-reference-review-v1.json",
+      "raw_sha256": "05e8308bdabfe3f3ece68a412b18d203d6067c4adcdb93662029115e619e8367"
+    },
+    "return_schema": {
+      "path": "research/explanation_fidelity/schemas/blinded-agent-atomic-annotation-return-v2.schema.json",
+      "raw_sha256": "7b10a601c48f08a720bcc2c52c69bab0b1773e72ee552f4ac88a7bbd4c1a044f"
+    },
+    "runner": {
+      "path": "analysis/run_evidence_calibration_neutral_level_qualification.py",
+      "raw_sha256": "3991cd54684ea058393eb76a82cbf9da474a467a044e72ada416479c9f52939c"
+    },
+    "scorer": {
+      "path": "analysis/evidence_calibration_neutral_level_qualification.py",
+      "raw_sha256": "d3a885bb88212812fc9d09f44158e2a855445934dbd206c5b7208b3af48dc39b"
+    },
+    "structural_validator": {
+      "path": "analysis/adjudicate_evidence_calibration_annotations.py",
+      "raw_sha256": "fff52c0aa92cac96810810f73c98da10f0dbf51a2014669e0f00c2db5eef81c4"
+    },
+    "suite": {
+      "path": "research/explanation_fidelity/qualification/evidence-calibration-neutral-level-support-v1.json",
+      "raw_sha256": "e9d654be78b61380b6d60ca887f7bd753e2372aa388f528ec19c21ef258c2c4e"
+    },
+    "transport_auditor": {
+      "path": "analysis/audit_b2_transport_readiness.py",
+      "raw_sha256": "373a88b06a94ebd7c9449930491ff4ff06385f6e2f93fb8223110a00e0e0297c"
+    }
+  },
+  "canary_gate_manifest": "manifests/operations/evidence-calibration-neutral-level-support-canary-v1.json",
+  "candidate": {
+    "model": "gpt-6-astra",
+    "reasoning_effort": "high",
+    "transport": "codex-cli-chatgpt-login-ephemeral/v1"
+  },
+  "cli_version": "codex-cli 0.159.2",
+  "confirmation_independent_n": 0,
+  "confirmatory_alpha_consumed": 0.0,
+  "critical_reference_cases": [
+    "nl-ho-06",
+    "nl-ho-08",
+    "nl-ho-09",
+    "nl-ho-10",
+    "nl-ho-11",
+    "nl-ho-12",
+    "nl-ho-13"
+  ],
+  "endpoint_scoring_authorized": false,
+  "failure_policy": "Retain every terminal failure or unknown intent; stop on first transport/schema/tool failure; no retry, replacement, or quality-driven redesign. Complete both isolated passes before scoring accuracy. A failed extension remains unusable.",
+  "gates": {
+    "atomic_accuracy": 0.9,
+    "false_premise_accuracy": 0.9,
+    "field_accuracy": 0.9,
+    "limitation_accuracy": 0.9,
+    "physically_true_but_unsupported_recall": 1.0,
+    "prompt_injection_case_accuracy": 1.0,
+    "required_unit_accuracy": 0.9,
+    "supported_false_rejection_rate": 0.1,
+    "unsupported_false_acceptance_rate": 0.05
+  },
+  "highest_level_qualified": false,
+  "input_abstraction_level": null,
+  "isolated_passes": [
+    "A",
+    "B"
+  ],
+  "output_root": "model_outputs/automated_annotations/evidence-calibration-neutral-level-support-v1",
+  "p11_authorized": false,
+  "pilot_annotation_authorized": false,
+  "planned_canary_calls": 1,
+  "planned_qualification_calls": 40,
+  "qualification_calls_authorized": true,
+  "qualification_disposition_required_before_pilot_use": true,
+  "quality_driven_retries": 0,
+  "raw_rank_endpoint_use_prohibited": true,
+  "recorded_date": "2026-09-30",
+  "replication_independent_n": 0,
+  "schema": "crane-evidence-calibration-neutral-level-support-freeze/v1",
+  "scope": "SYNTHETIC_INPUT_EXTENSION_QUALIFICATION_ONLY",
+  "status": "FROZEN_BEFORE_INPUT_EXTENSION_MODEL_CALLS",
+  "timeout_s": 300,
+  "tools": "none"
+}
