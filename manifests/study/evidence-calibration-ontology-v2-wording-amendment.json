@@ -1,0 +1,28 @@
+{
+  "schema": "crane-evidence-calibration-ontology-wording-amendment/v1",
+  "recorded_date": "2026-09-30",
+  "status": "PROSPECTIVE_DEVELOPMENT_CANDIDATE_NOT_P11_FROZEN",
+  "old_ontology_path": "configs/evidence_calibration_claim_contracts_v1.json",
+  "old_ontology_raw_sha256": "49edd3b035d23bf356aa42e9037b265a769efd745b8d44a3dd130c3349fbacc8",
+  "new_ontology_path": "configs/evidence_calibration_claim_contracts_v2_development.json",
+  "new_ontology_raw_sha256": "3ff03b682e8a2c7363ab8d94d76bdc90f6a3c06ef09307ae1feb6a9ab7e02368",
+  "old_pilot_input_validation_raw_sha256": "25a1790417278cb7187c3b2c965e18523253f592b06e68538676c4c9c0359ea4",
+  "changed_non_entailment_ids": [
+    "ne-discrepancy-does-not-identify-physical-cause",
+    "ne-recovery-does-not-establish-outcome",
+    "ne-response-recovery-does-not-establish-task-outcome"
+  ],
+  "reason": "The retained B4 development pilot emitted an unbound deictic physical-cause limitation in 12 of 60 outputs, and six measured-recovery outputs said recovery does not cause the outcome, which is stronger than the supported non-entailment. The replacement text names unsupported causes and says causal influence is not established.",
+  "scope": "Only catalog identity/version and three non-entailment rationale strings change. Evidence requirements, claim contracts, node ranks, numerical thresholds, evaluator references, and retained pilot outputs are unchanged. The corrected ontology is a candidate for a future fresh development pilot and is not active in the old pilot.",
+  "old_outputs_rewritten": false,
+  "old_outputs_rescored": false,
+  "fresh_pilot_run": false,
+  "endpoint_scoring_authorized": false,
+  "p11_authorized": false,
+  "confirmation_independent_n": 0,
+  "replication_independent_n": 0,
+  "old_output_phrase_counts": {
+    "deictic_physical_cause": 12,
+    "overstrong_negative_recovery_causation": 6
+  }
+}

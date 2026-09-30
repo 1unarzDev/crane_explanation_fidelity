@@ -3220,3 +3220,19 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   development review, not human validation or atomic-support annotation. The one ambiguous
   extraction request remains quarantined. P11, method joining, effect scoring, independent N,
   and alpha remain unchanged.
+
+## 2026-09-30 — version the B4 non-entailment wording repair before a fresh pilot
+
+- **Development defect:** the retained v1 B4 pilot used “these specific physical causes” without
+  an antecedent in 12/60 final responses. Six measured-recovery responses said recovery “does not
+  ... cause” the task outcome, an unsupported negative causal assertion rather than a statement
+  that causation is unestablished. These outputs remain immutable development evidence.
+- **Prospective correction:** create a separate v2 development ontology that changes only catalog
+  identity/version and three non-entailment rationale strings. The new cause limitation names
+  motor failure, collision, wheel slip, and obstruction as unestablished; the recovery limitations
+  say causal influence is not shown. A read-only diff audit validates both ontologies and proves
+  that evidence requirements, claim contracts, numeric slots, and diagnostic nodes are unchanged.
+- **Boundary:** the v2 ontology is an unexercised candidate for a fresh development pilot. It
+  neither rewrites nor rescores the v1 outputs. P11 readiness now lists fresh-pilot exercise of
+  the corrected wording as an open gate. No support annotation, B2/B4 effect, P11 authorization,
+  independent N, or alpha use follows.

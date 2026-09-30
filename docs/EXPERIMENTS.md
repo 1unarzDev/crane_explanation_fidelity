@@ -1,5 +1,17 @@
 # Experiment Log
 
+## 2026-09-30 — B4 development limitation wording audit
+
+- **OBSERVED:** 12 of 60 retained v1 B4 final answers contain “these specific physical causes”
+  without naming an antecedent. Six measured-recovery answers state that recovery does not cause
+  the task outcome, although the evidence only fails to establish that causal relation.
+- **DISPOSITION:** retain all v1 outputs as development evidence without rewriting or rescoring.
+  A separate v2 ontology changes three non-entailment rationale strings while preserving all
+  evidence requirements, claim contracts, numeric slots, and diagnostic nodes. Its exact diff
+  audit passes; it has not been exercised in a fresh B2/B4 pilot.
+- **GATE:** fresh-pilot exercise and prospective P11 binding remain required. This observation
+  is not a B2/B4 effect, confirmatory result, or new independent episode.
+
 ## 2026-09-29 — v6 reserve freshness reconciliation
 
 - **AUDIT:** hash-pinned executable reconciliation joins the v6 catalog, original 100+100 schedule,

@@ -5,6 +5,9 @@
   "status": "NOT_READY_CONFIRMATION_PROHIBITED",
   "development_components": [
     {"path": "configs/evidence_calibration_claim_contracts_v1.json", "sha256": "49edd3b035d23bf356aa42e9037b265a769efd745b8d44a3dd130c3349fbacc8"},
+    {"path": "configs/evidence_calibration_claim_contracts_v2_development.json", "sha256": "3ff03b682e8a2c7363ab8d94d76bdc90f6a3c06ef09307ae1feb6a9ab7e02368"},
+    {"path": "analysis/audit_evidence_calibration_ontology_v2_wording.py", "sha256": "1f8ab59d43cc5806ebbaf94e4344fa21dd436410fb8f1c4c6d0b6002888b2c06"},
+    {"path": "manifests/study/evidence-calibration-ontology-v2-wording-amendment.json", "sha256": "d2d1c75591b10e671d795106e6147bb6d9388d3d97d1f511ccc3ac3b885ca2b7"},
     {"path": "analysis/build_nested_evidence_conditions.py", "sha256": "82e4a2f54be3b983af13473dadd95f059684105b55e3456100ac2c271c870548"},
     {"path": "analysis/validate_evidence_calibration_ladders.py", "sha256": "70e82bf7cd1a1aabc0b29be089fbd20fa0fe3d342269c556b820923d3d7cbb33"},
     {"path": "configs/evidence_calibration_ladders_v1_development.json", "sha256": "5f4363d1d9783b2f5bf6347d1a9c009c6850740cf411e8f749bf789b5f1a8913"},
@@ -150,6 +153,7 @@
     {"requirement_id": "episode_sample_size", "status": "UNSET", "evidence": "Alpha-0.01 development sensitivity shows 100 acquired episodes provide about 0.50 power for the moderate 16-point paired reduction and about 0.92 only for the large 26-point reduction; about 200 are required for >=0.80 power in the moderate scenario, while the small 8-point scenario remains underpowered at 320. Actual planning still requires B2/B4 development discordance."},
     {"requirement_id": "population_and_family_weights", "status": "DEVELOPMENT_CANDIDATE_NOT_FROZEN", "evidence": "Candidate fixed mixture is 35% persistent discrepancy, 35% measured recovery, 15% missing-odometry controls, and 15% nominal false-premise controls; the primary conditional comparison is balanced 50/50 across the first two families, with geometry separate and deferred."},
     {"requirement_id": "mechanism_specific_ladders", "status": "DEVELOPMENT_VALIDATED_NOT_FROZEN", "evidence": "Four ontology-checked removal-only development ladders now cover full command-motion/recovery, genuinely missing odometry, nominal false-premise, and secondary geometry/planning. They expose no specific-cause or intervention evidence in the primary ladder and remain subject to pilot validation and P11 freeze."},
+    {"requirement_id": "prospective_non_entailment_wording", "status": "V2_CANDIDATE_NOT_EXERCISED_IN_FRESH_PILOT", "evidence": "The retained v1 B4 development pilot emitted an unbound deictic physical-cause limitation in 12/60 outputs and an unsupported negative-causation wording in six measured-recovery outputs. A versioned v2 ontology changes only three rationale strings and passes a diff audit. A fresh development pilot must bind and exercise the corrected wording before P11; old outputs remain unchanged and unrescored."},
     {"requirement_id": "model_prompt_tool_budgets", "status": "UNSET", "evidence": null},
     {"requirement_id": "stopping_and_replication_rules", "status": "DEVELOPMENT_CANDIDATE_NOT_FROZEN", "evidence": "Candidate uses one fixed terminal semantic look, technical-only monitoring beforehand, no quality-driven replacement, and independently reported fresh replication with unchanged selected method/endpoint and protected alpha=0.02. Exact N and any futility rule remain unset pending valid development discordance."}
   ],

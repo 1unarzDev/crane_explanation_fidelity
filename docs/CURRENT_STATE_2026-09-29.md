@@ -329,3 +329,11 @@ command fact missing from another. The batch has 79 original candidates and 78 r
 together with v2, 61 of 113 structurally valid response inventories are reviewed. Fifty-two
 remain, including the three bare `Yes.`/`No.` spans. Source output, evaluator keys, and the
 quarantined request are untouched. No support label or B2/B4 effect has been scored.
+
+The retained v1 B4 outputs expose two wording defects in the claim-contract rationales: twelve
+outputs use “these specific physical causes” without naming an antecedent, and six measured-
+recovery outputs assert that recovery does not cause the task outcome when the evidence only
+fails to establish causation. A separate v2 development ontology corrects three non-entailment
+rationales without changing any evidence requirement, claim contract, number, or diagnostic
+node. The diff audit passes. The v1 outputs remain unmodified and unrescored; the corrected
+ontology has not been exercised in a fresh pilot. P11 now has this explicit open wording gate.
