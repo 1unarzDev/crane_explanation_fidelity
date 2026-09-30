@@ -392,3 +392,33 @@ paired episode discordances, power/allocation and exact P11 choices. The primary
 three corrected B0/B1/B3-versus-B4 comparisons remain prospective; no paired effect exists.
 P11 still has nineteen open conditions, confirmation/replication N remain zero, and the
 0.02-consumed / at-most-0.01-discovery / 0.02-replication alpha and layout quarantine are unchanged.
+
+## Latest 2026-09-30 blind support-packet and reproducibility checkpoint
+
+The complete reviewed bank now has a separately bound neutral-input support bundle: 114 answers,
+1,084 atoms and 228 blind A/B forms. The read-only auditor rebuilds exact packet/key bytes. Forms
+carry null atomic levels and uniform qualified non-rank options; root episode/configuration IDs
+are removed from annotation packaging while all evidence fields, legitimate record IDs, exact
+sources, full answers and sanitized physical facts are preserved. Coordination code uses the
+inventory-validated key mechanically and prints no key values; annotators receive no method join.
+The separate analysis key remains closed until support and adjudication are finalized. No old
+answer, mask, question, raw role or failed request was changed.
+
+The existing setup script exposed lock drift: the living simulator lock lagged behind the existing
+September 27 root Git pin. It now matches `bcab354`; all nested package pins are unchanged, setup
+and data governance pass. DVC restoration also exposed missing bound B2 raw calls: the old
+770-file cache pointer omitted 57 valid pilot returns and one retained failed-call record. Exact
+previously bound bytes were restored from the original checkout without overwriting entries,
+retrying a model call or inventing records for two pre-call failures. The new cache pointer has
+828 files. DVC pushed the repair plus packet/key artifacts (63 objects); all three original
+checkout pointers were restored byte-for-byte and its Git state is clean.
+
+The candidate support call inventory specifies 228 isolated A/B requests and a maximum of 114
+conditional disagreement-only C requests. It authorizes no call. Next bind an executor and
+combined source-context/null-level canary, then a separate execution declaration. All old nominal
+question/mask limitations, manual-inventory and missing-role sensitivities, role disagreement,
+claim-specific rank/contracts and unresolved-label treatment remain open before episode scoring.
+Nine focused tests pass. P11 remains closed; no support label, paired effect or confirmatory
+semantic output was generated. B0/B1/B3 prospective contrasts with B4 remain required alongside
+primary B2/B4; fresh aligned five-method evidence, useful coverage, power and allocation are still
+needed. Alpha, layout quarantine and confirmation/replication independent N are unchanged.

@@ -3666,3 +3666,51 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   independent humans. These are automated qualification results, not real-pilot accuracy, paired
   method effects, statistical N, a sample-size estimate or confirmation. P11 still fails closed
   on nineteen conditions; alpha/freshness allocations and confirmation/replication N are unchanged.
+
+## 2026-09-30 — reconcile setup and retained pilot cache before blind support assembly
+
+- **Setup drift:** the September 24 workspace lock still named `crane_ml` commit `05a1161`, while
+  the September 27 root Git pin was already `bcab354` (causal-restraint reserve catalog). This
+  caused the unchanged setup script to fail in a new worktree. Reconcile the living lock with
+  the existing newer Git pin; preserve older commits, frozen schedules and runtime records.
+  Nested core/ROS pins are unchanged. The setup script now passes its pin and data-governance
+  checks. No simulator, recording, new platform or physical allocation was launched.
+- **Cache defect:** checkout of the tracked 770-file model-cache pointer omitted all fifty-seven
+  B2 pilot raw returns referenced by the bound source-context audit. The original checkout held
+  those exact bytes. Restore only missing entries after verifying each raw hash against its prior
+  condition binding; never overwrite an entry. Also retain the one failed-call cache identified
+  by the old failure envelope and matching request/cache identity. The other two failures were
+  before a call and receive no invented cache record. No model request, retry or response change
+  occurred. The updated cache pointer contains 828 files.
+- **Retention:** push the cache repair, new blind packet bundle and separate coordinator key
+  through DVC (63 objects). Restore all three original checkout pointers byte-for-byte and verify
+  its Git state is clean. The reconciliation manifest distinguishes historical and new pointer
+  bindings. This repairs reproducibility; it supplies no new model or comparative result.
+
+## 2026-09-30 — bind mechanically assembled development support packets and candidate calls
+
+- **Inputs:** rebuild the inventory-validated blind answer bank and reviewed atoms; verify all
+  independent rubric bytes and exact common source assets. Mechanically attach evidence and
+  sanitized physical facts through the existing coordinator key. No key values are printed or
+  passed to an annotating model; no method join for interpretation or analysis occurs. This
+  packaging access follows the original key's `join_after_atomic_inventory_validation` boundary;
+  the newly separated analysis key remains closed until all support/adjudication is final.
+- **Packet scope:** 114 answers, 1,084 atoms and 228 A/B forms. Every atomic input level is null;
+  all forms offer the same six diagnostic options plus the qualified non-rank options. Remove
+  only top-level episode/configuration packaging IDs from annotation evidence. Preserve all
+  evidence fields, legitimate record/goal IDs, full answer text, source bytes and sanitized truth.
+  Diagnostic rank remains unqualified. Do not invent a model-configuration hash for old outputs;
+  retain exact answer/source-envelope bindings in the separate coordinator key.
+- **Development limitations:** retain old nominal questions/masks and all technical failures.
+  Literal bare affirmatives, manual inventory provenance, missing role A, role disagreement,
+  claim-specific abstraction/contracts and unresolved-label treatment still require disposition
+  before episode outcomes. The old artifacts are not a fresh five-method pilot or confirmation.
+- **Call candidate:** the hash-bound inventory lists 228 potential isolated A/B requests and at
+  most 114 distinct disagreement-only C requests, with no quality-driven retry or replacement.
+  It authorizes zero calls. A separate executor/combined-format canary and execution declaration
+  must be bound before launch. Neither role/extractor levels nor raw highest-level output may
+  determine endpoint scores.
+- **Mechanical evidence:** nine focused packet/source/rubric tests pass; the read-only assembly
+  audit rebuilds packet and key bytes exactly. The bundle/key and cache repair are DVC-pushed.
+  P11 remains closed; no support label, episode effect, corrected p-value, alpha expenditure or
+  confirmation/replication independent N follows from this assembly.
