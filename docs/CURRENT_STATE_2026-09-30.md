@@ -422,3 +422,28 @@ Nine focused tests pass. P11 remains closed; no support label, paired effect or 
 semantic output was generated. B0/B1/B3 prospective contrasts with B4 remain required alongside
 primary B2/B4; fresh aligned five-method evidence, useful coverage, power and allocation are still
 needed. Alpha, layout quarantine and confirmation/replication independent N are unchanged.
+
+## Latest 2026-09-30 offline support-execution and readiness checkpoint
+
+Resumed from `e7956c5` on `codex/roboboat_terminal_evidence`. The separate support execution helper
+now has nineteen passing focused offline checks covering isolation, assigned slots/identities,
+intent-before-launch, failure/unknown-intent retention without retry, raw/parsed consistency,
+timeouts/tool rejection and disagreement-only adjudication context. Mocked calls supply no observed
+annotation. The helper fixes omitted full-answer and unit/limitation prompt context prospectively;
+the frozen runner is unchanged. It has no CLI launcher or bound execution authorization.
+
+Packet reconstruction and the forty-call non-rank qualification audit reproduce retained results.
+P11 remains closed on nineteen conditions with confirmation/replication independent N=0. Current
+transport preflight is `READY_FOR_SCHEMA_CANARY` on CLI 0.159.2 without any model request. Freshness
+and provisional alpha audits pass: 120 former confirmation and 20 replication layouts materialized,
+100 unmaterialized replication layouts allocated/quarantined; 0.02 alpha consumed, at most 0.01
+for discovery and 0.02 replication-only. The unchanged manuscript builds to nine pages and passes
+full-paper packaging and numeric traceability after creating the initially absent local PDF.
+
+Next bind the combined-format synthetic canary, constructed C compatibility references, enclosing
+runner and prospective execution declaration. Pilot calls remain closed until passing canary
+artifacts are audited and DVC-pushed. Support/adjudication, role/missingness disposition,
+claim-specific endpoint/rank mapping, nominal alignment and fresh five-method pilot remain open.
+B2/B4 stays the candidate primary contrast; B0/B1/B3 versus B4 require episode-level effects,
+intervals, exact paired and Holm-adjusted p-values, with inconclusive/unfavorable results reported.
+The worktree name does not broaden the land/Nav2 submission scope.

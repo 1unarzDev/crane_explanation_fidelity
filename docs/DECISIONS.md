@@ -3714,3 +3714,37 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   audit rebuilds packet and key bytes exactly. The bundle/key and cache repair are DVC-pushed.
   P11 remains closed; no support label, episode effect, corrected p-value, alpha expenditure or
   confirmation/replication independent N follows from this assembly.
+
+## 2026-09-30 — test separate support execution boundary before combined canary declaration
+
+- **Prospective implementation:** add `analysis/evidence_calibration_support_execution.py` as
+  a reusable internal caller and payload/return validator; it has no command-line launch path.
+  The older frozen annotation runner and all qualification bytes remain unchanged. This code
+  is not an execution declaration and does not open the candidate pilot call inventory.
+- **Adjudication context defect:** the older runner omitted full answer text and left hashed
+  unit/limitation keys unmapped to their prompts. The separate payload carries the exact answer,
+  blind form, unchanged disagreement-only handoff and mechanically resolved contexts only for
+  disputed decisions. It excludes prior annotator identities and agreed decision values. Raw
+  highest-level context explicitly prohibits endpoint use; this is not rank qualification.
+- **Execution integrity:** bind assigned opaque A/B/C identities and exact support slot; retain
+  intent before invocation, one terminal record, raw/parsed returns and raw hash. Use separate
+  empty ephemeral read-only workspaces. Reuse validated retained returns without another call;
+  preserve terminal failures and quarantine unknown intents without retry. Reject numeric values
+  masquerading as boolean adjudication choices, nullable-field type errors, forbidden tool events,
+  timeouts and disabled outbound sockets. The enclosing runner still needs to enforce qualified
+  components, transport preflight, call inventory, canary retention and the sequential stop frontier.
+- **Evidence:** nineteen focused offline tests pass; all provider calls in those tests are mocks.
+  No model call was launched. Packet reconstruction and the forty-return qualification audit
+  pass. P11 still has nineteen failures with no component hash mismatch. Freshness remains
+  `PASS_RECONCILED`; alpha remains `PASS_PROVISIONAL_UNBOUND`. A new transport audit written
+  under `/tmp` is `READY_FOR_SCHEMA_CANARY` on CLI 0.159.2, without a model/study request.
+  Historical transport failures and canary records remain unchanged.
+- **Manuscript:** the initial packaging audit could not run because this worktree had no built
+  PDF. The unchanged build script then generated a nine-page snapshot; full-paper packaging and
+  numeric traceability pass. This resolves the missing local artifact, not scientific readiness.
+  No manuscript claim, physical allocation, alpha expenditure or confirmation/replication N changed.
+- **Remaining gate:** prospectively bind the combined source-context/null-level synthetic A/B
+  canary and disclosed constructed C compatibility case, exact references and an enclosing runner
+  before calls. Passing, audited and DVC-pushed canary evidence plus a separate execution
+  declaration are required before pilot support annotation. Claim-specific endpoint attachment,
+  role/missingness disposition, nominal alignment and fresh five-method evidence remain open.
