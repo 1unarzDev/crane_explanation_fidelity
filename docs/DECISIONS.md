@@ -2528,3 +2528,20 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   without reading method answers. Its generated rubrics still need hash-bound materialization and
   review; exhaustive claim atomization and source-context qualification remain open. No new agent
   scoring or confirmatory output was generated.
+
+## 2026-09-29 — bind raw response bank before atomic extraction
+
+- **Decision:** materialize the 57 valid B2 answers and their 57 paired B4 answers into one shuffled,
+  method-blind raw-response bank. Keep the HMAC salt and answer-to-method/episode key in the
+  evaluator-only annotation-key root. The bank is input to a future separately qualified atomic
+  extractor, not an annotation or method result.
+- **Evidence:** the bank has 114 opaque responses and its separate key marks 112 responses from 15
+  complete paired ladders as eligible for episode-level development estimates. The two responses
+  from `cm-land-conf-042-E3` remain descriptive only. Bank and key hashes are in
+  `manifests/study/evidence-calibration-b2-b4-pilot-v1-atomization-bank-v1.json`; both DVC roots
+  were pushed and remote status reported in sync.
+- **Gate:** no arbitrary LLM decomposition is promoted to scored atomic claims. Before extraction,
+  freeze and qualify the extraction task on independently constructed cases covering omissions,
+  merged claims, negation, numbers, temporal and causal relations, and limitations. Validate exact
+  response spans and inventory completeness before the qualified support annotator receives a
+  packet. Neither the bank nor multiple claims add physical episodes or alpha.

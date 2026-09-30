@@ -118,7 +118,11 @@ def audit(root: Path = ROOT) -> dict:
             errors.append(f"invalid retained B4 result: {condition_id}")
 
     packet_root = root / "model_outputs/annotation_packets" / PILOT
-    packet_count = len(list(packet_root.glob("*.json"))) if packet_root.exists() else 0
+    packet_count = len(list(packet_root.glob("atomic-packet-*.json"))) if packet_root.exists() else 0
+    atomization_bank = packet_root / "atomization-bank.json"
+    atomization_bank_entries = 0
+    if atomization_bank.exists():
+        atomization_bank_entries = json.loads(atomization_bank.read_text()).get("response_count", 0)
     complete_episodes = [
         row["run_id"] for row in validation["episodes"]
         if set(row["condition_ids"]) <= set(b2_paths)
@@ -157,6 +161,7 @@ def audit(root: Path = ROOT) -> dict:
             if row["run_id"] in complete_episodes
         ),
         "blinded_atomic_packet_files": packet_count,
+        "blinded_atomization_bank_responses": atomization_bank_entries,
         "handoff_gaps": handoff_gaps,
         "confirmatory_independent_n": 0,
         "errors": errors,
