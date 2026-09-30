@@ -103,3 +103,8 @@ The final bank answer now has a separately hash-bound 15-atom project inventory 
 blind text. Its extractor request still has unknown disposition and was not retried. This manual
 route is distinct measurement provenance and will require an affected whole-episode sensitivity
 before any paired development estimate. Support annotation and endpoint scoring remain closed.
+
+A method-blind role-input bundle now reconstructs 114 answers and 1,084 reviewed atoms from these
+versioned inventories. Its DVC object is pushed and a read-only audit checks byte-for-byte rebuild.
+No pilot role model call was made; the v2r2 synthetic qualification does not itself authorize an
+endpoint map or response rank. P11 remains closed.

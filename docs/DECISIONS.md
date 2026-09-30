@@ -3316,3 +3316,17 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   development estimate using this manually inventoried answer must disclose its provenance and
   show a whole-episode exclusion sensitivity. The method key, evaluator truth, P11, independent N,
   and alpha remain untouched.
+
+## 2026-09-30 — bind blind pilot role inputs without making role calls
+
+- **Preparation:** reconstruct all 114 blinded development answers and 1,084 reviewed atomic
+  claims into one exact, method-blind role-input bundle. It applies the versioned command-stream
+  splits, prior actor repairs, deictic literal wording, question-dependent one-word claims, and
+  the separately marked manual inventory. A read-only audit rebuilds the bundle byte-for-byte
+  from the bound reviews and confirms the v2r2 synthetic qualification scope.
+- **Storage:** govern the bundle under `model_outputs.dvc` and push its objects to the configured
+  DVC remote. The Git manifest binds its raw hash and counts. No annotation model was called.
+- **Boundary:** the v2r2 pass qualifies stance/kind/polarity on its synthetic task only. Pilot role
+  calls require a separate prospective execution declaration and transport canary; mechanistic
+  endpoint mapping, response rank, support labels, method join, P11, independent N, and alpha
+  remain unopened.
