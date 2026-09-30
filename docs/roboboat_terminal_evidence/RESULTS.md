@@ -41,3 +41,33 @@ Row 003 returned navigation success but strict capture failed with one rejected/
 ## Limits and next gate
 
 No real robot-visible contact stream, continuous-time bound, calibrated stopping prediction, unique physical-cause observer, or hardware validation is supplied. The original validated docking/controller/physics/assets remain unchanged. Future work should diagnose the capture-quality failure and retain actual node/plugin runtime parameter queries, then prospectively declare any successor attempts without recycling failed requests or inspected configurations as fresh confirmation. Complete marine annotation artifacts, commands, registry, references and method outputs are retained in the isolated immutable development capsule for coordinator integration. Confirmation remains closed pending explicit program error-budget disposition and a frozen untouched design.
+
+## Completed physical continuation
+
+Five valid fresh configurations from three approach clusters are retained; two complete internal-tolerance pairs contribute descriptive paired-cluster estimates. Row003 remains a technical failure with successful navigation and is never retried. A separate row004 pre-player render-deadline failure is retained without physical N; its new request successor preserves approach-02. All remaining registered configurations have now been attempted, and no untouched confirmation reserve exists in this registry.
+
+| Configuration | First supported dwell violation | Decisive observation |
+|---|---|---|
+| known route, internal XY 0.20 | speed | 0.050371811 m/s at 248.966062 s; limit 0.05 m/s |
+| known route, internal XY 0.40 | position | 0.400604164 m at 243.334131 s; limit 0.40 m |
+| direct route, internal XY 0.20 | yaw rate | 0.05160 rad/s at 189.102545 s; limit 0.05 rad/s |
+| shifted route, internal XY 0.20 | speed | 0.050010012 m/s at 248.432949 s; limit 0.05 m/s |
+| shifted route, internal XY 0.40 | position | 0.400227837 m at 246.531930 s; limit 0.40 m |
+
+Each valid recording has 251 samples covering the fixed five-second dwell, with maximum gap approximately 0.020 s. Position, heading, speed, yaw-rate and hull compliance are reported component by component; contact remains unknown. These point violations falsify the compound dwell requirement without identifying a disturbance cause. No new sustained-success recording was obtained. Known-route repetition and internal-tolerance variation do not manufacture independent diversity. The unchanged immutable simulator/controller and zero simulator observation uncertainty do not constitute hardware measurement reliability.
+
+Live controller-node/plugin readback confirms internal tolerances on all three successor captures. Configuration source for the earlier pair remains declared launch, not retroactively upgraded to measured runtime. Readback adds pre-action setup delay; this is a declared development setup difference, not a controller change.
+
+The frozen renderer's shifted-route speed witness loses precision: both observed speed and bound print as 0.0500. The separately versioned development successor displays 0.05001 versus 0.05000; it has not been substituted into the frozen comparative outputs. Agent-assessed correctness/coverage should not be interpreted as full language utility or precision equivalence. The strong agent provides more supported supplemental facts.
+
+The v3 numerical value/unit audit covers all 18 continuation answers and passes. This check does not establish the association, modality or temporal scope of each number. A six-panel example includes path, position, speed, heading, yaw rate and signed hull clearance: `figures/direct_route_yaw_rate_panel_v3.svg`.
+
+## Final continuation comparison
+
+All 18 continuation answers and 36 blinded support passes finalized without disagreements. Together with the original development replay and pair, this yields 36 answers and 72 support passes; 30 answers are fresh-recording evidence and six are historical replay. Both methods achieved 15/15 fresh answer success and 60/60 required-unit coverage under the agent-assessed development endpoint. Each complete paired cluster has B4-minus-B2 difference 0.0; their mean is 0.0. Independent complete paired-cluster N=2, with an additional unpaired direct-route recording. No comparative confidence interval, p-value or superiority claim is reported for this small inspected sample. Confirmation N=0, replication N=0 and marine alpha=0.
+
+The two-pass marine qualification covered eight construction-defined cases and observed perfect field accuracy in each pass; those passes do not create 16 independent qualification cases or demonstrate zero general judge error. Sentence-level inventory and limited physical success coverage remain confirmation gates. Support agreement is agent-assessed, not human validation. Numeric audits cover all 36 historical/fresh answers and pass, with their stated association/modality limitations.
+
+The continuation strong-agent calls had median latency 62.44 s (range 48.76–87.99 s), nine physical method calls. The deterministic method made zero model calls; production-computation latency/cost was not separately instrumented. Provider dollar cost is unavailable. No overall preference is inferred from model-call savings, and the baseline's greater supplemental detail is retained.
+
+Largest bottleneck: inferential readiness—no marine allocation, insufficient independent diversity/power evidence, no fresh sustained-success capture, and a not-yet-qualified confirmation endpoint inventory. The observed tie supplies no comparative improvement signal. Next action is coordinator disposition of COORDINATOR_PROPOSAL.md, then endpoint qualification and a prospectively declared development population addressing these gaps; confirmation requires its own untouched registry, approved resources, analysis and allocation. Do not turn this inspected pilot into confirmation.

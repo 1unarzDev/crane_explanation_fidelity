@@ -9,8 +9,9 @@ def atomic(path, value):
     tmp=path.with_suffix('.tmp');tmp.write_text(json.dumps(value,indent=2)+'\n');tmp.replace(path)
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--output-root',required=True,type=Path);p.add_argument('--limit',type=int,default=6);a=p.parse_args()
-    registry=json.loads((DOC/'pilot_registry_v1.json').read_text())
+    p=argparse.ArgumentParser();p.add_argument('--output-root',required=True,type=Path);p.add_argument('--limit',type=int,default=6)
+    p.add_argument('--registry',type=Path,default=DOC/'pilot_registry_v1.json');a=p.parse_args()
+    registry=json.loads(a.registry.read_text())
     a.output_root.mkdir(parents=True,exist_ok=True)
     for row in registry['rows'][:a.limit]:
         out=a.output_root/row['id']; record=out/'capture-attempt.json'
@@ -29,12 +30,14 @@ def main():
              'CRANE_NAV2_CONTROLLER_EXTRA_ARGS':f"-p goal_checker.xy_goal_tolerance:={row['internal_xy_tolerance_m']}",
              'CRANE_NAV2_GOAL_X':'0.8641434','CRANE_NAV2_GOAL_Y':'-27.586906','CRANE_NAV2_GOAL_YAW':'1.5707963267948966',
              'CRANE_DOCKING_EVALUATOR':'1','CRANE_SEED_BASE':str(row['seed'])}
+        if registry.get('capture_runtime_parameters'):
+            env['CRANE_CAPTURE_RUNTIME_PARAMETERS']='1'
         if row['action_mode']=='follow-path':
             name='roboboat_terminal_shifted_path_v1.json' if row['shape']=='shifted-known' else 'roboboat_far_dock_known_path.json'
             env['CRANE_NAV2_PATH_FILE']=str(ROOT/'packages/crane_ml/Tools/Performance'/name)
         cmd=[str(ROOT/'scripts/run_roboboat_hidden_render.sh'),str(ROOT/'packages/crane_ml/Tools/Performance/run_nav2_controller_fixture.sh')]
         before={'status':'running','row':row,'command':cmd,'launch_values':{k:v for k,v in env.items() if k.startswith('CRANE_')},'started_unix':time.time(),
-                'registry_sha256':hashlib.sha256((DOC/'pilot_registry_v1.json').read_bytes()).hexdigest(),
+                'registry_sha256':hashlib.sha256(a.registry.read_bytes()).hexdigest(),
                 'player_sha256':hashlib.sha256(Path(env['CRANE_PLAYER']).read_bytes()).hexdigest(),
                 'config_sha256':hashlib.sha256(Path(env['CRANE_NAV2_PARAMS']).read_bytes()).hexdigest()}
         atomic(record,before)

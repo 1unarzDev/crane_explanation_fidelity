@@ -65,3 +65,33 @@ python3 analysis/audit_roboboat_terminal_numbers.py artifacts/roboboat-terminal-
 Executed: 38 tests pass; 18 answer numeric audits pass. The numeric audit has a red-capable check: an unobserved `0.1234 m/s` in L0 is rejected, while the declared `0.4000 m` bound passes. Numeric association/temporal correctness remains evaluated with the complete qualified semantic packet; rounded value/unit matching alone is not explanation correctness. The optional legacy evidence exports were restored as byte copies into this isolated ignored data namespace for regression testing, without modifying DVC pointers.
 
 Capsule publication completed and hash/size/member count verified. A separate relative-root and atomic coordinator-intake regression passed: `PYTHONPATH=analysis python3 -m pytest -q tests/test_roboboat_capsule_publication.py`. Published capsule excludes the retained incomplete packaging attempt.
+
+## September 30 bounded continuation and capture diagnosis
+
+```bash
+python analysis/replay_roboboat_capture_validity.py artifacts/roboboat-terminal-v1/captures/boat-terminal-pilot-003
+PYTHONPATH=analysis python -m pytest -q tests/test_roboboat_render_deadline.py tests/test_roboboat_runtime_parameters.py tests/test_roboboat_pilot_continuation_analysis.py
+python analysis/run_roboboat_terminal_capture.py --registry docs/roboboat_terminal_evidence/pilot_continuation_v3.json --output-root /home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-terminal-v3/captures
+python analysis/build_roboboat_terminal_batch.py --registry docs/roboboat_terminal_evidence/pilot_continuation_v3.json --capture-root artifacts/roboboat-terminal-v3/captures --output-root artifacts/roboboat-terminal-v3/batches
+python analysis/run_roboboat_terminal_comparison.py --declaration docs/roboboat_terminal_evidence/method_comparison_declaration_v3.json --available-only --batch-root artifacts/roboboat-terminal-v3/batches --output-root artifacts/roboboat-terminal-v3/comparison
+python analysis/analyze_roboboat_pilot_continuation.py artifacts/roboboat-terminal-v1/comparison artifacts/roboboat-terminal-v3/comparison --output artifacts/roboboat-terminal-v3/development-results-final.json
+```
+
+Replay returns exit 1 as expected: the actual production strict validator rejects row003. Temporary-copy gate minimization identifies worker.valid, staleActions and rejectedActions; no original bytes are modified or counterfactuals admitted. Retained trace brackets stale camera queue events before the action result, but lacks timestamps for the rejected action and cannot identify the underlying stall. Diagnostic report: `artifacts/roboboat-terminal-v2/diagnostics/capture-diagnosis-v1.json`.
+
+The v2 continuation of untouched rows004–006 failed before the row004 player launched because the render wrapper rounded an epoch deadline into scientific notation. A pinned real-expression regression failed by 1120.125 s and passed after explicit decimal formatting. That failed attempt remains retained. V3 declares a new row004 request identity, preserving approach-02 and physical N; it does not retry row003. Original transport cause remains unresolved. Both continuation declarations are development only, stop on first technical failure and never select outcomes.
+
+Runtime readback canaries retain failures v1–v3 and successful v4. Nav2 plugin parameters require lifecycle configuration; simulation time must be running for the actual fixture lifecycle. The opt-in query runs after warmup, before the acceptance action, with a fixed deadline; it records node/plugin values and never sets parameters. Readback overhead can change pre-action drift, so starting pose is measured and the setup difference is declared. Batch building rejects a measured tolerance differing from the registered launch override.
+
+Never run a second capture command while the current one-worker queue is alive. `--available-only` permits response/annotation overlap on published development batches and explicitly reports deferred batches. It is not a complete-result or confirmation gate. The final combined analysis preserves original paired-cluster IDs and excludes partial pairs from the primary descriptive cluster mean.
+
+Continuation publication (run only after all 18 v3 answers and their annotations finalize):
+
+```bash
+python analysis/audit_roboboat_terminal_numbers.py artifacts/roboboat-terminal-v3/comparison --batch-root artifacts/roboboat-terminal-v3/batches --output artifacts/roboboat-terminal-v3/numeric-audit-v3.json
+python analysis/publish_roboboat_terminal_capsule.py --artifact-root artifacts/roboboat-terminal-v3 --version v3 --results-file development-results-final.json --expected-answers 30 --additional-artifact-root artifacts/roboboat-terminal-v2
+```
+
+The combined result contains 30 fresh answers: 12 from v1 plus 18 from the continuation, excluding six historical replay answers. Historical evidence adds no N. V3 publication includes retained v2 launch/canary/diagnostic failures; the original immutable v1 capsule is a separate hash-bound dependency. The intake ledger/manifest names carry v3 and cannot overwrite v1. Never rerun publication after its immutable capsule exists. Exact provider dollar cost remains unavailable from the login-backed adapter.
+
+The separately versioned precision renderer is exercised with `PYTHONPATH=analysis python -m pytest -q tests/test_roboboat_temporal_renderer_v2.py`; its inspected row005 answer is retained under `artifacts/roboboat-terminal-v3/renderer-successor-development`. It is not a scored comparative response. The example panels add `--terminal-detail` to the plotting command for yaw-rate/hull evidence.

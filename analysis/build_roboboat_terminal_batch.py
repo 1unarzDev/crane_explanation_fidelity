@@ -1,12 +1,31 @@
 #!/usr/bin/env python3
 """Build isolated ladder batches with evaluator provenance separated from method packets."""
 import argparse,hashlib,json,subprocess,time
+import yaml
 from pathlib import Path
 from roboboat_temporal_certificate import build_ladder,certificate,render,audit_ladder
 from reference_roboboat_temporal import calculate
 ROOT=Path(__file__).resolve().parents[1];DOC=ROOT/'docs/roboboat_terminal_evidence'
 
 def digest(path):return hashlib.sha256(path.read_bytes()).hexdigest()
+
+def runtime_config(base, readback, expected_xy):
+    """Derive the public checker configuration from node-scoped ROS readback."""
+    if readback['schema'] != 'crane-nav2-runtime-parameters/v1':
+        raise ValueError('unsupported runtime readback')
+    node=readback['nodes']['/controller_server']
+    selected=node['goal_checker_plugins']
+    if len(selected)!=1:raise ValueError('ambiguous runtime goal checker')
+    name=selected[0]
+    checker={key:node[name+'.'+key] for key in ('plugin','xy_goal_tolerance',
+        'yaw_goal_tolerance','trans_stopped_velocity','rot_stopped_velocity')}
+    if abs(checker['xy_goal_tolerance']-expected_xy)>1e-12:
+        raise ValueError('runtime tolerance differs from registered launch override')
+    document=yaml.safe_load(base)
+    params=document['controller_server']['ros__parameters']
+    params['goal_checker_plugins']=selected
+    params[name]=checker
+    return yaml.safe_dump(document).encode()
 def save(path, value):
     b=(json.dumps(value,indent=2,sort_keys=True)+'\n').encode()
     if path.exists():
@@ -14,7 +33,7 @@ def save(path, value):
         return
     path.parent.mkdir(parents=True,exist_ok=True);tmp=path.with_suffix('.tmp');tmp.write_bytes(b);tmp.replace(path)
 
-def build(summary_path, config_bytes, output, opaque_id, status):
+def build(summary_path, config_bytes, output, opaque_id, status, runtime_path=None):
     contract=json.loads((DOC/'task_contract_v1.json').read_text())
     summary=json.loads(summary_path.read_text());packets=build_ladder(summary,config_bytes,contract,opaque_id)
     results=[]
@@ -37,7 +56,10 @@ def build(summary_path, config_bytes, output, opaque_id, status):
                         'packet_sha256':digest(output/'method_packets'/f'L{level}.json')})
     audit=audit_ladder(packets)
     # Source hashes/paths never go into the method workspace.
+    runtime_provenance=({'configuration_source':'ROS-pre-action-readback',
+        'runtime_readback_sha256':digest(runtime_path)} if runtime_path else {})
     save(output/'evaluator/provenance.json',{'source_path':str(summary_path.resolve()),'sha256':digest(summary_path),
+      **runtime_provenance,
       'study_status':status,'opaque_id':opaque_id,'certificate_tool_sha256':digest(ROOT/'analysis/roboboat_temporal_certificate.py'),
       'reference_tool_sha256':digest(ROOT/'analysis/reference_roboboat_temporal.py'),'leakage_audit':audit})
     save(output/'summary.json',{'status':status,'opaque_id':opaque_id,'levels':results,'independent_reference_match':True})
@@ -45,7 +67,8 @@ def build(summary_path, config_bytes, output, opaque_id, status):
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--historical',action='store_true');p.add_argument('--capture-root',type=Path);p.add_argument('--output-root',required=True,type=Path);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--historical',action='store_true');p.add_argument('--capture-root',type=Path);p.add_argument('--output-root',required=True,type=Path)
+    p.add_argument('--registry',type=Path,default=DOC/'pilot_registry_v1.json');a=p.parse_args()
     if a.historical:
         summary=Path('/home/lunarz/worktrees/roboboat-docking/packages/crane_ml/PerformanceResults/roboboat-gate5-known-dock-1/fixture-summary.json')
         assert digest(summary)=='6bcc1c1f7d926a45b6d3ec2f9b0f06cfe8770d067d57ed2a92a45ebbd8c2223a'
@@ -53,13 +76,18 @@ def main():
         result=build(summary,config,a.output_root/'historical-replay','opaque-dev-001','INSPECTED_HISTORICAL_DEVELOPMENT_REPLAY')
         print(json.dumps(result,indent=2))
     else:
-        registry=json.loads((DOC/'pilot_registry_v1.json').read_text())
+        registry=json.loads(a.registry.read_text())
         for index,row in enumerate(registry['rows']):
             source=a.capture_root/row['id'];record=source/'capture-attempt.json'
             if not record.exists() or json.loads(record.read_text())['status']!='complete':continue
             b=(DOC/'configs/validated_boat_nav2.yaml').read_bytes()
             # Exact effective per-run values; overrides are also retained in the capture ledger.
             b=b.replace(b'xy_goal_tolerance: 0.20',f"xy_goal_tolerance: {row['internal_xy_tolerance_m']:.2f}".encode())
-            result=build(source/'fixture-summary.json',b,a.output_root/row['id'],f'opaque-fresh-{index+1:03d}','FRESH_EXPLORATORY_PILOT')
+            runtime_path=source/'runtime-parameters.json' if registry.get('capture_runtime_parameters') else None
+            if runtime_path:
+                b=runtime_config(b,json.loads(runtime_path.read_text()),row['internal_xy_tolerance_m'])
+            opaque=('opaque-fresh-'+hashlib.sha256(row['id'].encode()).hexdigest()[:16]
+                    if registry.get('capture_runtime_parameters') else f'opaque-fresh-{index+1:03d}')
+            result=build(source/'fixture-summary.json',b,a.output_root/row['id'],opaque,'FRESH_EXPLORATORY_PILOT',runtime_path)
             print(row['id'],[r['outcome'] for r in result])
 if __name__=='__main__':main()

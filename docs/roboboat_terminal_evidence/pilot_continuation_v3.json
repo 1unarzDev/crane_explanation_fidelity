@@ -1,0 +1,64 @@
+{
+  "schema": "roboboat-terminal-pilot-continuation/v3",
+  "disposition": "DEVELOPMENT_EXPLORATORY_NO_CONFIRMATORY_ALLOCATION",
+  "created_date": "2026-09-30",
+  "configuration_n": 3,
+  "cluster_n": 2,
+  "rows": [
+    {
+      "id": "boat-terminal-pilot-004-render-successor-v3",
+      "cluster_id": "approach-02",
+      "family": "direct-route",
+      "action_mode": "navigate-to-pose",
+      "shape": "direct",
+      "heading_offset": 0.0,
+      "internal_xy_tolerance_m": 0.2,
+      "seed": 31001,
+      "status": "untouched-prospectively-registered",
+      "retry_budget": 0,
+      "original_configuration_id": "boat-terminal-pilot-004"
+    },
+    {
+      "id": "boat-terminal-pilot-005",
+      "cluster_id": "approach-03",
+      "family": "shifted-known-route",
+      "action_mode": "follow-path",
+      "shape": "shifted-known",
+      "heading_offset": 0.0,
+      "internal_xy_tolerance_m": 0.2,
+      "seed": 31002,
+      "status": "untouched-prospectively-registered",
+      "retry_budget": 0
+    },
+    {
+      "id": "boat-terminal-pilot-006",
+      "cluster_id": "approach-03",
+      "family": "shifted-known-route",
+      "action_mode": "follow-path",
+      "shape": "shifted-known",
+      "heading_offset": 0.0,
+      "internal_xy_tolerance_m": 0.4,
+      "seed": 31002,
+      "status": "untouched-prospectively-registered",
+      "retry_budget": 0
+    }
+  ],
+  "contract_sha256": "f4cb6a91dd5b00f1e913ca0e0f1d1e1e845c95ccfe336ee669b1549fe7e73049",
+  "no_outcome_selection": true,
+  "stop_on_technical_failure": true,
+  "confirmation": {
+    "authorized": false,
+    "alpha_allocated": 0.0,
+    "untouched_registry": "not-yet-allocated",
+    "coordinator_decision_required": true
+  },
+  "parent_registry_sha256": "fb66e403809cdfd5e718d24d9530bed809fe52e136cfd39b9bb1d9289f725d49",
+  "capture_runtime_parameters": true,
+  "scope": "Remaining untouched v1 development rows only; row003 is never retried. Same physical requirements, controllers, seeds and approach clusters. Readback adds bounded pre-action setup delay; actual starting state remains measured.",
+  "technical_disposition": "v2 row004 failed before player launch due proven awk epoch rounding in render placement deadline. Fixed explicit decimal precision with red/green actual-expression regression. Original row003 transport root cause remains unresolved. Stop at first technical failure, zero retries in this successor.",
+  "admission": "Unchanged production strict validity; preserve all unexpected valid outcomes and failed attempts.",
+  "parent_continuation_sha256": "558b1275bf961e7d0e8dbbd5d0096937c5ec7f63c49cac52cc29c0904ffc6c60",
+  "physical_n_rule": "Pre-player launch failure contributes no physical episode; successor remains approach-02 and is not independent replication.",
+  "render_wrapper_sha256": "1a56b3d64ae0ba757702a4ca19e57572a5c318c49d9ff20355650a603351853f",
+  "runtime_capture_sha256": "bee2a84afc53ad2647535361969e9e090eb15eb0831f4acce9ac562cb7987ffd"
+}

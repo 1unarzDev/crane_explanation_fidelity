@@ -65,14 +65,29 @@ def process(batch,level,out):
 
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--batch-root',type=Path,required=True);p.add_argument('--output-root',type=Path,required=True);a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--batch-root',type=Path,required=True);p.add_argument('--output-root',type=Path,required=True)
+    p.add_argument('--declaration',type=Path,default=DOC/'method_comparison_declaration_v1.json')
+    p.add_argument('--batch',action='append',help='Execute specified registered batches for queue overlap')
+    p.add_argument('--available-only',action='store_true',help='Development overlap: report and defer unpublished batches');a=p.parse_args()
     qual=json.loads((ROOT/'artifacts/roboboat-terminal-v1/qualification-v2/qualification-result.json').read_text())
     if qual['status']!='QUALIFIED':raise RuntimeError('marine qualification gate closed')
     canary=json.loads((DOC/'tool_canary_v2.json').read_text())
     if '289' not in canary['answer']['answer'] or 'Neither' not in canary['answer']['answer']:raise RuntimeError('strong tool gate closed')
-    declaration=json.loads((DOC/'method_comparison_declaration_v1.json').read_text())
+    declaration=json.loads(a.declaration.read_text())
     if declaration['transport_sha256']!=hashlib.sha256((ROOT/'analysis/roboboat_isolated_transport.py').read_bytes()).hexdigest():raise RuntimeError('transport binding changed')
+    if declaration['prompt_sha256']!=hashlib.sha256((DOC/'marine_b2_prompt_v1.txt').read_bytes()).hexdigest():raise RuntimeError('prompt binding changed')
+    if declaration['certificate_sha256']!=hashlib.sha256((ROOT/'analysis/roboboat_temporal_certificate.py').read_bytes()).hexdigest():raise RuntimeError('certificate binding changed')
     batches=[a.batch_root/name for name in declaration['batches']]
+    if a.batch:
+        if not set(a.batch).issubset(declaration['batches']):
+            raise RuntimeError('unregistered batch requested')
+        batches=[b for b in batches if b.name in a.batch]
+    if a.available_only:
+        if declaration['disposition']!='EXPLORATORY_DEVELOPMENT_ONLY':
+            raise RuntimeError('partial overlap is development only')
+        pending=[b.name for b in batches if not (b/'summary.json').exists()]
+        print('pending unpublished batches',pending,flush=True)
+        batches=[b for b in batches if (b/'summary.json').exists()]
     a.output_root.mkdir(parents=True,exist_ok=True)
     with ThreadPoolExecutor(max_workers=2) as pool:
         jobs=[pool.submit(process,batch,level,a.output_root) for batch in batches for level in range(3)]

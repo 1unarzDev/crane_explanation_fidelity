@@ -7,13 +7,20 @@ from build_roboboat_terminal_batch import save
 ROOT=Path(__file__).resolve().parents[1];DOC=ROOT/'docs/roboboat_terminal_evidence'
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--artifact-root',type=Path,required=True);a=p.parse_args();a.artifact_root=a.artifact_root.resolve()
-    result=json.loads((a.artifact_root/'comparison-results.json').read_text())
-    if result['missing_annotations'] or len(result['rows'])!=18:raise RuntimeError('incomplete comparison cannot publish a completed capsule')
-    capsule=a.artifact_root/'publication/development-capsule-v1.tar.gz'
+    p=argparse.ArgumentParser();p.add_argument('--artifact-root',type=Path,required=True)
+    p.add_argument('--version',choices=('v1','v3'),default='v1')
+    p.add_argument('--results-file',default='comparison-results.json')
+    p.add_argument('--expected-answers',type=int,default=18)
+    p.add_argument('--additional-artifact-root',type=Path,action='append',default=[])
+    a=p.parse_args();a.artifact_root=a.artifact_root.resolve()
+    result=json.loads((a.artifact_root/a.results_file).read_text())
+    if result['missing_annotations'] or len(result['rows'])!=a.expected_answers:raise RuntimeError('incomplete comparison cannot publish a completed capsule')
+    capsule=a.artifact_root/f'publication/development-capsule-{a.version}.tar.gz'
     capsule.parent.mkdir(parents=True,exist_ok=True)
     if capsule.exists():raise RuntimeError('immutable capsule already exists')
     files=sorted(p for p in a.artifact_root.rglob('*') if p.is_file() and 'publication' not in p.parts and not p.name.endswith('.lock'))
+    for additional in a.additional_artifact_root:
+        files+=sorted(p for p in additional.resolve().rglob('*') if p.is_file() and 'publication' not in p.parts and not p.name.endswith('.lock'))
     files+=sorted(p for p in DOC.rglob('*') if p.is_file() and p.suffix!='.png')
     files+=sorted(p for p in (ROOT/'analysis').glob('*roboboat*.py'))
     staging=capsule.with_suffix('.tmp')
@@ -25,13 +32,13 @@ def main():
                     with path.open('rb') as f:tar.addfile(info,f)
     staging.replace(capsule)
     sha=hashlib.sha256(capsule.read_bytes()).hexdigest()
-    identity=hashlib.sha256(('marine-development-intake-v1:'+sha).encode()).hexdigest()
-    plan={'schema':'crane-diagnostic-batch-plan/v1','plan_id':'roboboat-terminal-development-intake-v1',
+    identity=hashlib.sha256((f'marine-development-intake-{a.version}:'+sha).encode()).hexdigest()
+    plan={'schema':'crane-diagnostic-batch-plan/v1','plan_id':f'roboboat-terminal-development-intake-{a.version}',
           'pool_limits':{'publication':1},'registered_looks':{},
           'scientific_role':'post-execution development artifact intake; not a prospective scientific look',
           'jobs':[{'job_id':'boat-terminal-capsule-intake','request_identity':identity,'pool':'publication','dependencies':[],'sequence_index':0,'arm':'boat-terminal-exploratory'}]}
-    plan_path=DOC/'publication_intake_plan_v1.json';ledger=DOC/'publication_intake_ledger_v1.json'
-    manifest_path=DOC/'publication_artifact_manifest_v1.json'
+    plan_path=DOC/f'publication_intake_plan_{a.version}.json';ledger=DOC/f'publication_intake_ledger_{a.version}.json'
+    manifest_path=DOC/f'publication_artifact_manifest_{a.version}.json'
     save(plan_path,plan)
     save(manifest_path,{'schema':'crane-diagnostic-batch-artifact-manifest/v1','job_id':'boat-terminal-capsule-intake','request_identity':identity,
        'visibility':'mixed-separated-development-capsule-evaluator-only-not-a-method-input',
