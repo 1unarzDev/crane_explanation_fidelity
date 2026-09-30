@@ -3899,3 +3899,29 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   measurement remain necessary; all B0/B1/B3 versus B4 secondary episode effects, intervals and
   Holm-corrected paired p-values must eventually be reported, including inconclusive/unfavorable
   outcomes. Alpha, quarantine, physical allocation and confirmation/replication N are unchanged.
+
+
+## 2026-09-30 — add contextual attachment proposal interface; retain unqualified measurement status
+
+- **Implementation:** the separate development validator binds each supplied proposal to the exact
+  question, full answer, ordered unchanged atom spans and canonical ontology. Character-offset
+  citations distinguish repeated identical spans. Strict fields prohibit raw-role, support-label,
+  mechanistic and rank injection. Known proposed contracts remain semantic proposals only.
+- **Scope handling:** retain endorsed hedges as assertions; unresolved stance/scope/referents have
+  null proposed contracts. Negative assertions cannot borrow the current positive episode
+  contracts, source facts cannot become episode events, and concrete unmatched assertions remain
+  OUT_OF_CATALOG rather than disappearing as nonapplicable. Limitations/unendorsed material retain
+  their text and contextual notes. Proposition polarity is not inferred from syntactic negation.
+  Equivalence, actual endorsement, referents and polarity remain unverified by structural checks.
+- **Bound candidate:** strict input/return schemas and nine hash-bound components describe an
+  offline interface, authorizing zero calls and no pilot packet construction or method-key join.
+  No semantic qualification references or execution freeze were authored. Twenty-one focused
+  candidate checks pass; the broader attachment/readiness set has thirty-three passing checks.
+  These synthetic checks establish interface behavior, not annotation accuracy or statistical N.
+- **Governance:** the failed combined support canary and unlaunched C remain bound and unchanged.
+  No retry, further combined candidate cycle, support call, endpoint export or confirmation is
+  activated. No retained atom is interpreted or scored. P11 remains closed on nineteen conditions;
+  semantic attachment qualification, endpoint mapping, support/adjudication and fresh aligned
+  B0–B4 development remain open. Alpha, physical allocation and confirmation/replication N are
+  unchanged. All prospective episode comparisons and inconclusive/unfavorable reporting remain
+  required.

@@ -551,3 +551,20 @@ measurement and episode inference remain open. The combined canary failure and u
 unchanged. No model call, key join, annotation label, endpoint result, alpha spending or physical
 allocation occurred. P11 still has nineteen open conditions; confirmation/replication N remain zero.
 See `docs/CLAIM_ATTACHMENT_BOUNDARY_2026-09-30.md` and its machine-readable inventory.
+
+## Latest 2026-09-30 contextual attachment interface checkpoint
+
+A development validator and strict input/return schemas now preserve full question/answer context,
+ordered unchanged atoms, exact Unicode spans and ontology identity in supplied attachment proposals.
+They prohibit raw-rank/support/role injection and inconsistent attachment of unresolved, negative
+or source-only proposals to the current positive episode contracts. Concrete unmatched assertions
+remain visible; endorsed hedges do not become automatic abstention. This is a structural interface,
+with semantic equivalence, actual scope/endorsement and endpoint rank explicitly unqualified.
+
+The nine-component bound candidate authorizes zero calls, no pilot packet construction and no
+method-key join. Twenty-one candidate checks pass; thirty-three pass with the prior attachment and
+readiness checks. All specimens are project-authored synthetic interface cases. No retained pilot
+atom has been interpreted, attached or scored. The failed combined support canary and unlaunched C
+remain unchanged. P11 still has nineteen open conditions and confirmation/replication N remain zero.
+See `docs/CONTEXTUAL_ATTACHMENT_RECORDS_2026-09-30.md` and the contextual-attachment development
+candidate declaration. Semantic qualification and fresh aligned five-method measurement remain open.
