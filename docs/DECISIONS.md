@@ -3057,3 +3057,18 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - **Boundary:** the search does not establish that these are the only missing qualifiers or that
   any of the 113 inventories is semantically complete. It creates no support label, role label,
   endpoint score, independent episode, or alpha use.
+
+## 2026-09-30 — draft a separate role/kind/polarity successor without calls
+
+- **Construction decision:** prepare an uncalled v2 measurement candidate that classifies stance,
+  ontology-oriented claim kind, and explicit polarity as separate fields. This addresses the v1
+  conflation of a source observation, an asserted episode event, and a linear abstraction level.
+  The draft codebook distinguishes completed `Wait`, measured response recovery, raw motion,
+  delivered command, command-motion relation, geometry, named physical causes, and recovery
+  causation. `docs/CLAIM_ROLE_V2_CONSTRUCTION_DRAFT.md` records the boundaries.
+- **Implementation:** a candidate prompt, structured return schema, and structural validator
+  require exact atom IDs and claim-local rationale spans. Four focused tests pass. The validator
+  explicitly withholds mechanistic flags, response rank, and endpoint scoring.
+- **Boundary:** no fresh held-out suite, semantic construction review, task freeze, schema canary,
+  qualification call, pilot role label, or endpoint mapping exists yet. The failed v1 disposition
+  and P11 prohibition remain in force; independent N and alpha do not change.

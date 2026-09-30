@@ -247,3 +247,10 @@ proposed wording are bound by
 `manifests/annotation/evidence-calibration-pilot-full-bank-actor-triage-v1.json` and its read-only
 audit. Alongside the earlier three proposals, these are review candidates only; no form is
 approved and support annotation remains prohibited.
+
+An uncalled v2 assertion-measurement candidate now has a draft codebook, prompt, structured
+schema, and structural validator that separate stance, claim kind, and polarity. Its four focused
+validator tests pass, and its outputs explicitly cannot authorize a mechanistic flag, response
+rank, or endpoint score. The candidate lacks a fresh held-out suite, reviewed gold, freeze,
+qualification, and prospectively bound endpoint mapping. The v1 failed result remains the active
+measurement disposition; P11 remains closed.

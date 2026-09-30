@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://crane.local/schemas/evidence-calibration-claim-role-return-v2-development.schema.json",
+  "title": "Method-blind role, kind, and polarity return (uncalled development candidate)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "opaque_response_id", "claim_roles", "attestation"],
+  "properties": {
+    "schema": {"type": "string", "const": "crane-evidence-calibration-claim-role-return/v2-development"},
+    "opaque_response_id": {"type": "string", "minLength": 1},
+    "claim_roles": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["item_id", "stance", "claim_kind", "polarity", "rationale_span"],
+        "properties": {
+          "item_id": {"type": "string", "minLength": 1},
+          "stance": {"type": "string", "enum": ["ASSERTED_CURRENT_EPISODE", "HEDGED_CURRENT_EPISODE", "INFERENCE_LIMITATION", "UNENDORSED_HYPOTHETICAL_OR_QUOTE", "UNRESOLVED"]},
+          "claim_kind": {"type": "string", "enum": ["TASK_OUTCOME", "SOFTWARE_ACTION_EVENT", "RECOVERY_TRACE_EVENT", "MEASURED_RESPONSE_RECOVERY", "MOTION_OBSERVATION", "COMMAND_OBSERVATION", "COMMAND_MOTION_RELATION", "GEOMETRY_PLANNING_RELATION", "SPECIFIC_PHYSICAL_CAUSE", "RECOVERY_CAUSAL_RELATION", "SOURCE_OR_CONFIG_FACT", "EVIDENCE_AVAILABILITY", "OTHER"]},
+          "polarity": {"type": "string", "enum": ["POSITIVE", "NEGATIVE", "NOT_APPLICABLE"]},
+          "rationale_span": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "attestation": {"type": "string", "const": "METHOD_BLIND_ROLE_KIND_POLARITY_ATTEMPT"}
+  }
+}
