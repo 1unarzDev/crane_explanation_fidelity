@@ -147,3 +147,5 @@ PY
 ```
 
 Result: 67 passed. The frozen historical platform's Git objects were also read-only verified against its four declared hashes; current launcher/fixture differ, current profile/route match. Neither freeze nor inherited test was edited.
+
+Both commands above have now executed: preparation passed and all 36 packets are frozen; support run is live in session `58415`. Extraction session `97278` completed with all 62 returns. Do not restart either live/resolved request identity. All 31 project reviews and their retained histories are under `artifacts/roboboat-terminal-atomic-inventory-v1`; the reassessment declaration binds exact bytes. At initial publication there are two support intents and no finalized annotations. Use the existing session to poll; only resume the command after verifying the previous process ended and checking for unresolved intents. No provisional score should be inferred from packet publication or transport progress.
