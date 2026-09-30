@@ -22,7 +22,7 @@ paired support annotation or evidence-calibration effect. Astra-high is qualifie
 synthetic atomic-support task and a separate stance/kind/polarity task; pilot inventories and
 endpoint mapping remain open. P11 is not frozen;
 confirmation and replication each have independent N=0. The exact active boundaries and open
-gates are in the [current-state checkpoint](docs/CURRENT_STATE_2026-09-29.md),
+gates are in the [current-state checkpoint](docs/CURRENT_STATE_2026-09-30.md),
 [evidence-calibration protocol](docs/EVIDENCE_CALIBRATION_PROTOCOL.md), and newest entries of the
 [decision log](docs/DECISIONS.md). The older framing and development ledger below remain dated
 history; they do not supersede those decisions or authorize confirmatory calls.

@@ -14,7 +14,7 @@ def test_handoff_reports_current_partial_measurement_without_promoting_a_result(
     assert result["errors"] == []
     assert result["valid_b2_outputs"] == 57
     assert result["accepted_deterministic_b4_outputs"] == 60
-    assert result["structural_atomization_returns"] == 17
+    assert result["structural_atomization_returns"] == 113
     assert result["retained_ambiguous_atomization_requests"] == 1
     assert result["reviewed_method_blind_rubrics"] == 57
     assert result["common_source_context_conditions"] == 57

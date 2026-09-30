@@ -12,10 +12,10 @@ from build_evidence_calibration_pilot_inventory_review import build  # noqa: E40
 
 def test_review_forms_are_blind_pending_and_exclude_unqualified_levels(tmp_path: Path) -> None:
     result = build(tmp_path)
-    assert result["forms"] == 17
+    assert result["forms"] == 113
     assert result["method_key_opened"] is False
     forms = sorted(tmp_path.glob("*.json"))
-    assert len(forms) == 17
+    assert len(forms) == 113
     for path in forms:
         form = json.loads(path.read_text(encoding="utf-8"))
         assert form["status"] == "PROJECT_REVIEW_PENDING"
