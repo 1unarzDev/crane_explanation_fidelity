@@ -1,5 +1,24 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Installed-client plan-bound owner addendum after `60c52cfb` — 2026-09-30
+
+A [separate observer v7](INSTALLED_CLIENT_PLANNED_OWNER_2026-09-30.md) routes through
+coordinator v2 and unchanged MCP v5. Seventy-four focused checks in two invocations
+and five separately retained pre-bound CLI 0.159.2 offline observations pass.
+Read-only audits verify plan bytes, configuration membership, paths and selected
+source hashes before/after cleanup. All owner intents remain pending after explicit
+app-server SIGTERM. Ten predeclared direct admission probes are denied: changed
+configurations fail membership, unchanged configurations fail retained ownership.
+No second installed client or study retry is launched. Exact tools/outputs, failed
+CPU charges, null compute denials and full reads still pass; six services absent,
+stderr and turn/item notifications zero. Retain totals 325.727/336.728/348.208 ms
+against 310 ms and overshoots 15.727/26.728/38.208 ms without method-effect/hard-cap
+claims. Scientific plan authorization, full provider/model tools/rendering/capacity,
+complete turn costs, immutable runtime and durability remain open. Study callers
+stay unchanged; no semantic/annotation call, score, physical acquisition, alpha
+spending or P11 freeze. N=0, nineteen open conditions and unanswered reopening remain.
+
+
 ## Plan-membership addendum after `13122149` — 2026-09-30
 
 A [separate condition coordinator v2](PLANNED_CONDITION_SESSION_2026-09-30.md)

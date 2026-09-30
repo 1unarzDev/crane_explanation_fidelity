@@ -4957,3 +4957,29 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   alpha spending or P11 freeze. Failed combined support/unlaunched C and unanswered
   reopening remain controlling. N=0 and nineteen open conditions; five-method
   reporting remains required. This freezes no scientific schedule/population/budget.
+
+
+## 2026-09-30 — inspect plan-bound condition ownership through installed client
+
+- **Candidate:** observer v7 selects coordinator v2 and unchanged MCP v5/broker v7/
+  ledger v2/executor v10. Execution plan and bound registry precede each synthetic
+  client launch. Preserve observer v6 and offline profile/RPC allowlist.
+- **Evidence:** 74 focused checks in two invocations and five separate pre-bound
+  CLI 0.159.2 observations pass. Read-only ownership auditing checks plan bytes,
+  scope/configuration membership, paths and selected source bindings. Exact tools/
+  outputs, failed-work CPU charging and compute denial/read preservation remain.
+  Six services absent; all client stderr and turn/item notification counts zero.
+- **Cleanup/admission:** all five owner intents remain pending after recorded SIGTERM,
+  with no fabricated terminal. Ten predeclared direct constructor probes are denied
+  before session creation: changed configurations fail membership, unchanged permitted
+  ones fail ownership. No second installed client or study/model retry is launched.
+  Client reconnection/restart behavior is not claimed.
+- **Overshoot/scope:** retain totals 325.727/336.728/348.208 ms against 310 ms and
+  overshoots 15.727/26.728/38.208 ms; no hard cap, worst-case bound or method effect.
+  Supplied development-plan validity/authorization, global scientific schedule,
+  full model tools/rendering/capacity, complete turn accounting, immutable runtime
+  and durability remain open. Study callers do not migrate.
+- **Governance:** no semantic/annotation output, pilot score, method-key join, physical
+  acquisition, alpha spending or P11 freeze. Failed support/unlaunched C and unanswered
+  reopening remain controlling. N=0 and nineteen open conditions; prospective
+  five-method reporting and unfavorable/inconclusive outcomes remain required.
