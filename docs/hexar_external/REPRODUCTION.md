@@ -118,7 +118,7 @@ For complete unsupported-causal reporting, the final-only secondary `report_caus
 
 ## Reserved blind extraction route
 
-Once ordered generation closes, session 36685 runs `after_reserved_generation_v3.py --release-pid 1252763` and logs to `v3/ordered-extraction.log`. It verifies the live release process identity, waits for its termination, then binds a projection containing only opaque IDs/exact answer text, runs at most two isolated no-tool Astra/high developer extraction calls, and stops at a candidate inventory. The projection contains no question, evidence/reference, method key, ontology or support label. Unique exact texts share extraction only; all physical recording/question/mask jobs retain separate support assessment and analysis identities.
+Historical closed route: once ordered generation closed, session 36685 ran `after_reserved_generation_v3.py --release-pid 1252763` and logs to `v3/ordered-extraction.log`. It verifies the live release process identity, waits for its termination, then binds a projection containing only opaque IDs/exact answer text, runs at most two isolated no-tool Astra/high developer extraction calls, and stops at a candidate inventory. The projection contains no question, evidence/reference, method key, ontology or support label. Unique exact texts share extraction only; all physical recording/question/mask jobs retain separate support assessment and analysis identities.
 
 ```bash
 data/hexar_external/.venv/bin/python analysis/hexar_external/extract_v3.py --stage project
@@ -141,3 +141,5 @@ Extraction/role coding is unqualified developer work, separate from the qualifie
 ## Current ordered support execution
 
 Generation/extraction are closed; do not restart their historical watchers. Final inventory and independent parent causal-role sidecar are released before support. `after_roles_v3.py --role-pid 1388167` waits for the exact active roles process to terminate and its summary to exist, assembles the independent role sidecar, then builds packets and executes the unchanged two-worker qualified support queue. Session 3433 logs to `data/hexar_external/v3/ordered-support.log`; role session89079 is independent. Do not launch duplicate queues. After termination, the standalone annotate command above resumes by retaining every existing disposition, including technical failures; it does not retry them. Report commands remain manual after the complete summary exists.
+
+A separate guarded one-shot report observer is active (session 81533), command `after_support_report_v3.py --support-pid 1390133`, log `v3/ordered-report.log`. It waits for the exact ordered support process to terminate and its closed summary, runs the registered principal/causal reports only if their result files are absent, then final structural integrity. It retains existing report files on resume. Final figure/manuscript/independent output-accounting review and byte preservation remain root tasks after this observer closes.
