@@ -3165,3 +3165,20 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - **Boundary:** no pilot role label or B2/B4 comparative annotation was generated. P11 remains
   closed on 17 readiness conditions including the absent freeze; confirmation and replication
   independent N remain zero, and no new alpha was used.
+
+## 2026-09-30 — bind the first 17 blind pilot atomic inventories after project review
+
+- **Review:** inspect each of the first 17 blinded response texts against all 160 normalized
+  candidate claims and their exact spans. Accept the candidate meanings, with three exact
+  `FollowPath` actor-qualifier repairs already proposed by the earlier triage. Find no additional
+  omitted assertion in this prefix. The project review is agent-assisted development work, not
+  human validation or automated atomic-support annotation.
+- **Retention:** bind the 17 original pending forms and earlier provisional triage by raw hashes
+  in `evidence-calibration-pilot-inventory-prefix-project-review-v1.json`. Do not rewrite the
+  extractor returns or original forms. Repair the prefix triage audit to select its frozen 17 IDs;
+  the earlier audit incorrectly treated the later 96 forms added to the same directory as a
+  change to the original 17-form set.
+- **Boundary:** 96 inventories remain unreviewed and the one unknown-disposition extraction
+  request remains quarantined. Whole-bank completeness, qualified support annotation, role
+  application, method-key join, B2/B4 effect, and P11 remain closed. No independent N or alpha
+  changes.

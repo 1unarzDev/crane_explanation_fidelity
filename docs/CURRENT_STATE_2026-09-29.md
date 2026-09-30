@@ -303,3 +303,11 @@ replication layouts physically materialized, with 100 old-schedule replication l
 The error-budget audit still reports 0.02 consumed, at most 0.01 future discovery alpha, and 0.02
 replication-only. Confirmation and replication independent N remain zero. The manuscript and
 claim–evidence map describe this as development measurement readiness, not a comparative result.
+
+The first 17 blinded pilot atomic inventories now have a separate hash-bound project review:
+160 candidate claims were checked against their answer texts and spans, with the three previously
+proposed `FollowPath` actor qualifiers accepted. The extractor records and original pending forms
+remain immutable. A defect in the old prefix triage audit was repaired: it now verifies the frozen
+17 IDs even though 96 later forms share the directory. This is partial development inventory
+review; 96 forms and the quarantined request remain unresolved. No support or role annotation,
+method join, comparative score, or P11 authorization follows.

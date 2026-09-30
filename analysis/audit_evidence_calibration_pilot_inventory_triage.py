@@ -33,8 +33,14 @@ def audit(manifest_path: Path = DEFAULT_MANIFEST,
     scope = manifest["scope"]
     if scope.get("method_join_key_opened") is not False or scope.get("evaluator_truth_opened") is not False:
         raise ValueError("inventory triage is no longer blinded")
+    # The original triage covered the first 17 forms. Later extraction added 96
+    # forms to the same directory, so select the frozen prefix by its bound IDs.
+    review = json.loads(prefix_review_path.read_text(encoding="utf-8"))
+    ids = [row["opaque_response_id"] for row in review["per_response_provisional_disposition"]]
+    if len(ids) != len(set(ids)) or len(ids) != scope["review_forms_inspected"]:
+        raise ValueError("provisional prefix review is not an exact 17-form inventory")
     root = ROOT / scope["review_form_root"]
-    paths = sorted(root.glob("*.json"))
+    paths = sorted(root / f"{response_id}.json" for response_id in ids)
     pairs = [[path.name, hashlib.sha256(path.read_bytes()).hexdigest()] for path in paths]
     pair_hash = hashlib.sha256(json.dumps(pairs, separators=(",", ":")).encode()).hexdigest()
     if len(paths) != scope["review_forms_inspected"] or pair_hash != scope["sorted_filename_and_raw_sha256_pairs_json_sha256"]:
@@ -97,7 +103,6 @@ def audit(manifest_path: Path = DEFAULT_MANIFEST,
     if repairs != EXPECTED_REPAIRS:
         raise ValueError("bound proposed repairs changed")
 
-    review = json.loads(prefix_review_path.read_text(encoding="utf-8"))
     review_scope = review["scope"]
     if (review.get("schema") != "crane-evidence-calibration-pilot-inventory-prefix-review/v1"
             or review.get("status") != "PROVISIONAL_AGENT_ASSESSED_METHOD_BLIND_PREFIX_REVIEW"
