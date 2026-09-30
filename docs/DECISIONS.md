@@ -3409,3 +3409,16 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   before interpreting any later paired development estimate. The continuation generates only
   stance/kind/polarity returns; it authorizes no support label, diagnostic rank, endpoint score,
   P11 freeze, independent confirmation N, replication N, or alpha consumption.
+
+## 2026-09-30 — pass the separate continuation schema canary
+
+- **Pre-call gate:** the unchanged host transport preflight reported
+  `READY_FOR_SCHEMA_CANARY` without a model call. The continuation's separate one-shot,
+  non-study schema canary then returned a structurally valid Astra-high record. Its read-only
+  audit revalidates the exact declared identity, raw return, original interruption snapshot,
+  no-tool/no-retry constraints, and closed endpoint boundary. The canary's record and intent
+  are DVC-governed and pushed before pilot continuation.
+- **Boundary:** no pilot continuation call has run at this checkpoint. The canary authorizes
+  only the already declared 158 never-launched development stance/kind/polarity calls. The
+  original unknown A identity remains quarantined; support labels, endpoint rank, comparative
+  effect, P11, independent confirmation/replication N, and alpha remain unchanged.

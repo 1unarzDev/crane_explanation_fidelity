@@ -166,3 +166,8 @@ order, with an unchanged qualified task and a separate output root. Six offline 
 Its new non-study schema canary has not run at this declaration checkpoint. The unknown A
 identity remains quarantined; even a completed continuation will need a recorded incomplete-pass
 measurement disposition and whole-episode sensitivity before paired development interpretation.
+
+The continuation's separate non-study schema canary subsequently passed under the bound
+Astra-high configuration, following a network-ready non-study host preflight. Its record,
+intent, and read-only audit are bound and DVC-pushed. No continuation pilot call had run at
+this pre-call checkpoint; all P11, support, endpoint, and alpha gates remain unchanged.
