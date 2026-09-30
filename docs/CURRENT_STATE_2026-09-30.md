@@ -1,5 +1,16 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Execution addendum after `ed3281f` — 2026-09-30
+
+The offline broker now has a separate bounded-computation v2 candidate: explicit wall time,
+per-process CPU/address space and combined stdout/stderr limits; overflow is retained as a technical
+failure with bounded partial-byte audit. Original versions remain unchanged and no caller switches
+implicitly. Lossless registered-file reads and B2/B3/B4 tool parity remain. Aggregate resources,
+full runtime, provider routing/confinement, exact tokenizer capacity and study budgets remain open.
+See [bounded local execution](BOUNDED_LOCAL_EXECUTION_2026-09-30.md) and its development manifest.
+No model call or measurement occurred; P11 still has nineteen open conditions. The reopening
+proposal is pending and confirmation/replication N remain zero.
+
 ## Current summary after `2ad2a27` — 2026-09-30
 
 This summary supersedes earlier status statements below; the dated checkpoints remain preserved.

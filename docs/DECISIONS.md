@@ -4275,3 +4275,23 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   unadopted; the failed combined canary and unlaunched C are unchanged. P11 retains nineteen open
   conditions with no hash mismatch; confirmation/replication independent N remain zero, and all
   prospective episode comparisons, intervals and corrected p-values remain required.
+
+## 2026-09-30 — add a versioned bounded local computation candidate
+
+- **Development defect:** the original local sandbox captures subprocess streams without a byte
+  bound. Preserve its code and historical hash-bound broker; add separate v2 sandbox/broker files
+  with explicit wall, per-process CPU/address-space and combined output limits. No caller switches
+  automatically and no scientific execution budget is selected.
+- **Failure retention:** selector capture detects overflow with one extra byte, terminates the
+  isolated invocation and retains a null successful result plus bounded partial-byte audit. Strict
+  UTF-8 failures and wall timeout are technical failures without retry or host fallback. Registered
+  visible-file reads remain lossless. Original tool schemas preserve B2/B3/B4 access parity.
+- **Verification and limits:** actual namespace tests exercise CPU/address-space enforcement,
+  stdout/stderr overflow, exact byte-boundary output, Unicode/binary output, descendant cleanup,
+  immutable retention and the original inventory tool. Per-process limits do not establish
+  aggregate process-tree resources, scratch or host-read containment. `/usr`, provider routing,
+  tokenizer capacity and complete execution budgets still require prospective binding.
+- **Governance:** bind the candidate and note under the existing development-only readiness record.
+  P11 stays closed with nineteen open conditions; no new model call, annotation, method-key join,
+  episode effect, physical allocation or alpha expenditure occurs. The measurement reopening
+  proposal remains pending; earlier combined support failure and unlaunched C remain unchanged.

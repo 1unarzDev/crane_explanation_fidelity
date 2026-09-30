@@ -1,0 +1,70 @@
+{
+  "schema": "crane-bounded-local-execution/v2-development",
+  "recorded_date": "2026-09-30",
+  "status": "LOCAL_LIMITS_TESTED_PROVIDER_AND_AGGREGATE_RESOURCE_GATES_OPEN",
+  "bindings": [
+    {
+      "path": "analysis/evidence_calibration_local_tool_sandbox_v2.py",
+      "raw_sha256": "e6ef4a67af326bb76293186ef5e99743e041bb41622d9b7154ef651d072e5906"
+    },
+    {
+      "path": "analysis/evidence_calibration_tool_broker_v2.py",
+      "raw_sha256": "f7250b3f00b7ca3f9cc65d72b4ff96ba3b756a831702e2965f8eee9a5ac13dcf"
+    },
+    {
+      "path": "tests/test_evidence_calibration_bounded_local_tools.py",
+      "raw_sha256": "7195f599b08664b5be6768a38bd05d6edb128fcb5b0382c8c5a8d7f22d5f3162"
+    },
+    {
+      "path": "docs/BOUNDED_LOCAL_EXECUTION_2026-09-30.md",
+      "raw_sha256": "c0aa73bc8bfb0084e4dc1bfe6763857124fdef1cb2ec86feb5c1fb938840b6a2"
+    },
+    {
+      "path": "analysis/evidence_calibration_local_tool_sandbox.py",
+      "raw_sha256": "3fc22a0519736f6764452fe90b57340e7a2018defc2e89187fece6fd978da90c"
+    },
+    {
+      "path": "analysis/evidence_calibration_tool_broker.py",
+      "raw_sha256": "a653d0297739d1726ee7da2cc62c49d1d3deabb3400a7eddf9499d225bdb8d53"
+    },
+    {
+      "path": "analysis/stage_evidence_calibration_workspace.py",
+      "raw_sha256": "3044778ac6f6de74b80884a8b5e777d7cea9e9e42cea56e20bde7999954a7d0b"
+    }
+  ],
+  "executable_observation": {
+    "prlimit_path": "/usr/bin/prlimit",
+    "prlimit_version": "util-linux 2.42.3",
+    "prlimit_raw_sha256": "194461184536b1fcc955574bccf03f9e78131a463228cfae7e820a7aaf208f31"
+  },
+  "focused_tests_passed": 15,
+  "combined_targeted_tests_passed": 38,
+  "local_limits_fields": [
+    "wall_seconds",
+    "cpu_seconds_per_process",
+    "address_space_bytes_per_process",
+    "combined_output_bytes"
+  ],
+  "study_budgets_selected": false,
+  "subprocess_output_capture_bounded": true,
+  "overflow_is_technical_failure": true,
+  "partial_bytes_are_successful_tool_result": false,
+  "registered_file_reads_lossless": true,
+  "original_versions_unchanged": true,
+  "existing_callers_migrated": false,
+  "aggregate_process_tree_resources_bound": false,
+  "scratch_storage_bound": false,
+  "full_runtime_bound": false,
+  "provider_harness_confinement_verified": false,
+  "provider_client_implemented": false,
+  "mcp_transport_implemented": false,
+  "model_calls_authorized": false,
+  "model_call_attempted": false,
+  "measurement_proposal_adopted": false,
+  "pilot_annotation_authorized": false,
+  "endpoint_scoring_authorized": false,
+  "method_key_opened": false,
+  "p11_authorized": false,
+  "confirmation_independent_n": 0,
+  "replication_independent_n": 0
+}
