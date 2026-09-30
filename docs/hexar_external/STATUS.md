@@ -1,3 +1,13 @@
+# Current status — fresh compatibility assessment pending
+
+The isolated `hexar-external-development` checkout remains the sole write target. Historical recalculation, native component parity and six-family removal closure are complete. V2 assessment is closed and retained: 138/162 valid labels, below its 90% technical gate; primary full-cohort contract-minus-prompt bounds [−3.7, +22.2] percentage points include zero. No statistically supported improvement is established. HX-PROMPT retains 100% required-unit coverage and zero unsupported physical-cause assertions among finalized labels.
+
+Fresh v3 qualification passed both unchanged 100% gates (23 atoms and 37 fields per pass). The prospectively fixed all-family q1 compatibility slice generated 54/54 fresh valid answers, with no retries. Its independent blinded inventory is in progress. This slice adds no physical recordings and does not replace the held-out three-query endpoint. Twelve reserved recordings remain untouched pending the unchanged ≥90% qualified technical-completion gate and hash-bound descriptive freeze.
+
+Next: finish the fresh inventory, run `audit_v3.py --cohort development`, then `annotate_v3.py --cohort development --stage packets` and `--stage annotate`. Once the gate passes, execute `release_reserved_v3.py`, inventory/audit/annotate all reserved answers, and run the single descriptive `report_v3.py --cohort reserved`. All scripts use `data/hexar_external/.venv/bin/python`; the two-worker generation and annotation queues run sequentially. Alpha allocated/consumed remains zero. No shared pin/ledger, main/boat file, merge, push or publication has changed.
+
+The entries below preserve the development history; this current-status block supersedes earlier waiting/activation descriptions.
+
 # HEXAR external evaluation status — 2026-09-30
 
 **V2 external qualification passed prospectively after independent construct review. Six-family development execution is complete; the earlier v1 failure is retained unchanged. No improvement claim or confirmatory test is supported yet.**

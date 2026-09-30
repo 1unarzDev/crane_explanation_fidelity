@@ -74,3 +74,25 @@ data/hexar_external/.venv/bin/python analysis/hexar_external/after_pilot_v2.py
 ```
 
 The ordered release waits for the development annotation summary, computes the declared pilot endpoint, admits only the descriptive frozen design, builds all twelve reserved recordings' transformed packets and independent references, then regenerates all three methods and exports their blind bank. It never allocates alpha, changes a model/source pin or runs annotation simultaneously with model generation. If a stage fails, inspect its retained log and resume the same script; completed immutable outputs are reused. Reserved inventory and qualified annotations remain a separate final gate, followed by `report_v2.py --cohort reserved`, `validate_v2.py` and `archive_v2.py`. Do not reinterpret a frozen technical failure as a semantic result or silently regenerate it.
+
+## Current v3 route; old release watchers retired
+
+V2 closed below its technical gate. Its `after_pilot_v2.py` auto-release watcher was stopped before reserved activation; do not restart it. All failed returns, valid labels and descriptive bounds remain unchanged. V3 changes only the annotation applicability clarification, prospectively qualified on eight fresh fixtures. Production methods, masks, endpoint and independent reference rules remain unchanged. The fresh q1 compatibility pilot has 54 valid outputs; it adds no physical N. Its qualified assessment must close at ≥90% completion before a descriptive reserved freeze. No confirmatory allocation is available.
+
+```bash
+data/hexar_external/.venv/bin/python analysis/hexar_external/annotate_v3.py --cohort development --stage bank
+# Independent blinded inventory is required; do not synthesize support labels.
+data/hexar_external/.venv/bin/python analysis/hexar_external/audit_v3.py --cohort development
+data/hexar_external/.venv/bin/python analysis/hexar_external/annotate_v3.py --cohort development --stage packets
+data/hexar_external/.venv/bin/python analysis/hexar_external/annotate_v3.py --cohort development --stage annotate
+# Executes only after the unchanged technical gate passes:
+data/hexar_external/.venv/bin/python analysis/hexar_external/release_reserved_v3.py
+# Then independently inventory all reserved answers before these commands:
+data/hexar_external/.venv/bin/python analysis/hexar_external/audit_v3.py --cohort reserved
+data/hexar_external/.venv/bin/python analysis/hexar_external/annotate_v3.py --cohort reserved --stage packets
+data/hexar_external/.venv/bin/python analysis/hexar_external/annotate_v3.py --cohort reserved --stage annotate
+data/hexar_external/.venv/bin/python analysis/hexar_external/report_v3.py --cohort reserved
+data/hexar_external/.venv/bin/python analysis/hexar_external/archive_v3.py
+```
+
+The release is twelve reserved recordings, all three original questions and three conditions (108 packets, 324 method outputs). Generation and annotation queues remain sequential, each with at most two inference workers. Resume reuses immutable completed outputs; zero technical or quality retries are allowed. The final archive hashes ignored local call/cache assets separately from integration artifacts. Recording redistribution rights remain unresolved.
