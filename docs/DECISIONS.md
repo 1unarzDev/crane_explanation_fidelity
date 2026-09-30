@@ -4478,3 +4478,21 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   scoring, method-key join, model/annotation invocation, physical acquisition or
   alpha expenditure. The failed combined support gate and pending reopening stay
   unchanged. P11 keeps nineteen open conditions and confirmation/replication N=0.
+
+
+## 2026-09-30 — observe user-service resource controls without adopting a method harness
+
+- **Open prerequisite:** v2 local execution bounds per-process CPU/address space,
+  wall time and output, but does not certify aggregate process-tree containment.
+- **Observation:** following an exploratory fixed operator inspection, retain a
+  separate one-shot synthetic service probe. Requested kernel memory/swap/task/CPU
+  rate values match; seven children start, further task creation blocks, every child
+  is reaped and the transient unit is absent. Eleven synthetic tests pass.
+- **Boundary:** this proves current service availability and bounded task behavior,
+  not memory-pressure enforcement, cumulative CPU/scratch budgets, immutable runtime
+  or full method/provider confinement. CPUQuota is a rate limit. The probe constants
+  are not study budgets; no existing sandbox/broker caller changes.
+- **Governance:** no model/automated annotation call, retained response scoring,
+  method-key join, physical acquisition, alpha expenditure or P11 freeze. Failed
+  combined measurement/unlaunched C and pending reopening remain unchanged. P11
+  retains nineteen open conditions and confirmation/replication independent N=0.

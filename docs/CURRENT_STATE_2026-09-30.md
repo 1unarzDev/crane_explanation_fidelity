@@ -1,5 +1,16 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Process-tree controls addendum after `c7ecb8fb` — 2026-09-30
+
+A [one-shot operator probe](CGROUP_AVAILABILITY_2026-09-30.md) observes user-service
+kernel memory/swap/task/CPU-rate settings and actual task-creation blocking. All
+seven children are reaped and the transient service is collected; eleven synthetic
+checks pass. Memory-pressure behavior, cumulative CPU/scratch limits and integration
+with the namespace/runtime/provider harness remain open. Existing method callers and
+study budgets are unchanged. No semantic execution, annotation or endpoint scoring
+occurred; P11 keeps nineteen open conditions, N=0 and pending measurement reopening.
+
+
 ## Five-method reporting addendum after `a16a63f9` — 2026-09-30
 
 A [separate v2 reporting layer](FIVE_METHOD_REPORTING_2026-09-30.md) now reports

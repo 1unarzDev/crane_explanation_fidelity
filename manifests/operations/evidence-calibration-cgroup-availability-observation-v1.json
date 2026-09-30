@@ -1,0 +1,50 @@
+{
+  "schema": "crane-cgroup-availability-observation/v1-development",
+  "recorded_date": "2026-09-30",
+  "status": "PASS_BOUNDED_CGROUP_AVAILABILITY_ONLY",
+  "bindings": [
+    {
+      "path": "analysis/observe_evidence_calibration_cgroup_limits.py",
+      "raw_sha256": "aaa610f75a0c872f05941957f291ed6a09dd239510fae056ee4bb864679ccddb"
+    },
+    {
+      "path": "tests/test_evidence_calibration_cgroup_observation.py",
+      "raw_sha256": "d5d3107334de203a483b3101f4eb3f166222f9f310b5685f17c25c031335ac52"
+    },
+    {
+      "path": "docs/CGROUP_AVAILABILITY_2026-09-30.md",
+      "raw_sha256": "b9adafbff6488c0e4515eaab75b85bd21923370b57dfab6641f1e117ea31365b"
+    }
+  ],
+  "local_transaction": {
+    "directory": "output/infrastructure/cgroup-availability-development-v1",
+    "intent_sha256": "caa78f83d260571a5a025b199563799c72a9bd8545c773d522edba26e6ebd1c9",
+    "terminal_sha256": "1c1c70be2838d305421c9f0b722575334f64b3ff7a620d8334e0a8d1f5501ef8"
+  },
+  "observation": {
+    "kernel_settings": {
+      "memory.max": "67108864",
+      "memory.swap.max": "0",
+      "pids.max": "8",
+      "cpu.max": "100000 100000"
+    },
+    "children_started": 7,
+    "task_creation_blocked": true,
+    "children_reaped": true
+  },
+  "post_probe_unit_check": {
+    "return_code": 0,
+    "stdout": "not-found\n",
+    "stderr": ""
+  },
+  "synthetic_tests_passed": 11,
+  "memory_pressure_enforcement_tested": false,
+  "cumulative_cpu_budget_enforced": false,
+  "scratch_budget_enforced": false,
+  "scientific_harness_adopted": false,
+  "model_calls_authorized": false,
+  "pilot_annotation_authorized": false,
+  "p11_authorized": false,
+  "confirmation_independent_n": 0,
+  "replication_independent_n": 0
+}
