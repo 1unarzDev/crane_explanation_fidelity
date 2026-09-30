@@ -108,3 +108,8 @@ A method-blind role-input bundle now reconstructs 114 answers and 1,084 reviewed
 versioned inventories. Its DVC object is pushed and a read-only audit checks byte-for-byte rebuild.
 No pilot role model call was made; the v2r2 synthetic qualification does not itself authorize an
 endpoint map or response rank. P11 remains closed.
+
+A separate prospective development declaration now fixes 228 role requests over that bundle using
+the exact qualified v2r2 task. Host transport preflight and a non-study structured canary passed;
+the canary is hash-bound and DVC-pushed. No pilot role call had been made at this checkpoint, and
+all endpoint, support annotation, and P11 gates remain closed.

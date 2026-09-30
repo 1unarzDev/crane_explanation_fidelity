@@ -1,0 +1,55 @@
+{
+  "schema": "crane-evidence-calibration-pilot-claim-role-use/v1-development",
+  "declared_date": "2026-09-30",
+  "status": "DECLARED_BEFORE_PILOT_ROLE_CALLS",
+  "scientific_scope": "Development-only method-blind classification of assertion stance, ontology kind, and polarity. No visible-evidence support label, mechanistic endpoint mapping, or response abstraction rank.",
+  "freeze": {
+    "path": "research/explanation_fidelity/experiment_configs/prospective/evidence-calibration-claim-role-v2r2-freeze.json",
+    "raw_sha256": "8207d88e63fdd2d9f7e1426d6d3cdc21179a86ab5a886ef5d4a572604a2e90cc"
+  },
+  "qualification": {
+    "path": "manifests/study/evidence-calibration-claim-role-v2r2-qualification-outcome.json",
+    "raw_sha256": "c9f72e416c2de4022ddcc13b3c039c685947c577c03c740b77cd7c24bff4cd2b"
+  },
+  "input_bundle": {
+    "path": "model_outputs/annotation_packets/evidence-calibration-b2-b4-pilot-v1/claim-role-inputs-v1.json",
+    "raw_sha256": "498923947921ac4145667d2bf8eb48b2bdaa7fbe921c74be6a5ab4c98567b014",
+    "response_count": 114,
+    "atomic_claim_count": 1084
+  },
+  "runner": {
+    "path": "analysis/run_evidence_calibration_pilot_claim_roles.py",
+    "raw_sha256": "fdefb316f6ccf4c4948fb2717d5f8e81fb1875d95881266e45eb19a7e3941157"
+  },
+  "output_root": "model_outputs/automated_annotations/evidence-calibration-b2-b4-pilot-v1-role-v2r2",
+  "canary": {
+    "case_id": "pilot-role-schema-canary-v1",
+    "response_text": "The recorded action succeeded.",
+    "claims": [
+      {
+        "item_id": "c1",
+        "response_span": "The recorded action succeeded.",
+        "claim_text": "The recorded action succeeded."
+      }
+    ]
+  },
+  "isolated_passes": [
+    "A",
+    "B"
+  ],
+  "planned_call_count": 228,
+  "execution_order": "A_then_B; bank response IDs sorted in the bound input bundle",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "high",
+  "transport": "codex-cli-chatgpt-login-ephemeral/v1",
+  "tools": "none",
+  "quality_driven_retries": 0,
+  "failure_policy": "One call per fixed logical identity. Retain failed terminal records and ambiguous intent-only records. No quality-driven retry or replacement; stop on first failure. Repeated runner invocation may only reuse matching completed valid records.",
+  "manual_inventory_sensitivity_required": true,
+  "development_pilot_role_calls_authorized": true,
+  "support_annotation_authorized": false,
+  "endpoint_scoring_authorized": false,
+  "p11_authorized": false,
+  "confirmation_independent_n": 0,
+  "replication_independent_n": 0
+}

@@ -3330,3 +3330,18 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   calls require a separate prospective execution declaration and transport canary; mechanistic
   endpoint mapping, response rank, support labels, method join, P11, independent N, and alpha
   remain unopened.
+
+## 2026-09-30 — declare the development role call set and pass its schema canary
+
+- **Declaration:** bind all 114 reviewed blind answers and 1,084 atoms before any pilot role call.
+  Use the exact hash-qualified v2r2 Astra-high prompt/schema/transport in two isolated A/B passes,
+  228 fixed logical requests, no tools, no quality-driven retry, and a stop on the first failure.
+  The declaration authorizes only development stance/kind/polarity classification.
+- **Pre-call evidence:** the non-study B2 transport audit reported `READY_FOR_SCHEMA_CANARY` with
+  no call. A separate one-shot role schema canary returned a structurally valid result; its raw
+  call and intent are DVC-governed and bound by a read-only audit. No pilot role request has yet
+  been launched at this decision point.
+- **Boundary:** the v2r2 synthetic qualification and schema canary do not qualify mechanistic
+  endpoint mapping, response rank, support labels, or an effect estimate. The manual-inventory
+  provenance sensitivity remains required. P11, confirmation N, replication N, and alpha remain
+  unchanged.
