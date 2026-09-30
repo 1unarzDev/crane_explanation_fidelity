@@ -1,6 +1,6 @@
 # Final completion evidence
 
-The scientific evaluation is closed. This audit maps the bounded handoff to retained proof; full local completion additionally requires the final restore receipt and passing final-preservation gate below. These checks establish provenance, population and accounting, not human validity or confirmatory superiority.
+The scientific evaluation is closed. This audit maps the bounded handoff to retained proof; full local completion is verified by the final restore receipt and passing final-preservation gate below. These checks establish provenance, population and accounting, not human validity or confirmatory superiority.
 
 | Requirement | Retained proof | Verified scientific disposition |
 |---|---|---|
@@ -22,3 +22,7 @@ The scientific evaluation is closed. This audit maps the bounded handoff to reta
 Final gate: `data/hexar_external/.venv/bin/python analysis/hexar_external/validate_v3.py --require-final --require-preservation`. Its retained `integrity_audit.json` must have `required_final=true` and `private_preservation_checked=true`. The final receipt records the archived code commit (final code/docs committed before bundling), source commit, exact byte count and hashes. A later receipt/integrity commit completes the transaction without changing scientific files. Earlier development restoration verified 2,279 files and 13 tests; it is separate from the final whole-study proof.
 
 All scientific findings are descriptive: alpha allocated/consumed 0, no p-value, no statistically supported superiority claim. The strong baseline's coverage and physical-cause ties are retained. No companion platform or additional cohort was needed. Next action is publication-owner review/integration and optional authorized private backup coordination; no further experiment, merge or publication is performed here.
+
+## Verified final preservation transaction
+
+Final private restoration passed: **6,898 files** extracted and SHA-256 checked, both bundled repository commits restored, and all **13 scoped tests** passed in the restored checkout. Archived code/docs commit: `5ce8816f6b93f413f6125d6ce3e5c84ff11ff98c`; upstream: `f5e9567edb43899ad7dd4efcbeb5429ff4b0c6fc`. The final preservation validator passed with both required flags true. Receipt: `data/hexar_external/v3/final_restore_receipt.json`; private archive: `data/hexar_external/archives/20260930_final/`. This follow-up receipt/document commit completes the archive transaction; scientific files and frozen hashes are unchanged. The evaluation and authorized local deliverable are complete.
