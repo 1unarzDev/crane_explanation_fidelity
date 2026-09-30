@@ -1,5 +1,20 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Installed-client lifecycle addendum after `cb067ab2` — 2026-09-30
+
+A [separate installed-client observer v3](INSTALLED_CLIENT_LIFECYCLE_MCP_2026-09-30.md)
+verifies all five assigned inventories/routes through MCP v3, broker v4 and executor
+v7. Twenty-two focused checks and five separately retained fresh observations pass.
+Exact Unicode/literal results, null overflow errors, nested limit/status identities
+and six absent services are verified. Overflow lifecycle stays incomplete; dedicated
+client SIGTERM cleanup stays explicit. No model turn is launched. Complete provider/
+model-facing tools, rendering/capacity, cumulative/turn budgets, immutable runtime
+and measurement remain open; study callers do not migrate. P11 retains nineteen
+open conditions and N=0. Alpha/freshness audits pass their provisional/reconciled
+states; nine-page manuscript build and 220 numeric assertions pass. Pending reopening
+is unanswered; no scientific freeze or new alpha allocation occurs.
+
+
 ## Scratch/lifecycle broker addendum after `b6121955` — 2026-09-30
 
 A [separate broker v4/MCP stdio v3](LIFECYCLE_BROKER_MCP_2026-09-30.md) connects

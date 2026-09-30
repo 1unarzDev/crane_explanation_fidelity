@@ -4686,3 +4686,25 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   real-pilot score, physical acquisition, alpha spending or P11 freeze. Preserve
   failed support/unlaunched C and unanswered reopening. P11 keeps nineteen open
   conditions, confirmation/replication N=0 and all prospective method comparisons.
+
+
+## 2026-09-30 — inspect combined scratch/lifecycle route through installed client
+
+- **Candidate:** preserve prior observers; v3 selects MCP stdio v3/broker v4/executor
+  v7 with explicit synthetic scratch limits. Keep offline RPC allowlist, network
+  namespace, strict features and two service-control variables. No model turn.
+- **Evidence:** 22 focused checks across two invocations and five separately retained
+  fresh installed-client observations pass on CLI 0.159.2. All assigned inventories,
+  exact Unicode/literal results and null overflow errors match. Six nested terminals
+  bind limits/status hashes and absent-service cleanup. Literal success has verified
+  payload exit; overflow has retained incomplete lifecycle and OUTPUT_LIMIT.
+- **Cleanup:** all dedicated app-server groups require recorded SIGTERM; do not
+  fabricate graceful MCP-session completion or attribute a model failure.
+- **Scope:** assigned-server direct routing does not verify full provider tools or
+  model-visible rendering. Existing study callers remain unchanged; full confinement,
+  immutable runtime, capacity and cumulative/turn budgets remain open.
+- **Governance:** no semantic output, automated annotation, real-pilot score, method-
+  key join, physical acquisition, alpha spending or P11 freeze. Preserve failed
+  combined support, unlaunched C and unanswered reopening. P11 retains nineteen open
+  conditions, no hash mismatches and confirmation/replication N=0. Five-method paired
+  reporting remains prospective, including all inconclusive results.
