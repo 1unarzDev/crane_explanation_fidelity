@@ -3516,3 +3516,37 @@ Its component magnitudes are not treated as calibrated physical fidelity.
 - **Records:** `evidence-calibration-neutral-level-project-reference-review-v1.json` and
   `evidence-calibration-neutral-level-support-v1-freeze.json`, with the new bound runner and
   unchanged candidate suite. The existing v4 disposition remains active within its original scope.
+
+## 2026-09-30 — retain the neutral-input canary while its artifact push is pending
+
+- **Observed:** the separately declared one-shot non-study canary returned a structurally valid
+  neutral-input annotation under unchanged Astra-high prompt/schema bytes. Its read-only audit
+  verifies the exact qualified configuration, request, durable intent, and raw/parsed return.
+- **Retention boundary:** its intent and terminal record are retained locally and hash-bound in
+  `evidence-calibration-neutral-level-support-canary-v1.json`. DVC push is explicitly pending
+  while role session `56406` is still writing under `model_outputs`. Do not DVC-add that live root.
+- **Launch boundary:** schema success alone cannot authorize the 40 qualification calls. The
+  runner requires a separately bound, DVC-pushed canary; the gate remains closed. A new offline
+  test verifies that no model execution occurs while artifact push is pending. No qualification
+  accuracy, pilot support label, endpoint score, or P11 authorization follows from the canary.
+
+## 2026-09-30 — review the remaining known A-role application without relabeling
+
+- **Scope:** all 44 continuation A answers and 402 atomic role tuples have now been reviewed
+  using only blind answer/inventory text and retained returns. With the original prefix, project
+  review covers 113 known A answers and 1,071 A tuples. The unknown original A request covers
+  the other 13 atoms; it remains quarantined without replacement. B review is still open.
+- **Findings:** one explicit navigation-abort assertion received negative polarity contrary to
+  the codebook's normalized-occurrence rule. Additional outcome-kind variance, question-dependent
+  affirmative scope, software-resolution causal scope, and three more explicit negative-causation
+  assertions are bound in `ROLE_CONTINUATION_A_REVIEW_2026-09-30.md` and its annotation manifest.
+  Preserve the raw tuples and all six old negative-causation assertions across the two A reviews.
+- **Disposition:** these are application review findings, not rewritten labels, synthetic
+  qualification regrading, endpoint failures, or transport/model failures. Resolve the scopes and
+  disagreements before endpoint use; no broad kind-to-rank conversion is justified.
+- **Audit machinery:** a new read-only continuation auditor validates declared identities, raw
+  returns, expected paths, and the sequential stop frontier. Live missing terminal records remain
+  pending intents without inferred process status. Bind a terminal snapshot only after the actual
+  process handle or direct inspection proves termination. Never restart because observation
+  timed out. Ten focused qualification/readiness tests pass. P11, alpha, and independent N remain
+  unchanged.

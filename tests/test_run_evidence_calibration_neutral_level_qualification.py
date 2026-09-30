@@ -99,3 +99,22 @@ def test_critical_negative_cause_error_cannot_hide_in_aggregate_accuracy():
     assert result["passes"][0]["gate_checks"]["critical_reference_cases"] is False
     assert result["status"] == "FAILED_RETAIN_NO_RETRY"
     assert result["pilot_annotation_authorized"] is False
+
+
+def test_schema_pass_without_artifact_push_cannot_launch_qualification(tmp_path, monkeypatch):
+    bound = module.load_bound()
+    freeze = bound[0]
+    gate = tmp_path / freeze["canary_gate_manifest"]
+    gate.parent.mkdir(parents=True)
+    gate.write_text(json.dumps({"status": "PASS_SCHEMA_CANARY_PENDING_ARTIFACT_PUSH",
+                               "artifact_retention": "PENDING_DVC_PUSH_LIVE_ROLE_RUN"}))
+    monkeypatch.setattr(module, "ROOT", tmp_path)
+    monkeypatch.setattr(module, "load_bound", lambda: bound)
+    monkeypatch.setattr(module, "transport_audit", lambda *args: {"status": "READY_FOR_SCHEMA_CANARY"})
+    monkeypatch.setattr(module.subprocess, "run", lambda *args, **kwargs:
+                        SimpleNamespace(stdout=freeze["cli_version"] + "\n"))
+    def no_call(**kwargs):
+        pytest.fail("an unpushed schema canary cannot authorize model execution")
+    monkeypatch.setattr(module, "call_once", no_call)
+    with pytest.raises(RuntimeError, match="separately bound passing canary"):
+        module.run("qualification")

@@ -242,3 +242,26 @@ the 40 qualification requests; pilot support use remains prohibited until a pass
 The original v4 qualification and all role/pilot records remain unchanged. The role continuation
 remains live as session `56406`; preserve its task bytes and poll the existing handle. P11,
 alpha, physical allocation, and confirmation/replication independent N are unchanged.
+
+## Later 2026-09-30 canary and continuation-A review checkpoint
+
+The neutral-input non-study schema canary passed. Its exact intent/raw return and read-only audit
+are bound, with artifact retention explicitly `PENDING_DVC_PUSH_LIVE_ROLE_RUN`. It cannot launch
+the 40 qualification calls until the DVC push is verified and the passing gate is bound. Ten
+focused tests pass, including a check that an unpushed schema canary cannot trigger execution.
+The live role output directory has not been DVC-added or rewritten.
+
+Project review now covers all 44 continuation A answers and 402 tuples, bringing known A review
+to 113 answers / 1,071 tuples. The original missing A remains quarantined and covers 13 atoms.
+One abort assertion has an erroneous negative-polarity tag; kind variance, question-dependent
+affirmative scope, software-resolution scope, and three additional explicit negative-causation
+assertions remain preserved for later disposition. No returned tuple was corrected and no
+pilot support label or endpoint score was generated. These findings do not regrade the frozen
+synthetic qualification or constitute comparative results.
+
+The new continuation auditor validates raw returns and the sequential stop frontier without
+model execution. It distinguishes live pending intents from terminal unknown dispositions and
+requires explicit terminal-process verification before writing a terminal snapshot. Session
+`56406` remains live with B processing underway. Poll it; audit and DVC-push the accumulated
+artifacts only after termination. The support qualification, complete B review, disagreement and
+missingness dispositions, endpoint mapping, fresh five-method pilot, and P11 remain open.
