@@ -4007,3 +4007,27 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   P11 still has nineteen open conditions; fresh aligned B0–B4 execution, qualified measurement,
   episode effects, coverage and power remain open. Alpha, quarantine and independent
   confirmation/replication N are unchanged; all required comparisons/reporting remain required.
+
+
+## 2026-09-30 — implement lossless ordinary B0/B1 request paths and expose capacity prerequisite
+
+- **Baseline presentations:** the new B0 request derives retained-field/role statements from the
+  original source serialization, including each full literal record; B1 uses structured JSON.
+  A decoder must reconstruct identical fields, quantities/types, samples, ordering and provenance.
+  No diagnostic fact is inferred or selected. Both use one common supported-explanation prompt
+  and receive no source assets, tools, diagnostic contracts or approved-claim plan. B2 is unchanged.
+- **Version boundary:** preserve the earlier raw-JSON five-method packet snapshot. This request
+  candidate records the source packet hash and its own effective presentation/version/hash;
+  future execution must bind that complete request. Baseline answers are preserved verbatim
+  after identity/technical checks, without semantic verification, fallback or quality-driven retry.
+- **Mechanical evidence:** twelve synthetic checks plus three existing packet/two readiness checks
+  pass. The read-only integration audit reproduces all sixty source conditions on the original
+  sixteen inspected development episodes and records 120 baseline request hashes/byte sizes.
+  B0 ranges 1538–554254 UTF-8 bytes and B1 1560–809592. These are not token counts; actual model/
+  tokenizer capacity remains unverified. Do not silently truncate evidence or omit conditions
+  to fit a context budget. No request text, model output or DVC pointer is written.
+- **Governance:** this is input preparation, not observed model behavior or a baseline effect.
+  No model/annotation call, real method response, key join, alpha spending or physical acquisition
+  occurred. The failed combined support canary and unlaunched C remain unchanged. Execution/model
+  capacity declarations, qualified measurement and prospective episode comparisons remain open.
+  P11 retains nineteen open conditions; quarantine and confirmation/replication N are unchanged.

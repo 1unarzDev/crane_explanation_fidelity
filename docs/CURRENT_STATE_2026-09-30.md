@@ -619,3 +619,19 @@ historical records. Exact execution/model/prompt choices and qualified measureme
 The failed combined support gate, alpha, quarantine and zero confirmation/replication N are
 unchanged; P11 retains nineteen open conditions. See `docs/B3_ORDINARY_INTERFACE_2026-09-30.md`
 and the bound B3 interface candidate manifest.
+
+## Latest 2026-09-30 B0/B1 request and capacity checkpoint
+
+B0/B1 now have ordinary request and verbatim-answer retention helpers. B0 uses reversible
+retained-field/role statements with full literal data; B1 uses the same structured record. A
+common instruction asks both for supported explanations and limits, with no source/tool/contract
+access. The earlier packet snapshot remains unchanged; effective presentation versions and hashes
+bind this newer request candidate. Seventeen focused baseline/packet/readiness checks pass.
+
+The offline integration reproduces 120 request hashes on all sixty original fixed candidate
+conditions, adding no independent N. Prompt sizes reach 554254 bytes for B0 and 809592 for B1.
+Byte size is not a verified token budget; exact model/tokenizer capacity must be checked before
+execution without silent evidence truncation or condition removal. No actual model call, output,
+annotation, effect or DVC pointer was generated. The failed support gate remains closed and P11
+retains nineteen open conditions. See `docs/BASELINE_ORDINARY_INTERFACES_2026-09-30.md` and the
+baseline request audit snapshot. Alpha, quarantine and zero confirmation/replication N are unchanged.
