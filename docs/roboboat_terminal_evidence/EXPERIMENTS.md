@@ -319,3 +319,19 @@ No response, extraction or support queue remains live. Do not regenerate the com
 
 
 Completed contact-comparison-v2 capsule verified and isolated coordinator intake completed: 623 unique safe files, 9,642,758 bytes, SHA-256 `290846d37f5a9112ca10b062e149a236a9392fce74914035677ddae3d8985855`. Source integration checkpoint `1c889ad`, unchanged crane_ml `0df6838` and astro `3620237`; manifest/ledger are `publication_artifact_manifest_contact-comparison-v2.json` / `publication_intake_ledger_contact-comparison-v2.json`. Mixed evaluator/qualification material must never be mounted wholesale to methods. All pipeline stages are terminal. No shared DVC/ledger/main integration or submission. This completes the inspected contact-repair development replay, not the whole registered study: prospective material-primary/citation qualification, coordinated allocation/resources, untouched confirmation and fresh replication remain absent.
+
+
+## Material/citation qualification operational continuation
+
+A ten-case prospective construction suite and endpoint/scorer v2 were independently checked and frozen before twenty registered judge requests. Same authorized Astra/high model, prompt/schema and isolated transport; two sequential passes, 300-second deadline, zero quality retries. Whole-answer materiality distinguishes consequential unsupported assertions from supplemental discrepancies; strict atomic sensitivity remains retained. No inspected comparison bank is rescored. Valid alternative verbatim citations are accepted by the automatic scorer, but complete-source semantic citation review is required before a separate qualification disposition.
+
+The original v2 runner failed after its first valid provider return because it supplied an unsupported keyword to the bound two-argument validator. Original code/freeze/failure/return are retained. The separately bound v3 adapter calls the real signature and independently validates source spans without changing the packet hash. Four adapter regressions pass; full scoped suite: 183 pass with the unchanged historical external-validity source-freeze exclusion. The exact first valid return is reused byte-for-byte; zero requests reissued, nineteen untouched requests remain under the same registration. Operational correction adds no physical or independent N.
+
+Current session `41268`, log `/tmp/roboboat-material-v3-qualification.log`, artifact root `artifacts/roboboat-material-qualification-v3/`. Pass A completed; pass B running at this checkpoint. The command already launched is:
+
+```bash
+cd /home/lunarz/worktrees/roboboat-terminal-evidence
+PYTHONPATH=analysis python analysis/run_roboboat_material_qualification_v3.py > /tmp/roboboat-material-v3-qualification.log 2>&1
+```
+
+Do not launch it again: output-root creation is one-shot. Poll the live handle/log and, after termination, inspect `qualification-result.json` or `retained-failure.json`. A passing automated gate leaves complete-source semantic citation review pending; any failure is retained without tuning/retry. Do not rerun original v2 or alter bound dependencies. Full goal remains active/incomplete: coordinator allocation/resources, untouched confirmation/replication freezes and execution remain missing. Seven valid fresh recordings, three approach clusters, two original complete pairs; confirmation/replication N=0, marine alpha=0.

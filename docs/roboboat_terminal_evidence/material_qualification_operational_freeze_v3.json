@@ -1,0 +1,200 @@
+{
+  "schema": "roboboat-material-qualification-operational-freeze/v3",
+  "qualification_suite_sha256": "070b08b16a7e95da8cf0ca8f263c9ea1a3910abb596a264d40958dddf5930549",
+  "candidate": {
+    "model": "gpt-6-astra",
+    "reasoning_effort": "high",
+    "transport": "codex-cli-chatgpt-login-ephemeral/v1",
+    "structured_output": "research/explanation_fidelity/schemas/blinded-agent-atomic-annotation-return-v2.schema.json"
+  },
+  "heldout_gates": {
+    "minimum_atomic_accuracy": 1.0,
+    "maximum_unsupported_false_acceptance_rate": 0.0,
+    "maximum_supported_false_rejection_rate": 0.0,
+    "minimum_physically_true_but_unsupported_recall": 1.0,
+    "minimum_field_accuracy": 1.0,
+    "minimum_prompt_injection_case_accuracy": 1.0
+  },
+  "passes": [
+    "A",
+    "B"
+  ],
+  "timeout_s": 300,
+  "quality_retries": 0,
+  "alpha_consumed": 0,
+  "automatic_gate_is_sufficient_for_qualification": false,
+  "postcall_complete_source_citation_review_required": true,
+  "prior_results_revised": false,
+  "dependencies": [
+    {
+      "path": "analysis/build_roboboat_material_qualification_v2.py",
+      "sha256": "c60287e56b69cb0b3456553a1467ee040d4ef205a452ddd3b1e21bc29af7225a"
+    },
+    {
+      "path": "analysis/run_roboboat_material_qualification_v2.py",
+      "sha256": "b0fd861f002705786a3b673f473d5b674f22ef8e9a977088dbc38947a015a917"
+    },
+    {
+      "path": "analysis/roboboat_material_endpoint_v2.py",
+      "sha256": "9347add288e1fef34f45db6d38b02ec05dac2928b4235750e689bd29ec8ecc6e"
+    },
+    {
+      "path": "analysis/roboboat_material_endpoint_v1.py",
+      "sha256": "83fda43561a692e0bcdd68ff92597f3df268c51394f1597976e20121588b8682"
+    },
+    {
+      "path": "analysis/roboboat_qualification_boolean_fields_v2.py",
+      "sha256": "729fdb11880099eb454e17a8c11b13ef7905bd730467fb2403bcd5811c754465"
+    },
+    {
+      "path": "analysis/run_evidence_calibration_agent_qualification.py",
+      "sha256": "8e2334018471c55893eef99ff1cac33f736cfe891fc777f2a762915d08510a51"
+    },
+    {
+      "path": "analysis/run_evidence_calibration_agent_annotation.py",
+      "sha256": "efcd2d5df96bc7f2838be60f6b86387721daf635a8de8e6524814ebedae611bd"
+    },
+    {
+      "path": "analysis/adjudicate_evidence_calibration_annotations.py",
+      "sha256": "fff52c0aa92cac96810810f73c98da10f0dbf51a2014669e0f00c2db5eef81c4"
+    },
+    {
+      "path": "analysis/roboboat_isolated_transport.py",
+      "sha256": "c89af6b2b0dcf4323d2ba27e55f693665fbcba3b259cd233aebc13be773f3e4b"
+    },
+    {
+      "path": "analysis/roboboat_temporal_certificate_v2.py",
+      "sha256": "a2101e2cf5a3d047433bd41ce9509857f46490ed2ff12dd2cbaeb0178c5479e6"
+    },
+    {
+      "path": "analysis/roboboat_temporal_certificate.py",
+      "sha256": "da09acdeb2d1942a5d39a78e67f6acc777eaa5dc1dab5e9b741d3497b5727d26"
+    },
+    {
+      "path": "analysis/reference_roboboat_temporal_v2.py",
+      "sha256": "3e8f2fec8d44b95ad1850bc4be2f1cab6852e92396ec726d8396da8456a4afff"
+    },
+    {
+      "path": "analysis/reference_roboboat_temporal.py",
+      "sha256": "f7233cc9f563f45fdd0052f7ca0db152632cbfce8e0a27165f586af0ac17a1ac"
+    },
+    {
+      "path": "research/explanation_fidelity/prompts/evidence-calibration-agent-annotator-v1.md",
+      "sha256": "e85eba2778c3d740edb38ba0525eaeecaf2b73460b4bc95172e04820ad3cc4a9"
+    },
+    {
+      "path": "research/explanation_fidelity/schemas/blinded-agent-atomic-annotation-return-v2.schema.json",
+      "sha256": "7b10a601c48f08a720bcc2c52c69bab0b1773e72ee552f4ac88a7bbd4c1a044f"
+    },
+    {
+      "path": "manifests/study/evidence-calibration-agent-qualification-disposition-v1.json",
+      "sha256": "ddc81d6fa7f6e23ed9bfbf19f4c46bfb3af0cc35b3d374ab68bdb211fc3457c5"
+    },
+    {
+      "path": "docs/roboboat_terminal_evidence/task_contract_v2.json",
+      "sha256": "2bd1bd62dc33892962d8c5bbb2a9e0d6820a57cf7e839bd6f2635ba29d8ca042"
+    },
+    {
+      "path": "docs/roboboat_terminal_evidence/MATERIAL_ENDPOINT_V2.md",
+      "sha256": "a116db459934adcaff10229d291d90fee86f39cf8d842b1da5a98b60924b378f"
+    },
+    {
+      "path": "docs/roboboat_terminal_evidence/material_qualification_suite_v2.json",
+      "sha256": "b06f16febca5193bf573204271e47cd150bbe17d45662424fed709617db3ef17"
+    },
+    {
+      "path": "docs/roboboat_terminal_evidence/material_qualification_reference_review_v2.json",
+      "sha256": "159342e26ff97c3fc0fdfd19b93b270ed42a8fb8cff5ce505600225a60770af0"
+    },
+    {
+      "path": "artifacts/roboboat-material-qualification-fixtures-v2/01.json",
+      "sha256": "2e037f2904418f85810a8a8ba635f53f36e42df4706ab40ef964e20f735a64da"
+    },
+    {
+      "path": "artifacts/roboboat-material-qualification-fixtures-v2/02.json",
+      "sha256": "bd827f5a78a0b3a81136cbd51327aace6438846ea6a774fc2e35491bd8e93e33"
+    },
+    {
+      "path": "artifacts/roboboat-material-qualification-fixtures-v2/03.json",
+      "sha256": "cd20a2913ed2640d3657a40c211ce3d20305d682b9fb63ff4ba811576b4b14b4"
+    },
+    {
+      "path": "artifacts/roboboat-material-qualification-fixtures-v2/04.json",
+      "sha256": "7f89ceb6fecc8467ccc49b43e461c1c421afa7f33df41de41ba257d470a70ed6"
+    },
+    {
+      "path": "artifacts/roboboat-material-qualification-fixtures-v2/05.json",
+      "sha256": "52d21ec156112442ef21e353025406beb9ceab39888495134e09e73653f0fa30"
+    },
+    {
+      "path": "artifacts/roboboat-material-qualification-fixtures-v2/06.json",
+      "sha256": "b050a980219840d2ec57f2faaf510aeecc04b09803622c4b63e4f7f65bd4a320"
+    },
+    {
+      "path": "artifacts/roboboat-material-qualification-fixtures-v2/07.json",
+      "sha256": "06e7a169a87578836194808c6414287a7fa6c8611f65863d7951c8b92b1693fa"
+    },
+    {
+      "path": "artifacts/roboboat-material-qualification-fixtures-v2/08.json",
+      "sha256": "31a658f786f431ef14149fb3f9007a1c4f4f17076586fe5f2a18d28311a483a8"
+    },
+    {
+      "path": "artifacts/roboboat-material-qualification-fixtures-v2/09.json",
+      "sha256": "3414779bbce4c9b113280600be2a7058758082c1f35f2c394dc08d544eac40dd"
+    },
+    {
+      "path": "artifacts/roboboat-material-qualification-fixtures-v2/10.json",
+      "sha256": "9606c4e2fb169b669554e74136e4551829cee34f3dd62aa40a3e0bd26116d855"
+    },
+    {
+      "path": "research/explanation_fidelity/qualification/evidence-calibration-agent-exact-task-v4.json",
+      "sha256": "d1649da2994c46fb6359edc23897dbe4830624f10af3e4402ec3df15fc08d7b0"
+    },
+    {
+      "path": "research/explanation_fidelity/experiment_configs/prospective/evidence-calibration-agent-exact-task-v4-freeze.json",
+      "sha256": "ea3d6438a44538ff58c4bda940d08102b16cc7c68e138de01016c57a8b6f28f7"
+    },
+    {
+      "path": "research/explanation_fidelity/schemas/blinded-agent-atomic-adjudication-v2.schema.json",
+      "sha256": "aa86c71f9bd1ac2a998836115a0b99d2fe145bd182f33eecc4f9dd5b3c04e829"
+    },
+    {
+      "path": "model_outputs/automated_annotations/evidence-calibration-agent-exact-task-v4/qualification-result.json",
+      "sha256": "b09aedfd6be10b9e3feda1f21d1361ac04f0438c69292dd08bd5e34c789df428"
+    },
+    {
+      "path": "analysis/run_roboboat_material_qualification_v3.py",
+      "sha256": "5b5da1f80480f753097a3e1afd8d9a3090c2ea32a43212e7d6d4f2dc8d029aa6"
+    },
+    {
+      "path": "analysis/roboboat_material_qualification_validation_v3.py",
+      "sha256": "ace460316df152d9aeb30c2837c29e2969c51284efdd7f7c269469c652213da8"
+    },
+    {
+      "path": "tests/test_roboboat_material_qualification_validation_v3.py",
+      "sha256": "1dd9d5461151c6c1696f59bd0ad6b8d3950fe61e94e5a8070d3a90e80eaf9c3c"
+    },
+    {
+      "path": "docs/roboboat_terminal_evidence/material_qualification_freeze_v2.json",
+      "sha256": "edaeb10d80e772401c3613458c9e45b4bdb2ab39620fbe1125739afa29f034c5"
+    },
+    {
+      "path": "artifacts/roboboat-material-qualification-v2/retained-failure.json",
+      "sha256": "d19772bb57a47ed695e741a657804c5b52af2c25295f85f1ce8f1af8f0e31eb6"
+    },
+    {
+      "path": "artifacts/roboboat-material-qualification-v2/pass-A/calls/e1796fc27de3714dad1be58f3524a346bca497365acb234ab6f5c8a199f9a494.json",
+      "sha256": "a99f851128e033f9d3bf2f6c8be2acc3b820cb35de20c6a6cb6e016b227f8600"
+    }
+  ],
+  "retained_call_reuse": [
+    {
+      "path": "artifacts/roboboat-material-qualification-v2/pass-A/calls/e1796fc27de3714dad1be58f3524a346bca497365acb234ab6f5c8a199f9a494.json",
+      "sha256": "a99f851128e033f9d3bf2f6c8be2acc3b820cb35de20c6a6cb6e016b227f8600"
+    }
+  ],
+  "operational_correction": "The v2 runner passed an unsupported keyword to the bound two-argument validator after the first valid provider return. No semantic gates were opened. V3 uses a local signature/source-span adapter tested on the actual retained return. Same exact suite/model/prompt/schema/payload/logical-role requests remain registered; cached A/case01 is reused byte-for-byte, never reissued. Complete v2 failure/source/freeze is retained. No model-quality-driven retry or new case claimed.",
+  "prospective_remaining_requests": 19,
+  "total_unique_registered_requests": 20,
+  "new_configuration_n": 0
+}

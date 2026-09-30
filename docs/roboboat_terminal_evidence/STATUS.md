@@ -1,12 +1,12 @@
 # Status — 2026-09-30
 
-## Current state — completed contact-v2 development replay
+## Current state — prospective material/citation qualification running
 
 The full goal remains active and incomplete. Latest completed result: [CONTACT_V2_RESULTS.md](CONTACT_V2_RESULTS.md). Seven valid fresh physical recordings remain in three approach clusters; original complete-pair N=2. Contact-v2 replay adds zero recordings/clusters; confirmation/replication N=0 and marine alpha=0.
 
 Twelve new answers, eleven complete reviewed inventories (226 atoms), and twelve finalized support packets reproduce. Both methods communicate all common units (24/24) and both answerable partial-compliance intervals (2/2). Strict development success: B2 5/6, B4 6/6 in both passes/final. The single failure is a 20 ms growth-reference scope mismatch (0.000145 m), without changed supported task outcome or compliance. No material useful-outcome superiority, confidence interval or p-value is established. Same-family agent assessments remain uncertain; no human validation.
 
-All queues, including sessions 85824, 15140 and publication 36394, are terminal. Scoped regressions: 163 pass; the historical external-validity source-freeze exclusion remains documented. Capsule: 623 files, 9,642,758 bytes, SHA `290846d37f5a9112ca10b062e149a236a9392fce74914035677ddae3d8985855`; isolated intake completed. Source/result checkpoint `1c889ad`, component `0df6838`; no main/shared-pointer/ledger changes.
+Contact-v2 queues, including sessions 85824, 15140 and publication 36394, are terminal. The separate material/citation qualification is live in session 41268; pass A is complete and pass B is running. Scoped regressions: 183 pass; the historical external-validity source-freeze exclusion remains documented. Capsule: 623 files, 9,642,758 bytes, SHA `290846d37f5a9112ca10b062e149a236a9392fce74914035677ddae3d8985855`; isolated intake completed. Source/result checkpoint `1c889ad`, component `0df6838`; no main/shared-pointer/ledger changes.
 
 Largest remaining gates: qualified prospective material-primary and citation handling; explicit coordinator allocation/disposition and resources; genuinely untouched valid configuration/replication schedules. Next authorized development is a fresh audited qualification/mapping design that preserves negation/whole-answer scope and accepts valid citation alternatives, rather than regrading failed suites or exploiting the inspected tiny baseline discrepancy. Reconcile the actual alpha authority before activation; no allocation is inferred from the local ledger.
 
@@ -23,7 +23,7 @@ PYCODE
 sha256sum artifacts/roboboat-contact-policy-support-v2/publication/development-capsule-contact-comparison-v2.tar.gz
 ```
 
-The following chronological records retain earlier queue states and superseded development snapshots. They do not indicate live jobs now.
+The following chronological records retain earlier queue states and superseded development snapshots. They are historical; only the current-state qualification handle is live.
 
 
 Development only. Core pilot: five valid fresh recordings, three approach clusters and two complete internal-XY tolerance pairs. Fixed stopping-threshold extension: two additional valid fresh variants in existing approach clusters; sampled kinematic/hull compliance observed, full docking unknown because contact evidence is unavailable. Total valid fresh recordings=7; independent approach clusters remain 3, original paired-comparison N=2. Original B4/B2 comparison ties. Atomic reassessment finalized 35/36 packets; one retained 300-second judge timeout belongs to the unpaired direct-route variant. Conditional missing-judgment bounds on the original paired mean remain [0.0,0.0], not confidence bounds. All 12 stopping-extension responses are retained; separate atomic extraction/review is running. Confirmation N=0; replication N=0; alpha allocated/consumed=0. No land bindings, shared ledger, main checkout, baseline physics/controller or environment changed.
@@ -167,3 +167,19 @@ Contact-v2 extraction completed normally: 22 valid returns/calls, eleven unique 
 
 
 Completed contact-v2 support replay: twelve finalized packets, 27 valid calls (24 passes + three abstraction-only adjudications), no retry/timeout. Analysis fully reproduces. Both methods cover 24/24 common units and 2/2 positive sampled-compliance intervals. Strict development score B2 5/6, B4 6/6 in A/B/final; the only B2 failure is a 0.000144942 m growth discrepancy from a 20 ms pre-dwell starting observation, independently checked. Supported physical outcome/compliance and answerable coverage are unchanged, so this is not demonstrated material useful-outcome superiority. No effect/CI/p-value or primary promotion. See CONTACT_V2_RESULTS.md. All queues are terminal; 163 scoped tests pass with the historical source-freeze exclusion unchanged. Next: immutable separate capsule publication, then prospective material-primary/citation qualification and coordinated allocation/resources/untouched design. Full goal remains incomplete.
+
+
+## Material/citation qualification operational continuation
+
+A ten-case prospective construction suite and endpoint/scorer v2 were independently checked and frozen before twenty registered judge requests. Same authorized Astra/high model, prompt/schema and isolated transport; two sequential passes, 300-second deadline, zero quality retries. Whole-answer materiality distinguishes consequential unsupported assertions from supplemental discrepancies; strict atomic sensitivity remains retained. No inspected comparison bank is rescored. Valid alternative verbatim citations are accepted by the automatic scorer, but complete-source semantic citation review is required before a separate qualification disposition.
+
+The original v2 runner failed after its first valid provider return because it supplied an unsupported keyword to the bound two-argument validator. Original code/freeze/failure/return are retained. The separately bound v3 adapter calls the real signature and independently validates source spans without changing the packet hash. Four adapter regressions pass; full scoped suite: 183 pass with the unchanged historical external-validity source-freeze exclusion. The exact first valid return is reused byte-for-byte; zero requests reissued, nineteen untouched requests remain under the same registration. Operational correction adds no physical or independent N.
+
+Current session `41268`, log `/tmp/roboboat-material-v3-qualification.log`, artifact root `artifacts/roboboat-material-qualification-v3/`. Pass A completed; pass B running at this checkpoint. The command already launched is:
+
+```bash
+cd /home/lunarz/worktrees/roboboat-terminal-evidence
+PYTHONPATH=analysis python analysis/run_roboboat_material_qualification_v3.py > /tmp/roboboat-material-v3-qualification.log 2>&1
+```
+
+Do not launch it again: output-root creation is one-shot. Poll the live handle/log and, after termination, inspect `qualification-result.json` or `retained-failure.json`. A passing automated gate leaves complete-source semantic citation review pending; any failure is retained without tuning/retry. Do not rerun original v2 or alter bound dependencies. Full goal remains active/incomplete: coordinator allocation/resources, untouched confirmation/replication freezes and execution remain missing. Seven valid fresh recordings, three approach clusters, two original complete pairs; confirmation/replication N=0, marine alpha=0.
