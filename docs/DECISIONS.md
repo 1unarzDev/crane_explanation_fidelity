@@ -4342,3 +4342,26 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   request tools, runtime, tokenizer/capacity, complete budgets and durable model execution stay
   open. P11 keeps nineteen open conditions; failed measurement, pending reopening, zero
   confirmation/replication N, physical quarantine and alpha boundaries are unchanged.
+
+## 2026-09-30 — audit the complete exposed runtime; retain unreadable-content failure
+
+- **Rationale:** the local sandbox exposes all of `/usr`, while prior hashes identify only entry
+  points. Add a separate content/permission/owner/symlink/empty-directory inventory and verifier,
+  without changing any registered sandbox, broker, caller or scientific budget.
+- **Integrity scope:** anchored descriptors and no-follow traversal reject symlink redirection;
+  before/after file/path fingerprints plus a final metadata scan reject ordinary concurrent
+  changes. Complete recomputation detects omissions/substitutions; canonical typed validation checks
+  record integrity and structure. These are consistency checks, not an atomic or immutable runtime snapshot.
+- **Actual negative evidence:** the whole-host attempt fails reading root-owned mode-0700 `cupsd`.
+  Preserve its intent, failure and initial source hash. Non-interactive privileged hashing is
+  unavailable because sudo requires a password. No full tree digest is produced; unreadable
+  files are not skipped, changed or treated as empty. The later candidate improves relative-path
+  error context and covers unreadability in a real unprivileged test. Twelve focused checks pass.
+- **Prospective consequence:** the live Arch rolling host has an unresolved complete-runtime
+  inspection/binding gate. A completely inspectable reproducible runtime must be declared and
+  validated before study execution; this turn does not construct or select an image. Entry-point
+  hashes, the OS name and a partial scan cannot substitute for full runtime identity. Kernel,
+  namespaces, actual provider tool exposure, lossless rendering and capacity remain separate.
+- **Governance:** no model/annotation invocation, method key, semantic score, physical acquisition
+  or alpha expenditure. Preserve combined measurement failure and unlaunched C; reopening remains
+  pending. P11 remains closed with nineteen open conditions and confirmation/replication N=0.

@@ -1,0 +1,83 @@
+{
+  "schema": "crane-runtime-tree-audit-observation/v1-development",
+  "recorded_date": "2026-09-30",
+  "status": "WHOLE_USR_SCAN_FAILED_UNREADABLE_CONTENT_RUNTIME_BINDING_OPEN",
+  "bindings": [
+    {
+      "path": "analysis/audit_evidence_calibration_runtime_tree.py",
+      "raw_sha256": "c34991329508aae06d6815763c7c5873b69b76e37767a29f4d138b0bc04ed88b"
+    },
+    {
+      "path": "tests/test_evidence_calibration_runtime_tree.py",
+      "raw_sha256": "e6ba1a47a32abc8fe25f506ac135183af94ff8cfda8f692fe1e9593e3c39cf16"
+    },
+    {
+      "path": "docs/RUNTIME_TREE_AUDIT_2026-09-30.md",
+      "raw_sha256": "d69be12c00dfbd44aad72317b263c84b35b84b4bed1f1301f3575085534cc961"
+    },
+    {
+      "path": "analysis/evidence_calibration_local_tool_sandbox.py",
+      "raw_sha256": "3fc22a0519736f6764452fe90b57340e7a2018defc2e89187fece6fd978da90c"
+    },
+    {
+      "path": "analysis/evidence_calibration_local_tool_sandbox_v2.py",
+      "raw_sha256": "e6ef4a67af326bb76293186ef5e99743e041bb41622d9b7154ef651d072e5906"
+    },
+    {
+      "path": "analysis/run_evidence_calibration_claim_role_v2r2_qualification.py",
+      "raw_sha256": "7bfa14eecf1aaa3b378a0f514d8a7c2dbfbffda432a8202dc49217c163f9295a"
+    }
+  ],
+  "focused_tests_passed": 12,
+  "combined_targeted_tests_passed": 88,
+  "whole_tree_attempt": {
+    "runtime_root": "/usr",
+    "scope": "NON_STUDY_RUNTIME_OBSERVATION",
+    "initial_probe_source_raw_sha256": "a3d685b1e9f5c2b1f391d8880413e448133a4a76c432e251af5755949918e86a",
+    "intent_raw_sha256": "af35aa50aa79308a22d3d3a19744058eaac7f170e7e96275e1f4f2820fed10b6",
+    "failure_raw_sha256": "d3f82de786d963ae00b4c9597f9da2af897e7c6f65c3d337bd2df9e36a286cbd",
+    "retained_failure": {
+      "error": "[Errno 13] Permission denied: 'cupsd'",
+      "error_type": "PermissionError",
+      "model_call_attempted": false,
+      "status": "FAILED_RUNTIME_OBSERVATION_NO_REPLAY"
+    },
+    "full_inventory_produced": false,
+    "complete_runtime_digest": null,
+    "unreadable_content_skipped": false,
+    "retained_request_replayed": false
+  },
+  "protected_path_observation": {
+    "path": "/usr/bin/cupsd",
+    "mode": "0o700",
+    "uid": 0,
+    "gid": 0,
+    "noninteractive_privileged_hash_attempt_exit_code": 1,
+    "noninteractive_privileged_hash_attempt_stderr": "sudo: a password is required"
+  },
+  "host_os_observation": {
+    "id": "arch",
+    "build_id": "rolling",
+    "is_immutable_runtime_identity": false
+  },
+  "filesystem_permissions_changed": false,
+  "existing_sandboxes_migrated": false,
+  "complete_usr_inventory_available": false,
+  "atomic_snapshot_established": false,
+  "full_runtime_bound": false,
+  "immutable_image_constructed": false,
+  "runtime_image_selected": false,
+  "provider_request_tools_verified": false,
+  "lossless_model_facing_tool_output_verified": false,
+  "actual_route_capacity_verified": false,
+  "complete_study_budgets_selected": false,
+  "model_calls_authorized": false,
+  "model_call_attempted": false,
+  "pilot_annotation_authorized": false,
+  "measurement_proposal_adopted": false,
+  "endpoint_scoring_authorized": false,
+  "method_key_opened": false,
+  "p11_authorized": false,
+  "confirmation_independent_n": 0,
+  "replication_independent_n": 0
+}

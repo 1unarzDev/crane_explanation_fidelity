@@ -1,5 +1,14 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Runtime audit addendum after `3e2d6589` — 2026-09-30
+
+A [full runtime-tree audit candidate](RUNTIME_TREE_AUDIT_2026-09-30.md) now verifies content,
+permissions, owners and symlink structure without changing the local tool architecture. Its actual
+`/usr` scan failed on root-owned mode-0700 `cupsd`; no complete runtime digest exists. The failure
+is retained and privileged non-interactive reading is unavailable. Unreadable files are not skipped.
+A completely inspectable, reproducible runtime still needs prospective validation/binding. P11
+keeps nineteen open conditions, N=0, the failed measurement gate and pending reopening decision.
+
 ## Installed-client addendum after `90ef4b74` — 2026-09-30
 
 [Offline installed-client observations](INSTALLED_CLIENT_MCP_OBSERVATION_2026-09-30.md) now verify
