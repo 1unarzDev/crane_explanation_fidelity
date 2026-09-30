@@ -1,0 +1,126 @@
+{
+  "artifact_push_and_execution_declaration_required_before_pilot": true,
+  "bindings": {
+    "adjudication_schema": {
+      "path": "research/explanation_fidelity/schemas/blinded-agent-atomic-adjudication-v2.schema.json",
+      "raw_sha256": "aa86c71f9bd1ac2a998836115a0b99d2fe145bd182f33eecc4f9dd5b3c04e829"
+    },
+    "agent_packet_builder": {
+      "path": "analysis/build_agent_atomic_claim_annotation_packets.py",
+      "raw_sha256": "a0b245cb9c81f6951635cf1aba05e061091a64f7db012ca386a28954d54c962a"
+    },
+    "annotation_schema": {
+      "path": "research/explanation_fidelity/schemas/blinded-agent-atomic-annotation-return-v2.schema.json",
+      "raw_sha256": "7b10a601c48f08a720bcc2c52c69bab0b1773e72ee552f4ac88a7bbd4c1a044f"
+    },
+    "atomic_packet_builder": {
+      "path": "analysis/build_atomic_claim_annotation_packets.py",
+      "raw_sha256": "a27c0dc129e9a72a37c34401823c8d3889061a94d04d9ea7515e9a510e612f0e"
+    },
+    "auditor": {
+      "path": "analysis/audit_evidence_calibration_combined_support_canary.py",
+      "raw_sha256": "048d48b6f85264b3ffcac09e87949f8c79a66d818745b85ed3130e96834df5bb"
+    },
+    "canary_tests": {
+      "path": "tests/test_evidence_calibration_combined_support_canary.py",
+      "raw_sha256": "9c0265b3a6322ea9d3d2685f861ba187f1324edfff34e70b389d5cf28bf1fa2f"
+    },
+    "execution_helper": {
+      "path": "analysis/evidence_calibration_support_execution.py",
+      "raw_sha256": "edae043f9340423efcc7ae8ba16aae372cbabc2b38b63d9f175276651dcde766"
+    },
+    "execution_tests": {
+      "path": "tests/test_evidence_calibration_support_execution.py",
+      "raw_sha256": "69fcfde7343aac64fbef791f96780a50fc52a1e53f2c05a5fec924e0e630c1e6"
+    },
+    "intent_helpers": {
+      "path": "analysis/run_evidence_calibration_claim_role_v2r2_qualification.py",
+      "raw_sha256": "7bfa14eecf1aaa3b378a0f514d8a7c2dbfbffda432a8202dc49217c163f9295a"
+    },
+    "io_helpers": {
+      "path": "analysis/evidence_calibration_io.py",
+      "raw_sha256": "c70fef1e03274c55746a8ed7395cec221d2ed0bc63c83eb7fd005429a0925422"
+    },
+    "level_definitions": {
+      "path": "analysis/build_evidence_calibration_agent_qualification.py",
+      "raw_sha256": "c572942856dcd78035948b40c8408b6a42618381015cdaced32498376fd6def1"
+    },
+    "packet_builder": {
+      "path": "analysis/build_evidence_calibration_pilot_support_packets.py",
+      "raw_sha256": "975db3de2f56f2e76d2a73562f439ca8f42921dcef7e72c1d44d9fc3275ad711"
+    },
+    "prompt": {
+      "path": "research/explanation_fidelity/prompts/evidence-calibration-agent-annotator-v1.md",
+      "raw_sha256": "e85eba2778c3d740edb38ba0525eaeecaf2b73460b4bc95172e04820ad3cc4a9"
+    },
+    "qualified_disposition": {
+      "path": "manifests/annotation/evidence-calibration-neutral-level-support-v2-disposition.json",
+      "raw_sha256": "64b6c68f4b3b0049e074ad33f57a0320a8bf0c11c59feda04bd5e82bc47362d9"
+    },
+    "reference_review": {
+      "path": "manifests/annotation/evidence-calibration-combined-support-canary-reference-review-v1.json",
+      "raw_sha256": "53498214d7472b5f09b362f1efc01c445b9c17ca7574ffa4c29a3ffea9f9094e"
+    },
+    "review_document": {
+      "path": "docs/COMBINED_SUPPORT_CANARY_REVIEW_2026-09-30.md",
+      "raw_sha256": "62b9c78a8c099d8bd428b7e1d0befa081125d1489dbadafac5a5944cf5a35518"
+    },
+    "runner": {
+      "path": "analysis/run_evidence_calibration_combined_support_canary.py",
+      "raw_sha256": "f71291e636203bb0e786248a737b3eb1cb3c777320d5e2c41f40d96ce44603d5"
+    },
+    "structural_validator": {
+      "path": "analysis/adjudicate_evidence_calibration_annotations.py",
+      "raw_sha256": "fff52c0aa92cac96810810f73c98da10f0dbf51a2014669e0f00c2db5eef81c4"
+    },
+    "suite": {
+      "path": "research/explanation_fidelity/qualification/evidence-calibration-combined-support-canary-v1.json",
+      "raw_sha256": "505203f78e7c25baba4c9a0303c32377d46f8e512bc1ffd74cf041096ac93629"
+    },
+    "suite_builder": {
+      "path": "analysis/build_evidence_calibration_combined_support_canary.py",
+      "raw_sha256": "4c82d1211dbe8ab9b0e5889654f94a679343b8868daf3e7faa5e22d3e0666c12"
+    },
+    "transport_auditor": {
+      "path": "analysis/audit_b2_transport_readiness.py",
+      "raw_sha256": "373a88b06a94ebd7c9449930491ff4ff06385f6e2f93fb8223110a00e0e0297c"
+    }
+  },
+  "call_order": [
+    "A",
+    "B",
+    "C_CONSTRUCTED"
+  ],
+  "candidate": {
+    "model": "gpt-6-astra",
+    "reasoning_effort": "high",
+    "transport": "codex-cli-chatgpt-login-ephemeral/v1"
+  },
+  "cli_version": "codex-cli 0.159.2",
+  "confirmation_independent_n": 0,
+  "constructed_c_not_observed_ab_disagreement": true,
+  "endpoint_scoring_authorized": false,
+  "failure_policy": "Stop at first technical failure; score A/B references only after both structurally valid returns. Stop before C on any support-reference mismatch. No retry, replacement, reference changes, continuation after failure, or candidate redesign.",
+  "further_candidate_cycles_authorized": false,
+  "highest_level_qualified": false,
+  "output_root": "model_outputs/automated_annotations/evidence-calibration-combined-support-canary-v1",
+  "p11_authorized": false,
+  "pilot_annotation_authorized": false,
+  "planned_calls": 3,
+  "quality_driven_retries": 0,
+  "raw_rank_endpoint_use_prohibited": true,
+  "recorded_date": "2026-09-30",
+  "reference_fields": [
+    "atomic_labels",
+    "required_unit_coverage",
+    "limitation_preservation",
+    "false_premise_handling"
+  ],
+  "reference_threshold": "Every declared support/communication field correct in both passes; all three constructed C selections match. Exact spans checked mechanically; raw highest excluded.",
+  "replication_independent_n": 0,
+  "schema": "crane-combined-support-canary-freeze/v1",
+  "scope": "SYNTHETIC_COMBINED_FORMAT_COMPATIBILITY_ONLY",
+  "status": "FROZEN_BEFORE_CANARY_CALLS",
+  "timeout_s": 300,
+  "tools": "none"
+}

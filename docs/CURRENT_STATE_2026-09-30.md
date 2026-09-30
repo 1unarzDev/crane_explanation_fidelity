@@ -447,3 +447,19 @@ claim-specific endpoint/rank mapping, nominal alignment and fresh five-method pi
 B2/B4 stays the candidate primary contrast; B0/B1/B3 versus B4 require episode-level effects,
 intervals, exact paired and Holm-adjusted p-values, with inconclusive/unfavorable results reported.
 The worktree name does not broaden the land/Nav2 submission scope.
+
+## Later 2026-09-30 combined-format prospective declaration
+
+The separately bound combined support-format canary now has an executor, read-only stop-frontier
+and reference auditor, fresh synthetic fixtures and disclosed project construction review.
+Twenty-one focused offline tests pass. Its freeze authorizes only three synthetic compatibility
+calls, using unchanged qualified Astra-high configuration/prompt/v2 schemas: isolated actual A/B
+support passes and a separate C call over constructed B/B/A-correct disagreements. It is not a
+new support qualification cohort, observed real-pilot adjudication result or independent N.
+All support/communication fields and the three C selections must match; raw highest is retained
+but unqualified. Failure stops without retry/replacement/reference editing or further redesign.
+
+At this pre-call checkpoint none of the three calls has run. Commit/push the declaration before
+launch, then retain and audit the terminal result. A passing DVC-pushed canary and separately bound
+execution declaration are required before any pilot call. P11 remains closed, and the primary
+B2/B4 plus three corrected B0/B1/B3 contrasts remain prospective with no episode effects yet.

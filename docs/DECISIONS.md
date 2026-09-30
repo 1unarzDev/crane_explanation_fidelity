@@ -3748,3 +3748,31 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   before calls. Passing, audited and DVC-pushed canary evidence plus a separate execution
   declaration are required before pilot support annotation. Claim-specific endpoint attachment,
   role/missingness disposition, nominal alignment and fresh five-method evidence remain open.
+
+## 2026-09-30 — prospectively declare the three-call combined support-format canary
+
+- **Bound candidate:** use the exact qualified Astra-high model/transport/prompt/v2 schemas and
+  existing neutral-input pilot packet builder. The separate combined-format freeze binds source,
+  fixtures, project construction review, caller, auditor, tests and qualified components. It
+  authorizes three synthetic calls only: actual isolated support A and B, followed by a distinct
+  C invocation over disclosed constructed disagreements. It authorizes zero pilot calls.
+- **References:** four fresh atoms require supported source threshold, contradicted displacement,
+  physically true but visibly unsupported slip, and supported cause limitation. Registered
+  threshold/recovery coverage, limitation and false-premise fields must all match in both passes.
+  Valid exact spans are mechanically checked; notes and raw highest level are retained, not scored.
+  No raw rank or sentinel may become an endpoint score. References are authored and reviewed by
+  the constructing project agent, not independently validated or human assessed.
+- **C boundary:** synthetic A/B reference fixtures deliberately disagree on threshold label,
+  recovery coverage and limitation preservation; correct sides are B/B/A. The full answer and
+  disputed prompt contexts accompany the unchanged blind handoff. All three selections must
+  match. These are constructed interface checks, not observed annotation disagreement or
+  real-pilot adjudication accuracy. Actual A/B disagreement count is retained separately.
+- **Stop rule:** stop on first technical failure; complete both structurally valid support passes
+  before reference scoring; never launch C after a support-reference mismatch. No retry,
+  replacement, reference change, continuation after failure or further candidate redesign is
+  authorized. Durable intents, exact identities, empty isolated workspaces and no tools apply.
+  The read-only auditor reconstructs requests, returns, references and the sequential stop frontier.
+- **Pre-call evidence:** twenty-one focused offline tests pass. No call has run at this declaration
+  checkpoint. Passing, audited and DVC-pushed canary artifacts plus a separate execution
+  declaration are still required before development support annotation. P11 and all endpoint,
+  alpha, freshness, physical allocation and confirmation/replication N boundaries are unchanged.
