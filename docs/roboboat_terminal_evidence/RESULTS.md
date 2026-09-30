@@ -96,3 +96,20 @@ These are two additional variants within existing approach clusters, not new ind
 The known-route recording later crossed the position bound at 255.460267 s (0.400286 m), about 7.04 s after the first post-result observation, beyond the declared dwell ending 253.420270 s. Its longer-capture endpoint error is 0.424730 m. This observed later violation cannot be used to falsify the earlier fixed five-second sampled compliance. The interval was fixed before execution. The direct-route longer-capture endpoint remains 0.307594 m. Independent direct Euclidean-distance calculations over every retained post-result position match the production primitive; no cause is identified.
 
 All 12 comparative responses are retained, with the full v3 renderer/certificate executable source available equally to the strong agent. Their new support labels are pending. A qualitative renderer gap is recorded without changing frozen responses: v3 limits full success appropriately but does not explicitly communicate the known sampled kinematic/hull compliance; unpromoted v4 adds that interval witness while retaining contact/continuous/causal limits. Three candidate regressions pass. This is a proposed utility correction, not a comparative win.
+
+### Finalized settling support: tradeoff and public-contract ambiguity
+
+All 12 packets finalized through 24 isolated support passes and two disagreement-only adjudication calls (26 valid calls, zero retries/failures). Returns, agreement reports and finals reproduce from the complete hash-bound packets. Both passes and final labels yield the same descriptive scores:
+
+| Method | Inherited strict all-assertion success | Added L2 partial-compliance coverage | Extended development success |
+|---|---:|---:|---:|
+| strong B2 agent | 4/6 | 2/2 | 4/6 |
+| frozen deterministic v3 | 6/6 | 0/2 | 4/6 |
+
+Both methods communicate all 24 inherited required units. The renderer's L2 answers leave sampled kinematic/hull compliance implicit while reporting full completion unknown; the agent states the complete sampled interval and its limits. The added coverage unit was declared after response inspection, so its results are development sensitivity, not a prospective primary comparison. V4 candidate language is not substituted into these frozen outputs.
+
+The two strict B2 L0 failures reveal a public-contract ambiguity rather than demonstrated physical reasoning superiority. The source field `contact_required: true` does not explicitly distinguish required contact assessment from required absence of contact. Both judges therefore label the agent's assertion that contact absence is required insufficiently supported. Two related compound-claim disagreements were adjudicated with the same outcome. The internal production certificate treats prohibited contacts as violations, but that meaning is not expressed in the public contract itself. The agent had executable certificate source, but the judges receive the public packet and do not infer an unstated requirement from implementation. This is a method/judge public-contract consistency limitation; the score must not be promoted as a comparative improvement.
+
+The required repair is a separately versioned explicit contact policy supplied identically to every future method and judge; preserve all old task IDs, packets, source hashes, scores and defects. No historical answer should be relabeled or rewritten to conceal it. Full contact outcome still remains unknown without sensor-completeness evidence. The primary materiality endpoint also remains unqualified; its protocol must decide how public-contract ambiguity affects semantic eligibility before confirmation.
+
+Two claim-support disagreements and one unqualified abstraction disagreement are retained. No required-unit or causal-limitation disagreements occurred. Agent-assessed labels are not human validation, and same-family agreement does not establish accuracy. The two new variants add zero independent approach-cluster N; no effect interval, p-value, confirmation or replication claim is made. Detailed immutable output: `artifacts/roboboat-terminal-settling-support-v1/development-results-v1.json`.

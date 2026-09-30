@@ -218,3 +218,15 @@ python analysis/audit_roboboat_terminal_numbers.py \
 ```
 
 Executed: 12/12 pass. Numeric audit covers rounded value/unit matches, not full association/temporal semantics. Current scoped test command above: 84 passed.
+
+Settling support/analysis completed: session `45424` ended normally; all twelve terminals validated, 26 valid support/adjudication calls, no retries. The immutable `development-results-v1.json` is released; do not overwrite it. Inherited strict B2 4/6/B4 6/6; added L2 coverage B2 2/2/B4 0/2; extended score tie 4/6. A/B/final scores agree. The inherited strict difference is driven by undefined contact-flag meaning in the public task packet and must not be promoted as method superiority. See RESULTS/STATUS for exact defects and subsequent versioned repair gate.
+
+```bash
+python analysis/publish_roboboat_terminal_capsule.py \
+  --version settling-v1 --artifact-root artifacts/roboboat-terminal-settling-support-v1 \
+  --results-file development-results-v1.json --expected-answers 12 \
+  --additional-artifact-root artifacts/roboboat-terminal-settling-v1 \
+  --additional-artifact-root artifacts/roboboat-terminal-settling-atomic-inventory-v1
+```
+
+Publication requires all twelve final judgments, unlike the separately labeled core timeout-accounting capsule. Preserve evaluated source/contract ambiguity and unpromoted v4 demos as distinct artifacts. Mixed evaluator archives are not method inputs. No shared DVC pointer or study look is updated.

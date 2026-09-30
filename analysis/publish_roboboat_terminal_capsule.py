@@ -20,7 +20,7 @@ def publication_gate(result,version,expected_answers):
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--artifact-root',type=Path,required=True)
-    p.add_argument('--version',choices=('v1','v3','atomic-v1'),default='v1')
+    p.add_argument('--version',choices=('v1','v3','atomic-v1','settling-v1'),default='v1')
     p.add_argument('--results-file',default='comparison-results.json')
     p.add_argument('--expected-answers',type=int,default=18)
     p.add_argument('--additional-artifact-root',type=Path,action='append',default=[])
