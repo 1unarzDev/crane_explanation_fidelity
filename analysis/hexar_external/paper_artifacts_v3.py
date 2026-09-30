@@ -114,11 +114,11 @@ def main():
                  yerr=[[0] * 3, [100 * (b[1] - b[0]) for b in ranges]], capsize=3)
     axis.set(ylim=(0, 108), ylabel='Useful supported answers (%)', xticks=range(3),
              xticklabels=['Intact', 'Irrelevant removal', 'Diagnostic removal'])
-    axis.legend(loc='upper center', ncol=3, fontsize=8)
+    axis.legend(loc='lower center', bbox_to_anchor=(.5, 1.01), ncol=3, fontsize=8)
     figure.text(.5, .025, '12 physical recordings · 6 known families · 36 answers/method/evidence level\n'
                 'Bars: fixed-denominator lower bounds; whiskers: missing-score upper bounds, not CIs.',
                 ha='center', fontsize=8)
-    figure.tight_layout(rect=(0, .09, 1, 1))
+    figure.tight_layout(rect=(0, .09, 1, .94))
     for extension in ('svg', 'png'):
         figure.savefig(out / f'evidence_results.{extension}', dpi=200)
     plt.close(figure)

@@ -1,6 +1,10 @@
+# Final disposition
+
+The prospectively frozen v3 design was executed without changing its endpoint, weights, methods or masks. All 12 reserved recordings and 324 assessments closed. Results are descriptive only (alpha0); see [PAPER_SECTION.md](PAPER_SECTION.md). Historical development amendments below document the measurement failures/repairs and are not pending activation instructions.
+
 # Frozen descriptive study — 2026-09-30
 
-The twelve-recording reserved study was hash-frozen before generation in `data/hexar_external/v3/study_freeze.json`. All108 packet references preceded all324 answers. The unchanged principal endpoint is operationalized by[v2/ENDPOINT.md](v2/ENDPOINT.md); causal reporting was separately frozen by[v3/CAUSAL_REPORTING.md](v3/CAUSAL_REPORTING.md). The passages below retain prospective development history; historical gates are closed as summarized in[STATUS.md](STATUS.md). No confirmatory allocation arrived.
+The twelve-recording reserved study was hash-frozen before generation in `data/hexar_external/v3/study_freeze.json`. All 108 packet references preceded all 324 answers. The unchanged principal endpoint is operationalized by[v2/ENDPOINT.md](v2/ENDPOINT.md); causal reporting was separately frozen by[v3/CAUSAL_REPORTING.md](v3/CAUSAL_REPORTING.md). The passages below retain prospective development history; historical gates are closed as summarized in[STATUS.md](STATUS.md). No confirmatory allocation arrived.
 
 This is a development declaration, **not a confirmatory activation**. The released navigation category was selected before comparative failure inspection: cases 5–10, all six situations, 18 bags, three original questions per bag. Recording repetition 1 is development (six bags); repetitions 2–3 are reserved (12 bags). No mechanism family is held out. The first inspected development recording is `bagfile_6_1.bag` (`dev001`). Historical released labels are category A; fresh upstream-prompt adaptations are category B; removal experiments are category C.
 

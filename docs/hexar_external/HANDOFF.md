@@ -447,3 +447,8 @@ evidence. Then run all three methods and inspect evidence flow before expanding.
 
 Do not stop after creating the scaffold. Once the protocol and permissions
 permit, actually execute the scoped evaluation and produce the paper artifacts.
+
+
+## Executed disposition
+
+The complete scoped deliverable is summarized in STATUS.md and v3/COMPLETION_AUDIT.md. All 12 reserved recordings/324 answers and agent assessments closed. Contract-minus-strengthened-prompt useful-supported-answer gain is descriptively+9.3 points, with 7 favorable/5 tied recording pairs. Zero alpha; no statistically supported superiority claim. Both principal methods preserve full required-unit coverage and make zero specific-physical-cause flags. The paper reports deterministic realization, supplemental-detail/resource tradeoffs, limited native parity, known-family public-data/agent uncertainty and private restoration. No merge or publication is authorized.
