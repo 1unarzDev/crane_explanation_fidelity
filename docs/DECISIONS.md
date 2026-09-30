@@ -4179,3 +4179,25 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   mismatch; the failed combined support canary and unlaunched C remain binding. Capacity and
   qualified measurement remain open, confirmation/replication N remain zero, and all prospective
   primary/secondary episode effects, intervals and corrected p-values remain required.
+
+
+## 2026-09-30 — propose a bounded measurement reopening; no decision or calls authorized
+
+- **Current boundary:** the combined support canary still failed its frozen recovery-coverage
+  reference and explicitly prohibits further candidate cycles. The old returns, reference, freeze,
+  disposition and unlaunched C remain unchanged. Prior component qualifications do not reopen it.
+- **Reviewable proposal:** prepare one separately versioned support/communication qualification
+  cycle with twenty-four fresh synthetic cases, two isolated reference critiques, forty-eight
+  isolated A/B support calls and three constructed disagreement-only C cases (at most 53 calls).
+  All scored fields must match frozen references exactly in both support passes and all C cases;
+  no acceptance threshold is lowered. Technical failure/unknown intent stops execution, and
+  support-reference failure stops before C. No retry, replacement or further cycle is proposed.
+- **Scope:** new candidate versions cannot inherit qualification. Atomic levels remain null;
+  schema-required raw highest strings are retained but unqualified/excluded from rank scoring.
+  Semantic attachment, negative/unmatched/unresolved endpoint handling and response-rank
+  measurement remain open even if the proposed support cycle passes. No pilot annotation, key
+  join, P11 freeze, alpha allocation or physical acquisition is authorized by this proposal.
+- **Decision required:** the proposal is not adopted; all authorization flags remain false pending
+  an explicit user decision to reopen the bound no-further-cycle boundary. Exact new components,
+  runtime/capacity/budgets, references and execution freeze would still precede any model call.
+  Existing independent execution/capacity work may continue while that decision is pending.
