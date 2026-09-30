@@ -4905,3 +4905,29 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   acquisition, alpha spending or P11 freeze. Preserve failed support/unlaunched C
   and unanswered reopening. N=0 and nineteen open conditions; prospective five-method
   reporting remains required.
+
+
+## 2026-09-30 — inspect condition ownership through offline installed-client route
+
+- **Candidate:** observer v6 selects condition coordinator with unchanged MCP v5/
+  broker v7/ledger v2/executor v10. Fresh local registry and synthetic scope/plan
+  bind before launch. Preserve observer v5, strict settings and offline RPC allowlist.
+- **Evidence:** final source passes 69 checks in two invocations and five separate
+  pre-bound CLI 0.159.2 observations. Exact assigned tools/results, failed-work
+  charges and null CPU denials/read preservation pass. Ownership scope/config/source/
+  budgets bind before/after cleanup; all five owner intents remain pending/unknown
+  after recorded app-server SIGTERM. Six services absent; stderr/turn/item counts zero.
+- **Replacement check:** five predeclared direct coordinator constructors with fresh
+  records and larger total are rejected before session creation. No second installed
+  client is launched; this does not prove client reconnect/restart behavior or retry
+  a study/model request. Unknown owners are never adopted or completed.
+- **Retention:** new observer preserves raw framing and failed sanitized records after
+  cleanup/audit exceptions; two separately injected post-cleanup errors test this.
+- **Overshoot/scope:** keep 332.558/367.735/361.926 ms total against 310 ms and
+  22.558/57.735/51.926 ms overshoot; no hard cap, worst-case bound or method effect.
+  Full model tools/rendering/capacity, complete turn boundary/costs, global registry/
+  plan membership, overshoot policy, immutable runtime and durability remain open.
+- **Governance:** no semantic/annotation output, pilot score, method-key join, physical
+  acquisition, alpha spending or P11 freeze. Existing study callers stay unchanged.
+  Failed combined support/unlaunched C and unanswered reopening remain controlling.
+  N=0 and nineteen open P11 conditions; prospective five-method reporting remains.

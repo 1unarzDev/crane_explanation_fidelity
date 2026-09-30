@@ -1,5 +1,26 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Installed-client condition-owner addendum after `4eece4b0` — 2026-09-30
+
+A [separate observer v6](INSTALLED_CLIENT_CONDITION_OWNER_2026-09-30.md) routes
+through the condition coordinator and unchanged MCP v5. Sixty-nine focused checks
+across two final-source invocations and five separate pre-bound offline observations
+pass on CLI 0.159.2. Read-only ownership auditing binds scope/configuration/source/
+budgets before and after cleanup. All five owner intents stay pending/unknown
+following explicit app-server SIGTERM; no graceful terminal is fabricated. Five
+separate direct replacement constructors with fresh records/larger totals are denied
+before session creation; no second installed client or study retry is launched.
+Failed-work charges, exact inventories/outputs, null CPU denials and preserved reads
+still pass. Six services are absent; stderr and turn/item notifications are zero.
+Keep 332.558/367.735/361.926 ms total against 310 ms and 22.558/57.735/51.926 ms
+overshoot. Final-source fault checks retain raw framing after injected cleanup/audit
+errors. Full model tools/rendering/capacity, actual turn boundary/other costs,
+global registry/plan membership, immutable runtime and durability remain open.
+No semantic/annotation call, score, physical acquisition, alpha spending or P11 freeze;
+study callers stay unchanged. N=0, nineteen open conditions and unanswered reopening
+remain.
+
+
 ## Condition ownership addendum after `8d656369` — 2026-09-30
 
 A [separate guarded coordinator](CONDITION_SESSION_OWNERSHIP_2026-09-30.md) reserves
