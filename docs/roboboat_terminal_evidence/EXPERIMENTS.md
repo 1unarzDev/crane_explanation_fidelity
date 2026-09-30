@@ -230,3 +230,25 @@ python analysis/publish_roboboat_terminal_capsule.py \
 ```
 
 Publication requires all twelve final judgments, unlike the separately labeled core timeout-accounting capsule. Preserve evaluated source/contract ambiguity and unpromoted v4 demos as distinct artifacts. Mixed evaluator archives are not method inputs. No shared DVC pointer or study look is updated.
+
+
+Executed `PYTHONPATH=analysis python analysis/replay_roboboat_contact_policy_v2.py`: six inspected successor packets, two removal-only ladders, independent contact/kinematic references pass, zero new N. New output root `artifacts/roboboat-contact-policy-v2/replay`; source hashes bound. Executed targeted v2 tests (27 pass) and documented scoped regressions (111 pass). Launched `PYTHONPATH=analysis python analysis/run_roboboat_contact_policy_qualification_v2.py`, session `44086`, log `/tmp/roboboat-contact-policy-v2-qualification.log`; freezes `contact_policy_qualification_suite_v2.json` and `contact_policy_qualification_freeze_v2.json`. Terminal `artifacts/roboboat-contact-policy-v2/qualification/qualification-result.json` or `retained-failure.json`. One-shot runner refuses overwrite; do not restart. No old experiment or score changed.
+
+
+Contact-policy v2 numerical/replay validation is complete, but the separate semantic extension is **not qualified**. All twelve calls completed normally, with no retry. Each pass scored 14/15 atomic labels and 14/15 fields against the frozen reference; zero unsupported false acceptance and zero supported false rejection. Both fail the predeclared perfect-accuracy gates on case 04. Its authored response asserts continuous proof after saying it is unestablished; the expected limitation-preserved=true reference is inconsistent with whole-response stance. Both judges correctly retain the contrary assertion when assessing preservation, and both use contradicted rather than the frozen insufficient label for the proof assertion. Preserve the failed result, all gold and returns. `contact_policy_development_disposition_v2.json` records this project-agent reference review; it is not human adjudication or a revised passing score. Existing global/marine qualified bindings remain unchanged. No queue remains active. Next: prospectively audit/freeze fresh bounded reference cases and resolve materiality/coverage primary mapping; no same-case retry or confirmation activation.
+
+
+Contact-policy successor intake verified: 141 unique safe relative-path files, 431,945 bytes, SHA-256 `9abae42e994e1c9b2726e797af5f69a0ba8e3c1a34582fb7b5d824b6cdf734a2`. This capsule explicitly retains failed semantic qualification and complete twelve-call accounting; it is not a qualified endpoint or complete comparison. Local coordinator API publication is completed, with no shared DVC/main integration. Manifest/ledger: `publication_artifact_manifest_contact-policy-v2.json` / `publication_intake_ledger_contact-policy-v2.json`. Final targeted tests 29 pass; full scoped regressions 113 pass, excluding the unchanged documented historical external-validity hash test. Configuration totals remain seven fresh valid recordings, three approach clusters, two original complete pairs; confirmation/replication N=0. No queue remains active. Largest bottleneck: prospective reference/primary-endpoint semantic qualification and coordinator allocation/resources. Next authorized development: resolve whole-response limitation/materiality and evidence-sufficiency label boundaries on fresh, prospectively audited references, then freeze an equal-source v2 development comparison. Do not retry this failed suite, rescore old banks or begin confirmation.
+
+
+Safe inspection/resume commands for this successor (all one-shot jobs are terminal):
+
+```bash
+cd /home/lunarz/worktrees/roboboat-terminal-evidence
+cat artifacts/roboboat-contact-policy-v2/qualification/qualification-result.json
+cat docs/roboboat_terminal_evidence/contact_policy_development_disposition_v2.json
+sha256sum artifacts/roboboat-contact-policy-v2/publication/development-capsule-contact-policy-v2.tar.gz
+PYTHONPATH=analysis python -m pytest -q tests/test_roboboat_temporal_certificate_v2.py
+```
+
+The archive binds the output snapshot preceding its own intake manifest/ledger. Subsequent status paragraphs do not retroactively change it. Its contents include evaluator-only gold and qualification returns; never mount it wholesale to methods. No live job needs resumption. Both replay and qualification commands in CONTACT_POLICY_V2.md intentionally refuse rerun over retained outputs. A future fresh suite needs distinct identities, an independently reviewed prospective declaration and new output root; the current failure has no retry authorization.

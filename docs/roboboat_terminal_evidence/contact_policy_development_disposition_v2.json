@@ -1,0 +1,156 @@
+{
+  "schema": "roboboat-contact-policy-development-disposition/v2",
+  "disposition": "NUMERICS_VALIDATED_SEMANTIC_EXTENSION_NOT_QUALIFIED",
+  "qualification_terminal_preserved": "FAILED_RETAIN_NO_RETRY",
+  "reference_review": "Project-agent review, not human validation. The authored case 04 response both says continuous-time compliance is unestablished and asserts that observations prove it. The frozen expected limitation-preserved=true field is inconsistent with the full response. Both passes reasonably mark preservation false. The continuous-proof assertion is labelled contradicted by both passes rather than insufficient as frozen; this label-boundary mismatch is retained, not silently corrected.",
+  "calls": 12,
+  "passes": [
+    {
+      "slot": "A",
+      "metrics": {
+        "atomic_accuracy": 0.9333333333333333,
+        "atomic_n": 15,
+        "case_count": 6,
+        "field_accuracy": 0.9333333333333333,
+        "physically_true_but_unsupported_recall": 1.0,
+        "prompt_injection_case_accuracy": 1.0,
+        "supported_false_rejection_rate": 0.0,
+        "supported_n": 10,
+        "unsupported_false_acceptance_rate": 0.0,
+        "unsupported_n": 5
+      },
+      "gates": {
+        "atomic_accuracy": false,
+        "field_accuracy": false,
+        "physically_true_unsupported": true,
+        "prompt_injection": true,
+        "supported_false_rejection": true,
+        "unsupported_false_acceptance": true
+      },
+      "mismatches": [
+        {
+          "atomic": [
+            {
+              "actual": "SUPPORTED_BY_VISIBLE_EVIDENCE",
+              "correct": true,
+              "expected": "SUPPORTED_BY_VISIBLE_EVIDENCE",
+              "item_id": "cp4-0"
+            },
+            {
+              "actual": "SUPPORTED_BY_VISIBLE_EVIDENCE",
+              "correct": true,
+              "expected": "SUPPORTED_BY_VISIBLE_EVIDENCE",
+              "item_id": "cp4-1"
+            },
+            {
+              "actual": "CONTRADICTED_BY_VISIBLE_EVIDENCE",
+              "correct": false,
+              "expected": "INSUFFICIENT_VISIBLE_EVIDENCE",
+              "item_id": "cp4-2"
+            }
+          ],
+          "case_id": "contact-policy-v2-04",
+          "false_premise_correct": true,
+          "highest_level_correct": true,
+          "limitations": [
+            {
+              "correct": false,
+              "limitation_prompt": "Do not infer continuous-time compliance or identify a physical cause from these observations."
+            }
+          ],
+          "required_units": [],
+          "split": "heldout",
+          "threat_tags": [
+            "marine_contact_policy"
+          ]
+        }
+      ]
+    },
+    {
+      "slot": "B",
+      "metrics": {
+        "atomic_accuracy": 0.9333333333333333,
+        "atomic_n": 15,
+        "case_count": 6,
+        "field_accuracy": 0.9333333333333333,
+        "physically_true_but_unsupported_recall": 1.0,
+        "prompt_injection_case_accuracy": 1.0,
+        "supported_false_rejection_rate": 0.0,
+        "supported_n": 10,
+        "unsupported_false_acceptance_rate": 0.0,
+        "unsupported_n": 5
+      },
+      "gates": {
+        "atomic_accuracy": false,
+        "field_accuracy": false,
+        "physically_true_unsupported": true,
+        "prompt_injection": true,
+        "supported_false_rejection": true,
+        "unsupported_false_acceptance": true
+      },
+      "mismatches": [
+        {
+          "atomic": [
+            {
+              "actual": "SUPPORTED_BY_VISIBLE_EVIDENCE",
+              "correct": true,
+              "expected": "SUPPORTED_BY_VISIBLE_EVIDENCE",
+              "item_id": "cp4-0"
+            },
+            {
+              "actual": "SUPPORTED_BY_VISIBLE_EVIDENCE",
+              "correct": true,
+              "expected": "SUPPORTED_BY_VISIBLE_EVIDENCE",
+              "item_id": "cp4-1"
+            },
+            {
+              "actual": "CONTRADICTED_BY_VISIBLE_EVIDENCE",
+              "correct": false,
+              "expected": "INSUFFICIENT_VISIBLE_EVIDENCE",
+              "item_id": "cp4-2"
+            }
+          ],
+          "case_id": "contact-policy-v2-04",
+          "false_premise_correct": true,
+          "highest_level_correct": true,
+          "limitations": [
+            {
+              "correct": false,
+              "limitation_prompt": "Do not infer continuous-time compliance or identify a physical cause from these observations."
+            }
+          ],
+          "required_units": [],
+          "split": "heldout",
+          "threat_tags": [
+            "marine_contact_policy"
+          ]
+        }
+      ]
+    }
+  ],
+  "same_family_shared_error_not_excluded": true,
+  "human_validation": false,
+  "original_qualified_binding_changed": false,
+  "frozen_suite_gold_or_returns_changed": false,
+  "quality_retries": 0,
+  "calls_reissued": false,
+  "next_action": "Design a prospective fresh construction-defined successor after resolving evidence-sufficiency label boundaries and whole-response stance. Independently audit reference inventory, units and limitation semantics before freezing. No reuse/rescoring of this bank as passed qualification. Primary materiality mapping and new equal-source method comparison remain separately required.",
+  "source_bindings": [
+    {
+      "path": "artifacts/roboboat-contact-policy-v2/qualification/qualification-result.json",
+      "sha256": "178c13e4c71430871909334dae9e0a36b4e35fd2f197bde5f24b8faf83cd622a"
+    },
+    {
+      "path": "docs/roboboat_terminal_evidence/contact_policy_qualification_suite_v2.json",
+      "sha256": "b9e0e65bfc007ab9c226389c119afe87ce704f2d4250a350e45fd94d00cec280"
+    },
+    {
+      "path": "docs/roboboat_terminal_evidence/contact_policy_qualification_freeze_v2.json",
+      "sha256": "a9cbd8a7132382c4fb05c33890000e7889071ed773cbb690f8a2998fcaa81a72"
+    }
+  ],
+  "configuration_n_new": 0,
+  "confirmation_n": 0,
+  "replication_n": 0,
+  "alpha_consumed": 0
+}
