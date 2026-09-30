@@ -4853,3 +4853,27 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   unlaunched C and unanswered reopening. N=0 and nineteen open P11 conditions;
   alpha/freshness and prospective five-method reporting stay unchanged. Manuscript
   numeric traceability and nine-page mechanical full-paper checks pass only.
+
+
+## 2026-09-30 — inspect serial computation CPU MCP through installed client
+
+- **Candidate:** preserve observer v4; observer v5 selects MCP v5/broker v7/ledger
+  v2/executor v10. Keep offline allowlist/network namespace and strict settings.
+  Fixed calls bind synthetic 310 ms total and 300 ms per-call threshold.
+- **Evidence:** 59 focused checks across two invocations and five separate pre-bound
+  installed CLI 0.159.2 observations pass. Failed work is charged against shared
+  remaining CPU; subsequent compute is denied without launch while full read succeeds.
+  Read-only auditing validates session/ledger identity, raw counter sequence and
+  quiescence, reservations, settlements/evidence hashes and broker records without
+  adoption. Six retained services are absent; stderr and turn/item notifications zero.
+- **Overshoot/cleanup:** retain totals 363.163/343.830/370.204 ms against 310 ms and
+  53.163/33.830/60.204 ms overshoot. No method effect, hard cap or worst-case bound.
+  Dedicated app-server SIGTERM remains explicit; no graceful MCP terminal fabricated.
+- **Scope:** direct assigned-server installed-client RPC only. Full provider/model-
+  facing tools/rendering/capacity, whole-turn boundary/costs/overshoot policy,
+  immutable runtime and durable one-shot execution remain open. No installed-client
+  fault injection claimed; prior direct-MCP unknown/storage tests remain separate.
+- **Governance:** study callers do not migrate. No semantic output, automated
+  annotation, pilot scoring, physical acquisition, alpha spending or P11 freeze.
+  Failed support/unlaunched C and unanswered reopening remain. N=0 and nineteen
+  open conditions; prospective five-method reporting remains required.

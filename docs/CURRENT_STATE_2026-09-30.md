@@ -1,5 +1,24 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Installed-client serial CPU addendum after `a3f6be22` — 2026-09-30
+
+A [separate observer v5](INSTALLED_CLIENT_COMPUTATION_CPU_MCP_2026-09-30.md)
+verifies MCP v5/broker v7/ledger v2 through offline installed-client direct RPC.
+Fifty-nine focused checks across two invocations and five separately retained
+pre-bound observations pass on CLI 0.159.2. Exact inventories/Unicode/literals,
+remaining thresholds, failed-work charges and null post-exhaustion computation
+denial match; full reads stay available. Read-only operator verification binds
+reservations, settlements, hashes, raw counters/quiescence and cleanup without
+adopting a ledger. Six retained services are absent; client stderr and turn/item
+notifications are zero. Recorded app-server SIGTERM cleanup remains explicit.
+Keep 363.163/343.830/370.204 ms total against 310 ms and 53.163/33.830/60.204 ms
+overshoot. No method effect, hard cap or worst-case bound follows. Full model-facing
+tools/rendering/capacity, complete turn boundaries/costs, immutable runtime and
+durability remain open. No semantic call, annotation, score, alpha spending or P11
+freeze occurs; study callers stay unchanged. N=0, nineteen open conditions and
+unanswered measurement reopening remain.
+
+
 ## Computation CPU MCP addendum after `1311fcc8` — 2026-09-30
 
 A [separate MCP v5](COMPUTATION_CPU_MCP_2026-09-30.md) selects broker v7/ledger v2,
