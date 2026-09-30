@@ -1,5 +1,14 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Runtime archive addendum after `aadbd6bc` — 2026-09-30
+
+The [exact runtime snapshot candidate](RUNTIME_SNAPSHOT_2026-09-30.md) now preserves all inventoried
+`/usr` content in a verified 15589560320-byte local archive, with links, permissions/owners, mtimes
+and extended attributes. Original export provenance and a separate final framing verification are
+retained. No caller adopts the archive; restoration/execution equivalence, distribution and full
+scientific runtime/harness binding remain open. P11 still has nineteen open conditions, N=0 and
+a pending measurement reopening decision. No model or annotation invocation occurred.
+
 ## Complete inspection addendum after `ccd11317` — 2026-09-30
 
 A [pinned read-only container helper](CONTAINER_RUNTIME_AUDIT_2026-09-30.md) now completes the

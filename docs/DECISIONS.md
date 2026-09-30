@@ -4390,3 +4390,27 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   effects, physical acquisitions or alpha expenditure. Preserve failed measurement and unlaunched
   C; reopening remains pending. P11 keeps nineteen open conditions and confirmation/replication
   N=0. No endpoint, method, population, sample size or stopping rule is frozen.
+
+## 2026-09-30 — preserve the exact inventoried runtime as a local archive candidate
+
+- **Reproducibility prerequisite:** export the entire recorded `/usr` content into a fresh ignored
+  disk namespace through the pinned read-only audit helper. Expected identity, helper layers,
+  source closure, code/limits and container identity bind before launch. Existing method callers,
+  environment and permissions remain unchanged; no narrower software surface replaces B2 access.
+- **Exactness:** anchored file reads/hash checks and metadata/fingerprint checks match the original
+  inventory. Preserve hardlinks, symlink targets, empty directories, root metadata, source mtimes
+  and PAX extended attributes. The finished 15589560320-byte archive covers all 397044 members,
+  with SHA-256 `2169ee2f7b4cb82f159e5a4427769c33ef3d4e79ee64ff03e674584b0815fb5d`.
+  Seven entries carry xattrs; the archive digest separately binds metadata outside the earlier
+  inventory's scope. The labelled exporter container is absent.
+- **Verification provenance:** retain the original staged exporter/verifier and terminal. A final
+  framing guard was added during this development run; bind a distinct completed strict check
+  of the same archive, rather than rewriting the original terminal or repeating export. Eleven
+  synthetic tests cover exact content/metadata, links/xattrs, tampering, budget and end framing.
+- **Scope:** raw host archive stays local in ignored infrastructure output, unpublished. Restored
+  runtime equivalence, owner/xattr preservation, execution/kernel/harness checks and scientific
+  adoption remain open. A fixed artifact is not proof that the live tree is immutable or that an
+  extraction/execution path already works. Earlier failed scans remain preserved.
+- **Governance:** no model/annotation call, method key, semantic endpoint, physical acquisition,
+  alpha spending or P11 freeze. Preserve failed support canary/unlaunched C; reopening remains
+  pending. P11 keeps nineteen open conditions with confirmation/replication independent N=0.
