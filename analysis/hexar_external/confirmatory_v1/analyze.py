@@ -7,12 +7,12 @@ try:
     from .audit import BASE, ROOT, CLAIM, digest
     from .statistics import summary, cp_bounds
     from .heterogeneous_statistics import summarize as e_summary
-    from .mixture_statistics import summary as mixture_summary
+    from .mixture_interval_v3 import summary as mixture_summary
 except ImportError:
     from audit import BASE, ROOT, CLAIM, digest
     from statistics import summary, cp_bounds
     from analysis.hexar_external.confirmatory_v1.heterogeneous_statistics import summarize as e_summary
-    from analysis.hexar_external.confirmatory_v1.mixture_statistics import summary as mixture_summary
+    from analysis.hexar_external.confirmatory_v1.mixture_interval_v3 import summary as mixture_summary
 
 METHODS = ('HX-CONTRACT', 'HX-PROMPT')
 
