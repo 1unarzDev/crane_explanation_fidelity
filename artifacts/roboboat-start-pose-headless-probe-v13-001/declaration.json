@@ -1,0 +1,44 @@
+{
+  "schema": "roboboat-initial-pose-headless-probe/v1",
+  "root": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-start-pose-headless-probe-v13-001",
+  "build": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-start-pose-v13/full-build-v1.json",
+    "sha256": "017c8fd2c64738950035e8d24463417df156a7ff01915f83d7b90574e096fa39"
+  },
+  "probe_source": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/probe_roboboat_initial_pose_v1.py",
+    "sha256": "768fffd86d3ebb7775047c6f3b932df36a96b4f6b797d9abd25857ccce7d9cdb"
+  },
+  "cases": [
+    {
+      "id": "default-absent",
+      "pose": null
+    },
+    {
+      "id": "offset-positive-yaw",
+      "pose": [
+        -2.0,
+        -5.0,
+        0.25
+      ]
+    },
+    {
+      "id": "offset-negative-yaw",
+      "pose": [
+        -2.5,
+        -6.0,
+        -0.25
+      ]
+    }
+  ],
+  "duration_s": 8,
+  "warmup_s": 2,
+  "seed": 43104,
+  "timeout_s": 90,
+  "mode": "headless train-cpu, ROS/camera publishers disabled; initialization readback only",
+  "stopping": "All three fixed cases once, no retries or outcome-dependent changes.",
+  "scope": "Startup pose application only, not rendered sensing/transport/navigation/trace qualification or physical equivalence.",
+  "independent_n_added": 0,
+  "confirmation_n": 0,
+  "replication_n": 0
+}
