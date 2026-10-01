@@ -1,0 +1,22 @@
+# Next action, while support queue runs
+
+Current local commits: `2f17ec5` and `4cd021f`. Persistent goal remains active. Do not treat this as the final external study deliverable.
+
+1. Resume/poll shell session 80486 for the six-family qualified support queue, or rerun `annotate_v2.py --cohort development --stage annotate` to reuse immutable completed/failed summaries. The queue has two workers, no retries. Current repeated technical issue is the non-endpoint NOT_APPLICABLE premise sentinel, documented in JUDGE_INTERFACE_REVIEW.md. Never normalize or rescore failed v2 jobs.
+2. Ordered release session 79899 waits on `annotation_summary.json`. It runs `report_v2.py --cohort development`, then the declared 90% technical admission gate, freeze, reserved packets/references, all three regenerated methods and blind-bank export. A gate failure stops before reserved answers. Do not lower that gate after failure.
+3. If the sentinel issue fails admission, construct an independently reviewed prospective interface correction/qualification with genuinely fresh fixtures covering original nominal/subjective questions. Keep the explanation endpoint, references, masks and methods unchanged. Retain the entire v2 queue and its failure rate. Use current main pipeline behavior; do not locally change its core semantics. Any new annotation run is versioned prospectively before held-out output, never a favorable rescore or failure-only retry.
+4. If admitted, independently construct/audit the reserved bank's complete claim inventory; run the qualified A/B/C support queue; retain missing-label bounds; execute the single descriptive paired report; produce final table, evidence-level figure and concise paper section; update all six required docs and scoped restorable manifests; commit locally without merging/pushing/publishing.
+
+Main-study coordinator thread `01a0ef85-3b9e-7e13-8226-c3355b3223b4` received the zero-alpha descriptive/quota/binding status. No allocation ID has arrived. Do not spend discovery or protected replication reserve. Keep the pinned core 9a81db8 and current qualified binding unless coordinated; do not silently adopt another active branch's updates.
+
+All six pilot recordings and twelve reserved recordings remain grouped by underlying physical run. Full-cohort bounds retain missing jobs; incomplete-case means cannot replace the primary finite-sample estimand. No root-cause geometry, human validation or architecture universality is established. Thirteen scoped tests pass. Main and boat code/data/pins remain unchanged.
+
+## Superseding interface work
+
+The v2 ordered-release watcher was intentionally stopped (session 79899 exited 143), before reserved generation. The v2 support queue remains running. Its final report must still be produced and retained, with the unchanged 90% technical gate disposition; do not silently substitute v3 scores for v2.
+
+Prospective compatibility candidate is committed in `207e50d`. Source/fixture reviews and all 100% gates are frozen. Session 13369 runs `after_v2_interface.py`, waiting for verified v2 process 1137324 and its final summary, then calls fresh `qualify_v3.py` and, only if QUALIFIED, `run_v3_pilot.py --cohort development`. No v3 inference ran when this note was written. Exact boundaries are in v3/PROSPECTIVE_INTERFACE_PILOT.md.
+
+Once fresh v3 responses exist, use `annotate_v3.py --cohort development --stage bank`, independently inventory all 54 answers, then `--stage packets` and `--stage annotate`. The bridge preserves the unchanged main support pipeline/schema/validator and base v2 semantic amendment, appending only the hash-qualified applicability clarification. Declare inherited v2 status names with the v3 annotation-binding hashes. Do not use report_v2 directly on the q1-only slice: it assumes nine jobs per recording. Report its technical robustness as an interface pilot; the scientific held-out endpoint remains nine jobs per recording.
+
+Freeze the final descriptive reserved study using that applicable qualified binding, actual v2 full-query pilot discordance/bounds, and v3 interface robustness before any held-out calls. All twelve reserved bags, original three questions and masks remain required. No more alpha, no new physical N, no failure-only sample and no unchanged task rewritten as historical HEXAR accuracy. Complete all held-out jobs/qualified labels/results/manuscript/figure/restoration artifacts afterward.
