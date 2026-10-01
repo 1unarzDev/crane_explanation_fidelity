@@ -57,3 +57,14 @@ branch head is `0df68389e323d8c706aa46518145df3441f5579b`, matching the genuine
 umbrella gitlink. Its 12 LFS objects were uploaded by the component push. No component
 main, docking branch, land gitlink or umbrella scientific commit is changed. This
 makes the marine dependency reachable without integrating marine work into land main.
+
+
+## Requested branch retirement after separation
+
+After verifying that both tips are ancestors of integrated `main`, the user requested
+removal of the temporary backup and environment-platform branches. Delete
+`backup/roboboat-terminal-evidence-before-land-split-2026-09-30` (`a93a3b93`) and
+`environment-platform` (`f7bde48e`) locally and on GitHub. Both histories remain
+reachable through `main`; no scientific commit is removed. This later instruction
+supersedes the earlier direction to keep the temporary backup branch reachable.
+The land-study and genuine RoboBoat branches remain separate.
