@@ -1,0 +1,81 @@
+{
+  "scope": "DEVELOPMENT_ONLY_SYNTHETIC",
+  "case_count": 24,
+  "human_validation_claimed": false,
+  "passes": {
+    "A": {
+      "annotated": 24,
+      "errors": [
+        {
+          "case_id": "q13-causal-recovery-overclaim",
+          "field": "communicated_unit_ids",
+          "expected": [
+            "discrepancy",
+            "recovery"
+          ],
+          "observed": [
+            "discrepancy",
+            "invocation",
+            "recovery"
+          ]
+        },
+        {
+          "case_id": "q17-missing-odom-zero",
+          "field": "factual_numeric_error",
+          "expected": false,
+          "observed": true
+        },
+        {
+          "case_id": "q19-false-premise-collision",
+          "field": "factual_numeric_error",
+          "expected": false,
+          "observed": true
+        }
+      ],
+      "primary_failure_correct": 24,
+      "unit_count": 82,
+      "unit_correct": 81
+    },
+    "B": {
+      "annotated": 24,
+      "errors": [
+        {
+          "case_id": "q07-explicit-negation",
+          "field": "factual_numeric_error",
+          "expected": false,
+          "observed": true
+        },
+        {
+          "case_id": "q13-causal-recovery-overclaim",
+          "field": "communicated_unit_ids",
+          "expected": [
+            "discrepancy",
+            "recovery"
+          ],
+          "observed": [
+            "discrepancy",
+            "invocation",
+            "recovery"
+          ]
+        },
+        {
+          "case_id": "q17-missing-odom-zero",
+          "field": "factual_numeric_error",
+          "expected": false,
+          "observed": true
+        },
+        {
+          "case_id": "q19-false-premise-collision",
+          "field": "factual_numeric_error",
+          "expected": false,
+          "observed": true
+        }
+      ],
+      "primary_failure_correct": 24,
+      "unit_count": 82,
+      "unit_correct": 81
+    }
+  },
+  "technical_failures": 0,
+  "status": "DEVELOPMENT_DISAGREEMENTS_RETAINED"
+}

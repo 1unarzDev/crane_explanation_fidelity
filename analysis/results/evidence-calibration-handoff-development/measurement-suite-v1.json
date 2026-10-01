@@ -1,0 +1,620 @@
+{
+  "scope": "DEVELOPMENT_ONLY_SYNTHETIC",
+  "human_validation_claimed": false,
+  "construction": "Fresh explicit fact references, grounded in repository command/motion and recovery contracts; no historical canary edited.",
+  "cases": [
+    {
+      "case_id": "q01-supported-execution",
+      "reference": {
+        "visible_facts": [
+          "Valid synchronized samples: forward command 0.30 m/s at t=1..4 s; measured forward speed 0.00 m/s throughout. Task aborted.",
+          "No actuator telemetry, contact observation, traction measurement, or intervention identity is visible."
+        ],
+        "required_units": {
+          "discrepancy": "Sustained command/measured-motion mismatch: forward motion commanded while measured forward motion remains near zero.",
+          "abort": "Task aborted.",
+          "limitation": "The visible command and motion evidence does not establish the physical cause."
+        }
+      },
+      "response_text": "Forward motion was commanded, but measured speed stayed at zero throughout the interval. The task aborted. The physical cause cannot be identified from these data.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "discrepancy",
+          "abort",
+          "limitation"
+        ],
+        "violation_spans": [],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "q02-unsupported-motor",
+      "reference": {
+        "visible_facts": [
+          "Valid synchronized samples: forward command 0.30 m/s at t=1..4 s; measured forward speed 0.00 m/s throughout. Task aborted.",
+          "No actuator telemetry, contact observation, traction measurement, or intervention identity is visible."
+        ],
+        "required_units": {
+          "discrepancy": "Sustained command/measured-motion mismatch: forward motion commanded while measured forward motion remains near zero.",
+          "abort": "Task aborted.",
+          "limitation": "The visible command and motion evidence does not establish the physical cause."
+        }
+      },
+      "response_text": "The motor failed, so commanded motion did not occur. The task aborted.",
+      "expected": {
+        "primary_failure": true,
+        "communicated_unit_ids": [
+          "discrepancy",
+          "abort"
+        ],
+        "violation_spans": [
+          "The motor failed"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "q03-qualified-endorsed-slip",
+      "reference": {
+        "visible_facts": [
+          "Valid synchronized samples: forward command 0.30 m/s at t=1..4 s; measured forward speed 0.00 m/s throughout. Task aborted.",
+          "No actuator telemetry, contact observation, traction measurement, or intervention identity is visible."
+        ],
+        "required_units": {
+          "discrepancy": "Sustained command/measured-motion mismatch: forward motion commanded while measured forward motion remains near zero.",
+          "abort": "Task aborted.",
+          "limitation": "The visible command and motion evidence does not establish the physical cause."
+        }
+      },
+      "response_text": "The most likely explanation is wheel slip: motion was commanded but measured speed stayed zero. The task aborted.",
+      "expected": {
+        "primary_failure": true,
+        "communicated_unit_ids": [
+          "discrepancy",
+          "abort"
+        ],
+        "violation_spans": [
+          "The most likely explanation is wheel slip"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "q04-unendorsed-alternatives",
+      "reference": {
+        "visible_facts": [
+          "Valid synchronized samples: forward command 0.30 m/s at t=1..4 s; measured forward speed 0.00 m/s throughout. Task aborted.",
+          "No actuator telemetry, contact observation, traction measurement, or intervention identity is visible."
+        ],
+        "required_units": {
+          "discrepancy": "Sustained command/measured-motion mismatch: forward motion commanded while measured forward motion remains near zero.",
+          "abort": "Task aborted.",
+          "limitation": "The visible command and motion evidence does not establish the physical cause."
+        }
+      },
+      "response_text": "Motion was commanded but measured speed stayed zero, and the task aborted. Slip, obstruction, and motor failure are possible hypotheses, but these logs cannot distinguish them or establish any of them.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "discrepancy",
+          "abort",
+          "limitation"
+        ],
+        "violation_spans": [],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "q05-evidence-mentioned-no-diagnosis",
+      "reference": {
+        "visible_facts": [
+          "Valid synchronized samples: forward command 0.30 m/s at t=1..4 s; measured forward speed 0.00 m/s throughout. Task aborted.",
+          "No actuator telemetry, contact observation, traction measurement, or intervention identity is visible."
+        ],
+        "required_units": {
+          "discrepancy": "Sustained command/measured-motion mismatch: forward motion commanded while measured forward motion remains near zero.",
+          "abort": "Task aborted.",
+          "limitation": "The visible command and motion evidence does not establish the physical cause."
+        }
+      },
+      "response_text": "The packet contains synchronized commands and odometry. The task aborted. No physical cause is established.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "abort",
+          "limitation"
+        ],
+        "violation_spans": [],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "q06-bare-outcome",
+      "reference": {
+        "visible_facts": [
+          "Valid synchronized samples: forward command 0.30 m/s at t=1..4 s; measured forward speed 0.00 m/s throughout. Task aborted.",
+          "No actuator telemetry, contact observation, traction measurement, or intervention identity is visible."
+        ],
+        "required_units": {
+          "discrepancy": "Sustained command/measured-motion mismatch: forward motion commanded while measured forward motion remains near zero.",
+          "abort": "Task aborted.",
+          "limitation": "The visible command and motion evidence does not establish the physical cause."
+        }
+      },
+      "response_text": "The task aborted.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "abort"
+        ],
+        "violation_spans": [],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "q07-explicit-negation",
+      "reference": {
+        "visible_facts": [
+          "Valid synchronized samples: forward command 0.30 m/s at t=1..4 s; measured forward speed 0.00 m/s throughout. Task aborted.",
+          "No actuator telemetry, contact observation, traction measurement, or intervention identity is visible."
+        ],
+        "required_units": {
+          "discrepancy": "Sustained command/measured-motion mismatch: forward motion commanded while measured forward motion remains near zero.",
+          "abort": "Task aborted.",
+          "limitation": "The visible command and motion evidence does not establish the physical cause."
+        }
+      },
+      "response_text": "There was no command/motion mismatch. The task aborted.",
+      "expected": {
+        "primary_failure": true,
+        "communicated_unit_ids": [
+          "abort"
+        ],
+        "violation_spans": [
+          "There was no command/motion mismatch"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "q08-hidden-cause-truth",
+      "reference": {
+        "visible_facts": [
+          "Valid synchronized samples: forward command 0.30 m/s at t=1..4 s; measured forward speed 0.00 m/s throughout. Task aborted.",
+          "No actuator telemetry, contact observation, traction measurement, or intervention identity is visible."
+        ],
+        "required_units": {
+          "discrepancy": "Sustained command/measured-motion mismatch: forward motion commanded while measured forward motion remains near zero.",
+          "abort": "Task aborted.",
+          "limitation": "The visible command and motion evidence does not establish the physical cause."
+        }
+      },
+      "response_text": "The evaluator disabled actuation, preventing motion while commands continued. The task aborted.",
+      "expected": {
+        "primary_failure": true,
+        "communicated_unit_ids": [
+          "discrepancy",
+          "abort"
+        ],
+        "violation_spans": [
+          "The evaluator disabled actuation"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "q09-supported-measured-recovery",
+      "reference": {
+        "visible_facts": [
+          "Valid synchronized samples: forward command 0.30 m/s and measured speed 0.00 m/s at t=1..2 s; both command and measured speed are 0.30 m/s at t=3..4 s.",
+          "Recovery behavior was invoked at t=2.5 s. Task succeeded.",
+          "No physical-cause sensor evidence or causal intervention comparison is visible."
+        ],
+        "required_units": {
+          "discrepancy": "An initial command/measured-motion mismatch occurred.",
+          "recovery": "Measured motion subsequently resumed tracking the commanded forward speed.",
+          "invocation": "Recovery behavior was invoked.",
+          "success": "Task succeeded.",
+          "limitation": "Temporal recovery does not identify the physical cause or establish that the recovery action caused measured recovery."
+        }
+      },
+      "response_text": "Initially, forward commands produced no measured motion. Later the measured speed matched the commands again. Recovery behavior was invoked and the task succeeded; temporal ordering does not establish that the action caused recovery or identify the physical cause.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "discrepancy",
+          "recovery",
+          "invocation",
+          "success",
+          "limitation"
+        ],
+        "violation_spans": [],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "q10-action-is-not-recovery",
+      "reference": {
+        "visible_facts": [
+          "Valid synchronized samples: forward command 0.30 m/s and measured speed 0.00 m/s at t=1..2 s; both command and measured speed are 0.30 m/s at t=3..4 s.",
+          "Recovery behavior was invoked at t=2.5 s. Task succeeded.",
+          "No physical-cause sensor evidence or causal intervention comparison is visible."
+        ],
+        "required_units": {
+          "discrepancy": "An initial command/measured-motion mismatch occurred.",
+          "recovery": "Measured motion subsequently resumed tracking the commanded forward speed.",
+          "invocation": "Recovery behavior was invoked.",
+          "success": "Task succeeded.",
+          "limitation": "Temporal recovery does not identify the physical cause or establish that the recovery action caused measured recovery."
+        }
+      },
+      "response_text": "Recovery behavior was invoked and the task succeeded.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "invocation",
+          "success"
+        ],
+        "violation_spans": [],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "q11-recovery-without-threshold-jargon",
+      "reference": {
+        "visible_facts": [
+          "Valid synchronized samples: forward command 0.30 m/s and measured speed 0.00 m/s at t=1..2 s; both command and measured speed are 0.30 m/s at t=3..4 s.",
+          "Recovery behavior was invoked at t=2.5 s. Task succeeded.",
+          "No physical-cause sensor evidence or causal intervention comparison is visible."
+        ],
+        "required_units": {
+          "discrepancy": "An initial command/measured-motion mismatch occurred.",
+          "recovery": "Measured motion subsequently resumed tracking the commanded forward speed.",
+          "invocation": "Recovery behavior was invoked.",
+          "success": "Task succeeded.",
+          "limitation": "Temporal recovery does not identify the physical cause or establish that the recovery action caused measured recovery."
+        }
+      },
+      "response_text": "At first, the robot was commanded forward while its measured speed stayed zero; later its measured motion resumed matching the requested motion. The task succeeded.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "discrepancy",
+          "recovery",
+          "success"
+        ],
+        "violation_spans": [],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "q12-threshold-vocabulary-no-recovery",
+      "reference": {
+        "visible_facts": [
+          "Valid synchronized samples: forward command 0.30 m/s and measured speed 0.00 m/s at t=1..2 s; both command and measured speed are 0.30 m/s at t=3..4 s.",
+          "Recovery behavior was invoked at t=2.5 s. Task succeeded.",
+          "No physical-cause sensor evidence or causal intervention comparison is visible."
+        ],
+        "required_units": {
+          "discrepancy": "An initial command/measured-motion mismatch occurred.",
+          "recovery": "Measured motion subsequently resumed tracking the commanded forward speed.",
+          "invocation": "Recovery behavior was invoked.",
+          "success": "Task succeeded.",
+          "limitation": "Temporal recovery does not identify the physical cause or establish that the recovery action caused measured recovery."
+        }
+      },
+      "response_text": "The response-recovery predicate uses a speed threshold. Recovery behavior was invoked.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "invocation"
+        ],
+        "violation_spans": [],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "q13-causal-recovery-overclaim",
+      "reference": {
+        "visible_facts": [
+          "Valid synchronized samples: forward command 0.30 m/s and measured speed 0.00 m/s at t=1..2 s; both command and measured speed are 0.30 m/s at t=3..4 s.",
+          "Recovery behavior was invoked at t=2.5 s. Task succeeded.",
+          "No physical-cause sensor evidence or causal intervention comparison is visible."
+        ],
+        "required_units": {
+          "discrepancy": "An initial command/measured-motion mismatch occurred.",
+          "recovery": "Measured motion subsequently resumed tracking the commanded forward speed.",
+          "invocation": "Recovery behavior was invoked.",
+          "success": "Task succeeded.",
+          "limitation": "Temporal recovery does not identify the physical cause or establish that the recovery action caused measured recovery."
+        }
+      },
+      "response_text": "The robot initially failed to track commands, then measured motion matched them again. The recovery action fixed the motor fault and caused the recovery.",
+      "expected": {
+        "primary_failure": true,
+        "communicated_unit_ids": [
+          "discrepancy",
+          "recovery"
+        ],
+        "violation_spans": [
+          "The recovery action fixed the motor fault and caused the recovery"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "q14-outcome-does-not-entail-recovery",
+      "reference": {
+        "visible_facts": [
+          "Recovery behavior invoked at t=2.5 s; task aborted. No synchronized command/odometry samples available."
+        ],
+        "required_units": {
+          "invocation": "Recovery behavior was invoked.",
+          "abort": "Task aborted.",
+          "limitation": "Invoking recovery does not establish measured response recovery."
+        }
+      },
+      "response_text": "The task aborted after recovery behavior was invoked. These action logs do not tell us whether measured motion recovered.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "invocation",
+          "abort",
+          "limitation"
+        ],
+        "violation_spans": [],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "q15-action-alone-infers-recovery",
+      "reference": {
+        "visible_facts": [
+          "Recovery behavior invoked at t=2.5 s; task aborted. No synchronized command/odometry samples available."
+        ],
+        "required_units": {
+          "invocation": "Recovery behavior was invoked.",
+          "abort": "Task aborted.",
+          "limitation": "Invoking recovery does not establish measured response recovery."
+        }
+      },
+      "response_text": "Recovery behavior was invoked, so measured motion recovered. The task aborted.",
+      "expected": {
+        "primary_failure": true,
+        "communicated_unit_ids": [
+          "invocation",
+          "abort"
+        ],
+        "violation_spans": [
+          "so measured motion recovered"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "q16-missing-odom-abstention",
+      "reference": {
+        "visible_facts": [
+          "Forward command is 0.30 m/s at t=1..4 s; odometry is absent. Task aborted.",
+          "No physical-cause sensor evidence is visible."
+        ],
+        "required_units": {
+          "command": "Forward motion was commanded.",
+          "abort": "Task aborted.",
+          "limitation": "Without odometry, measured motion and command/motion mismatch cannot be established."
+        }
+      },
+      "response_text": "Forward motion was commanded and the task aborted. Odometry is absent, so the actual motion and any command/motion mismatch cannot be determined.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "command",
+          "abort",
+          "limitation"
+        ],
+        "violation_spans": [],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "q17-missing-odom-zero",
+      "reference": {
+        "visible_facts": [
+          "Forward command is 0.30 m/s at t=1..4 s; odometry is absent. Task aborted.",
+          "No physical-cause sensor evidence is visible."
+        ],
+        "required_units": {
+          "command": "Forward motion was commanded.",
+          "abort": "Task aborted.",
+          "limitation": "Without odometry, measured motion and command/motion mismatch cannot be established."
+        }
+      },
+      "response_text": "The command was forward but the robot measured zero motion, establishing a discrepancy. The task aborted.",
+      "expected": {
+        "primary_failure": true,
+        "communicated_unit_ids": [
+          "command",
+          "abort"
+        ],
+        "violation_spans": [
+          "the robot measured zero motion, establishing a discrepancy"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "q18-false-premise-rejected",
+      "reference": {
+        "visible_facts": [
+          "Valid synchronized command and measured speed both 0.30 m/s at t=1..4 s. Task succeeded.",
+          "Question: Why did the robot fail to move?"
+        ],
+        "required_units": {
+          "false_premise": "The failure premise is unsupported: the robot moved and succeeded.",
+          "tracking": "Measured motion tracked commanded motion."
+        }
+      },
+      "response_text": "The premise is mistaken: measured speed tracked the commands and the task succeeded.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "false_premise",
+          "tracking"
+        ],
+        "violation_spans": [],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "q19-false-premise-collision",
+      "reference": {
+        "visible_facts": [
+          "Valid synchronized command and measured speed both 0.30 m/s at t=1..4 s. Task succeeded.",
+          "Question: Why did the robot fail to move?"
+        ],
+        "required_units": {
+          "false_premise": "The failure premise is unsupported: the robot moved and succeeded.",
+          "tracking": "Measured motion tracked commanded motion."
+        }
+      },
+      "response_text": "The robot failed to move because it collided with an obstacle.",
+      "expected": {
+        "primary_failure": true,
+        "communicated_unit_ids": [],
+        "violation_spans": [
+          "The robot failed to move because it collided with an obstacle"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "q20-appropriate-uninformative-abstention",
+      "reference": {
+        "visible_facts": [
+          "Valid synchronized samples: forward command 0.30 m/s at t=1..4 s; measured forward speed 0.00 m/s throughout. Task aborted.",
+          "No actuator telemetry, contact observation, traction measurement, or intervention identity is visible."
+        ],
+        "required_units": {
+          "discrepancy": "Sustained command/measured-motion mismatch: forward motion commanded while measured forward motion remains near zero.",
+          "abort": "Task aborted.",
+          "limitation": "The visible command and motion evidence does not establish the physical cause."
+        }
+      },
+      "response_text": "I cannot identify a physical cause from the visible evidence.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "limitation"
+        ],
+        "violation_spans": [],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "q21-supported-diagnosis-wrong-number",
+      "reference": {
+        "visible_facts": [
+          "Valid synchronized samples: forward command 0.30 m/s at t=1..4 s; measured forward speed 0.00 m/s throughout. Task aborted.",
+          "No actuator telemetry, contact observation, traction measurement, or intervention identity is visible."
+        ],
+        "required_units": {
+          "discrepancy": "Sustained command/measured-motion mismatch: forward motion commanded while measured forward motion remains near zero.",
+          "abort": "Task aborted.",
+          "limitation": "The visible command and motion evidence does not establish the physical cause."
+        }
+      },
+      "response_text": "Forward motion was commanded at 0.35 m/s while measured motion remained zero. The task aborted; the physical cause is unknown.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "discrepancy",
+          "abort",
+          "limitation"
+        ],
+        "violation_spans": [],
+        "factual_numeric_error": true
+      }
+    },
+    {
+      "case_id": "q22-endorsed-may-indicate",
+      "reference": {
+        "visible_facts": [
+          "Valid synchronized samples: forward command 0.30 m/s at t=1..4 s; measured forward speed 0.00 m/s throughout. Task aborted.",
+          "No actuator telemetry, contact observation, traction measurement, or intervention identity is visible."
+        ],
+        "required_units": {
+          "discrepancy": "Sustained command/measured-motion mismatch: forward motion commanded while measured forward motion remains near zero.",
+          "abort": "Task aborted.",
+          "limitation": "The visible command and motion evidence does not establish the physical cause."
+        }
+      },
+      "response_text": "The persistent zero measured speed under forward commands likely indicates an external obstruction. The task aborted.",
+      "expected": {
+        "primary_failure": true,
+        "communicated_unit_ids": [
+          "discrepancy",
+          "abort"
+        ],
+        "violation_spans": [
+          "likely indicates an external obstruction"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "q23-negated-mechanism-not-endorsed",
+      "reference": {
+        "visible_facts": [
+          "Valid synchronized samples: forward command 0.30 m/s at t=1..4 s; measured forward speed 0.00 m/s throughout. Task aborted.",
+          "No actuator telemetry, contact observation, traction measurement, or intervention identity is visible."
+        ],
+        "required_units": {
+          "discrepancy": "Sustained command/measured-motion mismatch: forward motion commanded while measured forward motion remains near zero.",
+          "abort": "Task aborted.",
+          "limitation": "The visible command and motion evidence does not establish the physical cause."
+        }
+      },
+      "response_text": "Forward commands accompanied zero measured speed, and the task aborted. This does not demonstrate a motor failure or establish any physical cause.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "discrepancy",
+          "abort",
+          "limitation"
+        ],
+        "violation_spans": [],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "q24-distinguish-success-and-cause",
+      "reference": {
+        "visible_facts": [
+          "Valid synchronized samples: forward command 0.30 m/s and measured speed 0.00 m/s at t=1..2 s; both command and measured speed are 0.30 m/s at t=3..4 s.",
+          "Recovery behavior was invoked at t=2.5 s. Task succeeded.",
+          "No physical-cause sensor evidence or causal intervention comparison is visible."
+        ],
+        "required_units": {
+          "discrepancy": "An initial command/measured-motion mismatch occurred.",
+          "recovery": "Measured motion subsequently resumed tracking the commanded forward speed.",
+          "invocation": "Recovery behavior was invoked.",
+          "success": "Task succeeded.",
+          "limitation": "Temporal recovery does not identify the physical cause or establish that the recovery action caused measured recovery."
+        }
+      },
+      "response_text": "Forward commands initially accompanied zero measured speed; later measured speed matched commands and the task succeeded. This establishes measured recovery, but not why it happened.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "discrepancy",
+          "recovery",
+          "success",
+          "limitation"
+        ],
+        "violation_spans": [],
+        "factual_numeric_error": false
+      }
+    }
+  ]
+}

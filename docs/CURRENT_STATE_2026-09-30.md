@@ -1,3 +1,5 @@
+> **Superseding research handoff checkpoint:** See [completed development results](EVIDENCE_CALIBRATION_HANDOFF_RESULTS_2026-09-30.md). Primary N=22 (11/11 strata); B2/B4 v5 failures0/0, discordances0/0, coverage229/231 versus231/231, risk difference0 with conservative95% CI±12.73 points and descriptive p=1. Four fresh physical candidates are collected and reserved from development. No confirmation was launched because no superiority effect was observed; alpha remains .02 consumed/.01 available/.02 protected. The user authorizes development measurement iteration and a minimum scientific freeze, superseding the development stop rules and19-gate objective in the historical checkpoint below. Original failed canary and old answers remain retained.
+
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
 ## Static repository-source addendum after `7cbee314` — 2026-09-30

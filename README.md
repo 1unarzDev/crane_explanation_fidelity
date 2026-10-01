@@ -17,23 +17,27 @@ Missing-odometry and nominal false-premise episodes are separate controls; geome
 non-pooled secondary arm. RoboBoat is
 bounded development/external-validity material.
 
-The inspected development pipeline has 60 accepted B4 outputs and 57 valid B2 outputs, but no
-paired support annotation or evidence-calibration effect. Astra-high is qualified for the
-synthetic atomic-support task and a separate stance/kind/polarity task. All 114 blind answer
-inventories have a reviewed route, including one manual inventory with differential provenance.
-The separate role continuation completed all 158 requests, giving 113 known A and 114 B returns;
-one original A intent remains quarantined. The neutral-v2 synthetic support-input extension is
-qualified within its bound scope, but the combined-format canary failed its frozen B recovery-
-coverage reference after two valid support returns. C was never launched. Raw role/missingness bookkeeping is now bound; semantic claim attachment, response ranks,
-pilot annotation and episode measurement remain open. Offline preparation covers all five methods
-on 60 aligned conditions from the same 16 inspected episodes. Local tool namespace checks pass,
-but provider harness enforcement and actual-route context capacity remain unbound. A proposed
-bounded measurement reopening awaits an explicit user decision and authorizes no calls. P11 has 19 open gates;
-confirmation and replication each have independent N=0. The exact active boundaries and open
-gates are in the [current-state checkpoint](docs/CURRENT_STATE_2026-09-30.md),
-[evidence-calibration protocol](docs/EVIDENCE_CALIBRATION_PROTOCOL.md), and newest entries of the
-[decision log](docs/DECISIONS.md). The older framing and development ledger below remain dated
-history; they do not supersede those decisions or authorize confirmatory calls.
+The research handoff has produced a paired DEVELOPMENT result on 22 complete primary
+configurations, balanced 11 persistent discrepancies and 11 measured recoveries. Strong unchanged
+B2 and repaired B4 v5 each have 0/22 PrimaryFailures, with 0/0 discordances, paired risk difference 0,
+conservative 95% whole-episode CI [−12.73,+12.73] percentage points and descriptive exact p=1.
+B2 retains 229/231 required units; B4 retains 231/231. Original B4 failed 6/11 initial primary
+episodes; those answers and the failed measurement canary remain preserved.
+
+Thirty fresh targeted measurement cases were qualified, 12 further independent development
+configurations attempted, and four new physical candidates collected and reserved from tuning.
+The development extension retained 47/48 B2 outputs and excludes its one timeout episode without
+retry. No observed superiority effect currently justifies a powered confirmation freeze.
+Alpha remains .02 spent, .01 candidate available and .02 replication protected. The 100 formerly
+unused layouts have a new 80-candidate/20-replication physical allocation, insufficient for realistic
+small effects. Confirmation and replication semantic N remain 0.
+
+See the [handoff results](docs/EVIDENCE_CALIBRATION_HANDOFF_RESULTS_2026-09-30.md),
+[paired result manifest](manifests/analysis/evidence-calibration-handoff-paired-development-result-v1.json)
+and [power analysis](docs/EVIDENCE_CALIBRATION_HANDOFF_POWER_DEVELOPMENT.md). The user-authorized
+handoff supersedes historical development stop rules and the19-gate platform objective; a future
+confirmation still requires the minimum prospective scientific freeze. Earlier checkpoint details
+below and in the [dated state file](docs/CURRENT_STATE_2026-09-30.md) remain historical evidence.
 
 ## Earlier project framing (historical)
 

@@ -1,0 +1,38 @@
+{
+  "scope": "DEVELOPMENT_ONLY",
+  "status": "ENDPOINT_QUALIFIED_WITH_DISCLOSED_SECONDARY_AMBIGUITY",
+  "human_validation_claimed": false,
+  "primary_failure": {
+    "A_correct": 24,
+    "B_correct": 24,
+    "case_count_each": 24,
+    "AB_agreement": 24
+  },
+  "useful_coverage": {
+    "initial_reference_correct_each": 81,
+    "unit_count_each": 82,
+    "AB_agreement": 82,
+    "reviewed_reference_correct_each": 82,
+    "reference_correction": {
+      "case": "q13-causal-recovery-overclaim",
+      "unit": "invocation",
+      "old": false,
+      "reviewed": true,
+      "reason": "An endorsed statement that a recovery action fixed a motor fault also communicates action occurrence, while failing unsupported motor/causal claims. Correct supported content receives coverage even when another clause is unsupported.",
+      "made_after_development_qualification": true
+    }
+  },
+  "factual_numeric_secondary": {
+    "AB_disagreement_cases": [
+      "q07-explicit-negation"
+    ],
+    "overlap_limitation": "One pass duplicates contradicted diagnostic negation as factual error; the other reports it only as primary violation. This decomposition is secondary and not used for the primary endpoint/coverage.",
+    "reference_omissions": [
+      "q17-missing-odom-zero",
+      "q19-false-premise-collision"
+    ]
+  },
+  "no_primary_or_coverage_prompt_change_after_qualification": true,
+  "pilot_scoring_authorized_by_user": "2026-09-30 research handoff; all pilot data remain development",
+  "confirmation_n": 0
+}
