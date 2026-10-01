@@ -86,8 +86,8 @@ def audit(run):
             raise ValueError('unexpected/pending phase attempt')
         phases[phase] = attempts
     expected_methods = {r['unique_request_id']:r for r in plan['requests']}
-    if set(phases['methods']) != set(expected_methods) or len(outputs) != 12:
-        raise ValueError('exact twelve unique method dispositions required')
+    if set(phases['methods']) != set(expected_methods) or len(outputs) != len(expected_methods):
+        raise ValueError('exact complete unique method dispositions required')
     method_requests = {j['job_id']:j['request'] for j in registries['methods']['jobs']}
     for row in outputs:
         uid = row['unique_request_id']
@@ -111,11 +111,11 @@ def audit(run):
     reproduced = finalize(plan, outputs, neutral, public, private, phases['initial_judges'], phases['adjudication_judges'])
     if reproduced != read(run/'closed_dispositions.json') or reproduced['paired_counts'] != report['paired_counts']:
         raise ValueError('whole-episode scoring reproduction differs')
-    if raw_count != 12+report['initial_judge_attempts']+report['C_attempts']:
+    if raw_count != len(expected_methods)+report['initial_judge_attempts']+report['C_attempts']:
         raise ValueError('raw attempted-call accounting differs')
     return dict(schema='hexar-development-registered-pipeline-archive-audit/v1',
         status='ACTUAL_DEVELOPMENT_PIPELINE_REPRODUCED_NOT_FINAL_ADAPTER_QUALIFICATION',
-        raw_unique_attempts_verified=raw_count, unique_method_attempts=12,
+        raw_unique_attempts_verified=raw_count, unique_method_attempts=len(expected_methods),
         paired_counts=reproduced['paired_counts'], provider_calls=0, confirmatory_N=0, alpha_consumed=0,
         report_sha256=hashlib.sha256((run/'report.json').read_bytes()).hexdigest())
 
