@@ -23,9 +23,9 @@ def validate(returned,cases,schema):
         for v in r['primary_violations']+r['factual_numeric_errors']:
             if not v['quote'] or v['quote'] not in text:raise ValueError('violation/error span not exact')
 
-def execute(cases,output,slot,batch_size,workers,source_assets=None,prompt_path=None,group_by_episode=False,scope='DEVELOPMENT_ONLY',timeout_seconds=600):
+def execute(cases,output,slot,batch_size,workers,source_assets=None,prompt_path=None,group_by_episode=False,scope='DEVELOPMENT_ONLY',timeout_seconds=600,reasoning_effort="high"):
     prompt=(prompt_path or HERE/'annotation-prompt-v1.md').read_text();schema=json.loads((HERE/'annotation-schema-v1.json').read_text())
-    config={'candidate':{'model':'gpt-6-astra','reasoning_effort':'high','transport':'codex-cli-chatgpt-login-ephemeral/v1'},'timeout_s':timeout_seconds}
+    config={'candidate':{'model':'gpt-6-astra','reasoning_effort':reasoning_effort,'transport':'codex-cli-chatgpt-login-ephemeral/v1'},'timeout_s':timeout_seconds}
     stamp=hashlib.sha256(json.dumps({'prompt':prompt,'schema':schema,'config':config},sort_keys=True).encode()).hexdigest()
     version=subprocess.run(['codex','--version'],capture_output=True,text=True,check=True).stdout.strip()
     if group_by_episode:
@@ -70,8 +70,8 @@ def qualify():
     summary['status']='PASS_TARGETED_DEVELOPMENT' if not summary['technical_failures'] and all(not v['errors'] for v in summary['passes'].values()) else 'DEVELOPMENT_DISAGREEMENTS_RETAINED'
     (HERE/'qualification-summary-v1.json').write_text(json.dumps(summary,indent=2)+'\n');print(json.dumps(summary,indent=2))
 if __name__=='__main__':
-    ap=argparse.ArgumentParser();ap.add_argument('--qualify',action='store_true');ap.add_argument('--cases',type=Path);ap.add_argument('--output',type=Path);ap.add_argument('--slot',default='A');ap.add_argument('--batch-size',type=int,default=4);ap.add_argument('--workers',type=int,default=2);ap.add_argument('--prompt',type=Path);ap.add_argument('--group-by-episode',action='store_true');ap.add_argument('--timeout-seconds',type=float,default=600);ap.add_argument('--scope',choices=['DEVELOPMENT_ONLY','CONFIRMATION','REPLICATION'],default='DEVELOPMENT_ONLY');a=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('--qualify',action='store_true');ap.add_argument('--cases',type=Path);ap.add_argument('--output',type=Path);ap.add_argument('--slot',default='A');ap.add_argument('--batch-size',type=int,default=4);ap.add_argument('--workers',type=int,default=2);ap.add_argument('--prompt',type=Path);ap.add_argument('--group-by-episode',action='store_true');ap.add_argument('--timeout-seconds',type=float,default=600);ap.add_argument('--reasoning-effort',choices=['low','medium','high','xhigh'],default='high');ap.add_argument('--scope',choices=['DEVELOPMENT_ONLY','CONFIRMATION','REPLICATION'],default='DEVELOPMENT_ONLY');a=ap.parse_args()
     if a.qualify:qualify()
     else:
         data=json.loads(a.cases.read_text())
-        execute(data['cases'],a.output,a.slot,a.batch_size,a.workers,data.get('source_assets'),a.prompt,a.group_by_episode,a.scope,a.timeout_seconds)
+        execute(data['cases'],a.output,a.slot,a.batch_size,a.workers,data.get('source_assets'),a.prompt,a.group_by_episode,a.scope,a.timeout_seconds,a.reasoning_effort)
