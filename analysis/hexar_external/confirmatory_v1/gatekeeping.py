@@ -80,9 +80,37 @@ def validate_scientific_binding(root,family,h2freeze=None):
     return binding
 
 
+def concurrent_commitment_errors(root, amendment):
+    """A retained concurrent consumption cannot be ignored by a stale ledger.
+
+    Absence supports older candidate fixtures only; it grants no activation.
+    A discovered conflict requires a separately reviewed prospective resolution,
+    not a bare status toggle in this metadata audit.
+    """
+    pin = amendment.get('concurrent_commitment_audit')
+    if pin is None:
+        return []
+    try:
+        report = load_pinned(root, pin['path'], pin['sha256'])
+        if report.get('schema') != 'hexar-concurrent-h1-commitment-audit/v1':
+            raise ValueError('wrong commitment audit schema')
+        for source in report['source_snapshots'].values():
+            if hashlib.sha256((Path(root)/source['snapshot_path']).read_bytes()).hexdigest() != source['sha256']:
+                raise ValueError('retained concurrent commitment snapshot changed')
+        return ['alpha: concurrent committed H1 consumption conflicts with unbound H2 family; explicit prospective reconciliation required']
+    except (OSError, KeyError, TypeError, ValueError) as exc:
+        return ['alpha: concurrent commitment audit missing/invalid: '+str(exc)]
+
+
 def activation_errors(root,family,attestation):
     """Checks sealed H1 result; never accepts a bare reject flag as evidence."""
     errors=[]
+    alpha_path=Path(root)/BASE_PATH/'alpha_amendment.json'
+    if alpha_path.exists():
+        try:
+            errors.extend(concurrent_commitment_errors(root,json.loads(alpha_path.read_text())))
+        except (OSError,ValueError) as exc:
+            errors.append('alpha: invalid amendment: '+str(exc))
     try:
         ledger=json.loads((Path(root)/LEDGER_PATH).read_text())
         validate_family(family,ledger,activation=True)

@@ -368,6 +368,8 @@ def audit(base=BASE, root=ROOT, stage="semantic"):
                 errors.append(f'runtime: changed dependency {file}')
     except (OSError, ValueError, KeyError):
         errors.append('runtime: complete dependency manifest missing/invalid')
+    from .gatekeeping import concurrent_commitment_errors
+    errors.extend(concurrent_commitment_errors(root,docs.get('alpha_amendment.json',{})))
     return dict(schema='hexar-preconfirmation-audit/v1',passed=not errors,
                 stage=stage,acquisition_authorized=not errors,
                 confirmation_authorized=not errors and stage=='semantic',development_authorized=True,errors=errors,

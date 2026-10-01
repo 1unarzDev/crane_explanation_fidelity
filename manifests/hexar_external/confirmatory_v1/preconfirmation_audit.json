@@ -6,7 +6,7 @@
   "confirmation_authorized": false,
   "development_authorized": true,
   "errors": [
-    "alpha_amendment.json: status not READY_FOR_FREEZE (PROSPECTIVE_FIXED_SEQUENCE_UNBOUND)",
+    "alpha_amendment.json: status not READY_FOR_FREEZE (CONFLICT_CONCURRENT_H1_ALREADY_CONSUMED_DISCOVERY_ALLOCATION)",
     "freshness_ledger.json: empty required field independent_exposure_attestation",
     "freshness_ledger.json: status not READY_FOR_FREEZE (NO_UNTOUCHED_ORIGINAL_COHORT)",
     "freshness_ledger.json: missing required independent_exposure_attestation",
@@ -83,13 +83,14 @@
     "provider baseline: stable complete binding missing/invalid: 'provider_binding_qualification'",
     "provider judge: stable complete binding missing/invalid: 'provider_binding_qualification'",
     "execution: no qualified confirmatory exactly-once adapter",
-    "runtime: complete dependency manifest missing/invalid"
+    "runtime: complete dependency manifest missing/invalid",
+    "alpha: concurrent committed H1 consumption conflicts with unbound H2 family; explicit prospective reconciliation required"
   ],
   "bound_by_audit": 0,
   "consumed_by_audit": 0,
   "semantic_outputs_generated": 0,
   "checked_hashes": {
-    "alpha_amendment.json": "0f76fd83b08854cdd33ed93d3c5a1fb9d7eb0407c47bdcf5212599491511719d",
+    "alpha_amendment.json": "80fdf124af3c3300dbc2a9c6a9ed8086bacb651c270a1f1a637faeb563181cfe",
     "analysis_plan.json": "40dd646fb23dc689d883f441228a324ce645dfa8c6b7fa507d3d7fece4c7f58a",
     "annotation_freeze.json": "a65e6206759553bfd19e82c0223461f205ad384d626af758990638f65430b7f0",
     "battery.json": "0bd914b586dac0aa07119ae34bd3e2ba891c048291f31315854d8a662a10d3f2",
