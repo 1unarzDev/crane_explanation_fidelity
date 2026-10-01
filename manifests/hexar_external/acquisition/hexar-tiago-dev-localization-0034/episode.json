@@ -1,0 +1,172 @@
+{
+  "schema": "hexar-development-episode-runtime/v1",
+  "phase": "development_only",
+  "family_hidden": "localization",
+  "sampling_hidden": {
+    "profile": "home_top_room_clearance_v4_development",
+    "map_yaml_sha256": "084cab10306856e084b5de6063dcc4103fa9fa557c300b64778d40c0152415a2",
+    "map_pgm_sha256": "3a8c35199fb7a50ab905766a1f1f07832bf4b8627a68802e0c7ebc3f22251a2c",
+    "start_xy": [
+      -4.614999999999998,
+      0.47499999999999964
+    ],
+    "start_yaw": -1.5232294981936725,
+    "goal_xy": [
+      -0.4649999999999981,
+      0.7750000000000004
+    ],
+    "goal_yaw": 0.17947407136145355,
+    "candidate_start_n": 6597,
+    "candidate_goal_n": 2548,
+    "required_clearance_m": 0.6,
+    "distance_m": 4.16082924427331,
+    "sampling_bounds_xy": [
+      -6,
+      1.2,
+      -0.5,
+      2.0
+    ]
+  },
+  "measured_reset_error_m": 1.686557946386776e-05,
+  "reset_measurements_hidden": [
+    {
+      "x": -4.614999934773071,
+      "y": 0.47500485867719966,
+      "z": -0.001130607783976334,
+      "yaw_rad": -1.5232297233039893,
+      "quaternion_xyzw": [
+        2.254267503696324e-05,
+        1.869646774937946e-05,
+        -0.6900910559784701,
+        0.7237225529170622
+      ],
+      "error_m": 4.859115010581782e-06,
+      "heading_error_rad": 2.2511031683158933e-07,
+      "position_in_tolerance": true,
+      "heading_in_tolerance": true,
+      "in_tolerance": true,
+      "source": "Gazebo GetEntityState world pose; reset only, not goal arrival"
+    },
+    {
+      "x": -4.614999934901858,
+      "y": 0.4750168612319884,
+      "z": -0.0014734176524198728,
+      "yaw_rad": -1.523229718018716,
+      "quaternion_xyzw": [
+        0.00015269454188799418,
+        0.0001206775674346306,
+        -0.6900910450179096,
+        0.7237225377915151
+      ],
+      "error_m": 1.686135765429317e-05,
+      "heading_error_rad": 2.1982504350148702e-07,
+      "position_in_tolerance": true,
+      "heading_in_tolerance": true,
+      "in_tolerance": true,
+      "source": "Gazebo GetEntityState world pose; reset only, not goal arrival"
+    },
+    {
+      "x": -4.614999934975048,
+      "y": 0.47501686545411176,
+      "z": -0.0015144788272642151,
+      "yaw_rad": -1.5232297087074054,
+      "quaternion_xyzw": [
+        0.00021946479979291034,
+        0.00015693904440502982,
+        -0.6900910354951693,
+        0.7237225227492531
+      ],
+      "error_m": 1.686557946386776e-05,
+      "heading_error_rad": 2.105137328900497e-07,
+      "position_in_tolerance": true,
+      "heading_in_tolerance": true,
+      "in_tolerance": true,
+      "source": "Gazebo GetEntityState world pose; reset only, not goal arrival"
+    }
+  ],
+  "measured_reset_heading_error_rad": 2.105137328900497e-07,
+  "intervention_observations_hidden": [],
+  "dynamic_trajectory_hidden": null,
+  "indicator_consumers_hidden": {
+    "/power/is_charging": [
+      {
+        "node_name": "rosbag2_recorder",
+        "node_namespace": "/",
+        "topic_type": "std_msgs/msg/Bool"
+      },
+      {
+        "node_name": "twist_mux",
+        "node_namespace": "/",
+        "topic_type": "std_msgs/msg/Bool"
+      }
+    ],
+    "/joy_priority": [
+      {
+        "node_name": "rosbag2_recorder",
+        "node_namespace": "/",
+        "topic_type": "std_msgs/msg/Bool"
+      },
+      {
+        "node_name": "twist_mux",
+        "node_namespace": "/",
+        "topic_type": "std_msgs/msg/Bool"
+      }
+    ]
+  },
+  "indicator_prelude_publications_per_topic": 3,
+  "localization_parameters_accepted": [
+    true,
+    true,
+    true,
+    true,
+    true
+  ],
+  "localization_parameters_observed_hidden": [
+    {
+      "name": "max_beams",
+      "type": 2,
+      "integer_value": 5,
+      "double_value": 0.0
+    },
+    {
+      "name": "z_hit",
+      "type": 3,
+      "integer_value": 0,
+      "double_value": 0.01
+    },
+    {
+      "name": "z_rand",
+      "type": 3,
+      "integer_value": 0,
+      "double_value": 0.99
+    },
+    {
+      "name": "update_min_d",
+      "type": 3,
+      "integer_value": 0,
+      "double_value": 0.01
+    },
+    {
+      "name": "update_min_a",
+      "type": 3,
+      "integer_value": 0,
+      "double_value": 0.01
+    }
+  ],
+  "nomotion_update_responses": 140,
+  "seed_hidden": 2694556933,
+  "goal_hidden": [
+    -0.4649999999999981,
+    0.7750000000000004
+  ],
+  "accepted": true,
+  "terminal_action_status": 5,
+  "timeout": true,
+  "localization_intervention_applied": true,
+  "dynamic_move_requests": 0,
+  "dynamic_moves_confirmed_success": 0,
+  "dynamic_moves_confirmed_failure": 0,
+  "dynamic_moves_unresolved": 0,
+  "semantic_outputs_generated": false,
+  "qualification_complete": false
+}

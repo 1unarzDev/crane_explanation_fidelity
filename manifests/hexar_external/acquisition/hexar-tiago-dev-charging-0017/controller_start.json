@@ -1,0 +1,117 @@
+{
+  "snapshot": {
+    "schema": "hexar-observed-controller-context/v1",
+    "stamp": {
+      "sec": 3,
+      "nanosec": 535000000
+    },
+    "node": "/twist_mux",
+    "parameters": {
+      "locks.assisted_teleop.priority": 200,
+      "locks.assisted_teleop.timeout": 0.0,
+      "locks.assisted_teleop.topic": "assisted_teleop_priority",
+      "locks.charging.priority": 210,
+      "locks.charging.timeout": 0.0,
+      "locks.charging.topic": "power/is_charging",
+      "locks.joystick.priority": 100,
+      "locks.joystick.timeout": 0.0,
+      "locks.joystick.topic": "joy_priority",
+      "topics.assisted_teleop.priority": 200,
+      "topics.assisted_teleop.timeout": 0.5,
+      "topics.assisted_teleop.topic": "assisted_vel",
+      "topics.docking.priority": 210,
+      "topics.docking.timeout": 0.5,
+      "topics.docking.topic": "docking_vel",
+      "topics.joystick.priority": 100,
+      "topics.joystick.timeout": 0.5,
+      "topics.joystick.topic": "joy_vel",
+      "topics.keyboard.priority": 90,
+      "topics.keyboard.timeout": 0.5,
+      "topics.keyboard.topic": "key_vel",
+      "topics.navigation.priority": 10,
+      "topics.navigation.timeout": 0.5,
+      "topics.navigation.topic": "cmd_vel",
+      "topics.rviz.priority": 100,
+      "topics.rviz.timeout": 0.5,
+      "topics.rviz.topic": "rviz_joy_vel",
+      "topics.webgui_joystick.priority": 100,
+      "topics.webgui_joystick.timeout": 0.5,
+      "topics.webgui_joystick.topic": "tab_vel",
+      "use_sim_time": true
+    },
+    "subscribers": {
+      "/assisted_teleop_priority": [
+        "std_msgs/msg/Bool"
+      ],
+      "/assisted_vel": [
+        "geometry_msgs/msg/Twist"
+      ],
+      "/clock": [
+        "rosgraph_msgs/msg/Clock"
+      ],
+      "/cmd_vel": [
+        "geometry_msgs/msg/Twist"
+      ],
+      "/docking_vel": [
+        "geometry_msgs/msg/Twist"
+      ],
+      "/joy_priority": [
+        "std_msgs/msg/Bool"
+      ],
+      "/joy_vel": [
+        "geometry_msgs/msg/Twist"
+      ],
+      "/key_vel": [
+        "geometry_msgs/msg/Twist"
+      ],
+      "/parameter_events": [
+        "rcl_interfaces/msg/ParameterEvent"
+      ],
+      "/power/is_charging": [
+        "std_msgs/msg/Bool"
+      ],
+      "/rviz_joy_vel": [
+        "geometry_msgs/msg/Twist"
+      ],
+      "/tab_vel": [
+        "geometry_msgs/msg/Twist"
+      ]
+    },
+    "publishers": {
+      "/diagnostics": [
+        "diagnostic_msgs/msg/DiagnosticArray"
+      ],
+      "/mobile_base_controller/cmd_vel_unstamped": [
+        "geometry_msgs/msg/Twist"
+      ],
+      "/parameter_events": [
+        "rcl_interfaces/msg/ParameterEvent"
+      ],
+      "/rosout": [
+        "rcl_interfaces/msg/Log"
+      ]
+    },
+    "output_receivers": [
+      {
+        "node_name": "mobile_base_controller",
+        "node_namespace": "/",
+        "topic_type": "geometry_msgs/msg/Twist"
+      },
+      {
+        "node_name": "twist_marker",
+        "node_namespace": "/",
+        "topic_type": "geometry_msgs/msg/Twist"
+      }
+    ],
+    "scope": "acknowledged parameter service and ROS graph observations at this stamp; not proof of continuous delivery or physical causation"
+  },
+  "technical_review": {
+    "schema": "hexar-controller-probe-technical-review/v1",
+    "candidate_integrity": true,
+    "parameter_mismatches": [],
+    "graph_missing": [],
+    "probe_code_sha256": "b0e8b15d3f19c5267fba9538e27610849159637f5d9553aa4d74cbd6f2b26f1e",
+    "semantic_method_outputs_used": false,
+    "physical_cause_claim_qualified": false
+  }
+}

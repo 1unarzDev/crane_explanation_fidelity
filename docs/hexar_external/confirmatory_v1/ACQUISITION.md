@@ -145,3 +145,5 @@ python -m analysis.hexar_external.acquisition.reliability_review \
 ```
 
 The reviewer rejects in-progress or incomplete schedules before mutation. It retains every attempted episode, including capture/extraction/setup failures, and never substitutes a reserve. Derived evidence files are created exclusively or verified against exact reproduction. Full final qualification still needs the acquisition adapter and complete freeze. Refresh the development exposure snapshot after the campaign; stale exposure cannot pass current admission. N=144 here must never be reused as a confirmation sample-size decision.
+
+V16 and its terminal review are now complete; **do not rerun** the exclusive review command above. The [result](ACQUISITION_RELIABILITY_RESULT.md) passed all 144 technical dispositions and pins exposure v11. Every episode remains development-only; final adapter qualification and scientific freeze remain required.

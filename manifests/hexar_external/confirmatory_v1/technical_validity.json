@@ -18,7 +18,7 @@
   "machine_predicate_sha256": null,
   "validity_judge_blind_to_method_outcomes": true,
   "operational_candidate": {
-    "status": "DEVELOPMENT_RELIABILITY_QUALIFICATION_IN_PROGRESS_NOT_FINAL_ADAPTER",
+    "status": "DEVELOPMENT_RELIABILITY_PASSED_FINAL_ACQUISITION_ADAPTER_PENDING",
     "implementation": {
       "path": "analysis/hexar_external/acquisition/operational_validity_candidate.py",
       "sha256": "2c1fa85154dc51bbbc309637e474a6ddc64a091d3173bbec1a8d3f4455ce7592"
@@ -35,6 +35,23 @@
       "path": "manifests/hexar_external/acquisition/development_episode_plan_v16.json",
       "sha256": "fc24fc243635a83e768dabd2e17d60193a0e1281be758547bded09814311d82b"
     },
-    "full_admission_authorized": false
+    "full_admission_authorized": false,
+    "reliability_report": {
+      "path": "manifests/hexar_external/acquisition/development_reliability_v16/report.json",
+      "sha256": "c868ed4d55581d3f27b304206cf2256ce9c11b37ae77e486ff625e2f6491a863"
+    },
+    "qualified_development_attempts": 144,
+    "qualified_valid_per_family": 24,
+    "observed_invalid_by_family": {
+      "charging": 0,
+      "dynamic_env": 0,
+      "localization": 0,
+      "manual_joystick": 0,
+      "obstacle": 0,
+      "success": 0
+    },
+    "simultaneous_planning_invalidity_upper": 0.18084243175631798,
+    "supported_candidate_invalidity_cap": 0.2,
+    "binomial_assumptions": "independent identically generated technical-validity outcomes within each fixed family"
   }
 }
