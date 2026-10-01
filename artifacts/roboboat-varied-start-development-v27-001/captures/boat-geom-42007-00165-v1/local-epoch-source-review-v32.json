@@ -1,0 +1,126 @@
+{
+  "schema": "roboboat-local-epoch-rejection-source-review/v32",
+  "capture": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-varied-start-development-v27-001/captures/boat-geom-42007-00165-v1/capture-attempt.json",
+    "sha256": "308e1d62b00a39297e9d00be32d757af831cf9234bd40f129ef8586956c0032a"
+  },
+  "trace": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-varied-start-development-v27-001/captures/boat-geom-42007-00165-v1/action-timing.jsonl",
+    "sha256": "8962a3b77c9b6c6b77a19c916c1b96c07c1e65f62aab242068f449f31ef7d501"
+  },
+  "source_bindings": [
+    {
+      "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Utils/Performance/CraneActionGate.cs",
+      "sha256": "ba0b13c6d5641762b475cfa7ea1b11ea076da745c61e0655215e2fd7dc44dcda"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Controllers/ROSOmniXCommand.cs",
+      "sha256": "0851804655af9e11173f8363fb3652bd03f397a748b29de782c67d6294d45f52"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Performance/CraneBenchmarkRunner.cs",
+      "sha256": "ecab1c736228266b1f5cb22da035cc76a4a8f800a028b0c3d7204fb15ca79df3"
+    }
+  ],
+  "receipt_neighborhood": [
+    {
+      "kind": "mailbox_enqueue",
+      "ordinal": 35,
+      "episode": 3,
+      "sequence": 9,
+      "receiveTick": 7,
+      "applicationTick": -1,
+      "decisionEpisode": -1,
+      "reason": ""
+    },
+    {
+      "kind": "ros_callback",
+      "ordinal": 36,
+      "episode": 3,
+      "sequence": 10,
+      "receiveTick": 7,
+      "applicationTick": -1,
+      "decisionEpisode": -1,
+      "reason": ""
+    },
+    {
+      "kind": "receive",
+      "ordinal": 37,
+      "episode": 3,
+      "sequence": 10,
+      "receiveTick": 7,
+      "applicationTick": -1,
+      "decisionEpisode": -1,
+      "reason": ""
+    },
+    {
+      "kind": "mailbox_overwrite",
+      "ordinal": 38,
+      "episode": 3,
+      "sequence": 9,
+      "receiveTick": 7,
+      "applicationTick": -1,
+      "decisionEpisode": -1,
+      "reason": ""
+    },
+    {
+      "kind": "mailbox_enqueue",
+      "ordinal": 39,
+      "episode": 3,
+      "sequence": 10,
+      "receiveTick": 7,
+      "applicationTick": -1,
+      "decisionEpisode": -1,
+      "reason": ""
+    },
+    {
+      "kind": "mailbox_consume",
+      "ordinal": 40,
+      "episode": 3,
+      "sequence": 10,
+      "receiveTick": 7,
+      "applicationTick": -1,
+      "decisionEpisode": -1,
+      "reason": ""
+    },
+    {
+      "kind": "gate_decision",
+      "ordinal": 41,
+      "episode": 3,
+      "sequence": 10,
+      "receiveTick": 7,
+      "applicationTick": 1,
+      "decisionEpisode": 4,
+      "reason": "CrossEpisode"
+    },
+    {
+      "kind": "ros_callback",
+      "ordinal": 42,
+      "episode": 4,
+      "sequence": 11,
+      "receiveTick": 2,
+      "applicationTick": -1,
+      "decisionEpisode": -1,
+      "reason": ""
+    },
+    {
+      "kind": "receive",
+      "ordinal": 43,
+      "episode": 4,
+      "sequence": 11,
+      "receiveTick": 2,
+      "applicationTick": -1,
+      "decisionEpisode": -1,
+      "reason": ""
+    }
+  ],
+  "local_epoch_definition": "CraneActionGate.Receive stamps CraneRuntimeMetrics.EpisodeId locally; gate comparison is to the current local epoch. This field is not a statistical configuration ID or foreign publisher identity.",
+  "observed": "Queued sequence10 stamped local epoch3 is consumed and rejected CrossEpisode under decision epoch4/application tick1. Next callback has local epoch4. BeginMeasurement source advances local episode after warmup GPU drain.",
+  "scope": "Consistent with a local generation transition; the exact reset caller and remote publisher identity are not proven by these fields. This is not evidence establishing cross-worker contamination or its absence.",
+  "original_disposition": "TECHNICAL_FAILURE",
+  "original_gates_relaxed": false,
+  "old_failure_relabelled": false,
+  "independent_n_redefined": false,
+  "endpoint_scores": 0,
+  "independent_n_added": 0
+}

@@ -1,0 +1,1568 @@
+{
+  "schema": "roboboat-timeout-output-engineering-scope-audit/v32",
+  "terminal": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-unpaired-full-B4-v3-varied-start-002/terminal.json",
+    "sha256": "828f6dcb32c381938369dcd3fe79c9667975483d705af5b9364590ec8c6656c4"
+  },
+  "conditions": 9,
+  "results": [
+    {
+      "row_id": "boat-geom-42007-00092-v2",
+      "level": 0,
+      "checks": {
+        "fixture_status_clause": true,
+        "fixture_scope_clause": true,
+        "no_success_clause": true,
+        "no_aborted_clause": true,
+        "no_cancel_clause": true
+      },
+      "clauses": [
+        {
+          "clause_id": "claim-action-timeout",
+          "contract_id": "claim-action-timeout",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The navigation fixture reported timeout."
+        },
+        {
+          "clause_id": "claim-configured-rot_stopped_velocity",
+          "contract_id": "claim-configured-rot_stopped_velocity",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "rot_stopped_velocity"
+          ],
+          "text": "The visible configuration records the rotational stopped-velocity tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (rot stopped velocity: 0.05 rad/s)."
+        },
+        {
+          "clause_id": "claim-configured-trans_stopped_velocity",
+          "contract_id": "claim-configured-trans_stopped_velocity",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "trans_stopped_velocity"
+          ],
+          "text": "The visible configuration records the translational stopped-velocity tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (trans stopped velocity: 0.05 m/s)."
+        },
+        {
+          "clause_id": "claim-configured-xy_goal_tolerance",
+          "contract_id": "claim-configured-xy_goal_tolerance",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "xy_goal_tolerance"
+          ],
+          "text": "The visible configuration records the XY goal tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (xy goal tolerance: 0.2 m)."
+        },
+        {
+          "clause_id": "claim-configured-yaw_goal_tolerance",
+          "contract_id": "claim-configured-yaw_goal_tolerance",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "yaw_goal_tolerance"
+          ],
+          "text": "The visible configuration records the yaw goal tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (yaw goal tolerance: 0.35 rad)."
+        },
+        {
+          "clause_id": "claim-contact-unknown",
+          "contract_id": "claim-contact-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The task requires no prohibited hull contact during the dwell; available contact evidence does not establish whether this requirement held."
+        },
+        {
+          "clause_id": "claim-dwell-unknown",
+          "contract_id": "claim-dwell-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "Completion of the specified fixed docking dwell is unestablished by available evidence."
+        },
+        {
+          "clause_id": "claim-evidence-scope",
+          "contract_id": "claim-evidence-scope",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The explanation uses only the declared robot-visible packet; delivered observations do not prove Nav2 internal consumption."
+        },
+        {
+          "clause_id": "claim-fixture-timeout-scope",
+          "contract_id": "claim-fixture-timeout-scope",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The fixture timeout does not establish a terminal ROS action result, cancellation, or docking failure."
+        },
+        {
+          "clause_id": "claim-heading-unknown",
+          "contract_id": "claim-heading-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the heading requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-hull-unknown",
+          "contract_id": "claim-hull-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the hull requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-position-unknown",
+          "contract_id": "claim-position-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the position requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-public-docking-requirements",
+          "contract_id": "claim-public-docking-requirements",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "dwell_s",
+            "heading_tolerance_rad",
+            "position_tolerance_m",
+            "speed_tolerance_mps",
+            "yaw_rate_tolerance_radps"
+          ],
+          "text": "The separate public docking task requires the fixed dwell and position, heading, speed, and yaw-rate limits shown here; configured navigation tolerances do not replace these requirements (dwell s: 5 s; heading tolerance rad: 0.35 rad; position tolerance m: 0.4 m; speed tolerance mps: 0.05 m/s; yaw rate tolerance radps: 0.05 rad/s)."
+        },
+        {
+          "clause_id": "claim-speed-unknown",
+          "contract_id": "claim-speed-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the speed requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-yaw_rate-unknown",
+          "contract_id": "claim-yaw_rate-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the yaw rate requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "ne-cause",
+          "contract_id": "ne-cause",
+          "kind": "NON_ENTAILMENT",
+          "numeric_slot_ids": [],
+          "text": "These observations do not identify a unique physical cause; waves, current, wind and actuation remain unresolved."
+        },
+        {
+          "clause_id": "ne-continuous",
+          "contract_id": "ne-continuous",
+          "kind": "NON_ENTAILMENT",
+          "numeric_slot_ids": [],
+          "text": "Samples do not establish continuous-time compliance between observations; an observed violation is sufficient to falsify the dwell."
+        }
+      ],
+      "passed": true,
+      "pipeline": {
+        "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-unpaired-full-B4-v3-varied-start-002/conditions/boat-geom-42007-00092-v2-L0/full-pipeline.json",
+        "sha256": "d151e506c201898428713d794577b514ca37c2d1993d959c19e23e9244167218"
+      }
+    },
+    {
+      "row_id": "boat-geom-42007-00092-v2",
+      "level": 1,
+      "checks": {
+        "fixture_status_clause": true,
+        "fixture_scope_clause": true,
+        "no_success_clause": true,
+        "no_aborted_clause": true,
+        "no_cancel_clause": true
+      },
+      "clauses": [
+        {
+          "clause_id": "claim-action-timeout",
+          "contract_id": "claim-action-timeout",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The navigation fixture reported timeout."
+        },
+        {
+          "clause_id": "claim-configured-rot_stopped_velocity",
+          "contract_id": "claim-configured-rot_stopped_velocity",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "rot_stopped_velocity"
+          ],
+          "text": "The visible configuration records the rotational stopped-velocity tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (rot stopped velocity: 0.05 rad/s)."
+        },
+        {
+          "clause_id": "claim-configured-trans_stopped_velocity",
+          "contract_id": "claim-configured-trans_stopped_velocity",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "trans_stopped_velocity"
+          ],
+          "text": "The visible configuration records the translational stopped-velocity tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (trans stopped velocity: 0.05 m/s)."
+        },
+        {
+          "clause_id": "claim-configured-xy_goal_tolerance",
+          "contract_id": "claim-configured-xy_goal_tolerance",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "xy_goal_tolerance"
+          ],
+          "text": "The visible configuration records the XY goal tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (xy goal tolerance: 0.2 m)."
+        },
+        {
+          "clause_id": "claim-configured-yaw_goal_tolerance",
+          "contract_id": "claim-configured-yaw_goal_tolerance",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "yaw_goal_tolerance"
+          ],
+          "text": "The visible configuration records the yaw goal tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (yaw goal tolerance: 0.35 rad)."
+        },
+        {
+          "clause_id": "claim-contact-unknown",
+          "contract_id": "claim-contact-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The task requires no prohibited hull contact during the dwell; available contact evidence does not establish whether this requirement held."
+        },
+        {
+          "clause_id": "claim-dwell-unknown",
+          "contract_id": "claim-dwell-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "Completion of the specified fixed docking dwell is unestablished by available evidence."
+        },
+        {
+          "clause_id": "claim-evidence-scope",
+          "contract_id": "claim-evidence-scope",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The explanation uses only the declared robot-visible packet; delivered observations do not prove Nav2 internal consumption."
+        },
+        {
+          "clause_id": "claim-fixture-timeout-scope",
+          "contract_id": "claim-fixture-timeout-scope",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The fixture timeout does not establish a terminal ROS action result, cancellation, or docking failure."
+        },
+        {
+          "clause_id": "claim-heading-unknown",
+          "contract_id": "claim-heading-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the heading requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-hull-unknown",
+          "contract_id": "claim-hull-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the hull requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-position-unknown",
+          "contract_id": "claim-position-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the position requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-public-docking-requirements",
+          "contract_id": "claim-public-docking-requirements",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "dwell_s",
+            "heading_tolerance_rad",
+            "position_tolerance_m",
+            "speed_tolerance_mps",
+            "yaw_rate_tolerance_radps"
+          ],
+          "text": "The separate public docking task requires the fixed dwell and position, heading, speed, and yaw-rate limits shown here; configured navigation tolerances do not replace these requirements (dwell s: 5 s; heading tolerance rad: 0.35 rad; position tolerance m: 0.4 m; speed tolerance mps: 0.05 m/s; yaw rate tolerance radps: 0.05 rad/s)."
+        },
+        {
+          "clause_id": "claim-return-heading",
+          "contract_id": "claim-return-heading",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "heading_bound",
+            "heading_error"
+          ],
+          "text": "The declared delivered reference observation has the following measured heading error (heading bound: 0.35 rad; heading error: 0.00129092762417 rad)."
+        },
+        {
+          "clause_id": "claim-return-position",
+          "contract_id": "claim-return-position",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "observation_time",
+            "position_bound",
+            "position_error",
+            "position_margin"
+          ],
+          "text": "The declared delivered reference observation has the following measured position error and signed position margin (observation time: 16.755158503 s; position bound: 0.4 m; position error: 2.43876586954 m; position margin: -2.03876586954 m)."
+        },
+        {
+          "clause_id": "claim-return-speed",
+          "contract_id": "claim-return-speed",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "measured_speed",
+            "speed_bound"
+          ],
+          "text": "The declared delivered reference observation has the following measured translational speed (measured speed: 0.15078390681 m/s; speed bound: 0.05 m/s)."
+        },
+        {
+          "clause_id": "claim-speed-unknown",
+          "contract_id": "claim-speed-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the speed requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-yaw_rate-unknown",
+          "contract_id": "claim-yaw_rate-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the yaw rate requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "ne-cause",
+          "contract_id": "ne-cause",
+          "kind": "NON_ENTAILMENT",
+          "numeric_slot_ids": [],
+          "text": "These observations do not identify a unique physical cause; waves, current, wind and actuation remain unresolved."
+        },
+        {
+          "clause_id": "ne-continuous",
+          "contract_id": "ne-continuous",
+          "kind": "NON_ENTAILMENT",
+          "numeric_slot_ids": [],
+          "text": "Samples do not establish continuous-time compliance between observations; an observed violation is sufficient to falsify the dwell."
+        }
+      ],
+      "passed": true,
+      "pipeline": {
+        "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-unpaired-full-B4-v3-varied-start-002/conditions/boat-geom-42007-00092-v2-L1/full-pipeline.json",
+        "sha256": "707b2bd1fd89a3791aff945af287dcf535554953ba32798b7887256d756c87f7"
+      }
+    },
+    {
+      "row_id": "boat-geom-42007-00092-v2",
+      "level": 2,
+      "checks": {
+        "fixture_status_clause": true,
+        "fixture_scope_clause": true,
+        "no_success_clause": true,
+        "no_aborted_clause": true,
+        "no_cancel_clause": true
+      },
+      "clauses": [
+        {
+          "clause_id": "claim-action-timeout",
+          "contract_id": "claim-action-timeout",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The navigation fixture reported timeout."
+        },
+        {
+          "clause_id": "claim-configured-rot_stopped_velocity",
+          "contract_id": "claim-configured-rot_stopped_velocity",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "rot_stopped_velocity"
+          ],
+          "text": "The visible configuration records the rotational stopped-velocity tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (rot stopped velocity: 0.05 rad/s)."
+        },
+        {
+          "clause_id": "claim-configured-trans_stopped_velocity",
+          "contract_id": "claim-configured-trans_stopped_velocity",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "trans_stopped_velocity"
+          ],
+          "text": "The visible configuration records the translational stopped-velocity tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (trans stopped velocity: 0.05 m/s)."
+        },
+        {
+          "clause_id": "claim-configured-xy_goal_tolerance",
+          "contract_id": "claim-configured-xy_goal_tolerance",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "xy_goal_tolerance"
+          ],
+          "text": "The visible configuration records the XY goal tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (xy goal tolerance: 0.2 m)."
+        },
+        {
+          "clause_id": "claim-configured-yaw_goal_tolerance",
+          "contract_id": "claim-configured-yaw_goal_tolerance",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "yaw_goal_tolerance"
+          ],
+          "text": "The visible configuration records the yaw goal tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (yaw goal tolerance: 0.35 rad)."
+        },
+        {
+          "clause_id": "claim-contact-unknown",
+          "contract_id": "claim-contact-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The task requires no prohibited hull contact during the dwell; available contact evidence does not establish whether this requirement held."
+        },
+        {
+          "clause_id": "claim-dwell-unknown",
+          "contract_id": "claim-dwell-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "Completion of the specified fixed docking dwell is unestablished by available evidence."
+        },
+        {
+          "clause_id": "claim-evidence-scope",
+          "contract_id": "claim-evidence-scope",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The explanation uses only the declared robot-visible packet; delivered observations do not prove Nav2 internal consumption."
+        },
+        {
+          "clause_id": "claim-fixture-timeout-scope",
+          "contract_id": "claim-fixture-timeout-scope",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The fixture timeout does not establish a terminal ROS action result, cancellation, or docking failure."
+        },
+        {
+          "clause_id": "claim-heading-unknown",
+          "contract_id": "claim-heading-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the heading requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-hull-unknown",
+          "contract_id": "claim-hull-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the hull requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-position-unknown",
+          "contract_id": "claim-position-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the position requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-public-docking-requirements",
+          "contract_id": "claim-public-docking-requirements",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "dwell_s",
+            "heading_tolerance_rad",
+            "position_tolerance_m",
+            "speed_tolerance_mps",
+            "yaw_rate_tolerance_radps"
+          ],
+          "text": "The separate public docking task requires the fixed dwell and position, heading, speed, and yaw-rate limits shown here; configured navigation tolerances do not replace these requirements (dwell s: 5 s; heading tolerance rad: 0.35 rad; position tolerance m: 0.4 m; speed tolerance mps: 0.05 m/s; yaw rate tolerance radps: 0.05 rad/s)."
+        },
+        {
+          "clause_id": "claim-return-heading",
+          "contract_id": "claim-return-heading",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "heading_bound",
+            "heading_error"
+          ],
+          "text": "The declared delivered reference observation has the following measured heading error (heading bound: 0.35 rad; heading error: 0.00129092762417 rad)."
+        },
+        {
+          "clause_id": "claim-return-position",
+          "contract_id": "claim-return-position",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "observation_time",
+            "position_bound",
+            "position_error",
+            "position_margin"
+          ],
+          "text": "The declared delivered reference observation has the following measured position error and signed position margin (observation time: 16.755158503 s; position bound: 0.4 m; position error: 2.43876586954 m; position margin: -2.03876586954 m)."
+        },
+        {
+          "clause_id": "claim-return-speed",
+          "contract_id": "claim-return-speed",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "measured_speed",
+            "speed_bound"
+          ],
+          "text": "The declared delivered reference observation has the following measured translational speed (measured speed: 0.15078390681 m/s; speed bound: 0.05 m/s)."
+        },
+        {
+          "clause_id": "claim-speed-unknown",
+          "contract_id": "claim-speed-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the speed requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-yaw_rate-unknown",
+          "contract_id": "claim-yaw_rate-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the yaw rate requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "ne-cause",
+          "contract_id": "ne-cause",
+          "kind": "NON_ENTAILMENT",
+          "numeric_slot_ids": [],
+          "text": "These observations do not identify a unique physical cause; waves, current, wind and actuation remain unresolved."
+        },
+        {
+          "clause_id": "ne-continuous",
+          "contract_id": "ne-continuous",
+          "kind": "NON_ENTAILMENT",
+          "numeric_slot_ids": [],
+          "text": "Samples do not establish continuous-time compliance between observations; an observed violation is sufficient to falsify the dwell."
+        }
+      ],
+      "passed": true,
+      "pipeline": {
+        "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-unpaired-full-B4-v3-varied-start-002/conditions/boat-geom-42007-00092-v2-L2/full-pipeline.json",
+        "sha256": "9edc45c2ead44002997644cad7f8183c48873eba89d83f8f22541553cf5f3fcf"
+      }
+    },
+    {
+      "row_id": "boat-geom-42007-00071-v1",
+      "level": 0,
+      "checks": {
+        "fixture_status_clause": true,
+        "fixture_scope_clause": true,
+        "no_success_clause": true,
+        "no_aborted_clause": true,
+        "no_cancel_clause": true
+      },
+      "clauses": [
+        {
+          "clause_id": "claim-action-timeout",
+          "contract_id": "claim-action-timeout",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The navigation fixture reported timeout."
+        },
+        {
+          "clause_id": "claim-configured-rot_stopped_velocity",
+          "contract_id": "claim-configured-rot_stopped_velocity",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "rot_stopped_velocity"
+          ],
+          "text": "The visible configuration records the rotational stopped-velocity tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (rot stopped velocity: 0.05 rad/s)."
+        },
+        {
+          "clause_id": "claim-configured-trans_stopped_velocity",
+          "contract_id": "claim-configured-trans_stopped_velocity",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "trans_stopped_velocity"
+          ],
+          "text": "The visible configuration records the translational stopped-velocity tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (trans stopped velocity: 0.05 m/s)."
+        },
+        {
+          "clause_id": "claim-configured-xy_goal_tolerance",
+          "contract_id": "claim-configured-xy_goal_tolerance",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "xy_goal_tolerance"
+          ],
+          "text": "The visible configuration records the XY goal tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (xy goal tolerance: 0.2 m)."
+        },
+        {
+          "clause_id": "claim-configured-yaw_goal_tolerance",
+          "contract_id": "claim-configured-yaw_goal_tolerance",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "yaw_goal_tolerance"
+          ],
+          "text": "The visible configuration records the yaw goal tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (yaw goal tolerance: 0.35 rad)."
+        },
+        {
+          "clause_id": "claim-contact-unknown",
+          "contract_id": "claim-contact-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The task requires no prohibited hull contact during the dwell; available contact evidence does not establish whether this requirement held."
+        },
+        {
+          "clause_id": "claim-dwell-unknown",
+          "contract_id": "claim-dwell-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "Completion of the specified fixed docking dwell is unestablished by available evidence."
+        },
+        {
+          "clause_id": "claim-evidence-scope",
+          "contract_id": "claim-evidence-scope",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The explanation uses only the declared robot-visible packet; delivered observations do not prove Nav2 internal consumption."
+        },
+        {
+          "clause_id": "claim-fixture-timeout-scope",
+          "contract_id": "claim-fixture-timeout-scope",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The fixture timeout does not establish a terminal ROS action result, cancellation, or docking failure."
+        },
+        {
+          "clause_id": "claim-heading-unknown",
+          "contract_id": "claim-heading-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the heading requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-hull-unknown",
+          "contract_id": "claim-hull-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the hull requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-position-unknown",
+          "contract_id": "claim-position-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the position requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-public-docking-requirements",
+          "contract_id": "claim-public-docking-requirements",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "dwell_s",
+            "heading_tolerance_rad",
+            "position_tolerance_m",
+            "speed_tolerance_mps",
+            "yaw_rate_tolerance_radps"
+          ],
+          "text": "The separate public docking task requires the fixed dwell and position, heading, speed, and yaw-rate limits shown here; configured navigation tolerances do not replace these requirements (dwell s: 5 s; heading tolerance rad: 0.35 rad; position tolerance m: 0.4 m; speed tolerance mps: 0.05 m/s; yaw rate tolerance radps: 0.05 rad/s)."
+        },
+        {
+          "clause_id": "claim-speed-unknown",
+          "contract_id": "claim-speed-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the speed requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-yaw_rate-unknown",
+          "contract_id": "claim-yaw_rate-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the yaw rate requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "ne-cause",
+          "contract_id": "ne-cause",
+          "kind": "NON_ENTAILMENT",
+          "numeric_slot_ids": [],
+          "text": "These observations do not identify a unique physical cause; waves, current, wind and actuation remain unresolved."
+        },
+        {
+          "clause_id": "ne-continuous",
+          "contract_id": "ne-continuous",
+          "kind": "NON_ENTAILMENT",
+          "numeric_slot_ids": [],
+          "text": "Samples do not establish continuous-time compliance between observations; an observed violation is sufficient to falsify the dwell."
+        }
+      ],
+      "passed": true,
+      "pipeline": {
+        "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-unpaired-full-B4-v3-varied-start-002/conditions/boat-geom-42007-00071-v1-L0/full-pipeline.json",
+        "sha256": "8a06427184dfbc772f4f437b2b4442f1855719198b896125786f6947c542dd7d"
+      }
+    },
+    {
+      "row_id": "boat-geom-42007-00071-v1",
+      "level": 1,
+      "checks": {
+        "fixture_status_clause": true,
+        "fixture_scope_clause": true,
+        "no_success_clause": true,
+        "no_aborted_clause": true,
+        "no_cancel_clause": true
+      },
+      "clauses": [
+        {
+          "clause_id": "claim-action-timeout",
+          "contract_id": "claim-action-timeout",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The navigation fixture reported timeout."
+        },
+        {
+          "clause_id": "claim-configured-rot_stopped_velocity",
+          "contract_id": "claim-configured-rot_stopped_velocity",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "rot_stopped_velocity"
+          ],
+          "text": "The visible configuration records the rotational stopped-velocity tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (rot stopped velocity: 0.05 rad/s)."
+        },
+        {
+          "clause_id": "claim-configured-trans_stopped_velocity",
+          "contract_id": "claim-configured-trans_stopped_velocity",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "trans_stopped_velocity"
+          ],
+          "text": "The visible configuration records the translational stopped-velocity tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (trans stopped velocity: 0.05 m/s)."
+        },
+        {
+          "clause_id": "claim-configured-xy_goal_tolerance",
+          "contract_id": "claim-configured-xy_goal_tolerance",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "xy_goal_tolerance"
+          ],
+          "text": "The visible configuration records the XY goal tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (xy goal tolerance: 0.2 m)."
+        },
+        {
+          "clause_id": "claim-configured-yaw_goal_tolerance",
+          "contract_id": "claim-configured-yaw_goal_tolerance",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "yaw_goal_tolerance"
+          ],
+          "text": "The visible configuration records the yaw goal tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (yaw goal tolerance: 0.35 rad)."
+        },
+        {
+          "clause_id": "claim-contact-unknown",
+          "contract_id": "claim-contact-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The task requires no prohibited hull contact during the dwell; available contact evidence does not establish whether this requirement held."
+        },
+        {
+          "clause_id": "claim-dwell-unknown",
+          "contract_id": "claim-dwell-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "Completion of the specified fixed docking dwell is unestablished by available evidence."
+        },
+        {
+          "clause_id": "claim-evidence-scope",
+          "contract_id": "claim-evidence-scope",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The explanation uses only the declared robot-visible packet; delivered observations do not prove Nav2 internal consumption."
+        },
+        {
+          "clause_id": "claim-fixture-timeout-scope",
+          "contract_id": "claim-fixture-timeout-scope",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The fixture timeout does not establish a terminal ROS action result, cancellation, or docking failure."
+        },
+        {
+          "clause_id": "claim-heading-unknown",
+          "contract_id": "claim-heading-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the heading requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-hull-unknown",
+          "contract_id": "claim-hull-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the hull requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-position-unknown",
+          "contract_id": "claim-position-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the position requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-public-docking-requirements",
+          "contract_id": "claim-public-docking-requirements",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "dwell_s",
+            "heading_tolerance_rad",
+            "position_tolerance_m",
+            "speed_tolerance_mps",
+            "yaw_rate_tolerance_radps"
+          ],
+          "text": "The separate public docking task requires the fixed dwell and position, heading, speed, and yaw-rate limits shown here; configured navigation tolerances do not replace these requirements (dwell s: 5 s; heading tolerance rad: 0.35 rad; position tolerance m: 0.4 m; speed tolerance mps: 0.05 m/s; yaw rate tolerance radps: 0.05 rad/s)."
+        },
+        {
+          "clause_id": "claim-return-heading",
+          "contract_id": "claim-return-heading",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "heading_bound",
+            "heading_error"
+          ],
+          "text": "The declared delivered reference observation has the following measured heading error (heading bound: 0.35 rad; heading error: 0.333047111797 rad)."
+        },
+        {
+          "clause_id": "claim-return-position",
+          "contract_id": "claim-return-position",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "observation_time",
+            "position_bound",
+            "position_error",
+            "position_margin"
+          ],
+          "text": "The declared delivered reference observation has the following measured position error and signed position margin (observation time: 14.296804379 s; position bound: 0.4 m; position error: 8.05963154759 m; position margin: -7.65963154759 m)."
+        },
+        {
+          "clause_id": "claim-return-speed",
+          "contract_id": "claim-return-speed",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "measured_speed",
+            "speed_bound"
+          ],
+          "text": "The declared delivered reference observation has the following measured translational speed (measured speed: 0.14434429603 m/s; speed bound: 0.05 m/s)."
+        },
+        {
+          "clause_id": "claim-speed-unknown",
+          "contract_id": "claim-speed-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the speed requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-yaw_rate-unknown",
+          "contract_id": "claim-yaw_rate-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the yaw rate requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "ne-cause",
+          "contract_id": "ne-cause",
+          "kind": "NON_ENTAILMENT",
+          "numeric_slot_ids": [],
+          "text": "These observations do not identify a unique physical cause; waves, current, wind and actuation remain unresolved."
+        },
+        {
+          "clause_id": "ne-continuous",
+          "contract_id": "ne-continuous",
+          "kind": "NON_ENTAILMENT",
+          "numeric_slot_ids": [],
+          "text": "Samples do not establish continuous-time compliance between observations; an observed violation is sufficient to falsify the dwell."
+        }
+      ],
+      "passed": true,
+      "pipeline": {
+        "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-unpaired-full-B4-v3-varied-start-002/conditions/boat-geom-42007-00071-v1-L1/full-pipeline.json",
+        "sha256": "2063c4718f4e1c36e3957f3437957f3da4b178375c3302828d4b96f21ef0ed29"
+      }
+    },
+    {
+      "row_id": "boat-geom-42007-00071-v1",
+      "level": 2,
+      "checks": {
+        "fixture_status_clause": true,
+        "fixture_scope_clause": true,
+        "no_success_clause": true,
+        "no_aborted_clause": true,
+        "no_cancel_clause": true
+      },
+      "clauses": [
+        {
+          "clause_id": "claim-action-timeout",
+          "contract_id": "claim-action-timeout",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The navigation fixture reported timeout."
+        },
+        {
+          "clause_id": "claim-configured-rot_stopped_velocity",
+          "contract_id": "claim-configured-rot_stopped_velocity",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "rot_stopped_velocity"
+          ],
+          "text": "The visible configuration records the rotational stopped-velocity tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (rot stopped velocity: 0.05 rad/s)."
+        },
+        {
+          "clause_id": "claim-configured-trans_stopped_velocity",
+          "contract_id": "claim-configured-trans_stopped_velocity",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "trans_stopped_velocity"
+          ],
+          "text": "The visible configuration records the translational stopped-velocity tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (trans stopped velocity: 0.05 m/s)."
+        },
+        {
+          "clause_id": "claim-configured-xy_goal_tolerance",
+          "contract_id": "claim-configured-xy_goal_tolerance",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "xy_goal_tolerance"
+          ],
+          "text": "The visible configuration records the XY goal tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (xy goal tolerance: 0.2 m)."
+        },
+        {
+          "clause_id": "claim-configured-yaw_goal_tolerance",
+          "contract_id": "claim-configured-yaw_goal_tolerance",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "yaw_goal_tolerance"
+          ],
+          "text": "The visible configuration records the yaw goal tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (yaw goal tolerance: 0.35 rad)."
+        },
+        {
+          "clause_id": "claim-contact-unknown",
+          "contract_id": "claim-contact-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The task requires no prohibited hull contact during the dwell; available contact evidence does not establish whether this requirement held."
+        },
+        {
+          "clause_id": "claim-dwell-unknown",
+          "contract_id": "claim-dwell-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "Completion of the specified fixed docking dwell is unestablished by available evidence."
+        },
+        {
+          "clause_id": "claim-evidence-scope",
+          "contract_id": "claim-evidence-scope",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The explanation uses only the declared robot-visible packet; delivered observations do not prove Nav2 internal consumption."
+        },
+        {
+          "clause_id": "claim-fixture-timeout-scope",
+          "contract_id": "claim-fixture-timeout-scope",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The fixture timeout does not establish a terminal ROS action result, cancellation, or docking failure."
+        },
+        {
+          "clause_id": "claim-heading-unknown",
+          "contract_id": "claim-heading-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the heading requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-hull-unknown",
+          "contract_id": "claim-hull-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the hull requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-position-unknown",
+          "contract_id": "claim-position-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the position requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-public-docking-requirements",
+          "contract_id": "claim-public-docking-requirements",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "dwell_s",
+            "heading_tolerance_rad",
+            "position_tolerance_m",
+            "speed_tolerance_mps",
+            "yaw_rate_tolerance_radps"
+          ],
+          "text": "The separate public docking task requires the fixed dwell and position, heading, speed, and yaw-rate limits shown here; configured navigation tolerances do not replace these requirements (dwell s: 5 s; heading tolerance rad: 0.35 rad; position tolerance m: 0.4 m; speed tolerance mps: 0.05 m/s; yaw rate tolerance radps: 0.05 rad/s)."
+        },
+        {
+          "clause_id": "claim-return-heading",
+          "contract_id": "claim-return-heading",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "heading_bound",
+            "heading_error"
+          ],
+          "text": "The declared delivered reference observation has the following measured heading error (heading bound: 0.35 rad; heading error: 0.333047111797 rad)."
+        },
+        {
+          "clause_id": "claim-return-position",
+          "contract_id": "claim-return-position",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "observation_time",
+            "position_bound",
+            "position_error",
+            "position_margin"
+          ],
+          "text": "The declared delivered reference observation has the following measured position error and signed position margin (observation time: 14.296804379 s; position bound: 0.4 m; position error: 8.05963154759 m; position margin: -7.65963154759 m)."
+        },
+        {
+          "clause_id": "claim-return-speed",
+          "contract_id": "claim-return-speed",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "measured_speed",
+            "speed_bound"
+          ],
+          "text": "The declared delivered reference observation has the following measured translational speed (measured speed: 0.14434429603 m/s; speed bound: 0.05 m/s)."
+        },
+        {
+          "clause_id": "claim-speed-unknown",
+          "contract_id": "claim-speed-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the speed requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-yaw_rate-unknown",
+          "contract_id": "claim-yaw_rate-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the yaw rate requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "ne-cause",
+          "contract_id": "ne-cause",
+          "kind": "NON_ENTAILMENT",
+          "numeric_slot_ids": [],
+          "text": "These observations do not identify a unique physical cause; waves, current, wind and actuation remain unresolved."
+        },
+        {
+          "clause_id": "ne-continuous",
+          "contract_id": "ne-continuous",
+          "kind": "NON_ENTAILMENT",
+          "numeric_slot_ids": [],
+          "text": "Samples do not establish continuous-time compliance between observations; an observed violation is sufficient to falsify the dwell."
+        }
+      ],
+      "passed": true,
+      "pipeline": {
+        "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-unpaired-full-B4-v3-varied-start-002/conditions/boat-geom-42007-00071-v1-L2/full-pipeline.json",
+        "sha256": "b52c8e4299770b68bbefd100909d74477da708f547448aaaa9976de01cd3f513"
+      }
+    },
+    {
+      "row_id": "boat-geom-42007-00037-v2",
+      "level": 0,
+      "checks": {
+        "fixture_status_clause": true,
+        "fixture_scope_clause": true,
+        "no_success_clause": true,
+        "no_aborted_clause": true,
+        "no_cancel_clause": true
+      },
+      "clauses": [
+        {
+          "clause_id": "claim-action-timeout",
+          "contract_id": "claim-action-timeout",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The navigation fixture reported timeout."
+        },
+        {
+          "clause_id": "claim-configured-rot_stopped_velocity",
+          "contract_id": "claim-configured-rot_stopped_velocity",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "rot_stopped_velocity"
+          ],
+          "text": "The visible configuration records the rotational stopped-velocity tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (rot stopped velocity: 0.05 rad/s)."
+        },
+        {
+          "clause_id": "claim-configured-trans_stopped_velocity",
+          "contract_id": "claim-configured-trans_stopped_velocity",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "trans_stopped_velocity"
+          ],
+          "text": "The visible configuration records the translational stopped-velocity tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (trans stopped velocity: 0.05 m/s)."
+        },
+        {
+          "clause_id": "claim-configured-xy_goal_tolerance",
+          "contract_id": "claim-configured-xy_goal_tolerance",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "xy_goal_tolerance"
+          ],
+          "text": "The visible configuration records the XY goal tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (xy goal tolerance: 0.4 m)."
+        },
+        {
+          "clause_id": "claim-configured-yaw_goal_tolerance",
+          "contract_id": "claim-configured-yaw_goal_tolerance",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "yaw_goal_tolerance"
+          ],
+          "text": "The visible configuration records the yaw goal tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (yaw goal tolerance: 0.35 rad)."
+        },
+        {
+          "clause_id": "claim-contact-unknown",
+          "contract_id": "claim-contact-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The task requires no prohibited hull contact during the dwell; available contact evidence does not establish whether this requirement held."
+        },
+        {
+          "clause_id": "claim-dwell-unknown",
+          "contract_id": "claim-dwell-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "Completion of the specified fixed docking dwell is unestablished by available evidence."
+        },
+        {
+          "clause_id": "claim-evidence-scope",
+          "contract_id": "claim-evidence-scope",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The explanation uses only the declared robot-visible packet; delivered observations do not prove Nav2 internal consumption."
+        },
+        {
+          "clause_id": "claim-fixture-timeout-scope",
+          "contract_id": "claim-fixture-timeout-scope",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The fixture timeout does not establish a terminal ROS action result, cancellation, or docking failure."
+        },
+        {
+          "clause_id": "claim-heading-unknown",
+          "contract_id": "claim-heading-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the heading requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-hull-unknown",
+          "contract_id": "claim-hull-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the hull requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-position-unknown",
+          "contract_id": "claim-position-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the position requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-public-docking-requirements",
+          "contract_id": "claim-public-docking-requirements",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "dwell_s",
+            "heading_tolerance_rad",
+            "position_tolerance_m",
+            "speed_tolerance_mps",
+            "yaw_rate_tolerance_radps"
+          ],
+          "text": "The separate public docking task requires the fixed dwell and position, heading, speed, and yaw-rate limits shown here; configured navigation tolerances do not replace these requirements (dwell s: 5 s; heading tolerance rad: 0.35 rad; position tolerance m: 0.4 m; speed tolerance mps: 0.05 m/s; yaw rate tolerance radps: 0.05 rad/s)."
+        },
+        {
+          "clause_id": "claim-speed-unknown",
+          "contract_id": "claim-speed-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the speed requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-yaw_rate-unknown",
+          "contract_id": "claim-yaw_rate-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the yaw rate requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "ne-cause",
+          "contract_id": "ne-cause",
+          "kind": "NON_ENTAILMENT",
+          "numeric_slot_ids": [],
+          "text": "These observations do not identify a unique physical cause; waves, current, wind and actuation remain unresolved."
+        },
+        {
+          "clause_id": "ne-continuous",
+          "contract_id": "ne-continuous",
+          "kind": "NON_ENTAILMENT",
+          "numeric_slot_ids": [],
+          "text": "Samples do not establish continuous-time compliance between observations; an observed violation is sufficient to falsify the dwell."
+        }
+      ],
+      "passed": true,
+      "pipeline": {
+        "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-unpaired-full-B4-v3-varied-start-002/conditions/boat-geom-42007-00037-v2-L0/full-pipeline.json",
+        "sha256": "0e813794b0d5f0ce7923ec184fbf57080922f65f3bc61d8c9a4edc91ebf815af"
+      }
+    },
+    {
+      "row_id": "boat-geom-42007-00037-v2",
+      "level": 1,
+      "checks": {
+        "fixture_status_clause": true,
+        "fixture_scope_clause": true,
+        "no_success_clause": true,
+        "no_aborted_clause": true,
+        "no_cancel_clause": true
+      },
+      "clauses": [
+        {
+          "clause_id": "claim-action-timeout",
+          "contract_id": "claim-action-timeout",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The navigation fixture reported timeout."
+        },
+        {
+          "clause_id": "claim-configured-rot_stopped_velocity",
+          "contract_id": "claim-configured-rot_stopped_velocity",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "rot_stopped_velocity"
+          ],
+          "text": "The visible configuration records the rotational stopped-velocity tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (rot stopped velocity: 0.05 rad/s)."
+        },
+        {
+          "clause_id": "claim-configured-trans_stopped_velocity",
+          "contract_id": "claim-configured-trans_stopped_velocity",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "trans_stopped_velocity"
+          ],
+          "text": "The visible configuration records the translational stopped-velocity tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (trans stopped velocity: 0.05 m/s)."
+        },
+        {
+          "clause_id": "claim-configured-xy_goal_tolerance",
+          "contract_id": "claim-configured-xy_goal_tolerance",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "xy_goal_tolerance"
+          ],
+          "text": "The visible configuration records the XY goal tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (xy goal tolerance: 0.4 m)."
+        },
+        {
+          "clause_id": "claim-configured-yaw_goal_tolerance",
+          "contract_id": "claim-configured-yaw_goal_tolerance",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "yaw_goal_tolerance"
+          ],
+          "text": "The visible configuration records the yaw goal tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (yaw goal tolerance: 0.35 rad)."
+        },
+        {
+          "clause_id": "claim-contact-unknown",
+          "contract_id": "claim-contact-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The task requires no prohibited hull contact during the dwell; available contact evidence does not establish whether this requirement held."
+        },
+        {
+          "clause_id": "claim-dwell-unknown",
+          "contract_id": "claim-dwell-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "Completion of the specified fixed docking dwell is unestablished by available evidence."
+        },
+        {
+          "clause_id": "claim-evidence-scope",
+          "contract_id": "claim-evidence-scope",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The explanation uses only the declared robot-visible packet; delivered observations do not prove Nav2 internal consumption."
+        },
+        {
+          "clause_id": "claim-fixture-timeout-scope",
+          "contract_id": "claim-fixture-timeout-scope",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The fixture timeout does not establish a terminal ROS action result, cancellation, or docking failure."
+        },
+        {
+          "clause_id": "claim-heading-unknown",
+          "contract_id": "claim-heading-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the heading requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-hull-unknown",
+          "contract_id": "claim-hull-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the hull requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-position-unknown",
+          "contract_id": "claim-position-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the position requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-public-docking-requirements",
+          "contract_id": "claim-public-docking-requirements",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "dwell_s",
+            "heading_tolerance_rad",
+            "position_tolerance_m",
+            "speed_tolerance_mps",
+            "yaw_rate_tolerance_radps"
+          ],
+          "text": "The separate public docking task requires the fixed dwell and position, heading, speed, and yaw-rate limits shown here; configured navigation tolerances do not replace these requirements (dwell s: 5 s; heading tolerance rad: 0.35 rad; position tolerance m: 0.4 m; speed tolerance mps: 0.05 m/s; yaw rate tolerance radps: 0.05 rad/s)."
+        },
+        {
+          "clause_id": "claim-return-heading",
+          "contract_id": "claim-return-heading",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "heading_bound",
+            "heading_error"
+          ],
+          "text": "The declared delivered reference observation has the following measured heading error (heading bound: 0.35 rad; heading error: 0.0487388052519 rad)."
+        },
+        {
+          "clause_id": "claim-return-position",
+          "contract_id": "claim-return-position",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "observation_time",
+            "position_bound",
+            "position_error",
+            "position_margin"
+          ],
+          "text": "The declared delivered reference observation has the following measured position error and signed position margin (observation time: 36.935009347 s; position bound: 0.4 m; position error: 0.42444999743 m; position margin: -0.0244499974296 m)."
+        },
+        {
+          "clause_id": "claim-return-speed",
+          "contract_id": "claim-return-speed",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "measured_speed",
+            "speed_bound"
+          ],
+          "text": "The declared delivered reference observation has the following measured translational speed (measured speed: 0.0666166782506 m/s; speed bound: 0.05 m/s)."
+        },
+        {
+          "clause_id": "claim-speed-unknown",
+          "contract_id": "claim-speed-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the speed requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-yaw_rate-unknown",
+          "contract_id": "claim-yaw_rate-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the yaw rate requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "ne-cause",
+          "contract_id": "ne-cause",
+          "kind": "NON_ENTAILMENT",
+          "numeric_slot_ids": [],
+          "text": "These observations do not identify a unique physical cause; waves, current, wind and actuation remain unresolved."
+        },
+        {
+          "clause_id": "ne-continuous",
+          "contract_id": "ne-continuous",
+          "kind": "NON_ENTAILMENT",
+          "numeric_slot_ids": [],
+          "text": "Samples do not establish continuous-time compliance between observations; an observed violation is sufficient to falsify the dwell."
+        }
+      ],
+      "passed": true,
+      "pipeline": {
+        "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-unpaired-full-B4-v3-varied-start-002/conditions/boat-geom-42007-00037-v2-L1/full-pipeline.json",
+        "sha256": "e4c62cd2cca43680d9eacfaae1468979b8492fd2ddc75b08226aa6556a1f4c2f"
+      }
+    },
+    {
+      "row_id": "boat-geom-42007-00037-v2",
+      "level": 2,
+      "checks": {
+        "fixture_status_clause": true,
+        "fixture_scope_clause": true,
+        "no_success_clause": true,
+        "no_aborted_clause": true,
+        "no_cancel_clause": true
+      },
+      "clauses": [
+        {
+          "clause_id": "claim-action-timeout",
+          "contract_id": "claim-action-timeout",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The navigation fixture reported timeout."
+        },
+        {
+          "clause_id": "claim-configured-rot_stopped_velocity",
+          "contract_id": "claim-configured-rot_stopped_velocity",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "rot_stopped_velocity"
+          ],
+          "text": "The visible configuration records the rotational stopped-velocity tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (rot stopped velocity: 0.05 rad/s)."
+        },
+        {
+          "clause_id": "claim-configured-trans_stopped_velocity",
+          "contract_id": "claim-configured-trans_stopped_velocity",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "trans_stopped_velocity"
+          ],
+          "text": "The visible configuration records the translational stopped-velocity tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (trans stopped velocity: 0.05 m/s)."
+        },
+        {
+          "clause_id": "claim-configured-xy_goal_tolerance",
+          "contract_id": "claim-configured-xy_goal_tolerance",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "xy_goal_tolerance"
+          ],
+          "text": "The visible configuration records the XY goal tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (xy goal tolerance: 0.4 m)."
+        },
+        {
+          "clause_id": "claim-configured-yaw_goal_tolerance",
+          "contract_id": "claim-configured-yaw_goal_tolerance",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "yaw_goal_tolerance"
+          ],
+          "text": "The visible configuration records the yaw goal tolerance; this configuration observation does not establish internal consumption, physical stopping, or a stopping cause (yaw goal tolerance: 0.35 rad)."
+        },
+        {
+          "clause_id": "claim-contact-unknown",
+          "contract_id": "claim-contact-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The task requires no prohibited hull contact during the dwell; available contact evidence does not establish whether this requirement held."
+        },
+        {
+          "clause_id": "claim-dwell-unknown",
+          "contract_id": "claim-dwell-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "Completion of the specified fixed docking dwell is unestablished by available evidence."
+        },
+        {
+          "clause_id": "claim-evidence-scope",
+          "contract_id": "claim-evidence-scope",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The explanation uses only the declared robot-visible packet; delivered observations do not prove Nav2 internal consumption."
+        },
+        {
+          "clause_id": "claim-fixture-timeout-scope",
+          "contract_id": "claim-fixture-timeout-scope",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The fixture timeout does not establish a terminal ROS action result, cancellation, or docking failure."
+        },
+        {
+          "clause_id": "claim-heading-unknown",
+          "contract_id": "claim-heading-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the heading requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-hull-unknown",
+          "contract_id": "claim-hull-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the hull requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-position-unknown",
+          "contract_id": "claim-position-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the position requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-public-docking-requirements",
+          "contract_id": "claim-public-docking-requirements",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "dwell_s",
+            "heading_tolerance_rad",
+            "position_tolerance_m",
+            "speed_tolerance_mps",
+            "yaw_rate_tolerance_radps"
+          ],
+          "text": "The separate public docking task requires the fixed dwell and position, heading, speed, and yaw-rate limits shown here; configured navigation tolerances do not replace these requirements (dwell s: 5 s; heading tolerance rad: 0.35 rad; position tolerance m: 0.4 m; speed tolerance mps: 0.05 m/s; yaw rate tolerance radps: 0.05 rad/s)."
+        },
+        {
+          "clause_id": "claim-return-heading",
+          "contract_id": "claim-return-heading",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "heading_bound",
+            "heading_error"
+          ],
+          "text": "The declared delivered reference observation has the following measured heading error (heading bound: 0.35 rad; heading error: 0.0487388052519 rad)."
+        },
+        {
+          "clause_id": "claim-return-position",
+          "contract_id": "claim-return-position",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "observation_time",
+            "position_bound",
+            "position_error",
+            "position_margin"
+          ],
+          "text": "The declared delivered reference observation has the following measured position error and signed position margin (observation time: 36.935009347 s; position bound: 0.4 m; position error: 0.42444999743 m; position margin: -0.0244499974296 m)."
+        },
+        {
+          "clause_id": "claim-return-speed",
+          "contract_id": "claim-return-speed",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [
+            "measured_speed",
+            "speed_bound"
+          ],
+          "text": "The declared delivered reference observation has the following measured translational speed (measured speed: 0.0666166782506 m/s; speed bound: 0.05 m/s)."
+        },
+        {
+          "clause_id": "claim-speed-unknown",
+          "contract_id": "claim-speed-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the speed requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "claim-yaw_rate-unknown",
+          "contract_id": "claim-yaw_rate-unknown",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The available evidence does not establish whether the yaw rate requirement held throughout the declared sampled dwell."
+        },
+        {
+          "clause_id": "ne-cause",
+          "contract_id": "ne-cause",
+          "kind": "NON_ENTAILMENT",
+          "numeric_slot_ids": [],
+          "text": "These observations do not identify a unique physical cause; waves, current, wind and actuation remain unresolved."
+        },
+        {
+          "clause_id": "ne-continuous",
+          "contract_id": "ne-continuous",
+          "kind": "NON_ENTAILMENT",
+          "numeric_slot_ids": [],
+          "text": "Samples do not establish continuous-time compliance between observations; an observed violation is sufficient to falsify the dwell."
+        }
+      ],
+      "passed": true,
+      "pipeline": {
+        "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-unpaired-full-B4-v3-varied-start-002/conditions/boat-geom-42007-00037-v2-L2/full-pipeline.json",
+        "sha256": "65eb01cf4a563f6751e29a5c18e74c00dc420a0f95a53ada1ced60252af14be9"
+      }
+    }
+  ],
+  "all_scope_checks_pass": true,
+  "new_executions": 102,
+  "reused_outcomes": 9,
+  "scope": "Required fixture-timeout/scope and absent terminal status clauses only, derived from internal contract IDs and text. Not independent support/completeness annotation or primary endpoint success.",
+  "endpoint_scores": 0,
+  "model_calls": 0,
+  "independent_n_added": 0
+}
