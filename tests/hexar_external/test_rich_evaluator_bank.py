@@ -41,3 +41,27 @@ def test_annotation_candidate_does_not_admit_provider_or_missing_masked_units():
         with pytest.raises(ValueError,match='submitted required IDs'):validate(wrong,declaration['payload'])
     with pytest.raises(ValueError,match='scalar types'):
         validate({**correct,'unsupported_material':0},declaration['payload'])
+
+
+def test_v3_taxonomy_preserves_primary_support_labels_and_blinding():
+    from analysis.hexar_external.confirmatory_v1.development_rich_evaluator_bank_v3 import build as revised
+    old={f['fixture_id']:f for f in build()}
+    new={f['fixture_id']:f for f in revised()}
+    assert len(new)==24
+    for key,fixture in old.items():
+        assert new[key]['expected']['unsupported_material']==fixture['expected']['unsupported_material']
+        assert new[key]['expected']['covered_units']==fixture['expected']['covered_units']
+        if key!='masked_invented_motion':
+            assert new[key]['expected']==fixture['expected']
+    assert new['masked_invented_motion']['expected']['unsupported_material']
+    assert not new['masked_invented_motion']['expected']['overlicensed_specificity']
+    for fixture in new.values():
+        assert not fixture['expected']['overlicensed_specificity'] or fixture['expected']['unsupported_material']
+        assert set(project(fixture))=={'question','visible_evidence','required_units','answer'}
+
+
+def test_v2_rejects_specificity_without_unsupported_material():
+    from analysis.hexar_external.confirmatory_v1.rich_evaluator_v2 import validate
+    payload=project(build()[0])
+    wrong=dict(unsupported_material=False,overlicensed_specificity=True,covered_units=[],rationale='Inconsistent flags.')
+    with pytest.raises(ValueError,match='must also be unsupported'):validate(wrong,payload)
