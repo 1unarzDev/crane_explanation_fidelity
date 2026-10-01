@@ -31,7 +31,13 @@ def trace(*, stale=False, overwrite=False, pending=False):
 
 def worker(stale=False):
     return {'episodeId':4,'acceptedActions':0 if stale else 1,'rejectedActions':1 if stale else 0,
-            'staleActions':1 if stale else 0,'crossEpisodeActions':0,'duplicateActions':0}
+            'staleActions':1 if stale else 0,'crossEpisodeActions':0,'duplicateActions':0,'unknownSourceActions':0,
+            'actionTiming':{'acceptedActions':0 if stale else 1,'knownSourceActions':0 if stale else 1,
+                           'meanSourceToApplicationTicks':-1 if stale else 3,
+                           'maximumSourceToApplicationTicks':0 if stale else 3,
+                           'meanReceiveToApplicationTicks':-1 if stale else 1,
+                           'maximumReceiveToApplicationTicks':0 if stale else 1,
+                           'maximumInterApplicationTicks':0}}
 
 
 @pytest.mark.parametrize('stale,overwrite,pending',[(False,False,False),(True,False,False),(False,True,False),(False,False,True)])
@@ -90,3 +96,11 @@ def test_worker_must_bind_fixed_snapshot_not_shutdown_total():
     assert 'COUNTER_SNAPSHOT_RECONCILIATION_FAILED' in audit(rows,worker=worker())['issues']
     rows=trace();rows.pop(-2)
     assert 'EXACT_WORKER_COUNTER_SNAPSHOT_REQUIRED' in audit(rows,worker=worker())['issues']
+
+
+def test_known_source_aggregate_and_unknown_receipt_counter_drift_are_detected():
+    rows=trace();w=worker();w['actionTiming']['knownSourceActions']=0
+    result=audit(rows,worker=w)
+    assert not result['worker_checks']['timing_knownSourceActions']
+    rows=trace();rows[-2]['unknownSourceActions']=1
+    assert 'COUNTER_SNAPSHOT_RECONCILIATION_FAILED' in audit(rows,worker=worker())['issues']

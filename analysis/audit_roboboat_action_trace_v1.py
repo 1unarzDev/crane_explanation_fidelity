@@ -68,7 +68,8 @@ def audit(records, *, fixed_delta_time=.02, worker=None, raw_ros_source='ros:/cr
             reasons = Counter(a.get('reason') for a in current)
             expected = {'acceptedActions':reasons['None'], 'rejectedActions':len(current)-reasons['None'],
                         'staleActions':reasons['Stale'], 'crossEpisodeActions':reasons['CrossEpisode'],
-                        'duplicateActions':reasons['DuplicateOrOutOfOrder']}
+                        'duplicateActions':reasons['DuplicateOrOutOfOrder'],
+                        'unknownSourceActions':sum(base.get('sourceTick',0) < 0 for key,base in receipts.items() if key[1] == episode)}
             checks = {field:type(e.get(field)) is int and e[field] == count for field,count in expected.items()}
             need(all(checks.values()) and type(episode) is int and type(e.get('snapshotTick')) is int, 'COUNTER_SNAPSHOT_RECONCILIATION_FAILED')
             snapshot_checks.append({'ordinal':e['ordinal'],'episode':episode,'checks':checks})
@@ -156,14 +157,32 @@ def audit(records, *, fixed_delta_time=.02, worker=None, raw_ros_source='ros:/cr
         matches = [s for s in snapshots if s.get('episode') == episode]
         need(len(matches) == 1, 'EXACT_WORKER_COUNTER_SNAPSHOT_REQUIRED')
         cutoff = matches[0]['ordinal'] if len(matches) == 1 else -1
-        decisions = [e for v in attempts.values() for e in v if e.get('decisionEpisode') == episode and e['ordinal'] < cutoff]
+        decisions = sorted([e for v in attempts.values() for e in v if e.get('decisionEpisode') == episode and e['ordinal'] < cutoff], key=lambda e:e['ordinal'])
         reasons = Counter(e.get('reason') for e in decisions)
         expected_counts = {'acceptedActions':reasons['None'], 'rejectedActions':len(decisions)-reasons['None'],
                            'staleActions':reasons['Stale'], 'crossEpisodeActions':reasons['CrossEpisode'],
-                           'duplicateActions':reasons['DuplicateOrOutOfOrder']}
+                           'duplicateActions':reasons['DuplicateOrOutOfOrder'],
+                           'unknownSourceActions':sum(base.get('sourceTick',0) < 0 for key,base in receipts.items()
+                                                     if key[1] == episode and base['ordinal'] < cutoff)}
         worker_checks = {field: type(worker.get(field)) is int and worker[field] == count for field,count in expected_counts.items()}
         if len(matches) == 1:
             worker_checks.update({field+'_snapshot':worker.get(field) == matches[0].get(field) for field in expected_counts})
+        accepted = [e for e in decisions if e.get('reason') == 'None']
+        known = [e for e in accepted if e['sourceTick'] >= 0]
+        sl = [max(0,e['applicationTick']-e['sourceTick']) for e in known]
+        rl = [max(0,e['applicationTick']-e['receiveTick']) for e in accepted]
+        gaps = [max(0,b['applicationTick']-a['applicationTick']) for a,b in zip(accepted,accepted[1:])]
+        expected_timing = {'acceptedActions':len(accepted), 'knownSourceActions':len(known),
+                           'meanSourceToApplicationTicks':sum(sl)/len(sl) if sl else -1,
+                           'maximumSourceToApplicationTicks':max(sl,default=0),
+                           'meanReceiveToApplicationTicks':sum(rl)/len(rl) if rl else -1,
+                           'maximumReceiveToApplicationTicks':max(rl,default=0),
+                           'maximumInterApplicationTicks':max(gaps,default=0)}
+        timing = worker.get('actionTiming',{})
+        for field,value in expected_timing.items():
+            observed=timing.get(field)
+            worker_checks['timing_'+field] = (type(observed) in (float,int) and math.isfinite(observed)
+                                              and math.isclose(observed,value,rel_tol=1e-12,abs_tol=1e-12))
         # Use the instrumented fixed snapshot seam, never trim to desired counts.
         need(type(episode) is int and all(worker_checks.values()), 'WORKER_EPISODE_COUNTER_RECONCILIATION_PENDING_OR_FAILED')
     return {'schema':'roboboat-action-trace-audit/v1-development', 'issues':sorted(set(issues)),
