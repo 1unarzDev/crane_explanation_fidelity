@@ -16,7 +16,17 @@
     "manifests/hexar_external/confirmatory_v1/mixture_design_sensitivity_v1.json": "79de8f7d8b1fc14315a3b494a907a068ad9c23a706e4e81b8f2050361fc7ebe2",
     "manifests/hexar_external/confirmatory_v1/mixture_family_power_sensitivity_v1.json": "dd3adbca8d96bcd88c3e6fef08da7b464deddc88dfde88850e86f88a60341958",
     "manifests/hexar_external/confirmatory_v1/battery_reserve_power_six_unique_report_v1.json": "5f7ac898c705a716a758a466bf8063ca3c08f405d1d491e9a343c32ccbc40bb8",
-    "manifests/hexar_external/confirmatory_v1/mixture_unknown_dependence_power_v1.json": "e4818ad3605b2a40454ef045dbec2baf9a53713189f91c9f0262ab47f715252a"
+    "manifests/hexar_external/confirmatory_v1/mixture_unknown_dependence_power_v1.json": "e4818ad3605b2a40454ef045dbec2baf9a53713189f91c9f0262ab47f715252a",
+    "manifests/hexar_external/confirmatory_v1/effect_floor_decision_rule_v1.json": "bc063fa0ca9d350bd862c68d147b20d17ff5d037b8886a3f3dc4d6b7ff531078",
+    "manifests/hexar_external/confirmatory_v1/maximum_variance_power_sensitivity_v1.json": "085809831dbad41d70c61f0cdcefc32fba7865b734b9433c232f7133617af05c"
   },
-  "unknown_dependence_review": "Outcome-dependent correlated whole-episode unknown sensitivity required; no rate bound or final N inferred from independent missingness."
+  "unknown_dependence_review": "Outcome-dependent correlated whole-episode unknown sensitivity required; no rate bound or final N inferred from independent missingness.",
+  "candidate_effect_floor_rule": {
+    "document": "docs/hexar_external/confirmatory_v1/EFFECT_FLOOR_DECISION_RULE.md",
+    "document_sha256": "0d6e21b8811ee087d76d121ce642b43ce18fd140ae2397de9adc264b4453e1d8",
+    "working_mapped_effect_floor": 0.1,
+    "conditional_sampled_grid_n": 3072,
+    "accepted": false,
+    "requires": "completed acquisition review and explicit final effect/missingness assumptions before N binding"
+  }
 }
