@@ -16,13 +16,14 @@ Run candidate checks from repository root:
 
 ```bash
 python -m analysis.hexar_external.confirmatory_v1.compare_designs
-python -m analysis.hexar_external.confirmatory_v1.build_plan
 python -m analysis.hexar_external.confirmatory_v1.audit --stage acquisition
 python -m analysis.hexar_external.confirmatory_v1.audit --stage semantic
 python -m pytest tests/hexar_external/test_confirmatory_v1.py tests/hexar_external/test_fixed_sequence_and_heterogeneity.py tests/hexar_external/test_confirmatory_infrastructure.py tests/hexar_external/test_acquisition_plan.py -q
 ```
 
 Audit failure currently means admission fields are incomplete, not a development prohibition. Acquisition freeze must precede acquisition/selection of confirmatory episodes. The raw cohort is subsequently sealed in a separate immutable artifact. Semantic activation requires the committed study/family freezes, raw-cohort seal and immutable valid H1 rejection; a missing or nonrejecting H1 terminates H2's confirmatory eligibility. The sequence and complete H2 design must be fixed before H1 outcomes are known.
+
+`build_plan` is an initial bootstrap only and now refuses any existing prospective artifact directory, including unbound candidates. Continue by explicit reviewed amendments; rerunning bootstrap cannot erase later query, endpoint, freshness or fairness decisions.
 
 The v2 ledger is preserved byte-for-byte because shared audits pin it. The companion amendment at `manifests/study/evidence-calibration-hexar-fixed-sequence-v1.json` records the prospective family order and must be reconciled with main before final family binding. The remaining .01 stays AVAILABLE/unbound until the combined protocol freeze; no automatic ledger transfer or repayment occurs.
 

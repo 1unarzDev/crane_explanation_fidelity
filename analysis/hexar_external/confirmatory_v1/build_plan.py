@@ -15,13 +15,16 @@ def sha(path):
 
 def write(name, value):
     path = OUT/name
-    if path.exists() and json.loads(path.read_text()).get('status') == 'FROZEN':
-        raise ValueError('cannot rebuild a frozen artifact')
-    path.write_text(json.dumps(value, indent=2)+'\n')
+    # Unbound candidates contain scientific decisions too. Bootstrap must not
+    # erase later amendments merely because their status is not yet FROZEN.
+    with path.open('x') as stream:
+        stream.write(json.dumps(value, indent=2)+'\n')
 
 
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
+    if any(OUT.glob('*.json')):
+        raise ValueError('existing prospective artifacts must be amended explicitly; bootstrap cannot rebuild them')
     frozen = OUT/'freeze_manifest.json'
     if frozen.exists() and json.loads(frozen.read_text()).get('status') == 'FROZEN':
         raise ValueError('immutable freeze exists: candidate rebuild prohibited')
