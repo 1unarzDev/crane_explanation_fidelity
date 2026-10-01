@@ -1,0 +1,38 @@
+{
+  "schema": "roboboat-coverage-auditor-source-regression/v33",
+  "audit": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-varied-start-development-v27-001/post-result-coverage-audit-v33-001.json",
+    "sha256": "f8941ac035c844ae41e0ece3a17f8cef4f719299b1c5d612b6205e9e1a27d9a5"
+  },
+  "profile": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-varied-start-development-v27-001/profile-v10.json",
+    "sha256": "3f7be56272643da0882e658a4569c5c05a4e1dbfd76c64b154532bad9f298f65"
+  },
+  "old_auditor": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/audit_roboboat_post_result_coverage_v28.py",
+    "sha256": "2173c3c6f6795e78c06a48a6731af1aea416b38e446d530ffe82a3a6818a0071"
+  },
+  "successor": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/audit_roboboat_post_result_coverage_v33.py",
+    "sha256": "5c480ddbaaa0068be864aa4552f6015f419c220c88438b70b8474f6515998d19"
+  },
+  "old_actual_snapshot_result": {
+    "rejected": true,
+    "exception": "ValueError",
+    "reason": "finite nonnegative timing values required"
+  },
+  "checks": {
+    "actual_old_auditor_reproduces_missing_elapsed_rejection": true,
+    "all_fixed_scheduled_rows_retained": true,
+    "both_result_populations_exercised": true,
+    "timeouts_have_no_span_or_received_result_gate": true,
+    "received_result_gates_evaluated": true,
+    "dwell_denominator_excludes_missing_result": true,
+    "raw_simulator_header_inventory_unchanged": true,
+    "no_scientific_n_added": true
+  },
+  "all_pass": true,
+  "received_result_records": 53,
+  "missing_result_timeout_records": 6,
+  "scope": "Real fixed development snapshot exercises both populations. Tooling regression only; no collection predicates, runtime bytes, old dispositions, method scores or independent N changed."
+}
