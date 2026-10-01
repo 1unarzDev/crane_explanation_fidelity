@@ -28,6 +28,7 @@ def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--freeze',type=Path,required=True)
     parser.add_argument('--maximum-candidates',type=int)
+    parser.add_argument('--look',choices=['FIRST','FINAL'],default='FIRST')
     args=parser.parse_args()
     freeze=json.loads(args.freeze.read_text())
     if freeze.get('status')!='FROZEN_BEFORE_FIRST_CONFIRMATORY_SEMANTIC_OUTPUT':raise RuntimeError('No prospective scientific freeze')
@@ -36,6 +37,7 @@ def main():
     ledger=json.loads((ROOT/'manifests/study/diagnostic-sequential-error-ledger-v2.json').read_text())
     allocation=next(a for a in ledger['allocations'] if a['allocation_id']==freeze['alpha_allocation_id'])
     if allocation['status']!='CONSUMED' or allocation['campaign_id']!=freeze['study_id']:raise RuntimeError('Alpha not prospectively bound')
+    if allocation.get('freeze_sha256')!=hashlib.sha256(args.freeze.read_bytes()).hexdigest():raise RuntimeError('Declaration differs from the prospectively bound alpha allocation')
     pool=json.loads((ROOT/freeze['candidate_allocation_path']).read_text())
     exceptions=json.loads((ROOT/'manifests/study/evidence-calibration-handoff-freshness-exceptions-v1.json').read_text())
     excluded={e['run_id'] for e in exceptions['exceptions']}
@@ -44,6 +46,10 @@ def main():
     if args.maximum_candidates is not None:rows=rows[:args.maximum_candidates]
     ontology=json.loads((ROOT/'configs/evidence_calibration_claim_contracts_v1.json').read_text())
     out=ROOT/'analysis/results/confirmation'/freeze['study_id'];out.mkdir(parents=True,exist_ok=True)
+    target_n=freeze['first_look_n'] if args.look=='FIRST' else freeze['valid_paired_episode_n']
+    if args.look=='FINAL':
+        first=json.loads((out/'look-600'/'primary-analysis-v1.json').read_text())
+        if not first.get('continuation_required',False):raise RuntimeError('The frozen futility rule ended this study; no further semantic outputs')
     models=ROOT/'model_outputs'/freeze['study_id']
     pilot=copy.deepcopy(json.loads((ROOT/'research/explanation_fidelity/experiment_configs/development/evidence-calibration-b2-b4-pilot-v1.json').read_text()))
     pilot.update(pilot_id=freeze['study_id'],development_only=False,study_stage='CONFIRMATION',data_split='final',confirmation_alpha=freeze['alpha'])
@@ -54,7 +60,7 @@ def main():
     (out/'schedule.json').write_text(json.dumps(schedule,indent=2)+'\n')
     complete=0;accounting=[]
     for row in rows:
-        if complete>=freeze['valid_paired_episode_n']:break
+        if complete>=target_n:break
         run_id=row['run_id'];status=models/'status'/(run_id+'.json')
         intent=models/'status'/(run_id+'.intent.json')
         if status.exists():
@@ -93,6 +99,6 @@ def main():
         record=dict(run_id=run_id,study_stage='CONFIRMATION',complete_pair=not b4_failures and all(c['status']=='VALID' for c in calls),b2_calls=calls,b4_technical_failures=b4_failures,quality_driven_retries=0)
         write_once(status,record);accounting.append(record);complete+=record['complete_pair']
         print(json.dumps(dict(run_id=run_id,complete_pair=record['complete_pair'],complete_paired_episode_n=complete)),flush=True)
-    (out/'execution-accounting.json').write_text(json.dumps(dict(study_id=freeze['study_id'],complete_paired_episode_n=complete,planned_valid_n=freeze['valid_paired_episode_n'],complete=complete==freeze['valid_paired_episode_n'],records=accounting),indent=2)+'\n')
+    (out/('execution-accounting-'+args.look+'.json')).write_text(json.dumps(dict(study_id=freeze['study_id'],look=args.look,complete_paired_episode_n=complete,planned_valid_n=target_n,complete=complete==target_n,records=accounting),indent=2)+'\n')
 
 if __name__=='__main__':main()

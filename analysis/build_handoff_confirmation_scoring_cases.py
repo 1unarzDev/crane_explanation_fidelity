@@ -12,12 +12,13 @@ from run_evidence_calibration_b2_pilot import ROOT,_materialize
 
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--freeze',required=True,type=Path);args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--freeze',required=True,type=Path);parser.add_argument('--look',choices=['FIRST','FINAL'],default='FIRST');args=parser.parse_args()
     freeze=json.loads(args.freeze.read_text())
     if freeze['status']!='FROZEN_BEFORE_FIRST_CONFIRMATORY_SEMANTIC_OUTPUT':raise RuntimeError('Unfrozen study')
     out=ROOT/'analysis/results/confirmation'/freeze['study_id'];models=ROOT/'model_outputs'/freeze['study_id']
-    accounting=json.loads((out/'execution-accounting.json').read_text())
-    if not accounting['complete'] or accounting['complete_paired_episode_n']!=freeze['valid_paired_episode_n']:raise RuntimeError('All planned output pairs must complete before blind scoring')
+    target_n=freeze['first_look_n'] if args.look=='FIRST' else freeze['valid_paired_episode_n']
+    accounting=json.loads((out/('execution-accounting-'+args.look+'.json')).read_text())
+    if not accounting['complete'] or accounting['complete_paired_episode_n']!=target_n:raise RuntimeError('All planned output pairs must complete before blind scoring')
     pilot=json.loads((out/'pilot.json').read_text());schedule=json.loads((out/'schedule.json').read_text())
     sources=json.loads((ROOT/'analysis/results/evidence-calibration-handoff-development/pilot-cases-v1.json').read_text())['source_assets']
     cases=[];joins=[]
@@ -52,11 +53,12 @@ def main():
                 joins.append(dict(response_id=identifier,method_id=method,condition_id=condition,configuration_id=entry['condition']['configuration_id'],
                     family=family,realized_family=realized,run_id=run_id,source_path=str(path.relative_to(ROOT)),source_sha256=hashlib.sha256(path.read_bytes()).hexdigest()))
     random.Random(freeze['study_id']+'-blind-order').shuffle(cases)
-    if len(cases)!=8*freeze['valid_paired_episode_n']:raise RuntimeError('Incomplete blind input')
+    if len(cases)!=8*target_n:raise RuntimeError('Incomplete blind input')
+    out=out/('look-'+str(target_n));out.mkdir(exist_ok=True)
     for name,d in [('blind-cases-v1.json',dict(scope='CONFIRMATION',cases=cases,source_assets=sources)),('join-key-v1.json',dict(scope='CONFIRMATION_KEY_NOT_SENT_TO_JUDGE',entries=joins))]:
         raw=json.dumps(d,indent=2)+'\n';p=out/name
         if p.exists() and p.read_text()!=raw:raise RuntimeError('Retained scoring inputs differ')
         if not p.exists():p.write_text(raw)
-    print(json.dumps(dict(blind_answers=len(cases),independent_episode_n=freeze['valid_paired_episode_n'],outcomes_joined=False)))
+    print(json.dumps(dict(blind_answers=len(cases),independent_episode_n=target_n,outcomes_joined=False)))
 
 if __name__=='__main__':main()

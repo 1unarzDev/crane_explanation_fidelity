@@ -8,7 +8,7 @@ from pathlib import Path
 from summarize_handoff_development_results import aggregate
 
 
-def paired_interval(b, c, n):
+def paired_interval(b, c, n, tail_probability=.0125):
     """Uniform >=95% Bonferroni projection; no outcome-dependent zero-case switch."""
     log_comb = [math.lgamma(n+1)-math.lgamma(j+1)-math.lgamma(n-j+1) for j in range(n+1)]
     def bounds(k):
@@ -19,7 +19,7 @@ def paired_interval(b, c, n):
             low,high = 0.,1.
             for _ in range(70):
                 mid=(low+high)/2
-                if (tail(mid,upper)<.0125) == upper:low=mid
+                if (tail(mid,upper)<tail_probability) == upper:low=mid
                 else:high=mid
             return (low+high)/2
         return (root(True) if k else 0., root(False) if k<n else 1.)

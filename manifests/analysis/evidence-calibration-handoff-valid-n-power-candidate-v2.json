@@ -10,6 +10,69 @@
   "rationale": "1200 valid pairs provide >=80% power for a 2.5 percentage-point reduction across opposing-discordance probabilities 0.005 through 0.020; at 0.045 opposing discordance power is only 56%, so 1200 is not universally adequate. Smaller effects and the null remain explicit sensitivity scenarios. This does not predict a positive effect.",
   "attrition": "Acquired cap and technical stopping rule remain to be specified; technical missingness may be associated with task difficulty. Report worst-case missing-pair bounds, not merely independent-thinning power.",
   "useful_coverage": "Success additionally requires a prospectively frozen useful-coverage criterion; this calculation covers superiority only.",
+  "early_futility_design": {
+    "first_look_n": 600,
+    "maximum_n": 1200,
+    "rule": "Stop only if first600 have zero paired discordances. No early positive result. Otherwise finish1200 and use the original exact test.",
+    "validity": "For every alpha threshold, study rejection is a subset of the fixed1200 exact-test rejection event; study p=1 if stopped, otherwise final exact p. No alpha spent on the futility look.",
+    "interval": "Two predeclared possible terminal looks: Bonferroni CP category tail.00625 yields >=97.5% coverage per look and >=95% over both look-specific intervals.",
+    "rows": [
+      {
+        "b2_only": 0.0,
+        "b4_only": 0.0,
+        "power": 0.0,
+        "probability_zero_discordance_early_stop": 1.0
+      },
+      {
+        "b2_only": 0.005,
+        "b4_only": 0.0,
+        "power": 0.3920597964083161,
+        "probability_zero_discordance_early_stop": 0.04941382211003858
+      },
+      {
+        "b2_only": 0.01,
+        "b4_only": 0.0,
+        "power": 0.9539948500914006,
+        "probability_zero_discordance_early_stop": 0.0024050092913110673
+      },
+      {
+        "b2_only": 0.02,
+        "b4_only": 0.005,
+        "power": 0.8222747389967195,
+        "probability_zero_discordance_early_stop": 2.5279554673964603e-07
+      },
+      {
+        "b2_only": 0.025,
+        "b4_only": 0.025,
+        "power": 0.0070725245337796535,
+        "probability_zero_discordance_early_stop": 4.3068839852573004e-14
+      },
+      {
+        "b2_only": 0.03,
+        "b4_only": 0.005,
+        "power": 0.9940753009323504,
+        "probability_zero_discordance_early_stop": 5.204607776299416e-10
+      },
+      {
+        "b2_only": 0.035,
+        "b4_only": 0.01,
+        "power": 0.9642298673426511,
+        "probability_zero_discordance_early_stop": 1.0046688805005774e-12
+      },
+      {
+        "b2_only": 0.045,
+        "b4_only": 0.02,
+        "power": 0.845257319309891,
+        "probability_zero_discordance_early_stop": 3.068785429727468e-18
+      },
+      {
+        "b2_only": 0.07,
+        "b4_only": 0.045,
+        "power": 0.5620585658026415,
+        "probability_zero_discordance_early_stop": 1.465421026503043e-32
+      }
+    ]
+  },
   "rows": [
     {
       "b2_only": 0.0,
