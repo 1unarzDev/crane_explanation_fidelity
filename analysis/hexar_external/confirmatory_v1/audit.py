@@ -321,6 +321,8 @@ def audit(base=BASE, root=ROOT, stage="semantic"):
         if len(qs) != 3 or {q.get('question_id') for q in qs} != {'q1','q2','q3'} or any(not q.get('wording') for q in qs):
             errors.append('battery: three frozen query wordings missing for '+family)
     comparator = docs.get('comparator_freeze.json', {})
+    from analysis.hexar_external.confirmatory_v1.unique_admission import admission_errors
+    errors.extend(admission_errors(docs, root))
     if comparator.get('execution_adapter_qualified') is not True:
         errors.append('execution: no qualified confirmatory exactly-once adapter')
     for method in ('baseline',):

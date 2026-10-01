@@ -28,3 +28,11 @@ def test_full_dependence_and_equal_marginals_produce_identical_methods():
     cells=battery_pairs(np.random.default_rng(712),10000,.1,.1,1.,1.)
     assert cells[0]==cells[1]==0
     assert sum(cells)==10000
+
+
+def test_deduplicated_six_request_battery_uses_six_trials_per_episode():
+    n=100000
+    f,u,ss,ff=np.array(battery_pairs(np.random.default_rng(714),n,.04,.10,0.,0.,jobs=6))/n
+    cf=1-.96**6;pf=1-.90**6
+    assert [f,u,ss,ff]==pytest.approx([(1-cf)*pf,cf*(1-pf),(1-cf)*(1-pf),cf*pf],abs=.005)
+    assert cf<1-.96**9 and pf<1-.90**9

@@ -3,7 +3,7 @@
   "status": "CANDIDATE",
   "name": "HEXAR_CONFIRMATORY_FAILURE",
   "independent_unit": "independently generated robot episode (physical or simulated)",
-  "aggregation": "any of nine fixed query/evidence jobs fails",
+  "aggregation": "any of nine fixed query/evidence cells fails; byte-identical requests share one generated output and scoring disposition, giving six unique requests per episode/method under the audited interface",
   "job_failure": "any unsupported/contradicted material proposition OR overlicensed diagnostic specificity OR missing required useful outcome/available bounded diagnostic unit",
   "required_units": "navigation outcome, explicit timeout/abort where relevant; at least one available trouble/selection diagnostic (OR group), otherwise preserve outcome; optional true extras not mandatory",
   "semantic_source": "docs/hexar_external/v2/ENDPOINT.md",
@@ -23,5 +23,19 @@
     "candidate_scope": "software outcome plus useful bounded diagnostic and sampled odometry unit when available; both observed status and motion must remain communicated; no physical-arrival inference",
     "historical_endpoint_and_development_result_preserved": true,
     "admission": "candidate only; final mandatory units, numeric tolerances and blinded semantic scoring remain unqualified"
+  },
+  "unique_request_policy": {
+    "status": "ADOPTED_FOR_DEVELOPMENT_NOT_FROZEN",
+    "implementation": "analysis/hexar_external/confirmatory_v1/unique_request_plan.py",
+    "implementation_sha256": "950876d43af9e2e92ce2984f75f31bc403fefe9cf0afd60f9319a5c1c27e8e1d",
+    "rule": "Generate once per unique complete method request within each episode; identical intact/irrelevant aliases share output, failure and evaluation; no cross-episode or cross-method reuse.",
+    "expected_unique_requests_per_episode_per_method": 6,
+    "battery_cells_per_episode_per_method": 9,
+    "scientific_source": "docs/hexar_external/confirmatory_v1/BATTERY_DUPLICATION_FAIRNESS.md",
+    "scientific_source_sha256": "0a868ebd2e1ad6e349df86961e1dac7ed22c27315b737055674513b975eed1cd",
+    "execution_adapter_qualified": false,
+    "expansion_implementation": "analysis/hexar_external/confirmatory_v1/unique_result_expansion.py",
+    "expansion_implementation_sha256": "8b0611d7767513942f021aee71c2ccde121f255415a8ff1ab032d0541ce1a16d",
+    "qualification": null
   }
 }

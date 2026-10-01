@@ -49,6 +49,7 @@ def battery_pairs(rng, episodes, contract_error, prompt_error, within_method, be
         raise ValueError('positive simulation size and nondegenerate error rates required')
     if any(not 0 <= rho <= 1 for rho in (within_method,between_methods)):
         raise ValueError('correlation out of range')
+    if type(jobs) is not int or jobs<1:raise ValueError('positive integer unique request count required')
     shared_episode=rng.standard_normal((episodes,1,1))
     method_episode=rng.standard_normal((episodes,2,1))
     shared_question=rng.standard_normal((episodes,1,jobs))
@@ -64,13 +65,13 @@ def battery_pairs(rng, episodes, contract_error, prompt_error, within_method, be
     return cells
 
 
-def report(draws=80000, seed=2026100102):
+def report(draws=80000, seed=2026100102, jobs=9):
     rng=np.random.default_rng(seed)
     rows=[]
     for contract_error in (.04,.06,.08,.10,.12):
         for within in (0.,.5,.9,1.):
             for between in (0.,.5,.9,1.):
-                f,u,ss,ff=battery_pairs(rng,draws,contract_error,.10,within,between)
+                f,u,ss,ff=battery_pairs(rng,draws,contract_error,.10,within,between,jobs=jobs)
                 d=(f+u)/draws
                 q=f/(f+u) if f+u else None
                 rows.append(dict(contract_answer_failure_probability=contract_error,
@@ -93,7 +94,7 @@ def report(draws=80000, seed=2026100102):
                                  reserves_per_family_for_99=minimum_reserve(valid,invalid,.99)))
     return dict(schema='hexar-battery-reserve-power/v1',phase='development_design_only',seed=seed,
                 draws_per_battery_regime=draws,maximum_mc_se=.5/math.sqrt(draws),alpha=.01,
-                jobs_per_recording=9,independent_unit='simulated robot episode',
+                jobs_per_recording=jobs,independent_unit='simulated robot episode',
                 model='Gaussian copula with independent episodes and correlated answer failures in both methods',
                 not_empirical_estimates=True,selected_n=None,selected_reserve=None,
                 power_note='Exact homogeneous paired e-test power at estimated hypothetical copula probabilities; Monte Carlo uncertainty in those probabilities remains. Heterogeneous power is in family_power_report.json.',
@@ -105,8 +106,9 @@ def report(draws=80000, seed=2026100102):
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--output',type=Path,default=ROOT/'manifests/hexar_external/confirmatory_v1/battery_reserve_power_report.json')
+    parser.add_argument('--unique-jobs',type=int,default=9)
     args=parser.parse_args()
-    value=report()
+    value=report(jobs=args.unique_jobs)
     with args.output.open('x') as stream:
         stream.write(json.dumps(value,indent=2)+'\n')
     print(json.dumps(dict(status='DESIGN_ONLY',regimes=len(value['battery_rows']),selected_n=None)))
