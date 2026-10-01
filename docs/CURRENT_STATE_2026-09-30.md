@@ -1,5 +1,28 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Installed-client response-egress addendum after `e1ecd8b4` — 2026-09-30
+
+A [separate observer v9/writer v3/coordinator v5](INSTALLED_CLIENT_RESPONSE_EGRESS_2026-09-30.md)
+repairs observer v8's key-order wire reconstruction failure. Preserve v8 source/tests,
+68 passes/six failures and a read-only retained replay; initial temporary client raw
+records were deleted. Exact framed bytes are retained before transport/budget denial
+and checked against RPC and egress hashes/content. Partial retention sends nothing.
+The corrected candidate passes 140 distinct checks across two invocations (122, 18).
+Five fresh pre-bound offline CLI 0.159.3 observations pass; B0/B1 each retain 229 bytes
+in two responses and B2/B3/B4 each 3,058 bytes in seven. Six services absent; stderr
+and turn/item notifications zero; ten direct constructor probes denied. All owners
+remain pending after SIGTERM. Retain total CPU 395.458/333.840/366.522 ms and overshoots
+85.458/23.840/56.522 ms without hard-cap/method-effect claims. This audits a successful
+retained response prefix, not whole-session completion, peer receipt or model-visible
+rendering. Existing study callers do not migrate. Scientific authorization, full model
+tools/rendering/capacity, complete turn costs and immutable runtime/durability remain
+open. No semantic/annotation call, score, acquisition, alpha spending or P11 freeze;
+N=0 and nineteen open conditions with zero component hash mismatches remain. Failed
+combined support and unanswered measurement reopening remain controlling. Alpha and
+freshness accounting are unchanged; prospective five-method episode effects, intervals,
+corrected p-values and inconclusive/unfavorable results remain required. The nine-page
+manuscript passes mechanical packaging and 220 numeric assertions only.
+
 ## Response egress addendum after `1e9ae2e6` — 2026-09-30
 
 A [separate repaired egress ledger/coordinator v4](RESPONSE_EGRESS_2026-09-30.md) binds explicit

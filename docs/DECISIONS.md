@@ -5031,3 +5031,33 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   open. No semantic/annotation output, score, acquisition, alpha spending, caller
   migration or P11 freeze. N=0, nineteen open conditions and unanswered reopening
   remain. This is an implementation defect, not an observed model/method failure.
+
+
+## 2026-09-30 — retain exact response wire bytes and audit installed-client egress
+
+- **Preserved failure:** observer v8 reconstructed wire bytes from key-sorted RPC
+  objects and failed six checks (68 passed). Preserve source/tests and a separate
+  read-only replay on unchanged prior records. Initial temporary client records
+  were deleted; do not claim retained raw failures. This is an auditor failure,
+  not a model failure.
+- **Repair:** writer v3 retains exact framed bytes before transport/budget denial,
+  with exclusive storage, complete-count check, flush and fsync. Coordinator v5
+  selects it. Observer v9 checks exact hashes, typed RPC content and egress sequences,
+  settlements and totals, rejecting pending/withheld/missing/extra/corrupt records.
+  Partial wire-storage failure sends nothing and leaves pending ownership.
+- **Evidence:** 140 distinct checks across invocations of 122 and 18 pass. Five fresh
+  pre-bound offline CLI 0.159.3 observations pass: B0/B1 each retain two responses/
+  229 local flushed bytes; B2/B3/B4 each retain seven/3,058 bytes. Six services absent;
+  stderr and turn/item notifications zero. Ten direct constructor probes denied.
+  All owners remain pending after SIGTERM; no terminal is fabricated.
+- **Boundaries:** audit claims successful retained response prefix, not whole-session
+  completion or peer/model receipt. Retain CPU totals 395.458/333.840/366.522 ms and
+  overshoots 85.458/23.840/56.522 ms against 310 ms without hard-cap/method-effect
+  claims. Prior versions/records stay unchanged; study callers do not migrate.
+- **Governance:** no semantic/annotation call, score, method-key join, acquisition,
+  alpha spending or P11 freeze. N=0, nineteen open conditions and unanswered
+  measurement reopening remain. Earlier qualification does not override failed
+  combined support. Five-method prospective episode effects/intervals/corrected
+  p-values and unfavorable/inconclusive results remain required. Scientific
+  authorization, model tools/rendering/capacity, complete turn accounting and
+  immutable runtime/durability remain open. See the dated installed-client egress record.
