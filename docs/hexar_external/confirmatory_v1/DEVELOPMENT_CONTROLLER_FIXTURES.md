@@ -1,0 +1,7 @@
+# Actual controller-evidence authored evaluator contrasts
+
+The versioned bank contains 48 independently authored answers on six already-exposed v12 packets, with eight contrasts each. They distinguish legitimate instantaneous parameter/wiring observations from continuous stability, universal command delivery and unique physical causes. Additional contrasts preserve or omit measured odometry and deliberately change its numeric magnitude. No contract or baseline output supplies the authored answer or expected label.
+
+Every packet is checked for two actual boundary snapshots, navigation priority 10, charging-lock priority 210 and a base-controller receiver. The positive description is limited to those snapshots. Outcome, diagnostic and motion communication use the packet-only authored reference rules; this is not independent human gold. The bank retains hashes of actual exposed packets and the source report. Expected vectors and fixture IDs remain outside the blinded judge payload.
+
+The bank starts **PREPARED_NOT_PROVIDER_SCORED**. Constructing it calls no model and does not qualify the evaluator. A separate declaration must precede any scoring; failed or disputed outcomes must be retained. The existing 64-call synthetic intention/progress screen and the completed 143-call actual unique-output workflow remain separate. Neither already establishes substantive coverage accuracy, exhaustive material-claim extraction or all measurement tolerances.
