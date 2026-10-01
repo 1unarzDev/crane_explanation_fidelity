@@ -10031,9 +10031,6 @@
       "study_stage": "CONFIRMATION"
     },
     {
-      "run_id": "handoff-confirmation-candidate-0415",
-      "study_stage": "CONFIRMATION",
-      "complete_pair": true,
       "b2_calls": [
         {
           "condition_id": "handoff-confirmation-candidate-0415-E0",
@@ -10049,6 +10046,35 @@
         },
         {
           "condition_id": "handoff-confirmation-candidate-0415-E3",
+          "status": "VALID"
+        }
+      ],
+      "b4_technical_failures": [],
+      "complete_pair": true,
+      "quality_driven_retries": 0,
+      "run_id": "handoff-confirmation-candidate-0415",
+      "study_stage": "CONFIRMATION"
+    },
+    {
+      "run_id": "handoff-confirmation-candidate-0416",
+      "study_stage": "CONFIRMATION",
+      "complete_pair": false,
+      "b2_calls": [
+        {
+          "condition_id": "handoff-confirmation-candidate-0416-E0",
+          "status": "VALID"
+        },
+        {
+          "condition_id": "handoff-confirmation-candidate-0416-E1",
+          "status": "VALID"
+        },
+        {
+          "condition_id": "handoff-confirmation-candidate-0416-E2",
+          "status": "TECHNICAL_FAILURE",
+          "error": "RuntimeError: model call failed; retained at /home/lunarz/.codex/worktrees/f235/crane_explain/model_outputs/evidence-calibration-b4-b2-confirmation-2026-10-01/cache/7e3b39e075a16b803b690a633cd6e833290183d856451c6153b3006d2d96ced6.json"
+        },
+        {
+          "condition_id": "handoff-confirmation-candidate-0416-E3",
           "status": "VALID"
         }
       ],
