@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Prospectively declared trace-qualified development collector, candidate v10. No old failures salvaged; fixed fresh-row schedule; confirmation remains separate.
+"""Prospectively declared trace-qualified development collector, candidate v12. No old failures salvaged; fixed fresh-row schedule; confirmation remains separate.
 
 Single compositor worker until multi-window routing is independently qualified.
 Other work may run concurrently on isolated ROS domains/ports and method workers.
@@ -234,7 +234,7 @@ def validate_declaration(d, declaration_path):
             attempted.add(json.loads(path.read_text())['row']['id'])
     if set(ids)&attempted:raise ValueError('old attempted row cannot enter fresh development schedule')
     if not 0<=d['domain']<=232 or not 1024<=d['port']<=65535 or d['maximum_delta_time']!=.04:
-        raise ValueError('declared v9 resources and catch-up cap required')
+        raise ValueError('declared revised-platform resources and catch-up cap required')
     return registry_path,registry,[known[i] for i in ids]
 
 
