@@ -1,0 +1,1581 @@
+{
+  "schema": "crane-evidence-calibration-ontology/v1",
+  "catalog_id": "roboboat-full-crane-contracts-v2-development",
+  "catalog_version": "2.0.0-development",
+  "evidence_requirements": [
+    {
+      "requirement_id": "req-evidence-scope",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "evidence-scope",
+      "predicate_version": "v1-development",
+      "description": "The explanation uses only the declared robot-visible packet; delivered observations do not prove Nav2 internal consumption."
+    },
+    {
+      "requirement_id": "req-action-succeeded",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "action-succeeded",
+      "predicate_version": "v1-development",
+      "description": "The recorded navigation action reported succeeded."
+    },
+    {
+      "requirement_id": "req-action-aborted",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "action-aborted",
+      "predicate_version": "v1-development",
+      "description": "The recorded navigation action reported aborted."
+    },
+    {
+      "requirement_id": "req-action-canceled",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "action-canceled",
+      "predicate_version": "v1-development",
+      "description": "The recorded navigation action reported canceled."
+    },
+    {
+      "requirement_id": "req-dwell-failed",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "dwell-failed",
+      "predicate_version": "v1-development",
+      "description": "An observed violation establishes failure of the specified fixed docking dwell."
+    },
+    {
+      "requirement_id": "req-dwell-sampled-success",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "dwell-sampled-success",
+      "predicate_version": "v1-development",
+      "description": "All required conditions are supported at observed samples across the declared fixed dwell."
+    },
+    {
+      "requirement_id": "req-dwell-unknown",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "dwell-unknown",
+      "predicate_version": "v1-development",
+      "description": "Completion of the specified fixed docking dwell is unestablished by available evidence."
+    },
+    {
+      "requirement_id": "req-dwell-anchor",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "dwell-anchor",
+      "predicate_version": "v1-development",
+      "description": "The declared dwell starts at the first post-result observation, independently of action receipt time."
+    },
+    {
+      "requirement_id": "req-return-position",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "return-position",
+      "predicate_version": "v1-development",
+      "description": "The declared delivered reference observation has the following measured position error and signed position margin."
+    },
+    {
+      "requirement_id": "req-return-heading",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "return-heading",
+      "predicate_version": "v1-development",
+      "description": "The declared delivered reference observation has the following measured heading error."
+    },
+    {
+      "requirement_id": "req-return-speed",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "return-speed",
+      "predicate_version": "v1-development",
+      "description": "The declared delivered reference observation has the following measured translational speed."
+    },
+    {
+      "requirement_id": "req-radial-change",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "radial-change",
+      "predicate_version": "v1-development",
+      "description": "The signed change in observed radial position error from the declared reference observation to the final selected dwell sample is as follows."
+    },
+    {
+      "requirement_id": "req-position-violation",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "position-violation",
+      "predicate_version": "v1-development",
+      "description": "An observed position violation falsifies the corresponding dwell requirement. Values are measured at the witness sample, not an inferred continuous-time crossing."
+    },
+    {
+      "requirement_id": "req-position-compliance",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "position-compliance",
+      "predicate_version": "v1-development",
+      "description": "The position requirement holds at all retained dwell samples under the declared uncertainty contract; full sampled-window coverage is available."
+    },
+    {
+      "requirement_id": "req-position-unknown",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "position-unknown",
+      "predicate_version": "v1-development",
+      "description": "The available evidence does not establish whether the position requirement held throughout the declared sampled dwell."
+    },
+    {
+      "requirement_id": "req-heading-violation",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "heading-violation",
+      "predicate_version": "v1-development",
+      "description": "An observed heading violation falsifies the corresponding dwell requirement. Values are measured at the witness sample, not an inferred continuous-time crossing."
+    },
+    {
+      "requirement_id": "req-heading-compliance",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "heading-compliance",
+      "predicate_version": "v1-development",
+      "description": "The heading requirement holds at all retained dwell samples under the declared uncertainty contract; full sampled-window coverage is available."
+    },
+    {
+      "requirement_id": "req-heading-unknown",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "heading-unknown",
+      "predicate_version": "v1-development",
+      "description": "The available evidence does not establish whether the heading requirement held throughout the declared sampled dwell."
+    },
+    {
+      "requirement_id": "req-speed-violation",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "speed-violation",
+      "predicate_version": "v1-development",
+      "description": "An observed speed violation falsifies the corresponding dwell requirement. Values are measured at the witness sample, not an inferred continuous-time crossing."
+    },
+    {
+      "requirement_id": "req-speed-compliance",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "speed-compliance",
+      "predicate_version": "v1-development",
+      "description": "The speed requirement holds at all retained dwell samples under the declared uncertainty contract; full sampled-window coverage is available."
+    },
+    {
+      "requirement_id": "req-speed-unknown",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "speed-unknown",
+      "predicate_version": "v1-development",
+      "description": "The available evidence does not establish whether the speed requirement held throughout the declared sampled dwell."
+    },
+    {
+      "requirement_id": "req-yaw_rate-violation",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "yaw_rate-violation",
+      "predicate_version": "v1-development",
+      "description": "An observed yaw rate violation falsifies the corresponding dwell requirement. Values are measured at the witness sample, not an inferred continuous-time crossing."
+    },
+    {
+      "requirement_id": "req-yaw_rate-compliance",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "yaw_rate-compliance",
+      "predicate_version": "v1-development",
+      "description": "The yaw rate requirement holds at all retained dwell samples under the declared uncertainty contract; full sampled-window coverage is available."
+    },
+    {
+      "requirement_id": "req-yaw_rate-unknown",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "yaw_rate-unknown",
+      "predicate_version": "v1-development",
+      "description": "The available evidence does not establish whether the yaw rate requirement held throughout the declared sampled dwell."
+    },
+    {
+      "requirement_id": "req-hull-violation",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "hull-violation",
+      "predicate_version": "v1-development",
+      "description": "An observed hull violation falsifies the corresponding dwell requirement. Values are measured at the witness sample, not an inferred continuous-time crossing."
+    },
+    {
+      "requirement_id": "req-hull-compliance",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "hull-compliance",
+      "predicate_version": "v1-development",
+      "description": "The hull requirement holds at all retained dwell samples under the declared uncertainty contract; full sampled-window coverage is available."
+    },
+    {
+      "requirement_id": "req-hull-unknown",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "hull-unknown",
+      "predicate_version": "v1-development",
+      "description": "The available evidence does not establish whether the hull requirement held throughout the declared sampled dwell."
+    },
+    {
+      "requirement_id": "req-contact-violation",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "contact-violation",
+      "predicate_version": "v1-development",
+      "description": "Prohibited hull contact was observed within the declared dwell; this falsifies the contact requirement."
+    },
+    {
+      "requirement_id": "req-contact-compliance",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "contact-compliance",
+      "predicate_version": "v1-development",
+      "description": "An aligned complete prohibited-contact event stream covering the declared dwell establishes contact absence under its explicit capture guarantee."
+    },
+    {
+      "requirement_id": "req-contact-unknown",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "contact-unknown",
+      "predicate_version": "v1-development",
+      "description": "The task requires no prohibited hull contact during the dwell; available contact evidence does not establish whether this requirement held."
+    },
+    {
+      "requirement_id": "req-physical-cause",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "physical-cause",
+      "predicate_version": "v1-development",
+      "description": "Independent evidence establishes a specific physical cause."
+    },
+    {
+      "requirement_id": "req-continuous-compliance",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "continuous-compliance",
+      "predicate_version": "v1-development",
+      "description": "An intersample bound establishes continuous-time compliance."
+    },
+    {
+      "requirement_id": "req-action-timeout",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "action-timeout",
+      "predicate_version": "v2-development",
+      "description": "The navigation fixture reported timeout."
+    },
+    {
+      "requirement_id": "req-fixture-timeout-scope",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "fixture-timeout-scope",
+      "predicate_version": "v2-development",
+      "description": "The fixture timeout does not establish a terminal ROS action result, cancellation, or docking failure."
+    },
+    {
+      "requirement_id": "req-configured-xy_goal_tolerance",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "configured-xy_goal_tolerance",
+      "predicate_version": "v2-development",
+      "description": "The visible configuration records the XY goal tolerance; this observation does not establish internal consumption or why the boat stopped."
+    },
+    {
+      "requirement_id": "req-configured-yaw_goal_tolerance",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "configured-yaw_goal_tolerance",
+      "predicate_version": "v2-development",
+      "description": "The visible configuration records the yaw goal tolerance; this observation does not establish internal consumption or why the boat stopped."
+    },
+    {
+      "requirement_id": "req-configured-trans_stopped_velocity",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "configured-trans_stopped_velocity",
+      "predicate_version": "v2-development",
+      "description": "The visible configuration records the translational stopped-velocity tolerance; this observation does not establish internal consumption or why the boat stopped."
+    },
+    {
+      "requirement_id": "req-configured-rot_stopped_velocity",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "configured-rot_stopped_velocity",
+      "predicate_version": "v2-development",
+      "description": "The visible configuration records the rotational stopped-velocity tolerance; this observation does not establish internal consumption or why the boat stopped."
+    },
+    {
+      "requirement_id": "req-public-docking-requirements",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "public-docking-requirements",
+      "predicate_version": "v2-development",
+      "description": "The separate public docking task requires the fixed dwell and position, heading, speed, and yaw-rate limits shown here; configured navigation tolerances do not replace these requirements."
+    },
+    {
+      "requirement_id": "req-receipt-clock",
+      "evidence_roles": [
+        "marine_visible_packet"
+      ],
+      "predicate_id": "receipt-clock",
+      "predicate_version": "v2-development",
+      "description": "The recorded client receipt time uses the fixture-monotonic wall clock; it is not the ROS-header sample clock or the first post-result sample that anchors the fixed dwell."
+    }
+  ],
+  "claim_contracts": [
+    {
+      "claim_id": "claim-evidence-scope",
+      "proposition": "The explanation uses only the declared robot-visible packet; delivered observations do not prove Nav2 internal consumption.",
+      "mechanism_family": "docking",
+      "claim_kind": "OBSERVATION",
+      "diagnostic_node_id": "node-evidence-scope",
+      "required_evidence_ids": [
+        "req-evidence-scope"
+      ],
+      "numeric_slots": [],
+      "non_entailment_ids": [
+        "ne-cause",
+        "ne-continuous"
+      ]
+    },
+    {
+      "claim_id": "claim-action-succeeded",
+      "proposition": "The recorded navigation action reported succeeded.",
+      "mechanism_family": "action",
+      "claim_kind": "TASK_OUTCOME",
+      "diagnostic_node_id": "node-action-succeeded",
+      "required_evidence_ids": [
+        "req-action-succeeded"
+      ],
+      "numeric_slots": [],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-action-aborted",
+      "proposition": "The recorded navigation action reported aborted.",
+      "mechanism_family": "action",
+      "claim_kind": "TASK_OUTCOME",
+      "diagnostic_node_id": "node-action-aborted",
+      "required_evidence_ids": [
+        "req-action-aborted"
+      ],
+      "numeric_slots": [],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-action-canceled",
+      "proposition": "The recorded navigation action reported canceled.",
+      "mechanism_family": "action",
+      "claim_kind": "TASK_OUTCOME",
+      "diagnostic_node_id": "node-action-canceled",
+      "required_evidence_ids": [
+        "req-action-canceled"
+      ],
+      "numeric_slots": [],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-dwell-failed",
+      "proposition": "An observed violation establishes failure of the specified fixed docking dwell.",
+      "mechanism_family": "docking",
+      "claim_kind": "TASK_OUTCOME",
+      "diagnostic_node_id": "node-dwell-failed",
+      "required_evidence_ids": [
+        "req-dwell-failed"
+      ],
+      "numeric_slots": [],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-dwell-sampled-success",
+      "proposition": "All required conditions are supported at observed samples across the declared fixed dwell.",
+      "mechanism_family": "docking",
+      "claim_kind": "TASK_OUTCOME",
+      "diagnostic_node_id": "node-dwell-sampled-success",
+      "required_evidence_ids": [
+        "req-dwell-sampled-success"
+      ],
+      "numeric_slots": [],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-dwell-unknown",
+      "proposition": "Completion of the specified fixed docking dwell is unestablished by available evidence.",
+      "mechanism_family": "docking",
+      "claim_kind": "LIMITATION",
+      "diagnostic_node_id": "node-dwell-unknown",
+      "required_evidence_ids": [
+        "req-dwell-unknown"
+      ],
+      "numeric_slots": [],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-dwell-anchor",
+      "proposition": "The declared dwell starts at the first post-result observation, independently of action receipt time.",
+      "mechanism_family": "docking",
+      "claim_kind": "OBSERVATION",
+      "diagnostic_node_id": "node-dwell-anchor",
+      "required_evidence_ids": [
+        "req-dwell-anchor"
+      ],
+      "numeric_slots": [
+        {
+          "slot_id": "interval_start",
+          "unit": "s",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "interval_end",
+          "unit": "s",
+          "tolerance": 0
+        }
+      ],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-return-position",
+      "proposition": "The declared delivered reference observation has the following measured position error and signed position margin.",
+      "mechanism_family": "measurements",
+      "claim_kind": "OBSERVATION",
+      "diagnostic_node_id": "node-return-position",
+      "required_evidence_ids": [
+        "req-return-position"
+      ],
+      "numeric_slots": [
+        {
+          "slot_id": "observation_time",
+          "unit": "s",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "position_error",
+          "unit": "m",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "position_margin",
+          "unit": "m",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "position_bound",
+          "unit": "m",
+          "tolerance": 0
+        }
+      ],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-return-heading",
+      "proposition": "The declared delivered reference observation has the following measured heading error.",
+      "mechanism_family": "measurements",
+      "claim_kind": "OBSERVATION",
+      "diagnostic_node_id": "node-return-heading",
+      "required_evidence_ids": [
+        "req-return-heading"
+      ],
+      "numeric_slots": [
+        {
+          "slot_id": "heading_error",
+          "unit": "rad",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "heading_bound",
+          "unit": "rad",
+          "tolerance": 0
+        }
+      ],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-return-speed",
+      "proposition": "The declared delivered reference observation has the following measured translational speed.",
+      "mechanism_family": "measurements",
+      "claim_kind": "OBSERVATION",
+      "diagnostic_node_id": "node-return-speed",
+      "required_evidence_ids": [
+        "req-return-speed"
+      ],
+      "numeric_slots": [
+        {
+          "slot_id": "measured_speed",
+          "unit": "m/s",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "speed_bound",
+          "unit": "m/s",
+          "tolerance": 0
+        }
+      ],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-radial-change",
+      "proposition": "The signed change in observed radial position error from the declared reference observation to the final selected dwell sample is as follows.",
+      "mechanism_family": "measurements",
+      "claim_kind": "OBSERVATION",
+      "diagnostic_node_id": "node-radial-change",
+      "required_evidence_ids": [
+        "req-radial-change"
+      ],
+      "numeric_slots": [
+        {
+          "slot_id": "radial_error_change",
+          "unit": "m",
+          "tolerance": 0
+        }
+      ],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-position-violation",
+      "proposition": "An observed position violation falsifies the corresponding dwell requirement. Values are measured at the witness sample, not an inferred continuous-time crossing.",
+      "mechanism_family": "docking",
+      "claim_kind": "OBSERVATION",
+      "diagnostic_node_id": "node-position-violation",
+      "required_evidence_ids": [
+        "req-position-violation"
+      ],
+      "numeric_slots": [
+        {
+          "slot_id": "witness_time",
+          "unit": "s",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "measured_value",
+          "unit": "m",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "requirement_bound",
+          "unit": "m",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "signed_margin",
+          "unit": "m",
+          "tolerance": 0
+        }
+      ],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-position-compliance",
+      "proposition": "The position requirement holds at all retained dwell samples under the declared uncertainty contract; full sampled-window coverage is available.",
+      "mechanism_family": "docking",
+      "claim_kind": "OBSERVATION",
+      "diagnostic_node_id": "node-position-compliance",
+      "required_evidence_ids": [
+        "req-position-compliance"
+      ],
+      "numeric_slots": [
+        {
+          "slot_id": "sample_count",
+          "unit": "samples",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "maximum_gap",
+          "unit": "s",
+          "tolerance": 0
+        }
+      ],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-position-unknown",
+      "proposition": "The available evidence does not establish whether the position requirement held throughout the declared sampled dwell.",
+      "mechanism_family": "docking",
+      "claim_kind": "LIMITATION",
+      "diagnostic_node_id": "node-position-unknown",
+      "required_evidence_ids": [
+        "req-position-unknown"
+      ],
+      "numeric_slots": [],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-heading-violation",
+      "proposition": "An observed heading violation falsifies the corresponding dwell requirement. Values are measured at the witness sample, not an inferred continuous-time crossing.",
+      "mechanism_family": "docking",
+      "claim_kind": "OBSERVATION",
+      "diagnostic_node_id": "node-heading-violation",
+      "required_evidence_ids": [
+        "req-heading-violation"
+      ],
+      "numeric_slots": [
+        {
+          "slot_id": "witness_time",
+          "unit": "s",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "measured_value",
+          "unit": "rad",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "requirement_bound",
+          "unit": "rad",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "signed_margin",
+          "unit": "rad",
+          "tolerance": 0
+        }
+      ],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-heading-compliance",
+      "proposition": "The heading requirement holds at all retained dwell samples under the declared uncertainty contract; full sampled-window coverage is available.",
+      "mechanism_family": "docking",
+      "claim_kind": "OBSERVATION",
+      "diagnostic_node_id": "node-heading-compliance",
+      "required_evidence_ids": [
+        "req-heading-compliance"
+      ],
+      "numeric_slots": [
+        {
+          "slot_id": "sample_count",
+          "unit": "samples",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "maximum_gap",
+          "unit": "s",
+          "tolerance": 0
+        }
+      ],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-heading-unknown",
+      "proposition": "The available evidence does not establish whether the heading requirement held throughout the declared sampled dwell.",
+      "mechanism_family": "docking",
+      "claim_kind": "LIMITATION",
+      "diagnostic_node_id": "node-heading-unknown",
+      "required_evidence_ids": [
+        "req-heading-unknown"
+      ],
+      "numeric_slots": [],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-speed-violation",
+      "proposition": "An observed speed violation falsifies the corresponding dwell requirement. Values are measured at the witness sample, not an inferred continuous-time crossing.",
+      "mechanism_family": "docking",
+      "claim_kind": "OBSERVATION",
+      "diagnostic_node_id": "node-speed-violation",
+      "required_evidence_ids": [
+        "req-speed-violation"
+      ],
+      "numeric_slots": [
+        {
+          "slot_id": "witness_time",
+          "unit": "s",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "measured_value",
+          "unit": "m/s",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "requirement_bound",
+          "unit": "m/s",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "signed_margin",
+          "unit": "m/s",
+          "tolerance": 0
+        }
+      ],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-speed-compliance",
+      "proposition": "The speed requirement holds at all retained dwell samples under the declared uncertainty contract; full sampled-window coverage is available.",
+      "mechanism_family": "docking",
+      "claim_kind": "OBSERVATION",
+      "diagnostic_node_id": "node-speed-compliance",
+      "required_evidence_ids": [
+        "req-speed-compliance"
+      ],
+      "numeric_slots": [
+        {
+          "slot_id": "sample_count",
+          "unit": "samples",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "maximum_gap",
+          "unit": "s",
+          "tolerance": 0
+        }
+      ],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-speed-unknown",
+      "proposition": "The available evidence does not establish whether the speed requirement held throughout the declared sampled dwell.",
+      "mechanism_family": "docking",
+      "claim_kind": "LIMITATION",
+      "diagnostic_node_id": "node-speed-unknown",
+      "required_evidence_ids": [
+        "req-speed-unknown"
+      ],
+      "numeric_slots": [],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-yaw_rate-violation",
+      "proposition": "An observed yaw rate violation falsifies the corresponding dwell requirement. Values are measured at the witness sample, not an inferred continuous-time crossing.",
+      "mechanism_family": "docking",
+      "claim_kind": "OBSERVATION",
+      "diagnostic_node_id": "node-yaw_rate-violation",
+      "required_evidence_ids": [
+        "req-yaw_rate-violation"
+      ],
+      "numeric_slots": [
+        {
+          "slot_id": "witness_time",
+          "unit": "s",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "measured_value",
+          "unit": "rad/s",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "requirement_bound",
+          "unit": "rad/s",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "signed_margin",
+          "unit": "rad/s",
+          "tolerance": 0
+        }
+      ],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-yaw_rate-compliance",
+      "proposition": "The yaw rate requirement holds at all retained dwell samples under the declared uncertainty contract; full sampled-window coverage is available.",
+      "mechanism_family": "docking",
+      "claim_kind": "OBSERVATION",
+      "diagnostic_node_id": "node-yaw_rate-compliance",
+      "required_evidence_ids": [
+        "req-yaw_rate-compliance"
+      ],
+      "numeric_slots": [
+        {
+          "slot_id": "sample_count",
+          "unit": "samples",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "maximum_gap",
+          "unit": "s",
+          "tolerance": 0
+        }
+      ],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-yaw_rate-unknown",
+      "proposition": "The available evidence does not establish whether the yaw rate requirement held throughout the declared sampled dwell.",
+      "mechanism_family": "docking",
+      "claim_kind": "LIMITATION",
+      "diagnostic_node_id": "node-yaw_rate-unknown",
+      "required_evidence_ids": [
+        "req-yaw_rate-unknown"
+      ],
+      "numeric_slots": [],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-hull-violation",
+      "proposition": "An observed hull violation falsifies the corresponding dwell requirement. Values are measured at the witness sample, not an inferred continuous-time crossing.",
+      "mechanism_family": "docking",
+      "claim_kind": "OBSERVATION",
+      "diagnostic_node_id": "node-hull-violation",
+      "required_evidence_ids": [
+        "req-hull-violation"
+      ],
+      "numeric_slots": [
+        {
+          "slot_id": "witness_time",
+          "unit": "s",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "measured_value",
+          "unit": "m",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "requirement_bound",
+          "unit": "m",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "signed_margin",
+          "unit": "m",
+          "tolerance": 0
+        }
+      ],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-hull-compliance",
+      "proposition": "The hull requirement holds at all retained dwell samples under the declared uncertainty contract; full sampled-window coverage is available.",
+      "mechanism_family": "docking",
+      "claim_kind": "OBSERVATION",
+      "diagnostic_node_id": "node-hull-compliance",
+      "required_evidence_ids": [
+        "req-hull-compliance"
+      ],
+      "numeric_slots": [
+        {
+          "slot_id": "sample_count",
+          "unit": "samples",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "maximum_gap",
+          "unit": "s",
+          "tolerance": 0
+        }
+      ],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-hull-unknown",
+      "proposition": "The available evidence does not establish whether the hull requirement held throughout the declared sampled dwell.",
+      "mechanism_family": "docking",
+      "claim_kind": "LIMITATION",
+      "diagnostic_node_id": "node-hull-unknown",
+      "required_evidence_ids": [
+        "req-hull-unknown"
+      ],
+      "numeric_slots": [],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-contact-violation",
+      "proposition": "Prohibited hull contact was observed within the declared dwell; this falsifies the contact requirement.",
+      "mechanism_family": "docking",
+      "claim_kind": "OBSERVATION",
+      "diagnostic_node_id": "node-contact-violation",
+      "required_evidence_ids": [
+        "req-contact-violation"
+      ],
+      "numeric_slots": [
+        {
+          "slot_id": "witness_time",
+          "unit": "s",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "observed_events",
+          "unit": "events",
+          "tolerance": 0
+        }
+      ],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-contact-compliance",
+      "proposition": "An aligned complete prohibited-contact event stream covering the declared dwell establishes contact absence under its explicit capture guarantee.",
+      "mechanism_family": "docking",
+      "claim_kind": "OBSERVATION",
+      "diagnostic_node_id": "node-contact-compliance",
+      "required_evidence_ids": [
+        "req-contact-compliance"
+      ],
+      "numeric_slots": [],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-contact-unknown",
+      "proposition": "The task requires no prohibited hull contact during the dwell; available contact evidence does not establish whether this requirement held.",
+      "mechanism_family": "docking",
+      "claim_kind": "LIMITATION",
+      "diagnostic_node_id": "node-contact-unknown",
+      "required_evidence_ids": [
+        "req-contact-unknown"
+      ],
+      "numeric_slots": [],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-physical-cause",
+      "proposition": "Independent evidence establishes a specific physical cause.",
+      "mechanism_family": "causal",
+      "claim_kind": "SPECIFIC_PHYSICAL_CAUSE",
+      "diagnostic_node_id": "node-physical-cause",
+      "required_evidence_ids": [
+        "req-physical-cause"
+      ],
+      "numeric_slots": [],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-continuous-compliance",
+      "proposition": "An intersample bound establishes continuous-time compliance.",
+      "mechanism_family": "continuous",
+      "claim_kind": "TASK_OUTCOME",
+      "diagnostic_node_id": "node-continuous-compliance",
+      "required_evidence_ids": [
+        "req-continuous-compliance"
+      ],
+      "numeric_slots": [],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-action-timeout",
+      "proposition": "The navigation fixture reported timeout.",
+      "mechanism_family": "action",
+      "claim_kind": "OBSERVATION",
+      "diagnostic_node_id": "node-action-timeout",
+      "required_evidence_ids": [
+        "req-action-timeout"
+      ],
+      "numeric_slots": [],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-fixture-timeout-scope",
+      "proposition": "The fixture timeout does not establish a terminal ROS action result, cancellation, or docking failure.",
+      "mechanism_family": "action",
+      "claim_kind": "LIMITATION",
+      "diagnostic_node_id": "node-fixture-timeout-scope",
+      "required_evidence_ids": [
+        "req-fixture-timeout-scope"
+      ],
+      "numeric_slots": [],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-configured-xy_goal_tolerance",
+      "proposition": "The visible configuration records the XY goal tolerance; this observation does not establish internal consumption or why the boat stopped.",
+      "mechanism_family": "measurements",
+      "claim_kind": "OBSERVATION",
+      "diagnostic_node_id": "node-configured-xy_goal_tolerance",
+      "required_evidence_ids": [
+        "req-configured-xy_goal_tolerance"
+      ],
+      "numeric_slots": [
+        {
+          "slot_id": "xy_goal_tolerance",
+          "unit": "m",
+          "tolerance": 0
+        }
+      ],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-configured-yaw_goal_tolerance",
+      "proposition": "The visible configuration records the yaw goal tolerance; this observation does not establish internal consumption or why the boat stopped.",
+      "mechanism_family": "measurements",
+      "claim_kind": "OBSERVATION",
+      "diagnostic_node_id": "node-configured-yaw_goal_tolerance",
+      "required_evidence_ids": [
+        "req-configured-yaw_goal_tolerance"
+      ],
+      "numeric_slots": [
+        {
+          "slot_id": "yaw_goal_tolerance",
+          "unit": "rad",
+          "tolerance": 0
+        }
+      ],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-configured-trans_stopped_velocity",
+      "proposition": "The visible configuration records the translational stopped-velocity tolerance; this observation does not establish internal consumption or why the boat stopped.",
+      "mechanism_family": "measurements",
+      "claim_kind": "OBSERVATION",
+      "diagnostic_node_id": "node-configured-trans_stopped_velocity",
+      "required_evidence_ids": [
+        "req-configured-trans_stopped_velocity"
+      ],
+      "numeric_slots": [
+        {
+          "slot_id": "trans_stopped_velocity",
+          "unit": "m/s",
+          "tolerance": 0
+        }
+      ],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-configured-rot_stopped_velocity",
+      "proposition": "The visible configuration records the rotational stopped-velocity tolerance; this observation does not establish internal consumption or why the boat stopped.",
+      "mechanism_family": "measurements",
+      "claim_kind": "OBSERVATION",
+      "diagnostic_node_id": "node-configured-rot_stopped_velocity",
+      "required_evidence_ids": [
+        "req-configured-rot_stopped_velocity"
+      ],
+      "numeric_slots": [
+        {
+          "slot_id": "rot_stopped_velocity",
+          "unit": "rad/s",
+          "tolerance": 0
+        }
+      ],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-public-docking-requirements",
+      "proposition": "The separate public docking task requires the fixed dwell and position, heading, speed, and yaw-rate limits shown here; configured navigation tolerances do not replace these requirements.",
+      "mechanism_family": "docking",
+      "claim_kind": "OBSERVATION",
+      "diagnostic_node_id": "node-public-docking-requirements",
+      "required_evidence_ids": [
+        "req-public-docking-requirements"
+      ],
+      "numeric_slots": [
+        {
+          "slot_id": "dwell_s",
+          "unit": "s",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "position_tolerance_m",
+          "unit": "m",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "heading_tolerance_rad",
+          "unit": "rad",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "speed_tolerance_mps",
+          "unit": "m/s",
+          "tolerance": 0
+        },
+        {
+          "slot_id": "yaw_rate_tolerance_radps",
+          "unit": "rad/s",
+          "tolerance": 0
+        }
+      ],
+      "non_entailment_ids": []
+    },
+    {
+      "claim_id": "claim-receipt-clock",
+      "proposition": "The recorded client receipt time uses the fixture-monotonic wall clock; it is not the ROS-header sample clock or the first post-result sample that anchors the fixed dwell.",
+      "mechanism_family": "action",
+      "claim_kind": "OBSERVATION",
+      "diagnostic_node_id": "node-receipt-clock",
+      "required_evidence_ids": [
+        "req-receipt-clock"
+      ],
+      "numeric_slots": [
+        {
+          "slot_id": "receipt_wall_seconds",
+          "unit": "s",
+          "tolerance": 0
+        }
+      ],
+      "non_entailment_ids": []
+    }
+  ],
+  "non_entailments": [
+    {
+      "non_entailment_id": "ne-cause",
+      "basis_claim_ids": [
+        "claim-evidence-scope"
+      ],
+      "unsupported_consequent_claim_ids": [
+        "claim-physical-cause"
+      ],
+      "rationale": "These observations do not identify the physical cause of motion; waves, current, wind and actuation remain unresolved.",
+      "additional_evidence_requirement_ids": [
+        "req-physical-cause"
+      ]
+    },
+    {
+      "non_entailment_id": "ne-continuous",
+      "basis_claim_ids": [
+        "claim-evidence-scope"
+      ],
+      "unsupported_consequent_claim_ids": [
+        "claim-continuous-compliance"
+      ],
+      "rationale": "Samples do not establish continuous-time compliance between observations; an observed violation is sufficient to falsify the dwell.",
+      "additional_evidence_requirement_ids": [
+        "req-continuous-compliance"
+      ]
+    }
+  ],
+  "diagnostic_nodes": [
+    {
+      "node_id": "node-evidence-scope",
+      "mechanism_family": "docking",
+      "label": "The explanation uses only the declared robot-visible packet; delivered observations do not prove Nav2 internal consumption.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-evidence-scope"
+      ]
+    },
+    {
+      "node_id": "node-action-succeeded",
+      "mechanism_family": "action",
+      "label": "The recorded navigation action reported succeeded.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-action-succeeded"
+      ]
+    },
+    {
+      "node_id": "node-action-aborted",
+      "mechanism_family": "action",
+      "label": "The recorded navigation action reported aborted.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-action-aborted"
+      ]
+    },
+    {
+      "node_id": "node-action-canceled",
+      "mechanism_family": "action",
+      "label": "The recorded navigation action reported canceled.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-action-canceled"
+      ]
+    },
+    {
+      "node_id": "node-dwell-failed",
+      "mechanism_family": "docking",
+      "label": "An observed violation establishes failure of the specified fixed docking dwell.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-dwell-failed"
+      ]
+    },
+    {
+      "node_id": "node-dwell-sampled-success",
+      "mechanism_family": "docking",
+      "label": "All required conditions are supported at observed samples across the declared fixed dwell.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-dwell-sampled-success"
+      ]
+    },
+    {
+      "node_id": "node-dwell-unknown",
+      "mechanism_family": "docking",
+      "label": "Completion of the specified fixed docking dwell is unestablished by available evidence.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-dwell-unknown"
+      ]
+    },
+    {
+      "node_id": "node-dwell-anchor",
+      "mechanism_family": "docking",
+      "label": "The declared dwell starts at the first post-result observation, independently of action receipt time.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-dwell-anchor"
+      ]
+    },
+    {
+      "node_id": "node-return-position",
+      "mechanism_family": "measurements",
+      "label": "The declared delivered reference observation has the following measured position error and signed position margin.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-return-position"
+      ]
+    },
+    {
+      "node_id": "node-return-heading",
+      "mechanism_family": "measurements",
+      "label": "The declared delivered reference observation has the following measured heading error.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-return-heading"
+      ]
+    },
+    {
+      "node_id": "node-return-speed",
+      "mechanism_family": "measurements",
+      "label": "The declared delivered reference observation has the following measured translational speed.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-return-speed"
+      ]
+    },
+    {
+      "node_id": "node-radial-change",
+      "mechanism_family": "measurements",
+      "label": "The signed change in observed radial position error from the declared reference observation to the final selected dwell sample is as follows.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-radial-change"
+      ]
+    },
+    {
+      "node_id": "node-position-violation",
+      "mechanism_family": "docking",
+      "label": "An observed position violation falsifies the corresponding dwell requirement. Values are measured at the witness sample, not an inferred continuous-time crossing.",
+      "rank_within_family": 1,
+      "parent_node_ids": [
+        "node-dwell-failed"
+      ],
+      "claim_ids": [
+        "claim-position-violation"
+      ]
+    },
+    {
+      "node_id": "node-position-compliance",
+      "mechanism_family": "docking",
+      "label": "The position requirement holds at all retained dwell samples under the declared uncertainty contract; full sampled-window coverage is available.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-position-compliance"
+      ]
+    },
+    {
+      "node_id": "node-position-unknown",
+      "mechanism_family": "docking",
+      "label": "The available evidence does not establish whether the position requirement held throughout the declared sampled dwell.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-position-unknown"
+      ]
+    },
+    {
+      "node_id": "node-heading-violation",
+      "mechanism_family": "docking",
+      "label": "An observed heading violation falsifies the corresponding dwell requirement. Values are measured at the witness sample, not an inferred continuous-time crossing.",
+      "rank_within_family": 1,
+      "parent_node_ids": [
+        "node-dwell-failed"
+      ],
+      "claim_ids": [
+        "claim-heading-violation"
+      ]
+    },
+    {
+      "node_id": "node-heading-compliance",
+      "mechanism_family": "docking",
+      "label": "The heading requirement holds at all retained dwell samples under the declared uncertainty contract; full sampled-window coverage is available.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-heading-compliance"
+      ]
+    },
+    {
+      "node_id": "node-heading-unknown",
+      "mechanism_family": "docking",
+      "label": "The available evidence does not establish whether the heading requirement held throughout the declared sampled dwell.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-heading-unknown"
+      ]
+    },
+    {
+      "node_id": "node-speed-violation",
+      "mechanism_family": "docking",
+      "label": "An observed speed violation falsifies the corresponding dwell requirement. Values are measured at the witness sample, not an inferred continuous-time crossing.",
+      "rank_within_family": 1,
+      "parent_node_ids": [
+        "node-dwell-failed"
+      ],
+      "claim_ids": [
+        "claim-speed-violation"
+      ]
+    },
+    {
+      "node_id": "node-speed-compliance",
+      "mechanism_family": "docking",
+      "label": "The speed requirement holds at all retained dwell samples under the declared uncertainty contract; full sampled-window coverage is available.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-speed-compliance"
+      ]
+    },
+    {
+      "node_id": "node-speed-unknown",
+      "mechanism_family": "docking",
+      "label": "The available evidence does not establish whether the speed requirement held throughout the declared sampled dwell.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-speed-unknown"
+      ]
+    },
+    {
+      "node_id": "node-yaw_rate-violation",
+      "mechanism_family": "docking",
+      "label": "An observed yaw rate violation falsifies the corresponding dwell requirement. Values are measured at the witness sample, not an inferred continuous-time crossing.",
+      "rank_within_family": 1,
+      "parent_node_ids": [
+        "node-dwell-failed"
+      ],
+      "claim_ids": [
+        "claim-yaw_rate-violation"
+      ]
+    },
+    {
+      "node_id": "node-yaw_rate-compliance",
+      "mechanism_family": "docking",
+      "label": "The yaw rate requirement holds at all retained dwell samples under the declared uncertainty contract; full sampled-window coverage is available.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-yaw_rate-compliance"
+      ]
+    },
+    {
+      "node_id": "node-yaw_rate-unknown",
+      "mechanism_family": "docking",
+      "label": "The available evidence does not establish whether the yaw rate requirement held throughout the declared sampled dwell.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-yaw_rate-unknown"
+      ]
+    },
+    {
+      "node_id": "node-hull-violation",
+      "mechanism_family": "docking",
+      "label": "An observed hull violation falsifies the corresponding dwell requirement. Values are measured at the witness sample, not an inferred continuous-time crossing.",
+      "rank_within_family": 1,
+      "parent_node_ids": [
+        "node-dwell-failed"
+      ],
+      "claim_ids": [
+        "claim-hull-violation"
+      ]
+    },
+    {
+      "node_id": "node-hull-compliance",
+      "mechanism_family": "docking",
+      "label": "The hull requirement holds at all retained dwell samples under the declared uncertainty contract; full sampled-window coverage is available.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-hull-compliance"
+      ]
+    },
+    {
+      "node_id": "node-hull-unknown",
+      "mechanism_family": "docking",
+      "label": "The available evidence does not establish whether the hull requirement held throughout the declared sampled dwell.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-hull-unknown"
+      ]
+    },
+    {
+      "node_id": "node-contact-violation",
+      "mechanism_family": "docking",
+      "label": "Prohibited hull contact was observed within the declared dwell; this falsifies the contact requirement.",
+      "rank_within_family": 1,
+      "parent_node_ids": [
+        "node-dwell-failed"
+      ],
+      "claim_ids": [
+        "claim-contact-violation"
+      ]
+    },
+    {
+      "node_id": "node-contact-compliance",
+      "mechanism_family": "docking",
+      "label": "An aligned complete prohibited-contact event stream covering the declared dwell establishes contact absence under its explicit capture guarantee.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-contact-compliance"
+      ]
+    },
+    {
+      "node_id": "node-contact-unknown",
+      "mechanism_family": "docking",
+      "label": "The task requires no prohibited hull contact during the dwell; available contact evidence does not establish whether this requirement held.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-contact-unknown"
+      ]
+    },
+    {
+      "node_id": "node-physical-cause",
+      "mechanism_family": "causal",
+      "label": "Independent evidence establishes a specific physical cause.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-physical-cause"
+      ]
+    },
+    {
+      "node_id": "node-continuous-compliance",
+      "mechanism_family": "continuous",
+      "label": "An intersample bound establishes continuous-time compliance.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-continuous-compliance"
+      ]
+    },
+    {
+      "node_id": "node-action-timeout",
+      "mechanism_family": "action",
+      "label": "The navigation fixture reported timeout.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-action-timeout"
+      ]
+    },
+    {
+      "node_id": "node-fixture-timeout-scope",
+      "mechanism_family": "action",
+      "label": "The fixture timeout does not establish a terminal ROS action result, cancellation, or docking failure.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-fixture-timeout-scope"
+      ]
+    },
+    {
+      "node_id": "node-configured-xy_goal_tolerance",
+      "mechanism_family": "measurements",
+      "label": "The visible configuration records the XY goal tolerance; this observation does not establish internal consumption or why the boat stopped.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-configured-xy_goal_tolerance"
+      ]
+    },
+    {
+      "node_id": "node-configured-yaw_goal_tolerance",
+      "mechanism_family": "measurements",
+      "label": "The visible configuration records the yaw goal tolerance; this observation does not establish internal consumption or why the boat stopped.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-configured-yaw_goal_tolerance"
+      ]
+    },
+    {
+      "node_id": "node-configured-trans_stopped_velocity",
+      "mechanism_family": "measurements",
+      "label": "The visible configuration records the translational stopped-velocity tolerance; this observation does not establish internal consumption or why the boat stopped.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-configured-trans_stopped_velocity"
+      ]
+    },
+    {
+      "node_id": "node-configured-rot_stopped_velocity",
+      "mechanism_family": "measurements",
+      "label": "The visible configuration records the rotational stopped-velocity tolerance; this observation does not establish internal consumption or why the boat stopped.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-configured-rot_stopped_velocity"
+      ]
+    },
+    {
+      "node_id": "node-public-docking-requirements",
+      "mechanism_family": "docking",
+      "label": "The separate public docking task requires the fixed dwell and position, heading, speed, and yaw-rate limits shown here; configured navigation tolerances do not replace these requirements.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-public-docking-requirements"
+      ]
+    },
+    {
+      "node_id": "node-receipt-clock",
+      "mechanism_family": "action",
+      "label": "The recorded client receipt time uses the fixture-monotonic wall clock; it is not the ROS-header sample clock or the first post-result sample that anchors the fixed dwell.",
+      "rank_within_family": 0,
+      "parent_node_ids": [],
+      "claim_ids": [
+        "claim-receipt-clock"
+      ]
+    }
+  ]
+}

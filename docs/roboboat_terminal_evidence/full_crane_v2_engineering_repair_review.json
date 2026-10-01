@@ -1,0 +1,95 @@
+{
+  "schema": "roboboat-full-crane-v2-independent-engineering-repair-review/v1",
+  "reviewer": "Independent project-agent source reviewer",
+  "project_agent_review_not_human_validation": true,
+  "original_review": {
+    "path": "docs/roboboat_terminal_evidence/full_crane_v2_engineering_review.json",
+    "sha256": "caee4e6e2b6682419bb401e0a0f78697f2b3d55e274cb4e277051801d76f409c"
+  },
+  "reviewed_sources": [
+    {
+      "path": "analysis/roboboat_full_crane_v2.py",
+      "sha256": "1ee2ffc0a79a9f54c08a78d3719db9333509f037a58abf2c3e5da1dca3668b9d"
+    },
+    {
+      "path": "configs/roboboat_claim_contracts_v2_development.json",
+      "sha256": "10c3aef1b0067454d7fce1c0ff4d3cb13620e9e4a4d08f168518746ecd52dc09"
+    },
+    {
+      "path": "tests/test_roboboat_full_crane_v2.py",
+      "sha256": "f228842acc547eba35d1c0eb9ea13cdd7536c7b64711bfb55fc2a26dbe7aec29"
+    },
+    {
+      "path": "docs/roboboat_terminal_evidence/FULL_CRANE_V2_DEVELOPMENT.md",
+      "sha256": "46dabd91d5570ac08c40529844e86813d9dae9c0992d6420d3d68c5991db847a"
+    }
+  ],
+  "status": "ORIGINAL_SCOPE_FINDINGS_RESOLVED_VELOCITY_PROVENANCE_GATE_PENDING",
+  "readiness": {
+    "original_findings_resolved": true,
+    "development_activation_ready": false,
+    "confirmation_ready": false,
+    "annotation_reliability_established": false,
+    "superiority_established": false
+  },
+  "original_findings": [
+    {
+      "issue_id": "clock-scope-gate",
+      "disposition": "RESOLVED",
+      "evidence": "Additive v2 rejects task.clock other than ros-header-stamp. Construction probe of fixture-monotonic rejected. No v1 edits."
+    },
+    {
+      "issue_id": "return-alignment-scope-gate",
+      "disposition": "RESOLVED",
+      "evidence": "Additive v2 accepts only collector-defined latest-delivered-at-client-receipt or last-pre-result-observation; missing/unregistered alignment rejected. Templates now describe declared delivered reference, without temporal proximity or terminal receipt implication."
+    }
+  ],
+  "additional_verified_repairs": [
+    "Timeout rejects recorded action-result receipt, either populated receipt field, any nonempty post_result stream, or receipt-aligned reference. Faithful timeout with last-pre-result reference supports only point observations, fixture timeout limitation and unknown docking; no terminal status claim, result-adjacent wording or dwell anchor.",
+    "Independent rerun: 84 v1/v2 targeted tests passed in 4.09s. No response-runner review undertaken; runner ownership remained separate."
+  ],
+  "findings": [
+    {
+      "issue_id": "velocity-provenance-scope",
+      "severity": "development-source-semantic-gap",
+      "status": "OPEN",
+      "construction_probe": "/return_observation/velocity/source='command-instead-of-measured-odometry' accepted",
+      "observed_behavior": "Measured translational-speed template emitted, although declared source is command rather than measured odometry. Same unguarded source applies to supplied post_result velocity.",
+      "required_resolution": "Additive v2 fail-closed velocity-source gate for collector-defined delivered-odometry-twist-body-to-odom, or explicitly restrict/enforce source-bound original collector provenance before activation."
+    }
+  ],
+  "further_scope_probes": [
+    {
+      "probe": "common frame changed to map in task and every reference/post_result observation",
+      "result": "Accepted; no inversion: all coordinates/headings and public geometry share common frame, output makes no odom assertion."
+    },
+    {
+      "probe": "task.continuous_time_proof=True without intersample bound",
+      "result": "Accepted but no positive continuous-compliance claim approved; withholding remains appropriate."
+    },
+    {
+      "probe": "descriptive task.measurement_scope changed to continuous-exact-truth",
+      "result": "Accepted but no positive continuous-compliance or specific-cause claim approved. Recommended source-contract scope declaration/gate; metadata alone does not prove an intersample bound."
+    }
+  ],
+  "preservation": {
+    "original_review_modified": false,
+    "v1_and_shared_sources_unchanged_from_original_review": [
+      "analysis/roboboat_full_crane_v1.py",
+      "configs/roboboat_claim_contracts_v1_development.json",
+      "tests/test_roboboat_full_crane_v1.py",
+      "analysis/roboboat_temporal_certificate.py",
+      "analysis/roboboat_temporal_certificate_v2.py",
+      "analysis/maximal_supported_diagnosis.py",
+      "analysis/realize_evidence_calibrated_explanation.py"
+    ],
+    "raw_calls_or_study_outputs_modified": false,
+    "source_code_modified_by_reviewer": false
+  },
+  "limitations": [
+    "Current engineering readiness is pending one declared velocity-source semantic repair/disposition, not an empirical method failure.",
+    "Numeric binding tolerance is zero internally; shared .12g display rounding remains a reviewed measurement/presentation limitation.",
+    "Authenticating effective configuration/measurement timestamps still depends on source-bound collector infrastructure.",
+    "Audit is agent-assisted engineering review; no formal endpoint judgments, provider/GPU calls, new real-study outputs, fairness conclusion or superiority evidence."
+  ]
+}
