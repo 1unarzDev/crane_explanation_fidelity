@@ -1,0 +1,24 @@
+{
+  "schema": "roboboat-command-shutdown-reproducer/v1",
+  "status": "ACTUAL_COMPONENT_TESTS_RUNNING",
+  "test_session": 38951,
+  "parent_project_untouched": true,
+  "parent_copy": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-command-shutdown-v17/copy-intent-v1.json",
+    "sha256": "c52f1eb47428e89f077a44be78008db53342f469ac95c7eed822cdd1065d82a2"
+  },
+  "reproducer_source": {
+    "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Tests/Editor/RoboBoatCommandShutdownTests.cs",
+    "sha256": "00e670655547e1e34eb1bf42761411ed15ee19c28a08c2a77f9344d74da5341f"
+  },
+  "actual_controller_source": {
+    "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Controllers/ROSOmniXCommand.cs",
+    "sha256": "cf25b507c4a049f0f772b044dde6a80a595ba09427a75fb19b48d88ed29791cd"
+  },
+  "seam": "Real ROSOmniXCommand Receive invoked with real TwistStampedMsg; real enabled=false and DestroyImmediate lifecycle; audit receipt enqueue/disposal events measured. No controller/physics or network initialization required because symptom precedes actuator application.",
+  "expected_symptom": "Pending mailbox receipt when shutdown occurs before next physics step; disabled callbacks can reopen mailbox",
+  "causal_full_worker_shutdown_claim": false,
+  "repair_applied": false,
+  "operational_n_added": 0,
+  "confirmation_n": 0
+}

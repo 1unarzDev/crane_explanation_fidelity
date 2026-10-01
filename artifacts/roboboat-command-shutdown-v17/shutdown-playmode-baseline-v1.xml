@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="3" result="Failed(Child)" total="3" passed="0" failed="3" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-01 17:23:11Z" end-time="2026-10-01 17:23:11Z" duration="0.0630723">
+  <test-suite type="TestSuite" id="1009" name="ASV" fullname="ASV" runstate="Runnable" testcasecount="3" result="Failed" site="Child" start-time="2026-10-01 17:23:11Z" end-time="2026-10-01 17:23:11Z" duration="0.063072" total="3" passed="0" failed="3" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1005" name="RoboBoatCommandShutdownPlayMode.dll" fullname="/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Library/ScriptAssemblies/RoboBoatCommandShutdownPlayMode.dll" runstate="Runnable" testcasecount="3" result="Failed" site="Child" start-time="2026-10-01 17:23:11Z" end-time="2026-10-01 17:23:11Z" duration="0.053576" total="3" passed="0" failed="3" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="1502159" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestFixture" id="1001" name="RoboBoatCommandShutdownTests" fullname="RoboBoatCommandShutdownTests" classname="RoboBoatCommandShutdownTests" runstate="Runnable" testcasecount="3" result="Failed" site="Child" start-time="2026-10-01 17:23:11Z" end-time="2026-10-01 17:23:11Z" duration="0.051658" total="3" passed="0" failed="3" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-case id="1003" name="CallbackAfterDisableCannotReopenMailbox" fullname="RoboBoatCommandShutdownTests.CallbackAfterDisableCannotReopenMailbox" methodname="CallbackAfterDisableCannotReopenMailbox" classname="RoboBoatCommandShutdownTests" runstate="Runnable" seed="1437993133" result="Failed" start-time="2026-10-01 17:23:11Z" end-time="2026-10-01 17:23:11Z" duration="0.028926" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Transport callback reopened disabled adapter mailbox
+  Expected: False
+  But was:  True
+]]></message>
+            <stack-trace><![CDATA[at RoboBoatCommandShutdownTests+<CallbackAfterDisableCannotReopenMailbox>d__7.MoveNext () [0x00052] in /home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Tests/CommandShutdownPlayMode/RoboBoatCommandShutdownTests.cs:50
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in ./Library/PackageCache/com.unity.test-framework@773a3a4953ad/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:44
+]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-case id="1004" name="DestroyingRealAdapterDisposesItsPendingReceiptBeforeAuditClosure" fullname="RoboBoatCommandShutdownTests.DestroyingRealAdapterDisposesItsPendingReceiptBeforeAuditClosure" methodname="DestroyingRealAdapterDisposesItsPendingReceiptBeforeAuditClosure" classname="RoboBoatCommandShutdownTests" runstate="Runnable" seed="3795832" result="Failed" start-time="2026-10-01 17:23:11Z" end-time="2026-10-01 17:23:11Z" duration="0.003411" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected: True
+  But was:  False
+]]></message>
+            <stack-trace><![CDATA[at RoboBoatCommandShutdownTests+<DestroyingRealAdapterDisposesItsPendingReceiptBeforeAuditClosure>d__8.MoveNext () [0x00058] in /home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Tests/CommandShutdownPlayMode/RoboBoatCommandShutdownTests.cs:57
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in ./Library/PackageCache/com.unity.test-framework@773a3a4953ad/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:44
+]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-case id="1002" name="DisablingRealAdapterDisposesItsPendingReceipt" fullname="RoboBoatCommandShutdownTests.DisablingRealAdapterDisposesItsPendingReceipt" methodname="DisablingRealAdapterDisposesItsPendingReceipt" classname="RoboBoatCommandShutdownTests" runstate="Runnable" seed="892763900" result="Failed" start-time="2026-10-01 17:23:11Z" end-time="2026-10-01 17:23:11Z" duration="0.006639" asserts="0">
+          <properties>
+            <property name="_JOINTYPE" value="UnityCombinatorial" />
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Actual adapter left a receipt pending when disabled before the next physics step
+  Expected: True
+  But was:  False
+]]></message>
+            <stack-trace><![CDATA[at RoboBoatCommandShutdownTests+<DisablingRealAdapterDisposesItsPendingReceipt>d__6.MoveNext () [0x000c8] in /home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Tests/CommandShutdownPlayMode/RoboBoatCommandShutdownTests.cs:42
+at UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in ./Library/PackageCache/com.unity.test-framework@773a3a4953ad/UnityEngine.TestRunner/NUnitExtensions/Attributes/TestEnumerator.cs:44
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Saving results to: /home/lunarz/.config/unity3d/DefaultCompany/ASV/TestResults.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
