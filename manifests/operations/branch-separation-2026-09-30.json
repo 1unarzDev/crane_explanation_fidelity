@@ -1,0 +1,1889 @@
+{
+  "schema": "crane-branch-history-separation/v1",
+  "recorded_date": "2026-09-30",
+  "status": "COMMIT_CLASSIFICATION_AND_DEPENDENCY_ORDER_VERIFIED",
+  "common_base_commit": "9a81db860f9eec66557240b2297cd122fba9ca06",
+  "original_misnamed_branch": "codex/roboboat_terminal_evidence",
+  "original_misnamed_tip": "a93a3b93023d1bb49c9dfb397e6f383d5e832b98",
+  "backup_branch": "backup/roboboat-terminal-evidence-before-land-split-2026-09-30",
+  "land_destination_branch": "land-evidence-calibration-study",
+  "land_integration_branch": "main",
+  "land_research_tip": "a93a3b93023d1bb49c9dfb397e6f383d5e832b98",
+  "land_research_tree": "79dfef07a00803066d7e46393cbc911fac37d54e",
+  "land_commit_count": 68,
+  "land_commits": [
+    {
+      "commit": "6581279d7ec35d1fe4e51ca0f45f91673c863398",
+      "parents": [
+        "9a81db860f9eec66557240b2297cd122fba9ca06"
+      ],
+      "subject": "Retain interrupted pilot role calls with no-retry audit",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "README.md",
+        "analysis/audit_evidence_calibration_pilot_role_returns.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "manifests/study/evidence-calibration-pilot-role-v2r2-interruption-v1.json",
+        "model_outputs.dvc",
+        "tests/test_audit_evidence_calibration_pilot_role_returns.py"
+      ]
+    },
+    {
+      "commit": "d611a53127f3f844ddb3495d157ed362b0b3df98",
+      "parents": [
+        "6581279d7ec35d1fe4e51ca0f45f91673c863398"
+      ],
+      "subject": "Declare no-retry continuation of never-launched role identities",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/continue_evidence_calibration_pilot_claim_roles.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "research/explanation_fidelity/experiment_configs/development/evidence-calibration-pilot-role-v2r2-continuation-v1.json",
+        "tests/test_continue_evidence_calibration_pilot_claim_roles.py"
+      ]
+    },
+    {
+      "commit": "c78b823068778ec43377f2f710d1ffd531bf3dda",
+      "parents": [
+        "d611a53127f3f844ddb3495d157ed362b0b3df98"
+      ],
+      "subject": "Bind passing non-study continuation role canary",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/audit_evidence_calibration_pilot_role_continuation_canary.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "manifests/operations/evidence-calibration-pilot-role-continuation-canary-v1.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "model_outputs.dvc"
+      ]
+    },
+    {
+      "commit": "7ba9d3046d99ccb0e469b60573b5b86fb6486e88",
+      "parents": [
+        "c78b823068778ec43377f2f710d1ffd531bf3dda"
+      ],
+      "subject": "Record exact-input pilot role kind variance for blind review",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/audit_evidence_calibration_pilot_role_prefix_variance.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "manifests/annotation/evidence-calibration-pilot-role-prefix-variance-v1.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json"
+      ]
+    },
+    {
+      "commit": "a4c01dbec8f36223a57e18ecb837c2cd33510cec",
+      "parents": [
+        "7ba9d3046d99ccb0e469b60573b5b86fb6486e88"
+      ],
+      "subject": "Bind blind development review of retained role prefix",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/audit_evidence_calibration_pilot_role_prefix_project_review.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/ROLE_PREFIX_REVIEW_2026-09-30.md",
+        "manifests/annotation/evidence-calibration-pilot-role-prefix-project-review-v1.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json"
+      ]
+    },
+    {
+      "commit": "3ccb4d3282acd2527e985db51af046e5255534af",
+      "parents": [
+        "a4c01dbec8f36223a57e18ecb837c2cd33510cec"
+      ],
+      "subject": "Construct uncalled neutral-level support qualification candidate",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/build_evidence_calibration_neutral_level_suite.py",
+        "analysis/evidence_calibration_neutral_level_qualification.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/NEUTRAL_LEVEL_SUPPORT_CANDIDATE_2026-09-30.md",
+        "manifests/annotation/evidence-calibration-neutral-level-support-construction-v1.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "research/explanation_fidelity/qualification/evidence-calibration-neutral-level-support-v1.json",
+        "tests/test_evidence_calibration_neutral_level_qualification.py"
+      ]
+    },
+    {
+      "commit": "e6e6a9a4d1aa2652dca67b4df45994c06ba6df9e",
+      "parents": [
+        "3ccb4d3282acd2527e985db51af046e5255534af"
+      ],
+      "subject": "Declare reviewed neutral-input support qualification before calls",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/run_evidence_calibration_neutral_level_qualification.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "manifests/annotation/evidence-calibration-neutral-level-project-reference-review-v1.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "research/explanation_fidelity/experiment_configs/prospective/evidence-calibration-neutral-level-support-v1-freeze.json",
+        "tests/test_run_evidence_calibration_neutral_level_qualification.py"
+      ]
+    },
+    {
+      "commit": "828347e2b575271add6dd7400f48a67a6c0a094f",
+      "parents": [
+        "e6e6a9a4d1aa2652dca67b4df45994c06ba6df9e"
+      ],
+      "subject": "Retain pending canary gate and blind continuation A review",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/audit_evidence_calibration_neutral_level_canary.py",
+        "analysis/audit_evidence_calibration_pilot_role_continuation.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/ROLE_CONTINUATION_A_REVIEW_2026-09-30.md",
+        "manifests/annotation/evidence-calibration-pilot-role-continuation-A-project-review-v1.json",
+        "manifests/operations/evidence-calibration-neutral-level-support-canary-v1.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_run_evidence_calibration_neutral_level_qualification.py"
+      ]
+    },
+    {
+      "commit": "404a54064233a91e9d5682bf3fef635e234130d0",
+      "parents": [
+        "828347e2b575271add6dd7400f48a67a6c0a094f"
+      ],
+      "subject": "Push terminal role continuation and release bound support canary gate",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "manifests/operations/evidence-calibration-neutral-level-support-canary-v1.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "manifests/study/evidence-calibration-pilot-role-v2r2-continuation-terminal-v1.json",
+        "model_outputs.dvc"
+      ]
+    },
+    {
+      "commit": "b7fbb30b1dc1a2ebb5181c790501f1ae5f093bfd",
+      "parents": [
+        "404a54064233a91e9d5682bf3fef635e234130d0"
+      ],
+      "subject": "Retain stopped support qualification and disclosed B role review",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/audit_evidence_calibration_neutral_level_terminal.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/ROLE_B_REVIEW_2026-09-30.md",
+        "manifests/annotation/evidence-calibration-neutral-level-support-terminal-v1.json",
+        "manifests/annotation/evidence-calibration-pilot-role-B-project-review-v1.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "model_outputs.dvc"
+      ]
+    },
+    {
+      "commit": "166a5cffc885ddbd60cf3e076978dfd052d5fd99",
+      "parents": [
+        "b7fbb30b1dc1a2ebb5181c790501f1ae5f093bfd"
+      ],
+      "subject": "Declare fresh non-rank support payload compatibility qualification",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/audit_evidence_calibration_neutral_level_canary_v2.py",
+        "analysis/build_evidence_calibration_neutral_level_suite_v2.py",
+        "analysis/evidence_calibration_neutral_level_qualification_v2.py",
+        "analysis/run_evidence_calibration_neutral_level_qualification_v2.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/NEUTRAL_LEVEL_SUPPORT_COMPATIBILITY_2026-09-30.md",
+        "manifests/annotation/evidence-calibration-neutral-level-project-reference-review-v2.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "research/explanation_fidelity/experiment_configs/prospective/evidence-calibration-neutral-level-support-v2-freeze.json",
+        "research/explanation_fidelity/qualification/evidence-calibration-neutral-level-support-v2.json",
+        "tests/test_evidence_calibration_neutral_level_qualification_v2.py",
+        "tests/test_run_evidence_calibration_neutral_level_qualification_v2.py"
+      ]
+    },
+    {
+      "commit": "9a595a94cfa3c74f2420aae3fbca478e93320e29",
+      "parents": [
+        "166a5cffc885ddbd60cf3e076978dfd052d5fd99"
+      ],
+      "subject": "Push and bind separate non-rank compatibility canary gate",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "manifests/operations/evidence-calibration-neutral-level-support-canary-v2.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "model_outputs.dvc"
+      ]
+    },
+    {
+      "commit": "b8fd9af9ef416fa68bb87777de1f6b634b475ca8",
+      "parents": [
+        "9a595a94cfa3c74f2420aae3fbca478e93320e29"
+      ],
+      "subject": "Retain passing non-rank support-input qualification with bounded disposition",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/audit_evidence_calibration_neutral_level_qualification_v2.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/EVIDENCE_CALIBRATION_AGENT_ANNOTATION_RUNBOOK.md",
+        "manifests/annotation/evidence-calibration-neutral-level-support-terminal-v2.json",
+        "manifests/annotation/evidence-calibration-neutral-level-support-v2-disposition.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "model_outputs.dvc",
+        "tests/test_audit_evidence_calibration_neutral_level_qualification_v2.py"
+      ]
+    },
+    {
+      "commit": "e7956c5ef96980cb1304adb3fde33b88dbbc930b",
+      "parents": [
+        "b8fd9af9ef416fa68bb87777de1f6b634b475ca8"
+      ],
+      "subject": "Retain blind support packets and repair pinned pilot reproducibility",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/audit_evidence_calibration_pilot_support_packets.py",
+        "analysis/build_evidence_calibration_pilot_support_packets.py",
+        "data/evaluator_only/annotation_keys.dvc",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "manifests/annotation/evidence-calibration-pilot-support-packets-neutral-v2-v1.json",
+        "manifests/operations/evidence-calibration-pilot-cache-retention-reconciliation-v1.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "manifests/workspace.lock.json",
+        "model_outputs.dvc",
+        "research/explanation_fidelity/experiment_configs/prospective/evidence-calibration-pilot-support-neutral-v2-v1-call-inventory.json",
+        "research/explanation_fidelity/model_cache.dvc",
+        "tests/test_evidence_calibration_pilot_support_packets.py"
+      ]
+    },
+    {
+      "commit": "754a1316593f78865e99fe97b13579cc3545c55f",
+      "parents": [
+        "e7956c5ef96980cb1304adb3fde33b88dbbc930b"
+      ],
+      "subject": "Test isolated support execution and preserve prospective launch gates",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/evidence_calibration_support_execution.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "tests/test_evidence_calibration_support_execution.py"
+      ]
+    },
+    {
+      "commit": "b137867f0323ab410781affc372fdd6d99600a49",
+      "parents": [
+        "754a1316593f78865e99fe97b13579cc3545c55f"
+      ],
+      "subject": "Bind synthetic combined support and constructed adjudication canary before calls",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/audit_evidence_calibration_combined_support_canary.py",
+        "analysis/build_evidence_calibration_combined_support_canary.py",
+        "analysis/run_evidence_calibration_combined_support_canary.py",
+        "docs/COMBINED_SUPPORT_CANARY_REVIEW_2026-09-30.md",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "manifests/annotation/evidence-calibration-combined-support-canary-reference-review-v1.json",
+        "research/explanation_fidelity/experiment_configs/prospective/evidence-calibration-combined-support-canary-v1-freeze.json",
+        "research/explanation_fidelity/qualification/evidence-calibration-combined-support-canary-v1.json",
+        "tests/test_evidence_calibration_combined_support_canary.py"
+      ]
+    },
+    {
+      "commit": "962f47a9aefce31f39b5d23317301e5c56f46fee",
+      "parents": [
+        "b137867f0323ab410781affc372fdd6d99600a49"
+      ],
+      "subject": "Retain failed combined support canary and keep pilot annotation closed",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "README.md",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/EXPERIMENTS.md",
+        "docs/RESEARCH.md",
+        "manifests/annotation/evidence-calibration-combined-support-canary-terminal-v1.json",
+        "manifests/operations/evidence-calibration-combined-support-canary-disposition-v1.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "model_outputs.dvc"
+      ]
+    },
+    {
+      "commit": "4ad258d18ba9c4d5116871899cbaa655ae5f37a1",
+      "parents": [
+        "962f47a9aefce31f39b5d23317301e5c56f46fee"
+      ],
+      "subject": "Bind unselected role candidates and whole-episode missingness sensitivities",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/build_evidence_calibration_role_disposition.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/ROLE_DISPOSITION_2026-09-30.md",
+        "manifests/annotation/evidence-calibration-pilot-role-disposition-v1.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_role_disposition.py"
+      ]
+    },
+    {
+      "commit": "33d50c171a45887875c70198f776041ffce5dfc7",
+      "parents": [
+        "4ad258d18ba9c4d5116871899cbaa655ae5f37a1"
+      ],
+      "subject": "Prepare scoped nominal ladder candidate while preserving old pilot",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/build_evidence_calibration_nominal_alignment.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/EVIDENCE_CALIBRATION_PROTOCOL.md",
+        "docs/NOMINAL_ALIGNMENT_2026-09-30.md",
+        "manifests/study/evidence-calibration-nominal-alignment-v1-development.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "research/explanation_fidelity/experiment_configs/development/evidence-calibration-nominal-alignment-v1.json",
+        "tests/test_evidence_calibration_nominal_alignment.py"
+      ]
+    },
+    {
+      "commit": "11302a7728f5994f9e4485efdd458f7214f9a3e9",
+      "parents": [
+        "33d50c171a45887875c70198f776041ffce5dfc7"
+      ],
+      "subject": "Audit claim attachment prerequisites without scoring retained pilot",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/audit_evidence_calibration_attachment_boundary.py",
+        "docs/CLAIM_ATTACHMENT_BOUNDARY_2026-09-30.md",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "manifests/annotation/evidence-calibration-attachment-boundary-v1-development.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_attachment_boundary.py"
+      ]
+    },
+    {
+      "commit": "a6889f5d70704d8735c9f9891d4ca4a1449d3e8b",
+      "parents": [
+        "11302a7728f5994f9e4485efdd458f7214f9a3e9"
+      ],
+      "subject": "Add context-bound attachment proposal interface with closed measurement gates",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/validate_evidence_calibration_claim_attachment.py",
+        "docs/CONTEXTUAL_ATTACHMENT_RECORDS_2026-09-30.md",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "research/explanation_fidelity/experiment_configs/development/evidence-calibration-contextual-attachment-v1.json",
+        "research/explanation_fidelity/schemas/evidence-calibration-contextual-attachment-input-v1-development.schema.json",
+        "research/explanation_fidelity/schemas/evidence-calibration-contextual-attachment-return-v1-development.schema.json",
+        "tests/test_evidence_calibration_claim_attachment.py"
+      ]
+    },
+    {
+      "commit": "0b427d15187694141d628477d5b62d3592320656",
+      "parents": [
+        "a6889f5d70704d8735c9f9891d4ca4a1449d3e8b"
+      ],
+      "subject": "Integrate aligned five-method packet candidate on fixed development episodes",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/build_evidence_calibration_five_method_packet_candidate.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/FIVE_METHOD_PACKET_CANDIDATE_2026-09-30.md",
+        "manifests/study/evidence-calibration-five-method-packet-candidate-v1-development.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_five_method_packet_candidate.py"
+      ]
+    },
+    {
+      "commit": "fde10f2fdbd2e5bd8823e3be0ba1bab24459a7d5",
+      "parents": [
+        "0b427d15187694141d628477d5b62d3592320656"
+      ],
+      "subject": "Preserve v1 NaN audit defect and add prospective finite-number realizer repair",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/audit_claim_aware_realization_v2.py",
+        "analysis/realize_evidence_calibrated_explanation_v2.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/REALIZER_FINITE_NUMBER_REPAIR_2026-09-30.md",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "manifests/study/evidence-calibration-realizer-finite-numbers-v2-development.json",
+        "tests/test_claim_aware_realization_v2.py"
+      ]
+    },
+    {
+      "commit": "e1977c94812c4e5b416894b607852d6c6b48ce54",
+      "parents": [
+        "fde10f2fdbd2e5bd8823e3be0ba1bab24459a7d5"
+      ],
+      "subject": "Implement ordinary B3 request and retention interface with explicit comparison scope",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/prepare_evidence_calibration_b3_ordinary.py",
+        "docs/B3_ORDINARY_INTERFACE_2026-09-30.md",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "manifests/study/evidence-calibration-b3-ordinary-interface-v1-development.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "research/explanation_fidelity/prompts/evidence_calibration_b3_ordinary_development_v1.txt",
+        "tests/test_evidence_calibration_b3_ordinary.py"
+      ]
+    },
+    {
+      "commit": "06e415ad401c3b2e7830fb8064d74fff343530b0",
+      "parents": [
+        "e1977c94812c4e5b416894b607852d6c6b48ce54"
+      ],
+      "subject": "Prepare lossless B0/B1 ordinary requests and audit full-cohort input sizes",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/audit_evidence_calibration_baseline_requests.py",
+        "analysis/prepare_evidence_calibration_baselines.py",
+        "docs/BASELINE_ORDINARY_INTERFACES_2026-09-30.md",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "manifests/study/evidence-calibration-baseline-requests-v1-development.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "research/explanation_fidelity/prompts/evidence_calibration_baseline_ordinary_development_v1.txt",
+        "tests/test_evidence_calibration_baselines.py"
+      ]
+    },
+    {
+      "commit": "2b9cff25566bf69d4337f9f5388d7fc4898ded49",
+      "parents": [
+        "06e415ad401c3b2e7830fb8064d74fff343530b0"
+      ],
+      "subject": "Retain model-context metadata conflict and unresolved exact-tokenizer binding",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/audit_evidence_calibration_context_capacity.py",
+        "docs/CONTEXT_CAPACITY_2026-09-30.md",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "manifests/operations/evidence-calibration-context-capacity-observation-v1.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_context_capacity.py"
+      ]
+    },
+    {
+      "commit": "1393692b518101fa1fc6a9491eb63a883b534f7a",
+      "parents": [
+        "2b9cff25566bf69d4337f9f5388d7fc4898ded49"
+      ],
+      "subject": "Add offline five-method workspace staging with integrity checks",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/stage_evidence_calibration_workspace.py",
+        "docs/DECISIONS.md",
+        "docs/METHOD_WORKSPACE_STAGING_2026-09-30.md",
+        "manifests/study/evidence-calibration-method-workspace-v1-development.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_workspace.py"
+      ]
+    },
+    {
+      "commit": "7d311b86ec231cbcd6248b48988ae77505495757",
+      "parents": [
+        "1393692b518101fa1fc6a9491eb63a883b534f7a"
+      ],
+      "subject": "Bind B4 candidate preparation and retained local realization",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/prepare_evidence_calibration_b4_candidate.py",
+        "docs/B4_CANDIDATE_INTERFACE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "manifests/study/evidence-calibration-b4-candidate-interface-v1-development.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "research/explanation_fidelity/prompts/evidence_calibration_b4_candidate_development_v1.txt",
+        "tests/test_evidence_calibration_b4_candidate.py"
+      ]
+    },
+    {
+      "commit": "b79862ef3b9c9cbc827a9986b40e4af004e5a9ba",
+      "parents": [
+        "7d311b86ec231cbcd6248b48988ae77505495757"
+      ],
+      "subject": "Audit full-cohort method preparation and workspace integration",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/audit_evidence_calibration_method_preparation.py",
+        "docs/DECISIONS.md",
+        "docs/METHOD_PREPARATION_INTEGRATION_2026-09-30.md",
+        "manifests/study/evidence-calibration-method-preparation-v1-development.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_method_preparation.py"
+      ]
+    },
+    {
+      "commit": "54b798e77b1f262204682f99e4200249226fd734",
+      "parents": [
+        "b79862ef3b9c9cbc827a9986b40e4af004e5a9ba"
+      ],
+      "subject": "Prepare fair B2 agent requests and retain ordinary answers verbatim",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/audit_evidence_calibration_b2_requests.py",
+        "analysis/prepare_evidence_calibration_b2_agent.py",
+        "docs/B2_AGENT_INTERFACE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "manifests/study/evidence-calibration-b2-requests-v1-development.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_b2_agent.py",
+        "tests/test_evidence_calibration_b2_requests.py"
+      ]
+    },
+    {
+      "commit": "846bd2096e721e5cf89bb508219c252612be57e5",
+      "parents": [
+        "54b798e77b1f262204682f99e4200249226fd734"
+      ],
+      "subject": "Verify isolated local primitive computation with bubblewrap",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/evidence_calibration_local_tool_sandbox.py",
+        "docs/DECISIONS.md",
+        "docs/LOCAL_TOOL_ISOLATION_2026-09-30.md",
+        "manifests/operations/evidence-calibration-local-tool-isolation-v1-development.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_local_tool_sandbox.py"
+      ]
+    },
+    {
+      "commit": "2ad2a27eb0fd243149eda5d2443f0c769956a3c2",
+      "parents": [
+        "846bd2096e721e5cf89bb508219c252612be57e5"
+      ],
+      "subject": "Propose bounded prospective support measurement reopening",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "docs/DECISIONS.md",
+        "docs/MEASUREMENT_REOPENING_PROPOSAL_2026-09-30.md",
+        "manifests/operations/evidence-calibration-measurement-reopening-proposal-v1.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json"
+      ]
+    },
+    {
+      "commit": "7fa0460aee7725f3b6d8b3635cc66901156ca1de",
+      "parents": [
+        "2ad2a27eb0fd243149eda5d2443f0c769956a3c2"
+      ],
+      "subject": "Synchronize current state and manuscript with measurement gates",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "README.md",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "manifests/operations/evidence-calibration-current-state-sync-v1-development.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "paper/main.tex"
+      ]
+    },
+    {
+      "commit": "031b329c692fd48a304ef893ced59af38ee5d45d",
+      "parents": [
+        "7fa0460aee7725f3b6d8b3635cc66901156ca1de"
+      ],
+      "subject": "Record offline harness framing and unresolved tool exposure",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "docs/DECISIONS.md",
+        "docs/HARNESS_PROMPT_INSPECTION_2026-09-30.md",
+        "manifests/operations/evidence-calibration-harness-prompt-observation-v1.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json"
+      ]
+    },
+    {
+      "commit": "ed3281f3cd16363f160d2b56c6b6ad6badbae213",
+      "parents": [
+        "031b329c692fd48a304ef893ced59af38ee5d45d"
+      ],
+      "subject": "Add isolated local tool broker with immutable event retention",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/evidence_calibration_tool_broker.py",
+        "docs/DECISIONS.md",
+        "docs/LOCAL_TOOL_BROKER_2026-09-30.md",
+        "manifests/operations/evidence-calibration-local-tool-broker-v1-development.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_tool_broker.py"
+      ]
+    },
+    {
+      "commit": "2da7c6c1931fa754a1b5a0c36ceb90238a7499ad",
+      "parents": [
+        "ed3281f3cd16363f160d2b56c6b6ad6badbae213"
+      ],
+      "subject": "Add versioned bounded local execution with retained overflow failures",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/evidence_calibration_local_tool_sandbox_v2.py",
+        "analysis/evidence_calibration_tool_broker_v2.py",
+        "docs/BOUNDED_LOCAL_EXECUTION_2026-09-30.md",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "manifests/operations/evidence-calibration-bounded-local-execution-v2-development.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_bounded_local_tools.py"
+      ]
+    },
+    {
+      "commit": "90ef4b74400b7596707af994ffb8652bfa0588a1",
+      "parents": [
+        "2da7c6c1931fa754a1b5a0c36ceb90238a7499ad"
+      ],
+      "subject": "Add local MCP stdio adapter with method parity and immutable transcripts",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/evidence_calibration_mcp_stdio.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/LOCAL_MCP_STDIO_2026-09-30.md",
+        "manifests/operations/evidence-calibration-local-mcp-stdio-v1-development.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_mcp_stdio.py"
+      ]
+    },
+    {
+      "commit": "3e2d65891b177808d3b31927ec215b58d461ed8f",
+      "parents": [
+        "90ef4b74400b7596707af994ffb8652bfa0588a1"
+      ],
+      "subject": "Verify offline installed-client MCP routing and correct outer device isolation",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/observe_evidence_calibration_app_server_mcp.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/INSTALLED_CLIENT_MCP_OBSERVATION_2026-09-30.md",
+        "manifests/operations/evidence-calibration-installed-client-mcp-observation-v1.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_app_server_mcp.py"
+      ]
+    },
+    {
+      "commit": "ccd113177730c3c01c07f211cac3bf5bbc578160",
+      "parents": [
+        "3e2d65891b177808d3b31927ec215b58d461ed8f"
+      ],
+      "subject": "Audit full local runtime identity and retain unreadable host scan failure",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/audit_evidence_calibration_runtime_tree.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/RUNTIME_TREE_AUDIT_2026-09-30.md",
+        "manifests/operations/evidence-calibration-runtime-tree-audit-observation-v1.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_runtime_tree.py"
+      ]
+    },
+    {
+      "commit": "aadbd6bc4a61558d78788d3d90b419da7cfac716",
+      "parents": [
+        "ccd113177730c3c01c07f211cac3bf5bbc578160"
+      ],
+      "subject": "Complete existing runtime inventory through a pinned read-only audit helper",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/observe_evidence_calibration_container_runtime_audit.py",
+        "docs/CONTAINER_RUNTIME_AUDIT_2026-09-30.md",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "manifests/operations/evidence-calibration-container-runtime-audit-observation-v1.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_container_runtime_audit.py"
+      ]
+    },
+    {
+      "commit": "392c3ff7571c26b217764174aa3ef16078d9e1a3",
+      "parents": [
+        "aadbd6bc4a61558d78788d3d90b419da7cfac716"
+      ],
+      "subject": "Preserve and verify exact runtime archive as a development candidate",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/build_evidence_calibration_runtime_snapshot.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/RUNTIME_SNAPSHOT_2026-09-30.md",
+        "manifests/operations/evidence-calibration-runtime-snapshot-observation-v1.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_runtime_snapshot.py"
+      ]
+    },
+    {
+      "commit": "533dfed8ffa3cc351cf4ac730efb2903fb68ccb1",
+      "parents": [
+        "392c3ff7571c26b217764174aa3ef16078d9e1a3"
+      ],
+      "subject": "Retain failed runtime restoration and diagnose setgid capability loss",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/restore_evidence_calibration_runtime_snapshot.py",
+        "analysis/verify_evidence_calibration_runtime_restoration.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/RUNTIME_RESTORATION_2026-09-30.md",
+        "manifests/operations/evidence-calibration-runtime-restoration-observation-v1.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_runtime_restoration.py"
+      ]
+    },
+    {
+      "commit": "a16a63f98dc6136ef3eefa64ef2430c5c347a164",
+      "parents": [
+        "533dfed8ffa3cc351cf4ac730efb2903fb68ccb1"
+      ],
+      "subject": "Verify fresh runtime restoration and sixty-condition tool parity",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/audit_evidence_calibration_restored_runtime_parity.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/RESTORED_RUNTIME_PARITY_2026-09-30.md",
+        "manifests/operations/evidence-calibration-restored-runtime-parity-observation-v1.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_restored_runtime_parity.py"
+      ]
+    },
+    {
+      "commit": "c7ecb8fbc139ec200c95807db760703184060566",
+      "parents": [
+        "a16a63f98dc6136ef3eefa64ef2430c5c347a164"
+      ],
+      "subject": "Clarify five-method episode-level development reporting",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/report_evidence_calibration_five_methods_v2.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/FIVE_METHOD_REPORTING_2026-09-30.md",
+        "manifests/operations/evidence-calibration-five-method-report-v2-development.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_five_method_report_v2.py"
+      ]
+    },
+    {
+      "commit": "9552c693efea280f14e809a9c4329f036e1f78fb",
+      "parents": [
+        "c7ecb8fbc139ec200c95807db760703184060566"
+      ],
+      "subject": "Record bounded process-tree resource-control availability",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/observe_evidence_calibration_cgroup_limits.py",
+        "docs/CGROUP_AVAILABILITY_2026-09-30.md",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "manifests/operations/evidence-calibration-cgroup-availability-observation-v1.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_cgroup_observation.py"
+      ]
+    },
+    {
+      "commit": "fb0eb7638a90cea238d6a7f463be42627669349f",
+      "parents": [
+        "9552c693efea280f14e809a9c4329f036e1f78fb"
+      ],
+      "subject": "Verify namespace resource controls and retain integration failures",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/observe_evidence_calibration_cgroup_sandbox.py",
+        "analysis/observe_evidence_calibration_cgroup_sandbox_v2.py",
+        "analysis/observe_evidence_calibration_cgroup_sandbox_v3.py",
+        "docs/CGROUP_SANDBOX_INTEGRATION_2026-09-30.md",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "manifests/operations/evidence-calibration-cgroup-sandbox-failure-v1.json",
+        "manifests/operations/evidence-calibration-cgroup-sandbox-failure-v2.json",
+        "manifests/operations/evidence-calibration-cgroup-sandbox-observation-v3.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_cgroup_sandbox.py",
+        "tests/test_evidence_calibration_cgroup_sandbox_v3.py"
+      ]
+    },
+    {
+      "commit": "a480c8f5f14d0bb1e2c9410eff50e4c3a89932fc",
+      "parents": [
+        "fb0eb7638a90cea238d6a7f463be42627669349f"
+      ],
+      "subject": "Add bounded service computation and preserve argument expansion defect",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/evidence_calibration_local_tool_sandbox_v3.py",
+        "analysis/evidence_calibration_local_tool_sandbox_v4.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/SERVICE_BOUNDED_CAPTURE_2026-09-30.md",
+        "manifests/operations/evidence-calibration-service-capture-v4-development.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_service_capture.py",
+        "tests/test_evidence_calibration_service_capture_v4.py"
+      ]
+    },
+    {
+      "commit": "d2871be06c06293f03e51199d2dc9175660b4a0d",
+      "parents": [
+        "a480c8f5f14d0bb1e2c9410eff50e4c3a89932fc"
+      ],
+      "subject": "Connect service executor to versioned broker and MCP candidate",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/evidence_calibration_mcp_stdio_v2.py",
+        "analysis/evidence_calibration_tool_broker_v3.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/SERVICE_BROKER_MCP_2026-09-30.md",
+        "manifests/operations/evidence-calibration-service-broker-mcp-v2-development.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_mcp_stdio_v2.py",
+        "tests/test_evidence_calibration_service_broker.py"
+      ]
+    },
+    {
+      "commit": "878e19fbb1a78e1ac2f25675428a35f888559187",
+      "parents": [
+        "d2871be06c06293f03e51199d2dc9175660b4a0d"
+      ],
+      "subject": "Verify installed client routes to service-backed MCP candidate",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/observe_evidence_calibration_app_server_mcp_v2.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/INSTALLED_CLIENT_SERVICE_MCP_2026-09-30.md",
+        "manifests/operations/evidence-calibration-installed-client-service-mcp-v2.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_app_server_mcp_v2.py"
+      ]
+    },
+    {
+      "commit": "2b3f352cd2e4cf315cf77a7210b2ac5a2e356acd",
+      "parents": [
+        "878e19fbb1a78e1ac2f25675428a35f888559187"
+      ],
+      "subject": "Bound namespace scratch and retain startup and validator failures",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/evidence_calibration_local_tool_sandbox_v5.py",
+        "analysis/evidence_calibration_local_tool_sandbox_v6.py",
+        "docs/BOUNDED_SCRATCH_2026-09-30.md",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "manifests/operations/evidence-calibration-bounded-scratch-v6-development.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_bounded_scratch.py"
+      ]
+    },
+    {
+      "commit": "9f06ed37bc970371ce59465ab74566e466345c93",
+      "parents": [
+        "2b3f352cd2e4cf315cf77a7210b2ac5a2e356acd"
+      ],
+      "subject": "Audit namespace lifecycle markers and preserve failed status assumption",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/audit_evidence_calibration_namespace_lifecycle.py",
+        "analysis/observe_evidence_calibration_namespace_status.py",
+        "analysis/observe_evidence_calibration_namespace_status_v2.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/NAMESPACE_LIFECYCLE_2026-09-30.md",
+        "manifests/operations/evidence-calibration-namespace-lifecycle-v2-development.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_namespace_lifecycle.py"
+      ]
+    },
+    {
+      "commit": "b6121955f7c21cf3d4798bf81bbb6946883beb8d",
+      "parents": [
+        "9f06ed37bc970371ce59465ab74566e466345c93"
+      ],
+      "subject": "Require verified namespace lifecycle in service executor candidate",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/evidence_calibration_local_tool_sandbox_v7.py",
+        "analysis/evidence_calibration_namespace_wrapper.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/SERVICE_NAMESPACE_LIFECYCLE_2026-09-30.md",
+        "manifests/operations/evidence-calibration-service-namespace-lifecycle-v7-development.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_service_lifecycle.py"
+      ]
+    },
+    {
+      "commit": "cb067ab20defff7d55b41506faaa25b3f6c3d52d",
+      "parents": [
+        "b6121955f7c21cf3d4798bf81bbb6946883beb8d"
+      ],
+      "subject": "Integrate scratch and lifecycle controls into broker MCP candidate",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/evidence_calibration_mcp_stdio_v3.py",
+        "analysis/evidence_calibration_tool_broker_v4.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/LIFECYCLE_BROKER_MCP_2026-09-30.md",
+        "manifests/operations/evidence-calibration-lifecycle-broker-mcp-v3-development.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_lifecycle_broker.py",
+        "tests/test_evidence_calibration_mcp_stdio_v3.py"
+      ]
+    },
+    {
+      "commit": "71f3c0501576086c77d9482ecd1483517b45f8a1",
+      "parents": [
+        "cb067ab20defff7d55b41506faaa25b3f6c3d52d"
+      ],
+      "subject": "Verify installed-client scratch and lifecycle MCP routes offline",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/observe_evidence_calibration_app_server_mcp_v3.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/INSTALLED_CLIENT_LIFECYCLE_MCP_2026-09-30.md",
+        "manifests/operations/evidence-calibration-installed-client-lifecycle-mcp-v3.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_app_server_mcp_v3.py"
+      ]
+    },
+    {
+      "commit": "65835d7d748d1c9166471d181cbf89e93297efea",
+      "parents": [
+        "71f3c0501576086c77d9482ecd1483517b45f8a1"
+      ],
+      "subject": "Record exited-descendant CPU accounting and preserve probe failures",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/audit_evidence_calibration_tree_cpu_accounting.py",
+        "analysis/observe_evidence_calibration_tree_cpu_accounting.py",
+        "analysis/observe_evidence_calibration_tree_cpu_accounting_v2.py",
+        "analysis/observe_evidence_calibration_tree_cpu_accounting_v3.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/TREE_CPU_ACCOUNTING_2026-09-30.md",
+        "manifests/operations/evidence-calibration-tree-cpu-accounting-v1-development.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_tree_cpu_accounting.py"
+      ]
+    },
+    {
+      "commit": "0d612f1fa9b8872c66e575da3ca7b8151b431843",
+      "parents": [
+        "65835d7d748d1c9166471d181cbf89e93297efea"
+      ],
+      "subject": "Add sampled tree CPU cutoff with retained failures and overshoot",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/evidence_calibration_local_tool_sandbox_v10.py",
+        "analysis/evidence_calibration_local_tool_sandbox_v8.py",
+        "analysis/evidence_calibration_local_tool_sandbox_v9.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/SAMPLED_TREE_CPU_EXECUTOR_2026-09-30.md",
+        "manifests/operations/evidence-calibration-sampled-tree-cpu-executor-v1-development.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_sampled_cpu_executor.py",
+        "tests/test_evidence_calibration_sampled_cpu_executor_v10.py"
+      ]
+    },
+    {
+      "commit": "c1f8fb921ca40b2e1aa0ab46d749d9eafdec2bbb",
+      "parents": [
+        "0d612f1fa9b8872c66e575da3ca7b8151b431843"
+      ],
+      "subject": "Integrate sampled CPU accounting through separate broker and MCP versions",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/evidence_calibration_mcp_stdio_v4.py",
+        "analysis/evidence_calibration_tool_broker_v5.py",
+        "docs/CPU_BROKER_MCP_2026-09-30.md",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "manifests/operations/evidence-calibration-cpu-broker-mcp-v4-development.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_cpu_broker.py",
+        "tests/test_evidence_calibration_mcp_stdio_v4.py"
+      ]
+    },
+    {
+      "commit": "d2f4007c899af11bd64d9dcfd192a174a4e977a3",
+      "parents": [
+        "c1f8fb921ca40b2e1aa0ab46d749d9eafdec2bbb"
+      ],
+      "subject": "Verify installed-client sampled CPU MCP routing offline",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/observe_evidence_calibration_app_server_mcp_v4.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/INSTALLED_CLIENT_CPU_MCP_2026-09-30.md",
+        "manifests/operations/evidence-calibration-installed-client-cpu-mcp-v4.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_app_server_mcp_v4.py"
+      ]
+    },
+    {
+      "commit": "1311fcc8e05573f160eac9ab1dc12e728cb731a9",
+      "parents": [
+        "d2f4007c899af11bd64d9dcfd192a174a4e977a3"
+      ],
+      "subject": "Add serial computation CPU ledger with failed-work charging and closed unknown admission",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/evidence_calibration_computation_cpu_ledger.py",
+        "analysis/evidence_calibration_computation_cpu_ledger_v2.py",
+        "analysis/evidence_calibration_tool_broker_v6.py",
+        "analysis/evidence_calibration_tool_broker_v7.py",
+        "docs/COMPUTATION_CPU_LEDGER_2026-09-30.md",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "manifests/operations/evidence-calibration-computation-cpu-ledger-v1-development.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_computation_cpu_ledger.py",
+        "tests/test_evidence_calibration_computation_cpu_ledger_v2.py",
+        "tests/test_evidence_calibration_cpu_ledger_broker.py"
+      ]
+    },
+    {
+      "commit": "a3f6be220833cfe21b9d888b16b9c3cbd9853b1f",
+      "parents": [
+        "1311fcc8e05573f160eac9ab1dc12e728cb731a9"
+      ],
+      "subject": "Bind serial computation CPU ledger through separate MCP v5 adapter",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/evidence_calibration_mcp_stdio_v5.py",
+        "docs/COMPUTATION_CPU_MCP_2026-09-30.md",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "manifests/operations/evidence-calibration-computation-cpu-mcp-v5-development.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_mcp_stdio_v5.py"
+      ]
+    },
+    {
+      "commit": "8d65636950256e180de683c60c3491044350c647",
+      "parents": [
+        "a3f6be220833cfe21b9d888b16b9c3cbd9853b1f"
+      ],
+      "subject": "Verify serial CPU ledger through offline installed-client MCP route",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/observe_evidence_calibration_app_server_mcp_v5.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/INSTALLED_CLIENT_COMPUTATION_CPU_MCP_2026-09-30.md",
+        "manifests/operations/evidence-calibration-installed-client-computation-cpu-mcp-v5.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_app_server_mcp_v5.py"
+      ]
+    },
+    {
+      "commit": "4eece4b03fbeebbec2f1e49b4487c3e76bb3f4ee",
+      "parents": [
+        "8d65636950256e180de683c60c3491044350c647"
+      ],
+      "subject": "Reserve condition-scoped MCP session ownership before ledger creation",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/evidence_calibration_condition_session.py",
+        "docs/CONDITION_SESSION_OWNERSHIP_2026-09-30.md",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "manifests/operations/evidence-calibration-condition-session-ownership-v1-development.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_condition_session.py"
+      ]
+    },
+    {
+      "commit": "1312214919422601d9f07c0d73d4670ecadb481a",
+      "parents": [
+        "4eece4b03fbeebbec2f1e49b4487c3e76bb3f4ee"
+      ],
+      "subject": "Verify retained condition ownership through offline installed-client route",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/observe_evidence_calibration_app_server_mcp_v6.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/INSTALLED_CLIENT_CONDITION_OWNER_2026-09-30.md",
+        "manifests/operations/evidence-calibration-installed-client-condition-owner-v6.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_app_server_mcp_v6.py"
+      ]
+    },
+    {
+      "commit": "60c52cfbd381bb73af4cc4e4a267cb5179cfaa14",
+      "parents": [
+        "1312214919422601d9f07c0d73d4670ecadb481a"
+      ],
+      "subject": "Validate development plan membership before condition session admission",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/evidence_calibration_condition_session_v2.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/PLANNED_CONDITION_SESSION_2026-09-30.md",
+        "manifests/operations/evidence-calibration-planned-condition-session-v2-development.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_condition_session_v2.py"
+      ]
+    },
+    {
+      "commit": "1e9ae2e60d414324b0b955c8b801f63908cd5262",
+      "parents": [
+        "60c52cfbd381bb73af4cc4e4a267cb5179cfaa14"
+      ],
+      "subject": "Verify development plan membership through offline installed-client route",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/observe_evidence_calibration_app_server_mcp_v7.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/INSTALLED_CLIENT_PLANNED_OWNER_2026-09-30.md",
+        "manifests/operations/evidence-calibration-installed-client-planned-owner-v7.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_app_server_mcp_v7.py"
+      ]
+    },
+    {
+      "commit": "e1ecd8b4fd196ed0165d903f54dfdf0e648b14fb",
+      "parents": [
+        "1e9ae2e60d414324b0b955c8b801f63908cd5262"
+      ],
+      "subject": "Account complete local response egress and preserve unwritten-flush defect repair",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/evidence_calibration_condition_session_v3.py",
+        "analysis/evidence_calibration_condition_session_v4.py",
+        "analysis/evidence_calibration_response_egress.py",
+        "analysis/evidence_calibration_response_egress_v2.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/RESPONSE_EGRESS_2026-09-30.md",
+        "manifests/operations/evidence-calibration-response-egress-v1-development.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_condition_session_v3.py",
+        "tests/test_evidence_calibration_condition_session_v4.py",
+        "tests/test_evidence_calibration_response_egress.py",
+        "tests/test_evidence_calibration_response_egress_v2.py"
+      ]
+    },
+    {
+      "commit": "7cbee3142c0d08b6a5fe714204f7234ee1eabd55",
+      "parents": [
+        "e1ecd8b4fd196ed0165d903f54dfdf0e648b14fb"
+      ],
+      "subject": "Retain exact response wire and preserve installed-client egress auditor failure",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/evidence_calibration_condition_session_v5.py",
+        "analysis/evidence_calibration_response_egress_v3.py",
+        "analysis/observe_evidence_calibration_app_server_mcp_v8.py",
+        "analysis/observe_evidence_calibration_app_server_mcp_v9.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/INSTALLED_CLIENT_RESPONSE_EGRESS_2026-09-30.md",
+        "manifests/operations/evidence-calibration-installed-client-response-egress-v9.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_app_server_mcp_v8.py",
+        "tests/test_evidence_calibration_app_server_mcp_v9.py",
+        "tests/test_evidence_calibration_condition_session_v5.py",
+        "tests/test_evidence_calibration_response_egress_v3.py"
+      ]
+    },
+    {
+      "commit": "a93a3b93023d1bb49c9dfb397e6f383d5e832b98",
+      "parents": [
+        "7cbee3142c0d08b6a5fe714204f7234ee1eabd55"
+      ],
+      "subject": "Bind transitive repository sources before development condition admission",
+      "classification": "LAND_EVIDENCE_CALIBRATION_AND_EXECUTION_DEPENDENCY",
+      "changed_paths": [
+        "analysis/evidence_calibration_condition_session_v6.py",
+        "analysis/evidence_calibration_repository_source_binding.py",
+        "analysis/observe_evidence_calibration_repository_source_binding.py",
+        "docs/CURRENT_STATE_2026-09-30.md",
+        "docs/DECISIONS.md",
+        "docs/REPOSITORY_SOURCE_BINDING_2026-09-30.md",
+        "manifests/operations/evidence-calibration-repository-source-binding-v1-development.json",
+        "manifests/study/evidence-calibration-p11-prefreeze-readiness.json",
+        "tests/test_evidence_calibration_condition_session_v6.py",
+        "tests/test_evidence_calibration_repository_source_binding.py"
+      ]
+    }
+  ],
+  "land_dependency_preservation": "UNCHANGED_LINEAR_HISTORY_FROM_MAIN_COMMON_BASE_NO_CHERRY_PICK_OR_REBASE",
+  "genuine_roboboat_source_branch": "roboboat-terminal-evidence",
+  "genuine_roboboat_destination_branch": "codex/roboboat_terminal_evidence",
+  "genuine_roboboat_tip": "641c46d902af22711e0cf82eb25ac1df6ac9a2dd",
+  "genuine_roboboat_tree": "d6dddbdee7f8ad71ac23a8b9ec6b5cdcadf86f7f",
+  "genuine_roboboat_commit_count": 27,
+  "genuine_roboboat_commits": [
+    {
+      "commit": "b0602c24a1c05238a2b55ea40fdc93936c3c4e00",
+      "parents": [
+        "9a81db860f9eec66557240b2297cd122fba9ca06"
+      ],
+      "subject": "Add scoped marine temporal evidence study and executed development comparison",
+      "classification": "GENUINE_ROBOBOAT_TERMINAL_EVIDENCE_AND_COMPONENT_DEPENDENCY",
+      "changed_paths": [
+        "analysis/analyze_roboboat_terminal_comparison.py",
+        "analysis/audit_roboboat_terminal_numbers.py",
+        "analysis/build_roboboat_terminal_batch.py",
+        "analysis/plot_roboboat_terminal_evidence.py",
+        "analysis/publish_roboboat_terminal_capsule.py",
+        "analysis/reference_roboboat_temporal.py",
+        "analysis/roboboat_isolated_transport.py",
+        "analysis/roboboat_temporal_certificate.py",
+        "analysis/run_roboboat_marine_qualification.py",
+        "analysis/run_roboboat_terminal_capture.py",
+        "analysis/run_roboboat_terminal_comparison.py",
+        "docs/roboboat_terminal_evidence/AUDIT.md",
+        "docs/roboboat_terminal_evidence/EXPERIMENTS.md",
+        "docs/roboboat_terminal_evidence/HANDOFF.md",
+        "docs/roboboat_terminal_evidence/INTEGRATION.md",
+        "docs/roboboat_terminal_evidence/MANUSCRIPT_SECTION.md",
+        "docs/roboboat_terminal_evidence/RELATED_WORK.md",
+        "docs/roboboat_terminal_evidence/RESULTS.md",
+        "docs/roboboat_terminal_evidence/STATUS.md",
+        "docs/roboboat_terminal_evidence/STUDY_DESIGN.md",
+        "docs/roboboat_terminal_evidence/component_revisions_v1.json",
+        "docs/roboboat_terminal_evidence/configs/validated_boat_nav2.yaml",
+        "docs/roboboat_terminal_evidence/development_results_v1.json",
+        "docs/roboboat_terminal_evidence/figures/fresh_terminal_panel.png",
+        "docs/roboboat_terminal_evidence/figures/fresh_terminal_panel.svg",
+        "docs/roboboat_terminal_evidence/figures/historical_terminal_panel.png",
+        "docs/roboboat_terminal_evidence/figures/historical_terminal_panel.svg",
+        "docs/roboboat_terminal_evidence/isolation_probe_v1.json",
+        "docs/roboboat_terminal_evidence/marine_b2_prompt_v1.txt",
+        "docs/roboboat_terminal_evidence/marine_qualification_freeze_v1.json",
+        "docs/roboboat_terminal_evidence/marine_qualification_freeze_v2.json",
+        "docs/roboboat_terminal_evidence/marine_qualification_result_v2.json",
+        "docs/roboboat_terminal_evidence/marine_qualification_suite_v1.json",
+        "docs/roboboat_terminal_evidence/method_comparison_declaration_v1.json",
+        "docs/roboboat_terminal_evidence/pilot_registry_v1.json",
+        "docs/roboboat_terminal_evidence/schema_canary_v3.json",
+        "docs/roboboat_terminal_evidence/task_contract_v1.json",
+        "docs/roboboat_terminal_evidence/tool_canary_v1.json",
+        "docs/roboboat_terminal_evidence/tool_canary_v2.json",
+        "docs/roboboat_terminal_evidence/tool_snapshots/qualification_transport_v2.py",
+        "docs/roboboat_terminal_evidence/transport_preflight_v1.json",
+        "packages/crane_ml",
+        "tests/test_roboboat_temporal_certificate.py",
+        "tests/test_roboboat_terminal_batch.py",
+        "tests/test_roboboat_terminal_capture.py"
+      ]
+    },
+    {
+      "commit": "ede54f46d646c3af9d1c6d662dac5a8cd4608b59",
+      "parents": [
+        "b0602c24a1c05238a2b55ea40fdc93936c3c4e00"
+      ],
+      "subject": "Seal isolated marine development capsule through coordinator intake",
+      "classification": "GENUINE_ROBOBOAT_TERMINAL_EVIDENCE_AND_COMPONENT_DEPENDENCY",
+      "changed_paths": [
+        "analysis/publish_roboboat_terminal_capsule.py",
+        "docs/roboboat_terminal_evidence/.gitignore",
+        "docs/roboboat_terminal_evidence/EXPERIMENTS.md",
+        "docs/roboboat_terminal_evidence/HANDOFF.md",
+        "docs/roboboat_terminal_evidence/INTEGRATION.md",
+        "docs/roboboat_terminal_evidence/STATUS.md",
+        "docs/roboboat_terminal_evidence/publication_artifact_manifest_v1.json",
+        "docs/roboboat_terminal_evidence/publication_intake_ledger_v1.json",
+        "docs/roboboat_terminal_evidence/publication_intake_plan_v1.json",
+        "tests/test_roboboat_capsule_publication.py"
+      ]
+    },
+    {
+      "commit": "c67c091f4f3a7328c457fbbb5f1094b2623cc5ff",
+      "parents": [
+        "ede54f46d646c3af9d1c6d662dac5a8cd4608b59"
+      ],
+      "subject": "Complete bounded boat pilot continuation and retain strong-agent tie",
+      "classification": "GENUINE_ROBOBOAT_TERMINAL_EVIDENCE_AND_COMPONENT_DEPENDENCY",
+      "changed_paths": [
+        "analysis/analyze_roboboat_pilot_continuation.py",
+        "analysis/build_roboboat_terminal_batch.py",
+        "analysis/plot_roboboat_terminal_evidence.py",
+        "analysis/publish_roboboat_terminal_capsule.py",
+        "analysis/replay_roboboat_capture_validity.py",
+        "analysis/roboboat_temporal_renderer_v2.py",
+        "analysis/run_roboboat_terminal_capture.py",
+        "analysis/run_roboboat_terminal_comparison.py",
+        "docs/roboboat_terminal_evidence/COORDINATOR_PROPOSAL.md",
+        "docs/roboboat_terminal_evidence/EXPERIMENTS.md",
+        "docs/roboboat_terminal_evidence/HANDOFF.md",
+        "docs/roboboat_terminal_evidence/INTEGRATION.md",
+        "docs/roboboat_terminal_evidence/MANUSCRIPT_SECTION.md",
+        "docs/roboboat_terminal_evidence/RESULTS.md",
+        "docs/roboboat_terminal_evidence/STATUS.md",
+        "docs/roboboat_terminal_evidence/figures/direct_route_yaw_rate_panel_v3.png",
+        "docs/roboboat_terminal_evidence/figures/direct_route_yaw_rate_panel_v3.svg",
+        "docs/roboboat_terminal_evidence/figures/shifted_route_position_panel_v3.png",
+        "docs/roboboat_terminal_evidence/figures/shifted_route_position_panel_v3.svg",
+        "docs/roboboat_terminal_evidence/method_comparison_declaration_v3.json",
+        "docs/roboboat_terminal_evidence/pilot_continuation_v2.json",
+        "docs/roboboat_terminal_evidence/pilot_continuation_v3.json",
+        "packages/crane_ml",
+        "scripts/run_roboboat_hidden_render.sh",
+        "tests/test_roboboat_pilot_continuation_analysis.py",
+        "tests/test_roboboat_render_deadline.py",
+        "tests/test_roboboat_runtime_parameters.py",
+        "tests/test_roboboat_temporal_renderer_v2.py"
+      ]
+    },
+    {
+      "commit": "44b3e93c3474ba6edc1d73b8101cf6d709db5f2b",
+      "parents": [
+        "c67c091f4f3a7328c457fbbb5f1094b2623cc5ff"
+      ],
+      "subject": "Seal boat continuation capsule and coordinator integration handoff",
+      "classification": "GENUINE_ROBOBOAT_TERMINAL_EVIDENCE_AND_COMPONENT_DEPENDENCY",
+      "changed_paths": [
+        "docs/roboboat_terminal_evidence/INTEGRATION.md",
+        "docs/roboboat_terminal_evidence/STATUS.md",
+        "docs/roboboat_terminal_evidence/publication_artifact_manifest_v3.json",
+        "docs/roboboat_terminal_evidence/publication_intake_ledger_v3.json",
+        "docs/roboboat_terminal_evidence/publication_intake_plan_v3.json"
+      ]
+    },
+    {
+      "commit": "443ff1e8d7caa6344af138070e0b39cc50330c61",
+      "parents": [
+        "44b3e93c3474ba6edc1d73b8101cf6d709db5f2b"
+      ],
+      "subject": "Validate fractional cluster planning and launch governed marine atomic inventory",
+      "classification": "GENUINE_ROBOBOAT_TERMINAL_EVIDENCE_AND_COMPONENT_DEPENDENCY",
+      "changed_paths": [
+        "analysis/plan_roboboat_cluster_throughput.py",
+        "analysis/roboboat_cluster_analysis.py",
+        "analysis/run_roboboat_atomization_extension.py",
+        "analysis/run_roboboat_atomization_extension_v2.py",
+        "analysis/run_roboboat_atomization_extension_v3.py",
+        "analysis/run_roboboat_atomization_extension_v4.py",
+        "analysis/run_roboboat_atomization_extension_v5.py",
+        "analysis/run_roboboat_pilot_atomic_inventory.py",
+        "docs/roboboat_terminal_evidence/COORDINATOR_PROPOSAL.md",
+        "docs/roboboat_terminal_evidence/EXPERIMENTS.md",
+        "docs/roboboat_terminal_evidence/HANDOFF.md",
+        "docs/roboboat_terminal_evidence/STATUS.md",
+        "docs/roboboat_terminal_evidence/marine_atomization_freeze_v1.json",
+        "docs/roboboat_terminal_evidence/marine_atomization_freeze_v2.json",
+        "docs/roboboat_terminal_evidence/marine_atomization_freeze_v3.json",
+        "docs/roboboat_terminal_evidence/marine_atomization_freeze_v4.json",
+        "docs/roboboat_terminal_evidence/marine_atomization_freeze_v5.json",
+        "docs/roboboat_terminal_evidence/marine_atomization_reference_disposition_v2.json",
+        "docs/roboboat_terminal_evidence/marine_atomization_reference_disposition_v3.json",
+        "docs/roboboat_terminal_evidence/marine_atomization_semantic_review_v4.json",
+        "docs/roboboat_terminal_evidence/marine_atomization_semantic_review_v5.json",
+        "docs/roboboat_terminal_evidence/marine_atomization_suite_v1.json",
+        "docs/roboboat_terminal_evidence/marine_atomization_suite_v2.json",
+        "docs/roboboat_terminal_evidence/marine_atomization_suite_v3.json",
+        "docs/roboboat_terminal_evidence/marine_atomization_suite_v4.json",
+        "docs/roboboat_terminal_evidence/marine_atomization_suite_v5.json",
+        "docs/roboboat_terminal_evidence/marine_atomization_transport_disposition_v1.json",
+        "docs/roboboat_terminal_evidence/marine_atomizer_actor_appendix_v1.txt",
+        "docs/roboboat_terminal_evidence/marine_pilot_atomic_inventory_declaration_v1.json",
+        "tests/test_roboboat_atomization_extension.py",
+        "tests/test_roboboat_cluster_analysis.py"
+      ]
+    },
+    {
+      "commit": "136e0a7f052a4316a6652f1ae08cda30a382e5ad",
+      "parents": [
+        "443ff1e8d7caa6344af138070e0b39cc50330c61"
+      ],
+      "subject": "Add reviewed marine atomic support reassessment and clarify candidate language",
+      "classification": "GENUINE_ROBOBOAT_TERMINAL_EVIDENCE_AND_COMPONENT_DEPENDENCY",
+      "changed_paths": [
+        "analysis/roboboat_reviewed_annotation_packet.py",
+        "analysis/roboboat_temporal_renderer_v3.py",
+        "analysis/run_roboboat_atomic_reassessment.py",
+        "docs/roboboat_terminal_evidence/EXPERIMENTS.md",
+        "docs/roboboat_terminal_evidence/HANDOFF.md",
+        "docs/roboboat_terminal_evidence/INTEGRATION.md",
+        "docs/roboboat_terminal_evidence/STATUS.md",
+        "docs/roboboat_terminal_evidence/STUDY_DESIGN.md",
+        "tests/test_roboboat_atomic_reassessment.py",
+        "tests/test_roboboat_reviewed_annotation_packet.py",
+        "tests/test_roboboat_temporal_renderer_v3.py"
+      ]
+    },
+    {
+      "commit": "061628b1273b4c7df5e26a63fd63e3f4cb1e6333",
+      "parents": [
+        "136e0a7f052a4316a6652f1ae08cda30a382e5ad"
+      ],
+      "subject": "Freeze reviewed marine development support packets and launch annotation queue",
+      "classification": "GENUINE_ROBOBOAT_TERMINAL_EVIDENCE_AND_COMPONENT_DEPENDENCY",
+      "changed_paths": [
+        "docs/roboboat_terminal_evidence/EXPERIMENTS.md",
+        "docs/roboboat_terminal_evidence/RESULTS.md",
+        "docs/roboboat_terminal_evidence/STATUS.md",
+        "docs/roboboat_terminal_evidence/marine_atomic_reassessment_declaration_v1.json"
+      ]
+    },
+    {
+      "commit": "98da1e41f3202531c6fa6b0c7791bbab0d6975e3",
+      "parents": [
+        "061628b1273b4c7df5e26a63fd63e3f4cb1e6333"
+      ],
+      "subject": "Record first finalized atomic support packets and live queue identity",
+      "classification": "GENUINE_ROBOBOAT_TERMINAL_EVIDENCE_AND_COMPONENT_DEPENDENCY",
+      "changed_paths": [
+        "docs/roboboat_terminal_evidence/STATUS.md"
+      ]
+    },
+    {
+      "commit": "9310041b153fc2d1fdd985f90873a3225043e5f5",
+      "parents": [
+        "98da1e41f3202531c6fa6b0c7791bbab0d6975e3"
+      ],
+      "subject": "Lock atomic development analysis and register bounded internal-stopping captures",
+      "classification": "GENUINE_ROBOBOAT_TERMINAL_EVIDENCE_AND_COMPONENT_DEPENDENCY",
+      "changed_paths": [
+        "analysis/analyze_roboboat_atomic_reassessment.py",
+        "analysis/run_roboboat_terminal_capture.py",
+        "docs/roboboat_terminal_evidence/EXPERIMENTS.md",
+        "docs/roboboat_terminal_evidence/STATUS.md",
+        "docs/roboboat_terminal_evidence/marine_atomic_analysis_plan_v1.json",
+        "docs/roboboat_terminal_evidence/settling_pilot_registry_v1.json",
+        "packages/crane_ml",
+        "tests/test_roboboat_atomic_analysis.py",
+        "tests/test_roboboat_settling_configuration.py"
+      ]
+    },
+    {
+      "commit": "791b26b9070b3fe832083e2220a4ebc8abd3d94e",
+      "parents": [
+        "9310041b153fc2d1fdd985f90873a3225043e5f5"
+      ],
+      "subject": "Retain atomic timeout bounds and execute fixed sampled-settling development variants",
+      "classification": "GENUINE_ROBOBOAT_TERMINAL_EVIDENCE_AND_COMPONENT_DEPENDENCY",
+      "changed_paths": [
+        "analysis/analyze_roboboat_atomic_failure_bounds.py",
+        "analysis/build_roboboat_settling_batch.py",
+        "analysis/inspect_roboboat_post_dwell_positions.py",
+        "analysis/plot_roboboat_terminal_evidence.py",
+        "analysis/publish_roboboat_terminal_capsule.py",
+        "analysis/roboboat_temporal_renderer_v4.py",
+        "analysis/run_roboboat_settling_atomization.py",
+        "analysis/run_roboboat_settling_responses.py",
+        "docs/roboboat_terminal_evidence/COORDINATOR_PROPOSAL.md",
+        "docs/roboboat_terminal_evidence/EXPERIMENTS.md",
+        "docs/roboboat_terminal_evidence/HANDOFF.md",
+        "docs/roboboat_terminal_evidence/INTEGRATION.md",
+        "docs/roboboat_terminal_evidence/MANUSCRIPT_SECTION.md",
+        "docs/roboboat_terminal_evidence/RESULTS.md",
+        "docs/roboboat_terminal_evidence/STATUS.md",
+        "docs/roboboat_terminal_evidence/STUDY_DESIGN.md",
+        "docs/roboboat_terminal_evidence/figures/settling_direct_terminal_panel.png",
+        "docs/roboboat_terminal_evidence/figures/settling_direct_terminal_panel.svg",
+        "docs/roboboat_terminal_evidence/figures/settling_known_terminal_panel.png",
+        "docs/roboboat_terminal_evidence/figures/settling_known_terminal_panel.svg",
+        "docs/roboboat_terminal_evidence/marine_atomic_timeout_disposition_v1.json",
+        "docs/roboboat_terminal_evidence/marine_b2_settling_prompt_v1.txt",
+        "docs/roboboat_terminal_evidence/settling_atomic_inventory_declaration_v1.json",
+        "docs/roboboat_terminal_evidence/settling_response_declaration_v1.json",
+        "tests/test_roboboat_atomic_failure_bounds.py",
+        "tests/test_roboboat_atomic_publication.py",
+        "tests/test_roboboat_settling_batch.py",
+        "tests/test_roboboat_temporal_renderer_v4.py"
+      ]
+    },
+    {
+      "commit": "ae2701df232030b01f23058be98d1e3e202ab792",
+      "parents": [
+        "791b26b9070b3fe832083e2220a4ebc8abd3d94e"
+      ],
+      "subject": "Verify retained-timeout capsule intake and completed settling extraction state",
+      "classification": "GENUINE_ROBOBOAT_TERMINAL_EVIDENCE_AND_COMPONENT_DEPENDENCY",
+      "changed_paths": [
+        "docs/roboboat_terminal_evidence/STATUS.md",
+        "docs/roboboat_terminal_evidence/figures/settling_direct_terminal_panel.svg",
+        "docs/roboboat_terminal_evidence/figures/settling_known_terminal_panel.svg",
+        "docs/roboboat_terminal_evidence/publication_artifact_manifest_atomic-v1.json",
+        "docs/roboboat_terminal_evidence/publication_intake_ledger_atomic-v1.json",
+        "docs/roboboat_terminal_evidence/publication_intake_plan_atomic-v1.json"
+      ]
+    },
+    {
+      "commit": "d6b15ae5f0ea3fb552b33202f4c8430513221d31",
+      "parents": [
+        "ae2701df232030b01f23058be98d1e3e202ab792"
+      ],
+      "subject": "Freeze complete settling inventories and launch qualified partial-compliance support",
+      "classification": "GENUINE_ROBOBOAT_TERMINAL_EVIDENCE_AND_COMPONENT_DEPENDENCY",
+      "changed_paths": [
+        "analysis/analyze_roboboat_settling_support.py",
+        "analysis/run_roboboat_settling_support.py",
+        "docs/roboboat_terminal_evidence/EXPERIMENTS.md",
+        "docs/roboboat_terminal_evidence/STATUS.md",
+        "docs/roboboat_terminal_evidence/STUDY_DESIGN.md",
+        "docs/roboboat_terminal_evidence/settling_support_analysis_plan_v1.json",
+        "docs/roboboat_terminal_evidence/settling_support_declaration_v1.json",
+        "tests/test_roboboat_settling_support.py"
+      ]
+    },
+    {
+      "commit": "1fa535b6c76bbff8d3156bca236f9b77e604b3e6",
+      "parents": [
+        "d6b15ae5f0ea3fb552b33202f4c8430513221d31"
+      ],
+      "subject": "Audit full marine study requirements without promoting development into confirmation",
+      "classification": "GENUINE_ROBOBOAT_TERMINAL_EVIDENCE_AND_COMPONENT_DEPENDENCY",
+      "changed_paths": [
+        "docs/roboboat_terminal_evidence/COMPLETION_AUDIT.md",
+        "docs/roboboat_terminal_evidence/HANDOFF.md"
+      ]
+    },
+    {
+      "commit": "d4ef4637e599d1586f327fa5ef634965f4b5412b",
+      "parents": [
+        "1fa535b6c76bbff8d3156bca236f9b77e604b3e6"
+      ],
+      "subject": "Report complete settling tradeoff and retain public contact-policy ambiguity",
+      "classification": "GENUINE_ROBOBOAT_TERMINAL_EVIDENCE_AND_COMPONENT_DEPENDENCY",
+      "changed_paths": [
+        "analysis/publish_roboboat_terminal_capsule.py",
+        "docs/roboboat_terminal_evidence/COMPLETION_AUDIT.md",
+        "docs/roboboat_terminal_evidence/EXPERIMENTS.md",
+        "docs/roboboat_terminal_evidence/INTEGRATION.md",
+        "docs/roboboat_terminal_evidence/MANUSCRIPT_SECTION.md",
+        "docs/roboboat_terminal_evidence/RESULTS.md",
+        "docs/roboboat_terminal_evidence/STATUS.md",
+        "docs/roboboat_terminal_evidence/settling_publication_plan_v1.json"
+      ]
+    },
+    {
+      "commit": "6b0ebfbf9c0a8fd950c9b196e3604e964d8ca19d",
+      "parents": [
+        "d4ef4637e599d1586f327fa5ef634965f4b5412b"
+      ],
+      "subject": "Verify complete settling capsule and persist next public-contract gate",
+      "classification": "GENUINE_ROBOBOAT_TERMINAL_EVIDENCE_AND_COMPONENT_DEPENDENCY",
+      "changed_paths": [
+        "docs/roboboat_terminal_evidence/HANDOFF.md",
+        "docs/roboboat_terminal_evidence/INTEGRATION.md",
+        "docs/roboboat_terminal_evidence/STATUS.md",
+        "docs/roboboat_terminal_evidence/publication_artifact_manifest_settling-v1.json",
+        "docs/roboboat_terminal_evidence/publication_intake_ledger_settling-v1.json",
+        "docs/roboboat_terminal_evidence/publication_intake_plan_settling-v1.json"
+      ]
+    },
+    {
+      "commit": "1e118cdac05c1883ea226dc6b405558b22d45419",
+      "parents": [
+        "6b0ebfbf9c0a8fd950c9b196e3604e964d8ca19d"
+      ],
+      "subject": "Define explicit boat contact policy and retain failed semantic extension",
+      "classification": "GENUINE_ROBOBOAT_TERMINAL_EVIDENCE_AND_COMPONENT_DEPENDENCY",
+      "changed_paths": [
+        "analysis/reference_roboboat_temporal_v2.py",
+        "analysis/replay_roboboat_contact_policy_v2.py",
+        "analysis/roboboat_temporal_certificate_v2.py",
+        "analysis/run_roboboat_contact_policy_qualification_v2.py",
+        "docs/roboboat_terminal_evidence/COMPLETION_AUDIT.md",
+        "docs/roboboat_terminal_evidence/CONTACT_POLICY_V2.md",
+        "docs/roboboat_terminal_evidence/EXPERIMENTS.md",
+        "docs/roboboat_terminal_evidence/HANDOFF.md",
+        "docs/roboboat_terminal_evidence/INTEGRATION.md",
+        "docs/roboboat_terminal_evidence/MANUSCRIPT_SECTION.md",
+        "docs/roboboat_terminal_evidence/RESULTS.md",
+        "docs/roboboat_terminal_evidence/STATUS.md",
+        "docs/roboboat_terminal_evidence/STUDY_DESIGN.md",
+        "docs/roboboat_terminal_evidence/contact_policy_development_disposition_v2.json",
+        "docs/roboboat_terminal_evidence/contact_policy_qualification_freeze_v2.json",
+        "docs/roboboat_terminal_evidence/contact_policy_qualification_suite_v2.json",
+        "docs/roboboat_terminal_evidence/publication_artifact_manifest_contact-policy-v2.json",
+        "docs/roboboat_terminal_evidence/publication_intake_ledger_contact-policy-v2.json",
+        "docs/roboboat_terminal_evidence/publication_intake_plan_contact-policy-v2.json",
+        "docs/roboboat_terminal_evidence/task_contract_v2.json",
+        "tests/test_roboboat_temporal_certificate_v2.py"
+      ]
+    },
+    {
+      "commit": "fcedb1e48de953b9472d421aaeb8cf3aae55e597",
+      "parents": [
+        "1e118cdac05c1883ea226dc6b405558b22d45419"
+      ],
+      "subject": "Declare material boat endpoint and execute contact-scope development checks",
+      "classification": "GENUINE_ROBOBOAT_TERMINAL_EVIDENCE_AND_COMPONENT_DEPENDENCY",
+      "changed_paths": [
+        "analysis/build_roboboat_contact_scope_qualification_v3.py",
+        "analysis/roboboat_material_endpoint_v1.py",
+        "analysis/roboboat_qualification_span_audit_v1.py",
+        "analysis/run_roboboat_contact_policy_inventory_v2.py",
+        "analysis/run_roboboat_contact_policy_responses_v2.py",
+        "analysis/run_roboboat_contact_scope_qualification_v3.py",
+        "docs/roboboat_terminal_evidence/COMPLETION_AUDIT.md",
+        "docs/roboboat_terminal_evidence/COORDINATOR_PROPOSAL.md",
+        "docs/roboboat_terminal_evidence/EXPERIMENTS.md",
+        "docs/roboboat_terminal_evidence/HANDOFF.md",
+        "docs/roboboat_terminal_evidence/INTEGRATION.md",
+        "docs/roboboat_terminal_evidence/MATERIAL_ENDPOINT_V1.md",
+        "docs/roboboat_terminal_evidence/STATUS.md",
+        "docs/roboboat_terminal_evidence/STUDY_DESIGN.md",
+        "docs/roboboat_terminal_evidence/contact_policy_response_declaration_v2.json",
+        "docs/roboboat_terminal_evidence/contact_scope_development_disposition_v3.json",
+        "docs/roboboat_terminal_evidence/contact_scope_qualification_freeze_v3.json",
+        "docs/roboboat_terminal_evidence/contact_scope_qualification_suite_v3.json",
+        "docs/roboboat_terminal_evidence/contact_scope_reference_review_v3.json",
+        "docs/roboboat_terminal_evidence/marine_b2_contact_policy_prompt_v2.txt",
+        "tests/test_roboboat_material_endpoint_v1.py",
+        "tests/test_roboboat_qualification_span_audit_v1.py"
+      ]
+    },
+    {
+      "commit": "9bfb18fe8d0dec01deb1557429a79e072e0a9a5e",
+      "parents": [
+        "fcedb1e48de953b9472d421aaeb8cf3aae55e597"
+      ],
+      "subject": "Freeze complete contact-policy response bank and launch blind inventories",
+      "classification": "GENUINE_ROBOBOAT_TERMINAL_EVIDENCE_AND_COMPONENT_DEPENDENCY",
+      "changed_paths": [
+        "docs/roboboat_terminal_evidence/COMPLETION_AUDIT.md",
+        "docs/roboboat_terminal_evidence/EXPERIMENTS.md",
+        "docs/roboboat_terminal_evidence/HANDOFF.md",
+        "docs/roboboat_terminal_evidence/STATUS.md",
+        "docs/roboboat_terminal_evidence/contact_policy_inventory_declaration_v2.json"
+      ]
+    },
+    {
+      "commit": "9b8bd3da28106e69115267bb8389b6e1ddb51b04",
+      "parents": [
+        "9bfb18fe8d0dec01deb1557429a79e072e0a9a5e"
+      ],
+      "subject": "Audit contact-v2 inventories and gate separate development support analysis",
+      "classification": "GENUINE_ROBOBOAT_TERMINAL_EVIDENCE_AND_COMPONENT_DEPENDENCY",
+      "changed_paths": [
+        "analysis/analyze_roboboat_contact_policy_support_v2.py",
+        "analysis/run_roboboat_contact_policy_support_v2.py",
+        "docs/roboboat_terminal_evidence/EXPERIMENTS.md",
+        "docs/roboboat_terminal_evidence/HANDOFF.md",
+        "docs/roboboat_terminal_evidence/INTEGRATION.md",
+        "docs/roboboat_terminal_evidence/MANUSCRIPT_SECTION.md",
+        "docs/roboboat_terminal_evidence/STATUS.md",
+        "docs/roboboat_terminal_evidence/allocation_read_only_recheck_contact_v2.json",
+        "tests/test_roboboat_contact_policy_analysis_v2.py",
+        "tests/test_roboboat_contact_policy_support_v2.py"
+      ]
+    },
+    {
+      "commit": "9bea3db5d3e9c530b8c8f58b5662c19a68dec7ee",
+      "parents": [
+        "9b8bd3da28106e69115267bb8389b6e1ddb51b04"
+      ],
+      "subject": "Freeze reviewed contact-v2 support packets and launch locked annotation queue",
+      "classification": "GENUINE_ROBOBOAT_TERMINAL_EVIDENCE_AND_COMPONENT_DEPENDENCY",
+      "changed_paths": [
+        "docs/roboboat_terminal_evidence/COMPLETION_AUDIT.md",
+        "docs/roboboat_terminal_evidence/EXPERIMENTS.md",
+        "docs/roboboat_terminal_evidence/HANDOFF.md",
+        "docs/roboboat_terminal_evidence/INTEGRATION.md",
+        "docs/roboboat_terminal_evidence/STATUS.md",
+        "docs/roboboat_terminal_evidence/contact_policy_support_analysis_plan_v2.json",
+        "docs/roboboat_terminal_evidence/contact_policy_support_declaration_v2.json"
+      ]
+    },
+    {
+      "commit": "1c889ad7f12d6580c5e16d357c90383785af613a",
+      "parents": [
+        "9bea3db5d3e9c530b8c8f58b5662c19a68dec7ee"
+      ],
+      "subject": "Report complete contact-v2 replay and independently audit growth-scope mismatch",
+      "classification": "GENUINE_ROBOBOAT_TERMINAL_EVIDENCE_AND_COMPONENT_DEPENDENCY",
+      "changed_paths": [
+        "analysis/inspect_roboboat_contact_v2_growth_scope.py",
+        "analysis/publish_roboboat_contact_policy_capsule_v2.py",
+        "docs/roboboat_terminal_evidence/COMPLETION_AUDIT.md",
+        "docs/roboboat_terminal_evidence/CONTACT_V2_RESULTS.md",
+        "docs/roboboat_terminal_evidence/EXPERIMENTS.md",
+        "docs/roboboat_terminal_evidence/HANDOFF.md",
+        "docs/roboboat_terminal_evidence/INTEGRATION.md",
+        "docs/roboboat_terminal_evidence/MANUSCRIPT_SECTION.md",
+        "docs/roboboat_terminal_evidence/RESULTS.md",
+        "docs/roboboat_terminal_evidence/STATUS.md",
+        "docs/roboboat_terminal_evidence/STUDY_DESIGN.md",
+        "tests/test_roboboat_contact_policy_publication_v2.py"
+      ]
+    },
+    {
+      "commit": "1f4f82063cb9e405862da670a8b49b15444ab827",
+      "parents": [
+        "1c889ad7f12d6580c5e16d357c90383785af613a"
+      ],
+      "subject": "Verify contact-v2 result capsule and clarify current research gates",
+      "classification": "GENUINE_ROBOBOAT_TERMINAL_EVIDENCE_AND_COMPONENT_DEPENDENCY",
+      "changed_paths": [
+        "docs/roboboat_terminal_evidence/COMPLETION_AUDIT.md",
+        "docs/roboboat_terminal_evidence/CONTACT_V2_RESULTS.md",
+        "docs/roboboat_terminal_evidence/EXPERIMENTS.md",
+        "docs/roboboat_terminal_evidence/HANDOFF.md",
+        "docs/roboboat_terminal_evidence/INTEGRATION.md",
+        "docs/roboboat_terminal_evidence/RESULTS.md",
+        "docs/roboboat_terminal_evidence/STATUS.md",
+        "docs/roboboat_terminal_evidence/publication_artifact_manifest_contact-comparison-v2.json",
+        "docs/roboboat_terminal_evidence/publication_intake_ledger_contact-comparison-v2.json",
+        "docs/roboboat_terminal_evidence/publication_intake_plan_contact-comparison-v2.json"
+      ]
+    },
+    {
+      "commit": "79cbd1c20c590fbba3ebcb19d364939d6780aea0",
+      "parents": [
+        "1f4f82063cb9e405862da670a8b49b15444ab827"
+      ],
+      "subject": "Freeze prospective marine materiality qualification and retain operational correction",
+      "classification": "GENUINE_ROBOBOAT_TERMINAL_EVIDENCE_AND_COMPONENT_DEPENDENCY",
+      "changed_paths": [
+        "analysis/build_roboboat_material_qualification_v2.py",
+        "analysis/roboboat_material_endpoint_v2.py",
+        "analysis/roboboat_material_qualification_validation_v3.py",
+        "analysis/roboboat_qualification_boolean_fields_v2.py",
+        "analysis/run_roboboat_material_qualification_v2.py",
+        "analysis/run_roboboat_material_qualification_v3.py",
+        "docs/roboboat_terminal_evidence/EXPERIMENTS.md",
+        "docs/roboboat_terminal_evidence/HANDOFF.md",
+        "docs/roboboat_terminal_evidence/MATERIAL_ENDPOINT_V2.md",
+        "docs/roboboat_terminal_evidence/STATUS.md",
+        "docs/roboboat_terminal_evidence/material_qualification_freeze_v2.json",
+        "docs/roboboat_terminal_evidence/material_qualification_operational_freeze_v3.json",
+        "docs/roboboat_terminal_evidence/material_qualification_reference_review_v2.json",
+        "docs/roboboat_terminal_evidence/material_qualification_suite_v2.json",
+        "tests/test_roboboat_material_endpoint_v2.py",
+        "tests/test_roboboat_material_qualification_validation_v3.py",
+        "tests/test_roboboat_qualification_boolean_fields_v2.py"
+      ]
+    },
+    {
+      "commit": "278428abf1b90976296a1604058f6f2a89312b8d",
+      "parents": [
+        "79cbd1c20c590fbba3ebcb19d364939d6780aea0"
+      ],
+      "subject": "Validate bounded marine materiality extension and consolidate manuscript claims",
+      "classification": "GENUINE_ROBOBOAT_TERMINAL_EVIDENCE_AND_COMPONENT_DEPENDENCY",
+      "changed_paths": [
+        "analysis/verify_roboboat_material_qualification_v3.py",
+        "docs/roboboat_terminal_evidence/COMPLETION_AUDIT.md",
+        "docs/roboboat_terminal_evidence/COORDINATOR_PROPOSAL.md",
+        "docs/roboboat_terminal_evidence/EXPERIMENTS.md",
+        "docs/roboboat_terminal_evidence/HANDOFF.md",
+        "docs/roboboat_terminal_evidence/INTEGRATION.md",
+        "docs/roboboat_terminal_evidence/MANUSCRIPT_SECTION.md",
+        "docs/roboboat_terminal_evidence/MATERIAL_QUALIFICATION_V3_RESULTS.md",
+        "docs/roboboat_terminal_evidence/STATUS.md",
+        "docs/roboboat_terminal_evidence/STUDY_DESIGN.md",
+        "docs/roboboat_terminal_evidence/material_qualification_development_disposition_v3.json"
+      ]
+    },
+    {
+      "commit": "ee7894bfb42bceb4488d78b220afea30d5ec4ff8",
+      "parents": [
+        "278428abf1b90976296a1604058f6f2a89312b8d"
+      ],
+      "subject": "Publish immutable material qualification capsule through isolated intake",
+      "classification": "GENUINE_ROBOBOAT_TERMINAL_EVIDENCE_AND_COMPONENT_DEPENDENCY",
+      "changed_paths": [
+        "analysis/publish_roboboat_material_qualification_v3.py",
+        "docs/roboboat_terminal_evidence/EXPERIMENTS.md",
+        "docs/roboboat_terminal_evidence/HANDOFF.md",
+        "docs/roboboat_terminal_evidence/INTEGRATION.md",
+        "docs/roboboat_terminal_evidence/STATUS.md",
+        "docs/roboboat_terminal_evidence/publication_artifact_manifest_material-qualification-v3.json",
+        "docs/roboboat_terminal_evidence/publication_intake_ledger_material-qualification-v3.json",
+        "docs/roboboat_terminal_evidence/publication_intake_plan_material-qualification-v3.json"
+      ]
+    },
+    {
+      "commit": "c856579590ff64a29acce94eeaf84ad004af7039",
+      "parents": [
+        "ee7894bfb42bceb4488d78b220afea30d5ec4ff8"
+      ],
+      "subject": "Bind prospective marine material workflow to reviewed evidence and clustered endpoint",
+      "classification": "GENUINE_ROBOBOAT_TERMINAL_EVIDENCE_AND_COMPONENT_DEPENDENCY",
+      "changed_paths": [
+        "analysis/roboboat_material_workflow_v3.py",
+        "docs/roboboat_terminal_evidence/COMPLETION_AUDIT.md",
+        "docs/roboboat_terminal_evidence/COORDINATOR_PROPOSAL.md",
+        "docs/roboboat_terminal_evidence/EXPERIMENTS.md",
+        "docs/roboboat_terminal_evidence/HANDOFF.md",
+        "docs/roboboat_terminal_evidence/INTEGRATION.md",
+        "docs/roboboat_terminal_evidence/MATERIAL_WORKFLOW_V3.md",
+        "docs/roboboat_terminal_evidence/STATUS.md",
+        "docs/roboboat_terminal_evidence/STUDY_DESIGN.md",
+        "docs/roboboat_terminal_evidence/material_workflow_candidate_v3.json",
+        "tests/test_roboboat_material_workflow_v3.py"
+      ]
+    },
+    {
+      "commit": "641c46d902af22711e0cf82eb25ac1df6ac9a2dd",
+      "parents": [
+        "c856579590ff64a29acce94eeaf84ad004af7039"
+      ],
+      "subject": "Revalidate full marine completion gates and record external allocation block",
+      "classification": "GENUINE_ROBOBOAT_TERMINAL_EVIDENCE_AND_COMPONENT_DEPENDENCY",
+      "changed_paths": [
+        "docs/roboboat_terminal_evidence/COMPLETION_AUDIT.md",
+        "docs/roboboat_terminal_evidence/EXPERIMENTS.md",
+        "docs/roboboat_terminal_evidence/HANDOFF.md",
+        "docs/roboboat_terminal_evidence/STATUS.md"
+      ]
+    }
+  ],
+  "component_gitlinks": {
+    "common_base": [
+      {
+        "path": "packages/astro_dock",
+        "commit": "36202373ae186a8fd247a20b7b477312a744de99"
+      },
+      {
+        "path": "packages/crane_ml",
+        "commit": "bcab3547baccb9c2dcb041b1f146c77876cf89d5"
+      }
+    ],
+    "land": [
+      {
+        "path": "packages/astro_dock",
+        "commit": "36202373ae186a8fd247a20b7b477312a744de99"
+      },
+      {
+        "path": "packages/crane_ml",
+        "commit": "bcab3547baccb9c2dcb041b1f146c77876cf89d5"
+      }
+    ],
+    "genuine_roboboat": [
+      {
+        "path": "packages/astro_dock",
+        "commit": "36202373ae186a8fd247a20b7b477312a744de99"
+      },
+      {
+        "path": "packages/crane_ml",
+        "commit": "0df68389e323d8c706aa46518145df3441f5579b"
+      }
+    ]
+  },
+  "shared_paths_changed_by_marine": [],
+  "land_scientific_commits_rewritten": false,
+  "genuine_roboboat_commits_rewritten": false,
+  "scientific_state_changed": false,
+  "p11_authorized": false,
+  "pre_correction_pull_requests": [],
+  "documentation_binding": {
+    "path": "docs/BRANCH_SEPARATION_2026-09-30.md",
+    "raw_sha256": "287221988ebf25bf9ba72be2796338af9c05922f94a82f860b0ae3e014bb6b0e"
+  }
+}
