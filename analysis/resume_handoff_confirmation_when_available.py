@@ -12,6 +12,7 @@ from pathlib import Path
 import subprocess
 import sys
 import tempfile
+import time
 from run_evidence_calibration_b2_pilot import ROOT,BoundedCodexCliCaller
 
 
@@ -20,6 +21,7 @@ def main():
     parser.add_argument('--freeze',required=True,type=Path)
     parser.add_argument('--look',choices=['FIRST','FINAL'],default='FIRST')
     parser.add_argument('--probe-only',action='store_true')
+    parser.add_argument('--follow-collection',action='store_true')
     args=parser.parse_args()
     freeze=json.loads(args.freeze.read_text())
     if freeze['status']!='FROZEN_BEFORE_FIRST_CONFIRMATORY_SEMANTIC_OUTPUT':raise RuntimeError('No frozen study')
@@ -37,7 +39,18 @@ def main():
         return 75
     print(json.dumps(dict(model_available=True,probe_enters_statistical_sample=False)),flush=True)
     if args.probe_only:return 0
-    return subprocess.run([sys.executable,str(ROOT/'analysis/run_handoff_confirmation_pairs.py'),'--freeze',str(args.freeze),'--look',args.look],cwd=ROOT).returncode
+    command=[sys.executable,str(ROOT/'analysis/run_handoff_confirmation_pairs.py'),'--freeze',str(args.freeze),'--look',args.look]
+    while True:
+        completed=subprocess.run(command,cwd=ROOT)
+        if completed.returncode or not args.follow_collection:return completed.returncode
+        account=ROOT/'analysis/results/confirmation'/freeze['study_id']/('execution-accounting-'+args.look+'.json')
+        accounting=json.loads(account.read_text())
+        if accounting['complete']:return 0
+        # Normal completion before N means the next ordered physical capture is pending.
+        # Existing terminal request records are reused by the frozen runner, never rerun.
+        print(json.dumps(dict(waiting_for_next_physical_capture=True,complete_pairs=accounting['complete_paired_episode_n'])),flush=True)
+        time.sleep(60)
+
 
 
 if __name__=='__main__':sys.exit(main())
