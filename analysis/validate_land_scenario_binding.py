@@ -18,7 +18,8 @@ def sha256(path: Path) -> str:
 def validate_binding(truth: dict[str, Any], catalog: dict[str, Any], *,
                      catalog_sha256: str, catalog_id: str, layout_id: str,
                      expected_mobility_hold_after: float = -1.0,
-                     expected_mobility_release_after: float = -1.0) -> dict[str, Any]:
+                     expected_mobility_release_after: float = -1.0,
+                     expected_response_profile: dict[str, float] | None = None) -> dict[str, Any]:
     layouts = [item for item in catalog.get("layouts", []) if item.get("id") == layout_id]
     if len(layouts) != 1:
         raise ValueError(f"requested layout must resolve exactly once: {layout_id}")
@@ -62,6 +63,10 @@ def validate_binding(truth: dict[str, Any], catalog: dict[str, Any], *,
             abs_tol=1e-6,
         ),
     }
+    if expected_response_profile is not None:
+        for name, expected in expected_response_profile.items():
+            checks["response_profile_" + name] = math.isclose(
+                float(truth.get(name, float("nan"))), expected, rel_tol=0., abs_tol=1e-6)
     failed = sorted(name for name, accepted in checks.items() if not accepted)
     return {
         "schema": "crane-land-scenario-binding-audit/v1",
@@ -92,6 +97,7 @@ def main() -> int:
     parser.add_argument("--expected-mobility-hold-after", type=float, default=-1.0)
     parser.add_argument("--expected-mobility-release-after", type=float, default=-1.0)
     parser.add_argument("--output", type=Path)
+    parser.add_argument("--expected-response-profile", type=Path)
     args = parser.parse_args()
 
     truth = json.loads(args.truth.read_text(encoding="utf-8"))
@@ -104,6 +110,8 @@ def main() -> int:
         layout_id=args.layout,
         expected_mobility_hold_after=args.expected_mobility_hold_after,
         expected_mobility_release_after=args.expected_mobility_release_after,
+        expected_response_profile=(json.loads(args.expected_response_profile.read_text())
+                                   if args.expected_response_profile else None),
     )
     rendered = json.dumps(result, indent=2, sort_keys=True) + "\n"
     if args.output:

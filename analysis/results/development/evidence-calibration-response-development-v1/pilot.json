@@ -1,0 +1,107 @@
+{
+  "schema": "crane-evidence-calibration-development-pilot/v1",
+  "pilot_id": "handoff-response-development-v1",
+  "declared_date": "2026-09-29",
+  "status": "PREDECLARED_NOT_RUN",
+  "scientific_role": "DEVELOPMENT_MEASUREMENT_AND_PIPELINE_PILOT_ONLY",
+  "confirmation_alpha": 0.0,
+  "independent_unit": "episode_configuration",
+  "independent_episode_count": 16,
+  "selection": {
+    "episode_ids": [
+      "handoff-response-dev-025",
+      "handoff-response-dev-002",
+      "handoff-response-dev-003",
+      "handoff-response-dev-004",
+      "handoff-response-dev-005",
+      "handoff-response-dev-006",
+      "handoff-response-dev-007",
+      "handoff-response-dev-008",
+      "handoff-response-dev-009",
+      "handoff-response-dev-010",
+      "handoff-response-dev-011",
+      "handoff-response-dev-012",
+      "handoff-response-dev-013",
+      "handoff-response-dev-014",
+      "handoff-response-dev-015",
+      "handoff-response-dev-016",
+      "handoff-response-dev-017",
+      "handoff-response-dev-018",
+      "handoff-response-dev-019",
+      "handoff-response-dev-020",
+      "handoff-response-dev-021",
+      "handoff-response-dev-022",
+      "handoff-response-dev-023",
+      "handoff-response-dev-024"
+    ],
+    "selection_rule": "Fixed source order; six per profile, three per profile/geometry; no outcome selection",
+    "independent_unit": "configuration"
+  },
+  "evidence_ladders": {
+    "persistent_command_motion_discrepancy": [
+      "E0_action_outcome",
+      "E1_recovery_trace",
+      "E2_delivered_command",
+      "E3_synchronized_odometry"
+    ],
+    "measured_response_recovery": [
+      "E0_action_outcome",
+      "E1_recovery_trace",
+      "E2_delivered_command",
+      "E3_synchronized_odometry"
+    ],
+    "missing_decisive_evidence": [
+      "E0_action_outcome",
+      "E1_recovery_trace",
+      "E2_delivered_command"
+    ],
+    "nominal_false_premise": [
+      "E0_action_outcome",
+      "E1_delivered_command",
+      "E2_synchronized_odometry"
+    ]
+  },
+  "methods": {
+    "B2": {
+      "condition": "strong repository-aware tool-enabled agent",
+      "model": "gpt-6-sol",
+      "reasoning_effort": "high",
+      "one_top_level_call_per_episode_condition": true,
+      "quality_driven_retry": false,
+      "prompt": "research/explanation_fidelity/prompts/evidence_calibration_b2_development_v1.txt"
+    },
+    "B4": {
+      "condition": "full evidence-calibrated system",
+      "diagnosis": "maximal-supported-diagnosis/v1-development",
+      "realization": "claim-aware-constrained-realizer/v1-development",
+      "model_calls": 0
+    }
+  },
+  "parity": {
+    "same_robot_visible_condition": true,
+    "same_exact_source_and_configuration_assets": true,
+    "same_primitive_diagnostic_tools": true,
+    "evaluator_truth_available_to_methods": false,
+    "B4_contract_assets_are_method_defining_not_extra_episode_evidence": true
+  },
+  "annotation": {
+    "independent_humans": 2,
+    "adjudicate_before_method_join": true,
+    "automated_judges": "SECONDARY_SENSITIVITY_ONLY",
+    "pilot_significance_required": false
+  },
+  "promotion_questions": [
+    "Are B2 and B4 packets information- and tool-parity complete?",
+    "Can two humans apply atomic labels and abstraction levels without method cues?",
+    "What B2-only and B4-only episode failures are plausible for sample-size planning?",
+    "What useful-coverage floor is scientifically defensible without matching a known B4 deficit?",
+    "Do any systematic contract, ladder, reference, or annotation defects require one final development repair?"
+  ],
+  "prohibitions": [
+    "Do not report pilot p-values as confirmation.",
+    "Do not choose the confirmatory endpoint from whichever pilot secondary metric looks best.",
+    "Do not retry a poor response, replace a valid episode, or count evidence conditions as independent samples.",
+    "Any method repair creates a new development version; this pilot remains immutable."
+  ],
+  "development_only": true
+}

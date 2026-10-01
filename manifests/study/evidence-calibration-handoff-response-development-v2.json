@@ -1,0 +1,503 @@
+{
+  "schema": "crane-handoff-response-development/v1",
+  "development_only": true,
+  "supersedes_prelaunch_allocation": "evidence-calibration-handoff-response-development-v1.json",
+  "prelaunch_failure": "001 rejected catalog v9 before any physical launch; log retained. Unobserved configuration assigned new run identifier 025.",
+  "confirmation_alpha": 0.0,
+  "independent_unit": "configuration",
+  "independent_n_planned": 24,
+  "selection_rule": "Fixed source order; six per profile, three per profile/geometry; no outcome selection",
+  "primary_endpoint_unchanged": true,
+  "technical_rule": "Exact scenario/build binding and no stale/rejected/cross-episode transport errors; expected task abort is not technical invalidity. Retain every attempt without retry.",
+  "catalog_sha256": "3b450ac001e2d71b083df5bb6acff04af7b2ba896878a8df3730ee28ae479d6e",
+  "qualification_player": "/home/lunarz/.codex/worktrees/f235/crane_explain/packages/crane_ml/Builds/Handoff-Response/CRANE.x86_64",
+  "expected_build_manifest_sha256": "c5e0c8621dba9414514732d1b22a6a2a7440235c3a1649ad29fa46d70a2b690d",
+  "expected_managed_assemblies_sha256": "abcd713826cf4c771add4248548e1f78de659f8cd61f85169b66b4cb22edf052",
+  "cohorts": [
+    {
+      "cohort_id": "development",
+      "runs": [
+        {
+          "run_id": "handoff-response-dev-025",
+          "cluster_id": "handoff-response-config-001",
+          "catalog_id": "v9",
+          "layout_id": "diagnostic-handoff-response-development-connected-detour-001",
+          "layout_seed": 121000,
+          "geometry_mechanism": "connected-detour",
+          "response_profile": "persistent-low",
+          "family": "persistent-discrepancy",
+          "evaluator_response": {
+            "responseAfterSeconds": 18.0,
+            "responseReleaseAfterSeconds": -1.0,
+            "responseGain": 0.12,
+            "responseRecoveredGain": 1.0,
+            "responsePeriodSeconds": 0.0,
+            "responseDuty": 1.0
+          },
+          "ros_domain_id": 65,
+          "ros_tcp_port": 12665
+        },
+        {
+          "run_id": "handoff-response-dev-002",
+          "cluster_id": "handoff-response-config-002",
+          "catalog_id": "v9",
+          "layout_id": "diagnostic-handoff-response-development-nominal-clear-route-001",
+          "layout_seed": 122000,
+          "geometry_mechanism": "nominal-clear-route",
+          "response_profile": "persistent-intermittent",
+          "family": "persistent-discrepancy",
+          "evaluator_response": {
+            "responseAfterSeconds": 18.0,
+            "responseReleaseAfterSeconds": -1.0,
+            "responseGain": 0.0,
+            "responseRecoveredGain": 1.0,
+            "responsePeriodSeconds": 2.0,
+            "responseDuty": 0.8
+          },
+          "ros_domain_id": 66,
+          "ros_tcp_port": 12666
+        },
+        {
+          "run_id": "handoff-response-dev-003",
+          "cluster_id": "handoff-response-config-003",
+          "catalog_id": "v9",
+          "layout_id": "diagnostic-handoff-response-development-connected-detour-002",
+          "layout_seed": 121001,
+          "geometry_mechanism": "connected-detour",
+          "response_profile": "partial-recovery",
+          "family": "transient-compensation",
+          "evaluator_response": {
+            "responseAfterSeconds": 18.0,
+            "responseReleaseAfterSeconds": 30.0,
+            "responseGain": 0.12,
+            "responseRecoveredGain": 0.6,
+            "responsePeriodSeconds": 0.0,
+            "responseDuty": 1.0
+          },
+          "ros_domain_id": 67,
+          "ros_tcp_port": 12667
+        },
+        {
+          "run_id": "handoff-response-dev-004",
+          "cluster_id": "handoff-response-config-004",
+          "catalog_id": "v9",
+          "layout_id": "diagnostic-handoff-response-development-nominal-clear-route-002",
+          "layout_seed": 122001,
+          "geometry_mechanism": "nominal-clear-route",
+          "response_profile": "full-recovery",
+          "family": "transient-compensation",
+          "evaluator_response": {
+            "responseAfterSeconds": 18.0,
+            "responseReleaseAfterSeconds": 30.0,
+            "responseGain": 0.12,
+            "responseRecoveredGain": 1.0,
+            "responsePeriodSeconds": 0.0,
+            "responseDuty": 1.0
+          },
+          "ros_domain_id": 68,
+          "ros_tcp_port": 12668
+        },
+        {
+          "run_id": "handoff-response-dev-005",
+          "cluster_id": "handoff-response-config-005",
+          "catalog_id": "v9",
+          "layout_id": "diagnostic-handoff-response-development-nominal-clear-route-003",
+          "layout_seed": 122002,
+          "geometry_mechanism": "nominal-clear-route",
+          "response_profile": "persistent-low",
+          "family": "persistent-discrepancy",
+          "evaluator_response": {
+            "responseAfterSeconds": 18.0,
+            "responseReleaseAfterSeconds": -1.0,
+            "responseGain": 0.12,
+            "responseRecoveredGain": 1.0,
+            "responsePeriodSeconds": 0.0,
+            "responseDuty": 1.0
+          },
+          "ros_domain_id": 69,
+          "ros_tcp_port": 12669
+        },
+        {
+          "run_id": "handoff-response-dev-006",
+          "cluster_id": "handoff-response-config-006",
+          "catalog_id": "v9",
+          "layout_id": "diagnostic-handoff-response-development-connected-detour-003",
+          "layout_seed": 121002,
+          "geometry_mechanism": "connected-detour",
+          "response_profile": "persistent-intermittent",
+          "family": "persistent-discrepancy",
+          "evaluator_response": {
+            "responseAfterSeconds": 18.0,
+            "responseReleaseAfterSeconds": -1.0,
+            "responseGain": 0.0,
+            "responseRecoveredGain": 1.0,
+            "responsePeriodSeconds": 2.0,
+            "responseDuty": 0.8
+          },
+          "ros_domain_id": 70,
+          "ros_tcp_port": 12670
+        },
+        {
+          "run_id": "handoff-response-dev-007",
+          "cluster_id": "handoff-response-config-007",
+          "catalog_id": "v9",
+          "layout_id": "diagnostic-handoff-response-development-nominal-clear-route-004",
+          "layout_seed": 122003,
+          "geometry_mechanism": "nominal-clear-route",
+          "response_profile": "partial-recovery",
+          "family": "transient-compensation",
+          "evaluator_response": {
+            "responseAfterSeconds": 18.0,
+            "responseReleaseAfterSeconds": 30.0,
+            "responseGain": 0.12,
+            "responseRecoveredGain": 0.6,
+            "responsePeriodSeconds": 0.0,
+            "responseDuty": 1.0
+          },
+          "ros_domain_id": 71,
+          "ros_tcp_port": 12671
+        },
+        {
+          "run_id": "handoff-response-dev-008",
+          "cluster_id": "handoff-response-config-008",
+          "catalog_id": "v9",
+          "layout_id": "diagnostic-handoff-response-development-connected-detour-004",
+          "layout_seed": 121003,
+          "geometry_mechanism": "connected-detour",
+          "response_profile": "full-recovery",
+          "family": "transient-compensation",
+          "evaluator_response": {
+            "responseAfterSeconds": 18.0,
+            "responseReleaseAfterSeconds": 30.0,
+            "responseGain": 0.12,
+            "responseRecoveredGain": 1.0,
+            "responsePeriodSeconds": 0.0,
+            "responseDuty": 1.0
+          },
+          "ros_domain_id": 72,
+          "ros_tcp_port": 12672
+        },
+        {
+          "run_id": "handoff-response-dev-009",
+          "cluster_id": "handoff-response-config-009",
+          "catalog_id": "v9",
+          "layout_id": "diagnostic-handoff-response-development-connected-detour-005",
+          "layout_seed": 121004,
+          "geometry_mechanism": "connected-detour",
+          "response_profile": "persistent-low",
+          "family": "persistent-discrepancy",
+          "evaluator_response": {
+            "responseAfterSeconds": 18.0,
+            "responseReleaseAfterSeconds": -1.0,
+            "responseGain": 0.12,
+            "responseRecoveredGain": 1.0,
+            "responsePeriodSeconds": 0.0,
+            "responseDuty": 1.0
+          },
+          "ros_domain_id": 73,
+          "ros_tcp_port": 12673
+        },
+        {
+          "run_id": "handoff-response-dev-010",
+          "cluster_id": "handoff-response-config-010",
+          "catalog_id": "v9",
+          "layout_id": "diagnostic-handoff-response-development-nominal-clear-route-005",
+          "layout_seed": 122004,
+          "geometry_mechanism": "nominal-clear-route",
+          "response_profile": "persistent-intermittent",
+          "family": "persistent-discrepancy",
+          "evaluator_response": {
+            "responseAfterSeconds": 18.0,
+            "responseReleaseAfterSeconds": -1.0,
+            "responseGain": 0.0,
+            "responseRecoveredGain": 1.0,
+            "responsePeriodSeconds": 2.0,
+            "responseDuty": 0.8
+          },
+          "ros_domain_id": 74,
+          "ros_tcp_port": 12674
+        },
+        {
+          "run_id": "handoff-response-dev-011",
+          "cluster_id": "handoff-response-config-011",
+          "catalog_id": "v9",
+          "layout_id": "diagnostic-handoff-response-development-connected-detour-006",
+          "layout_seed": 121005,
+          "geometry_mechanism": "connected-detour",
+          "response_profile": "partial-recovery",
+          "family": "transient-compensation",
+          "evaluator_response": {
+            "responseAfterSeconds": 18.0,
+            "responseReleaseAfterSeconds": 30.0,
+            "responseGain": 0.12,
+            "responseRecoveredGain": 0.6,
+            "responsePeriodSeconds": 0.0,
+            "responseDuty": 1.0
+          },
+          "ros_domain_id": 75,
+          "ros_tcp_port": 12675
+        },
+        {
+          "run_id": "handoff-response-dev-012",
+          "cluster_id": "handoff-response-config-012",
+          "catalog_id": "v9",
+          "layout_id": "diagnostic-handoff-response-development-nominal-clear-route-006",
+          "layout_seed": 122005,
+          "geometry_mechanism": "nominal-clear-route",
+          "response_profile": "full-recovery",
+          "family": "transient-compensation",
+          "evaluator_response": {
+            "responseAfterSeconds": 18.0,
+            "responseReleaseAfterSeconds": 30.0,
+            "responseGain": 0.12,
+            "responseRecoveredGain": 1.0,
+            "responsePeriodSeconds": 0.0,
+            "responseDuty": 1.0
+          },
+          "ros_domain_id": 76,
+          "ros_tcp_port": 12676
+        },
+        {
+          "run_id": "handoff-response-dev-013",
+          "cluster_id": "handoff-response-config-013",
+          "catalog_id": "v9",
+          "layout_id": "diagnostic-handoff-response-development-nominal-clear-route-007",
+          "layout_seed": 122006,
+          "geometry_mechanism": "nominal-clear-route",
+          "response_profile": "persistent-low",
+          "family": "persistent-discrepancy",
+          "evaluator_response": {
+            "responseAfterSeconds": 18.0,
+            "responseReleaseAfterSeconds": -1.0,
+            "responseGain": 0.12,
+            "responseRecoveredGain": 1.0,
+            "responsePeriodSeconds": 0.0,
+            "responseDuty": 1.0
+          },
+          "ros_domain_id": 77,
+          "ros_tcp_port": 12677
+        },
+        {
+          "run_id": "handoff-response-dev-014",
+          "cluster_id": "handoff-response-config-014",
+          "catalog_id": "v9",
+          "layout_id": "diagnostic-handoff-response-development-connected-detour-007",
+          "layout_seed": 121006,
+          "geometry_mechanism": "connected-detour",
+          "response_profile": "persistent-intermittent",
+          "family": "persistent-discrepancy",
+          "evaluator_response": {
+            "responseAfterSeconds": 18.0,
+            "responseReleaseAfterSeconds": -1.0,
+            "responseGain": 0.0,
+            "responseRecoveredGain": 1.0,
+            "responsePeriodSeconds": 2.0,
+            "responseDuty": 0.8
+          },
+          "ros_domain_id": 78,
+          "ros_tcp_port": 12678
+        },
+        {
+          "run_id": "handoff-response-dev-015",
+          "cluster_id": "handoff-response-config-015",
+          "catalog_id": "v9",
+          "layout_id": "diagnostic-handoff-response-development-nominal-clear-route-008",
+          "layout_seed": 122007,
+          "geometry_mechanism": "nominal-clear-route",
+          "response_profile": "partial-recovery",
+          "family": "transient-compensation",
+          "evaluator_response": {
+            "responseAfterSeconds": 18.0,
+            "responseReleaseAfterSeconds": 30.0,
+            "responseGain": 0.12,
+            "responseRecoveredGain": 0.6,
+            "responsePeriodSeconds": 0.0,
+            "responseDuty": 1.0
+          },
+          "ros_domain_id": 79,
+          "ros_tcp_port": 12679
+        },
+        {
+          "run_id": "handoff-response-dev-016",
+          "cluster_id": "handoff-response-config-016",
+          "catalog_id": "v9",
+          "layout_id": "diagnostic-handoff-response-development-connected-detour-008",
+          "layout_seed": 121007,
+          "geometry_mechanism": "connected-detour",
+          "response_profile": "full-recovery",
+          "family": "transient-compensation",
+          "evaluator_response": {
+            "responseAfterSeconds": 18.0,
+            "responseReleaseAfterSeconds": 30.0,
+            "responseGain": 0.12,
+            "responseRecoveredGain": 1.0,
+            "responsePeriodSeconds": 0.0,
+            "responseDuty": 1.0
+          },
+          "ros_domain_id": 80,
+          "ros_tcp_port": 12680
+        },
+        {
+          "run_id": "handoff-response-dev-017",
+          "cluster_id": "handoff-response-config-017",
+          "catalog_id": "v9",
+          "layout_id": "diagnostic-handoff-response-development-connected-detour-009",
+          "layout_seed": 121008,
+          "geometry_mechanism": "connected-detour",
+          "response_profile": "persistent-low",
+          "family": "persistent-discrepancy",
+          "evaluator_response": {
+            "responseAfterSeconds": 18.0,
+            "responseReleaseAfterSeconds": -1.0,
+            "responseGain": 0.12,
+            "responseRecoveredGain": 1.0,
+            "responsePeriodSeconds": 0.0,
+            "responseDuty": 1.0
+          },
+          "ros_domain_id": 81,
+          "ros_tcp_port": 12681
+        },
+        {
+          "run_id": "handoff-response-dev-018",
+          "cluster_id": "handoff-response-config-018",
+          "catalog_id": "v9",
+          "layout_id": "diagnostic-handoff-response-development-nominal-clear-route-009",
+          "layout_seed": 122008,
+          "geometry_mechanism": "nominal-clear-route",
+          "response_profile": "persistent-intermittent",
+          "family": "persistent-discrepancy",
+          "evaluator_response": {
+            "responseAfterSeconds": 18.0,
+            "responseReleaseAfterSeconds": -1.0,
+            "responseGain": 0.0,
+            "responseRecoveredGain": 1.0,
+            "responsePeriodSeconds": 2.0,
+            "responseDuty": 0.8
+          },
+          "ros_domain_id": 82,
+          "ros_tcp_port": 12682
+        },
+        {
+          "run_id": "handoff-response-dev-019",
+          "cluster_id": "handoff-response-config-019",
+          "catalog_id": "v9",
+          "layout_id": "diagnostic-handoff-response-development-connected-detour-010",
+          "layout_seed": 121009,
+          "geometry_mechanism": "connected-detour",
+          "response_profile": "partial-recovery",
+          "family": "transient-compensation",
+          "evaluator_response": {
+            "responseAfterSeconds": 18.0,
+            "responseReleaseAfterSeconds": 30.0,
+            "responseGain": 0.12,
+            "responseRecoveredGain": 0.6,
+            "responsePeriodSeconds": 0.0,
+            "responseDuty": 1.0
+          },
+          "ros_domain_id": 83,
+          "ros_tcp_port": 12683
+        },
+        {
+          "run_id": "handoff-response-dev-020",
+          "cluster_id": "handoff-response-config-020",
+          "catalog_id": "v9",
+          "layout_id": "diagnostic-handoff-response-development-nominal-clear-route-010",
+          "layout_seed": 122009,
+          "geometry_mechanism": "nominal-clear-route",
+          "response_profile": "full-recovery",
+          "family": "transient-compensation",
+          "evaluator_response": {
+            "responseAfterSeconds": 18.0,
+            "responseReleaseAfterSeconds": 30.0,
+            "responseGain": 0.12,
+            "responseRecoveredGain": 1.0,
+            "responsePeriodSeconds": 0.0,
+            "responseDuty": 1.0
+          },
+          "ros_domain_id": 84,
+          "ros_tcp_port": 12684
+        },
+        {
+          "run_id": "handoff-response-dev-021",
+          "cluster_id": "handoff-response-config-021",
+          "catalog_id": "v9",
+          "layout_id": "diagnostic-handoff-response-development-nominal-clear-route-011",
+          "layout_seed": 122010,
+          "geometry_mechanism": "nominal-clear-route",
+          "response_profile": "persistent-low",
+          "family": "persistent-discrepancy",
+          "evaluator_response": {
+            "responseAfterSeconds": 18.0,
+            "responseReleaseAfterSeconds": -1.0,
+            "responseGain": 0.12,
+            "responseRecoveredGain": 1.0,
+            "responsePeriodSeconds": 0.0,
+            "responseDuty": 1.0
+          },
+          "ros_domain_id": 85,
+          "ros_tcp_port": 12685
+        },
+        {
+          "run_id": "handoff-response-dev-022",
+          "cluster_id": "handoff-response-config-022",
+          "catalog_id": "v9",
+          "layout_id": "diagnostic-handoff-response-development-connected-detour-011",
+          "layout_seed": 121010,
+          "geometry_mechanism": "connected-detour",
+          "response_profile": "persistent-intermittent",
+          "family": "persistent-discrepancy",
+          "evaluator_response": {
+            "responseAfterSeconds": 18.0,
+            "responseReleaseAfterSeconds": -1.0,
+            "responseGain": 0.0,
+            "responseRecoveredGain": 1.0,
+            "responsePeriodSeconds": 2.0,
+            "responseDuty": 0.8
+          },
+          "ros_domain_id": 86,
+          "ros_tcp_port": 12686
+        },
+        {
+          "run_id": "handoff-response-dev-023",
+          "cluster_id": "handoff-response-config-023",
+          "catalog_id": "v9",
+          "layout_id": "diagnostic-handoff-response-development-nominal-clear-route-012",
+          "layout_seed": 122011,
+          "geometry_mechanism": "nominal-clear-route",
+          "response_profile": "partial-recovery",
+          "family": "transient-compensation",
+          "evaluator_response": {
+            "responseAfterSeconds": 18.0,
+            "responseReleaseAfterSeconds": 30.0,
+            "responseGain": 0.12,
+            "responseRecoveredGain": 0.6,
+            "responsePeriodSeconds": 0.0,
+            "responseDuty": 1.0
+          },
+          "ros_domain_id": 87,
+          "ros_tcp_port": 12687
+        },
+        {
+          "run_id": "handoff-response-dev-024",
+          "cluster_id": "handoff-response-config-024",
+          "catalog_id": "v9",
+          "layout_id": "diagnostic-handoff-response-development-connected-detour-012",
+          "layout_seed": 121011,
+          "geometry_mechanism": "connected-detour",
+          "response_profile": "full-recovery",
+          "family": "transient-compensation",
+          "evaluator_response": {
+            "responseAfterSeconds": 18.0,
+            "responseReleaseAfterSeconds": 30.0,
+            "responseGain": 0.12,
+            "responseRecoveredGain": 1.0,
+            "responsePeriodSeconds": 0.0,
+            "responseDuty": 1.0
+          },
+          "ros_domain_id": 88,
+          "ros_tcp_port": 12688
+        }
+      ]
+    }
+  ]
+}

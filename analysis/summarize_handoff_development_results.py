@@ -29,7 +29,7 @@ def load_pass(slot, expected):
     return values
 
 
-def aggregate(rows):
+def aggregate(rows, b4_method="B4v5", interval_fn=None):
     episodes = {}
     for r in rows:
         key = (r["configuration_id"], r["method"])
@@ -40,17 +40,17 @@ def aggregate(rows):
         e["required"] += r["required"]
         e["conditions"] += 1
     if any(e["conditions"] != 4 for e in episodes.values()): raise RuntimeError("Incomplete primary ladder")
-    by_method = {m:{e["configuration_id"]:e for e in episodes.values() if e["method"]==m} for m in ("B2","B4v5")}
+    by_method = {m:{e["configuration_id"]:e for e in episodes.values() if e["method"]==m} for m in ("B2",b4_method)}
     ids = set(by_method["B2"])
-    if ids != set(by_method["B4v5"]): raise RuntimeError("Unpaired configurations")
+    if ids != set(by_method[b4_method]): raise RuntimeError("Unpaired configurations")
     n = len(ids)
-    b = sum(by_method["B2"][i]["failure"] and not by_method["B4v5"][i]["failure"] for i in ids)
-    c = sum(by_method["B4v5"][i]["failure"] and not by_method["B2"][i]["failure"] for i in ids)
+    b = sum(by_method["B2"][i]["failure"] and not by_method[b4_method][i]["failure"] for i in ids)
+    c = sum(by_method[b4_method][i]["failure"] and not by_method["B2"][i]["failure"] for i in ids)
     m = b+c
     report = dict(independent_episode_n=n, mechanism_balance=dict(Counter(e["family"] for e in by_method["B2"].values())),
                   methods={}, B2_fails_B4_passes=b,B4_fails_B2_passes=c,
                   paired_risk_difference_B2_minus_B4=(b-c)/n,
-                  conservative_whole_episode_95_ci=intervals.paired_interval(b,c,n),
+                  conservative_whole_episode_95_ci=(interval_fn or intervals.paired_interval)(b,c,n),
                   descriptive_exact_one_sided_p=sum(math.comb(m,k) for k in range(b,m+1))/2**m if m else 1.,
                   descriptive_exact_two_sided_p=min(1.,2*sum(math.comb(m,k) for k in range(min(b,c)+1))/2**m) if m else 1.,
                   episode_rows=list(episodes.values()))
@@ -59,7 +59,7 @@ def aggregate(rows):
         report["methods"][method]=dict(failures=sum(e["failure"] for e in es.values()),failure_rate=sum(e["failure"] for e in es.values())/n,
                                       covered_units=covered,required_units=required,unit_coverage=covered/required,
                                       mean_episode_coverage=sum(e["covered"]/e["required"] for e in es.values())/n)
-    report["mean_episode_coverage_difference_B4_minus_B2"] = report["methods"]["B4v5"]["mean_episode_coverage"]-report["methods"]["B2"]["mean_episode_coverage"]
+    report["mean_episode_coverage_difference_B4_minus_B2"] = report["methods"][b4_method]["mean_episode_coverage"]-report["methods"]["B2"]["mean_episode_coverage"]
     return report
 
 

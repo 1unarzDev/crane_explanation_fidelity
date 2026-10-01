@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Small development-only full-answer annotation runner using the existing CLI transport."""
-import argparse,hashlib,json,subprocess,sys
+import argparse,hashlib,json,subprocess,sys,random
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[3]
@@ -23,16 +23,26 @@ def validate(returned,cases,schema):
         for v in r['primary_violations']+r['factual_numeric_errors']:
             if not v['quote'] or v['quote'] not in text:raise ValueError('violation/error span not exact')
 
-def execute(cases,output,slot,batch_size,workers,source_assets=None,prompt_path=None):
+def execute(cases,output,slot,batch_size,workers,source_assets=None,prompt_path=None,group_by_episode=False,scope='DEVELOPMENT_ONLY',timeout_seconds=600):
     prompt=(prompt_path or HERE/'annotation-prompt-v1.md').read_text();schema=json.loads((HERE/'annotation-schema-v1.json').read_text())
-    config={'candidate':{'model':'gpt-6-astra','reasoning_effort':'high','transport':'codex-cli-chatgpt-login-ephemeral/v1'},'timeout_s':600}
+    config={'candidate':{'model':'gpt-6-astra','reasoning_effort':'high','transport':'codex-cli-chatgpt-login-ephemeral/v1'},'timeout_s':timeout_seconds}
     stamp=hashlib.sha256(json.dumps({'prompt':prompt,'schema':schema,'config':config},sort_keys=True).encode()).hexdigest()
     version=subprocess.run(['codex','--version'],capture_output=True,text=True,check=True).stdout.strip()
-    tasks=[(i,cases[i:i+batch_size]) for i in range(0,len(cases),batch_size)]
+    if group_by_episode:
+        groups={}
+        for case in cases:
+            identity=case['reference']['robot_visible_evidence']['configuration_id']
+            groups.setdefault(identity,[]).append(case)
+        rng=random.Random('episode-scoring-v1-'+slot)
+        batches=list(groups.values())
+        for batch in batches:rng.shuffle(batch)
+        tasks=[(i*batch_size,batch) for i,batch in enumerate(batches)]
+    else:
+        tasks=[(i,cases[i:i+batch_size]) for i in range(0,len(cases),batch_size)]
     output.mkdir(parents=True,exist_ok=True)
     def run(task):
         i,batch=task
-        payload={'scope':'DEVELOPMENT_ONLY','independent_annotation_pass':slot,'shared_exact_source_assets':source_assets or [],'cases':[{k:v for k,v in c.items() if k!='expected'} for c in batch]}
+        payload={'scope':scope,'independent_annotation_pass':slot,'shared_exact_source_assets':source_assets or [],'cases':[{k:v for k,v in c.items() if k!='expected'} for c in batch]}
         path=output/f'{slot}-batch-{i//batch_size:03d}.json'
         (output/f'{slot}-batch-{i//batch_size:03d}.request.json').write_text(json.dumps(payload,indent=2)+'\n')
         rec=call_once(output=path,payload=payload,schema=schema,prompt=prompt,freeze=config,freeze_sha256=stamp,cli_version=version,validate=lambda x:validate(x,batch,schema))
@@ -60,8 +70,8 @@ def qualify():
     summary['status']='PASS_TARGETED_DEVELOPMENT' if not summary['technical_failures'] and all(not v['errors'] for v in summary['passes'].values()) else 'DEVELOPMENT_DISAGREEMENTS_RETAINED'
     (HERE/'qualification-summary-v1.json').write_text(json.dumps(summary,indent=2)+'\n');print(json.dumps(summary,indent=2))
 if __name__=='__main__':
-    ap=argparse.ArgumentParser();ap.add_argument('--qualify',action='store_true');ap.add_argument('--cases',type=Path);ap.add_argument('--output',type=Path);ap.add_argument('--slot',default='A');ap.add_argument('--batch-size',type=int,default=4);ap.add_argument('--workers',type=int,default=2);ap.add_argument('--prompt',type=Path);a=ap.parse_args()
+    ap=argparse.ArgumentParser();ap.add_argument('--qualify',action='store_true');ap.add_argument('--cases',type=Path);ap.add_argument('--output',type=Path);ap.add_argument('--slot',default='A');ap.add_argument('--batch-size',type=int,default=4);ap.add_argument('--workers',type=int,default=2);ap.add_argument('--prompt',type=Path);ap.add_argument('--group-by-episode',action='store_true');ap.add_argument('--timeout-seconds',type=float,default=600);ap.add_argument('--scope',choices=['DEVELOPMENT_ONLY','CONFIRMATION','REPLICATION'],default='DEVELOPMENT_ONLY');a=ap.parse_args()
     if a.qualify:qualify()
     else:
         data=json.loads(a.cases.read_text())
-        execute(data['cases'],a.output,a.slot,a.batch_size,a.workers,data.get('source_assets'),a.prompt)
+        execute(data['cases'],a.output,a.slot,a.batch_size,a.workers,data.get('source_assets'),a.prompt,a.group_by_episode,a.scope,a.timeout_seconds)
