@@ -23,6 +23,17 @@ def run(plan_path, image):
     plan = json.loads(plan_path.read_text())
     if plan['phase'] != 'development' or plan['status'] != 'DEVELOPMENT_ONLY':
         raise ValueError('This qualification runner never admits confirmation')
+    # A repeated identity must fail before launching anything or writing into a
+    # prior episode folder. Earlier versions only let the container reject it,
+    # then could overwrite host receipts in that existing folder.
+    records=plan['records']
+    if not records or len({r['episode_id'] for r in records}) != len(records) or len({r['seed'] for r in records}) != len(records):
+        raise ValueError('unique development episode identities and seeds required')
+    if any((OUT/r['episode_id']).exists() for r in records):
+        raise ValueError('prior development episode identity exists; preserve its complete receipt')
+    dest = plan_path.with_name(plan_path.stem + '_qualification_run.json')
+    if dest.exists() or plan_path.with_name(plan_path.stem + '_preflight.log').exists():
+        raise ValueError('prior qualification run exists; no reissue')
     source_hashes = {str(p.relative_to(ROOT)): sha(p) for p in ACQUISITION.rglob('*') if p.is_file() and '__pycache__' not in str(p)}
     source_bank_hash = hashlib.sha256(json.dumps(source_hashes, sort_keys=True).encode()).hexdigest()
     source_bank = OUT / 'source_banks' / source_bank_hash
@@ -43,9 +54,6 @@ def run(plan_path, image):
     summary = {'schema': 'hexar-acquisition-qualification/v1', 'status': 'IN_PROGRESS', 'image_id': image_id,
                'phase': 'development_only', 'plan_sha256': sha(plan_path), 'episodes': [],
                'semantic_outputs_generated': False, 'full_acquisition_qualified': False}
-    dest = plan_path.with_name(plan_path.stem + '_qualification_run.json')
-    if dest.exists():
-        raise ValueError('Preserve prior qualification run; choose a separately versioned runner before another run')
     dest.write_text(json.dumps(summary, indent=2) + '\n')
     for ordinal, record in enumerate(r for r in plan['records'] if r['role'] == 'primary'):
         episode_id = record['episode_id']

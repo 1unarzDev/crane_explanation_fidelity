@@ -10,7 +10,7 @@ from .navigation_context import QUESTIONS, project
 from .motion_context import extend as motion_extend
 
 
-def build(events, motion_events, question_id, condition):
+def build(events, motion_events, question_id, condition, use_observed_action_window=False):
     # Historical modules use repository-local absolute imports. Resolve that
     # existing interface without editing the preserved development pipeline.
     legacy = str(Path(__file__).resolve().parents[1])
@@ -21,6 +21,25 @@ def build(events, motion_events, question_id, condition):
     packet, _, closure = build_packet(events, QUESTIONS[question_id], condition)
     packet = project(packet, question_id)
     packet = motion_extend(packet, motion_events, condition)
+    if use_observed_action_window:
+        from .action_window import odometry_summary
+        observed=odometry_summary(motion_events,condition)
+        packet['evidence']['odometry_observation']=observed['odometry_observation']
+        packet['availability']['odometry_observation']=observed['availability']
+        # Observed software boundaries are outcome context and remain present
+        # under diagnostic removal; they are not hidden scenario references.
+        window=observed['observed_action_window']
+        packet['evidence']['observed_action_window']=[] if window is None else [
+            dict(evidence_id='observed-navigation-window',**window)]
+        packet['availability']['observed_action_window']='present' if window else 'unavailable'
+        packet['source_context']['motion_window_scope']=(
+            'Odometry is restricted to recorded simulated ROS stamps within '
+            'instrumented driver observations of acceptance-to-result/disposition. '
+            'The recorded sample extent, boundary gaps and maximum internal gap '
+            'remain explicit. Driver observations are software protocol evidence, '
+            'not physical arrival. Command summaries retain their recording '
+            'scope; no receipt-clock conversion or TF transform is inferred.')
     return packet, dict(legacy_closure=closure, packet_sha256=canonical_sha256(packet),
                         motion_mask_applied_before_summary=True,
+                        observed_action_window_projection=use_observed_action_window,
                         phase='development_only',method_calls=0,judge_calls=0)

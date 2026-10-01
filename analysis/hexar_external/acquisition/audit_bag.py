@@ -34,7 +34,11 @@ def audit(folder):
             if checked != 'ok':
                 issues.append('sqlite integrity failure: ' + relative)
             connection.close()
-            hashes.append({'path': str(database), 'sha256': hashlib.file_digest(database.open('rb'), 'sha256').hexdigest()})
+            digest=hashlib.sha256()
+            with database.open('rb') as stream:
+                for chunk in iter(lambda:stream.read(1024*1024),b''):
+                    digest.update(chunk)
+            hashes.append({'path': str(database), 'sha256': digest.hexdigest()})
     runtime = folder / 'runtime.log'
     if not runtime.exists() or 'Applied Gazebo seed:' not in runtime.read_text():
         issues.append('seed application not evidenced')
@@ -52,6 +56,7 @@ def audit(folder):
     if not probe.exists() or not json.loads(probe.read_text())['qualified']:
         issues.append('post-episode clock/sensor/lifecycle probe did not pass')
     return {'schema': 'hexar-development-technical-integrity/v1', 'phase': 'development_only',
+            'audit_code_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
             'bag_integrity_passed': not issues, 'seed_applied_matches_plan': seed_applied_matches_plan, 'issues': issues, 'counts': counts, 'bag_hashes': hashes,
             'family_intervention_qualified': False, 'independent_reset_qualified': False,
             'full_acquisition_qualified': False,

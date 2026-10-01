@@ -41,6 +41,7 @@ def main():
     task_pub = node.create_publisher(String, "/task_info", 10)
     from rclpy.qos import QoSProfile, DurabilityPolicy
     goal_pub = node.create_publisher(PoseStamped, "/hexar_acquisition/navigation_goal", QoSProfile(depth=1,durability=DurabilityPolicy.TRANSIENT_LOCAL))
+    event_pub = node.create_publisher(String, '/hexar_acquisition/navigation_event', 10)
     sampling = sample(args.seed)
     start_x, start_y = sampling['start_xy']
     target_x, target_y = sampling['goal_xy']
@@ -122,8 +123,8 @@ def main():
             raise RuntimeError("technical invalidity: intervention spawn failed")
     charging.publish(Bool(data=args.family == "charging"))
     joystick.publish(Bool(data=args.family == "manual_joystick"))
-    task = {"task_id": "independently-generated-navigation", "instruction": "go to the kitchen", "task_status": "running", "task_error_msg": "",
-            "skill_sequence": [{"skill": "navigate_to_zone", "params": {"location": "kitchen"}, "status": "running", "error_msg": ""}]}
+    task = {"task_id": "independently-generated-navigation", "instruction": "navigate to the requested map-frame pose", "task_status": "running", "task_error_msg": "",
+            "skill_sequence": [{"skill": "navigate_to_zone", "params": {"location": "requested map-frame pose"}, "status": "running", "error_msg": ""}]}
     subscription_deadline = time.monotonic() + 10
     while not task_pub.get_subscription_count() and time.monotonic() < subscription_deadline:
         rclpy.spin_once(node, timeout_sec=.1)
@@ -144,11 +145,26 @@ def main():
     if not goal_pub.get_subscription_count():
         raise RuntimeError("technical invalidity: actual navigation-goal publisher has no recorder")
     goal_pub.publish(goal.pose)
+    event_receipt_deadline = time.monotonic()+10
+    while not event_pub.get_subscription_count() and time.monotonic()<event_receipt_deadline:
+        rclpy.spin_once(node,timeout_sec=.1)
+    if not event_pub.get_subscription_count():
+        raise RuntimeError('technical invalidity: observed action-event recorder unavailable')
     future = action.send_goal_async(goal)
     rclpy.spin_until_future_complete(node, future, timeout_sec=15)
     handle = future.result() if future.done() else None
     if not handle or not handle.accepted:
         raise RuntimeError("technical invalidity: goal not accepted")
+    def execution_event(event, status=None):
+        stamp = node.get_clock().now().to_msg()
+        payload = {'schema':'hexar-observed-navigation-event/v1', 'event':event,
+                   'stamp':{'sec':int(stamp.sec),'nanosec':int(stamp.nanosec)},
+                   'goal_id_hex':bytes(handle.goal_id.uuid).hex(), 'status':status,
+                   'scope':'driver observation of action protocol; not physical arrival'}
+        event_pub.publish(String(data=json.dumps(payload)))
+    # Observed acceptance/result events, never intended outcomes. Native ROS
+    # stamps share the simulated clock with recorded stamped odometry.
+    execution_event('accepted')
     result_future = handle.get_result_async()
     start = time.monotonic()
     localization_applied = False
@@ -196,10 +212,13 @@ def main():
         rclpy.spin_until_future_complete(node, result_future, timeout_sec=10)
     result = result_future.result() if result_future.done() else None
     status = None if result is None else result.status
+    execution_event('terminal_result' if result is not None else 'terminal_result_unavailable', status)
     succeeded = status == GoalStatus.STATUS_SUCCEEDED
     task["task_status"] = "succeeded" if succeeded else "failed"
     task["skill_sequence"][0]["status"] = "succeeded" if succeeded else "failed"
-    task["skill_sequence"][0]["error_msg"] = "The skill has timed out" if timed_out else ("" if succeeded else "The skill has been aborted")
+    task["skill_sequence"][0]["error_msg"] = ("The skill has timed out" if timed_out else
+        "" if succeeded else "The skill has been aborted" if status == GoalStatus.STATUS_ABORTED else
+        "Navigation action was canceled" if status == GoalStatus.STATUS_CANCELED else "Terminal action result unavailable")
     task_pub.publish(String(data=json.dumps(task)))
     node.get_logger().info(f"NavigateToZone action server returned code: {status or 0}")
     if succeeded:

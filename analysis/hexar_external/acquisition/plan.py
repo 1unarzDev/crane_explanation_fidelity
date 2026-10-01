@@ -10,17 +10,18 @@ def episode_seed(master_seed: str, phase: str, family: str, ordinal: int) -> int
     payload = json.dumps(["hexar-tiago-acquisition/v1", master_seed, phase, family, ordinal], separators=(",", ":"))
     return int.from_bytes(hashlib.sha256(payload.encode()).digest()[:4], "big")
 
-def make_plan(master_seed: str, per_family: int, reserve_per_family: int, phase: str = "development") -> dict:
+def make_plan(master_seed: str, per_family: int, reserve_per_family: int, phase: str = "development", ordinal_start: int = 0) -> dict:
     if phase != "development":
         raise ValueError("Confirmation allocation requires completed acquisition qualification and frozen protocol; development planner cannot admit it")
-    if per_family < 1 or reserve_per_family < 0:
+    if per_family < 1 or reserve_per_family < 0 or type(ordinal_start) is not int or ordinal_start < 0:
         raise ValueError("invalid cohort dimensions")
     records = []
     for family in FAMILIES:
-        for ordinal in range(per_family + reserve_per_family):
+        for offset in range(per_family + reserve_per_family):
+            ordinal = ordinal_start + offset
             seed = episode_seed(master_seed, phase, family, ordinal)
             records.append({"episode_id": f"hexar-tiago-dev-{family}-{ordinal:04d}", "family": family,
-                            "ordinal": ordinal, "seed": seed, "role": "primary" if ordinal < per_family else "reserve",
+                            "ordinal": ordinal, "seed": seed, "role": "primary" if offset < per_family else "reserve",
                             "status": "PLANNED_NOT_ACQUIRED", "independent_simulator_process": True,
                             "raw_bag_sha256": None, "semantic_outputs_generated": False})
     if len({r["seed"] for r in records}) != len(records):
@@ -35,9 +36,10 @@ if __name__ == "__main__":
     ap.add_argument("--master-seed", required=True)
     ap.add_argument("--per-family", type=int, default=1)
     ap.add_argument("--reserve-per-family", type=int, default=1)
+    ap.add_argument("--ordinal-start", type=int, default=0)
     ap.add_argument("--output", type=Path, required=True)
     args = ap.parse_args()
-    plan = make_plan(args.master_seed, args.per_family, args.reserve_per_family)
+    plan = make_plan(args.master_seed, args.per_family, args.reserve_per_family, ordinal_start=args.ordinal_start)
     with args.output.open("x") as stream:
         json.dump(plan, stream, indent=2)
         stream.write("\n")
