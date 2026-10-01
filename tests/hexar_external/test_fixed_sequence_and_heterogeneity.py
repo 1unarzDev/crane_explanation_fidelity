@@ -96,23 +96,46 @@ def test_raw_selection_first_valid_without_method_outcomes(tmp_path):
 def test_gate_requires_hash_bound_valid_recomputed_rejection(tmp_path):
     import hashlib
     def store(name,value):
-        p=tmp_path/name;p.write_text(json.dumps(value));return hashlib.sha256(p.read_bytes()).hexdigest()
+        p=tmp_path/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(value));return hashlib.sha256(p.read_bytes()).hexdigest()
     family=json.loads((ROOT/gate.FAMILY_PATH).read_text())
     family['status']='FROZEN';family['bound_alpha']=.01
     family['sequence'][0]['freeze_path']='h1freeze.json'
     fh=store('h1freeze.json',dict(status='FROZEN',decision_rule_sha256='rule',alpha=.01))
     family['sequence'][0]['freeze_sha256']=fh
-    h2h=store('h2freeze.json',dict(status='FROZEN'))
-    family['sequence'][1]['freeze_path']='h2freeze.json';family['sequence'][1]['freeze_sha256']=h2h
+    ledger=json.loads((ROOT/gate.LEDGER_PATH).read_text())
+    allocation=ledger['allocations'][1]
+    allocation.update(status='CONSUMED',campaign_id=gate.FAMILY_ID,consumed_at='fixture-time')
+    ledger['consumed_alpha']=.03
+    store(gate.LEDGER_PATH,ledger)
+    scientific={p:store(p,{'fixture':p}) for p in gate.SCIENTIFIC_FILES if not p.endswith('runtime_dependencies.json')}
+    scientific[gate.BASE_PATH+'/runtime_dependencies.json']=store(gate.BASE_PATH+'/runtime_dependencies.json',dict(complete_transitive_closure=True,files={gate.BASE_PATH+'/endpoint.json':scientific[gate.BASE_PATH+'/endpoint.json']}))
+    ph=store('h2binding.json',dict(status='FROZEN',claim_id=gate.H2,files=scientific))
+    family['sequence'][1]['protocol_binding_path']='h2binding.json';family['sequence'][1]['protocol_binding_sha256']=ph
+    familyhash=store(gate.FAMILY_PATH,family)
+    h2h=store('h2freeze.json',dict(status='FROZEN',file_hashes=scientific,sequence_document={'path':gate.FAMILY_PATH,'sha256':familyhash}))
     sh=store('cohortseal.json',dict(status='SEALED',freeze_sha256=h2h))
     result=dict(status='COMPLETED',confirmatory=True,claim_id=family['sequence'][0]['claim_id'],freeze_sha256=fh,
-                procedure_valid=True,reject_null=True,decision_rule_sha256='rule',alpha=.01)
+                procedure_valid=True,reject_null=True,decision_rule_sha256='rule',alpha=.01,
+                family_sha256=familyhash,family_bound_before_first_semantic_dispatch=True)
     rh=store('h1result.json',result)
     vh=store('reexecuted.json',dict(passed=True,reject_null=True,h1_result_sha256=rh,decision_rule_sha256='rule'))
     attestation=dict(family_id=gate.FAMILY_ID,h2_claim_id=gate.H2,h1_result_path='h1result.json',h1_result_sha256=rh,
                      h1_rule_reexecution_passed=True,h1_rule_reexecution_artifact_path='reexecuted.json',
-                     h1_rule_reexecution_artifact_sha256=vh,h2_freeze_sha256=h2h,raw_cohort_seal_path='cohortseal.json',raw_cohort_seal_sha256=sh)
+                     h1_rule_reexecution_artifact_sha256=vh,h2_freeze_path='h2freeze.json',h2_freeze_sha256=h2h,raw_cohort_seal_path='cohortseal.json',raw_cohort_seal_sha256=sh)
     assert not gate.activation_errors(tmp_path,family,attestation)
+    late=copy.deepcopy(result);late['family_bound_before_first_semantic_dispatch']=False
+    attestation['h1_result_sha256']=store('h1result.json',late)
+    assert any('prospectively bind' in e for e in gate.activation_errors(tmp_path,family,attestation))
+    badledger=copy.deepcopy(ledger);badledger['allocations'][1]['campaign_id']='other-family'
+    store(gate.LEDGER_PATH,badledger)
+    assert any('another family' in e for e in gate.activation_errors(tmp_path,family,attestation))
+    store(gate.LEDGER_PATH,ledger)
+    badbinding={'status':'FROZEN','claim_id':gate.H2,'files':{gate.BASE_PATH+'/endpoint.json':scientific[gate.BASE_PATH+'/endpoint.json']}}
+    badfamily=copy.deepcopy(family);badfamily['sequence'][1]['protocol_binding_sha256']=store('incomplete.json',badbinding);badfamily['sequence'][1]['protocol_binding_path']='incomplete.json'
+    assert any('incomplete' in e for e in gate.activation_errors(tmp_path,badfamily,attestation))
+    badfreeze=dict(status='FROZEN',file_hashes=scientific,sequence_document={'path':gate.FAMILY_PATH,'sha256':'wrong'})
+    badattestation=copy.deepcopy(attestation);badattestation['h2_freeze_sha256']=store('wrongfreeze.json',badfreeze);badattestation['h2_freeze_path']='wrongfreeze.json'
+    assert any('hash mismatch' in e for e in gate.activation_errors(tmp_path,family,badattestation))
     result['reject_null']=False;attestation['h1_result_sha256']=store('h1result.json',result)
     assert any('did not reject' in e for e in gate.activation_errors(tmp_path,family,attestation))
     (tmp_path/'h1result.json').write_text('{}')
@@ -144,3 +167,17 @@ def test_nested_blinding_metadata_is_rejected():
                method_packet={k:{} for k in blind_bank.PACKET_KEYS},reference={k:[] for k in blind_bank.REFERENCE_KEYS})
     entry['method_packet']['evidence']={'nested':[{'expected_winner':'contract'}]}
     with pytest.raises(ValueError,match='nested'):blind_bank.build([entry],b'x'*32,1)
+
+
+def test_family_rejects_wrong_assignment_and_duplicate_allocations():
+    family=json.loads((ROOT/gate.FAMILY_PATH).read_text())
+    ledger=json.loads((ROOT/gate.LEDGER_PATH).read_text())
+    ledger['allocations'][1]['campaign_id']='unrelated-claim'
+    with pytest.raises(ValueError,match='another family'):
+        gate.validate_family(family,ledger)
+    ledger['allocations'][1]['campaign_id']=None
+    with pytest.raises(ValueError,match='assigned/consumed'):
+        gate.validate_family(family,ledger,activation=True)
+    ledger['allocations'].append(copy.deepcopy(ledger['allocations'][1]))
+    with pytest.raises(ValueError,match='duplicate'):
+        gate.validate_family(family,ledger)

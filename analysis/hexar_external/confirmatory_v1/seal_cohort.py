@@ -20,7 +20,33 @@ def committed(root,path):
     return subprocess.check_output(['git','show','HEAD:'+str(Path(path).relative_to(root))],cwd=root)==Path(path).read_bytes()
 
 
-def select(attempts,per_family,families,raw_root,original_hashes):
+def verify_attempt_schedule(plan,attempts,families,maximum_per_family):
+    """Actual attempts must be prefixes of the prospectively allocated schedule."""
+    if plan.get('phase')!='confirmation' or type(maximum_per_family) is not int or maximum_per_family<1:
+        raise ValueError('frozen confirmation schedule required')
+    allocated={f:[] for f in families};actual={f:[] for f in families}
+    identities,seeds=set(),set()
+    for item in plan['records']:
+        if item['family'] not in allocated:raise ValueError('unallocated plan family')
+        if item['acquisition_id'] in identities or item['seed'] in seeds:
+            raise ValueError('duplicate planned identity/seed')
+        identities.add(item['acquisition_id']);seeds.add(item['seed'])
+        allocated[item['family']].append(item)
+    for item in attempts:
+        if item['family'] not in actual:raise ValueError('unallocated attempt family')
+        actual[item['family']].append(item)
+    fields=('acquisition_id','seed','family','attempt_order')
+    for family in families:
+        planned=sorted(allocated[family],key=lambda a:a['attempt_order'])
+        runs=sorted(actual[family],key=lambda a:a['attempt_order'])
+        if len(planned)!=maximum_per_family or [p['attempt_order'] for p in planned]!=list(range(1,maximum_per_family+1)):
+            raise ValueError('incomplete frozen within-family schedule')
+        if len(runs)>len(planned):raise ValueError('unfrozen reserve expansion')
+        if any(any(r.get(k)!=p[k] for k in fields) for r,p in zip(runs,planned)):
+            raise ValueError('actual acquisition is not the frozen ordered prefix')
+
+
+def select(attempts,per_family,families,raw_root,original_hashes,excluded_acquisitions=(),excluded_seeds=()):
     if type(per_family) is not int or per_family<=0:
         raise ValueError('positive frozen per-family N required')
     groups={f:[] for f in families}; seen={k:set() for k in ('acquisition_id','seed','raw_sha256')}
@@ -31,6 +57,8 @@ def select(attempts,per_family,families,raw_root,original_hashes):
             if value in values:raise ValueError('duplicate '+key)
             values.add(value)
         if attempt['raw_sha256'] in original_hashes:raise ValueError('original development recording reused')
+        if attempt['acquisition_id'] in excluded_acquisitions or attempt['seed'] in excluded_seeds:
+            raise ValueError('development acquisition identity/seed reused')
         raw=Path(raw_root)/attempt['raw_path']
         if digest(raw)!=attempt['raw_sha256']:raise ValueError('raw acquisition hash mismatch')
         if attempt['semantic_outputs_generated'] is not False or attempt['independent_reset'] is not True:
@@ -70,16 +98,27 @@ def main():
     cohort=json.loads((base/'cohort.json').read_text());n=json.loads((base/'fixed_n_decision.json').read_text())['final_valid_n']
     source=json.loads((ROOT/'data/hexar_external/audit/source_data_manifest.json').read_text())
     original={r['sha256'] for r in source['files'] if 'bagfiles/' in r['path']}
+    from .development_exposure import load_exclusions
+    freshness=json.loads((base/'freshness_ledger.json').read_text())
+    dev_hashes,dev_ids,dev_seeds=load_exclusions(ROOT,freshness['development_acquisition_exclusions'],require_current=True)
+    original.update(dev_hashes)
     attempts=json.loads(args.attempts.read_text())
     if attempts['phase']!='confirmation' or attempts['freeze_sha256']!=digest(frozen):
         raise ValueError('attempt schedule was not bound to acquisition freeze')
     if attempts['episode_plan_sha256']!=cohort['episode_plan_sha256']:
         raise ValueError('attempts use another acquisition schedule')
+    plan_path=ROOT/cohort['episode_plan_path']
+    if digest(plan_path)!=cohort['episode_plan_sha256'] or not committed(ROOT,plan_path):
+        raise ValueError('acquisition schedule missing, changed or uncommitted')
+    verify_attempt_schedule(json.loads(plan_path.read_text()),attempts['attempts'],cohort['families'],cohort['maximum_attempts_per_family'])
     validity=json.loads((base/'technical_validity.json').read_text())
     for attempt in attempts['attempts']:
         if attempt.get('validity_predicate_sha256')!=validity['machine_predicate_sha256']:
             raise ValueError('attempt uses unfrozen validity predicate')
-    selected,dispositions=select(attempts['attempts'],n//6,cohort['families'],ROOT,original)
+        receipt=json.loads((ROOT/attempt['validity_receipt_path']).read_text())
+        if receipt.get('freeze_sha256')!=digest(frozen):
+            raise ValueError('validity receipt does not bind acquisition freeze')
+    selected,dispositions=select(attempts['attempts'],n//6,cohort['families'],ROOT,original,dev_ids,dev_seeds)
     if len(attempts['attempts'])>cohort['maximum_attempts_per_family']*6:raise ValueError('unfrozen reserve expansion')
     for family in cohort['families']:
         if sum(a['family']==family for a in attempts['attempts'])>cohort['maximum_attempts_per_family']:raise ValueError('family reserve expanded')

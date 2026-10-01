@@ -10,13 +10,13 @@ BASE = ROOT/'manifests/hexar_external/confirmatory_v1'
 CLAIM = 'hexar-external-evidence-calibration-superiority-v1'
 REQUIRED = {
     'alpha_amendment.json': ['sequence_document','authoritative_allocation_id'],
-    'freshness_ledger.json': ['independent_exposure_attestation'],
+    'freshness_ledger.json': ['independent_exposure_attestation','development_acquisition_exclusions'],
     'battery.json': ['new_episode_query_binding','closure_audit'],
     'endpoint.json': ['name','aggregation','required_units','missing_labels'],
     'comparator_freeze.json': ['baseline.model_version','baseline.backend_identity','baseline.temperature',
         'baseline.decoding','baseline.system_instructions','contract.complete_transitive_dependency_manifest',
         'contract.configuration','execution_adapter'],
-    'cohort.json': ['records','generation_process','simulator_or_robot_version','seeds','independence_attestation','sampling_frame','episode_plan_sha256'],
+    'cohort.json': ['records','generation_process','simulator_or_robot_version','seeds','independence_attestation','sampling_frame','episode_plan_path','episode_plan_sha256'],
     'fixed_n_decision.json': ['accepted_degradation_regime','scientific_justification','final_valid_n'],
     'technical_validity.json': ['machine_predicate_implementation','machine_predicate_sha256'],
     'annotation_freeze.json': ['model_version','decoding','complete_system_instructions',
@@ -168,6 +168,17 @@ def member(data, dotted):
     return data
 
 
+def acquisition_file_hashes(base,root,scientific_binding):
+    """Seal full scientific/runtime closure; later activation and raw seal are separate."""
+    excluded={'freeze_manifest.json','post_run_results.json','h1_gate_attestation.json','raw_cohort_seal.json'}
+    files={str(p.relative_to(root)):digest(p) for p in sorted(base.glob('*.json')) if p.name not in excluded}
+    for path,expected in scientific_binding['files'].items():
+        if digest(root/path)!=expected:
+            raise ValueError('scientific file changed before acquisition freeze: '+path)
+        files[path]=expected
+    return files
+
+
 def audit(base=BASE, root=ROOT, stage="semantic"):
     if stage not in ("acquisition", "semantic"):
         raise ValueError("unknown admission stage")
@@ -205,29 +216,42 @@ def audit(base=BASE, root=ROOT, stage="semantic"):
         for collection in ('source_hashes','inherited_file_hashes'):
             for path, expected in data.get(collection, {}).items():
                 try:
-                    if digest(root/path) != expected:
+                    # A consumed H1 legitimately updates the allocation ledger
+                    # after acquisition freeze. Preserve the original audit
+                    # snapshot while validating the live ledger/gate below.
+                    if stage=='semantic' and path=='manifests/study/diagnostic-sequential-error-ledger-v2.json':
+                        main_commit=json.loads((base/'alpha_amendment.json').read_text())['main_commit']
+                        historical=subprocess.check_output(['git','show',main_commit+':'+path],cwd=root)
+                        actual=hashlib.sha256(historical).hexdigest()
+                    else:
+                        actual=digest(root/path)
+                    if actual != expected:
                         errors.append(f'{name}: changed source {path}')
-                except OSError:
+                except (OSError,KeyError,ValueError,subprocess.CalledProcessError):
                     errors.append(f'{name}: missing pinned source {path}')
     alpha = docs.get('alpha_amendment.json', {})
     try:
         shared_commit = subprocess.check_output(['git','rev-parse','main'],cwd=root,text=True).strip()
         shared_ledger = subprocess.check_output(['git','show','main:manifests/study/diagnostic-sequential-error-ledger-v2.json'],cwd=root)
         local_ledger = (root/'manifests/study/diagnostic-sequential-error-ledger-v2.json').read_bytes()
-        if shared_commit != alpha.get('main_commit') or shared_ledger != local_ledger:
+        if (stage=='acquisition' and shared_commit != alpha.get('main_commit')) or shared_ledger != local_ledger:
             errors.append('alpha: shared main ledger/state diverged; reconcile explicitly before freeze')
     except (OSError, subprocess.CalledProcessError):
         errors.append('alpha: latest shared ledger/state could not be verified')
     try:
-        from analysis.hexar_external.confirmatory_v1.gatekeeping import load_pinned, validate_family, activation_errors
+        from analysis.hexar_external.confirmatory_v1.gatekeeping import load_pinned, validate_family, validate_scientific_binding, activation_errors
         ledger=json.loads((root/'manifests/study/diagnostic-sequential-error-ledger-v2.json').read_text())
         pin=alpha['sequence_document']
         family=validate_family(load_pinned(root,pin['path'],pin['sha256']),ledger)
+        if family.get('status')=='FROZEN':
+            validate_scientific_binding(root,family)
         if stage=='semantic':
             shared_family=subprocess.check_output(['git','show','main:'+pin['path']],cwd=root,stderr=subprocess.DEVNULL)
             if hashlib.sha256(shared_family).hexdigest()!=pin['sha256']:
                 errors.append('family amendment not reconciled with authoritative main')
             attestation=json.loads((base/'h1_gate_attestation.json').read_text())
+            if attestation.get('h2_freeze_path')!=str((base/'freeze_manifest.json').relative_to(root)) or attestation.get('raw_cohort_seal_path')!=str((base/'raw_cohort_seal.json').relative_to(root)):
+                errors.append('alpha/gate: activation points to another acquisition freeze or raw seal')
             errors.extend(activation_errors(root,family,attestation))
         # Acquisition freeze requires a predeclared order, not an H1 outcome.
         # Final combined family binding still precedes H1 semantic confirmation.
@@ -238,6 +262,13 @@ def audit(base=BASE, root=ROOT, stage="semantic"):
     original_split = json.loads((root/'data/hexar_external/audit/split.json').read_text())
     exposed.update(original_split['development'] + original_split['reserved'])
     original_raw_hashes = {r['sha256'] for r in json.loads((root/'data/hexar_external/audit/source_data_manifest.json').read_text())['files'] if 'bagfiles/' in r['path']}
+    dev_ids,dev_seeds=set(),set()
+    try:
+        from analysis.hexar_external.confirmatory_v1.development_exposure import load_exclusions
+        dev_hashes,dev_ids,dev_seeds=load_exclusions(root,freshness['development_acquisition_exclusions'],require_current=True)
+        original_raw_hashes.update(dev_hashes)
+    except (OSError,KeyError,TypeError,ValueError) as exc:
+        errors.append('freshness: development acquisition exclusion inventory missing/invalid: '+str(exc))
     cohort = docs.get('cohort.json', {})
     records = cohort.get('records', [])
     if stage=='semantic':
@@ -270,7 +301,9 @@ def audit(base=BASE, root=ROOT, stage="semantic"):
                 errors.append(f'cohort: missing/duplicate {key}')
             values.add(value)
         if record.get('raw_sha256') in original_raw_hashes:
-            errors.append('cohort: reused original recording bytes')
+            errors.append('cohort: reused development recording bytes')
+        if record.get('acquisition_id') in dev_ids or record.get('seed') in dev_seeds:
+            errors.append('cohort: reused development acquisition identity/seed')
         if record.get('recording_id') in exposed or record.get('semantic_outputs_inspected') is not False:
             errors.append('cohort: exposed or exposure status unknown')
         if record.get('technical_valid') is not True or record.get('independent_reset') is not True:
@@ -338,16 +371,25 @@ def main():
         raise SystemExit(1)
     if args.freeze:
         pin=json.loads((BASE/'alpha_amendment.json').read_text())['sequence_document']
+        from analysis.hexar_external.confirmatory_v1.gatekeeping import load_pinned, validate_scientific_binding
+        family=load_pinned(ROOT,pin['path'],pin['sha256'])
+        if family.get('status')!='FROZEN' or family.get('bound_alpha')!=.01:
+            raise SystemExit('acquisition freeze requires the already-bound frozen family')
+        scientific_binding=validate_scientific_binding(ROOT,family)
         shared=subprocess.check_output(['git','show','main:'+pin['path']],cwd=ROOT,stderr=subprocess.DEVNULL)
         if hashlib.sha256(shared).hexdigest()!=pin['sha256']:
             raise SystemExit('reconcile ordered-family amendment with main before freeze')
     if args.freeze and args.stage=='semantic':
         raise SystemExit('semantic admission cannot rewrite acquisition freeze; use hash-bound H1 gate attestation')
     if args.freeze:
+        file_hashes=acquisition_file_hashes(BASE,ROOT,scientific_binding)
+        file_hashes[pin['path']]=pin['sha256']
+        h2_binding=family['sequence'][1]
+        file_hashes[h2_binding['protocol_binding_path']]=h2_binding['protocol_binding_sha256']
         manifest = dict(schema='hexar-confirmatory-freeze/v1',status='FROZEN',confirmation_authorized=False,acquisition_authorized=True,
                         semantic_n=0,audit_sha256=digest(path),
-                        file_hashes={str(p.relative_to(ROOT)):digest(p) for p in sorted(BASE.glob('*.json'))
-                                     if p.name not in ('freeze_manifest.json','post_run_results.json')},
+                        sequence_document=pin,
+                        file_hashes=file_hashes,
                         commit_requirement='commit all listed files and manifest before generation; verifier checks committed bytes')
         # Existing candidate is a plan placeholder, never an executed freeze.
         (BASE/'freeze_manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')

@@ -125,6 +125,9 @@ def test_missing_labels_cannot_help_contract_and_coverage_protected():
     assert result['primary']['unfavorable']==1
     assert result['primary']['both_failure']==0
     assert result['full_cohort_missingness_effect_bounds'][0] <= result['full_cohort_missingness_effect_bounds'][1]
+    assert result['primary']['upper_bound_complete_label_valid'] is False
+    assert 'not latent complete-label' in result['primary']['symmetric_interval_target']
+    assert 'not a population confidence interval' in result['missingness_bounds_interpretation']
 
 
 def test_current_audit_blocks_without_using_replication():

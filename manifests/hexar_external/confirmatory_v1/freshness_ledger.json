@@ -6,7 +6,12 @@
     "manifests/study/evidence-calibration-error-budget-audit-v1.json": "c0ae56b3e1f61c1aaa1d7e0bf0f65ddd64b6c7912f39bd07d5f100d7ab51d415",
     "data/hexar_external/audit/exposure_cumulative_v3.json": "4fb6ec8c4770ae8dc38f02cf38a3de4ad5f487feb300b51436935e5e6590281a",
     "data/hexar_external/audit/source_data_manifest.json": "d0e9e5f0ecf673f0be0f12ede893d5ef7e1c31dc78ffb180e780cca6decd3d7b",
-    "data/hexar_external/v3/reserved/results.json": "433a6493afcdd42261464bc01dd7d248e98c9568cc3e1562131f476aed703a11"
+    "data/hexar_external/v3/reserved/results.json": "433a6493afcdd42261464bc01dd7d248e98c9568cc3e1562131f476aed703a11",
+    "manifests/hexar_external/confirmatory_v1/development_exposure_v1.json": "0a937d615f2a0c71142ad57362374c35470d5e1e96b046c0362404acaa720fed",
+    "manifests/hexar_external/confirmatory_v1/development_exposure_v2.json": "ad53aaea9f1883bf3f9174540aface9edfa2a616fe94edcf244201deba7ae281",
+    "manifests/hexar_external/confirmatory_v1/development_exposure_v3.json": "f2ebfcfb9fc715229d1c17f9418d5a0401b2dfe2a3546afc70fee80aab2a6b8a",
+    "manifests/hexar_external/confirmatory_v1/development_exposure_v4.json": "3bd4f9b857edba49d12feb95e7ffaaea774b0c209171aadc86d5e04305ab8209",
+    "manifests/hexar_external/confirmatory_v1/development_exposure_v5.json": "4ce658b4886feb99363e781e17084420615f36b65ee5d36502b05d71168a2b9d"
   },
   "records": [
     {
@@ -140,7 +145,7 @@
   "inspected_outputs_and_caches": [
     {
       "path": "analysis/hexar_external/acquisition/episode_driver.py",
-      "sha256": "f5e6b859e05bbb3e46d005d4e58cb69251737b56c66b7bd6e6f225a8f29f876b",
+      "sha256": "d990cb2b41d07a9de1e5ed6f07417fc50cc766c81f348a2cfbac288f3c658c33",
       "classification": "DEVELOPMENT_EXPOSED_OR_INFRASTRUCTURE_NOT_CONFIRMATION"
     },
     {
@@ -149,8 +154,23 @@
       "classification": "DEVELOPMENT_EXPOSED_OR_INFRASTRUCTURE_NOT_CONFIRMATION"
     },
     {
+      "path": "analysis/hexar_external/acquisition/prepare_world.py",
+      "sha256": "887d1924ed4a46998d4b2225a658ff6e1671753820859e95e1fbcd9984fdc38b",
+      "classification": "DEVELOPMENT_EXPOSED_OR_INFRASTRUCTURE_NOT_CONFIRMATION"
+    },
+    {
       "path": "analysis/hexar_external/acquisition/probe_ros.py",
       "sha256": "8173db9d0ff60cdd716ee8bb57165ee5b7ff5d789c0291417e89b2f879e3b87f",
+      "classification": "DEVELOPMENT_EXPOSED_OR_INFRASTRUCTURE_NOT_CONFIRMATION"
+    },
+    {
+      "path": "analysis/hexar_external/acquisition/qualify.py",
+      "sha256": "87c5016509abb8c97fc02756c6108fc21815ae5ab633b8406f67354bd5de102b",
+      "classification": "DEVELOPMENT_EXPOSED_OR_INFRASTRUCTURE_NOT_CONFIRMATION"
+    },
+    {
+      "path": "analysis/hexar_external/acquisition/wait_ready.py",
+      "sha256": "f617a953cfc8b100820925f38fcc069cde05c3e232b833b7c81d8d27b588a2f5",
       "classification": "DEVELOPMENT_EXPOSED_OR_INFRASTRUCTURE_NOT_CONFIRMATION"
     },
     {
@@ -8587,5 +8607,9 @@
   "reused_scenarios_allowed": true,
   "synthetic_clones_or_masks_count_as_new_recordings": false,
   "new_cohort_provenance": "required: new independently generated TIAGo/Nav2-compatible episodes; HEXAR-derived/adapted external benchmark",
-  "independent_exposure_attestation": null
+  "independent_exposure_attestation": null,
+  "development_acquisition_exclusions": {
+    "path": "manifests/hexar_external/confirmatory_v1/development_exposure_v5.json",
+    "sha256": "4ce658b4886feb99363e781e17084420615f36b65ee5d36502b05d71168a2b9d"
+  }
 }

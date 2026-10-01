@@ -1,0 +1,49 @@
+{
+  "schema": "hexar-acquisition-development-disposition/v1",
+  "phase": "development_only",
+  "all_semantic_outputs_absent": true,
+  "candidate_passes": 5,
+  "candidate_failures": 1,
+  "records": [
+    {
+      "family": "localization",
+      "candidate_integrity_pass": true,
+      "issues": []
+    },
+    {
+      "family": "charging",
+      "candidate_integrity_pass": true,
+      "issues": []
+    },
+    {
+      "family": "dynamic_env",
+      "candidate_integrity_pass": true,
+      "issues": []
+    },
+    {
+      "family": "manual_joystick",
+      "candidate_integrity_pass": true,
+      "issues": []
+    },
+    {
+      "family": "obstacle",
+      "candidate_integrity_pass": false,
+      "issues": [
+        "missing required topic messages: /scan_raw",
+        "missing required topic messages: /task_info",
+        "missing required topic messages: /joy_priority",
+        "missing required topic messages: /power/is_charging",
+        "missing task boundary messages",
+        "missing episode seed report",
+        "post-episode clock/sensor/lifecycle probe did not pass"
+      ]
+    },
+    {
+      "family": "success",
+      "candidate_integrity_pass": true,
+      "issues": []
+    }
+  ],
+  "full_acquisition_qualified": false,
+  "followup": "v6 fresh focused engineering test of bounded reset-state measurement"
+}

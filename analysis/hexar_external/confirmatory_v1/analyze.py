@@ -43,6 +43,12 @@ def verify_freeze():
     ledger=json.loads((ROOT/'manifests/study/diagnostic-sequential-error-ledger-v2.json').read_text())
     family=validate_family(load_pinned(ROOT,pin['path'],pin['sha256']),ledger)
     attestation=json.loads((BASE/'h1_gate_attestation.json').read_text())
+    if attestation.get('h2_freeze_path')!=str((BASE/'freeze_manifest.json').relative_to(ROOT)) or attestation.get('raw_cohort_seal_path')!=str((BASE/'raw_cohort_seal.json').relative_to(ROOT)):
+        raise ValueError('activation refers to another acquisition freeze or raw cohort path')
+    if freeze.get('sequence_document')!=pin:
+        raise ValueError('acquisition freeze and alpha amendment pin different families')
+    if attestation.get('h2_freeze_sha256')!=digest(BASE/'freeze_manifest.json'):
+        raise ValueError('activation refers to another H2 freeze')
     errors=activation_errors(ROOT,family,attestation)
     if errors:raise ValueError('; '.join(errors))
     return freeze
@@ -79,6 +85,7 @@ def analyze(bundle, cohort, battery, freeze_sha256, plan=None):
     if set(jobs) != expected:
         raise ValueError('incomplete scheduled jobs; represent every technical failure explicitly')
     cells, family_cells, unresolved, endpoints = [0]*4, {}, 0, []
+    unidentified_endpoints = 0
     risk_difference_bounds = [0., 0.]
     for rid, record in byid.items():
         failures, failure_bounds = {}, {}
@@ -97,6 +104,7 @@ def analyze(bundle, cohort, battery, freeze_sha256, plan=None):
                 failure_bounds[method] = (False, True)
             else:
                 failure_bounds[method] = (False, False)
+            unidentified_endpoints += failure_bounds[method][0] != failure_bounds[method][1]
             failures[method] = failure_bounds[method][1 if method=='HX-CONTRACT' else 0]
         cl, cu = failure_bounds['HX-CONTRACT']
         pl, pu = failure_bounds['HX-PROMPT']
@@ -107,7 +115,9 @@ def analyze(bundle, cohort, battery, freeze_sha256, plan=None):
         cells[cell] += 1
         family = record['family']
         family_cells.setdefault(family,[0]*4)[cell] += 1
-        endpoints.append(dict(recording_id=rid,family=family,contract_failure=cf,prompt_failure=pf))
+        endpoints.append(dict(recording_id=rid,family=family,contract_failure=cf,prompt_failure=pf,
+                              observed_contract_failure_bounds=list(failure_bounds['HX-CONTRACT']),
+                              observed_prompt_failure_bounds=list(failure_bounds['HX-PROMPT'])))
     overall = summary(*cells)
     # Fixed balanced families need not be identically distributed. Within each
     # family the independent sampling assumption remains necessary.
@@ -124,6 +134,11 @@ def analyze(bundle, cohort, battery, freeze_sha256, plan=None):
         if plan.get('primary_procedure')!='fixed_n_paired_e' or plan.get('betting_fraction')!=.4:
             raise ValueError('unrecognized frozen primary procedure; no post-run test selection')
         overall=e_summary(*cells,fraction=plan['betting_fraction'])
+    overall.update(
+        effect_and_failure_rate_scope='least-favorable mapped agent-assessed endpoint',
+        symmetric_interval_target='population effect of the least-favorable mapped endpoint; not latent complete-label effect',
+        lower_bound_complete_label_interpretation='also conservative for complete-label population effect by episode-wise monotonicity',
+        upper_bound_complete_label_valid=not bool(unidentified_endpoints))
     primary_p=overall.get('conservative_one_sided_p',overall.get('one_sided_exact_p'))
     family_reports = {f:dict(favorable=c[0],unfavorable=c[1],both_success=c[2],both_failure=c[3],
                             n=sum(c),risk_difference=(c[0]-c[1])/sum(c)) for f,c in family_cells.items()}
@@ -131,7 +146,9 @@ def analyze(bundle, cohort, battery, freeze_sha256, plan=None):
     return dict(schema='hexar-confirmatory-results/v1',status='COMPLETED',claim_id=CLAIM,
                 confirmatory_n=len(records),primary=overall,recording_endpoints=endpoints,
                 method_recordings_with_missing_components=unresolved,conservative_missing_mapping=True,
+                method_recordings_with_unidentified_endpoint=unidentified_endpoints,
                 full_cohort_missingness_effect_bounds=risk_difference_bounds,
+                missingness_bounds_interpretation='identification bounds for the realized cohort complete-label effect; not a population confidence interval',
                 secondary_metrics=bundle.get('secondary_metrics','NOT_SUPPLIED_IN_CANDIDATE_BUNDLE'),
                 judge_pass_sensitivity=bundle.get('judge_pass_sensitivity','NOT_SUPPLIED_IN_CANDIDATE_BUNDLE'),
                 family_descriptive=family_reports,leave_one_family_out_descriptive=leave_one_out,

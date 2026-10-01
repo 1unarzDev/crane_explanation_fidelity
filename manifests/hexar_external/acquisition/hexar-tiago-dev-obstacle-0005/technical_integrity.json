@@ -1,0 +1,40 @@
+{
+  "schema": "hexar-development-technical-integrity/v1",
+  "phase": "development_only",
+  "bag_integrity_passed": false,
+  "seed_applied_matches_plan": false,
+  "issues": [
+    "missing required topic messages: /scan_raw",
+    "missing required topic messages: /task_info",
+    "missing required topic messages: /joy_priority",
+    "missing required topic messages: /power/is_charging",
+    "missing task boundary messages",
+    "missing episode seed report",
+    "post-episode clock/sensor/lifecycle probe did not pass"
+  ],
+  "counts": {
+    "/task_info": 0,
+    "/mobile_base_controller/odom": 15,
+    "/mobile_base_controller/cmd_vel_out": 29,
+    "/power/is_charging": 0,
+    "/joy_priority": 0,
+    "/amcl_pose": 1,
+    "/cmd_vel": 0,
+    "/rosout": 185,
+    "/clock": 60,
+    "/tf": 25,
+    "/scan_raw": 0,
+    "/tf_static": 1
+  },
+  "bag_hashes": [
+    {
+      "path": "manifests/hexar_external/acquisition/hexar-tiago-dev-obstacle-0005/raw/raw_0.db3",
+      "sha256": "11c1d3df73d355aa99622079bdc361d2b1cf59027a1d1a2bbf58d4b3a87e1c6b"
+    }
+  ],
+  "family_intervention_qualified": false,
+  "independent_reset_qualified": false,
+  "full_acquisition_qualified": false,
+  "navigation_success_used_as_exclusion": false,
+  "semantic_outputs_inspected": false
+}

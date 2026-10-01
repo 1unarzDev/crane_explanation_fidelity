@@ -65,7 +65,7 @@ def main():
           inspected_outputs_and_caches=assets, reused_scenarios_allowed=True,
           synthetic_clones_or_masks_count_as_new_recordings=False,
           new_cohort_provenance='required: new independently generated TIAGo/Nav2-compatible episodes; HEXAR-derived/adapted external benchmark',
-          independent_exposure_attestation=None))
+          independent_exposure_attestation=None,development_acquisition_exclusions=None))
     families = sorted({r['testcase_name'] for r in nav})
     battery = {family: [{'question_id':'q'+r['question_repetition'],'wording':r['question']}
                          for r in nav if r['testcase_name']==family and r['test_repetition']=='1'] for family in families}
@@ -76,7 +76,7 @@ def main():
                                            'analysis/hexar_external/build_references_v2.py','data/hexar_external/upstream/experiments.csv']},
           new_episode_query_binding=None, closure_audit=None))
     write('endpoint.json', dict(schema='hexar-confirmatory-endpoint/v1',status='CANDIDATE',
-          name='HEXAR_CONFIRMATORY_FAILURE', independent_unit='physical_recording',
+          name='HEXAR_CONFIRMATORY_FAILURE', independent_unit='independently generated robot episode (physical or simulated)',
           aggregation='any of nine fixed query/evidence jobs fails',
           job_failure='any unsupported/contradicted material proposition OR overlicensed diagnostic specificity OR missing required useful outcome/available bounded diagnostic unit',
           required_units='navigation outcome, explicit timeout/abort where relevant; at least one available trouble/selection diagnostic (OR group), otherwise preserve outcome; optional true extras not mandatory',
@@ -107,7 +107,7 @@ def main():
           provenance='new HEXAR-compatible independently generated episodes required',families=families,
           proposed_valid_n=None,valid_per_family=None,maximum_attempts_per_family=None,
           candidate_reserve=None,records=[],generation_process=None,simulator_or_robot_version=None,
-          seeds=None,episode_plan_sha256=None,independence_attestation=None,sampling_frame=None,
+          seeds=None,episode_plan_path=None,episode_plan_sha256=None,independence_attestation=None,sampling_frame=None,
           family_definitions={family:sorted({r['test_description'] for r in nav if r['testcase_name']==family}) for family in families},
           metadata_not_method_visible=['family','hidden_intervention','scenario_truth','original_answer','development_result']))
     write('fixed_n_decision.json', dict(schema='hexar-fixed-n/v1',status='CANDIDATE_POWER_JUSTIFICATION_REQUIRED',
