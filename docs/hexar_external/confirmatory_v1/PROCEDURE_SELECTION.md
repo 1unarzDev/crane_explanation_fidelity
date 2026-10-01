@@ -1,40 +1,21 @@
-# Paired procedure selection before confirmation
+# Prospective paired-procedure decision v2
 
-**Candidate design amendment; no freeze or alpha allocation.** No confirmatory outcomes exist.
+**Adopted for completion of prospective design; not frozen or activated.** The candidate analysis plan now uses one fixed uniform paired-mixture statistic. Final N, model binding, endpoint qualification and the combined H1→H2 scientific freeze remain incomplete. No confirmatory outputs exist; no empirical development p-value selected this procedure.
 
-The initial leading test was exact conditional McNemar. Balanced families are allowed to have different discordance directions; its common conditional-sign assumption is not established for the desired overall average-risk null. Rather than assert that assumption, the proposed primary is a fixed-N paired e-test at fraction λ=.4. It controls the one-sided .01 average-risk null under independent, potentially nonidentical episode distributions. This is a conservative finite-sample test, not exact McNemar. Its rejection probability is calculated exactly for power planning.
+The original McNemar candidate needs pooled conditional-sign assumptions not established for the equally weighted average-risk null with fixed balanced families. The subsequent fixed fraction λ=.4 candidate permits heterogeneity but has nonpositive expected log evidence for favorable discordance q≤.6028878953, a consistency blind spot for weak positive effects. Integrating a fixed uniform distribution over λ∈[0,1] preserves finite-sample control for independent nonidentical episodes without choosing a fraction from outcomes. This resolves the design limitation at a power cost in some stronger regimes. The earlier [fixed-.4 proposal](PROCEDURE_SELECTION_FIXED_04_HISTORY.md) and original McNemar calculations remain historical design sensitivity.
 
-| Discordance | Favorable conditional | Recording effect | McNemar power at 72 (its model) | E-test power at 72 | E-test power at 96 | E-test N for 90% |
-|---:|---:|---:|---:|---:|---:|---:|
-| 0.20 | 0.65 | 0.060 | 0.065 | 0.003 | 0.013 | >720 |
-| 0.20 | 0.70 | 0.080 | 0.129 | 0.009 | 0.038 | 630 |
-| 0.20 | 0.75 | 0.100 | 0.233 | 0.024 | 0.092 | 354 |
-| 0.20 | 0.80 | 0.120 | 0.379 | 0.056 | 0.193 | 234 |
-| 0.20 | 0.85 | 0.140 | 0.559 | 0.117 | 0.352 | 174 |
-| 0.35 | 0.65 | 0.105 | 0.155 | 0.036 | 0.082 | >720 |
-| 0.35 | 0.70 | 0.140 | 0.311 | 0.099 | 0.215 | 360 |
-| 0.35 | 0.75 | 0.175 | 0.523 | 0.225 | 0.435 | 204 |
-| 0.35 | 0.80 | 0.210 | 0.740 | 0.421 | 0.690 | 138 |
-| 0.35 | 0.85 | 0.245 | 0.901 | 0.655 | 0.888 | 102 |
-| 0.50 | 0.65 | 0.150 | 0.240 | 0.097 | 0.175 | >720 |
-| 0.50 | 0.70 | 0.200 | 0.469 | 0.250 | 0.418 | 252 |
-| 0.50 | 0.75 | 0.250 | 0.721 | 0.492 | 0.712 | 144 |
-| 0.50 | 0.80 | 0.300 | 0.903 | 0.751 | 0.916 | 96 |
-| 0.50 | 0.85 | 0.350 | 0.982 | 0.926 | 0.989 | 72 |
-| 0.65 | 0.65 | 0.195 | 0.345 | 0.167 | 0.251 | 564 |
-| 0.65 | 0.70 | 0.260 | 0.628 | 0.403 | 0.566 | 192 |
-| 0.65 | 0.75 | 0.325 | 0.863 | 0.697 | 0.854 | 108 |
-| 0.65 | 0.80 | 0.390 | 0.973 | 0.909 | 0.978 | 72 |
-| 0.65 | 0.85 | 0.455 | 0.998 | 0.988 | 0.999 | 54 |
+For Dᵢ = prompt failure − contract failure ∈{−1,0,1}, define
 
-At d=.50/q=.80, λ=.4 gives about 75% power at 72 and at least 90% first at balanced N=96. This supplies a 16-valid-episodes-per-family planning example if that regime is accepted; final N remains unset until acquisition qualification. A smaller recording effect can require much larger N; neither 72 nor 96 is automatically adequate. The full JSON also evaluates λ=.3/.5/.6 as prospective design sensitivity, never outcome-dependent tuning. Selecting λ=.4 and N is an a priori decision that must be bound with the protocol; no mixture, maximum over tests, or second confirmatory McNemar test is authorized.
+`E(μ) = ∫₀¹ ∏ᵢ [1 + λ(Dᵢ−μ)/(1+|μ|)] dλ`.
 
-Let Dᵢ = HX-PROMPT failure − HX-CONTRACT failure ∈ {−1,0,1}. For any fixed μ∈[−1,1] define
+For each fixed λ every factor is nonnegative. Independence and AM–GM bound its expected product by `[1+λ(average E[Dᵢ]−μ)/(1+|μ|)]ᴺ≤1` under the average-risk null. Nonnegative integration retains expectation ≤1; Markov bounds P(E(μ)≥100) by .01. This permits arbitrary fixed-family probabilities but requires independent episodes. It is one marginal level-.01 procedure in H2 of the ordered family, not best-p selection, a second alpha allocation or optional stopping. No common conditional favorable probability is required for inference.
 
-`E(μ) = ∏ᵢ [1 + λ(Dᵢ − μ)/(1 + |μ|)]`.
+At μ=0, with f favorable/u reverse pairs and m=f+u,
 
-Every factor is positive for 0<λ<1. Under H₀: average E[Dᵢ]≤μ and independence, E[E(μ)] equals the product of factor expectations. AM–GM bounds that product by `[1 + λ(average E[Dᵢ] − μ)/(1 + |μ|)]ᴺ ≤ 1`. Markov therefore bounds P(E(μ)≥100) by .01. This proof permits arbitrary fixed-family means, discordance rates and variances. It does not permit dependent episodes. Fixed N and λ are required; no optional stopping claim is made.
+`E(0) = [Σⱼ₌₀ᶠ C(m+1,j)] / [(m+1)C(m,f)]`.
 
-Report p=min(1,1/E(0)), both failure rates, the four paired cells and absolute risk difference. Each factor decreases in μ, so invert E(μ)≥100 for a one-sided 99% lower bound. Invert the sign-reversed procedure at .01 for the upper bound; the union bound gives a two-sided interval with at least 98% coverage for the conservatively mapped endpoint. The lower bound and the primary test correspond to the same conservative procedure. Full-cohort unresolved outcomes are mapped least favorably; monotonicity prevents missingness from helping CRANE. This also makes the lower bound conservative for the latent complete-label effect, but the mapped upper bound does not automatically cover that latent effect. Report realized-cohort complete-label identification bounds separately; they are not a population confidence interval. See STATISTICAL_DECISION_PRECONDITIONS.md.
+The terminal decision uses exact rational E(0)≥100, never a rounded displayed p-value. Report conservative one-sided p=min(1,1/E(0)), both failure rates, all four cells and the paired risk difference. This is not an exact binomial/McNemar p-value. Invert the same μ statistic with directed Decimal bounds for a 99% lower limit; invert the sign-reversed statistic at .01 for the upper limit. Joint coverage is ≥98% by the union bound. Unseparated numerical boundaries cannot earn rejection. The interval targets the least-favorable mapped endpoint. Its lower bound is conservative for latent complete-label effects; its upper bound need not be. Realized-cohort missingness identification bounds remain separate.
 
-The original exact-power report remains available as conditional-model planning, not the new procedure's power. The hypothesis, endpoint, methods and alpha are unchanged. Primary procedure selection is recorded before any confirmation, never chosen from its outcomes.
+The uniform density/support, superiority direction, .01 threshold, implementation and inversion rules must be scientifically bound before H1 confirmation. The analyzer admits the mixture only through that explicit plan. Historical fixed-.4 and McNemar paths remain for offline design tests; the preconfirmation audit requires this adopted configuration. No second confirmatory test is authorized.
+
+Power is not inherited from the earlier 72/96 examples. [Mixture sensitivity](MIXTURE_PROCEDURE_CANDIDATE.md) gives 114 valid episodes for 90% homogeneous power at d=.50/q=.80 and much larger N at weaker effects. [Family/missingness sensitivity](MIXTURE_FAMILY_POWER.md) shows degradation under unfavorable family covariance and unresolved outcomes, with separate invalid-run reserve calculations. Those reports preceded this decision and retain their original unselected status. Final N needs a scientifically accepted degradation regime tied to qualified acquisition and the final endpoint; it remains unset. Increasing N cannot replace measurement qualification or resolve leakage.

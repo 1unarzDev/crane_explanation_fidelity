@@ -7,10 +7,12 @@ try:
     from .audit import BASE, ROOT, CLAIM, digest
     from .statistics import summary, cp_bounds
     from .heterogeneous_statistics import summarize as e_summary
+    from .mixture_statistics import summary as mixture_summary
 except ImportError:
     from audit import BASE, ROOT, CLAIM, digest
     from statistics import summary, cp_bounds
     from analysis.hexar_external.confirmatory_v1.heterogeneous_statistics import summarize as e_summary
+    from analysis.hexar_external.confirmatory_v1.mixture_statistics import summary as mixture_summary
 
 METHODS = ('HX-CONTRACT', 'HX-PROMPT')
 
@@ -69,14 +71,19 @@ def analyze(bundle, cohort, battery, freeze_sha256, plan=None):
                 for r in records for m in METHODS
                 for q in battery['questions_by_family'][r['family']]
                 for c in battery['evidence_conditions']}
+    if 'unique_request_policy' in battery:
+        from analysis.hexar_external.confirmatory_v1.unique_analysis_binding import verify
+        verify(bundle,expected,freeze_sha256)
     jobs = {}
     for job in bundle['jobs']:
         key = (job['recording_id'],job['method'],job['question_id'],job['condition'])
-        if key not in expected or key in jobs or job.get('attempt_count') != 1:
+        if key not in expected or key in jobs or type(job.get('attempt_count')) is not int or job['attempt_count'] != 1:
             raise ValueError('extra/duplicate job or retry')
         if job.get('blind_disposition_closed') is not True:
             raise ValueError('unclosed blinded scoring disposition')
         for field in ('unsupported_material','overlicensed_specificity','missing_required_unit'):
+            if field not in job:
+                raise ValueError('every endpoint component requires an explicit disposition')
             if job.get(field) is not None and type(job[field]) is not bool:
                 raise ValueError('endpoint components must be bool or unresolved null')
         if 'response_sha256' not in job or 'scoring_artifact_sha256' not in job:
@@ -118,28 +125,49 @@ def analyze(bundle, cohort, battery, freeze_sha256, plan=None):
         endpoints.append(dict(recording_id=rid,family=family,contract_failure=cf,prompt_failure=pf,
                               observed_contract_failure_bounds=list(failure_bounds['HX-CONTRACT']),
                               observed_prompt_failure_bounds=list(failure_bounds['HX-PROMPT'])))
-    overall = summary(*cells)
-    # Fixed balanced families need not be identically distributed. Within each
-    # family the independent sampling assumption remains necessary.
-    lower, upper = 0., 0.
-    for counts in family_cells.values():
-        n = sum(counts)
-        fl, fu = cp_bounds(counts[0],n,.005/len(family_cells))
-        ul, uu = cp_bounds(counts[1],n,.005/len(family_cells))
-        lower += n/len(records)*(fl-uu)
-        upper += n/len(records)*(fu-ul)
-    overall.update(one_sided_99_lower_bound=lower,two_sided_98_interval=[lower,upper],
-                   interval_method='stratified Bonferroni marginal exact binomial; >=99% lower / >=98% symmetric coverage; IID within family; not test inversion')
-    if plan is not None:
-        if plan.get('primary_procedure')!='fixed_n_paired_e' or plan.get('betting_fraction')!=.4:
+    if plan is None:
+        # Historical offline design path. Terminal CLI always supplies its
+        # frozen plan and never calculates a second primary test alongside it.
+        overall = summary(*cells)
+        lower, upper = 0., 0.
+        for counts in family_cells.values():
+            n = sum(counts)
+            fl, fu = cp_bounds(counts[0],n,.005/len(family_cells))
+            ul, uu = cp_bounds(counts[1],n,.005/len(family_cells))
+            lower += n/len(records)*(fl-uu)
+            upper += n/len(records)*(fu-ul)
+        overall.update(one_sided_99_lower_bound=lower,two_sided_98_interval=[lower,upper],
+                       interval_method='stratified Bonferroni marginal exact binomial; >=99% lower / >=98% symmetric coverage; IID within family; not test inversion')
+    else:
+        if plan.get('primary_procedure')=='fixed_n_uniform_paired_mixture':
+            support=plan.get('mixture_support')
+            if (plan.get('alpha')!=.01 or plan.get('mixture_density')!='uniform'
+                    or type(support) is not list or support!=[0,1]
+                    or any(type(x) not in (int,float) for x in support) or 'betting_fraction' in plan):
+                raise ValueError('uniform mixture configuration must be prospectively fixed')
+            f,u,ss,ff=cells;n=sum(cells)
+            value=mixture_summary(f,u,n)
+            overall=dict(value,procedure='fixed_n_uniform_paired_mixture',
+                both_success=ss,both_failure=ff,contract_failure_rate=(u+ff)/n,
+                prompt_failure_rate=(f+ff)/n,
+                prompt_minus_contract_failure_risk_difference=(f-u)/n,
+                conservative_one_sided_p=value['one_sided_p_value'],
+                one_sided_99_lower_bound=value['one_sided_lower'],
+                two_sided_98_interval=value['two_sided_interval'],
+                interval_method='inversion of the same uniform paired mixture; directed decimal bounds; independent nonidentical pairs')
+        elif plan.get('primary_procedure')=='fixed_n_paired_e' and plan.get('betting_fraction')==.4:
+            overall=e_summary(*cells,fraction=plan['betting_fraction'])
+        else:
             raise ValueError('unrecognized frozen primary procedure; no post-run test selection')
-        overall=e_summary(*cells,fraction=plan['betting_fraction'])
     overall.update(
         effect_and_failure_rate_scope='least-favorable mapped agent-assessed endpoint',
         symmetric_interval_target='population effect of the least-favorable mapped endpoint; not latent complete-label effect',
         lower_bound_complete_label_interpretation='also conservative for complete-label population effect by episode-wise monotonicity',
         upper_bound_complete_label_valid=not bool(unidentified_endpoints))
     primary_p=overall.get('conservative_one_sided_p',overall.get('one_sided_exact_p'))
+    # A printed float p can round onto .01 from above. The mixture decision is
+    # made with its exact rational comparison, never that rounded display.
+    rejects=overall.get('reject',primary_p<=.01)
     family_reports = {f:dict(favorable=c[0],unfavorable=c[1],both_success=c[2],both_failure=c[3],
                             n=sum(c),risk_difference=(c[0]-c[1])/sum(c)) for f,c in family_cells.items()}
     leave_one_out = {f:((cells[0]-c[0])-(cells[1]-c[1]))/(len(records)-sum(c)) for f,c in family_cells.items()}
@@ -152,11 +180,11 @@ def analyze(bundle, cohort, battery, freeze_sha256, plan=None):
                 secondary_metrics=bundle.get('secondary_metrics','NOT_SUPPLIED_IN_CANDIDATE_BUNDLE'),
                 judge_pass_sensitivity=bundle.get('judge_pass_sensitivity','NOT_SUPPLIED_IN_CANDIDATE_BUNDLE'),
                 family_descriptive=family_reports,leave_one_family_out_descriptive=leave_one_out,
-                superiority=primary_p<=.01,
+                superiority=rejects,
                 interval_and_test_disagreement_possible=plan is None,
-                claim=('On a prospectively defined HEXAR-derived external evidence-calibration evaluation, CRANE contracts significantly outperformed a strengthened HEXAR-derived explanation baseline on the frozen whole-recording endpoint.'
-                       if primary_p<=.01 else
-                       'The prospective HEXAR-derived evidence-calibration comparison did not establish CRANE superiority at one-sided alpha .01.'),
+                claim=('On a prospectively defined adapted simulated HEXAR external benchmark, CRANE contracts significantly outperformed a strengthened HEXAR-derived explanation baseline on the frozen agent-assessed whole-episode evidence-calibration endpoint.'
+                       if rejects else
+                       'The prospective adapted simulated HEXAR evidence-calibration comparison did not establish CRANE superiority on the agent-assessed whole-episode endpoint at one-sided alpha .01.'),
                 original_hexar_navigation_accuracy='49/54 separately; not this endpoint')
 
 

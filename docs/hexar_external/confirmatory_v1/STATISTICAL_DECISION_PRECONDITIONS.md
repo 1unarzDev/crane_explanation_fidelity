@@ -22,7 +22,7 @@ For independent, potentially nonidentical D_i in [−1,1], fixed N and fixed 0<�
 
 `E(μ)=Π_i [1+λ(D_i−μ)/(1+|μ|)]`
 
-has expectation ≤1 under average E[D_i]≤μ by independence and AM–GM. Markov gives a level-.01 test rejecting when E(0)≥100. Thus this procedure matches the balanced heterogeneous average-risk null without common conditional signs. `min(1,1/E(0))` is a conservative marginal p-value; exact enumeration of its power does not make it an exact McNemar test. The current λ=.4 remains a prospective candidate and cannot be adjusted after confirmation.
+has expectation ≤1 under average E[D_i]≤μ by independence and AM–GM. Markov gives a level-.01 test rejecting when E(0)≥100. Thus this procedure matches the balanced heterogeneous average-risk null without common conditional signs. `min(1,1/E(0))` is a conservative marginal p-value; exact enumeration of its power does not make it exact McNemar. The subsequent v2 procedure decision adopts a fixed uniform integral over λ∈[0,1], retaining the same expectation bound by nonnegative integration and resolving the fixed-.4 weak-effect consistency limitation. The old product is historical design sensitivity; neither fraction nor mixing density may be chosen after confirmation.
 
 Shared simulator resets, reused random streams, adaptive scenario choice or outcome-dependent judging can invalidate episode independence. Freeze episode-level randomization and isolated generation/scoring; qualify the acquisition process before accepting this proof's assumptions. Dependence within one episode's nine jobs is allowed. A fixed evaluator shared across episodes is not automatically dependence, but common stochastic batches or adaptive judge state require explicit justification. This test has no optional-stopping guarantee for the average-only null.
 
@@ -36,6 +36,6 @@ Unresolved components should retain the declared least-favorable mapping: CRANE 
 
 ## Prospective decision
 
-After acquisition and rich endpoint qualification, prefer the fixed-N e-procedure if balanced quotas and a heterogeneous average-risk claim remain the scientific design. Retain exact McNemar as a candidate only if a prospectively justified common-sign/IID acquisition model makes its null match that claim. Neither method nor sample size is finalized here. Power must model whole-episode paired probabilities and plausible family heterogeneity, invalid acquisition rates and retained semantic failures. Choose N and any λ before the frozen family starts semantic confirmation. Family sensitivities remain descriptive.
+The v2 procedure decision adopts the uniform paired mixture for completing the balanced heterogeneous design. Scientific freeze and N remain incomplete; the selection does not activate confirmation. McNemar and fixed-.4 calculations remain historical sensitivity. Power must model episode pairs, family heterogeneity, invalid acquisition rates and retained semantic failures. Bind N and the fixed mixture before the ordered family starts confirmation. Family sensitivities remain descriptive.
 
 Current code additionally needs care in reporting missingness: its least-favorable mapped point estimate and e-interval should be explicitly labeled, alongside complete-label effect identification bounds. Do not label that symmetric interval as latent true-support uncertainty if labels remain unresolved.

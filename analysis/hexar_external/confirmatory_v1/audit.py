@@ -337,6 +337,20 @@ def audit(base=BASE, root=ROOT, stage="semantic"):
         errors.append('analysis: test-selection/sidedness prohibition missing')
     if plan.get('alpha') != .01:
         errors.append('analysis: alpha/sidedness not prospectively .01')
+    if (plan.get('primary_procedure')!='fixed_n_uniform_paired_mixture'
+            or plan.get('mixture_density')!='uniform' or plan.get('mixture_support')!=[0,1]
+            or 'betting_fraction' in plan):
+        errors.append('analysis: adopted uniform-mixture configuration missing/changed')
+    for key in ('procedure_implementation','selection_document'):
+        try:
+            if key=='procedure_implementation':
+                pin=plan[key]
+            else:
+                pin={'path':plan[key],'sha256':plan[key+'_sha256']}
+            if digest(root/pin['path'])!=pin['sha256']:
+                raise ValueError('hash mismatch')
+        except (OSError,KeyError,TypeError,ValueError) as exc:
+            errors.append('analysis: adopted '+key+' binding missing/invalid: '+str(exc))
     if fixed.get('no_optional_stopping') is not True:
         errors.append('analysis: fixed-N stopping policy missing')
     # A plan's content hashes must cover every runtime dependency, not just the

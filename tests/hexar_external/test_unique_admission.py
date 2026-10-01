@@ -16,7 +16,7 @@ def fixture(tmp_path):
         path.write_text(value)
         return {'path': name, 'sha256': hashlib.sha256(path.read_bytes()).hexdigest()}
     bindings = {key: pin(key, key) for key in
-                ('implementation', 'scientific_source', 'expansion_implementation', 'execution_adapter')}
+                ('implementation', 'scientific_source', 'expansion_implementation', 'analysis_binding_implementation', 'execution_adapter')}
     report = dict(schema='hexar-unique-adapter-qualification/v1', status='QUALIFIED',
                   bindings=bindings, scenarios=dict.fromkeys(SCENARIOS, True),
                   confirmatory_outputs_generated=0)

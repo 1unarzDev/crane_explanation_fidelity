@@ -5,16 +5,15 @@
   "direction": "HX-CONTRACT success / HX-PROMPT failure favorable",
   "null": "CRANE no better on frozen recording endpoint",
   "alternative": "CRANE superior",
-  "test": "fixed-N paired e-test, fixed fraction .4, conservative one-sided p <= .01",
-  "primary_procedure": "fixed_n_paired_e",
-  "betting_fraction": 0.4,
+  "test": "fixed-N uniform paired mixture; exact rational E(0)>=100, conservative one-sided p<=.01",
+  "primary_procedure": "fixed_n_uniform_paired_mixture",
   "selection_document": "docs/hexar_external/confirmatory_v1/PROCEDURE_SELECTION.md",
-  "selection_document_sha256": "aaaa842a043b93c2a9b43c5ca92e4825bcd8653c0927c96670f22c1f60d3fd5a",
+  "selection_document_sha256": "f1916c3aa24c3c5f454e5c576ccc3dc08a7e4e076e48ecbc2f4b6efb1db7f369",
   "assumptions": "independent episode pairs, arbitrary fixed-family mean/variance heterogeneity permitted; overall average expected prompt-minus-contract failure difference <=0 under null; no common discordance q assumption",
   "assumption_justification": null,
   "interval_assumption_justification": null,
   "effect": "prompt failure minus contract failure risk difference",
-  "intervals": "invert the same paired e-test for 99% lower bound; sign-reversed 99% upper bound gives joint >=98% two-sided coverage; independent nonidentical pairs permitted",
+  "intervals": "invert same uniform paired mixture with directed Decimal bounds for 99% lower and sign-reversed 99% upper; joint >=98% coverage",
   "family_sensitivity": "all six four-cell counts, family effects and leave-one-family-out effects; descriptive, no family alpha",
   "secondary": [
     "useful supported answer rate",
@@ -28,5 +27,14 @@
     "runtime/cost"
   ],
   "no_statistic_selection": true,
-  "no_test_sidedness_switch": true
+  "no_test_sidedness_switch": true,
+  "mixture_density": "uniform",
+  "mixture_support": [
+    0,
+    1
+  ],
+  "procedure_implementation": {
+    "path": "analysis/hexar_external/confirmatory_v1/mixture_statistics.py",
+    "sha256": "695cfe142a46dec6a8806380e640f2daef2b6d354049746d3ed93f214e91625e"
+  }
 }

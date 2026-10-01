@@ -5,6 +5,140 @@
     "charging": [
       {
         "question_id": "q1",
+        "wording": "What happened during the navigation task?"
+      },
+      {
+        "question_id": "q2",
+        "wording": "What does the available evidence show about the robot's navigation or motion?"
+      },
+      {
+        "question_id": "q3",
+        "wording": "Why did navigation proceed or end this way, and what remains uncertain?"
+      }
+    ],
+    "dynamic_env": [
+      {
+        "question_id": "q1",
+        "wording": "What happened during the navigation task?"
+      },
+      {
+        "question_id": "q2",
+        "wording": "What does the available evidence show about the robot's navigation or motion?"
+      },
+      {
+        "question_id": "q3",
+        "wording": "Why did navigation proceed or end this way, and what remains uncertain?"
+      }
+    ],
+    "localization": [
+      {
+        "question_id": "q1",
+        "wording": "What happened during the navigation task?"
+      },
+      {
+        "question_id": "q2",
+        "wording": "What does the available evidence show about the robot's navigation or motion?"
+      },
+      {
+        "question_id": "q3",
+        "wording": "Why did navigation proceed or end this way, and what remains uncertain?"
+      }
+    ],
+    "manual_joystick": [
+      {
+        "question_id": "q1",
+        "wording": "What happened during the navigation task?"
+      },
+      {
+        "question_id": "q2",
+        "wording": "What does the available evidence show about the robot's navigation or motion?"
+      },
+      {
+        "question_id": "q3",
+        "wording": "Why did navigation proceed or end this way, and what remains uncertain?"
+      }
+    ],
+    "obstacle": [
+      {
+        "question_id": "q1",
+        "wording": "What happened during the navigation task?"
+      },
+      {
+        "question_id": "q2",
+        "wording": "What does the available evidence show about the robot's navigation or motion?"
+      },
+      {
+        "question_id": "q3",
+        "wording": "Why did navigation proceed or end this way, and what remains uncertain?"
+      }
+    ],
+    "success": [
+      {
+        "question_id": "q1",
+        "wording": "What happened during the navigation task?"
+      },
+      {
+        "question_id": "q2",
+        "wording": "What does the available evidence show about the robot's navigation or motion?"
+      },
+      {
+        "question_id": "q3",
+        "wording": "Why did navigation proceed or end this way, and what remains uncertain?"
+      }
+    ]
+  },
+  "evidence_conditions": [
+    "intact",
+    "irrelevant_removal",
+    "diagnostic_removal"
+  ],
+  "answers_per_recording_per_method": 9,
+  "masks": "navigation_packets.build: universal legacy study_v2.transform before replay, plus motion/controller diagnostic removal before summaries; identical intact/irrelevant aliases share one request",
+  "source_hashes": {
+    "analysis/hexar_external/study_v2.py": "0d05fc607202742e30fb1f5b8b14bc26326de7e08ec67c717c5bf99e9421b67c",
+    "analysis/hexar_external/replay.py": "fac6bf3fc12dc5579568dc9f5889f17d03ac97432d009b81179135ba1cfac6b2",
+    "analysis/hexar_external/build_references_v2.py": "877f18f86217d8c791220167e61ba2037c96b9ae0c57484de7deff20c96c697e",
+    "data/hexar_external/upstream/experiments.csv": "c21833211c28667c83ad0e074d94cc9a2dd6c64281ace981e747bd1c556422cf",
+    "analysis/hexar_external/acquisition/navigation_context.py": "258bb35c4d0c7a687e1dd649ceb893d642d91fb18f1ead5b73742bfb3e200852",
+    "analysis/hexar_external/acquisition/navigation_packets.py": "8cf11d1d6d1007da7643398fc3d0ef9e1921aa7d8bf37bfa4904ae1d22090b69",
+    "manifests/hexar_external/acquisition/controller_boundary_qualification_v13.json": "5d49a4777d821ae3877ed3ef399e2a026a75a58ed6a47b8e017bdf2be214fceb"
+  },
+  "new_episode_query_binding": {
+    "status": "DEVELOPMENT_INTERFACE_QUALIFIED_NOT_FROZEN",
+    "same_queries_across_all_six_families": true,
+    "source_hashes": {
+      "analysis/hexar_external/acquisition/navigation_context.py": "258bb35c4d0c7a687e1dd649ceb893d642d91fb18f1ead5b73742bfb3e200852",
+      "analysis/hexar_external/acquisition/navigation_packets.py": "8cf11d1d6d1007da7643398fc3d0ef9e1921aa7d8bf37bfa4904ae1d22090b69",
+      "manifests/hexar_external/acquisition/controller_boundary_qualification_v13.json": "5d49a4777d821ae3877ed3ef399e2a026a75a58ed6a47b8e017bdf2be214fceb"
+    },
+    "rationale": "Navigation-only no-arm task; preserve outcome, evidence and causal-uncertainty functions without presupposing delivery, failure or slowness. Original physical HEXAR queries remain archived separately."
+  },
+  "closure_audit": {
+    "status": "DEVELOPMENT_PACKET_CLOSURE_PASSED_NOT_FROZEN",
+    "path": "manifests/hexar_external/acquisition/controller_boundary_qualification_v13.json",
+    "sha256": "5d49a4777d821ae3877ed3ef399e2a026a75a58ed6a47b8e017bdf2be214fceb",
+    "scope": "54 packets from six development episodes; intact/irrelevant equality and masked controller-context removal. Full final runtime closure and adapter qualification remain required."
+  },
+  "unique_request_policy": {
+    "status": "ADOPTED_FOR_DEVELOPMENT_NOT_FROZEN",
+    "implementation": "analysis/hexar_external/confirmatory_v1/unique_request_plan.py",
+    "implementation_sha256": "950876d43af9e2e92ce2984f75f31bc403fefe9cf0afd60f9319a5c1c27e8e1d",
+    "rule": "Generate once per unique complete method request within each episode; identical intact/irrelevant aliases share output, failure and evaluation; no cross-episode or cross-method reuse.",
+    "expected_unique_requests_per_episode_per_method": 6,
+    "battery_cells_per_episode_per_method": 9,
+    "scientific_source": "docs/hexar_external/confirmatory_v1/BATTERY_DUPLICATION_FAIRNESS.md",
+    "scientific_source_sha256": "46c9bd39fc879623f2290f4f812e40329bb57cdcec5c00bff452f66204edd421",
+    "execution_adapter_qualified": false,
+    "expansion_implementation": "analysis/hexar_external/confirmatory_v1/unique_result_expansion.py",
+    "expansion_implementation_sha256": "8b0611d7767513942f021aee71c2ccde121f255415a8ff1ab032d0541ce1a16d",
+    "qualification": null,
+    "analysis_binding_implementation": "analysis/hexar_external/confirmatory_v1/unique_analysis_binding.py",
+    "analysis_binding_implementation_sha256": "2fa75b6d2c8c791150afee47e1b4cdb3bbae860da580518e6d362a68dbef2dd9"
+  },
+  "historical_questions_by_family": {
+    "charging": [
+      {
+        "question_id": "q1",
         "wording": "Why didn't you bring it?"
       },
       {
@@ -86,34 +220,5 @@
         "wording": "What made you go slow in the task?"
       }
     ]
-  },
-  "evidence_conditions": [
-    "intact",
-    "irrelevant_removal",
-    "diagnostic_removal"
-  ],
-  "answers_per_recording_per_method": 9,
-  "masks": "universal pre-derivation study_v2.transform, new clean replay each condition",
-  "source_hashes": {
-    "analysis/hexar_external/study_v2.py": "0d05fc607202742e30fb1f5b8b14bc26326de7e08ec67c717c5bf99e9421b67c",
-    "analysis/hexar_external/replay.py": "fac6bf3fc12dc5579568dc9f5889f17d03ac97432d009b81179135ba1cfac6b2",
-    "analysis/hexar_external/build_references_v2.py": "877f18f86217d8c791220167e61ba2037c96b9ae0c57484de7deff20c96c697e",
-    "data/hexar_external/upstream/experiments.csv": "c21833211c28667c83ad0e074d94cc9a2dd6c64281ace981e747bd1c556422cf"
-  },
-  "new_episode_query_binding": null,
-  "closure_audit": null,
-  "unique_request_policy": {
-    "status": "ADOPTED_FOR_DEVELOPMENT_NOT_FROZEN",
-    "implementation": "analysis/hexar_external/confirmatory_v1/unique_request_plan.py",
-    "implementation_sha256": "950876d43af9e2e92ce2984f75f31bc403fefe9cf0afd60f9319a5c1c27e8e1d",
-    "rule": "Generate once per unique complete method request within each episode; identical intact/irrelevant aliases share output, failure and evaluation; no cross-episode or cross-method reuse.",
-    "expected_unique_requests_per_episode_per_method": 6,
-    "battery_cells_per_episode_per_method": 9,
-    "scientific_source": "docs/hexar_external/confirmatory_v1/BATTERY_DUPLICATION_FAIRNESS.md",
-    "scientific_source_sha256": "0a868ebd2e1ad6e349df86961e1dac7ed22c27315b737055674513b975eed1cd",
-    "execution_adapter_qualified": false,
-    "expansion_implementation": "analysis/hexar_external/confirmatory_v1/unique_result_expansion.py",
-    "expansion_implementation_sha256": "8b0611d7767513942f021aee71c2ccde121f255415a8ff1ab032d0541ce1a16d",
-    "qualification": null
   }
 }

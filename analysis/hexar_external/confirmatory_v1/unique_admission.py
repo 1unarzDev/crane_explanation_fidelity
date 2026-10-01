@@ -43,7 +43,7 @@ def admission_errors(docs, root):
             or policy['battery_cells_per_episode_per_method'] != 9):
         errors.append('unique requests: expected six unique requests and nine battery cells')
     pins = {}
-    for name in ('implementation', 'scientific_source', 'expansion_implementation'):
+    for name in ('implementation', 'scientific_source', 'expansion_implementation', 'analysis_binding_implementation'):
         try:
             pins[name] = {'path': policy[name], 'sha256': policy[name + '_sha256']}
             _pinned(root, pins[name])
