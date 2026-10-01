@@ -157,7 +157,7 @@ class RawSchedule:
             raise ValueError('unallocated raw attempt directory')
         return attempts, valid, next_order, pending
 
-    def advance(self, capture, technical_review):
+    def advance(self, capture, technical_review, recover=None):
         """Run one outcome-blind attempt, or close a crashed claim without launch."""
         with (self.root/'acquisition.lock').open('a+b') as lock:
             try:
@@ -165,11 +165,11 @@ class RawSchedule:
             except BlockingIOError as exc:
                 raise ValueError('raw acquisition dispatcher still active; no crash disposition') from exc
             try:
-                return self._advance(capture, technical_review)
+                return self._advance(capture, technical_review, recover)
             finally:
                 fcntl.flock(lock.fileno(), fcntl.LOCK_UN)
 
-    def _advance(self, capture, technical_review):
+    def _advance(self, capture, technical_review, recover=None):
         self.authorize()
         if read(self.root/'schedule.json')!=self.plan or read(self.root/'binding.json')!=self.identity:
             raise ValueError('raw execution schedule/binding changed')
@@ -177,6 +177,10 @@ class RawSchedule:
         if pending is not None:
             record = pending
             folder = self.folder(record)
+            # Recovery must share the dispatch lock: another live dispatcher
+            # may still own the robot/native reader for this pending claim.
+            if recover is not None:
+                recover(copy.deepcopy(record), folder)
             # A deterministic recovery-review adapter may later be qualified.
             # V1 retains every byte and conservatively closes an interrupted
             # attempt as indeterminate without rerunning physics or review.

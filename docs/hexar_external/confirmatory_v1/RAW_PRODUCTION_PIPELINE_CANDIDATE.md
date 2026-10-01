@@ -1,0 +1,19 @@
+# Integrated raw acquisition through sealing candidate
+
+`raw_cohort_pipeline_v1.py` wires committed acquisition admission, the finite six-family schedule, one-launch runtime, read-only native review, explicit interruption handling, complete attempt export and an immutable raw seal. It has no explanation or judge backend. The **current study is unbound and this command cannot launch**:
+
+```bash
+python -m analysis.hexar_external.acquisition.raw_cohort_pipeline_v1
+```
+
+Admission requires a committed passed prospective acquisition audit and FROZEN scientific/family/acquisition file set; the same family must be on main, with the live authoritative ledger reconciled. It checks full H2 scientific/runtime hashes, the exact N/family/reserve/seed schedule, final source bank/image/configuration, whole adapter qualification, each running critical implementation and current development/original HEXAR exclusions. H1 semantic outcomes are never opened or required for raw acquisition. Later legitimate H1 ledger consumption is validated separately without changing science or borrowing replication.
+
+The runtime writes its admitted host claim before dispatch, uses the same qualified physics/sampler/reset/family/shell with raw-phase provenance, and requests an exclusive Docker CID file. Cleanup is restricted to that exact created container ID; an existing name is not stopped or reused. Captured stderr/stdout, original files and source/image/network/domain provenance remain retained. Failed launches without a container/bag are explicit invalid attempts, not fabricated fresh recordings. No logical episode can launch twice.
+
+The native reader mounts original capture read-only, creates only scratch compatibility streams, applies the same task-window clock/seed/schema/count/extraction rules, and builds identical fixed query/evidence/reference projections. It has one reader claim and no quality repair. The reviewer exports a raw-inventory archive and hash-bound native validity receipt for every closed attempt; no navigation success, action duration or semantic answer determines exclusion. A valid selection requires an actual bag and measured independent reset.
+
+A host-interrupted scheduler claim receives the previously declared conservative invalidity disposition. Recovery may stop only recorded owned robot/reader CIDs, retain partial original files, and write a separate interrupted inventory/validity/export. Earlier native or normal export artifacts are never overwritten. Neither robot nor native transport is replayed. Its disposition consumes only the next finite within-family technical reserve. A completed raw manifest can be verified unchanged when resuming publication; an existing seal forbids reacquisition.
+
+Sealing verifies allocated prefixes, actual original/development bag bytes, distinct recording content, all native/attempt bindings and exact valid family quotas. Exhaustion yields an immutable no-cohort result. The seal labels `raw_sha256` as the compatibility inventory-object hash and reports actual bag hashes separately; questions/masks/calls do not increase episode N. Semantic confirmation remains gated by the separate frozen H1 rejection procedure.
+
+Qualification binds a runtime descriptor **excluding its own qualification pointer**; the completed descriptor then pins that report. This avoids reciprocal config/report hashes. Every adapter source and report must also be in the scientific freeze. Current `raw_runtime_candidate_v1.json` remains **CANDIDATE_NOT_QUALIFIED**. Production control-flow/positive-admission/end-to-end qualification and complete transitive closure still require completion; the passed six-episode native/physics scopes alone do not fill that status. Provider/version/system/decoding, final N, whole-endpoint adapter and H1/H2 freezes remain unbound. This implementation is a candidate executable path, not confirmation permission or a collected raw cohort.

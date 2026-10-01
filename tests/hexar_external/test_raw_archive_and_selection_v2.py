@@ -162,3 +162,12 @@ def test_failed_sqlite_sidecars_are_retained_without_fabricated_bag(tmp_path):
     assert value['bag_missing'] and value['bag_sha256s']==[]
     assert any(f['path'].endswith('.db3-wal') for f in value['artifacts'])
     assert verify(tmp_path,archive.name,digest(archive),FREEZE,r,IMAGE)==value
+
+
+def test_no_created_container_is_retained_invalid_and_never_selected_valid(tmp_path):
+    r,folder,pin=fixture(tmp_path,with_bag=False)
+    p=tmp_path/pin['path'];v=json.loads(p.read_text());v['fresh_container']=False
+    p.write_text(json.dumps(v));pin['sha256']=digest(p)
+    archive=tmp_path/'archive.json';value=create(tmp_path,archive,folder,r,FREEZE,pin,IMAGE)
+    assert value['fresh_container'] is False and value['bag_missing']
+    assert verify(tmp_path,archive.name,digest(archive),FREEZE,r,IMAGE)==value

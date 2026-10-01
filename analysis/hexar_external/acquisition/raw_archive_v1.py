@@ -68,7 +68,7 @@ def create(root, destination, folder, allocated, freeze_sha256, capture_pin,
             or receipt.get('family_hidden')!=allocated['family']
             or receipt.get('acquisition_phase')!='raw_confirmation'
             or receipt.get('acquisition_binding_sha256')!=freeze_sha256
-            or receipt.get('image_id')!=expected_image or receipt.get('fresh_container') is not True
+            or receipt.get('image_id')!=expected_image or type(receipt.get('fresh_container')) is not bool
             or receipt.get('method_outputs_generated') is not False
             or receipt.get('judge_labels_generated') is not False):
         raise ValueError('original raw capture provenance is not frozen untouched confirmation')
@@ -86,7 +86,7 @@ def create(root, destination, folder, allocated, freeze_sha256, capture_pin,
     value=dict(schema='hexar-raw-attempt-archive/v1',phase='raw_confirmation',freeze_sha256=freeze_sha256,
         allocated=allocated,capture_provenance=capture_pin,image_id=expected_image,
         folder=str(folder.relative_to(root)),artifacts=files,bag_sha256s=bags,
-        bag_missing=not bool(bags),semantic_outputs_generated=False,
+        bag_missing=not bool(bags),fresh_container=receipt['fresh_container'],semantic_outputs_generated=False,
         independently_validated=False,scope='Raw packaging only; every attempt needs frozen native technical disposition.')
     exclusive_json(destination,value)
     return value
@@ -109,10 +109,12 @@ def verify(root,path,expected_sha256,freeze_sha256,allocated,expected_image,excl
     receipt=read(receipt_path)
     if (receipt.get('episode_id')!=allocated['episode_id'] or receipt.get('seed_hidden')!=allocated['seed']
             or receipt.get('family_hidden')!=allocated['family'] or receipt.get('image_id')!=expected_image
-            or receipt.get('fresh_container') is not True or receipt.get('acquisition_phase')!='raw_confirmation'
+            or type(receipt.get('fresh_container')) is not bool or receipt.get('acquisition_phase')!='raw_confirmation'
             or receipt.get('acquisition_binding_sha256')!=freeze_sha256
             or receipt.get('method_outputs_generated') is not False or receipt.get('judge_labels_generated') is not False):
         raise ValueError('capture provenance violates raw confirmation binding')
+    if archive.get('fresh_container')!=receipt['fresh_container']:
+        raise ValueError('original container presence differs from raw archive')
     bags=[r['sha256'] for r in archive['artifacts'] if Path(r['path']).suffix in ('.db3','.mcap')]
     if archive.get('bag_sha256s')!=bags or archive.get('bag_missing')!= (not bool(bags)):
         raise ValueError('raw bag presence/hash inventory differs')

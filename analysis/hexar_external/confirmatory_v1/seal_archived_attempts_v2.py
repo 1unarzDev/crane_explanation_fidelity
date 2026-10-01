@@ -44,7 +44,7 @@ def select(root, plan, attempts, quota, maximum_per_family, families,
                 or type(receipt.get('technical_valid')) is not bool or type(receipt.get('reasons')) is not list):
             raise ValueError('frozen outcome-blind native validity binding required')
         if receipt['technical_valid']:
-            if (archive['bag_missing'] or receipt.get('independent_reset_measured') is not True
+            if (archive['bag_missing'] or archive['fresh_container'] is not True or receipt.get('independent_reset_measured') is not True
                     or receipt['reasons']):
                 raise ValueError('valid recording must have actual bag and measured independent reset')
             names={Path(f['path']).relative_to(archive['folder']).as_posix() for f in archive['artifacts']}
