@@ -1,0 +1,5208 @@
+{
+  "answer": "The navigation action reported success. The specified docking dwell failed: at observed time 26.999 s, position error was 0.4001 m, exceeding the 0.4000 m bound. From the result-adjacent observation to the last retained dwell sample, radial error increased by 0.1477 m. The remaining position margin at the result-adjacent observation was 0.0343 m. These observations do not identify the physical cause of motion; waves, current, wind, and actuation remain unresolved. The task requires no prohibited hull contact during that dwell; the contact evidence does not establish whether this requirement held.",
+  "certificate": {
+    "action": {
+      "event_time_support": "recorded-client-receipt",
+      "identity": "2b8f24ba59f045ebae15ebe856ebd89a",
+      "name": "/follow_path",
+      "receipt_clock": "fixture-monotonic",
+      "receipt_wall_seconds": 24.517652582988376,
+      "status": "succeeded"
+    },
+    "component_support": {
+      "contact": "unknown",
+      "heading": "true",
+      "hull": "true",
+      "position": "false",
+      "speed": "false",
+      "yaw_rate": "true"
+    },
+    "contact_evidence": {
+      "clock": null,
+      "completeness_basis": null,
+      "coverage_s": null,
+      "interval_s": [
+        25.519306045,
+        30.519306045
+      ],
+      "policy": {
+        "absence_support": "aligned-complete-prohibited-contact-event-stream",
+        "count_semantics": "observed-prohibited-contact-events",
+        "interval": "declared-dwell",
+        "prohibited_contacts": "any-hull-contact-with-external-objects",
+        "requirement": "absence-of-prohibited-contact"
+      },
+      "reason": "contact-evidence-unavailable",
+      "sensor_identity": null,
+      "support": "unknown",
+      "violation_events": []
+    },
+    "continuous_task_support": "false",
+    "coverage": {
+      "complete_sampled_window": true,
+      "intersample_bound": null,
+      "max_gap_s": 0.019999993000002547,
+      "sample_count": 251
+    },
+    "crossing_observation_brackets": {
+      "position": [
+        26.979305527,
+        26.99930552
+      ],
+      "speed": [
+        25.539306037,
+        25.55930603
+      ]
+    },
+    "interval_policy": "first-post-result-observation-fixed-dwell",
+    "interval_s": [
+      25.519306045,
+      30.519306045
+    ],
+    "measurements": [
+      {
+        "heading_error_rad": 0.026066740906048658,
+        "position_error_m": 0.36467613220209083,
+        "signed_margins": {
+          "heading": 0.3239332590939513,
+          "hull": 0.48298368710430795,
+          "position": 0.03532386779790919,
+          "speed": 0.0006880065707174574,
+          "yaw_rate": 0.03211711645126343
+        },
+        "speed_mps": 0.049311993429282545,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 25.519306045
+      },
+      {
+        "heading_error_rad": 0.026404748770444852,
+        "position_error_m": 0.3636650340955076,
+        "signed_margins": {
+          "heading": 0.3235952512295551,
+          "hull": 0.4830646801346824,
+          "position": 0.03633496590449242,
+          "speed": 0.0007253309157052718,
+          "yaw_rate": 0.03314741998910904
+        },
+        "speed_mps": 0.04927466908429473,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 25.539306037
+      },
+      {
+        "heading_error_rad": 0.026730167093056645,
+        "position_error_m": 0.36263962750386863,
+        "signed_margins": {
+          "heading": 0.32326983290694333,
+          "hull": 0.48316053452224483,
+          "position": 0.03736037249613139,
+          "speed": -5.724234088085034e-05,
+          "yaw_rate": 0.03375452496111393
+        },
+        "speed_mps": 0.05005724234088085,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "false",
+          "yaw_rate": "true"
+        },
+        "time_s": 25.55930603
+      },
+      {
+        "heading_error_rad": 0.027048584091844404,
+        "position_error_m": 0.36159567671031334,
+        "signed_margins": {
+          "heading": 0.32295141590815557,
+          "hull": 0.48328243601153253,
+          "position": 0.03840432328968668,
+          "speed": -0.001387182626111337,
+          "yaw_rate": 0.034108572825789454
+        },
+        "speed_mps": 0.05138718262611134,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "false",
+          "yaw_rate": "true"
+        },
+        "time_s": 25.579306023
+      },
+      {
+        "heading_error_rad": 0.027364413377875874,
+        "position_error_m": 0.3605162122648033,
+        "signed_margins": {
+          "heading": 0.3226355866221241,
+          "hull": 0.4834285774868786,
+          "position": 0.03948378773519673,
+          "speed": -0.0033292801695745805,
+          "yaw_rate": 0.03421668447554112
+        },
+        "speed_mps": 0.05332928016957458,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "false",
+          "yaw_rate": "true"
+        },
+        "time_s": 25.599306016
+      },
+      {
+        "heading_error_rad": 0.027679367632469143,
+        "position_error_m": 0.35939963073799897,
+        "signed_margins": {
+          "heading": 0.32232063236753083,
+          "hull": 0.48359339351091746,
+          "position": 0.04060036926200106,
+          "speed": -0.0052986409384382024,
+          "yaw_rate": 0.03426701501011849
+        },
+        "speed_mps": 0.055298640938438205,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "false",
+          "yaw_rate": "true"
+        },
+        "time_s": 25.619306009
+      },
+      {
+        "heading_error_rad": 0.02790738559171113,
+        "position_error_m": 0.35858157722901157,
+        "signed_margins": {
+          "heading": 0.32209261440828885,
+          "hull": 0.483725611966641,
+          "position": 0.04141842277098845,
+          "speed": 0.009712078804857832,
+          "yaw_rate": 0.038607040606439116
+        },
+        "speed_mps": 0.04028792119514217,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 25.639306002
+      },
+      {
+        "heading_error_rad": 0.028074186340333318,
+        "position_error_m": 0.3581079897683304,
+        "signed_margins": {
+          "heading": 0.32192581365966666,
+          "hull": 0.4838337897588477,
+          "position": 0.04189201023166961,
+          "speed": 0.02681361079006456,
+          "yaw_rate": 0.04166089948266745
+        },
+        "speed_mps": 0.023186389209935442,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 25.659305995
+      },
+      {
+        "heading_error_rad": 0.02819421921365617,
+        "position_error_m": 0.3579305654196848,
+        "signed_margins": {
+          "heading": 0.3218057807863438,
+          "hull": 0.4839391097140727,
+          "position": 0.0420694345803152,
+          "speed": 0.04133697544955535,
+          "yaw_rate": 0.04399541085585952
+        },
+        "speed_mps": 0.008663024550444653,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 25.679305988
+      },
+      {
+        "heading_error_rad": 0.028279815503347683,
+        "position_error_m": 0.3579732390350411,
+        "signed_margins": {
+          "heading": 0.3217201844966523,
+          "hull": 0.4840452306134714,
+          "position": 0.04202676096495894,
+          "speed": 0.0465294836795704,
+          "yaw_rate": 0.045725587476044896
+        },
+        "speed_mps": 0.0034705163204296,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 25.699305981
+      },
+      {
+        "heading_error_rad": 0.02833860017619516,
+        "position_error_m": 0.358173296439614,
+        "signed_margins": {
+          "heading": 0.3216613998238048,
+          "hull": 0.48415317644614897,
+          "position": 0.041826703560386036,
+          "speed": 0.03907682980601315,
+          "yaw_rate": 0.0470490699633956
+        },
+        "speed_mps": 0.010923170193986854,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 25.719305974
+      },
+      {
+        "heading_error_rad": 0.02837565749298321,
+        "position_error_m": 0.35849027614570567,
+        "signed_margins": {
+          "heading": 0.32162434250701677,
+          "hull": 0.4842753135090895,
+          "position": 0.041509723854294356,
+          "speed": 0.03319957541712951,
+          "yaw_rate": 0.04815300758928061
+        },
+        "speed_mps": 0.016800424582870496,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 25.739305967
+      },
+      {
+        "heading_error_rad": 0.028395821951244127,
+        "position_error_m": 0.3588901318290596,
+        "signed_margins": {
+          "heading": 0.32160417804875585,
+          "hull": 0.4844095767236064,
+          "position": 0.04110986817094042,
+          "speed": 0.029003303114937824,
+          "yaw_rate": 0.048991125612519684
+        },
+        "speed_mps": 0.02099669688506218,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 25.759305959
+      },
+      {
+        "heading_error_rad": 0.028401675836900564,
+        "position_error_m": 0.35934978244305305,
+        "signed_margins": {
+          "heading": 0.3215983241630994,
+          "hull": 0.4845625280150935,
+          "position": 0.04065021755694698,
+          "speed": 0.02573282031949635,
+          "yaw_rate": 0.0497045747586526
+        },
+        "speed_mps": 0.024267179680503653,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 25.779305952
+      },
+      {
+        "heading_error_rad": 0.028396792145087838,
+        "position_error_m": 0.3598561772337706,
+        "signed_margins": {
+          "heading": 0.32160320785491214,
+          "hull": 0.48473074459701093,
+          "position": 0.04014382276622941,
+          "speed": 0.02329809521933096,
+          "yaw_rate": 0.049756509248982186
+        },
+        "speed_mps": 0.026701904780669042,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 25.799305945
+      },
+      {
+        "heading_error_rad": 0.028383341037897306,
+        "position_error_m": 0.3603962357213358,
+        "signed_margins": {
+          "heading": 0.3216166589621027,
+          "hull": 0.48491056513186426,
+          "position": 0.039603764278664244,
+          "speed": 0.02141243354088048,
+          "yaw_rate": 0.04933851812966168
+        },
+        "speed_mps": 0.028587566459119522,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 25.819305938
+      },
+      {
+        "heading_error_rad": 0.028362945434868166,
+        "position_error_m": 0.3609699557946888,
+        "signed_margins": {
+          "heading": 0.3216370545651318,
+          "hull": 0.48510353284457153,
+          "position": 0.0390300442053112,
+          "speed": 0.01978011654353564,
+          "yaw_rate": 0.048983755591325465
+        },
+        "speed_mps": 0.030219883456464362,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 25.839305931
+      },
+      {
+        "heading_error_rad": 0.02833725074163662,
+        "position_error_m": 0.3615661099769999,
+        "signed_margins": {
+          "heading": 0.32166274925836336,
+          "hull": 0.48530667249398884,
+          "position": 0.03843389002300013,
+          "speed": 0.018545231321162918,
+          "yaw_rate": 0.04871733039617539
+        },
+        "speed_mps": 0.031454768678837085,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 25.859305924
+      },
+      {
+        "heading_error_rad": 0.028307517282339937,
+        "position_error_m": 0.3621810933506355,
+        "signed_margins": {
+          "heading": 0.32169248271766004,
+          "hull": 0.4855165739804005,
+          "position": 0.03781890664936455,
+          "speed": 0.017346986623868126,
+          "yaw_rate": 0.04851994623895735
+        },
+        "speed_mps": 0.03265301337613188,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 25.879305917
+      },
+      {
+        "heading_error_rad": 0.028274829949254565,
+        "position_error_m": 0.362814987333512,
+        "signed_margins": {
+          "heading": 0.3217251700507454,
+          "hull": 0.4857323602907003,
+          "position": 0.03718501266648805,
+          "speed": 0.016355996021750106,
+          "yaw_rate": 0.048369578155688944
+        },
+        "speed_mps": 0.033644003978249896,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 25.89930591
+      },
+      {
+        "heading_error_rad": 0.028239735969499247,
+        "position_error_m": 0.3634660047704619,
+        "signed_margins": {
+          "heading": 0.32176026403050073,
+          "hull": 0.48595192646942953,
+          "position": 0.036533995229538097,
+          "speed": 0.01549423616480241,
+          "yaw_rate": 0.04825039820279926
+        },
+        "speed_mps": 0.03450576383519759,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 25.919305903
+      },
+      {
+        "heading_error_rad": 0.02820387229858468,
+        "position_error_m": 0.36413261150048315,
+        "signed_margins": {
+          "heading": 0.3217961277014153,
+          "hull": 0.48616752440988587,
+          "position": 0.03586738849951687,
+          "speed": 0.014660860473140781,
+          "yaw_rate": 0.048215094674378636
+        },
+        "speed_mps": 0.03533913952685922,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 25.939305896
+      },
+      {
+        "heading_error_rad": 0.028167569746283094,
+        "position_error_m": 0.36481097886685115,
+        "signed_margins": {
+          "heading": 0.3218324302537169,
+          "hull": 0.4863795612762073,
+          "position": 0.03518902113314887,
+          "speed": 0.014076676209868147,
+          "yaw_rate": 0.0481827384326607
+        },
+        "speed_mps": 0.035923323790131856,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 25.959305889
+      },
+      {
+        "heading_error_rad": 0.028132612799931733,
+        "position_error_m": 0.36549966776447296,
+        "signed_margins": {
+          "heading": 0.32186738720006824,
+          "hull": 0.4865772646039058,
+          "position": 0.034500332235527065,
+          "speed": 0.013449088874499651,
+          "yaw_rate": 0.04826123076491058
+        },
+        "speed_mps": 0.03655091112550035,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 25.979305882
+      },
+      {
+        "heading_error_rad": 0.02809874942102275,
+        "position_error_m": 0.3661966373960207,
+        "signed_margins": {
+          "heading": 0.3219012505789772,
+          "hull": 0.4867631284042645,
+          "position": 0.033803362603979314,
+          "speed": 0.012961189271392726,
+          "yaw_rate": 0.0483109945897013
+        },
+        "speed_mps": 0.03703881072860728,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 25.999305874
+      },
+      {
+        "heading_error_rad": 0.02806542100378273,
+        "position_error_m": 0.3669036573243906,
+        "signed_margins": {
+          "heading": 0.32193457899621725,
+          "hull": 0.48693972879670466,
+          "position": 0.0330963426756094,
+          "speed": 0.012556087610489382,
+          "yaw_rate": 0.04834906146861613
+        },
+        "speed_mps": 0.03744391238951062,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.019305867
+      },
+      {
+        "heading_error_rad": 0.028036110468625974,
+        "position_error_m": 0.3676194607252083,
+        "signed_margins": {
+          "heading": 0.321963889531374,
+          "hull": 0.48709191403896546,
+          "position": 0.03238053927479173,
+          "speed": 0.012186072573196136,
+          "yaw_rate": 0.048534961952827874
+        },
+        "speed_mps": 0.03781392742680387,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.03930586
+      },
+      {
+        "heading_error_rad": 0.028009319742969607,
+        "position_error_m": 0.3683380954892519,
+        "signed_margins": {
+          "heading": 0.32199068025703037,
+          "hull": 0.48722392687823735,
+          "position": 0.03166190451074813,
+          "speed": 0.012051521170528705,
+          "yaw_rate": 0.04866052775178105
+        },
+        "speed_mps": 0.0379484788294713,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.059305853
+      },
+      {
+        "heading_error_rad": 0.027988184117550885,
+        "position_error_m": 0.3690620248832688,
+        "signed_margins": {
+          "heading": 0.3220118158824491,
+          "hull": 0.4873218686802684,
+          "position": 0.030937975116731242,
+          "speed": 0.011892878340914438,
+          "yaw_rate": 0.0489398344187066
+        },
+        "speed_mps": 0.038107121659085565,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.079305846
+      },
+      {
+        "heading_error_rad": 0.027970762573723995,
+        "position_error_m": 0.3697871172520377,
+        "signed_margins": {
+          "heading": 0.322029237426276,
+          "hull": 0.4873921405497835,
+          "position": 0.0302128827479623,
+          "speed": 0.01185970973943723,
+          "yaw_rate": 0.049134756741113964
+        },
+        "speed_mps": 0.03814029026056277,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.099305839
+      },
+      {
+        "heading_error_rad": 0.027956657985791944,
+        "position_error_m": 0.3705150206276909,
+        "signed_margins": {
+          "heading": 0.32204334201420803,
+          "hull": 0.4874407387914096,
+          "position": 0.029484979372309095,
+          "speed": 0.011911296048636583,
+          "yaw_rate": 0.049291397456545386
+        },
+        "speed_mps": 0.03808870395136342,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.119305832
+      },
+      {
+        "heading_error_rad": 0.027949270354853395,
+        "position_error_m": 0.37124448929824005,
+        "signed_margins": {
+          "heading": 0.3220507296451466,
+          "hull": 0.48745127710767544,
+          "position": 0.028755510701759968,
+          "speed": 0.01201848023451732,
+          "yaw_rate": 0.049628101330017674
+        },
+        "speed_mps": 0.03798151976548268,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.139305825
+      },
+      {
+        "heading_error_rad": 0.027946923945198154,
+        "position_error_m": 0.37197135016430416,
+        "signed_margins": {
+          "heading": 0.3220530760548018,
+          "hull": 0.48743219933443205,
+          "position": 0.028028649835695862,
+          "speed": 0.012158612451494279,
+          "yaw_rate": 0.04987661132763606
+        },
+        "speed_mps": 0.037841387548505724,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.159305818
+      },
+      {
+        "heading_error_rad": 0.02795282547820599,
+        "position_error_m": 0.3726980595852233,
+        "signed_margins": {
+          "heading": 0.322047174521794,
+          "hull": 0.4873703585405428,
+          "position": 0.027301940414776737,
+          "speed": 0.012271508011029372,
+          "yaw_rate": 0.049714131350629034
+        },
+        "speed_mps": 0.03772849198897063,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.179305811
+      },
+      {
+        "heading_error_rad": 0.027964348063180818,
+        "position_error_m": 0.37342234902140964,
+        "signed_margins": {
+          "heading": 0.32203565193681916,
+          "hull": 0.48727442896289286,
+          "position": 0.026577650978590384,
+          "speed": 0.01251651672882316,
+          "yaw_rate": 0.04941955367103219
+        },
+        "speed_mps": 0.03748348327117684,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.199305804
+      },
+      {
+        "heading_error_rad": 0.02798046708524815,
+        "position_error_m": 0.37414391533003505,
+        "signed_margins": {
+          "heading": 0.3220195329147518,
+          "hull": 0.48715247131879946,
+          "position": 0.025856084669964974,
+          "speed": 0.012877604879429794,
+          "yaw_rate": 0.049186914879828694
+        },
+        "speed_mps": 0.03712239512057021,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.219305796
+      },
+      {
+        "heading_error_rad": 0.028004470274378912,
+        "position_error_m": 0.3748575657211152,
+        "signed_margins": {
+          "heading": 0.32199552972562107,
+          "hull": 0.4869930491134272,
+          "position": 0.025142434278884795,
+          "speed": 0.013298437485645138,
+          "yaw_rate": 0.048801171313971284
+        },
+        "speed_mps": 0.036701562514354864,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.239305789
+      },
+      {
+        "heading_error_rad": 0.028033901463054622,
+        "position_error_m": 0.3755630156196193,
+        "signed_margins": {
+          "heading": 0.32196609853694536,
+          "hull": 0.4868034932398807,
+          "position": 0.024436984380380722,
+          "speed": 0.013876671086094083,
+          "yaw_rate": 0.048527458868920806
+        },
+        "speed_mps": 0.03612332891390592,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.259305782
+      },
+      {
+        "heading_error_rad": 0.028070622372934118,
+        "position_error_m": 0.3762605835762555,
+        "signed_margins": {
+          "heading": 0.32192937762706586,
+          "hull": 0.48657783914103214,
+          "position": 0.023739416423744497,
+          "speed": 0.014461755086236379,
+          "yaw_rate": 0.04815611355006695
+        },
+        "speed_mps": 0.035538244913763624,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.279305775
+      },
+      {
+        "heading_error_rad": 0.028112675428858314,
+        "position_error_m": 0.37694423962934404,
+        "signed_margins": {
+          "heading": 0.32188732457114166,
+          "hull": 0.48632462566392876,
+          "position": 0.023055760370655987,
+          "speed": 0.015115861786777117,
+          "yaw_rate": 0.04789239559322596
+        },
+        "speed_mps": 0.034884138213222886,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.299305768
+      },
+      {
+        "heading_error_rad": 0.028158548041008258,
+        "position_error_m": 0.3776174865151995,
+        "signed_margins": {
+          "heading": 0.3218414519589917,
+          "hull": 0.48605214164679234,
+          "position": 0.022382513484800526,
+          "speed": 0.015816264354827497,
+          "yaw_rate": 0.04769898247905076
+        },
+        "speed_mps": 0.034183735645172506,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.319305761
+      },
+      {
+        "heading_error_rad": 0.028209477226881052,
+        "position_error_m": 0.37827673608133966,
+        "signed_margins": {
+          "heading": 0.3217905227731189,
+          "hull": 0.48575672668192615,
+          "position": 0.021723263918660363,
+          "speed": 0.01648934373680965,
+          "yaw_rate": 0.047444631531834605
+        },
+        "speed_mps": 0.03351065626319035,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.339305754
+      },
+      {
+        "heading_error_rad": 0.02826347323529199,
+        "position_error_m": 0.37892552658903594,
+        "signed_margins": {
+          "heading": 0.321736526764708,
+          "hull": 0.4854452341219265,
+          "position": 0.02107447341096408,
+          "speed": 0.017187390231963334,
+          "yaw_rate": 0.04727643863297999
+        },
+        "speed_mps": 0.03281260976803667,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.359305747
+      },
+      {
+        "heading_error_rad": 0.028320896692911823,
+        "position_error_m": 0.3795637368490782,
+        "signed_margins": {
+          "heading": 0.32167910330708815,
+          "hull": 0.48512166283696334,
+          "position": 0.02043626315092184,
+          "speed": 0.017886964444403436,
+          "yaw_rate": 0.047120318235829475
+        },
+        "speed_mps": 0.03211303555559657,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.37930574
+      },
+      {
+        "heading_error_rad": 0.02838055438407827,
+        "position_error_m": 0.38018729731978607,
+        "signed_margins": {
+          "heading": 0.3216194456159217,
+          "hull": 0.4847920801889386,
+          "position": 0.019812702680213956,
+          "speed": 0.01864044914040546,
+          "yaw_rate": 0.04701899872161448
+        },
+        "speed_mps": 0.03135955085959454,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.399305733
+      },
+      {
+        "heading_error_rad": 0.02844096540648833,
+        "position_error_m": 0.38079776843798535,
+        "signed_margins": {
+          "heading": 0.32155903459351165,
+          "hull": 0.48446383717545316,
+          "position": 0.01920223156201467,
+          "speed": 0.0194677351176121,
+          "yaw_rate": 0.04696355941705406
+        },
+        "speed_mps": 0.030532264882387902,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.419305726
+      },
+      {
+        "heading_error_rad": 0.028501045792333594,
+        "position_error_m": 0.38139470054570884,
+        "signed_margins": {
+          "heading": 0.3214989542076664,
+          "hull": 0.4841461560494319,
+          "position": 0.01860529945429118,
+          "speed": 0.02028423706158016,
+          "yaw_rate": 0.04698544386774302
+        },
+        "speed_mps": 0.02971576293841984,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.439305719
+      },
+      {
+        "heading_error_rad": 0.028559760598690254,
+        "position_error_m": 0.38197992764024763,
+        "signed_margins": {
+          "heading": 0.3214402394013097,
+          "hull": 0.4838394624646577,
+          "position": 0.018020072359752393,
+          "speed": 0.020931205890520103,
+          "yaw_rate": 0.04706149473786354
+        },
+        "speed_mps": 0.0290687941094799,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.459305711
+      },
+      {
+        "heading_error_rad": 0.02861380899050925,
+        "position_error_m": 0.3825584375792231,
+        "signed_margins": {
+          "heading": 0.32138619100949073,
+          "hull": 0.4835568542009604,
+          "position": 0.017441562420776935,
+          "speed": 0.021549596565884337,
+          "yaw_rate": 0.047297433903440836
+        },
+        "speed_mps": 0.028450403434115666,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.479305704
+      },
+      {
+        "heading_error_rad": 0.028663739480916824,
+        "position_error_m": 0.3831323394568227,
+        "signed_margins": {
+          "heading": 0.32133626051908315,
+          "hull": 0.4832931271333022,
+          "position": 0.016867660543177343,
+          "speed": 0.021908838060592205,
+          "yaw_rate": 0.04749992904253304
+        },
+        "speed_mps": 0.028091161939407798,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.499305697
+      },
+      {
+        "heading_error_rad": 0.02871053270176893,
+        "position_error_m": 0.38370562020460847,
+        "signed_margins": {
+          "heading": 0.32128946729823105,
+          "hull": 0.483044251371635,
+          "position": 0.016294379795391556,
+          "speed": 0.022004058071325144,
+          "yaw_rate": 0.04765097512863577
+        },
+        "speed_mps": 0.02799594192867486,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.51930569
+      },
+      {
+        "heading_error_rad": 0.028751395644499134,
+        "position_error_m": 0.38428116627119274,
+        "signed_margins": {
+          "heading": 0.32124860435550084,
+          "hull": 0.4828269213696429,
+          "position": 0.01571883372880728,
+          "speed": 0.022116237760398894,
+          "yaw_rate": 0.04795842031016946
+        },
+        "speed_mps": 0.02788376223960111,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.539305683
+      },
+      {
+        "heading_error_rad": 0.028788076898413232,
+        "position_error_m": 0.3848611327640992,
+        "signed_margins": {
+          "heading": 0.32121192310158675,
+          "hull": 0.4826358301587005,
+          "position": 0.0151388672359008,
+          "speed": 0.0219193951375489,
+          "yaw_rate": 0.048166844598017636
+        },
+        "speed_mps": 0.028080604862451102,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.559305676
+      },
+      {
+        "heading_error_rad": 0.02881658976436352,
+        "position_error_m": 0.3854519779233064,
+        "signed_margins": {
+          "heading": 0.32118341023563646,
+          "hull": 0.48249135450566605,
+          "position": 0.014548022076693645,
+          "speed": 0.02175756250807786,
+          "yaw_rate": 0.04858647549990565
+        },
+        "speed_mps": 0.028242437491922144,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.579305669
+      },
+      {
+        "heading_error_rad": 0.028839238702900397,
+        "position_error_m": 0.3860522113569898,
+        "signed_margins": {
+          "heading": 0.3211607612970996,
+          "hull": 0.48238537171495655,
+          "position": 0.013947788643010217,
+          "speed": 0.02119929243871761,
+          "yaw_rate": 0.04886775179766119
+        },
+        "speed_mps": 0.028800707561282394,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.599305662
+      },
+      {
+        "heading_error_rad": 0.028857885345549006,
+        "position_error_m": 0.3866698680834332,
+        "signed_margins": {
+          "heading": 0.32114211465445097,
+          "hull": 0.4823100101121506,
+          "position": 0.013330131916566845,
+          "speed": 0.020451179886957025,
+          "yaw_rate": 0.04907399411313236
+        },
+        "speed_mps": 0.029548820113042978,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.619305655
+      },
+      {
+        "heading_error_rad": 0.028866968461914944,
+        "position_error_m": 0.38729606548391554,
+        "signed_margins": {
+          "heading": 0.32113303153808503,
+          "hull": 0.4822872271636415,
+          "position": 0.01270393451608448,
+          "speed": 0.019957831487813674,
+          "yaw_rate": 0.049543260433711114
+        },
+        "speed_mps": 0.03004216851218633,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.639305648
+      },
+      {
+        "heading_error_rad": 0.028870254206439627,
+        "position_error_m": 0.3879370825997006,
+        "signed_margins": {
+          "heading": 0.32112974579356035,
+          "hull": 0.48230773898310175,
+          "position": 0.012062917400299411,
+          "speed": 0.019191813975527407,
+          "yaw_rate": 0.049846494669327515
+        },
+        "speed_mps": 0.030808186024472595,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.659305641
+      },
+      {
+        "heading_error_rad": 0.02886215914060286,
+        "position_error_m": 0.38858794980125133,
+        "signed_margins": {
+          "heading": 0.3211378408593971,
+          "hull": 0.48239229970222597,
+          "position": 0.011412050198748691,
+          "speed": 0.018565529802744007,
+          "yaw_rate": 0.04958927373518236
+        },
+        "speed_mps": 0.031434470197255995,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.679305634
+      },
+      {
+        "heading_error_rad": 0.02884711971805909,
+        "position_error_m": 0.38925524917610327,
+        "signed_margins": {
+          "heading": 0.3211528802819409,
+          "hull": 0.4825269609096453,
+          "position": 0.010744750823896754,
+          "speed": 0.017513098545714874,
+          "yaw_rate": 0.049245383951347324
+        },
+        "speed_mps": 0.03248690145428513,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.699305626
+      },
+      {
+        "heading_error_rad": 0.028827306858650422,
+        "position_error_m": 0.38994170492138625,
+        "signed_margins": {
+          "heading": 0.32117269314134955,
+          "hull": 0.48269757176501027,
+          "position": 0.010058295078613777,
+          "speed": 0.016374223603780755,
+          "yaw_rate": 0.04901596212293953
+        },
+        "speed_mps": 0.03362577639621925,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.719305619
+      },
+      {
+        "heading_error_rad": 0.028797546982131994,
+        "position_error_m": 0.39063679836597986,
+        "signed_margins": {
+          "heading": 0.321202453017868,
+          "hull": 0.48292342694331925,
+          "position": 0.009363201634020157,
+          "speed": 0.015661598517702643,
+          "yaw_rate": 0.048513482161797586
+        },
+        "speed_mps": 0.03433840148229736,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.739305612
+      },
+      {
+        "heading_error_rad": 0.028762063659369508,
+        "position_error_m": 0.39134330725800953,
+        "signed_margins": {
+          "heading": 0.32123793634063047,
+          "hull": 0.483190946355574,
+          "position": 0.00865669274199049,
+          "speed": 0.01477458802452404,
+          "yaw_rate": 0.04822362489067018
+        },
+        "speed_mps": 0.03522541197547596,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.759305605
+      },
+      {
+        "heading_error_rad": 0.028716379016287208,
+        "position_error_m": 0.39205676680341,
+        "signed_margins": {
+          "heading": 0.32128362098371277,
+          "hull": 0.48351429637920107,
+          "position": 0.007943233196590016,
+          "speed": 0.014168594328694786,
+          "yaw_rate": 0.047713152086362245
+        },
+        "speed_mps": 0.035831405671305216,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.779305598
+      },
+      {
+        "heading_error_rad": 0.028665060987810076,
+        "position_error_m": 0.392781963864825,
+        "signed_margins": {
+          "heading": 0.3213349390121899,
+          "hull": 0.4838781653229781,
+          "position": 0.007218036135175021,
+          "speed": 0.013247113128248438,
+          "yaw_rate": 0.04743538210168481
+        },
+        "speed_mps": 0.036752886871751565,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.799305591
+      },
+      {
+        "heading_error_rad": 0.02861060620489586,
+        "position_error_m": 0.39351975409869233,
+        "signed_margins": {
+          "heading": 0.3213893937951041,
+          "hull": 0.4842676148857218,
+          "position": 0.006480245901307691,
+          "speed": 0.012362312103834039,
+          "yaw_rate": 0.047269046492874625
+        },
+        "speed_mps": 0.037637687896165964,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.819305584
+      },
+      {
+        "heading_error_rad": 0.028548920277403193,
+        "position_error_m": 0.39425826405944303,
+        "signed_margins": {
+          "heading": 0.3214510797225968,
+          "hull": 0.4846929542761583,
+          "position": 0.005741735940556991,
+          "speed": 0.012040463376486073,
+          "yaw_rate": 0.046897120261564854
+        },
+        "speed_mps": 0.03795953662351393,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.839305577
+      },
+      {
+        "heading_error_rad": 0.02848358107523974,
+        "position_error_m": 0.3949982233537012,
+        "signed_margins": {
+          "heading": 0.32151641892476024,
+          "hull": 0.48514194260322274,
+          "position": 0.005001776646298806,
+          "speed": 0.0116306776880239,
+          "yaw_rate": 0.04671099986881018
+        },
+        "speed_mps": 0.0383693223119761,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.85930557
+      },
+      {
+        "heading_error_rad": 0.028412711666365276,
+        "position_error_m": 0.39573382833864473,
+        "signed_margins": {
+          "heading": 0.3215872883336347,
+          "hull": 0.4856181527414486,
+          "position": 0.004266171661355289,
+          "speed": 0.011594218269673558,
+          "yaw_rate": 0.046411716099828484
+        },
+        "speed_mps": 0.038405781730326445,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.879305563
+      },
+      {
+        "heading_error_rad": 0.02833955610340677,
+        "position_error_m": 0.3964714340437078,
+        "signed_margins": {
+          "heading": 0.3216604438965932,
+          "hull": 0.48610988846913894,
+          "position": 0.0035285659562921956,
+          "speed": 0.011291250782548203,
+          "yaw_rate": 0.04628231604583562
+        },
+        "speed_mps": 0.0387087492174518,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.899305556
+      },
+      {
+        "heading_error_rad": 0.028265490839837874,
+        "position_error_m": 0.3972114994400018,
+        "signed_margins": {
+          "heading": 0.3217345091601621,
+          "hull": 0.486607361633108,
+          "position": 0.0027885005599982415,
+          "speed": 0.0110035686201315,
+          "yaw_rate": 0.04622952868230641
+        },
+        "speed_mps": 0.0389964313798685,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.919305548
+      },
+      {
+        "heading_error_rad": 0.02818993043916307,
+        "position_error_m": 0.39794078122360216,
+        "signed_margins": {
+          "heading": 0.3218100695608369,
+          "hull": 0.48710812799434533,
+          "position": 0.002059218776397864,
+          "speed": 0.011270499186171026,
+          "yaw_rate": 0.046117334812879565
+        },
+        "speed_mps": 0.038729500813828976,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.939305541
+      },
+      {
+        "heading_error_rad": 0.028114078200036197,
+        "position_error_m": 0.398665231720457,
+        "signed_margins": {
+          "heading": 0.3218859217999638,
+          "hull": 0.4876063640393201,
+          "position": 0.0013347682795430416,
+          "speed": 0.011432999798589714,
+          "yaw_rate": 0.04610053468495608
+        },
+        "speed_mps": 0.03856700020141029,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.959305534
+      },
+      {
+        "heading_error_rad": 0.028039918622687843,
+        "position_error_m": 0.3993794888305097,
+        "signed_margins": {
+          "heading": 0.32196008137731214,
+          "hull": 0.48809187606204396,
+          "position": 0.0006205111694903009,
+          "speed": 0.011943739993576723,
+          "yaw_rate": 0.0461376718711108
+        },
+        "speed_mps": 0.03805626000642328,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.979305527
+      },
+      {
+        "heading_error_rad": 0.027967572973541577,
+        "position_error_m": 0.4000874101726156,
+        "signed_margins": {
+          "heading": 0.3220324270264584,
+          "hull": 0.48856138785694514,
+          "position": -8.741017261559847e-05,
+          "speed": 0.01217180554517916,
+          "yaw_rate": 0.04622331210412085
+        },
+        "speed_mps": 0.03782819445482084,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.99930552
+      },
+      {
+        "heading_error_rad": 0.02789797198560895,
+        "position_error_m": 0.40079088862114204,
+        "signed_margins": {
+          "heading": 0.32210202801439103,
+          "hull": 0.48901346642670884,
+          "position": -0.0007908886211420163,
+          "speed": 0.012332058634921733,
+          "yaw_rate": 0.04632376292720437
+        },
+        "speed_mps": 0.03766794136507827,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.019305513
+      },
+      {
+        "heading_error_rad": 0.02783298151912561,
+        "position_error_m": 0.4014827131209615,
+        "signed_margins": {
+          "heading": 0.32216701848087437,
+          "hull": 0.48943237345708257,
+          "position": -0.0014827131209614874,
+          "speed": 0.012943575996841365,
+          "yaw_rate": 0.04654671992175281
+        },
+        "speed_mps": 0.03705642400315864,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.039305506
+      },
+      {
+        "heading_error_rad": 0.02777219603230496,
+        "position_error_m": 0.4021664857768937,
+        "signed_margins": {
+          "heading": 0.322227803967695,
+          "hull": 0.4898207628041297,
+          "position": -0.0021664857768936563,
+          "speed": 0.013414124824364743,
+          "yaw_rate": 0.04674037308432162
+        },
+        "speed_mps": 0.03658587517563526,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.059305499
+      },
+      {
+        "heading_error_rad": 0.027719557232002145,
+        "position_error_m": 0.4028407898640996,
+        "signed_margins": {
+          "heading": 0.32228044276799783,
+          "hull": 0.4901587089526188,
+          "position": -0.00284078986409958,
+          "speed": 0.01410190821779049,
+          "yaw_rate": 0.047132760472595694
+        },
+        "speed_mps": 0.03589809178220951,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.079305492
+      },
+      {
+        "heading_error_rad": 0.02767325229746609,
+        "position_error_m": 0.40350718311072076,
+        "signed_margins": {
+          "heading": 0.3223267477025339,
+          "hull": 0.4904524397718645,
+          "position": -0.003507183110720735,
+          "speed": 0.014527245711281028,
+          "yaw_rate": 0.047437244281172755
+        },
+        "speed_mps": 0.035472754288718975,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.099305485
+      },
+      {
+        "heading_error_rad": 0.027632037655044295,
+        "position_error_m": 0.40416914901041917,
+        "signed_margins": {
+          "heading": 0.3223679623449557,
+          "hull": 0.49070942719405053,
+          "position": -0.004169149010419149,
+          "speed": 0.014870449367233078,
+          "yaw_rate": 0.0476836615242064
+        },
+        "speed_mps": 0.035129550632766925,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.119305478
+      },
+      {
+        "heading_error_rad": 0.027600722659959942,
+        "position_error_m": 0.40481961665668864,
+        "signed_margins": {
+          "heading": 0.32239927734004004,
+          "hull": 0.4909066115185331,
+          "position": -0.004819616656688619,
+          "speed": 0.015488491318936565,
+          "yaw_rate": 0.04818449246231467
+        },
+        "speed_mps": 0.03451150868106344,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.139305471
+      },
+      {
+        "heading_error_rad": 0.02757641148569623,
+        "position_error_m": 0.40546391022459555,
+        "signed_margins": {
+          "heading": 0.32242358851430375,
+          "hull": 0.4910539603894376,
+          "position": -0.005463910224595525,
+          "speed": 0.015970935657570753,
+          "yaw_rate": 0.0485428573563695
+        },
+        "speed_mps": 0.03402906434242925,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.159305463
+      },
+      {
+        "heading_error_rad": 0.02756474506857409,
+        "position_error_m": 0.40609881366767275,
+        "signed_margins": {
+          "heading": 0.3224352549314259,
+          "hull": 0.491127169001652,
+          "position": -0.006098813667672731,
+          "speed": 0.016502862199022653,
+          "yaw_rate": 0.049184306128881874
+        },
+        "speed_mps": 0.03349713780097735,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.179305456
+      },
+      {
+        "heading_error_rad": 0.027561666124641174,
+        "position_error_m": 0.40673343531469375,
+        "signed_margins": {
+          "heading": 0.3224383338753588,
+          "hull": 0.4911391895380798,
+          "position": -0.006733435314693725,
+          "speed": 0.016792041684858663,
+          "yaw_rate": 0.04963206000393257
+        },
+        "speed_mps": 0.03320795831514134,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.199305449
+      },
+      {
+        "heading_error_rad": 0.02756481640451769,
+        "position_error_m": 0.40736163604704606,
+        "signed_margins": {
+          "heading": 0.3224351835954823,
+          "hull": 0.4911052708520073,
+          "position": -0.0073616360470460385,
+          "speed": 0.01702226086301934,
+          "yaw_rate": 0.049965080089168626
+        },
+        "speed_mps": 0.03297773913698066,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.219305442
+      },
+      {
+        "heading_error_rad": 0.027580234655359748,
+        "position_error_m": 0.4079840789162688,
+        "signed_margins": {
+          "heading": 0.32241976534464023,
+          "hull": 0.4910020264686267,
+          "position": -0.007984078916268789,
+          "speed": 0.017321448150799404,
+          "yaw_rate": 0.04941048643086106
+        },
+        "speed_mps": 0.0326785518492006,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.239305435
+      },
+      {
+        "heading_error_rad": 0.027603252381152465,
+        "position_error_m": 0.40860421591064305,
+        "signed_margins": {
+          "heading": 0.3223967476188475,
+          "hull": 0.4908435279349507,
+          "position": -0.008604215910643032,
+          "speed": 0.017524631226813213,
+          "yaw_rate": 0.04899372062645853
+        },
+        "speed_mps": 0.03247536877318679,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.259305428
+      },
+      {
+        "heading_error_rad": 0.027639015144018897,
+        "position_error_m": 0.4092226663752486,
+        "signed_margins": {
+          "heading": 0.3223609848559811,
+          "hull": 0.49061094067227506,
+          "position": -0.0092226663752486,
+          "speed": 0.017651826458670895,
+          "yaw_rate": 0.04833325331564993
+        },
+        "speed_mps": 0.03234817354132911,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.279305421
+      },
+      {
+        "heading_error_rad": 0.027682721856889136,
+        "position_error_m": 0.40984096349007304,
+        "signed_margins": {
+          "heading": 0.32231727814311084,
+          "hull": 0.4903211298642668,
+          "position": -0.009840963490073018,
+          "speed": 0.017669182483629427,
+          "yaw_rate": 0.04789949553087354
+        },
+        "speed_mps": 0.032330817516370576,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.299305414
+      },
+      {
+        "heading_error_rad": 0.02773234832405702,
+        "position_error_m": 0.41045683074103606,
+        "signed_margins": {
+          "heading": 0.32226765167594296,
+          "hull": 0.48999142234803883,
+          "position": -0.010456830741036038,
+          "speed": 0.017741077004925422,
+          "yaw_rate": 0.04759877962060273
+        },
+        "speed_mps": 0.03225892299507458,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.319305407
+      },
+      {
+        "heading_error_rad": 0.027791463812050887,
+        "position_error_m": 0.4110727448435914,
+        "signed_margins": {
+          "heading": 0.3222085361879491,
+          "hull": 0.489607187276895,
+          "position": -0.011072744843591387,
+          "speed": 0.017825356072605235,
+          "yaw_rate": 0.04709413782693446
+        },
+        "speed_mps": 0.03217464392739477,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.3393054
+      },
+      {
+        "heading_error_rad": 0.027856626433889975,
+        "position_error_m": 0.4116845802489313,
+        "signed_margins": {
+          "heading": 0.32214337356611,
+          "hull": 0.4891831215346698,
+          "position": -0.011684580248931264,
+          "speed": 0.017937540313745677,
+          "yaw_rate": 0.046782373636960986
+        },
+        "speed_mps": 0.032062459686254326,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.359305393
+      },
+      {
+        "heading_error_rad": 0.027929838606347124,
+        "position_error_m": 0.41229274957339457,
+        "signed_margins": {
+          "heading": 0.32207016139365285,
+          "hull": 0.48871118674087066,
+          "position": -0.012292749573394546,
+          "speed": 0.018030107157539464,
+          "yaw_rate": 0.04635387235321105
+        },
+        "speed_mps": 0.03196989284246054,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.379305385
+      },
+      {
+        "heading_error_rad": 0.02800792455577228,
+        "position_error_m": 0.41289880416245744,
+        "signed_margins": {
+          "heading": 0.3219920754442277,
+          "hull": 0.48820669210361345,
+          "position": -0.012898804162457422,
+          "speed": 0.018160664742045182,
+          "yaw_rate": 0.046098061557859185
+        },
+        "speed_mps": 0.03183933525795482,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.399305378
+      },
+      {
+        "heading_error_rad": 0.0280889790095662,
+        "position_error_m": 0.413500479067735,
+        "signed_margins": {
+          "heading": 0.3219110209904338,
+          "hull": 0.48768344853162193,
+          "position": -0.013500479067734994,
+          "speed": 0.018395868882080856,
+          "yaw_rate": 0.04594901129603386
+        },
+        "speed_mps": 0.03160413111791915,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.419305371
+      },
+      {
+        "heading_error_rad": 0.028174038941325193,
+        "position_error_m": 0.41409795078374484,
+        "signed_margins": {
+          "heading": 0.3218259610586748,
+          "hull": 0.4871391241814158,
+          "position": -0.014097950783744817,
+          "speed": 0.018656388745722986,
+          "yaw_rate": 0.04574126722291112
+        },
+        "speed_mps": 0.031343611254277016,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.439305364
+      },
+      {
+        "heading_error_rad": 0.02826132640275314,
+        "position_error_m": 0.41468901187006446,
+        "signed_margins": {
+          "heading": 0.32173867359724684,
+          "hull": 0.48658377999153646,
+          "position": -0.014689011870064439,
+          "speed": 0.018939536659495586,
+          "yaw_rate": 0.04563155416399241
+        },
+        "speed_mps": 0.031060463340504416,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.459305357
+      },
+      {
+        "heading_error_rad": 0.028350205755540037,
+        "position_error_m": 0.4152754479223371,
+        "signed_margins": {
+          "heading": 0.32164979424445994,
+          "hull": 0.486021621971956,
+          "position": -0.015275447922337093,
+          "speed": 0.01920491499614783,
+          "yaw_rate": 0.0455397523008287
+        },
+        "speed_mps": 0.030795085003852172,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.47930535
+      },
+      {
+        "heading_error_rad": 0.028440504665667943,
+        "position_error_m": 0.41585704853105593,
+        "signed_margins": {
+          "heading": 0.32155949533433204,
+          "hull": 0.48545876129647203,
+          "position": -0.015857048531055906,
+          "speed": 0.01946002992574485,
+          "yaw_rate": 0.04548031855374575
+        },
+        "speed_mps": 0.030539970074255154,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.499305343
+      },
+      {
+        "heading_error_rad": 0.028531314143154685,
+        "position_error_m": 0.4164336258268679,
+        "signed_margins": {
+          "heading": 0.3214686858568453,
+          "hull": 0.48489950279448313,
+          "position": -0.01643362582686786,
+          "speed": 0.019718307196304963,
+          "yaw_rate": 0.04544750433415175
+        },
+        "speed_mps": 0.03028169280369504,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.519305336
+      },
+      {
+        "heading_error_rad": 0.02862103146324135,
+        "position_error_m": 0.4170027925619912,
+        "signed_margins": {
+          "heading": 0.3213789685367586,
+          "hull": 0.48435423450281534,
+          "position": -0.017002792561991165,
+          "speed": 0.020040451497109295,
+          "yaw_rate": 0.04551965855062008
+        },
+        "speed_mps": 0.029959548502890707,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.539305329
+      },
+      {
+        "heading_error_rad": 0.028709406435992957,
+        "position_error_m": 0.41756443634503854,
+        "signed_margins": {
+          "heading": 0.321290593564007,
+          "hull": 0.483824020719428,
+          "position": -0.017564436345038514,
+          "speed": 0.020434707384043564,
+          "yaw_rate": 0.045580696500837806
+        },
+        "speed_mps": 0.02956529261595644,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.559305322
+      },
+      {
+        "heading_error_rad": 0.02879319034268413,
+        "position_error_m": 0.4181158100362468,
+        "signed_margins": {
+          "heading": 0.32120680965731585,
+          "hull": 0.48332484650698726,
+          "position": -0.018115810036246793,
+          "speed": 0.020912214507643166,
+          "yaw_rate": 0.045814566966146233
+        },
+        "speed_mps": 0.029087785492356837,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.579305315
+      },
+      {
+        "heading_error_rad": 0.028873071344181378,
+        "position_error_m": 0.41865897417580483,
+        "signed_margins": {
+          "heading": 0.3211269286558186,
+          "hull": 0.48285086361536966,
+          "position": -0.01865897417580481,
+          "speed": 0.021224297241785005,
+          "yaw_rate": 0.046000143699347976
+        },
+        "speed_mps": 0.028775702758214998,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.599305308
+      },
+      {
+        "heading_error_rad": 0.028949542117151505,
+        "position_error_m": 0.4192054517145821,
+        "signed_margins": {
+          "heading": 0.3210504578828485,
+          "hull": 0.4823982699245233,
+          "position": -0.0192054517145821,
+          "speed": 0.021290291055539978,
+          "yaw_rate": 0.0461748355999589
+        },
+        "speed_mps": 0.028709708944460025,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.6193053
+      },
+      {
+        "heading_error_rad": 0.02901774439550375,
+        "position_error_m": 0.4197484194464099,
+        "signed_margins": {
+          "heading": 0.3209822556044962,
+          "hull": 0.4819862815820466,
+          "position": -0.01974841944640987,
+          "speed": 0.02130832300570987,
+          "yaw_rate": 0.04657028377987445
+        },
+        "speed_mps": 0.028691676994290132,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.639305293
+      },
+      {
+        "heading_error_rad": 0.029080115770689696,
+        "position_error_m": 0.4202918732361536,
+        "signed_margins": {
+          "heading": 0.3209198842293103,
+          "hull": 0.4816094662414474,
+          "position": -0.020291873236153557,
+          "speed": 0.021265403248150832,
+          "yaw_rate": 0.04687227699905634
+        },
+        "speed_mps": 0.02873459675184917,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.659305286
+      },
+      {
+        "heading_error_rad": 0.0291314253960917,
+        "position_error_m": 0.420832679626315,
+        "signed_margins": {
+          "heading": 0.3208685746039083,
+          "hull": 0.48128804155848415,
+          "position": -0.020832679626314965,
+          "speed": 0.021198136219141992,
+          "yaw_rate": 0.04740743287838996
+        },
+        "speed_mps": 0.02880186378085801,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.679305279
+      },
+      {
+        "heading_error_rad": 0.029174454458924526,
+        "position_error_m": 0.42137499304412634,
+        "signed_margins": {
+          "heading": 0.32082554554107545,
+          "hull": 0.48101365123841244,
+          "position": -0.021374993044126323,
+          "speed": 0.021056473150766378,
+          "yaw_rate": 0.04781084363348782
+        },
+        "speed_mps": 0.028943526849233625,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.699305272
+      },
+      {
+        "heading_error_rad": 0.029210716007187054,
+        "position_error_m": 0.4219211334466239,
+        "signed_margins": {
+          "heading": 0.3207892839928129,
+          "hull": 0.480776815147012,
+          "position": -0.021921133446623886,
+          "speed": 0.020763971511481422,
+          "yaw_rate": 0.048145855963230136
+        },
+        "speed_mps": 0.02923602848851858,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.719305265
+      },
+      {
+        "heading_error_rad": 0.029234845599070303,
+        "position_error_m": 0.42247164714353874,
+        "signed_margins": {
+          "heading": 0.3207651544009297,
+          "hull": 0.4806003052583552,
+          "position": -0.02247164714353872,
+          "speed": 0.020430646177094877,
+          "yaw_rate": 0.04873009161092341
+        },
+        "speed_mps": 0.029569353822905126,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.739305258
+      },
+      {
+        "heading_error_rad": 0.029250186608990033,
+        "position_error_m": 0.42302707519087324,
+        "signed_margins": {
+          "heading": 0.32074981339100994,
+          "hull": 0.480473668570623,
+          "position": -0.023027075190873214,
+          "speed": 0.02009238024840372,
+          "yaw_rate": 0.04916545435553417
+        },
+        "speed_mps": 0.02990761975159628,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.759305251
+      },
+      {
+        "heading_error_rad": 0.02925205791332885,
+        "position_error_m": 0.42358622270171264,
+        "signed_margins": {
+          "heading": 0.3207479420866711,
+          "hull": 0.48041716497776754,
+          "position": -0.023586222701712622,
+          "speed": 0.019620484674635476,
+          "yaw_rate": 0.04981782505346928
+        },
+        "speed_mps": 0.030379515325364526,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.779305244
+      },
+      {
+        "heading_error_rad": 0.02924437576679062,
+        "position_error_m": 0.4241536102310056,
+        "signed_margins": {
+          "heading": 0.32075562423320936,
+          "hull": 0.48041848852754776,
+          "position": -0.024153610231005596,
+          "speed": 0.019093343953508563,
+          "yaw_rate": 0.049701161461416635
+        },
+        "speed_mps": 0.03090665604649144,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.799305237
+      },
+      {
+        "heading_error_rad": 0.029228798702391146,
+        "position_error_m": 0.4247318215202111,
+        "signed_margins": {
+          "heading": 0.32077120129760883,
+          "hull": 0.48046537295057323,
+          "position": -0.024731821520211084,
+          "speed": 0.01841855945016397,
+          "yaw_rate": 0.049303396849427375
+        },
+        "speed_mps": 0.03158144054983603,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.81930523
+      },
+      {
+        "heading_error_rad": 0.02920139582598225,
+        "position_error_m": 0.4253218442439121,
+        "signed_margins": {
+          "heading": 0.32079860417401773,
+          "hull": 0.4805746468894554,
+          "position": -0.025321844243912095,
+          "speed": 0.017649624677593033,
+          "yaw_rate": 0.04873227346688509
+        },
+        "speed_mps": 0.03235037532240697,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.839305223
+      },
+      {
+        "heading_error_rad": 0.029165936650777043,
+        "position_error_m": 0.4259205953561212,
+        "signed_margins": {
+          "heading": 0.32083406334922293,
+          "hull": 0.48073512192983636,
+          "position": -0.02592059535612118,
+          "speed": 0.016999694132447875,
+          "yaw_rate": 0.04831883690785617
+        },
+        "speed_mps": 0.03300030586755213,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.859305215
+      },
+      {
+        "heading_error_rad": 0.029120243286521186,
+        "position_error_m": 0.4265351558299695,
+        "signed_margins": {
+          "heading": 0.3208797567134788,
+          "hull": 0.4809583229994592,
+          "position": -0.02653515582996946,
+          "speed": 0.016197333694693082,
+          "yaw_rate": 0.047794230934232476
+        },
+        "speed_mps": 0.03380266630530692,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.879305208
+      },
+      {
+        "heading_error_rad": 0.02906684176883956,
+        "position_error_m": 0.42716055445000417,
+        "signed_margins": {
+          "heading": 0.3209331582311604,
+          "hull": 0.4812329038734342,
+          "position": -0.02716055445000415,
+          "speed": 0.015452976908527212,
+          "yaw_rate": 0.04741724925115705
+        },
+        "speed_mps": 0.03454702309147279,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.899305201
+      },
+      {
+        "heading_error_rad": 0.02900772634932669,
+        "position_error_m": 0.4277993576648033,
+        "signed_margins": {
+          "heading": 0.3209922736506733,
+          "hull": 0.48154867727922857,
+          "position": -0.027799357664803293,
+          "speed": 0.014639503750940398,
+          "yaw_rate": 0.047099821455776694
+        },
+        "speed_mps": 0.035360496249059604,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.919305194
+      },
+      {
+        "heading_error_rad": 0.028940951388688685,
+        "position_error_m": 0.42845513849767664,
+        "signed_margins": {
+          "heading": 0.3210590486113113,
+          "hull": 0.48191228014073273,
+          "position": -0.028455138497676613,
+          "speed": 0.013728041398616123,
+          "yaw_rate": 0.04671776592731476
+        },
+        "speed_mps": 0.03627195860138388,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.939305187
+      },
+      {
+        "heading_error_rad": 0.0288691801490788,
+        "position_error_m": 0.42912656929302484,
+        "signed_margins": {
+          "heading": 0.3211308198509212,
+          "hull": 0.4823157739480586,
+          "position": -0.029126569293024818,
+          "speed": 0.013021836659988996,
+          "yaw_rate": 0.04644999718293548
+        },
+        "speed_mps": 0.03697816334001101,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.95930518
+      },
+      {
+        "heading_error_rad": 0.028792399686727418,
+        "position_error_m": 0.4298156955207512,
+        "signed_margins": {
+          "heading": 0.32120760031327256,
+          "hull": 0.4827591526037387,
+          "position": -0.029815695520751195,
+          "speed": 0.01215638375104914,
+          "yaw_rate": 0.046196454158052805
+        },
+        "speed_mps": 0.03784361624895086,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.979305173
+      },
+      {
+        "heading_error_rad": 0.02871259688461314,
+        "position_error_m": 0.43052109105469555,
+        "signed_margins": {
+          "heading": 0.32128740311538684,
+          "hull": 0.4832358010387676,
+          "position": -0.030521091054695526,
+          "speed": 0.011380582007605042,
+          "yaw_rate": 0.0460179696790874
+        },
+        "speed_mps": 0.03861941799239496,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 27.999305166
+      },
+      {
+        "heading_error_rad": 0.02862960044645546,
+        "position_error_m": 0.4312412798328399,
+        "signed_margins": {
+          "heading": 0.3213703995535445,
+          "hull": 0.4837384796421713,
+          "position": -0.031241279832839863,
+          "speed": 0.010580228401317476,
+          "yaw_rate": 0.0458576331846416
+        },
+        "speed_mps": 0.039419771598682526,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.019305159
+      },
+      {
+        "heading_error_rad": 0.028544777437116142,
+        "position_error_m": 0.43198229948809064,
+        "signed_margins": {
+          "heading": 0.32145522256288384,
+          "hull": 0.4842626409995996,
+          "position": -0.031982299488090615,
+          "speed": 0.009732828356875063,
+          "yaw_rate": 0.045755530893802646
+        },
+        "speed_mps": 0.04026717164312494,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.039305152
+      },
+      {
+        "heading_error_rad": 0.028458504537302698,
+        "position_error_m": 0.4327387094173054,
+        "signed_margins": {
+          "heading": 0.3215414954626973,
+          "hull": 0.4848037091104487,
+          "position": -0.03273870941730539,
+          "speed": 0.009134530623087236,
+          "yaw_rate": 0.04568616319447756
+        },
+        "speed_mps": 0.040865469376912766,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.059305145
+      },
+      {
+        "heading_error_rad": 0.028373400798821,
+        "position_error_m": 0.43351667446408415,
+        "signed_margins": {
+          "heading": 0.321626599201179,
+          "hull": 0.4853530064894567,
+          "position": -0.03351667446408413,
+          "speed": 0.008455764631952398,
+          "yaw_rate": 0.04573862878605724
+        },
+        "speed_mps": 0.041544235368047605,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.079305137
+      },
+      {
+        "heading_error_rad": 0.028288901789295332,
+        "position_error_m": 0.4343124993962353,
+        "signed_margins": {
+          "heading": 0.32171109821070465,
+          "hull": 0.4859078609285137,
+          "position": -0.03431249939623526,
+          "speed": 0.007906118092833078,
+          "yaw_rate": 0.04578701658174396
+        },
+        "speed_mps": 0.042093881907166925,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.09930513
+      },
+      {
+        "heading_error_rad": 0.028204787798630674,
+        "position_error_m": 0.43512055167647884,
+        "signed_margins": {
+          "heading": 0.3217952122013693,
+          "hull": 0.48646625295526613,
+          "position": -0.03512055167647882,
+          "speed": 0.007393290241451869,
+          "yaw_rate": 0.04581546476110816
+        },
+        "speed_mps": 0.042606709758548134,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.119305123
+      },
+      {
+        "heading_error_rad": 0.028123694376930297,
+        "position_error_m": 0.4359508222626571,
+        "signed_margins": {
+          "heading": 0.3218763056230697,
+          "hull": 0.48701593668775467,
+          "position": -0.035950822262657056,
+          "speed": 0.006907435069124099,
+          "yaw_rate": 0.045990993920713666
+        },
+        "speed_mps": 0.043092564930875904,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.139305116
+      },
+      {
+        "heading_error_rad": 0.028044790879583337,
+        "position_error_m": 0.43679181951285573,
+        "signed_margins": {
+          "heading": 0.32195520912041664,
+          "hull": 0.48755672663359895,
+          "position": -0.036791819512855706,
+          "speed": 0.006677082281237735,
+          "yaw_rate": 0.04612444476224482
+        },
+        "speed_mps": 0.04332291771876227,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.159305109
+      },
+      {
+        "heading_error_rad": 0.02797160160437384,
+        "position_error_m": 0.43765165769553876,
+        "signed_margins": {
+          "heading": 0.32202839839562614,
+          "hull": 0.48807277656735204,
+          "position": -0.03765165769553874,
+          "speed": 0.006487286576589202,
+          "yaw_rate": 0.046441086055710915
+        },
+        "speed_mps": 0.0435127134234108,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.179305102
+      },
+      {
+        "heading_error_rad": 0.027902297427306433,
+        "position_error_m": 0.438522480539522,
+        "signed_margins": {
+          "heading": 0.32209770257269354,
+          "hull": 0.4885672064238029,
+          "position": -0.03852248053952195,
+          "speed": 0.006465279327970946,
+          "yaw_rate": 0.046681804768741134
+        },
+        "speed_mps": 0.043534720672029056,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.199305095
+      },
+      {
+        "heading_error_rad": 0.02783643534530067,
+        "position_error_m": 0.4394003089872242,
+        "signed_margins": {
+          "heading": 0.3221635646546993,
+          "hull": 0.48904241257254943,
+          "position": -0.039400308987224186,
+          "speed": 0.006584308789756528,
+          "yaw_rate": 0.04687792197801173
+        },
+        "speed_mps": 0.043415691210243475,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.219305088
+      },
+      {
+        "heading_error_rad": 0.0277778088802858,
+        "position_error_m": 0.44028559699696046,
+        "signed_margins": {
+          "heading": 0.3222221911197142,
+          "hull": 0.48948030145249843,
+          "position": -0.04028559699696044,
+          "speed": 0.006848138834289162,
+          "yaw_rate": 0.047287558857351544
+        },
+        "speed_mps": 0.04315186116571084,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.239305081
+      },
+      {
+        "heading_error_rad": 0.027724422985626607,
+        "position_error_m": 0.44117235559203793,
+        "signed_margins": {
+          "heading": 0.32227557701437337,
+          "hull": 0.4898848622349159,
+          "position": -0.04117235559203791,
+          "speed": 0.007349356279475139,
+          "yaw_rate": 0.04759984109550715
+        },
+        "speed_mps": 0.042650643720524864,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.259305074
+      },
+      {
+        "heading_error_rad": 0.027675657262348444,
+        "position_error_m": 0.44205461473388663,
+        "signed_margins": {
+          "heading": 0.32232434273765154,
+          "hull": 0.4902612619036286,
+          "position": -0.04205461473388661,
+          "speed": 0.008047985529588686,
+          "yaw_rate": 0.047859935509040955
+        },
+        "speed_mps": 0.04195201447041132,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.279305067
+      },
+      {
+        "heading_error_rad": 0.02763615295801269,
+        "position_error_m": 0.4429328688922301,
+        "signed_margins": {
+          "heading": 0.3223638470419873,
+          "hull": 0.4905873088017698,
+          "position": -0.04293286889223008,
+          "speed": 0.008911134156896844,
+          "yaw_rate": 0.04837461835704744
+        },
+        "speed_mps": 0.04108886584310316,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.299305060000002
+      },
+      {
+        "heading_error_rad": 0.027603834379004377,
+        "position_error_m": 0.44380107606125746,
+        "signed_margins": {
+          "heading": 0.3223961656209956,
+          "hull": 0.4908698122126005,
+          "position": -0.04380107606125744,
+          "speed": 0.009920804390595166,
+          "yaw_rate": 0.04876949493773282
+        },
+        "speed_mps": 0.04007919560940484,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.319305052
+      },
+      {
+        "heading_error_rad": 0.027582706953509284,
+        "position_error_m": 0.44465955152065156,
+        "signed_margins": {
+          "heading": 0.3224172930464907,
+          "hull": 0.4910922167381624,
+          "position": -0.04465955152065154,
+          "speed": 0.01102926765754924,
+          "yaw_rate": 0.049357569264248016
+        },
+        "speed_mps": 0.03897073234245076,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.339305045
+      },
+      {
+        "heading_error_rad": 0.027570197777225802,
+        "position_error_m": 0.4455041303813606,
+        "signed_margins": {
+          "heading": 0.3224298022227742,
+          "hull": 0.49126393947287417,
+          "position": -0.045504130381360586,
+          "speed": 0.012161854030074602,
+          "yaw_rate": 0.049810795881785455
+        },
+        "speed_mps": 0.0378381459699254,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.359305038
+      },
+      {
+        "heading_error_rad": 0.027568579156795,
+        "position_error_m": 0.44633313861455387,
+        "signed_margins": {
+          "heading": 0.322431420843205,
+          "hull": 0.4913720717559247,
+          "position": -0.04633313861455385,
+          "speed": 0.013365984238979965,
+          "yaw_rate": 0.04960433429805562
+        },
+        "speed_mps": 0.03663401576102004,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.379305031
+      },
+      {
+        "heading_error_rad": 0.02757596428569742,
+        "position_error_m": 0.4471424233989978,
+        "signed_margins": {
+          "heading": 0.32242403571430256,
+          "hull": 0.49142852645740365,
+          "position": -0.04714242339899777,
+          "speed": 0.014544234944695075,
+          "yaw_rate": 0.049159215716645124
+        },
+        "speed_mps": 0.03545576505530493,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.399305024
+      },
+      {
+        "heading_error_rad": 0.027590186543527073,
+        "position_error_m": 0.4479278758330134,
+        "signed_margins": {
+          "heading": 0.3224098134564729,
+          "hull": 0.4914445970931385,
+          "position": -0.04792787583301339,
+          "speed": 0.015764704092408828,
+          "yaw_rate": 0.04881963839288801
+        },
+        "speed_mps": 0.034235295907591175,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.419305017
+      },
+      {
+        "heading_error_rad": 0.027613746685478887,
+        "position_error_m": 0.448684098330472,
+        "signed_margins": {
+          "heading": 0.3223862533145211,
+          "hull": 0.4914062996926336,
+          "position": -0.04868409833047199,
+          "speed": 0.017220881820352883,
+          "yaw_rate": 0.04836257530841977
+        },
+        "speed_mps": 0.03277911817964712,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.43930501
+      },
+      {
+        "heading_error_rad": 0.027644393701426795,
+        "position_error_m": 0.4494088531061546,
+        "signed_margins": {
+          "heading": 0.3223556062985732,
+          "hull": 0.4913282227774556,
+          "position": -0.04940885310615456,
+          "speed": 0.018613274280406662,
+          "yaw_rate": 0.048051120201125744
+        },
+        "speed_mps": 0.03138672571959334,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.459305003
+      },
+      {
+        "heading_error_rad": 0.02768285132039905,
+        "position_error_m": 0.4500986081089277,
+        "signed_margins": {
+          "heading": 0.32231714867960093,
+          "hull": 0.4911990530667427,
+          "position": -0.05009860810892769,
+          "speed": 0.019846315727668963,
+          "yaw_rate": 0.047682671993970874
+        },
+        "speed_mps": 0.03015368427233104,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.479304996
+      },
+      {
+        "heading_error_rad": 0.027728092823586122,
+        "position_error_m": 0.45077606920492513,
+        "signed_margins": {
+          "heading": 0.32227190717641385,
+          "hull": 0.49102828117253394,
+          "position": -0.05077606920492511,
+          "speed": 0.020303747489600836,
+          "yaw_rate": 0.04740965198725462
+        },
+        "speed_mps": 0.029696252510399167,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.499304989
+      },
+      {
+        "heading_error_rad": 0.027777297304383275,
+        "position_error_m": 0.45144674131372836,
+        "signed_margins": {
+          "heading": 0.3222227026956167,
+          "hull": 0.49082615195061274,
+          "position": -0.05144674131372834,
+          "speed": 0.020218061532300418,
+          "yaw_rate": 0.0472083040047437
+        },
+        "speed_mps": 0.029781938467699585,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.519304982
+      },
+      {
+        "heading_error_rad": 0.027832164259725456,
+        "position_error_m": 0.4521089894084643,
+        "signed_margins": {
+          "heading": 0.3221678357402745,
+          "hull": 0.4905839953742708,
+          "position": -0.05210898940846426,
+          "speed": 0.02016637188516538,
+          "yaw_rate": 0.04700716114602983
+        },
+        "speed_mps": 0.029833628114834622,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.539304974
+      },
+      {
+        "heading_error_rad": 0.027890164580548493,
+        "position_error_m": 0.4527721885253827,
+        "signed_margins": {
+          "heading": 0.3221098354194515,
+          "hull": 0.4903100591602214,
+          "position": -0.05277218852538268,
+          "speed": 0.019606360373688087,
+          "yaw_rate": 0.04688893044367433
+        },
+        "speed_mps": 0.030393639626311916,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.559304967
+      },
+      {
+        "heading_error_rad": 0.02795054794957763,
+        "position_error_m": 0.45342695695613433,
+        "signed_margins": {
+          "heading": 0.32204945205042235,
+          "hull": 0.49000038471667473,
+          "position": -0.05342695695613431,
+          "speed": 0.019145839792257802,
+          "yaw_rate": 0.04683488416485489
+        },
+        "speed_mps": 0.0308541602077422,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.57930496
+      },
+      {
+        "heading_error_rad": 0.02801203008048403,
+        "position_error_m": 0.45409410201633243,
+        "signed_margins": {
+          "heading": 0.32198796991951595,
+          "hull": 0.4896638541235152,
+          "position": -0.05409410201633241,
+          "speed": 0.018078750702342217,
+          "yaw_rate": 0.0468327374663204
+        },
+        "speed_mps": 0.031921249297657786,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.599304953
+      },
+      {
+        "heading_error_rad": 0.028073578934347143,
+        "position_error_m": 0.454777220359233,
+        "signed_margins": {
+          "heading": 0.32192642106565283,
+          "hull": 0.48931043161969856,
+          "position": -0.05477722035923299,
+          "speed": 0.01678695142031896,
+          "yaw_rate": 0.04685452459380031
+        },
+        "speed_mps": 0.03321304857968104,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.619304946
+      },
+      {
+        "heading_error_rad": 0.028134079742399898,
+        "position_error_m": 0.4554573104540653,
+        "signed_margins": {
+          "heading": 0.3218659202576001,
+          "hull": 0.4889385950437497,
+          "position": -0.05545731045406527,
+          "speed": 0.016119230986230096,
+          "yaw_rate": 0.04698089598678053
+        },
+        "speed_mps": 0.03388076901376991,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.639304939
+      },
+      {
+        "heading_error_rad": 0.028192880349046323,
+        "position_error_m": 0.4561475739343222,
+        "signed_margins": {
+          "heading": 0.32180711965095365,
+          "hull": 0.48855468743156627,
+          "position": -0.05614757393432218,
+          "speed": 0.015039663258899993,
+          "yaw_rate": 0.04711195449344814
+        },
+        "speed_mps": 0.03496033674110001,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.659304932
+      },
+      {
+        "heading_error_rad": 0.028247507798583985,
+        "position_error_m": 0.4568288958844172,
+        "signed_margins": {
+          "heading": 0.321752492201416,
+          "hull": 0.4881600699923261,
+          "position": -0.056828895884417197,
+          "speed": 0.01438010799173789,
+          "yaw_rate": 0.04736427050083876
+        },
+        "speed_mps": 0.03561989200826211,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.679304925
+      },
+      {
+        "heading_error_rad": 0.028298537628922208,
+        "position_error_m": 0.45752403289664334,
+        "signed_margins": {
+          "heading": 0.3217014623710778,
+          "hull": 0.48775980432334376,
+          "position": -0.05752403289664332,
+          "speed": 0.013111348285221931,
+          "yaw_rate": 0.047575664892792704
+        },
+        "speed_mps": 0.03688865171477807,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.699304918
+      },
+      {
+        "heading_error_rad": 0.028346157524762328,
+        "position_error_m": 0.4582346999763139,
+        "signed_margins": {
+          "heading": 0.32165384247523765,
+          "hull": 0.48736042319764517,
+          "position": -0.058234699976313864,
+          "speed": 0.011734255210339738,
+          "yaw_rate": 0.04774083425290883
+        },
+        "speed_mps": 0.038265744789660265,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.719304911000002
+      },
+      {
+        "heading_error_rad": 0.028388343112005998,
+        "position_error_m": 0.4589378592894284,
+        "signed_margins": {
+          "heading": 0.321611656887994,
+          "hull": 0.48696566215405235,
+          "position": -0.05893785928942835,
+          "speed": 0.011282783882244601,
+          "yaw_rate": 0.04804944777861238
+        },
+        "speed_mps": 0.0387172161177554,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.739304904
+      },
+      {
+        "heading_error_rad": 0.028425468655340458,
+        "position_error_m": 0.4596410462432894,
+        "signed_margins": {
+          "heading": 0.3215745313446595,
+          "hull": 0.4865778575484234,
+          "position": -0.059641046243289364,
+          "speed": 0.01054684241786271,
+          "yaw_rate": 0.04829016462899745
+        },
+        "speed_mps": 0.03945315758213729,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.759304897
+      },
+      {
+        "heading_error_rad": 0.028455467448261777,
+        "position_error_m": 0.4603287781544155,
+        "signed_margins": {
+          "heading": 0.3215445325517382,
+          "hull": 0.4862021537364596,
+          "position": -0.06032877815441545,
+          "speed": 0.010353325557481828,
+          "yaw_rate": 0.048651146423071626
+        },
+        "speed_mps": 0.039646674442518175,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.779304889
+      },
+      {
+        "heading_error_rad": 0.028479894181923093,
+        "position_error_m": 0.4610181895147864,
+        "signed_margins": {
+          "heading": 0.3215201058180769,
+          "hull": 0.4858388666688993,
+          "position": -0.06101818951478638,
+          "speed": 0.00968263629428167,
+          "yaw_rate": 0.048912765295244756
+        },
+        "speed_mps": 0.04031736370571833,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.799304882
+      },
+      {
+        "heading_error_rad": 0.02850027637271979,
+        "position_error_m": 0.4617092106745438,
+        "signed_margins": {
+          "heading": 0.3214997236272802,
+          "hull": 0.4854897290700204,
+          "position": -0.06170921067454377,
+          "speed": 0.009005225254171016,
+          "yaw_rate": 0.04909934401512146
+        },
+        "speed_mps": 0.04099477474582899,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.819304875
+      },
+      {
+        "heading_error_rad": 0.028513574311245682,
+        "position_error_m": 0.462382463785405,
+        "signed_margins": {
+          "heading": 0.3214864256887543,
+          "hull": 0.48516105794578324,
+          "position": -0.06238246378540496,
+          "speed": 0.00916576537722235,
+          "yaw_rate": 0.049415567959658804
+        },
+        "speed_mps": 0.04083423462277765,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.839304868
+      },
+      {
+        "heading_error_rad": 0.02852192348348548,
+        "position_error_m": 0.4630456196876487,
+        "signed_margins": {
+          "heading": 0.3214780765165145,
+          "hull": 0.4848513199703517,
+          "position": -0.06304561968764866,
+          "speed": 0.009155425350774814,
+          "yaw_rate": 0.049636689870385456
+        },
+        "speed_mps": 0.04084457464922519,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.859304861
+      },
+      {
+        "heading_error_rad": 0.028523603465238967,
+        "position_error_m": 0.46369070693672726,
+        "signed_margins": {
+          "heading": 0.321476396534761,
+          "hull": 0.48456798206328844,
+          "position": -0.06369070693672724,
+          "speed": 0.009529634202512953,
+          "yaw_rate": 0.04995061074878322
+        },
+        "speed_mps": 0.04047036579748705,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.879304854
+      },
+      {
+        "heading_error_rad": 0.028520237022223286,
+        "position_error_m": 0.4643273567621947,
+        "signed_margins": {
+          "heading": 0.3214797629777767,
+          "hull": 0.4843078189409218,
+          "position": -0.0643273567621947,
+          "speed": 0.009553178928001851,
+          "yaw_rate": 0.04984293943271041
+        },
+        "speed_mps": 0.04044682107199815,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.899304847
+      },
+      {
+        "heading_error_rad": 0.028513790255725757,
+        "position_error_m": 0.46495759779846463,
+        "signed_margins": {
+          "heading": 0.3214862097442742,
+          "hull": 0.48406754208615044,
+          "position": -0.0649575977984646,
+          "speed": 0.009605822562003707,
+          "yaw_rate": 0.04970532074803487
+        },
+        "speed_mps": 0.040394177437996295,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.91930484
+      },
+      {
+        "heading_error_rad": 0.02850181021016862,
+        "position_error_m": 0.46557144351447005,
+        "signed_margins": {
+          "heading": 0.32149818978983136,
+          "hull": 0.4838571058528911,
+          "position": -0.06557144351447003,
+          "speed": 0.010148888110346595,
+          "yaw_rate": 0.04947313085431233
+        },
+        "speed_mps": 0.03985111188965341,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.939304833
+      },
+      {
+        "heading_error_rad": 0.028486679237162305,
+        "position_error_m": 0.4661748030133749,
+        "signed_margins": {
+          "heading": 0.3215133207628377,
+          "hull": 0.48367176518034394,
+          "position": -0.06617480301337486,
+          "speed": 0.01061808825514976,
+          "yaw_rate": 0.049327915662433955
+        },
+        "speed_mps": 0.03938191174485024,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.959304826
+      },
+      {
+        "heading_error_rad": 0.02846708595482572,
+        "position_error_m": 0.4667691683384068,
+        "signed_margins": {
+          "heading": 0.32153291404517426,
+          "hull": 0.48352086475157674,
+          "position": -0.06676916833840679,
+          "speed": 0.01119266548924494,
+          "yaw_rate": 0.04913730099797249
+        },
+        "speed_mps": 0.03880733451075506,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.979304819
+      },
+      {
+        "heading_error_rad": 0.02844511052520371,
+        "position_error_m": 0.4673586200676585,
+        "signed_margins": {
+          "heading": 0.32155488947479627,
+          "hull": 0.4833978364089504,
+          "position": -0.06735862006765847,
+          "speed": 0.01164646779127717,
+          "yaw_rate": 0.04902701831888408
+        },
+        "speed_mps": 0.03835353220872283,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 28.999304812
+      },
+      {
+        "heading_error_rad": 0.02842158781794879,
+        "position_error_m": 0.46793956231146183,
+        "signed_margins": {
+          "heading": 0.3215784121820512,
+          "hull": 0.48329714562909687,
+          "position": -0.06793956231146181,
+          "speed": 0.012227547827964827,
+          "yaw_rate": 0.0489590646000579
+        },
+        "speed_mps": 0.037772452172035176,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.019304804
+      },
+      {
+        "heading_error_rad": 0.02839584358843661,
+        "position_error_m": 0.46851718108548596,
+        "signed_margins": {
+          "heading": 0.32160415641156337,
+          "hull": 0.4832317999797182,
+          "position": -0.06851718108548593,
+          "speed": 0.012925407846983407,
+          "yaw_rate": 0.04884621798992157
+        },
+        "speed_mps": 0.037074592153016596,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.039304797
+      },
+      {
+        "heading_error_rad": 0.028369188083449792,
+        "position_error_m": 0.46908988029913284,
+        "signed_margins": {
+          "heading": 0.3216308119165502,
+          "hull": 0.48319436163443963,
+          "position": -0.06908988029913282,
+          "speed": 0.013658897217121012,
+          "yaw_rate": 0.04879221641458571
+        },
+        "speed_mps": 0.03634110278287899,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.05930479
+      },
+      {
+        "heading_error_rad": 0.028341342661206696,
+        "position_error_m": 0.46966489260707056,
+        "signed_margins": {
+          "heading": 0.3216586573387933,
+          "hull": 0.48319470208326987,
+          "position": -0.06966489260707054,
+          "speed": 0.014282225900537154,
+          "yaw_rate": 0.04873279093299061
+        },
+        "speed_mps": 0.03571777409946285,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.079304783
+      },
+      {
+        "heading_error_rad": 0.028313348723511433,
+        "position_error_m": 0.47024067318859003,
+        "signed_margins": {
+          "heading": 0.32168665127648854,
+          "hull": 0.4832242926329551,
+          "position": -0.07024067318859001,
+          "speed": 0.014951196753930904,
+          "yaw_rate": 0.04871398077812046
+        },
+        "speed_mps": 0.0350488032460691,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.099304776
+      },
+      {
+        "heading_error_rad": 0.028285506247382575,
+        "position_error_m": 0.4708099057615683,
+        "signed_margins": {
+          "heading": 0.3217144937526174,
+          "hull": 0.4832756568939196,
+          "position": -0.07080990576156826,
+          "speed": 0.015774631195008534,
+          "yaw_rate": 0.048708166414871815
+        },
+        "speed_mps": 0.03422536880499147,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.119304769
+      },
+      {
+        "heading_error_rad": 0.028258246328331408,
+        "position_error_m": 0.47138734585535086,
+        "signed_margins": {
+          "heading": 0.3217417536716686,
+          "hull": 0.48336212775070186,
+          "position": -0.07138734585535084,
+          "speed": 0.016419021100245172,
+          "yaw_rate": 0.048702517594210806
+        },
+        "speed_mps": 0.03358097889975483,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.139304762
+      },
+      {
+        "heading_error_rad": 0.02823142849373284,
+        "position_error_m": 0.47196762077108817,
+        "signed_margins": {
+          "heading": 0.32176857150626714,
+          "hull": 0.4834752888880476,
+          "position": -0.07196762077108815,
+          "speed": 0.017135689887425795,
+          "yaw_rate": 0.048716621077619496
+        },
+        "speed_mps": 0.03286431011257421,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.159304755
+      },
+      {
+        "heading_error_rad": 0.028205874589780855,
+        "position_error_m": 0.4725674688818645,
+        "signed_margins": {
+          "heading": 0.3217941254102191,
+          "hull": 0.48362724193967477,
+          "position": -0.0725674688818645,
+          "speed": 0.017566462781845184,
+          "yaw_rate": 0.04874635122250766
+        },
+        "speed_mps": 0.03243353721815482,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.179304748
+      },
+      {
+        "heading_error_rad": 0.02818112952069196,
+        "position_error_m": 0.4731720698498049,
+        "signed_margins": {
+          "heading": 0.321818870479308,
+          "hull": 0.4838075027680979,
+          "position": -0.0731720698498049,
+          "speed": 0.018070208071188705,
+          "yaw_rate": 0.048784036026336255
+        },
+        "speed_mps": 0.0319297919288113,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.199304741
+      },
+      {
+        "heading_error_rad": 0.028157402375747154,
+        "position_error_m": 0.47378176831860624,
+        "signed_margins": {
+          "heading": 0.3218425976242528,
+          "hull": 0.48400783332513675,
+          "position": -0.07378176831860622,
+          "speed": 0.01868191920319305,
+          "yaw_rate": 0.048815474449656907
+        },
+        "speed_mps": 0.03131808079680695,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.219304734
+      },
+      {
+        "heading_error_rad": 0.02813488325114233,
+        "position_error_m": 0.4744095820684336,
+        "signed_margins": {
+          "heading": 0.32186511674885765,
+          "hull": 0.484238105680737,
+          "position": -0.07440958206843357,
+          "speed": 0.018971780578118838,
+          "yaw_rate": 0.048868062626570466
+        },
+        "speed_mps": 0.031028219421881165,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.239304726
+      },
+      {
+        "heading_error_rad": 0.028113354045795628,
+        "position_error_m": 0.4750482755515684,
+        "signed_margins": {
+          "heading": 0.32188664595420435,
+          "hull": 0.4844886718315289,
+          "position": -0.0750482755515684,
+          "speed": 0.019275381594802212,
+          "yaw_rate": 0.04891092849429697
+        },
+        "speed_mps": 0.03072461840519779,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.259304719
+      },
+      {
+        "heading_error_rad": 0.02809295853036753,
+        "position_error_m": 0.47571478177698484,
+        "signed_margins": {
+          "heading": 0.32190704146963245,
+          "hull": 0.48476699603844464,
+          "position": -0.07571478177698482,
+          "speed": 0.019228294631168204,
+          "yaw_rate": 0.048969678883440795
+        },
+        "speed_mps": 0.0307717053688318,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.279304712
+      },
+      {
+        "heading_error_rad": 0.028072939449772738,
+        "position_error_m": 0.47639993439299183,
+        "signed_margins": {
+          "heading": 0.32192706055022724,
+          "hull": 0.48506363221120696,
+          "position": -0.07639993439299181,
+          "speed": 0.019188205793426484,
+          "yaw_rate": 0.04900443234946579
+        },
+        "speed_mps": 0.03081179420657352,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.299304705
+      },
+      {
+        "heading_error_rad": 0.028052814230830503,
+        "position_error_m": 0.47710015873693834,
+        "signed_margins": {
+          "heading": 0.3219471857691695,
+          "hull": 0.4844001084559295,
+          "position": -0.07710015873693832,
+          "speed": 0.01916783909297769,
+          "yaw_rate": 0.0490148589713499
+        },
+        "speed_mps": 0.030832160907022312,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.319304698
+      },
+      {
+        "heading_error_rad": 0.028032930131923983,
+        "position_error_m": 0.4778285909348753,
+        "signed_margins": {
+          "heading": 0.321967069868076,
+          "hull": 0.48365166463804954,
+          "position": -0.07782859093487526,
+          "speed": 0.018837704967129897,
+          "yaw_rate": 0.04906153156189248
+        },
+        "speed_mps": 0.031162295032870106,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.339304691
+      },
+      {
+        "heading_error_rad": 0.02801312442367032,
+        "position_error_m": 0.47857592692851625,
+        "signed_margins": {
+          "heading": 0.32198687557632966,
+          "hull": 0.4828841806373738,
+          "position": -0.07857592692851623,
+          "speed": 0.018518365751595968,
+          "yaw_rate": 0.04909445462981239
+        },
+        "speed_mps": 0.031481634248404035,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.359304684
+      },
+      {
+        "heading_error_rad": 0.027993601681670865,
+        "position_error_m": 0.4793535556651773,
+        "signed_margins": {
+          "heading": 0.3220063983183291,
+          "hull": 0.4820862986998691,
+          "position": -0.07935355566517727,
+          "speed": 0.018019143548819505,
+          "yaw_rate": 0.04915630515897647
+        },
+        "speed_mps": 0.0319808564511805,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.379304677
+      },
+      {
+        "heading_error_rad": 0.027974102026924186,
+        "position_error_m": 0.48015595014962714,
+        "signed_margins": {
+          "heading": 0.3220258979730758,
+          "hull": 0.4812636311841345,
+          "position": -0.08015595014962712,
+          "speed": 0.017577882993662468,
+          "yaw_rate": 0.04921175063354895
+        },
+        "speed_mps": 0.032422117006337535,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.39930467
+      },
+      {
+        "heading_error_rad": 0.027954792397828946,
+        "position_error_m": 0.48097378187667167,
+        "signed_margins": {
+          "heading": 0.32204520760217104,
+          "hull": 0.4804257852847229,
+          "position": -0.08097378187667165,
+          "speed": 0.017212925398762506,
+          "yaw_rate": 0.04925985047593713
+        },
+        "speed_mps": 0.0327870746012375,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.419304663
+      },
+      {
+        "heading_error_rad": 0.02793545997962088,
+        "position_error_m": 0.48181467625906593,
+        "signed_margins": {
+          "heading": 0.3220645400203791,
+          "hull": 0.47956504179019177,
+          "position": -0.08181467625906591,
+          "speed": 0.016781841453326424,
+          "yaw_rate": 0.049336876790039244
+        },
+        "speed_mps": 0.03321815854667358,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.439304656
+      },
+      {
+        "heading_error_rad": 0.027916533493267615,
+        "position_error_m": 0.48266732065081086,
+        "signed_margins": {
+          "heading": 0.32208346650673236,
+          "hull": 0.4786930257148221,
+          "position": -0.08266732065081084,
+          "speed": 0.01640863310512155,
+          "yaw_rate": 0.04941469979239628
+        },
+        "speed_mps": 0.033591366894878454,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.459304649
+      },
+      {
+        "heading_error_rad": 0.02789829065574767,
+        "position_error_m": 0.483539421838033,
+        "signed_margins": {
+          "heading": 0.3221017093442523,
+          "hull": 0.47780222484611556,
+          "position": -0.08353942183803298,
+          "speed": 0.016022666114007322,
+          "yaw_rate": 0.0495096005150117
+        },
+        "speed_mps": 0.03397733388599268,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.479304641
+      },
+      {
+        "heading_error_rad": 0.02788058077977951,
+        "position_error_m": 0.4844233865904525,
+        "signed_margins": {
+          "heading": 0.32211941922022047,
+          "hull": 0.4769002049703559,
+          "position": -0.08442338659045245,
+          "speed": 0.015649013667525698,
+          "yaw_rate": 0.04960607563843951
+        },
+        "speed_mps": 0.034350986332474305,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.499304634
+      },
+      {
+        "heading_error_rad": 0.027863463062416605,
+        "position_error_m": 0.485317354381793,
+        "signed_margins": {
+          "heading": 0.3221365369375834,
+          "hull": 0.47598889840019254,
+          "position": -0.085317354381793,
+          "speed": 0.015305787685121704,
+          "yaw_rate": 0.049690667202230546
+        },
+        "speed_mps": 0.0346942123148783,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.519304627
+      },
+      {
+        "heading_error_rad": 0.027847057311279233,
+        "position_error_m": 0.4862157427004667,
+        "signed_margins": {
+          "heading": 0.32215294268872074,
+          "hull": 0.47507407771938404,
+          "position": -0.08621574270046667,
+          "speed": 0.01504988436980275,
+          "yaw_rate": 0.04978403770364821
+        },
+        "speed_mps": 0.03495011563019725,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.53930462
+      },
+      {
+        "heading_error_rad": 0.027831624027350177,
+        "position_error_m": 0.48711850076473645,
+        "signed_margins": {
+          "heading": 0.3221683759726498,
+          "hull": 0.47415585282872996,
+          "position": -0.08711850076473643,
+          "speed": 0.014823508716906061,
+          "yaw_rate": 0.04987485090969131
+        },
+        "speed_mps": 0.03517649128309394,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.559304613
+      },
+      {
+        "heading_error_rad": 0.027817266771559934,
+        "position_error_m": 0.4880200679382643,
+        "signed_margins": {
+          "heading": 0.32218273322844004,
+          "hull": 0.4732399894466859,
+          "position": -0.08802006793826428,
+          "speed": 0.014690287115868894,
+          "yaw_rate": 0.04997134681325406
+        },
+        "speed_mps": 0.03530971288413111,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.579304606
+      },
+      {
+        "heading_error_rad": 0.027804229168644,
+        "position_error_m": 0.4889184422386791,
+        "signed_margins": {
+          "heading": 0.322195770831356,
+          "hull": 0.4723284976916986,
+          "position": -0.08891844223867906,
+          "speed": 0.014556052507005798,
+          "yaw_rate": 0.04994005938060582
+        },
+        "speed_mps": 0.035443947492994204,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.599304599
+      },
+      {
+        "heading_error_rad": 0.02779208322702598,
+        "position_error_m": 0.4898173664283408,
+        "signed_margins": {
+          "heading": 0.322207916772974,
+          "hull": 0.4714173822533674,
+          "position": -0.08981736642834076,
+          "speed": 0.014432828799242278,
+          "yaw_rate": 0.049860897602047774
+        },
+        "speed_mps": 0.035567171200757725,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.619304592
+      },
+      {
+        "heading_error_rad": 0.027781730853272842,
+        "position_error_m": 0.490705606932642,
+        "signed_margins": {
+          "heading": 0.32221826914672713,
+          "hull": 0.4705184677460643,
+          "position": -0.09070560693264196,
+          "speed": 0.014491387462594103,
+          "yaw_rate": 0.04977166927419603
+        },
+        "speed_mps": 0.0355086125374059,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.639304585
+      },
+      {
+        "heading_error_rad": 0.027772637544925427,
+        "position_error_m": 0.49158494877181336,
+        "signed_margins": {
+          "heading": 0.32222736245507455,
+          "hull": 0.4696296212708049,
+          "position": -0.09158494877181333,
+          "speed": 0.014599920143256832,
+          "yaw_rate": 0.04969817762030289
+        },
+        "speed_mps": 0.03540007985674317,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.659304578
+      },
+      {
+        "heading_error_rad": 0.02776658953128397,
+        "position_error_m": 0.49244037406990837,
+        "signed_margins": {
+          "heading": 0.322233410468716,
+          "hull": 0.46876685524421546,
+          "position": -0.09244037406990835,
+          "speed": 0.014873770175133222,
+          "yaw_rate": 0.04959876367938705
+        },
+        "speed_mps": 0.03512622982486678,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.679304571
+      },
+      {
+        "heading_error_rad": 0.027762171572849766,
+        "position_error_m": 0.49327933529463486,
+        "signed_margins": {
+          "heading": 0.3222378284271502,
+          "hull": 0.46792194312508784,
+          "position": -0.09327933529463484,
+          "speed": 0.015154721388649803,
+          "yaw_rate": 0.049526394531130793
+        },
+        "speed_mps": 0.0348452786113502,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.699304563
+      },
+      {
+        "heading_error_rad": 0.027759833144182622,
+        "position_error_m": 0.49410549335632126,
+        "signed_margins": {
+          "heading": 0.32224016685581736,
+          "hull": 0.4670912598452013,
+          "position": -0.09410549335632123,
+          "speed": 0.015392252796458103,
+          "yaw_rate": 0.04945947842206806
+        },
+        "speed_mps": 0.0346077472035419,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.719304556
+      },
+      {
+        "heading_error_rad": 0.027760927395775292,
+        "position_error_m": 0.49490577160897786,
+        "signed_margins": {
+          "heading": 0.3222390726042247,
+          "hull": 0.46628872775460906,
+          "position": -0.09490577160897784,
+          "speed": 0.015786950383411123,
+          "yaw_rate": 0.04935253290459514
+        },
+        "speed_mps": 0.03421304961658888,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.739304549
+      },
+      {
+        "heading_error_rad": 0.027764279777584555,
+        "position_error_m": 0.4956857133472665,
+        "signed_margins": {
+          "heading": 0.3222357202224154,
+          "hull": 0.4655081292475849,
+          "position": -0.0956857133472665,
+          "speed": 0.01621743421210249,
+          "yaw_rate": 0.049283130746334794
+        },
+        "speed_mps": 0.03378256578789751,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.759304542
+      },
+      {
+        "heading_error_rad": 0.02777216666583282,
+        "position_error_m": 0.4964303421062842,
+        "signed_margins": {
+          "heading": 0.32222783333416716,
+          "hull": 0.4647656835819127,
+          "position": -0.09643034210628415,
+          "speed": 0.016768481065303147,
+          "yaw_rate": 0.049155364406760785
+        },
+        "speed_mps": 0.033231518934696856,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.779304535
+      },
+      {
+        "heading_error_rad": 0.027783237998367127,
+        "position_error_m": 0.497147083206979,
+        "signed_margins": {
+          "heading": 0.32221676200163285,
+          "hull": 0.46405319179000415,
+          "position": -0.09714708320697896,
+          "speed": 0.017309229723748508,
+          "yaw_rate": 0.04907708633691073
+        },
+        "speed_mps": 0.032690770276251495,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.799304528
+      },
+      {
+        "heading_error_rad": 0.027796647770329086,
+        "position_error_m": 0.49784339310984366,
+        "signed_margins": {
+          "heading": 0.3222033522296709,
+          "hull": 0.4633626675743798,
+          "position": -0.09784339310984363,
+          "speed": 0.017754168347056794,
+          "yaw_rate": 0.04900882656220347
+        },
+        "speed_mps": 0.03224583165294321,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.819304521
+      },
+      {
+        "heading_error_rad": 0.027814946513055938,
+        "position_error_m": 0.49850627487740046,
+        "signed_margins": {
+          "heading": 0.32218505348694404,
+          "hull": 0.4627085386160452,
+          "position": -0.09850627487740043,
+          "speed": 0.01827657839553392,
+          "yaw_rate": 0.048860934749245646
+        },
+        "speed_mps": 0.03172342160446608,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.839304514
+      },
+      {
+        "heading_error_rad": 0.027836544398772253,
+        "position_error_m": 0.49914317831424493,
+        "signed_margins": {
+          "heading": 0.3221634556012277,
+          "hull": 0.46208250482504454,
+          "position": -0.0991431783142449,
+          "speed": 0.01880478888698741,
+          "yaw_rate": 0.0487741494551301
+        },
+        "speed_mps": 0.031195211113012593,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.859304507
+      },
+      {
+        "heading_error_rad": 0.027863788662600752,
+        "position_error_m": 0.499743003730248,
+        "signed_margins": {
+          "heading": 0.3221362113373992,
+          "hull": 0.4614970008830319,
+          "position": -0.09974300373024797,
+          "speed": 0.019341863309986197,
+          "yaw_rate": 0.048597951489500704
+        },
+        "speed_mps": 0.030658136690013806,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.8793045
+      },
+      {
+        "heading_error_rad": 0.0278948049872747,
+        "position_error_m": 0.5003150988080545,
+        "signed_margins": {
+          "heading": 0.3221051950127253,
+          "hull": 0.46094169935440377,
+          "position": -0.10031509880805445,
+          "speed": 0.0198401974875687,
+          "yaw_rate": 0.048491163598373535
+        },
+        "speed_mps": 0.0301598025124313,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.899304493
+      },
+      {
+        "heading_error_rad": 0.02792848913611579,
+        "position_error_m": 0.5008649968094345,
+        "signed_margins": {
+          "heading": 0.3220715108638842,
+          "hull": 0.4604104123874819,
+          "position": -0.1008649968094345,
+          "speed": 0.02021351855385883,
+          "yaw_rate": 0.04840708810370416
+        },
+        "speed_mps": 0.029786481446141173,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.919304486
+      },
+      {
+        "heading_error_rad": 0.027967406777218425,
+        "position_error_m": 0.501383592810206,
+        "signed_margins": {
+          "heading": 0.32203259322278155,
+          "hull": 0.4599137596656817,
+          "position": -0.10138359281020592,
+          "speed": 0.020547791995397188,
+          "yaw_rate": 0.048221116256900134
+        },
+        "speed_mps": 0.029452208004602815,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.939304478
+      },
+      {
+        "heading_error_rad": 0.028009329121213344,
+        "position_error_m": 0.5018764391807272,
+        "signed_margins": {
+          "heading": 0.32199067087878663,
+          "hull": 0.4594450788076152,
+          "position": -0.1018764391807272,
+          "speed": 0.020893247027229205,
+          "yaw_rate": 0.04811461393255741
+        },
+        "speed_mps": 0.029106752972770798,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.959304471
+      },
+      {
+        "heading_error_rad": 0.028056143306539157,
+        "position_error_m": 0.502341941669644,
+        "signed_margins": {
+          "heading": 0.3219438566934608,
+          "hull": 0.45900707389414563,
+          "position": -0.10234194166964394,
+          "speed": 0.02113911453635267,
+          "yaw_rate": 0.04792759353294969
+        },
+        "speed_mps": 0.02886088546364733,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.979304464
+      },
+      {
+        "heading_error_rad": 0.028105775572116798,
+        "position_error_m": 0.5027837412812788,
+        "signed_margins": {
+          "heading": 0.3218942244278832,
+          "hull": 0.4585950552546656,
+          "position": -0.10278374128127876,
+          "speed": 0.02136393410272242,
+          "yaw_rate": 0.04781796056777239
+        },
+        "speed_mps": 0.028636065897277584,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 29.999304457
+      },
+      {
+        "heading_error_rad": 0.02815716675353741,
+        "position_error_m": 0.5032131204363957,
+        "signed_margins": {
+          "heading": 0.32184283324646257,
+          "hull": 0.4581971319167053,
+          "position": -0.10321312043639563,
+          "speed": 0.0214962632320456,
+          "yaw_rate": 0.04773884611204267
+        },
+        "speed_mps": 0.028503736767954403,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 30.01930445
+      },
+      {
+        "heading_error_rad": 0.02821191098246878,
+        "position_error_m": 0.5036227878480891,
+        "signed_margins": {
+          "heading": 0.3217880890175312,
+          "hull": 0.45782160641291014,
+          "position": -0.10362278784808909,
+          "speed": 0.02152314278430866,
+          "yaw_rate": 0.047582968091592195
+        },
+        "speed_mps": 0.02847685721569134,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 30.039304443
+      },
+      {
+        "heading_error_rad": 0.028268080829394915,
+        "position_error_m": 0.504016399284546,
+        "signed_margins": {
+          "heading": 0.32173191917060506,
+          "hull": 0.45746385059261385,
+          "position": -0.10401639928454598,
+          "speed": 0.02160689413586235,
+          "yaw_rate": 0.04750434816814959
+        },
+        "speed_mps": 0.028393105864137652,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 30.059304436
+      },
+      {
+        "heading_error_rad": 0.028326368762452425,
+        "position_error_m": 0.5043941397040632,
+        "signed_margins": {
+          "heading": 0.32167363123754755,
+          "hull": 0.45712415696886666,
+          "position": -0.1043941397040632,
+          "speed": 0.021555342688273638,
+          "yaw_rate": 0.04738466925919056
+        },
+        "speed_mps": 0.028444657311726365,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 30.079304429
+      },
+      {
+        "heading_error_rad": 0.028385062378874615,
+        "position_error_m": 0.5047596804923179,
+        "signed_margins": {
+          "heading": 0.32161493762112536,
+          "hull": 0.45679798796494,
+          "position": -0.10475968049231787,
+          "speed": 0.02152318980699062,
+          "yaw_rate": 0.04732908606529236
+        },
+        "speed_mps": 0.028476810193009384,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 30.099304422
+      },
+      {
+        "heading_error_rad": 0.028443709333670908,
+        "position_error_m": 0.5051204850494484,
+        "signed_margins": {
+          "heading": 0.32155629066632907,
+          "hull": 0.4564775232027536,
+          "position": -0.10512048504944838,
+          "speed": 0.021435210153475794,
+          "yaw_rate": 0.04729821085929871
+        },
+        "speed_mps": 0.02856478984652421,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 30.119304415
+      },
+      {
+        "heading_error_rad": 0.02850241354773475,
+        "position_error_m": 0.5054765922333252,
+        "signed_margins": {
+          "heading": 0.3214975864522652,
+          "hull": 0.45616280656628305,
+          "position": -0.10547659223332517,
+          "speed": 0.021249569388866758,
+          "yaw_rate": 0.04725690856575966
+        },
+        "speed_mps": 0.028750430611133245,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 30.139304408
+      },
+      {
+        "heading_error_rad": 0.028559610470148655,
+        "position_error_m": 0.5058259600330341,
+        "signed_margins": {
+          "heading": 0.3214403895298513,
+          "hull": 0.4558550846075988,
+          "position": -0.10582596003303413,
+          "speed": 0.021153649582433848,
+          "yaw_rate": 0.04725852301344276
+        },
+        "speed_mps": 0.028846350417566155,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 30.159304401
+      },
+      {
+        "heading_error_rad": 0.028615147798303875,
+        "position_error_m": 0.5061760218002967,
+        "signed_margins": {
+          "heading": 0.3213848522016961,
+          "hull": 0.4555466634584242,
+          "position": -0.10617602180029673,
+          "speed": 0.020959458879819492,
+          "yaw_rate": 0.0472923391032964
+        },
+        "speed_mps": 0.02904054112018051,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 30.179304393
+      },
+      {
+        "heading_error_rad": 0.028668584562193677,
+        "position_error_m": 0.5065266622614644,
+        "signed_margins": {
+          "heading": 0.3213314154378063,
+          "hull": 0.4552373566921588,
+          "position": -0.10652666226146434,
+          "speed": 0.020811351679157136,
+          "yaw_rate": 0.047344667557626965
+        },
+        "speed_mps": 0.029188648320842867,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 30.199304386
+      },
+      {
+        "heading_error_rad": 0.028719387766827253,
+        "position_error_m": 0.5068816189504829,
+        "signed_margins": {
+          "heading": 0.3212806122331727,
+          "hull": 0.4549231242636864,
+          "position": -0.10688161895048287,
+          "speed": 0.02064908104214943,
+          "yaw_rate": 0.04740281444974244
+        },
+        "speed_mps": 0.029350918957850573,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 30.219304379
+      },
+      {
+        "heading_error_rad": 0.028766468805330847,
+        "position_error_m": 0.507242313715049,
+        "signed_margins": {
+          "heading": 0.32123353119466913,
+          "hull": 0.45460159869599437,
+          "position": -0.107242313715049,
+          "speed": 0.02045787392687739,
+          "yaw_rate": 0.047532375622540715
+        },
+        "speed_mps": 0.029542126073122614,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 30.239304372
+      },
+      {
+        "heading_error_rad": 0.028810039492156214,
+        "position_error_m": 0.507606805742812,
+        "signed_margins": {
+          "heading": 0.32118996050784376,
+          "hull": 0.45427477653855064,
+          "position": -0.107606805742812,
+          "speed": 0.020369115611215818,
+          "yaw_rate": 0.047647659620270136
+        },
+        "speed_mps": 0.029630884388784185,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 30.259304365
+      },
+      {
+        "heading_error_rad": 0.028847931462355536,
+        "position_error_m": 0.5079838892826241,
+        "signed_margins": {
+          "heading": 0.32115206853764444,
+          "hull": 0.4539322046215517,
+          "position": -0.10798388928262403,
+          "speed": 0.02025604494186199,
+          "yaw_rate": 0.04787584319710732
+        },
+        "speed_mps": 0.029743955058138014,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 30.279304358
+      },
+      {
+        "heading_error_rad": 0.028881368984886135,
+        "position_error_m": 0.5083716866932273,
+        "signed_margins": {
+          "heading": 0.32111863101511384,
+          "hull": 0.4535763072348118,
+          "position": -0.10837168669322728,
+          "speed": 0.020184892816579234,
+          "yaw_rate": 0.04805933446623385
+        },
+        "speed_mps": 0.02981510718342077,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 30.299304351
+      },
+      {
+        "heading_error_rad": 0.02891047469188468,
+        "position_error_m": 0.5087683498824906,
+        "signed_margins": {
+          "heading": 0.3210895253081153,
+          "hull": 0.4532090432989442,
+          "position": -0.10876834988249062,
+          "speed": 0.02014161714382974,
+          "yaw_rate": 0.048225197079591456
+        },
+        "speed_mps": 0.029858382856170262,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 30.319304344
+      },
+      {
+        "heading_error_rad": 0.028932461314780555,
+        "position_error_m": 0.5091785123158938,
+        "signed_margins": {
+          "heading": 0.3210675386852194,
+          "hull": 0.45282351275747956,
+          "position": -0.10917851231589382,
+          "speed": 0.020138955589954696,
+          "yaw_rate": 0.04855914933141321
+        },
+        "speed_mps": 0.029861044410045307,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 30.339304337
+      },
+      {
+        "heading_error_rad": 0.028948893096120587,
+        "position_error_m": 0.5095985266934896,
+        "signed_margins": {
+          "heading": 0.3210511069038794,
+          "hull": 0.4524241910550302,
+          "position": -0.10959852669348957,
+          "speed": 0.020217237474302954,
+          "yaw_rate": 0.04881133774761111
+        },
+        "speed_mps": 0.02978276252569705,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 30.35930433
+      },
+      {
+        "heading_error_rad": 0.028956741673741293,
+        "position_error_m": 0.5100367693109005,
+        "signed_margins": {
+          "heading": 0.3210432583262587,
+          "hull": 0.45200026157700535,
+          "position": -0.11003676931090045,
+          "speed": 0.02028931535731085,
+          "yaw_rate": 0.04924268817994744
+        },
+        "speed_mps": 0.029710684642689153,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 30.379304323
+      },
+      {
+        "heading_error_rad": 0.028958281853366685,
+        "position_error_m": 0.5104878993205236,
+        "signed_margins": {
+          "heading": 0.3210417181466333,
+          "hull": 0.45155840754017973,
+          "position": -0.11048789932052361,
+          "speed": 0.020378032924430186,
+          "yaw_rate": 0.049567513004876676
+        },
+        "speed_mps": 0.029621967075569817,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 30.399304315
+      },
+      {
+        "heading_error_rad": 0.028954137276447467,
+        "position_error_m": 0.5109446950767401,
+        "signed_margins": {
+          "heading": 0.3210458627235525,
+          "hull": 0.45110652185888966,
+          "position": -0.1109446950767401,
+          "speed": 0.020512273457528374,
+          "yaw_rate": 0.04984371813479811
+        },
+        "speed_mps": 0.02948772654247163,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 30.419304308
+      },
+      {
+        "heading_error_rad": 0.02894060927349651,
+        "position_error_m": 0.5114153221502338,
+        "signed_margins": {
+          "heading": 0.32105939072650347,
+          "hull": 0.4506335048833847,
+          "position": -0.11141532215023375,
+          "speed": 0.020599814750132523,
+          "yaw_rate": 0.04966558095184155
+        },
+        "speed_mps": 0.02940018524986748,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 30.439304301
+      },
+      {
+        "heading_error_rad": 0.028920645837550833,
+        "position_error_m": 0.5118984652016754,
+        "signed_margins": {
+          "heading": 0.32107935416244915,
+          "hull": 0.45014250986693227,
+          "position": -0.11189846520167535,
+          "speed": 0.0207050157377244,
+          "yaw_rate": 0.04930806236807257
+        },
+        "speed_mps": 0.029294984262275604,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 30.459304294
+      },
+      {
+        "heading_error_rad": 0.02889026900890146,
+        "position_error_m": 0.5123948139167429,
+        "signed_margins": {
+          "heading": 0.3211097309910985,
+          "hull": 0.44962994881847607,
+          "position": -0.11239481391674289,
+          "speed": 0.020646046898274015,
+          "yaw_rate": 0.048749828897416594
+        },
+        "speed_mps": 0.029353953101725987,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 30.479304287
+      },
+      {
+        "heading_error_rad": 0.028852932603141035,
+        "position_error_m": 0.512901410495301,
+        "signed_margins": {
+          "heading": 0.32114706739685894,
+          "hull": 0.4491010962625914,
+          "position": -0.112901410495301,
+          "speed": 0.02055535642601628,
+          "yaw_rate": 0.048351698508486154
+        },
+        "speed_mps": 0.02944464357398372,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 30.49930428
+      },
+      {
+        "heading_error_rad": 0.028810057523348087,
+        "position_error_m": 0.5134152922563971,
+        "signed_margins": {
+          "heading": 0.3211899424766519,
+          "hull": 0.4485603676527603,
+          "position": -0.11341529225639713,
+          "speed": 0.02051995673248379,
+          "yaw_rate": 0.04804647197015584
+        },
+        "speed_mps": 0.02948004326751621,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 30.519304273
+      }
+    ],
+    "physical_cause_support": "unknown",
+    "radial_error_growth_m": 0.14772146854270352,
+    "return_observation": {
+      "heading_error_rad": 0.025708322869979705,
+      "position_error_m": 0.36569382371369363,
+      "signed_margins": {
+        "heading": 0.3242916771300203,
+        "hull": 0.4829152511229594,
+        "position": 0.03430617628630639,
+        "speed": 0.0003915754511810421,
+        "yaw_rate": 0.031987236067652705
+      },
+      "speed_mps": 0.04960842454881896,
+      "states": {
+        "heading": "true",
+        "hull": "true",
+        "position": "true",
+        "speed": "true",
+        "yaw_rate": "true"
+      },
+      "time_s": 25.499306052
+    },
+    "sample_runs": {
+      "heading": [
+        {
+          "first_sample_s": 25.519306045,
+          "last_sample_s": 30.519304273,
+          "state": "true"
+        }
+      ],
+      "hull": [
+        {
+          "first_sample_s": 25.519306045,
+          "last_sample_s": 30.519304273,
+          "state": "true"
+        }
+      ],
+      "position": [
+        {
+          "first_sample_s": 25.519306045,
+          "last_sample_s": 26.979305527,
+          "state": "true"
+        },
+        {
+          "first_sample_s": 26.99930552,
+          "last_sample_s": 30.519304273,
+          "state": "false"
+        }
+      ],
+      "speed": [
+        {
+          "first_sample_s": 25.519306045,
+          "last_sample_s": 25.539306037,
+          "state": "true"
+        },
+        {
+          "first_sample_s": 25.55930603,
+          "last_sample_s": 25.619306009,
+          "state": "false"
+        },
+        {
+          "first_sample_s": 25.639306002,
+          "last_sample_s": 30.519304273,
+          "state": "true"
+        }
+      ],
+      "yaw_rate": [
+        {
+          "first_sample_s": 25.519306045,
+          "last_sample_s": 30.519304273,
+          "state": "true"
+        }
+      ]
+    },
+    "sampled_task_support": "false",
+    "schema": "roboboat-temporal-certificate/v2",
+    "task_identity": "boat-geom-42007-00128-task-v2",
+    "unavailable": [
+      "contact"
+    ],
+    "witnesses": {
+      "position": {
+        "heading_error_rad": 0.027967572973541577,
+        "position_error_m": 0.4000874101726156,
+        "signed_margins": {
+          "heading": 0.3220324270264584,
+          "hull": 0.48856138785694514,
+          "position": -8.741017261559847e-05,
+          "speed": 0.01217180554517916,
+          "yaw_rate": 0.04622331210412085
+        },
+        "speed_mps": 0.03782819445482084,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "false",
+          "speed": "true",
+          "yaw_rate": "true"
+        },
+        "time_s": 26.99930552
+      },
+      "speed": {
+        "heading_error_rad": 0.026730167093056645,
+        "position_error_m": 0.36263962750386863,
+        "signed_margins": {
+          "heading": 0.32326983290694333,
+          "hull": 0.48316053452224483,
+          "position": 0.03736037249613139,
+          "speed": -5.724234088085034e-05,
+          "yaw_rate": 0.03375452496111393
+        },
+        "speed_mps": 0.05005724234088085,
+        "states": {
+          "heading": "true",
+          "hull": "true",
+          "position": "true",
+          "speed": "false",
+          "yaw_rate": "true"
+        },
+        "time_s": 25.55930603
+      }
+    }
+  },
+  "model_calls": 0
+}
