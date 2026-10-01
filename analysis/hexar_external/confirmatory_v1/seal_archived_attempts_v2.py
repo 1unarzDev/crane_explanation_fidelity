@@ -12,11 +12,17 @@ from .seal_cohort import verify_attempt_schedule
 
 def select(root, plan, attempts, quota, maximum_per_family, families,
            freeze_sha256, validity_predicate_sha256, expected_image,
-           excluded_ids=(),excluded_seeds=(),excluded_raw_hashes=()):
+           excluded_ids=(),excluded_seeds=(),excluded_raw_hashes=(),expected_phase="raw_confirmation"):
     if type(quota) is not int or quota<1:raise ValueError('positive frozen valid family quota required')
     if any(not isinstance(v,str) or len(v)!=64 for v in (freeze_sha256,validity_predicate_sha256)):
         raise ValueError('exact frozen acquisition and native predicate hashes required')
-    verify_attempt_schedule(plan,attempts,families,maximum_per_family)
+    if expected_phase not in ('raw_confirmation','development_adapter_qualification'):
+        raise ValueError('explicit bound selection phase required')
+    expected_plan_phase='confirmation' if expected_phase=='raw_confirmation' else 'development'
+    if plan.get('phase')!=expected_plan_phase:raise ValueError('selection/archive phase differs from plan')
+    # The same prefix checker is reused; this private copy does not relabel
+    # original acquisition metadata or make development episodes eligible.
+    verify_attempt_schedule(dict(plan,phase='confirmation'),attempts,families,maximum_per_family)
     allocated={r['acquisition_id']:r for r in plan['records']}
     groups={family:[] for family in families}
     seen_ids,seen_seeds,seen_archives,seen_bags=set(),set(),set(),set()
@@ -28,7 +34,7 @@ def select(root, plan, attempts, quota, maximum_per_family, families,
         sha=attempt['raw_archive_sha256']
         if sha in seen_archives:raise ValueError('duplicate raw attempt archive')
         seen_archives.add(sha)
-        archive=verify(root,attempt['raw_archive_path'],sha,freeze_sha256,record,expected_image,excluded_raw_hashes)
+        archive=verify(root,attempt['raw_archive_path'],sha,freeze_sha256,record,expected_image,excluded_raw_hashes,expected_phase=expected_phase)
         for bag in archive['bag_sha256s']:
             if bag in seen_bags:raise ValueError('recording bytes duplicated between attempts')
             seen_bags.add(bag)

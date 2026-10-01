@@ -17,26 +17,30 @@ from ..confirmatory_v1.strict_json import load
 MAX_BYTES = 32 * 1024 * 1024
 
 
-def make_plan(master_seed, valid_per_family, reserve_per_family, excluded_ids=(), excluded_seeds=()):
+def make_plan(master_seed, valid_per_family, reserve_per_family, excluded_ids=(), excluded_seeds=(), phase="confirmation"):
     if not isinstance(master_seed, str) or not re.fullmatch('[0-9a-f]{64}', master_seed):
         raise ValueError('independently drawn 256-bit hexadecimal master seed required')
     if (type(valid_per_family) is not int or valid_per_family < 1
             or type(reserve_per_family) is not int or reserve_per_family < 0):
         raise ValueError('positive valid quota and nonnegative finite reserve required')
+    if phase not in ('confirmation','development'):
+        raise ValueError('explicit development or confirmation schedule required')
     records = []
     token = hashlib.sha256(master_seed.encode()).hexdigest()[:16]
     for order in range(1, valid_per_family + reserve_per_family + 1):
         for family in FAMILIES:
-            identity = f'hexar-tiago-confirm-{token}-{family}-{order:04d}'
-            seed = int.from_bytes(hashlib.sha256(canonical(['hexar-fresh-raw-schedule/v1', master_seed,
-                                                           family, order])).digest()[:4], 'big')
+            prefix='confirm' if phase=='confirmation' else 'dev-integrated'
+            identity = f'hexar-tiago-{prefix}-{token}-{family}-{order:04d}'
+            payload=['hexar-fresh-raw-schedule/v1', master_seed, family, order]
+            if phase=='development':payload.append('permanently-excluded-development')
+            seed = int.from_bytes(hashlib.sha256(canonical(payload)).digest()[:4], 'big')
             if identity in excluded_ids or seed in excluded_seeds:
                 raise ValueError('development identity/seed collision; reject plan before acquisition')
             records.append(dict(acquisition_id=identity, episode_id=identity, family=family,
                                 seed=seed, attempt_order=order))
     if len({r['seed'] for r in records}) != len(records):
         raise ValueError('seed collision; reject master seed before acquisition')
-    plan = dict(schema='hexar-fresh-raw-schedule/v1', phase='confirmation',
+    plan = dict(schema='hexar-fresh-raw-schedule/v1', phase=phase,
         status='CANDIDATE_NOT_ADMITTED', master_seed=master_seed,
         cohort_type='adapted simulated HEXAR external-validation benchmark',
         independent_unit='independently generated simulated robot episode',
@@ -52,7 +56,7 @@ def make_plan(master_seed, valid_per_family, reserve_per_family, excluded_ids=()
 def validate_plan(plan):
     try:
         expected = make_plan(plan['master_seed'], plan['valid_per_family'],
-                             plan['maximum_attempts_per_family']-plan['valid_per_family'])
+                             plan['maximum_attempts_per_family']-plan['valid_per_family'],phase=plan['phase'])
         if plan != expected:
             raise ValueError('noncanonical candidate raw schedule; no implicit allocation changes')
     except (KeyError, TypeError) as exc:

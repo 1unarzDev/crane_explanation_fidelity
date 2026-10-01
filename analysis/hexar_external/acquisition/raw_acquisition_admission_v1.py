@@ -75,6 +75,7 @@ def load_context(root,base=BASE):
     plan_path=rooted(root,cohort['episode_plan_path'])
     if digest(plan_path)!=cohort['episode_plan_sha256'] or not committed(root,plan_path):raise ValueError('frozen fresh seed schedule changed')
     plan=read(plan_path);validate_plan(plan)
+    if plan.get('phase')!='confirmation':raise ValueError('development schedule cannot enter production admission')
     if (decision.get('final_valid_n')!=6*plan['valid_per_family']
             or cohort.get('valid_per_family')!=plan['valid_per_family']
             or cohort.get('maximum_attempts_per_family')!=plan['maximum_attempts_per_family']

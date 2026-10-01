@@ -50,8 +50,10 @@ def file_records(root,folder):
 
 
 def create(root, destination, folder, allocated, freeze_sha256, capture_pin,
-           expected_image, excluded_ids=(),excluded_seeds=(),excluded_raw_hashes=()):
+           expected_image, excluded_ids=(),excluded_seeds=(),excluded_raw_hashes=(),expected_phase="raw_confirmation"):
     """Retain a real raw file inventory even when technical capture failed."""
+    if expected_phase not in ('raw_confirmation','development_adapter_qualification'):
+        raise ValueError('explicit raw/development archive phase required')
     root=Path(root).resolve();folder=Path(folder).resolve();folder.relative_to(root)
     destination=rooted(root,destination)
     if destination.is_relative_to(folder):
@@ -66,7 +68,7 @@ def create(root, destination, folder, allocated, freeze_sha256, capture_pin,
     receipt=read(receipt_path)
     if (receipt.get('episode_id')!=allocated['episode_id'] or receipt.get('seed_hidden')!=allocated['seed']
             or receipt.get('family_hidden')!=allocated['family']
-            or receipt.get('acquisition_phase')!='raw_confirmation'
+            or receipt.get('acquisition_phase')!=expected_phase
             or receipt.get('acquisition_binding_sha256')!=freeze_sha256
             or receipt.get('image_id')!=expected_image or type(receipt.get('fresh_container')) is not bool
             or receipt.get('method_outputs_generated') is not False
@@ -81,9 +83,9 @@ def create(root, destination, folder, allocated, freeze_sha256, capture_pin,
         p=folder/name
         if p.exists():
             original=read(p)
-            if original.get('phase')!='raw_confirmation' or original.get('acquisition_binding_sha256')!=freeze_sha256:
+            if original.get('phase')!=expected_phase or original.get('acquisition_binding_sha256')!=freeze_sha256:
                 raise ValueError('captured development/runtime metadata cannot be relabeled')
-    value=dict(schema='hexar-raw-attempt-archive/v1',phase='raw_confirmation',freeze_sha256=freeze_sha256,
+    value=dict(schema='hexar-raw-attempt-archive/v1',phase=expected_phase,freeze_sha256=freeze_sha256,
         allocated=allocated,capture_provenance=capture_pin,image_id=expected_image,
         folder=str(folder.relative_to(root)),artifacts=files,bag_sha256s=bags,
         bag_missing=not bool(bags),fresh_container=receipt['fresh_container'],semantic_outputs_generated=False,
@@ -92,11 +94,13 @@ def create(root, destination, folder, allocated, freeze_sha256, capture_pin,
     return value
 
 
-def verify(root,path,expected_sha256,freeze_sha256,allocated,expected_image,excluded_raw_hashes=()):
+def verify(root,path,expected_sha256,freeze_sha256,allocated,expected_image,excluded_raw_hashes=(),expected_phase="raw_confirmation"):
+    if expected_phase not in ('raw_confirmation','development_adapter_qualification'):
+        raise ValueError('explicit raw/development archive phase required')
     path=rooted(root,path)
     if digest(path)!=expected_sha256:raise ValueError('raw attempt archive changed')
     archive=read(path)
-    if (archive.get('schema')!='hexar-raw-attempt-archive/v1' or archive.get('phase')!='raw_confirmation'
+    if (archive.get('schema')!='hexar-raw-attempt-archive/v1' or archive.get('phase')!=expected_phase
             or archive.get('freeze_sha256')!=freeze_sha256 or archive.get('allocated')!=allocated
             or archive.get('image_id')!=expected_image or archive.get('semantic_outputs_generated') is not False
             or archive.get('independently_validated') is not False):
@@ -109,7 +113,7 @@ def verify(root,path,expected_sha256,freeze_sha256,allocated,expected_image,excl
     receipt=read(receipt_path)
     if (receipt.get('episode_id')!=allocated['episode_id'] or receipt.get('seed_hidden')!=allocated['seed']
             or receipt.get('family_hidden')!=allocated['family'] or receipt.get('image_id')!=expected_image
-            or type(receipt.get('fresh_container')) is not bool or receipt.get('acquisition_phase')!='raw_confirmation'
+            or type(receipt.get('fresh_container')) is not bool or receipt.get('acquisition_phase')!=expected_phase
             or receipt.get('acquisition_binding_sha256')!=freeze_sha256
             or receipt.get('method_outputs_generated') is not False or receipt.get('judge_labels_generated') is not False):
         raise ValueError('capture provenance violates raw confirmation binding')
@@ -123,6 +127,6 @@ def verify(root,path,expected_sha256,freeze_sha256,allocated,expected_image,excl
         p=folder/name
         if p.exists():
             original=read(p)
-            if original.get('phase')!='raw_confirmation' or original.get('acquisition_binding_sha256')!=freeze_sha256:
+            if original.get('phase')!=expected_phase or original.get('acquisition_binding_sha256')!=freeze_sha256:
                 raise ValueError('captured development metadata cannot enter raw confirmation')
     return archive

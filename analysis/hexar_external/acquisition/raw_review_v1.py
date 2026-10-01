@@ -23,7 +23,7 @@ class Review(Runtime):
             folder.mkdir(parents=True,exist_ok=True)
             runtime=dict(schema='hexar-frozen-raw-capture-failure/v1',episode_id=record['episode_id'],
                 seed_hidden=record['seed'],family_hidden=record['family'],fresh_container=False,
-                acquisition_phase='raw_confirmation',acquisition_binding_sha256=ctx['freeze_sha256'],
+                acquisition_phase=self.phase,acquisition_binding_sha256=ctx['freeze_sha256'],
                 image_id=config['image_id'],method_outputs_generated=False,judge_labels_generated=False,
                 exit_code=-1,error='Capture failed before durable raw receipt',source_hashes=config['source_hashes'],
                 execution_source_bank_sha256=config['execution_source_bank_sha256'],raw_files=[])
@@ -33,7 +33,7 @@ class Review(Runtime):
         pin=dict(path=str(original.relative_to(root)),sha256=digest(original))
         archive_path=attempt_folder/'raw_archive.json'
         archive=create(root,archive_path,folder,record,ctx['freeze_sha256'],pin,config['image_id'],
-            ctx['excluded_ids'],ctx['excluded_seeds'],ctx['excluded_hashes'])
+            ctx['excluded_ids'],ctx['excluded_seeds'],ctx['excluded_hashes'],expected_phase=self.phase)
         reasons=[];native={};projected={};independent_reset=False
         if receipt.get('exit_code')!=0 or receipt.get('fresh_container') is not True:
             reasons.append('CAPTURE_TECHNICAL_FAILURE')
@@ -46,8 +46,8 @@ class Review(Runtime):
                 '-v',str(folder)+':/capture:ro','-v',str(bank)+':/bank:ro',
                 '-v',str(original)+':/receipt.json:ro','-v',str(reader)+':/review.py:ro',
                 '--entrypoint','bash',config['image_id'],'-lc',
-                'source /ws/install/setup.bash; python3 /review.py --folder /capture --bank /bank --receipt /receipt.json --phase raw_confirmation --binding "$1"',
-                'native-review',ctx['freeze_sha256']]
+                'source /ws/install/setup.bash; python3 /review.py --folder /capture --bank /bank --receipt /receipt.json --phase "$1" --binding "$2"',
+                'native-review',self.phase,ctx['freeze_sha256']]
             exclusive_json(attempt_folder/'native_dispatch_claim.json',dict(command=command,launch_limit=1,
                 freeze_sha256=ctx['freeze_sha256'],method_or_judge_calls_permitted=False))
             stdout,stderr=b'',b''
@@ -57,7 +57,7 @@ class Review(Runtime):
                 if result.returncode!=0:raise ValueError('native reader return code '+str(result.returncode))
                 value=load(stdout,32*1024*1024)
                 if (value.get('schema')!='hexar-phase-aware-native-review/v1' or value.get('episode_id')!=record['episode_id']
-                        or value.get('phase')!='raw_confirmation' or value.get('acquisition_binding_sha256')!=ctx['freeze_sha256']
+                        or value.get('phase')!=self.phase or value.get('acquisition_binding_sha256')!=ctx['freeze_sha256']
                         or value.get('method_or_judge_calls')!=0 or value.get('original_capture_mutated') is not False):
                     raise ValueError('native reader phase/binding/scope differs')
                 native=value['native_review']
@@ -82,7 +82,7 @@ class Review(Runtime):
                     if re.fullmatch('[0-9a-f]{64}',identity):
                         subprocess.run(['docker','kill',identity],capture_output=True)
         verify(root,str(archive_path.relative_to(root)),digest(archive_path),ctx['freeze_sha256'],record,
-               config['image_id'],ctx['excluded_hashes'])
+               config['image_id'],ctx['excluded_hashes'],expected_phase=self.phase)
         validity=load((ctx['base']/'technical_validity.json').read_bytes(),32*1024*1024)
         if validity.get('machine_predicate_implementation')!='analysis/hexar_external/acquisition/raw_review_v1.py' or validity.get('machine_predicate_sha256')!=digest(Path(__file__)):
             raise ValueError('final native predicate implementation not frozen to this review adapter')

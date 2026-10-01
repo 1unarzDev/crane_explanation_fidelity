@@ -17,7 +17,7 @@ class Recovery(Runtime):
         if destination.exists():
             exported=read(destination)
             verify(self.root,exported['raw_archive_path'],exported['raw_archive_sha256'],ctx['freeze_sha256'],
-                record,config['image_id'],ctx['excluded_hashes'])
+                record,config['image_id'],ctx['excluded_hashes'],expected_phase=self.phase)
             if digest(rooted(self.root,exported['validity_receipt_path']))!=exported['validity_receipt_sha256']:
                 raise ValueError('retained interrupted validity receipt changed')
             return exported
@@ -37,7 +37,7 @@ class Recovery(Runtime):
         if not receipt.exists():
             exclusive_json(receipt,dict(schema='hexar-frozen-raw-interruption-capture/v1',
                 episode_id=record['episode_id'],family_hidden=record['family'],seed_hidden=record['seed'],
-                acquisition_phase='raw_confirmation',acquisition_binding_sha256=ctx['freeze_sha256'],
+                acquisition_phase=self.phase,acquisition_binding_sha256=ctx['freeze_sha256'],
                 image_id=config['image_id'],fresh_container=False,exit_code=-1,
                 method_outputs_generated=False,judge_labels_generated=False,
                 source_hashes=config['source_hashes'],execution_source_bank_sha256=config['execution_source_bank_sha256'],
@@ -46,10 +46,10 @@ class Recovery(Runtime):
         archive_path=folder/'interrupted_raw_archive.json'
         if archive_path.exists():
             verify(self.root,str(archive_path.relative_to(self.root)),digest(archive_path),ctx['freeze_sha256'],record,
-                   config['image_id'],ctx['excluded_hashes'])
+                   config['image_id'],ctx['excluded_hashes'],expected_phase=self.phase)
         else:
             create(self.root,archive_path,capture,record,ctx['freeze_sha256'],pin,config['image_id'],
-                   ctx['excluded_ids'],ctx['excluded_seeds'],ctx['excluded_hashes'])
+                   ctx['excluded_ids'],ctx['excluded_seeds'],ctx['excluded_hashes'],expected_phase=self.phase)
         validity=read(ctx['base']/'technical_validity.json');pred=validity['machine_predicate_sha256']
         closed=dict(schema='hexar-frozen-raw-validity/v1',acquisition_id=record['acquisition_id'],
             freeze_sha256=ctx['freeze_sha256'],raw_archive_sha256=digest(archive_path),

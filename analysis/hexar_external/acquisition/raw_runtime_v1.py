@@ -16,8 +16,11 @@ from ..confirmatory_v1.journal import exclusive_json
 from ..confirmatory_v1.registered_attempt_executor_v2 import raw_file
 
 
-def command(config,record,freeze_sha256,root):
-    return ['docker','run','--name','crane-'+record['episode_id'],'--label','org.crane.scope=hexar-raw-confirmation',
+def command(config,record,freeze_sha256,root,phase="raw_confirmation"):
+    if phase not in ('raw_confirmation','development_adapter_qualification'):
+        raise ValueError('explicit bound acquisition phase required')
+    scope='hexar-raw-confirmation' if phase=='raw_confirmation' else 'hexar-development'
+    return ['docker','run','--name','crane-'+record['episode_id'],'--label','org.crane.scope='+scope,
         '--cidfile',str(rooted(root,config['execution_root'])/'attempts'/record['acquisition_id']/'container_id.txt'),
         '--network','none','--cpus',config['cpus'],'--memory',config['memory'],
         '--memory-swap',config['memory_swap'],'--shm-size',config['shared_memory'],
@@ -25,13 +28,18 @@ def command(config,record,freeze_sha256,root):
         '-v',str(rooted(root,config['source_bank_path']))+':/acquisition:ro',
         '-v',str(rooted(root,config['capture_root']))+':/provenance',
         '--entrypoint','/bin/bash',config['image_id'],'/acquisition/run_bound_episode_v1.sh',
-        record['family'],str(record['seed']),record['episode_id'],'raw_confirmation',freeze_sha256]
+        record['family'],str(record['seed']),record['episode_id'],phase,freeze_sha256]
 
 
 class Runtime:
-    def __init__(self,root,base=BASE):self.root,self.base=Path(root).resolve(),base
+    def __init__(self,root,base=BASE,phase='raw_confirmation'):
+        if phase not in ('raw_confirmation','development_adapter_qualification'):
+            raise ValueError('explicit bound acquisition phase required')
+        self.root,self.base,self.phase=Path(root).resolve(),base,phase
 
     def context(self,record,attempt_folder):
+        if self.phase!='raw_confirmation':
+            raise ValueError('development adapter requires separate committed development admission')
         ctx=load_context(self.root,self.base)
         if record not in ctx['plan']['records']:raise ValueError('unfrozen raw episode allocation')
         expected=rooted(self.root,ctx['config']['execution_root'])/'attempts'/record['acquisition_id']
@@ -47,9 +55,9 @@ class Runtime:
         cap_root=rooted(self.root,config['capture_root']);cap_root.mkdir(parents=True,exist_ok=True)
         folder=cap_root/record['episode_id']
         if folder.exists():raise ValueError('raw capture identity exists; never reuse or overwrite')
-        launch=command(config,record,ctx['freeze_sha256'],self.root)
+        launch=command(config,record,ctx['freeze_sha256'],self.root,self.phase)
         claim_path=attempt_folder/'host_launch_claim.json'
-        exclusive_json(claim_path,dict(schema='hexar-bound-raw-launch-claim/v1',phase='raw_confirmation',
+        exclusive_json(claim_path,dict(schema='hexar-bound-raw-launch-claim/v1',phase=self.phase,
             acquisition_binding_sha256=ctx['freeze_sha256'],allocated=record,command=launch,
             launch_limit=1,method_or_judge_calls_permitted=False))
         name='crane-'+record['episode_id'];start=time.monotonic();code=-1;error=None
@@ -93,7 +101,7 @@ class Runtime:
                 stream.write((stdout+stderr).decode('utf-8',errors='replace'))
             metadata=dict(schema='hexar-frozen-raw-capture/v1',episode_id=record['episode_id'],
                 family_hidden=record['family'],seed_hidden=record['seed'],
-                acquisition_phase='raw_confirmation',acquisition_binding_sha256=ctx['freeze_sha256'],
+                acquisition_phase=self.phase,acquisition_binding_sha256=ctx['freeze_sha256'],
                 container_id=info.get('Id'),image_id=config['image_id'],observed_image_id=info.get('Image'),
                 fresh_container=fresh,launch_claim_path=str(claim_path.relative_to(self.root)),
                 launch_claim_sha256=digest(claim_path),requested_network_mode='none',
