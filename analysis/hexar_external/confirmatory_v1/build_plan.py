@@ -31,12 +31,16 @@ def main():
                'data/hexar_external/audit/source_data_manifest.json',
                'data/hexar_external/v3/reserved/results.json']
     pins = {s:sha(s) for s in sources}
-    write('alpha_amendment.json', dict(schema='hexar-alpha-amendment/v1',
-          status='BLOCKED_ALPHA_CONFLICT', claim_id='hexar-external-evidence-calibration-superiority-v1',
-          proposed_alpha=.01, bound_alpha=0., consumed_alpha=0., replication_alpha_protected=.02,
-          competing_claim='B4 versus B2 evidence-calibration primary; P11 unresolved',
+    sequence_path='manifests/study/evidence-calibration-hexar-fixed-sequence-v1.json'
+    write('alpha_amendment.json',dict(schema='hexar-alpha-amendment/v2',
+          status='PROSPECTIVE_FIXED_SEQUENCE_UNBOUND',claim_id='hexar-external-evidence-calibration-superiority-v1',
+          proposed_alpha=.01,bound_alpha=0.,consumed_alpha=0.,replication_alpha_protected=.02,
+          family_id='evidence-calibration-internal-then-hexar-v1',family_alpha=.01,
+          role='H2 one-sided .01 eligible only after valid frozen H1 rejection; not separate alpha',
           main_commit=subprocess.check_output(['git','rev-parse','main'],cwd=ROOT,text=True).strip(),
-          resolution_document=None, authoritative_allocation_id=None, source_hashes=pins))
+          sequence_document={'path':sequence_path,'sha256':sha(sequence_path)},
+          authoritative_allocation_id='candidate-revision-reserve',source_hashes=pins,
+          development_authorized=True,confirmation_authorized=False))
     rows = list(csv.DictReader((ROOT/'data/hexar_external/upstream/experiments.csv').open()))
     nav = [r for r in rows if r['category']=='navigation']
     records = []
@@ -101,14 +105,14 @@ def main():
           execution_adapter=None,execution_adapter_qualified=False))
     write('cohort.json', dict(schema='hexar-confirmatory-cohort/v1',status='NOT_MATERIALIZED',
           provenance='new HEXAR-compatible independently generated episodes required',families=families,
-          proposed_valid_n=72,valid_per_family=12,maximum_attempts_per_family=16,
-          candidate_reserve=24,records=[],generation_process=None,simulator_or_robot_version=None,
-          seeds=None,independence_attestation=None,sampling_frame=None,
+          proposed_valid_n=None,valid_per_family=None,maximum_attempts_per_family=None,
+          candidate_reserve=None,records=[],generation_process=None,simulator_or_robot_version=None,
+          seeds=None,episode_plan_sha256=None,independence_attestation=None,sampling_frame=None,
           family_definitions={family:sorted({r['test_description'] for r in nav if r['testcase_name']==family}) for family in families},
           metadata_not_method_visible=['family','hidden_intervention','scenario_truth','original_answer','development_result']))
     write('fixed_n_decision.json', dict(schema='hexar-fixed-n/v1',status='CANDIDATE_POWER_JUSTIFICATION_REQUIRED',
-          candidate_valid_n=72,target_power=.9,planning_discordance=.5,planning_conditional_favorable=.8,
-          power_report_sha256=sha('manifests/hexar_external/confirmatory_v1/power_report.json'),
+          candidate_valid_n=None,target_power=.9,planning_discordance=.5,planning_conditional_favorable=.8,
+          power_report_sha256=sha('manifests/hexar_external/confirmatory_v1/procedure_comparison.json'),
           accepted_degradation_regime=None,scientific_justification=None,
           final_valid_n=None,no_optional_stopping=True))
     write('technical_validity.json', dict(schema='hexar-technical-validity/v1',status='CANDIDATE',
@@ -117,11 +121,11 @@ def main():
                                      'required navigation task window/outcome and three query bindings',
                                      'frozen topic/schema admissibility; missing optional diagnostic channel remains unknown',
                                      'all nine packets/reference/removal-closure checks pass'],
-          replacement='within family, take first 12 valid among ordered 16 attempts before ANY method generation; remaining reserves never receive method outputs',
+          replacement='first prospectively specified N/6 valid among ordered frozen attempts per family before semantic generation; reserve/N unresolved pending acquisition qualification',
           outcome_based_replacement=False,post_generation_replacement=False,
           reserve_exhaustion='no confirmatory claim; report all available data descriptively, do not enlarge cohort',
           output_failure='no retry; retain raw failure, conservative primary mapping and missingness sensitivity at fixed N',
-          machine_predicate_implementation=None,validity_judge_blind_to_method_outcomes=True))
+          machine_predicate_implementation=None,machine_predicate_sha256=None,validity_judge_blind_to_method_outcomes=True))
     annfiles = ['research/explanation_fidelity/prompts/evidence-calibration-agent-annotator-v1.md',
                 'research/explanation_fidelity/schemas/blinded-agent-atomic-annotation-return-v2.schema.json',
                 'docs/hexar_external/v2/annotation_amendment.txt','docs/hexar_external/v3/sentinel_clarification.txt',
@@ -138,17 +142,20 @@ def main():
     write('analysis_plan.json',dict(schema='hexar-analysis-plan/v1',status='CANDIDATE',
           alpha=.01,direction='HX-CONTRACT success / HX-PROMPT failure favorable',
           null='CRANE no better on frozen recording endpoint',alternative='CRANE superior',
-          test='exact one-sided conditional paired-discordance / McNemar; p <= .01',
-          assumptions='independent episodes; common conditional favorable probability q across families, q<=.5 under null, or an independently justified equivalent exchangeability model. Arbitrary heterogeneous average-effect null is not automatically exact.',
+          test='fixed-N paired e-test, fixed fraction .4, conservative one-sided p <= .01',
+          primary_procedure='fixed_n_paired_e',betting_fraction=.4,
+          selection_document='docs/hexar_external/confirmatory_v1/PROCEDURE_SELECTION.md',
+          selection_document_sha256=sha('docs/hexar_external/confirmatory_v1/PROCEDURE_SELECTION.md'),
+          assumptions='independent episode pairs, arbitrary fixed-family mean/variance heterogeneity permitted; overall average expected prompt-minus-contract failure difference <=0 under null; no common discordance q assumption',
           assumption_justification=None,interval_assumption_justification=None,
           effect='prompt failure minus contract failure risk difference',
-          intervals='stratified Bonferroni exact marginal-binomial 99% lower / 98% two-sided, each family tail .005/6; independent IID within family, not conditional-test inversion',
+          intervals='invert the same paired e-test for 99% lower bound; sign-reversed 99% upper bound gives joint >=98% two-sided coverage; independent nonidentical pairs permitted',
           family_sensitivity='all six four-cell counts, family effects and leave-one-family-out effects; descriptive, no family alpha',
           secondary=['useful supported answer rate','required-unit coverage','unsupported material','physical-cause flags','required-unit recall','answer length','flexibility','deterministic-template dependence','runtime/cost'],
           no_statistic_selection=True,no_test_sidedness_switch=True))
     write('freeze_manifest.json',dict(schema='hexar-confirmatory-freeze/v1',status='NOT_FROZEN',
           confirmation_authorized=False,semantic_n=0,freeze_commit=None,file_hashes={},audit_sha256=None,
-          blocking_reason='alpha conflict; no fresh cohort; unresolved runtime and statistical admission fields'))
+          blocking_reason='H1 gate pending for semantics; development active; fresh acquisition/runtime qualification and final N incomplete'))
     write('post_run_results.json',dict(schema='hexar-confirmatory-results/v1',status='NOT_RUN',
           confirmatory_n=0,alpha_bound=0,alpha_consumed=0,immutable_result_bundle=None,
           reason='no confirmation authorized; not an inferential result'))

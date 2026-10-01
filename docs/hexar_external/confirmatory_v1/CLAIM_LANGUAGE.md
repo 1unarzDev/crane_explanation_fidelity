@@ -3,7 +3,7 @@
 | Evidence state | Permitted language |
 |---|---|
 | Current twelve-recording development/external validation | “Contracts achieved 100% useful supported answers versus 90.7% for strengthened HX-PROMPT (+9.3 points), with equal required-unit coverage. This inspected cohort is development evidence and does not establish confirmatory superiority.” |
-| Current prospective design blocked | “A prospective external superiority protocol is under development; unresolved program alpha allocation and a fresh cohort prevent activation. No confirmatory semantic outputs or inferential result exist.” |
+| Current prospective design blocked | “A prospective external superiority protocol is under development; the prospective H1→H2 gate and unfinished fresh-cohort/runtime qualification prevent semantic activation. No confirmatory semantic outputs or inferential result exist.” |
 | Authorized frozen new-cohort test rejects at one-sided .01 | “On a prospectively defined HEXAR-derived external evidence-calibration evaluation, CRANE's contract method significantly outperformed a strengthened HEXAR-derived explanation baseline on the frozen whole-recording endpoint.” Add both failure rates, four-cell discordances, absolute risk difference, confidence bounds, exact p and missingness. |
 | Authorized frozen test does not reject | “The prospective HEXAR-derived evidence-calibration comparison did not establish CRANE superiority at one-sided α=.01.” Report all outcomes and uncertainty; do not redesign from those results. |
 | Original task reference | “Recalculation of HEXAR's released original navigation accuracy labels gives 49/54 (90.7%). This evaluates a different original task and is reported separately.” |

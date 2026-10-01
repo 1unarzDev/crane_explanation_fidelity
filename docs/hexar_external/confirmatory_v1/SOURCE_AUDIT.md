@@ -1,5 +1,7 @@
 # Prospective HEXAR superiority: source and alpha audit
 
+**Historical disposition superseded prospectively:** the later [fixed-sequence amendment](FIXED_SEQUENCE.md) retains B4/B2 as H1 and makes HEXAR H2 eligible only upon H1 rejection within one .01 family. No release document is required. The source hashes and historical accuracy recalculation below remain valid; development and acquisition qualification proceed without alpha consumption.
+
 Audit date: 2026-09-30. Status: **BLOCKED_ALPHA_CONFLICT**. No alpha is bound or consumed by this audit; no semantic outputs are generated. This document records repository-owned sources and a read-only recalculation of the authors’ released labels.
 
 ## Discovery allocation cannot currently be assigned

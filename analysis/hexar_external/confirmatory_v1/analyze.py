@@ -6,9 +6,11 @@ from pathlib import Path
 try:
     from .audit import BASE, ROOT, CLAIM, digest
     from .statistics import summary, cp_bounds
+    from .heterogeneous_statistics import summarize as e_summary
 except ImportError:
     from audit import BASE, ROOT, CLAIM, digest
     from statistics import summary, cp_bounds
+    from analysis.hexar_external.confirmatory_v1.heterogeneous_statistics import summarize as e_summary
 
 METHODS = ('HX-CONTRACT', 'HX-PROMPT')
 
@@ -23,7 +25,7 @@ def committed(path):
 
 def verify_freeze():
     freeze = json.loads((BASE/'freeze_manifest.json').read_text())
-    if freeze.get('status') != 'FROZEN' or freeze.get('confirmation_authorized') is not True:
+    if freeze.get('status') != 'FROZEN' or freeze.get('acquisition_authorized') is not True:
         raise ValueError('no authorized confirmatory freeze')
     if not committed(BASE/'freeze_manifest.json'):
         raise ValueError('freeze must be committed before generation')
@@ -35,10 +37,18 @@ def verify_freeze():
     for file, expected in deps['files'].items():
         if digest(ROOT/file) != expected or not committed(ROOT/file):
             raise ValueError('runtime changed: '+file)
+    from analysis.hexar_external.confirmatory_v1.gatekeeping import load_pinned, validate_family, activation_errors
+    alpha=json.loads((BASE/'alpha_amendment.json').read_text())
+    pin=alpha['sequence_document']
+    ledger=json.loads((ROOT/'manifests/study/diagnostic-sequential-error-ledger-v2.json').read_text())
+    family=validate_family(load_pinned(ROOT,pin['path'],pin['sha256']),ledger)
+    attestation=json.loads((BASE/'h1_gate_attestation.json').read_text())
+    errors=activation_errors(ROOT,family,attestation)
+    if errors:raise ValueError('; '.join(errors))
     return freeze
 
 
-def analyze(bundle, cohort, battery, freeze_sha256):
+def analyze(bundle, cohort, battery, freeze_sha256, plan=None):
     if bundle.get('claim_id') != CLAIM or bundle.get('freeze_sha256') != freeze_sha256:
         raise ValueError('wrong claim or freeze; development cannot enter confirmation')
     if bundle.get('blind_scoring_complete') is not True or bundle.get('agent_assessed') is not True:
@@ -110,6 +120,11 @@ def analyze(bundle, cohort, battery, freeze_sha256):
         upper += n/len(records)*(fu-ul)
     overall.update(one_sided_99_lower_bound=lower,two_sided_98_interval=[lower,upper],
                    interval_method='stratified Bonferroni marginal exact binomial; >=99% lower / >=98% symmetric coverage; IID within family; not test inversion')
+    if plan is not None:
+        if plan.get('primary_procedure')!='fixed_n_paired_e' or plan.get('betting_fraction')!=.4:
+            raise ValueError('unrecognized frozen primary procedure; no post-run test selection')
+        overall=e_summary(*cells,fraction=plan['betting_fraction'])
+    primary_p=overall.get('conservative_one_sided_p',overall.get('one_sided_exact_p'))
     family_reports = {f:dict(favorable=c[0],unfavorable=c[1],both_success=c[2],both_failure=c[3],
                             n=sum(c),risk_difference=(c[0]-c[1])/sum(c)) for f,c in family_cells.items()}
     leave_one_out = {f:((cells[0]-c[0])-(cells[1]-c[1]))/(len(records)-sum(c)) for f,c in family_cells.items()}
@@ -120,10 +135,10 @@ def analyze(bundle, cohort, battery, freeze_sha256):
                 secondary_metrics=bundle.get('secondary_metrics','NOT_SUPPLIED_IN_CANDIDATE_BUNDLE'),
                 judge_pass_sensitivity=bundle.get('judge_pass_sensitivity','NOT_SUPPLIED_IN_CANDIDATE_BUNDLE'),
                 family_descriptive=family_reports,leave_one_family_out_descriptive=leave_one_out,
-                superiority=overall['one_sided_exact_p']<=.01,
-                interval_and_test_disagreement_possible=True,
+                superiority=primary_p<=.01,
+                interval_and_test_disagreement_possible=plan is None,
                 claim=('On a prospectively defined HEXAR-derived external evidence-calibration evaluation, CRANE contracts significantly outperformed a strengthened HEXAR-derived explanation baseline on the frozen whole-recording endpoint.'
-                       if overall['one_sided_exact_p']<=.01 else
+                       if primary_p<=.01 else
                        'The prospective HEXAR-derived evidence-calibration comparison did not establish CRANE superiority at one-sided alpha .01.'),
                 original_hexar_navigation_accuracy='49/54 separately; not this endpoint')
 
@@ -137,12 +152,23 @@ def main():
     bundle = json.loads(args.bundle.read_text())
     if not bundle.get('secondary_metrics') or not bundle.get('judge_pass_sensitivity'):
         raise ValueError('complete secondary and judge-pass reporting required')
-    result = analyze(bundle,json.loads((BASE/'cohort.json').read_text()),
-                     json.loads((BASE/'battery.json').read_text()),digest(BASE/'freeze_manifest.json'))
+    cohort=json.loads((BASE/'cohort.json').read_text())
+    seal=json.loads((BASE/'raw_cohort_seal.json').read_text())
+    if seal['status']!='SEALED' or seal['freeze_sha256']!=digest(BASE/'freeze_manifest.json'):
+        raise ValueError('raw cohort not sealed under this freeze')
+    cohort['records']=seal['records']
+    from analysis.hexar_external.confirmatory_v1.journal import OneAttemptJournal
+    terminal=OneAttemptJournal(BASE/'terminal_analysis_journal',digest(BASE/'freeze_manifest.json'))
+    identity={'bundle_sha256':digest(args.bundle),'raw_cohort_seal_sha256':digest(BASE/'raw_cohort_seal.json'),
+              'analysis_plan_sha256':digest(BASE/'analysis_plan.json')}
+    terminal.claim('single-terminal-primary-analysis',identity)
+    result = analyze(bundle,cohort,
+                     json.loads((BASE/'battery.json').read_text()),digest(BASE/'freeze_manifest.json'),json.loads((BASE/'analysis_plan.json').read_text()))
     result['immutable_input_bundle_sha256'] = digest(args.bundle)
     result['freeze_sha256'] = digest(BASE/'freeze_manifest.json')
     with args.output.open('x') as stream:
         stream.write(json.dumps(result,indent=2)+'\n')
+    terminal.finish('single-terminal-primary-analysis',identity,{'status':'VALID','result_path':str(args.output),'result_sha256':digest(args.output)})
 
 if __name__ == '__main__':
     main()
