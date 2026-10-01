@@ -34,8 +34,8 @@ mean episode coverage ≥95% and loss versus B2 ≤5 percentage points. The inte
 for both possible terminal looks. Power is 82.2% for discordance probabilities .02/.005 and
 84.5% for .045/.02, but only 56.2% for .07/.045; small effects may remain inconclusive.
 
-The latest retained execution checkpoint has **264 complete confirmatory pairs**, 126 incomplete
-method pairs and 1,110 technically valid physical records. Raw outputs and technical failures
+The latest retained execution checkpoint has **401 complete confirmatory pairs**, 126 incomplete
+method pairs and 1,307 technically valid physical records. Raw outputs and technical failures
 are retained; failed method requests are not retried. No confirmatory answers, scores or
 method effects have been inspected. The first blinded scoring run is queued for 600 complete
 pairs. Alpha is now .03 consumed, including this study's .01 allocation; .02 remains protected
