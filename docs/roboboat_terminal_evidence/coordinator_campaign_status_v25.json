@@ -1,0 +1,68 @@
+{
+  "schema": "roboboat-development-status-amendment/v25",
+  "as_of_utc": "2026-10-01T13:39:00.373011+00:00",
+  "prior_state": "coordinator_campaign_status_v24.json",
+  "confirmation_frozen": false,
+  "confirmation_n": 0,
+  "replication_n": 0,
+  "land_n_added": 0,
+  "goal_complete": false,
+  "scored_method_pairs": 0,
+  "completed_development_batch": "9 admitted /12 attempts across6 geometry draws;3 retained technical failures; unchanged",
+  "operational_repair_validation": {
+    "session": 19141,
+    "live_confirmed_by_exact_handle": true,
+    "profile": {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repair-operational-v11-001/profile-v1.json",
+      "sha256": "6c390624d3e62f35ee9003941154428436fefa842451d20633a2f24e57543cae"
+    },
+    "dispositions": {
+      "VALID_TRACE_QUALIFIED_DEVELOPMENT": 2,
+      "RUNNING": 1,
+      "UNATTEMPTED": 1
+    },
+    "independent_n_added": 0,
+    "first_two_results": "direct-goal and terminal-s-bend passed every declared operational check and full trace audit; no future-source issue; remaining two not concluded",
+    "equivalence_or_rejection_rate_causal_estimate": false
+  },
+  "compiled_source_mapping": {
+    "source": {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/audit_roboboat_compiled_sources_v2.py",
+      "sha256": "5d9a3b0613a6094c2da8e5376a342a89ce825f62775a560ed09c40995f12cca3"
+    },
+    "audit": {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-episode-clock-v10/compiled-source-audit-v2.json",
+      "sha256": "06f2c8b20bfc6050accae056461dfcb9a640e754cbf26347ad173846cb9921a5"
+    },
+    "mapping": "Explicit parent compiler root, two prebuild bindings with identical bytes, compiler checksum; old audit unchanged",
+    "external_and_generated_unresolved_retained": true
+  },
+  "common_interface": {
+    "builder": {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/prepare_roboboat_baseline_interface_v3.py",
+      "sha256": "172e3bc84b985d59e0fec089863af9d29ab05c6d72b678de2e329dff84cc9124"
+    },
+    "engineering_examples": {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-baseline-interface-v3-001/engineering-lock-v1.json",
+      "sha256": "a01d1d863def5ec4fab4d6385f7527b3a1f6baccb34822076bb3483d4b61dff8"
+    },
+    "evidence_levels": 3,
+    "common_robot_sources": 35,
+    "offline_helper_and_separate_scratch": "all three passed",
+    "tests": "13 source mapping/interface;3 operational-profile;5 prospective fresh-collector checks passed",
+    "call_readiness": false,
+    "baseline_promotion": false
+  },
+  "next_batch_candidate": {
+    "schedule": {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/schedule-candidate-v1.json",
+      "sha256": "0a03148cf21dce37d109377d4ee85b636b6b936e28f518cbcc4b844033f90112"
+    },
+    "untouched_geometry_draws": 24,
+    "planned_attempts": 48,
+    "families": 6,
+    "launch": false,
+    "requires": "finished four-replay engineering review with exact build binding; no confirmation freeze"
+  },
+  "next": "Poll19141 without restart; retain all four outcomes. If engineering repair qualifies, predeclare and launch larger fresh exploratory batch. Complete actual strongest fair B2 and equal-context model judging when provider capacity returns; then estimate effect/variance and power confirmation."
+}
