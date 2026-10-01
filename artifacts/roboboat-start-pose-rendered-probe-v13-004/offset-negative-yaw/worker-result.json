@@ -1,0 +1,4510 @@
+{
+    "schema": "crane-benchmark-v1",
+    "scenario": "unspecified",
+    "runtimeProfile": "train-gpu",
+    "scene": "Assets/Scenes/Roboboat Course.unity",
+    "unityVersion": "6000.5.10f1",
+    "platform": "LinuxPlayer",
+    "cpu": "12th Gen Intel(R) Core(TM) i7-12700K",
+    "gpu": "NVIDIA GeForce RTX 4070 Ti SUPER",
+    "workerId": 0,
+    "randomSeed": 43104,
+    "imageSignatures": true,
+    "logicalCpuCount": 20,
+    "warmupSeconds": 2.0,
+    "wallSeconds": 8.004791899999999,
+    "simulatedSeconds": 8.017710685941042,
+    "realTimeFactor": 1.0016138815477569,
+    "timeScale": 1.0,
+    "processCpuUtilizationPercent": 6.633526600485393,
+    "meanGpuFrameMilliseconds": 12.70503145114345,
+    "gcAllocatedBytes": 784370,
+    "monoUsedBytes": 12914688,
+    "totalAllocatedMemoryBytes": 381687314,
+    "episodeId": 4,
+    "simulationTick": 401,
+    "observationTick": 399,
+    "actionSourceTick": -1,
+    "actionReceiveTick": -1,
+    "actionApplicationTick": -1,
+    "actionSequence": -1,
+    "observationQueueAgeTicks": 2,
+    "actionQueueAgeTicks": -1,
+    "actionAgeTicks": -1,
+    "staleObservations": 0,
+    "staleActions": 0,
+    "acceptedActions": 0,
+    "rejectedActions": 0,
+    "unknownSourceActions": 0,
+    "crossEpisodeActions": 0,
+    "duplicateActions": 0,
+    "failedObservations": 0,
+    "depthBufferValidationBytes": 0,
+    "depthBufferValidationMismatches": 0,
+    "loggedErrors": 0,
+    "loggedExceptions": 0,
+    "enabledCameras": 1,
+    "enabledSensorCameras": 1,
+    "enabledSpectatorCameras": 0,
+    "enabledWaterDriverCameras": 0,
+    "screenWidth": 640,
+    "screenHeight": 360,
+    "validationStream": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-start-pose-rendered-probe-v13-004/offset-negative-yaw/worker-result.validation.jsonl",
+    "validationSamplesCaptured": 9,
+    "validationSamplesRetained": 9,
+    "validationSamplesDropped": 0,
+    "invalidWaterSearches": 0,
+    "maximumObservationQueueAgeTicks": 4,
+    "actionTiming": {
+        "acceptedActions": 0,
+        "knownSourceActions": 0,
+        "meanSourceToApplicationTicks": -1.0,
+        "maximumSourceToApplicationTicks": 0,
+        "meanReceiveToApplicationTicks": -1.0,
+        "maximumReceiveToApplicationTicks": 0,
+        "maximumInterApplicationTicks": 0,
+        "commandTimeouts": 0
+    },
+    "sitl": {
+        "validServoPackets": 0,
+        "invalidServoPackets": 0,
+        "telemetryPackets": 0,
+        "lastFrame": -1,
+        "lastTelemetrySimulatedSeconds": -1.0
+    },
+    "valid": true,
+    "lidar": {
+        "scanCount": 81,
+        "configuredPointsPerScan": 72000,
+        "batchSize": 64,
+        "totalPoints": 5832000,
+        "hitCount": 470226,
+        "missCount": 5361774,
+        "minimumRange": 3.3459770679473879,
+        "maximumRange": 61.255035400390628,
+        "meanRange": 16.722701970845909,
+        "checksum": "B4FC92955F7BF9DA",
+        "acquisitionTick": 401,
+        "commandValidationCount": 0,
+        "commandValidationMismatches": 0,
+        "packValidationBytes": 0,
+        "packValidationMismatches": 0,
+        "processValidationCount": 0,
+        "processValidationMismatches": 0
+    },
+    "rgbCamera": {
+        "acquisitionCount": 0,
+        "width": 0,
+        "height": 0,
+        "totalBytes": 0,
+        "checksum": "CBF29CE484222325",
+        "acquisitionTick": -1
+    },
+    "depthCamera": {
+        "acquisitionCount": 120,
+        "width": 1280,
+        "height": 720,
+        "totalBytes": 442368000,
+        "checksum": "D2C95D72AF1589C9",
+        "acquisitionTick": 399
+    },
+    "detections": {
+        "acquisitionCount": 64,
+        "detectionCount": 407,
+        "acquisitionTick": 399
+    },
+    "resetProbe": {
+        "executed": false,
+        "reloadWallMilliseconds": 0.0,
+        "position": {
+            "rms": 0.0,
+            "max": 0.0,
+            "count": 0
+        },
+        "attitudeDegrees": {
+            "rms": 0.0,
+            "max": 0.0,
+            "count": 0
+        },
+        "linearVelocity": {
+            "rms": 0.0,
+            "max": 0.0,
+            "count": 0
+        },
+        "angularVelocity": {
+            "rms": 0.0,
+            "max": 0.0,
+            "count": 0
+        },
+        "waterHeight": {
+            "rms": 0.0,
+            "max": 0.0,
+            "count": 0
+        }
+    },
+    "markers": [
+        {
+            "name": "CRANE.Simulation.Step",
+            "totalMilliseconds": 0.0,
+            "meanMillisecondsPerFrame": 0.0,
+            "maxMillisecondsPerFrame": 0.0,
+            "sampledFrames": 481
+        },
+        {
+            "name": "CRANE.Water.Prepare",
+            "totalMilliseconds": 0.139282,
+            "meanMillisecondsPerFrame": 0.00028956756756756756,
+            "maxMillisecondsPerFrame": 0.003556,
+            "sampledFrames": 481
+        },
+        {
+            "name": "CRANE.Water.Query",
+            "totalMilliseconds": 36.888021,
+            "meanMillisecondsPerFrame": 0.07669027234927235,
+            "maxMillisecondsPerFrame": 2.760806,
+            "sampledFrames": 481
+        },
+        {
+            "name": "CRANE.Water.Buoyancy",
+            "totalMilliseconds": 0.113276,
+            "meanMillisecondsPerFrame": 0.0002355010395010395,
+            "maxMillisecondsPerFrame": 0.001144,
+            "sampledFrames": 481
+        },
+        {
+            "name": "CRANE.Vehicle.Dynamics",
+            "totalMilliseconds": 79.074535,
+            "meanMillisecondsPerFrame": 0.16439612266112267,
+            "maxMillisecondsPerFrame": 1.874754,
+            "sampledFrames": 481
+        },
+        {
+            "name": "CRANE.Vehicle.Dynamics.General",
+            "totalMilliseconds": 62.288284,
+            "meanMillisecondsPerFrame": 0.1294974719334719,
+            "maxMillisecondsPerFrame": 1.828444,
+            "sampledFrames": 481
+        },
+        {
+            "name": "CRANE.Vehicle.Dynamics.Current",
+            "totalMilliseconds": 13.433434,
+            "meanMillisecondsPerFrame": 0.027928137214137218,
+            "maxMillisecondsPerFrame": 0.17744,
+            "sampledFrames": 481
+        },
+        {
+            "name": "CRANE.Vehicle.Dynamics.Fossen",
+            "totalMilliseconds": 3.149344,
+            "meanMillisecondsPerFrame": 0.0065474927234927238,
+            "maxMillisecondsPerFrame": 0.026738,
+            "sampledFrames": 481
+        },
+        {
+            "name": "CRANE.Vehicle.Dynamics.AreaPreparation",
+            "totalMilliseconds": 3.198908,
+            "meanMillisecondsPerFrame": 0.006650536382536383,
+            "maxMillisecondsPerFrame": 0.019277,
+            "sampledFrames": 481
+        },
+        {
+            "name": "CRANE.Vehicle.Dynamics.ResistanceCoefficient",
+            "totalMilliseconds": 9.000584,
+            "meanMillisecondsPerFrame": 0.018712232848232849,
+            "maxMillisecondsPerFrame": 1.674328,
+            "sampledFrames": 481
+        },
+        {
+            "name": "CRANE.Vehicle.Dynamics.ViscousResistance",
+            "totalMilliseconds": 25.36638,
+            "meanMillisecondsPerFrame": 0.05273675675675676,
+            "maxMillisecondsPerFrame": 0.873034,
+            "sampledFrames": 481
+        },
+        {
+            "name": "CRANE.Vehicle.Dynamics.PressureDrag",
+            "totalMilliseconds": 24.546342,
+            "meanMillisecondsPerFrame": 0.05103189604989605,
+            "maxMillisecondsPerFrame": 0.216023,
+            "sampledFrames": 481
+        },
+        {
+            "name": "CRANE.Vehicle.Thruster",
+            "totalMilliseconds": 14.889308,
+            "meanMillisecondsPerFrame": 0.03095490228690229,
+            "maxMillisecondsPerFrame": 0.111585,
+            "sampledFrames": 481
+        },
+        {
+            "name": "CRANE.Sensor.Lidar",
+            "totalMilliseconds": 294.240362,
+            "meanMillisecondsPerFrame": 0.6117263243243244,
+            "maxMillisecondsPerFrame": 13.176298,
+            "sampledFrames": 481
+        },
+        {
+            "name": "CRANE.Sensor.Lidar.Raycast",
+            "totalMilliseconds": 242.679419,
+            "meanMillisecondsPerFrame": 0.5045310166320166,
+            "maxMillisecondsPerFrame": 12.170383,
+            "sampledFrames": 481
+        },
+        {
+            "name": "CRANE.Sensor.Lidar.Process",
+            "totalMilliseconds": 37.956972,
+            "meanMillisecondsPerFrame": 0.07891262370062371,
+            "maxMillisecondsPerFrame": 0.727327,
+            "sampledFrames": 481
+        },
+        {
+            "name": "CRANE.Sensor.Lidar.Pack",
+            "totalMilliseconds": 13.425644,
+            "meanMillisecondsPerFrame": 0.027911941787941789,
+            "maxMillisecondsPerFrame": 0.353951,
+            "sampledFrames": 481
+        },
+        {
+            "name": "CRANE.Sensor.Other",
+            "totalMilliseconds": 980.426511,
+            "meanMillisecondsPerFrame": 2.0383087546777549,
+            "maxMillisecondsPerFrame": 11.460034,
+            "sampledFrames": 481
+        },
+        {
+            "name": "CRANE.Sensor.Depth.Readback",
+            "totalMilliseconds": 962.916556,
+            "meanMillisecondsPerFrame": 2.0019055218295218,
+            "maxMillisecondsPerFrame": 11.459875,
+            "sampledFrames": 481
+        },
+        {
+            "name": "CRANE.Sensor.Depth.Geometric",
+            "totalMilliseconds": 0.0,
+            "meanMillisecondsPerFrame": 0.0,
+            "maxMillisecondsPerFrame": 0.0,
+            "sampledFrames": 481
+        },
+        {
+            "name": "CRANE.Sensor.Depth.Copy",
+            "totalMilliseconds": 48.278557,
+            "meanMillisecondsPerFrame": 0.10037122037422038,
+            "maxMillisecondsPerFrame": 1.343743,
+            "sampledFrames": 481
+        },
+        {
+            "name": "CRANE.Sensor.Depth.RowFlip",
+            "totalMilliseconds": 28.808888,
+            "meanMillisecondsPerFrame": 0.05989373804573804,
+            "maxMillisecondsPerFrame": 0.785552,
+            "sampledFrames": 481
+        },
+        {
+            "name": "CRANE.Sensor.Depth.Publish",
+            "totalMilliseconds": 885.566846,
+            "meanMillisecondsPerFrame": 1.841095313929314,
+            "maxMillisecondsPerFrame": 10.783841,
+            "sampledFrames": 481
+        },
+        {
+            "name": "CRANE.Sensor.RGB.Readback",
+            "totalMilliseconds": 0.0,
+            "meanMillisecondsPerFrame": 0.0,
+            "maxMillisecondsPerFrame": 0.0,
+            "sampledFrames": 481
+        },
+        {
+            "name": "CRANE.Sensor.Detection",
+            "totalMilliseconds": 17.464675,
+            "meanMillisecondsPerFrame": 0.03630909563409563,
+            "maxMillisecondsPerFrame": 0.64085,
+            "sampledFrames": 481
+        },
+        {
+            "name": "CRANE.ROS.CreateMessage",
+            "totalMilliseconds": 1197.455342,
+            "meanMillisecondsPerFrame": 2.4895121455301458,
+            "maxMillisecondsPerFrame": 20.624967,
+            "sampledFrames": 481
+        },
+        {
+            "name": "CRANE.ROS.Publish",
+            "totalMilliseconds": 36.479747,
+            "meanMillisecondsPerFrame": 0.07584146985446985,
+            "maxMillisecondsPerFrame": 3.200078,
+            "sampledFrames": 481
+        },
+        {
+            "name": "CRANE.Episode.Reset",
+            "totalMilliseconds": 0.0,
+            "meanMillisecondsPerFrame": 0.0,
+            "maxMillisecondsPerFrame": 0.0,
+            "sampledFrames": 481
+        },
+        {
+            "name": "Physics.Simulate",
+            "totalMilliseconds": 70.405317,
+            "meanMillisecondsPerFrame": 0.14637280041580043,
+            "maxMillisecondsPerFrame": 3.151614,
+            "sampledFrames": 481
+        }
+    ],
+    "validation": [
+        {
+            "simulatedSeconds": 0.03146631235827657,
+            "monoUsedBytes": 14598144,
+            "totalAllocatedMemoryBytes": 384197637,
+            "observationQueueAgeTicks": -1,
+            "staleObservations": 0,
+            "failedObservations": 0,
+            "bodies": [
+                {
+                    "name": "ball_dropper_link",
+                    "position": {
+                        "x": 6.511147975921631,
+                        "y": 0.28232625126838686,
+                        "z": -2.0719666481018068
+                    },
+                    "rotation": {
+                        "x": -0.0031102297361940147,
+                        "y": 0.7903841733932495,
+                        "z": -0.004979416262358427,
+                        "w": 0.6125834584236145
+                    },
+                    "linearVelocity": {
+                        "x": -0.008621814660727978,
+                        "y": -0.06606082618236542,
+                        "z": 0.004750709980726242
+                    },
+                    "angularVelocity": {
+                        "x": 0.010881028138101101,
+                        "y": -0.00428548501804471,
+                        "z": 0.08642201125621796
+                    }
+                },
+                {
+                    "name": "base_link",
+                    "position": {
+                        "x": 6.057074069976807,
+                        "y": 0.14775100350379945,
+                        "z": -2.5088388919830324
+                    },
+                    "rotation": {
+                        "x": -0.0031103375367820265,
+                        "y": 0.7903841733932495,
+                        "z": -0.004979453980922699,
+                        "w": 0.6125834584236145
+                    },
+                    "linearVelocity": {
+                        "x": 0.0187985822558403,
+                        "y": -0.09894820302724838,
+                        "z": -0.0003300373791716993
+                    },
+                    "angularVelocity": {
+                        "x": 0.010881028138101101,
+                        "y": -0.00428548501804471,
+                        "z": 0.08642201125621796
+                    }
+                },
+                {
+                    "name": "front_camera_link",
+                    "position": {
+                        "x": 6.138799667358398,
+                        "y": 0.276535302400589,
+                        "z": -2.193650245666504
+                    },
+                    "rotation": {
+                        "x": -0.003110315417870879,
+                        "y": 0.7903841733932495,
+                        "z": -0.0049794395454227928,
+                        "w": 0.6125834584236145
+                    },
+                    "linearVelocity": {
+                        "x": -0.013555040583014489,
+                        "y": -0.09518114477396012,
+                        "z": 0.003930057864636183
+                    },
+                    "angularVelocity": {
+                        "x": 0.010881028138101101,
+                        "y": -0.00428548501804471,
+                        "z": 0.08642201125621796
+                    }
+                },
+                {
+                    "name": "front_left_propeller_link",
+                    "position": {
+                        "x": 5.795238018035889,
+                        "y": -0.21018639206886292,
+                        "z": -2.158092975616455
+                    },
+                    "rotation": {
+                        "x": -0.0953250452876091,
+                        "y": -0.43951690196990969,
+                        "z": -0.6988961100578308,
+                        "w": 0.5561317205429077
+                    },
+                    "linearVelocity": {
+                        "x": 0.028349602594971658,
+                        "y": -0.12538129091262818,
+                        "z": -0.0027875881642103197
+                    },
+                    "angularVelocity": {
+                        "x": -0.2013164609670639,
+                        "y": -0.005480574443936348,
+                        "z": -0.03883171081542969
+                    }
+                },
+                {
+                    "name": "front_left_thruster_link",
+                    "position": {
+                        "x": 5.790870666503906,
+                        "y": -0.21021634340286256,
+                        "z": -2.1611008644104006
+                    },
+                    "rotation": {
+                        "x": 0.18221713602542878,
+                        "y": -0.19040565192699433,
+                        "z": -0.6814244985580444,
+                        "w": 0.6827908158302307
+                    },
+                    "linearVelocity": {
+                        "x": 0.028374215587973596,
+                        "y": -0.12568655610084535,
+                        "z": -0.002859683707356453
+                    },
+                    "angularVelocity": {
+                        "x": 0.010881028138101101,
+                        "y": -0.00428548501804471,
+                        "z": 0.08642201125621796
+                    }
+                },
+                {
+                    "name": "front_right_propeller_link",
+                    "position": {
+                        "x": 6.452946186065674,
+                        "y": -0.21294432878494264,
+                        "z": -2.3275136947631838
+                    },
+                    "rotation": {
+                        "x": -0.6984505653381348,
+                        "y": 0.4308580458164215,
+                        "z": 0.08269127458333969,
+                        "w": -0.5654118061065674
+                    },
+                    "linearVelocity": {
+                        "x": 0.0293877050280571,
+                        "y": -0.06665075570344925,
+                        "z": -0.00004253452061675489
+                    },
+                    "angularVelocity": {
+                        "x": -0.054055105894804,
+                        "y": -0.002907779533416033,
+                        "z": 0.1964167356491089
+                    }
+                },
+                {
+                    "name": "front_right_thruster_link",
+                    "position": {
+                        "x": 6.455316543579102,
+                        "y": -0.2130025327205658,
+                        "z": -2.33225679397583
+                    },
+                    "rotation": {
+                        "x": -0.6116564273834229,
+                        "y": 0.6164768934249878,
+                        "z": 0.3471994400024414,
+                        "w": -0.35395678877830508
+                    },
+                    "linearVelocity": {
+                        "x": 0.029358288273215295,
+                        "y": -0.06640134751796723,
+                        "z": -0.0000482326140627265
+                    },
+                    "angularVelocity": {
+                        "x": 0.010881028138101101,
+                        "y": -0.00428548501804471,
+                        "z": 0.08642201125621796
+                    }
+                },
+                {
+                    "name": "gps_link",
+                    "position": {
+                        "x": 5.918416500091553,
+                        "y": 0.14724679291248322,
+                        "z": -2.5660557746887209
+                    },
+                    "rotation": {
+                        "x": -0.003110315417870879,
+                        "y": 0.7903841733932495,
+                        "z": -0.0049794395454227928,
+                        "w": 0.6125834584236145
+                    },
+                    "linearVelocity": {
+                        "x": -0.0007780061569064856,
+                        "y": -0.11025284975767136,
+                        "z": 0.0015751826576888562
+                    },
+                    "angularVelocity": {
+                        "x": 0.010881028138101101,
+                        "y": -0.00428548501804471,
+                        "z": 0.08642201125621796
+                    }
+                },
+                {
+                    "name": "imu_link",
+                    "position": {
+                        "x": 5.895964622497559,
+                        "y": 0.1462552398443222,
+                        "z": -2.653204917907715
+                    },
+                    "rotation": {
+                        "x": -0.003110315417870879,
+                        "y": 0.7903841733932495,
+                        "z": -0.0049794395454227928,
+                        "w": 0.6125834584236145
+                    },
+                    "linearVelocity": {
+                        "x": -0.00031840684823691845,
+                        "y": -0.11124502867460251,
+                        "z": 0.0014682174660265446
+                    },
+                    "angularVelocity": {
+                        "x": 0.010881028138101101,
+                        "y": -0.00428548501804471,
+                        "z": 0.08642201125621796
+                    }
+                },
+                {
+                    "name": "left_hull_link",
+                    "position": {
+                        "x": 5.737218379974365,
+                        "y": 0.06909728050231934,
+                        "z": -2.4255411624908449
+                    },
+                    "rotation": {
+                        "x": -0.003110257675871253,
+                        "y": 0.7903842329978943,
+                        "z": -0.004979439079761505,
+                        "w": 0.6125833988189697
+                    },
+                    "linearVelocity": {
+                        "x": 0.03387083113193512,
+                        "y": -0.12752266228199006,
+                        "z": -0.003642594674602151
+                    },
+                    "angularVelocity": {
+                        "x": 0.010881028138101101,
+                        "y": -0.00428548501804471,
+                        "z": 0.08642201125621796
+                    }
+                },
+                {
+                    "name": "lidar_link",
+                    "position": {
+                        "x": 6.129700183868408,
+                        "y": 0.42867496609687807,
+                        "z": -2.2314538955688478
+                    },
+                    "rotation": {
+                        "x": -0.0031103191431611778,
+                        "y": 0.7903841733932495,
+                        "z": -0.004979461431503296,
+                        "w": 0.6125834584236145
+                    },
+                    "linearVelocity": {
+                        "x": -0.017896367236971856,
+                        "y": -0.09565164148807526,
+                        "z": 0.004453396424651146
+                    },
+                    "angularVelocity": {
+                        "x": 0.010881028138101101,
+                        "y": -0.00428548501804471,
+                        "z": 0.08642201125621796
+                    }
+                },
+                {
+                    "name": "rear_left_propeller_link",
+                    "position": {
+                        "x": 5.660469055175781,
+                        "y": -0.21614304184913636,
+                        "z": -2.681617021560669
+                    },
+                    "rotation": {
+                        "x": -0.18284255266189576,
+                        "y": 0.4933107793331146,
+                        "z": -0.6869508624076843,
+                        "w": 0.5013100504875183
+                    },
+                    "linearVelocity": {
+                        "x": 0.031099369749426843,
+                        "y": -0.1313192993402481,
+                        "z": -0.0035146083682775499
+                    },
+                    "angularVelocity": {
+                        "x": 0.09459847211837769,
+                        "y": -0.006061958149075508,
+                        "z": -0.055386945605278018
+                    }
+                },
+                {
+                    "name": "rear_left_thruster_link",
+                    "position": {
+                        "x": 5.658098220825195,
+                        "y": -0.2160848081111908,
+                        "z": -2.6768736839294435
+                    },
+                    "rotation": {
+                        "x": -0.3539589047431946,
+                        "y": 0.3471989929676056,
+                        "z": -0.6164785623550415,
+                        "w": 0.6116536259651184
+                    },
+                    "linearVelocity": {
+                        "x": 0.031094245612621309,
+                        "y": -0.13154961168766023,
+                        "z": -0.003492290386930108
+                    },
+                    "angularVelocity": {
+                        "x": 0.010881028138101101,
+                        "y": -0.00428548501804471,
+                        "z": 0.08642201125621796
+                    }
+                },
+                {
+                    "name": "rear_right_propeller_link",
+                    "position": {
+                        "x": 6.318020820617676,
+                        "y": -0.21890094876289369,
+                        "z": -2.851038932800293
+                    },
+                    "rotation": {
+                        "x": -0.7088104486465454,
+                        "y": 0.6109485030174255,
+                        "z": -0.007012567017227411,
+                        "w": 0.352534681558609
+                    },
+                    "linearVelocity": {
+                        "x": 0.032128408551216128,
+                        "y": -0.07259605079889298,
+                        "z": -0.0007152149919420481
+                    },
+                    "angularVelocity": {
+                        "x": 0.049445148557424548,
+                        "y": -0.004059791564941406,
+                        "z": 0.10918595641851425
+                    }
+                },
+                {
+                    "name": "rear_right_thruster_link",
+                    "position": {
+                        "x": 6.322388172149658,
+                        "y": -0.21887090802192689,
+                        "z": -2.848031520843506
+                    },
+                    "rotation": {
+                        "x": -0.682793140411377,
+                        "y": 0.6814217567443848,
+                        "z": -0.19040736556053163,
+                        "w": 0.18221747875213624
+                    },
+                    "linearVelocity": {
+                        "x": 0.03207831829786301,
+                        "y": -0.07227782905101776,
+                        "z": -0.0006815040251240134
+                    },
+                    "angularVelocity": {
+                        "x": 0.010881028138101101,
+                        "y": -0.00428548501804471,
+                        "z": 0.08642201125621796
+                    }
+                },
+                {
+                    "name": "right_hull_link",
+                    "position": {
+                        "x": 6.376742362976074,
+                        "y": 0.06841545552015305,
+                        "z": -2.5902905464172365
+                    },
+                    "rotation": {
+                        "x": -0.003110248828306794,
+                        "y": 0.7903842329978943,
+                        "z": -0.004979435354471207,
+                        "w": 0.6125833988189697
+                    },
+                    "linearVelocity": {
+                        "x": 0.03464522585272789,
+                        "y": -0.07046090066432953,
+                        "z": -0.0009148306562565267
+                    },
+                    "angularVelocity": {
+                        "x": 0.010881028138101101,
+                        "y": -0.00428548501804471,
+                        "z": 0.08642201125621796
+                    }
+                },
+                {
+                    "name": "sensor_mount_link",
+                    "position": {
+                        "x": 6.126188278198242,
+                        "y": 0.13820496201515199,
+                        "z": -2.2403600215911867
+                    },
+                    "rotation": {
+                        "x": -0.003110315417870879,
+                        "y": 0.7903841733932495,
+                        "z": -0.0049794395454227928,
+                        "w": 0.6125834584236145
+                    },
+                    "linearVelocity": {
+                        "x": 0.015880722552537919,
+                        "y": -0.09588906168937683,
+                        "z": 0.0001887311227619648
+                    },
+                    "angularVelocity": {
+                        "x": 0.010881028138101101,
+                        "y": -0.00428548501804471,
+                        "z": 0.08642201125621796
+                    }
+                },
+                {
+                    "name": "water_pump_link",
+                    "position": {
+                        "x": 5.849485874176025,
+                        "y": 0.1755332201719284,
+                        "z": -1.991417646408081
+                    },
+                    "rotation": {
+                        "x": -0.003110229969024658,
+                        "y": 0.7903842329978943,
+                        "z": -0.004979494493454695,
+                        "w": 0.6125833988189697
+                    },
+                    "linearVelocity": {
+                        "x": -0.005159392021596432,
+                        "y": -0.12270034104585648,
+                        "z": 0.001510376576334238
+                    },
+                    "angularVelocity": {
+                        "x": 0.010881028138101101,
+                        "y": -0.00428548501804471,
+                        "z": 0.08642201125621796
+                    }
+                }
+            ],
+            "water": [
+                {
+                    "surface": "Ocean",
+                    "simulationTime": -2.3616156578063967,
+                    "timeMultiplier": 1.0,
+                    "target": {
+                        "x": 6.511147975921631,
+                        "y": 0.28232625126838686,
+                        "z": -2.0719666481018068
+                    },
+                    "projected": {
+                        "x": 6.511147975921631,
+                        "y": 0.04588676616549492,
+                        "z": -2.0719666481018068
+                    },
+                    "error": 0.0,
+                    "steps": 0,
+                    "valid": true
+                }
+            ]
+        },
+        {
+            "simulatedSeconds": 1.0010145549886623,
+            "monoUsedBytes": 12865536,
+            "totalAllocatedMemoryBytes": 381022443,
+            "observationQueueAgeTicks": 4,
+            "staleObservations": 0,
+            "failedObservations": 0,
+            "bodies": [
+                {
+                    "name": "ball_dropper_link",
+                    "position": {
+                        "x": 6.53354024887085,
+                        "y": 0.2860814034938812,
+                        "z": -2.0662975311279299
+                    },
+                    "rotation": {
+                        "x": 0.003073334228247404,
+                        "y": 0.7901972532272339,
+                        "z": 0.0003358572139404714,
+                        "w": 0.6128448843955994
+                    },
+                    "linearVelocity": {
+                        "x": 0.028145741671323777,
+                        "y": -0.037712983787059787,
+                        "z": -0.016133934259414674
+                    },
+                    "angularVelocity": {
+                        "x": -0.02996012754738331,
+                        "y": 0.0024184470530599357,
+                        "z": -0.00853225402534008
+                    }
+                },
+                {
+                    "name": "base_link",
+                    "position": {
+                        "x": 6.079334735870361,
+                        "y": 0.15998560190200807,
+                        "z": -2.50555682182312
+                    },
+                    "rotation": {
+                        "x": 0.003073186380788684,
+                        "y": 0.7901972532272339,
+                        "z": 0.00033581259776838124,
+                        "w": 0.6128448843955994
+                    },
+                    "linearVelocity": {
+                        "x": 0.024898376315832139,
+                        "y": -0.04299955070018768,
+                        "z": -0.006230671424418688
+                    },
+                    "angularVelocity": {
+                        "x": -0.02996012754738331,
+                        "y": 0.0024184470530599357,
+                        "z": -0.00853225402534008
+                    }
+                },
+                {
+                    "name": "front_camera_link",
+                    "position": {
+                        "x": 6.161259174346924,
+                        "y": 0.2834503948688507,
+                        "z": -2.188297986984253
+                    },
+                    "rotation": {
+                        "x": 0.0030732164159417154,
+                        "y": 0.7901972532272339,
+                        "z": 0.0003358200774528086,
+                        "w": 0.6128448843955994
+                    },
+                    "linearVelocity": {
+                        "x": 0.028689289465546609,
+                        "y": -0.03412017598748207,
+                        "z": -0.017021486535668374
+                    },
+                    "angularVelocity": {
+                        "x": -0.02996012754738331,
+                        "y": 0.0024184470530599357,
+                        "z": -0.00853225402534008
+                    }
+                },
+                {
+                    "name": "front_left_propeller_link",
+                    "position": {
+                        "x": 5.816092014312744,
+                        "y": -0.20265308022499085,
+                        "z": -2.1607441902160646
+                    },
+                    "rotation": {
+                        "x": -0.14096911251544953,
+                        "y": -0.4722287654876709,
+                        "z": -0.6950801610946655,
+                        "w": 0.5234419703483582
+                    },
+                    "linearVelocity": {
+                        "x": 0.024593956768512727,
+                        "y": -0.030407609418034555,
+                        "z": -0.001600232906639576
+                    },
+                    "angularVelocity": {
+                        "x": -0.07929421216249466,
+                        "y": 0.0027703719679266216,
+                        "z": -0.0376976914703846
+                    }
+                },
+                {
+                    "name": "front_left_thruster_link",
+                    "position": {
+                        "x": 5.8117265701293949,
+                        "y": -0.20262077450752259,
+                        "z": -2.163754940032959
+                    },
+                    "rotation": {
+                        "x": 0.18758411705493928,
+                        "y": -0.1854814738035202,
+                        "z": -0.6839743256568909,
+                        "w": 0.6801382303237915
+                    },
+                    "linearVelocity": {
+                        "x": 0.024597899988293649,
+                        "y": -0.030454836785793306,
+                        "z": -0.0016132669989019633
+                    },
+                    "angularVelocity": {
+                        "x": -0.02996012754738331,
+                        "y": 0.0024184470530599357,
+                        "z": -0.00853225402534008
+                    }
+                },
+                {
+                    "name": "front_right_propeller_link",
+                    "position": {
+                        "x": 6.473904609680176,
+                        "y": -0.2048509418964386,
+                        "z": -2.3297629356384279
+                    },
+                    "rotation": {
+                        "x": -0.7066217064857483,
+                        "y": 0.3913305103778839,
+                        "z": 0.037500541657209399,
+                        "w": -0.5883367657661438
+                    },
+                    "linearVelocity": {
+                        "x": 0.024189848452806474,
+                        "y": -0.041092392057180408,
+                        "z": -0.003127278061583638
+                    },
+                    "angularVelocity": {
+                        "x": -0.06889244168996811,
+                        "y": 0.0023149189073592426,
+                        "z": 0.05732092261314392
+                    }
+                },
+                {
+                    "name": "front_right_thruster_link",
+                    "position": {
+                        "x": 6.476278305053711,
+                        "y": -0.20484104752540589,
+                        "z": -2.334505081176758
+                    },
+                    "rotation": {
+                        "x": -0.6135756969451904,
+                        "y": 0.6147978901863098,
+                        "z": 0.3524845242500305,
+                        "w": -0.34828606247901919
+                    },
+                    "linearVelocity": {
+                        "x": 0.024163438007235528,
+                        "y": -0.0412406325340271,
+                        "z": -0.003151912009343505
+                    },
+                    "angularVelocity": {
+                        "x": -0.02996012754738331,
+                        "y": 0.0024184470530599357,
+                        "z": -0.00853225402534008
+                    }
+                },
+                {
+                    "name": "gps_link",
+                    "position": {
+                        "x": 5.94071626663208,
+                        "y": 0.16084825992584229,
+                        "z": -2.562863826751709
+                    },
+                    "rotation": {
+                        "x": 0.003073216648772359,
+                        "y": 0.7901972532272339,
+                        "z": 0.0003358198737259954,
+                        "w": 0.6128448843955994
+                    },
+                    "linearVelocity": {
+                        "x": 0.026732126250863076,
+                        "y": -0.04351317137479782,
+                        "z": -0.012815078720450402
+                    },
+                    "angularVelocity": {
+                        "x": -0.02996012754738331,
+                        "y": 0.0024184470530599357,
+                        "z": -0.00853225402534008
+                    }
+                },
+                {
+                    "name": "imu_link",
+                    "position": {
+                        "x": 5.9183220863342289,
+                        "y": 0.16132235527038575,
+                        "z": -2.6500322818756105
+                    },
+                    "rotation": {
+                        "x": 0.003073216648772359,
+                        "y": 0.7901972532272339,
+                        "z": 0.0003358198737259954,
+                        "w": 0.6128448843955994
+                    },
+                    "linearVelocity": {
+                        "x": 0.02652512863278389,
+                        "y": -0.045933645218610767,
+                        "z": -0.012775330804288388
+                    },
+                    "angularVelocity": {
+                        "x": -0.02996012754738331,
+                        "y": 0.0024184470530599357,
+                        "z": -0.00853225402534008
+                    }
+                },
+                {
+                    "name": "left_hull_link",
+                    "position": {
+                        "x": 5.759167194366455,
+                        "y": 0.08105561882257462,
+                        "z": -2.4237329959869386
+                    },
+                    "rotation": {
+                        "x": 0.003073275089263916,
+                        "y": 0.7901972532272339,
+                        "z": 0.0003358358226250857,
+                        "w": 0.6128448843955994
+                    },
+                    "linearVelocity": {
+                        "x": 0.023569803684949876,
+                        "y": -0.03782518208026886,
+                        "z": -0.00009549007518216968
+                    },
+                    "angularVelocity": {
+                        "x": -0.02996012754738331,
+                        "y": 0.0024184470530599357,
+                        "z": -0.00853225402534008
+                    }
+                },
+                {
+                    "name": "lidar_link",
+                    "position": {
+                        "x": 6.15268087387085,
+                        "y": 0.43620359897613528,
+                        "z": -2.2236716747283937
+                    },
+                    "rotation": {
+                        "x": 0.0030732452869415285,
+                        "y": 0.7901972532272339,
+                        "z": 0.0003358124813530594,
+                        "w": 0.6128448843955994
+                    },
+                    "linearVelocity": {
+                        "x": 0.02904786542057991,
+                        "y": -0.03517225757241249,
+                        "z": -0.018579240888357164
+                    },
+                    "angularVelocity": {
+                        "x": -0.02996012754738331,
+                        "y": 0.0024184470530599357,
+                        "z": -0.00853225402534008
+                    }
+                },
+                {
+                    "name": "rear_left_propeller_link",
+                    "position": {
+                        "x": 5.681669235229492,
+                        "y": -0.1998051106929779,
+                        "z": -2.6843833923339845
+                    },
+                    "rotation": {
+                        "x": -0.16124457120895387,
+                        "y": 0.5108749270439148,
+                        "z": -0.6879560351371765,
+                        "w": 0.4896160066127777
+                    },
+                    "linearVelocity": {
+                        "x": 0.023345772176980974,
+                        "y": -0.04493061825633049,
+                        "z": -0.001382018905133009
+                    },
+                    "angularVelocity": {
+                        "x": -0.005344664212316275,
+                        "y": 0.00248905667103827,
+                        "z": -0.050168171525001529
+                    }
+                },
+                {
+                    "name": "rear_left_thruster_link",
+                    "position": {
+                        "x": 5.679295063018799,
+                        "y": -0.19981494545936585,
+                        "z": -2.6796412467956545
+                    },
+                    "rotation": {
+                        "x": -0.34828808903694155,
+                        "y": 0.3524840474128723,
+                        "z": -0.6147996783256531,
+                        "w": 0.6135730147361755
+                    },
+                    "linearVelocity": {
+                        "x": 0.023372825235128404,
+                        "y": -0.04478074237704277,
+                        "z": -0.0013782689347863198
+                    },
+                    "angularVelocity": {
+                        "x": -0.02996012754738331,
+                        "y": 0.0024184470530599357,
+                        "z": -0.00853225402534008
+                    }
+                },
+                {
+                    "name": "rear_right_propeller_link",
+                    "position": {
+                        "x": 6.339325904846191,
+                        "y": -0.20200228691101075,
+                        "z": -2.8534040451049806
+                    },
+                    "rotation": {
+                        "x": -0.7048449516296387,
+                        "y": 0.6033675074577332,
+                        "z": 0.013742055743932724,
+                        "w": 0.3727636933326721
+                    },
+                    "linearVelocity": {
+                        "x": 0.02294018492102623,
+                        "y": -0.055615298449993137,
+                        "z": -0.002916691591963172
+                    },
+                    "angularVelocity": {
+                        "x": 0.026990093290805818,
+                        "y": 0.0020128090400248768,
+                        "z": 0.025135699659585954
+                    }
+                },
+                {
+                    "name": "rear_right_thruster_link",
+                    "position": {
+                        "x": 6.343690872192383,
+                        "y": -0.20203456282615663,
+                        "z": -2.850393295288086
+                    },
+                    "rotation": {
+                        "x": -0.6801405549049377,
+                        "y": 0.6839715838432312,
+                        "z": -0.1854831576347351,
+                        "w": 0.1875845342874527
+                    },
+                    "linearVelocity": {
+                        "x": 0.02293836884200573,
+                        "y": -0.0555652491748333,
+                        "z": -0.0029165581800043585
+                    },
+                    "angularVelocity": {
+                        "x": -0.02996012754738331,
+                        "y": 0.0024184470530599357,
+                        "z": -0.00853225402534008
+                    }
+                },
+                {
+                    "name": "right_hull_link",
+                    "position": {
+                        "x": 6.398799896240234,
+                        "y": 0.08091846108436585,
+                        "z": -2.588060140609741
+                    },
+                    "rotation": {
+                        "x": 0.0030732497107237579,
+                        "y": 0.7901972532272339,
+                        "z": 0.00033585421624593437,
+                        "w": 0.6128448843955994
+                    },
+                    "linearVelocity": {
+                        "x": 0.023168746381998063,
+                        "y": -0.048205919563770297,
+                        "z": -0.0016363549511879683
+                    },
+                    "angularVelocity": {
+                        "x": -0.02996012754738331,
+                        "y": 0.0024184470530599357,
+                        "z": -0.00853225402534008
+                    }
+                },
+                {
+                    "name": "sensor_mount_link",
+                    "position": {
+                        "x": 6.148230075836182,
+                        "y": 0.14592599868774415,
+                        "z": -2.237220048904419
+                    },
+                    "rotation": {
+                        "x": 0.003073216648772359,
+                        "y": 0.7901972532272339,
+                        "z": 0.0003358198737259954,
+                        "w": 0.6128448843955994
+                    },
+                    "linearVelocity": {
+                        "x": 0.025684360414743425,
+                        "y": -0.03554537892341614,
+                        "z": -0.0068745422177016739
+                    },
+                    "angularVelocity": {
+                        "x": -0.02996012754738331,
+                        "y": 0.0024184470530599357,
+                        "z": -0.00853225402534008
+                    }
+                },
+                {
+                    "name": "water_pump_link",
+                    "position": {
+                        "x": 5.8714776039123539,
+                        "y": 0.18017524480819703,
+                        "z": -1.9878919124603272
+                    },
+                    "rotation": {
+                        "x": 0.00307330465875566,
+                        "y": 0.7901972532272339,
+                        "z": 0.00033585529308766127,
+                        "w": 0.6128448843955994
+                    },
+                    "linearVelocity": {
+                        "x": 0.028200995177030565,
+                        "y": -0.026237698271870614,
+                        "z": -0.013068104162812233
+                    },
+                    "angularVelocity": {
+                        "x": -0.02996012754738331,
+                        "y": 0.0024184470530599357,
+                        "z": -0.00853225402534008
+                    }
+                }
+            ],
+            "water": [
+                {
+                    "surface": "Ocean",
+                    "simulationTime": -1.3757171630859376,
+                    "timeMultiplier": 1.0,
+                    "target": {
+                        "x": 6.53354024887085,
+                        "y": 0.2860814034938812,
+                        "z": -2.0662975311279299
+                    },
+                    "projected": {
+                        "x": 6.53354024887085,
+                        "y": 0.0209486223757267,
+                        "z": -2.0662975311279299
+                    },
+                    "error": 0.0,
+                    "steps": 0,
+                    "valid": true
+                }
+            ]
+        },
+        {
+            "simulatedSeconds": 2.0179919784580497,
+            "monoUsedBytes": 14602240,
+            "totalAllocatedMemoryBytes": 380848505,
+            "observationQueueAgeTicks": 2,
+            "staleObservations": 0,
+            "failedObservations": 0,
+            "bodies": [
+                {
+                    "name": "ball_dropper_link",
+                    "position": {
+                        "x": 6.554758548736572,
+                        "y": 0.2648021876811981,
+                        "z": -2.0696675777435304
+                    },
+                    "rotation": {
+                        "x": -0.0015119907911866904,
+                        "y": 0.7902208566665649,
+                        "z": 0.0015339849051088095,
+                        "w": 0.6128184199333191
+                    },
+                    "linearVelocity": {
+                        "x": 0.025530807673931123,
+                        "y": 0.09527523070573807,
+                        "z": 0.004620834719389677
+                    },
+                    "angularVelocity": {
+                        "x": 0.0155472531914711,
+                        "y": 0.00026938170776702464,
+                        "z": -0.003291799919679761
+                    }
+                },
+                {
+                    "name": "base_link",
+                    "position": {
+                        "x": 6.101650238037109,
+                        "y": 0.1331167221069336,
+                        "z": -2.5084190368652345
+                    },
+                    "rotation": {
+                        "x": -0.001512104645371437,
+                        "y": 0.7902208566665649,
+                        "z": 0.0015338808298110962,
+                        "w": 0.6128184199333191
+                    },
+                    "linearVelocity": {
+                        "x": 0.024459341540932657,
+                        "y": 0.10121865570545197,
+                        "z": 0.00004443098441697657
+                    },
+                    "angularVelocity": {
+                        "x": 0.0155472531914711,
+                        "y": 0.00026938170776702464,
+                        "z": -0.003291799919679761
+                    }
+                },
+                {
+                    "name": "front_camera_link",
+                    "position": {
+                        "x": 6.182509422302246,
+                        "y": 0.25847235321998598,
+                        "z": -2.191628932952881
+                    },
+                    "rotation": {
+                        "x": -0.001512074493803084,
+                        "y": 0.7902208566665649,
+                        "z": 0.0015338959638029338,
+                        "w": 0.6128184199333191
+                    },
+                    "linearVelocity": {
+                        "x": 0.02571444772183895,
+                        "y": 0.09599148482084274,
+                        "z": 0.005546298809349537
+                    },
+                    "angularVelocity": {
+                        "x": 0.0155472531914711,
+                        "y": 0.00026938170776702464,
+                        "z": -0.003291799919679761
+                    }
+                },
+                {
+                    "name": "front_left_propeller_link",
+                    "position": {
+                        "x": 5.841592788696289,
+                        "y": -0.23051491379737855,
+                        "z": -2.1622374057769777
+                    },
+                    "rotation": {
+                        "x": -0.16174618899822236,
+                        "y": -0.49054279923439028,
+                        "z": -0.6871300339698792,
+                        "w": 0.5109388828277588
+                    },
+                    "linearVelocity": {
+                        "x": 0.02410372532904148,
+                        "y": 0.0966976061463356,
+                        "z": -0.001954098232090473
+                    },
+                    "angularVelocity": {
+                        "x": -0.03177701309323311,
+                        "y": 0.00008747060201130807,
+                        "z": -0.03126522898674011
+                    }
+                },
+                {
+                    "name": "front_left_thruster_link",
+                    "position": {
+                        "x": 5.837226867675781,
+                        "y": -0.23053178191184998,
+                        "z": -2.165247917175293
+                    },
+                    "rotation": {
+                        "x": 0.18710245192050935,
+                        "y": -0.18591585755348206,
+                        "z": -0.6806630492210388,
+                        "w": 0.6834661960601807
+                    },
+                    "linearVelocity": {
+                        "x": 0.02411160245537758,
+                        "y": 0.09675516188144684,
+                        "z": -0.0019620652310550215
+                    },
+                    "angularVelocity": {
+                        "x": 0.0155472531914711,
+                        "y": 0.00026938170776702464,
+                        "z": -0.003291799919679761
+                    }
+                },
+                {
+                    "name": "front_right_propeller_link",
+                    "position": {
+                        "x": 6.499392032623291,
+                        "y": -0.22760960459709168,
+                        "z": -2.3312973976135256
+                    },
+                    "rotation": {
+                        "x": -0.7078777551651001,
+                        "y": 0.3726324737071991,
+                        "z": 0.015593260526657105,
+                        "w": -0.5998426079750061
+                    },
+                    "linearVelocity": {
+                        "x": 0.024087373167276384,
+                        "y": 0.0971609503030777,
+                        "z": -0.0020928450394421818
+                    },
+                    "angularVelocity": {
+                        "x": -0.010233965702354908,
+                        "y": 0.00013357795251067728,
+                        "z": 0.04032379761338234
+                    }
+                },
+                {
+                    "name": "front_right_thruster_link",
+                    "position": {
+                        "x": 6.501765251159668,
+                        "y": -0.2275967299938202,
+                        "z": -2.3360395431518556
+                    },
+                    "rotation": {
+                        "x": -0.615588366985321,
+                        "y": 0.6127635836601257,
+                        "z": 0.34983575344085696,
+                        "w": -0.35097992420196535
+                    },
+                    "linearVelocity": {
+                        "x": 0.024075038731098176,
+                        "y": 0.0972229614853859,
+                        "z": -0.0020960867404937746
+                    },
+                    "angularVelocity": {
+                        "x": 0.0155472531914711,
+                        "y": 0.00026938170776702464,
+                        "z": -0.003291799919679761
+                    }
+                },
+                {
+                    "name": "gps_link",
+                    "position": {
+                        "x": 5.963026523590088,
+                        "y": 0.13255760073661805,
+                        "z": -2.565718412399292
+                    },
+                    "rotation": {
+                        "x": -0.001512074493803084,
+                        "y": 0.7902208566665649,
+                        "z": 0.0015338959638029338,
+                        "w": 0.6128184199333191
+                    },
+                    "linearVelocity": {
+                        "x": 0.025199374184012414,
+                        "y": 0.10256656259298325,
+                        "z": 0.003649430349469185
+                    },
+                    "angularVelocity": {
+                        "x": 0.0155472531914711,
+                        "y": 0.00026938170776702464,
+                        "z": -0.003291799919679761
+                    }
+                },
+                {
+                    "name": "imu_link",
+                    "position": {
+                        "x": 5.940625190734863,
+                        "y": 0.132511705160141,
+                        "z": -2.652886152267456
+                    },
+                    "rotation": {
+                        "x": -0.001512074493803084,
+                        "y": 0.7902208566665649,
+                        "z": 0.0015338959638029338,
+                        "w": 0.6128184199333191
+                    },
+                    "linearVelocity": {
+                        "x": 0.02517586760222912,
+                        "y": 0.10399553179740906,
+                        "z": 0.003654889762401581
+                    },
+                    "angularVelocity": {
+                        "x": 0.0155472531914711,
+                        "y": 0.00026938170776702464,
+                        "z": -0.003291799919679761
+                    }
+                },
+                {
+                    "name": "left_hull_link",
+                    "position": {
+                        "x": 5.782186031341553,
+                        "y": 0.05170494318008423,
+                        "z": -2.4262771606445314
+                    },
+                    "rotation": {
+                        "x": -0.0015120099997147918,
+                        "y": 0.7902208566665649,
+                        "z": 0.0015339025994762779,
+                        "w": 0.6128184199333191
+                    },
+                    "linearVelocity": {
+                        "x": 0.02388438954949379,
+                        "y": 0.10099301487207413,
+                        "z": -0.0026897576171904804
+                    },
+                    "angularVelocity": {
+                        "x": 0.0155472531914711,
+                        "y": 0.00026938170776702464,
+                        "z": -0.003291799919679761
+                    }
+                },
+                {
+                    "name": "lidar_link",
+                    "position": {
+                        "x": 6.172598838806152,
+                        "y": 0.4110119342803955,
+                        "z": -2.2275710105895998
+                    },
+                    "rotation": {
+                        "x": -0.0015120358439162374,
+                        "y": 0.7902209162712097,
+                        "z": 0.0015339553356170655,
+                        "w": 0.6128183603286743
+                    },
+                    "linearVelocity": {
+                        "x": 0.02587728574872017,
+                        "y": 0.09662018716335297,
+                        "z": 0.006366646848618984
+                    },
+                    "angularVelocity": {
+                        "x": 0.0155472531914711,
+                        "y": 0.00026938170776702464,
+                        "z": -0.003291799919679761
+                    }
+                },
+                {
+                    "name": "rear_left_propeller_link",
+                    "position": {
+                        "x": 5.707127094268799,
+                        "y": -0.23079004883766175,
+                        "z": -2.685873031616211
+                    },
+                    "rotation": {
+                        "x": -0.15276551246643067,
+                        "y": 0.5171511769294739,
+                        "z": -0.6894436478614807,
+                        "w": 0.4836166799068451
+                    },
+                    "linearVelocity": {
+                        "x": 0.023968379944562913,
+                        "y": 0.10527263581752777,
+                        "z": -0.00193641590885818
+                    },
+                    "angularVelocity": {
+                        "x": 0.018934709951281549,
+                        "y": 0.0002861085522454232,
+                        "z": -0.009022556245326996
+                    }
+                },
+                {
+                    "name": "rear_left_thruster_link",
+                    "position": {
+                        "x": 5.704753398895264,
+                        "y": -0.23080289363861085,
+                        "z": -2.681130886077881
+                    },
+                    "rotation": {
+                        "x": -0.35098206996917727,
+                        "y": 0.3498353362083435,
+                        "z": -0.6127653121948242,
+                        "w": 0.6155855655670166
+                    },
+                    "linearVelocity": {
+                        "x": 0.023972492665052415,
+                        "y": 0.10521180927753449,
+                        "z": -0.0019297681283205748
+                    },
+                    "angularVelocity": {
+                        "x": 0.0155472531914711,
+                        "y": 0.00026938170776702464,
+                        "z": -0.003291799919679761
+                    }
+                },
+                {
+                    "name": "rear_right_propeller_link",
+                    "position": {
+                        "x": 6.364770412445068,
+                        "y": -0.22788545489311219,
+                        "z": -2.8549346923828127
+                    },
+                    "rotation": {
+                        "x": -0.7079463601112366,
+                        "y": 0.5959649085998535,
+                        "z": 0.022501152008771898,
+                        "w": 0.37832731008529665
+                    },
+                    "linearVelocity": {
+                        "x": 0.023934274911880494,
+                        "y": 0.1057366281747818,
+                        "z": -0.0020684406626969578
+                    },
+                    "angularVelocity": {
+                        "x": 0.016737589612603189,
+                        "y": 0.0002740782219916582,
+                        "z": -0.0025881838519126178
+                    }
+                },
+                {
+                    "name": "rear_right_thruster_link",
+                    "position": {
+                        "x": 6.369136333465576,
+                        "y": -0.22786849737167359,
+                        "z": -2.851924180984497
+                    },
+                    "rotation": {
+                        "x": -0.6834683418273926,
+                        "y": 0.6806601881980896,
+                        "z": -0.18591748178005219,
+                        "w": 0.1871027946472168
+                    },
+                    "linearVelocity": {
+                        "x": 0.023935925215482713,
+                        "y": 0.10568015277385712,
+                        "z": -0.00206375983543694
+                    },
+                    "angularVelocity": {
+                        "x": 0.0155472531914711,
+                        "y": 0.00026938170776702464,
+                        "z": -0.003291799919679761
+                    }
+                },
+                {
+                    "name": "right_hull_link",
+                    "position": {
+                        "x": 6.421788692474365,
+                        "y": 0.05652981996536255,
+                        "z": -2.590651512145996
+                    },
+                    "rotation": {
+                        "x": -0.0015120059251785279,
+                        "y": 0.7902208566665649,
+                        "z": 0.0015339513774961234,
+                        "w": 0.6128184199333191
+                    },
+                    "linearVelocity": {
+                        "x": 0.0238557830452919,
+                        "y": 0.10144312679767609,
+                        "z": -0.002787658479064703
+                    },
+                    "angularVelocity": {
+                        "x": 0.0155472531914711,
+                        "y": 0.00026938170776702464,
+                        "z": -0.003291799919679761
+                    }
+                },
+                {
+                    "name": "sensor_mount_link",
+                    "position": {
+                        "x": 6.170677185058594,
+                        "y": 0.12065815180540085,
+                        "z": -2.240037202835083
+                    },
+                    "rotation": {
+                        "x": -0.001512074493803084,
+                        "y": 0.7902208566665649,
+                        "z": 0.0015338959638029338,
+                        "w": 0.6128184199333191
+                    },
+                    "linearVelocity": {
+                        "x": 0.024588994681835176,
+                        "y": 0.0968189463019371,
+                        "z": 0.0002981578290928155
+                    },
+                    "angularVelocity": {
+                        "x": 0.0155472531914711,
+                        "y": 0.00026938170776702464,
+                        "z": -0.003291799919679761
+                    }
+                },
+                {
+                    "name": "water_pump_link",
+                    "position": {
+                        "x": 5.893647193908691,
+                        "y": 0.15342316031455995,
+                        "z": -1.9908170700073243
+                    },
+                    "rotation": {
+                        "x": -0.0015119911404326559,
+                        "y": 0.7902208566665649,
+                        "z": 0.0015338974772021175,
+                        "w": 0.6128184199333191
+                    },
+                    "linearVelocity": {
+                        "x": 0.025400634855031968,
+                        "y": 0.09417751431465149,
+                        "z": 0.00391602236777544
+                    },
+                    "angularVelocity": {
+                        "x": 0.0155472531914711,
+                        "y": 0.00026938170776702464,
+                        "z": -0.003291799919679761
+                    }
+                }
+            ],
+            "water": [
+                {
+                    "surface": "Ocean",
+                    "simulationTime": -0.3616526126861572,
+                    "timeMultiplier": 1.0,
+                    "target": {
+                        "x": 6.554758548736572,
+                        "y": 0.2648021876811981,
+                        "z": -2.0696675777435304
+                    },
+                    "projected": {
+                        "x": 6.554758548736572,
+                        "y": -0.008709901943802834,
+                        "z": -2.0696675777435304
+                    },
+                    "error": 0.0,
+                    "steps": 0,
+                    "valid": true
+                }
+            ]
+        },
+        {
+            "simulatedSeconds": 3.0005072633219957,
+            "monoUsedBytes": 12873728,
+            "totalAllocatedMemoryBytes": 381281202,
+            "observationQueueAgeTicks": 4,
+            "staleObservations": 0,
+            "failedObservations": 0,
+            "bodies": [
+                {
+                    "name": "ball_dropper_link",
+                    "position": {
+                        "x": 6.5782470703125,
+                        "y": 0.3018304109573364,
+                        "z": -2.0740346908569338
+                    },
+                    "rotation": {
+                        "x": -0.0004237591347191483,
+                        "y": 0.790565013885498,
+                        "z": -0.00019806619093287736,
+                        "w": 0.6123778820037842
+                    },
+                    "linearVelocity": {
+                        "x": 0.03564611077308655,
+                        "y": -0.04795064032077789,
+                        "z": -0.007371991872787476
+                    },
+                    "angularVelocity": {
+                        "x": -0.011961564421653748,
+                        "y": 0.0014945308212190867,
+                        "z": -0.0221391711384058
+                    }
+                },
+                {
+                    "name": "base_link",
+                    "position": {
+                        "x": 6.124145984649658,
+                        "y": 0.17127147316932679,
+                        "z": -2.5120956897735597
+                    },
+                    "rotation": {
+                        "x": -0.0004238628316670656,
+                        "y": 0.790565013885498,
+                        "z": -0.00019812583923339844,
+                        "w": 0.6123778820037842
+                    },
+                    "linearVelocity": {
+                        "x": 0.0285565797239542,
+                        "y": -0.04223443940281868,
+                        "z": -0.003155711106956005
+                    },
+                    "angularVelocity": {
+                        "x": -0.011961564421653748,
+                        "y": 0.0014945308212190867,
+                        "z": -0.0221391711384058
+                    }
+                },
+                {
+                    "name": "front_camera_link",
+                    "position": {
+                        "x": 6.205840110778809,
+                        "y": 0.2967599034309387,
+                        "z": -2.1955723762512209
+                    },
+                    "rotation": {
+                        "x": -0.00042384001426398754,
+                        "y": 0.790565013885498,
+                        "z": -0.00019811095262411982,
+                        "w": 0.6123778820037842
+                    },
+                    "linearVelocity": {
+                        "x": 0.036901894956827167,
+                        "y": -0.040257528424263,
+                        "z": -0.007531147450208664
+                    },
+                    "angularVelocity": {
+                        "x": -0.011961564421653748,
+                        "y": 0.0014945308212190867,
+                        "z": -0.0221391711384058
+                    }
+                },
+                {
+                    "name": "front_left_propeller_link",
+                    "position": {
+                        "x": 5.863080978393555,
+                        "y": -0.1908716857433319,
+                        "z": -2.1651127338409426
+                    },
+                    "rotation": {
+                        "x": -0.1713043451309204,
+                        "y": -0.49624115228652956,
+                        "z": -0.6857560873031616,
+                        "w": 0.5041213035583496
+                    },
+                    "linearVelocity": {
+                        "x": 0.026143532246351243,
+                        "y": -0.03229929506778717,
+                        "z": -0.0011818029452115298
+                    },
+                    "angularVelocity": {
+                        "x": -0.00922894012182951,
+                        "y": 0.001496925950050354,
+                        "z": -0.020528068765997888
+                    }
+                },
+                {
+                    "name": "front_left_thruster_link",
+                    "position": {
+                        "x": 5.858712196350098,
+                        "y": -0.1908760666847229,
+                        "z": -2.168118476867676
+                    },
+                    "rotation": {
+                        "x": 0.18588444590568543,
+                        "y": -0.18637192249298097,
+                        "z": -0.6819481253623962,
+                        "w": 0.6823922395706177
+                    },
+                    "linearVelocity": {
+                        "x": 0.026144959032535554,
+                        "y": -0.03224349021911621,
+                        "z": -0.0011782870860770345
+                    },
+                    "angularVelocity": {
+                        "x": -0.011961564421653748,
+                        "y": 0.0014945308212190867,
+                        "z": -0.0221391711384058
+                    }
+                },
+                {
+                    "name": "front_right_propeller_link",
+                    "position": {
+                        "x": 6.520697116851807,
+                        "y": -0.19073182344436646,
+                        "z": -2.334908962249756
+                    },
+                    "rotation": {
+                        "x": -0.7068983912467957,
+                        "y": 0.3650955557823181,
+                        "z": 0.0068330299109220509,
+                        "w": -0.6057667136192322
+                    },
+                    "linearVelocity": {
+                        "x": 0.025898676365613939,
+                        "y": -0.048902660608291629,
+                        "z": -0.002162117278203368
+                    },
+                    "angularVelocity": {
+                        "x": -0.02640426717698574,
+                        "y": 0.0015088825020939112,
+                        "z": 0.0023566847667098047
+                    }
+                },
+                {
+                    "name": "front_right_thruster_link",
+                    "position": {
+                        "x": 6.523065567016602,
+                        "y": -0.19073468446731568,
+                        "z": -2.339653968811035
+                    },
+                    "rotation": {
+                        "x": -0.6139676570892334,
+                        "y": 0.613994836807251,
+                        "z": 0.3504221737384796,
+                        "w": -0.3510817289352417
+                    },
+                    "linearVelocity": {
+                        "x": 0.025891361758112909,
+                        "y": -0.04900355637073517,
+                        "z": -0.0021726773120462896
+                    },
+                    "angularVelocity": {
+                        "x": -0.011961564421653748,
+                        "y": 0.0014945308212190867,
+                        "z": -0.0221391711384058
+                    }
+                },
+                {
+                    "name": "gps_link",
+                    "position": {
+                        "x": 5.985457420349121,
+                        "y": 0.1711646020412445,
+                        "z": -2.569239616394043
+                    },
+                    "rotation": {
+                        "x": -0.00042384001426398754,
+                        "y": 0.790565013885498,
+                        "z": -0.00019811095262411982,
+                        "w": 0.6123778820037842
+                    },
+                    "linearVelocity": {
+                        "x": 0.033560577780008319,
+                        "y": -0.03984776884317398,
+                        "z": -0.005698206834495068
+                    },
+                    "angularVelocity": {
+                        "x": -0.011961564421653748,
+                        "y": 0.0014945308212190867,
+                        "z": -0.0221391711384058
+                    }
+                },
+                {
+                    "name": "imu_link",
+                    "position": {
+                        "x": 5.962958335876465,
+                        "y": 0.17108242213726045,
+                        "z": -2.6563823223114015
+                    },
+                    "rotation": {
+                        "x": -0.00042384001426398754,
+                        "y": 0.790565013885498,
+                        "z": -0.00019811095262411982,
+                        "w": 0.6123778820037842
+                    },
+                    "linearVelocity": {
+                        "x": 0.033428508788347247,
+                        "y": -0.04039201885461807,
+                        "z": -0.005663591902703047
+                    },
+                    "angularVelocity": {
+                        "x": -0.011961564421653748,
+                        "y": 0.0014945308212190867,
+                        "z": -0.0221391711384058
+                    }
+                },
+                {
+                    "name": "left_hull_link",
+                    "position": {
+                        "x": 5.804463863372803,
+                        "y": 0.09120340645313263,
+                        "z": -2.429483413696289
+                    },
+                    "rotation": {
+                        "x": -0.0004238308756612241,
+                        "y": 0.7905650734901428,
+                        "z": -0.0001980675442609936,
+                        "w": 0.6123778223991394
+                    },
+                    "linearVelocity": {
+                        "x": 0.024693790823221208,
+                        "y": -0.03416861221194267,
+                        "z": -0.0005241932231001556
+                    },
+                    "angularVelocity": {
+                        "x": -0.011961564421653748,
+                        "y": 0.0014945308212190867,
+                        "z": -0.0221391711384058
+                    }
+                },
+                {
+                    "name": "lidar_link",
+                    "position": {
+                        "x": 6.196475982666016,
+                        "y": 0.44928592443466189,
+                        "z": -2.2317183017730715
+                    },
+                    "rotation": {
+                        "x": -0.0004238635010551661,
+                        "y": 0.7905650734901428,
+                        "z": -0.00019811092352028936,
+                        "w": 0.6123778223991394
+                    },
+                    "linearVelocity": {
+                        "x": 0.0380084253847599,
+                        "y": -0.04048392176628113,
+                        "z": -0.008144277147948742
+                    },
+                    "angularVelocity": {
+                        "x": -0.011961564421653748,
+                        "y": 0.0014945308212190867,
+                        "z": -0.0221391711384058
+                    }
+                },
+                {
+                    "name": "rear_left_propeller_link",
+                    "position": {
+                        "x": 5.728029251098633,
+                        "y": -0.19136518239974976,
+                        "z": -2.6885976791381838
+                    },
+                    "rotation": {
+                        "x": -0.1503167599439621,
+                        "y": 0.5187462568283081,
+                        "z": -0.6911269426345825,
+                        "w": 0.4802609384059906
+                    },
+                    "linearVelocity": {
+                        "x": 0.025350864976644517,
+                        "y": -0.035566747188568118,
+                        "z": -0.000971974222920835
+                    },
+                    "angularVelocity": {
+                        "x": -0.014509848318994046,
+                        "y": 0.0014970020856708289,
+                        "z": -0.01781708560883999
+                    }
+                },
+                {
+                    "name": "rear_left_thruster_link",
+                    "position": {
+                        "x": 5.725661277770996,
+                        "y": -0.19136223196983338,
+                        "z": -2.6838526725769045
+                    },
+                    "rotation": {
+                        "x": -0.3510837256908417,
+                        "y": 0.350421667098999,
+                        "z": -0.6139966249465942,
+                        "w": 0.6139649748802185
+                    },
+                    "linearVelocity": {
+                        "x": 0.025363346561789514,
+                        "y": -0.03546682000160217,
+                        "z": -0.000973583897575736
+                    },
+                    "angularVelocity": {
+                        "x": -0.011961564421653748,
+                        "y": 0.0014945308212190867,
+                        "z": -0.0221391711384058
+                    }
+                },
+                {
+                    "name": "rear_right_propeller_link",
+                    "position": {
+                        "x": 6.385489463806152,
+                        "y": -0.19122537970542909,
+                        "z": -2.8583950996398927
+                    },
+                    "rotation": {
+                        "x": -0.7069127559661865,
+                        "y": 0.5953140258789063,
+                        "z": 0.025919189676642419,
+                        "w": 0.3810562193393707
+                    },
+                    "linearVelocity": {
+                        "x": 0.02510257624089718,
+                        "y": -0.05216829851269722,
+                        "z": -0.0019652140326797964
+                    },
+                    "angularVelocity": {
+                        "x": 0.0105979535728693,
+                        "y": 0.0015150958206504584,
+                        "z": -0.008838345296680928
+                    }
+                },
+                {
+                    "name": "rear_right_thruster_link",
+                    "position": {
+                        "x": 6.389858722686768,
+                        "y": -0.19122099876403809,
+                        "z": -2.8553895950317385
+                    },
+                    "rotation": {
+                        "x": -0.6823946237564087,
+                        "y": 0.6819453239440918,
+                        "z": -0.18637366592884065,
+                        "w": 0.1858847588300705
+                    },
+                    "linearVelocity": {
+                        "x": 0.02510974556207657,
+                        "y": -0.05222346633672714,
+                        "z": -0.0019677402451634409
+                    },
+                    "angularVelocity": {
+                        "x": -0.011961564421653748,
+                        "y": 0.0014945308212190867,
+                        "z": -0.0221391711384058
+                    }
+                },
+                {
+                    "name": "right_hull_link",
+                    "position": {
+                        "x": 6.4438958168029789,
+                        "y": 0.09333937615156174,
+                        "z": -2.594576597213745
+                    },
+                    "rotation": {
+                        "x": -0.0004237661196384579,
+                        "y": 0.7905650734901428,
+                        "z": -0.0001980638044187799,
+                        "w": 0.6123778223991394
+                    },
+                    "linearVelocity": {
+                        "x": 0.024493994191288949,
+                        "y": -0.050299882888793948,
+                        "z": -0.0015052033122628928
+                    },
+                    "angularVelocity": {
+                        "x": -0.011961564421653748,
+                        "y": 0.0014945308212190867,
+                        "z": -0.0221391711384058
+                    }
+                },
+                {
+                    "name": "sensor_mount_link",
+                    "position": {
+                        "x": 6.193425178527832,
+                        "y": 0.158924400806427,
+                        "z": -2.2437734603881838
+                    },
+                    "rotation": {
+                        "x": -0.00042384001426398754,
+                        "y": 0.790565013885498,
+                        "z": -0.00019811095262411982,
+                        "w": 0.6123778820037842
+                    },
+                    "linearVelocity": {
+                        "x": 0.02934841625392437,
+                        "y": -0.04055871069431305,
+                        "z": -0.003470410592854023
+                    },
+                    "angularVelocity": {
+                        "x": -0.011961564421653748,
+                        "y": 0.0014945308212190867,
+                        "z": -0.0221391711384058
+                    }
+                },
+                {
+                    "name": "water_pump_link",
+                    "position": {
+                        "x": 5.916801929473877,
+                        "y": 0.19310373067855836,
+                        "z": -1.9942914247512818
+                    },
+                    "rotation": {
+                        "x": -0.00042378896614536643,
+                        "y": 0.790565013885498,
+                        "z": -0.0001980531815206632,
+                        "w": 0.6123778820037842
+                    },
+                    "linearVelocity": {
+                        "x": 0.03476635366678238,
+                        "y": -0.031568609178066257,
+                        "z": -0.005790781695395708
+                    },
+                    "angularVelocity": {
+                        "x": -0.011961564421653748,
+                        "y": 0.0014945308212190867,
+                        "z": -0.0221391711384058
+                    }
+                }
+            ],
+            "water": [
+                {
+                    "surface": "Ocean",
+                    "simulationTime": 0.6229283809661865,
+                    "timeMultiplier": 1.0,
+                    "target": {
+                        "x": 6.5782470703125,
+                        "y": 0.3018304109573364,
+                        "z": -2.0740346908569338
+                    },
+                    "projected": {
+                        "x": 6.5782470703125,
+                        "y": 0.021402068436145784,
+                        "z": -2.0740346908569338
+                    },
+                    "error": 0.0,
+                    "steps": 0,
+                    "valid": true
+                }
+            ]
+        },
+        {
+            "simulatedSeconds": 4.000191574546484,
+            "monoUsedBytes": 12009472,
+            "totalAllocatedMemoryBytes": 381132329,
+            "observationQueueAgeTicks": 4,
+            "staleObservations": 0,
+            "failedObservations": 0,
+            "bodies": [
+                {
+                    "name": "ball_dropper_link",
+                    "position": {
+                        "x": 6.595071792602539,
+                        "y": 0.23434901237487794,
+                        "z": -2.0752620697021486
+                    },
+                    "rotation": {
+                        "x": -0.009742556139826775,
+                        "y": 0.7901853322982788,
+                        "z": 0.006272985599935055,
+                        "w": 0.6127583980560303
+                    },
+                    "linearVelocity": {
+                        "x": 0.03577456250786781,
+                        "y": -0.02818787842988968,
+                        "z": -0.012160894460976124
+                    },
+                    "angularVelocity": {
+                        "x": -0.023343166336417199,
+                        "y": 0.0017730573890730739,
+                        "z": -0.01531862560659647
+                    }
+                },
+                {
+                    "name": "base_link",
+                    "position": {
+                        "x": 6.144514560699463,
+                        "y": 0.09302188456058502,
+                        "z": -2.513640880584717
+                    },
+                    "rotation": {
+                        "x": -0.009742666967213154,
+                        "y": 0.7901853322982788,
+                        "z": 0.006272903643548489,
+                        "w": 0.6127583980560303
+                    },
+                    "linearVelocity": {
+                        "x": 0.030502937734127046,
+                        "y": -0.028767552226781846,
+                        "z": -0.004194340668618679
+                    },
+                    "angularVelocity": {
+                        "x": -0.023343166336417199,
+                        "y": 0.0017730573890730739,
+                        "z": -0.01531862560659647
+                    }
+                },
+                {
+                    "name": "front_camera_link",
+                    "position": {
+                        "x": 6.223005771636963,
+                        "y": 0.22069936990737916,
+                        "z": -2.1971821784973146
+                    },
+                    "rotation": {
+                        "x": -0.009742632508277893,
+                        "y": 0.7901853322982788,
+                        "z": 0.006272919476032257,
+                        "w": 0.6127583980560303
+                    },
+                    "linearVelocity": {
+                        "x": 0.0365443229675293,
+                        "y": -0.022479716688394548,
+                        "z": -0.012673857621848584
+                    },
+                    "angularVelocity": {
+                        "x": -0.023343166336417199,
+                        "y": 0.0017730573890730739,
+                        "z": -0.01531862560659647
+                    }
+                },
+                {
+                    "name": "front_left_propeller_link",
+                    "position": {
+                        "x": 5.891350746154785,
+                        "y": -0.2745378315448761,
+                        "z": -2.1664986610412599
+                    },
+                    "rotation": {
+                        "x": -0.1732993870973587,
+                        "y": -0.5045864582061768,
+                        "z": -0.677876889705658,
+                        "w": 0.50580894947052
+                    },
+                    "linearVelocity": {
+                        "x": 0.02900577522814274,
+                        "y": -0.01671546697616577,
+                        "z": -0.0005203315522521734
+                    },
+                    "angularVelocity": {
+                        "x": -0.006087827496230602,
+                        "y": 0.002193924505263567,
+                        "z": -0.005117555148899555
+                    }
+                },
+                {
+                    "name": "front_left_thruster_link",
+                    "position": {
+                        "x": 5.886986255645752,
+                        "y": -0.2746447026729584,
+                        "z": -2.169508934020996
+                    },
+                    "rotation": {
+                        "x": 0.18794158101081849,
+                        "y": -0.18501760065555573,
+                        "z": -0.673964262008667,
+                        "w": 0.6900859475135803
+                    },
+                    "linearVelocity": {
+                        "x": 0.029000692069530488,
+                        "y": -0.016719359904527665,
+                        "z": -0.0005125494208186865
+                    },
+                    "angularVelocity": {
+                        "x": -0.023343166336417199,
+                        "y": 0.0017730573890730739,
+                        "z": -0.01531862560659647
+                    }
+                },
+                {
+                    "name": "front_right_propeller_link",
+                    "position": {
+                        "x": 6.548976898193359,
+                        "y": -0.2596954107284546,
+                        "z": -2.33560848236084
+                    },
+                    "rotation": {
+                        "x": -0.7106313705444336,
+                        "y": 0.3599134087562561,
+                        "z": 0.002345731481909752,
+                        "w": -0.6045327186584473
+                    },
+                    "linearVelocity": {
+                        "x": 0.02893555350601673,
+                        "y": -0.030748050659894944,
+                        "z": -0.002029506489634514
+                    },
+                    "angularVelocity": {
+                        "x": -0.02907705307006836,
+                        "y": 0.001657082000747323,
+                        "z": -0.0056153154000639919
+                    }
+                },
+                {
+                    "name": "front_right_thruster_link",
+                    "position": {
+                        "x": 6.55134916305542,
+                        "y": -0.25965023040771487,
+                        "z": -2.34035062789917
+                    },
+                    "rotation": {
+                        "x": -0.620862603187561,
+                        "y": 0.6073917150497437,
+                        "z": 0.34573429822921755,
+                        "w": -0.3550673723220825
+                    },
+                    "linearVelocity": {
+                        "x": 0.028929945081472398,
+                        "y": -0.030884388834238054,
+                        "z": -0.0020424246322363617
+                    },
+                    "angularVelocity": {
+                        "x": -0.023343166336417199,
+                        "y": 0.0017730573890730739,
+                        "z": -0.01531862560659647
+                    }
+                },
+                {
+                    "name": "gps_link",
+                    "position": {
+                        "x": 6.005925178527832,
+                        "y": 0.08970563113689423,
+                        "z": -2.570929527282715
+                    },
+                    "rotation": {
+                        "x": -0.009742632508277893,
+                        "y": 0.7901853322982788,
+                        "z": 0.006272919476032257,
+                        "w": 0.6127583980560303
+                    },
+                    "linearVelocity": {
+                        "x": 0.033871836960315707,
+                        "y": -0.027910731732845308,
+                        "z": -0.00922881718724966
+                    },
+                    "angularVelocity": {
+                        "x": -0.023343166336417199,
+                        "y": 0.0017730573890730739,
+                        "z": -0.01531862560659647
+                    }
+                },
+                {
+                    "name": "imu_link",
+                    "position": {
+                        "x": 5.983527660369873,
+                        "y": 0.0890117734670639,
+                        "z": -2.658095359802246
+                    },
+                    "rotation": {
+                        "x": -0.009742632508277893,
+                        "y": 0.7901853322982788,
+                        "z": 0.006272919476032257,
+                        "w": 0.6127583980560303
+                    },
+                    "linearVelocity": {
+                        "x": 0.03370683640241623,
+                        "y": -0.029602382332086564,
+                        "z": -0.009172854013741017
+                    },
+                    "angularVelocity": {
+                        "x": -0.023343166336417199,
+                        "y": 0.0017730573890730739,
+                        "z": -0.01531862560659647
+                    }
+                },
+                {
+                    "name": "left_hull_link",
+                    "position": {
+                        "x": 5.826640605926514,
+                        "y": 0.005827128887176514,
+                        "z": -2.4312667846679689
+                    },
+                    "rotation": {
+                        "x": -0.009742595255374909,
+                        "y": 0.790185272693634,
+                        "z": 0.0062729427590966229,
+                        "w": 0.612758457660675
+                    },
+                    "linearVelocity": {
+                        "x": 0.02778099849820137,
+                        "y": -0.02200651913881302,
+                        "z": 0.0007351207314059138
+                    },
+                    "angularVelocity": {
+                        "x": -0.023343166336417199,
+                        "y": 0.0017730573890730739,
+                        "z": -0.01531862560659647
+                    }
+                },
+                {
+                    "name": "lidar_link",
+                    "position": {
+                        "x": 6.210226535797119,
+                        "y": 0.372931569814682,
+                        "z": -2.233520030975342
+                    },
+                    "rotation": {
+                        "x": -0.0097426176071167,
+                        "y": 0.7901853322982788,
+                        "z": 0.006272897589951754,
+                        "w": 0.6127583980560303
+                    },
+                    "linearVelocity": {
+                        "x": 0.03727711737155914,
+                        "y": -0.02319680154323578,
+                        "z": -0.01387337502092123
+                    },
+                    "angularVelocity": {
+                        "x": -0.023343166336417199,
+                        "y": 0.0017730573890730739,
+                        "z": -0.01531862560659647
+                    }
+                },
+                {
+                    "name": "rear_left_propeller_link",
+                    "position": {
+                        "x": 5.756905555725098,
+                        "y": -0.2787035405635834,
+                        "z": -2.6901235580444338
+                    },
+                    "rotation": {
+                        "x": -0.14789731800556184,
+                        "y": 0.5221425294876099,
+                        "z": -0.6878427267074585,
+                        "w": 0.48204365372657778
+                    },
+                    "linearVelocity": {
+                        "x": 0.0280124694108963,
+                        "y": -0.02686775103211403,
+                        "z": -0.00017841890803538263
+                    },
+                    "angularVelocity": {
+                        "x": -0.02408716268837452,
+                        "y": 0.0017558364197611809,
+                        "z": -0.014059842564165593
+                    }
+                },
+                {
+                    "name": "rear_left_thruster_link",
+                    "position": {
+                        "x": 5.754533290863037,
+                        "y": -0.2787487506866455,
+                        "z": -2.6853809356689455
+                    },
+                    "rotation": {
+                        "x": -0.35506945848464968,
+                        "y": 0.3457338511943817,
+                        "z": -0.6073934435844421,
+                        "w": 0.6208599209785461
+                    },
+                    "linearVelocity": {
+                        "x": 0.02802422270178795,
+                        "y": -0.02673260122537613,
+                        "z": -0.00018158805323764682
+                    },
+                    "angularVelocity": {
+                        "x": -0.023343166336417199,
+                        "y": 0.0017730573890730739,
+                        "z": -0.01531862560659647
+                    }
+                },
+                {
+                    "name": "rear_right_propeller_link",
+                    "position": {
+                        "x": 6.4143757820129398,
+                        "y": -0.26386478543281557,
+                        "z": -2.859234571456909
+                    },
+                    "rotation": {
+                        "x": -0.7139517068862915,
+                        "y": 0.5884344577789307,
+                        "z": 0.02696237713098526,
+                        "w": 0.37853822112083437
+                    },
+                    "linearVelocity": {
+                        "x": 0.027947070077061654,
+                        "y": -0.04089927300810814,
+                        "z": -0.0017027397407218814
+                    },
+                    "angularVelocity": {
+                        "x": 0.0030458318069577219,
+                        "y": 0.0024170519318431617,
+                        "z": 0.00028213951736688614
+                    }
+                },
+                {
+                    "name": "rear_right_thruster_link",
+                    "position": {
+                        "x": 6.418740272521973,
+                        "y": -0.2637578547000885,
+                        "z": -2.856224536895752
+                    },
+                    "rotation": {
+                        "x": -0.690088152885437,
+                        "y": 0.6739615201950073,
+                        "z": -0.18501925468444825,
+                        "w": 0.18794187903404237
+                    },
+                    "linearVelocity": {
+                        "x": 0.027953417971730233,
+                        "y": -0.04089529439806938,
+                        "z": -0.001711101271212101
+                    },
+                    "angularVelocity": {
+                        "x": -0.023343166336417199,
+                        "y": 0.0017730573890730739,
+                        "z": -0.01531862560659647
+                    }
+                },
+                {
+                    "name": "right_hull_link",
+                    "position": {
+                        "x": 6.466036319732666,
+                        "y": 0.022258669137954713,
+                        "z": -2.5956945419311525
+                    },
+                    "rotation": {
+                        "x": -0.00974259339272976,
+                        "y": 0.7901853322982788,
+                        "z": 0.006272962316870689,
+                        "w": 0.6127583980560303
+                    },
+                    "linearVelocity": {
+                        "x": 0.027743544429540635,
+                        "y": -0.03563936427235603,
+                        "z": -0.0007839567842893302
+                    },
+                    "angularVelocity": {
+                        "x": -0.023343166336417199,
+                        "y": 0.0017730573890730739,
+                        "z": -0.01531862560659647
+                    }
+                },
+                {
+                    "name": "sensor_mount_link",
+                    "position": {
+                        "x": 6.213768482208252,
+                        "y": 0.08256161212921143,
+                        "z": -2.245231866836548
+                    },
+                    "rotation": {
+                        "x": -0.009742632508277893,
+                        "y": 0.7901853322982788,
+                        "z": 0.006272919476032257,
+                        "w": 0.6127583980560303
+                    },
+                    "linearVelocity": {
+                        "x": 0.031277380883693698,
+                        "y": -0.02355358377099037,
+                        "z": -0.004771993961185217
+                    },
+                    "angularVelocity": {
+                        "x": -0.023343166336417199,
+                        "y": 0.0017730573890730739,
+                        "z": -0.01531862560659647
+                    }
+                },
+                {
+                    "name": "water_pump_link",
+                    "position": {
+                        "x": 5.936175346374512,
+                        "y": 0.11075583100318909,
+                        "z": -1.996079683303833
+                    },
+                    "rotation": {
+                        "x": -0.009742558002471924,
+                        "y": 0.790185272693634,
+                        "z": 0.006272954400628805,
+                        "w": 0.612758457660675
+                    },
+                    "linearVelocity": {
+                        "x": 0.03509872406721115,
+                        "y": -0.013801133260130883,
+                        "z": -0.009467758238315583
+                    },
+                    "angularVelocity": {
+                        "x": -0.023343166336417199,
+                        "y": 0.0017730573890730739,
+                        "z": -0.01531862560659647
+                    }
+                }
+            ],
+            "water": [
+                {
+                    "surface": "Ocean",
+                    "simulationTime": 1.6228759288787842,
+                    "timeMultiplier": 1.0,
+                    "target": {
+                        "x": 6.595071792602539,
+                        "y": 0.23434901237487794,
+                        "z": -2.0752620697021486
+                    },
+                    "projected": {
+                        "x": 6.595071792602539,
+                        "y": -0.0272377822548151,
+                        "z": -2.0752620697021486
+                    },
+                    "error": 0.0,
+                    "steps": 0,
+                    "valid": true
+                }
+            ]
+        },
+        {
+            "simulatedSeconds": 5.0179849702380949,
+            "monoUsedBytes": 13746176,
+            "totalAllocatedMemoryBytes": 381315745,
+            "observationQueueAgeTicks": 2,
+            "staleObservations": 0,
+            "failedObservations": 0,
+            "bodies": [
+                {
+                    "name": "ball_dropper_link",
+                    "position": {
+                        "x": 6.640621662139893,
+                        "y": 0.33261629939079287,
+                        "z": -2.0748000144958498
+                    },
+                    "rotation": {
+                        "x": 0.0033974340185523035,
+                        "y": 0.7908638119697571,
+                        "z": 0.0001838654570747167,
+                        "w": 0.6119827628135681
+                    },
+                    "linearVelocity": {
+                        "x": -0.003825216321274638,
+                        "y": 0.0081748366355896,
+                        "z": -0.00012996559962630272
+                    },
+                    "angularVelocity": {
+                        "x": 0.007629306521266699,
+                        "y": -0.0013602722901850939,
+                        "z": 0.042495787143707278
+                    }
+                },
+                {
+                    "name": "base_link",
+                    "position": {
+                        "x": 6.185372352600098,
+                        "y": 0.20690718293190003,
+                        "z": -2.5130879878997804
+                    },
+                    "rotation": {
+                        "x": 0.003397357417270541,
+                        "y": 0.7908638119697571,
+                        "z": 0.00018375364015810192,
+                        "w": 0.6119827628135681
+                    },
+                    "linearVelocity": {
+                        "x": 0.009176837280392647,
+                        "y": -0.007369817700237036,
+                        "z": -0.0029620302375406029
+                    },
+                    "angularVelocity": {
+                        "x": 0.007629306521266699,
+                        "y": -0.0013602722901850939,
+                        "z": 0.042495787143707278
+                    }
+                },
+                {
+                    "name": "front_camera_link",
+                    "position": {
+                        "x": 6.268073558807373,
+                        "y": 0.33026349544525149,
+                        "z": -2.195988655090332
+                    },
+                    "rotation": {
+                        "x": 0.00339738791808486,
+                        "y": 0.7908638119697571,
+                        "z": 0.00018376859952695668,
+                        "w": 0.6119827628135681
+                    },
+                    "linearVelocity": {
+                        "x": -0.006272110156714916,
+                        "y": -0.006199419964104891,
+                        "z": -0.0001510149159003049
+                    },
+                    "angularVelocity": {
+                        "x": 0.007629306521266699,
+                        "y": -0.0013602722901850939,
+                        "z": 0.042495787143707278
+                    }
+                },
+                {
+                    "name": "front_left_propeller_link",
+                    "position": {
+                        "x": 5.922629356384277,
+                        "y": -0.1556050181388855,
+                        "z": -2.1677603721618654
+                    },
+                    "rotation": {
+                        "x": -0.17826777696609498,
+                        "y": -0.49848484992980959,
+                        "z": -0.6867089867591858,
+                        "w": 0.49816077947616579
+                    },
+                    "linearVelocity": {
+                        "x": 0.014344708062708378,
+                        "y": -0.021140260621905328,
+                        "z": -0.004324081353843212
+                    },
+                    "angularVelocity": {
+                        "x": -0.01947437785565853,
+                        "y": -0.0011490840697661043,
+                        "z": 0.026552099734544755
+                    }
+                },
+                {
+                    "name": "front_left_thruster_link",
+                    "position": {
+                        "x": 5.918257713317871,
+                        "y": -0.15556910634040833,
+                        "z": -2.1707615852355959
+                    },
+                    "rotation": {
+                        "x": 0.18682898581027986,
+                        "y": -0.18474949896335603,
+                        "z": -0.6844294667243958,
+                        "w": 0.6800874471664429
+                    },
+                    "linearVelocity": {
+                        "x": 0.01433972455561161,
+                        "y": -0.021290311589837076,
+                        "z": -0.004334728699177504
+                    },
+                    "angularVelocity": {
+                        "x": 0.007629306521266699,
+                        "y": -0.0013602722901850939,
+                        "z": 0.042495787143707278
+                    }
+                },
+                {
+                    "name": "front_right_propeller_link",
+                    "position": {
+                        "x": 6.580070972442627,
+                        "y": -0.15823164582252503,
+                        "z": -2.3382139205932619
+                    },
+                    "rotation": {
+                        "x": -0.7075405120849609,
+                        "y": 0.35890763998031618,
+                        "z": 0.0006911762757226825,
+                        "w": -0.608745813369751
+                    },
+                    "linearVelocity": {
+                        "x": 0.014686204493045807,
+                        "y": 0.008122187107801438,
+                        "z": -0.0034603681415319444
+                    },
+                    "angularVelocity": {
+                        "x": 0.02245282754302025,
+                        "y": -0.0013257154496386648,
+                        "z": 0.017297226935625078
+                    }
+                },
+                {
+                    "name": "front_right_thruster_link",
+                    "position": {
+                        "x": 6.58243465423584,
+                        "y": -0.15822270512580872,
+                        "z": -2.342961072921753
+                    },
+                    "rotation": {
+                        "x": -0.6130058765411377,
+                        "y": 0.6146020889282227,
+                        "z": 0.35332393646240237,
+                        "w": -0.34878411889076235
+                    },
+                    "linearVelocity": {
+                        "x": 0.01468704640865326,
+                        "y": 0.00824815221130848,
+                        "z": -0.0034511080011725427
+                    },
+                    "angularVelocity": {
+                        "x": 0.007629306521266699,
+                        "y": -0.0013602722901850939,
+                        "z": 0.042495787143707278
+                    }
+                },
+                {
+                    "name": "gps_link",
+                    "position": {
+                        "x": 6.046629428863525,
+                        "y": 0.20787504315376283,
+                        "z": -2.5700924396514894
+                    },
+                    "rotation": {
+                        "x": 0.00339738791808486,
+                        "y": 0.7908638119697571,
+                        "z": 0.00018376877414993942,
+                        "w": 0.6119827628135681
+                    },
+                    "linearVelocity": {
+                        "x": -0.0005620819283649325,
+                        "y": -0.01278826966881752,
+                        "z": -0.00138713582418859
+                    },
+                    "angularVelocity": {
+                        "x": 0.007629306521266699,
+                        "y": -0.0013602722901850939,
+                        "z": 0.042495787143707278
+                    }
+                },
+                {
+                    "name": "imu_link",
+                    "position": {
+                        "x": 6.024045467376709,
+                        "y": 0.2083788812160492,
+                        "z": -2.6572115421295168
+                    },
+                    "rotation": {
+                        "x": 0.00339738791808486,
+                        "y": 0.7908638119697571,
+                        "z": 0.00018376877414993942,
+                        "w": 0.6119827628135681
+                    },
+                    "linearVelocity": {
+                        "x": -0.0004650508926715702,
+                        "y": -0.013083327561616898,
+                        "z": -0.0014140037819743157
+                    },
+                    "angularVelocity": {
+                        "x": 0.007629306521266699,
+                        "y": -0.0013602722901850939,
+                        "z": 0.042495787143707278
+                    }
+                },
+                {
+                    "name": "left_hull_link",
+                    "position": {
+                        "x": 5.865328788757324,
+                        "y": 0.12818598747253419,
+                        "z": -2.4305787086486818
+                    },
+                    "rotation": {
+                        "x": 0.0033974109683185817,
+                        "y": 0.7908638715744019,
+                        "z": 0.00018378948152530938,
+                        "w": 0.6119827032089233
+                    },
+                    "linearVelocity": {
+                        "x": 0.01665985956788063,
+                        "y": -0.02161833830177784,
+                        "z": -0.0047617629170417789
+                    },
+                    "angularVelocity": {
+                        "x": 0.007629306521266699,
+                        "y": -0.0013602722901850939,
+                        "z": 0.042495787143707278
+                    }
+                },
+                {
+                    "name": "lidar_link",
+                    "position": {
+                        "x": 6.259524822235107,
+                        "y": 0.48302823305130007,
+                        "z": -2.2313191890716554
+                    },
+                    "rotation": {
+                        "x": 0.0033973753452301027,
+                        "y": 0.7908637523651123,
+                        "z": 0.0001838058087741956,
+                        "w": 0.6119828224182129
+                    },
+                    "linearVelocity": {
+                        "x": -0.008465229533612728,
+                        "y": -0.006342785432934761,
+                        "z": 0.00023812384461052716
+                    },
+                    "angularVelocity": {
+                        "x": 0.007629306521266699,
+                        "y": -0.0013602722901850939,
+                        "z": 0.042495787143707278
+                    }
+                },
+                {
+                    "name": "rear_left_propeller_link",
+                    "position": {
+                        "x": 5.787067413330078,
+                        "y": -0.15257859230041505,
+                        "z": -2.6911048889160158
+                    },
+                    "rotation": {
+                        "x": -0.14920677244663239,
+                        "y": 0.5203487873077393,
+                        "z": -0.6907439827919006,
+                        "w": 0.4794241189956665
+                    },
+                    "linearVelocity": {
+                        "x": 0.014924053102731705,
+                        "y": -0.022907547652721406,
+                        "z": -0.004498770460486412
+                    },
+                    "angularVelocity": {
+                        "x": 0.024689126759767534,
+                        "y": -0.001320739509537816,
+                        "z": 0.013495538383722306
+                    }
+                },
+                {
+                    "name": "rear_left_thruster_link",
+                    "position": {
+                        "x": 5.784703731536865,
+                        "y": -0.15258750319480897,
+                        "z": -2.6863574981689455
+                    },
+                    "rotation": {
+                        "x": -0.34878629446029665,
+                        "y": 0.3533235192298889,
+                        "z": -0.6146038770675659,
+                        "w": 0.613003134727478
+                    },
+                    "linearVelocity": {
+                        "x": 0.014914003200829029,
+                        "y": -0.023032119497656823,
+                        "z": -0.004493603948503733
+                    },
+                    "angularVelocity": {
+                        "x": 0.007629306521266699,
+                        "y": -0.0013602722901850939,
+                        "z": 0.042495787143707278
+                    }
+                },
+                {
+                    "name": "rear_right_propeller_link",
+                    "position": {
+                        "x": 6.444352626800537,
+                        "y": -0.15520450472831727,
+                        "z": -2.8615596294403078
+                    },
+                    "rotation": {
+                        "x": -0.704180896282196,
+                        "y": 0.5967317819595337,
+                        "z": 0.028007347136735917,
+                        "w": 0.38373979926109316
+                    },
+                    "linearVelocity": {
+                        "x": 0.015273138880729676,
+                        "y": 0.006350840907543898,
+                        "z": -0.0036101331934332849
+                    },
+                    "angularVelocity": {
+                        "x": -0.015911420807242395,
+                        "y": -0.001176929334178567,
+                        "z": 0.02864791452884674
+                    }
+                },
+                {
+                    "name": "rear_right_thruster_link",
+                    "position": {
+                        "x": 6.448724746704102,
+                        "y": -0.15524032711982728,
+                        "z": -2.858558416366577
+                    },
+                    "rotation": {
+                        "x": -0.6800897717475891,
+                        "y": 0.6844266653060913,
+                        "z": -0.18475115299224854,
+                        "w": 0.1868293583393097
+                    },
+                    "linearVelocity": {
+                        "x": 0.015261298976838589,
+                        "y": 0.006499727722257376,
+                        "z": -0.0036101904697716238
+                    },
+                    "angularVelocity": {
+                        "x": 0.007629306521266699,
+                        "y": -0.0013602722901850939,
+                        "z": 0.042495787143707278
+                    }
+                },
+                {
+                    "name": "right_hull_link",
+                    "position": {
+                        "x": 6.504601955413818,
+                        "y": 0.12763172388076783,
+                        "z": -2.5963003635406496
+                    },
+                    "rotation": {
+                        "x": 0.0033974458929151298,
+                        "y": 0.7908638119697571,
+                        "z": 0.00018383754650130868,
+                        "w": 0.6119827628135681
+                    },
+                    "linearVelocity": {
+                        "x": 0.016909148544073106,
+                        "y": 0.0068123964592814449,
+                        "z": -0.0038960175588726999
+                    },
+                    "angularVelocity": {
+                        "x": 0.007629306521266699,
+                        "y": -0.0013602722901850939,
+                        "z": 0.042495787143707278
+                    }
+                },
+                {
+                    "name": "sensor_mount_link",
+                    "position": {
+                        "x": 6.254843235015869,
+                        "y": 0.19275589287281037,
+                        "z": -2.2449045181274416
+                    },
+                    "rotation": {
+                        "x": 0.00339738791808486,
+                        "y": 0.7908638119697571,
+                        "z": 0.00018376877414993942,
+                        "w": 0.6119827628135681
+                    },
+                    "linearVelocity": {
+                        "x": 0.008138562552630902,
+                        "y": -0.006458126474171877,
+                        "z": -0.0027464358136057855
+                    },
+                    "angularVelocity": {
+                        "x": 0.007629306521266699,
+                        "y": -0.0013602722901850939,
+                        "z": 0.042495787143707278
+                    }
+                },
+                {
+                    "name": "water_pump_link",
+                    "position": {
+                        "x": 5.9786577224731449,
+                        "y": 0.22715672850608827,
+                        "z": -1.9949675798416138
+                    },
+                    "rotation": {
+                        "x": 0.0033974647521972658,
+                        "y": 0.7908638715744019,
+                        "z": 0.00018379469111096114,
+                        "w": 0.6119827032089233
+                    },
+                    "linearVelocity": {
+                        "x": -0.0019310169154778123,
+                        "y": -0.020139092579483987,
+                        "z": -0.001376789528876543
+                    },
+                    "angularVelocity": {
+                        "x": 0.007629306521266699,
+                        "y": -0.0013602722901850939,
+                        "z": 0.042495787143707278
+                    }
+                }
+            ],
+            "water": [
+                {
+                    "surface": "Ocean",
+                    "simulationTime": 2.638371706008911,
+                    "timeMultiplier": 1.0,
+                    "target": {
+                        "x": 6.640621662139893,
+                        "y": 0.33261629939079287,
+                        "z": -2.0748000144958498
+                    },
+                    "projected": {
+                        "x": 6.640621662139893,
+                        "y": 0.07818803936243057,
+                        "z": -2.0748000144958498
+                    },
+                    "error": 0.0,
+                    "steps": 0,
+                    "valid": true
+                }
+            ]
+        },
+        {
+            "simulatedSeconds": 6.000078181689343,
+            "monoUsedBytes": 12021760,
+            "totalAllocatedMemoryBytes": 381755266,
+            "observationQueueAgeTicks": 4,
+            "staleObservations": 0,
+            "failedObservations": 0,
+            "bodies": [
+                {
+                    "name": "ball_dropper_link",
+                    "position": {
+                        "x": 6.659940242767334,
+                        "y": 0.22134312987327577,
+                        "z": -2.078090190887451
+                    },
+                    "rotation": {
+                        "x": -0.006771683227270842,
+                        "y": 0.7906319499015808,
+                        "z": 0.004454001784324646,
+                        "w": 0.6122381091117859
+                    },
+                    "linearVelocity": {
+                        "x": 0.050788041204214099,
+                        "y": -0.024047769606113435,
+                        "z": -0.004328762646764517
+                    },
+                    "angularVelocity": {
+                        "x": -0.0046108379028737549,
+                        "y": 0.0020280731841921808,
+                        "z": -0.051702916622161868
+                    }
+                },
+                {
+                    "name": "base_link",
+                    "position": {
+                        "x": 6.207815647125244,
+                        "y": 0.08347104489803314,
+                        "z": -2.5159547328948976
+                    },
+                    "rotation": {
+                        "x": -0.006771761924028397,
+                        "y": 0.7906319499015808,
+                        "z": 0.004453927278518677,
+                        "w": 0.6122381091117859
+                    },
+                    "linearVelocity": {
+                        "x": 0.03431503474712372,
+                        "y": -0.004097761586308479,
+                        "z": -0.0020773436408489944
+                    },
+                    "angularVelocity": {
+                        "x": -0.0046108379028737549,
+                        "y": 0.0020280731841921808,
+                        "z": -0.051702916622161868
+                    }
+                },
+                {
+                    "name": "front_camera_link",
+                    "position": {
+                        "x": 6.287622451782227,
+                        "y": 0.21036270260810853,
+                        "z": -2.199509620666504
+                    },
+                    "rotation": {
+                        "x": -0.0067717283964157108,
+                        "y": 0.7906319499015808,
+                        "z": 0.004453935194760561,
+                        "w": 0.6122381091117859
+                    },
+                    "linearVelocity": {
+                        "x": 0.053410690277814868,
+                        "y": -0.006621410138905048,
+                        "z": -0.0038792442064732315
+                    },
+                    "angularVelocity": {
+                        "x": -0.0046108379028737549,
+                        "y": 0.0020280731841921808,
+                        "z": -0.051702916622161868
+                    }
+                },
+                {
+                    "name": "front_left_propeller_link",
+                    "position": {
+                        "x": 5.952586650848389,
+                        "y": -0.2825884222984314,
+                        "z": -2.168739080429077
+                    },
+                    "rotation": {
+                        "x": -0.17702341079711915,
+                        "y": -0.5046428442001343,
+                        "z": -0.6792536377906799,
+                        "w": 0.5026063323020935
+                    },
+                    "linearVelocity": {
+                        "x": 0.027970312163233758,
+                        "y": 0.01090576034039259,
+                        "z": -0.0009301669197157025
+                    },
+                    "angularVelocity": {
+                        "x": 0.02207345888018608,
+                        "y": 0.002481985604390502,
+                        "z": -0.03597903251647949
+                    }
+                },
+                {
+                    "name": "front_left_thruster_link",
+                    "position": {
+                        "x": 5.948217391967773,
+                        "y": -0.2826628088951111,
+                        "z": -2.171743392944336
+                    },
+                    "rotation": {
+                        "x": 0.18709643185138703,
+                        "y": -0.18494121730327607,
+                        "z": -0.6765483021736145,
+                        "w": 0.6878038644790649
+                    },
+                    "linearVelocity": {
+                        "x": 0.027971038594841958,
+                        "y": 0.011101529002189637,
+                        "z": -0.0009155286243185401
+                    },
+                    "angularVelocity": {
+                        "x": -0.0046108379028737549,
+                        "y": 0.0020280731841921808,
+                        "z": -0.051702916622161868
+                    }
+                },
+                {
+                    "name": "front_right_propeller_link",
+                    "position": {
+                        "x": 6.610067844390869,
+                        "y": -0.27217334508895876,
+                        "z": -2.3387413024902345
+                    },
+                    "rotation": {
+                        "x": -0.7096238136291504,
+                        "y": 0.3576633930206299,
+                        "z": 0.000032351817935705185,
+                        "w": -0.6070512533187866
+                    },
+                    "linearVelocity": {
+                        "x": 0.028175415471196176,
+                        "y": -0.023899616673588754,
+                        "z": -0.0022981970105320217
+                    },
+                    "angularVelocity": {
+                        "x": -0.030192846432328225,
+                        "y": 0.0016646740259602666,
+                        "z": -0.008279401808977127
+                    }
+                },
+                {
+                    "name": "front_right_thruster_link",
+                    "position": {
+                        "x": 6.612433910369873,
+                        "y": -0.2721410095691681,
+                        "z": -2.343486785888672
+                    },
+                    "rotation": {
+                        "x": -0.6186513304710388,
+                        "y": 0.609164834022522,
+                        "z": 0.3476155698299408,
+                        "w": -0.3540513515472412
+                    },
+                    "linearVelocity": {
+                        "x": 0.028170304372906686,
+                        "y": -0.02403227984905243,
+                        "z": -0.0023111298214644195
+                    },
+                    "angularVelocity": {
+                        "x": -0.0046108379028737549,
+                        "y": 0.0020280731841921808,
+                        "z": -0.051702916622161868
+                    }
+                },
+                {
+                    "name": "gps_link",
+                    "position": {
+                        "x": 6.069128036499023,
+                        "y": 0.08115805685520172,
+                        "z": -2.5730552673339845
+                    },
+                    "rotation": {
+                        "x": -0.006771728862076998,
+                        "y": 0.7906319499015808,
+                        "z": 0.004453935194760561,
+                        "w": 0.6122381091117859
+                    },
+                    "linearVelocity": {
+                        "x": 0.04596841707825661,
+                        "y": 0.003001546487212181,
+                        "z": -0.002838167594745755
+                    },
+                    "angularVelocity": {
+                        "x": -0.0046108379028737549,
+                        "y": 0.0020280731841921808,
+                        "z": -0.051702916622161868
+                    }
+                },
+                {
+                    "name": "imu_link",
+                    "position": {
+                        "x": 6.04660701751709,
+                        "y": 0.08068515360355377,
+                        "z": -2.6601908206939699
+                    },
+                    "rotation": {
+                        "x": -0.006771728862076998,
+                        "y": 0.7906319499015808,
+                        "z": 0.004453935194760561,
+                        "w": 0.6122381091117859
+                    },
+                    "linearVelocity": {
+                        "x": 0.045767124742269519,
+                        "y": 0.0037641944363713266,
+                        "z": -0.0027903085574507715
+                    },
+                    "angularVelocity": {
+                        "x": -0.0046108379028737549,
+                        "y": 0.0020280731841921808,
+                        "z": -0.051702916622161868
+                    }
+                },
+                {
+                    "name": "left_hull_link",
+                    "position": {
+                        "x": 5.889457702636719,
+                        "y": -0.0015820860862731934,
+                        "z": -2.433209180831909
+                    },
+                    "rotation": {
+                        "x": -0.006771715823560953,
+                        "y": 0.7906319499015808,
+                        "z": 0.0044539631344377998,
+                        "w": 0.6122381091117859
+                    },
+                    "linearVelocity": {
+                        "x": 0.024914290755987169,
+                        "y": 0.012659832835197449,
+                        "z": -0.0005818186327815056
+                    },
+                    "angularVelocity": {
+                        "x": -0.0046108379028737549,
+                        "y": 0.0020280731841921808,
+                        "z": -0.051702916622161868
+                    }
+                },
+                {
+                    "name": "lidar_link",
+                    "position": {
+                        "x": 6.275847911834717,
+                        "y": 0.362707257270813,
+                        "z": -2.2357161045074465
+                    },
+                    "rotation": {
+                        "x": -0.006771759130060673,
+                        "y": 0.7906319499015808,
+                        "z": 0.004453971982002258,
+                        "w": 0.6122381091117859
+                    },
+                    "linearVelocity": {
+                        "x": 0.05604102462530136,
+                        "y": -0.006214193068444729,
+                        "z": -0.004097844939678907
+                    },
+                    "angularVelocity": {
+                        "x": -0.0046108379028737549,
+                        "y": 0.0020280731841921808,
+                        "z": -0.051702916622161868
+                    }
+                },
+                {
+                    "name": "rear_left_propeller_link",
+                    "position": {
+                        "x": 5.817399024963379,
+                        "y": -0.28542739152908327,
+                        "z": -2.6921818256378176
+                    },
+                    "rotation": {
+                        "x": -0.14796550571918488,
+                        "y": 0.5221350193023682,
+                        "z": -0.6888716816902161,
+                        "w": 0.480559378862381
+                    },
+                    "linearVelocity": {
+                        "x": 0.026769548654556276,
+                        "y": 0.01547832041978836,
+                        "z": -0.000627164903562516
+                    },
+                    "angularVelocity": {
+                        "x": -0.029784375801682473,
+                        "y": 0.0016705766320228577,
+                        "z": -0.008972518146038056
+                    }
+                },
+                {
+                    "name": "rear_left_thruster_link",
+                    "position": {
+                        "x": 5.815032958984375,
+                        "y": -0.2854597568511963,
+                        "z": -2.687436103820801
+                    },
+                    "rotation": {
+                        "x": -0.35405346751213076,
+                        "y": 0.3476150929927826,
+                        "z": -0.60916668176651,
+                        "w": 0.6186485290527344
+                    },
+                    "linearVelocity": {
+                        "x": 0.026779862120747567,
+                        "y": 0.01560964435338974,
+                        "z": -0.0006325053400360048
+                    },
+                    "angularVelocity": {
+                        "x": -0.0046108379028737549,
+                        "y": 0.0020280731841921808,
+                        "z": -0.051702916622161868
+                    }
+                },
+                {
+                    "name": "rear_right_propeller_link",
+                    "position": {
+                        "x": 6.474724769592285,
+                        "y": -0.2750149071216583,
+                        "z": -2.862184762954712
+                    },
+                    "rotation": {
+                        "x": -0.7116841077804565,
+                        "y": 0.5902518630027771,
+                        "z": 0.028052667155861856,
+                        "w": 0.3798971474170685
+                    },
+                    "linearVelocity": {
+                        "x": 0.02695833146572113,
+                        "y": -0.019322417676448823,
+                        "z": -0.0020273432601243259
+                    },
+                    "angularVelocity": {
+                        "x": 0.024171506986021997,
+                        "y": 0.00251791556365788,
+                        "z": -0.03474264219403267
+                    }
+                },
+                {
+                    "name": "rear_right_thruster_link",
+                    "position": {
+                        "x": 6.4790940284729,
+                        "y": -0.27494049072265627,
+                        "z": -2.8591806888580324
+                    },
+                    "rotation": {
+                        "x": -0.6878061294555664,
+                        "y": 0.6765455007553101,
+                        "z": -0.18494293093681336,
+                        "w": 0.1870967596769333
+                    },
+                    "linearVelocity": {
+                        "x": 0.0269789882004261,
+                        "y": -0.01951611042022705,
+                        "z": -0.002027778187766671
+                    },
+                    "angularVelocity": {
+                        "x": -0.0046108379028737549,
+                        "y": 0.0020280731841921808,
+                        "z": -0.051702916622161868
+                    }
+                },
+                {
+                    "name": "right_hull_link",
+                    "position": {
+                        "x": 6.528726577758789,
+                        "y": 0.010544784367084504,
+                        "z": -2.5985031127929689
+                    },
+                    "rotation": {
+                        "x": -0.006771713495254517,
+                        "y": 0.7906319499015808,
+                        "z": 0.0044539677910506729,
+                        "w": 0.6122381091117859
+                    },
+                    "linearVelocity": {
+                        "x": 0.02520948275923729,
+                        "y": -0.021154362708330156,
+                        "z": -0.0019342234591022134
+                    },
+                    "angularVelocity": {
+                        "x": -0.0046108379028737549,
+                        "y": 0.0020280731841921808,
+                        "z": -0.051702916622161868
+                    }
+                },
+                {
+                    "name": "sensor_mount_link",
+                    "position": {
+                        "x": 6.27736234664917,
+                        "y": 0.07232871651649475,
+                        "z": -2.2476491928100588
+                    },
+                    "rotation": {
+                        "x": -0.006771728862076998,
+                        "y": 0.7906319499015808,
+                        "z": 0.004453935194760561,
+                        "w": 0.6122381091117859
+                    },
+                    "linearVelocity": {
+                        "x": 0.035834260284900668,
+                        "y": -0.006431370973587036,
+                        "z": -0.002304344205185771
+                    },
+                    "angularVelocity": {
+                        "x": -0.0046108379028737549,
+                        "y": 0.0020280731841921808,
+                        "z": -0.051702916622161868
+                    }
+                },
+                {
+                    "name": "water_pump_link",
+                    "position": {
+                        "x": 6.000311851501465,
+                        "y": 0.10225667059421539,
+                        "z": -1.9980945587158204
+                    },
+                    "rotation": {
+                        "x": -0.006771684158593416,
+                        "y": 0.790631890296936,
+                        "z": 0.004453971982002258,
+                        "w": 0.6122381687164307
+                    },
+                    "linearVelocity": {
+                        "x": 0.04792330786585808,
+                        "y": 0.00938666332513094,
+                        "z": -0.0027621022891253235
+                    },
+                    "angularVelocity": {
+                        "x": -0.0046108379028737549,
+                        "y": 0.0020280731841921808,
+                        "z": -0.051702916622161868
+                    }
+                }
+            ],
+            "water": [
+                {
+                    "surface": "Ocean",
+                    "simulationTime": 3.622765302658081,
+                    "timeMultiplier": 1.0,
+                    "target": {
+                        "x": 6.659940242767334,
+                        "y": 0.22134312987327577,
+                        "z": -2.078090190887451
+                    },
+                    "projected": {
+                        "x": 6.659940242767334,
+                        "y": -0.055986709892749789,
+                        "z": -2.078090190887451
+                    },
+                    "error": 0.0,
+                    "steps": 0,
+                    "valid": true
+                }
+            ]
+        },
+        {
+            "simulatedSeconds": 7.001580208333333,
+            "monoUsedBytes": 12890112,
+            "totalAllocatedMemoryBytes": 381956458,
+            "observationQueueAgeTicks": 4,
+            "staleObservations": 0,
+            "failedObservations": 0,
+            "bodies": [
+                {
+                    "name": "ball_dropper_link",
+                    "position": {
+                        "x": 6.697290897369385,
+                        "y": 0.32570821046829226,
+                        "z": -2.082475423812866
+                    },
+                    "rotation": {
+                        "x": -0.0018319187220185996,
+                        "y": 0.7913112640380859,
+                        "z": -0.000638440134935081,
+                        "w": 0.61141037940979
+                    },
+                    "linearVelocity": {
+                        "x": -0.004808193538337946,
+                        "y": -0.016084352508187295,
+                        "z": 0.002589734271168709
+                    },
+                    "angularVelocity": {
+                        "x": 0.012622794136404992,
+                        "y": -0.0020360418129712345,
+                        "z": 0.04878324270248413
+                    }
+                },
+                {
+                    "name": "base_link",
+                    "position": {
+                        "x": 6.242342472076416,
+                        "y": 0.19332408905029298,
+                        "z": -2.5191071033477785
+                    },
+                    "rotation": {
+                        "x": -0.0018320397939532996,
+                        "y": 0.7913112044334412,
+                        "z": -0.0006385072483681142,
+                        "w": 0.6114104390144348
+                    },
+                    "linearVelocity": {
+                        "x": 0.010510490275919438,
+                        "y": -0.032742101699113849,
+                        "z": -0.0020688585937023165
+                    },
+                    "angularVelocity": {
+                        "x": 0.012622794136404992,
+                        "y": -0.0020360418129712345,
+                        "z": 0.04878324270248413
+                    }
+                },
+                {
+                    "name": "front_camera_link",
+                    "position": {
+                        "x": 6.324597358703613,
+                        "y": 0.31971654295921328,
+                        "z": -2.2030892372131349
+                    },
+                    "rotation": {
+                        "x": -0.0018320096423849464,
+                        "y": 0.7913112044334412,
+                        "z": -0.0006384997395798564,
+                        "w": 0.6114104390144348
+                    },
+                    "linearVelocity": {
+                        "x": -0.00752046424895525,
+                        "y": -0.03270301595330238,
+                        "z": 0.0025984139647334816
+                    },
+                    "angularVelocity": {
+                        "x": 0.012622794136404992,
+                        "y": -0.0020360418129712345,
+                        "z": 0.04878324270248413
+                    }
+                },
+                {
+                    "name": "front_left_propeller_link",
+                    "position": {
+                        "x": 5.9827375411987309,
+                        "y": -0.16841605305671693,
+                        "z": -2.170611619949341
+                    },
+                    "rotation": {
+                        "x": -0.17905133962631226,
+                        "y": -0.5015378594398499,
+                        "z": -0.6827932000160217,
+                        "w": 0.5001938343048096
+                    },
+                    "linearVelocity": {
+                        "x": 0.016237517818808557,
+                        "y": -0.04983372241258621,
+                        "z": -0.004256054759025574
+                    },
+                    "angularVelocity": {
+                        "x": -0.019621875137090684,
+                        "y": -0.0021647498942911627,
+                        "z": 0.029878728091716768
+                    }
+                },
+                {
+                    "name": "front_left_thruster_link",
+                    "position": {
+                        "x": 5.978361129760742,
+                        "y": -0.16843509674072267,
+                        "z": -2.1736066341400148
+                    },
+                    "rotation": {
+                        "x": 0.18438176810741425,
+                        "y": -0.18620678782463075,
+                        "z": -0.681373119354248,
+                        "w": 0.6834185719490051
+                    },
+                    "linearVelocity": {
+                        "x": 0.016235778108239175,
+                        "y": -0.04999552667140961,
+                        "z": -0.004269953817129135
+                    },
+                    "angularVelocity": {
+                        "x": 0.012622794136404992,
+                        "y": -0.0020360418129712345,
+                        "z": 0.04878324270248413
+                    }
+                },
+                {
+                    "name": "front_right_propeller_link",
+                    "position": {
+                        "x": 6.6399359703063969,
+                        "y": -0.16758087277412415,
+                        "z": -2.342015266418457
+                    },
+                    "rotation": {
+                        "x": -0.7064953446388245,
+                        "y": 0.35801851749420168,
+                        "z": 0.00007297133561223745,
+                        "w": -0.6104811429977417
+                    },
+                    "linearVelocity": {
+                        "x": 0.016541900113224984,
+                        "y": -0.015582390129566193,
+                        "z": -0.002921950537711382
+                    },
+                    "angularVelocity": {
+                        "x": 0.032886017113924029,
+                        "y": -0.0021074654068797828,
+                        "z": 0.014222352765500546
+                    }
+                },
+                {
+                    "name": "front_right_thruster_link",
+                    "position": {
+                        "x": 6.642292499542236,
+                        "y": -0.16759121417999268,
+                        "z": -2.3467659950256349
+                    },
+                    "rotation": {
+                        "x": -0.6136309504508972,
+                        "y": 0.6134714484214783,
+                        "z": 0.35013219714164736,
+                        "w": -0.35287004709243777
+                    },
+                    "linearVelocity": {
+                        "x": 0.016547435894608499,
+                        "y": -0.015420975163578987,
+                        "z": -0.0029085346031934025
+                    },
+                    "angularVelocity": {
+                        "x": 0.012622794136404992,
+                        "y": -0.0020360418129712345,
+                        "z": 0.04878324270248413
+                    }
+                },
+                {
+                    "name": "gps_link",
+                    "position": {
+                        "x": 6.103515148162842,
+                        "y": 0.19284527003765107,
+                        "z": -2.575911283493042
+                    },
+                    "rotation": {
+                        "x": -0.0018320096423849464,
+                        "y": 0.7913112044334412,
+                        "z": -0.0006384997395798564,
+                        "w": 0.6114104390144348
+                    },
+                    "linearVelocity": {
+                        "x": -0.0005689449608325958,
+                        "y": -0.038811732083559039,
+                        "z": 0.0005448813899420202
+                    },
+                    "angularVelocity": {
+                        "x": 0.012622794136404992,
+                        "y": -0.0020360418129712345,
+                        "z": 0.04878324270248413
+                    }
+                },
+                {
+                    "name": "imu_link",
+                    "position": {
+                        "x": 6.080803871154785,
+                        "y": 0.19251401722431184,
+                        "z": -2.6629981994628908
+                    },
+                    "rotation": {
+                        "x": -0.0018320096423849464,
+                        "y": 0.7913112044334412,
+                        "z": -0.0006384997395798564,
+                        "w": 0.6114104390144348
+                    },
+                    "linearVelocity": {
+                        "x": -0.0003753543132916093,
+                        "y": -0.038820404559373859,
+                        "z": 0.0004944303655065596
+                    },
+                    "angularVelocity": {
+                        "x": 0.012622794136404992,
+                        "y": -0.0020360418129712345,
+                        "z": 0.04878324270248413
+                    }
+                },
+                {
+                    "name": "left_hull_link",
+                    "position": {
+                        "x": 5.922998905181885,
+                        "y": 0.11291840672492981,
+                        "z": -2.4355196952819826
+                    },
+                    "rotation": {
+                        "x": -0.0018319922965019942,
+                        "y": 0.7913112044334412,
+                        "z": -0.000638492580037564,
+                        "w": 0.6114104390144348
+                    },
+                    "linearVelocity": {
+                        "x": 0.019140228629112245,
+                        "y": -0.049369752407073978,
+                        "z": -0.004995393101125956
+                    },
+                    "angularVelocity": {
+                        "x": 0.012622794136404992,
+                        "y": -0.0020360418129712345,
+                        "z": 0.04878324270248413
+                    }
+                },
+                {
+                    "name": "lidar_link",
+                    "position": {
+                        "x": 6.314887046813965,
+                        "y": 0.47213858366012576,
+                        "z": -2.2395808696746828
+                    },
+                    "rotation": {
+                        "x": -0.0018320231465622783,
+                        "y": 0.7913112044334412,
+                        "z": -0.0006384699372574687,
+                        "w": 0.6114104390144348
+                    },
+                    "linearVelocity": {
+                        "x": -0.010001138783991337,
+                        "y": -0.03273727372288704,
+                        "z": 0.0032388814724981786
+                    },
+                    "angularVelocity": {
+                        "x": 0.012622794136404992,
+                        "y": -0.0020360418129712345,
+                        "z": 0.04878324270248413
+                    }
+                },
+                {
+                    "name": "rear_left_propeller_link",
+                    "position": {
+                        "x": 5.846409320831299,
+                        "y": -0.17040547728538514,
+                        "z": -2.6937618255615236
+                    },
+                    "rotation": {
+                        "x": -0.14961810410022736,
+                        "y": 0.5201435685157776,
+                        "z": -0.6917243599891663,
+                        "w": 0.4781029224395752
+                    },
+                    "linearVelocity": {
+                        "x": 0.017395026981830598,
+                        "y": -0.04988224059343338,
+                        "z": -0.004575276747345924
+                    },
+                    "angularVelocity": {
+                        "x": 0.03385476395487785,
+                        "y": -0.0021114209666848184,
+                        "z": 0.012569827027618885
+                    }
+                },
+                {
+                    "name": "rear_left_thruster_link",
+                    "position": {
+                        "x": 5.844052791595459,
+                        "y": -0.17039507627487184,
+                        "z": -2.6890110969543459
+                    },
+                    "rotation": {
+                        "x": -0.35287222266197207,
+                        "y": 0.3501318395137787,
+                        "z": -0.6134731769561768,
+                        "w": 0.6136281490325928
+                    },
+                    "linearVelocity": {
+                        "x": 0.01738147996366024,
+                        "y": -0.05004185438156128,
+                        "z": -0.00456832442432642
+                    },
+                    "angularVelocity": {
+                        "x": 0.012622794136404992,
+                        "y": -0.0020360418129712345,
+                        "z": 0.04878324270248413
+                    }
+                },
+                {
+                    "name": "rear_right_propeller_link",
+                    "position": {
+                        "x": 6.503451824188232,
+                        "y": -0.16957062482833863,
+                        "z": -2.865166664123535
+                    },
+                    "rotation": {
+                        "x": -0.7077455520629883,
+                        "y": 0.5938739776611328,
+                        "z": 0.028876256197690965,
+                        "w": 0.3815443515777588
+                    },
+                    "linearVelocity": {
+                        "x": 0.01770966127514839,
+                        "y": -0.015635164454579355,
+                        "z": -0.0032093338668346407
+                    },
+                    "angularVelocity": {
+                        "x": -0.01897275447845459,
+                        "y": -0.0021622958593070509,
+                        "z": 0.03025917150080204
+                    }
+                },
+                {
+                    "name": "rear_right_thruster_link",
+                    "position": {
+                        "x": 6.507828235626221,
+                        "y": -0.16955158114433289,
+                        "z": -2.8621718883514406
+                    },
+                    "rotation": {
+                        "x": -0.6834208965301514,
+                        "y": 0.6813703775405884,
+                        "z": -0.18620850145816804,
+                        "w": 0.18438205122947694
+                    },
+                    "linearVelocity": {
+                        "x": 0.017693158239126207,
+                        "y": -0.015474868007004261,
+                        "z": -0.0032072262838482858
+                    },
+                    "angularVelocity": {
+                        "x": 0.012622794136404992,
+                        "y": -0.0020360418129712345,
+                        "z": 0.04878324270248413
+                    }
+                },
+                {
+                    "name": "right_hull_link",
+                    "position": {
+                        "x": 6.562021255493164,
+                        "y": 0.11573048681020737,
+                        "z": -2.6021807193756105
+                    },
+                    "rotation": {
+                        "x": -0.0018319571390748025,
+                        "y": 0.7913112640380859,
+                        "z": -0.0006384741864167154,
+                        "w": 0.61141037940979
+                    },
+                    "linearVelocity": {
+                        "x": 0.019342627376317979,
+                        "y": -0.016092360019683839,
+                        "z": -0.0036598052829504015
+                    },
+                    "angularVelocity": {
+                        "x": 0.012622794136404992,
+                        "y": -0.0020360418129712345,
+                        "z": 0.04878324270248413
+                    }
+                },
+                {
+                    "name": "sensor_mount_link",
+                    "position": {
+                        "x": 6.312297344207764,
+                        "y": 0.18174394965171815,
+                        "z": -2.2509260177612306
+                    },
+                    "rotation": {
+                        "x": -0.0018320096423849464,
+                        "y": 0.7913112044334412,
+                        "z": -0.0006384997395798564,
+                        "w": 0.6114104390144348
+                    },
+                    "linearVelocity": {
+                        "x": 0.009065726771950722,
+                        "y": -0.032716453075408939,
+                        "z": -0.0016939553897827864
+                    },
+                    "angularVelocity": {
+                        "x": 0.012622794136404992,
+                        "y": -0.0020360418129712345,
+                        "z": 0.04878324270248413
+                    }
+                },
+                {
+                    "name": "water_pump_link",
+                    "position": {
+                        "x": 6.036226749420166,
+                        "y": 0.21606206893920899,
+                        "z": -2.000852108001709
+                    },
+                    "rotation": {
+                        "x": -0.0018319189548492432,
+                        "y": 0.7913112640380859,
+                        "z": -0.0006384552689269185,
+                        "w": 0.61141037940979
+                    },
+                    "linearVelocity": {
+                        "x": -0.0025878488086163999,
+                        "y": -0.049363184720277789,
+                        "z": 0.000627180386800319
+                    },
+                    "angularVelocity": {
+                        "x": 0.012622794136404992,
+                        "y": -0.0020360418129712345,
+                        "z": 0.04878324270248413
+                    }
+                }
+            ],
+            "water": [
+                {
+                    "surface": "Ocean",
+                    "simulationTime": 4.624566078186035,
+                    "timeMultiplier": 1.0,
+                    "target": {
+                        "x": 6.697290897369385,
+                        "y": 0.32570821046829226,
+                        "z": -2.082475423812866
+                    },
+                    "projected": {
+                        "x": 6.697290897369385,
+                        "y": 0.03832079470157623,
+                        "z": -2.082475423812866
+                    },
+                    "error": 0.0,
+                    "steps": 0,
+                    "valid": true
+                }
+            ]
+        },
+        {
+            "simulatedSeconds": 8.003369175170068,
+            "monoUsedBytes": 12029952,
+            "totalAllocatedMemoryBytes": 382170408,
+            "observationQueueAgeTicks": 4,
+            "staleObservations": 0,
+            "failedObservations": 0,
+            "bodies": [
+                {
+                    "name": "ball_dropper_link",
+                    "position": {
+                        "x": 6.720885276794434,
+                        "y": 0.25795629620552065,
+                        "z": -2.0839743614196779
+                    },
+                    "rotation": {
+                        "x": -0.005297212861478329,
+                        "y": 0.7911368608474731,
+                        "z": 0.001462831860408187,
+                        "w": 0.6116144061088562
+                    },
+                    "linearVelocity": {
+                        "x": 0.01579236052930355,
+                        "y": -0.018899843096733094,
+                        "z": -0.015394850634038449
+                    },
+                    "angularVelocity": {
+                        "x": -0.030594440177083017,
+                        "y": 0.0011181174777448178,
+                        "z": 0.022270480170845987
+                    }
+                },
+                {
+                    "name": "base_link",
+                    "position": {
+                        "x": 6.267247676849365,
+                        "y": 0.12151476740837097,
+                        "z": -2.520721673965454
+                    },
+                    "rotation": {
+                        "x": -0.005297310184687376,
+                        "y": 0.7911368012428284,
+                        "z": 0.0014627723721787334,
+                        "w": 0.611614465713501
+                    },
+                    "linearVelocity": {
+                        "x": 0.02226843498647213,
+                        "y": -0.037049148231744769,
+                        "z": -0.005585947073996067
+                    },
+                    "angularVelocity": {
+                        "x": -0.030594440177083017,
+                        "y": 0.0011181174777448178,
+                        "z": 0.022270480170845987
+                    }
+                },
+                {
+                    "name": "front_camera_link",
+                    "position": {
+                        "x": 6.348315238952637,
+                        "y": 0.2488529086112976,
+                        "z": -2.2047765254974367
+                    },
+                    "rotation": {
+                        "x": -0.005297284107655287,
+                        "y": 0.7911368608474731,
+                        "z": 0.0014627872733399273,
+                        "w": 0.6116144061088562
+                    },
+                    "linearVelocity": {
+                        "x": 0.014665613882243634,
+                        "y": -0.02557000331580639,
+                        "z": -0.016607455909252168
+                    },
+                    "angularVelocity": {
+                        "x": -0.030594440177083017,
+                        "y": 0.0011181174777448178,
+                        "z": 0.022270480170845987
+                    }
+                },
+                {
+                    "name": "front_left_propeller_link",
+                    "position": {
+                        "x": 6.010380744934082,
+                        "y": -0.24198764562606812,
+                        "z": -2.1720309257507326
+                    },
+                    "rotation": {
+                        "x": -0.17841453850269319,
+                        "y": -0.5036827325820923,
+                        "z": -0.680242657661438,
+                        "w": 0.5017389059066773
+                    },
+                    "linearVelocity": {
+                        "x": 0.025638647377490999,
+                        "y": -0.032196324318647388,
+                        "z": -0.0012065850896760822
+                    },
+                    "angularVelocity": {
+                        "x": -0.017645791172981263,
+                        "y": 0.001282799057662487,
+                        "z": 0.029871603474020959
+                    }
+                },
+                {
+                    "name": "front_left_thruster_link",
+                    "position": {
+                        "x": 6.006006240844727,
+                        "y": -0.2420446276664734,
+                        "z": -2.1750283241271974
+                    },
+                    "rotation": {
+                        "x": 0.18499723076820374,
+                        "y": -0.18595221638679505,
+                        "z": -0.6784820556640625,
+                        "w": 0.6861923336982727
+                    },
+                    "linearVelocity": {
+                        "x": 0.025628384202718736,
+                        "y": -0.032372020184993747,
+                        "z": -0.0012053500395268202
+                    },
+                    "angularVelocity": {
+                        "x": -0.030594440177083017,
+                        "y": 0.0011181174777448178,
+                        "z": 0.022270480170845987
+                    }
+                },
+                {
+                    "name": "front_right_propeller_link",
+                    "position": {
+                        "x": 6.667641639709473,
+                        "y": -0.23601463437080384,
+                        "z": -2.3430936336517336
+                    },
+                    "rotation": {
+                        "x": -0.7076583504676819,
+                        "y": 0.3576451241970062,
+                        "z": -0.00004847743548452854,
+                        "w": -0.6093518137931824
+                    },
+                    "linearVelocity": {
+                        "x": 0.025304371491074563,
+                        "y": -0.022784806787967683,
+                        "z": -0.00212586740963161
+                    },
+                    "angularVelocity": {
+                        "x": -0.013212107121944428,
+                        "y": 0.0011703969212248922,
+                        "z": -0.007340893615037203
+                    }
+                },
+                {
+                    "name": "front_right_thruster_link",
+                    "position": {
+                        "x": 6.670001029968262,
+                        "y": -0.23601034283638,
+                        "z": -2.3478431701660158
+                    },
+                    "rotation": {
+                        "x": -0.616027295589447,
+                        "y": 0.611247181892395,
+                        "z": 0.34826794266700747,
+                        "w": -0.35439610481262209
+                    },
+                    "linearVelocity": {
+                        "x": 0.025301389396190645,
+                        "y": -0.022871822118759157,
+                        "z": -0.002132063964381814
+                    },
+                    "angularVelocity": {
+                        "x": -0.030594440177083017,
+                        "y": 0.0011181174777448178,
+                        "z": 0.022270480170845987
+                    }
+                },
+                {
+                    "name": "gps_link",
+                    "position": {
+                        "x": 6.128458499908447,
+                        "y": 0.11986617743968964,
+                        "z": -2.5775976181030275
+                    },
+                    "rotation": {
+                        "x": -0.0052972836419939999,
+                        "y": 0.7911368608474731,
+                        "z": 0.0014627876225858927,
+                        "w": 0.6116143465042114
+                    },
+                    "linearVelocity": {
+                        "x": 0.0171184241771698,
+                        "y": -0.04196180775761604,
+                        "z": -0.0124138705432415
+                    },
+                    "angularVelocity": {
+                        "x": -0.030594440177083017,
+                        "y": 0.0011181174777448178,
+                        "z": 0.022270480170845987
+                    }
+                },
+                {
+                    "name": "imu_link",
+                    "position": {
+                        "x": 6.105796813964844,
+                        "y": 0.11927284300327301,
+                        "z": -2.664695978164673
+                    },
+                    "rotation": {
+                        "x": -0.0052972836419939999,
+                        "y": 0.7911368608474731,
+                        "z": 0.0014627876225858927,
+                        "w": 0.6116143465042114
+                    },
+                    "linearVelocity": {
+                        "x": 0.01703423634171486,
+                        "y": -0.045131221413612369,
+                        "z": -0.01237019244581461
+                    },
+                    "angularVelocity": {
+                        "x": -0.030594440177083017,
+                        "y": 0.0011181174777448178,
+                        "z": 0.022270480170845987
+                    }
+                },
+                {
+                    "name": "left_hull_link",
+                    "position": {
+                        "x": 5.948517799377441,
+                        "y": 0.038615621626377109,
+                        "z": -2.4372270107269289
+                    },
+                    "rotation": {
+                        "x": -0.005297218449413776,
+                        "y": 0.7911368012428284,
+                        "z": 0.0014628011267632247,
+                        "w": 0.611614465713501
+                    },
+                    "linearVelocity": {
+                        "x": 0.02643510513007641,
+                        "y": -0.04155728965997696,
+                        "z": 0.0003646438126452267
+                    },
+                    "angularVelocity": {
+                        "x": -0.030594440177083017,
+                        "y": 0.0011181174777448178,
+                        "z": 0.022270480170845987
+                    }
+                },
+                {
+                    "name": "lidar_link",
+                    "position": {
+                        "x": 6.33739709854126,
+                        "y": 0.4011586606502533,
+                        "z": -2.24141263961792
+                    },
+                    "rotation": {
+                        "x": -0.005297272466123104,
+                        "y": 0.7911368608474731,
+                        "z": 0.0014627425698563457,
+                        "w": 0.6116143465042114
+                    },
+                    "linearVelocity": {
+                        "x": 0.01345721073448658,
+                        "y": -0.026991046965122224,
+                        "z": -0.018196072429418565
+                    },
+                    "angularVelocity": {
+                        "x": -0.030594440177083017,
+                        "y": 0.0011181174777448178,
+                        "z": 0.022270480170845987
+                    }
+                },
+                {
+                    "name": "rear_left_propeller_link",
+                    "position": {
+                        "x": 5.8743486404418949,
+                        "y": -0.2455507218837738,
+                        "z": -2.6952502727508547
+                    },
+                    "rotation": {
+                        "x": -0.14887547492980958,
+                        "y": 0.5210930705070496,
+                        "z": -0.6906949281692505,
+                        "w": 0.4787888824939728
+                    },
+                    "linearVelocity": {
+                        "x": 0.025122594088315965,
+                        "y": -0.05121350660920143,
+                        "z": -0.0009452151716686785
+                    },
+                    "angularVelocity": {
+                        "x": -0.012993864715099335,
+                        "y": 0.001170816831290722,
+                        "z": -0.007712849881500006
+                    }
+                },
+                {
+                    "name": "rear_left_thruster_link",
+                    "position": {
+                        "x": 5.871989727020264,
+                        "y": -0.24555492401123048,
+                        "z": -2.6905007362365724
+                    },
+                    "rotation": {
+                        "x": -0.3543981611728668,
+                        "y": 0.34826746582984927,
+                        "z": -0.6112489104270935,
+                        "w": 0.6160247325897217
+                    },
+                    "linearVelocity": {
+                        "x": 0.02513011544942856,
+                        "y": -0.051127225160598758,
+                        "z": -0.0009470119839534164
+                    },
+                    "angularVelocity": {
+                        "x": -0.030594440177083017,
+                        "y": 0.0011181174777448178,
+                        "z": 0.022270480170845987
+                    }
+                },
+                {
+                    "name": "rear_right_propeller_link",
+                    "position": {
+                        "x": 6.531454086303711,
+                        "y": -0.23957940936088563,
+                        "z": -2.866313934326172
+                    },
+                    "rotation": {
+                        "x": -0.7103636264801025,
+                        "y": 0.5915895104408264,
+                        "z": 0.028729738667607309,
+                        "w": 0.3802369236946106
+                    },
+                    "linearVelocity": {
+                        "x": 0.024811161682009698,
+                        "y": -0.04180460050702095,
+                        "z": -0.0018617409514263273
+                    },
+                    "angularVelocity": {
+                        "x": -0.017204230651259424,
+                        "y": 0.0012885138858109713,
+                        "z": 0.030130861327052118
+                    }
+                },
+                {
+                    "name": "rear_right_thruster_link",
+                    "position": {
+                        "x": 6.535828590393066,
+                        "y": -0.23952239751815797,
+                        "z": -2.8633170127868654
+                    },
+                    "rotation": {
+                        "x": -0.686194658279419,
+                        "y": 0.6784791946411133,
+                        "z": -0.18595390021800996,
+                        "w": 0.18499761819839478
+                    },
+                    "linearVelocity": {
+                        "x": 0.024803156033158304,
+                        "y": -0.04163052886724472,
+                        "z": -0.0018735007615759969
+                    },
+                    "angularVelocity": {
+                        "x": -0.030594440177083017,
+                        "y": 0.0011181174777448178,
+                        "z": 0.022270480170845987
+                    }
+                },
+                {
+                    "name": "right_hull_link",
+                    "position": {
+                        "x": 6.587584972381592,
+                        "y": 0.046423256397247317,
+                        "z": -2.603558301925659
+                    },
+                    "rotation": {
+                        "x": -0.005297274328768253,
+                        "y": 0.7911368608474731,
+                        "z": 0.0014628049684688449,
+                        "w": 0.6116144061088562
+                    },
+                    "linearVelocity": {
+                        "x": 0.02607584185898304,
+                        "y": -0.032413870096206668,
+                        "z": -0.0005884681013412774
+                    },
+                    "angularVelocity": {
+                        "x": -0.030594440177083017,
+                        "y": 0.0011181174777448178,
+                        "z": 0.022270480170845987
+                    }
+                },
+                {
+                    "name": "sensor_mount_link",
+                    "position": {
+                        "x": 6.337152004241943,
+                        "y": 0.11074241250753403,
+                        "z": -2.2524938583374025
+                    },
+                    "rotation": {
+                        "x": -0.0052972836419939999,
+                        "y": 0.7911368608474731,
+                        "z": 0.0014627876225858927,
+                        "w": 0.6116143465042114
+                    },
+                    "linearVelocity": {
+                        "x": 0.022140080109238626,
+                        "y": -0.027296701446175576,
+                        "z": -0.006252538412809372
+                    },
+                    "angularVelocity": {
+                        "x": -0.030594440177083017,
+                        "y": 0.0011181174777448178,
+                        "z": 0.022270480170845987
+                    }
+                },
+                {
+                    "name": "water_pump_link",
+                    "position": {
+                        "x": 6.06068229675293,
+                        "y": 0.1430630087852478,
+                        "z": -2.002594470977783
+                    },
+                    "rotation": {
+                        "x": -0.005297183524817228,
+                        "y": 0.7911368608474731,
+                        "z": 0.0014628025237470866,
+                        "w": 0.6116143465042114
+                    },
+                    "linearVelocity": {
+                        "x": 0.017336290329694749,
+                        "y": -0.026591602712869645,
+                        "z": -0.01288727205246687
+                    },
+                    "angularVelocity": {
+                        "x": -0.030594440177083017,
+                        "y": 0.0011181174777448178,
+                        "z": 0.022270480170845987
+                    }
+                }
+            ],
+            "water": [
+                {
+                    "surface": "Ocean",
+                    "simulationTime": 5.622820854187012,
+                    "timeMultiplier": 1.0,
+                    "target": {
+                        "x": 6.720885276794434,
+                        "y": 0.25795629620552065,
+                        "z": -2.0839743614196779
+                    },
+                    "projected": {
+                        "x": 6.720885276794434,
+                        "y": -0.015379772521555424,
+                        "z": -2.0839743614196779
+                    },
+                    "error": 0.0,
+                    "steps": 0,
+                    "valid": true
+                }
+            ]
+        }
+    ]
+}
