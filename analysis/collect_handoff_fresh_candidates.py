@@ -80,39 +80,44 @@ def main():
         record = dict(run_id=row["run_id"], return_code=run.returncode,
                       duration_s=None if resumed_export else time.time()-started,
                       export_resumed=resumed_export, development_only=False, study_stage="CONFIRMATION_CANDIDATE_PHYSICAL_ONLY", semantic_outputs=0, retry_allowed=False)
-        if run.returncode == 0:
-            truth = json.loads((evaluator/"worker-0/land-evaluator-truth.json").read_text())
-            binding = validate_binding(truth, json.loads(CATALOG.read_text()),
-                        catalog_sha256=schedule["catalog_sha256"], catalog_id="v10",
-                        layout_id=row["layout_id"], expected_response_profile=row["evaluator_response"])
-            (evaluator/"response-binding.json").write_text(json.dumps(binding,indent=2)+"\n")
-            record["response_binding_accepted"] = binding["accepted"]
-            summary = json.loads((evaluator/"navigation-reset-summary.json").read_text())
-            technical_checks = {"response_binding": binding["accepted"],
-                "scenario_binding": json.loads((evaluator/"scenario-binding-audit.json").read_text())["accepted"],
-                "build_binding": json.loads((evaluator/"player-build-audit.json").read_text())["accepted"],
-                "endpoint_errors": summary["transport"]["endpointErrors"] == 0,
-                "transport_actions": all(summary["actions"][k] == 0 for k in ("stale", "rejected", "crossEpisode")),
-                "observations": all(summary["observations"][k] == 0 for k in ("stale", "failed"))}
-            record["technical_checks"] = technical_checks
-            record["technical_valid"] = all(technical_checks.values())
-            robot = ROOT / "data/robot_visible/final" / row["run_id"]
-            export = robot / "command-motion-diagnostic-v3.json"
-            visible_config = robot/"capture/nav2_config.yaml"
-            shutil.copyfile(ROOT/"packages/crane_ml/Tools/Performance/nav2_land_proving_ground_fixture.yaml", visible_config)
-            subprocess.run([sys.executable, str(ROOT/"analysis/export_command_motion_diagnostic.py"),
-                "--events", str(robot/"capture/events.jsonl"), "--capture-manifest", str(robot/"capture/manifest.json"),
-                "--runtime-manifest", str(robot/"capture/runtime_manifest.json"),
-                "--bt-xml", str(robot/"capture/behavior_tree.xml"),
-                "--nav2-config", str(visible_config),
-                "--diagnostic-config", str(ROOT/"configs/diagnostic_command_motion_low_speed_v1.json"),
-                "--episode-id", row["run_id"], "--allow-active-at-declared-cutoff", "--output", str(export)], check=True)
-            subprocess.run([sys.executable, str(ROOT/"analysis/reference_command_motion.py"), str(export),
-                            "--output", str(evaluator/"command-motion-independent-reference-v1.json")], check=True)
-            record["preprocessing_complete"] = True
+        try:
+            if run.returncode == 0:
+                truth = json.loads((evaluator/"worker-0/land-evaluator-truth.json").read_text())
+                binding = validate_binding(truth, json.loads(CATALOG.read_text()),
+                            catalog_sha256=schedule["catalog_sha256"], catalog_id="v10",
+                            layout_id=row["layout_id"], expected_response_profile=row["evaluator_response"])
+                (evaluator/"response-binding.json").write_text(json.dumps(binding,indent=2)+"\n")
+                record["response_binding_accepted"] = binding["accepted"]
+                summary = json.loads((evaluator/"navigation-reset-summary.json").read_text())
+                technical_checks = {"response_binding": binding["accepted"],
+                    "scenario_binding": json.loads((evaluator/"scenario-binding-audit.json").read_text())["accepted"],
+                    "build_binding": json.loads((evaluator/"player-build-audit.json").read_text())["accepted"],
+                    "endpoint_errors": summary["transport"]["endpointErrors"] == 0,
+                    "transport_actions": all(summary["actions"][k] == 0 for k in ("stale", "rejected", "crossEpisode")),
+                    "observations": all(summary["observations"][k] == 0 for k in ("stale", "failed"))}
+                record["technical_checks"] = technical_checks
+                record["technical_valid"] = all(technical_checks.values())
+                robot = ROOT / "data/robot_visible/final" / row["run_id"]
+                export = robot / "command-motion-diagnostic-v3.json"
+                visible_config = robot/"capture/nav2_config.yaml"
+                shutil.copyfile(ROOT/"packages/crane_ml/Tools/Performance/nav2_land_proving_ground_fixture.yaml", visible_config)
+                subprocess.run([sys.executable, str(ROOT/"analysis/export_command_motion_diagnostic.py"),
+                    "--events", str(robot/"capture/events.jsonl"), "--capture-manifest", str(robot/"capture/manifest.json"),
+                    "--runtime-manifest", str(robot/"capture/runtime_manifest.json"),
+                    "--bt-xml", str(robot/"capture/behavior_tree.xml"),
+                    "--nav2-config", str(visible_config),
+                    "--diagnostic-config", str(ROOT/"configs/diagnostic_command_motion_low_speed_v1.json"),
+                    "--episode-id", row["run_id"], "--allow-active-at-declared-cutoff", "--output", str(export)], check=True)
+                subprocess.run([sys.executable, str(ROOT/"analysis/reference_command_motion.py"), str(export),
+                                "--output", str(evaluator/"command-motion-independent-reference-v1.json")], check=True)
+                record["preprocessing_complete"] = True
+        except (subprocess.CalledProcessError, FileNotFoundError, ValueError, KeyError) as exc:
+            record.update(technical_valid=False, preprocessing_complete=False, preprocessing_error=type(exc).__name__+": "+str(exc), disposition="TECHNICAL_EXPORT_INVALID_NO_METHOD_CALL")
         result.write_text(json.dumps(record, indent=2)+"\n")
         print(json.dumps(record), flush=True)
-        if run.returncode: break
+        # A failed capture remains excluded; advance to the next independent candidate.
+        # The capture script cleans this run's processes/containers on exit.
+        if run.returncode: continue
 
 
 if __name__ == "__main__": main()
