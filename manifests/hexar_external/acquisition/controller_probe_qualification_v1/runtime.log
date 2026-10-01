@@ -1,0 +1,526 @@
+[INFO] [launch]: All log files can be found below /root/.ros/log/2026-10-01-12-07-38-004916-9ad9b4597a77-29
+[INFO] [launch]: Default logging verbosity is set to INFO
+[WARN] [1790856458.137985756] [rcl]: Found remap rule 'is_public_sim:=True'. This syntax is deprecated. Use '--ros-args --remap is_public_sim:=True' instead.
+[WARN] [1790856458.137998433] [rcl]: Found remap rule 'navigation:=True'. This syntax is deprecated. Use '--ros-args --remap navigation:=True' instead.
+[WARN] [1790856458.138000517] [rcl]: Found remap rule 'moveit:=False'. This syntax is deprecated. Use '--ros-args --remap moveit:=False' instead.
+[WARN] [1790856458.138002140] [rcl]: Found remap rule 'rviz:=False'. This syntax is deprecated. Use '--ros-args --remap rviz:=False' instead.
+[WARN] [1790856458.138003649] [rcl]: Found remap rule 'gzclient:=False'. This syntax is deprecated. Use '--ros-args --remap gzclient:=False' instead.
+[WARN] [1790856458.138005107] [rcl]: Found remap rule 'tuck_arm:=False'. This syntax is deprecated. Use '--ros-args --remap tuck_arm:=False' instead.
+[WARN] [1790856458.138006787] [rcl]: Found remap rule 'world_name:=home'. This syntax is deprecated. Use '--ros-args --remap world_name:=home' instead.
+1790856458.147151 [86]       ros2: selected interface "lo" is not multicast-capable: disabling multicast
+Private gazebo world package not found.
+[INFO] [play_motion2_node-18]: process started with pid [165]
+[INFO] [add_analyzer-22]: process started with pid [178]
+[INFO] [gzserver-1]: process started with pid [48]
+[INFO] [controller_server-2]: process started with pid [50]
+[INFO] [smoother_server-3]: process started with pid [52]
+[INFO] [planner_server-4]: process started with pid [54]
+[INFO] [behavior_server-5]: process started with pid [56]
+[INFO] [bt_navigator-6]: process started with pid [58]
+[INFO] [waypoint_follower-7]: process started with pid [60]
+[INFO] [velocity_smoother-8]: process started with pid [62]
+[INFO] [lifecycle_manager-9]: process started with pid [64]
+[INFO] [map_server-10]: process started with pid [66]
+[INFO] [amcl-11]: process started with pid [68]
+[INFO] [lifecycle_manager-12]: process started with pid [70]
+[INFO] [spawn_entity.py-13]: process started with pid [72]
+[INFO] [spawner-14]: process started with pid [74]
+[INFO] [spawner-15]: process started with pid [77]
+[INFO] [spawner-16]: process started with pid [80]
+[INFO] [spawner-17]: process started with pid [83]
+[INFO] [twist_mux-19]: process started with pid [169]
+[INFO] [twist_marker-20]: process started with pid [172]
+[INFO] [joystick_relay.py-21]: process started with pid [176]
+[INFO] [robot_state_publisher-23]: process started with pid [180]
+[gzserver-1] Applied Gazebo seed: 1489732681
+[controller_server-2] 1790856459.707016 [86] controller: selected interface "lo" is not multicast-capable: disabling multicast
+[controller_server-2] [INFO] [1790856459.719331765] [controller_server]: 
+[controller_server-2] 	controller_server lifecycle node launched. 
+[controller_server-2] 	Waiting on external lifecycle transitions to activate
+[controller_server-2] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[smoother_server-3] 1790856459.708755 [86] smoother_s: selected interface "lo" is not multicast-capable: disabling multicast
+[smoother_server-3] [INFO] [1790856459.722011055] [smoother_server]: 
+[smoother_server-3] 	smoother_server lifecycle node launched. 
+[smoother_server-3] 	Waiting on external lifecycle transitions to activate
+[smoother_server-3] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[smoother_server-3] [INFO] [1790856459.740545294] [smoother_server]: Creating smoother server
+[planner_server-4] 1790856459.708048 [86] planner_se: selected interface "lo" is not multicast-capable: disabling multicast
+[planner_server-4] [INFO] [1790856459.713939812] [planner_server]: 
+[planner_server-4] 	planner_server lifecycle node launched. 
+[planner_server-4] 	Waiting on external lifecycle transitions to activate
+[planner_server-4] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-4] [INFO] [1790856459.736629306] [planner_server]: Creating
+[bt_navigator-6] 1790856459.722703 [86] bt_navigat: selected interface "lo" is not multicast-capable: disabling multicast
+[bt_navigator-6] 1790856459.722849 [86] bt_navigat: Failed to find a free participant index for domain 86
+[bt_navigator-6] [ERROR] [1790856459.722887754] [rmw_cyclonedds_cpp]: rmw_create_node: failed to create domain, error Error
+[bt_navigator-6] 
+[bt_navigator-6] >>> [rcutils|error_handling.c:108] rcutils_set_error_state()
+[bt_navigator-6] This error state is being overwritten:
+[bt_navigator-6] 
+[bt_navigator-6]   'error not set, at ./src/rcl/node.c:263'
+[bt_navigator-6] 
+[bt_navigator-6] with this new error message:
+[bt_navigator-6] 
+[bt_navigator-6]   'rcl node's rmw handle is invalid, at ./src/rcl/node.c:415'
+[bt_navigator-6] 
+[bt_navigator-6] rcutils_reset_error() should be called after error handling to avoid this.
+[bt_navigator-6] <<<
+[bt_navigator-6] [ERROR] [1790856459.722929275] [rcl]: Failed to fini publisher for node: 1
+[bt_navigator-6] terminate called after throwing an instance of 'rclcpp::exceptions::RCLError'
+[bt_navigator-6]   what():  failed to initialize rcl node: rcl node's rmw handle is invalid, at ./src/rcl/node.c:415
+[waypoint_follower-7] 1790856459.705724 [86] waypoint_f: selected interface "lo" is not multicast-capable: disabling multicast
+[waypoint_follower-7] [INFO] [1790856459.711301455] [waypoint_follower]: 
+[waypoint_follower-7] 	waypoint_follower lifecycle node launched. 
+[waypoint_follower-7] 	Waiting on external lifecycle transitions to activate
+[waypoint_follower-7] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[waypoint_follower-7] [INFO] [1790856459.713301156] [waypoint_follower]: Creating
+[velocity_smoother-8] 1790856459.705347 [86] velocity_s: selected interface "lo" is not multicast-capable: disabling multicast
+[velocity_smoother-8] [INFO] [1790856459.715189988] [velocity_smoother]: 
+[velocity_smoother-8] 	velocity_smoother lifecycle node launched. 
+[velocity_smoother-8] 	Waiting on external lifecycle transitions to activate
+[velocity_smoother-8] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[lifecycle_manager-9] 1790856459.705347 [86] lifecycle_: selected interface "lo" is not multicast-capable: disabling multicast
+[lifecycle_manager-9] [INFO] [1790856459.711855084] [lifecycle_manager_navigation]: Creating
+[lifecycle_manager-9] [INFO] [1790856459.714274986] [lifecycle_manager_navigation]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[amcl-11] 1790856459.710922 [86]       amcl: selected interface "lo" is not multicast-capable: disabling multicast
+[lifecycle_manager-12] 1790856459.705346 [86] lifecycle_: selected interface "lo" is not multicast-capable: disabling multicast
+[lifecycle_manager-12] [INFO] [1790856459.711438201] [lifecycle_manager_localization]: Creating
+[lifecycle_manager-12] [INFO] [1790856459.715546488] [lifecycle_manager_localization]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[twist_mux-19] 1790856459.741842 [86]  twist_mux: selected interface "lo" is not multicast-capable: disabling multicast
+[twist_mux-19] 1790856459.742137 [86]  twist_mux: Failed to find a free participant index for domain 86
+[twist_mux-19] [ERROR] [1790856459.742183523] [rmw_cyclonedds_cpp]: rmw_create_node: failed to create domain, error Error
+[twist_mux-19] 
+[twist_mux-19] >>> [rcutils|error_handling.c:108] rcutils_set_error_state()
+[twist_mux-19] This error state is being overwritten:
+[twist_mux-19] 
+[twist_mux-19]   'error not set, at ./src/rcl/node.c:263'
+[twist_mux-19] 
+[twist_mux-19] with this new error message:
+[twist_mux-19] 
+[twist_mux-19]   'rcl node's rmw handle is invalid, at ./src/rcl/node.c:415'
+[twist_mux-19] 
+[twist_mux-19] rcutils_reset_error() should be called after error handling to avoid this.
+[twist_mux-19] <<<
+[twist_mux-19] [ERROR] [1790856459.742238310] [rcl]: Failed to fini publisher for node: 1
+[twist_mux-19] terminate called after throwing an instance of 'rclcpp::exceptions::RCLError'
+[twist_mux-19]   what():  failed to initialize rcl node: rcl node's rmw handle is invalid, at ./src/rcl/node.c:415
+[controller_server-2] [INFO] [1790856459.742898290] [controller_server]: Creating controller server
+[add_analyzer-22] 1790856459.747430 [86] add_analyz: selected interface "lo" is not multicast-capable: disabling multicast
+[amcl-11] [INFO] [1790856459.749484222] [amcl]: 
+[amcl-11] 	amcl lifecycle node launched. 
+[amcl-11] 	Waiting on external lifecycle transitions to activate
+[amcl-11] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[add_analyzer-22] 1790856459.756208 [86] add_analyz: Failed to find a free participant index for domain 86
+[add_analyzer-22] [31m[ERROR] [1790856459.756280751] [rmw_cyclonedds_cpp]: rmw_create_node: failed to create domain, error Error[0m
+[add_analyzer-22] 
+[add_analyzer-22] >>> [rcutils|error_handling.c:108] rcutils_set_error_state()
+[add_analyzer-22] This error state is being overwritten:
+[add_analyzer-22] 
+[add_analyzer-22]   'error not set, at ./src/rcl/node.c:263'
+[add_analyzer-22] 
+[add_analyzer-22] with this new error message:
+[add_analyzer-22] 
+[add_analyzer-22]   'rcl node's rmw handle is invalid, at ./src/rcl/node.c:415'
+[add_analyzer-22] 
+[add_analyzer-22] rcutils_reset_error() should be called after error handling to avoid this.
+[add_analyzer-22] <<<
+[add_analyzer-22] [31m[ERROR] [1790856459.756386208] [rcl]: Failed to fini publisher for node: 1[0m
+[add_analyzer-22] terminate called after throwing an instance of 'rclcpp::exceptions::RCLError'
+[add_analyzer-22]   what():  failed to initialize rcl node: rcl node's rmw handle is invalid, at ./src/rcl/node.c:415
+[amcl-11] [INFO] [1790856459.755599879] [amcl]: Creating
+[controller_server-2] [INFO] [1790856459.774196583] [local_costmap.local_costmap]: 
+[controller_server-2] 	local_costmap lifecycle node launched. 
+[controller_server-2] 	Waiting on external lifecycle transitions to activate
+[controller_server-2] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[behavior_server-5] 1790856459.775850 [86] behavior_s: selected interface "lo" is not multicast-capable: disabling multicast
+[twist_marker-20] 1790856459.777582 [86] twist_mark: selected interface "lo" is not multicast-capable: disabling multicast
+[twist_marker-20] 1790856459.777805 [86] twist_mark: Failed to find a free participant index for domain 86
+[twist_marker-20] [ERROR] [1790856459.777863913] [rmw_cyclonedds_cpp]: rmw_create_node: failed to create domain, error Error
+[twist_marker-20] 
+[twist_marker-20] >>> [rcutils|error_handling.c:108] rcutils_set_error_state()
+[twist_marker-20] This error state is being overwritten:
+[twist_marker-20] 
+[twist_marker-20]   'error not set, at ./src/rcl/node.c:263'
+[twist_marker-20] 
+[twist_marker-20] with this new error message:
+[twist_marker-20] 
+[twist_marker-20]   'rcl node's rmw handle is invalid, at ./src/rcl/node.c:415'
+[twist_marker-20] 
+[twist_marker-20] rcutils_reset_error() should be called after error handling to avoid this.
+[twist_marker-20] <<<
+[twist_marker-20] [ERROR] [1790856459.777939807] [rcl]: Failed to fini publisher for node: 1
+[twist_marker-20] terminate called after throwing an instance of 'rclcpp::exceptions::RCLError'
+[twist_marker-20]   what():  failed to initialize rcl node: rcl node's rmw handle is invalid, at ./src/rcl/node.c:415
+[controller_server-2] [INFO] [1790856459.780173674] [local_costmap.local_costmap]: Creating Costmap
+[behavior_server-5] 1790856459.781149 [86] behavior_s: Failed to find a free participant index for domain 86
+[behavior_server-5] [ERROR] [1790856459.781522713] [rmw_cyclonedds_cpp]: rmw_create_node: failed to create domain, error Error
+[behavior_server-5] 
+[behavior_server-5] >>> [rcutils|error_handling.c:108] rcutils_set_error_state()
+[behavior_server-5] This error state is being overwritten:
+[behavior_server-5] 
+[behavior_server-5]   'error not set, at ./src/rcl/node.c:263'
+[behavior_server-5] 
+[behavior_server-5] with this new error message:
+[behavior_server-5] 
+[behavior_server-5]   'rcl node's rmw handle is invalid, at ./src/rcl/node.c:415'
+[behavior_server-5] 
+[behavior_server-5] rcutils_reset_error() should be called after error handling to avoid this.
+[behavior_server-5] <<<
+[behavior_server-5] [ERROR] [1790856459.781606969] [rcl]: Failed to fini publisher for node: 1
+[behavior_server-5] terminate called after throwing an instance of 'rclcpp::exceptions::RCLError'
+[behavior_server-5]   what():  failed to initialize rcl node: rcl node's rmw handle is invalid, at ./src/rcl/node.c:415
+[map_server-10] 1790856459.783620 [86] map_server: selected interface "lo" is not multicast-capable: disabling multicast
+[map_server-10] 1790856459.783775 [86] map_server: Failed to find a free participant index for domain 86
+[map_server-10] [ERROR] [1790856459.783825157] [rmw_cyclonedds_cpp]: rmw_create_node: failed to create domain, error Error
+[map_server-10] 
+[map_server-10] >>> [rcutils|error_handling.c:108] rcutils_set_error_state()
+[map_server-10] This error state is being overwritten:
+[map_server-10] 
+[map_server-10]   'error not set, at ./src/rcl/node.c:263'
+[map_server-10] 
+[map_server-10] with this new error message:
+[map_server-10] 
+[map_server-10]   'rcl node's rmw handle is invalid, at ./src/rcl/node.c:415'
+[map_server-10] 
+[map_server-10] rcutils_reset_error() should be called after error handling to avoid this.
+[map_server-10] <<<
+[map_server-10] [ERROR] [1790856459.783876644] [rcl]: Failed to fini publisher for node: 1
+[map_server-10] terminate called after throwing an instance of 'rclcpp::exceptions::RCLError'
+[map_server-10]   what():  failed to initialize rcl node: rcl node's rmw handle is invalid, at ./src/rcl/node.c:415
+[planner_server-4] [INFO] [1790856459.838184112] [global_costmap.global_costmap]: 
+[planner_server-4] 	global_costmap lifecycle node launched. 
+[planner_server-4] 	Waiting on external lifecycle transitions to activate
+[planner_server-4] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[robot_state_publisher-23] 1790856459.839245 [86] robot_stat: selected interface "lo" is not multicast-capable: disabling multicast
+[robot_state_publisher-23] 1790856459.840608 [86] robot_stat: Failed to find a free participant index for domain 86
+[robot_state_publisher-23] [ERROR] [1790856459.840657320] [rmw_cyclonedds_cpp]: rmw_create_node: failed to create domain, error Error
+[robot_state_publisher-23] 
+[robot_state_publisher-23] >>> [rcutils|error_handling.c:108] rcutils_set_error_state()
+[robot_state_publisher-23] This error state is being overwritten:
+[robot_state_publisher-23] 
+[robot_state_publisher-23]   'error not set, at ./src/rcl/node.c:263'
+[robot_state_publisher-23] 
+[robot_state_publisher-23] with this new error message:
+[robot_state_publisher-23] 
+[robot_state_publisher-23]   'rcl node's rmw handle is invalid, at ./src/rcl/node.c:415'
+[robot_state_publisher-23] 
+[robot_state_publisher-23] rcutils_reset_error() should be called after error handling to avoid this.
+[robot_state_publisher-23] <<<
+[robot_state_publisher-23] [ERROR] [1790856459.840730705] [rcl]: Failed to fini publisher for node: 1
+[robot_state_publisher-23] terminate called after throwing an instance of 'rclcpp::exceptions::RCLError'
+[robot_state_publisher-23]   what():  failed to initialize rcl node: rcl node's rmw handle is invalid, at ./src/rcl/node.c:415
+[planner_server-4] [INFO] [1790856459.847721532] [global_costmap.global_costmap]: Creating Costmap
+[play_motion2_node-18] 1790856459.885312 [86] play_motio: selected interface "lo" is not multicast-capable: disabling multicast
+[play_motion2_node-18] 1790856459.885524 [86] play_motio: Failed to find a free participant index for domain 86
+[play_motion2_node-18] [31m[ERROR] [1790856459.885589623] [rmw_cyclonedds_cpp]: rmw_create_node: failed to create domain, error Error[0m
+[play_motion2_node-18] 
+[play_motion2_node-18] >>> [rcutils|error_handling.c:108] rcutils_set_error_state()
+[play_motion2_node-18] This error state is being overwritten:
+[play_motion2_node-18] 
+[play_motion2_node-18]   'error not set, at ./src/rcl/node.c:263'
+[play_motion2_node-18] 
+[play_motion2_node-18] with this new error message:
+[play_motion2_node-18] 
+[play_motion2_node-18]   'rcl node's rmw handle is invalid, at ./src/rcl/node.c:415'
+[play_motion2_node-18] 
+[play_motion2_node-18] rcutils_reset_error() should be called after error handling to avoid this.
+[play_motion2_node-18] <<<
+[play_motion2_node-18] [31m[ERROR] [1790856459.885657010] [rcl]: Failed to fini publisher for node: 1[0m
+[play_motion2_node-18] terminate called after throwing an instance of 'rclcpp::exceptions::RCLError'
+[play_motion2_node-18]   what():  failed to initialize rcl node: rcl node's rmw handle is invalid, at ./src/rcl/node.c:415
+[play_motion2_node-18] Stack trace (most recent call last):
+[play_motion2_node-18] #24   Object "/usr/lib/x86_64-linux-gnu/ld-linux-x86-64.so.2", at 0xffffffffffffffff, in 
+[play_motion2_node-18] #23   Object "/ws/install/play_motion2/lib/play_motion2/play_motion2_node", at 0x55de34a07f94, in _start
+[play_motion2_node-18] #22   Object "/usr/lib/x86_64-linux-gnu/libc.so.6", at 0x7f275638de3f, in __libc_start_main
+[play_motion2_node-18] #21   Object "/usr/lib/x86_64-linux-gnu/libc.so.6", at 0x7f275638dd8f, in 
+[play_motion2_node-18] #20   Object "/ws/install/play_motion2/lib/play_motion2/play_motion2_node", at 0x55de34a08205, in main
+[play_motion2_node-18] #19   Object "/ws/install/play_motion2/lib/play_motion2/play_motion2_node", at 0x55de34a0946a, in std::shared_ptr<play_motion2::PlayMotion2Mgr> std::make_shared<play_motion2::PlayMotion2Mgr, rclcpp::NodeOptions&>(rclcpp::NodeOptions&)
+[play_motion2_node-18] #18   Object "/ws/install/play_motion2/lib/play_motion2/play_motion2_node", at 0x55de34a09dd6, in std::shared_ptr<play_motion2::PlayMotion2Mgr> std::allocate_shared<play_motion2::PlayMotion2Mgr, std::allocator<play_motion2::PlayMotion2Mgr>, rclcpp::NodeOptions&>(std::allocator<play_motion2::PlayMotion2Mgr> const&, rclcpp::NodeOptions&)
+[play_motion2_node-18] #17   Object "/ws/install/play_motion2/lib/play_motion2/play_motion2_node", at 0x55de34a0a2da, in std::shared_ptr<play_motion2::PlayMotion2Mgr>::shared_ptr<std::allocator<play_motion2::PlayMotion2Mgr>, rclcpp::NodeOptions&>(std::_Sp_alloc_shared_tag<std::allocator<play_motion2::PlayMotion2Mgr> >, rclcpp::NodeOptions&)
+[play_motion2_node-18] #16   Object "/ws/install/play_motion2/lib/play_motion2/play_motion2_node", at 0x55de34a0a679, in std::__shared_ptr<play_motion2::PlayMotion2Mgr, (__gnu_cxx::_Lock_policy)2>::__shared_ptr<std::allocator<play_motion2::PlayMotion2Mgr>, rclcpp::NodeOptions&>(std::_Sp_alloc_shared_tag<std::allocator<play_motion2::PlayMotion2Mgr> >, rclcpp::NodeOptions&)
+[play_motion2_node-18] #15   Object "/ws/install/play_motion2/lib/play_motion2/play_motion2_node", at 0x55de34a0a7d1, in std::__shared_count<(__gnu_cxx::_Lock_policy)2>::__shared_count<play_motion2::PlayMotion2Mgr, std::allocator<play_motion2::PlayMotion2Mgr>, rclcpp::NodeOptions&>(play_motion2::PlayMotion2Mgr*&, std::_Sp_alloc_shared_tag<std::allocator<play_motion2::PlayMotion2Mgr> >, rclcpp::NodeOptions&)
+[play_motion2_node-18] #14   Object "/ws/install/play_motion2/lib/play_motion2/play_motion2_node", at 0x55de34a0ad09, in std::_Sp_counted_ptr_inplace<play_motion2::PlayMotion2Mgr, std::allocator<play_motion2::PlayMotion2Mgr>, (__gnu_cxx::_Lock_policy)2>::_Sp_counted_ptr_inplace<rclcpp::NodeOptions&>(std::allocator<play_motion2::PlayMotion2Mgr>, rclcpp::NodeOptions&)
+[ERROR] [add_analyzer-22]: process has died [pid 178, exit code -6, cmd '/opt/ros/humble/lib/diagnostic_aggregator/add_analyzer --ros-args -r __ns:=/twist_mux --params-file /ws/install/tiago_bringup/share/tiago_bringup/config/twist_mux/twist_mux_analyzers.yaml'].
+[play_motion2_node-18] #13   Object "/ws/install/play_motion2/lib/play_motion2/play_motion2_node", at 0x55de34a0b1db, in void std::allocator_traits<std::allocator<play_motion2::PlayMotion2Mgr> >::construct<play_motion2::PlayMotion2Mgr, rclcpp::NodeOptions&>(std::allocator<play_motion2::PlayMotion2Mgr>&, play_motion2::PlayMotion2Mgr*, rclcpp::NodeOptions&)
+[play_motion2_node-18] #12   Object "/ws/install/play_motion2/lib/play_motion2/play_motion2_node", at 0x55de34a0b504, in void __gnu_cxx::new_allocator<play_motion2::PlayMotion2Mgr>::construct<play_motion2::PlayMotion2Mgr, rclcpp::NodeOptions&>(play_motion2::PlayMotion2Mgr*, rclcpp::NodeOptions&)
+[ERROR] [twist_mux-19]: process has died [pid 169, exit code -6, cmd '/opt/ros/humble/lib/twist_mux/twist_mux --ros-args --params-file /tmp/launch_params_chz4ayyn --params-file /ws/install/tiago_bringup/share/tiago_bringup/config/twist_mux/twist_mux_locks.yaml --params-file /ws/install/tiago_bringup/share/tiago_bringup/config/twist_mux/twist_mux_topics.yaml -r /cmd_vel_out:=mobile_base_controller/cmd_vel_unstamped'].
+[ERROR] [bt_navigator-6]: process has died [pid 58, exit code -6, cmd '/opt/ros/humble/lib/nav2_bt_navigator/bt_navigator --ros-args --log-level info --ros-args -r __node:=bt_navigator --params-file /tmp/launch_params_b85crd0v -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [twist_marker-20]: process has died [pid 172, exit code -6, cmd '/opt/ros/humble/lib/twist_mux/twist_marker --ros-args --params-file /tmp/launch_params_h2_o9fxo -r /twist:=mobile_base_controller/cmd_vel_unstamped'].
+[ERROR] [map_server-10]: process has died [pid 66, exit code -6, cmd '/opt/ros/humble/lib/nav2_map_server/map_server --ros-args --log-level info --ros-args -r __node:=map_server --params-file /tmp/launch_params_2vci9k3a -r /tf:=tf -r /tf_static:=tf_static'].
+[play_motion2_node-18] #11   Object "/ws/install/play_motion2/lib/play_motion2/play_motion2_node", at 0x55de34a2e933, in play_motion2::PlayMotion2Mgr::PlayMotion2Mgr(rclcpp::NodeOptions const&)
+[play_motion2_node-18] #10   Object "/opt/ros/humble/lib/librclcpp_lifecycle.so", at 0x7f2756ada544, in rclcpp_lifecycle::LifecycleNode::LifecycleNode(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, rclcpp::NodeOptions const&, bool)
+[play_motion2_node-18] #9    Object "/opt/ros/humble/lib/librclcpp_lifecycle.so", at 0x7f2756ad94ca, in rclcpp_lifecycle::LifecycleNode::LifecycleNode(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, rclcpp::NodeOptions const&, bool)
+[play_motion2_node-18] #8    Object "/opt/ros/humble/lib/librclcpp.so", at 0x7f27569760d0, in rclcpp::node_interfaces::NodeBase::NodeBase(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::shared_ptr<rclcpp::Context>, rcl_node_options_s const&, bool, bool)
+[play_motion2_node-18] #7    Object "/opt/ros/humble/lib/librclcpp.so", at 0x7f275694f278, in rclcpp::exceptions::throw_from_rcl_error(int, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, rcutils_error_state_s const*, void (*)())
+[play_motion2_node-18] #6    Object "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30", at 0x7f275665b1fd, in std::rethrow_exception(std::__exception_ptr::exception_ptr)
+[play_motion2_node-18] #5    Object "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30", at 0x7f275665b276, in std::terminate()
+[play_motion2_node-18] #4    Object "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30", at 0x7f275665b20b, in 
+[play_motion2_node-18] #3    Object "/usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.30", at 0x7f275664fb9d, in 
+[play_motion2_node-18] #2    Object "/usr/lib/x86_64-linux-gnu/libc.so.6", at 0x7f275638c7f2, in abort
+[play_motion2_node-18] #1    Object "/usr/lib/x86_64-linux-gnu/libc.so.6", at 0x7f27563a6475, in raise
+[play_motion2_node-18] #0    Object "/usr/lib/x86_64-linux-gnu/libc.so.6", at 0x7f27563fa9bc, in pthread_kill
+[play_motion2_node-18] Aborted (Signal sent by tkill() 165 0)
+[ERROR] [behavior_server-5]: process has died [pid 56, exit code -6, cmd '/opt/ros/humble/lib/nav2_behaviors/behavior_server --ros-args --log-level info --ros-args -r __node:=behavior_server --params-file /tmp/launch_params_b85crd0v -r /tf:=tf -r /tf_static:=tf_static'].
+[ERROR] [robot_state_publisher-23]: process has died [pid 180, exit code -6, cmd '/opt/ros/humble/lib/robot_state_publisher/robot_state_publisher --ros-args --params-file /tmp/launch_params_4ixr9j86'].
+[spawner-16] 1790856460.138977 [86]    spawner: selected interface "lo" is not multicast-capable: disabling multicast
+[spawner-16] 1790856460.139132 [86]    spawner: Failed to find a free participant index for domain 86
+[spawner-16] [ERROR] [1790856460.139183575] [rmw_cyclonedds_cpp]: rmw_create_node: failed to create domain, error Error
+[spawner-16] 
+[spawner-16] >>> [rcutils|error_handling.c:108] rcutils_set_error_state()
+[spawner-16] This error state is being overwritten:
+[spawner-16] 
+[spawner-16]   'error not set, at ./src/rcl/node.c:263'
+[spawner-16] 
+[spawner-16] with this new error message:
+[spawner-16] 
+[spawner-16]   'rcl node's rmw handle is invalid, at ./src/rcl/node.c:415'
+[spawner-16] 
+[spawner-16] rcutils_reset_error() should be called after error handling to avoid this.
+[spawner-16] <<<
+[spawner-16] [ERROR] [1790856460.139233389] [rcl]: Failed to fini publisher for node: 1
+[spawner-16] Traceback (most recent call last):
+[spawner-16]   File "/opt/ros/humble/lib/controller_manager/spawner", line 33, in <module>
+[spawner-16]     sys.exit(load_entry_point('controller-manager==2.54.2', 'console_scripts', 'spawner')())
+[spawner-16]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/controller_manager/spawner.py", line 175, in main
+[spawner-16]     node = Node("spawner_" + controller_names[0])
+[spawner-16]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 175, in __init__
+[spawner-16]     self.__node = _rclpy.Node(
+[spawner-16] rclpy._rclpy_pybind11.RCLError: error creating node: rcl node's rmw handle is invalid, at ./src/rcl/node.c:415
+[spawner-17] 1790856460.141902 [86]    spawner: selected interface "lo" is not multicast-capable: disabling multicast
+[spawner-17] 1790856460.142067 [86]    spawner: Failed to find a free participant index for domain 86
+[spawner-17] [ERROR] [1790856460.142126119] [rmw_cyclonedds_cpp]: rmw_create_node: failed to create domain, error Error
+[spawner-17] 
+[spawner-17] >>> [rcutils|error_handling.c:108] rcutils_set_error_state()
+[spawner-17] This error state is being overwritten:
+[spawner-17] 
+[spawner-17]   'error not set, at ./src/rcl/node.c:263'
+[spawner-17] 
+[spawner-17] with this new error message:
+[spawner-17] 
+[spawner-17]   'rcl node's rmw handle is invalid, at ./src/rcl/node.c:415'
+[spawner-17] 
+[spawner-17] rcutils_reset_error() should be called after error handling to avoid this.
+[spawner-17] <<<
+[spawner-17] [ERROR] [1790856460.142179597] [rcl]: Failed to fini publisher for node: 1
+[spawner-17] Traceback (most recent call last):
+[spawner-17]   File "/opt/ros/humble/lib/controller_manager/spawner", line 33, in <module>
+[spawner-17]     sys.exit(load_entry_point('controller-manager==2.54.2', 'console_scripts', 'spawner')())
+[spawner-17]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/controller_manager/spawner.py", line 175, in main
+[spawner-17]     node = Node("spawner_" + controller_names[0])
+[spawner-17]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 175, in __init__
+[spawner-17]     self.__node = _rclpy.Node(
+[spawner-17] rclpy._rclpy_pybind11.RCLError: error creating node: rcl node's rmw handle is invalid, at ./src/rcl/node.c:415
+[spawner-15] 1790856460.143965 [86]    spawner: selected interface "lo" is not multicast-capable: disabling multicast
+[spawner-15] 1790856460.144130 [86]    spawner: Failed to find a free participant index for domain 86
+[spawner-15] [ERROR] [1790856460.144186981] [rmw_cyclonedds_cpp]: rmw_create_node: failed to create domain, error Error
+[spawner-15] 
+[spawner-15] >>> [rcutils|error_handling.c:108] rcutils_set_error_state()
+[spawner-15] This error state is being overwritten:
+[spawner-15] 
+[spawner-15]   'error not set, at ./src/rcl/node.c:263'
+[spawner-15] 
+[spawner-15] with this new error message:
+[spawner-15] 
+[spawner-15]   'rcl node's rmw handle is invalid, at ./src/rcl/node.c:415'
+[spawner-15] 
+[spawner-15] rcutils_reset_error() should be called after error handling to avoid this.
+[spawner-15] <<<
+[spawner-15] [ERROR] [1790856460.144248861] [rcl]: Failed to fini publisher for node: 1
+[spawner-15] Traceback (most recent call last):
+[spawner-15]   File "/opt/ros/humble/lib/controller_manager/spawner", line 33, in <module>
+[spawner-15]     sys.exit(load_entry_point('controller-manager==2.54.2', 'console_scripts', 'spawner')())
+[spawner-15]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/controller_manager/spawner.py", line 175, in main
+[spawner-15]     node = Node("spawner_" + controller_names[0])
+[spawner-15]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 175, in __init__
+[spawner-15]     self.__node = _rclpy.Node(
+[spawner-15] rclpy._rclpy_pybind11.RCLError: error creating node: rcl node's rmw handle is invalid, at ./src/rcl/node.c:415
+[spawner-14] 1790856460.163302 [86]    spawner: selected interface "lo" is not multicast-capable: disabling multicast
+[spawner-14] 1790856460.163459 [86]    spawner: Failed to find a free participant index for domain 86
+[spawner-14] [ERROR] [1790856460.163515865] [rmw_cyclonedds_cpp]: rmw_create_node: failed to create domain, error Error
+[spawner-14] 
+[spawner-14] >>> [rcutils|error_handling.c:108] rcutils_set_error_state()
+[spawner-14] This error state is being overwritten:
+[spawner-14] 
+[spawner-14]   'error not set, at ./src/rcl/node.c:263'
+[spawner-14] 
+[spawner-14] with this new error message:
+[spawner-14] 
+[spawner-14]   'rcl node's rmw handle is invalid, at ./src/rcl/node.c:415'
+[spawner-14] 
+[spawner-14] rcutils_reset_error() should be called after error handling to avoid this.
+[spawner-14] <<<
+[spawner-14] [ERROR] [1790856460.163568557] [rcl]: Failed to fini publisher for node: 1
+[spawner-14] Traceback (most recent call last):
+[spawner-14]   File "/opt/ros/humble/lib/controller_manager/spawner", line 33, in <module>
+[spawner-14]     sys.exit(load_entry_point('controller-manager==2.54.2', 'console_scripts', 'spawner')())
+[spawner-14]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/controller_manager/spawner.py", line 175, in main
+[spawner-14]     node = Node("spawner_" + controller_names[0])
+[spawner-14]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 175, in __init__
+[spawner-14]     self.__node = _rclpy.Node(
+[spawner-14] rclpy._rclpy_pybind11.RCLError: error creating node: rcl node's rmw handle is invalid, at ./src/rcl/node.c:415
+[spawn_entity.py-13] 1790856460.177942 [86]    python3: selected interface "lo" is not multicast-capable: disabling multicast
+[spawn_entity.py-13] 1790856460.178113 [86]    python3: Failed to find a free participant index for domain 86
+[spawn_entity.py-13] [ERROR] [1790856460.180035348] [rmw_cyclonedds_cpp]: rmw_create_node: failed to create domain, error Error
+[spawn_entity.py-13] 
+[spawn_entity.py-13] >>> [rcutils|error_handling.c:108] rcutils_set_error_state()
+[spawn_entity.py-13] This error state is being overwritten:
+[spawn_entity.py-13] 
+[spawn_entity.py-13]   'error not set, at ./src/rcl/node.c:263'
+[spawn_entity.py-13] 
+[spawn_entity.py-13] with this new error message:
+[spawn_entity.py-13] 
+[spawn_entity.py-13]   'rcl node's rmw handle is invalid, at ./src/rcl/node.c:415'
+[spawn_entity.py-13] 
+[spawn_entity.py-13] rcutils_reset_error() should be called after error handling to avoid this.
+[spawn_entity.py-13] <<<
+[spawn_entity.py-13] [ERROR] [1790856460.180110542] [rcl]: Failed to fini publisher for node: 1
+[spawn_entity.py-13] Traceback (most recent call last):
+[spawn_entity.py-13]   File "/opt/ros/humble/lib/gazebo_ros/spawn_entity.py", line 372, in <module>
+[spawn_entity.py-13]     main()
+[spawn_entity.py-13]   File "/opt/ros/humble/lib/gazebo_ros/spawn_entity.py", line 365, in main
+[spawn_entity.py-13]     spawn_entity_node = SpawnEntityNode(args_without_ros)
+[spawn_entity.py-13]   File "/opt/ros/humble/lib/gazebo_ros/spawn_entity.py", line 52, in __init__
+[spawn_entity.py-13]     super().__init__('spawn_entity')
+[spawn_entity.py-13]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 175, in __init__
+[spawn_entity.py-13]     self.__node = _rclpy.Node(
+[spawn_entity.py-13] rclpy._rclpy_pybind11.RCLError: error creating node: rcl node's rmw handle is invalid, at ./src/rcl/node.c:415
+[ERROR] [spawner-16]: process has died [pid 80, exit code 1, cmd '/opt/ros/humble/lib/controller_manager/spawner torso_controller --controller-manager controller_manager --param-file /ws/install/tiago_controller_configuration/share/tiago_controller_configuration/config/torso_controller.yaml --ros-args'].
+[ERROR] [play_motion2_node-18]: process has died [pid 165, exit code -6, cmd '/ws/install/play_motion2/lib/play_motion2/play_motion2_node --ros-args --params-file /ws/install/tiago_bringup/share/tiago_bringup/config/motions/tiago_motions_no-arm.yaml --params-file /ws/install/tiago_bringup/share/tiago_bringup/config/motion_planner/motion_planner_no-arm.yaml --params-file /tmp/launch_params_tikgzc0d -r /play_motion2_executor/robot_description:=/robot_description -r /play_motion2_executor/robot_description_semantic:=/robot_description_semantic'].
+[joystick_relay.py-21] 1790856460.241156 [86] joystick_r: selected interface "lo" is not multicast-capable: disabling multicast
+[joystick_relay.py-21] 1790856460.241286 [86] joystick_r: Failed to find a free participant index for domain 86
+[joystick_relay.py-21] [ERROR] [1790856460.241333912] [rmw_cyclonedds_cpp]: rmw_create_node: failed to create domain, error Error
+[joystick_relay.py-21] 
+[joystick_relay.py-21] >>> [rcutils|error_handling.c:108] rcutils_set_error_state()
+[joystick_relay.py-21] This error state is being overwritten:
+[joystick_relay.py-21] 
+[joystick_relay.py-21]   'error not set, at ./src/rcl/node.c:263'
+[joystick_relay.py-21] 
+[joystick_relay.py-21] with this new error message:
+[joystick_relay.py-21] 
+[joystick_relay.py-21]   'rcl node's rmw handle is invalid, at ./src/rcl/node.c:415'
+[joystick_relay.py-21] 
+[joystick_relay.py-21] rcutils_reset_error() should be called after error handling to avoid this.
+[joystick_relay.py-21] <<<
+[joystick_relay.py-21] [ERROR] [1790856460.241370437] [rcl]: Failed to fini publisher for node: 1
+[joystick_relay.py-21] Traceback (most recent call last):
+[joystick_relay.py-21]   File "/opt/ros/humble/lib/twist_mux/joystick_relay.py", line 302, in <module>
+[joystick_relay.py-21]     main()
+[joystick_relay.py-21]   File "/opt/ros/humble/lib/twist_mux/joystick_relay.py", line 290, in main
+[joystick_relay.py-21]     node = JoystickRelay()
+[joystick_relay.py-21]   File "/opt/ros/humble/lib/twist_mux/joystick_relay.py", line 220, in __init__
+[joystick_relay.py-21]     super().__init__('joystick_relay')
+[joystick_relay.py-21]   File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/node.py", line 175, in __init__
+[joystick_relay.py-21]     self.__node = _rclpy.Node(
+[joystick_relay.py-21] rclpy._rclpy_pybind11.RCLError: error creating node: rcl node's rmw handle is invalid, at ./src/rcl/node.c:415
+[ERROR] [spawner-17]: process has died [pid 83, exit code 1, cmd '/opt/ros/humble/lib/controller_manager/spawner head_controller --controller-manager controller_manager --param-file /ws/install/tiago_controller_configuration/share/tiago_controller_configuration/config/head_controller.yaml --ros-args'].
+[ERROR] [spawner-15]: process has died [pid 77, exit code 1, cmd '/opt/ros/humble/lib/controller_manager/spawner joint_state_broadcaster --controller-manager controller_manager --param-file /ws/install/tiago_controller_configuration/share/tiago_controller_configuration/config/joint_state_broadcaster.yaml --ros-args'].
+[ERROR] [spawner-14]: process has died [pid 74, exit code 1, cmd '/opt/ros/humble/lib/controller_manager/spawner mobile_base_controller --controller-manager controller_manager --param-file /ws/install/pmb2_controller_configuration/share/pmb2_controller_configuration/config/mobile_base_controller_public_sim.yaml --ros-args -r __ns:=/'].
+[ERROR] [joystick_relay.py-21]: process has died [pid 176, exit code 1, cmd '/opt/ros/humble/lib/twist_mux/joystick_relay.py --ros-args --params-file /tmp/launch_params__10_zg99 --params-file /ws/install/tiago_bringup/share/tiago_bringup/config/twist_mux/joystick_pmb2.yaml -r joy_vel_in:=input_joy/cmd_vel -r joy_vel_out:=joy_vel'].
+[ERROR] [spawn_entity.py-13]: process has died [pid 72, exit code 1, cmd '/opt/ros/humble/lib/gazebo_ros/spawn_entity.py -topic robot_description -entity tiago --ros-args'].
+[gzserver-1] 1790856460.478086 [86]   gzserver: selected interface "lo" is not multicast-capable: disabling multicast
+[gzserver-1] 1790856460.478408 [86]   gzserver: Failed to find a free participant index for domain 86
+[gzserver-1] [ERROR] [1790856460.478563569] [rmw_cyclonedds_cpp]: rmw_create_node: failed to create domain, error Error
+[gzserver-1] 
+[gzserver-1] >>> [rcutils|error_handling.c:108] rcutils_set_error_state()
+[gzserver-1] This error state is being overwritten:
+[gzserver-1] 
+[gzserver-1]   'error not set, at ./src/rcl/node.c:263'
+[gzserver-1] 
+[gzserver-1] with this new error message:
+[gzserver-1] 
+[gzserver-1]   'rcl node's rmw handle is invalid, at ./src/rcl/node.c:415'
+[gzserver-1] 
+[gzserver-1] rcutils_reset_error() should be called after error handling to avoid this.
+[gzserver-1] <<<
+[gzserver-1] [ERROR] [1790856460.478725824] [rcl]: Failed to fini publisher for node: 1
+[gzserver-1] terminate called after throwing an instance of 'rclcpp::exceptions::RCLError'
+[gzserver-1]   what():  failed to initialize rcl node: rcl node's rmw handle is invalid, at ./src/rcl/node.c:415
+[ERROR] [gzserver-1]: process has died [pid 48, exit code -6, cmd 'gzserver -s libgazebo_ros_init.so -s libgazebo_ros_factory.so /ws/install/pal_gazebo_worlds/share/pal_gazebo_worlds/worlds/home.world --ros-args --param publish_rate:=200.0'].
+[lifecycle_manager-12] [INFO] [1790856461.716011385] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856461.844548293] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856463.716295236] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856463.844692393] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856465.716445097] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856465.844846880] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856467.716573635] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856467.844981528] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856469.716720243] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856469.845132578] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856471.716858988] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856471.845709914] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856473.716977047] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856473.845849457] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856475.717106170] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856475.846292404] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856477.717242106] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856477.846421789] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856479.717369208] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856479.846560708] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856481.717537600] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856481.846700430] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856483.717674328] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856483.846829129] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856485.717804645] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856485.846951068] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856487.717934306] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856487.847072439] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856489.718072214] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856489.847196713] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856491.718197888] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856491.847323781] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856493.718317058] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856493.847556489] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856495.718440753] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856495.847710794] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856497.718566384] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856497.847859373] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856499.718697281] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856499.848007988] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856501.718819719] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856501.848163279] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856503.718957161] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856503.848289771] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856505.719066095] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856505.848414169] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856507.719240878] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856507.848541993] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856509.719367357] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856509.848686187] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856511.719489601] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856511.848822066] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856513.719611622] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856513.848937665] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856515.719700013] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856515.849068686] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856517.719812960] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856517.849359775] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856519.719932386] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856519.849483186] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856521.720060249] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856521.849608922] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856523.720180498] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856523.849703070] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856525.720299540] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856525.849827577] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856527.720430445] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856527.849959424] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856529.720560211] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856529.850505649] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856531.720698118] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856531.850630372] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856533.720812148] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856533.850765783] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856535.720988237] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856535.850889541] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856537.721122092] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856537.851011297] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856539.721236129] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856539.851129826] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856541.721523742] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856541.851249767] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856543.721642431] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856543.851372432] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856545.721782979] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856545.851629793] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...
+[lifecycle_manager-12] [INFO] [1790856547.721931614] [lifecycle_manager_localization]: Waiting for service map_server/get_state...
+[lifecycle_manager-9] [INFO] [1790856547.851775597] [lifecycle_manager_navigation]: Waiting for service behavior_server/get_state...

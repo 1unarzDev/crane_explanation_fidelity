@@ -11,6 +11,7 @@ mkdir "$output_dir"
 set +u
 source /ws/install/setup.bash
 set -u
+export CYCLONEDDS_URI=file:///acquisition/cyclonedds.xml
 export HEXAR_EPISODE_SEED="$seed" RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
 export PATH=/acquisition/bin:$PATH LIBGL_ALWAYS_SOFTWARE=1 GAZEBO_MODEL_DATABASE_URI=''
 # Each run starts fresh processes; reused qualification containers are disallowed by host runner.
@@ -32,7 +33,9 @@ cleanup() {
 trap cleanup EXIT
 # Readiness is measured, never inferred from a sleep.
 python3 /acquisition/wait_ready.py --timeout 90 > "$output_dir/readiness.log" 2>&1
-ros2 bag record --include-hidden-topics -o "$output_dir/raw" /clock /rosout /tf /tf_static /scan_raw /mobile_base_controller/odom /amcl_pose /task_info /joy_priority /power/is_charging /cmd_vel /mobile_base_controller/cmd_vel_out /navigate_to_pose/_action/status /hexar_acquisition/navigation_goal /hexar_acquisition/navigation_event > "$output_dir/recorder.log" 2>&1 &
+ros2 bag record --include-hidden-topics -o "$output_dir/raw" /clock /rosout /tf /tf_static /scan_raw /mobile_base_controller/odom /amcl_pose /task_info /joy_priority /power/is_charging /cmd_vel /mobile_base_controller/cmd_vel_out /navigate_to_pose/_action/status /hexar_acquisition/navigation_goal /hexar_acquisition/navigation_event /parameter_events /mobile_base_controller/cmd_vel_unstamped > "$output_dir/recorder.log" 2>&1 &
 recorder_pid=$!
+python3 /acquisition/controller_probe.py --output "$output_dir/controller_start.json"
 python3 /acquisition/episode_driver.py --family "$family" --seed "$seed" --timeout 35 --output "$output_dir/episode.json" > "$output_dir/driver.log" 2>&1
 python3 /acquisition/probe_ros.py --duration 5 --output "$output_dir/runtime_probe.json"
+python3 /acquisition/controller_probe.py --output "$output_dir/controller_end.json"

@@ -12,7 +12,7 @@ PACKET_KEYS={'schema','question','task_window','evidence','availability','diagno
 ROLES={'navigation_logs','navigation_outcomes','manual_state','charging_state','recorded_task',
        'odometry_observation','command_observation','requested_goal','action_status_observation','observed_action_window'}
 SOURCE_KEYS={'indicator_semantics','localization_semantics','event_scope','timing_scope','missingness',
-             'controller_configuration','controller_source_scope','navigation_task_scope','outcome_measurement_scope','motion_window_scope'}
+             'controller_configuration','controller_runtime_observations','controller_source_scope','navigation_task_scope','outcome_measurement_scope','motion_window_scope'}
 ADMIN_KEYS={'method','method_identity','family','family_hidden','seed','seed_hidden','expected','expected_winner',
             'prior_label','prior_labels','development_result','alpha_outcome','gold','sampling_hidden','eligible_for_confirmation'}
 

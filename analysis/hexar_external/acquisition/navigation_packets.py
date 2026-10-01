@@ -10,7 +10,7 @@ from .navigation_context import QUESTIONS, project
 from .motion_context import extend as motion_extend
 
 
-def build(events, motion_events, question_id, condition, use_observed_action_window=False):
+def build(events, motion_events, question_id, condition, use_observed_action_window=False, controller_snapshots=None):
     # Historical modules use repository-local absolute imports. Resolve that
     # existing interface without editing the preserved development pipeline.
     legacy = str(Path(__file__).resolve().parents[1])
@@ -39,6 +39,9 @@ def build(events, motion_events, question_id, condition, use_observed_action_win
             'remain explicit. Driver observations are software protocol evidence, '
             'not physical arrival. Command summaries retain their recording '
             'scope; no receipt-clock conversion or TF transform is inferred.')
+    if controller_snapshots is not None:
+        from .controller_context import extend as controller_extend
+        packet=controller_extend(packet,controller_snapshots,condition)
     return packet, dict(legacy_closure=closure, packet_sha256=canonical_sha256(packet),
                         motion_mask_applied_before_summary=True,
                         observed_action_window_projection=use_observed_action_window,
