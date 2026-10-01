@@ -5061,3 +5061,29 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   p-values and unfavorable/inconclusive results remain required. Scientific
   authorization, model tools/rendering/capacity, complete turn accounting and
   immutable runtime/durability remain open. See the dated installed-client egress record.
+
+
+## 2026-09-30 — bind static repository imports before development session admission
+
+- **Gap:** coordinator v5's six-file identity excludes transitive repository imports
+  and the namespace wrapper launched by executor path. Full dependency binding was
+  already open. Preserve v5, existing plans and their bounded observation claims.
+- **Candidate:** coordinator v6 changes source discovery/owner schema only. A bounded
+  AST walker binds static flat repository imports plus explicit coordinator/helper/
+  wrapper roots (30 current files). Symlinks/nonregular files and unsupported local
+  import layouts fail closed; stdlib/third-party packages are outside this mapping.
+  Runtime/parser/search-path identities, dynamic imports, loaded-code identity and
+  inspection/execution races remain open. No immutable-runtime claim follows.
+- **Evidence:** 49 distinct checks across two invocations (46, 3) pass. One retained
+  shared-plan local B0–B4 observation preserves actual terminal owners and rejects
+  restart. B0/B1 flush 229 bytes each; B2/B3/B4 flush 1,152 and return fixed 42 output.
+  Three services absent; retain CPU 31.503/33.228/35.197 ms without method effects.
+  Two copied-source probes leave v5 hashes unchanged but cause v6 admission rejection
+  before ownership. Only copied inert comments change; modified code is not executed.
+- **Boundary:** installed observer v9 and study callers do not migrate. Scientific
+  authorization, full model tools/rendering/capacity, whole-turn costs, runtime/package
+  immutability and durability remain open. No model/annotation call, score, method-key
+  join, acquisition, alpha spending or P11 freeze. N=0, nineteen open conditions,
+  failed combined support and unanswered reopening remain controlling. Five-method
+  prospective episode effects/intervals/corrected p-values and unfavorable/inconclusive
+  outcomes remain required. See the dated repository-source-binding record.

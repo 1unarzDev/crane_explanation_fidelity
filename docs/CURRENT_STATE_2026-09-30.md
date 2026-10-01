@@ -1,5 +1,24 @@
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
+## Static repository-source addendum after `7cbee314` — 2026-09-30
+
+A [separate coordinator v6](REPOSITORY_SOURCE_BINDING_2026-09-30.md) binds transitive
+static repository imports and the explicitly path-launched namespace wrapper, expanding
+six selected hashes to 30 files without changing local tool/CPU/response implementations.
+Forty-nine distinct checks pass across two invocations (46, 3). A retained shared-plan
+local B0–B4 observation reaches actual terminal owners and rejects restart; B0/B1 flush
+229 bytes each, B2/B3/B4 1,152 with exact fixed computation output. Three services absent;
+CPU 31.503/33.228/35.197 ms is infrastructure evidence only. Two inert copied-source
+drift probes leave v5's mapping unchanged but cause v6 rejection before ownership.
+Original files/plans/caches remain unchanged. This binds static flat repository code,
+not installed packages, dynamic imports, loaded-code/search-path identity, hashing/
+execution races or immutable runtime. Installed observer v9 still selects v5; study
+callers do not migrate. Scientific authorization, complete model-turn costs, full model
+tools/rendering/capacity and durable execution remain open. No semantic/annotation
+call, score, acquisition, alpha allocation or P11 freeze; N=0, nineteen open conditions,
+zero component hash mismatches and unanswered measurement reopening remain. Alpha,
+freshness and required five-method episode-level comparative reporting are unchanged.
+
 ## Installed-client response-egress addendum after `e1ecd8b4` — 2026-09-30
 
 A [separate observer v9/writer v3/coordinator v5](INSTALLED_CLIENT_RESPONSE_EGRESS_2026-09-30.md)
