@@ -325,6 +325,8 @@ def audit(base=BASE, root=ROOT, stage="semantic"):
     errors.extend(admission_errors(docs, root))
     from analysis.hexar_external.confirmatory_v1.motion_policy_admission import admission_errors as motion_errors
     errors.extend(motion_errors(docs, root))
+    from analysis.hexar_external.confirmatory_v1.provider_binding_admission import admission_errors as provider_errors
+    errors.extend(provider_errors(docs, root))
     if comparator.get('execution_adapter_qualified') is not True:
         errors.append('execution: no qualified confirmatory exactly-once adapter')
     for method in ('baseline',):

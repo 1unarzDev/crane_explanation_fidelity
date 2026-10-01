@@ -16,9 +16,11 @@ def main():
     from std_msgs.msg import Bool, String
     from gazebo_msgs.srv import SpawnEntity, SetEntityState, GetEntityState
     from rclpy.parameter import Parameter
-    from rcl_interfaces.srv import SetParameters
+    from rcl_interfaces.srv import SetParameters,GetParameters
     from std_srvs.srv import Empty
     from sampling import sample
+    from reset_geometry import review as review_reset
+    from scenario_geometry import trajectory,position as trajectory_position
     from gazebo_msgs.msg import EntityState
     from action_msgs.msg import GoalStatus
     ap = argparse.ArgumentParser()
@@ -67,21 +69,24 @@ def main():
     reset_deadline = time.monotonic()+3
     consecutive_in_tolerance = 0
     reset_error = float('inf')
+    reset_heading_error = float('inf')
     while time.monotonic() < reset_deadline:
         future = ground_truth.call_async(verify)
         rclpy.spin_until_future_complete(node,future,timeout_sec=.5)
         if future.done() and future.result().success:
-            actual = future.result().state.pose.position
-            reset_error = math.hypot(actual.x-start_x,actual.y-start_y)
-            reset_measurements.append({'x':actual.x,'y':actual.y,'error_m':reset_error})
-            consecutive_in_tolerance = consecutive_in_tolerance+1 if reset_error<=.05 else 0
+            actual = future.result().state.pose
+            p,q = actual.position,actual.orientation
+            measurement=review_reset((p.x,p.y,p.z),(q.x,q.y,q.z,q.w),(start_x,start_y),sampling['start_yaw'])
+            reset_error=measurement['error_m'];reset_heading_error=measurement['heading_error_rad']
+            reset_measurements.append(measurement)
+            consecutive_in_tolerance = consecutive_in_tolerance+1 if measurement['in_tolerance'] else 0
             if consecutive_in_tolerance>=3:
                 break
         wait_deadline=time.monotonic()+.1
         while time.monotonic()<wait_deadline:
             rclpy.spin_once(node,timeout_sec=.02)
     if consecutive_in_tolerance<3:
-        raise RuntimeError('technical invalidity: measured reset position outside tolerance over bounded fresh-state window')
+        raise RuntimeError('technical invalidity: measured reset position/heading outside tolerance over bounded fresh-state window')
     initial = PoseWithCovarianceStamped()
     initial.header.frame_id = 'map'
     initial.header.stamp = node.get_clock().now().to_msg()
@@ -94,6 +99,7 @@ def main():
     while time.monotonic()<reset_settle_deadline:
         rclpy.spin_once(node,timeout_sec=.1)
     localization_parameter_results = []
+    localization_parameter_observations = []
     if args.family == 'localization':
         parameters = node.create_client(SetParameters, '/amcl/set_parameters')
         if not parameters.wait_for_service(timeout_sec=10):
@@ -102,10 +108,21 @@ def main():
         request.parameters = [p.to_parameter_msg() for p in [Parameter('max_beams',value=5), Parameter('z_hit',value=.01), Parameter('z_rand',value=.99), Parameter('update_min_d',value=.01), Parameter('update_min_a',value=.01)]]
         future = parameters.call_async(request)
         rclpy.spin_until_future_complete(node,future,timeout_sec=10)
-        if not future.done() or not all(r.successful for r in future.result().results):
+        if not future.done() or len(future.result().results)!=len(request.parameters) or not all(r.successful for r in future.result().results):
             raise RuntimeError('technical invalidity: declared localization sensor model intervention failed')
         localization_parameter_results = [r.successful for r in future.result().results]
+        readback=node.create_client(GetParameters,'/amcl/get_parameters')
+        if not readback.wait_for_service(timeout_sec=10):
+            raise RuntimeError('technical invalidity: AMCL intervention readback unavailable')
+        get=GetParameters.Request();get.names=[p.name for p in request.parameters]
+        fetched=readback.call_async(get);rclpy.spin_until_future_complete(node,fetched,timeout_sec=10)
+        if not fetched.done() or len(fetched.result().values)!=len(request.parameters) or any(actual!=expected.value for actual,expected in zip(fetched.result().values,request.parameters)):
+            raise RuntimeError('technical invalidity: AMCL intervention readback differs from requested configuration')
+        localization_parameter_observations=[dict(name=name,type=value.type,integer_value=value.integer_value,double_value=value.double_value) for name,value in zip(get.names,fetched.result().values)]
 
+    intervention_observations=[]
+    dynamic_profile=trajectory(args.seed,(start_x,start_y),(target_x,target_y)) if args.family=='dynamic_env' else None
+    trajectory_start_ns=None
     if args.family in ("obstacle", "dynamic_env"):
         spawn = node.create_client(SpawnEntity, "/spawn_entity")
         if not spawn.wait_for_service(timeout_sec=10):
@@ -121,8 +138,58 @@ def main():
         rclpy.spin_until_future_complete(node, future, timeout_sec=15)
         if not future.done() or not future.result().success:
             raise RuntimeError("technical invalidity: intervention spawn failed")
-    charging.publish(Bool(data=args.family == "charging"))
-    joystick.publish(Bool(data=args.family == "manual_joystick"))
+        intervention_verify=GetEntityState.Request();intervention_verify.name='hexar_intervention'
+        def observe_intervention(requested_xyz,stage):
+            observed=ground_truth.call_async(intervention_verify)
+            rclpy.spin_until_future_complete(node,observed,timeout_sec=2)
+            if not observed.done() or not observed.result().success:
+                raise RuntimeError('technical invalidity: intervention state observation unavailable')
+            actual=observed.result().state.pose.position
+            xyz=[actual.x,actual.y,actual.z]
+            if any(not math.isfinite(v) for v in xyz) or math.dist(xyz,requested_xyz)>.05:
+                raise RuntimeError('technical invalidity: observed intervention position differs from requested pose')
+            intervention_observations.append(dict(stage=stage,requested_xyz=requested_xyz,observed_xyz=xyz,
+                observed_sim_stamp_ns=node.get_clock().now().nanoseconds,
+                source='Gazebo GetEntityState world pose; technical-only hidden intervention observation'))
+        observe_intervention([req.initial_pose.position.x,req.initial_pose.position.y,req.initial_pose.position.z],'spawn')
+        if dynamic_profile:
+            # Deliver and measure the moving-object configuration before goal
+            # acceptance, avoiding exclusions driven by early navigation results.
+            trajectory_start_ns=node.get_clock().now().nanoseconds
+            for target_elapsed in (0.,.5,1.):
+                deadline=time.monotonic()+5
+                while (node.get_clock().now().nanoseconds-trajectory_start_ns)/1e9<target_elapsed and time.monotonic()<deadline:
+                    rclpy.spin_once(node,timeout_sec=.05)
+                elapsed_sim=(node.get_clock().now().nanoseconds-trajectory_start_ns)/1e9
+                if elapsed_sim<target_elapsed:
+                    raise RuntimeError('technical invalidity: native simulation clock stalled during dynamic prelude')
+                xyz=trajectory_position(dynamic_profile,elapsed_sim)
+                move=SetEntityState.Request();move.state.name='hexar_intervention'
+                move.state.pose.position.x,move.state.pose.position.y,move.state.pose.position.z=xyz
+                move.state.pose.orientation.w=1.
+                observed_move=reposition.call_async(move)
+                rclpy.spin_until_future_complete(node,observed_move,timeout_sec=2)
+                if not observed_move.done() or not observed_move.result().success:
+                    raise RuntimeError('technical invalidity: dynamic prelude motion was not accepted')
+                observe_intervention(xyz,'dynamic_prelude')
+    indicator_consumers={}
+    discovery_deadline=time.monotonic()+10
+    for topic in ('/power/is_charging','/joy_priority'):
+        consumers=[]
+        while time.monotonic()<discovery_deadline:
+            consumers=node.get_subscriptions_info_by_topic(topic)
+            if any(info.node_name=='twist_mux' and info.topic_type=='std_msgs/msg/Bool' for info in consumers):break
+            rclpy.spin_once(node,timeout_sec=.1)
+        if not any(info.node_name=='twist_mux' and info.topic_type=='std_msgs/msg/Bool' for info in consumers):
+            raise RuntimeError('technical invalidity: indicator has no observed actual twist_mux consumer')
+        indicator_consumers[topic]=[dict(node_name=info.node_name,node_namespace=info.node_namespace,topic_type=info.topic_type) for info in consumers]
+    # Publish the configured states before any navigation outcome can occur.
+    for _ in range(3):
+        charging.publish(Bool(data=args.family == 'charging'))
+        joystick.publish(Bool(data=args.family == 'manual_joystick'))
+        if args.family=='manual_joystick':joy_vel.publish(Twist())
+        deadline=time.monotonic()+.1
+        while time.monotonic()<deadline:rclpy.spin_once(node,timeout_sec=.02)
     task = {"task_id": "independently-generated-navigation", "instruction": "navigate to the requested map-frame pose", "task_status": "running", "task_error_msg": "",
             "skill_sequence": [{"skill": "navigate_to_zone", "params": {"location": "requested map-frame pose"}, "status": "running", "error_msg": ""}]}
     subscription_deadline = time.monotonic() + 10
@@ -198,9 +265,8 @@ def main():
             request = SetEntityState.Request()
             request.state = EntityState()
             request.state.name = "hexar_intervention"
-            request.state.pose.position.x = (start_x+target_x)/2
-            request.state.pose.position.y = (start_y+target_y)/2 + .8 * math.sin(elapsed)
-            request.state.pose.position.z = .6
+            xyz=trajectory_position(dynamic_profile,(node.get_clock().now().nanoseconds-trajectory_start_ns)/1e9)
+            request.state.pose.position.x,request.state.pose.position.y,request.state.pose.position.z=xyz
             request.state.pose.orientation.w = 1.
             move_futures.append(mover.call_async(request))
             move_count = int(elapsed * 2)
@@ -227,7 +293,13 @@ def main():
         rclpy.spin_once(node, timeout_sec=.1)
     report = {"schema": "hexar-development-episode-runtime/v1", "phase": "development_only", "family_hidden": args.family,
               "sampling_hidden": sampling, "measured_reset_error_m": reset_error, "reset_measurements_hidden": reset_measurements,
+              "measured_reset_heading_error_rad": reset_heading_error,
+              "intervention_observations_hidden": intervention_observations,
+              "dynamic_trajectory_hidden": dynamic_profile,
+              "indicator_consumers_hidden": indicator_consumers,
+              "indicator_prelude_publications_per_topic": 3,
               "localization_parameters_accepted": localization_parameter_results,
+              "localization_parameters_observed_hidden": localization_parameter_observations,
               "nomotion_update_responses": sum(f.done() and f.result() is not None for f in no_motion_futures),
               "seed_hidden": args.seed, "goal_hidden": [target_x, target_y], "accepted": True, "terminal_action_status": status,
               "timeout": timed_out, "localization_intervention_applied": localization_applied,
