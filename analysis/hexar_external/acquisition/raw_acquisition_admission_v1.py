@@ -16,6 +16,7 @@ from ..confirmatory_v1.journal import fingerprint
 from ..confirmatory_v1.seal_cohort import committed
 from .raw_schedule_v1 import validate_plan
 from .raw_archive_v1 import digest,rooted,read
+from .bound_cli_guard_v1 import verify_allocations
 
 BASE='manifests/hexar_external/confirmatory_v1'
 CONFIG_SCHEMA='hexar-frozen-raw-acquisition-runtime/v1'
@@ -25,7 +26,7 @@ QUALIFICATION_CASES=('committed_freeze_required','raw_requires_no_h1_outcome',
     'missing_bag_invalid_export','conservative_crash_no_replay','fixed_family_reserves',
     'full_disposition_binding','immutable_seal_resume')
 CRITICAL_FILES=tuple('analysis/hexar_external/'+p for p in (
-    'acquisition/raw_acquisition_admission_v1.py','acquisition/raw_schedule_v1.py',
+    'acquisition/raw_acquisition_admission_v1.py','acquisition/raw_schedule_v1.py','acquisition/bound_cli_guard_v1.py',
     'acquisition/raw_runtime_v1.py','acquisition/raw_review_v1.py','acquisition/raw_archive_v1.py',
     'acquisition/raw_recovery_v1.py','acquisition/raw_cohort_pipeline_v1.py',
     'acquisition/project_raw_episode_v1.py','acquisition/native_review_core_v1.py',
@@ -108,6 +109,7 @@ def load_context(root,base=BASE):
     for original,expected_hash in sources.items():
         relative=Path(original).relative_to('analysis/hexar_external/acquisition')
         if digest(rooted(bank,relative))!=expected_hash:raise ValueError('executed acquisition source bytes changed')
+    verify_allocations(bank/'run_bound_episode_v1.sh',plan['records'],'raw_confirmation',digest(freeze_path))
     native=config['native_reader']
     if set(native)!={'path','sha256'} or hashes.get(native['path'])!=native['sha256'] or digest(rooted(root,native['path']))!=native['sha256']:
         raise ValueError('native reader is not bound in complete scientific/runtime freeze')

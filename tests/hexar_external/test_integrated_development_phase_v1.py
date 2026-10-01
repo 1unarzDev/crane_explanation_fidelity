@@ -12,7 +12,7 @@ from analysis.hexar_external.acquisition.qualify_integrated_raw_v1 import contex
 def test_development_schedule_has_distinct_seed_namespace_and_permanent_ids():
     raw=make_plan('a'*64,1,1);dev=make_plan('a'*64,1,1,phase='development')
     assert validate_plan(dev) and dev['phase']=='development'
-    assert all(r['episode_id'].startswith('hexar-tiago-dev-integrated-') for r in dev['records'])
+    assert all(r['episode_id'].startswith('hexar-tiago-dev-') for r in dev['records'])
     assert not {r['seed'] for r in raw['records']}&{r['seed'] for r in dev['records']}
     assert dev['confirmation_authorized'] is False
 

@@ -29,8 +29,11 @@ def make_plan(master_seed, valid_per_family, reserve_per_family, excluded_ids=()
     token = hashlib.sha256(master_seed.encode()).hexdigest()[:16]
     for order in range(1, valid_per_family + reserve_per_family + 1):
         for family in FAMILIES:
-            prefix='confirm' if phase=='confirmation' else 'dev-integrated'
-            identity = f'hexar-tiago-{prefix}-{token}-{family}-{order:04d}'
+            if phase=='confirmation':identity=f'hexar-tiago-confirm-{token}-{family}-{order:04d}'
+            else:
+                # Preserve the qualified shell's dev-family-numeric CLI guard.
+                ordinal=int(token,16)*100000+order
+                identity=f'hexar-tiago-dev-{family}-{ordinal}'
             payload=['hexar-fresh-raw-schedule/v1', master_seed, family, order]
             if phase=='development':payload.append('permanently-excluded-development')
             seed = int.from_bytes(hashlib.sha256(canonical(payload)).digest()[:4], 'big')

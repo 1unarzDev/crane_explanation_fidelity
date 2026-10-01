@@ -37,7 +37,7 @@ def build(root):
         path=root/name;path.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(SOURCE/name,path)
     sources={name:digest(root/name) for name in gate.CRITICAL_FILES}
     image='sha256:'+'e'*64
-    bank=root/'bank';bank.mkdir();(bank/'run_bound_episode_v1.sh').write_text('synthetic unused source\n')
+    bank=root/'bank';bank.mkdir();shutil.copyfile(SOURCE/'analysis/hexar_external/acquisition/run_bound_episode_v1.sh',bank/'run_bound_episode_v1.sh')
     bank_sources={'analysis/hexar_external/acquisition/run_bound_episode_v1.sh':digest(bank/'run_bound_episode_v1.sh')}
     native_name='analysis/hexar_external/acquisition/native_review_core_v1.py'
     physics=write('fixtures/physics.json',dict(status='BOUND_PROVENANCE_RUNTIME_SCOPE_QUALIFIED_NOT_FINAL_ADMISSION',
