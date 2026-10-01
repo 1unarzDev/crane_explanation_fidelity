@@ -59,6 +59,7 @@ def run(plan_path, image):
         episode_id = record['episode_id']
         name = 'crane-' + episode_id
         command = ['docker', 'run', '--name', name, '--label', 'org.crane.scope=hexar-development',
+                   '--network', 'none',
                    '--cpus', '3', '--memory', '5g', '--memory-swap', '6g', '--shm-size', '1g',
                    '-e', 'ROS_DOMAIN_ID=' + str(70 + ordinal),
                    '-v', str(source_bank) + ':/acquisition:ro', '-v', str(OUT) + ':/provenance',
@@ -80,6 +81,8 @@ def run(plan_path, image):
         info = json.loads(inspected.stdout)[0] if inspected.returncode == 0 else {}
         metadata = {'episode_id': episode_id, 'family_hidden': record['family'], 'seed_hidden': record['seed'],
                     'container_id': info.get('Id'), 'image_id': image_id, 'fresh_container': True,
+                    'requested_network_mode': 'none',
+                    'observed_network_mode': info.get('HostConfig', {}).get('NetworkMode'),
                     'exit_code': code, 'wall_seconds': time.time() - start, 'raw_files': [],
                     'method_outputs_generated': False, 'judge_labels_generated': False,
                     'technical_validity': 'NOT_YET_ADJUDICATED',
