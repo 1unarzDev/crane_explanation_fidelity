@@ -128,3 +128,20 @@ V15 completed six new development episodes under the [declared setup qualificati
 `technical_batch_qualification_v15.json` adds a versioned reproducer using `technical_batch_candidate.py`. It verifies captured hashes and source-bank identity/bytes, equality of provenance and run receipts, the pinned image, unique seeds/containers/bag bytes, the current development-exposure inventory, and recomputes the saved raw/interface audit and 54 packets. Bag paths are normalized to repository-relative paths for comparison; content hashes and all other audit/packet fields must agree exactly. Every candidate per-episode and batch check passed. These checks inspect no explanation or judge result and never require navigation success. All six attempts remain permanently development-only.
 
 Exposure v10 excludes 74 acquired attempts and all planned development identities/seeds. The unbound freshness manifest now pins that snapshot; earlier snapshots are retained. The [population candidate](SAMPLING_FAMILY_POPULATION.md) records the restricted map frame and truthful simulated family conditions. The candidate predicate is deliberately **not** bound as the final `technical_validity.json` implementation: final adapter/runtime closure, invalid-rate/reserve planning and the complete scientific freeze remain required. Six passes cannot establish a negligible invalid-run probability.
+
+The native v15 audit additionally checks actual seeded sampler reproduction, metadata versus raw SQLite counts/types, receipt/native/odometry clocks and direct reproduction of both extracted evidence streams. Its full-stream clock-envelope failure is preserved: one optional post-task tail sample in the obstacle episode exceeds the last recorded clock by 1 ms. The [declared task-window amendment](NATIVE_CLOCK_VALIDITY.md) uses no tolerance or timestamp adjustment and the separate v2 report reproduced the original audit before checking exact action/task-window envelopes. All six scoped native reviews passed; this is not final admission. The [operational candidate](TECHNICAL_VALIDITY_CANDIDATE.md) requires coherent task-window evidence but does not exclude a legitimate early action merely for fewer than two window odometry samples.
+
+## Fixed v16 process-reliability campaign
+
+The [prospective development campaign](ACQUISITION_RELIABILITY_QUALIFICATION.md) allocates 144 fresh development attempts, 24 in each family, without reserves or reissues. It is running under the same pinned image and a captured source bank, with independently generated collision-checked seeds and interleaved family order. All attempts are permanently excluded from confirmation. The qualification criterion and exact descriptive invalidity bound are declared before acquisition; exit codes alone cannot satisfy it.
+
+After the run is terminal, execute the prepared review once:
+
+```bash
+python -m analysis.hexar_external.acquisition.reliability_review \
+  --plan manifests/hexar_external/acquisition/development_episode_plan_v16.json \
+  --run manifests/hexar_external/acquisition/development_episode_plan_v16_qualification_run.json \
+  --output-dir manifests/hexar_external/acquisition/development_reliability_v16
+```
+
+The reviewer rejects in-progress or incomplete schedules before mutation. It retains every attempted episode, including capture/extraction/setup failures, and never substitutes a reserve. Derived evidence files are created exclusively or verified against exact reproduction. Full final qualification still needs the acquisition adapter and complete freeze. Refresh the development exposure snapshot after the campaign; stale exposure cannot pass current admission. N=144 here must never be reused as a confirmation sample-size decision.

@@ -65,15 +65,22 @@ def test_capture_rejects_incomplete_or_changed_evidence(tmp_path, change):
         verify_capture(tmp_path, receipt, 'pinned-image')
 
 
-def test_actual_v15_review_reproduces_and_all_development_remains_excluded():
+def test_actual_v15_captures_remain_verified_and_new_development_invalidates_old_freshness():
     exposure = ROOT / 'manifests/hexar_external/confirmatory_v1/development_exposure_v10.json'
-    image = json.loads((BASE / 'development_episode_plan_v15_qualification_run.json').read_text())['image_id']
-    result = build(BASE / 'development_episode_plan_v15.json',
-                   BASE / 'development_episode_plan_v15_qualification_run.json',
-                   BASE / 'controller_boundary_qualification_v15.json',
-                   dict(path=str(exposure.relative_to(ROOT)), sha256=digest(exposure)), image)
+    run = json.loads((BASE / 'development_episode_plan_v15_qualification_run.json').read_text())
+    image = run['image_id']
+    result = json.loads((BASE / 'technical_batch_qualification_v15.json').read_text())
     assert result['status'] == 'TECHNICAL_BATCH_SCOPE_PASSED_NOT_FINAL_ADMISSION'
     assert all(result['batch_checks'].values())
     assert all(r['permanently_excluded_from_confirmation'] for r in result['episodes'])
     assert result['confirmatory_N'] == 0
     assert result['full_acquisition_qualified'] is False
+    for receipt in run['episodes']:
+        assert verify_capture(ROOT, receipt, image)
+    # Historical qualification remains retained. It must not silently become
+    # current admission after v16 adds new planned/acquired development.
+    with pytest.raises(ValueError, match='development exposure inventory stale'):
+        build(BASE / 'development_episode_plan_v15.json',
+              BASE / 'development_episode_plan_v15_qualification_run.json',
+              BASE / 'controller_boundary_qualification_v15.json',
+              dict(path=str(exposure.relative_to(ROOT)), sha256=digest(exposure)), image)
