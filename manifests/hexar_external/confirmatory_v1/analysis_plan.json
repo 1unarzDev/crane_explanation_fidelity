@@ -1,0 +1,28 @@
+{
+  "schema": "hexar-analysis-plan/v1",
+  "status": "CANDIDATE",
+  "alpha": 0.01,
+  "direction": "HX-CONTRACT success / HX-PROMPT failure favorable",
+  "null": "CRANE no better on frozen recording endpoint",
+  "alternative": "CRANE superior",
+  "test": "exact one-sided conditional paired-discordance / McNemar; p <= .01",
+  "assumptions": "independent episodes; common conditional favorable probability q across families, q<=.5 under null, or an independently justified equivalent exchangeability model. Arbitrary heterogeneous average-effect null is not automatically exact.",
+  "assumption_justification": null,
+  "interval_assumption_justification": null,
+  "effect": "prompt failure minus contract failure risk difference",
+  "intervals": "stratified Bonferroni exact marginal-binomial 99% lower / 98% two-sided, each family tail .005/6; independent IID within family, not conditional-test inversion",
+  "family_sensitivity": "all six four-cell counts, family effects and leave-one-family-out effects; descriptive, no family alpha",
+  "secondary": [
+    "useful supported answer rate",
+    "required-unit coverage",
+    "unsupported material",
+    "physical-cause flags",
+    "required-unit recall",
+    "answer length",
+    "flexibility",
+    "deterministic-template dependence",
+    "runtime/cost"
+  ],
+  "no_statistic_selection": true,
+  "no_test_sidedness_switch": true
+}

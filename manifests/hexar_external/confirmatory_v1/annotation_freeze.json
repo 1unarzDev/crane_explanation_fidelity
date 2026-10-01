@@ -1,0 +1,26 @@
+{
+  "schema": "hexar-annotation-freeze/v1",
+  "status": "CANDIDATE_NOT_FROZEN",
+  "inherited_file_hashes": {
+    "research/explanation_fidelity/prompts/evidence-calibration-agent-annotator-v1.md": "e85eba2778c3d740edb38ba0525eaeecaf2b73460b4bc95172e04820ad3cc4a9",
+    "research/explanation_fidelity/schemas/blinded-agent-atomic-annotation-return-v2.schema.json": "7b10a601c48f08a720bcc2c52c69bab0b1773e72ee552f4ac88a7bbd4c1a044f",
+    "docs/hexar_external/v2/annotation_amendment.txt": "d38f421a0b0aadf72650c86955d18c791a57e1a54350112b9688d62b20692d5d",
+    "docs/hexar_external/v3/sentinel_clarification.txt": "11a8fdc9cfcb4e676a1835564b982263a413015edfbd7def979940bfec224686",
+    "analysis/hexar_external/annotate_v3.py": "feeb77960ab1404a42cb4e46f6d1feab87794f40a884bdd77962df9452a61468",
+    "analysis/hexar_external/extract_v3.py": "7a8f50ad07b271d8869e94716fdec6dee79cefec156b3054d7e49f55cbb8afee",
+    "data/hexar_external/v3/annotation_binding.json": "87e335f4d7090944eeb5fd5865ad9859772018a59b43e7aff5afceb22a4028bf"
+  },
+  "agent_assessed": true,
+  "human_validated": false,
+  "model": "gpt-6-astra",
+  "model_version": null,
+  "decoding": null,
+  "complete_system_instructions": null,
+  "policy": "independent isolated A/B passes; disagreement-only C; unresolved treated least favorable; no outcome-driven retry",
+  "blinding": "opaque shuffled answer IDs; judge sees permitted evidence/reference, answer, schema only; no method/family identity, development result, winner, alpha or previous labels",
+  "identity_inference_limit": "wording/template style may suggest method despite identity removal",
+  "deterministic_checks": "exact source literals, outcome polarity, logged numbers and evidence-ID membership where licensed; semantic scope remains agent-assessed",
+  "qualification_for_whole_recording_endpoint": null,
+  "blind_bank_builder": null,
+  "adjudication_implementation": null
+}
