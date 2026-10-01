@@ -1,0 +1,21 @@
+{
+  "development_only": true,
+  "confirmatory_freeze": false,
+  "prompt_path": "analysis/results/evidence-calibration-handoff-development/annotation-prompt-v5.md",
+  "prompt_sha256": "05f2c0c1b60417308ec777e5e3f3d2b76e6073c03f4eff8e43070305f182ae75",
+  "schema_path": "analysis/results/evidence-calibration-handoff-development/annotation-schema-v1.json",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "high",
+  "timeout_seconds": 900,
+  "grouping": "one independent episode per call; eight ladder/method answers in independently shuffled order",
+  "passes": [
+    "A",
+    "B"
+  ],
+  "primary_merge": "union of failures",
+  "coverage_merge": "intersection of communicated units",
+  "source_cases_path": "analysis/results/development/evidence-calibration-final-v7-development-v1/blind-cases-v1.json",
+  "source_cases_sha256": "0869735677d8d0d7586763b8be7f3bf23ec5c1e71df49c447cae0852f6bdffa4",
+  "human_validation_claimed": false,
+  "qualification_path": "analysis/results/evidence-calibration-handoff-development/qualified-diagnosis-qualification-regression-v1/summary.json"
+}

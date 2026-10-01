@@ -41,13 +41,18 @@ def prepare():
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--limit", type=int, default=4)
+    parser.add_argument("--start-index",type=int,default=0)
+    parser.add_argument("--ros-domain-id",type=int,default=95)
+    parser.add_argument("--ros-tcp-port",type=int,default=12795)
     args = parser.parse_args()
     schedule = prepare()
     OUT.mkdir(parents=True, exist_ok=True)
     flags = dict(responseAfterSeconds="after", responseReleaseAfterSeconds="release",
                  responseGain="gain", responseRecoveredGain="recovered-gain",
                  responsePeriodSeconds="period", responseDuty="duty")
-    for row in schedule["cohorts"][0]["runs"][:args.limit]:
+    for row in schedule["cohorts"][0]["runs"][args.start_index:args.limit]:
+        row["ros_domain_id"]=args.ros_domain_id
+        row["ros_tcp_port"]=args.ros_tcp_port
         result = OUT / (row["run_id"]+".json")
         if result.exists():
             print(result.read_text(), flush=True)
