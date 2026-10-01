@@ -45,3 +45,15 @@ pre-correction GitHub inspection. Recheck remote branch identities after publica
 Scientific gates remain unchanged: P11 is closed, confirmation/replication N=0,
 measurement reopening is pending, and all prospective five-method comparison and
 reporting requirements remain in force.
+
+
+## Marine component publication follow-up
+
+The genuine marine branch's component clone had a local-path origin; its pinned
+`crane_ml` revision was absent from the shared clone and GitHub branch heads. Publish
+its exact existing five-commit chain (`30da6e5`, `f2e2710`, `9e62caf`, `a109ef9`,
+`0df6838`) as `roboboat-terminal-evidence` in `1unarzDev/crane_ml`. The component
+branch head is `0df68389e323d8c706aa46518145df3441f5579b`, matching the genuine
+umbrella gitlink. Its 12 LFS objects were uploaded by the component push. No component
+main, docking branch, land gitlink or umbrella scientific commit is changed. This
+makes the marine dependency reachable without integrating marine work into land main.
