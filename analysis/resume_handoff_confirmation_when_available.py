@@ -16,6 +16,17 @@ import time
 from run_evidence_calibration_b2_pilot import ROOT,BoundedCodexCliCaller
 
 
+def quota_rejected(record):
+    for call in record.get('b2_calls',[]):
+        if call['status']=='VALID':continue
+        error=call.get('error','')
+        if 'retained at ' not in error:continue
+        cache_path=Path(error.rsplit('retained at ',1)[1])
+        raw=json.loads(cache_path.read_text())
+        if any(event.get('type')=='error' and 'usage limit' in event.get('message','').lower() for event in raw['events']):return True
+    return False
+
+
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--freeze',required=True,type=Path)
@@ -41,11 +52,25 @@ def main():
     if args.probe_only:return 0
     command=[sys.executable,str(ROOT/'analysis/run_handoff_confirmation_pairs.py'),'--freeze',str(args.freeze),'--look',args.look]
     while True:
-        completed=subprocess.run(command,cwd=ROOT)
+        statuses=ROOT/'model_outputs'/freeze['study_id']/'status'
+        processed=len([p for p in statuses.glob('*.json') if not p.name.endswith('intent.json')])
+        # Limit only the invocation, preserving the cumulative frozen order and N.
+        # The next invocation reuses every terminal record without any model retry.
+        cap=min(processed+1,freeze['acquired_candidate_cap'])
+        invocation=command+['--maximum-candidates',str(cap)] if args.follow_collection else command
+        completed=subprocess.run(invocation,cwd=ROOT)
         if completed.returncode or not args.follow_collection:return completed.returncode
         account=ROOT/'analysis/results/confirmation'/freeze['study_id']/('execution-accounting-'+args.look+'.json')
         accounting=json.loads(account.read_text())
         if accounting['complete']:return 0
+        if len(accounting['records'])>processed:
+            if quota_rejected(accounting['records'][-1]):
+                print(json.dumps(dict(account_usage_limit=True,next_configuration_not_launched=True,complete_pairs=accounting['complete_paired_episode_n'])),flush=True)
+                return 75
+            if len(accounting['records'])>=freeze['acquired_candidate_cap']:
+                print(json.dumps(dict(frozen_candidate_cap_reached=True,valid_n_shortfall=True,complete_pairs=accounting['complete_paired_episode_n'])),flush=True)
+                return 2
+            continue
         # Normal completion before N means the next ordered physical capture is pending.
         # Existing terminal request records are reused by the frozen runner, never rerun.
         print(json.dumps(dict(waiting_for_next_physical_capture=True,complete_pairs=accounting['complete_paired_episode_n'])),flush=True)
