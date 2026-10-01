@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="2" result="Failed(Child)" total="2" passed="0" failed="2" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-01 13:06:02Z" end-time="2026-10-01 13:06:02Z" duration="0.143824">
+  <test-suite type="TestSuite" id="1000" name="ASV" fullname="ASV" runstate="Runnable" testcasecount="47" result="Failed" site="Child" start-time="2026-10-01 13:06:02Z" end-time="2026-10-01 13:06:02Z" duration="0.143824" total="2" passed="0" failed="2" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1060" name="RoboBoatEditorTests.dll" fullname="/home/lunarz/worktrees/roboboat-episode-clock-v10/crane_ml/Library/ScriptAssemblies/RoboBoatEditorTests.dll" runstate="Runnable" testcasecount="9" result="Failed" site="Child" start-time="2026-10-01 13:06:02Z" end-time="2026-10-01 13:06:02Z" duration="0.136063" total="2" passed="0" failed="2" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="120719" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestFixture" id="1049" name="CraneEpisodePublisherClockResetTests" fullname="CraneEpisodePublisherClockResetTests" classname="CraneEpisodePublisherClockResetTests" runstate="Runnable" testcasecount="2" result="Failed" site="Child" start-time="2026-10-01 13:06:02Z" end-time="2026-10-01 13:06:02Z" duration="0.134171" total="2" passed="0" failed="2" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-case id="1050" name="NavigationPublisherContinuesAfterBenchmarkClockResetWithoutBodyReset" fullname="CraneEpisodePublisherClockResetTests.NavigationPublisherContinuesAfterBenchmarkClockResetWithoutBodyReset" methodname="NavigationPublisherContinuesAfterBenchmarkClockResetWithoutBodyReset" classname="CraneEpisodePublisherClockResetTests" runstate="Runnable" seed="597156679" result="Failed" start-time="2026-10-01 13:06:02Z" end-time="2026-10-01 13:06:02Z" duration="0.118362" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Fresh episode must publish immediately; a warmup deadline must not suppress odometry.
+  Expected: less than 0.029999999999999999d
+  But was:  2.8999999999999999d
+]]></message>
+            <stack-trace><![CDATA[at CraneEpisodePublisherClockResetTests.NavigationPublisherContinuesAfterBenchmarkClockResetWithoutBodyReset () [0x00067] in /home/lunarz/worktrees/roboboat-episode-clock-v10/crane_ml/Assets/Tests/Editor/CraneEpisodePublisherClockResetTests.cs:41
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[CRANE_ROS_NAV_STATE_READY body=epoch-publisher-test bodyType=Rigidbody odom=/epoch-test/odom tf=/epoch-test/tf frames=odom->base_link rateHz=50 childFrames=0
+]]></output>
+        </test-case>
+        <test-case id="1051" name="RosClockDoesNotRetainWarmupDeadlineAfterBenchmarkClockReset" fullname="CraneEpisodePublisherClockResetTests.RosClockDoesNotRetainWarmupDeadlineAfterBenchmarkClockReset" methodname="RosClockDoesNotRetainWarmupDeadlineAfterBenchmarkClockReset" classname="CraneEpisodePublisherClockResetTests" runstate="Runnable" seed="1972838951" result="Failed" start-time="2026-10-01 13:06:02Z" end-time="2026-10-01 13:06:02Z" duration="0.002729" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Clock scheduling must reset even when no body-reset callback is dispatched.
+  Expected: less than 0.029999999999999999d
+  But was:  2.8999999999999999d
+]]></message>
+            <stack-trace><![CDATA[at CraneEpisodePublisherClockResetTests.RosClockDoesNotRetainWarmupDeadlineAfterBenchmarkClockReset () [0x00040] in /home/lunarz/worktrees/roboboat-episode-clock-v10/crane_ml/Assets/Tests/Editor/CraneEpisodePublisherClockResetTests.cs:51
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[CRANE_ROS_CLOCK_OWNER scene= path=2:epoch-publisher-test entity=568105589213755890
+Saving results to: /home/lunarz/.config/unity3d/DefaultCompany/ASV/TestResults.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>
