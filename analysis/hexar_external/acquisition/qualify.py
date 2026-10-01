@@ -11,6 +11,9 @@ import time
 ROOT = Path(__file__).resolve().parents[3]
 ACQUISITION = Path(__file__).resolve().parent
 OUT = ROOT / 'manifests/hexar_external/acquisition'
+# Each offline container has its own network namespace. A fixed bounded DDS
+# domain avoids 70+ordinal exceeding practical ROS/DDS domain limits at large N.
+ROS_DOMAIN_ID = 70
 
 def sha(path):
     h = hashlib.sha256()
@@ -55,13 +58,13 @@ def run(plan_path, image):
                'phase': 'development_only', 'plan_sha256': sha(plan_path), 'episodes': [],
                'semantic_outputs_generated': False, 'full_acquisition_qualified': False}
     dest.write_text(json.dumps(summary, indent=2) + '\n')
-    for ordinal, record in enumerate(r for r in plan['records'] if r['role'] == 'primary'):
+    for record in (r for r in plan['records'] if r['role'] == 'primary'):
         episode_id = record['episode_id']
         name = 'crane-' + episode_id
         command = ['docker', 'run', '--name', name, '--label', 'org.crane.scope=hexar-development',
                    '--network', 'none',
                    '--cpus', '3', '--memory', '5g', '--memory-swap', '6g', '--shm-size', '1g',
-                   '-e', 'ROS_DOMAIN_ID=' + str(70 + ordinal),
+                   '-e', 'ROS_DOMAIN_ID=' + str(ROS_DOMAIN_ID),
                    '-v', str(source_bank) + ':/acquisition:ro', '-v', str(OUT) + ':/provenance',
                    '--entrypoint', '/bin/bash', image_id, '/acquisition/run_development_episode.sh',
                    record['family'], str(record['seed']), episode_id]
@@ -83,6 +86,8 @@ def run(plan_path, image):
                     'container_id': info.get('Id'), 'image_id': image_id, 'fresh_container': True,
                     'requested_network_mode': 'none',
                     'observed_network_mode': info.get('HostConfig', {}).get('NetworkMode'),
+                    'requested_ros_domain_id': ROS_DOMAIN_ID,
+                    'observed_ros_domain_id': next((item.split('=',1)[1] for item in info.get('Config',{}).get('Env',[]) if item.startswith('ROS_DOMAIN_ID=')),None),
                     'exit_code': code, 'wall_seconds': time.time() - start, 'raw_files': [],
                     'method_outputs_generated': False, 'judge_labels_generated': False,
                     'technical_validity': 'NOT_YET_ADJUDICATED',
