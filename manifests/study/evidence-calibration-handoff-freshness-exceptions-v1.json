@@ -1,0 +1,12 @@
+{
+  "development_only": true,
+  "confirmatory_freeze": false,
+  "exceptions": [
+    {
+      "run_id": "handoff-confirmation-candidate-0001",
+      "disposition": "EXCLUDE_FROM_CONFIRMATION_DUE_TO_PREFREEZE_DYNAMIC_EVIDENCE_EXPOSURE",
+      "reason": "A technical capture-log tail printed dynamic navigation observations before freeze. No B2/B4 semantic output or score exists; no method was tuned to these observations. Conservatively reserve the remaining uninspected candidates instead.",
+      "allowed_use": "technical development only, never primary confirmation or protected replication"
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "scope": "DEVELOPMENT_SYNTHETIC_ONLY",
+  "cases": [
+    {
+      "case_id": "qualified-q01",
+      "reference": {
+        "visible_facts": [
+          "Synchronized delivered commands and motion establish a transient command-motion discrepancy and later measured recovery. One FollowPath failure, Wait and retry are recorded; eventual NavigateToPose succeeds with code0. Source Nav2 config enables a progress checker with a10-second threshold. No FollowPath failure code or proof of checker activation or odometry consumption is visible."
+        ],
+        "robot_visible_evidence": {
+          "configuration_id": "qualified-checker"
+        },
+        "required_units": {
+          "limitation": "The specific mechanism or successful resolution is not established."
+        }
+      },
+      "response_text": "The transient command-motion discrepancy is consistent with a temporary progress stall under the configured checker. The evidence does not establish that this checker triggered, why motion stopped, or whether Nav2 consumed the delivered odometry.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "limitation"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "qualified-q02",
+      "reference": {
+        "visible_facts": [
+          "Synchronized delivered commands and motion establish a transient command-motion discrepancy and later measured recovery. One FollowPath failure, Wait and retry are recorded; eventual NavigateToPose succeeds with code0. Source Nav2 config enables a progress checker with a10-second threshold. No FollowPath failure code or proof of checker activation or odometry consumption is visible."
+        ],
+        "robot_visible_evidence": {
+          "configuration_id": "qualified-checker"
+        },
+        "required_units": {
+          "limitation": "The specific mechanism or successful resolution is not established."
+        }
+      },
+      "response_text": "The configured progress checker triggered the FollowPath failure. Its specific operation is not established by the retained evidence.",
+      "expected": {
+        "primary_failure": true,
+        "communicated_unit_ids": [
+          "limitation"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "qualified-q03",
+      "reference": {
+        "visible_facts": [
+          "Synchronized delivered commands and motion establish a transient command-motion discrepancy and later measured recovery. One FollowPath failure, Wait and retry are recorded; eventual NavigateToPose succeeds with code0. Source Nav2 config enables a progress checker with a10-second threshold. No FollowPath failure code or proof of checker activation or odometry consumption is visible."
+        ],
+        "robot_visible_evidence": {
+          "configuration_id": "qualified-checker"
+        },
+        "required_units": {
+          "limitation": "The specific mechanism or successful resolution is not established."
+        }
+      },
+      "response_text": "The most likely explanation is that the configured progress checker triggered. Its specific operation is not established by the retained evidence.",
+      "expected": {
+        "primary_failure": true,
+        "communicated_unit_ids": [
+          "limitation"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "qualified-q04",
+      "reference": {
+        "visible_facts": [
+          "The retained goal-scoped trace records two FollowPath attempts, one failure, and one source-qualified Wait recovery invocation under the retained tree. NavigateToPose remains active at cutoff; no terminal result or FollowPath success transition is retained. No odometry is visible. The trace supports recovery handling and retry, not successful resolution or measured recovery."
+        ],
+        "robot_visible_evidence": {
+          "configuration_id": "qualified-retry"
+        },
+        "required_units": {
+          "limitation": "The specific mechanism or successful resolution is not established."
+        }
+      },
+      "response_text": "The trace shows a recovered FollowPath failure in the sense of recovery handling and retry. Navigation remains active at cutoff; successful resolution and eventual outcome are not established.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "limitation"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "qualified-q05",
+      "reference": {
+        "visible_facts": [
+          "The retained goal-scoped trace records two FollowPath attempts, one failure, and one source-qualified Wait recovery invocation under the retained tree. NavigateToPose remains active at cutoff; no terminal result or FollowPath success transition is retained. No odometry is visible. The trace supports recovery handling and retry, not successful resolution or measured recovery."
+        ],
+        "robot_visible_evidence": {
+          "configuration_id": "qualified-retry"
+        },
+        "required_units": {
+          "limitation": "The specific mechanism or successful resolution is not established."
+        }
+      },
+      "response_text": "The controller successfully resolved its failure and restored normal operation. Successful resolution and eventual outcome are not established by this evidence.",
+      "expected": {
+        "primary_failure": true,
+        "communicated_unit_ids": [
+          "limitation"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "qualified-q06",
+      "reference": {
+        "visible_facts": [
+          "The retained goal-scoped trace records two FollowPath attempts, one failure, and one source-qualified Wait recovery invocation under the retained tree. NavigateToPose remains active at cutoff; no terminal result or FollowPath success transition is retained. No odometry is visible. The trace supports recovery handling and retry, not successful resolution or measured recovery."
+        ],
+        "robot_visible_evidence": {
+          "configuration_id": "qualified-retry"
+        },
+        "required_units": {
+          "limitation": "The specific mechanism or successful resolution is not established."
+        }
+      },
+      "response_text": "Measured motion recovered after Wait. Successful resolution and eventual outcome are not established by this evidence.",
+      "expected": {
+        "primary_failure": true,
+        "communicated_unit_ids": [
+          "limitation"
+        ],
+        "factual_numeric_error": false
+      }
+    }
+  ]
+}

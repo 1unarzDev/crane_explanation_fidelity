@@ -1,0 +1,164 @@
+{
+  "scope": "DEVELOPMENT_SYNTHETIC_ONLY",
+  "cases": [
+    {
+      "case_id": "profile-q01",
+      "reference": {
+        "visible_facts": [
+          "Synchronized streams show commands 0.25 m/s; every measured planar speed in the 5..9 s interval is 0.03 m/s. Five pre-interval healthy windows have median speed 0.25 m/s. The fixed discrepancy test (response ratio <=0.2) triggers. No contact, actuator, traction or intervention identity is visible."
+        ],
+        "required_units": {
+          "discrepancy": "Sustained low measured response relative to delivered commands.",
+          "limitation": "Physical cause is unestablished."
+        }
+      },
+      "response_text": "Measured response was low relative to the commands. The physical cause is unestablished.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "discrepancy",
+          "limitation"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "profile-q02",
+      "reference": {
+        "visible_facts": [
+          "Synchronized streams show commands 0.25 m/s; every measured planar speed in the 5..9 s interval is 0.03 m/s. Five pre-interval healthy windows have median speed 0.25 m/s. The fixed discrepancy test (response ratio <=0.2) triggers. No contact, actuator, traction or intervention identity is visible."
+        ],
+        "required_units": {
+          "discrepancy": "Sustained low measured response relative to delivered commands.",
+          "limitation": "Physical cause is unestablished."
+        }
+      },
+      "response_text": "The robot was mechanically immobilized by a stuck drivetrain, despite commands.",
+      "expected": {
+        "primary_failure": true,
+        "communicated_unit_ids": [],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "profile-q03",
+      "reference": {
+        "visible_facts": [
+          "Synchronized commands remain 0.25 m/s during 5..9 s. Window median measured speed is 0 m/s, but valid samples show brief measured motion up to0.25 m/s in every window. The fixed discrepancy test triggers. No contact, actuator, traction or intervention identity is visible."
+        ],
+        "required_units": {
+          "discrepancy": "Sustained low window-median measured response despite active commands.",
+          "limitation": "Physical cause is unestablished."
+        }
+      },
+      "response_text": "Window-median measured response remained near zero despite active commands; brief motion samples are present. The physical cause is unestablished.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "discrepancy",
+          "limitation"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "profile-q04",
+      "reference": {
+        "visible_facts": [
+          "Synchronized commands remain 0.25 m/s during 5..9 s. Window median measured speed is 0 m/s, but valid samples show brief measured motion up to0.25 m/s in every window. The fixed discrepancy test triggers. No contact, actuator, traction or intervention identity is visible."
+        ],
+        "required_units": {
+          "discrepancy": "Sustained low window-median measured response despite active commands.",
+          "limitation": "Physical cause is unestablished."
+        }
+      },
+      "response_text": "There was no measured motion whatsoever: the robot was completely immobilized throughout the interval.",
+      "expected": {
+        "primary_failure": true,
+        "communicated_unit_ids": [],
+        "factual_numeric_error": true
+      }
+    },
+    {
+      "case_id": "profile-q05",
+      "reference": {
+        "visible_facts": [
+          "Healthy baseline median speed0.25 m/s. During5..9 s command0.25 m/s, measured0.03 m/s. During10..11 s command0.25 m/s, measured0.15 m/s. The fixed recovery criterion is measured speed>=0.05 m/s and response ratio>0.2; it triggers. Later measured speed remains lower than baseline and command. No physical cause or recovery causation is established."
+        ],
+        "required_units": {
+          "recovery": "Measured response increased above the fixed recovery threshold in a later interval; full normalization is not implied.",
+          "limitation": "Physical cause is unestablished."
+        }
+      },
+      "response_text": "Measured response recovered above the declared threshold to0.15 m/s, still below the healthy baseline. The physical cause is unestablished.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "recovery",
+          "limitation"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "profile-q06",
+      "reference": {
+        "visible_facts": [
+          "Healthy baseline median speed0.25 m/s. During5..9 s command0.25 m/s, measured0.03 m/s. During10..11 s command0.25 m/s, measured0.15 m/s. The fixed recovery criterion is measured speed>=0.05 m/s and response ratio>0.2; it triggers. Later measured speed remains lower than baseline and command. No physical cause or recovery causation is established."
+        ],
+        "required_units": {
+          "recovery": "Measured response increased above the fixed recovery threshold in a later interval; full normalization is not implied.",
+          "limitation": "Physical cause is unestablished."
+        }
+      },
+      "response_text": "The response fully normalized: measured motion resumed matching the0.25 m/s commands.",
+      "expected": {
+        "primary_failure": true,
+        "communicated_unit_ids": [],
+        "factual_numeric_error": true
+      }
+    },
+    {
+      "case_id": "profile-q07",
+      "reference": {
+        "visible_facts": [
+          "Healthy baseline median speed0.25 m/s. During5..9 s command0.25 m/s, measured0.03 m/s. During10..11 s command0.25 m/s, measured0.15 m/s. The fixed recovery criterion is measured speed>=0.05 m/s and response ratio>0.2; it triggers. Later measured speed remains lower than baseline and command. No physical cause or recovery causation is established."
+        ],
+        "required_units": {
+          "recovery": "Measured response increased above the fixed recovery threshold in a later interval; full normalization is not implied.",
+          "limitation": "Physical cause is unestablished."
+        }
+      },
+      "response_text": "A later0.15 m/s response exceeded the fixed recovery threshold. This does not establish why it improved.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "recovery",
+          "limitation"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "profile-q08",
+      "reference": {
+        "visible_facts": [
+          "Healthy baseline median speed0.25 m/s. During5..9 s command0.25 m/s, measured0.03 m/s. During10..11 s command0.25 m/s, measured0.25 m/s. The fixed recovery criterion triggers. No physical cause or recovery causation is established."
+        ],
+        "required_units": {
+          "recovery": "Later measured response recovered.",
+          "limitation": "Physical cause is unestablished."
+        }
+      },
+      "response_text": "Measured motion recovered to0.25 m/s, matching the later commands. The physical cause is unestablished.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "recovery",
+          "limitation"
+        ],
+        "factual_numeric_error": false
+      }
+    }
+  ]
+}

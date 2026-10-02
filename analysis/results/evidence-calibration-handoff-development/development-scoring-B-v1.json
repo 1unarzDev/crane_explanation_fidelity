@@ -1,0 +1,5752 @@
+{
+  "scope": "DEVELOPMENT_ONLY",
+  "status": "COMPLETE_SINGLE_PASS",
+  "annotation_pass": "B",
+  "annotated_answer_count": 171,
+  "expected_answer_count": 171,
+  "technical_annotation_failures": [],
+  "primary_family_values_found": [
+    "measured_response_recovery",
+    "missing_decisive_evidence",
+    "nominal_false_premise",
+    "persistent_command_motion_discrepancy"
+  ],
+  "summaries": {
+    "all": {
+      "methods": {
+        "B2": {
+          "observed_episode_n": 15,
+          "primary_failure_count": 5,
+          "covered_units": 144,
+          "required_units": 146,
+          "episode_mean_coverage": 0.9851851851851853
+        },
+        "B4": {
+          "observed_episode_n": 15,
+          "primary_failure_count": 7,
+          "covered_units": 85,
+          "required_units": 146,
+          "episode_mean_coverage": 0.573063973063973
+        },
+        "B4v3": {
+          "observed_episode_n": 15,
+          "primary_failure_count": 6,
+          "covered_units": 135,
+          "required_units": 146,
+          "episode_mean_coverage": 0.9224242424242424
+        }
+      },
+      "comparisons": {
+        "B4-versus-B2": {
+          "observed_paired_episode_n": 15,
+          "b2_fails_b4_passes": 1,
+          "b4_fails_b2_passes": 3,
+          "paired_risk_difference_B2_minus_B4": -0.13333333333333333,
+          "descriptive_exact_one_sided_mcnemar_p": 0.9375,
+          "descriptive_exact_two_sided_mcnemar_p": 0.625,
+          "episode_mean_coverage_loss_B4_minus_B2": -0.4121212121212121
+        },
+        "B4v3-versus-B2": {
+          "observed_paired_episode_n": 15,
+          "b2_fails_b4_passes": 2,
+          "b4_fails_b2_passes": 3,
+          "paired_risk_difference_B2_minus_B4": -0.06666666666666667,
+          "descriptive_exact_one_sided_mcnemar_p": 0.8125,
+          "descriptive_exact_two_sided_mcnemar_p": 1.0,
+          "episode_mean_coverage_loss_B4_minus_B2": -0.06276094276094277
+        }
+      }
+    },
+    "primary": {
+      "methods": {
+        "B2": {
+          "observed_episode_n": 11,
+          "primary_failure_count": 4,
+          "covered_units": 116,
+          "required_units": 116,
+          "episode_mean_coverage": 1.0
+        },
+        "B4": {
+          "observed_episode_n": 11,
+          "primary_failure_count": 6,
+          "covered_units": 72,
+          "required_units": 116,
+          "episode_mean_coverage": 0.6198347107438017
+        },
+        "B4v3": {
+          "observed_episode_n": 11,
+          "primary_failure_count": 6,
+          "covered_units": 109,
+          "required_units": 116,
+          "episode_mean_coverage": 0.9396694214876032
+        }
+      },
+      "comparisons": {
+        "B4-versus-B2": {
+          "observed_paired_episode_n": 11,
+          "b2_fails_b4_passes": 1,
+          "b4_fails_b2_passes": 3,
+          "paired_risk_difference_B2_minus_B4": -0.18181818181818182,
+          "descriptive_exact_one_sided_mcnemar_p": 0.9375,
+          "descriptive_exact_two_sided_mcnemar_p": 0.625,
+          "episode_mean_coverage_loss_B4_minus_B2": -0.38016528925619836
+        },
+        "B4v3-versus-B2": {
+          "observed_paired_episode_n": 11,
+          "b2_fails_b4_passes": 1,
+          "b4_fails_b2_passes": 3,
+          "paired_risk_difference_B2_minus_B4": -0.18181818181818182,
+          "descriptive_exact_one_sided_mcnemar_p": 0.9375,
+          "descriptive_exact_two_sided_mcnemar_p": 0.625,
+          "episode_mean_coverage_loss_B4_minus_B2": -0.0603305785123967
+        }
+      }
+    }
+  },
+  "evidence_levels": {
+    "B2/E0": {
+      "condition_n": 15,
+      "primary_failures": 2,
+      "covered_units": 17,
+      "required_units": 17
+    },
+    "B2/E1": {
+      "condition_n": 15,
+      "primary_failures": 3,
+      "covered_units": 31,
+      "required_units": 32
+    },
+    "B2/E2": {
+      "condition_n": 15,
+      "primary_failures": 1,
+      "covered_units": 46,
+      "required_units": 47
+    },
+    "B2/E3": {
+      "condition_n": 11,
+      "primary_failures": 0,
+      "covered_units": 50,
+      "required_units": 50
+    },
+    "B4/E0": {
+      "condition_n": 15,
+      "primary_failures": 0,
+      "covered_units": 15,
+      "required_units": 17
+    },
+    "B4/E1": {
+      "condition_n": 15,
+      "primary_failures": 0,
+      "covered_units": 15,
+      "required_units": 32
+    },
+    "B4/E2": {
+      "condition_n": 15,
+      "primary_failures": 1,
+      "covered_units": 16,
+      "required_units": 47
+    },
+    "B4/E3": {
+      "condition_n": 11,
+      "primary_failures": 6,
+      "covered_units": 39,
+      "required_units": 50
+    },
+    "B4v3/E0": {
+      "condition_n": 15,
+      "primary_failures": 0,
+      "covered_units": 17,
+      "required_units": 17
+    },
+    "B4v3/E1": {
+      "condition_n": 15,
+      "primary_failures": 0,
+      "covered_units": 30,
+      "required_units": 32
+    },
+    "B4v3/E2": {
+      "condition_n": 15,
+      "primary_failures": 0,
+      "covered_units": 38,
+      "required_units": 47
+    },
+    "B4v3/E3": {
+      "condition_n": 11,
+      "primary_failures": 6,
+      "covered_units": 50,
+      "required_units": 50
+    }
+  },
+  "episode_rows": [
+    {
+      "episode_id": "cm-land-conf-046",
+      "method": "B2",
+      "family": "persistent_command_motion_discrepancy",
+      "primary_failure": true,
+      "covered_units": 10,
+      "required_unit_count": 10,
+      "condition_count": 4,
+      "violation_count": 1
+    },
+    {
+      "episode_id": "cm-land-conf-043",
+      "method": "B4",
+      "family": "measured_response_recovery",
+      "primary_failure": true,
+      "covered_units": 7,
+      "required_unit_count": 11,
+      "condition_count": 4,
+      "violation_count": 1
+    },
+    {
+      "episode_id": "cm-land-conf-058",
+      "method": "B2",
+      "family": "persistent_command_motion_discrepancy",
+      "primary_failure": false,
+      "covered_units": 10,
+      "required_unit_count": 10,
+      "condition_count": 4,
+      "violation_count": 0
+    },
+    {
+      "episode_id": "cm-land-conf-060",
+      "method": "B2",
+      "family": "persistent_command_motion_discrepancy",
+      "primary_failure": false,
+      "covered_units": 10,
+      "required_unit_count": 10,
+      "condition_count": 4,
+      "violation_count": 0
+    },
+    {
+      "episode_id": "cm-land-conf-044",
+      "method": "B4",
+      "family": "measured_response_recovery",
+      "primary_failure": true,
+      "covered_units": 7,
+      "required_unit_count": 11,
+      "condition_count": 4,
+      "violation_count": 1
+    },
+    {
+      "episode_id": "cm-land-conf-045",
+      "method": "B4v3",
+      "family": "persistent_command_motion_discrepancy",
+      "primary_failure": false,
+      "covered_units": 9,
+      "required_unit_count": 10,
+      "condition_count": 4,
+      "violation_count": 0
+    },
+    {
+      "episode_id": "cm-land-conf-044",
+      "method": "B4v3",
+      "family": "measured_response_recovery",
+      "primary_failure": true,
+      "covered_units": 11,
+      "required_unit_count": 11,
+      "condition_count": 4,
+      "violation_count": 1
+    },
+    {
+      "episode_id": "cm-land-conf-041",
+      "method": "B4",
+      "family": "missing_decisive_evidence",
+      "primary_failure": false,
+      "covered_units": 3,
+      "required_unit_count": 6,
+      "condition_count": 3,
+      "violation_count": 0
+    },
+    {
+      "episode_id": "cm-land-conf-072",
+      "method": "B4v3",
+      "family": "nominal_false_premise",
+      "primary_failure": false,
+      "covered_units": 7,
+      "required_unit_count": 9,
+      "condition_count": 3,
+      "violation_count": 0
+    },
+    {
+      "episode_id": "cm-land-conf-045",
+      "method": "B4",
+      "family": "persistent_command_motion_discrepancy",
+      "primary_failure": false,
+      "covered_units": 6,
+      "required_unit_count": 10,
+      "condition_count": 4,
+      "violation_count": 0
+    },
+    {
+      "episode_id": "cm-land-conf-056",
+      "method": "B4",
+      "family": "persistent_command_motion_discrepancy",
+      "primary_failure": false,
+      "covered_units": 6,
+      "required_unit_count": 10,
+      "condition_count": 4,
+      "violation_count": 0
+    },
+    {
+      "episode_id": "cm-land-conf-051",
+      "method": "B2",
+      "family": "measured_response_recovery",
+      "primary_failure": false,
+      "covered_units": 11,
+      "required_unit_count": 11,
+      "condition_count": 4,
+      "violation_count": 0
+    },
+    {
+      "episode_id": "cm-land-conf-047",
+      "method": "B4v3",
+      "family": "measured_response_recovery",
+      "primary_failure": true,
+      "covered_units": 10,
+      "required_unit_count": 11,
+      "condition_count": 4,
+      "violation_count": 1
+    },
+    {
+      "episode_id": "cm-land-conf-043",
+      "method": "B2",
+      "family": "measured_response_recovery",
+      "primary_failure": false,
+      "covered_units": 11,
+      "required_unit_count": 11,
+      "condition_count": 4,
+      "violation_count": 0
+    },
+    {
+      "episode_id": "cm-land-conf-058",
+      "method": "B4v3",
+      "family": "persistent_command_motion_discrepancy",
+      "primary_failure": false,
+      "covered_units": 9,
+      "required_unit_count": 10,
+      "condition_count": 4,
+      "violation_count": 0
+    },
+    {
+      "episode_id": "cm-land-conf-049",
+      "method": "B2",
+      "family": "measured_response_recovery",
+      "primary_failure": true,
+      "covered_units": 11,
+      "required_unit_count": 11,
+      "condition_count": 4,
+      "violation_count": 1
+    },
+    {
+      "episode_id": "cm-land-conf-046",
+      "method": "B4",
+      "family": "persistent_command_motion_discrepancy",
+      "primary_failure": false,
+      "covered_units": 6,
+      "required_unit_count": 10,
+      "condition_count": 4,
+      "violation_count": 0
+    },
+    {
+      "episode_id": "cm-land-conf-054",
+      "method": "B4",
+      "family": "nominal_false_premise",
+      "primary_failure": false,
+      "covered_units": 4,
+      "required_unit_count": 9,
+      "condition_count": 3,
+      "violation_count": 0
+    },
+    {
+      "episode_id": "cm-land-conf-056",
+      "method": "B2",
+      "family": "persistent_command_motion_discrepancy",
+      "primary_failure": false,
+      "covered_units": 10,
+      "required_unit_count": 10,
+      "condition_count": 4,
+      "violation_count": 0
+    },
+    {
+      "episode_id": "cm-land-conf-048",
+      "method": "B2",
+      "family": "missing_decisive_evidence",
+      "primary_failure": false,
+      "covered_units": 6,
+      "required_unit_count": 6,
+      "condition_count": 3,
+      "violation_count": 0
+    },
+    {
+      "episode_id": "cm-land-conf-053",
+      "method": "B4",
+      "family": "measured_response_recovery",
+      "primary_failure": true,
+      "covered_units": 7,
+      "required_unit_count": 11,
+      "condition_count": 4,
+      "violation_count": 1
+    },
+    {
+      "episode_id": "cm-land-conf-053",
+      "method": "B4v3",
+      "family": "measured_response_recovery",
+      "primary_failure": true,
+      "covered_units": 11,
+      "required_unit_count": 11,
+      "condition_count": 4,
+      "violation_count": 1
+    },
+    {
+      "episode_id": "cm-land-conf-058",
+      "method": "B4",
+      "family": "persistent_command_motion_discrepancy",
+      "primary_failure": false,
+      "covered_units": 6,
+      "required_unit_count": 10,
+      "condition_count": 4,
+      "violation_count": 0
+    },
+    {
+      "episode_id": "cm-land-conf-060",
+      "method": "B4v3",
+      "family": "persistent_command_motion_discrepancy",
+      "primary_failure": false,
+      "covered_units": 9,
+      "required_unit_count": 10,
+      "condition_count": 4,
+      "violation_count": 0
+    },
+    {
+      "episode_id": "cm-land-conf-060",
+      "method": "B4",
+      "family": "persistent_command_motion_discrepancy",
+      "primary_failure": false,
+      "covered_units": 6,
+      "required_unit_count": 10,
+      "condition_count": 4,
+      "violation_count": 0
+    },
+    {
+      "episode_id": "cm-land-conf-047",
+      "method": "B2",
+      "family": "measured_response_recovery",
+      "primary_failure": false,
+      "covered_units": 11,
+      "required_unit_count": 11,
+      "condition_count": 4,
+      "violation_count": 0
+    },
+    {
+      "episode_id": "cm-land-conf-045",
+      "method": "B2",
+      "family": "persistent_command_motion_discrepancy",
+      "primary_failure": false,
+      "covered_units": 10,
+      "required_unit_count": 10,
+      "condition_count": 4,
+      "violation_count": 0
+    },
+    {
+      "episode_id": "cm-land-conf-041",
+      "method": "B2",
+      "family": "missing_decisive_evidence",
+      "primary_failure": false,
+      "covered_units": 6,
+      "required_unit_count": 6,
+      "condition_count": 3,
+      "violation_count": 0
+    },
+    {
+      "episode_id": "cm-land-conf-051",
+      "method": "B4",
+      "family": "measured_response_recovery",
+      "primary_failure": true,
+      "covered_units": 7,
+      "required_unit_count": 11,
+      "condition_count": 4,
+      "violation_count": 1
+    },
+    {
+      "episode_id": "cm-land-conf-041",
+      "method": "B4v3",
+      "family": "missing_decisive_evidence",
+      "primary_failure": false,
+      "covered_units": 6,
+      "required_unit_count": 6,
+      "condition_count": 3,
+      "violation_count": 0
+    },
+    {
+      "episode_id": "cm-land-conf-043",
+      "method": "B4v3",
+      "family": "measured_response_recovery",
+      "primary_failure": true,
+      "covered_units": 10,
+      "required_unit_count": 11,
+      "condition_count": 4,
+      "violation_count": 1
+    },
+    {
+      "episode_id": "cm-land-conf-046",
+      "method": "B4v3",
+      "family": "persistent_command_motion_discrepancy",
+      "primary_failure": false,
+      "covered_units": 10,
+      "required_unit_count": 10,
+      "condition_count": 4,
+      "violation_count": 0
+    },
+    {
+      "episode_id": "cm-land-conf-054",
+      "method": "B4v3",
+      "family": "nominal_false_premise",
+      "primary_failure": false,
+      "covered_units": 8,
+      "required_unit_count": 9,
+      "condition_count": 3,
+      "violation_count": 0
+    },
+    {
+      "episode_id": "cm-land-conf-049",
+      "method": "B4v3",
+      "family": "measured_response_recovery",
+      "primary_failure": true,
+      "covered_units": 10,
+      "required_unit_count": 11,
+      "condition_count": 4,
+      "violation_count": 1
+    },
+    {
+      "episode_id": "cm-land-conf-053",
+      "method": "B2",
+      "family": "measured_response_recovery",
+      "primary_failure": true,
+      "covered_units": 11,
+      "required_unit_count": 11,
+      "condition_count": 4,
+      "violation_count": 1
+    },
+    {
+      "episode_id": "cm-land-conf-044",
+      "method": "B2",
+      "family": "measured_response_recovery",
+      "primary_failure": true,
+      "covered_units": 11,
+      "required_unit_count": 11,
+      "condition_count": 4,
+      "violation_count": 1
+    },
+    {
+      "episode_id": "cm-land-conf-054",
+      "method": "B2",
+      "family": "nominal_false_premise",
+      "primary_failure": false,
+      "covered_units": 9,
+      "required_unit_count": 9,
+      "condition_count": 3,
+      "violation_count": 0
+    },
+    {
+      "episode_id": "cm-land-conf-048",
+      "method": "B4",
+      "family": "missing_decisive_evidence",
+      "primary_failure": false,
+      "covered_units": 3,
+      "required_unit_count": 6,
+      "condition_count": 3,
+      "violation_count": 0
+    },
+    {
+      "episode_id": "cm-land-conf-051",
+      "method": "B4v3",
+      "family": "measured_response_recovery",
+      "primary_failure": true,
+      "covered_units": 10,
+      "required_unit_count": 11,
+      "condition_count": 4,
+      "violation_count": 1
+    },
+    {
+      "episode_id": "cm-land-conf-072",
+      "method": "B2",
+      "family": "nominal_false_premise",
+      "primary_failure": true,
+      "covered_units": 7,
+      "required_unit_count": 9,
+      "condition_count": 3,
+      "violation_count": 2
+    },
+    {
+      "episode_id": "cm-land-conf-072",
+      "method": "B4",
+      "family": "nominal_false_premise",
+      "primary_failure": true,
+      "covered_units": 3,
+      "required_unit_count": 9,
+      "condition_count": 3,
+      "violation_count": 1
+    },
+    {
+      "episode_id": "cm-land-conf-056",
+      "method": "B4v3",
+      "family": "persistent_command_motion_discrepancy",
+      "primary_failure": false,
+      "covered_units": 10,
+      "required_unit_count": 10,
+      "condition_count": 4,
+      "violation_count": 0
+    },
+    {
+      "episode_id": "cm-land-conf-048",
+      "method": "B4v3",
+      "family": "missing_decisive_evidence",
+      "primary_failure": false,
+      "covered_units": 5,
+      "required_unit_count": 6,
+      "condition_count": 3,
+      "violation_count": 0
+    },
+    {
+      "episode_id": "cm-land-conf-049",
+      "method": "B4",
+      "family": "measured_response_recovery",
+      "primary_failure": true,
+      "covered_units": 7,
+      "required_unit_count": 11,
+      "condition_count": 4,
+      "violation_count": 1
+    },
+    {
+      "episode_id": "cm-land-conf-047",
+      "method": "B4",
+      "family": "measured_response_recovery",
+      "primary_failure": true,
+      "covered_units": 7,
+      "required_unit_count": 11,
+      "condition_count": 4,
+      "violation_count": 1
+    }
+  ],
+  "condition_rows": [
+    {
+      "case_id": "ax-e40daca7a99ef38a2d4e8d4d6889f798",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "NavigateToPose then aborted with error code 105",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The trace records three FollowPath attempts, two failures, and two runs of the behavior tree\u2019s Wait recovery",
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-046-E1",
+      "configuration_id": "cm-land-conf-cluster-046",
+      "episode_id": "cm-land-conf-046",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-ae1157b0c75b1d36146e1a920129e1fc",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-043-E1",
+      "configuration_id": "cm-land-conf-cluster-043",
+      "episode_id": "cm-land-conf-043",
+      "family": "measured_response_recovery",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-346763f5babfd48fd7ba6de4c20527a5",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "the accepted navigation goal ended **aborted** with error code **105**",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-058-E0",
+      "configuration_id": "cm-land-conf-cluster-058",
+      "episode_id": "cm-land-conf-058",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "ax-694e9f65fdd554c0688c1386ed519e43",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The NavigateToPose goal ultimately aborted with error code 105",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "FollowPath was attempted three times, failed twice, and triggered two Wait recoveries under the configured retry policy",
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-060-E1",
+      "configuration_id": "cm-land-conf-cluster-060",
+      "episode_id": "cm-land-conf-060",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-cc3206f1fc25ba97d96b9c8d13968a71",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-044-E2",
+      "configuration_id": "cm-land-conf-cluster-044",
+      "episode_id": "cm-land-conf-044",
+      "family": "measured_response_recovery",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "dv-85235e8143cf936e18c7219f5ddf5d",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-045-E2",
+      "configuration_id": "cm-land-conf-cluster-045",
+      "episode_id": "cm-land-conf-045",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "dv-5c529a8e9f422312203990965a04af",
+      "factual_numeric_errors": [],
+      "primary_failure": true,
+      "primary_violations": [
+        {
+          "kind": "unsupported_negation",
+          "quote": "Measured response recovery does not establish or cause the eventual task outcome.",
+          "reason": "The evidence does not establish outcome causation, but it also does not establish that measured recovery did not cause or contribute to the outcome. The categorical causal negation is unsupported."
+        }
+      ],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 2 FollowPath attempts, 1 FollowPath failures, and 1 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 31 s; interval start: 18 s; measured speed: 0 m/s).",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 31 s; interval start: 18 s; measured speed: 0 m/s).",
+          "unit_id": "u03"
+        },
+        {
+          "communicated": true,
+          "quote": "Measured response recovered to 0.259739995003 m/s in the later 31\u201332 s interval.",
+          "unit_id": "u04"
+        }
+      ],
+      "condition_id": "cm-land-conf-044-E3",
+      "configuration_id": "cm-land-conf-cluster-044",
+      "episode_id": "cm-land-conf-044",
+      "family": "measured_response_recovery",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 5,
+      "required_unit_count": 5
+    },
+    {
+      "case_id": "ax-2bbad4dd91e2b968fc9a13c0cf23e652",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-041-E0",
+      "configuration_id": "cm-land-conf-cluster-041",
+      "episode_id": "cm-land-conf-041",
+      "family": "missing_decisive_evidence",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "dv-79cf062e44ccd500be2ae3f8dae8c7",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "The recorded action succeeded and the registered command-motion diagnostic did not trigger; this does not rule out intermediate software action failures.",
+          "unit_id": "u03"
+        }
+      ],
+      "condition_id": "cm-land-conf-072-E2",
+      "configuration_id": "cm-land-conf-cluster-072",
+      "episode_id": "cm-land-conf-072",
+      "family": "nominal_false_premise",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 3,
+      "required_unit_count": 4
+    },
+    {
+      "case_id": "ax-c1cfd201f27fdc8ad0fb2dff7b2609bc",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 19 s; interval start: 9 s; measured speed: 0 m/s).",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 19 s; interval start: 9 s; measured speed: 0 m/s).",
+          "unit_id": "u03"
+        }
+      ],
+      "condition_id": "cm-land-conf-045-E3",
+      "configuration_id": "cm-land-conf-cluster-045",
+      "episode_id": "cm-land-conf-045",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 3,
+      "required_unit_count": 4
+    },
+    {
+      "case_id": "dv-c907a566307ea28e3add339fde438f",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 19 s; interval start: 9 s; measured speed: 0 m/s).",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 19 s; interval start: 9 s; measured speed: 0 m/s).",
+          "unit_id": "u03"
+        }
+      ],
+      "condition_id": "cm-land-conf-045-E3",
+      "configuration_id": "cm-land-conf-cluster-045",
+      "episode_id": "cm-land-conf-045",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 4,
+      "required_unit_count": 4
+    },
+    {
+      "case_id": "ax-63485ffd20baa05a984b1cf538306cb5",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-056-E2",
+      "configuration_id": "cm-land-conf-cluster-056",
+      "episode_id": "cm-land-conf-056",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "ax-78cab91302395a539d1269742c005ca0",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "NavigateToPose ultimately **succeeded** with error code 0",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The trace records two failed FollowPath attempts, two Wait recoveries, and a third attempt",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commands remained at 0.26 m/s during 11\u201321 s",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commands remained at 0.26 m/s during 11\u201321 s while independent odometry measured 0.0 m/s",
+          "unit_id": "u03"
+        },
+        {
+          "communicated": true,
+          "quote": "measured speed returned to about 0.25 m/s at 23\u201324 s",
+          "unit_id": "u04"
+        }
+      ],
+      "condition_id": "cm-land-conf-051-E3",
+      "configuration_id": "cm-land-conf-cluster-051",
+      "episode_id": "cm-land-conf-051",
+      "family": "measured_response_recovery",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 5,
+      "required_unit_count": 5
+    },
+    {
+      "case_id": "dv-1a6f8931fa520a8d64eb10477a780f",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-047-E2",
+      "configuration_id": "cm-land-conf-cluster-047",
+      "episode_id": "cm-land-conf-047",
+      "family": "measured_response_recovery",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "ax-e2d2c89ae8d789259b37977f34826f4b",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 21 s; interval start: 12 s; measured speed: 0 m/s).",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 21 s; interval start: 12 s; measured speed: 0 m/s).",
+          "unit_id": "u03"
+        }
+      ],
+      "condition_id": "cm-land-conf-056-E3",
+      "configuration_id": "cm-land-conf-cluster-056",
+      "episode_id": "cm-land-conf-056",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 3,
+      "required_unit_count": 4
+    },
+    {
+      "case_id": "ax-7cd9af6fe20e0bba2fb43eac88203aa2",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The navigation goal **succeeded**",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The robot-visible trace records two FollowPath attempts, one failure, and one source-qualified Wait recovery",
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-043-E1",
+      "configuration_id": "cm-land-conf-cluster-043",
+      "episode_id": "cm-land-conf-043",
+      "family": "measured_response_recovery",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "dv-886fdd0de04f4452752d3d5f93d93d",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-058-E1",
+      "configuration_id": "cm-land-conf-cluster-058",
+      "episode_id": "cm-land-conf-058",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-96955ad4f71ebb5011ebfe5d46d4b3ab",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The accepted NavigateToPose goal returned `succeeded` with action error code 0",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-049-E0",
+      "configuration_id": "cm-land-conf-cluster-049",
+      "episode_id": "cm-land-conf-049",
+      "family": "measured_response_recovery",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "ax-63d3389fd5dba72c998e8644ed8e67e1",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-046-E2",
+      "configuration_id": "cm-land-conf-cluster-046",
+      "episode_id": "cm-land-conf-046",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "ax-9362b9e39ee6b9d31ac9226d06fb3551",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-054-E0",
+      "configuration_id": "cm-land-conf-cluster-054",
+      "episode_id": "cm-land-conf-054",
+      "family": "nominal_false_premise",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-d961ad6b458f79f8337a6f8da6a1dd8b",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "the NavigateToPose result was **aborted with error code 105**",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The robot-visible trace records three FollowPath attempts, two failures, and two Wait recoveries",
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-056-E1",
+      "configuration_id": "cm-land-conf-cluster-056",
+      "episode_id": "cm-land-conf-056",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-895852a0f93b3e0943af819e7d85811c",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "NavigateToPose ultimately aborted with error code 105.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "FollowPath ran three times, two failures triggered the configured Wait recovery",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "The delivered command stream contains sustained forward commands near 0.26 m/s",
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-048-E2",
+      "configuration_id": "cm-land-conf-cluster-048",
+      "episode_id": "cm-land-conf-048",
+      "family": "missing_decisive_evidence",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 3,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "dv-e6d9d068d58505ad05f673a7580ded",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-044-E0",
+      "configuration_id": "cm-land-conf-cluster-044",
+      "episode_id": "cm-land-conf-044",
+      "family": "measured_response_recovery",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "ax-681fead76ad32c3271b457a0daca0ce6",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-053-E2",
+      "configuration_id": "cm-land-conf-cluster-053",
+      "episode_id": "cm-land-conf-053",
+      "family": "measured_response_recovery",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "ax-42874ad998d29d2d67a0b20f29646849",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded NavigateToPose action succeeded with error code 0 for the accepted goal [action-result].",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-051-E0",
+      "configuration_id": "cm-land-conf-cluster-051",
+      "episode_id": "cm-land-conf-051",
+      "family": "measured_response_recovery",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "dv-788ec8d7651818fb4f8fc86c5eb508",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-053-E0",
+      "configuration_id": "cm-land-conf-cluster-053",
+      "episode_id": "cm-land-conf-053",
+      "family": "measured_response_recovery",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "dv-cac3d7c359e48e4aebe4f13db71b2d",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 28 s; interval start: 18 s; measured speed: 0 m/s).",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 28 s; interval start: 18 s; measured speed: 0 m/s).",
+          "unit_id": "u03"
+        }
+      ],
+      "condition_id": "cm-land-conf-058-E3",
+      "configuration_id": "cm-land-conf-cluster-058",
+      "episode_id": "cm-land-conf-058",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 4,
+      "required_unit_count": 4
+    },
+    {
+      "case_id": "ax-b661d881a93b4fc618fa982239da5065",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-058-E2",
+      "configuration_id": "cm-land-conf-cluster-058",
+      "episode_id": "cm-land-conf-058",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "dv-d10564ed895e766d14a7b4bd5bc702",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-060-E1",
+      "configuration_id": "cm-land-conf-cluster-060",
+      "episode_id": "cm-land-conf-060",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "dv-5f42d9d8a7dd1de3b0e4949742654a",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-060-E2",
+      "configuration_id": "cm-land-conf-cluster-060",
+      "episode_id": "cm-land-conf-060",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "dv-77a009fe560ea554e159e78a78fb2d",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-072-E0",
+      "configuration_id": "cm-land-conf-cluster-072",
+      "episode_id": "cm-land-conf-072",
+      "family": "nominal_false_premise",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-4acdcf48d44b117b92730636bddd1ee2",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 21 s; interval start: 11 s; measured speed: 0 m/s).",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 21 s; interval start: 11 s; measured speed: 0 m/s).",
+          "unit_id": "u03"
+        }
+      ],
+      "condition_id": "cm-land-conf-060-E3",
+      "configuration_id": "cm-land-conf-cluster-060",
+      "episode_id": "cm-land-conf-060",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 3,
+      "required_unit_count": 4
+    },
+    {
+      "case_id": "ax-6ef13bb8d249ab98644c1a979de4fb62",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "the goal result was aborted with error code 106",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The trace records three FollowPath attempts, two failures, and two Wait recoveries; the retained behavior tree specifies those Wait retries",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Nav2 delivered mostly 0.25\u20130.26 m/s commands",
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-047-E2",
+      "configuration_id": "cm-land-conf-cluster-047",
+      "episode_id": "cm-land-conf-047",
+      "family": "measured_response_recovery",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 3,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "dv-2577fa14aca4531d8f0db185071147",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-058-E0",
+      "configuration_id": "cm-land-conf-cluster-058",
+      "episode_id": "cm-land-conf-058",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "ax-66936b170d41bbe34c7b12bb28bbf7a9",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The accepted NavigateToPose goal ultimately **succeeded** with error code 0",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained transition trace records two FollowPath failures, two source-qualified Wait recoveries, and a third FollowPath attempt",
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-051-E1",
+      "configuration_id": "cm-land-conf-cluster-051",
+      "episode_id": "cm-land-conf-051",
+      "family": "measured_response_recovery",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "dv-d78a9f2e67abfe95adc533d7ccaed1",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 2 FollowPath attempts, 1 FollowPath failures, and 1 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-044-E1",
+      "configuration_id": "cm-land-conf-cluster-044",
+      "episode_id": "cm-land-conf-044",
+      "family": "measured_response_recovery",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-6bfa529d1aedb5c70b85ed31b73eafa4",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "NavigateToPose then aborted with error code 105",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The robot-visible trace records three FollowPath attempts, two failures, and two Wait recoveries (`recovery-trace`). The retained tree permits two retries and places Wait in the controller recovery branch (`source/behavior_tree.xml`).",
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-045-E1",
+      "configuration_id": "cm-land-conf-cluster-045",
+      "episode_id": "cm-land-conf-045",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-ff10727fb4a1d16159a2b77e3862eac9",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "the accepted goal ultimately aborted with code 105",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "the trace records three attempts, two failures and two Wait recoveries; the accepted goal ultimately aborted with code 105 [recovery-trace; action-result]. The retained tree permits two Wait retries",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Nav2 delivered mostly 0.26 m/s commands",
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-041-E2",
+      "configuration_id": "cm-land-conf-cluster-041",
+      "episode_id": "cm-land-conf-041",
+      "family": "missing_decisive_evidence",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 3,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "ax-946bea9bc8d65c106e2a4aae80c2af71",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-060-E1",
+      "configuration_id": "cm-land-conf-cluster-060",
+      "episode_id": "cm-land-conf-060",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-e1c2e775055a23fe28776333f828f735",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 28 s; interval start: 17 s; measured speed: 0 m/s).",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 28 s; interval start: 17 s; measured speed: 0 m/s).",
+          "unit_id": "u03"
+        }
+      ],
+      "condition_id": "cm-land-conf-042-E3",
+      "configuration_id": "cm-land-conf-cluster-042",
+      "episode_id": "cm-land-conf-042",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4",
+      "paired_complete_episode": false,
+      "covered_units": 3,
+      "required_unit_count": 4
+    },
+    {
+      "case_id": "ax-6ce392edfed61df33ee29648d47c936f",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-051-E2",
+      "configuration_id": "cm-land-conf-cluster-051",
+      "episode_id": "cm-land-conf-051",
+      "family": "measured_response_recovery",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "dv-64acde579f6525656eb6bf3c19f49a",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-041-E0",
+      "configuration_id": "cm-land-conf-cluster-041",
+      "episode_id": "cm-land-conf-041",
+      "family": "missing_decisive_evidence",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "dv-9f186d0534839a4f7d2fda113e072b",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-043-E0",
+      "configuration_id": "cm-land-conf-cluster-043",
+      "episode_id": "cm-land-conf-043",
+      "family": "measured_response_recovery",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "ax-d14d8748d387537a1665794e1fe9639e",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-060-E0",
+      "configuration_id": "cm-land-conf-cluster-060",
+      "episode_id": "cm-land-conf-060",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "dv-49ac52f3ed75e0d066779f6dc773ab",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-046-E0",
+      "configuration_id": "cm-land-conf-cluster-046",
+      "episode_id": "cm-land-conf-046",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "dv-af5a2c2508832f4df09f305530743a",
+      "factual_numeric_errors": [],
+      "primary_failure": true,
+      "primary_violations": [
+        {
+          "kind": "unsupported_negation",
+          "quote": "Measured response recovery does not establish or cause the eventual task outcome.",
+          "reason": "The evidence does not establish outcome causation, but it also does not establish that measured recovery had no causal role. The categorical denial of causation exceeds the evidence."
+        }
+      ],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 28 s; interval start: 18 s; measured speed: 0 m/s).",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 28 s; interval start: 18 s; measured speed: 0 m/s).",
+          "unit_id": "u03"
+        },
+        {
+          "communicated": true,
+          "quote": "Measured response recovered to 0.249750003612 m/s in the later 30\u201331 s interval.",
+          "unit_id": "u04"
+        }
+      ],
+      "condition_id": "cm-land-conf-047-E3",
+      "configuration_id": "cm-land-conf-cluster-047",
+      "episode_id": "cm-land-conf-047",
+      "family": "measured_response_recovery",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 5,
+      "required_unit_count": 5
+    },
+    {
+      "case_id": "dv-9d06ded2ffe22422ea5321d06a4f3d",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 1 FollowPath attempts, 0 FollowPath failures, and 0 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-054-E1",
+      "configuration_id": "cm-land-conf-cluster-054",
+      "episode_id": "cm-land-conf-054",
+      "family": "nominal_false_premise",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "ax-09b2c5c4ecea884005bd28b5eced81f5",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "NavigateToPose ultimately aborted with error code 106",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The recorded sequence had two FollowPath failures and two Wait recoveries under the retained retry policy;",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "delivered commands stayed near 0.26 m/s",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "The strongest supported diagnosis is a sustained command\u2013motion discrepancy during navigation: delivered commands stayed near 0.26 m/s while independently measured odometry speed was 0 m/s for 18\u201328 s, after an initial healthy response near 0.26 m/s.",
+          "unit_id": "u03"
+        },
+        {
+          "communicated": true,
+          "quote": "Measured motion resumed near 0.25 m/s at 30\u201331 s, so the loss of measured response was temporary",
+          "unit_id": "u04"
+        }
+      ],
+      "condition_id": "cm-land-conf-047-E3",
+      "configuration_id": "cm-land-conf-cluster-047",
+      "episode_id": "cm-land-conf-047",
+      "family": "measured_response_recovery",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 5,
+      "required_unit_count": 5
+    },
+    {
+      "case_id": "dv-51519af725d037d65c397cfe8fa418",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-049-E2",
+      "configuration_id": "cm-land-conf-cluster-049",
+      "episode_id": "cm-land-conf-049",
+      "family": "measured_response_recovery",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "dv-7c9ec792ecfcd00c52f5d9a7e8987b",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-041-E1",
+      "configuration_id": "cm-land-conf-cluster-041",
+      "episode_id": "cm-land-conf-041",
+      "family": "missing_decisive_evidence",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "dv-27e42445ddf9956fa77da0e71d2b90",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 2 FollowPath attempts, 1 FollowPath failures, and 1 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-043-E1",
+      "configuration_id": "cm-land-conf-cluster-043",
+      "episode_id": "cm-land-conf-043",
+      "family": "measured_response_recovery",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-181158cbd7d6082d6efe79e573efe552",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-043-E2",
+      "configuration_id": "cm-land-conf-cluster-043",
+      "episode_id": "cm-land-conf-043",
+      "family": "measured_response_recovery",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "ax-88fd32bfcb7ae613c45ee706376f7536",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "There was no terminal navigation failure: NavigateToPose succeeded with error code 0.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The strongest supported diagnosis is a transient FollowPath failure followed by one source-qualified Wait recovery and a second FollowPath attempt",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "The delivered command stream shows sustained nonzero commands",
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-053-E2",
+      "configuration_id": "cm-land-conf-cluster-053",
+      "episode_id": "cm-land-conf-053",
+      "family": "measured_response_recovery",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 3,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "ax-81a04c9fc033736a72a3c6db2c335a24",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The navigation goal **succeeded**; an overall failure diagnosis is false",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The strongest supported finding is two recoverable `FollowPath` failures across three attempts, with two recorded `Wait` recoveries under the configured bounded retry tree",
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-049-E1",
+      "configuration_id": "cm-land-conf-cluster-049",
+      "episode_id": "cm-land-conf-049",
+      "family": "measured_response_recovery",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-9f711cb3726203d90a85b9099c849dd6",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation succeeded",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-044-E0",
+      "configuration_id": "cm-land-conf-cluster-044",
+      "episode_id": "cm-land-conf-044",
+      "family": "measured_response_recovery",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "ax-ad7e3275e84e07c61c8ef38372f9ce5b",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The goal succeeded with error code 0",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "the retained behavior-tree trace shows one FollowPath attempt, zero FollowPath failures, and zero source-qualified Wait recoveries",
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-054-E0",
+      "configuration_id": "cm-land-conf-cluster-054",
+      "episode_id": "cm-land-conf-054",
+      "family": "nominal_false_premise",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-671e0b54437a0f81ec39d509ec0546df",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-048-E2",
+      "configuration_id": "cm-land-conf-cluster-048",
+      "episode_id": "cm-land-conf-048",
+      "family": "missing_decisive_evidence",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "ax-f6219b0719b5e82031b1b026a438de90",
+      "factual_numeric_errors": [],
+      "primary_failure": true,
+      "primary_violations": [
+        {
+          "kind": "unsupported_negation",
+          "quote": "Measured response recovery does not establish or cause the eventual task outcome.",
+          "reason": "The evidence does not establish outcome causation, but it also does not establish that measured response recovery had no causal role. The categorical denial of causation exceeds the evidence."
+        }
+      ],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 21 s; interval start: 11 s; measured speed: 0 m/s).",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 21 s; interval start: 11 s; measured speed: 0 m/s).",
+          "unit_id": "u03"
+        },
+        {
+          "communicated": true,
+          "quote": "Measured response recovered in the declared later interval.",
+          "unit_id": "u04"
+        }
+      ],
+      "condition_id": "cm-land-conf-051-E3",
+      "configuration_id": "cm-land-conf-cluster-051",
+      "episode_id": "cm-land-conf-051",
+      "family": "measured_response_recovery",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 4,
+      "required_unit_count": 5
+    },
+    {
+      "case_id": "dv-8b25b4158a7c1216cbe14d47c44767",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-051-E2",
+      "configuration_id": "cm-land-conf-cluster-051",
+      "episode_id": "cm-land-conf-051",
+      "family": "measured_response_recovery",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "dv-38298b6c35db6a00224b85e40c427e",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 2 FollowPath attempts, 1 FollowPath failures, and 1 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-053-E1",
+      "configuration_id": "cm-land-conf-cluster-053",
+      "episode_id": "cm-land-conf-053",
+      "family": "measured_response_recovery",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-ec59c437698cd6aa1b3213766213227a",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-054-E1",
+      "configuration_id": "cm-land-conf-cluster-054",
+      "episode_id": "cm-land-conf-054",
+      "family": "nominal_false_premise",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "ax-b183aeec5ee108fc6f52de5e478e1063",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The `NavigateToPose` action ultimately **succeeded** with error code 0",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "there were two transient `FollowPath` failures, followed by two source-qualified `Wait` recoveries and a third `FollowPath` attempt.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "The command\u2013motion diagnostic was not triggered",
+          "unit_id": "u03"
+        }
+      ],
+      "condition_id": "cm-land-conf-072-E2",
+      "configuration_id": "cm-land-conf-cluster-072",
+      "episode_id": "cm-land-conf-072",
+      "family": "nominal_false_premise",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 3,
+      "required_unit_count": 4
+    },
+    {
+      "case_id": "ax-d7b535e175bf1214d84fa8b21a106121",
+      "factual_numeric_errors": [],
+      "primary_failure": true,
+      "primary_violations": [
+        {
+          "kind": "unsupported_execution_diagnosis",
+          "quote": "In Nav2, that code indicates `FollowPath` failed to make progress.",
+          "reason": "The supplied evidence records an abort with code 105 but provides no code-to-diagnosis mapping or episode-specific controller failure record. The configured progress-checker thresholds alone do not establish a reported progress failure."
+        }
+      ],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The accepted navigation goal **aborted** with error code 105",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-046-E0",
+      "configuration_id": "cm-land-conf-cluster-046",
+      "episode_id": "cm-land-conf-046",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "ax-b4eb85372fd5d556d91f06792cdf9ec2",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-072-E0",
+      "configuration_id": "cm-land-conf-cluster-072",
+      "episode_id": "cm-land-conf-072",
+      "family": "nominal_false_premise",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-73a3353cb99c07abdb97332487e76f22",
+      "factual_numeric_errors": [],
+      "primary_failure": true,
+      "primary_violations": [
+        {
+          "kind": "unsupported_recovery",
+          "quote": "This supports a recovered path-following interruption",
+          "reason": "A FollowPath failure, Wait invocation, and eventual action success establish the action sequence, but no measured-motion evidence establishes resumed command tracking."
+        }
+      ],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded NavigateToPose result succeeded with error code 0",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "During execution, FollowPath failed once across two attempts, and the retained behavior-tree trace records one entry into the configured Wait recovery",
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-053-E1",
+      "configuration_id": "cm-land-conf-cluster-053",
+      "episode_id": "cm-land-conf-053",
+      "family": "measured_response_recovery",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-3003a7e4c7094c2da82861ffe77e9db1",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "`NavigateToPose` ended aborted with error code 105.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "`FollowPath` failed twice, the retained behavior tree ran its `Wait` recovery twice",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "The robot received predominantly 0.26 m/s navigation commands during the episode.",
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-056-E2",
+      "configuration_id": "cm-land-conf-cluster-056",
+      "episode_id": "cm-land-conf-056",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 3,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "ax-6042b1c29021e662d8184d39e26738c5",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "NavigateToPose action **succeeded**",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "`FollowPath` failed twice, and the retained behavior tree records two `Wait` recoveries before the NavigateToPose action **succeeded**",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered Nav2 commands remained at 0.26 m/s",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered Nav2 commands remained at 0.26 m/s while measured odometry was 0 m/s for 10 seconds (9\u201319 s), after an initial measured response of about 0.26 m/s.",
+          "unit_id": "u03"
+        },
+        {
+          "communicated": true,
+          "quote": "Measured motion returned to about 0.25 m/s at 21\u201322 s",
+          "unit_id": "u04"
+        }
+      ],
+      "condition_id": "cm-land-conf-049-E3",
+      "configuration_id": "cm-land-conf-cluster-049",
+      "episode_id": "cm-land-conf-049",
+      "family": "measured_response_recovery",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 5,
+      "required_unit_count": 5
+    },
+    {
+      "case_id": "ax-17332c64d52a5631d48d576ab675ce07",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "the accepted NavigateToPose goal **aborted** with recorded action error code 106",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-047-E0",
+      "configuration_id": "cm-land-conf-cluster-047",
+      "episode_id": "cm-land-conf-047",
+      "family": "measured_response_recovery",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "ax-db3d16c997d0bcb0cd80602fe436cad7",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-056-E0",
+      "configuration_id": "cm-land-conf-cluster-056",
+      "episode_id": "cm-land-conf-056",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "dv-a0944eee2f54e1284afdc523b726a9",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-049-E0",
+      "configuration_id": "cm-land-conf-cluster-049",
+      "episode_id": "cm-land-conf-049",
+      "family": "measured_response_recovery",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "ax-a1a93275a7120c54cdc03297426635fb",
+      "factual_numeric_errors": [
+        {
+          "quote": "The robot received forward commands during the episode",
+          "reason": "The delivered stream reports planar speed magnitudes, without signed velocity components establishing forward direction. Configured desired velocity does not establish the direction of delivered commands."
+        }
+      ],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "`NavigateToPose` succeeded with error code 0",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "the behavior tree trace shows one `FollowPath` attempt, zero failures, and no qualifying `Wait` recovery",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "The robot received forward commands during the episode (`delivered-command-stream`), but those commands do not establish actuator acceptance or measured motion.",
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-054-E1",
+      "configuration_id": "cm-land-conf-cluster-054",
+      "episode_id": "cm-land-conf-054",
+      "family": "nominal_false_premise",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 3,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "ax-b1a0a33e2d1a34ddd5ecbeb6a838846e",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The NavigateToPose action then reported `succeeded` with error code 0.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained behavior tree records two FollowPath attempts, one failure, and one source-qualified Wait recovery; the configured recovery child waits 1.0 s before retrying.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commands show commanded motion",
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-044-E2",
+      "configuration_id": "cm-land-conf-cluster-044",
+      "episode_id": "cm-land-conf-044",
+      "family": "measured_response_recovery",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 3,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "dv-482fb2c80e3941ad883a338718ac01",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 1 FollowPath attempts, 0 FollowPath failures, and 0 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-054-E0",
+      "configuration_id": "cm-land-conf-cluster-054",
+      "episode_id": "cm-land-conf-054",
+      "family": "nominal_false_premise",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-b4b9e95fb31f71dc7c6ab738fbc67f57",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "an aborted NavigateToPose goal (error 105)",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The recorded sequence includes two FollowPath failures, two Wait recoveries, and an aborted NavigateToPose goal (error 105).",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Nav2 delivered forward commands at 0.26 m/s",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "The strongest supported diagnosis is a sustained command\u2013motion discrepancy: Nav2 delivered forward commands at 0.26 m/s while measured odometry speed was 0 for at least 10 seconds (11\u201321 s), after an initial response near 0.26 m/s.",
+          "unit_id": "u03"
+        }
+      ],
+      "condition_id": "cm-land-conf-046-E3",
+      "configuration_id": "cm-land-conf-cluster-046",
+      "episode_id": "cm-land-conf-046",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 4,
+      "required_unit_count": 4
+    },
+    {
+      "case_id": "ax-4e2a3ed8c6e3de96f1bfd4c07b45af9e",
+      "factual_numeric_errors": [
+        {
+          "quote": "The failure premise is rejected because the action succeeded and registered failure diagnostics did not trigger.",
+          "reason": "The retained trace records two FollowPath failures. Only the registered command-motion discrepancy did not trigger; eventual success does not erase the recorded failures."
+        }
+      ],
+      "primary_failure": true,
+      "primary_violations": [
+        {
+          "kind": "unsupported_negation",
+          "quote": "The failure premise is rejected because the action succeeded and registered failure diagnostics did not trigger.",
+          "reason": "This rejects navigation failure despite two recorded FollowPath failures. Success and a nontriggered command-motion diagnostic do not support that broader negation."
+        }
+      ],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u02"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u03"
+        }
+      ],
+      "condition_id": "cm-land-conf-072-E2",
+      "configuration_id": "cm-land-conf-cluster-072",
+      "episode_id": "cm-land-conf-072",
+      "family": "nominal_false_premise",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 4
+    },
+    {
+      "case_id": "dv-524fe91bbe3d25b7a26f49b96e3281",
+      "factual_numeric_errors": [],
+      "primary_failure": true,
+      "primary_violations": [
+        {
+          "kind": "unsupported_negation",
+          "quote": "Measured response recovery does not establish or cause the eventual task outcome.",
+          "reason": "The evidence supports measured recovery but does not determine its causal contribution to success. Saying recovery does not cause the outcome goes beyond saying causation is unproven."
+        }
+      ],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 21 s; interval start: 11 s; measured speed: 0 m/s).",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 21 s; interval start: 11 s; measured speed: 0 m/s).",
+          "unit_id": "u03"
+        },
+        {
+          "communicated": true,
+          "quote": "Measured response recovered to 0.249750018828 m/s in the later 23\u201324 s interval.",
+          "unit_id": "u04"
+        }
+      ],
+      "condition_id": "cm-land-conf-051-E3",
+      "configuration_id": "cm-land-conf-cluster-051",
+      "episode_id": "cm-land-conf-051",
+      "family": "measured_response_recovery",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 5,
+      "required_unit_count": 5
+    },
+    {
+      "case_id": "dv-886ebe7be80c0fbaa598eb1a36ba4b",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-045-E1",
+      "configuration_id": "cm-land-conf-cluster-045",
+      "episode_id": "cm-land-conf-045",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "dv-4bb16ef1c4e70c998ede95ca576466",
+      "factual_numeric_errors": [],
+      "primary_failure": true,
+      "primary_violations": [
+        {
+          "kind": "unsupported_negation",
+          "quote": "Measured response recovery does not establish or cause the eventual task outcome.",
+          "reason": "The evidence supports measured recovery but does not determine its causal contribution to success. Saying recovery does not cause the outcome goes beyond saying causation is unproven."
+        }
+      ],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 2 FollowPath attempts, 1 FollowPath failures, and 1 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 27 s; interval start: 18 s; measured speed: 0 m/s).",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 27 s; interval start: 18 s; measured speed: 0 m/s).",
+          "unit_id": "u03"
+        },
+        {
+          "communicated": true,
+          "quote": "Measured response recovered to 0.259739995003 m/s in the later 30\u201331 s interval.",
+          "unit_id": "u04"
+        }
+      ],
+      "condition_id": "cm-land-conf-043-E3",
+      "configuration_id": "cm-land-conf-cluster-043",
+      "episode_id": "cm-land-conf-043",
+      "family": "measured_response_recovery",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 5,
+      "required_unit_count": 5
+    },
+    {
+      "case_id": "ax-c2cf44daa8466bf406e5c511fdb897c5",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The navigation goal **aborted**, with error code 105.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The trace records three FollowPath attempts, two FollowPath failures, and two Wait recoveries; the retained behavior tree permits two such retries.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Nav2 delivered 0.26 m/s commands during the episode",
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-045-E2",
+      "configuration_id": "cm-land-conf-cluster-045",
+      "episode_id": "cm-land-conf-045",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 3,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "ax-bf9bc1cd213b7d5208ab78460b375600",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "NavigateToPose ultimately aborted",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The trace records three FollowPath attempts, two failures, and two entries into the configured Wait recovery",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "from 9\u201319 s, delivered commands were 0.26 m/s",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "The strongest supported diagnosis is a sustained command\u2013motion discrepancy during navigation: from 9\u201319 s, delivered commands were 0.26 m/s while measured odometry was 0 m/s, after both were about 0.26 m/s early in the run",
+          "unit_id": "u03"
+        }
+      ],
+      "condition_id": "cm-land-conf-045-E3",
+      "configuration_id": "cm-land-conf-cluster-045",
+      "episode_id": "cm-land-conf-045",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 4,
+      "required_unit_count": 4
+    },
+    {
+      "case_id": "dv-fc17432fee45418e038327dd341599",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 21 s; interval start: 12 s; measured speed: 0 m/s).",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 21 s; interval start: 12 s; measured speed: 0 m/s).",
+          "unit_id": "u03"
+        }
+      ],
+      "condition_id": "cm-land-conf-056-E3",
+      "configuration_id": "cm-land-conf-cluster-056",
+      "episode_id": "cm-land-conf-056",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 4,
+      "required_unit_count": 4
+    },
+    {
+      "case_id": "ax-18a36c5758811329ffe40b7c5349e3dd",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-048-E0",
+      "configuration_id": "cm-land-conf-cluster-048",
+      "episode_id": "cm-land-conf-048",
+      "family": "missing_decisive_evidence",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "ax-1a143838f571159938d9b4f1b41a805b",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "NavigateToPose ultimately aborted with error code 105",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained behavior tree records three FollowPath attempts and two Wait recoveries",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "delivered 0.26 m/s commands continued",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "The strongest supported diagnosis is a sustained navigation progress stall: delivered 0.26 m/s commands continued while measured odometry speed was 0 from 12\u201321 s",
+          "unit_id": "u03"
+        }
+      ],
+      "condition_id": "cm-land-conf-056-E3",
+      "configuration_id": "cm-land-conf-cluster-056",
+      "episode_id": "cm-land-conf-056",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 4,
+      "required_unit_count": 4
+    },
+    {
+      "case_id": "ax-29e5692faa220a136a8dc8b9f69da44b",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 21 s; interval start: 11 s; measured speed: 0 m/s).",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 21 s; interval start: 11 s; measured speed: 0 m/s).",
+          "unit_id": "u03"
+        }
+      ],
+      "condition_id": "cm-land-conf-046-E3",
+      "configuration_id": "cm-land-conf-cluster-046",
+      "episode_id": "cm-land-conf-046",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 3,
+      "required_unit_count": 4
+    },
+    {
+      "case_id": "dv-b3d5f37e601130acb467ed1f208fec",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-051-E0",
+      "configuration_id": "cm-land-conf-cluster-051",
+      "episode_id": "cm-land-conf-051",
+      "family": "measured_response_recovery",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "ax-c31d4b61d1cea7b138f58f2e25daa27e",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "NavigateToPose returned **succeeded** with error code 0",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records two FollowPath attempts, one failure, and one Wait recovery (`recovery-trace`); the exact behavior tree permits that sequence (`source/behavior_tree.xml`).",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Nav2 delivered mostly 0.26 m/s commands",
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-043-E2",
+      "configuration_id": "cm-land-conf-cluster-043",
+      "episode_id": "cm-land-conf-043",
+      "family": "measured_response_recovery",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 3,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "ax-9fcc3451811abec590210fd651213796",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 28 s; interval start: 18 s; measured speed: 0 m/s).",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 28 s; interval start: 18 s; measured speed: 0 m/s).",
+          "unit_id": "u03"
+        }
+      ],
+      "condition_id": "cm-land-conf-058-E3",
+      "configuration_id": "cm-land-conf-cluster-058",
+      "episode_id": "cm-land-conf-058",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 3,
+      "required_unit_count": 4
+    },
+    {
+      "case_id": "dv-b5f3ccf1abd8e12f06047e394279e5",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-048-E2",
+      "configuration_id": "cm-land-conf-cluster-048",
+      "episode_id": "cm-land-conf-048",
+      "family": "missing_decisive_evidence",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "ax-1baa18b48e39aab691894c433cff39f1",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-058-E1",
+      "configuration_id": "cm-land-conf-cluster-058",
+      "episode_id": "cm-land-conf-058",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "dv-42065da3b366c872f2b43dd90b4d14",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-056-E0",
+      "configuration_id": "cm-land-conf-cluster-056",
+      "episode_id": "cm-land-conf-056",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "ax-02093d80f6dba9d40347381e977488a5",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "`NavigateToPose` succeeded with error code 0",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "two intermediate `FollowPath` failures, followed by two source-qualified `Wait` recoveries and a third path-following attempt",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "The robot received mostly 0.25\u20130.26 m/s navigation commands",
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-051-E2",
+      "configuration_id": "cm-land-conf-cluster-051",
+      "episode_id": "cm-land-conf-051",
+      "family": "measured_response_recovery",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 3,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "dv-880e5a3c44401deec61ceadf214342",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 2 FollowPath attempts, 1 FollowPath failures, and 1 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-043-E2",
+      "configuration_id": "cm-land-conf-cluster-043",
+      "episode_id": "cm-land-conf-043",
+      "family": "measured_response_recovery",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "dv-9980bd192b19af0ba1ffe5321bc118",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-047-E1",
+      "configuration_id": "cm-land-conf-cluster-047",
+      "episode_id": "cm-land-conf-047",
+      "family": "measured_response_recovery",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-67b2da8ea3ee9d86a8f6c20b5f85efe8",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "`NavigateToPose` aborted with error code 105",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-048-E0",
+      "configuration_id": "cm-land-conf-cluster-048",
+      "episode_id": "cm-land-conf-048",
+      "family": "missing_decisive_evidence",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "ax-32e26468a75fa9623a25e5c02e2cd1cb",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-044-E1",
+      "configuration_id": "cm-land-conf-cluster-044",
+      "episode_id": "cm-land-conf-044",
+      "family": "measured_response_recovery",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-e5216e37edea88f7ef5a5d45f569e390",
+      "factual_numeric_errors": [],
+      "primary_failure": true,
+      "primary_violations": [
+        {
+          "kind": "unsupported_negation",
+          "quote": "Measured response recovery does not establish or cause the eventual task outcome.",
+          "reason": "The evidence does not establish outcome causation, but it also does not establish that measured recovery had no causal role. The categorical denial of causation exceeds the evidence."
+        }
+      ],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 19 s; interval start: 9 s; measured speed: 0 m/s).",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 19 s; interval start: 9 s; measured speed: 0 m/s).",
+          "unit_id": "u03"
+        },
+        {
+          "communicated": true,
+          "quote": "Measured response recovered in the declared later interval.",
+          "unit_id": "u04"
+        }
+      ],
+      "condition_id": "cm-land-conf-049-E3",
+      "configuration_id": "cm-land-conf-cluster-049",
+      "episode_id": "cm-land-conf-049",
+      "family": "measured_response_recovery",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 4,
+      "required_unit_count": 5
+    },
+    {
+      "case_id": "ax-a777052fe24048b59c560f5d34de85fe",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "`NavigateToPose` aborted with error code 105",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "after three `FollowPath` attempts and two recorded failures, with two `Wait` recoveries under the retained behavior tree",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Nav2 delivered mostly 0.25\u20130.26 m/s commands",
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-046-E2",
+      "configuration_id": "cm-land-conf-cluster-046",
+      "episode_id": "cm-land-conf-046",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 3,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "ax-c4e74fe3edac47241bcc369f66174434",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "the NavigateToPose goal ultimately aborted with error code 105",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The trace records three FollowPath attempts, two failures, and two Wait recoveries under the configured two-retry behavior tree",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Nav2 delivered mostly 0.26 m/s commands during the episode",
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-058-E2",
+      "configuration_id": "cm-land-conf-cluster-058",
+      "episode_id": "cm-land-conf-058",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 3,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "ax-74156f1686d309a0cd874f0f064943dc",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-043-E0",
+      "configuration_id": "cm-land-conf-cluster-043",
+      "episode_id": "cm-land-conf-043",
+      "family": "measured_response_recovery",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "ax-d5be548e46d880e4211acba83a0855f8",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-053-E0",
+      "configuration_id": "cm-land-conf-cluster-053",
+      "episode_id": "cm-land-conf-053",
+      "family": "measured_response_recovery",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "ax-8e8224a765650b9b9933e7b30281b835",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "NavigateToPose ultimately succeeded",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The trace records one FollowPath failure, one Wait recovery under the retained behavior tree, and a second FollowPath attempt",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "From 18\u201327 s, delivered commands remained at 0.26 m/s",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "From 18\u201327 s, delivered commands remained at 0.26 m/s while measured odometry speed was 0",
+          "unit_id": "u03"
+        },
+        {
+          "communicated": true,
+          "quote": "measured speed returned to about 0.26 m/s by 30\u201331 s",
+          "unit_id": "u04"
+        }
+      ],
+      "condition_id": "cm-land-conf-043-E3",
+      "configuration_id": "cm-land-conf-cluster-043",
+      "episode_id": "cm-land-conf-043",
+      "family": "measured_response_recovery",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 5,
+      "required_unit_count": 5
+    },
+    {
+      "case_id": "ax-8a2cb1fed37a411cc1378c6492d28ec1",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-041-E2",
+      "configuration_id": "cm-land-conf-cluster-041",
+      "episode_id": "cm-land-conf-041",
+      "family": "missing_decisive_evidence",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "ax-dee0a3579cda121714c71d358705286c",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "aborted with error code 105",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-041-E0",
+      "configuration_id": "cm-land-conf-cluster-041",
+      "episode_id": "cm-land-conf-041",
+      "family": "missing_decisive_evidence",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "ax-16d85b68fc07c5488d2bf066c95666a7",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-046-E1",
+      "configuration_id": "cm-land-conf-cluster-046",
+      "episode_id": "cm-land-conf-046",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "dv-ae677379709d8d9a9d1cfe15321c29",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-048-E0",
+      "configuration_id": "cm-land-conf-cluster-048",
+      "episode_id": "cm-land-conf-048",
+      "family": "missing_decisive_evidence",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "ax-b76815397603f541cf129c177738e8ec",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-072-E1",
+      "configuration_id": "cm-land-conf-cluster-072",
+      "episode_id": "cm-land-conf-072",
+      "family": "nominal_false_premise",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "ax-d3d8c433306b2a89e4a9e71a791139e3",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-049-E2",
+      "configuration_id": "cm-land-conf-cluster-049",
+      "episode_id": "cm-land-conf-049",
+      "family": "measured_response_recovery",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "ax-022420df8809b4ae3844b88bb49814fa",
+      "factual_numeric_errors": [],
+      "primary_failure": true,
+      "primary_violations": [
+        {
+          "kind": "unsupported_recovery",
+          "quote": "This was a **recovered navigation episode, not a failed goal**",
+          "reason": "The evidence establishes recovery invocations and eventual action success, but contains no measured motion showing resumed command tracking. Those observations do not establish recovery; the later motion-evidence limitation does not support the opening recovery assertion."
+        }
+      ],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "NavigateToPose reporting `succeeded` and error code 0",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "FollowPath failed twice, the behavior tree entered Wait recovery twice, and a third FollowPath attempt ended with NavigateToPose reporting `succeeded` and error code 0",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Nav2 delivered 921 command samples over about 94.5 seconds, mostly near the configured 0.26 m/s",
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-049-E2",
+      "configuration_id": "cm-land-conf-cluster-049",
+      "episode_id": "cm-land-conf-049",
+      "family": "measured_response_recovery",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 3,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "dv-ea4b30dd9bdb369be60c8902b61f2a",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-056-E1",
+      "configuration_id": "cm-land-conf-cluster-056",
+      "episode_id": "cm-land-conf-056",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-0764d4a226e8a6729ba55121c6b5e8fd",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The NavigateToPose goal ultimately aborted with error code 105 (action-result).",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The trace records three FollowPath attempts, two failures, and two source-qualified Wait recoveries; the retained behavior tree allows two retries and places Wait in the recovery child (recovery-trace; source/behavior_tree.xml).",
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-058-E1",
+      "configuration_id": "cm-land-conf-cluster-058",
+      "episode_id": "cm-land-conf-058",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-e5cdfba43134c9cb37682b03bb90896a",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-058-E0",
+      "configuration_id": "cm-land-conf-cluster-058",
+      "episode_id": "cm-land-conf-058",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "dv-298e429b1b76b9676a3cdf76737d24",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-060-E0",
+      "configuration_id": "cm-land-conf-cluster-060",
+      "episode_id": "cm-land-conf-060",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "ax-74edc592cafd4c758c84e49b78eabcbf",
+      "factual_numeric_errors": [
+        {
+          "quote": "measured planar speed was 0 throughout the 18\u201328 s diagnostic window.",
+          "reason": "The window medians are zero, but the 18\u201319 s window includes a maximum measured speed of approximately 0.25974 m/s. Zero throughout overstates the measurements; the sustained discrepancy remains supported."
+        }
+      ],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "NavigateToPose ultimately aborted with error code 105.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The trace records three FollowPath attempts and two source-qualified Wait recoveries",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Nav2 delivered 0.26 m/s commands",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "The strongest supported diagnosis is a sustained command\u2013motion discrepancy: Nav2 delivered 0.26 m/s commands while measured planar speed was 0 throughout the 18\u201328 s diagnostic window.",
+          "unit_id": "u03"
+        }
+      ],
+      "condition_id": "cm-land-conf-058-E3",
+      "configuration_id": "cm-land-conf-cluster-058",
+      "episode_id": "cm-land-conf-058",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 4,
+      "required_unit_count": 4
+    },
+    {
+      "case_id": "dv-5420d5b6eb645178c91da17a8c5b68",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-058-E2",
+      "configuration_id": "cm-land-conf-cluster-058",
+      "episode_id": "cm-land-conf-058",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "dv-cd5d765a3d6c53f4df9e2f5d45120b",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 21 s; interval start: 11 s; measured speed: 0 m/s).",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 21 s; interval start: 11 s; measured speed: 0 m/s).",
+          "unit_id": "u03"
+        }
+      ],
+      "condition_id": "cm-land-conf-046-E3",
+      "configuration_id": "cm-land-conf-cluster-046",
+      "episode_id": "cm-land-conf-046",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 4,
+      "required_unit_count": 4
+    },
+    {
+      "case_id": "ax-2345ee3fe74ac36913a3ac6d3c8ea0b9",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "the goal was aborted with error code 105",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "after three `FollowPath` attempts and two failures, with the configured `Wait` recovery executed twice",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Nav2 delivered 0.26 m/s commands for most of the recorded stream",
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-060-E2",
+      "configuration_id": "cm-land-conf-cluster-060",
+      "episode_id": "cm-land-conf-060",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 3,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "ax-3bbe6361b85b1b08a8eb0639568cb7bf",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "registered failure diagnostics did not trigger.",
+          "unit_id": "u03"
+        }
+      ],
+      "condition_id": "cm-land-conf-054-E2",
+      "configuration_id": "cm-land-conf-cluster-054",
+      "episode_id": "cm-land-conf-054",
+      "family": "nominal_false_premise",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 4
+    },
+    {
+      "case_id": "ax-1e64653bca0905eacc45752e33462a9f",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The NavigateToPose result was aborted with error code 105",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The trace records three FollowPath attempts, two FollowPath failures, and two Wait recoveries; the retained behavior tree permits two such retries",
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-041-E1",
+      "configuration_id": "cm-land-conf-cluster-041",
+      "episode_id": "cm-land-conf-041",
+      "family": "missing_decisive_evidence",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "dv-d46f7c1f67f2f969aea14db415eaa5",
+      "factual_numeric_errors": [],
+      "primary_failure": true,
+      "primary_violations": [
+        {
+          "kind": "unsupported_negation",
+          "quote": "Measured response recovery does not establish or cause the eventual task outcome.",
+          "reason": "The evidence does not establish outcome causation, but it also does not establish that measured recovery had no causal role. The phrase 'or cause' endorses that unsupported negation."
+        }
+      ],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 2 FollowPath attempts, 1 FollowPath failures, and 1 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 21 s; interval start: 11 s; measured speed: 0 m/s).",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 21 s; interval start: 11 s; measured speed: 0 m/s).",
+          "unit_id": "u03"
+        },
+        {
+          "communicated": true,
+          "quote": "Measured response recovered to 0.259739995003 m/s in the later 23\u201324 s interval.",
+          "unit_id": "u04"
+        }
+      ],
+      "condition_id": "cm-land-conf-053-E3",
+      "configuration_id": "cm-land-conf-cluster-053",
+      "episode_id": "cm-land-conf-053",
+      "family": "measured_response_recovery",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 5,
+      "required_unit_count": 5
+    },
+    {
+      "case_id": "ax-a3b4f383a81e94d735318f032df3d6b9",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-048-E1",
+      "configuration_id": "cm-land-conf-cluster-048",
+      "episode_id": "cm-land-conf-048",
+      "family": "missing_decisive_evidence",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-971a14b9e89bb915bc64c3f2a21e99a5",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-060-E2",
+      "configuration_id": "cm-land-conf-cluster-060",
+      "episode_id": "cm-land-conf-060",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "ax-b2f0b896368580188e5f293befa17629",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "NavigateToPose succeeded with error code 0",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The behavior tree recorded one FollowPath failure, one Wait recovery, and a retry",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Nav2 delivered commands near 0.26 m/s",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "Nav2 delivered commands near 0.26 m/s while measured odometry speed was 0 m/s for 10 seconds (11\u201321 s)",
+          "unit_id": "u03"
+        },
+        {
+          "communicated": true,
+          "quote": "measured speed returned to about 0.26 m/s at 23\u201324 s",
+          "unit_id": "u04"
+        }
+      ],
+      "condition_id": "cm-land-conf-053-E3",
+      "configuration_id": "cm-land-conf-cluster-053",
+      "episode_id": "cm-land-conf-053",
+      "family": "measured_response_recovery",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 5,
+      "required_unit_count": 5
+    },
+    {
+      "case_id": "ax-f8bbe3f88147156c1e64ee254e0152d7",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-045-E1",
+      "configuration_id": "cm-land-conf-cluster-045",
+      "episode_id": "cm-land-conf-045",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-2142718321154c4c4541d9e8ca9400e9",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The goal succeeded",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained behavior tree shows one FollowPath failure, one Wait recovery, and a second FollowPath attempt",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "In the 18\u201331 s diagnostic windows, commanded speed was 0.26 m/s",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "In the 18\u201331 s diagnostic windows, commanded speed was 0.26 m/s while median measured planar speed was 0",
+          "unit_id": "u03"
+        },
+        {
+          "communicated": true,
+          "quote": "measured speed returned to about 0.26 m/s at 31\u201332 s",
+          "unit_id": "u04"
+        }
+      ],
+      "condition_id": "cm-land-conf-044-E3",
+      "configuration_id": "cm-land-conf-cluster-044",
+      "episode_id": "cm-land-conf-044",
+      "family": "measured_response_recovery",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 5,
+      "required_unit_count": 5
+    },
+    {
+      "case_id": "ax-e45bb092d71d1f5ef9cc0162cff7110c",
+      "factual_numeric_errors": [],
+      "primary_failure": true,
+      "primary_violations": [
+        {
+          "kind": "unsupported_recovery",
+          "quote": "This supports transient path-following failures that recovered",
+          "reason": "The trace establishes failed attempts, Wait invocations, and eventual action success, but no measured motion establishes recovery. The later acknowledgment that measured-motion evidence is absent does not support this recovery assertion."
+        }
+      ],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The overall `NavigateToPose` action then **succeeded** with error code 0",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records three `FollowPath` attempts, two failures, and two `Wait` recoveries under the bounded retry policy",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-072-E1",
+      "configuration_id": "cm-land-conf-cluster-072",
+      "episode_id": "cm-land-conf-072",
+      "family": "nominal_false_premise",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "ax-c1d98a11f06df96b8a782cfc7873b542",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-056-E1",
+      "configuration_id": "cm-land-conf-cluster-056",
+      "episode_id": "cm-land-conf-056",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "dv-3264d32b42f2bb8f6a09137ec9e9e5",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 21 s; interval start: 11 s; measured speed: 0 m/s).",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 21 s; interval start: 11 s; measured speed: 0 m/s).",
+          "unit_id": "u03"
+        }
+      ],
+      "condition_id": "cm-land-conf-060-E3",
+      "configuration_id": "cm-land-conf-cluster-060",
+      "episode_id": "cm-land-conf-060",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 4,
+      "required_unit_count": 4
+    },
+    {
+      "case_id": "ax-4ca721b2c9fbbfcf4b170f03de55148b",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-046-E0",
+      "configuration_id": "cm-land-conf-cluster-046",
+      "episode_id": "cm-land-conf-046",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "ax-0bd0dd800a3190a5fc19da957f461b8b",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-047-E1",
+      "configuration_id": "cm-land-conf-cluster-047",
+      "episode_id": "cm-land-conf-047",
+      "family": "measured_response_recovery",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-f64508c4a53502524cf470b9e9ed61d1",
+      "factual_numeric_errors": [],
+      "primary_failure": true,
+      "primary_violations": [
+        {
+          "kind": "unsupported_recovery",
+          "quote": "This supports a transient path-following failure followed by recovery",
+          "reason": "The trace establishes recovery invocations and eventual action success, but contains no measured motion showing resumed command tracking. These observations do not establish response recovery."
+        }
+      ],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded NavigateToPose result nevertheless succeeded with error code 0 (action-result).",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The navigation episode contained two FollowPath failures across three attempts, with two Wait recoveries under the retained behavior tree\u2019s two-retry policy (recovery-trace; source/behavior_tree.xml).",
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-072-E0",
+      "configuration_id": "cm-land-conf-cluster-072",
+      "episode_id": "cm-land-conf-072",
+      "family": "nominal_false_premise",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-b7c675effc18c4a5f7624a6f10149946",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-047-E2",
+      "configuration_id": "cm-land-conf-cluster-047",
+      "episode_id": "cm-land-conf-047",
+      "family": "measured_response_recovery",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "ax-09d8dee77255b5f4d4068cc14924caed",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The trace records two FollowPath failures, two Wait recoveries under the bounded retry tree, and then an aborted NavigateToPose goal",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The trace records two FollowPath failures, two Wait recoveries under the bounded retry tree, and then an aborted NavigateToPose goal",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "delivered commands remained at 0.26 m/s while measured odometry speed was 0 for the 10-second interval from 11\u201321 s.",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "The strongest supported diagnosis is a sustained command\u2013motion discrepancy during navigation: delivered commands remained at 0.26 m/s while measured odometry speed was 0 for the 10-second interval from 11\u201321 s.",
+          "unit_id": "u03"
+        }
+      ],
+      "condition_id": "cm-land-conf-060-E3",
+      "configuration_id": "cm-land-conf-cluster-060",
+      "episode_id": "cm-land-conf-060",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 4,
+      "required_unit_count": 4
+    },
+    {
+      "case_id": "ax-d7ea65d5e77175cfead81e98abe6afa3",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "the accepted NavigateToPose goal ended **aborted** with error code 105 [action-result].",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-056-E0",
+      "configuration_id": "cm-land-conf-cluster-056",
+      "episode_id": "cm-land-conf-056",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "dv-a7f2ced10d3de0054edfb8cedf4a89",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-051-E1",
+      "configuration_id": "cm-land-conf-cluster-051",
+      "episode_id": "cm-land-conf-051",
+      "family": "measured_response_recovery",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "dv-5f050cbc8aee6e4dd7360b4c553777",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-046-E1",
+      "configuration_id": "cm-land-conf-cluster-046",
+      "episode_id": "cm-land-conf-046",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-e1f801de4c30693a52ab655dbbbbc58e",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The NavigateToPose result is **aborted**, with recorded error code 106 (`action-result`).",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The recovery trace records three FollowPath attempts, two failures, and two executions of the Wait recovery child (`recovery-trace`; `source/behavior_tree.xml`).",
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-047-E1",
+      "configuration_id": "cm-land-conf-cluster-047",
+      "episode_id": "cm-land-conf-047",
+      "family": "measured_response_recovery",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-8988a149f5972613c9e002a6944028fd",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-041-E1",
+      "configuration_id": "cm-land-conf-cluster-041",
+      "episode_id": "cm-land-conf-041",
+      "family": "missing_decisive_evidence",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-25ce18d6d76130dbacd30ef63b716fa8",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The accepted NavigateToPose goal ended with status `succeeded` and error code `0` (`action-result`).",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-043-E0",
+      "configuration_id": "cm-land-conf-cluster-043",
+      "episode_id": "cm-land-conf-043",
+      "family": "measured_response_recovery",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "dv-d54e6d00ff100b303ffc588ffd1fc4",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "A valid delivered command stream is present.",
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-056-E2",
+      "configuration_id": "cm-land-conf-cluster-056",
+      "episode_id": "cm-land-conf-056",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 3,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "dv-bbce2e2672860cbe74f9450dd7096a",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "A valid delivered command stream is present.",
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-041-E2",
+      "configuration_id": "cm-land-conf-cluster-041",
+      "episode_id": "cm-land-conf-041",
+      "family": "missing_decisive_evidence",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 3,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "dv-1fd96767207543b74af172f7ed8c55",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "A valid delivered command stream is present.",
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-046-E2",
+      "configuration_id": "cm-land-conf-cluster-046",
+      "episode_id": "cm-land-conf-046",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 3,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "ax-e1a8dab8c80f42c3f02c8ad9028a8673",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-049-E0",
+      "configuration_id": "cm-land-conf-cluster-049",
+      "episode_id": "cm-land-conf-049",
+      "family": "measured_response_recovery",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "dv-5cc2e511e8ae87998152f293e9a480",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 2 FollowPath attempts, 1 FollowPath failures, and 1 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "A valid delivered command stream is present.",
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-044-E2",
+      "configuration_id": "cm-land-conf-cluster-044",
+      "episode_id": "cm-land-conf-044",
+      "family": "measured_response_recovery",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 3,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "dv-1b6f48bd22f87d8887639075cb4211",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 2 FollowPath attempts, 1 FollowPath failures, and 1 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "A valid delivered command stream is present.",
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-053-E2",
+      "configuration_id": "cm-land-conf-cluster-053",
+      "episode_id": "cm-land-conf-053",
+      "family": "measured_response_recovery",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 3,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "ax-d96dbb1fbcc17dfe0eb8232e466ca000",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-045-E0",
+      "configuration_id": "cm-land-conf-cluster-045",
+      "episode_id": "cm-land-conf-045",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "ax-99ba577363297382083274a6a2984c00",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded NavigateToPose action succeeded with error code 0.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace shows one FollowPath attempt, no FollowPath failure, and no source-qualified Wait recovery",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "the healthy-window medians were 0.26 m/s commanded and about 0.260 m/s measured",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "The command\u2013motion diagnostic did not trigger",
+          "unit_id": "u03"
+        }
+      ],
+      "condition_id": "cm-land-conf-054-E2",
+      "configuration_id": "cm-land-conf-cluster-054",
+      "episode_id": "cm-land-conf-054",
+      "family": "nominal_false_premise",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 4,
+      "required_unit_count": 4
+    },
+    {
+      "case_id": "dv-8826e5c32fdcf4fcb03ade0adf2957",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-045-E0",
+      "configuration_id": "cm-land-conf-cluster-045",
+      "episode_id": "cm-land-conf-045",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "ax-a4acdf43e1d96cf40a5e379ed4e99ec6",
+      "factual_numeric_errors": [],
+      "primary_failure": true,
+      "primary_violations": [
+        {
+          "kind": "unsupported_negation",
+          "quote": "Measured response recovery does not establish or cause the eventual task outcome.",
+          "reason": "The evidence does not establish outcome causation, but it also does not establish that measured response recovery had no causal role. The categorical denial of causation exceeds the evidence."
+        }
+      ],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 28 s; interval start: 18 s; measured speed: 0 m/s).",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 28 s; interval start: 18 s; measured speed: 0 m/s).",
+          "unit_id": "u03"
+        },
+        {
+          "communicated": true,
+          "quote": "Measured response recovered in the declared later interval.",
+          "unit_id": "u04"
+        }
+      ],
+      "condition_id": "cm-land-conf-047-E3",
+      "configuration_id": "cm-land-conf-cluster-047",
+      "episode_id": "cm-land-conf-047",
+      "family": "measured_response_recovery",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 4,
+      "required_unit_count": 5
+    },
+    {
+      "case_id": "ax-9d5c087b9cdcaa94b163d9fe99946cde",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-044-E0",
+      "configuration_id": "cm-land-conf-cluster-044",
+      "episode_id": "cm-land-conf-044",
+      "family": "measured_response_recovery",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "ax-d80abe3b7d2b0fffa2717ca37ba4aff7",
+      "factual_numeric_errors": [],
+      "primary_failure": true,
+      "primary_violations": [
+        {
+          "kind": "unsupported_recovery",
+          "quote": "The strongest supported diagnosis is a transient FollowPath execution failure that the configured Wait recovery and retry sequence handled.",
+          "reason": "The trace establishes a failure, Wait invocation, retry, and eventual success. It does not establish that the recovery sequence resolved the failure or caused success; no measured response recovery is supplied."
+        }
+      ],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The NavigateToPose goal ultimately succeeded with error code 0",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The trace records two FollowPath attempts, one failure, and one source-qualified Wait recovery [recovery-trace]; the retained tree permits a bounded retry after that recovery [source/behavior_tree.xml].",
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-044-E1",
+      "configuration_id": "cm-land-conf-cluster-044",
+      "episode_id": "cm-land-conf-044",
+      "family": "measured_response_recovery",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "dv-f4f5359eaeec07066d39e2ce16ac3c",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-072-E1",
+      "configuration_id": "cm-land-conf-cluster-072",
+      "episode_id": "cm-land-conf-072",
+      "family": "nominal_false_premise",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "ax-784be0c8dc0cfd427aa9bdf3c04265d7",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The accepted navigation goal **aborted** with error code 105, Nav2\u2019s FollowPath \u201cfailed to make progress\u201d code (`action-result`).",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-045-E0",
+      "configuration_id": "cm-land-conf-cluster-045",
+      "episode_id": "cm-land-conf-045",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "ax-e62b630458e6d9b1f07b484ec642fbb0",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-051-E0",
+      "configuration_id": "cm-land-conf-cluster-051",
+      "episode_id": "cm-land-conf-051",
+      "family": "measured_response_recovery",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "ax-eacc8810d87cc61370d0f7ccf22cd060",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "For the accepted goal, the recorded NavigateToPose result is `succeeded` with error code `0` (`action-result`).",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-053-E0",
+      "configuration_id": "cm-land-conf-cluster-053",
+      "episode_id": "cm-land-conf-053",
+      "family": "measured_response_recovery",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "ax-e12c89d2a386f5e8abf5f05bfe8bb27a",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-049-E1",
+      "configuration_id": "cm-land-conf-cluster-049",
+      "episode_id": "cm-land-conf-049",
+      "family": "measured_response_recovery",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-467fa2184455ea5ca073eb5fd3075c0f",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u02"
+        }
+      ],
+      "condition_id": "cm-land-conf-045-E2",
+      "configuration_id": "cm-land-conf-cluster-045",
+      "episode_id": "cm-land-conf-045",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 3
+    },
+    {
+      "case_id": "ax-8faedb11987771a681951bebc60d3fdf",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The accepted NavigateToPose goal was aborted with error code 105",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-060-E0",
+      "configuration_id": "cm-land-conf-cluster-060",
+      "episode_id": "cm-land-conf-060",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "dv-e5154217106f4cc2f7b434c3c3d059",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 28 s; interval start: 17 s; measured speed: 0 m/s).",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 28 s; interval start: 17 s; measured speed: 0 m/s).",
+          "unit_id": "u03"
+        }
+      ],
+      "condition_id": "cm-land-conf-042-E3",
+      "configuration_id": "cm-land-conf-cluster-042",
+      "episode_id": "cm-land-conf-042",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B4v3",
+      "paired_complete_episode": false,
+      "covered_units": 4,
+      "required_unit_count": 4
+    },
+    {
+      "case_id": "dv-81fb1f62f1f81ca3582bfb925068d6",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 1 FollowPath attempts, 0 FollowPath failures, and 0 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "A valid delivered command stream is present.",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "The recorded action succeeded and the registered command-motion diagnostic did not trigger",
+          "unit_id": "u03"
+        }
+      ],
+      "condition_id": "cm-land-conf-054-E2",
+      "configuration_id": "cm-land-conf-cluster-054",
+      "episode_id": "cm-land-conf-054",
+      "family": "nominal_false_premise",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 4,
+      "required_unit_count": 4
+    },
+    {
+      "case_id": "ax-3e151be8f4d51ddd22270328892c1610",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "the NavigateToPose result is aborted with error code 105",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records three FollowPath attempts, two failures, and two entries into the Wait recovery specified by the behavior tree",
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-048-E1",
+      "configuration_id": "cm-land-conf-cluster-048",
+      "episode_id": "cm-land-conf-048",
+      "family": "missing_decisive_evidence",
+      "method": "B2",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-d677e2a11778a838a97b061901ad1917",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-047-E0",
+      "configuration_id": "cm-land-conf-cluster-047",
+      "episode_id": "cm-land-conf-047",
+      "family": "measured_response_recovery",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    },
+    {
+      "case_id": "ax-db12aebc30f7a717c720e34a602fe908",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "NavigateToPose ultimately **aborted** with error code 105.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The behavior tree recorded three FollowPath attempts, two failures, and two Wait recoveries.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Early in the run, delivered commands of 0.26 m/s matched measured planar speed of about 0.26 m/s.",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "From 17\u201328 s, delivered commands remained at 0.26 m/s while measured speed was 0; later sampled odometry also remained at 0.",
+          "unit_id": "u03"
+        }
+      ],
+      "condition_id": "cm-land-conf-042-E3",
+      "configuration_id": "cm-land-conf-cluster-042",
+      "episode_id": "cm-land-conf-042",
+      "family": "persistent_command_motion_discrepancy",
+      "method": "B2",
+      "paired_complete_episode": false,
+      "covered_units": 4,
+      "required_unit_count": 4
+    },
+    {
+      "case_id": "ax-f86fb473c4d0f51e0efacca431b9dd67",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-053-E1",
+      "configuration_id": "cm-land-conf-cluster-053",
+      "episode_id": "cm-land-conf-053",
+      "family": "measured_response_recovery",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "dv-2d3272e32a0b1270d091f5ff7e6f77",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-048-E1",
+      "configuration_id": "cm-land-conf-cluster-048",
+      "episode_id": "cm-land-conf-048",
+      "family": "missing_decisive_evidence",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "dv-d9c7bf1162aff7a85cab47c3b95c1d",
+      "factual_numeric_errors": [],
+      "primary_failure": true,
+      "primary_violations": [
+        {
+          "kind": "unsupported_negation",
+          "quote": "Measured response recovery does not establish or cause the eventual task outcome.",
+          "reason": "The evidence does not establish outcome causation, but it also does not establish that measured response recovery did not cause or contribute to the outcome. The categorical denial of causation is unsupported."
+        }
+      ],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 19 s; interval start: 9 s; measured speed: 0 m/s).",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 19 s; interval start: 9 s; measured speed: 0 m/s).",
+          "unit_id": "u03"
+        },
+        {
+          "communicated": true,
+          "quote": "Measured response recovered to 0.249749992383 m/s in the later 21\u201322 s interval.",
+          "unit_id": "u04"
+        }
+      ],
+      "condition_id": "cm-land-conf-049-E3",
+      "configuration_id": "cm-land-conf-cluster-049",
+      "episode_id": "cm-land-conf-049",
+      "family": "measured_response_recovery",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 5,
+      "required_unit_count": 5
+    },
+    {
+      "case_id": "ax-71fbb2069815c0fa677a7b5ade4fe7e9",
+      "factual_numeric_errors": [],
+      "primary_failure": true,
+      "primary_violations": [
+        {
+          "kind": "unsupported_negation",
+          "quote": "Measured response recovery does not establish or cause the eventual task outcome.",
+          "reason": "The evidence supports measured recovery but does not determine its causal role in the outcome. Lack of proof of causation does not support the categorical claim that recovery did not cause the outcome."
+        }
+      ],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 27 s; interval start: 18 s; measured speed: 0 m/s).",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 27 s; interval start: 18 s; measured speed: 0 m/s).",
+          "unit_id": "u03"
+        },
+        {
+          "communicated": true,
+          "quote": "Measured response recovered in the declared later interval.",
+          "unit_id": "u04"
+        }
+      ],
+      "condition_id": "cm-land-conf-043-E3",
+      "configuration_id": "cm-land-conf-cluster-043",
+      "episode_id": "cm-land-conf-043",
+      "family": "measured_response_recovery",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 4,
+      "required_unit_count": 5
+    },
+    {
+      "case_id": "ax-dcd3f68016654f68660b5583e5d92ac3",
+      "factual_numeric_errors": [],
+      "primary_failure": true,
+      "primary_violations": [
+        {
+          "kind": "unsupported_negation",
+          "quote": "Measured response recovery does not establish or cause the eventual task outcome.",
+          "reason": "The evidence supports measured recovery but does not determine its causal role in the outcome. Lack of proof of causation does not support the categorical claim that recovery did not cause the outcome."
+        }
+      ],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 21 s; interval start: 11 s; measured speed: 0 m/s).",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 21 s; interval start: 11 s; measured speed: 0 m/s).",
+          "unit_id": "u03"
+        },
+        {
+          "communicated": true,
+          "quote": "Measured response recovered in the declared later interval.",
+          "unit_id": "u04"
+        }
+      ],
+      "condition_id": "cm-land-conf-053-E3",
+      "configuration_id": "cm-land-conf-cluster-053",
+      "episode_id": "cm-land-conf-053",
+      "family": "measured_response_recovery",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 4,
+      "required_unit_count": 5
+    },
+    {
+      "case_id": "ax-154d59622fa1933ff25c42cbd4a7e0fb",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-051-E1",
+      "configuration_id": "cm-land-conf-cluster-051",
+      "episode_id": "cm-land-conf-051",
+      "family": "measured_response_recovery",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "ax-1c0459ac8234ac4485f0f0fd18f6d156",
+      "factual_numeric_errors": [],
+      "primary_failure": true,
+      "primary_violations": [
+        {
+          "kind": "unsupported_negation",
+          "quote": "Measured response recovery does not establish or cause the eventual task outcome.",
+          "reason": "The evidence does not establish outcome causation, but it also does not establish that measured response recovery had no causal role. Saying it does not cause the outcome asserts an unsupported causal negation."
+        }
+      ],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": false,
+          "quote": null,
+          "unit_id": "u01"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 31 s; interval start: 18 s; measured speed: 0 m/s).",
+          "unit_id": "u02"
+        },
+        {
+          "communicated": true,
+          "quote": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 31 s; interval start: 18 s; measured speed: 0 m/s).",
+          "unit_id": "u03"
+        },
+        {
+          "communicated": true,
+          "quote": "Measured response recovered in the declared later interval.",
+          "unit_id": "u04"
+        }
+      ],
+      "condition_id": "cm-land-conf-044-E3",
+      "configuration_id": "cm-land-conf-cluster-044",
+      "episode_id": "cm-land-conf-044",
+      "family": "measured_response_recovery",
+      "method": "B4",
+      "paired_complete_episode": true,
+      "covered_units": 4,
+      "required_unit_count": 5
+    },
+    {
+      "case_id": "dv-d2c5a911836930e2dd88a67fe4e309",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action succeeded.",
+          "unit_id": "u00"
+        },
+        {
+          "communicated": true,
+          "quote": "The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations.",
+          "unit_id": "u01"
+        }
+      ],
+      "condition_id": "cm-land-conf-049-E1",
+      "configuration_id": "cm-land-conf-cluster-049",
+      "episode_id": "cm-land-conf-049",
+      "family": "measured_response_recovery",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 2,
+      "required_unit_count": 2
+    },
+    {
+      "case_id": "dv-be3ef73dc46f0d8317f00ee036d89c",
+      "factual_numeric_errors": [],
+      "primary_failure": false,
+      "primary_violations": [],
+      "required_units": [
+        {
+          "communicated": true,
+          "quote": "The recorded navigation action aborted.",
+          "unit_id": "u00"
+        }
+      ],
+      "condition_id": "cm-land-conf-047-E0",
+      "configuration_id": "cm-land-conf-cluster-047",
+      "episode_id": "cm-land-conf-047",
+      "family": "measured_response_recovery",
+      "method": "B4v3",
+      "paired_complete_episode": true,
+      "covered_units": 1,
+      "required_unit_count": 1
+    }
+  ],
+  "confirmation_n": 0,
+  "alpha_spent": 0,
+  "human_validation_claimed": false
+}

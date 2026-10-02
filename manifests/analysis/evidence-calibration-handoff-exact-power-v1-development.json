@@ -1,0 +1,615 @@
+{
+  "schema": "crane-development-exact-paired-power/v1",
+  "alpha": 0.01,
+  "independent_unit": "episode_configuration",
+  "development_only": true,
+  "confirmatory_freeze": false,
+  "method": "Exact binomial marginalization over discordance counts; no Monte Carlo error",
+  "population": "Equal persistent-discrepancy/measured-recovery target mixture; supplied b/c are mixture probabilities",
+  "stratum_caveat": "Assumes independent sampling from equal target mixture (iid paired outcomes); exact fixed-quota heterogeneous strata need stratum-specific probabilities",
+  "invalidity_caveat": "Technical invalidity independent of performance, modelled before complete-pair scoring",
+  "coverage_caveat": "Power covers superiority only; satisfying useful coverage can further reduce scientific success probability",
+  "raw_failure_rate_caveat": "Discordance probabilities identify risk difference but not absolute failure rates; common-failure probability remains unspecified",
+  "rows": [
+    {
+      "b2_only_failure_probability": 0.05,
+      "b4_only_failure_probability": 0.01,
+      "paired_b2_minus_b4_risk_difference": 0.04,
+      "discordance_probability": 0.060000000000000005,
+      "invalid_episode_probability": 0.0,
+      "test": "one-sided",
+      "power_by_acquired_primary_n": {
+        "50": 0.00754998044904535,
+        "70": 0.03202783201512095,
+        "100": 0.09956341776825582,
+        "150": 0.2365326143130841,
+        "200": 0.37952203968405984,
+        "300": 0.6512735928818926,
+        "500": 0.9156101391693835,
+        "1000": 0.9989878680288721
+      },
+      "minimum_acquired_primary_n_for_80pct_power": 381,
+      "minimum_acquired_primary_n_for_90pct_power": 477
+    },
+    {
+      "b2_only_failure_probability": 0.05,
+      "b4_only_failure_probability": 0.01,
+      "paired_b2_minus_b4_risk_difference": 0.04,
+      "discordance_probability": 0.060000000000000005,
+      "invalid_episode_probability": 0.0,
+      "test": "two-sided",
+      "power_by_acquired_primary_n": {
+        "50": 0.002058946458076946,
+        "70": 0.01241801113096428,
+        "100": 0.053262979718034065,
+        "150": 0.16380149608040093,
+        "200": 0.2924308242963196,
+        "300": 0.5476341591444281,
+        "500": 0.8665746130681645,
+        "1000": 0.9976768773727086
+      },
+      "minimum_acquired_primary_n_for_80pct_power": 440,
+      "minimum_acquired_primary_n_for_90pct_power": 541
+    },
+    {
+      "b2_only_failure_probability": 0.05,
+      "b4_only_failure_probability": 0.01,
+      "paired_b2_minus_b4_risk_difference": 0.04,
+      "discordance_probability": 0.060000000000000005,
+      "invalid_episode_probability": 0.1,
+      "test": "one-sided",
+      "power_by_acquired_primary_n": {
+        "50": 0.004564871181082733,
+        "70": 0.021326675047582982,
+        "100": 0.07440542125890967,
+        "150": 0.19480910007305266,
+        "200": 0.32162066767140873,
+        "300": 0.5770577717935493,
+        "500": 0.8782100078720089,
+        "1000": 0.9973585066611073
+      },
+      "minimum_acquired_primary_n_for_80pct_power": 423,
+      "minimum_acquired_primary_n_for_90pct_power": 531
+    },
+    {
+      "b2_only_failure_probability": 0.05,
+      "b4_only_failure_probability": 0.01,
+      "paired_b2_minus_b4_risk_difference": 0.04,
+      "discordance_probability": 0.060000000000000005,
+      "invalid_episode_probability": 0.1,
+      "test": "two-sided",
+      "power_by_acquired_primary_n": {
+        "50": 0.0011202780651298615,
+        "70": 0.0074831353288680015,
+        "100": 0.03654495641437775,
+        "150": 0.12789697720004825,
+        "200": 0.2397152154799441,
+        "300": 0.4759077608952314,
+        "500": 0.8126280365515598,
+        "1000": 0.9944141081530741
+      },
+      "minimum_acquired_primary_n_for_80pct_power": 489,
+      "minimum_acquired_primary_n_for_90pct_power": 602
+    },
+    {
+      "b2_only_failure_probability": 0.05,
+      "b4_only_failure_probability": 0.01,
+      "paired_b2_minus_b4_risk_difference": 0.04,
+      "discordance_probability": 0.060000000000000005,
+      "invalid_episode_probability": 0.2,
+      "test": "one-sided",
+      "power_by_acquired_primary_n": {
+        "50": 0.0025306488836918696,
+        "70": 0.013057620304761576,
+        "100": 0.051674842980724715,
+        "150": 0.15345919479127026,
+        "200": 0.26466014648949976,
+        "300": 0.49499744517529926,
+        "500": 0.8254462109361229,
+        "1000": 0.9931942559274486
+      },
+      "minimum_acquired_primary_n_for_80pct_power": 477,
+      "minimum_acquired_primary_n_for_90pct_power": 597
+    },
+    {
+      "b2_only_failure_probability": 0.05,
+      "b4_only_failure_probability": 0.01,
+      "paired_b2_minus_b4_risk_difference": 0.04,
+      "discordance_probability": 0.060000000000000005,
+      "invalid_episode_probability": 0.2,
+      "test": "two-sided",
+      "power_by_acquired_primary_n": {
+        "50": 0.0005517572944196429,
+        "70": 0.004089821792867889,
+        "100": 0.0229322079776983,
+        "150": 0.09391789272382808,
+        "200": 0.18865231269075938,
+        "300": 0.3990098100656882,
+        "500": 0.7418058407644444,
+        "1000": 0.9869375992737459
+      },
+      "minimum_acquired_primary_n_for_80pct_power": 551,
+      "minimum_acquired_primary_n_for_90pct_power": 677
+    },
+    {
+      "b2_only_failure_probability": 0.1,
+      "b4_only_failure_probability": 0.02,
+      "paired_b2_minus_b4_risk_difference": 0.08,
+      "discordance_probability": 0.12000000000000001,
+      "invalid_episode_probability": 0.0,
+      "test": "one-sided",
+      "power_by_acquired_primary_n": {
+        "50": 0.0989085206424061,
+        "70": 0.2085698324441377,
+        "100": 0.37942540287728727,
+        "150": 0.6530041112180137,
+        "200": 0.8274702499997649,
+        "300": 0.9613945376610793,
+        "500": 0.9990334759725839,
+        "1000": 0.9999999767041052
+      },
+      "minimum_acquired_primary_n_for_80pct_power": 190,
+      "minimum_acquired_primary_n_for_90pct_power": 238
+    },
+    {
+      "b2_only_failure_probability": 0.1,
+      "b4_only_failure_probability": 0.02,
+      "paired_b2_minus_b4_risk_difference": 0.08,
+      "discordance_probability": 0.12000000000000001,
+      "invalid_episode_probability": 0.0,
+      "test": "two-sided",
+      "power_by_acquired_primary_n": {
+        "50": 0.05198987175801073,
+        "70": 0.13916443137730872,
+        "100": 0.29221431406112386,
+        "150": 0.5486572599915919,
+        "200": 0.7435406478594704,
+        "300": 0.9362339195398142,
+        "500": 0.9977642760883785,
+        "1000": 0.9999999018129608
+      },
+      "minimum_acquired_primary_n_for_80pct_power": 220,
+      "minimum_acquired_primary_n_for_90pct_power": 270
+    },
+    {
+      "b2_only_failure_probability": 0.1,
+      "b4_only_failure_probability": 0.02,
+      "paired_b2_minus_b4_risk_difference": 0.08,
+      "discordance_probability": 0.12000000000000001,
+      "invalid_episode_probability": 0.1,
+      "test": "one-sided",
+      "power_by_acquired_primary_n": {
+        "50": 0.0734328582000883,
+        "70": 0.1698608309922165,
+        "100": 0.32140505096120536,
+        "150": 0.5781509768296853,
+        "200": 0.770386756622471,
+        "300": 0.9381222535614883,
+        "500": 0.9974530274145539,
+        "1000": 0.9999997740984695
+      },
+      "minimum_acquired_primary_n_for_80pct_power": 211,
+      "minimum_acquired_primary_n_for_90pct_power": 265
+    },
+    {
+      "b2_only_failure_probability": 0.1,
+      "b4_only_failure_probability": 0.02,
+      "paired_b2_minus_b4_risk_difference": 0.08,
+      "discordance_probability": 0.12000000000000001,
+      "invalid_episode_probability": 0.1,
+      "test": "two-sided",
+      "power_by_acquired_primary_n": {
+        "50": 0.0352474422610799,
+        "70": 0.10658801160378237,
+        "100": 0.23936273394381302,
+        "150": 0.4766402655702041,
+        "200": 0.6736629207090239,
+        "300": 0.9003276351304927,
+        "500": 0.9945739358595158,
+        "1000": 0.9999991625490158
+      },
+      "minimum_acquired_primary_n_for_80pct_power": 244,
+      "minimum_acquired_primary_n_for_90pct_power": 300
+    },
+    {
+      "b2_only_failure_probability": 0.1,
+      "b4_only_failure_probability": 0.02,
+      "paired_b2_minus_b4_risk_difference": 0.08,
+      "discordance_probability": 0.12000000000000001,
+      "invalid_episode_probability": 0.2,
+      "test": "one-sided",
+      "power_by_acquired_primary_n": {
+        "50": 0.05050761133567416,
+        "70": 0.13141367946347204,
+        "100": 0.26448466305951157,
+        "150": 0.4954624025999291,
+        "200": 0.6962600351835572,
+        "300": 0.9029447458907992,
+        "500": 0.9933778919389893,
+        "1000": 0.9999979167429989
+      },
+      "minimum_acquired_primary_n_for_80pct_power": 238,
+      "minimum_acquired_primary_n_for_90pct_power": 298
+    },
+    {
+      "b2_only_failure_probability": 0.1,
+      "b4_only_failure_probability": 0.02,
+      "paired_b2_minus_b4_risk_difference": 0.08,
+      "discordance_probability": 0.12000000000000001,
+      "invalid_episode_probability": 0.2,
+      "test": "two-sided",
+      "power_by_acquired_primary_n": {
+        "50": 0.021776234482616424,
+        "70": 0.07612167579214923,
+        "100": 0.18830046748494872,
+        "150": 0.3993459008471352,
+        "200": 0.5927129764139507,
+        "300": 0.8478192561359199,
+        "500": 0.9872193796751162,
+        "1000": 0.9999932522191016
+      },
+      "minimum_acquired_primary_n_for_80pct_power": 275,
+      "minimum_acquired_primary_n_for_90pct_power": 338
+    },
+    {
+      "b2_only_failure_probability": 0.15,
+      "b4_only_failure_probability": 0.03,
+      "paired_b2_minus_b4_risk_difference": 0.12,
+      "discordance_probability": 0.18,
+      "invalid_episode_probability": 0.0,
+      "test": "one-sided",
+      "power_by_acquired_primary_n": {
+        "50": 0.23619922533051294,
+        "70": 0.4086711603268756,
+        "100": 0.6547858327234031,
+        "150": 0.8810875275192702,
+        "200": 0.9620412611363033,
+        "300": 0.9975756635171633,
+        "500": 0.9999945421697658,
+        "1000": 0.9999999999998412
+      },
+      "minimum_acquired_primary_n_for_80pct_power": 126,
+      "minimum_acquired_primary_n_for_90pct_power": 158
+    },
+    {
+      "b2_only_failure_probability": 0.15,
+      "b4_only_failure_probability": 0.03,
+      "paired_b2_minus_b4_risk_difference": 0.12,
+      "discordance_probability": 0.18,
+      "invalid_episode_probability": 0.0,
+      "test": "two-sided",
+      "power_by_acquired_primary_n": {
+        "50": 0.16293061728983244,
+        "70": 0.3189784794738442,
+        "100": 0.5496977372994637,
+        "150": 0.8159119566156229,
+        "200": 0.9372171014981865,
+        "300": 0.9947827998714533,
+        "500": 0.9999832144247909,
+        "1000": 0.9999999999989665
+      },
+      "minimum_acquired_primary_n_for_80pct_power": 146,
+      "minimum_acquired_primary_n_for_90pct_power": 180
+    },
+    {
+      "b2_only_failure_probability": 0.15,
+      "b4_only_failure_probability": 0.03,
+      "paired_b2_minus_b4_risk_difference": 0.12,
+      "discordance_probability": 0.18,
+      "invalid_episode_probability": 0.1,
+      "test": "one-sided",
+      "power_by_acquired_primary_n": {
+        "50": 0.19469986101500109,
+        "70": 0.34721417707398466,
+        "100": 0.5792553529731311,
+        "150": 0.8346955376353375,
+        "200": 0.9389053283265328,
+        "300": 0.9942041543916551,
+        "500": 0.9999719783274658,
+        "1000": 0.9999999999936956
+      },
+      "minimum_acquired_primary_n_for_80pct_power": 141,
+      "minimum_acquired_primary_n_for_90pct_power": 176
+    },
+    {
+      "b2_only_failure_probability": 0.15,
+      "b4_only_failure_probability": 0.03,
+      "paired_b2_minus_b4_risk_difference": 0.12,
+      "discordance_probability": 0.18,
+      "invalid_episode_probability": 0.1,
+      "test": "two-sided",
+      "power_by_acquired_primary_n": {
+        "50": 0.12697147954410548,
+        "70": 0.26266190243036897,
+        "100": 0.477397307365273,
+        "150": 0.7524734156471424,
+        "200": 0.9014353271933784,
+        "300": 0.9886083406175253,
+        "500": 0.9999220508384169,
+        "1000": 0.9999999999637736
+      },
+      "minimum_acquired_primary_n_for_80pct_power": 163,
+      "minimum_acquired_primary_n_for_90pct_power": 200
+    },
+    {
+      "b2_only_failure_probability": 0.15,
+      "b4_only_failure_probability": 0.03,
+      "paired_b2_minus_b4_risk_difference": 0.12,
+      "discordance_probability": 0.18,
+      "invalid_episode_probability": 0.2,
+      "test": "one-sided",
+      "power_by_acquired_primary_n": {
+        "50": 0.15327190974073673,
+        "70": 0.2869103058479091,
+        "100": 0.49591367295441646,
+        "150": 0.7715501206081579,
+        "200": 0.903898926248633,
+        "300": 0.9864200397889946,
+        "500": 0.9998666594872251,
+        "1000": 0.9999999997773277
+      },
+      "minimum_acquired_primary_n_for_80pct_power": 158,
+      "minimum_acquired_primary_n_for_90pct_power": 198
+    },
+    {
+      "b2_only_failure_probability": 0.15,
+      "b4_only_failure_probability": 0.03,
+      "paired_b2_minus_b4_risk_difference": 0.12,
+      "discordance_probability": 0.18,
+      "invalid_episode_probability": 0.2,
+      "test": "two-sided",
+      "power_by_acquired_primary_n": {
+        "50": 0.09268993404764816,
+        "70": 0.2081587413776759,
+        "100": 0.39968942956139136,
+        "150": 0.6744100491828972,
+        "200": 0.8490178757999862,
+        "300": 0.97563431749493,
+        "500": 0.9996584685351682,
+        "1000": 0.999999998883107
+      },
+      "minimum_acquired_primary_n_for_80pct_power": 183,
+      "minimum_acquired_primary_n_for_90pct_power": 225
+    },
+    {
+      "b2_only_failure_probability": 0.2,
+      "b4_only_failure_probability": 0.05,
+      "paired_b2_minus_b4_risk_difference": 0.15000000000000002,
+      "discordance_probability": 0.25,
+      "invalid_episode_probability": 0.0,
+      "test": "one-sided",
+      "power_by_acquired_primary_n": {
+        "50": 0.3005699805189531,
+        "70": 0.5062785329927832,
+        "100": 0.733433547675685,
+        "150": 0.9140776769997485,
+        "200": 0.9787155913800861,
+        "300": 0.9989282096799215,
+        "500": 0.99999889989886,
+        "1000": 0.9999999999999941
+      },
+      "minimum_acquired_primary_n_for_80pct_power": 114,
+      "minimum_acquired_primary_n_for_90pct_power": 144
+    },
+    {
+      "b2_only_failure_probability": 0.2,
+      "b4_only_failure_probability": 0.05,
+      "paired_b2_minus_b4_risk_difference": 0.15000000000000002,
+      "discordance_probability": 0.25,
+      "invalid_episode_probability": 0.0,
+      "test": "two-sided",
+      "power_by_acquired_primary_n": {
+        "50": 0.22348017985474794,
+        "70": 0.39779103403673177,
+        "100": 0.632254259772906,
+        "150": 0.8706174443256146,
+        "200": 0.9619000595490734,
+        "300": 0.9976104683773113,
+        "500": 0.9999961424822705,
+        "1000": 0.9999999999999616
+      },
+      "minimum_acquired_primary_n_for_80pct_power": 131,
+      "minimum_acquired_primary_n_for_90pct_power": 161
+    },
+    {
+      "b2_only_failure_probability": 0.2,
+      "b4_only_failure_probability": 0.05,
+      "paired_b2_minus_b4_risk_difference": 0.15000000000000002,
+      "discordance_probability": 0.25,
+      "invalid_episode_probability": 0.1,
+      "test": "one-sided",
+      "power_by_acquired_primary_n": {
+        "50": 0.25195662318253126,
+        "70": 0.435262538368745,
+        "100": 0.6709860374395162,
+        "150": 0.8755508340047669,
+        "200": 0.9620042744245916,
+        "300": 0.9972454618847627,
+        "500": 0.9999932664590329,
+        "1000": 0.9999999999996846
+      },
+      "minimum_acquired_primary_n_for_80pct_power": 127,
+      "minimum_acquired_primary_n_for_90pct_power": 161
+    },
+    {
+      "b2_only_failure_probability": 0.2,
+      "b4_only_failure_probability": 0.05,
+      "paired_b2_minus_b4_risk_difference": 0.15000000000000002,
+      "discordance_probability": 0.25,
+      "invalid_episode_probability": 0.1,
+      "test": "two-sided",
+      "power_by_acquired_primary_n": {
+        "50": 0.1819029532033017,
+        "70": 0.33745140635708926,
+        "100": 0.559148702236164,
+        "150": 0.8180964062920226,
+        "200": 0.9368714917693151,
+        "300": 0.9942196442470255,
+        "500": 0.9999783577929992,
+        "1000": 0.9999999999980574
+      },
+      "minimum_acquired_primary_n_for_80pct_power": 146,
+      "minimum_acquired_primary_n_for_90pct_power": 179
+    },
+    {
+      "b2_only_failure_probability": 0.2,
+      "b4_only_failure_probability": 0.05,
+      "paired_b2_minus_b4_risk_difference": 0.15000000000000002,
+      "discordance_probability": 0.25,
+      "invalid_episode_probability": 0.2,
+      "test": "one-sided",
+      "power_by_acquired_primary_n": {
+        "50": 0.20617692033382667,
+        "70": 0.36234200778601044,
+        "100": 0.5953221215797813,
+        "150": 0.8253068019296308,
+        "200": 0.9333947910526753,
+        "300": 0.9932177139103954,
+        "500": 0.9999606371312324,
+        "1000": 0.9999999999839358
+      },
+      "minimum_acquired_primary_n_for_80pct_power": 143,
+      "minimum_acquired_primary_n_for_90pct_power": 181
+    },
+    {
+      "b2_only_failure_probability": 0.2,
+      "b4_only_failure_probability": 0.05,
+      "paired_b2_minus_b4_risk_difference": 0.15000000000000002,
+      "discordance_probability": 0.25,
+      "invalid_episode_probability": 0.2,
+      "test": "two-sided",
+      "power_by_acquired_primary_n": {
+        "50": 0.1429768627588597,
+        "70": 0.2759770247203233,
+        "100": 0.4802590438200536,
+        "150": 0.7502661502225392,
+        "200": 0.8969619377986955,
+        "300": 0.9864809636281338,
+        "500": 0.9998883100996154,
+        "1000": 0.9999999999119958
+      },
+      "minimum_acquired_primary_n_for_80pct_power": 164,
+      "minimum_acquired_primary_n_for_90pct_power": 202
+    },
+    {
+      "b2_only_failure_probability": 0.25,
+      "b4_only_failure_probability": 0.05,
+      "paired_b2_minus_b4_risk_difference": 0.2,
+      "discordance_probability": 0.3,
+      "invalid_episode_probability": 0.0,
+      "test": "one-sided",
+      "power_by_acquired_primary_n": {
+        "50": 0.526200815165055,
+        "70": 0.7601731095388101,
+        "100": 0.919922262190323,
+        "150": 0.9905320270463189,
+        "200": 0.999161986966964,
+        "300": 0.9999954534998498,
+        "500": 0.9999999999555862,
+        "1000": 0.9999999999999996
+      },
+      "minimum_acquired_primary_n_for_80pct_power": 76,
+      "minimum_acquired_primary_n_for_90pct_power": 95
+    },
+    {
+      "b2_only_failure_probability": 0.25,
+      "b4_only_failure_probability": 0.05,
+      "paired_b2_minus_b4_risk_difference": 0.2,
+      "discordance_probability": 0.3,
+      "invalid_episode_probability": 0.0,
+      "test": "two-sided",
+      "power_by_acquired_primary_n": {
+        "50": 0.42766780864091974,
+        "70": 0.6582769327199609,
+        "100": 0.8722809703343162,
+        "150": 0.9822251139423611,
+        "200": 0.9980153991735575,
+        "300": 0.9999856972711924,
+        "500": 0.9999999997590963,
+        "1000": 0.9999999999999996
+      },
+      "minimum_acquired_primary_n_for_80pct_power": 88,
+      "minimum_acquired_primary_n_for_90pct_power": 107
+    },
+    {
+      "b2_only_failure_probability": 0.25,
+      "b4_only_failure_probability": 0.05,
+      "paired_b2_minus_b4_risk_difference": 0.2,
+      "discordance_probability": 0.3,
+      "invalid_episode_probability": 0.1,
+      "test": "one-sided",
+      "power_by_acquired_primary_n": {
+        "50": 0.4530147323492186,
+        "70": 0.691456258829649,
+        "100": 0.8831473517079651,
+        "150": 0.9806520452557186,
+        "200": 0.9977234098809019,
+        "300": 0.9999755102072566,
+        "500": 0.9999999990881444,
+        "1000": 0.9999999999999997
+      },
+      "minimum_acquired_primary_n_for_80pct_power": 84,
+      "minimum_acquired_primary_n_for_90pct_power": 105
+    },
+    {
+      "b2_only_failure_probability": 0.25,
+      "b4_only_failure_probability": 0.05,
+      "paired_b2_minus_b4_risk_difference": 0.2,
+      "discordance_probability": 0.3,
+      "invalid_episode_probability": 0.1,
+      "test": "two-sided",
+      "power_by_acquired_primary_n": {
+        "50": 0.35987178240089096,
+        "70": 0.5850098677148268,
+        "100": 0.8183417551073298,
+        "150": 0.9663500148372727,
+        "200": 0.9950369402655528,
+        "300": 0.9999308379216146,
+        "500": 0.9999999956015779,
+        "1000": 0.9999999999999997
+      },
+      "minimum_acquired_primary_n_for_80pct_power": 97,
+      "minimum_acquired_primary_n_for_90pct_power": 119
+    },
+    {
+      "b2_only_failure_probability": 0.25,
+      "b4_only_failure_probability": 0.05,
+      "paired_b2_minus_b4_risk_difference": 0.2,
+      "discordance_probability": 0.3,
+      "invalid_episode_probability": 0.2,
+      "test": "one-sided",
+      "power_by_acquired_primary_n": {
+        "50": 0.3791163087532766,
+        "70": 0.6072307417193138,
+        "100": 0.8308487050893043,
+        "150": 0.9626819392475154,
+        "200": 0.9939186708646424,
+        "300": 0.9998788223007781,
+        "500": 0.9999999821018362,
+        "1000": 0.9999999999999997
+      },
+      "minimum_acquired_primary_n_for_80pct_power": 95,
+      "minimum_acquired_primary_n_for_90pct_power": 118
+    },
+    {
+      "b2_only_failure_probability": 0.25,
+      "b4_only_failure_probability": 0.05,
+      "paired_b2_minus_b4_risk_difference": 0.2,
+      "discordance_probability": 0.3,
+      "invalid_episode_probability": 0.2,
+      "test": "two-sided",
+      "power_by_acquired_primary_n": {
+        "50": 0.29164981365415205,
+        "70": 0.5033253747201537,
+        "100": 0.7464718058300047,
+        "150": 0.9381993585998127,
+        "200": 0.9880496352644631,
+        "300": 0.9996871469095481,
+        "500": 0.9999999224963764,
+        "1000": 0.9999999999999997
+      },
+      "minimum_acquired_primary_n_for_80pct_power": 110,
+      "minimum_acquired_primary_n_for_90pct_power": 134
+    }
+  ]
+}

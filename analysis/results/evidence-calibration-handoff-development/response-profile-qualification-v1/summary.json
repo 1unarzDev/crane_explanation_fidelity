@@ -1,0 +1,51 @@
+{
+  "scope": "DEVELOPMENT_SYNTHETIC_ONLY",
+  "case_count": 8,
+  "human_validation_claimed": false,
+  "passes": {
+    "A": {
+      "annotations": 8,
+      "technical_failures": [],
+      "errors": []
+    },
+    "B": {
+      "annotations": 8,
+      "technical_failures": [],
+      "errors": [
+        {
+          "case_id": "profile-q07",
+          "field": "communicated_unit_ids",
+          "expected": [
+            "limitation",
+            "recovery"
+          ],
+          "observed": [
+            "recovery"
+          ]
+        }
+      ]
+    }
+  },
+  "status": "DEVELOPMENT_DISAGREEMENTS_RETAINED",
+  "primary_reference_accuracy": {
+    "A": {
+      "correct": 8,
+      "total": 8
+    },
+    "B": {
+      "correct": 8,
+      "total": 8
+    }
+  },
+  "required_unit_accuracy": {
+    "A": {
+      "correct": 16,
+      "total": 16
+    },
+    "B": {
+      "correct": 15,
+      "total": 16
+    }
+  },
+  "interpretation": "Primary labels stable on targeted cases. One retained limitation coverage ambiguity; quantify sensitivity, no human validation."
+}

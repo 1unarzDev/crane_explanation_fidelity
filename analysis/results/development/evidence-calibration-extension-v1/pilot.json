@@ -1,0 +1,94 @@
+{
+  "annotation": {
+    "adjudicate_before_method_join": true,
+    "automated_judges": "SECONDARY_SENSITIVITY_ONLY",
+    "independent_humans": 2,
+    "pilot_significance_required": false
+  },
+  "confirmation_alpha": 0.0,
+  "declared_date": "2026-09-29",
+  "evidence_ladders": {
+    "measured_response_recovery": [
+      "E0_action_outcome",
+      "E1_recovery_trace",
+      "E2_delivered_command",
+      "E3_synchronized_odometry"
+    ],
+    "missing_decisive_evidence": [
+      "E0_action_outcome",
+      "E1_recovery_trace",
+      "E2_delivered_command"
+    ],
+    "nominal_false_premise": [
+      "E0_action_outcome",
+      "E1_delivered_command",
+      "E2_synchronized_odometry"
+    ],
+    "persistent_command_motion_discrepancy": [
+      "E0_action_outcome",
+      "E1_recovery_trace",
+      "E2_delivered_command",
+      "E3_synchronized_odometry"
+    ]
+  },
+  "independent_episode_count": 12,
+  "independent_unit": "episode_configuration",
+  "methods": {
+    "B2": {
+      "condition": "strong repository-aware tool-enabled agent",
+      "model": "gpt-6-sol",
+      "one_top_level_call_per_episode_condition": true,
+      "prompt": "research/explanation_fidelity/prompts/evidence_calibration_b2_development_v1.txt",
+      "quality_driven_retry": false,
+      "reasoning_effort": "high"
+    },
+    "B4": {
+      "condition": "full evidence-calibrated system",
+      "diagnosis": "maximal-supported-diagnosis/v1-development",
+      "model_calls": 0,
+      "realization": "claim-aware-constrained-realizer/v1-development"
+    }
+  },
+  "parity": {
+    "B4_contract_assets_are_method_defining_not_extra_episode_evidence": true,
+    "evaluator_truth_available_to_methods": false,
+    "same_exact_source_and_configuration_assets": true,
+    "same_primitive_diagnostic_tools": true,
+    "same_robot_visible_condition": true
+  },
+  "pilot_id": "evidence-calibration-development-extension-v1",
+  "prohibitions": [
+    "Do not report pilot p-values as confirmation.",
+    "Do not choose the confirmatory endpoint from whichever pilot secondary metric looks best.",
+    "Do not retry a poor response, replace a valid episode, or count evidence conditions as independent samples.",
+    "Any method repair creates a new development version; this pilot remains immutable."
+  ],
+  "promotion_questions": [
+    "Are B2 and B4 packets information- and tool-parity complete?",
+    "Can two humans apply atomic labels and abstraction levels without method cues?",
+    "What B2-only and B4-only episode failures are plausible for sample-size planning?",
+    "What useful-coverage floor is scientifically defensible without matching a known B4 deficit?",
+    "Do any systematic contract, ladder, reference, or annotation defects require one final development repair?"
+  ],
+  "schema": "crane-evidence-calibration-development-pilot/v1",
+  "scientific_role": "DEVELOPMENT_MEASUREMENT_AND_PIPELINE_PILOT_ONLY",
+  "selection": {
+    "episode_ids": [
+      "cm-land-conf-062",
+      "cm-land-conf-064",
+      "cm-land-conf-065",
+      "cm-land-conf-067",
+      "cm-land-conf-068",
+      "cm-land-conf-069",
+      "cm-land-conf-055",
+      "cm-land-conf-057",
+      "cm-land-conf-059",
+      "cm-land-conf-061",
+      "cm-land-conf-063",
+      "cm-land-conf-066"
+    ],
+    "independent_unit": "configuration",
+    "selection_rule": "Twelve additional independent DEVELOPMENT episodes using the unchanged strong B2.\n\nSelection is earliest valid source order within each of two mechanism strata, after\nexcluding the initial pilot. Prepared hashes precede every model call. No fresh\nphysical candidate or protected replication configuration is used here.\n"
+  },
+  "status": "DEVELOPMENT_ONLY_AUTHORIZED_BY_HANDOFF"
+}

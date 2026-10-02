@@ -17,23 +17,37 @@ Missing-odometry and nominal false-premise episodes are separate controls; geome
 non-pooled secondary arm. RoboBoat is
 bounded development/external-validity material.
 
-The inspected development pipeline has 60 accepted B4 outputs and 57 valid B2 outputs, but no
-paired support annotation or evidence-calibration effect. Astra-high is qualified for the
-synthetic atomic-support task and a separate stance/kind/polarity task. All 114 blind answer
-inventories have a reviewed route, including one manual inventory with differential provenance.
-The separate role continuation completed all 158 requests, giving 113 known A and 114 B returns;
-one original A intent remains quarantined. The neutral-v2 synthetic support-input extension is
-qualified within its bound scope, but the combined-format canary failed its frozen B recovery-
-coverage reference after two valid support returns. C was never launched. Raw role/missingness bookkeeping is now bound; semantic claim attachment, response ranks,
-pilot annotation and episode measurement remain open. Offline preparation covers all five methods
-on 60 aligned conditions from the same 16 inspected episodes. Local tool namespace checks pass,
-but provider harness enforcement and actual-route context capacity remain unbound. A proposed
-bounded measurement reopening awaits an explicit user decision and authorizes no calls. P11 has 19 open gates;
-confirmation and replication each have independent N=0. The exact active boundaries and open
-gates are in the [current-state checkpoint](docs/CURRENT_STATE_2026-09-30.md),
-[evidence-calibration protocol](docs/EVIDENCE_CALIBRATION_PROTOCOL.md), and newest entries of the
-[decision log](docs/DECISIONS.md). The older framing and development ledger below remain dated
-history; they do not supersede those decisions or authorize confirmatory calls.
+Development closed with **42 independent primary pairs**, balanced 21 persistent discrepancies
+and 21 measured recoveries. Strong unchanged B2 and B4 v7 each had 0/42 PrimaryFailures,
+0/0 discordances and paired risk difference 0; the descriptive conservative 95% interval was
+[−9.91,+9.91] percentage points and exact p=1. B2 retained 438/441 required units and
+B4 retained 441/441. Original B4 failures and the failed measurement canary remain preserved.
+These development observations do not establish superiority.
+
+**Confirmation was frozen on October 1 before confirmatory semantic outputs.** The
+[prospective declaration](manifests/study/evidence-calibration-handoff-confirmation-freeze-v1.json)
+binds unchanged strong tool-enabled B2, deterministic B4 v7, two blinded annotation passes,
+episode-level failure across four evidence levels, and a one-sided exact paired test at α=.01.
+The first 600 complete independent pairs stop only for zero-discordance futility; otherwise
+collection continues to 1,200 with no interim superiority test. Useful coverage requires B4
+mean episode coverage ≥95% and loss versus B2 ≤5 percentage points. The interval accounts
+for both possible terminal looks. Power is 82.2% for discordance probabilities .02/.005 and
+84.5% for .045/.02, but only 56.2% for .07/.045; small effects may remain inconclusive.
+
+The latest retained execution checkpoint has **401 complete confirmatory pairs**, 126 incomplete
+method pairs and 1,307 technically valid physical records. Raw outputs and technical failures
+are retained; failed method requests are not retried. No confirmatory answers, scores or
+method effects have been inspected. The first blinded scoring run is queued for 600 complete
+pairs. Alpha is now .03 consumed, including this study's .01 allocation; .02 remains protected
+for fresh replication. The prepared pool has 2,000 confirmation configurations and a separate
+1,600-configuration replication allocation. This experiment is still running; no confirmatory
+scientific result is available.
+
+See the [final development results](docs/EVIDENCE_CALIBRATION_RESPONSE_DEVELOPMENT_2026-09-30.md),
+[current state](docs/CURRENT_STATE_2026-09-30.md) and
+[execution accounting](analysis/results/confirmation/evidence-calibration-b4-b2-confirmation-2026-10-01/execution-accounting-FIRST.json).
+The handoff supersedes historical development stop rules and the nineteen-gate platform
+objective. Earlier checkpoint details below remain historical evidence.
 
 ## Earlier project framing (historical)
 

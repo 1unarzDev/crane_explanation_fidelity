@@ -27,11 +27,11 @@ if [[ ! "${ros_domain_id}" =~ ^[0-9]+$ || ! "${ros_port}" =~ ^[0-9]+$ ]]; then
     echo "ROS_DOMAIN_ID and ROS_TCP_PORT must be integers" >&2
     exit 2
 fi
-if [[ "${catalog}" != "v4" && "${catalog}" != "v5" && "${catalog}" != "v6" && "${catalog}" != "v7" && "${catalog}" != "v8" ]]; then
-    echo "Only versioned diagnostic catalogs v4 through v8 are supported: ${catalog}" >&2
+if [[ "${catalog}" != "v4" && "${catalog}" != "v5" && "${catalog}" != "v6" && "${catalog}" != "v7" && "${catalog}" != "v8" && "${catalog}" != "v9" && "${catalog}" != "v10" ]]; then
+    echo "Only versioned diagnostic catalogs v4 through v10 are supported: ${catalog}" >&2
     exit 2
 fi
-if [[ "${catalog}" == "v6" && "${CRANE_ALLOW_RESERVED_PHYSICAL_CAPTURE:-0}" != "1" && "${CRANE_ALLOW_CAUSAL_RESTRAINT_CAPTURE:-0}" != "1" && "${CRANE_ALLOW_CONTRACT_COMPLETE_V2_CAPTURE:-0}" != "1" ]]; then
+if [[ "${catalog}" == "v6" && -z "${CRANE_HANDOFF_PHYSICAL_SCHEDULE:-}" && "${CRANE_ALLOW_RESERVED_PHYSICAL_CAPTURE:-0}" != "1" && "${CRANE_ALLOW_CAUSAL_RESTRAINT_CAPTURE:-0}" != "1" && "${CRANE_ALLOW_CONTRACT_COMPLETE_V2_CAPTURE:-0}" != "1" ]]; then
     echo "v6 is a physical-evidence reserve; set CRANE_ALLOW_RESERVED_PHYSICAL_CAPTURE=1 for an explicitly declared development capture" >&2
     exit 2
 fi
@@ -58,7 +58,7 @@ causal_restraint_schedule="${workspace_root}/research/explanation_fidelity/exper
 contract_complete_v2="${CRANE_ALLOW_CONTRACT_COMPLETE_V2_CAPTURE:-0}"
 contract_complete_v2_schedule="${workspace_root}/research/explanation_fidelity/experiment_configs/prospective/contract-complete-diagnostic-communication-v2-pilot-schedule.json"
 
-if [[ "${data_split}" != "dev" ]]; then
+if [[ "${data_split}" != "dev" && !( "${data_split}" == "final" && "${catalog}" == "v10" && -n "${CRANE_HANDOFF_CANDIDATE_SCHEDULE:-}" ) ]]; then
     echo "Diagnostic held-out/final capture is not authorized before protocol freeze" >&2
     exit 2
 fi
@@ -66,11 +66,11 @@ layout_metadata_text="$(python3 - "${catalog_file}" "${layout}" "${catalog}" "${
     "${CRANE_ALLOW_CAUSAL_RESTRAINT_CAPTURE:-0}" "${causal_restraint_stage}" \
     "${causal_restraint_schedule}" "${proving_ground_mobility_hold_after}" \
     "${proving_ground_mobility_release_after}" "${contract_complete_v2}" \
-    "${contract_complete_v2_schedule}" <<'PY'
+    "${contract_complete_v2_schedule}" "${CRANE_HANDOFF_PHYSICAL_SCHEDULE:-}" "${CRANE_HANDOFF_CANDIDATE_SCHEDULE:-}" <<'PY'
 import json
 import sys
 
-catalog_path, layout_id, catalog_id, run_id, successor, stage, schedule_path, hold, release, contract_v2, contract_schedule_path = sys.argv[1:]
+catalog_path, layout_id, catalog_id, run_id, successor, stage, schedule_path, hold, release, contract_v2, contract_schedule_path, handoff_path, candidate_path = sys.argv[1:]
 catalog = json.load(open(catalog_path, encoding="utf-8"))
 matches = [item for item in catalog.get("layouts", []) if item.get("id") == layout_id]
 if len(matches) != 1:
@@ -83,10 +83,39 @@ expected_splits = {
     "v5": "candidate-v2-development",
     "v6": "command-motion-confirmation-reserve",
     "v7": "contract-limit-v4-development",
+    "v9": "handoff-response-development",
 }
 if successor == "1" and contract_v2 == "1":
     raise SystemExit("causal-restraint and contract-complete capture activations are mutually exclusive")
-if contract_v2 == "1":
+if candidate_path:
+    import hashlib
+    schedule = json.load(open(candidate_path, encoding="utf-8"))
+    if (schedule.get("schema") != "crane-handoff-fresh-candidates/v1"
+            or schedule.get("development_use") is not False
+            or hashlib.sha256(open(catalog_path,"rb").read()).hexdigest() != schedule["catalog_sha256"]):
+        raise SystemExit("invalid fresh candidate physical allocation")
+    rows = [r for r in schedule["configurations"] if r["run_id"] == run_id]
+    if (len(rows)!=1 or catalog_id != "v10" or rows[0]["layout_id"] != layout_id
+            or layout["studySplit"] != "handoff-" + rows[0]["stage"] + "-candidate"):
+        raise SystemExit("fresh candidate identity/split differs")
+elif handoff_path:
+    import hashlib
+    schedule = json.load(open(handoff_path, encoding="utf-8"))
+    if (schedule.get("schema") != "crane-handoff-physical-allocation/v1"
+            or schedule.get("status") != "PHYSICAL_ONLY_SEMANTIC_FREEZE_PENDING"
+            or schedule.get("user_authorized_reassignment") is not True
+            or schedule.get("development_use") is not False
+            or hashlib.sha256(open(catalog_path, "rb").read()).hexdigest() != schedule["catalog_sha256"]):
+        raise SystemExit("invalid handoff physical-only allocation")
+    matches = [row for row in schedule["configurations"] if row["run_id"] == run_id]
+    if len(matches) != 1:
+        raise SystemExit("run absent or duplicated in handoff allocation")
+    row = matches[0]
+    if (row["layout_id"] != layout_id or row["catalog_id"] != catalog_id
+            or row["mobility_hold_after_s"] != float(hold)
+            or row["mobility_release_after_s"] != float(release)):
+        raise SystemExit("handoff layout/timing mismatch")
+elif contract_v2 == "1":
     if catalog_id != "v6":
         raise SystemExit("contract-complete v2 pilot requires catalog v6")
     schedule = json.load(open(contract_schedule_path, encoding="utf-8"))
