@@ -1,86 +1,108 @@
-% Integration fragment: numerical source manifest is recorded in
-% artifacts/roboboat-paper-integration-2026-10-01/reproduction-manifest.json.
-% Include from paper/main.tex's working directory; merge the companion BibTeX entry.
-\subsection{Temporal evidence in simulated surface navigation}
+% Explanation-focused replacement fragment; source/score hashes are in
+% artifacts/roboboat-transfer-accuracy-2026-10-02/explanation-transfer-results.json.
+\subsection{Evidence-calibrated explanations across land and marine domains}
 \label{sec:marine-temporal-evidence}
 
-We apply the same evidence-contract principle to simulated surface navigation,
-where navigation-software success and interval-qualified physical task completion
-are distinct propositions. Removal-only evidence conditions distinguish reported
-status, instantaneous measurements, and sampled post-result behavior, preserving
-unknown conditions rather than upgrading them into successful docking. Marine-specific
-adapters and computations implement the paper's truth-versus-support distinction;
-this is not zero-shot transfer of an unchanged land implementation.
+The marine evaluation tests whether the paper's central explanation behaviors
+transfer to autonomous surface navigation: reporting supported claims,
+communicating useful available information, and withholding conclusions when
+required evidence is missing. The question is how accurately the explanation
+tracks its evidence, rather than how successfully the vessel navigates. A
+correctly calibrated answer can diagnose an observed violation or state that
+completion is unknown; neither is a navigation-performance score.
 
-The application contract fixes a five-second dwell beginning at the first delivered
-post-result odometry observation. Requirements are position error at most 0.40~m,
-wrapped heading error at most 0.35~rad, measured translational speed at most
-0.05~m/s, absolute yaw rate at most 0.05~rad/s, an oriented hull within a declared
-berth, and absence of prohibited contact. Nav2's stopped goal checker evaluates
-pose and instantaneous velocity conditions; action success does not certify this
-additional dwell or contact requirement~\cite{nav2controller}. A mismatch with the
-stricter application contract is not evidence of a navigation-stack bug.
+We apply the same evidence-contract principle through marine-specific task
+contracts, odometry adapters and temporal computations. Land commands, motion
+and execution history govern supported diagnostic claims. Marine action status,
+adjacent pose/velocity measurements and a sampled five-second interval govern
+physical-completion claims. L0, L1 and L2 remove information from the same
+recording, testing whether explanation specificity grows with evidence while
+unsupported completion and causal claims remain withheld.
 
-We fixed the entire closed development cohort before independently recomputing
-descriptive findings from raw delivered odometry and declared contracts
-(Table~\ref{tab:marine-temporal-cohort}). Its 48 attempts comprise 24 geometry draws
-with two tolerance variants each; 22 pairs are fully admitted. All 46 admitted
-recordings contain an identified action-success receipt. Forty-five cover the
-sampled dwell under the declared 0.06~s maximum-gap rule. Twenty-three contain a
-required-condition violation inside the dwell; 22 satisfy observed kinematic/hull
-checks over the sampled interval but lack contact coverage; one has incomplete
-coverage and no observed violation. Contact is unknown throughout. These are
-retained-development counts, not population prevalence, a navigation-error rate,
-or explanation accuracy.
+Existing evaluated answers provide direct evidence of explanation quality
+(Table~\ref{tab:marine-explanation-quality}). Across five development recordings
+in three approach clusters, the marine calibrated implementation achieved
+15/15 successful answers and 60/60 required information units. All 15 answers
+were assessed as supporting their inventoried claims and preserving causal
+limitations. In a separate explicit-contact replay over two existing recordings,
+all six answers passed development support/coverage criteria: 116/116 reviewed
+claim instances were supported, 24/24 common information units were communicated,
+and both answerable positive sampled-compliance intervals were explained.
+The banks remain separate; levels, claims and judge passes add no independent
+configuration N. The first bank uses project sentence inventories; its later
+incomplete atomic reassessment does not replace these scores.
 
-Figure~\ref{fig:marine-temporal-evidence} links one timeline to its evidence ladder.
-The result-adjacent position error is 0.3982~m and measured speed is 0.0438~m/s.
-A within-dwell sample at simulator time 284.7148~s has error 0.400264~m, exceeding
-the bound. L0 supports reported success; L1 adds bounded adjacent measurements;
-L2 supplies an interval-violation witness. The plot anchors at the first post-result
-observation, not an invented simulator timestamp for the client receipt. Sampled
-satisfaction cannot prove continuous compliance without intersample bounds.
-Motion does not uniquely identify waves, current, wind, or actuator
-defects~\cite{fossen2021handbook}.
+The timeline/evidence-ladder figures show what those results mean. In the
+violation example (Fig.~\ref{fig:marine-violation-explanation}), the answer changes
+from unknown interval completion at L0 to an adjacent measurement at L1, then
+identifies a witnessed within-dwell yaw-rate violation at L2. It invents no
+physical cause. In the positive example (Fig.~\ref{fig:marine-positive-explanation}),
+L2 reports that all 251 observed kinematic/hull samples met the interval
+requirements, while retaining unknown contact and unproved continuous compliance.
+A later position crossing is outside that interval and cannot reverse its
+sampled-compliance statement. The excerpts are verbatim evaluated answers,
+rather than newly written ideal responses.
 
-Separate inspected B2/B4 comparisons tied useful coverage: both communicated all
-24 common units and both answerable sampled-compliance intervals. Strict 5/6 versus
-6/6 contact-replay scores hinge on a roughly 0.000145~m temporal-reference discrepancy
-and do not establish material superiority. Recent deterministic-output checks establish
-numerical/contract conformance, not independently judged language correctness.
-Existing docking-policy explanations use surrogate models~\cite{gjarum2021docking};
-our case concerns support for execution completion. It establishes a reproducible
-application of the evidence-calibration principle and descriptive simulator behavior,
-while comparative effectiveness, continuous-time proof, and hardware transfer remain
-unestablished.
-
-\begin{figure*}[t]
-\centering
-\includegraphics[width=\textwidth]{../artifacts/roboboat-paper-integration-2026-10-01/temporal-evidence-transfer.pdf}
-\caption{One retained simulator recording under removal-only evidence. Shading marks
-the fixed dwell; the point is the first position violation. Time zero is the first
-delivered post-result observation, not an aligned client-receipt timestamp. Lines
-connect observed samples for display, without proving intersample compliance.
-The illustrative record is the first eligible scheduled position-violation case
-with complete sampled coverage; no representative-frequency or method-score claim follows.}
-\label{fig:marine-temporal-evidence}
-\end{figure*}
+These results support transfer of the core calibration behavior to a practically
+motivated surface-vessel task, consistent with the land study's supported-diagnosis,
+coverage and evidential-restraint objectives. They do not estimate equal
+land/marine accuracy or superiority over another method. The evaluated marine
+condition uses deterministic language and domain-specific computations, rather
+than an unchanged transfer of the full land pipeline. Labels are automated
+agent-assessed development evidence with possible correlated error, not human
+validation. Existing docking-policy explanations already use surrogate
+models~\cite{gjarum2021docking}; the transferred behavior here concerns support
+for execution-completion claims. The demonstrated application is simulated;
+real-water accuracy and broader generalization remain to be tested.
 
 \begin{table}[t]
-\caption{Closed marine development cohort. The final three rows partition admitted
-recordings; preceding rows are flow counts or marginals.}
-\label{tab:marine-temporal-cohort}
+\caption{Observed marine explanation quality in separate inspected development
+banks. Successful answers require supported inventoried claims, required-unit
+coverage and preserved limitations. These are automated support assessments,
+not population error bounds or a pooled domain-comparison estimate.}
+\label{tab:marine-explanation-quality}
 \centering\small
-\begin{tabular}{lr}
+\begin{tabular}{lrr}
 \hline
-Flow or evidence category & Records \\
+Evaluated bank & Answers & Required units \\
 \hline
-Scheduled / admitted / technical failures & 48 / 46 / 2 \\
-Identified software-success receipt & 46 \\
-Complete sampled dwell coverage & 45 \\
-Within-dwell violation & 23 \\
-Sampled compliance; contact unknown & 22 \\
-Incomplete dwell; no observed violation & 1 \\
+Five-record violation bank & 15/15 & 60/60 \\
+Two-record contact replay & 6/6 & 24/24 \\
 \hline
 \end{tabular}
 \end{table}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{../artifacts/roboboat-transfer-accuracy-2026-10-02/marine-violation-evidence-ladder.png}
+\caption{Evidence-sensitive diagnosis in the scored direct-route recording.
+The same-record answer moves from withholding interval completion to adjacent
+measurements and then a supported yaw-rate-violation witness. Text excerpts are
+verbatim from evaluated answers. Shading is the fixed dwell; time zero is its
+first post-result observation. The complete answers retain causal uncertainty.}
+\label{fig:marine-violation-explanation}
+\end{figure*}
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{../artifacts/roboboat-transfer-accuracy-2026-10-02/marine-positive-evidence-ladder.png}
+\caption{Useful positive evidence without an unsupported completion claim.
+The known-route contact-replay answer communicates sampled kinematic/hull
+compliance across the shaded fixed dwell. Its full text retains unknown contact
+and continuous-time limits. The later position crossing is outside the interval
+and does not falsify earlier sampled compliance. Excerpts are verbatim evaluated
+answers; plotted lines interpolate samples for display, not physical proof.}
+\label{fig:marine-positive-explanation}
+\end{figure*}
+
+% Optional supplementary figure if the main-paper page allocation is tight.
+\begin{figure*}[t]
+\centering
+\includegraphics[width=\textwidth]{../artifacts/roboboat-transfer-accuracy-2026-10-02/marine-explanation-quality.png}
+\caption{All six calibrated answers in the closed explicit-contact replay.
+Each cell reports reviewed claim support and required-unit coverage for one
+recording/evidence level. The full answers preserve limitations. Claim counts
+are annotation denominators, not independent observations or an objective to
+maximize. The five-record bank and the replay are not pooled.}
+\label{fig:marine-explanation-support-matrix}
+\end{figure*}

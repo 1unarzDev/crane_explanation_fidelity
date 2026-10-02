@@ -1,5 +1,7 @@
 # Marine paper-integration goal complete
 
+**Explanation-focused revision (October 2 UTC):** the user requested a stronger connection to the core research questions and marine explanation accuracy. PAPER_TRANSFER_CASE.md now leads with two separate evaluated-answer banks, supported information coverage, calibrated withholding and three new graphs with actual evaluated answer excerpts. The 46-record physical table is supplementary. Original integration snapshot and its manifest remain available at commit `0575132d`; its source-file hashes identify that version, not the revised prose. New provenance is artifacts/roboboat-transfer-accuracy-2026-10-02/transfer-accuracy-manifest.json. No campaign restart or new scoring occurred.
+
 The user-directed replacement handoff is complete on this branch. It supersedes the earlier expanding RoboBoat superiority campaign. The delivered contribution is a compact, reproducible temporal-evidence application of the paper's evidence-calibration principle. It does not claim completion of the former confirmation/replication objective.
 
 ## Deliverables

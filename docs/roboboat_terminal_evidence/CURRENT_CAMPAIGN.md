@@ -1,5 +1,7 @@
 # Current independent RoboBoat campaign
 
+Latest explanation-focused revision: marine now answers the core support/coverage/withholding research questions using existing evaluated answers, with three new linked quality/timeline/evidence-ladder graphs. The physical-support cohort is supplementary. See PAPER_TRANSFER_CASE.md and artifacts/roboboat-transfer-accuracy-2026-10-02/transfer-accuracy-manifest.json; expansion remains stopped.
+
 **Superseding terminal status, October 1, 2026:** the user-directed paper-integration replacement goal is complete. Expansion is administratively stopped; confirmation, replication and further qualification are deferred. The compact temporal-evidence subsection independently checks the closed 48-attempt/46-admitted cohort, with one linked figure and one descriptive table. See [PAPER_INTEGRATION_COMPLETE_2026-10-01.md](PAPER_INTEGRATION_COMPLETE_2026-10-01.md) and [PAPER_TRANSFER_CASE.md](PAPER_TRANSFER_CASE.md). Earlier campaign notes below are retained history, not instructions to restart collection.
 
 User authorization supersedes historical external-allocation/resource blocks in STATUS.md and earlier completion audits. Ordinary development, larger independent N, parallel workers, confirmation consistent with a mature prospective freeze and replication are authorized. Scientific readiness is still required: confirmation is unfrozen, confirmation and replication N=0, land N remains separate. Latest operational snapshots are numbered coordinator_campaign_status_v*.json; immutable earlier snapshots are history.
