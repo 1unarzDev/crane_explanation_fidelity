@@ -1,5 +1,7 @@
 # Prospective external confirmation status
 
+The [reviewed timing change is now authorized](FRESH_H2_TIMING_AUTHORIZATION.md), subject to full qualification and shared reconciliation. An append-only conditional companion preserves the frozen H1 and its consumed .01, and requires complete H2 freezing before fresh H2 acquisition. Preparation integrity passes; production activation remains closed. This authorization supersedes the earlier requirement to request timing approval, while the retained conflict and unmet old freeze remain documented.
+
 **Development active; confirmation not activated.** A [concurrent commitment audit](CONCURRENT_H1_COMMITMENT_CONFLICT.md) now finds the land-study branch has frozen and consumed discovery .01 for H1, while main retains its older AVAILABLE ledger. The previously adopted H1→H2 companion was never scientifically bound; its requirement to freeze complete H2 before first H1 semantic response was not met. It cannot currently authorize H2. Historical .02 and protected replication .02 remain unchanged. No HEXAR confirmatory semantic outputs exist. Preserve the concurrent frozen H1 and resolve a valid explicit prospective external framework before confirmation; all development continues.
 
 All eighteen original navigation recordings are development-exposed and permanently excluded from confirmation. The inspected twelve-recording result remains 100% versus 90.7%, descriptive +9.3 points, seven better/five tied recordings. Historical HEXAR 49/54 remains separately reported on the original task.
