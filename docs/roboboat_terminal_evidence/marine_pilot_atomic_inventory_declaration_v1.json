@@ -1,0 +1,30 @@
+{
+  "schema": "roboboat-development-atomic-inventory-declaration/v1",
+  "disposition": "INSPECTED_DEVELOPMENT_REASSESSMENT_ONLY",
+  "bank": {
+    "path": "artifacts/roboboat-terminal-atomic-inventory-v1/blind-bank.json",
+    "sha256": "c2a36aeb9dd4edc291dfd7c95b1e049568b4a95403e14106d0c15a349dae6c05"
+  },
+  "qualification_review": {
+    "path": "docs/roboboat_terminal_evidence/marine_atomization_semantic_review_v5.json",
+    "sha256": "1a8fcb66671d130d7c66d375649b03542b9efd03058c33f6c26af09ce44b6aca"
+  },
+  "extractor_freeze": {
+    "path": "docs/roboboat_terminal_evidence/marine_atomization_freeze_v5.json",
+    "sha256": "2b98c0ceba9150d9aa3bbdfed99d72667cf54a6deccabf1eab3f1d8f12291ce6"
+  },
+  "runner": {
+    "path": "analysis/run_roboboat_pilot_atomic_inventory.py",
+    "sha256": "ba5bb566a2f57c17782c3594313c36d9bebae3605dd0fc86b8a075b084962179"
+  },
+  "original_answer_n": 36,
+  "unique_answer_texts": 31,
+  "passes": 2,
+  "max_concurrent_calls": 2,
+  "quality_retries": 0,
+  "support_annotation_authorized": false,
+  "endpoint_scoring_authorized": false,
+  "physical_n_added": 0,
+  "alpha_consumed": 0,
+  "completeness_rule": "Separate project review of full response, both inventories, exact spans, all component facts, temporal/numerical relations, negation and actor references. Supported supplemental facts are retained; abstraction tags are discarded. Any missing/unfaithful atom blocks support-packet publication."
+}

@@ -1,0 +1,285 @@
+{
+  "development_only": true,
+  "confirmatory_freeze": false,
+  "alpha": 0.01,
+  "candidate_valid_n": 1200,
+  "not_selected_or_frozen": true,
+  "practical_effect_target": 0.025,
+  "independent_unit": "fresh episode/configuration",
+  "assumptions": "IID independent configuration sampling from a prospectively specified population. Counts are valid complete episode pairs; no masks or judge passes add N. No positive pilot effect is assumed.",
+  "rationale": "1200 valid pairs provide >=80% power for a 2.5 percentage-point reduction across opposing-discordance probabilities 0.005 through 0.020; at 0.045 opposing discordance power is only 56%, so 1200 is not universally adequate. Smaller effects and the null remain explicit sensitivity scenarios. This does not predict a positive effect.",
+  "attrition": "Acquired cap and technical stopping rule remain to be specified; technical missingness may be associated with task difficulty. Report worst-case missing-pair bounds, not merely independent-thinning power.",
+  "useful_coverage": "Success additionally requires a prospectively frozen useful-coverage criterion; this calculation covers superiority only.",
+  "early_futility_design": {
+    "first_look_n": 600,
+    "maximum_n": 1200,
+    "rule": "Stop only if first600 have zero paired discordances. No early positive result. Otherwise finish1200 and use the original exact test.",
+    "validity": "For every alpha threshold, study rejection is a subset of the fixed1200 exact-test rejection event; study p=1 if stopped, otherwise final exact p. No alpha spent on the futility look.",
+    "interval": "Two predeclared possible terminal looks: Bonferroni CP category tail.00625 yields >=97.5% coverage per look and >=95% over both look-specific intervals.",
+    "rows": [
+      {
+        "b2_only": 0.0,
+        "b4_only": 0.0,
+        "power": 0.0,
+        "probability_zero_discordance_early_stop": 1.0
+      },
+      {
+        "b2_only": 0.005,
+        "b4_only": 0.0,
+        "power": 0.3920597964083161,
+        "probability_zero_discordance_early_stop": 0.04941382211003858
+      },
+      {
+        "b2_only": 0.01,
+        "b4_only": 0.0,
+        "power": 0.9539948500914006,
+        "probability_zero_discordance_early_stop": 0.0024050092913110673
+      },
+      {
+        "b2_only": 0.02,
+        "b4_only": 0.005,
+        "power": 0.8222747389967195,
+        "probability_zero_discordance_early_stop": 2.5279554673964603e-07
+      },
+      {
+        "b2_only": 0.025,
+        "b4_only": 0.025,
+        "power": 0.0070725245337796535,
+        "probability_zero_discordance_early_stop": 4.3068839852573004e-14
+      },
+      {
+        "b2_only": 0.03,
+        "b4_only": 0.005,
+        "power": 0.9940753009323504,
+        "probability_zero_discordance_early_stop": 5.204607776299416e-10
+      },
+      {
+        "b2_only": 0.035,
+        "b4_only": 0.01,
+        "power": 0.9642298673426511,
+        "probability_zero_discordance_early_stop": 1.0046688805005774e-12
+      },
+      {
+        "b2_only": 0.045,
+        "b4_only": 0.02,
+        "power": 0.845257319309891,
+        "probability_zero_discordance_early_stop": 3.068785429727468e-18
+      },
+      {
+        "b2_only": 0.07,
+        "b4_only": 0.045,
+        "power": 0.5620585658026415,
+        "probability_zero_discordance_early_stop": 1.465421026503043e-32
+      }
+    ]
+  },
+  "rows": [
+    {
+      "b2_only": 0.0,
+      "b4_only": 0.0,
+      "risk_difference": 0.0,
+      "powers": {
+        "640": {
+          "one-sided": 0.0,
+          "two-sided": 0.0
+        },
+        "800": {
+          "one-sided": 0.0,
+          "two-sided": 0.0
+        },
+        "1200": {
+          "one-sided": 0.0,
+          "two-sided": 0.0
+        },
+        "1600": {
+          "one-sided": 0.0,
+          "two-sided": 0.0
+        }
+      }
+    },
+    {
+      "b2_only": 0.005,
+      "b4_only": 0.0,
+      "risk_difference": 0.005,
+      "powers": {
+        "640": {
+          "one-sided": 0.04419289410945371,
+          "two-sided": 0.01656609002044009
+        },
+        "800": {
+          "one-sided": 0.11015125846735564,
+          "two-sided": 0.050686288601194056
+        },
+        "1200": {
+          "one-sided": 0.3936968812748392,
+          "two-sided": 0.25567446283058165
+        },
+        "1600": {
+          "one-sided": 0.687238073001941,
+          "two-sided": 0.5473891420520387
+        }
+      }
+    },
+    {
+      "b2_only": 0.01,
+      "b4_only": 0.0,
+      "risk_difference": 0.01,
+      "powers": {
+        "640": {
+          "one-sided": 0.45798941617908484,
+          "two-sided": 0.3122393751036225
+        },
+        "800": {
+          "one-sided": 0.6878537646427407,
+          "two-sided": 0.5477410790991578
+        },
+        "1200": {
+          "one-sided": 0.9549416923059979,
+          "two-sided": 0.9115894637374048
+        },
+        "1600": {
+          "one-sided": 0.9961239252789392,
+          "two-sided": 0.9902683915567005
+        }
+      }
+    },
+    {
+      "b2_only": 0.02,
+      "b4_only": 0.005,
+      "risk_difference": 0.015,
+      "powers": {
+        "640": {
+          "one-sided": 0.4440306406326576,
+          "two-sided": 0.34548986458857905
+        },
+        "800": {
+          "one-sided": 0.5912439634732632,
+          "two-sided": 0.4790749209079879
+        },
+        "1200": {
+          "one-sided": 0.8222748410311187,
+          "two-sided": 0.7468500554207372
+        },
+        "1600": {
+          "one-sided": 0.9311612384911955,
+          "two-sided": 0.8940554090968094
+        }
+      }
+    },
+    {
+      "b2_only": 0.025,
+      "b4_only": 0.025,
+      "risk_difference": 0.0,
+      "powers": {
+        "640": {
+          "one-sided": 0.006006538223141767,
+          "two-sided": 0.0029902649751323085
+        },
+        "800": {
+          "one-sided": 0.006452480366980254,
+          "two-sided": 0.0032486212167522283
+        },
+        "1200": {
+          "one-sided": 0.007072524533779911,
+          "two-sided": 0.003478432608484977
+        },
+        "1600": {
+          "one-sided": 0.007432801769806636,
+          "two-sided": 0.003653145455847763
+        }
+      }
+    },
+    {
+      "b2_only": 0.03,
+      "b4_only": 0.005,
+      "risk_difference": 0.024999999999999998,
+      "powers": {
+        "640": {
+          "one-sided": 0.8614986212365101,
+          "two-sided": 0.7881549376292701
+        },
+        "800": {
+          "one-sided": 0.9407930074220573,
+          "two-sided": 0.9001995527980005
+        },
+        "1200": {
+          "one-sided": 0.9940753013640878,
+          "two-sided": 0.9887115689855995
+        },
+        "1600": {
+          "one-sided": 0.999593096260414,
+          "two-sided": 0.99902394998789
+        }
+      }
+    },
+    {
+      "b2_only": 0.035,
+      "b4_only": 0.01,
+      "risk_difference": 0.025,
+      "powers": {
+        "640": {
+          "one-sided": 0.7168819447310883,
+          "two-sided": 0.6224794541755551
+        },
+        "800": {
+          "one-sided": 0.8300273529680495,
+          "two-sided": 0.7631502007358317
+        },
+        "1200": {
+          "one-sided": 0.9642298673433356,
+          "two-sided": 0.9390705729155193
+        },
+        "1600": {
+          "one-sided": 0.9933637063802231,
+          "two-sided": 0.9871333974317277
+        }
+      }
+    },
+    {
+      "b2_only": 0.045,
+      "b4_only": 0.02,
+      "risk_difference": 0.024999999999999998,
+      "powers": {
+        "640": {
+          "one-sided": 0.5121105184248824,
+          "two-sided": 0.4163959698091621
+        },
+        "800": {
+          "one-sided": 0.6397684270784589,
+          "two-sided": 0.5410957681239198
+        },
+        "1200": {
+          "one-sided": 0.845257319309891,
+          "two-sided": 0.7788736276774445
+        },
+        "1600": {
+          "one-sided": 0.9428754362401204,
+          "two-sided": 0.9064363244116256
+        }
+      }
+    },
+    {
+      "b2_only": 0.07,
+      "b4_only": 0.045,
+      "risk_difference": 0.02500000000000001,
+      "powers": {
+        "640": {
+          "one-sided": 0.28211233886391635,
+          "two-sided": 0.20542888467627396
+        },
+        "800": {
+          "one-sided": 0.36924007626770217,
+          "two-sided": 0.27773399524383635
+        },
+        "1200": {
+          "one-sided": 0.5620585658026415,
+          "two-sided": 0.46019689969073574
+        },
+        "1600": {
+          "one-sided": 0.7146778769526171,
+          "two-sided": 0.6232693906050142
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "schema": "roboboat-terminal-pilot-continuation/v2",
+  "disposition": "DEVELOPMENT_EXPLORATORY_NO_CONFIRMATORY_ALLOCATION",
+  "created_date": "2026-09-30",
+  "configuration_n": 3,
+  "cluster_n": 2,
+  "rows": [
+    {
+      "id": "boat-terminal-pilot-004",
+      "cluster_id": "approach-02",
+      "family": "direct-route",
+      "action_mode": "navigate-to-pose",
+      "shape": "direct",
+      "heading_offset": 0.0,
+      "internal_xy_tolerance_m": 0.2,
+      "seed": 31001,
+      "status": "untouched-prospectively-registered",
+      "retry_budget": 0
+    },
+    {
+      "id": "boat-terminal-pilot-005",
+      "cluster_id": "approach-03",
+      "family": "shifted-known-route",
+      "action_mode": "follow-path",
+      "shape": "shifted-known",
+      "heading_offset": 0.0,
+      "internal_xy_tolerance_m": 0.2,
+      "seed": 31002,
+      "status": "untouched-prospectively-registered",
+      "retry_budget": 0
+    },
+    {
+      "id": "boat-terminal-pilot-006",
+      "cluster_id": "approach-03",
+      "family": "shifted-known-route",
+      "action_mode": "follow-path",
+      "shape": "shifted-known",
+      "heading_offset": 0.0,
+      "internal_xy_tolerance_m": 0.4,
+      "seed": 31002,
+      "status": "untouched-prospectively-registered",
+      "retry_budget": 0
+    }
+  ],
+  "contract_sha256": "f4cb6a91dd5b00f1e913ca0e0f1d1e1e845c95ccfe336ee669b1549fe7e73049",
+  "no_outcome_selection": true,
+  "stop_on_technical_failure": true,
+  "confirmation": {
+    "authorized": false,
+    "alpha_allocated": 0.0,
+    "untouched_registry": "not-yet-allocated",
+    "coordinator_decision_required": true
+  },
+  "parent_registry_sha256": "fb66e403809cdfd5e718d24d9530bed809fe52e136cfd39b9bb1d9289f725d49",
+  "capture_runtime_parameters": true,
+  "scope": "Remaining untouched v1 development rows only; row003 is never retried. Same physical requirements, controllers, seeds and approach clusters. Readback adds bounded pre-action setup delay; actual starting state remains measured.",
+  "technical_disposition": "Original transport root cause unresolved; bounded diagnostic continuation, not repaired-runtime certification. Stop at first technical failure; zero retries. No outcome selection.",
+  "admission": "Unchanged production strict validity; preserve all unexpected valid outcomes and failed attempts."
+}

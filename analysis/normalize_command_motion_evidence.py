@@ -37,7 +37,8 @@ def normalize(diagnostic: dict[str, Any], *, configuration_id: str, question: st
         "diagnostic_computation_version", "execution_sequence", "goal_id", "measured_frame",
         "odometry_provenance", "odometry_samples", "windowing",
     }
-    if set(method) != required_method:
+    optional_method = {"observation_cutoff", "terminal_result_observed"}
+    if not required_method <= set(method) or set(method) - required_method - optional_method:
         raise ValueError("unexpected method-input fields")
     if not question.strip() or not configuration_id:
         raise ValueError("question and configuration identity are required")
@@ -64,6 +65,9 @@ def normalize(diagnostic: dict[str, Any], *, configuration_id: str, question: st
             "windowing": method["windowing"],
         },
     }
+    for field in optional_method:
+        if field in method:
+            evidence["navigate_to_pose_result"][field] = method[field]
     if omit_recovery_and_source_anchors:
         del evidence["behavior_tree_transitions"]
         del evidence["source_anchors"]

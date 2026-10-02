@@ -1,0 +1,115 @@
+{
+  "schema": "hexar-annotation-freeze/v1",
+  "status": "CANDIDATE_NOT_FROZEN",
+  "inherited_file_hashes": {
+    "research/explanation_fidelity/prompts/evidence-calibration-agent-annotator-v1.md": "e85eba2778c3d740edb38ba0525eaeecaf2b73460b4bc95172e04820ad3cc4a9",
+    "research/explanation_fidelity/schemas/blinded-agent-atomic-annotation-return-v2.schema.json": "7b10a601c48f08a720bcc2c52c69bab0b1773e72ee552f4ac88a7bbd4c1a044f",
+    "docs/hexar_external/v2/annotation_amendment.txt": "d38f421a0b0aadf72650c86955d18c791a57e1a54350112b9688d62b20692d5d",
+    "docs/hexar_external/v3/sentinel_clarification.txt": "11a8fdc9cfcb4e676a1835564b982263a413015edfbd7def979940bfec224686",
+    "analysis/hexar_external/annotate_v3.py": "feeb77960ab1404a42cb4e46f6d1feab87794f40a884bdd77962df9452a61468",
+    "analysis/hexar_external/extract_v3.py": "7a8f50ad07b271d8869e94716fdec6dee79cefec156b3054d7e49f55cbb8afee",
+    "data/hexar_external/v3/annotation_binding.json": "87e335f4d7090944eeb5fd5865ad9859772018a59b43e7aff5afceb22a4028bf"
+  },
+  "agent_assessed": true,
+  "human_validated": false,
+  "model": "gpt-6-astra",
+  "model_version": null,
+  "decoding": null,
+  "complete_system_instructions": null,
+  "policy": "independent isolated A/B passes; disagreement-only C; unresolved treated least favorable; no outcome-driven retry",
+  "blinding": "opaque shuffled answer IDs; judge sees permitted evidence/reference, answer, schema only; no method/family identity, development result, winner, alpha or previous labels",
+  "identity_inference_limit": "wording/template style may suggest method despite identity removal",
+  "deterministic_checks": "exact source literals, outcome polarity, logged numbers and evidence-ID membership where licensed; semantic scope remains agent-assessed",
+  "qualification_for_whole_recording_endpoint": null,
+  "blind_bank_builder": null,
+  "adjudication_implementation": null,
+  "candidate_instrument": {
+    "status": "DEVELOPMENT_QUALIFIED_CONTRASTS_NOT_FULL_ENDPOINT_FREEZE",
+    "source_hashes": {
+      "analysis/hexar_external/confirmatory_v1/rich_evaluator_v3.py": "b512d08b7145663bfa3831fef1fac9868e4ebe96879d54b90eb683b234c65758",
+      "analysis/hexar_external/confirmatory_v1/rich_adjudication.py": "0298237463ef05967c29ffee1786970cf8050b8a053c7de86606b8340568fb56",
+      "analysis/hexar_external/confirmatory_v1/rich_blind_projection.py": "3d21a339f1c204ce3b6f029e52631eb1cceee07ee8409e52b72de1121ce40122"
+    },
+    "prompt_sha256": "ea9ff8eff46d17eee05f342a2c5b66a762d846199094c71f492c408593acb1b0",
+    "schema_sha256": "43f9e18149715584dfd79992df3ac07fd7fa5312696f91ab3e17782edd8e37ce",
+    "reference_builder": {
+      "path": "analysis/hexar_external/acquisition/navigation_references.py",
+      "sha256": "5148bcf3016ce587844a060dc93fa77f6c0a657b2fb731a50c67edadb6be8690"
+    },
+    "development_reports": {
+      "manifests/hexar_external/confirmatory_v1/development_rich_evaluator_screen_v3/report.json": "860291f68e59a717f4ea202db14a2b4b21a6efde1b7536a885968662d6b24063",
+      "manifests/hexar_external/confirmatory_v1/development_controller_screen_v1/report.json": "7d4a9600c0583b52adc4c39c9d8a3e2e886d41d04656c55a13f9a0482fe100a6",
+      "manifests/hexar_external/confirmatory_v1/development_unique_scoring_v1/report.json": "18da3dcb63f10468c369ddf8be628715061ed6d2db4a2ec38d89e908aff71be8"
+    },
+    "human_validated": false,
+    "substantive_numeric_coverage_qualified": false,
+    "exhaustive_material_claim_detection_qualified": false
+  },
+  "candidate_instrument_v4": {
+    "status": "COMPLETE_AUTHORED_V4_SCREEN_PASSED_OPERATIONAL_ENDPOINT_PENDING",
+    "source_hashes": {
+      "analysis/hexar_external/confirmatory_v1/rich_evaluator_v4.py": "596be8e5f020a3e325c4e86cc49d1889625eed322680d688be68e070ffab44ac",
+      "analysis/hexar_external/confirmatory_v1/motion_usefulness.py": "57faa2235e1b977ad312c1ac0b1d2303fc907975cc483faf37eaacbfef370b0e",
+      "analysis/hexar_external/acquisition/navigation_usefulness_v2.py": "5a28094be3ff1665c1ea8d7457140ca12f0d8b47e2783c88c66a7b21707dcab5"
+    },
+    "prompt_sha256": "77d6ebc4560ef38f57147b455f669a93277adc9411e166d9c8872fd298eaaf86",
+    "schema_sha256": "43f9e18149715584dfd79992df3ac07fd7fa5312696f91ab3e17782edd8e37ce",
+    "authored_screen": {
+      "path": "manifests/hexar_external/confirmatory_v1/development_motion_screen_v1/report.json",
+      "sha256": "bbf1fa0ade44dae4364f1022b8757ae39f53e670b4498833f8974cf6d8516234"
+    },
+    "authored_calls": 96,
+    "exact_component_agreements": 96,
+    "agent_assessed": true,
+    "human_validated": false,
+    "whole_endpoint_qualified": false,
+    "blinded_real_output_scoring": {
+      "path": "manifests/hexar_external/confirmatory_v1/development_unique_scoring_v2/report.json",
+      "sha256": "17f1c33ce3ed386443d22edfcd567401c7abfd670fd1d4d48fdf1a1c46439c15"
+    },
+    "scoring_calls": 144,
+    "scoring_unresolved_unique_outputs": 0,
+    "complete_authored_screen": {
+      "path": "manifests/hexar_external/confirmatory_v1/development_v4_complete_instrument_screen_v1/report.json",
+      "sha256": "07d04d7cb9feb5f3f66d24ef49831a36e751e36fa4a85aca20a8b6bfe60b6f22",
+      "initial_calls": 256,
+      "valid_initial_returns": 256,
+      "exact_component_agreements": 256,
+      "C_calls": 0,
+      "authored_ambiguity_dispositions_retained": 2,
+      "scope": "Authored development contrasts only; not final whole-episode or provider qualification."
+    },
+    "actual_registered_pipeline": {
+      "report": {
+        "path": "manifests/hexar_external/confirmatory_v1/development_registered_pipeline_v1/report.json",
+        "sha256": "317123b81d47853cf7af2ce2b6804317674c0aba4f27992a932e5b18640d72ef"
+      },
+      "archive_audit": {
+        "path": "manifests/hexar_external/confirmatory_v1/development_registered_pipeline_archive_audit_v1.json",
+        "sha256": "f88eefce3c900e875029abd51a3faa2267372d3930f8bc3abaab0316eb1c0dca"
+      },
+      "status": "DEVELOPMENT_OPERATIONAL_PASSED_NOT_FINAL_ADAPTER_QUALIFICATION",
+      "provider_qualified": false,
+      "full_transitive_runtime_qualified": false
+    },
+    "six_family_registered_pipeline": {
+      "report": {
+        "path": "manifests/hexar_external/confirmatory_v1/development_registered_pipeline_v3/report.json",
+        "sha256": "15fa2734d44f02775abae1a1653660f299254bfdcdda330370ffe6af1aba1209"
+      },
+      "archive_audit": {
+        "path": "manifests/hexar_external/confirmatory_v1/development_registered_pipeline_v3/archive_verification.json",
+        "sha256": "5294e7c0b4380754a2bef0c1d415176965919f0fb9b92f54a185b354ec2e4a64"
+      },
+      "status": "SIX_FAMILY_DEVELOPMENT_OPERATIONAL_PASSED_NOT_FINAL_ADAPTER_QUALIFICATION",
+      "unique_methods": 72,
+      "initial_judgments": 144,
+      "disagreement_C_judgments": 1,
+      "unresolved_unique_labels": 0,
+      "agent_assessed": true,
+      "human_validated": false,
+      "provider_qualified": false,
+      "full_transitive_runtime_qualified": false
+    }
+  }
+}

@@ -126,7 +126,9 @@ def _materialize(root: Path, pilot: dict[str, Any], schedule: dict[str, Any],
         "nominal-false-premise": "nominal_false_premise",
     }
     family = family_map[run["family"]]
-    diagnostic_path = root / f"data/robot_visible/dev/{run_id}/command-motion-diagnostic-v3.json"
+    data_split = pilot.get("data_split", "dev")
+    if data_split not in {"dev", "final"}: raise ValueError("invalid evidence data split")
+    diagnostic_path = root / f"data/robot_visible/{data_split}/{run_id}/command-motion-diagnostic-v3.json"
     diagnostic = json.loads(diagnostic_path.read_text())
     question = "The episode succeeded; was there nevertheless a navigation failure, and what does the evidence support?" \
         if family == "nominal_false_premise" else \
@@ -217,8 +219,10 @@ def run(args: argparse.Namespace, caller: Any | None = None) -> dict[str, Any]:
         "reasoning_effort": pilot["methods"]["B2"]["reasoning_effort"],
         "single_call_no_retry": True, "cache_key": record["cache_key"],
         "answer": record["parsed_final"]["answer"], "raw_call_record_sha256": canonical_sha256(record),
-        "development_only": True,
+        "development_only": pilot.get("development_only", True),
+        "study_stage": pilot.get("study_stage", "DEVELOPMENT"),
     }
+    if result["study_stage"] == "DEVELOPMENT": result.pop("study_stage")
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n")
     return result

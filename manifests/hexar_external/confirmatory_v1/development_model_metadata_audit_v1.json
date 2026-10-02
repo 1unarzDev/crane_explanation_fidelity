@@ -1,0 +1,162 @@
+{
+  "schema": "hexar-development-model-metadata-audit/v1",
+  "observed_at": "2026-10-01T14:00:49.996235+00:00",
+  "phase": "read_only_development_runtime_audit",
+  "cli_version": "codex-cli 0.159.3",
+  "requested_models": [
+    "gpt-6-sol",
+    "gpt-6-astra"
+  ],
+  "selected": [
+    {
+      "record_fields": [
+        "additionalSpeedTiers",
+        "availabilityNux",
+        "availableAccessPrograms",
+        "defaultReasoningEffort",
+        "defaultServiceTier",
+        "description",
+        "displayName",
+        "hidden",
+        "id",
+        "inputModalities",
+        "isDefault",
+        "model",
+        "modelSpecialty",
+        "multiAgentVersion",
+        "serviceTiers",
+        "supportedReasoningEfforts",
+        "supportsPersonality",
+        "upgrade",
+        "upgradeInfo"
+      ],
+      "metadata": {
+        "id": "gpt-6-astra",
+        "model": "gpt-6-astra",
+        "displayName": "GPT-6-Astra",
+        "description": "Frontier intelligence for the most demanding work.",
+        "hidden": false,
+        "supportedReasoningEfforts": [
+          {
+            "reasoningEffort": "low",
+            "description": "Fast responses with lighter reasoning"
+          },
+          {
+            "reasoningEffort": "medium",
+            "description": "Balances speed and reasoning depth for everyday tasks"
+          },
+          {
+            "reasoningEffort": "high",
+            "description": "Greater reasoning depth for complex problems"
+          },
+          {
+            "reasoningEffort": "xhigh",
+            "description": "Extra high reasoning depth for complex problems"
+          },
+          {
+            "reasoningEffort": "max",
+            "description": "Maximum reasoning depth for the hardest problems"
+          },
+          {
+            "reasoningEffort": "ultra",
+            "description": "Maximum reasoning with automatic task delegation"
+          }
+        ],
+        "defaultReasoningEffort": "low",
+        "isDefault": false
+      }
+    },
+    {
+      "record_fields": [
+        "additionalSpeedTiers",
+        "availabilityNux",
+        "availableAccessPrograms",
+        "defaultReasoningEffort",
+        "defaultServiceTier",
+        "description",
+        "displayName",
+        "hidden",
+        "id",
+        "inputModalities",
+        "isDefault",
+        "model",
+        "modelSpecialty",
+        "multiAgentVersion",
+        "serviceTiers",
+        "supportedReasoningEfforts",
+        "supportsPersonality",
+        "upgrade",
+        "upgradeInfo"
+      ],
+      "metadata": {
+        "id": "gpt-6-sol",
+        "model": "gpt-6-sol",
+        "displayName": "GPT-6-Sol",
+        "description": "Previous generation workhorse model.",
+        "hidden": false,
+        "supportedReasoningEfforts": [
+          {
+            "reasoningEffort": "low",
+            "description": "Fast responses with lighter reasoning"
+          },
+          {
+            "reasoningEffort": "medium",
+            "description": "Balances speed and reasoning depth for everyday tasks"
+          },
+          {
+            "reasoningEffort": "high",
+            "description": "Greater reasoning depth for complex problems"
+          },
+          {
+            "reasoningEffort": "xhigh",
+            "description": "Extra high reasoning depth for complex problems"
+          },
+          {
+            "reasoningEffort": "max",
+            "description": "Maximum reasoning depth for the hardest problems"
+          },
+          {
+            "reasoningEffort": "ultra",
+            "description": "Maximum reasoning with automatic task delegation"
+          }
+        ],
+        "defaultReasoningEffort": "medium",
+        "isDefault": false
+      }
+    }
+  ],
+  "semantic_turns_created": 0,
+  "provider_semantic_calls": 0,
+  "alpha_consumed": 0,
+  "confirmatory_N": 0,
+  "requests": [
+    {
+      "id": 1,
+      "method": "initialize",
+      "params": {
+        "clientInfo": {
+          "name": "hexar_binding_read_only",
+          "title": "HEXAR read-only model metadata",
+          "version": "0.1.0"
+        },
+        "capabilities": {
+          "experimentalApi": true
+        }
+      }
+    },
+    {
+      "method": "initialized",
+      "params": {}
+    },
+    {
+      "id": 2,
+      "method": "model/list",
+      "params": {
+        "includeHidden": true
+      }
+    }
+  ],
+  "immutable_backend_attestation_obtained": false,
+  "complete_decoding_binding_obtained": false,
+  "privacy": "Only whitelisted requested-model metadata retained. No account/auth/configuration/thread-history endpoints called; no credentials retained."
+}

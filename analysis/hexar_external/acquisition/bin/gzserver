@@ -1,0 +1,6 @@
+#!/bin/bash
+set -euo pipefail
+: "${HEXAR_EPISODE_SEED:?A unique prospectively recorded seed is required}"
+[[ "$HEXAR_EPISODE_SEED" =~ ^[0-9]+$ ]] || exit 64
+printf '%s\n' "Applied Gazebo seed: $HEXAR_EPISODE_SEED" >&2
+exec /usr/bin/gzserver --seed "$HEXAR_EPISODE_SEED" "$@"

@@ -1,0 +1,40 @@
+{
+  "schema": "roboboat-capture-completion/v1",
+  "run_id": "boat-start-navigation-v24-001-04",
+  "episode_id": "boat-start-navigation-v24-001-04-worker-0",
+  "fixture_exit_code": 0,
+  "summary": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v24-001/captures/boat-start-navigation-v24-001-04/fixture-summary.json",
+    "sha256": "0ad9c63513335e5ea1cb20cfcede5c9f1cd08b2b22b3b9c42ae2a8be50c9a32e"
+  },
+  "status": "succeeded",
+  "post_result_seconds": 8.0,
+  "bt_drain_seconds": 0.5,
+  "post_result_observed": 8.046829568018438,
+  "token_sha256": "14fa1db2e9c88a3620b4a0e090378f9b5ded480f033bf56db919a2f4a5b2fc55",
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--name",
+    "crane-fixture-boat-start-navigation-v24-001-04",
+    "--network",
+    "host",
+    "--ipc",
+    "host",
+    "-e",
+    "ROS_DOMAIN_ID=201",
+    "-e",
+    "CRANE_BT_XML_CONTAINER=",
+    "-v",
+    "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v24-001/launch-project:/workspace/crane_sim:ro",
+    "-v",
+    "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v24-001/captures/boat-start-navigation-v24-001-04:/results",
+    "lunarzdev/astro:cuda",
+    "bash",
+    "-lc",
+    "source /opt/ros/jazzy/setup.bash; bt_fixture_extra=(); if [[ -n \"${CRANE_BT_XML_CONTAINER:-}\" ]]; then bt_fixture_extra=(--bt-xml \"${CRANE_BT_XML_CONTAINER}\"); fi; exec python3 /workspace/crane_sim/Tools/Performance/nav2_follow_path_fixture_capture_v15.py --input-type twist --action-mode follow-path --distance 0.5 --path-heading-offset 0 --path-shape straight --path-lateral-amplitude 2.0 --path-turn-angle 0.7853981633974483 --duration 310 --post-result-seconds 8 --costmap-topic /local_costmap/costmap --costmap-service /local_costmap/get_costmap --bt-max-transitions 4096 --bt-max-invocations 1024 \"${bt_fixture_extra[@]}\" --episode-id boat-start-navigation-v24-001-04-worker-0 --run-id boat-start-navigation-v24-001-04 --output /results/fixture-summary.json --path-file /workspace/crane_sim/Tools/Performance/generated_populations/roboboat-terminal-distance-development-population-v4-42007/boat-geom-42007-00004-terminalv4.json"
+  ],
+  "independent_n_added": 0,
+  "full_trace_or_shutdown_qualified": false
+}

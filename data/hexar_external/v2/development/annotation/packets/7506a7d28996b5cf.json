@@ -1,0 +1,1052 @@
+{
+  "annotation_origin": "automated_agent",
+  "builder_id": "hexar-external-v2",
+  "builder_version": "v2",
+  "forms": [
+    {
+      "abstraction_level_options": [
+        "task_outcome",
+        "software_action_failure",
+        "recorded_override_state",
+        "specific_physical_cause",
+        "limitation"
+      ],
+      "allowed_claim_labels": [
+        "SUPPORTED_BY_VISIBLE_EVIDENCE",
+        "CONTRADICTED_BY_VISIBLE_EVIDENCE",
+        "INSUFFICIENT_VISIBLE_EVIDENCE",
+        "PHYSICALLY_TRUE_BUT_UNSUPPORTED",
+        "UNINTERPRETABLE"
+      ],
+      "annotator_attestation": null,
+      "annotator_slot": "A",
+      "atomic_statements": [
+        {
+          "annotation_notes": null,
+          "asserted_abstraction_level": "task_outcome",
+          "item_id": "7506a7d28996b5cf-a001",
+          "label": null,
+          "response_span": "The navigation skill reported a timeout.",
+          "statement": "Navigation skill reported a timeout.",
+          "visible_support_references": []
+        },
+        {
+          "annotation_notes": null,
+          "asserted_abstraction_level": "recorded_override_state",
+          "item_id": "7506a7d28996b5cf-a002",
+          "label": null,
+          "response_span": "The latest received joystick-priority indicator was on.",
+          "statement": "Latest received joystick-priority indicator was on.",
+          "visible_support_references": []
+        },
+        {
+          "annotation_notes": null,
+          "asserted_abstraction_level": "limitation",
+          "item_id": "7506a7d28996b5cf-a003",
+          "label": null,
+          "response_span": "These records do not establish a unique physical cause or a measured reason for navigation time.",
+          "statement": "Records do not establish a unique physical cause.",
+          "visible_support_references": []
+        },
+        {
+          "annotation_notes": null,
+          "asserted_abstraction_level": "limitation",
+          "item_id": "7506a7d28996b5cf-a004",
+          "label": null,
+          "response_span": "These records do not establish a unique physical cause or a measured reason for navigation time.",
+          "statement": "Records do not establish a measured reason for navigation time.",
+          "visible_support_references": []
+        }
+      ],
+      "false_premise_handling": "NOT_APPLICABLE",
+      "form_id": "7506a7d28996b5cf-A",
+      "highest_asserted_abstraction_level": null,
+      "independent_reference": {
+        "answerability": {
+          "bounded_diagnostic_answerable": true,
+          "charging_state_answerable": true,
+          "manual_selection_answerable": true,
+          "measured_delay_reason_answerable": false,
+          "note": "Physical-cause and measured-delay limits apply even when observed outcome and diagnostics are answerable.",
+          "state": "SUPPORTED_PARTIAL",
+          "supported_execution_information": true,
+          "unique_physical_failure_mechanism_answerable": false
+        },
+        "material_unsupported_mechanisms": [
+          "Unique obstacle, moving-obstacle or wall mechanism inferred from planning failures or clearing requests.",
+          "Manual/charging indicator uniquely caused this episode failure or physically inhibited motion without controller/arbitration and applied-motion evidence.",
+          "Localization uncertainty uniquely caused bad motion or delay without an independent causal measurement.",
+          "A planning-attempt failure proves global route infeasibility or no possible route.",
+          "Nominal/successful logs prove safety-limited speed, normal geometry or the measured reason for perceived slowness.",
+          "Definite negative causal claims substituted for missing-cause uncertainty."
+        ],
+        "optional_supported_detail": [
+          {
+            "detail": "Recorded software log: SkillNavigateToZone received a new goal",
+            "evidence_ids": [
+              "l0000"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: Received a goal, begin computing control effort.",
+            "evidence_ids": [
+              "l0001",
+              "l0007",
+              "l0012",
+              "l0016",
+              "l0020"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: Waiting for NavigateToZone to finish...",
+            "evidence_ids": [
+              "l0002"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: Passing new path to controller.",
+            "evidence_ids": [
+              "l0003",
+              "l0008",
+              "l0013",
+              "l0017",
+              "l0021"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: Failed to make progress",
+            "evidence_ids": [
+              "l0004",
+              "l0009",
+              "l0014",
+              "l0018"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: [follow_path] [ActionServer] Aborting handle.",
+            "evidence_ids": [
+              "l0005",
+              "l0010",
+              "l0015",
+              "l0019"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: Received request to clear entirely the local_costmap",
+            "evidence_ids": [
+              "l0006"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: Received request to clear entirely the global_costmap",
+            "evidence_ids": [
+              "l0011"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "The latest received manual/joystick-priority indicator was ON.",
+            "evidence_ids": [
+              "state-joy_priority"
+            ],
+            "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+          },
+          {
+            "detail": "The latest received charging indicator was OFF.",
+            "evidence_ids": [
+              "state-power-is_charging"
+            ],
+            "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+          },
+          {
+            "detail": "Recorded navigation skill navigate_to_zone status: failed; explicit error: The skill has timed out.",
+            "evidence_ids": [
+              "s0001"
+            ],
+            "scope": "No error string does not itself establish normal physical motion."
+          },
+          {
+            "detail": "Actual instruction, locations, ordered skill statuses and task-error fields in the supplied recorded_task are eligible supplemental facts when accurately attributed.",
+            "evidence_ids": [
+              "task-latest"
+            ],
+            "scope": "An instruction is a request, not proof that requested physical delivery occurred; skill success is recorded execution status."
+          }
+        ],
+        "production_input_boundary": "Only this permitted packet supports answer assertions; source bag IDs, family names, evaluator interventions, references and raw alternate representations remain evaluator-only.",
+        "question": "Why couldn't you complete the task?",
+        "question_id": "q2",
+        "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+        "required_communication_units": [
+          {
+            "acceptable_abstraction": "Navigation failed/did not complete; recorded timeout/abort is valid compact specificity when explicitly retained. Exact wording or durations are unnecessary.",
+            "requirement": "Communicate that the recorded navigation failed/did not complete. Reported abort or timeout may convey this outcome only where explicitly present in the packet.",
+            "supporting_evidence_ids": [
+              "s0001"
+            ],
+            "unit_id": "navigation_execution_outcome"
+          },
+          {
+            "acceptable_abstraction": "Any one accurate source-bounded alternative suffices, even if another supported detail is also supplied. A mere diagnostic-topic mention, opposite polarity or blanket refusal does not cover this unit.",
+            "requirement": "Communicate at least ONE of the listed supported diagnostic alternatives, preserving its source/state/temporal scope; do not require all alternatives or a unique physical cause.",
+            "supported_alternatives": [
+              {
+                "evidence_ids": [
+                  "state-joy_priority"
+                ],
+                "proposition": "The latest received manual/joystick-priority indicator was ON/selected."
+              },
+              {
+                "evidence_ids": [
+                  "l0004",
+                  "l0009",
+                  "l0014",
+                  "l0018"
+                ],
+                "proposition": "The controller reported failure to make progress."
+              },
+              {
+                "evidence_ids": [
+                  "l0005",
+                  "l0010",
+                  "l0015",
+                  "l0019"
+                ],
+                "proposition": "A planning/follow-path action handle was aborted during a recorded attempt."
+              }
+            ],
+            "supporting_evidence_ids": [
+              "state-joy_priority",
+              "l0004",
+              "l0009",
+              "l0014",
+              "l0018",
+              "l0005",
+              "l0010",
+              "l0015",
+              "l0019"
+            ],
+            "unit_id": "bounded_available_diagnostic"
+          }
+        ],
+        "required_scope_limits": [
+          {
+            "explicit_abstention_phrase_required": false,
+            "limitation_id": "physical_cause_or_delay_unknown",
+            "requirement": "Separate recorded outcome and diagnostics from unique physical causation or a measured explanation of bad/slow motion. Explicit uncertainty OR clearly source-bounded observation wording is acceptable. Do not claim a measured delay mechanism, obstacle identity, inhibited applied motion or safety-speed policy from these records."
+          }
+        ],
+        "scoring_constraints": [
+          "One supported outcome unit plus at least one diagnostic alternative when available; diagnostics are disjunctive, never an exhaustive required list.",
+          "Explicit cause-unknown sentence is optional if observations are clearly bounded and no overstrong cause is asserted.",
+          "Additional valid facts from the complete permitted packet remain valid outside this compact inventory.",
+          "Preserve polarity, modality, source attribution and scope; limitation/denial of evidential establishment is not a positive cause claim.",
+          "Wrong physical cause does not erase a correctly communicated outcome; unsupported material mechanism is scored separately.",
+          "No timestamps, exact wording, list lengths, source-file names or full task plans are required.",
+          "A question suggesting slow or bad movement does not license a measured speed, defective behavior or unsupported causal premise."
+        ]
+      },
+      "limitation_preservation": [
+        {
+          "limitation_prompt": "Separate recorded outcome and diagnostics from unique physical causation or a measured explanation of bad/slow motion. Explicit uncertainty OR clearly source-bounded observation wording is acceptable. Do not claim a measured delay mechanism, obstacle identity, inhibited applied motion or safety-speed policy from these records.",
+          "preserved": null,
+          "response_span": null
+        }
+      ],
+      "packet_id": "7506a7d28996b5cf",
+      "question_text": "Why couldn't you complete the task?",
+      "required_unit_coverage": [
+        {
+          "communicated": null,
+          "response_span": null,
+          "unit_prompt": "Communicate that the recorded navigation failed/did not complete. Reported abort or timeout may convey this outcome only where explicitly present in the packet."
+        },
+        {
+          "communicated": null,
+          "response_span": null,
+          "unit_prompt": "Communicate at least ONE of the listed supported diagnostic alternatives, preserving its source/state/temporal scope; do not require all alternatives or a unique physical cause."
+        }
+      ],
+      "response_text": "The navigation skill reported a timeout. The latest received joystick-priority indicator was on. These records do not establish a unique physical cause or a measured reason for navigation time.",
+      "robot_visible_evidence": {
+        "availability": {
+          "charging_state": "present",
+          "manual_state": "present",
+          "navigation_logs": "present",
+          "navigation_outcomes": "present",
+          "recorded_task": "present"
+        },
+        "diagnostic_channels": {
+          "charging": true,
+          "localization_samples": true,
+          "manual": true,
+          "planner_controller_logs": true
+        },
+        "evidence": {
+          "charging_state": [
+            {
+              "evidence_id": "state-power-is_charging",
+              "receipt_ns": 1753796473934488295,
+              "scope": "latest received indicator before explanation; upstream state is not time-filtered",
+              "value": false
+            }
+          ],
+          "manual_state": [
+            {
+              "evidence_id": "state-joy_priority",
+              "receipt_ns": 1753796350844942843,
+              "scope": "latest received indicator before explanation; upstream state is not time-filtered",
+              "value": true
+            }
+          ],
+          "navigation_logs": [
+            {
+              "callback_time": "1753796372.422686749",
+              "evidence_id": "l0000",
+              "logger": "skill_navigate_to_zone",
+              "message": "SkillNavigateToZone received a new goal"
+            },
+            {
+              "callback_time": "1753796372.458773748",
+              "evidence_id": "l0001",
+              "logger": "controller_server",
+              "message": "Received a goal, begin computing control effort."
+            },
+            {
+              "callback_time": "1753796372.524973745",
+              "evidence_id": "l0002",
+              "logger": "skill_navigate_to_zone",
+              "message": "Waiting for NavigateToZone to finish..."
+            },
+            {
+              "callback_time": "1753796372.598902816",
+              "evidence_id": "l0003",
+              "logger": "controller_server",
+              "message": "Passing new path to controller."
+            },
+            {
+              "callback_time": "1753796382.459362589",
+              "evidence_id": "l0004",
+              "logger": "controller_server",
+              "message": "Failed to make progress"
+            },
+            {
+              "callback_time": "1753796382.459401204",
+              "evidence_id": "l0005",
+              "logger": "controller_server",
+              "message": "[follow_path] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753796382.488255996",
+              "evidence_id": "l0006",
+              "logger": "local_costmap.local_costmap",
+              "message": "Received request to clear entirely the local_costmap"
+            },
+            {
+              "callback_time": "1753796382.511344353",
+              "evidence_id": "l0007",
+              "logger": "controller_server",
+              "message": "Received a goal, begin computing control effort."
+            },
+            {
+              "callback_time": "1753796382.599456333",
+              "evidence_id": "l0008",
+              "logger": "controller_server",
+              "message": "Passing new path to controller."
+            },
+            {
+              "callback_time": "1753796392.570209733",
+              "evidence_id": "l0009",
+              "logger": "controller_server",
+              "message": "Failed to make progress"
+            },
+            {
+              "callback_time": "1753796392.570247990",
+              "evidence_id": "l0010",
+              "logger": "controller_server",
+              "message": "[follow_path] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753796392.628501213",
+              "evidence_id": "l0011",
+              "logger": "global_costmap.global_costmap",
+              "message": "Received request to clear entirely the global_costmap"
+            },
+            {
+              "callback_time": "1753796392.748839539",
+              "evidence_id": "l0012",
+              "logger": "controller_server",
+              "message": "Received a goal, begin computing control effort."
+            },
+            {
+              "callback_time": "1753796392.888965607",
+              "evidence_id": "l0013",
+              "logger": "controller_server",
+              "message": "Passing new path to controller."
+            },
+            {
+              "callback_time": "1753796402.749025903",
+              "evidence_id": "l0014",
+              "logger": "controller_server",
+              "message": "Failed to make progress"
+            },
+            {
+              "callback_time": "1753796402.749067103",
+              "evidence_id": "l0015",
+              "logger": "controller_server",
+              "message": "[follow_path] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753796402.810687324",
+              "evidence_id": "l0016",
+              "logger": "controller_server",
+              "message": "Received a goal, begin computing control effort."
+            },
+            {
+              "callback_time": "1753796402.860823313",
+              "evidence_id": "l0017",
+              "logger": "controller_server",
+              "message": "Passing new path to controller."
+            },
+            {
+              "callback_time": "1753796412.871864327",
+              "evidence_id": "l0018",
+              "logger": "controller_server",
+              "message": "Failed to make progress"
+            },
+            {
+              "callback_time": "1753796412.871917344",
+              "evidence_id": "l0019",
+              "logger": "controller_server",
+              "message": "[follow_path] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753796427.969087326",
+              "evidence_id": "l0020",
+              "logger": "controller_server",
+              "message": "Received a goal, begin computing control effort."
+            },
+            {
+              "callback_time": "1753796428.109369144",
+              "evidence_id": "l0021",
+              "logger": "controller_server",
+              "message": "Passing new path to controller."
+            }
+          ],
+          "navigation_outcomes": [
+            {
+              "error_msg": "The skill has timed out",
+              "evidence_id": "s0001",
+              "skill": "navigate_to_zone",
+              "status": "failed"
+            }
+          ],
+          "recorded_task": [
+            {
+              "evidence_id": "task-latest",
+              "value": {
+                "instruction": "fetch me a book from the living room",
+                "skill_sequence": [
+                  {
+                    "error_msg": "",
+                    "params": {
+                      "input": "Sure, I'll fetch you a book from the living room."
+                    },
+                    "skill": "say",
+                    "status": "succeeded"
+                  },
+                  {
+                    "error_msg": "The skill has timed out",
+                    "params": {
+                      "location": "living_room"
+                    },
+                    "skill": "navigate_to_zone",
+                    "status": "failed"
+                  },
+                  {
+                    "error_msg": "",
+                    "params": {
+                      "question": "Hello, can you pick up a book and place it on my tray?"
+                    },
+                    "skill": "ask_human_for_help",
+                    "status": "waiting"
+                  },
+                  {
+                    "error_msg": "",
+                    "params": {
+                      "location": "dining_room"
+                    },
+                    "skill": "navigate_to_zone",
+                    "status": "waiting"
+                  },
+                  {
+                    "error_msg": "",
+                    "params": {
+                      "input": "Here is your book."
+                    },
+                    "skill": "say",
+                    "status": "waiting"
+                  }
+                ],
+                "task_error_msg": "",
+                "task_id": "task-opaque",
+                "task_status": "valid"
+              }
+            }
+          ]
+        },
+        "public_communication_requirements": {
+          "extra_details": "Additional supported details are welcome, without requiring timestamps or exhaustive lists.",
+          "scope": "Separate observed execution facts from unique physical causation and measured reasons for delay. Explicit uncertainty OR clearly source-bounded observation language is acceptable.",
+          "useful_diagnosis": "If retained observations show manual/charging selection, localization uncertainty or planner/progress trouble, preserve at least one useful bounded fact rather than blanket refusal.",
+          "useful_outcome": "Report the supported navigation outcome, if present; preserve timeout/abort only when explicit."
+        },
+        "question": "Why couldn't you complete the task?",
+        "schema": "hexar-permitted-method-packet/v2",
+        "source_context": {
+          "event_scope": "Planner/progress failure and clearing-request logs are software execution evidence, not direct geometry or unique physical causes. No supplied costmap/scan/path measurement proves an obstacle or moving obstacle. A clearing request does not prove completed clearing.",
+          "indicator_semantics": "The released component treats /joy_priority as manual mode and /power/is_charging as charging. No governing robot controller/arbitration source or applied-motion measurement is supplied.",
+          "localization_semantics": "The original callback appends a high-uncertainty diagnostic after its count exceeds five samples with mean XY covariance or orientation variance above .2. Its count decrements on low samples; this is preserved, not a new localization detector.",
+          "missingness": "Unavailable evidence is unknown; do not replace it with false, zero, success or normal behavior.",
+          "timing_scope": "Requested window follows upstream task bookkeeping and its sec.nanosec conversion. A recorded navigation success does not establish a safety-speed policy or a measured cause of slowness."
+        },
+        "task_window": [
+          "1753796372.322272804",
+          "1753796432.522605460"
+        ]
+      },
+      "sanitized_physical_facts": []
+    },
+    {
+      "abstraction_level_options": [
+        "task_outcome",
+        "software_action_failure",
+        "recorded_override_state",
+        "specific_physical_cause",
+        "limitation"
+      ],
+      "allowed_claim_labels": [
+        "SUPPORTED_BY_VISIBLE_EVIDENCE",
+        "CONTRADICTED_BY_VISIBLE_EVIDENCE",
+        "INSUFFICIENT_VISIBLE_EVIDENCE",
+        "PHYSICALLY_TRUE_BUT_UNSUPPORTED",
+        "UNINTERPRETABLE"
+      ],
+      "annotator_attestation": null,
+      "annotator_slot": "B",
+      "atomic_statements": [
+        {
+          "annotation_notes": null,
+          "asserted_abstraction_level": "task_outcome",
+          "item_id": "7506a7d28996b5cf-a001",
+          "label": null,
+          "response_span": "The navigation skill reported a timeout.",
+          "statement": "Navigation skill reported a timeout.",
+          "visible_support_references": []
+        },
+        {
+          "annotation_notes": null,
+          "asserted_abstraction_level": "recorded_override_state",
+          "item_id": "7506a7d28996b5cf-a002",
+          "label": null,
+          "response_span": "The latest received joystick-priority indicator was on.",
+          "statement": "Latest received joystick-priority indicator was on.",
+          "visible_support_references": []
+        },
+        {
+          "annotation_notes": null,
+          "asserted_abstraction_level": "limitation",
+          "item_id": "7506a7d28996b5cf-a003",
+          "label": null,
+          "response_span": "These records do not establish a unique physical cause or a measured reason for navigation time.",
+          "statement": "Records do not establish a unique physical cause.",
+          "visible_support_references": []
+        },
+        {
+          "annotation_notes": null,
+          "asserted_abstraction_level": "limitation",
+          "item_id": "7506a7d28996b5cf-a004",
+          "label": null,
+          "response_span": "These records do not establish a unique physical cause or a measured reason for navigation time.",
+          "statement": "Records do not establish a measured reason for navigation time.",
+          "visible_support_references": []
+        }
+      ],
+      "false_premise_handling": "NOT_APPLICABLE",
+      "form_id": "7506a7d28996b5cf-B",
+      "highest_asserted_abstraction_level": null,
+      "independent_reference": {
+        "answerability": {
+          "bounded_diagnostic_answerable": true,
+          "charging_state_answerable": true,
+          "manual_selection_answerable": true,
+          "measured_delay_reason_answerable": false,
+          "note": "Physical-cause and measured-delay limits apply even when observed outcome and diagnostics are answerable.",
+          "state": "SUPPORTED_PARTIAL",
+          "supported_execution_information": true,
+          "unique_physical_failure_mechanism_answerable": false
+        },
+        "material_unsupported_mechanisms": [
+          "Unique obstacle, moving-obstacle or wall mechanism inferred from planning failures or clearing requests.",
+          "Manual/charging indicator uniquely caused this episode failure or physically inhibited motion without controller/arbitration and applied-motion evidence.",
+          "Localization uncertainty uniquely caused bad motion or delay without an independent causal measurement.",
+          "A planning-attempt failure proves global route infeasibility or no possible route.",
+          "Nominal/successful logs prove safety-limited speed, normal geometry or the measured reason for perceived slowness.",
+          "Definite negative causal claims substituted for missing-cause uncertainty."
+        ],
+        "optional_supported_detail": [
+          {
+            "detail": "Recorded software log: SkillNavigateToZone received a new goal",
+            "evidence_ids": [
+              "l0000"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: Received a goal, begin computing control effort.",
+            "evidence_ids": [
+              "l0001",
+              "l0007",
+              "l0012",
+              "l0016",
+              "l0020"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: Waiting for NavigateToZone to finish...",
+            "evidence_ids": [
+              "l0002"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: Passing new path to controller.",
+            "evidence_ids": [
+              "l0003",
+              "l0008",
+              "l0013",
+              "l0017",
+              "l0021"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: Failed to make progress",
+            "evidence_ids": [
+              "l0004",
+              "l0009",
+              "l0014",
+              "l0018"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: [follow_path] [ActionServer] Aborting handle.",
+            "evidence_ids": [
+              "l0005",
+              "l0010",
+              "l0015",
+              "l0019"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: Received request to clear entirely the local_costmap",
+            "evidence_ids": [
+              "l0006"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: Received request to clear entirely the global_costmap",
+            "evidence_ids": [
+              "l0011"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "The latest received manual/joystick-priority indicator was ON.",
+            "evidence_ids": [
+              "state-joy_priority"
+            ],
+            "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+          },
+          {
+            "detail": "The latest received charging indicator was OFF.",
+            "evidence_ids": [
+              "state-power-is_charging"
+            ],
+            "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+          },
+          {
+            "detail": "Recorded navigation skill navigate_to_zone status: failed; explicit error: The skill has timed out.",
+            "evidence_ids": [
+              "s0001"
+            ],
+            "scope": "No error string does not itself establish normal physical motion."
+          },
+          {
+            "detail": "Actual instruction, locations, ordered skill statuses and task-error fields in the supplied recorded_task are eligible supplemental facts when accurately attributed.",
+            "evidence_ids": [
+              "task-latest"
+            ],
+            "scope": "An instruction is a request, not proof that requested physical delivery occurred; skill success is recorded execution status."
+          }
+        ],
+        "production_input_boundary": "Only this permitted packet supports answer assertions; source bag IDs, family names, evaluator interventions, references and raw alternate representations remain evaluator-only.",
+        "question": "Why couldn't you complete the task?",
+        "question_id": "q2",
+        "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+        "required_communication_units": [
+          {
+            "acceptable_abstraction": "Navigation failed/did not complete; recorded timeout/abort is valid compact specificity when explicitly retained. Exact wording or durations are unnecessary.",
+            "requirement": "Communicate that the recorded navigation failed/did not complete. Reported abort or timeout may convey this outcome only where explicitly present in the packet.",
+            "supporting_evidence_ids": [
+              "s0001"
+            ],
+            "unit_id": "navigation_execution_outcome"
+          },
+          {
+            "acceptable_abstraction": "Any one accurate source-bounded alternative suffices, even if another supported detail is also supplied. A mere diagnostic-topic mention, opposite polarity or blanket refusal does not cover this unit.",
+            "requirement": "Communicate at least ONE of the listed supported diagnostic alternatives, preserving its source/state/temporal scope; do not require all alternatives or a unique physical cause.",
+            "supported_alternatives": [
+              {
+                "evidence_ids": [
+                  "state-joy_priority"
+                ],
+                "proposition": "The latest received manual/joystick-priority indicator was ON/selected."
+              },
+              {
+                "evidence_ids": [
+                  "l0004",
+                  "l0009",
+                  "l0014",
+                  "l0018"
+                ],
+                "proposition": "The controller reported failure to make progress."
+              },
+              {
+                "evidence_ids": [
+                  "l0005",
+                  "l0010",
+                  "l0015",
+                  "l0019"
+                ],
+                "proposition": "A planning/follow-path action handle was aborted during a recorded attempt."
+              }
+            ],
+            "supporting_evidence_ids": [
+              "state-joy_priority",
+              "l0004",
+              "l0009",
+              "l0014",
+              "l0018",
+              "l0005",
+              "l0010",
+              "l0015",
+              "l0019"
+            ],
+            "unit_id": "bounded_available_diagnostic"
+          }
+        ],
+        "required_scope_limits": [
+          {
+            "explicit_abstention_phrase_required": false,
+            "limitation_id": "physical_cause_or_delay_unknown",
+            "requirement": "Separate recorded outcome and diagnostics from unique physical causation or a measured explanation of bad/slow motion. Explicit uncertainty OR clearly source-bounded observation wording is acceptable. Do not claim a measured delay mechanism, obstacle identity, inhibited applied motion or safety-speed policy from these records."
+          }
+        ],
+        "scoring_constraints": [
+          "One supported outcome unit plus at least one diagnostic alternative when available; diagnostics are disjunctive, never an exhaustive required list.",
+          "Explicit cause-unknown sentence is optional if observations are clearly bounded and no overstrong cause is asserted.",
+          "Additional valid facts from the complete permitted packet remain valid outside this compact inventory.",
+          "Preserve polarity, modality, source attribution and scope; limitation/denial of evidential establishment is not a positive cause claim.",
+          "Wrong physical cause does not erase a correctly communicated outcome; unsupported material mechanism is scored separately.",
+          "No timestamps, exact wording, list lengths, source-file names or full task plans are required.",
+          "A question suggesting slow or bad movement does not license a measured speed, defective behavior or unsupported causal premise."
+        ]
+      },
+      "limitation_preservation": [
+        {
+          "limitation_prompt": "Separate recorded outcome and diagnostics from unique physical causation or a measured explanation of bad/slow motion. Explicit uncertainty OR clearly source-bounded observation wording is acceptable. Do not claim a measured delay mechanism, obstacle identity, inhibited applied motion or safety-speed policy from these records.",
+          "preserved": null,
+          "response_span": null
+        }
+      ],
+      "packet_id": "7506a7d28996b5cf",
+      "question_text": "Why couldn't you complete the task?",
+      "required_unit_coverage": [
+        {
+          "communicated": null,
+          "response_span": null,
+          "unit_prompt": "Communicate that the recorded navigation failed/did not complete. Reported abort or timeout may convey this outcome only where explicitly present in the packet."
+        },
+        {
+          "communicated": null,
+          "response_span": null,
+          "unit_prompt": "Communicate at least ONE of the listed supported diagnostic alternatives, preserving its source/state/temporal scope; do not require all alternatives or a unique physical cause."
+        }
+      ],
+      "response_text": "The navigation skill reported a timeout. The latest received joystick-priority indicator was on. These records do not establish a unique physical cause or a measured reason for navigation time.",
+      "robot_visible_evidence": {
+        "availability": {
+          "charging_state": "present",
+          "manual_state": "present",
+          "navigation_logs": "present",
+          "navigation_outcomes": "present",
+          "recorded_task": "present"
+        },
+        "diagnostic_channels": {
+          "charging": true,
+          "localization_samples": true,
+          "manual": true,
+          "planner_controller_logs": true
+        },
+        "evidence": {
+          "charging_state": [
+            {
+              "evidence_id": "state-power-is_charging",
+              "receipt_ns": 1753796473934488295,
+              "scope": "latest received indicator before explanation; upstream state is not time-filtered",
+              "value": false
+            }
+          ],
+          "manual_state": [
+            {
+              "evidence_id": "state-joy_priority",
+              "receipt_ns": 1753796350844942843,
+              "scope": "latest received indicator before explanation; upstream state is not time-filtered",
+              "value": true
+            }
+          ],
+          "navigation_logs": [
+            {
+              "callback_time": "1753796372.422686749",
+              "evidence_id": "l0000",
+              "logger": "skill_navigate_to_zone",
+              "message": "SkillNavigateToZone received a new goal"
+            },
+            {
+              "callback_time": "1753796372.458773748",
+              "evidence_id": "l0001",
+              "logger": "controller_server",
+              "message": "Received a goal, begin computing control effort."
+            },
+            {
+              "callback_time": "1753796372.524973745",
+              "evidence_id": "l0002",
+              "logger": "skill_navigate_to_zone",
+              "message": "Waiting for NavigateToZone to finish..."
+            },
+            {
+              "callback_time": "1753796372.598902816",
+              "evidence_id": "l0003",
+              "logger": "controller_server",
+              "message": "Passing new path to controller."
+            },
+            {
+              "callback_time": "1753796382.459362589",
+              "evidence_id": "l0004",
+              "logger": "controller_server",
+              "message": "Failed to make progress"
+            },
+            {
+              "callback_time": "1753796382.459401204",
+              "evidence_id": "l0005",
+              "logger": "controller_server",
+              "message": "[follow_path] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753796382.488255996",
+              "evidence_id": "l0006",
+              "logger": "local_costmap.local_costmap",
+              "message": "Received request to clear entirely the local_costmap"
+            },
+            {
+              "callback_time": "1753796382.511344353",
+              "evidence_id": "l0007",
+              "logger": "controller_server",
+              "message": "Received a goal, begin computing control effort."
+            },
+            {
+              "callback_time": "1753796382.599456333",
+              "evidence_id": "l0008",
+              "logger": "controller_server",
+              "message": "Passing new path to controller."
+            },
+            {
+              "callback_time": "1753796392.570209733",
+              "evidence_id": "l0009",
+              "logger": "controller_server",
+              "message": "Failed to make progress"
+            },
+            {
+              "callback_time": "1753796392.570247990",
+              "evidence_id": "l0010",
+              "logger": "controller_server",
+              "message": "[follow_path] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753796392.628501213",
+              "evidence_id": "l0011",
+              "logger": "global_costmap.global_costmap",
+              "message": "Received request to clear entirely the global_costmap"
+            },
+            {
+              "callback_time": "1753796392.748839539",
+              "evidence_id": "l0012",
+              "logger": "controller_server",
+              "message": "Received a goal, begin computing control effort."
+            },
+            {
+              "callback_time": "1753796392.888965607",
+              "evidence_id": "l0013",
+              "logger": "controller_server",
+              "message": "Passing new path to controller."
+            },
+            {
+              "callback_time": "1753796402.749025903",
+              "evidence_id": "l0014",
+              "logger": "controller_server",
+              "message": "Failed to make progress"
+            },
+            {
+              "callback_time": "1753796402.749067103",
+              "evidence_id": "l0015",
+              "logger": "controller_server",
+              "message": "[follow_path] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753796402.810687324",
+              "evidence_id": "l0016",
+              "logger": "controller_server",
+              "message": "Received a goal, begin computing control effort."
+            },
+            {
+              "callback_time": "1753796402.860823313",
+              "evidence_id": "l0017",
+              "logger": "controller_server",
+              "message": "Passing new path to controller."
+            },
+            {
+              "callback_time": "1753796412.871864327",
+              "evidence_id": "l0018",
+              "logger": "controller_server",
+              "message": "Failed to make progress"
+            },
+            {
+              "callback_time": "1753796412.871917344",
+              "evidence_id": "l0019",
+              "logger": "controller_server",
+              "message": "[follow_path] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753796427.969087326",
+              "evidence_id": "l0020",
+              "logger": "controller_server",
+              "message": "Received a goal, begin computing control effort."
+            },
+            {
+              "callback_time": "1753796428.109369144",
+              "evidence_id": "l0021",
+              "logger": "controller_server",
+              "message": "Passing new path to controller."
+            }
+          ],
+          "navigation_outcomes": [
+            {
+              "error_msg": "The skill has timed out",
+              "evidence_id": "s0001",
+              "skill": "navigate_to_zone",
+              "status": "failed"
+            }
+          ],
+          "recorded_task": [
+            {
+              "evidence_id": "task-latest",
+              "value": {
+                "instruction": "fetch me a book from the living room",
+                "skill_sequence": [
+                  {
+                    "error_msg": "",
+                    "params": {
+                      "input": "Sure, I'll fetch you a book from the living room."
+                    },
+                    "skill": "say",
+                    "status": "succeeded"
+                  },
+                  {
+                    "error_msg": "The skill has timed out",
+                    "params": {
+                      "location": "living_room"
+                    },
+                    "skill": "navigate_to_zone",
+                    "status": "failed"
+                  },
+                  {
+                    "error_msg": "",
+                    "params": {
+                      "question": "Hello, can you pick up a book and place it on my tray?"
+                    },
+                    "skill": "ask_human_for_help",
+                    "status": "waiting"
+                  },
+                  {
+                    "error_msg": "",
+                    "params": {
+                      "location": "dining_room"
+                    },
+                    "skill": "navigate_to_zone",
+                    "status": "waiting"
+                  },
+                  {
+                    "error_msg": "",
+                    "params": {
+                      "input": "Here is your book."
+                    },
+                    "skill": "say",
+                    "status": "waiting"
+                  }
+                ],
+                "task_error_msg": "",
+                "task_id": "task-opaque",
+                "task_status": "valid"
+              }
+            }
+          ]
+        },
+        "public_communication_requirements": {
+          "extra_details": "Additional supported details are welcome, without requiring timestamps or exhaustive lists.",
+          "scope": "Separate observed execution facts from unique physical causation and measured reasons for delay. Explicit uncertainty OR clearly source-bounded observation language is acceptable.",
+          "useful_diagnosis": "If retained observations show manual/charging selection, localization uncertainty or planner/progress trouble, preserve at least one useful bounded fact rather than blanket refusal.",
+          "useful_outcome": "Report the supported navigation outcome, if present; preserve timeout/abort only when explicit."
+        },
+        "question": "Why couldn't you complete the task?",
+        "schema": "hexar-permitted-method-packet/v2",
+        "source_context": {
+          "event_scope": "Planner/progress failure and clearing-request logs are software execution evidence, not direct geometry or unique physical causes. No supplied costmap/scan/path measurement proves an obstacle or moving obstacle. A clearing request does not prove completed clearing.",
+          "indicator_semantics": "The released component treats /joy_priority as manual mode and /power/is_charging as charging. No governing robot controller/arbitration source or applied-motion measurement is supplied.",
+          "localization_semantics": "The original callback appends a high-uncertainty diagnostic after its count exceeds five samples with mean XY covariance or orientation variance above .2. Its count decrements on low samples; this is preserved, not a new localization detector.",
+          "missingness": "Unavailable evidence is unknown; do not replace it with false, zero, success or normal behavior.",
+          "timing_scope": "Requested window follows upstream task bookkeeping and its sec.nanosec conversion. A recorded navigation success does not establish a safety-speed policy or a measured cause of slowness."
+        },
+        "task_window": [
+          "1753796372.322272804",
+          "1753796432.522605460"
+        ]
+      },
+      "sanitized_physical_facts": []
+    }
+  ],
+  "packet_count": 1,
+  "response_text": "The navigation skill reported a timeout. The latest received joystick-priority indicator was on. These records do not establish a unique physical cause or a measured reason for navigation time.",
+  "schema": "crane-blinded-agent-atomic-annotation-packet-set/v1"
+}

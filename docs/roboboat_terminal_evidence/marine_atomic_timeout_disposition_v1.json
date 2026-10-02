@@ -1,0 +1,60 @@
+{
+  "schema": "roboboat-atomic-annotation-timeout-disposition/v1",
+  "status": "STOPPED_QUEUE_RETAINED_TIMEOUT_NO_RETRY",
+  "timing": "Declared after authoritative queue exit 1 and before releasing the conditional sensitivity analysis. Original complete-bank release gate remains closed.",
+  "queue_session": "58415",
+  "queue_pid": 1315713,
+  "queue_exit_code": 1,
+  "finalized_packet_n": 35,
+  "original_packet_n": 36,
+  "failed_judgments": [
+    {
+      "packet_id": "bbd3a1eb238d55e78bc8711f",
+      "call": {
+        "path": "artifacts/roboboat-terminal-atomic-reassessment-v1/annotations/bbd3a1eb238d55e78bc8711f/calls/e9c08879cd4d6453df0734377eec529569e3e9cbf3bbef94f935ca62efc1b3cc.json",
+        "sha256": "e1e5ea66d94f81293954ebc25aae1641b0ebc84ad9e0606daf6dc22032bf6bb7"
+      },
+      "failure": "A-pass timed out after declared 300 s; B-pass not invoked; no semantic label returned."
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "analysis/analyze_roboboat_atomic_failure_bounds.py",
+      "sha256": "48a07b8afd4e7dfa151a904bef30069c7c6be3bdd37e1addae86974a44f03f99"
+    },
+    {
+      "path": "analysis/analyze_roboboat_atomic_reassessment.py",
+      "sha256": "206de218ce82dde38a86694b41b741527779e9e101f39648490c35a210344384"
+    },
+    {
+      "path": "tests/test_roboboat_atomic_failure_bounds.py",
+      "sha256": "acabe97adf30035d732594c9164f39df061b74bbecfcab77c5515054691fe896"
+    },
+    {
+      "path": "docs/roboboat_terminal_evidence/marine_atomic_analysis_plan_v1.json",
+      "sha256": "cbf5804f58f0b1672531e1e062919cdc9ab4f9a02e4fdb05a590d11e104f92c3"
+    },
+    {
+      "path": "docs/roboboat_terminal_evidence/marine_atomic_reassessment_declaration_v1.json",
+      "sha256": "b37e62bb4d1da6306842608a1f7423cde5b0c34d383f0f59fd0bcef3d1d3ddea"
+    },
+    {
+      "path": "docs/roboboat_terminal_evidence/pilot_registry_v1.json",
+      "sha256": "fb66e403809cdfd5e718d24d9530bed809fe52e136cfd39b9bb1d9289f725d49"
+    },
+    {
+      "path": "docs/roboboat_terminal_evidence/pilot_continuation_v3.json",
+      "sha256": "462c4a9d682fc2a985cc889824286306d59bad2b6ef02945ad7b523e08831edf"
+    }
+  ],
+  "analysis": "All 36 original answer/evidence instances accounted. Failed judgment receives explanation-success bounds [0,1], never a false physical outcome. Lower/upper B4-minus-B2 scenarios respect original complete-pair eligibility. No failed judgment is dropped, retried or overwritten.",
+  "original_score_released": false,
+  "unknown_judgment_is_physical_failure": false,
+  "unknown_judgment_is_baseline_failure": false,
+  "bounds_are_confidence_intervals": false,
+  "endpoint": "Strict all-assertion inspected development sensitivity only; original primary materiality endpoint remains unfrozen.",
+  "alpha_consumed": 0,
+  "confirmation_n": 0,
+  "replication_n": 0,
+  "quality_retries": 0
+}

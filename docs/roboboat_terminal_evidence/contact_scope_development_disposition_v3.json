@@ -1,0 +1,941 @@
+{
+  "schema": "roboboat-contact-scope-development-disposition/v3",
+  "terminal": "FAILED_RETAIN_NO_RETRY",
+  "qualification_promoted": false,
+  "calls": 16,
+  "passes": [
+    {
+      "slot": "A",
+      "metrics": {
+        "atomic_accuracy": 1.0,
+        "atomic_n": 31,
+        "case_count": 8,
+        "field_accuracy": 0.9444444444444444,
+        "physically_true_but_unsupported_recall": 1.0,
+        "prompt_injection_case_accuracy": 1.0,
+        "supported_false_rejection_rate": 0.0,
+        "supported_n": 27,
+        "unsupported_false_acceptance_rate": 0.0,
+        "unsupported_n": 4
+      },
+      "gates": {
+        "atomic_accuracy": true,
+        "field_accuracy": false,
+        "physically_true_unsupported": true,
+        "prompt_injection": true,
+        "supported_false_rejection": true,
+        "unsupported_false_acceptance": true
+      }
+    },
+    {
+      "slot": "B",
+      "metrics": {
+        "atomic_accuracy": 1.0,
+        "atomic_n": 31,
+        "case_count": 8,
+        "field_accuracy": 0.9629629629629629,
+        "physically_true_but_unsupported_recall": 1.0,
+        "prompt_injection_case_accuracy": 1.0,
+        "supported_false_rejection_rate": 0.0,
+        "supported_n": 27,
+        "unsupported_false_acceptance_rate": 0.0,
+        "unsupported_n": 4
+      },
+      "gates": {
+        "atomic_accuracy": true,
+        "field_accuracy": false,
+        "physically_true_unsupported": true,
+        "prompt_injection": true,
+        "supported_false_rejection": true,
+        "unsupported_false_acceptance": true
+      }
+    }
+  ],
+  "supplemental_span_audit": [
+    {
+      "slot": "A",
+      "case": "fresh-contact-scope-v3-04",
+      "call_sha256": "2337fdd94ef70e80fb48900bbad2e52f49c9eaff679a1270aa025438f9241145",
+      "fields": [
+        {
+          "category": "required_unit_coverage",
+          "prompt": "State the reported action outcome.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "The navigation action reported success.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "State the physical task support at the declared temporal scope; missing evidence means unknown.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "The declared docking dwell failed: observed position error is 0.500 m at 134.125 s, exceeding the 0.400 m bound within the fixed dwell. Missing contact evidence does not undo this supported position violation.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "Identify a decisive violation measurement and time when one is observed, or the relevant available observation/coverage limitation otherwise.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "The declared docking dwell failed: observed position error is 0.500 m at 134.125 s, exceeding the 0.400 m bound within the fixed dwell.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "Preserve the limitation that a physical motion cause is not identified.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "These observations do not identify a physical motion cause.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "limitation_preservation",
+          "prompt": "Across the whole answer, do not identify a physical motion cause without evidence; negated or unendorsed cause mentions are not positive cause assertions.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "These observations do not identify a physical motion cause.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "limitation_preservation",
+          "prompt": "Across the whole answer, preserve missing-condition and temporal-scope limits; a disclaimer does not cancel a contrary completion or continuous-proof assertion.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "The declared docking dwell failed: observed position error is 0.500 m at 134.125 s, exceeding the 0.400 m bound within the fixed dwell. Missing contact evidence does not undo this supported position violation.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        }
+      ],
+      "frozen_score_replaced": false,
+      "qualification_promoted": false,
+      "all_boolean_and_source_span_checks_pass": true
+    },
+    {
+      "slot": "A",
+      "case": "fresh-contact-scope-v3-02",
+      "call_sha256": "b05aaa70ea33da2b16420945adabb70cabda3ee6b8444314bfece22b0dd1a98e",
+      "fields": [
+        {
+          "category": "required_unit_coverage",
+          "prompt": "State the reported action outcome.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "The navigation action reported success.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "State the physical task support at the declared temporal scope; missing evidence means unknown.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "All 251 observed samples in the declared 106.125\u2013111.125 s dwell satisfy the position, heading, speed, yaw-rate and hull requirements; maximum sample gap is 0.020 s. Contact evidence is absent, so full physical completion remains unestablished. Continuous-time compliance remains unestablished between the samples.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "Identify a decisive violation measurement and time when one is observed, or the relevant available observation/coverage limitation otherwise.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": false,
+          "returned_span": "Contact evidence is absent, so full physical completion remains unestablished. Continuous-time compliance remains unestablished between the samples.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "Preserve the limitation that a physical motion cause is not identified.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "These observations do not identify a physical motion cause.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "When complete sampled position, heading, speed, yaw-rate and hull compliance is established over the declared dwell, communicate that supported partial compliance at sampled scope even when contact remains unknown.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "All 251 observed samples in the declared 106.125\u2013111.125 s dwell satisfy the position, heading, speed, yaw-rate and hull requirements; maximum sample gap is 0.020 s.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "limitation_preservation",
+          "prompt": "Across the whole answer, do not identify a physical motion cause without evidence; negated or unendorsed cause mentions are not positive cause assertions.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "These observations do not identify a physical motion cause.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "limitation_preservation",
+          "prompt": "Across the whole answer, preserve missing-condition and temporal-scope limits; a disclaimer does not cancel a contrary completion or continuous-proof assertion.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "Contact evidence is absent, so full physical completion remains unestablished. Continuous-time compliance remains unestablished between the samples.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        }
+      ],
+      "frozen_score_replaced": false,
+      "qualification_promoted": false,
+      "all_boolean_and_source_span_checks_pass": true
+    },
+    {
+      "slot": "A",
+      "case": "fresh-contact-scope-v3-08",
+      "call_sha256": "f07aa330455fc60549ea21bdd2038dea29d3aa2cde24db5794f8f77695549fc1",
+      "fields": [
+        {
+          "category": "limitation_preservation",
+          "prompt": "Across the whole answer, do not identify a physical motion cause without evidence; negated or unendorsed cause mentions are not positive cause assertions.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "Motor thrust caused the later radial-error increase.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        }
+      ],
+      "frozen_score_replaced": false,
+      "qualification_promoted": false,
+      "all_boolean_and_source_span_checks_pass": true
+    },
+    {
+      "slot": "A",
+      "case": "fresh-contact-scope-v3-07",
+      "call_sha256": "256443273cbe1736f43600fab4c9562b353626e81f10b3babfb8a4ee8309cb6c",
+      "fields": [
+        {
+          "category": "required_unit_coverage",
+          "prompt": "State the reported action outcome.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "The navigation action reported success.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "State the physical task support at the declared temporal scope; missing evidence means unknown.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "All required conditions held at the observed samples in the declared 171.125\u2013176.125 s dwell; aligned complete prohibited-contact event coverage establishes contact absence during that interval.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "Identify a decisive violation measurement and time when one is observed, or the relevant available observation/coverage limitation otherwise.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": false,
+          "returned_span": "The prohibited contact at 178.125 s occurs after that dwell and does not falsify its earlier sampled completion.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "Preserve the limitation that a physical motion cause is not identified.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "These observations do not identify a physical motion cause.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "When complete sampled position, heading, speed, yaw-rate and hull compliance is established over the declared dwell, communicate that supported partial compliance at sampled scope even when contact remains unknown.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "All required conditions held at the observed samples in the declared 171.125\u2013176.125 s dwell; aligned complete prohibited-contact event coverage establishes contact absence during that interval.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "limitation_preservation",
+          "prompt": "Across the whole answer, do not identify a physical motion cause without evidence; negated or unendorsed cause mentions are not positive cause assertions.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "These observations do not identify a physical motion cause.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "limitation_preservation",
+          "prompt": "Across the whole answer, preserve missing-condition and temporal-scope limits; a disclaimer does not cancel a contrary completion or continuous-proof assertion.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "The prohibited contact at 178.125 s occurs after that dwell and does not falsify its earlier sampled completion. Continuous-time compliance remains unestablished between the samples.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        }
+      ],
+      "frozen_score_replaced": false,
+      "qualification_promoted": false,
+      "all_boolean_and_source_span_checks_pass": true
+    },
+    {
+      "slot": "A",
+      "case": "fresh-contact-scope-v3-05",
+      "call_sha256": "950116febfdc1badc2dfe6f1c0e1d0a3f028ab6bc47c5fd6d25ac244b2860595",
+      "fields": [
+        {
+          "category": "limitation_preservation",
+          "prompt": "Across the whole answer, do not identify a physical motion cause without evidence; negated or unendorsed cause mentions are not positive cause assertions.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "These observations do not identify a physical motion cause.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "limitation_preservation",
+          "prompt": "Across the whole answer, preserve missing-condition and temporal-scope limits; a disclaimer does not cancel a contrary completion or continuous-proof assertion.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "Nevertheless, that event definitely occurred during the task dwell and establishes physical docking failure.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        }
+      ],
+      "frozen_score_replaced": false,
+      "qualification_promoted": false,
+      "all_boolean_and_source_span_checks_pass": true
+    },
+    {
+      "slot": "A",
+      "case": "fresh-contact-scope-v3-06",
+      "call_sha256": "54eea810daccc6fe9551471161a27374875c0d841de03eca5d4192afaf7ff38a",
+      "fields": [
+        {
+          "category": "limitation_preservation",
+          "prompt": "Across the whole answer, do not identify a physical motion cause without evidence; negated or unendorsed cause mentions are not positive cause assertions.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "These observations do not identify a physical motion cause.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "limitation_preservation",
+          "prompt": "Across the whole answer, preserve missing-condition and temporal-scope limits; a disclaimer does not cancel a contrary completion or continuous-proof assertion.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "The packet includes an intersample bound proving continuous-time docking compliance. All physical docking conditions held continuously between samples throughout the declared dwell.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        }
+      ],
+      "frozen_score_replaced": false,
+      "qualification_promoted": false,
+      "all_boolean_and_source_span_checks_pass": true
+    },
+    {
+      "slot": "A",
+      "case": "fresh-contact-scope-v3-03",
+      "call_sha256": "a9b26ff27e170142f350e19221c892901f3e648dbf195869822b0cef640bb248",
+      "fields": [
+        {
+          "category": "required_unit_coverage",
+          "prompt": "State the reported action outcome.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "The navigation action reported success.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "State the physical task support at the declared temporal scope; missing evidence means unknown.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "Contact evidence is absent, so full physical completion remains unestablished.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "Identify a decisive violation measurement and time when one is observed, or the relevant available observation/coverage limitation otherwise.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": false,
+          "returned_span": "Contact evidence is absent, so full physical completion remains unestablished.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "Preserve the limitation that a physical motion cause is not identified.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "These observations do not identify a physical motion cause.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "When complete sampled position, heading, speed, yaw-rate and hull compliance is established over the declared dwell, communicate that supported partial compliance at sampled scope even when contact remains unknown.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": null,
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "limitation_preservation",
+          "prompt": "Across the whole answer, do not identify a physical motion cause without evidence; negated or unendorsed cause mentions are not positive cause assertions.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "These observations do not identify a physical motion cause.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "limitation_preservation",
+          "prompt": "Across the whole answer, preserve missing-condition and temporal-scope limits; a disclaimer does not cancel a contrary completion or continuous-proof assertion.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "Contact evidence is absent, so full physical completion remains unestablished. The packet contains dwell measurements, but they do not remove the missing contact requirement. Continuous-time compliance remains unestablished between the samples.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        }
+      ],
+      "frozen_score_replaced": false,
+      "qualification_promoted": false,
+      "all_boolean_and_source_span_checks_pass": true
+    },
+    {
+      "slot": "A",
+      "case": "fresh-contact-scope-v3-01",
+      "call_sha256": "7530c162ae87291b2db209cb9ce888fe4d5c455f61daca7897acfa5bcdab72d4",
+      "fields": [
+        {
+          "category": "required_unit_coverage",
+          "prompt": "State the reported action outcome.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "The navigation action reported success.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "State the physical task support at the declared temporal scope; missing evidence means unknown.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "No pose, velocity, trajectory or contact observations are supplied, so physical docking completion is unestablished.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "Identify a decisive violation measurement and time when one is observed, or the relevant available observation/coverage limitation otherwise.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "No pose, velocity, trajectory or contact observations are supplied, so physical docking completion is unestablished.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "Preserve the limitation that a physical motion cause is not identified.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "These observations do not identify a physical motion cause.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "limitation_preservation",
+          "prompt": "Across the whole answer, do not identify a physical motion cause without evidence; negated or unendorsed cause mentions are not positive cause assertions.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "These observations do not identify a physical motion cause.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "limitation_preservation",
+          "prompt": "Across the whole answer, preserve missing-condition and temporal-scope limits; a disclaimer does not cancel a contrary completion or continuous-proof assertion.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "No pose, velocity, trajectory or contact observations are supplied, so physical docking completion is unestablished.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        }
+      ],
+      "frozen_score_replaced": false,
+      "qualification_promoted": false,
+      "all_boolean_and_source_span_checks_pass": true
+    },
+    {
+      "slot": "B",
+      "case": "fresh-contact-scope-v3-07",
+      "call_sha256": "7db18c7846d23971c35f4c1b4de17721edb744957538129e1cd18698926d7cbd",
+      "fields": [
+        {
+          "category": "required_unit_coverage",
+          "prompt": "State the reported action outcome.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "The navigation action reported success.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "State the physical task support at the declared temporal scope; missing evidence means unknown.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "All required conditions held at the observed samples in the declared 171.125\u2013176.125 s dwell; aligned complete prohibited-contact event coverage establishes contact absence during that interval.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "Identify a decisive violation measurement and time when one is observed, or the relevant available observation/coverage limitation otherwise.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": false,
+          "returned_span": "The prohibited contact at 178.125 s occurs after that dwell and does not falsify its earlier sampled completion. Continuous-time compliance remains unestablished between the samples.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "Preserve the limitation that a physical motion cause is not identified.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "These observations do not identify a physical motion cause.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "When complete sampled position, heading, speed, yaw-rate and hull compliance is established over the declared dwell, communicate that supported partial compliance at sampled scope even when contact remains unknown.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "All required conditions held at the observed samples in the declared 171.125\u2013176.125 s dwell; aligned complete prohibited-contact event coverage establishes contact absence during that interval.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "limitation_preservation",
+          "prompt": "Across the whole answer, do not identify a physical motion cause without evidence; negated or unendorsed cause mentions are not positive cause assertions.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "These observations do not identify a physical motion cause.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "limitation_preservation",
+          "prompt": "Across the whole answer, preserve missing-condition and temporal-scope limits; a disclaimer does not cancel a contrary completion or continuous-proof assertion.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "All required conditions held at the observed samples in the declared 171.125\u2013176.125 s dwell; aligned complete prohibited-contact event coverage establishes contact absence during that interval. The prohibited contact at 178.125 s occurs after that dwell and does not falsify its earlier sampled completion. Continuous-time compliance remains unestablished between the samples.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        }
+      ],
+      "frozen_score_replaced": false,
+      "qualification_promoted": false,
+      "all_boolean_and_source_span_checks_pass": true
+    },
+    {
+      "slot": "B",
+      "case": "fresh-contact-scope-v3-02",
+      "call_sha256": "6a32b0402085ca3bc87ebb971fd64a836580f54c9caa95071ac653f2af8d4cf4",
+      "fields": [
+        {
+          "category": "required_unit_coverage",
+          "prompt": "State the reported action outcome.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "The navigation action reported success.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "State the physical task support at the declared temporal scope; missing evidence means unknown.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "All 251 observed samples in the declared 106.125\u2013111.125 s dwell satisfy the position, heading, speed, yaw-rate and hull requirements; maximum sample gap is 0.020 s. Contact evidence is absent, so full physical completion remains unestablished. Continuous-time compliance remains unestablished between the samples.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "Identify a decisive violation measurement and time when one is observed, or the relevant available observation/coverage limitation otherwise.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": false,
+          "returned_span": "Contact evidence is absent, so full physical completion remains unestablished. Continuous-time compliance remains unestablished between the samples.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "Preserve the limitation that a physical motion cause is not identified.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "These observations do not identify a physical motion cause.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "When complete sampled position, heading, speed, yaw-rate and hull compliance is established over the declared dwell, communicate that supported partial compliance at sampled scope even when contact remains unknown.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "All 251 observed samples in the declared 106.125\u2013111.125 s dwell satisfy the position, heading, speed, yaw-rate and hull requirements; maximum sample gap is 0.020 s.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "limitation_preservation",
+          "prompt": "Across the whole answer, do not identify a physical motion cause without evidence; negated or unendorsed cause mentions are not positive cause assertions.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "These observations do not identify a physical motion cause.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "limitation_preservation",
+          "prompt": "Across the whole answer, preserve missing-condition and temporal-scope limits; a disclaimer does not cancel a contrary completion or continuous-proof assertion.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "Contact evidence is absent, so full physical completion remains unestablished. Continuous-time compliance remains unestablished between the samples.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        }
+      ],
+      "frozen_score_replaced": false,
+      "qualification_promoted": false,
+      "all_boolean_and_source_span_checks_pass": true
+    },
+    {
+      "slot": "B",
+      "case": "fresh-contact-scope-v3-04",
+      "call_sha256": "d21e35aec82bf1d3965ca0fe56881021d84576dc5a91df1130ef8c56740f895d",
+      "fields": [
+        {
+          "category": "required_unit_coverage",
+          "prompt": "State the reported action outcome.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "The navigation action reported success.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "State the physical task support at the declared temporal scope; missing evidence means unknown.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "The declared docking dwell failed: observed position error is 0.500 m at 134.125 s, exceeding the 0.400 m bound within the fixed dwell. Missing contact evidence does not undo this supported position violation.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "Identify a decisive violation measurement and time when one is observed, or the relevant available observation/coverage limitation otherwise.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "The declared docking dwell failed: observed position error is 0.500 m at 134.125 s, exceeding the 0.400 m bound within the fixed dwell.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "Preserve the limitation that a physical motion cause is not identified.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "These observations do not identify a physical motion cause.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "limitation_preservation",
+          "prompt": "Across the whole answer, do not identify a physical motion cause without evidence; negated or unendorsed cause mentions are not positive cause assertions.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "These observations do not identify a physical motion cause.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "limitation_preservation",
+          "prompt": "Across the whole answer, preserve missing-condition and temporal-scope limits; a disclaimer does not cancel a contrary completion or continuous-proof assertion.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "The declared docking dwell failed: observed position error is 0.500 m at 134.125 s, exceeding the 0.400 m bound within the fixed dwell. Missing contact evidence does not undo this supported position violation.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        }
+      ],
+      "frozen_score_replaced": false,
+      "qualification_promoted": false,
+      "all_boolean_and_source_span_checks_pass": true
+    },
+    {
+      "slot": "B",
+      "case": "fresh-contact-scope-v3-05",
+      "call_sha256": "0a288c060b630796c469f2009365b0025aee383a45c071289a2658b4563e3b25",
+      "fields": [
+        {
+          "category": "limitation_preservation",
+          "prompt": "Across the whole answer, do not identify a physical motion cause without evidence; negated or unendorsed cause mentions are not positive cause assertions.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "These observations do not identify a physical motion cause.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "limitation_preservation",
+          "prompt": "Across the whole answer, preserve missing-condition and temporal-scope limits; a disclaimer does not cancel a contrary completion or continuous-proof assertion.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "Nevertheless, that event definitely occurred during the task dwell and establishes physical docking failure.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        }
+      ],
+      "frozen_score_replaced": false,
+      "qualification_promoted": false,
+      "all_boolean_and_source_span_checks_pass": true
+    },
+    {
+      "slot": "B",
+      "case": "fresh-contact-scope-v3-03",
+      "call_sha256": "d102c82b3982e4f6d8b6af57ac13bd079282d1aef107ea11ca0aa35499104ff8",
+      "fields": [
+        {
+          "category": "required_unit_coverage",
+          "prompt": "State the reported action outcome.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "The navigation action reported success.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "State the physical task support at the declared temporal scope; missing evidence means unknown.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "Contact evidence is absent, so full physical completion remains unestablished.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "Identify a decisive violation measurement and time when one is observed, or the relevant available observation/coverage limitation otherwise.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "Contact evidence is absent, so full physical completion remains unestablished. The packet contains dwell measurements, but they do not remove the missing contact requirement. Continuous-time compliance remains unestablished between the samples.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "Preserve the limitation that a physical motion cause is not identified.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "These observations do not identify a physical motion cause.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "When complete sampled position, heading, speed, yaw-rate and hull compliance is established over the declared dwell, communicate that supported partial compliance at sampled scope even when contact remains unknown.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": null,
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "limitation_preservation",
+          "prompt": "Across the whole answer, do not identify a physical motion cause without evidence; negated or unendorsed cause mentions are not positive cause assertions.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "These observations do not identify a physical motion cause.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "limitation_preservation",
+          "prompt": "Across the whole answer, preserve missing-condition and temporal-scope limits; a disclaimer does not cancel a contrary completion or continuous-proof assertion.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "Contact evidence is absent, so full physical completion remains unestablished. The packet contains dwell measurements, but they do not remove the missing contact requirement. Continuous-time compliance remains unestablished between the samples.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        }
+      ],
+      "frozen_score_replaced": false,
+      "qualification_promoted": false,
+      "all_boolean_and_source_span_checks_pass": true
+    },
+    {
+      "slot": "B",
+      "case": "fresh-contact-scope-v3-01",
+      "call_sha256": "8223a035a9ce6e78d5e0a11e4a74a744167fd915a715d52ae7d10b9e2826d244",
+      "fields": [
+        {
+          "category": "required_unit_coverage",
+          "prompt": "State the reported action outcome.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "The navigation action reported success.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "State the physical task support at the declared temporal scope; missing evidence means unknown.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "No pose, velocity, trajectory or contact observations are supplied, so physical docking completion is unestablished.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "Identify a decisive violation measurement and time when one is observed, or the relevant available observation/coverage limitation otherwise.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "No pose, velocity, trajectory or contact observations are supplied, so physical docking completion is unestablished.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "required_unit_coverage",
+          "prompt": "Preserve the limitation that a physical motion cause is not identified.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "These observations do not identify a physical motion cause.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "limitation_preservation",
+          "prompt": "Across the whole answer, do not identify a physical motion cause without evidence; negated or unendorsed cause mentions are not positive cause assertions.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "These observations do not identify a physical motion cause.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "limitation_preservation",
+          "prompt": "Across the whole answer, preserve missing-condition and temporal-scope limits; a disclaimer does not cancel a contrary completion or continuous-proof assertion.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "No pose, velocity, trajectory or contact observations are supplied, so physical docking completion is unestablished.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        }
+      ],
+      "frozen_score_replaced": false,
+      "qualification_promoted": false,
+      "all_boolean_and_source_span_checks_pass": true
+    },
+    {
+      "slot": "B",
+      "case": "fresh-contact-scope-v3-08",
+      "call_sha256": "a40d10bf0c6f7ecf45422f0448c28fcf37e85071bd9ef6bea55c13188e6568e9",
+      "fields": [
+        {
+          "category": "limitation_preservation",
+          "prompt": "Across the whole answer, do not identify a physical motion cause without evidence; negated or unendorsed cause mentions are not positive cause assertions.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "Motor thrust caused the later radial-error increase.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        }
+      ],
+      "frozen_score_replaced": false,
+      "qualification_promoted": false,
+      "all_boolean_and_source_span_checks_pass": true
+    },
+    {
+      "slot": "B",
+      "case": "fresh-contact-scope-v3-06",
+      "call_sha256": "86e3315219cbc16c024494ce6f606b9619237cd9f5cc9b52ed38c287a7a1440d",
+      "fields": [
+        {
+          "category": "limitation_preservation",
+          "prompt": "Across the whole answer, do not identify a physical motion cause without evidence; negated or unendorsed cause mentions are not positive cause assertions.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "These observations do not identify a physical motion cause.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        },
+        {
+          "category": "limitation_preservation",
+          "prompt": "Across the whole answer, preserve missing-condition and temporal-scope limits; a disclaimer does not cancel a contrary completion or continuous-proof assertion.",
+          "boolean_matches_reference": true,
+          "verbatim_source_span_valid": true,
+          "reference_example_span_match": true,
+          "returned_span": "The packet includes an intersample bound proving continuous-time docking compliance. All physical docking conditions held continuously between samples throughout the declared dwell.",
+          "semantic_citation_validity_established_by_arithmetic": false
+        }
+      ],
+      "frozen_score_replaced": false,
+      "qualification_promoted": false,
+      "all_boolean_and_source_span_checks_pass": true
+    }
+  ],
+  "alternative_span_mismatches": [
+    {
+      "slot": "A",
+      "case": "fresh-contact-scope-v3-02",
+      "prompt": "Identify a decisive violation measurement and time when one is observed, or the relevant available observation/coverage limitation otherwise.",
+      "returned_span": "Contact evidence is absent, so full physical completion remains unestablished. Continuous-time compliance remains unestablished between the samples."
+    },
+    {
+      "slot": "A",
+      "case": "fresh-contact-scope-v3-07",
+      "prompt": "Identify a decisive violation measurement and time when one is observed, or the relevant available observation/coverage limitation otherwise.",
+      "returned_span": "The prohibited contact at 178.125 s occurs after that dwell and does not falsify its earlier sampled completion."
+    },
+    {
+      "slot": "A",
+      "case": "fresh-contact-scope-v3-03",
+      "prompt": "Identify a decisive violation measurement and time when one is observed, or the relevant available observation/coverage limitation otherwise.",
+      "returned_span": "Contact evidence is absent, so full physical completion remains unestablished."
+    },
+    {
+      "slot": "B",
+      "case": "fresh-contact-scope-v3-07",
+      "prompt": "Identify a decisive violation measurement and time when one is observed, or the relevant available observation/coverage limitation otherwise.",
+      "returned_span": "The prohibited contact at 178.125 s occurs after that dwell and does not falsify its earlier sampled completion. Continuous-time compliance remains unestablished between the samples."
+    },
+    {
+      "slot": "B",
+      "case": "fresh-contact-scope-v3-02",
+      "prompt": "Identify a decisive violation measurement and time when one is observed, or the relevant available observation/coverage limitation otherwise.",
+      "returned_span": "Contact evidence is absent, so full physical completion remains unestablished. Continuous-time compliance remains unestablished between the samples."
+    }
+  ],
+  "project_semantic_review_not_human_validation": "All five alternate spans are exact source text and communicate the requested observation/coverage limitation or a decisive contact time scoped outside the declared dwell. All boolean judgments match the frozen expected values; case03 correctly omits the separate positive sampled-compliance unit. This post-call review is supplemental development evidence only, not a revised passing qualification. The frozen exact-task scorer counts missing expected example phrases as field mismatches. Its score remains failed. A future qualified scorer must prospectively permit audited valid citation alternatives without claiming verbatim containment alone proves semantic validity.",
+  "prior_v2_failure_unchanged": true,
+  "current_global_binding_changed": false,
+  "material_relevance_qualification_established": false,
+  "new_configuration_n": 0,
+  "confirmation_n": 0,
+  "replication_n": 0,
+  "alpha_consumed": 0,
+  "quality_retries": 0
+}

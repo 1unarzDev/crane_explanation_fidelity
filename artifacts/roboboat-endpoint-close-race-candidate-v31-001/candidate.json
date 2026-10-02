@@ -1,0 +1,30 @@
+{
+  "schema": "roboboat-endpoint-close-race-candidate/v31",
+  "status": "PREPARED_UNLAUNCHED_UNQUALIFIED",
+  "original": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-live-endpoint-source-audit-v30-001/tcp_sender.py",
+    "sha256": "c0b975f41f123ec9dd13a2e44bf7a5b18c3d40126cf6d8921235d9aa2f90fe04"
+  },
+  "candidate": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-endpoint-close-race-candidate-v31-001/tcp_sender_candidate_v31.py",
+    "sha256": "9337dd353724b04e1e640a0a62c3b0068fa69e3c67086d8b6b9dc0ef5e148e28"
+  },
+  "builder": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/prepare_roboboat_endpoint_close_candidate_v31.py",
+    "sha256": "f79dce2689b77252288b65a9357554d3e853a14fda9eeff937685ca5c45d4e63"
+  },
+  "only_changed_method": "sender_loop",
+  "new_condition": "OSError errno.EBADF AND existing shared reader halt event already set",
+  "unexpected_ebadf_without_prior_halt_stays_error": true,
+  "other_os_errors_stay_errors": true,
+  "existing_broken_pipe_reset_behavior_unchanged": true,
+  "queue_halt_cleanup_unchanged": true,
+  "live_endpoint_or_shared_land_source_modified": false,
+  "old_failure_relabelled": false,
+  "historical_failed_container_or_cause_authenticated": false,
+  "operationally_qualified": false,
+  "confirmation_n": 0,
+  "replication_n": 0,
+  "independent_n_added": 0,
+  "future_requirements": "Separate boat-only endpoint runtime, exact deployed-source authentication and prospective full transport/trace/runtime qualification. Current v27 and queued v29 declarations retain original endpoint code and zero-error gates. Source-level reproducer is not a historical-episode diagnosis."
+}

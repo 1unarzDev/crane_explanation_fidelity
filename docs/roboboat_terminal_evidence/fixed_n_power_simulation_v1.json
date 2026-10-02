@@ -1,0 +1,4115 @@
+{
+  "schema": "roboboat-fixed-n-power-simulation/v1-development",
+  "status": "HYPOTHETICAL_POWER_SIMULATION_NO_STUDY_OBSERVATIONS",
+  "seed": 42001,
+  "repetitions_per_scenario_n": 10000,
+  "numpy_version": "2.5.3",
+  "bit_generator": "PCG64",
+  "alpha": 0.025,
+  "target_power": 0.9,
+  "n_grid": [
+    50,
+    100,
+    150,
+    250,
+    410,
+    620,
+    800,
+    1000,
+    1500,
+    2000,
+    4000
+  ],
+  "prospectively_fixed_equal_weight_lambdas": [
+    0.01,
+    0.025,
+    0.05,
+    0.075,
+    0.1,
+    0.15,
+    0.2,
+    0.3,
+    0.4,
+    0.6,
+    0.8
+  ],
+  "source_binding": {
+    "path": "analysis/simulate_roboboat_fixed_n_power_v1.py",
+    "sha256": "78b7df3e5551a50c6d96fdd0d43d89da99827212a5f98e746ebe450d3a5994b1"
+  },
+  "score_values": [
+    -1.0,
+    -0.8333333333333334,
+    -0.6666666666666666,
+    -0.5,
+    -0.3333333333333333,
+    -0.16666666666666666,
+    0.0,
+    0.16666666666666666,
+    0.3333333333333333,
+    0.5,
+    0.6666666666666666,
+    0.8333333333333334,
+    1.0
+  ],
+  "alternative_scenarios": [
+    {
+      "origin": "SIMULATED",
+      "delta": 0.05,
+      "discordance": 0.2,
+      "paired_difference_icc": 0.25,
+      "score_pmf": [
+        0.01875013348388672,
+        8.542968750000009e-06,
+        0.0002291473388671877,
+        0.003311191406250002,
+        0.027444311828613295,
+        0.12702930468750004,
+        0.4868172346191408,
+        0.21171550781250015,
+        0.07623419952392582,
+        0.015329589843750008,
+        0.001768112182617188,
+        0.00010986328124999999,
+        0.03125286102294922
+      ],
+      "results": [
+        {
+          "valid_independent_configuration_n": 50,
+          "rejections": 6,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0006,
+          "monte_carlo_wilson_95_interval": [
+            0.0002750134763309977,
+            0.001308524096300786
+          ],
+          "population_mean_score": 0.05000000000000001,
+          "exact_log_expected_e_value": 0.8248440802518073,
+          "exact_expected_e_value": 2.2815250027908913
+        },
+        {
+          "valid_independent_configuration_n": 100,
+          "rejections": 316,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0316,
+          "monte_carlo_wilson_95_interval": [
+            0.028347190302313426,
+            0.0352125393713364
+          ],
+          "population_mean_score": 0.05000000000000001,
+          "exact_log_expected_e_value": 2.132387045607601,
+          "exact_expected_e_value": 8.434977475287635
+        },
+        {
+          "valid_independent_configuration_n": 150,
+          "rejections": 1195,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.1195,
+          "monte_carlo_wilson_95_interval": [
+            0.11328800151166359,
+            0.1260042212484213
+          ],
+          "population_mean_score": 0.05000000000000001,
+          "exact_log_expected_e_value": 3.7906270120749923,
+          "exact_expected_e_value": 44.28415827474289
+        },
+        {
+          "valid_independent_configuration_n": 250,
+          "rejections": 3209,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.3209,
+          "monte_carlo_wilson_95_interval": [
+            0.31182072077588824,
+            0.33011682744048804
+          ],
+          "population_mean_score": 0.05000000000000001,
+          "exact_log_expected_e_value": 7.5034958784116625,
+          "exact_expected_e_value": 1814.3741719788927
+        },
+        {
+          "valid_independent_configuration_n": 410,
+          "rejections": 6394,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.6394,
+          "monte_carlo_wilson_95_interval": [
+            0.6299368764018431,
+            0.6487560648524122
+          ],
+          "population_mean_score": 0.05000000000000001,
+          "exact_log_expected_e_value": 13.701852684943846,
+          "exact_expected_e_value": 892563.2736275945
+        },
+        {
+          "valid_independent_configuration_n": 620,
+          "rejections": 8965,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.8965,
+          "monte_carlo_wilson_95_interval": [
+            0.8903766872428893,
+            0.9023188020491639
+          ],
+          "population_mean_score": 0.05000000000000001,
+          "exact_log_expected_e_value": 21.921452646837253,
+          "exact_expected_e_value": 3314102373.9789658
+        },
+        {
+          "valid_independent_configuration_n": 800,
+          "rejections": 9676,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9676,
+          "monte_carlo_wilson_95_interval": [
+            0.9639461536539876,
+            0.9708947310697557
+          ],
+          "population_mean_score": 0.05000000000000001,
+          "exact_log_expected_e_value": 28.97911498723975,
+          "exact_expected_e_value": 3850079784420.995
+        },
+        {
+          "valid_independent_configuration_n": 1000,
+          "rejections": 9944,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9944,
+          "monte_carlo_wilson_95_interval": [
+            0.9927355694846269,
+            0.995684732926448
+          ],
+          "population_mean_score": 0.05000000000000001,
+          "exact_log_expected_e_value": 36.82288154492368,
+          "exact_expected_e_value": 9816897641645376.0
+        },
+        {
+          "valid_independent_configuration_n": 1500,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.05000000000000001,
+          "exact_log_expected_e_value": 56.43317496508203,
+          "exact_expected_e_value": 3.2256443644658496e+24
+        },
+        {
+          "valid_independent_configuration_n": 2000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.05000000000000001,
+          "exact_log_expected_e_value": 76.04353103781717,
+          "exact_expected_e_value": 1.059951305661569e+33
+        },
+        {
+          "valid_independent_configuration_n": 4000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.05000000000000001,
+          "exact_log_expected_e_value": 154.48495734032684,
+          "exact_expected_e_value": 1.2358464373934123e+67
+        }
+      ]
+    },
+    {
+      "origin": "SIMULATED",
+      "delta": 0.05,
+      "discordance": 0.2,
+      "paired_difference_icc": 1.0,
+      "score_pmf": [
+        0.07500000000000001,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.8,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.125
+      ],
+      "results": [
+        {
+          "valid_independent_configuration_n": 50,
+          "rejections": 45,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0045,
+          "monte_carlo_wilson_95_interval": [
+            0.003364971291591769,
+            0.006015571093748737
+          ],
+          "population_mean_score": 0.04999999999999999,
+          "exact_log_expected_e_value": 0.8248440802518071,
+          "exact_expected_e_value": 2.281525002790891
+        },
+        {
+          "valid_independent_configuration_n": 100,
+          "rejections": 164,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0164,
+          "monte_carlo_wilson_95_interval": [
+            0.014089949587910894,
+            0.019081453636207512
+          ],
+          "population_mean_score": 0.04999999999999999,
+          "exact_log_expected_e_value": 2.1323870456076,
+          "exact_expected_e_value": 8.434977475287628
+        },
+        {
+          "valid_independent_configuration_n": 150,
+          "rejections": 309,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0309,
+          "monte_carlo_wilson_95_interval": [
+            0.027684349146600024,
+            0.03447591812476875
+          ],
+          "population_mean_score": 0.04999999999999999,
+          "exact_log_expected_e_value": 3.7906270120749905,
+          "exact_expected_e_value": 44.284158274742815
+        },
+        {
+          "valid_independent_configuration_n": 250,
+          "rejections": 727,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0727,
+          "monte_carlo_wilson_95_interval": [
+            0.06777349689232208,
+            0.07795466811525813
+          ],
+          "population_mean_score": 0.04999999999999999,
+          "exact_log_expected_e_value": 7.503495878411659,
+          "exact_expected_e_value": 1814.3741719788864
+        },
+        {
+          "valid_independent_configuration_n": 410,
+          "rejections": 1775,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.1775,
+          "monte_carlo_wilson_95_interval": [
+            0.17013540183078724,
+            0.18511227711829914
+          ],
+          "population_mean_score": 0.04999999999999999,
+          "exact_log_expected_e_value": 13.701852684943843,
+          "exact_expected_e_value": 892563.2736275912
+        },
+        {
+          "valid_independent_configuration_n": 620,
+          "rejections": 3396,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.3396,
+          "monte_carlo_wilson_95_interval": [
+            0.3303813015928109,
+            0.348941885084502
+          ],
+          "population_mean_score": 0.04999999999999999,
+          "exact_log_expected_e_value": 21.921452646837242,
+          "exact_expected_e_value": 3314102373.9789305
+        },
+        {
+          "valid_independent_configuration_n": 800,
+          "rejections": 4885,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.4885,
+          "monte_carlo_wilson_95_interval": [
+            0.4787090686987251,
+            0.4982997632638003
+          ],
+          "population_mean_score": 0.04999999999999999,
+          "exact_log_expected_e_value": 28.97911498723974,
+          "exact_expected_e_value": 3850079784420.954
+        },
+        {
+          "valid_independent_configuration_n": 1000,
+          "rejections": 6318,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.6318,
+          "monte_carlo_wilson_95_interval": [
+            0.6222978480671351,
+            0.6412009299623547
+          ],
+          "population_mean_score": 0.04999999999999999,
+          "exact_log_expected_e_value": 36.82288154492367,
+          "exact_expected_e_value": 9816897641645236.0
+        },
+        {
+          "valid_independent_configuration_n": 1500,
+          "rejections": 8762,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.8762,
+          "monte_carlo_wilson_95_interval": [
+            0.869599957806104,
+            0.8825111218197987
+          ],
+          "population_mean_score": 0.04999999999999999,
+          "exact_log_expected_e_value": 56.43317496508201,
+          "exact_expected_e_value": 3.225644364465781e+24
+        },
+        {
+          "valid_independent_configuration_n": 2000,
+          "rejections": 9715,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9715,
+          "monte_carlo_wilson_95_interval": [
+            0.9680532393490778,
+            0.9745846501873742
+          ],
+          "population_mean_score": 0.04999999999999999,
+          "exact_log_expected_e_value": 76.04353103781715,
+          "exact_expected_e_value": 1.0599513056615388e+33
+        },
+        {
+          "valid_independent_configuration_n": 4000,
+          "rejections": 9998,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9998,
+          "monte_carlo_wilson_95_interval": [
+            0.9992710041559925,
+            0.9999451510726791
+          ],
+          "population_mean_score": 0.04999999999999999,
+          "exact_log_expected_e_value": 154.4849573403268,
+          "exact_expected_e_value": 1.2358464373933421e+67
+        }
+      ]
+    },
+    {
+      "origin": "SIMULATED",
+      "delta": 0.05,
+      "discordance": 0.4,
+      "paired_difference_icc": 0.25,
+      "score_pmf": [
+        0.04377154217529297,
+        0.00044315332031250027,
+        0.003964639526367189,
+        0.020213217773437507,
+        0.06472032989501952,
+        0.135538470703125,
+        0.33839969165039063,
+        0.174263748046875,
+        0.10698666778564453,
+        0.04296045410156251,
+        0.01083381921386719,
+        0.0015569560546875002,
+        0.05634730975341797
+      ],
+      "results": [
+        {
+          "valid_independent_configuration_n": 50,
+          "rejections": 32,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0032,
+          "monte_carlo_wilson_95_interval": [
+            0.0022677138537914978,
+            0.004513826927312767
+          ],
+          "population_mean_score": 0.05000000000000002,
+          "exact_log_expected_e_value": 0.8248440802518078,
+          "exact_expected_e_value": 2.281525002790892
+        },
+        {
+          "valid_independent_configuration_n": 100,
+          "rejections": 232,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0232,
+          "monte_carlo_wilson_95_interval": [
+            0.020427485405598345,
+            0.026338695440678853
+          ],
+          "population_mean_score": 0.05000000000000002,
+          "exact_log_expected_e_value": 2.1323870456076017,
+          "exact_expected_e_value": 8.434977475287642
+        },
+        {
+          "valid_independent_configuration_n": 150,
+          "rejections": 454,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0454,
+          "monte_carlo_wilson_95_interval": [
+            0.041491366286706785,
+            0.04965776503191237
+          ],
+          "population_mean_score": 0.05000000000000002,
+          "exact_log_expected_e_value": 3.790627012074993,
+          "exact_expected_e_value": 44.284158274742936
+        },
+        {
+          "valid_independent_configuration_n": 250,
+          "rejections": 1066,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.1066,
+          "monte_carlo_wilson_95_interval": [
+            0.1007018122439457,
+            0.11280031767410265
+          ],
+          "population_mean_score": 0.05000000000000002,
+          "exact_log_expected_e_value": 7.503495878411664,
+          "exact_expected_e_value": 1814.374171978896
+        },
+        {
+          "valid_independent_configuration_n": 410,
+          "rejections": 2556,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.2556,
+          "monte_carlo_wilson_95_interval": [
+            0.24714565316850484,
+            0.2642420452350818
+          ],
+          "population_mean_score": 0.05000000000000002,
+          "exact_log_expected_e_value": 13.70185268494385,
+          "exact_expected_e_value": 892563.2736275976
+        },
+        {
+          "valid_independent_configuration_n": 620,
+          "rejections": 4838,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.4838,
+          "monte_carlo_wilson_95_interval": [
+            0.4740134247053324,
+            0.4935990168418774
+          ],
+          "population_mean_score": 0.05000000000000002,
+          "exact_log_expected_e_value": 21.921452646837256,
+          "exact_expected_e_value": 3314102373.9789777
+        },
+        {
+          "valid_independent_configuration_n": 800,
+          "rejections": 6481,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.6481,
+          "monte_carlo_wilson_95_interval": [
+            0.6386846921308169,
+            0.6574015675517886
+          ],
+          "population_mean_score": 0.05000000000000002,
+          "exact_log_expected_e_value": 28.979114987239758,
+          "exact_expected_e_value": 3850079784421.0225
+        },
+        {
+          "valid_independent_configuration_n": 1000,
+          "rejections": 8006,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.8006,
+          "monte_carlo_wilson_95_interval": [
+            0.7926542006400249,
+            0.8083149395395243
+          ],
+          "population_mean_score": 0.05000000000000002,
+          "exact_log_expected_e_value": 36.82288154492369,
+          "exact_expected_e_value": 9816897641645446.0
+        },
+        {
+          "valid_independent_configuration_n": 1500,
+          "rejections": 9591,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9591,
+          "monte_carlo_wilson_95_interval": [
+            0.9550385735963716,
+            0.962808839099673
+          ],
+          "population_mean_score": 0.05000000000000002,
+          "exact_log_expected_e_value": 56.433174965082046,
+          "exact_expected_e_value": 3.225644364465895e+24
+        },
+        {
+          "valid_independent_configuration_n": 2000,
+          "rejections": 9951,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9951,
+          "monte_carlo_wilson_95_interval": [
+            0.9935283915761888,
+            0.9962913732371672
+          ],
+          "population_mean_score": 0.05000000000000002,
+          "exact_log_expected_e_value": 76.04353103781719,
+          "exact_expected_e_value": 1.0599513056615839e+33
+        },
+        {
+          "valid_independent_configuration_n": 4000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.05000000000000002,
+          "exact_log_expected_e_value": 154.48495734032687,
+          "exact_expected_e_value": 1.2358464373934475e+67
+        }
+      ]
+    },
+    {
+      "origin": "SIMULATED",
+      "delta": 0.05,
+      "discordance": 0.4,
+      "paired_difference_icc": 1.0,
+      "score_pmf": [
+        0.17500000000000002,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.6,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.225
+      ],
+      "results": [
+        {
+          "valid_independent_configuration_n": 50,
+          "rejections": 36,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0036,
+          "monte_carlo_wilson_95_interval": [
+            0.0026016036387784434,
+            0.004979629943629281
+          ],
+          "population_mean_score": 0.04999999999999999,
+          "exact_log_expected_e_value": 0.8248440802518071,
+          "exact_expected_e_value": 2.281525002790891
+        },
+        {
+          "valid_independent_configuration_n": 100,
+          "rejections": 78,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0078,
+          "monte_carlo_wilson_95_interval": [
+            0.006254775829182484,
+            0.009723232166911556
+          ],
+          "population_mean_score": 0.04999999999999999,
+          "exact_log_expected_e_value": 2.1323870456076,
+          "exact_expected_e_value": 8.434977475287628
+        },
+        {
+          "valid_independent_configuration_n": 150,
+          "rejections": 132,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0132,
+          "monte_carlo_wilson_95_interval": [
+            0.011142645756042856,
+            0.015631215057647876
+          ],
+          "population_mean_score": 0.04999999999999999,
+          "exact_log_expected_e_value": 3.7906270120749905,
+          "exact_expected_e_value": 44.284158274742815
+        },
+        {
+          "valid_independent_configuration_n": 250,
+          "rejections": 235,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0235,
+          "monte_carlo_wilson_95_interval": [
+            0.020708857111790654,
+            0.02665709333546414
+          ],
+          "population_mean_score": 0.04999999999999999,
+          "exact_log_expected_e_value": 7.503495878411659,
+          "exact_expected_e_value": 1814.3741719788864
+        },
+        {
+          "valid_independent_configuration_n": 410,
+          "rejections": 560,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.056,
+          "monte_carlo_wilson_95_interval": [
+            0.051661752823658105,
+            0.060679237729502705
+          ],
+          "population_mean_score": 0.04999999999999999,
+          "exact_log_expected_e_value": 13.701852684943843,
+          "exact_expected_e_value": 892563.2736275912
+        },
+        {
+          "valid_independent_configuration_n": 620,
+          "rejections": 1051,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.1051,
+          "monte_carlo_wilson_95_interval": [
+            0.09924002105048621,
+            0.11126326086267416
+          ],
+          "population_mean_score": 0.04999999999999999,
+          "exact_log_expected_e_value": 21.921452646837242,
+          "exact_expected_e_value": 3314102373.9789305
+        },
+        {
+          "valid_independent_configuration_n": 800,
+          "rejections": 1706,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.1706,
+          "monte_carlo_wilson_95_interval": [
+            0.16335423739227276,
+            0.178098740734329
+          ],
+          "population_mean_score": 0.04999999999999999,
+          "exact_log_expected_e_value": 28.97911498723974,
+          "exact_expected_e_value": 3850079784420.954
+        },
+        {
+          "valid_independent_configuration_n": 1000,
+          "rejections": 2361,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.2361,
+          "monte_carlo_wilson_95_interval": [
+            0.2278786583511262,
+            0.24452401598891688
+          ],
+          "population_mean_score": 0.04999999999999999,
+          "exact_log_expected_e_value": 36.82288154492367,
+          "exact_expected_e_value": 9816897641645236.0
+        },
+        {
+          "valid_independent_configuration_n": 1500,
+          "rejections": 4439,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.4439,
+          "monte_carlo_wilson_95_interval": [
+            0.43418544795674974,
+            0.4536576366604401
+          ],
+          "population_mean_score": 0.04999999999999999,
+          "exact_log_expected_e_value": 56.43317496508201,
+          "exact_expected_e_value": 3.225644364465781e+24
+        },
+        {
+          "valid_independent_configuration_n": 2000,
+          "rejections": 6186,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.6186,
+          "monte_carlo_wilson_95_interval": [
+            0.6090360356004716,
+            0.628072879986004
+          ],
+          "population_mean_score": 0.04999999999999999,
+          "exact_log_expected_e_value": 76.04353103781715,
+          "exact_expected_e_value": 1.0599513056615388e+33
+        },
+        {
+          "valid_independent_configuration_n": 4000,
+          "rejections": 9622,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9622,
+          "monte_carlo_wilson_95_interval": [
+            0.958281130278416,
+            0.9657639016277306
+          ],
+          "population_mean_score": 0.04999999999999999,
+          "exact_log_expected_e_value": 154.4849573403268,
+          "exact_expected_e_value": 1.2358464373933421e+67
+        }
+      ]
+    },
+    {
+      "origin": "SIMULATED",
+      "delta": 0.05,
+      "discordance": 0.6,
+      "paired_difference_icc": 0.25,
+      "score_pmf": [
+        0.06907438250732421,
+        0.002830974609374999,
+        0.012594619995117181,
+        0.03669348632812498,
+        0.07724063507080077,
+        0.12299705859375,
+        0.25152998461914067,
+        0.14536016015625003,
+        0.10788154815673831,
+        0.06056768554687503,
+        0.024569014526367196,
+        0.0065266347656250025,
+        0.08213381512451172
+      ],
+      "results": [
+        {
+          "valid_independent_configuration_n": 50,
+          "rejections": 40,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.004,
+          "monte_carlo_wilson_95_interval": [
+            0.002939013737731544,
+            0.005441912645979639
+          ],
+          "population_mean_score": 0.05000000000000005,
+          "exact_log_expected_e_value": 0.8248440802518084,
+          "exact_expected_e_value": 2.281525002790894
+        },
+        {
+          "valid_independent_configuration_n": 100,
+          "rejections": 138,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0138,
+          "monte_carlo_wilson_95_interval": [
+            0.01169303356334014,
+            0.01628036645230578
+          ],
+          "population_mean_score": 0.05000000000000005,
+          "exact_log_expected_e_value": 2.1323870456076035,
+          "exact_expected_e_value": 8.434977475287658
+        },
+        {
+          "valid_independent_configuration_n": 150,
+          "rejections": 224,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0224,
+          "monte_carlo_wilson_95_interval": [
+            0.01967779558983216,
+            0.02548899965383812
+          ],
+          "population_mean_score": 0.05000000000000005,
+          "exact_log_expected_e_value": 3.7906270120749967,
+          "exact_expected_e_value": 44.28415827474309
+        },
+        {
+          "valid_independent_configuration_n": 250,
+          "rejections": 607,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0607,
+          "monte_carlo_wilson_95_interval": [
+            0.05618656282442717,
+            0.06555081814404926
+          ],
+          "population_mean_score": 0.05000000000000005,
+          "exact_log_expected_e_value": 7.5034958784116705,
+          "exact_expected_e_value": 1814.3741719789073
+        },
+        {
+          "valid_independent_configuration_n": 410,
+          "rejections": 1335,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.1335,
+          "monte_carlo_wilson_95_interval": [
+            0.1269744115300464,
+            0.14030705927565956
+          ],
+          "population_mean_score": 0.05000000000000005,
+          "exact_log_expected_e_value": 13.70185268494386,
+          "exact_expected_e_value": 892563.2736276072
+        },
+        {
+          "valid_independent_configuration_n": 620,
+          "rejections": 2666,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.2666,
+          "monte_carlo_wilson_95_interval": [
+            0.258024228571699,
+            0.2753550218677328
+          ],
+          "population_mean_score": 0.05000000000000005,
+          "exact_log_expected_e_value": 21.921452646837274,
+          "exact_expected_e_value": 3314102373.9790363
+        },
+        {
+          "valid_independent_configuration_n": 800,
+          "rejections": 4023,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.4023,
+          "monte_carlo_wilson_95_interval": [
+            0.3927283738923774,
+            0.4119466593892526
+          ],
+          "population_mean_score": 0.05000000000000005,
+          "exact_log_expected_e_value": 28.97911498723978,
+          "exact_expected_e_value": 3850079784421.1045
+        },
+        {
+          "valid_independent_configuration_n": 1000,
+          "rejections": 5408,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.5408,
+          "monte_carlo_wilson_95_interval": [
+            0.5310190566757862,
+            0.5505496090571664
+          ],
+          "population_mean_score": 0.05000000000000005,
+          "exact_log_expected_e_value": 36.82288154492372,
+          "exact_expected_e_value": 9816897641645724.0
+        },
+        {
+          "valid_independent_configuration_n": 1500,
+          "rejections": 8053,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.8053,
+          "monte_carlo_wilson_95_interval": [
+            0.7974225087326816,
+            0.8129430218621831
+          ],
+          "population_mean_score": 0.050000000000000044,
+          "exact_log_expected_e_value": 56.43317496508209,
+          "exact_expected_e_value": 3.225644364466033e+24
+        },
+        {
+          "valid_independent_configuration_n": 2000,
+          "rejections": 9346,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9346,
+          "monte_carlo_wilson_95_interval": [
+            0.9295855456592568,
+            0.9392806829569511
+          ],
+          "population_mean_score": 0.05000000000000005,
+          "exact_log_expected_e_value": 76.04353103781725,
+          "exact_expected_e_value": 1.0599513056616443e+33
+        },
+        {
+          "valid_independent_configuration_n": 4000,
+          "rejections": 9997,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9997,
+          "monte_carlo_wilson_95_interval": [
+            0.9991182642277636,
+            0.9998979678005822
+          ],
+          "population_mean_score": 0.05000000000000005,
+          "exact_log_expected_e_value": 154.48495734032699,
+          "exact_expected_e_value": 1.235846437393588e+67
+        }
+      ]
+    },
+    {
+      "origin": "SIMULATED",
+      "delta": 0.05,
+      "discordance": 0.6,
+      "paired_difference_icc": 1.0,
+      "score_pmf": [
+        0.27499999999999997,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.4,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.325
+      ],
+      "results": [
+        {
+          "valid_independent_configuration_n": 50,
+          "rejections": 29,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0029,
+          "monte_carlo_wilson_95_interval": [
+            0.0020199966335610452,
+            0.004161774546565626
+          ],
+          "population_mean_score": 0.050000000000000044,
+          "exact_log_expected_e_value": 0.8248440802518082,
+          "exact_expected_e_value": 2.2815250027908935
+        },
+        {
+          "valid_independent_configuration_n": 100,
+          "rejections": 52,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0052,
+          "monte_carlo_wilson_95_interval": [
+            0.003967852921628256,
+            0.006812151865993303
+          ],
+          "population_mean_score": 0.050000000000000044,
+          "exact_log_expected_e_value": 2.132387045607603,
+          "exact_expected_e_value": 8.434977475287653
+        },
+        {
+          "valid_independent_configuration_n": 150,
+          "rejections": 85,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0085,
+          "monte_carlo_wilson_95_interval": [
+            0.006879905952442006,
+            0.01049756444593309
+          ],
+          "population_mean_score": 0.050000000000000044,
+          "exact_log_expected_e_value": 3.7906270120749963,
+          "exact_expected_e_value": 44.28415827474307
+        },
+        {
+          "valid_independent_configuration_n": 250,
+          "rejections": 124,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0124,
+          "monte_carlo_wilson_95_interval": [
+            0.0104106360968032,
+            0.014763839114280615
+          ],
+          "population_mean_score": 0.050000000000000044,
+          "exact_log_expected_e_value": 7.503495878411669,
+          "exact_expected_e_value": 1814.374171978904
+        },
+        {
+          "valid_independent_configuration_n": 410,
+          "rejections": 260,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.026,
+          "monte_carlo_wilson_95_interval": [
+            0.02305831481278748,
+            0.02930571564261393
+          ],
+          "population_mean_score": 0.050000000000000044,
+          "exact_log_expected_e_value": 13.701852684943857,
+          "exact_expected_e_value": 892563.2736276039
+        },
+        {
+          "valid_independent_configuration_n": 620,
+          "rejections": 578,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0578,
+          "monte_carlo_wilson_95_interval": [
+            0.05339366355131309,
+            0.06254594460771326
+          ],
+          "population_mean_score": 0.050000000000000044,
+          "exact_log_expected_e_value": 21.92145264683727,
+          "exact_expected_e_value": 3314102373.979025
+        },
+        {
+          "valid_independent_configuration_n": 800,
+          "rejections": 799,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0799,
+          "monte_carlo_wilson_95_interval": [
+            0.07474567628818456,
+            0.08537695914285791
+          ],
+          "population_mean_score": 0.050000000000000044,
+          "exact_log_expected_e_value": 28.97911498723977,
+          "exact_expected_e_value": 3850079784421.077
+        },
+        {
+          "valid_independent_configuration_n": 1000,
+          "rejections": 1188,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.1188,
+          "monte_carlo_wilson_95_interval": [
+            0.11260438556927688,
+            0.12528837478852695
+          ],
+          "population_mean_score": 0.050000000000000044,
+          "exact_log_expected_e_value": 36.82288154492371,
+          "exact_expected_e_value": 9816897641645654.0
+        },
+        {
+          "valid_independent_configuration_n": 1500,
+          "rejections": 2312,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.2312,
+          "monte_carlo_wilson_95_interval": [
+            0.22304095251443928,
+            0.23956548500963643
+          ],
+          "population_mean_score": 0.050000000000000044,
+          "exact_log_expected_e_value": 56.433174965082074,
+          "exact_expected_e_value": 3.225644364465987e+24
+        },
+        {
+          "valid_independent_configuration_n": 2000,
+          "rejections": 3646,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.3646,
+          "monte_carlo_wilson_95_interval": [
+            0.3552200056561524,
+            0.37408398110262664
+          ],
+          "population_mean_score": 0.050000000000000044,
+          "exact_log_expected_e_value": 76.04353103781723,
+          "exact_expected_e_value": 1.0599513056616292e+33
+        },
+        {
+          "valid_independent_configuration_n": 4000,
+          "rejections": 7881,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.7881,
+          "monte_carlo_wilson_95_interval": [
+            0.7799806655145405,
+            0.7959980746242756
+          ],
+          "population_mean_score": 0.050000000000000044,
+          "exact_log_expected_e_value": 154.48495734032696,
+          "exact_expected_e_value": 1.2358464373935528e+67
+        }
+      ]
+    },
+    {
+      "origin": "SIMULATED",
+      "delta": 0.1,
+      "discordance": 0.2,
+      "paired_difference_icc": 0.25,
+      "score_pmf": [
+        0.01250001171875,
+        1.1250000000000007e-06,
+        4.5210937500000024e-05,
+        0.0009768750000000003,
+        0.012061582031250004,
+        0.08246925000000002,
+        0.46816432812500014,
+        0.24740775000000007,
+        0.10855423828125005,
+        0.026375625000000014,
+        0.003662085937500003,
+        0.0002733750000000003,
+        0.03750854296875
+      ],
+      "results": [
+        {
+          "valid_independent_configuration_n": 50,
+          "rejections": 208,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0208,
+          "monte_carlo_wilson_95_interval": [
+            0.018181353731422857,
+            0.02378667030703359
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 2.0814193312561686,
+          "exact_expected_e_value": 8.015837973537428
+        },
+        {
+          "valid_independent_configuration_n": 100,
+          "rejections": 4758,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.4758,
+          "monte_carlo_wilson_95_interval": [
+            0.4660228330217912,
+            0.48559575249934944
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 5.476583331192343,
+          "exact_expected_e_value": 239.02862895788232
+        },
+        {
+          "valid_independent_configuration_n": 150,
+          "rejections": 8216,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.8216,
+          "monte_carlo_wilson_95_interval": [
+            0.8139732259824872,
+            0.8289797862654935
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 9.209490894151246,
+          "exact_expected_e_value": 9991.50882879207
+        },
+        {
+          "valid_independent_configuration_n": 250,
+          "rejections": 9907,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9907,
+          "monte_carlo_wilson_95_interval": [
+            0.9886212075003762,
+            0.9924019364986418
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 16.851752615837505,
+          "exact_expected_e_value": 20826829.96940662
+        },
+        {
+          "valid_independent_configuration_n": 410,
+          "rejections": 9998,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9998,
+          "monte_carlo_wilson_95_interval": [
+            0.9992710041559925,
+            0.9999451510726791
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 29.156601208744142,
+          "exact_expected_e_value": 4597809952377.926
+        },
+        {
+          "valid_independent_configuration_n": 620,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 45.31795949796367,
+          "exact_expected_e_value": 4.8010888266576355e+19
+        },
+        {
+          "valid_independent_configuration_n": 800,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 59.17093795650085,
+          "exact_expected_e_value": 4.984388020323676e+25
+        },
+        {
+          "valid_independent_configuration_n": 1000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 74.56314587095267,
+          "exact_expected_e_value": 2.4119194798072168e+32
+        },
+        {
+          "valid_independent_configuration_n": 1500,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 113.04366643139475,
+          "exact_expected_e_value": 1.2423402194290572e+49
+        },
+        {
+          "valid_independent_configuration_n": 2000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 151.52418699945827,
+          "exact_expected_e_value": 6.399091037223917e+65
+        },
+        {
+          "valid_independent_configuration_n": 4000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 305.44626927171487,
+          "exact_expected_e_value": 4.50432027129459e+132
+        }
+      ]
+    },
+    {
+      "origin": "SIMULATED",
+      "delta": 0.1,
+      "discordance": 0.2,
+      "paired_difference_icc": 1.0,
+      "score_pmf": [
+        0.05,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.8,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.15000000000000002
+      ],
+      "results": [
+        {
+          "valid_independent_configuration_n": 50,
+          "rejections": 265,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0265,
+          "monte_carlo_wilson_95_interval": [
+            0.023529149180417482,
+            0.02983449727661325
+          ],
+          "population_mean_score": 0.10000000000000002,
+          "exact_log_expected_e_value": 2.0814193312561704,
+          "exact_expected_e_value": 8.015837973537442
+        },
+        {
+          "valid_independent_configuration_n": 100,
+          "rejections": 1718,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.1718,
+          "monte_carlo_wilson_95_interval": [
+            0.16453326158858123,
+            0.17931879494193087
+          ],
+          "population_mean_score": 0.10000000000000002,
+          "exact_log_expected_e_value": 5.476583331192345,
+          "exact_expected_e_value": 239.02862895788294
+        },
+        {
+          "valid_independent_configuration_n": 150,
+          "rejections": 3400,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.34,
+          "monte_carlo_wilson_95_interval": [
+            0.3307784978984157,
+            0.3493443815802008
+          ],
+          "population_mean_score": 0.10000000000000002,
+          "exact_log_expected_e_value": 9.209490894151251,
+          "exact_expected_e_value": 9991.508828792123
+        },
+        {
+          "valid_independent_configuration_n": 250,
+          "rejections": 6585,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.6585,
+          "monte_carlo_wilson_95_interval": [
+            0.6491463221529038,
+            0.6677319503635916
+          ],
+          "population_mean_score": 0.10000000000000002,
+          "exact_log_expected_e_value": 16.851752615837512,
+          "exact_expected_e_value": 20826829.969406765
+        },
+        {
+          "valid_independent_configuration_n": 410,
+          "rejections": 9364,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9364,
+          "monte_carlo_wilson_95_interval": [
+            0.9314473295550763,
+            0.9410175166669972
+          ],
+          "population_mean_score": 0.10000000000000002,
+          "exact_log_expected_e_value": 29.156601208744156,
+          "exact_expected_e_value": 4597809952377.991
+        },
+        {
+          "valid_independent_configuration_n": 620,
+          "rejections": 9947,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9947,
+          "monte_carlo_wilson_95_interval": [
+            0.9930745948998293,
+            0.9959454771122233
+          ],
+          "population_mean_score": 0.10000000000000002,
+          "exact_log_expected_e_value": 45.317959497963685,
+          "exact_expected_e_value": 4.8010888266577035e+19
+        },
+        {
+          "valid_independent_configuration_n": 800,
+          "rejections": 9997,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9997,
+          "monte_carlo_wilson_95_interval": [
+            0.9991182642277636,
+            0.9998979678005822
+          ],
+          "population_mean_score": 0.10000000000000002,
+          "exact_log_expected_e_value": 59.17093795650087,
+          "exact_expected_e_value": 4.984388020323782e+25
+        },
+        {
+          "valid_independent_configuration_n": 1000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.10000000000000002,
+          "exact_log_expected_e_value": 74.5631458709527,
+          "exact_expected_e_value": 2.4119194798072856e+32
+        },
+        {
+          "valid_independent_configuration_n": 1500,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.10000000000000002,
+          "exact_log_expected_e_value": 113.0436664313948,
+          "exact_expected_e_value": 1.2423402194291102e+49
+        },
+        {
+          "valid_independent_configuration_n": 2000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.10000000000000002,
+          "exact_log_expected_e_value": 151.52418699945832,
+          "exact_expected_e_value": 6.399091037224281e+65
+        },
+        {
+          "valid_independent_configuration_n": 4000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.10000000000000002,
+          "exact_log_expected_e_value": 305.446269271715,
+          "exact_expected_e_value": 4.5043202712951025e+132
+        }
+      ]
+    },
+    {
+      "origin": "SIMULATED",
+      "delta": 0.1,
+      "discordance": 0.4,
+      "paired_difference_icc": 0.25,
+      "score_pmf": [
+        0.03750854296875,
+        0.00020503125000000014,
+        0.002135742187500001,
+        0.012643593750000005,
+        0.04682970703125001,
+        0.11285831250000002,
+        0.329304890625,
+        0.18809718749999996,
+        0.13008251953124997,
+        0.05853515624999999,
+        0.0164794921875,
+        0.00263671875,
+        0.06268310546875
+      ],
+      "results": [
+        {
+          "valid_independent_configuration_n": 50,
+          "rejections": 311,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0311,
+          "monte_carlo_wilson_95_interval": [
+            0.027873685933108745,
+            0.034686427738911764
+          ],
+          "population_mean_score": 0.1,
+          "exact_log_expected_e_value": 2.0814193312561695,
+          "exact_expected_e_value": 8.015837973537435
+        },
+        {
+          "valid_independent_configuration_n": 100,
+          "rejections": 2152,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.2152,
+          "monte_carlo_wilson_95_interval": [
+            0.2072554788484717,
+            0.22336324662346566
+          ],
+          "population_mean_score": 0.1,
+          "exact_log_expected_e_value": 5.4765833311923435,
+          "exact_expected_e_value": 239.02862895788255
+        },
+        {
+          "valid_independent_configuration_n": 150,
+          "rejections": 4199,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.4199,
+          "monte_carlo_wilson_95_interval": [
+            0.41025931570108154,
+            0.4296022008379008
+          ],
+          "population_mean_score": 0.09999999999999999,
+          "exact_log_expected_e_value": 9.20949089415125,
+          "exact_expected_e_value": 9991.508828792104
+        },
+        {
+          "valid_independent_configuration_n": 250,
+          "rejections": 7718,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.7718,
+          "monte_carlo_wilson_95_interval": [
+            0.76347112231959,
+            0.7799201361661103
+          ],
+          "population_mean_score": 0.09999999999999999,
+          "exact_log_expected_e_value": 16.85175261583751,
+          "exact_expected_e_value": 20826829.969406694
+        },
+        {
+          "valid_independent_configuration_n": 410,
+          "rejections": 9720,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.972,
+          "monte_carlo_wilson_95_interval": [
+            0.9685808907869505,
+            0.9750566147511307
+          ],
+          "population_mean_score": 0.1,
+          "exact_log_expected_e_value": 29.15660120874415,
+          "exact_expected_e_value": 4597809952377.959
+        },
+        {
+          "valid_independent_configuration_n": 620,
+          "rejections": 9989,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9989,
+          "monte_carlo_wilson_95_interval": [
+            0.9980311970799692,
+            0.9993856493457697
+          ],
+          "population_mean_score": 0.09999999999999999,
+          "exact_log_expected_e_value": 45.31795949796368,
+          "exact_expected_e_value": 4.80108882665767e+19
+        },
+        {
+          "valid_independent_configuration_n": 800,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.1,
+          "exact_log_expected_e_value": 59.17093795650086,
+          "exact_expected_e_value": 4.984388020323711e+25
+        },
+        {
+          "valid_independent_configuration_n": 1000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.09999999999999999,
+          "exact_log_expected_e_value": 74.56314587095268,
+          "exact_expected_e_value": 2.411919479807251e+32
+        },
+        {
+          "valid_independent_configuration_n": 1500,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.1,
+          "exact_log_expected_e_value": 113.04366643139477,
+          "exact_expected_e_value": 1.2423402194290748e+49
+        },
+        {
+          "valid_independent_configuration_n": 2000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.09999999999999999,
+          "exact_log_expected_e_value": 151.5241869994583,
+          "exact_expected_e_value": 6.399091037224099e+65
+        },
+        {
+          "valid_independent_configuration_n": 4000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.09999999999999999,
+          "exact_log_expected_e_value": 305.4462692717149,
+          "exact_expected_e_value": 4.504320271294846e+132
+        }
+      ]
+    },
+    {
+      "origin": "SIMULATED",
+      "delta": 0.1,
+      "discordance": 0.4,
+      "paired_difference_icc": 1.0,
+      "score_pmf": [
+        0.15000000000000002,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.6,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.25
+      ],
+      "results": [
+        {
+          "valid_independent_configuration_n": 50,
+          "rejections": 186,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0186,
+          "monte_carlo_wilson_95_interval": [
+            0.016130861024283946,
+            0.021438852607003477
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 2.0814193312561686,
+          "exact_expected_e_value": 8.015837973537428
+        },
+        {
+          "valid_independent_configuration_n": 100,
+          "rejections": 444,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0444,
+          "monte_carlo_wilson_95_interval": [
+            0.04053475956156519,
+            0.04861513975379532
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 5.476583331192343,
+          "exact_expected_e_value": 239.02862895788232
+        },
+        {
+          "valid_independent_configuration_n": 150,
+          "rejections": 1008,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.1008,
+          "monte_carlo_wilson_95_interval": [
+            0.09505169363372346,
+            0.10685489066542472
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 9.209490894151246,
+          "exact_expected_e_value": 9991.50882879207
+        },
+        {
+          "valid_independent_configuration_n": 250,
+          "rejections": 2408,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.2408,
+          "monte_carlo_wilson_95_interval": [
+            0.2325203494181742,
+            0.24927871533718451
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 16.851752615837505,
+          "exact_expected_e_value": 20826829.96940662
+        },
+        {
+          "valid_independent_configuration_n": 410,
+          "rejections": 4936,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.4936,
+          "monte_carlo_wilson_95_interval": [
+            0.4838053217767118,
+            0.5033995934024327
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 29.156601208744142,
+          "exact_expected_e_value": 4597809952377.926
+        },
+        {
+          "valid_independent_configuration_n": 620,
+          "rejections": 7792,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.7792,
+          "monte_carlo_wilson_95_interval": [
+            0.7709639869803826,
+            0.7872215883294316
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 45.31795949796367,
+          "exact_expected_e_value": 4.8010888266576355e+19
+        },
+        {
+          "valid_independent_configuration_n": 800,
+          "rejections": 9024,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9024,
+          "monte_carlo_wilson_95_interval": [
+            0.8964278986839709,
+            0.9080630594273085
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 59.17093795650085,
+          "exact_expected_e_value": 4.984388020323676e+25
+        },
+        {
+          "valid_independent_configuration_n": 1000,
+          "rejections": 9694,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9694,
+          "monte_carlo_wilson_95_interval": [
+            0.9658399169867823,
+            0.9725995853428265
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 74.56314587095267,
+          "exact_expected_e_value": 2.4119194798072168e+32
+        },
+        {
+          "valid_independent_configuration_n": 1500,
+          "rejections": 9984,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9984,
+          "monte_carlo_wilson_95_interval": [
+            0.997402363083803,
+            0.9990148673403064
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 113.04366643139475,
+          "exact_expected_e_value": 1.2423402194290572e+49
+        },
+        {
+          "valid_independent_configuration_n": 2000,
+          "rejections": 9996,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9996,
+          "monte_carlo_wilson_95_interval": [
+            0.9989718716646431,
+            0.9998444371633769
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 151.52418699945827,
+          "exact_expected_e_value": 6.399091037223917e+65
+        },
+        {
+          "valid_independent_configuration_n": 4000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 305.44626927171487,
+          "exact_expected_e_value": 4.50432027129459e+132
+        }
+      ]
+    },
+    {
+      "origin": "SIMULATED",
+      "delta": 0.1,
+      "discordance": 0.6,
+      "paired_difference_icc": 0.25,
+      "score_pmf": [
+        0.06268310546875,
+        0.0017578124999999998,
+        0.008569335937500002,
+        0.027304687500000008,
+        0.06275830078125001,
+        0.10897312500000002,
+        0.24620832812500001,
+        0.152562375,
+        0.12300626953124996,
+        0.07492406249999999,
+        0.0329199609375,
+        0.009453937499999999,
+        0.08887869921875
+      ],
+      "results": [
+        {
+          "valid_independent_configuration_n": 50,
+          "rejections": 279,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0279,
+          "monte_carlo_wilson_95_interval": [
+            0.024849024680611256,
+            0.03131354658098159
+          ],
+          "population_mean_score": 0.09999999999999996,
+          "exact_log_expected_e_value": 2.0814193312561686,
+          "exact_expected_e_value": 8.015837973537428
+        },
+        {
+          "valid_independent_configuration_n": 100,
+          "rejections": 1136,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.1136,
+          "monte_carlo_wilson_95_interval": [
+            0.1075283490749479,
+            0.11996840486591098
+          ],
+          "population_mean_score": 0.09999999999999996,
+          "exact_log_expected_e_value": 5.476583331192341,
+          "exact_expected_e_value": 239.0286289578819
+        },
+        {
+          "valid_independent_configuration_n": 150,
+          "rejections": 2392,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.2392,
+          "monte_carlo_wilson_95_interval": [
+            0.23094004252292286,
+            0.24766025102722203
+          ],
+          "population_mean_score": 0.09999999999999996,
+          "exact_log_expected_e_value": 9.209490894151244,
+          "exact_expected_e_value": 9991.508828792052
+        },
+        {
+          "valid_independent_configuration_n": 250,
+          "rejections": 5152,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.5152,
+          "monte_carlo_wilson_95_interval": [
+            0.5054007517786182,
+            0.5249875746709133
+          ],
+          "population_mean_score": 0.09999999999999996,
+          "exact_log_expected_e_value": 16.8517526158375,
+          "exact_expected_e_value": 20826829.969406545
+        },
+        {
+          "valid_independent_configuration_n": 410,
+          "rejections": 8476,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.8476,
+          "monte_carlo_wilson_95_interval": [
+            0.8404223391743044,
+            0.8545107051584011
+          ],
+          "population_mean_score": 0.09999999999999996,
+          "exact_log_expected_e_value": 29.15660120874414,
+          "exact_expected_e_value": 4597809952377.91
+        },
+        {
+          "valid_independent_configuration_n": 620,
+          "rejections": 9770,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.977,
+          "monte_carlo_wilson_95_interval": [
+            0.9738736410370883,
+            0.9797600245172862
+          ],
+          "population_mean_score": 0.09999999999999996,
+          "exact_log_expected_e_value": 45.31795949796366,
+          "exact_expected_e_value": 4.801088826657601e+19
+        },
+        {
+          "valid_independent_configuration_n": 800,
+          "rejections": 9953,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9953,
+          "monte_carlo_wilson_95_interval": [
+            0.9937561129811471,
+            0.9964634982328605
+          ],
+          "population_mean_score": 0.09999999999999996,
+          "exact_log_expected_e_value": 59.170937956500836,
+          "exact_expected_e_value": 4.984388020323605e+25
+        },
+        {
+          "valid_independent_configuration_n": 1000,
+          "rejections": 9998,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9998,
+          "monte_carlo_wilson_95_interval": [
+            0.9992710041559925,
+            0.9999451510726791
+          ],
+          "population_mean_score": 0.09999999999999996,
+          "exact_log_expected_e_value": 74.56314587095265,
+          "exact_expected_e_value": 2.4119194798071826e+32
+        },
+        {
+          "valid_independent_configuration_n": 1500,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.09999999999999996,
+          "exact_log_expected_e_value": 113.04366643139474,
+          "exact_expected_e_value": 1.2423402194290395e+49
+        },
+        {
+          "valid_independent_configuration_n": 2000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.09999999999999996,
+          "exact_log_expected_e_value": 151.52418699945824,
+          "exact_expected_e_value": 6.3990910372237355e+65
+        },
+        {
+          "valid_independent_configuration_n": 4000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.09999999999999996,
+          "exact_log_expected_e_value": 305.4462692717148,
+          "exact_expected_e_value": 4.504320271294334e+132
+        }
+      ]
+    },
+    {
+      "origin": "SIMULATED",
+      "delta": 0.1,
+      "discordance": 0.6,
+      "paired_difference_icc": 1.0,
+      "score_pmf": [
+        0.25,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.4,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.35
+      ],
+      "results": [
+        {
+          "valid_independent_configuration_n": 50,
+          "rejections": 129,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0129,
+          "monte_carlo_wilson_95_interval": [
+            0.010867887236225882,
+            0.015306203976487257
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 2.0814193312561686,
+          "exact_expected_e_value": 8.015837973537428
+        },
+        {
+          "valid_independent_configuration_n": 100,
+          "rejections": 257,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0257,
+          "monte_carlo_wilson_95_interval": [
+            0.02277595874247574,
+            0.028988302111948076
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 5.476583331192343,
+          "exact_expected_e_value": 239.02862895788232
+        },
+        {
+          "valid_independent_configuration_n": 150,
+          "rejections": 571,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0571,
+          "monte_carlo_wilson_95_interval": [
+            0.05271999160197177,
+            0.06182015415477354
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 9.209490894151246,
+          "exact_expected_e_value": 9991.50882879207
+        },
+        {
+          "valid_independent_configuration_n": 250,
+          "rejections": 1169,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.1169,
+          "monte_carlo_wilson_95_interval": [
+            0.11074921498119984,
+            0.12334500457041257
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 16.851752615837505,
+          "exact_expected_e_value": 20826829.96940662
+        },
+        {
+          "valid_independent_configuration_n": 410,
+          "rejections": 2711,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.2711,
+          "monte_carlo_wilson_95_interval": [
+            0.26247654582095625,
+            0.2798992486331394
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 29.156601208744142,
+          "exact_expected_e_value": 4597809952377.926
+        },
+        {
+          "valid_independent_configuration_n": 620,
+          "rejections": 5003,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.5003,
+          "monte_carlo_wilson_95_interval": [
+            0.4905019483788454,
+            0.5100978212221322
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 45.31795949796367,
+          "exact_expected_e_value": 4.8010888266576355e+19
+        },
+        {
+          "valid_independent_configuration_n": 800,
+          "rejections": 6791,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.6791,
+          "monte_carlo_wilson_95_interval": [
+            0.669883172559512,
+            0.6881792792241117
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 59.17093795650085,
+          "exact_expected_e_value": 4.984388020323676e+25
+        },
+        {
+          "valid_independent_configuration_n": 1000,
+          "rejections": 8078,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.8078,
+          "monte_carlo_wilson_95_interval": [
+            0.7999595495132422,
+            0.8154040610897691
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 74.56314587095267,
+          "exact_expected_e_value": 2.4119194798072168e+32
+        },
+        {
+          "valid_independent_configuration_n": 1500,
+          "rejections": 9611,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9611,
+          "monte_carlo_wilson_95_interval": [
+            0.9571298107140566,
+            0.9647160659885053
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 113.04366643139475,
+          "exact_expected_e_value": 1.2423402194290572e+49
+        },
+        {
+          "valid_independent_configuration_n": 2000,
+          "rejections": 9954,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9954,
+          "monte_carlo_wilson_95_interval": [
+            0.9938701942845313,
+            0.9965493401298021
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 151.52418699945827,
+          "exact_expected_e_value": 6.399091037223917e+65
+        },
+        {
+          "valid_independent_configuration_n": 4000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.09999999999999998,
+          "exact_log_expected_e_value": 305.44626927171487,
+          "exact_expected_e_value": 4.50432027129459e+132
+        }
+      ]
+    },
+    {
+      "origin": "SIMULATED",
+      "delta": 0.15,
+      "discordance": 0.2,
+      "paired_difference_icc": 0.25,
+      "score_pmf": [
+        0.006250000183105471,
+        3.515625000000006e-08,
+        2.8201904296875036e-06,
+        0.00012123046875000014,
+        0.002958884582519534,
+        0.03940122656250003,
+        0.43775613110351563,
+        0.2758085859375001,
+        0.14498534454345705,
+        0.04158205078125,
+        0.006771277221679686,
+        0.0005908710937499999,
+        0.043771542175292964
+      ],
+      "results": [
+        {
+          "valid_independent_configuration_n": 50,
+          "rejections": 2538,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.2538,
+          "monte_carlo_wilson_95_interval": [
+            0.24536619446563931,
+            0.26242288633208183
+          ],
+          "population_mean_score": 0.14999999999999997,
+          "exact_log_expected_e_value": 3.6080386723938087,
+          "exact_expected_e_value": 36.89362132910028
+        },
+        {
+          "valid_independent_configuration_n": 100,
+          "rejections": 9670,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.967,
+          "monte_carlo_wilson_95_interval": [
+            0.9633155436241365,
+            0.9703258018976515
+          ],
+          "population_mean_score": 0.14999999999999997,
+          "exact_log_expected_e_value": 9.004242638224532,
+          "exact_expected_e_value": 8137.535412098523
+        },
+        {
+          "valid_independent_configuration_n": 150,
+          "rejections": 9995,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9995,
+          "monte_carlo_wilson_95_interval": [
+            0.998829974053858,
+            0.9997864115738362
+          ],
+          "population_mean_score": 0.14999999999999997,
+          "exact_log_expected_e_value": 14.61858631456212,
+          "exact_expected_e_value": 2232396.6886069765
+        },
+        {
+          "valid_independent_configuration_n": 250,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.14999999999999997,
+          "exact_log_expected_e_value": 25.935404006117654,
+          "exact_expected_e_value": 183485963094.5661
+        },
+        {
+          "valid_independent_configuration_n": 410,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.14999999999999997,
+          "exact_log_expected_e_value": 44.06688034089133,
+          "exact_expected_e_value": 1.374051361360658e+19
+        },
+        {
+          "valid_independent_configuration_n": 620,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.14999999999999997,
+          "exact_log_expected_e_value": 67.86588966643748,
+          "exact_expected_e_value": 2.977017527366891e+29
+        },
+        {
+          "valid_independent_configuration_n": 800,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.14999999999999997,
+          "exact_log_expected_e_value": 88.26505297317294,
+          "exact_expected_e_value": 2.1529078988195698e+38
+        },
+        {
+          "valid_independent_configuration_n": 1000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.14999999999999997,
+          "exact_log_expected_e_value": 110.9307900342064,
+          "exact_expected_e_value": 1.5018618481135902e+48
+        },
+        {
+          "valid_independent_configuration_n": 1500,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.14999999999999997,
+          "exact_log_expected_e_value": 167.59513268770638,
+          "exact_expected_e_value": 6.1043766171436986e+72
+        },
+        {
+          "valid_independent_configuration_n": 2000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.14999999999999997,
+          "exact_log_expected_e_value": 224.25947534120795,
+          "exact_expected_e_value": 2.481147911893104e+97
+        },
+        {
+          "valid_independent_configuration_n": 4000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.14999999999999997,
+          "exact_log_expected_e_value": 450.9168459552142,
+          "exact_expected_e_value": 6.771704456760433e+195
+        }
+      ]
+    },
+    {
+      "origin": "SIMULATED",
+      "delta": 0.15,
+      "discordance": 0.2,
+      "paired_difference_icc": 1.0,
+      "score_pmf": [
+        0.02500000000000001,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.8,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.175
+      ],
+      "results": [
+        {
+          "valid_independent_configuration_n": 50,
+          "rejections": 1561,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.1561,
+          "monte_carlo_wilson_95_interval": [
+            0.14911850548040445,
+            0.16334560859894687
+          ],
+          "population_mean_score": 0.14999999999999997,
+          "exact_log_expected_e_value": 3.6080386723938087,
+          "exact_expected_e_value": 36.89362132910028
+        },
+        {
+          "valid_independent_configuration_n": 100,
+          "rejections": 6459,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.6459,
+          "monte_carlo_wilson_95_interval": [
+            0.6364722815594391,
+            0.6552156677159974
+          ],
+          "population_mean_score": 0.14999999999999997,
+          "exact_log_expected_e_value": 9.004242638224532,
+          "exact_expected_e_value": 8137.535412098523
+        },
+        {
+          "valid_independent_configuration_n": 150,
+          "rejections": 8984,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.8984,
+          "monte_carlo_wilson_95_interval": [
+            0.8923247019339008,
+            0.904169328164344
+          ],
+          "population_mean_score": 0.14999999999999997,
+          "exact_log_expected_e_value": 14.61858631456212,
+          "exact_expected_e_value": 2232396.6886069765
+        },
+        {
+          "valid_independent_configuration_n": 250,
+          "rejections": 9956,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9956,
+          "monte_carlo_wilson_95_interval": [
+            0.9940988218543871,
+            0.9967205589605983
+          ],
+          "population_mean_score": 0.14999999999999997,
+          "exact_log_expected_e_value": 25.935404006117654,
+          "exact_expected_e_value": 183485963094.5661
+        },
+        {
+          "valid_independent_configuration_n": 410,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.14999999999999997,
+          "exact_log_expected_e_value": 44.06688034089133,
+          "exact_expected_e_value": 1.374051361360658e+19
+        },
+        {
+          "valid_independent_configuration_n": 620,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.14999999999999997,
+          "exact_log_expected_e_value": 67.86588966643748,
+          "exact_expected_e_value": 2.977017527366891e+29
+        },
+        {
+          "valid_independent_configuration_n": 800,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.14999999999999997,
+          "exact_log_expected_e_value": 88.26505297317294,
+          "exact_expected_e_value": 2.1529078988195698e+38
+        },
+        {
+          "valid_independent_configuration_n": 1000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.14999999999999997,
+          "exact_log_expected_e_value": 110.9307900342064,
+          "exact_expected_e_value": 1.5018618481135902e+48
+        },
+        {
+          "valid_independent_configuration_n": 1500,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.14999999999999997,
+          "exact_log_expected_e_value": 167.59513268770638,
+          "exact_expected_e_value": 6.1043766171436986e+72
+        },
+        {
+          "valid_independent_configuration_n": 2000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.14999999999999997,
+          "exact_log_expected_e_value": 224.25947534120795,
+          "exact_expected_e_value": 2.481147911893104e+97
+        },
+        {
+          "valid_independent_configuration_n": 4000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.14999999999999997,
+          "exact_log_expected_e_value": 450.9168459552142,
+          "exact_expected_e_value": 6.771704456760433e+195
+        }
+      ]
+    },
+    {
+      "origin": "SIMULATED",
+      "delta": 0.15,
+      "discordance": 0.4,
+      "paired_difference_icc": 0.25,
+      "score_pmf": [
+        0.03125286102294922,
+        8.23974609375e-05,
+        0.0010265350341796874,
+        0.007234497070312498,
+        0.03169013214111328,
+        0.089493662109375,
+        0.3145526506347656,
+        0.19688605664062497,
+        0.1533802395629883,
+        0.07703292480468751,
+        0.02404719909667969,
+        0.004246461914062501,
+        0.06907438250732423
+      ],
+      "results": [
+        {
+          "valid_independent_configuration_n": 50,
+          "rejections": 1729,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.1729,
+          "monte_carlo_wilson_95_interval": [
+            0.16561414916870065,
+            0.18043706256539593
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 3.608038672393811,
+          "exact_expected_e_value": 36.893621329100355
+        },
+        {
+          "valid_independent_configuration_n": 100,
+          "rejections": 6643,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.6643,
+          "monte_carlo_wilson_95_interval": [
+            0.654982843314871,
+            0.6734909748205247
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 9.004242638224538,
+          "exact_expected_e_value": 8137.535412098567
+        },
+        {
+          "valid_independent_configuration_n": 150,
+          "rejections": 9006,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9006,
+          "monte_carlo_wilson_95_interval": [
+            0.8945810991112195,
+            0.9063112413941943
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 14.618586314562128,
+          "exact_expected_e_value": 2232396.6886069924
+        },
+        {
+          "valid_independent_configuration_n": 250,
+          "rejections": 9963,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9963,
+          "monte_carlo_wilson_95_interval": [
+            0.9949044912550173,
+            0.9973143519622489
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 25.935404006117665,
+          "exact_expected_e_value": 183485963094.56805
+        },
+        {
+          "valid_independent_configuration_n": 410,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 44.06688034089135,
+          "exact_expected_e_value": 1.3740513613606873e+19
+        },
+        {
+          "valid_independent_configuration_n": 620,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 67.86588966643751,
+          "exact_expected_e_value": 2.9770175273669756e+29
+        },
+        {
+          "valid_independent_configuration_n": 800,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 88.26505297317298,
+          "exact_expected_e_value": 2.1529078988196616e+38
+        },
+        {
+          "valid_independent_configuration_n": 1000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 110.93079003420644,
+          "exact_expected_e_value": 1.5018618481136542e+48
+        },
+        {
+          "valid_independent_configuration_n": 1500,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 167.59513268770644,
+          "exact_expected_e_value": 6.1043766171440454e+72
+        },
+        {
+          "valid_independent_configuration_n": 2000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 224.25947534120803,
+          "exact_expected_e_value": 2.4811479118933157e+97
+        },
+        {
+          "valid_independent_configuration_n": 4000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 450.9168459552144,
+          "exact_expected_e_value": 6.771704456761589e+195
+        }
+      ]
+    },
+    {
+      "origin": "SIMULATED",
+      "delta": 0.15,
+      "discordance": 0.4,
+      "paired_difference_icc": 1.0,
+      "score_pmf": [
+        0.125,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.6,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.275
+      ],
+      "results": [
+        {
+          "valid_independent_configuration_n": 50,
+          "rejections": 622,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0622,
+          "monte_carlo_wilson_95_interval": [
+            0.05763236397801853,
+            0.06710386499534587
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 3.608038672393811,
+          "exact_expected_e_value": 36.893621329100355
+        },
+        {
+          "valid_independent_configuration_n": 100,
+          "rejections": 1947,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.1947,
+          "monte_carlo_wilson_95_interval": [
+            0.1870569781378168,
+            0.20257749126731833
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 9.004242638224538,
+          "exact_expected_e_value": 8137.535412098567
+        },
+        {
+          "valid_independent_configuration_n": 150,
+          "rejections": 3862,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.3862,
+          "monte_carlo_wilson_95_interval": [
+            0.3767028104598686,
+            0.3957845875692973
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 14.618586314562128,
+          "exact_expected_e_value": 2232396.6886069924
+        },
+        {
+          "valid_independent_configuration_n": 250,
+          "rejections": 7300,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.73,
+          "monte_carlo_wilson_95_interval": [
+            0.7212114574341202,
+            0.7386119033153684
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 25.935404006117665,
+          "exact_expected_e_value": 183485963094.56805
+        },
+        {
+          "valid_independent_configuration_n": 410,
+          "rejections": 9518,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9518,
+          "monte_carlo_wilson_95_interval": [
+            0.9474257119888789,
+            0.9558273070833776
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 44.06688034089135,
+          "exact_expected_e_value": 1.3740513613606873e+19
+        },
+        {
+          "valid_independent_configuration_n": 620,
+          "rejections": 9974,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9974,
+          "monte_carlo_wilson_95_interval": [
+            0.9961929867910173,
+            0.9982250116298335
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 67.86588966643751,
+          "exact_expected_e_value": 2.9770175273669756e+29
+        },
+        {
+          "valid_independent_configuration_n": 800,
+          "rejections": 9999,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9999,
+          "monte_carlo_wilson_95_interval": [
+            0.9994337311025987,
+            0.9999823473263989
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 88.26505297317298,
+          "exact_expected_e_value": 2.1529078988196616e+38
+        },
+        {
+          "valid_independent_configuration_n": 1000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 110.93079003420644,
+          "exact_expected_e_value": 1.5018618481136542e+48
+        },
+        {
+          "valid_independent_configuration_n": 1500,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 167.59513268770644,
+          "exact_expected_e_value": 6.1043766171440454e+72
+        },
+        {
+          "valid_independent_configuration_n": 2000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 224.25947534120803,
+          "exact_expected_e_value": 2.4811479118933157e+97
+        },
+        {
+          "valid_independent_configuration_n": 4000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 450.9168459552144,
+          "exact_expected_e_value": 6.771704456761589e+195
+        }
+      ]
+    },
+    {
+      "origin": "SIMULATED",
+      "delta": 0.15,
+      "discordance": 0.6,
+      "paired_difference_icc": 0.25,
+      "score_pmf": [
+        0.056347309753417965,
+        0.0010379707031249992,
+        0.0055863006591796854,
+        0.019584755859374994,
+        0.04938926055908202,
+        0.09387551953124998,
+        0.23756888110351562,
+        0.15645919921875,
+        0.13719239044189452,
+        0.090670166015625,
+        0.043104171752929694,
+        0.013348388671875003,
+        0.09583568572998047
+      ],
+      "results": [
+        {
+          "valid_independent_configuration_n": 50,
+          "rejections": 1157,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.1157,
+          "monte_carlo_wilson_95_interval": [
+            0.1095778019806356,
+            0.12211733916706641
+          ],
+          "population_mean_score": 0.15,
+          "exact_log_expected_e_value": 3.6080386723938096,
+          "exact_expected_e_value": 36.893621329100306
+        },
+        {
+          "valid_independent_configuration_n": 100,
+          "rejections": 4165,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.4165,
+          "monte_carlo_wilson_95_interval": [
+            0.4068716659363001,
+            0.42619246179160275
+          ],
+          "population_mean_score": 0.15,
+          "exact_log_expected_e_value": 9.004242638224536,
+          "exact_expected_e_value": 8137.535412098552
+        },
+        {
+          "valid_independent_configuration_n": 150,
+          "rejections": 6931,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.6931,
+          "monte_carlo_wilson_95_interval": [
+            0.6839877799094782,
+            0.7020639199197665
+          ],
+          "population_mean_score": 0.15,
+          "exact_log_expected_e_value": 14.618586314562124,
+          "exact_expected_e_value": 2232396.6886069844
+        },
+        {
+          "valid_independent_configuration_n": 250,
+          "rejections": 9542,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9542,
+          "monte_carlo_wilson_95_interval": [
+            0.9499253373865503,
+            0.9581258384935271
+          ],
+          "population_mean_score": 0.15,
+          "exact_log_expected_e_value": 25.935404006117658,
+          "exact_expected_e_value": 183485963094.56674
+        },
+        {
+          "valid_independent_configuration_n": 410,
+          "rejections": 9989,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9989,
+          "monte_carlo_wilson_95_interval": [
+            0.9980311970799692,
+            0.9993856493457697
+          ],
+          "population_mean_score": 0.15,
+          "exact_log_expected_e_value": 44.06688034089134,
+          "exact_expected_e_value": 1.3740513613606679e+19
+        },
+        {
+          "valid_independent_configuration_n": 620,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.15,
+          "exact_log_expected_e_value": 67.8658896664375,
+          "exact_expected_e_value": 2.9770175273669334e+29
+        },
+        {
+          "valid_independent_configuration_n": 800,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.15,
+          "exact_log_expected_e_value": 88.26505297317296,
+          "exact_expected_e_value": 2.1529078988196004e+38
+        },
+        {
+          "valid_independent_configuration_n": 1000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.15,
+          "exact_log_expected_e_value": 110.93079003420641,
+          "exact_expected_e_value": 1.5018618481136117e+48
+        },
+        {
+          "valid_independent_configuration_n": 1500,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.15,
+          "exact_log_expected_e_value": 167.59513268770638,
+          "exact_expected_e_value": 6.1043766171436986e+72
+        },
+        {
+          "valid_independent_configuration_n": 2000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.15,
+          "exact_log_expected_e_value": 224.25947534120797,
+          "exact_expected_e_value": 2.4811479118931745e+97
+        },
+        {
+          "valid_independent_configuration_n": 4000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.15,
+          "exact_log_expected_e_value": 450.9168459552143,
+          "exact_expected_e_value": 6.771704456760818e+195
+        }
+      ]
+    },
+    {
+      "origin": "SIMULATED",
+      "delta": 0.15,
+      "discordance": 0.6,
+      "paired_difference_icc": 1.0,
+      "score_pmf": [
+        0.22499999999999998,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.4,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.375
+      ],
+      "results": [
+        {
+          "valid_independent_configuration_n": 50,
+          "rejections": 349,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0349,
+          "monte_carlo_wilson_95_interval": [
+            0.03147780239685026,
+            0.03867939288755309
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 3.608038672393811,
+          "exact_expected_e_value": 36.893621329100355
+        },
+        {
+          "valid_independent_configuration_n": 100,
+          "rejections": 998,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0998,
+          "monte_carlo_wilson_95_interval": [
+            0.09407813237565461,
+            0.10582921992023493
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 9.004242638224538,
+          "exact_expected_e_value": 8137.535412098567
+        },
+        {
+          "valid_independent_configuration_n": 150,
+          "rejections": 2024,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.2024,
+          "monte_carlo_wilson_95_interval": [
+            0.19464004496368897,
+            0.2103885108665377
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 14.618586314562128,
+          "exact_expected_e_value": 2232396.6886069924
+        },
+        {
+          "valid_independent_configuration_n": 250,
+          "rejections": 4396,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.4396,
+          "monte_carlo_wilson_95_interval": [
+            0.4298969792785883,
+            0.4493494077245893
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 25.935404006117665,
+          "exact_expected_e_value": 183485963094.56805
+        },
+        {
+          "valid_independent_configuration_n": 410,
+          "rejections": 7603,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.7603,
+          "monte_carlo_wilson_95_interval": [
+            0.7518339615846221,
+            0.7685661288636036
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 44.06688034089135,
+          "exact_expected_e_value": 1.3740513613606873e+19
+        },
+        {
+          "valid_independent_configuration_n": 620,
+          "rejections": 9512,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9512,
+          "monte_carlo_wilson_95_interval": [
+            0.9468012612097013,
+            0.9552522186606002
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 67.86588966643751,
+          "exact_expected_e_value": 2.9770175273669756e+29
+        },
+        {
+          "valid_independent_configuration_n": 800,
+          "rejections": 9899,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9899,
+          "monte_carlo_wilson_95_interval": [
+            0.9877434785006571,
+            0.9916802798957538
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 88.26505297317298,
+          "exact_expected_e_value": 2.1529078988196616e+38
+        },
+        {
+          "valid_independent_configuration_n": 1000,
+          "rejections": 9980,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.998,
+          "monte_carlo_wilson_95_interval": [
+            0.9969126493353494,
+            0.9987048882874566
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 110.93079003420644,
+          "exact_expected_e_value": 1.5018618481136542e+48
+        },
+        {
+          "valid_independent_configuration_n": 1500,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 167.59513268770644,
+          "exact_expected_e_value": 6.1043766171440454e+72
+        },
+        {
+          "valid_independent_configuration_n": 2000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 224.25947534120803,
+          "exact_expected_e_value": 2.4811479118933157e+97
+        },
+        {
+          "valid_independent_configuration_n": 4000,
+          "rejections": 10000,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 1.0,
+          "monte_carlo_wilson_95_interval": [
+            0.9996160016293234,
+            1.0
+          ],
+          "population_mean_score": 0.15000000000000002,
+          "exact_log_expected_e_value": 450.9168459552144,
+          "exact_expected_e_value": 6.771704456761589e+195
+        }
+      ]
+    }
+  ],
+  "stress_scenarios": [
+    {
+      "name": "symmetric_null_iid",
+      "kind": "NULL_STRESS",
+      "origin": "SIMULATED",
+      "score_pmfs": [
+        [
+          0.050048,
+          0.0008640000000000004,
+          0.0067680000000000014,
+          0.030240000000000003,
+          0.08496000000000001,
+          0.156384,
+          0.341472,
+          0.156384,
+          0.08496000000000001,
+          0.030240000000000006,
+          0.0067680000000000014,
+          0.0008640000000000004,
+          0.050048
+        ]
+      ],
+      "results": [
+        {
+          "valid_independent_configuration_n": 50,
+          "rejections": 1,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0001,
+          "monte_carlo_wilson_95_interval": [
+            1.765267360112231e-05,
+            0.0005662688974013381
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        },
+        {
+          "valid_independent_configuration_n": 100,
+          "rejections": 7,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0007,
+          "monte_carlo_wilson_95_interval": [
+            0.0003391263316879597,
+            0.0014443344412696886
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        },
+        {
+          "valid_independent_configuration_n": 150,
+          "rejections": 10,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.001,
+          "monte_carlo_wilson_95_interval": [
+            0.0005432859864972464,
+            0.0018399443874379962
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        },
+        {
+          "valid_independent_configuration_n": 250,
+          "rejections": 11,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0011,
+          "monte_carlo_wilson_95_interval": [
+            0.0006143506542303221,
+            0.0019688029200307855
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        },
+        {
+          "valid_independent_configuration_n": 410,
+          "rejections": 12,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0012,
+          "monte_carlo_wilson_95_interval": [
+            0.0006866043187699607,
+            0.002096472455817011
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        },
+        {
+          "valid_independent_configuration_n": 620,
+          "rejections": 4,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0004,
+          "monte_carlo_wilson_95_interval": [
+            0.00015556283662307484,
+            0.0010281283353569795
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        },
+        {
+          "valid_independent_configuration_n": 800,
+          "rejections": 8,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0008,
+          "monte_carlo_wilson_95_interval": [
+            0.0004054337198968799,
+            0.0015779502533866333
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        },
+        {
+          "valid_independent_configuration_n": 1000,
+          "rejections": 3,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0003,
+          "monte_carlo_wilson_95_interval": [
+            0.00010203219941781012,
+            0.0008817357722363795
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        },
+        {
+          "valid_independent_configuration_n": 1500,
+          "rejections": 6,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0006,
+          "monte_carlo_wilson_95_interval": [
+            0.0002750134763309977,
+            0.001308524096300786
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        },
+        {
+          "valid_independent_configuration_n": 2000,
+          "rejections": 5,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0005,
+          "monte_carlo_wilson_95_interval": [
+            0.00021358842616382576,
+            0.0011700259461420934
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        },
+        {
+          "valid_independent_configuration_n": 4000,
+          "rejections": 9,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0009,
+          "monte_carlo_wilson_95_interval": [
+            0.00047357706058500574,
+            0.0017097301130243718
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        }
+      ]
+    },
+    {
+      "name": "symmetric_null_perfect_dependence",
+      "kind": "NULL_STRESS",
+      "origin": "SIMULATED",
+      "score_pmfs": [
+        [
+          0.3,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.4,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.3
+        ]
+      ],
+      "results": [
+        {
+          "valid_independent_configuration_n": 50,
+          "rejections": 17,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0017,
+          "monte_carlo_wilson_95_interval": [
+            0.0010617073611205116,
+            0.0027209854150957837
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        },
+        {
+          "valid_independent_configuration_n": 100,
+          "rejections": 12,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0012,
+          "monte_carlo_wilson_95_interval": [
+            0.0006866043187699607,
+            0.002096472455817011
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        },
+        {
+          "valid_independent_configuration_n": 150,
+          "rejections": 10,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.001,
+          "monte_carlo_wilson_95_interval": [
+            0.0005432859864972464,
+            0.0018399443874379962
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        },
+        {
+          "valid_independent_configuration_n": 250,
+          "rejections": 7,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0007,
+          "monte_carlo_wilson_95_interval": [
+            0.0003391263316879597,
+            0.0014443344412696886
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        },
+        {
+          "valid_independent_configuration_n": 410,
+          "rejections": 7,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0007,
+          "monte_carlo_wilson_95_interval": [
+            0.0003391263316879597,
+            0.0014443344412696886
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        },
+        {
+          "valid_independent_configuration_n": 620,
+          "rejections": 5,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0005,
+          "monte_carlo_wilson_95_interval": [
+            0.00021358842616382576,
+            0.0011700259461420934
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        },
+        {
+          "valid_independent_configuration_n": 800,
+          "rejections": 7,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0007,
+          "monte_carlo_wilson_95_interval": [
+            0.0003391263316879597,
+            0.0014443344412696886
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        },
+        {
+          "valid_independent_configuration_n": 1000,
+          "rejections": 4,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0004,
+          "monte_carlo_wilson_95_interval": [
+            0.00015556283662307484,
+            0.0010281283353569795
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        },
+        {
+          "valid_independent_configuration_n": 1500,
+          "rejections": 5,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0005,
+          "monte_carlo_wilson_95_interval": [
+            0.00021358842616382576,
+            0.0011700259461420934
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        },
+        {
+          "valid_independent_configuration_n": 2000,
+          "rejections": 3,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0003,
+          "monte_carlo_wilson_95_interval": [
+            0.00010203219941781012,
+            0.0008817357722363795
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        },
+        {
+          "valid_independent_configuration_n": 4000,
+          "rejections": 9,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0009,
+          "monte_carlo_wilson_95_interval": [
+            0.00047357706058500574,
+            0.0017097301130243718
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        }
+      ]
+    },
+    {
+      "name": "asymmetric_zero_mean_null",
+      "kind": "NULL_STRESS",
+      "origin": "SIMULATED",
+      "score_pmfs": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.8571428571428571,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.14285714285714285
+        ]
+      ],
+      "results": [
+        {
+          "valid_independent_configuration_n": 50,
+          "rejections": 0,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0,
+          "monte_carlo_wilson_95_interval": [
+            0.0,
+            0.00038399837067659573
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        },
+        {
+          "valid_independent_configuration_n": 100,
+          "rejections": 5,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0005,
+          "monte_carlo_wilson_95_interval": [
+            0.00021358842616382576,
+            0.0011700259461420934
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        },
+        {
+          "valid_independent_configuration_n": 150,
+          "rejections": 2,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0002,
+          "monte_carlo_wilson_95_interval": [
+            5.484892732085777e-05,
+            0.0007289958440074673
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        },
+        {
+          "valid_independent_configuration_n": 250,
+          "rejections": 9,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0009,
+          "monte_carlo_wilson_95_interval": [
+            0.00047357706058500574,
+            0.0017097301130243718
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        },
+        {
+          "valid_independent_configuration_n": 410,
+          "rejections": 7,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0007,
+          "monte_carlo_wilson_95_interval": [
+            0.0003391263316879597,
+            0.0014443344412696886
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        },
+        {
+          "valid_independent_configuration_n": 620,
+          "rejections": 2,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0002,
+          "monte_carlo_wilson_95_interval": [
+            5.484892732085777e-05,
+            0.0007289958440074673
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        },
+        {
+          "valid_independent_configuration_n": 800,
+          "rejections": 4,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0004,
+          "monte_carlo_wilson_95_interval": [
+            0.00015556283662307484,
+            0.0010281283353569795
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        },
+        {
+          "valid_independent_configuration_n": 1000,
+          "rejections": 11,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0011,
+          "monte_carlo_wilson_95_interval": [
+            0.0006143506542303221,
+            0.0019688029200307855
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        },
+        {
+          "valid_independent_configuration_n": 1500,
+          "rejections": 6,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0006,
+          "monte_carlo_wilson_95_interval": [
+            0.0002750134763309977,
+            0.001308524096300786
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        },
+        {
+          "valid_independent_configuration_n": 2000,
+          "rejections": 7,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0007,
+          "monte_carlo_wilson_95_interval": [
+            0.0003391263316879597,
+            0.0014443344412696886
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        },
+        {
+          "valid_independent_configuration_n": 4000,
+          "rejections": 4,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0004,
+          "monte_carlo_wilson_95_interval": [
+            0.00015556283662307484,
+            0.0010281283353569795
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": 0.0,
+          "exact_expected_e_value": 1.0
+        }
+      ]
+    },
+    {
+      "name": "heterogeneous_balanced_family_weak_null",
+      "kind": "NULL_STRESS",
+      "allocation": "equal blocks; remainder assigned in declared order so total mean<=0",
+      "origin": "SIMULATED",
+      "score_pmfs": [
+        [
+          0.03750854296875,
+          0.0002733750000000003,
+          0.0036620859375000032,
+          0.02637562500000002,
+          0.10855423828125005,
+          0.24740775000000007,
+          0.46816432812500014,
+          0.08246925000000002,
+          0.012061582031250004,
+          0.0009768750000000003,
+          4.5210937500000024e-05,
+          1.1250000000000007e-06,
+          0.01250001171875
+        ],
+        [
+          0.35,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.4,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.25
+        ],
+        [
+          0.04377154217529297,
+          0.00044315332031250027,
+          0.003964639526367189,
+          0.020213217773437507,
+          0.06472032989501952,
+          0.135538470703125,
+          0.33839969165039063,
+          0.174263748046875,
+          0.10698666778564453,
+          0.04296045410156251,
+          0.01083381921386719,
+          0.0015569560546875002,
+          0.05634730975341797
+        ],
+        [
+          0.02500000000000001,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.8,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.175
+        ]
+      ],
+      "results": [
+        {
+          "valid_independent_configuration_n": 50,
+          "rejections": 3,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0003,
+          "monte_carlo_wilson_95_interval": [
+            0.00010203219941781012,
+            0.0008817357722363795
+          ],
+          "population_mean_score": -0.004000000000000001,
+          "exact_log_expected_e_value": -0.07793046199493628,
+          "exact_expected_e_value": 0.9250287489609164
+        },
+        {
+          "valid_independent_configuration_n": 100,
+          "rejections": 2,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0002,
+          "monte_carlo_wilson_95_interval": [
+            5.484892732085777e-05,
+            0.0007289958440074673
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": -0.061914581893155796,
+          "exact_expected_e_value": 0.9399631732368432
+        },
+        {
+          "valid_independent_configuration_n": 150,
+          "rejections": 3,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0003,
+          "monte_carlo_wilson_95_interval": [
+            0.00010203219941781012,
+            0.0008817357722363795
+          ],
+          "population_mean_score": -0.0013333333333333316,
+          "exact_log_expected_e_value": -0.13071582543182744,
+          "exact_expected_e_value": 0.8774670927965718
+        },
+        {
+          "valid_independent_configuration_n": 250,
+          "rejections": 2,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0002,
+          "monte_carlo_wilson_95_interval": [
+            5.484892732085777e-05,
+            0.0007289958440074673
+          ],
+          "population_mean_score": -0.000800000000000006,
+          "exact_log_expected_e_value": -0.1755914697632409,
+          "exact_expected_e_value": 0.8389606541312816
+        },
+        {
+          "valid_independent_configuration_n": 410,
+          "rejections": 7,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0007,
+          "monte_carlo_wilson_95_interval": [
+            0.0003391263316879597,
+            0.0014443344412696886
+          ],
+          "population_mean_score": -0.00048780487804877875,
+          "exact_log_expected_e_value": -0.2346566627820284,
+          "exact_expected_e_value": 0.7908423286266116
+        },
+        {
+          "valid_independent_configuration_n": 620,
+          "rejections": 4,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0004,
+          "monte_carlo_wilson_95_interval": [
+            0.00015556283662307484,
+            0.0010281283353569795
+          ],
+          "population_mean_score": 4.2976375146780255e-18,
+          "exact_log_expected_e_value": -0.2653583140201479,
+          "exact_expected_e_value": 0.7669310985721348
+        },
+        {
+          "valid_independent_configuration_n": 800,
+          "rejections": 9,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0009,
+          "monte_carlo_wilson_95_interval": [
+            0.00047357706058500574,
+            0.0017097301130243718
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": -0.30922064454787745,
+          "exact_expected_e_value": 0.7340187949123207
+        },
+        {
+          "valid_independent_configuration_n": 1000,
+          "rejections": 1,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0001,
+          "monte_carlo_wilson_95_interval": [
+            1.765267360112231e-05,
+            0.0005662688974013381
+          ],
+          "population_mean_score": 3.552713678800501e-18,
+          "exact_log_expected_e_value": -0.349626525197804,
+          "exact_expected_e_value": 0.704951322115905
+        },
+        {
+          "valid_independent_configuration_n": 1500,
+          "rejections": 5,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0005,
+          "monte_carlo_wilson_95_interval": [
+            0.00021358842616382576,
+            0.0011700259461420934
+          ],
+          "population_mean_score": 0.0,
+          "exact_log_expected_e_value": -0.4273572538820837,
+          "exact_expected_e_value": 0.6522304987230624
+        },
+        {
+          "valid_independent_configuration_n": 2000,
+          "rejections": 4,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0004,
+          "monte_carlo_wilson_95_interval": [
+            0.00015556283662307484,
+            0.0010281283353569795
+          ],
+          "population_mean_score": 3.552713678800501e-18,
+          "exact_log_expected_e_value": -0.4861815495434626,
+          "exact_expected_e_value": 0.6149701496282263
+        },
+        {
+          "valid_independent_configuration_n": 4000,
+          "rejections": 6,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0006,
+          "monte_carlo_wilson_95_interval": [
+            0.0002750134763309977,
+            0.001308524096300786
+          ],
+          "population_mean_score": 3.552713678800501e-18,
+          "exact_log_expected_e_value": -0.642942352439529,
+          "exact_expected_e_value": 0.525743224156528
+        }
+      ]
+    },
+    {
+      "name": "ten_point_effect_five_percent_unresolved_clusters",
+      "kind": "MISSING_ANNOTATION_SENSITIVITY",
+      "origin": "SIMULATED",
+      "score_pmfs": [
+        [
+          0.0856331158203125,
+          0.0001947796875000001,
+          0.002028955078125001,
+          0.012011414062500003,
+          0.0444882216796875,
+          0.10721539687500001,
+          0.31283964609375,
+          0.17869232812499994,
+          0.12357839355468746,
+          0.05560839843749999,
+          0.015655517578125,
+          0.0025048828125,
+          0.0595489501953125
+        ]
+      ],
+      "results": [
+        {
+          "valid_independent_configuration_n": 50,
+          "rejections": 37,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0037,
+          "monte_carlo_wilson_95_interval": [
+            0.002685648037750953,
+            0.005095508744982636
+          ],
+          "population_mean_score": 0.044999999999999964,
+          "exact_log_expected_e_value": 0.722046987433625,
+          "exact_expected_e_value": 2.0586429167471
+        },
+        {
+          "valid_independent_configuration_n": 100,
+          "rejections": 102,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0102,
+          "monte_carlo_wilson_95_interval": [
+            0.00841015237783062,
+            0.012366012426084172
+          ],
+          "population_mean_score": 0.044999999999999964,
+          "exact_log_expected_e_value": 1.8402644988948196,
+          "exact_expected_e_value": 6.298203908709162
+        },
+        {
+          "valid_independent_configuration_n": 150,
+          "rejections": 195,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0195,
+          "monte_carlo_wilson_95_interval": [
+            0.016968632494305403,
+            0.022400389939914802
+          ],
+          "population_mean_score": 0.044999999999999964,
+          "exact_log_expected_e_value": 3.277496948721962,
+          "exact_expected_e_value": 26.50933536077326
+        },
+        {
+          "valid_independent_configuration_n": 250,
+          "rejections": 488,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0488,
+          "monte_carlo_wilson_95_interval": [
+            0.04474778133939989,
+            0.05319873879029866
+          ],
+          "population_mean_score": 0.044999999999999964,
+          "exact_log_expected_e_value": 6.5688030062457745,
+          "exact_expected_e_value": 712.5164547383683
+        },
+        {
+          "valid_independent_configuration_n": 410,
+          "rejections": 1131,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.1131,
+          "monte_carlo_wilson_95_interval": [
+            0.10704048302756106,
+            0.11945665491166849
+          ],
+          "population_mean_score": 0.044999999999999964,
+          "exact_log_expected_e_value": 12.131090698094688,
+          "exact_expected_e_value": 185552.04692577344
+        },
+        {
+          "valid_independent_configuration_n": 620,
+          "rejections": 2313,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.2313,
+          "monte_carlo_wilson_95_interval": [
+            0.22313966564188126,
+            0.2396666950825203
+          ],
+          "population_mean_score": 0.044999999999999964,
+          "exact_log_expected_e_value": 19.53421753588316,
+          "exact_expected_e_value": 304510928.9352627
+        },
+        {
+          "valid_independent_configuration_n": 800,
+          "rejections": 3401,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.3401,
+          "monte_carlo_wilson_95_interval": [
+            0.33087779812669893,
+            0.34944500455224337
+          ],
+          "population_mean_score": 0.044999999999999964,
+          "exact_log_expected_e_value": 25.896750346645785,
+          "exact_expected_e_value": 176528883645.14194
+        },
+        {
+          "valid_independent_configuration_n": 1000,
+          "rejections": 4798,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.4798,
+          "monte_carlo_wilson_95_interval": [
+            0.47001781467627757,
+            0.4895976988578976
+          ],
+          "population_mean_score": 0.044999999999999964,
+          "exact_log_expected_e_value": 32.96941101423508,
+          "exact_expected_e_value": 208177253753188.6
+        },
+        {
+          "valid_independent_configuration_n": 1500,
+          "rejections": 7460,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.746,
+          "monte_carlo_wilson_95_interval": [
+            0.7373749754203824,
+            0.7544360973812447
+          ],
+          "population_mean_score": 0.044999999999999964,
+          "exact_log_expected_e_value": 50.65282255343548,
+          "exact_expected_e_value": 9.95958695704627e+21
+        },
+        {
+          "valid_independent_configuration_n": 2000,
+          "rejections": 8990,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.899,
+          "monte_carlo_wilson_95_interval": [
+            0.8929399967749085,
+            0.9047535725252915
+          ],
+          "population_mean_score": 0.044999999999999964,
+          "exact_log_expected_e_value": 68.33639242817037,
+          "exact_expected_e_value": 4.765606119085343e+29
+        },
+        {
+          "valid_independent_configuration_n": 4000,
+          "rejections": 9993,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.9993,
+          "monte_carlo_wilson_95_interval": [
+            0.9985556655587302,
+            0.9996608736683119
+          ],
+          "population_mean_score": 0.044999999999999964,
+          "exact_log_expected_e_value": 139.07068007636678,
+          "exact_expected_e_value": 2.4982100532126425e+60
+        }
+      ]
+    },
+    {
+      "name": "ten_point_effect_ten_percent_unresolved_clusters",
+      "kind": "MISSING_ANNOTATION_SENSITIVITY",
+      "origin": "SIMULATED",
+      "score_pmfs": [
+        [
+          0.133757688671875,
+          0.00018452812500000012,
+          0.001922167968750001,
+          0.011379234375000005,
+          0.04214673632812501,
+          0.10157248125000001,
+          0.2963744015625,
+          0.16928746874999998,
+          0.11707426757812497,
+          0.05268164062499999,
+          0.01483154296875,
+          0.002373046875,
+          0.056414794921875004
+        ]
+      ],
+      "results": [
+        {
+          "valid_independent_configuration_n": 50,
+          "rejections": 2,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0002,
+          "monte_carlo_wilson_95_interval": [
+            5.484892732085777e-05,
+            0.0007289958440074673
+          ],
+          "population_mean_score": -0.010000000000000035,
+          "exact_log_expected_e_value": -0.11622487323239633,
+          "exact_expected_e_value": 0.8902750017687158
+        },
+        {
+          "valid_independent_configuration_n": 100,
+          "rejections": 3,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0003,
+          "monte_carlo_wilson_95_interval": [
+            0.00010203219941781012,
+            0.0008817357722363795
+          ],
+          "population_mean_score": -0.010000000000000035,
+          "exact_log_expected_e_value": -0.2192608292630271,
+          "exact_expected_e_value": 0.8031122156652845
+        },
+        {
+          "valid_independent_configuration_n": 150,
+          "rejections": 3,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0003,
+          "monte_carlo_wilson_95_interval": [
+            0.00010203219941781012,
+            0.0008817357722363795
+          ],
+          "population_mean_score": -0.010000000000000037,
+          "exact_log_expected_e_value": -0.3110103494863557,
+          "exact_expected_e_value": 0.7327062926963126
+        },
+        {
+          "valid_independent_configuration_n": 250,
+          "rejections": 1,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0001,
+          "monte_carlo_wilson_95_interval": [
+            1.765267360112231e-05,
+            0.0005662688974013381
+          ],
+          "population_mean_score": -0.010000000000000037,
+          "exact_log_expected_e_value": -0.46731153502562767,
+          "exact_expected_e_value": 0.6266848257248189
+        },
+        {
+          "valid_independent_configuration_n": 410,
+          "rejections": 1,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0001,
+          "monte_carlo_wilson_95_interval": [
+            1.765267360112231e-05,
+            0.0005662688974013381
+          ],
+          "population_mean_score": -0.010000000000000037,
+          "exact_log_expected_e_value": -0.6639047130597473,
+          "exact_expected_e_value": 0.5148371133729145
+        },
+        {
+          "valid_independent_configuration_n": 620,
+          "rejections": 1,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0001,
+          "monte_carlo_wilson_95_interval": [
+            1.765267360112231e-05,
+            0.0005662688974013381
+          ],
+          "population_mean_score": -0.010000000000000037,
+          "exact_log_expected_e_value": -0.8614196513889899,
+          "exact_expected_e_value": 0.42256176590065986
+        },
+        {
+          "valid_independent_configuration_n": 800,
+          "rejections": 0,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0,
+          "monte_carlo_wilson_95_interval": [
+            0.0,
+            0.00038399837067659573
+          ],
+          "population_mean_score": -0.010000000000000035,
+          "exact_log_expected_e_value": -0.9984297312225447,
+          "exact_expected_e_value": 0.36845756455754086
+        },
+        {
+          "valid_independent_configuration_n": 1000,
+          "rejections": 0,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0,
+          "monte_carlo_wilson_95_interval": [
+            0.0,
+            0.00038399837067659573
+          ],
+          "population_mean_score": -0.010000000000000037,
+          "exact_log_expected_e_value": -1.128576292184778,
+          "exact_expected_e_value": 0.3234934889345714
+        },
+        {
+          "valid_independent_configuration_n": 1500,
+          "rejections": 0,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0,
+          "monte_carlo_wilson_95_interval": [
+            0.0,
+            0.00038399837067659573
+          ],
+          "population_mean_score": -0.010000000000000037,
+          "exact_log_expected_e_value": -1.391331381353486,
+          "exact_expected_e_value": 0.24874391107002375
+        },
+        {
+          "valid_independent_configuration_n": 2000,
+          "rejections": 1,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0001,
+          "monte_carlo_wilson_95_interval": [
+            1.765267360112231e-05,
+            0.0005662688974013381
+          ],
+          "population_mean_score": -0.010000000000000037,
+          "exact_log_expected_e_value": -1.5995247323510524,
+          "exact_expected_e_value": 0.20199249568383215
+        },
+        {
+          "valid_independent_configuration_n": 4000,
+          "rejections": 0,
+          "repetitions": 10000,
+          "estimated_rejection_probability": 0.0,
+          "monte_carlo_wilson_95_interval": [
+            0.0,
+            0.00038399837067659573
+          ],
+          "population_mean_score": -0.010000000000000037,
+          "exact_log_expected_e_value": -2.179382970985672,
+          "exact_expected_e_value": 0.11311130206796302
+        }
+      ]
+    }
+  ],
+  "primary_test_candidate": "At the single fixed N, reject only if equally weighted mixture product(1+lambda*X_i) >= 1/alpha.",
+  "null": "Independent possibly non-identical bounded configuration scores; average of their expected scores <=0.",
+  "validity": "For each fixed lambda, independence gives E[product]=product(1+lambda*E[X_i]); AM-GM bounds this by (1+lambda*mean(E[X_i]))^N<=1. Fixed mixture expectation<=1; Markov gives type-I<=alpha.",
+  "sequential_validity_claimed": false,
+  "missing_annotation_model": "Independently unresolved whole-configuration judgments contribute adverse score -1 rather than being dropped. At true effect .1, 10% missing reduces mean to -.01; no advantage should be manufactured.",
+  "uncertainty": "Wilson 95% intervals measure finite Monte Carlo error for each row, not uncertainty about real effects or joint guarantees over all design scenarios.",
+  "limitations": [
+    "All effects and dependence models are hypothetical; no development recordings or response banks are read.",
+    "N is independent sampled configurations, not six questions or repeated recordings. Valid sampling and measurement remain separate study requirements.",
+    "This fixed-N e-value is valid for a weak average null. It is not asserted to be an e-process under ordered heterogeneous-family draws; optional stopping is not authorized.",
+    "Mixture lambdas and sample size must be fixed before confirmation. Simulation-based planning does not freeze or activate inference.",
+    "Fixed lambda mixture may be less powerful than an approximately normal score test; simulation must not be interpreted as validating the normal planner or retained sequential monitor.",
+    "A proposed mixture-N grid has no sample ceiling. Lack of 90% power at 4000 calls for further planning or development rather than an automatic stop.",
+    "Family mean differences, within-question dependence and missing annotation probabilities are assumed, not measured. Replication and technical-invalid inflation require separate additional configurations."
+  ],
+  "confirmation_n": 0,
+  "replication_n": 0,
+  "alpha_consumed": 0,
+  "inferential_activation_authorized": false,
+  "confirmation_n_selected": null
+}

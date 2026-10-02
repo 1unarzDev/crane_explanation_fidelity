@@ -1,0 +1,36 @@
+{
+  "development_only": true,
+  "confirmation_semantic_n": 0,
+  "alpha_spent": 0.0,
+  "medium": {
+    "model": "gpt-6-astra",
+    "effort": "medium",
+    "timeout_seconds": 300,
+    "planned_calls": 16,
+    "completed_calls": 16,
+    "valid_calls": 0,
+    "timeout_calls": 16,
+    "quality_assessed": false
+  },
+  "tiny_no_study_data_probes": [
+    {
+      "status": "FAILED_NO_RETRY",
+      "timeout": true,
+      "latency_ms": 90100.200183
+    },
+    {
+      "status": "FAILED_NO_RETRY",
+      "timeout": true,
+      "latency_ms": 90100.269714
+    }
+  ],
+  "login_status": {
+    "return_code": 0,
+    "chatgpt_login_reported": true,
+    "credentials_retained": false
+  },
+  "official_command_reference": "https://developers.openai.com/codex/noninteractive/",
+  "interpretation": "Timeouts occur even for tiny prompts and a lower reasoning setting. Cause not established; larger qualified high-effort calls still return valid scores. Do not claim the medium scorer is qualified. Keep the qualified high-effort procedure and limit future overall model concurrency to four.",
+  "baseline_unchanged": true,
+  "b4_unchanged": true
+}

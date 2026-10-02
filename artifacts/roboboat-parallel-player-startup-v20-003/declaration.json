@@ -1,0 +1,89 @@
+{
+  "build": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-command-shutdown-v17/full-build-v1.json",
+    "sha256": "5f35c10988645dcc98fb7c38bf28b6255c5dfd788bb25aad0ba939244125815c"
+  },
+  "cases": [
+    {
+      "id": "parallel-player-1",
+      "initial_pose_cli_option": "--crane-roboboat-start-pose",
+      "initial_pose_request": {
+        "x": -2.0,
+        "y": -5.0,
+        "yaw": 0.25
+      },
+      "initial_pose_units": {
+        "frame": "odom",
+        "x": "m",
+        "y": "m",
+        "yaw": "rad"
+      },
+      "seed": 43220,
+      "worker_id": 20
+    },
+    {
+      "id": "parallel-player-2",
+      "initial_pose_cli_option": "--crane-roboboat-start-pose",
+      "initial_pose_request": {
+        "x": -2.5,
+        "y": -6.0,
+        "yaw": -0.25
+      },
+      "initial_pose_units": {
+        "frame": "odom",
+        "x": "m",
+        "y": "m",
+        "yaw": "rad"
+      },
+      "seed": 43221,
+      "worker_id": 21
+    }
+  ],
+  "confirmation_n": 0,
+  "design": "Both fixed cases once. All results/failures retained. No outcome retries.",
+  "duration_s": 20,
+  "independent_n_added": 0,
+  "mode": "two simultaneous train-gpu players; original depth/signatures; ROS disabled",
+  "monitor_period_s": 0.5,
+  "render_lock": "/tmp/crane-roboboat-population-render.lock",
+  "replication_n": 0,
+  "root": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-parallel-player-startup-v20-003",
+  "schema": "roboboat-parallel-player-declaration/v20",
+  "scope": "Window/FPS ownership and rendered aquatic startup benchmark only. No ROS/command/navigation isolation, sensing equivalence or throughput qualification.",
+  "sources": [
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/probe_roboboat_parallel_players_v20.py",
+      "sha256": "177add604805ca22495046da5d6b087469e349cbd6a6aab5ad276151f5b7408e"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/scripts/run_roboboat_hidden_render_v4.sh",
+      "sha256": "95610d6c508d31fa2dbd4efa2a029eb4f8c152f223fa3db7cea97a7f0dcc791b"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/roboboat_owned_player_bundle_v1.py",
+      "sha256": "68cf6c3a92800d5f4e97510e76b8a74d311eaa2384353fd78edaaf73594a7f37"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/roboboat_initial_pose_contract_v1.py",
+      "sha256": "2f9b299be0bb149531e51ea0e8e5218a6c7e94626ed857ff3313812e9e8ddc78"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/audit_roboboat_frame_timing_v1.py",
+      "sha256": "9b424539d5ad025c745eca2483ba369768368334c9ea708ce62474491dfc8e80"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/roboboat_hidden_render_v4.py",
+      "sha256": "4b63b099b5621d5b7d03b5f9018debec9f0a786c4db6f47492bf62314473c266"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/roboboat_render_fps_lease_v1.py",
+      "sha256": "c7a478d87ee10d24d26923a1aac23e5930bdaabd16b282abbc0f05e116ec2d1b"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/build_roboboat_terminal_batch.py",
+      "sha256": "98b3c22241aecf30a1ae42b8ad52a94b8df17b802aa9e7825802d8fcc36c8362"
+    }
+  ],
+  "timeout_s_after_gate": 120,
+  "warmup_s": 3
+}

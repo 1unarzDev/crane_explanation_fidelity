@@ -1,0 +1,52 @@
+{
+  "case": "output-b",
+  "command": [
+    "/home/lunarz/worktrees/roboboat-terminal-evidence/scripts/run_roboboat_hidden_render_v4.sh",
+    "--probe-only",
+    "--probe-hold-seconds",
+    "5",
+    "--audit-path",
+    "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-parallel-render-ownership-v14-001/output-b/render-audit.json"
+  ],
+  "pid": 1060360,
+  "independent_n_added": 0,
+  "return_code": 0,
+  "audit": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-parallel-render-ownership-v14-001/output-b/render-audit.json",
+    "sha256": "b7a9687e70a89a3137fc7dd0746f9d937a8e18e657e0e8e4ba5a08c4fb11e5d9"
+  },
+  "report": {
+    "schema": "roboboat-hidden-render/v4-development",
+    "owned_output": "CRANE-BOAT-v4-319a293ec41e4608ae36bfc53155295b",
+    "owned_workspace": "1960360",
+    "expected_class": null,
+    "original_fps": 15,
+    "cleanup_errors": [],
+    "confirmation_n": 0,
+    "physics_equivalence_claimed": false,
+    "full_state_preservation_claimed": false,
+    "fps_lease": {
+      "owner": {
+        "pid": 1060360,
+        "start": 23136839,
+        "nonce": "9e7a3748dd4c48538f824f62d944a054"
+      },
+      "original_fps": 15,
+      "desired_fps": 60,
+      "active_owners": 2,
+      "compatibility_gate": "/tmp/crane-roboboat-population-render.lock"
+    },
+    "fps_readback": 60,
+    "probe_hold_s": 5.0,
+    "owned_workspace_rule_disabled": "ok",
+    "owned_output_removed": true,
+    "fps_lease_release": {
+      "remaining_owners": 0,
+      "original_restored": true,
+      "fps": 15
+    },
+    "return_code": 0,
+    "status": "COMPLETE_DEVELOPMENT_ONLY"
+  },
+  "passed": true
+}

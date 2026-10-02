@@ -1,0 +1,3 @@
+Marine actor/clock preservation appendix — candidate v1
+
+Preserve whether a result belongs to a navigation action, a measurement, or an unspecified actor. Never add “odometry result”, “sensor result”, or “navigation result” unless the response identifies that actor. An unspecified “result receipt” must remain unspecified in claim_text; nearby measurement references do not establish its actor. Preserve that a latest delivered observation is not necessarily physical state at receipt. Separate explicitly asserted measurement phase, value, clock, interval membership, threshold and evidence-sufficiency relations. Preserve unknowns and negation. This is extraction only; do not inspect robot evidence or infer the physical outcome.

@@ -1,0 +1,59 @@
+{
+  "schema": "roboboat-initial-pose-rendered-probe/v3",
+  "root": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-start-pose-rendered-probe-v13-003",
+  "build": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-start-pose-v13/full-build-v1.json",
+    "sha256": "017c8fd2c64738950035e8d24463417df156a7ff01915f83d7b90574e096fa39"
+  },
+  "probe_source": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/probe_roboboat_initial_pose_v3.py",
+    "sha256": "7e11c4ccd7742d9f3860c454f9f87a6b8528aaec60ffb0272cb473de781077d0"
+  },
+  "cases": [
+    {
+      "id": "default-absent",
+      "pose": null
+    },
+    {
+      "id": "offset-positive-yaw",
+      "pose": [
+        -2.0,
+        -5.0,
+        0.25
+      ]
+    },
+    {
+      "id": "offset-negative-yaw",
+      "pose": [
+        -2.5,
+        -6.0,
+        -0.25
+      ]
+    }
+  ],
+  "duration_s": 8,
+  "warmup_s": 2,
+  "seed": 43104,
+  "timeout_s": 90,
+  "mode": "rendered train-gpu; ROS transport disabled; startup benchmark only",
+  "render_lock": "/tmp/crane-roboboat-population-render.lock",
+  "additional_sources": [
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/scripts/run_roboboat_hidden_render_v3.sh",
+      "sha256": "6364e63db80ca66b47044d689da98914b8ebfc1be97c0a726b1ebc7e858268f2"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/roboboat_hidden_render_v3.py",
+      "sha256": "e20cc71ebd297a460cc004678187f1c97012b0035de3ddd0c46794474d996bff"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/roboboat_owned_player_bundle_v1.py",
+      "sha256": "68cf6c3a92800d5f4e97510e76b8a74d311eaa2384353fd78edaaf73594a7f37"
+    }
+  ],
+  "stopping": "All three fixed cases once, no retries or outcome-dependent changes.",
+  "scope": "Rendered startup pose/benchmark only; no navigation, ROS transport, full command trace, population reliability or physical equivalence qualification.",
+  "independent_n_added": 0,
+  "confirmation_n": 0,
+  "replication_n": 0
+}

@@ -1,0 +1,109 @@
+{
+  "schema": "roboboat-full-crane-v2-independent-engineering-review/v1",
+  "reviewer": "Codex independent project-agent source/engineering audit",
+  "project_agent_review_not_human_validation": true,
+  "status": "DEVELOPMENT_SCOPE_GATES_REQUIRE_REPAIR",
+  "reviewed_sources": [
+    {
+      "path": "analysis/roboboat_full_crane_v2.py",
+      "sha256": "c03c3890d45fbd9478a59b97bb4f2b8f74de2336c67ba89e8a80f0f075bb0abe"
+    },
+    {
+      "path": "configs/roboboat_claim_contracts_v2_development.json",
+      "sha256": "07d931cae02bbb824460b32a9b9fc8300001d7dd6f6b875e22eff7dc30714bd7"
+    },
+    {
+      "path": "tests/test_roboboat_full_crane_v2.py",
+      "sha256": "4852e6266c28cdca5a19de9f47ffa13cd11767912bc267b6c0f90085e62a8cea"
+    },
+    {
+      "path": "docs/roboboat_terminal_evidence/FULL_CRANE_V2_DEVELOPMENT.md",
+      "sha256": "b6e463bf494052a8035d8fb1ca9a3f8ffa82ea59a10401cec49d76c1e53c8c8b"
+    },
+    {
+      "path": "analysis/roboboat_full_crane_v1.py",
+      "sha256": "752ac106aa6e760d1ef91ed21aa5e6941c83a2b0dba07efe016b32583e709ca6"
+    },
+    {
+      "path": "configs/roboboat_claim_contracts_v1_development.json",
+      "sha256": "570d35cd13c0472e8c44d48e566106a32d414b544fc2c317bee217ce56dc0d9b"
+    },
+    {
+      "path": "tests/test_roboboat_full_crane_v1.py",
+      "sha256": "ab44c65b8b49c7ef8daa87146a5cb4dcfea8e9c7db0d6ed6f79a379de95ff86b"
+    },
+    {
+      "path": "analysis/roboboat_temporal_certificate.py",
+      "sha256": "da09acdeb2d1942a5d39a78e67f6acc777eaa5dc1dab5e9b741d3497b5727d26"
+    },
+    {
+      "path": "analysis/roboboat_temporal_certificate_v2.py",
+      "sha256": "a2101e2cf5a3d047433bd41ce9509857f46490ed2ff12dd2cbaeb0178c5479e6"
+    },
+    {
+      "path": "analysis/maximal_supported_diagnosis.py",
+      "sha256": "1784960164122a3a4eb563d295d552b74cb2f7c87985fa4054bd0ca23ce61814"
+    },
+    {
+      "path": "analysis/realize_evidence_calibrated_explanation.py",
+      "sha256": "cddc947e2276a586f136a9b6ce19c5f6b871abc3e4a7ce84f92c20ce9e9b99d1"
+    },
+    {
+      "path": "analysis/evidence_calibration_io.py",
+      "sha256": "c70fef1e03274c55746a8ed7395cec221d2ed0bc63c83eb7fd005429a0925422"
+    }
+  ],
+  "read_only_source_review": true,
+  "readiness": {
+    "shared_architecture_verified": true,
+    "ordinary_declared_packet_engineering_tests_pass": true,
+    "unqualified_development_activation_ready": false,
+    "confirmation_ready": false,
+    "annotation_reliability_established": false,
+    "superiority_established": false
+  },
+  "verification": {
+    "command": "PYTHONPATH=analysis python -m pytest -q tests/test_roboboat_full_crane_v1.py tests/test_roboboat_full_crane_v2.py",
+    "result": "73 passed in 4.27s",
+    "scope": "Construction-defined variants; no new real-study output files, provider calls, GPU collection or formal endpoint scores."
+  },
+  "findings": [
+    {
+      "id": "clock-scope-gate",
+      "severity": "substantive-development-boundary",
+      "status": "OPEN",
+      "location": "analysis/roboboat_full_crane_v2.py::build_inputs; inherited validate_packet",
+      "construction_probe": "Set task.clock='fixture-monotonic' in construction test packet; explain accepts it.",
+      "observed_behavior": "Receipt-clock template still asserts a distinct ROS-header sample clock although accepted packet does not declare that clock. Contact compares arbitrary task clock; no supported sample clock gate.",
+      "required_resolution": "Fail closed on unsupported task/sample clock in additive v2 or render actual registered clock contract; preserve v1."
+    },
+    {
+      "id": "return-alignment-scope-gate",
+      "severity": "substantive-development-boundary",
+      "status": "OPEN",
+      "location": "analysis/roboboat_full_crane_v2.py::build_inputs; inherited validate_packet",
+      "construction_probe": "Set return_observation.alignment='unrelated-observation' in construction test packet; explain accepts it.",
+      "observed_behavior": "Return-position/heading/speed templates still assert result-adjacent delivered observation without establishing the claimed association. Numeric correctness alone does not support temporal association.",
+      "required_resolution": "Register and validate supported return alignment values/required association in additive v2, preserving documented historical last-pre-result behavior where appropriate."
+    }
+  ],
+  "positive_findings": [
+    "Uses actual shared diagnose and realize functions. Every registered requirement gets computed status from validated visible packet, unsupported cause and continuous-proof requirements stay ABSENT, and required nonentailments are rendered. Plan requires all approved claims and registered numeric slots.",
+    "Original packet is deep-copied as sole evidence item; conditions/facts/plan/candidate bind canonical hashes; no caller-provided facts, evaluator certificate or plan enters explain. Static registered catalog supplies words, candidate supplies only contract IDs/numeric values; arbitrary free text cannot survive.",
+    "Timeout contract truthfully reports fixture timeout and separately denies inference of terminal ROS action result, cancellation or docking failure. Docking conclusions come independently from observed contract facts; generic KNOWN state is never rendered as physical completion.",
+    "Configured values are independently exact numeric slots with public /configuration pointers, finite nonnegative type gates, and internal-consumption/stopping-cause limitation. Separate public docking /task limits remain actual measurement bounds. Altered checker plugin is not claimed to execute an algorithm.",
+    "Numeric slot tolerance is zero, support reference binds whole original packet, and source bindings identify exact public pointer or certificate computation. NaN/Inf candidate values rejected; malformed/changed finite numeric values repaired by actual shared realizer.",
+    "73 targeted checks pass, including inherited diagnosis/numeric/binding parity for succeeded/aborted/canceled and source leak/cause/repair probes. No source edits performed by reviewer; additive v1/v2 files are currently untracked, so git clean diff alone cannot establish historical byte preservation. Current v1 hashes recorded for future parity."
+  ],
+  "limitations": [
+    "Actual rendered float text uses shared .12g display precision, while internal numeric bindings remain exact binary values. This audit does not establish that all formatted near-threshold witnesses are unambiguous; retain numeric/temporal source review before study judgments.",
+    "Configuration digest is packet metadata, not independent authentication of effective runtime configuration; experiment closure must bind collector/configuration source.",
+    "Packet semantic provenance (correct clocks/alignment/telemetry coverage) still depends on collector/source closure; structural allowlists alone do not authenticate physical observations.",
+    "No new formal answer quality, annotation reliability, baseline fairness or superiority conclusion. Repetitive closed-template wording remains a development measurement concern."
+  ],
+  "raw_study_artifacts_modified": false,
+  "code_modified": false,
+  "provider_calls": 0,
+  "gpu_calls": 0,
+  "formal_endpoint_judgments": 0
+}

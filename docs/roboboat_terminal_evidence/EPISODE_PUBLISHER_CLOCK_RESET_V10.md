@@ -1,0 +1,11 @@
+# Episode publisher clock reset: isolated development repair
+
+The retained direct-goal failure contains accepted commands stamped from a future simulation tick. No original capture, validator or failed disposition is changed. The source audit found that `CraneBenchmarkRunner.BeginMeasurement()` calls `CraneRuntimeMetrics.BeginEpisode()` without dispatching body-reset callbacks. Both the authoritative navigation-state publisher and ROS clock publisher previously retained absolute warmup publication deadlines when that call reset the episode clock.
+
+Two real-component EditMode tests reproduce that scheduling defect: both retained 2.9-second deadlines after the new episode began. The NUnit XML records two assertion failures. This CLI version returned exit6 with a generic COMMAND_FAILED envelope despite the completed NUnit failure report; the XML, rather than the envelope, establishes the red verdict.
+
+The copied project `/home/lunarz/worktrees/roboboat-episode-clock-v10/crane_ml` adds an EpisodeId check to each publisher. A new episode resets only its publication scheduling. Sensing rates, physical state, controller, fixed step and task are not changed by this code. The original instrumented v9 project remains the live batch platform. The first repair attempt had a long-to-int compile error; the corrected field is long. Both repair tests then passed, and all51 EditMode tests passed including same-episode deadline preservation and explicit BeforePhysics-reset checks.
+
+This is an engineering result, not proof that every future-source trace failure has the same cause. Physical validation must use a separately declared operational probe with the revised compiled build and the existing full trace, sensor, runtime and rendering gates. Repeated geometries add zero independent N. The old failures remain failures. There is no confirmation freeze, scored method pair, superiority result or human annotation claim.
+
+Artifacts are under `artifacts/roboboat-episode-clock-v10/`: immutable source snapshot, diff, red/green/all-test reports and prebuild source bindings. Unity removed the SENTIS_ANALYTICS_ENABLED define during testing; its exact observed settings diff was retained and parent settings bytes restored before building. Two CLI build-argument rejections were retained; only the accepted build invocation starts compilation.

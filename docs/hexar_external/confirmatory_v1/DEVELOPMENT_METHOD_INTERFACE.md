@@ -1,0 +1,9 @@
+# Development method-interface pilot
+
+The exclusively declared `development_method_interface_v1` schedule is complete: 18 deterministic HX-CONTRACT outputs and 18 strengthened HX-PROMPT attempts on the same permitted packet bytes. HX-CONTRACT returned 18 valid outputs; HX-PROMPT returned 14 valid outputs and four technical failures. All attempts, raw bytes, exclusive claims and dispositions are retained in `manifests/hexar_external/confirmatory_v1/development_method_interface_v1/`. No retries were issued.
+
+The packets come from six v2 simulated **development** episodes, one per family, crossed with the three evidence masks for q1 only. This is transport/interface qualification, not the complete nine-query/evidence whole-recording battery. No superiority test or semantic support/coverage scoring was performed. These episodes and answers are permanently development-exposed; confirmatory N and alpha consumed are zero.
+
+The strong prompt text is unchanged. Both methods received identical legitimate visible evidence. The baseline used the existing Codex CLI, `gpt-6-sol`/high, temporary packet-only working directories, and a declared 180-second limit. Four calls were disposed as technical failures; raw events must be inspected to determine the exact transport/policy causes. A technical failure is not evidence that a baseline explanation was unsupported. The contract method used the existing contract/planner/verifier/deterministic renderer and zero model calls. Its output validity here does not establish blinded semantic qualification.
+
+The declaration hashes the development CLI, prompt, source and interface packet bank. Full transitive runtime binding, immutable provider/model version, decoding and system/context/tool isolation remain unresolved for confirmation. A subsequent development schedule must be separately declared and must preserve this pilot's outcomes. It cannot be represented as retries of this schedule or as confirmation.

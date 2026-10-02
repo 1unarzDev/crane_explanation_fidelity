@@ -1,0 +1,68 @@
+{
+  "schema": "roboboat-capture-clock-candidate/v28",
+  "status": "PREPARED_UNLAUNCHED_UNQUALIFIED",
+  "original": {
+    "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Tools/Performance/nav2_follow_path_fixture_capture_v15.py",
+    "sha256": "18599137427625bd19161f4f9c9ff9e5241f4b431917e87b792f06d6af502c60"
+  },
+  "original_snapshot": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-dual-clock-capture-candidate-v28-001/fixture-source-original-v15.py",
+    "sha256": "18599137427625bd19161f4f9c9ff9e5241f4b431917e87b792f06d6af502c60"
+  },
+  "candidate": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-dual-clock-capture-candidate-v28-001/fixture-source-v28.py",
+    "sha256": "03857e92c00b32e2e47545b3176c68875c7d5cad45fc820786a11e9ff52d9c13"
+  },
+  "helper": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/roboboat_post_result_clock_v28.py",
+    "sha256": "474e3d801fe3fbc60fea5e45b412017a6204ad4793489aac91e600a5faf40b4c"
+  },
+  "helper_snapshot": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-dual-clock-capture-candidate-v28-001/roboboat_post_result_clock_v28.py",
+    "sha256": "474e3d801fe3fbc60fea5e45b412017a6204ad4793489aac91e600a5faf40b4c"
+  },
+  "builder": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/prepare_roboboat_dual_clock_fixture_v28.py",
+    "sha256": "cbb8b7e1315f9f7f282d4357fb407e5ba54b726deecac6414388344c9075083a"
+  },
+  "changed_fixture_methods": [
+    "finish",
+    "tick"
+  ],
+  "unchanged_methods": [
+    "__init__",
+    "forward",
+    "on_bt_log",
+    "on_command",
+    "on_costmap",
+    "on_costmap_service",
+    "on_docking_evaluation",
+    "on_feedback",
+    "on_goal_response",
+    "on_odom",
+    "on_plan",
+    "on_result",
+    "on_stamped_command",
+    "publish_event",
+    "publish_identity",
+    "record_costmap",
+    "request_costmap",
+    "sample_trajectory",
+    "send_goal",
+    "trajectory_sample"
+  ],
+  "minimum_post_result_wall_seconds": 8.0,
+  "minimum_post_result_sim_span_seconds": 8.0,
+  "maximum_post_result_wall_seconds": 120.0,
+  "bounded_missingness_retained": true,
+  "action_deadline_unchanged": true,
+  "compiled_player_modified": false,
+  "physics_navigation_task_endpoint_modified": false,
+  "existing_development_records_relabelled": false,
+  "operationally_qualified": false,
+  "model_calls": 0,
+  "independent_n_added": 0,
+  "confirmation_n": 0,
+  "replication_n": 0,
+  "future_requirements": "Separate prospectively bound isolated runtime mount, worker/outer deadline accommodating bounded post-result cap, full original trace/sensor/transport/render/capture admission and actual complete/incomplete-timeout operational qualification. Current v27 workers/source/declared schedule unchanged."
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "roboboat-command-shutdown-differential-qualification/v1",
+  "status": "PLAYMODE_COMPONENT_REPAIR_PASSED_FULL_WORKER_QUALIFICATION_PENDING",
+  "parent_playmode": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-command-shutdown-v17/shutdown-playmode-baseline-v1.xml",
+    "sha256": "2bd5773ac0c49ba22a8f5c616cd91d51c9346ab4bbe44636a98da4d2083f27c0"
+  },
+  "parent_lifecycle_failures": 3,
+  "candidate_playmode": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-command-shutdown-v17/shutdown-playmode-v1.xml",
+    "sha256": "fdf65d07eb86c61bd0633dd73dd3972a88d06fcd503496fe6b2cd29d8e3ee5e2"
+  },
+  "candidate_lifecycle_passes": 4,
+  "initial_editmode_reports_scope": "Retained diagnostic attempts; they do not invoke normal MonoBehaviour lifecycle and cannot support automatic disable/destruction claims. Explicit benchmark shutdown did pass. PlayMode differential supersedes these narrow results.",
+  "actual_component_repair": "Close intake and clear pending under one lock; OnDisable plus explicit benchmark Finish before counter snapshot. No physics/controller law/gate changes.",
+  "candidate_project": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml",
+  "candidate_source": {
+    "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Controllers/ROSOmniXCommand.cs",
+    "sha256": "0851804655af9e11173f8363fb3652bd03f397a748b29de782c67d6294d45f52"
+  },
+  "parent_source_unchanged": true,
+  "race_freedom_or_rendered_shutdown_claim": false,
+  "benchmark_shutdown_timing_qualified": false,
+  "confirmation_n": 0,
+  "replication_n": 0,
+  "independent_n_added": 0
+}

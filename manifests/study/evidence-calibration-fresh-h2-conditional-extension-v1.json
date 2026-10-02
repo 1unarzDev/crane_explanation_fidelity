@@ -1,0 +1,80 @@
+{
+  "amendment_id": "evidence-calibration-fresh-h2-conditional-extension-v1",
+  "authoritative_consumed_ledger": {
+    "committed_bytes_match": true,
+    "sha256": "d1b3175829a43ee40225603ddec7dbe680465fd3ee026ac8a5b1a4bf9b1d12ed",
+    "snapshot_path": "manifests/hexar_external/confirmatory_v1/concurrent_h1_commitment_audit_v1/source_snapshot/manifests/study/diagnostic-sequential-error-ledger-v2.json"
+  },
+  "authorization": {
+    "path": "manifests/hexar_external/confirmatory_v1/fresh_h2_timing_authorization_v1/authorization.json",
+    "sha256": "dd19a990cb132b7e761d81a558c33bdc1146a098aedfbcfae712e80bc625a8eb"
+  },
+  "conditional_control_required": true,
+  "consumption_refunded": false,
+  "development_authorized": true,
+  "family_alpha": 0.01,
+  "family_id": "evidence-calibration-internal-then-hexar-v1",
+  "full_h2_freeze_before_fresh_acquisition_required": true,
+  "h1_allocation": {
+    "allocation_id": "candidate-revision-reserve",
+    "alpha": 0.01,
+    "campaign_id": "evidence-calibration-b4-b2-confirmation-2026-10-01",
+    "consumed_at": "2026-10-01T07:02:44.370858Z",
+    "freeze_path": "manifests/study/evidence-calibration-handoff-confirmation-freeze-v1.json",
+    "freeze_sha256": "77e0c6ac4f8da3eccfeeb5ed31990d504a907953f63e8c19822e4e0c4e540ac2",
+    "role": "candidate",
+    "status": "CONSUMED"
+  },
+  "h1_freeze": {
+    "committed_bytes_match": true,
+    "sha256": "77e0c6ac4f8da3eccfeeb5ed31990d504a907953f63e8c19822e4e0c4e540ac2",
+    "snapshot_path": "manifests/hexar_external/confirmatory_v1/concurrent_h1_commitment_audit_v1/source_snapshot/manifests/study/evidence-calibration-handoff-confirmation-freeze-v1.json"
+  },
+  "h2_binding_rule": "Preserve frozen H1; explicitly reconcile extension of its consumed .01 family before H2 confirmation. Freeze complete H2 before fresh cohort acquisition/selection and before H2 semantic outputs; demonstrate level-.01 H2 control conditional on all prior history. No fresh H2 semantic generation until valid immutable H1 rejection and full activation audit.",
+  "h2_semantic_activation_authorized": false,
+  "latest_metadata_only_check": {
+    "checked_at": "2026-10-02T00:24:31Z",
+    "h1_answers_labels_effects_or_results_read": false,
+    "other_head": "7598a6012bcef9e744982b9c2a5fab0f163b78b8",
+    "working_and_committed_h1_freeze_match": true,
+    "working_and_committed_ledger_match": true
+  },
+  "new_independent_alpha_allocation": 0,
+  "nonrejecting_or_invalid_h1_closes_h2": true,
+  "previously_consumed_alpha": 0.02,
+  "program_alpha": 0.05,
+  "proposal": {
+    "path": "manifests/hexar_external/confirmatory_v1/fresh_h2_conditional_extension_proposal_v1/proposal.json",
+    "sha256": "eefa6b5b0400fb6bb142ea5e40ce6e5db402c102a36105d31e1045c7554ce6c0"
+  },
+  "protected_replication_alpha": 0.02,
+  "qualification": {
+    "acquisition_binding": null,
+    "conditional_assumptions": null,
+    "h1_gate_adapter": null,
+    "provider_binding": null,
+    "scientific_binding": null
+  },
+  "raw_confirmation_acquisition_authorized": false,
+  "reconciliation_requirements": [
+    "Reconcile local/main stale AVAILABLE ledger with the committed consumed H1 ledger without rewriting consumption or frozen H1.",
+    "Commit this append-only companion in the shared authoritative lineage; preserve its authorization and source snapshots.",
+    "Qualify conditional independence and the declared mean-null under frozen episode sampling, technical validity, methods, provider and scoring.",
+    "Bind complete H2 scientific and acquisition dependencies before any fresh H2 confirmation acquisition or selection.",
+    "Qualify a read-only H1 terminal-rule adapter preserving all frozen coverage, stopping and validity requirements.",
+    "Activate only through a versioned audit that checks qualified bindings, shared lineage and fresh sealed cohort; user authorization alone never opens a gate."
+  ],
+  "schema": "crane-fresh-h2-conditional-family-companion/v1",
+  "sequence": [
+    "H1: unchanged frozen B4/B2 procedure",
+    "H2: HX-CONTRACT versus strengthened HX-PROMPT; one-sided level .01 conditional on all prior history"
+  ],
+  "shared_reconciliation": null,
+  "status": "AUTHORIZED_DESIGN_PENDING_QUALIFICATION_AND_SHARED_RECONCILIATION",
+  "supersedes_only": {
+    "path": "manifests/study/evidence-calibration-hexar-fixed-sequence-v1.json",
+    "scope": "Unmet pre-H1-semantic H2 timing commitment and unbound H2 allocation model; no retrospective compliance asserted, no H1 study source amended.",
+    "sha256": "c327a8d70584b96c51d4050857cbaafccf5696622da3c75701f5759d95b8a6d0"
+  },
+  "valid_immutable_h1_rejection_required": true
+}

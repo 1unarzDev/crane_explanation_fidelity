@@ -5087,3 +5087,14 @@ Its component magnitudes are not treated as calibrated physical fidelity.
   failed combined support and unanswered reopening remain controlling. Five-method
   prospective episode effects/intervals/corrected p-values and unfavorable/inconclusive
   outcomes remain required. See the dated repository-source-binding record.
+
+
+## 2026-09-30 — research handoff produces paired development evidence
+
+- Adopt user-authorized development measurement reopening and minimum viable scientific freeze; historical platform gates no longer block development. Preserve old failed canary, old prompts/references, raw scores and all method answers.
+- Qualify30 fresh targeted synthetic cases, score old B2/B4 and B4 improvements, then extend by12 source-order independent DEVELOPMENT configurations using unchanged strong gpt-6-sol/high B2. Retain47/48 new B2 calls; exclude timeout061 as a whole without retry.
+- Correct genuine B4 causal negation and coverage omissions through separately retained v3/v4/v5 outputs. Protect legitimate B2 software recovery/code105 claims from measurement false positives. Independently recompute exact command counts to reject three secondary annotation false positives.
+- Primary complete paired N=22, balanced11 persistent/11 recovery; B2/B4v5 PrimaryFailures0/0 and discordances0/0. Required units229/231 versus231/231; risk difference0, conservative95% whole-episode CI±12.73 points, descriptive exact p=1. No observed superiority; no equivalence claim.
+- One-sided prospective superiority at .01 is ledger-compatible; .02 previously consumed and .02 replication reserve remain. Power for plausible small effects requires hundreds of independent primary episodes. Do not bind a favorable effect unsupported by development or launch an underpowered nominal confirmation.
+- Prospectively reassign100 old unused v6 configurations to80 physical confirmation candidates/20 fresh replication, independent of method outcomes. Four new technically valid candidates captured/preprocessed, reserved from tuning; no B2/B4 outputs. Physical preprocessing is not confirmatory semantic N. Existing materialized layouts remain development.
+- Confirmation/replication semantic N=0; no alpha spent. Current limitation is an observed strong-B2 failure floor, not platform readiness. See handoff report/result manifest. Updated DVC pointers retain method/capture evidence in the existing local cache; no remote durability or push claimed.

@@ -1,0 +1,47 @@
+{
+  "atomic": [
+    {
+      "actual": "SUPPORTED_BY_VISIBLE_EVIDENCE",
+      "correct": true,
+      "expected": "SUPPORTED_BY_VISIBLE_EVIDENCE",
+      "item_id": "hxq2-06-s1"
+    },
+    {
+      "actual": "INSUFFICIENT_VISIBLE_EVIDENCE",
+      "correct": true,
+      "expected": "INSUFFICIENT_VISIBLE_EVIDENCE",
+      "item_id": "hxq2-06-s2"
+    },
+    {
+      "actual": "SUPPORTED_BY_VISIBLE_EVIDENCE",
+      "correct": true,
+      "expected": "SUPPORTED_BY_VISIBLE_EVIDENCE",
+      "item_id": "hxq2-06-s3"
+    }
+  ],
+  "case_id": "hxq2-06",
+  "false_premise_correct": true,
+  "highest_level_correct": true,
+  "limitations": [
+    {
+      "correct": true,
+      "limitation_prompt": "Preserve that clearing completion is unavailable; a request alone does not prove completed clearing."
+    }
+  ],
+  "required_units": [
+    {
+      "correct": true,
+      "unit_prompt": "Communicate that LOCAL-map clearing was REQUESTED; this unit does not require successful completion."
+    },
+    {
+      "correct": true,
+      "unit_prompt": "Communicate that GLOBAL-map clearing was REQUESTED. A completed-clear assertion alone does not report the recorded request event."
+    }
+  ],
+  "split": "heldout",
+  "threat_tags": [
+    "request_vs_completion",
+    "planning_trace",
+    "valid_extra_detail"
+  ]
+}

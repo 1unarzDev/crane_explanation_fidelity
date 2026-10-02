@@ -1,0 +1,13 @@
+# Observation counter and retained failures
+
+Fixed profile-v11 retains all 348 scheduled dispositions: 76 admitted development recordings, 11 technical failures, two running and 259 unattempted. There are 33 complete physical geometry pairs; no scored independent B4–B2 pair or confirmation observation follows.
+
+Read-only reviewer `analysis/review_roboboat_observation_counter_v34.py` authenticates five current sources against final compiled-document audit v5, their recorded assembly/PDB bytes and the source checksum mapping. These are both camera sensors, the shared profiler, frame audit and benchmark runner. This does not authenticate complete historical external deployment or every reflected runtime call.
+
+Both RGB and depth sensor sources call `ReportStaleObservation` when a scheduled readback is skipped because the queue already contains two requests and at least one belongs to the current local epoch. The profiler increments the shared counter. That counter alone does not demonstrate publication of stale imagery. Sparse LateUpdate queue counts cannot reconstruct request-time occupancy, attribute events to RGB versus depth, or identify a CPU, GPU, compositor or navigation cause.
+
+The review includes every technical failure in the fixed snapshot. Eight fail only the two stale-observation predicates; one additionally fails command/epoch gates. Their sparse anomaly increments exactly reconstruct 14 recorded stale observations across these nine failures. All nine have fixture timeout status, but this association is not causal evidence. Increments span many simulation ticks and multiple late frames, rather than being confined to one startup boundary. The remaining failures concern an endpoint error and screen resolution.
+
+The new screen-size failure, `boat-geom-42007-00167-v2`, requested 640×360 but reports 1920×1080. Owned render placement and cleanup pass, which does not establish resolution. Only the screen-size predicate fails. Exact terminal/result/render/log bindings and the limited finding are retained in its `screen-size-source-review-v34.json`. The reason for the mismatch remains unproven.
+
+Every original disposition remains unchanged. The live collector, queued assay, robot sources, physics, sensing, and validity predicates are untouched. Future development should consider separate instrumentation for skipped readback requests and stale publication, and operationally test any proposed repair before using a revised platform. This review does not authorize salvaging failures, prove sensor completeness, assign endpoint labels or freeze confirmation.

@@ -1,0 +1,3458 @@
+{
+  "scope": "DEVELOPMENT_ONLY",
+  "cases": [
+    {
+      "case_id": "ex-e276e384f16f1dcfd63a970c3008e919",
+      "response_text": "The retained source-qualified trace records recovery invocation. The recorded navigation action aborted. Recovery invocation order does not establish the eventual task outcome or its cause. The action reports a controller failure to make progress (error code 105); this is a reported software failure, not a measured physical cause. The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations. These records do not identify a physical cause or prove that waiting caused a later outcome. The available evidence lacks measured motion needed to establish a command-motion discrepancy or measured response recovery. The available evidence does not identify a hidden physical cause.",
+      "reference": {
+        "robot_visible_evidence": {
+          "schema": "crane-normalized-method-evidence/v1",
+          "episode_id": "cm-land-conf-064-worker-0",
+          "configuration_id": "cm-land-conf-cluster-064",
+          "question": "What is the strongest navigation diagnosis supported by the available robot-visible evidence?",
+          "evidence": {
+            "navigate_to_pose_result": {
+              "evidence_ids": [
+                "action-result"
+              ],
+              "goal_id": "2ec4ad94e74f41c3a22b372c0f287d1f",
+              "accepted_goal_record_id": "events.jsonl#line:215",
+              "action_result_record_id": "events.jsonl#line:6831",
+              "action_status": "aborted",
+              "action_error_code": 105
+            },
+            "behavior_tree_transitions": {
+              "evidence_ids": [
+                "recovery-trace"
+              ],
+              "execution_sequence": {
+                "follow_path_attempt_count": 3,
+                "follow_path_failure_count": 2,
+                "recovery_node_classifier": {
+                  "classifier_basis": "retained_bt_recovery_child_exact_node_name",
+                  "classifier_rule": "Wait:IDLE->RUNNING",
+                  "node_name": "Wait",
+                  "number_of_retries": 2,
+                  "policy_sha256": "14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+                  "tree_path": "RecoveryNode/recovery_child/Sequence/Wait"
+                },
+                "source_qualified_wait_recovery_count": 2
+              }
+            },
+            "source_anchors": {
+              "evidence_ids": [
+                "source-anchors"
+              ],
+              "bt_policy_sha256": "14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+              "nav2_config_sha256": "e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+              "diagnostic_config_sha256": "9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85"
+            }
+          }
+        },
+        "required_units": {
+          "u00": "state the recorded navigation action outcome",
+          "u01": "state the retained source-qualified recovery sequence"
+        },
+        "required_limitations": [
+          "do not identify a unique hidden physical cause",
+          "chronology does not establish outcome causation"
+        ]
+      }
+    },
+    {
+      "case_id": "ex-5beed57ed186b086cf37737587656242",
+      "response_text": "A valid delivered command stream is present. The retained source-qualified trace records recovery invocation. The recorded navigation action aborted. Recovery invocation order does not establish the eventual task outcome or its cause. The action reports a controller failure to make progress (error code 105); this is a reported software failure, not a measured physical cause. The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations. These records do not identify a physical cause or prove that waiting caused a later outcome. Delivered commands do not establish actuator acceptance. The available evidence lacks measured motion needed to establish a command-motion discrepancy or measured response recovery. The available evidence does not identify a hidden physical cause. The stream records 401 delivered command samples from 0 to 41.98050181 s, with median commanded planar speed 0.26 m/s.",
+      "reference": {
+        "robot_visible_evidence": {
+          "schema": "crane-normalized-method-evidence/v1",
+          "episode_id": "cm-land-conf-064-worker-0",
+          "configuration_id": "cm-land-conf-cluster-064",
+          "question": "What is the strongest navigation diagnosis supported by the available robot-visible evidence?",
+          "evidence": {
+            "navigate_to_pose_result": {
+              "evidence_ids": [
+                "action-result"
+              ],
+              "goal_id": "2ec4ad94e74f41c3a22b372c0f287d1f",
+              "accepted_goal_record_id": "events.jsonl#line:215",
+              "action_result_record_id": "events.jsonl#line:6831",
+              "action_status": "aborted",
+              "action_error_code": 105
+            },
+            "behavior_tree_transitions": {
+              "evidence_ids": [
+                "recovery-trace"
+              ],
+              "execution_sequence": {
+                "follow_path_attempt_count": 3,
+                "follow_path_failure_count": 2,
+                "recovery_node_classifier": {
+                  "classifier_basis": "retained_bt_recovery_child_exact_node_name",
+                  "classifier_rule": "Wait:IDLE->RUNNING",
+                  "node_name": "Wait",
+                  "number_of_retries": 2,
+                  "policy_sha256": "14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+                  "tree_path": "RecoveryNode/recovery_child/Sequence/Wait"
+                },
+                "source_qualified_wait_recovery_count": 2
+              }
+            },
+            "source_anchors": {
+              "evidence_ids": [
+                "source-anchors"
+              ],
+              "bt_policy_sha256": "14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+              "nav2_config_sha256": "e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+              "diagnostic_config_sha256": "9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85"
+            },
+            "delivered_command_stream": {
+              "evidence_ids": [
+                "delivered-command-stream"
+              ],
+              "frame": "base_link-command-convention",
+              "provenance": "delivered-nav2-command-not-proof-of-actuator-acceptance",
+              "windowing": {
+                "calibration_window_count": 5,
+                "maximum_discrepancy_response_ratio": 0.2,
+                "minimum_command_samples_per_window": 5,
+                "minimum_commanded_speed_mps": 0.1,
+                "minimum_consecutive_discrepancy_windows": 3,
+                "minimum_healthy_measured_speed_mps": 0.05,
+                "minimum_odometry_samples_per_window": 20,
+                "window_seconds": 1.0
+              },
+              "deterministic_raw_sample_summary": {
+                "sample_count": 401,
+                "window_seconds": 1,
+                "offset_range_s": [
+                  0.0,
+                  41.98050181
+                ],
+                "windows": [
+                  {
+                    "interval_s": [
+                      0,
+                      1
+                    ],
+                    "count": 11,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      1,
+                      2
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      2,
+                      3
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      3,
+                      4
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      4,
+                      5
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      5,
+                      6
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      6,
+                      7
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      7,
+                      8
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      8,
+                      9
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      9,
+                      10
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      10,
+                      11
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      11,
+                      12
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      12,
+                      13
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      13,
+                      14
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      14,
+                      15
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      15,
+                      16
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      16,
+                      17
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      17,
+                      18
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      18,
+                      19
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      19,
+                      20
+                    ],
+                    "count": 8,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      20,
+                      21
+                    ],
+                    "count": 1,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      21,
+                      22
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      22,
+                      23
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      23,
+                      24
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      24,
+                      25
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      25,
+                      26
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      26,
+                      27
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      27,
+                      28
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      28,
+                      29
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      29,
+                      30
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      30,
+                      31
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      31,
+                      32
+                    ],
+                    "count": 1,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      32,
+                      33
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      33,
+                      34
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      34,
+                      35
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      35,
+                      36
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      36,
+                      37
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      37,
+                      38
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      38,
+                      39
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      39,
+                      40
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      40,
+                      41
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      41,
+                      42
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "required_units": {
+          "u00": "state the recorded navigation action outcome",
+          "u01": "state the retained source-qualified recovery sequence",
+          "u02": "state the delivered command observation"
+        },
+        "required_limitations": [
+          "do not identify a unique hidden physical cause",
+          "chronology does not establish outcome causation"
+        ]
+      }
+    },
+    {
+      "case_id": "ex-48e7826f8611f5a692087075a253225b",
+      "response_text": "The navigation goal **aborted** with action error code **105** (`action-result`). That is the strongest supported episode diagnosis. The supplied evidence has no planner, controller, motion, or recovery records that establish why it aborted. The configured tree can report either planning or path-following errors (`source/behavior_tree.xml`; `source/nav2.yaml`), so this result alone does not establish a specific physical cause or which configured recovery steps ran.",
+      "reference": {
+        "robot_visible_evidence": {
+          "schema": "crane-normalized-method-evidence/v1",
+          "episode_id": "cm-land-conf-064-worker-0",
+          "configuration_id": "cm-land-conf-cluster-064",
+          "question": "What is the strongest navigation diagnosis supported by the available robot-visible evidence?",
+          "evidence": {
+            "navigate_to_pose_result": {
+              "evidence_ids": [
+                "action-result"
+              ],
+              "goal_id": "2ec4ad94e74f41c3a22b372c0f287d1f",
+              "accepted_goal_record_id": "events.jsonl#line:215",
+              "action_result_record_id": "events.jsonl#line:6831",
+              "action_status": "aborted",
+              "action_error_code": 105
+            }
+          }
+        },
+        "required_units": {
+          "u00": "state the recorded navigation action outcome"
+        },
+        "required_limitations": [
+          "do not identify a unique hidden physical cause",
+          "chronology does not establish outcome causation"
+        ]
+      }
+    },
+    {
+      "case_id": "ex-ce617d0007888ad99d01a02d2f0f3410",
+      "response_text": "The strongest supported diagnosis is a sustained command\u2013motion discrepancy: after an initial healthy response near 0.26 m/s, delivered Nav2 commands remained at 0.26 m/s while measured odometry was 0 m/s throughout the diagnostic 10\u201320 s interval. The configured progress checker requires 0.10 m of movement within 10 s; the recorded tree made three FollowPath attempts with two failures and two Wait recoveries. The NavigateToPose goal ultimately aborted with error code 105. [command-motion-computation; delivered-command-stream; delivered-odometry-stream; recovery-trace; action-result; nav2-config-sha256:e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b; bt-policy-sha256:14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520] The evidence does not establish why measured motion ceased: delivered commands do not prove actuator acceptance, and delivered odometry does not prove Nav2 consumed it. [delivered-command-stream; delivered-odometry-stream]",
+      "reference": {
+        "robot_visible_evidence": {
+          "schema": "crane-normalized-method-evidence/v1",
+          "episode_id": "cm-land-conf-064-worker-0",
+          "configuration_id": "cm-land-conf-cluster-064",
+          "question": "What is the strongest navigation diagnosis supported by the available robot-visible evidence?",
+          "evidence": {
+            "navigate_to_pose_result": {
+              "evidence_ids": [
+                "action-result"
+              ],
+              "goal_id": "2ec4ad94e74f41c3a22b372c0f287d1f",
+              "accepted_goal_record_id": "events.jsonl#line:215",
+              "action_result_record_id": "events.jsonl#line:6831",
+              "action_status": "aborted",
+              "action_error_code": 105
+            },
+            "behavior_tree_transitions": {
+              "evidence_ids": [
+                "recovery-trace"
+              ],
+              "execution_sequence": {
+                "follow_path_attempt_count": 3,
+                "follow_path_failure_count": 2,
+                "recovery_node_classifier": {
+                  "classifier_basis": "retained_bt_recovery_child_exact_node_name",
+                  "classifier_rule": "Wait:IDLE->RUNNING",
+                  "node_name": "Wait",
+                  "number_of_retries": 2,
+                  "policy_sha256": "14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+                  "tree_path": "RecoveryNode/recovery_child/Sequence/Wait"
+                },
+                "source_qualified_wait_recovery_count": 2
+              }
+            },
+            "source_anchors": {
+              "evidence_ids": [
+                "source-anchors"
+              ],
+              "bt_policy_sha256": "14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+              "nav2_config_sha256": "e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+              "diagnostic_config_sha256": "9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85"
+            },
+            "delivered_command_stream": {
+              "evidence_ids": [
+                "delivered-command-stream"
+              ],
+              "frame": "base_link-command-convention",
+              "provenance": "delivered-nav2-command-not-proof-of-actuator-acceptance",
+              "windowing": {
+                "calibration_window_count": 5,
+                "maximum_discrepancy_response_ratio": 0.2,
+                "minimum_command_samples_per_window": 5,
+                "minimum_commanded_speed_mps": 0.1,
+                "minimum_consecutive_discrepancy_windows": 3,
+                "minimum_healthy_measured_speed_mps": 0.05,
+                "minimum_odometry_samples_per_window": 20,
+                "window_seconds": 1.0
+              },
+              "deterministic_raw_sample_summary": {
+                "sample_count": 401,
+                "window_seconds": 1,
+                "offset_range_s": [
+                  0.0,
+                  41.98050181
+                ],
+                "windows": [
+                  {
+                    "interval_s": [
+                      0,
+                      1
+                    ],
+                    "count": 11,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      1,
+                      2
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      2,
+                      3
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      3,
+                      4
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      4,
+                      5
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      5,
+                      6
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      6,
+                      7
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      7,
+                      8
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      8,
+                      9
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      9,
+                      10
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      10,
+                      11
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      11,
+                      12
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      12,
+                      13
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      13,
+                      14
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      14,
+                      15
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      15,
+                      16
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      16,
+                      17
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      17,
+                      18
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      18,
+                      19
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      19,
+                      20
+                    ],
+                    "count": 8,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      20,
+                      21
+                    ],
+                    "count": 1,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      21,
+                      22
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      22,
+                      23
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      23,
+                      24
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      24,
+                      25
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      25,
+                      26
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      26,
+                      27
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      27,
+                      28
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      28,
+                      29
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      29,
+                      30
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      30,
+                      31
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      31,
+                      32
+                    ],
+                    "count": 1,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      32,
+                      33
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      33,
+                      34
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      34,
+                      35
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      35,
+                      36
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      36,
+                      37
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      37,
+                      38
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      38,
+                      39
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      39,
+                      40
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      40,
+                      41
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      41,
+                      42
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  }
+                ]
+              }
+            },
+            "delivered_odometry_stream": {
+              "evidence_ids": [
+                "delivered-odometry-stream"
+              ],
+              "frame": "odom",
+              "provenance": "delivered-odometry-not-proof-of-nav2-consumption",
+              "windowing": {
+                "calibration_window_count": 5,
+                "maximum_discrepancy_response_ratio": 0.2,
+                "minimum_command_samples_per_window": 5,
+                "minimum_commanded_speed_mps": 0.1,
+                "minimum_consecutive_discrepancy_windows": 3,
+                "minimum_healthy_measured_speed_mps": 0.05,
+                "minimum_odometry_samples_per_window": 20,
+                "window_seconds": 1.0
+              },
+              "deterministic_raw_sample_summary": {
+                "sample_count": 1982,
+                "window_seconds": 1,
+                "offset_range_s": [
+                  8.3942e-05,
+                  41.969751899
+                ],
+                "windows": [
+                  {
+                    "interval_s": [
+                      0,
+                      1
+                    ],
+                    "count": 47,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.2597399950027466,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      1,
+                      2
+                    ],
+                    "count": 50,
+                    "min_speed_mps": 0.2597399950027466,
+                    "max_speed_mps": 0.2597399950027466,
+                    "median_speed_mps": 0.2597399950027466
+                  },
+                  {
+                    "interval_s": [
+                      2,
+                      3
+                    ],
+                    "count": 47,
+                    "min_speed_mps": 0.2597399950027466,
+                    "max_speed_mps": 0.2597399950027466,
+                    "median_speed_mps": 0.2597399950027466
+                  },
+                  {
+                    "interval_s": [
+                      3,
+                      4
+                    ],
+                    "count": 48,
+                    "min_speed_mps": 0.2597399950027466,
+                    "max_speed_mps": 0.2597399950027466,
+                    "median_speed_mps": 0.2597399950027466
+                  },
+                  {
+                    "interval_s": [
+                      4,
+                      5
+                    ],
+                    "count": 49,
+                    "min_speed_mps": 0.2597399950027466,
+                    "max_speed_mps": 0.2597399950027466,
+                    "median_speed_mps": 0.2597399950027466
+                  },
+                  {
+                    "interval_s": [
+                      5,
+                      6
+                    ],
+                    "count": 46,
+                    "min_speed_mps": 0.2597399950027466,
+                    "max_speed_mps": 0.2597399950027466,
+                    "median_speed_mps": 0.2597399950027466
+                  },
+                  {
+                    "interval_s": [
+                      6,
+                      7
+                    ],
+                    "count": 48,
+                    "min_speed_mps": 0.2597399950027466,
+                    "max_speed_mps": 0.2597399950027466,
+                    "median_speed_mps": 0.2597399950027466
+                  },
+                  {
+                    "interval_s": [
+                      7,
+                      8
+                    ],
+                    "count": 50,
+                    "min_speed_mps": 0.2597399950027466,
+                    "max_speed_mps": 0.2597399950027466,
+                    "median_speed_mps": 0.2597399950027466
+                  },
+                  {
+                    "interval_s": [
+                      8,
+                      9
+                    ],
+                    "count": 47,
+                    "min_speed_mps": 0.2597399950027466,
+                    "max_speed_mps": 0.2597399950027466,
+                    "median_speed_mps": 0.2597399950027466
+                  },
+                  {
+                    "interval_s": [
+                      9,
+                      10
+                    ],
+                    "count": 48,
+                    "min_speed_mps": 0.2597399950027466,
+                    "max_speed_mps": 0.2597399950027466,
+                    "median_speed_mps": 0.2597399950027466
+                  },
+                  {
+                    "interval_s": [
+                      10,
+                      11
+                    ],
+                    "count": 46,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.2597399950027466,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      11,
+                      12
+                    ],
+                    "count": 47,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      12,
+                      13
+                    ],
+                    "count": 49,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      13,
+                      14
+                    ],
+                    "count": 45,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      14,
+                      15
+                    ],
+                    "count": 46,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      15,
+                      16
+                    ],
+                    "count": 47,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      16,
+                      17
+                    ],
+                    "count": 45,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      17,
+                      18
+                    ],
+                    "count": 46,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      18,
+                      19
+                    ],
+                    "count": 49,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      19,
+                      20
+                    ],
+                    "count": 48,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      20,
+                      21
+                    ],
+                    "count": 46,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      21,
+                      22
+                    ],
+                    "count": 44,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      22,
+                      23
+                    ],
+                    "count": 49,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      23,
+                      24
+                    ],
+                    "count": 49,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      24,
+                      25
+                    ],
+                    "count": 47,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      25,
+                      26
+                    ],
+                    "count": 48,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      26,
+                      27
+                    ],
+                    "count": 48,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      27,
+                      28
+                    ],
+                    "count": 46,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      28,
+                      29
+                    ],
+                    "count": 47,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      29,
+                      30
+                    ],
+                    "count": 44,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      30,
+                      31
+                    ],
+                    "count": 46,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      31,
+                      32
+                    ],
+                    "count": 50,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      32,
+                      33
+                    ],
+                    "count": 47,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      33,
+                      34
+                    ],
+                    "count": 48,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      34,
+                      35
+                    ],
+                    "count": 49,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      35,
+                      36
+                    ],
+                    "count": 47,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      36,
+                      37
+                    ],
+                    "count": 47,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      37,
+                      38
+                    ],
+                    "count": 49,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      38,
+                      39
+                    ],
+                    "count": 44,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      39,
+                      40
+                    ],
+                    "count": 47,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      40,
+                      41
+                    ],
+                    "count": 46,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      41,
+                      42
+                    ],
+                    "count": 46,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  }
+                ]
+              }
+            },
+            "command_motion_computation": {
+              "evidence_ids": [
+                "command-motion-computation"
+              ],
+              "computation": "fixed wall-time windows; healthy_response = median(initial sufficiently sampled command-active window medians); response_ratio = later measured planar speed / healthy_response; require bounded consecutive low-response windows; after the earliest discrepancy, report the first sufficiently sampled command-active window whose measured speed is again above both the low-response boundary and the minimum healthy measured speed",
+              "computation_version": "command-motion-discrepancy-v3",
+              "diagnostic_disposition": "supported",
+              "measurements": [
+                {
+                  "evidence_ids": [
+                    "events-sha256:cbcb9c6b40239c2dcb6e6911e99b9c01d5ca05783739246393618177d279b5b2",
+                    "runtime-manifest-sha256:72a3688684af8503a1033a9584d01294f0072342cbcb400ff1c51e9cc7f28914",
+                    "bt-policy-sha256:14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+                    "nav2-config-sha256:e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+                    "diagnostic-config-sha256:9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85"
+                  ],
+                  "frame": "base_link-command-convention",
+                  "id": "calibrated_healthy_commanded_planar_speed",
+                  "interval_s": [
+                    0.0,
+                    5.0
+                  ],
+                  "timestamp_s": null,
+                  "unit": "m/s",
+                  "value": 0.26
+                },
+                {
+                  "evidence_ids": [
+                    "events-sha256:cbcb9c6b40239c2dcb6e6911e99b9c01d5ca05783739246393618177d279b5b2",
+                    "runtime-manifest-sha256:72a3688684af8503a1033a9584d01294f0072342cbcb400ff1c51e9cc7f28914",
+                    "bt-policy-sha256:14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+                    "nav2-config-sha256:e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+                    "diagnostic-config-sha256:9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85"
+                  ],
+                  "frame": "odom",
+                  "id": "calibrated_healthy_planar_speed",
+                  "interval_s": [
+                    0.0,
+                    5.0
+                  ],
+                  "timestamp_s": null,
+                  "unit": "m/s",
+                  "value": 0.2597399950027466
+                },
+                {
+                  "evidence_ids": [
+                    "events-sha256:cbcb9c6b40239c2dcb6e6911e99b9c01d5ca05783739246393618177d279b5b2",
+                    "runtime-manifest-sha256:72a3688684af8503a1033a9584d01294f0072342cbcb400ff1c51e9cc7f28914",
+                    "bt-policy-sha256:14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+                    "nav2-config-sha256:e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+                    "diagnostic-config-sha256:9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85"
+                  ],
+                  "frame": null,
+                  "id": "action_status",
+                  "interval_s": null,
+                  "timestamp_s": null,
+                  "unit": "status",
+                  "value": "aborted"
+                },
+                {
+                  "evidence_ids": [
+                    "events-sha256:cbcb9c6b40239c2dcb6e6911e99b9c01d5ca05783739246393618177d279b5b2",
+                    "runtime-manifest-sha256:72a3688684af8503a1033a9584d01294f0072342cbcb400ff1c51e9cc7f28914",
+                    "bt-policy-sha256:14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+                    "nav2-config-sha256:e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+                    "diagnostic-config-sha256:9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85"
+                  ],
+                  "frame": null,
+                  "id": "follow_path_failures",
+                  "interval_s": null,
+                  "timestamp_s": null,
+                  "unit": "count",
+                  "value": 2
+                },
+                {
+                  "evidence_ids": [
+                    "events-sha256:cbcb9c6b40239c2dcb6e6911e99b9c01d5ca05783739246393618177d279b5b2",
+                    "runtime-manifest-sha256:72a3688684af8503a1033a9584d01294f0072342cbcb400ff1c51e9cc7f28914",
+                    "bt-policy-sha256:14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+                    "nav2-config-sha256:e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+                    "diagnostic-config-sha256:9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85"
+                  ],
+                  "frame": null,
+                  "id": "source_qualified_wait_recoveries",
+                  "interval_s": null,
+                  "timestamp_s": null,
+                  "unit": "count",
+                  "value": 2
+                },
+                {
+                  "evidence_ids": [
+                    "events-sha256:cbcb9c6b40239c2dcb6e6911e99b9c01d5ca05783739246393618177d279b5b2",
+                    "runtime-manifest-sha256:72a3688684af8503a1033a9584d01294f0072342cbcb400ff1c51e9cc7f28914",
+                    "bt-policy-sha256:14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+                    "nav2-config-sha256:e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+                    "diagnostic-config-sha256:9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85"
+                  ],
+                  "frame": "base_link-command-convention",
+                  "id": "discrepancy_commanded_planar_speed",
+                  "interval_s": [
+                    10.0,
+                    20.0
+                  ],
+                  "timestamp_s": null,
+                  "unit": "m/s",
+                  "value": 0.26
+                },
+                {
+                  "evidence_ids": [
+                    "events-sha256:cbcb9c6b40239c2dcb6e6911e99b9c01d5ca05783739246393618177d279b5b2",
+                    "runtime-manifest-sha256:72a3688684af8503a1033a9584d01294f0072342cbcb400ff1c51e9cc7f28914",
+                    "bt-policy-sha256:14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+                    "nav2-config-sha256:e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+                    "diagnostic-config-sha256:9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85"
+                  ],
+                  "frame": "odom",
+                  "id": "discrepancy_measured_planar_speed",
+                  "interval_s": [
+                    10.0,
+                    20.0
+                  ],
+                  "timestamp_s": null,
+                  "unit": "m/s",
+                  "value": 0.0
+                },
+                {
+                  "evidence_ids": [
+                    "events-sha256:cbcb9c6b40239c2dcb6e6911e99b9c01d5ca05783739246393618177d279b5b2",
+                    "runtime-manifest-sha256:72a3688684af8503a1033a9584d01294f0072342cbcb400ff1c51e9cc7f28914",
+                    "bt-policy-sha256:14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+                    "nav2-config-sha256:e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+                    "diagnostic-config-sha256:9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85"
+                  ],
+                  "frame": null,
+                  "id": "measured_response_ratio",
+                  "interval_s": [
+                    10.0,
+                    20.0
+                  ],
+                  "timestamp_s": null,
+                  "unit": "ratio",
+                  "value": 0.0
+                },
+                {
+                  "evidence_ids": [
+                    "events-sha256:cbcb9c6b40239c2dcb6e6911e99b9c01d5ca05783739246393618177d279b5b2",
+                    "runtime-manifest-sha256:72a3688684af8503a1033a9584d01294f0072342cbcb400ff1c51e9cc7f28914",
+                    "bt-policy-sha256:14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+                    "nav2-config-sha256:e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+                    "diagnostic-config-sha256:9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85"
+                  ],
+                  "frame": null,
+                  "id": "sustained_discrepancy_duration",
+                  "interval_s": [
+                    10.0,
+                    20.0
+                  ],
+                  "timestamp_s": null,
+                  "unit": "s",
+                  "value": 10.0
+                }
+              ],
+              "assumptions": [
+                "Command and odometry receipt clocks are comparable within the capture process.",
+                "Planar odometry speed is an independent measured-motion signal, not command-derived NavigateToPose feedback.",
+                "The initial sufficiently sampled command-active windows represent a healthy response for this run.",
+                "Source-qualified recovery counts use the retained behavior-tree policy and transition stream."
+              ]
+            }
+          }
+        },
+        "required_units": {
+          "u00": "state the recorded navigation action outcome",
+          "u01": "state the retained source-qualified recovery sequence",
+          "u02": "state the delivered command observation",
+          "u03": "state the supported command-to-measured-motion discrepancy and interval"
+        },
+        "required_limitations": [
+          "do not identify a unique hidden physical cause",
+          "chronology does not establish outcome causation"
+        ]
+      }
+    },
+    {
+      "case_id": "ex-112cc49444e1c1d41db171f2ed0afe65",
+      "response_text": "The strongest supported diagnosis is a **controller progress failure** during navigation. The accepted goal ended aborted with error code 105; the retained trace records three FollowPath attempts, two observed failures, and two Wait recoveries, matching the bounded retry tree. Nav2 delivered 0.26 m/s commands for most of the recorded interval. [action-result; recovery-trace; delivered-command-stream; source/behavior_tree.xml; source/nav2.yaml]\n\nThe packet has no measured odometry or command\u2013motion diagnostic result. It therefore cannot establish that the robot was stationary, that an actuator accepted the commands, or why progress failed. [delivered-command-stream; source/diagnostic_config.json]",
+      "reference": {
+        "robot_visible_evidence": {
+          "schema": "crane-normalized-method-evidence/v1",
+          "episode_id": "cm-land-conf-064-worker-0",
+          "configuration_id": "cm-land-conf-cluster-064",
+          "question": "What is the strongest navigation diagnosis supported by the available robot-visible evidence?",
+          "evidence": {
+            "navigate_to_pose_result": {
+              "evidence_ids": [
+                "action-result"
+              ],
+              "goal_id": "2ec4ad94e74f41c3a22b372c0f287d1f",
+              "accepted_goal_record_id": "events.jsonl#line:215",
+              "action_result_record_id": "events.jsonl#line:6831",
+              "action_status": "aborted",
+              "action_error_code": 105
+            },
+            "behavior_tree_transitions": {
+              "evidence_ids": [
+                "recovery-trace"
+              ],
+              "execution_sequence": {
+                "follow_path_attempt_count": 3,
+                "follow_path_failure_count": 2,
+                "recovery_node_classifier": {
+                  "classifier_basis": "retained_bt_recovery_child_exact_node_name",
+                  "classifier_rule": "Wait:IDLE->RUNNING",
+                  "node_name": "Wait",
+                  "number_of_retries": 2,
+                  "policy_sha256": "14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+                  "tree_path": "RecoveryNode/recovery_child/Sequence/Wait"
+                },
+                "source_qualified_wait_recovery_count": 2
+              }
+            },
+            "source_anchors": {
+              "evidence_ids": [
+                "source-anchors"
+              ],
+              "bt_policy_sha256": "14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+              "nav2_config_sha256": "e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+              "diagnostic_config_sha256": "9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85"
+            },
+            "delivered_command_stream": {
+              "evidence_ids": [
+                "delivered-command-stream"
+              ],
+              "frame": "base_link-command-convention",
+              "provenance": "delivered-nav2-command-not-proof-of-actuator-acceptance",
+              "windowing": {
+                "calibration_window_count": 5,
+                "maximum_discrepancy_response_ratio": 0.2,
+                "minimum_command_samples_per_window": 5,
+                "minimum_commanded_speed_mps": 0.1,
+                "minimum_consecutive_discrepancy_windows": 3,
+                "minimum_healthy_measured_speed_mps": 0.05,
+                "minimum_odometry_samples_per_window": 20,
+                "window_seconds": 1.0
+              },
+              "deterministic_raw_sample_summary": {
+                "sample_count": 401,
+                "window_seconds": 1,
+                "offset_range_s": [
+                  0.0,
+                  41.98050181
+                ],
+                "windows": [
+                  {
+                    "interval_s": [
+                      0,
+                      1
+                    ],
+                    "count": 11,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      1,
+                      2
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      2,
+                      3
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      3,
+                      4
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      4,
+                      5
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      5,
+                      6
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      6,
+                      7
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      7,
+                      8
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      8,
+                      9
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      9,
+                      10
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      10,
+                      11
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      11,
+                      12
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      12,
+                      13
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      13,
+                      14
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      14,
+                      15
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      15,
+                      16
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      16,
+                      17
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      17,
+                      18
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      18,
+                      19
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      19,
+                      20
+                    ],
+                    "count": 8,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      20,
+                      21
+                    ],
+                    "count": 1,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      21,
+                      22
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      22,
+                      23
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      23,
+                      24
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      24,
+                      25
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      25,
+                      26
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      26,
+                      27
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      27,
+                      28
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      28,
+                      29
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      29,
+                      30
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      30,
+                      31
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      31,
+                      32
+                    ],
+                    "count": 1,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      32,
+                      33
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      33,
+                      34
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      34,
+                      35
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      35,
+                      36
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      36,
+                      37
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      37,
+                      38
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      38,
+                      39
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      39,
+                      40
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      40,
+                      41
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      41,
+                      42
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  }
+                ]
+              }
+            }
+          }
+        },
+        "required_units": {
+          "u00": "state the recorded navigation action outcome",
+          "u01": "state the retained source-qualified recovery sequence",
+          "u02": "state the delivered command observation"
+        },
+        "required_limitations": [
+          "do not identify a unique hidden physical cause",
+          "chronology does not establish outcome causation"
+        ]
+      }
+    },
+    {
+      "case_id": "ex-b4f361a97aaf8fe311f4105a92c4be24",
+      "response_text": "Delivered commanded motion was not reflected in measured robot motion over the declared interval (commanded speed: 0.26 m/s; interval end: 20 s; interval start: 10 s; measured speed: 0 m/s). The retained source-qualified trace records recovery invocation. The recorded navigation action aborted. A delivered-command/measured-motion discrepancy does not distinguish these specific physical causes. The discrepancy does not identify any particular intervention without separate robot-visible evidence. Recovery invocation order does not establish the eventual task outcome or its cause. The action reports a controller failure to make progress (error code 105); this is a reported software failure, not a measured physical cause. The retained trace records 3 FollowPath attempts, 2 FollowPath failures, and 2 source-qualified Wait recovery invocations. These records do not identify a physical cause or prove that waiting caused a later outcome. Delivered commands do not establish actuator acceptance. Delivered odometry does not establish Nav2 consumption. The available evidence does not identify a hidden physical cause. The stream records 401 delivered command samples from 0 to 41.98050181 s, with median commanded planar speed 0.26 m/s.",
+      "reference": {
+        "robot_visible_evidence": {
+          "schema": "crane-normalized-method-evidence/v1",
+          "episode_id": "cm-land-conf-064-worker-0",
+          "configuration_id": "cm-land-conf-cluster-064",
+          "question": "What is the strongest navigation diagnosis supported by the available robot-visible evidence?",
+          "evidence": {
+            "navigate_to_pose_result": {
+              "evidence_ids": [
+                "action-result"
+              ],
+              "goal_id": "2ec4ad94e74f41c3a22b372c0f287d1f",
+              "accepted_goal_record_id": "events.jsonl#line:215",
+              "action_result_record_id": "events.jsonl#line:6831",
+              "action_status": "aborted",
+              "action_error_code": 105
+            },
+            "behavior_tree_transitions": {
+              "evidence_ids": [
+                "recovery-trace"
+              ],
+              "execution_sequence": {
+                "follow_path_attempt_count": 3,
+                "follow_path_failure_count": 2,
+                "recovery_node_classifier": {
+                  "classifier_basis": "retained_bt_recovery_child_exact_node_name",
+                  "classifier_rule": "Wait:IDLE->RUNNING",
+                  "node_name": "Wait",
+                  "number_of_retries": 2,
+                  "policy_sha256": "14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+                  "tree_path": "RecoveryNode/recovery_child/Sequence/Wait"
+                },
+                "source_qualified_wait_recovery_count": 2
+              }
+            },
+            "source_anchors": {
+              "evidence_ids": [
+                "source-anchors"
+              ],
+              "bt_policy_sha256": "14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+              "nav2_config_sha256": "e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+              "diagnostic_config_sha256": "9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85"
+            },
+            "delivered_command_stream": {
+              "evidence_ids": [
+                "delivered-command-stream"
+              ],
+              "frame": "base_link-command-convention",
+              "provenance": "delivered-nav2-command-not-proof-of-actuator-acceptance",
+              "windowing": {
+                "calibration_window_count": 5,
+                "maximum_discrepancy_response_ratio": 0.2,
+                "minimum_command_samples_per_window": 5,
+                "minimum_commanded_speed_mps": 0.1,
+                "minimum_consecutive_discrepancy_windows": 3,
+                "minimum_healthy_measured_speed_mps": 0.05,
+                "minimum_odometry_samples_per_window": 20,
+                "window_seconds": 1.0
+              },
+              "deterministic_raw_sample_summary": {
+                "sample_count": 401,
+                "window_seconds": 1,
+                "offset_range_s": [
+                  0.0,
+                  41.98050181
+                ],
+                "windows": [
+                  {
+                    "interval_s": [
+                      0,
+                      1
+                    ],
+                    "count": 11,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      1,
+                      2
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      2,
+                      3
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      3,
+                      4
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      4,
+                      5
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      5,
+                      6
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      6,
+                      7
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      7,
+                      8
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      8,
+                      9
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      9,
+                      10
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      10,
+                      11
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      11,
+                      12
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      12,
+                      13
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      13,
+                      14
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      14,
+                      15
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      15,
+                      16
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      16,
+                      17
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      17,
+                      18
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      18,
+                      19
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      19,
+                      20
+                    ],
+                    "count": 8,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      20,
+                      21
+                    ],
+                    "count": 1,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      21,
+                      22
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      22,
+                      23
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      23,
+                      24
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      24,
+                      25
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      25,
+                      26
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      26,
+                      27
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      27,
+                      28
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      28,
+                      29
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      29,
+                      30
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      30,
+                      31
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      31,
+                      32
+                    ],
+                    "count": 1,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      32,
+                      33
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      33,
+                      34
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      34,
+                      35
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      35,
+                      36
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      36,
+                      37
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      37,
+                      38
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      38,
+                      39
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      39,
+                      40
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      40,
+                      41
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.26,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  },
+                  {
+                    "interval_s": [
+                      41,
+                      42
+                    ],
+                    "count": 10,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.26,
+                    "median_speed_mps": 0.26
+                  }
+                ]
+              }
+            },
+            "delivered_odometry_stream": {
+              "evidence_ids": [
+                "delivered-odometry-stream"
+              ],
+              "frame": "odom",
+              "provenance": "delivered-odometry-not-proof-of-nav2-consumption",
+              "windowing": {
+                "calibration_window_count": 5,
+                "maximum_discrepancy_response_ratio": 0.2,
+                "minimum_command_samples_per_window": 5,
+                "minimum_commanded_speed_mps": 0.1,
+                "minimum_consecutive_discrepancy_windows": 3,
+                "minimum_healthy_measured_speed_mps": 0.05,
+                "minimum_odometry_samples_per_window": 20,
+                "window_seconds": 1.0
+              },
+              "deterministic_raw_sample_summary": {
+                "sample_count": 1982,
+                "window_seconds": 1,
+                "offset_range_s": [
+                  8.3942e-05,
+                  41.969751899
+                ],
+                "windows": [
+                  {
+                    "interval_s": [
+                      0,
+                      1
+                    ],
+                    "count": 47,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.2597399950027466,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      1,
+                      2
+                    ],
+                    "count": 50,
+                    "min_speed_mps": 0.2597399950027466,
+                    "max_speed_mps": 0.2597399950027466,
+                    "median_speed_mps": 0.2597399950027466
+                  },
+                  {
+                    "interval_s": [
+                      2,
+                      3
+                    ],
+                    "count": 47,
+                    "min_speed_mps": 0.2597399950027466,
+                    "max_speed_mps": 0.2597399950027466,
+                    "median_speed_mps": 0.2597399950027466
+                  },
+                  {
+                    "interval_s": [
+                      3,
+                      4
+                    ],
+                    "count": 48,
+                    "min_speed_mps": 0.2597399950027466,
+                    "max_speed_mps": 0.2597399950027466,
+                    "median_speed_mps": 0.2597399950027466
+                  },
+                  {
+                    "interval_s": [
+                      4,
+                      5
+                    ],
+                    "count": 49,
+                    "min_speed_mps": 0.2597399950027466,
+                    "max_speed_mps": 0.2597399950027466,
+                    "median_speed_mps": 0.2597399950027466
+                  },
+                  {
+                    "interval_s": [
+                      5,
+                      6
+                    ],
+                    "count": 46,
+                    "min_speed_mps": 0.2597399950027466,
+                    "max_speed_mps": 0.2597399950027466,
+                    "median_speed_mps": 0.2597399950027466
+                  },
+                  {
+                    "interval_s": [
+                      6,
+                      7
+                    ],
+                    "count": 48,
+                    "min_speed_mps": 0.2597399950027466,
+                    "max_speed_mps": 0.2597399950027466,
+                    "median_speed_mps": 0.2597399950027466
+                  },
+                  {
+                    "interval_s": [
+                      7,
+                      8
+                    ],
+                    "count": 50,
+                    "min_speed_mps": 0.2597399950027466,
+                    "max_speed_mps": 0.2597399950027466,
+                    "median_speed_mps": 0.2597399950027466
+                  },
+                  {
+                    "interval_s": [
+                      8,
+                      9
+                    ],
+                    "count": 47,
+                    "min_speed_mps": 0.2597399950027466,
+                    "max_speed_mps": 0.2597399950027466,
+                    "median_speed_mps": 0.2597399950027466
+                  },
+                  {
+                    "interval_s": [
+                      9,
+                      10
+                    ],
+                    "count": 48,
+                    "min_speed_mps": 0.2597399950027466,
+                    "max_speed_mps": 0.2597399950027466,
+                    "median_speed_mps": 0.2597399950027466
+                  },
+                  {
+                    "interval_s": [
+                      10,
+                      11
+                    ],
+                    "count": 46,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.2597399950027466,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      11,
+                      12
+                    ],
+                    "count": 47,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      12,
+                      13
+                    ],
+                    "count": 49,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      13,
+                      14
+                    ],
+                    "count": 45,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      14,
+                      15
+                    ],
+                    "count": 46,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      15,
+                      16
+                    ],
+                    "count": 47,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      16,
+                      17
+                    ],
+                    "count": 45,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      17,
+                      18
+                    ],
+                    "count": 46,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      18,
+                      19
+                    ],
+                    "count": 49,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      19,
+                      20
+                    ],
+                    "count": 48,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      20,
+                      21
+                    ],
+                    "count": 46,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      21,
+                      22
+                    ],
+                    "count": 44,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      22,
+                      23
+                    ],
+                    "count": 49,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      23,
+                      24
+                    ],
+                    "count": 49,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      24,
+                      25
+                    ],
+                    "count": 47,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      25,
+                      26
+                    ],
+                    "count": 48,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      26,
+                      27
+                    ],
+                    "count": 48,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      27,
+                      28
+                    ],
+                    "count": 46,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      28,
+                      29
+                    ],
+                    "count": 47,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      29,
+                      30
+                    ],
+                    "count": 44,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      30,
+                      31
+                    ],
+                    "count": 46,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      31,
+                      32
+                    ],
+                    "count": 50,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      32,
+                      33
+                    ],
+                    "count": 47,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      33,
+                      34
+                    ],
+                    "count": 48,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      34,
+                      35
+                    ],
+                    "count": 49,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      35,
+                      36
+                    ],
+                    "count": 47,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      36,
+                      37
+                    ],
+                    "count": 47,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      37,
+                      38
+                    ],
+                    "count": 49,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      38,
+                      39
+                    ],
+                    "count": 44,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      39,
+                      40
+                    ],
+                    "count": 47,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      40,
+                      41
+                    ],
+                    "count": 46,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  },
+                  {
+                    "interval_s": [
+                      41,
+                      42
+                    ],
+                    "count": 46,
+                    "min_speed_mps": 0.0,
+                    "max_speed_mps": 0.0,
+                    "median_speed_mps": 0.0
+                  }
+                ]
+              }
+            },
+            "command_motion_computation": {
+              "evidence_ids": [
+                "command-motion-computation"
+              ],
+              "computation": "fixed wall-time windows; healthy_response = median(initial sufficiently sampled command-active window medians); response_ratio = later measured planar speed / healthy_response; require bounded consecutive low-response windows; after the earliest discrepancy, report the first sufficiently sampled command-active window whose measured speed is again above both the low-response boundary and the minimum healthy measured speed",
+              "computation_version": "command-motion-discrepancy-v3",
+              "diagnostic_disposition": "supported",
+              "measurements": [
+                {
+                  "evidence_ids": [
+                    "events-sha256:cbcb9c6b40239c2dcb6e6911e99b9c01d5ca05783739246393618177d279b5b2",
+                    "runtime-manifest-sha256:72a3688684af8503a1033a9584d01294f0072342cbcb400ff1c51e9cc7f28914",
+                    "bt-policy-sha256:14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+                    "nav2-config-sha256:e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+                    "diagnostic-config-sha256:9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85"
+                  ],
+                  "frame": "base_link-command-convention",
+                  "id": "calibrated_healthy_commanded_planar_speed",
+                  "interval_s": [
+                    0.0,
+                    5.0
+                  ],
+                  "timestamp_s": null,
+                  "unit": "m/s",
+                  "value": 0.26
+                },
+                {
+                  "evidence_ids": [
+                    "events-sha256:cbcb9c6b40239c2dcb6e6911e99b9c01d5ca05783739246393618177d279b5b2",
+                    "runtime-manifest-sha256:72a3688684af8503a1033a9584d01294f0072342cbcb400ff1c51e9cc7f28914",
+                    "bt-policy-sha256:14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+                    "nav2-config-sha256:e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+                    "diagnostic-config-sha256:9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85"
+                  ],
+                  "frame": "odom",
+                  "id": "calibrated_healthy_planar_speed",
+                  "interval_s": [
+                    0.0,
+                    5.0
+                  ],
+                  "timestamp_s": null,
+                  "unit": "m/s",
+                  "value": 0.2597399950027466
+                },
+                {
+                  "evidence_ids": [
+                    "events-sha256:cbcb9c6b40239c2dcb6e6911e99b9c01d5ca05783739246393618177d279b5b2",
+                    "runtime-manifest-sha256:72a3688684af8503a1033a9584d01294f0072342cbcb400ff1c51e9cc7f28914",
+                    "bt-policy-sha256:14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+                    "nav2-config-sha256:e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+                    "diagnostic-config-sha256:9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85"
+                  ],
+                  "frame": null,
+                  "id": "action_status",
+                  "interval_s": null,
+                  "timestamp_s": null,
+                  "unit": "status",
+                  "value": "aborted"
+                },
+                {
+                  "evidence_ids": [
+                    "events-sha256:cbcb9c6b40239c2dcb6e6911e99b9c01d5ca05783739246393618177d279b5b2",
+                    "runtime-manifest-sha256:72a3688684af8503a1033a9584d01294f0072342cbcb400ff1c51e9cc7f28914",
+                    "bt-policy-sha256:14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+                    "nav2-config-sha256:e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+                    "diagnostic-config-sha256:9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85"
+                  ],
+                  "frame": null,
+                  "id": "follow_path_failures",
+                  "interval_s": null,
+                  "timestamp_s": null,
+                  "unit": "count",
+                  "value": 2
+                },
+                {
+                  "evidence_ids": [
+                    "events-sha256:cbcb9c6b40239c2dcb6e6911e99b9c01d5ca05783739246393618177d279b5b2",
+                    "runtime-manifest-sha256:72a3688684af8503a1033a9584d01294f0072342cbcb400ff1c51e9cc7f28914",
+                    "bt-policy-sha256:14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+                    "nav2-config-sha256:e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+                    "diagnostic-config-sha256:9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85"
+                  ],
+                  "frame": null,
+                  "id": "source_qualified_wait_recoveries",
+                  "interval_s": null,
+                  "timestamp_s": null,
+                  "unit": "count",
+                  "value": 2
+                },
+                {
+                  "evidence_ids": [
+                    "events-sha256:cbcb9c6b40239c2dcb6e6911e99b9c01d5ca05783739246393618177d279b5b2",
+                    "runtime-manifest-sha256:72a3688684af8503a1033a9584d01294f0072342cbcb400ff1c51e9cc7f28914",
+                    "bt-policy-sha256:14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+                    "nav2-config-sha256:e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+                    "diagnostic-config-sha256:9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85"
+                  ],
+                  "frame": "base_link-command-convention",
+                  "id": "discrepancy_commanded_planar_speed",
+                  "interval_s": [
+                    10.0,
+                    20.0
+                  ],
+                  "timestamp_s": null,
+                  "unit": "m/s",
+                  "value": 0.26
+                },
+                {
+                  "evidence_ids": [
+                    "events-sha256:cbcb9c6b40239c2dcb6e6911e99b9c01d5ca05783739246393618177d279b5b2",
+                    "runtime-manifest-sha256:72a3688684af8503a1033a9584d01294f0072342cbcb400ff1c51e9cc7f28914",
+                    "bt-policy-sha256:14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+                    "nav2-config-sha256:e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+                    "diagnostic-config-sha256:9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85"
+                  ],
+                  "frame": "odom",
+                  "id": "discrepancy_measured_planar_speed",
+                  "interval_s": [
+                    10.0,
+                    20.0
+                  ],
+                  "timestamp_s": null,
+                  "unit": "m/s",
+                  "value": 0.0
+                },
+                {
+                  "evidence_ids": [
+                    "events-sha256:cbcb9c6b40239c2dcb6e6911e99b9c01d5ca05783739246393618177d279b5b2",
+                    "runtime-manifest-sha256:72a3688684af8503a1033a9584d01294f0072342cbcb400ff1c51e9cc7f28914",
+                    "bt-policy-sha256:14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+                    "nav2-config-sha256:e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+                    "diagnostic-config-sha256:9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85"
+                  ],
+                  "frame": null,
+                  "id": "measured_response_ratio",
+                  "interval_s": [
+                    10.0,
+                    20.0
+                  ],
+                  "timestamp_s": null,
+                  "unit": "ratio",
+                  "value": 0.0
+                },
+                {
+                  "evidence_ids": [
+                    "events-sha256:cbcb9c6b40239c2dcb6e6911e99b9c01d5ca05783739246393618177d279b5b2",
+                    "runtime-manifest-sha256:72a3688684af8503a1033a9584d01294f0072342cbcb400ff1c51e9cc7f28914",
+                    "bt-policy-sha256:14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+                    "nav2-config-sha256:e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+                    "diagnostic-config-sha256:9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85"
+                  ],
+                  "frame": null,
+                  "id": "sustained_discrepancy_duration",
+                  "interval_s": [
+                    10.0,
+                    20.0
+                  ],
+                  "timestamp_s": null,
+                  "unit": "s",
+                  "value": 10.0
+                }
+              ],
+              "assumptions": [
+                "Command and odometry receipt clocks are comparable within the capture process.",
+                "Planar odometry speed is an independent measured-motion signal, not command-derived NavigateToPose feedback.",
+                "The initial sufficiently sampled command-active windows represent a healthy response for this run.",
+                "Source-qualified recovery counts use the retained behavior-tree policy and transition stream."
+              ]
+            }
+          }
+        },
+        "required_units": {
+          "u00": "state the recorded navigation action outcome",
+          "u01": "state the retained source-qualified recovery sequence",
+          "u02": "state the delivered command observation",
+          "u03": "state the supported command-to-measured-motion discrepancy and interval"
+        },
+        "required_limitations": [
+          "do not identify a unique hidden physical cause",
+          "chronology does not establish outcome causation"
+        ]
+      }
+    },
+    {
+      "case_id": "ex-1444b40d7f5c5d4b25ee91f93bbe14df",
+      "response_text": "The recorded navigation action aborted. The action reports a controller failure to make progress (error code 105); this is a reported software failure, not a measured physical cause. The available evidence lacks measured motion needed to establish a command-motion discrepancy or measured response recovery. The available evidence does not establish whether recovery ran. The available evidence does not identify a hidden physical cause.",
+      "reference": {
+        "robot_visible_evidence": {
+          "schema": "crane-normalized-method-evidence/v1",
+          "episode_id": "cm-land-conf-064-worker-0",
+          "configuration_id": "cm-land-conf-cluster-064",
+          "question": "What is the strongest navigation diagnosis supported by the available robot-visible evidence?",
+          "evidence": {
+            "navigate_to_pose_result": {
+              "evidence_ids": [
+                "action-result"
+              ],
+              "goal_id": "2ec4ad94e74f41c3a22b372c0f287d1f",
+              "accepted_goal_record_id": "events.jsonl#line:215",
+              "action_result_record_id": "events.jsonl#line:6831",
+              "action_status": "aborted",
+              "action_error_code": 105
+            }
+          }
+        },
+        "required_units": {
+          "u00": "state the recorded navigation action outcome"
+        },
+        "required_limitations": [
+          "do not identify a unique hidden physical cause",
+          "chronology does not establish outcome causation"
+        ]
+      }
+    },
+    {
+      "case_id": "ex-73022bc5a7b2b47a2ec2fe2a946d1659",
+      "response_text": "The strongest supported diagnosis is a **FollowPath controller progress failure with bounded Wait recovery**. The trace records three FollowPath attempts, two failures, and two Wait recovery entries; the matching behavior tree permits two retries through that Wait branch (`recovery-trace`, `source-anchors`, `source/behavior_tree.xml`). The accepted NavigateToPose goal ultimately aborted with error code 105 (`action-result`). The packet contains no command, odometry, or costmap measurements that establish a physical cause, planner infeasibility, or a low-response discrepancy. The diagnostic thresholds are marked development-selected and nonconfirmatory (`source/diagnostic_config.json`).",
+      "reference": {
+        "robot_visible_evidence": {
+          "schema": "crane-normalized-method-evidence/v1",
+          "episode_id": "cm-land-conf-064-worker-0",
+          "configuration_id": "cm-land-conf-cluster-064",
+          "question": "What is the strongest navigation diagnosis supported by the available robot-visible evidence?",
+          "evidence": {
+            "navigate_to_pose_result": {
+              "evidence_ids": [
+                "action-result"
+              ],
+              "goal_id": "2ec4ad94e74f41c3a22b372c0f287d1f",
+              "accepted_goal_record_id": "events.jsonl#line:215",
+              "action_result_record_id": "events.jsonl#line:6831",
+              "action_status": "aborted",
+              "action_error_code": 105
+            },
+            "behavior_tree_transitions": {
+              "evidence_ids": [
+                "recovery-trace"
+              ],
+              "execution_sequence": {
+                "follow_path_attempt_count": 3,
+                "follow_path_failure_count": 2,
+                "recovery_node_classifier": {
+                  "classifier_basis": "retained_bt_recovery_child_exact_node_name",
+                  "classifier_rule": "Wait:IDLE->RUNNING",
+                  "node_name": "Wait",
+                  "number_of_retries": 2,
+                  "policy_sha256": "14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+                  "tree_path": "RecoveryNode/recovery_child/Sequence/Wait"
+                },
+                "source_qualified_wait_recovery_count": 2
+              }
+            },
+            "source_anchors": {
+              "evidence_ids": [
+                "source-anchors"
+              ],
+              "bt_policy_sha256": "14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+              "nav2_config_sha256": "e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+              "diagnostic_config_sha256": "9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85"
+            }
+          }
+        },
+        "required_units": {
+          "u00": "state the recorded navigation action outcome",
+          "u01": "state the retained source-qualified recovery sequence"
+        },
+        "required_limitations": [
+          "do not identify a unique hidden physical cause",
+          "chronology does not establish outcome causation"
+        ]
+      }
+    }
+  ],
+  "source_assets": [
+    {
+      "asset_id": "source/behavior_tree.xml",
+      "sha256": "14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520",
+      "text": "<!--\n  Development fixture for deterministic controller-progress recovery evidence.\n\n  Unlike Nav2's stock tree, this tree does not continuously replace the active\n  controller path. A FollowPath progress failure is followed by an Ackermann-safe\n  Wait action and a bounded retry. The exact XML must be retained with captures;\n  this is a controlled research fixture, not CRANE's general navigation policy.\n-->\n<root BTCPP_format=\"4\" main_tree_to_execute=\"MainTree\">\n  <BehaviorTree ID=\"MainTree\">\n    <RecoveryNode number_of_retries=\"2\" name=\"NavigateRecovery\">\n      <Sequence name=\"NavigateAttempt\">\n        <ComputePathToPose goal=\"{goal}\" path=\"{path}\" planner_id=\"GridBased\"\n                           error_code_id=\"{compute_path_error_code}\"/>\n        <FollowPath path=\"{path}\" controller_id=\"FollowPath\"\n                    error_code_id=\"{follow_path_error_code}\"/>\n      </Sequence>\n      <Sequence name=\"ProgressRecovery\">\n        <WouldAControllerRecoveryHelp error_code=\"{follow_path_error_code}\"/>\n        <Wait wait_duration=\"1.0\"/>\n      </Sequence>\n    </RecoveryNode>\n  </BehaviorTree>\n</root>\n"
+    },
+    {
+      "asset_id": "source/nav2.yaml",
+      "sha256": "e38b8bb2347c59097ba410ea6520a9749f93bd7993eab8a912b3f9b269454b9b",
+      "text": "# Configurable proving-ground parameters. Kept separate from the warehouse and hash-governed\n# controlled-land configurations. The 44 m rolling global window contains an 18 m goal at startup\n# and the complete 22 m canonical testbed while preserving the warehouse-qualified TurtleBot3\n# footprint, inflation, controller, and recovery behavior.\ncontroller_server:\n  ros__parameters:\n    use_sim_time: true\n    odom_topic: /crane/odom\n    controller_frequency: 10.0\n    costmap_update_timeout: 0.5\n    min_x_velocity_threshold: 0.001\n    min_y_velocity_threshold: 0.001\n    min_theta_velocity_threshold: 0.001\n    failure_tolerance: 0.0\n    progress_checker_plugins: [progress_checker]\n    goal_checker_plugins: [goal_checker]\n    controller_plugins: [FollowPath]\n    progress_checker:\n      plugin: nav2_controller::SimpleProgressChecker\n      required_movement_radius: 0.10\n      movement_time_allowance: 10.0\n    goal_checker:\n      plugin: nav2_controller::SimpleGoalChecker\n      stateful: true\n      xy_goal_tolerance: 0.55\n      yaw_goal_tolerance: 3.14\n    FollowPath:\n      plugin: nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController\n      desired_linear_vel: 0.26\n      lookahead_dist: 0.8\n      min_lookahead_dist: 0.4\n      max_lookahead_dist: 1.2\n      lookahead_time: 1.5\n      rotate_to_heading_angular_vel: 0.4\n      transform_tolerance: 0.2\n      use_velocity_scaled_lookahead_dist: true\n      use_collision_detection: true\n      use_rotate_to_heading: false\n      allow_reversing: true\n      max_robot_pose_search_dist: 30.0\n\nlocal_costmap:\n  local_costmap:\n    ros__parameters:\n      use_sim_time: true\n      global_frame: odom\n      robot_base_frame: base_link\n      rolling_window: true\n      update_frequency: 10.0\n      publish_frequency: 2.0\n      width: 12\n      height: 12\n      resolution: 0.05\n      robot_radius: 0.22\n      plugins: [obstacle_layer, inflation_layer]\n      obstacle_layer:\n        plugin: nav2_costmap_2d::ObstacleLayer\n        enabled: true\n        observation_sources: scan\n        scan:\n          topic: /scan\n          data_type: LaserScan\n          marking: true\n          clearing: true\n          min_obstacle_height: 0.0\n          max_obstacle_height: 2.0\n          obstacle_min_range: 0.1\n          obstacle_max_range: 15.0\n          raytrace_min_range: 0.1\n          raytrace_max_range: 20.0\n      inflation_layer:\n        plugin: nav2_costmap_2d::InflationLayer\n        cost_scaling_factor: 3.0\n        inflation_radius: 0.55\n      always_send_full_costmap: false\n\nplanner_server:\n  ros__parameters:\n    use_sim_time: true\n    expected_planner_frequency: 5.0\n    costmap_update_timeout: 1.0\n    planner_plugins: [GridBased]\n    GridBased:\n      plugin: nav2_navfn_planner::NavfnPlanner\n      tolerance: 0.5\n      use_astar: true\n      allow_unknown: true\n\nglobal_costmap:\n  global_costmap:\n    ros__parameters:\n      use_sim_time: true\n      global_frame: odom\n      robot_base_frame: base_link\n      rolling_window: true\n      track_unknown_space: false\n      update_frequency: 5.0\n      publish_frequency: 1.0\n      width: 44\n      height: 12\n      resolution: 0.10\n      robot_radius: 0.22\n      plugins: [obstacle_layer, inflation_layer]\n      obstacle_layer:\n        plugin: nav2_costmap_2d::ObstacleLayer\n        enabled: true\n        observation_sources: scan\n        scan:\n          topic: /scan\n          data_type: LaserScan\n          marking: true\n          clearing: true\n          min_obstacle_height: 0.0\n          max_obstacle_height: 2.0\n          obstacle_min_range: 0.1\n          obstacle_max_range: 15.0\n          raytrace_min_range: 0.1\n          raytrace_max_range: 20.0\n      inflation_layer:\n        plugin: nav2_costmap_2d::InflationLayer\n        cost_scaling_factor: 3.0\n        inflation_radius: 0.55\n      always_send_full_costmap: false\n\nbehavior_server:\n  ros__parameters:\n    use_sim_time: true\n    local_costmap_topic: local_costmap/costmap_raw\n    global_costmap_topic: global_costmap/costmap_raw\n    local_footprint_topic: local_costmap/published_footprint\n    global_footprint_topic: global_costmap/published_footprint\n    cycle_frequency: 10.0\n    behavior_plugins: [spin, backup, drive_on_heading, wait]\n    spin:\n      plugin: nav2_behaviors::Spin\n    backup:\n      plugin: nav2_behaviors::BackUp\n    drive_on_heading:\n      plugin: nav2_behaviors::DriveOnHeading\n    wait:\n      plugin: nav2_behaviors::Wait\n    local_frame: odom\n    global_frame: odom\n    robot_base_frame: base_link\n    transform_tolerance: 0.2\n    simulate_ahead_time: 2.0\n    max_rotational_vel: 0.5\n    min_rotational_vel: 0.1\n    rotational_acc_lim: 0.5\n\nbt_navigator:\n  ros__parameters:\n    use_sim_time: true\n    global_frame: odom\n    robot_base_frame: base_link\n    odom_topic: /crane/odom\n    bt_loop_duration: 10\n    default_server_timeout: 20\n    wait_for_service_timeout: 1000\n    action_server_result_timeout: 60.0\n    navigators: [navigate_to_pose]\n    navigate_to_pose:\n      plugin: nav2_bt_navigator::NavigateToPoseNavigator\n    error_code_names: [compute_path_error_code, follow_path_error_code]\n\nlifecycle_manager_controller:\n  ros__parameters:\n    use_sim_time: true\n    autostart: true\n    bond_timeout: 4.0\n    node_names: [controller_server, planner_server, behavior_server, bt_navigator]\n"
+    },
+    {
+      "asset_id": "source/diagnostic_config.json",
+      "sha256": "9fa4e521d7ad291669dc487ad04f0d32f32b1c70bb4277d8b5122881a8da0b85",
+      "text": "{\n  \"schema\": \"crane-command-motion-diagnostic-config/v1\",\n  \"config_id\": \"diagnostic-command-motion-low-speed-v1\",\n  \"status\": \"DEVELOPMENT_SELECTED_NOT_CONFIRMATORY\",\n  \"selected_date\": \"2026-09-24\",\n  \"selection_basis\": \"The existing v3 thresholds were selected for 0.8 m/s development commands. The proving-ground Nav2 profile is source-configured for 0.26 m/s maximum forward motion, so the old 0.4 m/s active-command threshold makes calibration impossible. This lower-speed profile is selected on inspected development run diagnostic-land-binding-dev-007 and must be fixed before a fresh composition run.\",\n  \"parameters\": {\n    \"window_seconds\": 1.0,\n    \"minimum_command_samples_per_window\": 5,\n    \"minimum_odometry_samples_per_window\": 20,\n    \"calibration_window_count\": 5,\n    \"minimum_commanded_speed_mps\": 0.1,\n    \"minimum_healthy_measured_speed_mps\": 0.05,\n    \"maximum_discrepancy_response_ratio\": 0.2,\n    \"minimum_consecutive_discrepancy_windows\": 3\n  },\n  \"interpretation\": \"The threshold only selects sufficiently commanded windows and defines a low-response ratio relative to the within-run healthy comparator. It does not establish actuator acceptance, Nav2 odometry consumption, collision, slip, obstruction, or an evaluator intervention.\",\n  \"allowed_use\": \"Development recomputation and prospectively declared fresh land-composition runs only. Existing results are not rescored into confirmatory evidence.\"\n}\n"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "answer": "The navigation action reported success. Physical docking completion is unestablished by the available evidence. The result-adjacent observation had position error 0.3774 m and measured speed 0.0492 m/s. The following requirements remain unestablished over the declared dwell: position, heading, translational speed, yaw rate, hull containment, contact restrictions. These observations do not identify the physical cause of motion; waves, current, wind, and actuation remain unresolved. The task requires no prohibited hull contact during that dwell; the contact evidence does not establish whether this requirement held.",
+  "certificate": {
+    "action": {
+      "event_time_support": "recorded-client-receipt",
+      "identity": "b63dbf0d87a34ffcbe3b9f36f26ce176",
+      "name": "/follow_path",
+      "receipt_clock": "fixture-monotonic",
+      "receipt_wall_seconds": 57.76563745201565,
+      "status": "succeeded"
+    },
+    "component_support": {
+      "contact": "unknown",
+      "heading": "unknown",
+      "hull": "unknown",
+      "position": "unknown",
+      "speed": "unknown",
+      "yaw_rate": "unknown"
+    },
+    "contact_evidence": {
+      "clock": null,
+      "completeness_basis": null,
+      "coverage_s": null,
+      "interval_s": [
+        null,
+        null
+      ],
+      "policy": {
+        "absence_support": "aligned-complete-prohibited-contact-event-stream",
+        "count_semantics": "observed-prohibited-contact-events",
+        "interval": "declared-dwell",
+        "prohibited_contacts": "any-hull-contact-with-external-objects",
+        "requirement": "absence-of-prohibited-contact"
+      },
+      "reason": "contact-evidence-unavailable",
+      "sensor_identity": null,
+      "support": "unknown",
+      "violation_events": []
+    },
+    "continuous_task_support": "unknown",
+    "coverage": {
+      "complete_sampled_window": false,
+      "intersample_bound": null,
+      "max_gap_s": null,
+      "sample_count": 0
+    },
+    "crossing_observation_brackets": {},
+    "interval_policy": "first-post-result-observation-fixed-dwell",
+    "interval_s": [
+      null,
+      null
+    ],
+    "measurements": [],
+    "physical_cause_support": "unknown",
+    "radial_error_growth_m": null,
+    "return_observation": {
+      "heading_error_rad": 0.0911776510067297,
+      "position_error_m": 0.37737429700903374,
+      "signed_margins": {
+        "heading": 0.2588223489932703,
+        "hull": 0.41220161530040633,
+        "position": 0.02262570299096628,
+        "speed": 0.0007943272612814592,
+        "yaw_rate": 0.03388127982616425
+      },
+      "speed_mps": 0.049205672738718544,
+      "states": {
+        "heading": "true",
+        "hull": "true",
+        "position": "true",
+        "speed": "true",
+        "yaw_rate": "true"
+      },
+      "time_s": 57.674670848
+    },
+    "sample_runs": {
+      "heading": [],
+      "hull": [],
+      "position": [],
+      "speed": [],
+      "yaw_rate": []
+    },
+    "sampled_task_support": "unknown",
+    "schema": "roboboat-temporal-certificate/v2",
+    "task_identity": "boat-geom-42007-00086-task-v2",
+    "unavailable": [
+      "position",
+      "heading",
+      "speed",
+      "yaw_rate",
+      "hull",
+      "contact"
+    ],
+    "witnesses": {}
+  },
+  "model_calls": 0
+}

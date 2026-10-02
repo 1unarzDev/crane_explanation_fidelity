@@ -1,0 +1,318 @@
+{
+  "schema": "roboboat-pre-goal-clock-jump-shutdown-review/v36",
+  "original_terminal": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-varied-start-development-v27-001/captures/boat-geom-42007-00051-v2/capture-attempt.json",
+    "sha256": "99eb99a7d79ff93bd1afeab5a37b67d5587c75d46bdd951189c48c30389102e5"
+  },
+  "fixture": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-varied-start-development-v27-001/captures/boat-geom-42007-00051-v2/fixture-summary.json",
+    "sha256": "2bbe182e38b7cf253b136bd73b58789a90dab974be444809d64fd38c29d3a5ef"
+  },
+  "worker": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-varied-start-development-v27-001/captures/boat-geom-42007-00051-v2/worker-0/result.json",
+    "sha256": "5b29e0e712f7da52b653f545753efec0fe6a82e3431126bb6ab99051c808b72e"
+  },
+  "controller_log": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-varied-start-development-v27-001/captures/boat-geom-42007-00051-v2/controller.log",
+    "sha256": "5e1ee0eb1c5f50ec8d218702ce6b05fef6937fec591ddab8d0dd0000dcf69de7"
+  },
+  "player_log": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-varied-start-development-v27-001/captures/boat-geom-42007-00051-v2/worker-0/player.log",
+    "sha256": "64ccba00db6ab9032ba6a65b7e8a309a5d9319f54daf219af9daf7a0daffa7f1"
+  },
+  "raw_command_trace": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-varied-start-development-v27-001/captures/boat-geom-42007-00051-v2/action-timing.jsonl",
+    "sha256": "748da5f2831aeef19bba4ef35633844d9777d88990fbddead498f870c66c6921"
+  },
+  "reconstructed_command_audit": {
+    "schema": "roboboat-action-trace-audit/v1-development",
+    "issues": [],
+    "trace_integrity_pass": true,
+    "metadata": {
+      "kind": "metadata",
+      "schema": "action-timing-v9",
+      "clock": "same-process-stopwatch",
+      "frequency": 10000000,
+      "capacity": 100000,
+      "maxPayloadBytes": 65536,
+      "payloadByteCapacity": 16777216,
+      "acceptedObserverSubscribed": true
+    },
+    "footer": {
+      "kind": "footer",
+      "dropped": 0,
+      "buffered": 0,
+      "bufferedPayloadBytes": 0,
+      "written": 2,
+      "enqueued": 2,
+      "eventAttempts": 2,
+      "acceptedObserverSubscribed": false,
+      "writerFailed": false
+    },
+    "receipts": 0,
+    "dispositions": {},
+    "pending_receipts": 0,
+    "gate_attempts": 0,
+    "gate_reasons": {},
+    "post_apply_callbacks": 0,
+    "worker_checks": {
+      "acceptedActions": true,
+      "rejectedActions": true,
+      "staleActions": true,
+      "crossEpisodeActions": true,
+      "duplicateActions": true,
+      "unknownSourceActions": true,
+      "acceptedActions_snapshot": true,
+      "rejectedActions_snapshot": true,
+      "staleActions_snapshot": true,
+      "crossEpisodeActions_snapshot": true,
+      "duplicateActions_snapshot": true,
+      "unknownSourceActions_snapshot": true,
+      "timing_acceptedActions": true,
+      "timing_knownSourceActions": true,
+      "timing_meanSourceToApplicationTicks": true,
+      "timing_maximumSourceToApplicationTicks": true,
+      "timing_meanReceiveToApplicationTicks": true,
+      "timing_maximumReceiveToApplicationTicks": true,
+      "timing_maximumInterApplicationTicks": true
+    },
+    "counter_snapshots_retained": 1,
+    "counter_snapshot_checks": [
+      {
+        "ordinal": 2,
+        "episode": 4,
+        "checks": {
+          "acceptedActions": true,
+          "rejectedActions": true,
+          "staleActions": true,
+          "crossEpisodeActions": true,
+          "duplicateActions": true,
+          "unknownSourceActions": true
+        }
+      }
+    ],
+    "source_lags": [],
+    "receive_lags": [],
+    "payload_source_command_equality_proven": false,
+    "physical_actuation_proven": false,
+    "scientific_admission_authorized": false,
+    "confirmation_n": 0,
+    "replication_n": 0
+  },
+  "validity_source": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/roboboat_trace_qualified_validity_v1.py",
+    "sha256": "62fe9b008f74c29fb3f66c661a033696f88c3123b0ed5c9adba362c590590850"
+  },
+  "controller_log_excerpts": [
+    {
+      "line": 97,
+      "text": "[INFO] [1790897993.932347123] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID \"odom\" passed to canTransform argument target_frame - frame does not exist"
+    },
+    {
+      "line": 98,
+      "text": "[INFO] [1790897994.432403099] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID \"odom\" passed to canTransform argument target_frame - frame does not exist"
+    },
+    {
+      "line": 99,
+      "text": "[INFO] [1790897994.932394420] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID \"odom\" passed to canTransform argument target_frame - frame does not exist"
+    },
+    {
+      "line": 100,
+      "text": "[INFO] [1790897995.432395281] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID \"odom\" passed to canTransform argument target_frame - frame does not exist"
+    },
+    {
+      "line": 101,
+      "text": "[INFO] [1790897995.932396931] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID \"odom\" passed to canTransform argument target_frame - frame does not exist"
+    },
+    {
+      "line": 102,
+      "text": "[INFO] [1790897996.432394873] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID \"odom\" passed to canTransform argument target_frame - frame does not exist"
+    },
+    {
+      "line": 103,
+      "text": "[INFO] [1790897996.932398876] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID \"odom\" passed to canTransform argument target_frame - frame does not exist"
+    },
+    {
+      "line": 104,
+      "text": "[INFO] [1790897997.432405104] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID \"odom\" passed to canTransform argument target_frame - frame does not exist"
+    },
+    {
+      "line": 105,
+      "text": "[INFO] [1790897997.932406110] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Invalid frame ID \"odom\" passed to canTransform argument target_frame - frame does not exist"
+    },
+    {
+      "line": 132,
+      "text": "[WARN] [1790898000.897776524] [tf2_buffer]: Detected jump back in time. Clearing TF buffer."
+    },
+    {
+      "line": 133,
+      "text": "[WARN] [1790898000.898183400] [tf2_buffer]: Detected jump back in time. Clearing TF buffer."
+    },
+    {
+      "line": 134,
+      "text": "[WARN] [1790898000.898253040] [tf2_buffer]: Detected jump back in time. Clearing TF buffer."
+    },
+    {
+      "line": 135,
+      "text": "[WARN] [1790898000.898867041] [tf2_buffer]: Detected jump back in time. Clearing TF buffer."
+    },
+    {
+      "line": 136,
+      "text": "terminate called after throwing an instance of 'tf2::ForwardExtrapolationException'"
+    },
+    {
+      "line": 137,
+      "text": "  what():  Lookup would require extrapolation into the future.  Requested time 0.033014 but the latest data is at time 0.022674, when looking up transform from frame [lidar_link] to frame [odom]"
+    },
+    {
+      "line": 140,
+      "text": "[ERROR] [1790898005.009135920] [lifecycle_manager_controller]: CRITICAL FAILURE: SERVER controller_server IS DOWN after not receiving a heartbeat for 4000 ms. Shutting down related nodes."
+    }
+  ],
+  "player_ready_excerpts": [
+    {
+      "line": 477,
+      "text": "CRANE_ROS_COMMAND_READY topic=/crane/cmd_vel_stamped controller=base_link linearScale=1 yawScale=1 linearFeedForward=0.21 yawFeedForward=0.24 linearKp=0.1 yawKp=0.05 linearKi=0.1 linearIntegralLimit=0.2 timeoutTicks=25"
+    },
+    {
+      "line": 504,
+      "text": "CRANE_ROBOBOAT_INITIAL_POSE {\"scene\":\"Roboboat Course\",\"body\":\"base_link\",\"bodyType\":\"ArticulationBody\",\"requestedRosXYAndYaw\":{\"x\":-2.641169786453247,\"y\":-34.45932388305664,\"z\":-1.0257488489151},\"observedUnityPosition\":{\"x\":34.45932388305664,\"y\":0.07000000029802323,\"z\":-2.641169786453247},\"observedUnityRotation\":{\"x\":0.0,\"y\":0.9630946516990662,\"z\":0.0,\"w\":0.2691628634929657},\"phase\":\"sceneLoaded-before-Start-and-physics\"}"
+    },
+    {
+      "line": 516,
+      "text": "CRANE_RUNTIME_PROFILE_RESOLVED {\"schema\":\"crane-runtime-profile-v1\",\"profile\":\"train-gpu\",\"unityVersion\":\"6000.5.10f1\",\"scene\":\"Roboboat Course\",\"graphicsDeviceType\":\"Vulkan\",\"graphicsFree\":false,\"strictGraphicsFree\":false,\"rosEnabled\":true,\"sitlEnabled\":true,\"rgbEnabled\":false,\"depthEnabled\":true,\"depthBackend\":\"gpu\",\"cameraInfoEnabled\":true,\"detectionsEnabled\":true,\"lidarDebugRaysEnabled\":false,\"spectatorCamerasEnabled\":false,\"lowPresentation\":false,\"screenWidth\":640,\"screenHeight\":360,\"enabledCameras\":1,\"enabledSensorCameras\":1,\"enabledSpectatorCameras\":0,\"enabledWaterDriverCameras\":0,\"waterSurfaces\":1,\"aquaticGraphicsFreeStatus\":\"graphics-backed\"}"
+    },
+    {
+      "line": 531,
+      "text": "CRANE_ROS_CLOCK_OWNER scene=Roboboat Course path=0:SimClock entity=568105584918804462"
+    }
+  ],
+  "compiled_source_chain_reference": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-varied-start-development-v27-001/captures/boat-geom-42007-00041-v1/future-source-tick-review-v35.json",
+    "sha256": "4131795ccb823387a30377b4584c97d9c6ef92b61aa35603b1a1f52b56affd4c"
+  },
+  "checked_compiled_sources": [
+    {
+      "relative": "Assets/Scripts/Controllers/ROSOmniXCommand.cs",
+      "source": {
+        "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Controllers/ROSOmniXCommand.cs",
+        "sha256": "0851804655af9e11173f8363fb3652bd03f397a748b29de782c67d6294d45f52"
+      },
+      "compiled_document": {
+        "name": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Controllers/ROSOmniXCommand.cs",
+        "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+        "checksum": "0851804655af9e11173f8363fb3652bd03f397a748b29de782c67d6294d45f52"
+      },
+      "assembly": {
+        "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/CRANE_Data/Managed/ControllerAssembly.dll",
+        "sha256": "6baaacd3486e8c82ad276bbac3a4782a44a752865e3bdc58e2b38587768f29d1"
+      },
+      "pdb": {
+        "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/CRANE_Data/Managed/ControllerAssembly.pdb",
+        "sha256": "30772639c147bf8d24739f91d6860ebc9b14a3318bf90ea7560ef0a9d2450354"
+      }
+    },
+    {
+      "relative": "Assets/Scripts/Performance/CraneBenchmarkRunner.cs",
+      "source": {
+        "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Performance/CraneBenchmarkRunner.cs",
+        "sha256": "ecab1c736228266b1f5cb22da035cc76a4a8f800a028b0c3d7204fb15ca79df3"
+      },
+      "compiled_document": {
+        "name": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Performance/CraneBenchmarkRunner.cs",
+        "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+        "checksum": "ecab1c736228266b1f5cb22da035cc76a4a8f800a028b0c3d7204fb15ca79df3"
+      },
+      "assembly": {
+        "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/CRANE_Data/Managed/PerformanceAssembly.dll",
+        "sha256": "45a96ef1198b351f6bad3102062051c9fa9442942dc0dc3dd195cda1458e89ee"
+      },
+      "pdb": {
+        "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/CRANE_Data/Managed/PerformanceAssembly.pdb",
+        "sha256": "ebba140e24fcf364652d8bfb40b6eccb360266540983e90cbe1e2a8e5b5089c9"
+      }
+    },
+    {
+      "relative": "Assets/Scripts/Utils/Performance/CraneActionGate.cs",
+      "source": {
+        "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Utils/Performance/CraneActionGate.cs",
+        "sha256": "ba0b13c6d5641762b475cfa7ea1b11ea076da745c61e0655215e2fd7dc44dcda"
+      },
+      "compiled_document": {
+        "name": "/home/lunarz/worktrees/roboboat-episode-clock-v10/crane_ml/Assets/Scripts/Utils/Performance/CraneActionGate.cs",
+        "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+        "checksum": "ba0b13c6d5641762b475cfa7ea1b11ea076da745c61e0655215e2fd7dc44dcda"
+      },
+      "assembly": {
+        "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/CRANE_Data/Managed/UtilsAssembly.dll",
+        "sha256": "f04b1f6a26c651f5700b4124bfea84371fd0e6d4fa3dccc0e3cc6892d3f1c3cd"
+      },
+      "pdb": {
+        "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/CRANE_Data/Managed/UtilsAssembly.pdb",
+        "sha256": "96a3b822916a0967b698e140b492244da520006d942a9a1c52dc50df8fb0f67e"
+      }
+    },
+    {
+      "relative": "Assets/Scripts/Utils/Performance/CraneProfiler.cs",
+      "source": {
+        "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Utils/Performance/CraneProfiler.cs",
+        "sha256": "eefe20728de45564ec8b8e2b7683483326235ded98df4077b4f231a2d9dbc5f3"
+      },
+      "compiled_document": {
+        "name": "/home/lunarz/worktrees/roboboat-episode-clock-v10/crane_ml/Assets/Scripts/Utils/Performance/CraneProfiler.cs",
+        "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+        "checksum": "eefe20728de45564ec8b8e2b7683483326235ded98df4077b4f231a2d9dbc5f3"
+      },
+      "assembly": {
+        "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/CRANE_Data/Managed/UtilsAssembly.dll",
+        "sha256": "f04b1f6a26c651f5700b4124bfea84371fd0e6d4fa3dccc0e3cc6892d3f1c3cd"
+      },
+      "pdb": {
+        "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/CRANE_Data/Managed/UtilsAssembly.pdb",
+        "sha256": "96a3b822916a0967b698e140b492244da520006d942a9a1c52dc50df8fb0f67e"
+      }
+    },
+    {
+      "relative": "Assets/Scripts/Utils/ROS/ROSClock.cs",
+      "source": {
+        "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Utils/ROS/ROSClock.cs",
+        "sha256": "3e427414eea502bb789b53c8e4fd70cedfb478bdb0700c4a914e977390a09575"
+      },
+      "compiled_document": {
+        "name": "/home/lunarz/worktrees/roboboat-episode-clock-v10/crane_ml/Assets/Scripts/Utils/ROS/ROSClock.cs",
+        "algorithm": "8829d00f-11b8-4213-878b-770e8597ac16",
+        "checksum": "3e427414eea502bb789b53c8e4fd70cedfb478bdb0700c4a914e977390a09575"
+      },
+      "assembly": {
+        "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/CRANE_Data/Managed/UtilsAssembly.dll",
+        "sha256": "f04b1f6a26c651f5700b4124bfea84371fd0e6d4fa3dccc0e3cc6892d3f1c3cd"
+      },
+      "pdb": {
+        "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/CRANE_Data/Managed/UtilsAssembly.pdb",
+        "sha256": "96a3b822916a0967b698e140b492244da520006d942a9a1c52dc50df8fb0f67e"
+      }
+    }
+  ],
+  "odometry_messages": 15331,
+  "checks": {
+    "navigation_goal_not_sent": true,
+    "odom_received_without_retained_action_trajectory": true,
+    "no_command_gate_decisions": true,
+    "zero_accepted_actions": true,
+    "command_adapter_ready_marker_present": true,
+    "logged_jump_before_exception_before_lifecycle_shutdown": true,
+    "original_predicates_not_relaxed": true,
+    "original_failure_retained": true
+  },
+  "all_checks_pass": true,
+  "interpretation": "The controller log records backward-clock TF buffer clears, an uncaught ForwardExtrapolationException, then lifecycle failure/shutdown. Unity reports its command adapter ready and fixture odometry is delivered, but no goal is sent and no gate decision exists. exact_common_ros_gate_contract requires bool(decisions), so its failure does not by itself prove wrong policy configuration. A launch barrier after the measurement clock reset merits isolated operational investigation; exact reset/exception causality and cross-process clock alignment are unproven.",
+  "cause_established": false,
+  "historical_external_runtime_closure_authenticated": false,
+  "cross_worker_contamination_established": false,
+  "admissions_changed": false,
+  "endpoint_scores": 0,
+  "confirmation_n": 0,
+  "replication_n": 0,
+  "independent_n_added": 0,
+  "scope": "One selected retained technical failure, no new scientific N. Log order is within the controller log, not authenticated cross-process time mapping. No runtime patch, failure salvage, revised validity rule or proposed confirmation freeze."
+}

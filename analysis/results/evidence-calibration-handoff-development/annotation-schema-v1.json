@@ -1,0 +1,105 @@
+{
+  "type": "object",
+  "properties": {
+    "annotations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "case_id": {
+            "type": "string"
+          },
+          "primary_failure": {
+            "type": "boolean"
+          },
+          "primary_violations": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "unsupported_mechanism",
+                    "unsupported_execution_diagnosis",
+                    "unsupported_recovery",
+                    "unsupported_negation"
+                  ]
+                },
+                "quote": {
+                  "type": "string"
+                },
+                "reason": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "kind",
+                "quote",
+                "reason"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "required_units": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "unit_id": {
+                  "type": "string"
+                },
+                "communicated": {
+                  "type": "boolean"
+                },
+                "quote": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "required": [
+                "unit_id",
+                "communicated",
+                "quote"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "factual_numeric_errors": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "quote": {
+                  "type": "string"
+                },
+                "reason": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "quote",
+                "reason"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "case_id",
+          "primary_failure",
+          "primary_violations",
+          "required_units",
+          "factual_numeric_errors"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "annotations"
+  ],
+  "additionalProperties": false
+}

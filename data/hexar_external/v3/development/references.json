@@ -1,0 +1,3685 @@
+{
+  "construction": "Independent packet-only useful-outcome and disjunctive bounded-diagnostic reference construction before inspecting production ontology or method answers. Developer agent review, not human validity or qualified support annotation.",
+  "created_date": "2026-09-30",
+  "evaluator_only": true,
+  "independent_check_boundary": "Numerical replay checks are evaluator-only provenance audit. They are not permitted answer support for raw covariance values/counts or other omitted observations; export only each packet-specific reference with the complete permitted packet to annotators.",
+  "inspected_inputs": [
+    {
+      "path": "data/hexar_external/v2/development/packets.json",
+      "sha256": "a8f72070f95b4f936a6be9a107f39ced4dbb832482f88a385b99472bbb5fb699"
+    },
+    {
+      "path": "data/hexar_external/v2/development/closure_audit.json",
+      "sha256": "0b3103a6368b2ccc9875e25115153a04b527a90f06a81f3aa3e174df11b7186c"
+    },
+    {
+      "path": "data/hexar_external/v2/development/events-D001.json",
+      "sha256": "c8747e7d84a8f79149096dec97642fcf17535a687d12bc87792144f6d628a20e"
+    },
+    {
+      "path": "data/hexar_external/v2/development/events-D002.json",
+      "sha256": "c504399c778cd87611aae191c7013bdda41355a3d7de15dfdf16ee73bdc523fe"
+    },
+    {
+      "path": "data/hexar_external/v2/development/events-D003.json",
+      "sha256": "02cd3f7394c8e400b8c86ad675b57f6f309b08b7efa9558070bdb11f4a896c1d"
+    },
+    {
+      "path": "data/hexar_external/v2/development/events-D004.json",
+      "sha256": "4d5adc6f1e187e032183966e6096c6d4cc7b0c315a3baa7c97196a2b79fc852a"
+    },
+    {
+      "path": "data/hexar_external/v2/development/events-D005.json",
+      "sha256": "6e2233f2c947958109f66b17836b87774222ca5722b091a3eab509b274ed0191"
+    },
+    {
+      "path": "data/hexar_external/v2/development/events-D006.json",
+      "sha256": "93574eff3cb669a97ba8933dceae3c1955cbbe6bdf0a763502e29ebb69975de4"
+    }
+  ],
+  "method_answers_inspected": false,
+  "no_endpoint_labels_assigned": true,
+  "references": [
+    {
+      "answerability": {
+        "bounded_diagnostic_answerable": false,
+        "charging_state_answerable": true,
+        "manual_selection_answerable": true,
+        "measured_delay_reason_answerable": false,
+        "note": "Physical-cause and measured-delay limits apply even when observed outcome and diagnostics are answerable.",
+        "state": "SUPPORTED_PARTIAL",
+        "supported_execution_information": true,
+        "unique_physical_failure_mechanism_answerable": false
+      },
+      "condition": "intact",
+      "job_id": "P001-q1-intact",
+      "material_unsupported_mechanisms": [
+        "Unique obstacle, moving-obstacle or wall mechanism inferred from planning failures or clearing requests.",
+        "Manual/charging indicator uniquely caused this episode failure or physically inhibited motion without controller/arbitration and applied-motion evidence.",
+        "Localization uncertainty uniquely caused bad motion or delay without an independent causal measurement.",
+        "A planning-attempt failure proves global route infeasibility or no possible route.",
+        "Nominal/successful logs prove safety-limited speed, normal geometry or the measured reason for perceived slowness.",
+        "Definite negative causal claims substituted for missing-cause uncertainty."
+      ],
+      "method_packet_sha256": "50153a2aba2297cf5daa26fbe3d82f4f3ebc9a391eab27207b91cf9df03b1ce8",
+      "optional_supported_detail": [
+        {
+          "detail": "Recorded software log: SkillNavigateToPose received a new goal",
+          "evidence_ids": [
+            "l0000"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received a goal, begin computing control effort.",
+          "evidence_ids": [
+            "l0001",
+            "l0007"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Waiting for NavigateToPose to finish...",
+          "evidence_ids": [
+            "l0002"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Passing new path to controller.",
+          "evidence_ids": [
+            "l0003",
+            "l0009"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Reached the goal!",
+          "evidence_ids": [
+            "l0004"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Skill completed successfully",
+          "evidence_ids": [
+            "l0005",
+            "l0010"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: SkillNavigateToZone received a new goal",
+          "evidence_ids": [
+            "l0006"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Waiting for NavigateToZone to finish...",
+          "evidence_ids": [
+            "l0008"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "The latest received manual/joystick-priority indicator was OFF.",
+          "evidence_ids": [
+            "state-joy_priority"
+          ],
+          "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+        },
+        {
+          "detail": "The latest received charging indicator was OFF.",
+          "evidence_ids": [
+            "state-power-is_charging"
+          ],
+          "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+        },
+        {
+          "detail": "Recorded navigation skill navigate_to_zone status: succeeded; explicit error: none recorded.",
+          "evidence_ids": [
+            "s0001"
+          ],
+          "scope": "No error string does not itself establish normal physical motion."
+        },
+        {
+          "detail": "Recorded navigation skill navigate_to_zone status: succeeded; explicit error: none recorded.",
+          "evidence_ids": [
+            "s0003"
+          ],
+          "scope": "No error string does not itself establish normal physical motion."
+        },
+        {
+          "detail": "Actual instruction, locations, ordered skill statuses and task-error fields in the supplied recorded_task are eligible supplemental facts when accurately attributed.",
+          "evidence_ids": [
+            "task-latest"
+          ],
+          "scope": "An instruction is a request, not proof that requested physical delivery occurred; skill success is recorded execution status."
+        }
+      ],
+      "production_input_boundary": "Only this permitted packet supports answer assertions; source bag IDs, family names, evaluator interventions, references and raw alternate representations remain evaluator-only.",
+      "question": "Why did you move in a bad way?",
+      "question_id": "q1",
+      "recording_id": "P001",
+      "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+      "required_communication_units": [
+        {
+          "acceptable_abstraction": "Navigation succeeded/completed successfully; exact destinations, task duration and all task-plan steps are unnecessary.",
+          "requirement": "Communicate that the recorded navigation completed successfully. Do not accept a failed-navigation answer as coverage of this SUCCESS unit.",
+          "supporting_evidence_ids": [
+            "s0001",
+            "s0003"
+          ],
+          "unit_id": "navigation_execution_outcome"
+        }
+      ],
+      "required_scope_limits": [
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "physical_cause_or_delay_unknown",
+          "requirement": "Separate recorded outcome and diagnostics from unique physical causation or a measured explanation of bad/slow motion. Explicit uncertainty OR clearly source-bounded observation wording is acceptable. Do not claim a measured delay mechanism, obstacle identity, inhibited applied motion or safety-speed policy from these records."
+        }
+      ],
+      "scoring_constraints": [
+        "One supported outcome unit plus at least one diagnostic alternative when available; diagnostics are disjunctive, never an exhaustive required list.",
+        "Explicit cause-unknown sentence is optional if observations are clearly bounded and no overstrong cause is asserted.",
+        "Additional valid facts from the complete permitted packet remain valid outside this compact inventory.",
+        "Preserve polarity, modality, source attribution and scope; limitation/denial of evidential establishment is not a positive cause claim.",
+        "Wrong physical cause does not erase a correctly communicated outcome; unsupported material mechanism is scored separately.",
+        "No timestamps, exact wording, list lengths, source-file names or full task plans are required.",
+        "A question suggesting slow or bad movement does not license a measured speed, defective behavior or unsupported causal premise."
+      ]
+    },
+    {
+      "answerability": {
+        "bounded_diagnostic_answerable": false,
+        "charging_state_answerable": true,
+        "manual_selection_answerable": true,
+        "measured_delay_reason_answerable": false,
+        "note": "Physical-cause and measured-delay limits apply even when observed outcome and diagnostics are answerable.",
+        "state": "SUPPORTED_PARTIAL",
+        "supported_execution_information": true,
+        "unique_physical_failure_mechanism_answerable": false
+      },
+      "condition": "irrelevant_removal",
+      "job_id": "P001-q1-irrelevant_removal",
+      "material_unsupported_mechanisms": [
+        "Unique obstacle, moving-obstacle or wall mechanism inferred from planning failures or clearing requests.",
+        "Manual/charging indicator uniquely caused this episode failure or physically inhibited motion without controller/arbitration and applied-motion evidence.",
+        "Localization uncertainty uniquely caused bad motion or delay without an independent causal measurement.",
+        "A planning-attempt failure proves global route infeasibility or no possible route.",
+        "Nominal/successful logs prove safety-limited speed, normal geometry or the measured reason for perceived slowness.",
+        "Definite negative causal claims substituted for missing-cause uncertainty."
+      ],
+      "method_packet_sha256": "50153a2aba2297cf5daa26fbe3d82f4f3ebc9a391eab27207b91cf9df03b1ce8",
+      "optional_supported_detail": [
+        {
+          "detail": "Recorded software log: SkillNavigateToPose received a new goal",
+          "evidence_ids": [
+            "l0000"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received a goal, begin computing control effort.",
+          "evidence_ids": [
+            "l0001",
+            "l0007"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Waiting for NavigateToPose to finish...",
+          "evidence_ids": [
+            "l0002"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Passing new path to controller.",
+          "evidence_ids": [
+            "l0003",
+            "l0009"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Reached the goal!",
+          "evidence_ids": [
+            "l0004"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Skill completed successfully",
+          "evidence_ids": [
+            "l0005",
+            "l0010"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: SkillNavigateToZone received a new goal",
+          "evidence_ids": [
+            "l0006"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Waiting for NavigateToZone to finish...",
+          "evidence_ids": [
+            "l0008"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "The latest received manual/joystick-priority indicator was OFF.",
+          "evidence_ids": [
+            "state-joy_priority"
+          ],
+          "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+        },
+        {
+          "detail": "The latest received charging indicator was OFF.",
+          "evidence_ids": [
+            "state-power-is_charging"
+          ],
+          "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+        },
+        {
+          "detail": "Recorded navigation skill navigate_to_zone status: succeeded; explicit error: none recorded.",
+          "evidence_ids": [
+            "s0001"
+          ],
+          "scope": "No error string does not itself establish normal physical motion."
+        },
+        {
+          "detail": "Recorded navigation skill navigate_to_zone status: succeeded; explicit error: none recorded.",
+          "evidence_ids": [
+            "s0003"
+          ],
+          "scope": "No error string does not itself establish normal physical motion."
+        },
+        {
+          "detail": "Actual instruction, locations, ordered skill statuses and task-error fields in the supplied recorded_task are eligible supplemental facts when accurately attributed.",
+          "evidence_ids": [
+            "task-latest"
+          ],
+          "scope": "An instruction is a request, not proof that requested physical delivery occurred; skill success is recorded execution status."
+        }
+      ],
+      "production_input_boundary": "Only this permitted packet supports answer assertions; source bag IDs, family names, evaluator interventions, references and raw alternate representations remain evaluator-only.",
+      "question": "Why did you move in a bad way?",
+      "question_id": "q1",
+      "recording_id": "P001",
+      "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+      "required_communication_units": [
+        {
+          "acceptable_abstraction": "Navigation succeeded/completed successfully; exact destinations, task duration and all task-plan steps are unnecessary.",
+          "requirement": "Communicate that the recorded navigation completed successfully. Do not accept a failed-navigation answer as coverage of this SUCCESS unit.",
+          "supporting_evidence_ids": [
+            "s0001",
+            "s0003"
+          ],
+          "unit_id": "navigation_execution_outcome"
+        }
+      ],
+      "required_scope_limits": [
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "physical_cause_or_delay_unknown",
+          "requirement": "Separate recorded outcome and diagnostics from unique physical causation or a measured explanation of bad/slow motion. Explicit uncertainty OR clearly source-bounded observation wording is acceptable. Do not claim a measured delay mechanism, obstacle identity, inhibited applied motion or safety-speed policy from these records."
+        }
+      ],
+      "scoring_constraints": [
+        "One supported outcome unit plus at least one diagnostic alternative when available; diagnostics are disjunctive, never an exhaustive required list.",
+        "Explicit cause-unknown sentence is optional if observations are clearly bounded and no overstrong cause is asserted.",
+        "Additional valid facts from the complete permitted packet remain valid outside this compact inventory.",
+        "Preserve polarity, modality, source attribution and scope; limitation/denial of evidential establishment is not a positive cause claim.",
+        "Wrong physical cause does not erase a correctly communicated outcome; unsupported material mechanism is scored separately.",
+        "No timestamps, exact wording, list lengths, source-file names or full task plans are required.",
+        "A question suggesting slow or bad movement does not license a measured speed, defective behavior or unsupported causal premise."
+      ]
+    },
+    {
+      "answerability": {
+        "bounded_diagnostic_answerable": false,
+        "charging_state_answerable": false,
+        "manual_selection_answerable": false,
+        "measured_delay_reason_answerable": false,
+        "note": "Physical-cause and measured-delay limits apply even when observed outcome and diagnostics are answerable.",
+        "state": "SUPPORTED_PARTIAL",
+        "supported_execution_information": true,
+        "unique_physical_failure_mechanism_answerable": false
+      },
+      "condition": "diagnostic_removal",
+      "job_id": "P001-q1-diagnostic_removal",
+      "material_unsupported_mechanisms": [
+        "Unique obstacle, moving-obstacle or wall mechanism inferred from planning failures or clearing requests.",
+        "Manual/charging indicator uniquely caused this episode failure or physically inhibited motion without controller/arbitration and applied-motion evidence.",
+        "Localization uncertainty uniquely caused bad motion or delay without an independent causal measurement.",
+        "A planning-attempt failure proves global route infeasibility or no possible route.",
+        "Nominal/successful logs prove safety-limited speed, normal geometry or the measured reason for perceived slowness.",
+        "Definite negative causal claims substituted for missing-cause uncertainty."
+      ],
+      "method_packet_sha256": "9a4714970d4d80e3d5cf3a7d0b71d8321f6e58b1a7fce8c499ad8194d6f4c700",
+      "optional_supported_detail": [
+        {
+          "detail": "Recorded software log: SkillNavigateToPose received a new goal",
+          "evidence_ids": [
+            "l0000"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Waiting for NavigateToPose to finish...",
+          "evidence_ids": [
+            "l0001"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Skill completed successfully",
+          "evidence_ids": [
+            "l0002",
+            "l0005"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: SkillNavigateToZone received a new goal",
+          "evidence_ids": [
+            "l0003"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Waiting for NavigateToZone to finish...",
+          "evidence_ids": [
+            "l0004"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded navigation skill navigate_to_zone status: succeeded; explicit error: none recorded.",
+          "evidence_ids": [
+            "s0001"
+          ],
+          "scope": "No error string does not itself establish normal physical motion."
+        },
+        {
+          "detail": "Recorded navigation skill navigate_to_zone status: succeeded; explicit error: none recorded.",
+          "evidence_ids": [
+            "s0003"
+          ],
+          "scope": "No error string does not itself establish normal physical motion."
+        },
+        {
+          "detail": "Actual instruction, locations, ordered skill statuses and task-error fields in the supplied recorded_task are eligible supplemental facts when accurately attributed.",
+          "evidence_ids": [
+            "task-latest"
+          ],
+          "scope": "An instruction is a request, not proof that requested physical delivery occurred; skill success is recorded execution status."
+        }
+      ],
+      "production_input_boundary": "Only this permitted packet supports answer assertions; source bag IDs, family names, evaluator interventions, references and raw alternate representations remain evaluator-only.",
+      "question": "Why did you move in a bad way?",
+      "question_id": "q1",
+      "recording_id": "P001",
+      "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+      "required_communication_units": [
+        {
+          "acceptable_abstraction": "Navigation succeeded/completed successfully; exact destinations, task duration and all task-plan steps are unnecessary.",
+          "requirement": "Communicate that the recorded navigation completed successfully. Do not accept a failed-navigation answer as coverage of this SUCCESS unit.",
+          "supporting_evidence_ids": [
+            "s0001",
+            "s0003"
+          ],
+          "unit_id": "navigation_execution_outcome"
+        }
+      ],
+      "required_scope_limits": [
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "physical_cause_or_delay_unknown",
+          "requirement": "Separate recorded outcome and diagnostics from unique physical causation or a measured explanation of bad/slow motion. Explicit uncertainty OR clearly source-bounded observation wording is acceptable. Do not claim a measured delay mechanism, obstacle identity, inhibited applied motion or safety-speed policy from these records."
+        },
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "removed_diagnostics_unknown",
+          "requirement": "Unavailable manual, charging, localization and planner/controller diagnostic channels cannot be treated as false, normal, successful or absent physical mechanisms. Mentioning each missing channel is optional when the answer remains bounded to retained outcomes."
+        }
+      ],
+      "scoring_constraints": [
+        "One supported outcome unit plus at least one diagnostic alternative when available; diagnostics are disjunctive, never an exhaustive required list.",
+        "Explicit cause-unknown sentence is optional if observations are clearly bounded and no overstrong cause is asserted.",
+        "Additional valid facts from the complete permitted packet remain valid outside this compact inventory.",
+        "Preserve polarity, modality, source attribution and scope; limitation/denial of evidential establishment is not a positive cause claim.",
+        "Wrong physical cause does not erase a correctly communicated outcome; unsupported material mechanism is scored separately.",
+        "No timestamps, exact wording, list lengths, source-file names or full task plans are required.",
+        "A question suggesting slow or bad movement does not license a measured speed, defective behavior or unsupported causal premise."
+      ]
+    },
+    {
+      "answerability": {
+        "bounded_diagnostic_answerable": true,
+        "charging_state_answerable": true,
+        "manual_selection_answerable": true,
+        "measured_delay_reason_answerable": false,
+        "note": "Physical-cause and measured-delay limits apply even when observed outcome and diagnostics are answerable.",
+        "state": "SUPPORTED_PARTIAL",
+        "supported_execution_information": true,
+        "unique_physical_failure_mechanism_answerable": false
+      },
+      "condition": "intact",
+      "job_id": "P002-q1-intact",
+      "material_unsupported_mechanisms": [
+        "Unique obstacle, moving-obstacle or wall mechanism inferred from planning failures or clearing requests.",
+        "Manual/charging indicator uniquely caused this episode failure or physically inhibited motion without controller/arbitration and applied-motion evidence.",
+        "Localization uncertainty uniquely caused bad motion or delay without an independent causal measurement.",
+        "A planning-attempt failure proves global route infeasibility or no possible route.",
+        "Nominal/successful logs prove safety-limited speed, normal geometry or the measured reason for perceived slowness.",
+        "Definite negative causal claims substituted for missing-cause uncertainty."
+      ],
+      "method_packet_sha256": "6044e33ac2b38f4c0e504ba926be97ff45972e8868e5d3e83132fd42fb730518",
+      "optional_supported_detail": [
+        {
+          "detail": "Recorded software log: GridBased: failed to create plan, no valid path found.",
+          "evidence_ids": [
+            "l0000",
+            "l0010",
+            "l0013",
+            "l0016",
+            "l0019",
+            "l0022",
+            "l0027",
+            "l0035",
+            "l0038",
+            "l0041",
+            "l0044",
+            "l0047",
+            "l0052"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)",
+          "evidence_ids": [
+            "l0001",
+            "l0011",
+            "l0014",
+            "l0017",
+            "l0020",
+            "l0023",
+            "l0028",
+            "l0036",
+            "l0039",
+            "l0042",
+            "l0045",
+            "l0048",
+            "l0053"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: [compute_path_to_pose] [ActionServer] Aborting handle.",
+          "evidence_ids": [
+            "l0002",
+            "l0012",
+            "l0015",
+            "l0018",
+            "l0021",
+            "l0024",
+            "l0029",
+            "l0037",
+            "l0040",
+            "l0043",
+            "l0046",
+            "l0049",
+            "l0054"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received request to clear entirely the global_costmap",
+          "evidence_ids": [
+            "l0003"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Invalid path, Path is empty.",
+          "evidence_ids": [
+            "l0004",
+            "l0008",
+            "l0030",
+            "l0033",
+            "l0055",
+            "l0058"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: [follow_path] [ActionServer] Aborting handle.",
+          "evidence_ids": [
+            "l0005",
+            "l0009",
+            "l0031",
+            "l0034",
+            "l0056",
+            "l0059"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received request to clear entirely the local_costmap",
+          "evidence_ids": [
+            "l0006"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received a goal, begin computing control effort.",
+          "evidence_ids": [
+            "l0007",
+            "l0025",
+            "l0032",
+            "l0050",
+            "l0057"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Passing new path to controller.",
+          "evidence_ids": [
+            "l0026",
+            "l0051"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: NavigateToZone action server returned code: 6",
+          "evidence_ids": [
+            "l0060"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "The latest received manual/joystick-priority indicator was OFF.",
+          "evidence_ids": [
+            "state-joy_priority"
+          ],
+          "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+        },
+        {
+          "detail": "The latest received charging indicator was OFF.",
+          "evidence_ids": [
+            "state-power-is_charging"
+          ],
+          "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+        },
+        {
+          "detail": "Recorded navigation skill navigate_to_zone status: failed; explicit error: The skill has been aborted.",
+          "evidence_ids": [
+            "s0001"
+          ],
+          "scope": "No error string does not itself establish normal physical motion."
+        },
+        {
+          "detail": "Actual instruction, locations, ordered skill statuses and task-error fields in the supplied recorded_task are eligible supplemental facts when accurately attributed.",
+          "evidence_ids": [
+            "task-latest"
+          ],
+          "scope": "An instruction is a request, not proof that requested physical delivery occurred; skill success is recorded execution status."
+        }
+      ],
+      "production_input_boundary": "Only this permitted packet supports answer assertions; source bag IDs, family names, evaluator interventions, references and raw alternate representations remain evaluator-only.",
+      "question": "Why didn't you bring it?",
+      "question_id": "q1",
+      "recording_id": "P002",
+      "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+      "required_communication_units": [
+        {
+          "acceptable_abstraction": "Navigation failed/did not complete; recorded timeout/abort is valid compact specificity when explicitly retained. Exact wording or durations are unnecessary.",
+          "requirement": "Communicate that the recorded navigation failed/did not complete. Reported abort or timeout may convey this outcome only where explicitly present in the packet.",
+          "supporting_evidence_ids": [
+            "s0001"
+          ],
+          "unit_id": "navigation_execution_outcome"
+        },
+        {
+          "acceptable_abstraction": "Any one accurate source-bounded alternative suffices, even if another supported detail is also supplied. A mere diagnostic-topic mention, opposite polarity or blanket refusal does not cover this unit.",
+          "requirement": "Communicate at least ONE of the listed supported diagnostic alternatives, preserving its source/state/temporal scope; do not require all alternatives or a unique physical cause.",
+          "supported_alternatives": [
+            {
+              "evidence_ids": [
+                "l0000",
+                "l0001",
+                "l0010",
+                "l0011",
+                "l0013",
+                "l0014",
+                "l0016",
+                "l0017",
+                "l0019",
+                "l0020",
+                "l0022",
+                "l0023",
+                "l0027",
+                "l0028",
+                "l0035",
+                "l0036",
+                "l0038",
+                "l0039",
+                "l0041",
+                "l0042",
+                "l0044",
+                "l0045",
+                "l0047",
+                "l0048",
+                "l0052",
+                "l0053"
+              ],
+              "proposition": "The planner reported failure to generate a valid path during recorded attempts; this does not prove global geometric infeasibility."
+            },
+            {
+              "evidence_ids": [
+                "l0004",
+                "l0008",
+                "l0030",
+                "l0033",
+                "l0055",
+                "l0058"
+              ],
+              "proposition": "The controller reported an invalid/empty path during recorded attempts."
+            },
+            {
+              "evidence_ids": [
+                "l0002",
+                "l0005",
+                "l0009",
+                "l0012",
+                "l0015",
+                "l0018",
+                "l0021",
+                "l0024",
+                "l0029",
+                "l0031",
+                "l0034",
+                "l0037",
+                "l0040",
+                "l0043",
+                "l0046",
+                "l0049",
+                "l0054",
+                "l0056",
+                "l0059"
+              ],
+              "proposition": "A planning/follow-path action handle was aborted during a recorded attempt."
+            }
+          ],
+          "supporting_evidence_ids": [
+            "l0000",
+            "l0001",
+            "l0010",
+            "l0011",
+            "l0013",
+            "l0014",
+            "l0016",
+            "l0017",
+            "l0019",
+            "l0020",
+            "l0022",
+            "l0023",
+            "l0027",
+            "l0028",
+            "l0035",
+            "l0036",
+            "l0038",
+            "l0039",
+            "l0041",
+            "l0042",
+            "l0044",
+            "l0045",
+            "l0047",
+            "l0048",
+            "l0052",
+            "l0053",
+            "l0004",
+            "l0008",
+            "l0030",
+            "l0033",
+            "l0055",
+            "l0058",
+            "l0002",
+            "l0005",
+            "l0009",
+            "l0012",
+            "l0015",
+            "l0018",
+            "l0021",
+            "l0024",
+            "l0029",
+            "l0031",
+            "l0034",
+            "l0037",
+            "l0040",
+            "l0043",
+            "l0046",
+            "l0049",
+            "l0054",
+            "l0056",
+            "l0059"
+          ],
+          "unit_id": "bounded_available_diagnostic"
+        }
+      ],
+      "required_scope_limits": [
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "physical_cause_or_delay_unknown",
+          "requirement": "Separate recorded outcome and diagnostics from unique physical causation or a measured explanation of bad/slow motion. Explicit uncertainty OR clearly source-bounded observation wording is acceptable. Do not claim a measured delay mechanism, obstacle identity, inhibited applied motion or safety-speed policy from these records."
+        }
+      ],
+      "scoring_constraints": [
+        "One supported outcome unit plus at least one diagnostic alternative when available; diagnostics are disjunctive, never an exhaustive required list.",
+        "Explicit cause-unknown sentence is optional if observations are clearly bounded and no overstrong cause is asserted.",
+        "Additional valid facts from the complete permitted packet remain valid outside this compact inventory.",
+        "Preserve polarity, modality, source attribution and scope; limitation/denial of evidential establishment is not a positive cause claim.",
+        "Wrong physical cause does not erase a correctly communicated outcome; unsupported material mechanism is scored separately.",
+        "No timestamps, exact wording, list lengths, source-file names or full task plans are required.",
+        "A question suggesting slow or bad movement does not license a measured speed, defective behavior or unsupported causal premise."
+      ]
+    },
+    {
+      "answerability": {
+        "bounded_diagnostic_answerable": true,
+        "charging_state_answerable": true,
+        "manual_selection_answerable": true,
+        "measured_delay_reason_answerable": false,
+        "note": "Physical-cause and measured-delay limits apply even when observed outcome and diagnostics are answerable.",
+        "state": "SUPPORTED_PARTIAL",
+        "supported_execution_information": true,
+        "unique_physical_failure_mechanism_answerable": false
+      },
+      "condition": "irrelevant_removal",
+      "job_id": "P002-q1-irrelevant_removal",
+      "material_unsupported_mechanisms": [
+        "Unique obstacle, moving-obstacle or wall mechanism inferred from planning failures or clearing requests.",
+        "Manual/charging indicator uniquely caused this episode failure or physically inhibited motion without controller/arbitration and applied-motion evidence.",
+        "Localization uncertainty uniquely caused bad motion or delay without an independent causal measurement.",
+        "A planning-attempt failure proves global route infeasibility or no possible route.",
+        "Nominal/successful logs prove safety-limited speed, normal geometry or the measured reason for perceived slowness.",
+        "Definite negative causal claims substituted for missing-cause uncertainty."
+      ],
+      "method_packet_sha256": "6044e33ac2b38f4c0e504ba926be97ff45972e8868e5d3e83132fd42fb730518",
+      "optional_supported_detail": [
+        {
+          "detail": "Recorded software log: GridBased: failed to create plan, no valid path found.",
+          "evidence_ids": [
+            "l0000",
+            "l0010",
+            "l0013",
+            "l0016",
+            "l0019",
+            "l0022",
+            "l0027",
+            "l0035",
+            "l0038",
+            "l0041",
+            "l0044",
+            "l0047",
+            "l0052"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)",
+          "evidence_ids": [
+            "l0001",
+            "l0011",
+            "l0014",
+            "l0017",
+            "l0020",
+            "l0023",
+            "l0028",
+            "l0036",
+            "l0039",
+            "l0042",
+            "l0045",
+            "l0048",
+            "l0053"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: [compute_path_to_pose] [ActionServer] Aborting handle.",
+          "evidence_ids": [
+            "l0002",
+            "l0012",
+            "l0015",
+            "l0018",
+            "l0021",
+            "l0024",
+            "l0029",
+            "l0037",
+            "l0040",
+            "l0043",
+            "l0046",
+            "l0049",
+            "l0054"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received request to clear entirely the global_costmap",
+          "evidence_ids": [
+            "l0003"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Invalid path, Path is empty.",
+          "evidence_ids": [
+            "l0004",
+            "l0008",
+            "l0030",
+            "l0033",
+            "l0055",
+            "l0058"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: [follow_path] [ActionServer] Aborting handle.",
+          "evidence_ids": [
+            "l0005",
+            "l0009",
+            "l0031",
+            "l0034",
+            "l0056",
+            "l0059"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received request to clear entirely the local_costmap",
+          "evidence_ids": [
+            "l0006"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received a goal, begin computing control effort.",
+          "evidence_ids": [
+            "l0007",
+            "l0025",
+            "l0032",
+            "l0050",
+            "l0057"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Passing new path to controller.",
+          "evidence_ids": [
+            "l0026",
+            "l0051"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: NavigateToZone action server returned code: 6",
+          "evidence_ids": [
+            "l0060"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "The latest received manual/joystick-priority indicator was OFF.",
+          "evidence_ids": [
+            "state-joy_priority"
+          ],
+          "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+        },
+        {
+          "detail": "The latest received charging indicator was OFF.",
+          "evidence_ids": [
+            "state-power-is_charging"
+          ],
+          "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+        },
+        {
+          "detail": "Recorded navigation skill navigate_to_zone status: failed; explicit error: The skill has been aborted.",
+          "evidence_ids": [
+            "s0001"
+          ],
+          "scope": "No error string does not itself establish normal physical motion."
+        },
+        {
+          "detail": "Actual instruction, locations, ordered skill statuses and task-error fields in the supplied recorded_task are eligible supplemental facts when accurately attributed.",
+          "evidence_ids": [
+            "task-latest"
+          ],
+          "scope": "An instruction is a request, not proof that requested physical delivery occurred; skill success is recorded execution status."
+        }
+      ],
+      "production_input_boundary": "Only this permitted packet supports answer assertions; source bag IDs, family names, evaluator interventions, references and raw alternate representations remain evaluator-only.",
+      "question": "Why didn't you bring it?",
+      "question_id": "q1",
+      "recording_id": "P002",
+      "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+      "required_communication_units": [
+        {
+          "acceptable_abstraction": "Navigation failed/did not complete; recorded timeout/abort is valid compact specificity when explicitly retained. Exact wording or durations are unnecessary.",
+          "requirement": "Communicate that the recorded navigation failed/did not complete. Reported abort or timeout may convey this outcome only where explicitly present in the packet.",
+          "supporting_evidence_ids": [
+            "s0001"
+          ],
+          "unit_id": "navigation_execution_outcome"
+        },
+        {
+          "acceptable_abstraction": "Any one accurate source-bounded alternative suffices, even if another supported detail is also supplied. A mere diagnostic-topic mention, opposite polarity or blanket refusal does not cover this unit.",
+          "requirement": "Communicate at least ONE of the listed supported diagnostic alternatives, preserving its source/state/temporal scope; do not require all alternatives or a unique physical cause.",
+          "supported_alternatives": [
+            {
+              "evidence_ids": [
+                "l0000",
+                "l0001",
+                "l0010",
+                "l0011",
+                "l0013",
+                "l0014",
+                "l0016",
+                "l0017",
+                "l0019",
+                "l0020",
+                "l0022",
+                "l0023",
+                "l0027",
+                "l0028",
+                "l0035",
+                "l0036",
+                "l0038",
+                "l0039",
+                "l0041",
+                "l0042",
+                "l0044",
+                "l0045",
+                "l0047",
+                "l0048",
+                "l0052",
+                "l0053"
+              ],
+              "proposition": "The planner reported failure to generate a valid path during recorded attempts; this does not prove global geometric infeasibility."
+            },
+            {
+              "evidence_ids": [
+                "l0004",
+                "l0008",
+                "l0030",
+                "l0033",
+                "l0055",
+                "l0058"
+              ],
+              "proposition": "The controller reported an invalid/empty path during recorded attempts."
+            },
+            {
+              "evidence_ids": [
+                "l0002",
+                "l0005",
+                "l0009",
+                "l0012",
+                "l0015",
+                "l0018",
+                "l0021",
+                "l0024",
+                "l0029",
+                "l0031",
+                "l0034",
+                "l0037",
+                "l0040",
+                "l0043",
+                "l0046",
+                "l0049",
+                "l0054",
+                "l0056",
+                "l0059"
+              ],
+              "proposition": "A planning/follow-path action handle was aborted during a recorded attempt."
+            }
+          ],
+          "supporting_evidence_ids": [
+            "l0000",
+            "l0001",
+            "l0010",
+            "l0011",
+            "l0013",
+            "l0014",
+            "l0016",
+            "l0017",
+            "l0019",
+            "l0020",
+            "l0022",
+            "l0023",
+            "l0027",
+            "l0028",
+            "l0035",
+            "l0036",
+            "l0038",
+            "l0039",
+            "l0041",
+            "l0042",
+            "l0044",
+            "l0045",
+            "l0047",
+            "l0048",
+            "l0052",
+            "l0053",
+            "l0004",
+            "l0008",
+            "l0030",
+            "l0033",
+            "l0055",
+            "l0058",
+            "l0002",
+            "l0005",
+            "l0009",
+            "l0012",
+            "l0015",
+            "l0018",
+            "l0021",
+            "l0024",
+            "l0029",
+            "l0031",
+            "l0034",
+            "l0037",
+            "l0040",
+            "l0043",
+            "l0046",
+            "l0049",
+            "l0054",
+            "l0056",
+            "l0059"
+          ],
+          "unit_id": "bounded_available_diagnostic"
+        }
+      ],
+      "required_scope_limits": [
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "physical_cause_or_delay_unknown",
+          "requirement": "Separate recorded outcome and diagnostics from unique physical causation or a measured explanation of bad/slow motion. Explicit uncertainty OR clearly source-bounded observation wording is acceptable. Do not claim a measured delay mechanism, obstacle identity, inhibited applied motion or safety-speed policy from these records."
+        }
+      ],
+      "scoring_constraints": [
+        "One supported outcome unit plus at least one diagnostic alternative when available; diagnostics are disjunctive, never an exhaustive required list.",
+        "Explicit cause-unknown sentence is optional if observations are clearly bounded and no overstrong cause is asserted.",
+        "Additional valid facts from the complete permitted packet remain valid outside this compact inventory.",
+        "Preserve polarity, modality, source attribution and scope; limitation/denial of evidential establishment is not a positive cause claim.",
+        "Wrong physical cause does not erase a correctly communicated outcome; unsupported material mechanism is scored separately.",
+        "No timestamps, exact wording, list lengths, source-file names or full task plans are required.",
+        "A question suggesting slow or bad movement does not license a measured speed, defective behavior or unsupported causal premise."
+      ]
+    },
+    {
+      "answerability": {
+        "bounded_diagnostic_answerable": false,
+        "charging_state_answerable": false,
+        "manual_selection_answerable": false,
+        "measured_delay_reason_answerable": false,
+        "note": "Physical-cause and measured-delay limits apply even when observed outcome and diagnostics are answerable.",
+        "state": "SUPPORTED_PARTIAL",
+        "supported_execution_information": true,
+        "unique_physical_failure_mechanism_answerable": false
+      },
+      "condition": "diagnostic_removal",
+      "job_id": "P002-q1-diagnostic_removal",
+      "material_unsupported_mechanisms": [
+        "Unique obstacle, moving-obstacle or wall mechanism inferred from planning failures or clearing requests.",
+        "Manual/charging indicator uniquely caused this episode failure or physically inhibited motion without controller/arbitration and applied-motion evidence.",
+        "Localization uncertainty uniquely caused bad motion or delay without an independent causal measurement.",
+        "A planning-attempt failure proves global route infeasibility or no possible route.",
+        "Nominal/successful logs prove safety-limited speed, normal geometry or the measured reason for perceived slowness.",
+        "Definite negative causal claims substituted for missing-cause uncertainty."
+      ],
+      "method_packet_sha256": "0da2a8bfde41e253f5342bd65efd31dc81099c7e7be4b50d32ae01b2a2dbeb28",
+      "optional_supported_detail": [
+        {
+          "detail": "Recorded software log: NavigateToZone action server returned code: 6",
+          "evidence_ids": [
+            "l0000"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded navigation skill navigate_to_zone status: failed; explicit error: The skill has been aborted.",
+          "evidence_ids": [
+            "s0001"
+          ],
+          "scope": "No error string does not itself establish normal physical motion."
+        },
+        {
+          "detail": "Actual instruction, locations, ordered skill statuses and task-error fields in the supplied recorded_task are eligible supplemental facts when accurately attributed.",
+          "evidence_ids": [
+            "task-latest"
+          ],
+          "scope": "An instruction is a request, not proof that requested physical delivery occurred; skill success is recorded execution status."
+        }
+      ],
+      "production_input_boundary": "Only this permitted packet supports answer assertions; source bag IDs, family names, evaluator interventions, references and raw alternate representations remain evaluator-only.",
+      "question": "Why didn't you bring it?",
+      "question_id": "q1",
+      "recording_id": "P002",
+      "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+      "required_communication_units": [
+        {
+          "acceptable_abstraction": "Navigation failed/did not complete; recorded timeout/abort is valid compact specificity when explicitly retained. Exact wording or durations are unnecessary.",
+          "requirement": "Communicate that the recorded navigation failed/did not complete. Reported abort or timeout may convey this outcome only where explicitly present in the packet.",
+          "supporting_evidence_ids": [
+            "s0001"
+          ],
+          "unit_id": "navigation_execution_outcome"
+        }
+      ],
+      "required_scope_limits": [
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "physical_cause_or_delay_unknown",
+          "requirement": "Separate recorded outcome and diagnostics from unique physical causation or a measured explanation of bad/slow motion. Explicit uncertainty OR clearly source-bounded observation wording is acceptable. Do not claim a measured delay mechanism, obstacle identity, inhibited applied motion or safety-speed policy from these records."
+        },
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "removed_diagnostics_unknown",
+          "requirement": "Unavailable manual, charging, localization and planner/controller diagnostic channels cannot be treated as false, normal, successful or absent physical mechanisms. Mentioning each missing channel is optional when the answer remains bounded to retained outcomes."
+        }
+      ],
+      "scoring_constraints": [
+        "One supported outcome unit plus at least one diagnostic alternative when available; diagnostics are disjunctive, never an exhaustive required list.",
+        "Explicit cause-unknown sentence is optional if observations are clearly bounded and no overstrong cause is asserted.",
+        "Additional valid facts from the complete permitted packet remain valid outside this compact inventory.",
+        "Preserve polarity, modality, source attribution and scope; limitation/denial of evidential establishment is not a positive cause claim.",
+        "Wrong physical cause does not erase a correctly communicated outcome; unsupported material mechanism is scored separately.",
+        "No timestamps, exact wording, list lengths, source-file names or full task plans are required.",
+        "A question suggesting slow or bad movement does not license a measured speed, defective behavior or unsupported causal premise."
+      ]
+    },
+    {
+      "answerability": {
+        "bounded_diagnostic_answerable": true,
+        "charging_state_answerable": true,
+        "manual_selection_answerable": true,
+        "measured_delay_reason_answerable": false,
+        "note": "Physical-cause and measured-delay limits apply even when observed outcome and diagnostics are answerable.",
+        "state": "SUPPORTED_PARTIAL",
+        "supported_execution_information": true,
+        "unique_physical_failure_mechanism_answerable": false
+      },
+      "condition": "intact",
+      "job_id": "P003-q1-intact",
+      "material_unsupported_mechanisms": [
+        "Unique obstacle, moving-obstacle or wall mechanism inferred from planning failures or clearing requests.",
+        "Manual/charging indicator uniquely caused this episode failure or physically inhibited motion without controller/arbitration and applied-motion evidence.",
+        "Localization uncertainty uniquely caused bad motion or delay without an independent causal measurement.",
+        "A planning-attempt failure proves global route infeasibility or no possible route.",
+        "Nominal/successful logs prove safety-limited speed, normal geometry or the measured reason for perceived slowness.",
+        "Definite negative causal claims substituted for missing-cause uncertainty."
+      ],
+      "method_packet_sha256": "3fcfee8e211cd77cd7d36a23eb8906cd4befc5febd826041c441b98373e97bdc",
+      "optional_supported_detail": [
+        {
+          "detail": "Recorded software log: SkillNavigateToZone received a new goal",
+          "evidence_ids": [
+            "l0000"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received a goal, begin computing control effort.",
+          "evidence_ids": [
+            "l0001",
+            "l0007",
+            "l0012",
+            "l0016",
+            "l0020"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Waiting for NavigateToZone to finish...",
+          "evidence_ids": [
+            "l0002"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Passing new path to controller.",
+          "evidence_ids": [
+            "l0003",
+            "l0008",
+            "l0013",
+            "l0017",
+            "l0021"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Failed to make progress",
+          "evidence_ids": [
+            "l0004",
+            "l0009",
+            "l0014",
+            "l0018"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: [follow_path] [ActionServer] Aborting handle.",
+          "evidence_ids": [
+            "l0005",
+            "l0010",
+            "l0015",
+            "l0019"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received request to clear entirely the local_costmap",
+          "evidence_ids": [
+            "l0006"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received request to clear entirely the global_costmap",
+          "evidence_ids": [
+            "l0011"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "The latest received manual/joystick-priority indicator was ON.",
+          "evidence_ids": [
+            "state-joy_priority"
+          ],
+          "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+        },
+        {
+          "detail": "The latest received charging indicator was OFF.",
+          "evidence_ids": [
+            "state-power-is_charging"
+          ],
+          "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+        },
+        {
+          "detail": "Recorded navigation skill navigate_to_zone status: failed; explicit error: The skill has timed out.",
+          "evidence_ids": [
+            "s0001"
+          ],
+          "scope": "No error string does not itself establish normal physical motion."
+        },
+        {
+          "detail": "Actual instruction, locations, ordered skill statuses and task-error fields in the supplied recorded_task are eligible supplemental facts when accurately attributed.",
+          "evidence_ids": [
+            "task-latest"
+          ],
+          "scope": "An instruction is a request, not proof that requested physical delivery occurred; skill success is recorded execution status."
+        }
+      ],
+      "production_input_boundary": "Only this permitted packet supports answer assertions; source bag IDs, family names, evaluator interventions, references and raw alternate representations remain evaluator-only.",
+      "question": "Why didn't you bring it?",
+      "question_id": "q1",
+      "recording_id": "P003",
+      "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+      "required_communication_units": [
+        {
+          "acceptable_abstraction": "Navigation failed/did not complete; recorded timeout/abort is valid compact specificity when explicitly retained. Exact wording or durations are unnecessary.",
+          "requirement": "Communicate that the recorded navigation failed/did not complete. Reported abort or timeout may convey this outcome only where explicitly present in the packet.",
+          "supporting_evidence_ids": [
+            "s0001"
+          ],
+          "unit_id": "navigation_execution_outcome"
+        },
+        {
+          "acceptable_abstraction": "Any one accurate source-bounded alternative suffices, even if another supported detail is also supplied. A mere diagnostic-topic mention, opposite polarity or blanket refusal does not cover this unit.",
+          "requirement": "Communicate at least ONE of the listed supported diagnostic alternatives, preserving its source/state/temporal scope; do not require all alternatives or a unique physical cause.",
+          "supported_alternatives": [
+            {
+              "evidence_ids": [
+                "state-joy_priority"
+              ],
+              "proposition": "The latest received manual/joystick-priority indicator was ON/selected."
+            },
+            {
+              "evidence_ids": [
+                "l0004",
+                "l0009",
+                "l0014",
+                "l0018"
+              ],
+              "proposition": "The controller reported failure to make progress."
+            },
+            {
+              "evidence_ids": [
+                "l0005",
+                "l0010",
+                "l0015",
+                "l0019"
+              ],
+              "proposition": "A planning/follow-path action handle was aborted during a recorded attempt."
+            }
+          ],
+          "supporting_evidence_ids": [
+            "state-joy_priority",
+            "l0004",
+            "l0009",
+            "l0014",
+            "l0018",
+            "l0005",
+            "l0010",
+            "l0015",
+            "l0019"
+          ],
+          "unit_id": "bounded_available_diagnostic"
+        }
+      ],
+      "required_scope_limits": [
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "physical_cause_or_delay_unknown",
+          "requirement": "Separate recorded outcome and diagnostics from unique physical causation or a measured explanation of bad/slow motion. Explicit uncertainty OR clearly source-bounded observation wording is acceptable. Do not claim a measured delay mechanism, obstacle identity, inhibited applied motion or safety-speed policy from these records."
+        }
+      ],
+      "scoring_constraints": [
+        "One supported outcome unit plus at least one diagnostic alternative when available; diagnostics are disjunctive, never an exhaustive required list.",
+        "Explicit cause-unknown sentence is optional if observations are clearly bounded and no overstrong cause is asserted.",
+        "Additional valid facts from the complete permitted packet remain valid outside this compact inventory.",
+        "Preserve polarity, modality, source attribution and scope; limitation/denial of evidential establishment is not a positive cause claim.",
+        "Wrong physical cause does not erase a correctly communicated outcome; unsupported material mechanism is scored separately.",
+        "No timestamps, exact wording, list lengths, source-file names or full task plans are required.",
+        "A question suggesting slow or bad movement does not license a measured speed, defective behavior or unsupported causal premise."
+      ]
+    },
+    {
+      "answerability": {
+        "bounded_diagnostic_answerable": true,
+        "charging_state_answerable": true,
+        "manual_selection_answerable": true,
+        "measured_delay_reason_answerable": false,
+        "note": "Physical-cause and measured-delay limits apply even when observed outcome and diagnostics are answerable.",
+        "state": "SUPPORTED_PARTIAL",
+        "supported_execution_information": true,
+        "unique_physical_failure_mechanism_answerable": false
+      },
+      "condition": "irrelevant_removal",
+      "job_id": "P003-q1-irrelevant_removal",
+      "material_unsupported_mechanisms": [
+        "Unique obstacle, moving-obstacle or wall mechanism inferred from planning failures or clearing requests.",
+        "Manual/charging indicator uniquely caused this episode failure or physically inhibited motion without controller/arbitration and applied-motion evidence.",
+        "Localization uncertainty uniquely caused bad motion or delay without an independent causal measurement.",
+        "A planning-attempt failure proves global route infeasibility or no possible route.",
+        "Nominal/successful logs prove safety-limited speed, normal geometry or the measured reason for perceived slowness.",
+        "Definite negative causal claims substituted for missing-cause uncertainty."
+      ],
+      "method_packet_sha256": "3fcfee8e211cd77cd7d36a23eb8906cd4befc5febd826041c441b98373e97bdc",
+      "optional_supported_detail": [
+        {
+          "detail": "Recorded software log: SkillNavigateToZone received a new goal",
+          "evidence_ids": [
+            "l0000"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received a goal, begin computing control effort.",
+          "evidence_ids": [
+            "l0001",
+            "l0007",
+            "l0012",
+            "l0016",
+            "l0020"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Waiting for NavigateToZone to finish...",
+          "evidence_ids": [
+            "l0002"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Passing new path to controller.",
+          "evidence_ids": [
+            "l0003",
+            "l0008",
+            "l0013",
+            "l0017",
+            "l0021"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Failed to make progress",
+          "evidence_ids": [
+            "l0004",
+            "l0009",
+            "l0014",
+            "l0018"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: [follow_path] [ActionServer] Aborting handle.",
+          "evidence_ids": [
+            "l0005",
+            "l0010",
+            "l0015",
+            "l0019"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received request to clear entirely the local_costmap",
+          "evidence_ids": [
+            "l0006"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received request to clear entirely the global_costmap",
+          "evidence_ids": [
+            "l0011"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "The latest received manual/joystick-priority indicator was ON.",
+          "evidence_ids": [
+            "state-joy_priority"
+          ],
+          "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+        },
+        {
+          "detail": "The latest received charging indicator was OFF.",
+          "evidence_ids": [
+            "state-power-is_charging"
+          ],
+          "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+        },
+        {
+          "detail": "Recorded navigation skill navigate_to_zone status: failed; explicit error: The skill has timed out.",
+          "evidence_ids": [
+            "s0001"
+          ],
+          "scope": "No error string does not itself establish normal physical motion."
+        },
+        {
+          "detail": "Actual instruction, locations, ordered skill statuses and task-error fields in the supplied recorded_task are eligible supplemental facts when accurately attributed.",
+          "evidence_ids": [
+            "task-latest"
+          ],
+          "scope": "An instruction is a request, not proof that requested physical delivery occurred; skill success is recorded execution status."
+        }
+      ],
+      "production_input_boundary": "Only this permitted packet supports answer assertions; source bag IDs, family names, evaluator interventions, references and raw alternate representations remain evaluator-only.",
+      "question": "Why didn't you bring it?",
+      "question_id": "q1",
+      "recording_id": "P003",
+      "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+      "required_communication_units": [
+        {
+          "acceptable_abstraction": "Navigation failed/did not complete; recorded timeout/abort is valid compact specificity when explicitly retained. Exact wording or durations are unnecessary.",
+          "requirement": "Communicate that the recorded navigation failed/did not complete. Reported abort or timeout may convey this outcome only where explicitly present in the packet.",
+          "supporting_evidence_ids": [
+            "s0001"
+          ],
+          "unit_id": "navigation_execution_outcome"
+        },
+        {
+          "acceptable_abstraction": "Any one accurate source-bounded alternative suffices, even if another supported detail is also supplied. A mere diagnostic-topic mention, opposite polarity or blanket refusal does not cover this unit.",
+          "requirement": "Communicate at least ONE of the listed supported diagnostic alternatives, preserving its source/state/temporal scope; do not require all alternatives or a unique physical cause.",
+          "supported_alternatives": [
+            {
+              "evidence_ids": [
+                "state-joy_priority"
+              ],
+              "proposition": "The latest received manual/joystick-priority indicator was ON/selected."
+            },
+            {
+              "evidence_ids": [
+                "l0004",
+                "l0009",
+                "l0014",
+                "l0018"
+              ],
+              "proposition": "The controller reported failure to make progress."
+            },
+            {
+              "evidence_ids": [
+                "l0005",
+                "l0010",
+                "l0015",
+                "l0019"
+              ],
+              "proposition": "A planning/follow-path action handle was aborted during a recorded attempt."
+            }
+          ],
+          "supporting_evidence_ids": [
+            "state-joy_priority",
+            "l0004",
+            "l0009",
+            "l0014",
+            "l0018",
+            "l0005",
+            "l0010",
+            "l0015",
+            "l0019"
+          ],
+          "unit_id": "bounded_available_diagnostic"
+        }
+      ],
+      "required_scope_limits": [
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "physical_cause_or_delay_unknown",
+          "requirement": "Separate recorded outcome and diagnostics from unique physical causation or a measured explanation of bad/slow motion. Explicit uncertainty OR clearly source-bounded observation wording is acceptable. Do not claim a measured delay mechanism, obstacle identity, inhibited applied motion or safety-speed policy from these records."
+        }
+      ],
+      "scoring_constraints": [
+        "One supported outcome unit plus at least one diagnostic alternative when available; diagnostics are disjunctive, never an exhaustive required list.",
+        "Explicit cause-unknown sentence is optional if observations are clearly bounded and no overstrong cause is asserted.",
+        "Additional valid facts from the complete permitted packet remain valid outside this compact inventory.",
+        "Preserve polarity, modality, source attribution and scope; limitation/denial of evidential establishment is not a positive cause claim.",
+        "Wrong physical cause does not erase a correctly communicated outcome; unsupported material mechanism is scored separately.",
+        "No timestamps, exact wording, list lengths, source-file names or full task plans are required.",
+        "A question suggesting slow or bad movement does not license a measured speed, defective behavior or unsupported causal premise."
+      ]
+    },
+    {
+      "answerability": {
+        "bounded_diagnostic_answerable": false,
+        "charging_state_answerable": false,
+        "manual_selection_answerable": false,
+        "measured_delay_reason_answerable": false,
+        "note": "Physical-cause and measured-delay limits apply even when observed outcome and diagnostics are answerable.",
+        "state": "SUPPORTED_PARTIAL",
+        "supported_execution_information": true,
+        "unique_physical_failure_mechanism_answerable": false
+      },
+      "condition": "diagnostic_removal",
+      "job_id": "P003-q1-diagnostic_removal",
+      "material_unsupported_mechanisms": [
+        "Unique obstacle, moving-obstacle or wall mechanism inferred from planning failures or clearing requests.",
+        "Manual/charging indicator uniquely caused this episode failure or physically inhibited motion without controller/arbitration and applied-motion evidence.",
+        "Localization uncertainty uniquely caused bad motion or delay without an independent causal measurement.",
+        "A planning-attempt failure proves global route infeasibility or no possible route.",
+        "Nominal/successful logs prove safety-limited speed, normal geometry or the measured reason for perceived slowness.",
+        "Definite negative causal claims substituted for missing-cause uncertainty."
+      ],
+      "method_packet_sha256": "8c4cabf7a4da8052b891c971f53f433f32b893e87a6501ce94f780a5599da2f9",
+      "optional_supported_detail": [
+        {
+          "detail": "Recorded software log: SkillNavigateToZone received a new goal",
+          "evidence_ids": [
+            "l0000"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Waiting for NavigateToZone to finish...",
+          "evidence_ids": [
+            "l0001"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded navigation skill navigate_to_zone status: failed; explicit error: The skill has timed out.",
+          "evidence_ids": [
+            "s0001"
+          ],
+          "scope": "No error string does not itself establish normal physical motion."
+        },
+        {
+          "detail": "Actual instruction, locations, ordered skill statuses and task-error fields in the supplied recorded_task are eligible supplemental facts when accurately attributed.",
+          "evidence_ids": [
+            "task-latest"
+          ],
+          "scope": "An instruction is a request, not proof that requested physical delivery occurred; skill success is recorded execution status."
+        }
+      ],
+      "production_input_boundary": "Only this permitted packet supports answer assertions; source bag IDs, family names, evaluator interventions, references and raw alternate representations remain evaluator-only.",
+      "question": "Why didn't you bring it?",
+      "question_id": "q1",
+      "recording_id": "P003",
+      "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+      "required_communication_units": [
+        {
+          "acceptable_abstraction": "Navigation failed/did not complete; recorded timeout/abort is valid compact specificity when explicitly retained. Exact wording or durations are unnecessary.",
+          "requirement": "Communicate that the recorded navigation failed/did not complete. Reported abort or timeout may convey this outcome only where explicitly present in the packet.",
+          "supporting_evidence_ids": [
+            "s0001"
+          ],
+          "unit_id": "navigation_execution_outcome"
+        }
+      ],
+      "required_scope_limits": [
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "physical_cause_or_delay_unknown",
+          "requirement": "Separate recorded outcome and diagnostics from unique physical causation or a measured explanation of bad/slow motion. Explicit uncertainty OR clearly source-bounded observation wording is acceptable. Do not claim a measured delay mechanism, obstacle identity, inhibited applied motion or safety-speed policy from these records."
+        },
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "removed_diagnostics_unknown",
+          "requirement": "Unavailable manual, charging, localization and planner/controller diagnostic channels cannot be treated as false, normal, successful or absent physical mechanisms. Mentioning each missing channel is optional when the answer remains bounded to retained outcomes."
+        }
+      ],
+      "scoring_constraints": [
+        "One supported outcome unit plus at least one diagnostic alternative when available; diagnostics are disjunctive, never an exhaustive required list.",
+        "Explicit cause-unknown sentence is optional if observations are clearly bounded and no overstrong cause is asserted.",
+        "Additional valid facts from the complete permitted packet remain valid outside this compact inventory.",
+        "Preserve polarity, modality, source attribution and scope; limitation/denial of evidential establishment is not a positive cause claim.",
+        "Wrong physical cause does not erase a correctly communicated outcome; unsupported material mechanism is scored separately.",
+        "No timestamps, exact wording, list lengths, source-file names or full task plans are required.",
+        "A question suggesting slow or bad movement does not license a measured speed, defective behavior or unsupported causal premise."
+      ]
+    },
+    {
+      "answerability": {
+        "bounded_diagnostic_answerable": true,
+        "charging_state_answerable": true,
+        "manual_selection_answerable": true,
+        "measured_delay_reason_answerable": false,
+        "note": "Physical-cause and measured-delay limits apply even when observed outcome and diagnostics are answerable.",
+        "state": "SUPPORTED_PARTIAL",
+        "supported_execution_information": true,
+        "unique_physical_failure_mechanism_answerable": false
+      },
+      "condition": "intact",
+      "job_id": "P004-q1-intact",
+      "material_unsupported_mechanisms": [
+        "Unique obstacle, moving-obstacle or wall mechanism inferred from planning failures or clearing requests.",
+        "Manual/charging indicator uniquely caused this episode failure or physically inhibited motion without controller/arbitration and applied-motion evidence.",
+        "Localization uncertainty uniquely caused bad motion or delay without an independent causal measurement.",
+        "A planning-attempt failure proves global route infeasibility or no possible route.",
+        "Nominal/successful logs prove safety-limited speed, normal geometry or the measured reason for perceived slowness.",
+        "Definite negative causal claims substituted for missing-cause uncertainty."
+      ],
+      "method_packet_sha256": "6b6e6e07fcbb631a6cfcfee463f7e2addccae2f2c0fca1a0326ed6e6ae31911e",
+      "optional_supported_detail": [
+        {
+          "detail": "Recorded software log: SkillNavigateToZone received a new goal",
+          "evidence_ids": [
+            "l0000"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received a goal, begin computing control effort.",
+          "evidence_ids": [
+            "l0001",
+            "l0007",
+            "l0011",
+            "l0015",
+            "l0020"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Waiting for NavigateToZone to finish...",
+          "evidence_ids": [
+            "l0002"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Passing new path to controller.",
+          "evidence_ids": [
+            "l0003",
+            "l0008",
+            "l0012",
+            "l0016",
+            "l0021"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Failed to make progress",
+          "evidence_ids": [
+            "l0004",
+            "l0009",
+            "l0013",
+            "l0017"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: [follow_path] [ActionServer] Aborting handle.",
+          "evidence_ids": [
+            "l0005",
+            "l0010",
+            "l0014",
+            "l0018"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received request to clear entirely the local_costmap",
+          "evidence_ids": [
+            "l0006"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received request to clear entirely the global_costmap",
+          "evidence_ids": [
+            "l0019"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "The latest received manual/joystick-priority indicator was OFF.",
+          "evidence_ids": [
+            "state-joy_priority"
+          ],
+          "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+        },
+        {
+          "detail": "The latest received charging indicator was ON.",
+          "evidence_ids": [
+            "state-power-is_charging"
+          ],
+          "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+        },
+        {
+          "detail": "Recorded navigation skill navigate_to_zone status: failed; explicit error: The skill has timed out.",
+          "evidence_ids": [
+            "s0001"
+          ],
+          "scope": "No error string does not itself establish normal physical motion."
+        },
+        {
+          "detail": "Actual instruction, locations, ordered skill statuses and task-error fields in the supplied recorded_task are eligible supplemental facts when accurately attributed.",
+          "evidence_ids": [
+            "task-latest"
+          ],
+          "scope": "An instruction is a request, not proof that requested physical delivery occurred; skill success is recorded execution status."
+        }
+      ],
+      "production_input_boundary": "Only this permitted packet supports answer assertions; source bag IDs, family names, evaluator interventions, references and raw alternate representations remain evaluator-only.",
+      "question": "Why didn't you bring it?",
+      "question_id": "q1",
+      "recording_id": "P004",
+      "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+      "required_communication_units": [
+        {
+          "acceptable_abstraction": "Navigation failed/did not complete; recorded timeout/abort is valid compact specificity when explicitly retained. Exact wording or durations are unnecessary.",
+          "requirement": "Communicate that the recorded navigation failed/did not complete. Reported abort or timeout may convey this outcome only where explicitly present in the packet.",
+          "supporting_evidence_ids": [
+            "s0001"
+          ],
+          "unit_id": "navigation_execution_outcome"
+        },
+        {
+          "acceptable_abstraction": "Any one accurate source-bounded alternative suffices, even if another supported detail is also supplied. A mere diagnostic-topic mention, opposite polarity or blanket refusal does not cover this unit.",
+          "requirement": "Communicate at least ONE of the listed supported diagnostic alternatives, preserving its source/state/temporal scope; do not require all alternatives or a unique physical cause.",
+          "supported_alternatives": [
+            {
+              "evidence_ids": [
+                "state-power-is_charging"
+              ],
+              "proposition": "The latest received charging indicator was ON/charging."
+            },
+            {
+              "evidence_ids": [
+                "l0004",
+                "l0009",
+                "l0013",
+                "l0017"
+              ],
+              "proposition": "The controller reported failure to make progress."
+            },
+            {
+              "evidence_ids": [
+                "l0005",
+                "l0010",
+                "l0014",
+                "l0018"
+              ],
+              "proposition": "A planning/follow-path action handle was aborted during a recorded attempt."
+            }
+          ],
+          "supporting_evidence_ids": [
+            "state-power-is_charging",
+            "l0004",
+            "l0009",
+            "l0013",
+            "l0017",
+            "l0005",
+            "l0010",
+            "l0014",
+            "l0018"
+          ],
+          "unit_id": "bounded_available_diagnostic"
+        }
+      ],
+      "required_scope_limits": [
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "physical_cause_or_delay_unknown",
+          "requirement": "Separate recorded outcome and diagnostics from unique physical causation or a measured explanation of bad/slow motion. Explicit uncertainty OR clearly source-bounded observation wording is acceptable. Do not claim a measured delay mechanism, obstacle identity, inhibited applied motion or safety-speed policy from these records."
+        }
+      ],
+      "scoring_constraints": [
+        "One supported outcome unit plus at least one diagnostic alternative when available; diagnostics are disjunctive, never an exhaustive required list.",
+        "Explicit cause-unknown sentence is optional if observations are clearly bounded and no overstrong cause is asserted.",
+        "Additional valid facts from the complete permitted packet remain valid outside this compact inventory.",
+        "Preserve polarity, modality, source attribution and scope; limitation/denial of evidential establishment is not a positive cause claim.",
+        "Wrong physical cause does not erase a correctly communicated outcome; unsupported material mechanism is scored separately.",
+        "No timestamps, exact wording, list lengths, source-file names or full task plans are required.",
+        "A question suggesting slow or bad movement does not license a measured speed, defective behavior or unsupported causal premise."
+      ]
+    },
+    {
+      "answerability": {
+        "bounded_diagnostic_answerable": true,
+        "charging_state_answerable": true,
+        "manual_selection_answerable": true,
+        "measured_delay_reason_answerable": false,
+        "note": "Physical-cause and measured-delay limits apply even when observed outcome and diagnostics are answerable.",
+        "state": "SUPPORTED_PARTIAL",
+        "supported_execution_information": true,
+        "unique_physical_failure_mechanism_answerable": false
+      },
+      "condition": "irrelevant_removal",
+      "job_id": "P004-q1-irrelevant_removal",
+      "material_unsupported_mechanisms": [
+        "Unique obstacle, moving-obstacle or wall mechanism inferred from planning failures or clearing requests.",
+        "Manual/charging indicator uniquely caused this episode failure or physically inhibited motion without controller/arbitration and applied-motion evidence.",
+        "Localization uncertainty uniquely caused bad motion or delay without an independent causal measurement.",
+        "A planning-attempt failure proves global route infeasibility or no possible route.",
+        "Nominal/successful logs prove safety-limited speed, normal geometry or the measured reason for perceived slowness.",
+        "Definite negative causal claims substituted for missing-cause uncertainty."
+      ],
+      "method_packet_sha256": "6b6e6e07fcbb631a6cfcfee463f7e2addccae2f2c0fca1a0326ed6e6ae31911e",
+      "optional_supported_detail": [
+        {
+          "detail": "Recorded software log: SkillNavigateToZone received a new goal",
+          "evidence_ids": [
+            "l0000"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received a goal, begin computing control effort.",
+          "evidence_ids": [
+            "l0001",
+            "l0007",
+            "l0011",
+            "l0015",
+            "l0020"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Waiting for NavigateToZone to finish...",
+          "evidence_ids": [
+            "l0002"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Passing new path to controller.",
+          "evidence_ids": [
+            "l0003",
+            "l0008",
+            "l0012",
+            "l0016",
+            "l0021"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Failed to make progress",
+          "evidence_ids": [
+            "l0004",
+            "l0009",
+            "l0013",
+            "l0017"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: [follow_path] [ActionServer] Aborting handle.",
+          "evidence_ids": [
+            "l0005",
+            "l0010",
+            "l0014",
+            "l0018"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received request to clear entirely the local_costmap",
+          "evidence_ids": [
+            "l0006"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received request to clear entirely the global_costmap",
+          "evidence_ids": [
+            "l0019"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "The latest received manual/joystick-priority indicator was OFF.",
+          "evidence_ids": [
+            "state-joy_priority"
+          ],
+          "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+        },
+        {
+          "detail": "The latest received charging indicator was ON.",
+          "evidence_ids": [
+            "state-power-is_charging"
+          ],
+          "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+        },
+        {
+          "detail": "Recorded navigation skill navigate_to_zone status: failed; explicit error: The skill has timed out.",
+          "evidence_ids": [
+            "s0001"
+          ],
+          "scope": "No error string does not itself establish normal physical motion."
+        },
+        {
+          "detail": "Actual instruction, locations, ordered skill statuses and task-error fields in the supplied recorded_task are eligible supplemental facts when accurately attributed.",
+          "evidence_ids": [
+            "task-latest"
+          ],
+          "scope": "An instruction is a request, not proof that requested physical delivery occurred; skill success is recorded execution status."
+        }
+      ],
+      "production_input_boundary": "Only this permitted packet supports answer assertions; source bag IDs, family names, evaluator interventions, references and raw alternate representations remain evaluator-only.",
+      "question": "Why didn't you bring it?",
+      "question_id": "q1",
+      "recording_id": "P004",
+      "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+      "required_communication_units": [
+        {
+          "acceptable_abstraction": "Navigation failed/did not complete; recorded timeout/abort is valid compact specificity when explicitly retained. Exact wording or durations are unnecessary.",
+          "requirement": "Communicate that the recorded navigation failed/did not complete. Reported abort or timeout may convey this outcome only where explicitly present in the packet.",
+          "supporting_evidence_ids": [
+            "s0001"
+          ],
+          "unit_id": "navigation_execution_outcome"
+        },
+        {
+          "acceptable_abstraction": "Any one accurate source-bounded alternative suffices, even if another supported detail is also supplied. A mere diagnostic-topic mention, opposite polarity or blanket refusal does not cover this unit.",
+          "requirement": "Communicate at least ONE of the listed supported diagnostic alternatives, preserving its source/state/temporal scope; do not require all alternatives or a unique physical cause.",
+          "supported_alternatives": [
+            {
+              "evidence_ids": [
+                "state-power-is_charging"
+              ],
+              "proposition": "The latest received charging indicator was ON/charging."
+            },
+            {
+              "evidence_ids": [
+                "l0004",
+                "l0009",
+                "l0013",
+                "l0017"
+              ],
+              "proposition": "The controller reported failure to make progress."
+            },
+            {
+              "evidence_ids": [
+                "l0005",
+                "l0010",
+                "l0014",
+                "l0018"
+              ],
+              "proposition": "A planning/follow-path action handle was aborted during a recorded attempt."
+            }
+          ],
+          "supporting_evidence_ids": [
+            "state-power-is_charging",
+            "l0004",
+            "l0009",
+            "l0013",
+            "l0017",
+            "l0005",
+            "l0010",
+            "l0014",
+            "l0018"
+          ],
+          "unit_id": "bounded_available_diagnostic"
+        }
+      ],
+      "required_scope_limits": [
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "physical_cause_or_delay_unknown",
+          "requirement": "Separate recorded outcome and diagnostics from unique physical causation or a measured explanation of bad/slow motion. Explicit uncertainty OR clearly source-bounded observation wording is acceptable. Do not claim a measured delay mechanism, obstacle identity, inhibited applied motion or safety-speed policy from these records."
+        }
+      ],
+      "scoring_constraints": [
+        "One supported outcome unit plus at least one diagnostic alternative when available; diagnostics are disjunctive, never an exhaustive required list.",
+        "Explicit cause-unknown sentence is optional if observations are clearly bounded and no overstrong cause is asserted.",
+        "Additional valid facts from the complete permitted packet remain valid outside this compact inventory.",
+        "Preserve polarity, modality, source attribution and scope; limitation/denial of evidential establishment is not a positive cause claim.",
+        "Wrong physical cause does not erase a correctly communicated outcome; unsupported material mechanism is scored separately.",
+        "No timestamps, exact wording, list lengths, source-file names or full task plans are required.",
+        "A question suggesting slow or bad movement does not license a measured speed, defective behavior or unsupported causal premise."
+      ]
+    },
+    {
+      "answerability": {
+        "bounded_diagnostic_answerable": false,
+        "charging_state_answerable": false,
+        "manual_selection_answerable": false,
+        "measured_delay_reason_answerable": false,
+        "note": "Physical-cause and measured-delay limits apply even when observed outcome and diagnostics are answerable.",
+        "state": "SUPPORTED_PARTIAL",
+        "supported_execution_information": true,
+        "unique_physical_failure_mechanism_answerable": false
+      },
+      "condition": "diagnostic_removal",
+      "job_id": "P004-q1-diagnostic_removal",
+      "material_unsupported_mechanisms": [
+        "Unique obstacle, moving-obstacle or wall mechanism inferred from planning failures or clearing requests.",
+        "Manual/charging indicator uniquely caused this episode failure or physically inhibited motion without controller/arbitration and applied-motion evidence.",
+        "Localization uncertainty uniquely caused bad motion or delay without an independent causal measurement.",
+        "A planning-attempt failure proves global route infeasibility or no possible route.",
+        "Nominal/successful logs prove safety-limited speed, normal geometry or the measured reason for perceived slowness.",
+        "Definite negative causal claims substituted for missing-cause uncertainty."
+      ],
+      "method_packet_sha256": "ec2eee9ba77d15ee3edbd242c6cf608635a8e4e2db0b4e16b6a1c2f8c5a33262",
+      "optional_supported_detail": [
+        {
+          "detail": "Recorded software log: SkillNavigateToZone received a new goal",
+          "evidence_ids": [
+            "l0000"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Waiting for NavigateToZone to finish...",
+          "evidence_ids": [
+            "l0001"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded navigation skill navigate_to_zone status: failed; explicit error: The skill has timed out.",
+          "evidence_ids": [
+            "s0001"
+          ],
+          "scope": "No error string does not itself establish normal physical motion."
+        },
+        {
+          "detail": "Actual instruction, locations, ordered skill statuses and task-error fields in the supplied recorded_task are eligible supplemental facts when accurately attributed.",
+          "evidence_ids": [
+            "task-latest"
+          ],
+          "scope": "An instruction is a request, not proof that requested physical delivery occurred; skill success is recorded execution status."
+        }
+      ],
+      "production_input_boundary": "Only this permitted packet supports answer assertions; source bag IDs, family names, evaluator interventions, references and raw alternate representations remain evaluator-only.",
+      "question": "Why didn't you bring it?",
+      "question_id": "q1",
+      "recording_id": "P004",
+      "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+      "required_communication_units": [
+        {
+          "acceptable_abstraction": "Navigation failed/did not complete; recorded timeout/abort is valid compact specificity when explicitly retained. Exact wording or durations are unnecessary.",
+          "requirement": "Communicate that the recorded navigation failed/did not complete. Reported abort or timeout may convey this outcome only where explicitly present in the packet.",
+          "supporting_evidence_ids": [
+            "s0001"
+          ],
+          "unit_id": "navigation_execution_outcome"
+        }
+      ],
+      "required_scope_limits": [
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "physical_cause_or_delay_unknown",
+          "requirement": "Separate recorded outcome and diagnostics from unique physical causation or a measured explanation of bad/slow motion. Explicit uncertainty OR clearly source-bounded observation wording is acceptable. Do not claim a measured delay mechanism, obstacle identity, inhibited applied motion or safety-speed policy from these records."
+        },
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "removed_diagnostics_unknown",
+          "requirement": "Unavailable manual, charging, localization and planner/controller diagnostic channels cannot be treated as false, normal, successful or absent physical mechanisms. Mentioning each missing channel is optional when the answer remains bounded to retained outcomes."
+        }
+      ],
+      "scoring_constraints": [
+        "One supported outcome unit plus at least one diagnostic alternative when available; diagnostics are disjunctive, never an exhaustive required list.",
+        "Explicit cause-unknown sentence is optional if observations are clearly bounded and no overstrong cause is asserted.",
+        "Additional valid facts from the complete permitted packet remain valid outside this compact inventory.",
+        "Preserve polarity, modality, source attribution and scope; limitation/denial of evidential establishment is not a positive cause claim.",
+        "Wrong physical cause does not erase a correctly communicated outcome; unsupported material mechanism is scored separately.",
+        "No timestamps, exact wording, list lengths, source-file names or full task plans are required.",
+        "A question suggesting slow or bad movement does not license a measured speed, defective behavior or unsupported causal premise."
+      ]
+    },
+    {
+      "answerability": {
+        "bounded_diagnostic_answerable": true,
+        "charging_state_answerable": true,
+        "manual_selection_answerable": true,
+        "measured_delay_reason_answerable": false,
+        "note": "Physical-cause and measured-delay limits apply even when observed outcome and diagnostics are answerable.",
+        "state": "SUPPORTED_PARTIAL",
+        "supported_execution_information": true,
+        "unique_physical_failure_mechanism_answerable": false
+      },
+      "condition": "intact",
+      "job_id": "P005-q1-intact",
+      "material_unsupported_mechanisms": [
+        "Unique obstacle, moving-obstacle or wall mechanism inferred from planning failures or clearing requests.",
+        "Manual/charging indicator uniquely caused this episode failure or physically inhibited motion without controller/arbitration and applied-motion evidence.",
+        "Localization uncertainty uniquely caused bad motion or delay without an independent causal measurement.",
+        "A planning-attempt failure proves global route infeasibility or no possible route.",
+        "Nominal/successful logs prove safety-limited speed, normal geometry or the measured reason for perceived slowness.",
+        "Definite negative causal claims substituted for missing-cause uncertainty."
+      ],
+      "method_packet_sha256": "ba652b65130c346914667b11f5b14a184373a3f8bf350c7225200e7a4b5c1830",
+      "optional_supported_detail": [
+        {
+          "detail": "Recorded software log: SkillNavigateToZone received a new goal",
+          "evidence_ids": [
+            "l0000",
+            "l0063"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received a goal, begin computing control effort.",
+          "evidence_ids": [
+            "l0001",
+            "l0015",
+            "l0020",
+            "l0028",
+            "l0049",
+            "l0058",
+            "l0064"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Waiting for NavigateToZone to finish...",
+          "evidence_ids": [
+            "l0002",
+            "l0065"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Passing new path to controller.",
+          "evidence_ids": [
+            "l0003",
+            "l0021",
+            "l0051",
+            "l0060",
+            "l0066"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: High uncertainty in the robot's position.",
+          "evidence_ids": [
+            "l0004",
+            "l0005",
+            "l0010",
+            "l0014",
+            "l0018",
+            "l0019",
+            "l0022",
+            "l0033",
+            "l0034",
+            "l0035",
+            "l0036",
+            "l0037",
+            "l0038",
+            "l0039",
+            "l0040",
+            "l0041",
+            "l0042",
+            "l0043",
+            "l0044",
+            "l0048",
+            "l0050",
+            "l0052",
+            "l0053",
+            "l0054",
+            "l0055"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: GridBased: failed to create plan, no valid path found.",
+          "evidence_ids": [
+            "l0006",
+            "l0023",
+            "l0031",
+            "l0045"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)",
+          "evidence_ids": [
+            "l0007",
+            "l0024",
+            "l0032",
+            "l0046"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: [compute_path_to_pose] [ActionServer] Aborting handle.",
+          "evidence_ids": [
+            "l0008",
+            "l0025",
+            "l0047"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received request to clear entirely the global_costmap",
+          "evidence_ids": [
+            "l0009"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Invalid path, Path is empty.",
+          "evidence_ids": [
+            "l0011",
+            "l0016",
+            "l0026",
+            "l0029"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: [follow_path] [ActionServer] Aborting handle.",
+          "evidence_ids": [
+            "l0012",
+            "l0017",
+            "l0027",
+            "l0030"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received request to clear entirely the local_costmap",
+          "evidence_ids": [
+            "l0013"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Skill completed successfully",
+          "evidence_ids": [
+            "l0056",
+            "l0062",
+            "l0067"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: SkillNavigateToPose received a new goal",
+          "evidence_ids": [
+            "l0057"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Waiting for NavigateToPose to finish...",
+          "evidence_ids": [
+            "l0059"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Reached the goal!",
+          "evidence_ids": [
+            "l0061"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "The latest received manual/joystick-priority indicator was OFF.",
+          "evidence_ids": [
+            "state-joy_priority"
+          ],
+          "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+        },
+        {
+          "detail": "The latest received charging indicator was OFF.",
+          "evidence_ids": [
+            "state-power-is_charging"
+          ],
+          "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+        },
+        {
+          "detail": "Recorded navigation skill navigate_to_zone status: succeeded; explicit error: none recorded.",
+          "evidence_ids": [
+            "s0001"
+          ],
+          "scope": "No error string does not itself establish normal physical motion."
+        },
+        {
+          "detail": "Recorded navigation skill navigate_to_zone status: succeeded; explicit error: none recorded.",
+          "evidence_ids": [
+            "s0003"
+          ],
+          "scope": "No error string does not itself establish normal physical motion."
+        },
+        {
+          "detail": "Actual instruction, locations, ordered skill statuses and task-error fields in the supplied recorded_task are eligible supplemental facts when accurately attributed.",
+          "evidence_ids": [
+            "task-latest"
+          ],
+          "scope": "An instruction is a request, not proof that requested physical delivery occurred; skill success is recorded execution status."
+        }
+      ],
+      "production_input_boundary": "Only this permitted packet supports answer assertions; source bag IDs, family names, evaluator interventions, references and raw alternate representations remain evaluator-only.",
+      "question": "Why did you move in a bad way?",
+      "question_id": "q1",
+      "recording_id": "P005",
+      "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+      "required_communication_units": [
+        {
+          "acceptable_abstraction": "Navigation succeeded/completed successfully; exact destinations, task duration and all task-plan steps are unnecessary.",
+          "requirement": "Communicate that the recorded navigation completed successfully. Do not accept a failed-navigation answer as coverage of this SUCCESS unit.",
+          "supporting_evidence_ids": [
+            "s0001",
+            "s0003"
+          ],
+          "unit_id": "navigation_execution_outcome"
+        },
+        {
+          "acceptable_abstraction": "Any one accurate source-bounded alternative suffices, even if another supported detail is also supplied. A mere diagnostic-topic mention, opposite polarity or blanket refusal does not cover this unit.",
+          "requirement": "Communicate at least ONE of the listed supported diagnostic alternatives, preserving its source/state/temporal scope; do not require all alternatives or a unique physical cause.",
+          "supported_alternatives": [
+            {
+              "evidence_ids": [
+                "l0004",
+                "l0005",
+                "l0010",
+                "l0014",
+                "l0018",
+                "l0019",
+                "l0022",
+                "l0033",
+                "l0034",
+                "l0035",
+                "l0036",
+                "l0037",
+                "l0038",
+                "l0039",
+                "l0040",
+                "l0041",
+                "l0042",
+                "l0043",
+                "l0044",
+                "l0048",
+                "l0050",
+                "l0052",
+                "l0053",
+                "l0054",
+                "l0055"
+              ],
+              "proposition": "The released diagnostic reported high uncertainty in the localization estimate; this is a diagnostic observation rather than proof of unique physical cause."
+            },
+            {
+              "evidence_ids": [
+                "l0006",
+                "l0007",
+                "l0023",
+                "l0024",
+                "l0031",
+                "l0032",
+                "l0045",
+                "l0046"
+              ],
+              "proposition": "The planner reported failure to generate a valid path during recorded attempts; this does not prove global geometric infeasibility."
+            },
+            {
+              "evidence_ids": [
+                "l0011",
+                "l0016",
+                "l0026",
+                "l0029"
+              ],
+              "proposition": "The controller reported an invalid/empty path during recorded attempts."
+            },
+            {
+              "evidence_ids": [
+                "l0008",
+                "l0012",
+                "l0017",
+                "l0025",
+                "l0027",
+                "l0030",
+                "l0047"
+              ],
+              "proposition": "A planning/follow-path action handle was aborted during a recorded attempt."
+            }
+          ],
+          "supporting_evidence_ids": [
+            "l0004",
+            "l0005",
+            "l0010",
+            "l0014",
+            "l0018",
+            "l0019",
+            "l0022",
+            "l0033",
+            "l0034",
+            "l0035",
+            "l0036",
+            "l0037",
+            "l0038",
+            "l0039",
+            "l0040",
+            "l0041",
+            "l0042",
+            "l0043",
+            "l0044",
+            "l0048",
+            "l0050",
+            "l0052",
+            "l0053",
+            "l0054",
+            "l0055",
+            "l0006",
+            "l0007",
+            "l0023",
+            "l0024",
+            "l0031",
+            "l0032",
+            "l0045",
+            "l0046",
+            "l0011",
+            "l0016",
+            "l0026",
+            "l0029",
+            "l0008",
+            "l0012",
+            "l0017",
+            "l0025",
+            "l0027",
+            "l0030",
+            "l0047"
+          ],
+          "unit_id": "bounded_available_diagnostic"
+        }
+      ],
+      "required_scope_limits": [
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "physical_cause_or_delay_unknown",
+          "requirement": "Separate recorded outcome and diagnostics from unique physical causation or a measured explanation of bad/slow motion. Explicit uncertainty OR clearly source-bounded observation wording is acceptable. Do not claim a measured delay mechanism, obstacle identity, inhibited applied motion or safety-speed policy from these records."
+        }
+      ],
+      "scoring_constraints": [
+        "One supported outcome unit plus at least one diagnostic alternative when available; diagnostics are disjunctive, never an exhaustive required list.",
+        "Explicit cause-unknown sentence is optional if observations are clearly bounded and no overstrong cause is asserted.",
+        "Additional valid facts from the complete permitted packet remain valid outside this compact inventory.",
+        "Preserve polarity, modality, source attribution and scope; limitation/denial of evidential establishment is not a positive cause claim.",
+        "Wrong physical cause does not erase a correctly communicated outcome; unsupported material mechanism is scored separately.",
+        "No timestamps, exact wording, list lengths, source-file names or full task plans are required.",
+        "A question suggesting slow or bad movement does not license a measured speed, defective behavior or unsupported causal premise."
+      ]
+    },
+    {
+      "answerability": {
+        "bounded_diagnostic_answerable": true,
+        "charging_state_answerable": true,
+        "manual_selection_answerable": true,
+        "measured_delay_reason_answerable": false,
+        "note": "Physical-cause and measured-delay limits apply even when observed outcome and diagnostics are answerable.",
+        "state": "SUPPORTED_PARTIAL",
+        "supported_execution_information": true,
+        "unique_physical_failure_mechanism_answerable": false
+      },
+      "condition": "irrelevant_removal",
+      "job_id": "P005-q1-irrelevant_removal",
+      "material_unsupported_mechanisms": [
+        "Unique obstacle, moving-obstacle or wall mechanism inferred from planning failures or clearing requests.",
+        "Manual/charging indicator uniquely caused this episode failure or physically inhibited motion without controller/arbitration and applied-motion evidence.",
+        "Localization uncertainty uniquely caused bad motion or delay without an independent causal measurement.",
+        "A planning-attempt failure proves global route infeasibility or no possible route.",
+        "Nominal/successful logs prove safety-limited speed, normal geometry or the measured reason for perceived slowness.",
+        "Definite negative causal claims substituted for missing-cause uncertainty."
+      ],
+      "method_packet_sha256": "ba652b65130c346914667b11f5b14a184373a3f8bf350c7225200e7a4b5c1830",
+      "optional_supported_detail": [
+        {
+          "detail": "Recorded software log: SkillNavigateToZone received a new goal",
+          "evidence_ids": [
+            "l0000",
+            "l0063"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received a goal, begin computing control effort.",
+          "evidence_ids": [
+            "l0001",
+            "l0015",
+            "l0020",
+            "l0028",
+            "l0049",
+            "l0058",
+            "l0064"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Waiting for NavigateToZone to finish...",
+          "evidence_ids": [
+            "l0002",
+            "l0065"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Passing new path to controller.",
+          "evidence_ids": [
+            "l0003",
+            "l0021",
+            "l0051",
+            "l0060",
+            "l0066"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: High uncertainty in the robot's position.",
+          "evidence_ids": [
+            "l0004",
+            "l0005",
+            "l0010",
+            "l0014",
+            "l0018",
+            "l0019",
+            "l0022",
+            "l0033",
+            "l0034",
+            "l0035",
+            "l0036",
+            "l0037",
+            "l0038",
+            "l0039",
+            "l0040",
+            "l0041",
+            "l0042",
+            "l0043",
+            "l0044",
+            "l0048",
+            "l0050",
+            "l0052",
+            "l0053",
+            "l0054",
+            "l0055"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: GridBased: failed to create plan, no valid path found.",
+          "evidence_ids": [
+            "l0006",
+            "l0023",
+            "l0031",
+            "l0045"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)",
+          "evidence_ids": [
+            "l0007",
+            "l0024",
+            "l0032",
+            "l0046"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: [compute_path_to_pose] [ActionServer] Aborting handle.",
+          "evidence_ids": [
+            "l0008",
+            "l0025",
+            "l0047"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received request to clear entirely the global_costmap",
+          "evidence_ids": [
+            "l0009"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Invalid path, Path is empty.",
+          "evidence_ids": [
+            "l0011",
+            "l0016",
+            "l0026",
+            "l0029"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: [follow_path] [ActionServer] Aborting handle.",
+          "evidence_ids": [
+            "l0012",
+            "l0017",
+            "l0027",
+            "l0030"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received request to clear entirely the local_costmap",
+          "evidence_ids": [
+            "l0013"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Skill completed successfully",
+          "evidence_ids": [
+            "l0056",
+            "l0062",
+            "l0067"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: SkillNavigateToPose received a new goal",
+          "evidence_ids": [
+            "l0057"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Waiting for NavigateToPose to finish...",
+          "evidence_ids": [
+            "l0059"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Reached the goal!",
+          "evidence_ids": [
+            "l0061"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "The latest received manual/joystick-priority indicator was OFF.",
+          "evidence_ids": [
+            "state-joy_priority"
+          ],
+          "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+        },
+        {
+          "detail": "The latest received charging indicator was OFF.",
+          "evidence_ids": [
+            "state-power-is_charging"
+          ],
+          "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+        },
+        {
+          "detail": "Recorded navigation skill navigate_to_zone status: succeeded; explicit error: none recorded.",
+          "evidence_ids": [
+            "s0001"
+          ],
+          "scope": "No error string does not itself establish normal physical motion."
+        },
+        {
+          "detail": "Recorded navigation skill navigate_to_zone status: succeeded; explicit error: none recorded.",
+          "evidence_ids": [
+            "s0003"
+          ],
+          "scope": "No error string does not itself establish normal physical motion."
+        },
+        {
+          "detail": "Actual instruction, locations, ordered skill statuses and task-error fields in the supplied recorded_task are eligible supplemental facts when accurately attributed.",
+          "evidence_ids": [
+            "task-latest"
+          ],
+          "scope": "An instruction is a request, not proof that requested physical delivery occurred; skill success is recorded execution status."
+        }
+      ],
+      "production_input_boundary": "Only this permitted packet supports answer assertions; source bag IDs, family names, evaluator interventions, references and raw alternate representations remain evaluator-only.",
+      "question": "Why did you move in a bad way?",
+      "question_id": "q1",
+      "recording_id": "P005",
+      "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+      "required_communication_units": [
+        {
+          "acceptable_abstraction": "Navigation succeeded/completed successfully; exact destinations, task duration and all task-plan steps are unnecessary.",
+          "requirement": "Communicate that the recorded navigation completed successfully. Do not accept a failed-navigation answer as coverage of this SUCCESS unit.",
+          "supporting_evidence_ids": [
+            "s0001",
+            "s0003"
+          ],
+          "unit_id": "navigation_execution_outcome"
+        },
+        {
+          "acceptable_abstraction": "Any one accurate source-bounded alternative suffices, even if another supported detail is also supplied. A mere diagnostic-topic mention, opposite polarity or blanket refusal does not cover this unit.",
+          "requirement": "Communicate at least ONE of the listed supported diagnostic alternatives, preserving its source/state/temporal scope; do not require all alternatives or a unique physical cause.",
+          "supported_alternatives": [
+            {
+              "evidence_ids": [
+                "l0004",
+                "l0005",
+                "l0010",
+                "l0014",
+                "l0018",
+                "l0019",
+                "l0022",
+                "l0033",
+                "l0034",
+                "l0035",
+                "l0036",
+                "l0037",
+                "l0038",
+                "l0039",
+                "l0040",
+                "l0041",
+                "l0042",
+                "l0043",
+                "l0044",
+                "l0048",
+                "l0050",
+                "l0052",
+                "l0053",
+                "l0054",
+                "l0055"
+              ],
+              "proposition": "The released diagnostic reported high uncertainty in the localization estimate; this is a diagnostic observation rather than proof of unique physical cause."
+            },
+            {
+              "evidence_ids": [
+                "l0006",
+                "l0007",
+                "l0023",
+                "l0024",
+                "l0031",
+                "l0032",
+                "l0045",
+                "l0046"
+              ],
+              "proposition": "The planner reported failure to generate a valid path during recorded attempts; this does not prove global geometric infeasibility."
+            },
+            {
+              "evidence_ids": [
+                "l0011",
+                "l0016",
+                "l0026",
+                "l0029"
+              ],
+              "proposition": "The controller reported an invalid/empty path during recorded attempts."
+            },
+            {
+              "evidence_ids": [
+                "l0008",
+                "l0012",
+                "l0017",
+                "l0025",
+                "l0027",
+                "l0030",
+                "l0047"
+              ],
+              "proposition": "A planning/follow-path action handle was aborted during a recorded attempt."
+            }
+          ],
+          "supporting_evidence_ids": [
+            "l0004",
+            "l0005",
+            "l0010",
+            "l0014",
+            "l0018",
+            "l0019",
+            "l0022",
+            "l0033",
+            "l0034",
+            "l0035",
+            "l0036",
+            "l0037",
+            "l0038",
+            "l0039",
+            "l0040",
+            "l0041",
+            "l0042",
+            "l0043",
+            "l0044",
+            "l0048",
+            "l0050",
+            "l0052",
+            "l0053",
+            "l0054",
+            "l0055",
+            "l0006",
+            "l0007",
+            "l0023",
+            "l0024",
+            "l0031",
+            "l0032",
+            "l0045",
+            "l0046",
+            "l0011",
+            "l0016",
+            "l0026",
+            "l0029",
+            "l0008",
+            "l0012",
+            "l0017",
+            "l0025",
+            "l0027",
+            "l0030",
+            "l0047"
+          ],
+          "unit_id": "bounded_available_diagnostic"
+        }
+      ],
+      "required_scope_limits": [
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "physical_cause_or_delay_unknown",
+          "requirement": "Separate recorded outcome and diagnostics from unique physical causation or a measured explanation of bad/slow motion. Explicit uncertainty OR clearly source-bounded observation wording is acceptable. Do not claim a measured delay mechanism, obstacle identity, inhibited applied motion or safety-speed policy from these records."
+        }
+      ],
+      "scoring_constraints": [
+        "One supported outcome unit plus at least one diagnostic alternative when available; diagnostics are disjunctive, never an exhaustive required list.",
+        "Explicit cause-unknown sentence is optional if observations are clearly bounded and no overstrong cause is asserted.",
+        "Additional valid facts from the complete permitted packet remain valid outside this compact inventory.",
+        "Preserve polarity, modality, source attribution and scope; limitation/denial of evidential establishment is not a positive cause claim.",
+        "Wrong physical cause does not erase a correctly communicated outcome; unsupported material mechanism is scored separately.",
+        "No timestamps, exact wording, list lengths, source-file names or full task plans are required.",
+        "A question suggesting slow or bad movement does not license a measured speed, defective behavior or unsupported causal premise."
+      ]
+    },
+    {
+      "answerability": {
+        "bounded_diagnostic_answerable": false,
+        "charging_state_answerable": false,
+        "manual_selection_answerable": false,
+        "measured_delay_reason_answerable": false,
+        "note": "Physical-cause and measured-delay limits apply even when observed outcome and diagnostics are answerable.",
+        "state": "SUPPORTED_PARTIAL",
+        "supported_execution_information": true,
+        "unique_physical_failure_mechanism_answerable": false
+      },
+      "condition": "diagnostic_removal",
+      "job_id": "P005-q1-diagnostic_removal",
+      "material_unsupported_mechanisms": [
+        "Unique obstacle, moving-obstacle or wall mechanism inferred from planning failures or clearing requests.",
+        "Manual/charging indicator uniquely caused this episode failure or physically inhibited motion without controller/arbitration and applied-motion evidence.",
+        "Localization uncertainty uniquely caused bad motion or delay without an independent causal measurement.",
+        "A planning-attempt failure proves global route infeasibility or no possible route.",
+        "Nominal/successful logs prove safety-limited speed, normal geometry or the measured reason for perceived slowness.",
+        "Definite negative causal claims substituted for missing-cause uncertainty."
+      ],
+      "method_packet_sha256": "2eba4ac29b5b53d987007195cdfdfd6b415ce44d5acbc56a5ff3f3edb65a6d96",
+      "optional_supported_detail": [
+        {
+          "detail": "Recorded software log: SkillNavigateToZone received a new goal",
+          "evidence_ids": [
+            "l0000",
+            "l0006"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Waiting for NavigateToZone to finish...",
+          "evidence_ids": [
+            "l0001",
+            "l0007"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Skill completed successfully",
+          "evidence_ids": [
+            "l0002",
+            "l0005",
+            "l0008"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: SkillNavigateToPose received a new goal",
+          "evidence_ids": [
+            "l0003"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Waiting for NavigateToPose to finish...",
+          "evidence_ids": [
+            "l0004"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded navigation skill navigate_to_zone status: succeeded; explicit error: none recorded.",
+          "evidence_ids": [
+            "s0001"
+          ],
+          "scope": "No error string does not itself establish normal physical motion."
+        },
+        {
+          "detail": "Recorded navigation skill navigate_to_zone status: succeeded; explicit error: none recorded.",
+          "evidence_ids": [
+            "s0003"
+          ],
+          "scope": "No error string does not itself establish normal physical motion."
+        },
+        {
+          "detail": "Actual instruction, locations, ordered skill statuses and task-error fields in the supplied recorded_task are eligible supplemental facts when accurately attributed.",
+          "evidence_ids": [
+            "task-latest"
+          ],
+          "scope": "An instruction is a request, not proof that requested physical delivery occurred; skill success is recorded execution status."
+        }
+      ],
+      "production_input_boundary": "Only this permitted packet supports answer assertions; source bag IDs, family names, evaluator interventions, references and raw alternate representations remain evaluator-only.",
+      "question": "Why did you move in a bad way?",
+      "question_id": "q1",
+      "recording_id": "P005",
+      "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+      "required_communication_units": [
+        {
+          "acceptable_abstraction": "Navigation succeeded/completed successfully; exact destinations, task duration and all task-plan steps are unnecessary.",
+          "requirement": "Communicate that the recorded navigation completed successfully. Do not accept a failed-navigation answer as coverage of this SUCCESS unit.",
+          "supporting_evidence_ids": [
+            "s0001",
+            "s0003"
+          ],
+          "unit_id": "navigation_execution_outcome"
+        }
+      ],
+      "required_scope_limits": [
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "physical_cause_or_delay_unknown",
+          "requirement": "Separate recorded outcome and diagnostics from unique physical causation or a measured explanation of bad/slow motion. Explicit uncertainty OR clearly source-bounded observation wording is acceptable. Do not claim a measured delay mechanism, obstacle identity, inhibited applied motion or safety-speed policy from these records."
+        },
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "removed_diagnostics_unknown",
+          "requirement": "Unavailable manual, charging, localization and planner/controller diagnostic channels cannot be treated as false, normal, successful or absent physical mechanisms. Mentioning each missing channel is optional when the answer remains bounded to retained outcomes."
+        }
+      ],
+      "scoring_constraints": [
+        "One supported outcome unit plus at least one diagnostic alternative when available; diagnostics are disjunctive, never an exhaustive required list.",
+        "Explicit cause-unknown sentence is optional if observations are clearly bounded and no overstrong cause is asserted.",
+        "Additional valid facts from the complete permitted packet remain valid outside this compact inventory.",
+        "Preserve polarity, modality, source attribution and scope; limitation/denial of evidential establishment is not a positive cause claim.",
+        "Wrong physical cause does not erase a correctly communicated outcome; unsupported material mechanism is scored separately.",
+        "No timestamps, exact wording, list lengths, source-file names or full task plans are required.",
+        "A question suggesting slow or bad movement does not license a measured speed, defective behavior or unsupported causal premise."
+      ]
+    },
+    {
+      "answerability": {
+        "bounded_diagnostic_answerable": true,
+        "charging_state_answerable": true,
+        "manual_selection_answerable": true,
+        "measured_delay_reason_answerable": false,
+        "note": "Physical-cause and measured-delay limits apply even when observed outcome and diagnostics are answerable.",
+        "state": "SUPPORTED_PARTIAL",
+        "supported_execution_information": true,
+        "unique_physical_failure_mechanism_answerable": false
+      },
+      "condition": "intact",
+      "job_id": "P006-q1-intact",
+      "material_unsupported_mechanisms": [
+        "Unique obstacle, moving-obstacle or wall mechanism inferred from planning failures or clearing requests.",
+        "Manual/charging indicator uniquely caused this episode failure or physically inhibited motion without controller/arbitration and applied-motion evidence.",
+        "Localization uncertainty uniquely caused bad motion or delay without an independent causal measurement.",
+        "A planning-attempt failure proves global route infeasibility or no possible route.",
+        "Nominal/successful logs prove safety-limited speed, normal geometry or the measured reason for perceived slowness.",
+        "Definite negative causal claims substituted for missing-cause uncertainty."
+      ],
+      "method_packet_sha256": "069f88710d41239da747449c69e886d2b8654115cb59f831ff58854a73fd7709",
+      "optional_supported_detail": [
+        {
+          "detail": "Recorded software log: SkillNavigateToZone received a new goal",
+          "evidence_ids": [
+            "l0000",
+            "l0026"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received a goal, begin computing control effort.",
+          "evidence_ids": [
+            "l0001",
+            "l0011",
+            "l0016",
+            "l0020",
+            "l0027"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Waiting for NavigateToZone to finish...",
+          "evidence_ids": [
+            "l0002",
+            "l0028"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Passing new path to controller.",
+          "evidence_ids": [
+            "l0003",
+            "l0017",
+            "l0022",
+            "l0029"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: GridBased: failed to create plan, no valid path found.",
+          "evidence_ids": [
+            "l0004",
+            "l0014"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)",
+          "evidence_ids": [
+            "l0005",
+            "l0015"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: [compute_path_to_pose] [ActionServer] Aborting handle.",
+          "evidence_ids": [
+            "l0006"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received request to clear entirely the global_costmap",
+          "evidence_ids": [
+            "l0007"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Invalid path, Path is empty.",
+          "evidence_ids": [
+            "l0008",
+            "l0012"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: [follow_path] [ActionServer] Aborting handle.",
+          "evidence_ids": [
+            "l0009",
+            "l0013"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received request to clear entirely the local_costmap",
+          "evidence_ids": [
+            "l0010"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Skill completed successfully",
+          "evidence_ids": [
+            "l0018",
+            "l0025",
+            "l0030"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: SkillNavigateToPose received a new goal",
+          "evidence_ids": [
+            "l0019"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Waiting for NavigateToPose to finish...",
+          "evidence_ids": [
+            "l0021"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Reached the goal!",
+          "evidence_ids": [
+            "l0023"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Goal was canceled. Canceling planning action.",
+          "evidence_ids": [
+            "l0024"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "The latest received manual/joystick-priority indicator was OFF.",
+          "evidence_ids": [
+            "state-joy_priority"
+          ],
+          "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+        },
+        {
+          "detail": "The latest received charging indicator was OFF.",
+          "evidence_ids": [
+            "state-power-is_charging"
+          ],
+          "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+        },
+        {
+          "detail": "Recorded navigation skill navigate_to_zone status: succeeded; explicit error: none recorded.",
+          "evidence_ids": [
+            "s0001"
+          ],
+          "scope": "No error string does not itself establish normal physical motion."
+        },
+        {
+          "detail": "Recorded navigation skill navigate_to_zone status: succeeded; explicit error: none recorded.",
+          "evidence_ids": [
+            "s0003"
+          ],
+          "scope": "No error string does not itself establish normal physical motion."
+        },
+        {
+          "detail": "Actual instruction, locations, ordered skill statuses and task-error fields in the supplied recorded_task are eligible supplemental facts when accurately attributed.",
+          "evidence_ids": [
+            "task-latest"
+          ],
+          "scope": "An instruction is a request, not proof that requested physical delivery occurred; skill success is recorded execution status."
+        }
+      ],
+      "production_input_boundary": "Only this permitted packet supports answer assertions; source bag IDs, family names, evaluator interventions, references and raw alternate representations remain evaluator-only.",
+      "question": "Why did you move in a bad way?",
+      "question_id": "q1",
+      "recording_id": "P006",
+      "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+      "required_communication_units": [
+        {
+          "acceptable_abstraction": "Navigation succeeded/completed successfully; exact destinations, task duration and all task-plan steps are unnecessary.",
+          "requirement": "Communicate that the recorded navigation completed successfully. Do not accept a failed-navigation answer as coverage of this SUCCESS unit.",
+          "supporting_evidence_ids": [
+            "s0001",
+            "s0003"
+          ],
+          "unit_id": "navigation_execution_outcome"
+        },
+        {
+          "acceptable_abstraction": "Any one accurate source-bounded alternative suffices, even if another supported detail is also supplied. A mere diagnostic-topic mention, opposite polarity or blanket refusal does not cover this unit.",
+          "requirement": "Communicate at least ONE of the listed supported diagnostic alternatives, preserving its source/state/temporal scope; do not require all alternatives or a unique physical cause.",
+          "supported_alternatives": [
+            {
+              "evidence_ids": [
+                "l0004",
+                "l0005",
+                "l0014",
+                "l0015"
+              ],
+              "proposition": "The planner reported failure to generate a valid path during recorded attempts; this does not prove global geometric infeasibility."
+            },
+            {
+              "evidence_ids": [
+                "l0008",
+                "l0012"
+              ],
+              "proposition": "The controller reported an invalid/empty path during recorded attempts."
+            },
+            {
+              "evidence_ids": [
+                "l0006",
+                "l0009",
+                "l0013"
+              ],
+              "proposition": "A planning/follow-path action handle was aborted during a recorded attempt."
+            }
+          ],
+          "supporting_evidence_ids": [
+            "l0004",
+            "l0005",
+            "l0014",
+            "l0015",
+            "l0008",
+            "l0012",
+            "l0006",
+            "l0009",
+            "l0013"
+          ],
+          "unit_id": "bounded_available_diagnostic"
+        }
+      ],
+      "required_scope_limits": [
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "physical_cause_or_delay_unknown",
+          "requirement": "Separate recorded outcome and diagnostics from unique physical causation or a measured explanation of bad/slow motion. Explicit uncertainty OR clearly source-bounded observation wording is acceptable. Do not claim a measured delay mechanism, obstacle identity, inhibited applied motion or safety-speed policy from these records."
+        }
+      ],
+      "scoring_constraints": [
+        "One supported outcome unit plus at least one diagnostic alternative when available; diagnostics are disjunctive, never an exhaustive required list.",
+        "Explicit cause-unknown sentence is optional if observations are clearly bounded and no overstrong cause is asserted.",
+        "Additional valid facts from the complete permitted packet remain valid outside this compact inventory.",
+        "Preserve polarity, modality, source attribution and scope; limitation/denial of evidential establishment is not a positive cause claim.",
+        "Wrong physical cause does not erase a correctly communicated outcome; unsupported material mechanism is scored separately.",
+        "No timestamps, exact wording, list lengths, source-file names or full task plans are required.",
+        "A question suggesting slow or bad movement does not license a measured speed, defective behavior or unsupported causal premise."
+      ]
+    },
+    {
+      "answerability": {
+        "bounded_diagnostic_answerable": true,
+        "charging_state_answerable": true,
+        "manual_selection_answerable": true,
+        "measured_delay_reason_answerable": false,
+        "note": "Physical-cause and measured-delay limits apply even when observed outcome and diagnostics are answerable.",
+        "state": "SUPPORTED_PARTIAL",
+        "supported_execution_information": true,
+        "unique_physical_failure_mechanism_answerable": false
+      },
+      "condition": "irrelevant_removal",
+      "job_id": "P006-q1-irrelevant_removal",
+      "material_unsupported_mechanisms": [
+        "Unique obstacle, moving-obstacle or wall mechanism inferred from planning failures or clearing requests.",
+        "Manual/charging indicator uniquely caused this episode failure or physically inhibited motion without controller/arbitration and applied-motion evidence.",
+        "Localization uncertainty uniquely caused bad motion or delay without an independent causal measurement.",
+        "A planning-attempt failure proves global route infeasibility or no possible route.",
+        "Nominal/successful logs prove safety-limited speed, normal geometry or the measured reason for perceived slowness.",
+        "Definite negative causal claims substituted for missing-cause uncertainty."
+      ],
+      "method_packet_sha256": "069f88710d41239da747449c69e886d2b8654115cb59f831ff58854a73fd7709",
+      "optional_supported_detail": [
+        {
+          "detail": "Recorded software log: SkillNavigateToZone received a new goal",
+          "evidence_ids": [
+            "l0000",
+            "l0026"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received a goal, begin computing control effort.",
+          "evidence_ids": [
+            "l0001",
+            "l0011",
+            "l0016",
+            "l0020",
+            "l0027"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Waiting for NavigateToZone to finish...",
+          "evidence_ids": [
+            "l0002",
+            "l0028"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Passing new path to controller.",
+          "evidence_ids": [
+            "l0003",
+            "l0017",
+            "l0022",
+            "l0029"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: GridBased: failed to create plan, no valid path found.",
+          "evidence_ids": [
+            "l0004",
+            "l0014"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)",
+          "evidence_ids": [
+            "l0005",
+            "l0015"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: [compute_path_to_pose] [ActionServer] Aborting handle.",
+          "evidence_ids": [
+            "l0006"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received request to clear entirely the global_costmap",
+          "evidence_ids": [
+            "l0007"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Invalid path, Path is empty.",
+          "evidence_ids": [
+            "l0008",
+            "l0012"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: [follow_path] [ActionServer] Aborting handle.",
+          "evidence_ids": [
+            "l0009",
+            "l0013"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Received request to clear entirely the local_costmap",
+          "evidence_ids": [
+            "l0010"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Skill completed successfully",
+          "evidence_ids": [
+            "l0018",
+            "l0025",
+            "l0030"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: SkillNavigateToPose received a new goal",
+          "evidence_ids": [
+            "l0019"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Waiting for NavigateToPose to finish...",
+          "evidence_ids": [
+            "l0021"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Reached the goal!",
+          "evidence_ids": [
+            "l0023"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Goal was canceled. Canceling planning action.",
+          "evidence_ids": [
+            "l0024"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "The latest received manual/joystick-priority indicator was OFF.",
+          "evidence_ids": [
+            "state-joy_priority"
+          ],
+          "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+        },
+        {
+          "detail": "The latest received charging indicator was OFF.",
+          "evidence_ids": [
+            "state-power-is_charging"
+          ],
+          "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+        },
+        {
+          "detail": "Recorded navigation skill navigate_to_zone status: succeeded; explicit error: none recorded.",
+          "evidence_ids": [
+            "s0001"
+          ],
+          "scope": "No error string does not itself establish normal physical motion."
+        },
+        {
+          "detail": "Recorded navigation skill navigate_to_zone status: succeeded; explicit error: none recorded.",
+          "evidence_ids": [
+            "s0003"
+          ],
+          "scope": "No error string does not itself establish normal physical motion."
+        },
+        {
+          "detail": "Actual instruction, locations, ordered skill statuses and task-error fields in the supplied recorded_task are eligible supplemental facts when accurately attributed.",
+          "evidence_ids": [
+            "task-latest"
+          ],
+          "scope": "An instruction is a request, not proof that requested physical delivery occurred; skill success is recorded execution status."
+        }
+      ],
+      "production_input_boundary": "Only this permitted packet supports answer assertions; source bag IDs, family names, evaluator interventions, references and raw alternate representations remain evaluator-only.",
+      "question": "Why did you move in a bad way?",
+      "question_id": "q1",
+      "recording_id": "P006",
+      "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+      "required_communication_units": [
+        {
+          "acceptable_abstraction": "Navigation succeeded/completed successfully; exact destinations, task duration and all task-plan steps are unnecessary.",
+          "requirement": "Communicate that the recorded navigation completed successfully. Do not accept a failed-navigation answer as coverage of this SUCCESS unit.",
+          "supporting_evidence_ids": [
+            "s0001",
+            "s0003"
+          ],
+          "unit_id": "navigation_execution_outcome"
+        },
+        {
+          "acceptable_abstraction": "Any one accurate source-bounded alternative suffices, even if another supported detail is also supplied. A mere diagnostic-topic mention, opposite polarity or blanket refusal does not cover this unit.",
+          "requirement": "Communicate at least ONE of the listed supported diagnostic alternatives, preserving its source/state/temporal scope; do not require all alternatives or a unique physical cause.",
+          "supported_alternatives": [
+            {
+              "evidence_ids": [
+                "l0004",
+                "l0005",
+                "l0014",
+                "l0015"
+              ],
+              "proposition": "The planner reported failure to generate a valid path during recorded attempts; this does not prove global geometric infeasibility."
+            },
+            {
+              "evidence_ids": [
+                "l0008",
+                "l0012"
+              ],
+              "proposition": "The controller reported an invalid/empty path during recorded attempts."
+            },
+            {
+              "evidence_ids": [
+                "l0006",
+                "l0009",
+                "l0013"
+              ],
+              "proposition": "A planning/follow-path action handle was aborted during a recorded attempt."
+            }
+          ],
+          "supporting_evidence_ids": [
+            "l0004",
+            "l0005",
+            "l0014",
+            "l0015",
+            "l0008",
+            "l0012",
+            "l0006",
+            "l0009",
+            "l0013"
+          ],
+          "unit_id": "bounded_available_diagnostic"
+        }
+      ],
+      "required_scope_limits": [
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "physical_cause_or_delay_unknown",
+          "requirement": "Separate recorded outcome and diagnostics from unique physical causation or a measured explanation of bad/slow motion. Explicit uncertainty OR clearly source-bounded observation wording is acceptable. Do not claim a measured delay mechanism, obstacle identity, inhibited applied motion or safety-speed policy from these records."
+        }
+      ],
+      "scoring_constraints": [
+        "One supported outcome unit plus at least one diagnostic alternative when available; diagnostics are disjunctive, never an exhaustive required list.",
+        "Explicit cause-unknown sentence is optional if observations are clearly bounded and no overstrong cause is asserted.",
+        "Additional valid facts from the complete permitted packet remain valid outside this compact inventory.",
+        "Preserve polarity, modality, source attribution and scope; limitation/denial of evidential establishment is not a positive cause claim.",
+        "Wrong physical cause does not erase a correctly communicated outcome; unsupported material mechanism is scored separately.",
+        "No timestamps, exact wording, list lengths, source-file names or full task plans are required.",
+        "A question suggesting slow or bad movement does not license a measured speed, defective behavior or unsupported causal premise."
+      ]
+    },
+    {
+      "answerability": {
+        "bounded_diagnostic_answerable": false,
+        "charging_state_answerable": false,
+        "manual_selection_answerable": false,
+        "measured_delay_reason_answerable": false,
+        "note": "Physical-cause and measured-delay limits apply even when observed outcome and diagnostics are answerable.",
+        "state": "SUPPORTED_PARTIAL",
+        "supported_execution_information": true,
+        "unique_physical_failure_mechanism_answerable": false
+      },
+      "condition": "diagnostic_removal",
+      "job_id": "P006-q1-diagnostic_removal",
+      "material_unsupported_mechanisms": [
+        "Unique obstacle, moving-obstacle or wall mechanism inferred from planning failures or clearing requests.",
+        "Manual/charging indicator uniquely caused this episode failure or physically inhibited motion without controller/arbitration and applied-motion evidence.",
+        "Localization uncertainty uniquely caused bad motion or delay without an independent causal measurement.",
+        "A planning-attempt failure proves global route infeasibility or no possible route.",
+        "Nominal/successful logs prove safety-limited speed, normal geometry or the measured reason for perceived slowness.",
+        "Definite negative causal claims substituted for missing-cause uncertainty."
+      ],
+      "method_packet_sha256": "4cfd580d2f8e09a1359874c449ddb9710a1f49462f516a8cb0217b081d70462a",
+      "optional_supported_detail": [
+        {
+          "detail": "Recorded software log: SkillNavigateToZone received a new goal",
+          "evidence_ids": [
+            "l0000",
+            "l0006"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Waiting for NavigateToZone to finish...",
+          "evidence_ids": [
+            "l0001",
+            "l0007"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Skill completed successfully",
+          "evidence_ids": [
+            "l0002",
+            "l0005",
+            "l0008"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: SkillNavigateToPose received a new goal",
+          "evidence_ids": [
+            "l0003"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded software log: Waiting for NavigateToPose to finish...",
+          "evidence_ids": [
+            "l0004"
+          ],
+          "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+        },
+        {
+          "detail": "Recorded navigation skill navigate_to_zone status: succeeded; explicit error: none recorded.",
+          "evidence_ids": [
+            "s0001"
+          ],
+          "scope": "No error string does not itself establish normal physical motion."
+        },
+        {
+          "detail": "Recorded navigation skill navigate_to_zone status: succeeded; explicit error: none recorded.",
+          "evidence_ids": [
+            "s0003"
+          ],
+          "scope": "No error string does not itself establish normal physical motion."
+        },
+        {
+          "detail": "Actual instruction, locations, ordered skill statuses and task-error fields in the supplied recorded_task are eligible supplemental facts when accurately attributed.",
+          "evidence_ids": [
+            "task-latest"
+          ],
+          "scope": "An instruction is a request, not proof that requested physical delivery occurred; skill success is recorded execution status."
+        }
+      ],
+      "production_input_boundary": "Only this permitted packet supports answer assertions; source bag IDs, family names, evaluator interventions, references and raw alternate representations remain evaluator-only.",
+      "question": "Why did you move in a bad way?",
+      "question_id": "q1",
+      "recording_id": "P006",
+      "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+      "required_communication_units": [
+        {
+          "acceptable_abstraction": "Navigation succeeded/completed successfully; exact destinations, task duration and all task-plan steps are unnecessary.",
+          "requirement": "Communicate that the recorded navigation completed successfully. Do not accept a failed-navigation answer as coverage of this SUCCESS unit.",
+          "supporting_evidence_ids": [
+            "s0001",
+            "s0003"
+          ],
+          "unit_id": "navigation_execution_outcome"
+        }
+      ],
+      "required_scope_limits": [
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "physical_cause_or_delay_unknown",
+          "requirement": "Separate recorded outcome and diagnostics from unique physical causation or a measured explanation of bad/slow motion. Explicit uncertainty OR clearly source-bounded observation wording is acceptable. Do not claim a measured delay mechanism, obstacle identity, inhibited applied motion or safety-speed policy from these records."
+        },
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "removed_diagnostics_unknown",
+          "requirement": "Unavailable manual, charging, localization and planner/controller diagnostic channels cannot be treated as false, normal, successful or absent physical mechanisms. Mentioning each missing channel is optional when the answer remains bounded to retained outcomes."
+        }
+      ],
+      "scoring_constraints": [
+        "One supported outcome unit plus at least one diagnostic alternative when available; diagnostics are disjunctive, never an exhaustive required list.",
+        "Explicit cause-unknown sentence is optional if observations are clearly bounded and no overstrong cause is asserted.",
+        "Additional valid facts from the complete permitted packet remain valid outside this compact inventory.",
+        "Preserve polarity, modality, source attribution and scope; limitation/denial of evidential establishment is not a positive cause claim.",
+        "Wrong physical cause does not erase a correctly communicated outcome; unsupported material mechanism is scored separately.",
+        "No timestamps, exact wording, list lengths, source-file names or full task plans are required.",
+        "A question suggesting slow or bad movement does not license a measured speed, defective behavior or unsupported causal premise."
+      ]
+    }
+  ],
+  "schema": "hexar-independent-development-references/v1",
+  "upstream_commit": "f5e9567edb43899ad7dd4efcbeb5429ff4b0c6fc"
+}

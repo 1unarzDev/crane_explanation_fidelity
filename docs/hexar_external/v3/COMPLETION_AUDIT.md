@@ -1,0 +1,28 @@
+# Final completion evidence
+
+The scientific evaluation is closed. This audit maps the bounded handoff to retained proof; full local completion is verified by the final restore receipt and passing final-preservation gate below. These checks establish provenance, population and accounting, not human validity or confirmatory superiority.
+
+| Requirement | Retained proof | Verified scientific disposition |
+|---|---|---|
+| Isolated ownership | Registered fcc9 / hexar-external-development; source manifest; REPRODUCTION | Core 9a81db8 and isolated upstream f5e9567; shared submodule pins unchanged/uninitialized; no merge/push/shared-ledger mutation |
+| Current bindings, licensing | source_data_manifest; annotation_binding; study_freeze; SOURCE_AUDIT | All 30 frozen hashes match; code notices separate from unresolved recording/asset redistribution; hosted/historical weight limits disclosed |
+| Immutable historical metric | historical_results; RESULT_TABLE category A |540 rows/180 queries/60 physical recordings; HEXAR 167/180 overall,49/54 navigation; original human labels unchanged |
+| Faithful bounded component replay | native-parity; native-dispatch-trace; scoped tests |One 1× ROS Humble manual recording,3,422 selected inputs and state/window/prompt parity under traced receipt clocks; later bag-receipt replay; no full-system/historical-model claim |
+| Complete declared families and split | split; cumulative exposure; reserved/accounting |Six development and 12 reserved recordings; all six known families; no family holdout; public data and result-review exposure retained |
+| Pre-derivation removal and closure | reserved/packets, closure, references;13 tests |All 108 packets pass; intact/control selected packets and upstream requests byte-identical; fresh state; missing unknown; physical event unchanged |
+| Fair principal baseline | methods, calibration prompt, pinned core |Shared facts/availability/source/requirements/windows and 60-word allowance; strengthened examples; contract deterministic realization explicitly disclosed |
+| Independent references and labels | reference release; inventory review; qualified assessments |References precede answers;324 answers/324 support assessments; zero generation/support failures/retries;1,425 blind curated atoms; unqualified extraction and role limits preserved |
+| Numerical and causal accounting | direct_numeric_predicate_audit; causal_reporting_accounting_audit |13 literal and 12 bounded clock predicates checked; identity/motion limits retained; independent reconstruction of 324 causal rows/108 denominators passes; labels unchanged |
+| One recording-paired endpoint | results; scored_jobs; recording_scores |12 complete pairs;108/108 versus98/108 success; +9.3 points;7 favorable/5 tied/0 unfavorable; recording t95[2.6,15.9], strict six-family[3.2,15.3]; descriptive only |
+| Annotation uncertainty | annotation_summary; paper/annotation_uncertainty |324 qualified dispositions;99.8% atomic agreement;10/3,009 decision disagreements; A/B effects both +9.3; no extra physical N/human validation |
+| Secondary and operational tradeoffs | causal_reporting; paper/operations; RESULT_TABLE |Coverage 100% and physical-cause flags0 for both principal methods; material 9.3% vs0; causal 5.6% vs0; compact/role scope;100% contract templates/zero calls; cost unknown |
+| Paper/table/figure | PAPER_SECTION; RESULT_TABLE; EVIDENCE_FIGURE; paper/presentation_provenance |Actual completed values reviewed; figure visually inspected; unknown-bound whiskers not CIs; finite known-family/component/agent/model/templating limits stated |
+| Restorable private assets | final_restore_receipt; archives/20260930_final; integrity_audit |Requires checked code/upstream bundles, actual data tar, all-file restored hashes and 13 restored tests; local private preservation only, not data-release rights/disaster recovery |
+
+Final gate: `data/hexar_external/.venv/bin/python analysis/hexar_external/validate_v3.py --require-final --require-preservation`. Its retained `integrity_audit.json` must have `required_final=true` and `private_preservation_checked=true`. The final receipt records the archived code commit (final code/docs committed before bundling), source commit, exact byte count and hashes. A later receipt/integrity commit completes the transaction without changing scientific files. Earlier development restoration verified 2,279 files and 13 tests; it is separate from the final whole-study proof.
+
+All scientific findings are descriptive: alpha allocated/consumed 0, no p-value, no statistically supported superiority claim. The strong baseline's coverage and physical-cause ties are retained. No companion platform or additional cohort was needed. Next action is publication-owner review/integration and optional authorized private backup coordination; no further experiment, merge or publication is performed here.
+
+## Verified final preservation transaction
+
+Final private restoration passed: **6,898 files** extracted and SHA-256 checked, both bundled repository commits restored, and all **13 scoped tests** passed in the restored checkout. Archived code/docs commit: `5ce8816f6b93f413f6125d6ce3e5c84ff11ff98c`; upstream: `f5e9567edb43899ad7dd4efcbeb5429ff4b0c6fc`. The final preservation validator passed with both required flags true. Receipt: `data/hexar_external/v3/final_restore_receipt.json`; private archive: `data/hexar_external/archives/20260930_final/`. This follow-up receipt/document commit completes the archive transaction; scientific files and frozen hashes are unchanged. The evaluation and authorized local deliverable are complete.

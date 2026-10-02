@@ -1,0 +1,1772 @@
+{
+  "annotation_origin": "automated_agent",
+  "builder_id": "hexar-external-v2",
+  "builder_version": "v2",
+  "forms": [
+    {
+      "abstraction_level_options": [
+        "task_outcome",
+        "software_action_failure",
+        "recorded_override_state",
+        "specific_physical_cause",
+        "limitation"
+      ],
+      "allowed_claim_labels": [
+        "SUPPORTED_BY_VISIBLE_EVIDENCE",
+        "CONTRADICTED_BY_VISIBLE_EVIDENCE",
+        "INSUFFICIENT_VISIBLE_EVIDENCE",
+        "PHYSICALLY_TRUE_BUT_UNSUPPORTED",
+        "UNINTERPRETABLE"
+      ],
+      "annotator_attestation": null,
+      "annotator_slot": "A",
+      "atomic_statements": [
+        {
+          "annotation_notes": null,
+          "asserted_abstraction_level": "task_outcome",
+          "item_id": "d4d28f828d21d4b4-a001",
+          "label": null,
+          "response_span": "I couldn\u2019t bring it because I couldn\u2019t find a valid path to the destination.",
+          "statement": "Could not bring the item.",
+          "visible_support_references": []
+        },
+        {
+          "annotation_notes": null,
+          "asserted_abstraction_level": "software_action_failure",
+          "item_id": "d4d28f828d21d4b4-a002",
+          "label": null,
+          "response_span": "I couldn\u2019t bring it because I couldn\u2019t find a valid path to the destination.",
+          "statement": "Could not find a valid path to the destination.",
+          "visible_support_references": []
+        },
+        {
+          "annotation_notes": null,
+          "asserted_abstraction_level": "software_action_failure",
+          "item_id": "d4d28f828d21d4b4-a003",
+          "label": null,
+          "response_span": "I couldn\u2019t bring it because I couldn\u2019t find a valid path to the destination.",
+          "statement": "Path finding inability caused failure to bring the item.",
+          "visible_support_references": []
+        }
+      ],
+      "false_premise_handling": "NOT_APPLICABLE",
+      "form_id": "d4d28f828d21d4b4-A",
+      "highest_asserted_abstraction_level": null,
+      "independent_reference": {
+        "answerability": {
+          "bounded_diagnostic_answerable": true,
+          "charging_state_answerable": true,
+          "manual_selection_answerable": true,
+          "measured_delay_reason_answerable": false,
+          "note": "Physical-cause and measured-delay limits apply even when observed outcome and diagnostics are answerable.",
+          "state": "SUPPORTED_PARTIAL",
+          "supported_execution_information": true,
+          "unique_physical_failure_mechanism_answerable": false
+        },
+        "material_unsupported_mechanisms": [
+          "Unique obstacle, moving-obstacle or wall mechanism inferred from planning failures or clearing requests.",
+          "Manual/charging indicator uniquely caused this episode failure or physically inhibited motion without controller/arbitration and applied-motion evidence.",
+          "Localization uncertainty uniquely caused bad motion or delay without an independent causal measurement.",
+          "A planning-attempt failure proves global route infeasibility or no possible route.",
+          "Nominal/successful logs prove safety-limited speed, normal geometry or the measured reason for perceived slowness.",
+          "Definite negative causal claims substituted for missing-cause uncertainty."
+        ],
+        "optional_supported_detail": [
+          {
+            "detail": "Recorded software log: GridBased: failed to create plan, no valid path found.",
+            "evidence_ids": [
+              "l0000",
+              "l0010",
+              "l0013",
+              "l0016",
+              "l0019",
+              "l0022",
+              "l0027",
+              "l0035",
+              "l0038",
+              "l0041",
+              "l0044",
+              "l0047",
+              "l0052"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)",
+            "evidence_ids": [
+              "l0001",
+              "l0011",
+              "l0014",
+              "l0017",
+              "l0020",
+              "l0023",
+              "l0028",
+              "l0036",
+              "l0039",
+              "l0042",
+              "l0045",
+              "l0048",
+              "l0053"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: [compute_path_to_pose] [ActionServer] Aborting handle.",
+            "evidence_ids": [
+              "l0002",
+              "l0012",
+              "l0015",
+              "l0018",
+              "l0021",
+              "l0024",
+              "l0029",
+              "l0037",
+              "l0040",
+              "l0043",
+              "l0046",
+              "l0049",
+              "l0054"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: Received request to clear entirely the global_costmap",
+            "evidence_ids": [
+              "l0003"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: Invalid path, Path is empty.",
+            "evidence_ids": [
+              "l0004",
+              "l0008",
+              "l0030",
+              "l0033",
+              "l0055",
+              "l0058"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: [follow_path] [ActionServer] Aborting handle.",
+            "evidence_ids": [
+              "l0005",
+              "l0009",
+              "l0031",
+              "l0034",
+              "l0056",
+              "l0059"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: Received request to clear entirely the local_costmap",
+            "evidence_ids": [
+              "l0006"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: Received a goal, begin computing control effort.",
+            "evidence_ids": [
+              "l0007",
+              "l0025",
+              "l0032",
+              "l0050",
+              "l0057"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: Passing new path to controller.",
+            "evidence_ids": [
+              "l0026",
+              "l0051"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: NavigateToZone action server returned code: 6",
+            "evidence_ids": [
+              "l0060"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "The latest received manual/joystick-priority indicator was OFF.",
+            "evidence_ids": [
+              "state-joy_priority"
+            ],
+            "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+          },
+          {
+            "detail": "The latest received charging indicator was OFF.",
+            "evidence_ids": [
+              "state-power-is_charging"
+            ],
+            "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+          },
+          {
+            "detail": "Recorded navigation skill navigate_to_zone status: failed; explicit error: The skill has been aborted.",
+            "evidence_ids": [
+              "s0001"
+            ],
+            "scope": "No error string does not itself establish normal physical motion."
+          },
+          {
+            "detail": "Actual instruction, locations, ordered skill statuses and task-error fields in the supplied recorded_task are eligible supplemental facts when accurately attributed.",
+            "evidence_ids": [
+              "task-latest"
+            ],
+            "scope": "An instruction is a request, not proof that requested physical delivery occurred; skill success is recorded execution status."
+          }
+        ],
+        "production_input_boundary": "Only this permitted packet supports answer assertions; source bag IDs, family names, evaluator interventions, references and raw alternate representations remain evaluator-only.",
+        "question": "Why didn't you bring it?",
+        "question_id": "q1",
+        "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+        "required_communication_units": [
+          {
+            "acceptable_abstraction": "Navigation failed/did not complete; recorded timeout/abort is valid compact specificity when explicitly retained. Exact wording or durations are unnecessary.",
+            "requirement": "Communicate that the recorded navigation failed/did not complete. Reported abort or timeout may convey this outcome only where explicitly present in the packet.",
+            "supporting_evidence_ids": [
+              "s0001"
+            ],
+            "unit_id": "navigation_execution_outcome"
+          },
+          {
+            "acceptable_abstraction": "Any one accurate source-bounded alternative suffices, even if another supported detail is also supplied. A mere diagnostic-topic mention, opposite polarity or blanket refusal does not cover this unit.",
+            "requirement": "Communicate at least ONE of the listed supported diagnostic alternatives, preserving its source/state/temporal scope; do not require all alternatives or a unique physical cause.",
+            "supported_alternatives": [
+              {
+                "evidence_ids": [
+                  "l0000",
+                  "l0001",
+                  "l0010",
+                  "l0011",
+                  "l0013",
+                  "l0014",
+                  "l0016",
+                  "l0017",
+                  "l0019",
+                  "l0020",
+                  "l0022",
+                  "l0023",
+                  "l0027",
+                  "l0028",
+                  "l0035",
+                  "l0036",
+                  "l0038",
+                  "l0039",
+                  "l0041",
+                  "l0042",
+                  "l0044",
+                  "l0045",
+                  "l0047",
+                  "l0048",
+                  "l0052",
+                  "l0053"
+                ],
+                "proposition": "The planner reported failure to generate a valid path during recorded attempts; this does not prove global geometric infeasibility."
+              },
+              {
+                "evidence_ids": [
+                  "l0004",
+                  "l0008",
+                  "l0030",
+                  "l0033",
+                  "l0055",
+                  "l0058"
+                ],
+                "proposition": "The controller reported an invalid/empty path during recorded attempts."
+              },
+              {
+                "evidence_ids": [
+                  "l0002",
+                  "l0005",
+                  "l0009",
+                  "l0012",
+                  "l0015",
+                  "l0018",
+                  "l0021",
+                  "l0024",
+                  "l0029",
+                  "l0031",
+                  "l0034",
+                  "l0037",
+                  "l0040",
+                  "l0043",
+                  "l0046",
+                  "l0049",
+                  "l0054",
+                  "l0056",
+                  "l0059"
+                ],
+                "proposition": "A planning/follow-path action handle was aborted during a recorded attempt."
+              }
+            ],
+            "supporting_evidence_ids": [
+              "l0000",
+              "l0001",
+              "l0010",
+              "l0011",
+              "l0013",
+              "l0014",
+              "l0016",
+              "l0017",
+              "l0019",
+              "l0020",
+              "l0022",
+              "l0023",
+              "l0027",
+              "l0028",
+              "l0035",
+              "l0036",
+              "l0038",
+              "l0039",
+              "l0041",
+              "l0042",
+              "l0044",
+              "l0045",
+              "l0047",
+              "l0048",
+              "l0052",
+              "l0053",
+              "l0004",
+              "l0008",
+              "l0030",
+              "l0033",
+              "l0055",
+              "l0058",
+              "l0002",
+              "l0005",
+              "l0009",
+              "l0012",
+              "l0015",
+              "l0018",
+              "l0021",
+              "l0024",
+              "l0029",
+              "l0031",
+              "l0034",
+              "l0037",
+              "l0040",
+              "l0043",
+              "l0046",
+              "l0049",
+              "l0054",
+              "l0056",
+              "l0059"
+            ],
+            "unit_id": "bounded_available_diagnostic"
+          }
+        ],
+        "required_scope_limits": [
+          {
+            "explicit_abstention_phrase_required": false,
+            "limitation_id": "physical_cause_or_delay_unknown",
+            "requirement": "Separate recorded outcome and diagnostics from unique physical causation or a measured explanation of bad/slow motion. Explicit uncertainty OR clearly source-bounded observation wording is acceptable. Do not claim a measured delay mechanism, obstacle identity, inhibited applied motion or safety-speed policy from these records."
+          }
+        ],
+        "scoring_constraints": [
+          "One supported outcome unit plus at least one diagnostic alternative when available; diagnostics are disjunctive, never an exhaustive required list.",
+          "Explicit cause-unknown sentence is optional if observations are clearly bounded and no overstrong cause is asserted.",
+          "Additional valid facts from the complete permitted packet remain valid outside this compact inventory.",
+          "Preserve polarity, modality, source attribution and scope; limitation/denial of evidential establishment is not a positive cause claim.",
+          "Wrong physical cause does not erase a correctly communicated outcome; unsupported material mechanism is scored separately.",
+          "No timestamps, exact wording, list lengths, source-file names or full task plans are required.",
+          "A question suggesting slow or bad movement does not license a measured speed, defective behavior or unsupported causal premise."
+        ]
+      },
+      "limitation_preservation": [
+        {
+          "limitation_prompt": "Separate recorded outcome and diagnostics from unique physical causation or a measured explanation of bad/slow motion. Explicit uncertainty OR clearly source-bounded observation wording is acceptable. Do not claim a measured delay mechanism, obstacle identity, inhibited applied motion or safety-speed policy from these records.",
+          "preserved": null,
+          "response_span": null
+        }
+      ],
+      "packet_id": "d4d28f828d21d4b4",
+      "question_text": "Why didn't you bring it?",
+      "required_unit_coverage": [
+        {
+          "communicated": null,
+          "response_span": null,
+          "unit_prompt": "Communicate that the recorded navigation failed/did not complete. Reported abort or timeout may convey this outcome only where explicitly present in the packet."
+        },
+        {
+          "communicated": null,
+          "response_span": null,
+          "unit_prompt": "Communicate at least ONE of the listed supported diagnostic alternatives, preserving its source/state/temporal scope; do not require all alternatives or a unique physical cause."
+        }
+      ],
+      "response_text": "I couldn\u2019t bring it because I couldn\u2019t find a valid path to the destination.",
+      "robot_visible_evidence": {
+        "availability": {
+          "charging_state": "present",
+          "manual_state": "present",
+          "navigation_logs": "present",
+          "navigation_outcomes": "present",
+          "recorded_task": "present"
+        },
+        "diagnostic_channels": {
+          "charging": true,
+          "localization_samples": true,
+          "manual": true,
+          "planner_controller_logs": true
+        },
+        "evidence": {
+          "charging_state": [
+            {
+              "evidence_id": "state-power-is_charging",
+              "receipt_ns": 1753712818891759395,
+              "scope": "latest received indicator before explanation; upstream state is not time-filtered",
+              "value": false
+            }
+          ],
+          "manual_state": [
+            {
+              "evidence_id": "state-joy_priority",
+              "receipt_ns": 1753712762740183661,
+              "scope": "latest received indicator before explanation; upstream state is not time-filtered",
+              "value": false
+            }
+          ],
+          "navigation_logs": [
+            {
+              "callback_time": "1753712784.246093064",
+              "evidence_id": "l0000",
+              "logger": "planner_server",
+              "message": "GridBased: failed to create plan, no valid path found."
+            },
+            {
+              "callback_time": "1753712784.247471298",
+              "evidence_id": "l0001",
+              "logger": "planner_server",
+              "message": "Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)"
+            },
+            {
+              "callback_time": "1753712784.247629804",
+              "evidence_id": "l0002",
+              "logger": "planner_server",
+              "message": "[compute_path_to_pose] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712784.261914872",
+              "evidence_id": "l0003",
+              "logger": "global_costmap.global_costmap",
+              "message": "Received request to clear entirely the global_costmap"
+            },
+            {
+              "callback_time": "1753712784.291999528",
+              "evidence_id": "l0004",
+              "logger": "controller_server",
+              "message": "Invalid path, Path is empty."
+            },
+            {
+              "callback_time": "1753712784.292264655",
+              "evidence_id": "l0005",
+              "logger": "controller_server",
+              "message": "[follow_path] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712784.320252383",
+              "evidence_id": "l0006",
+              "logger": "local_costmap.local_costmap",
+              "message": "Received request to clear entirely the local_costmap"
+            },
+            {
+              "callback_time": "1753712784.790577349",
+              "evidence_id": "l0007",
+              "logger": "controller_server",
+              "message": "Received a goal, begin computing control effort."
+            },
+            {
+              "callback_time": "1753712784.791731629",
+              "evidence_id": "l0008",
+              "logger": "controller_server",
+              "message": "Invalid path, Path is empty."
+            },
+            {
+              "callback_time": "1753712784.791955762",
+              "evidence_id": "l0009",
+              "logger": "controller_server",
+              "message": "[follow_path] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712789.840880770",
+              "evidence_id": "l0010",
+              "logger": "planner_server",
+              "message": "GridBased: failed to create plan, no valid path found."
+            },
+            {
+              "callback_time": "1753712789.840912963",
+              "evidence_id": "l0011",
+              "logger": "planner_server",
+              "message": "Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)"
+            },
+            {
+              "callback_time": "1753712789.840920968",
+              "evidence_id": "l0012",
+              "logger": "planner_server",
+              "message": "[compute_path_to_pose] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712790.42770155",
+              "evidence_id": "l0013",
+              "logger": "planner_server",
+              "message": "GridBased: failed to create plan, no valid path found."
+            },
+            {
+              "callback_time": "1753712790.42810264",
+              "evidence_id": "l0014",
+              "logger": "planner_server",
+              "message": "Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)"
+            },
+            {
+              "callback_time": "1753712790.42854181",
+              "evidence_id": "l0015",
+              "logger": "planner_server",
+              "message": "[compute_path_to_pose] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712790.241510580",
+              "evidence_id": "l0016",
+              "logger": "planner_server",
+              "message": "GridBased: failed to create plan, no valid path found."
+            },
+            {
+              "callback_time": "1753712790.241549113",
+              "evidence_id": "l0017",
+              "logger": "planner_server",
+              "message": "Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)"
+            },
+            {
+              "callback_time": "1753712790.241894048",
+              "evidence_id": "l0018",
+              "logger": "planner_server",
+              "message": "[compute_path_to_pose] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712790.445190934",
+              "evidence_id": "l0019",
+              "logger": "planner_server",
+              "message": "GridBased: failed to create plan, no valid path found."
+            },
+            {
+              "callback_time": "1753712790.445275423",
+              "evidence_id": "l0020",
+              "logger": "planner_server",
+              "message": "Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)"
+            },
+            {
+              "callback_time": "1753712790.445290957",
+              "evidence_id": "l0021",
+              "logger": "planner_server",
+              "message": "[compute_path_to_pose] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712794.398390639",
+              "evidence_id": "l0022",
+              "logger": "planner_server",
+              "message": "GridBased: failed to create plan, no valid path found."
+            },
+            {
+              "callback_time": "1753712794.398871540",
+              "evidence_id": "l0023",
+              "logger": "planner_server",
+              "message": "Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)"
+            },
+            {
+              "callback_time": "1753712794.399516120",
+              "evidence_id": "l0024",
+              "logger": "planner_server",
+              "message": "[compute_path_to_pose] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712794.610894247",
+              "evidence_id": "l0025",
+              "logger": "controller_server",
+              "message": "Received a goal, begin computing control effort."
+            },
+            {
+              "callback_time": "1753712794.771206910",
+              "evidence_id": "l0026",
+              "logger": "controller_server",
+              "message": "Passing new path to controller."
+            },
+            {
+              "callback_time": "1753712796.793907073",
+              "evidence_id": "l0027",
+              "logger": "planner_server",
+              "message": "GridBased: failed to create plan, no valid path found."
+            },
+            {
+              "callback_time": "1753712796.793949035",
+              "evidence_id": "l0028",
+              "logger": "planner_server",
+              "message": "Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)"
+            },
+            {
+              "callback_time": "1753712796.793959839",
+              "evidence_id": "l0029",
+              "logger": "planner_server",
+              "message": "[compute_path_to_pose] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712796.827642835",
+              "evidence_id": "l0030",
+              "logger": "controller_server",
+              "message": "Invalid path, Path is empty."
+            },
+            {
+              "callback_time": "1753712796.827725034",
+              "evidence_id": "l0031",
+              "logger": "controller_server",
+              "message": "[follow_path] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712796.983498855",
+              "evidence_id": "l0032",
+              "logger": "controller_server",
+              "message": "Received a goal, begin computing control effort."
+            },
+            {
+              "callback_time": "1753712796.983625906",
+              "evidence_id": "l0033",
+              "logger": "controller_server",
+              "message": "Invalid path, Path is empty."
+            },
+            {
+              "callback_time": "1753712796.984507852",
+              "evidence_id": "l0034",
+              "logger": "controller_server",
+              "message": "[follow_path] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712802.33559113",
+              "evidence_id": "l0035",
+              "logger": "planner_server",
+              "message": "GridBased: failed to create plan, no valid path found."
+            },
+            {
+              "callback_time": "1753712802.33586045",
+              "evidence_id": "l0036",
+              "logger": "planner_server",
+              "message": "Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)"
+            },
+            {
+              "callback_time": "1753712802.33594640",
+              "evidence_id": "l0037",
+              "logger": "planner_server",
+              "message": "[compute_path_to_pose] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712802.176748268",
+              "evidence_id": "l0038",
+              "logger": "planner_server",
+              "message": "GridBased: failed to create plan, no valid path found."
+            },
+            {
+              "callback_time": "1753712802.176815247",
+              "evidence_id": "l0039",
+              "logger": "planner_server",
+              "message": "Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)"
+            },
+            {
+              "callback_time": "1753712802.176847002",
+              "evidence_id": "l0040",
+              "logger": "planner_server",
+              "message": "[compute_path_to_pose] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712802.369312835",
+              "evidence_id": "l0041",
+              "logger": "planner_server",
+              "message": "GridBased: failed to create plan, no valid path found."
+            },
+            {
+              "callback_time": "1753712802.369345208",
+              "evidence_id": "l0042",
+              "logger": "planner_server",
+              "message": "Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)"
+            },
+            {
+              "callback_time": "1753712802.369379443",
+              "evidence_id": "l0043",
+              "logger": "planner_server",
+              "message": "[compute_path_to_pose] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712802.538542215",
+              "evidence_id": "l0044",
+              "logger": "planner_server",
+              "message": "GridBased: failed to create plan, no valid path found."
+            },
+            {
+              "callback_time": "1753712802.538579422",
+              "evidence_id": "l0045",
+              "logger": "planner_server",
+              "message": "Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)"
+            },
+            {
+              "callback_time": "1753712802.538629574",
+              "evidence_id": "l0046",
+              "logger": "planner_server",
+              "message": "[compute_path_to_pose] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712806.590788466",
+              "evidence_id": "l0047",
+              "logger": "planner_server",
+              "message": "GridBased: failed to create plan, no valid path found."
+            },
+            {
+              "callback_time": "1753712806.591134938",
+              "evidence_id": "l0048",
+              "logger": "planner_server",
+              "message": "Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)"
+            },
+            {
+              "callback_time": "1753712806.591397727",
+              "evidence_id": "l0049",
+              "logger": "planner_server",
+              "message": "[compute_path_to_pose] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712806.871892072",
+              "evidence_id": "l0050",
+              "logger": "controller_server",
+              "message": "Received a goal, begin computing control effort."
+            },
+            {
+              "callback_time": "1753712807.12270668",
+              "evidence_id": "l0051",
+              "logger": "controller_server",
+              "message": "Passing new path to controller."
+            },
+            {
+              "callback_time": "1753712809.181287828",
+              "evidence_id": "l0052",
+              "logger": "planner_server",
+              "message": "GridBased: failed to create plan, no valid path found."
+            },
+            {
+              "callback_time": "1753712809.181323059",
+              "evidence_id": "l0053",
+              "logger": "planner_server",
+              "message": "Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)"
+            },
+            {
+              "callback_time": "1753712809.188232468",
+              "evidence_id": "l0054",
+              "logger": "planner_server",
+              "message": "[compute_path_to_pose] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712809.241522871",
+              "evidence_id": "l0055",
+              "logger": "controller_server",
+              "message": "Invalid path, Path is empty."
+            },
+            {
+              "callback_time": "1753712809.242274674",
+              "evidence_id": "l0056",
+              "logger": "controller_server",
+              "message": "[follow_path] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712809.833002226",
+              "evidence_id": "l0057",
+              "logger": "controller_server",
+              "message": "Received a goal, begin computing control effort."
+            },
+            {
+              "callback_time": "1753712809.834492420",
+              "evidence_id": "l0058",
+              "logger": "controller_server",
+              "message": "Invalid path, Path is empty."
+            },
+            {
+              "callback_time": "1753712809.838690654",
+              "evidence_id": "l0059",
+              "logger": "controller_server",
+              "message": "[follow_path] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712810.204638742",
+              "evidence_id": "l0060",
+              "logger": "skill_navigate_to_zone",
+              "message": "NavigateToZone action server returned code: 6"
+            }
+          ],
+          "navigation_outcomes": [
+            {
+              "error_msg": "The skill has been aborted",
+              "evidence_id": "s0001",
+              "skill": "navigate_to_zone",
+              "status": "failed"
+            }
+          ],
+          "recorded_task": [
+            {
+              "evidence_id": "task-latest",
+              "value": {
+                "instruction": "fetch me a book from the living room",
+                "skill_sequence": [
+                  {
+                    "error_msg": "",
+                    "params": {
+                      "input": "Sure, I'll fetch you a book from the living room."
+                    },
+                    "skill": "say",
+                    "status": "succeeded"
+                  },
+                  {
+                    "error_msg": "The skill has been aborted",
+                    "params": {
+                      "location": "living_room"
+                    },
+                    "skill": "navigate_to_zone",
+                    "status": "failed"
+                  },
+                  {
+                    "error_msg": "",
+                    "params": {
+                      "question": "Hello, can you pick a book and place it on my tray?"
+                    },
+                    "skill": "ask_human_for_help",
+                    "status": "waiting"
+                  },
+                  {
+                    "error_msg": "",
+                    "params": {
+                      "location": "dining_room"
+                    },
+                    "skill": "navigate_to_zone",
+                    "status": "waiting"
+                  },
+                  {
+                    "error_msg": "",
+                    "params": {
+                      "input": "Here is your book."
+                    },
+                    "skill": "say",
+                    "status": "waiting"
+                  }
+                ],
+                "task_error_msg": "",
+                "task_id": "task-opaque",
+                "task_status": "valid"
+              }
+            }
+          ]
+        },
+        "public_communication_requirements": {
+          "extra_details": "Additional supported details are welcome, without requiring timestamps or exhaustive lists.",
+          "scope": "Separate observed execution facts from unique physical causation and measured reasons for delay. Explicit uncertainty OR clearly source-bounded observation language is acceptable.",
+          "useful_diagnosis": "If retained observations show manual/charging selection, localization uncertainty or planner/progress trouble, preserve at least one useful bounded fact rather than blanket refusal.",
+          "useful_outcome": "Report the supported navigation outcome, if present; preserve timeout/abort only when explicit."
+        },
+        "question": "Why didn't you bring it?",
+        "schema": "hexar-permitted-method-packet/v2",
+        "source_context": {
+          "event_scope": "Planner/progress failure and clearing-request logs are software execution evidence, not direct geometry or unique physical causes. No supplied costmap/scan/path measurement proves an obstacle or moving obstacle. A clearing request does not prove completed clearing.",
+          "indicator_semantics": "The released component treats /joy_priority as manual mode and /power/is_charging as charging. No governing robot controller/arbitration source or applied-motion measurement is supplied.",
+          "localization_semantics": "The original callback appends a high-uncertainty diagnostic after its count exceeds five samples with mean XY covariance or orientation variance above .2. Its count decrements on low samples; this is preserved, not a new localization detector.",
+          "missingness": "Unavailable evidence is unknown; do not replace it with false, zero, success or normal behavior.",
+          "timing_scope": "Requested window follows upstream task bookkeeping and its sec.nanosec conversion. A recorded navigation success does not establish a safety-speed policy or a measured cause of slowness."
+        },
+        "task_window": [
+          "1753712781.85477902",
+          "1753712810.300666342"
+        ]
+      },
+      "sanitized_physical_facts": []
+    },
+    {
+      "abstraction_level_options": [
+        "task_outcome",
+        "software_action_failure",
+        "recorded_override_state",
+        "specific_physical_cause",
+        "limitation"
+      ],
+      "allowed_claim_labels": [
+        "SUPPORTED_BY_VISIBLE_EVIDENCE",
+        "CONTRADICTED_BY_VISIBLE_EVIDENCE",
+        "INSUFFICIENT_VISIBLE_EVIDENCE",
+        "PHYSICALLY_TRUE_BUT_UNSUPPORTED",
+        "UNINTERPRETABLE"
+      ],
+      "annotator_attestation": null,
+      "annotator_slot": "B",
+      "atomic_statements": [
+        {
+          "annotation_notes": null,
+          "asserted_abstraction_level": "task_outcome",
+          "item_id": "d4d28f828d21d4b4-a001",
+          "label": null,
+          "response_span": "I couldn\u2019t bring it because I couldn\u2019t find a valid path to the destination.",
+          "statement": "Could not bring the item.",
+          "visible_support_references": []
+        },
+        {
+          "annotation_notes": null,
+          "asserted_abstraction_level": "software_action_failure",
+          "item_id": "d4d28f828d21d4b4-a002",
+          "label": null,
+          "response_span": "I couldn\u2019t bring it because I couldn\u2019t find a valid path to the destination.",
+          "statement": "Could not find a valid path to the destination.",
+          "visible_support_references": []
+        },
+        {
+          "annotation_notes": null,
+          "asserted_abstraction_level": "software_action_failure",
+          "item_id": "d4d28f828d21d4b4-a003",
+          "label": null,
+          "response_span": "I couldn\u2019t bring it because I couldn\u2019t find a valid path to the destination.",
+          "statement": "Path finding inability caused failure to bring the item.",
+          "visible_support_references": []
+        }
+      ],
+      "false_premise_handling": "NOT_APPLICABLE",
+      "form_id": "d4d28f828d21d4b4-B",
+      "highest_asserted_abstraction_level": null,
+      "independent_reference": {
+        "answerability": {
+          "bounded_diagnostic_answerable": true,
+          "charging_state_answerable": true,
+          "manual_selection_answerable": true,
+          "measured_delay_reason_answerable": false,
+          "note": "Physical-cause and measured-delay limits apply even when observed outcome and diagnostics are answerable.",
+          "state": "SUPPORTED_PARTIAL",
+          "supported_execution_information": true,
+          "unique_physical_failure_mechanism_answerable": false
+        },
+        "material_unsupported_mechanisms": [
+          "Unique obstacle, moving-obstacle or wall mechanism inferred from planning failures or clearing requests.",
+          "Manual/charging indicator uniquely caused this episode failure or physically inhibited motion without controller/arbitration and applied-motion evidence.",
+          "Localization uncertainty uniquely caused bad motion or delay without an independent causal measurement.",
+          "A planning-attempt failure proves global route infeasibility or no possible route.",
+          "Nominal/successful logs prove safety-limited speed, normal geometry or the measured reason for perceived slowness.",
+          "Definite negative causal claims substituted for missing-cause uncertainty."
+        ],
+        "optional_supported_detail": [
+          {
+            "detail": "Recorded software log: GridBased: failed to create plan, no valid path found.",
+            "evidence_ids": [
+              "l0000",
+              "l0010",
+              "l0013",
+              "l0016",
+              "l0019",
+              "l0022",
+              "l0027",
+              "l0035",
+              "l0038",
+              "l0041",
+              "l0044",
+              "l0047",
+              "l0052"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)",
+            "evidence_ids": [
+              "l0001",
+              "l0011",
+              "l0014",
+              "l0017",
+              "l0020",
+              "l0023",
+              "l0028",
+              "l0036",
+              "l0039",
+              "l0042",
+              "l0045",
+              "l0048",
+              "l0053"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: [compute_path_to_pose] [ActionServer] Aborting handle.",
+            "evidence_ids": [
+              "l0002",
+              "l0012",
+              "l0015",
+              "l0018",
+              "l0021",
+              "l0024",
+              "l0029",
+              "l0037",
+              "l0040",
+              "l0043",
+              "l0046",
+              "l0049",
+              "l0054"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: Received request to clear entirely the global_costmap",
+            "evidence_ids": [
+              "l0003"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: Invalid path, Path is empty.",
+            "evidence_ids": [
+              "l0004",
+              "l0008",
+              "l0030",
+              "l0033",
+              "l0055",
+              "l0058"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: [follow_path] [ActionServer] Aborting handle.",
+            "evidence_ids": [
+              "l0005",
+              "l0009",
+              "l0031",
+              "l0034",
+              "l0056",
+              "l0059"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: Received request to clear entirely the local_costmap",
+            "evidence_ids": [
+              "l0006"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: Received a goal, begin computing control effort.",
+            "evidence_ids": [
+              "l0007",
+              "l0025",
+              "l0032",
+              "l0050",
+              "l0057"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: Passing new path to controller.",
+            "evidence_ids": [
+              "l0026",
+              "l0051"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "Recorded software log: NavigateToZone action server returned code: 6",
+            "evidence_ids": [
+              "l0060"
+            ],
+            "scope": "Report the event/log at its literal scope; a clearing request does not entail completed clearing, and valid paths/controller handoff do not entail measured motion."
+          },
+          {
+            "detail": "The latest received manual/joystick-priority indicator was OFF.",
+            "evidence_ids": [
+              "state-joy_priority"
+            ],
+            "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+          },
+          {
+            "detail": "The latest received charging indicator was OFF.",
+            "evidence_ids": [
+              "state-power-is_charging"
+            ],
+            "scope": "latest received indicator before explanation; upstream state is not time-filtered"
+          },
+          {
+            "detail": "Recorded navigation skill navigate_to_zone status: failed; explicit error: The skill has been aborted.",
+            "evidence_ids": [
+              "s0001"
+            ],
+            "scope": "No error string does not itself establish normal physical motion."
+          },
+          {
+            "detail": "Actual instruction, locations, ordered skill statuses and task-error fields in the supplied recorded_task are eligible supplemental facts when accurately attributed.",
+            "evidence_ids": [
+              "task-latest"
+            ],
+            "scope": "An instruction is a request, not proof that requested physical delivery occurred; skill success is recorded execution status."
+          }
+        ],
+        "production_input_boundary": "Only this permitted packet supports answer assertions; source bag IDs, family names, evaluator interventions, references and raw alternate representations remain evaluator-only.",
+        "question": "Why didn't you bring it?",
+        "question_id": "q1",
+        "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+        "required_communication_units": [
+          {
+            "acceptable_abstraction": "Navigation failed/did not complete; recorded timeout/abort is valid compact specificity when explicitly retained. Exact wording or durations are unnecessary.",
+            "requirement": "Communicate that the recorded navigation failed/did not complete. Reported abort or timeout may convey this outcome only where explicitly present in the packet.",
+            "supporting_evidence_ids": [
+              "s0001"
+            ],
+            "unit_id": "navigation_execution_outcome"
+          },
+          {
+            "acceptable_abstraction": "Any one accurate source-bounded alternative suffices, even if another supported detail is also supplied. A mere diagnostic-topic mention, opposite polarity or blanket refusal does not cover this unit.",
+            "requirement": "Communicate at least ONE of the listed supported diagnostic alternatives, preserving its source/state/temporal scope; do not require all alternatives or a unique physical cause.",
+            "supported_alternatives": [
+              {
+                "evidence_ids": [
+                  "l0000",
+                  "l0001",
+                  "l0010",
+                  "l0011",
+                  "l0013",
+                  "l0014",
+                  "l0016",
+                  "l0017",
+                  "l0019",
+                  "l0020",
+                  "l0022",
+                  "l0023",
+                  "l0027",
+                  "l0028",
+                  "l0035",
+                  "l0036",
+                  "l0038",
+                  "l0039",
+                  "l0041",
+                  "l0042",
+                  "l0044",
+                  "l0045",
+                  "l0047",
+                  "l0048",
+                  "l0052",
+                  "l0053"
+                ],
+                "proposition": "The planner reported failure to generate a valid path during recorded attempts; this does not prove global geometric infeasibility."
+              },
+              {
+                "evidence_ids": [
+                  "l0004",
+                  "l0008",
+                  "l0030",
+                  "l0033",
+                  "l0055",
+                  "l0058"
+                ],
+                "proposition": "The controller reported an invalid/empty path during recorded attempts."
+              },
+              {
+                "evidence_ids": [
+                  "l0002",
+                  "l0005",
+                  "l0009",
+                  "l0012",
+                  "l0015",
+                  "l0018",
+                  "l0021",
+                  "l0024",
+                  "l0029",
+                  "l0031",
+                  "l0034",
+                  "l0037",
+                  "l0040",
+                  "l0043",
+                  "l0046",
+                  "l0049",
+                  "l0054",
+                  "l0056",
+                  "l0059"
+                ],
+                "proposition": "A planning/follow-path action handle was aborted during a recorded attempt."
+              }
+            ],
+            "supporting_evidence_ids": [
+              "l0000",
+              "l0001",
+              "l0010",
+              "l0011",
+              "l0013",
+              "l0014",
+              "l0016",
+              "l0017",
+              "l0019",
+              "l0020",
+              "l0022",
+              "l0023",
+              "l0027",
+              "l0028",
+              "l0035",
+              "l0036",
+              "l0038",
+              "l0039",
+              "l0041",
+              "l0042",
+              "l0044",
+              "l0045",
+              "l0047",
+              "l0048",
+              "l0052",
+              "l0053",
+              "l0004",
+              "l0008",
+              "l0030",
+              "l0033",
+              "l0055",
+              "l0058",
+              "l0002",
+              "l0005",
+              "l0009",
+              "l0012",
+              "l0015",
+              "l0018",
+              "l0021",
+              "l0024",
+              "l0029",
+              "l0031",
+              "l0034",
+              "l0037",
+              "l0040",
+              "l0043",
+              "l0046",
+              "l0049",
+              "l0054",
+              "l0056",
+              "l0059"
+            ],
+            "unit_id": "bounded_available_diagnostic"
+          }
+        ],
+        "required_scope_limits": [
+          {
+            "explicit_abstention_phrase_required": false,
+            "limitation_id": "physical_cause_or_delay_unknown",
+            "requirement": "Separate recorded outcome and diagnostics from unique physical causation or a measured explanation of bad/slow motion. Explicit uncertainty OR clearly source-bounded observation wording is acceptable. Do not claim a measured delay mechanism, obstacle identity, inhibited applied motion or safety-speed policy from these records."
+          }
+        ],
+        "scoring_constraints": [
+          "One supported outcome unit plus at least one diagnostic alternative when available; diagnostics are disjunctive, never an exhaustive required list.",
+          "Explicit cause-unknown sentence is optional if observations are clearly bounded and no overstrong cause is asserted.",
+          "Additional valid facts from the complete permitted packet remain valid outside this compact inventory.",
+          "Preserve polarity, modality, source attribution and scope; limitation/denial of evidential establishment is not a positive cause claim.",
+          "Wrong physical cause does not erase a correctly communicated outcome; unsupported material mechanism is scored separately.",
+          "No timestamps, exact wording, list lengths, source-file names or full task plans are required.",
+          "A question suggesting slow or bad movement does not license a measured speed, defective behavior or unsupported causal premise."
+        ]
+      },
+      "limitation_preservation": [
+        {
+          "limitation_prompt": "Separate recorded outcome and diagnostics from unique physical causation or a measured explanation of bad/slow motion. Explicit uncertainty OR clearly source-bounded observation wording is acceptable. Do not claim a measured delay mechanism, obstacle identity, inhibited applied motion or safety-speed policy from these records.",
+          "preserved": null,
+          "response_span": null
+        }
+      ],
+      "packet_id": "d4d28f828d21d4b4",
+      "question_text": "Why didn't you bring it?",
+      "required_unit_coverage": [
+        {
+          "communicated": null,
+          "response_span": null,
+          "unit_prompt": "Communicate that the recorded navigation failed/did not complete. Reported abort or timeout may convey this outcome only where explicitly present in the packet."
+        },
+        {
+          "communicated": null,
+          "response_span": null,
+          "unit_prompt": "Communicate at least ONE of the listed supported diagnostic alternatives, preserving its source/state/temporal scope; do not require all alternatives or a unique physical cause."
+        }
+      ],
+      "response_text": "I couldn\u2019t bring it because I couldn\u2019t find a valid path to the destination.",
+      "robot_visible_evidence": {
+        "availability": {
+          "charging_state": "present",
+          "manual_state": "present",
+          "navigation_logs": "present",
+          "navigation_outcomes": "present",
+          "recorded_task": "present"
+        },
+        "diagnostic_channels": {
+          "charging": true,
+          "localization_samples": true,
+          "manual": true,
+          "planner_controller_logs": true
+        },
+        "evidence": {
+          "charging_state": [
+            {
+              "evidence_id": "state-power-is_charging",
+              "receipt_ns": 1753712818891759395,
+              "scope": "latest received indicator before explanation; upstream state is not time-filtered",
+              "value": false
+            }
+          ],
+          "manual_state": [
+            {
+              "evidence_id": "state-joy_priority",
+              "receipt_ns": 1753712762740183661,
+              "scope": "latest received indicator before explanation; upstream state is not time-filtered",
+              "value": false
+            }
+          ],
+          "navigation_logs": [
+            {
+              "callback_time": "1753712784.246093064",
+              "evidence_id": "l0000",
+              "logger": "planner_server",
+              "message": "GridBased: failed to create plan, no valid path found."
+            },
+            {
+              "callback_time": "1753712784.247471298",
+              "evidence_id": "l0001",
+              "logger": "planner_server",
+              "message": "Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)"
+            },
+            {
+              "callback_time": "1753712784.247629804",
+              "evidence_id": "l0002",
+              "logger": "planner_server",
+              "message": "[compute_path_to_pose] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712784.261914872",
+              "evidence_id": "l0003",
+              "logger": "global_costmap.global_costmap",
+              "message": "Received request to clear entirely the global_costmap"
+            },
+            {
+              "callback_time": "1753712784.291999528",
+              "evidence_id": "l0004",
+              "logger": "controller_server",
+              "message": "Invalid path, Path is empty."
+            },
+            {
+              "callback_time": "1753712784.292264655",
+              "evidence_id": "l0005",
+              "logger": "controller_server",
+              "message": "[follow_path] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712784.320252383",
+              "evidence_id": "l0006",
+              "logger": "local_costmap.local_costmap",
+              "message": "Received request to clear entirely the local_costmap"
+            },
+            {
+              "callback_time": "1753712784.790577349",
+              "evidence_id": "l0007",
+              "logger": "controller_server",
+              "message": "Received a goal, begin computing control effort."
+            },
+            {
+              "callback_time": "1753712784.791731629",
+              "evidence_id": "l0008",
+              "logger": "controller_server",
+              "message": "Invalid path, Path is empty."
+            },
+            {
+              "callback_time": "1753712784.791955762",
+              "evidence_id": "l0009",
+              "logger": "controller_server",
+              "message": "[follow_path] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712789.840880770",
+              "evidence_id": "l0010",
+              "logger": "planner_server",
+              "message": "GridBased: failed to create plan, no valid path found."
+            },
+            {
+              "callback_time": "1753712789.840912963",
+              "evidence_id": "l0011",
+              "logger": "planner_server",
+              "message": "Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)"
+            },
+            {
+              "callback_time": "1753712789.840920968",
+              "evidence_id": "l0012",
+              "logger": "planner_server",
+              "message": "[compute_path_to_pose] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712790.42770155",
+              "evidence_id": "l0013",
+              "logger": "planner_server",
+              "message": "GridBased: failed to create plan, no valid path found."
+            },
+            {
+              "callback_time": "1753712790.42810264",
+              "evidence_id": "l0014",
+              "logger": "planner_server",
+              "message": "Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)"
+            },
+            {
+              "callback_time": "1753712790.42854181",
+              "evidence_id": "l0015",
+              "logger": "planner_server",
+              "message": "[compute_path_to_pose] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712790.241510580",
+              "evidence_id": "l0016",
+              "logger": "planner_server",
+              "message": "GridBased: failed to create plan, no valid path found."
+            },
+            {
+              "callback_time": "1753712790.241549113",
+              "evidence_id": "l0017",
+              "logger": "planner_server",
+              "message": "Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)"
+            },
+            {
+              "callback_time": "1753712790.241894048",
+              "evidence_id": "l0018",
+              "logger": "planner_server",
+              "message": "[compute_path_to_pose] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712790.445190934",
+              "evidence_id": "l0019",
+              "logger": "planner_server",
+              "message": "GridBased: failed to create plan, no valid path found."
+            },
+            {
+              "callback_time": "1753712790.445275423",
+              "evidence_id": "l0020",
+              "logger": "planner_server",
+              "message": "Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)"
+            },
+            {
+              "callback_time": "1753712790.445290957",
+              "evidence_id": "l0021",
+              "logger": "planner_server",
+              "message": "[compute_path_to_pose] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712794.398390639",
+              "evidence_id": "l0022",
+              "logger": "planner_server",
+              "message": "GridBased: failed to create plan, no valid path found."
+            },
+            {
+              "callback_time": "1753712794.398871540",
+              "evidence_id": "l0023",
+              "logger": "planner_server",
+              "message": "Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)"
+            },
+            {
+              "callback_time": "1753712794.399516120",
+              "evidence_id": "l0024",
+              "logger": "planner_server",
+              "message": "[compute_path_to_pose] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712794.610894247",
+              "evidence_id": "l0025",
+              "logger": "controller_server",
+              "message": "Received a goal, begin computing control effort."
+            },
+            {
+              "callback_time": "1753712794.771206910",
+              "evidence_id": "l0026",
+              "logger": "controller_server",
+              "message": "Passing new path to controller."
+            },
+            {
+              "callback_time": "1753712796.793907073",
+              "evidence_id": "l0027",
+              "logger": "planner_server",
+              "message": "GridBased: failed to create plan, no valid path found."
+            },
+            {
+              "callback_time": "1753712796.793949035",
+              "evidence_id": "l0028",
+              "logger": "planner_server",
+              "message": "Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)"
+            },
+            {
+              "callback_time": "1753712796.793959839",
+              "evidence_id": "l0029",
+              "logger": "planner_server",
+              "message": "[compute_path_to_pose] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712796.827642835",
+              "evidence_id": "l0030",
+              "logger": "controller_server",
+              "message": "Invalid path, Path is empty."
+            },
+            {
+              "callback_time": "1753712796.827725034",
+              "evidence_id": "l0031",
+              "logger": "controller_server",
+              "message": "[follow_path] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712796.983498855",
+              "evidence_id": "l0032",
+              "logger": "controller_server",
+              "message": "Received a goal, begin computing control effort."
+            },
+            {
+              "callback_time": "1753712796.983625906",
+              "evidence_id": "l0033",
+              "logger": "controller_server",
+              "message": "Invalid path, Path is empty."
+            },
+            {
+              "callback_time": "1753712796.984507852",
+              "evidence_id": "l0034",
+              "logger": "controller_server",
+              "message": "[follow_path] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712802.33559113",
+              "evidence_id": "l0035",
+              "logger": "planner_server",
+              "message": "GridBased: failed to create plan, no valid path found."
+            },
+            {
+              "callback_time": "1753712802.33586045",
+              "evidence_id": "l0036",
+              "logger": "planner_server",
+              "message": "Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)"
+            },
+            {
+              "callback_time": "1753712802.33594640",
+              "evidence_id": "l0037",
+              "logger": "planner_server",
+              "message": "[compute_path_to_pose] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712802.176748268",
+              "evidence_id": "l0038",
+              "logger": "planner_server",
+              "message": "GridBased: failed to create plan, no valid path found."
+            },
+            {
+              "callback_time": "1753712802.176815247",
+              "evidence_id": "l0039",
+              "logger": "planner_server",
+              "message": "Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)"
+            },
+            {
+              "callback_time": "1753712802.176847002",
+              "evidence_id": "l0040",
+              "logger": "planner_server",
+              "message": "[compute_path_to_pose] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712802.369312835",
+              "evidence_id": "l0041",
+              "logger": "planner_server",
+              "message": "GridBased: failed to create plan, no valid path found."
+            },
+            {
+              "callback_time": "1753712802.369345208",
+              "evidence_id": "l0042",
+              "logger": "planner_server",
+              "message": "Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)"
+            },
+            {
+              "callback_time": "1753712802.369379443",
+              "evidence_id": "l0043",
+              "logger": "planner_server",
+              "message": "[compute_path_to_pose] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712802.538542215",
+              "evidence_id": "l0044",
+              "logger": "planner_server",
+              "message": "GridBased: failed to create plan, no valid path found."
+            },
+            {
+              "callback_time": "1753712802.538579422",
+              "evidence_id": "l0045",
+              "logger": "planner_server",
+              "message": "Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)"
+            },
+            {
+              "callback_time": "1753712802.538629574",
+              "evidence_id": "l0046",
+              "logger": "planner_server",
+              "message": "[compute_path_to_pose] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712806.590788466",
+              "evidence_id": "l0047",
+              "logger": "planner_server",
+              "message": "GridBased: failed to create plan, no valid path found."
+            },
+            {
+              "callback_time": "1753712806.591134938",
+              "evidence_id": "l0048",
+              "logger": "planner_server",
+              "message": "Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)"
+            },
+            {
+              "callback_time": "1753712806.591397727",
+              "evidence_id": "l0049",
+              "logger": "planner_server",
+              "message": "[compute_path_to_pose] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712806.871892072",
+              "evidence_id": "l0050",
+              "logger": "controller_server",
+              "message": "Received a goal, begin computing control effort."
+            },
+            {
+              "callback_time": "1753712807.12270668",
+              "evidence_id": "l0051",
+              "logger": "controller_server",
+              "message": "Passing new path to controller."
+            },
+            {
+              "callback_time": "1753712809.181287828",
+              "evidence_id": "l0052",
+              "logger": "planner_server",
+              "message": "GridBased: failed to create plan, no valid path found."
+            },
+            {
+              "callback_time": "1753712809.181323059",
+              "evidence_id": "l0053",
+              "logger": "planner_server",
+              "message": "Planning algorithm GridBased failed to generate a valid path to (3.07, -0.34)"
+            },
+            {
+              "callback_time": "1753712809.188232468",
+              "evidence_id": "l0054",
+              "logger": "planner_server",
+              "message": "[compute_path_to_pose] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712809.241522871",
+              "evidence_id": "l0055",
+              "logger": "controller_server",
+              "message": "Invalid path, Path is empty."
+            },
+            {
+              "callback_time": "1753712809.242274674",
+              "evidence_id": "l0056",
+              "logger": "controller_server",
+              "message": "[follow_path] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712809.833002226",
+              "evidence_id": "l0057",
+              "logger": "controller_server",
+              "message": "Received a goal, begin computing control effort."
+            },
+            {
+              "callback_time": "1753712809.834492420",
+              "evidence_id": "l0058",
+              "logger": "controller_server",
+              "message": "Invalid path, Path is empty."
+            },
+            {
+              "callback_time": "1753712809.838690654",
+              "evidence_id": "l0059",
+              "logger": "controller_server",
+              "message": "[follow_path] [ActionServer] Aborting handle."
+            },
+            {
+              "callback_time": "1753712810.204638742",
+              "evidence_id": "l0060",
+              "logger": "skill_navigate_to_zone",
+              "message": "NavigateToZone action server returned code: 6"
+            }
+          ],
+          "navigation_outcomes": [
+            {
+              "error_msg": "The skill has been aborted",
+              "evidence_id": "s0001",
+              "skill": "navigate_to_zone",
+              "status": "failed"
+            }
+          ],
+          "recorded_task": [
+            {
+              "evidence_id": "task-latest",
+              "value": {
+                "instruction": "fetch me a book from the living room",
+                "skill_sequence": [
+                  {
+                    "error_msg": "",
+                    "params": {
+                      "input": "Sure, I'll fetch you a book from the living room."
+                    },
+                    "skill": "say",
+                    "status": "succeeded"
+                  },
+                  {
+                    "error_msg": "The skill has been aborted",
+                    "params": {
+                      "location": "living_room"
+                    },
+                    "skill": "navigate_to_zone",
+                    "status": "failed"
+                  },
+                  {
+                    "error_msg": "",
+                    "params": {
+                      "question": "Hello, can you pick a book and place it on my tray?"
+                    },
+                    "skill": "ask_human_for_help",
+                    "status": "waiting"
+                  },
+                  {
+                    "error_msg": "",
+                    "params": {
+                      "location": "dining_room"
+                    },
+                    "skill": "navigate_to_zone",
+                    "status": "waiting"
+                  },
+                  {
+                    "error_msg": "",
+                    "params": {
+                      "input": "Here is your book."
+                    },
+                    "skill": "say",
+                    "status": "waiting"
+                  }
+                ],
+                "task_error_msg": "",
+                "task_id": "task-opaque",
+                "task_status": "valid"
+              }
+            }
+          ]
+        },
+        "public_communication_requirements": {
+          "extra_details": "Additional supported details are welcome, without requiring timestamps or exhaustive lists.",
+          "scope": "Separate observed execution facts from unique physical causation and measured reasons for delay. Explicit uncertainty OR clearly source-bounded observation language is acceptable.",
+          "useful_diagnosis": "If retained observations show manual/charging selection, localization uncertainty or planner/progress trouble, preserve at least one useful bounded fact rather than blanket refusal.",
+          "useful_outcome": "Report the supported navigation outcome, if present; preserve timeout/abort only when explicit."
+        },
+        "question": "Why didn't you bring it?",
+        "schema": "hexar-permitted-method-packet/v2",
+        "source_context": {
+          "event_scope": "Planner/progress failure and clearing-request logs are software execution evidence, not direct geometry or unique physical causes. No supplied costmap/scan/path measurement proves an obstacle or moving obstacle. A clearing request does not prove completed clearing.",
+          "indicator_semantics": "The released component treats /joy_priority as manual mode and /power/is_charging as charging. No governing robot controller/arbitration source or applied-motion measurement is supplied.",
+          "localization_semantics": "The original callback appends a high-uncertainty diagnostic after its count exceeds five samples with mean XY covariance or orientation variance above .2. Its count decrements on low samples; this is preserved, not a new localization detector.",
+          "missingness": "Unavailable evidence is unknown; do not replace it with false, zero, success or normal behavior.",
+          "timing_scope": "Requested window follows upstream task bookkeeping and its sec.nanosec conversion. A recorded navigation success does not establish a safety-speed policy or a measured cause of slowness."
+        },
+        "task_window": [
+          "1753712781.85477902",
+          "1753712810.300666342"
+        ]
+      },
+      "sanitized_physical_facts": []
+    }
+  ],
+  "packet_count": 1,
+  "response_text": "I couldn\u2019t bring it because I couldn\u2019t find a valid path to the destination.",
+  "schema": "crane-blinded-agent-atomic-annotation-packet-set/v1"
+}

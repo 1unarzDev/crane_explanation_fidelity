@@ -1,0 +1,43 @@
+{
+  "atomic": [
+    {
+      "actual": "SUPPORTED_BY_VISIBLE_EVIDENCE",
+      "correct": true,
+      "expected": "SUPPORTED_BY_VISIBLE_EVIDENCE",
+      "item_id": "hxq2-07-s1"
+    },
+    {
+      "actual": "SUPPORTED_BY_VISIBLE_EVIDENCE",
+      "correct": true,
+      "expected": "SUPPORTED_BY_VISIBLE_EVIDENCE",
+      "item_id": "hxq2-07-s2"
+    },
+    {
+      "actual": "INSUFFICIENT_VISIBLE_EVIDENCE",
+      "correct": true,
+      "expected": "INSUFFICIENT_VISIBLE_EVIDENCE",
+      "item_id": "hxq2-07-s3"
+    }
+  ],
+  "case_id": "hxq2-07",
+  "false_premise_correct": true,
+  "highest_level_correct": true,
+  "limitations": [
+    {
+      "correct": true,
+      "limitation_prompt": "Preserve uncertainty about whether joystick priority caused failure. A definite assertion that it did not cause failure violates this uncertainty even if another sentence says causation is not established."
+    }
+  ],
+  "required_units": [
+    {
+      "correct": true,
+      "unit_prompt": "Communicate the supported fact that the latest manual/joystick-priority indicator was ON/selected."
+    }
+  ],
+  "split": "heldout",
+  "threat_tags": [
+    "cause_denial_vs_no_proof",
+    "negative_causal_overclaim",
+    "internally_conflicting_limit"
+  ]
+}

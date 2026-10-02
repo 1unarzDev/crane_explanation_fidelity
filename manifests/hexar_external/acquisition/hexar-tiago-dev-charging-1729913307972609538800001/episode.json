@@ -1,0 +1,136 @@
+{
+  "schema": "hexar-bound-episode-runtime/v2",
+  "phase": "development_adapter_qualification",
+  "acquisition_binding_sha256": "4e0acfcadf91c35ecfbbd318e87c0c7b17f3339382e66c6e6339164ee988c69c",
+  "family_hidden": "charging",
+  "sampling_hidden": {
+    "profile": "home_top_room_clearance_v4_development",
+    "map_yaml_sha256": "084cab10306856e084b5de6063dcc4103fa9fa557c300b64778d40c0152415a2",
+    "map_pgm_sha256": "3a8c35199fb7a50ab905766a1f1f07832bf4b8627a68802e0c7ebc3f22251a2c",
+    "start_xy": [
+      -1.5649999999999995,
+      1.9250000000000007
+    ],
+    "start_yaw": -0.1906862360517878,
+    "goal_xy": [
+      -4.964999999999999,
+      -0.07499999999999929
+    ],
+    "goal_yaw": -0.6741513208955969,
+    "candidate_start_n": 6597,
+    "candidate_goal_n": 1566,
+    "required_clearance_m": 0.6,
+    "distance_m": 3.9446165846632035,
+    "sampling_bounds_xy": [
+      -6,
+      1.2,
+      -0.5,
+      2.0
+    ]
+  },
+  "measured_reset_error_m": 1.4159079673787937e-05,
+  "reset_measurements_hidden": [
+    {
+      "x": -1.5650036096975106,
+      "y": 1.9250000013847384,
+      "z": -0.0010768413159412127,
+      "yaw_rad": -0.19068656376515988,
+      "quaternion_xyzw": [
+        4.615443380687302e-06,
+        2.4296947248461302e-05,
+        -0.09519889705331472,
+        0.9954582710431356
+      ],
+      "error_m": 3.609697776723686e-06,
+      "heading_error_rad": 3.277133720780423e-07,
+      "position_in_tolerance": true,
+      "heading_in_tolerance": true,
+      "in_tolerance": true,
+      "source": "Gazebo GetEntityState world pose; reset only, not goal arrival"
+    },
+    {
+      "x": -1.5650141557230874,
+      "y": 1.92500000157254,
+      "z": -0.0014741114461007676,
+      "yaw_rad": -0.19068656820293706,
+      "quaternion_xyzw": [
+        4.131071684131632e-05,
+        0.00018287200174238826,
+        -0.09519890195239122,
+        0.9954582532272837
+      ],
+      "error_m": 1.415572317528413e-05,
+      "heading_error_rad": 3.321511492515583e-07,
+      "position_in_tolerance": true,
+      "heading_in_tolerance": true,
+      "in_tolerance": true,
+      "source": "Gazebo GetEntityState world pose; reset only, not goal arrival"
+    },
+    {
+      "x": -1.565014159079535,
+      "y": 1.9250000019788838,
+      "z": -0.001491990888267264,
+      "yaw_rad": -0.19068656163204323,
+      "quaternion_xyzw": [
+        6.527274113733433e-05,
+        0.0002449235120920724,
+        -0.09519890327531158,
+        0.9954582384847296
+      ],
+      "error_m": 1.4159079673787937e-05,
+      "heading_error_rad": 3.255802554225084e-07,
+      "position_in_tolerance": true,
+      "heading_in_tolerance": true,
+      "in_tolerance": true,
+      "source": "Gazebo GetEntityState world pose; reset only, not goal arrival"
+    }
+  ],
+  "measured_reset_heading_error_rad": 3.255802554225084e-07,
+  "intervention_observations_hidden": [],
+  "dynamic_trajectory_hidden": null,
+  "indicator_consumers_hidden": {
+    "/power/is_charging": [
+      {
+        "node_name": "twist_mux",
+        "node_namespace": "/",
+        "topic_type": "std_msgs/msg/Bool"
+      },
+      {
+        "node_name": "rosbag2_recorder",
+        "node_namespace": "/",
+        "topic_type": "std_msgs/msg/Bool"
+      }
+    ],
+    "/joy_priority": [
+      {
+        "node_name": "twist_mux",
+        "node_namespace": "/",
+        "topic_type": "std_msgs/msg/Bool"
+      },
+      {
+        "node_name": "rosbag2_recorder",
+        "node_namespace": "/",
+        "topic_type": "std_msgs/msg/Bool"
+      }
+    ]
+  },
+  "indicator_prelude_publications_per_topic": 3,
+  "localization_parameters_accepted": [],
+  "localization_parameters_observed_hidden": [],
+  "nomotion_update_responses": 0,
+  "seed_hidden": 647366722,
+  "goal_hidden": [
+    -4.964999999999999,
+    -0.07499999999999929
+  ],
+  "accepted": true,
+  "terminal_action_status": 5,
+  "timeout": true,
+  "localization_intervention_applied": false,
+  "dynamic_move_requests": 0,
+  "dynamic_moves_confirmed_success": 0,
+  "dynamic_moves_confirmed_failure": 0,
+  "dynamic_moves_unresolved": 0,
+  "semantic_outputs_generated": false,
+  "qualification_complete": false
+}

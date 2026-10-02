@@ -1,0 +1,56 @@
+{
+  "schema": "roboboat-shared-public-scope/v1-development",
+  "status": "PUBLIC_PHYSICAL_SEMANTICS_NO_CLAIM_SELECTION_OR_ANSWER_LABELS",
+  "evidence": {
+    "sample_clock": "ros-header-stamp",
+    "measurement_scope": "sampled-delivered-simulator-odometry",
+    "velocity_source": "delivered-odometry-twist-body-to-odom",
+    "pose_frame": "task.frame",
+    "velocity_frame": "delivered body twist rotated to odom using sample yaw",
+    "reference_alignments": [
+      "latest-delivered-at-client-receipt",
+      "last-pre-result-observation"
+    ],
+    "observation_limitation": "Delivered samples do not prove Nav2 internal consumption, continuous-time compliance, or an episode-specific physical cause."
+  },
+  "action": {
+    "terminal_statuses": [
+      "succeeded",
+      "aborted",
+      "canceled"
+    ],
+    "fixture_status": "timeout",
+    "timeout_meaning": "Fixture deadline with no terminal action result received; cancel request is not cancellation completion, terminal ROS result, or docking failure.",
+    "timeout_admission": "No recorded result receipt, receipt wall time/clock, nonempty post_result stream, or latest-delivered-at-client-receipt reference; last-pre-result observation remains permitted.",
+    "receipt_clock": "fixture-monotonic",
+    "receipt_wall_seconds": "Finite nonnegative wall time when event_time_support is recorded-client-receipt; incomparable directly to sample-clock timestamps."
+  },
+  "task": {
+    "requirements": "Exact public packet.task goal, berth/hull geometry, tolerances, uncertainty, frame, contact policy and scope apply without substitutions.",
+    "interval_policy": "first-post-result-observation-fixed-dwell",
+    "anchor": "First post-result ROS-header sample starts the fixed task.dwell_s window; neither receipt wall time nor later successful interval replaces it.",
+    "sampled_support": "All sampled conditions and stated completeness/uncertainty requirements govern sampled support; a witnessed violation falsifies the declared requirement.",
+    "missing_contact": "Contact silence does not establish absence; only the declared aligned complete prohibited-contact event stream supports absence.",
+    "between_samples": "No continuous-time proof without an explicit intersample bound.",
+    "goal": "Public target pose; measured error uses delivered pose relative to this target, rather than a configured tolerance or unobserved consumed pose."
+  },
+  "configuration": {
+    "source": "Identical effective YAML bytes; scoped configuration digest/node/plugin/threshold values must match packet.configuration.",
+    "numeric_fields": [
+      "xy_goal_tolerance",
+      "yaw_goal_tolerance",
+      "trans_stopped_velocity",
+      "rot_stopped_velocity"
+    ],
+    "numeric_admission": "Finite nonnegative numbers, excluding booleans.",
+    "interpretation": "Configured navigation settings are observations about the supplied configuration, not proof of consumption, why stopping occurred, or satisfaction of the separate public docking dwell."
+  },
+  "agent_freedom": [
+    "Execute all shared certificate/renderers or reuse valid rendered wording",
+    "Create own reasoning, claims, plans, verification and self-checks",
+    "Use shell/read/search, Python and declared math/JSON/YAML dependencies",
+    "Use writable isolated scratch only after actual transport sandbox capability checks"
+  ],
+  "boundary": "The exact implemented full CRANE catalog/orchestration/planner/realizer and evaluator/old-answer artifacts are not supplied. Public physical semantics are common to B2 and B4.",
+  "readiness": "Preparation is development-only; authenticated deployed Nav2/source/profile and actual sandbox capabilities remain required before calls."
+}

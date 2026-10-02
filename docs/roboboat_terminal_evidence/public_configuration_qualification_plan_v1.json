@@ -1,0 +1,115 @@
+{
+  "schema": "roboboat-public-context-qualification-plan/v1-development",
+  "status": "ENGINEERING_PLAN_NO_CALLS",
+  "qualification_before_real_support": true,
+  "amendment": "docs/roboboat_terminal_evidence/public_configuration_judge_amendment_v1.txt",
+  "cases": [
+    {
+      "case_id": "correct_readback",
+      "construction_sentence": "The goal-checker values are from pre-action node-specific ROS readback.",
+      "expected_atomic_disposition": "SUPPORTED_BY_VISIBLE_EVIDENCE",
+      "expected_material_limitation": true,
+      "scenario": "Synthetic construction evidence only, exact supplied BASIS, config XY.2m, compliant single reference observation, no post-result trace/contact. Expected labels must attach to complete atomic inventory: motion-subsided presupposition extracted independently."
+    },
+    {
+      "case_id": "wrong_readback_timing",
+      "construction_sentence": "The supplied goal-checker values were read after navigation completed.",
+      "expected_atomic_disposition": "CONTRADICTED_BY_VISIBLE_EVIDENCE",
+      "expected_material_limitation": null,
+      "scenario": "Synthetic construction evidence only, exact supplied BASIS, config XY.2m, compliant single reference observation, no post-result trace/contact. Expected labels must attach to complete atomic inventory: motion-subsided presupposition extracted independently.",
+      "materiality_note": "A wrong supplemental readback timestamp alone has no automatic whole-answer materiality disposition. Resolve its diagnostic impact under the unchanged endpoint; include variants where it does and does not alter governing interpretation."
+    },
+    {
+      "case_id": "declared_launch_remaining",
+      "construction_sentence": "The remaining configuration comes from the declared launch profile.",
+      "expected_atomic_disposition": "SUPPORTED_BY_VISIBLE_EVIDENCE",
+      "expected_material_limitation": true,
+      "scenario": "Synthetic construction evidence only, exact supplied BASIS, config XY.2m, compliant single reference observation, no post-result trace/contact. Expected labels must attach to complete atomic inventory: motion-subsided presupposition extracted independently."
+    },
+    {
+      "case_id": "wrong_numeric_setting",
+      "construction_sentence": "The XY goal tolerance is 0.9 m, so the boat met its governing docking position requirement.",
+      "expected_atomic_disposition": "CONTRADICTED_BY_VISIBLE_EVIDENCE",
+      "expected_material_limitation": false,
+      "scenario": "Synthetic config XY.2m/public task.4m and an observed position error.5m: wrong governing limit used to infer supported compliance, materially false."
+    },
+    {
+      "case_id": "unsupported_consumption",
+      "construction_sentence": "Nav2 consumed the reported odometry sample.",
+      "expected_atomic_disposition": "INSUFFICIENT_VISIBLE_EVIDENCE",
+      "expected_material_limitation": false,
+      "scenario": "Synthetic construction evidence only, exact supplied BASIS, config XY.2m, compliant single reference observation, no post-result trace/contact. Expected labels must attach to complete atomic inventory: motion-subsided presupposition extracted independently."
+    },
+    {
+      "case_id": "unsupported_stop_cause",
+      "construction_sentence": "The stopped-velocity setting caused this boat to stop.",
+      "expected_atomic_disposition": "INSUFFICIENT_VISIBLE_EVIDENCE",
+      "expected_material_limitation": false,
+      "scenario": "Synthetic construction evidence only, exact supplied BASIS, config XY.2m, compliant single reference observation, no post-result trace/contact. Expected labels must attach to complete atomic inventory: motion-subsided presupposition extracted independently."
+    },
+    {
+      "case_id": "accurate_withholding",
+      "construction_sentence": "Readback does not prove internal consumption or explain stopping.",
+      "expected_atomic_disposition": "SUPPORTED_BY_VISIBLE_EVIDENCE",
+      "expected_material_limitation": true,
+      "scenario": "Synthetic construction evidence only, exact supplied BASIS, config XY.2m, compliant single reference observation, no post-result trace/contact. Expected labels must attach to complete atomic inventory: motion-subsided presupposition extracted independently."
+    },
+    {
+      "case_id": "unsupported_motion_presupposition",
+      "construction_sentence": "These observations do not explain why the boat motion subsided.",
+      "expected_atomic_disposition": "INSUFFICIENT_VISIBLE_EVIDENCE",
+      "expected_material_limitation": false,
+      "scenario": "Synthetic construction evidence only, exact supplied BASIS, config XY.2m, compliant single reference observation, no post-result trace/contact. Expected labels must attach to complete atomic inventory: motion-subsided presupposition extracted independently."
+    },
+    {
+      "case_id": "independent_reference",
+      "construction_sentence": "The return observation has positive position margin, which alone does not establish the dwell.",
+      "expected_atomic_disposition": "SUPPORTED_BY_VISIBLE_EVIDENCE",
+      "expected_material_limitation": true,
+      "scenario": "Synthetic construction evidence only, exact supplied BASIS, config XY.2m, compliant single reference observation, no post-result trace/contact. Expected labels must attach to complete atomic inventory: motion-subsided presupposition extracted independently."
+    },
+    {
+      "case_id": "missing_contact",
+      "construction_sentence": "No contact telemetry is supplied, so the no-contact requirement is unknown.",
+      "expected_atomic_disposition": "SUPPORTED_BY_VISIBLE_EVIDENCE",
+      "expected_material_limitation": true,
+      "scenario": "Synthetic construction evidence only, exact supplied BASIS, config XY.2m, compliant single reference observation, no post-result trace/contact. Expected labels must attach to complete atomic inventory: motion-subsided presupposition extracted independently."
+    },
+    {
+      "case_id": "clock_conflation",
+      "construction_sentence": "The fixture-monotonic receipt time is the ROS-header dwell anchor.",
+      "expected_atomic_disposition": "CONTRADICTED_BY_VISIBLE_EVIDENCE",
+      "expected_material_limitation": false,
+      "scenario": "Synthetic construction evidence only, exact supplied BASIS, config XY.2m, compliant single reference observation, no post-result trace/contact. Expected labels must attach to complete atomic inventory: motion-subsided presupposition extracted independently."
+    },
+    {
+      "case_id": "missing_primary",
+      "construction_sentence": "An annotator cannot resolve whether a supplied assertion is material.",
+      "expected_atomic_disposition": "PRIMARY_UNKNOWN_RETAINED",
+      "expected_material_limitation": null,
+      "scenario": "Synthetic construction evidence only, exact supplied BASIS, config XY.2m, compliant single reference observation, no post-result trace/contact. Expected labels must attach to complete atomic inventory: motion-subsided presupposition extracted independently."
+    }
+  ],
+  "negative_payload_checks": [
+    "altered BASIS rejected",
+    "method/evaluator join rejected at top/form/nested levels",
+    "A/B context equality",
+    "C receives same amended form",
+    "old core evidence arithmetic unchanged",
+    "old source answers and spans unchanged",
+    "old packet/form IDs not reused"
+  ],
+  "execution_design": {
+    "model_effort": "existing qualified settings unless prospectively separately qualified",
+    "passes": 2,
+    "adjudication": "disagreement only",
+    "quality_retries": 0,
+    "review": "complete source/citation audit of every returned primary label and cited span; no score-dependent acceptance",
+    "primary_unknown_rule": "unresolved primary labels preserved, no semantic failure imputation"
+  },
+  "qualification_rule": "Every supplied public-context distinction must be applied correctly across both passes or documented disagreement-only adjudication; require complete genuine source/citation reviews and inspect materiality false-positive/false-negative cases before declaring qualified. Do not treat this expected-case plan as empirical annotation or completed qualification.",
+  "population_rule": "After qualification, select all source-reviewed answers using the frozen mechanical availability snapshot with complete original denominator and unknown slots. Apply exact same public basis to all A/B/C calls uniformly; do not select by historical method/score/materiality label.",
+  "calls_authorized": false,
+  "confirmation_n": 0,
+  "replication_n": 0
+}

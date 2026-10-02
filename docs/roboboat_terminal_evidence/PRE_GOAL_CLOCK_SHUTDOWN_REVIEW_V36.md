@@ -1,0 +1,11 @@
+# Pre-goal controller shutdown
+
+Retained development failure `boat-geom-42007-00051-v2` has 15,331 delivered odometry messages, zero goal attempts, an empty action trajectory and zero command gate decisions. Unity logs its boat command adapter as ready, and its frame trace continues. The quiet command trace therefore does not establish stalled Unity startup or an incorrectly configured command policy.
+
+The controller log records missing-transform waits, backward-clock TF buffer clears, an uncaught `tf2::ForwardExtrapolationException`, and a subsequent lifecycle-manager report that `controller_server` is down, followed by related-node shutdown. Their ordering is established within that log. The exact cause of the exception and alignment with the Unity measurement reset are not established.
+
+The original failed predicates are `measured_trajectory` and `exact_common_ros_gate_contract`. The latter requires at least one decision (`bool(decisions)`) before testing policy, maximum lag and source identity. Its failure here reflects the absence of decisions, not evidence that a different policy was used. The fixture timeout has no received terminal action result and does not establish physical docking failure.
+
+`pre-goal-clock-shutdown-review-v36.json` records eight passing checks, the reconstructed whole-command audit, original source hashes, 16 selected controller-log lines and relevant Unity ready markers. Five current compiled-document source bindings from the prior v35 review are rechecked. The review does not authenticate the external Nav2 deployment, a remote clock epoch, cross-process clock mapping or physical causality. Raw logs remain on the collection host; their hashes and selected excerpts are archived.
+
+A separate development test of controller startup after an authenticated measurement-ready/clock-reset boundary is warranted. A barrier must be qualified operationally before it is used; markers must not merely be assumed to prove remote clock delivery. The current bound collection and queued dual-clock capture assay remain unchanged. This selected technical-failure investigation adds no scientific N, changes no validity rule or original disposition, and assigns no explanation score.

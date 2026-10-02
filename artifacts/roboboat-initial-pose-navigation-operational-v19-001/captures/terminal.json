@@ -1,0 +1,1428 @@
+{
+  "confirmation_n": 0,
+  "declaration_sha256": "c71dedbddc63e03981adcd0920fcb586fb6c9c37f6cbfa4e854cc0dcb59a3175",
+  "independent_n_added": 0,
+  "land_n_added": 0,
+  "operational_replay": true,
+  "physical_attempts": 6,
+  "replication_n": 0,
+  "results": [
+    {
+      "collector_sha256": "19a108a445257532ca5a426e535908f9f0c67260f7d99bc9830ca06b1cf671c2",
+      "command": [
+        "/home/lunarz/worktrees/roboboat-terminal-evidence/scripts/run_roboboat_hidden_render_v3.sh",
+        "--expected-class",
+        "CRANE-owned-4a0e19ea3ce14010b17c500d2e93e3ba",
+        "--audit-path",
+        "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-01/render-audit.json",
+        "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Tools/Performance/run_nav2_controller_fixture_capture_v15.sh"
+      ],
+      "confirmation_n": 0,
+      "default_cpu_affinity": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "development_recording_admitted": false,
+      "error": "[Errno 2] No such file or directory: '/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-01/navigation-reset-summary.json'",
+      "finished_unix": 1790882336.4751515,
+      "full_compiled_build": {
+        "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-command-shutdown-v17/full-build-v1.json",
+        "sha256": "5f35c10988645dcc98fb7c38bf28b6255c5dfd788bb25aad0ba939244125815c"
+      },
+      "image_signatures": true,
+      "independent_n_added": 0,
+      "inspected_instrumentation_sources": [
+        {
+          "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Utils/Performance/CraneActionTimingAudit.cs",
+          "sha256": "fba868bfc5ace575565da8de846c24364f14ad21de7fca20ad08eda6c578fe0c"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Utils/Performance/CraneActionGate.cs",
+          "sha256": "ba0b13c6d5641762b475cfa7ea1b11ea076da745c61e0655215e2fd7dc44dcda"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Controllers/ROSOmniXCommand.cs",
+          "sha256": "0851804655af9e11173f8363fb3652bd03f397a748b29de782c67d6294d45f52"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Performance/CraneBenchmarkRunner.cs",
+          "sha256": "ecab1c736228266b1f5cb22da035cc76a4a8f800a028b0c3d7204fb15ca79df3"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Controllers/CraneROSNavigationState.cs",
+          "sha256": "a679d8e17676e0eecdee212598f0ef01029e17e9bf73a7c6133c6ec10eff1c84"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Utils/ROS/ROSClock.cs",
+          "sha256": "3e427414eea502bb789b53c8e4fd70cedfb478bdb0700c4a914e977390a09575"
+        }
+      ],
+      "intervention": "Sparse frame timing enabled; optional catch-up cap only as declared. Original signatures/sensing/physics step preserved; revised compiled build bound.",
+      "launch_values": {
+        "CRANE_ASTRO_DOCK": "/home/lunarz/crane_explain/packages/astro_dock",
+        "CRANE_CAPTURE_RUNTIME_PARAMETERS": "1",
+        "CRANE_DOCKING_EVALUATOR": "1",
+        "CRANE_DURATION": "340",
+        "CRANE_NAV2_ACTION_DURATION": "310",
+        "CRANE_NAV2_ACTION_MODE": "follow-path",
+        "CRANE_NAV2_CONTROLLER_EXTRA_ARGS": "-p goal_checker.xy_goal_tolerance:=0.2",
+        "CRANE_NAV2_GOAL_X": "0.8899441418901596",
+        "CRANE_NAV2_GOAL_Y": "-27.734872374381197",
+        "CRANE_NAV2_GOAL_YAW": "1.6194118318471795",
+        "CRANE_NAV2_PARAMS": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Tools/Performance/roboboat_terminal_v1.yaml",
+        "CRANE_NAV2_PATH_FILE": "/home/lunarz/worktrees/roboboat-terminal-evidence/packages/crane_ml/Tools/Performance/generated_populations/roboboat-terminal-distance-development-population-v4-42007/boat-geom-42007-00001-terminalv4.json",
+        "CRANE_NAV2_POST_RESULT_DURATION": "8",
+        "CRANE_NAV2_PROFILE": "train-gpu",
+        "CRANE_NAV2_UNITY_EXTRA_ARGS": "--crane-frame-timing-audit /home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-01/frame-timing.jsonl --crane-action-timing-audit /home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-01/action-timing.jsonl --crane-maximum-delta-time 0.04 --crane-roboboat-start-pose 0.88994414189015925,-31.085183994737022,2.1060360363561341",
+        "CRANE_NOGRAPHICS": "0",
+        "CRANE_PLAYER": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-01/owned-player/CRANE-owned-4a0e19ea3ce14010b17c500d2e93e3ba",
+        "CRANE_RESULT_ROOT": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-01",
+        "CRANE_ROS_DOMAIN_ID": "200",
+        "CRANE_ROS_PORT": "11490",
+        "CRANE_RUN_ID": "boat-start-navigation-v19-001-01",
+        "CRANE_SCREEN_HEIGHT": "360",
+        "CRANE_SCREEN_WIDTH": "640",
+        "CRANE_SEED_BASE": "1468239274",
+        "CRANE_TIME_SCALE": "1",
+        "CRANE_WARMUP": "3"
+      },
+      "launcher_sha256": "787a3c6c7b4896908802e7ddf5aa8e124642b58b7655128b2a6b1f70798c62c2",
+      "maximum_delta_time": 0.04,
+      "operational_replay": true,
+      "owned_player_bundle": {
+        "bundle_root": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-01/owned-player",
+        "class_requires_actual_runtime_verification": true,
+        "confirmation_n": 0,
+        "executable": {
+          "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-01/owned-player/CRANE-owned-4a0e19ea3ce14010b17c500d2e93e3ba",
+          "sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292"
+        },
+        "expected_class": "CRANE-owned-4a0e19ea3ce14010b17c500d2e93e3ba",
+        "links": [
+          {
+            "path": "ASV_BurstDebugInformation_DoNotShip",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/ASV_BurstDebugInformation_DoNotShip"
+          },
+          {
+            "path": "CRANE-owned-4a0e19ea3ce14010b17c500d2e93e3ba_Data",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/CRANE_Data"
+          },
+          {
+            "path": "CRANE_s.debug",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/CRANE_s.debug"
+          },
+          {
+            "path": "UnityPlayer.so",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/UnityPlayer.so"
+          },
+          {
+            "path": "UnityPlayer_s.debug",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/UnityPlayer_s.debug"
+          },
+          {
+            "path": "crane-build-manifest.json",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/crane-build-manifest.json"
+          },
+          {
+            "path": "libdecor-0.so.0",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/libdecor-0.so.0"
+          },
+          {
+            "path": "libdecor-cairo.so",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/libdecor-cairo.so"
+          }
+        ],
+        "manifest": {
+          "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-command-shutdown-v17/full-build-v1.json",
+          "sha256": "5f35c10988645dcc98fb7c38bf28b6255c5dfd788bb25aad0ba939244125815c"
+        },
+        "original_build_root": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker",
+        "physics_or_scientific_equivalence_claim": false,
+        "production_launch_requirements": {
+          "SDL_VIDEODRIVER": "x11",
+          "screen": [
+            640,
+            360
+          ],
+          "screen_fullscreen": 0
+        },
+        "schema": "roboboat-owned-player-bundle/v1-development"
+      },
+      "physical_player": {
+        "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/CRANE.x86_64",
+        "sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292"
+      },
+      "platform_version": "isolated command-shutdown-v17; capture-complete2s drain and explicit intake closure before final counters; unchanged physics/task/control law; revised lifecycle behavior; opt-in varied physical starts on the same exact player, ROS routes read from bound public JSON",
+      "player_sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+      "probe_version": "roboboat-initial-pose-navigation-operational/v19-development-zero-independent-N",
+      "prospective_declaration": {
+        "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/declaration.json",
+        "sha256": "c71dedbddc63e03981adcd0920fcb586fb6c9c37f6cbfa4e854cc0dcb59a3175"
+      },
+      "quality_retries": 0,
+      "registry_sha256": "6dc0aa40d21d53264c6c2289fca988b1306218438a383415e0e93e545d85226a",
+      "render_runtime_source": {
+        "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/roboboat_hidden_render_v3.py",
+        "sha256": "e20cc71ebd297a460cc004678187f1c97012b0035de3ddd0c46794474d996bff"
+      },
+      "return_code": 1,
+      "row": {
+        "action_mode": "follow-path",
+        "cluster_id": "boat-geom-42007-00001",
+        "disposition": "DEVELOPMENT_EXPLORATORY",
+        "distance_band": "near",
+        "family": "reference-tail",
+        "geometry": {
+          "clearance_validated": false,
+          "curvature_amplitude_m": 0.01750347424225751,
+          "feasibility_validated": false,
+          "initial_path_heading_rad": 1.5707963267948948,
+          "initial_pose_runtime_verified": false,
+          "lane_x": -3.210194408707497,
+          "length_m": 3.350311620355825,
+          "maximum_interior_heading_change_rad": 1.1102230246251565e-15,
+          "maximum_waypoint_gap_m": 0.09967391546531701,
+          "physical_initial_pose_varied": false,
+          "physical_start": "Requested terminal-approach pose; scene height retained; unexecuted.",
+          "reference_curve_tail_distance_is_executed_length": false,
+          "reference_curve_tail_distance_m": 3.3503116203558263,
+          "requested_heading_offset_rad": 0.5352397095612393,
+          "requested_initial_pose_varied": true,
+          "requested_start_to_goal_distance_m": 3.350311620355825,
+          "terminal_length_m": 4.884021857800317,
+          "terminal_offset_rad": 0.0,
+          "terminal_path_heading_rad": 1.5707963267948966,
+          "terminal_perturbation_amplitude_m": 0.17390344129506513,
+          "terminal_turn_offset_rad": 0.5981386643652392,
+          "turn_y": -33.61889423218152,
+          "x_extent_m": [
+            0.8899441418901592,
+            0.8899441418901596
+          ],
+          "y_extent_m": [
+            -31.085183994737022,
+            -27.734872374381197
+          ]
+        },
+        "geometry_draw_index": 0,
+        "goal": {
+          "x": 0.8899441418901596,
+          "y": -27.734872374381197,
+          "yaw": 1.6194118318471795
+        },
+        "id": "boat-start-navigation-v19-001-01",
+        "initial_pose_cli_option": "--crane-roboboat-start-pose",
+        "initial_pose_request": {
+          "x": 0.8899441418901592,
+          "y": -31.085183994737022,
+          "yaw": 2.106036036356134
+        },
+        "initial_pose_units": {
+          "frame": "odom",
+          "x": "m",
+          "y": "m",
+          "yaw": "rad"
+        },
+        "internal_xy_tolerance_m": 0.2,
+        "path_file": {
+          "path": "packages/crane_ml/Tools/Performance/generated_populations/roboboat-terminal-distance-development-population-v4-42007/boat-geom-42007-00001-terminalv4.json",
+          "sha256": "2d9666a25707b5332882d7c3048e83bd3e8d21fbea357ecd9897326f99650ec8"
+        },
+        "reference_family": "aligned-long",
+        "retry_budget": 0,
+        "sampling_seed": 42007,
+        "seed": 1468239274,
+        "task_contract": {
+          "path": "artifacts/roboboat-terminal-distance-development-population-v4-42007/contracts/boat-geom-42007-00001.json",
+          "sha256": "992f98b5a5b572b18990801a3823dffb6553574e45e98a33f28529ab499d23f5"
+        },
+        "variant": 1
+      },
+      "started_unix": 1790882336.1096177,
+      "status": "TECHNICAL_FAILURE",
+      "technical_validity_definition": "prospective trace-qualified development; stale rejections allowed only with complete gate/counter/payload qualification; other gates retained",
+      "wrapper_sha256": "6364e63db80ca66b47044d689da98914b8ebfc1be97c0a726b1ebc7e858268f2"
+    },
+    {
+      "collector_sha256": "19a108a445257532ca5a426e535908f9f0c67260f7d99bc9830ca06b1cf671c2",
+      "command": [
+        "/home/lunarz/worktrees/roboboat-terminal-evidence/scripts/run_roboboat_hidden_render_v3.sh",
+        "--expected-class",
+        "CRANE-owned-73414d03fdb74d8f9d160632cd58504c",
+        "--audit-path",
+        "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-02/render-audit.json",
+        "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Tools/Performance/run_nav2_controller_fixture_capture_v15.sh"
+      ],
+      "confirmation_n": 0,
+      "default_cpu_affinity": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "development_recording_admitted": false,
+      "error": "[Errno 2] No such file or directory: '/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-02/navigation-reset-summary.json'",
+      "finished_unix": 1790882339.6647513,
+      "full_compiled_build": {
+        "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-command-shutdown-v17/full-build-v1.json",
+        "sha256": "5f35c10988645dcc98fb7c38bf28b6255c5dfd788bb25aad0ba939244125815c"
+      },
+      "image_signatures": true,
+      "independent_n_added": 0,
+      "inspected_instrumentation_sources": [
+        {
+          "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Utils/Performance/CraneActionTimingAudit.cs",
+          "sha256": "fba868bfc5ace575565da8de846c24364f14ad21de7fca20ad08eda6c578fe0c"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Utils/Performance/CraneActionGate.cs",
+          "sha256": "ba0b13c6d5641762b475cfa7ea1b11ea076da745c61e0655215e2fd7dc44dcda"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Controllers/ROSOmniXCommand.cs",
+          "sha256": "0851804655af9e11173f8363fb3652bd03f397a748b29de782c67d6294d45f52"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Performance/CraneBenchmarkRunner.cs",
+          "sha256": "ecab1c736228266b1f5cb22da035cc76a4a8f800a028b0c3d7204fb15ca79df3"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Controllers/CraneROSNavigationState.cs",
+          "sha256": "a679d8e17676e0eecdee212598f0ef01029e17e9bf73a7c6133c6ec10eff1c84"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Utils/ROS/ROSClock.cs",
+          "sha256": "3e427414eea502bb789b53c8e4fd70cedfb478bdb0700c4a914e977390a09575"
+        }
+      ],
+      "intervention": "Sparse frame timing enabled; optional catch-up cap only as declared. Original signatures/sensing/physics step preserved; revised compiled build bound.",
+      "launch_values": {
+        "CRANE_ASTRO_DOCK": "/home/lunarz/crane_explain/packages/astro_dock",
+        "CRANE_CAPTURE_RUNTIME_PARAMETERS": "1",
+        "CRANE_DOCKING_EVALUATOR": "1",
+        "CRANE_DURATION": "340",
+        "CRANE_NAV2_ACTION_DURATION": "310",
+        "CRANE_NAV2_ACTION_MODE": "follow-path",
+        "CRANE_NAV2_CONTROLLER_EXTRA_ARGS": "-p goal_checker.xy_goal_tolerance:=0.4",
+        "CRANE_NAV2_GOAL_X": "0.8696470421532775",
+        "CRANE_NAV2_GOAL_Y": "-27.521377013845388",
+        "CRANE_NAV2_GOAL_YAW": "1.6666316903202527",
+        "CRANE_NAV2_PARAMS": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Tools/Performance/roboboat_terminal_v1.yaml",
+        "CRANE_NAV2_PATH_FILE": "/home/lunarz/worktrees/roboboat-terminal-evidence/packages/crane_ml/Tools/Performance/generated_populations/roboboat-terminal-distance-development-population-v4-42007/boat-geom-42007-00008-terminalv4.json",
+        "CRANE_NAV2_POST_RESULT_DURATION": "8",
+        "CRANE_NAV2_PROFILE": "train-gpu",
+        "CRANE_NAV2_UNITY_EXTRA_ARGS": "--crane-frame-timing-audit /home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-02/frame-timing.jsonl --crane-action-timing-audit /home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-02/action-timing.jsonl --crane-maximum-delta-time 0.04 --crane-roboboat-start-pose 0.86964704215327737,-32.847247562835335,1.6301999126180853",
+        "CRANE_NOGRAPHICS": "0",
+        "CRANE_PLAYER": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-02/owned-player/CRANE-owned-73414d03fdb74d8f9d160632cd58504c",
+        "CRANE_RESULT_ROOT": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-02",
+        "CRANE_ROS_DOMAIN_ID": "200",
+        "CRANE_ROS_PORT": "11490",
+        "CRANE_RUN_ID": "boat-start-navigation-v19-001-02",
+        "CRANE_SCREEN_HEIGHT": "360",
+        "CRANE_SCREEN_WIDTH": "640",
+        "CRANE_SEED_BASE": "1585448264",
+        "CRANE_TIME_SCALE": "1",
+        "CRANE_WARMUP": "3"
+      },
+      "launcher_sha256": "787a3c6c7b4896908802e7ddf5aa8e124642b58b7655128b2a6b1f70798c62c2",
+      "maximum_delta_time": 0.04,
+      "operational_replay": true,
+      "owned_player_bundle": {
+        "bundle_root": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-02/owned-player",
+        "class_requires_actual_runtime_verification": true,
+        "confirmation_n": 0,
+        "executable": {
+          "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-02/owned-player/CRANE-owned-73414d03fdb74d8f9d160632cd58504c",
+          "sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292"
+        },
+        "expected_class": "CRANE-owned-73414d03fdb74d8f9d160632cd58504c",
+        "links": [
+          {
+            "path": "ASV_BurstDebugInformation_DoNotShip",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/ASV_BurstDebugInformation_DoNotShip"
+          },
+          {
+            "path": "CRANE-owned-73414d03fdb74d8f9d160632cd58504c_Data",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/CRANE_Data"
+          },
+          {
+            "path": "CRANE_s.debug",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/CRANE_s.debug"
+          },
+          {
+            "path": "UnityPlayer.so",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/UnityPlayer.so"
+          },
+          {
+            "path": "UnityPlayer_s.debug",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/UnityPlayer_s.debug"
+          },
+          {
+            "path": "crane-build-manifest.json",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/crane-build-manifest.json"
+          },
+          {
+            "path": "libdecor-0.so.0",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/libdecor-0.so.0"
+          },
+          {
+            "path": "libdecor-cairo.so",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/libdecor-cairo.so"
+          }
+        ],
+        "manifest": {
+          "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-command-shutdown-v17/full-build-v1.json",
+          "sha256": "5f35c10988645dcc98fb7c38bf28b6255c5dfd788bb25aad0ba939244125815c"
+        },
+        "original_build_root": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker",
+        "physics_or_scientific_equivalence_claim": false,
+        "production_launch_requirements": {
+          "SDL_VIDEODRIVER": "x11",
+          "screen": [
+            640,
+            360
+          ],
+          "screen_fullscreen": 0
+        },
+        "schema": "roboboat-owned-player-bundle/v1-development"
+      },
+      "physical_player": {
+        "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/CRANE.x86_64",
+        "sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292"
+      },
+      "platform_version": "isolated command-shutdown-v17; capture-complete2s drain and explicit intake closure before final counters; unchanged physics/task/control law; revised lifecycle behavior; opt-in varied physical starts on the same exact player, ROS routes read from bound public JSON",
+      "player_sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+      "probe_version": "roboboat-initial-pose-navigation-operational/v19-development-zero-independent-N",
+      "prospective_declaration": {
+        "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/declaration.json",
+        "sha256": "c71dedbddc63e03981adcd0920fcb586fb6c9c37f6cbfa4e854cc0dcb59a3175"
+      },
+      "quality_retries": 0,
+      "registry_sha256": "6dc0aa40d21d53264c6c2289fca988b1306218438a383415e0e93e545d85226a",
+      "render_runtime_source": {
+        "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/roboboat_hidden_render_v3.py",
+        "sha256": "e20cc71ebd297a460cc004678187f1c97012b0035de3ddd0c46794474d996bff"
+      },
+      "return_code": 1,
+      "row": {
+        "action_mode": "follow-path",
+        "cluster_id": "boat-geom-42007-00008",
+        "disposition": "DEVELOPMENT_EXPLORATORY",
+        "distance_band": "medium",
+        "family": "smooth-terminal",
+        "geometry": {
+          "clearance_validated": false,
+          "curvature_amplitude_m": -0.15667708763895483,
+          "feasibility_validated": false,
+          "initial_path_heading_rad": 1.5690572750951746,
+          "initial_pose_runtime_verified": false,
+          "lane_x": -2.844055356781892,
+          "length_m": 5.329121998244645,
+          "maximum_interior_heading_change_rad": 0.0067987130152764585,
+          "maximum_waypoint_gap_m": 0.09882791194847615,
+          "physical_initial_pose_varied": false,
+          "physical_start": "Requested terminal-approach pose; scene height retained; unexecuted.",
+          "reference_curve_tail_distance_is_executed_length": false,
+          "reference_curve_tail_distance_m": 5.325870548989945,
+          "requested_heading_offset_rad": 0.061142637522910714,
+          "requested_initial_pose_varied": true,
+          "requested_start_to_goal_distance_m": 5.325870548989947,
+          "terminal_length_m": 1.0256822885892969,
+          "terminal_offset_rad": 0.0,
+          "terminal_path_heading_rad": 1.6596726870613672,
+          "terminal_perturbation_amplitude_m": 0.0018650121690175214,
+          "terminal_turn_offset_rad": -0.003976200735372082,
+          "turn_y": -33.08724911897355,
+          "x_extent_m": [
+            0.8696470421532774,
+            0.945147160792213
+          ],
+          "y_extent_m": [
+            -32.847247562835335,
+            -27.521377013845388
+          ]
+        },
+        "geometry_draw_index": 7,
+        "goal": {
+          "x": 0.8696470421532775,
+          "y": -27.521377013845388,
+          "yaw": 1.6666316903202527
+        },
+        "id": "boat-start-navigation-v19-001-02",
+        "initial_pose_cli_option": "--crane-roboboat-start-pose",
+        "initial_pose_request": {
+          "x": 0.8696470421532774,
+          "y": -32.847247562835335,
+          "yaw": 1.6301999126180853
+        },
+        "initial_pose_units": {
+          "frame": "odom",
+          "x": "m",
+          "y": "m",
+          "yaw": "rad"
+        },
+        "internal_xy_tolerance_m": 0.4,
+        "path_file": {
+          "path": "packages/crane_ml/Tools/Performance/generated_populations/roboboat-terminal-distance-development-population-v4-42007/boat-geom-42007-00008-terminalv4.json",
+          "sha256": "46d3eefd039f0d57c854ac798c0b8e8fc0ca8c45871124f189d99e4026424eab"
+        },
+        "reference_family": "aligned-short",
+        "retry_budget": 0,
+        "sampling_seed": 42007,
+        "seed": 1585448264,
+        "task_contract": {
+          "path": "artifacts/roboboat-terminal-distance-development-population-v4-42007/contracts/boat-geom-42007-00008.json",
+          "sha256": "31e26d50f74d399219d376054d1158c37cc5fd9d8436b47c145cd06bfba09ffd"
+        },
+        "variant": 1
+      },
+      "started_unix": 1790882339.249604,
+      "status": "TECHNICAL_FAILURE",
+      "technical_validity_definition": "prospective trace-qualified development; stale rejections allowed only with complete gate/counter/payload qualification; other gates retained",
+      "wrapper_sha256": "6364e63db80ca66b47044d689da98914b8ebfc1be97c0a726b1ebc7e858268f2"
+    },
+    {
+      "collector_sha256": "19a108a445257532ca5a426e535908f9f0c67260f7d99bc9830ca06b1cf671c2",
+      "command": [
+        "/home/lunarz/worktrees/roboboat-terminal-evidence/scripts/run_roboboat_hidden_render_v3.sh",
+        "--expected-class",
+        "CRANE-owned-4b2f488efc114aa8a270e643e31aa988",
+        "--audit-path",
+        "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-03/render-audit.json",
+        "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Tools/Performance/run_nav2_controller_fixture_capture_v15.sh"
+      ],
+      "confirmation_n": 0,
+      "default_cpu_affinity": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "development_recording_admitted": false,
+      "error": "[Errno 2] No such file or directory: '/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-03/navigation-reset-summary.json'",
+      "finished_unix": 1790882342.8567631,
+      "full_compiled_build": {
+        "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-command-shutdown-v17/full-build-v1.json",
+        "sha256": "5f35c10988645dcc98fb7c38bf28b6255c5dfd788bb25aad0ba939244125815c"
+      },
+      "image_signatures": true,
+      "independent_n_added": 0,
+      "inspected_instrumentation_sources": [
+        {
+          "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Utils/Performance/CraneActionTimingAudit.cs",
+          "sha256": "fba868bfc5ace575565da8de846c24364f14ad21de7fca20ad08eda6c578fe0c"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Utils/Performance/CraneActionGate.cs",
+          "sha256": "ba0b13c6d5641762b475cfa7ea1b11ea076da745c61e0655215e2fd7dc44dcda"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Controllers/ROSOmniXCommand.cs",
+          "sha256": "0851804655af9e11173f8363fb3652bd03f397a748b29de782c67d6294d45f52"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Performance/CraneBenchmarkRunner.cs",
+          "sha256": "ecab1c736228266b1f5cb22da035cc76a4a8f800a028b0c3d7204fb15ca79df3"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Controllers/CraneROSNavigationState.cs",
+          "sha256": "a679d8e17676e0eecdee212598f0ef01029e17e9bf73a7c6133c6ec10eff1c84"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Utils/ROS/ROSClock.cs",
+          "sha256": "3e427414eea502bb789b53c8e4fd70cedfb478bdb0700c4a914e977390a09575"
+        }
+      ],
+      "intervention": "Sparse frame timing enabled; optional catch-up cap only as declared. Original signatures/sensing/physics step preserved; revised compiled build bound.",
+      "launch_values": {
+        "CRANE_ASTRO_DOCK": "/home/lunarz/crane_explain/packages/astro_dock",
+        "CRANE_CAPTURE_RUNTIME_PARAMETERS": "1",
+        "CRANE_DOCKING_EVALUATOR": "1",
+        "CRANE_DURATION": "340",
+        "CRANE_NAV2_ACTION_DURATION": "310",
+        "CRANE_NAV2_ACTION_MODE": "follow-path",
+        "CRANE_NAV2_CONTROLLER_EXTRA_ARGS": "-p goal_checker.xy_goal_tolerance:=0.2",
+        "CRANE_NAV2_GOAL_X": "0.8920544522761007",
+        "CRANE_NAV2_GOAL_Y": "-27.63083909711458",
+        "CRANE_NAV2_GOAL_YAW": "1.4945755997646064",
+        "CRANE_NAV2_PARAMS": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Tools/Performance/roboboat_terminal_v1.yaml",
+        "CRANE_NAV2_PATH_FILE": "/home/lunarz/worktrees/roboboat-terminal-evidence/packages/crane_ml/Tools/Performance/generated_populations/roboboat-terminal-distance-development-population-v4-42007/boat-geom-42007-00015-terminalv4.json",
+        "CRANE_NAV2_POST_RESULT_DURATION": "8",
+        "CRANE_NAV2_PROFILE": "train-gpu",
+        "CRANE_NAV2_UNITY_EXTRA_ARGS": "--crane-frame-timing-audit /home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-03/frame-timing.jsonl --crane-action-timing-audit /home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-03/action-timing.jsonl --crane-maximum-delta-time 0.04 --crane-roboboat-start-pose -0.64808590018146484,-36.575845384356377,-0.2055047680934026",
+        "CRANE_NOGRAPHICS": "0",
+        "CRANE_PLAYER": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-03/owned-player/CRANE-owned-4b2f488efc114aa8a270e643e31aa988",
+        "CRANE_RESULT_ROOT": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-03",
+        "CRANE_ROS_DOMAIN_ID": "200",
+        "CRANE_ROS_PORT": "11490",
+        "CRANE_RUN_ID": "boat-start-navigation-v19-001-03",
+        "CRANE_SCREEN_HEIGHT": "360",
+        "CRANE_SCREEN_WIDTH": "640",
+        "CRANE_SEED_BASE": "680288873",
+        "CRANE_TIME_SCALE": "1",
+        "CRANE_WARMUP": "3"
+      },
+      "launcher_sha256": "787a3c6c7b4896908802e7ddf5aa8e124642b58b7655128b2a6b1f70798c62c2",
+      "maximum_delta_time": 0.04,
+      "operational_replay": true,
+      "owned_player_bundle": {
+        "bundle_root": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-03/owned-player",
+        "class_requires_actual_runtime_verification": true,
+        "confirmation_n": 0,
+        "executable": {
+          "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-03/owned-player/CRANE-owned-4b2f488efc114aa8a270e643e31aa988",
+          "sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292"
+        },
+        "expected_class": "CRANE-owned-4b2f488efc114aa8a270e643e31aa988",
+        "links": [
+          {
+            "path": "ASV_BurstDebugInformation_DoNotShip",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/ASV_BurstDebugInformation_DoNotShip"
+          },
+          {
+            "path": "CRANE-owned-4b2f488efc114aa8a270e643e31aa988_Data",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/CRANE_Data"
+          },
+          {
+            "path": "CRANE_s.debug",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/CRANE_s.debug"
+          },
+          {
+            "path": "UnityPlayer.so",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/UnityPlayer.so"
+          },
+          {
+            "path": "UnityPlayer_s.debug",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/UnityPlayer_s.debug"
+          },
+          {
+            "path": "crane-build-manifest.json",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/crane-build-manifest.json"
+          },
+          {
+            "path": "libdecor-0.so.0",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/libdecor-0.so.0"
+          },
+          {
+            "path": "libdecor-cairo.so",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/libdecor-cairo.so"
+          }
+        ],
+        "manifest": {
+          "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-command-shutdown-v17/full-build-v1.json",
+          "sha256": "5f35c10988645dcc98fb7c38bf28b6255c5dfd788bb25aad0ba939244125815c"
+        },
+        "original_build_root": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker",
+        "physics_or_scientific_equivalence_claim": false,
+        "production_launch_requirements": {
+          "SDL_VIDEODRIVER": "x11",
+          "screen": [
+            640,
+            360
+          ],
+          "screen_fullscreen": 0
+        },
+        "schema": "roboboat-owned-player-bundle/v1-development"
+      },
+      "physical_player": {
+        "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/CRANE.x86_64",
+        "sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292"
+      },
+      "platform_version": "isolated command-shutdown-v17; capture-complete2s drain and explicit intake closure before final counters; unchanged physics/task/control law; revised lifecycle behavior; opt-in varied physical starts on the same exact player, ROS routes read from bound public JSON",
+      "player_sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+      "probe_version": "roboboat-initial-pose-navigation-operational/v19-development-zero-independent-N",
+      "prospective_declaration": {
+        "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/declaration.json",
+        "sha256": "c71dedbddc63e03981adcd0920fcb586fb6c9c37f6cbfa4e854cc0dcb59a3175"
+      },
+      "quality_retries": 0,
+      "registry_sha256": "6dc0aa40d21d53264c6c2289fca988b1306218438a383415e0e93e545d85226a",
+      "render_runtime_source": {
+        "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/roboboat_hidden_render_v3.py",
+        "sha256": "e20cc71ebd297a460cc004678187f1c97012b0035de3ddd0c46794474d996bff"
+      },
+      "return_code": 1,
+      "row": {
+        "action_mode": "follow-path",
+        "cluster_id": "boat-geom-42007-00015",
+        "disposition": "DEVELOPMENT_EXPLORATORY",
+        "distance_band": "far",
+        "family": "terminal-s-bend",
+        "geometry": {
+          "clearance_validated": false,
+          "curvature_amplitude_m": -0.006644227208707276,
+          "feasibility_validated": false,
+          "initial_path_heading_rad": 0.2961142977688176,
+          "initial_pose_runtime_verified": false,
+          "lane_x": -2.820329077538032,
+          "length_m": 9.930407442233067,
+          "maximum_interior_heading_change_rad": 0.04504103543802018,
+          "maximum_waypoint_gap_m": 0.1259577119684859,
+          "physical_initial_pose_varied": false,
+          "physical_start": "Requested terminal-approach pose; scene height retained; unexecuted.",
+          "reference_curve_tail_distance_is_executed_length": false,
+          "reference_curve_tail_distance_m": 9.567264670681567,
+          "requested_heading_offset_rad": -0.5016190658622202,
+          "requested_initial_pose_varied": true,
+          "requested_start_to_goal_distance_m": 9.0766276658274,
+          "terminal_length_m": 4.474194247002099,
+          "terminal_offset_rad": -0.05054297143791631,
+          "terminal_path_heading_rad": 1.4917327992833027,
+          "terminal_perturbation_amplitude_m": -0.3566293177300378,
+          "terminal_turn_offset_rad": -0.46909330667731475,
+          "turn_y": -34.88824395852527,
+          "x_extent_m": [
+            -0.6480859001814648,
+            1.2855203303014322
+          ],
+          "y_extent_m": [
+            -36.57584538435638,
+            -27.63083909711458
+          ]
+        },
+        "geometry_draw_index": 14,
+        "goal": {
+          "x": 0.8920544522761007,
+          "y": -27.63083909711458,
+          "yaw": 1.4945755997646064
+        },
+        "id": "boat-start-navigation-v19-001-03",
+        "initial_pose_cli_option": "--crane-roboboat-start-pose",
+        "initial_pose_request": {
+          "x": -0.6480859001814648,
+          "y": -36.57584538435638,
+          "yaw": -0.2055047680934026
+        },
+        "initial_pose_units": {
+          "frame": "odom",
+          "x": "m",
+          "y": "m",
+          "yaw": "rad"
+        },
+        "internal_xy_tolerance_m": 0.2,
+        "path_file": {
+          "path": "packages/crane_ml/Tools/Performance/generated_populations/roboboat-terminal-distance-development-population-v4-42007/boat-geom-42007-00015-terminalv4.json",
+          "sha256": "e7678f9444f2bb16aed1e72dc54b3c0b0df9c2a041240789e07676829a2bb553"
+        },
+        "reference_family": "curved-stem",
+        "retry_budget": 0,
+        "sampling_seed": 42007,
+        "seed": 680288873,
+        "task_contract": {
+          "path": "artifacts/roboboat-terminal-distance-development-population-v4-42007/contracts/boat-geom-42007-00015.json",
+          "sha256": "deb0ba6dfc614806ede7cc7725182e6c548e7106a68873595fb188829a2327b1"
+        },
+        "variant": 1
+      },
+      "started_unix": 1790882342.5418,
+      "status": "TECHNICAL_FAILURE",
+      "technical_validity_definition": "prospective trace-qualified development; stale rejections allowed only with complete gate/counter/payload qualification; other gates retained",
+      "wrapper_sha256": "6364e63db80ca66b47044d689da98914b8ebfc1be97c0a726b1ebc7e858268f2"
+    },
+    {
+      "collector_sha256": "19a108a445257532ca5a426e535908f9f0c67260f7d99bc9830ca06b1cf671c2",
+      "command": [
+        "/home/lunarz/worktrees/roboboat-terminal-evidence/scripts/run_roboboat_hidden_render_v3.sh",
+        "--expected-class",
+        "CRANE-owned-27359dcfbfc9433e99b3315c00a0eb21",
+        "--audit-path",
+        "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-04/render-audit.json",
+        "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Tools/Performance/run_nav2_controller_fixture_capture_v15.sh"
+      ],
+      "confirmation_n": 0,
+      "default_cpu_affinity": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "development_recording_admitted": false,
+      "error": "[Errno 2] No such file or directory: '/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-04/navigation-reset-summary.json'",
+      "finished_unix": 1790882345.9938052,
+      "full_compiled_build": {
+        "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-command-shutdown-v17/full-build-v1.json",
+        "sha256": "5f35c10988645dcc98fb7c38bf28b6255c5dfd788bb25aad0ba939244125815c"
+      },
+      "image_signatures": true,
+      "independent_n_added": 0,
+      "inspected_instrumentation_sources": [
+        {
+          "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Utils/Performance/CraneActionTimingAudit.cs",
+          "sha256": "fba868bfc5ace575565da8de846c24364f14ad21de7fca20ad08eda6c578fe0c"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Utils/Performance/CraneActionGate.cs",
+          "sha256": "ba0b13c6d5641762b475cfa7ea1b11ea076da745c61e0655215e2fd7dc44dcda"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Controllers/ROSOmniXCommand.cs",
+          "sha256": "0851804655af9e11173f8363fb3652bd03f397a748b29de782c67d6294d45f52"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Performance/CraneBenchmarkRunner.cs",
+          "sha256": "ecab1c736228266b1f5cb22da035cc76a4a8f800a028b0c3d7204fb15ca79df3"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Controllers/CraneROSNavigationState.cs",
+          "sha256": "a679d8e17676e0eecdee212598f0ef01029e17e9bf73a7c6133c6ec10eff1c84"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Utils/ROS/ROSClock.cs",
+          "sha256": "3e427414eea502bb789b53c8e4fd70cedfb478bdb0700c4a914e977390a09575"
+        }
+      ],
+      "intervention": "Sparse frame timing enabled; optional catch-up cap only as declared. Original signatures/sensing/physics step preserved; revised compiled build bound.",
+      "launch_values": {
+        "CRANE_ASTRO_DOCK": "/home/lunarz/crane_explain/packages/astro_dock",
+        "CRANE_CAPTURE_RUNTIME_PARAMETERS": "1",
+        "CRANE_DOCKING_EVALUATOR": "1",
+        "CRANE_DURATION": "340",
+        "CRANE_NAV2_ACTION_DURATION": "310",
+        "CRANE_NAV2_ACTION_MODE": "follow-path",
+        "CRANE_NAV2_CONTROLLER_EXTRA_ARGS": "-p goal_checker.xy_goal_tolerance:=0.4",
+        "CRANE_NAV2_GOAL_X": "0.7573084153555796",
+        "CRANE_NAV2_GOAL_Y": "-27.55452568510959",
+        "CRANE_NAV2_GOAL_YAW": "1.5433825944519182",
+        "CRANE_NAV2_PARAMS": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Tools/Performance/roboboat_terminal_v1.yaml",
+        "CRANE_NAV2_PATH_FILE": "/home/lunarz/worktrees/roboboat-terminal-evidence/packages/crane_ml/Tools/Performance/generated_populations/roboboat-terminal-distance-development-population-v4-42007/boat-geom-42007-00004-terminalv4.json",
+        "CRANE_NAV2_POST_RESULT_DURATION": "8",
+        "CRANE_NAV2_PROFILE": "train-gpu",
+        "CRANE_NAV2_UNITY_EXTRA_ARGS": "--crane-frame-timing-audit /home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-04/frame-timing.jsonl --crane-action-timing-audit /home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-04/action-timing.jsonl --crane-maximum-delta-time 0.04 --crane-roboboat-start-pose 1.7689873595049286,-31.68725389961066,1.4371443237233414",
+        "CRANE_NOGRAPHICS": "0",
+        "CRANE_PLAYER": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-04/owned-player/CRANE-owned-27359dcfbfc9433e99b3315c00a0eb21",
+        "CRANE_RESULT_ROOT": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-04",
+        "CRANE_ROS_DOMAIN_ID": "200",
+        "CRANE_ROS_PORT": "11490",
+        "CRANE_RUN_ID": "boat-start-navigation-v19-001-04",
+        "CRANE_SCREEN_HEIGHT": "360",
+        "CRANE_SCREEN_WIDTH": "640",
+        "CRANE_SEED_BASE": "268573379",
+        "CRANE_TIME_SCALE": "1",
+        "CRANE_WARMUP": "3"
+      },
+      "launcher_sha256": "787a3c6c7b4896908802e7ddf5aa8e124642b58b7655128b2a6b1f70798c62c2",
+      "maximum_delta_time": 0.04,
+      "operational_replay": true,
+      "owned_player_bundle": {
+        "bundle_root": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-04/owned-player",
+        "class_requires_actual_runtime_verification": true,
+        "confirmation_n": 0,
+        "executable": {
+          "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-04/owned-player/CRANE-owned-27359dcfbfc9433e99b3315c00a0eb21",
+          "sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292"
+        },
+        "expected_class": "CRANE-owned-27359dcfbfc9433e99b3315c00a0eb21",
+        "links": [
+          {
+            "path": "ASV_BurstDebugInformation_DoNotShip",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/ASV_BurstDebugInformation_DoNotShip"
+          },
+          {
+            "path": "CRANE-owned-27359dcfbfc9433e99b3315c00a0eb21_Data",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/CRANE_Data"
+          },
+          {
+            "path": "CRANE_s.debug",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/CRANE_s.debug"
+          },
+          {
+            "path": "UnityPlayer.so",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/UnityPlayer.so"
+          },
+          {
+            "path": "UnityPlayer_s.debug",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/UnityPlayer_s.debug"
+          },
+          {
+            "path": "crane-build-manifest.json",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/crane-build-manifest.json"
+          },
+          {
+            "path": "libdecor-0.so.0",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/libdecor-0.so.0"
+          },
+          {
+            "path": "libdecor-cairo.so",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/libdecor-cairo.so"
+          }
+        ],
+        "manifest": {
+          "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-command-shutdown-v17/full-build-v1.json",
+          "sha256": "5f35c10988645dcc98fb7c38bf28b6255c5dfd788bb25aad0ba939244125815c"
+        },
+        "original_build_root": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker",
+        "physics_or_scientific_equivalence_claim": false,
+        "production_launch_requirements": {
+          "SDL_VIDEODRIVER": "x11",
+          "screen": [
+            640,
+            360
+          ],
+          "screen_fullscreen": 0
+        },
+        "schema": "roboboat-owned-player-bundle/v1-development"
+      },
+      "physical_player": {
+        "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/CRANE.x86_64",
+        "sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292"
+      },
+      "platform_version": "isolated command-shutdown-v17; capture-complete2s drain and explicit intake closure before final counters; unchanged physics/task/control law; revised lifecycle behavior; opt-in varied physical starts on the same exact player, ROS routes read from bound public JSON",
+      "player_sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+      "probe_version": "roboboat-initial-pose-navigation-operational/v19-development-zero-independent-N",
+      "prospective_declaration": {
+        "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/declaration.json",
+        "sha256": "c71dedbddc63e03981adcd0920fcb586fb6c9c37f6cbfa4e854cc0dcb59a3175"
+      },
+      "quality_retries": 0,
+      "registry_sha256": "6dc0aa40d21d53264c6c2289fca988b1306218438a383415e0e93e545d85226a",
+      "render_runtime_source": {
+        "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/roboboat_hidden_render_v3.py",
+        "sha256": "e20cc71ebd297a460cc004678187f1c97012b0035de3ddd0c46794474d996bff"
+      },
+      "return_code": 1,
+      "row": {
+        "action_mode": "follow-path",
+        "cluster_id": "boat-geom-42007-00004",
+        "disposition": "DEVELOPMENT_EXPLORATORY",
+        "distance_band": "near",
+        "family": "terminal-dogleg",
+        "geometry": {
+          "clearance_validated": false,
+          "curvature_amplitude_m": 0.15752625360672667,
+          "feasibility_validated": false,
+          "initial_path_heading_rad": 1.74945554468766,
+          "initial_pose_runtime_verified": false,
+          "lane_x": -3.1602681478779933,
+          "length_m": 4.300203653831613,
+          "maximum_interior_heading_change_rad": 0.03375614629495871,
+          "maximum_waypoint_gap_m": 0.10179177273251362,
+          "physical_initial_pose_varied": false,
+          "physical_start": "Requested terminal-approach pose; scene height retained; unexecuted.",
+          "reference_curve_tail_distance_is_executed_length": false,
+          "reference_curve_tail_distance_m": 4.319062435100566,
+          "requested_heading_offset_rad": -0.3123112209643186,
+          "requested_initial_pose_varied": true,
+          "requested_start_to_goal_distance_m": 4.25475460878396,
+          "terminal_length_m": 4.8787697914630686,
+          "terminal_offset_rad": 0.233574617099824,
+          "terminal_path_heading_rad": 1.5552987091944321,
+          "terminal_perturbation_amplitude_m": 0.15017209978682405,
+          "terminal_turn_offset_rad": 0.1500889453012645,
+          "turn_y": -34.311646410709486,
+          "x_extent_m": [
+            0.7542407119905102,
+            1.7689873595049286
+          ],
+          "y_extent_m": [
+            -31.68725389961066,
+            -27.55452568510959
+          ]
+        },
+        "geometry_draw_index": 3,
+        "goal": {
+          "x": 0.7573084153555796,
+          "y": -27.55452568510959,
+          "yaw": 1.5433825944519182
+        },
+        "id": "boat-start-navigation-v19-001-04",
+        "initial_pose_cli_option": "--crane-roboboat-start-pose",
+        "initial_pose_request": {
+          "x": 1.7689873595049286,
+          "y": -31.68725389961066,
+          "yaw": 1.4371443237233414
+        },
+        "initial_pose_units": {
+          "frame": "odom",
+          "x": "m",
+          "y": "m",
+          "yaw": "rad"
+        },
+        "internal_xy_tolerance_m": 0.4,
+        "path_file": {
+          "path": "packages/crane_ml/Tools/Performance/generated_populations/roboboat-terminal-distance-development-population-v4-42007/boat-geom-42007-00004-terminalv4.json",
+          "sha256": "fe267f60bc4efc6e1d31c02fe00ab459f7ce48359ffe0db85ba8a920c2678165"
+        },
+        "reference_family": "terminal-s-bend",
+        "retry_budget": 0,
+        "sampling_seed": 42007,
+        "seed": 268573379,
+        "task_contract": {
+          "path": "artifacts/roboboat-terminal-distance-development-population-v4-42007/contracts/boat-geom-42007-00004.json",
+          "sha256": "c482ccd5dd13d303640f94aa86961b872cbc8349b147df47b5b9c64c9fa44d52"
+        },
+        "variant": 1
+      },
+      "started_unix": 1790882345.6287038,
+      "status": "TECHNICAL_FAILURE",
+      "technical_validity_definition": "prospective trace-qualified development; stale rejections allowed only with complete gate/counter/payload qualification; other gates retained",
+      "wrapper_sha256": "6364e63db80ca66b47044d689da98914b8ebfc1be97c0a726b1ebc7e858268f2"
+    },
+    {
+      "collector_sha256": "19a108a445257532ca5a426e535908f9f0c67260f7d99bc9830ca06b1cf671c2",
+      "command": [
+        "/home/lunarz/worktrees/roboboat-terminal-evidence/scripts/run_roboboat_hidden_render_v3.sh",
+        "--expected-class",
+        "CRANE-owned-1c65247d77844d3ea6ebaaeb42135570",
+        "--audit-path",
+        "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-05/render-audit.json",
+        "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Tools/Performance/run_nav2_controller_fixture_capture_v15.sh"
+      ],
+      "confirmation_n": 0,
+      "default_cpu_affinity": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "development_recording_admitted": false,
+      "error": "[Errno 2] No such file or directory: '/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-05/navigation-reset-summary.json'",
+      "finished_unix": 1790882349.072178,
+      "full_compiled_build": {
+        "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-command-shutdown-v17/full-build-v1.json",
+        "sha256": "5f35c10988645dcc98fb7c38bf28b6255c5dfd788bb25aad0ba939244125815c"
+      },
+      "image_signatures": true,
+      "independent_n_added": 0,
+      "inspected_instrumentation_sources": [
+        {
+          "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Utils/Performance/CraneActionTimingAudit.cs",
+          "sha256": "fba868bfc5ace575565da8de846c24364f14ad21de7fca20ad08eda6c578fe0c"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Utils/Performance/CraneActionGate.cs",
+          "sha256": "ba0b13c6d5641762b475cfa7ea1b11ea076da745c61e0655215e2fd7dc44dcda"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Controllers/ROSOmniXCommand.cs",
+          "sha256": "0851804655af9e11173f8363fb3652bd03f397a748b29de782c67d6294d45f52"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Performance/CraneBenchmarkRunner.cs",
+          "sha256": "ecab1c736228266b1f5cb22da035cc76a4a8f800a028b0c3d7204fb15ca79df3"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Controllers/CraneROSNavigationState.cs",
+          "sha256": "a679d8e17676e0eecdee212598f0ef01029e17e9bf73a7c6133c6ec10eff1c84"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Utils/ROS/ROSClock.cs",
+          "sha256": "3e427414eea502bb789b53c8e4fd70cedfb478bdb0700c4a914e977390a09575"
+        }
+      ],
+      "intervention": "Sparse frame timing enabled; optional catch-up cap only as declared. Original signatures/sensing/physics step preserved; revised compiled build bound.",
+      "launch_values": {
+        "CRANE_ASTRO_DOCK": "/home/lunarz/crane_explain/packages/astro_dock",
+        "CRANE_CAPTURE_RUNTIME_PARAMETERS": "1",
+        "CRANE_DOCKING_EVALUATOR": "1",
+        "CRANE_DURATION": "340",
+        "CRANE_NAV2_ACTION_DURATION": "310",
+        "CRANE_NAV2_ACTION_MODE": "follow-path",
+        "CRANE_NAV2_CONTROLLER_EXTRA_ARGS": "-p goal_checker.xy_goal_tolerance:=0.2",
+        "CRANE_NAV2_GOAL_X": "0.9822846600615633",
+        "CRANE_NAV2_GOAL_Y": "-27.495179263605614",
+        "CRANE_NAV2_GOAL_YAW": "1.4981161259557492",
+        "CRANE_NAV2_PARAMS": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Tools/Performance/roboboat_terminal_v1.yaml",
+        "CRANE_NAV2_PATH_FILE": "/home/lunarz/worktrees/roboboat-terminal-evidence/packages/crane_ml/Tools/Performance/generated_populations/roboboat-terminal-distance-development-population-v4-42007/boat-geom-42007-00011-terminalv4.json",
+        "CRANE_NAV2_POST_RESULT_DURATION": "8",
+        "CRANE_NAV2_PROFILE": "train-gpu",
+        "CRANE_NAV2_UNITY_EXTRA_ARGS": "--crane-frame-timing-audit /home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-05/frame-timing.jsonl --crane-action-timing-audit /home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-05/action-timing.jsonl --crane-maximum-delta-time 0.04 --crane-roboboat-start-pose 1.4385679326279808,-33.793713224800655,0.81650684597242629",
+        "CRANE_NOGRAPHICS": "0",
+        "CRANE_PLAYER": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-05/owned-player/CRANE-owned-1c65247d77844d3ea6ebaaeb42135570",
+        "CRANE_RESULT_ROOT": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-05",
+        "CRANE_ROS_DOMAIN_ID": "200",
+        "CRANE_ROS_PORT": "11490",
+        "CRANE_RUN_ID": "boat-start-navigation-v19-001-05",
+        "CRANE_SCREEN_HEIGHT": "360",
+        "CRANE_SCREEN_WIDTH": "640",
+        "CRANE_SEED_BASE": "310650561",
+        "CRANE_TIME_SCALE": "1",
+        "CRANE_WARMUP": "3"
+      },
+      "launcher_sha256": "787a3c6c7b4896908802e7ddf5aa8e124642b58b7655128b2a6b1f70798c62c2",
+      "maximum_delta_time": 0.04,
+      "operational_replay": true,
+      "owned_player_bundle": {
+        "bundle_root": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-05/owned-player",
+        "class_requires_actual_runtime_verification": true,
+        "confirmation_n": 0,
+        "executable": {
+          "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-05/owned-player/CRANE-owned-1c65247d77844d3ea6ebaaeb42135570",
+          "sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292"
+        },
+        "expected_class": "CRANE-owned-1c65247d77844d3ea6ebaaeb42135570",
+        "links": [
+          {
+            "path": "ASV_BurstDebugInformation_DoNotShip",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/ASV_BurstDebugInformation_DoNotShip"
+          },
+          {
+            "path": "CRANE-owned-1c65247d77844d3ea6ebaaeb42135570_Data",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/CRANE_Data"
+          },
+          {
+            "path": "CRANE_s.debug",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/CRANE_s.debug"
+          },
+          {
+            "path": "UnityPlayer.so",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/UnityPlayer.so"
+          },
+          {
+            "path": "UnityPlayer_s.debug",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/UnityPlayer_s.debug"
+          },
+          {
+            "path": "crane-build-manifest.json",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/crane-build-manifest.json"
+          },
+          {
+            "path": "libdecor-0.so.0",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/libdecor-0.so.0"
+          },
+          {
+            "path": "libdecor-cairo.so",
+            "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/libdecor-cairo.so"
+          }
+        ],
+        "manifest": {
+          "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-command-shutdown-v17/full-build-v1.json",
+          "sha256": "5f35c10988645dcc98fb7c38bf28b6255c5dfd788bb25aad0ba939244125815c"
+        },
+        "original_build_root": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker",
+        "physics_or_scientific_equivalence_claim": false,
+        "production_launch_requirements": {
+          "SDL_VIDEODRIVER": "x11",
+          "screen": [
+            640,
+            360
+          ],
+          "screen_fullscreen": 0
+        },
+        "schema": "roboboat-owned-player-bundle/v1-development"
+      },
+      "physical_player": {
+        "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/CRANE.x86_64",
+        "sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292"
+      },
+      "platform_version": "isolated command-shutdown-v17; capture-complete2s drain and explicit intake closure before final counters; unchanged physics/task/control law; revised lifecycle behavior; opt-in varied physical starts on the same exact player, ROS routes read from bound public JSON",
+      "player_sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+      "probe_version": "roboboat-initial-pose-navigation-operational/v19-development-zero-independent-N",
+      "prospective_declaration": {
+        "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/declaration.json",
+        "sha256": "c71dedbddc63e03981adcd0920fcb586fb6c9c37f6cbfa4e854cc0dcb59a3175"
+      },
+      "quality_retries": 0,
+      "registry_sha256": "6dc0aa40d21d53264c6c2289fca988b1306218438a383415e0e93e545d85226a",
+      "render_runtime_source": {
+        "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/roboboat_hidden_render_v3.py",
+        "sha256": "e20cc71ebd297a460cc004678187f1c97012b0035de3ddd0c46794474d996bff"
+      },
+      "return_code": 1,
+      "row": {
+        "action_mode": "follow-path",
+        "cluster_id": "boat-geom-42007-00011",
+        "disposition": "DEVELOPMENT_EXPLORATORY",
+        "distance_band": "medium",
+        "family": "terminal-turn",
+        "geometry": {
+          "clearance_validated": false,
+          "curvature_amplitude_m": -0.12480501744095257,
+          "feasibility_validated": false,
+          "initial_path_heading_rad": 0.9640138934871458,
+          "initial_pose_runtime_verified": false,
+          "lane_x": -3.082519203593868,
+          "length_m": 6.489204502556785,
+          "maximum_interior_heading_change_rad": 0.0443401556930787,
+          "maximum_waypoint_gap_m": 0.10864704665697064,
+          "physical_initial_pose_varied": false,
+          "physical_start": "Requested terminal-approach pose; scene height retained; unexecuted.",
+          "reference_curve_tail_distance_is_executed_length": false,
+          "reference_curve_tail_distance_m": 6.357131896090369,
+          "requested_heading_offset_rad": -0.14750704751471955,
+          "requested_initial_pose_varied": true,
+          "requested_start_to_goal_distance_m": 6.315039547394079,
+          "terminal_length_m": 3.527625204275467,
+          "terminal_offset_rad": 0.1343543563094005,
+          "terminal_path_heading_rad": 1.5272471288782803,
+          "terminal_perturbation_amplitude_m": 0.24970832269556403,
+          "terminal_turn_offset_rad": -0.49787145493504387,
+          "turn_y": -33.538174871652956,
+          "x_extent_m": [
+            0.973449241001999,
+            1.86808725311835
+          ],
+          "y_extent_m": [
+            -33.793713224800655,
+            -27.495179263605614
+          ]
+        },
+        "geometry_draw_index": 10,
+        "goal": {
+          "x": 0.9822846600615633,
+          "y": -27.495179263605614,
+          "yaw": 1.4981161259557492
+        },
+        "id": "boat-start-navigation-v19-001-05",
+        "initial_pose_cli_option": "--crane-roboboat-start-pose",
+        "initial_pose_request": {
+          "x": 1.4385679326279808,
+          "y": -33.793713224800655,
+          "yaw": 0.8165068459724263
+        },
+        "initial_pose_units": {
+          "frame": "odom",
+          "x": "m",
+          "y": "m",
+          "yaw": "rad"
+        },
+        "internal_xy_tolerance_m": 0.2,
+        "path_file": {
+          "path": "packages/crane_ml/Tools/Performance/generated_populations/roboboat-terminal-distance-development-population-v4-42007/boat-geom-42007-00011-terminalv4.json",
+          "sha256": "0c9cf7ab8cbac0e80685a4804a3c3420c8c82617326d78127980fc22dbe3ca79"
+        },
+        "reference_family": "terminal-dogleg",
+        "retry_budget": 0,
+        "sampling_seed": 42007,
+        "seed": 310650561,
+        "task_contract": {
+          "path": "artifacts/roboboat-terminal-distance-development-population-v4-42007/contracts/boat-geom-42007-00011.json",
+          "sha256": "f941758f1111b8905c5072a6c7ca185fb5d791cc293d4867448e68ee15448257"
+        },
+        "variant": 1
+      },
+      "started_unix": 1790882348.7572823,
+      "status": "TECHNICAL_FAILURE",
+      "technical_validity_definition": "prospective trace-qualified development; stale rejections allowed only with complete gate/counter/payload qualification; other gates retained",
+      "wrapper_sha256": "6364e63db80ca66b47044d689da98914b8ebfc1be97c0a726b1ebc7e858268f2"
+    },
+    {
+      "confirmation_n": 0,
+      "export_directory": "exports-v2",
+      "exporter": {
+        "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/export_roboboat_trace_qualified_v3.py",
+        "sha256": "f88c1d571ff132d0a7fd7a12b53dca8eeecc66ef848c203886eaa9c5bb0acfa9"
+      },
+      "independent_n_added": 0,
+      "level_outcomes": [
+        "unknown",
+        "unknown",
+        "unknown"
+      ],
+      "new_physical_runs_by_export": 0,
+      "operational_replay": true,
+      "original_capture_terminal": {
+        "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-06/capture-attempt.json",
+        "sha256": "d778a6f2eb1abecb40011b5454c0f70c34af63b607bb8f3c6f9d9b06593eb413"
+      },
+      "platform_version": "isolated command-shutdown-v17; capture-complete2s drain and explicit intake closure before final counters; unchanged physics/task/control law; revised lifecycle behavior; opt-in varied physical starts on the same exact player, ROS routes read from bound public JSON",
+      "prior_dispositions_changed": false,
+      "prospective_declaration": {
+        "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/declaration.json",
+        "sha256": "c71dedbddc63e03981adcd0920fcb586fb6c9c37f6cbfa4e854cc0dcb59a3175"
+      },
+      "raw_sources": [
+        {
+          "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-06/fixture-summary.json",
+          "sha256": "809c9ae1178b01676d954cc9982ec0058e55ab280b559c94b60bfe0fb3782c56"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-06/runtime-parameters.json",
+          "sha256": "b076ae1c8489f81063552e35bf5780f9662556b8e0049bf9e453230bb2aa1a62"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-06/navigation-reset-summary.json",
+          "sha256": "8afd978fe3947e32f52c33916e3b8325d5c858ddbff90628ed23ea742e54e2bb"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-06/worker-0/result.json",
+          "sha256": "74bd3998bcbf5dd375233a941e53e9342f618c1cd232ce1e6939da88c7458793"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-06/action-timing.jsonl",
+          "sha256": "8184bb2377351cd3f49b201f0ac6244e5a0688342729e4e9436ff5fac8030477"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-06/worker-0/player.log",
+          "sha256": "63abaa1861273755ff30223e1a3a8510d3dd02b4b398c7592e98f0cc51e4c988"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-06/controller.log",
+          "sha256": "bf8c318fc0e16fb7a9f3fdad2ae2190de95ed306c7d6c2501f80bc5d91bee2ee"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-06/endpoint.log",
+          "sha256": "4278d87dc95eeca73fae3ca50c670467497c3d96a99686a2e1518fed6b113894"
+        },
+        {
+          "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-initial-pose-navigation-operational-v19-001/captures/boat-start-navigation-v19-001-06/launcher-terminal-audit.json",
+          "sha256": "36c2e95801b0a3025302a7e8f6261c223aeb857069387abf947d126a597ee397"
+        }
+      ],
+      "recording_technical_valid": true,
+      "registry_sha256": "6dc0aa40d21d53264c6c2289fca988b1306218438a383415e0e93e545d85226a",
+      "replication_n": 0,
+      "row": {
+        "action_mode": "navigate-to-pose",
+        "cluster_id": "boat-geom-42007-00018",
+        "design_reference_curve": {
+          "path": "packages/crane_ml/Tools/Performance/generated_populations/roboboat-terminal-distance-development-population-v4-42007/boat-geom-42007-00018-terminalv4.json",
+          "sha256": "2db94649e6ad71c648e5ed6730fd354337211518e2cff9b1a0e01bbd7e13591f"
+        },
+        "disposition": "DEVELOPMENT_EXPLORATORY",
+        "distance_band": "far",
+        "family": "direct-goal",
+        "geometry": {
+          "clearance_validated": false,
+          "curvature_amplitude_m": 0.1971602642100896,
+          "feasibility_validated": false,
+          "initial_path_heading_rad": -1.2653637076958975,
+          "initial_pose_runtime_verified": false,
+          "lane_x": -2.7694329002087703,
+          "length_m": 12.831567467822573,
+          "maximum_interior_heading_change_rad": 0.08726646259972387,
+          "maximum_waypoint_gap_m": 0.198718398043539,
+          "physical_initial_pose_varied": false,
+          "physical_start": "Requested terminal-approach pose; scene height retained; unexecuted.",
+          "reference_curve_tail_distance_is_executed_length": false,
+          "reference_curve_tail_distance_m": 12.831567467822575,
+          "requested_heading_offset_rad": -0.6770867287585898,
+          "requested_initial_pose_varied": true,
+          "requested_start_to_goal_distance_m": 7.840229085392381,
+          "terminal_length_m": 4.397411844925558,
+          "terminal_offset_rad": 0.21886670328616462,
+          "terminal_path_heading_rad": 1.5901247876871927,
+          "terminal_perturbation_amplitude_m": -0.09461085603270525,
+          "terminal_turn_offset_rad": -0.46612440890397555,
+          "turn_y": -33.854045729834745,
+          "x_extent_m": [
+            -2.6475343330540304,
+            1.850749530521881
+          ],
+          "y_extent_m": [
+            -36.13191355474433,
+            -27.55799722722334
+          ]
+        },
+        "geometry_draw_index": 17,
+        "goal": {
+          "x": 0.8315212909727779,
+          "y": -27.55799722722334,
+          "yaw": 1.5604111371622875
+        },
+        "id": "boat-start-navigation-v19-001-06",
+        "initial_pose_cli_option": "--crane-roboboat-start-pose",
+        "initial_pose_request": {
+          "x": -2.6475343330540304,
+          "y": -34.58404619348881,
+          "yaw": -1.9424504364544872
+        },
+        "initial_pose_units": {
+          "frame": "odom",
+          "x": "m",
+          "y": "m",
+          "yaw": "rad"
+        },
+        "internal_xy_tolerance_m": 0.4,
+        "reference_family": "direct-goal",
+        "retry_budget": 0,
+        "sampling_seed": 42007,
+        "seed": 1834887348,
+        "task_contract": {
+          "path": "artifacts/roboboat-terminal-distance-development-population-v4-42007/contracts/boat-geom-42007-00018.json",
+          "sha256": "7bc9d0dbdf29d85080e9f49db0e19f2682efbe528b2f0d245064dab527e281b5"
+        },
+        "variant": 1
+      },
+      "schema": "roboboat-trace-qualified-export/v3-clock-repair-operational",
+      "stale_actions_observed": 0,
+      "status": "VALID_TRACE_QUALIFIED_DEVELOPMENT",
+      "worker_valid_original": true
+    }
+  ],
+  "schema": "roboboat-initial-pose-navigation-operational/v19-development-zero-independent-N",
+  "status": "INITIAL_POSE_NAVIGATION_OPERATIONAL_BATCH_FINISHED",
+  "study_ceiling": null,
+  "valid_recordings": 1
+}

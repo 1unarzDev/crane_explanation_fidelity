@@ -1,0 +1,77 @@
+{
+  "schema": "roboboat-episode-publisher-reset-engineering/v1",
+  "utc": "2026-10-01T13:10:46.828148+00:00",
+  "phase": "DEVELOPMENT_ONLY",
+  "parent_unchanged": true,
+  "repair": "EpisodeId-bound absolute publisher deadlines; no body reset or change to sensing rate, physics or controller",
+  "red_actual_nunit": {
+    "total": "2",
+    "failed": "2",
+    "messages": [
+      "  Fresh episode must publish immediately; a warmup deadline must not suppress odometry.\n  Expected: less than 0.029999999999999999d\n  But was:  2.8999999999999999d\n",
+      "  Clock scheduling must reset even when no body-reset callback is dispatched.\n  Expected: less than 0.029999999999999999d\n  But was:  2.8999999999999999d\n"
+    ]
+  },
+  "cli_red_exit_classification": "CLI returned6 COMMAND_FAILED; actual NUnit XML proves two assertion failures, not compilation failure",
+  "first_repair_compile_failure": "long EpisodeId assigned to int; corrected to long; failed logs retained",
+  "green_actual_nunit": {
+    "total": "2",
+    "passed": "2",
+    "failed": "0"
+  },
+  "sources": [
+    {
+      "path": "/home/lunarz/worktrees/roboboat-episode-clock-v10/crane_ml/Assets/Scripts/Controllers/CraneROSNavigationState.cs",
+      "sha256": "a679d8e17676e0eecdee212598f0ef01029e17e9bf73a7c6133c6ec10eff1c84"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-episode-clock-v10/crane_ml/Assets/Scripts/Utils/ROS/ROSClock.cs",
+      "sha256": "3e427414eea502bb789b53c8e4fd70cedfb478bdb0700c4a914e977390a09575"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-episode-clock-v10/crane_ml/Assets/Tests/Editor/CraneEpisodePublisherClockResetTests.cs",
+      "sha256": "e49601a332de1a7c6d59229a2896ae393ce0007210b45db206024cf97245bc04"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-episode-clock-v10/crane_ml/Assets/Tests/Editor/RoboBoatEditorTests.asmdef",
+      "sha256": "7d706db8c754935ee90b091070877cd7762e41d41736341fba0b009bb8923ca6"
+    }
+  ],
+  "snapshots": [
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-episode-clock-v10/source-snapshot-v1/Assets/Scripts/Controllers/CraneROSNavigationState.cs",
+      "sha256": "a679d8e17676e0eecdee212598f0ef01029e17e9bf73a7c6133c6ec10eff1c84"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-episode-clock-v10/source-snapshot-v1/Assets/Scripts/Utils/ROS/ROSClock.cs",
+      "sha256": "3e427414eea502bb789b53c8e4fd70cedfb478bdb0700c4a914e977390a09575"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-episode-clock-v10/source-snapshot-v1/Assets/Tests/Editor/CraneEpisodePublisherClockResetTests.cs",
+      "sha256": "e49601a332de1a7c6d59229a2896ae393ce0007210b45db206024cf97245bc04"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-episode-clock-v10/source-snapshot-v1/Assets/Tests/Editor/RoboBoatEditorTests.asmdef",
+      "sha256": "7d706db8c754935ee90b091070877cd7762e41d41736341fba0b009bb8923ca6"
+    }
+  ],
+  "reports": [
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-episode-clock-v10/red-tests-v1.xml",
+      "sha256": "355d0f339d4072bc0640bae5ac87f605a2974fbfbdea19eac93253d904133466"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-episode-clock-v10/green-tests-v2.xml",
+      "sha256": "07c69518d85aa5a133b5dfa890b26396a1d43bc578ca142e77bf818d6463a81a"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-episode-clock-v10/publisher-repair-v1.patch",
+      "sha256": "fdedf72f2f29a1cb741ea665dcf423e761a63799086024ab4d01866186789a67"
+    }
+  ],
+  "physical_validation": false,
+  "cause_of_all_future_stamp_failures_proven": false,
+  "confirmation_n": 0,
+  "replication_n": 0,
+  "promotion": false
+}

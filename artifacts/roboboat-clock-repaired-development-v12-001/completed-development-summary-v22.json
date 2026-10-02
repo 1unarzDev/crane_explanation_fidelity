@@ -1,0 +1,150 @@
+{
+  "L2_component_support_among_valid": {
+    "contact": {
+      "unknown": 46
+    },
+    "heading": {
+      "true": 45,
+      "unknown": 1
+    },
+    "hull": {
+      "true": 45,
+      "unknown": 1
+    },
+    "position": {
+      "false": 19,
+      "true": 26,
+      "unknown": 1
+    },
+    "speed": {
+      "false": 13,
+      "true": 32,
+      "unknown": 1
+    },
+    "yaw_rate": {
+      "false": 1,
+      "true": 44,
+      "unknown": 1
+    }
+  },
+  "L2_failure_witness_component_counts": {
+    "position": 19,
+    "speed": 13,
+    "yaw_rate": 1
+  },
+  "L2_task_states_among_valid": {
+    "false": 23,
+    "unknown": 23
+  },
+  "complete_geometry_pairs": 22,
+  "confirmation_frozen": false,
+  "confirmation_n": 0,
+  "family_recording_dispositions": {
+    "aligned-long": {
+      "TECHNICAL_FAILURE": 1,
+      "VALID_TRACE_QUALIFIED_DEVELOPMENT": 7
+    },
+    "aligned-short": {
+      "TECHNICAL_FAILURE": 1,
+      "VALID_TRACE_QUALIFIED_DEVELOPMENT": 7
+    },
+    "curved-stem": {
+      "VALID_TRACE_QUALIFIED_DEVELOPMENT": 8
+    },
+    "direct-goal": {
+      "VALID_TRACE_QUALIFIED_DEVELOPMENT": 8
+    },
+    "terminal-dogleg": {
+      "VALID_TRACE_QUALIFIED_DEVELOPMENT": 8
+    },
+    "terminal-s-bend": {
+      "VALID_TRACE_QUALIFIED_DEVELOPMENT": 8
+    }
+  },
+  "geometry_completion_planning": {
+    "assumptions": "Independent generated geometry draws, binary complete-pair indicators; heterogeneous family means allowed. Interval concerns mean completion probability for this fixed allocation/version, not a new population or realized future count.",
+    "illustrative_attempts_for_expected_complete_geometry_count": [
+      {
+        "desired_complete_count": 100,
+        "using_Hoeffding_lower_mean": 157,
+        "using_observed_rate": 110
+      },
+      {
+        "desired_complete_count": 200,
+        "using_Hoeffding_lower_mean": 313,
+        "using_observed_rate": 219
+      },
+      {
+        "desired_complete_count": 400,
+        "using_Hoeffding_lower_mean": 626,
+        "using_observed_rate": 437
+      },
+      {
+        "desired_complete_count": 800,
+        "using_Hoeffding_lower_mean": 1252,
+        "using_observed_rate": 873
+      }
+    ],
+    "not_confirmation_N_selection": true,
+    "not_guaranteed_realized_valid_N": true,
+    "not_transferred_to_unqualified_new_start_or_shutdown_platform": true,
+    "point_rate": 0.9166666666666666,
+    "two_sided_95pct_Hoeffding_mean_interval": [
+      0.639445355627922,
+      1.0
+    ]
+  },
+  "incomplete_geometries": [
+    "boat-geom-42005-00014",
+    "boat-geom-42005-00019"
+  ],
+  "land_n_added": 0,
+  "navigation_statuses_among_valid": {
+    "succeeded": 46
+  },
+  "physical_attempts": 48,
+  "platform_version": "isolated episode-clock-v10; EpisodeId-bound publisher scheduling repair; .02 fixed step and .04 catch-up cap; physical equivalence unasserted",
+  "replication_n": 0,
+  "scheduled_geometry_draws": 24,
+  "schema": "roboboat-completed-development-summary/v22",
+  "scientific_limits": [
+    "No B4-vs-B2 paired endpoint scores or observed effect/discordance/reliability estimates.",
+    "All admitted navigation outcomes succeeded; two timeout episodes are retained as technical failures. Fault-inclusive clean completion is still being operationally tested.",
+    "Valid L2 task states include false/unknown but no true. New start/distance scenarios must be assessed empirically without selecting based on method wins.",
+    "Tolerance variants, evidence levels and engineering calls add no independent N."
+  ],
+  "scored_method_pairs": 0,
+  "sources": [
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/profile-v23.json",
+      "sha256": "8ba918630361f053334236808e87aea2a6f7566aedfab3c901ed28aef56114eb"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/declaration.json",
+      "sha256": "c95af856b13116b3514f74c5680916cc9ae13badf681a07d0fad1b8d196a070c"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/terminal.json",
+      "sha256": "63a4f4833814cad763453f1a1c52a34e1258727c1a584a1ce7aa749983465b27"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/summarize_roboboat_completed_development_v22.py",
+      "sha256": "bce7da47336cbdf358da42341dd0e90d966674832a561da60d6ad8f8a7f27e88"
+    }
+  ],
+  "technical_failures_retained": [
+    {
+      "cluster_id": "boat-geom-42005-00019",
+      "error": "failed checks: no_pending_receipt_at_shutdown",
+      "family": "aligned-long",
+      "id": "boat-geom-42005-00019-v1"
+    },
+    {
+      "cluster_id": "boat-geom-42005-00014",
+      "error": "[Errno 2] No such file or directory: '/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00014-v1/navigation-reset-summary.json'",
+      "family": "aligned-short",
+      "id": "boat-geom-42005-00014-v1"
+    }
+  ],
+  "valid_recordings": 46
+}

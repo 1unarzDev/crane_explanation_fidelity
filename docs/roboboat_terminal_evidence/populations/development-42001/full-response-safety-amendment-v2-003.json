@@ -1,0 +1,64 @@
+{
+  "schema": "roboboat-full-response-transport-safety-amendment/v2",
+  "phase": "DEVELOPMENT_ONLY_BEFORE_UNTOUCHED_CALLS",
+  "original_declaration": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42001/full-response-snapshot-v2-003.json",
+    "sha256": "c10525621afa083a55fed34d3917ef2dedeae45912dc65a4391c4bc8ef1ef9d0"
+  },
+  "output_root": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-population-development-42001/full-responses-v2-003",
+  "runner": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/run_roboboat_full_response_safety_amendment_v2.py",
+    "sha256": "2dd9384a60ce08085a81fc592f1ca512d0fa13f2bf0736939429b0d7ab2db05b"
+  },
+  "safe_transport": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/roboboat_isolated_transport_v3.py",
+    "sha256": "4c3e6dcfa83e5e423d33e35fc458697adf09e469dff0b20b801be45b91037844"
+  },
+  "original_isolation_transport": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/roboboat_isolated_transport.py",
+    "sha256": "c89af6b2b0dcf4323d2ba27e55f693665fbcba3b259cd233aebc13be773f3e4b"
+  },
+  "tests": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/tests/test_roboboat_isolated_transport_v3.py",
+    "sha256": "19a6177d0a3e2426948aec1d6db89a73c66a14c54976057c981a7e28340dc1ee"
+  },
+  "retained_terminals": [],
+  "untouched_entry_ids": [
+    "boat-geom-42001-00010-v2-L0",
+    "boat-geom-42001-00010-v2-L1",
+    "boat-geom-42001-00010-v2-L2",
+    "boat-geom-42001-00011-v1-L0",
+    "boat-geom-42001-00011-v1-L1",
+    "boat-geom-42001-00011-v1-L2",
+    "boat-geom-42001-00011-v2-L0",
+    "boat-geom-42001-00011-v2-L1",
+    "boat-geom-42001-00011-v2-L2",
+    "boat-geom-42001-00012-v1-L0",
+    "boat-geom-42001-00012-v1-L1",
+    "boat-geom-42001-00012-v1-L2",
+    "boat-geom-42001-00012-v2-L0",
+    "boat-geom-42001-00012-v2-L1",
+    "boat-geom-42001-00012-v2-L2"
+  ],
+  "settings_unchanged": {
+    "B2": {
+      "model": "gpt-6-astra",
+      "effort": "high",
+      "tools": true,
+      "quality_retry": false
+    },
+    "B4": "full-crane-v2/deterministic-zero-model-closed-template",
+    "timeout_s": 300,
+    "prompt": {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/marine_full_b2_reuse_prompt_v2.txt",
+      "sha256": "2f16f5b93e3f867eebbef684cc20ad46a301ae67107758579bb86c34ceb69f7c"
+    },
+    "max_workers": 2
+  },
+  "change": "Credential-safe decoded JSON traces/final returns, exception serialization and partial timeout trace retention; same original isolation/auth/source/evidence/prompt/model/tool/deadline interface. Original sources remain immutable.",
+  "quality_retries": 0,
+  "reissued_entries": [],
+  "confirmation_n": 0,
+  "replication_n": 0,
+  "alpha_consumed": 0
+}

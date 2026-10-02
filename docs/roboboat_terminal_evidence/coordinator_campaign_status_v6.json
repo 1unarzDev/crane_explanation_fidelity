@@ -1,0 +1,89 @@
+{
+  "schema": "roboboat-development-status-amendment/v6",
+  "as_of_utc": "2026-10-01T04:58:45.903848+00:00",
+  "primary_endpoint": "complete supported diagnostic answers",
+  "annotation_user_preference": "model judges with complete source audits",
+  "confirmation_frozen": false,
+  "confirmation_n": 0,
+  "replication_n": 0,
+  "land_n_added": 0,
+  "study_complete": false,
+  "inference": false,
+  "population42001": {
+    "capture_session_terminal": 69446,
+    "valid_new_recordings": 16,
+    "complete_geometry_pairs": 7,
+    "retained_physical_technical_failures": 8,
+    "historical_valid_development_recordings": 7,
+    "L2_sampled_task_counts": {
+      "unknown": 10,
+      "false": 6
+    },
+    "contact_evidence": "unknown in all16 recordings; observed violations can falsify the dwell despite contact uncertainty"
+  },
+  "populations_available": {
+    "42003": {
+      "independent_geometries": 24,
+      "variants": 48,
+      "generator_version": 1,
+      "status": "UNEXECUTED"
+    },
+    "42004": {
+      "independent_geometries": 24,
+      "variants": 48,
+      "generator_version": 2,
+      "status": "COLLECTING",
+      "session": 58634,
+      "first_fresh_row": "VALID_DEVELOPMENT"
+    }
+  },
+  "response_banks": {
+    "001": {
+      "B4": 18,
+      "B2_valid": 14,
+      "B2_failures": 4,
+      "status": "COMPLETE"
+    },
+    "002": {
+      "B4": 15,
+      "B2_valid": 14,
+      "B2_failures": 1,
+      "status": "COMPLETE",
+      "terminal_session": 76822
+    },
+    "003": {
+      "conditions": 15,
+      "session": 30700,
+      "status": "RUNNING",
+      "transport": "decoded-safe-v3",
+      "original_response_deadline_s": 300
+    }
+  },
+  "annotation": {
+    "001": {
+      "session": 29517,
+      "answers": 32,
+      "passes": 2,
+      "deadline_s": 300,
+      "status": "RUNNING_WITH_FAILURES_RETAINED_NO_RETRIES"
+    },
+    "002": {
+      "session": 44397,
+      "answers": 29,
+      "passes": 2,
+      "deadline_s": 600,
+      "status": "RUNNING_AFTER_INDEPENDENT_SOURCE_REVIEW",
+      "declaration": "populations/development-42001/full-inventory-snapshot-v3-002.json"
+    }
+  },
+  "security": {
+    "prior300s_source_bytes_unchanged": true,
+    "fresh600s_transport": "decoded final/trace success and timeout redaction",
+    "last_decoded_artifact_scan_hits": 0,
+    "scanned_json_artifacts": 2675,
+    "new_transport_tests": 18
+  },
+  "source_review": "fresh_annotation_600s_engineering_review_v1.json; all historical300s Python bindings unchanged, engineering pass only",
+  "power_interval_candidate": "FIXED_N_INTERVAL_DESIGN_V1.md; simulation-only inversion candidate, five tests, independent review pending; no test/N selected",
+  "next": "Collect broader42004 routes, finish all immutable response and extraction attempts, audit complete source inventories/citations, improve annotation reliability and quantify paired development effects before prospective power/freeze."
+}

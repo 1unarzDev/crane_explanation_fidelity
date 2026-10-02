@@ -1,0 +1,464 @@
+{
+  "scope": "DEVELOPMENT_SYNTHETIC_ONLY",
+  "cases": [
+    {
+      "case_id": "profile-q01",
+      "reference": {
+        "visible_facts": [
+          "Synchronized streams show commands 0.25 m/s; every measured planar speed in the 5..9 s interval is 0.03 m/s. Five pre-interval healthy windows have median speed 0.25 m/s. The fixed discrepancy test (response ratio <=0.2) triggers. No contact, actuator, traction or intervention identity is visible."
+        ],
+        "required_units": {
+          "discrepancy": "Sustained low measured response relative to delivered commands.",
+          "limitation": "Physical cause is unestablished."
+        },
+        "robot_visible_evidence": {
+          "configuration_id": "synthetic-profile-low"
+        }
+      },
+      "response_text": "Measured response was low relative to the commands. The physical cause is unestablished.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "discrepancy",
+          "limitation"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "profile-q02",
+      "reference": {
+        "visible_facts": [
+          "Synchronized streams show commands 0.25 m/s; every measured planar speed in the 5..9 s interval is 0.03 m/s. Five pre-interval healthy windows have median speed 0.25 m/s. The fixed discrepancy test (response ratio <=0.2) triggers. No contact, actuator, traction or intervention identity is visible."
+        ],
+        "required_units": {
+          "discrepancy": "Sustained low measured response relative to delivered commands.",
+          "limitation": "Physical cause is unestablished."
+        },
+        "robot_visible_evidence": {
+          "configuration_id": "synthetic-profile-low"
+        }
+      },
+      "response_text": "The robot was mechanically immobilized by a stuck drivetrain, despite commands.",
+      "expected": {
+        "primary_failure": true,
+        "communicated_unit_ids": [],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "profile-q03",
+      "reference": {
+        "visible_facts": [
+          "Synchronized commands remain 0.25 m/s during 5..9 s. Window median measured speed is 0 m/s, but valid samples show brief measured motion up to0.25 m/s in every window. The fixed discrepancy test triggers. No contact, actuator, traction or intervention identity is visible."
+        ],
+        "required_units": {
+          "discrepancy": "Sustained low window-median measured response despite active commands.",
+          "limitation": "Physical cause is unestablished."
+        },
+        "robot_visible_evidence": {
+          "configuration_id": "synthetic-profile-intermittent"
+        }
+      },
+      "response_text": "Window-median measured response remained near zero despite active commands; brief motion samples are present. The physical cause is unestablished.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "discrepancy",
+          "limitation"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "profile-q04",
+      "reference": {
+        "visible_facts": [
+          "Synchronized commands remain 0.25 m/s during 5..9 s. Window median measured speed is 0 m/s, but valid samples show brief measured motion up to0.25 m/s in every window. The fixed discrepancy test triggers. No contact, actuator, traction or intervention identity is visible."
+        ],
+        "required_units": {
+          "discrepancy": "Sustained low window-median measured response despite active commands.",
+          "limitation": "Physical cause is unestablished."
+        },
+        "robot_visible_evidence": {
+          "configuration_id": "synthetic-profile-intermittent"
+        }
+      },
+      "response_text": "There was no measured motion whatsoever: the robot was completely immobilized throughout the interval.",
+      "expected": {
+        "primary_failure": true,
+        "communicated_unit_ids": [],
+        "factual_numeric_error": true
+      }
+    },
+    {
+      "case_id": "profile-q05",
+      "reference": {
+        "visible_facts": [
+          "Healthy baseline median speed0.25 m/s. During5..9 s command0.25 m/s, measured0.03 m/s. During10..11 s command0.25 m/s, measured0.15 m/s. The fixed recovery criterion is measured speed>=0.05 m/s and response ratio>0.2; it triggers. Later measured speed remains lower than baseline and command. No physical cause or recovery causation is established."
+        ],
+        "required_units": {
+          "recovery": "Measured response increased above the fixed recovery threshold in a later interval; full normalization is not implied.",
+          "limitation": "Physical cause is unestablished."
+        },
+        "robot_visible_evidence": {
+          "configuration_id": "synthetic-profile-partial"
+        }
+      },
+      "response_text": "Measured response recovered above the declared threshold to0.15 m/s, still below the healthy baseline. The physical cause is unestablished.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "recovery",
+          "limitation"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "profile-q06",
+      "reference": {
+        "visible_facts": [
+          "Healthy baseline median speed0.25 m/s. During5..9 s command0.25 m/s, measured0.03 m/s. During10..11 s command0.25 m/s, measured0.15 m/s. The fixed recovery criterion is measured speed>=0.05 m/s and response ratio>0.2; it triggers. Later measured speed remains lower than baseline and command. No physical cause or recovery causation is established."
+        ],
+        "required_units": {
+          "recovery": "Measured response increased above the fixed recovery threshold in a later interval; full normalization is not implied.",
+          "limitation": "Physical cause is unestablished."
+        },
+        "robot_visible_evidence": {
+          "configuration_id": "synthetic-profile-partial"
+        }
+      },
+      "response_text": "The response fully normalized: measured motion resumed matching the0.25 m/s commands.",
+      "expected": {
+        "primary_failure": true,
+        "communicated_unit_ids": [],
+        "factual_numeric_error": true
+      }
+    },
+    {
+      "case_id": "profile-q07",
+      "reference": {
+        "visible_facts": [
+          "Healthy baseline median speed0.25 m/s. During5..9 s command0.25 m/s, measured0.03 m/s. During10..11 s command0.25 m/s, measured0.15 m/s. The fixed recovery criterion is measured speed>=0.05 m/s and response ratio>0.2; it triggers. Later measured speed remains lower than baseline and command. No physical cause or recovery causation is established."
+        ],
+        "required_units": {
+          "recovery": "Measured response increased above the fixed recovery threshold in a later interval; full normalization is not implied.",
+          "limitation": "Physical cause is unestablished."
+        },
+        "robot_visible_evidence": {
+          "configuration_id": "synthetic-profile-partial"
+        }
+      },
+      "response_text": "A later0.15 m/s response exceeded the fixed recovery threshold. This does not establish why it improved.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "recovery",
+          "limitation"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "profile-q08",
+      "reference": {
+        "visible_facts": [
+          "Healthy baseline median speed0.25 m/s. During5..9 s command0.25 m/s, measured0.03 m/s. During10..11 s command0.25 m/s, measured0.25 m/s. The fixed recovery criterion triggers. No physical cause or recovery causation is established."
+        ],
+        "required_units": {
+          "recovery": "Later measured response recovered.",
+          "limitation": "Physical cause is unestablished."
+        },
+        "robot_visible_evidence": {
+          "configuration_id": "synthetic-profile-full"
+        }
+      },
+      "response_text": "Measured motion recovered to0.25 m/s, matching the later commands. The physical cause is unestablished.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "recovery",
+          "limitation"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "scope-low-E0-claim",
+      "reference": {
+        "robot_visible_evidence": {
+          "configuration_id": "scope-low"
+        },
+        "visible_facts": [
+          "THIS CASE has only an accepted navigation goal ending aborted with Nav2 error105. No commands or measured-motion observations are available in THIS CASE."
+        ],
+        "required_units": {
+          "outcome": "The navigation goal aborted."
+        }
+      },
+      "response_text": "A sustained command\u2013measured-motion discrepancy occurred. The navigation goal aborted.",
+      "expected": {
+        "primary_failure": true,
+        "communicated_unit_ids": [
+          "outcome"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "scope-low-E3-claim",
+      "reference": {
+        "robot_visible_evidence": {
+          "configuration_id": "scope-low"
+        },
+        "visible_facts": [
+          "THIS CASE has the same aborted result plus valid synchronized streams: commands0.25 m/s and measured speed0.03 m/s for5..9 s, following five healthy0.25 m/s windows. The registered sustained discrepancy test triggers. No physical cause is established."
+        ],
+        "required_units": {
+          "outcome": "The navigation goal aborted.",
+          "discrepancy": "A sustained command\u2013measured-motion discrepancy occurred."
+        }
+      },
+      "response_text": "A sustained command\u2013measured-motion discrepancy occurred. The navigation goal aborted.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "outcome",
+          "discrepancy"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "scope-low-E0-safe",
+      "reference": {
+        "robot_visible_evidence": {
+          "configuration_id": "scope-low"
+        },
+        "visible_facts": [
+          "THIS CASE has only an accepted navigation goal ending aborted with Nav2 error105. No commands or measured-motion observations are available in THIS CASE."
+        ],
+        "required_units": {
+          "outcome": "The navigation goal aborted."
+        }
+      },
+      "response_text": "The navigation goal aborted with a reported software progress failure. This case provides no command or motion data, so a command\u2013motion discrepancy is not established by its available evidence.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "outcome"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "scope-recovery-E1-claim",
+      "reference": {
+        "robot_visible_evidence": {
+          "configuration_id": "scope-recovery"
+        },
+        "visible_facts": [
+          "THIS CASE has action success and a source-qualified Wait recovery invocation. No command or odometry observations are available in THIS CASE."
+        ],
+        "required_units": {
+          "outcome": "The goal succeeded.",
+          "software_recovery": "A source-qualified Wait recovery was invoked."
+        }
+      },
+      "response_text": "A sustained command\u2013measured-motion discrepancy occurred, followed by measured response recovery. Wait recovery was invoked and the goal succeeded.",
+      "expected": {
+        "primary_failure": true,
+        "communicated_unit_ids": [
+          "outcome",
+          "software_recovery"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "scope-recovery-E3-claim",
+      "reference": {
+        "robot_visible_evidence": {
+          "configuration_id": "scope-recovery"
+        },
+        "visible_facts": [
+          "THIS CASE has success and the same source-qualified Wait invocation, plus valid synchronized streams: commands0.25 m/s, measured speed0.03 m/s for5..9 s after healthy0.25 m/s baseline; later measured response0.25 m/s in10..11 s. Sustained discrepancy and measured recovery are supported; their physical cause and recovery causation are not established."
+        ],
+        "required_units": {
+          "outcome": "The goal succeeded.",
+          "software_recovery": "A source-qualified Wait recovery was invoked.",
+          "discrepancy": "A sustained command\u2013measured-motion discrepancy occurred.",
+          "measured_recovery": "Measured response recovered in a later interval."
+        }
+      },
+      "response_text": "A sustained command\u2013measured-motion discrepancy occurred, followed by measured response recovery. Wait recovery was invoked and the goal succeeded.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "outcome",
+          "software_recovery",
+          "discrepancy",
+          "measured_recovery"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "scope-recovery-E1-safe",
+      "reference": {
+        "robot_visible_evidence": {
+          "configuration_id": "scope-recovery"
+        },
+        "visible_facts": [
+          "THIS CASE has action success and a source-qualified Wait recovery invocation. No command or odometry observations are available in THIS CASE."
+        ],
+        "required_units": {
+          "outcome": "The goal succeeded.",
+          "software_recovery": "A source-qualified Wait recovery was invoked."
+        }
+      },
+      "response_text": "The goal succeeded and Wait recovery was invoked. This case has no measured-motion evidence, so it does not establish physical response recovery.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "outcome",
+          "software_recovery"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "qualified-q01",
+      "reference": {
+        "visible_facts": [
+          "Synchronized delivered commands and motion establish a transient command-motion discrepancy and later measured recovery. One FollowPath failure, Wait and retry are recorded; eventual NavigateToPose succeeds with code0. Source Nav2 config enables a progress checker with a10-second threshold. No FollowPath failure code or proof of checker activation or odometry consumption is visible."
+        ],
+        "robot_visible_evidence": {
+          "configuration_id": "qualified-checker"
+        },
+        "required_units": {
+          "limitation": "The specific mechanism or successful resolution is not established."
+        }
+      },
+      "response_text": "The transient command-motion discrepancy is consistent with a temporary progress stall under the configured checker. The evidence does not establish that this checker triggered, why motion stopped, or whether Nav2 consumed the delivered odometry.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "limitation"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "qualified-q02",
+      "reference": {
+        "visible_facts": [
+          "Synchronized delivered commands and motion establish a transient command-motion discrepancy and later measured recovery. One FollowPath failure, Wait and retry are recorded; eventual NavigateToPose succeeds with code0. Source Nav2 config enables a progress checker with a10-second threshold. No FollowPath failure code or proof of checker activation or odometry consumption is visible."
+        ],
+        "robot_visible_evidence": {
+          "configuration_id": "qualified-checker"
+        },
+        "required_units": {
+          "limitation": "The specific mechanism or successful resolution is not established."
+        }
+      },
+      "response_text": "The configured progress checker triggered the FollowPath failure. Its specific operation is not established by the retained evidence.",
+      "expected": {
+        "primary_failure": true,
+        "communicated_unit_ids": [
+          "limitation"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "qualified-q03",
+      "reference": {
+        "visible_facts": [
+          "Synchronized delivered commands and motion establish a transient command-motion discrepancy and later measured recovery. One FollowPath failure, Wait and retry are recorded; eventual NavigateToPose succeeds with code0. Source Nav2 config enables a progress checker with a10-second threshold. No FollowPath failure code or proof of checker activation or odometry consumption is visible."
+        ],
+        "robot_visible_evidence": {
+          "configuration_id": "qualified-checker"
+        },
+        "required_units": {
+          "limitation": "The specific mechanism or successful resolution is not established."
+        }
+      },
+      "response_text": "The most likely explanation is that the configured progress checker triggered. Its specific operation is not established by the retained evidence.",
+      "expected": {
+        "primary_failure": true,
+        "communicated_unit_ids": [
+          "limitation"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "qualified-q04",
+      "reference": {
+        "visible_facts": [
+          "The retained goal-scoped trace records two FollowPath attempts, one failure, and one source-qualified Wait recovery invocation under the retained tree. NavigateToPose remains active at cutoff; no terminal result or FollowPath success transition is retained. No odometry is visible. The trace supports recovery handling and retry, not successful resolution or measured recovery."
+        ],
+        "robot_visible_evidence": {
+          "configuration_id": "qualified-retry"
+        },
+        "required_units": {
+          "limitation": "The specific mechanism or successful resolution is not established."
+        }
+      },
+      "response_text": "The trace shows a recovered FollowPath failure in the sense of recovery handling and retry. Navigation remains active at cutoff; successful resolution and eventual outcome are not established.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "limitation"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "qualified-q05",
+      "reference": {
+        "visible_facts": [
+          "The retained goal-scoped trace records two FollowPath attempts, one failure, and one source-qualified Wait recovery invocation under the retained tree. NavigateToPose remains active at cutoff; no terminal result or FollowPath success transition is retained. No odometry is visible. The trace supports recovery handling and retry, not successful resolution or measured recovery."
+        ],
+        "robot_visible_evidence": {
+          "configuration_id": "qualified-retry"
+        },
+        "required_units": {
+          "limitation": "The specific mechanism or successful resolution is not established."
+        }
+      },
+      "response_text": "The controller successfully resolved its failure and restored normal operation. Successful resolution and eventual outcome are not established by this evidence.",
+      "expected": {
+        "primary_failure": true,
+        "communicated_unit_ids": [
+          "limitation"
+        ],
+        "factual_numeric_error": false
+      }
+    },
+    {
+      "case_id": "qualified-q06",
+      "reference": {
+        "visible_facts": [
+          "The retained goal-scoped trace records two FollowPath attempts, one failure, and one source-qualified Wait recovery invocation under the retained tree. NavigateToPose remains active at cutoff; no terminal result or FollowPath success transition is retained. No odometry is visible. The trace supports recovery handling and retry, not successful resolution or measured recovery."
+        ],
+        "robot_visible_evidence": {
+          "configuration_id": "qualified-retry"
+        },
+        "required_units": {
+          "limitation": "The specific mechanism or successful resolution is not established."
+        }
+      },
+      "response_text": "Measured motion recovered after Wait. Successful resolution and eventual outcome are not established by this evidence.",
+      "expected": {
+        "primary_failure": true,
+        "communicated_unit_ids": [
+          "limitation"
+        ],
+        "factual_numeric_error": false
+      }
+    }
+  ]
+}

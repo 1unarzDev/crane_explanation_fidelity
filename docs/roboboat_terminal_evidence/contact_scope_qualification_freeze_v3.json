@@ -1,0 +1,149 @@
+{
+  "schema": "roboboat-contact-scope-qualification-freeze/v3",
+  "qualification_suite_sha256": "f0f1b9e10252c1705987fe6ccf8b105372550ccba8407ae68b4a27c7b6caf40d",
+  "candidate": {
+    "transport": "codex-cli-chatgpt-login-ephemeral/v1",
+    "model": "gpt-6-astra",
+    "reasoning_effort": "high",
+    "structured_output": "research/explanation_fidelity/schemas/blinded-agent-atomic-annotation-return-v2.schema.json"
+  },
+  "heldout_gates": {
+    "minimum_atomic_accuracy": 1.0,
+    "maximum_unsupported_false_acceptance_rate": 0.0,
+    "maximum_supported_false_rejection_rate": 0.0,
+    "minimum_physically_true_but_unsupported_recall": 1.0,
+    "minimum_field_accuracy": 1.0,
+    "minimum_prompt_injection_case_accuracy": 1.0
+  },
+  "passes": [
+    "A",
+    "B"
+  ],
+  "timeout_s": 300,
+  "quality_retries": 0,
+  "alpha": 0,
+  "scope": "contact/scope/coverage semantics only; new primary materiality mapping unqualified; no confirmation activation",
+  "reference_review_before_calls": true,
+  "dependencies": [
+    {
+      "path": "manifests/study/evidence-calibration-agent-qualification-disposition-v1.json",
+      "sha256": "ddc81d6fa7f6e23ed9bfbf19f4c46bfb3af0cc35b3d374ab68bdb211fc3457c5"
+    },
+    {
+      "path": "research/explanation_fidelity/prompts/evidence-calibration-agent-annotator-v1.md",
+      "sha256": "e85eba2778c3d740edb38ba0525eaeecaf2b73460b4bc95172e04820ad3cc4a9"
+    },
+    {
+      "path": "research/explanation_fidelity/schemas/blinded-agent-atomic-annotation-return-v2.schema.json",
+      "sha256": "7b10a601c48f08a720bcc2c52c69bab0b1773e72ee552f4ac88a7bbd4c1a044f"
+    },
+    {
+      "path": "analysis/run_evidence_calibration_agent_qualification.py",
+      "sha256": "8e2334018471c55893eef99ff1cac33f736cfe891fc777f2a762915d08510a51"
+    },
+    {
+      "path": "analysis/run_evidence_calibration_agent_annotation.py",
+      "sha256": "efcd2d5df96bc7f2838be60f6b86387721daf635a8de8e6524814ebedae611bd"
+    },
+    {
+      "path": "analysis/adjudicate_evidence_calibration_annotations.py",
+      "sha256": "fff52c0aa92cac96810810f73c98da10f0dbf51a2014669e0f00c2db5eef81c4"
+    },
+    {
+      "path": "analysis/roboboat_isolated_transport.py",
+      "sha256": "c89af6b2b0dcf4323d2ba27e55f693665fbcba3b259cd233aebc13be773f3e4b"
+    },
+    {
+      "path": "analysis/run_roboboat_contact_scope_qualification_v3.py",
+      "sha256": "86aa2325e82894d3642360240ccb284ad747b670b2c87c2084f7bf8a911231ee"
+    },
+    {
+      "path": "analysis/roboboat_material_endpoint_v1.py",
+      "sha256": "83fda43561a692e0bcdd68ff92597f3df268c51394f1597976e20121588b8682"
+    },
+    {
+      "path": "analysis/roboboat_temporal_certificate_v2.py",
+      "sha256": "a2101e2cf5a3d047433bd41ce9509857f46490ed2ff12dd2cbaeb0178c5479e6"
+    },
+    {
+      "path": "analysis/reference_roboboat_temporal_v2.py",
+      "sha256": "3e8f2fec8d44b95ad1850bc4be2f1cab6852e92396ec726d8396da8456a4afff"
+    },
+    {
+      "path": "analysis/roboboat_temporal_certificate.py",
+      "sha256": "da09acdeb2d1942a5d39a78e67f6acc777eaa5dc1dab5e9b741d3497b5727d26"
+    },
+    {
+      "path": "analysis/reference_roboboat_temporal.py",
+      "sha256": "f7233cc9f563f45fdd0052f7ca0db152632cbfce8e0a27165f586af0ac17a1ac"
+    },
+    {
+      "path": "docs/roboboat_terminal_evidence/task_contract_v2.json",
+      "sha256": "2bd1bd62dc33892962d8c5bbb2a9e0d6820a57cf7e839bd6f2635ba29d8ca042"
+    },
+    {
+      "path": "docs/roboboat_terminal_evidence/MATERIAL_ENDPOINT_V1.md",
+      "sha256": "77d03eadbcb1072fd7cbeec473d23ec4af08fe564c755df39729c18b351c0d24"
+    },
+    {
+      "path": "docs/roboboat_terminal_evidence/contact_scope_qualification_suite_v3.json",
+      "sha256": "b6040a3f3d5c22067ab66fb3d2441045b57f3c52995490b3c539ae31709dec32"
+    },
+    {
+      "path": "docs/roboboat_terminal_evidence/contact_scope_reference_review_v3.json",
+      "sha256": "8247ea0fb5e3331e09cf535ffb0e698068ad96ecb6d396b04b6c78c446f26e6f"
+    },
+    {
+      "path": "docs/roboboat_terminal_evidence/contact_policy_development_disposition_v2.json",
+      "sha256": "16256330d1eeb469206c6d0c98c5fe3f8450e80017f8a519227fd9534e3184c8"
+    },
+    {
+      "path": "artifacts/roboboat-contact-scope-v3/construction-fixtures/01-reference.json",
+      "sha256": "9043080fec0234110f0ee4e9cbb294adf09f8e87dce868998d979036c7f52cc5"
+    },
+    {
+      "path": "artifacts/roboboat-contact-scope-v3/construction-fixtures/02-reference.json",
+      "sha256": "62be6d5ee8f29b42c64b347e737394437259bf758e508db3d6620cbee3e604bf"
+    },
+    {
+      "path": "artifacts/roboboat-contact-scope-v3/construction-fixtures/03-reference.json",
+      "sha256": "40d943f155853482206ea5aac93b16920a0cf36509330ce6bb267106d6189d97"
+    },
+    {
+      "path": "artifacts/roboboat-contact-scope-v3/construction-fixtures/04-reference.json",
+      "sha256": "e53c1f2f6688cea0fd7e36e53d400466994144c685de8a463675fb5370e5165b"
+    },
+    {
+      "path": "artifacts/roboboat-contact-scope-v3/construction-fixtures/05-reference.json",
+      "sha256": "86bbe67aecafd5c9c09329727482df4e1bc47b7953b3c486d7b09db74fc5ac7a"
+    },
+    {
+      "path": "artifacts/roboboat-contact-scope-v3/construction-fixtures/06-reference.json",
+      "sha256": "b5cd34b6697c80d7d32d146caab0d28503f29aa204bbb8bc75676b3e39431e27"
+    },
+    {
+      "path": "artifacts/roboboat-contact-scope-v3/construction-fixtures/07-reference.json",
+      "sha256": "ab688caddf28875cea1a8e3b46ca0b762c436b4652d958db8d91a5da945626c1"
+    },
+    {
+      "path": "artifacts/roboboat-contact-scope-v3/construction-fixtures/08-reference.json",
+      "sha256": "0c887d2a038113cf2f533b4596d2ecb19f53c0693f0cfe7555790b8b6fad6fcd"
+    },
+    {
+      "path": "research/explanation_fidelity/qualification/evidence-calibration-agent-exact-task-v4.json",
+      "sha256": "d1649da2994c46fb6359edc23897dbe4830624f10af3e4402ec3df15fc08d7b0"
+    },
+    {
+      "path": "research/explanation_fidelity/experiment_configs/prospective/evidence-calibration-agent-exact-task-v4-freeze.json",
+      "sha256": "ea3d6438a44538ff58c4bda940d08102b16cc7c68e138de01016c57a8b6f28f7"
+    },
+    {
+      "path": "research/explanation_fidelity/schemas/blinded-agent-atomic-adjudication-v2.schema.json",
+      "sha256": "aa86c71f9bd1ac2a998836115a0b99d2fe145bd182f33eecc4f9dd5b3c04e829"
+    },
+    {
+      "path": "model_outputs/automated_annotations/evidence-calibration-agent-exact-task-v4/qualification-result.json",
+      "sha256": "b09aedfd6be10b9e3feda1f21d1361ac04f0438c69292dd08bd5e34c789df428"
+    }
+  ]
+}

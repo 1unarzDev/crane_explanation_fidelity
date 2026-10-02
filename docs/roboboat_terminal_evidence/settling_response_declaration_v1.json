@@ -1,0 +1,90 @@
+{
+  "schema": "roboboat-fixed-stopping-response-declaration/v1",
+  "disposition": "DEVELOPMENT_EXPLORATORY_NO_CONFIRMATORY_ALLOCATION",
+  "batches": [
+    "boat-terminal-settling-001",
+    "boat-terminal-settling-002"
+  ],
+  "evidence_levels": [
+    "L0",
+    "L1",
+    "L2"
+  ],
+  "method_sources": [
+    {
+      "path": "analysis/roboboat_temporal_certificate.py",
+      "sha256": "da09acdeb2d1942a5d39a78e67f6acc777eaa5dc1dab5e9b741d3497b5727d26"
+    },
+    {
+      "path": "analysis/roboboat_temporal_renderer_v2.py",
+      "sha256": "c9f9996d03cdaf35e6f2b6c14f636aebabec7abe4a8178f31c54ec771a55326f"
+    },
+    {
+      "path": "analysis/roboboat_temporal_renderer_v3.py",
+      "sha256": "78b99dc2ca1fa899dd3929e83c3d83caf07ac8f2d3e8f410e22c91a081e1e52e"
+    }
+  ],
+  "dependencies": [
+    {
+      "path": "analysis/run_roboboat_settling_responses.py",
+      "sha256": "791d6e6b05ea2d62d94d5d0b056ab7150bc2b3c2de048039af077135f829e17d"
+    },
+    {
+      "path": "analysis/build_roboboat_settling_batch.py",
+      "sha256": "1d606c7005b0d115b117cfc9d860cca41b2c9b517fbcf64969aeea25093a6416"
+    },
+    {
+      "path": "analysis/build_roboboat_terminal_batch.py",
+      "sha256": "98b3c22241aecf30a1ae42b8ad52a94b8df17b802aa9e7825802d8fcc36c8362"
+    },
+    {
+      "path": "analysis/reference_roboboat_temporal.py",
+      "sha256": "f7233cc9f563f45fdd0052f7ca0db152632cbfce8e0a27165f586af0ac17a1ac"
+    },
+    {
+      "path": "analysis/roboboat_isolated_transport.py",
+      "sha256": "c89af6b2b0dcf4323d2ba27e55f693665fbcba3b259cd233aebc13be773f3e4b"
+    },
+    {
+      "path": "analysis/run_roboboat_terminal_comparison.py",
+      "sha256": "9cf0a21d4018890a041534590b00b8a06e1a91927f8e5040ecdb1c9d2ab1a51f"
+    },
+    {
+      "path": "docs/roboboat_terminal_evidence/marine_b2_settling_prompt_v1.txt",
+      "sha256": "e858fb5f125f27742475f051101df6b7ce276dff6e97f05a33a24bc021b310c1"
+    },
+    {
+      "path": "docs/roboboat_terminal_evidence/settling_pilot_registry_v1.json",
+      "sha256": "34e26e01fa1ceda9c760cda95c0d19a0f85d6c6d4f2cec837f7e3b1a4082cbab"
+    },
+    {
+      "path": "docs/roboboat_terminal_evidence/task_contract_v1.json",
+      "sha256": "f4cb6a91dd5b00f1e913ca0e0f1d1e1e845c95ccfe336ee669b1549fe7e73049"
+    },
+    {
+      "path": "tests/test_roboboat_settling_batch.py",
+      "sha256": "fbb16870e69a66967e79bf275845ff1174a6acfe984ff5ec5078d9fd5dd948d4"
+    }
+  ],
+  "B2": {
+    "model": "gpt-6-sol",
+    "effort": "high",
+    "tools": true,
+    "quality_retry": false
+  },
+  "B4": {
+    "realization": "deterministic v3 candidate renderer",
+    "model_calls": 0
+  },
+  "fairness": "Same public task/configuration/evidence and executable certificate/renderers; B2 may inspect or reuse complete v3 renderer. No evaluator, original recording, answer keys or supplemental source paths mounted.",
+  "question": "Same completion/explanation question at all removal-only levels; no extra difficulty or exact-wording requirement.",
+  "annotation": "Responses retained first, then separately declared complete blind atomic extraction/review/current qualified support pipeline. Sentence inventories cannot substitute. No support label inferred from response completion.",
+  "endpoint": "Development feasibility and useful supported-outcome coverage only; confirmation materiality endpoint remains unqualified.",
+  "new_independent_cluster_n": 0,
+  "confirmation_n": 0,
+  "replication_n": 0,
+  "alpha_consumed": 0,
+  "original_method_bank_changed": false,
+  "maximum_concurrent_response_calls": 1,
+  "response_quality_retries": 0
+}

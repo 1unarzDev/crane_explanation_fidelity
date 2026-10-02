@@ -1,0 +1,135 @@
+{
+  "schema": "hexar-development-episode-runtime/v1",
+  "phase": "development_only",
+  "family_hidden": "charging",
+  "sampling_hidden": {
+    "profile": "home_top_room_clearance_v4_development",
+    "map_yaml_sha256": "084cab10306856e084b5de6063dcc4103fa9fa557c300b64778d40c0152415a2",
+    "map_pgm_sha256": "3a8c35199fb7a50ab905766a1f1f07832bf4b8627a68802e0c7ebc3f22251a2c",
+    "start_xy": [
+      -4.964999999999999,
+      1.125
+    ],
+    "start_yaw": 3.047746061821204,
+    "goal_xy": [
+      0.18500000000000227,
+      1.4749999999999996
+    ],
+    "goal_yaw": -2.603162877308695,
+    "candidate_start_n": 6597,
+    "candidate_goal_n": 2553,
+    "required_clearance_m": 0.6,
+    "distance_m": 5.161879502661798,
+    "sampling_bounds_xy": [
+      -6,
+      1.2,
+      -0.5,
+      2.0
+    ]
+  },
+  "measured_reset_error_m": 1.5269063911553844e-05,
+  "reset_measurements_hidden": [
+    {
+      "x": -4.964996439085067,
+      "y": 1.1249999527647052,
+      "z": -0.0010553721682406147,
+      "yaw_rad": 3.047745689243145,
+      "quaternion_xyzw": [
+        -2.249057667636887e-05,
+        3.399800136151307e-06,
+        0.9988992951338678,
+        0.046906264652790644
+      ],
+      "error_m": 3.5612282045194566e-06,
+      "heading_error_rad": 3.725780590713157e-07,
+      "position_in_tolerance": true,
+      "heading_in_tolerance": true,
+      "in_tolerance": true,
+      "source": "Gazebo GetEntityState world pose; reset only, not goal arrival"
+    },
+    {
+      "x": -4.964984734828936,
+      "y": 1.1249999527081882,
+      "z": -0.0014742611071908718,
+      "yaw_rad": 3.047745689165153,
+      "quaternion_xyzw": [
+        -0.00018764977780959737,
+        3.390481538766366e-05,
+        0.998899277009702,
+        0.046906268531180455
+      ],
+      "error_m": 1.5265244318529445e-05,
+      "heading_error_rad": 3.726560513506172e-07,
+      "position_in_tolerance": true,
+      "heading_in_tolerance": true,
+      "in_tolerance": true,
+      "source": "Gazebo GetEntityState world pose; reset only, not goal arrival"
+    },
+    {
+      "x": -4.96498473101,
+      "y": 1.1249999524904442,
+      "z": -0.0014757889620575226,
+      "yaw_rad": 3.047745697419916,
+      "quaternion_xyzw": [
+        -0.00025564229472060354,
+        5.759473566652554e-05,
+        0.9988992607380032,
+        0.046906270656859414
+      ],
+      "error_m": 1.5269063911553844e-05,
+      "heading_error_rad": 3.644012882553227e-07,
+      "position_in_tolerance": true,
+      "heading_in_tolerance": true,
+      "in_tolerance": true,
+      "source": "Gazebo GetEntityState world pose; reset only, not goal arrival"
+    }
+  ],
+  "measured_reset_heading_error_rad": 3.644012882553227e-07,
+  "intervention_observations_hidden": [],
+  "dynamic_trajectory_hidden": null,
+  "indicator_consumers_hidden": {
+    "/power/is_charging": [
+      {
+        "node_name": "rosbag2_recorder",
+        "node_namespace": "/",
+        "topic_type": "std_msgs/msg/Bool"
+      },
+      {
+        "node_name": "twist_mux",
+        "node_namespace": "/",
+        "topic_type": "std_msgs/msg/Bool"
+      }
+    ],
+    "/joy_priority": [
+      {
+        "node_name": "rosbag2_recorder",
+        "node_namespace": "/",
+        "topic_type": "std_msgs/msg/Bool"
+      },
+      {
+        "node_name": "twist_mux",
+        "node_namespace": "/",
+        "topic_type": "std_msgs/msg/Bool"
+      }
+    ]
+  },
+  "indicator_prelude_publications_per_topic": 3,
+  "localization_parameters_accepted": [],
+  "localization_parameters_observed_hidden": [],
+  "nomotion_update_responses": 0,
+  "seed_hidden": 1671259000,
+  "goal_hidden": [
+    0.18500000000000227,
+    1.4749999999999996
+  ],
+  "accepted": true,
+  "terminal_action_status": 5,
+  "timeout": true,
+  "localization_intervention_applied": false,
+  "dynamic_move_requests": 0,
+  "dynamic_moves_confirmed_success": 0,
+  "dynamic_moves_confirmed_failure": 0,
+  "dynamic_moves_unresolved": 0,
+  "semantic_outputs_generated": false,
+  "qualification_complete": false
+}

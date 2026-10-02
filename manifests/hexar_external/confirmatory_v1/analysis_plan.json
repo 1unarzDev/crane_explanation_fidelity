@@ -1,0 +1,59 @@
+{
+  "schema": "hexar-analysis-plan/v1",
+  "status": "CANDIDATE",
+  "alpha": 0.01,
+  "direction": "HX-CONTRACT success / HX-PROMPT failure favorable",
+  "null": "CRANE no better on frozen recording endpoint",
+  "alternative": "CRANE superior",
+  "test": "fixed-N uniform paired mixture; exact rational E(0)>=100, conservative one-sided p<=.01",
+  "primary_procedure": "fixed_n_uniform_paired_mixture",
+  "selection_document": "docs/hexar_external/confirmatory_v1/PROCEDURE_SELECTION.md",
+  "selection_document_sha256": "f1916c3aa24c3c5f454e5c576ccc3dc08a7e4e076e48ecbc2f4b6efb1db7f369",
+  "assumptions": "independent episode pairs, arbitrary fixed-family mean/variance heterogeneity permitted; overall average expected prompt-minus-contract failure difference <=0 under null; no common discordance q assumption",
+  "assumption_justification": null,
+  "interval_assumption_justification": null,
+  "effect": "prompt failure minus contract failure risk difference",
+  "intervals": "invert same uniform paired mixture with directed Decimal bounds for 99% lower and sign-reversed 99% upper; joint >=98% coverage",
+  "family_sensitivity": "all six four-cell counts, family effects and leave-one-family-out effects; descriptive, no family alpha",
+  "secondary": [
+    "useful supported answer rate",
+    "required-unit coverage",
+    "unsupported material",
+    "physical-cause flags",
+    "required-unit recall",
+    "answer length",
+    "flexibility",
+    "deterministic-template dependence",
+    "runtime/cost"
+  ],
+  "no_statistic_selection": true,
+  "no_test_sidedness_switch": true,
+  "mixture_density": "uniform",
+  "mixture_support": [
+    0,
+    1
+  ],
+  "procedure_implementation": {
+    "path": "analysis/hexar_external/confirmatory_v1/mixture_interval_v3.py",
+    "sha256": "4e4988646962ede1cf9537ac79f5ba12db4920d380ade07e25e02b2f16e27bcd"
+  },
+  "numerical_engine_amendment": {
+    "status": "CANDIDATE_ARITHMETIC_QUALIFIED_NOT_SCIENTIFIC_FREEZE",
+    "document": {
+      "path": "docs/hexar_external/confirmatory_v1/NUMERICAL_ANALYSIS_ADOPTION.md",
+      "sha256": "e9e28bff631e918227a7928233eb84f2f41186ebc101f0fe6e9a4293782929e5"
+    },
+    "runtime_screen": {
+      "path": "manifests/hexar_external/confirmatory_v1/analysis_runtime_screen_v3/report.json",
+      "sha256": "93f3e5a0baa7a435b752ac2dc3f5842b74a2a7e6cbef03df8cbb913ce70c60ed"
+    },
+    "unchanged_exact_primary_decision": true,
+    "unchanged_interval_construction": true,
+    "source_hashes": {
+      "analysis/hexar_external/confirmatory_v1/mixture_statistics.py": "695cfe142a46dec6a8806380e640f2daef2b6d354049746d3ed93f214e91625e",
+      "analysis/hexar_external/confirmatory_v1/mixture_interval_v2.py": "b113e01fd7c2ac115b023a3901623254937c8c6776062ba4c325db9c46835282",
+      "analysis/hexar_external/confirmatory_v1/mixture_interval_v3.py": "4e4988646962ede1cf9537ac79f5ba12db4920d380ade07e25e02b2f16e27bcd",
+      "analysis/hexar_external/confirmatory_v1/analyze.py": "d3436f8b14c66c1dc32c2df25c5cbe9211943d3e3b673a23732b2fca15b99f0c"
+    }
+  }
+}

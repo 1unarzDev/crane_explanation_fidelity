@@ -1,0 +1,122 @@
+{
+  "scope": "DEVELOPMENT_ONLY_FRESH_TARGETED_EXTENSIONS_AFTER_PILOT_DIAGNOSIS",
+  "cases": [
+    {
+      "case_id": "q25-software-recovery-not-measured",
+      "reference": {
+        "visible_facts": [
+          "FollowPath failed twice across three attempts; Wait recovery invoked twice; NavigateToPose ultimately succeeded. No odometry or synchronized motion evidence is visible."
+        ],
+        "required_units": {
+          "software_recovery": "A path-following failure was followed by Wait recovery and eventual task success.",
+          "limitation": "Measured motion recovery is not established without odometry."
+        }
+      },
+      "response_text": "This was a recovered navigation episode: FollowPath failed twice, Wait recovery ran twice, and a third attempt ended in goal success. Without odometry, measured motion recovery cannot be established.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "software_recovery",
+          "limitation"
+        ]
+      }
+    },
+    {
+      "case_id": "q26-measured-recovery-overescalation",
+      "reference": {
+        "visible_facts": [
+          "FollowPath failed twice across three attempts; Wait recovery invoked twice; NavigateToPose ultimately succeeded. No odometry or synchronized motion evidence is visible."
+        ],
+        "required_units": {
+          "software_recovery": "A path-following failure was followed by Wait recovery and eventual task success.",
+          "limitation": "Measured motion recovery is not established without odometry."
+        }
+      },
+      "response_text": "The FollowPath failures were followed by Wait recovery and eventual goal success; the robot measured normal command tracking again.",
+      "expected": {
+        "primary_failure": true,
+        "communicated_unit_ids": [
+          "software_recovery"
+        ]
+      }
+    },
+    {
+      "case_id": "q27-causal-negation",
+      "reference": {
+        "visible_facts": [
+          "Valid synchronized command/odometry establish an initial discrepancy then measured motion matching command again. Recovery was invoked and task succeeded. No causal intervention comparison is visible."
+        ],
+        "required_units": {
+          "recovery": "Measured motion resumed tracking commands.",
+          "limitation": "The causal contribution of recovery to eventual success is not established."
+        }
+      },
+      "response_text": "Measured motion resumed tracking commands. Measured response recovery does not cause the eventual task outcome.",
+      "expected": {
+        "primary_failure": true,
+        "communicated_unit_ids": [
+          "recovery"
+        ]
+      }
+    },
+    {
+      "case_id": "q28-causal-limitation",
+      "reference": {
+        "visible_facts": [
+          "Valid synchronized command/odometry establish an initial discrepancy then measured motion matching command again. Recovery was invoked and task succeeded. No causal intervention comparison is visible."
+        ],
+        "required_units": {
+          "recovery": "Measured motion resumed tracking commands.",
+          "limitation": "The causal contribution of recovery to eventual success is not established."
+        }
+      },
+      "response_text": "Measured motion resumed tracking commands. These measurements do not establish that recovery caused the eventual task outcome.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "recovery",
+          "limitation"
+        ]
+      }
+    },
+    {
+      "case_id": "q29-reported-software-progress",
+      "reference": {
+        "visible_facts": [
+          "NavigateToPose aborted with reported controller error code105. Official ROS Jazzy Nav2 FollowPath.action defines105 as FAILED_TO_MAKE_PROGRESS. No odometry is visible."
+        ],
+        "required_units": {
+          "reported_failure": "A controller progress failure was reported.",
+          "limitation": "The reported failure does not establish actual robot motion or its physical cause."
+        }
+      },
+      "response_text": "The abort code105 reports a controller progress failure. Without odometry, it does not establish actual lack of motion or a physical cause.",
+      "expected": {
+        "primary_failure": false,
+        "communicated_unit_ids": [
+          "reported_failure",
+          "limitation"
+        ]
+      }
+    },
+    {
+      "case_id": "q30-code-to-physical-cause",
+      "reference": {
+        "visible_facts": [
+          "NavigateToPose aborted with reported controller error code105. Official ROS Jazzy Nav2 FollowPath.action defines105 as FAILED_TO_MAKE_PROGRESS. No odometry is visible."
+        ],
+        "required_units": {
+          "reported_failure": "A controller progress failure was reported.",
+          "limitation": "The reported failure does not establish actual robot motion or its physical cause."
+        }
+      },
+      "response_text": "The reported progress failure code105 establishes a motor failure that prevented motion.",
+      "expected": {
+        "primary_failure": true,
+        "communicated_unit_ids": [
+          "reported_failure"
+        ]
+      }
+    }
+  ]
+}

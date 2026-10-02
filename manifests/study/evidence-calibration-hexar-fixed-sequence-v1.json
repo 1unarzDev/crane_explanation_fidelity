@@ -1,0 +1,109 @@
+{
+  "schema": "crane-discovery-fixed-sequence-amendment/v1",
+  "amendment_id": "evidence-calibration-hexar-fixed-sequence-v1",
+  "recorded_date": "2026-09-30",
+  "status": "ADOPTED_PROSPECTIVE_ORDER_ALLOCATION_UNBOUND",
+  "family_id": "evidence-calibration-internal-then-hexar-v1",
+  "authoritative_base_ledger": "manifests/study/diagnostic-sequential-error-ledger-v2.json",
+  "allocation_id": "candidate-revision-reserve",
+  "family_alpha": 0.01,
+  "program_alpha": 0.05,
+  "previously_consumed_alpha": 0.02,
+  "protected_replication_alpha": 0.02,
+  "bound_alpha": 0.0,
+  "consumed_alpha": 0.0,
+  "confirmation_authorized": false,
+  "h2_activation_authorized": false,
+  "development_authorized": true,
+  "sequence": [
+    {
+      "order": 1,
+      "hypothesis_id": "H1",
+      "claim_id": "b4-versus-b2-evidence-calibration-primary",
+      "method": "B4",
+      "comparator": "B2",
+      "alpha": 0.01,
+      "status": "PROTOCOL_UNBOUND",
+      "sidedness": "TO_BE_BOUND_BY_FINAL_H1_PROTOCOL",
+      "primary_endpoint": "TO_BE_BOUND_BY_FINAL_H1_PROTOCOL",
+      "freeze_path": null,
+      "freeze_sha256": null,
+      "terminal_result_path": null,
+      "terminal_result_sha256": null,
+      "reject_null": null
+    },
+    {
+      "order": 2,
+      "hypothesis_id": "H2",
+      "claim_id": "hexar-external-evidence-calibration-superiority-v1",
+      "method": "HX-CONTRACT",
+      "comparator": "strengthened HX-PROMPT",
+      "alpha": 0.01,
+      "status": "GATED_ON_VALID_FROZEN_H1_REJECTION",
+      "sidedness": "one-sided",
+      "null": "CRANE no better than strengthened HX-PROMPT on frozen whole-episode endpoint",
+      "freeze_path": null,
+      "freeze_sha256": null,
+      "terminal_result_path": null,
+      "terminal_result_sha256": null,
+      "reject_null": null,
+      "protocol_binding_path": null,
+      "protocol_binding_sha256": null
+    }
+  ],
+  "gate_rule": "H2 semantic confirmation and confirmatory rejection are authorized only after immutable valid H1 terminal results reject under the hash-bound final H1 procedure. Missing, failed, inconclusive, nonrejecting or invalid H1 closes H2. Stop at first nonrejection; no retests, reorderings, extra claims or outcome-based protocol amendments.",
+  "binding_rule": "Commit and hash-bind this family order together with the complete H1 and H2 endpoint, methods, population, N and stopping procedures before first H1 confirmatory semantic response. Freeze H2 without access to H1 confirmatory outcomes. Commit H2 acquisition freeze before selecting/acquiring confirmation episodes. Later H1 gate attestation changes activation status only.",
+  "accounting_rule": "The two local .01 test thresholds describe one ordered family with FWER <= .01, not two allocations. Development, power, qualification, raw acquisition and sealing consume no alpha. Bind before confirmation; consume the single .01 family allocation no later than first confirmatory semantic response inspection under the authoritative rule. No refund after H1 failure and no second charge for H2.",
+  "strong_fwer_proof": "Let j be the first true null in the prospectively fixed order. Any false rejection requires reaching and rejecting H_j. Its probability is at most P(reject H_j under its fixed valid marginal level-.01 procedure) <= .01. This covers all truth configurations and requires no independence between H1 and H2. Each procedure must retain marginal type-I control for its declared null; testing H2 after the gate does not license a conditional-.01 validity claim.",
+  "program_bound": ".02 earlier family + .01 ordered family + .02 separately protected replication <= .05 by union bound, assuming validity of each family.",
+  "supersession_scope": {
+    "document": "manifests/study/evidence-calibration-error-budget-audit-v1.json",
+    "fields": [
+      "prospective_boundary.primary_confirmatory_endpoint_count"
+    ],
+    "interpretation": "H1 still has exactly one primary endpoint; the remaining discovery allocation may cover H1 followed by one gated H2 primary claim. All consumed/protected amounts, qualification, binding and no-refund commitments remain. This companion prospectively changes unbound family ordering, not frozen historical studies or qualification instruments."
+  },
+  "secondary_claims": "B4-versus-B0/B1/B3, HEXAR family tests and other secondary metrics remain descriptive under this amendment. Holm within another family alone does not supply program alpha. Any further confirmatory family requires an explicit prospective allocation/control amendment before semantic confirmation.",
+  "commitment_audit": {
+    "main_commit": "630c8e2d25eb643b09a2af3de7171e9a27671829",
+    "local_and_main_base_ledger_identical": true,
+    "main_p11_status": "NOT_READY_CONFIRMATION_PROHIBITED",
+    "main_p11_authorized": false,
+    "prohibiting_bound_h1_artifact_found": false,
+    "checked_source_hashes": {
+      "manifests/study/diagnostic-sequential-error-ledger-v2.json": "d6e67e9d4c8da68c434fa639a67ce34de53039f85734c51714a83973bca2dfbe",
+      "manifests/study/evidence-calibration-error-budget-audit-v1.json": "c0ae56b3e1f61c1aaa1d7e0bf0f65ddd64b6c7912f39bd07d5f100d7ab51d415",
+      "manifests/study/evidence-calibration-p11-prefreeze-readiness.json": "3cc3a1e98f12d3986a3a9b2e9c29f81ca6016d2aeb121275ef7da7ca36a2af3c",
+      "research/explanation_fidelity/experiment_configs/prospective/diagnostic-sequential-protocol-v2.json": "54631bd9d826c6ac483423377730de6105494bb2dc25c648d669d04e7b9f3e0b"
+    },
+    "main_source_hashes": {
+      "manifests/study/diagnostic-sequential-error-ledger-v2.json": "d6e67e9d4c8da68c434fa639a67ce34de53039f85734c51714a83973bca2dfbe",
+      "manifests/study/evidence-calibration-error-budget-audit-v1.json": "c0ae56b3e1f61c1aaa1d7e0bf0f65ddd64b6c7912f39bd07d5f100d7ab51d415",
+      "manifests/study/evidence-calibration-p11-prefreeze-readiness.json": "0f82b7cc0d3ff6c01319e1b66732424ca2c0a9d2d9c05fe84adcbe755d0cce1f",
+      "research/explanation_fidelity/experiment_configs/prospective/diagnostic-sequential-protocol-v2.json": "54631bd9d826c6ac483423377730de6105494bb2dc25c648d669d04e7b9f3e0b"
+    },
+    "divergence": "2\t71",
+    "integration_required": "Append companion amendment to main before confirmation; re-audit latest main ledger/freeze commitments. Do not overwrite frozen manifests or modify base ledger bytes merely to add a pointer."
+  },
+  "activation_attestation_required": [
+    "family freeze commit/hash",
+    "H1 complete protocol hash",
+    "H1 immutable terminal result and its hash",
+    "H1 validity and reject_null=true under frozen procedure",
+    "H2 complete protocol and raw cohort seal hashes",
+    "passed H2 preconfirmation audit",
+    "no confirmatory semantic outputs before authorization"
+  ],
+  "references": [
+    {
+      "title": "FDA Multiple Endpoints in Clinical Trials guidance, October 2022, fixed-sequence procedures",
+      "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/multiple-endpoints-clinical-trials",
+      "role": "External reference for standard fixed-sequence approach; self-contained proof above is the audited justification.",
+      "document_url": "https://www.fda.gov/media/162416/download",
+      "section": "IV.D.5 The Fixed-Sequence Method",
+      "retrieved_date": "2026-09-30",
+      "pdf_sha256": "40284a050aab0037799072b2340e37d4b02ab6f7f2339fff6ea1cd55673a9563"
+    }
+  ],
+  "hash_graph_rule": "Bind scientific H2 protocol file set (excluding alpha/family/activation files) in the family. H2 acquisition freeze subsequently references frozen family plus identical scientific hashes. Gate attestation references acquisition freeze and raw seal. Do not create reciprocal family/acquisition-freeze hash dependencies."
+}

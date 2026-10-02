@@ -1,0 +1,36 @@
+{
+  "schema": "roboboat-terminal-task/v1",
+  "id": "boat-terminal-immediate-sampled-v1",
+  "frame": "odom",
+  "clock": "ros-header-stamp",
+  "goal": {
+    "x": 0.8641434,
+    "y": -27.586906,
+    "yaw": 1.5707963267948966
+  },
+  "position_tolerance_m": 0.4,
+  "heading_tolerance_rad": 0.35,
+  "speed_tolerance_mps": 0.05,
+  "yaw_rate_tolerance_radps": 0.05,
+  "hull_length_m": 1.063,
+  "hull_beam_m": 0.895,
+  "berth_depth_m": 3.0,
+  "berth_width_m": 2.0,
+  "berth_center": {
+    "x": 0.8641434,
+    "y": -27.586906,
+    "yaw": 1.5707963267948966
+  },
+  "contact_required": true,
+  "interval_policy": "first-post-result-observation-fixed-dwell",
+  "dwell_s": 5.0,
+  "capture_s": 8.0,
+  "max_sample_gap_s": 0.06,
+  "position_uncertainty_m": 0.0,
+  "heading_uncertainty_rad": 0.0,
+  "speed_uncertainty_mps": 0.0,
+  "yaw_rate_uncertainty_radps": 0.0,
+  "measurement_scope": "sampled-delivered-simulator-odometry",
+  "continuous_time_proof": false,
+  "uncertainty_basis": "Numerical simulator measurements; no hardware noise calibration or intersample bound."
+}

@@ -1,0 +1,13 @@
+# Completed v16 acquisition-process qualification
+
+The predeclared 144-attempt development campaign and its single terminal technical review completed. All 144 independently seeded fresh-container attempts were retained and technically valid: 24/24 in each of the six families. The declared complete-campaign engineering criterion passed. No explanation or judge calls were made on these episodes; confirmatory N and alpha consumption remain zero.
+
+The review reproduced captured raw/source/image bytes, native metadata/counts/types, seed-based sampling, measured reset/family delivery, action/task-window clocks, both native extractions and all 1,296 nine-cell evidence/reference projections. It did not exclude navigation failure, early termination, unavailable optional task-window odometry or a full-stream clock tail. See `manifests/hexar_external/acquisition/development_reliability_v16/report.json` for every disposition and evidence/source hashes.
+
+Under independent identically generated technical-validity outcomes within each fixed family, zero invalid attempts in 24 gives a simultaneous 95% descriptive planning upper bound of **0.18084243175631798** per family, using .05/6 tails. This supports the candidate .20 invalidity ceiling for reserve planning; it does not prove future reliability or bound provider/evaluator missingness. The report retains its directed rational upper bound and assumptions. No semantic hypothesis is tested.
+
+The 83,597,559-byte interface review is archived losslessly as deterministic gzip, with compressed and uncompressed SHA-256 values in `interface_archive_receipt.json`. Decompression reproduces the exact raw review bytes and the report's original hash. The unchanged raw JSON remains locally available; compact episode provenance, native review, capture review and completed run are versioned. Large raw bags and normalized streams retain their existing local storage/ignore policy; hashes do not substitute for their availability.
+
+Exposure snapshot **v11** excludes all **218 acquired development attempts**, every planned development identity/seed, and all eighteen original HEXAR recordings. Earlier snapshots and failed qualification runs remain unchanged. The candidate freshness/cohort manifests pin v11; the technical-validity candidate pins this successful report while final machine-predicate/adapter admission stays unbound.
+
+This qualifies the candidate acquisition process only. A separately qualified confirmation-mode adapter, stable served-model/system/decoding bindings, final scientific effect assumptions/N/reserves, current main-ledger reconciliation and the complete prospective family/design freeze are still required. These development episodes can never be relabeled as confirmation.

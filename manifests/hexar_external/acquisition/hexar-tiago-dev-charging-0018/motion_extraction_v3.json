@@ -1,0 +1,99 @@
+{
+  "schema": "hexar-native-motion-extraction-provenance/v2",
+  "phase": "development_only",
+  "extractor_sha256": "12a65c9cd64f74982ee12356ac46b598208d792bcfa991cf7d49c2865ef72aab",
+  "bag_files": [
+    {
+      "file": "raw_0.db3",
+      "sha256": "4ba93a4b9e7da6f1c22f0aff78a41d44e561159a8f19d63105ba6d72ba72a2f4"
+    }
+  ],
+  "bag_metadata_sha256": "1ea9c85cf8606c98db01cbc68689d3ef5e971d57f76e5fe5ca92f0d3d82ff45e",
+  "topic_provenance": {
+    "/mobile_base_controller/odom": {
+      "expected_type": "nav_msgs/msg/Odometry",
+      "recorded_type": "nav_msgs/msg/Odometry",
+      "messages": 1243,
+      "availability": "present",
+      "receipt_ns_min": 1790880370274318093,
+      "receipt_ns_max": 1790880399664647717,
+      "measurement_stamp_ns_min": 3860000000,
+      "measurement_stamp_ns_max": 28740000000
+    },
+    "/cmd_vel": {
+      "expected_type": "geometry_msgs/msg/Twist",
+      "recorded_type": "geometry_msgs/msg/Twist",
+      "messages": 380,
+      "availability": "present",
+      "receipt_ns_min": 1790880374832164795,
+      "receipt_ns_max": 1790880393753762933,
+      "measurement_stamp_ns_min": null,
+      "measurement_stamp_ns_max": null
+    },
+    "/mobile_base_controller/cmd_vel_out": {
+      "expected_type": "geometry_msgs/msg/TwistStamped",
+      "recorded_type": "geometry_msgs/msg/TwistStamped",
+      "messages": 2472,
+      "availability": "present",
+      "receipt_ns_min": 1790880370268031190,
+      "receipt_ns_max": 1790880399670698168,
+      "measurement_stamp_ns_min": 3850000000,
+      "measurement_stamp_ns_max": 28750000000
+    },
+    "/navigate_to_pose/_action/status": {
+      "expected_type": "action_msgs/msg/GoalStatusArray",
+      "recorded_type": "action_msgs/msg/GoalStatusArray",
+      "messages": 2,
+      "availability": "present",
+      "receipt_ns_min": 1790880374735307429,
+      "receipt_ns_max": 1790880392632906741,
+      "measurement_stamp_ns_min": null,
+      "measurement_stamp_ns_max": null
+    },
+    "/hexar_acquisition/navigation_event": {
+      "expected_type": "std_msgs/msg/String",
+      "recorded_type": "std_msgs/msg/String",
+      "messages": 2,
+      "availability": "present",
+      "receipt_ns_min": 1790880374736558115,
+      "receipt_ns_max": 1790880392632910109,
+      "measurement_stamp_ns_min": 7705000000,
+      "measurement_stamp_ns_max": 22810000000
+    },
+    "/goal_pose": {
+      "expected_type": "geometry_msgs/msg/PoseStamped",
+      "recorded_type": null,
+      "messages": 0,
+      "availability": "unavailable",
+      "receipt_ns_min": null,
+      "receipt_ns_max": null,
+      "measurement_stamp_ns_min": null,
+      "measurement_stamp_ns_max": null
+    },
+    "/hexar_acquisition/navigation_goal": {
+      "expected_type": "geometry_msgs/msg/PoseStamped",
+      "recorded_type": "geometry_msgs/msg/PoseStamped",
+      "messages": 1,
+      "availability": "present",
+      "receipt_ns_min": 1790880374734716413,
+      "receipt_ns_max": 1790880374734716413,
+      "measurement_stamp_ns_min": 7705000000,
+      "measurement_stamp_ns_max": 7705000000
+    }
+  },
+  "private_plan_family_seed_or_episode_report_read": false,
+  "missing_goal_inferred": false,
+  "numeric_validation": "all selected xyz/quaternion values finite; no rounding or winsorization",
+  "limitations": [
+    "odometry is controller-estimated motion, not independent ground truth",
+    "cmd_vel_out is controller output command, not proof of applied wheel torque or displacement",
+    "unstamped input commands have bag receipt timestamps only",
+    "no wall/simulation clock conversion or TF frame transform is inferred",
+    "action status is software execution state, not proof of reaching a measured physical goal",
+    "goal_pose topic represents a published pose, not proof of accepted action goal; goal publication provenance must be preserved",
+    "no goal/status is fabricated when an action service was not recorded",
+    "navigation_event is the instrumented driver observation of action acceptance/result, not physical goal attainment"
+  ],
+  "model_or_judge_calls": 0,
+  "normalized_events_sha256": "d9a8bbdbfb4ce7f0aa0ebc8f5267774219acd4f197d3136e9790421f70e7c497"
+}

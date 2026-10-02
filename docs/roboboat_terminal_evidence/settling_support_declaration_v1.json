@@ -1,0 +1,404 @@
+{
+  "alpha_consumed": 0,
+  "confirmation_n": 0,
+  "coverage_extension": {
+    "L2_unit": "When the declared dwell has complete sampled position, heading, speed, yaw-rate and hull compliance, communicate that supported partial compliance at sampled temporal scope; unknown contact does not erase it.",
+    "fairness": "identical complete evidence and coverage prompts for both methods",
+    "scope": "development answerable-information sensitivity, declared after response inspection before judges; no primary confirmatory promotion"
+  },
+  "dependencies": [
+    {
+      "path": "analysis/run_roboboat_settling_support.py",
+      "sha256": "1f5cc8cdc873859fbec4cd87175f4f4019f84b927f567feb2dc44252a07231fb"
+    },
+    {
+      "path": "analysis/run_roboboat_atomic_reassessment.py",
+      "sha256": "a329321a6d4c46aefd94ec4cd58cf128798374d530eed89e10a45cb78cde9505"
+    },
+    {
+      "path": "analysis/roboboat_reviewed_annotation_packet.py",
+      "sha256": "4ae0142805faf5e0a815e41ddaa98f39ad7575704857ed45bf2f84b173eda448"
+    },
+    {
+      "path": "analysis/run_roboboat_terminal_comparison.py",
+      "sha256": "9cf0a21d4018890a041534590b00b8a06e1a91927f8e5040ecdb1c9d2ab1a51f"
+    },
+    {
+      "path": "analysis/run_evidence_calibration_agent_annotation.py",
+      "sha256": "efcd2d5df96bc7f2838be60f6b86387721daf635a8de8e6524814ebedae611bd"
+    },
+    {
+      "path": "analysis/adjudicate_evidence_calibration_annotations.py",
+      "sha256": "fff52c0aa92cac96810810f73c98da10f0dbf51a2014669e0f00c2db5eef81c4"
+    },
+    {
+      "path": "analysis/roboboat_isolated_transport.py",
+      "sha256": "c89af6b2b0dcf4323d2ba27e55f693665fbcba3b259cd233aebc13be773f3e4b"
+    },
+    {
+      "path": "research/explanation_fidelity/prompts/evidence-calibration-agent-annotator-v1.md",
+      "sha256": "e85eba2778c3d740edb38ba0525eaeecaf2b73460b4bc95172e04820ad3cc4a9"
+    },
+    {
+      "path": "research/explanation_fidelity/schemas/blinded-agent-atomic-annotation-return-v2.schema.json",
+      "sha256": "7b10a601c48f08a720bcc2c52c69bab0b1773e72ee552f4ac88a7bbd4c1a044f"
+    },
+    {
+      "path": "research/explanation_fidelity/schemas/blinded-agent-atomic-adjudication-v2.schema.json",
+      "sha256": "aa86c71f9bd1ac2a998836115a0b99d2fe145bd182f33eecc4f9dd5b3c04e829"
+    },
+    {
+      "path": "research/explanation_fidelity/experiment_configs/development/evidence-calibration-agent-annotation-amendment-v2.json",
+      "sha256": "c54137bf96571409b414b8dbc65694319504fb5d3223a4db97febc380d0320cb"
+    },
+    {
+      "path": "manifests/study/evidence-calibration-agent-qualification-disposition-v1.json",
+      "sha256": "ddc81d6fa7f6e23ed9bfbf19f4c46bfb3af0cc35b3d374ab68bdb211fc3457c5"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/blind-bank.json",
+      "sha256": "3a1822024215fbc500f53bddc5b4fc9a4c40869afbdbcc2ccf372f0b70ac0cda"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/evaluator-join.json",
+      "sha256": "3882ea9a8afea9efed6339d3f98072ca66047ae590777938ffa2f28e48215710"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/structural-result.json",
+      "sha256": "b4be22c3f674fe2b299d9c9f4b6c90925b32310e6b300b3ff4f5e4caec9496bf"
+    },
+    {
+      "path": "docs/roboboat_terminal_evidence/settling_atomic_inventory_declaration_v1.json",
+      "sha256": "c080b3ee83cf3766f3423a7bc9ae9c716f5dd1e518e3e2494a4ba381f40871c4"
+    },
+    {
+      "path": "docs/roboboat_terminal_evidence/settling_pilot_registry_v1.json",
+      "sha256": "34e26e01fa1ceda9c760cda95c0d19a0f85d6c6d4f2cec837f7e3b1a4082cbab"
+    },
+    {
+      "path": "docs/roboboat_terminal_evidence/marine_qualification_freeze_v2.json",
+      "sha256": "15fee1e029e5252b5ab86885c36f5620265e124b3d5d422b53210abcef84ca1e"
+    },
+    {
+      "path": "docs/roboboat_terminal_evidence/marine_qualification_suite_v1.json",
+      "sha256": "e29afaf31f34b41cf9793bd787aff2768ca9734c02323a8fd35354aa52b135e3"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-v1/qualification-v2/qualification-result.json",
+      "sha256": "482768e5bcdbc7aeab65973bc1c56ba729d1f5d852b16fb503f79339b234fd15"
+    },
+    {
+      "path": "research/explanation_fidelity/qualification/evidence-calibration-agent-exact-task-v4.json",
+      "sha256": "d1649da2994c46fb6359edc23897dbe4830624f10af3e4402ec3df15fc08d7b0"
+    },
+    {
+      "path": "research/explanation_fidelity/experiment_configs/prospective/evidence-calibration-agent-exact-task-v4-freeze.json",
+      "sha256": "ea3d6438a44538ff58c4bda940d08102b16cc7c68e138de01016c57a8b6f28f7"
+    },
+    {
+      "path": "model_outputs/automated_annotations/evidence-calibration-agent-exact-task-v4/qualification-result.json",
+      "sha256": "b09aedfd6be10b9e3feda1f21d1361ac04f0438c69292dd08bd5e34c789df428"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/project_reviews/04152dd7854d6b9558c4c354c3a199477115999895cc3947d3cbc4da73232036.json",
+      "sha256": "dab3c13a262599999fcc2c6cd271c394e4e8179a142f5039d32ce986e90b855c"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/returns/04152dd7854d6b9558c4c354c3a199477115999895cc3947d3cbc4da73232036-A.json",
+      "sha256": "e5535a5ac1cf0e997c33cb72e3e6c690caae1f93d768fdf0f15bb3db4303ed40"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/returns/04152dd7854d6b9558c4c354c3a199477115999895cc3947d3cbc4da73232036-B.json",
+      "sha256": "52c1563805658ea00a2b5e3c0e36c6c9f1c6973fb218994ea6b29ec2ac45b319"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/project_reviews/054011bdc83ad2f18644008fdbb3ec2a7c39eceb482648233b7c7c7b9d858549.json",
+      "sha256": "223fa81c7b81229c812f908404c540d881bd69ccf25d586a1b90c39c2cbb5f1b"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/returns/054011bdc83ad2f18644008fdbb3ec2a7c39eceb482648233b7c7c7b9d858549-A.json",
+      "sha256": "20776daa254cdba22940b6fc21ceddc2b29ec2feb3f84063443997d04d6ef2a5"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/returns/054011bdc83ad2f18644008fdbb3ec2a7c39eceb482648233b7c7c7b9d858549-B.json",
+      "sha256": "da9f05f0216219295dc3d693cd6b61bea56fb28ea8c2c8c7e3bcd270519c50a8"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/project_reviews/060bfdb64bf60dd34ef79050ac497f7c5d411a951417377c0c2026a4db6ae196.json",
+      "sha256": "585865579dffb7ef0b66e7fe4742e32a3c06081dd89ee091ed53f29e4344adde"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/returns/060bfdb64bf60dd34ef79050ac497f7c5d411a951417377c0c2026a4db6ae196-A.json",
+      "sha256": "029b4c4063c0662bf0ff9563e572a16fe1bd9c16647fb9877519913744c2f6cf"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/returns/060bfdb64bf60dd34ef79050ac497f7c5d411a951417377c0c2026a4db6ae196-B.json",
+      "sha256": "95072fd5507c1aed08f6c199fa523f90ca39f86dd6708ffc6921fbbbe69750ed"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/project_reviews/33af7e5fe0044ba390dc8f7b1cfe854c4e1e634a10bfb37046ec41e1cad50d17.json",
+      "sha256": "d881f316d51d9a04bca48d8a7d92736749838aea28369deaa5aaad9d1d3fb189"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/returns/33af7e5fe0044ba390dc8f7b1cfe854c4e1e634a10bfb37046ec41e1cad50d17-A.json",
+      "sha256": "d12ce635c90d2fa875095546eaf5080e1ae74972b850e378914a76ec4b26e528"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/returns/33af7e5fe0044ba390dc8f7b1cfe854c4e1e634a10bfb37046ec41e1cad50d17-B.json",
+      "sha256": "4881803a348f28b34f6d48a2ec5e2d5023537e8f15150c26e600817e297aa473"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/project_reviews/4ac2fb43d34a07c3ecc86e7e9a3e9c1ab9db0bb25e44bdc3c2d97f08561ef3d8.json",
+      "sha256": "17ac84279ac97604fbcec10b2c9cbb37ce93018a3075cd0e71fea65e054cf356"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/returns/4ac2fb43d34a07c3ecc86e7e9a3e9c1ab9db0bb25e44bdc3c2d97f08561ef3d8-A.json",
+      "sha256": "302677fa1677f6594b11ad16d5d42a1e6b5fbefbfa084cd5b1ff4dfcaa7589ef"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/returns/4ac2fb43d34a07c3ecc86e7e9a3e9c1ab9db0bb25e44bdc3c2d97f08561ef3d8-B.json",
+      "sha256": "49d26dbe848d8da493e1756eaad3c16d8c66aba902b1b998cea3f6e4cb6318f2"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/project_reviews/7a895c6c03a7eab481a77f66e050f545b30aa565b4ae1e687b55dac9ac711c46.json",
+      "sha256": "21830904035df597e6f75ed7af1a2dd24db3af58687c575ca758dfa3b064e8bb"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/returns/7a895c6c03a7eab481a77f66e050f545b30aa565b4ae1e687b55dac9ac711c46-A.json",
+      "sha256": "22b41e54027e52f55857483263bd56cb8771e4f14c49f71ffd22866d92a4defa"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/returns/7a895c6c03a7eab481a77f66e050f545b30aa565b4ae1e687b55dac9ac711c46-B.json",
+      "sha256": "cb5977373db31e002a1110814bc40ca01d7e58d35e174b25512bdb9efd7c7441"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/project_reviews/7b7d1123b1c2a24e490fbc2215ef22e83e17ae11d08f6c1973d644f7a269f396.json",
+      "sha256": "1143e07bc14b2432608a1987004a6901c276286ece5196acd85a15785f790a81"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/returns/7b7d1123b1c2a24e490fbc2215ef22e83e17ae11d08f6c1973d644f7a269f396-A.json",
+      "sha256": "b94b493cceddfa9c22435def6afc6a61df8a3911b87bc878c6bcec626b86799e"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/returns/7b7d1123b1c2a24e490fbc2215ef22e83e17ae11d08f6c1973d644f7a269f396-B.json",
+      "sha256": "e984b01fa56a9a2a2b9de99467baa365e1cf90e3c1796f451a6c3e92095ab795"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/project_reviews/99a778cb576ad98f2ff0df0566955f796a4415cd8611eaee38e7af427527ac09.json",
+      "sha256": "23ab9ea76b58a3e4f17b6ea4cf59f5a3edf89c8147374c00dcfb0df707d77548"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/returns/99a778cb576ad98f2ff0df0566955f796a4415cd8611eaee38e7af427527ac09-A.json",
+      "sha256": "b195e6e608d09a42241c48b1bc0c403b0508277bb729930f2c4bc8108b3cb411"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/returns/99a778cb576ad98f2ff0df0566955f796a4415cd8611eaee38e7af427527ac09-B.json",
+      "sha256": "9289db3ee741e18b1c69acc7cc78a12ca186cbaf8cee1b1f6424f91ac2d80805"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/project_reviews/cd34882c906b72015204aae8d6d5a7e4e64d49263b2784d224bb78abb235bb53.json",
+      "sha256": "5a552b2487e9d365d0c5de855be8aa98ebe847608c657f9acb0171704bf4bfc7"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/returns/cd34882c906b72015204aae8d6d5a7e4e64d49263b2784d224bb78abb235bb53-A.json",
+      "sha256": "6f4163797dece7b80d2c36eb280e137882bf520c883d5aee582b5598e15f1ded"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/returns/cd34882c906b72015204aae8d6d5a7e4e64d49263b2784d224bb78abb235bb53-B.json",
+      "sha256": "de49ff830d1a12687b117e982675b0a14a9a72f5492aefd603369c6ffbfdcffb"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/project_reviews/f0a7cb918a0f76f9628db9d811c244f6d409e1d8731fd6e4e10f7c29b0373cee.json",
+      "sha256": "f5b53d0fb2dacf4726a3ec0836a17457611ea23a1d0bcf77214263368489928f"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/returns/f0a7cb918a0f76f9628db9d811c244f6d409e1d8731fd6e4e10f7c29b0373cee-A.json",
+      "sha256": "3fde02b49f53226cf4a4ac0cdd25203f6f0999bfd1eeee9624737297c770e214"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/returns/f0a7cb918a0f76f9628db9d811c244f6d409e1d8731fd6e4e10f7c29b0373cee-B.json",
+      "sha256": "ebcba18f8a725e0c1c5e481bb574d959e0b2964bd97db3a54d69afa74f35d442"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/project_reviews/f62fcd42cb687e12db071c307bd5ada566cb67d8f43ec5488096ea588c82bbff.json",
+      "sha256": "898b35853f344774c2d16863a0e011ae3b0d0cdae5552861f73e9548790231d4"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/returns/f62fcd42cb687e12db071c307bd5ada566cb67d8f43ec5488096ea588c82bbff-A.json",
+      "sha256": "3a3e5a1b7dee9427fd513a3d994324023a6fcfdd114d2f9b3e2c3ddd6040b567"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-atomic-inventory-v1/returns/f62fcd42cb687e12db071c307bd5ada566cb67d8f43ec5488096ea588c82bbff-B.json",
+      "sha256": "0c2de9b8167b3bdf5a6476fa580e680748ad140996f7be49d124e1980c88a88a"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-v1/responses/boat-terminal-settling-001/L0/B2.json",
+      "sha256": "e0f759312f2ec44bb1ef3c56945ea3837fc7e1ee70dbfeccd5a12fc6c4de8539"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-v1/batches/boat-terminal-settling-001/method_packets/L0.json",
+      "sha256": "bf24cd6f2c0d339ff063db34b972d2204a8a35665f3389c6c6ae2226c4b98683"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-v1/batches/boat-terminal-settling-001/evaluator/L0-reference.json",
+      "sha256": "b2b4a29fdb1d37154dab4f7442f5f723b4bcb0ffd9c96cd8a3f4970f546c3c5b"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-v1/responses/boat-terminal-settling-001/L0/B4.json",
+      "sha256": "20950bf2d00bbf51721e3f7df8c3f1cab48ab32dfc6fb0ccc47550ffe371bd2d"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-v1/responses/boat-terminal-settling-001/L1/B2.json",
+      "sha256": "1b6ba47ceffbb5b625731ff922f99cc5c6ddbd5e24527a2bb526c18611520738"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-v1/batches/boat-terminal-settling-001/method_packets/L1.json",
+      "sha256": "7960e7ac37a39341ddccca60454e6bf57215f6bc02564d0f1b0ed0b5e9dbec83"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-v1/batches/boat-terminal-settling-001/evaluator/L1-reference.json",
+      "sha256": "b2b4a29fdb1d37154dab4f7442f5f723b4bcb0ffd9c96cd8a3f4970f546c3c5b"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-v1/responses/boat-terminal-settling-001/L1/B4.json",
+      "sha256": "1b1a16e82ddb5b9c31995e63abe90e8673f0fa28798309838a143f1b0e8ec678"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-v1/responses/boat-terminal-settling-001/L2/B2.json",
+      "sha256": "c4172069230d96ab26794a8c39c021d2d996c6864c7b64c7729e45c8a3ef019b"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-v1/batches/boat-terminal-settling-001/method_packets/L2.json",
+      "sha256": "d1a2ed64645f4819a58ccffe265ada0511f79483c31f0bd8170c716bc8625f09"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-v1/batches/boat-terminal-settling-001/evaluator/L2-reference.json",
+      "sha256": "51d39cf8518622b825a669301e7a62ceeafb51a0d7aeb6c26f69a5c9d886953c"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-v1/responses/boat-terminal-settling-001/L2/B4.json",
+      "sha256": "141d43ca79a2eaa5701721a81f96c524293d1eb2005fb6a69856a175b93d2e6f"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-v1/responses/boat-terminal-settling-002/L0/B2.json",
+      "sha256": "7e36b8ceea1ba135392e716fa8e942e20d7bed6399a13de13876be0e6cdd3463"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-v1/batches/boat-terminal-settling-002/method_packets/L0.json",
+      "sha256": "057c589480c00282f26b0b38f507a0718d26daf3eabe91ac4ac69316560955c3"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-v1/batches/boat-terminal-settling-002/evaluator/L0-reference.json",
+      "sha256": "b2b4a29fdb1d37154dab4f7442f5f723b4bcb0ffd9c96cd8a3f4970f546c3c5b"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-v1/responses/boat-terminal-settling-002/L0/B4.json",
+      "sha256": "20950bf2d00bbf51721e3f7df8c3f1cab48ab32dfc6fb0ccc47550ffe371bd2d"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-v1/responses/boat-terminal-settling-002/L1/B2.json",
+      "sha256": "0e81a6396f5713ef5a447c09dba3ff48355ff666c07de679c325e7f6853c6297"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-v1/batches/boat-terminal-settling-002/method_packets/L1.json",
+      "sha256": "fb49729f83889fafa7089e381bb17f64f6767de135b21c22d12b23518afc7b9a"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-v1/batches/boat-terminal-settling-002/evaluator/L1-reference.json",
+      "sha256": "b2b4a29fdb1d37154dab4f7442f5f723b4bcb0ffd9c96cd8a3f4970f546c3c5b"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-v1/responses/boat-terminal-settling-002/L1/B4.json",
+      "sha256": "b30ca8b560ff3c29e421a9a1d9d8c7c367edb161b8de93b875a20c94fe15e9ba"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-v1/responses/boat-terminal-settling-002/L2/B2.json",
+      "sha256": "6552544f85257d55eb4228f5e837da10c15ffe973e72699ce7c0d349a7a38c23"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-v1/batches/boat-terminal-settling-002/method_packets/L2.json",
+      "sha256": "501b8205157c07cc40db2b3c7a23273101e7b96900ff0cb9236ad6fcc49ccc35"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-v1/batches/boat-terminal-settling-002/evaluator/L2-reference.json",
+      "sha256": "e99717e1547f8d94f29187ef225a69e7dfe0c60ba635ae2484a607b40980e12a"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-v1/responses/boat-terminal-settling-002/L2/B4.json",
+      "sha256": "e78dbc9e9ca7fe94ce3721cc82ab984cef85fe6762f10b44d89c3c0ea5a823b9"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-support-v1/evaluator-join.json",
+      "sha256": "fb1af01f5cd374e337a6bfd202886772cbeff79134293c47a9e0c19284fa7e1d"
+    }
+  ],
+  "disposition": "INSPECTED_DEVELOPMENT_REASSESSMENT_ONLY",
+  "human_validation": false,
+  "judge": {
+    "adjudication": "disagreement only",
+    "effort": "high",
+    "model": "gpt-6-astra",
+    "passes": 2
+  },
+  "max_concurrent_packets": 2,
+  "new_independent_cluster_n": 0,
+  "original_answers": 12,
+  "original_banks_replaced": false,
+  "packets": [
+    {
+      "path": "artifacts/roboboat-terminal-settling-support-v1/blind_packets/61d45c77aaaed00b5cd8d326.json",
+      "sha256": "9ccff137a30185aaf27b8ca28ed4cacc44244dd4e584a592e0cf009dd29ae17a"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-support-v1/blind_packets/583a5f478f1c0955eb7e5908.json",
+      "sha256": "884ee54b1f8cd258cec1387b9728f75df16c016b5249e31742e8a221491637c5"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-support-v1/blind_packets/5ed86f50a7012b1ef6a2de69.json",
+      "sha256": "5c31d336f118bbfeb555eca2885378b2eaccb304a5b4e8534c54615643a8e5ff"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-support-v1/blind_packets/f6151dc72b8a05509eeca7d4.json",
+      "sha256": "863c818b750d5dadfd321c7ab14d3d1c2ca3f8b42ebd162eef123d3b967fb09e"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-support-v1/blind_packets/65172f930955399a94a30771.json",
+      "sha256": "ad91a9f63d625e458fcae041d2f356b0a96d11f5a846d1c6bfc22b6a6c3b17e0"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-support-v1/blind_packets/27f0edeca2c2e54901a013f3.json",
+      "sha256": "578960372218cd7cbee737baaddd9b018b13333f3558b14c28959ca91ddf4d37"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-support-v1/blind_packets/3de949e7301d5fb0b791e1ee.json",
+      "sha256": "a76ee6cefe4b5866ea3299864214c9c797ba0d3229652afdea94a4fd1ef079e6"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-support-v1/blind_packets/a9fac5d57d4e4cd9cd1161be.json",
+      "sha256": "a424716a08aacda146ac6e4c486b0a95e11d38650c7b9abb40c902e64e35ea7b"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-support-v1/blind_packets/e8c76a50995427d6774492d2.json",
+      "sha256": "66183d1480a04196142f91e6cd7784dee159a483c3fffded98fe7ea4d6f2ac32"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-support-v1/blind_packets/392fdccba16f01aad0ed5e5a.json",
+      "sha256": "c276f05bbf603dec8512558b387a415142dca404d0426ecef1dcfcf185536773"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-support-v1/blind_packets/d09ff21e01a61514ceba322f.json",
+      "sha256": "6f36fef0928b0e5300193b168926c22dc871f8047d343aa80fb3fe280ea7acd4"
+    },
+    {
+      "path": "artifacts/roboboat-terminal-settling-support-v1/blind_packets/f733dc701887e3d2a2bcab66.json",
+      "sha256": "b0776f74acb2f790af32e798a8b89d4a3892d6b90b4b7aa2172987970d6b28bf"
+    }
+  ],
+  "quality_retries": 0,
+  "replication_n": 0,
+  "schema": "roboboat-settling-reviewed-support-development/v1",
+  "score": "Report inherited four-unit and additional partial-compliance-unit sensitivity separately. All claims supported and causal limitation preserved; unqualified abstraction tags excluded. No inference or posthoc superiority claim.",
+  "status": "FROZEN_BEFORE_SUPPORT_CALLS",
+  "timeout_s": 300,
+  "unique_answer_texts": 11
+}

@@ -1,0 +1,169 @@
+{
+  "schema": "roboboat-atomic-extraction-extension/v5",
+  "scope": "Fresh bounded marine actor/clock/phase/completeness check of an explicit local appendix; no land prompt or model binding replacement.",
+  "cases": [
+    {
+      "case_id": "marine-actor-extraction-v5-01",
+      "split": "heldout",
+      "response_text": "An odometry measurement was obtained. Its timestamp was 105.4 s. The measurement occurred before a result receipt. The result receipt used the fixture monotonic clock. The type of result at that receipt is unspecified. Physical state at that receipt remains unknown.",
+      "expected": [
+        {
+          "source_span": "An odometry measurement was obtained.",
+          "meaning": "An odometry measurement was obtained.",
+          "critical": true
+        },
+        {
+          "source_span": "Its timestamp was 105.4 s.",
+          "meaning": "The obtained odometry measurement timestamp was 105.4 s.",
+          "critical": true
+        },
+        {
+          "source_span": "The measurement occurred before a result receipt.",
+          "meaning": "The measurement occurred before a result receipt.",
+          "critical": true
+        },
+        {
+          "source_span": "The result receipt used the fixture monotonic clock.",
+          "meaning": "The result receipt used the fixture monotonic clock.",
+          "critical": true
+        },
+        {
+          "source_span": "The type of result at that receipt is unspecified.",
+          "meaning": "The type of result at that receipt is unspecified.",
+          "critical": true
+        },
+        {
+          "source_span": "Physical state at that receipt remains unknown.",
+          "meaning": "Physical state at receipt of the unspecified result remains unknown.",
+          "critical": true
+        }
+      ]
+    },
+    {
+      "case_id": "marine-actor-extraction-v5-02",
+      "split": "heldout",
+      "response_text": "The navigation action reported success. The delivered odometry stamp used the simulation clock. The navigation-action result receipt used the fixture monotonic clock. Those two clocks were not directly aligned. The delivered measurement occurred before the navigation-action result receipt. Exact physical state at that receipt is unestablished.",
+      "expected": [
+        {
+          "source_span": "The navigation action reported success.",
+          "meaning": "The navigation action reported success.",
+          "critical": true
+        },
+        {
+          "source_span": "The delivered odometry stamp used the simulation clock.",
+          "meaning": "The delivered odometry stamp used the simulation clock.",
+          "critical": true
+        },
+        {
+          "source_span": "The navigation-action result receipt used the fixture monotonic clock.",
+          "meaning": "The navigation-action result receipt used the fixture monotonic clock.",
+          "critical": true
+        },
+        {
+          "source_span": "Those two clocks were not directly aligned.",
+          "meaning": "The simulation clock and navigation-action result-receipt fixture monotonic clock were not directly aligned.",
+          "critical": true
+        },
+        {
+          "source_span": "The delivered measurement occurred before the navigation-action result receipt.",
+          "meaning": "The delivered measurement occurred before the navigation-action result receipt.",
+          "critical": true
+        },
+        {
+          "source_span": "Exact physical state at that receipt is unestablished.",
+          "meaning": "Exact physical state at navigation-action result receipt is unestablished.",
+          "critical": true
+        }
+      ]
+    },
+    {
+      "case_id": "marine-actor-extraction-v5-03",
+      "split": "heldout",
+      "response_text": "A speed measurement was obtained. The measurement followed the navigation-action result receipt. Its speed value was 0.05004 m/s. The declared speed bound was 0.05001 m/s. The measurement belongs to the declared dwell. The measured speed exceeds the declared bound. The dwell requirement failed. The observed speed violation establishes that failure.",
+      "expected": [
+        {
+          "source_span": "A speed measurement was obtained.",
+          "meaning": "A speed measurement was obtained.",
+          "critical": true
+        },
+        {
+          "source_span": "The measurement followed the navigation-action result receipt.",
+          "meaning": "The measurement followed the navigation-action result receipt.",
+          "critical": true
+        },
+        {
+          "source_span": "Its speed value was 0.05004 m/s.",
+          "meaning": "The obtained speed measurement value was 0.05004 m/s.",
+          "critical": true
+        },
+        {
+          "source_span": "The declared speed bound was 0.05001 m/s.",
+          "meaning": "The declared speed bound was 0.05001 m/s.",
+          "critical": true
+        },
+        {
+          "source_span": "The measurement belongs to the declared dwell.",
+          "meaning": "The measurement belongs to the declared dwell.",
+          "critical": true
+        },
+        {
+          "source_span": "The measured speed exceeds the declared bound.",
+          "meaning": "The measured speed exceeds the declared bound.",
+          "critical": true
+        },
+        {
+          "source_span": "The dwell requirement failed.",
+          "meaning": "The dwell requirement failed.",
+          "critical": true
+        },
+        {
+          "source_span": "The observed speed violation establishes that failure.",
+          "meaning": "The observed speed violation establishes that failure.",
+          "critical": true
+        }
+      ]
+    },
+    {
+      "case_id": "marine-actor-extraction-v5-04",
+      "split": "heldout",
+      "response_text": "The navigation action reported success. Every observed pose condition held in the declared dwell. Every observed velocity condition held in the declared dwell. Contact evidence was not captured. Contact absence is unestablished. Full physical docking completion is unknown. Continuous-time compliance between samples is unestablished.",
+      "expected": [
+        {
+          "source_span": "The navigation action reported success.",
+          "meaning": "The navigation action reported success.",
+          "critical": true
+        },
+        {
+          "source_span": "Every observed pose condition held in the declared dwell.",
+          "meaning": "Every observed pose condition held in the declared dwell.",
+          "critical": true
+        },
+        {
+          "source_span": "Every observed velocity condition held in the declared dwell.",
+          "meaning": "Every observed velocity condition held in the declared dwell.",
+          "critical": true
+        },
+        {
+          "source_span": "Contact evidence was not captured.",
+          "meaning": "Contact evidence was not captured.",
+          "critical": true
+        },
+        {
+          "source_span": "Contact absence is unestablished.",
+          "meaning": "Contact absence is unestablished.",
+          "critical": true
+        },
+        {
+          "source_span": "Full physical docking completion is unknown.",
+          "meaning": "Full physical docking completion is unknown.",
+          "critical": true
+        },
+        {
+          "source_span": "Continuous-time compliance between samples is unestablished.",
+          "meaning": "Continuous-time compliance between samples is unestablished.",
+          "critical": true
+        }
+      ]
+    }
+  ]
+}

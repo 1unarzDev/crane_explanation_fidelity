@@ -1,0 +1,151 @@
+{
+  "schema": "hexar-development-episode-runtime/v1",
+  "phase": "development_only",
+  "family_hidden": "obstacle",
+  "sampling_hidden": {
+    "profile": "home_top_room_clearance_v4_development",
+    "map_yaml_sha256": "084cab10306856e084b5de6063dcc4103fa9fa557c300b64778d40c0152415a2",
+    "map_pgm_sha256": "3a8c35199fb7a50ab905766a1f1f07832bf4b8627a68802e0c7ebc3f22251a2c",
+    "start_xy": [
+      -2.014999999999999,
+      0.9250000000000007
+    ],
+    "start_yaw": -2.731374725449638,
+    "goal_xy": [
+      -5.164999999999999,
+      0.5250000000000004
+    ],
+    "goal_yaw": -0.9762961463895956,
+    "candidate_start_n": 6597,
+    "candidate_goal_n": 1083,
+    "required_clearance_m": 0.6,
+    "distance_m": 3.175295261861486,
+    "sampling_bounds_xy": [
+      -6,
+      1.2,
+      -0.5,
+      2.0
+    ]
+  },
+  "measured_reset_error_m": 1.3173501227204145e-05,
+  "reset_measurements_hidden": [
+    {
+      "x": -2.0149953441830646,
+      "y": 0.9249998111976813,
+      "z": -0.0011695083449713983,
+      "yaw_rad": -2.7313749992495797,
+      "quaternion_xyzw": [
+        3.1438418069396796e-05,
+        1.4768076925721783e-06,
+        -0.9790388246304124,
+        0.20367370688369568
+      ],
+      "error_m": 4.659643510042026e-06,
+      "heading_error_rad": 2.737999418300774e-07,
+      "position_in_tolerance": true,
+      "heading_in_tolerance": true,
+      "in_tolerance": true,
+      "source": "Gazebo GetEntityState world pose; reset only, not goal arrival"
+    },
+    {
+      "x": -2.0149868310308494,
+      "y": 0.9249998118030678,
+      "z": -0.0015144532679116918,
+      "yaw_rad": -2.7313749758937322,
+      "quaternion_xyzw": [
+        0.00020896572801493884,
+        8.844243845751283e-06,
+        -0.9790388027165544,
+        0.2036737072634553
+      ],
+      "error_m": 1.3170313836157336e-05,
+      "heading_error_rad": 2.5044409435182047e-07,
+      "position_in_tolerance": true,
+      "heading_in_tolerance": true,
+      "in_tolerance": true,
+      "source": "Gazebo GetEntityState world pose; reset only, not goal arrival"
+    },
+    {
+      "x": -2.0149868278311556,
+      "y": 0.9249998126432587,
+      "z": -0.0015068969262744814,
+      "yaw_rad": -2.7313749692723,
+      "quaternion_xyzw": [
+        0.00026768654621883573,
+        3.380211676300423e-06,
+        -0.9790387896892314,
+        0.2036737013370452
+      ],
+      "error_m": 1.3173501227204145e-05,
+      "heading_error_rad": 2.4382266206046666e-07,
+      "position_in_tolerance": true,
+      "heading_in_tolerance": true,
+      "in_tolerance": true,
+      "source": "Gazebo GetEntityState world pose; reset only, not goal arrival"
+    }
+  ],
+  "measured_reset_heading_error_rad": 2.4382266206046666e-07,
+  "intervention_observations_hidden": [
+    {
+      "stage": "spawn",
+      "requested_xyz": [
+        -5.164999999999999,
+        0.5250000000000004,
+        0.6
+      ],
+      "observed_xyz": [
+        -5.165,
+        0.525,
+        0.6
+      ],
+      "observed_sim_stamp_ns": 7640000000,
+      "source": "Gazebo GetEntityState world pose; technical-only hidden intervention observation"
+    }
+  ],
+  "dynamic_trajectory_hidden": null,
+  "indicator_consumers_hidden": {
+    "/power/is_charging": [
+      {
+        "node_name": "rosbag2_recorder",
+        "node_namespace": "/",
+        "topic_type": "std_msgs/msg/Bool"
+      },
+      {
+        "node_name": "twist_mux",
+        "node_namespace": "/",
+        "topic_type": "std_msgs/msg/Bool"
+      }
+    ],
+    "/joy_priority": [
+      {
+        "node_name": "rosbag2_recorder",
+        "node_namespace": "/",
+        "topic_type": "std_msgs/msg/Bool"
+      },
+      {
+        "node_name": "twist_mux",
+        "node_namespace": "/",
+        "topic_type": "std_msgs/msg/Bool"
+      }
+    ]
+  },
+  "indicator_prelude_publications_per_topic": 3,
+  "localization_parameters_accepted": [],
+  "localization_parameters_observed_hidden": [],
+  "nomotion_update_responses": 0,
+  "seed_hidden": 2245211329,
+  "goal_hidden": [
+    -5.164999999999999,
+    0.5250000000000004
+  ],
+  "accepted": true,
+  "terminal_action_status": 5,
+  "timeout": true,
+  "localization_intervention_applied": false,
+  "dynamic_move_requests": 0,
+  "dynamic_moves_confirmed_success": 0,
+  "dynamic_moves_confirmed_failure": 0,
+  "dynamic_moves_unresolved": 0,
+  "semantic_outputs_generated": false,
+  "qualification_complete": false
+}

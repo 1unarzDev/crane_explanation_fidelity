@@ -1,0 +1,120 @@
+{
+  "schema": "marine-explanation-accuracy-transfer-manifest/v2",
+  "created_utc": "2026-10-02T01:28:40.503413+00:00",
+  "prior_integration_checkpoint": "0575132d",
+  "prior_manifest_scope": "Original physical-evidence-focused integration at 0575132d remains historical; prior source-file hashes identify that checkpoint. Revised prose and plots are governed by this v2 manifest.",
+  "user_direction": "Focus on core support/coverage/withholding research questions and marine explanation accuracy and transfer behavior; add more linked graphs, without a new superiority study.",
+  "files": [
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/plot_roboboat_transfer_accuracy.py",
+      "sha256": "8014c6fe55fdb6fc0dd3069ad9647d8f4be6583c90e4950c869ee8bda6714b39",
+      "bytes": 15029
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-transfer-accuracy-2026-10-02/evaluated-source-capsule.json",
+      "sha256": "c97bb09e8e31a6d78f0096145b4bfae22bd3e33e7aaee01cce85e6e36aa0b503",
+      "bytes": 591990
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-transfer-accuracy-2026-10-02/explanation-transfer-results.json",
+      "sha256": "bc23e00c1044c93f3b8e9b8c4ca3b18eec66ca1248d7472743f66dacf6a28a90",
+      "bytes": 11039
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-transfer-accuracy-2026-10-02/marine-explanation-quality.png",
+      "sha256": "d6d364f78f81d7c0b2e2171c3f0c875f14c14ec9a21b7f54bcb93840aa8842a6",
+      "bytes": 156172
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-transfer-accuracy-2026-10-02/marine-explanation-quality.svg",
+      "sha256": "bf98ee4724e216aadbe1fe1732d91899437f991ba5d3a32fbd5cd7ca4ccad39c",
+      "bytes": 9105
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-transfer-accuracy-2026-10-02/marine-positive-evidence-ladder.png",
+      "sha256": "e50f573a8f61a4989efe67497f3f1be0e0fda349f40f81b1e641edb7625dd74e",
+      "bytes": 225691
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-transfer-accuracy-2026-10-02/marine-positive-evidence-ladder.svg",
+      "sha256": "c19d4860a90f458d4d37e04ffd90275cd1afc3a6b7c0306345822d1285bd3e4e",
+      "bytes": 28805
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-transfer-accuracy-2026-10-02/marine-violation-evidence-ladder.png",
+      "sha256": "37997d949d4973f2aeb1d97307892613c3114cae0ccba6335d1d7a5fd3ede0a8",
+      "bytes": 210998
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-transfer-accuracy-2026-10-02/marine-violation-evidence-ladder.svg",
+      "sha256": "42965ebf7be477cf9998a1773ca265edd66e956566dfa05cb11cc6a5926a0daf",
+      "bytes": 22293
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-transfer-accuracy-2026-10-02/portable-reproduction-qa.json",
+      "sha256": "1eff4f42ae86a13cf76ea8a690fc55e0a29e6eb846bc76b6fb541cc29af14d73",
+      "bytes": 517
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/PAPER_INTEGRATION_COMPLETE_2026-10-01.md",
+      "sha256": "5842a4cee3b2f246d1de08c79856df9f4451955ea9d5bf68ed4c2da755fac133",
+      "bytes": 5906
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/PAPER_TRANSFER_CASE.md",
+      "sha256": "32f2493b173fe6721848d33dec6a36f044e8a3e880bed0ca654eaa70d9f6c0d7",
+      "bytes": 13069
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/output/pdf/roboboat-explanation-transfer/roboboat_explanation_preview.pdf",
+      "sha256": "66c96786a91d8a47054c2bb88625b5c12299271b5087c33a81a030c0194d9d5a",
+      "bytes": 553977
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/paper/roboboat_explanation_preview.tex",
+      "sha256": "d3dccaf1e74e23497abb38a706e93f5ba761a0d57480147943ca3fd04a9b01b7",
+      "bytes": 291
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/paper/roboboat_temporal_evidence.tex",
+      "sha256": "2b77edf6cfe93dd1eed0fa04ca3e7105dc3c4fc0dad8fa8c6149e5576d052c6b",
+      "bytes": 6330
+    }
+  ],
+  "command": "uv run --with matplotlib==3.11.2 python analysis/plot_roboboat_transfer_accuracy.py",
+  "preview_command": "tectonic paper/roboboat_explanation_preview.tex --outdir output/pdf/roboboat-explanation-transfer --keep-logs",
+  "reproduction": {
+    "minimal_inputs": [
+      "analysis/plot_roboboat_transfer_accuracy.py",
+      "artifacts/roboboat-transfer-accuracy-2026-10-02/evaluated-source-capsule.json"
+    ],
+    "matplotlib": "3.11.2",
+    "six_png_svg_outputs_byte_identical": true,
+    "both_bank_summaries_identical": true
+  },
+  "checks": {
+    "all_existing_B4_rows_retained_in_each_bank": true,
+    "all_final_annotation_hashes_verified": true,
+    "displayed_answer_excerpts_verbatim": true,
+    "raw_packet_coordinates_match": true,
+    "fixed_interval_and_late_crossing_checked": true,
+    "three_preview_pages_visually_checked": true,
+    "unresolved_citations_or_references": false,
+    "overfull_boxes": false
+  },
+  "evaluation_scope": {
+    "five_record_bank": "Original automated sentence-level development assessments; later incomplete atomic reassessment not substituted.",
+    "two_record_contact_replay": "Original reviewed-claim automated support assessments, 116/116 supported instances; not 116 independent configurations.",
+    "method": "Historical B4 marine deterministic evidence-contract implementation; neither scored full-framework LLM realization nor zero-shot unchanged land transfer is asserted.",
+    "land_connection": "Shared research questions and observed calibration behavior; no matched land-versus-marine accuracy estimate.",
+    "physical_bank": "Closed 46-record raw numerical validation retained as supplement, not assigned language-accuracy labels.",
+    "baseline_context": "Old baseline results and tied useful-coverage findings are unchanged and retained; no ranking or superiority inferred from B4-only descriptive plots.",
+    "limitations": "Small inspected simulator development banks; automated labels may share systematic errors. No human validation, real-water validation or broad generalization guarantee."
+  },
+  "new_model_calls": 0,
+  "new_physical_runs": 0,
+  "new_annotation_labels": 0,
+  "confirmation_n": 0,
+  "replication_n": 0,
+  "campaign_restarted": false
+}

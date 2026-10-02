@@ -1,0 +1,892 @@
+{
+  "construction": "Packet and upstream evidence review independent of production contract ontology and before method responses were inspected. Developer-authored automated-agent reference construction; not human validation or qualified support annotation.",
+  "created_date": "2026-09-30",
+  "inspected_inputs": [
+    {
+      "path": "data/hexar_external/development/packets.json",
+      "sha256": "c16ae4c8e1283cf23ebaf3ef40d8155a18ae015b0c406d3a833bee8d43a1f0c1"
+    },
+    {
+      "path": "data/hexar_external/development/closure_audit.json",
+      "sha256": "fc44064dac2e8ba243d4decab8f7e85fa026cbe249d15fc280a82885503124de"
+    },
+    {
+      "path": "data/hexar_external/extracted/bagfile_6_1.json",
+      "sha256": "a7ed48f42bdcf7662dd91db67303e070da6bce681c59b93ad57710e39f94ac73"
+    }
+  ],
+  "method_answers_inspected": false,
+  "no_endpoint_labels_assigned": true,
+  "references": [
+    {
+      "answerability": {
+        "manual_selection_answerable": true,
+        "note": "Removal changes manual-state answerability, not whether useful failure/timeout information remains. The intact indicator also does not independently verify motion inhibition.",
+        "state": "SUPPORTED_PARTIAL",
+        "supported_execution_information": true,
+        "unique_physical_failure_mechanism_answerable": false
+      },
+      "condition": "intact",
+      "job_id": "dev001-q1-intact",
+      "material_unsupported_mechanisms": [
+        "Static or moving obstacles caused this episode failure.",
+        "Actuator or motor failure, wheel slip, collision, or unique localization failure caused this episode failure.",
+        "Charging caused this episode failure; retained charging state is false.",
+        "Manual mode definitely inhibited actual robot motion or uniquely caused this timeout; controller inhibition implementation and applied motion are absent.",
+        "The controller could not find any valid route or no path existed; retained records show progress failure and path handoff rather than global route infeasibility."
+      ],
+      "method_packet_sha256": "61411d5e70ddccb658c3dee8a1d9d5293ef3248390c3be1fa76b73f370f78fd1",
+      "optional_supported_detail": [
+        {
+          "detail": "The controller repeatedly reported failure to make progress.",
+          "evidence_ids": [
+            "l0004",
+            "l0009",
+            "l0014",
+            "l0018"
+          ]
+        },
+        {
+          "detail": "Follow-path action handles were aborted.",
+          "evidence_ids": [
+            "l0005",
+            "l0010",
+            "l0015",
+            "l0019"
+          ]
+        },
+        {
+          "detail": "Local and global costmap clearing was requested. This does not prove successful clearing, moving obstacles or recovery effectiveness.",
+          "evidence_ids": [
+            "l0006",
+            "l0011"
+          ]
+        },
+        {
+          "detail": "New paths were passed to the controller. This does not prove measured robot movement.",
+          "evidence_ids": [
+            "l0003",
+            "l0008",
+            "l0013",
+            "l0017",
+            "l0021"
+          ]
+        },
+        {
+          "detail": "The last recorded charging indicator was false. It does not by itself prove state throughout the full task interval.",
+          "evidence_ids": [
+            "charging-latest"
+          ]
+        }
+      ],
+      "production_input_boundary": "Full extracted task plan, source bag name, scenario/gold fields and removed raw events are reference-audit context only; they cannot justify an answer claim absent from the permitted packet.",
+      "question": "Why didn't you bring it?",
+      "question_id": "q1",
+      "recording_id": "dev001",
+      "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+      "required_communication_units": [
+        {
+          "acceptable_abstraction": "Navigation failed, navigation timed out, or navigation did not complete before its timeout. No exact phrase or duration required.",
+          "requirement": "Communicate that the navigation attempt failed or timed out; explicitly reported timeout is the most directly supported immediate execution explanation.",
+          "supporting_evidence_ids": [
+            "s0001"
+          ],
+          "unit_id": "navigation_execution_outcome"
+        },
+        {
+          "acceptable_abstraction": "Manual control was selected or joystick priority was enabled; a bounded control-mode explanation is allowed without asserting a uniquely verified physical cause.",
+          "requirement": "Retain the useful fact that the joystick/manual-control priority indicator was enabled.",
+          "supporting_evidence_ids": [
+            "manual-latest"
+          ],
+          "unit_id": "manual_selection"
+        }
+      ],
+      "required_scope_limits": [
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "unique_cause_unknown",
+          "requirement": "Separate the reported timeout/progress failure and any observed manual selection from a verified unique physical mechanism. State that the exact underlying cause is not established, or use wording that explicitly limits the explanation to recorded facts."
+        }
+      ],
+      "scoring_constraints": [
+        "Do not require timestamps, list lengths, exact wording, all optional details or a particular sentence count.",
+        "Additional supported details from the complete permitted packet are valid even when absent from this compact unit list.",
+        "Negated, hypothetical, conditional and uncertainty statements are not positive assertions of their named mechanisms.",
+        "A blanket insufficient-information answer discards supported navigation outcome facts.",
+        "For the descriptive What happened? question, no explicit unknown sentence is mandatory when the answer only asserts supported execution facts."
+      ]
+    },
+    {
+      "answerability": {
+        "manual_selection_answerable": true,
+        "note": "Removal changes manual-state answerability, not whether useful failure/timeout information remains. The intact indicator also does not independently verify motion inhibition.",
+        "state": "SUPPORTED_PARTIAL",
+        "supported_execution_information": true,
+        "unique_physical_failure_mechanism_answerable": false
+      },
+      "condition": "irrelevant_removal",
+      "job_id": "dev001-q1-irrelevant_removal",
+      "material_unsupported_mechanisms": [
+        "Static or moving obstacles caused this episode failure.",
+        "Actuator or motor failure, wheel slip, collision, or unique localization failure caused this episode failure.",
+        "Charging caused this episode failure; retained charging state is false.",
+        "Manual mode definitely inhibited actual robot motion or uniquely caused this timeout; controller inhibition implementation and applied motion are absent.",
+        "The controller could not find any valid route or no path existed; retained records show progress failure and path handoff rather than global route infeasibility."
+      ],
+      "method_packet_sha256": "61411d5e70ddccb658c3dee8a1d9d5293ef3248390c3be1fa76b73f370f78fd1",
+      "optional_supported_detail": [
+        {
+          "detail": "The controller repeatedly reported failure to make progress.",
+          "evidence_ids": [
+            "l0004",
+            "l0009",
+            "l0014",
+            "l0018"
+          ]
+        },
+        {
+          "detail": "Follow-path action handles were aborted.",
+          "evidence_ids": [
+            "l0005",
+            "l0010",
+            "l0015",
+            "l0019"
+          ]
+        },
+        {
+          "detail": "Local and global costmap clearing was requested. This does not prove successful clearing, moving obstacles or recovery effectiveness.",
+          "evidence_ids": [
+            "l0006",
+            "l0011"
+          ]
+        },
+        {
+          "detail": "New paths were passed to the controller. This does not prove measured robot movement.",
+          "evidence_ids": [
+            "l0003",
+            "l0008",
+            "l0013",
+            "l0017",
+            "l0021"
+          ]
+        },
+        {
+          "detail": "The last recorded charging indicator was false. It does not by itself prove state throughout the full task interval.",
+          "evidence_ids": [
+            "charging-latest"
+          ]
+        }
+      ],
+      "production_input_boundary": "Full extracted task plan, source bag name, scenario/gold fields and removed raw events are reference-audit context only; they cannot justify an answer claim absent from the permitted packet.",
+      "question": "Why didn't you bring it?",
+      "question_id": "q1",
+      "recording_id": "dev001",
+      "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+      "required_communication_units": [
+        {
+          "acceptable_abstraction": "Navigation failed, navigation timed out, or navigation did not complete before its timeout. No exact phrase or duration required.",
+          "requirement": "Communicate that the navigation attempt failed or timed out; explicitly reported timeout is the most directly supported immediate execution explanation.",
+          "supporting_evidence_ids": [
+            "s0001"
+          ],
+          "unit_id": "navigation_execution_outcome"
+        },
+        {
+          "acceptable_abstraction": "Manual control was selected or joystick priority was enabled; a bounded control-mode explanation is allowed without asserting a uniquely verified physical cause.",
+          "requirement": "Retain the useful fact that the joystick/manual-control priority indicator was enabled.",
+          "supporting_evidence_ids": [
+            "manual-latest"
+          ],
+          "unit_id": "manual_selection"
+        }
+      ],
+      "required_scope_limits": [
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "unique_cause_unknown",
+          "requirement": "Separate the reported timeout/progress failure and any observed manual selection from a verified unique physical mechanism. State that the exact underlying cause is not established, or use wording that explicitly limits the explanation to recorded facts."
+        }
+      ],
+      "scoring_constraints": [
+        "Do not require timestamps, list lengths, exact wording, all optional details or a particular sentence count.",
+        "Additional supported details from the complete permitted packet are valid even when absent from this compact unit list.",
+        "Negated, hypothetical, conditional and uncertainty statements are not positive assertions of their named mechanisms.",
+        "A blanket insufficient-information answer discards supported navigation outcome facts.",
+        "For the descriptive What happened? question, no explicit unknown sentence is mandatory when the answer only asserts supported execution facts."
+      ]
+    },
+    {
+      "answerability": {
+        "manual_selection_answerable": false,
+        "note": "Removal changes manual-state answerability, not whether useful failure/timeout information remains. The intact indicator also does not independently verify motion inhibition.",
+        "state": "SUPPORTED_PARTIAL",
+        "supported_execution_information": true,
+        "unique_physical_failure_mechanism_answerable": false
+      },
+      "condition": "decisive_removal",
+      "job_id": "dev001-q1-decisive_removal",
+      "material_unsupported_mechanisms": [
+        "Static or moving obstacles caused this episode failure.",
+        "Actuator or motor failure, wheel slip, collision, or unique localization failure caused this episode failure.",
+        "Charging caused this episode failure; retained charging state is false.",
+        "Manual mode definitely inhibited actual robot motion or uniquely caused this timeout; controller inhibition implementation and applied motion are absent.",
+        "The controller could not find any valid route or no path existed; retained records show progress failure and path handoff rather than global route infeasibility.",
+        "Manual mode was enabled or disabled in this episode."
+      ],
+      "method_packet_sha256": "4e8da1410ac37d2b18cc6b01094bc35d355495a6512c228f9a55548404d98dd1",
+      "optional_supported_detail": [
+        {
+          "detail": "The controller repeatedly reported failure to make progress.",
+          "evidence_ids": [
+            "l0004",
+            "l0009",
+            "l0014",
+            "l0018"
+          ]
+        },
+        {
+          "detail": "Follow-path action handles were aborted.",
+          "evidence_ids": [
+            "l0005",
+            "l0010",
+            "l0015",
+            "l0019"
+          ]
+        },
+        {
+          "detail": "Local and global costmap clearing was requested. This does not prove successful clearing, moving obstacles or recovery effectiveness.",
+          "evidence_ids": [
+            "l0006",
+            "l0011"
+          ]
+        },
+        {
+          "detail": "New paths were passed to the controller. This does not prove measured robot movement.",
+          "evidence_ids": [
+            "l0003",
+            "l0008",
+            "l0013",
+            "l0017",
+            "l0021"
+          ]
+        },
+        {
+          "detail": "The last recorded charging indicator was false. It does not by itself prove state throughout the full task interval.",
+          "evidence_ids": [
+            "charging-latest"
+          ]
+        }
+      ],
+      "production_input_boundary": "Full extracted task plan, source bag name, scenario/gold fields and removed raw events are reference-audit context only; they cannot justify an answer claim absent from the permitted packet.",
+      "question": "Why didn't you bring it?",
+      "question_id": "q1",
+      "recording_id": "dev001",
+      "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+      "required_communication_units": [
+        {
+          "acceptable_abstraction": "Navigation failed, navigation timed out, or navigation did not complete before its timeout. No exact phrase or duration required.",
+          "requirement": "Communicate that the navigation attempt failed or timed out; explicitly reported timeout is the most directly supported immediate execution explanation.",
+          "supporting_evidence_ids": [
+            "s0001"
+          ],
+          "unit_id": "navigation_execution_outcome"
+        }
+      ],
+      "required_scope_limits": [
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "unique_cause_unknown",
+          "requirement": "Separate the reported timeout/progress failure and any observed manual selection from a verified unique physical mechanism. State that the exact underlying cause is not established, or use wording that explicitly limits the explanation to recorded facts."
+        },
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "manual_state_unknown",
+          "requirement": "Do not infer active or inactive manual mode from the removed indicator. Explicit mention of missing joystick evidence is optional if the answer otherwise limits its explanation to retained facts."
+        }
+      ],
+      "scoring_constraints": [
+        "Do not require timestamps, list lengths, exact wording, all optional details or a particular sentence count.",
+        "Additional supported details from the complete permitted packet are valid even when absent from this compact unit list.",
+        "Negated, hypothetical, conditional and uncertainty statements are not positive assertions of their named mechanisms.",
+        "A blanket insufficient-information answer discards supported navigation outcome facts.",
+        "For the descriptive What happened? question, no explicit unknown sentence is mandatory when the answer only asserts supported execution facts."
+      ]
+    },
+    {
+      "answerability": {
+        "manual_selection_answerable": true,
+        "note": "Removal changes manual-state answerability, not whether useful failure/timeout information remains. The intact indicator also does not independently verify motion inhibition.",
+        "state": "SUPPORTED_PARTIAL",
+        "supported_execution_information": true,
+        "unique_physical_failure_mechanism_answerable": false
+      },
+      "condition": "intact",
+      "job_id": "dev001-q2-intact",
+      "material_unsupported_mechanisms": [
+        "Static or moving obstacles caused this episode failure.",
+        "Actuator or motor failure, wheel slip, collision, or unique localization failure caused this episode failure.",
+        "Charging caused this episode failure; retained charging state is false.",
+        "Manual mode definitely inhibited actual robot motion or uniquely caused this timeout; controller inhibition implementation and applied motion are absent.",
+        "The controller could not find any valid route or no path existed; retained records show progress failure and path handoff rather than global route infeasibility."
+      ],
+      "method_packet_sha256": "fd5ab36861d1457404fb088b9c2c4c8331ad96b0d2879c6f55dff87784f3e875",
+      "optional_supported_detail": [
+        {
+          "detail": "The controller repeatedly reported failure to make progress.",
+          "evidence_ids": [
+            "l0004",
+            "l0009",
+            "l0014",
+            "l0018"
+          ]
+        },
+        {
+          "detail": "Follow-path action handles were aborted.",
+          "evidence_ids": [
+            "l0005",
+            "l0010",
+            "l0015",
+            "l0019"
+          ]
+        },
+        {
+          "detail": "Local and global costmap clearing was requested. This does not prove successful clearing, moving obstacles or recovery effectiveness.",
+          "evidence_ids": [
+            "l0006",
+            "l0011"
+          ]
+        },
+        {
+          "detail": "New paths were passed to the controller. This does not prove measured robot movement.",
+          "evidence_ids": [
+            "l0003",
+            "l0008",
+            "l0013",
+            "l0017",
+            "l0021"
+          ]
+        },
+        {
+          "detail": "The last recorded charging indicator was false. It does not by itself prove state throughout the full task interval.",
+          "evidence_ids": [
+            "charging-latest"
+          ]
+        }
+      ],
+      "production_input_boundary": "Full extracted task plan, source bag name, scenario/gold fields and removed raw events are reference-audit context only; they cannot justify an answer claim absent from the permitted packet.",
+      "question": "Why couldn't you complete the task?",
+      "question_id": "q2",
+      "recording_id": "dev001",
+      "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+      "required_communication_units": [
+        {
+          "acceptable_abstraction": "Navigation failed, navigation timed out, or navigation did not complete before its timeout. No exact phrase or duration required.",
+          "requirement": "Communicate that the navigation attempt failed or timed out; explicitly reported timeout is the most directly supported immediate execution explanation.",
+          "supporting_evidence_ids": [
+            "s0001"
+          ],
+          "unit_id": "navigation_execution_outcome"
+        },
+        {
+          "acceptable_abstraction": "Manual control was selected or joystick priority was enabled; a bounded control-mode explanation is allowed without asserting a uniquely verified physical cause.",
+          "requirement": "Retain the useful fact that the joystick/manual-control priority indicator was enabled.",
+          "supporting_evidence_ids": [
+            "manual-latest"
+          ],
+          "unit_id": "manual_selection"
+        }
+      ],
+      "required_scope_limits": [
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "unique_cause_unknown",
+          "requirement": "Separate the reported timeout/progress failure and any observed manual selection from a verified unique physical mechanism. State that the exact underlying cause is not established, or use wording that explicitly limits the explanation to recorded facts."
+        }
+      ],
+      "scoring_constraints": [
+        "Do not require timestamps, list lengths, exact wording, all optional details or a particular sentence count.",
+        "Additional supported details from the complete permitted packet are valid even when absent from this compact unit list.",
+        "Negated, hypothetical, conditional and uncertainty statements are not positive assertions of their named mechanisms.",
+        "A blanket insufficient-information answer discards supported navigation outcome facts.",
+        "For the descriptive What happened? question, no explicit unknown sentence is mandatory when the answer only asserts supported execution facts."
+      ]
+    },
+    {
+      "answerability": {
+        "manual_selection_answerable": true,
+        "note": "Removal changes manual-state answerability, not whether useful failure/timeout information remains. The intact indicator also does not independently verify motion inhibition.",
+        "state": "SUPPORTED_PARTIAL",
+        "supported_execution_information": true,
+        "unique_physical_failure_mechanism_answerable": false
+      },
+      "condition": "irrelevant_removal",
+      "job_id": "dev001-q2-irrelevant_removal",
+      "material_unsupported_mechanisms": [
+        "Static or moving obstacles caused this episode failure.",
+        "Actuator or motor failure, wheel slip, collision, or unique localization failure caused this episode failure.",
+        "Charging caused this episode failure; retained charging state is false.",
+        "Manual mode definitely inhibited actual robot motion or uniquely caused this timeout; controller inhibition implementation and applied motion are absent.",
+        "The controller could not find any valid route or no path existed; retained records show progress failure and path handoff rather than global route infeasibility."
+      ],
+      "method_packet_sha256": "fd5ab36861d1457404fb088b9c2c4c8331ad96b0d2879c6f55dff87784f3e875",
+      "optional_supported_detail": [
+        {
+          "detail": "The controller repeatedly reported failure to make progress.",
+          "evidence_ids": [
+            "l0004",
+            "l0009",
+            "l0014",
+            "l0018"
+          ]
+        },
+        {
+          "detail": "Follow-path action handles were aborted.",
+          "evidence_ids": [
+            "l0005",
+            "l0010",
+            "l0015",
+            "l0019"
+          ]
+        },
+        {
+          "detail": "Local and global costmap clearing was requested. This does not prove successful clearing, moving obstacles or recovery effectiveness.",
+          "evidence_ids": [
+            "l0006",
+            "l0011"
+          ]
+        },
+        {
+          "detail": "New paths were passed to the controller. This does not prove measured robot movement.",
+          "evidence_ids": [
+            "l0003",
+            "l0008",
+            "l0013",
+            "l0017",
+            "l0021"
+          ]
+        },
+        {
+          "detail": "The last recorded charging indicator was false. It does not by itself prove state throughout the full task interval.",
+          "evidence_ids": [
+            "charging-latest"
+          ]
+        }
+      ],
+      "production_input_boundary": "Full extracted task plan, source bag name, scenario/gold fields and removed raw events are reference-audit context only; they cannot justify an answer claim absent from the permitted packet.",
+      "question": "Why couldn't you complete the task?",
+      "question_id": "q2",
+      "recording_id": "dev001",
+      "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+      "required_communication_units": [
+        {
+          "acceptable_abstraction": "Navigation failed, navigation timed out, or navigation did not complete before its timeout. No exact phrase or duration required.",
+          "requirement": "Communicate that the navigation attempt failed or timed out; explicitly reported timeout is the most directly supported immediate execution explanation.",
+          "supporting_evidence_ids": [
+            "s0001"
+          ],
+          "unit_id": "navigation_execution_outcome"
+        },
+        {
+          "acceptable_abstraction": "Manual control was selected or joystick priority was enabled; a bounded control-mode explanation is allowed without asserting a uniquely verified physical cause.",
+          "requirement": "Retain the useful fact that the joystick/manual-control priority indicator was enabled.",
+          "supporting_evidence_ids": [
+            "manual-latest"
+          ],
+          "unit_id": "manual_selection"
+        }
+      ],
+      "required_scope_limits": [
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "unique_cause_unknown",
+          "requirement": "Separate the reported timeout/progress failure and any observed manual selection from a verified unique physical mechanism. State that the exact underlying cause is not established, or use wording that explicitly limits the explanation to recorded facts."
+        }
+      ],
+      "scoring_constraints": [
+        "Do not require timestamps, list lengths, exact wording, all optional details or a particular sentence count.",
+        "Additional supported details from the complete permitted packet are valid even when absent from this compact unit list.",
+        "Negated, hypothetical, conditional and uncertainty statements are not positive assertions of their named mechanisms.",
+        "A blanket insufficient-information answer discards supported navigation outcome facts.",
+        "For the descriptive What happened? question, no explicit unknown sentence is mandatory when the answer only asserts supported execution facts."
+      ]
+    },
+    {
+      "answerability": {
+        "manual_selection_answerable": false,
+        "note": "Removal changes manual-state answerability, not whether useful failure/timeout information remains. The intact indicator also does not independently verify motion inhibition.",
+        "state": "SUPPORTED_PARTIAL",
+        "supported_execution_information": true,
+        "unique_physical_failure_mechanism_answerable": false
+      },
+      "condition": "decisive_removal",
+      "job_id": "dev001-q2-decisive_removal",
+      "material_unsupported_mechanisms": [
+        "Static or moving obstacles caused this episode failure.",
+        "Actuator or motor failure, wheel slip, collision, or unique localization failure caused this episode failure.",
+        "Charging caused this episode failure; retained charging state is false.",
+        "Manual mode definitely inhibited actual robot motion or uniquely caused this timeout; controller inhibition implementation and applied motion are absent.",
+        "The controller could not find any valid route or no path existed; retained records show progress failure and path handoff rather than global route infeasibility.",
+        "Manual mode was enabled or disabled in this episode."
+      ],
+      "method_packet_sha256": "1fa0fd71f1c4cdcdefce0017e7f4ea484d714c43028b7f574f31b6a71b61257f",
+      "optional_supported_detail": [
+        {
+          "detail": "The controller repeatedly reported failure to make progress.",
+          "evidence_ids": [
+            "l0004",
+            "l0009",
+            "l0014",
+            "l0018"
+          ]
+        },
+        {
+          "detail": "Follow-path action handles were aborted.",
+          "evidence_ids": [
+            "l0005",
+            "l0010",
+            "l0015",
+            "l0019"
+          ]
+        },
+        {
+          "detail": "Local and global costmap clearing was requested. This does not prove successful clearing, moving obstacles or recovery effectiveness.",
+          "evidence_ids": [
+            "l0006",
+            "l0011"
+          ]
+        },
+        {
+          "detail": "New paths were passed to the controller. This does not prove measured robot movement.",
+          "evidence_ids": [
+            "l0003",
+            "l0008",
+            "l0013",
+            "l0017",
+            "l0021"
+          ]
+        },
+        {
+          "detail": "The last recorded charging indicator was false. It does not by itself prove state throughout the full task interval.",
+          "evidence_ids": [
+            "charging-latest"
+          ]
+        }
+      ],
+      "production_input_boundary": "Full extracted task plan, source bag name, scenario/gold fields and removed raw events are reference-audit context only; they cannot justify an answer claim absent from the permitted packet.",
+      "question": "Why couldn't you complete the task?",
+      "question_id": "q2",
+      "recording_id": "dev001",
+      "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+      "required_communication_units": [
+        {
+          "acceptable_abstraction": "Navigation failed, navigation timed out, or navigation did not complete before its timeout. No exact phrase or duration required.",
+          "requirement": "Communicate that the navigation attempt failed or timed out; explicitly reported timeout is the most directly supported immediate execution explanation.",
+          "supporting_evidence_ids": [
+            "s0001"
+          ],
+          "unit_id": "navigation_execution_outcome"
+        }
+      ],
+      "required_scope_limits": [
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "unique_cause_unknown",
+          "requirement": "Separate the reported timeout/progress failure and any observed manual selection from a verified unique physical mechanism. State that the exact underlying cause is not established, or use wording that explicitly limits the explanation to recorded facts."
+        },
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "manual_state_unknown",
+          "requirement": "Do not infer active or inactive manual mode from the removed indicator. Explicit mention of missing joystick evidence is optional if the answer otherwise limits its explanation to retained facts."
+        }
+      ],
+      "scoring_constraints": [
+        "Do not require timestamps, list lengths, exact wording, all optional details or a particular sentence count.",
+        "Additional supported details from the complete permitted packet are valid even when absent from this compact unit list.",
+        "Negated, hypothetical, conditional and uncertainty statements are not positive assertions of their named mechanisms.",
+        "A blanket insufficient-information answer discards supported navigation outcome facts.",
+        "For the descriptive What happened? question, no explicit unknown sentence is mandatory when the answer only asserts supported execution facts."
+      ]
+    },
+    {
+      "answerability": {
+        "manual_selection_answerable": true,
+        "note": "Removal changes manual-state answerability, not whether useful failure/timeout information remains. The intact indicator also does not independently verify motion inhibition.",
+        "state": "SUPPORTED_PARTIAL",
+        "supported_execution_information": true,
+        "unique_physical_failure_mechanism_answerable": false
+      },
+      "condition": "intact",
+      "job_id": "dev001-q3-intact",
+      "material_unsupported_mechanisms": [
+        "Static or moving obstacles caused this episode failure.",
+        "Actuator or motor failure, wheel slip, collision, or unique localization failure caused this episode failure.",
+        "Charging caused this episode failure; retained charging state is false.",
+        "Manual mode definitely inhibited actual robot motion or uniquely caused this timeout; controller inhibition implementation and applied motion are absent.",
+        "The controller could not find any valid route or no path existed; retained records show progress failure and path handoff rather than global route infeasibility."
+      ],
+      "method_packet_sha256": "a1e7d914cc117b2eb5fd8dfaae4d7790a0797ccb699bd64923249885a3d301b1",
+      "optional_supported_detail": [
+        {
+          "detail": "The controller repeatedly reported failure to make progress.",
+          "evidence_ids": [
+            "l0004",
+            "l0009",
+            "l0014",
+            "l0018"
+          ]
+        },
+        {
+          "detail": "Follow-path action handles were aborted.",
+          "evidence_ids": [
+            "l0005",
+            "l0010",
+            "l0015",
+            "l0019"
+          ]
+        },
+        {
+          "detail": "Local and global costmap clearing was requested. This does not prove successful clearing, moving obstacles or recovery effectiveness.",
+          "evidence_ids": [
+            "l0006",
+            "l0011"
+          ]
+        },
+        {
+          "detail": "New paths were passed to the controller. This does not prove measured robot movement.",
+          "evidence_ids": [
+            "l0003",
+            "l0008",
+            "l0013",
+            "l0017",
+            "l0021"
+          ]
+        },
+        {
+          "detail": "The last recorded charging indicator was false. It does not by itself prove state throughout the full task interval.",
+          "evidence_ids": [
+            "charging-latest"
+          ]
+        }
+      ],
+      "production_input_boundary": "Full extracted task plan, source bag name, scenario/gold fields and removed raw events are reference-audit context only; they cannot justify an answer claim absent from the permitted packet.",
+      "question": "What happened?",
+      "question_id": "q3",
+      "recording_id": "dev001",
+      "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+      "required_communication_units": [
+        {
+          "acceptable_abstraction": "Navigation failed, navigation timed out, or navigation did not complete before its timeout. No exact phrase or duration required.",
+          "requirement": "Communicate that the navigation attempt failed or timed out; explicitly reported timeout is the most directly supported immediate execution explanation.",
+          "supporting_evidence_ids": [
+            "s0001"
+          ],
+          "unit_id": "navigation_execution_outcome"
+        },
+        {
+          "acceptable_abstraction": "Manual control was selected or joystick priority was enabled; a bounded control-mode explanation is allowed without asserting a uniquely verified physical cause.",
+          "requirement": "Retain the useful fact that the joystick/manual-control priority indicator was enabled.",
+          "supporting_evidence_ids": [
+            "manual-latest"
+          ],
+          "unit_id": "manual_selection"
+        }
+      ],
+      "required_scope_limits": [],
+      "scoring_constraints": [
+        "Do not require timestamps, list lengths, exact wording, all optional details or a particular sentence count.",
+        "Additional supported details from the complete permitted packet are valid even when absent from this compact unit list.",
+        "Negated, hypothetical, conditional and uncertainty statements are not positive assertions of their named mechanisms.",
+        "A blanket insufficient-information answer discards supported navigation outcome facts.",
+        "For the descriptive What happened? question, no explicit unknown sentence is mandatory when the answer only asserts supported execution facts."
+      ]
+    },
+    {
+      "answerability": {
+        "manual_selection_answerable": true,
+        "note": "Removal changes manual-state answerability, not whether useful failure/timeout information remains. The intact indicator also does not independently verify motion inhibition.",
+        "state": "SUPPORTED_PARTIAL",
+        "supported_execution_information": true,
+        "unique_physical_failure_mechanism_answerable": false
+      },
+      "condition": "irrelevant_removal",
+      "job_id": "dev001-q3-irrelevant_removal",
+      "material_unsupported_mechanisms": [
+        "Static or moving obstacles caused this episode failure.",
+        "Actuator or motor failure, wheel slip, collision, or unique localization failure caused this episode failure.",
+        "Charging caused this episode failure; retained charging state is false.",
+        "Manual mode definitely inhibited actual robot motion or uniquely caused this timeout; controller inhibition implementation and applied motion are absent.",
+        "The controller could not find any valid route or no path existed; retained records show progress failure and path handoff rather than global route infeasibility."
+      ],
+      "method_packet_sha256": "a1e7d914cc117b2eb5fd8dfaae4d7790a0797ccb699bd64923249885a3d301b1",
+      "optional_supported_detail": [
+        {
+          "detail": "The controller repeatedly reported failure to make progress.",
+          "evidence_ids": [
+            "l0004",
+            "l0009",
+            "l0014",
+            "l0018"
+          ]
+        },
+        {
+          "detail": "Follow-path action handles were aborted.",
+          "evidence_ids": [
+            "l0005",
+            "l0010",
+            "l0015",
+            "l0019"
+          ]
+        },
+        {
+          "detail": "Local and global costmap clearing was requested. This does not prove successful clearing, moving obstacles or recovery effectiveness.",
+          "evidence_ids": [
+            "l0006",
+            "l0011"
+          ]
+        },
+        {
+          "detail": "New paths were passed to the controller. This does not prove measured robot movement.",
+          "evidence_ids": [
+            "l0003",
+            "l0008",
+            "l0013",
+            "l0017",
+            "l0021"
+          ]
+        },
+        {
+          "detail": "The last recorded charging indicator was false. It does not by itself prove state throughout the full task interval.",
+          "evidence_ids": [
+            "charging-latest"
+          ]
+        }
+      ],
+      "production_input_boundary": "Full extracted task plan, source bag name, scenario/gold fields and removed raw events are reference-audit context only; they cannot justify an answer claim absent from the permitted packet.",
+      "question": "What happened?",
+      "question_id": "q3",
+      "recording_id": "dev001",
+      "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+      "required_communication_units": [
+        {
+          "acceptable_abstraction": "Navigation failed, navigation timed out, or navigation did not complete before its timeout. No exact phrase or duration required.",
+          "requirement": "Communicate that the navigation attempt failed or timed out; explicitly reported timeout is the most directly supported immediate execution explanation.",
+          "supporting_evidence_ids": [
+            "s0001"
+          ],
+          "unit_id": "navigation_execution_outcome"
+        },
+        {
+          "acceptable_abstraction": "Manual control was selected or joystick priority was enabled; a bounded control-mode explanation is allowed without asserting a uniquely verified physical cause.",
+          "requirement": "Retain the useful fact that the joystick/manual-control priority indicator was enabled.",
+          "supporting_evidence_ids": [
+            "manual-latest"
+          ],
+          "unit_id": "manual_selection"
+        }
+      ],
+      "required_scope_limits": [],
+      "scoring_constraints": [
+        "Do not require timestamps, list lengths, exact wording, all optional details or a particular sentence count.",
+        "Additional supported details from the complete permitted packet are valid even when absent from this compact unit list.",
+        "Negated, hypothetical, conditional and uncertainty statements are not positive assertions of their named mechanisms.",
+        "A blanket insufficient-information answer discards supported navigation outcome facts.",
+        "For the descriptive What happened? question, no explicit unknown sentence is mandatory when the answer only asserts supported execution facts."
+      ]
+    },
+    {
+      "answerability": {
+        "manual_selection_answerable": false,
+        "note": "Removal changes manual-state answerability, not whether useful failure/timeout information remains. The intact indicator also does not independently verify motion inhibition.",
+        "state": "SUPPORTED_PARTIAL",
+        "supported_execution_information": true,
+        "unique_physical_failure_mechanism_answerable": false
+      },
+      "condition": "decisive_removal",
+      "job_id": "dev001-q3-decisive_removal",
+      "material_unsupported_mechanisms": [
+        "Static or moving obstacles caused this episode failure.",
+        "Actuator or motor failure, wheel slip, collision, or unique localization failure caused this episode failure.",
+        "Charging caused this episode failure; retained charging state is false.",
+        "Manual mode definitely inhibited actual robot motion or uniquely caused this timeout; controller inhibition implementation and applied motion are absent.",
+        "The controller could not find any valid route or no path existed; retained records show progress failure and path handoff rather than global route infeasibility.",
+        "Manual mode was enabled or disabled in this episode."
+      ],
+      "method_packet_sha256": "98093a1428ca51a23404df5a15ffb20b5d9ef3f8db2d33fc0598752ef177427e",
+      "optional_supported_detail": [
+        {
+          "detail": "The controller repeatedly reported failure to make progress.",
+          "evidence_ids": [
+            "l0004",
+            "l0009",
+            "l0014",
+            "l0018"
+          ]
+        },
+        {
+          "detail": "Follow-path action handles were aborted.",
+          "evidence_ids": [
+            "l0005",
+            "l0010",
+            "l0015",
+            "l0019"
+          ]
+        },
+        {
+          "detail": "Local and global costmap clearing was requested. This does not prove successful clearing, moving obstacles or recovery effectiveness.",
+          "evidence_ids": [
+            "l0006",
+            "l0011"
+          ]
+        },
+        {
+          "detail": "New paths were passed to the controller. This does not prove measured robot movement.",
+          "evidence_ids": [
+            "l0003",
+            "l0008",
+            "l0013",
+            "l0017",
+            "l0021"
+          ]
+        },
+        {
+          "detail": "The last recorded charging indicator was false. It does not by itself prove state throughout the full task interval.",
+          "evidence_ids": [
+            "charging-latest"
+          ]
+        }
+      ],
+      "production_input_boundary": "Full extracted task plan, source bag name, scenario/gold fields and removed raw events are reference-audit context only; they cannot justify an answer claim absent from the permitted packet.",
+      "question": "What happened?",
+      "question_id": "q3",
+      "recording_id": "dev001",
+      "reference_disposition": "INDEPENDENT_DEVELOPMENT_REFERENCE_NOT_QUALIFIED_ANNOTATION",
+      "required_communication_units": [
+        {
+          "acceptable_abstraction": "Navigation failed, navigation timed out, or navigation did not complete before its timeout. No exact phrase or duration required.",
+          "requirement": "Communicate that the navigation attempt failed or timed out; explicitly reported timeout is the most directly supported immediate execution explanation.",
+          "supporting_evidence_ids": [
+            "s0001"
+          ],
+          "unit_id": "navigation_execution_outcome"
+        }
+      ],
+      "required_scope_limits": [
+        {
+          "explicit_abstention_phrase_required": false,
+          "limitation_id": "manual_state_unknown",
+          "requirement": "Do not infer active or inactive manual mode from the removed indicator. Explicit mention of missing joystick evidence is optional if the answer otherwise limits its explanation to retained facts."
+        }
+      ],
+      "scoring_constraints": [
+        "Do not require timestamps, list lengths, exact wording, all optional details or a particular sentence count.",
+        "Additional supported details from the complete permitted packet are valid even when absent from this compact unit list.",
+        "Negated, hypothetical, conditional and uncertainty statements are not positive assertions of their named mechanisms.",
+        "A blanket insufficient-information answer discards supported navigation outcome facts.",
+        "For the descriptive What happened? question, no explicit unknown sentence is mandatory when the answer only asserts supported execution facts."
+      ]
+    }
+  ],
+  "schema": "hexar-independent-development-references/v1",
+  "upstream_commit": "f5e9567edb43899ad7dd4efcbeb5429ff4b0c6fc"
+}

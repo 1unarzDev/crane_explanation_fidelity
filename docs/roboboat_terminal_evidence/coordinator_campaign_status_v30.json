@@ -1,0 +1,68 @@
+{
+  "schema": "roboboat-development-status-amendment/v30",
+  "as_of_utc": "2026-10-01T16:12:56.756018+00:00",
+  "prior_state": "coordinator_campaign_status_v29.json",
+  "goal_complete": false,
+  "confirmation_frozen": false,
+  "confirmation_n": 0,
+  "replication_n": 0,
+  "land_n_added": 0,
+  "scored_method_pairs": 0,
+  "live_development": {
+    "session": 49910,
+    "exact_handle_confirmed_live": true,
+    "declared_attempts": 48,
+    "profile": {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/profile-v11.json",
+      "sha256": "5501459a723229870af251a462da0bbe90dd09098d5f3e0d2b9a829510983251"
+    },
+    "valid_recordings": 22,
+    "complete_physical_geometry_pairs": 11,
+    "dispositions": {
+      "VALID_TRACE_QUALIFIED_DEVELOPMENT": 22,
+      "RUNNING": 1,
+      "UNATTEMPTED": 25
+    }
+  },
+  "start_pose_rendered_probe": {
+    "session": 51128,
+    "exact_handle_confirmed_live": true,
+    "state": "WAITING_FOR_LEGACY_EXCLUSIVE_RENDER_LOCK",
+    "attempts_started": 0,
+    "independent_n_added": 0
+  },
+  "concurrent_render_candidate": {
+    "engineering_qa": {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-parallel-render-ownership-v14-001/engineering-qa-v1.json",
+      "sha256": "52c05299baf5b2af3da455e0af716835cbb719d6379c86ce168304cc65b728e0"
+    },
+    "tests": "25 passed; includes real two-process overlapping lease and legacy exclusive-lock exclusion",
+    "legacy_v3_sources_changed": false,
+    "compatible_lock": "New wrappers each hold shared legacy gate; old exclusive batch/probe holders block them before mutation",
+    "FPS_ownership": "First changes FPS, last restores original; process/start/nonce identity, compositor-specific state, interrupted transitions/PID reuse/external setting changes retained and refused",
+    "owned_window_helpers": "AST-identical to qualified v3 helpers, not actual new multiwindow validation",
+    "actual_compositor_qualified": false,
+    "actual_Unity_multiwindow_qualified": false,
+    "candidate_promoted": false
+  },
+  "parallel_compositor_probe": {
+    "declaration": {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-parallel-render-ownership-v14-001/declaration.json",
+      "sha256": "e230a175e6cb39501fe6596408bf1fb0e4e56abe65f594d8ca25932babc86c02"
+    },
+    "session": 83176,
+    "child_pids": [
+      1060359,
+      1060360
+    ],
+    "exact_handle_confirmed_live": true,
+    "state": "TWO_CHILDREN_WAITING_FOR_LEGACY_RENDER_GATE",
+    "cases": 2,
+    "empty_output_hold_s": 5,
+    "Unity_calls": 0,
+    "ROS_calls": 0,
+    "independent_n_added": 0,
+    "scope": "Actual FPS lease plus simultaneous nonce-owned empty output/workspace creation/cleanup only. No sensing/physics/nav/trace or actual Unity window-routing claim."
+  },
+  "remaining": "Verify queued startup and compositor jobs without restart; qualify actual concurrent Unity window routing/full navigation traces before scalable revised collection; actual fair B2 capability/source-complete judges and paired empirical effects/power; mature prospective confirmation/fresh replication/paper results. No model call or independent agent review reissued under known capacity limit."
+}
