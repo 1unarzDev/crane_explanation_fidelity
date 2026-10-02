@@ -14,6 +14,7 @@ from ..confirmatory_v1.registered_attempt_executor_v2 import load_artifact
 from ..confirmatory_v1.audit_development_episode_stage_v1 import audit_stage
 from ..confirmatory_v1.mixture_interval_v3 import summary
 from ..acquisition.raw_archive_v1 import digest
+from .usage import collect as collect_usage
 
 BASE=ROOT/'manifests/hexar_external/existing_v16_exploratory_v1'
 METHODS=('HX-CONTRACT','HX-PROMPT')
@@ -108,9 +109,13 @@ def collect(base=BASE):
     for m in METHODS:
         selected=[j for j in jobs if j['method']==m];answers=[o for o in method_rows if o['method']==m and o['status']=='VALID']
         fractions=[]
+        text_diversity=[]
         for uid in {j['episode_id'] for j in selected}:
             js=[j for j in selected if j['episode_id']==uid]
             if all(j['covered_units'] is not None for j in js):fractions.append(sum(j['covered_units'] for j in js)/sum(j['required_units'] for j in js))
+        for uid in {o['episode_id'] for o in answers}:
+            strings=[' '.join(o['answer'].split()) for o in answers if o['episode_id']==uid]
+            text_diversity.append(len(set(strings))/len(strings))
         components[m]=dict(battery_answer_cells=len(selected),resolved_cell_labels=sum(j['label_resolved'] for j in selected),
             scheduled_battery_answer_cells=9*len(rows),unmeasured_battery_answer_cells=9*len(rows)-len(selected),
             unsupported_cells=sum(j['unsupported_material'] is True for j in selected),
@@ -123,6 +128,8 @@ def collect(base=BASE):
                 unknown_label_cells=sum(j['covered_unit_ids'] is None and u in j['required_unit_ids'] for j in selected))
                 for u in sorted({u for j in selected for u in j['required_unit_ids']})},
             unique_valid_answers=len(answers),mean_unique_answer_words=mean(len(o['answer'].split()) for o in answers) if answers else None,
+            mean_within_episode_distinct_answer_text_fraction=mean(text_diversity) if text_diversity else None,
+            text_diversity_note='Exact whitespace-normalized answer variation across unique requests; descriptive, not a validated stylistic flexibility or quality measure.',
             deterministic_realization=m=='HX-CONTRACT',baseline_model_calls_in_completed_method_stages=baseline_calls if m=='HX-PROMPT' else 0)
         for condition in ('intact','irrelevant_removal','diagnostic_removal'):
             js=[j for j in selected if j['condition']==condition];den=len(js)
@@ -136,6 +143,7 @@ def collect(base=BASE):
         exploratory=True,confirmatory=False,agent_assessed=True,human_validated=False,alpha_consumed=0,
         flow=flow,primary=paired_report(rows),components=components,evidence_conditions=conditions,episode_rows=rows,
         answer_cells=jobs,method_outputs=method_rows,raw_stage_audits=stages,input_hashes=hashes,
+        provider_usage=collect_usage(base),
         bank_separation='V16 only; V15/V20 and released physical recordings not pooled.',provider_identity_limit='Hosted aliases and inherited CLI defaults; immutable served backend/system/decoding identity unavailable.')
 
 
