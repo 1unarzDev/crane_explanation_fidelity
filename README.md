@@ -43,7 +43,7 @@ The canonical vocabulary is in [CONTEXT.md](CONTEXT.md). Use its terms when addi
 | Historical scripts | [archive/INDEX.md](archive/INDEX.md) |
 | Study design and frozen rules | [docs/STUDY_DESIGN.md](docs/STUDY_DESIGN.md), [docs/EVIDENCE_CALIBRATION_PROTOCOL.md](docs/EVIDENCE_CALIBRATION_PROTOCOL.md) |
 | Latest scientific/development history | [docs/EVIDENCE_CALIBRATION_RESPONSE_DEVELOPMENT_2026-09-30.md](docs/archive/2026-09-30/EVIDENCE_CALIBRATION_RESPONSE_DEVELOPMENT_2026-09-30.md), [docs/DECISIONS.md](docs/DECISIONS.md) |
-| Diagnostic campaign history | [docs/DIAGNOSTIC_CAMPAIGN_PROGRESS.md](docs/DIAGNOSTIC_CAMPAIGN_PROGRESS.md) |
+| Diagnostic campaign history | [archived diagnostic campaign history](docs/archive/DIAGNOSTIC_CAMPAIGN_HISTORY.md) |
 | Annotation and scoring | [docs/EVIDENCE_CALIBRATION_AGENT_ANNOTATION_RUNBOOK.md](docs/EVIDENCE_CALIBRATION_AGENT_ANNOTATION_RUNBOOK.md), [docs/ANNOTATION_GUIDE.md](docs/ANNOTATION_GUIDE.md) |
 | Data boundaries and storage | [docs/DATA_STORAGE.md](docs/DATA_STORAGE.md), [data/README.md](data/README.md) |
 | Paper traceability | [paper/README.md](paper/README.md), [paper/CLAIM_EVIDENCE_MAP.md](paper/CLAIM_EVIDENCE_MAP.md) |
@@ -60,7 +60,7 @@ Detailed dated reports are evidence records. They are intentionally preserved, b
 - The project redirected its central claim to evidence-calibrated specificity and froze the B2/B4 confirmation protocol.
 - The confirmation campaign is now an execution and blinded-scoring task. Do not alter methods, inspect semantic outputs early, or reinterpret incomplete pairs.
 
-For the complete decision trail, use [DECISIONS.md](docs/DECISIONS.md). For the older diagnostic campaign sequence, use [DIAGNOSTIC_CAMPAIGN_PROGRESS.md](docs/DIAGNOSTIC_CAMPAIGN_PROGRESS.md).
+For the complete decision trail, use [DECISIONS.md](docs/DECISIONS.md). For the older diagnostic campaign sequence, use [archived diagnostic campaign history](docs/archive/DIAGNOSTIC_CAMPAIGN_HISTORY.md).
 
 ## Setup
 

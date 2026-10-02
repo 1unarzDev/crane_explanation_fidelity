@@ -13,7 +13,7 @@ Read in this order:
 ## Topic guides
 
 - Architecture and environments: [ARCHITECTURE.md](ARCHITECTURE.md), [ENVIRONMENTS.md](ENVIRONMENTS.md), [DATA_STORAGE.md](DATA_STORAGE.md)
-- Benchmark and experiments: [BENCHMARK.md](BENCHMARK.md), [EXPERIMENTS.md](EXPERIMENTS.md)
+- Benchmark and experiments: [BENCHMARK.md](BENCHMARK.md), [archived experiment history](archive/EXPERIMENTS_HISTORY.md)
 - Diagnostics: [PHYSICAL_DIAGNOSIS.md](PHYSICAL_DIAGNOSIS.md), [DIAGNOSTIC_STUDY_DESIGN.md](DIAGNOSTIC_STUDY_DESIGN.md), [DIAGNOSTIC_ANNOTATION_GUIDE.md](DIAGNOSTIC_ANNOTATION_GUIDE.md)
 - Replication and reporting: [MODEL_FAMILY_REPLICATION.md](MODEL_FAMILY_REPLICATION.md), [SEQUENTIAL_STUDY_PROTOCOL.md](SEQUENTIAL_STUDY_PROTOCOL.md), [paper/](../paper/)
 - Packages: [astro_dock](../packages/astro_dock/README.md), [crane_ml](../packages/crane_ml/README.md)
@@ -23,3 +23,5 @@ Read in this order:
 Minute dated reports are in [archive/2026-09-30](archive/2026-09-30/). They are evidence records, not current instructions. New reports should be added only when they preserve a result or decision that cannot be represented in a canonical guide.
 
 Prefer updating a current guide or the decision log over creating another versioned report. Use a dated archive entry only for an immutable experiment result, failed qualification, or audit required for provenance.
+
+The former top-level experiment and diagnostic timelines are preserved as [experiment history](archive/EXPERIMENTS_HISTORY.md) and [diagnostic campaign history](archive/DIAGNOSTIC_CAMPAIGN_HISTORY.md). They are not active specifications.
