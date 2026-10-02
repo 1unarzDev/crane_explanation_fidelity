@@ -148,7 +148,9 @@ def collect(base=BASE):
         flow=flow,primary=paired_report(rows),components=components,evidence_conditions=conditions,episode_rows=rows,
         answer_cells=jobs,method_outputs=method_rows,raw_stage_audits=stages,input_hashes=hashes,
         provider_usage=collect_usage(base),
-        bank_separation='V16 only; V15/V20 and released physical recordings not pooled.',provider_identity_limit='Hosted aliases and inherited CLI defaults; immutable served backend/system/decoding identity unavailable.')
+        bank_separation='V16 only; V15/V20 and released physical recordings not pooled.',
+        deterministic_check_scope='Input/source/packet hashes, finite numerical references, contract approved numeric binding, output schema and literal quotation consistency. Semantic support/coverage and baseline numerical phrasing remain agent-assessed; no general natural-language numerical proof is claimed.',
+        provider_identity_limit='Hosted aliases and inherited CLI defaults; immutable served backend/system/decoding identity unavailable.')
 
 
 def write_csv(path,rows):
