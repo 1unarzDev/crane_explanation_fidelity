@@ -1,0 +1,426 @@
+{
+  "answer": "The recorded navigation skills succeeded. The recorded pose estimate showed high localization uncertainty. These records do not establish a unique physical cause or a measured reason for navigation time.",
+  "condition": "intact",
+  "contract_artifact": {
+    "answer": "The recorded navigation skills succeeded. The recorded pose estimate showed high localization uncertainty. These records do not establish a unique physical cause or a measured reason for navigation time.",
+    "diagnostic_result": {
+      "ambiguity_node_ids": [],
+      "approved_claim_ids": [
+        "claim-planner",
+        "claim-success",
+        "claim-uncertainty"
+      ],
+      "claim_evaluations": [
+        {
+          "claim_id": "claim-failure",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+              "requirement_id": "req-failure",
+              "status": "ABSENT",
+              "support_references": []
+            }
+          ],
+          "support_references": [],
+          "supported": false
+        },
+        {
+          "claim_id": "claim-success",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+              "requirement_id": "req-success",
+              "status": "SATISFIED",
+              "support_references": [
+                "s0001",
+                "s0003"
+              ]
+            }
+          ],
+          "support_references": [
+            "s0001",
+            "s0003"
+          ],
+          "supported": true
+        },
+        {
+          "claim_id": "claim-timeout",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+              "requirement_id": "req-timeout",
+              "status": "ABSENT",
+              "support_references": []
+            }
+          ],
+          "support_references": [],
+          "supported": false
+        },
+        {
+          "claim_id": "claim-abort",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+              "requirement_id": "req-abort",
+              "status": "ABSENT",
+              "support_references": []
+            }
+          ],
+          "support_references": [],
+          "supported": false
+        },
+        {
+          "claim_id": "claim-manual",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+              "requirement_id": "req-manual",
+              "status": "ABSENT",
+              "support_references": []
+            }
+          ],
+          "support_references": [],
+          "supported": false
+        },
+        {
+          "claim_id": "claim-charging",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+              "requirement_id": "req-charging",
+              "status": "ABSENT",
+              "support_references": []
+            }
+          ],
+          "support_references": [],
+          "supported": false
+        },
+        {
+          "claim_id": "claim-uncertainty",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+              "requirement_id": "req-uncertainty",
+              "status": "SATISFIED",
+              "support_references": [
+                "l0004",
+                "l0005",
+                "l0006",
+                "l0014",
+                "l0018",
+                "l0019",
+                "l0020",
+                "l0021"
+              ]
+            }
+          ],
+          "support_references": [
+            "l0004",
+            "l0005",
+            "l0006",
+            "l0014",
+            "l0018",
+            "l0019",
+            "l0020",
+            "l0021"
+          ],
+          "supported": true
+        },
+        {
+          "claim_id": "claim-planner",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+              "requirement_id": "req-planner",
+              "status": "SATISFIED",
+              "support_references": [
+                "l0007",
+                "l0008"
+              ]
+            }
+          ],
+          "support_references": [
+            "l0007",
+            "l0008"
+          ],
+          "supported": true
+        },
+        {
+          "claim_id": "claim-progress",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+              "requirement_id": "req-progress",
+              "status": "ABSENT",
+              "support_references": []
+            }
+          ],
+          "support_references": [],
+          "supported": false
+        },
+        {
+          "claim_id": "claim-physical",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+              "requirement_id": "req-physical",
+              "status": "ABSENT",
+              "support_references": []
+            }
+          ],
+          "support_references": [],
+          "supported": false
+        }
+      ],
+      "condition_id": "R010-q2-intact-HX-CONTRACT",
+      "configuration_id": "hexar-navigation-component-v2",
+      "contract_catalog_id": "hexar-navigation-public-v2",
+      "contract_catalog_sha256": "2274a6fa68bba023652f348924fc0a85158500eaef8448596d0ab1b352e76f00",
+      "contradicted_claim_ids": [],
+      "diagnostic_algorithm_id": "maximal-supported-diagnosis",
+      "diagnostic_algorithm_version": "v1-development",
+      "episode_id": "R010",
+      "maximal_node_ids": [
+        "node-planner",
+        "node-success",
+        "node-uncertainty"
+      ],
+      "missing_requirement_ids": [
+        "req-abort",
+        "req-charging",
+        "req-failure",
+        "req-manual",
+        "req-physical",
+        "req-progress",
+        "req-timeout"
+      ],
+      "required_non_entailment_ids": [
+        "limit-physical-and-delay"
+      ],
+      "schema": "crane-evidence-calibrated-diagnostic-result/v1",
+      "state": "KNOWN"
+    },
+    "facts": {
+      "ambiguity_node_ids": [],
+      "condition_id": "R010-q2-intact-HX-CONTRACT",
+      "method_packet_sha256": "1e7fb3750b5026e3eeab5063a56c3f65e52d3a65d1c19af885bed899d571bf42",
+      "question_contract": {
+        "failure_premise": false,
+        "question_id": "764a1803a3fb16e4",
+        "required_mechanism_families": [
+          "navigation"
+        ]
+      },
+      "requirement_evaluations": [
+        {
+          "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+          "requirement_id": "req-failure",
+          "status": "ABSENT",
+          "support_references": []
+        },
+        {
+          "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+          "requirement_id": "req-success",
+          "status": "SATISFIED",
+          "support_references": [
+            "s0001",
+            "s0003"
+          ]
+        },
+        {
+          "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+          "requirement_id": "req-timeout",
+          "status": "ABSENT",
+          "support_references": []
+        },
+        {
+          "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+          "requirement_id": "req-abort",
+          "status": "ABSENT",
+          "support_references": []
+        },
+        {
+          "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+          "requirement_id": "req-manual",
+          "status": "ABSENT",
+          "support_references": []
+        },
+        {
+          "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+          "requirement_id": "req-charging",
+          "status": "ABSENT",
+          "support_references": []
+        },
+        {
+          "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+          "requirement_id": "req-uncertainty",
+          "status": "SATISFIED",
+          "support_references": [
+            "l0004",
+            "l0005",
+            "l0006",
+            "l0014",
+            "l0018",
+            "l0019",
+            "l0020",
+            "l0021"
+          ]
+        },
+        {
+          "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+          "requirement_id": "req-planner",
+          "status": "SATISFIED",
+          "support_references": [
+            "l0007",
+            "l0008"
+          ]
+        },
+        {
+          "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+          "requirement_id": "req-progress",
+          "status": "ABSENT",
+          "support_references": []
+        },
+        {
+          "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+          "requirement_id": "req-physical",
+          "status": "ABSENT",
+          "support_references": []
+        }
+      ],
+      "schema": "crane-visible-evidence-requirement-facts/v1"
+    },
+    "fallback": false,
+    "model_calls": 0,
+    "realization": {
+      "audit": {
+        "clause_audits": [
+          {
+            "approved_claim_ids": [
+              "claim-success"
+            ],
+            "clause_id": "c0",
+            "numeric_slots": [],
+            "response_span": "The recorded navigation skills succeeded.",
+            "support_references": [
+              "s0001",
+              "s0003"
+            ]
+          },
+          {
+            "approved_claim_ids": [
+              "claim-uncertainty"
+            ],
+            "clause_id": "c1",
+            "numeric_slots": [],
+            "response_span": "The recorded pose estimate showed high localization uncertainty.",
+            "support_references": [
+              "l0004",
+              "l0005",
+              "l0006",
+              "l0014",
+              "l0018",
+              "l0019",
+              "l0020",
+              "l0021"
+            ]
+          },
+          {
+            "approved_claim_ids": [],
+            "clause_id": "n0",
+            "numeric_slots": [],
+            "response_span": "These records do not establish a unique physical cause or a measured reason for navigation time.",
+            "support_references": []
+          }
+        ],
+        "condition_id": "R010-q2-intact-HX-CONTRACT",
+        "diagnostic_result_sha256": "e56906be877ce5692d1e3a56d1471915e83b5a4c908a040e0fc4aef78052aa57",
+        "episode_id": "R010",
+        "false_premise_preserved": null,
+        "final_response_sha256": "d6b6a678950b7aec9f1cb44829b6550456f0a372ac97af6769b2b8acc5357887",
+        "highest_asserted_node_ids": [
+          "node-success",
+          "node-uncertainty"
+        ],
+        "highest_asserted_rank_by_family": [
+          {
+            "key": "navigation",
+            "value": 0
+          }
+        ],
+        "missing_limitation_ids": [],
+        "missing_required_claim_ids": [],
+        "numeric_mismatches": [],
+        "represented_required_claim_ids": [
+          "claim-success",
+          "claim-uncertainty"
+        ],
+        "response_id": "R010-q2-intact-HX-CONTRACT",
+        "schema": "crane-explanation-audit/v1",
+        "status": "ACCEPTED",
+        "unapproved_claim_ids": []
+      },
+      "candidate_sha256": "8347c50ab391a944567b9baea28ac065397f70da6510a145a5c550b1518e1629",
+      "final_clauses": [
+        {
+          "clause_id": "c0",
+          "contract_id": "claim-success",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The recorded navigation skills succeeded."
+        },
+        {
+          "clause_id": "c1",
+          "contract_id": "claim-uncertainty",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The recorded pose estimate showed high localization uncertainty."
+        },
+        {
+          "clause_id": "n0",
+          "contract_id": "limit-physical-and-delay",
+          "kind": "NON_ENTAILMENT",
+          "numeric_slot_ids": [],
+          "text": "These records do not establish a unique physical cause or a measured reason for navigation time."
+        }
+      ],
+      "final_response": "The recorded navigation skills succeeded. The recorded pose estimate showed high localization uncertainty. These records do not establish a unique physical cause or a measured reason for navigation time.",
+      "plan_sha256": "737005887c87dc261cdde6afbbc17a3820d923bc555aef7c153024622b3f94d8",
+      "realizer_id": "claim-aware-constrained-realizer",
+      "realizer_version": "v1-development",
+      "schema": "crane-claim-aware-realization/v1"
+    },
+    "template": true
+  },
+  "end_to_end_ms": 1.7517870001029223,
+  "fallback": false,
+  "job_id": "R010-q2-intact-HX-CONTRACT",
+  "method": "HX-CONTRACT",
+  "model_calls": 0,
+  "packet_sha256": "1e7fb3750b5026e3eeab5063a56c3f65e52d3a65d1c19af885bed899d571bf42",
+  "question_id": "q2",
+  "recording_id": "R010",
+  "schema": "hexar-response/v2",
+  "status": "VALID",
+  "template": true
+}

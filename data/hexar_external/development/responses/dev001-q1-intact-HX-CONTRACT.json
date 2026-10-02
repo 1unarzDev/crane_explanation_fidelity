@@ -1,0 +1,438 @@
+{
+  "answer": "I did not complete navigation before the skill timed out. Manual joystick mode was recorded. These records do not establish the physical cause of the navigation failure.",
+  "condition": "intact",
+  "contract_artifact": {
+    "answer": "I did not complete navigation before the skill timed out. Manual joystick mode was recorded. These records do not establish the physical cause of the navigation failure.",
+    "diagnosis": {
+      "ambiguity_node_ids": [],
+      "approved_claim_ids": [
+        "claim-manual",
+        "claim-progress",
+        "claim-timeout"
+      ],
+      "claim_evaluations": [
+        {
+          "claim_id": "claim-timeout",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic visible predicate; absence is unknown.",
+              "requirement_id": "req-timeout",
+              "status": "SATISFIED",
+              "support_references": [
+                "s0001"
+              ]
+            }
+          ],
+          "support_references": [
+            "s0001"
+          ],
+          "supported": true
+        },
+        {
+          "claim_id": "claim-manual",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic visible predicate; absence is unknown.",
+              "requirement_id": "req-manual",
+              "status": "SATISFIED",
+              "support_references": [
+                "manual-latest"
+              ]
+            }
+          ],
+          "support_references": [
+            "manual-latest"
+          ],
+          "supported": true
+        },
+        {
+          "claim_id": "claim-progress",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic visible predicate; absence is unknown.",
+              "requirement_id": "req-progress",
+              "status": "SATISFIED",
+              "support_references": [
+                "l0004",
+                "l0009",
+                "l0014",
+                "l0018"
+              ]
+            }
+          ],
+          "support_references": [
+            "l0004",
+            "l0009",
+            "l0014",
+            "l0018"
+          ],
+          "supported": true
+        },
+        {
+          "claim_id": "claim-physical",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic visible predicate; absence is unknown.",
+              "requirement_id": "req-physical",
+              "status": "ABSENT",
+              "support_references": []
+            }
+          ],
+          "support_references": [],
+          "supported": false
+        }
+      ],
+      "condition_id": "dev001-q1-intact-HX-CONTRACT",
+      "configuration_id": "hexar-navigation-component-v1",
+      "contract_catalog_id": "hexar-navigation-development-v1",
+      "contract_catalog_sha256": "aa2cf1a95c98d39b628ed1a4e636168ba6e8bf83397c9704864e15c19534607c",
+      "contradicted_claim_ids": [],
+      "diagnostic_algorithm_id": "maximal-supported-diagnosis",
+      "diagnostic_algorithm_version": "v1-development",
+      "episode_id": "dev001",
+      "maximal_node_ids": [
+        "node-manual",
+        "node-progress",
+        "node-timeout"
+      ],
+      "missing_requirement_ids": [
+        "req-physical"
+      ],
+      "required_non_entailment_ids": [
+        "limit-cause"
+      ],
+      "schema": "crane-evidence-calibrated-diagnostic-result/v1",
+      "state": "SUPPORTED_PARTIAL"
+    },
+    "facts": {
+      "ambiguity_node_ids": [],
+      "condition_id": "dev001-q1-intact-HX-CONTRACT",
+      "method_packet_sha256": "61411d5e70ddccb658c3dee8a1d9d5293ef3248390c3be1fa76b73f370f78fd1",
+      "question_contract": {
+        "failure_premise": true,
+        "question_id": "cb5a6e8bfb73",
+        "required_mechanism_families": [
+          "navigation"
+        ]
+      },
+      "requirement_evaluations": [
+        {
+          "detail": "Deterministic visible predicate; absence is unknown.",
+          "requirement_id": "req-timeout",
+          "status": "SATISFIED",
+          "support_references": [
+            "s0001"
+          ]
+        },
+        {
+          "detail": "Deterministic visible predicate; absence is unknown.",
+          "requirement_id": "req-manual",
+          "status": "SATISFIED",
+          "support_references": [
+            "manual-latest"
+          ]
+        },
+        {
+          "detail": "Deterministic visible predicate; absence is unknown.",
+          "requirement_id": "req-progress",
+          "status": "SATISFIED",
+          "support_references": [
+            "l0004",
+            "l0009",
+            "l0014",
+            "l0018"
+          ]
+        },
+        {
+          "detail": "Deterministic visible predicate; absence is unknown.",
+          "requirement_id": "req-physical",
+          "status": "ABSENT",
+          "support_references": []
+        }
+      ],
+      "schema": "crane-visible-evidence-requirement-facts/v1"
+    },
+    "fallback": false,
+    "model_calls": 0,
+    "ontology": {
+      "catalog_id": "hexar-navigation-development-v1",
+      "catalog_version": "v1-development",
+      "claim_contracts": [
+        {
+          "claim_id": "claim-timeout",
+          "claim_kind": "TASK_OUTCOME",
+          "diagnostic_node_id": "node-timeout",
+          "mechanism_family": "navigation",
+          "non_entailment_ids": [
+            "limit-cause"
+          ],
+          "proposition": "I did not complete navigation before the skill timed out.",
+          "required_evidence_ids": [
+            "req-timeout"
+          ]
+        },
+        {
+          "claim_id": "claim-manual",
+          "claim_kind": "OBSERVATION",
+          "diagnostic_node_id": "node-manual",
+          "mechanism_family": "navigation",
+          "non_entailment_ids": [
+            "limit-cause"
+          ],
+          "proposition": "Manual joystick mode was recorded.",
+          "required_evidence_ids": [
+            "req-manual"
+          ]
+        },
+        {
+          "claim_id": "claim-progress",
+          "claim_kind": "SOFTWARE_ACTION",
+          "diagnostic_node_id": "node-progress",
+          "mechanism_family": "navigation",
+          "non_entailment_ids": [
+            "limit-cause"
+          ],
+          "proposition": "The controller reported that it failed to make progress.",
+          "required_evidence_ids": [
+            "req-progress"
+          ]
+        },
+        {
+          "claim_id": "claim-physical",
+          "claim_kind": "SPECIFIC_PHYSICAL_CAUSE",
+          "diagnostic_node_id": "node-physical",
+          "mechanism_family": "navigation",
+          "non_entailment_ids": [],
+          "proposition": "An obstacle physically caused the navigation failure.",
+          "required_evidence_ids": [
+            "req-physical"
+          ]
+        }
+      ],
+      "diagnostic_nodes": [
+        {
+          "claim_ids": [
+            "claim-timeout"
+          ],
+          "label": "timeout",
+          "mechanism_family": "navigation",
+          "node_id": "node-timeout",
+          "parent_node_ids": [],
+          "rank_within_family": 0
+        },
+        {
+          "claim_ids": [
+            "claim-manual"
+          ],
+          "label": "manual",
+          "mechanism_family": "navigation",
+          "node_id": "node-manual",
+          "parent_node_ids": [],
+          "rank_within_family": 0
+        },
+        {
+          "claim_ids": [
+            "claim-progress"
+          ],
+          "label": "progress",
+          "mechanism_family": "navigation",
+          "node_id": "node-progress",
+          "parent_node_ids": [],
+          "rank_within_family": 0
+        },
+        {
+          "claim_ids": [
+            "claim-physical"
+          ],
+          "label": "physical",
+          "mechanism_family": "navigation",
+          "node_id": "node-physical",
+          "parent_node_ids": [
+            "node-timeout"
+          ],
+          "rank_within_family": 2
+        }
+      ],
+      "evidence_requirements": [
+        {
+          "description": "A retained failed navigation skill explicitly reports timeout.",
+          "evidence_roles": [
+            "navigation_outcomes"
+          ],
+          "predicate_id": "hexar-timeout-visible-v1",
+          "predicate_version": "v1-development",
+          "requirement_id": "req-timeout"
+        },
+        {
+          "description": "The latest retained joystick state is explicitly true; no absent-to-false conversion.",
+          "evidence_roles": [
+            "manual_state"
+          ],
+          "predicate_id": "hexar-manual-visible-v1",
+          "predicate_version": "v1-development",
+          "requirement_id": "req-manual"
+        },
+        {
+          "description": "An in-window retained controller log explicitly reports failure to make progress.",
+          "evidence_roles": [
+            "navigation_logs"
+          ],
+          "predicate_id": "hexar-progress-visible-v1",
+          "predicate_version": "v1-development",
+          "requirement_id": "req-progress"
+        },
+        {
+          "description": "Episode-linked direct physical-cause evidence, not a symptom or source conditional.",
+          "evidence_roles": [
+            "physical_cause_measurement"
+          ],
+          "predicate_id": "hexar-physical-visible-v1",
+          "predicate_version": "v1-development",
+          "requirement_id": "req-physical"
+        }
+      ],
+      "non_entailments": [
+        {
+          "additional_evidence_requirement_ids": [
+            "req-physical"
+          ],
+          "basis_claim_ids": [
+            "claim-timeout",
+            "claim-manual",
+            "claim-progress"
+          ],
+          "non_entailment_id": "limit-cause",
+          "rationale": "These records do not establish the physical cause of the navigation failure.",
+          "unsupported_consequent_claim_ids": [
+            "claim-physical"
+          ]
+        }
+      ],
+      "schema": "crane-evidence-calibration-ontology/v1"
+    },
+    "plan": {
+      "approved_numeric_values": [],
+      "diagnostic_result_sha256": "55009eab118237ce69e93d2a893376003957c6a636db81ae0fb9222090d04a17",
+      "optional_claim_ids": [],
+      "plan_id": "dev001-q1-intact-HX-CONTRACT",
+      "required_claim_ids": [
+        "claim-timeout",
+        "claim-manual"
+      ],
+      "required_non_entailment_ids": [
+        "limit-cause"
+      ],
+      "schema": "crane-claim-realization-plan/v1"
+    },
+    "realization": {
+      "audit": {
+        "clause_audits": [
+          {
+            "approved_claim_ids": [
+              "claim-timeout"
+            ],
+            "clause_id": "c0",
+            "numeric_slots": [],
+            "response_span": "I did not complete navigation before the skill timed out.",
+            "support_references": [
+              "s0001"
+            ]
+          },
+          {
+            "approved_claim_ids": [
+              "claim-manual"
+            ],
+            "clause_id": "c1",
+            "numeric_slots": [],
+            "response_span": "Manual joystick mode was recorded.",
+            "support_references": [
+              "manual-latest"
+            ]
+          },
+          {
+            "approved_claim_ids": [],
+            "clause_id": "n0",
+            "numeric_slots": [],
+            "response_span": "These records do not establish the physical cause of the navigation failure.",
+            "support_references": []
+          }
+        ],
+        "condition_id": "dev001-q1-intact-HX-CONTRACT",
+        "diagnostic_result_sha256": "55009eab118237ce69e93d2a893376003957c6a636db81ae0fb9222090d04a17",
+        "episode_id": "dev001",
+        "false_premise_preserved": null,
+        "final_response_sha256": "63a171fcdc44e8104b717bcec271e912b1621e90e49036ea8f6287e6167d9005",
+        "highest_asserted_node_ids": [
+          "node-manual",
+          "node-timeout"
+        ],
+        "highest_asserted_rank_by_family": [
+          {
+            "key": "navigation",
+            "value": 0
+          }
+        ],
+        "missing_limitation_ids": [],
+        "missing_required_claim_ids": [],
+        "numeric_mismatches": [],
+        "represented_required_claim_ids": [
+          "claim-manual",
+          "claim-timeout"
+        ],
+        "response_id": "dev001-q1-intact-HX-CONTRACT",
+        "schema": "crane-explanation-audit/v1",
+        "status": "ACCEPTED",
+        "unapproved_claim_ids": []
+      },
+      "candidate_sha256": "5e4bba6fa71c0a6b5a7a075dbcc46ee76599ef9a7ebaf8184768c5061ccad628",
+      "final_clauses": [
+        {
+          "clause_id": "c0",
+          "contract_id": "claim-timeout",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "I did not complete navigation before the skill timed out."
+        },
+        {
+          "clause_id": "c1",
+          "contract_id": "claim-manual",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "Manual joystick mode was recorded."
+        },
+        {
+          "clause_id": "n0",
+          "contract_id": "limit-cause",
+          "kind": "NON_ENTAILMENT",
+          "numeric_slot_ids": [],
+          "text": "These records do not establish the physical cause of the navigation failure."
+        }
+      ],
+      "final_response": "I did not complete navigation before the skill timed out. Manual joystick mode was recorded. These records do not establish the physical cause of the navigation failure.",
+      "plan_sha256": "58eca207c398d95e039e228f4a55f7a222467c0d5762c8c2255109d7f105df76",
+      "realizer_id": "claim-aware-constrained-realizer",
+      "realizer_version": "v1-development",
+      "schema": "crane-claim-aware-realization/v1"
+    },
+    "template": true
+  },
+  "end_to_end_ms": 1.2002259900327772,
+  "fallback": false,
+  "job_id": "dev001-q1-intact-HX-CONTRACT",
+  "method": "HX-CONTRACT",
+  "model_calls": 0,
+  "packet_sha256": "61411d5e70ddccb658c3dee8a1d9d5293ef3248390c3be1fa76b73f370f78fd1",
+  "question_id": "q1",
+  "recording_id": "dev001",
+  "schema": "hexar-development-response/v1",
+  "status": "VALID",
+  "template": true
+}

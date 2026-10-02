@@ -1,0 +1,23 @@
+{
+  "schema": "hexar-replay-compatibility-disposition/v1",
+  "historical_reproduction": false,
+  "native_initial_attempt": {
+    "status": "PRE_REPLAY_LOG_DIRECTORY_FAILURE",
+    "event_deliveries": 0,
+    "error": "rclpy._rclpy_pybind11.RCLError: failed to initialize logging: Failed to create log directory: //.ros/log",
+    "cause": "Non-root container user has no writable default ROS log directory.",
+    "repair": "Set ROS_LOG_DIR to the scoped, writable hexar_external/replay/ros-log directory.",
+    "semantic_model_calls": 0
+  },
+  "common_infrastructure_adaptations": [
+    "AST-load original callback/task bodies without unavailable action-package imports; capture client prevents model invocation during parity.",
+    "Native replay uses real Humble common-message deserialization and isolated DDS delivery at 1x; freeze receipt clock at callback entry and retain trace for exact offline comparison.",
+    "Offline model realization uses a structured Codex CLI answer wrapper with the same hosted model/configuration for HX-ORIGINAL and HX-PROMPT; this changes the API/harness from historical phi4 chat completions.",
+    "Fresh state is used for every transformed recording/question rather than preserving the driver last_question reuse hazard."
+  ],
+  "treatment_changes_separate": [
+    "HX-PROMPT corrects unjustified cause examples and includes equal primitive/availability packet shared with HX-CONTRACT.",
+    "HX-CONTRACT uses the pinned main CRANE planner and constrained realizer with an external public ontology; deterministic replacement is explicit."
+  ],
+  "native_verified_scope": "Component serialized input/state/task-window/prompt parity with traced receipt clocks; not full selector/lifecycle/action reproduction."
+}

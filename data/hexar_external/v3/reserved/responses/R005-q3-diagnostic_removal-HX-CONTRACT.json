@@ -1,0 +1,364 @@
+{
+  "answer": "The navigation skill reported a timeout. These records do not establish a unique physical cause or a measured reason for navigation time.",
+  "condition": "diagnostic_removal",
+  "contract_artifact": {
+    "answer": "The navigation skill reported a timeout. These records do not establish a unique physical cause or a measured reason for navigation time.",
+    "diagnostic_result": {
+      "ambiguity_node_ids": [],
+      "approved_claim_ids": [
+        "claim-failure",
+        "claim-timeout"
+      ],
+      "claim_evaluations": [
+        {
+          "claim_id": "claim-failure",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+              "requirement_id": "req-failure",
+              "status": "SATISFIED",
+              "support_references": [
+                "s0001"
+              ]
+            }
+          ],
+          "support_references": [
+            "s0001"
+          ],
+          "supported": true
+        },
+        {
+          "claim_id": "claim-success",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+              "requirement_id": "req-success",
+              "status": "ABSENT",
+              "support_references": []
+            }
+          ],
+          "support_references": [],
+          "supported": false
+        },
+        {
+          "claim_id": "claim-timeout",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+              "requirement_id": "req-timeout",
+              "status": "SATISFIED",
+              "support_references": [
+                "s0001"
+              ]
+            }
+          ],
+          "support_references": [
+            "s0001"
+          ],
+          "supported": true
+        },
+        {
+          "claim_id": "claim-abort",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+              "requirement_id": "req-abort",
+              "status": "ABSENT",
+              "support_references": []
+            }
+          ],
+          "support_references": [],
+          "supported": false
+        },
+        {
+          "claim_id": "claim-manual",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+              "requirement_id": "req-manual",
+              "status": "ABSENT",
+              "support_references": []
+            }
+          ],
+          "support_references": [],
+          "supported": false
+        },
+        {
+          "claim_id": "claim-charging",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+              "requirement_id": "req-charging",
+              "status": "ABSENT",
+              "support_references": []
+            }
+          ],
+          "support_references": [],
+          "supported": false
+        },
+        {
+          "claim_id": "claim-uncertainty",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+              "requirement_id": "req-uncertainty",
+              "status": "ABSENT",
+              "support_references": []
+            }
+          ],
+          "support_references": [],
+          "supported": false
+        },
+        {
+          "claim_id": "claim-planner",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+              "requirement_id": "req-planner",
+              "status": "ABSENT",
+              "support_references": []
+            }
+          ],
+          "support_references": [],
+          "supported": false
+        },
+        {
+          "claim_id": "claim-progress",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+              "requirement_id": "req-progress",
+              "status": "ABSENT",
+              "support_references": []
+            }
+          ],
+          "support_references": [],
+          "supported": false
+        },
+        {
+          "claim_id": "claim-physical",
+          "contradiction_references": [],
+          "limitations": [],
+          "requirement_evaluations": [
+            {
+              "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+              "requirement_id": "req-physical",
+              "status": "ABSENT",
+              "support_references": []
+            }
+          ],
+          "support_references": [],
+          "supported": false
+        }
+      ],
+      "condition_id": "R005-q3-diagnostic_removal-HX-CONTRACT",
+      "configuration_id": "hexar-navigation-component-v2",
+      "contract_catalog_id": "hexar-navigation-public-v2",
+      "contract_catalog_sha256": "2274a6fa68bba023652f348924fc0a85158500eaef8448596d0ab1b352e76f00",
+      "contradicted_claim_ids": [],
+      "diagnostic_algorithm_id": "maximal-supported-diagnosis",
+      "diagnostic_algorithm_version": "v1-development",
+      "episode_id": "R005",
+      "maximal_node_ids": [
+        "node-failure",
+        "node-timeout"
+      ],
+      "missing_requirement_ids": [
+        "req-abort",
+        "req-charging",
+        "req-manual",
+        "req-physical",
+        "req-planner",
+        "req-progress",
+        "req-success",
+        "req-uncertainty"
+      ],
+      "required_non_entailment_ids": [
+        "limit-physical-and-delay"
+      ],
+      "schema": "crane-evidence-calibrated-diagnostic-result/v1",
+      "state": "SUPPORTED_PARTIAL"
+    },
+    "facts": {
+      "ambiguity_node_ids": [],
+      "condition_id": "R005-q3-diagnostic_removal-HX-CONTRACT",
+      "method_packet_sha256": "5f3e4f0888a7aec9d5547c0b09e7ef9370a7954aab6c8a48fe9c05af205690c0",
+      "question_contract": {
+        "failure_premise": false,
+        "question_id": "3f3f80045c1c4dc5",
+        "required_mechanism_families": [
+          "navigation"
+        ]
+      },
+      "requirement_evaluations": [
+        {
+          "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+          "requirement_id": "req-failure",
+          "status": "SATISFIED",
+          "support_references": [
+            "s0001"
+          ]
+        },
+        {
+          "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+          "requirement_id": "req-success",
+          "status": "ABSENT",
+          "support_references": []
+        },
+        {
+          "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+          "requirement_id": "req-timeout",
+          "status": "SATISFIED",
+          "support_references": [
+            "s0001"
+          ]
+        },
+        {
+          "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+          "requirement_id": "req-abort",
+          "status": "ABSENT",
+          "support_references": []
+        },
+        {
+          "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+          "requirement_id": "req-manual",
+          "status": "ABSENT",
+          "support_references": []
+        },
+        {
+          "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+          "requirement_id": "req-charging",
+          "status": "ABSENT",
+          "support_references": []
+        },
+        {
+          "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+          "requirement_id": "req-uncertainty",
+          "status": "ABSENT",
+          "support_references": []
+        },
+        {
+          "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+          "requirement_id": "req-planner",
+          "status": "ABSENT",
+          "support_references": []
+        },
+        {
+          "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+          "requirement_id": "req-progress",
+          "status": "ABSENT",
+          "support_references": []
+        },
+        {
+          "detail": "Deterministic positive evidence predicate; absence never proves normality.",
+          "requirement_id": "req-physical",
+          "status": "ABSENT",
+          "support_references": []
+        }
+      ],
+      "schema": "crane-visible-evidence-requirement-facts/v1"
+    },
+    "fallback": false,
+    "model_calls": 0,
+    "realization": {
+      "audit": {
+        "clause_audits": [
+          {
+            "approved_claim_ids": [
+              "claim-timeout"
+            ],
+            "clause_id": "c0",
+            "numeric_slots": [],
+            "response_span": "The navigation skill reported a timeout.",
+            "support_references": [
+              "s0001"
+            ]
+          },
+          {
+            "approved_claim_ids": [],
+            "clause_id": "n0",
+            "numeric_slots": [],
+            "response_span": "These records do not establish a unique physical cause or a measured reason for navigation time.",
+            "support_references": []
+          }
+        ],
+        "condition_id": "R005-q3-diagnostic_removal-HX-CONTRACT",
+        "diagnostic_result_sha256": "1714623c25da4d88bf0073eb47b60e725371cc0d93bbadfea47883ec036853ef",
+        "episode_id": "R005",
+        "false_premise_preserved": null,
+        "final_response_sha256": "190cf055408e2f741bdb88b64dbd2e0eab7c6dfccd156f8bd4d731f35dd66f33",
+        "highest_asserted_node_ids": [
+          "node-timeout"
+        ],
+        "highest_asserted_rank_by_family": [
+          {
+            "key": "navigation",
+            "value": 0
+          }
+        ],
+        "missing_limitation_ids": [],
+        "missing_required_claim_ids": [],
+        "numeric_mismatches": [],
+        "represented_required_claim_ids": [
+          "claim-timeout"
+        ],
+        "response_id": "R005-q3-diagnostic_removal-HX-CONTRACT",
+        "schema": "crane-explanation-audit/v1",
+        "status": "ACCEPTED",
+        "unapproved_claim_ids": []
+      },
+      "candidate_sha256": "dbed37a4f57f0aca4b9e4d3e23c1883f583847d690f52ac7921f25d071dd5d61",
+      "final_clauses": [
+        {
+          "clause_id": "c0",
+          "contract_id": "claim-timeout",
+          "kind": "CLAIM",
+          "numeric_slot_ids": [],
+          "text": "The navigation skill reported a timeout."
+        },
+        {
+          "clause_id": "n0",
+          "contract_id": "limit-physical-and-delay",
+          "kind": "NON_ENTAILMENT",
+          "numeric_slot_ids": [],
+          "text": "These records do not establish a unique physical cause or a measured reason for navigation time."
+        }
+      ],
+      "final_response": "The navigation skill reported a timeout. These records do not establish a unique physical cause or a measured reason for navigation time.",
+      "plan_sha256": "0c5d23f1b1ee65f1acc8117af534e26db9b6050e6372c0d7deef0bdc6b86b6ea",
+      "realizer_id": "claim-aware-constrained-realizer",
+      "realizer_version": "v1-development",
+      "schema": "crane-claim-aware-realization/v1"
+    },
+    "template": true
+  },
+  "end_to_end_ms": 1.4072649937588722,
+  "fallback": false,
+  "job_id": "R005-q3-diagnostic_removal-HX-CONTRACT",
+  "method": "HX-CONTRACT",
+  "model_calls": 0,
+  "packet_sha256": "5f3e4f0888a7aec9d5547c0b09e7ef9370a7954aab6c8a48fe9c05af205690c0",
+  "question_id": "q3",
+  "recording_id": "R005",
+  "schema": "hexar-response/v2",
+  "status": "VALID",
+  "template": true
+}

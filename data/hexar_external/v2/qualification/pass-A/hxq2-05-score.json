@@ -1,0 +1,40 @@
+{
+  "atomic": [
+    {
+      "actual": "SUPPORTED_BY_VISIBLE_EVIDENCE",
+      "correct": true,
+      "expected": "SUPPORTED_BY_VISIBLE_EVIDENCE",
+      "item_id": "hxq2-05-s1"
+    },
+    {
+      "actual": "INSUFFICIENT_VISIBLE_EVIDENCE",
+      "correct": true,
+      "expected": "INSUFFICIENT_VISIBLE_EVIDENCE",
+      "item_id": "hxq2-05-s2"
+    }
+  ],
+  "case_id": "hxq2-05",
+  "false_premise_correct": true,
+  "highest_level_correct": true,
+  "limitations": [
+    {
+      "correct": true,
+      "limitation_prompt": "Preserve that high covariance and the diagnostic uncertainty log do not identify a wall or establish a unique physical failure cause."
+    }
+  ],
+  "required_units": [
+    {
+      "correct": true,
+      "unit_prompt": "Communicate high uncertainty of the recorded localization/pose estimate, not an established unique physical cause."
+    },
+    {
+      "correct": true,
+      "unit_prompt": "Communicate the recorded failed navigation outcome without requiring a mechanism."
+    }
+  ],
+  "split": "heldout",
+  "threat_tags": [
+    "covariance_localization",
+    "specific_cause_non_entailment"
+  ]
+}
