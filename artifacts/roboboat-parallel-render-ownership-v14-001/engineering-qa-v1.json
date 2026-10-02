@@ -1,0 +1,44 @@
+{
+  "schema": "roboboat-concurrent-render-engineering-qa/v1",
+  "utc": "2026-10-01T16:12:56.754484+00:00",
+  "sources": [
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/roboboat_render_fps_lease_v1.py",
+      "sha256": "c7a478d87ee10d24d26923a1aac23e5930bdaabd16b282abbc0f05e116ec2d1b"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/roboboat_hidden_render_v4.py",
+      "sha256": "4b63b099b5621d5b7d03b5f9018debec9f0a786c4db6f47492bf62314473c266"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/scripts/run_roboboat_hidden_render_v4.sh",
+      "sha256": "95610d6c508d31fa2dbd4efa2a029eb4f8c152f223fa3db7cea97a7f0dcc791b"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/probe_roboboat_parallel_render_v1.py",
+      "sha256": "6d3c0211a4973c089e1f984e05803076a1ecf0b39aeac33ad15331d1c1f2fad2"
+    }
+  ],
+  "tests": [
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/tests/test_roboboat_render_fps_lease_v1.py",
+      "sha256": "23e9167b276f79c909365dea5a30d4c49a5099e6f29edec1e7da4f2c78e8ee34"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/tests/test_roboboat_hidden_render_v4.py",
+      "sha256": "9f77c7c493090edd67a7976d3335a9ce069a9e1450908562491f3fcea7351c8c"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/tests/test_roboboat_hidden_render_v3.py",
+      "sha256": "930e83e9ea26fd3693d3d65585d0bfc1246b3e1b6a3738e242f3fa1383ec6b5d"
+    }
+  ],
+  "command": "PYTHONPATH=analysis python -m pytest -q tests/test_roboboat_render_fps_lease_v1.py tests/test_roboboat_hidden_render_v4.py tests/test_roboboat_hidden_render_v3.py",
+  "result": "25 passed in0.86s",
+  "scope": "Simulated FPS callbacks, actual filesystem/process locks and two actual child process identities; mocked compositor wrapper transitions. No actual compositor/Unity concurrency qualification follows.",
+  "actual_compositor_qualified": false,
+  "actual_Unity_multiwindow_qualified": false,
+  "physics_or_population_qualification": false,
+  "independent_n_added": 0,
+  "confirmation_n": 0
+}

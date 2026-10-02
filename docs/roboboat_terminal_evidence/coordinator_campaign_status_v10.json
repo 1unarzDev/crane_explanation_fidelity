@@ -1,0 +1,194 @@
+{
+  "schema": "roboboat-development-status-amendment/v10",
+  "as_of_utc": "2026-10-01T05:50:14.411258+00:00",
+  "primary_endpoint": "complete supported diagnostic answers",
+  "annotation_user_preference": "model judges with complete source audits",
+  "confirmation_frozen": false,
+  "confirmation_n": 0,
+  "replication_n": 0,
+  "land_n_added": 0,
+  "study_complete": false,
+  "inference": false,
+  "population42001": {
+    "capture_session_terminal": 69446,
+    "valid_new_recordings": 16,
+    "complete_geometry_pairs": 7,
+    "retained_physical_technical_failures": 8,
+    "historical_valid_development_recordings": 7,
+    "L2_sampled_task_counts": {
+      "unknown": 10,
+      "false": 6
+    },
+    "contact_evidence": "unknown in all16 recordings; observed violations can falsify the dwell despite contact uncertainty"
+  },
+  "populations_available": {
+    "42003": {
+      "independent_geometries": 24,
+      "variants": 48,
+      "generator_version": 1,
+      "status": "UNEXECUTED"
+    },
+    "42004": {
+      "independent_geometries": 24,
+      "variants": 48,
+      "generator_version": 2,
+      "status": "CATCHUP_PROBE_TERMINAL_ACTION_TIMING_FAILURE",
+      "session": null,
+      "first_fresh_row": "VALID_DEVELOPMENT",
+      "prior_v6_sessions_terminal": [
+        58634,
+        77631
+      ],
+      "valid_recordings": 2,
+      "retained_technical_failures": 8,
+      "active_row": null,
+      "render_revision": "verified actual60FPS; named output/default empty workspace; same bound v6player/defaultclock",
+      "previous_session_terminal": 86067,
+      "maximum_delta_time": 0.04,
+      "probe_design": "CATCHUP_PROBE_V7_004.md",
+      "platform_equivalence_claim": false,
+      "session_terminal": 81340,
+      "catchup_probe_valid_recordings": 0,
+      "catchup_probe_sensor_overflows": [
+        0,
+        0
+      ],
+      "catchup_probe_stale_actions": [
+        1,
+        4
+      ],
+      "next_untouched_row": "boat-geom-42004-00006-v1"
+    }
+  },
+  "response_banks": {
+    "001": {
+      "B4": 18,
+      "B2_valid": 14,
+      "B2_failures": 4,
+      "status": "COMPLETE"
+    },
+    "002": {
+      "B4": 15,
+      "B2_valid": 14,
+      "B2_failures": 1,
+      "status": "COMPLETE",
+      "terminal_session": 76822
+    },
+    "003": {
+      "B4": 15,
+      "B2_valid": 14,
+      "B2_failures": 1,
+      "status": "COMPLETE",
+      "terminal_session": 30700,
+      "transport": "decoded-safe-v3",
+      "original_response_deadline_s": 300
+    }
+  },
+  "annotation": {
+    "001": {
+      "session": 29517,
+      "answers": 32,
+      "passes": 2,
+      "deadline_s": 300,
+      "status": "ACTIVE_NO_RESTART_NO_QUALITY_RETRIES",
+      "project_reviews": 10,
+      "reviewed_claims": 488,
+      "project_review_accounting": "artifacts/roboboat-population-development-42001/full-inventory-v2-001/project_review_accounting_blind_review_v2.json",
+      "attempt_receipt_counts": {
+        "STRUCTURALLY_VALID_COMPLETENESS_UNQUALIFIED": 44,
+        "TECHNICAL_OR_STRUCTURAL_EXTRACTION_FAILURE": 4
+      }
+    },
+    "002": {
+      "session": 44397,
+      "answers": 29,
+      "passes": 2,
+      "deadline_s": 600,
+      "status": "ACTIVE_NO_RESTART_NO_QUALITY_RETRIES",
+      "declaration": "populations/development-42001/full-inventory-snapshot-v3-002.json",
+      "attempt_receipt_counts": {
+        "STRUCTURALLY_VALID_COMPLETENESS_UNQUALIFIED": 23,
+        "TECHNICAL_OR_STRUCTURAL_EXTRACTION_FAILURE": 1
+      },
+      "project_reviews": 12,
+      "reviewed_claims": 616,
+      "review_accounting": "artifacts/roboboat-population-development-42001/full-inventory-v3-002/project_review_accounting_blind_review_v1.json"
+    },
+    "003": {
+      "session": 81658,
+      "answers": 29,
+      "passes": 2,
+      "deadline_s": 600,
+      "status": "ACTIVE_NO_RESTART_NO_QUALITY_RETRIES",
+      "declaration": "populations/development-42001/full-inventory-snapshot-v3-003.json",
+      "attempt_receipt_counts": {
+        "STRUCTURALLY_VALID_COMPLETENESS_UNQUALIFIED": 15
+      },
+      "project_reviews": 0
+    }
+  },
+  "security": {
+    "prior300s_source_bytes_unchanged": true,
+    "fresh600s_transport": "decoded final/trace success and timeout redaction",
+    "last_decoded_artifact_scan_hits": 0,
+    "scanned_json_artifacts": 2675,
+    "new_transport_tests": 18
+  },
+  "source_review": "fresh_annotation_600s_engineering_review_v1.json exact44sourcebindings, all checked unchanged before lock; engineering pass only",
+  "power_interval_candidate": "FIXED_N_INTERVAL_DESIGN_V2.md; repaired separate adverse/favorable intervals,16tests passed; simulation-only, no final test/N selected; numerical certification caveat retained",
+  "next": "Finish source audits/support and complete citation review before descriptive scoring. Diagnose action timing; qualify additive rendering repair. Actual baseline tool/scratch capability probe task prepared /tmp/roboboat-baseline-capability-task-v1.txt, not yet assigned/launched. Preserve all technical failures. No confirmation freeze or superiority result.",
+  "response_totals": {
+    "B4": 48,
+    "B2_valid": 42,
+    "B2_retained_failures": 6,
+    "independent_physical_recordings": 16,
+    "complete_physical_geometry_pairs": 7,
+    "conditions_per_recording": 3,
+    "question_conditions_not_independent_N": true
+  },
+  "baseline_interface": "BASELINE_INTERFACE_PREPARATION_V1.md: 28 tests, exact shared scope/legacy helper closure; source/binary and actual tool/scratch gaps remain; primary not promoted.",
+  "deployed_nav2_observation": "artifacts/roboboat-deployed-nav2-audit-v1-001/observation.json: actual42004-00002-v1 image/packages/57 installedfiles; matching implementation-source audit active; historical tag identity not inferred.",
+  "parallel_audits": {
+    "blind_review": "incremental method-blind source completeness review inventory003",
+    "full_b4_v2": "physical stale-action timing diagnosis only",
+    "boat_power": "additive renderer-v3 ownership/cleanup repair, no live compositor actions"
+  },
+  "power_interval_review": "fixed_n_interval_independent_review_v1.json: fixedN proof/inversion sound; missingCI must L(adverse),U(favorable); tinyFPovershoot caveat; not a chosen final test/N.",
+  "deployed_nav2_review": "nav2_deployed_source_readiness_v1.json:45/45installedpublicsource match exactrelease;57/57installedfiles match archiveddeb payloads,0mismatch; aptsigner/exactsourcepackage/rebuild equivalence gaps disclosed;10tests.",
+  "local_checkpoints": {
+    "outer": "50356f06",
+    "nested_unity": "b7c1134"
+  },
+  "authorization": "User goal/handoff authorize ongoing study progression and parallel audits without routine permission. Historical STATUS.md external-allocation blocks are superseded by this authorization; scientific freeze/readiness remains necessary.",
+  "support_pilots": {
+    "001": {
+      "session": 57069,
+      "declaration": "populations/development-42001/full-support-snapshot-v4-001-001.json",
+      "original_answers": 32,
+      "reviewed_available_answers": 10,
+      "unique_support_packets": 10,
+      "timeout_s": 600,
+      "confirmation_n": 0,
+      "status": "ACTIVE_QUALIFIED_TWO_PASS_DEVELOPMENT_SUPPORT_NO_RETRIES",
+      "availability": "Immutable pre-call selection; later arrivals never promoted into this namespace; unavailable slots retain[0,1]",
+      "citation_reviews_required_before_scoring": true
+    },
+    "002": {
+      "session": 12085,
+      "declaration": "populations/development-42001/full-support-snapshot-v4-002-001.json",
+      "original_answers": 29,
+      "reviewed_available_answers": 12,
+      "unique_support_packets": 12,
+      "timeout_s": 600,
+      "confirmation_n": 0,
+      "status": "ACTIVE_QUALIFIED_TWO_PASS_DEVELOPMENT_SUPPORT_NO_RETRIES",
+      "availability": "Immutable pre-call selection; later arrivals never promoted into this namespace; unavailable slots retain[0,1]",
+      "citation_reviews_required_before_scoring": true
+    }
+  },
+  "independent_audits": {
+    "baseline": "baseline_interface_independent_review_v1.json: strong helpers retained; source/runtime,tool/scratch,paired public scope parity and provenance gaps remain",
+    "render": "hidden_render_v2_independent_review_v1.json: cleanup/globalreload,ownership,errorhandling gaps retained; additive repair underway",
+    "tests": "37 focused audit tests;47support bridge tests;16interval tests"
+  }
+}

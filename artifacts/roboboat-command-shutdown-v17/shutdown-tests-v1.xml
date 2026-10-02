@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="3" result="Failed(Child)" total="3" passed="0" failed="3" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-01 17:18:32Z" end-time="2026-10-01 17:18:32Z" duration="0.0446186">
+  <test-suite type="TestSuite" id="1000" name="ASV" fullname="ASV" runstate="Runnable" testcasecount="77" result="Failed" site="Child" start-time="2026-10-01 17:18:32Z" end-time="2026-10-01 17:18:32Z" duration="0.044619" total="3" passed="0" failed="3" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1095" name="RoboBoatEditorTests.dll" fullname="/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Library/ScriptAssemblies/RoboBoatEditorTests.dll" runstate="Runnable" testcasecount="39" result="Failed" site="Child" start-time="2026-10-01 17:18:32Z" end-time="2026-10-01 17:18:32Z" duration="0.037985" total="3" passed="0" failed="3" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="1467817" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestFixture" id="1063" name="RoboBoatCommandShutdownTests" fullname="RoboBoatCommandShutdownTests" classname="RoboBoatCommandShutdownTests" runstate="Runnable" testcasecount="3" result="Failed" site="Child" start-time="2026-10-01 17:18:32Z" end-time="2026-10-01 17:18:32Z" duration="0.036088" total="3" passed="0" failed="3" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-case id="1065" name="CallbackAfterDisableCannotReopenMailbox" fullname="RoboBoatCommandShutdownTests.CallbackAfterDisableCannotReopenMailbox" methodname="CallbackAfterDisableCannotReopenMailbox" classname="RoboBoatCommandShutdownTests" runstate="Runnable" seed="1427345164" result="Failed" start-time="2026-10-01 17:18:32Z" end-time="2026-10-01 17:18:32Z" duration="0.018743" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Transport callback reopened disabled adapter mailbox
+  Expected: False
+  But was:  True
+]]></message>
+            <stack-trace><![CDATA[at RoboBoatCommandShutdownTests.CallbackAfterDisableCannotReopenMailbox () [0x00012] in /home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Tests/Editor/RoboBoatCommandShutdownTests.cs:45
+]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-case id="1066" name="DestroyingRealAdapterDisposesItsPendingReceiptBeforeAuditClosure" fullname="RoboBoatCommandShutdownTests.DestroyingRealAdapterDisposesItsPendingReceiptBeforeAuditClosure" methodname="DestroyingRealAdapterDisposesItsPendingReceiptBeforeAuditClosure" classname="RoboBoatCommandShutdownTests" runstate="Runnable" seed="36852540" result="Failed" start-time="2026-10-01 17:18:32Z" end-time="2026-10-01 17:18:32Z" duration="0.001196" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected: True
+  But was:  False
+]]></message>
+            <stack-trace><![CDATA[at RoboBoatCommandShutdownTests.DestroyingRealAdapterDisposesItsPendingReceiptBeforeAuditClosure () [0x00018] in /home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Tests/Editor/RoboBoatCommandShutdownTests.cs:50
+]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-case id="1064" name="DisablingRealAdapterDisposesItsPendingReceipt" fullname="RoboBoatCommandShutdownTests.DisablingRealAdapterDisposesItsPendingReceipt" methodname="DisablingRealAdapterDisposesItsPendingReceipt" classname="RoboBoatCommandShutdownTests" runstate="Runnable" seed="175360321" result="Failed" start-time="2026-10-01 17:18:32Z" end-time="2026-10-01 17:18:32Z" duration="0.004623" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Actual adapter left a receipt pending when disabled before the next physics step
+  Expected: True
+  But was:  False
+]]></message>
+            <stack-trace><![CDATA[at RoboBoatCommandShutdownTests.DisablingRealAdapterDisposesItsPendingReceipt () [0x0007e] in /home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Tests/Editor/RoboBoatCommandShutdownTests.cs:39
+]]></stack-trace>
+          </failure>
+          <output><![CDATA[Saving results to: /home/lunarz/.config/unity3d/DefaultCompany/ASV/TestResults.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

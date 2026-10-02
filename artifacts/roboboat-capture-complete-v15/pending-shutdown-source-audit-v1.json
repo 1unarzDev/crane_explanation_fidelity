@@ -1,0 +1,38 @@
+{
+  "schema": "roboboat-pending-shutdown-source-audit/v1",
+  "recording": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00019-v1/capture-attempt.json",
+    "sha256": "6a932409b044786191075809f1c3d502beb848b47128dd1b4fee001fe6e1bfaf"
+  },
+  "trace_audit": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00019-v1/action-timing-audit.json",
+    "sha256": "0ae6d47ca8881ed0289d11daa6aa56800e06dca01be0401401010b6646c0a4ab"
+  },
+  "raw_trace": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00019-v1/action-timing.jsonl",
+    "sha256": "14380451956aa8b24211e59c37bcfde434b656106aeb357a5a2e8782ac83c2c7"
+  },
+  "fixture": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00019-v1/fixture-summary.json",
+    "sha256": "63a6d84717e8f29daee5bd4bfbac5ceeadf0ed763424710fbd758de948f6ad54"
+  },
+  "worker": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00019-v1/worker-0/result.json",
+    "sha256": "98f2c87fa932241e81488164ec5870de9167d8e46127aadaf8f3863e3afa1cc0"
+  },
+  "status_retained": "TECHNICAL_FAILURE",
+  "failed_checks": [
+    "no_pending_receipt_at_shutdown"
+  ],
+  "trace_integrity_pass": true,
+  "trace_issues": [],
+  "pending_receipts": 1,
+  "fixture_status": "timeout",
+  "post_result_observed": null,
+  "worker_wall_seconds": 419.64236,
+  "source_observation": "ROSOmniXCommand has episode-reset/movement-override clears, no declared OnDisable/OnDestroy mailbox disposal. Audit writer stops recording in its own OnDestroy; Unity object destruction order does not establish complete command intake shutdown.",
+  "causal_shutdown_bug_proven": false,
+  "original_failure_salvaged": false,
+  "next": "Retain fixed candidate probes; create actual-component lifecycle/race reproducer before separately versioned intake-quiescence/disposal repair. Do not weaken pending-receipt gate.",
+  "independent_n_added": 0
+}

@@ -1,0 +1,70 @@
+{
+  "action": {
+    "event_time_support": "recorded-client-receipt",
+    "identity": "afb58f17aa1b48a799056ccbf0ef46ef",
+    "name": "/follow_path",
+    "receipt_clock": "fixture-monotonic",
+    "receipt_wall_seconds": 53.22226360801142,
+    "status": "succeeded"
+  },
+  "configuration": {
+    "config_sha256": "4aa1c7352bcf76178589eecf329f34fc4a963226c7e8136e3cd27a34394d7b3e",
+    "node": "controller_server",
+    "plugin": "nav2_controller::StoppedGoalChecker",
+    "plugin_id": "goal_checker",
+    "rot_stopped_velocity": 0.05,
+    "trans_stopped_velocity": 0.05,
+    "xy_goal_tolerance": 0.2,
+    "yaw_goal_tolerance": 0.35
+  },
+  "limits": [
+    "Delivered measurements do not prove Nav2 internal consumption.",
+    "Samples do not prove continuous-time compliance or identify a physical cause.",
+    "Contact telemetry unavailable; evaluator labels excluded."
+  ],
+  "packet_id": "opaque-geometry-v2-1ee24ee807cb27b5e531",
+  "question": "Did the boat complete the specified docking task, and what evidence explains the difference, if any, from the navigation result?",
+  "schema": "roboboat-evidence-packet/v2",
+  "task": {
+    "berth_center": {
+      "x": 0.8641434,
+      "y": -27.586906,
+      "yaw": 1.5707963267948966
+    },
+    "berth_depth_m": 3.0,
+    "berth_width_m": 2.0,
+    "capture_s": 8.0,
+    "clock": "ros-header-stamp",
+    "contact_policy": {
+      "absence_support": "aligned-complete-prohibited-contact-event-stream",
+      "count_semantics": "observed-prohibited-contact-events",
+      "interval": "declared-dwell",
+      "prohibited_contacts": "any-hull-contact-with-external-objects",
+      "requirement": "absence-of-prohibited-contact"
+    },
+    "continuous_time_proof": false,
+    "dwell_s": 5.0,
+    "frame": "odom",
+    "goal": {
+      "x": 0.9822846600615633,
+      "y": -27.495179263605614,
+      "yaw": 1.4981161259557492
+    },
+    "heading_tolerance_rad": 0.35,
+    "heading_uncertainty_rad": 0.0,
+    "hull_beam_m": 0.895,
+    "hull_length_m": 1.063,
+    "id": "boat-geom-42007-00011-task-v2",
+    "interval_policy": "first-post-result-observation-fixed-dwell",
+    "max_sample_gap_s": 0.06,
+    "measurement_scope": "sampled-delivered-simulator-odometry",
+    "position_tolerance_m": 0.4,
+    "position_uncertainty_m": 0.0,
+    "schema": "roboboat-terminal-task/v2",
+    "speed_tolerance_mps": 0.05,
+    "speed_uncertainty_mps": 0.0,
+    "uncertainty_basis": "Numerical simulator measurements; no hardware noise calibration or intersample bound.",
+    "yaw_rate_tolerance_radps": 0.05,
+    "yaw_rate_uncertainty_radps": 0.0
+  }
+}

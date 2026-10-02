@@ -1,0 +1,38 @@
+{
+  "schema": "roboboat-parallel-compositor-probe/v1",
+  "root": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-parallel-render-ownership-v14-001",
+  "sources": [
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/probe_roboboat_parallel_render_v1.py",
+      "sha256": "6d3c0211a4973c089e1f984e05803076a1ecf0b39aeac33ad15331d1c1f2fad2"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/roboboat_hidden_render_v4.py",
+      "sha256": "4b63b099b5621d5b7d03b5f9018debec9f0a786c4db6f47492bf62314473c266"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/roboboat_render_fps_lease_v1.py",
+      "sha256": "c7a478d87ee10d24d26923a1aac23e5930bdaabd16b282abbc0f05e116ec2d1b"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/scripts/run_roboboat_hidden_render_v4.sh",
+      "sha256": "95610d6c508d31fa2dbd4efa2a029eb4f8c152f223fa3db7cea97a7f0dcc791b"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/roboboat_owned_player_bundle_v1.py",
+      "sha256": "68cf6c3a92800d5f4e97510e76b8a74d311eaa2384353fd78edaaf73594a7f37"
+    }
+  ],
+  "cases": [
+    "output-a",
+    "output-b"
+  ],
+  "hold_s": 5,
+  "mode": "two concurrent empty nonce-owned headless outputs; no Unity or ROS",
+  "compatibility": "Each child waits on shared legacy render gate; old exclusive runs remain protected.",
+  "stopping": "Both fixed cases once. Retain failures; no retries or outcome-dependent changes.",
+  "independent_n_added": 0,
+  "confirmation_n": 0,
+  "replication_n": 0,
+  "scope": "Compositor/FPS concurrency only; no window routing, sensing/physics, navigation or platform qualification."
+}

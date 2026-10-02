@@ -1,0 +1,40 @@
+{
+  "schema": "roboboat-capture-completion/v1",
+  "run_id": "boat-geom-42007-00021-v1",
+  "episode_id": "boat-geom-42007-00021-v1-worker-0",
+  "fixture_exit_code": 0,
+  "summary": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-varied-start-development-v27-001/captures/boat-geom-42007-00021-v1/fixture-summary.json",
+    "sha256": "388235664573bf204cf584f8779df161fc0789874eebaa6c67864fc4b84ee5f0"
+  },
+  "status": "succeeded",
+  "post_result_seconds": 8.0,
+  "bt_drain_seconds": 0.5,
+  "post_result_observed": 8.048345210001571,
+  "token_sha256": "323dd5069d34b3a64b34b9da81da0dac70bd3492128567b81d710581fe39f44d",
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--name",
+    "crane-fixture-boat-geom-42007-00021-v1",
+    "--network",
+    "host",
+    "--ipc",
+    "host",
+    "-e",
+    "ROS_DOMAIN_ID=205",
+    "-e",
+    "CRANE_BT_XML_CONTAINER=",
+    "-v",
+    "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-varied-start-development-v27-001/launch-project:/workspace/crane_sim:ro",
+    "-v",
+    "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-varied-start-development-v27-001/captures/boat-geom-42007-00021-v1:/results",
+    "lunarzdev/astro:cuda",
+    "bash",
+    "-lc",
+    "source /opt/ros/jazzy/setup.bash; bt_fixture_extra=(); if [[ -n \"${CRANE_BT_XML_CONTAINER:-}\" ]]; then bt_fixture_extra=(--bt-xml \"${CRANE_BT_XML_CONTAINER}\"); fi; exec python3 /workspace/crane_sim/Tools/Performance/nav2_follow_path_fixture_capture_v15.py --input-type twist --action-mode follow-path --distance 0.5 --path-heading-offset 0 --path-shape straight --path-lateral-amplitude 2.0 --path-turn-angle 0.7853981633974483 --duration 310 --post-result-seconds 8 --costmap-topic /local_costmap/costmap --costmap-service /local_costmap/get_costmap --bt-max-transitions 4096 --bt-max-invocations 1024 \"${bt_fixture_extra[@]}\" --episode-id boat-geom-42007-00021-v1-worker-0 --run-id boat-geom-42007-00021-v1 --output /results/fixture-summary.json --path-file /workspace/crane_sim/Tools/Performance/generated_populations/roboboat-terminal-distance-development-population-v4-42007/boat-geom-42007-00021-terminalv4.json"
+  ],
+  "independent_n_added": 0,
+  "full_trace_or_shutdown_qualified": false
+}

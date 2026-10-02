@@ -1,0 +1,121 @@
+{
+  "review_mode": "READ_ONLY_ENGINEERING_AUDIT_NO_LIVE_DISPLAY_OR_CONTAINER_ACTIONS",
+  "source_changes": false,
+  "provider_calls": false,
+  "captures_launched": false,
+  "answers_or_labels_read": false,
+  "confirmation_n": 0,
+  "alpha_consumed": 0,
+  "inference_activated": false,
+  "schema": "roboboat-hidden-render-v2-independent-review/v1",
+  "source_bindings": [
+    {
+      "path": "analysis/roboboat_hidden_render_v2.py",
+      "sha256": "8ce03dbdbd7412b1ac576ad6dd0281fffbb9a5b5f61cb363e9766349cd30c42c"
+    },
+    {
+      "path": "scripts/run_roboboat_hidden_render_v2.sh",
+      "sha256": "8c40c2f6c8a903c8d2ee3cad328a6c59e9f51063e4134f113faa2cfecdcaf65d"
+    },
+    {
+      "path": "analysis/run_roboboat_population_development_v7.py",
+      "sha256": "89d210b4728215c7cae0858525a5c437c2574ecd473813d8b647ef7a60632069"
+    },
+    {
+      "path": "tests/test_roboboat_hidden_render_v2.py",
+      "sha256": "eb6c4e6ad2d996270e8dea99dc65bb28f90bc2bd8acf51f75f103fd4663d7684"
+    },
+    {
+      "path": "tests/test_roboboat_population_development_v7.py",
+      "sha256": "08423ee902c5d2effe303b64b03ec8a84c34e9e3b80a57147ae123f27390c696"
+    },
+    {
+      "path": "docs/roboboat_terminal_evidence/HIDDEN_RENDER_REPAIR_V2.md",
+      "sha256": "4b5a82f73d78647be1b5886774e3bd741e19e1d9c37f310a4208352f40660437"
+    },
+    {
+      "path": "analysis/audit_roboboat_frame_timing_v1.py",
+      "sha256": "9b424539d5ad025c745eca2483ba369768368334c9ea708ce62474491dfc8e80"
+    },
+    {
+      "path": "analysis/export_roboboat_population_v2.py",
+      "sha256": "cedc81fa7b41afe644e4ec746a7ac79454b17d551c7bd19038892a4c7c58808d"
+    },
+    {
+      "path": "packages/crane_ml/Tools/Performance/run_nav2_controller_fixture.sh",
+      "sha256": "e73025f913d34ee4b7ee7d1be1d3229c1d370bd4e7352a9feedb5deef90b0262"
+    }
+  ],
+  "public_hyprland_source_bindings": [
+    {
+      "path": "/tmp/roboboat-HyprCtl-v0562.cpp",
+      "sha256": "798b7c6c4c1684557842463d46ac99c96629be4179e0e461dca77670247b91fa"
+    },
+    {
+      "path": "/tmp/roboboat-LuaBindingsConfigRules.cpp",
+      "sha256": "157c3e45b364f3e41b6fd7cf13fd19e7477e8c03a6a75c6c46fde5e2b5715be9"
+    },
+    {
+      "path": "/tmp/roboboat-LuaWorkspaceRule.cpp",
+      "sha256": "ba53f1f5ec0ac46a7bb5a132cfdb351b3afc77018cdc5ff16adfe4ba3059abfb"
+    },
+    {
+      "path": "/tmp/roboboat-LuaBindingsToplevel.cpp",
+      "sha256": "706b29eb52de087c1d6e64770cf85fb3ebc0f2fbe9ddcff086905499bcd332f5"
+    }
+  ],
+  "user_reported_collector_state": "Session86067 completed after fresh42004-00004-v1/v2 technical failures; not independently inferred from result banks; no restart.",
+  "validation": {
+    "command": "PYTHONPATH=analysis python -m pytest -q tests/test_roboboat_hidden_render_v2.py tests/test_roboboat_population_development_v7.py",
+    "result": "9 tests passed within combined 37-test invocation; injected subprocess/window states only"
+  },
+  "supported_findings": [
+    "Named headless output is supported by HyprCtl dispatchOutput createOutput(vars[3]); workspace_rule monitor/default is supported by current Lua rule field table.",
+    "active_workspace_empty checks only the active owned workspace and permits occupied unrelated inactive workspaces; it does not reject those user windows.",
+    "FPS is configured using Lua hl.config and checked before launch against getoption. Original FPS is read before mutation; cleanup requests restoration.",
+    "Exact mapped CRANE/ASV client uniqueness, workspace and monitor ID are checked at initial placement. New subprocess starts in its own session.",
+    "Collector retains immutable attempts, strict stale observation/action/transport gates, fixed .02 step, unchanged camera topology/resolution/signatures/timeScale and declared/default maximumDeltaTime readback. Failures cannot be exported by the tested paths.",
+    "verify_player checks every full-build manifest listed file size/hash, avoiding executable-bootstrap-only provenance. Clock analyzer source is bound in probe intent; wrapper/runtime sources in capture intent.",
+    "Infrastructure actual compositor FPS15to60 is a versioned intervention. No runtime-equivalence or physical-cause repair claim follows."
+  ],
+  "gaps_and_blockers": [
+    {
+      "priority": "HIGH_INFRASTRUCTURE",
+      "location": "roboboat_hidden_render_v2.py cleanup finally",
+      "finding": "hypr reload config-only is a global config reload, not owned-rule deletion. HyprCtl v0.56.2 reloadRequest unconditionally calls Config::mgr()->reload except full-reset; config-only suffix does not restrict this to the owned rules. It may erase unrelated transient rules/options and can remap state. Inactive windows are not explicitly moved by this code, but preservation of complete user compositor state is unproven.",
+      "required_before_robust_reuse": "Use supported owned-rule removal or document/validate a safe restoration model; do not claim cleanup removes only owned transient state."
+    },
+    {
+      "priority": "HIGH_INFRASTRUCTURE",
+      "location": "hypr response validation and cleanup",
+      "finding": "hypr accepts any exit0 stdout not starting error/Error/keyword can. Public source returns eval is only supported with the lua config manager, Name already taken, no backend replied to the request and output not found as non-ok strings. Injected CompletedProcess checks reproduce these accepted failures. FPS set has readback, but restoration/output removal/window-rule installation have no complete acceptance/readback verification. If reload raises, original FPS restore is skipped.",
+      "required_before_robust_reuse": "Require operation-specific success or authoritative readback and cleanup stages that continue independently on errors."
+    },
+    {
+      "priority": "HIGH_INFRASTRUCTURE",
+      "location": "window_rule and owned_window",
+      "finding": "Rule matches all CRANE.x86_64 windows, not launched PID/process tree; fixed rule name may replace a same-named rule. A concurrent unrelated CRANE instance can be governed. owned_window name argument is unused, and ownership is inferred only from class/title/placement.",
+      "required_before_multi_instance_use": "Bind placement to launched ownership and unique rule identity; preserve unrelated application windows."
+    },
+    {
+      "priority": "MEDIUM_INFRASTRUCTURE",
+      "location": "child/signal handling",
+      "finding": "Normal return or exceptional cleanup only kills group when immediate child is still running. Surviving descendants after launcher exit are not checked. SIGTERM handler is installed only in main; SIGKILL cannot run cleanup. Cleanup exceptions may mask original placement/signal failure.",
+      "required_before_robust_reuse": "Test live child-group lifecycle with safe disposable processes; ensure descendant cleanup and durable cleanup diagnostics without touching current completed attempts."
+    },
+    {
+      "priority": "MEDIUM_TRACEABILITY",
+      "location": "collector source closure and runtime metadata",
+      "finding": "Capture binds collector/wrapper/renderer/launcher and full build, but imported export/project/publish and analyzer closure are not all individually bound in capture intent; analyzer is bound at probe level, export dependency closure is incomplete. Full build list is trusted and verifier does not reject missing/duplicate manifest entries or prove no additional runtime files. Compositor version/config/rule readbacks and restored FPS are not stored as structured capture-terminal admission fields.",
+      "required_before_freeze": "Bind complete source/build/transport/runtime closure, authoritative expected build file set and structured placement/FPS lifecycle record."
+    },
+    {
+      "priority": "MEDIUM_TEST_GAP",
+      "location": "two focused suites",
+      "finding": "Tests cover preflight/probe cleanup and predicate uniqueness, but no successful child launch placement lifecycle, wrong-PID CRANE window, signals, output-remove/reload/restore failures, post-placement migration, descendant exit or genuine Hyprland errors. Strict collector tests cover stale/wrong cap/wrong step but not successful export/default clock path or proof of user-state restoration.",
+      "required_before_equivalence_claim": "Independent broader disposable lifecycle tests; source-level review is not a live compositor validation."
+    }
+  ],
+  "public_source_scope_limit": "Read supplied v0.56.2 source copies only. Lua window effects are resolved from another descriptor file not included here; provided mocks are not proof of every compositor effect. No live Hyprland command was run.",
+  "recommendation": "Keep all current failed rows immutable; no restart. Rendering v2 is a useful development repair with unresolved ownership/cleanup/provenance gaps, not mature confirmation infrastructure."
+}

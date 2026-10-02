@@ -90,7 +90,7 @@ cleanup() {
 trap cleanup INT TERM EXIT
 
 deadline="$(awk -v now="$(date +%s.%N)" -v timeout="${placement_timeout}" \
-    'BEGIN { print now + timeout }')"
+    'BEGIN { printf "%.9f\n", now + timeout }')"
 while kill -0 "${child_pid}" 2>/dev/null; do
     client_state="$(hyprctl clients -j | jq -c \
         --arg class "${window_class}" \

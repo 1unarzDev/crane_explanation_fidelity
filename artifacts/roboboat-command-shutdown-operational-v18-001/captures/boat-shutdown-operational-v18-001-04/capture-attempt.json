@@ -1,0 +1,297 @@
+{
+  "capture_completion_receipt": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-command-shutdown-operational-v18-001/captures/boat-shutdown-operational-v18-001-04/fixture-capture-complete.token.receipt.json",
+    "sha256": "e68a754e068817cb51d9512c602ccfd9f35293a6665f3d243e35fc2d0e2c82ad"
+  },
+  "checks": {
+    "accepted_action_count_matches": true,
+    "action_observer_complete": true,
+    "benchmark_validity_source_reconstructed": true,
+    "bounded_receive_lag": true,
+    "bounded_source_lag": true,
+    "camera_topology_unchanged": true,
+    "capture_completion_finish_observed": true,
+    "clamped_payload_within_unit_scales": true,
+    "clock_and_ros_payload_semantics": true,
+    "clock_cap_matches_declaration": true,
+    "clock_constant_through_trace": true,
+    "command_trace_integrity": true,
+    "complete_fixture_binding": true,
+    "completion_identity": true,
+    "completion_token_binding": true,
+    "connection_closed": true,
+    "cross_episode_actions_zero": true,
+    "declared_ros_domain_port": true,
+    "declared_velocity_scales_observed": true,
+    "depth_acquired": true,
+    "depth_resolution_unchanged": true,
+    "duplicateActions_zero": true,
+    "duplicate_registrations_zero": true,
+    "endpoint_errors_zero": true,
+    "exact_common_ros_gate_contract": true,
+    "failed_observations_zero": true,
+    "fixed_physics_step_002": true,
+    "fixture_capture_duration": true,
+    "frame_trace_present": true,
+    "invalid_water_searches_zero": true,
+    "known_source_count_matches": true,
+    "launcher_terminal_classification": true,
+    "measured_trajectory": true,
+    "no_pending_receipt_at_shutdown": true,
+    "only_stale_rejections": true,
+    "original_image_signatures_enabled": true,
+    "owned_render_complete": true,
+    "retained_benchmark_crossEpisodeActions": true,
+    "retained_benchmark_depthBufferValidationMismatches": true,
+    "retained_benchmark_failedObservations": true,
+    "retained_benchmark_invalidWaterSearches": true,
+    "retained_benchmark_loggedErrors": true,
+    "retained_benchmark_loggedExceptions": true,
+    "retained_benchmark_staleObservations": true,
+    "runtime_errors_zero": true,
+    "runtime_exceptions_zero": true,
+    "screen_640x360": true,
+    "single_connection": true,
+    "stale_observations_zero": true,
+    "time_scale_unchanged": true,
+    "timeout_warning_aggregate_reconciled": true,
+    "unknownSourceActions_zero": true,
+    "whole_command_trace_integrity": true
+  },
+  "collector_sha256": "136dc48f7d7980d47f39cbef81721bb44adea9d56bf48c99b0180ff1a547f92b",
+  "command": [
+    "/home/lunarz/worktrees/roboboat-terminal-evidence/scripts/run_roboboat_hidden_render_v3.sh",
+    "--expected-class",
+    "CRANE-owned-9ea88be80eb84522842cdb23073f4c4c",
+    "--audit-path",
+    "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-command-shutdown-operational-v18-001/captures/boat-shutdown-operational-v18-001-04/render-audit.json",
+    "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Tools/Performance/run_nav2_controller_fixture_capture_v15.sh"
+  ],
+  "confirmation_n": 0,
+  "default_cpu_affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "development_recording_admitted": true,
+  "finished_unix": 1790882329.9289808,
+  "full_compiled_build": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-command-shutdown-v17/full-build-v1.json",
+    "sha256": "5f35c10988645dcc98fb7c38bf28b6255c5dfd788bb25aad0ba939244125815c"
+  },
+  "image_signatures": true,
+  "independent_n_added": 0,
+  "inspected_instrumentation_sources": [
+    {
+      "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Utils/Performance/CraneActionTimingAudit.cs",
+      "sha256": "fba868bfc5ace575565da8de846c24364f14ad21de7fca20ad08eda6c578fe0c"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Utils/Performance/CraneActionGate.cs",
+      "sha256": "ba0b13c6d5641762b475cfa7ea1b11ea076da745c61e0655215e2fd7dc44dcda"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Controllers/ROSOmniXCommand.cs",
+      "sha256": "0851804655af9e11173f8363fb3652bd03f397a748b29de782c67d6294d45f52"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Performance/CraneBenchmarkRunner.cs",
+      "sha256": "ecab1c736228266b1f5cb22da035cc76a4a8f800a028b0c3d7204fb15ca79df3"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Controllers/CraneROSNavigationState.cs",
+      "sha256": "a679d8e17676e0eecdee212598f0ef01029e17e9bf73a7c6133c6ec10eff1c84"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Scripts/Utils/ROS/ROSClock.cs",
+      "sha256": "3e427414eea502bb789b53c8e4fd70cedfb478bdb0700c4a914e977390a09575"
+    }
+  ],
+  "intervention": "Sparse frame timing enabled; optional catch-up cap only as declared. Original signatures/sensing/physics step preserved; revised compiled build bound.",
+  "launch_values": {
+    "CRANE_ASTRO_DOCK": "/home/lunarz/crane_explain/packages/astro_dock",
+    "CRANE_CAPTURE_RUNTIME_PARAMETERS": "1",
+    "CRANE_DOCKING_EVALUATOR": "1",
+    "CRANE_DURATION": "340",
+    "CRANE_NAV2_ACTION_DURATION": "310",
+    "CRANE_NAV2_ACTION_MODE": "follow-path",
+    "CRANE_NAV2_CONTROLLER_EXTRA_ARGS": "-p goal_checker.xy_goal_tolerance:=0.4",
+    "CRANE_NAV2_GOAL_X": "0.9435582294824494",
+    "CRANE_NAV2_GOAL_Y": "-27.659297235945303",
+    "CRANE_NAV2_GOAL_YAW": "1.628344956574848",
+    "CRANE_NAV2_PARAMS": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Tools/Performance/roboboat_terminal_v1.yaml",
+    "CRANE_NAV2_PATH_FILE": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Tools/Performance/generated_populations/development-42005/boat-geom-42005-00019.json",
+    "CRANE_NAV2_POST_RESULT_DURATION": "8",
+    "CRANE_NAV2_PROFILE": "train-gpu",
+    "CRANE_NAV2_UNITY_EXTRA_ARGS": "--crane-frame-timing-audit /home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-command-shutdown-operational-v18-001/captures/boat-shutdown-operational-v18-001-04/frame-timing.jsonl --crane-action-timing-audit /home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-command-shutdown-operational-v18-001/captures/boat-shutdown-operational-v18-001-04/action-timing.jsonl --crane-maximum-delta-time 0.04",
+    "CRANE_NOGRAPHICS": "0",
+    "CRANE_PLAYER": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-command-shutdown-operational-v18-001/captures/boat-shutdown-operational-v18-001-04/owned-player/CRANE-owned-9ea88be80eb84522842cdb23073f4c4c",
+    "CRANE_RESULT_ROOT": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-command-shutdown-operational-v18-001/captures/boat-shutdown-operational-v18-001-04",
+    "CRANE_ROS_DOMAIN_ID": "199",
+    "CRANE_ROS_PORT": "11489",
+    "CRANE_RUN_ID": "boat-shutdown-operational-v18-001-04",
+    "CRANE_SCREEN_HEIGHT": "360",
+    "CRANE_SCREEN_WIDTH": "640",
+    "CRANE_SEED_BASE": "42005018",
+    "CRANE_TIME_SCALE": "1",
+    "CRANE_WARMUP": "3"
+  },
+  "launcher_sha256": "787a3c6c7b4896908802e7ddf5aa8e124642b58b7655128b2a6b1f70798c62c2",
+  "level_outcomes": [
+    "unknown",
+    "unknown",
+    "false"
+  ],
+  "maximum_delta_time": 0.04,
+  "observed_navigation_status": "succeeded",
+  "operational_replay": true,
+  "owned_player_bundle": {
+    "bundle_root": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-command-shutdown-operational-v18-001/captures/boat-shutdown-operational-v18-001-04/owned-player",
+    "class_requires_actual_runtime_verification": true,
+    "confirmation_n": 0,
+    "executable": {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-command-shutdown-operational-v18-001/captures/boat-shutdown-operational-v18-001-04/owned-player/CRANE-owned-9ea88be80eb84522842cdb23073f4c4c",
+      "sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292"
+    },
+    "expected_class": "CRANE-owned-9ea88be80eb84522842cdb23073f4c4c",
+    "links": [
+      {
+        "path": "ASV_BurstDebugInformation_DoNotShip",
+        "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/ASV_BurstDebugInformation_DoNotShip"
+      },
+      {
+        "path": "CRANE-owned-9ea88be80eb84522842cdb23073f4c4c_Data",
+        "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/CRANE_Data"
+      },
+      {
+        "path": "CRANE_s.debug",
+        "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/CRANE_s.debug"
+      },
+      {
+        "path": "UnityPlayer.so",
+        "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/UnityPlayer.so"
+      },
+      {
+        "path": "UnityPlayer_s.debug",
+        "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/UnityPlayer_s.debug"
+      },
+      {
+        "path": "crane-build-manifest.json",
+        "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/crane-build-manifest.json"
+      },
+      {
+        "path": "libdecor-0.so.0",
+        "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/libdecor-0.so.0"
+      },
+      {
+        "path": "libdecor-cairo.so",
+        "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/libdecor-cairo.so"
+      }
+    ],
+    "manifest": {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-command-shutdown-v17/full-build-v1.json",
+      "sha256": "5f35c10988645dcc98fb7c38bf28b6255c5dfd788bb25aad0ba939244125815c"
+    },
+    "original_build_root": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker",
+    "physics_or_scientific_equivalence_claim": false,
+    "production_launch_requirements": {
+      "SDL_VIDEODRIVER": "x11",
+      "screen": [
+        640,
+        360
+      ],
+      "screen_fullscreen": 0
+    },
+    "schema": "roboboat-owned-player-bundle/v1-development"
+  },
+  "physical_player": {
+    "path": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/CRANE.x86_64",
+    "sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292"
+  },
+  "platform_version": "isolated command-shutdown-v17; capture-complete2s drain and explicit intake closure before final counters; unchanged physics/task/control law; revised lifecycle behavior",
+  "player_sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292",
+  "probe_version": "roboboat-command-shutdown-operational/v18-development-zero-independent-N",
+  "prospective_declaration": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-command-shutdown-operational-v18-001/declaration.json",
+    "sha256": "e362c165edc2c13ba1f8d3ebdd5db8fd33fb01ca4d37691061eb38bda7530279"
+  },
+  "quality_retries": 0,
+  "real_time_factor": 0.9998705427591904,
+  "registry_sha256": "f4c2c79d34e46c3492abfa4a580ae81b1783bffffd2c902adfe2631bc77fd7d6",
+  "render_runtime_source": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/roboboat_hidden_render_v3.py",
+    "sha256": "e20cc71ebd297a460cc004678187f1c97012b0035de3ddd0c46794474d996bff"
+  },
+  "return_code": 1,
+  "row": {
+    "action_mode": "follow-path",
+    "cluster_id": "boat-geom-42005-00019",
+    "disposition": "DEVELOPMENT_EXPLORATORY",
+    "family": "aligned-long",
+    "geometry": {
+      "clearance_validated": false,
+      "curvature_amplitude_m": 0.04277532835266795,
+      "feasibility_validated": false,
+      "initial_path_heading_rad": -1.5711344293507297,
+      "lane_x": -3.2443213781796354,
+      "length_m": 42.602141365510505,
+      "maximum_interior_heading_change_rad": 0.09519977738152721,
+      "maximum_waypoint_gap_m": 0.19926733497174803,
+      "physical_initial_pose_varied": false,
+      "physical_start": "unchanged scene default; route anchor is approximate",
+      "terminal_length_m": 3.9038733271298103,
+      "terminal_offset_rad": 0.0,
+      "terminal_path_heading_rad": 1.5707963267948966,
+      "turn_y": -34.4332063553043,
+      "x_extent_m": [
+        -3.2443213781796354,
+        0.9435582294824494
+      ],
+      "y_extent_m": [
+        -36.5247744355664,
+        -5.2
+      ]
+    },
+    "geometry_draw_index": 18,
+    "goal": {
+      "x": 0.9435582294824494,
+      "y": -27.659297235945303,
+      "yaw": 1.628344956574848
+    },
+    "id": "boat-shutdown-operational-v18-001-04",
+    "internal_xy_tolerance_m": 0.4,
+    "path_file": {
+      "path": "packages/crane_ml/Tools/Performance/generated_populations/development-42005/boat-geom-42005-00019.json",
+      "sha256": "51aac14cfa5cc11bd17e0f7714d7219f681ad5841c8f6cfa75fe15aeeebbc3f3"
+    },
+    "retry_budget": 0,
+    "sampling_seed": 42005,
+    "seed": 42005018,
+    "task_contract": {
+      "path": "docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00019.json",
+      "sha256": "478ca7026e18270febbf2c1d61ce07bf43fa844b688deadb7188afd1de03eba7"
+    },
+    "variant": 2
+  },
+  "started_unix": 1790882009.0740683,
+  "status": "VALID_TRACE_QUALIFIED_DEVELOPMENT",
+  "technical_validity_definition": "prospective trace-qualified development; stale rejections allowed only with complete gate/counter/payload qualification; other gates retained",
+  "wrapper_sha256": "6364e63db80ca66b47044d689da98914b8ebfc1be97c0a726b1ebc7e858268f2"
+}

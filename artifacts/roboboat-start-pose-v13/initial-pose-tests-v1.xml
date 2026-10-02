@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="16" result="Failed(Child)" total="16" passed="15" failed="1" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-01 15:16:28Z" end-time="2026-10-01 15:16:31Z" duration="2.9977318">
+  <test-suite type="TestSuite" id="1000" name="ASV" fullname="ASV" runstate="Runnable" testcasecount="67" result="Failed" site="Child" start-time="2026-10-01 15:16:28Z" end-time="2026-10-01 15:16:31Z" duration="2.997732" total="16" passed="15" failed="1" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1083" name="RoboBoatEditorTests.dll" fullname="/home/lunarz/worktrees/roboboat-start-pose-v13/crane_ml/Library/ScriptAssemblies/RoboBoatEditorTests.dll" runstate="Runnable" testcasecount="29" result="Failed" site="Child" start-time="2026-10-01 15:16:28Z" end-time="2026-10-01 15:16:31Z" duration="2.990497" total="16" passed="15" failed="1" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="817194" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestFixture" id="1056" name="RoboBoatInitialPoseTests" fullname="RoboBoatInitialPoseTests" classname="RoboBoatInitialPoseTests" runstate="Runnable" testcasecount="16" result="Failed" site="Child" start-time="2026-10-01 15:16:28Z" end-time="2026-10-01 15:16:31Z" duration="2.988900" total="16" passed="15" failed="1" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-case id="1073" name="ActualCourseUsesRootArticulationAndTeleportsWholeBoat" fullname="RoboBoatInitialPoseTests.ActualCourseUsesRootArticulationAndTeleportsWholeBoat" methodname="ActualCourseUsesRootArticulationAndTeleportsWholeBoat" classname="RoboBoatInitialPoseTests" runstate="Runnable" seed="721625496" result="Failed" start-time="2026-10-01 15:16:28Z" end-time="2026-10-01 15:16:29Z" duration="1.069680" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected: less than 9.99999975E-05f
+  But was:  0.747418463f
+]]></message>
+            <stack-trace><![CDATA[at RoboBoatInitialPoseTests.ActualCourseUsesRootArticulationAndTeleportsWholeBoat () [0x00057] in /home/lunarz/worktrees/roboboat-start-pose-v13/crane_ml/Assets/Tests/Editor/RoboBoatInitialPoseTests.cs:80
+]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1065" name="InvalidInputIsRejected" fullname="RoboBoatInitialPoseTests.InvalidInputIsRejected" classname="RoboBoatInitialPoseTests" runstate="Runnable" testcasecount="6" result="Passed" start-time="2026-10-01 15:16:29Z" end-time="2026-10-01 15:16:31Z" duration="1.798521" total="6" passed="6" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1059" name="InvalidInputIsRejected(&quot;NaN,0,0&quot;)" fullname="RoboBoatInitialPoseTests.InvalidInputIsRejected(&quot;NaN,0,0&quot;)" methodname="InvalidInputIsRejected" classname="RoboBoatInitialPoseTests" runstate="Runnable" seed="884394179" result="Passed" start-time="2026-10-01 15:16:31Z" end-time="2026-10-01 15:16:31Z" duration="0.003406" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1060" name="InvalidInputIsRejected(&quot;0,Infinity,0&quot;)" fullname="RoboBoatInitialPoseTests.InvalidInputIsRejected(&quot;0,Infinity,0&quot;)" methodname="InvalidInputIsRejected" classname="RoboBoatInitialPoseTests" runstate="Runnable" seed="498715463" result="Passed" start-time="2026-10-01 15:16:31Z" end-time="2026-10-01 15:16:31Z" duration="0.000281" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1061" name="InvalidInputIsRejected(&quot;0,0,-Infinity&quot;)" fullname="RoboBoatInitialPoseTests.InvalidInputIsRejected(&quot;0,0,-Infinity&quot;)" methodname="InvalidInputIsRejected" classname="RoboBoatInitialPoseTests" runstate="Runnable" seed="1679899411" result="Passed" start-time="2026-10-01 15:16:31Z" end-time="2026-10-01 15:16:31Z" duration="0.000145" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1062" name="InvalidInputIsRejected(&quot;0,0&quot;)" fullname="RoboBoatInitialPoseTests.InvalidInputIsRejected(&quot;0,0&quot;)" methodname="InvalidInputIsRejected" classname="RoboBoatInitialPoseTests" runstate="Runnable" seed="1464995910" result="Passed" start-time="2026-10-01 15:16:31Z" end-time="2026-10-01 15:16:31Z" duration="0.000137" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1063" name="InvalidInputIsRejected(&quot;1,2,3,4&quot;)" fullname="RoboBoatInitialPoseTests.InvalidInputIsRejected(&quot;1,2,3,4&quot;)" methodname="InvalidInputIsRejected" classname="RoboBoatInitialPoseTests" runstate="Runnable" seed="326920034" result="Passed" start-time="2026-10-01 15:16:31Z" end-time="2026-10-01 15:16:31Z" duration="0.000135" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1064" name="InvalidInputIsRejected(&quot;1,bad,3&quot;)" fullname="RoboBoatInitialPoseTests.InvalidInputIsRejected(&quot;1,bad,3&quot;)" methodname="InvalidInputIsRejected" classname="RoboBoatInitialPoseTests" runstate="Runnable" seed="127059455" result="Passed" start-time="2026-10-01 15:16:31Z" end-time="2026-10-01 15:16:31Z" duration="0.000099" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+        </test-suite>
+        <test-case id="1066" name="MissingOrDuplicateOverrideIsRejected" fullname="RoboBoatInitialPoseTests.MissingOrDuplicateOverrideIsRejected" methodname="MissingOrDuplicateOverrideIsRejected" classname="RoboBoatInitialPoseTests" runstate="Runnable" seed="2059051043" result="Passed" start-time="2026-10-01 15:16:31Z" end-time="2026-10-01 15:16:31Z" duration="0.000552" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1058" name="NegativeValuesUseInvariantCulture" fullname="RoboBoatInitialPoseTests.NegativeValuesUseInvariantCulture" methodname="NegativeValuesUseInvariantCulture" classname="RoboBoatInitialPoseTests" runstate="Runnable" seed="1923113482" result="Passed" start-time="2026-10-01 15:16:31Z" end-time="2026-10-01 15:16:31Z" duration="0.005864" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1074" name="NonRoboBoatSceneCannotBeSelected" fullname="RoboBoatInitialPoseTests.NonRoboBoatSceneCannotBeSelected" methodname="NonRoboBoatSceneCannotBeSelected" classname="RoboBoatInitialPoseTests" runstate="Runnable" seed="553432044" result="Passed" start-time="2026-10-01 15:16:31Z" end-time="2026-10-01 15:16:31Z" duration="0.091619" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1057" name="NoOverrideLeavesDefaultUntouched" fullname="RoboBoatInitialPoseTests.NoOverrideLeavesDefaultUntouched" methodname="NoOverrideLeavesDefaultUntouched" classname="RoboBoatInitialPoseTests" runstate="Runnable" seed="1161007090" result="Passed" start-time="2026-10-01 15:16:31Z" end-time="2026-10-01 15:16:31Z" duration="0.000397" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-case id="1071" name="PositionRoundTripsToRosAndKeepsSceneHeight" fullname="RoboBoatInitialPoseTests.PositionRoundTripsToRosAndKeepsSceneHeight" methodname="PositionRoundTripsToRosAndKeepsSceneHeight" classname="RoboBoatInitialPoseTests" runstate="Runnable" seed="428795434" result="Passed" start-time="2026-10-01 15:16:31Z" end-time="2026-10-01 15:16:31Z" duration="0.001321" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+        </test-case>
+        <test-suite type="ParameterizedMethod" id="1070" name="RequestedYawMatchesAuthoritativePublisherForward" fullname="RoboBoatInitialPoseTests.RequestedYawMatchesAuthoritativePublisherForward" classname="RoboBoatInitialPoseTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-01 15:16:31Z" end-time="2026-10-01 15:16:31Z" duration="0.005101" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-case id="1067" name="RequestedYawMatchesAuthoritativePublisherForward(0.0f)" fullname="RoboBoatInitialPoseTests.RequestedYawMatchesAuthoritativePublisherForward(0.0f)" methodname="RequestedYawMatchesAuthoritativePublisherForward" classname="RoboBoatInitialPoseTests" runstate="Runnable" seed="1648381833" result="Passed" start-time="2026-10-01 15:16:31Z" end-time="2026-10-01 15:16:31Z" duration="0.000819" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1068" name="RequestedYawMatchesAuthoritativePublisherForward(1.570796f)" fullname="RoboBoatInitialPoseTests.RequestedYawMatchesAuthoritativePublisherForward(1.570796f)" methodname="RequestedYawMatchesAuthoritativePublisherForward" classname="RoboBoatInitialPoseTests" runstate="Runnable" seed="1378199712" result="Passed" start-time="2026-10-01 15:16:31Z" end-time="2026-10-01 15:16:31Z" duration="0.000133" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+          <test-case id="1069" name="RequestedYawMatchesAuthoritativePublisherForward(-1.25f)" fullname="RoboBoatInitialPoseTests.RequestedYawMatchesAuthoritativePublisherForward(-1.25f)" methodname="RequestedYawMatchesAuthoritativePublisherForward" classname="RoboBoatInitialPoseTests" runstate="Runnable" seed="63450493" result="Passed" start-time="2026-10-01 15:16:31Z" end-time="2026-10-01 15:16:31Z" duration="0.000069" asserts="0">
+            <properties>
+              <property name="retryIteration" value="0" />
+              <property name="repeatIteration" value="0" />
+            </properties>
+          </test-case>
+        </test-suite>
+        <test-case id="1072" name="RigidbodyOverrideResetsMomentumAndPreservesHeight" fullname="RoboBoatInitialPoseTests.RigidbodyOverrideResetsMomentumAndPreservesHeight" methodname="RigidbodyOverrideResetsMomentumAndPreservesHeight" classname="RoboBoatInitialPoseTests" runstate="Runnable" seed="326001488" result="Passed" start-time="2026-10-01 15:16:31Z" end-time="2026-10-01 15:16:31Z" duration="0.003101" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Saving results to: /home/lunarz/.config/unity3d/DefaultCompany/ASV/TestResults.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="4" result="Failed(Child)" total="4" passed="1" failed="3" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-01 17:19:56Z" end-time="2026-10-01 17:19:56Z" duration="0.0507099">
+  <test-suite type="TestSuite" id="1000" name="ASV" fullname="ASV" runstate="Runnable" testcasecount="78" result="Failed" site="Child" start-time="2026-10-01 17:19:56Z" end-time="2026-10-01 17:19:56Z" duration="0.050710" total="4" passed="1" failed="3" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <failure>
+      <message><![CDATA[One or more child tests had errors]]></message>
+    </failure>
+    <test-suite type="Assembly" id="1096" name="RoboBoatEditorTests.dll" fullname="/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Library/ScriptAssemblies/RoboBoatEditorTests.dll" runstate="Runnable" testcasecount="40" result="Failed" site="Child" start-time="2026-10-01 17:19:56Z" end-time="2026-10-01 17:19:56Z" duration="0.042796" total="4" passed="1" failed="3" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="1483643" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <failure>
+        <message><![CDATA[One or more child tests had errors]]></message>
+      </failure>
+      <test-suite type="TestFixture" id="1063" name="RoboBoatCommandShutdownTests" fullname="RoboBoatCommandShutdownTests" classname="RoboBoatCommandShutdownTests" runstate="Runnable" testcasecount="4" result="Failed" site="Child" start-time="2026-10-01 17:19:56Z" end-time="2026-10-01 17:19:56Z" duration="0.040739" total="4" passed="1" failed="3" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <failure>
+          <message><![CDATA[One or more child tests had errors]]></message>
+        </failure>
+        <test-case id="1065" name="CallbackAfterDisableCannotReopenMailbox" fullname="RoboBoatCommandShutdownTests.CallbackAfterDisableCannotReopenMailbox" methodname="CallbackAfterDisableCannotReopenMailbox" classname="RoboBoatCommandShutdownTests" runstate="Runnable" seed="216560765" result="Failed" start-time="2026-10-01 17:19:56Z" end-time="2026-10-01 17:19:56Z" duration="0.017874" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Transport callback reopened disabled adapter mailbox
+  Expected: False
+  But was:  True
+]]></message>
+            <stack-trace><![CDATA[at RoboBoatCommandShutdownTests.CallbackAfterDisableCannotReopenMailbox () [0x00012] in /home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Tests/Editor/RoboBoatCommandShutdownTests.cs:45
+]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-case id="1067" name="DestroyingRealAdapterDisposesItsPendingReceiptBeforeAuditClosure" fullname="RoboBoatCommandShutdownTests.DestroyingRealAdapterDisposesItsPendingReceiptBeforeAuditClosure" methodname="DestroyingRealAdapterDisposesItsPendingReceiptBeforeAuditClosure" classname="RoboBoatCommandShutdownTests" runstate="Runnable" seed="1761766329" result="Failed" start-time="2026-10-01 17:19:56Z" end-time="2026-10-01 17:19:56Z" duration="0.000978" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Expected: True
+  But was:  False
+]]></message>
+            <stack-trace><![CDATA[at RoboBoatCommandShutdownTests.DestroyingRealAdapterDisposesItsPendingReceiptBeforeAuditClosure () [0x00018] in /home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Tests/Editor/RoboBoatCommandShutdownTests.cs:56
+]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-case id="1064" name="DisablingRealAdapterDisposesItsPendingReceipt" fullname="RoboBoatCommandShutdownTests.DisablingRealAdapterDisposesItsPendingReceipt" methodname="DisablingRealAdapterDisposesItsPendingReceipt" classname="RoboBoatCommandShutdownTests" runstate="Runnable" seed="1144555622" result="Failed" start-time="2026-10-01 17:19:56Z" end-time="2026-10-01 17:19:56Z" duration="0.005892" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <failure>
+            <message><![CDATA[  Actual adapter left a receipt pending when disabled before the next physics step
+  Expected: True
+  But was:  False
+]]></message>
+            <stack-trace><![CDATA[at RoboBoatCommandShutdownTests.DisablingRealAdapterDisposesItsPendingReceipt () [0x0007e] in /home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Assets/Tests/Editor/RoboBoatCommandShutdownTests.cs:39
+]]></stack-trace>
+          </failure>
+        </test-case>
+        <test-case id="1066" name="ExplicitBenchmarkShutdownDisposesAndRejectsLaterCallback" fullname="RoboBoatCommandShutdownTests.ExplicitBenchmarkShutdownDisposesAndRejectsLaterCallback" methodname="ExplicitBenchmarkShutdownDisposesAndRejectsLaterCallback" classname="RoboBoatCommandShutdownTests" runstate="Runnable" seed="570488434" result="Passed" start-time="2026-10-01 17:19:56Z" end-time="2026-10-01 17:19:56Z" duration="0.002501" asserts="0">
+          <properties>
+            <property name="retryIteration" value="0" />
+            <property name="repeatIteration" value="0" />
+          </properties>
+          <output><![CDATA[Saving results to: /home/lunarz/.config/unity3d/DefaultCompany/ASV/TestResults.xml
+]]></output>
+        </test-case>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

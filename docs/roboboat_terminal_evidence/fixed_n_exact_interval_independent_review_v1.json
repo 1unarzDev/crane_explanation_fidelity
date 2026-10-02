@@ -1,0 +1,1403 @@
+{
+  "schema": "roboboat-exact-interval-independent-review/v1",
+  "origin": "SIMULATED",
+  "sources": [
+    {
+      "path": "analysis/roboboat_fixed_n_interval_exact_v1.py",
+      "sha256": "0cfeff7b09604359ff7e4cee67966e665f8350d1a917aca6fe280a2a305d2988"
+    },
+    {
+      "path": "tests/test_roboboat_fixed_n_interval_exact_v1.py",
+      "sha256": "21d2581f86dab1e9773e7466db14069f5c08395e99002cc55eca4dd857ddba2c"
+    },
+    {
+      "path": "docs/roboboat_terminal_evidence/FIXED_N_EXACT_INTERVAL_CANDIDATE_V1.md",
+      "sha256": "6068fb430db6465950d31ce6ee09691085e1c5dbdb0555cecd35fe27c2b05979"
+    }
+  ],
+  "proof_review": {
+    "fixed_N_weak_average_null": "For independent bounded D_i and fixed m>-1, each positive factor has expectation a_i=1-lambda+lambda*(mu_i+1)/(1+m)>0. Independence gives product a_i; arithmetic mean a_i<=1 under average mu_i<=m, hence AM-GM gives expectation<=1. Fixed normalized mixture preserves the bound; Markov gives each tail alpha. The target is the arithmetic mean of independent per-geometry expectations at the fixed allocation, not an unqualified superpopulation or per-geometry effect.",
+    "inversion": "Factors decrease in m, strictly for at least one D_i>-1; other factors remain positive constants. Exact rational threshold comparisons preserve the outer bracket; lower outer endpoint is conservative even at threshold atoms. All-minus-one lower endpoint is support bound. Negation gives upper endpoint, and union bound gives coverage at least 1-2*alpha.",
+    "missingness": "Pointwise score bounds plus endpoint monotonicity give realization-wise containment regardless of outcome-dependent missingness, provided the full fixed-N identities remain represented. Dropping missing identities would invalidate this reasoning.",
+    "float_conversion": "Exact Fraction.from_float comparison and one outward nextafter correctly conservatively round these finite rational endpoints in [-1,1]."
+  },
+  "independent_hypothetical_panels": [
+    {
+      "values": [
+        -6,
+        -6,
+        -6
+      ],
+      "outer_bounds": [
+        "-1",
+        "22330222620503/35184372088832"
+      ],
+      "adverse": [
+        -6,
+        -6,
+        -6
+      ],
+      "favorable": [
+        -6,
+        -6,
+        -6
+      ],
+      "missing_bounds": [
+        "-1",
+        "22330222620503/35184372088832"
+      ]
+    },
+    {
+      "values": [
+        6,
+        6,
+        6
+      ],
+      "outer_bounds": [
+        "-22330222620503/35184372088832",
+        "1"
+      ],
+      "adverse": [
+        4,
+        4,
+        6
+      ],
+      "favorable": [
+        6,
+        6,
+        6
+      ],
+      "missing_bounds": [
+        "-95187381602959/140737488355328",
+        "1"
+      ]
+    },
+    {
+      "values": [
+        -6,
+        6
+      ],
+      "outer_bounds": [
+        "-139187272118527/140737488355328",
+        "139187272118527/140737488355328"
+      ],
+      "adverse": [
+        -6,
+        5
+      ],
+      "favorable": [
+        -6,
+        6
+      ],
+      "missing_bounds": [
+        "-139316456804927/140737488355328",
+        "139187272118527/140737488355328"
+      ]
+    },
+    {
+      "values": [
+        -5,
+        -3,
+        0,
+        1,
+        6
+      ],
+      "outer_bounds": [
+        "-51977703885005/70368744177664",
+        "26517690358001/35184372088832"
+      ],
+      "adverse": [
+        -6,
+        -5,
+        -3,
+        1,
+        5
+      ],
+      "favorable": [
+        -4,
+        0,
+        1,
+        4,
+        6
+      ],
+      "missing_bounds": [
+        "-15168667653895/17592186044416",
+        "914659357635/1099511627776"
+      ]
+    },
+    {
+      "values": [
+        2,
+        6,
+        -6,
+        -5,
+        5,
+        1,
+        2,
+        -1,
+        -1,
+        0,
+        1,
+        -5,
+        4,
+        -1,
+        -5,
+        -3,
+        -5,
+        2
+      ],
+      "outer_bounds": [
+        "-33309136682025/70368744177664",
+        "23534210620035/70368744177664"
+      ],
+      "adverse": [
+        -1,
+        3,
+        -6,
+        -6,
+        3,
+        0,
+        0,
+        -1,
+        -1,
+        0,
+        0,
+        -6,
+        1,
+        -4,
+        -5,
+        -4,
+        -6,
+        0
+      ],
+      "favorable": [
+        2,
+        6,
+        -5,
+        -2,
+        6,
+        1,
+        5,
+        -1,
+        1,
+        1,
+        1,
+        -3,
+        6,
+        1,
+        -3,
+        -1,
+        -4,
+        5
+      ],
+      "missing_bounds": [
+        "-22320676135963/35184372088832",
+        "37452639001013/70368744177664"
+      ]
+    },
+    {
+      "values": [
+        -2,
+        0,
+        1,
+        -3,
+        3,
+        5,
+        -1,
+        0,
+        6,
+        1,
+        6,
+        -6,
+        1,
+        -2,
+        -4,
+        5,
+        0
+      ],
+      "outer_bounds": [
+        "-45359729379097/140737488355328",
+        "34665357518425/70368744177664"
+      ],
+      "adverse": [
+        -3,
+        -3,
+        1,
+        -5,
+        0,
+        5,
+        -2,
+        -2,
+        5,
+        1,
+        5,
+        -6,
+        -1,
+        -2,
+        -4,
+        3,
+        -1
+      ],
+      "favorable": [
+        -2,
+        0,
+        1,
+        0,
+        4,
+        6,
+        -1,
+        3,
+        6,
+        3,
+        6,
+        -3,
+        3,
+        0,
+        -3,
+        6,
+        2
+      ],
+      "missing_bounds": [
+        "-64697090859181/140737488355328",
+        "90219139142099/140737488355328"
+      ]
+    },
+    {
+      "values": [
+        -4,
+        -1,
+        -2,
+        -5,
+        -6,
+        -2,
+        -5,
+        3,
+        3,
+        -2,
+        -2,
+        5
+      ],
+      "outer_bounds": [
+        "-91054367867247/140737488355328",
+        "43784810157585/140737488355328"
+      ],
+      "adverse": [
+        -6,
+        -2,
+        -5,
+        -6,
+        -6,
+        -2,
+        -5,
+        1,
+        3,
+        -4,
+        -2,
+        4
+      ],
+      "favorable": [
+        -2,
+        -1,
+        1,
+        -4,
+        -6,
+        1,
+        -3,
+        4,
+        3,
+        0,
+        -2,
+        6
+      ],
+      "missing_bounds": [
+        "-109908673873501/140737488355328",
+        "64240736522539/140737488355328"
+      ]
+    },
+    {
+      "values": [
+        3
+      ],
+      "outer_bounds": [
+        "-34516314390943/35184372088832",
+        "139846744758143/140737488355328"
+      ],
+      "adverse": [
+        1
+      ],
+      "favorable": [
+        4
+      ],
+      "missing_bounds": [
+        "-69329543314281/70368744177664",
+        "70071829645269/70368744177664"
+      ]
+    },
+    {
+      "values": [
+        -2,
+        -4,
+        6,
+        -4,
+        -4,
+        -5
+      ],
+      "outer_bounds": [
+        "-114203489937187/140737488355328",
+        "40174344774035/70368744177664"
+      ],
+      "adverse": [
+        -2,
+        -4,
+        4,
+        -4,
+        -4,
+        -5
+      ],
+      "favorable": [
+        -1,
+        -2,
+        6,
+        -3,
+        -1,
+        -4
+      ],
+      "missing_bounds": [
+        "-115170423037783/140737488355328",
+        "90405520730161/140737488355328"
+      ]
+    },
+    {
+      "values": [
+        -4,
+        -2,
+        1,
+        1,
+        -1,
+        -2,
+        -3,
+        -1,
+        -4,
+        2,
+        -5,
+        6,
+        6,
+        4,
+        4,
+        -6,
+        4,
+        4,
+        -6,
+        -1
+      ],
+      "outer_bounds": [
+        "-29306995807785/70368744177664",
+        "53311282370871/140737488355328"
+      ],
+      "adverse": [
+        -6,
+        -3,
+        0,
+        -2,
+        -2,
+        -5,
+        -6,
+        -2,
+        -6,
+        1,
+        -6,
+        6,
+        5,
+        4,
+        1,
+        -6,
+        4,
+        1,
+        -6,
+        -2
+      ],
+      "favorable": [
+        -3,
+        1,
+        4,
+        1,
+        -1,
+        -2,
+        -3,
+        -1,
+        -4,
+        3,
+        -4,
+        6,
+        6,
+        5,
+        4,
+        -6,
+        5,
+        6,
+        -3,
+        1
+      ],
+      "missing_bounds": [
+        "-22163765333321/35184372088832",
+        "4490199773773/8796093022208"
+      ]
+    },
+    {
+      "values": [
+        6
+      ],
+      "outer_bounds": [
+        "-68587256983293/70368744177664",
+        "1"
+      ],
+      "adverse": [
+        3
+      ],
+      "favorable": [
+        6
+      ],
+      "missing_bounds": [
+        "-34516314390943/35184372088832",
+        "1"
+      ]
+    },
+    {
+      "values": [
+        -6,
+        -6,
+        6,
+        0,
+        -6,
+        -6,
+        6,
+        -5,
+        -1,
+        -2
+      ],
+      "outer_bounds": [
+        "-29071844775197/35184372088832",
+        "59582386712549/140737488355328"
+      ],
+      "adverse": [
+        -6,
+        -6,
+        5,
+        -3,
+        -6,
+        -6,
+        5,
+        -6,
+        -4,
+        -4
+      ],
+      "favorable": [
+        -6,
+        -6,
+        6,
+        0,
+        -6,
+        -3,
+        6,
+        -3,
+        0,
+        0
+      ],
+      "missing_bounds": [
+        "-63786320575763/70368744177664",
+        "17088906781587/35184372088832"
+      ]
+    },
+    {
+      "values": [
+        0,
+        5,
+        -3,
+        -3,
+        -6,
+        -3,
+        6,
+        6,
+        4,
+        -2,
+        -1,
+        3,
+        -3,
+        -6,
+        -3,
+        0,
+        1
+      ],
+      "outer_bounds": [
+        "-32367223013593/70368744177664",
+        "56716692145381/140737488355328"
+      ],
+      "adverse": [
+        0,
+        4,
+        -6,
+        -3,
+        -6,
+        -5,
+        6,
+        6,
+        3,
+        -5,
+        -2,
+        1,
+        -5,
+        -6,
+        -3,
+        -1,
+        1
+      ],
+      "favorable": [
+        3,
+        6,
+        -1,
+        -3,
+        -5,
+        -3,
+        6,
+        6,
+        5,
+        -2,
+        0,
+        6,
+        -2,
+        -3,
+        -3,
+        0,
+        3
+      ],
+      "missing_bounds": [
+        "-43019221218283/70368744177664",
+        "2453758230311/4398046511104"
+      ]
+    },
+    {
+      "values": [
+        -6,
+        -6,
+        -5,
+        4
+      ],
+      "outer_bounds": [
+        "-137939100217757/140737488355328",
+        "22841913859299/35184372088832"
+      ],
+      "adverse": [
+        -6,
+        -6,
+        -6,
+        1
+      ],
+      "favorable": [
+        -6,
+        -6,
+        -2,
+        5
+      ],
+      "missing_bounds": [
+        "-35122064814817/35184372088832",
+        "100487147915525/140737488355328"
+      ]
+    },
+    {
+      "values": [
+        -1,
+        -1,
+        -1,
+        6,
+        -3,
+        -1,
+        3,
+        1,
+        6,
+        0,
+        -3,
+        -6,
+        -2,
+        -2,
+        -6,
+        -1,
+        -5,
+        -3,
+        -5,
+        -6
+      ],
+      "outer_bounds": [
+        "-10111243027829/17592186044416",
+        "6501418140941/35184372088832"
+      ],
+      "adverse": [
+        -1,
+        -4,
+        -2,
+        3,
+        -4,
+        -2,
+        2,
+        -2,
+        6,
+        -2,
+        -6,
+        -6,
+        -4,
+        -5,
+        -6,
+        -4,
+        -6,
+        -4,
+        -6,
+        -6
+      ],
+      "favorable": [
+        -1,
+        2,
+        1,
+        6,
+        -3,
+        0,
+        3,
+        4,
+        6,
+        0,
+        -3,
+        -3,
+        1,
+        -1,
+        -5,
+        2,
+        -4,
+        0,
+        -2,
+        -5
+      ],
+      "missing_bounds": [
+        "-6722841841177/8796093022208",
+        "49766582921489/140737488355328"
+      ]
+    },
+    {
+      "values": [
+        3,
+        1,
+        -1,
+        5,
+        0,
+        -4,
+        -6,
+        1,
+        1,
+        3,
+        1,
+        1,
+        -1,
+        2,
+        -6
+      ],
+      "outer_bounds": [
+        "-7656284303981/17592186044416",
+        "55145032453033/140737488355328"
+      ],
+      "adverse": [
+        3,
+        -1,
+        -3,
+        3,
+        -1,
+        -6,
+        -6,
+        0,
+        0,
+        2,
+        -1,
+        1,
+        -2,
+        0,
+        -6
+      ],
+      "favorable": [
+        3,
+        2,
+        0,
+        6,
+        1,
+        -4,
+        -3,
+        2,
+        4,
+        5,
+        1,
+        2,
+        2,
+        5,
+        -3
+      ],
+      "missing_bounds": [
+        "-40198847437767/70368744177664",
+        "41513736441367/70368744177664"
+      ]
+    },
+    {
+      "values": [
+        5,
+        -4,
+        4,
+        -3,
+        -1,
+        -1,
+        3,
+        2,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ],
+      "outer_bounds": [
+        "-11554512649583/35184372088832",
+        "63177222523013/140737488355328"
+      ],
+      "adverse": [
+        4,
+        -6,
+        4,
+        -5,
+        -3,
+        -2,
+        3,
+        1,
+        -1,
+        -3,
+        0,
+        -1,
+        -3,
+        1
+      ],
+      "favorable": [
+        6,
+        -2,
+        4,
+        -2,
+        -1,
+        -1,
+        6,
+        2,
+        2,
+        0,
+        1,
+        1,
+        1,
+        2
+      ],
+      "missing_bounds": [
+        "-73375061476289/140737488355328",
+        "5105057916715/8796093022208"
+      ]
+    },
+    {
+      "values": [
+        4,
+        2,
+        -4,
+        -1,
+        2,
+        -2,
+        3,
+        -4
+      ],
+      "outer_bounds": [
+        "-79253405582389/140737488355328",
+        "39287512120395/70368744177664"
+      ],
+      "adverse": [
+        2,
+        0,
+        -6,
+        -3,
+        -1,
+        -3,
+        1,
+        -6
+      ],
+      "favorable": [
+        4,
+        4,
+        -4,
+        0,
+        3,
+        -1,
+        4,
+        -2
+      ],
+      "missing_bounds": [
+        "-54724095354591/70368744177664",
+        "91164102854293/140737488355328"
+      ]
+    },
+    {
+      "values": [
+        -2,
+        -2,
+        0,
+        2,
+        -3,
+        2,
+        3,
+        -1,
+        3,
+        1,
+        2,
+        6,
+        4,
+        0,
+        4,
+        2,
+        0,
+        3,
+        -2,
+        0,
+        6,
+        -5,
+        -5,
+        -6
+      ],
+      "outer_bounds": [
+        "-18077293328335/70368744177664",
+        "27592633529185/70368744177664"
+      ],
+      "adverse": [
+        -4,
+        -4,
+        -1,
+        2,
+        -4,
+        0,
+        3,
+        -1,
+        2,
+        0,
+        -1,
+        3,
+        3,
+        -3,
+        3,
+        1,
+        -2,
+        2,
+        -5,
+        -3,
+        4,
+        -6,
+        -6,
+        -6
+      ],
+      "favorable": [
+        -2,
+        1,
+        2,
+        2,
+        -3,
+        2,
+        6,
+        1,
+        4,
+        4,
+        5,
+        6,
+        6,
+        1,
+        5,
+        3,
+        1,
+        5,
+        -2,
+        1,
+        6,
+        -2,
+        -4,
+        -6
+      ],
+      "missing_bounds": [
+        "-33169376795475/70368744177664",
+        "10364450183335/17592186044416"
+      ]
+    },
+    {
+      "values": [
+        -1,
+        6,
+        2,
+        1,
+        -5
+      ],
+      "outer_bounds": [
+        "-48685305311597/70368744177664",
+        "111234504692409/140737488355328"
+      ],
+      "adverse": [
+        -2,
+        5,
+        0,
+        1,
+        -6
+      ],
+      "favorable": [
+        0,
+        6,
+        2,
+        3,
+        -4
+      ],
+      "missing_bounds": [
+        "-109881741761505/140737488355328",
+        "14530630028705/17592186044416"
+      ]
+    },
+    {
+      "values": [
+        -5,
+        -4,
+        5,
+        1,
+        -6,
+        0,
+        -3,
+        2,
+        -2
+      ],
+      "outer_bounds": [
+        "-12203940620191/17592186044416",
+        "29943984049005/70368744177664"
+      ],
+      "adverse": [
+        -6,
+        -6,
+        5,
+        1,
+        -6,
+        -2,
+        -6,
+        0,
+        -5
+      ],
+      "favorable": [
+        -5,
+        -4,
+        5,
+        1,
+        -6,
+        1,
+        -3,
+        5,
+        -2
+      ],
+      "missing_bounds": [
+        "-124311914450985/140737488355328",
+        "69864170008951/140737488355328"
+      ]
+    },
+    {
+      "values": [
+        -1,
+        1,
+        -6,
+        -3,
+        2,
+        -4,
+        -1,
+        -4,
+        -3,
+        -4,
+        -6,
+        -3,
+        -4,
+        4,
+        -1,
+        1,
+        5,
+        2,
+        3,
+        -4,
+        4,
+        0,
+        5
+      ],
+      "outer_bounds": [
+        "-7843295769531/17592186044416",
+        "16503984834089/70368744177664"
+      ],
+      "adverse": [
+        -1,
+        -2,
+        -6,
+        -3,
+        2,
+        -6,
+        -4,
+        -6,
+        -4,
+        -6,
+        -6,
+        -3,
+        -4,
+        3,
+        -3,
+        0,
+        5,
+        2,
+        3,
+        -4,
+        1,
+        -3,
+        2
+      ],
+      "favorable": [
+        -1,
+        3,
+        -3,
+        -3,
+        2,
+        -2,
+        0,
+        -3,
+        -2,
+        -1,
+        -5,
+        -3,
+        -2,
+        6,
+        1,
+        3,
+        6,
+        5,
+        6,
+        -4,
+        6,
+        1,
+        6
+      ],
+      "missing_bounds": [
+        "-86371304029107/140737488355328",
+        "67919085309079/140737488355328"
+      ]
+    },
+    {
+      "values": [
+        2,
+        2,
+        5,
+        5,
+        -3,
+        5,
+        6,
+        -4,
+        -6,
+        0
+      ],
+      "outer_bounds": [
+        "-31872602262235/70368744177664",
+        "48778437610409/70368744177664"
+      ],
+      "adverse": [
+        0,
+        -1,
+        4,
+        4,
+        -5,
+        5,
+        6,
+        -4,
+        -6,
+        0
+      ],
+      "favorable": [
+        4,
+        4,
+        6,
+        6,
+        -2,
+        6,
+        6,
+        -3,
+        -6,
+        2
+      ],
+      "missing_bounds": [
+        "-77095652631327/140737488355328",
+        "29438767357405/35184372088832"
+      ]
+    },
+    {
+      "values": [
+        3,
+        -4,
+        -3,
+        1,
+        0,
+        0,
+        -6,
+        -6,
+        -3,
+        6,
+        -4,
+        2,
+        4,
+        2,
+        6,
+        -1,
+        0,
+        4
+      ],
+      "outer_bounds": [
+        "-57213165442077/140737488355328",
+        "29429489102995/70368744177664"
+      ],
+      "adverse": [
+        1,
+        -6,
+        -6,
+        0,
+        -3,
+        -2,
+        -6,
+        -6,
+        -4,
+        4,
+        -4,
+        2,
+        1,
+        -1,
+        3,
+        -3,
+        -3,
+        1
+      ],
+      "favorable": [
+        5,
+        -1,
+        -3,
+        3,
+        0,
+        0,
+        -4,
+        -4,
+        -3,
+        6,
+        -1,
+        2,
+        4,
+        5,
+        6,
+        0,
+        1,
+        6
+      ],
+      "missing_bounds": [
+        "-88721578319909/140737488355328",
+        "40247500024717/70368744177664"
+      ]
+    },
+    {
+      "values": [
+        -6,
+        4,
+        6,
+        3,
+        -1,
+        -2,
+        4,
+        6,
+        -5,
+        -3,
+        1,
+        -1,
+        -1,
+        -1,
+        -4
+      ],
+      "outer_bounds": [
+        "-31222972057559/70368744177664",
+        "4070227086687/8796093022208"
+      ],
+      "adverse": [
+        -6,
+        2,
+        3,
+        0,
+        -2,
+        -2,
+        2,
+        6,
+        -6,
+        -4,
+        -2,
+        -1,
+        -4,
+        -2,
+        -6
+      ],
+      "favorable": [
+        -6,
+        4,
+        6,
+        6,
+        0,
+        -2,
+        5,
+        6,
+        -5,
+        -1,
+        3,
+        0,
+        2,
+        1,
+        -1
+      ],
+      "missing_bounds": [
+        "-44036098505513/70368744177664",
+        "86359795171001/140737488355328"
+      ]
+    },
+    {
+      "values": [
+        -2,
+        2,
+        -6
+      ],
+      "outer_bounds": [
+        "-133386858991575/140737488355328",
+        "54610957102401/70368744177664"
+      ],
+      "adverse": [
+        -4,
+        1,
+        -6
+      ],
+      "favorable": [
+        0,
+        3,
+        -4
+      ],
+      "missing_bounds": [
+        "-67919624680807/70368744177664",
+        "58102562536381/70368744177664"
+      ]
+    },
+    {
+      "values": [
+        -1,
+        -1
+      ],
+      "outer_bounds": [
+        "-65100680878379/70368744177664",
+        "62993455558665/70368744177664"
+      ],
+      "adverse": [
+        -2,
+        -4
+      ],
+      "favorable": [
+        2,
+        2
+      ],
+      "missing_bounds": [
+        "-67376849626429/70368744177664",
+        "16538573384559/17592186044416"
+      ]
+    },
+    {
+      "values": [
+        -3,
+        -6,
+        4,
+        0,
+        -5,
+        4,
+        4
+      ],
+      "outer_bounds": [
+        "-49542748008945/70368744177664",
+        "87033473528675/140737488355328"
+      ],
+      "adverse": [
+        -5,
+        -6,
+        2,
+        -2,
+        -6,
+        3,
+        4
+      ],
+      "favorable": [
+        -1,
+        -6,
+        6,
+        0,
+        -4,
+        5,
+        4
+      ],
+      "missing_bounds": [
+        "-57260613415739/70368744177664",
+        "51339714655479/70368744177664"
+      ]
+    }
+  ],
+  "exact_null_enumerations": [
+    {
+      "probabilities": [
+        "1/8",
+        "3/8",
+        "5/8",
+        "7/8"
+      ],
+      "average_mean": "0",
+      "exact_expected_e": "108545/131072",
+      "exact_rejection_probability": "0"
+    },
+    {
+      "probabilities": [
+        "0",
+        "0",
+        "1",
+        "1"
+      ],
+      "average_mean": "0",
+      "exact_expected_e": "281/512",
+      "exact_rejection_probability": "0"
+    },
+    {
+      "probabilities": [
+        "1/10",
+        "1/5",
+        "3/10",
+        "2/5"
+      ],
+      "average_mean": "-1/2",
+      "exact_expected_e": "13171/40000",
+      "exact_rejection_probability": "0"
+    }
+  ],
+  "original_tests": {
+    "initial_unconfigured_command": "python -m pytest -q tests/test_roboboat_fixed_n_interval_exact_v1.py",
+    "initial_result": "collection import error ModuleNotFoundError; no scientific outcome",
+    "corrected_command": "PYTHONPATH=analysis python -m pytest -q tests/test_roboboat_fixed_n_interval_exact_v1.py",
+    "result": "4 passed"
+  },
+  "findings": [
+    "No proof or inversion defect identified for the declared fixed-N independent integer-sixths interface.",
+    "Exact arithmetic addresses prior Decimal rounding concern; it does not certify study independence, endpoint reliability, method fairness, prospective settings or missingness evidence.",
+    "e_value is an unchecked internal arithmetic helper; use checked public lower_bracket/interval with rational settings.",
+    "Caller must freeze bets/weights/tail alpha/N before governed outcomes. Adaptive panel or N choice from confirmation is outside proof.",
+    "Off-lattice endpoint changes require successor; do not round data to fit.",
+    "N<=5000 is an implementation cap, not scientific sample ceiling; benchmark operational cost before large deployment."
+  ],
+  "confirmation_n": 0,
+  "inferential_activation_authorized": false,
+  "alpha_consumed": 0,
+  "reproduction_script": "import hashlib,json,sys,random,math\nfrom pathlib import Path\nfrom fractions import Fraction as F\nfrom itertools import product\nROOT=Path('/home/lunarz/worktrees/roboboat-terminal-evidence');sys.path.insert(0,str(ROOT/'analysis'))\nimport roboboat_fixed_n_interval_exact_v1 as ex\npaths=['analysis/roboboat_fixed_n_interval_exact_v1.py','tests/test_roboboat_fixed_n_interval_exact_v1.py','docs/roboboat_terminal_evidence/FIXED_N_EXACT_INTERVAL_CANDIDATE_V1.md']\nbindings=[{'path':p,'sha256':hashlib.sha256((ROOT/p).read_bytes()).hexdigest()} for p in paths]\nlam,w,alpha=ex.settings(['1/4','1/2','3/4'],[1,2,1],'1/40')\n# Independent direct product implementation: no Counter or candidate e_value.\ndef direct(values,m):\n return sum(weight*math.prod(1-bet+bet*(F(v,6)+1)/(1+m) for v in values) for bet,weight in zip(lam,w))\nrng=random.Random(91300);panels=[[-6]*3,[6]*3,[-6,6],[-5,-3,0,1,6]]\npanels += [[rng.randint(-6,6) for _ in range(rng.randint(1,25))] for _ in range(24)]\nchecks=[]\nfor values in panels:\n lo,hi=ex.lower_bracket(values,lam,w)\n if all(v==-6 for v in values):assert lo==hi==-1\n else:\n  assert hi-lo==F(2,2**48)\n  assert lo==-1 or direct(values,lo)*alpha>=1\n  assert direct(values,hi)*alpha<1\n  assert F.from_float(ex.outward_float(lo,-1))<=lo\n  assert F.from_float(ex.outward_float(hi,1))>=hi\n adverse=[max(-6,v-rng.randint(0,3)) for v in values]\n favorable=[min(6,v+rng.randint(0,3)) for v in values]\n complete=ex.interval(values,values,lam,w);missing=ex.interval(adverse,favorable,lam,w)\n assert F(missing['exact_outer_bounds'][0])<=F(complete['exact_outer_bounds'][0])\n assert F(missing['exact_outer_bounds'][1])>=F(complete['exact_outer_bounds'][1])\n checks.append({'values':values,'outer_bounds':complete['exact_outer_bounds'],'adverse':adverse,'favorable':favorable,'missing_bounds':missing['exact_outer_bounds']})\n# Exact enumerations of weak average null with deliberately unequal means.\nenumerations=[]\nfor ps in [[F(1,8),F(3,8),F(5,8),F(7,8)],[F(0),F(0),F(1),F(1)],[F(1,10),F(2,10),F(3,10),F(4,10)]]:\n evmean=F(0);reject=F(0)\n for bits in product([0,1],repeat=len(ps)):\n  prob=math.prod(p if b else 1-p for p,b in zip(ps,bits));values=[6 if b else -6 for b in bits]\n  e=direct(values,F(0));evmean+=prob*e\n  if e*alpha>=1:reject+=prob\n assert evmean<=1 and reject<=alpha\n enumerations.append({'probabilities':list(map(str,ps)),'average_mean':str(sum(2*p-1 for p in ps)/len(ps)),'exact_expected_e':str(evmean),'exact_rejection_probability':str(reject)})\nreport={'schema':'roboboat-exact-interval-independent-review/v1','origin':'SIMULATED','sources':bindings,\n'proof_review':{'fixed_N_weak_average_null':'For independent bounded D_i and fixed m>-1, each positive factor has expectation a_i=1-lambda+lambda*(mu_i+1)/(1+m)>0. Independence gives product a_i; arithmetic mean a_i<=1 under average mu_i<=m, hence AM-GM gives expectation<=1. Fixed normalized mixture preserves the bound; Markov gives each tail alpha. The target is the arithmetic mean of independent per-geometry expectations at the fixed allocation, not an unqualified superpopulation or per-geometry effect.',\n'inversion':'Factors decrease in m, strictly for at least one D_i>-1; other factors remain positive constants. Exact rational threshold comparisons preserve the outer bracket; lower outer endpoint is conservative even at threshold atoms. All-minus-one lower endpoint is support bound. Negation gives upper endpoint, and union bound gives coverage at least 1-2*alpha.',\n'missingness':'Pointwise score bounds plus endpoint monotonicity give realization-wise containment regardless of outcome-dependent missingness, provided the full fixed-N identities remain represented. Dropping missing identities would invalidate this reasoning.',\n'float_conversion':'Exact Fraction.from_float comparison and one outward nextafter correctly conservatively round these finite rational endpoints in [-1,1].'},\n'independent_hypothetical_panels':checks,'exact_null_enumerations':enumerations,\n'original_tests':{'initial_unconfigured_command':'python -m pytest -q tests/test_roboboat_fixed_n_interval_exact_v1.py','initial_result':'collection import error ModuleNotFoundError; no scientific outcome','corrected_command':'PYTHONPATH=analysis python -m pytest -q tests/test_roboboat_fixed_n_interval_exact_v1.py','result':'4 passed'},\n'findings': ['No proof or inversion defect identified for the declared fixed-N independent integer-sixths interface.','Exact arithmetic addresses prior Decimal rounding concern; it does not certify study independence, endpoint reliability, method fairness, prospective settings or missingness evidence.','e_value is an unchecked internal arithmetic helper; use checked public lower_bracket/interval with rational settings.','Caller must freeze bets/weights/tail alpha/N before governed outcomes. Adaptive panel or N choice from confirmation is outside proof.','Off-lattice endpoint changes require successor; do not round data to fit.','N<=5000 is an implementation cap, not scientific sample ceiling; benchmark operational cost before large deployment.'],\n'confirmation_n':0,'inferential_activation_authorized':False,'alpha_consumed':0,\n'reproduction_script':Path(__file__).read_text()}\nout=ROOT/'docs/roboboat_terminal_evidence/fixed_n_exact_interval_independent_review_v1.json'\nout.write_text(json.dumps(report,indent=2)+'\\n')\nprint(json.dumps({'review':str(out),'panels':len(checks),'null_enumerations':len(enumerations),'proof_or_numerical_defects':0}))\n"
+}

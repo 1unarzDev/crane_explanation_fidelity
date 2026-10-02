@@ -1,0 +1,122 @@
+{
+  "bundle": {
+    "bundle_root": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-parallel-player-startup-v20-003/parallel-player-2/owned-player",
+    "class_requires_actual_runtime_verification": true,
+    "confirmation_n": 0,
+    "executable": {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-parallel-player-startup-v20-003/parallel-player-2/owned-player/CRANE-owned-cf840c1f346f46b5abc36490d59e94eb",
+      "sha256": "a7ad5b156bd9a1232544ff6fc12e5f863d8f1f2348c5b141f5c3d4230e5be292"
+    },
+    "expected_class": "CRANE-owned-cf840c1f346f46b5abc36490d59e94eb",
+    "links": [
+      {
+        "path": "ASV_BurstDebugInformation_DoNotShip",
+        "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/ASV_BurstDebugInformation_DoNotShip"
+      },
+      {
+        "path": "CRANE-owned-cf840c1f346f46b5abc36490d59e94eb_Data",
+        "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/CRANE_Data"
+      },
+      {
+        "path": "CRANE_s.debug",
+        "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/CRANE_s.debug"
+      },
+      {
+        "path": "UnityPlayer.so",
+        "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/UnityPlayer.so"
+      },
+      {
+        "path": "UnityPlayer_s.debug",
+        "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/UnityPlayer_s.debug"
+      },
+      {
+        "path": "crane-build-manifest.json",
+        "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/crane-build-manifest.json"
+      },
+      {
+        "path": "libdecor-0.so.0",
+        "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/libdecor-0.so.0"
+      },
+      {
+        "path": "libdecor-cairo.so",
+        "target": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker/libdecor-cairo.so"
+      }
+    ],
+    "manifest": {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-command-shutdown-v17/full-build-v1.json",
+      "sha256": "5f35c10988645dcc98fb7c38bf28b6255c5dfd788bb25aad0ba939244125815c"
+    },
+    "original_build_root": "/home/lunarz/worktrees/roboboat-command-shutdown-v17/crane_ml/Builds/CRANE-Worker",
+    "physics_or_scientific_equivalence_claim": false,
+    "production_launch_requirements": {
+      "SDL_VIDEODRIVER": "x11",
+      "screen": [
+        640,
+        360
+      ],
+      "screen_fullscreen": 0
+    },
+    "schema": "roboboat-owned-player-bundle/v1-development"
+  },
+  "case": {
+    "id": "parallel-player-2",
+    "initial_pose_cli_option": "--crane-roboboat-start-pose",
+    "initial_pose_request": {
+      "x": -2.5,
+      "y": -6.0,
+      "yaw": -0.25
+    },
+    "initial_pose_units": {
+      "frame": "odom",
+      "x": "m",
+      "y": "m",
+      "yaw": "rad"
+    },
+    "seed": 43221,
+    "worker_id": 21
+  },
+  "command": [
+    "/home/lunarz/worktrees/roboboat-terminal-evidence/scripts/run_roboboat_hidden_render_v4.sh",
+    "--expected-class",
+    "CRANE-owned-cf840c1f346f46b5abc36490d59e94eb",
+    "--audit-path",
+    "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-parallel-player-startup-v20-003/parallel-player-2/render-audit.json",
+    "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-parallel-player-startup-v20-003/parallel-player-2/owned-player/CRANE-owned-cf840c1f346f46b5abc36490d59e94eb",
+    "-screen-fullscreen",
+    "0",
+    "-screen-width",
+    "640",
+    "-screen-height",
+    "360",
+    "-logFile",
+    "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-parallel-player-startup-v20-003/parallel-player-2/player.log",
+    "--crane-worker",
+    "--crane-benchmark",
+    "--crane-scene",
+    "Roboboat Course",
+    "--crane-profile",
+    "train-gpu",
+    "--crane-disable-ros",
+    "--crane-time-scale",
+    "1",
+    "--crane-duration",
+    "20",
+    "--crane-warmup",
+    "3",
+    "--crane-worker-id",
+    "21",
+    "--crane-seed",
+    "43221",
+    "--crane-maximum-delta-time",
+    ".04",
+    "--crane-frame-timing-audit",
+    "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-parallel-player-startup-v20-003/parallel-player-2/frame-timing.jsonl",
+    "--crane-validation-output",
+    "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-parallel-player-startup-v20-003/parallel-player-2/validation.jsonl",
+    "--crane-output",
+    "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-parallel-player-startup-v20-003/parallel-player-2/worker-result.json",
+    "--crane-roboboat-start-pose",
+    "-2.5,-6,-0.25"
+  ],
+  "independent_n_added": 0
+}
