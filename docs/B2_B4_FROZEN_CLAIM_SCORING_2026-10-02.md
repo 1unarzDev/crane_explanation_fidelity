@@ -58,7 +58,7 @@ Under this rubric, B4 contracts specificity to the visible ladder and B2 frequen
 
 This pass is a deterministic frozen-rubric implementation over existing answers, not a new model annotation invocation. It should therefore be reported as automated method-independent scoring, with the implementation hash and complete claim records retained. `PHYSICALLY_TRUE_BUT_UNSUPPORTED` remains a distinct adverse category; it is not merged into contradiction or treated as support.
 
-The accounting record identifies 494 complete paired episodes; the broad paired analysis above uses all 511 episodes with at least one paired level and reports level-specific denominators. The JSON retains episode IDs, source hashes, claims, labels, and failure flags so a 494-episode complete-case sensitivity can be reproduced without changing the scoring rule.
+The accounting record identifies 494 complete paired episodes. On that complete-pair subset, B2 failed 325/494 (65.79%), B4 failed 0/494, risk difference −65.79 percentage points, exact two-sided McNemar p=2.93e−98, with discordance proportion 95% Wilson CI [61.50%, 69.84%]. The broad paired analysis above uses all 511 episodes with at least one paired level and reports level-specific denominators. The JSON retains episode IDs, source hashes, claims, labels, and failure flags.
 
 ## Reproduction
 
