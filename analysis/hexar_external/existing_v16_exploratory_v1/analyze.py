@@ -111,10 +111,10 @@ def collect(base=BASE):
         selected=[j for j in jobs if j['method']==m];answers=[o for o in method_rows if o['method']==m and o['status']=='VALID']
         fractions=[]
         text_diversity=[]
-        for uid in {j['episode_id'] for j in selected}:
+        for uid in sorted({j['episode_id'] for j in selected}):
             js=[j for j in selected if j['episode_id']==uid]
             if all(j['covered_units'] is not None for j in js):fractions.append(sum(j['covered_units'] for j in js)/sum(j['required_units'] for j in js))
-        for uid in {o['episode_id'] for o in answers}:
+        for uid in sorted({o['episode_id'] for o in answers}):
             strings=[' '.join(o['answer'].split()) for o in answers if o['episode_id']==uid]
             text_diversity.append(len(set(strings))/len(strings))
         components[m]=dict(battery_answer_cells=len(selected),resolved_cell_labels=sum(j['label_resolved'] for j in selected),
