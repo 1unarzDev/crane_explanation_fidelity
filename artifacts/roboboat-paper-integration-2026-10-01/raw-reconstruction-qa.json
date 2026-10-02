@@ -1,0 +1,1137 @@
+{
+  "schema": "roboboat-paper-raw-reconstruction-qa/v1",
+  "checker": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/check_roboboat_paper_transfer_case.py",
+    "sha256": "ac69a8ba4d708266baf42df782d802e7acad1f277fef2bd4af2572b6a229a803"
+  },
+  "analysis": {
+    "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/analysis/build_roboboat_paper_transfer_case.py",
+    "sha256": "054c0635b1d29fe41297f916cea434161586424c6d6b176b8477876c04acbb4c"
+  },
+  "checks": {
+    "all_48_identities_unique": true,
+    "all_46_reconstruct_identically": true,
+    "all_actual_raw_fields_and_tasks_exact": true,
+    "all_actual_removal_only_ladders_exact": true,
+    "all_actual_packet_pose_velocity_conversions_exact": true,
+    "all_production_states_intervals_coverage_and_witnesses_agree_after_raw_recheck": true,
+    "independent_rectangle_extents_match_all_production_corner_margins": true,
+    "categories_partition_all_admitted_records": true,
+    "coverage_partition": true,
+    "violation_marginals_retained_with_overlap": true,
+    "no_full_satisfaction_claim_from_missing_contact": true,
+    "out_of_dwell_violation_cannot_refute_fixed_dwell": true,
+    "point_violation_refutes_despite_incomplete_window_and_missing_contact": true,
+    "incomplete_no_violation_is_unresolved": true
+  },
+  "passing_checks": 14,
+  "records_checked": 46,
+  "maximum_signed_margin_difference": 3.552713678800501e-15,
+  "source_bindings": [
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00026-v1/fixture-summary.json",
+      "sha256": "1348b5e88824f4198652776eef3c49f7ad4caf65e6e5013069e341a49bc1f872"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00026.json",
+      "sha256": "0638edd2df1a98ec97f4ad60caac519c4b1565e32ffd8835ddaf78de716e56d3"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00026-v1/exports-v2/method_packets/L0.json",
+      "sha256": "57c4adf1df919b17c99d477634d5f40873e228df54c1f47cc6c55de2403b9422"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00026-v1/exports-v2/method_packets/L1.json",
+      "sha256": "c74a5661f8ac479008800a74a4b1dcdf50e76e13fcc56edf6bfa909bd07321a9"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00026-v1/exports-v2/method_packets/L2.json",
+      "sha256": "a3bb42e2117f9ef8d7e3876c7dfa91a0d0c490cbb60d65e862776289b2b16301"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00026-v1/exports-v2/candidate_outputs/L2.json",
+      "sha256": "75bf403698f3dcac0f4a6494aa40980ff81945410b3bb0a762ca725a037fec08"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00026-v2/fixture-summary.json",
+      "sha256": "c20e97a2ba3a77092f581da85f75689a215c2562df0fac006f74111b6b3f82e0"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00026.json",
+      "sha256": "0638edd2df1a98ec97f4ad60caac519c4b1565e32ffd8835ddaf78de716e56d3"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00026-v2/exports-v2/method_packets/L0.json",
+      "sha256": "1406eb047ec3d6a6789392fe0aa65261fdb39a21574d567a04e1539166f5a7cb"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00026-v2/exports-v2/method_packets/L1.json",
+      "sha256": "eb2c7e8575e0c26174c91fdc0641fd0a8380ff09391af69b2c7f4be552b6d7d5"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00026-v2/exports-v2/method_packets/L2.json",
+      "sha256": "1c851f860f40835f447d5412687d4f99f9f522c1ed849a3f4380a88d285b3057"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00026-v2/exports-v2/candidate_outputs/L2.json",
+      "sha256": "2278689e02fedffaedd540ceb52c5bf1934a4071412fc619033c76d17b34172f"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00017-v1/fixture-summary.json",
+      "sha256": "07ce534b15014bbb7d896b95d1ccf13815ad469c591fb3a087734d5f44b98bad"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00017.json",
+      "sha256": "b2b6c4147c3e0d2efe25abd8e579d2764e7a3591b83e2852e881bcda48c418c5"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00017-v1/exports-v2/method_packets/L0.json",
+      "sha256": "fff3dfb4c96a694bf11c3c0ad104d1db66c0f16860b8b69d3e349051ea4d5655"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00017-v1/exports-v2/method_packets/L1.json",
+      "sha256": "10e48aed7d3cfbd132427ffee8df9dcc66bb571f26251a023ed04cd58372c164"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00017-v1/exports-v2/method_packets/L2.json",
+      "sha256": "a9751cb33c25c6a45a0c0ba103d37b1488fee1103ec4341ec2cf73a267062f79"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00017-v1/exports-v2/candidate_outputs/L2.json",
+      "sha256": "e8dfd5564d45860f629ce3866116476bc12a6b22ddc40ca061517053eab1e47f"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00017-v2/fixture-summary.json",
+      "sha256": "f64b258b764144762303aaa395b7d50890c3f0ba989f786d200a8735681f2ce0"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00017.json",
+      "sha256": "b2b6c4147c3e0d2efe25abd8e579d2764e7a3591b83e2852e881bcda48c418c5"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00017-v2/exports-v2/method_packets/L0.json",
+      "sha256": "8d982c00a602802b3daaaf2f188edc3e6e94ff89071331247344dce984108944"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00017-v2/exports-v2/method_packets/L1.json",
+      "sha256": "26c2f334db52a943fa691f40d1c3aa54de0795f17831367769167dd9dbfbea51"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00017-v2/exports-v2/method_packets/L2.json",
+      "sha256": "a407f12b9179db6b064ddf70362a8153c1165c08c92712c5dc10383e9d824e19"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00017-v2/exports-v2/candidate_outputs/L2.json",
+      "sha256": "cc0c12c2e1aedcf774ae104bc2e1ba48773cda32094f19e3f8941f0d127c90a3"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00020-v1/fixture-summary.json",
+      "sha256": "339f502f2f2b81c1877a66253c689e8b721c97b2c113e5e2d5704da081524220"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00020.json",
+      "sha256": "7c5e79e29e00792180ed01eabafa80c5feffcf3e677a07b918e4ca6e34afb226"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00020-v1/exports-v2/method_packets/L0.json",
+      "sha256": "e8b62f617af39e868f87762e322c0545a6582ff663ba2ba32960941547ea1dbf"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00020-v1/exports-v2/method_packets/L1.json",
+      "sha256": "0a31601822834eaa8ef2bf161e5a1ae2e8a2cfd85ccfefba1ea92ea0a6f34890"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00020-v1/exports-v2/method_packets/L2.json",
+      "sha256": "6fcdbea64d11243686971ecda1e36443af1636aceb0794fc623c9225da42a648"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00020-v1/exports-v2/candidate_outputs/L2.json",
+      "sha256": "7cf9b8104fa836b8d2ab52ec288f06b7e1c997f8284059e20b3eb59882c1ecae"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00020-v2/fixture-summary.json",
+      "sha256": "bb9a3b97e846838caea71697c6f743e5f495533f78f5354ad5f8863522c042e0"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00020.json",
+      "sha256": "7c5e79e29e00792180ed01eabafa80c5feffcf3e677a07b918e4ca6e34afb226"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00020-v2/exports-v2/method_packets/L0.json",
+      "sha256": "2f7d46ec8eed327bde01cde91eadf8e180d05665f9eca7482444d58455a1b408"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00020-v2/exports-v2/method_packets/L1.json",
+      "sha256": "9e2f1f6fb600efa268dfe79feb65bfa8cdae15f1a9a82617f62fb4064e14f144"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00020-v2/exports-v2/method_packets/L2.json",
+      "sha256": "a808af4809f69d9a0df712222f6e62c0bb9137c7016676909afe81b9648bbd71"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00020-v2/exports-v2/candidate_outputs/L2.json",
+      "sha256": "ba60955434a6cd3e8ef72300623fa3ae0189c64a636b66310dd43eceffc209a4"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00012-v1/fixture-summary.json",
+      "sha256": "855ce9c5257568d618f6a7e373f42bccad4e3542c079cb07fef70157602b6b5a"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00012.json",
+      "sha256": "a6becc4e475867c6dd2b02987f229e05e1e8b1dd316125875f46ef9a3bc6ea93"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00012-v1/exports-v2/method_packets/L0.json",
+      "sha256": "76df93e7744239dd8c27d0d2efe4bd48ba609b196500b9fde59aad9ab0a86027"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00012-v1/exports-v2/method_packets/L1.json",
+      "sha256": "71e49ef54aba1c96c66a27ca6bb5ac9d95926dbc971e9bd85b0af14e91697f13"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00012-v1/exports-v2/method_packets/L2.json",
+      "sha256": "bc1618d62998c136ac64a20d1b4bd85ecc55c60a06dc2e1ee3930e08169643be"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00012-v1/exports-v2/candidate_outputs/L2.json",
+      "sha256": "2b3b15a96696066914fb1d99ee509f57e16ce6342f85f4b2f0ad265de70ec195"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00012-v2/fixture-summary.json",
+      "sha256": "d8eaa22068e1b292e14890d4c82b6a3632670d72e5815e9494231aec9428a2c8"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00012.json",
+      "sha256": "a6becc4e475867c6dd2b02987f229e05e1e8b1dd316125875f46ef9a3bc6ea93"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00012-v2/exports-v2/method_packets/L0.json",
+      "sha256": "2553377a721a3ae87a19d6a8923fadf0e5d2db4fbfdf5e044aa230630909bc48"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00012-v2/exports-v2/method_packets/L1.json",
+      "sha256": "cea91485d333cbd28280c7e83c7894ec58f14ae44c9015c02fd62448d6e13228"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00012-v2/exports-v2/method_packets/L2.json",
+      "sha256": "87c1047abaa1a606ea2ba28037348c28124d4cf7e99f1e92078b1dd11fd755d8"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00012-v2/exports-v2/candidate_outputs/L2.json",
+      "sha256": "9595e9a289ff3cad02423a0198b4cee3f0b8e68715c3da6e28fe225c99a77ba2"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00011-v1/fixture-summary.json",
+      "sha256": "ce83a8fe229dd5b074bcebcf3dda6a7a4fdabac39705d5d9b73643647b485b6c"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00011.json",
+      "sha256": "cf4059754dc0f2f02f613cdb469593ef30dc2527629138fc170fd5584319f1e5"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00011-v1/exports-v2/method_packets/L0.json",
+      "sha256": "ee4007ad9473505dbcea2d370feefa1946d9d10afc2f79687c574286cdaa4d43"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00011-v1/exports-v2/method_packets/L1.json",
+      "sha256": "05d3c7ea001aaf82796f2eab42399b3d1ac53c26740fd72bc371ec6d5bdb4e83"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00011-v1/exports-v2/method_packets/L2.json",
+      "sha256": "2a4df120df4d1d7e7411531b42fb0865618b9fc7a448a4619b6d9f5da0d852eb"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00011-v1/exports-v2/candidate_outputs/L2.json",
+      "sha256": "f28d548c06b2ca70761325f1be03c5dad593d4e10067579cba476a2806013e29"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00011-v2/fixture-summary.json",
+      "sha256": "b328864d9942b606fe416c341b0ae686ce66f16a342317c273af51fa51c3eaf0"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00011.json",
+      "sha256": "cf4059754dc0f2f02f613cdb469593ef30dc2527629138fc170fd5584319f1e5"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00011-v2/exports-v2/method_packets/L0.json",
+      "sha256": "7e9b75330bc824623db06251208483ef8bf689556e18f8d2f85f0bc126cf1a3b"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00011-v2/exports-v2/method_packets/L1.json",
+      "sha256": "92fbd4e98609ef0ae71ffc6ac8ffe6616dbfa079a27f3260de6eea2d04f33275"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00011-v2/exports-v2/method_packets/L2.json",
+      "sha256": "2cf733066c2cff131813e5cd6b08350972803da254ad558c5c5421230b84652d"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00011-v2/exports-v2/candidate_outputs/L2.json",
+      "sha256": "85e158a232b2ccf603b84653591594c360e34b402196e50f47847f2852c69c85"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00008-v1/fixture-summary.json",
+      "sha256": "0be1c83ae7abaed63d113087f6fbf9d0fc379ca9cae8991a0a639f0a8c649f78"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00008.json",
+      "sha256": "9a820bb79efcca4dab2b921b228392d34a8a12035aa2cb6c40975ff95c84d239"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00008-v1/exports-v2/method_packets/L0.json",
+      "sha256": "02c234eff94c8ee5c5c876512eac4b22013d7ebd085d2a822b54e2c0440ffb98"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00008-v1/exports-v2/method_packets/L1.json",
+      "sha256": "9803f37e593998bf9051f7917bd2ce822da648ab077aa7026ceb31a4afb133ba"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00008-v1/exports-v2/method_packets/L2.json",
+      "sha256": "9aa18d7c10fd6b5b7edc812dcb2fb0cd35a3216c4ec9e91e94b89b211c21d9c0"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00008-v1/exports-v2/candidate_outputs/L2.json",
+      "sha256": "2c64ec07c3036a5e391cbc47a8e20993751fbb4a99a2dd1821de621de7f419c6"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00008-v2/fixture-summary.json",
+      "sha256": "3f9bc2292ea5a515daba6a0b9768f6b5df6955482c8ebeae6130e11f2e70da1e"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00008.json",
+      "sha256": "9a820bb79efcca4dab2b921b228392d34a8a12035aa2cb6c40975ff95c84d239"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00008-v2/exports-v2/method_packets/L0.json",
+      "sha256": "cafad5a21f9dd9e305416558191ae813deb2032a03730eb2bb19cef34b2f156e"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00008-v2/exports-v2/method_packets/L1.json",
+      "sha256": "c58a60b1250559b993ce56166e8a0a3e6cb507ce2e250f51db8b90a9eeff6ee7"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00008-v2/exports-v2/method_packets/L2.json",
+      "sha256": "b974f6cf39e11b69bb28be466eeea76e1f090be31bb5277ad978ad792941cf35"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00008-v2/exports-v2/candidate_outputs/L2.json",
+      "sha256": "980c84657f06eef2d047699079fa7996b2dfb1e064e07ca9ecd9ae4aed8dc982"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00010-v1/fixture-summary.json",
+      "sha256": "c63712901d315a4ed8500b26c78779eb6b0bac4c602d0eaf8571f1a9f15ff455"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00010.json",
+      "sha256": "51dc8a5cfaaf3fd2e5e8e184788967dc60737f761db1c877b79725a1e8451e4f"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00010-v1/exports-v2/method_packets/L0.json",
+      "sha256": "f61e467df76892ca6514c90c46f900802b591d0bd57ddad1f3981fc1b34c715b"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00010-v1/exports-v2/method_packets/L1.json",
+      "sha256": "9a4bea249dfc43f28b6fa85e037dde4de69b607c762c4c9a8af45e9cacaa87fd"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00010-v1/exports-v2/method_packets/L2.json",
+      "sha256": "4052be747cd32a52bc10495f44c46e8c02c307bf0da61fd9d6388c5948250dce"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00010-v1/exports-v2/candidate_outputs/L2.json",
+      "sha256": "14e89a9c235b67ab6ca8996810fdd35ea8e4b81e2e3b85eac364a253144c1bed"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00010-v2/fixture-summary.json",
+      "sha256": "d4298e40311ffe27b67822422ec4232a7c2d04eed20dcf98dce1a5ebb524ab71"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00010.json",
+      "sha256": "51dc8a5cfaaf3fd2e5e8e184788967dc60737f761db1c877b79725a1e8451e4f"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00010-v2/exports-v2/method_packets/L0.json",
+      "sha256": "5fd606cd3547a99d9618f38105a7fe6024be37ec9c2faa472ea86ef9d68ed43e"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00010-v2/exports-v2/method_packets/L1.json",
+      "sha256": "ea40ae508cf93d5522269a68b3affa5b926239e44ee65a09b368b6c6c2585a64"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00010-v2/exports-v2/method_packets/L2.json",
+      "sha256": "41a064fce42540f0465095fc6412d516606743fb1e06545d7b262b018da5e0f4"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00010-v2/exports-v2/candidate_outputs/L2.json",
+      "sha256": "f9a2f4c09e850909b98009e895d51c47b9a50a5b3a3d4b47eca2214a2d39be69"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00029-v1/fixture-summary.json",
+      "sha256": "980f9f7f786a380792290e3fda3ff412a472c81a5edc46dde093e0d5679dfefc"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00029.json",
+      "sha256": "0a10dc684554dc0c11c7b0e286e093b939d79d4900a47e676135d511ec3bc972"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00029-v1/exports-v2/method_packets/L0.json",
+      "sha256": "9bf446a9920aa78c5847c223b40b99505bd9b6ce722eece76259c658b636474a"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00029-v1/exports-v2/method_packets/L1.json",
+      "sha256": "0f9dca4ed0be9143873434c756be49339389f21bcdb357f6b2d330c5909ef651"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00029-v1/exports-v2/method_packets/L2.json",
+      "sha256": "f46a1f1b19b0b2a396c2fd171aeea8d497826f30188968d6268d067cbe041c7c"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00029-v1/exports-v2/candidate_outputs/L2.json",
+      "sha256": "f4475654e3a3e57096c4a62c00468a4ff6594c6d1cb2149d01cd61173798166b"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00029-v2/fixture-summary.json",
+      "sha256": "d83e32ff0d17403c77954d174d7cd0234aff4a0cd59bc60bb8016deddbb194ab"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00029.json",
+      "sha256": "0a10dc684554dc0c11c7b0e286e093b939d79d4900a47e676135d511ec3bc972"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00029-v2/exports-v2/method_packets/L0.json",
+      "sha256": "e90246a0e29ce27e4f1142e285395026bdae823191aeace6ba76b56b39a42158"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00029-v2/exports-v2/method_packets/L1.json",
+      "sha256": "367d71e5c6b510dcea26449a8a0b3289c3c29b69eba7435506452e0327d7a1d8"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00029-v2/exports-v2/method_packets/L2.json",
+      "sha256": "81fadb6b5626b33443bce6fecc0b5d187999163d9ce8797a8a2302257f43171a"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00029-v2/exports-v2/candidate_outputs/L2.json",
+      "sha256": "b7838a8b2a106f89bf26bd1b258877bd774f1a16f6de6b6fd875561d592ab189"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00027-v1/fixture-summary.json",
+      "sha256": "f3e9d753bd4fe1340cc4c50e76458b4f65baad97fa593ca064e0ecabef391db2"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00027.json",
+      "sha256": "e7d45333429f2c9f0570c64722c3dc4608e7599f02c2bcb02a4419de272ad5a7"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00027-v1/exports-v2/method_packets/L0.json",
+      "sha256": "4821831d63c531443d6e42d25531be97a4c9ed5ebdd66307f3c428d338c5877b"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00027-v1/exports-v2/method_packets/L1.json",
+      "sha256": "ce2d6327c0ad6102203a92098d4cc2eb5f24d54015566fd6579d9f3ab6431285"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00027-v1/exports-v2/method_packets/L2.json",
+      "sha256": "dc0127dd072acc7bef41b6e7a18c39e0dbd62dc11b951177e529b5657320b774"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00027-v1/exports-v2/candidate_outputs/L2.json",
+      "sha256": "a5d105fec70ac70356cc91882ae2b91ff5c33a04ea868cc9a2908ad08ebc4682"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00027-v2/fixture-summary.json",
+      "sha256": "7c541c89e6bb281bc45f147e09a40da0563fc507a24417217a365a2825662e4f"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00027.json",
+      "sha256": "e7d45333429f2c9f0570c64722c3dc4608e7599f02c2bcb02a4419de272ad5a7"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00027-v2/exports-v2/method_packets/L0.json",
+      "sha256": "e2753560e5dd1be8dd6b0f9bce5eb5e5b725d9d590b0e64761fe4f9c5c210b81"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00027-v2/exports-v2/method_packets/L1.json",
+      "sha256": "948d2dc29e281ad91c17bcac661010669a5fd3f7e83882e7c9a34446ee7d8320"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00027-v2/exports-v2/method_packets/L2.json",
+      "sha256": "e5c87b2044fccd1d48ee2962cda2ff8d479f407f222093fc35b12bf7e925c297"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00027-v2/exports-v2/candidate_outputs/L2.json",
+      "sha256": "02291ca46ec629e7b79f75bc80152dec8c1853c27fe624fdb1be8258fda21ecc"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00016-v1/fixture-summary.json",
+      "sha256": "4519eac0aa829cda1f361c093b85f1b8c067a55f2ceaf18a668b7252a86770ce"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00016.json",
+      "sha256": "80eea3daf3647a1fcd238824855a15d703f5a950ff206b3266e0604878040c42"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00016-v1/exports-v2/method_packets/L0.json",
+      "sha256": "41bff4bdb262d269d79f5de1fc18c4604a33b627ba51ca3aa60e4f5058e11200"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00016-v1/exports-v2/method_packets/L1.json",
+      "sha256": "3a3ac54a0754362f9eb30c2fb398326b611481e1b06343a195abb5ddf442cb5f"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00016-v1/exports-v2/method_packets/L2.json",
+      "sha256": "85c886811d423d476416473d827adf944415236dadb98dfbc36d3fa0b10bd55c"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00016-v1/exports-v2/candidate_outputs/L2.json",
+      "sha256": "3fb2b9d9a1d0c89be0a80e3d22dd273f5797317ce8584f50473d8f4dfbd10e20"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00016-v2/fixture-summary.json",
+      "sha256": "063b4d0ea7dcd1839f996ae96dd6e780b4b0900b88acfd46aeab8dd9830be4ae"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00016.json",
+      "sha256": "80eea3daf3647a1fcd238824855a15d703f5a950ff206b3266e0604878040c42"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00016-v2/exports-v2/method_packets/L0.json",
+      "sha256": "3dc13d7b79b1973f63f70ff78910ca38337cf28cf7a9cbdfed390b5cba00e01c"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00016-v2/exports-v2/method_packets/L1.json",
+      "sha256": "9ca61d04edff51e851b6453de4ab0970dbcb6dccb2651e1e0729a161b13a8a7c"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00016-v2/exports-v2/method_packets/L2.json",
+      "sha256": "fd68857e062ea10a5954f22fee78c7f767a8b9a827766bce895e0ff1e893922c"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00016-v2/exports-v2/candidate_outputs/L2.json",
+      "sha256": "ab1477d800b2caf2cb7b26a0a60490003142c58b9e50352b5019bed0d533c853"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00023-v1/fixture-summary.json",
+      "sha256": "53b7fbc7e27dea4b2a6c2953d5a7e59eedf872f471bb11366550a8f95e696d82"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00023.json",
+      "sha256": "f6fcc5a923d59c32bfee7c3b9feadafaa316706a3357487742b32d86ff1869db"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00023-v1/exports-v2/method_packets/L0.json",
+      "sha256": "737df6b9804ba360906ae23aedb2b580bdd3150f0073bf0959c0e62b1cee6bc6"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00023-v1/exports-v2/method_packets/L1.json",
+      "sha256": "d07d43328aea9f347b9780d6bc1e321ceebd15656754a5e8fed8936efdbe1b03"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00023-v1/exports-v2/method_packets/L2.json",
+      "sha256": "e645deb0414bc2cc42754cd15cf2133c378c2b0f470374f782b3cc79b5fde5f0"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00023-v1/exports-v2/candidate_outputs/L2.json",
+      "sha256": "91822392e4301ad38ef251ea9ee0036f6994dc8fdb01dcbbfa5fe014cec523c3"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00023-v2/fixture-summary.json",
+      "sha256": "62220b5b88ef4b19652f53c95c5a61252dd60c04ffb1e800380c6890a46cfea1"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00023.json",
+      "sha256": "f6fcc5a923d59c32bfee7c3b9feadafaa316706a3357487742b32d86ff1869db"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00023-v2/exports-v2/method_packets/L0.json",
+      "sha256": "8602e7d1f65f9b1728fc7a05f7c4c584ea8091584f749b596000d03fa031940c"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00023-v2/exports-v2/method_packets/L1.json",
+      "sha256": "a749c1cabe65cacf39ba4f845eb4a67127e8c97965f1c067e8e00af260150a21"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00023-v2/exports-v2/method_packets/L2.json",
+      "sha256": "c04f8a87b16c8e65eadb632c8b1601383486da0165b11a1baade1b9b47495023"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00023-v2/exports-v2/candidate_outputs/L2.json",
+      "sha256": "0c62f3849d3eec936fb5073c57be45f99a226b8382f547fb824455013adf92f4"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00028-v1/fixture-summary.json",
+      "sha256": "071169fc0609ab16194f6b7da38d13b3db7761662920c5577b3808382b2da06b"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00028.json",
+      "sha256": "a221dc1d4e3cdeec3225b93ac943b642c807ee5cda4b359307e379e9c8a2bd1f"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00028-v1/exports-v2/method_packets/L0.json",
+      "sha256": "97218bd671215b05671fb1f2ac1fe927758d11c46ee88db172865e71db09f56f"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00028-v1/exports-v2/method_packets/L1.json",
+      "sha256": "3d35879131e2e6822e4a4c42361fb93310ab34d8111c2ccf2941344435f0be4e"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00028-v1/exports-v2/method_packets/L2.json",
+      "sha256": "77401194d5f35880ae3f9b54d9b7f70578a561dbe3ccf92cd38772f21ced0f74"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00028-v1/exports-v2/candidate_outputs/L2.json",
+      "sha256": "e6d0d128f3fcaffffb625b89f2329b0a87891525bd110f94cd938451eebb8412"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00028-v2/fixture-summary.json",
+      "sha256": "dbd0f485ed16acf9af531864e2fc8d5ea10efbee0ca47e1424e78fe1ac60e142"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00028.json",
+      "sha256": "a221dc1d4e3cdeec3225b93ac943b642c807ee5cda4b359307e379e9c8a2bd1f"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00028-v2/exports-v2/method_packets/L0.json",
+      "sha256": "e0b1f3b8fa24d3713268fd019af8c4984d3f34c90fecff8f6c19f3a67592210b"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00028-v2/exports-v2/method_packets/L1.json",
+      "sha256": "65c357a31edd31fd457ed8188c927049cb7a87bd7a6b2e22ce1e995694401d53"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00028-v2/exports-v2/method_packets/L2.json",
+      "sha256": "a211f44627c5bfc8c5f6d043ccf461a6bda63dd0ad74daf50925220e9d0dc2b6"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00028-v2/exports-v2/candidate_outputs/L2.json",
+      "sha256": "708a81ee1a85f0cfc8f1e89418c3a1d988ab8af718f18f17752ac04a6bbe0dc1"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00022-v1/fixture-summary.json",
+      "sha256": "5c456752b08ab612d0ddea2750a3482dbac7cf29243585bccc8f173c1c5cf93c"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00022.json",
+      "sha256": "f278c185de2d8290496b003952fae7c6b2c08fee22869e5674d89f80365a7148"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00022-v1/exports-v2/method_packets/L0.json",
+      "sha256": "e63596a2589cd06d79c16179d95944bad63e7f2b2d43e8dd78c47d292e22e5ae"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00022-v1/exports-v2/method_packets/L1.json",
+      "sha256": "dab39f50123380e3382f71668d4301d9231f9e7ae0e5e5687cb789073055db6e"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00022-v1/exports-v2/method_packets/L2.json",
+      "sha256": "2b178908ad26961b7a552f449f1180cced2616284c782a436609cfadeabe3ea2"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00022-v1/exports-v2/candidate_outputs/L2.json",
+      "sha256": "f16fbe9fe6b32430f3da38758913e15e2c8b9156d3e48792123024e8d0d296cc"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00022-v2/fixture-summary.json",
+      "sha256": "b4a17f954750a11a42cb7085eff2e275127208e08f002c1d9f0d4a24a5bf4943"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00022.json",
+      "sha256": "f278c185de2d8290496b003952fae7c6b2c08fee22869e5674d89f80365a7148"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00022-v2/exports-v2/method_packets/L0.json",
+      "sha256": "4884bcfb167b0b3a7c6a0655417d99b8c724cdfe7d46496b0c4dd68d05bc3e30"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00022-v2/exports-v2/method_packets/L1.json",
+      "sha256": "50731dd08cdfb3fe026311bd15bcb7196bbfa8c0ff93ff10c47b94dce0e24a3f"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00022-v2/exports-v2/method_packets/L2.json",
+      "sha256": "73ad1277f0818842f4ef5ed704740d81693920378f40b9a7b22d8035fea53663"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00022-v2/exports-v2/candidate_outputs/L2.json",
+      "sha256": "26bdc3a7f570055d93c8e376fd9eddb8dd9b8216a24b1ab90a01229b88e5b9a3"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00031-v1/fixture-summary.json",
+      "sha256": "df847de80cd0cf90d0eb619ee1e7a59421ba86da710a136ac64e2c3453b9ed85"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00031.json",
+      "sha256": "abed674efa1a8c86caa8c9cd927fcb1a62edffa50c29b8222fe3e07676c8c9c2"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00031-v1/exports-v2/method_packets/L0.json",
+      "sha256": "6024aac0acb79995d61486da421900465d2db3d68c4c4658052e1c5e9dcf97ac"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00031-v1/exports-v2/method_packets/L1.json",
+      "sha256": "07f569777b8531e4989f0799ef140077a1d8f7ef624f97911071136289a6b1c9"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00031-v1/exports-v2/method_packets/L2.json",
+      "sha256": "c5fc55a8d28b69f6a8d59cc85c3ad4f0c57e2f8cc81c2ee82d40c30768bbf9b4"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00031-v1/exports-v2/candidate_outputs/L2.json",
+      "sha256": "224da82f7fff20b9153ef0be8919f69e021161c8704ff82543be21c365ae4834"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00031-v2/fixture-summary.json",
+      "sha256": "4cec6d8e481f0b4a300125d19c9801bad142085f8dadfd7152ddbc35ac9f1dc7"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00031.json",
+      "sha256": "abed674efa1a8c86caa8c9cd927fcb1a62edffa50c29b8222fe3e07676c8c9c2"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00031-v2/exports-v2/method_packets/L0.json",
+      "sha256": "287663298c5042b6368e8fbc96452f4489db73ca37d311e99978eae7e7f98e1f"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00031-v2/exports-v2/method_packets/L1.json",
+      "sha256": "068f629d3cfad1e87341677f62ed0f8812330b3c8491790ad2e2b68a7126f619"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00031-v2/exports-v2/method_packets/L2.json",
+      "sha256": "3021e9859fe02d81cc02cf2b855706c8a7df167718cc040512fbfba3ca922c07"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00031-v2/exports-v2/candidate_outputs/L2.json",
+      "sha256": "83db36c6ed19557d287d3a0337596ab400734ec1aac8e1f5742655d47051dfb4"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00021-v1/fixture-summary.json",
+      "sha256": "447e367a85c07fa791e0ca7b89d962e9e6f0e2ca317b5a25f734677bbedd7925"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00021.json",
+      "sha256": "a87ea6ef0e38bf6336ae1864266c1534ba173eb46d6f33e0b8490f621644b39b"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00021-v1/exports-v2/method_packets/L0.json",
+      "sha256": "f0659a0011d6519367b28c0b282c7377f7a8a7c3528f6697875d2548bbce27d6"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00021-v1/exports-v2/method_packets/L1.json",
+      "sha256": "cfe87ee93babd2395a2646949255fb8c6669beff440764ed62dc027f44abf5b6"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00021-v1/exports-v2/method_packets/L2.json",
+      "sha256": "149da3ff8c0bac067f7ab4d4e3f59d6b0ec19b477497ae9a61a8e6802c34bfa7"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00021-v1/exports-v2/candidate_outputs/L2.json",
+      "sha256": "9c3e8005124fe4ccddc829a4dba65cf7f63c09c05cbb98ccd3b2da8dd7f6711e"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00021-v2/fixture-summary.json",
+      "sha256": "62a16396cbeb5b7265fb5bd62edd4a13719aa88429dbd60ba33a7c666cc8242f"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00021.json",
+      "sha256": "a87ea6ef0e38bf6336ae1864266c1534ba173eb46d6f33e0b8490f621644b39b"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00021-v2/exports-v2/method_packets/L0.json",
+      "sha256": "443abd8ef23a36e3b2f84ff7a83f9ac4fcd317d13f4a06dbdeac73e1c9ef9d7c"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00021-v2/exports-v2/method_packets/L1.json",
+      "sha256": "9bb21b2e2dc4d735795876ac668238c9fd0c8d4cbe92a8a1164e898df5e49566"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00021-v2/exports-v2/method_packets/L2.json",
+      "sha256": "6e9f4fa03288dcc53e501e2dae7e3c585c6750a0cfe8b6ecc66b3bcbae6e4f3e"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00021-v2/exports-v2/candidate_outputs/L2.json",
+      "sha256": "1507766ce345b81fedc2aa988ba132d914aefc0b3250a514e65223f897ae4f81"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00025-v1/fixture-summary.json",
+      "sha256": "39255cae7e348f423d2f0fb242c62bbed6c8d2f27561ff35c4fb6f686e75a84e"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00025.json",
+      "sha256": "a8799fc63011aa07229fb553e3361488ac0a2eeea8803fa74821c49d7733b5a3"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00025-v1/exports-v2/method_packets/L0.json",
+      "sha256": "e9027615c4a743d9cd17e2381bbcabc7d59c4ca7082ab525a9b1637405d77110"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00025-v1/exports-v2/method_packets/L1.json",
+      "sha256": "bd7f55ae7f7480a0498ec3ecc26afd7e4c78b16efb0d44f80c753cc8cbe6bb66"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00025-v1/exports-v2/method_packets/L2.json",
+      "sha256": "33176ff877169fda17e8465a8bf0f473a1b364615df3e171f5ffb6d6b9e0923a"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00025-v1/exports-v2/candidate_outputs/L2.json",
+      "sha256": "e218d5db2f304042629dc771622b5cb18611f5aab29f9e9131bb6a4e50f31cd5"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00025-v2/fixture-summary.json",
+      "sha256": "3bfe01c5e7dc6adeb258eacfa9b317456c2bcfa1be7d7b77105acf65d40d9f96"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00025.json",
+      "sha256": "a8799fc63011aa07229fb553e3361488ac0a2eeea8803fa74821c49d7733b5a3"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00025-v2/exports-v2/method_packets/L0.json",
+      "sha256": "700782e9c7596426ab495a11b5b8a58e506069dcfdb54efead20b632e121a4a5"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00025-v2/exports-v2/method_packets/L1.json",
+      "sha256": "9662478e22b5321f97cf70464312d2190d12aff5210e31296dedb513be55848b"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00025-v2/exports-v2/method_packets/L2.json",
+      "sha256": "3348fc9dd8967f1478e996547b395c6b6a5c6655978cbcdf2f10eda1cde82cd9"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00025-v2/exports-v2/candidate_outputs/L2.json",
+      "sha256": "d0c4fd6f2a2a1ecc48a9b381acd35356bfc6c3ef84e5cd1eac7fecc315f24d33"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00019-v2/fixture-summary.json",
+      "sha256": "683462bdfd17949eaa6e3ec673faeec09bc1854e3548f2b178921cba40620728"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00019.json",
+      "sha256": "478ca7026e18270febbf2c1d61ce07bf43fa844b688deadb7188afd1de03eba7"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00019-v2/exports-v2/method_packets/L0.json",
+      "sha256": "6e4b93c006895f66a5ae2dc33101f9808d663fb93b94c1945da45fe155fb84d0"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00019-v2/exports-v2/method_packets/L1.json",
+      "sha256": "ce1c5d154d1036aad5685398f0776e8dd91981c6584b1b48595434f309dc7d42"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00019-v2/exports-v2/method_packets/L2.json",
+      "sha256": "c46d22650adc90060c937ad9d4ccc855227552d6533bd39dc2ee2474182da8dc"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00019-v2/exports-v2/candidate_outputs/L2.json",
+      "sha256": "906998b3483926eb91a522151f85b8337b5cada80dc5128a945dc4688933f417"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00013-v1/fixture-summary.json",
+      "sha256": "4034514ca574c9626bbd80ca3b9dbc39fdc8375e3386de7260bf3700a6130f97"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00013.json",
+      "sha256": "b60aff4ec897ab889e90636e51227bb19348c33631d7c7274f617ee16b9d9e22"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00013-v1/exports-v2/method_packets/L0.json",
+      "sha256": "6e169507cd18eca29b4a51805ab3987bf9f8018fd0091a787892a737a2cc7d1e"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00013-v1/exports-v2/method_packets/L1.json",
+      "sha256": "b2165a03c98301989773bc70f5d016b06853a4aaf23adf75489a11681bf4968d"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00013-v1/exports-v2/method_packets/L2.json",
+      "sha256": "a9a54db4576a2a4d3ef632beabf655c1efd1b4ffd514a465ebcd5ed2bdd8524a"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00013-v1/exports-v2/candidate_outputs/L2.json",
+      "sha256": "18999a18f8c447d4f8b8547e77f82e8320b2d3c11dff16c9e44074cb8f4ac31c"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00013-v2/fixture-summary.json",
+      "sha256": "960c21bba3e696904fd213c54fb5e88edbe58e2899c4016941cf3132a05912e3"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00013.json",
+      "sha256": "b60aff4ec897ab889e90636e51227bb19348c33631d7c7274f617ee16b9d9e22"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00013-v2/exports-v2/method_packets/L0.json",
+      "sha256": "7e279ba513acb9dd778054b9272177f97dee9ffa138f1cfb548ee78e85d6fc7d"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00013-v2/exports-v2/method_packets/L1.json",
+      "sha256": "e3067819ac43898fca38f0832ecbadfc6145632277f4ae600b6ecee67f2bd674"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00013-v2/exports-v2/method_packets/L2.json",
+      "sha256": "9bf56128dfe43a079ddfbd7c9a3c05bd34d682a12225332305882676afda1fba"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00013-v2/exports-v2/candidate_outputs/L2.json",
+      "sha256": "b605ad243a15cc8ddd1c5093197b84d4a239c17049ee0058522647d4dfe1e9c9"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00014-v2/fixture-summary.json",
+      "sha256": "f43eb273f192991712b7c00865ff442446ed210923cba9e076c2ee480665dcca"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00014.json",
+      "sha256": "ae6aaf3392017d2a2552bf95dca239a84179018429024e6fd815d42c839102a2"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00014-v2/exports-v2/method_packets/L0.json",
+      "sha256": "5fdf33b575b60d82fe60cd35c6486834a96b546dbdd77bbc2b44373749531154"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00014-v2/exports-v2/method_packets/L1.json",
+      "sha256": "4e9a092a38b3e6e65a6198ede09b06f8af9969a05e7cc3be2284442f7a6eaeb9"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00014-v2/exports-v2/method_packets/L2.json",
+      "sha256": "d447528ef1771111c31b5b69fc423fe6ab4c44e2cf6e92e1d2a7b453c886ba13"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00014-v2/exports-v2/candidate_outputs/L2.json",
+      "sha256": "e07661c2eb6a9271189ae39d6f858a8571c46b6fd9df33f3d70879b4e9f541cb"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00015-v1/fixture-summary.json",
+      "sha256": "75eeba2959ade7452f4ab269028bff6459cb84fc0e7f34639b857e8c34bf5e81"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00015.json",
+      "sha256": "c4689f212bba2bd4a5bc8fa25642216cfb70db7e180a82e4fa78144b86ef7f3a"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00015-v1/exports-v2/method_packets/L0.json",
+      "sha256": "2598e80dc6285e51b0fbdf423df3bd79c374ca8f89696cf7c67d18e0ae527c4e"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00015-v1/exports-v2/method_packets/L1.json",
+      "sha256": "94ba3c2aaab0412847d05798220747b2467641904ac4a28bcb843b69345a7fb2"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00015-v1/exports-v2/method_packets/L2.json",
+      "sha256": "ca1655e38170f520a47d6246dc45997012c5ccb9bb8de1be5471cc93cd1b2af4"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00015-v1/exports-v2/candidate_outputs/L2.json",
+      "sha256": "f2a16d7f638da9b62af9ec81eb887042ff017773467f5a820e5d15fae101bc22"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00015-v2/fixture-summary.json",
+      "sha256": "6a6587df4d60630098c16f42cb7ce9f7cf24e45b31afc38434f751765bdf969e"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00015.json",
+      "sha256": "c4689f212bba2bd4a5bc8fa25642216cfb70db7e180a82e4fa78144b86ef7f3a"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00015-v2/exports-v2/method_packets/L0.json",
+      "sha256": "71b072ed298a6d97841b287567bb65d7310fd369f294ade76567a960df139bbd"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00015-v2/exports-v2/method_packets/L1.json",
+      "sha256": "2334098db412b59baabcaa68f027424198bb559b6fb18cc1681eaf0e20f73707"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00015-v2/exports-v2/method_packets/L2.json",
+      "sha256": "087b15364499a57dd5ebbdc5c68f719324110f945e3660b9492fff3379c024aa"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00015-v2/exports-v2/candidate_outputs/L2.json",
+      "sha256": "ecf8ec3f858166e7210c19ddebc088f4620db717f8db243bcd5b33211131532d"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00009-v1/fixture-summary.json",
+      "sha256": "71c08b1bfda0cfdc0252bc2156a2228d9891d0c96d72bd1a3a5629d02bd7db99"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00009.json",
+      "sha256": "3df521015826d89bb112da840ec1e96046dd5804a2bae64c13f2c3714bf2e5cd"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00009-v1/exports-v2/method_packets/L0.json",
+      "sha256": "d05b6a6386b2097e84eb5ab8c7f3135dc74376ea8324598f94a6b76ce52ba891"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00009-v1/exports-v2/method_packets/L1.json",
+      "sha256": "d53c2e89a57be99c5defc9ac50415270bf22c39834483328bbfb82f548e6a86b"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00009-v1/exports-v2/method_packets/L2.json",
+      "sha256": "2679c9807719c8c926e6780c0bb4231ea4d11ed45cbceb92f909d0eb460c8231"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00009-v1/exports-v2/candidate_outputs/L2.json",
+      "sha256": "2374f00f92ed56de2680da2619597e6e5a0ec4d1a3727ce2559b22421f785ab1"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00009-v2/fixture-summary.json",
+      "sha256": "4f84b094320d228d110f10f6189ffdbbb8c8ea83b02dcfc39b08220440cabfa0"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00009.json",
+      "sha256": "3df521015826d89bb112da840ec1e96046dd5804a2bae64c13f2c3714bf2e5cd"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00009-v2/exports-v2/method_packets/L0.json",
+      "sha256": "cef9c52e3c29a7976f4ebcd3ad46445d9cea0e3c30fcb575238d0d7fe5598ae5"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00009-v2/exports-v2/method_packets/L1.json",
+      "sha256": "d23e71001bfc7723b77992e169eb6bde46845c5444086d311c84645835e3833e"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00009-v2/exports-v2/method_packets/L2.json",
+      "sha256": "69e69dd8bd2d97a20cb8440f7a8e672e318a29e1b81011b6bdfd92097f17d551"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00009-v2/exports-v2/candidate_outputs/L2.json",
+      "sha256": "88b21077d2dccf1663b01d1f1aef01d1fd49c08143ed30ffe1d3961cdb78c12d"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00024-v1/fixture-summary.json",
+      "sha256": "d40232cb2b7ed9ec1621ed92804501885953a65315e75d7c0eef7f0c2a7f211e"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00024.json",
+      "sha256": "a387140c0adc3b53a50f4f48a78fc99c3422ef4d2aa3543f476a04fcf9ffaaa9"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00024-v1/exports-v2/method_packets/L0.json",
+      "sha256": "1ee90e04a3c656f571b09fd70df558286aaf087490ae7f516c3f6532faf9c997"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00024-v1/exports-v2/method_packets/L1.json",
+      "sha256": "33667791b425debb3acf0bf9afd165fef1581fcd55b1291bca24838e19fe1d3c"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00024-v1/exports-v2/method_packets/L2.json",
+      "sha256": "46186e668333eea766f59e2429ce8e321ca94b17381436099c9ebc87ef54fd3e"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00024-v1/exports-v2/candidate_outputs/L2.json",
+      "sha256": "15a7b51d49e83f3b407781e1f43551e7e13252f8d0d638fb2b23b40adede7649"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00024-v2/fixture-summary.json",
+      "sha256": "10b1f65b33241464ee7454fd2df10d860b2ec233d317a1f758b8bcd3d6e5dcda"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00024.json",
+      "sha256": "a387140c0adc3b53a50f4f48a78fc99c3422ef4d2aa3543f476a04fcf9ffaaa9"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00024-v2/exports-v2/method_packets/L0.json",
+      "sha256": "4bb580fcf9e3050bed421230857a025216d06a7406ae79874ea78c93968ab480"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00024-v2/exports-v2/method_packets/L1.json",
+      "sha256": "aa25be35d960d6b5c6f55d077e6bb026a4f272ca70e7716e0978406349fc488e"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00024-v2/exports-v2/method_packets/L2.json",
+      "sha256": "4a6a4e8129e29ae0684a2ae21e297e16f5f2a7c4f71d27b35c169e730898af07"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00024-v2/exports-v2/candidate_outputs/L2.json",
+      "sha256": "3cad7c1373650840ad06ea75cf29d0856f643d13f898a89b479984c2b7555d1e"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00018-v1/fixture-summary.json",
+      "sha256": "b41397179dd2dfc980ffb792096afb8eeb7fcea947ac328c06c41351c70d65ea"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00018.json",
+      "sha256": "5ca11e770a4a2c2884499536788becbd543d8d1c2449aa299bf7d9de18dc12a9"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00018-v1/exports-v2/method_packets/L0.json",
+      "sha256": "1f02b2918019b257536f64834d99cb16d7c9e8ff7c851828121e2723527f287e"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00018-v1/exports-v2/method_packets/L1.json",
+      "sha256": "f9ff2a784837fd846098c5e3f729552faad056f79fb20a6584d06881a2d13773"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00018-v1/exports-v2/method_packets/L2.json",
+      "sha256": "f014b4ec0c7be774cb70d937a82bd30b7ab98a5c172a1ab7fc237c0562b90c03"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00018-v1/exports-v2/candidate_outputs/L2.json",
+      "sha256": "00be7627b2c2e88ddc2fc794af4e0a1a84f5c6e929fd3b6723d3b8a87db422f7"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00018-v2/fixture-summary.json",
+      "sha256": "6b9e1486bc5684256b1af2912da9332df54a51867a4f951650f6a4934529dda1"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00018.json",
+      "sha256": "5ca11e770a4a2c2884499536788becbd543d8d1c2449aa299bf7d9de18dc12a9"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00018-v2/exports-v2/method_packets/L0.json",
+      "sha256": "8cf4e86296e36f102b3762dd86e1aa7c9efe7698f11c50fc6e3c9c6ce65a6574"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00018-v2/exports-v2/method_packets/L1.json",
+      "sha256": "f6881ae97343f3a39c781d2e3f3dd9e8acbef095d8ca00df29c85cd10091e8be"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00018-v2/exports-v2/method_packets/L2.json",
+      "sha256": "2f627cce938fd266eac84b9661fc31e628ff7c88a1eca843b12e1f8da0554261"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00018-v2/exports-v2/candidate_outputs/L2.json",
+      "sha256": "6e3cc3157dcd8fe5011ecd1ff1d1a17b4319331214e5466d8feb703f05655603"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00030-v1/fixture-summary.json",
+      "sha256": "a2e2585377a2eb9d2957b24aff6382199b9378e6aafc24dc34f8324a4531e06a"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00030.json",
+      "sha256": "ada0927a7876144473113fcf2c060c90c5b6121166400d473ffab1f360a191a1"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00030-v1/exports-v2/method_packets/L0.json",
+      "sha256": "8501eb9cce165efabb94cce7b73e2f9fb3e7089d7a6e2c3bc4fd7c489ec51dc0"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00030-v1/exports-v2/method_packets/L1.json",
+      "sha256": "3d6de919c91cc73d9d11dead6967bd137d641a7e9cc41b564dcee31397d6d4cd"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00030-v1/exports-v2/method_packets/L2.json",
+      "sha256": "779cfd5bc50a9280bf068943f7633b516966da6986372ace4bffbc9690b49732"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00030-v1/exports-v2/candidate_outputs/L2.json",
+      "sha256": "c9807fa232c140a3269e12082a5d9dd9dad38a9a5f7d3049c8d71f8be8ecfada"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00030-v2/fixture-summary.json",
+      "sha256": "62352c7f9921ed2aae034f525deeebec6695a2ac6caede0501516717918c8c2b"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/docs/roboboat_terminal_evidence/populations/development-42005/contracts/boat-geom-42005-00030.json",
+      "sha256": "ada0927a7876144473113fcf2c060c90c5b6121166400d473ffab1f360a191a1"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00030-v2/exports-v2/method_packets/L0.json",
+      "sha256": "7ccf4c661a06c02c7fc6fdab1615abafac8e687144b91bc60ec4b9f9feab9f42"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00030-v2/exports-v2/method_packets/L1.json",
+      "sha256": "20abfb63cc65c82c0a3a358865373ee83c6eeacbcdd6958871818e45845d2a04"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00030-v2/exports-v2/method_packets/L2.json",
+      "sha256": "03dcd4a7b560f15d35e54a9afe66b5745958836238901ef7a5e1f03bdafbcd7b"
+    },
+    {
+      "path": "/home/lunarz/worktrees/roboboat-terminal-evidence/artifacts/roboboat-clock-repaired-development-v12-001/captures/boat-geom-42005-00030-v2/exports-v2/candidate_outputs/L2.json",
+      "sha256": "2c60931f9dedd838f75e45ce2e299b3f578e2cb2391deda622e3c73304ab072c"
+    }
+  ],
+  "scope": "Full original local raw-source audit plus independent numerical/temporal reconstruction, exact removal-only packet verification, and actual-record boundary perturbations. No language-judge accuracy or hardware validation."
+}

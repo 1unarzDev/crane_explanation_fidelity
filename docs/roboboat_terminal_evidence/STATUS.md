@@ -1,5 +1,7 @@
 # Status — 2026-09-30
 
+Superseding status (October 1, 2026): **paper-integration goal complete** under the user-directed replacement handoff. The expansion campaign is stopped, all original dispositions retained, and prospective superiority/replication work deferred. See PAPER_INTEGRATION_COMPLETE_2026-10-01.md and PAPER_TRANSFER_CASE.md. Older status text remains historical.
+
 ## Current state — external activation gate blocks full study
 
 The full goal remains incomplete and is blocked pending coordinator allocation/resources; see COMPLETION_AUDIT.md. Latest completed result: [CONTACT_V2_RESULTS.md](CONTACT_V2_RESULTS.md). Seven valid fresh physical recordings remain in three approach clusters; original complete-pair N=2. Contact-v2 replay adds zero recordings/clusters; confirmation/replication N=0 and marine alpha=0.
