@@ -103,6 +103,12 @@ def main():
       bb=sum(x['methods']['B2'][level]['failure'] and not x['methods']['B4'][level]['failure'] for x in pp); cc=sum((not x['methods']['B2'][level]['failure']) and x['methods']['B4'][level]['failure'] for x in pp); nn=len(pp)
       level_pairs[level]={'n':nn,'B2_failures':sum(x['methods']['B2'][level]['failure'] for x in pp),'B4_failures':sum(x['methods']['B4'][level]['failure'] for x in pp),'B2_only_failure_b':bb,'B4_only_failure_c':cc,'risk_difference_B4_minus_B2':sum(int(x['methods']['B4'][level]['failure'])-int(x['methods']['B2'][level]['failure']) for x in pp)/nn,'exact_two_sided_mcnemar_p':exact_binom_two_sided(bb,cc),'discordance_wilson_95ci':wilson(bb+cc,nn)}
     result['paired_level_comparisons']=level_pairs
+    accounting_path=root/'analysis/results/confirmation/evidence-calibration-b4-b2-confirmation-2026-10-01/execution-accounting-FIRST.json'
+    if accounting_path.exists():
+      complete_ids={r['run_id'] for r in json.loads(accounting_path.read_text()).get('records',[]) if r.get('complete_pair') is True}
+      cp=[(e,x) for e,x in result['episodes'].items() if e in complete_ids and 'episode_failure' in x['methods']['B2'] and 'episode_failure' in x['methods']['B4']]
+      bb=sum(x['methods']['B2']['episode_failure'] and not x['methods']['B4']['episode_failure'] for _,x in cp); cc=sum((not x['methods']['B2']['episode_failure']) and x['methods']['B4']['episode_failure'] for _,x in cp); nn=len(cp)
+      result['accounting_complete_sensitivity']={'n':nn,'B2_failures':sum(x['methods']['B2']['episode_failure'] for _,x in cp),'B4_failures':sum(x['methods']['B4']['episode_failure'] for _,x in cp),'B2_only_failure_b':bb,'B4_only_failure_c':cc,'risk_difference_B4_minus_B2':sum(int(x['methods']['B4']['episode_failure'])-int(x['methods']['B2']['episode_failure']) for _,x in cp)/nn if nn else None,'exact_two_sided_mcnemar_p':exact_binom_two_sided(bb,cc),'discordance_wilson_95ci':wilson(bb+cc,nn)}
     result['label_totals']={m:Counter(c['label'] for e in result['episodes'].values() for l in e['methods'][m] if l in ('E0','E1','E2','E3') for c in e['methods'][m][l]['claims']) for m in ('B2','B4')}
     result['label_totals']={m:dict(v) for m,v in result['label_totals'].items()};Path(a.output).parent.mkdir(parents=True,exist_ok=True);Path(a.output).write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result['paired_episode_comparison'],indent=2));print(json.dumps(result['method_level'],indent=2))
 if __name__=='__main__':main()
