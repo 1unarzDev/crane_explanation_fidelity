@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 
 import pytest
-from analysis.hexar_external.confirmatory_v1.staged_episode_dispatch_v1 import dispatch
+from analysis.hexar_external.confirmatory_v1.staged_episode_dispatch_v2 import dispatch
 from analysis.hexar_external.acquisition.raw_archive_v1 import digest
 
 
