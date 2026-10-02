@@ -1,0 +1,105 @@
+{
+  "schema": "hexar-comparator-freeze/v1",
+  "status": "CANDIDATE_NOT_FROZEN",
+  "primary_methods": [
+    "HX-CONTRACT",
+    "HX-PROMPT"
+  ],
+  "historical_secondary": "HX-ORIGINAL descriptive only",
+  "inherited_file_hashes": {
+    "docs/hexar_external/prompt_calibration_v1.txt": "70ddce4c451f20b466d97d86e20473f7e8ca48acd57ee718f63d6917fb81d795",
+    "analysis/hexar_external/study_v2.py": "0d05fc607202742e30fb1f5b8b14bc26326de7e08ec67c717c5bf99e9421b67c",
+    "analysis/hexar_external/contract_adapter.py": "b32c9ba2851b06a076ebb41b9dc219b58c37fe4d6a5fc9e54e56895a2b4f4567",
+    "analysis/hexar_external/replay.py": "fac6bf3fc12dc5579568dc9f5889f17d03ac97432d009b81179135ba1cfac6b2",
+    "analysis/hexar_external/build_references_v2.py": "877f18f86217d8c791220167e61ba2037c96b9ae0c57484de7deff20c96c697e",
+    "analysis/run_evidence_calibration_agent_annotation.py": "efcd2d5df96bc7f2838be60f6b86387721daf635a8de8e6524814ebedae611bd",
+    "analysis/evidence_calibration.py": "2b81bed7302fa5981a526846942d98bdb041c4afab860d3a18d3aca5a8540f7c",
+    "analysis/evidence_calibration_io.py": "c70fef1e03274c55746a8ed7395cec221d2ed0bc63c83eb7fd005429a0925422",
+    "analysis/maximal_supported_diagnosis.py": "1784960164122a3a4eb563d295d552b74cb2f7c87985fa4054bd0ca23ce61814",
+    "analysis/realize_evidence_calibrated_explanation.py": "cddc947e2276a586f136a9b6ce19c5f6b871abc3e4a7ce84f92c20ce9e9b99d1"
+  },
+  "baseline": {
+    "prompt": "docs/hexar_external/prompt_calibration_v1.txt",
+    "model": "gpt-6-sol",
+    "model_version": null,
+    "backend_identity": null,
+    "effort": "high",
+    "temperature": null,
+    "decoding": null,
+    "system_instructions": null,
+    "wrapper": "existing structured no-tool wrapper; must bind complete runtime instructions",
+    "context_access": "empty read-only workspace; only permitted packet and public source semantics",
+    "tool_permissions": [],
+    "quality_retries": 0,
+    "technical_retries": 0,
+    "timeout_seconds": 180,
+    "parsing": "exact JSON answer string; invalid JSON is technical failure"
+  },
+  "contract": {
+    "implementation": "study_v2.contract plus pinned CRANE core; deterministic realization, zero model calls",
+    "complete_transitive_dependency_manifest": null,
+    "configuration": null
+  },
+  "equality": "identical packets, questions, preprocessing and permitted evidence; no hidden family labels; keep strengthened prompt intact",
+  "execution_adapter": null,
+  "execution_adapter_qualified": false,
+  "unique_request_policy": {
+    "status": "ADOPTED_FOR_DEVELOPMENT_NOT_FROZEN",
+    "implementation": "analysis/hexar_external/confirmatory_v1/unique_request_plan.py",
+    "implementation_sha256": "950876d43af9e2e92ce2984f75f31bc403fefe9cf0afd60f9319a5c1c27e8e1d",
+    "rule": "Generate once per unique complete method request within each episode; identical intact/irrelevant aliases share output, failure and evaluation; no cross-episode or cross-method reuse.",
+    "expected_unique_requests_per_episode_per_method": 6,
+    "battery_cells_per_episode_per_method": 9,
+    "scientific_source": "docs/hexar_external/confirmatory_v1/BATTERY_DUPLICATION_FAIRNESS.md",
+    "scientific_source_sha256": "46c9bd39fc879623f2290f4f812e40329bb57cdcec5c00bff452f66204edd421",
+    "execution_adapter_qualified": false,
+    "expansion_implementation": "analysis/hexar_external/confirmatory_v1/unique_result_expansion.py",
+    "expansion_implementation_sha256": "8b0611d7767513942f021aee71c2ccde121f255415a8ff1ab032d0541ce1a16d",
+    "qualification": null,
+    "analysis_binding_implementation": "analysis/hexar_external/confirmatory_v1/unique_analysis_binding.py",
+    "analysis_binding_implementation_sha256": "2fa75b6d2c8c791150afee47e1b4cdb3bbae860da580518e6d362a68dbef2dd9"
+  },
+  "motion_usefulness_policy": {
+    "status": "CANDIDATE_AUTHORED_SCREEN_PASSED_OPERATIONAL_QUALIFICATION_PENDING",
+    "whole_endpoint_qualified": false,
+    "maximum_resolution_or_range_width_m": "0.1",
+    "physical_no_motion_threshold": null,
+    "public_requirement_sha256": "3b69ddc1f1e44faa61912c52eab8433174fdff97adca6400bf51e8441c7b4ce6",
+    "implementation": {
+      "path": "analysis/hexar_external/confirmatory_v1/motion_usefulness.py",
+      "sha256": "57faa2235e1b977ad312c1ac0b1d2303fc907975cc483faf37eaacbfef370b0e"
+    },
+    "public_reference_interface": {
+      "path": "analysis/hexar_external/acquisition/navigation_usefulness_v2.py",
+      "sha256": "5a28094be3ff1665c1ea8d7457140ca12f0d8b47e2783c88c66a7b21707dcab5"
+    },
+    "evaluator": {
+      "path": "analysis/hexar_external/confirmatory_v1/rich_evaluator_v4.py",
+      "sha256": "596be8e5f020a3e325c4e86cc49d1889625eed322680d688be68e070ffab44ac"
+    },
+    "scientific_source": {
+      "path": "docs/hexar_external/confirmatory_v1/MOTION_USEFULNESS_POLICY.md",
+      "sha256": "b8652cba9712498ac59a7165a45c4cc144bd4be45b0b6f0a4d7f54cf657b2c30"
+    },
+    "qualification": null
+  },
+  "six_family_registered_development_qualification": {
+    "report": {
+      "path": "manifests/hexar_external/confirmatory_v1/development_registered_pipeline_v3/report.json",
+      "sha256": "15fa2734d44f02775abae1a1653660f299254bfdcdda330370ffe6af1aba1209"
+    },
+    "archive_audit": {
+      "path": "manifests/hexar_external/confirmatory_v1/development_registered_pipeline_v3/archive_verification.json",
+      "sha256": "5294e7c0b4380754a2bef0c1d415176965919f0fb9b92f54a185b354ec2e4a64"
+    },
+    "status": "SIX_FAMILY_DEVELOPMENT_OPERATIONAL_PASSED_NOT_FINAL_ADAPTER_QUALIFICATION",
+    "unique_methods": 72,
+    "initial_judgments": 144,
+    "disagreement_C_judgments": 1,
+    "unresolved_unique_labels": 0,
+    "agent_assessed": true,
+    "human_validated": false,
+    "provider_qualified": false,
+    "full_transitive_runtime_qualified": false
+  }
+}

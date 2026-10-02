@@ -1,0 +1,9 @@
+# Retained synthetic runtime results
+
+Both fixed development screens are **FAILED_RUNTIME_SCREEN_RETAINED** under their declared 60-second per-case engineering limit. The original adopted implementation completed N=72 in .213 s, N=114 in .384 s and N=1,296 in 44.54 s; N=3,072 timed out. The separately scoped grouped-arithmetic candidate completed the first three cases in .145 s, .277 s and 25.78 s; N=3,072 also timed out. Original timeout stdout/stderr and closed dispositions remain preserved. No successful large-N interval is invented from a partial worker.
+
+The grouped candidate passed six tests, including exact rational polynomial enclosure through N=9 across negative/zero/positive effect targets and equality of complete summary outputs with the original implementation in the specified synthetic cases. This supports the same-integral arithmetic construction but does not adopt the candidate into the frozen analyzer or qualify the final adapter. The 27 focused development checks pass. The original `mixture_statistics.py`, primary exact decision, analysis plan and power reports remain unchanged.
+
+The 60-second bound is a diagnostic engineering screen, **not a scientific exclusion, stopping rule, sample-size cap or authoritative terminal-analysis deadline**. A slower valid analysis can be accommodated prospectively; these failures demonstrate that the current larger-N execution needs appropriate runtime planning or further numerically qualified optimization. They do not change the endpoint, test, intervals, N, alpha or model. No semantic data were read and confirmatory N remains zero.
+
+Completed original archives: `analysis_runtime_screen_v1/` and `analysis_runtime_screen_v2/`, beneath `manifests/hexar_external/confirmatory_v1/`. Each preserves declaration, exact source bank, four closed worker dispositions and report. No reissue or retrospective overwrite occurred within either declared screen.

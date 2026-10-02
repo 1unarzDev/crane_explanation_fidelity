@@ -1,0 +1,9 @@
+# Observed controller context development qualification
+
+The infrastructure-only v1 probe failed before capture: CycloneDDS exhausted automatic participant indices and Nav2 readiness timed out. Logs and failure report remain retained. No goal, episode or explanation was generated.
+
+The separately declared v2 probe uses the same immutable TIAGo image with loopback peers, multicast disabled and an explicit maximum automatic participant index of 120. Nav2 lifecycle activation passed and a native-clock snapshot captured actual mux parameters and graph. A stricter independent review verifies all input/lock topics, priorities and timeouts, plus the actual `mobile_base_controller` receiver. A marker subscription alone is insufficient. Both the probe's original limited check and the stricter review are retained.
+
+This passes candidate snapshot integrity only. It is not qualification of continuous wiring, message delivery, physical cause or the full acquisition process. New development episodes capture start/end snapshots while recording `/parameter_events` and the actual mux output topic. Earlier bags are unchanged and cannot receive retrospective runtime attestations. Equal-evidence integration and universal-mask handling must be qualified before method freeze; snapshot evidence must be supplied equally to both methods without hidden family, seed or technical-review conclusions. Start/end equality does not rule out an intervening change unless event delivery is established.
+
+The equal-evidence extension is optional and leaves old packet hashes unchanged. It projects only closed public start/end snapshots into `source_context`, strips the probe review from method inputs, and removes runtime observations under the universal diagnostic-removal condition before use. Static public rules remain equally supplied. This interface has deterministic tests but requires actual new-episode packet and semantic qualification.

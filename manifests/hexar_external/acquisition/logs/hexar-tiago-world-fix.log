@@ -1,0 +1,14 @@
+adapted_world_sha256 6802d91adff8e5c0726e3cad02e353e8723c14007e82afb92299d5f7392e5175
+[0.239s] WARNING:colcon.colcon_core.package_selection:Some selected packages are already built in one or more underlay workspaces:
+	'pal_gazebo_worlds' is in: /ws/install/pal_gazebo_worlds
+If a package in a merged underlay workspace is overridden and it installs headers, then all packages in the overlay must sort their include directories by workspace order. Failure to do so may result in build failures or undefined behavior at run time.
+If the overridden package is used by another package in any underlay, then the overriding package in the overlay must be API and ABI compatible or undefined behavior at run time may occur.
+
+If you understand the risks and want to override a package anyways, add the following to the command line:
+	--allow-overriding pal_gazebo_worlds
+
+This may be promoted to an error in a future release of colcon-override-check.
+Starting >>> pal_gazebo_worlds
+Finished <<< pal_gazebo_worlds [0.27s]
+
+Summary: 1 package finished [0.46s]

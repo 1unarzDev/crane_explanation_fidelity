@@ -1,0 +1,2001 @@
+{
+  "schema": "hexar-battery-reserve-power/v1",
+  "phase": "development_design_only",
+  "seed": 2026100102,
+  "draws_per_battery_regime": 80000,
+  "maximum_mc_se": 0.0017677669529663688,
+  "alpha": 0.01,
+  "jobs_per_recording": 9,
+  "independent_unit": "simulated robot episode",
+  "model": "Gaussian copula with independent episodes and correlated answer failures in both methods",
+  "not_empirical_estimates": true,
+  "selected_n": null,
+  "selected_reserve": null,
+  "power_note": "Exact homogeneous paired e-test power at estimated hypothetical copula probabilities; Monte Carlo uncertainty in those probabilities remains. Heterogeneous power is in family_power_report.json.",
+  "reserve_note": "Exact binomial completion for six independent families with a fixed invalid rate; observed rates, uncertainty, heterogeneity and outcome-blind technical predicates must be qualified before a decision.",
+  "source_sha256": "f0197dffe23ebd2942d2fac56c1e9acf85e5a1bd5f57340f26e971937c1ba792",
+  "battery_rows": [
+    {
+      "contract_answer_failure_probability": 0.04,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.0,
+      "cross_method_same_question_latent_correlation": 0.0,
+      "cells": {
+        "favorable": 33876,
+        "unfavorable": 9622,
+        "both_success": 21481,
+        "both_failure": 15021
+      },
+      "contract_recording_failure": 0.3080375,
+      "prompt_recording_failure": 0.6112125,
+      "discordance": 0.543725,
+      "favorable_given_discordance": 0.7787944273299922,
+      "recording_risk_difference": 0.303175,
+      "e_test_planning_power": {
+        "72": 0.7143112394537359,
+        "96": 0.8873783419053966,
+        "144": 0.9832758782929031,
+        "192": 0.9978865038405118
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.04,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.0,
+      "cross_method_same_question_latent_correlation": 0.5,
+      "cells": {
+        "favorable": 31069,
+        "unfavorable": 6562,
+        "both_success": 24439,
+        "both_failure": 17930
+      },
+      "contract_recording_failure": 0.30615,
+      "prompt_recording_failure": 0.6124875,
+      "discordance": 0.4703875,
+      "favorable_given_discordance": 0.825622492094284,
+      "recording_risk_difference": 0.3063375,
+      "e_test_planning_power": {
+        "72": 0.8142023954388412,
+        "96": 0.9517609418837251,
+        "144": 0.9969925862989568,
+        "192": 0.99984945821534
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.04,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.0,
+      "cross_method_same_question_latent_correlation": 0.9,
+      "cells": {
+        "favorable": 25898,
+        "unfavorable": 1266,
+        "both_success": 29336,
+        "both_failure": 23500
+      },
+      "contract_recording_failure": 0.309575,
+      "prompt_recording_failure": 0.617475,
+      "discordance": 0.33955,
+      "favorable_given_discordance": 0.9533941982035047,
+      "recording_risk_difference": 0.3079,
+      "e_test_planning_power": {
+        "72": 0.9627920473245735,
+        "96": 0.9984453950768027,
+        "144": 0.9999987540888043,
+        "192": 0.9999999993112086
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.04,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.0,
+      "cross_method_same_question_latent_correlation": 1.0,
+      "cells": {
+        "favorable": 24606,
+        "unfavorable": 0,
+        "both_success": 30807,
+        "both_failure": 24587
+      },
+      "contract_recording_failure": 0.3073375,
+      "prompt_recording_failure": 0.6149125,
+      "discordance": 0.307575,
+      "favorable_given_discordance": 1.0,
+      "recording_risk_difference": 0.307575,
+      "e_test_planning_power": {
+        "72": 0.9890482212918694,
+        "96": 0.9999246902840857,
+        "144": 0.9999999996366091,
+        "192": 0.9999999999999251
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.04,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.5,
+      "cross_method_same_question_latent_correlation": 0.0,
+      "cells": {
+        "favorable": 24831,
+        "unfavorable": 9603,
+        "both_success": 39602,
+        "both_failure": 5964
+      },
+      "contract_recording_failure": 0.1945875,
+      "prompt_recording_failure": 0.3849375,
+      "discordance": 0.430425,
+      "favorable_given_discordance": 0.721118661787768,
+      "recording_risk_difference": 0.19035,
+      "e_test_planning_power": {
+        "72": 0.24911470868842142,
+        "96": 0.4380852890850582,
+        "144": 0.6986520752454175,
+        "192": 0.849686919552564
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.04,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.5,
+      "cross_method_same_question_latent_correlation": 0.5,
+      "cells": {
+        "favorable": 20817,
+        "unfavorable": 5643,
+        "both_success": 43400,
+        "both_failure": 10140
+      },
+      "contract_recording_failure": 0.1972875,
+      "prompt_recording_failure": 0.3869625,
+      "discordance": 0.33075,
+      "favorable_given_discordance": 0.786734693877551,
+      "recording_risk_difference": 0.189675,
+      "e_test_planning_power": {
+        "72": 0.31403686439187034,
+        "96": 0.5735345848111714,
+        "144": 0.8690071431477698,
+        "192": 0.9613437270580646
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.04,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.5,
+      "cross_method_same_question_latent_correlation": 0.9,
+      "cells": {
+        "favorable": 16195,
+        "unfavorable": 1066,
+        "both_success": 48116,
+        "both_failure": 14623
+      },
+      "contract_recording_failure": 0.1961125,
+      "prompt_recording_failure": 0.385225,
+      "discordance": 0.2157625,
+      "favorable_given_discordance": 0.9382422802850356,
+      "recording_risk_difference": 0.1891125,
+      "e_test_planning_power": {
+        "72": 0.43521739890808053,
+        "96": 0.8054855194023549,
+        "144": 0.9910312012552618,
+        "192": 0.999759498776562
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.04,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.5,
+      "cross_method_same_question_latent_correlation": 1.0,
+      "cells": {
+        "favorable": 14995,
+        "unfavorable": 0,
+        "both_success": 49076,
+        "both_failure": 15929
+      },
+      "contract_recording_failure": 0.1991125,
+      "prompt_recording_failure": 0.38655,
+      "discordance": 0.1874375,
+      "favorable_given_discordance": 1.0,
+      "recording_risk_difference": 0.1874375,
+      "e_test_planning_power": {
+        "72": 0.486780314778389,
+        "96": 0.8826596698158262,
+        "144": 0.9990324586427825,
+        "192": 0.9999981111519767
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.04,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.9,
+      "cross_method_same_question_latent_correlation": 0.0,
+      "cells": {
+        "favorable": 14672,
+        "unfavorable": 5952,
+        "both_success": 57875,
+        "both_failure": 1501
+      },
+      "contract_recording_failure": 0.0931625,
+      "prompt_recording_failure": 0.2021625,
+      "discordance": 0.2578,
+      "favorable_given_discordance": 0.7114041892940264,
+      "recording_risk_difference": 0.109,
+      "e_test_planning_power": {
+        "72": 0.04010148781825873,
+        "96": 0.11559449288098383,
+        "144": 0.3168355555044118,
+        "192": 0.5026188164510295
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.04,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.9,
+      "cross_method_same_question_latent_correlation": 0.5,
+      "cells": {
+        "favorable": 12441,
+        "unfavorable": 3453,
+        "both_success": 60244,
+        "both_failure": 3862
+      },
+      "contract_recording_failure": 0.0914375,
+      "prompt_recording_failure": 0.2037875,
+      "discordance": 0.198675,
+      "favorable_given_discordance": 0.7827482068705172,
+      "recording_risk_difference": 0.11235,
+      "e_test_planning_power": {
+        "72": 0.0410220969205561,
+        "96": 0.14830164221469708,
+        "144": 0.4568638918343203,
+        "192": 0.7061028022308308
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.04,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.9,
+      "cross_method_same_question_latent_correlation": 0.9,
+      "cells": {
+        "favorable": 9207,
+        "unfavorable": 585,
+        "both_success": 63449,
+        "both_failure": 6759
+      },
+      "contract_recording_failure": 0.0918,
+      "prompt_recording_failure": 0.199575,
+      "discordance": 0.1224,
+      "favorable_given_discordance": 0.9402573529411765,
+      "recording_risk_difference": 0.107775,
+      "e_test_planning_power": {
+        "72": 0.023227420638347256,
+        "96": 0.14197379936336202,
+        "144": 0.613042704576858,
+        "192": 0.9048448199316959
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.04,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.9,
+      "cross_method_same_question_latent_correlation": 1.0,
+      "cells": {
+        "favorable": 8523,
+        "unfavorable": 0,
+        "both_success": 63993,
+        "both_failure": 7484
+      },
+      "contract_recording_failure": 0.09355,
+      "prompt_recording_failure": 0.2000875,
+      "discordance": 0.1065375,
+      "favorable_given_discordance": 1.0,
+      "recording_risk_difference": 0.1065375,
+      "e_test_planning_power": {
+        "72": 0.01871647203002348,
+        "96": 0.14033128205403436,
+        "144": 0.6807809713374702,
+        "192": 0.9544287839739211
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.04,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 1.0,
+      "cross_method_same_question_latent_correlation": 0.0,
+      "cells": {
+        "favorable": 7572,
+        "unfavorable": 2933,
+        "both_success": 69184,
+        "both_failure": 311
+      },
+      "contract_recording_failure": 0.04055,
+      "prompt_recording_failure": 0.0985375,
+      "discordance": 0.1313125,
+      "favorable_given_discordance": 0.7207996192289386,
+      "recording_risk_difference": 0.0579875,
+      "e_test_planning_power": {
+        "72": 0.000984109593571102,
+        "96": 0.006943894099416414,
+        "144": 0.05305059009916977,
+        "192": 0.14438934309005966
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.04,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 1.0,
+      "cross_method_same_question_latent_correlation": 0.5,
+      "cells": {
+        "favorable": 6636,
+        "unfavorable": 1916,
+        "both_success": 70126,
+        "both_failure": 1322
+      },
+      "contract_recording_failure": 0.040475,
+      "prompt_recording_failure": 0.099475,
+      "discordance": 0.1069,
+      "favorable_given_discordance": 0.7759588400374181,
+      "recording_risk_difference": 0.059,
+      "e_test_planning_power": {
+        "72": 0.0005684373329196528,
+        "96": 0.005274149228985544,
+        "144": 0.055431766232920385,
+        "192": 0.17566109648028283
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.04,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 1.0,
+      "cross_method_same_question_latent_correlation": 0.9,
+      "cells": {
+        "favorable": 5158,
+        "unfavorable": 354,
+        "both_success": 71542,
+        "both_failure": 2946
+      },
+      "contract_recording_failure": 0.04125,
+      "prompt_recording_failure": 0.1013,
+      "discordance": 0.0689,
+      "favorable_given_discordance": 0.9357764876632801,
+      "recording_risk_difference": 0.06005,
+      "e_test_planning_power": {
+        "72": 0.0001403767777929752,
+        "96": 0.002430484035727075,
+        "144": 0.05361981863701416,
+        "192": 0.2382219110508308
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.04,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 1.0,
+      "cross_method_same_question_latent_correlation": 1.0,
+      "cells": {
+        "favorable": 4765,
+        "unfavorable": 0,
+        "both_success": 72055,
+        "both_failure": 3180
+      },
+      "contract_recording_failure": 0.03975,
+      "prompt_recording_failure": 0.0993125,
+      "discordance": 0.0595625,
+      "favorable_given_discordance": 1.0,
+      "recording_risk_difference": 0.0595625,
+      "e_test_planning_power": {
+        "72": 7.886745559217438e-05,
+        "96": 0.0016537722698468803,
+        "144": 0.049009935772543256,
+        "192": 0.2557183866528708
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.06,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.0,
+      "cross_method_same_question_latent_correlation": 0.0,
+      "cells": {
+        "favorable": 28028,
+        "unfavorable": 13108,
+        "both_success": 17922,
+        "both_failure": 20942
+      },
+      "contract_recording_failure": 0.425625,
+      "prompt_recording_failure": 0.612125,
+      "discordance": 0.5142,
+      "favorable_given_discordance": 0.6813496693893427,
+      "recording_risk_difference": 0.1865,
+      "e_test_planning_power": {
+        "72": 0.19300952760055456,
+        "96": 0.32865605326648734,
+        "144": 0.5358486668314448,
+        "192": 0.6935834911818353
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.06,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.0,
+      "cross_method_same_question_latent_correlation": 0.5,
+      "cells": {
+        "favorable": 24777,
+        "unfavorable": 9900,
+        "both_success": 21126,
+        "both_failure": 24197
+      },
+      "contract_recording_failure": 0.4262125,
+      "prompt_recording_failure": 0.612175,
+      "discordance": 0.4334625,
+      "favorable_given_discordance": 0.7145081754477031,
+      "recording_risk_difference": 0.1859625,
+      "e_test_planning_power": {
+        "72": 0.2287107195802403,
+        "96": 0.40681559542229645,
+        "144": 0.6616108527825929,
+        "192": 0.8197569468299579
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.06,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.0,
+      "cross_method_same_question_latent_correlation": 0.9,
+      "cells": {
+        "favorable": 18163,
+        "unfavorable": 3130,
+        "both_success": 27973,
+        "both_failure": 30734
+      },
+      "contract_recording_failure": 0.4233,
+      "prompt_recording_failure": 0.6112125,
+      "discordance": 0.2661625,
+      "favorable_given_discordance": 0.8530033344291551,
+      "recording_risk_difference": 0.1879125,
+      "e_test_planning_power": {
+        "72": 0.3617231328128249,
+        "96": 0.6792474688579342,
+        "144": 0.9479848531593601,
+        "192": 0.9933750675813713
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.06,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.0,
+      "cross_method_same_question_latent_correlation": 1.0,
+      "cells": {
+        "favorable": 14952,
+        "unfavorable": 0,
+        "both_success": 30930,
+        "both_failure": 34118
+      },
+      "contract_recording_failure": 0.426475,
+      "prompt_recording_failure": 0.613375,
+      "discordance": 0.1869,
+      "favorable_given_discordance": 1.0,
+      "recording_risk_difference": 0.1869,
+      "e_test_planning_power": {
+        "72": 0.4820924375877103,
+        "96": 0.8800624401599857,
+        "144": 0.9989813086955367,
+        "192": 0.9999979487118044
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.06,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.5,
+      "cross_method_same_question_latent_correlation": 0.0,
+      "cells": {
+        "favorable": 22606,
+        "unfavorable": 13334,
+        "both_success": 35792,
+        "both_failure": 8268
+      },
+      "contract_recording_failure": 0.270025,
+      "prompt_recording_failure": 0.385925,
+      "discordance": 0.44925,
+      "favorable_given_discordance": 0.6289927657206456,
+      "recording_risk_difference": 0.1159,
+      "e_test_planning_power": {
+        "72": 0.04620243063318585,
+        "96": 0.08895726351779147,
+        "144": 0.1638142363204287,
+        "192": 0.23939332199105606
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.06,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.5,
+      "cross_method_same_question_latent_correlation": 0.5,
+      "cells": {
+        "favorable": 17762,
+        "unfavorable": 8635,
+        "both_success": 40709,
+        "both_failure": 12894
+      },
+      "contract_recording_failure": 0.2691125,
+      "prompt_recording_failure": 0.3832,
+      "discordance": 0.3299625,
+      "favorable_given_discordance": 0.6728794938818805,
+      "recording_risk_difference": 0.1140875,
+      "e_test_planning_power": {
+        "72": 0.048374318196677465,
+        "96": 0.11406408699035536,
+        "144": 0.26689638616482164,
+        "192": 0.3927689546809446
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.06,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.5,
+      "cross_method_same_question_latent_correlation": 0.9,
+      "cells": {
+        "favorable": 11802,
+        "unfavorable": 2298,
+        "both_success": 46940,
+        "both_failure": 18960
+      },
+      "contract_recording_failure": 0.265725,
+      "prompt_recording_failure": 0.384525,
+      "discordance": 0.17625,
+      "favorable_given_discordance": 0.8370212765957447,
+      "recording_risk_difference": 0.1188,
+      "e_test_planning_power": {
+        "72": 0.050810183015851614,
+        "96": 0.19755894665913237,
+        "144": 0.5957014400691216,
+        "192": 0.845149131281542
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.06,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.5,
+      "cross_method_same_question_latent_correlation": 1.0,
+      "cells": {
+        "favorable": 9252,
+        "unfavorable": 0,
+        "both_success": 49388,
+        "both_failure": 21360
+      },
+      "contract_recording_failure": 0.267,
+      "prompt_recording_failure": 0.38265,
+      "discordance": 0.11565,
+      "favorable_given_discordance": 1.0,
+      "recording_risk_difference": 0.11565,
+      "e_test_planning_power": {
+        "72": 0.03497624122537874,
+        "96": 0.21689797965041893,
+        "144": 0.7913586729304453,
+        "192": 0.9806985558369559
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.06,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.9,
+      "cross_method_same_question_latent_correlation": 0.0,
+      "cells": {
+        "favorable": 13962,
+        "unfavorable": 8482,
+        "both_success": 55491,
+        "both_failure": 2065
+      },
+      "contract_recording_failure": 0.1318375,
+      "prompt_recording_failure": 0.2003375,
+      "discordance": 0.28055,
+      "favorable_given_discordance": 0.6220816253787204,
+      "recording_risk_difference": 0.0685,
+      "e_test_planning_power": {
+        "72": 0.008485605985282012,
+        "96": 0.023470062097348834,
+        "144": 0.06572563408645397,
+        "192": 0.10836095319830827
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.06,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.9,
+      "cross_method_same_question_latent_correlation": 0.5,
+      "cells": {
+        "favorable": 11023,
+        "unfavorable": 5413,
+        "both_success": 58523,
+        "both_failure": 5041
+      },
+      "contract_recording_failure": 0.130675,
+      "prompt_recording_failure": 0.2008,
+      "discordance": 0.20545,
+      "favorable_given_discordance": 0.6706619615478219,
+      "recording_risk_difference": 0.070125,
+      "e_test_planning_power": {
+        "72": 0.0059463812804251255,
+        "96": 0.023357537239389888,
+        "144": 0.09142378564515118,
+        "192": 0.18126683246918976
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.06,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.9,
+      "cross_method_same_question_latent_correlation": 0.9,
+      "cells": {
+        "favorable": 6991,
+        "unfavorable": 1471,
+        "both_success": 62591,
+        "both_failure": 8947
+      },
+      "contract_recording_failure": 0.130225,
+      "prompt_recording_failure": 0.199225,
+      "discordance": 0.105775,
+      "favorable_given_discordance": 0.8261640274166864,
+      "recording_risk_difference": 0.069,
+      "e_test_planning_power": {
+        "72": 0.0012618882243474266,
+        "96": 0.01157882860954872,
+        "144": 0.11240970186020557,
+        "192": 0.3207033883948971
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.06,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.9,
+      "cross_method_same_question_latent_correlation": 1.0,
+      "cells": {
+        "favorable": 5503,
+        "unfavorable": 0,
+        "both_success": 64026,
+        "both_failure": 10471
+      },
+      "contract_recording_failure": 0.1308875,
+      "prompt_recording_failure": 0.199675,
+      "discordance": 0.0687875,
+      "favorable_given_discordance": 1.0,
+      "recording_risk_difference": 0.0687875,
+      "e_test_planning_power": {
+        "72": 0.0003520498676381261,
+        "96": 0.006006960812464649,
+        "144": 0.1208721064857947,
+        "192": 0.4505017136405948
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.06,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 1.0,
+      "cross_method_same_question_latent_correlation": 0.0,
+      "cells": {
+        "favorable": 7483,
+        "unfavorable": 4365,
+        "both_success": 67659,
+        "both_failure": 493
+      },
+      "contract_recording_failure": 0.060725,
+      "prompt_recording_failure": 0.0997,
+      "discordance": 0.1481,
+      "favorable_given_discordance": 0.6315833896016205,
+      "recording_risk_difference": 0.038975,
+      "e_test_planning_power": {
+        "72": 0.00034251016503873,
+        "96": 0.0020785891636947514,
+        "144": 0.013488898368798519,
+        "192": 0.03490967557811702
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.06,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 1.0,
+      "cross_method_same_question_latent_correlation": 0.5,
+      "cells": {
+        "favorable": 6236,
+        "unfavorable": 2995,
+        "both_success": 69026,
+        "both_failure": 1743
+      },
+      "contract_recording_failure": 0.059225,
+      "prompt_recording_failure": 0.0997375,
+      "discordance": 0.1153875,
+      "favorable_given_discordance": 0.6755497779222186,
+      "recording_risk_difference": 0.0405125,
+      "e_test_planning_power": {
+        "72": 0.00014589124610409093,
+        "96": 0.001240205268054315,
+        "144": 0.012473245894765995,
+        "192": 0.04096534773182765
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.06,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 1.0,
+      "cross_method_same_question_latent_correlation": 0.9,
+      "cells": {
+        "favorable": 4121,
+        "unfavorable": 864,
+        "both_success": 71087,
+        "both_failure": 3928
+      },
+      "contract_recording_failure": 0.0599,
+      "prompt_recording_failure": 0.1006125,
+      "discordance": 0.0623125,
+      "favorable_given_discordance": 0.8266800401203611,
+      "recording_risk_difference": 0.0407125,
+      "e_test_planning_power": {
+        "72": 8.6019861184344e-06,
+        "96": 0.00017303470637204473,
+        "144": 0.0053090964974794345,
+        "192": 0.034155908340977606
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.06,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 1.0,
+      "cross_method_same_question_latent_correlation": 1.0,
+      "cells": {
+        "favorable": 3153,
+        "unfavorable": 0,
+        "both_success": 72047,
+        "both_failure": 4800
+      },
+      "contract_recording_failure": 0.06,
+      "prompt_recording_failure": 0.0994125,
+      "discordance": 0.0394125,
+      "favorable_given_discordance": 1.0,
+      "recording_risk_difference": 0.0394125,
+      "e_test_planning_power": {
+        "72": 7.504197470280976e-07,
+        "96": 2.4755270964396553e-05,
+        "144": 0.0017573118958477468,
+        "192": 0.02065833664491879
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.08,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.0,
+      "cross_method_same_question_latent_correlation": 0.0,
+      "cells": {
+        "favorable": 23252,
+        "unfavorable": 16277,
+        "both_success": 14639,
+        "both_failure": 25832
+      },
+      "contract_recording_failure": 0.5263625,
+      "prompt_recording_failure": 0.61355,
+      "discordance": 0.4941125,
+      "favorable_given_discordance": 0.5882263654532116,
+      "recording_risk_difference": 0.0871875,
+      "e_test_planning_power": {
+        "72": 0.019989924534619893,
+        "96": 0.035037572719571496,
+        "144": 0.05634612227078548,
+        "192": 0.07653462503699987
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.08,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.0,
+      "cross_method_same_question_latent_correlation": 0.5,
+      "cells": {
+        "favorable": 19618,
+        "unfavorable": 12788,
+        "both_success": 18229,
+        "both_failure": 29365
+      },
+      "contract_recording_failure": 0.5269125,
+      "prompt_recording_failure": 0.6122875,
+      "discordance": 0.405075,
+      "favorable_given_discordance": 0.6053817194346726,
+      "recording_risk_difference": 0.085375,
+      "e_test_planning_power": {
+        "72": 0.019331164553585543,
+        "96": 0.03924299476751323,
+        "144": 0.0759154143133023,
+        "192": 0.1095137992730806
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.08,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.0,
+      "cross_method_same_question_latent_correlation": 0.9,
+      "cells": {
+        "favorable": 12347,
+        "unfavorable": 5703,
+        "both_success": 25245,
+        "both_failure": 36705
+      },
+      "contract_recording_failure": 0.5301,
+      "prompt_recording_failure": 0.61315,
+      "discordance": 0.225625,
+      "favorable_given_discordance": 0.6840443213296399,
+      "recording_risk_difference": 0.08305,
+      "e_test_planning_power": {
+        "72": 0.01271879378461444,
+        "96": 0.04409953500380256,
+        "144": 0.15050450158475687,
+        "192": 0.2756737617908856
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.08,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.0,
+      "cross_method_same_question_latent_correlation": 1.0,
+      "cells": {
+        "favorable": 6776,
+        "unfavorable": 0,
+        "both_success": 31056,
+        "both_failure": 42168
+      },
+      "contract_recording_failure": 0.5271,
+      "prompt_recording_failure": 0.6118,
+      "discordance": 0.0847,
+      "favorable_given_discordance": 1.0,
+      "recording_risk_difference": 0.0847,
+      "e_test_planning_power": {
+        "72": 0.002629379298039183,
+        "96": 0.03155499595817914,
+        "144": 0.33543464369873915,
+        "192": 0.7575085963703788
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.08,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.5,
+      "cross_method_same_question_latent_correlation": 0.0,
+      "cells": {
+        "favorable": 20607,
+        "unfavorable": 16306,
+        "both_success": 32911,
+        "both_failure": 10176
+      },
+      "contract_recording_failure": 0.331025,
+      "prompt_recording_failure": 0.3847875,
+      "discordance": 0.4614125,
+      "favorable_given_discordance": 0.5582586080784547,
+      "recording_risk_difference": 0.0537625,
+      "e_test_planning_power": {
+        "72": 0.0069341431199672135,
+        "96": 0.011901857211775961,
+        "144": 0.017226288067001643,
+        "192": 0.021285007202725907
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.08,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.5,
+      "cross_method_same_question_latent_correlation": 0.5,
+      "cells": {
+        "favorable": 15487,
+        "unfavorable": 11174,
+        "both_success": 38003,
+        "both_failure": 15336
+      },
+      "contract_recording_failure": 0.331375,
+      "prompt_recording_failure": 0.3852875,
+      "discordance": 0.3332625,
+      "favorable_given_discordance": 0.5808859382618806,
+      "recording_risk_difference": 0.0539125,
+      "e_test_planning_power": {
+        "72": 0.005519189234963583,
+        "96": 0.012615217498928454,
+        "144": 0.028272291041944658,
+        "192": 0.03871851100486076
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.08,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.5,
+      "cross_method_same_question_latent_correlation": 0.9,
+      "cells": {
+        "favorable": 8635,
+        "unfavorable": 4052,
+        "both_success": 45044,
+        "both_failure": 22269
+      },
+      "contract_recording_failure": 0.3290125,
+      "prompt_recording_failure": 0.3863,
+      "discordance": 0.1585875,
+      "favorable_given_discordance": 0.6806179553874044,
+      "recording_risk_difference": 0.0572875,
+      "e_test_planning_power": {
+        "72": 0.0015888146386934315,
+        "96": 0.00879743202628768,
+        "144": 0.05024302326321394,
+        "192": 0.12002842424216768
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.08,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.5,
+      "cross_method_same_question_latent_correlation": 1.0,
+      "cells": {
+        "favorable": 4443,
+        "unfavorable": 0,
+        "both_success": 49185,
+        "both_failure": 26372
+      },
+      "contract_recording_failure": 0.32965,
+      "prompt_recording_failure": 0.3851875,
+      "discordance": 0.0555375,
+      "favorable_given_discordance": 1.0,
+      "recording_risk_difference": 0.0555375,
+      "e_test_planning_power": {
+        "72": 3.7123773952702806e-05,
+        "96": 0.0008519900786070936,
+        "144": 0.029983841258453943,
+        "192": 0.18266714196671288
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.08,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.9,
+      "cross_method_same_question_latent_correlation": 0.0,
+      "cells": {
+        "favorable": 13421,
+        "unfavorable": 10612,
+        "both_success": 53296,
+        "both_failure": 2671
+      },
+      "contract_recording_failure": 0.1660375,
+      "prompt_recording_failure": 0.20115,
+      "discordance": 0.3004125,
+      "favorable_given_discordance": 0.5584404776765282,
+      "recording_risk_difference": 0.0351125,
+      "e_test_planning_power": {
+        "72": 0.0020498522852733544,
+        "96": 0.0049666792882298826,
+        "144": 0.011504587378895483,
+        "192": 0.01567985940917982
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.08,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.9,
+      "cross_method_same_question_latent_correlation": 0.5,
+      "cells": {
+        "favorable": 9983,
+        "unfavorable": 7350,
+        "both_success": 56605,
+        "both_failure": 6062
+      },
+      "contract_recording_failure": 0.16765,
+      "prompt_recording_failure": 0.2005625,
+      "discordance": 0.2166625,
+      "favorable_given_discordance": 0.5759533837189177,
+      "recording_risk_difference": 0.0329125,
+      "e_test_planning_power": {
+        "72": 0.0008235327765038332,
+        "96": 0.0029391690074361764,
+        "144": 0.0102856569833979,
+        "192": 0.019056841126778235
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.08,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.9,
+      "cross_method_same_question_latent_correlation": 0.9,
+      "cells": {
+        "favorable": 5309,
+        "unfavorable": 2783,
+        "both_success": 61258,
+        "both_failure": 10650
+      },
+      "contract_recording_failure": 0.1679125,
+      "prompt_recording_failure": 0.1994875,
+      "discordance": 0.10115,
+      "favorable_given_discordance": 0.6560800790904597,
+      "recording_risk_difference": 0.031575,
+      "e_test_planning_power": {
+        "72": 3.2627036473133966e-05,
+        "96": 0.0003327073665710633,
+        "144": 0.004261715487005451,
+        "192": 0.016417264766595253
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.08,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.9,
+      "cross_method_same_question_latent_correlation": 1.0,
+      "cells": {
+        "favorable": 2749,
+        "unfavorable": 0,
+        "both_success": 64037,
+        "both_failure": 13214
+      },
+      "contract_recording_failure": 0.165175,
+      "prompt_recording_failure": 0.1995375,
+      "discordance": 0.0343625,
+      "favorable_given_discordance": 1.0,
+      "recording_risk_difference": 0.0343625,
+      "e_test_planning_power": {
+        "72": 1.4563961654023963e-07,
+        "96": 5.383700697949706e-06,
+        "144": 0.0004776076700191757,
+        "192": 0.006959748381238971
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.08,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 1.0,
+      "cross_method_same_question_latent_correlation": 0.0,
+      "cells": {
+        "favorable": 7353,
+        "unfavorable": 5874,
+        "both_success": 66169,
+        "both_failure": 604
+      },
+      "contract_recording_failure": 0.080975,
+      "prompt_recording_failure": 0.0994625,
+      "discordance": 0.1653375,
+      "favorable_given_discordance": 0.5559083692447266,
+      "recording_risk_difference": 0.0184875,
+      "e_test_planning_power": {
+        "72": 0.00010633522296603171,
+        "96": 0.0005341474285450514,
+        "144": 0.002666057347652828,
+        "192": 0.005813666698773034
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.08,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 1.0,
+      "cross_method_same_question_latent_correlation": 0.5,
+      "cells": {
+        "favorable": 5812,
+        "unfavorable": 4217,
+        "both_success": 67776,
+        "both_failure": 2195
+      },
+      "contract_recording_failure": 0.08015,
+      "prompt_recording_failure": 0.1000875,
+      "discordance": 0.1253625,
+      "favorable_given_discordance": 0.5795193937581015,
+      "recording_risk_difference": 0.0199375,
+      "e_test_planning_power": {
+        "72": 3.000087732033809e-05,
+        "96": 0.00022191978411777158,
+        "144": 0.0018607224850624073,
+        "192": 0.005465189571916938
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.08,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 1.0,
+      "cross_method_same_question_latent_correlation": 0.9,
+      "cells": {
+        "favorable": 3312,
+        "unfavorable": 1633,
+        "both_success": 70224,
+        "both_failure": 4831
+      },
+      "contract_recording_failure": 0.0808,
+      "prompt_recording_failure": 0.1017875,
+      "discordance": 0.0618125,
+      "favorable_given_discordance": 0.6697674418604651,
+      "recording_risk_difference": 0.0209875,
+      "e_test_planning_power": {
+        "72": 3.987940468651819e-07,
+        "96": 8.03755965295031e-06,
+        "144": 0.0002572532569083811,
+        "192": 0.0018288649467970704
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.08,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 1.0,
+      "cross_method_same_question_latent_correlation": 1.0,
+      "cells": {
+        "favorable": 1616,
+        "unfavorable": 0,
+        "both_success": 72015,
+        "both_failure": 6369
+      },
+      "contract_recording_failure": 0.0796125,
+      "prompt_recording_failure": 0.0998125,
+      "discordance": 0.0202,
+      "favorable_given_discordance": 1.0,
+      "recording_risk_difference": 0.0202,
+      "e_test_planning_power": {
+        "72": 1.8712620308836974e-10,
+        "96": 9.518203950037436e-09,
+        "144": 1.5853806106906131e-06,
+        "192": 4.279312670654761e-05
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.1,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.0,
+      "cross_method_same_question_latent_correlation": 0.0,
+      "cells": {
+        "favorable": 19145,
+        "unfavorable": 19021,
+        "both_success": 12018,
+        "both_failure": 29816
+      },
+      "contract_recording_failure": 0.6104625,
+      "prompt_recording_failure": 0.6120125,
+      "discordance": 0.477075,
+      "favorable_given_discordance": 0.5016244825237122,
+      "recording_risk_difference": 0.00155,
+      "e_test_planning_power": {
+        "72": 0.0010075447460966842,
+        "96": 0.0013607634976070513,
+        "144": 0.0012144724169967124,
+        "192": 0.0009857644705568598
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.1,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.0,
+      "cross_method_same_question_latent_correlation": 0.5,
+      "cells": {
+        "favorable": 15726,
+        "unfavorable": 15705,
+        "both_success": 15299,
+        "both_failure": 33270
+      },
+      "contract_recording_failure": 0.6121875,
+      "prompt_recording_failure": 0.61245,
+      "discordance": 0.3928875,
+      "favorable_given_discordance": 0.5003340650949699,
+      "recording_risk_difference": 0.0002625,
+      "e_test_planning_power": {
+        "72": 0.0006759341063305909,
+        "96": 0.0010803027243115328,
+        "144": 0.0012681941705416314,
+        "192": 0.0010767023579216994
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.1,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.0,
+      "cross_method_same_question_latent_correlation": 0.9,
+      "cells": {
+        "favorable": 8410,
+        "unfavorable": 8373,
+        "both_success": 22600,
+        "both_failure": 40617
+      },
+      "contract_recording_failure": 0.612375,
+      "prompt_recording_failure": 0.6128375,
+      "discordance": 0.2097875,
+      "favorable_given_discordance": 0.5011023059047846,
+      "recording_risk_difference": 0.0004625,
+      "e_test_planning_power": {
+        "72": 8.154286538046145e-05,
+        "96": 0.00027180556560995564,
+        "144": 0.0007892090425016603,
+        "192": 0.0011888804730615901
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.1,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.0,
+      "cross_method_same_question_latent_correlation": 1.0,
+      "cells": {
+        "favorable": 0,
+        "unfavorable": 0,
+        "both_success": 31048,
+        "both_failure": 48952
+      },
+      "contract_recording_failure": 0.6119,
+      "prompt_recording_failure": 0.6119,
+      "discordance": 0.0,
+      "favorable_given_discordance": null,
+      "recording_risk_difference": 0.0,
+      "e_test_planning_power": {
+        "72": 0.0,
+        "96": 0.0,
+        "144": 0.0,
+        "192": 0.0
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.1,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.5,
+      "cross_method_same_question_latent_correlation": 0.0,
+      "cells": {
+        "favorable": 18993,
+        "unfavorable": 18603,
+        "both_success": 30252,
+        "both_failure": 12152
+      },
+      "contract_recording_failure": 0.3844375,
+      "prompt_recording_failure": 0.3893125,
+      "discordance": 0.46995,
+      "favorable_given_discordance": 0.5051867219917012,
+      "recording_risk_difference": 0.004875,
+      "e_test_planning_power": {
+        "72": 0.0011291695607235496,
+        "96": 0.0015720606720815752,
+        "144": 0.0014779579404820416,
+        "192": 0.001252203353932161
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.1,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.5,
+      "cross_method_same_question_latent_correlation": 0.5,
+      "cells": {
+        "favorable": 13583,
+        "unfavorable": 13638,
+        "both_success": 35474,
+        "both_failure": 17305
+      },
+      "contract_recording_failure": 0.3867875,
+      "prompt_recording_failure": 0.3861,
+      "discordance": 0.3402625,
+      "favorable_given_discordance": 0.49898975056022926,
+      "recording_risk_difference": -0.0006875,
+      "e_test_planning_power": {
+        "72": 0.00045733351473936,
+        "96": 0.0008379738529603346,
+        "144": 0.0012318630609046016,
+        "192": 0.0010818260538499446
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.1,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.5,
+      "cross_method_same_question_latent_correlation": 0.9,
+      "cells": {
+        "favorable": 6351,
+        "unfavorable": 6295,
+        "both_success": 42399,
+        "both_failure": 24955
+      },
+      "contract_recording_failure": 0.390625,
+      "prompt_recording_failure": 0.391325,
+      "discordance": 0.158075,
+      "favorable_given_discordance": 0.5022141388581369,
+      "recording_risk_difference": 0.0007,
+      "e_test_planning_power": {
+        "72": 1.7610476721661088e-05,
+        "96": 8.840445246581308e-05,
+        "144": 0.00041811926096363704,
+        "192": 0.0008287020033097541
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.1,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.5,
+      "cross_method_same_question_latent_correlation": 1.0,
+      "cells": {
+        "favorable": 0,
+        "unfavorable": 0,
+        "both_success": 49228,
+        "both_failure": 30772
+      },
+      "contract_recording_failure": 0.38465,
+      "prompt_recording_failure": 0.38465,
+      "discordance": 0.0,
+      "favorable_given_discordance": null,
+      "recording_risk_difference": 0.0,
+      "e_test_planning_power": {
+        "72": 0.0,
+        "96": 0.0,
+        "144": 0.0,
+        "192": 0.0
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.1,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.9,
+      "cross_method_same_question_latent_correlation": 0.0,
+      "cells": {
+        "favorable": 13024,
+        "unfavorable": 12726,
+        "both_success": 51021,
+        "both_failure": 3229
+      },
+      "contract_recording_failure": 0.1994375,
+      "prompt_recording_failure": 0.2031625,
+      "discordance": 0.321875,
+      "favorable_given_discordance": 0.5057864077669902,
+      "recording_risk_difference": 0.003725,
+      "e_test_planning_power": {
+        "72": 0.0004948301676562038,
+        "96": 0.0009829958729603158,
+        "144": 0.0016303612915354523,
+        "192": 0.0015814152436148454
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.1,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.9,
+      "cross_method_same_question_latent_correlation": 0.5,
+      "cells": {
+        "favorable": 9015,
+        "unfavorable": 9228,
+        "both_success": 54687,
+        "both_failure": 7070
+      },
+      "contract_recording_failure": 0.203725,
+      "prompt_recording_failure": 0.2010625,
+      "discordance": 0.2280375,
+      "favorable_given_discordance": 0.49416214438414735,
+      "recording_risk_difference": -0.0026625,
+      "e_test_planning_power": {
+        "72": 9.636657242464362e-05,
+        "96": 0.00028159099744500356,
+        "144": 0.0006972205366076992,
+        "192": 0.0009436009337705459
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.1,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.9,
+      "cross_method_same_question_latent_correlation": 0.9,
+      "cells": {
+        "favorable": 4009,
+        "unfavorable": 4098,
+        "both_success": 59955,
+        "both_failure": 11938
+      },
+      "contract_recording_failure": 0.20045,
+      "prompt_recording_failure": 0.1993375,
+      "discordance": 0.1013375,
+      "favorable_given_discordance": 0.4945109164919206,
+      "recording_risk_difference": -0.0011125,
+      "e_test_planning_power": {
+        "72": 5.67179843257893e-07,
+        "96": 5.3540170391841e-06,
+        "144": 5.886259298838214e-05,
+        "192": 0.00019567556670199973
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.1,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.9,
+      "cross_method_same_question_latent_correlation": 1.0,
+      "cells": {
+        "favorable": 0,
+        "unfavorable": 0,
+        "both_success": 63997,
+        "both_failure": 16003
+      },
+      "contract_recording_failure": 0.2000375,
+      "prompt_recording_failure": 0.2000375,
+      "discordance": 0.0,
+      "favorable_given_discordance": null,
+      "recording_risk_difference": 0.0,
+      "e_test_planning_power": {
+        "72": 0.0,
+        "96": 0.0,
+        "144": 0.0,
+        "192": 0.0
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.1,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 1.0,
+      "cross_method_same_question_latent_correlation": 0.0,
+      "cells": {
+        "favorable": 7149,
+        "unfavorable": 7194,
+        "both_success": 64827,
+        "both_failure": 830
+      },
+      "contract_recording_failure": 0.1003,
+      "prompt_recording_failure": 0.0997375,
+      "discordance": 0.1792875,
+      "favorable_given_discordance": 0.4984312905249948,
+      "recording_risk_difference": -0.0005625,
+      "e_test_planning_power": {
+        "72": 3.2987192364581825e-05,
+        "96": 0.0001374086724224233,
+        "144": 0.0005116937216271554,
+        "192": 0.0008823150135413361
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.1,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 1.0,
+      "cross_method_same_question_latent_correlation": 0.5,
+      "cells": {
+        "favorable": 5389,
+        "unfavorable": 5454,
+        "both_success": 66584,
+        "both_failure": 2573
+      },
+      "contract_recording_failure": 0.1003375,
+      "prompt_recording_failure": 0.099525,
+      "discordance": 0.1355375,
+      "favorable_given_discordance": 0.4970026745365674,
+      "recording_risk_difference": -0.0008125,
+      "e_test_planning_power": {
+        "72": 5.528921081241878e-06,
+        "96": 3.4209573415010296e-05,
+        "144": 0.00021421486310038682,
+        "192": 0.0004951358093738101
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.1,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 1.0,
+      "cross_method_same_question_latent_correlation": 0.9,
+      "cells": {
+        "favorable": 2535,
+        "unfavorable": 2511,
+        "both_success": 69509,
+        "both_failure": 5445
+      },
+      "contract_recording_failure": 0.09945,
+      "prompt_recording_failure": 0.09975,
+      "discordance": 0.063075,
+      "favorable_given_discordance": 0.5023781212841855,
+      "recording_risk_difference": 0.0003,
+      "e_test_planning_power": {
+        "72": 8.325520747272345e-09,
+        "96": 1.5827840974557223e-07,
+        "144": 4.488403886638427e-06,
+        "192": 2.8560434842369944e-05
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.1,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 1.0,
+      "cross_method_same_question_latent_correlation": 1.0,
+      "cells": {
+        "favorable": 0,
+        "unfavorable": 0,
+        "both_success": 72003,
+        "both_failure": 7997
+      },
+      "contract_recording_failure": 0.0999625,
+      "prompt_recording_failure": 0.0999625,
+      "discordance": 0.0,
+      "favorable_given_discordance": null,
+      "recording_risk_difference": 0.0,
+      "e_test_planning_power": {
+        "72": 0.0,
+        "96": 0.0,
+        "144": 0.0,
+        "192": 0.0
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.12,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.0,
+      "cross_method_same_question_latent_correlation": 0.0,
+      "cells": {
+        "favorable": 15697,
+        "unfavorable": 20907,
+        "both_success": 9695,
+        "both_failure": 33701
+      },
+      "contract_recording_failure": 0.6826,
+      "prompt_recording_failure": 0.617475,
+      "discordance": 0.45755,
+      "favorable_given_discordance": 0.4288329144355808,
+      "recording_risk_difference": -0.065125,
+      "e_test_planning_power": {
+        "72": 4.114359004542552e-05,
+        "96": 3.6885194595660254e-05,
+        "144": 1.3578848471501618e-05,
+        "192": 4.638379969202873e-06
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.12,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.0,
+      "cross_method_same_question_latent_correlation": 0.5,
+      "cells": {
+        "favorable": 12365,
+        "unfavorable": 18024,
+        "both_success": 12945,
+        "both_failure": 36666
+      },
+      "contract_recording_failure": 0.683625,
+      "prompt_recording_failure": 0.6128875,
+      "discordance": 0.3798625,
+      "favorable_given_discordance": 0.4068906512224818,
+      "recording_risk_difference": -0.0707375,
+      "e_test_planning_power": {
+        "72": 1.3109457172084602e-05,
+        "96": 1.3048925947629434e-05,
+        "144": 5.917010191112376e-06,
+        "192": 1.6962985327631324e-06
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.12,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.0,
+      "cross_method_same_question_latent_correlation": 0.9,
+      "cells": {
+        "favorable": 5563,
+        "unfavorable": 11282,
+        "both_success": 19642,
+        "both_failure": 43513
+      },
+      "contract_recording_failure": 0.6849375,
+      "prompt_recording_failure": 0.61345,
+      "discordance": 0.2105625,
+      "favorable_given_discordance": 0.3302463639062036,
+      "recording_risk_difference": -0.0714875,
+      "e_test_planning_power": {
+        "72": 1.120087999945486e-07,
+        "96": 2.1717536514390988e-07,
+        "144": 1.9151155358244709e-07,
+        "192": 8.320716251650909e-08
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.12,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.0,
+      "cross_method_same_question_latent_correlation": 1.0,
+      "cells": {
+        "favorable": 0,
+        "unfavorable": 5602,
+        "both_success": 25351,
+        "both_failure": 49047
+      },
+      "contract_recording_failure": 0.6831125,
+      "prompt_recording_failure": 0.6130875,
+      "discordance": 0.070025,
+      "favorable_given_discordance": 0.0,
+      "recording_risk_difference": -0.070025,
+      "e_test_planning_power": {
+        "72": 0.0,
+        "96": 0.0,
+        "144": 0.0,
+        "192": 0.0
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.12,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.5,
+      "cross_method_same_question_latent_correlation": 0.0,
+      "cells": {
+        "favorable": 17190,
+        "unfavorable": 21543,
+        "both_success": 27737,
+        "both_failure": 13530
+      },
+      "contract_recording_failure": 0.4384125,
+      "prompt_recording_failure": 0.384,
+      "discordance": 0.4841625,
+      "favorable_given_discordance": 0.44380760591743473,
+      "recording_risk_difference": -0.0544125,
+      "e_test_planning_power": {
+        "72": 8.561672720917449e-05,
+        "96": 7.98191846525492e-05,
+        "144": 3.31059667755473e-05,
+        "192": 1.3175042397010477e-05
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.12,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.5,
+      "cross_method_same_question_latent_correlation": 0.5,
+      "cells": {
+        "favorable": 11888,
+        "unfavorable": 15756,
+        "both_success": 33231,
+        "both_failure": 19125
+      },
+      "contract_recording_failure": 0.4360125,
+      "prompt_recording_failure": 0.3876625,
+      "discordance": 0.34555,
+      "favorable_given_discordance": 0.4300390681522211,
+      "recording_risk_difference": -0.04835,
+      "e_test_planning_power": {
+        "72": 3.290672282801557e-05,
+        "96": 4.333038641232817e-05,
+        "144": 3.312228571480249e-05,
+        "192": 1.4646128818971117e-05
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.12,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.5,
+      "cross_method_same_question_latent_correlation": 0.9,
+      "cells": {
+        "favorable": 4566,
+        "unfavorable": 8613,
+        "both_success": 40597,
+        "both_failure": 26224
+      },
+      "contract_recording_failure": 0.4354625,
+      "prompt_recording_failure": 0.384875,
+      "discordance": 0.1647375,
+      "favorable_given_discordance": 0.34646027771454585,
+      "recording_risk_difference": -0.0505875,
+      "e_test_planning_power": {
+        "72": 8.260169686765043e-08,
+        "96": 2.774764961779587e-07,
+        "144": 5.728893846763183e-07,
+        "192": 4.805893470839629e-07
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.12,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.5,
+      "cross_method_same_question_latent_correlation": 1.0,
+      "cells": {
+        "favorable": 0,
+        "unfavorable": 3916,
+        "both_success": 45070,
+        "both_failure": 31014
+      },
+      "contract_recording_failure": 0.436625,
+      "prompt_recording_failure": 0.387675,
+      "discordance": 0.04895,
+      "favorable_given_discordance": 0.0,
+      "recording_risk_difference": -0.04895,
+      "e_test_planning_power": {
+        "72": 0.0,
+        "96": 0.0,
+        "144": 0.0,
+        "192": 0.0
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.12,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.9,
+      "cross_method_same_question_latent_correlation": 0.0,
+      "cells": {
+        "favorable": 12150,
+        "unfavorable": 14764,
+        "both_success": 49279,
+        "both_failure": 3807
+      },
+      "contract_recording_failure": 0.2321375,
+      "prompt_recording_failure": 0.1994625,
+      "discordance": 0.336425,
+      "favorable_given_discordance": 0.45143791335364497,
+      "recording_risk_difference": -0.032675,
+      "e_test_planning_power": {
+        "72": 7.541034026621448e-05,
+        "96": 0.0001148326104869844,
+        "144": 0.00011550997746284155,
+        "192": 6.720382084758385e-05
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.12,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.9,
+      "cross_method_same_question_latent_correlation": 0.5,
+      "cells": {
+        "favorable": 8257,
+        "unfavorable": 11061,
+        "both_success": 52943,
+        "both_failure": 7739
+      },
+      "contract_recording_failure": 0.235,
+      "prompt_recording_failure": 0.19995,
+      "discordance": 0.241475,
+      "favorable_given_discordance": 0.4274251992959934,
+      "recording_risk_difference": -0.03505,
+      "e_test_planning_power": {
+        "72": 1.164260939609999e-05,
+        "96": 2.572448763059727e-05,
+        "144": 3.8138242006367616e-05,
+        "192": 3.1693037674701754e-05
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.12,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.9,
+      "cross_method_same_question_latent_correlation": 0.9,
+      "cells": {
+        "favorable": 3091,
+        "unfavorable": 5764,
+        "both_success": 58116,
+        "both_failure": 13029
+      },
+      "contract_recording_failure": 0.2349125,
+      "prompt_recording_failure": 0.2015,
+      "discordance": 0.1106875,
+      "favorable_given_discordance": 0.3490683229813665,
+      "recording_risk_difference": -0.0334125,
+      "e_test_planning_power": {
+        "72": 7.548688750441112e-09,
+        "96": 5.28291519475164e-08,
+        "144": 3.2120590267747856e-07,
+        "192": 5.973076960146479e-07
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.12,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 0.9,
+      "cross_method_same_question_latent_correlation": 1.0,
+      "cells": {
+        "favorable": 0,
+        "unfavorable": 2520,
+        "both_success": 61452,
+        "both_failure": 16028
+      },
+      "contract_recording_failure": 0.23185,
+      "prompt_recording_failure": 0.20035,
+      "discordance": 0.0315,
+      "favorable_given_discordance": 0.0,
+      "recording_risk_difference": -0.0315,
+      "e_test_planning_power": {
+        "72": 0.0,
+        "96": 0.0,
+        "144": 0.0,
+        "192": 0.0
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.12,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 1.0,
+      "cross_method_same_question_latent_correlation": 0.0,
+      "cells": {
+        "favorable": 7185,
+        "unfavorable": 8589,
+        "both_success": 63308,
+        "both_failure": 918
+      },
+      "contract_recording_failure": 0.1188375,
+      "prompt_recording_failure": 0.1012875,
+      "discordance": 0.197175,
+      "favorable_given_discordance": 0.45549638645872953,
+      "recording_risk_difference": -0.01755,
+      "e_test_planning_power": {
+        "72": 1.3558664150949561e-05,
+        "96": 4.491119095374865e-05,
+        "144": 0.00011693184404016618,
+        "192": 0.00015023663966104038
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.12,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 1.0,
+      "cross_method_same_question_latent_correlation": 0.5,
+      "cells": {
+        "favorable": 5107,
+        "unfavorable": 6618,
+        "both_success": 65311,
+        "both_failure": 2964
+      },
+      "contract_recording_failure": 0.119775,
+      "prompt_recording_failure": 0.1008875,
+      "discordance": 0.1465625,
+      "favorable_given_discordance": 0.43556503198294244,
+      "recording_risk_difference": -0.0188875,
+      "e_test_planning_power": {
+        "72": 1.3103864195359308e-06,
+        "96": 6.602459144986989e-06,
+        "144": 2.8904479307335053e-05,
+        "192": 4.8882692544070726e-05
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.12,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 1.0,
+      "cross_method_same_question_latent_correlation": 0.9,
+      "cells": {
+        "favorable": 1945,
+        "unfavorable": 3407,
+        "both_success": 68587,
+        "both_failure": 6061
+      },
+      "contract_recording_failure": 0.11835,
+      "prompt_recording_failure": 0.100075,
+      "discordance": 0.0669,
+      "favorable_given_discordance": 0.3634155455904335,
+      "recording_risk_difference": -0.018275,
+      "e_test_planning_power": {
+        "72": 1.5476699549224896e-10,
+        "96": 2.5975424222946823e-09,
+        "144": 5.594873797119833e-08,
+        "192": 2.65287327128184e-07
+      }
+    },
+    {
+      "contract_answer_failure_probability": 0.12,
+      "prompt_answer_failure_probability": 0.1,
+      "within_method_latent_correlation": 1.0,
+      "cross_method_same_question_latent_correlation": 1.0,
+      "cells": {
+        "favorable": 0,
+        "unfavorable": 1595,
+        "both_success": 70236,
+        "both_failure": 8169
+      },
+      "contract_recording_failure": 0.12205,
+      "prompt_recording_failure": 0.1021125,
+      "discordance": 0.0199375,
+      "favorable_given_discordance": 0.0,
+      "recording_risk_difference": -0.0199375,
+      "e_test_planning_power": {
+        "72": 0.0,
+        "96": 0.0,
+        "144": 0.0,
+        "192": 0.0
+      }
+    }
+  ],
+  "reserve_rows": [
+    {
+      "valid_per_family": 12,
+      "invalid_rate": 0.0,
+      "completion_with_four_reserves": 1.0,
+      "reserves_per_family_for_95": 0,
+      "reserves_per_family_for_99": 0
+    },
+    {
+      "valid_per_family": 12,
+      "invalid_rate": 0.05,
+      "completion_with_four_reserves": 0.9948671422008472,
+      "reserves_per_family_for_95": 3,
+      "reserves_per_family_for_99": 4
+    },
+    {
+      "valid_per_family": 12,
+      "invalid_rate": 0.1,
+      "completion_with_four_reserves": 0.9022159658368214,
+      "reserves_per_family_for_95": 5,
+      "reserves_per_family_for_99": 6
+    },
+    {
+      "valid_per_family": 12,
+      "invalid_rate": 0.2,
+      "completion_with_four_reserves": 0.25871325707494763,
+      "reserves_per_family_for_95": 9,
+      "reserves_per_family_for_99": 10
+    },
+    {
+      "valid_per_family": 12,
+      "invalid_rate": 0.3,
+      "completion_with_four_reserves": 0.008293155724594558,
+      "reserves_per_family_for_95": 13,
+      "reserves_per_family_for_99": 15
+    },
+    {
+      "valid_per_family": 16,
+      "invalid_rate": 0.0,
+      "completion_with_four_reserves": 1.0,
+      "reserves_per_family_for_95": 0,
+      "reserves_per_family_for_99": 0
+    },
+    {
+      "valid_per_family": 16,
+      "invalid_rate": 0.05,
+      "completion_with_four_reserves": 0.9846553951267104,
+      "reserves_per_family_for_95": 4,
+      "reserves_per_family_for_99": 5
+    },
+    {
+      "valid_per_family": 16,
+      "invalid_rate": 0.1,
+      "completion_with_four_reserves": 0.7673552326635944,
+      "reserves_per_family_for_95": 6,
+      "reserves_per_family_for_99": 7
+    },
+    {
+      "valid_per_family": 16,
+      "invalid_rate": 0.2,
+      "completion_with_four_reserves": 0.062314348876970425,
+      "reserves_per_family_for_95": 10,
+      "reserves_per_family_for_99": 12
+    },
+    {
+      "valid_per_family": 16,
+      "invalid_rate": 0.3,
+      "completion_with_four_reserves": 0.00017950106493827176,
+      "reserves_per_family_for_95": 16,
+      "reserves_per_family_for_99": 18
+    },
+    {
+      "valid_per_family": 24,
+      "invalid_rate": 0.0,
+      "completion_with_four_reserves": 1.0,
+      "reserves_per_family_for_95": 0,
+      "reserves_per_family_for_99": 0
+    },
+    {
+      "valid_per_family": 24,
+      "invalid_rate": 0.05,
+      "completion_with_four_reserves": 0.9317740833494118,
+      "reserves_per_family_for_95": 5,
+      "reserves_per_family_for_99": 6
+    },
+    {
+      "valid_per_family": 24,
+      "invalid_rate": 0.1,
+      "completion_with_four_reserves": 0.3986427293380056,
+      "reserves_per_family_for_95": 8,
+      "reserves_per_family_for_99": 9
+    },
+    {
+      "valid_per_family": 24,
+      "invalid_rate": 0.2,
+      "completion_with_four_reserves": 0.0009748362576413959,
+      "reserves_per_family_for_95": 14,
+      "reserves_per_family_for_99": 16
+    },
+    {
+      "valid_per_family": 24,
+      "invalid_rate": 0.3,
+      "completion_with_four_reserves": 1.138014974278406e-08,
+      "reserves_per_family_for_95": 21,
+      "reserves_per_family_for_99": 24
+    },
+    {
+      "valid_per_family": 32,
+      "invalid_rate": 0.0,
+      "completion_with_four_reserves": 1.0,
+      "reserves_per_family_for_95": 0,
+      "reserves_per_family_for_99": 0
+    },
+    {
+      "valid_per_family": 32,
+      "invalid_rate": 0.05,
+      "completion_with_four_reserves": 0.8208722726062399,
+      "reserves_per_family_for_95": 6,
+      "reserves_per_family_for_99": 7
+    },
+    {
+      "valid_per_family": 32,
+      "invalid_rate": 0.1,
+      "completion_with_four_reserves": 0.12893887750804087,
+      "reserves_per_family_for_95": 9,
+      "reserves_per_family_for_99": 11
+    },
+    {
+      "valid_per_family": 32,
+      "invalid_rate": 0.2,
+      "completion_with_four_reserves": 4.175726235726161e-06,
+      "reserves_per_family_for_95": 17,
+      "reserves_per_family_for_99": 19
+    },
+    {
+      "valid_per_family": 32,
+      "invalid_rate": 0.3,
+      "completion_with_four_reserves": 1.2922475180067563e-13,
+      "reserves_per_family_for_95": 26,
+      "reserves_per_family_for_99": 29
+    }
+  ]
+}

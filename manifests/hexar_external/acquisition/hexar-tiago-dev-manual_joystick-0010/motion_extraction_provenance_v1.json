@@ -1,0 +1,88 @@
+{
+  "schema": "hexar-native-motion-extraction-provenance/v1",
+  "phase": "development_only",
+  "extractor_sha256": "753dc720919252484e56f0815a05792cbc882eee5eb305b4eae3754d22e269f2",
+  "bag_files": [
+    {
+      "file": "raw_0.db3",
+      "sha256": "8fee40c3844b6c99dfd8b479d5b780c3916a20622a652ee24442b1577a0c3283"
+    }
+  ],
+  "bag_metadata_sha256": "a7bda1ff277eb92e1b5518ca772039abc448c08e87536fe26f027836ed1a7bc9",
+  "topic_provenance": {
+    "/mobile_base_controller/odom": {
+      "expected_type": "nav_msgs/msg/Odometry",
+      "recorded_type": "nav_msgs/msg/Odometry",
+      "messages": 1843,
+      "availability": "present",
+      "receipt_ns_min": 1790853324132691702,
+      "receipt_ns_max": 1790853368341173501,
+      "measurement_stamp_ns_min": 3805000000,
+      "measurement_stamp_ns_max": 40665000000
+    },
+    "/cmd_vel": {
+      "expected_type": "geometry_msgs/msg/Twist",
+      "recorded_type": "geometry_msgs/msg/Twist",
+      "messages": 723,
+      "availability": "present",
+      "receipt_ns_min": 1790853327503468197,
+      "receipt_ns_max": 1790853363557196988,
+      "measurement_stamp_ns_min": null,
+      "measurement_stamp_ns_max": null
+    },
+    "/mobile_base_controller/cmd_vel_out": {
+      "expected_type": "geometry_msgs/msg/TwistStamped",
+      "recorded_type": "geometry_msgs/msg/TwistStamped",
+      "messages": 3678,
+      "availability": "present",
+      "receipt_ns_min": 1790853324127057883,
+      "receipt_ns_max": 1790853368339441983,
+      "measurement_stamp_ns_min": 3795000000,
+      "measurement_stamp_ns_max": 40665000000
+    },
+    "/navigate_to_pose/_action/status": {
+      "expected_type": "action_msgs/msg/GoalStatusArray",
+      "recorded_type": "action_msgs/msg/GoalStatusArray",
+      "messages": 3,
+      "availability": "present",
+      "receipt_ns_min": 1790853327342341215,
+      "receipt_ns_max": 1790853362377574287,
+      "measurement_stamp_ns_min": null,
+      "measurement_stamp_ns_max": null
+    },
+    "/goal_pose": {
+      "expected_type": "geometry_msgs/msg/PoseStamped",
+      "recorded_type": null,
+      "messages": 0,
+      "availability": "unavailable",
+      "receipt_ns_min": null,
+      "receipt_ns_max": null,
+      "measurement_stamp_ns_min": null,
+      "measurement_stamp_ns_max": null
+    },
+    "/hexar_acquisition/navigation_goal": {
+      "expected_type": "geometry_msgs/msg/PoseStamped",
+      "recorded_type": "geometry_msgs/msg/PoseStamped",
+      "messages": 1,
+      "availability": "present",
+      "receipt_ns_min": 1790853327341712518,
+      "receipt_ns_max": 1790853327341712518,
+      "measurement_stamp_ns_min": 6650000000,
+      "measurement_stamp_ns_max": 6650000000
+    }
+  },
+  "private_plan_family_seed_or_episode_report_read": false,
+  "missing_goal_inferred": false,
+  "numeric_validation": "all selected xyz/quaternion values finite; no rounding or winsorization",
+  "limitations": [
+    "odometry is controller-estimated motion, not independent ground truth",
+    "cmd_vel_out is controller output command, not proof of applied wheel torque or displacement",
+    "unstamped input commands have bag receipt timestamps only",
+    "no wall/simulation clock conversion or TF frame transform is inferred",
+    "action status is software execution state, not proof of reaching a measured physical goal",
+    "goal_pose topic represents a published pose, not proof of accepted action goal; goal publication provenance must be preserved",
+    "no goal/status is fabricated when an action service was not recorded"
+  ],
+  "model_or_judge_calls": 0,
+  "normalized_events_sha256": "52aa2a1153158daa9b34847a2da3935cd7433fac55cbc0cb3a94368898d446c6"
+}

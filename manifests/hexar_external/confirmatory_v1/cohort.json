@@ -1,0 +1,107 @@
+{
+  "schema": "hexar-confirmatory-cohort/v1",
+  "status": "NOT_MATERIALIZED",
+  "provenance": "new HEXAR-compatible independently generated episodes required",
+  "families": [
+    "charging",
+    "dynamic_env",
+    "localization",
+    "manual_joystick",
+    "obstacle",
+    "success"
+  ],
+  "proposed_valid_n": null,
+  "valid_per_family": null,
+  "maximum_attempts_per_family": null,
+  "candidate_reserve": null,
+  "records": [],
+  "generation_process": null,
+  "simulator_or_robot_version": {
+    "stack": "PAL TIAGo no-arm / ROS2 Humble / Gazebo Classic / Nav2",
+    "image_id": "sha256:4eea187f76d80c5750e167347b6994d0d5e12a9c1183ea27a2f991187f3b9cbd",
+    "qualification": "DEVELOPMENT_ONLY"
+  },
+  "seeds": null,
+  "episode_plan_sha256": null,
+  "independence_attestation": null,
+  "sampling_frame": {
+    "path": "manifests/hexar_external/acquisition/sampling_frame_enumeration_v2.json",
+    "sha256": "7975e6f9eb09e4349c747e9695fe9671d38dfd16edff17cb8bed84f7cfca643b",
+    "status": "ENUMERATED_NOT_FULLY_QUALIFIED"
+  },
+  "family_definitions": {
+    "success": {
+      "condition": "Nominal unmodified static navigation; failure remains valid.",
+      "outcome_success_required": false
+    },
+    "obstacle": {
+      "condition": "Static 0.55x0.65x1.2 m collision box at requested goal; measured pre-goal pose.",
+      "outcome_failure_required": false
+    },
+    "dynamic_env": {
+      "condition": "Seeded midpoint lateral kinematic sine trajectory; measured pre-goal setup; native simulated time.",
+      "outcome_failure_required": false
+    },
+    "localization": {
+      "condition": "Five accepted and read-back AMCL sensor-model settings before goal; actual estimates/logs only.",
+      "high_covariance_required": false
+    },
+    "manual_joystick": {
+      "condition": "Simulated supervisor manual-priority Bool and zero joystick input with actual mux consumer.",
+      "actual_human_operation": false
+    },
+    "charging": {
+      "condition": "Simulated supervisor charging-interlock Bool with actual mux consumer.",
+      "physical_battery_charging": false
+    }
+  },
+  "metadata_not_method_visible": [
+    "family",
+    "hidden_intervention",
+    "scenario_truth",
+    "original_answer",
+    "development_result"
+  ],
+  "episode_plan_path": null,
+  "historical_family_query_lists": {
+    "charging": [
+      "go to the kitchen + bring this coffee to the living room",
+      "go to the kitchen + fetch me a book from the living room",
+      "go to the kitchen + go to the living room and bring me a bottle of water"
+    ],
+    "dynamic_env": [
+      "go to the kitchen + bring this coffee to the living room",
+      "go to the kitchen + fetch me a book from the living room",
+      "go to the kitchen + go to the living room and bring me a bottle of water"
+    ],
+    "localization": [
+      "go to the kitchen + bring this coffee to the living room",
+      "go to the kitchen + fetch me a book from the living room",
+      "go to the kitchen + go to the living room and bring me a bottle of water"
+    ],
+    "manual_joystick": [
+      "go to the kitchen + bring this coffee to the living room",
+      "go to the kitchen + fetch me a book from the living room",
+      "go to the kitchen + go to the living room and bring me a bottle of water"
+    ],
+    "obstacle": [
+      "go to the kitchen + bring this coffee to the living room",
+      "go to the kitchen + fetch me a book from the living room",
+      "go to the kitchen + go to the living room and bring me a bottle of water"
+    ],
+    "success": [
+      "go to the kitchen + bring this coffee to the living room",
+      "go to the kitchen + fetch me a book from the living room",
+      "go to the kitchen + go to the living room and bring me a bottle of water"
+    ]
+  },
+  "population_definition_candidate": {
+    "path": "docs/hexar_external/confirmatory_v1/SAMPLING_FAMILY_POPULATION.md",
+    "sha256": "393c52a3287efd202d65c05c609ac766c41afcde646540d65983caea24de3100",
+    "status": "CANDIDATE_NOT_FROZEN"
+  },
+  "development_acquisition_exclusions": {
+    "path": "manifests/hexar_external/confirmatory_v1/development_exposure_v16.json",
+    "sha256": "daebd18ad5e41283d708c1813b574d3beb4e3f657e301c0ce75245dc70b41329"
+  }
+}

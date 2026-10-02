@@ -1,0 +1,135 @@
+{
+  "schema": "hexar-development-episode-runtime/v1",
+  "phase": "development_only",
+  "family_hidden": "manual_joystick",
+  "sampling_hidden": {
+    "profile": "home_top_room_clearance_v4_development",
+    "map_yaml_sha256": "084cab10306856e084b5de6063dcc4103fa9fa557c300b64778d40c0152415a2",
+    "map_pgm_sha256": "3a8c35199fb7a50ab905766a1f1f07832bf4b8627a68802e0c7ebc3f22251a2c",
+    "start_xy": [
+      -5.664999999999999,
+      -0.47499999999999964
+    ],
+    "start_yaw": 1.5109966024755108,
+    "goal_xy": [
+      -3.414999999999999,
+      1.625
+    ],
+    "goal_yaw": -0.6893123455852912,
+    "candidate_start_n": 6597,
+    "candidate_goal_n": 2696,
+    "required_clearance_m": 0.6,
+    "distance_m": 3.0777426793024785,
+    "sampling_bounds_xy": [
+      -6,
+      1.2,
+      -0.5,
+      2.0
+    ]
+  },
+  "measured_reset_error_m": 1.4397498847787593e-05,
+  "reset_measurements_hidden": [
+    {
+      "x": -5.66500002622225,
+      "y": -0.47500074639777107,
+      "z": -0.0006378574999298114,
+      "yaw_rad": 1.5109964086523233,
+      "quaternion_xyzw": [
+        -3.3133969738121537e-06,
+        4.689413719398829e-06,
+        0.6856514116143428,
+        0.7279300390273021
+      ],
+      "error_m": 7.468582460108592e-07,
+      "heading_error_rad": 1.9382318749983085e-07,
+      "position_in_tolerance": true,
+      "heading_in_tolerance": true,
+      "in_tolerance": true,
+      "source": "Gazebo GetEntityState world pose; reset only, not goal arrival"
+    },
+    {
+      "x": -5.665000026240318,
+      "y": -0.47501439269168383,
+      "z": -0.0014429322833640068,
+      "yaw_rad": 1.5109964070618935,
+      "quaternion_xyzw": [
+        -8.316299112702229e-05,
+        0.00011161017433805956,
+        0.6856514027993418,
+        0.727930034046117
+      ],
+      "error_m": 1.4392715604441605e-05,
+      "heading_error_rad": 1.9541361728769857e-07,
+      "position_in_tolerance": true,
+      "heading_in_tolerance": true,
+      "in_tolerance": true,
+      "source": "Gazebo GetEntityState world pose; reset only, not goal arrival"
+    },
+    {
+      "x": -5.665000026361382,
+      "y": -0.47501439747471397,
+      "z": -0.001474182946888225,
+      "yaw_rad": 1.5109964144229693,
+      "quaternion_xyzw": [
+        -0.0001368111467860246,
+        0.00020167826999414784,
+        0.6856513865915055,
+        0.7279300218247159
+      ],
+      "error_m": 1.4397498847787593e-05,
+      "heading_error_rad": 1.880525415387524e-07,
+      "position_in_tolerance": true,
+      "heading_in_tolerance": true,
+      "in_tolerance": true,
+      "source": "Gazebo GetEntityState world pose; reset only, not goal arrival"
+    }
+  ],
+  "measured_reset_heading_error_rad": 1.880525415387524e-07,
+  "intervention_observations_hidden": [],
+  "dynamic_trajectory_hidden": null,
+  "indicator_consumers_hidden": {
+    "/power/is_charging": [
+      {
+        "node_name": "twist_mux",
+        "node_namespace": "/",
+        "topic_type": "std_msgs/msg/Bool"
+      },
+      {
+        "node_name": "rosbag2_recorder",
+        "node_namespace": "/",
+        "topic_type": "std_msgs/msg/Bool"
+      }
+    ],
+    "/joy_priority": [
+      {
+        "node_name": "twist_mux",
+        "node_namespace": "/",
+        "topic_type": "std_msgs/msg/Bool"
+      },
+      {
+        "node_name": "rosbag2_recorder",
+        "node_namespace": "/",
+        "topic_type": "std_msgs/msg/Bool"
+      }
+    ]
+  },
+  "indicator_prelude_publications_per_topic": 3,
+  "localization_parameters_accepted": [],
+  "localization_parameters_observed_hidden": [],
+  "nomotion_update_responses": 0,
+  "seed_hidden": 2966860131,
+  "goal_hidden": [
+    -3.414999999999999,
+    1.625
+  ],
+  "accepted": true,
+  "terminal_action_status": 5,
+  "timeout": true,
+  "localization_intervention_applied": false,
+  "dynamic_move_requests": 0,
+  "dynamic_moves_confirmed_success": 0,
+  "dynamic_moves_confirmed_failure": 0,
+  "dynamic_moves_unresolved": 0,
+  "semantic_outputs_generated": false,
+  "qualification_complete": false
+}

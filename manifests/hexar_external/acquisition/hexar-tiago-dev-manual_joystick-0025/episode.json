@@ -1,0 +1,135 @@
+{
+  "schema": "hexar-development-episode-runtime/v1",
+  "phase": "development_only",
+  "family_hidden": "manual_joystick",
+  "sampling_hidden": {
+    "profile": "home_top_room_clearance_v4_development",
+    "map_yaml_sha256": "084cab10306856e084b5de6063dcc4103fa9fa557c300b64778d40c0152415a2",
+    "map_pgm_sha256": "3a8c35199fb7a50ab905766a1f1f07832bf4b8627a68802e0c7ebc3f22251a2c",
+    "start_xy": [
+      -5.614999999999999,
+      -0.22499999999999964
+    ],
+    "start_yaw": -0.4143935895429789,
+    "goal_xy": [
+      -2.214999999999999,
+      1.2750000000000004
+    ],
+    "goal_yaw": -3.1197810851759415,
+    "candidate_start_n": 6597,
+    "candidate_goal_n": 2634,
+    "required_clearance_m": 0.6,
+    "distance_m": 3.7161808352124095,
+    "sampling_bounds_xy": [
+      -6,
+      1.2,
+      -0.5,
+      2.0
+    ]
+  },
+  "measured_reset_error_m": 8.305873751011836e-06,
+  "reset_measurements_hidden": [
+    {
+      "x": -5.614999951871591,
+      "y": -0.22500006905345046,
+      "z": -0.00047597773853463865,
+      "yaw_rad": -0.414393904127765,
+      "quaternion_xyzw": [
+        9.290341271548102e-07,
+        2.233569844359829e-06,
+        -0.20571761695727048,
+        0.9786113948179687
+      ],
+      "error_m": 8.4170794931543e-08,
+      "heading_error_rad": 3.14584786109684e-07,
+      "position_in_tolerance": true,
+      "heading_in_tolerance": true,
+      "in_tolerance": true,
+      "source": "Gazebo GetEntityState world pose; reset only, not goal arrival"
+    },
+    {
+      "x": -5.615008302732556,
+      "y": -0.22500006691972863,
+      "z": -0.0014375966697598719,
+      "yaw_rad": -0.4143939085946434,
+      "quaternion_xyzw": [
+        5.3794456095014905e-05,
+        0.000167465271928126,
+        -0.20571761907504177,
+        0.9786113785684466
+      ],
+      "error_m": 8.303002237524014e-06,
+      "heading_error_rad": 3.190516645323882e-07,
+      "position_in_tolerance": true,
+      "heading_in_tolerance": true,
+      "in_tolerance": true,
+      "source": "Gazebo GetEntityState world pose; reset only, not goal arrival"
+    },
+    {
+      "x": -5.615008305611842,
+      "y": -0.2250000659597272,
+      "z": -0.0014178324528257291,
+      "yaw_rad": -0.4143939037511375,
+      "quaternion_xyzw": [
+        8.347612557236198e-05,
+        0.00022708012027591024,
+        -0.20571761894592655,
+        0.9786113644964348
+      ],
+      "error_m": 8.305873751011836e-06,
+      "heading_error_rad": 3.1420815860272455e-07,
+      "position_in_tolerance": true,
+      "heading_in_tolerance": true,
+      "in_tolerance": true,
+      "source": "Gazebo GetEntityState world pose; reset only, not goal arrival"
+    }
+  ],
+  "measured_reset_heading_error_rad": 3.1420815860272455e-07,
+  "intervention_observations_hidden": [],
+  "dynamic_trajectory_hidden": null,
+  "indicator_consumers_hidden": {
+    "/power/is_charging": [
+      {
+        "node_name": "rosbag2_recorder",
+        "node_namespace": "/",
+        "topic_type": "std_msgs/msg/Bool"
+      },
+      {
+        "node_name": "twist_mux",
+        "node_namespace": "/",
+        "topic_type": "std_msgs/msg/Bool"
+      }
+    ],
+    "/joy_priority": [
+      {
+        "node_name": "rosbag2_recorder",
+        "node_namespace": "/",
+        "topic_type": "std_msgs/msg/Bool"
+      },
+      {
+        "node_name": "twist_mux",
+        "node_namespace": "/",
+        "topic_type": "std_msgs/msg/Bool"
+      }
+    ]
+  },
+  "indicator_prelude_publications_per_topic": 3,
+  "localization_parameters_accepted": [],
+  "localization_parameters_observed_hidden": [],
+  "nomotion_update_responses": 0,
+  "seed_hidden": 963077194,
+  "goal_hidden": [
+    -2.214999999999999,
+    1.2750000000000004
+  ],
+  "accepted": true,
+  "terminal_action_status": 5,
+  "timeout": true,
+  "localization_intervention_applied": false,
+  "dynamic_move_requests": 0,
+  "dynamic_moves_confirmed_success": 0,
+  "dynamic_moves_confirmed_failure": 0,
+  "dynamic_moves_unresolved": 0,
+  "semantic_outputs_generated": false,
+  "qualification_complete": false
+}

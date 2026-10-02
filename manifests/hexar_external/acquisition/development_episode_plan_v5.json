@@ -1,0 +1,83 @@
+{
+  "schema": "hexar-tiago-acquisition-plan/v1",
+  "phase": "development",
+  "master_seed": "hexar-tiago-development-qualification-2026-10-01-v5",
+  "status": "DEVELOPMENT_ONLY",
+  "cohort_type": "adapted simulated HEXAR external-validation benchmark",
+  "unit": "independently generated simulated robot episode",
+  "records": [
+    {
+      "episode_id": "hexar-tiago-dev-localization-0005",
+      "family": "localization",
+      "ordinal": 5,
+      "seed": 3832343618,
+      "role": "primary",
+      "status": "PLANNED_NOT_ACQUIRED",
+      "independent_simulator_process": true,
+      "raw_bag_sha256": null,
+      "semantic_outputs_generated": false
+    },
+    {
+      "episode_id": "hexar-tiago-dev-charging-0005",
+      "family": "charging",
+      "ordinal": 5,
+      "seed": 167985191,
+      "role": "primary",
+      "status": "PLANNED_NOT_ACQUIRED",
+      "independent_simulator_process": true,
+      "raw_bag_sha256": null,
+      "semantic_outputs_generated": false
+    },
+    {
+      "episode_id": "hexar-tiago-dev-dynamic_env-0005",
+      "family": "dynamic_env",
+      "ordinal": 5,
+      "seed": 248548940,
+      "role": "primary",
+      "status": "PLANNED_NOT_ACQUIRED",
+      "independent_simulator_process": true,
+      "raw_bag_sha256": null,
+      "semantic_outputs_generated": false
+    },
+    {
+      "episode_id": "hexar-tiago-dev-manual_joystick-0005",
+      "family": "manual_joystick",
+      "ordinal": 5,
+      "seed": 1303365268,
+      "role": "primary",
+      "status": "PLANNED_NOT_ACQUIRED",
+      "independent_simulator_process": true,
+      "raw_bag_sha256": null,
+      "semantic_outputs_generated": false
+    },
+    {
+      "episode_id": "hexar-tiago-dev-obstacle-0005",
+      "family": "obstacle",
+      "ordinal": 5,
+      "seed": 4219751048,
+      "role": "primary",
+      "status": "PLANNED_NOT_ACQUIRED",
+      "independent_simulator_process": true,
+      "raw_bag_sha256": null,
+      "semantic_outputs_generated": false
+    },
+    {
+      "episode_id": "hexar-tiago-dev-success-0005",
+      "family": "success",
+      "ordinal": 5,
+      "seed": 2765855798,
+      "role": "primary",
+      "status": "PLANNED_NOT_ACQUIRED",
+      "independent_simulator_process": true,
+      "raw_bag_sha256": null,
+      "semantic_outputs_generated": false
+    }
+  ],
+  "reserve_rule": "ordered within-family replacement only for frozen outcome-blind technical invalidity; no semantic replacement",
+  "development_changes": [
+    "same declared v4 collision-free start/goal and localization profile",
+    "Humble-native SetParameters service replaces unavailable AsyncParameterClient",
+    "native import preflight before acquiring episodes",
+    "bounded recorder shutdown on engineering failures"
+  ]
+}

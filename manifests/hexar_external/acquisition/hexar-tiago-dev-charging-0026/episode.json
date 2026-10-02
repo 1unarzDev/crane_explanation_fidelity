@@ -1,0 +1,135 @@
+{
+  "schema": "hexar-development-episode-runtime/v1",
+  "phase": "development_only",
+  "family_hidden": "charging",
+  "sampling_hidden": {
+    "profile": "home_top_room_clearance_v4_development",
+    "map_yaml_sha256": "084cab10306856e084b5de6063dcc4103fa9fa557c300b64778d40c0152415a2",
+    "map_pgm_sha256": "3a8c35199fb7a50ab905766a1f1f07832bf4b8627a68802e0c7ebc3f22251a2c",
+    "start_xy": [
+      -3.464999999999999,
+      1.625
+    ],
+    "start_yaw": -1.8883948780348867,
+    "goal_xy": [
+      0.8850000000000016,
+      1.0250000000000004
+    ],
+    "goal_yaw": 2.592273468770789,
+    "candidate_start_n": 6597,
+    "candidate_goal_n": 1953,
+    "required_clearance_m": 0.6,
+    "distance_m": 4.391184350491335,
+    "sampling_bounds_xy": [
+      -6,
+      1.2,
+      -0.5,
+      2.0
+    ]
+  },
+  "measured_reset_error_m": 1.1926232285673032e-05,
+  "reset_measurements_hidden": [
+    {
+      "x": -3.4650000591143644,
+      "y": 1.6250024165365362,
+      "z": -0.0009942156527747714,
+      "yaw_rad": -1.8883951268003705,
+      "quaternion_xyzw": [
+        1.4915662882986887e-05,
+        8.971785977024456e-06,
+        -0.8100266512650849,
+        0.586393062661303
+      ],
+      "error_m": 2.417259468702535e-06,
+      "heading_error_rad": 2.487654837679543e-07,
+      "position_in_tolerance": true,
+      "heading_in_tolerance": true,
+      "in_tolerance": true,
+      "source": "Gazebo GetEntityState world pose; reset only, not goal arrival"
+    },
+    {
+      "x": -3.4650000576334623,
+      "y": 1.6250119225848108,
+      "z": -0.0014731175413481568,
+      "yaw_rad": -1.888395130441454,
+      "quaternion_xyzw": [
+        0.0001718977841171297,
+        9.66663035205516e-05,
+        -0.8100266392727493,
+        0.5863930463224074
+      ],
+      "error_m": 1.192272410926682e-05,
+      "heading_error_rad": 2.5240656720271204e-07,
+      "position_in_tolerance": true,
+      "heading_in_tolerance": true,
+      "in_tolerance": true,
+      "source": "Gazebo GetEntityState world pose; reset only, not goal arrival"
+    },
+    {
+      "x": -3.465000056681069,
+      "y": 1.6250119260975926,
+      "z": -0.0015077473058814905,
+      "yaw_rad": -1.8883951248078819,
+      "quaternion_xyzw": [
+        0.00023978425629951725,
+        0.00011814147626014777,
+        -0.8100266287882764,
+        0.5863930330418343
+      ],
+      "error_m": 1.1926232285673032e-05,
+      "heading_error_rad": 2.4677299514941353e-07,
+      "position_in_tolerance": true,
+      "heading_in_tolerance": true,
+      "in_tolerance": true,
+      "source": "Gazebo GetEntityState world pose; reset only, not goal arrival"
+    }
+  ],
+  "measured_reset_heading_error_rad": 2.4677299514941353e-07,
+  "intervention_observations_hidden": [],
+  "dynamic_trajectory_hidden": null,
+  "indicator_consumers_hidden": {
+    "/power/is_charging": [
+      {
+        "node_name": "twist_mux",
+        "node_namespace": "/",
+        "topic_type": "std_msgs/msg/Bool"
+      },
+      {
+        "node_name": "rosbag2_recorder",
+        "node_namespace": "/",
+        "topic_type": "std_msgs/msg/Bool"
+      }
+    ],
+    "/joy_priority": [
+      {
+        "node_name": "twist_mux",
+        "node_namespace": "/",
+        "topic_type": "std_msgs/msg/Bool"
+      },
+      {
+        "node_name": "rosbag2_recorder",
+        "node_namespace": "/",
+        "topic_type": "std_msgs/msg/Bool"
+      }
+    ]
+  },
+  "indicator_prelude_publications_per_topic": 3,
+  "localization_parameters_accepted": [],
+  "localization_parameters_observed_hidden": [],
+  "nomotion_update_responses": 0,
+  "seed_hidden": 1191909925,
+  "goal_hidden": [
+    0.8850000000000016,
+    1.0250000000000004
+  ],
+  "accepted": true,
+  "terminal_action_status": 5,
+  "timeout": true,
+  "localization_intervention_applied": false,
+  "dynamic_move_requests": 0,
+  "dynamic_moves_confirmed_success": 0,
+  "dynamic_moves_confirmed_failure": 0,
+  "dynamic_moves_unresolved": 0,
+  "semantic_outputs_generated": false,
+  "qualification_complete": false
+}

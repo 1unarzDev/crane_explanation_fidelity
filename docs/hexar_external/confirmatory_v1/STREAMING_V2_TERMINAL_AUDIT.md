@@ -1,0 +1,9 @@
+# Prepared read-only V2 terminal audit
+
+`audit_streaming_development_v2.py` is a separate, read-only terminal reviewer for the declared six-family V20 streaming qualification. It refuses a live run without `report.json` and never recovers, closes or dispatches an attempt. The existing session remains the sole authorized execution; this reviewer creates no route to rerun failed work.
+
+After terminal closure it checks current and retained declared source bytes, the original raw reverification, exact pre-generation plans, all eighteen closed stages, raw transport/journal hashes, scored answer identity, blinded judge requests, disagreement-only C selection, alias expansion, whole-episode missingness mapping, cohort pointers and aggregate report accounting. It recomputes the declared development-screen result regardless of whether it passes. This is retained computational reproduction, not an independent human assessment or a hypothesis test.
+
+Four focused rejection checks pass for incomplete/live runs and confirmation metadata. Together with the timing-companion and conditional-family proof checks, nineteen tests pass using `uv run --no-project --with pytest --with pyyaml python -m pytest` on the three scoped test files. An initial test collection without PyYAML failed; supplying the required existing dependency corrected collection, without changing or restarting the running method/evaluator pipeline.
+
+At preparation time, three episodes had closed, and a separate read-only stage review verified 108 original method/judge attempts across nine stages, all valid. The fourth episode's method stage subsequently closed. These observations do not establish the terminal screen. No terminal review receipt is issued until all six episodes finish and the original terminal report reproduces. Provider qualification, H2 acquisition admission, scientific freeze and final N remain open.
