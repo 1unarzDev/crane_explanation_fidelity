@@ -47,6 +47,7 @@ def paired_report(rows):
         full_scheduled_observed_effect_bounds=[(worst[0]-worst[1])/n,(best[0]-best[1])/n],
         full_scheduled_conservative_mixture_evidence=low['evidence_exact'],
         exploratory_one_sided_e_value_derived_p=low['one_sided_p_value'],
+        exploratory_p_exact=low['p_exact'],
         independent_episode_95_interval_with_unknown_envelope=[low['one_sided_lower'],high['two_sided_interval'][1]],
         complete_case_stratified_bootstrap_95_interval=np.quantile(draw,[.025,.975]).tolist() if complete_n else None,
         inference_assumptions='Independent latent paired episode outcomes under fixed methods/instrument and balanced selected population; mean-effect null. Unknown mapping bounds pointwise. Provider/measurement drift and dependence can invalidate these assumptions.',
@@ -138,6 +139,9 @@ def collect(base=BASE):
                 unsupported=sum(j['unsupported_material'] is True for j in js),overlicensed=sum(j['overlicensed_specificity'] is True for j in js),
                 omission=sum(j['missing_required_unit'] is True for j in js),
                 useful_supported=sum(all(j[k] is False for k in ('unsupported_material','overlicensed_specificity','missing_required_unit')) for j in js),
+                useful_unknown=sum(any(j[k] is None for k in ('unsupported_material','overlicensed_specificity','missing_required_unit')) and not any(j[k] is True for k in ('unsupported_material','overlicensed_specificity','missing_required_unit')) for j in js),
+                unsupported_unknown=sum(j['unsupported_material'] is None for j in js),
+                omission_unknown=sum(j['missing_required_unit'] is None for j in js),
                 unresolved=sum(any(j[k] is None for k in ('unsupported_material','overlicensed_specificity','missing_required_unit')) for j in js)))
     return dict(schema='hexar-existing-v16-exploratory-results/v1',status='TERMINAL' if (base/'report.json').exists() else 'PARTIAL_SNAPSHOT',
         exploratory=True,confirmatory=False,agent_assessed=True,human_validated=False,alpha_consumed=0,

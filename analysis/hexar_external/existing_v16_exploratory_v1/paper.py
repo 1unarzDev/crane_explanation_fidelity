@@ -47,12 +47,15 @@ def make(results,output):
         for i,m in enumerate(methods):
             rs=[next(r for r in value['evidence_conditions'] if r['method']==m and r['condition']==cond) for cond in conditions]
             y=[100*r[field]/r['scheduled_cells'] for r in rs]
-            ax.bar(np.arange(3)+(i-.5)*.36,y,width=.36,label=m,color=('#287d8e','#d1783b')[i])
+            unknown_key='useful_unknown' if field=='useful_supported' else field+'_unknown'
+            upper=[100*(r['unmeasured_cells']+r[unknown_key])/r['scheduled_cells'] for r in rs]
+            ax.bar(np.arange(3)+(i-.5)*.36,y,width=.36,label=m,color=('#287d8e','#d1783b')[i],
+                yerr=np.array([np.zeros(3),upper]),capsize=2,error_kw=dict(elinewidth=.8))
         ax.set_xticks(np.arange(3),['Intact','Irrelevant\nremoved','Diagnostic\nremoved']);ax.set_title(title);ax.set_ylim(0,105);ax.spines[['top','right']].set_visible(False)
     axes[0].set_ylabel('% of scheduled answer cells');axes[0].legend(frameon=False,fontsize=8)
     fig.suptitle('Exploratory existing simulated episodes: scheduled independent N=36',fontsize=11)
     fig.tight_layout();fig.savefig(out/'evidence_conditions.svg');fig.savefig(out/'evidence_conditions.png',dpi=200);plt.close(fig)
-    (out/'figure_caption.md').write_text('Evidence-condition summaries of the fixed nine-cell battery. Bars show known outcomes divided by all scheduled answer cells (108 per method/condition), including unmeasured cells in the denominator. Categories can overlap; unknown labels do not become supported passes. Questions, masks and aliases remain clustered within 36 independent episodes. Irrelevant-removal aliases reuse identical answers/labels. See the flow table and results JSON for missingness. These answer-cell summaries are descriptive, without independent-answer inference.\n')
+    (out/'figure_caption.md').write_text('Evidence-condition summaries of the fixed nine-cell battery. Bars show known outcomes divided by all scheduled answer cells (108 per method/condition), including unmeasured cells in the denominator. Black lines show possible upper rates from unmeasured/unresolved labels, not sampling confidence intervals. Categories can overlap; unknown labels do not become supported passes. Questions, masks and aliases remain clustered within 36 independent episodes. Irrelevant-removal aliases reuse identical answers/labels. See the flow table and results JSON for missingness. These answer-cell summaries are descriptive, without independent-answer inference.\n')
 
 
 if __name__=='__main__':
