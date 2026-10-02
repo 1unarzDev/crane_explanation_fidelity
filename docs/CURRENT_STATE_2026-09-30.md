@@ -8,17 +8,17 @@
 
 > **CONFIRMATION FROZEN 2026-10-01T07:02:44Z:** `manifests/study/evidence-calibration-handoff-confirmation-freeze-v1.json` binds the B4v7-versus-unchanged-strong-B2 study before any confirmation semantic output. One-sidedalpha.01, first600 independent pairs with zero-discordance-only futility stop, otherwise1200; no early positive result. Two-look-adjusted overall95% interval, B4 mean episode useful coverage≥95% and maximum loss5 points. Development is closed at42 pairs, both0PrimaryFailures, coverage438/441 versus441/441, both judges agree. Ledger now .03 consumed and .02 protected replication available. Confirmation execution is running under `analysis/run_handoff_confirmation_pairs.py`; no outcome-dependent changes permitted.
 
-> **2026-10-01 scientific checkpoint:** [42-pair development result](EVIDENCE_CALIBRATION_RESPONSE_DEVELOPMENT_2026-09-30.md): conservative automated candidate-v4 scoring gives B2/B4v7 failures2/0, discordances2/0, B4 coverage441/441, B2 437/441. RD+4.76 points, conservative95% CI[-9.51,+17.98], descriptive one-sided p=.25. Both B2 flags hinge on qualified recovery/checker language; sensitivity can give0/0, so targeted candidate-v5 qualification is running before freeze. Two thousand fresh confirmation candidates and1600 protected replication candidates are prepared; physical collection extends to40. Confirmation semantic N=0; alpha .02 consumed/.01 available/.02 protected.
+> **2026-10-01 scientific checkpoint:** [42-pair development result](archive/2026-09-30/EVIDENCE_CALIBRATION_RESPONSE_DEVELOPMENT_2026-09-30.md): conservative automated candidate-v4 scoring gives B2/B4v7 failures2/0, discordances2/0, B4 coverage441/441, B2 437/441. RD+4.76 points, conservative95% CI[-9.51,+17.98], descriptive one-sided p=.25. Both B2 flags hinge on qualified recovery/checker language; sensitivity can give0/0, so targeted candidate-v5 qualification is running before freeze. Two thousand fresh confirmation candidates and1600 protected replication candidates are prepared; physical collection extends to40. Confirmation semantic N=0; alpha .02 consumed/.01 available/.02 protected.
 
-> **Latest development update:** [Varied response development](EVIDENCE_CALIBRATION_RESPONSE_DEVELOPMENT_2026-09-30.md): 24 new independent configurations collected, 23 technically admitted, 20 complete pairs. B2/B4 v7 failures1/0, discordances1/0, both useful coverage210/210. Development RD+5 points, conservative95% CI[-19.61,+27.93], descriptive one-sided p=.5. Final candidate episode-grouped scoring of42 primary development pairs is running. Confirmation remains unfrozen, semantic N=0; discovery/replication alpha unspent.
+> **Latest development update:** [Varied response development](archive/2026-09-30/EVIDENCE_CALIBRATION_RESPONSE_DEVELOPMENT_2026-09-30.md): 24 new independent configurations collected, 23 technically admitted, 20 complete pairs. B2/B4 v7 failures1/0, discordances1/0, both useful coverage210/210. Development RD+5 points, conservative95% CI[-19.61,+27.93], descriptive one-sided p=.5. Final candidate episode-grouped scoring of42 primary development pairs is running. Confirmation remains unfrozen, semantic N=0; discovery/replication alpha unspent.
 
-> **Superseding research handoff checkpoint:** See [completed development results](EVIDENCE_CALIBRATION_HANDOFF_RESULTS_2026-09-30.md). Primary N=22 (11/11 strata); B2/B4 v5 failures0/0, discordances0/0, coverage229/231 versus231/231, risk difference0 with conservative95% CI±12.73 points and descriptive p=1. Four fresh physical candidates are collected and reserved from development. No confirmation was launched because no superiority effect was observed; alpha remains .02 consumed/.01 available/.02 protected. The user authorizes development measurement iteration and a minimum scientific freeze, superseding the development stop rules and19-gate objective in the historical checkpoint below. Original failed canary and old answers remain retained.
+> **Superseding research handoff checkpoint:** See [completed development results](archive/2026-09-30/EVIDENCE_CALIBRATION_HANDOFF_RESULTS_2026-09-30.md). Primary N=22 (11/11 strata); B2/B4 v5 failures0/0, discordances0/0, coverage229/231 versus231/231, risk difference0 with conservative95% CI±12.73 points and descriptive p=1. Four fresh physical candidates are collected and reserved from development. No confirmation was launched because no superiority effect was observed; alpha remains .02 consumed/.01 available/.02 protected. The user authorizes development measurement iteration and a minimum scientific freeze, superseding the development stop rules and19-gate objective in the historical checkpoint below. Original failed canary and old answers remain retained.
 
 # Evidence-calibration current-state checkpoint — 2026-09-30
 
 ## Static repository-source addendum after `7cbee314` — 2026-09-30
 
-A [separate coordinator v6](REPOSITORY_SOURCE_BINDING_2026-09-30.md) binds transitive
+A [separate coordinator v6](archive/2026-09-30/REPOSITORY_SOURCE_BINDING_2026-09-30.md) binds transitive
 static repository imports and the explicitly path-launched namespace wrapper, expanding
 six selected hashes to 30 files without changing local tool/CPU/response implementations.
 Forty-nine distinct checks pass across two invocations (46, 3). A retained shared-plan
@@ -37,7 +37,7 @@ freshness and required five-method episode-level comparative reporting are uncha
 
 ## Installed-client response-egress addendum after `e1ecd8b4` — 2026-09-30
 
-A [separate observer v9/writer v3/coordinator v5](INSTALLED_CLIENT_RESPONSE_EGRESS_2026-09-30.md)
+A [separate observer v9/writer v3/coordinator v5](archive/2026-09-30/INSTALLED_CLIENT_RESPONSE_EGRESS_2026-09-30.md)
 repairs observer v8's key-order wire reconstruction failure. Preserve v8 source/tests,
 68 passes/six failures and a read-only retained replay; initial temporary client raw
 records were deleted. Exact framed bytes are retained before transport/budget denial
@@ -60,7 +60,7 @@ manuscript passes mechanical packaging and 220 numeric assertions only.
 
 ## Response egress addendum after `1e9ae2e6` — 2026-09-30
 
-A [separate repaired egress ledger/coordinator v4](RESPONSE_EGRESS_2026-09-30.md) binds explicit
+A [separate repaired egress ledger/coordinator v4](archive/2026-09-30/RESPONSE_EGRESS_2026-09-30.md) binds explicit
 response-byte total in the development plan and accounts complete encoded local MCP
 responses/framing. Exact short writes advance only the unsent suffix; flush/settlement
 must succeed before settlement. Uncertain write/storage closes admission with pending
@@ -83,7 +83,7 @@ nineteen open conditions and unanswered measurement reopening remain.
 
 ## Installed-client plan-bound owner addendum after `60c52cfb` — 2026-09-30
 
-A [separate observer v7](INSTALLED_CLIENT_PLANNED_OWNER_2026-09-30.md) routes through
+A [separate observer v7](archive/2026-09-30/INSTALLED_CLIENT_PLANNED_OWNER_2026-09-30.md) routes through
 coordinator v2 and unchanged MCP v5. Seventy-four focused checks in two invocations
 and five separately retained pre-bound CLI 0.159.2 offline observations pass.
 Read-only audits verify plan bytes, configuration membership, paths and selected
@@ -102,7 +102,7 @@ spending or P11 freeze. N=0, nineteen open conditions and unanswered reopening r
 
 ## Plan-membership addendum after `13122149` — 2026-09-30
 
-A [separate condition coordinator v2](PLANNED_CONDITION_SESSION_2026-09-30.md)
+A [separate condition coordinator v2](archive/2026-09-30/PLANNED_CONDITION_SESSION_2026-09-30.md)
 checks supplied development plan bytes, selected source hashes, one campaign/registry/
 plan path and exact allowed scope/configuration membership before ownership. Its
 configuration hash excludes only the plan digest to avoid a cycle; budgets and all
@@ -121,7 +121,7 @@ measurement reopening remain. The scientific reporting plan is unchanged.
 
 ## Installed-client condition-owner addendum after `4eece4b0` — 2026-09-30
 
-A [separate observer v6](INSTALLED_CLIENT_CONDITION_OWNER_2026-09-30.md) routes
+A [separate observer v6](archive/2026-09-30/INSTALLED_CLIENT_CONDITION_OWNER_2026-09-30.md) routes
 through the condition coordinator and unchanged MCP v5. Sixty-nine focused checks
 across two final-source invocations and five separate pre-bound offline observations
 pass on CLI 0.159.2. Read-only ownership auditing binds scope/configuration/source/
@@ -142,7 +142,7 @@ remain.
 
 ## Condition ownership addendum after `8d656369` — 2026-09-30
 
-A [separate guarded coordinator](CONDITION_SESSION_OWNERSHIP_2026-09-30.md) reserves
+A [separate guarded coordinator](archive/2026-09-30/CONDITION_SESSION_OWNERSHIP_2026-09-30.md) reserves
 one MCP v5 session per declared campaign/episode/condition/method in one operator
 registry before server creation. Budgets, record paths and source/config changes
 cannot alter that ownership key. Interrupted storage and construction consume
@@ -161,7 +161,7 @@ measurement reopening remain.
 
 ## Installed-client serial CPU addendum after `a3f6be22` — 2026-09-30
 
-A [separate observer v5](INSTALLED_CLIENT_COMPUTATION_CPU_MCP_2026-09-30.md)
+A [separate observer v5](archive/2026-09-30/INSTALLED_CLIENT_COMPUTATION_CPU_MCP_2026-09-30.md)
 verifies MCP v5/broker v7/ledger v2 through offline installed-client direct RPC.
 Fifty-nine focused checks across two invocations and five separately retained
 pre-bound observations pass on CLI 0.159.2. Exact inventories/Unicode/literals,
@@ -180,7 +180,7 @@ unanswered measurement reopening remain.
 
 ## Computation CPU MCP addendum after `1311fcc8` — 2026-09-30
 
-A [separate MCP v5](COMPUTATION_CPU_MCP_2026-09-30.md) selects broker v7/ledger v2,
+A [separate MCP v5](archive/2026-09-30/COMPUTATION_CPU_MCP_2026-09-30.md) selects broker v7/ledger v2,
 requires and binds an explicit session computation total, and retains an operator
 terminal snapshot. Thirty-five focused checks and five fixed stdio exchanges plus
 one separate injected auditor-fault flow pass. Failed work is charged; exhausted
@@ -198,7 +198,7 @@ unchanged; the nine-page manuscript passes mechanical checks only.
 
 ## Computation CPU ledger addendum after `d2f4007c` — 2026-09-30
 
-A [separate ledger v2/broker v7](COMPUTATION_CPU_LEDGER_2026-09-30.md) charges actual
+A [separate ledger v2/broker v7](archive/2026-09-30/COMPUTATION_CPU_LEDGER_2026-09-30.md) charges actual
 service CPU across serial computation calls, including failed work and overshoot.
 Exclusive reservations bind reduced remaining thresholds; unknown accounting closes
 all tool admission with null totals, not zero consumption. Forty-two focused checks and
@@ -215,7 +215,7 @@ or P11 freeze occurs. N=0, nineteen open conditions and unanswered reopening rem
 
 ## Installed-client CPU addendum after `c1f8fb92` — 2026-09-30
 
-A [separate installed-client observer v4](INSTALLED_CLIENT_CPU_MCP_2026-09-30.md)
+A [separate installed-client observer v4](archive/2026-09-30/INSTALLED_CLIENT_CPU_MCP_2026-09-30.md)
 verifies MCP v4/broker v5/executor v10 through CLI 0.159.2. Thirty-seven focused checks
 and five separately retained fresh observations pass. Exact inventories/Unicode/
 literals, null CPU cutoff replies, nested budgets/raw final counters/quiescence and
@@ -230,7 +230,7 @@ annotation, score, alpha spending or scientific freeze occurs.
 
 ## CPU broker/MCP addendum after `0d612f1f` — 2026-09-30
 
-A [separate broker v5/MCP stdio v4](CPU_BROKER_MCP_2026-09-30.md) connects executor
+A [separate broker v5/MCP stdio v4](archive/2026-09-30/CPU_BROKER_MCP_2026-09-30.md) connects executor
 v10 with mandatory typed CPU budget and unchanged local/tree/scratch constraints.
 Forty-four focused checks and five retained fixed stdio exchanges pass. Full Unicode
 reads/literals and all assigned inventories remain exact; sampled CPU cutoff is a
@@ -245,7 +245,7 @@ unanswered reopening decision remain.
 
 ## Sampled CPU executor addendum after `65835d7d` — 2026-09-30
 
-A [separate cumulative-CPU candidate](SAMPLED_TREE_CPU_EXECUTOR_2026-09-30.md)
+A [separate cumulative-CPU candidate](archive/2026-09-30/SAMPLED_TREE_CPU_EXECUTOR_2026-09-30.md)
 extends preserved v7. Keep v8's two premature-startup failures; v9 recognizes only
 unobserved pending startup and v10 adds quiescent-tree final-counter acceptance.
 Thirty-six focused checks across three invocations pass, including actual detached
@@ -260,7 +260,7 @@ N=0, nineteen open conditions and unanswered measurement reopening remain.
 
 ## CPU accounting addendum after `71f3c050` — 2026-09-30
 
-A [fixed CPU-accounting probe](TREE_CPU_ACCOUNTING_2026-09-30.md) supplies evidence
+A [fixed CPU-accounting probe](archive/2026-09-30/TREE_CPU_ACCOUNTING_2026-09-30.md) supplies evidence
 for cumulative-resource integration. Preserve v1's deprecated-property failure and
 v2's incorrect live-cgroup expectation. A separate validator confirms unchanged v2
 bytes without relaunch: service CPU retains 0.616181 s after descendants exit and
@@ -274,7 +274,7 @@ measurement reopening remain.
 
 ## Installed-client lifecycle addendum after `cb067ab2` — 2026-09-30
 
-A [separate installed-client observer v3](INSTALLED_CLIENT_LIFECYCLE_MCP_2026-09-30.md)
+A [separate installed-client observer v3](archive/2026-09-30/INSTALLED_CLIENT_LIFECYCLE_MCP_2026-09-30.md)
 verifies all five assigned inventories/routes through MCP v3, broker v4 and executor
 v7. Twenty-two focused checks and five separately retained fresh observations pass.
 Exact Unicode/literal results, null overflow errors, nested limit/status identities
@@ -289,7 +289,7 @@ is unanswered; no scientific freeze or new alpha allocation occurs.
 
 ## Scratch/lifecycle broker addendum after `b6121955` — 2026-09-30
 
-A [separate broker v4/MCP stdio v3](LIFECYCLE_BROKER_MCP_2026-09-30.md) connects
+A [separate broker v4/MCP stdio v3](archive/2026-09-30/LIFECYCLE_BROKER_MCP_2026-09-30.md) connects
 executor v7 with explicit local/tree/scratch limits and complete-lifecycle gating.
 Forty focused checks, five actual fixed stdio exchanges and a separate injected
 mount-failure dispatch pass. Tool parity/full reads are preserved; incomplete
@@ -302,7 +302,7 @@ P11 keeps nineteen open conditions, N=0 and the unanswered reopening decision.
 
 ## Service lifecycle addendum after `9f06ed37` — 2026-09-30
 
-A [separate executor v7 and operator wrapper](SERVICE_NAMESPACE_LIFECYCLE_2026-09-30.md)
+A [separate executor v7 and operator wrapper](archive/2026-09-30/SERVICE_NAMESPACE_LIFECYCLE_2026-09-30.md)
 now bind namespace argv/status outside the payload and require a matching complete
 lifecycle before returning a computation result. Incomplete/corrupt status withholds
 output; prior resource/encoding failure dispositions remain. Thirty-one targeted
@@ -315,7 +315,7 @@ and pending measurement reopening; the requested decision is still unanswered.
 
 ## Namespace lifecycle addendum after `2b3f352c` — 2026-09-30
 
-A [fixed structured-status observation](NAMESPACE_LIFECYCLE_2026-09-30.md) retains
+A [fixed structured-status observation](archive/2026-09-30/NAMESPACE_LIFECYCLE_2026-09-30.md) retains
 a wrong empty-status expectation on mount failure. A separate v2 observes five
 normal/program/mount/exec/descriptor probes; child identity precedes setup and only
 a final matching exit verifies a completed lifecycle. Fifteen mechanical tests pass.
@@ -327,7 +327,7 @@ and pending measurement reopening; an explicit user decision has been requested.
 
 ## Scratch boundary addendum after `878e19fb` — 2026-09-30
 
-A [separate scratch-capacity candidate](BOUNDED_SCRATCH_2026-09-30.md) retains a v5
+A [separate scratch-capacity candidate](archive/2026-09-30/BOUNDED_SCRATCH_2026-09-30.md) retains a v5
 namespace-startup failure. V6 adds explicit user-namespace creation and observes
 sized temporary/shared-memory mounts, read-only root/device backing mounts and
 nested namespace denial. Preserve an EPERM expectation error: actual denial is
@@ -340,7 +340,7 @@ alpha spending occurs. P11 keeps nineteen open conditions, N=0 and pending reope
 
 ## Installed-client service route addendum after `d2871be0` — 2026-09-30
 
-A [separate offline observer v2](INSTALLED_CLIENT_SERVICE_MCP_2026-09-30.md)
+A [separate offline observer v2](archive/2026-09-30/INSTALLED_CLIENT_SERVICE_MCP_2026-09-30.md)
 verifies assigned service-backed MCP tools through CLI 0.159.2 for all five methods.
 B0/B1 list no tools; B2/B3/B4 return exact literal/Unicode results and null-result
 bounded failures. Fourteen tests pass; all six computation services are absent and
@@ -353,7 +353,7 @@ conditions, N=0 and pending measurement reopening; existing study callers remain
 
 ## Service broker/MCP addendum after `a480c8f5` — 2026-09-30
 
-A [separate broker v3 and stdio adapter v2](SERVICE_BROKER_MCP_2026-09-30.md)
+A [separate broker v3 and stdio adapter v2](archive/2026-09-30/SERVICE_BROKER_MCP_2026-09-30.md)
 connect the verified v4 service executor with explicit local/tree limits and nested
 one-shot records. All five actual fixed stdio exchanges pass; B0/B1 have zero tools,
 B2/B3/B4 share exact inventories/full reads and technical overflow supplies no partial
@@ -366,7 +366,7 @@ zero confirmation/replication N and pending measurement reopening.
 
 ## Bounded service capture addendum after `fb0eb763` — 2026-09-30
 
-A [separate service-backed computation candidate](SERVICE_BOUNDED_CAPTURE_2026-09-30.md)
+A [separate service-backed computation candidate](archive/2026-09-30/SERVICE_BOUNDED_CAPTURE_2026-09-30.md)
 combines bounded output, one-shot records and service cgroup cleanup. A v3 literal
 argument probe exposes systemd environment expansion; retain that defect and source.
 A diff-bound v4 disables expansion and passes exact literal/Unicode output, overflow,
@@ -379,7 +379,7 @@ open conditions, N=0 and pending measurement reopening.
 
 ## Namespace/resource integration addendum after `9552c693` — 2026-09-30
 
-A [fixed service/namespace observation](CGROUP_SANDBOX_INTEGRATION_2026-09-30.md)
+A [fixed service/namespace observation](archive/2026-09-30/CGROUP_SANDBOX_INTEGRATION_2026-09-30.md)
 retains an unsupported-property failure and an incorrect environment-expectation
 failure. A separately diff-bound v3 passes visible-read/write isolation, descendant
 task blocking, memory OOM termination and service wall-time termination. All units
@@ -392,7 +392,7 @@ open conditions, zero confirmation/replication N and pending measurement reopeni
 
 ## Process-tree controls addendum after `c7ecb8fb` — 2026-09-30
 
-A [one-shot operator probe](CGROUP_AVAILABILITY_2026-09-30.md) observes user-service
+A [one-shot operator probe](archive/2026-09-30/CGROUP_AVAILABILITY_2026-09-30.md) observes user-service
 kernel memory/swap/task/CPU-rate settings and actual task-creation blocking. All
 seven children are reaped and the transient service is collected; eleven synthetic
 checks pass. Memory-pressure behavior, cumulative CPU/scratch limits and integration
@@ -403,7 +403,7 @@ occurred; P11 keeps nineteen open conditions, N=0 and pending measurement reopen
 
 ## Five-method reporting addendum after `a16a63f9` — 2026-09-30
 
-A [separate v2 reporting layer](FIVE_METHOD_REPORTING_2026-09-30.md) now reports
+A [separate v2 reporting layer](archive/2026-09-30/FIVE_METHOD_REPORTING_2026-09-30.md) now reports
 actual method names, failure rates, useful coverage and explicit pointwise interval
 interpretation for all four declared B4 contrasts. Original effects, intervals,
 exact p-values and three-secondary Holm values are preserved; ties, unfavorable and
@@ -416,7 +416,7 @@ fresh qualified five-method evidence remain open.
 
 ## Successful restoration addendum after `533dfed8` — 2026-09-30
 
-A [fresh repaired restoration and separate parity audit](RESTORED_RUNTIME_PARITY_2026-09-30.md)
+A [fresh repaired restoration and separate parity audit](archive/2026-09-30/RESTORED_RUNTIME_PARITY_2026-09-30.md)
 now pass complete content/metadata, nanosecond mtimes, 2710 hardlinks and all seven xattr entries.
 All sixty original inventory-tool outputs plus fixed stdlib probes match live/restored runtime
 bytes. The earlier failed restoration remains unchanged. No caller adopts the tree; operator
@@ -426,7 +426,7 @@ reopening. These deterministic probes generate no semantic method or annotation 
 
 ## Restoration addendum after `392c3ff7` — 2026-09-30
 
-The [first full restoration](RUNTIME_RESTORATION_2026-09-30.md) is retained as failed: `wall` and
+The [first full restoration](archive/2026-09-30/RUNTIME_RESTORATION_2026-09-30.md) is retained as failed: `wall` and
 `write` lose their setgid mode bits, while all other inventory content/metadata matches. A minimal
 container probe confirms missing `FSETID`; a prospective helper repair is unexercised on a full
 tree. The failed destination stays unchanged. Exact restoration, remaining xattr/mtime/hardlink
@@ -435,7 +435,7 @@ N=0 and pending measurement reopening; no model/annotation call occurred.
 
 ## Runtime archive addendum after `aadbd6bc` — 2026-09-30
 
-The [exact runtime snapshot candidate](RUNTIME_SNAPSHOT_2026-09-30.md) now preserves all inventoried
+The [exact runtime snapshot candidate](archive/2026-09-30/RUNTIME_SNAPSHOT_2026-09-30.md) now preserves all inventoried
 `/usr` content in a verified 15589560320-byte local archive, with links, permissions/owners, mtimes
 and extended attributes. Original export provenance and a separate final framing verification are
 retained. No caller adopts the archive; restoration/execution equivalence, distribution and full
@@ -444,7 +444,7 @@ a pending measurement reopening decision. No model or annotation invocation occu
 
 ## Complete inspection addendum after `ccd11317` — 2026-09-30
 
-A [pinned read-only container helper](CONTAINER_RUNTIME_AUDIT_2026-09-30.md) now completes the
+A [pinned read-only container helper](archive/2026-09-30/CONTAINER_RUNTIME_AUDIT_2026-09-30.md) now completes the
 inventory of the entire existing host `/usr`: 285548 files, 19047 directories, 92448 symlinks and
 14956824852 regular-file bytes. The prior host failure and a later no-capability container failure
 remain retained. Only the trusted audit helper receives read/search capability; method runtimes,
@@ -455,7 +455,7 @@ nineteen open conditions, N=0 and a pending measurement reopening decision; no m
 
 ## Runtime audit addendum after `3e2d6589` — 2026-09-30
 
-A [full runtime-tree audit candidate](RUNTIME_TREE_AUDIT_2026-09-30.md) now verifies content,
+A [full runtime-tree audit candidate](archive/2026-09-30/RUNTIME_TREE_AUDIT_2026-09-30.md) now verifies content,
 permissions, owners and symlink structure without changing the local tool architecture. Its actual
 `/usr` scan failed on root-owned mode-0700 `cupsd`; no complete runtime digest exists. The failure
 is retained and privileged non-interactive reading is unavailable. Unreadable files are not skipped.
@@ -464,7 +464,7 @@ keeps nineteen open conditions, N=0, the failed measurement gate and pending reo
 
 ## Installed-client addendum after `90ef4b74` — 2026-09-30
 
-[Offline installed-client observations](INSTALLED_CLIENT_MCP_OBSERVATION_2026-09-30.md) now verify
+[Offline installed-client observations](archive/2026-09-30/INSTALLED_CLIENT_MCP_OBSERVATION_2026-09-30.md) now verify
 Codex CLI 0.159.2 discovers exact assigned MCP schemas for all five methods and routes synthetic
 reads/computation for B2/B3/B4 without a model turn. Initial outer-namespace `/dev/null` failures
 remain retained; private devices fix the inspector, without changing the registered broker.
@@ -475,7 +475,7 @@ open conditions, no new semantic output or measurement, N=0 and a pending reopen
 
 ## Local transport addendum after `2da7c6c1` — 2026-09-30
 
-A [local MCP stdio candidate](LOCAL_MCP_STDIO_2026-09-30.md) now connects the bounded broker to
+A [local MCP stdio candidate](archive/2026-09-30/LOCAL_MCP_STDIO_2026-09-30.md) now connects the bounded broker to
 method-specific wire tools with immutable request/response retention. B0/B1 advertise no tools;
 B2/B3/B4 advertise identical read/computation schemas. Real local subprocess checks pass for all
 five methods. This resolves the local adapter implementation gap only: no provider is connected,
@@ -490,7 +490,7 @@ per-process CPU/address space and combined stdout/stderr limits; overflow is ret
 failure with bounded partial-byte audit. Original versions remain unchanged and no caller switches
 implicitly. Lossless registered-file reads and B2/B3/B4 tool parity remain. Aggregate resources,
 full runtime, provider routing/confinement, exact tokenizer capacity and study budgets remain open.
-See [bounded local execution](BOUNDED_LOCAL_EXECUTION_2026-09-30.md) and its development manifest.
+See [bounded local execution](archive/2026-09-30/BOUNDED_LOCAL_EXECUTION_2026-09-30.md) and its development manifest.
 No model call or measurement occurred; P11 still has nineteen open conditions. The reopening
 proposal is pending and confirmation/replication N remain zero.
 
@@ -516,7 +516,7 @@ not a frozen scientific result or submission-ready experiment.
   bookkeeping. Semantic attachment, scope/unresolved treatment and response ranks remain
   unqualified. The combined support canary failed its B recovery-coverage reference; old C remains
   unlaunched. The separate earlier qualifications do not authorize pilot annotation.
-- **Pending decision:** the [measurement reopening proposal](MEASUREMENT_REOPENING_PROPOSAL_2026-09-30.md)
+- **Pending decision:** the [measurement reopening proposal](archive/2026-09-30/MEASUREMENT_REOPENING_PROPOSAL_2026-09-30.md)
   requests one fresh bounded support/communication cycle (24 synthetic cases, at most 53 calls).
   It is not adopted, freezes no new configuration and authorizes zero calls. Automatic goal
   continuations are not an answer to that decision.

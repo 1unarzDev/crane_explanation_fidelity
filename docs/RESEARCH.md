@@ -26,7 +26,7 @@ five-way atomic support in two isolated passes. A separate method-blind assertio
 task is frozen before calls and remains unrun; extractor abstraction tags and the support task's
 raw highest-level field cannot directly define the endpoint. The role task's 49 call slots are
 uncalled. P11 still fails closed on 18 conditions, with independent confirmation and replication
-N=0. See the newest [decisions](DECISIONS.md), [current-state checkpoint](CURRENT_STATE_2026-09-29.md),
+N=0. See the newest [decisions](DECISIONS.md), [current-state checkpoint](CURRENT_STATE_2026-09-30.md),
 and [P11 manifest](../manifests/study/evidence-calibration-p11-prefreeze-readiness.json). This
 amendment prospectively supersedes only the older living-status statements; it does not relabel
 their historical outputs.

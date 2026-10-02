@@ -13,16 +13,11 @@ from pathlib import Path
 import sys
 from types import SimpleNamespace
 from run_evidence_calibration_b2_pilot import ROOT,_materialize,run
+from crane_explain_core import sha256_file, write_json_once
 from realize_evidence_calibrated_explanation_v7 import realize
 
 
-def write_once(path,record):
-    raw=json.dumps(record,indent=2,sort_keys=True)+'\n'
-    path.parent.mkdir(parents=True,exist_ok=True)
-    if path.exists():
-        if path.read_text()!=raw:raise RuntimeError('Retained result differs')
-    else:path.write_text(raw)
-
+write_once = write_json_once
 
 def main():
     parser=argparse.ArgumentParser()
@@ -33,11 +28,11 @@ def main():
     freeze=json.loads(args.freeze.read_text())
     if freeze.get('status')!='FROZEN_BEFORE_FIRST_CONFIRMATORY_SEMANTIC_OUTPUT':raise RuntimeError('No prospective scientific freeze')
     for name,digest in freeze['source_sha256'].items():
-        if hashlib.sha256((ROOT/name).read_bytes()).hexdigest()!=digest:raise RuntimeError('Frozen source changed: '+name)
+        if sha256_file(ROOT/name)!=digest:raise RuntimeError('Frozen source changed: '+name)
     ledger=json.loads((ROOT/'manifests/study/diagnostic-sequential-error-ledger-v2.json').read_text())
     allocation=next(a for a in ledger['allocations'] if a['allocation_id']==freeze['alpha_allocation_id'])
     if allocation['status']!='CONSUMED' or allocation['campaign_id']!=freeze['study_id']:raise RuntimeError('Alpha not prospectively bound')
-    if allocation.get('freeze_sha256')!=hashlib.sha256(args.freeze.read_bytes()).hexdigest():raise RuntimeError('Declaration differs from the prospectively bound alpha allocation')
+    if allocation.get('freeze_sha256')!=sha256_file(args.freeze):raise RuntimeError('Declaration differs from the prospectively bound alpha allocation')
     pool=json.loads((ROOT/freeze['candidate_allocation_path']).read_text())
     exceptions=json.loads((ROOT/'manifests/study/evidence-calibration-handoff-freshness-exceptions-v1.json').read_text())
     excluded={e['run_id'] for e in exceptions['exceptions']}
@@ -76,7 +71,7 @@ def main():
             record=dict(run_id=run_id,complete_pair=False,disposition='OUTSIDE_FROZEN_DISCREPANCY_POPULATION_NO_METHOD_CALL')
             write_once(status,record);accounting.append(record);continue
         if intent.exists():raise RuntimeError("Unresolved prior episode intent; no automatic semantic retry: "+run_id)
-        write_once(intent,dict(run_id=run_id,study_id=freeze["study_id"],freeze_sha256=hashlib.sha256(args.freeze.read_bytes()).hexdigest(),semantic_attempt_started=True))
+        write_once(intent,dict(run_id=run_id,study_id=freeze["study_id"],freeze_sha256=sha256_file(args.freeze),semantic_attempt_started=True))
         conditions=[run_id+f'-E{i}' for i in range(4)];validation=dict(episodes=[dict(run_id=run_id,condition_ids=conditions,condition_packet_sha256s=[])])
         b4_failures=[]
         for condition in conditions:
@@ -84,7 +79,7 @@ def main():
             validation['episodes'][0]['condition_packet_sha256s'].append(entry['condition']['method_packet_sha256'])
             try:
                 answer=realize(ontology,entry,dict(question_id=family+'-question-v1-development',failure_premise=True,required_mechanism_families=['command_motion']))
-                answer.update(development_only=False,study_stage='CONFIRMATION',study_id=freeze['study_id'],family=family,freeze_sha256=hashlib.sha256(args.freeze.read_bytes()).hexdigest())
+                answer.update(development_only=False,study_stage='CONFIRMATION',study_id=freeze['study_id'],family=family,freeze_sha256=sha256_file(args.freeze))
                 write_once(models/'b4'/(condition+'.json'),answer)
             except Exception as e:b4_failures.append(dict(condition_id=condition,error=type(e).__name__+': '+str(e)))
         validpath=out/(run_id+'-input-validation.json');write_once(validpath,validation)

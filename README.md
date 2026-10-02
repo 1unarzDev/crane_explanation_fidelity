@@ -1,73 +1,68 @@
 # CRANE Explain
 
-Evidence-checked natural-language explanations of autonomous robot navigation decisions and
-failures. This umbrella repository is the single reproducibility root for the TRUSTMORE 2026
-submission. The workshop advertises **October 4, 2026 AoE**, but the live portal currently closes
-earlier than literal end-of-day AoE; the project keeps October 3 as its completion/review buffer.
-The central failure mode is fluent but unsupported language—not awkward wording.
+CRANE Explain studies whether autonomous-robot explanations stay within the evidence available to the robot. The repository is the reproducibility root for the TRUSTMORE 2026 work.
 
-## Active research state — 2026-09-30
+The central problem is **unsupported specificity**: fluent language can claim causes, events, or source details that the runtime evidence does not support.
 
-The forward question is whether a robot explanation's specificity tracks the diagnostic evidence
-actually visible to the robot. The paper has three contributions: atomic claim/evidence contracts;
-a same-episode, removal-only land/Nav2 evidence-ladder benchmark; and a maximal-supported-
-diagnosis method compared with fair B0--B4 conditions. The primary comparison candidate is B2
-versus B4 on persistent command--motion discrepancy and measured response recovery.
-Missing-odometry and nominal false-premise episodes are separate controls; geometry is a
-non-pooled secondary arm. RoboBoat is
-bounded development/external-validity material.
+## Current status (2026-10-01)
 
-Development closed with **42 independent primary pairs**, balanced 21 persistent discrepancies
-and 21 measured recoveries. Strong unchanged B2 and B4 v7 each had 0/42 PrimaryFailures,
-0/0 discordances and paired risk difference 0; the descriptive conservative 95% interval was
-[−9.91,+9.91] percentage points and exact p=1. B2 retained 438/441 required units and
-B4 retained 441/441. Original B4 failures and the failed measurement canary remain preserved.
-These development observations do not establish superiority.
+The project is running a frozen confirmation study comparing strong tool-enabled **B2** with deterministic checked **B4 v7** on a same-episode land/Nav2 evidence ladder.
 
-**Confirmation was frozen on October 1 before confirmatory semantic outputs.** The
-[prospective declaration](manifests/study/evidence-calibration-handoff-confirmation-freeze-v1.json)
-binds unchanged strong tool-enabled B2, deterministic B4 v7, two blinded annotation passes,
-episode-level failure across four evidence levels, and a one-sided exact paired test at α=.01.
-The first 600 complete independent pairs stop only for zero-discordance futility; otherwise
-collection continues to 1,200 with no interim superiority test. Useful coverage requires B4
-mean episode coverage ≥95% and loss versus B2 ≤5 percentage points. The interval accounts
-for both possible terminal looks. Power is 82.2% for discordance probabilities .02/.005 and
-84.5% for .045/.02, but only 56.2% for .07/.045; small effects may remain inconclusive.
+- Development is closed at **42 independent primary pairs** (21 persistent command–motion discrepancies and 21 measured recoveries). Both methods had 0/42 primary failures and 0/0 discordances. These are development observations, not a superiority result.
+- Confirmation was frozen before semantic outputs were inspected. The prospective declaration fixes the methods, prompts, two blinded annotation passes, episode-level failure definition, one-sided exact paired test (α=.01), and stopping rules.
+- The first 600 complete pairs are the first scoring point; collection may continue to 1,200 only under the declared rules. No interim superiority test is allowed.
+- The latest retained checkpoint contains **401 complete pairs**, **126 incomplete method pairs** (excluded without retry), and **1,307 technically valid physical records**. Raw outputs and technical failures remain retained. No confirmatory answers, labels, scores, or effects have been inspected.
 
-The latest retained execution checkpoint has **401 complete confirmatory pairs**, 126 incomplete
-method pairs and 1,307 technically valid physical records. Raw outputs and technical failures
-are retained; failed method requests are not retried. No confirmatory answers, scores or
-method effects have been inspected. The first blinded scoring run is queued for 600 complete
-pairs. Alpha is now .03 consumed, including this study's .01 allocation; .02 remains protected
-for fresh replication. The prepared pool has 2,000 confirmation configurations and a separate
-1,600-configuration replication allocation. This experiment is still running; no confirmatory
-scientific result is available.
+Start with [the prospective freeze](manifests/study/evidence-calibration-handoff-confirmation-freeze-v1.json), [the current state](docs/CURRENT_STATE_2026-09-30.md), and [execution accounting](analysis/results/confirmation/evidence-calibration-b4-b2-confirmation-2026-10-01/execution-accounting-FIRST.json).
 
-See the [final development results](docs/EVIDENCE_CALIBRATION_RESPONSE_DEVELOPMENT_2026-09-30.md),
-[current state](docs/CURRENT_STATE_2026-09-30.md) and
-[execution accounting](analysis/results/confirmation/evidence-calibration-b4-b2-confirmation-2026-10-01/execution-accounting-FIRST.json).
-The handoff supersedes historical development stop rules and the nineteen-gate platform
-objective. Earlier checkpoint details below remain historical evidence.
+## Research scope
 
-## Earlier project framing (historical)
+The intended method is a pipeline:
 
-The forward-looking contribution is a diagnosis-to-language method: validated physical/execution
-diagnostics plus runtime/source provenance, checked planning, language, and final verification. It
-is not a generic robot adapter, graph store, logging format, universal root-cause system, or LLM
-wrapper. The frozen provenance study remains a separate legacy evidence set.
+```text
+robot-visible observations + execution/source evidence
+  → validated diagnosis → checked plan → language → final-text verification
+```
 
-`physical observations + execution/source evidence → validated diagnosis → checked plan → language → final-text check`
+The primary controlled domain is land/Nav2. RoboBoat is bounded external-validity material. Aerial and underwater environments are validated infrastructure but deferred from the submission study. Evaluator-only truth (fault injection, simulator state, gold labels, and intervention mappings) is never supplied to explanation methods.
 
-The TRUSTMORE evaluation is intentionally narrower than CRANE's platform scope. Land/Nav2 is the
-primary controlled and ecological navigation domain; the integrated, protected RoboBoat baseline
-is the focused physically distinct surface diagnostic domain. Existing aerial and underwater
-environments are retained as validated/developing infrastructure but are
-`DEFERRED_POST_SUBMISSION`, not advertised as explanation-study results.
+The study distinguishes:
 
-## Clone and initialize
+- **B0–B4 conditions:** fixed evidence levels used for the evidence-calibration comparison.
+- **Primary and secondary arms:** the frozen primary arm determines the main claim; model-family or geometry replications are sensitivity evidence only.
+- **Physical model calls and technical records:** failed requests are retained and excluded according to the declaration; they are not silently retried or counted as answers.
 
-Clone the pinned primary components, then initialize astro_dock's nested dependencies and the
-separately pinned explanation packages:
+The canonical vocabulary is in [CONTEXT.md](CONTEXT.md). Use its terms when adding records or documentation.
+
+## Repository map
+
+| Need | Start here |
+|---|---|
+| Project orientation and commands | [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md), [docs/BENCHMARK.md](docs/BENCHMARK.md) |
+| Script cleanup and modularization | [docs/SCRIPT_MODULARIZATION_PLAN.md](docs/SCRIPT_MODULARIZATION_PLAN.md) |
+| Historical scripts | [archive/INDEX.md](archive/INDEX.md) |
+| Study design and frozen rules | [docs/STUDY_DESIGN.md](docs/STUDY_DESIGN.md), [docs/EVIDENCE_CALIBRATION_PROTOCOL.md](docs/EVIDENCE_CALIBRATION_PROTOCOL.md) |
+| Latest scientific/development history | [docs/EVIDENCE_CALIBRATION_RESPONSE_DEVELOPMENT_2026-09-30.md](docs/archive/2026-09-30/EVIDENCE_CALIBRATION_RESPONSE_DEVELOPMENT_2026-09-30.md), [docs/DECISIONS.md](docs/DECISIONS.md) |
+| Diagnostic campaign history | [docs/DIAGNOSTIC_CAMPAIGN_PROGRESS.md](docs/DIAGNOSTIC_CAMPAIGN_PROGRESS.md) |
+| Annotation and scoring | [docs/EVIDENCE_CALIBRATION_AGENT_ANNOTATION_RUNBOOK.md](docs/EVIDENCE_CALIBRATION_AGENT_ANNOTATION_RUNBOOK.md), [docs/ANNOTATION_GUIDE.md](docs/ANNOTATION_GUIDE.md) |
+| Data boundaries and storage | [docs/DATA_STORAGE.md](docs/DATA_STORAGE.md), [data/README.md](data/README.md) |
+| Paper traceability | [paper/README.md](paper/README.md), [paper/CLAIM_EVIDENCE_MAP.md](paper/CLAIM_EVIDENCE_MAP.md) |
+| Package-specific implementation | [packages/astro_dock/README.md](packages/astro_dock/README.md), [packages/crane_ml/README.md](packages/crane_ml/README.md) |
+
+Detailed dated reports are evidence records. They are intentionally preserved, but they are not the project entry point. Prefer the latest status and decision documents before reading a historical report.
+
+## Historical milestones
+
+- The repository began as a pinned umbrella for CRANE, ROS, Unity, and reproducible reference environments.
+- Runtime capture, source provenance, evidence contracts, checked answer plans, deterministic fallback, and final-text verification were implemented and regression-tested.
+- Land/Nav2 became the powered primary benchmark; ecological scenario construction and platform expansion were stopped once the study input set was qualified.
+- Early F/G/H and diagnostic pilots exposed coverage, provenance, and causal-language failures. Those attempts remain retained as development evidence and are not confirmatory estimates.
+- The project redirected its central claim to evidence-calibrated specificity and froze the B2/B4 confirmation protocol.
+- The confirmation campaign is now an execution and blinded-scoring task. Do not alter methods, inspect semantic outputs early, or reinterpret incomplete pairs.
+
+For the complete decision trail, use [DECISIONS.md](docs/DECISIONS.md). For the older diagnostic campaign sequence, use [DIAGNOSTIC_CAMPAIGN_PROGRESS.md](docs/DIAGNOSTIC_CAMPAIGN_PROGRESS.md).
+
+## Setup
 
 ```bash
 git clone --recurse-submodules https://github.com/1unarzDev/crane_explanation_fidelity.git
@@ -75,519 +70,17 @@ cd crane_explanation_fidelity
 scripts/setup_workspace.sh
 ```
 
-Do not depend on developer-specific absolute paths. Project scripts resolve the umbrella root from
-their own location. Exact repository commits and destinations are recorded in
-`manifests/workspace.lock.json`.
+Pinned component commits and destinations are recorded in `manifests/workspace.lock.json`. Scripts resolve the repository root from their own location; do not add developer-specific absolute paths.
 
-## Retained development status ledger
+## Working rules for agents
 
-- **IMPLEMENTED, TESTED:** evidence records, checked answer plans, final-text verification,
-  deterministic fallback, Dock/Slalom regressions, terminal-status distinctions, bounded
-  runtime-to-source provenance, claim classes, deterministic runtime presentations, pre-call F/G/H
-  information-unit auditing, and hash-checked runtime configuration identity, covered by the
-  CPU-only regression suites.
-- **TESTED (CALIBRATION):** e042 retained the effective TurtleBot3/Nav2 launch configuration,
-  image/package identities, player hashes, and six exact Git artifacts without evaluator leakage;
-  the reusable calibration validator and seven-unit F/G/H parity audit passed.
-- **TESTED (DEVELOPMENT ONLY):** parity-controlled provenance pilot v2 on retained e037, with one
-  evidence-rich recovery-mechanism question and one evidence-limited physical-cause question. Four
-  new H/G calls were made; the two unchanged F calls were reused exactly from cache. Unblinded
-  single-annotator review found one material error for F and none for G/H; two questions from one
-  episode remain diagnostic, not an effect estimate.
-- **TESTED (DEVELOPMENT ONLY):** expanded parity-controlled F/G/H pilot to four independent land
-  episodes across recovery-success and repeated-recovery-abort families. Unblinded rates are F 4/8,
-  G 0/8, and H 0/8 at full substantive coverage; H is more specific than G (52/52 versus 40/52
-  units). The F–G clustered difference is −0.50 with a highly discrete four-cluster bootstrap
-  interval [−0.875, −0.125]; response-level McNemar is 0.125. These are planning evidence only.
-- **TESTED (DEVELOPMENT ONLY):** predeclared model-strength control selected `gpt-5.6-luna` at low
-  reasoning over `gpt-5.6-sol` for future matched F/G/H runs. Luna stayed within every quality
-  margin, matched aggregate specificity (140/156), and used fewer tokens and 29.8% less aggregate
-  latency across 24 calls. Monetary cost was unavailable; this is configuration selection, not an
-  equivalence claim.
-- **TESTED:** ROS package tests, Jazzy build, live BT/action/harness capture, and exact BT retention.
-- **TESTED:** CRANE build, one valid aquatic terminal-success capture pilot, a graphics-free
-  land/Ackermann success smoke with populated costmap snapshots, and a valid-as-expected land
-  client-cancellation capture under a full blocker.
-- **TESTED:** genuine land controller-progress recovery/exhaustion after fixing the missing
-  simulated clock, plus a headless TurtleBot3 Waffle-class warehouse/Nav2 success smoke using
-  canonical semantic geometry separated from visuals.
-- **IMPLEMENTED, TESTED (ECOLOGICAL CALIBRATION):** an eight-layout manifest-driven land proving
-  ground with canonical/visual separation, semantic evidence IDs, headless QA, inspection views,
-  and eight behaviorally qualified scenario motifs spanning weave, corrected S-turn, offset gates,
-  alternate route, narrow doorway, U-trap, dynamic-gate recovery-success, and bounded blockage
-  abort. The original straight-through slalom remains a negative geometry calibration; direct
-  keyboard view switching passes on the additive v2 revision. Corrected S-turn, dynamic recovery,
-  and bounded blockage each pass a three-run exact-condition repeatability gate; these repetitions
-  are not independent study episodes. Later development comparisons use selected governed land
-  exports, but no explanation from this inventory has an independent human label.
-- **IMPLEMENTED, TESTED (ECOLOGICAL CALIBRATION):** the warehouse temporary-enclosure scenario
-  passes a prospective three-run recovery-followed-by-success repetition gate with exact manifest,
-  route, obstacle, seed, and configuration identity. Recovery feedback varies across runs; these
-  operational repetitions are not independent study episodes or evidence of physical causation.
-- **ECOLOGICAL PILOT INPUT CLOSED (DEVELOPMENT ONLY):** the pilot-ready set is exactly warehouse
-  recovery, complete blockage, and corrected S-turn. Their separated evidence, truth, QA, and
-  provenance records are governed under `data/{robot_visible,evaluator_only}/dev/ecological-pilot-v1/`.
-  `dynamic-gate-v1` is historical calibration only; U-trap has no current qualified export and is
-  excluded. Environment/platform development now stops in favor of explanation evaluation.
-- **PROSPECTIVE NOMINAL DIAGNOSTIC CONTROL (DEVELOPMENT ONLY):** one predeclared current-source
-  narrow-doorway run succeeded and is governed with robot-visible route/costmap/odometry evidence,
-  separate evaluator truth, and an independent reference. Its checked answer rejects the false
-  failure premise while reporting bounded clearance/deviation evidence. One no-retry R/P/T/N
-  comparison and blinded packet are retained; human annotation remains `NOT_RUN`, so it is not
-  confirmatory evidence.
-- **IMPLEMENTED, TESTED:** deterministic F1TENTH PNG/YAML contour-to-collider generator and Unity
-  importer, qualified headlessly on the externally retained pinned Spielberg map. Full-lap ROS
-  control and source-simulator comparison remain unrun.
-- **VALIDATED INFRASTRUCTURE / DEFERRED_POST_SUBMISSION:** PX4 `walls.sdf` primitive reconstruction
-  with pinned provenance, semantic wall IDs, separate collision/visual layers, and headless
-  aerial/contact/ray checks.
-- **VALIDATED INFRASTRUCTURE / DEFERRED_POST_SUBMISSION:** PX4 ArUco render-only landmark invariant
-  and pinned windy scenario with repeatable measured CRANE response; camera detection and physical
-  wind calibration remain unrun.
-- **IMPLEMENTED, TESTED:** offline Clearpath 2.9.4 pipeline SDF/resource manifest and Unity import;
-  generated upstream assets stay out of Git. Geometry/layers/contact passed, as did a local 1 m
-  ROS/Nav2 motion and sensor-transport smoke. Representative route and native-Gazebo comparison
-  remain unrun.
-- **TESTED (PIPELINE SMOKE):** A/B/C/D/E over real success and cancellation episodes with a
-  rule-based generator; identical outputs validate parity and routing but are not an LLM comparison
-  or evidence for RQ1/RQ2.
-- **TESTED (DEVELOPMENT ONLY):** eighteen real land episodes, 109 questions per condition and 545 total
-  A/B/C/D/E responses, cached single-sample model calls, parity audits, and provisional material
-  error/coverage annotation. A has 6/109 errors, B 0/109, and C/D/E 1/109 each. Checked methods
-  retain lower answerable-information coverage; eighteen episode clusters do not support inference.
-- **TESTED:** a bounded evaluator-only TurtleBot3 mobility interruption produced the first captured
-  recovery-followed-by-success episode with one exact Wait attempt. The first run was excluded
-  when a volatile DDS startup race lost its goal boundary; reliable transient-local harness QoS
-  was then validated on the retained replication. Three further predeclared independent
-  configurations passed; a fourth is retained but excluded because it produced zero recoveries.
-- **COLLECTION_CLOSED_EARLY / SEALED:** 33 independent final F/G/H episodes are included (17
-  recovery-success, 16 terminal-abort), with 198 one-shot Luna-low calls retained. This is below
-  the frozen 40-episode minimum and 50-episode target. No sealed answer is annotated/adjudicated,
-  and no sealed effect estimate exists. See [research redirect](docs/RESEARCH_REDIRECT.md).
-- **TESTED (DIAGNOSTIC DEVELOPMENT ONLY):** physical-diagnosis contracts and a separate study
-  draft cover geometric restriction and command-to-motion discrepancy. One governed retrospective
-  RoboBoat run and its speed-masked variant now have parity-audited R/P/T/N outputs and blinded
-  four-response packets. Tool-enabled R matched the unmasked P/T mechanism; on the mask, R/N
-  preserved a supported positional failure chain that P/T omitted. P fell back to T in both cases.
-  These are one episode cluster, unannotated, and not an effect estimate.
-- **TESTED (DIAGNOSTIC DEVELOPMENT ONLY):** a prospectively declared independent land scenario
-  records a sustained command--motion discrepancy, later measured-response recovery, and eventual
-  navigation success under unchanged development thresholds. The blind export and separate
-  reference agree; evaluator intervention identity remains excluded. The recovery-plan refinement
-  followed inspection of the first deficient answer, so this is post-observation regression
-  evidence, not a confirmatory effect estimate. A later predeclared R/P/T/N comparison produced a
-  blinded four-response packet: R reports an incorrect discrepancy interval/duration on project
-  review, raw P preserves the checked values, and final P again falls back to T. Human annotation
-  remains `NOT_RUN`, so this is a differentiation candidate rather than a scored method result.
-- **TESTED (DIAGNOSTIC DEVELOPMENT ONLY):** a current-source v4 connected-detour run succeeded
-  with a retained cost-253 restriction on the requested direct route and 1.036 m of delivered
-  odometry deviation. An independent raster/A* implementation reproduces the bounded restriction,
-  retained-grid connectivity, and successful outcome. This is one unannotated development case;
-  it does not identify the physical obstacle, prove exact Nav2 snapshot consumption, or prove that
-  the restriction caused the detour.
-- **COLLECTED, NOT_ANNOTATED (DIAGNOSTIC DEVELOPMENT):** the complete R/P/T/N inventory contains
-  52 blinded responses in 13 packets over nine statistical clusters. Final P used deterministic
-  fallback for 13/13 questions. This is a development inventory, not a held-out result; no P-over-R
-  effect is established and no campaign-specific method/judge/resource freeze exists.
-- **REGISTERED FRAMEWORK / NO CAMPAIGN ACTIVE:** new diagnostic confirmation uses a prospective
-  P-versus-tool-enabled-R sequential protocol with a +0.15 minimum worthwhile improvement,
-  simultaneous material-error/coverage/ambiguity guardrails, a closed 0.05 program error ledger,
-  and separately reserved fresh-config replication. It cannot use legacy or inspected development
-  outcomes. The final fresh Luna v12 arm is qualified for the atomic-mechanism-plus-no-material-
-  error endpoint, with model-judge limitations; failed v8--v11 cycles remain retained. The first
-  separately frozen v12-scored method screen returned 26/28 valid judgments and rejected the
-  checked-composition candidate: on paired valid judgments P had 10/12 material errors and 84/92
-  required units covered, versus R's 8/12 and 86/92. The two endpoint cases gave pass-specific
-  P-minus-R values of 0.0 and 0.5, with P unresolved across passes on one case. This is development
-  evidence, not an effect estimate. No confirmatory response was judged and alpha remains
-  0.000/0.050; see
-  [sequential protocol](docs/SEQUENTIAL_STUDY_PROTOCOL.md)
-  and [campaign progress](docs/DIAGNOSTIC_CAMPAIGN_PROGRESS.md).
-- **CONTRACT-COMPLETE DEVELOPMENT PILOT CLOSED / NOT PROMOTED:** the fixed-suffix
-  P-contract-v4/R-contract pilot attempted 19 configurations once and completed two-pass Luna
-  evaluation for 13 primary clusters and four controls; two physical failures were retained
-  without replacement. Primary Claim A tied under the least-favourable mapping and was +1/13 only
-  under the most-favourable mapping; Claim B tied under both. The frozen promotion gate failed,
-  confirmation remains N=0, no alpha was bound, and replication is unstarted. A separate raw-sample
-  audit also disproved one consensus Luna rejection of valid R control measurements. See the
-  [contract campaign](docs/CONTRACT_COMPLETE_CAMPAIGN.md) and its
-  [result manifest](manifests/analysis/contract-complete-v2-development-pilot-result.json).
-- **PHYSICAL/REFERENCE COLLECTION ACTIVE; SEMANTIC CAMPAIGN INACTIVE:** forty of the frozen 100
-  land command--motion confirmation configurations have been attempted once: thirty-nine are
-  valid and one is a retained invalid recording. Run 003
-  preserves useful execution facts while correctly withholding the masked motion mechanism; run
-  004 records recovered measured response followed by task abort, and run 005 is a successful
-  nominal `not_triggered` control. Run 006 adds another independently configured packet that
-  preserves execution facts while withholding the odometry-dependent mechanism; run 007 adds a
-  fresh-layout nominal control; run 008 adds independently reproduced response loss, recovery, and
-  eventual task success; runs 009 and 010 add persistent measured response loss followed by action
-  abort on the two geometry strata; run 011 adds another successful transient-compensation case;
-  run 012 adds a nominal `not_triggered` control despite recovery activity; run 013 adds a clean
-  single-attempt nominal control; run 014 adds another persistent discrepancy followed by abort;
-  runs 015 and 016 add successful compensation cases on the two geometry strata; run 017 adds a
-  nominal-clear-route persistent discrepancy followed by abort; run 018 adds an independently
-  configured missing-odometry case that retains execution facts while withholding the mechanism.
-  Run 019 adds a connected-detour persistent discrepancy followed by abort. Run 020 adds the
-  corresponding nominal-clear-route case, with an independently reproduced 18--28 s discrepancy
-  followed by abort. Its initial wrong-threshold preprocessing output is retained evaluator-only;
-  the canonical reference was recomputed from the unchanged capture without rerunning the episode.
-  Run 021 adds a connected-detour persistent discrepancy from 18--28 s followed by abort.
-  Run 022 adds the corresponding nominal-clear-route persistent discrepancy followed by abort.
-  Run 023 adds another connected-detour persistent discrepancy over the same interval, followed by
-  abort. Run 024 adds a nominal-clear-route discrepancy from 10--20 s, measured-response recovery
-  from 22--23 s, and eventual action success. Run 025 adds a connected-detour discrepancy from
-  11--21 s followed by action abort. Run 026 adds a connected-detour discrepancy from 18--28 s,
-  measured-response recovery from 30--31 s, and eventual action success. Run 027 adds a
-  connected-detour persistent discrepancy from 11--21 s followed by action abort. Run 028 adds an
-  independently configured missing-odometry case: its method-visible packet preserves the abort
-  sequence but correctly withholds the motion mechanism. Run 029 adds a second consecutive
-  independently configured missing-odometry case with the same bounded withholding result. Run 030
-  adds a connected-detour persistent discrepancy from 18--39 s followed by action abort. Run 031
-  adds response loss from 19--28 s, measured recovery from 31--32 s, and eventual task success.
-  Run 032 adds a nominal-clear-route persistent discrepancy from 18--28 s followed by abort.
-  Run 033 succeeds and independently returns `not_triggered` despite recovery activity. Run 034
-  passed exact build and scenario binding but failed the frozen transport-validity gate with 28
-  stale/rejected actions; it was retained without retry, diagnostic derivation, family-count
-  increment, or semantic use. Run 035 adds a valid connected-detour discrepancy from 11--21 s,
-  measured-response recovery from 23--24 s, and eventual action success. Fixed nominal run 036 is
-  a clean successful `not_triggered` control with one FollowPath attempt and no recorded recovery.
-  Run 037 adds a nominal-clear-route discrepancy from 10--22 s, measured-response recovery from
-  22--23 s, and eventual action success. Run 038 adds another nominal-clear-route discrepancy from
-  19--29 s, measured-response recovery from 31--32 s, and eventual success. Run 039 adds response
-  loss from 18--28 s, measured recovery from 30--31 s, and success. Fixed run 040 is next.
-  No P/R response, Luna label, effect estimate, confidence sequence, or
-  alpha use exists. Replication remains untouched.
-- **TESTED (SECONDARY-ARM DEVELOPMENT):** the provider-neutral model-call contract now has a
-  Claude Code adapter as its first non-GPT instance. A predeclared control rejected Haiku and fixed
-  `claude-sonnet-5` at low effort. See [model-family replication](docs/MODEL_FAMILY_REPLICATION.md).
-- **COLLECTED, NOT_ANNOTATED (SECONDARY ARM):** the sealed nine-episode Claude replication over
-  `pn-0001`–`pn-0009` retained 18 result envelopes and 54 one-shot calls with accepted parity, a
-  verified read-only workspace, and no retry or resampling. G used its deterministic checked template
-  on 16 of 18 responses. It reuses retained episodes, so it adds **zero** independent clusters, does
-  not amend the primary freeze, and does not relieve the 40-episode minimum. No sealed Claude answer
-  has been scored and no cross-family effect estimate exists.
-- **IMPLEMENTED, TESTED:** blinded response packaging and dual-annotator adjudication tooling
-  implementing `docs/ANNOTATION_GUIDE.md`. Final legacy packet `sealed-primary-v3` contains 198
-  primary F/G/H responses over all 33 retained episodes; its key is confined to evaluator-only
-  storage and its manifest is tracked. The separate Claude packet contains 54 responses. Two
-  isolated handoff archives contain the legacy and 52-response diagnostic inventories, blank forms,
-  guides, and an optional fail-closed resumable workbench. Scoring, adjudication, and key joining
-  remain `NOT_RUN`.
-- **NOT_RUN:** blinded dual annotation, final statistics/figures, and final A–E model evaluation.
-- **NOT_RUN:** source-to-binary rebuild verification.
-- **DEFERRED:** arbitrary-LLM proposition extraction until independently evaluated.
+1. Read this file, [CONTEXT.md](CONTEXT.md), and the latest current-state document before acting.
+2. Treat the prospective declaration and manifests as authoritative for the frozen confirmation arm.
+3. Keep robot-visible evidence separate from evaluator-only truth.
+4. Preserve failed calls, technical interruptions, raw outputs, and prior reports; record exclusions rather than deleting history.
+5. Do not use development observations as confirmatory results, and do not inspect blinded semantic outputs before the declared scoring point.
+6. Add new dated evidence to the relevant report, then update the current-state summary if the project state changes.
 
-## Contract-complete pilot reproduction
+## Reproducibility and status language
 
-After pulling the five development DVC roots, reproduce the immutable descriptive summary and the
-independent control-window audit without changing the retained outputs:
-
-```bash
-dvc pull data/robot_visible/dev.dvc data/evaluator_only/dev.dvc \
-  data/evaluator_only/analysis.dvc data/evaluator_only/annotation_keys.dvc model_outputs.dvc
-
-python analysis/summarize_contract_complete_v2_pilot.py \
-  --schedule research/explanation_fidelity/experiment_configs/prospective/contract-complete-diagnostic-communication-v2-pilot-schedule.json \
-  --result-root model_outputs/luna-model-judge-v1/contract-complete-v2-pilot \
-  --failure-root manifests/operations/artifacts \
-  --pair-root model_outputs/contract-complete-diagnostic-communication-v2-pilot/response-pairs \
-  --output /tmp/contract-complete-v2-development-summary.json
-cmp /tmp/contract-complete-v2-development-summary.json \
-  model_outputs/contract-complete-diagnostic-communication-v2-pilot/development-summary.json
-
-python analysis/audit_command_motion_window_claim.py \
-  data/robot_visible/dev/cr-pilot-006/command-motion-diagnostic-v3.json \
-  --start 18 --end 19 \
-  --output /tmp/cr-pilot-006-window-18-19-audit.json
-cmp /tmp/cr-pilot-006-window-18-19-audit.json \
-  data/evaluator_only/analysis/contract-complete-v2-development-pilot/cr-pilot-006-window-18-19-audit.json
-```
-
-The summary is alpha-zero development analysis. These commands reproduce its accounting; they do
-not activate confirmation or turn the four inspected controls into a prospective endpoint.
-
-## CPU-only demo
-
-```bash
-python -m venv .venv
-. .venv/bin/activate
-python -m pip install -e 'packages/astro_dock/src/crane_explain[dev]'
-python -m pytest -q packages/astro_dock/src/crane_explain/tests
-crane-explain validate configs/fixtures/dock_policy.json
-crane-explain explain configs/fixtures/dock_policy.json --alternative Slalom
-```
-
-The fixture policy is synthetic and exists only to test arithmetic; it is not CRANE's policy.
-
-After `dvc pull data/robot_visible/dev.dvc`, reproduce the compact development diagnosis from its
-retained source summary and exact historical Nav2 configuration with:
-
-```bash
-python analysis/export_terminal_margin_diagnostic.py \
-  --summary /path/to/PerformanceResults/roboboat-gate5-known-dock-1/fixture-summary.json \
-  --config-repository packages/crane_ml \
-  --config-commit 4ae5124c12c39af93ee5b256e33778aec490ecd3 \
-  --task-tolerance-m 0.40 \
-  --source-reference PerformanceResults/roboboat-gate5-known-dock-1/fixture-summary.json \
-  --output /tmp/roboboat-terminal-margin-evidence.json
-```
-
-The retained compact export is restorable without the large source summary; byte-for-byte
-regeneration additionally requires that hash-identified development summary. The exporter refuses
-summaries without the declared independent-odometry provenance.
-
-Recompute the post-hoc v2 partial diagnosis for the retained speed mask without the large summary:
-
-```bash
-python analysis/recompute_terminal_margin_diagnostic.py \
-  data/robot_visible/dev/diagnostic-pilot-v1/roboboat-terminal-margin-masked-speed/evidence.json \
-  --config-repository packages/crane_ml \
-  --output /tmp/roboboat-terminal-margin-partial-v2.json
-```
-
-This correction preserves the supported positional-margin chain while withholding return-speed
-criterion satisfaction and the physical source of residual motion. It is development-only and
-does not replace the retained pre-correction model outputs.
-
-Recompute the second retained RoboBoat development mechanism directly from its compact governed
-costmap and planner-log export (the historical raw fixture is not required):
-
-```bash
-python analysis/recompute_roboboat_grid_disconnection.py \
-  data/robot_visible/dev/diagnostic-pilot-v1/roboboat-grid-disconnection/evidence-and-diagnostic.json \
-  --output /tmp/roboboat-grid-disconnection-recomputed.json
-```
-
-This establishes a disconnection in one retained navigation-model snapshot plus matching Navfn
-failure messages. It does not establish physical berth infeasibility, a unique obstacle, or exact
-planner consumption. The retrospectively selected run has incomplete source-snapshot provenance
-and is therefore development-only and ineligible for confirmatory evaluation.
-
-After pulling governed development data, reproduce the checked land geometric diagnosis with:
-
-```bash
-python analysis/export_geometric_route_diagnostic.py \
-  data/robot_visible/dev/diagnostic-pilot-v1/land-blockage-global-002/fixture-summary.json \
-  --episode-id land-blockage-global-002 \
-  --nav2-config packages/crane_ml/Tools/Performance/nav2_land_proving_ground_fixture.yaml \
-  --bt-xml packages/crane_ml/Tools/Performance/nav2_warehouse_replanning_deadline.xml \
-  --robot-radius 0.22 --inflation-radius 0.55 --deadline-seconds 70 \
-  --output /tmp/land-blockage-global-002-diagnostic.json
-```
-
-This development answer establishes a direct-route restriction and deadline-aligned abort. The
-retained planner grid is still connected, so it deliberately withholds a global no-path claim.
-
-Reproduce the current-source successful connected-detour diagnosis and independent reference:
-
-```bash
-python analysis/export_geometric_route_diagnostic.py \
-  data/robot_visible/dev/diagnostic-land-dev-002/fixture-summary.json \
-  --episode-id diagnostic-land-dev-002 \
-  --nav2-config packages/crane_ml/Tools/Performance/nav2_land_proving_ground_fixture.yaml \
-  --bt-xml packages/crane_ml/Tools/Performance/nav2_roboboat_distance_replanning.xml \
-  --robot-radius 0.22 --inflation-radius 0.55 --deadline-seconds 100 \
-  --output /tmp/diagnostic-land-dev-002-geometric.json
-python analysis/reference_land_geometric.py \
-  data/robot_visible/dev/diagnostic-land-dev-002/fixture-summary.json \
-  --episode-id diagnostic-land-dev-002 \
-  --bt-xml packages/crane_ml/Tools/Performance/nav2_roboboat_distance_replanning.xml \
-  --deadline-seconds 100 \
-  --output /tmp/diagnostic-land-dev-002-reference.json
-```
-
-This is a development success control with a restricted direct route and measured detour, not a
-failure episode or proof that the observed costmap restriction caused the path deviation.
-
-Reproduce the independently auditable delivered-plan diagnosis from the one-run v2
-instrumentation qualification:
-
-```bash
-PYTHONPATH=packages/astro_dock/src/crane_explain/src \
-python analysis/export_geometric_route_diagnostic.py \
-  data/robot_visible/dev/diagnostic-land-dev-004/fixture-summary.json \
-  --episode-id diagnostic-land-dev-004 \
-  --nav2-config packages/crane_ml/Tools/Performance/nav2_land_proving_ground_fixture.yaml \
-  --bt-xml packages/crane_ml/Tools/Performance/nav2_roboboat_distance_replanning.xml \
-  --robot-radius 0.22 --inflation-radius 0.55 --deadline-seconds 100 \
-  --computation-version geometric-route-restriction-v2 \
-  --output /tmp/diagnostic-land-dev-004-geometric-v2.json
-python analysis/reference_land_plan_geometry.py \
-  data/robot_visible/dev/diagnostic-land-dev-004/fixture-summary.json \
-  --episode-id diagnostic-land-dev-004 \
-  --output /tmp/diagnostic-land-dev-004-plan-reference.json
-```
-
-Both implementations recompute every retained plan hash and geometry summary. The checked answer
-supports a change from an initially direct delivered plan to later non-direct delivered plans and
-the successful action outcome. It does not prove controller consumption, identify the physical
-trigger, or establish costmap-to-plan causation. This is development instrumentation qualification,
-not confirmatory effectiveness evidence.
-
-Reproduce the blind development command-to-motion diagnosis and its independent evaluator-side
-check after pulling both development DVC roots:
-
-```bash
-PYTHONPATH=packages/astro_dock/src/crane_explain/src \
-python analysis/export_command_motion_diagnostic.py \
-  --events data/robot_visible/dev/diagnostic-motion-instrumentation-held-001/capture/events.jsonl \
-  --capture-manifest data/robot_visible/dev/diagnostic-motion-instrumentation-held-001/capture/manifest.json \
-  --runtime-manifest data/robot_visible/dev/diagnostic-motion-instrumentation-held-001/capture/runtime_manifest.json \
-  --bt-xml data/robot_visible/dev/diagnostic-motion-instrumentation-held-001/capture/behavior_tree.xml \
-  --nav2-config packages/crane_ml/Tools/Performance/nav2_land_fixture.yaml \
-  --episode-id diagnostic-motion-dev-cm-001 \
-  --output /tmp/command-motion-evidence.json
-python analysis/reference_command_motion.py /tmp/command-motion-evidence.json \
-  --output /tmp/command-motion-reference.json
-```
-
-The exporter command above reconstructs a fresh blind export from the raw capture using the
-current default computation version. To reproduce the exact versioned diagnosis retained for the
-paper without exposing its precomputed result to the computation, run:
-
-```bash
-PYTHONPATH=packages/astro_dock/src/crane_explain/src \
-python analysis/recompute_command_motion_diagnostic.py \
-  data/robot_visible/dev/diagnostic-pilot-v1/land-command-motion-001/evidence-and-diagnostic.json \
-  --output /tmp/command-motion-recomputed.json
-```
-
-The CLI projects only the robot-visible `method_input`, recomputes the version named there, and
-fails if the version or source-qualified recovery-policy hash is unsupported.
-
-The source acquisition name is evaluator-sensitive and must not be supplied to an explanation
-method. Only the blind export (or its `method_input` projection) is permitted. The result supports
-a delivered-command/measured-motion discrepancy, not a unique motor, slip, collision, obstruction,
-or hidden-intervention attribution. It is development instrumentation qualification, not an
-independent episode or an effectiveness result.
-
-Run the provider-neutral analysis, freeze-integrity, umbrella, and core suites without invoking a
-model or ROS runtime:
-
-```bash
-PYTHONPATH=packages/astro_dock/src/crane_explain/src:packages/astro_dock/src/crane_explain_ros:analysis \
-python -m pytest -q analysis tests packages/astro_dock/src/crane_explain/tests
-```
-
-ROS package tests additionally require the Jazzy/ament environment; a blanket host-shell
-`pytest` is not the supported ROS test command.
-
-Build the anonymous IEEE-format paper with the pinned toolchain:
-
-```bash
-scripts/build_paper.sh
-python scripts/audit_submission_readiness.py --category full
-```
-
-This writes `output/pdf/main.pdf`. The current manuscript is an anonymous nine-page full-paper
-snapshot with no unresolved result placeholders. It reports deterministic development measurements,
-information-parity negative findings, extensive fallback, and the complete retained Luna
-qualification/failure history; it makes no semantic superiority claim. The original human workflow
-is preserved as historical development design. New evidence-calibration annotations prospectively
-use a separately qualified blinded agent workflow and are always reported as agent-assessed, never
-human-validated.
-The build pins `SOURCE_DATE_EPOCH` to the latest checked-out paper-source commit unless the caller
-explicitly sets it, so repeated builds of one paper revision are byte-identical.
-The readiness audit passes only when the selected page category, anonymity, PDF, and numeric
-traceability gates all pass. It is a mechanical gate, not peer review or submission authorization.
-
-After the governed DVC roots are materialized, reproduce the submission-critical paper and two
-independently checked diagnostic results together:
-
-```bash
-scripts/verify_submission_reproduction.sh
-```
-
-This fails unless the full-paper readiness audit passes, the delivered-plan diagnostic and its
-independent reference regenerate byte-for-byte, and the blind command-motion recomputation matches
-the retained versioned diagnosis and checked answer.
-
-## Layout
-
-- `packages/astro_dock/`, `packages/crane_ml/`: pinned Git submodules
-- `packages/astro_dock/src/crane_explain/`: pinned nested CPU-only evidence-checking package
-- `packages/astro_dock/src/crane_explain_ros/`: pinned nested ROS capture package
-- `configs/`: committed fixtures and experiment configuration
-- `analysis/`: statistics and figure-generation code
-- `paper/`: anonymous paper and supplement sources
-- `manifests/`: dependency locks, data inventories, and run checkpoints
-- `data/robot_visible/`: untracked evidence supplied to explanation systems
-- `data/evaluator_only/`: untracked fault truth, gold propositions, and labels
-- `.dvc/` and `*.dvc`: credential-free pointers for ignored artifacts synchronized through private
-  Cloudflare R2
-- `scripts/`: root-relative setup, governance, manifest, and checkpoint commands
-- `docs/`: architecture, benchmark, study, experiments, research, and decisions
-
-Raw data and model outputs never enter Git. The two data domains are physically separate and are
-joined only through opaque episode IDs during evaluation. Primary and secondary model-family arms
-never share an output root, cache root, manifest name, or annotation file.
-
-After setup, DVC/R2 synchronization is documented in [governed artifact storage](docs/DATA_STORAGE.md).
-R2 does not provide a hard free-tier spending cap; the project wrapper requires account-wide
-metrics and stops at conservative 90% guard thresholds, but it cannot guarantee zero fees.
-To materialize the governed ecological pilot inputs from a fresh checkout, configure the private
-remote as documented there and run `scripts/dvc_r2_sync.sh pull`; do not substitute historical
-runtime directories or evaluator truth for robot-visible model input.
-
-## Runtimes and checkpointing
-
-Run the existing full Nav2 fixture from the umbrella root:
-
-```bash
-packages/crane_ml/Tools/Performance/run_nav2_controller_fixture.sh
-```
-
-For graphics-free land development, use the land fixture or its TurtleBot3 wrapper. Both select
-`train-cpu`, `-batchmode`, and `-nographics`; neither opens the aquatic Unity window:
-
-```bash
-packages/crane_ml/Tools/Performance/run_land_nav2_fixture.sh
-packages/crane_ml/Tools/Performance/run_turtlebot3_nav2_fixture.sh
-```
-
-The default 3 m goal is a vertical-slice check, not a powered-study scenario. Raw fixture output is
-ignored and evaluator-only unless explicitly transformed into a governed benchmark artifact.
-
-After each validated run, generate a content-free data manifest and commit the exact component
-pointers:
-
-```bash
-scripts/checkpoint_validated_run.sh RUN_ID \
-  data/robot_visible/RUN_ID data/evaluator_only/RUN_ID
-```
-
-Review that commit, then push it. The checkpoint command refuses dirty component repositories or
-staged governed data. Do not call `goalAttempts` a recovery count, replay a counterfactual, or
-delivered odometry proven controller consumption.
-
-## Documentation
-
-- [Current evidence-calibration checkpoint](docs/CURRENT_STATE_2026-09-29.md)
-- [Active evidence-calibration protocol](docs/EVIDENCE_CALIBRATION_PROTOCOL.md)
-- [Project language](CONTEXT.md)
-- [Architecture](docs/ARCHITECTURE.md)
-- [Study design](docs/STUDY_DESIGN.md)
-- [Research redirect and legacy disposition](docs/RESEARCH_REDIRECT.md)
-- [Physical-diagnosis contract](docs/PHYSICAL_DIAGNOSIS.md)
-- [Prospective diagnostic study draft](docs/DIAGNOSTIC_STUDY_DESIGN.md)
-- [Benchmark](docs/BENCHMARK.md)
-- [Experiment ledger](docs/EXPERIMENTS.md)
-- [Model-family replication protocol](docs/MODEL_FAMILY_REPLICATION.md)
-- [Governed artifact storage and DVC/R2 setup](docs/DATA_STORAGE.md)
-- [Blinded annotation workflow](docs/ANNOTATION_WORKFLOW.md)
-- [Research audit](docs/RESEARCH.md)
-- [Decision log](docs/DECISIONS.md)
-- [Environment requests](docs/ENVIRONMENT_REQUESTS.md)
-- [Environment catalog and empirical scope](docs/ENVIRONMENTS.md)
-- [Environment architecture](docs/ENVIRONMENT_ARCHITECTURE.md)
-- [Environment validation gates](docs/ENVIRONMENT_VALIDATION.md)
-- [Reference-environment source audit](docs/research/REFERENCE_ENVIRONMENTS.md)
-- [Nav2 Jazzy recovery provenance audit](docs/research/NAV2_JAZZY_RECOVERY_PROVENANCE.md)
-
-## Troubleshooting
-
-- Missing submodules: rerun `git submodule update --init --recursive`, then setup.
-- Nested checkout mismatch: do not manually advance it; update `workspace.lock.json` deliberately.
-- `ModuleNotFoundError`: rerun setup, then install the nested core package with the command above.
-- LLM wording rejected: use the checked template fallback. Unparsed clauses do not pass.
-- ROS topic absent: verify navigator lifecycle, namespace/remapping, ROS domain, and DDS IPC.
+Use explicit status labels such as `IMPLEMENTED, TESTED`, `DEVELOPMENT ONLY`, `VALIDATED INFRASTRUCTURE`, `DEFERRED_POST_SUBMISSION`, `INCOMPLETE`, and `SEALED`. Every result should identify its episode unit, condition, evidence boundary, source/provenance basis, and whether it is eligible for the primary claim.
