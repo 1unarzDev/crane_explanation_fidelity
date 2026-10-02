@@ -23,7 +23,7 @@ def write_once(path, record):
 
 def main():
     ap=argparse.ArgumentParser()
-    ap.add_argument('--freeze',required=True,type=Path); ap.add_argument('--look',choices=['FIRST'],default='FIRST')
+    ap.add_argument('--freeze',required=True,type=Path); ap.add_argument('--look',choices=['FIRST','FINAL'],default='FIRST')
     ap.add_argument('--b2-concurrency',type=int,default=12)
     ap.add_argument('--episode-batch',type=int,default=24)
     ap.add_argument('--poll-seconds',type=float,default=20)
@@ -38,7 +38,11 @@ def main():
     excluded={e['run_id'] for e in exceptions['exceptions']}
     rows=[r for r in pool['configurations'] if r['stage']=='confirmation' and r['run_id'] not in excluded][:freeze['acquired_candidate_cap']]
     out=ROOT/'analysis/results/confirmation'/freeze['study_id']; models=ROOT/'model_outputs'/freeze['study_id']; out.mkdir(parents=True,exist_ok=True)
-    target=freeze['first_look_n']; accounting_path=out/'execution-accounting-FIRST.json'
+    target=freeze['first_look_n'] if args.look=='FIRST' else freeze['valid_paired_episode_n']; accounting_path=out/('execution-accounting-'+args.look+'.json')
+    if args.look=='FINAL':
+        first_result=out/'look-600'/'primary-analysis-v1.json'
+        if not first_result.exists(): raise RuntimeError('FINAL generation requires the registered FIRST analysis')
+        if not json.loads(first_result.read_text()).get('continuation_required',False): raise RuntimeError('FIRST futility stopped the study; no FINAL generation permitted')
     pilot=copy.deepcopy(json.loads((ROOT/'research/explanation_fidelity/experiment_configs/development/evidence-calibration-b2-b4-pilot-v1.json').read_text()))
     pilot.update(pilot_id=freeze['study_id'],development_only=False,study_stage='CONFIRMATION',data_split='final',confirmation_alpha=freeze['alpha'])
     ontology=json.loads((ROOT/'configs/evidence_calibration_claim_contracts_v1.json').read_text())
@@ -49,7 +53,7 @@ def main():
         else: break
     complete=sum(bool(r.get('complete_pair')) for r in accounting)
     # Existing terminal records are authoritative; do not reinterpret their errors.
-    print(json.dumps(dict(stage='CONTINUOUS_QUEUE',existing_records=len(accounting),complete_pairs=complete,target=target,b2_concurrency=args.b2_concurrency,episode_batch=args.episode_batch)),flush=True)
+    print(json.dumps(dict(stage='CONTINUOUS_QUEUE',look=args.look,existing_records=len(accounting),complete_pairs=complete,target=target,b2_concurrency=args.b2_concurrency,episode_batch=args.episode_batch)),flush=True)
     schedule_rows=[]
     for r in rows: schedule_rows.append(dict(r,family='transient-compensation' if 'recovery' in r['response_profile'] else 'persistent-discrepancy'))
     schedule=dict(cohorts=[dict(runs=schedule_rows)])
@@ -114,7 +118,7 @@ def main():
         if not pending and complete<target: time.sleep(args.poll_seconds)
         # Recompute from authoritative terminal statuses, preserving frozen prefix.
         complete=sum(bool(r.get('complete_pair')) for r in accounting)
-    write_once(accounting_path,dict(study_id=freeze['study_id'],look='FIRST',complete_paired_episode_n=complete,planned_valid_n=target,complete=complete==target,records=accounting,dispatcher='continuous-cross-episode-v1',b2_concurrency=args.b2_concurrency,episode_batch=args.episode_batch))
+    write_once(accounting_path,dict(study_id=freeze['study_id'],look=args.look,complete_paired_episode_n=complete,planned_valid_n=target,complete=complete==target,records=accounting,dispatcher='continuous-cross-episode-v1',b2_concurrency=args.b2_concurrency,episode_batch=args.episode_batch))
     print(json.dumps(dict(complete_pairs=complete,target=target,first_look_ready=complete==target)),flush=True)
 
 if __name__=='__main__': main()
