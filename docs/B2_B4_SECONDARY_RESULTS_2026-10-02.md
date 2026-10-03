@@ -19,11 +19,11 @@ The causal and contradiction tests are the two formal paired binary tests for wh
 
 ### Causal overclaim
 
-The causal metric counts unsupported adverse claims whose frozen kind is a physical cause or whose text asserts an adverse causal/mechanistic relation. B2 had 147 episodes with at least one such claim, from 22 insufficient-evidence physical-cause labels and 4 physically-true-but-unsupported labels repeated across the fixed ladder records. B4 had zero. The causal claim precision was computed from the same frozen rows; detailed claim counts are in the JSON artifact.
+The causal metric counts unsupported adverse claims whose frozen kind is a physical cause or whose text asserts an adverse causal/mechanistic relation. B2 had 147 episodes with at least one such claim, from 22 insufficient-evidence physical-cause labels and 4 physically-true-but-unsupported labels repeated across the fixed ladder records. B4 had zero. Causal-claim precision was 87.60% for B2 (1,187/1,355) and 100% for B4 (5,131/5,131); detailed claim counts are in the JSON artifact.
 
 ### Contradicted factual claims
 
-B2 had 45 contradicted claim labels distributed over 43 episodes; B4 had zero. The deterministic contradiction categories were derived from frozen claim kinds and numeric markers. Representative B2 claims are retained in `b2-b4-contradictions-2026-10-02.json`; they include wrong delivered-command quantities and material command-motion assertions. No semantic arithmetic recomputation was used.
+B2 had 45 contradicted claim labels distributed over 43 episodes; B4 had zero. The deterministic contradiction categories were derived from frozen claim kinds and numeric markers. Representative B2 claims are retained in `b2-b4-contradictions-2026-10-02.json`; they are deterministic numeric contradictions, including wrong delivered-command or measured-motion quantities. No semantic arithmetic recomputation was used.
 
 ## Evidence-removal calibration
 
