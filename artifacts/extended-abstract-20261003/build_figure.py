@@ -37,8 +37,8 @@ head(836,646,'c','Adverse-claim flags')
 for i,(lev,title,sub) in enumerate([('E0','Outcome','action state'),('E1','Execution','recovery trace'),('E2','Command','delivered twist'),('E3','Response','odometry + test')]):
  x=i*197;rect(x,674,169,113,'#f1f5f6',3);rect(x,674,169,4,blue);txt(x+14,708,lev,24,blue,True);txt(x+14,741,title,21,ink,True);txt(x+14,769,sub,17,muted)
  if i<3:s.append(f'<path d="M{x+179} 726 L{x+184} 731 L{x+179} 736" fill="none" stroke="{muted}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>')
-txt(0,825,'Evidence removal reverses this sequence.',20,ink,True)
-txt(0,858,'More evidence supports deeper diagnosis, not a unique cause.',19,muted)
+txt(0,825,'One episode; only visible evidence changes.',20,ink,True)
+txt(0,858,'Question: does explanatory specificity track available evidence?',19,muted)
 # Exact marginal rate CIs from the frozen artifact; grouped bars and whiskers.
 left,right,base,top=890,1580,786,674
 for tick in [0,.25,.5]:
