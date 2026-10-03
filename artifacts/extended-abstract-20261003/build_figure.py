@@ -1,38 +1,53 @@
+"""Vector annotation over the unchanged ASV capture; paired ladder/bar figure."""
 from pathlib import Path
-import base64,html,json
+import base64,html
 import cairosvg
-ROOT=Path(__file__).resolve().parents[2]; out=Path(__file__).resolve().parent
+ROOT=Path(__file__).resolve().parents[2];out=Path(__file__).resolve().parent
 photo=ROOT/'artifacts/nav2-docking-reproduction-20261002/review-capsule/final-capture/mid.png'
 b64=base64.b64encode(photo.read_bytes()).decode()
-s=[f'<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="850" viewBox="0 0 1600 850"><defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#263746"/></marker></defs><rect width="1600" height="850" fill="white"/>']
-def text(x,y,t,size=24,color='#162d40',bold=False):s.append(f'<text x="{x}" y="{y}" font-family="DejaVu Sans" font-size="{size}" fill="{color}" font-weight="{700 if bold else 400}">{html.escape(t)}</text>')
-def line(x,y,u,v,color='#263746',arrow=False):s.append(f'<line x1="{x}" y1="{y}" x2="{u}" y2="{v}" stroke="{color}" stroke-width="3" '+('marker-end="url(#arrow)"' if arrow else '')+'/>')
-text(15,30,'(a) ASV docking: recorded navigation evidence',27,bold=True)
-s.append(f'<image x="0" y="45" width="960" height="540" href="data:image/png;base64,{b64}"/>')
-# Vector panel covers legacy UI label, preserving the raw captured image file.
-s.append('<rect x="12" y="56" width="232" height="150" rx="5" fill="#102c38"/>')
-text(24,81,'ASV • EVIDENCE VIEW',18,'white',True)
-for i,(label,color) in enumerate([('Planned route','#33cdd2'),('Observed trajectory','#ffe26c'),('Command vector','#fa50c8'),('Local costmap','#ff9866')]):
- y=107+23*i;line(24,y-5,47,y-5,color);text(55,y,label,16,'white')
-# important physical features, arrows are outside busy footprint
-for x,y,t,u,v in [(300,340,'Dock',390,342),(660,412,'ASV',461,355),(680,276,'Costmap overlay',620,302),(120,420,'Observed trajectory',350,388)]:
- s.append(f'<rect x="{x-8}" y="{y-23}" width="{max(100,len(t)*13)}" height="31" rx="4" fill="white" fill-opacity="0.95"/>');text(x,y,t,21,bold=True);line(x-10 if t in ('ASV','Costmap overlay') else x+max(100,len(t)*13),y-9,u,v,arrow=True)
-text(985,30,'(b) Same episode, evidence removed',27,bold=True)
-steps=[('E0','Observed outcome / cutoff'),('E1','+ source-qualified execution trace'),('E2','+ delivered command'),('E3','+ synchronized odometry'),('','  + governed diagnostic computation')]
-for i,(lab,desc) in enumerate(steps[:4]):
- y=65+i*112;s.append(f'<rect x="980" y="{y}" width="603" height="82" rx="8" fill="#edf4f8" stroke="#7797a9"/>');text(1000,y+32,lab,26,bold=True);text(1060,y+32,desc,21)
- if i==3:text(1000,y+64,'+ governed diagnostic computation',20)
- if i<3:line(1275,y+85,1275,y+108,arrow=True)
-text(987,535,'Removal reverses the arrows.',22,bold=True)
-text(987,564,'Hidden physical truth never enters the ladder.',19)
-text(15,622,'(c) Episodes flagged at each evidence level',27,bold=True)
-# marginal confidence intervals / actual denominators
-vals=[.4437869822,.04518664,.30571992,.07692308];ci=[(.4011239,.4872955),(.0302963,.0668905),(.2672026,.3471592),(.0567791,.10343)]
-def yy(v):return 800-v*300
+s=['<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="880" viewBox="0 0 1600 880"><defs><marker id="white" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="white"/></marker><marker id="blue" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7" fill="#146b86"/></marker></defs><rect width="1600" height="960" fill="white"/>']
+def text(x,y,t,size=24,color='#173044',bold=False):s.append(f'<text x="{x}" y="{y}" font-family="DejaVu Sans" font-size="{size}" fill="{color}" font-weight="{700 if bold else 400}">{html.escape(t)}</text>')
+def line(x,y,u,v,color='#146b86',arrow=None,w=3):s.append(f'<line x1="{x}" y1="{y}" x2="{u}" y2="{v}" stroke="{color}" stroke-width="{w}" '+(f'marker-end="url(#{arrow})"' if arrow else '')+'/>')
+def box(x,y,w,h,fill='#153747'):s.append(f'<rect x="{x}" y="{y}" width="{w}" height="{h}" rx="6" fill="{fill}"/>')
+text(10,29,'(a) CRANE platform: ASV navigation evidence',27,bold=True)
+s.append(f'<image x="0" y="43" width="960" height="540" href="data:image/png;base64,{b64}"/>')
+box(12,54,275,156)
+text(24,80,'ASV • LIVE EVIDENCE',18,'white',True)
+for i,(label,col) in enumerate([('Planned route','#33cdd2'),('Observed trajectory','#ffe26c'),('Desired velocity twist','#fa50c8'),('Local costmap','#ff9866')]):
+ y=107+23*i;line(24,y-5,47,y-5,col);text(56,y,label,16,'white')
+def callout(x,y,label,u,v,start='left'):
+ width=max(75,len(label)*11+18);box(x,y,width,32);text(x+9,y+23,label,19,'white',True)
+ line(x-2 if start=='left' else x+width+2,y+16,u,v,'white','white',2.5)
+callout(290,324,'Dock',389,364,'right');callout(650,398,'ASV',461,354)
+callout(668,260,'Local costmap',620,299)
+callout(95,413,'Observed trajectory',366,390,'right')
+callout(287,222,'Planned route',420,337,'right')
+callout(642,475,'Desired velocity twist',445,348)
+text(982,29,'One evidence boundary; two explainers',27,bold=True)
+for y,title,col,lines in [(62,'B2 • tool-enabled LLM agent','#a6492d',['Visible evidence + source/configuration','Permitted diagnostic computations','Natural-language answer returned verbatim']), (266,'B4 • diagnostic-contract method','#146b86',['Same visible evidence and source access','Maximal supported diagnosis','Constrained clauses + exact numeric slots','Final claim verification'])]:
+ box(980,y,603,175 if y==62 else 201,'#f0f5f7');text(998,y+34,title,23,col,True)
+ for j,t in enumerate(lines):text(998,y+72+j*30,t,21)
+text(990,518,'ASV illustration; results below: land/Nav2.',20,bold=True)
+text(990,552,'Physical truth is evaluator-only.',22)
+text(10,614,'(b) Same episode, nested evidence',25,bold=True)
+# horizontal evidence accumulation; removal is reverse traversal
+labels=[('E0',['Outcome / cutoff']),('E1',['+ action /','recovery trace']),('E2',['+ delivered','command']),('E3',['+ odometry /','computation'])]
+for i,(lab,desc) in enumerate(labels):
+ x=12+i*193;box(x,647,166,104,'#e8f1f5');text(x+11,675,lab,26,bold=True)
+ for j,t in enumerate(desc):text(x+11,706+j*24,t,18)
+ if i<3:line(x+169,697,x+189,697,arrow='blue')
+text(15,792,'Evidence removed: E3 to E2 to E1 to E0.',20,bold=True)
+text(15,823,'Commands + measured motion justify discrepancy,',19)
+text(15,851,'not a unique motor, collision, or obstruction cause.',19)
+text(825,614,'(c) Episodes flagged by evidence level',25,bold=True)
+# bars with confidence whiskers, shared method key underneath
+vals=[.4437823822,.04518664,.30571992,.07692308];ci=[(.4011239,.4872955),(.0302963,.0668905),(.2667526,.3471592),(.0567791,.10343)]
+def yy(v):return 781-v*270
 for v in [0,.25,.5]:
- y=yy(v);line(75,y,940,y,'#d7e2e8');text(12,y+7,f'{v*100:.0f}%',18)
+ y=yy(v);line(876,y,1575,y,'#d9e5eb',w=1.5);text(824,y+6,f'{v*100:.0f}%',17)
 for i in range(4):
- x=180+i*220;lo,hi=ci[i];line(x-16,yy(lo),x-16,yy(hi),'#a6492d');line(x-23,yy(lo),x-9,yy(lo),'#a6492d');line(x-23,yy(hi),x-9,yy(hi),'#a6492d');s.append(f'<circle cx="{x-16}" cy="{yy(vals[i])}" r="7" fill="#a6492d"/>');line(x+16,yy(0),x+16,yy(.00752),'#146b86');s.append(f'<rect x="{x+10}" y="{yy(0)-6}" width="12" height="12" fill="#146b86"/>');text(x-32,833,f'E{i}',21)
-text(993,636,'B2: tool-enabled agent (circles)',23,'#a6492d',True);text(993,671,'B4: diagnostic contract (squares)',23,'#146b86',True)
-text(993,714,'Bars: marginal 95% Wilson intervals.',20);text(993,745,'Paired episodes; levels are repeated measures.',18);text(993,776,'E0/E2/E3: n = 507; E1: n = 509.',20);text(993,809,'B4 upper 95% limit: about 0.75% at all levels.',20)
+ x=932+i*170;lo,hi=ci[i];s.append(f'<rect x="{x-23}" y="{yy(vals[i])}" width="36" height="{vals[i]*270}" fill="#a6492d"/>');line(x-5,yy(lo),x-5,yy(hi),'#673020',w=2);line(x-12,yy(lo),x+2,yy(lo),'#673020',w=2);line(x-12,yy(hi),x+2,yy(hi),'#673020',w=2)
+ line(x+32,yy(0),x+32,yy(.00752),'#146b86',w=3);line(x+24,yy(0),x+40,yy(0),'#146b86',w=4);text(x-8,810,f'E{i}',20)
+box(879,827,18,18,'#a6492d');text(907,843,'B2 agent',19);box(1060,827,18,18,'#146b86');text(1088,843,'B4 contract',19)
+text(830,871,'95% Wilson CI; B4 upper limit 0.75%. n=507 (E1:509).',18)
 s.append('</svg>');svg='\n'.join(s);(out/'evidence-navigation-figure.svg').write_text(svg);cairosvg.svg2pdf(bytestring=svg.encode(),write_to=str(out/'evidence-navigation-figure.pdf'));cairosvg.svg2png(bytestring=svg.encode(),write_to=str(out/'evidence-navigation-figure.png'))

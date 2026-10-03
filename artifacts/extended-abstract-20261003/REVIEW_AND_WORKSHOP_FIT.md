@@ -41,3 +41,11 @@ pdftoppm -scale-to 1400 -png artifacts/extended-abstract-20261003/abstract.pdf /
 ```
 
 Compiled to two US-letter pages; both rendered pages inspected. No overlapping text, clipped figure labels, missing references, or overfull boxes were observed. The build has TeX font fallback notices and a PDF input-version notice; rendered output is legible. Main manuscript, immutable study outputs, and unrelated worktree changes were not modified.
+
+## Revision 2: platform clarity and figure composition
+
+User-requested second review/revision cycle: platform reviewer identified the ambiguous attribution of CRANE to the explanation algorithm, repeated causal-limit statements, and insufficient B2/B4 information-parity detail. Revision team added the CRANE platform definition, ROS-connected Unity/PhysX context, and a concrete E2/E3 diagnosis example. Visual reviewer supplied scene anchors for dock, ASV, observed trajectory, cyan route, and the short magenta desired-velocity twist.
+
+Final integration: opaque dark scene labels with white text/arrow leaders; horizontal E0–E3 cards adjacent to grouped B2/B4 bars with Wilson whiskers; compact method key and interval note directly below the chart; B2/B4 explanation panels in the upper right. Recorded colored traces remain unchanged. B4 zero values are shown at baseline with their actual upper interval, not positive-height bars. Figure caption and redundant prose were shortened to retain two pages at normal IEEE formatting.
+
+The platform supports investigation across land and surface domains, but this abstract does not claim measured Isaac Sim speed/hardware advantages or demonstrated real-world transfer. Earlier failed approaches remain in repository history and are omitted from this focused abstract. Final two-page PDF and source figure were visually inspected; no missing glyphs, clipped legends, or overlapping labels remain. Editorial review is separate from empirical validation.
