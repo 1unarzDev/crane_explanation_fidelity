@@ -66,7 +66,7 @@ Essential-unit coverage at E3 & 0.897 & 0.952 \\
 The observed adverse-rate difference is $-66.1$ percentage points (B4 minus B2). B2's adverse labels include 420 insufficient-evidence claims, 45 contradiction flags, and four physical-truth-without-support labels. B4 coverage is lower at E0/E1 and higher at E2/E3: the result is a specificity--coverage tradeoff, with useful detail retained at the richest level, rather than uniform caution.
 
 \section{Implications and Boundaries}
-\textbf{A platform for realistic navigation evidence.} CRANE (Cross-domain Autonomous Robotics Navigation Engine) is the study's simulation platform. Unity/PhysX dynamics and sensor interfaces connect to ROS navigation execution in land and ASV environments. Shared interfaces support cross-domain investigation in realistic scenarios; quantitative evidence here remains land/Nav2 simulation.
+\textbf{A platform for realistic navigation evidence.} CRANE (Cross-domain Autonomous Robotics Navigation Engine) is the study's simulation platform~\cite{crane}. Unity/PhysX dynamics and sensor interfaces connect to ROS navigation execution in land and ASV environments. Shared interfaces support cross-domain investigation in realistic scenarios; quantitative evidence here remains land/Nav2 simulation.
 
 \textbf{Useful diagnosis with explicit causal boundaries.} At E2, a delivered velocity command does not establish how the robot moved. At E3, the synchronized comparison can justify ``commanded motion was not reflected in measured motion,'' while leaving motor failure, slip, and obstruction unresolved. Similarly, a measured response recovery need not establish task success. Partial diagnosis preserves useful observations. The ASV demonstration likewise separates software success from sustained physical docking.
 
@@ -75,6 +75,7 @@ Claim-level checks provide a bounded reflection step: before reporting an explan
 The findings are simulation-only and rubric-relative. Template realization and scoring share an ontology, so B4's zero flagged rate is not proof of zero semantic error. Automated scoring is not human validation; coverage measures communicated contract units, not operator usefulness. One agent configuration cannot establish superiority over all agents. Independent semantic assessment, prospective replication, and operator evaluation are the next tests of whether these evidence boundaries improve real-world navigation explanation.
 
 \begin{thebibliography}{9}\footnotesize
+\bibitem{crane} ``CRANE: Cross-domain Autonomous Robotics Navigation Engine, software repository. [Online]. Available: \url{https://github.com/1unarzDev/crane_ml}.
 \bibitem{reflect} Z.~Liu, A.~Bahety, and S.~Song, ``REFLECT: Summarizing robot experiences for failure explanation and correction,'' in \emph{Proc. CoRL}, PMLR 229, pp.~3468--3484, 2023.
 \bibitem{hexar} T.~Love \emph{et al.}, ``HEXAR: A hierarchical explainability architecture for robots,'' arXiv:2601.03070, 2026.
 \bibitem{ais} H.~Rashkin \emph{et al.}, ``Measuring attribution in natural language generation models,'' \emph{Comput. Linguist.}, vol.~49, no.~4, pp.~777--840, 2023.
