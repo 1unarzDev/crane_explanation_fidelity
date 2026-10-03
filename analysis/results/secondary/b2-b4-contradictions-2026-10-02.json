@@ -1,0 +1,65 @@
+{
+  "metric": "formal_secondary_material_contradiction",
+  "by_method": {
+    "B2": {
+      "episodes_with_material_contradiction": 43,
+      "episode_denominator": 511,
+      "incidence": 0.08414872798434442,
+      "number_of_contradicted_claims": 45,
+      "contradictions_per_episode": 0.08806262230919765,
+      "contradiction_type_distribution": {
+        "NUMERIC_CONTRADICTION": 45
+      }
+    },
+    "B4": {
+      "episodes_with_material_contradiction": 0,
+      "episode_denominator": 511,
+      "incidence": 0.0,
+      "number_of_contradicted_claims": 0,
+      "contradictions_per_episode": 0.0,
+      "contradiction_type_distribution": {}
+    }
+  },
+  "representative_examples": [
+    {
+      "episode_id": "handoff-confirmation-candidate-0161",
+      "method": "B2",
+      "evidence_level": "E3",
+      "claim_text": "This persisted for 83 s [command-motion-computation",
+      "kind": "command_motion_discrepancy",
+      "label": "CONTRADICTED_BY_VISIBLE_EVIDENCE"
+    },
+    {
+      "episode_id": "handoff-confirmation-candidate-0164",
+      "method": "B2",
+      "evidence_level": "E3",
+      "claim_text": "This persisted for 84 s [command-motion-computation",
+      "kind": "command_motion_discrepancy",
+      "label": "CONTRADICTED_BY_VISIBLE_EVIDENCE"
+    },
+    {
+      "episode_id": "handoff-confirmation-candidate-0178",
+      "method": "B2",
+      "evidence_level": "E2",
+      "claim_text": "Nav2 delivered forward commands through most of the 77.2-second stream (`delivered-command-stream`).",
+      "kind": "delivered_command",
+      "label": "CONTRADICTED_BY_VISIBLE_EVIDENCE"
+    },
+    {
+      "episode_id": "handoff-confirmation-candidate-0208",
+      "method": "B2",
+      "evidence_level": "E3",
+      "claim_text": "The trace records two FollowPath failures, two Wait recoveries, and a third FollowPath attempt under the retained bounded-retry tree (`command-motion-computation`, `recovery-trace`, `bt-policy-sha256:14939b78c72149b9c71b3806f2d3af63fc5de48c8bd9d07f0d13b55563f48520`).",
+      "kind": "command_motion_discrepancy",
+      "label": "CONTRADICTED_BY_VISIBLE_EVIDENCE"
+    },
+    {
+      "episode_id": "handoff-confirmation-candidate-0209",
+      "method": "B2",
+      "evidence_level": "E3",
+      "claim_text": "delivered-odometry-stream]\n\nThere was **no recorded FollowPath failure or source-qualified Wait recovery** under the retained behavior tree, and NavigateToPose remained active at the 100-second observation cutoff",
+      "kind": "delivered_command",
+      "label": "CONTRADICTED_BY_VISIBLE_EVIDENCE"
+    }
+  ]
+}
