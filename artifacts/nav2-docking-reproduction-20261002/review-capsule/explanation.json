@@ -1,0 +1,32 @@
+{
+  "schema": "crane-evidence-bound-explanation-v1",
+  "text": "The boat approaches the first dock near occupied and inflated costmap cells. Nav2 predicts a collision along the commanded motion, aborts FollowPath, clears the local costmap, and restarts control. The user observed a dock collision, but retained physical-contact telemetry reports zero prohibited contacts; this evidence confirms a collision prediction and recovery, while actual impact remains unconfirmed.",
+  "sources": [
+    {
+      "id": "E1",
+      "file": "first-dock.png",
+      "claim": "Real Unity first-dock approach view; overlay can obscure hull/dock boundaries."
+    },
+    {
+      "id": "E2",
+      "file": "first-dock.png.evidence.json",
+      "claim": "Received plan, odometry and local occupancy grid; first dock closer than second; per-topic timestamps retained."
+    },
+    {
+      "id": "E3",
+      "file": "collision-risk-log.txt",
+      "claim": "Nav2 collision prediction, abort, costmap clear and restart; log timestamp is distinct from screenshot timestamp."
+    },
+    {
+      "id": "E4",
+      "file": "self-verification.json",
+      "claim": "Five-second measured first-slip containment; strict timing validity fails; contact count zero."
+    }
+  ],
+  "physicalCollisionConfirmed": false,
+  "userReportedCollision": true,
+  "forceOrThrusterCauseKnown": false,
+  "collisionPredictionUtc": "2026-10-03T02:32:39.107826+00:00",
+  "imageUtc": "2026-10-03T02:32:32.4321930Z",
+  "temporalRelation": "First-dock photo was requested approximately 6.68 wall seconds before the controller collision prediction, not at physical impact."
+}
